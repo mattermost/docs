@@ -84,9 +84,9 @@ spec:
                 - key: {{ coalesce .Values.redis.password.key .Values.global.redis.password.key }}
                   path: redis/password
           - secret:
-              name: {{ template "postgresql.password.secret" . }}
+              name: {{ template "gitlab.psql.password.secret" . }}
               items:
-                - key: {{ template "postgresql.password.key" . }}
+                - key: {{ template "gitlab.psql.password.key" . }}
                   path: postgres/psql-password
       - name: migrations-secrets
         emptyDir:
