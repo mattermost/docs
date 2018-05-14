@@ -60,29 +60,31 @@ Owner and group of the install directory - *{owner}* and *{group}*
   a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
   b. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
 
-    ``sudo cp -ra {install-path}/mattermost/ {install-path}/mattermost-back-$(date +'%F-%H-%M')/``
+  .. code-block:: text
 
-7. Copy only *new* files from the extracted special directories to the install directory, then remove those extracted directories so they do not overwrite the current ones.
+    cd {install-path}
+    sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
+
+7. Remove all files *except special directories* from within the current install directory.
+
+  You should first test that you'll be deleting the correct files by modifying the second part of the command to ``xargs echo rm -r`` to see exactly what will be executed.
 
   .. code-block:: text
 
-    sudo cp -nr mattermost-upgrade/config/. {install-path}/mattermost/config/
-    sudo rm -rf mattermost-upgrade/config/
-    sudo cp -nr mattermost-upgrade/data/. {install-path}/mattermost/data/
-    sudo rm -rf mattermost-upgrade/data/
-    sudo cp -nr mattermost-upgrade/logs/. {install-path}/mattermost/logs/
-    sudo rm -rf mattermost-upgrade/logs/
+    sudo find mattermost/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path 'mattermost/config' -o -path 'mattermost/data' -o -path 'mattermost/logs' \) -prune \) | sudo xargs rm -r
+    
+8. Change ownership of the new files before copying them.
 
-8. Copy the remaining files to your install directory and remove the temporary files.
+  ``sudo chown -hR {owner}:{group} {path-to}/mattermost-upgrade/``
+
+9. Copy the new files to your install directory and remove the temporary files.
+
+  Note that the ``n`` (no-clobber) flag and trailing ``.`` on source are very important.
 
   .. code-block:: text
 
-    sudo cp -r mattermost-upgrade/. {install-path}/mattermost/
-    sudo rm -rf mattermost-upgrade/
-
-9. Change ownership of the new files.
-
-  ``sudo chown -R {owner}:{group} {install-path}/mattermost``
+    sudo cp -rn {path-to}/mattermost-upgrade/. mattermost/
+    sudo rm -r {path-to}/mattermost-upgrade/
 
 10. Start Mattermost server.
 
