@@ -161,6 +161,7 @@ Day when Leads and PMs decide which major features are included in the release, 
         - Update download links and testing server links to the latest RCs
     - Post list of tickets to be fixed to the Release Discussion channel ([see example](https://pre-release.mattermost.com/core/pl/65k77x3bnigw5f9ffohfxonnfy))
     - Update Changelog “Known Issues” section with any significant issues that were found and not fixed for the final release
+    - Verify that Dev has updated all CI servers running on release branch after each RC is cut
 3. QA:
     - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://pre-release.mattermost.com/core/pl/db3sur4r53d9tyih1i4wrmi9wy))
     - Post release testing instructions to Release Discussion channel ([template](https://pre-release.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
@@ -264,6 +265,7 @@ If a security fix release is required, run through the following steps:
     - Update Security Research Hall of Fame on the [Responsible Disclosure Policy](https://about.mattermost.com/report-security-issue/) page
     - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) 10 working days after the dot release has shipped
       - Update Security Issues spreadsheet with issue number from posted update (e.g. v3.2.0.1)
+    - Verify that Dev has updated all CI servers running on release branch after each RC is cut
 3. Marketing:
     - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send to marketing lead for review. Once reviewed, schedule for 08:00 PST on the day after dot release
     
@@ -283,6 +285,7 @@ If a bug fix release is required, run through the following steps:
         - Post download links and testing server links for the next RC when it's cut
     - Update Changelog:
         - Start a WIP PR for the dot release changelog and commit updates as new issues are fixed on the dot release RCs
+    - Verify that Dev has updated all CI servers running on release branch after each RC is cut
 3. Dev:
     - PRs for hotfixes are made to release branch
     - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day
