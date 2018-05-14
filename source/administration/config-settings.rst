@@ -704,7 +704,7 @@ Enable Webhook Debugging
 
 Enable Diagnostics and Error Reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*`Telemetry <https://docs.mattermost.com/administration/telemetry.html>`_ data is encrypted in transit and does not include personally identifiable information or message contents.*
+*Telemetry data is encrypted in transit and does not include personally identifiable information or message contents.*
 
 **True**: To improve the quality and performance of future Mattermost updates, this option sends error reporting and diagnostic information to Mattermost, Inc. To learn more about this feature, see :doc:`telemetry`.
 
