@@ -1,4 +1,4 @@
-## Active Directory/LDAP Setup
+## Active Directory/LDAP Setup (E10/E20)
 
 _Available in Enterprise Edition E10 & E20_
 
