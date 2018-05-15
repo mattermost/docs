@@ -1024,13 +1024,13 @@ platform permissions
     Commands to manage the permissions system.
 
   Child Commands
-    -  `platform permissions reset`_ - Reset the permissions system to its default sate.
+    -  `platform permissions reset`_ - Reset the permissions system to its default state on new installs.
 
 platform permissions reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Reset the permissions system to its default state on new installs.
+    Reset permissions for all users, including Admins, to their default state on new installs.
 
   Format
     .. code-block:: none
