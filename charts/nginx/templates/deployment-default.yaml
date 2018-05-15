@@ -16,12 +16,7 @@ spec:
         app: default-http-backend
         release: {{ .Release.Name }}
     spec:
-      {{- if .Values.images.defaultbackend.pullSecrets }}
-      imagePullSecrets:
-      {{-   range $index, $entry := .Values.images.defaultbackend.pullSecrets }}
-      - name: {{$entry.name}}
-      {{-   end }}
-      {{- end }}
+{{- include "pullsecrets" .Values.images.defaultbackend | indent 6}}
       containers:
       - name: default-http-backend
         # Any image is permissable as long as:

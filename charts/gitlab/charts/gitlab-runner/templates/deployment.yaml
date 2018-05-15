@@ -20,12 +20,6 @@ spec:
       securityContext:
         runAsUser: 100
         fsGroup: 65533
-      {{- if .Values.image.pullSecrets }}
-      imagePullSecrets:
-      {{-   range $index, $entry := .Values.image.pullSecrets }}
-      - name: {{$entry.name}}
-      {{-   end }}
-      {{- end }}
       initContainers:
         - name: configure
           command: ['sh', '/config/configure']
@@ -41,6 +35,7 @@ spec:
             mountPath: /init-secrets
             readOnly: true
       serviceAccountName: {{ if .Values.rbac.create }}{{ template "fullname" . }}{{ else }}"{{ .Values.rbac.serviceAccountName }}"{{ end }}
+{{- include "pullsecrets" .Values | indent 6}}
       containers:
       - name: {{ template "fullname" . }}
         image: {{ .Values.image }}

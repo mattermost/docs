@@ -62,12 +62,7 @@ spec:
               mountPath: /config
             - name: minio-server-config
               mountPath: /minio
-      {{- if .Values.pullSecrets }}
-      imagePullSecrets:
-      {{-   range $index, $entry := .Values.pullSecrets }}
-      - name: {{$entry.name}}
-      {{-   end }}
-      {{- end }}
+{{- include "pullsecrets" .Values | indent 6}}
       containers:
         - name: minio
           image: {{ .Values.image }}:{{ .Values.imageTag }}

@@ -57,12 +57,6 @@ spec:
 {{ toYaml $metricsAnnotations | indent 8 }}
 {{- end }}
     spec:
-      {{- if $.Values.image.pullSecrets }}
-      imagePullSecrets:
-      {{-   range $index, $entry := $.Values.image.pullSecrets }}
-      - name: {{$entry.name}}
-      {{-   end }}
-      {{- end }}
       securityContext:
         runAsUser: 1000
         fsGroup: 1000
@@ -103,6 +97,7 @@ spec:
           - name: sidekiq-secrets
             mountPath: '/etc/gitlab'
             readOnly: true
+{{- include "pullsecrets" $.Values.image | indent 6}}
       containers:
         - name: {{ $name }}
           image: "{{ $image }}"

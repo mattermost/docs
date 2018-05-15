@@ -53,6 +53,18 @@ otherwise the hostname will be assembed using `gitlab` as the prefix, and the `a
 {{- $result.domainHost -}}
 {{- end -}}
 
+{{/*
+  A helper template to collect and insert the registry pull secrets for a component.
+*/}}
+{{- define "pullsecrets" -}}
+{{- if .pullSecrets }}
+imagePullSecrets:
+{{-   range $index, $entry := .pullSecrets }}
+- name: {{$entry.name}}
+{{-   end }}
+{{- end }}
+{{- end -}}
+
 {{/* ######### cert-manager templates */}}
 
 {{- define "gitlab.certmanager_annotations" -}}

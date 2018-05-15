@@ -5,6 +5,7 @@ image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee
   tag: latest
   pullPolicy: Always
+  pullSecrets: []
 enabled: true
 # initialRootPassword: password
 redis:

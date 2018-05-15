@@ -19,12 +19,7 @@ spec:
     spec:
       serviceAccountName: {{ template "fullname" . }}
       restartPolicy: Never
-      {{- if .Values.image.pullSecrets }}
-      imagePullSecrets:
-      {{-   range $index, $entry := .Values.image.pullSecrets }}
-      - name: {{$entry.name}}
-      {{-   end }}
-      {{- end }}
+{{- include "pullsecrets" .Values.image | indent 6}}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

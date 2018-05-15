@@ -25,12 +25,6 @@ spec:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yml") . | sha256sum }}
     spec:
       terminationGracePeriodSeconds: 30
-      {{- if .Values.image.pullSecrets }}
-      imagePullSecrets:
-      {{-   range $index, $entry := .Values.image.pullSecrets }}
-      - name: {{$entry.name}}
-      {{-   end }}
-      {{- end }}
       initContainers:
         - name: configure
           command: ['sh', '/config/configure']
@@ -48,6 +42,7 @@ spec:
       securityContext:
         runAsUser: 1000
         fsGroup: 1000
+{{- include "pullsecrets" .Values.image | indent 6}}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
