@@ -173,6 +173,8 @@ The number of tasks to process simultaneously. The default value is `25`.
 
 Sidekiq includes maintenance jobs that can be configured to run on a periodic basis using cron style schedules. A few examples are included below. See the sample [gitlab.yml](https://gitlab.com/gitlab-org/gitlab-ee/blob/master/config/gitlab.yml.example#L237-302) for more job examples.
 
+Cron jobs are configured globally for all Sidekiq pods. There are no per-pod settings.
+
 ```YAML
 cron_jobs:
   stuck_ci_jobs_worker:
