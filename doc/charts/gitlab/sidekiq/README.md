@@ -35,6 +35,7 @@ Table below contains all the possible charts configurations that can be supplied
 | gitaly.serviceName        | gitaly service name                            | gitaly                                           |
 | gitaly.authToken.secret   | gitaly secret                                  | gitaly-secret                                    |
 | gitaly.authToken.key      | key to gitaly token in gitaly secret           | token                                            |
+| cron_jobs                 | Auxiliary cron jobs                            | {}                                               |
 | replicas                  | Sidekiq replicas                               | 1                                                |
 | railsSecrets.secret       | Secret containing rails secrets.yml            | rails-secrets                                    |
 | railsSecrets.key          | Key to contents of secrets.yml in rails secret | secrets.yml                                      |
@@ -167,6 +168,20 @@ The number of seconds _____ . This default value is `4`.
 #### concurrency
 
 The number of tasks to process simultaneously. The default value is `25`.
+
+#### cron_jobs
+
+Sidekiq includes maintenance jobs that can be configured to run on a periodic basis using cron style schedules. A few examples are included below. See the sample [gitlab.yml](https://gitlab.com/gitlab-org/gitlab-ee/blob/master/config/gitlab.yml.example#L237-302) for more job examples.
+
+```YAML
+cron_jobs:
+  stuck_ci_jobs_worker:
+    cron: "0 * * * *"
+  pipeline_schedule_worker:
+    cron: "19 * * * *"
+  expire_build_artifacts_worker:
+    cron: "50 * * * *"
+```
 
 ## Per-pod Settings `pods`
 
