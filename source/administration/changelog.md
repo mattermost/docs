@@ -4,6 +4,112 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v4.10
+
+Release date: 2018-05-16
+
+### Highlights
+
+#### Convert Public Channels to Private
+ - Team and System Admins can now convert a channel to private from the user interface. System Admins can also convert channels back to public [via the commandline](https://docs.mattermost.com/administration/command-line-tools.html#platform-channel-modify).
+
+#### Performance Improvements
+ - Decreased loading time by up to 90% for users with lots of direct and group message channels.
+
+#### Environment Variables Support in GitLab Omnibus
+ - Simplified Mattermost administration by supporting environment variables in GitLab Omnibus. See [documentation](https://docs.gitlab.com/omnibus/gitlab-mattermost/#upgrading-gitlab-mattermost-from-versions-prior-to-11-0) to learn more.
+
+### Improvements
+
+#### Web User Interface
+ - Removed support for transparent team icons to support any sidebar theme colors and added the ability to remove team icons.
+ - Added an experimental setting that users can use to set a custom message that will be automatically sent in response to Direct Messages.
+ - Added a loading animation for "Add Members" channel invite modal.
+ - Made SHIFT+UP switch keyboard focus to right-hand side if it's already open to the current thread.
+ - Removed an unnecessary WebRTC end user setting to avoid user errors and confusion.
+ - Added an on-hover effect for image link previews.
+ 
+ #### Plugins
+ - Added better plugin error handling and reporting.
+ 
+ #### Slash Commands
+ - Added ``/invite`` slash command to invite users to a channel.
+ - Improved slash command error message when payload has invalid JSON.
+ 
+ #### Administration
+ - Added structured logging to more easily review server logs.
+ - Users' client no longer refreshes after changing a System Console or ``config.json`` setting.
+ 
+ #### Command Line Interface (CLI)
+ - Added `./platform team list` command to list all teams on the server.
+ - Added `./platform permissions reset` command to reset the permissions system to its default state.
+
+#### Enterprise Edition E20
+ - Added cluster event types to [Performance Monitoring](https://docs.mattermost.com/deployment/metrics.html).
+
+### Bug Fixes
+
+ - Fixed an issue where focus with CTRL/CMD+SHIFT+L was always set to the right-hand side when reply thread was open.
+ - Fixed an issue where a user added to a channel wasn't immediately removed from other users' "Add Members" dialog.
+ - Fixed an issue where 'Copy Link' context menu option was partially hidden when right-clicking a team in team sidebar.
+ - Fixed an issue where a user could not log in to Mattermost when their login id ("authdata") failed to migrate properly during migration from LDAP to SAML.
+ - Fixed an issue where plugin configuration was not saved in the System Console.
+ - Removed duplicate indexes accidentally created on the ``Channels``, ``Emoji`` and ``OAuthAccessData`` tables.
+
+### Compatibility
+ 
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+ - Under `"TeamSettings"` in `config.json`:
+   - Added ``"ExperimentalEnableAutomaticReplies": false,`` to allow users to set a custom message that will be automatically sent in response to Direct Messages.
+ - Under `"LogSettings"` in `config.json`:
+   - Removed ``FileFormat`` and added ``""FileJson": true,`` and ``"ConsoleJson": true,`` to allow logged events to be written as a machine readable JSON format instead of the be printed as plain text.
+
+#### API Changes
+
+ - Support was added to REST API for sending ephemeral messages to users.
+ 
+#### RESTful API v4 Changes
+
+ - An APIv4 endpoint of ``POST /channels/{channel_id}/convert`` was added to convert a channel from public to private and to restrict this setting to ``team_admin``.
+ - An APIv4 endpoint of ``DELETE /teams/{team_id}/image`` was added to remove team icon and restrict it to ``team_admin``.
+ 
+#### Upcoming Deprecated Features in Mattermost v5.0
+
+The following deprecations are planned for the Mattermost v5.0 release, which is scheduled for summer/2018. This list is subject to change prior to the release.
+
+1. All API v3 endpoints will be removed. [See documentation](https://api.mattermost.com/#tag/schema) to learn more about how to migrate your integrations to API v4. [Ticket #8708](https://mattermost.atlassian.net/browse/MM-8708).
+2. `platform` binary will be renamed to mattermost for a clearer install and upgrade experience. All command line tools, including the bulk loading tool and developer tools, will also be renamed from platform to mattermost. [Ticket #9985](https://mattermost.atlassian.net/browse/MM-9985).
+3. The server will now fail to start if the Site URL setting [Site URL setting](https://docs.mattermost.com/administration/config-settings.html#site-url) is not set. The setting has already been required since Mattermost v3.8. [Ticket #9983](https://mattermost.atlassian.net/browse/MM-9983).
+4. A Mattermost user setting to configure desktop notification duration in **Account Settings** > **Notifications** > **Desktop Notifications** will be removed.
+5. Slash commands configured to receive a GET request will have the payload being encoded in the query string instead of receiving it in the body of the request, consistent with standard HTTP requests. Although unlikely, this could break custom slash commands that use GET requests incorrectly. [Ticket #10201](https://mattermost.atlassian.net/browse/MM-10201).
+6. A new `config.json` setting to whitelist types of protocols for auto-linking will be added. [Ticket #9547](https://mattermost.atlassian.net/browse/MM-9547).
+7. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) will be added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
+8. An unused `ExtraUpdateAt` field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
+9. [Enterprise Edition E20] Current CSV export feature will be replaced by the [new Compliance Export](https://docs.mattermost.com/administration/compliance-export.html) feature. [Ticket #8810](https://mattermost.atlassian.net/browse/MM-8810).
+
+### Known Issues
+
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Numbered lists can sometimes extend beyond the normal post area.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
+
+### Contributors
+[amyblais](https://github.com/amyblais), [AndersonWebStudio](https://github.com/AndersonWebStudio), [antoineHC](https://github.com/antoineHC), [asaadmahmood](https://github.com/asaadmahmood), [Autre31415](https://github.com/Autre31415), [cometkim](https://github.com/cometkim), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [daanlevi](https://github.com/daanlevi), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [grundleborg](https://github.com/grundleborg), [guydemi](https://github.com/guydemi), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [iri-dw](https://github.com/iri-dw), [it33](https://github.com/it33), [james-mm](https://github.com/james-mm), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jordanbuchman](https://github.com/jordanbuchman), [jwilander](https://github.com/jwilander), [kethinov](https://github.com/kethinov), [koxen](https://github.com/koxen), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [lisakycho](https://github.com/lisakycho), [liusy182](https://github.com/liusy182), [Merlin2001](https://github.com/merlin2001), [michaeltaylor-kerauno](https://github.com/michaeltaylor-kerauno), [mkraft](https://github.com/mkraft), [n1aba](https://github.com/n1aba), [pichouk](https://github.com/pichouk), [saturninoabril](https://github.com/saturninoabril), [stanchan](https://github.com/stanchan), [sudheerDev](https://github.com/sudheerDev), [tejasbubane](https://github.com/tejasbubane), [timconner](https://github.com/timconner), [tomo667a](https://github.com/tomo667a), [yuya-oc](https://github.com/yuya-oc)
+
 ## Release v4.9
 
 Release date: 2018-04-16
@@ -167,7 +273,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
 #### Performance
  - Reduced load times by optimizing database queries and WebSocket events destined for a single user.
- - Ceated an iOS endpoint that enables users to upload files larger than 20MB.
+ - Created an iOS endpoint that enables users to upload files larger than 20MB.
  - Improved caching of `getRootPosts` call.
 
 #### 508 Compliance
@@ -420,7 +526,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - Added `delete_team` web socket event to notify client whenever a team is deleted (e.g. via API call).
  
- ### Database Changes
+### Database Changes
 
 **User.Position field:**
 - Increased size of `user.Position` from `35` to `128` characters.
