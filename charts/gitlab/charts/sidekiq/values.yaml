@@ -49,6 +49,22 @@ rack_attack:
     # findtime: 60
     # bantime: 3600
 
+cron_jobs: {}
+  # stuck_ci_jobs_worker:
+  #   cron: "0 * * * *"
+  # pipeline_schedule_worker:
+  #   cron: "19 * * * *"
+  # expire_build_artifacts_worker:
+  #   cron: "50 * * * *"
+  # repository_check_worker:
+  #   cron: "20 * * * *"
+  # admin_email_worker:
+  #   cron: "0 0 * * 0"
+  # repository_archive_cache_worker:
+  #   cron: "0 * * * *"
+  # pages_domain_verification_cron_worker:
+  #   cron: "*/15 * * * *"
+
 trusted_proxies: []
 
 # Global defaults
