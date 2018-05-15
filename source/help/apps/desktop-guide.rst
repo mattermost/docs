@@ -97,3 +97,7 @@ Leave app running in notification center when application window is closed (Linu
 
     This setting is disabled by default.
     
+Use GPU hardware acceleration
+    If enabled, Mattermost UI is rendered more efficiently but can lead to decreased stability for some systems. Setting takes affect after restarting the app.
+
+    This setting is disabled by default.
