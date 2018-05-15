@@ -2,6 +2,21 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2018-05-15
+
+### Changed (2 changes)
+
+- Replace omnibus postgresql instance with postegresql chart based on upstream. !216
+- Switch Gitaly Deployment to a StatefulSet. !271
+
+### Added (5 changes, 1 of them is from the community)
+
+- Add prometheus exporter to postgres. !239
+- Added configuration options for workhorse. !269 (Corey O'Brien)
+- Add ability to configure Redis via Globals. !273
+- Add prometheus exporter to gitaly. !274
+- Add configuration for ldap authentication.
+
 ## 2018-05-08
 
 ### Security (1 change)

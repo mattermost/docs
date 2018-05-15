@@ -1,5 +1,0 @@
----
-title: Switch Gitaly Deployment to a StatefulSet
-merge_request: 271
-author:
-type: changed

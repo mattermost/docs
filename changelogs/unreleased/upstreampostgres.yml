@@ -1,5 +1,0 @@
----
-title: Replace omnibus postgresql instance with postegresql chart based on upstream
-merge_request: 216
-author:
-type: changed
