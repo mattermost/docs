@@ -56,21 +56,11 @@ Release date: 2018-05-16
  - Fixed an issue where plugin configuration was not saved in the System Console.
  - Removed duplicate indexes accidentally created on the ``Channels``, ``Emoji`` and ``OAuthAccessData`` tables.
 
+### WebSocket Event Changes
+
+### Database Changes
+
 ### Compatibility
-   
-#### Upcoming Deprecated Features in Mattermost v5.0
-
-The following deprecations are planned for the Mattermost v5.0 release, which is scheduled for summer/2018. This list is subject to change prior to the release.
-
-1. All API v3 endpoints will be removed. [See documentation](https://api.mattermost.com/#tag/schema) to learn more about how to migrate your integrations to API v4. [Ticket #8708](https://mattermost.atlassian.net/browse/MM-8708).
-2. `platform` binary will be renamed to mattermost for a clearer install and upgrade experience. All command line tools, including the bulk loading tool and developer tools, will also be renamed from platform to mattermost. [Ticket #9985](https://mattermost.atlassian.net/browse/MM-9985).
-3. The server will now fail to start if the Site URL setting [Site URL setting](https://docs.mattermost.com/administration/config-settings.html#site-url) is not set. The setting has already been required since Mattermost v3.8. [Ticket #9983](https://mattermost.atlassian.net/browse/MM-9983).
-4. A Mattermost user setting to configure desktop notification duration in **Account Settings** > **Notifications** > **Desktop Notifications** will be removed.
-5. Slash commands configured to receive a GET request will have the payload being encoded in the query string instead of receiving it in the body of the request, consistent with standard HTTP requests. Although unlikely, this could break custom slash commands that use GET requests incorrectly. [Ticket #10201](https://mattermost.atlassian.net/browse/MM-10201).
-6. A new `config.json` setting to whitelist types of protocols for auto-linking will be added. [Ticket #9547](https://mattermost.atlassian.net/browse/MM-9547).
-7. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) will be added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
-8. An unused `ExtraUpdateAt` field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
-9. [Enterprise Edition E20] Current CSV export feature will be replaced by the [new Compliance Export](https://docs.mattermost.com/administration/compliance-export.html) feature. [Ticket #8810](https://mattermost.atlassian.net/browse/MM-8810).
  
 #### config.json
 
@@ -91,10 +81,20 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - An APIv4 endpoint of ``POST /channels/{channel_id}/convert`` was added to convert a channel from public to private and to restrict this setting to ``team_admin``.
  - An APIv4 endpoint of ``DELETE /teams/{team_id}/image`` was added to remove team icon and restrict it to ``team_admin``.
+ 
+#### Upcoming Deprecated Features in Mattermost v5.0
 
-### WebSocket Event Changes
+The following deprecations are planned for the Mattermost v5.0 release, which is scheduled for summer/2018. This list is subject to change prior to the release.
 
-### Database Changes
+1. All API v3 endpoints will be removed. [See documentation](https://api.mattermost.com/#tag/schema) to learn more about how to migrate your integrations to API v4. [Ticket #8708](https://mattermost.atlassian.net/browse/MM-8708).
+2. `platform` binary will be renamed to mattermost for a clearer install and upgrade experience. All command line tools, including the bulk loading tool and developer tools, will also be renamed from platform to mattermost. [Ticket #9985](https://mattermost.atlassian.net/browse/MM-9985).
+3. The server will now fail to start if the Site URL setting [Site URL setting](https://docs.mattermost.com/administration/config-settings.html#site-url) is not set. The setting has already been required since Mattermost v3.8. [Ticket #9983](https://mattermost.atlassian.net/browse/MM-9983).
+4. A Mattermost user setting to configure desktop notification duration in **Account Settings** > **Notifications** > **Desktop Notifications** will be removed.
+5. Slash commands configured to receive a GET request will have the payload being encoded in the query string instead of receiving it in the body of the request, consistent with standard HTTP requests. Although unlikely, this could break custom slash commands that use GET requests incorrectly. [Ticket #10201](https://mattermost.atlassian.net/browse/MM-10201).
+6. A new `config.json` setting to whitelist types of protocols for auto-linking will be added. [Ticket #9547](https://mattermost.atlassian.net/browse/MM-9547).
+7. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) will be added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
+8. An unused `ExtraUpdateAt` field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
+9. [Enterprise Edition E20] Current CSV export feature will be replaced by the [new Compliance Export](https://docs.mattermost.com/administration/compliance-export.html) feature. [Ticket #8810](https://mattermost.atlassian.net/browse/MM-8810).
 
 ### Known Issues
 
