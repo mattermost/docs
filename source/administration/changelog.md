@@ -56,10 +56,6 @@ Release date: 2018-05-16
  - Fixed an issue where plugin configuration was not saved in the System Console.
  - Removed duplicate indexes accidentally created on the ``Channels``, ``Emoji`` and ``OAuthAccessData`` tables.
 
-### WebSocket Event Changes
-
-### Database Changes
-
 ### Compatibility
  
 #### config.json
