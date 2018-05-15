@@ -48,6 +48,7 @@ Table below contains all the possible charts configurations that can be supplied
 | image                        | Minio image                             | minio/minio                  |
 | imageTag                     | Minio image tag                         | RELEASE.2017-12-28T01-21-00Z |
 | imagePullPolicy              | Minio image pull policy                 | Always                       |
+| pullSecrets                  | Secrets for the image repository        |                              |
 | enabled                      | Minio enable flag                       | true                         |
 | credentials.secret           | Minio credentials secret                | gitlab-minio                 |
 | mountPath                    | Minio config file mount path            | /export                      |

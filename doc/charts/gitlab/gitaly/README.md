@@ -23,6 +23,7 @@ Table below contains all the possible charts configurations that can be supplied
 | image.repository             | Gitaly image repository                | registry.com/gitlab-org/build/cng/gitaly |
 | image.tag                    | Gitaly image tag                       | latest                                   |
 | image.pullPolicy             | Gitaly image pull policy               | Always                                   |
+| image.pullSecrets            | Secrets for the image repository       |                                          |
 | service.name                 | Gitaly service name                    | gitaly                                   |
 | service.type                 | Gitaly service type                    | ClusterIP                                |
 | service.externalPort         | Gitaly service exposed port            | 8075                                     |

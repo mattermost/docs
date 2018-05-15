@@ -29,6 +29,7 @@ Table below contains all the possible charts configurations that can be supplied
 | image.repository      | Migrations image repository                    | registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee |
 | image.tag             | Migrations image tag                           | latest                                         |
 | image.pullPolicy      | Migrations pull policy                         | Always                                         |
+| image.pullSecrets     | Secrets for the image repository               |                                                |
 | enabled               | Migrations enable flag                         | true                                           |
 | redis.serviceName     | Redis service name                             | redis                                          |
 | redis.password.secret | Redis secret                                   | gitlab-redis                                   |

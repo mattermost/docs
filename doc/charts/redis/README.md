@@ -55,6 +55,7 @@ Table below contains all the possible charts configurations that can be supplied
 | image.repository             | Redis image repository                      | redis          |
 | image.tag                    | Redis image tag                             | 3.2.5          |
 | image.pullPolicy             | Redis image pull policy                     | IfNotPresent   |
+| image.pullSecrets            | Secrets for the image repository            |                |
 | service.name                 | Redis service name                          | redis          |
 | service.type                 | Redis service type                          | ClusterIP      |
 | service.externalPort         | Redis internal port                         | 6379           |

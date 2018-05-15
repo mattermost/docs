@@ -22,6 +22,7 @@ Table below contains all the possible charts configurations that can be supplied
 | image.repository              | Unicorn image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee |
 | image.tag                     | Unicorn image tag                              | latest                                           |
 | image.pullPolicy              | Unicorn image pull policy                      | Always                                           |
+| image.pullSecrets             | Secrets for the image repository               |                                                  |
 | service.name                  | Unicorn service name                           | unicorn                                          |
 | service.type                  | Unicorn service type                           | ClusterIP                                        |
 | service.externalPort          | Unicorn exposed port                           | 8080                                             |

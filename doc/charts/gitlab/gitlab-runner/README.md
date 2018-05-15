@@ -31,6 +31,7 @@ Priveleged containers have extended capabilities, for example they can mount arb
 | gitlab-runner.image                          | runner image                               | gitlab/gitlab-runner:alpine-v10.5.0 |
 | gitlab-runner.enabled                        |                                            | redis                               |
 | gitlab-runner.imagePullPolicy                | image pull policy                          | IfNotPresent                        |
+| gitlab-runner.pullSecrets                    | Secrets for the image repository           |                                     |
 | gitlab-runner.unregisterRunners              | unregister all runners before termination  | true                                |
 | gitlab-runner.concurrent                     | number of concurrent jobs                  | 20                                  |
 | gitlab-runner.checkInterval                  | polling interval                           | 30s                                 |
@@ -39,7 +40,7 @@ Priveleged containers have extended capabilities, for example they can mount arb
 | gitlab-runner.rbac.serviceAccountName        | name of the rbac service account to create | default                             |
 | gitlab-runner.runners.image                  | default container image to use in builds   | ubuntu:16.04                        |
 | gitlab-runner.runners.imagePullSecrets       | imagePullSecrets                           | []                                  |
-| gitlab-runner.runners.privileged             | run in privileged mode,needed for `dind`  | false                               |
+| gitlab-runner.runners.privileged             | run in privileged mode,needed for `dind`   | false                               |
 | gitlab-runner.runners.namespace              | numespace to run jobs in                   | default                             |
 | gitlab-runner.runners.cache.cacheType        | cache type                                 | s3                                  |
 | gitlab-runner.runners.cache.s3BucketName.    | name of the bucket                         | runner-cache                        |

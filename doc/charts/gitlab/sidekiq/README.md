@@ -25,6 +25,7 @@ Table below contains all the possible charts configurations that can be supplied
 | image.repository          | Sidekiq image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee |
 | image.tag                 | Sidekiq image tag                              | latest                                           |
 | image.pullPolicy          | Sidekiq image pull policy                      | Always                                           |
+| image.pullSecrets         | Secrets for the image repository               |                                                  |
 | enabled                   | Sidekiq enabled flag                           | true                                             |
 | metrics.enabled           | Toggle Prometheus metrics exporter             | true                                             |
 | redis.serviceName         | Redis service name                             | redis                                            |
