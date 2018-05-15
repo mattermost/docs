@@ -18,7 +18,7 @@ All Platforms
    - Added an option to disable GPU hardware acceleration in App Settings to improve stability in some systems.
    - Fixed Windows crash issues during installation.
    - Fixed Mac and Linux crashing after toggling "Show Mattermost icon in menu bar" app setting.
-- Updated design for loading animation icon.
+ - Updated design for loading animation icon.
  - Improved appearance of server tabs.
  - Enabled `Certificate Transparency <https://www.certificate-transparency.org/what-is-ct>`_ verification in HTTPS.
 
@@ -32,7 +32,7 @@ Architectural Changes
 
  - Major version upgrade of Electron from v1.7.13 to v1.8.4. Electron is the underlying technology used to build the Desktop apps.
  - Mac download files now use Zip packages rather than tar.gz files.
- - ES6 `import` and `export` now replace the `require` and `modul.export` modules for better development.
+ - ES6 ``import`` and ``export`` now replace the ``require`` and ``modul.export`` modules for better development.
  - Storybook added to more easily develop React componets without executing the desktop app.
 
 Bug Fixes
@@ -41,7 +41,7 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^
 
- - Fixed an issue where an incorrect spellchecker language was used for non `en-US` locales on initial installation.
+ - Fixed an issue where an incorrect spellchecker language was used for non ``en-US`` locales on initial installation.
  - Fixed an issue where error page appeared when U2F device was used for multi-factor authentication through single sign-on.
  - Fixed an issue where right-clicking an image, then choosing "Save Image", did nothing.
  - Fixed an issue that prevented typing in the form fields on the add server dialog when launched from the server tab bar.
@@ -50,7 +50,7 @@ All Platforms
 Windows
 ^^^^^^^^^^^^^
 
- - Fixed an issue where `file://` protocol was not working. Note that localhost URLs are not yet supported.
+ - Fixed an issue where ``file://`` protocol was not working. Note that localhost URLs are not yet supported.
 
 Known Issues
 ~~~~~~~~~~~~~~~
