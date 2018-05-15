@@ -53,28 +53,18 @@ Helm Chart Issues/Limitations:
 * No support for changing/migrating your storage capacity/options after installation https://gitlab.com/charts/gitlab/issues/233
 * No GitLab Pages support https://gitlab.com/charts/gitlab/issues/37
 * No Monitoring support https://gitlab.com/charts/gitlab/issues/29
-* No support for outgoing email https://gitlab.com/charts/gitlab/issues/234
 * No support for incoming email https://gitlab.com/charts/gitlab/issues/235
-* No support for customizing GitLab options, e.g. LDAP https://gitlab.com/charts/gitlab/issues/236
-* No support for advanced workhorse configuration https://gitlab.com/charts/gitlab/issues/249
+* Limited support for customizing GitLab options https://gitlab.com/charts/gitlab/issues/236
 * CI traces are not persisted https://gitlab.com/charts/gitlab/issues/245
 * No support for scaling unicorn separate from workhorse https://gitlab.com/charts/gitlab/issues/61
 * GitLab maintenance rake tasks won't work in k8s environments
 * No guarantees on safe pod shutdown: https://gitlab.com/charts/gitlab/issues/239
-* New ssh hostkeys each time the shell container restarts https://gitlab.com/charts/gitlab/issues/247
-
-Once GitLab is deployed and running, you might encounter some known issues:
-
-* User uploaded content such as attachments to comments, are not persisted https://gitlab.com/charts/gitlab/issues/227
-* Navigating to Wiki shows page 500 https://gitlab.com/charts/gitlab/issues/226
-* Emails are not sent https://gitlab.com/charts/gitlab/issues/234
-* Pipelines view may generate an HTTP 500 after triggering CI
-https://gitlab.com/charts/gitlab/issues/291
 
 Features that are currently out of scope:
 
 * Support for MySQL https://gitlab.com/charts/gitlab/issues/250
 * Mattermost https://gitlab.com/charts/gitlab/issues/251
+* Relative URL as the GitLab Endpoint https://gitlab.com/charts/gitlab/issues/406
 
 ## Path to beta and general availability
 
