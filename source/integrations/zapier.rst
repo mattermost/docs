@@ -141,7 +141,7 @@ Cannot connect a Mattermost account
   .. image:: ../images/zapier-error4.png
   
 4. **"Error Invalid client id"**
-  a. Possible Solution: The **Client ID** and/or **Client Secret** might have trailing spaces in them when cust and pasted into the form. Check for trailing spaces in the **Client ID** and **Client Secret** fields and resubmit.
+  a. Possible Solution: The **Client ID** and/or **Client Secret** might have trailing spaces in them when copy and pasted into the form. Check for trailing spaces in the **Client ID** and **Client Secret** fields and resubmit.
 
   .. image:: ../images/zapier-trailing-space-error.png
 
