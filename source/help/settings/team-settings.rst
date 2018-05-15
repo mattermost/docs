@@ -29,9 +29,9 @@ You can enter a description up to 50 characters in length.
 Team Icon
 ~~~~~~~~~~~~~~~~
 
-Your **Team Icon** appears in the team sidebar within the border of the existing team icons.
+Your **Team Icon** appears in the team sidebar, visible if users are members of more than one team. 
 
-You can upload a team icon in BMP, JPG or PNG format. Square images with a solid background color are recommended. Transparency in PNG icons will fill with a white background in the Team Sidebar.
+You can upload a team icon in BMP, JPG or PNG format. Square images with a solid background color are recommended, since transparency in PNG icons fills with a white background in the Team Sidebar. Removing the team icon resets it to the default icon that contains the first two letters of the team name.
 
 Allow anyone to join this team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
