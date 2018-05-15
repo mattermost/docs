@@ -29,9 +29,6 @@ Release date: 2018-05-16
  - Removed an unnecessary WebRTC end user setting to avoid user errors and confusion.
  - Added an on-hover effect for image link previews.
  
- #### Performance
- - Remove duplicate indexes accidentally created on the ``Channels``, ``Emoji`` and ``OAuthAccessData`` tables.
- 
  #### Plugins
  - Added better plugin error handling and reporting.
  
@@ -57,6 +54,7 @@ Release date: 2018-05-16
  - Fixed an issue where 'Copy Link' context menu option was partially hidden when right-clicking a team in team sidebar.
  - Fixed an issue where a user could not log in to Mattermost when their login id ("authdata") failed to migrate properly during migration from LDAP to SAML.
  - Fixed an issue where plugin configuration was not saved in the System Console.
+ - Removed duplicate indexes accidentally created on the ``Channels``, ``Emoji`` and ``OAuthAccessData`` tables.
 
 ### Compatibility
    
