@@ -43,7 +43,7 @@ As a workaround, you can bundle the ``js`` manually first with
 
 .. code-block:: none
 
-  react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output  App/src/main/assets/index.android.bundle --assets-dest App/src/main/res/
+  --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
 
 and then ignore the gradle task with
 
