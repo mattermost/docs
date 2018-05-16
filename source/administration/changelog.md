@@ -70,14 +70,31 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Removed ``FileFormat`` and added ``""FileJson": true,`` and ``"ConsoleJson": true,`` to allow logged events to be written as a machine readable JSON format instead of the be printed as plain text.
 
 #### API Changes
-
- - Support was added to REST API for sending ephemeral messages to users.
  
-#### RESTful API v4 Changes
+##### RESTful API v4 Changes
 
+ - Support was added to RESTful API for sending ephemeral messages to users.
  - An APIv4 endpoint of ``POST /channels/{channel_id}/convert`` was added to convert a channel from public to private and to restrict this setting to ``team_admin``.
  - An APIv4 endpoint of ``DELETE /teams/{team_id}/image`` was added to remove team icon and restrict it to ``team_admin``.
  
+#### Database Changes
+
+**Users Table:**
+
+ - Migrates SAML `AuthData` to lowercase via `"UPDATE Users SET AuthData=LOWER(AuthData) WHERE AuthService = 'saml'"` query.
+
+**Channels Table:**
+
+ - Removed duplicate `Name_2` index. 
+
+**Emoji Table:**
+
+ - Removed duplicate `Name_2` index. 
+
+**OAuthAccessData Table:**
+
+ - Removed duplicate `ClientId_2` index. 
+
 #### Upcoming Deprecated Features in Mattermost v5.0
 
 The following deprecations are planned for the Mattermost v5.0 release, which is scheduled for summer/2018. This list is subject to change prior to the release.
@@ -235,6 +252,20 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
  - All API v3 endpoints have been deprecated and are scheduled for removal in Mattermost v5.0.
+
+#### Database Changes
+
+**Users Table:**
+
+ - Added `Timezone` column.
+ 
+**Teams Table:**
+
+ - Added `LastTeamIconUpdate` column.
+
+**Channels Table:**
+
+ - Removed `idx_channels_displayname` index.
 
 ### Known Issues
  - Google login fails on the Classic mobile apps.
@@ -540,11 +571,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
 ### Database Changes
 
-**User.Position field:**
-- Increased size of `user.Position` from `35` to `128` characters.
+**Users Table:**
 
-**OAuth state parameter:**
-- Increased OAuth2 state parameter limit from `128` to `1024`.
+ - Increased size of `Position` field from 35 to 128 characters.
+
+**OAuthAuthData Table:**
+
+ - Increased size of `State` field from 128 to 1024 characters.
+
+**ChannelMemberHistory Table:**
+
+ - Removed `Email` column.
+ - Removed `Username` column.
 
 ### Known Issues
 
