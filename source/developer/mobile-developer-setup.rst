@@ -24,7 +24,7 @@ iOS and Android
 
 Install the following prerequisite software to develop and build the iOS or Android apps. For macOS, we recommend using `Homebrew <https://brew.sh/>`_ as a package manager.
 
-1. Install `NodeJS <https://nodejs.org/en/>`_. (minimum required version is 9.3.0)
+1. Install `NodeJS <https://nodejs.org/en/>`_. This includes NPM which is also needed. (minimum required version is 9.3.0)
  - To install using Homebrew open a terminal and execute
  .. code-block:: bash
 
@@ -44,18 +44,7 @@ Install the following prerequisite software to develop and build the iOS or Andr
 
     $ npm -g install react-native-cli
 
-4. Install yarn (used as our package manager for the mobile apps, recommended version is 1.3.2)
- - To install using Homebrew open a terminal and execute
- .. code-block:: bash
-
-    $ brew install yarn
-
- - To install using `NPM <https://github.com/npm/npm>`_ open a terminal and execute
- .. code-block:: bash
-
-    $ npm -g install yarn
-
-5. We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/>`_ to get the source code. Optionally, you can also contribute your changes back with `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
+4. We use GitHub to host the source code so we recommend that you install `Git <https://git-scm.com/>`_ to get the source code. Optionally, you can also contribute by submitting `pull requests <https://help.github.com/articles/creating-a-pull-request/>`_.
    If you do not have git installed you can do so with Homebrew by opening a terminal and executing:
 
  .. code-block:: bash
@@ -141,14 +130,14 @@ If you need to add a new dependency to the project, it is important to add them 
 JavaScript Only
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you need to add a new JavaScript dependency that is not related to React Native, **use yarn, not npm**. Be sure to save the exact version number to avoid conflicts in the future. 
+If you need to add a new JavaScript dependency that is not related to React Native, **use npm, not yarn**. Be sure to save the exact version number to avoid conflicts in the future. 
 
-	e.g. ``yarn add -E <package-name>``
+	e.g. ``npm add -E <package-name>``
   
 React Native
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-As with `JavaScript only <JavaScript Only>`_, **use yarn** to add your dependency and include an exact version. Then link the library in React Native by running ``react-native link <package-name>`` in a terminal.
+As with `JavaScript only <JavaScript Only>`_, **use npm** to add your dependency and include an exact version. Then link the library in React Native by running ``react-native link <package-name>`` in a terminal.
 
 Be aware that we are using React Native Navigation. For Android, you might need to complete the linking process manually as the ``react-native link`` command won't do it for you.
 
@@ -341,6 +330,14 @@ App Groups are used to share data between the main app and the app extension.
 
 Finally, you'll need to set the same app group in your config.json under the assets folder. Refer to `Overriding Assets & White Labeling`_ section for further instructions.
 
+Configure iCloud container identifier
+++++++++++++++++++++++++++++++++++++++
+
+Select the **Mattermost** project in the Xcode Project Navigator, then select the **Mattermost** target. Look for the "Capabilities" tab.
+Expand the **iCloud** capability, select the option to *Specify custom containers* and then add and enable your own.
+
+.. image:: ../../source/images/mobile/ios_icloud.png
+
 Build and Run the App
 ++++++++++++++++++++++
 
@@ -437,7 +434,8 @@ or
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | ANDROID_APP_NAME                              | The name of the app as it is going to be shown in the Android home screen.                            | Mattermost Beta         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
-| ANDROID_REPLACE_ASSETS                        | Replaces app icons with the ones found under the folder *dist/assets/release/icons/android*.          | false                   |
+| ANDROID_REPLACE_ASSETS                        | Replaces app icons with the ones found under the folder *dist/assets/release/icons/android* and       | false                   |
+|                                               | the splash screen with the ones found under the folder */dist/assets/release/splash_screen/android*.  |                         |
 |                                               | Valid values are: true, false                                                                         |                         |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+-------------------------+
 | ANDROID_INCREMENT_BUILD_NUMBER                | Increases the Android app build number, required when a new build is going to be publish to the       | false                   |
@@ -513,7 +511,8 @@ or
 |                                               | **Make sure you set this value to true if you plan to submit this app to TestFlight or distribute     |                                        |
 |                                               | it in any other way**.                                                                                |                                        |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
-| IOS_REPLACE_ASSETS                            | Replaces the icons of the app with the ones found under the folder *dist/assets/release/icons/ios*.   | false                                  |
+| IOS_REPLACE_ASSETS                            | Replaces the icons of the app with the ones found under the folder *dist/assets/release/icons/ios*    | false                                  |
+|                                               | and the splash screen with the one found under the folder *dist/assets/release/splash_screen/ios*.    |                                        |
 |                                               | Valid values are: true, false                                                                         |                                        |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
 | IOS_INCREMENT_BUILD_NUMBER                    | Increases the iOS app build number, required when a new build is going to be publish to TestFlight    | false                                  |
@@ -530,6 +529,8 @@ or
 | IOS_EXTENSION_APP_IDENTIFIER                  | The Bundle Identifier for the share extension app.                                                    | com.mattermost.rnbeta.MattermostShare  |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
 | IOS_APP_GROUP                                 | The iOS App Group identifier used to share data between the app and the share extension.              |                                        |
++-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
+| IOS_ICLOUD_CONTAINER                          | The iOS iCloud container identifier used to support iCloud storage.                                   | iCloud.com.mattermost.rnbeta           |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------+----------------------------------------+
 | IOS_BUILD_EXPORT_METHOD                       | Method used to export the archive.                                                                    | adhoc                                  |
 |                                               | Valid values are: app-store, ad-hoc, enterprise, development                                          |                                        |
@@ -721,7 +722,7 @@ Overriding Assets & White Labeling
 We've made it easy to white label the mobile app and to replace override the assets used, however, you have to `Build Your Own App from Source`_.
 
 If you look at the `Project Directory Structure`_, you'll see that there is an assets folder containing a base folder with assets provided by Mattermost.
-These include localization files, images and a release folder that optionally contains the icons of the app when building in release mode.
+These include localization files, images and a release folder that optionally contains the icons and the splash screen of the app when building in release mode.
 
 To replace these with your own assets, create a sub-directory called ``override`` in the ``assets`` folder. Using the same
 directory structure and file names as in the ``base`` directory, you can add assets to the override folder to be used instead.
@@ -736,6 +737,22 @@ Images
 ~~~~~~
 
 To replace an image, copy the image to ``assets/override/images/`` with the same location and file name as in the ``base`` folder.
+
+.. note::
+ Make sure the images have the same height, width and DPI as the images that you are overriding.
+
+App Splash Screen and Launch Icons
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In the ``assets`` directory you will find a folder named ``assets/base/release`` which contains an ``icons`` folder and a ``splash_screen`` folder
+under each platform directory.
+
+Copy the full ``release`` directory under ``assets/override/release`` and then replace each image with the same name. Make sure you replace all the
+icon images for the platform you are building for the app - the same applies to the splash screen.
+
+.. important::
+The Splash Screen's background color is white by default and the image is centered. If you need to change the color or the layout to improve the experience of your new splash screen
+make sure that you also override the file ``launch_screen.xml`` for Android and ``LaunchScreen.xib`` for iOS. `` Both can found under ``assets/base/release/splash_screen/<platform>``.
 
 .. note::
  Make sure the images have the same height, width and DPI as the images that you are overriding.

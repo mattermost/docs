@@ -67,6 +67,7 @@ Database Software
 
 -  MySQL 5.6+
 -  PostgreSQL 9.4+
+-  Amazon Aurora MySQL 5.6+
 
 Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost-server/issues/2033#issuecomment-183872616>`__ for details.
 
@@ -84,7 +85,7 @@ Search limitations on MySQL:
 Hardware Requirements
 ---------------------
 
-Usage of CPU, RAM and storage space can vary significantly based on user behavior. For deployments larger than 500 users, it's highly recommended usage patterns in a small pilot deployment representative of your large organization is observed before rolling out the full scale service.
+Usage of CPU, RAM and storage space can vary significantly based on user behavior. For deployments larger than 500 users, it's highly recommended usage patterns in a small pilot deployment representative of your large organization are observed before rolling out the full scale service.
 
 Hardware Sizing for Team Deployments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -97,7 +98,7 @@ Most small to medium Mattermost team deployments can be supported on a single se
 
 Notes:
 
-1. Memory requirements are largely driven by peak file sharing activity. Recommendation is based on defaul 50 MB max file size, which can be adjusted from the System Console. Changing this number may change memory requirements.   
+1. Memory requirements are largely driven by peak file sharing activity. Recommendation is based on default 50 MB max file size, which can be adjusted from the System Console. Changing this number may change memory requirements. 
 2. Larger deployments should estimate utilization based on pilots representative of full scale usage. 
 3. Storage recommendation is based on storing 3 years of archives with moderate file sharing.
 4. Solid state drives (SSD) can be used in place of disk storage for higher concurrency.

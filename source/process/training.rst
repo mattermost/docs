@@ -86,12 +86,10 @@ Developer Meeting
 
 Procedure:
 
-1. (Chair): Post meeting agenda in `Developers channel <https://pre-release.mattermost.com/core/channels/developers>`_ (open to the public), tagged with ``#devmeeting``
+1. (Team and Public): Post meeting agenda in `Developers Meeting channel <https://pre-release.mattermost.com/core/channels/developers-meeting>`_ (open to the public). Please see instructions on `how to queue an item <https://pre-release.mattermost.com/core/pl/q4wcrcnxhtf1fr9grneb6fbrxy>`_.
 2. (Team and Public): At the time of the meeting:
 
-      - Join the **Hangouts** link posted in the meeting agenda in the `Developers channel <https://pre-release.mattermost.com/core/channels/developers>`_
-
-To review past agendas for the Developer meeting in the `Developers channel <https://pre-release.mattermost.com/core/channels/developers>`_ click on the ``#devmeeting`` hashtag in any of the meeting notes, or search for it directly.
+      - Join the **Hangouts** link posted in the meeting agenda in the `Developers Meeting channel <https://pre-release.mattermost.com/core/channels/developers-meeting>`_.
 
 
 Mattermost Staff Meetings
@@ -103,76 +101,61 @@ For confidentiality of customers, internal process meetings are limited to Matte
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff only** - (Developer - 5-10 minutes/week) Tuesdays between 10:00 and 11:00 (`San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost staff only** - Each team is responsible for its own sprint planning process. Sprints are currently one week long, and start on Tuesdays. Before the next sprint begins, teams share a quick recap of their past and upcoming sprint with leads.  
 
-- Goal: Review and discuss tickets selected by developer for next sprint
-- Attendees: (required) Each developer in sequence, plus spint planners (one dev, one PM), (optional) Mattermost staff colleagues welcome
-
-Note:
-
-- This meeting uses a special `Mattermost staff-only BACKLOG query <https://mattermost.atlassian.net/secure/RapidBoard.jspa?rapidView=1&view=planning.nodetail&quickFilter=7>`_ showing tickets by sprint, with tabs across the top for each developer
-- Prior to meeting, developers drag and drop tickets from their backlog to next sprint based on team priorities
-- Developers are welcome at any time to discuss reassigning tickets with colleagues using common sense (if both are okay with the change, add "triage" tag to fix version with comment and triage team will review to make the change)
-- During the meeting, developer's next sprint is reviewed, discussed, possibly adjusted and locked
-
-Procedure:
-
-1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/private-core/channels/stand-up>`_
-2. (Developer): Replies in Standup private channel when sprint is ready for review
-3. (Chair): Will (at)mention next developer to join **Hangout** to review tickets. Developer joins, tickets are discussed and finalized for next sprint. Developer leaves **Hangout** and next developer rotates in.
+- Goal: Share demos, reflect on previous sprint, and lock on tickets for next sprint.
+- Attendees: Development team members (developers and product manager), plus leads for Tuesday recap.
 
 Triage Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff-only** - (Triage team - 1-3 hours/week) Monday, Wednesday, Friday 09:00 (`San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost staff-only** - (Triage team - 1-3 hours/week) Tuesdays and Thursdays at 09:30 (`San Francisco Time <http://everytimezone.com/>`_), or daily when a release is upcoming.
 
-- Goal: To provide consistent review, prioritization and ownership assignment of all tickets
-- Attendees: (required) dev and PM from Mattermost staff, typically leads (optional) other Mattermost staff welcome
+- Goal: To provide consistent review, prioritization and ownership assignment of all tickets.
+- Attendees: One dev representative from each team (ABC, XYZ, ICU), one PM, QA team, Release Manager during release, and optionally leads and other Mattermost staff.
 
 Note:
 
-- ONLY TRIAGE TEAM should set or change the **Fix Version** of a ticket.
+ - ONLY TRIAGE TEAM should set or change the **Fix Version** of a ticket.
 
-    - When tickets are first created, they go to triage to be reviewed for clarity and priority and assigned a **Fix Version**. Unclear tickets may be assigned to their creator for more information.
-    - The **Fix Version** determines the sequence in which tickets are addressed and triage team is accountable for that sequence.
+ - When tickets are first created, they go to triage to be reviewed for clarity and priority and assigned a Fix Version, Mattermost Team and Sprint. Unclear tickets may be assigned to their creator for more information.
+     - The **Fix Version** determines the sequence in which tickets are addressed and triage team is accountable for that sequence. It is the responsibility of the triage team to make sure tickets are clear before they're assigned a Fix Version.
+     - When assigning a ticket to a **Mattermost Team**, it gets assigned to a dev and put into current sprint if the ticket is time-sensitive for release. Otherwise the ticket is assigned to a team (e.g. ABC) and is later prioritized and assigned to the appropriate people within that team.
+     - The **Sprint** determines the time frame in which a dev is responsible for fixing the ticket.
 
-- If you're ever unsure about a ticket (if it's not clear, or doesn't seem appropriate) add a comment and add **triage** to the **Fix Version** field, which will trigger a review by the triage team in 1-2 working days.
+ - If you're ever unsure about a ticket (if it's not clear, or doesn't seem appropriate) add a comment and add triage to the Fix Version field, which will trigger a review by the triage team in 1-2 working days.
+     - Note: if the ticket is already assigned to a team and/or sprint, it will not appear in the triage query - easiest is to let the triage team know about the ticket so that it won't be missed.
 
-    - It's the responsibility of the triage team to make sure tickets are clear before they're assigned a **Fix Version**.
-
-- ONLY TRIAGE TEAM can close a ticket resolved as **Won't Fix** or **Won't do**
-
-    - These tickets resolved in such a way are reviewed by triage team.
-    - Only resolve a ticket as **Won't Fix** or **Won't Do** if you're highly confident it's the correct decision, otherwise, add "triage" to Fix Version for review. In either case, include a comment with your reason.
+ - ONLY TRIAGE TEAM can close a ticket resolved as **Won't Fix** or **Won't do**.
+     - These tickets resolved in such a way are reviewed by triage team.
+     - Only resolve a ticket as **Won't Fix** or **Won't Do** if you're highly confident it's the correct decision, otherwise, add "triage" to Fix Version for review. In either case, include a comment with your reason.
 
 Procedure:
 
-1. (Chair): Just prior to meeting, post **Hangout** link in `Standup private channel <https://pre-release.mattermost.com/core/channels/stand-up>`_ (Mattermost staff only)
+1. (Attendees): Join Zoom meeting link in calendar invitation at scheduled time.
 
-2. (Attendees): Join the link
-
-3. (Attendees): Review `query for tickets needing triage <https://mattermost.atlassian.net/browse/PLT-1203?filter=10105>`_ and assign owner and fix version
+2. (Attendees): Review `query for tickets needing triage <https://mattermost.atlassian.net/browse/MM-8015?filter=15011>`_ and assign a development team, sprint and fix version.
 
 Leads Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff-only** - (Leads - 1-3 hours/week) Monday and Wednesday (9:00 `San Francisco Time <http://everytimezone.com/>`_)
+**Mattermost staff-only** - (Leads - 1 hour/week) Wednesday (13:00 `San Francisco Time <http://everytimezone.com/>`_)
 
-- Goal: Address leadership and process topics
-- Attendees: (Required) Dev, PM, community/marketing leads from Mattermost staff, with sales lead and other Mattermost staff optional. 
+- Goal: Address leadership and process topics.
+- Attendees: (Required) Leads from R&D, Marketing, Sales, and Operations.
 
 Note:
 
 - Decisions should go to Leads meetings when there is lack of clarity or ownership, or to discuss special case topics where process is not well defined. 
 
-    - When possible, decision-making should belong to the people closes to details
+    - When possible, decision-making should belong to the people closes to details.
     - Individual developers or PMs should make most decisions, and raise to developer or PM team if things are unclear, and go to Leads if lack of clarify persists.
 
-- To queue an item for Leads ask the dev or PM lead
+- To queue an item for Leads ask the dev or PM lead.
 
-- Leads is also used for cross-discipline Q&A
+- Leads is also used for cross-discipline Q&A.
 
-    - Rather than randomize individual contributors, cross-discipline discussion (e.g. marketing to PM, community to dev, etc.) can happen in leads
+    - Rather than randomize individual contributors, cross-discipline discussion (e.g. marketing to PM, community to dev, etc.) can happen in leads.
 
 Procedure:
 
@@ -187,84 +170,69 @@ Platform Meeting
 
 Regular team meeting for product staff team at Mattermost Inc.
 
-- Goal: Increase team output by effectively reviewing priorities and finding blindspots
-- Scope: Mattermost Inc-only meeting given confidential customer issues discussed
-- Attendees: Mattermost Inc colleagues working on mattermost-server and mattermost-webapp
+- Goal: Increase team output by effectively reviewing priorities and finding blindspots.
+- Scope: Mattermost Inc-only meeting given confidential customer issues discussed.
+- Attendees: Mattermost Inc colleagues working on mattermost-server and mattermost-webapp.
 
-Platform meeting consists of two parts, Team Operation Review Meeting and Product Staff Meeting.
-
-All Mattermost staff attends the Team Operation Review Meeting. It provides an opportunity to teach and learn between people who don’t otherwise deal with each other much. Includes presentations and demos.
-
-Only the product team attends the Product Staff Meeting, others' attendance is optional. The meeting consists of people who work closely together. Includes controlled agenda items (e.g. queued items) with an "open session" where staff can bring up anything they want. Staff should arrive at decisions during the meeting or schedule further discussion for the next meeting.
+The meeting includes presentations and demos, controlled agenda items (e.g. queued items) with an "open session" where staff can bring up anything they want. Staff should arrive at decisions during the meeting or schedule further discussion for the next meeting.
 
 Procedure:
 
-1. (Chair) 3-hours before standup, post reminders in `Platform Meeting private channel <https://pre-release.mattermost.com/core/channels/platform-meeting>`_ (Mattermost Inc only)
+1. (Vice Chair) the day before the meeting, post a reminder in `Platform Meeting private channel <https://pre-release.mattermost.com/core/channels/platform-meeting>`_ (Mattermost Inc only)
 
 ::
 
-   #### @channel Platform Meeting Reminder
-   Everyone please:
-   - **Prepare your demos**
-   - **Prepare your roundtable open discussion**
-
-   @[RELEASE MANAGER] please:
-   - **Prepare your roadmap checkin**
-
-   @[WHOEVER] are you ready for your "Ice-breaker"?
+   #### @channel A reminder to prepare your items for Platform meeting [DATE]:
+   1. @[name], @[name] & @[name] - you're up for ice-breaker [Question](https://docs.google.com/document/d/1A0D96O4t4GS33-  yaHvLQBdtgIScmwzVo15c2vSFeYis/edit#bookmark=id.q182tvgkdewa)
+   2. If you'll be giving a demo, please queue it [in the meeting notes](link) 
+   ##### Everyone is encouraged to bring up items for discussion. If the discussion is `time-copped` during the meeting, please be sure to add a `next step` to the notes and post a link to where the conversation can be continued. ~platform channel is usually a good place to continue discussions.
 
 
 2. (Team) At time of meeting:
 
-   - Join the **Hangout** link in the header of the `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_
-   - Open the **Notes** link in the header to see the agenda
+   - Join the **Zoom** link in the header of the `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_.
+   - Open the **Notes** link in the header to see the agenda.
 
-3. (Vice-Chair) Post `"Standing Items" template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`_ into Platform Meeting Notes
-
-    - Add **Follow-ups** from previous meeting
-    - Add **New items** queued in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+3. (Vice-Chair) Post `meeting notes template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`_ into Platform Meeting Notes.
+   
+   - Add **Follow-ups** from previous meeting.
+   - Add **New items** queued in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only).
 
 Meeting Agenda:
 
-Team Operation Review Meeting
-
-- **Warm-up** - Currently: "Share something interesting about your weekend."
+- **Ice-breaker** - Currently: "Questions"
 - **Roadmap check-in** - Review of roadmap status in current and next release
-- **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted.
+- **Company update** - A summary from leads
+- **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
 - **New items** - New team relevant items are discussed
-
-Product Staff Meeting
-
-- **Roundtable Open Discussion** - Each colleague shares something important to discuss with the team. Examples: external customer or user issue, potential process improvement. Follow-ups noted.
-- **New items** - New product staff relevant items are discussed
-- **Follow-ups** - Follow-ups from previous meeting are discussed
-- **Questions** - To find blindspots, meeting does not end until 3 open questions are asked and answered.
+- **Blind spots, Inspiration, Knowledge Share** - Colleagues share areas of concern and ask questions
 
 Post Meeting:
 
-- Follow-up items are posted to the  `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only)
+- If there are follow-up items, these are posted to the  `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`_ (Mattermost Inc only).
 
 Meeting Elements
 -----------------------
 
 Here we summarize meeting elements that can be re-used for meetings across teams.
 
-Warm-ups
+Ice-breaker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - 2-3 minute exercises designed to learn more a colleagues at the start of a recurring meeting
-- Typically rotates alphabetically by first name, one colleague per meeting
+- Typically rotates alphabetically by first name, three colleagues per meeting
 - Examples:
 
    - "Hobby talk" - sharing about an interesting hobby, past or present
    - "My home town" - sharing something interesting about where you grew up
-   - "Two truths and a lie" - share two true facts about yourself and one lie, team guesses which is the lie.
+   - "Two truths and a lie" - share two true facts about yourself and one lie, team guesses which is the lie
+   - "Questions" - e.g. "What would constitute a “perfect” day for you?"
 
-Open Questions
+Blind spots, Inspiration, Knowledge Share
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Exercise to find blindspots in team thinking at the end of a meeting
-- Meeting does not end until 3 questions are asked and answered, typically at least one of the questions reveals a blindspot or opportunity to improve communication.
+- Colleagues share areas of concern and ask questions which invariably disclose blind-spots or are an opportunity to improve communication.
 - Examples of questions:
 
     - "What's the status on X?" // often an important item that got forgotten
@@ -316,7 +284,6 @@ Consider when two rational people disagree, the cause often comes from one of th
 
 While the emotions, assumptions, priority mindset won't work for everyone in every case, it's helped resolve complex decisions in our company's history.
 
-
 Likes & Wishes
 ---------------------------------------------
 
@@ -326,7 +293,6 @@ An easy way to check in with team members about how things are going.
 - What do you *wish* we might change?
 
 Use these one-on-one or in a group as a way to open conversations about what to keep and what to change in how we do things.
-
 
 Mini-boss, End-boss
 ---------------------------------------------

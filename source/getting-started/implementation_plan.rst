@@ -237,7 +237,15 @@ Train administrators on the tasks required to manage Mattermost.
 
 **Reference**: https://docs.mattermost.com/guides/administrator.html
 
-3.3.13 Onboard Users
+3.3.13 Update Legal & Support Settings
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/legal_and_support_settings.png
+	:alt: Legal and Support settings 
+
+Mattermost has configuration settings for the terms of service, privacy policy, and support URLs and emails. It is highly recommended that you modify these in your configuration so that your users have the correct legal information and can contact administrators to resolve account issues. You can find these under **System Console > Legal and Support**.
+
+3.3.14 Onboard Users
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Send all users a welcome email with instructions on how to get started using Mattermost including links to the mobile applications and the User Guide.

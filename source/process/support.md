@@ -111,6 +111,38 @@ Typically found in `/etc/nginx/nginx.conf` and `/etc/nginx/sites-available/matte
 #### Can you send us a snippet of your Nginx error logs around the time of the incident?
 Typically found in `/var/log/nginx/error.log`
 
+
+## LDAP Issues
+
+#### Attach your LDAP settings from config.json.
+The username/password should be removed.
+
+#### What AD/LDAP server and version are you using?
+E.g.: Active Directory on Windows Server 2016.
+
+#### Are there any LDAP errors in the logs?
+
+#### Is there a limit on the number of users the LDAP server can return in a single query? If so, have you set the Maximum Page Size in Mattermost?
+Many LDAP servers have an upper limit on the number of users returned, so they might be hitting that limit. An error will appear in the logs usually informing of this case, but it's good to try anyway. 
+
+#### Can you send an example user from you system? 
+ldapsearch command format is preferred.
+
+#### Is the server properly licensed?
+Check the licensing page in the system console.
+
+## TLS/SSL Issues
+
+#### Are you using a proxy or the built in TLS support?
+
+#### Are there any errors in the Mattermost logs?
+
+#### Send us your config.json.
+
+#### Send your proxy configuration if you are using one.
+
+#### Have you followed one of the setup guides?
+
 ## GitLab Issues
 
 #### General Questions

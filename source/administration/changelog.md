@@ -112,7 +112,17 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 
 ## Release v4.9
 
-Release date: 2018-04-16
+ - **4.9.3, released 2018-05-15**
+   - Fixed an issue where plugin configuration got corrupted upon saving the configuration via the System Console.
+ - **4.9.2, released 2018-05-04**
+   - Fixed an issue with permissions migration when ``AllowEditPost`` was set to "Always".
+ - **4.9.1, released 2018-04-27**
+   - Fixed an issue where System Console permissions settings displayed a false error when running High Availability mode.
+   - Fixed a race condition on loading roles in the System Console.
+   - Reverted a change causing significant performance degradation when loading posts.
+   - Fixed a performance issue causing significant initial load time for the Desktop application.
+ - **v4.9.0, released 2018-04-16**
+   - Original 4.9.0 release
 
 ### Highlights
 
@@ -177,7 +187,9 @@ Release date: 2018-04-16
 
 #### Removed and Deprecated Features
 
- - Several configuration settings have been migrated to roles in the database and changing their `config.json` values no longer take effect. These permissions can still be modified by their respective System Console settings as before. The affected `config.json` settings are:
+ - To improve the production use of Mattermost with Docker, the docker image is now running a as non-root user and listening on port 8000. Please read the [upgrade instructions](https://github.com/mattermost/mattermost-docker#upgrading-mattermost-to-49) for important changes to existing installations.
+
+- Several configuration settings have been migrated to roles in the database and changing their `config.json` values no longer takes effect. These permissions can still be modified by their respective System Console settings as before. The affected `config.json` settings are:
    - RestrictPublicChannelManagement
    - RestrictPrivateChannelManagement
    - RestrictPublicChannelCreation
@@ -196,7 +208,7 @@ Release date: 2018-04-16
 
 The following deprecations are planned for the Mattermost v5.0 release, which is scheduled for summer/2018. This list is subject to change prior to the release.
 
-1. All API v3 endpoints will be removed. [See documentation](https://api.mattermost.com/#tag/schema) to learn more about how to migrate your integrations to API v4. [Ticket #8708](https://mattermost.atlassian.net/browse/MM-8708).
+1. All API v3 endpoints will be removed. [See documentation](https://api.mattermost.com/#tag/APIv3-Deprecation) to learn more about how to migrate your integrations to API v4. [Ticket #8708](https://mattermost.atlassian.net/browse/MM-8708).
 2. `platform` binary will be renamed to mattermost for a clearer install and upgrade experience. All command line tools, including the bulk loading tool and developer tools, will also be renamed from platform to mattermost. [Ticket #9985](https://mattermost.atlassian.net/browse/MM-9985).
 3. [Site URL setting](https://docs.mattermost.com/administration/config-settings.html#site-url) will be enforced to reduce number of OAuth, plugin and email notification set up errors. The setting has already been required since Mattermost v3.8. [Ticket #9983](https://mattermost.atlassian.net/browse/MM-9983).
 4. A new `config.json` setting to whitelist types of protocols for auto-linking will be added. [Ticket #9547](https://mattermost.atlassian.net/browse/MM-9547).

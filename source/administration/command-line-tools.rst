@@ -251,11 +251,12 @@ platform channel modify
   Example
     .. code-block:: none
 
-      sudo ./platform channel modify myteam:mychannel --private
+      sudo ./platform channel modify myteam:mychannel --username myusername --private
 
   Options
     .. code-block:: none
 
+          --username [REQUIRED] Username of the user who is changing the channel privacy.
           --public   Change a private channel to be public.
           --private  Change a public channel to be private.
 
@@ -273,8 +274,13 @@ platform channel move
   Example
     .. code-block:: none
 
-      sudo ./platform channel move newteam 8soyabwthjnf9qibfztje5a36h
-      sudo ./platform channel move newteam myteam:mychannel
+      sudo ./platform channel move newteam 8soyabwthjnf9qibfztje5a36h --username myusername
+      sudo ./platform channel move newteam myteam:mychannel --username myusername
+
+  Options
+    .. code-block:: none
+
+          --username [REQUIRED] Username of the user who is moving the team
 
 platform channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -524,6 +530,7 @@ platform team
     -  `platform team add`_ - Add users to a team
     -  `platform team create`_ - Create a team
     -  `platform team delete`_ - Delete a team
+    -  `platform team list`_ - List all teams
     -  `platform team remove`_ - Remove users from a team
 
 .. _team-value-note:
@@ -598,6 +605,22 @@ platform team delete
     .. code-block:: none
 
           --confirm   Confirm you really want to delete the team and a DB backup has been performed.
+
+platform team list
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    List all teams on the server.
+
+  Format
+    .. code-block:: none
+
+      platform team list
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform team list
 
 platform team remove
 ~~~~~~~~~~~~~~~~~~~~~~~~

@@ -484,7 +484,7 @@ Set the time limit that users have to edit their messages after posting.
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature has two settings in ``config.json``. The first setting is ``"AllowEditPost": "always"`` with options ``always``, ``never``, and ``time_limit``.  |
 |                                                                                                                                                               |
-| The second setting is ``"PostEditTimeLimit": -1`` with whole number input. To enable ``PostEditTimeLimit``, set ``AllowEditPost`` to ``time_limit``.         |
+| The second setting is ``"PostEditTimeLimit": -1`` with whole number input. To enable ``PostEditTimeLimit``, set ``AllowEditPost`` to ``time_limit``.          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Announcement Banner
@@ -706,7 +706,7 @@ Enable Webhook Debugging
 Enable Diagnostics and Error Reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: To improve the quality and performance of future Mattermost updates, this option sends error reporting and diagnostic information to Mattermost, Inc. To learn more about this feature, see :doc:`telemetry`.
+**True**: To improve the quality and performance of future Mattermost updates, this option sends error reporting and diagnostic information to Mattermost, Inc. All diagnostics and error reporting is encrypted in transit and does not include personally identifiable information or message contents. To learn more about this feature, see :doc:`telemetry`.
 
 **False**: Diagnostics and error reporting are disabled.
 
@@ -1984,17 +1984,6 @@ Enable Plugins
 | This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false`` for above settings respectively.                                    | 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Plugin Uploads
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to false to control which plugins are installed on your server. See `documentation <https://about.mattermost.com/default-plugin-uploads>`_ to learn more.
-
-**False**: Disables plugin uploads on your Mattermost server.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false`` for above settings respectively.                            | 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Upload Plugin
@@ -2066,69 +2055,92 @@ ________
 
 Files
 --------------------------------
-Settings to configure files storage and image handling.
+Mattermost currently supports storing files on the local filesystem and to Amazon S3 and compatible containers like `Minio <https://www.minio.io/>`_. or Digital Ocean Spaces.
 
 Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-File Storage System
+File Storage System 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Storage system where files and image attachments are saved.
+
++-------------------------+---------------------+
+| ``config.json`` setting | ``DriverName``      |
++-------------------------+---------------------+
+| Allowed Values          | ``local`` (default) |
+|                         | ``amazons3``        |
++-------------------------+---------------------+
+
+This selects which file storage system is used, Local File System or Amazon S3.
 
 **Local File System**: Files and images are stored in the specified local file directory.
 
-**Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields. The ``amazons3`` driver is compatible with Minio (Beta) based on the provided access key, bucket and region fields.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DriverName": "local"`` with options ``local`` and ``amazons3`` for above settings respectively.                         |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+**Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields. The ``amazons3`` driver is compatible with Minio (Beta) and Digital Ocean Spaces based on the provided access key, bucket and region fields.
 
 Local Storage Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Directory to which files are written. If blank, directory will be set to ./data/.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Directory": "./data/"`` with string input.                                                                              |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------+--------------------------------------------------------------------------------------+
+| ``config.json`` setting | ``Directory``                                                                        |
++-------------------------+--------------------------------------------------------------------------------------+
+| Allowed Values          | Any directory writeable by the user Mattermost is running as. Default is ``./data/`` |
++-------------------------+--------------------------------------------------------------------------------------+
+
+The local directory to which files are written when the File Storage System is set to ``local``. This is relative to the directory Mattermost is installed to and defaults to ``./data`` When File Storage System is set to S3 this setting has no effect.
 
 Amazon S3 Bucket
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Name you selected for your S3 bucket in AWS.
+The name of the bucket for your S3 compatible object storage instance.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3Bucket": ""`` with string input.                                                                                |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------+---------------------------------------------+
+| ``config.json`` setting | ``AmazonS3Bucket``                          |
++-------------------------+---------------------------------------------+
+| Allowed Values          | A string with the S3-compatible bucket name |
++-------------------------+---------------------------------------------+
+
 
 Amazon S3 Region
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AWS region you selected when creating your S3 bucket. If no region is set, Mattermost attempts to get the appropriate region from AWS, or sets it to 'us-east-1' if none found.
+AWS region you selected when creating your S3 bucket. If no region is set, Mattermost attempts to get the appropriate region from AWS, or sets it to 'us-east-1' if none found. For Minio or Digital Ocean Spaces leave this setting empty
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3Region": ""`` with string input.                                                                                |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------+---------------------------------------------+
+| ``config.json`` setting | ``AmazonS3Region``                          |
++-------------------------+---------------------------------------------+
+| Allowed Values          | A string with the S3-compatible bucket name |
++-------------------------+---------------------------------------------+
+
 
 Amazon S3 Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Hostname of your S3 Compatible Storage provider. Defaults to "s3.amazonaws.com".
+Hostname of your S3-compatible instance. Defaults to "s3.amazonaws.com".
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3Endpoint": "s3.amazonaws.com"`` with string input.                                                              |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. note::
+  For Digital Ocean Spaces, the hostname should be set to ``<region>``.digitaloceanspaces.com, where ``<region>`` is the abbreviation for the region you chose when setting up the Space. It can be ``nyc3``, ``ams3``, or ``sgp1``.
+
++-------------------------+------------------------------------------------------------------+
+| ``config.json`` setting | ``AmazonS3Endpoint``                                             |
++-------------------------+------------------------------------------------------------------+
+| Allowed Values          | A string with the hostname of the S3-compatible storage instance |
++-------------------------+------------------------------------------------------------------+
+
 
 Amazon S3 Access Key ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Only required if you do not want to authenticate to S3 using an `IAM role <https://about.mattermost.com/default-iam-role>`_. Enter the Access Key ID provided by your Amazon EC2 administrator.
+This is required for access unless you are using an `Amazon S3 IAM Role <https://about.mattermost.com/default-iam-role>`_ with Amazon S3. Your EC2 administrator can supply you with the access key ID.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3AccessKeyId": ""`` with string input.                                                                           |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------+---------------------------------------------------------------------+
+| ``config.json`` setting | ``AmazonS3AccessKeyId``                                             |
++-------------------------+---------------------------------------------------------------------+
+| Allowed Values          | A string with the access key for the S3-compatible storage instance |
++-------------------------+---------------------------------------------------------------------+
 
 Amazon S3 Secret Access Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The secret access key associated with your Amazon S3 Access Key ID.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3SecretAccessKey": ""`` with string input.                                                                       |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------+----------------------------------------------------------------------------+
+| ``config.json`` setting | ``AmazonS3SecretAccessKey``                                                |
++-------------------------+----------------------------------------------------------------------------+
+| Allowed Values          | A string with the secret access key for the S3-compatible storage instance |
++-------------------------+----------------------------------------------------------------------------+
 
 Enable Secure Amazon S3 Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2137,9 +2149,11 @@ Enable Secure Amazon S3 Connections
 
 **False**: Allows insecure connections to Amazon S3.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3SSL": true`` with options ``true`` and ``false`` for above settings respectively.                               |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------+--------------------------------------------+
+| ``config.json`` setting | ``AmazonS3SSL``                            |
++-------------------------+--------------------------------------------+
+| Allowed Values          | ``true`` or ``false``, default is ``true`` |
++-------------------------+--------------------------------------------+
 
 Enable Server-Side Encryption for Amazon S3
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2150,9 +2164,14 @@ Enable Server-Side Encryption for Amazon S3
 
 **False**: Doesn't encrypt files in Amazon S3.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3SSE": true`` with options ``true`` and ``false`` for above settings respectively.                               |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+.. note::
+  Server-Side Encryption only works with Amazon S3
+
++-------------------------+---------------------------------------------+
+| ``config.json`` setting | ``AmazonS3SS3``                             |
++-------------------------+---------------------------------------------+
+| Allowed Values          | ``true`` or ``false``, default is ``false`` |
++-------------------------+---------------------------------------------+
 
 Enable Amazon S3 Debugging
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2160,9 +2179,11 @@ Enable Amazon S3 Debugging
 
 **False**: No Amazon S3 debugging information is included in the system logs.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3Trace": false`` with options ``true`` and ``false`` for above settings respectively.                            |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------+---------------------------------------------+
+| ``config.json`` setting | ``AmazonS3Trace``                           |
++-------------------------+---------------------------------------------+
+| Allowed Values          | ``true`` or ``false``, default is ``false`` |
++-------------------------+---------------------------------------------+
 
 Test Connection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2565,7 +2586,7 @@ Export File Format
 ^^^^^^^^^^^^^^^^^^^^^^^^
 File format of the compliance export. Corresponds to the system that you want to import the data into.
 
-Currently Actiance XML is supported.
+Currently Actiance XML and Global Relay EML are supported.
 
 Run Compliance Export Job Now
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2589,7 +2610,7 @@ Enable Rate Limiting
 **False**: APIs are not throttled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                        |
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum Queries per Second
@@ -2795,7 +2816,7 @@ Enable Elasticsearch for search queries
 **False**: Database search is used for search queries.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false`` for above settings respectively.                                    |
+| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false`` for above settings respectively.                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -2999,6 +3020,17 @@ Path and filename of the license file on disk. On startup, if Mattermost cannot 
 | This feature's ``config.json`` setting is ``"LicenseFileLocation": ""`` with string input.  |
 +---------------------------------------------------------------------------------------------+
 
+Go Routine Health Threshold
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set a threshold on the number of Go Routines when the Mattermost system is considered to be in a healthy state. When Go Routines exceed this limit, a warning is returned in the server logs.
+
+To turn off checking for the threshold, set this value to -1.
+
++----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GoroutineHealthThreshold": "-1"`` with whole number input.  |
++----------------------------------------------------------------------------------------------------------+
+
 Allow Cookies for Subdomains
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -3058,18 +3090,6 @@ This setting determines whether channel_viewed WebSocket events are sent, which 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableChannelViewedMessages": true`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
-
-Enable Default Channel Leave/Join System Messages
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This setting determines whether team leave/join system messages are posted in the default ``town-square`` channel.
-
-**True**: Enables leave/join system messages in the default ``town-square`` channel.
-
-**False**: Disables leave/join messages from the default ``town-square`` channel. These system messages won't be added to the database either.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false`` for above settings respectively.     |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Segment Write Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3468,6 +3488,17 @@ Determines how many new posts are batched together to a compliance export file.
 Plugin Settings  (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+Enable Plugin Uploads
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to false to control which plugins are installed on your server. See `documentation <https://about.mattermost.com/default-plugin-uploads>`_ to learn more.
+
+**False**: Disables plugin uploads on your Mattermost server.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false`` for above settings respectively.                            | 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Directory
 ^^^^^^^^^^
 The location of the plugin files. If blank, they are stored in the ./plugins directory. The path that you set must exist and Mattermost must have write permissions in it.
@@ -3496,6 +3527,18 @@ Enable Tutorial (Experimental)
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"EnableTutorial": true`` with options ``true`` and ``false`` for above settings respectively.  | 
 +--------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Default Channel Leave/Join System Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This setting determines whether team leave/join system messages are posted in the default ``town-square`` channel.
+
+**True**: Enables leave/join system messages in the default ``town-square`` channel.
+
+**False**: Disables leave/join messages from the default ``town-square`` channel. These system messages won't be added to the database either.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ExperimentalEnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false`` for above settings respectively.  | 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Allow Authentication Transfer (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3540,9 +3583,9 @@ Group Unread Channels (Experimental)
 
 **Default Off**: Disables the unread channels sidebar section by default. Users can turned it on in **Account Settings** > **Sidebar**.
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": ``disabled``, ``default_on`` or ``default_off``.                                    |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "disabled"`` with options ``disabled``, ``default_on`` and ``default_off`` for above settings respectively. |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Team Settings
 ~~~~~~~~~~~~~~
@@ -3710,6 +3753,49 @@ Select the timezone used for timestamps in the user interface and email notifica
 
 **False** The Timezone setting is hidden in the Account Settings.
 
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalTimezone": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------+
+
+Supported Timezones Path
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set the path of the JSON file that lists supported timezones when ``ExperimentalTimezone`` is set to true.
+
+The file must be in the same directory as your ``config.json`` file if you set a relative path. Defaults to ``timezones.json``.
+
 +-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalTimezone": false`` with options ``true`` and ``false`` |
+| This feature's ``config.json`` setting is ``"SupportedTimezonesPath": "timezones.json"`` with string input.     |
 +-----------------------------------------------------------------------------------------------------------------+
+
+Jobs
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Settings to configure the how Mattermost schedules and completes periodic tasks such as the deletion of old posts with Data Retention enabled or indexing of posts with Elasticsearch. These settings control which Mattermost servers are designated as a Scheduler, a server that queues that tasks at the correct times, and as a Worker, a server that completes the given tasks.
+
+When running Mattermost on a single machine, both ``RunJobs`` and ``RunScheduler`` should be enabled. Without both of these enabled, Mattermost will not function properly.
+
+When running Mattermost in High Availability mode, ``RunJobs`` should be enabled on one or more servers while ``RunScheduler`` should be enabled on all servers under normal circumstances. A High Availability cluster will have one Scheduler and one or more Workers. See the below sections for more information.
+
+Run Jobs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set whether or not this Mattermost server will handle tasks created by the Scheduler.
+
+When running Mattermost on a single machine, this setting should always be enabled.
+
+When running Mattermost in High Availablity mode, one or more servers should have this setting enabled. It is recommended that a High Availability cluster has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
+
++------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RunJobs": true`` with options ``true`` and ``false`` for above settings respectively. |
++------------------------------------------------------------------------------------------------------------------------------------+
+
+Run Scheduler
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set whether or not this Mattermost server will schedule tasks that will be completed by a Worker.
+
+When running Mattermost on a single machine, this setting should always be enabled.
+
+When running Mattermost in High Availablity mode, this setting should always be enabled. In a High Availability cluster, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created.
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false`` for above settings respectively. |
++-----------------------------------------------------------------------------------------------------------------------------------------+
