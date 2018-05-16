@@ -33,6 +33,7 @@ Each Mattermost installation comes with some built-in slash commands that are re
     "/expand", "Turn off auto-collapsing of image previews", "/expand"
     "/echo *{message}* *{delay in seconds}*", "Echo back text from your account", "/echo Hello World 5"
     "/header *{text}*", "Edit the channel header", "/header File bugs here"
+    "/invite *@{user}* *~{channel-name}*", "Invite user to the channel","/invite @john ~sampleChannel"
     "/purpose *{text}*", "Edit the channel purpose", "/purpose A channel to discuss bugs"
     "/rename *{text}*", "Rename the channel", "/rename Developers"
     "/help", "Open the Mattermost help page", "/help"

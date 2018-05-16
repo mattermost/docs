@@ -69,9 +69,7 @@ Start a video call
 
 After enabling the feature in the System Console by a System Administrator:
 
-1. Go to **Account Settings > Advanced > Preview pre-release features** and select **Enable the ability to make and receive one-on-one WebRTC calls**.
-
-2. Initiate a call with another user by either:
+1. Initiate a call with another user by either:
 
     Clicking **Start Video Call** on a user's profile popover, which appears after clicking their profile picture or name on the center channel or right hand sidebar.
 
@@ -99,8 +97,3 @@ Unable to access camera or microphone
 ..........................
 
 Confirm you have allowed Mattermost to access your camera and microphone. See instructions on how to give permissions on `Chrome <https://support.google.com/chrome/answer/2693767?hl=en>`_ and `Firefox <http://blog.speaklikethem.com/how-to-allow-camera-and-mic-access-in-firefox/>`_.
-
-User has WebRTC disabled, and cannot receive calls.
-..........................
-
-Confirm that both users have enabled the feature in **Account Settings > Advanced > Preview pre-release features**
