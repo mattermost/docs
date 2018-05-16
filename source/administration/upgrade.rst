@@ -31,110 +31,113 @@ Owner and group of the install directory - *{owner}* and *{group}*
 .. note::
   If you are upgrading an HA cluster, `review these upgrade notes instead <https://docs.mattermost.com/deployment/cluster.html#upgrade-guide>`_.
 
-1. Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
+#. Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
 
-2. In a terminal window on the server that hosts Mattermost Server, change to your home directory. If any, delete files and directories that might still exist from a previous download.
+#. In a terminal window on the server that hosts Mattermost Server, change to your home directory. If any, delete files and directories that might still exist from a previous download.
 
-  .. code-block:: sh
+   .. code-block:: sh
 
-    cd ~
+     cd ~
 
-3. Download `the latest version of Mattermost Server <https://about.mattermost.com/download/>`_. In the following command, replace ``X.X.X`` with the version that you want to download:
+#. Download `the latest version of Mattermost Server <https://about.mattermost.com/download/>`_. In the following command, replace ``X.X.X`` with the version that you want to download:
 
-  Enterprise Edition
+   *Enterprise Edition*
 
-  .. code-block:: sh
+   .. code-block:: sh
 
-    wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
-  Team Edition
+     wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
 
-  .. code-block:: sh
+   *Team Edition*
+
+   .. code-block:: sh
 
     wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz
 
-4. Extract the Mattermost Server files.
+#. Extract the Mattermost Server files.
 
-  .. code-block:: sh
+   .. code-block:: sh
 
-    tar -x --transform='s,^[^/]\+,\0-upgrade,' -f mattermost*.gz
+     tar -x --transform='s,^[^/]\+,\0-upgrade,' -f mattermost*.gz
   
-  The ``transform`` option adds a suffix to the topmost extracted directory so it does not conflict with the usual install directory.
+   The ``transform`` option adds a suffix to the topmost extracted directory so it does not conflict with the usual install directory.
 
-5. Stop Mattermost Server.
+#. Stop Mattermost Server.
 
-  On Ubuntu 14.04 and RHEL 6.6:
+   On Ubuntu 14.04 and RHEL 6.6:
 
-  .. code-block:: sh
+   .. code-block:: sh
 
-    sudo service mattermost stop
+     sudo service mattermost stop
 
-  On Ubuntu 16.04 and RHEL 7.1:
+   On Ubuntu 16.04 and RHEL 7.1:
 
-  .. code-block:: sh
+   .. code-block:: sh
 
-    sudo systemctl stop mattermost
+     sudo systemctl stop mattermost
 
-6. Back up your data and application.
-  a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
-  b. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
+#. Back up your data and application.
 
-  .. code-block:: sh
+   #. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
 
-    cd {install-path}
-    sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
+   #. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
 
-7. Remove all files *except special directories* from within the current mattermost directory.
+      .. code-block:: sh
 
-  The special directories within mattermost are ``config``, ``logs``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*). The following command clears the contents of mattermost, preserving only those directories and their contents.
-  You should first modify the second part of the command to ``xargs echo rm -r`` to verify what will be executed.
+        cd {install-path}
+        sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
 
-  .. code-block:: sh
+#. Remove all files *except special directories* from within the current mattermost directory.
 
-    sudo find mattermost/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/config -o -path mattermost/data -o -path mattermost/logs \) -prune \) | sudo xargs rm -r
+   The special directories within mattermost are ``config``, ``logs``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*). The following command clears the contents of mattermost, preserving only those directories and their contents.
+   You should first modify the second part of the command to ``xargs echo rm -r`` to verify what will be executed.
+
+   .. code-block:: sh
+
+     sudo find mattermost/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/config -o -path mattermost/data -o -path mattermost/logs \) -prune \) | sudo xargs rm -r
     
-8. Change ownership of the new files before copying them.
+#. Change ownership of the new files before copying them.
 
-  .. code-block:: sh
+   .. code-block:: sh
 
-    sudo chown -hR {owner}:{group} {path-to}/mattermost-upgrade/
+     sudo chown -hR {owner}:{group} {path-to}/mattermost-upgrade/
 
-9. Copy the new files to your install directory and remove the temporary files.
+#. Copy the new files to your install directory and remove the temporary files.
 
-  Note that the ``n`` (no-clobber) flag and trailing ``.`` on source are very important.
+   Note that the ``n`` (no-clobber) flag and trailing ``.`` on source are very important.
 
-  .. code-block:: sh
+   .. code-block:: sh
 
-    sudo cp -rn {path-to}/mattermost-upgrade/. mattermost/
-    sudo rm -r {path-to}/mattermost-upgrade/
+     sudo cp -rn {path-to}/mattermost-upgrade/. mattermost/
+     sudo rm -r {path-to}/mattermost-upgrade/
 
-10. Start Mattermost server.
+#. Start Mattermost server.
 
-  On Ubuntu 14.04 and RHEL 6.6:
+   On Ubuntu 14.04 and RHEL 6.6:
 
-  .. code-block:: sh
+   .. code-block:: sh
 
-    sudo service mattermost start
+     sudo service mattermost start
 
-  On Ubuntu 16.04 and RHEL 7.1:
+   On Ubuntu 16.04 and RHEL 7.1:
 
-  .. code-block:: sh
+   .. code-block:: sh
 
-    sudo systemctl start mattermost
+     sudo systemctl start mattermost
 
-11. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+#. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
 
-  .. code-block:: sh
+   .. code-block:: sh
 
-    cd {install-path}/mattermost
-    sudo setcap cap_net_bind_service=+ep ./bin/platform
+     cd {install-path}/mattermost
+     sudo setcap cap_net_bind_service=+ep ./bin/platform
 
-12. Upgrade your ``config.json`` schema:
+#. Upgrade your ``config.json`` schema:
 
-  a. Open the System Console and change a setting, then revert it. This should enable the Save button for that page.
-  b. Click **Save**.
-  c. Refresh the page.
+   #. Open the System Console and change a setting, then revert it. This should enable the Save button for that page.
+   #. Click **Save**.
+   #. Refresh the page.
 
-  Your current settings are preserved, and new settings are added with default values.
+   Your current settings are preserved, and new settings are added with default values.
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
