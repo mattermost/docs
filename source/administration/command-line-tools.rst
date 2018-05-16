@@ -650,6 +650,7 @@ platform user
     -  `platform user deactivate`_ - Deactivate a user
     -  `platform user delete`_ - Delete a user and all posts
     -  `platform user deleteall`_ - Delete all users and all posts
+    -  `platform user email`_ - Set a user's email
     -  `platform user invite`_ - Send a user an email invitation to a team
     -  `platform user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
     -  `platform user password`_ - Set a user's password
