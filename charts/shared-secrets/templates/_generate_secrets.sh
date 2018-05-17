@@ -29,8 +29,10 @@ generate_secret_if_needed {{ template "gitlab.psql.password.secret" . }} --from-
 # Gitlab shell
 generate_secret_if_needed gitlab-shell-secret --from-literal=secret=$(gen_random 'a-zA-Z0-9' 64)
 
+{{- if not .Values.global.gitaly.authToken.secret }}
 # Gitaly secret
 generate_secret_if_needed gitaly-secret --from-literal=token=$(gen_random 'a-zA-Z0-9' 64)
+{{- end }}
 
 # Minio secret
 generate_secret_if_needed gitlab-minio --from-literal=accesskey=$(gen_random 'a-zA-Z0-9' 64) --from-literal=secretkey=$(gen_random 'a-zA-Z0-9' 64)

@@ -13,8 +13,8 @@
 {{- $nodeSelector := .Values.nodeSelector -}}
 {{- $redisSecret := coalesce .Values.redis.password.secret .Values.global.redis.password.secret -}}
 {{- $redisKey := coalesce .Values.redis.password.key .Values.global.redis.password.key -}}
-{{- $gitalySecret := .Values.gitaly.authToken.secret -}}
-{{- $gitalyKey := default "token" .Values.gitaly.authToken.key -}}
+{{- $gitalySecret := include "gitlab.gitaly.authToken.secret" . -}}
+{{- $gitalyKey := include "gitlab.gitaly.authToken.key" . -}}
 {{- $railsSecretName := .Values.railsSecrets.secret -}}
 {{- $railsSecretKey  := .Values.railsSecrets.key | quote -}}
 {{- $metricsEnabled := .Values.metrics.enabled -}}

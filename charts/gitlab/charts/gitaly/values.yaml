@@ -21,10 +21,11 @@ global:
     password:
       secret: gitlab-redis
       key: redis-password
-
-authToken:
-  secret: gitaly-secret
-  key: token
+  gitaly:
+    authToken: {}
+authToken: {}
+  # secret: 'gitaly-secret'
+  # key: 'token'
 unicorn: {}
   # host: '0.0.0.0'
   # serviceName: 'unicorn'
@@ -36,8 +37,8 @@ shell:
    secret: gitlab-shell-secret
    key: secret
 
-## Enable prometheus metrics and set the port to scrape the 
-## container on.  
+## Enable prometheus metrics and set the port to scrape the
+## container on.
 metrics:
   enabled: true
   metricsPort: 9236

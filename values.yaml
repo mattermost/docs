@@ -18,6 +18,8 @@ global:
     # database: gitlabhq_production
   redis:
     password: {}
+  gitaly:
+    authToken: {}
   # Outgoing email server settings
   smtp:
     enabled: false
