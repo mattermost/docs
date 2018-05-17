@@ -28,17 +28,17 @@ Windows 10+, Windows 8.1+, Windows 7+
 
 1. Download latest version of the Mattermost desktop app:
 
-   - `64-bit version of Windows <https://releases.mattermost.com/desktop/4.1.0/mattermost-setup-4.1.0-win64.exe>`_
-   - `32-bit version of Windows <https://releases.mattermost.com/desktop/4.1.0/mattermost-setup-4.1.0-win32.exe>`_
+   - `64-bit version of Windows <https://releases.mattermost.com/desktop/4.1.1/mattermost-setup-4.1.1-win64.exe>`_
+   - `32-bit version of Windows <https://releases.mattermost.com/desktop/4.1.1/mattermost-setup-4.1.1-win32.exe>`_
 
-2. From the ``\Downloads`` directory right-click on the file ``mattermost-setup-4.1.0...`` and select **Open**.
+2. From the ``\Downloads`` directory right-click on the file ``mattermost-setup-4.1.1...`` and select **Open**.
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
 macOS 10.9+
 --------------------------------------------------
 
-1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.1.0/mattermost-desktop-4.1.0-mac.zip>`_.
+1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-mac.zip>`_.
 
 2. Double-click the download to expand the archive.
 
@@ -55,9 +55,9 @@ Generic Linux package
 1. Download latest version of the Mattermost desktop app:
 
   64-bit systems:
-   `mattermost-desktop-4.1.0-linux-x64.tar.gz <https://releases.mattermost.com/desktop/4.1.0/mattermost-desktop-4.1.0-linux-x64.tar.gz>`_
+   `mattermost-desktop-4.1.1-linux-x64.tar.gz <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-linux-x64.tar.gz>`_
   32-bit systems:
-   `mattermost-desktop-4.1.0-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/4.1.0/mattermost-desktop-4.1.0-linux-ia32.tar.gz>`_
+   `mattermost-desktop-4.1.1-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-linux-ia32.tar.gz>`_
 
 2. Extract the archive to a convenient location. You can then execute ``mattermost-desktop``, which is located inside the extracted directory.
 
@@ -71,16 +71,16 @@ Unofficial, community-driven .deb packages are available.
 1. Download the latest version of the Mattermost desktop app:
 
   64-bit systems
-   `mattermost-desktop-4.1.0-linux-amd64.deb <https://releases.mattermost.com/desktop/4.1.0/mattermost-desktop-4.1.0-linux-amd64.deb>`_
+   `mattermost-desktop-4.1.1-linux-amd64.deb <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-linux-amd64.deb>`_
   32-bit systems
-   `mattermost-desktop-4.1.0-linux-i386.deb <https://releases.mattermost.com/desktop/4.1.0/mattermost-desktop-4.1.0-linux-i386.deb>`_
+   `mattermost-desktop-4.1.1-linux-i386.deb <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-linux-i386.deb>`_
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
   64-bit systems
-    ``sudo dpkg -i mattermost-desktop-4.1.0-linux-amd64.deb``
+    ``sudo dpkg -i mattermost-desktop-4.1.1-linux-amd64.deb``
   32-bit systems
-    ``sudo dpkg -i mattermost-desktop-4.1.0-linux-i386.deb``
+    ``sudo dpkg -i mattermost-desktop-4.1.1-linux-i386.deb``
 
 3. To run Mattermost, open **Dash** (located at top left corner) and input ``mattermost``, then click the Mattermost icon.
 
