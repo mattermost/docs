@@ -6,7 +6,7 @@ In most cases you can upgrade Mattermost Server in a few minutes, but the upgrad
 Upgrading to the Latest Version
 -------------------------------
 
-If you are upgrading from version 3.0 or later, these instructions apply to you. If you are upgrading from a version earlier than 3.0.0, you must first `upgrade to version 3.0.3 <https://docs.mattermost.com/administration/upgrading-to-3.0.html?highlight=upgrading>`_.
+If you are upgrading from version 3.0 or later, these instructions apply to you. If you are upgrading from a version earlier than 3.0.0, you must first `upgrade to version 3.0.3 <../administration/upgrading-to-3.0.html>`_.
 
 .. _before-you-begin:
 
@@ -15,7 +15,7 @@ If you are upgrading from version 3.0 or later, these instructions apply to you.
 Read these instructions carefully from start to finish. Make sure that you understand each step before starting the upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.org/.
 
 .. important::
-  Review `important-upgrade-notes <https://docs.mattermost.com/administration/important-upgrade-notes.html?highlight=important%20upgrade>`_ to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
+  Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
 
 You should gather the following information before starting the upgrade:
 
@@ -31,7 +31,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 .. note::
   If you are upgrading an HA cluster, `review these upgrade notes instead <https://docs.mattermost.com/deployment/cluster.html#upgrade-guide>`_.
 
-#. Review `important-upgrade-notes <https://docs.mattermost.com/administration/important-upgrade-notes.html?highlight=important%20upgrade>`_ to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
+#. Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
 
 #. In a terminal window on the server that hosts Mattermost Server, change to your home directory. If any, delete files and directories that might still exist from a previous download.
 
