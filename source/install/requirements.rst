@@ -82,7 +82,7 @@ Search limitations on MySQL:
 
 - Hashtags or recent mentions of usernames containing a dot do not return search results.
 
-**Note** The content within `Message Attachments <https://docs.mattermost.com/developer/message-attachments.html>` is not  searchable regardldess of whether you use PostgreSQL or MySQL (with or without Elasticsearch).
+**Note**: The content within `Message Attachments <https://docs.mattermost.com/developer/message-attachments.html>`__ is not  searchable regardldess of whether you use PostgreSQL or MySQL (with or without Elasticsearch).
 
 Hardware Requirements
 ---------------------
