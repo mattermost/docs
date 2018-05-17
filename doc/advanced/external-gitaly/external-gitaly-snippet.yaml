@@ -1,0 +1,12 @@
+gitlab:
+  gitaly:
+    enabled: false
+  unicorn:
+    gitaly:
+      host: omnibus-vm.fdqn
+  sidekiq:
+    gitaly:
+      host: omnibus-vm.fdqn
+  task-runner:
+    gitaly:
+      host: omnibus-vm.fdqn
