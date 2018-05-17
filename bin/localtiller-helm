@@ -1,0 +1,53 @@
+#!/bin/bash -e
+
+export HELM_HOST=localhost:44134
+HELM_VERSION="$(helm version -c --short)"
+HELM_VERSION="${HELM_VERSION#* }"
+HELM_VERSION="${HELM_VERSION%+*}"
+
+# Split multiple paths and use the first one that exists
+#  https://kubernetes.io/docs/tasks/access-application-cluster/configure-access-multiple-clusters/#create-a-second-configuration-file
+IFS=':' read -r -a CONFIG_FILES <<< "${KUBECONFIG:-$HOME/.kube/config}"
+TILLER_KUBECONFIG="$(mktemp ${HOME}/.kube/config.XXXXXX)"
+trap 'docker rm -f tiller >/dev/null 2>&1 || true; rm -f ${TILLER_KUBECONFIG}' EXIT
+
+for CONFIG_FILE in ${CONFIG_FILES}; do
+  if [ -e ${CONFIG_FILE} ]; then
+    CURRENT_CONTEXT=$(kubectl config current-context)
+    CURRENT_USER=$(kubectl config view -o jsonpath="{.contexts[?(@.name == \"$CURRENT_CONTEXT\")].context.user}")
+    CURRENT_CLUSTER=$(kubectl config view -o jsonpath="{.contexts[?(@.name == \"$CURRENT_CONTEXT\")].context.cluster}")
+    CURRENT_SERVER=$(kubectl config view -o jsonpath="{.clusters[?(@.name == \"$CURRENT_CLUSTER\")].cluster.server}")
+    ACCESS_TOKEN=$(kubectl config view -o jsonpath="{.users[?(@.name == \"$CURRENT_USER\")].user.auth-provider.config.access-token}")
+    CA_DATA=$(kubectl config view -o go-template --template "{{range .clusters}}{{if eq .name \"$CURRENT_CLUSTER\"}}{{index .cluster \"certificate-authority-data\"}}{{end}}{{end}}" --raw)
+
+    if [ "${ACCESS_TOKEN}" != "" ]; then
+      # Refresh the token if needed for things like gcp
+      kubectl version >/dev/null
+      # Generate a simple config without an auth provider
+      export KUBECONFIG=${TILLER_KUBECONFIG}
+      kubectl config set-credentials "${CURRENT_CLUSTER}" --token="${ACCESS_TOKEN}" >/dev/null
+      CA_TMP="$(mktemp)"; echo "${CA_DATA}" | base64 --decode > ${CA_TMP}
+      kubectl config set-cluster "${CURRENT_CLUSTER}" --server="${CURRENT_SERVER}" --certificate-authority="$CA_TMP" --embed-certs >/dev/null
+      kubectl config set-context "${CURRENT_CONTEXT}" --cluster="${CURRENT_CLUSTER}" --user="${CURRENT_USER}" >/dev/null
+      kubectl config use-context "${CURRENT_CONTEXT}" >/dev/null
+      rm ${CA_TMP}
+    else
+      cp ${CONFIG_FILE} ${TILLER_KUBECONFIG}
+    fi
+    break
+  fi
+done
+
+docker rm -f tiller >/dev/null 2>&1 || true
+
+docker run \
+  --name tiller \
+  -d \
+  -p 44134:44134 \
+  -e TILLER_NAMESPACE=kube-system \
+  -v ${TILLER_KUBECONFIG}:/tmp/.kube/config \
+  gcr.io/kubernetes-helm/tiller:"${HELM_VERSION}" >/dev/null
+
+helm version >/dev/null
+
+helm $@

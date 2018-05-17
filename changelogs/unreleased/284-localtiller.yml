@@ -1,0 +1,5 @@
+---
+title: Add a script for running helm without tiller running in the cluster
+merge_request: 281
+author: Corey O'Brien
+type: added
