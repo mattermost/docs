@@ -12,8 +12,19 @@ Release date: 2018-06-16
 
 ### Improvements
 
+ - Added plugin ability to intercept posts before they reach the DB.
+ - (Integrations) Slash commands configured to receive a GET request to get a request body.
+ - Deprecated and removed ``ExtraUpdateAt`` field from channel model.
+ - Added ``LoginIdAttribute`` to allow LDAP users to change their login ID without losing their account.
+ - Updated email notification subject line and contents for Group Messages.
+ - Added ping/pong and reconnection handling to Go WebSocket client.
+
 ### Bug Fixes
 
+#### API Changes
+
+ - Removed APIv3 endpoints.
+ - Moved SAML login endpoints out of API package.
 
 ## Release v4.10
 
