@@ -106,6 +106,7 @@ platform
     -  `platform import`_ - Import data
     -  `platform ldap`_ - AD/LDAP related utilities
     -  `platform license`_ - Licensing commands
+    -  `platform permissions`_ - Permissions management
     -  `platform reset`_ - Reset the database to initial state
     -  `platform roles`_ - Management of user roles
     -  `platform server`_ - Run the Mattermost server
@@ -451,6 +452,52 @@ platform license upload
     .. code-block:: none
 
       sudo ./platform license upload /path/to/license/mylicensefile.mattermost-license
+
+platform permissions
+--------------------
+
+  Description
+    Commands to manage advanced permissions.
+
+  Child Commands
+    -  `platform permissions export`_ - Export Schemes and Roles.
+    -  `platform permissions import`_ - Import Schemes and Roles from a permissions export.
+
+platform permissions export
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Prints to stdout a jsonl representation of Schemes and Roles from a Mattermost instance. Used to export 
+    Roles and Schemes from one Mattermost instance to another. The output is a jsonl representation with 
+    each line containing a json representation of a Scheme and its associated Roles. The output is intended 
+    to be used as the input of `platform permissions import`.
+
+  Format
+    .. code-block:: none
+
+      platform permissions export
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform permissions export > my-permissions-export.jsonl
+
+platform permissions import
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Creates Roles and Schemes on a Mattermost instance from a jsonl input file in the format outputted by
+    `platform permissions export`.
+
+  Format
+    .. code-block:: none
+
+    platform permissions import {file}
+
+  Example
+    .. code-block:: none
+
+    sudo ./platform permissions import my-permissions-export.jsonl
 
 platform reset
 ---------------
