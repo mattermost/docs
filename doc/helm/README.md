@@ -9,6 +9,9 @@ to ensure you can access your cluster using `kubectl`.
 
 Helm consists of two parts, `helm` client and `tiller` server inside Kubernetes.
 
+* If you are not able to run tiller in your cluster for some reason, see the
+[local tiller](#local-tiller) section.
+
 # Getting Helm
 
 You can get Helm from the project's [releases page](https://github.com/kubernetes/helm/releases), or follow other options under the official documentation of [Installing Helm](https://docs.helm.sh/using_helm/#installing-helm).
@@ -117,3 +120,17 @@ Helm repository has some additional information on developing with helm in it's
 [sprig]: https://godoc.org/github.com/Masterminds/sprig
 [helm-func-pipeline]: https://github.com/kubernetes/helm/blob/master/docs/chart_template_guide/functions_and_pipelines.md
 [helm-subchart-global]: https://github.com/kubernetes/helm/blob/master/docs/chart_template_guide/subcharts_and_globals.md
+
+## Local tiller
+
+_This is not recommended_
+
+If you are not able to run tiller in your cluster, this chart includes a script
+that should allow you to use helm with running tiller in your cluster. The
+script uses your personal Kubernetes credentials and configuration to apply
+the chart. This method is not well supported, but should work.
+
+To use the script, skip this entire section about initializing helm. Instead,
+make sure you have Docker installed locally and run
+`bin/localtiller-helm --client-only`. After that, you can substitute
+`bin/localtiller-helm` anywhere these instructions direct you to run `helm`.
