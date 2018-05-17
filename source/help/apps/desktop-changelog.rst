@@ -8,11 +8,12 @@ Release date: May 17, 2018
 
 This release contains multiple bug fixes for Mac due to an incorrect build for v4.1.0. Windows and Linux apps are not affected.
 
-### Bug Fixes
-
+Bug Fixes
+~~~~~~~~~~~~~~~
 Each of the issues listed below are already fixed for Windows and Linux v4.1.0.
 
-#### Mac
+Mac
+^^^^^^^^^^^^^
  - Fixed an issue where right-clicking an image, then choosing "Save Image", did nothing.
 [#774](https://github.com/mattermost/desktop/issues/707)
  - Fixed an issue that prevented typing in the form fields on the add server dialog when launched from the server tab bar.
