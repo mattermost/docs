@@ -1,6 +1,27 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.1.1
+----------------------------
+
+Release date: May 17, 2018
+
+This release contains multiple bug fixes for Mac due to an incorrect build for v4.1.0. Windows and Linux apps are not affected.
+
+Bug Fixes
+~~~~~~~~~~~~~~~
+Each of the issues listed below are already fixed for Windows and Linux v4.1.0.
+
+Mac
+^^^^^^^^^^^^^
+ - Fixed an issue where right-clicking an image, then choosing "Save Image", did nothing.
+ - Fixed an issue that prevented typing in the form fields on the add server dialog when launched from the server tab bar.
+ - Fixed an issue that could cause an error message on the add new server dialog to be misleading.
+ - Fixed an issue where timestamps in message view showed no URL on hover.
+ - Fixed an issue where quitting and reopening the app required the user to log back in to Mattermost.
+ - Fixed an issue where adding a new server sometimes caused a blank page.
+ - Fixed deep linking via ``mattermost://`` protocol spawning a new copy of the Desktop App on the taskbar.
+ 
 Release v4.1.0
 --------------
 
