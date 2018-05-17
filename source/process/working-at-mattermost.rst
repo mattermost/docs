@@ -23,7 +23,11 @@ Top 10 reasons to work for Mattermost:
 9. **Learn, Master, Teach:** Building new skills, becoming experts, and training others is core to our culture.
 10. **Friends around the world:** Build relationships with staff and contributors in dozens of countries.
 
-Also, we have Meetups around the world, see `our latest Core Commiter Summit in Las Vegas, Nevada, USA. <https://www.youtube.com/watch?v=_RpmrM-5UFY>`_
+Also, we have Meetups around the world to deepen and broaden our relationships and build the future of our products together:
+
+* Check out _`MatterCon 2018 in Lisbon, Portugal.<https://www.youtube.com/watch?v=CZXaYttz3NA&feature=youtu.be>`_
+* Watch highlights of _`our Community Meetup in Toronto, Canada.<https://www.youtube.com/watch?v=5c9oJdbXrMU>`_
+* See `our Core Commiter Summit in Las Vegas, Nevada, USA. <https://www.youtube.com/watch?v=_RpmrM-5UFY>`_
 
 ----------------
 Working Remotely
