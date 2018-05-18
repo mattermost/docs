@@ -162,6 +162,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 3. QA:
     - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://pre-release.mattermost.com/core/pl/db3sur4r53d9tyih1i4wrmi9wy))
     - Post release testing instructions to Release Discussion channel ([template](https://pre-release.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
+    - Post "Bug Hunter Coin" message to Reception channel ([see example](https://pre-release.mattermost.com/core/pl/3o15eoq89fdq5m1ac5dyp4nc3e))
 4. Dev:
     - Run load tests against the release candidate to find potential performance issues
     - Make PRs for bug fixes to the release branch
