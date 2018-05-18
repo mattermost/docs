@@ -137,7 +137,7 @@ If you need to add a new JavaScript dependency that is not related to React Nati
 React Native
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-As with `JavaScript only <JavaScript Only>`_, **use npm** to add your dependency and include an exact version. Then link the library in React Native by running ``react-native link <package-name>`` in a terminal.
+As with `JavaScript only <https://docs.mattermost.com/developer/mobile-developer-setup.html#javascript-only>`_, **use npm** to add your dependency and include an exact version. Then link the library in React Native by running ``react-native link <package-name>`` in a terminal.
 
 Be aware that we are using React Native Navigation. For Android, you might need to complete the linking process manually as the ``react-native link`` command won't do it for you.
 
