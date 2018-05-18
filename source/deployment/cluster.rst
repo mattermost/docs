@@ -133,7 +133,7 @@ Proxy Server Configuration
 
 The proxy server exposes the cluster of Mattermost servers to the outside world. The Mattermost servers are designed for use with a proxy server such as NGINX, a hardware load balancer, or a cloud service like Amazon Elastic Load Balancer.
 
-If you want to monitor the server with a health check you can use ``http://10.10.10.2/api/v3/general/ping`` and check the response for ``Status 200``, indicating success. Use this health check route to mark the server *in-service* or *out-of-service*.
+If you want to monitor the server with a health check you can use ``http://10.10.10.2/api/v4/system/ping`` and check the response for ``Status 200``, indicating success. Use this health check route to mark the server *in-service* or *out-of-service*.
 
 A sample configuration for NGINX is provided below. It assumes that you have two Mattermost servers running on private IP addresses of ``10.10.10.2`` and ``10.10.10.4``.
 

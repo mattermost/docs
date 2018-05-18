@@ -36,6 +36,20 @@ You can set up an internal server to proxy the connection out of their network t
 
 .. Note:: Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``
 
+Build gets stuck at ``bundleReleaseJsAndAssets``
+--------------------------------------------------------------------------------
+
+As a workaround, you can bundle the ``js`` manually first with
+
+.. code-block:: none
+
+  react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+
+and then ignore the gradle task with
+
+.. code-block:: none
+
+  ./gradlew assembleRelease -x bundleReleaseJsAndAssets
 
 None of these solve my problem!
 -------------------------------

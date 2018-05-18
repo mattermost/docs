@@ -246,9 +246,11 @@ If a security fix release is required, run through the following steps:
     - Verify all patch fixes are backported
     - Verify all patch fixes are tested (either via unit tests or RCs)
 2. Release Manager:
+    - Notify community about upcoming security release through a Twitter announcement and in changelog with links to approved fixes and a date tagged as "TBD"
+    - Email GitLab release team about upocoming security release.
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/gitlab-process.html#merge-requests) and [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC.
       - Open a ticket to [submit Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/MM-10365)
-    - Make a post in Announcements channel announcing the dot release to the rest of the team with links to approved tickets and include a link to the ticket to submit the GitLab MR
+    - Make a post in Announcements channel announcing the security release to the rest of the team with links to approved tickets and include a link to the ticket to submit the GitLab MR
     - Update the changelog
     - Update the [version archive](https://docs.mattermost.com/administration/version-archive.html)
     - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
@@ -268,8 +270,9 @@ If a bug fix release is required, run through the following steps:
 
 1. PM:
     - Schedule a Daily Release Update meeting every day until the dot release is complete
-    - Open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) mentioning a dot release is coming 
 2. Release Manager:
+    - Notify community about upcoming dot release through a Twitter announcement and in changelog with links to approved fixes and a date tagged as "TBD"
+    - Open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) mentioning a dot release is coming. [See example](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/3099)
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/gitlab-process.html#merge-requests) and [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC.
       - Open a ticket to [submit Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/MM-10365)
     - Make a post in Announcements channel announcing the dot release to the rest of the team with links to approved tickets and include a link to the ticket to submit the GitLab MR
@@ -285,6 +288,7 @@ If a bug fix release is required, run through the following steps:
 4. Build:
     - Verify with Release Manager before cutting any new dot release RCs (approved fixes should be merged)
 5. QA:
+    - If the dot release takes place during a regular release, update ``ci-linux-mysql-prev`` to dot-release RCs for the previous release and keep ``rctesting.reddogsofwar`` on the latest regular release version
     - Test the new RC to verify fixes merged to the release branch work
     - Post in Release Discussion channel after testing
 
