@@ -39,7 +39,7 @@ For these reasons, please take the time to familiarize yourself with applicable 
 jurisdictions in which you operate. Although Mattermost cannot provide advice on export matters, you will find on 
 this web page information you may need in order export Mattermost products.
 
-This overview is specific to the `U.S. Export Administration Regulations <https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear>`_ (EAR), however business operations may subject you to other regulations also, such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws/itar.html>`_.
+This overview is specific to the `U.S. Export Administration Regulations <https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear>`_ (EAR), however business operations may subject you to other regulations also, such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987>`_.
 
 General Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
