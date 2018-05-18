@@ -11,7 +11,7 @@ This guide outlines minimum software and hardware requirements for deploying Mat
 Deployment Overview
 -------------------
 
-Please see `Mattermost Deployment Overview <http://docs.mattermost.com/deployment/deployment.html>`__ for a summary of software systems who's requirements are described in this document. 
+Please see the `Mattermost Deployment Overview <http://docs.mattermost.com/deployment/deployment.html>`__ documentation for a summary of software systems whose requirements are described in this document. 
 
 .. figure:: ../images/network.PNG
    :alt: image
