@@ -174,7 +174,7 @@ Install in High Availability (E20): https://docs.mattermost.com/deployment/clust
 
 Verify that the software has been deployed successfully in each environment. Create, or update, automated tests to verify deployments.
 
-**Reference**: https://docs.mattermost.com/administration/liveness-check.html
+**Reference**: https://docs.mattermost.com/administration/health-check.html
 
 3.3.6 Bulk Load Data
 ^^^^^^^^^^^^^^^^^^^^^^^^
