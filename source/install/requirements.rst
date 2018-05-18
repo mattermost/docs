@@ -65,7 +65,7 @@ While community support exists for Fedora, FreeBSD and Arch Linux, Mattermost do
 Database Software
 ^^^^^^^^^^^^^^^^^
 
--  MySQL 5.6+
+-  MySQL 5.6, 5.7, 8 (Please see note below on MySQL 8 support)
 -  PostgreSQL 9.4+
 -  Amazon Aurora MySQL 5.6+
 
@@ -81,6 +81,17 @@ Search limitations on PostgreSQL:
 Search limitations on MySQL:
 
 - Hashtags or recent mentions of usernames containing a dot do not return search results.
+
+**MySql 8 Support**:
+
+In MySQL 8.0.4 the MySQL team changed the deafult authentication plugin from ``mysql_native_password`` to ``caching_sha2_password`` (https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/). If you are using MySQL 8.0.4+ you will need to enable ``mysql_native_password`` by adding the following entry in you MySQL configuration file.
+
+.. code-block:: text
+
+[mysqld]
+default-authentication-plugin=mysql_native_password   
+
+
 
 Hardware Requirements
 ---------------------
