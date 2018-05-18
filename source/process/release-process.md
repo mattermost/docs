@@ -265,7 +265,7 @@ If a security fix release is required, run through the following steps:
     - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) 10 working days after the dot release has shipped
       - Update Security Issues spreadsheet with issue number from posted update (e.g. v3.2.0.1)
 3. Marketing:
-    - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send to marketing lead for review. Once reviewed, schedule for 08:00 PST on the day after dot release
+    - Prepare [blog post](https://about.mattermost.com/releases/mattermost-4-10/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send to marketing lead for review. Once reviewed, schedule for 08:00 PST on the day after dot release
     
 If a bug fix release is required, run through the following steps:
 
@@ -315,7 +315,7 @@ Once bug fix release is ready to cut:
 4. QA:  
     - Verifies each of the issues in the patch release are fixed
 5. Marketing:
-    - Prepare [blog post](https://about.mattermost.com/mattermost-3-6-2/) for mattermost.com and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the day after dot release
+    - Prepare [blog post](https://about.mattermost.com/releases/mattermost-4-10/) for mattermost.com and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send for marketing lead to review. Once reviewed, schedule for 08:00 PST on the day after dot release
 
 ### K. (T-minus 0 working days) Release Day
 
