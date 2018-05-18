@@ -101,20 +101,20 @@ platform
   Child Commands
     -  `platform channel`_ - Management of channels
     -  `platform command`_ - Management of slash commands
+    -  `platform config`_ - Work with the configuration file
     -  `platform export`_ - Compliance export commands
     -  `platform help`_ - Generate full documentation for the CLI
     -  `platform import`_ - Import data
     -  `platform ldap`_ - AD/LDAP related utilities
     -  `platform license`_ - Licensing commands
+    -  `platform permissions`_ - Management of the permissions system
     -  `platform reset`_ - Reset the database to initial state
     -  `platform roles`_ - Management of user roles
+    -  `platform sampledata`_ - Sample data generation
     -  `platform server`_ - Run the Mattermost server
     -  `platform team`_ - Management of teams
     -  `platform user`_ - Management of users
     -  `platform version`_ - Display version information
-    -  `platform config`_ - Work with the configuration file
-    -  `platform sampledata`_ - Sample data generation
-    -  `platform permissions`_ - Management of the permissions system
 
 platform channel
 -----------------
@@ -343,6 +343,35 @@ platform command move
       sudo ./platform command move newteam oldteam:command-trigger-word
       sudo ./platform channel move newteam o8soyabwthjnf9qibfztje5a36h
 
+platform config
+---------------
+
+  Description
+    Commands for managing the configuration file.
+
+  Child Command
+    - `platform config validate`_ - Validate the configuration file.
+
+platform config validate
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Makes sure the configuration file has the following properties:
+
+    - Is valid JSON.
+    - Has attributes of the correct type, such as *bool*, *int*, and *str*.
+    - All entries are valid. For example, checks that entries are below the maximum length.
+
+    Format
+      .. code-block:: none
+
+        platform config validate
+
+    Example
+      .. code-block:: none
+
+        sudo ./platform config validate
+
 platform export
 ------------------------
 
@@ -452,6 +481,36 @@ platform license upload
 
       sudo ./platform license upload /path/to/license/mylicensefile.mattermost-license
 
+platform permissions
+--------------------
+
+  Description
+    Commands to manage the permissions system.
+
+  Child Commands
+    -  `platform permissions reset`_ - Reset the permissions system to its default state on new installs.
+
+platform permissions reset
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Reset permissions for all users, including Admins, to their default state on new installs.
+
+  Format
+    .. code-block:: none
+
+      platform permissions reset
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform permissions reset
+
+  Options
+    .. code-block:: none
+
+          --confirm   Confirm you really want to reset the permissions system and a DB backup has been performed.
+
 platform reset
 ---------------
 
@@ -509,6 +568,41 @@ platform roles system\_admin
     .. code-block:: none
 
       sudo ./platform roles system_admin user1
+
+platform sampledata
+-------------------
+
+  Description
+    .. versionadded:: 4.7
+      Generate sample data and populate the Mattermost database.
+
+  Format
+    .. code-block:: none
+
+      platform sampledata
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform sampledata --seed 10 --teams 4 --users 30
+
+  Options
+    .. code-block:: none
+
+          -u, --users int                      The number of sample users. (default 15)
+              --profile-images string          Optional. Path to folder with images to randomly pick as user profile image.
+          -t, --teams int                      The number of sample teams. (default 2)
+              --team-memberships int           The number of sample team memberships per user. (default 2)
+              --channels-per-team int          The number of sample channels per team. (default 10)
+              --channel-memberships int        The number of sample channel memberships per user in a team. (default 5)
+              --posts-per-channel int          The number of sample post per channel. (default 100)
+              --direct-channels int            The number of sample direct message channels. (default 30)
+              --group-channels int             The number of sample group message channels. (default 15)
+              --posts-per-direct-channel int   The number of sample posts per direct message channel. (default 15)
+              --posts-per-group-channel int    The number of sample post per group message channel. (default 30)
+          -s, --seed int                       Seed used for generating the random data (Different seeds generate different data). (default 1)
+          -b, --bulk string                    Optional. Path to write a JSONL bulk file instead of loading into the database.
+          -w, --workers int                    How many workers to run during the import. (default 2)
 
 platform server
 ----------------
@@ -985,101 +1079,6 @@ platform version
     .. code-block:: none
 
       platform version
-
-platform config
----------------
-
-  Description
-    Commands for managing the configuration file.
-
-  Child Command
-    - `platform config validate`_ - Validate the configuration file.
-
-platform config validate
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Description
-    Makes sure the configuration file has the following properties:
-
-    - Is valid JSON.
-    - Has attributes of the correct type, such as *bool*, *int*, and *str*.
-    - All entries are valid. For example, checks that entries are below the maximum length.
-
-    Format
-      .. code-block:: none
-
-        platform config validate
-
-    Example
-      .. code-block:: none
-
-        sudo ./platform config validate
-
-platform sampledata
--------------------
-
-  Description
-    .. versionadded:: 4.7
-      Generate sample data and populate the Mattermost database.
-
-  Format
-    .. code-block:: none
-
-      platform sampledata
-
-  Example
-    .. code-block:: none
-
-      sudo ./platform sampledata --seed 10 --teams 4 --users 30
-
-  Options
-    .. code-block:: none
-
-          -u, --users int                      The number of sample users. (default 15)
-              --profile-images string          Optional. Path to folder with images to randomly pick as user profile image.
-          -t, --teams int                      The number of sample teams. (default 2)
-              --team-memberships int           The number of sample team memberships per user. (default 2)
-              --channels-per-team int          The number of sample channels per team. (default 10)
-              --channel-memberships int        The number of sample channel memberships per user in a team. (default 5)
-              --posts-per-channel int          The number of sample post per channel. (default 100)
-              --direct-channels int            The number of sample direct message channels. (default 30)
-              --group-channels int             The number of sample group message channels. (default 15)
-              --posts-per-direct-channel int   The number of sample posts per direct message channel. (default 15)
-              --posts-per-group-channel int    The number of sample post per group message channel. (default 30)
-          -s, --seed int                       Seed used for generating the random data (Different seeds generate different data). (default 1)
-          -b, --bulk string                    Optional. Path to write a JSONL bulk file instead of loading into the database.
-          -w, --workers int                    How many workers to run during the import. (default 2)
-
-platform permissions
---------------------
-
-  Description
-    Commands to manage the permissions system.
-
-  Child Commands
-    -  `platform permissions reset`_ - Reset the permissions system to its default state on new installs.
-
-platform permissions reset
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Description
-    Reset permissions for all users, including Admins, to their default state on new installs.
-
-  Format
-    .. code-block:: none
-
-      platform permissions reset
-
-  Example
-    .. code-block:: none
-
-      sudo ./platform permissions reset
-
-  Options
-    .. code-block:: none
-
-          --confirm   Confirm you really want to reset the permissions system and a DB backup has been performed.
-
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
