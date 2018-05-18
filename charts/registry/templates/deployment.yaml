@@ -20,6 +20,25 @@ spec:
       securityContext:
         runAsUser: 1000
         fsGroup: 1000
+      {{- if eq (default .Values.global.antiAffinity .Values.antiAffinity) "hard" }}
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - topologyKey: "kubernetes.io/hostname"
+              labelSelector:
+                matchLabels:
+                  app: {{ template "fullname" . }}
+      {{- else if eq (default .Values.global.antiAffinity .Values.antiAffinity) "soft" }}
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              topologyKey: kubernetes.io/hostname
+              labelSelector:
+                matchLabels:
+                  app: {{ template "fullname" . }}
+      {{- end }}
       initContainers:
         - name: configure
           image: {{ .Values.init.image }}:{{ .Values.init.tag}}
