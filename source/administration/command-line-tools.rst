@@ -2,7 +2,7 @@ Command Line Tools
 ==================
 
 From the directory where the Mattermost server is installed, a
-``platform`` command is available for configuring the system, including:
+``mattermost`` command is available for configuring the system, including:
 
 **General Administration**
 
@@ -38,14 +38,14 @@ From the directory where the Mattermost server is installed, a
 Using the CLI
 ^^^^^^^^^^^^^
 
-To run the CLI commands, you must be in the directory that contains the Mattermost executable. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``. The name of the executable is ``platform``.
+To run the CLI commands, you must be in the directory that contains the Mattermost executable. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``. The name of the executable is ``mattermost``.
 
 **For example, to get the Mattermost version on a default installation of Mattermost:**
 
   .. code-block:: bash
 
     cd /opt/mattermost/bin
-    sudo ./platform version
+    sudo ./mattermost version
 
 Using the CLI on GitLab Omnibus
 -------------------------------
@@ -71,12 +71,15 @@ On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so y
 
   .. code-block:: bash
 
-    docker exec -it <your-mattermost-container-name> platform version
+    docker exec -it <your-mattermost-container-name> mattermost version
 
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 The new CLI tool is supported in Mattermost 3.6 and later. To see available commands in the old CLI tool, see `Mattermost 3.5 and earlier`_.
+
+.. note::
+  For Mattermost 4.10 and earlier, the commands used the ``platform`` executable instead of ``mattermost``. For example, to check the Mattermost version, one would run ``sudo ./platform version`` instead of ``sudo ./mattermost version``.
 
 Notes:
 
@@ -87,7 +90,7 @@ Notes:
 .. tip::
    If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
 
-platform
+mattermost
 --------
 
   Description
@@ -99,39 +102,39 @@ platform
       -c, --config {string}   Configuration file to use. (default "config.json")
 
   Child Commands
-    -  `platform channel`_ - Management of channels
-    -  `platform command`_ - Management of slash commands
-    -  `platform config`_ - Work with the configuration file
-    -  `platform export`_ - Compliance export commands
-    -  `platform help`_ - Generate full documentation for the CLI
-    -  `platform import`_ - Import data
-    -  `platform ldap`_ - AD/LDAP related utilities
-    -  `platform license`_ - Licensing commands
-    -  `platform permissions`_ - Management of the permissions system
-    -  `platform reset`_ - Reset the database to initial state
-    -  `platform roles`_ - Management of user roles
-    -  `platform sampledata`_ - Sample data generation
-    -  `platform server`_ - Run the Mattermost server
-    -  `platform team`_ - Management of teams
-    -  `platform user`_ - Management of users
-    -  `platform version`_ - Display version information
+    -  `mattermost channel`_ - Management of channels
+    -  `mattermost command`_ - Management of slash commands
+    -  `mattermost config`_ - Work with the configuration file
+    -  `mattermost export`_ - Compliance export commands
+    -  `mattermost help`_ - Generate full documentation for the CLI
+    -  `mattermost import`_ - Import data
+    -  `mattermost ldap`_ - AD/LDAP related utilities
+    -  `mattermost license`_ - Licensing commands
+    -  `mattermost permissions`_ - Management of the permissions system
+    -  `mattermost reset`_ - Reset the database to initial state
+    -  `mattermost roles`_ - Management of user roles
+    -  `mattermost sampledata`_ - Sample data generation
+    -  `mattermost server`_ - Run the Mattermost server
+    -  `mattermost team`_ - Management of teams
+    -  `mattermost user`_ - Management of users
+    -  `mattermost version`_ - Display version information
 
-platform channel
+mattermost channel
 -----------------
 
   Description
     Commands for channel management.
 
   Child Commands
-    -  `platform channel add`_ - Add users to a channel
-    -  `platform channel archive`_ - Archive a channel
-    -  `platform channel create`_ - Create a channel
-    -  `platform channel delete`_ - Delete a channel
-    -  `platform channel list`_ - List all channels on specified teams
-    -  `platform channel modify`_ - Modify a channel's public/private type
-    -  `platform channel move`_ - Move a channel to another team
-    -  `platform channel remove`_ - Remove users from a channel
-    -  `platform channel restore`_ - Restore a channel from the archive
+    -  `mattermost channel add`_ - Add users to a channel
+    -  `mattermost channel archive`_ - Archive a channel
+    -  `mattermost channel create`_ - Create a channel
+    -  `mattermost channel delete`_ - Delete a channel
+    -  `mattermost channel list`_ - List all channels on specified teams
+    -  `mattermost channel modify`_ - Modify a channel's public/private type
+    -  `mattermost channel move`_ - Move a channel to another team
+    -  `mattermost channel remove`_ - Remove users from a channel
+    -  `mattermost channel restore`_ - Restore a channel from the archive
 
 .. _channel-value-note:
 
@@ -144,7 +147,7 @@ platform channel
     
     Also, the team and channel names in the URL should be written in lowercase.
 
-platform channel add
+mattermost channel add
 ~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -153,32 +156,32 @@ platform channel add
   Format
     .. code-block:: none
 
-      platform channel add {channel} {users}
+      mattermost channel add {channel} {users}
 
   Examples
     .. code-block:: none
 
-      sudo ./platform channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
-      sudo ./platform channel add myteam:mychannel user@example.com username
+      sudo ./mattermost channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
+      sudo ./mattermost channel add myteam:mychannel user@example.com username
 
-platform channel archive
+mattermost channel archive
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `platform channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
+    Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `mattermost channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
 
   Format
     .. code-block:: none
 
-      platform channel archive {channels}
+      mattermost channel archive {channels}
 
   Examples
     .. code-block:: none
 
-      sudo ./platform channel archive 8soyabwthjnf9qibfztje5a36h
-      sudo ./platform channel archive myteam:mychannel
+      sudo ./mattermost channel archive 8soyabwthjnf9qibfztje5a36h
+      sudo ./mattermost channel archive myteam:mychannel
 
-platform channel create
+mattermost channel create
 ~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -187,13 +190,13 @@ platform channel create
   Format
     .. code-block:: none
 
-     platform channel create
+     mattermost channel create
 
   Examples
     .. code-block:: none
 
-      sudo ./platform channel create --team myteam --name mynewchannel --display_name "My New Channel"
-      sudo ./platform channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
+      sudo ./mattermost channel create --team myteam --name mynewchannel --display_name "My New Channel"
+      sudo ./mattermost channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
 
   Options
     .. code-block:: none
@@ -205,7 +208,7 @@ platform channel create
           --purpose string        Channel purpose
           --team string           Team name or ID
 
-platform channel delete
+mattermost channel delete
 ~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -214,15 +217,15 @@ platform channel delete
   Format
     .. code-block:: none
 
-      platform channel delete {channels}
+      mattermost channel delete {channels}
 
   Examples
     .. code-block:: none
 
-      sudo ./platform channel delete 8soyabwthjnf9qibfztje5a36h
-      sudo ./platform channel delete myteam:mychannel
+      sudo ./mattermost channel delete 8soyabwthjnf9qibfztje5a36h
+      sudo ./mattermost channel delete myteam:mychannel
 
-platform channel list
+mattermost channel list
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -231,14 +234,14 @@ platform channel list
   Format
     .. code-block:: none
 
-      platform channel list {teams}
+      mattermost channel list {teams}
 
   Example
     .. code-block:: none
 
-      sudo ./platform channel list myteam
+      sudo ./mattermost channel list myteam
 
-platform channel modify
+mattermost channel modify
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -247,12 +250,12 @@ platform channel modify
   Format
     .. code-block:: none
 
-      platform channel modify
+      mattermost channel modify
 
   Example
     .. code-block:: none
 
-      sudo ./platform channel modify myteam:mychannel --username myusername --private
+      sudo ./mattermost channel modify myteam:mychannel --username myusername --private
 
   Options
     .. code-block:: none
@@ -261,7 +264,7 @@ platform channel modify
           --public   Change a private channel to be public.
           --private  Change a public channel to be private.
 
-platform channel move
+mattermost channel move
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -270,20 +273,20 @@ platform channel move
   Format
     .. code-block:: none
 
-      platform channel move
+      mattermost channel move
 
   Example
     .. code-block:: none
 
-      sudo ./platform channel move newteam 8soyabwthjnf9qibfztje5a36h --username myusername
-      sudo ./platform channel move newteam myteam:mychannel --username myusername
+      sudo ./mattermost channel move newteam 8soyabwthjnf9qibfztje5a36h --username myusername
+      sudo ./mattermost channel move newteam myteam:mychannel --username myusername
 
   Options
     .. code-block:: none
 
           --username [REQUIRED] Username of the user who is moving the team
 
-platform channel remove
+mattermost channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -292,15 +295,15 @@ platform channel remove
   Format
     .. code-block:: none
 
-      platform channel remove {channel} {users}
+      mattermost channel remove {channel} {users}
 
   Examples
     .. code-block:: none
 
-      sudo ./platform channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
-      sudo ./platform channel remove myteam:mychannel user@example.com username
+      sudo ./mattermost channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
+      sudo ./mattermost channel remove myteam:mychannel user@example.com username
 
-platform channel restore
+mattermost channel restore
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -309,24 +312,24 @@ platform channel restore
   Format
     .. code-block:: none
 
-      platform channel restore {channels}
+      mattermost channel restore {channels}
 
   Examples
     .. code-block:: none
 
-      sudo ./platform channel restore 8soyabwthjnf9qibfztje5a36h
-      sudo ./platform channel restore myteam:mychannel
+      sudo ./mattermost channel restore 8soyabwthjnf9qibfztje5a36h
+      sudo ./mattermost channel restore myteam:mychannel
 
-platform command
+mattermost command
 -----------------
 
   Description
     Commands for slash command management.
 
   Child Commands
-    -  `platform command move`_ - Move a slash command to a different team
+    -  `mattermost command move`_ - Move a slash command to a different team
 
-platform command move
+mattermost command move
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -335,24 +338,24 @@ platform command move
   Format
     .. code-block:: none
 
-      platform command move
+      mattermost command move
 
   Examples
     .. code-block:: none
 
-      sudo ./platform command move newteam oldteam:command-trigger-word
-      sudo ./platform channel move newteam o8soyabwthjnf9qibfztje5a36h
+      sudo ./mattermost command move newteam oldteam:command-trigger-word
+      sudo ./mattermost channel move newteam o8soyabwthjnf9qibfztje5a36h
 
-platform config
+mattermost config
 ---------------
 
   Description
     Commands for managing the configuration file.
 
   Child Command
-    - `platform config validate`_ - Validate the configuration file.
+    - `mattermost config validate`_ - Validate the configuration file.
 
-platform config validate
+mattermost config validate
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -365,14 +368,14 @@ platform config validate
     Format
       .. code-block:: none
 
-        platform config validate
+        mattermost config validate
 
     Example
       .. code-block:: none
 
-        sudo ./platform config validate
+        sudo ./mattermost config validate
 
-platform export
+mattermost export
 ------------------------
 
   Description
@@ -381,12 +384,12 @@ platform export
   Format
     .. code-block:: none
 
-      platform export
+      mattermost export
 
   Example
     .. code-block:: none
 
-      sudo ./platform export --format=actiance --exportFrom=1513102632
+      sudo ./mattermost export --format=actiance --exportFrom=1513102632
 
   Options
     .. code-block:: none
@@ -395,7 +398,7 @@ platform export
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
           --timeoutSeconds string Set how long the export should run for before timing out.
 
-platform help
+mattermost help
 ---------------
 
   Description
@@ -404,18 +407,18 @@ platform help
   Format
     .. code-block:: none
 
-      platform help {outputdir}
+      mattermost help {outputdir}
 
-platform import
+mattermost import
 ----------------
 
   Description
     Import data into Mattermost.
 
   Child Command
-    -  `platform import slack`_ - Import a team from Slack.
+    -  `mattermost import slack`_ - Import a team from Slack.
 
-platform import slack
+mattermost import slack
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -424,23 +427,23 @@ platform import slack
   Format
     .. code-block:: none
 
-      platform import slack {team} {file}
+      mattermost import slack {team} {file}
 
   Example
     .. code-block:: none
 
-      sudo ./platform import slack myteam slack_export.zip
+      sudo ./mattermost import slack myteam slack_export.zip
 
-platform ldap
+mattermost ldap
 -------------
 
   Description
     Commands to configure and synchronize AD/LDAP.
 
   Child Command
-    -  `platform ldap sync`_ - Synchronize now
+    -  `mattermost ldap sync`_ - Synchronize now
 
-platform ldap sync
+mattermost ldap sync
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -449,23 +452,23 @@ platform ldap sync
   Format
     .. code-block:: none
 
-      platform ldap sync
+      mattermost ldap sync
 
   Example
     .. code-block:: none
 
-      sudo ./platform ldap sync
+      sudo ./mattermost ldap sync
 
-platform license
+mattermost license
 -----------------
 
   Description
     Commands to manage licensing.
 
   Child Command
-    -  `platform license upload`_ - Upload a license.
+    -  `mattermost license upload`_ - Upload a license.
 
-platform license upload
+mattermost license upload
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -474,23 +477,23 @@ platform license upload
   Format
     .. code-block:: none
 
-      platform license upload {license}
+      mattermost license upload {license}
 
   Example
     .. code-block:: none
 
-      sudo ./platform license upload /path/to/license/mylicensefile.mattermost-license
+      sudo ./mattermost license upload /path/to/license/mylicensefile.mattermost-license
 
-platform permissions
+mattermost permissions
 --------------------
 
   Description
     Commands to manage the permissions system.
 
   Child Commands
-    -  `platform permissions reset`_ - Reset the permissions system to its default state on new installs.
+    -  `mattermost permissions reset`_ - Reset the permissions system to its default state on new installs.
 
-platform permissions reset
+mattermost permissions reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -499,19 +502,19 @@ platform permissions reset
   Format
     .. code-block:: none
 
-      platform permissions reset
+      mattermost permissions reset
 
   Example
     .. code-block:: none
 
-      sudo ./platform permissions reset
+      sudo ./mattermost permissions reset
 
   Options
     .. code-block:: none
 
           --confirm   Confirm you really want to reset the permissions system and a DB backup has been performed.
 
-platform reset
+mattermost reset
 ---------------
 
   Description
@@ -520,24 +523,24 @@ platform reset
   Format
     .. code-block:: none
 
-      platform reset
+      mattermost reset
 
   Options
     .. code-block:: none
 
           --confirm   Confirm you really want to delete everything and a DB backup has been performed.
 
-platform roles
+mattermost roles
 ---------------
 
   Description
     Commands to manage user roles.
 
   Child Commands
-    -  `platform roles member`_ - Remove System Admin privileges from a user
-    -  `platform roles system_admin`_ - Make a user into a System Admin
+    -  `mattermost roles member`_ - Remove System Admin privileges from a user
+    -  `mattermost roles system_admin`_ - Make a user into a System Admin
 
-platform roles member
+mattermost roles member
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -546,14 +549,14 @@ platform roles member
   Format
     .. code-block:: none
 
-      platform roles member {users}
+      mattermost roles member {users}
 
   Example
     .. code-block:: none
 
-      sudo ./platform roles member user1
+      sudo ./mattermost roles member user1
 
-platform roles system\_admin
+mattermost roles system\_admin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -562,14 +565,14 @@ platform roles system\_admin
   Format
     .. code-block:: none
 
-      platform roles system_admin {users}
+      mattermost roles system_admin {users}
 
   Example
     .. code-block:: none
 
-      sudo ./platform roles system_admin user1
+      sudo ./mattermost roles system_admin user1
 
-platform sampledata
+mattermost sampledata
 -------------------
 
   Description
@@ -579,12 +582,12 @@ platform sampledata
   Format
     .. code-block:: none
 
-      platform sampledata
+      mattermost sampledata
 
   Example
     .. code-block:: none
 
-      sudo ./platform sampledata --seed 10 --teams 4 --users 30
+      sudo ./mattermost sampledata --seed 10 --teams 4 --users 30
 
   Options
     .. code-block:: none
@@ -604,7 +607,7 @@ platform sampledata
           -b, --bulk string                    Optional. Path to write a JSONL bulk file instead of loading into the database.
           -w, --workers int                    How many workers to run during the import. (default 2)
 
-platform server
+mattermost server
 ----------------
 
   Description
@@ -613,20 +616,20 @@ platform server
   Format
     .. code-block:: none
 
-      platform server
+      mattermost server
 
-platform team
+mattermost team
 ----------------
 
   Description
     Commands to manage teams.
 
   Child Commands
-    -  `platform team add`_ - Add users to a team
-    -  `platform team create`_ - Create a team
-    -  `platform team delete`_ - Delete a team
-    -  `platform team list`_ - List all teams
-    -  `platform team remove`_ - Remove users from a team
+    -  `mattermost team add`_ - Add users to a team
+    -  `mattermost team create`_ - Create a team
+    -  `mattermost team delete`_ - Delete a team
+    -  `mattermost team list`_ - List all teams
+    -  `mattermost team remove`_ - Remove users from a team
 
 .. _team-value-note:
 
@@ -639,7 +642,7 @@ platform team
     
     Also, the team and channel names in the URL should be written in lowercase.
 
-platform team add
+mattermost team add
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -648,14 +651,14 @@ platform team add
   Format
     .. code-block:: none
 
-      platform team add {team-name} {users}
+      mattermost team add {team-name} {users}
 
   Example
     .. code-block:: none
 
-      sudo ./platform team add myteam user@example.com username
+      sudo ./mattermost team add myteam user@example.com username
 
-platform team create
+mattermost team create
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -664,13 +667,13 @@ platform team create
   Format
     .. code-block:: none
 
-      platform team create
+      mattermost team create
 
   Examples
     .. code-block:: none
 
-      sudo ./platform team create --name mynewteam --display_name "My New Team"
-      sudo ./platform teams create --name private --display_name "My New Private Team" --private
+      sudo ./mattermost team create --name mynewteam --display_name "My New Team"
+      sudo ./mattermost teams create --name private --display_name "My New Private Team" --private
 
   Options
     .. code-block:: none
@@ -680,7 +683,7 @@ platform team create
           --name string           Team Name
           --private               Create a private team.
 
-platform team delete
+mattermost team delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -689,19 +692,19 @@ platform team delete
   Format
     .. code-block:: none
 
-      platform team delete {team-name}
+      mattermost team delete {team-name}
 
   Example
     .. code-block:: none
 
-      sudo ./platform team delete myteam
+      sudo ./mattermost team delete myteam
 
   Options
     .. code-block:: none
 
           --confirm   Confirm you really want to delete the team and a DB backup has been performed.
 
-platform team list
+mattermost team list
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -710,14 +713,14 @@ platform team list
   Format
     .. code-block:: none
 
-      platform team list
+      mattermost team list
 
   Example
     .. code-block:: none
 
-      sudo ./platform team list
+      sudo ./mattermost team list
 
-platform team remove
+mattermost team remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -726,33 +729,33 @@ platform team remove
   Format
     .. code-block:: none
 
-      platform team remove {team-name} {users}
+      mattermost team remove {team-name} {users}
 
   Example
     .. code-block:: none
 
-      sudo ./platform team remove myteam user@example.com username
+      sudo ./mattermost team remove myteam user@example.com username
 
-platform user
+mattermost user
 ---------------
 
   Description
     Commands to manage users.
 
   Child Commands
-    -  `platform user activate`_ - Activate a user
-    -  `platform user create`_ - Create a user
-    -  `platform user deactivate`_ - Deactivate a user
-    -  `platform user delete`_ - Delete a user and all posts
-    -  `platform user deleteall`_ - Delete all users and all posts
-    -  `platform user invite`_ - Send a user an email invitation to a team
-    -  `platform user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
-    -  `platform user password`_ - Set a user's password
-    -  `platform user resetmfa`_ - Turn off MFA for a user
-    -  `platform user search`_ - Search for users based on username, email, or user ID
-    -  `platform user verify`_ - Verify email address of a new user
+    -  `mattermost user activate`_ - Activate a user
+    -  `mattermost user create`_ - Create a user
+    -  `mattermost user deactivate`_ - Deactivate a user
+    -  `mattermost user delete`_ - Delete a user and all posts
+    -  `mattermost user deleteall`_ - Delete all users and all posts
+    -  `mattermost user invite`_ - Send a user an email invitation to a team
+    -  `mattermost user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
+    -  `mattermost user password`_ - Set a user's password
+    -  `mattermost user resetmfa`_ - Turn off MFA for a user
+    -  `mattermost user search`_ - Search for users based on username, email, or user ID
+    -  `mattermost user verify`_ - Verify email address of a new user
 
-platform user activate
+mattermost user activate
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -761,15 +764,15 @@ platform user activate
   Format
     .. code-block:: none
 
-      platform user activate {emails, usernames, userIds}
+      mattermost user activate {emails, usernames, userIds}
 
   Examples
     .. code-block:: none
 
-      sudo ./platform user activate user@example.com
-      sudo ./platform user activate username1 username2
+      sudo ./mattermost user activate user@example.com
+      sudo ./mattermost user activate username1 username2
 
-platform user create
+mattermost user create
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -778,13 +781,13 @@ platform user create
   Format
     .. code-block:: none
 
-      platform user create
+      mattermost user create
 
   Examples
     .. code-block:: none
 
-      sudo ./platform user create --email user@example.com --username userexample --password Password1
-      sudo ./platform user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
+      sudo ./mattermost user create --email user@example.com --username userexample --password Password1
+      sudo ./mattermost user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
 
   Options
     .. code-block:: none
@@ -798,7 +801,7 @@ platform user create
           --system_admin       Make the user a system administrator
           --username string    Username
 
-platform user deactivate
+mattermost user deactivate
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -807,15 +810,15 @@ platform user deactivate
   Format
     .. code-block:: none
 
-      platform user deactivate {emails, usernames, userIds}
+      mattermost user deactivate {emails, usernames, userIds}
 
   Examples
     .. code-block:: none
 
-      sudo ./platform user deactivate user@example.com
-      sudo ./platform user deactivate username
+      sudo ./mattermost user deactivate user@example.com
+      sudo ./mattermost user deactivate username
 
-platform user delete
+mattermost user delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -824,19 +827,19 @@ platform user delete
   Format
     .. code-block:: none
 
-      platform user delete {users}
+      mattermost user delete {users}
 
   Example
     .. code-block:: none
 
-      sudo ./platform user delete user@example.com
+      sudo ./mattermost user delete user@example.com
 
   Options
     .. code-block:: none
 
           --confirm   Confirm you really want to delete the user and a DB backup has been performed.
 
-platform user deleteall
+mattermost user deleteall
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -845,19 +848,19 @@ platform user deleteall
   Format
     .. code-block:: none
 
-      platform user deleteall
+      mattermost user deleteall
 
   Example
     .. code-block:: none
 
-      sudo ./platform user deleteall
+      sudo ./mattermost user deleteall
 
   Options
     .. code-block:: none
 
           --confirm   Confirm you really want to delete the user and a DB backup has been performed.
           
-platform user email	
+mattermost user email	
 ~~~~~~~~~~~~~~~~~~~~~~~~	
 	
   Description	
@@ -866,14 +869,14 @@ platform user email
   Format	
     .. code-block:: none	
 	
-       platform user email {user} {new email}	
+       mattermost user email {user} {new email}	
 	
   Example	
     .. code-block:: none	
 	
-      sudo ./platform user email user@example.com newuser@example.com
+      sudo ./mattermost user email user@example.com newuser@example.com
 
-platform user invite
+mattermost user invite
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -882,15 +885,15 @@ platform user invite
   Format
     .. code-block:: none
 
-      platform user invite {email} {teams}
+      mattermost user invite {email} {teams}
 
   Examples
     .. code-block:: none
 
-      sudo ./platform user invite user@example.com myteam
-      sudo ./platform user invite user@example.com myteam1 myteam2
+      sudo ./mattermost user invite user@example.com myteam
+      sudo ./mattermost user invite user@example.com myteam1 myteam2
 
-platform user migrate_auth
+mattermost user migrate_auth
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -908,12 +911,12 @@ platform user migrate_auth
   Format
     .. code-block:: none
 
-      platform user migrate_auth {from_auth} ldap {match_field}
+      mattermost user migrate_auth {from_auth} ldap {match_field}
 
   Example
     .. code-block:: none
 
-      sudo ./platform user migrate_auth email ladp email
+      sudo ./mattermost user migrate_auth email ladp email
   Options
     .. code-block:: none
 
@@ -992,12 +995,12 @@ platform user migrate_auth
   Format
     .. code-block:: none
 
-      platform user migrate_auth {from_auth} saml {users_file}
+      mattermost user migrate_auth {from_auth} saml {users_file}
 
   Example
     .. code-block:: none
 
-      sudo ./platform user migrate_auth email saml users.json
+      sudo ./mattermost user migrate_auth email saml users.json
 
   Options
     .. code-block:: none
@@ -1005,7 +1008,7 @@ platform user migrate_auth
       --auto   Automatically migrate all users without a {users_file}. Assumes the usernames and emails are identical between Mattermost and SAML services.
       --dryRun Run a simulation of the migration process without changing the database. Useful to test if the migration results in any errors. You can use this option with or without a {users_file}.
 
-platform user password
+mattermost user password
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -1014,14 +1017,14 @@ platform user password
   Format
     .. code-block:: none
 
-      platform user password {user} {password}
+      mattermost user password {user} {password}
 
   Example
     .. code-block:: none
 
-      sudo ./platform user password user@example.com Password1
+      sudo ./mattermost user password user@example.com Password1
 
-platform user resetmfa
+mattermost user resetmfa
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -1030,14 +1033,14 @@ platform user resetmfa
   Format
     .. code-block:: none
 
-      platform user resetmfa {users}
+      mattermost user resetmfa {users}
 
   Example
     .. code-block:: none
 
-      sudo ./platform user resetmfa user@example.com
+      sudo ./mattermost user resetmfa user@example.com
 
-platform user search
+mattermost user search
 ~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -1046,14 +1049,14 @@ platform user search
   Format
     .. code-block:: none
 
-      platform user search {users}
+      mattermost user search {users}
 
   Example
     .. code-block:: none
 
-      sudo ./platform user search user1@example.com user2@example.com
+      sudo ./mattermost user search user1@example.com user2@example.com
 
-platform user verify
+mattermost user verify
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -1062,14 +1065,14 @@ platform user verify
   Format
     .. code-block:: none
 
-      platform user verify {users}
+      mattermost user verify {users}
 
   Example
     .. code-block:: none
 
-      sudo ./platform user verify user1
+      sudo ./mattermost user verify user1
 
-platform version
+mattermost version
 ------------------
 
   Description
@@ -1078,7 +1081,7 @@ platform version
   Format
     .. code-block:: none
 
-      platform version
+      mattermost version
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1094,7 +1097,6 @@ Notes:
 - Parameters in CLI commands are order-specific.
 - If special characters (``!``, ``|``, ``(``, ``)``, ``\``, `````, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the url ``https://pre-release.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``
-
 
 .. tip :: If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
 
