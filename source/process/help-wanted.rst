@@ -2,6 +2,8 @@
 Help Wanted Tickets
 ============================================================
 
+Thank you for your interest in contributing! `Join our "Contributors" community channel <https://pre-release.mattermost.com/core/channels/tickets>`_ where you can discuss questions with community members and the Mattermost core team.
+
 Per the `Code Contribution Guidelines <http://docs.mattermost.com/developer/contribution-guide.html#choose-a-ticket>`_, other than small bug fixes and incremental improvements, only pull requests referencing `Help Wanted GitHub issues <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D>`_ should be submitted to Mattermost projects. This ensures:
 
 1. Proposed changes have been unambiguously specified 
