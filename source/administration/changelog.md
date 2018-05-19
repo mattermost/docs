@@ -41,8 +41,7 @@ Release date: 2018-05-16
  - Users' client no longer refreshes after changing a System Console or ``config.json`` setting.
  
  #### Command Line Interface (CLI)
- - Added `./platform team list` command to list all teams on the server.
- - Added `./platform permissions reset` command to reset the permissions system to its default state.
+ - Added `/platform team list` command to list all teams on the server..
 
 #### Enterprise Edition E20
  - Added cluster event types to [Performance Monitoring](https://docs.mattermost.com/deployment/metrics.html).
