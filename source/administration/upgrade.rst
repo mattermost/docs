@@ -20,11 +20,11 @@ Read these instructions carefully from start to finish. Make sure that you under
 You should gather the following information before starting the upgrade:
 
 Existing install directory - *{install-path}*
-  If you don't know where Mattermost Server is installed, use the ``whereis platform`` command. The output should be similar to */opt/mattermost/bin/platform*. The install directory is everything before the last occurrence of the string */mattermost*. In this example, the *{install-path}* is ``/opt``.
+  If you don't know where Mattermost Server is installed, use the ``whereis mattermost`` command. The output should be similar to */opt/mattermost/bin/mattermost*. The install directory is everything before the last occurrence of the string */mattermost*. In this example, the *{install-path}* is ``/opt``.
 Location of your local storage directory
   The local storage directory contains all the files that users have attached to their messages. If you don't know its location, open the System Console and go to **Files > Storage** and read the value in **Local Storage Directory**. Relative paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
 Owner and group of the install directory - *{owner}* and *{group}*
-  Use the ``ls -l {install-path}/mattermost/bin/platform`` command to get the owner and group.
+  Use the ``ls -l {install-path}/mattermost/bin/mattermost`` command to get the owner and group.
 
 **To upgrade Mattermost Server**:
 
@@ -87,7 +87,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
   .. code-block:: text
 
     cd {install-path}/mattermost
-    sudo setcap cap_net_bind_service=+ep ./bin/platform
+    sudo setcap cap_net_bind_service=+ep ./bin/mattermost
 
 12. Upgrade your ``config.json`` schema:
 
