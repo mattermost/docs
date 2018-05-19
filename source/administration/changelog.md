@@ -18,13 +18,36 @@ Release date: 2018-06-16
  - Added ``LoginIdAttribute`` to allow LDAP users to change their login ID without losing their account.
  - Updated email notification subject line and contents for Group Messages.
  - Added ping/pong and reconnection handling to Go WebSocket client.
+ - Added support for websocket custom dialer.
+ - Fixed ``update_status`` cluster event being sent thousands of times on restart of app servers.
+ - Added a feature to allow images uploaded to be collapsed using an icon and using ``/collapse`` command.
 
 ### Bug Fixes
 
+ - Fixed an issue where ``EnableUserCreation`` was set to false when not included in config.json.
+
 #### API Changes
 
+ - Improved file upload API to stream files instead of loading them entirely into memory.
  - Removed APIv3 endpoints.
  - Moved SAML login endpoints out of API package.
+ - Moved context.go out of api4 and into web. This includes moving params.go and some smaller http-related functions over.
+ - Created api4/handlers.go to create the API handlers using the Context and Handler from web.
+ - Created web/handlers.go to define the Handler struct, the base ServeHTTP function and a single web handler.
+ 
+### Compatibility
+ 
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+ - Under `"?"` in `config.json`:
+   - Changed to ``"SiteURL": "",`` to
+   - Added ``"EnableAPITeamDeletion": false`` to disable the permanent APIv4 delete team parameter.
+   
+_______________   
 
 ## Release v4.10
 
