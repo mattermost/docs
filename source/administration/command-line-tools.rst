@@ -609,6 +609,8 @@ platform team delete
 platform team list
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+*Supported in Mattermost v4.10 and later*
+
   Description
     List all teams on the server.
 
@@ -827,6 +829,8 @@ platform user migrate_auth
       --dryRun Run a simulation of the migration process without changing the database.
 
 **Migrate to SAML**
+
+*Supported in Mattermost v4.8 and later*
 
   Parameters
 
