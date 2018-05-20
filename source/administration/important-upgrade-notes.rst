@@ -2,11 +2,33 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   API version 3 is deprecated and scheduled for removal on Mattermost v5.0 release. See `api.mattermost.com <https://api.mattermost.com/#tag/APIv3-Deprecation>`_ to learn more.
+   API version 3 is now removed. See `api.mattermost.com <https://api.mattermost.com/#tag/APIv3-Deprecation>`_ to learn more.
 
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                         |
 +====================================================+=================================================================================================================================================================+
+| v5.0.0                                             | All API v3 endpoints are removed. [See documentation](https://api.mattermost.com/#tag/APIv3-Deprecation) to learn how to migrate your integrations to API v4.   |
+|                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | `platform` binary is renamed to `mattermost` for a clearer install and upgrade experience.                                                                      |
+|                                                    | All command line tools, including the bulk loading tool and developer tools, are also be renamed from `platform` to `mattermost`.                               |
+|                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | The server fails to start if the [Site URL setting](https://docs.mattermost.com/administration/config-settings.html#site-url) is not set.                       |
+|                                                    | The setting has already been required since Mattermost v3.8. Configure Site URL before upgrading.                                                               |
+|                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | A Mattermost user setting to configure desktop notification duration in **Account Settings** > **Notifications** > **Desktop Notifications** is removed.        |
+|                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Slash commands configured to receive a GET request will have the payload being encoded in the query string instead of receiving it in the body of the request,  |
+|                                                    | consistent with standard HTTP requests. Although unlikely, this could break custom slash commands that use GET requests incorrectly.                            |
+|                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | A new `config.json` setting to whitelist types of protocols for auto-linking will be added.                                                                     |
+|                                                    | If you rely on custom protocols auto-linking in Mattermost, whitelist them in `config.json` before upgrading.                                                   |
+|                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput)|
+|                                                    | is added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus.                                        |
+|                                                    | If you reply on the APIv4 parameter, enable the setting in `config.json` before upgrading.                                                                      |
+|                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | An unused `ExtraUpdateAt` field will be removed from the channel model.                                                                                         |
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.10.0                                            | Old email invitation links will no longer work due to a bug fix where teams could be re-joined via the link.                                                    |
 |                                                    | Team invite links copied from the Team Invite Link dialog, password reset links and email verification links are not affected and are still valid.              |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
