@@ -135,6 +135,8 @@ If using HTTP (insecure), this is the maximum time allowed from the end of readi
 
 Allow use of API v3 endpoints
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in June 16, 2018 release*
+
 Set to false to disable all version 3 endpoints of the REST API. Integrations that rely on API v3 will fail and can then be identified for migration to API v4. API v3 is deprecated and will be removed in the near future. See https://api.mattermost.com for details.
 
 +---------------------------------------------------------------------------------------------------------+
@@ -3114,10 +3116,21 @@ WebSocket Secure Port
 WebSocket Port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-(Optional) this setting defines the port on which the unsecured WebSocket will listen using the `ws` protocol. Otherwise it defaults to `80`. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
+(Optional) This setting defines the port on which the unsecured WebSocket will listen using the `ws` protocol. Otherwise it defaults to `80`. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``WebsocketPort": 80`` with whole number input.                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable API Team Deletion
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by Team and System Admins to permanently delete a team.
+
+**False**: The API endpoint cannot be called. Note that ``api/v4/teams/{teamid}`` can still be used to soft delete a team.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"EnableAPITeamDeletion": false``  with options ``true`` and ``false`` for above settings respectively.                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 SQL Settings
