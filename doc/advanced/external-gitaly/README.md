@@ -22,7 +22,7 @@ Follow the installation instructions for [Omnibus GitLab][]. When you perform th
 We'll create a minimal `gitlab.rb` file to be placed at `/etc/gitlab/gitlab.rb`. We'll intentionally _not_ use [Roles](https://docs.gitlab.com/omnibus/roles/README.html), so that we are _very_ explicit about what we want on this node. The contents of that file are below.
 
 _**NOTE**: The values below should be replaced_
-- `AUTH_TOKEN` should be replaced with the value in the [`gitaly-secret` secret](../../installation/secrets.md#gitaly-secret)
+- `AUTH_TOKEN` should be replaced with the value in the [`gitaly-secret` secret][gitaly-secret]
 - `GITLAB_URL` should be replaced with the URL of the GitLab instance
 - `SHELL_TOKEN` should be replaced with the value in the [`gitlab-shell-secret` secret](../../installation/secrets.md#gitlab-shell-secret)
 
@@ -60,16 +60,23 @@ run: logrotate: (pid 4856) 1859s; run: log: (pid 31262) 77460s
 
 ## Configure the Chart
 
-To connect the charts' services to the external databases, we'll need to set a few items. [external-gitaly-snippet.yaml](external-gitaly-snippet.yaml) is a subset of items that show minimal configuration changes as opposed to using the `gitaly` chart to provide Gitaly services. In summary, disable the `gitaly` chart and the Gitaly service it provides, and point the other services to the external one.
+To connect the charts' services to the external databases, we'll need to set a few items global properties. In summary, disable the `gitaly` chart and the Gitaly service it provides, and point the other services to the external one.
 
-Set the `host` value to the FQDN/IP of the server/vm.
+You need to set the following parameters:
+* `gitlab.gitaly.enabled`: Set to `false` to disable the included Gitaly chart.
+* `global.gitaly.host`: Set to the hostname of the external Gitaly
+* `global.gitaly.port`: The port the database is available on, defaults to `8075`
+* `global.gitaly.authToken.secret`: The name of the [secret which contains the token for authentication][gitaly-secret].
+* `global.gitaly.authToken.key`: The key within the secret, which contains the token content.
 
-Pass [external-gitaly-snippet.yaml](external-gitaly-snippet.yaml) values to `helm` with the `-f` flag: `helm <command> [options] -f external-gitaly-snippet.yaml`.
+For example, pass these values via helm's `--set` flag while deploying:
 
-## Deploy!
-
-Once you have a complete configuration in YAML, provide that to the Helm command.
-
-`helm install . -f external-gitaly-snippet.yaml --set ...`
+```
+helm install .  \
+  --set gitlab.gitaly.enabled=false \
+  --set global.gitaly.host=gitaly.pet \
+  --set ...
+```
 
 [Omnibus GitLab]: https://about.gitlab.com/installation/#ubuntu
+[gitaly secret]: ../../installation/secrets.md#gitaly-secret
