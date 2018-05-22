@@ -36,8 +36,8 @@ shell:
    secret: gitlab-shell-secret
    key: secret
 
-## Enable prometheus metrics and set the port to scrape the 
-## container on.  
+## Enable prometheus metrics and set the port to scrape the
+## container on.
 metrics:
   enabled: true
   metricsPort: 9236
@@ -86,3 +86,6 @@ resources:
   requests:
     cpu: 100m
     memory: 384Mi
+
+## For PodDisruptionBudget, how many pods can be unavailable at one time
+maxUnavailable: 1

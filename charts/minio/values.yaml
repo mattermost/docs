@@ -213,3 +213,4 @@ minioConfig:
 networkPolicy:
   enabled: false
   allowExternal: true
+maxUnavailable: 1

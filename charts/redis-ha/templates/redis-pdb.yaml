@@ -1,0 +1,14 @@
+{{/* Very conservative. Only let one of any of the sentinal/server pods be down */}}
+{{- if .Values.enabled -}}
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+{{ include "labels.standard" . | indent 4 }}
+spec:
+  maxUnavailable: {{ .Values.maxUnavailable }}
+  selector:
+    matchLabels:
+{{ include "labels.standard" . | indent 6 }}
+{{- end -}}

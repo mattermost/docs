@@ -20,6 +20,7 @@ resources:
 ## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#taints-and-tolerations-beta-feature
 nodeSelector: {}
 tolerations: []
+maxUnavailable: 1
 
 ## Redis image version
 redis_image: registry.gitlab.com/gitlab-org/build/cng/gitlab-redis-ha:latest
