@@ -60,6 +60,27 @@ spec:
       securityContext:
         runAsUser: 1000
         fsGroup: 1000
+      {{- if eq (default $.Values.global.antiAffinity .antiAffinity) "hard" }}
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - topologyKey: "kubernetes.io/hostname"
+              labelSelector:
+                matchLabels:
+                  app: {{ $name }}
+                  release: {{ $releaseName }}
+      {{- else if eq (default $.Values.global.antiAffinity .antiAffinity) "soft" }}
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 1
+            podAffinityTerm:
+              topologyKey: kubernetes.io/hostname
+              labelSelector:
+                matchLabels:
+                  app: {{ $name }}
+                  release: {{ $releaseName }}
+      {{- end }}
       initContainers:
         - name: configure
           command: ['sh', '/config/configure']
