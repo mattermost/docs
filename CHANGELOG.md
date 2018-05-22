@@ -2,6 +2,14 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2018-05-22
+
+### Added (3 changes, 3 of them are from the community)
+
+- Add a script for running helm without tiller running in the cluster. !281 (Corey O'Brien)
+- Add configuration for auxiliary cron jobs. !283 (Dave Konopka)
+- Add basic PodDisruptionBudgets. !284 (Corey O'Brien)
+
 ## 2018-05-15
 
 ### Changed (2 changes)
