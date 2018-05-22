@@ -9,6 +9,7 @@ for more information on how the global variables work.
 - [Ingress](#configure-ingress-settings)
 - [PostgreSQL](#configure-postgresql-settings)
 - [Redis](#configure-redis-settings)
+- [Gitaly](#configure-gitaly-settings)
 
 ## Configure Host settings
 
@@ -219,3 +220,20 @@ global:
 
 For further details on these settings, see the documentation within the
 [unicorn chart](gitlab/unicorn/README.md#redis)
+
+## Configure Gitaly settings
+
+The GitLab global Gitaly settings are located under the `global.gitaly` key.
+
+```YAML
+global:
+  gitaly:
+    host: gitaly.example.local
+    port: 8079
+    authToken:
+      secret: gitaly-secret
+      key: token
+```
+
+For further details on these settings, see the documentation within the
+[unicorn chart](gitlab/unicorn/README.md#gitaly)

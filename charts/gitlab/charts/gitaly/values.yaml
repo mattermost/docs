@@ -21,10 +21,11 @@ global:
     password:
       secret: gitlab-redis
       key: redis-password
-
-authToken:
-  secret: gitaly-secret
-  key: token
+  gitaly:
+    authToken: {}
+authToken: {}
+  # secret: 'gitaly-secret'
+  # key: 'token'
 unicorn: {}
   # host: '0.0.0.0'
   # serviceName: 'unicorn'

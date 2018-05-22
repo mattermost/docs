@@ -24,6 +24,8 @@ global:
     password:
       secret: gitlab-redis
       key: redis-password
+  gitaly:
+    authToken: {}
 backups:
   bucketName: gitlab-backups
 
@@ -51,10 +53,10 @@ shell:
 gitaly:
   # host: '0.0.0.0'
   # port: 8075
-  serviceName: 'gitaly'
-  authToken:
-    secret: gitaly-secret
-    key: token
+  # serviceName: 'gitaly'
+  authToken: {}
+  #   secret: gitaly-secret
+  #   key: token
 lfs:
   enabled: true
   proxy_download: true

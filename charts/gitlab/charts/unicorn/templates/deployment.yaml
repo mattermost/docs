@@ -158,9 +158,9 @@ spec:
                 - key: {{ default "secret" .Values.shell.authToken.key }}
                   path: shell/.gitlab_shell_secret
           - secret:
-              name: {{ .Values.gitaly.authToken.secret }}
+              name: {{ template "gitlab.gitaly.authToken.secret" . }}
               items:
-                - key: {{ default "token" .Values.gitaly.authToken.key }}
+                - key: {{ template "gitlab.gitaly.authToken.key" . }}
                   path: gitaly/gitaly_token
           - secret:
               name: {{ coalesce .Values.redis.password.secret .Values.global.redis.password.secret }}

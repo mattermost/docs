@@ -30,13 +30,15 @@ global:
     password:
       secret: gitlab-redis
       key: redis-password
+  gitaly:
+    authToken: {}
 gitaly:
   # host: '0.0.0.0'
   # port: 8075
-  serviceName: 'gitaly'
-  authToken:
-    secret: gitaly-secret
-    key: token
+  # serviceName: 'gitaly'
+  authToken: {}
+  #   secret: gitaly-secret
+  #   key: token
 
 extra: {}
 

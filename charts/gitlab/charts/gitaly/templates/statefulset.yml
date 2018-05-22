@@ -130,9 +130,9 @@ spec:
           defaultMode: 0440
           sources:
           - secret:
-              name: {{ .Values.authToken.secret }}
+              name: {{ coalesce .Values.authToken.secret .Values.global.gitaly.authToken.secret "gitaly-secret" }}
               items:
-                - key: {{ .Values.authToken.key }}
+                - key: {{ coalesce .Values.authToken.key .Values.global.gitaly.authToken.key "token" }}
                   path: "gitaly_token"
           - secret:
               name: {{ .Values.shell.authToken.secret }}
