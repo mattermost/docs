@@ -111,7 +111,7 @@ spec:
           - secret:
               name: {{ coalesce .Values.authToken.secret .Values.global.gitaly.authToken.secret "gitaly-secret" }}
               items:
-                - key: {{ coalesce .Values.authToken.key.Values.global.gitaly.authToken.key "token" }}
+                - key: {{ coalesce .Values.authToken.key .Values.global.gitaly.authToken.key "token" }}
                   path: "gitaly_token"
           - secret:
               name: {{ .Values.shell.authToken.secret }}
