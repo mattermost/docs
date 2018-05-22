@@ -82,6 +82,7 @@ certificate:
   key: registry-auth.crt
 # if replicas is >1, shared storage MUST be used.
 replicas: 1
+maxUnavailable: 1
 storage: {}
 minio:
   enabled: true

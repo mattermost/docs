@@ -81,6 +81,7 @@ resources:
   requests:
     cpu: 500m
     memory: 1024M
+maxUnavailable: 1
 
 # Define queue groups into Pods
 pods:

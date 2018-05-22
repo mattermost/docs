@@ -8,7 +8,7 @@ service:
   externalPort: 6379
   internalPort: 6379
   clusterIP: '0.0.0.0'
-replicas: 1
+maxUnavailable: 1
 # define some sane resource requests and limitations
 resources:
   # limits:
