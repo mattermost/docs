@@ -70,6 +70,23 @@ Table below contains all the possible charts configurations that can be supplied
 | minioConfig.browser          | Minio browser flag                      | on                           |
 | minioConfig.domain           | Minio domain                            |                              |
 
+## Chart configuration examples
+### pullSecrets
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+
+Additional details about private registries and their authentication methods
+can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
+
+Below is an example use of `pullSecrets`
+```YAML
+image: my.minio.repository
+imageTag: latest
+imagePullPolicy: Always
+pullSecrets: 
+- name: my-secret-name
+- name: my-secondary-secret-name
+```
+
 ## Enable the sub-chart
 
 They way we've chosen to implement compartmentalized sub-charts includes the ability to disable the components that you may not want in a given deployment. For this reason, the first settings you should decided upon is `enabled:`.

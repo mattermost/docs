@@ -40,6 +40,24 @@ Table below contains all the possible charts configurations that can be supplied
 | railsSecrets.key      | Key to contents of secrets.yml in rails secret | secrets.yml                                    |
 | initialRootPassword   | Password to the gitlab root account            | Required                                       |
 
+## Chart configuration examples
+### image.pullSecrets
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+
+Additional details about private registries and their authentication methods
+can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
+
+Below is an example use of `pullSecrets`
+```YAML
+image:
+  repository: my.migrations.repository
+  tag: latest
+  pullPolicy: Always
+  pullSecrets: 
+  - name: my-secret-name
+  - name: my-secondary-secret-name
+```
+
 ## Using the Community Edition of this chart
 
 By default, the Helm charts use the Enterprise Edition of GitLab. If desired, you can instead use the Community Edition. Learn more about the [difference between the two](https://about.gitlab.com/installation/ce-or-ee/).

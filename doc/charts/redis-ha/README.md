@@ -35,6 +35,24 @@ The following tables lists the configurable parameters of the Redis chart and th
 | `serviceAccount.name`            | service account to be used.  If not set and serviceAccount.create is `true` a name is generated using the fullname template. | ``                                                        |
 | `metrics.enabled`                | Toggle Prometheus Redis exporter sidecar container                                                                           | true                                                      |
 
+## Chart configuration examples
+### pullSecrets
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+
+Additional details about private registries and their authentication methods
+can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
+
+Below is an example use of `pullSecrets`
+```YAML
+image:
+  repository: my.redis-ha.repository
+  tag: latest
+  pullPolicy: Always
+  pullSecrets: 
+  - name: my-secret-name
+  - name: my-secondary-secret-name
+```
+
 ## Configuring `metrics`
 
 By default, a sidecar container exposing a Prometheus metrics exporter is launched along with each Redis master/slave container. The exporter exposes a `/metrics` endpoint on port `9121`. When metrics are enabled, annotations are added to each service allowing a Prometheus server to discover and scrape the exposed metrics.

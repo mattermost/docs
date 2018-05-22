@@ -81,6 +81,32 @@ Table below contains all the possible charts configurations that can be supplied
 | ingress.annotations               | Annotations                                            | Undefined by default                                           |
 | ingress.tls                       | Tls certificates (custom)                              | Undefined by default                                           |
 
+## Chart configuration examples
+### images.defaultbackend.pullSecrets & images.nginxIngress.pullSecrets
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+
+Additional details about private registries and their authentication methods
+can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
+
+Below is an example use of `pullSecrets`
+```YAML
+images:
+  defaultbackend:
+    repository: my.default.repository
+    tag: latest
+    pullPolicy: Always
+    pullSecrets: 
+    - name: my-secret-name
+    - name: my-secondary-secret-name
+  nginxIngress:
+    repository: my.nginx.repository
+    tag: latest
+    pullPolicy: Always
+    pullSecrets: 
+    - name: my-secret-name
+    - name: my-secondary-secret-name
+```
+
 ### NGINX options
 
 ```

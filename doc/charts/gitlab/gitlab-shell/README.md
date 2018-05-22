@@ -38,6 +38,24 @@ The `gitlab-shell` sub-chart provides a SSH server configured for Git SSH access
 | redis.password.secret | Redis secret                          | gitlab-redis                                   |
 | redis.password.key    | Key to redis password in redis secret | redis-password                                 |
 
+## Chart configuration examples
+### image.pullSecrets
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+
+Additional details about private registries and their authentication methods
+can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
+
+Below is an example use of `pullSecrets`
+```YAML
+image:
+  repository: my.shell.repository
+  tag: latest
+  pullPolicy: Always
+  pullSecrets: 
+  - name: my-secret-name
+  - name: my-secondary-secret-name
+```
+
 ## External Services
 
 This chart should be attached the Unicorn service, and should also use the same Redis as the attached Unicorn service.
