@@ -99,6 +99,8 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
+13. Copy the ``plugins/`` directory from the old install to the new install and restart the mattermost service.
+
 Upgrading Team Edition to Enterprise Edition
 --------------------------------------------
 
