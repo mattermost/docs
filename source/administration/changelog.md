@@ -21,6 +21,7 @@ Release date: 2018-06-16
  - Added support for websocket custom dialer.
  - Fixed ``update_status`` cluster event being sent thousands of times on restart of app servers.
  - Added a feature to allow images uploaded to be collapsed using an icon and using ``/collapse`` command.
+ - Added a system console setting to disable the preview mode banner when email notifications are disabled.
 
 ### Bug Fixes
 
@@ -45,7 +46,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - Under `"?"` in `config.json`:
    - Changed to ``"SiteURL": "",`` to
-   - Added ``"EnableAPITeamDeletion": false`` to disable the permanent APIv4 delete team parameter.
+   - Added ``"EnableAPITeamDeletion": false,`` to disable the permanent APIv4 delete team parameter.
+   - Added ``"EnablePreviewModeBanner": true,`` to
    
 _______________   
 
@@ -135,7 +137,6 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 6. A new `config.json` setting to whitelist types of protocols for auto-linking will be added. [Ticket #9547](https://mattermost.atlassian.net/browse/MM-9547).
 7. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) will be added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
 8. An unused `ExtraUpdateAt` field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
-9. [Enterprise Edition E20] Current CSV export feature will be replaced by the [new Compliance Export](https://docs.mattermost.com/administration/compliance-export.html) feature. [Ticket #8810](https://mattermost.atlassian.net/browse/MM-8810).
 
 ### Known Issues
 
@@ -259,7 +260,6 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 4. A new `config.json` setting to whitelist types of protocols for auto-linking will be added. [Ticket #9547](https://mattermost.atlassian.net/browse/MM-9547).
 5. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) will be added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
 6. An unused `ExtraUpdateAt` field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
-7. [Enterprise Edition E20] Current CSV export feature will be replaced by the [new Compliance Export](https://docs.mattermost.com/administration/compliance-export.html) feature. [Ticket #8810](https://mattermost.atlassian.net/browse/MM-8810).
  
 #### config.json
 
