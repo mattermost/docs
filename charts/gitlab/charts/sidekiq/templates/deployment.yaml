@@ -118,6 +118,7 @@ spec:
           - name: sidekiq-secrets
             mountPath: '/etc/gitlab'
             readOnly: true
+{{- include "pullsecrets" $.Values.image | indent 6}}
       containers:
         - name: {{ $name }}
           image: "{{ $image }}"

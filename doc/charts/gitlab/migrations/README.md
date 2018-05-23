@@ -29,6 +29,7 @@ Table below contains all the possible charts configurations that can be supplied
 | image.repository      | Migrations image repository                    | registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee |
 | image.tag             | Migrations image tag                           | latest                                         |
 | image.pullPolicy      | Migrations pull policy                         | Always                                         |
+| image.pullSecrets     | Secrets for the image repository               |                                                |
 | enabled               | Migrations enable flag                         | true                                           |
 | redis.serviceName     | Redis service name                             | redis                                          |
 | redis.password.secret | Redis secret                                   | gitlab-redis                                   |
@@ -38,6 +39,24 @@ Table below contains all the possible charts configurations that can be supplied
 | railsSecrets.secret   | Secret containing rails secrets.yml            | rails-secrets                                  |
 | railsSecrets.key      | Key to contents of secrets.yml in rails secret | secrets.yml                                    |
 | initialRootPassword   | Password to the gitlab root account            | Required                                       |
+
+## Chart configuration examples
+### image.pullSecrets
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+
+Additional details about private registries and their authentication methods
+can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
+
+Below is an example use of `pullSecrets`
+```YAML
+image:
+  repository: my.migrations.repository
+  tag: latest
+  pullPolicy: Always
+  pullSecrets: 
+  - name: my-secret-name
+  - name: my-secondary-secret-name
+```
 
 ## Using the Community Edition of this chart
 

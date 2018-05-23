@@ -25,6 +25,7 @@ Table below contains all the possible charts configurations that can be supplied
 | image.repository          | Sidekiq image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee |
 | image.tag                 | Sidekiq image tag                              | latest                                           |
 | image.pullPolicy          | Sidekiq image pull policy                      | Always                                           |
+| image.pullSecrets         | Secrets for the image repository               |                                                  |
 | enabled                   | Sidekiq enabled flag                           | true                                             |
 | metrics.enabled           | Toggle Prometheus metrics exporter             | true                                             |
 | redis.serviceName         | Redis service name                             | redis                                            |
@@ -43,6 +44,24 @@ Table below contains all the possible charts configurations that can be supplied
 | timeout                   | Sidekiq job timeout                            | 5                                                |
 | resources.requests.cpu    | Sidekiq minimum needed cpu                     | 100m                                             |
 | resources.requests.memory | Sidekiq minimum needed memory                  | 600M                                             |
+
+## Chart configuration examples
+### image.pullSecrets
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+
+Additional details about private registries and their authentication methods
+can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
+
+Below is an example use of `pullSecrets`
+```YAML
+image:
+  repository: my.sidekiq.repository
+  tag: latest
+  pullPolicy: Always
+  pullSecrets: 
+  - name: my-secret-name
+  - name: my-secondary-secret-name
+```
 
 ## Using the Community Edition of this chart
 

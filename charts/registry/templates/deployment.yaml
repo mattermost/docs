@@ -49,6 +49,7 @@ spec:
               mountPath: /config
             - name: registry-server-config
               mountPath: /registry
+{{- include "pullsecrets" .Values.image | indent 6}}
       containers:
         - name: registry
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

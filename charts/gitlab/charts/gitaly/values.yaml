@@ -7,6 +7,7 @@
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitaly
   tag: latest
+  pullSecrets: []
   pullPolicy: Always
 service:
   name: gitaly

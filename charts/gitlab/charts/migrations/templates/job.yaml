@@ -33,6 +33,7 @@ spec:
             mountPath: /init-secrets
             readOnly: false
       restartPolicy: OnFailure
+{{- include "pullsecrets" .Values.image | indent 6}}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

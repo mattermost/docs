@@ -23,7 +23,11 @@ tolerations: []
 maxUnavailable: 1
 
 ## Redis image version
-redis_image: registry.gitlab.com/gitlab-org/build/cng/gitlab-redis-ha:latest
+image:
+  repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-redis-ha
+  tag: latest
+  pullPolicy: Always
+  pullSecrets: []
 ## replicas number for each component
 replicas:
   servers: 3

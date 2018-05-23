@@ -23,6 +23,7 @@ Table below contains all the possible charts configurations that can be supplied
 | image.repository             | Gitaly image repository                | registry.com/gitlab-org/build/cng/gitaly |
 | image.tag                    | Gitaly image tag                       | latest                                   |
 | image.pullPolicy             | Gitaly image pull policy               | Always                                   |
+| image.pullSecrets            | Secrets for the image repository       |                                          |
 | service.name                 | Gitaly service name                    | gitaly                                   |
 | service.type                 | Gitaly service type                    | ClusterIP                                |
 | service.externalPort         | Gitaly service exposed port            | 8075                                     |
@@ -43,6 +44,24 @@ Table below contains all the possible charts configurations that can be supplied
 | persistence.volumeName       | Existing persistent volume name        |                                          |
 | persistence.matchLabels      | Label-value matches to bind            |                                          |
 | persistence.matchExpressions | Label-expression matches to bind       |                                          |
+
+## Chart configuration examples
+### image.pullSecrets
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+
+Additional details about private registries and their authentication methods
+can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
+
+Below is an example use of `pullSecrets`
+```YAML
+image:
+  repository: my.gitaly.repository
+  tag: latest
+  pullPolicy: Always
+  pullSecrets: 
+  - name: my-secret-name
+  - name: my-secondary-secret-name
+```
 
 ## External Services
 

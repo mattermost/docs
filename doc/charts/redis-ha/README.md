@@ -17,7 +17,10 @@ The following tables lists the configurable parameters of the Redis chart and th
 
 | Parameter                        | Description                                                                                                                  | Default                                                   |
 | -------------------------------- | -----------------------------------------------------                                                                        | --------------------------------------------------------- |
-| `redis_image`                    | Redis image                                                                                                                  | `registry.gitlab.com/gitlab-org/build/cng/gitlab-redis-ha:latest`                             |
+| `image.repository`               | Redis image                                                                                                                  | `registry.gitlab.com/gitlab-org/build/cng/gitlab-redis-ha`|
+| `image.tag`                      | Version of the Redis image to use                                                                                            | `latest`                                                  |
+| `image.pullPolicy`               | Pull policy for the Redis image                                                                                              |                                                           |
+| `image.pullSecrets`              | Secrets to use for image repository                                                                                          |                                                           |
 | `resources.master`               | CPU/Memory for master nodes resource requests/limits                                                                         | Memory: `200Mi`, CPU: `100m`                              |
 | `resources.slave`                | CPU/Memory for slave nodes  resource requests/limits                                                                         | Memory: `200Mi`, CPU: `100m`                              |
 | `resources.sentinel`             | CPU/Memory for sentinel node resource requests/limits                                                                        | Memory: `200Mi`, CPU: `100m`                              |
@@ -31,6 +34,24 @@ The following tables lists the configurable parameters of the Redis chart and th
 | `serviceAccount.create`          | whether a new service account name that the agent will use should be created.                                                | true                                                      |
 | `serviceAccount.name`            | service account to be used.  If not set and serviceAccount.create is `true` a name is generated using the fullname template. | ``                                                        |
 | `metrics.enabled`                | Toggle Prometheus Redis exporter sidecar container                                                                           | true                                                      |
+
+## Chart configuration examples
+### pullSecrets
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+
+Additional details about private registries and their authentication methods
+can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
+
+Below is an example use of `pullSecrets`
+```YAML
+image:
+  repository: my.redis-ha.repository
+  tag: latest
+  pullPolicy: Always
+  pullSecrets: 
+  - name: my-secret-name
+  - name: my-secondary-secret-name
+```
 
 ## Configuring `metrics`
 

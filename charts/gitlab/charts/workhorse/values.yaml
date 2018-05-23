@@ -5,6 +5,7 @@ replicaCount: 1
 image:
   repository: nginx
   tag: stable
+  pullSecrets: []
   pullPolicy: IfNotPresent
 service:
   name: workhorse

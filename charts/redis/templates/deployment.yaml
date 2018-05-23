@@ -36,6 +36,7 @@ spec:
           - name: {{ .Release.Name }}-metrics
             mountPath: /metrics
             readOnly: false
+{{- include "pullsecrets" .Values.image | indent 6}}
       containers:
         - name: redis
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

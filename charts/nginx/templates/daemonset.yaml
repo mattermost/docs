@@ -22,6 +22,7 @@ spec:
         prometheus.io/port: "10254"
         prometheus.io/scrape: "true"
     spec:
+{{- include "pullsecrets" .Values.images.nginxIngress | indent 6}}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.images.nginxIngress.repository }}:{{ .Values.images.nginxIngress.tag }}"

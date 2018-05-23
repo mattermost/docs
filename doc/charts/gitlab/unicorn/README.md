@@ -22,6 +22,7 @@ Table below contains all the possible charts configurations that can be supplied
 | image.repository              | Unicorn image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee |
 | image.tag                     | Unicorn image tag                              | latest                                           |
 | image.pullPolicy              | Unicorn image pull policy                      | Always                                           |
+| image.pullSecrets             | Secrets for the image repository               |                                                  |
 | service.name                  | Unicorn service name                           | unicorn                                          |
 | service.type                  | Unicorn service type                           | ClusterIP                                        |
 | service.externalPort          | Unicorn exposed port                           | 8080                                             |
@@ -69,6 +70,24 @@ Table below contains all the possible charts configurations that can be supplied
 | extras.google_analytics_id    | Google Analytics Id for frontend               | nil                                              |
 | rack_attack.git_basic_auth    | See [GitLab documentation][rackattack] for details | {}                                           |
 | trusted_proxies               | See [GitLab documentation][proxies] for details | []                                              |
+
+## Chart configuration examples
+### image.pullSecrets
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+
+Additional details about private registries and their authentication methods
+can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
+
+Below is an example use of `pullSecrets`
+```YAML
+image:
+  repository: my.unicorn.repository
+  tag: latest
+  pullPolicy: Always
+  pullSecrets: 
+  - name: my-secret-name
+  - name: my-secondary-secret-name
+```
 
 ## Using the Community Edition of this chart
 

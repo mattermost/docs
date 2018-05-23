@@ -35,6 +35,7 @@ spec:
       securityContext:
         runAsUser: 1000
         fsGroup: 1000
+{{- include "pullsecrets" .Values.image | indent 6}}
       {{- if eq (default .Values.global.antiAffinity .Values.antiAffinity) "hard" }}
       affinity:
         podAntiAffinity:

@@ -16,6 +16,7 @@ spec:
         app: default-http-backend
         release: {{ .Release.Name }}
     spec:
+{{- include "pullsecrets" .Values.images.defaultbackend | indent 6}}
       containers:
       - name: default-http-backend
         # Any image is permissable as long as:

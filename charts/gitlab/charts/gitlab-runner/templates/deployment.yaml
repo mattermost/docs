@@ -35,6 +35,7 @@ spec:
             mountPath: /init-secrets
             readOnly: true
       serviceAccountName: {{ if .Values.rbac.create }}{{ template "fullname" . }}{{ else }}"{{ .Values.rbac.serviceAccountName }}"{{ end }}
+{{- include "pullsecrets" .Values | indent 6}}
       containers:
       - name: {{ template "fullname" . }}
         image: {{ .Values.image }}

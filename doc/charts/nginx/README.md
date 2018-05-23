@@ -47,9 +47,11 @@ Table below contains all the possible charts configurations that can be supplied
 | images.defaultbackend.repository  | Default backend that nginx routes to eg: 404           | gcr.io/google_containers/defaultbackend                        |
 | images.defaultbackend.tag         | dafault backend image tag                              | 1.4                                                            |
 | images.defaultbackend.pullPolicy  | default backend pull policy                            | IfNotPresent                                                   |
+| images.defaultbackend.pullSecrets | Secrets for the image repository                       |                                                                |
 | images.nginxIngress.repository    | nginx repository                                       | quay.io/kubernetes-ingress-controller/nginx-ingress-controller |
 | images.nginxIngress.tag           | nginx image tag                                        | 0.9.0                                                          |
 | images.nginxIngress.pullPolicy    | nginx image pull policy                                | IfNotPresent                                                   |
+| images.nginxIngress.pullSecrets   | Secrets for the image repository                       |                                                                |
 | service.name                      | nginx service name                                     | nginx                                                          |
 | service.type                      | nginx service type                                     | LoadBalancer                                                   |
 | service.ports                     | nginx service ports                                    | [{"http": 80}, {"https": 443}, {"ssh": 22}]                    |
@@ -78,6 +80,32 @@ Table below contains all the possible charts configurations that can be supplied
 | ingress.hosts                     | Hosts ingress listens to                               | Empty array                                                    |
 | ingress.annotations               | Annotations                                            | Undefined by default                                           |
 | ingress.tls                       | Tls certificates (custom)                              | Undefined by default                                           |
+
+## Chart configuration examples
+### images.defaultbackend.pullSecrets & images.nginxIngress.pullSecrets
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+
+Additional details about private registries and their authentication methods
+can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
+
+Below is an example use of `pullSecrets`
+```YAML
+images:
+  defaultbackend:
+    repository: my.default.repository
+    tag: latest
+    pullPolicy: Always
+    pullSecrets: 
+    - name: my-secret-name
+    - name: my-secondary-secret-name
+  nginxIngress:
+    repository: my.nginx.repository
+    tag: latest
+    pullPolicy: Always
+    pullSecrets: 
+    - name: my-secret-name
+    - name: my-secondary-secret-name
+```
 
 ### NGINX options
 

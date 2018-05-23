@@ -48,19 +48,41 @@ If you should chose to deploy this chart as a standalone, remove the top level `
 
 Table below contains all the possible charts configurations that can be supplied to `helm install` command using the `--set` flags
 
-| Parameter                | Description                         | Default              |
-| ---                      | ---                                 | ---                  |
-| enabled                  | Enable registry flag                | true                 |
-| httpSecret               | Https secret                        |                      |
-| authEndpoint             | Auth endpoint                       | Undefined by default |
-| tokenService             | JWT token service                   | container_registry   |
-| tokenIssuer              | JWT token issuer                    | gitlab-issuer        |
-| certificate.secret       | JWT certificate                     | gitlab-registry      |
-| certificate.key          | JWT certificate private key         | registry-auth.crt    |
-| replicas                 | Number of replicas                  | 1                    |
-| minio.enabled            | Enable minio flag                   | true                 |
-| minio.bucket             | Minio registry bucket name          | registry             |
-| minio.credentials.secret | Secret containing minio credentials | gitlab-minio         |
+| Parameter                | Description                             | Default              |
+| ---                      | ---                                     | ---                  |
+| image.repository         | Registry image                          | registry             |
+| image.tag                | Version of the image to use             | 2.6                  |
+| image.pullPolicy         | Pull policy for the registry image      |                      |
+| image.pullSecrets        | Secrets to use for image repository     |                      |
+| enabled                  | Enable registry flag                    | true                 |
+| httpSecret               | Https secret                            |                      |
+| authEndpoint             | Auth endpoint                           | Undefined by default |
+| tokenService             | JWT token service                       | container_registry   |
+| tokenIssuer              | JWT token issuer                        | gitlab-issuer        |
+| certificate.secret       | JWT certificate                         | gitlab-registry      |
+| certificate.key          | JWT certificate private key             | registry-auth.crt    |
+| replicas                 | Number of replicas                      | 1                    |
+| minio.enabled            | Enable minio flag                       | true                 |
+| minio.bucket             | Minio registry bucket name              | registry             |
+| minio.credentials.secret | Secret containing minio credentials     | gitlab-minio         |
+
+## Chart configuration examples
+### pullSecrets
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+
+Additional details about private registries and their authentication methods
+can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
+
+Below is an example use of `pullSecrets`
+```YAML
+image:
+  repository: my.registry.repository
+  tag: latest
+  pullPolicy: Always
+  pullSecrets: 
+  - name: my-secret-name
+  - name: my-secondary-secret-name
+```
 
 ## Enable the sub-chart
 

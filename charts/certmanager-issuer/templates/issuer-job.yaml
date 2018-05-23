@@ -20,6 +20,7 @@ spec:
       serviceAccountName: {{ template "fullname" . }}-admin
       {{- end }}
       restartPolicy: OnFailure
+{{- include "pullsecrets" .Values.image | indent 6}}
       containers:
         - name: create-issuer
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"

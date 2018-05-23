@@ -2,6 +2,7 @@ image:
   repository: redis
   tag: '3.2.5'
   pullPolicy: 'IfNotPresent'
+  pullSecrets: []
 service:
   name: redis
   type: ClusterIP

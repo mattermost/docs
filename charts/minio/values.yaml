@@ -4,6 +4,7 @@
 image: "minio/minio"
 imageTag: "RELEASE.2017-12-28T01-21-00Z"
 imagePullPolicy: "Always"
+pullSecrets: []
 
 ## Enable/Disable
 enabled: true
