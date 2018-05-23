@@ -143,3 +143,15 @@ Returns the nginx ingress class
 {{- define "gitlab.ingressclass" -}}
 {{- pluck "class" .Values.global.ingress (dict "class" (printf "%s-nginx" .Release.Name)) | first -}}
 {{- end -}}
+
+{{/* ######### annotations */}}
+
+{{/*
+Handles merging a set of service annotations
+*/}}
+{{- define "gitlab.serviceAnnotations" -}}
+{{- $allAnnotations := merge (default (dict) (default (dict) .Values.service).annotations) .Values.global.service.annotations -}}
+{{- if $allAnnotations -}}
+{{- toYaml $allAnnotations -}}
+{{- end -}}
+{{- end -}}

@@ -8,6 +8,8 @@ metadata:
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+  annotations:
+{{ include "gitlab.serviceAnnotations" . | indent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:

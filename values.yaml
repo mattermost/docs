@@ -40,6 +40,8 @@ global:
     reply_to: ''
     subject_suffix: ''
   time_zone: UTC
+  service:
+    annotations: {}
   antiAffinity: soft
 
 certmanager:
