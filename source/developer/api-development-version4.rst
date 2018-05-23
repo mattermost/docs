@@ -151,7 +151,7 @@ packages to find the source of errors. Status codes on errors should be
 set at the creation of the error.
 
 When completing this step, please make sure to
-use the new ``model.NewAppError()`` function (`see example <https://github.com/mattermost/mattermost-server/tree/master/store/sql_user_store.go#L112>`__).
+use the new ``model.NewAppError()`` function (`see example <https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/user_store.go>`__).
 
 Submitting your Pull Request
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

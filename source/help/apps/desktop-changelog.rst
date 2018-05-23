@@ -300,7 +300,7 @@ Windows
 ^^^^^^^^^^^^^
 
 - Focus is now set to the next top-level window after closing the main app window.
-- Fixed an issue where the app remained in the `"classic" ALT+TAB window switcher <http://www.askvg.com/how-to-get-windows-xp-styled-classic-alttab-screen-in-windows-vista-and-7/>`_ after closing the main app window.
+- Fixed an issue where the app remained in the `"classic" ALT+TAB window switcher <https://www.askvg.com/how-to-get-windows-xp-styled-classic-alttab-screen-in-windows-vista-and-7/>`_ after closing the main app window.
 
 Mac
 ^^^^^^^^^^^^^

@@ -25,7 +25,7 @@ Folder Structures
 E2E tests files are located at `mattermost-webapp/tests/e2e`. This folder includes utility and actual tests. Usually, you will be writing tests in the following folders:
 
 - `/pages`: 
-    a. Files are named with a prefix of `Page.js` which contain `Page Objects <https://martinfowler.com/bliki/PageObject.html/>`__.
+    a. Files are named with a prefix of `Page.js` which contain `Page Objects <https://martinfowler.com/bliki/PageObject.html>`__.
     b. Each file typically consists of `commands`, `url`, `section`, `elements` and `selector`.
     c. Selector can be either CSS or XPath locate strategies but, for convenience and readability, the default CSS selector is used with corresponding element IDs.
 

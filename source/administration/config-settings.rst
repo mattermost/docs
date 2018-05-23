@@ -2155,7 +2155,7 @@ Hostname of your S3-compatible instance. Defaults to "s3.amazonaws.com".
 
 Amazon S3 Access Key ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This is required for access unless you are using an `Amazon S3 IAM Role <https://about.mattermost.com/default-iam-role>`_ with Amazon S3. Your EC2 administrator can supply you with the access key ID.
+This is required for access unless you are using an `Amazon S3 IAM Role <https://about.mattermost.com/default-iam-role-settings-documentation>`_ with Amazon S3. Your EC2 administrator can supply you with the access key ID.
 
 +-------------------------+---------------------------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3AccessKeyId``                                             |
