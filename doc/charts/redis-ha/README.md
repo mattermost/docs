@@ -17,8 +17,8 @@ The following tables lists the configurable parameters of the Redis chart and th
 
 | Parameter                        | Description                                                                                                                  | Default                                                   |
 | -------------------------------- | -----------------------------------------------------                                                                        | --------------------------------------------------------- |
-| `image.repository`               | Redis image                                                                                                                  | `registry.gitlab.com/gitlab-org/build/cng/gitlab-redis-ha:latest`                             |
-| `image.tag`                      | Version of the Redis image to use                                                                                            |                                                           |
+| `image.repository`               | Redis image                                                                                                                  | `registry.gitlab.com/gitlab-org/build/cng/gitlab-redis-ha`|
+| `image.tag`                      | Version of the Redis image to use                                                                                            | `latest`                                                  |
 | `image.pullPolicy`               | Pull policy for the Redis image                                                                                              |                                                           |
 | `image.pullSecrets`              | Secrets to use for image repository                                                                                          |                                                           |
 | `resources.master`               | CPU/Memory for master nodes resource requests/limits                                                                         | Memory: `200Mi`, CPU: `100m`                              |

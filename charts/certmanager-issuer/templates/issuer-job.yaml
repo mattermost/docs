@@ -19,13 +19,8 @@ spec:
       {{- if .Values.rbac.create }}
       serviceAccountName: {{ template "fullname" . }}-admin
       {{- end }}
-      {{- if .Values.image.pullSecrets }}
-      imagePullSecrets:
-      {{-   range $index, $entry := .Values.image.pullSecrets }}
-      - name: {{$entry.name}}
-      {{-   end }}
-      {{- end }}
       restartPolicy: OnFailure
+{{- include "pullsecrets" .Values.image | indent 6}}
       containers:
         - name: create-issuer
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
