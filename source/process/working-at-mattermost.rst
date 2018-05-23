@@ -41,9 +41,9 @@ We run as a distributed, high performance team using a few principles:
 
 1) Work anywhere with good Internet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Working from anywhere means more time with loved ones, no commute, and controlling everything about your workspace. 
+Working from anywhere means more time with loved ones, no commute and controlling everything about your workspace. 
 
-The one requirement is having the ability to occassionally `join video calls using Zoom <https://support.zoom.us/hc/en-us/articles/201362023-System-Requirements-for-PC-Mac-and-Linux>`_ between 8am and 1pm California time, which requires a good enough internet connection and a quiet space from which to take calls. 
+The one requirement is having the ability to occassionally `join video calls using Zoom <https://support.zoom.us/hc/en-us/articles/201362023-System-Requirements-for-PC-Mac-and-Linux>`_ between 8am and 1pm California time, which requires a good enough internet connection. 
 
 There are exceptions to this requirement, for example: part time roles that don't need to take meetings, or roles providing support outside core meeting hours. 
 
@@ -160,5 +160,3 @@ Just as flexible as our working hours, learn more about our `paid time-off polic
 **4. Additional US and Canadian employee benefits**
 
 Mattermost uses professional employement organizations in the United States and Canada and are able to offer additional `benefits to US employees <benefits-us.html>`_ and `benefits to Canadian employees <benefits-canada.html>`_. 
-
-
