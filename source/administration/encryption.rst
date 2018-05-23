@@ -1,8 +1,6 @@
 Encryption Options
 =======================
 
-*Temporary note: This document is prepared as an additional resource for GDPR checklist guide for DPOs. It requires a technical review from a developer, particularly for database encryption-at-rest. Once ready, the doc can be added to the Admin > Deployment section at docs.mattermost.com, https://docs.mattermost.com/guides/administrator.html#deployment*
-
 Mattermost provides encryption-in-transit and encryption-at-rest for both database and file storage. This page guides you through setting up appropriate encryption security.
 
 Encryption is not required for GDPR, although it can be used as an additional safeguard against data breach.
