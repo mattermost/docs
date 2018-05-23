@@ -8,11 +8,12 @@ metadata:
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
-  {{- if .Values.metrics.enabled }}
   annotations:
+  {{- if .Values.metrics.enabled }}
     prometheus.io/scrape: "true"
     prometheus.io/port: "{{ .Values.metrics.metricsPort }}"
   {{- end }}
+{{ include "gitlab.serviceAnnotations" . | indent 4 }}
 spec:
   type: {{ .Values.service.type }}
   clusterIP: "None"

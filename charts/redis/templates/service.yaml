@@ -7,6 +7,7 @@ metadata:
 {{- if .Values.metrics.enabled }}
 {{ toYaml .Values.metrics.annotations | indent 4 }}
 {{- end }}
+{{ include "gitlab.serviceAnnotations" . | indent 4 }}
   labels:
     app: {{ template "name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
