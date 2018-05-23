@@ -22,6 +22,7 @@ Release date: 2018-06-16
  - Fixed ``update_status`` cluster event being sent thousands of times on restart of app servers.
  - Added a feature to allow images uploaded to be collapsed using an icon and using ``/collapse`` command.
  - Added a system console setting to disable the preview mode banner when email notifications are disabled.
+ - Removed license check when enforcing password requirements (moved password settings to TE).
 
 ### Bug Fixes
 
@@ -48,6 +49,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Changed to ``"SiteURL": "",`` to
    - Added ``"EnableAPITeamDeletion": false,`` to disable the permanent APIv4 delete team parameter.
    - Added ``"EnablePreviewModeBanner": true,`` to
+   - Added ``"StreamingPort": 8075,`` to
+   - Added ```"MaxIdleConns": 100,`` to
+   - Added ``"MaxIdleConnsPerHost": 128,`` to
+   - Added ``"IdleConnTimeoutMilliseconds": 90000`` to
    
 _______________   
 
