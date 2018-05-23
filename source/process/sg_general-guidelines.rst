@@ -61,6 +61,15 @@ Word Usage Guidelines
 
 To promote consistency and clarity, follow the word usage and spelling guidelines in the following list.
 
+can, might, may
+  The word *may* can have several meanings. To avoid ambiguity, use *can* or *might* instead of *may*. Use *can* to mean *capable of* and *might* to mean that something is possible. Use *may* only to give permission to do something.
+
+downtime
+  Use as one word *downtime*, not *down time*.
+
+emoji, emojis
+  Use *emojis* as the plural form of *emoji*.
+
 login, log in, log into
   Use *login* as a noun or adjective, and *log in* and *log into* as verbs. For example: *Log into the Mattermost server using your System Admin login credentials.*
 
@@ -72,12 +81,6 @@ sign-in, sign in, and sign into
 
 single sign-on
   Single sign-on is abbreviated as SSO. When using the long form in a heading with title case, it's *Single Sign-on*.
-
-can, might, may
-  The word *may* can have several meanings. To avoid ambiguity, use *can* or *might* instead of *may*. Use *can* to mean *capable of* and *might* to mean that something is possible. Use *may* only to give permission to do something.
-
-downtime
-  Use as one word *downtime*, not *down time*.
 
 Gender-neutral Text
 -------------------

@@ -76,8 +76,7 @@ Amazon SES
 ^^^^^^^^^^
 
 -  Set **SMTP Username** to **[YOUR_SMTP_USERNAME]**
--  Set **SMTP Password** to
-   **[YOUR_SMTP_PASSWORD]**
+-  Set **SMTP Password** to **[YOUR_SMTP_PASSWORD]**
 -  Set **SMTP Server** to **email-smtp.us-east-1.amazonaws.com**
 -  Set **SMTP Port** to **465**
 -  Set **Connection Security** to **TLS**
@@ -100,7 +99,7 @@ Gmail
 -  Set **SMTP Password** to **your\_password**
 -  Set **SMTP Server** to **smtp.gmail.com**
 -  Set **SMTP Port** to **587**
--  Set **Connection Security** to **TLS**
+-  Set **Connection Security** to **STARTTLS**
 
 Hotmail
 ^^^^^^^
@@ -110,6 +109,15 @@ Hotmail
 -  Set **SMTP Server** to **smtp-mail.outlook.com**
 -  Set **SMTP Port** to **587**
 -  Set **Connection Security** to **STARTTLS**
+
+Office365 / Outlook	
+^^^^^^^^^^^^^^^^^^^^^	
+	
+- Set **SMTP Username** to **your\_email@hotmail.com**	
+- Set **SMTP Password** to **your\_password**	
+- Set **SMTP Server Name** to **smtp.office365.com**	
+- Set **SMTP Port** to **587**	
+- Set **Connection Security** to **STARTTLS**
 
 Troubleshooting SMTP
 ~~~~~~~~~~~~~~~~~~~~
@@ -145,7 +153,7 @@ Checking your SMTP server is reachable
    reachable.
 -  You must run the following commands from the same machine or virtual
    instance where ``mattermost/bin/platform`` is located. So if you're
-   running Mattermost from docker you need to
+   running Mattermost from Docker you need to
    ``docker exec -ti mattermost-dev /bin/bash``
 -  Telnet to the email server with ``telnet mail.example.com 25``. If
    the command works you should see something like
@@ -165,3 +173,7 @@ Checking your SMTP server is reachable
        250-STARTTLS
        250-PIPELINING
        250 8BITMIME
+
+.. note::
+  For additional troubleshooting tips, see
+  the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. To submit an improvement or correction, click  **Edit** at the top of this page.

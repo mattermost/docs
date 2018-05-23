@@ -40,12 +40,12 @@ Assume that the IP address of this server is 10.10.10.2
 
   -  If you are using PostgreSQL:
     1.  Set ``"DriverName"`` to ``"postgres"``
-    2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
+    2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>`` and ``<host-name-or-IP>`` with the appropriate values:
      ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"``.
   -  If you are using MySQL:
     1.  Set ``"DriverName"`` to ``"mysql"``
-    2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
-      ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=20s&writeTimeout=20s"``
+    2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>`` and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``:
+      ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"``
 
 8. Test the Mattermost server to make sure everything works.
 
@@ -72,16 +72,20 @@ Assume that the IP address of this server is 10.10.10.2
       After=syslog.target network.target postgresql-9.4.service
 
       [Service]
-      Type=simple
-      WorkingDirectory=/opt/mattermost/bin
+      Type=notify
+      WorkingDirectory=/opt/mattermost
       User=mattermost
       ExecStart=/opt/mattermost/bin/platform
       PIDFile=/var/spool/mattermost/pid/master.pid
+      TimeoutStartSec=3600
       LimitNOFILE=49152
 
       [Install]
       WantedBy=multi-user.target
 
+    .. note::
+      If you are using MySQL, replace ``postgresql-9.4.service`` by ``mysqld.service`` in the ``[unit]`` section.
+     
   c. Make the service executable.
 
     ``sudo chmod 664 /etc/systemd/system/mattermost.service``
@@ -90,11 +94,7 @@ Assume that the IP address of this server is 10.10.10.2
 
     ``sudo systemctl daemon-reload``
 
-  f. Enable the Mattermost service.
-
-    ``sudo chkconfig mattermost on``
-
-  g. Set Mattermost to start on boot.
+  e. Set Mattermost to start on boot.
 
     ``sudo systemctl enable mattermost``
 

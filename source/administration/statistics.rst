@@ -3,7 +3,9 @@ Statistics
 
 Statistics on users, posts and channels are tracked for each system and team. Enterprise Editions have access to advanced system statistics.
 
-To maximize performance for large Enterprise deployments, statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. You can re-enable them by changing the ``MaxUsersForStatistics`` value `in config.json <https://docs.mattermost.com/administration/config-settings.html#maximum-users-for-statistics>`_.
+.. note::
+
+  To maximize performance for large Enterprise deployments, statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. You can re-enable them by changing the ``MaxUsersForStatistics`` value `in config.json <https://docs.mattermost.com/administration/config-settings.html#maximum-users-for-statistics>`_.
 
 For advanced metrics for Enterprise deployments, `see performance monitoring documentation to learn more <http://docs.mattermost.com/deployment/metrics.html>`_.
 
@@ -13,7 +15,7 @@ Site Statistics
 System statistics are viewable under **System Console > Site Statistics**. The data shown here is a cumulative sum across all teams on the system.
 
 Total Users
-    The total number of active accounts created on your system. Excludes inactive accounts.
+    The total number of active accounts created on your system. Excludes deactivated accounts.
 
 Total Teams
     The total number of teams created on your system.
@@ -71,10 +73,10 @@ Posts, Files and Hashtags
 Team Statistics
 ---------------
 
-Team Statistics are viewable under **System Console > Team Statistics**.
+Team Statistics are viewable under **System Console > Team Statistics**. The data shown here is a cumulative sum across this team only, and excludes posts made in direct message channels, which are not tied to a team.
 
 Total Users
-    The total number of active accounts on this team. Excludes inactive accounts.
+    The total number of active accounts on this team. Excludes deactivated accounts.
 
 Public Channels
     The number of public channels created in this team. Excludes deleted channels.

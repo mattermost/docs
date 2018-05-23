@@ -7,6 +7,11 @@ A high availability cluster enables a Mattermost system to maintain service duri
 
 High availability in Mattermost consists of running redundant Mattermost application servers, redundant database servers, and redundant load balancers. The failure of any one of these components does not interrupt operation of the system.
 
+.. note::
+
+  This document applies to Mattermost Server version 4.0 and later. For previous versions, see :doc:`cluster-310`.
+
+
 .. contents::
   :backlinks: top
   :local:
@@ -37,31 +42,27 @@ To ensure your instance and configuration are compatible with high availability,
 .. note::
   Backup your Mattermost database and file storage locations before configuring high availability. For more information about backing up, see :doc:`../administration/backup`.
 
-1. Follow our :doc:`../administration/upgrade` to upgrade your Mattermost server to v3.3 or later.
-2. Set up a new Mattermost server with v3.3 or later following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
-3. Modify the ``config.json`` files on both servers to add the ``ClusterSettings`` as described in :ref:`high-availability`.
+1. Upgrade Mattermost Server to version 4.0 or later. See :doc:`../administration/upgrade`.
+2. Set up a new Mattermost server with version 4.0 or later by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
+3. Modify the ``config.json`` files on both servers to add *ClusterSettings* as described in :ref:`high-availability`.
 4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
 5. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `Proxy Server Configuration`_.
-6. Open **System Console > Advanced > High Availability (Beta)** to verify all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+6. Open **System Console > Advanced > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Adding a Server to the Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Backup your Mattermost database and the file storage location. For more information about backing up, see :doc:`../administration/backup`.
 2. Set up a new Mattermost server. This server must use an identical copy of the configuration file, ``config.json``. Verify the server is functioning by hitting the private IP address.
-3. Modify the ``config.json`` files on all servers with the ``ClusterSettings`` as described in :ref:`high-availability`. Be sure to add the new server URL to ``InterNodeUrls``.
-4. Verify that the configuration files are identical on all servers, then restart each machine in the cluster in sequence with 10 or more seconds between each restart.
-5. Modify your NGINX setup to add the new server. For information about this, see `Proxy Server Configuration`_.
-6. Open the **System Console > Advanced > High Availability (Beta)** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+3. Modify your NGINX setup to add the new server. For information about this, see `Proxy Server Configuration`_.
+4. Open **System Console > Advanced > High Availability** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Removing a Server from the Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Backup your Mattermost database and the file storage location. For more information about backing up, see :doc:`../administration/backup`.
 2. Modify your NGINX setup to remove the server. For information about this, see `Proxy Server Configuration`_.
-3. On all servers staying active in the cluster, modify the ``ClusterSettings`` in ``config.json`` to remove the server from ``InterNodeUrls``
-4. Verify that the configuration files are identical on all servers, then restart each machine in the cluster in sequence with 10 or more seconds between each restart.
-5. Open the **System Console > Advanced > High Availability (Beta)** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+3. Open **System Console > Advanced > High Availability** to verify that all the machines remaining in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Configuration and Compatibility
 -------------------------------
@@ -73,17 +74,47 @@ Mattermost Server Configuration
 Configuration Settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
-High availability is configured in the ``ClusterSettings`` section of ``config.json`` and the settings are viewable in the System Console. When high availability is enabled, the System Console is set to read-only mode to ensure all the ``config.json`` files on the Mattermost servers are identical.
+1. High availability is configured in the ``ClusterSettings`` section of ``config.json`` and the settings are viewable in the System Console. When high availability is enabled, the System Console is set to read-only mode to ensure all the ``config.json`` files on the Mattermost servers are always identical. However, for testing and validating a High Availability setup, you can set *ReadOnlyConfig* to ``false``, which allows changes made in the System Console to be saved back to the configuration file.
 
-.. code-block:: none
+  .. code-block:: none
 
-  "ClusterSettings": {
-        "Enable": false,
-        "InterNodeListenAddress": ":8075",
-        "InterNodeUrls": []
-  }
+    "ClusterSettings": {
+            "Enable": false,
+            "ClusterName": "production",
+            "OverrideHostname": "",
+            "UseIpAddress": true,
+            "UseExperimentalGossip": false,
+            "ReadOnlyConfig": true,
+            "GossipPort": 8074,
+            "StreamingPort": 8075
+    }
 
-For more details on these settings, see :ref:`high-availability`.
+  For more details on these settings, see :ref:`high-availability`.
+
+2. Change the process limit to 8192 and the maximum number of open files to 65536.
+
+  Modify ``/etc/security/limits.conf`` on each machine that hosts a Mattermost server by adding the following lines:
+
+  .. code-block:: none
+
+    soft nofile 65536
+    hard nofile 65536
+    soft nproc 8192
+    hard nproc 8192
+
+3. Increase the number of websocket connections
+
+  Modify ``/etc/sysctl.conf`` on each machine that hosts a Mattermost server by adding the following lines:
+
+  .. code-block:: none
+
+    net.ipv4.ip_local_port_range="1024 65000"
+    net.ipv4.tcp_fin_timeout=30
+
+Time Synchronization
+^^^^^^^^^^^^^^^^^^^^
+
+Each server in the cluster must have the Network Time Protocol daemon ``ntpd`` running so that messages are posted in the correct order.
 
 State
 ^^^^^
@@ -97,13 +128,12 @@ The Mattermost Server is designed to have very little state to allow for horizon
 
 When the Mattermost Server is configured for high availability, the servers  use an inter-node communication protocol on a different listening address to keep the state in sync. When a state changes it is written back to the database and an inter-node message is sent to notify the other servers of the state change. The true state of the items can always be read from the database. Mattermost also uses inter-node communication to forward WebSocket messages to the other servers in the cluster for real-time messages such as  “[User X] is typing.”
 
-
 Proxy Server Configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The proxy server exposes the cluster of Mattermost servers to the outside world. The Mattermost servers are designed for use with a proxy server such as NGINX, a hardware load balancer, or a cloud service like Amazon Elastic Load Balancer.
 
-If you want to monitor the server with a health check you can use ``http://10.10.10.2/api/v3/general/ping`` and check the response for ``Status 200``, indicating success. Use this health check route to mark the server *in-service* or *out-of-service*.
+If you want to monitor the server with a health check you can use ``http://10.10.10.2/api/v4/system/ping`` and check the response for ``Status 200``, indicating success. Use this health check route to mark the server *in-service* or *out-of-service*.
 
 A sample configuration for NGINX is provided below. It assumes that you have two Mattermost servers running on private IP addresses of ``10.10.10.2`` and ``10.10.10.4``.
 
@@ -118,6 +148,21 @@ A sample configuration for NGINX is provided below. It assumes that you have two
       server {
           server_name mattermost.example.com;
 
+          location ~ /api/v[0-9]+/(users/)?websocket$ {
+                proxy_set_header Upgrade $http_upgrade;
+                proxy_set_header Connection "upgrade";
+                client_max_body_size 50M;
+                proxy_set_header Host $http_host;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header X-Forwarded-Proto $scheme;
+                proxy_set_header X-Frame-Options SAMEORIGIN;
+                proxy_buffers 256 16k;
+                proxy_buffer_size 16k;
+                proxy_read_timeout 600s;
+                proxy_pass http://backend;
+          }
+
           location / {
                 client_max_body_size 50M;
                 proxy_set_header Upgrade $http_upgrade;
@@ -130,7 +175,6 @@ A sample configuration for NGINX is provided below. It assumes that you have two
                 proxy_pass http://backend;
           }
     }
-
 
 You can use multiple proxy servers to limit a single point of failure, but that is beyond the scope of this documentation.
 
@@ -149,7 +193,9 @@ Migrating to NAS or S3 from local storage is beyond the scope of this document.
 Database Configuration
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Use the read-replica feature to scale the database. The Mattermost server can be set up to use one "master" database and multiple read replica databases. Mattermost distributes read requests across all databases, and sends write requests to the master database, and those changes are then sent to update the read replicas.
+Use the read replica feature to scale the database. The Mattermost server can be set up to use one "master" database and multiple read replica databases. Mattermost distributes read requests across all databases, and sends write requests to the master database, and those changes are then sent to update the read replicas.
+
+On large deployments, consider using the search replica feature to isolate search queries onto one or more database servers. A search replica is similar to a read replica, but is used only for handling search queries.
 
 Sizing Databases
 ````````````````
@@ -165,6 +211,21 @@ To configure a multi-database Mattermost server:
 
 1. Update the ``DataSource`` setting in ``config.json`` with a connection string to your master database server. The connection string is based on the database type set in ``DriverName``, either ``postgres`` or ``mysql``.
 2. Update the ``DataSourceReplicas`` setting in ``config.json`` with a series of connection strings to your database read replica servers in the format ``["readreplica1", "readreplica2"]``. Each connection should also be compatible with the ``DriverName`` setting.
+
+Here's an example SqlSettings block for one master and two read replicas:
+
+  "SqlSettings": {
+        "DriverName": "mysql",
+        "DataSource": "master_user:master_password@tcp(master.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s",
+        "DataSourceReplicas": ["slave_user:slave_password@tcp(replica1.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s","slave_user:slave_password@tcp(replica2.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s"],
+        "DataSourceSearchReplicas": [],
+        "MaxIdleConns": 20,
+        "MaxOpenConns": 300,
+        "Trace": false,
+        "AtRestEncryptKey": "",
+        "QueryTimeout": 30
+    }  
+
 
 The new settings can be applied by either stopping and starting the server, or by loading the configuration settings as described in the next section.
 
@@ -195,7 +256,14 @@ While the connection settings are changing, there might be a brief moment when w
 Transparent Failover
 ````````````````````
 
-The database can be configured for high availability and transparent failover use the existing database technologies. We recommend MySQL Clustering, Postgres Clustering, or Amazon Aoura. Database transparent failover is beyond the scope of this documentation.
+The database can be configured for high availability and transparent failover use the existing database technologies. We recommend MySQL Clustering, Postgres Clustering, or Amazon Aurora. Database transparent failover is beyond the scope of this documentation.
+
+Leader Election
+^^^^^^^^^^^^^^^^
+
+In Mattermost v4.2 and later, a cluster leader election process assigns any scheduled task such as LDAP sync to run on a single node in a multi-node cluster environment.
+
+The process is based on a widely used `bully leader election algorithm <https://en.wikipedia.org/wiki/Bully_algorithm>`_ where the process with the lowest node ID number from amongst the non-failed processes is selected as the "leader". 
 
 Upgrade Guide
 -------------
@@ -208,6 +276,10 @@ Updating Configuration Changes While Operating Continuously
 A service interruption is not required for most configuration updates. See `Server Upgrades Requiring Service Interruption`_ for a list of configuration updates that require a service interruption.
 
 You can apply updates during a period of low load, but if your HA cluster is sized correctly, you can do it at any time. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about 5 seconds.
+
+.. note::
+
+  Do not modify configuration settings through the System Console. Otherwise you will have two servers with different `config.json` files in an HA cluster causing a refresh every time a user connects to a different app server.
 
 1. Make a backup of your existing ``config.json`` file.
 2. For one of the Mattermost servers, make the configuration changes to ``config.json`` and save the file. Do not reload the file yet.
@@ -258,6 +330,44 @@ Apply upgrades during a period of low load. The system downtime is brief, and de
 7. When the server is running, start the other servers.
 8. Restart NGINX.
 
+Upgrading to Version 4.0 and Later
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Starting with Mattermost Server version 4.0, when a server starts up it can automatically discover other servers in the same cluster. You can add and remove servers without the need to make changes to the configuration file, ``config.json``. To support this capability, new items were added to the *ClusterSettings* section of ``config.json``. When upgrading from 3.10 or earlier to 4.0 or later, you must manually add the new items to your existing ``config.json``.
+
+1. Review the upgrade procedure in :doc:`../administration/upgrade`.
+2. Make a backup of your existing ``config.json`` file.
+3. Revise your existing ``config.json`` to update the *ClusterSettings* section. The following settings should work in most cases:
+
+  .. code-block:: none
+
+    "ClusterSettings": {
+        "Enable": true,
+        "ClusterName": "production",
+        "OverrideHostname": "",
+        "UseIpAddress": true,
+        "UseExperimentalGossip": false,
+        "ReadOnlyConfig": true,
+        "GossipPort": 8074,
+        "StreamingPort": 8075
+    },
+
+  For more information about these settings, see :ref:`high-availability`.
+4. Stop NGINX.
+5. Upgrade each Mattermost instance.
+6. On each server, replace the new ``config.json`` file with your modified version.
+7. Start one of the Mattermost servers.
+8. When the server is running, start the other servers.
+9. Restart NGINX.
+
+Frequently Asked Questions (FAQ)
+---------------------------------
+
+Does Mattermost support multi-region high availability deployment?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. Although not officially tested, you can set up a cluster across AWS regions, for example, and it should work without issues.
+
 Troubleshooting
 ---------------
 
@@ -276,3 +386,10 @@ WebSocket Disconnect
 ~~~~~~~~~~~~~~~~~~~~
 
 When a client WebSocket receives a disconnect it will automatically attempt to re-establish a connection every three seconds with a backoff. After the connection is established, the client attempts to receive any messages that were sent while it was disconnected.
+
+App Refreshes Continuously
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different `config.json` files in an HA cluster.
+
+Modify configuration settings directly through ``config.json`` `following these steps <https://docs.mattermost.com/deployment/cluster.html#updating-configuration-changes-while-operating-continuously>`_.

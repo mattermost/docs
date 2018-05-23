@@ -19,7 +19,7 @@ Every month, the Mattermost community plans, builds, tests, documents, releases 
 
 1. When a feature idea is within the scope of Team Edition, as [defined in the Mattermost Manifesto](http://www.mattermost.org/manifesto/#mattermost-teams) and considered a priority, a Jira ticket is created to define its implementation: 
 
-    1. If the change is not complex, an [Accepting Pull Requests](http://docs.mattermost.com/process/accepting-pull-request.html) label may be added to the Jira ticket for any developer to contribute the change to the Mattermost Team Edition code base via the [contribution process](http://docs.mattermost.com/developer/contribution-guide.html). [A list of tickets accepting pull requests](https://mattermost.atlassian.net/browse/PLT-2667?filter=10101) is offered to all contributors who read the contributor's guide, and these provide a steady stream of improvements to Team Edition month after month. 
+    1. If the change is not complex, a [Help Wanted Ticket](https://docs.mattermost.com/process/help-wanted.html) label may be added to the Jira ticket for any developer to contribute the change to the Mattermost Team Edition code base via the [contribution process](http://docs.mattermost.com/developer/contribution-guide.html). [A list of tickets accepting pull requests](https://mattermost.atlassian.net/browse/PLT-2667?filter=10101) is offered to all contributors who read the contributor's guide, and these provide a steady stream of improvements to Team Edition month after month. 
     2. If change is considered high priority without pre-requisites, a Fix Version may be applied to the Jira ticket for the Mattermost core team or key contributors to add for an upcoming monthly release. Priority decisions are influenced by discussion and voting in the feature idea forum and community systems as well as feedback from key contributors. 
     3. If change is not seen as high priority or has pre-requisites, it is assigned a Fix Version of `backlog` and will be considered monthly for inclusion in a future release.
 
@@ -31,7 +31,7 @@ Every month, the Mattermost community plans, builds, tests, documents, releases 
     
 3. If a feature idea is not within the scope of either Team Edition or Enterprise Edition, you might consider: 
 
-    1. Building an integration using Mattermost webhooks or Slash commands. There are [dozens of open source examples](http://www.mattermost.org/community-applications/) to help you start. Example: Suppose you want a link preview for an esoteric file type that Mattermost isn't able to support, you can create an outgoing webhook to reply with an image that offers a preview. 
+    1. Building an integration using Mattermost webhooks or Slash commands. There are [dozens of open source examples](https://about.mattermost.com/default-app-directory/) to help you start. Example: Suppose you want a link preview for an esoteric file type that Mattermost isn't able to support, you can create an outgoing webhook to reply with an image that offers a preview. 
     
     2. Building a client application using the Mattermost Web Service API. This is useful if you want to customize the user experience to your specific needs. Example: You can re-create the Mattermost web interface using Windows controls to define front end logic, similar to the [MattermostWPF project](https://github.com/limey98/MattermostWPF). 
     
@@ -164,3 +164,5 @@ A PR that requires careful review due to size.
 ##### Label: DO NOT MERGE 
 
 A PR submitted for discussion that SHOULD NOT be merged.
+
+

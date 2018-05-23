@@ -1,7 +1,7 @@
-Compliance Reporting and Oversight
-----------------------------------
+Compliance Reporting and Oversight (E20)
+-----------------------------------------
 
-Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_
+Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_.
 
 This feature enables compliance exports to be produced from the System Console, with all query and download actions logged in an audit history to enable oversight and prevent unauthorized queries. 
 
@@ -9,7 +9,10 @@ Compliance exports can be filtered to date range, user account, and keyword list
 
 Daily compliance reports may also be generated, supporting integration with compliance solutions like `Global Relay <https://docs.mattermost.com/administration/compliance.html#global-relay-support>`_. 
 
-Note: By default, all Mattermost Editions retain all messages, including edits and deletes, along with all files uploaded. 
+By default, all Mattermost Editions retain all messages, including edits and deletes, along with all files uploaded. 
+
+.. note::
+  This feature will be replaced by a new :doc:`Compliance Export feature <compliance-export>` in a future release.
 
 Enabling Compliance Reporting 
 =============================
@@ -132,8 +135,12 @@ Compliance query results stored in ``posts.csv`` file
 | PostFilenames       | Comma separated list of filesnames attached to post           | ["/f../ho.png","/f../hi.png"] |
 +---------------------+---------------------------------------------------------------+-------------------------------+
 
+Global Relay Support
+=============================
 
-Global Relay Support 
-====================
+Mattermost daily compliance reports are compatible with Global Relay compliance solutions through the conversion of Mattermost ``.CSV`` exports into Global Relay ``EML`` files.
 
-Mattermost daily compliance reports are compatible with Global Relay compliance solutions through the conversion of Mattermost ``.CSV`` exports into Global Relay ``EML`` files. Contact your Global Relay account manager about enabling `Secure, Compliant Internal Instant Messenger <https://www.google.com/url?q=http://info.globalrelay.com/hs-fs/hub/461136/file-2416734572-pdf/PDFs/globalrelay_services_complete_services_guide_overview.pdf&sa=U&ved=0ahUKEwjqra2vx4LSAhVFtxoKHUImC6kQFggEMAA&client=internal-uds-cse&usg=AFQjCNH2PW7JAUD1cX17_a4lIcoXmkD-Ag>`_ support in Global Relay. 
+- This conversion can be done by in-house developers who have previously written scripts to convert other communication systems into Global Relay format based on your organization's specific needs.
+- You can also contact your Global Relay account manager about a services project to establish this conversion.
+
+You may also use the new :doc:`Compliance Export feature <compliance-export>` for Global Relay exports.

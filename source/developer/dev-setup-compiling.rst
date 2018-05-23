@@ -8,15 +8,17 @@ Before compiling Mattermost, make sure to set up your developer machine accordin
 Instructions are available for the following platforms:
 
   - :doc:`Ubuntu 16.04 <dev-setup-ubuntu-1604>`
-  - :doc:`Mac OS X <dev-setup-osx>`
+  - :doc:`macOS <dev-setup-osx>`
   - :doc:`Archlinux <dev-setup-archlinux>`
   - :doc:`Windows <dev-setup-windows>`
 
 Mattermost uses `GNU Make <https://www.gnu.org/software/make/>`_ to control the generation of builds, to run the test suite, and to manage the build environment. You must run the ``make`` command from within the source directory. If you set up your developer machine according to the instructions, you can change to the source directory with the following command:
 
-  ``cd ~/go/src/github.com/mattermost/platform``
+  ``cd ~/go/src/github.com/mattermost/mattermost-server``
 
 The first time that you use the ``make run`` command can take a substantial amount of time depending on your machine's processor speed and memory size, and on the speed of your network. If you are developing in a VM, make sure that the VM has at least 2G of memory assigned to it.
+
+To start contributing to Mattermost, see :doc:`Developer Flow <developer-flow>`.
 
 Useful Make Commands
 --------------------
@@ -44,7 +46,7 @@ make build
 make build-client
   Builds the web client, which is the HTML, JavaScript, and CSS code that gets downloaded to the browser.
 make package
-  Creates packages for distributing your builds and puts them in the ``~/go/src/github.com/mattermost/platform/dist`` directory. If you want to make packages for targets other than your build machine, you must run the following commands first:
+  Creates packages for distributing your builds and puts them in the ``~/go/src/github.com/mattermost/mattermost-server/dist`` directory. If you want to make packages for targets other than your build machine, you must run the following commands first:
 
   1. Modify permissions on ``/usr/local/go``. Replace *{user}* and *{group}* with the user and group that you are logged in with.
 
