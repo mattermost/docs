@@ -26,7 +26,7 @@ Hiring
 T-minus 1-3 weeks
 ---------------------------------------------------------
 
-- (People Ops & New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro.
+- (People Ops & New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. Since these items are company property, you do not need to buy insurance or extended warranties for them, but you do need to report any loss or damage to People@mattermost.com as soon as it occurs.
 - (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology and training materials.
 
 T-minus 1 week
@@ -46,7 +46,8 @@ First Day
 - (Manager) Posts welcome message in stand-up channel.
 - (Manager) Meets New Hire for first 1-1 meeting.
 - (Buddy) Meets New Hire for first 1-1 meeting.
-- (People Ops) US FTE - Contact New Hire to verify work authorization and I-9.
+- (CEO) Meets New Hire for welcome meeting.
+- (New Hire) Confirm with Manager all HR paperwork is completed by end of first day (should have been sent in advance). 
 
 3 months 
 ---------------------------------------------------------
