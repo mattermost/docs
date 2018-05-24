@@ -178,7 +178,7 @@ Go to `https://licensing.mattermost.com/renew <https://licensing.mattermost.com/
 
 After submitting the renewal form, our renewal team will get in contact with you about your new subscription.
 
-New users added during the subscription period will have a retrospective charge. `Learn more here <https://docs.mattermost.com/overview/faq.html#how-can-i-add-more-users-to-my-subscription>`_.
+New users added during the subscription period will have a retroactive charge. `Learn more here <https://docs.mattermost.com/overview/faq.html#how-can-i-add-more-users-to-my-subscription>`_.
 
 For information on what happens when the Enterprise Edition subscription expires, see our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#faq>`_.
 
