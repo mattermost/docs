@@ -169,22 +169,35 @@ To simplify procurement and to keep prices low, Mattermost offers the following 
 How does the licensing key work?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#frequently-asked-questions-about-licensing>`_.
+See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#faq>`_.
+
+How do I renew the Enterprise Edition subscription?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Go to `https://licensing.mattermost.com/renew <https://licensing.mattermost.com/renew>`_ and specify the Enterprise Edition you want to renew, the user count and your contact information. To find the user count you want to renew for, log in to Mattermost as a System Admin and go to **System Console > Site Statistics**. The "Total Users" gives the user count on your server.
+
+After submitting the renewal form, our renewal team will get in contact with you about your new subscription.
+
+New users added during the subscription period will have a retrospective charge. `Learn more here <https://docs.mattermost.com/overview/faq.html#how-can-i-add-more-users-to-my-subscription>`_.
+
+For information on what happens when the Enterprise Edition subscription expires, see our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#faq>`_.
 
 What happens when the Enterprise Edition subscription expires?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#frequently-asked-questions-about-licensing>`_.
+See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#faq>`_.
 
 How is user defined for Enterprise Edition subscriptions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#frequently-asked-questions-about-licensing>`_.
+See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#faq>`_.
 
 How can I add more users to my subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#frequently-asked-questions-about-licensing>`_.
+You can add more users during your subscription period without requesting a license.
+
+During the annual renewal, a retroactive charge will be placed for any unique users added during the past subscription period that is above the licensed total unique users in the current paid subscription. The retroactive charge per user will be the initial subscription cost per user.
 
 Do I need to pay for deactivated users?  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -203,17 +216,17 @@ Without the purchase of Premier Support, license keys for unlocking the advanced
 Do you have a program for official non-profits and charities?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#frequently-asked-questions-about-licensing>`_.
+See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#faq>`_.
 
 Do you have discounted licenses for academic institutions?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#frequently-asked-questions-about-licensing>`_.
+See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#faq>`_.
 
 Where can I find the license agreement for Mattermost Enterprise Edition?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#frequently-asked-questions-about-licensing>`_.
+See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#faq>`_.
 
 Integration
 ------------------
