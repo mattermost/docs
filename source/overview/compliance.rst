@@ -58,7 +58,7 @@ Data Management
 
 - **Data retention**: Use `data retention <https://docs.mattermost.com/administration/data-retention.html>`_ to automatically erase data after a set period of time, meeting Right to Erasure principle. In Team Edition, you can use database scripts.
 
-- **Profile deletion**: Delete a person’s personal information via `a command line tool <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-delete>`_. The command permanently deletes all user information including message contents and files made by the user.
+- **Profile deletion**: Delete a person’s personal information via `a command line tool <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-delete>`_. The command permanently deletes all user information including messages created by the user.
 
 - **Self-hosted push notification service**: Self-host your own push notification service or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/members/>`_ to meet security and compliance policies. See `mobile app guide <https://docs.mattermost.com/mobile/mobile-overview.html>`_ to learn more.
 
