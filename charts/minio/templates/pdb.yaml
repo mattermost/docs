@@ -13,4 +13,5 @@ spec:
   selector:
     matchLabels:
       app: {{ template "minio.fullname" . }}
+      component: app
 {{- end -}}

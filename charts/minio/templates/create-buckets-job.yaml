@@ -15,6 +15,7 @@ spec:
       labels:
         app: {{ template "minio.fullname" . }}
         release: {{ .Release.Name }}
+        component: create-buckets
     spec:
       restartPolicy: OnFailure
     {{- if .Values.nodeSelector }}

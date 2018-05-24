@@ -20,6 +20,7 @@ spec:
         chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
         release: "{{ .Release.Name }}"
         heritage: "{{ .Release.Service }}"
+        component: app
     spec:
       securityContext:
         runAsUser: 1000
