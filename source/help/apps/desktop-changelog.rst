@@ -6,11 +6,9 @@ Release v4.1.1
 
 This release contains multiple bug fixes for Mac due to an incorrect build for v4.1.0. Windows and Linux apps are not affected.
 
-**Release date:** May 17, 2018
-
-**Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-setup-4.1.1-win32.exe>`_ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-setup-4.1.1-win64.exe>`_ | `Mac <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-mac.zip>`_ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-linux-x64.tar.gz>`_ 
-
-**View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop>`_
+- **Release date:** May 17, 2018
+- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-setup-4.1.1-win32.exe>`_ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-setup-4.1.1-win64.exe>`_ | `Mac <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-mac.zip>`_ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-linux-x64.tar.gz>`_ 
+- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop>`_
 
 Bug Fixes
 ~~~~~~~~~~~~~~~
