@@ -1,6 +1,21 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.1.2
+----------------------------
+
+Release date: May 25, 2018
+
+This release contains a bug fix for all platforms.
+
+Bug Fixes
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where the popup dialog to authenticate a user to their proxy or server didn't work.
+
 Release v4.1.1
 ----------------------------
 
@@ -10,17 +25,19 @@ This release contains multiple bug fixes for Mac due to an incorrect build for v
 
 Bug Fixes
 ~~~~~~~~~~~~~~~
+
 Each of the issues listed below are already fixed for Windows and Linux v4.1.0.
 
 Mac
 ^^^^^^^^^^^^^
- - Fixed an issue where right-clicking an image, then choosing "Save Image", did nothing.
- - Fixed an issue that prevented typing in the form fields on the add server dialog when launched from the server tab bar.
- - Fixed an issue that could cause an error message on the add new server dialog to be misleading.
- - Fixed an issue where timestamps in message view showed no URL on hover.
- - Fixed an issue where quitting and reopening the app required the user to log back in to Mattermost.
- - Fixed an issue where adding a new server sometimes caused a blank page.
- - Fixed deep linking via ``mattermost://`` protocol spawning a new copy of the Desktop App on the taskbar.
+
+- Fixed an issue where right-clicking an image, then choosing "Save Image", did nothing.
+- Fixed an issue that prevented typing in the form fields on the add server dialog when launched from the server tab bar.
+- Fixed an issue that could cause an error message on the add new server dialog to be misleading.
+- Fixed an issue where timestamps in message view showed no URL on hover.
+- Fixed an issue where quitting and reopening the app required the user to log back in to Mattermost.
+- Fixed an issue where adding a new server sometimes caused a blank page.
+- Fixed deep linking via ``mattermost://`` protocol spawning a new copy of the Desktop App on the taskbar.
  
 Release v4.1.0
 --------------
@@ -33,28 +50,28 @@ Improvements
 All Platforms
 ^^^^^^^^^^^^^
 
- - Improved stability and performance
-   - Reduced memory usage by periodically clearing cache.
-   - Fixed app crashing when a server tab was drag-and-dropped to the message view.
-   - Added an option to disable GPU hardware acceleration in App Settings to improve stability in some systems.
-   - Fixed Windows crash issues during installation.
-   - Fixed Mac and Linux crashing after toggling "Show Mattermost icon in menu bar" app setting.
- - Updated design for loading animation icon.
- - Improved appearance of server tabs.
- - Enabled `Certificate Transparency <https://www.certificate-transparency.org/what-is-ct>`_ verification in HTTPS.
+- Improved stability and performance
+  - Reduced memory usage by periodically clearing cache.
+  - Fixed app crashing when a server tab was drag-and-dropped to the message view.
+  - Added an option to disable GPU hardware acceleration in App Settings to improve stability in some systems.
+  - Fixed Windows crash issues during installation.
+  - Fixed Mac and Linux crashing after toggling "Show Mattermost icon in menu bar" app setting.
+- Updated design for loading animation icon.
+- Improved appearance of server tabs.
+- Enabled `Certificate Transparency <https://www.certificate-transparency.org/what-is-ct>`_ verification in HTTPS.
 
 Windows
 ^^^^^^^^^^^^^
 
- - [Windows 7/8] Desktop notifications now respect the duration setting set in the Control Panel.
+- [Windows 7/8] Desktop notifications now respect the duration setting set in the Control Panel.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - Major version upgrade of Electron from v1.7.13 to v1.8.4. Electron is the underlying technology used to build the Desktop apps.
- - Mac download files now use Zip packages rather than tar.gz files.
- - ES6 ``import`` and ``export`` now replace the ``require`` and ``modul.export`` modules for better development.
- - Storybook added to more easily develop React componets without executing the desktop app.
+- Major version upgrade of Electron from v1.7.13 to v1.8.4. Electron is the underlying technology used to build the Desktop apps.
+- Mac download files now use Zip packages rather than tar.gz files.
+- ES6 ``import`` and ``export`` now replace the ``require`` and ``modul.export`` modules for better development.
+- Storybook added to more easily develop React componets without executing the desktop app.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~
@@ -62,16 +79,16 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^
 
- - Fixed an issue where an incorrect spellchecker language was used for non ``en-US`` locales on initial installation.
- - Fixed an issue where error page appeared when U2F device was used for multi-factor authentication through single sign-on.
- - Fixed an issue where right-clicking an image, then choosing "Save Image", did nothing.
- - Fixed an issue that prevented typing in the form fields on the add server dialog when launched from the server tab bar.
- - Fixed an issue that could cause an error message on the add new server dialog to be misleading.
+- Fixed an issue where an incorrect spellchecker language was used for non ``en-US`` locales on initial installation.
+- Fixed an issue where error page appeared when U2F device was used for multi-factor authentication through single sign-on.
+- Fixed an issue where right-clicking an image, then choosing "Save Image", did nothing.
+- Fixed an issue that prevented typing in the form fields on the add server dialog when launched from the server tab bar.
+- Fixed an issue that could cause an error message on the add new server dialog to be misleading.
 
 Windows
 ^^^^^^^^^^^^^
 
- - Fixed an issue where ``file://`` protocol was not working. Note that localhost URLs are not yet supported.
+- Fixed an issue where ``file://`` protocol was not working. Note that localhost URLs are not yet supported.
 
 Known Issues
 ~~~~~~~~~~~~~~~
@@ -79,36 +96,36 @@ Known Issues
 All Platforms
 ^^^^^^^^^^^^^
 
- - Clicking on a video preview opens another Mattermost window in addition to downloading the file.
- - Insecure connection produces hundreds of log messages.
+- Clicking on a video preview opens another Mattermost window in addition to downloading the file.
+- Insecure connection produces hundreds of log messages.
 
 Windows
 ^^^^^^^^^^^^^
 
- - App window doesn't save "floating" app position.
- - [Windows 7] Sometimes app tries to render a page inside the app instead of in a new browser tab when clicking links].
- - [Windows 10] Incorrect task name in Windows 10 startup list.
- - Mattermost UI sometimes bleeds over a file explorer.
- - When auto-starting the desktop app, the application window is included in Windows tab list.
+- App window doesn't save "floating" app position.
+- [Windows 7] Sometimes app tries to render a page inside the app instead of in a new browser tab when clicking links].
+- [Windows 10] Incorrect task name in Windows 10 startup list.
+- Mattermost UI sometimes bleeds over a file explorer.
+- When auto-starting the desktop app, the application window is included in Windows tab list.
 
 Mac
 ^^^^^^^^^^^^^
 
- - The application crashes when a file upload dialog is canceled without closing Quick Look.
- - When the app auto-starts, app page opens on screen instead of being minimized to Dock.
+- The application crashes when a file upload dialog is canceled without closing Quick Look.
+- When the app auto-starts, app page opens on screen instead of being minimized to Dock.
 
 Linux (Beta)
 ^^^^^^^^^^^^^
 
- - [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app.
- - [Ubuntu - 64 bit] Direct message notification sometimes comes as a streak of line instead of a pop up.
+- [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app.
+- [Ubuntu - 64 bit] Direct message notification sometimes comes as a streak of line instead of a pop up.
 
 Contributors
 ~~~~~~~~~~~~~~~
 
 Many thanks to all our contributors. In alphabetical order:
 
- - `Autre31415 <https://github.com/Autre31415>`_, `dmeza <https://github.com/dmeza>`_, `hmhealey <https://github.com/hmhealey>`_, `jasonblais <https://github.com/jasonblais>`_, `kethinov <https://github.com/kethinov>`_, `lieut-data <https://github.com/lieut-data>`_, `lip-d <https://github.com/lip-d>`_, `mkraft <https://github.com/mkraft>`_, `yuya-oc <https://github.com/yuya-oc>`_
+- `Autre31415 <https://github.com/Autre31415>`_, `dmeza <https://github.com/dmeza>`_, `hmhealey <https://github.com/hmhealey>`_, `jasonblais <https://github.com/jasonblais>`_, `kethinov <https://github.com/kethinov>`_, `lieut-data <https://github.com/lieut-data>`_, `lip-d <https://github.com/lip-d>`_, `mkraft <https://github.com/mkraft>`_, `yuya-oc <https://github.com/yuya-oc>`_
 
 Release v4.0.1
 --------------
