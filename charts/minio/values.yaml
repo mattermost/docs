@@ -119,6 +119,7 @@ defaultBuckets:
   - name: runner-cache
   - name: gitlab-uploads
   - name: gitlab-backups
+  - name: tmp
   ## If enabled, must be a string with length > 0
   # - name: example
   ## Can be one of none|download|upload|public, defaults to `none`
