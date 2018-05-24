@@ -72,16 +72,20 @@ Assume that the IP address of this server is 10.10.10.2
       After=syslog.target network.target postgresql-9.4.service
 
       [Service]
-      Type=simple
-      WorkingDirectory=/opt/mattermost/bin
+      Type=notify
+      WorkingDirectory=/opt/mattermost
       User=mattermost
       ExecStart=/opt/mattermost/bin/platform
       PIDFile=/var/spool/mattermost/pid/master.pid
+      TimeoutStartSec=3600
       LimitNOFILE=49152
 
       [Install]
       WantedBy=multi-user.target
 
+    .. note::
+      If you are using MySQL, replace ``postgresql-9.4.service`` by ``mysqld.service`` in the ``[unit]`` section.
+     
   c. Make the service executable.
 
     ``sudo chmod 664 /etc/systemd/system/mattermost.service``
@@ -90,11 +94,7 @@ Assume that the IP address of this server is 10.10.10.2
 
     ``sudo systemctl daemon-reload``
 
-  f. Enable the Mattermost service.
-
-    ``sudo chkconfig mattermost on``
-
-  g. Set Mattermost to start on boot.
+  e. Set Mattermost to start on boot.
 
     ``sudo systemctl enable mattermost``
 

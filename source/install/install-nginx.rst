@@ -23,11 +23,11 @@ The main benefits of using a proxy are as follows:
 3. After the installation is complete, verify that NGINX is running.
 
   ``curl http://localhost``
-  
+
   If NGINX is running, you see the following output:
-  
+
   .. code-block:: html
-  
+
     <!DOCTYPE html>
     <html>
     <head>
@@ -40,11 +40,11 @@ The main benefits of using a proxy are as follows:
     </html>
 
 .. Note::
-  
+
   You can stop, start, and restart NGINX with the following commands:
-  
+
   .. code-block:: none
-  
+
     sudo service nginx stop
     sudo service nginx start
     sudo service nginx restart

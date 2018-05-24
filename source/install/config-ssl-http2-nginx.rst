@@ -9,6 +9,9 @@ Although you can configure HTTP/2 without SSL, both Firefox and Chrome browsers 
 
 You can use any certificate that you want, but these instructions show you how to download and install certificates from `Let's Encrypt <https://letsencrypt.org/>`_, a free certificate authority.
 
+.. note::
+   If Let’s Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification.
+
 **To configure SSL and HTTP/2:**
 
 1. Log in to the server that hosts NGINX and open a terminal window.
@@ -53,7 +56,7 @@ You can use any certificate that you want, but these instructions show you how t
 8. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text editor and update the *server* section to incorporate the highlighted lines in the following sample. Make sure to replace *{domain-name}* with your own domain name, in 3 places.
 
   .. code-block:: none
-    :emphasize-lines: 6-10, 13, 16-23
+    :emphasize-lines: 6-10, 13, 16-23, 32
 
     .
     .
@@ -68,7 +71,7 @@ You can use any certificate that you want, but these instructions show you how t
 
     server {
       listen 443 ssl http2;
-      server_name    . . . ;
+      server_name    {domain-name} ;
 
       ssl on;
       ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain.pem;
@@ -78,13 +81,19 @@ You can use any certificate that you want, but these instructions show you how t
       ssl_ciphers 'EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:AES256+EDH';
       ssl_prefer_server_ciphers on;
       ssl_session_cache shared:SSL:10m;
-    }
 
-    location ~ /api/v[0-9]+/(users/)?websocket$ {
+      location ~ /api/v[0-9]+/(users/)?websocket$ {
         proxy_set_header Upgrade $http_upgrade;
         .
         .
         .
+
+    location / {
+        proxy_http_version 1.1;
+        .
+        .
+        .
+
 
 9. Restart NGINX.
 

@@ -9,16 +9,19 @@
 	<script type="text/javascript">
 		/* Temporary fix for the search capability. Fix has been committed to the theme's master;
 		   however, waiting a new release to the theme.  This fix should remain in place until that
-		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the 
+		   time.  sphinx_rtd_theme is current v0.1.10a0. Commit for the fix in the
 		   theme can be found at: https://github.com/snide/sphinx_rtd_theme/commit/a5e0e304
 		 */
         if(DOCUMENTATION_OPTIONS) {
-			DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = '{{ sourcelink_suffix }}' 
+			DOCUMENTATION_OPTIONS.SOURCELINK_SUFFIX = '{{ sourcelink_suffix }}'
         }
     </script>
 {% endblock %}
 
 {% block extrahead %}
+	<!-- Bizible Script -->
+	<script src="//cdn.bizible.com/scripts/bizible.js" async=""></script>
+
 	{% if googleanalytics_enabled %}
 		<!-- Google Analytics -->
 		<script>

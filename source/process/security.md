@@ -7,10 +7,14 @@ This document summarizes the internal security policies at Mattermost, Inc.
   - [Security Review Checklist](#security-review-checklist) 
 - [Common Security Related Questions for Enterprises](#common-security-related-questions-for-enterprises)
    - [Governance](#governance)
+   - [Access Control](#access-control)
+   - [Operational Security](#operational-security)
    - [Software Development Life Cycle (SDLC)](#software-development-life-cycle-sdlc)
    - [Training](#training)
    - [Validation](#validation)
    - [Security Response](#security-response)
+   - [Business Resiliency](#business-resiliency)
+   - [Compliance](#compliance)
 - [Business Continuity Plan](#business-continuity-plan)
 
 ## Security benefits of an open source platform
@@ -60,7 +64,7 @@ In addition to checklists for quality and reliability, code changes receive mult
 
 ### Security Update Monitoring 
 
-The following resources are monitoring for information about new security threats and attack vectors. 
+The following resources are monitored for information about new security threats and attack vectors. 
 
 - https://www.iacr.org/
 - http://www.acm.org/
@@ -71,6 +75,7 @@ The following resources are monitoring for information about new security threat
 - http://www.cert.org/
 - https://www.reddit.com/r/netsec/
 
+All dependencies are updated on a regular basis to ensure Mattermost uses the latest security updates.
 
 ## Common Security Related Questions for Enterprises
 
@@ -88,26 +93,165 @@ The following resources are monitoring for information about new security threat
 1. Is there defined management oversight who is responsible for application quality and security reporting & signoff?
    - Yes. 
 
-1. Is access to and maintenance of applications, systems, network components (including routers, databases, firewalls, voice communications servers, voice recording servers, etc), operating systems, virtualization components, hypervisors, or other information objects restricted to authorized personnel only?
-   - Yes.
-
-1. Is access to and maintenance of applications, systems, network components (including routers, firewalls, voice communications servers, voice recording servers, voice response units (VRU) etc), operating systems, virtualization components, hypervisors, or other information objects granted based upon need-to-know job function?
-   - Yes.
-
 1. For all IT systems including but not limited to servers, routers, switches, firewalls, databases, and external social spaces, is management approval required prior to creating all user and privileged accounts (e.g., system or security administrator)?
    - Yes.
 
-1. For all IT systems including but not limited to servers, routers, switches, firewalls, databases are privileged accounts (e.g., system or security administrator) logged at all times and reviewed on at least a quarterly basis?
-   - Yes.
-
-1. Are passwords prevented from being displayed in clear text during user authentication or in electronic/printed reports?
+1. For all IT systems including but not limited to servers, routers, switches, firewalls and databases, are privileged accounts (e.g., system or security administrator) logged at all times and reviewed on at least a quarterly basis?
    - Yes.
 
 1. Are all system, application and device password files encrypted using an industry standard encryption algorithm where technically feasible?
    - Yes
 
+1. For all IT systems including but not limited to servers, routers, switches, firewalls and databases, do privileged accounts (e.g., system or security administrator) that communicate directly with the Internet, contain any personally identifiable information (PII) such as: social security numbers, credit card numbers, patient health record information, or other confidential records?
+   - Yes
+
+1. Is all sensitive, protected health information (PHI) and personally identifiable information (PII) protected using an industry standard encryption algorithm where technically feasible?
+   - Yes
+
+1. Are information assets classified?
+   - Yes.
+
+1. Are security roles and responsibilities of personnel defined and documented in accordance with the organization’s information security policy?
+   - Yes.
+
+1. Is a background screening performed prior to allowing personnel access to Scoped Systems and Data?
+   - Yes.
+
+1. Are new hires required to sign any agreements upon hire?
+   - Yes.
+
+1. Is there a disciplinary process for non-compliance with information security policies?
+   - Yes, disclosure of confidential information or egregious disregard for documented security policies is grounds for termination. 
+
+1. Is there a personnel termination or change of status process?
+   - Yes.
+
+### Access Control
+
+1. Is access to and maintenance of applications, systems, network components (including routers, databases, firewalls, voice communications servers, voice recording servers, voice response units (VRU) etc), operating systems, virtualization components, hypervisors, or other information objects restricted to authorized personnel only?
+   - Yes.
+
+1. Is access to and maintenance of applications, systems, network components (including routers, databases, firewalls, voice communications servers, voice recording servers, voice response units (VRU) etc), operating systems, virtualization components, hypervisors, or other information objects granted based upon need-to-know job function?
+   - Yes.
+
+1. Are unique user IDs required for all user and privileged accounts (e.g., system or security administrator) to access all IT systems including but not limited to servers, routers, switches, firewalls and databases?
+   - Yes.
+
+1. Are passwords required for all user and privileged accounts (e.g., system or security administrator) to access all IT systems including but not limited to servers, routers, switches, firewalls and databases?
+   - Yes.
+
+1. Are there written network password policies and/or procedures?
+   - Yes.
+
+1. Is password administration employed for critical systems? 
+   - Yes.
+
+1. Are passwords prevented from being displayed in clear text during user authentication or in electronic/printed reports?
+   - Yes.
+
 1. If user accounts are assigned to non-permanent personnel (e.g., contractors, consultants)  for troubleshooting purposes, are the accounts disabled or removed after each use?
    - Yes
+
+### Operational Security
+
+1. Is there a risk assessment program that has been approved by management, communicated to appropriate personnel and has an owner to maintain and review the program?
+   - Yes.
+
+1. Is there an information security policy that has been approved by management, communicated to appropriate personnel and has an owner to maintain and review the policy?
+   - Yes.
+
+1. Is there a vendor management program?
+   - Yes.
+
+1. Is there a respondent information security function responsible for security initiatives?
+   - Yes.
+
+1. Is there an asset management policy or program that has been approved by management, communicated to appropriate personnel and has an owner to maintain and review the policy?
+   - Yes.
+
+1. Are management approved operating procedures utilized?
+   - Yes.
+
+1. Is there an operational change management / change control policy or program that has been approved by management, communicated to appropriate personnel and has an owner to maintain and review the policy?
+   - Yes.
+
+1. Are system backups performed?
+   - Yes.
+
+1. Are firewalls in use for both internal and external connections?
+   - Yes.
+
+1. Are firewalls or IPS(s) secured against unauthorized access from the Internet, Extranet and Intranet users?
+   - Yes.
+
+1. Are vulnerability assessments, scans or penetration tests performed on internal or external networks?
+   - Yes.
+
+1. Are incoming e-mails scanned for questionable file attachments?
+   - Yes.
+
+1. Does the company use spam filtering software to reduce the number of unsolicited e-mails?
+   - Yes.
+
+1. Are e-mail attachments scanned by anti-virus software?
+   - Yes.
+
+### Business Resiliency
+
+For more information on Business Resiliency, see the [Mattermost Business Continuity Plan](https://docs.mattermost.com/process/security.html#business-continuity-plan).
+
+1. Is there an established Business Resiliency program that has been approved by management and communicated to appropriate personnel?
+   - Yes.
+
+1. Has a Business Impact Analysis been conducted?
+   - Yes.
+
+1. Is there a formal process focused on identifying and addressing risks of disruptive incidents to the organization?
+   - Yes.
+
+1. Is there an established Business Resiliency program that has been approved by management and communicated to appropriate personnel?
+   - Yes.
+
+1. Are specific response and recovery strategies defined for addressing risks of disruptive incidents to the organization?
+   - Yes.
+
+1. Are formal business continuity procedures developed and documented?
+   - Yes.
+
+1. Has senior management assigned the responsibility for the overall management of the response and recovery efforts?
+   - Yes.
+
+1. Is there a periodic review of your Business Resiliency Program?
+   - Yes, annually.
+
+1. Is there an Influenza Pandemic/Infectious Disease Outbreak Plan?
+   - Yes.
+
+1. Is there insurance coverage for business interruptions or general services interruption?
+   - Yes.
+
+### Compliance
+
+1. Is there an internal audit, risk management or compliance department with responsibility for identifying and tracking resolution of outstanding regulatory issues?
+   - Yes.
+
+1. Are there policies and procedures to ensure compliance with applicable legislative, regulatory and contractual requirements to address intellectual property rights on business processes or information technology software products?
+   - Yes.
+
+1. Is there a records retention policy covering paper and electronic records, including email in support of applicable regulations, standards and contractual requirements?
+   - Yes. For example, records of customers with NDAs are retained in the event an NDA is terminated and requires destruction of records.
+
+1. Is licensing maintained in all jurisdictions where the business operates or where licensing is required?
+   - Yes.
+
+1. Is there an internal compliance and ethics program to ensure professional ethics and business practices are implemented?
+   - Yes.
+
+1. Are policies and procedures maintained for enabling compliance with applicable legal, regulatory, statutory, or contractual obligations related to any information security requirements?
+   - Yes.
+
+1. Is there a formalized governance process to identify and assess changes that could significantly affect the system of internal controls for security, confidentiality and availability?
+   - Yes.
 
 ### Software Development Life Cycle (SDLC)
 
@@ -184,8 +328,7 @@ The following resources are monitoring for information about new security threat
    - Yes. Security updates are announced via email to customers as well as mailing list subscribers. 
 
 1. Is there a specified response policy that includes the timeframe issues are to be addressed?
-   - Yes, please see: https://about.mattermost.com/support/ 
-
+   - Yes, please see: [https://about.mattermost.com/support/](https://about.mattermost.com/support/)
 
 ## Infrastructure Security Policies
 
@@ -262,6 +405,14 @@ Solution(s):
 - Mattermost, Inc. runs multiple monitoring and alerting services to detect and isolate suspicious traffic and requests in order to minimize downtime from potential online threats.  
 - Should our self-hosted Mattermost instance be disrupted we can, if needed, quickly re-deploy the solution within our VPN. 
 
+#### Disruption due to influenza pandemic or infectious disease outbreak
+
+Effect: 
+- Reduced capacity to continue business operations
+
+Solution(s): 
+- Mattermost, Inc. employs staff and engineers in multiple timezones and geographic areas, reducing the risk of significant disruption that an influenza pandemic or infectious disease outbreak would cause to business operations.
+
 ### Priority 3: Outages greater than 72 hours impacting business continuity 
 
 #### Outage of online CRM system 
@@ -281,5 +432,3 @@ Effect:
 
 Solution(s): 
 - While there is no current failover plan should our online HR or intranet system become disrupted, we have SLAs with our  vendors--which is used by thousands of other organizations--and believe the probability of sustained outage is low. 
-
-

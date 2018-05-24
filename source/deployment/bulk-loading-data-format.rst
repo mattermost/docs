@@ -3,7 +3,8 @@
 Data Format
 ===========
 
-The input data file must be a valid JSON file with the following objects, each on its own line in the file. The objects must occur in the file in the order listed.
+The input data file must be a valid `JSONL
+<http://jsonlines.org>`_ file with the following objects, each on its own line in the file. The objects must occur in the file in the order listed.
 
 Version
   Mandatory. The Version object must be the first line in the file, and must occur only once.
@@ -31,9 +32,12 @@ The identifiers for each object are listed in the following table:
   Team, *name*
   Channel, "*name*, *team*"
   User, *username*
+  UserNotifyProps, *username*
   UserTeamMembership, "*team*, *username*"
   UserChannelMembership, "*team*, *channel*, *username*"
   Post, "*channel*, *message*, *create_at*"
+  Reply, "*post*, *message*, *create_at*"
+  Reaction, "*post*, *emoji_name*, *create_at*"
   DirectChannel, *members*
   DirectPost,  "*channel_members*, *user*, *message*, *create_at* "
 
@@ -42,25 +46,25 @@ The following fragment is from a file that imports two teams, each with two chan
 .. code-block:: javascript
   :linenos:
 
-  { type: "version", ... }
-  { type: "team", team: { name: "TeamA", ...} }
-  { type: "team", team: { name: "TeamB", ...} }
-  { type: "channel", channel: { team: "TeamA", name: "ChannelA1", ...} }
-  { type: "channel", channel: { team: "TeamA", name: "ChannelA2", ...} }
-  { type: "channel", channel: { team: "TeamB", name: "ChannelB1", ...} }
-  { type: "channel", channel: { team: "TeamB", name: "ChannelB1", ...} }
-  { type: "user", user: { username: "user001", ...} }
-  { type: "user", user: { username: "user002", ...} }
-  { type: "user", user: { username: "user003", ...} }
-  { type: "user", ... }
-  { type: "user", ... }
-  { type: "user", ... }
+  { "type": "version", ... }
+  { "type": "team", "team": { "name": "TeamA", ...} }
+  { "type": "team", "team": { "name": "TeamB", ...} }
+  { "type": "channel", "channel": { "team": "TeamA", "name": "ChannelA1", ...} }
+  { "type": "channel", "channel": { "team": "TeamA", "name": "ChannelA2", ...} }
+  { "type": "channel", "channel": { "team": "TeamB", "name": "ChannelB1", ...} }
+  { "type": "channel", "channel": { "team": "TeamB", "name": "ChannelB1", ...} }
+  { "type": "user", "user": { "username": "user001", ...} }
+  { "type": "user", "user": { "username": "user002", ...} }
+  { "type": "user", "user": { "username": "user003", ...} }
+  { "type": "user", ... }
+  { "type": "user", ... }
+  { "type": "user", ... }
   .
   .
   .
-  { type: "post", { team: "TeamA", name: "ChannelA1", user: "user001", ...} }
-  { type: "post", { team: "TeamA", name: "ChannelA1", user: "user001", ...} }
-  { type: "post", { team: "TeamA", name: "ChannelA1", user: "user001", ...} }
+  { "type": "post", { "team": "TeamA", "name": "ChannelA1", "user": "user001", ...} }
+  { "type": "post", { "team": "TeamA", "name": "ChannelA1", "user": "user001", ...} }
+  { "type": "post", { "team": "TeamA", "name": "ChannelA1", "user": "user001", ...} }
   .
   .
   .
@@ -78,8 +82,8 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
 .. code-block:: javascript
 
   {
-    type: "version",
-    version: 1
+    "type": "version",
+    "version": 1
   }
 
 Fields of the Version object
@@ -124,13 +128,13 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
 .. code-block:: javascript
 
   {
-  type: "team",
-  team: {
-    name: "team-name",
-    display_name: "Team Display Name",
-    type: "O",
-    description: "The Team Description",
-    allow_open_invite: true
+  "type": "team",
+  "team": {
+    "name": "team-name",
+    "display_name": "Team Display Name",
+    "type": "O",
+    "description": "The Team Description",
+    "allow_open_invite": true
     }
   }
 
@@ -202,14 +206,14 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
 .. code-block:: javascript
 
   {
-    type: "channel",
-    channel: {
-      team: "team-name",
-      name: "channel-name",
-      display_name: "Channel Name",
-      type: "O",
-      header: "The Channel Header",
-      purpose: "The Channel Purpose",
+    "type": "channel",
+    "channel": {
+      "team": "team-name",
+      "name": "channel-name",
+      "display_name": "Channel Name",
+      "type": "O",
+      "header": "The Channel Header",
+      "purpose": "The Channel Purpose",
     }
   }
 
@@ -286,30 +290,31 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
 .. code-block:: javascript
 
   {
-    type: "user",
-    user: {
-      username: "username",
-      email: "email@example.com",
-      auth_service: "",
-      auth_data: "",
-      password: "passw0rd",
-      nickname: "bobuser",
-      first_name: "Bob",
-      last_name: "User",
-      position: "Senior Developer",
-      roles: "system_user",
-      locale: "pt_BR",
-      teams: [
+    "type": "user",
+    "user": {
+      "profile_image": "avatar.png",
+      "username": "username",
+      "email": "email@example.com",
+      "auth_service": "",
+      "auth_data": "",
+      "password": "passw0rd",
+      "nickname": "bobuser",
+      "first_name": "Bob",
+      "last_name": "User",
+      "position": "Senior Developer",
+      "roles": "system_user",
+      "locale": "pt_BR",
+      "teams": [
         {
-          name: "team-name",
-          roles: "team_user team_admin",
-          channels: [
+          "name": "team-name",
+          "roles": "team_user team_admin",
+          "channels": [
             {
-              name: "channel-name",
-              roles: "channel_user",
-              notify_props: {
-                desktop: "default",
-                mark_unread: "all"
+              "name": "channel-name",
+              "roles": "channel_user",
+              "notify_props": {
+                "desktop": "default",
+                "mark_unread": "all"
               }
             }
           ]
@@ -330,6 +335,13 @@ Fields of the User object
       <th class="head">Description</th>
       <th class="head">Validated</th>
       <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">profile_image</td>
+      <td valign="middle">string</td>
+      <td>The user’s profile image. This must be an existing file path.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">username</td>
@@ -438,28 +450,11 @@ Fields of the User object
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
-      <td valign="middle">selected_font</td>
-      <td valign="middle">string</td>
-      <td>The user’s display font, from the list available in Mattermost.</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
       <td valign="middle">use_military_time</td>
       <td valign="middle">string</td>
       <td>How times should be displayed to this user. Must be one of the following values:<br>
         <kbd>"true"</kbd> - Use 24 hour clock.<br>
         <kbd>"false"</kbd> - Use 12 hour clock.</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">name_format</td>
-      <td valign="middle">string</td>
-      <td>How names should be displayed to this user. Must be one of the following values:<br>
-        <kbd>"username"</kbd> - Show the username.<br>
-        <kbd>"nickname_full_name"</kbd> - Show the nickname if one exists, otherwise the first and last name.<br>
-        <kbd>"full_name"</kbd> - Show the first and last name.</td>
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>
@@ -490,10 +485,122 @@ Fields of the User object
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>
+    <tr class="row-odd">
+      <td valign="middle">tutorial_step</td>
+      <td valign="middle">string</td>
+      <td>Where to start the user tutorial. Must be one of the following values:<br>
+        <kbd>"1"</kbd>, <kbd>"2"</kbd> or <kbd>"3"</kbd> - Start from the specified tutorial step.<br>
+        <kbd>"999"</kbd> - Skip the user tutorial.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
   </table>
 
-Fields of the TeamMembership object
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fields of the UserNotifyProps object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This object is a member of the User object.
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tfoot><tr><td colspan="5">[1] Not validated, but an error occurs if no such team exists when running in apply mode.</td></tr></tfoot>
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">desktop</td>
+      <td valign="middle">string</td>
+      <td>Preference for sending desktop notifications. Must be one of the following values:<br>
+      <kbd>"all"</kbd> - For all activity.<br>
+      <kbd>"mention"</kbd> - Only for mentions.<br>
+      <kbd>"none"</kbd> - Never.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">desktop_duration</td>
+      <td valign="middle">string</td>
+      <td>Preference for how long desktop notifications remain on screen. Must be one of the following values:<br>
+      <kbd>"3"</kbd> - 3 seconds.<br>
+      <kbd>"5"</kbd> - 5 seconds.<br>
+      <kbd>"10"</kbd> - 10 seconds.<br>
+      <kbd>"0"</kbd> - Unlimited.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">desktop_sound</td>
+      <td valign="middle">string</td>
+      <td>Preference for whether desktop notification sound is played. Must be one of the following values:<br>
+      <kbd>"true"</kbd> - Sound is played.<br>
+      <kbd>"false"</kbd> - Sound is not played.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">email</td>
+      <td valign="middle">string</td>
+      <td>Preference for email notifications. Must be one of the following values:<br>
+      <kbd>"true"</kbd> - Email notifications are sent immediately.<br>
+      <kbd>"false"</kbd> - Email notifications are not sent.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">mobile</td>
+      <td valign="middle">string</td>
+      <td>Preference for sending mobile push notifications. Must be one of the following values:<br>
+      <kbd>"all"</kbd> - For all activity.<br>
+      <kbd>"mention"</kbd> - Only for mentions.<br>
+      <kbd>"none"</kbd> - Never.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">mobile_push_status</td>
+      <td valign="middle">string</td>
+      <td>Preference for when push notifications are triggered. Must be one of the following values:<br>
+      <kbd>"online"</kbd> - When online, away or offline.<br>
+      <kbd>"away"</kbd> - When away or offline.<br>
+      <kbd>"offline"</kbd> - When offline.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">channel</td>
+      <td valign="middle">string</td>
+      <td>Whether @all, @channel and @here trigger mentions. Must be one of the following values:<br>
+      <kbd>"true"</kbd> - Mentions are triggered.<br>
+      <kbd>"false"</kbd> - Mentions are not triggered.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">comments</td>
+      <td valign="middle">string</td>
+      <td>Preference for reply mention notifications. Must be one of the following values:<br>
+      <kbd>"any"</kbd> - Trigger notifications on messages in reply threads that the user starts or participates in.<br>
+      <kbd>"root"</kbd> - Trigger notifications on messages in threads that the user starts.<br>
+      <kbd>"never"</kbd> - Do not trigger notifications on messages in reply threads unless the user is mentioned.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">mention_keys</td>
+      <td valign="middle">string</td>
+      <td>Preference for custom non-case sensitive words that trigger mentions. Words must be separated by commas.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+  </table>
+
+Fields of the UserTeamMembership object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This object is a member of the User object.
 
@@ -534,8 +641,8 @@ This object is a member of the User object.
     </tr>
   </table>
 
-Fields of the ChannelMembership object
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Fields of the UserChannelMembership object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This object is a member of the TeamMembership object.
 
@@ -572,6 +679,16 @@ This object is a member of the TeamMembership object.
       <td valign="middle">object</td>
       <td>The notify preferences for this user in this channel. Must be a <b>ChannelNotifyProps</b> object</td>
       <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">favorite</td>
+      <td valign="middle">boolean</td>
+      <td>Whether to favorite the channel. Must be one of the following values:<br>
+          <kbd>"true"</kbd> - Yes.<br>
+          <kbd>"false"</kbd> - No.</td>
+      </td>
+      <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>
   </table>
@@ -617,7 +734,7 @@ This object is a member of the ChannelMembership object.
 Post object
 -----------
 
- If present, Post objects must occur after the last User object in the file, but before any DirectChannel objects.
+If present, Post objects must occur after the last User object in the file, but before any DirectChannel objects.
 
 Example Post object
 ~~~~~~~~~~~~~~~~~~~
@@ -627,13 +744,36 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
 .. code-block:: javascript
 
   {
-    type: "post",
-    post: {
-      team: "team-name",
-      channel: "channel-name",
-      user: "username",
-      message: "The post message",
-      create_at: 140012340013
+    "type": "post",
+    "post": {
+      "team": "team-name",
+      "channel": "channel-name",
+      "user": "username",
+      "message": "The post message",
+      "create_at": 140012340013,
+      "flagged_by": [
+        "username1",
+        "username2",
+        "username3"
+      ],
+      "replies": [{
+        "user": "username4",
+        "message": "The reply message",
+        "create_at": 140012352049,
+      }, {
+        "user": "username5",
+        "message": "Other reply message",
+        "create_at": 140012353057,
+      }],
+      "reactions": [{
+        "user": "username6",
+        "emoji_name": "+1",
+        "create_at": 140012356032,
+      }, {
+        "user": "username7",
+        "emoji_name": "heart",
+        "create_at": 140012359034,
+      }]
     }
   }
 
@@ -694,6 +834,103 @@ Fields of the Post object
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
+    <tr class="row-odd">
+      <td valign="middle">flagged_by</td>
+      <td valign="middle">array</td>
+      <td>Must contain a list of members who have flagged the post.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">replies</td>
+      <td valign="middle">array</td>
+      <td>The posts in reply to this post. Must be an array of <a href="#fields-of-the-reply-object">Reply</a> objects.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">reactions</td>
+      <td valign="middle">array</td>
+      <td>The emoji reactions to this post. Must be an array of <a href="#fields-of-the-reaction-object">Reaction</a> objects.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+  </table>
+
+Fields of the Reply object
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This object is a member of the Post/DirectPost object.
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">user</td>
+      <td valign="middle">string</td>
+      <td>The username of the user for this reply.</td>
+      <td align="center" valign="middle">No [3]</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">message</td>
+      <td valign="middle">string</td>
+      <td>The message that the reply contains.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">create_at</td>
+      <td valign="middle">int</td>
+      <td>The timestamp for the reply, in milliseconds since the Unix epoch.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+  </table>
+
+Fields of the Reaction object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This object is a member of the Post/DirectPost object.
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">user</td>
+      <td valign="middle">string</td>
+      <td>The username of the user for this reply.</td>
+      <td align="center" valign="middle">No [3]</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">emoji_name</td>
+      <td valign="middle">string</td>
+      <td>The emoji of the reaction.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">create_at</td>
+      <td valign="middle">int</td>
+      <td>The timestamp for the reply, in milliseconds since the Unix epoch.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
   </table>
 
 DirectChannel object
@@ -717,6 +954,11 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
         "username3"
       ],
       "header": "The Channel Header",
+      "favorited_by": [
+        "username1",
+        "username2",
+        "username3"
+      ]
     }
   }
 
@@ -753,6 +995,13 @@ Fields of the DirectChannel object
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
+    <tr class="row-odd">
+      <td valign="middle">favorited_by</td>
+      <td valign="middle">array</td>
+      <td>Must contain a list of members who have favorited the channel.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
   </table>
 
 DirectPost object
@@ -777,7 +1026,30 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
       ],
       "user": "username2",
       "message": "Hello Group Channel",
-      "create_at": 140012340013
+      "create_at": 140012340013,
+      "flagged_by": [
+        "username1",
+        "username2",
+        "username3"
+      ],
+      "replies": [{
+        "user": "username4",
+        "message": "The reply message",
+        "create_at": 140012352049,
+      }, {
+        "user": "username5",
+        "message": "Other reply message",
+        "create_at": 140012353057,
+      }],
+      "reactions": [{
+        "user": "username6",
+        "emoji_name": "+1",
+        "create_at": 140012356032,
+      }, {
+        "user": "username7",
+        "emoji_name": "heart",
+        "create_at": 140012359034,
+      }]
     }
   }
 
@@ -827,5 +1099,26 @@ Fields of the DirectPost object
       <td>The timestamp for the post, in milliseconds since the Unix epoch.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">flagged_by</td>
+      <td valign="middle">array</td>
+      <td>Must contain a list of members who have flagged the post.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">replies</td>
+      <td valign="middle">array</td>
+      <td>The posts in reply to this direct post. Must be an array of <a href="#fields-of-the-reply-object">Reply</a> objects.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">reactions</td>
+      <td valign="middle">array</td>
+      <td>The emoji reactions to this direct post. Must be an array of <a href="#fields-of-the-reaction-object">Reaction</a> objects.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
     </tr>
   </table>

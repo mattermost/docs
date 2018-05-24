@@ -6,7 +6,7 @@ For organizations who require multi-factor authentication ("MFA") as part of the
 
 Supported smartphones include iOS, Android, Blackberry and Windows Phone devices that are able to install `Google Authenticator <https://support.google.com/accounts/answer/1066447?hl=en>`_. Other than requiring internet access to download and install Google Authenticator, the phone used for Mattermost MFA does not require internet access.
 
-- **Note:** The open source Mattermost Team Edition is designed to offer "modern communication behind your firewall" and is used extensively by security professionals, `including former members of the United States FBI, CIA, and NSA in addition to the former CIO of the U.S. Whitehouse. <https://about.mattermost.com/open-source-mattermost-software-helps-ex-cia-nsa-fbi-hunt-us-fugitives/>`_ The MFA feature in Mattermost Enterprise Edition is considered an optional convenience feature in lieu of operating on a secured private network. 
+- **Note:** The open source Mattermost Team Edition is designed to offer "modern communication behind your firewall" and is used extensively by security professionals, `including former members of the United States FBI, CIA, and NSA in addition to the former CIO of the U.S. Whitehouse. <https://about.mattermost.com/customer-stories/open-source-mattermost-software-helps-ex-cia-nsa-fbi-hunt-us-fugitives/>`_ The MFA feature in Mattermost Enterprise Edition is considered an optional convenience feature in lieu of operating on a secured private network. 
 
 Enabling MFA
 ------------

@@ -3,7 +3,7 @@
 Levels of Feature Quality, Development, and Support Eligibility
 ===============================================================
 
-This document defines the terminology that is used when communicating status of features to the Mattermost community. The terminology applies to all editions of Mattermost platform and to Mattermost apps.
+This document defines the terminology that is used when communicating status of features to the Mattermost community. The terminology applies to all editions of Mattermost server and to Mattermost apps.
 
 .. contents::
   :local:
