@@ -7,7 +7,7 @@ Installing Developer Components on Windows
   a. Install `Docker for Windows <https://docs.docker.com/docker-for-windows/>`_.
   b. Add the line ``127.0.0.1 dockerhost`` to ``C:\Windows\System32\drivers\etc\hosts`` using a text editor with administrator privileges.
 2. For other Windows versions, or if you prefer to use VirtualBox, use Docker Toolbox:
-  a. Install `Docker Toolbox <https://www.docker.com/products/docker-toolbox>`_.
+  a. Install `Docker Toolbox <https://docs.docker.com/toolbox/>`_.
   b. Run the *Docker Quickstart Terminal* and let it configure the ``default`` machine.
   c. Run ``docker-machine ip default`` in the terminal to get the IP address for the next step.
   d. Add the line ``{Docker-IP} dockerhost`` to ``C:\Windows\System32\drivers\etc\hosts`` using a text editor with administrator privileges.
