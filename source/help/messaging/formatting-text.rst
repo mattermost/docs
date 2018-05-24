@@ -23,6 +23,7 @@ You can use either ``_`` or ``*`` around a word to make it italic. Use two to ma
 * ``**bold**`` renders as **bold**
 * ``**_bold-italic_**`` renders as |bold_italics|
 * ``~~strikethrough~~`` renders as |strikethrough|
+
 .. |bold_italics| image:: ../../images/bold_italics.PNG
   :width: 100px
 .. |strikethrough| image:: ../../images/strikethrough.PNG
@@ -125,23 +126,32 @@ Renders as:
 Code Block
 ----------
 
-Create a code block by indenting each line by four spaces, or by placing ``````` on the line above and below your code.
+Creating a fixed width code block is recommended for pasting multi-line blocks of code or other text output that is easier to read with fixed width font alignment. Examples include block text snippets, ASCII tables, and log files.
 
-Example:
+This can be accomplished in one of two ways:
 
-.. code-block:: none
-
-
-  ```
-  code block
-  ```
-
-Renders as:
+ 1. Placing 3x backtics :kbd:`\`\`\`` on the line directly above and directly below your code
 
 .. code-block:: none
 
-
+  ```
+  this is my
   code block
+  ```
+
+
+* :guilabel:`TIP` - Enter 3x backticks :kbd:`\`\`\``, :kbd:`SHIFT + ENTER`, :kbd:`<type_your_code>`, :kbd:`SHIFT + ENTER`, and finally 3x backticks :kbd:`\`\`\``.
+
+
+ 2. Indenting each line by four spaces
+
+.. code-block:: none
+
+      this is my
+      code block
+
+  ^^^^ 4x spaces
+
 
 **Syntax Highlighting**
 
@@ -185,7 +195,7 @@ Renders as:
 In-line Code
 ------------
 
-Create in-line monospaced font by surrounding it with backticks.
+Create in-line monospaced font by surrounding it with backticks (`), not with single quotes (').
 
 .. code-block:: none
 
@@ -198,8 +208,6 @@ In-line Images
 --------------
 
 Add in-line images by using an exclamation mark followed by the alt text in square brackets then the URL of the image in round brackets. You can add hover text by placing the text in quotes after the link.
-
-.. code-block:: none
 
 **![** *{alt text}* **](** *{URL of image}*  "*{Hover text}* " **)**
 
@@ -229,13 +237,13 @@ Inline image with link
 
   .. code-block:: none
 
-    [![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/platform)
+    [![Mattermost](../../images/icon-76x76.png)](https://github.com/mattermost/mattermost-server)
 
   Renders as:
 
   .. image:: ../../images/icon-76x76.png
     :alt: Mattermost
-    :target: https://github.com/mattermost/platform
+    :target: https://github.com/mattermost/mattermost-server
 
 Inline image displayed at 50 pixels wide and 76 pixels high
   .. code-block:: none

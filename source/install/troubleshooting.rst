@@ -58,12 +58,24 @@ The System Administrator can now turn off email sign-in and still access their a
 Locked out of System Administrator account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line.
+If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line: 
 
-Unable to play audio or video files on browser
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Sign in to the server Mattermost is running on via ``ssh``.
+2. Go to the directory of the Mattermost application. If you've followed our setup process this is ``/opt/mattermost``.
+3. Run
 
-Your server may be misconfigured where the MIME type isn't set correctly. Try installing a media player or read the `related documentation <https://golang.org/pkg/mime/#TypeByExtension>`_ to add the missing MIME types.
+  .. code-block:: none
+
+    $ sudo ./platform roles system_admin {username}
+
+4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
+
+System Console settings revert to previous values after saving
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you try to save a System Console page and notice that the settings revert to previous values, your ``config.json`` file may have a permissions issue.
+
+Check that the ``config.json`` file is owned by the same user as the process that runs the Mattermost server. If not, change the owner to be the mattermost user and restart the server.
 
 YouTube videos show a "Video not found" preview
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -71,6 +83,11 @@ YouTube videos show a "Video not found" preview
 1. First, make sure the YouTube video exists by pasting a link to the video into your browser's address bar.
 2. If you are using the Mattermost Desktop App, please ensure you have installed version 3.5.0 or later.
 3. If you have specified `a Google API key <https://docs.mattermost.com/administration/config-settings.html#google-api-key>`_ to enable the display of titles for embedded YouTube video previews, regenerate the key.
+
+Mattermost can't connect to LDAP/AD server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+LDAP and Active Directory troubleshooting can be found on `this page. <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`_
 
 Mattermost Error Messages
 -------------------------
@@ -91,7 +108,7 @@ The following is a list of common error messages and solutions:
 
 **Solution:**
 
-      1. Follow the `installation guide to set up your WebSocket port properly <http://docs.mattermost.com/install/prod-ubuntu.html#set-up-nginx-server>`__.
+      1. Follow the `installation guide to set up your WebSocket port properly <https://docs.mattermost.com/install/install-ubuntu-1604.html#installing-nginx-server>`__.
       2. Speak with the owner of any other proxies between your device and the Mattermost server to ensure ``wss`` connections are passing through without issue.
 
 If this issue is reported rarely, in some cases the issue comes from *intermittent* internet connectivity, where the initial load works, but the device then becomes disconnected from the internet and real time updates over the ``wss`` connection fail repeatedly and the error is displayed to check if the ``wss`` connection were misconfigured.
@@ -103,7 +120,7 @@ If only a small number of users have this issue, it could be from intermittent i
 
 This error may appear in server logs when attempting to sign-up when using self-signed certificates to setup SSL, which is not yet supported by Mattermost.
 
-**Solution:** Set up a load balancer like NGINX `per production install guide <http://docs.mattermost.com/install/prod-debian.html#set-up-nginx-with-ssl-recommended>`__. The core team is looking into allowing self-signed certificates in the future. 
+**Solution:** Set up a load balancer like NGINX `per production install guide <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-with-ssl-and-http-2>`__. The core team is looking into allowing self-signed certificates in the future. 
 
 As a work around, in **System Console** > **Security** > **Connections** set ``Enable Insecure Outgoing Connections`` to ``true``.
    
@@ -149,3 +166,40 @@ Click the link at the bottom of the sign-in page that says “Don't have an acco
          1. Turning the sign-in option back on.
          2. Asking the user to switch sign-in methods before turning the
             sign-in option back off.
+
+``Failed to upgrade websocket connection``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This error can occur if you're using multiple URLs to reach Mattermost via proxy forwarding.
+
+**Solution:**
+
+1. Upgrade to a Mattermost server v3.8.0 or later, which adds `WebSocket CORS support <https://github.com/mattermost/mattermost-server/pull/5667>`_.
+2. Follow the installation guide to configure `NGINX as a proxy for Mattermost server <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`_.
+3. If you're doing reverse proxy with IIS, upgrade to IIS 8.0 or later and enable WebSockets. For more information, see `IIS 8.0 WebSocket Protocol Support <https://www.iis.net/learn/get-started/whats-new-in-iis-8/iis-80-websocket-protocol-support>`_.
+
+``Websocket closed`` or ``Websocket re-established connection``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This alert can appear every few seconds in the Desktop application or web browser connected to Mattermost.
+
+**Solution:**
+
+If you are using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, if it's significantly lower it will cause an undesireable websocket disconnections. 
+
+If you are using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``. 
+
+``Cannot connect to the server. Please check your server URL and internet connection.``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This error may appear on some devices when trying to connect to a server that is using an SSL curve that is not supported by the client device.
+
+**Solution:**
+
+If you are using NGINX as a proxy, set the ``ssl_ecdh_curve`` directive in your site configuration file (for example, in ``/etc/nginx/sites-available/mattermost``), to a value that is supported by both client and server. Suggested values for varying levels of compatibility can be found at `Mozilla's Security/Server Side TLS <https://wiki.mozilla.org/Security/Server_Side_TLS>`_ page.
+
+As security and encryption standards often change rapidly, it is best to check for up-to-date information. However, the suggested value as of January 2018, is to use the curves: prime256v1, secp384r1, secp521r1.
+
+For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521r1;``
+
+*Note: Setting multiple curves requires nginx 1.11.0, if you can only set one curve, the most compatible is prime256v1.*

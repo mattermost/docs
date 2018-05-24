@@ -1,7 +1,7 @@
 Development Process Overview
 ============================
 
-This document describes the process through which feedback and design discussions flow into community systems, then into tickets, then into pull requests, then into bi-monthly releases based on product purpose.
+This document describes the process through which feedback and design discussions flow into community systems, then into tickets, then into pull requests, then into monthly releases based on product purpose.
 
 Purpose
 -------
@@ -40,7 +40,7 @@ If someone feels an existing ticket should be re-examined, they can add "triage"
 Release Planning
 ~~~~~~~~~~~~~~~~
 
-Release planning sets the "Fix Version" of tickets to one of the upcoming bi-monthly releases. The Fix Version is an estimate of when a
+Release planning sets the "Fix Version" of tickets to one of the upcoming monthly releases. The Fix Version is an estimate of when a
 feature might ship, which may change as the planning process continues, until the ticket is scheduled for a Sprint.
 
 Sprint Planning
@@ -72,15 +72,15 @@ If you see an obvious bug and want to submit a fix, pull requests following the 
 
 Examples: 
 
-- `Fix: Unable to change password #1390 <https://github.com/mattermost/platform/pull/1390>`__
-- `Fix isBrowserEdge typo #1260 <https://github.com/mattermost/platform/pull/1260>`__
+- `Fix: Unable to change password #1390 <https://github.com/mattermost/mattermost-server/pull/1390>`__
+- `Fix isBrowserEdge typo #1260 <https://github.com/mattermost/mattermost-server/pull/1260>`__
 
 Tickets Accepting Pull Requests
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you'd like to improve the product beyond bug fixes, you can select from a list of tickets accepting pull requests prepared by the core team.
 
-`Help Wanted GitHub issues <https://github.com/mattermost/platform/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D>`_ and `Accepting Pull Requests <https://mattermost.atlassian.net/issues/?filter=10101>`_ (APR) tickets are intended to be unambiguous projects that could be reasonably completed by contributors outside the core team and are welcome contributions.
+`Help Wanted GitHub issues <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D>`_ and `Accepting Pull Requests <https://mattermost.atlassian.net/issues/?filter=10101>`_ (APR) tickets are intended to be unambiguous projects that could be reasonably completed by contributors outside the core team and are welcome contributions.
 
 You can choose any ticket marked "Open", even if it's assigned, and comment to let people know you're working on it. If you have questions post in `Mattermost forum <http://forum.mattermost.org/>`_ or join the `Contributors <https://pre-release.mattermost.com/core/channels/tickets>`_ channel.
 
@@ -96,8 +96,13 @@ for more details.
 
 Examples: 
 
-- `Production installation instructions for Debian Jessie with Systemd #1134 <https://github.com/mattermost/platform/pull/1134>`__ 
-- `Fix dead link to AWS file in doc #622 <https://github.com/mattermost/platform/pull/622>`__
+- `Production installation instructions for Debian Jessie with Systemd #1134 <https://github.com/mattermost/mattermost-server/pull/1134>`__ 
+- `Fix dead link to AWS file in doc #622 <https://github.com/mattermost/mattermost-server/pull/622>`__
+
+Documentation Pull Request Review
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you're assigned to a documentation pull request made by a core contributor and you see any minor grammar or spelling fixes, please make a commit to fix them to save time instead of including them in a review. Note that this should only be done for changes submitted by people familiar with the review process.
 
 Minor Improvements
 ^^^^^^^^^^^^^^^^^^
@@ -110,12 +115,12 @@ Minor improvements without an Accepting Pull Request ticket may be accepted if:
 
 Examples: 
 
-- `Do not clear LastActivityAt for GetProfiles #1396 <https://github.com/mattermost/platform/pull/1396/files>`__ 
-- `Update to proxy\_pass #1331 <https://github.com/mattermost/platform/pull/1331>`__
+- `Do not clear LastActivityAt for GetProfiles #1396 <https://github.com/mattermost/mattermost-server/pull/1396/files>`__ 
+- `Update to proxy\_pass #1331 <https://github.com/mattermost/mattermost-server/pull/1331>`__
 
 Release
 -------
 
-Mattermost ships stable releases on the 16th of every other month. Releases begin with a planning process reviewing internal designs and community feedback in the context of the product purpose. Feature development is done in weekly sprints, and releases end with feature complete, stabilization, code complete and release candidate milestones prior to final release.
+Mattermost ships stable releases on the 16th of every month. Releases begin with a planning process reviewing internal designs and community feedback in the context of the product purpose. Feature development is done in weekly sprints, and releases end with feature complete, stabilization, code complete and release candidate milestones prior to final release.
 
 See `release process documentation <http://docs.mattermost.com/process/release-process.html#release-process>`__ for more details.

@@ -15,7 +15,7 @@ Page Titles
 Underline page titles using `=`, with no overline. Underlines should be as long as the title text. For example:
 
 .. code-block:: none
-  
+
   Document Title
   ==============
 
@@ -25,17 +25,17 @@ Section Titles
 Underline using `-` for section titles. For example:
 
 .. code-block:: none
-  
+
   Section Title
   -------------
- 
+
 Underline subsections using `~` for the first subsection level, and `^` for the second subsection level. For example:
 
 .. code-block:: none
-  
+
   Subsection One
   ~~~~~~~~~~~~~~
-  
+
   Subsection Two
   ^^^^^^^^^^^^^^
 
@@ -46,7 +46,7 @@ Table of Contents
 
 Insert a table of contents into a document using the following format:
 
-.. code-block:: none 
+.. code-block:: none
 
   .. contents::
       :backlinks: top
@@ -71,7 +71,7 @@ Bullet Lists
 For bullet lists and sublists, use ``-`` before the list item. For example:
 
 .. code-block:: none
-  
+
   - list item one
   - list item two
     - sublist item one
@@ -84,30 +84,41 @@ Numbered Lists and Procedure Steps
 Create numbered lists and procedure steps using numbers for the top-level list and lower case alpha characters for the first nested list. For example:
 
 .. code-block:: none
-  
+
   1. This is item one.
   2. This is item two.
-    
+
     a. This is nested item one.
     b. This is nested item two.
-    
+
   3. This is item three.
-  
+
+Name-value Groups
+-----------------
+
+To create a name-value group such as a definition list, type the term on a line by itself. On the next line, indent the definition. For example:
+
+.. code-block:: none
+
+  Total Users
+    The total number of active accounts created on your system. Excludes inactive accounts.
+  Total Teams
+    The total number of teams created on your system.
+
 External Links
 ---------------
 
-URLs will automatically be rendered as links in Sphinx; however, where possible, it is preferred that hyperlinks are created within the text of a sentence. Hyperlinks within a sentence can be created using the following formatting:
+URLs are automatically rendered as links in Sphinx; however, where possible, it is preferred that hyperlinks are created within the text of a sentence. Hyperlinks within a sentence can be created using the following formatting:
 
 ``Link display text <URL-of-website>`_``, for example:
 
 .. code-block:: none
-  
+
   `Mattermost Manifesto <https://www.mattermost.org/manifesto/>`_
 
 The link renders as: `Mattermost Manifesto <https://www.mattermost.org/manifesto/>`_
 
 .. _relative-links-in-rst:
-
 
 Internal Links to Mattermost Docs
 ----------------------------------
@@ -122,14 +133,14 @@ The following example uses the ``:doc:`` role to link to the `Integrations Overv
 
   For more information about integrating with Mattermost, see :doc:`../overview/integrations`.
 
-Note that the filename extension is not part of the construct. On output, the link looks like this: "For more information about integrating with Mattermost, see :doc:`../overview/integrations`." The Sphinx processor pulls in the title of the document to use as the link text. 
+Note that the filename extension is not part of the construct. On output, the link looks like this: "For more information about integrating with Mattermost, see :doc:`../overview/integrations`." The Sphinx processor pulls in the title of the document to use as the link text.
 
 The ``:ref:`` role is a two-part construct. One part is the link itself, and the other part is the target. The target has the following form, and should preceed a section title:
 
 .. code-block:: none
 
   .. _arbitrary-text-label:
-  
+
   Bullet Lists
   ------------
 
@@ -206,7 +217,7 @@ The following example is a block of Go code using the :linenos: option, which ca
 
   .. code-block:: go
     :linenos:
-  
+
     newPassword := props["new_password"]
   	if err := utils.IsPasswordValid(newPassword); err != nil {
   		c.Err = err
@@ -223,4 +234,3 @@ The example produces the following output:
 		c.Err = err
 		return
 	}
-

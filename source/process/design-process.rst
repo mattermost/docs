@@ -25,12 +25,15 @@ Process
       - Link back to customer and user data / feedback
       - Link back to company objectives 
       - Explain why it is important and the expected impact
+      
+    - Before continuing with design work, queue a discussion with Product Managers to review the feature proposal and evaluate whether the feature should be added to the roadmap
        
     - *Questions this stage should address:* 
     
       - Who is this for? What do we know about them?
       - What are we trying to build? 
       - Why are we building it? 
+      - Should we build this, or should we not? 
       
 2. **Brainstorm.**
     

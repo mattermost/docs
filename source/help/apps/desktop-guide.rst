@@ -60,10 +60,10 @@ The options appear in the Settings page, available from the **File > Settings** 
 Start app on login (Windows, Linux only)
     When enabled, Mattermost application starts when you log in to your machine.
 
-    This setting is enabled by default.
+    This setting is disabled by default.
 
-Display secure content
-    If your server is hosted on ``https://``, insecure content, images and scripts with ``http://`` are not rendered by default. This option allows such content to be rendered. If you disable it, please be mindful of potential security risks shared over ``http://`` protocols.
+Check spelling
+    Highlight misspelled words in your messages. Available for English, French, German, Spanish, and Dutch. To change the spelling language, right-click inside a message box and navigate to **Spelling Languages** in the context menu.
 
     This setting is enabled by default.
 
@@ -75,6 +75,11 @@ Show red badge on taskbar icon to indicate unread messages (Windows, Mac only)
 Flash taskbar icon when a new message is received (Windows, Linux only)
     Configure whether the taskbar icon flashes for a few messages when a new message is received on any of your active teams and servers.
 
+    This setting is disabled by default.
+    
+Bounce the Dock icon when receiving a notification (Mac only)
+    When enabled, the Dock icon will either bounce once or bounce until the user opens the app when receiving a notification.
+    
     This setting is disabled by default.
 
 Show Mattermost icon in the menu bar (Mac only)
@@ -89,5 +94,10 @@ Show icon in the notification area (Linux only)
 
 Leave app running in notification center when application window is closed (Linux only)
     When enabled, closing the application window will leave the Mattermost desktop app running in your notification center. This can be useful if you want to check for unread mentions while away from the app.
+
+    This setting is disabled by default.
+    
+Use GPU hardware acceleration
+    If enabled, Mattermost UI is rendered more efficiently but can lead to decreased stability for some systems. Setting takes effect after restarting the app.
 
     This setting is disabled by default.

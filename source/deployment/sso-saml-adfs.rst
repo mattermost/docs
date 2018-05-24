@@ -1,7 +1,7 @@
 Configure SAML with Microsoft ADFS
 ==================================
 
-The following process provides steps to configure SAML with Microsoft ADFS for Mattermost.
+The following process provides steps to configure SAML 2.0 with Microsoft ADFS for Mattermost.
 
 .. contents::
   :backlinks: top
@@ -14,7 +14,6 @@ The following are basic requirements to use ADFS for Mattermost:
  - A Microsoft Server running. The screenshots used in this guide are from Microsoft Server 2012R2, but similar steps should work for other versions.
  - An SSL certificate to sign your ADFS login page.
  - ADFS installed on your Microsoft Server. You can find a detailed guide for deploying and configuring ADFS in `this article <https://msdn.microsoft.com/en-us/library/gg188612.aspx>`_.
-
 
 On your ADFS installation, note down the value of the **SAML 2.0/W-Federation URL** in ADFS Endpoints section, also known as the **SAML SSO URL Endpoint** in this guide. If you chose the defaults for the installation, this will be ``/adfs/ls/``.
 
@@ -49,7 +48,7 @@ However, if you would like to set up encryption for your SAML connection, click 
 
 	.. image:: ../../source/images/adfs_7_configure_certificate_encryption.PNG
 
-7. In the **Configure URL** screen, select the option **Enable Support for the SAML 2.0 WebSSO protocol** and enter the **SAML 2.0 SSO service URL**, which is of the form ``https://<your-mattermost-url>/login/sso/saml``.
+7. In the **Configure URL** screen, select the option **Enable Support for the SAML 2.0 WebSSO protocol** and enter the **SAML 2.0 SSO service URL**, which is of the form ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_.
 
 	.. image:: ../../source/images/adfs_8_configure_url.PNG
 
@@ -152,8 +151,8 @@ Next, we export the identity provider certificate, which will be later uploaded 
 
 You’re now about to finish configuring SAML for Mattermost!
 
-Configure SAML for Mattermost
------------------------------
+Configure SAML sign-in for Mattermost
+--------------------------------------
 
 1. Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
   - *SAML SSO URL*: **SAML 2.0/W-Federation URL** ADFS Endpoint you copied earlier.
@@ -162,11 +161,11 @@ Configure SAML for Mattermost
 
 	.. image:: ../../source/images/adfs_22_mattermost_basics.PNG
 
-2. (Optional) Configure Mattermost to verify the signature. The *Service Provider Login URL* is the *SAML 2.0 SSO service URL* you specified in ADFS earlier.
+2. Configure Mattermost to verify the signature. The *Service Provider Login URL* is the *SAML 2.0 SSO service URL* you specified in ADFS earlier.
 
 	.. image:: ../../source/images/adfs_23_mattermost_verification.PNG
 
-3. (Optional) Enable encryption by uploading the Service Provider Private Key and Service Provider Public Certificate you generated earlier.
+3. Enable encryption by uploading the Service Provider Private Key and Service Provider Public Certificate you generated earlier.
 
 	.. image:: ../../source/images/adfs_24_mattermost_encryption.PNG
 
@@ -176,16 +175,21 @@ For Mattermost servers running 3.3 and earlier, the first name and last name att
 
 	.. image:: ../../source/images/adfs_25_mattermost_attributes.PNG
 
-5. (Optional) Lastly, customize the login button text.
+5. (Optional) Customize the login button text.
 
   .. image:: ../../source/images/adfs_26_mattermost_login_button.PNG
 
 6. Click **Save**.
+
+7. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > General > Users and Teams** and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
+
 
 You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
 
 It is also recommended to post an announcement about how the migration will work to users.
 
 You may also configure SAML for ADFS by editing ``config.json`` to enable SAML based on :ref:`SAML configuration settings <saml-enterprise>`. You must restart the Mattermost server for the changes to take effect.
+
+.. include:: sso-saml-ldapsync.rst
 
 .. include:: sso-saml-troubleshooting.rst

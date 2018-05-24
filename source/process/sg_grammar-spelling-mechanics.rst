@@ -21,7 +21,7 @@ Tone
 Use a direct, impartial tone. Mattermost documentation is written to answer questions and solve problems, not to entertain.
 
 Preferred
-  If login fails due to an invalid password, turn Caps Lock off and then re-enter your password. 
+  If login fails due to an invalid password, turn Caps Lock off and then re-enter your password.
 
 Avoid
   Failed sign in? No problem! Simply enter the correct password and we'll let you in right away.
@@ -36,7 +36,7 @@ Preferred
 
 Avoid
   The *Status* pane will be opened by the system.
-  
+
 Person
 ~~~~~~
 
@@ -47,7 +47,7 @@ Preferred
 
 Avoid
   We'll view the status in the *Status* pane.
-  
+
 Tense
 ~~~~~~
 
@@ -58,7 +58,7 @@ Preferred
 
 Avoid
   Sharing this link will let other users view the linked message.
-  
+
 Commas
 ------
 
@@ -99,25 +99,28 @@ Avoid
 Text Formatting
 -----------------
 
-Use highlighting of text to visually set off words and phrases that are important to readers. Content that should be highlighted includes file names, UI controls, and window titles. The following table has a comprehensive list with examples. 
+Use highlighting of text to visually set off words and phrases that are important to readers. Content that should be highlighted includes file names, UI controls, and window titles. The following table has a comprehensive list with examples.
 
-=================  ==================  =============================================================
-Text               Format              Example
-=================  ==================  =============================================================
-Code samples       ``monospace``       See :ref:`syntax-highlight` for an example.
-Commands           ``monospace``       "At the command line, type ``sudo apt-get install nginx``."
-Directory name     ``monospace``       ``/opt/mattermost``
-File name          ``monospace``       ``config.py``
-Inline code        ``monospace``       ``fmt.Printf("2 times %d = %d\n", x, y )``
-Keystrokes         ``monospace``       "Type ``https://`` in the string field."
-Screen output      ``monospace``       See :ref:`literal-blocks` for an example.
-Field names        **bold**            "Enter the font in the **Display Font** field."
-Clickable control  **bold**            "Click **File > Save**."
-Citations          *italic*            "Read the book *Clean Code* by Robert Martin."
-Window titles      *italic*            "The *Account Settings* window opens."
-Keyboard buttons   Key1+Key2           "Press CTRL+U to upload a file."
-Placeholder field  {placeholder}       "Use the URL in the form of {hostname}.mattermost.com/{team}."
-=================  ==================  =============================================================
+==================  ==================  ===============================================================
+Text                Format              Example
+==================  ==================  ===============================================================
+Code samples        ``monospace``       See :ref:`syntax-highlight` for an example.
+Commands            ``monospace``       "At the command line, type ``sudo apt-get install nginx``."
+Directory name      ``monospace``       ``/opt/mattermost``
+File name           ``monospace``       ``config.py``
+Inline code         ``monospace``       ``fmt.Printf("2 times %d = %d\n", x, y )``
+Keystrokes          ``monospace``       "Type ``https://`` in the string field."
+Screen output       ``monospace``       See :ref:`literal-blocks` for an example.
+Parameter values    ``monospace``       "Set the *auto-config* parameter to ``false``"
+Field names         **bold**            "Enter the font in the **Display Font** field."
+Clickable control   **bold**            "Click **File > Save**."
+Citations           *italic*            "Read the book *Clean Code* by Robert Martin."
+Window titles       *italic*            "The *Account Settings* window opens."
+User account names  *italic*            "Log in to the *mysql* account."
+Parameter names     *italic*            "Set the *auto-config* parameter to ``false``"
+Keyboard buttons    Key1+Key2           "Press CTRL+U to upload a file."
+Placeholder field   {placeholder}       "Use the URL in the form of {hostname}.mattermost.com/{team}."
+==================  ==================  ===============================================================
 
 Bullet Lists
 -------------
@@ -132,17 +135,33 @@ Create numbered lists and procedure steps using arabic numerals for the top-leve
 
 1. This is the first step.
 2. This is the second step.
-  
+
   a. This is a substep.
   b. This is another substep.
-  
+
 3. This is the third step.
 
-Document Linking 
+Name-value Groups
+-----------------
+
+Use a name-value group instead of a hand-created list.
+
+A name-value group is typically a group of terms and their corresponding definitions, but can also be questions and answers, topics and values, or other name-value groups. In HTML output, a name-value group is represented as a definition list.
+
+Preferred
+  Total Users
+    The total number of active accounts created on your system. Excludes inactive accounts.
+  Total Teams
+    The total number of teams created on your system.
+
+Avoid
+  **Total Users:** The total number of active accounts created on your system. Excludes inactive accounts.
+
+  **Total Teams:**  The total number of teams created on your system.
+
+Document Linking
 ------------------
 
 When creating a link to another document in the Mattermost documentation, create a link with a relative URL. To create relative links in reStructuredText, see :ref:`relative-links-in-rst`.
 
 A link with an absolute URL is not as flexible as a relative URL. Relative URLs don't break when the documentation is moved to another host, or if the documentation is hosted on a server that's behind a firewall without access to the Internet.
-
-
