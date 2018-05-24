@@ -22,7 +22,7 @@ Use a Direct Message when you want a private conversation with one other person.
 
 If your System Administrator has allowed it, you can start a Direct Message or a Group Message with people on other teams, not just your own.
 
-There is also an online status indicator next to the names in the Direct Message list. It displays: online (active browser), away (no browser activity for 5 minutes), and offline (browser closed).
+There is also an online status indicator next to the names in the Direct Message list. It displays: online (active browser), away (no browser activity for 5 minutes), do not disturb (disabled desktop and push notifications) and offline (browser closed).
 
 Managing Channels
 -----------------------------------------
@@ -46,11 +46,17 @@ Removing Members from a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Click the channel name at the top of the center pane to access the drop-down menu, then click **Manage Members**. Any member of a channel can remove other members by clicking **Remove** next to a user's name.
 
-Renaming a Channel
+Naming a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Rename Channel**. Anyone can rename the channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`_.
+Channels can be identified by:
 
-You may also change the channel URL (also known as the channel handle) when renaming a channel. Changing channel URL may break existing links.
+1. Channel display name: This is the channel name appearing in the Mattermost user interface. Click the channel name at the top of the center pane to access the drop-down menu, then click **Rename Channel**. Anyone can rename the channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`_.
+2. Channel handle: This is part of the channel URL. You may also change the channel handle when renaming a channel, but changing channel handle may break existing links.
+
+For example, for the following channel: https://pre-release.mattermost.com/core/channels/ux-design
+
+- Channel display name: ``UX Design``
+- Channel handle: ``ux-design`` 
 
 Leaving a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,6 +67,13 @@ Deleting a Channel
 Click the channel name at the top of the center pane to access the drop-down menu, then click **Delete Channel**. Anyone can delete the Public Channels or Private Channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-deletion-for>`_.
 
 When a channel is deleted it is removed from the user interface, but an archived copy exists on the server in case it is needed for audit reasons later. Because of this, the URL of a newly created channel cannot be the same URL name as a deleted channel.
+
+Converting Public Channels to Private
+--------------------------------------
+
+Click the channel name at the top of the center pane to access the drop-down menu, then click **Convert to Private Channel**. Team and System Admins have the ability to convert public channels to private channels. When a channel is converted, history and membership are preserved. Membership in a private channel is by invitation only. Publicly shared files remain accessible to anyone with the link. 
+
+Note that conversion of private channels to public channels is not supported in the user interface given security concerns of sharing private channel history; however, this function is available via `CLI command <https://docs.mattermost.com/administration/command-line-tools.html#platform-channel-modify>`_.
 
 Favoriting a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

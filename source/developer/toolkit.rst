@@ -27,14 +27,11 @@ Below is a list of planned features of the developer toolkit with estimated time
  - Webhooks and slash commands to allow easy, low-effort extension and integration.
  - Mattermost HTTP REST APIv4 allowing for much more powerful server interaction.
  - Mattermost Webapp moved over to Redux infrustructure.
-
-2. Q3/2017:
-
  - API developer token to provide a simple method to authenticate to the Mattermost REST API.
  - The ability to build webapp client plugins to override existing UI components (replace posts with your custom components, use your own video services etc.), modify/extend client drivers to interact with custom server API endpoints, and add whole new UI views in predetermined places.
 
-3. Unscheduled:
- - The ability to build Go 1.8 server plugins to hook directly into server events (think new post events, user update events, etc.), have some form of database access (possibly access to certain tables, and the ability to create new tables) and to add custom endpoints to extend the Mattermost REST API.
+2. Upcoming:
+ - The ability to build server plugins to hook directly into server events (think new post events, user update events, etc.), have some form of database access (possibly access to certain tables, and the ability to create new tables) and to add custom endpoints to extend the Mattermost REST API.
  - The ability to build plugins similar to the webapp but for React Native apps for iOS and Android.
  - A system or architecture to combine the above plugins into one easy-to-share and easy-to-install package.
  - A market or directory to find official and/or certified by Mattermost plugins and a process to get your plugin certified.

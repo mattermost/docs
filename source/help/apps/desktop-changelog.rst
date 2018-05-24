@@ -1,6 +1,267 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.1.1
+----------------------------
+
+Release date: May 17, 2018
+
+This release contains multiple bug fixes for Mac due to an incorrect build for v4.1.0. Windows and Linux apps are not affected.
+
+Bug Fixes
+~~~~~~~~~~~~~~~
+Each of the issues listed below are already fixed for Windows and Linux v4.1.0.
+
+Mac
+^^^^^^^^^^^^^
+ - Fixed an issue where right-clicking an image, then choosing "Save Image", did nothing.
+ - Fixed an issue that prevented typing in the form fields on the add server dialog when launched from the server tab bar.
+ - Fixed an issue that could cause an error message on the add new server dialog to be misleading.
+ - Fixed an issue where timestamps in message view showed no URL on hover.
+ - Fixed an issue where quitting and reopening the app required the user to log back in to Mattermost.
+ - Fixed an issue where adding a new server sometimes caused a blank page.
+ - Fixed deep linking via ``mattermost://`` protocol spawning a new copy of the Desktop App on the taskbar.
+ 
+Release v4.1.0
+--------------
+
+Release date: May 16, 2018
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+ - Improved stability and performance
+   - Reduced memory usage by periodically clearing cache.
+   - Fixed app crashing when a server tab was drag-and-dropped to the message view.
+   - Added an option to disable GPU hardware acceleration in App Settings to improve stability in some systems.
+   - Fixed Windows crash issues during installation.
+   - Fixed Mac and Linux crashing after toggling "Show Mattermost icon in menu bar" app setting.
+ - Updated design for loading animation icon.
+ - Improved appearance of server tabs.
+ - Enabled `Certificate Transparency <https://www.certificate-transparency.org/what-is-ct>`_ verification in HTTPS.
+
+Windows
+^^^^^^^^^^^^^
+
+ - [Windows 7/8] Desktop notifications now respect the duration setting set in the Control Panel.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ - Major version upgrade of Electron from v1.7.13 to v1.8.4. Electron is the underlying technology used to build the Desktop apps.
+ - Mac download files now use Zip packages rather than tar.gz files.
+ - ES6 ``import`` and ``export`` now replace the ``require`` and ``modul.export`` modules for better development.
+ - Storybook added to more easily develop React componets without executing the desktop app.
+
+Bug Fixes
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+ - Fixed an issue where an incorrect spellchecker language was used for non ``en-US`` locales on initial installation.
+ - Fixed an issue where error page appeared when U2F device was used for multi-factor authentication through single sign-on.
+ - Fixed an issue where right-clicking an image, then choosing "Save Image", did nothing.
+ - Fixed an issue that prevented typing in the form fields on the add server dialog when launched from the server tab bar.
+ - Fixed an issue that could cause an error message on the add new server dialog to be misleading.
+
+Windows
+^^^^^^^^^^^^^
+
+ - Fixed an issue where ``file://`` protocol was not working. Note that localhost URLs are not yet supported.
+
+Known Issues
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+ - Clicking on a video preview opens another Mattermost window in addition to downloading the file.
+ - Insecure connection produces hundreds of log messages.
+
+Windows
+^^^^^^^^^^^^^
+
+ - App window doesn't save "floating" app position.
+ - [Windows 7] Sometimes app tries to render a page inside the app instead of in a new browser tab when clicking links].
+ - [Windows 10] Incorrect task name in Windows 10 startup list.
+ - Mattermost UI sometimes bleeds over a file explorer.
+ - When auto-starting the desktop app, the application window is included in Windows tab list.
+
+Mac
+^^^^^^^^^^^^^
+
+ - The application crashes when a file upload dialog is canceled without closing Quick Look.
+ - When the app auto-starts, app page opens on screen instead of being minimized to Dock.
+
+Linux (Beta)
+^^^^^^^^^^^^^
+
+ - [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app.
+ - [Ubuntu - 64 bit] Direct message notification sometimes comes as a streak of line instead of a pop up.
+
+Contributors
+~~~~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+ - `Autre31415 <https://github.com/Autre31415>`_, `dmeza <https://github.com/dmeza>`_, `hmhealey <https://github.com/hmhealey>`_, `jasonblais <https://github.com/jasonblais>`_, `kethinov <https://github.com/kethinov>`_, `lieut-data <https://github.com/lieut-data>`_, `lip-d <https://github.com/lip-d>`_, `mkraft <https://github.com/mkraft>`_, `yuya-oc <https://github.com/yuya-oc>`_
+
+Release v4.0.1
+--------------
+
+Release date: March 28, 2018
+
+This release contains multiple security updates for Windows, Mac and Linux, and it is highly recommended that users upgrade to this version.
+
+Architectural Changes
+~~~~~~~~~~~~~~~
+
+- Minor version upgrade of Electron from v1.7.11 to v1.7.13. Electron is the underlying technology used to build the Desktop apps.
+
+Bug Fixes
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Disabled Certificate Transparency verification that produced unnecessary certificate errors.
+
+Release 4.0.0
+--------------
+
+Release date: January 29, 2018
+
+This release contains multiple security updates for Windows, Mac and Linux, and it is highly recommended that users upgrade to this version.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added a dialog to allow the user to reopen the desktop app if it quits unexpectedly.
+- Mattermost animation icon is now displayed when loading a page, instead of a blank screen.
+- Added a dialog to request permissions to show desktop notifications or to use microphone and video for video calls from untrusted origins.
+- The "Saved" indicator now appears for both Server Management and App Options on the Settings page.
+- Close button on the Settings page now has a hover effect.
+- Added new admin configuration settings for:
+
+   - Disabling server management where the user cannot add or edit the server URL.
+   - Setting one or more pre-configured server URLs for the end user.
+   - Customizing the link in **Help > Learn More..**.
+
+Windows
+^^^^^^^^^^^^^
+
+- Added support for protocol deep linking where the desktop app opens via `mattermost://` link if app is already installed.
+- Added the ability to more easily white-label the Mattermost taskbar icon on custom builds.
+
+Mac
+^^^^^^^^^^^^^
+
+- Added support for protocol deep linking where the desktop app opens via `mattermost://` link if app is already installed.
+- Added `Ctrl+Tab` and `Ctrl+Shift+Tab` shortcuts to switch between server tabs.
+- Added the option to bounce the Dock icon when receiving a notification.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron from v1.6.11 to v1.7.11. Electron is the underlying technology used to build the Desktop apps.
+- The app now uses CSS to style the user interface. Styles are also divided into React's inline `style` and CSS.
+- Yarn is now used to manage dependencies across Windows, Mac and Linux builds.
+- Build is now run automatically before packaging the apps with `npm run package`.
+- Removed hardcoded product name references.
+- Added an `rm` command to `npm`, which removes all dynamically generated files to make it easy to reset the app between builds and branches.
+
+Bug Fixes
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed the close button of the Settings page not working on first installation.
+- Fixed the app publisher referring to Yuya Ochiai instead of Mattermost, Inc.
+- Fixed font size not always persisting across app restarts.
+- Fixed an automatic reloading of the app when a DNS or network error page is manually reloaded with CTRL/CMD+R.
+- Fixed an issue where changing font size caused rendering issues on next restart.
+- Fixed an issue where after adding a server on the Settings page, focus remained on the "Add new server" link.
+- Fixed an issue where SAML certificate file couldn't be uploaded from the file upload dialog.
+
+Windows
+^^^^^^^^^^^^^
+
+- Fixed desktop notifications not working when the window was minimized from an inactive state.
+- Fixed the uninstaller not removing all files correctly.
+
+Mac
+^^^^^^^^^^^^^
+
+- Fixed an issue where after uploading a file, focus wasn't put back to the text box.
+- Fixed a mis-aligned `+` button in the server tab bar.
+
+Linux
+^^^^^^^^^^^^^
+
+- Fixed the main window not being minimized when the app is launched via "Start app on Login" option.
+
+Known Issues
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Insecure connection produces hundreds of log messages.
+
+Windows
+^^^^^^^^^^^^^
+
+- App window doesn't save "floating" app position.
+- Windows 7: Sometimes the app tries to render the page inside the app instead of in a new browser tab when clicking links.
+- Windows 10: Incorrect task name in Windows 10 start-up list.
+
+Mac
+^^^^^^^^^^^^^
+
+- The application crashes when a file upload dialog is canceled without closing Quick Look.
+- When the app auto-starts, app page opens on screen instead of being minimized to Dock.
+- You have to click twice when a window is out of focus to have actions performed.
+
+Linux (Beta)
+^^^^^^^^^^^^^
+
+- Ubuntu - 64 bit: Right clicking taskbar icon and choosing **Quit** only minimizes the app.
+- Ubuntu - 64 bit: Direct message notification sometimes renders as a streak or line instead of a pop up.
+
+Contributors
+~~~~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+ - `csduarte <https://github.com/csduarte>`_, `dmeza <https://github.com/dmeza>`_, `jasonblais <https://github.com/jasonblais>`_, `jarredwitt <https://github.com/jarredwitt>`_, `wvds <https://github.com/wvds>`_, `yuya-oc <https://github.com/yuya-oc>`_
+
+----
+
+Release 3.7.1
+--------------
+
+Release date: August 30, 2017
+
+This release contains a security update for Windows, Mac and Linux, and it is highly recommended that users upgrade to this version.
+
+Improvements and Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Windows
+^^^^^^^^^^^^^
+
+ - Client no longer freezes intermittently, such as when receiving desktop notifications.
+ - [Windows 8.1/10] Added support for running the desktop app across monitors of different DPI.
+ - [Windows 7/8] Clicking on a desktop notification now opens the message.
+
 Release 3.7.0
 --------------
 
@@ -39,7 +300,7 @@ Windows
 ^^^^^^^^^^^^^
 
 - Focus is now set to the next top-level window after closing the main app window.
-- Fixed an issue where the app remained in the `"classic" ALT+TAB window switcher <http://www.askvg.com/how-to-get-windows-xp-styled-classic-alttab-screen-in-windows-vista-and-7/>`_ after closing the main app window.
+- Fixed an issue where the app remained in the `"classic" ALT+TAB window switcher <https://www.askvg.com/how-to-get-windows-xp-styled-classic-alttab-screen-in-windows-vista-and-7/>`_ after closing the main app window.
 
 Mac
 ^^^^^^^^^^^^^
@@ -77,7 +338,7 @@ Linux (Beta)
 ^^^^^^^^^^^^^
 
 - [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing **Quit** only minimizes the app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`_
-- [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/platform/issues/3589>`_
+- [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`_
 
 Contributors
 ~~~~~~~~~~~~
@@ -175,7 +436,7 @@ Linux (Beta)
 ^^^^^^^^^^^^^
 
  - [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing **Quit** only minimizes the app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`_
- - [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/platform/issues/3589>`_
+ - [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`_
 
 Contributors
 ~~~~~~~~~~~~
@@ -259,7 +520,7 @@ Linux (Beta)
 
 -  [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing Quit only minimizes the
    app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`_
--  [Ubuntu - 64 bit] `Direct message notification pop ups do not properly render <https://github.com/mattermost/platform/issues/3589>`_
+-  [Ubuntu - 64 bit] `Direct message notification pop ups do not properly render <https://github.com/mattermost/mattermost-server/issues/3589>`_
 
 Contributors
 ~~~~~~~~~~~~
@@ -382,7 +643,7 @@ Linux (Beta)
 ^^^^^^^^^^^^
 
 -  [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app
--  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/platform/issues/3589>`_
+-  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`_
 
 Contributors
 ~~~~~~~~~~~~
@@ -505,7 +766,7 @@ Linux (Beta)
 ^^^^^^^^^^^^^
 
 -  [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app
--  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/platform/issues/3589>`_
+-  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`_
 
 Contributors
 ~~~~~~~~~~~~

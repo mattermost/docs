@@ -124,6 +124,7 @@ Cluster Metrics:
 
     - ``mattermost_cluster_cluster_request_duration_seconds``:  The total duration in seconds of the inter-node cluster requests.
     - ``mattermost_cluster_cluster_requests_total``: The total number of inter-node requests.
+    - ``mattermost_cluster_event_type_totals``: The total number of cluster requests sent for any type.
 
 Database Metrics:
 
@@ -164,6 +165,11 @@ Process Metrics:
     - ``mattermost_process_resident_memory_bytes``: Resident memory size in bytes.
     - ``mattermost_process_start_time_seconds``: Start time of the process since unix epoch in seconds.
     - ``mattermost_process_virtual_memory_bytes``: Virtual memory size in bytes.
+
+Search Metrics:
+
+    - ``mattermost_search_posts_searches_duration_seconds``:  The total duration, in seconds, of search query requests.
+    - ``mattermost_search_posts_searches_total``: The total number of search query requests.
 
 WebSocket Metrics:
 

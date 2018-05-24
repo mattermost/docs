@@ -28,9 +28,9 @@ To translate a language:
 Translations Updates
 --------------------
 
-1 - New and updated strings are imported to the `Mattermost Translation Server <http://translate.mattermost.com>`_ each day at 00:00 GMT. Strings with a ``mobile`` prefix are imported from the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ project, others are from `platform <https://github.com/mattermost/platform>`_.
+1 - New and updated strings are imported to the `Mattermost Translation Server <http://translate.mattermost.com>`_ each day at 00:00 GMT. Strings with a ``mobile`` prefix are imported from the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ project, others are from `mattermost-server <https://github.com/mattermost/mattermost-server>`_ and `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_.
 
-2 - A new pull request with latest translations that reach at least Beta Quality is submitted to both the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ and `platform <https://github.com/mattermost/platform>`_ repos each Monday at 22:00 GMT.
+2 - A new pull request with latest translations that reach at least Beta Quality is submitted to the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_, `mattermost-server <https://github.com/mattermost/mattermost-server>`_ and `mattermost-webapp <https://github.com/mattermost/mattermost-webapp>`_ repos each Monday at 22:00 GMT.
 
     - A pull request will also be submitted on the day of major feature complete and code complete to ensure latest translations are included in the release.
     - A pull request may also be submitted for a release candidate.
@@ -49,7 +49,7 @@ Official
 - 100% of translation verified by someone deeply knowledgeable in target language.
 - No translation may be out-of-date due to changes to English-language text since the last translation and review cycle.
 - Language must have at least one official reviewer who maintains the language with updated strings imported to the `Translation Server <http://translate.mattermost.com>`_ over time.
-- Language must have been in use for **at least 2 full release cycles** where end users in target language can share feedback and corrections.
+- Language must have been in use for **at least 3 full release cycles** where end users in target language can share feedback and corrections.
 
 Language option is listed as an option in **Account Settings > Display > Language**.
 
@@ -57,8 +57,7 @@ Language option is listed as an option in **Account Settings > Display > Languag
 Beta
 ~~~~
 
-- 100% of translation verified by someone deeply knowledgeable in Mattermost functionality.
-- 100% of translation verified by someone deeply knowledgeable in target language.
+- 90% of translation verified by someone deeply knowledgeable in Mattermost functionality and in the target language.
 - Up to 10% of translation may be out-of-date due to changes to English-language text since the last translation and review cycle.
 
 Language option is listed as an option in **Account Settings > Display > Language** prefixed with **(Beta)**.
@@ -75,7 +74,7 @@ Test Translations
 
 If you'd like to review and verify translations prior to achieving Beta-quality status, you can follow these steps:
 
-1 - Build Mattermost on your machine following the `Developer Machine Setup Guides <http://docs.mattermost.com/developer/developer-setup.html>`_.
+1 - Build Mattermost on your machine following the `Developer Machine Setup Guides <https://docs.mattermost.com/developer/dev-setup.html>`_.
 
 2 - Download a copy of your translations to your local machine.
 
@@ -85,10 +84,10 @@ If you'd like to review and verify translations prior to achieving Beta-quality 
 
 4 - Copy the generated [locale].json files to the corresponding directories:
 
-    - For platform they should be in the `i18n` directory.
-    - For webapp they should be in the `webapp/i18n` directory.
+    - For the server, copy the files to the i18n directory of the ``mattermost-server`` project.
+    - For the webapp, copy the files to the i18n directory of the ``mattermost-webapp`` project.
 
-5 - Modify the file `webapp/i18n/i18n.jsx` to include your translated strings.
+5 - Modify the file ``i18n/i18n.jsx`` in the ``mattermost-webapp`` project to include your translated strings.
 
 6 - Compile and run **Mattermost** to confirm everything works. You can then review and verify translations from your machine.
 
@@ -99,7 +98,7 @@ Translations require updates on a monthly basis as features are added and change
 
 Below are current official reviewers and maintainers for languages that have reached at least Beta-quality. Official reviewers submit final translations for languages; maintainers suggest translations and step in when official reviewers aren't able to help in a certain release.
 
-If you're interested in contributing to the process, please join the `Mattermost localization channel to discuss <https://pre-release.mattermost.com/core/channels/localization>`_.
+If you're interested in contributing to the process, please join the `Mattermost localization channel to discuss <https://pre-release.mattermost.com/core/channels/localization>`_. Creating localization channels is also encouraged - see examples of current channels including `Italian <https://pre-release.mattermost.com/core/channels/i18n-italian>`_, `German <https://pre-release.mattermost.com/core/channels/i18n-german>`_ and `Swedish <https://pre-release.mattermost.com/core/channels/i18n-swedish>`_.
 
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 | Language                                 | Official Reviewer(s)                                                                                                  | Maintainers                                                                                          |

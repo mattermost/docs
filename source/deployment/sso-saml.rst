@@ -2,7 +2,7 @@
 SAML Single-Sign-On (E20)
 =========================
 
-SAML Single-Sign-On integration offers the following benefits:
+Mattermost can be configured to act as a SAML 2.0 Service Provider. The SAML Single-Sign-On integration offers the following benefits:
 
 - **Single-sign-on.** Users can sign-in to Mattermost with their SAML credentials.
 - **Centralized identity management.** Mattermost accounts can display user information from SAML, such as first and last name, email and username.
