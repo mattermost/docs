@@ -6,7 +6,13 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v4.10
 
-Release date: 2018-05-16
+ - **4.10.1, released TBD**
+   - Mattermost v4.10.1 contains a moderate severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+   - Fixed an issue where a break could occur when viewing manage members list while another user added a member.
+   - Fixed an issue where auto-reply was not properly posting or suppressing emails.
+   - Fixed an issue with ensuring a member's roles for a team were also deleted when the team was deleted.
+ - **v4.10.0, released 2018-05-16**
+   - Original 4.10.0 release
 
 ### Highlights
 
