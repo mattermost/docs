@@ -727,7 +727,9 @@ platform user delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Permanently delete a user and all related information, including posts.
+    Permanently delete a user and all related information, including posts from the database.
+    
+    Does not delete content from the file storage. You can manually delete all file uploads for a given user as uploads contain the `CreatorId` field. User avatars are stored in `data/users/<userid>/profile.png`.
 
   Format
     .. code-block:: none
@@ -749,6 +751,8 @@ platform user deleteall
 
   Description
     Permanently delete all users and all related information, including posts.
+    
+    Does not delete content from the file storage. You can manually delete all file uploads and avatars. All uploads contain the `CreatorId` field and uer avatars are stored in `data/users/<userid>/profile.png`.
 
   Format
     .. code-block:: none
