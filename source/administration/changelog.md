@@ -114,6 +114,8 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 8. An unused `ExtraUpdateAt` field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
 9. [Enterprise Edition E20] Current CSV export feature will be replaced by the [new Compliance Export](https://docs.mattermost.com/administration/compliance-export.html) feature. [Ticket #8810](https://mattermost.atlassian.net/browse/MM-8810).
 
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
 ### Known Issues
 
  - Google login fails on the Classic mobile apps.
@@ -225,7 +227,9 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
    - AllowEditPost
    - RestrictTeamInvite
    - RestrictCustomEmojiCreation
-   
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
 #### Upcoming Deprecated Features in Mattermost v5.0
 
 The following deprecations are planned for the Mattermost v5.0 release, which is scheduled for summer/2018. This list is subject to change prior to the release.
@@ -237,7 +241,7 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 5. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) will be added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
 6. An unused `ExtraUpdateAt` field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
 7. [Enterprise Edition E20] Current CSV export feature will be replaced by the [new Compliance Export](https://docs.mattermost.com/administration/compliance-export.html) feature. [Ticket #8810](https://mattermost.atlassian.net/browse/MM-8810).
- 
+
 #### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
@@ -385,6 +389,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - AllowEditPost
    - RestrictTeamInvite
    - RestrictCustomEmojiCreation
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
 #### config.json
 
@@ -546,6 +552,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - AllowEditPost
   - RestrictTeamInvite
 
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
 #### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
@@ -686,6 +694,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 - All API v3 endpoints are now deprecated, and scheduled for removal in Mattermost v5.0.
 - The permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint for permanently deleting a team is scheduled for removal in Mattermost v4.7.
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
 #### config.json
 
