@@ -488,10 +488,48 @@ mattermost permissions
 --------------------
 
   Description
-    Commands to manage the permissions system.
+    Commands to manage advanced permissions.
 
   Child Commands
-    -  `mattermost permissions reset`_ - Reset the permissions system to its default state on new installs.
+    -  `platform permissions export`_ - Export Schemes and Roles.
+    -  `platform permissions import`_ - Import Schemes and Roles from a permissions export.
+    -  `platform permissions reset`_ - Reset the permissions system to its default state on new installs.
+    
+platform permissions export
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Prints to stdout a jsonl representation of Schemes and Roles from a Mattermost instance. Used to export 
+    Roles and Schemes from one Mattermost instance to another. The output is a jsonl representation with 
+    each line containing a json representation of a Scheme and its associated Roles. The output is intended 
+    to be used as the input of `platform permissions import`.
+
+  Format
+    .. code-block:: none
+
+      platform permissions export
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform permissions export > my-permissions-export.jsonl
+
+platform permissions import
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Creates Roles and Schemes on a Mattermost instance from a jsonl input file in the format outputted by
+    `platform permissions export`.
+
+  Format
+    .. code-block:: none
+
+      platform permissions import {file}
+
+  Example
+    .. code-block:: none
+
+      sudo ./platform permissions import my-permissions-export.jsonl
 
 mattermost permissions reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
