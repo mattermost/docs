@@ -88,12 +88,18 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 #. Remove all files *except special directories* from within the current mattermost directory.
 
-   The special directories within mattermost are ``config``, ``logs``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*). The following command clears the contents of mattermost, preserving only those directories and their contents.
+   The special directories within mattermost are ``config``, ``logs``, ``plugins``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*). The following command clears the contents of mattermost, preserving only those directories and their contents.
    You should first modify the second part of the command to ``xargs echo rm -r`` to verify what will be executed.
 
    .. code-block:: sh
 
-     sudo find mattermost/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/config -o -path mattermost/data -o -path mattermost/logs \) -prune \) | sudo xargs rm -r
+     sudo find mattermost/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sudo xargs rm -r
+    
+#. Rename the ``plugins`` directory so they do not interfere with the upgrade.
+
+   .. code-block:: sh
+
+     sudo mv mattermost/plugins/ mattermost/plugins~
     
 #. Change ownership of the new files before copying them.
 
@@ -141,7 +147,12 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
-13. Copy the ``plugins/`` directory from the old install to the new install and restart the mattermost service.
+14. Re-instate the ``plugins`` directory, then restart the mattermost service.
+
+    .. code-block:: sh
+
+      cd {install-path}/mattermost
+      sudo mv plugins~/ plugins
 
 Upgrading Team Edition to Enterprise Edition
 --------------------------------------------
