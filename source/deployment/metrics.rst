@@ -19,6 +19,8 @@ Installing Prometheus
 
 1 - `Download a precompiled binary for Prometheus <https://prometheus.io/download/>`_. Binaries are provided for many popular distributions, including Darwin, Linux and Windows.
 
+.. note:: Mattermost only supports Prometheus v1.8.2 and earlier.
+
 For install instructions, see `Prometheus install guides <https://prometheus.io/docs/introduction/getting_started/>`_.
 
 2 - The following settings are recommended in the Prometheus configuration file named ``prometheus.yml``:
