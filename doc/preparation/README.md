@@ -90,10 +90,18 @@ properties section of the global chart.
 
 ### Redis
 
-Preparation of chart-external PostgreSQL services (as a pet or SaaS), can
+Preparation of chart-external Redis services (as a pet or SaaS), can
 be found in [advanced/external-redis](../advanced/external-redis/README.md).
 This can be done as documented there. Once that is configured, the chart should
 be configured with the external service by making use of the `globals.redis`
+properties section of the global chart.
+
+### Gitaly
+
+Preparation of chart-external Gitaly services can
+be found in [advanced/external-gitaly](../advanced/external-gitaly/README.md).
+This can be done as documented there. Once that is configured, the chart should
+be configured with the external service by making use of the `globals.gitaly`
 properties section of the global chart.
 
 ## Omniauth for Google OAuth2
@@ -111,4 +119,3 @@ The credentials from GCP can be added per the [`unicorn` chart's `omniauth.provi
 ## Run GitLab QA
 
 As preparation for the demo, one should also [run GitLab QA against the deployed chart](../gitlab-qa/README.md)
-
