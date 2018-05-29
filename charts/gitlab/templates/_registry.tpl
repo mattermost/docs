@@ -3,10 +3,10 @@
 {{/*
 Returns the Registry hostname.
 If the hostname is set in `global.hosts.registry.name`, that will be returned,
-otherwise the hostname will be assembed using `registry` as the prefix, and the `assembleHost` function.
+otherwise the hostname will be assembed using `registry` as the prefix, and the `gitlab.assembleHost` function.
 */}}
-{{- define "gitlab.registryHost" -}}
-{{- coalesce .Values.registry.host .Values.global.hosts.registry.name (include "assembleHost"  (dict "name" "registry" "context" . )) -}}
+{{- define "gitlab.registry.hostname" -}}
+{{- coalesce .Values.registry.host .Values.global.hosts.registry.name (include "gitlab.assembleHost"  (dict "name" "registry" "context" . )) -}}
 {{- end -}}
 
 {{/*
@@ -18,7 +18,7 @@ to the global registry host name.
 {{-   if .Values.registry.host -}}
 {{-     .Values.registry.host -}}
 {{-   else -}}
-{{-     template "registryHost" . -}}
+{{-     template "gitlab.registry.hostname" . -}}
 {{-   end -}}
 {{- end -}}
 

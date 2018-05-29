@@ -26,8 +26,8 @@ data:
   gitlab.yml.erb: |
     production: &base
       gitlab:
-        host: {{ template "gitlabHost" . }}
-        https: {{ hasPrefix "https://" (include "gitlabUrl" .) }}
+        host: {{ template "gitlab.gitlab.hostname" . }}
+        https: {{ hasPrefix "https://" (include "gitlab.gitlab.url" .) }}
         trusted_proxies:
         {{- if .Values.trusted_proxies }}
 {{ toYaml .Values.trusted_proxies | indent 10 }}
@@ -66,7 +66,7 @@ data:
             region: us-east-1
             aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
             aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
-            host: {{ template "minioHost" . }}
+            host: {{ template "gitlab.minio.hostname" . }}
             endpoint: {{ template "gitlab.minio.endpoint" . }}
             path_style: true
           {{- else if .Values.lfs.connection}}

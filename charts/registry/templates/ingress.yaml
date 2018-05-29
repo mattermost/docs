@@ -1,7 +1,7 @@
 {{- if .Values.enabled -}}
 {{- if coalesce .Values.ingress.enabled .Values.global.ingress.enabled | default false -}}
-{{- $registryHost := include "registryHost" . -}}
-{{- $registryTLSSecret := include "registryTLSSecret" . -}}
+{{- $hostname := include "registry.hostname" . -}}
+{{- $tlsSecret := include "registry.tlsSecret" . -}}
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
@@ -24,18 +24,18 @@ metadata:
   {{- end }}
 spec:
   rules:
-    - host: {{ $registryHost }}
+    - host: {{ $hostname }}
       http:
         paths:
           - path: /
             backend:
               serviceName: {{ template "fullname" . }}
               servicePort: {{ .Values.service.externalPort }}
-  {{- if $registryTLSSecret }}
+  {{- if $tlsSecret }}
   tls:
     - hosts:
-      - {{ $registryHost }}
-      secretName: {{ $registryTLSSecret }}
+      - {{ $hostname }}
+      secretName: {{ $tlsSecret }}
   {{- end -}}
 {{- end -}}
 {{- end -}}

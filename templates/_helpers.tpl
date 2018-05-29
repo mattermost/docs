@@ -20,12 +20,33 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 {{/*
 Returns the hostname.
 If the hostname is set in `global.hosts.gitlab.name`, that will be returned,
-otherwise the hostname will be assembed using `gitlab` as the prefix, and the `assembleHost` function.
+otherwise the hostname will be assembled using `gitlab` as the prefix, and the `gitlab.assembleHost` function.
 */}}
-{{- define "gitlabHost" -}}
-{{- coalesce .Values.global.hosts.gitlab.name (include "assembleHost"  (dict "name" "gitlab" "context" . )) -}}
+{{- define "gitlab.gitlab.hostname" -}}
+{{- coalesce .Values.global.hosts.gitlab.name (include "gitlab.assembleHost"  (dict "name" "gitlab" "context" . )) -}}
 {{- end -}}
 
+{{/*
+Returns the GitLab Url, ex: `http://gitlab.example.local`
+If `global.hosts.https` or `global.hosts.gitlab.https` is true, it uses https, otherwise http.
+Calls into the `gitlab.gitlabHost` function for the hostname part of the url.
+*/}}
+{{- define "gitlab.gitlab.url" -}}
+{{- if or .Values.global.hosts.https .Values.global.hosts.gitlab.https -}}
+{{-   printf "https://%s" (include "gitlab.gitlab.hostname" .) -}}
+{{- else -}}
+{{-   printf "http://%s" (include "gitlab.gitlab.hostname" .) -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
+Returns the minio hostname.
+If the hostname is set in `global.hosts.minio.name`, that will be returned,
+otherwise the hostname will be assembled using `minio` as the prefix, and the `gitlab.assembleHost` function.
+*/}}
+{{- define "gitlab.minio.hostname" -}}
+{{- coalesce .Values.global.hosts.minio.name (include "gitlab.assembleHost"  (dict "name" "minio" "context" . )) -}}
+{{- end -}}
 
 {{/* ######### Utility templates */}}
 
@@ -39,7 +60,7 @@ otherwise the hostname will be assembed using `gitlab` as the prefix, and the `a
   Additionally if `global.hosts.hostSuffix` is set, it will append a hyphen, then the suffix to the name:
   eg: If hostSuffix is `beta` it will produce `minio-beta.example.local`
 */}}
-{{- define "assembleHost" -}}
+{{- define "gitlab.assembleHost" -}}
 {{- $name := .name -}}
 {{- $context := .context -}}
 {{- $result := dict -}}
