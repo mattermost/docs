@@ -23,10 +23,12 @@ Release date: 2018-06-16
  - Added a feature to allow images uploaded to be collapsed using an icon and using ``/collapse`` command.
  - Added a system console setting to disable the preview mode banner when email notifications are disabled.
  - Removed license check when enforcing password requirements (moved password settings to TE).
+ - Remove the desktop notification duration setting.
 
 ### Bug Fixes
 
  - Fixed an issue where ``EnableUserCreation`` was set to false when not included in config.json.
+ - Fixed an issue where a public channel made private did not disappear automatically from clients not part of the channel.
 
 #### API Changes
 
@@ -53,6 +55,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added ```"MaxIdleConns": 100,`` to
    - Added ``"MaxIdleConnsPerHost": 128,`` to
    - Added ``"IdleConnTimeoutMilliseconds": 90000`` to
+   - Added ``"ExperimentalHideTownSquareinLHS": false,`` to
    
 _______________   
 
