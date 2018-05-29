@@ -316,7 +316,7 @@ After completing the initial draft of a project, there may often be more than on
 When reviewing significant user interface changes, code changes, responses to community or customers, or changes to systems or marketing material changes, it is ideal to have at least two reviewers:
 
 - **Mini-boss**: Reviewer less experienced in domain or Mattermost standards for the first review
-- **End-boss**: Reviewer less experienced in domain or Mattermost standards for the final review for the discipline (e.g. development, design, documentation, etc.) 
+- **End-boss**: Reviewer more experienced in domain or Mattermost standards for the final review for the discipline (e.g. development, design, documentation, etc.) 
 
 This system has several benefits:
 
