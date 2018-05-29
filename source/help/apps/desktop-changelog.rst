@@ -1,6 +1,23 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.1.2
+----------------------------
+
+This release contains a bug fix for all platforms.
+
+- **Release date:** May 25, 2018
+- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win32.exe>`_ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win64.exe>`_ | `Mac <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-mac.zip>`_ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-x64.tar.gz>`_ 
+- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/tree/v4.1.2>`_
+
+Bug Fixes
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where the popup dialog to authenticate a user to their proxy or server didn't work.
+
 Release v4.1.1
 ----------------------------
 
