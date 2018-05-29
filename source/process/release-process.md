@@ -26,6 +26,7 @@ No pull requests for major features should be **submitted** to the current relea
 1. Release Manager:
     - Post this checklist in Release Checklist channel
     - Follow that major feature PR reviews are prioritized
+    - Check that major features for platform have a corresponding ticket for RN, and vice versa, where applicable
     - Check that all major features are behind a feature flag
     - Confirm with PMs that each Enterprise feature is in the correct [pricing SKU](https://about.mattermost.com/pricing/)
     - Review any features that are currently in beta and confirm with PMs if there are any to be promoted
