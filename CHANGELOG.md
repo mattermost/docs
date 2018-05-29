@@ -2,6 +2,18 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2018-05-29
+
+### Fixed (1 change, 1 of them is from the community)
+
+- Fix selectors for minio PDB to exclude Job Pods. !292 (Corey O'Brien)
+
+### Added (3 changes, 2 of them are from the community)
+
+- Implement global configuration for Gitaly. !287
+- Add options to set annotations on Services. !298 (Corey O'Brien)
+- Added soft host anti-affinity by default. (Corey O'Brien)
+
 ## 2018-05-22
 
 ### Added (3 changes, 3 of them are from the community)

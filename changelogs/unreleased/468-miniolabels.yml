@@ -1,5 +1,0 @@
----
-title: Fix selectors for minio PDB to exclude Job Pods
-merge_request: 292
-author: Corey O'Brien
-type: fixed
