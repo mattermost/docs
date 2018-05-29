@@ -66,7 +66,7 @@ They can also be used to handle scale and failure hand offs in disaster recovery
 
 Moreover, search replicas are also supported to handle search queries.
 
-.. image:: ../images/architecture_with_high_availability.png
+.. image:: ../images/architecture_high_availability.png
 
 Reference Architecture
 ----------------------------------
