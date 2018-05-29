@@ -1,7 +1,5 @@
-Custom Branding Tools  (E10)
+Custom Branding Tools
 ============================
-
-Available in `Enterprise Edition E10 and higher <https://about.mattermost.com/pricing/>`_.
 
 Use custom branding tools to present a Mattermost experience that is tailored to the branding of your organization. 
 
@@ -9,8 +7,6 @@ Use custom branding tools to present a Mattermost experience that is tailored to
 
 Enable Custom Branding
 ----------------------
-
-After purchasing and installing a license key for Enterprise Edition E10 or E20:
 
 1. Go to **System Console** > **Customization** > **Custom Branding** and set the value to ``true``.
 2. Choose a **Site Name**, upload a **Custom Brand Image** and write **Custom Brand Text**.
