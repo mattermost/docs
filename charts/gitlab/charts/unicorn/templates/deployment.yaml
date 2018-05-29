@@ -129,10 +129,13 @@ spec:
             initialDelaySeconds: 20
             timeoutSeconds: 30
             periodSeconds: 60
-          # readinessProbe:
-          #   httpGet:
-          #     path: /
-          #     port: {{ .Values.service.internalPort }}
+          readinessProbe:
+            httpGet:
+              path: /
+              port: unicorn
+            initialDelaySeconds: 30
+            timeoutSeconds: 5
+            periodSeconds: 10
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
