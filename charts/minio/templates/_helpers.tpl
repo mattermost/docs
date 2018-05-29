@@ -39,20 +39,11 @@ reduce collision
 {{- end -}}
 
 {{/*
-Returns the minio hostname.
-If the hostname is set in `global.hosts.minio.name`, that will be returned,
-otherwise the hostname will be assembed using `minio` as the prefix, and the `assembleHost` function.
-*/}}
-{{- define "minioHost" -}}
-{{- coalesce .Values.global.hosts.minio.name (include "assembleHost"  (dict "name" "minio" "context" . )) -}}
-{{- end -}}
-
-{{/*
 Returns the secret name for the Secret containing the TLS certificate and key.
 Uses `ingress.tls.secretName` first and falls back to `global.ingress.tls.secretName`
 if there is a shared tls secret for all ingresses.
 */}}
-{{- define "minioTLSSecret" -}}
+{{- define "minio.tlsSecret" -}}
 {{- $defaultName := (dict "secretName" "") -}}
 {{- if .Values.global.ingress.configureCertmanager -}}
 {{- $_ := set $defaultName "secretName" (printf "%s-minio-tls" .Release.Name) -}}

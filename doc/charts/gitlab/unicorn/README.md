@@ -358,7 +358,7 @@ registry:
 #### host
 
 The external hostname to use for providing docker commands to users in the GitLab UI. Falls back to the value set in the
-`registryHost` template. Which determines the registry hostname based on the values set in `global.hosts`. See the [Globals Documentation][globals]
+`registry.hostname` template. Which determines the registry hostname based on the values set in `global.hosts`. See the [Globals Documentation][globals]
 for more information.
 
 #### port
