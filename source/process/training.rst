@@ -335,32 +335,46 @@ This system has several benefits:
 
 The naming of this term comes from video games, where a person submitting material for review must pass a "mini-boss" challenge before a "end-boss" challenge for different disciplines. 
 
-Medic, Field Surgeon, Plastic Surgeon
+Brown M&Ms
 ---------------------------------------------
 
-When making project investment decisions we optimize for high impact in the context of customer obsession, empowered by ownership, while being constrained by "be proud of what you build". 
+A "brown M&M" is a mistake that could either signal dangerous oversights in the execution of a project, or be a completely innocuous and unimportant error. When a brown M&M is found, aim to rule out a dangerous error as quickly as possible. Do fast drilldowns and systematic checks to see if more brown M&Ms are found, and if so, an entire project may need to be reviewed. 
 
-The failure case is over-investing in processes and infrastructure, stealing mana from higher priority work, reducing speed and agility for the company, and unnecessarily increasing cost and bureacracy. 
+Examples of brown M&Ms may include: 
+
+a) Significant mistakes in process, consistency or documentation suggesting lack of review or lack of understanding of the pre-existing system
+b) Ambiguous definitions that would make completion of a procedure difficult or unpredictable
+
+The name brown M&M comes from a safety technique used by the American music band Van Halen, who had to set up large, complex concert stages in third tier cities, where few local workers had experience with the safety standards vital to construction. In the `contract rider <https://en.wikipedia.org/wiki/Van_Halen#Contract_riders>`_ with each venue, Van Halen required a bowl of M&M candies with all brown M&Ms removed. Failure to provide the bowl was grounds for Van Halen's stage crew to inspect all of the local vendor's work for safety issues, because it meant the vendor had not paid attention to detail, and safety could be at risk.
+
+Correct Minimums: Medic, Field Surgeon, Plastic Surgeon 
+-------------------------------------------------------
+
+When making project investment decisions, we optimize for high impact in the context of customer obsession, empowered by ownership, while being constrained by "be proud of what you build".
+
+The failure case is over-investing in processes and infrastructure, stealing mana from higher priority work, reducing speed and agility for the company and unnecessarily increasing cost and bureacracy. 
+
+The objective of optimization is to invest at minimal levels for efficiency and safety while maximizing impact. 
 
 In making these trade-offs, consider the following mindsets:
 
-- **Medic** 
+- **Correct Minimum 1: Medic** 
 
-   Fix something that's important, broken and dangerous as fast as possible. Speed is critical, do not care about "leaving a scar" in our architecture or business process, just own it and get it done. Solve the problem, DO NOT OVER BUILD.
+   Safely fix something that is important, broken and dangerous as fast as possible. Speed is critical - do not worry about "leaving a scar" in our architecture or business process, just own it and get it done. Solve the problem, **do not overbuild**.
  
-   *Example:* Something incorrect on our public website with more than 100,000 page views a month should be fixed immediately and not put on a queue tied to a longer term project. 
+   *Example:* Something incorrect on our public website with more than 100 page views a month should be fixed immediately and not delayed to be done with a longer term project, such as a website re-design. If the staging server cannot be pushed, this means manually fixing production and duplicating that change on staging, rather than trying to fix staging.
 
-- **Field Surgeon** 
+- **Correct Minimum 2: Field Surgeon** 
 
-   Triage things that are important, broken but not dangerous, and fix the most important things with a minimum of time and cost. Scarring should be a low-priority consideration--it is fine to leave scars and it is fine to spend a little energy to avoid big ones.  Solve the problem for the next stage of growth, but don't solve if to two to three stages ahead. 
+   Triage tasks that are important and broken but not dangerous, and fix the most important things with a minimum time and cost. Scarring should be a low-priority consideration--it is fine to leave scars and it is fine to spend a little energy to avoid big ones.  Solve the problem for the next stage of growth, but don't solve it in two to three stages ahead. 
 
    *Example:* In Mattermost, spend 2 mana to enable automated messages over 4000 characters to be broken into multiple posts instead of being rejected, which is a problem every developer hits when they attempt to output log information via curl commands.
 
-- **Plastic Surgeon** 
+- **Correct Minimum 3: Plastic Surgeon** 
 
    Fix and optimize critical, high volume flows in our customer experience and product with heavy investment if needed to make high impact changes. Scars can be avoided and removed to produce a high impact result.  
 
-   *Example:* Click-tracking traffic on Mattermost.com and optimizing flows to direct visitors to convert into contact and purchase actions. 
+   *Example:* Click-tracking traffic on about.mattermost.com and optimizing flows to direct visitors to learn about the product and downloading it is a flow that should be continually optimized. 
 
 --------------------------
 Terminology
