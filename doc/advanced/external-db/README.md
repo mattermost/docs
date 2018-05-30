@@ -19,19 +19,21 @@ To use an external database with the `gitlab` chart, there are a few prerequisit
 
 You need to set the following parameters:
 * `postgresql.install`: Set to `false` to disable the embedded database
-* `global.psql.host`: Set to the hostname of the external database
+* `global.psql.host`: Set to the hostname of the external database, can be a domain or an IP address.
+* `global.psql.password.secret`: The name of the secret which contains the database password for the `gitlab` user
+* `global.psql.password.key`: The key within the secret, which contains the password
+
+Items below can be further customized if you are not using the defaults:
 * `global.psql.port`: The port the database is available on, defaults to `5432`
 * `global.psql.database`: The name of the database
 * `global.psql.username`: The user with access to the database
-* `global.psql.password.secret`: The name of the secret which contains the database password for the `gitlab` user
-* `global.psql.password.key`: The key within the secret, which contains the password
 
 For example, pass these values via helm's `--set` flag while deploying:
 
 ```
 helm install
   --set postgresql.install=false
-  --set global.psql.host=omnibus-vm
+  --set global.psql.host=psql.example
   --set global.psql.password.secret=psql-secret
   --set global.psql.password.key=<key>
 ```
