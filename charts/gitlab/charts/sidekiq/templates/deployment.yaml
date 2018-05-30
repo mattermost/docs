@@ -6,7 +6,6 @@
 {{- $fullname := printf "%s-%s" $releaseName $name | trunc 63 | trimSuffix "-" -}}
 {{- $image := printf "%s:%s" .Values.image.repository .Values.image.tag -}}
 {{- $imagePullPolicy := .Values.imagePullPolicy -}}
-{{- $replicas := .Values.replicaCount -}}
 {{- $concurrency := .Values.concurrency -}}
 {{- $timeout := .Values.timeout -}}
 {{- $resources := .Values.resources -}}
@@ -44,7 +43,6 @@ metadata:
     heritage: {{ $releaseService }}
     queue-pod-name: {{ .name }}
 spec:
-  replicas: {{ default $replicas .replicas }}
   template:
     metadata:
       labels:

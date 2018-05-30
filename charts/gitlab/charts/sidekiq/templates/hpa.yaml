@@ -1,0 +1,29 @@
+{{- if .Values.enabled -}}
+{{- $name := default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
+{{- $releaseName := .Release.Name -}}
+{{- $fullname := printf "%s-%s" $releaseName $name | trunc 63 | trimSuffix "-" -}}
+{{- range .Values.pods -}}
+{{- $queueName := printf "%s-%s" $fullname .name | trunc 63}}
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ $queueName }}
+  labels:
+    app: {{ template "name" $ }}
+    chart: {{ $.Chart.Name }}-{{ $.Chart.Version | replace "+" "_" }}
+    release: {{ $.Release.Name }}
+    heritage: {{ $.Release.Service }}
+spec:
+  scaleTargetRef:
+    apiVersion: extensions/v1beta1
+    kind: Deployment
+    name: {{ $queueName }}
+  minReplicas: {{ default $.Values.minReplicas .minReplicas }}
+  maxReplicas: {{ default $.Values.maxReplicas .maxReplicas }}
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      targetAverageUtilization: 75
+{{- end -}}
+{{- end -}}
