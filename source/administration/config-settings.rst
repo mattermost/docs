@@ -3626,6 +3626,25 @@ Group Unread Channels (Experimental)
 | This feature’s ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "disabled"`` with options ``disabled``, ``default_on`` and ``default_off`` for above settings respectively. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Hardended Mode (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables a hardened mode for Mattermost that makes user experience trade-offs in the interest of security.
+
+**False**: Disables hardened mode.
+
+Changes made when this mode is enabled:
+
+    - Login will return a generic error message instead of a specific messages for username and password.
+    - If MFA is enabled, the route to check if a user has MFA enabled will always return true. This will cause the MFA input screen to show even if the user does not have MFA enabled. The user may enter any value to pass the screen. Note that you can enable the setting to enforce MFA and there will be no user experience cost.
+    - Password reset will not inform the user that they can not reset their SSO account through Mattermost and claim to have sent the password reset email.
+    - All 500 errors are sanitized before being returned to the client. Use the supplied `request_id` to match user facing errors with the server logs.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false`` for above settings respectively.                    |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Team Settings
 ~~~~~~~~~~~~~~
 
