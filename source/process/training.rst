@@ -321,8 +321,8 @@ b) Ambiguous definitions that would make completion of a procedure difficult or 
 
 The name brown M&M comes from a safety technique used by the American music band Van Halen, who had to set up large, complex concert stages in third tier cities, where few local workers had experience with the safety standards vital to construction. In the `contract rider <https://en.wikipedia.org/wiki/Van_Halen#Contract_riders>`_ with each venue, Van Halen required a bowl of M&M candies with all brown M&Ms removed. Failure to provide the bowl was grounds for Van Halen's stage crew to inspect all of the local vendor's work for safety issues, because it meant the vendor had not paid attention to detail, and safety could be at risk.
 
-Correct Minimums 
----------------------------------------------
+Correct Minimums: Medic, Field Surgeon, Plastic Surgeon 
+-------------------------------------------------------
 
 When making project investment decisions, we optimize for high impact in the context of customer obsession, empowered by ownership, while being constrained by "be proud of what you build".
 
@@ -332,19 +332,19 @@ The objective of optimization is to invest at minimal levels for efficiency and 
 
 In making these trade-offs, consider the following mindsets:
 
-- **Correct Minimum 1** 
+- **Correct Minimum 1: Medic** 
 
    Safely fix something that is important, broken and dangerous as fast as possible. Speed is critical - do not worry about "leaving a scar" in our architecture or business process, just own it and get it done. Solve the problem, **do not overbuild**.
  
    *Example:* Something incorrect on our public website with more than 100 page views a month should be fixed immediately and not delayed to be done with a longer term project, such as a website re-design. If the staging server cannot be pushed, this means manually fixing production and duplicating that change on staging, rather than trying to fix staging.
 
-- **Correct Minimum 2** 
+- **Correct Minimum 2: Field Surgeon** 
 
    Triage tasks that are important and broken but not dangerous, and fix the most important things with a minimum time and cost. Scarring should be a low-priority consideration--it is fine to leave scars and it is fine to spend a little energy to avoid big ones.  Solve the problem for the next stage of growth, but don't solve it in two to three stages ahead. 
 
    *Example:* In Mattermost, spend 2 mana to enable automated messages over 4000 characters to be broken into multiple posts instead of being rejected, which is a problem every developer hits when they attempt to output log information via curl commands.
 
-- **Correct Minimum 3** 
+- **Correct Minimum 3: Plastic Surgeon** 
 
    Fix and optimize critical, high volume flows in our customer experience and product with heavy investment if needed to make high impact changes. Scars can be avoided and removed to produce a high impact result.  
 
