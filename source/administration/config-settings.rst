@@ -36,6 +36,12 @@ The URL that users will use to access Mattermost. The port number is required if
 
 This field is required in Mattermost v3.8 and later.
 
+If Site URL is not set, the following features will operate incorrectly:
+
+ - email notifications will contain broken links, and email batching will not work
+ - authentication via OAuth 2.0, including GitLab, Google and Office 365, will fail
+ - plugins may not work as expected
+
 .. note:: Do not append a team name to the end of the site URL.
 
 Correct example: ``https://mattermost.example.com:8065``
