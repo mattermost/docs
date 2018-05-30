@@ -55,7 +55,7 @@ Assume that the IP address of this server is 10.10.10.2.
     a. Change to the ``mattermost`` directory:
       ``cd /opt/mattermost``
     b. Start the Mattermost server as the user mattermost:
-      ``sudo -u mattermost ./bin/platform``
+      ``sudo -u mattermost ./bin/mattermost``
 
   When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing CTRL+C in the terminal window.
 
@@ -75,7 +75,7 @@ Assume that the IP address of this server is 10.10.10.2.
 
     [Service]
     Type=notify
-    ExecStart=/opt/mattermost/bin/platform
+    ExecStart=/opt/mattermost/bin/mattermost
     TimeoutStartSec=3600
     Restart=always
     RestartSec=10
@@ -92,10 +92,10 @@ Assume that the IP address of this server is 10.10.10.2.
 
   .. note::
     If you have installed MySQL or PostgreSQL on a dedicated server, then you need to
-     
-      - remove ``After=postgresql.service`` and ``Requires=postgresql.service`` or ``After=mysql.service`` and ``Requires=mysql.service`` lines in the ``[Unit]`` section, and 
+
+      - remove ``After=postgresql.service`` and ``Requires=postgresql.service`` or ``After=mysql.service`` and ``Requires=mysql.service`` lines in the ``[Unit]`` section, and
       - replace the ``WantedBy=postgresql.service`` or ``WantedBy=mysql.service`` line in the ``[Install]`` section with ``WantedBy=multi-user.target``
-    
+
     or the Mattermost service will not start.
 
   .. note::
