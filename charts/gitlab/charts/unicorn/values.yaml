@@ -1,7 +1,6 @@
 # Default values for unicorn-web.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
-replicaCount: 1
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee
   tag: latest
@@ -148,3 +147,5 @@ resources:
     cpu: 200m
     memory: 2G
 maxUnavailable: 1
+minReplicas: 1
+maxReplicas: 1
