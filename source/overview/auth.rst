@@ -36,7 +36,7 @@ AD/LDAP is the most popular corporate directory integration option for deploying
 - Ability to use a low-privileged AD/LDAP account to run queries over a secure TLS or STARTTLS connection
 - Attribute mapping to place First Name, Last Name, Nickname and other attributes from AD/LDAP into Mattermost 
 - Customization of login screen to specify whether users are logging in with email, username or other attribute
-- Sychronization with AD/LDAP to disable, enable and update Mattermost users based on AD/LDAP 
+- Synchronization with AD/LDAP to disable, enable and update Mattermost users based on AD/LDAP 
 
 Note: 
 
