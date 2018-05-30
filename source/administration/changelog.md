@@ -10,26 +10,71 @@ Release date: 2018-06-16
 
 ### Highlights
 
+#### Increased 4K character limit on posts
+ - Removed character limit to allow posting long messages and to allow better markdown formatting, including tables.
+ 
+#### Combine Join/Leave messages
+ - System messages related to joining, leaving, and adding/removing people from channels are combined into one post, allowing these messages to not take excess space in channels.
+ 
+#### Advanced Permissions
+
+#### Plugin Intercept
+ - Enables a host of plug-in use cases for reviewing and augmenting user messages prior to their saving into the database.
+
 ### Improvements
 
- - Added plugin ability to intercept posts before they reach the DB.
+#### Web User Interface
+ - Added a feature to allow images uploaded to be collapsed using an icon and using ``/collapse`` command.
+
+#### Slash commands
  - (Integrations) Slash commands configured to receive a GET request to get a request body.
+ 
+#### System Console
+ - Added a system console setting to disable the preview mode banner when email notifications are disabled.
+ 
+#### Administration
+ - Removed license check when enforcing password requirements (moved password settings to TE).
+ - Removed the desktop notification duration setting.
+ - Updated email notification subject line and contents for Group Messages.
+ 
+ #### ?
  - Deprecated and removed ``ExtraUpdateAt`` field from channel model.
  - Added ``LoginIdAttribute`` to allow LDAP users to change their login ID without losing their account.
- - Updated email notification subject line and contents for Group Messages.
  - Added ping/pong and reconnection handling to Go WebSocket client.
  - Added support for websocket custom dialer.
  - Fixed ``update_status`` cluster event being sent thousands of times on restart of app servers.
- - Added a feature to allow images uploaded to be collapsed using an icon and using ``/collapse`` command.
- - Added a system console setting to disable the preview mode banner when email notifications are disabled.
- - Removed license check when enforcing password requirements (moved password settings to TE).
- - Remove the desktop notification duration setting.
+ - Added a whitelist for valid types of links when autolinking.
+ - Added ability for webhooks to actually be locked to a channel.
 
 ### Bug Fixes
 
  - Fixed an issue where ``EnableUserCreation`` was set to false when not included in config.json.
  - Fixed an issue where a public channel made private did not disappear automatically from clients not part of the channel.
+ - Fixed an issue where team icon did not get automatically saved when removed.
+ - Fixed an issue where Town Square channel disappeared from channel list for a non-admin user when "ExperimentalTownSquareIsReadOnly" was set to true.
+ 
+### Compatibility
 
+#### Deprecated Features
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+ 
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+ - Under ``"?"`` in ``config.json``:
+   - Added ``"EnableAPITeamDeletion": false,`` to disable the permanent APIv4 delete team parameter.
+   - Added ``"EnablePreviewModeBanner": true,`` to
+   - Added ``"StreamingPort": 8075,`` to
+   - Added ```"MaxIdleConns": 100,`` to
+   - Added ``"MaxIdleConnsPerHost": 128,`` to
+   - Added ``"IdleConnTimeoutMilliseconds": 90000`` to
+   - Added ``"ExperimentalHideTownSquareinLHS": false,`` to
+   - Added ``"CustomUrlSchemes": [],`` to
+   
 #### API Changes
 
  - Improved file upload API to stream files instead of loading them entirely into memory.
@@ -38,25 +83,24 @@ Release date: 2018-06-16
  - Moved context.go out of api4 and into web. This includes moving params.go and some smaller http-related functions over.
  - Created api4/handlers.go to create the API handlers using the Context and Handler from web.
  - Created web/handlers.go to define the Handler struct, the base ServeHTTP function and a single web handler.
- 
-### Compatibility
- 
-#### config.json
 
-Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+### Known Issues
 
-#### Changes to Team Edition and Enterprise Edition:
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Numbered lists can sometimes extend beyond the normal post area.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
 
- - Under `"?"` in `config.json`:
-   - Changed to ``"SiteURL": "",`` to
-   - Added ``"EnableAPITeamDeletion": false,`` to disable the permanent APIv4 delete team parameter.
-   - Added ``"EnablePreviewModeBanner": true,`` to
-   - Added ``"StreamingPort": 8075,`` to
-   - Added ```"MaxIdleConns": 100,`` to
-   - Added ``"MaxIdleConnsPerHost": 128,`` to
-   - Added ``"IdleConnTimeoutMilliseconds": 90000`` to
-   - Added ``"ExperimentalHideTownSquareinLHS": false,`` to
-   
+### Contributors
+
 _______________   
 
 ## Release v4.10
