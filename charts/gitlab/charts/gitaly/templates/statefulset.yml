@@ -67,7 +67,7 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{ template "gitlab.imagePullPolicy" . }}
           ports:
             - containerPort: {{ .Values.service.internalPort }}
            {{- if .Values.metrics.enabled }}

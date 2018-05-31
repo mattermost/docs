@@ -24,7 +24,7 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           command: ['/bin/bash', '/scripts/generate-secrets']
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{ template "gitlab.imagePullPolicy" . }}
           volumeMounts:
             - name: scripts
               mountPath: /scripts

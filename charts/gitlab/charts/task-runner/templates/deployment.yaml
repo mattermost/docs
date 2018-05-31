@@ -43,7 +43,7 @@ spec:
             - -c
             - while sleep 3600; do :; done # alpine sleep has no infinity
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{ template "gitlab.imagePullPolicy" . }}
           env:
             - name: BACKUP_BUCKET_NAME
               value: .Values.backups.bucketName

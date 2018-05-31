@@ -40,7 +40,7 @@ spec:
           args:
             - /scripts/wait-for-deps
             - /scripts/db-migrate
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{ template "gitlab.imagePullPolicy" . }}
           env:
             - name: GITLAB_SHARED_RUNNERS_REGISTRATION_TOKEN
               valueFrom:

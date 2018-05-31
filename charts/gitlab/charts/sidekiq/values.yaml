@@ -19,6 +19,7 @@ redis:
   password: {}
 
 global:
+  # imagePullPolicy: IfNotPresent
   psql: {}
     # host: '0.0.0.0'
     # port: '5432'

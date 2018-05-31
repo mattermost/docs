@@ -13,6 +13,7 @@ service:
   internalPort: 2222
 
 global:
+  # imagePullPolicy: IfNotPresent
   redis:
     password:
       secret: gitlab-redis

@@ -53,6 +53,7 @@ railsSecrets:
   secret: rails-secrets
   key: secrets.yml
 global:
+  # imagePullPolicy: IfNotPresent
   ingress:
     enabled: true
     annotations: {}

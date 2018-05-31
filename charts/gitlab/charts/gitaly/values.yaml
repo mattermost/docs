@@ -18,6 +18,7 @@ enabled: true
 serviceName: gitaly
 
 global:
+  # imagePullPolicy: IfNotPresent
   redis:
     password:
       secret: gitlab-redis

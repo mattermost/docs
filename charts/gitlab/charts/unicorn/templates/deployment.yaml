@@ -61,7 +61,7 @@ spec:
             readOnly: false
         - name: dependencies
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{ template "gitlab.imagePullPolicy" . }}
           args:
             - /scripts/wait-for-deps
           env:

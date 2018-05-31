@@ -8,6 +8,7 @@ railsSecrets:
   secret: rails-secrets
   key: secrets.yml
 global:
+  # imagePullPolicy: IfNotPresent
   hosts:
     domain: example.local
     hostSuffix:
