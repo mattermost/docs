@@ -3,7 +3,7 @@ Account Settings
 
 --------------
 
-Account Settings is accessible from the **Main Menu** by clicking the three dots at the top of the channels pane. From here, you can configure your profile settings, notification preferences, integrations, theme settings, and display options.
+Account Settings is accessible from the **Main Menu** by clicking the three horizontal lines (or hamburger menu) at the top of the channels pane. From here, you can configure your profile settings, notification preferences, integrations, theme settings, and display options.
 
 General
 -------
