@@ -1,8 +1,8 @@
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ee
-  tag: latest
   pullPolicy: Always
   pullSecrets: []
+  # tag: latest
 enabled: false
 railsSecrets:
   secret: rails-secrets

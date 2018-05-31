@@ -1,0 +1,5 @@
+---
+title: GitLab image tags can be set using a global, and default to the chart appVersion
+merge_request: 304
+author:
+type: changed

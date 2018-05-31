@@ -7,6 +7,7 @@ for more information on how the global variables work.
 
 - [Hosts](#configure-host-settings)
 - [Ingress](#configure-ingress-settings)
+- [GitLab Version](#gitlab-version)
 - [PostgreSQL](#configure-postgresql-settings)
 - [Redis](#configure-redis-settings)
 - [Gitaly](#configure-gitaly-settings)
@@ -186,6 +187,17 @@ ex:
 `global.ingress.annotations."nginx\.ingress\.kubernetes\.io/enable-access-log"=true`
 
 No global annotations are provided by default.
+
+## GitLab Version
+
+The GitLab version used in the default image tag for the charts can be changed using the `global.gitlabVersion` key.
+
+```bash
+--set global.gitlabVersion=11.0.1
+```
+
+This impacts the default image tag used in the `unicorn`, `sidekiq`, and `migration` charts. Note that the `gitaly`, `gitlab-shell` and `gitlab-runner`
+image tags should be separately updated to versions compatible with the GitLab version.
 
 ## Configure PostgreSQL settings
 
