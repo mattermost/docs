@@ -18,7 +18,7 @@ By completing this campaign, we are looking to:
 Contributing
 ------------
 
-If you're interested in contributing, please join the `Flow channel on pre-release.mattermost.com <https://pre-release.mattermost.com/core/channels/flow>`__. Progress on moving individual files to use Flow is `tracked on this spreadsheet <https://docs.google.com/spreadsheets/d/10FmRm5TgpsDIkpvqX1emwVYe33-NQShy4I7LZSZbkPA/edit#gid=0>`__. If you want to work on one of the files, let us know in the Flow channel or by making a comment on the spreadsheet.
+If you're interested in contributing, please join the `Flow channel on pre-release.mattermost.com <https://pre-release.mattermost.com/core/channels/flow>`__. Progress on moving individual files to use Flow is `tracked on this spreadsheet <https://docs.google.com/spreadsheets/d/10FmRm5TgpsDIkpvqX1emwVYe33-NQShy4I7LZSZbkPA/edit?usp=sharing>`__. If you want to work on one of the files, let us know in the Flow channel or by making a comment on the spreadsheet.
 
 List of current contributors, in alphabetical order:
 
