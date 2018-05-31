@@ -89,7 +89,7 @@ data:
         object_store:
           enabled: true
           remote_directory: {{ .Values.artifacts.bucket }}
-          direct_upload: true
+          direct_upload: false
           background_upload: false
           proxy_download: {{ eq .Values.artifacts.proxy_download true }}
           {{- if .Values.minio.enabled }}
