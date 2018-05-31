@@ -2,6 +2,7 @@
 # This is a YAML-formatted file.
 
 global:
+  # gitlabVersion: master
   hosts:
     domain: example.local
     https: true

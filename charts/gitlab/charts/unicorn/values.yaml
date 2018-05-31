@@ -3,9 +3,9 @@
 # Declare variables to be passed into your templates.
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee
-  tag: latest
   pullSecrets: []
   pullPolicy: Always
+  # tag: latest
 metrics:
   enabled: true
   annotations:

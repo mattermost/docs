@@ -2,6 +2,7 @@ apiVersion: v1
 description: A Helm chart for GitLab
 name: gitlab
 version: 0.1.0
+appVersion: master
 keywords:
 - gitlab
 home: https://about.gitlab.com/
