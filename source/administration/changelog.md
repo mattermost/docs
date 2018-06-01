@@ -72,7 +72,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `"TeamSettings"` in `config.json`:
    - Added ``"ExperimentalEnableAutomaticReplies": false,`` to allow users to set a custom message that will be automatically sent in response to Direct Messages.
  - Under `"LogSettings"` in `config.json`:
-   - Removed ``FileFormat`` and added ``""FileJson": true,`` and ``"ConsoleJson": true,`` to allow logged events to be written as a machine readable JSON format instead of the be printed as plain text.
+   - Removed ``FileFormat`` and added ``"FileJson": true,`` and ``"ConsoleJson": true,`` to allow logged events to be written as a machine readable JSON format instead of the be printed as plain text.
 
 #### API Changes
  
