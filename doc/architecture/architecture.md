@@ -24,7 +24,6 @@ We plan to offer a container for the following services:
 * Unicorn
 * Gitaly
 * Workhorse
-* Pages
 * Postgres (perhaps upstream Postgres), along with Postgres Exporter
 * Redis
 * GitLab Monitor
