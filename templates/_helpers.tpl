@@ -188,3 +188,10 @@ Handles merging a set of service annotations
 {{- toYaml $allAnnotations -}}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Returns gitlabUrl needed for gitlab-runner
+*/}}
+{{- define "gitlab-runner.gitlabUrl" -}}
+{{- template "gitlab.gitlab.url" . -}}
+{{- end -}}
