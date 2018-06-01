@@ -31,16 +31,15 @@ provided by default.
 
 ## Option 2: Use your own wildcard certificate
 
-Add you certificate to the cluster as a `Secret`
+Add your full chain certificate and key to the cluster as a `Secret`, e.g.:
 
 ```
-kubectl --namespace <yournamespace> create secret tls <tls-secret-name> --cert=<path/to.crt> --key=<path/to.key>
+kubectl create secret tls <tls-secret-name> --cert=<path/to-full-chain.crt> --key=<path/to.key>
 ```
 
 Include the option to
 ```
 helm install ...
-  --namespace <yournamespace> \
   --set certmanager.install=false \
   --set global.ingress.configureCertmanager=false \
   --set global.ingress.tls.secretName=<tls-secret-name>
