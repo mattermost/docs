@@ -54,6 +54,38 @@ certmanager:
   rbac:
     create: true
 
+nginx-ingress:
+  install: true
+  tcp:
+    22: "enabled"
+  tcpExternalConfig: "true"
+  controller:
+    config:
+      hsts-include-subdomains: "false"
+      server-name-hash-bucket-size: "256"
+      enable-vts-status: "true"
+      use-http2: "false"
+      ssl-ciphers: "ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-RSA-AES256-SHA384:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:ECDHE-RSA-AES128-SHA:AES256-GCM-SHA384:AES128-GCM-SHA256:AES256-SHA256:AES128-SHA256:AES256-SHA:AES128-SHA:!aNULL:!eNULL:!EXPORT:!DES:!MD5:!PSK:!RC4"
+      ssl-protocols: "TLSv1.1 TLSv1.2"
+      server-tokens: "false"
+    service:
+      externalTrafficPolicy: "Local"
+    resources:
+      requests:
+        cpu: 100m
+        memory: 200Mi
+    publishService:
+      enabled: true
+    replicaCount: 3
+    minAvailable: 2
+    scope:
+      enabled: true
+  defaultBackend:
+    minAvailable: 1
+    replicaCount: 2
+  rbac:
+    create: "true"
+
 prometheus:
   install: true
   rbac:

@@ -64,7 +64,8 @@ Subhcarts included are :
 * [gitaly](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/gitaly)
 * [minio](https://gitlab.com/charts/gitlab/tree/master/charts/minio)
 * [redis](https://gitlab.com/charts/gitlab/tree/master/charts/redis)
-* [nginx](https://gitlab.com/charts/gitlab/tree/master/charts/registry)
+* [nginx](https://gitlab.com/charts/gitlab/tree/master/charts/nginx)
+* [registry](https://gitlab.com/charts/gitlab/tree/master/charts/registry)
 
 ## Design Decisions
 

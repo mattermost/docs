@@ -1,0 +1,14 @@
+{{- if and .Values.tcp (not .Values.tcpExternalConfig) }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app: {{ template "nginx-ingress.name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+    component: "{{ .Values.controller.name }}"
+    heritage: {{ .Release.Service }}
+    release: {{ .Release.Name }}
+  name: {{ template "nginx-ingress.tcp-configmap" . }}
+data:
+{{ toYaml .Values.tcp | indent 2 }}
+{{- end }}
