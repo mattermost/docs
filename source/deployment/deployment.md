@@ -52,12 +52,12 @@ WSS is a secure, encrypted connection and is highly recommended. An unencrypted 
 While Mattermost is focused on private cloud deployment, there are a range of options for configuring network access for Team Edition (TE) and Enterprise Edition (EE). 
 
 - In general, Mattermost recommends access via a Virtual Private Network client using at least a secondary authentication option, such as [OpenVPN](https://openvpn.net/), in addition to Mattermost authentication. 
-- For deployments accessible from the open internet, it is highly recommended to have dedicated staff managing system security and maintaining security updates in addition to enabling MFA features in Mattermost Enterprise Edition. For non-enterprise deployments VPN is recommended. 
+- For deployments accessible from the open internet, it is highly recommended to have dedicated staff managing system security and maintaining security updates in addition to enabling MFA features in Mattermost Enterprise Edition. For non-enterprise deployments, VPN is recommended. 
 
-While there are a multitude of different deployment configurations, the following outline popular configurations: 
+While there are a multitude of different deployment configurations, the following outlines popular configurations: 
 
 - **1. Private Network only with MFA (EE)** - Access to Mattermost only available on private network. Multi-factor authentication includes physically securing access to computing devices within the building and using multi-factor authentication to verify identity. Mobile web view used in place of Native Mobile Applications. Used in very high security, on-premises deployments. 
-- **2. Private Network or VPN with MFA (EE)** - Private network deployment in 1) plus the option of accessing Mattermost using a Virtual Private Network ("VPN") client supporting a secondary authentication method plus Mattermost's own authentication.  
+- **2. Private Network or VPN with MFA (EE)** - Private network deployment in 1) plus the option to access Mattermost using a Virtual Private Network ("VPN") client supporting a secondary authentication method plus Mattermost's own authentication.
 - **3. Private Network or VPN with MFA plus private Mobile Apps (EE)** - Deployment in 2) with privately-compiled mobile solution including both mobile applications and mobile push notification services with organization-controlled keys or certificates (versus using public Mobile Apps, which use keys and certificates controlled by Mattermost, Inc.). 
 - **4. Private Network or VPN with MFA plus private Mobile Apps with EMM (EE)** - Deployment in 3) with the addition of an enterprise mobility management solution such as Mobile Iron, Blackberry Dynamics or AirWatch for access to mobile apps in place of VPN clients. 
 - **5. Private Network or VPN with MFA plus public Mobile Apps (EE)** - Deployment in 4) plus use of publicly available mobile apps in the iOS App Store or Google Play via single-sign-on providers, or user credentials with the addition of Google Authenticator. Recommended only for enterprises which can provide appropriate network security and monitoring for systems exposed to open internet. For non-enterprise deployments, VPN with MFA is recommended (see above).
@@ -68,7 +68,7 @@ While there are a multitude of different deployment configurations, the followin
 
 Mattermost is intended to be installed within a private network which can offer multiple factors of authentication, including secure access to computing devices and physical locations. 
 
-If outside access is required, a virtual private network client (VPN), such as [OpenVPN](https://openvpn.net/), with additional authentication used to connect to Mattermost for web, desktop and mobile experiences. 
+If outside access is required, a virtual private network client (VPN), such as [OpenVPN](https://openvpn.net/), with additional authentication used to connect to Mattermost for web, desktop and mobile experiences, is recommended. 
 
 ### Non-VPN Setup 
 
@@ -90,7 +90,7 @@ The [Mattermost Push Notification Service (MPNS)](http://docs.mattermost.com/dep
 
 If you're deploying mobile applications to an Enterprise App Store, your MPNS should be behind your firewall on your private network. If you're using mobile apps in iTunes and Google Play, you can relay notifications to mobile apps using the [Hosted Push Notification Service (HPNS)](http://docs.mattermost.com/deployment/push.html#hosted-push-notifications-service-hpns) included with Mattermost Enterprise Edition.
 
-HPNS does not connect to your mobile apps directly, it sends messages over an encrypted channel to Apple or Google which are relayed to the app users download from iTunes or Google Play.
+HPNS does not connect to your mobile apps directly. It sends messages over an encrypted channel to Apple or Google which are relayed to the app users downloaded from iTunes or Google Play.
 
 ### Proxy
 
@@ -108,7 +108,7 @@ Mattermost Enterprise Edition supports Microsoft Active Directory and LDAP singl
 
 Mattermost offers complete access to its Web Service APIs, along with incoming and outgoing webhooks, and Slash command options for integrating with your on-premises systems.
 
-[Visit our app directory](https://about.mattermost.com/default-app-directory/) for dozens of open source integrations to common tools like Jira, Jenkins, GitLab, Trac, Redmine, and SVN, along with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
+[Visit our app directory](https://about.mattermost.com/default-app-directory/) for dozens of open source integrations to common tools like Jira, Jenkins, GitLab, Trac, Redmine and SVN, along with interactive bot applications (Hubot, mattermost-bot), and other communication tools (Email, IRC, XMPP, Threema) that are freely available for use and customization.
 
 ### Email Service
 
@@ -116,7 +116,7 @@ For notifications and account verification, Mattermost connects to your existing
 
 ## Mattermost Server
 
-The Mattermost server installs as a single compiled binary file. All server settings are stored in a configuration file, `config/config.json`, which can be updated directly or via a web-based System Console user interface.
+The Mattermost server installs as a single compiled binary file. All server settings are stored in a configuration file, ``config/config.json``, which can be updated directly or via a web-based System Console user interface.
 
 #### RESTful JSON Web Service
 
@@ -154,7 +154,7 @@ See [Database requirements](http://docs.mattermost.com/install/requirements.html
 
 #### Multiple Read Replicas (Enterprise Edition)
 
-For enterprise deployments the Mattermost database can be configured with a master and multiple read replicas. The read replicas can be configured as a redundant backup to the active server, so that during hardware failures operation can be diverted to the read replica server without interrupting service. The safest configuration is to size the disk space on the read replica used for failover two to three times larger than storage available on master, so that if the master fails because it runs out of disk space it will fail over to a read replica with enough extra space to run smoothly until the master is corrected.
+For enterprise deployments, the Mattermost database can be configured with a master and multiple read replicas. The read replicas can be configured as a redundant backup to the active server, so that during hardware failures operation can be diverted to the read replica server without interrupting service. The safest configuration is to size the disk space on the read replica used for failover two to three times larger than storage available on master, so that if the master fails because it runs out of disk space it will fail over to a read replica with enough extra space to run smoothly until the master is corrected.
 
 #### Search Replicas (Enterprise Edition)
 
@@ -188,8 +188,8 @@ The [Mattermost Push Notification Service](http://docs.mattermost.com/deployment
 
 ### Mobile devices without VPN clients
 
-If the business owner chooses to offer Mattermost via mobile applications available on the internet, by opening ports such as 80 and 443, Mattermost Enterprise Edition-specific two-factor authentication ("2FA") features via a single-sign-on provider supporting 2FA like Okta, OneLogin, SAML-based SSO or similar, or a setup with user login credentials plus Google Authenticator.
+If Mattermost is available on the internet, we recommend Mattermost Enterprise Edition featuring SAML-based single sign-on and multi-factor authentication (MFA) using Google Authenticator.
 
-The [Mattermost Push Notification Service](http://docs.mattermost.com/deployment/deployment.html#push-notification-service) (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for iTunes or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall.
+The [Mattermost Push Notification Service](http://docs.mattermost.com/deployment/deployment.html#push-notification-service) (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for iOS App Store or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall.
 
 Certificate-based authentication for mobile devices is planned for Mattermost E20, [contact the Enterprise Sales Team for more information](https://about.mattermost.com/contact/).
