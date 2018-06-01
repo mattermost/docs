@@ -130,12 +130,9 @@ spec:
             timeoutSeconds: 30
             periodSeconds: 60
           readinessProbe:
-            httpGet:
-              path: /
-              port: unicorn
-            initialDelaySeconds: 30
-            timeoutSeconds: 5
-            periodSeconds: 10
+            exec:
+              command:
+              - /scripts/healthcheck
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
