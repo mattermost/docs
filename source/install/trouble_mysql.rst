@@ -4,9 +4,7 @@ MySQL Installation Troubleshooting
 ----------------------------------
 
 Before you can run the Mattermost server, you must first install and
-configure a database. You can then start Mattermost by navigating to
-``/opt/mattermost/bin`` and entering the command ``sudo -u mattermost ./platform``.
-If the Mattermost server cannot connect to the database, Mattermost
+configure a database. If the Mattermost server cannot connect to the database, Mattermost
 will fail to start. This section deals with MySQL database issues that
 you may encounter when you start up Mattermost for the first time.
 
@@ -15,8 +13,7 @@ use, but once MySQL is installed the configuration instructions are the
 same for all supported distributions. You must create a ``mattermost`` database
 and a ``mattermost`` database user. Failure to create these database
 objects or improperly referencing them from the Mattermost configuration
-file, ``/opt/mattermost/config/config.json``, prevents Mattermost from
-starting. The troubleshooting tips given here deal with these specific
+file prevents Mattermost from starting. The troubleshooting tips given here deal with these specific
 issues.
 
 Before proceeding, confirm that your MySQL server is running. You can do
@@ -35,7 +32,7 @@ your distribution.
 
 .. warning:: Some of the commands used in this section alter the database. **Use these commands only if your Mattermost installation has failed. Do not directly manipulate the MySQL database for a working Mattermost installation**.
 
-The mattermost Database
+The Database
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The database created during installation should be named ``mattermost``. If you
@@ -73,7 +70,7 @@ following: ::
     +--------------------+
     5 rows in set (0.03 sec)
 
-**No mattermost Database**
+**No Database**
 
 If the ``mattermost`` database doesn't exist, create a database named
 ``mattermost`` by opening MySQL as root and issuing the command: ::
@@ -85,11 +82,7 @@ remove it by issuing the command: ::
 
     drop database {misnamed};
 
-After creation of the database, attempt to restart the Mattermost server
-by navigating to the ``/opt/mattermost/bin`` directory and entering the
-command ``sudo -u mattermost ./platform``.
-
-**The mattermost Database Exists**
+**The Database Exists**
 
 If the ``mattermost`` database does exist, confirm that you have set up
 the database driver correctly in the
@@ -100,12 +93,8 @@ editor, and review the value of ``"DataSource"``. It should be: ::
 
 Replace `mmuser-password` with the password created during installation
 and `host-name-or-IP` with the appropriate value.
-You should also confirm that the ``DriverName`` element (found immediately
-above the ``DataSource`` element) is set to ``mysql``.
-
-If you correct an error, restart the Mattermost server by navigating to
-the ``/opt/mattermost/bin`` directory and entering the command
-``sudo -u mattermost ./platform``.
+You should also confirm that the ``DatabaseSettings.DriverName`` element (found immediately
+above the ``DatabaseSettings.DataSource`` element) is set to ``mysql``.
 
 The Database User
 ~~~~~~~~~~~~~~~~~
@@ -116,8 +105,6 @@ prompt by issuing the following command:::
     create user 'mmuser'@'%' identified by '{mmuser-password}';`
     
 The ``mmuser-password`` value is a placeholder for the password you chose.
-You may also have specified an IP address rather than the wild card
-``%``.
 
 .. note:: MySQL users are fully defined by their username and the host that they access MySQL from. These elements are separated by the ``@`` sign. The ``%`` character is a wild card indicating that the user can access MySQL from any IP address or host. If the user you created accesses MySQL from a specific host such as ``10.10.10.2``, please substitute that IP address for ``%``.
 
@@ -128,7 +115,7 @@ will see an error such as: ::
     [2017/09/20 17:06:18 EDT] [EROR] Failed to ping DB retrying in 10 seconds 
     err-Error 1045: Access denied for user 'mmuser'@'localhost' (using password: YES)
 
-**Checking that mmuser Exists**
+**Checking that the Database User Exists**
 
 To check that this user exists log in to MySQL as the root user: ::
 
@@ -137,7 +124,7 @@ To check that this user exists log in to MySQL as the root user: ::
 When prompted, enter the root password that you chose 
 when installing MySQL. From the ``mysql`` prompt enter the following command: ::
 
-    select User, Host from mysql.user;
+    select User, Host from mysql.user where User = 'mmuser';
 
 You should see something like the following if the user exists: ::
 
@@ -256,7 +243,7 @@ If ``mmuser`` does not have rights to view the
     +--------------------+
     1 rows in set (0.00 sec)
     
-**Granting Privileges to mmuser**
+**Granting Privileges to the Database User**
 
 If the ``mattermost`` database exists and ``mmuser`` cannot view it,
 exit from MySQL and then log in again as root. Issue the command
