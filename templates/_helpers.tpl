@@ -91,8 +91,8 @@ Global gitlab imagePullPolicy
 */}}
 
 {{- define "gitlab.imagePullPolicy" -}}
-{{- if .Values.global.imagePullPolicy -}}
-imagePullPolicy: {{ .Values.global.imagePullPolicy | quote }}
+{{- if or .Values.image.pullPolicy .Values.global.imagePullPolicy -}}
+imagePullPolicy: {{ coalesce .Values.image.pullPolicy .Values.global.imagePullPolicy | quote }}
 {{- end -}}
 {{- end -}}
 

@@ -5,7 +5,7 @@ image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee
   tag: latest
   pullSecrets: []
-  pullPolicy: Always
+  # pullPolicy: IfNotPresent
 enabled: true
 
 metrics:
