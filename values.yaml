@@ -93,10 +93,21 @@ postgresql:
 #
 # redis:
 #   enabled: false
-#
-gitlab:
-  gitlab-runner:
-    enabled: true
+
+
+gitlab-runner:
+  install: true
+  runners:
+    cache:
+      cacheType: s3
+      s3BucketName: runner-cache
+      cacheShared: true
+      s3BucketLocation: us-east-1
+      secretName: gitlab-minio
+      s3CachePath: gitlab-runner
+      s3CacheInsecure: false
+    secret: gitlab-runner
+# gitlab:
 #   migrations:
 #     enabled: false
 #   unicorn:
