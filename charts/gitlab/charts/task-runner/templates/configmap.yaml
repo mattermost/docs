@@ -134,22 +134,23 @@ data:
     fi
 
     cat << EOF > /init-secrets/.s3cfg
-      [default]
-      access_key = $(cat /init-secrets/minio/accesskey)
-      secret_key = $(cat /init-secrets/minio/secretkey)
-      bucket_location = us-east-1
-      host_base = {{ template "minioHost" . }}
-      default_mime_type = binary/octet-stream
-      enable_multipart = True
-      multipart_max_chunks = 10000
-      recursive = True
-      recv_chunk = 65536
-      send_chunk = 65536
-      server_side_encryption = False
-      signature_v2 = True
-      socket_timeout = 300
-      use_mime_magic = True
-      verbosity = WARNING
-      website_endpoint = {{ template "minioUrl" . }}
+    [default]
+    access_key = $(cat /init-secrets/minio/accesskey)
+    secret_key = $(cat /init-secrets/minio/secretkey)
+    bucket_location = us-east-1
+    host_base = {{ template "gitlab.task-runner.minioHost" . }}
+    host_bucket = {{ template "gitlab.task-runner.minioHost" . }}/%(bucket)
+    default_mime_type = binary/octet-stream
+    enable_multipart = True
+    multipart_max_chunks = 10000
+    recursive = True
+    recv_chunk = 65536
+    send_chunk = 65536
+    server_side_encryption = False
+    signature_v2 = True
+    socket_timeout = 300
+    use_mime_magic = True
+    verbosity = WARNING
+    website_endpoint = {{ template "minioUrl" . }}
     EOF
 {{- end }}
