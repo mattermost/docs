@@ -41,8 +41,8 @@ Off-boarding
 
 1. When a campaign is finished, offer suggestions for other campaigns or projects they might be interested in.
 
-GitHub Help Wanted Issues in Platform Repository
----------------------------------------------------------
+GitHub Help Wanted Issues in Mattermost-Server Repository
+-----------------------------------------------------------
 
 Goal
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -59,7 +59,7 @@ Principles
 Creating Help Wanted Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To create a Help Wanted issue in the `platform repository <https://github.com/mattermost/platform>`_, follow these steps:
+To create a Help Wanted issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`_, follow these steps:
 
 1 - Create a ticket in Jira that is well-defined and unambiguous.
 
@@ -75,14 +75,14 @@ The issue should be written with the mindset that the contributor might have no 
 
 2 - After creating the ticket, add "(Proposed APR)" to its title, so the triage team knows to consider it for a ``help-wanted`` label.
 
-3 - If the Jira ticket is accepted as a Help Wanted issue during `triage <https://docs.mattermost.com/process/training.html#triage-meeting>`_, a ``help-wanted`` label is added. This action automatically triggers a zap that creates a new issue in the `platform repository <https://github.com/mattermost/platform>`_.
+3 - If the Jira ticket is accepted as a Help Wanted issue during `triage <https://docs.mattermost.com/process/training.html#triage-meeting>`_, a ``help-wanted`` label is added. This action automatically triggers a zap that creates a new issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`_.
 
     - To accept a ticket as a Help Wanted issue, the description should be unambiguous, and include UI description and help text so the change can be implemented and tested by any contributor
     - The triage team also adds the appropriate difficulty level (one of ``Introductory``, ``Intermediate`` and ``Advanced``) and programming language (``Go`` and ``ReactJS``) to the description of the Jira ticket
 
 4 - After triage, PM on community rotation reviews formatting of the GitHub issue and adds appropriate labels for difficulty level and programming language as defined by the triage team.
 
-`See an example Help Wanted issue here <https://github.com/mattermost/platform/issues/4755>`_.
+`See an example Help Wanted issue here <https://github.com/mattermost/mattermost-server/issues/4755>`_.
 
 Managing Help Wanted Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -128,6 +128,8 @@ Response Writing Tips
 - **Do your best to link documentation as answers**
   - Allows answers to be easily updated dynamically as documentation is updated
   - Any questions that should be answered in docs that aren’t should turn into tickets to create that documentation (and post ticket in response)
+- **Keep community end-user information secure**
+  - If you come across a post that includes the person's IP address, domain name, or other information you think should not be disclosed publicly, edit the post to remove this information. Then click the **hide revision** button so that your edits won't be visible to others on the forum.
 - **Be thankful**
   - Communities really respond well to being praised and thanked for their work
   
@@ -181,7 +183,30 @@ Respond to the issue with the following note
 
   You get **10** votes in the feature idea forum, and each one influences the future of the project.
 
-Hard Questions
+Licensing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To ask someone to add a license to a GitHub repo, open an issue with the following note, titled ``Add an open source license?``:
+
+.. code-block:: text
+
+  Thanks for sharing this project! We'd love to use it as part of the Mattermost open source project (https://about.mattermost.com/) in our [React Native mobile app](https://github.com/mattermost/mattermost-mobile) (which uses an [Apache 2.0 license](https://github.com/mattermost/mattermost-mobile/blob/master/LICENSE.txt)). 
+
+  Would you consider adding a license, such as an MIT or an Apache 2.0 license? 
+
+  To do so, in GitHub you can hit "Create new file" and name a file `LICENSE.txt`
+
+  ![image](https://cloud.githubusercontent.com/assets/177788/19657017/36238482-99d7-11e6-9fd0-f507970891c7.png)
+
+  This will prompt GitHub to offer a license template: 
+
+  ![image](https://cloud.githubusercontent.com/assets/177788/19657044/5a2d8b66-99d7-11e6-8164-ac7f90b10646.png)
+
+  If you use a license it would make it easy to promote your open source project with the Mattermost community.
+
+  Thanks kindly for your consideration.
+
+Difficult Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To respond to tough questions, use the `SCIPAB method <https://www.mandel.com/top-ten-reasons/tools-methodology/scipab>`_ to help formulate a response and send for community lead to review. 

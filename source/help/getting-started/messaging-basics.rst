@@ -19,22 +19,10 @@ text.
 headings, links, emoticons, code blocks, block quotes, tables, lists and
 in-line images.
 
-.. csv-table::
-  :header: "Text Entered", "How It Appears"
+You can use either ``_`` or ``*`` for italics and bold text. See the table below for examples.
 
-  "``_italics_``", "*italics*"
-  "``**bold**``", "**bold**"
-  "``~~strikethrough~~``", "|strikethrough|"
-  "```monospace```", "``monospace``"
-  "``[hyperlink](http://mattermost.org)``", "`hyperlink <http://mattermost.org>`_"
-  "``![embedded image](https://travis-ci.org/mattermost/platform.svg)``", "|platform.svg|"
-  "``:smile: :+1: :sheep:``", "|emoji1.png|"
-
-.. |strikethrough| image:: ../../images/strikethrough.PNG
-  :width: 100px
-.. |platform.svg| image:: https://travis-ci.org/mattermost/platform.svg
-.. |emoji1.png| image:: ../../images/Emoji1.PNG
-  :width: 100px
+.. image:: ../../images/messagesTable1.PNG
+   :alt: markdown
 
 **Quickly add emoji** by typing ":" followed by two characters, which will open an emoji
 autocomplete. If the existing emoji don't cover what you want to

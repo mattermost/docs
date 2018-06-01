@@ -34,7 +34,7 @@ Requirements
 - You're self-motivated with strong organizational skills.
 - You share our values, and work in accordance with those values.
 - You're proficient in Golang, React and/or React Native, or are able to ramp quickly into those languages.
-- You've either made substantial contributions to the Mattermost open source project or are open to completing a `paid simulation`_ to assess your comfort in working in open source.
+- You've either made substantial contributions to the Mattermost open source project or are open to completing a `Sponsored Open Source Portfolio`_ to assess your comfort in working in open source.
 - Ideal, but not required: Experience working in online communities, having made at least one `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull request to a Mattermost repository, working on other Golang, React or React Native apps.
 
 Levels
@@ -76,7 +76,7 @@ Both declined and accepted candidates will be invited to share feedback on their
 - **Email - Follow-up questions** - If your code samples look good, we'll email you some questions specific to the role.
 - **Video call - Screening interview** - Selected candidates will be invited for a 25-minute screening call with a recruiter.
 - **Video call - Soft-skills discussion** - Next, candidates will be invited to schedule a 25-minute interview with a core committer to assess soft skills and for the candidate to learn more about the role.
-- **Paid Simulation** - Successful candidates with limited experience contributing to Mattermost are offered a paid project to simulate the experience of working as a core committer. See below for description for *Paid Simulation* for details.
+- **(Optional) Sponsored open source contribution** - Candidates who appear technically strong and a cultural fit who have limited or non-existant open source portfolios may be offered sponsorship to develop their own open source portfolio and experience what it's like to work on a major open source project.
 - **Reference Checks** - You'll be sent an email request by `SkillSurvey <http://www.skillsurvey.com/>`_ to list 3 references who can verify your past achievements.
 - **Video call - CTO interview** - Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview may include technical questions along with a discussion of either past work or results of the simulation, the candidate's interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations.
 - **Video call - CEO interview** - Finally, candidates will have a 45-minute interview with our CEO.
@@ -88,20 +88,22 @@ Notes:
 - Staff developers in the US are typically offered full-time employment through a U.S. co-employer, with local payroll via TriNet, benefits and W2 tax reporting.
 - Staff developers outside the U.S. and Canada are offered full-time consulting paperwork very similar to the click-sign agreement for the paid simulation.
 
-Paid Simulation
-----------------------------
+Sponsored Open Source Portfolio 
+-------------------------------
 
-Similar to other open source companies, for candidates who successfully complete technical and soft-skills reviews, and who have limited experience contributing to Mattermost, we offer a paid simulation.
+For candidates who show strong potential for technical and cultural fit, but who have a limited or non-existant portfolios of open source work, Mattermost may offer sponsorship for candidates to develop their own open source portfolio working on the Mattermost open source project working in modern technologies such as Golang, React, React Native and Kubernetes. 
 
-The simulation helps candidates experience working on one of the world's largest open source projects to understand how they would enjoy such a role should they decide to join the company. Your code will be reviewed and used by hundreds of other contributing developers. After a vetting process, successful projects are merged and the results of your simulation will be deployed by thousands of companies around in the world.
+At all times, the open source portfolio work is 100% owned by the candidate and created using the candidate's personal email and GitHub account. In general, even candidates who do not eventually become Mattermost staff find great value in having an open source portfolio that significantly broadens their employment options. 
+
+The sponsored contributions also serve as a "simulation" of working on one of the world's largest open source projects to understand how they would enjoy such a role should they decide to join the company. Your code will likely be reviewed and used by hundreds of other contributing developers. After a vetting process, successful projects are merged and the results of your simulation will be deployed by thousands of companies around in the world.
 
 Your work will become a permanent part of the open source project that you can reference for the rest of your career. You're also eligible to receive a `Mattermost Mug <https://twitter.com/search?q=%23mattermug&src=typd>`_ in appreciation of your first contribution.
 
-The simulation project reflects an investment from the core committers to work with the candidate through a series of significant contributions, answering questions, providing input and reviewing code as needed. It also reflects an investment from the candidate to explore the experience of working at Mattermost.
+The sponsorship reflects an investment from the core committers to work with a high potential candidate through a series of significant contributions, answering questions, providing input and reviewing code as needed. It also reflects an investment from the candidate to explore the experience of working in open source. 
 
-The paid simulation project typically consists of a collection of challenging `Help Wanted tickets <https://github.com/mattermost/platform/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ to be completed per the `Mattermost contribution guidelines <../developer/contribution-guide.html>`_ in a mutually agreed timeline reflecting 30-40 hours of development at the estimated skill level of the candidate.
+The sponsorship project typically consists of a collection of challenging `Help Wanted tickets <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ to be completed per the `Mattermost contribution guidelines <../developer/contribution-guide.html>`_ in a mutually agreed timeline which could be anywhere from a couple of weekends to several weeks in duration, reflecting about 30-40 hours of open source development at the estimated skill level of the candidate.
 
-A flat rate of $750 USD is offered to attempt the simulation project. This amount is a standard fee for simulations and not an indicator of the final offer that would be extended to a successful candidate. A `standard click-sign services agreement <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit#heading=h.u3m8fmn6xapr>`_ is used to accept the fee. The fee is paid regardless of whether the project is completed.
+A standard sponsorship of $750 USD is paid at the outset of the project. It is not an indicator of the final offer that would be extended to a successful candidate. A `standard click-sign services agreement <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit#heading=h.u3m8fmn6xapr>`_ is used to accept the fee. The fee is paid regardless of whether the project is completed.
 
 While you're working on the project, you can join the Mattermost community site at https://pre-release.mattermost.com/core/.
 

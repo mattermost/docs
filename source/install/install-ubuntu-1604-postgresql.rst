@@ -1,4 +1,4 @@
-PostgreSQL.. _install-ubuntu-1604-postgresql:
+.. _install-ubuntu-1604-postgresql:
 
 Installing PostgreSQL Database Server
 =====================================

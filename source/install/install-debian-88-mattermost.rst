@@ -53,9 +53,9 @@ Assume that the IP address of this server is 10.10.10.2.
 8. Test the Mattermost server to make sure everything works.
 
     a. Change to the ``bin`` directory:
-      ``cd /opt/mattermost/bin``
+      ``cd /opt/mattermost``
     b. Start the Mattermost server as the user mattermost:
-      ``sudo -u mattermost ./platform``
+      ``sudo -u mattermost ./bin/platform``
 
   When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing CTRL+C in the terminal window.
 
@@ -74,8 +74,9 @@ Assume that the IP address of this server is 10.10.10.2.
     Requires=postgresql.service
 
     [Service]
-    Type=simple
+    Type=notify
     ExecStart=/opt/mattermost/bin/platform
+    TimeoutStartSec=3600
     Restart=always
     RestartSec=10
     WorkingDirectory=/opt/mattermost
@@ -88,6 +89,9 @@ Assume that the IP address of this server is 10.10.10.2.
 
   .. note::
     If you are using MySQL, replace ``postgresql.service`` with ``mysql.service`` in 2 places in the ``[Unit]`` section.
+    
+  .. note::
+    If you have installed MySQL or PostgreSQL on a dedicated server then you need to remove the ``After=postgresql.service`` and ``Requires=postgresql.service`` or ``After=mysql.service`` and ``Requires=mysql.service`` lines in the ``[Unit]`` section or the Mattermost service will not start.
 
   c. Make systemd load the new unit.
 

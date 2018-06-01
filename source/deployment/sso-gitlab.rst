@@ -3,6 +3,9 @@ GitLab Single Sign-On
 
 Configure Mattermost to use GitLab as a single sign-on (SSO) service for team creation, account creation, and user sign-in.
 
+.. Note:: Only the default GitLab SSO is officially supported. "Double SSO", where GitLab SSO is chained to other SSO solutions, is not supported. It may be possible to connect GitLab SSO with AD, LDAP, SAML, or MFA add-ons in some cases,  but because of the special logic required they're not officially supported and are known not to work on some experiences. If having official AD, LDAP, SAML or MFA support is critical to your enterprise, please consider `Mattermost Enterprise Edition <https://about.mattermost.com/pricing/>`_ as an option. 
+
+
 Step 1: Add an OAuth application to your GitLab account
 -------------------------------------------------------
 
@@ -18,8 +21,6 @@ Step 1: Add an OAuth application to your GitLab account
       https://{mattermost-site-name}/signup/gitlab/complete
 
     If your GitLab instance is not set up to use SSL, your URIs must begin with ``http://`` instead of ``https://``.
-
-  c. In the *Scopes* section, select **api**.
 
 3. Click **Save application**.
 
@@ -42,10 +43,12 @@ Step 2: Configure Mattermost for GitLab SSO
           "Scope": "",
           "AuthEndpoint": "https://{gitlab-site-name}/oauth/authorize",
           "TokenEndpoint": "https://{gitlab-site-name}/oauth/token",
-          "UserApiEndpoint": "https://{gitlab-site-name}/api/v3/user"
+          "UserApiEndpoint": "https://{gitlab-site-name}/api/v4/user"
       }
 
-    For *{gitlab-site-name}* use the name of your GitLab instance. If your GitLab instance is not set up to use SSL, the endpoints must begin with ``http://`` instead of ``https://``. If you are using GitLab itself as your OAuth provider, use *gitlab.com*.
+    For ``{gitlab-site-name}`` use the name of your GitLab instance. If your GitLab instance is not set up to use SSL, the endpoints must begin with ``http://`` instead of ``https://``. If you are using GitLab itself as your OAuth provider, use *gitlab.com*.
+    
+    For ``UserApiEndpoint``, use ``https://{gitlab-site-name}/api/v3/user`` if you're running GitLab v8.17.8 or earlier.
 
 2. [Optional] To force all users to sign-up with SSO only, in the *EmailSettings* section of ``config.json`` set *EnableSignUpWithEmail* to ``false``.
 

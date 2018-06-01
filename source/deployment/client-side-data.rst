@@ -23,10 +23,10 @@ Next Generation Native Mobile Apps
   - files and images that are attached to messages
   - avatars, usernames, and email addresses of people in the currently open channel
 
-  In addition, meta-data that the app uses for keeping track of its operations is also cached. The meta-data includes user IDs, channel IDs, team IDs, and message IDs.
+  In addition, metadata that the app uses for keeping track of its operations is also cached. The metadata includes user IDs, channel IDs, team IDs, and message IDs.
 
 **2. What about push notifications?**
-  Push notification storage is managed by the operating system on the device. Mattermost can be configured to send limited amounts of information that does not include the message text, and it can also be configured to not send push notifications at all.
+  Push notification storage is managed by the operating system on the device. Mattermost can be configured to send limited amounts of information that does not include the message text or channel name, and it can also be configured to not send push notifications at all.
 
 **3. Where is the data stored and how is that data protected?**
   The data is stored in the app's local storage. It is protected by the security measures that a device normally provides to the apps that are installed on it.

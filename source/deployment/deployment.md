@@ -160,7 +160,7 @@ For enterprise deployments the Mattermost database can be configured with a mast
 
 You can configure one or more search replicas to isolate search queries. A search replica is similar to a read replica, but is used only for handling search queries.
 
-#### Global Deployments (Enterprise Edition roadmap feature)
+#### Global Deployments (Enterprise Edition)
 
 Enterprise customers with deployments spanning many time zones can contact the [Enterprise Team](https://about.mattermost.com/contact/) for advanced configurations to minimize latency by:    
 

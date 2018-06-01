@@ -49,10 +49,10 @@ Assume that the IP address of this server is 10.10.10.2
 
 8. Test the Mattermost server to make sure everything works.
 
-    a. Change to the ``bin`` directory:
-      ``cd /opt/mattermost/bin``
+    a. Change to the ``mattermost`` directory:
+      ``cd /opt/mattermost``
     b. Start the Mattermost server as the user mattermost:
-      ``sudo -u mattermost ./platform``
+      ``sudo -u mattermost ./bin/platform``
 
   When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing CTRL+C in the terminal window.
 
@@ -72,18 +72,19 @@ Assume that the IP address of this server is 10.10.10.2
       After=syslog.target network.target postgresql-9.4.service
 
       [Service]
-      Type=simple
-      WorkingDirectory=/opt/mattermost/bin
+      Type=notify
+      WorkingDirectory=/opt/mattermost
       User=mattermost
       ExecStart=/opt/mattermost/bin/platform
       PIDFile=/var/spool/mattermost/pid/master.pid
+      TimeoutStartSec=3600
       LimitNOFILE=49152
 
       [Install]
       WantedBy=multi-user.target
 
-     .. note::
-       If you are using MySQL, replace ``postgresql-9.4.service`` by ``mysqld.service`` in the ``[unit]`` section.
+    .. note::
+      If you are using MySQL, replace ``postgresql-9.4.service`` by ``mysqld.service`` in the ``[unit]`` section.
      
   c. Make the service executable.
 
@@ -93,11 +94,7 @@ Assume that the IP address of this server is 10.10.10.2
 
     ``sudo systemctl daemon-reload``
 
-  f. Enable the Mattermost service.
-
-    ``sudo chkconfig mattermost on``
-
-  g. Set Mattermost to start on boot.
+  e. Set Mattermost to start on boot.
 
     ``sudo systemctl enable mattermost``
 

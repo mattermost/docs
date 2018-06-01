@@ -186,6 +186,7 @@ a wrapper-utility must be used.
 
        cd c:\mattermost\bin
        nssm install mattermost c:\mattermost\bin\platform.exe
+       nssm set mattermost AppDirectory c:\mattermost
 
 12. Start the service by executing the following
 
