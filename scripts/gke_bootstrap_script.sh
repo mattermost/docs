@@ -26,7 +26,7 @@ function bootstrap(){
 
   # Use the default cluster version for the specified zone if not provided
   if [ -z "${CLUSTER_VERSION}" ]; then
-    CLUSTER_VERSION=$(gcloud container get-server-config --zone $ZONE  --format='value(defaultClusterVersion)');
+    CLUSTER_VERSION=$(gcloud container get-server-config --zone $ZONE --project $PROJECT --format='value(defaultClusterVersion)');
   fi
 
   if $PREEMPTIBLE; then
@@ -72,6 +72,7 @@ function bootstrap(){
     helm install --name dns --namespace kube-system stable/external-dns \
       --set provider=google \
       --set google.project=$PROJECT \
+      --set txtOwnerId=$CLUSTER_NAME \
       --set rbac.create=true \
       --set policy=sync
   fi
