@@ -2321,7 +2321,6 @@ Name of service shown in login screens and UI. Maximum 30 characters.
 
 Enable Custom Branding
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E10 and higher*
 
 **True**: Enables custom branding to show a JPG image some custom text on the server login page.
 
@@ -2333,7 +2332,6 @@ Enable Custom Branding
 
 Custom Brand Image
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E10 and higher*
 
 Custom JPG image is displayed on left side of server login page. Recommended maximum image size is less than 2 MB because image will be loaded for every user who logs in.
 
@@ -2343,7 +2341,6 @@ Custom JPG image is displayed on left side of server login page. Recommended max
 
 Custom Brand Text
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E10 and higher*
 
 Custom text will be shown below custom brand image on left side of server login page. Maximum 500 characters allowed. You can format this text using the same `Markdown formatting codes <http://docs.mattermost.com/help/messaging/formatting-text.html>`_ as using in Mattermost messages.
 
@@ -2353,7 +2350,6 @@ Custom text will be shown below custom brand image on left side of server login 
 
 Site Description
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E10 and higher*
 Description of service shown in login screens and UI. When not specified, "All team communication in one place, searchable and accessible anywhere" is displayed.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
