@@ -1,3 +1,4 @@
+{{- if .Values.enabled -}}
 {{- if eq .Values.controller.kind "Deployment" }}
 {{- if .Values.controller.autoscaling.enabled }}
 apiVersion: autoscaling/v1
@@ -18,5 +19,6 @@ spec:
   minReplicas: {{ .Values.controller.autoscaling.minReplicas }}
   maxReplicas: {{ .Values.controller.autoscaling.maxReplicas }}
   targetCPUUtilizationPercentage: {{ .Values.controller.autoscaling.targetCPUUtilizationPercentage }}
+{{- end }}
 {{- end }}
 {{- end }}

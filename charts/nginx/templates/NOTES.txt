@@ -1,3 +1,4 @@
+{{- if .Values.enabled }}
 The nginx-ingress controller has been installed.
 
 {{- if contains "NodePort" .Values.controller.service.type }}
@@ -62,3 +63,4 @@ If TLS is enabled for the Ingress, a Secret containing the certificate and key m
     tls.crt: <base64 encoded cert>
     tls.key: <base64 encoded key>
   type: kubernetes.io/tls
+{{- end }}

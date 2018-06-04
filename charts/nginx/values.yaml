@@ -1,6 +1,10 @@
 ## nginx configuration
 ## Ref: https://github.com/kubernetes/ingress/blob/master/controllers/nginx/configuration.md
 ##
+# Added feature gate by GitLab
+enabled: false
+
+## Upstream settings
 controller:
   name: controller
   image:

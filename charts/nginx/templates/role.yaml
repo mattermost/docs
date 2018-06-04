@@ -1,3 +1,4 @@
+{{- if .Values.enabled -}}
 {{- if or .Values.rbac.create .Values.rbac.createRole -}}
 apiVersion: rbac.authorization.k8s.io/v1beta1
 kind: Role
@@ -79,4 +80,5 @@ rules:
     verbs:
       - create
       - patch
+{{- end -}}
 {{- end -}}
