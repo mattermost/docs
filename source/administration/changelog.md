@@ -10,40 +10,41 @@ Release date: 2018-06-16
 
 ### Highlights
 
+#### Plugin Intercept
+ - Enables a host of plug-in use cases for reviewing and augmenting user messages prior to their saving into the database.
+ 
+#### Permissions Schemes
+ - System Scheme sets the default permissions inherited system wide by System Admins, Team Admins, Channel Admins and everyone else. 
+ - Team Schemes override the default permissions in specific teams for Team Admins, Channel Admins and all other team members.
+
 #### Increased 4K character limit on posts
- - Removed character limit to allow posting long messages and to allow better markdown formatting, including tables.
+ - Increased character limit to 16k on new deployments to allow posting long messages and to allow better markdown formatting, including tables.
  
 #### Combine Join/Leave messages
  - System messages related to joining, leaving, and adding/removing people from channels are combined into one post, allowing these messages to not take excess space in channels.
- 
-#### Advanced Permissions
-
-#### Plugin Intercept
- - Enables a host of plug-in use cases for reviewing and augmenting user messages prior to their saving into the database.
 
 ### Improvements
 
 #### Web User Interface
  - Added a feature to allow images uploaded to be collapsed using an icon and using ``/collapse`` command.
+ - Added a whitelist for valid types of links when autolinking.
 
 #### Slash commands
- - (Integrations) Slash commands configured to receive a GET request to get a request body.
+ - Slash commands configured to receive a GET request to get a request body.
  
 #### System Console
  - Added a system console setting to disable the preview mode banner when email notifications are disabled.
  
 #### Administration
- - Removed license check when enforcing password requirements (moved password settings to TE).
+ - Removed license check when enforcing password requirements (moved password settings to Team Edition).
+ - Moved custom branding to Team Edition.
  - Removed the desktop notification duration setting.
  - Updated email notification subject line and contents for Group Messages.
  
  #### ?
  - Deprecated and removed ``ExtraUpdateAt`` field from channel model.
  - Added ``LoginIdAttribute`` to allow LDAP users to change their login ID without losing their account.
- - Added ping/pong and reconnection handling to Go WebSocket client.
- - Added support for websocket custom dialer.
  - Fixed ``update_status`` cluster event being sent thousands of times on restart of app servers.
- - Added a whitelist for valid types of links when autolinking.
  - Added ability for webhooks to actually be locked to a channel.
 
 ### Bug Fixes
@@ -65,24 +66,35 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
- - Under ``"?"`` in ``config.json``:
+ - Under ``"ServiceSettings":`` in ``config.json``:
    - Added ``"EnableAPITeamDeletion": false,`` to disable the permanent APIv4 delete team parameter.
-   - Added ``"EnablePreviewModeBanner": true,`` to
+ - Under ``"EmailSettings":`` in ``config.json``:
+   - Added ``"EnablePreviewModeBanner": true,`` to allow Preview Mode banner to be displayed so users are aware that email notifications are disabled.
+ - Under ``"ClusterSettings":`` in ``config.json``:
    - Added ``"StreamingPort": 8075,`` to
-   - Added ```"MaxIdleConns": 100,`` to
+   - Added ``"MaxIdleConns": 100,`` to
    - Added ``"MaxIdleConnsPerHost": 128,`` to
    - Added ``"IdleConnTimeoutMilliseconds": 90000`` to
+ - Under ``"TeamSettings":`` in ``config.json``:
    - Added ``"ExperimentalHideTownSquareinLHS": false,`` to
+ - Under ``"DisplaySettings":`` in ``config.json``:
    - Added ``"CustomUrlSchemes": [],`` to
+ - Under ``"LdapSettings":`` in ``config.json``:
+   - Added ``"LoginIdAttribute": "",`` to add an attribute in the AD/LDAP server used to log in to Mattermost.
    
 #### API Changes
 
  - Improved file upload API to stream files instead of loading them entirely into memory.
- - Removed APIv3 endpoints.
- - Moved SAML login endpoints out of API package.
- - Moved context.go out of api4 and into web. This includes moving params.go and some smaller http-related functions over.
- - Created api4/handlers.go to create the API handlers using the Context and Handler from web.
- - Created web/handlers.go to define the Handler struct, the base ServeHTTP function and a single web handler.
+ - All APIv3 endpoints were removed.
+ - SAML login endpoints were moved out of API package.
+ - ``context.go`` was moved out of Api4 and into web.
+ - ``api4/handlers.go`` was created to create the API handlers using the Context and Handler from web.
+ - ``web/handlers.go`` was added to define the Handler struct, the base ServeHTTP function and a single web handler.
+ 
+#### WebSocket Changes
+
+ - Ping/pong and reconnection handling were added to Go WebSocket client.
+ - Support was added for WebSocket custom dialer.
 
 ### Known Issues
 
