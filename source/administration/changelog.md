@@ -11,33 +11,34 @@ Release date: 2018-06-16
 ### Highlights
 
 #### Plugin Intercept
- - Enables a host of plug-in use cases for reviewing and augmenting user messages prior to their saving into the database.
+ - Adds support for plugins to intercept posts prior to saving them into the database.
+ - Supports use cases such as auto-detecting and censoring restricted words, and auto-linking phrases. [Read our forum post to learn more](https://forum.mattermost.org/t/coming-soon-apiv4-mattermost-post-intercept/4982).
  
 #### Permissions Schemes
- - System Scheme sets the default permissions inherited system wide by System Admins, Team Admins, Channel Admins and everyone else. 
- - Team Schemes override the default permissions in specific teams for Team Admins, Channel Admins and all other team members.
+ - System Scheme now sets the default permissions inherited system wide by System Admins, Team Admins, Channel Admins and everyone else. 
+ - Added new Team Schemes to override the default permissions in specific teams for Team Admins, Channel Admins and all other team members.
 
-#### Increased 4K character limit on posts
- - Increased character limit to 16k on new deployments to allow posting long messages and to allow better markdown formatting, including tables.
+#### Increased Character Limit on Posts
+ - Increased character limit to 16,000 on new deployments to allow posting long messages and to allow better Markdown formatting, including tables.
+ - For existing deployment, read [how to migrate your system](https://docs.mattermost.com/administration/important-upgrade-notes.html) to support the increased character limit.
  
-#### Combine Join/Leave messages
- - System messages related to joining, leaving, and adding/removing people from channels are combined into one post, allowing these messages to not take excess space in channels.
+#### Combine Join/Leave mMssages
+ - System messages related to joining, leaving, adding and removing people from channels are combined into a single message, allowing these messages to not take excess space in channels.
 
 ### Improvements
 
 #### Web User Interface
- - Added a feature to allow images uploaded to be collapsed using an icon and using ``/collapse`` command.
+ - Added a feature to collapse image upload using a collapse icon or using the ``/collapse`` command.
  - Added a whitelist for valid types of links when autolinking.
 
-#### Slash commands
- - Slash commands configured to receive a GET request to get a request body.
+#### Slash Commands
+ - Slash commands configured to receive a GET request now get a request body.
  
 #### System Console
- - Added a system console setting to disable the preview mode banner when email notifications are disabled.
+ - Added a System Console setting to disable the preview mode banner when email notifications are disabled.
  
 #### Administration
- - Removed license check when enforcing password requirements (moved password settings to Team Edition).
- - Moved custom branding to Team Edition.
+ - Added Password Requirements and Customer Branding to Team Edition.
  - Removed the desktop notification duration setting.
  - Updated email notification subject line and contents for Group Messages.
  
@@ -49,10 +50,10 @@ Release date: 2018-06-16
 
 ### Bug Fixes
 
- - Fixed an issue where ``EnableUserCreation`` was set to false when not included in config.json.
+ - Fixed an issue where ``EnableUserCreation`` was set to `false` when not included in config.json.
  - Fixed an issue where a public channel made private did not disappear automatically from clients not part of the channel.
  - Fixed an issue where team icon did not get automatically saved when removed.
- - Fixed an issue where Town Square channel disappeared from channel list for a non-admin user when "ExperimentalTownSquareIsReadOnly" was set to true.
+ - Fixed an issue where Town Square channel disappeared from channel list for a non-admin users when "ExperimentalTownSquareIsReadOnly" `config.json` was set to `true` in config.json.
  
 ### Compatibility
 
