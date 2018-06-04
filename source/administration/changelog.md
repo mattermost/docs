@@ -30,23 +30,23 @@ Release date: 2018-06-16
 #### Web User Interface
  - Added a feature to collapse image upload using a collapse icon or using the ``/collapse`` command.
  - Added a whitelist for valid types of links when autolinking.
+ 
+#### Performance
+ - Fixed ``update_status`` cluster event being sent thousands of times on restart of app servers.
 
-#### Slash Commands
+#### Integrations
  - Slash commands configured to receive a GET request now get a request body.
+ - Added ability for webhooks to actually be locked to a channel.
  
 #### System Console
  - Added a System Console setting to disable the preview mode banner when email notifications are disabled.
  
 #### Administration
  - Added Password Requirements and Customer Branding to Team Edition.
- - Removed the desktop notification duration setting.
- - Updated email notification subject line and contents for Group Messages.
+ - Updated email notification subject line and contents for Group Messages to indicate the specific channel where the notification is instead of the team.
  
- #### ?
- - Deprecated and removed ``ExtraUpdateAt`` field from channel model.
+#### Enterprise Edition (E20)
  - Added ``LoginIdAttribute`` to allow LDAP users to change their login ID without losing their account.
- - Fixed ``update_status`` cluster event being sent thousands of times on restart of app servers.
- - Added ability for webhooks to actually be locked to a channel.
 
 ### Bug Fixes
 
