@@ -34,6 +34,6 @@ For example, pass these values via helm's `--set` flag while deploying:
 helm install
   --set postgresql.install=false
   --set global.psql.host=psql.example
-  --set global.psql.password.secret=psql-secret
-  --set global.psql.password.key=<key>
+  --set global.psql.password.secret=postgresql-password
+  --set global.psql.password.key=psqlpassword
 ```

@@ -114,7 +114,7 @@ kubectl create secret generic gitlab-minio --from-literal=accesskey=$(head -c 51
 Generate a set of random 20 & 64 character alpha-numeric keys for database password.
 
 ```
-kubectl create secret generic psql-secret --from-literal=psqlpassword=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 20) --from-literal=secretkey=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
+kubectl create secret generic postgresql-password --from-literal=psqlpassword=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
 
