@@ -20,7 +20,7 @@ Release date: 2018-06-16
 
 #### Increased Character Limit on Posts
  - Increased character limit to 16,000 on new deployments to allow posting long messages and to allow better Markdown formatting, including tables.
- - For existing deployment, read [how to migrate your system](https://docs.mattermost.com/administration/important-upgrade-notes.html) to support the increased character limit.
+ - For existing deployments, read [how to migrate your system](https://docs.mattermost.com/administration/important-upgrade-notes.html) to support the increased character limit.
  
 #### Combine Join/Leave Messages
  - System messages related to joining, leaving, adding and removing people from channels are combined into a single message, allowing these messages to not take excess space in channels.
