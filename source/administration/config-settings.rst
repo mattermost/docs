@@ -3645,6 +3645,20 @@ Town Square is Read-Only (Experimental)
 | This feature's ``config.json`` setting is ``"ExperimentalTownSquareIsReadOnly": false`` with options ``true`` and ``false`` for above settings respectively.                 |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Town Square is Hidden in Left-Hand Sidebar (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
+**True**: When ``"ExperimentalTownSquareIsReadOnly": true``, hides Town Square in the left-hand sidebar if there are no unread messages in the channel.
+
+**False**: Town Square is always visible in the left-hand sidebar even if all messages have been read.
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalHideTownSquareinLHS": false`` with options ``true`` and ``false`` for above settings respectively.                  |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
 Enable Automatic Replies (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
