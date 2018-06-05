@@ -8,7 +8,8 @@ require_relative 'lib/version'
 Options = Struct.new(
   :working_dir,
   :app_version,
-  :chart_version
+  :chart_version,
+  :dry_run
 )
 
 class VersionOptionsParser
@@ -30,6 +31,10 @@ class VersionOptionsParser
 
         opts.on("-d", "--directory [string]", String, "Working directory for the script") do |value|
           options.working_dir = value
+        end
+
+        opts.on('-n', '--dry-run', "Don't actually write anything, just print") do |value|
+          options.dry_run = value
         end
 
         opts.on('-h', '--help', 'Print help message') do
@@ -95,9 +100,11 @@ class VersionUpdater
 
     populate_chart_version
 
-    # Set versions
     $stdout.puts "# New Versions\n# version: #{@chart_version}\n# appVersion: #{@app_version}"
-    @chart.update_versions(@chart_version, @app_version)
+
+    unless options.dry_run
+      @chart.update_versions(@chart_version, @app_version)
+    end
   end
 
   def populate_chart_version
