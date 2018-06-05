@@ -41,12 +41,12 @@ spec:
           args:
             - /bin/bash
             - -c
-            - while sleep 3600; do :; done # alpine sleep has no infinity
+            - cp /etc/gitlab/.s3cfg $HOME/.s3cfg && while sleep 3600; do :; done # alpine sleep has no infinity
           image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
           {{ template "gitlab.imagePullPolicy" . }}
           env:
             - name: BACKUP_BUCKET_NAME
-              value: .Values.backups.bucketName
+              value: {{ .Values.backups.bucketName }}
             - name: S3_CONFIG_DIR
               value: "/etc/gitlab/minio"
             - name: S3_ENDPOINT
