@@ -7,6 +7,11 @@ class Version < String
     (-ee)?\z
   }x
 
+  MAJOR = :major
+  MINOR = :minor
+  PATCH = :patch
+  RC = :rc
+
   def initialize(version_string)
     super(version_string)
 
@@ -36,6 +41,16 @@ class Version < String
     else
       -1
     end
+  end
+
+  def diff(other)
+    return nil if self == other
+
+    return MAJOR if major != other.major
+    return MINOR if minor != other.minor
+    return PATCH if patch != other.patch
+    return RC if rc != other.rc
+    return true
   end
 
   def ee?
