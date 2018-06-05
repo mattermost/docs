@@ -278,7 +278,9 @@ Once security fix release is ready to cut:
     
 If a bug fix release is required, run through the following steps:
 
-1. Release Manager:
+1. T-7: Code Complete
+    **Release Manager:**
+    - Once the list of bugs to be fixed is finalized, post this checklist in the Release Checklist channel
     - Notify community about upcoming dot release through a Twitter announcement and in changelog with links to approved fixes and a date tagged as "TBD"
     - Open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) mentioning a dot release is coming. [See example](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/3099)
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/gitlab-process.html#merge-requests) and [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC.
@@ -286,12 +288,14 @@ If a bug fix release is required, run through the following steps:
     - Make a post in Announcements channel announcing the dot release to the rest of the team with links to approved tickets and include a link to the ticket to submit the GitLab MR
     - Update Changelog:
         - Start a WIP PR for the dot release changelog and commit updates as new issues are fixed on the dot release RCs
-2. Dev:
+    **Dev:**
     - PRs for hotfixes are made to release branch
     - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day
-3. Build:
+2. T-4 Release Candidate Cut
+    **Build:**
     - Verify with Release Manager before cutting any new dot release RCs (approved fixes should be merged)
-4. QA:
+3. T-3 Release Candidate Testing 
+    **QA:**
     - If the dot release takes place during a regular release, update ``ci-linux-mysql-prev`` to dot-release RCs for the previous release and keep ``rctesting.reddogsofwar`` on the latest regular release version
     - Test the new RC to verify fixes merged to the release branch work
     - Post in Release Discussion channel after testing
