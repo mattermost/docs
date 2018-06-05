@@ -4,7 +4,7 @@
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee
   pullSecrets: []
-  pullPolicy: Always
+  # pullPolicy: IfNotPresent
   # tag: latest
 enabled: true
 
@@ -19,6 +19,7 @@ redis:
   password: {}
 
 global:
+  # imagePullPolicy: IfNotPresent
   psql: {}
     # host: '0.0.0.0'
     # port: '5432'

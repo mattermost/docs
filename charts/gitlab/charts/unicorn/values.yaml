@@ -4,7 +4,7 @@
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee
   pullSecrets: []
-  pullPolicy: Always
+  # pullPolicy: IfNotPresent
   # tag: latest
 metrics:
   enabled: true
@@ -53,6 +53,7 @@ railsSecrets:
   secret: rails-secrets
   key: secrets.yml
 global:
+  # imagePullPolicy: IfNotPresent
   ingress:
     enabled: true
     annotations: {}
