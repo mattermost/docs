@@ -3,12 +3,16 @@
 Our contribution policies can be found in [CONTRIBUTING.md](../../CONTRIBUTING.md)
 
 **Table of Contents**
-
+- [Versioning and Release](#versioning-and-release)
 - [Changelog Entries](#changelog-entries)
 - [Naming Conventions](#naming-conventions)
 - [Common Structure for values.yaml](#common-structure-for-valuesyaml)
 - [Developing template helpers](#developing-template-helpers)
 - [When to fork from upstream charts](#when-to-fork-upstream-charts)
+
+## Versioning and Release
+
+Details on the version scheme, branching and tags can be found in [release document](release.md)
 
 ## Changelog Entries
 
