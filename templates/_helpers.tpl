@@ -86,6 +86,16 @@ imagePullSecrets:
 {{- end }}
 {{- end -}}
 
+{{/*
+Global gitlab imagePullPolicy
+*/}}
+
+{{- define "gitlab.imagePullPolicy" -}}
+{{- if or .Values.image.pullPolicy .Values.global.imagePullPolicy -}}
+imagePullPolicy: {{ coalesce .Values.image.pullPolicy .Values.global.imagePullPolicy | quote }}
+{{- end -}}
+{{- end -}}
+
 {{/* ######### cert-manager templates */}}
 
 {{- define "gitlab.certmanager_annotations" -}}
