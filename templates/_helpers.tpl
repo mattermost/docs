@@ -48,6 +48,18 @@ otherwise the hostname will be assembled using `minio` as the prefix, and the `g
 {{- coalesce .Values.global.hosts.minio.name (include "gitlab.assembleHost"  (dict "name" "minio" "context" . )) -}}
 {{- end -}}
 
+{{/*
+Returns the minio url.
+*/}}
+
+{{- define "gitlab.minio.url" -}}
+{{- if or .Values.global.hosts.https .Values.global.hosts.minio.https -}}
+{{-   printf "https://%s" (include "gitlab.minio.hostname" .) -}}
+{{- else -}}
+{{-   printf "http://%s" (include "gitlab.minio.hostname" .) -}}
+{{- end -}}
+{{- end -}}
+
 {{/* ######### Utility templates */}}
 
 {{/*
