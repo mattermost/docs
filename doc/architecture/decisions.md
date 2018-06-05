@@ -105,3 +105,13 @@ Our [registry chart][] was altered from upstream [docker-registry][].
 
 [registry chart]: ../../charts/registry
 [docker-registry]: https://github.com/kubernetes/charts/tree/master/stable/docker-registry
+
+### nginx-ingress
+
+Our [nginx-ingress chart][] was altered from upstream [nginx-ingress][].
+
+- Add feature to allow for the tcp configmap to be external to the chart
+- Add feature to allow ingress class to be templated based on release name
+
+[nginx-ingress chart]: ../../charts/nginx
+[nginx-ingress]: https://github.com/kubernetes/charts/tree/master/stable/nginx-ingress

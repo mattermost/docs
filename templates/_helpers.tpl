@@ -187,6 +187,20 @@ Returns the nginx ingress class
 {{- pluck "class" .Values.global.ingress (dict "class" (printf "%s-nginx" .Release.Name)) | first -}}
 {{- end -}}
 
+{{/*
+Overrides the nginx-ingress template to make sure gitlab-shell name matches
+*/}}
+{{- define "nginx-ingress.tcp-configmap" -}}
+{{ .Release.Name}}-nginx-ingress-tcp
+{{- end -}}
+
+{{/*
+Overrides the nginx-ingress template to make sure our ingresses match
+*/}}
+{{- define "nginx-ingress.controller.ingress-class" -}}
+{{ template "gitlab.ingressclass" . }}
+{{- end -}}
+
 {{/* ######### annotations */}}
 
 {{/*
@@ -197,4 +211,11 @@ Handles merging a set of service annotations
 {{- if $allAnnotations -}}
 {{- toYaml $allAnnotations -}}
 {{- end -}}
+{{- end -}}
+
+{{/*
+Returns gitlabUrl needed for gitlab-runner
+*/}}
+{{- define "gitlab-runner.gitlabUrl" -}}
+{{- template "gitlab.gitlab.url" . -}}
 {{- end -}}

@@ -4,16 +4,16 @@ Tables below contain all the possible charts configurations that can be supplied
 
 ## Basic configuration
 
-| Parameter                                    | Description                                                                  | Default                                    |
-| ---                                          | ---                                                                          | ---                                        |
-| global.hosts.domain                          | Domain name that will be used for all publicly exposed services              | Required                                   |
-| nginx.LoadBalancerIp                         | Static IP to assign to nginx ingress controller                              | Required                                   |
-| gitlab.migrations.initialRootPassword        | Password to the gitlab root account                                          | Required                                   |
-| global.psql.host                             | Global hostname of an external psql, overrides subcharts' psql configuration | _Uses in-cluster non-production postgress_ |
-| global.psql.password.secret                  | Global name of the secret containing the psql password                       | _Uses in-cluster non-production postgress_ |
-| global.psql.password.key                     | Key pointing to the psql password in the psql secret                         | _Uses in-cluster non-production postgress_ |
-| global.time_zone                             | Global time zone                                                             | UTC                                        |
-| global.service.annotations                   | Annotations to add to every `Service`                                        | {}                                         |
+| Parameter                                       | Description                                                                  | Default                                    |
+| ---                                             | ---                                                                          | ---                                        |
+| global.hosts.domain                             | Domain name that will be used for all publicly exposed services              | Required                                   |
+| global.hosts.externalIP | Static IP to assign to nginx ingress controller                              | Required                                   |
+| gitlab.migrations.initialRootPassword           | Password to the gitlab root account                                          | Required                                   |
+| global.psql.host                                | Global hostname of an external psql, overrides subcharts' psql configuration | _Uses in-cluster non-production postgress_ |
+| global.psql.password.secret                     | Global name of the secret containing the psql password                       | _Uses in-cluster non-production postgress_ |
+| global.psql.password.key                        | Key pointing to the psql password in the psql secret                         | _Uses in-cluster non-production postgress_ |
+| global.time_zone                                | Global time zone                                                             | UTC                                        |
+| global.service.annotations                      | Annotations to add to every `Service`                                        | {}                                         |
 
 ## TLS configuration
 
@@ -48,33 +48,7 @@ Tables below contain all the possible charts configurations that can be supplied
 
 ## Advanced nginx ingress configuration
 
-| Parameter                                    | Description                                             | Default                                                        |
-| ---                                          | ---                                                     | ---                                                            |
-| nginx.replicaCount                           | Number of replicas                                      | 1                                                              |
-| nginx.images.defaultbackend.repository       | Default backend that nginx routes to eg: 404            | gcr.io/google_containers/defaultbackend                        |
-| nginx.images.defaultbackend.tag              | dafault backend image tag                               | 1.4                                                            |
-| nginx.images.defaultbackend.pullPolicy       | default backend pull policy                             | IfNotPresent                                                   |
-| nginx.images.nginxIngress.repository         | nginx repository                                        | quay.io/kubernetes-ingress-controller/nginx-ingress-controller |
-| nginx.images.nginxIngress.tag                | nginx image tag                                         | 0.9.0                                                          |
-| nginx.images.nginxIngress.pullPolicy         | nginx image pull policy                                 | IfNotPresent                                                   |
-| nginx.service.name                           | nginx service name                                      | nginx                                                          |
-| nginx.service.type                           | nginx service type                                      | LoadBalancer                                                   |
-| nginx.service.ports                          | nginx service ports                                     | [{"http": 80}, {"https": 443}, {"ssh": 22}]                    |
-| nginx.serviceAccount.autoGenerate            | Whether chart should generate service account for RBAC  | true                                                           |
-| nginx.serviceAccount.name                    | Service account name                                    | default                                                        |
-| nginx.service.annotations                    | Annotations to add to the `Service`                     | {}                                                             |
-| nginx.proxyConnectTimeout                    | Defines a timeout for establishing a connection         | 15                                                             |
-| nginx.proxyReadTimeout                       | Defines a timeout for reading a response                | 600                                                            |
-| nginx.proxySendTimeout                       | Sets a timeout for transmitting a request               | 600                                                            |
-| nginx.proxyBodySize                          | body size                                               | 512m                                                           |
-| nginx.hstsIncludeSubdomains                  | set HSTS for all subdomains                             | false                                                          |
-| nginx.serverNameHashBucketSize               | Sets the bucket size for the server names hash tables   | 256                                                            |
-| nginx.shell.name                             | Shell service name                                      | gitlab-shell                                                   |
-| nginx.shell.port                             | Shell port name                                         | ssh                                                            |
-| nginx.ingress.enabled                        | Enable ingress                                          | true                                                           |
-| nginx.ingress.hosts                          | Hosts ingress listens to                                | Empty array                                                    |
-| nginx.ingress.annotations                    | Annotations                                             | Undefined by default                                           |
-| nginx.ingress.tls                            | Tls certificates (custom)                               | Undefined by default                                           |
+See [nginx-ingress chart](../../charts/nginx/README.md)
 
 ## Advanced in-cluster redis configuration
 

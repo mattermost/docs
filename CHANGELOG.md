@@ -2,6 +2,21 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2018-06-05
+
+### Changed (1 change)
+
+- GitLab image tags can be set using a global, and default to the chart appVersion. !304
+
+### Added (1 change, 1 of them is from the community)
+
+- Increase minimum repliacs to 2+ via HPAs where relevant. !285 (Corey O'Brien)
+
+### Other (2 changes, 1 of them is from the community)
+
+- Remove placeholder charts. !301 (Corey O'Brien)
+- Use upstream gitlab-runner.
+
 ## 2018-05-29
 
 ### Fixed (1 change, 1 of them is from the community)

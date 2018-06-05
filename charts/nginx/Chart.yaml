@@ -1,13 +1,19 @@
-apiVersion: v1
-name: nginx
-version: 0.0.1
-description: "Helm chart for NGINX with GitLab"
+name: nginx-ingress
+version: 0.19.2
+appVersion: 0.14.0
+home: https://github.com/kubernetes/ingress-nginx
+description: An nginx Ingress controller that uses ConfigMap to store the nginx configuration.
+icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/500px-Nginx_logo.svg.png
 keywords:
-- nginx
-- ingress
-- gitlab
+  - ingress
+  - nginx
+sources:
+  - https://github.com/kubernetes/ingress-nginx
 maintainers:
-- name: GitLab Inc.
-  email: support@gitlab.com
-- name: The Distribution Team
-details: "NGINX used as part of GitLab deployment."
+  - name: jackzampolin
+    email: jack.zampolin@gmail.com
+  - name: mgoodness
+    email: mgoodness@gmail.com
+  - name: chancez
+    email: chance.zibolski@coreos.com
+engine: gotpl

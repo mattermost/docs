@@ -42,7 +42,7 @@ spec:
             - /bin/bash
             - -c
             - while sleep 3600; do :; done # alpine sleep has no infinity
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
           {{ template "gitlab.imagePullPolicy" . }}
           env:
             - name: BACKUP_BUCKET_NAME
@@ -97,9 +97,9 @@ spec:
                 - key: {{ coalesce .Values.redis.password.key .Values.global.redis.password.key }}
                   path: redis/password
           - secret:
-              name: {{ coalesce .Values.psql.password.secret .Values.global.psql.password.secret }}
+              name: {{ template "gitlab.psql.password.secret" . }}
               items:
-                - key: {{ coalesce .Values.psql.password.key .Values.global.psql.password.key }}
+                - key: {{ template "gitlab.psql.password.key" . }}
                   path: postgres/psql-password
           - secret:
               name: {{ .Values.registry.certificate.secret }}

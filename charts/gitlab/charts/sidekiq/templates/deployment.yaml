@@ -4,7 +4,7 @@
 {{- $releaseName := .Release.Name -}}
 {{- $releaseService := .Release.Service -}}
 {{- $fullname := printf "%s-%s" $releaseName $name | trunc 63 | trimSuffix "-" -}}
-{{- $image := printf "%s:%s" .Values.image.repository .Values.image.tag -}}
+{{- $image := printf "%s:%s" .Values.image.repository (coalesce .Values.image.tag (include "gitlab.versionTag" . )) -}}
 {{- $concurrency := .Values.concurrency -}}
 {{- $timeout := .Values.timeout -}}
 {{- $resources := .Values.resources -}}
