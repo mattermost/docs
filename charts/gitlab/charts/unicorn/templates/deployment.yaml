@@ -82,13 +82,8 @@ spec:
 {{- include "pullsecrets" .Values.image | indent 6}}
       containers:
         - name: {{ .Chart.Name }}
-<<<<<<< charts/gitlab/charts/unicorn/templates/deployment.yaml
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
-          {{ template "gitlab.imagePullPolicy" . }}
-=======
           image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
->>>>>>> charts/gitlab/charts/unicorn/templates/deployment.yaml
+          {{ template "gitlab.imagePullPolicy" . }}
           ports:
             - containerPort: {{ .Values.service.internalPort }}
               name: unicorn
