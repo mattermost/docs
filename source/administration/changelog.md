@@ -22,7 +22,7 @@ Release date: 2018-06-16
  - Increased character limit to 16,000 on new deployments to allow posting long messages and to allow better Markdown formatting, including tables.
  - For existing deployments, read [how to migrate your system](https://docs.mattermost.com/administration/important-upgrade-notes.html) to support the increased character limit.
  
-#### Combine Join/Leave Messages
+#### Combined Join/Leave Messages
  - System messages related to joining, leaving, adding and removing people from channels are combined into a single message, allowing these messages to not take excess space in channels.
 
 ### Improvements
@@ -60,6 +60,14 @@ Release date: 2018-06-16
 #### Deprecated Features
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
+1. All API v3 endpoints will be removed. [See documentation](https://api.mattermost.com/#tag/schema) to learn more about how to migrate your integrations to API v4. [Ticket #8708](https://mattermost.atlassian.net/browse/MM-8708).
+2. `platform` binary will be renamed to mattermost for a clearer install and upgrade experience. All command line tools, including the bulk loading tool and developer tools, will also be renamed from platform to mattermost. [Ticket #9985](https://mattermost.atlassian.net/browse/MM-9985).
+3. A Mattermost user setting to configure desktop notification duration in **Account Settings** > **Notifications** > **Desktop Notifications** will be removed.
+4. Slash commands configured to receive a GET request will have the payload being encoded in the query string instead of receiving it in the body of the request, consistent with standard HTTP requests. Although unlikely, this could break custom slash commands that use GET requests incorrectly. [Ticket #10201](https://mattermost.atlassian.net/browse/MM-10201).
+5. A new `config.json` setting to whitelist types of protocols for auto-linking will be added. [Ticket #9547](https://mattermost.atlassian.net/browse/MM-9547).
+6. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) will be added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
+7. An unused `ExtraUpdateAt` field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
  
 #### config.json
 
@@ -69,6 +77,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - Under ``"ServiceSettings":`` in ``config.json``:
    - Added ``"EnableAPITeamDeletion": false,`` to disable the permanent APIv4 delete team parameter.
+   - Added ``"ExperimentalEnableHardenedMode": false`` to
  - Under ``"EmailSettings":`` in ``config.json``:
    - Added ``"EnablePreviewModeBanner": true,`` to allow Preview Mode banner to be displayed so users are aware that email notifications are disabled.
  - Under ``"ClusterSettings":`` in ``config.json``:
