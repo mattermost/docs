@@ -9,6 +9,7 @@ Options = Struct.new(
   :working_dir,
   :app_version,
   :chart_version,
+  :excluded_subcharts,
   :dry_run
 )
 
@@ -16,7 +17,10 @@ class VersionOptionsParser
   class << self
     def parse(argv)
       options = Options.new()
+
+      # defaults
       options.working_dir = Dir.pwd
+      options.excluded_subcharts = ['gitaly', 'gitlab-shell']
 
       OptionParser.new do |opts|
         opts.banner = "Usage: #{__FILE__} [options] \n\n"
@@ -30,6 +34,10 @@ class VersionOptionsParser
         end
 
         opts.on("-d", "--directory [string]", String, "Working directory for the script") do |value|
+          options.working_dir = value
+        end
+
+        opts.on("--excluded-subcharts string,string", Array, "List of subcharts to exclude in the bump") do |value|
           options.working_dir = value
         end
 
@@ -73,6 +81,10 @@ class ChartFile
     @metadata = YAML.load(File.read(@filepath))
   end
 
+  def name
+    @metadata['name']
+  end
+
   def version
     Version.new(@metadata['version'])
   end
@@ -94,9 +106,13 @@ class VersionUpdater
   def initialize(options)
     @chart_version = options.chart_version
     @app_version = options.app_version
-    @working_dir = options.working_dir
+    @working_dir = File.realpath(options.working_dir)
+    @excluded_subcharts = options.excluded_subcharts || []
 
     @chart = ChartFile.new(File.join(@working_dir, 'Chart.yaml'))
+
+    # Only check our gitlab sucharts for now
+    @sub_charts = get_subcharts(File.join(@working_dir, 'charts', 'gitlab', 'charts'))
 
     populate_chart_version
 
@@ -104,7 +120,15 @@ class VersionUpdater
 
     unless options.dry_run
       @chart.update_versions(@chart_version, @app_version)
+      @sub_charts.each do |chart|
+        chart.update_versions(@chart_version, @app_version)
+      end
     end
+  end
+
+  def get_subcharts(search_path)
+    subcharts = Dir[File.join(search_path, '*', 'Chart.yaml')].map { |path| ChartFile.new(path) }
+    subcharts.reject {|chart| @excluded_subcharts.include? chart.name }
   end
 
   def populate_chart_version
