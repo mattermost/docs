@@ -44,9 +44,6 @@ spec:
             - cp /etc/gitlab/.s3cfg $HOME/.s3cfg && while sleep 3600; do :; done # alpine sleep has no infinity
           image: {{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}
           {{ template "gitlab.imagePullPolicy" . }}
-            - while sleep 3600; do :; done # alpine sleep has no infinity
-          image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
-          {{ template "gitlab.imagePullPolicy" . }}
           env:
             - name: BACKUP_BUCKET_NAME
               value: {{ .Values.backups.bucketName }}
