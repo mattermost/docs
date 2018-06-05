@@ -109,6 +109,15 @@ Generate a set of random 20 & 64 character alpha-numeric keys for Minio.
 kubectl create secret generic gitlab-minio --from-literal=accesskey=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 20) --from-literal=secretkey=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
+### Postgresql secret
+
+Generate a set of random 20 & 64 character alpha-numeric keys for database password.
+
+```
+kubectl create secret generic postgresql-password --from-literal=psqlpassword=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
+```
+
+
 ## External services
 
 Some charts have further secrets to enable functionality that can not be automatically generated.
