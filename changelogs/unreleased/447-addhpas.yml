@@ -1,5 +1,0 @@
----
-title: Increase minimum repliacs to 2+ via HPAs where relevant
-merge_request: 285
-author: Corey O'Brien
-type: added
