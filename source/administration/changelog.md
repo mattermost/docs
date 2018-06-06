@@ -43,9 +43,10 @@ Release date: 2018-06-16
  
 #### Administration
  - Added Password Requirements and Customer Branding to Team Edition.
+ - Moved Themes per team to Team Edition.
  - Updated email notification subject line and contents for Group Messages to indicate the specific channel where the notification is instead of the team.
  
-#### Enterprise Edition (E20)
+#### Enterprise Edition
  - Added ``LoginIdAttribute`` to allow LDAP users to change their login ID without losing their account.
 
 ### Bug Fixes
