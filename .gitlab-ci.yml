@@ -232,6 +232,13 @@ changelog_manager:
     refs:
       - master
 
+rspec:
+  stage: test
+  script:
+    - gem install bundler
+    - bundle install
+    - bundle exec rspec
+
 # ---------------------------------------------------------------------------
 
 .auto_devops: &auto_devops |

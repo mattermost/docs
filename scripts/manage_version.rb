@@ -106,35 +106,40 @@ class VersionUpdater
   def initialize(options)
     @chart_version = options.chart_version
     @app_version = options.app_version
-    @working_dir = File.realpath(options.working_dir)
+    @options = options
     @excluded_subcharts = options.excluded_subcharts || []
-
-    @chart = ChartFile.new(File.join(@working_dir, 'Chart.yaml'))
-
-    # Only check our gitlab sucharts for now
-    @sub_charts = get_subcharts(File.join(@working_dir, 'charts', 'gitlab', 'charts'))
 
     populate_chart_version
 
     $stdout.puts "# New Versions\n# version: #{@chart_version}\n# appVersion: #{@app_version}"
 
     unless options.dry_run
-      @chart.update_versions(@chart_version, @app_version)
-      @sub_charts.each do |chart|
+      chart.update_versions(@chart_version, @app_version)
+      subcharts.each do |chart|
         chart.update_versions(@chart_version, @app_version)
       end
     end
   end
 
-  def get_subcharts(search_path)
-    subcharts = Dir[File.join(search_path, '*', 'Chart.yaml')].map { |path| ChartFile.new(path) }
-    subcharts.reject { |chart| @excluded_subcharts.include? chart.name }
+  def working_dir
+    @working_dir ||= File.realpath(@options.working_dir)
+  end
+
+  def chart
+    @chart ||= ChartFile.new(File.join(working_dir, 'Chart.yaml'))
+  end
+
+  def subcharts
+    return @subcharts if @subcharts
+
+    charts = Dir[File.join(working_dir, 'charts', 'gitlab', 'charts', '*', 'Chart.yaml')].map { |path| ChartFile.new(path) }
+    @subcharts = charts.reject { |chart| @excluded_subcharts.include? chart.name }
   end
 
   def populate_chart_version
     # If we were not passed the new chart version, use the gitlab version to bump it
     unless @chart_version
-      app_change = @chart.app_version.diff(@app_version)
+      app_change = chart.app_version.diff(@app_version)
 
       # NoOp if app version has not changed
       unless app_change
@@ -145,7 +150,7 @@ class VersionUpdater
       # If the existing app version isn't semver, we are likely branching from master
       # and are branching to prep for release. Bump the chart version based on the type
       # of release we are doing
-      unless @chart.app_version.valid?
+      unless chart.app_version.valid?
         if @app_version.minor.zero? && @app_version.patch.zero?
           app_change = Version::MAJOR
         elsif @app_version.patch.zero?
