@@ -50,7 +50,6 @@ class Version < String
     return MINOR if minor != other.minor
     return PATCH if patch != other.patch
     return RC if rc != other.rc
-    return true
   end
 
   def ee?

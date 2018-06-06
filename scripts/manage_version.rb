@@ -16,7 +16,7 @@ Options = Struct.new(
 class VersionOptionsParser
   class << self
     def parse(argv)
-      options = Options.new()
+      options = Options.new
 
       # defaults
       options.working_dir = Dir.pwd
@@ -78,7 +78,7 @@ class ChartFile
     @filepath = filepath
 
     $stdout.puts "Reading #{@filepath}"
-    @metadata = YAML.load(File.read(@filepath))
+    @metadata = YAML.safe_load(File.read(@filepath))
   end
 
   def name
@@ -89,7 +89,7 @@ class ChartFile
     Version.new(@metadata['version'])
   end
 
-  def appVersion
+  def app_version
     Version.new(@metadata['appVersion'])
   end
 
@@ -128,13 +128,13 @@ class VersionUpdater
 
   def get_subcharts(search_path)
     subcharts = Dir[File.join(search_path, '*', 'Chart.yaml')].map { |path| ChartFile.new(path) }
-    subcharts.reject {|chart| @excluded_subcharts.include? chart.name }
+    subcharts.reject { |chart| @excluded_subcharts.include? chart.name }
   end
 
   def populate_chart_version
     # If we were not passed the new chart version, use the gitlab version to bump it
     unless @chart_version
-      app_change = @chart.appVersion.diff(@app_version)
+      app_change = @chart.app_version.diff(@app_version)
 
       # NoOp if app version has not changed
       unless app_change
@@ -145,7 +145,7 @@ class VersionUpdater
       # If the existing app version isn't semver, we are likely branching from master
       # and are branching to prep for release. Bump the chart version based on the type
       # of release we are doing
-      unless @chart.appVersion.valid?
+      unless @chart.app_version.valid?
         if @app_version.minor.zero? && @app_version.patch.zero?
           app_change = Version::MAJOR
         elsif @app_version.patch.zero?
@@ -157,7 +157,7 @@ class VersionUpdater
 
       case app_change
       when Version::MAJOR
-        @chart_version = Version.new("#{chart.version.major+1}.0.0")
+        @chart_version = Version.new("#{chart.version.major + 1}.0.0")
       when Version::MINOR
         @chart_version = Version.new(chart.version.next_minor)
       when Version::PATCH
