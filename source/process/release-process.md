@@ -234,7 +234,7 @@ The final release is cut. If an urgent and important issue needs to be addressed
  
 If a security fix release is required, run through the following steps:
 
-1. T-7: Code Complete
+1. T-4: Code Complete
     - Once the list of security issues to be fixed is finalized, post this checklist in Release Checklist channel
     - Notify community about upcoming security release through a Twitter announcement and in changelog with links to approved fixes and a date tagged as "TBD"
     - Email GitLab release team about upcoming security release.
@@ -245,9 +245,9 @@ If a security fix release is required, run through the following steps:
         - Start a WIP PR for the security release changelog and commit updates as new issues are fixed on the security release RCs
     - PRs for hotfixes are made to release branch (**Dev**)
     - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day (**Dev**)
-2. T-4 Release Candidate Cut
+2. T-3 Release Candidate Cut
     - Verify with Release Manager before cutting any new dot release RCs (approved fixes should be merged) (**Build:**)
-3. T-3 Release Candidate Testing
+3. T-2 Release Candidate Testing
     - If the dot release takes place during a regular release, update ``ci-linux-mysql-prev`` to dot-release RCs for the previous release and keep ``rctesting.reddogsofwar`` on the latest regular release version (**QA**)
     - Test the new RC to verify fixes merged to the release branch work (**QA**)
     - Post in Release Discussion channel after testing (**QA**)
@@ -276,7 +276,7 @@ Once security fix release is ready to cut:
     
 If a bug fix release is required, run through the following steps:
 
-1. T-7: Code Complete
+1. T-4: Code Complete
     - Once the list of bugs to be fixed is finalized, post this checklist in Release Checklist channel
     - Notify community about upcoming dot release through a Twitter announcement and in changelog with links to approved fixes and a date tagged as "TBD"
     - Open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) mentioning a dot release is coming. [See example](https://gitlab.com/gitlab-org/omnibus-gitlab/issues/3099)
@@ -287,9 +287,9 @@ If a bug fix release is required, run through the following steps:
         - Start a WIP PR for the dot release changelog and commit updates as new issues are fixed on the dot release RCs
     - PRs for hotfixes are made to release branch (**Dev**)
     - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day (**Dev**)
-2. T-4 Release Candidate Cut
+2. T-3 Release Candidate Cut
     - Verify with Release Manager before cutting any new dot release RCs (approved fixes should be merged) (**Build:**)
-3. T-3 Release Candidate Testing
+3. T-2 Release Candidate Testing
     - If the dot release takes place during a regular release, update ``ci-linux-mysql-prev`` to dot-release RCs for the previous release and keep ``rctesting.reddogsofwar`` on the latest regular release version (**QA:**)
     - Test the new RC to verify fixes merged to the release branch work (**QA:**)
     - Post in Release Discussion channel after testing (**QA:**)
