@@ -1,0 +1,5 @@
+---
+title: Resolve No longer possible to disable nginx ingress
+merge_request: 311
+author:
+type: fixed

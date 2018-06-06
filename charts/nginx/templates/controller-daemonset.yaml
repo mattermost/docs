@@ -1,3 +1,4 @@
+{{- if .Values.enabled -}}
 {{- if eq .Values.controller.kind "DaemonSet" }}
 apiVersion: extensions/v1beta1
 kind: DaemonSet
@@ -184,5 +185,6 @@ spec:
 {{- end }}
 {{- if .Values.controller.extraVolumes }}
 {{ toYaml .Values.controller.extraVolumes | indent 6}}
+{{- end }}
 {{- end }}
 {{- end }}

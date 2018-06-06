@@ -1,3 +1,4 @@
+{{- if .Values.enabled -}}
 {{- if .Values.controller.headers }}
 apiVersion: v1
 kind: ConfigMap
@@ -11,4 +12,5 @@ metadata:
   name: {{ template "nginx-ingress.fullname" . }}-custom-headers
 data:
 {{ toYaml .Values.controller.headers | indent 2 }}
+{{- end }}
 {{- end }}

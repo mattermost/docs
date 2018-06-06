@@ -55,7 +55,7 @@ certmanager:
     create: true
 
 nginx-ingress:
-  install: true
+  enabled: true
   tcp:
     22: "enabled"
   tcpExternalConfig: "true"

@@ -1,3 +1,4 @@
+{{- if .Values.enabled -}}
 {{- if .Values.udp }}
 apiVersion: v1
 kind: ConfigMap
@@ -11,4 +12,5 @@ metadata:
   name: {{ template "nginx-ingress.fullname" . }}-udp
 data:
 {{ toYaml .Values.udp | indent 2 }}
+{{- end }}
 {{- end }}

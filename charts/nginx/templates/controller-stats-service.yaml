@@ -1,3 +1,4 @@
+{{- if .Values.enabled -}}
 {{- if .Values.controller.stats.enabled }}
 apiVersion: v1
 kind: Service
@@ -35,4 +36,5 @@ spec:
     component: "{{ .Values.controller.name }}"
     release: {{ .Release.Name }}
   type: "{{ .Values.controller.stats.service.type }}"
+{{- end }}
 {{- end }}
