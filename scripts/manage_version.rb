@@ -4,12 +4,13 @@ require 'optparse'
 require 'yaml'
 
 require_relative 'lib/version'
+require_relative 'lib/version_fetcher'
 
 Options = Struct.new(
   :working_dir,
   :app_version,
   :chart_version,
-  :excluded_subcharts,
+  :include_subcharts,
   :dry_run
 )
 
@@ -20,7 +21,7 @@ class VersionOptionsParser
 
       # defaults
       options.working_dir = Dir.pwd
-      options.excluded_subcharts = ['gitaly', 'gitlab-shell']
+      options.include_subcharts = false
 
       OptionParser.new do |opts|
         opts.banner = "Usage: #{__FILE__} [options] \n\n"
@@ -37,8 +38,8 @@ class VersionOptionsParser
           options.working_dir = value
         end
 
-        opts.on("--excluded-subcharts string,string", Array, "List of subcharts to exclude in the bump") do |value|
-          options.working_dir = value
+        opts.on("-a", "--include-subcharts", "Attempt to update subcharts as well") do |value|
+          options.include_subcharts = value
         end
 
         opts.on('-n', '--dry-run', "Don't actually write anything, just print") do |value|
@@ -107,16 +108,20 @@ class VersionUpdater
     @chart_version = options.chart_version
     @app_version = options.app_version
     @options = options
-    @excluded_subcharts = options.excluded_subcharts || []
 
     populate_chart_version
 
     $stdout.puts "# New Versions\n# version: #{@chart_version}\n# appVersion: #{@app_version}"
 
-    unless options.dry_run
-      chart.update_versions(@chart_version, @app_version)
-      subcharts.each do |chart|
-        chart.update_versions(@chart_version, @app_version)
+    populate_subchart_versions if @options.include_subcharts
+
+    return if options.dry_run
+
+    chart.update_versions(@chart_version, @app_version)
+
+    if @options.include_subcharts
+      @subchart_versions.each do |sub_chart, update_app_version|
+        sub_chart.update_versions(@chart_version, update_app_version)
       end
     end
   end
@@ -130,10 +135,13 @@ class VersionUpdater
   end
 
   def subcharts
-    return @subcharts if @subcharts
+    @subcharts ||= Dir[File.join(working_dir, 'charts', 'gitlab', 'charts', '*', 'Chart.yaml')].map { |path| ChartFile.new(path) }
+  end
 
-    charts = Dir[File.join(working_dir, 'charts', 'gitlab', 'charts', '*', 'Chart.yaml')].map { |path| ChartFile.new(path) }
-    @subcharts = charts.reject { |chart| @excluded_subcharts.include? chart.name }
+  def populate_subchart_versions
+    @subchart_versions = subcharts.map do |sub_chart|
+      [ sub_chart, VersionFetcher.fetch(sub_chart.name, @app_version) ]
+    end
   end
 
   def populate_chart_version
