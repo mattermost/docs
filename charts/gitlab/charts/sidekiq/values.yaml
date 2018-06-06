@@ -20,6 +20,19 @@ redis:
 
 global:
   # imagePullPolicy: IfNotPresent
+  hosts:
+    domain: example.local
+    hostSuffix:
+    https: true
+    gitlab: {}
+      #name: gitlab.example.local
+      #https: false
+    registry: {}
+      #name: registry.example.local
+      #https: false
+    minio: {}
+      #name: minio.example.local
+      #https: false
   psql: {}
     # host: '0.0.0.0'
     # port: '5432'
@@ -41,7 +54,27 @@ gitaly:
   authToken: {}
   #   secret: gitaly-secret
   #   key: token
-
+artifacts:
+  enabled: true
+  proxy_download: true
+  bucket: gitlab-artifacts
+  # connection: {}
+lfs:
+  enabled: true
+  proxy_download: true
+  bucket: git-lfs
+  # connection: {}
+uploads:
+  enabled: true
+  proxy_download: true
+  bucket: gitlab-uploads
+  # connection: {}
+minio:
+  enabled: true
+  credentials:
+    secret: gitlab-minio
+  serviceName: 'minio-svc'
+  port: 9000
 extra: {}
 
 rack_attack:
