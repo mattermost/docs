@@ -235,7 +235,7 @@ changelog_manager:
 rspec:
   stage: test
   script:
-    - gem install bundler
+    - gem install -N bundler
     - bundle install
     - bundle exec rspec
 
