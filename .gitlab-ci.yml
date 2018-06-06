@@ -232,14 +232,6 @@ changelog_manager:
     refs:
       - master
 
-rspec:
-  stage: test
-  script:
-    - apk add --no-cache autoconf cmake make gcc coreutils glib-dev libc-dev libffi-dev ruby-dev openssl-dev
-    - gem install -N bundler
-    - bundle install
-    - bundle exec rspec
-
 # ---------------------------------------------------------------------------
 
 .auto_devops: &auto_devops |
