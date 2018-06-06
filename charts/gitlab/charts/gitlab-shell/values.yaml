@@ -3,9 +3,9 @@
 # Declare variables to be passed into your templates.
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-shell
-  tag: latest
   pullSecrets: []
-  pullPolicy: Always
+  # pullPolicy: IfNotPresent
+  # tag: latest
 service:
   name: gitlab-shell
   type: ClusterIP
@@ -13,6 +13,7 @@ service:
   internalPort: 2222
 
 global:
+  # imagePullPolicy: IfNotPresent
   redis:
     password:
       secret: gitlab-redis

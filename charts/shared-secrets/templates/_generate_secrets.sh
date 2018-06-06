@@ -38,7 +38,7 @@ generate_secret_if_needed gitaly-secret --from-literal=token=$(gen_random 'a-zA-
 generate_secret_if_needed gitlab-minio --from-literal=accesskey=$(gen_random 'a-zA-Z0-9' 64) --from-literal=secretkey=$(gen_random 'a-zA-Z0-9' 64)
 
 # Gitlab runner secret
-generate_secret_if_needed gitlab-runner --from-literal=runner-registration-token=$(gen_random 'a-zA-Z0-9' 64)
+generate_secret_if_needed gitlab-runner --from-literal=runner-registration-token=$(gen_random 'a-zA-Z0-9' 64) --from-literal=runner-token=""
 
 # Registry certificates
 mkdir -p certs

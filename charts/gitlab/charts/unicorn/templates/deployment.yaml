@@ -61,7 +61,7 @@ spec:
             readOnly: false
         - name: dependencies
           image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{ template "gitlab.imagePullPolicy" . }}
           args:
             - /scripts/wait-for-deps
           env:
@@ -83,7 +83,7 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{ template "gitlab.imagePullPolicy" . }}
           ports:
             - containerPort: {{ .Values.service.internalPort }}
               name: unicorn
@@ -129,10 +129,10 @@ spec:
             initialDelaySeconds: 20
             timeoutSeconds: 30
             periodSeconds: 60
-          # readinessProbe:
-          #   httpGet:
-          #     path: /
-          #     port: {{ .Values.service.internalPort }}
+          readinessProbe:
+            exec:
+              command:
+              - /scripts/healthcheck
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:

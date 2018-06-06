@@ -48,6 +48,18 @@ otherwise the hostname will be assembled using `minio` as the prefix, and the `g
 {{- coalesce .Values.global.hosts.minio.name (include "gitlab.assembleHost"  (dict "name" "minio" "context" . )) -}}
 {{- end -}}
 
+{{/*
+Returns the minio url.
+*/}}
+
+{{- define "gitlab.minio.url" -}}
+{{- if or .Values.global.hosts.https .Values.global.hosts.minio.https -}}
+{{-   printf "https://%s" (include "gitlab.minio.hostname" .) -}}
+{{- else -}}
+{{-   printf "http://%s" (include "gitlab.minio.hostname" .) -}}
+{{- end -}}
+{{- end -}}
+
 {{/* ######### Utility templates */}}
 
 {{/*
@@ -84,6 +96,16 @@ imagePullSecrets:
 - name: {{$entry.name}}
 {{-   end }}
 {{- end }}
+{{- end -}}
+
+{{/*
+Global gitlab imagePullPolicy
+*/}}
+
+{{- define "gitlab.imagePullPolicy" -}}
+{{- if or .Values.image.pullPolicy .Values.global.imagePullPolicy -}}
+imagePullPolicy: {{ coalesce .Values.image.pullPolicy .Values.global.imagePullPolicy | quote }}
+{{- end -}}
 {{- end -}}
 
 {{/* ######### cert-manager templates */}}
@@ -177,6 +199,20 @@ Returns the nginx ingress class
 {{- pluck "class" .Values.global.ingress (dict "class" (printf "%s-nginx" .Release.Name)) | first -}}
 {{- end -}}
 
+{{/*
+Overrides the nginx-ingress template to make sure gitlab-shell name matches
+*/}}
+{{- define "nginx-ingress.tcp-configmap" -}}
+{{ .Release.Name}}-nginx-ingress-tcp
+{{- end -}}
+
+{{/*
+Overrides the nginx-ingress template to make sure our ingresses match
+*/}}
+{{- define "nginx-ingress.controller.ingress-class" -}}
+{{ template "gitlab.ingressclass" . }}
+{{- end -}}
+
 {{/* ######### annotations */}}
 
 {{/*
@@ -187,4 +223,11 @@ Handles merging a set of service annotations
 {{- if $allAnnotations -}}
 {{- toYaml $allAnnotations -}}
 {{- end -}}
+{{- end -}}
+
+{{/*
+Returns gitlabUrl needed for gitlab-runner
+*/}}
+{{- define "gitlab-runner.gitlabUrl" -}}
+{{- template "gitlab.gitlab.url" . -}}
 {{- end -}}

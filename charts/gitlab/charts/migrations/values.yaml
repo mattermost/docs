@@ -3,14 +3,15 @@
 # Declare variables to be passed into your templates.
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee
-  pullPolicy: Always
   pullSecrets: []
+  # pullPolicy: IfNotPresent
   # tag: latest
 enabled: true
 # initialRootPassword: password
 redis:
   password: {}
 global:
+  # imagePullPolicy: IfNotPresent
   psql: {}
     # host: '0.0.0.0'
     # port: '5432'

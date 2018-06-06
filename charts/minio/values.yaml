@@ -120,6 +120,7 @@ defaultBuckets:
   - name: gitlab-uploads
   - name: gitlab-artifacts
   - name: gitlab-backups
+  - name: tmp
   ## If enabled, must be a string with length > 0
   # - name: example
   ## Can be one of none|download|upload|public, defaults to `none`
