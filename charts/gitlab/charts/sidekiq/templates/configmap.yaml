@@ -53,11 +53,68 @@ data:
       incoming_email:
         enabled: false
       artifacts:
-        enabled: true
-      lfs:
-        enabled: false
+        enabled: {{ eq .Values.artifacts.enabled true }}
         object_store:
-          enabled: false
+          enabled: true
+          remote_directory: {{ .Values.artifacts.bucket }}
+          direct_upload: true
+          background_upload: false
+          proxy_download: {{ eq .Values.artifacts.proxy_download true }}
+          {{- if .Values.minio.enabled }}
+          connection:
+            provider: AWS
+            region: us-east-1
+            aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
+            aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
+            host: {{ template "gitlab.minio.hostname" . }}
+            endpoint: {{ template "gitlab.minio.endpoint" . }}
+            path_style: true
+          {{- else if .Values.artifacts.connection}}
+          connection:
+{{ toYaml .Values.artifacts.connection | indent 12}}
+          {{- end }}
+      lfs:
+        enabled: {{ eq .Values.lfs.enabled true }}
+        object_store:
+          enabled: true
+          remote_directory: {{ .Values.lfs.bucket }}
+          direct_upload: true
+          background_upload: false
+          proxy_download: {{ eq .Values.lfs.proxy_download true }}
+          {{- if .Values.minio.enabled }}
+          connection:
+            provider: AWS
+            region: us-east-1
+            aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
+            aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
+            host: {{ template "gitlab.minio.hostname" . }}
+            endpoint: {{ template "gitlab.minio.endpoint" . }}
+            path_style: true
+          {{- else if .Values.lfs.connection}}
+          connection:
+{{ toYaml .Values.lfs.connection | indent 12}}
+          {{- end }}
+      uploads:
+        enabled: {{ eq .Values.uploads.enabled true }}
+        object_store:
+          enabled: true
+          remote_directory: {{ .Values.uploads.bucket }}
+          direct_upload: true
+          background_upload: false
+          proxy_download: {{ eq .Values.uploads.proxy_download true }}
+          {{- if .Values.minio.enabled }}
+          connection:
+            provider: AWS
+            region: us-east-1
+            aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
+            aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
+            host: {{ template "gitlab.minio.hostname" . }}
+            endpoint: {{ template "gitlab.minio.endpoint" . }}
+            path_style: true
+          {{- else if .Values.uploads.connection}}
+          connection:
+{{ toYaml .Values.uploads.connection | indent 12}}
+          {{- end }}
       pages:
         enabled: false
       mattermost:
@@ -121,6 +178,10 @@ data:
     cp /init-secrets/gitaly/gitaly_token /sidekiq-secrets/gitaly/gitaly_token
     cp /init-secrets/postgres/psql-password /sidekiq-secrets/postgres/psql-password
     cp /init-secrets/rails-secrets/secrets.yml /sidekiq-secrets/rails-secrets/secrets.yml
+    if [ -e /init-secrets/minio ]; then
+      mkdir -p /sidekiq-secrets/minio
+      cp /init-secrets/minio/* /sidekiq-secrets/minio/
+    fi
     if [ -e /init-secrets/smtp/smtp-password ]; then
       mkdir -p /sidekiq-secrets/smtp
       cp /init-secrets/smtp/smtp-password /sidekiq-secrets/smtp/

@@ -12,6 +12,8 @@
 {{- $nodeSelector := .Values.nodeSelector -}}
 {{- $redisSecret := coalesce .Values.redis.password.secret .Values.global.redis.password.secret -}}
 {{- $redisKey := coalesce .Values.redis.password.key .Values.global.redis.password.key -}}
+{{- $minioEnabled := .Values.minio.enabled -}}
+{{- $minioSecret := .Values.minio.credentials.secret -}}
 {{- $gitalySecret := include "gitlab.gitaly.authToken.secret" . -}}
 {{- $gitalyKey := include "gitlab.gitaly.authToken.key" . -}}
 {{- $railsSecretName := .Values.railsSecrets.secret -}}
@@ -209,6 +211,15 @@ spec:
               items:
                 - key: {{ template "gitlab.psql.password.key" $ }}
                   path: postgres/psql-password
+          {{- if $minioEnabled }}
+          - secret:
+              name: {{ $minioSecret }}
+              items:
+                - key: accesskey
+                  path: minio/accesskey
+                - key: secretkey
+                  path: minio/secretkey
+          {{- end }}
           {{- if and $.Values.global.smtp.enabled $.Values.global.smtp.authentication }}
           - secret:
               name: {{ $.Values.global.smtp.password.secret | required "Missing required secret containing the SMTP password. Make sure to set `global.smtp.password.secret`" }}
