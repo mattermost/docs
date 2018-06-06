@@ -1,0 +1,5 @@
+---
+title: 'Unicorn: add support for object storage of job artifacts'
+merge_request: 255
+author:
+type: added

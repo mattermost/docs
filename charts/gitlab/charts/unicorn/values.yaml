@@ -100,6 +100,11 @@ gitaly:
   authToken: {}
   #   secret: gitaly-secret
   #   key: token
+artifacts:
+  enabled: true
+  proxy_download: true
+  bucket: gitlab-artifacts
+  # connection: {}
 lfs:
   enabled: true
   proxy_download: true

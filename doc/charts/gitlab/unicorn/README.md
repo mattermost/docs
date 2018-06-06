@@ -47,6 +47,10 @@ Table below contains all the possible charts configurations that can be supplied
 | gitaly.serviceName            | Gitaly service name                            | gitaly                                           |
 | gitaly.authToken.secret       | Gitaly secret name                             | gitaly-secret                                    |
 | gitaly.authToken.key          | Key to gitaly token in gitaly secret           | token                                            |
+| artifacts.enabled             | Enable artifacts storage                       | true                                             |
+| artifacts.proxy_download      | Proxy all artifacts downloads through GitLab   | true                                             |
+| artifacts.bucket              | Object storage bucket name                     | nil                                              |
+| artifacts.connection          | See [GitLab documentation][uplcon] for details | {}                                               |
 | lfs.enabled                   | Enable Git LFS storage                         | true                                             |
 | lfs.proxy_download            | Proxy all LFS downloads through GitLab         | true                                             |
 | lfs.bucket                    | Object storage bucket name                     | nil                                              |
@@ -229,6 +233,42 @@ The port on which to connect to the Gitaly server. Defaults to `8075`.
 The `authToken` attribute for Gitaly has to sub keys:
 - `secret` defines the name of the kubernetes `Secret` to pull from
 - `key` defines the name of the key in the above secret that contains the authToken.
+
+### Artifacts
+
+```YAML
+artifacts:
+  enabled: true
+  proxy_download: true
+  bucket: gitlab-artifacts
+  connection: {}
+```
+
+#### enabled
+
+Enable the use of CI artifact storage, via object storage.
+
+Defaults to `true`
+
+#### proxy_download
+
+Enable proxy of all artifacts downloads via GitLab, in place of direct downloads from the `bucket`.
+
+Defaults to `true`
+
+#### bucket
+
+Name of the bucket to use from object storage provider.
+
+Defaults to `gitlab-artifacts`.
+
+#### connection
+
+The `connection` property is a YAML block, in accordance with the documentation
+present at [GitLab Job Artifacts Administration][artifactscon] documentation. This matches to
+[Fog](https://github.com/fog), and is different between provider modules.
+
+Defaults to `{}` and will be ignored if `minio.enabled` is `true`.
 
 ### LFS
 
@@ -518,6 +558,7 @@ The `authToken` attribute for Gitaly has to sub keys:
 [registry]: https://hub.docker.com/_/registry/
 [kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/
 [globals]: ../../globals.md
+[artifactscon]: https://docs.gitlab.com/ee/administration/job_artifacts.html#object-storage-settings
 [lfscon]: https://docs.gitlab.com/ee/workflow/lfs/lfs_administration.html
 [uplcon]: https://docs.gitlab.com/ee/administration/uploads.html#using-object-storage
 [rackattack]: https://docs.gitlab.com/ee/security/rack_attack.html
