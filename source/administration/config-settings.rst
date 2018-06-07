@@ -1057,7 +1057,7 @@ This filter uses the permissions of the **Bind Username** account to execute the
 
 First Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(Optional) The attribute in the AD/LDAP server that will be used to populate the first name of users in Mattermost. When set, users will not be able to edit their First Name, since it is synchronized with the LDAP server. When left blank, users can set their own First Name in Account Settings.
+(Optional) The attribute in the AD/LDAP server used to populate the first name of users in Mattermost. When set, users cannot edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their first name in Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FirstNameAttribute": ""``  with string input.                                                                           |
@@ -1065,7 +1065,7 @@ First Name Attribute
 
 Last Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(Optional) The attribute in the AD/LDAP server that will be used to populate the last name of users in Mattermost. When set, users will not be able to edit their Last Name, since it is synchronized with the LDAP server. When blank, users can set their own Last Name in Account Settings.
+(Optional) The attribute in the AD/LDAP server used to populate the last name of users in Mattermost. When set, users cannot edit their last name, since it is synchronized with the LDAP server. When left blank, users can set their last name in Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LastNameAttribute": ""`` with string input.                                                                             |
@@ -1073,7 +1073,7 @@ Last Name Attribute
 
 Nickname Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(Optional) The attribute in the AD/LDAP server that will be used to populate the nickname of users in Mattermost. When set, users will not be able to edit their Nickname, since it is synchronized with the LDAP server. When blank, users can set their own Nickname in Account Settings.
+(Optional) The attribute in the AD/LDAP server used to populate the nickname of users in Mattermost. When set, users cannot edit their nickname, since it is synchronized with the LDAP server. When left blank, users can set their nickname in Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"NicknameAttribute": ""`` with string input.                                                                             |
@@ -1081,16 +1081,15 @@ Nickname Attribute
 
 Position Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(Optional) The attribute in the AD/LDAP server that will be used to populate the position field in Mattermost (typically used to describe a person's job title or role at the company). When set, users will not be able to edit their position, since it is synchronized with the LDAP server. When blank, users can set their own Position in Account Settings.
+(Optional) The attribute in the AD/LDAP server used to populate the position field in Mattermost. When set, users cannot edit their position, since it is synchronized with the LDAP server. When left blank, users can set their position in Account Settings.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PositionAttribute": ""`` with string input.                                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
 Email Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The attribute in the AD/LDAP server that will be used to populate the email addresses of users in Mattermost.
+The attribute in the AD/LDAP server used to populate the email address field in Mattermost.
 
 Email notifications will be sent to this email address, and this email address may be viewable by other Mattermost users depending on privacy settings choosen by the System Admin.
 
@@ -1100,9 +1099,11 @@ Email notifications will be sent to this email address, and this email address m
 
 Username Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The attribute in the AD/LDAP server that will be used to populate the username field in Mattermost user interface. This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned.
+The attribute in the AD/LDAP server used to populate the username field in Mattermost. This may be the same as the Login ID Attribute.
 
-The **Username Attribute** may be set to the same value used to sign-in to the system, called an **ID Attribute**, or it can be mapped to a different value.
+This attribute will be used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to **john.smith** a user typing ``@john`` will see ``@john.smith`` in their auto-complete options and posting a message with ``@john.smith`` will send a notification to that user that they've been mentioned.
+
+The **Username Attribute** may be set to the same value used to sign-in to the system, called a **Login ID Attribute**, or it can be mapped to a different value.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UsernameAttribute": ""`` with string input.                                                                             |
@@ -1110,14 +1111,24 @@ The **Username Attribute** may be set to the same value used to sign-in to the s
 
 ID Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The attribute in the AD/LDAP server that will be used as a unique identifier in Mattermost. It serves two purposes:
+The attribute in the AD/LDAP server used as a unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change.
 
-This value is used to sign in to Mattermost in the **AD/LDAP Username** field on the sign in page. This attribute can be the same as the **Username Attribute** field above, which is what is used to identify users in the Mattermost interface, or it can be a different value, for example a User ID number. If your team typically uses ``DOMAIN\username`` to sign in to other services with AD/LDAP, you may enter a field name that maps to ``DOMAIN\username`` to maintain consistency between sites.
+If a user's ID Attribute changes, it will create a new Mattermost account unassociated with their old one.
 
-**This is the attribute that will be used to create unique Mattermost accounts.** This attribute should be an AD/LDAP attribute with a value that does not change, such as ``username`` or ``uid``. If a user’s **ID Attribute** changes and the user attempts to login the Mattermost server will attempt to create a new Mattermost user account based on the new **ID Attribute** and fail since new Mattermost users accounts can't be created with duplicate email addresses or Mattermost usernames (as defined in the **Username Attribute**).
+If you need to change this field after users have already logged in, use the `mattermost ldap idmigrate <https://about.mattermost.com/default-platform-ldap-idmigrate>`_ CLI tool.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input.                                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Login ID Attribute
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The attribute in the AD/LDAP server used to log in to Mattermost. Normally this attribute is the same as the "Username Attribute" field above.
+
+If your team typically uses domain\username to log in to other services with AD/LDAP, you may enter domain\username in this field to maintain consistency between sites.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LoginIdAttribute": ""`` with string input.                                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Login Field Name
@@ -3373,6 +3384,31 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+Cluster Settings
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Maximum Idle Connections
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Maximum number of idle connections held open to the cluster.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxIdleConns": "100"`` with whole number input.                                                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Maximum Idle Connections per Host
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Maximum number of idle connections held open to the cluster per hostname.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MaxIdleConnsPerHost": "120"`` with whole number input.                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Idle Connection Timeout (in Milliseconds)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The number of milliseconds to wait for a response from the cluster after opening a connection.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IdleConnTimeoutMilliseconds": 90000`` with whole number input.                                                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
