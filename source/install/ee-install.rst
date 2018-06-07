@@ -53,7 +53,7 @@ GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Matte
    .. code-block:: text
      mattermost['enable'] = false
 
- - Run `sudo gitlab-ctl reconfigure` to apply the updated setting.
+ - Run `sudo gitlab-ctl reconfigure` to apply the updated setting
 
 2. Install Mattermost using `one of the guides above <https://docs.mattermost.com/install/ee-install.html#installing-enterprise-edition>`_.
 3. Migrate the database to your new Enterprise Edition instance at GitLab's Mattermost database.
