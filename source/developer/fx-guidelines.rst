@@ -366,6 +366,7 @@ Notice messages should not:
     ..  image:: ../images/systemnotice2.png
         :alt: Bad System Notice
 
+   
     Correct:
         This is an example of a good system notice:
 
