@@ -2,10 +2,10 @@
 
 Some of the applications run within the GitLab chart require persistent storage to maintain state. This includes:
 
- - postgres (persists the gitlab database data)
- - redis (persists gitlab job data)
- - gitaly (persists the git repositories)
- - minio (persists the object storage data)
+ - [gitaly](../charts/gitlab/gitaly) (persists the git repositories)
+ - [postgres](https://github.com/kubernetes/charts/tree/master/stable/postgresql) (persists the gitlab database data)
+ - [redis](../charts/redis) (persists gitlab job data)
+ - [minio](../charts/minio) (persists the object storage data)
 
 By default these applications will create a [Persistent Volume Claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) for the storage they need, and use the cluster's [dynamic volume provisioning](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic), and the default Storage Class, to acquire access to a [Persistent Volume][pv].
 
@@ -13,9 +13,9 @@ For a production environment, you should review the settings of your cluster's d
 
 ## Using a custom Storage Class
 
-For a production deploy of GitLab, we recommend you use [Persistent Volumes][pv] that have a reclaimPolicy set to `Retain` rather than `Delete`.  The default [Storage Class][] on GKE, named `standard`, has a reclaimPolicy of `Delete`. Meaning that uninstalling GitLab, or deleting a PVC, will result in the persistent volume being completely deleted by an automated task that goes through and deletes the volume and disk from GCE.
+We recommend creating your own [Storage Class][] for use in these charts, and updating your config to use it. 
 
-We recommend creating your own [Storage Class][] for use in these charts, and updating your config to use it.
+For a production deploy of GitLab, we recommend you use [Persistent Volumes][pv] that have a reclaimPolicy set to `Retain` rather than `Delete`.  On some platforms like GKE, the default [Storage Class][] has a reclaimPolicy of `Delete`. Meaning that uninstalling GitLab, or deleting a PVC, will result in the persistent volume being completely deleted by an automated task that goes through and deletes the volume and disk from GCE.
 
 For example, create a new [Storage Class][] object in your GKE cluster:
 
