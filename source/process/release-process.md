@@ -246,7 +246,7 @@ If a security fix release is required, run through the following steps:
     - PRs for hotfixes are made to release branch (**Dev**)
     - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day (**Dev**)
 2. T-3 Release Candidate Cut
-    - Verify with Release Manager before cutting any new dot release RCs (approved fixes should be merged) (**Build:**)
+    - Verify with Release Manager before cutting any new dot release RCs (approved fixes should be merged) (**Build**)
 3. T-2 Release Candidate Testing
     - If the dot release takes place during a regular release, update ``ci-linux-mysql-prev`` to dot-release RCs for the previous release and keep ``rctesting.reddogsofwar`` on the latest regular release version (**QA**)
     - Test the new RC to verify fixes merged to the release branch work (**QA**)
@@ -288,11 +288,11 @@ If a bug fix release is required, run through the following steps:
     - PRs for hotfixes are made to release branch (**Dev**)
     - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day (**Dev**)
 2. T-3 Release Candidate Cut
-    - Verify with Release Manager before cutting any new dot release RCs (approved fixes should be merged) (**Build:**)
+    - Verify with Release Manager before cutting any new dot release RCs (approved fixes should be merged) (**Build**)
 3. T-2 Release Candidate Testing
-    - If the dot release takes place during a regular release, update ``ci-linux-mysql-prev`` to dot-release RCs for the previous release and keep ``rctesting.reddogsofwar`` on the latest regular release version (**QA:**)
-    - Test the new RC to verify fixes merged to the release branch work (**QA:**)
-    - Post in Release Discussion channel after testing (**QA:**)
+    - If the dot release takes place during a regular release, update ``ci-linux-mysql-prev`` to dot-release RCs for the previous release and keep ``rctesting.reddogsofwar`` on the latest regular release version (**QA**)
+    - Test the new RC to verify fixes merged to the release branch work (**QA**)
+    - Post in Release Discussion channel after testing (**QA**)
 
 Once bug fix release is ready to cut:
 
