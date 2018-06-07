@@ -29,3 +29,7 @@ Once the synchronization with AD/LDAP is enabled, user attributes are synchroniz
     
     If a user is deactivated from SAML, their session won't expire until they're deactivated from AD/LDAP. However, they won't be able to log back in to Mattermost.
  
+   .. note::
+    SAML synchronization with AD/LDAP is designed to pull user attributes such as first name and last name from your AD/LDAP, not to control authentication.
+    
+    In particular, the user filter cannot be used to control who can log in to Mattermost, this should be controlled by your SAML service provider's group permissions.
