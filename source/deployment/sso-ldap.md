@@ -125,11 +125,11 @@ If the issue persists, try performing a sync with the **User Filter** field blan
 
 Make sure that you also have at least 1 LDAP user in Mattermost or the sync will not complete.
 
-#### What is the difference betweeen the Username Attribute, ID Attribute and Login ID Attribute?
+#### What is the difference between the Username Attribute, ID Attribute and Login ID Attribute?
 
 There are three AD/LDAP attributes that apear to be similar but serve a different purpose:
 
-1. **Username Attribute**: Used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to `john.smith` a user typing `@john` will see `@john.smith` in their auto-complete options and posting a message with `@john.smith` will send a notification to that user that they’ve been mentioned.
+1. **Username Attribute**: Used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to `john.smith`, a user typing `@john` will see `@john.smith` in their auto-complete options and posting a message with `@john.smith` will send a notification to that user that they’ve been mentioned.
 2. **ID Attribute**: Used as the unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change, such as `ObjectGUID`. If a user's ID Attribute changes, it will create a new Mattermost account unassociated with their old one. If you need to change this field after users have already logged in, use the [platform ldap idmigrate CLI tool](https://docs.mattermost.com/administration/command-line-tools.html#platform-ldap-idmigrate).
 3. **Login ID Attribute**: The attribute in the AD/LDAP server used to log in to Mattermost. Normally this attribute is the same as the "Username Attribute" field above, or another field that users can easily remember.
 
