@@ -1,28 +1,33 @@
 # Helm
 
-This document is intended to provide an overview of working with [Helm][helm] for [Kubernetes][k8s-io], and is targetted at using Kubernetes in GKE.
+This document is intended to provide an overview of working with [Helm][helm] for [Kubernetes][k8s-io].
 
-# Helm is not stand-alone
+## Helm is not stand-alone
 
 To make use of Helm, you must have a [Kubernetes][k8s-io] cluster. Follow the [dependencies documentation](../installation/dependencies.md)
 to ensure you can access your cluster using `kubectl`.
 
 Helm consists of two parts, `helm` client and `tiller` server inside Kubernetes.
 
-* If you are not able to run tiller in your cluster for some reason, see the
-[local tiller](#local-tiller) section.
+> **Note**: If you are not able to run tiller in your cluster, for example on OpenShift, it is possible to use [tiller locally](#local-tiller) and avoid deploying it into the cluster. This should only be used when Tiller cannot be normally deployed.
 
 # Getting Helm
+
+> **Note**: If you are installing on Amazon EKS, you must use Helm version 2.9.0 or higher.
 
 You can get Helm from the project's [releases page](https://github.com/kubernetes/helm/releases), or follow other options under the official documentation of [Installing Helm](https://docs.helm.sh/using_helm/#installing-helm).
 
 # Initialize Helm and Tiller
 
+Tiller is deployed into the cluster and interacts with the Kubernetes API to deploy your applications. If role based access control (RBAC) is enabled, Tiller will need to be [granted permissions](#preparing-for-helm-with-rbac) to allow it to talk to the Kubernetes API. 
+
+If RBAC is not enabled, skip to [initalizing Helm](#initialize-helm).
+
+If you are not sure whether RBAC is enabled in your cluster, or to learn more, read through our [RBAC documentation](../installation/rbac.md).
+
 ## Preparing for Helm with RBAC
 
 > **Note**: Ensure you have kubectl installed and it is up to date. Older versions do not have support for RBAC and will generate errors.
-
-Read [RBAC document](../installation/rbac.md) and if `RBAC` is not enabled in your cluster you can skip this section and proceed.
 
 Helm's Tiller will need to be granted permissions to perform operations. These instructions grant cluster wide permissions, however for more advanced deployments [permissions can be restricted to a single namespace](https://docs.helm.sh/using_helm/#example-deploy-tiller-in-a-namespace-restricted-to-deploying-resources-only-in-that-namespace). To grant access to the cluster, we will create a new `tiller` service account and bind it to the `cluster-admin` role.
 
@@ -39,6 +44,7 @@ Next we need to connect to the cluster and upload the RBAC config.
 You can use:
 
 * [GKE cluster](#connect-to-gke-cluster)
+* [EKS cluster](#connect-to-eks-cluster)
 * [Local minikube cluster](#connect-to-local-minikube-cluster)
 
 #### Connect to GKE cluster
@@ -56,6 +62,12 @@ Use the command below, filling in your cluster's informtion:
 gcloud container clusters get-credentials <cluster-name> --zone <zone> --project <project-id>
 ```
 
+#### Connect to EKS cluster
+
+For the most up to date instructions, follow the Amazon EKS documentation on [connecting to a cluster](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html#eks-configure-kubectl).
+
+> Note: **UPDATE THIS LINK**
+
 #### Connect to local minikube cluster
 
 If you are doing local development, you can use `minikube` as your
@@ -63,6 +75,9 @@ local cluster. If `kubectl cluster-info` is not showing `minikube` as the curren
 cluster, use `kubectl config set-cluster minikube` to set the active cluster.
 
 ### Upload the RBAC config
+
+
+#### Upload the RBAC config as an admin user (GKE)
 
 For GKE, you need to grab the admin credentials:
 
@@ -72,11 +87,15 @@ gcloud container clusters describe <cluster-name> --zone <zone> --project <proje
 
 This command will output the admin password. We need the password to authenticate with `kubectl` and create the role.
 
-#### Upload the RBAC config as an admin user
-
 ```
 kubectl --username=admin --password=xxxxxxxxxxxxxx create -f rbac-config.yaml
 ```
+
+#### Upload the RBAC config
+
+For other clusters like Amazon EKS, you can direclty upload the RBAC configuration. 
+
+kubectl create -f rbac-config.yaml
 
 ## Initialize Helm
 
@@ -92,6 +111,12 @@ previously had Helm/Tiller installed, run the following to ensure that the deplo
 ```
 helm init --upgrade --service-account tiller
 ```
+
+### Patching Helm Tiller for EKS
+
+Helm Tiller requires a flag to be enabled to work properly on EKS:
+
+`kubectl -n kube-system patch deployment tiller-deploy -p '{"spec": {"template": {"spec": {"automountServiceAccountToken": true}}}}'`
 
 # Additional Information
 

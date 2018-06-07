@@ -185,7 +185,6 @@ If set, the chart will use the existing named PersistentVolume. Use this when yo
 
 Sets the storageClassName on the Volume Claim for dynamic provisioning. When unset or null, the default provisioner will be used.
 If set to a hyphen, dynamic provisioning is disabled. Defaults to unset.
-f defined, storageClassName: <storageClass>
 
 #### accessMode
 
