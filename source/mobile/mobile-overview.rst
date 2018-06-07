@@ -11,8 +11,8 @@ For quick and easy deployment, you can download the Mattermost mobile apps direc
 This option is recommended for:
 
 1. Testing out the mobile applications
-2. Team Edition servers using push notifications from TPNS
-3. Enterprise Edition servers who do not need app customization
+2. Team Edition servers using no push notifications, or push notifications from Mattermost's :ref:`TPNS <tpns>` (Test Push Notification Service)
+3. Enterprise Edition servers using push notifications from Mattermost's :doc:`HPNS <mobile-hpns>` (Hosted Push Notification Service)
 
 Build the apps yourself
 ------------------------
@@ -22,7 +22,7 @@ To customize the mobile apps, you can fork the open source repository and :doc:`
 This option is recommended for:
 
 1. Organizations that want to customize the mobile apps
-2. Team Edition servers that need encrypted push notifications
+2. Team Edition and Enterprise Edition servers that prefer to host their own push proxy server instead of using one of Mattermost's hosted versions
 
 Use an EMM provider
 --------------------
