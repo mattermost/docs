@@ -71,6 +71,8 @@ To add yourself to the `Mattermost page on LinkedIn <https://www.linkedin.com/co
 Mobile Applications
 -------------------
 
+.. _tpns:
+
 Are push notifications free?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
