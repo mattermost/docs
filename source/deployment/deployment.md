@@ -49,21 +49,6 @@ WSS is a secure, encrypted connection and is highly recommended. An unencrypted 
 
 ## Network Access and Multi-Factor Authentication 
 
-While Mattermost is focused on private cloud deployment, there are a range of options for configuring network access for Team Edition (TE) and Enterprise Edition (EE). 
-
-- In general, Mattermost recommends access via a Virtual Private Network client using at least a secondary authentication option, such as [OpenVPN](https://openvpn.net/), in addition to Mattermost authentication. 
-- For deployments accessible from the open internet, it is highly recommended to have dedicated staff managing system security and maintaining security updates in addition to enabling MFA features in Mattermost Enterprise Edition. For non-enterprise deployments, VPN is recommended. 
-
-While there are a multitude of different deployment configurations, the following outlines popular configurations: 
-
-- **1. Private Network only with MFA (EE)** - Access to Mattermost only available on private network. Multi-factor authentication includes physically securing access to computing devices within the building and using multi-factor authentication to verify identity. Mobile web view used in place of Native Mobile Applications. Used in very high security, on-premises deployments. 
-- **2. Private Network or VPN with MFA (EE)** - Private network deployment in 1) plus the option to access Mattermost using a Virtual Private Network ("VPN") client supporting a secondary authentication method plus Mattermost's own authentication.
-- **3. Private Network or VPN with MFA plus private Mobile Apps (EE)** - Deployment in 2) with privately-compiled mobile solution including both mobile applications and mobile push notification services with organization-controlled keys or certificates (versus using public Mobile Apps, which use keys and certificates controlled by Mattermost, Inc.). 
-- **4. Private Network or VPN with MFA plus private Mobile Apps with EMM (EE)** - Deployment in 3) with the addition of an enterprise mobility management solution such as Mobile Iron, Blackberry Dynamics or AirWatch for access to mobile apps in place of VPN clients. 
-- **5. Private Network or VPN with MFA plus public Mobile Apps (EE)** - Deployment in 4) plus use of publicly available mobile apps in the iOS App Store or Google Play via single-sign-on providers, or user credentials with the addition of Google Authenticator. Recommended only for enterprises which can provide appropriate network security and monitoring for systems exposed to open internet. For non-enterprise deployments, VPN with MFA is recommended (see above).
-- **6. No VPN with MFA (EE)** - Deployment in 5) with web, desktop and mobile experiences available outside private cloud with MFA enabled via Mattermost Enterprise Edition. Recommended only for enterprises which can provide appropriate network security and monitoring for systems exposed to open internet. For non-enterprise deployments, VPN with MFA is recommended (see above).
-- **7. No VPN, no MFA (TE & EE)** - Recommended only for non-confidential, unimportant conversations where impact of a compromised system is not essential. 
-
 ### Behind a VPN
 
 Mattermost is intended to be installed within a private network which can offer multiple factors of authentication, including secure access to computing devices and physical locations. 
@@ -75,7 +60,9 @@ If outside access is required, a virtual private network client (VPN), such as [
 If Mattermost is accessible from the open internet, the following is recommended:
 
 1. An IT admin should be assigned to set up appropriate network security, subscribe to [the Mattermost security bulletin](https://about.mattermost.com/security-bulletin/) and [apply new security updates](https://docs.mattermost.com/administration/upgrade.html). 
-2. The organization upgrades to [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/) to enable SAML single sign-on or enable MFA using Google Authenticator. 
+2. The organization upgrades to [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/) to enable SAML single sign-on or enable MFA using Google Authenticator. For non-enterprise deployments, VPN is recommended. 
+
+If Mattermost is accessible from the open internet with no VPN or MFA set up, we recommended using it only for non-confidential, unimportant conversations where impact of a compromised system is not essential. 
 
 Note: Not-for-profit and academic institutions are eligible for special [not-for-profit](https://about.mattermost.com/mattermost-mondays/) and [academic pricing](https://about.mattermost.com/modern-learning/) for Mattermost Enterprise Edition.
 
@@ -192,4 +179,8 @@ If Mattermost is available on the internet, we recommend Mattermost Enterprise E
 
 The [Mattermost Push Notification Service](http://docs.mattermost.com/deployment/deployment.html#push-notification-service) (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for iOS App Store or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall.
 
-Certificate-based authentication for mobile devices is planned for Mattermost E20, [contact the Enterprise Sales Team for more information](https://about.mattermost.com/contact/).
+For support for certificate-based authentication for mobile devices, [contact the Enterprise Sales Team for more information](https://about.mattermost.com/contact/).
+
+### Mobile devices with an EMM provider
+
+Mattermost mobile applications can also be deployed via [EMM providers who support AppConfig](https://docs.mattermost.com/mobile/mobile-appconfig.html) such as Blackberry UEM, Mobileiron, and Airwatch. EMM solutions typically offer "App Tunnel" or per-app VPN capabilities that can be used to connect to mobile apps behind a VPN. 
