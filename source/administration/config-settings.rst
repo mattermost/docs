@@ -3392,6 +3392,7 @@ Cluster Settings
 Maximum Idle Connections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Maximum number of idle connections held open to the cluster.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxIdleConns": "100"`` with whole number input.                                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3399,6 +3400,7 @@ Maximum number of idle connections held open to the cluster.
 Maximum Idle Connections per Host
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Maximum number of idle connections held open to the cluster per hostname.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxIdleConnsPerHost": "120"`` with whole number input.                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3406,6 +3408,7 @@ Maximum number of idle connections held open to the cluster per hostname.
 Idle Connection Timeout (in Milliseconds)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The number of milliseconds to wait for a response from the cluster after opening a connection.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdleConnTimeoutMilliseconds": 90000`` with whole number input.                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
