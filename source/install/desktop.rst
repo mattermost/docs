@@ -136,13 +136,13 @@ For additional troubleshooting tips, see the `troubleshooting guide <https://www
 Reporting Issues
 --------------------------------------------------
 
-When reporting bugs about the Mattermost Desktop app it's helpful to include the contents of the Developer Tools Console along with `the information on this page </process/support.html#general-questions-for-any-issues>`_. To access it follow these instructions:
+When reporting bugs found in the Mattermost Desktop app, it is helpful to include the contents of the Developer Tools Console along with `the information on this page <https://docs.mattermost.com/process/support.html#general-questions-for-any-issues>`_. To access the Developer Tools Console, follow these instructions:
 
-  1. In the menu bar, select ``View`` > ``Toggle Developer Tools``
-  2. Then select the ``Console`` tab
-  3. Right-Click the log window and select ``"Save As"``
-  4. Save the file and then send it along with your issue
-  5. Select ``View`` > ``Toggle Developer Tools`` to disable the Developer Tools
+  1. In the menu bar, go to ``View`` > ``Toggle Developer Tools``.
+  2. Select the ``Console`` tab.
+  3. Right-click the log window and select ``Save As``.
+  4. Save the file and then send it along with a description of your issue.
+  5. Go to ``View`` > ``Toggle Developer Tools`` to disable the Developer Tools.
 
 Windows
 ~~~~~~~
@@ -158,4 +158,4 @@ macOS
 
   <iframe width="560" height="315" src="https://www.youtube.com/embed/avKDRodDS3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-To submit an improvement or correction, click  **Edit** at the top of this page.
+To submit an improvement or correction to this documentation, click  **Edit** at the top of this page.
