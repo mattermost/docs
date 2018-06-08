@@ -49,9 +49,6 @@ omniauth:
   # - name: google_oauth2
   #   secretName: gitlab-google-oauth2
   #   args: { access_type: 'offline', approval_prompt: '' }
-railsSecrets:
-  secret: rails-secrets
-  key: secrets.yml
 global:
   # imagePullPolicy: IfNotPresent
   ingress:
@@ -82,17 +79,11 @@ global:
     #   key: psql-password
   redis:
     # host: '0.0.0.0'
-    password:
-      secret: gitlab-redis
-      key: redis-password
+    password: {}
   gitaly:
     authToken: {}
 redis:
   password: {}
-shell:
-  authToken:
-    secret: gitlab-shell-secret
-    key: secret
 gitaly:
   # host: '0.0.0.0'
   # port: 8075
@@ -117,8 +108,6 @@ uploads:
   # connection: {}
 minio:
   enabled: true
-  credentials:
-    secret: gitlab-minio
   serviceName: 'minio-svc'
   port: 9000
 registry:
@@ -129,9 +118,6 @@ registry:
     serviceName: registry
     port: 5000
   tokenIssuer: gitlab-issuer
-  certificate:
-    secret: gitlab-registry
-    key: registry-auth.key
 extra: {}
   # google_analytics_id: '_your_tracking_id'
   # piwik_url: '_your_piwik_url'

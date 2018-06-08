@@ -30,17 +30,12 @@ The `gitlab-shell` sub-chart provides a SSH server configured for Git SSH access
 | service.externalPort  | Shell exposed port                    | 22                                             |
 | service.internalPort  | Shell internal port                   | 22                                             |
 | enabled               | Shell enable flag                     | true                                           |
-| hostKeys.secret       | Shell SSH Host Keys Secret            | gitlab-shell-host-keys                         |
-| authToken.secret      | Shell auth secret                     | gitlab-shell-secret                            |
-| authToken.key         | Shell auth secret key                 | secret                                         |
 | unicorn.serviceName   | Unicorn service name                  | unicorn                                        |
 | redis.serviceName     | Redis service name                    | redis                                          |
-| redis.password.secret | Redis secret                          | gitlab-redis                                   |
-| redis.password.key    | Key to redis password in redis secret | redis-password                                 |
 
 ## Chart configuration examples
 ### image.pullSecrets
-`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod.
 
 Additional details about private registries and their authentication methods
 can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
@@ -51,7 +46,7 @@ image:
   repository: my.shell.repository
   tag: latest
   pullPolicy: Always
-  pullSecrets: 
+  pullSecrets:
   - name: my-secret-name
   - name: my-secondary-secret-name
 ```

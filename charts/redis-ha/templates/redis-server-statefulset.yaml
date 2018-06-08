@@ -125,9 +125,9 @@ spec:
                 - key: configure
                   path: configure
           - secret:
-              name: {{ .Values.password.secret }}
+              name: {{ template "gitlab.redis.password.secret" . }}
               items:
-                - key: {{ .Values.password.key }}
+                - key: {{ template "gitlab.redis.password.key" . }}
                   path: password
   volumeClaimTemplates:
     - metadata:

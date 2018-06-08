@@ -56,9 +56,6 @@ enabled: true
 timeout: 60
 tcpKeepalive: 300
 loglevel: "notice"
-password:
-  secret: gitlab-redis
-  key: redis-password
 
 rbac:
   # Specifies whether RBAC resources should be created

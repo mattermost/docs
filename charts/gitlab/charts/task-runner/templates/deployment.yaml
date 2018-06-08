@@ -77,14 +77,14 @@ spec:
           defaultMode: 0400
           sources:
           - secret:
-              name: {{ .Values.railsSecrets.secret }}
+              name: {{ template "gitlab.rails-secrets.secret" . }}
               items:
-                - key: {{ .Values.railsSecrets.key | quote }}
+                - key: secrets.yml
                   path: rails-secrets/secrets.yml
           - secret:
-              name: {{ .Values.shell.authToken.secret }}
+              name: {{ template "gitlab.gitlab-shell.authToken.secret" . }}
               items:
-                - key: {{ default "secret" .Values.shell.authToken.key }}
+                - key: {{ template "gitlab.gitlab-shell.authToken.key" . }}
                   path: shell/.gitlab_shell_secret
           - secret:
               name: {{ template "gitlab.gitaly.authToken.secret" . }}
@@ -92,9 +92,9 @@ spec:
                 - key: {{ template "gitlab.gitaly.authToken.key" . }}
                   path: gitaly/gitaly_token
           - secret:
-              name: {{ coalesce .Values.redis.password.secret .Values.global.redis.password.secret }}
+              name: {{ template "gitlab.redis.password.secret" . }}
               items:
-                - key: {{ coalesce .Values.redis.password.key .Values.global.redis.password.key }}
+                - key: {{ template "gitlab.redis.password.key" . }}
                   path: redis/password
           - secret:
               name: {{ template "gitlab.psql.password.secret" . }}
@@ -102,13 +102,13 @@ spec:
                 - key: {{ template "gitlab.psql.password.key" . }}
                   path: postgres/psql-password
           - secret:
-              name: {{ .Values.registry.certificate.secret }}
+              name: {{ template "gitlab.registry.certificate.secret" . }}
               items:
-                - key: {{ .Values.registry.certificate.key }}
+                - key: registry-auth.key
                   path: registry/gitlab-registry.key
           {{- if .Values.minio.enabled }}
           - secret:
-              name: {{ .Values.minio.credentials.secret }}
+              name: {{ template "gitlab.minio.credentials.secret" . }}
               items:
                 - key: accesskey
                   path: minio/accesskey

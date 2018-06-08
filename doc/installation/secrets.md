@@ -55,9 +55,7 @@ Create a secret containing these certificates.
 kubectl create secret generic gitlab-registry --from-file=registry-auth.key=certs/registry-example-local.key --from-file=registry-auth.crt=certs/registry-example-local.crt
 ```
 
-In more isolated clusters, these certificates can be in separate secrets, as long
-as the configuration information as to which secret to use is passed to the appropriate
-chart.
+Include this secret using `--set global.registry.certificate.secret=gitlab-registry`
 
 ### SSH Host Keys
 
@@ -77,6 +75,8 @@ Create the secret containing these certificates.
 kubectl create secret generic gitlab-shell-host-keys --from-file hostKeys
 ```
 
+Include this secret using `--set global.shell.hostKeys.secret=gitlab-shell-host-keys`
+
 ### Redis password
 
 Generate a random 64 character alpha-numeric password for Redis.
@@ -93,6 +93,8 @@ Generate a random 64 character alpha-numeric secret for GitLab Shell.
 kubectl create secret generic gitlab-shell-secret --from-literal=secret=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
+Include this secret using `--set global.shell.authToken.secret=gitlab-shell-secret`
+
 ### Gitaly secret
 
 Generate a random 64 character alpha-numeric token for Gitaly.
@@ -101,6 +103,8 @@ Generate a random 64 character alpha-numeric token for Gitaly.
 kubectl create secret generic gitaly-secret --from-literal=token=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
+Include this secret using `--set global.gitaly.authToken.secret=gitaly-secret`
+
 ### Minio secret
 
 Generate a set of random 20 & 64 character alpha-numeric keys for Minio.
@@ -108,6 +112,7 @@ Generate a set of random 20 & 64 character alpha-numeric keys for Minio.
 ```
 kubectl create secret generic gitlab-minio --from-literal=accesskey=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 20) --from-literal=secretkey=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
+Include this secret using `--set global.minio.credentials.secret=minio-secret`
 
 ### Postgresql secret
 
@@ -116,7 +121,6 @@ Generate a set of random 20 & 64 character alpha-numeric keys for database passw
 ```
 kubectl create secret generic postgresql-password --from-literal=psqlpassword=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
-
 
 ## External services
 

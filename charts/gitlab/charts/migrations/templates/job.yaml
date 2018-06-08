@@ -45,8 +45,8 @@ spec:
             - name: GITLAB_SHARED_RUNNERS_REGISTRATION_TOKEN
               valueFrom:
                 secretKeyRef:
-                  name: gitlab-runner
-                  key: runner-registration-token
+                  name: {{ template "gitlab.gitlab-runner.registrationToken.secret" . }}
+                  key: {{ template "gitlab.gitlab-runner.registrationToken.key" . }}
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
@@ -75,14 +75,14 @@ spec:
           defaultMode: 0400
           sources:
           - secret:
-              name: {{ .Values.railsSecrets.secret }}
+              name: {{ template "gitlab.rails-secrets.secret" . }}
               items:
-                - key: {{ .Values.railsSecrets.key | quote }}
+                - key: secrets.yml
                   path: rails-secrets/secrets.yml
           - secret:
-              name: {{ coalesce .Values.redis.password.secret .Values.global.redis.password.secret }}
+              name: {{ template "gitlab.redis.password.secret" . }}
               items:
-                - key: {{ coalesce .Values.redis.password.key .Values.global.redis.password.key }}
+                - key: {{ template "gitlab.redis.password.key" . }}
                   path: redis/password
           - secret:
               name: {{ template "gitlab.psql.password.secret" . }}

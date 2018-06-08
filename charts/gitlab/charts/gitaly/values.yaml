@@ -20,24 +20,16 @@ serviceName: gitaly
 global:
   # imagePullPolicy: IfNotPresent
   redis:
-    password:
-      secret: gitlab-redis
-      key: redis-password
+    password: {}
   gitaly:
     authToken: {}
-authToken: {}
-  # secret: 'gitaly-secret'
-  # key: 'token'
 unicorn: {}
   # host: '0.0.0.0'
   # serviceName: 'unicorn'
   # port: 8080
-redis:
-  password: {}
+redis: {}
 shell:
-  authToken:
-   secret: gitlab-shell-secret
-   key: secret
+  authToken: {}
 
 ## Enable prometheus metrics and set the port to scrape the
 ## container on.

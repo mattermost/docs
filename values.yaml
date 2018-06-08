@@ -21,6 +21,16 @@ global:
     password: {}
   gitaly:
     authToken: {}
+  minio:
+    credentials: {}
+  shell:
+    authToken: {}
+    hostKeys: {}
+  railsSecrets: {}
+  registry:
+    certificate: {}
+  runner:
+    registrationToken: {}
   # Outgoing email server settings
   smtp:
     enabled: false

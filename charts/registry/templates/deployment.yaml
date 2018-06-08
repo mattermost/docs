@@ -70,12 +70,12 @@ spec:
           - configMap:
               name: {{ template "fullname" . }}
           - secret:
-              name: {{ .Values.certificate.secret }}
+              name: {{ template "gitlab.registry.certificate.secret" . }}
               items:
-                  - key: {{ .Values.certificate.key }}
+                  - key: registry-auth.crt
                     path: certificate.crt
           {{- if .Values.minio.enabled }}
           - secret:
-              name: {{ .Values.minio.credentials.secret }}
+              name: {{ template "gitlab.minio.credentials.secret" . }}
           {{- end }}
 {{- end -}}

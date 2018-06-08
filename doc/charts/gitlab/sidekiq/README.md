@@ -29,17 +29,11 @@ Table below contains all the possible charts configurations that can be supplied
 | enabled                   | Sidekiq enabled flag                           | true                                             |
 | metrics.enabled           | Toggle Prometheus metrics exporter             | true                                             |
 | redis.serviceName         | Redis service name                             | redis                                            |
-| redis.password.secret     | Redis secret                                   | gitlab-redis                                     |
-| redis.password.key        | Key to redis password in redis secret          | redis-password                                   |
 | psql.password.secret      | psql password secret                           | gitlab-postgres                                  |
 | psql.password.key         | key to psql password in psql secret            | psql-password                                    |
 | gitaly.serviceName        | gitaly service name                            | gitaly                                           |
-| gitaly.authToken.secret   | gitaly secret                                  | gitaly-secret                                    |
-| gitaly.authToken.key      | key to gitaly token in gitaly secret           | token                                            |
 | cron_jobs                 | Auxiliary cron jobs                            | {}                                               |
 | replicas                  | Sidekiq replicas                               | 1                                                |
-| railsSecrets.secret       | Secret containing rails secrets.yml            | rails-secrets                                    |
-| railsSecrets.key          | Key to contents of secrets.yml in rails secret | secrets.yml                                      |
 | concurrency               | Sidekiq default concurrency                    | 10                                               |
 | timeout                   | Sidekiq job timeout                            | 5                                                |
 | resources.requests.cpu    | Sidekiq minimum needed cpu                     | 100m                                             |
