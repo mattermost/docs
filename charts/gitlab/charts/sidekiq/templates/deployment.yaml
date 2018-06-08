@@ -9,14 +9,13 @@
 {{- $timeout := .Values.timeout -}}
 {{- $resources := .Values.resources -}}
 {{- $nodeSelector := .Values.nodeSelector -}}
-{{- $redisSecret := coalesce .Values.redis.password.secret .Values.global.redis.password.secret -}}
-{{- $redisKey := coalesce .Values.redis.password.key .Values.global.redis.password.key -}}
 {{- $minioEnabled := .Values.minio.enabled -}}
-{{- $minioSecret := .Values.minio.credentials.secret -}}
+{{- $minioSecret := include "gitlab.minio.credentials.secret" . -}}
+{{- $redisSecret := include "gitlab.redis.password.secret" . -}}
+{{- $redisKey := include "gitlab.redis.password.key" . -}}
 {{- $gitalySecret := include "gitlab.gitaly.authToken.secret" . -}}
 {{- $gitalyKey := include "gitlab.gitaly.authToken.key" . -}}
-{{- $railsSecretName := .Values.railsSecrets.secret -}}
-{{- $railsSecretKey  := .Values.railsSecrets.key | quote -}}
+{{- $railsSecretName := include "gitlab.rails-secrets.secret" . -}}
 {{- $metricsEnabled := .Values.metrics.enabled -}}
 {{- $metricsPort := .Values.metrics.port -}}
 {{- $metricsAnnotations := .Values.metrics.annotations -}}
@@ -193,7 +192,7 @@ spec:
           - secret:
               name: {{ $railsSecretName }}
               items:
-                - key: {{ $railsSecretKey }}
+                - key: secrets.yml
                   path: rails-secrets/secrets.yml
           - secret:
               name: {{ $gitalySecret }}

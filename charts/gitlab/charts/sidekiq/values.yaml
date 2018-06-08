@@ -42,9 +42,7 @@ global:
     #   secret: gitlab-postgres
     #   key: psql-password
   redis:
-    password:
-      secret: gitlab-redis
-      key: redis-password
+    password: {}
   gitaly:
     authToken: {}
 gitaly:
@@ -107,9 +105,6 @@ trusted_proxies: []
 # Global defaults
 minReplicas: 1
 maxReplicas: 10
-railsSecrets:
-  secret: rails-secrets
-  key: secrets.yml
 concurrency: 10
 timeout: 5
 resources:

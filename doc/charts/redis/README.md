@@ -23,9 +23,6 @@ redis:
   timeout: 60
   tcpKeepalive: 30
   loglevel: "notice"
-  password:
-    secret: gitlab-redis
-    key: redis-password
   persistence:
     enabled: true
     volumeName: gitlab-redis-data
@@ -67,8 +64,6 @@ Table below contains all the possible charts configurations that can be supplied
 | tcpKeepalive                 | Keep alive in seconds                       | 300            |
 | loglevel                     | Log verbosity                               | notice         |
 | metrics.enabled              | Toggle Prometheus exporter sidecar          | true           |
-| password.secret              | Secret name                                 | gitlab-redis   |
-| password.key                 | Key to password in the secret               | redis-password |
 | persistence.enabled          | Enable persistence flag                     | true           |
 | persistence.accessMode       | Redis access mode                           | ReadWriteOnce  |
 | persistence.size             | Size of volume needed for redis persistence | 5Gi            |
@@ -80,7 +75,7 @@ Table below contains all the possible charts configurations that can be supplied
 
 ## Chart configuration examples
 ### image.pullSecrets
-`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod.
 
 Additional details about private registries and their authentication methods
 can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
@@ -91,7 +86,7 @@ image:
   repository: my.minio.repository
   tag: latest
   pullPolicy: Always
-  pullSecrets: 
+  pullSecrets:
   - name: my-secret-name
   - name: my-secondary-secret-name
 ```
@@ -143,9 +138,7 @@ The `loglevel` value provides the matching configuration item from [redis.conf][
 
 ### password
 
-This chart relies on one [Secret][kubernetes-secret], `password`.
-- `secret` defines the name of the kubernetes `Secret` to pull from
-- `key` defines the name of the key in the above secret that contains the password that will be required to access the Redis service
+This chart sources credentials from `global.redis.password` global value.
 
 ### persistence
 

@@ -29,7 +29,7 @@ spec:
             - configMap:
                 name: {{ template "minio.fullname" . }}-config-cm
             - secret:
-                name: {{ .Values.credentials.secret }}
+                name: {{ template "gitlab.minio.credentials.secret" . }}
       containers:
       - name: minio-mc
         image: minio/mc

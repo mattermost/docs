@@ -19,7 +19,7 @@ function generate_secret_if_needed(){
 }
 
 # Redis password
-generate_secret_if_needed gitlab-redis --from-literal=redis-password=$(gen_random 'a-zA-Z0-9' 64)
+generate_secret_if_needed {{ template "gitlab.redis.password.secret" . }} --from-literal={{ template "gitlab.redis.password.key" . }}=$(gen_random 'a-zA-Z0-9' 64)
 
 {{if not .Values.global.psql.host -}}
 # Postgres password
@@ -27,23 +27,21 @@ generate_secret_if_needed {{ template "gitlab.psql.password.secret" . }} --from-
 {{ end }}
 
 # Gitlab shell
-generate_secret_if_needed gitlab-shell-secret --from-literal=secret=$(gen_random 'a-zA-Z0-9' 64)
+generate_secret_if_needed {{ template "gitlab.gitlab-shell.authToken.secret" . }} --from-literal={{ template "gitlab.gitlab-shell.authToken.key" . }}=$(gen_random 'a-zA-Z0-9' 64)
 
-{{- if not .Values.global.gitaly.authToken.secret }}
 # Gitaly secret
-generate_secret_if_needed gitaly-secret --from-literal=token=$(gen_random 'a-zA-Z0-9' 64)
-{{- end }}
+generate_secret_if_needed {{ template "gitlab.gitaly.authToken.secret" . }} --from-literal={{ template "gitlab.gitaly.authToken.key" . }}=$(gen_random 'a-zA-Z0-9' 64)
 
 # Minio secret
-generate_secret_if_needed gitlab-minio --from-literal=accesskey=$(gen_random 'a-zA-Z0-9' 64) --from-literal=secretkey=$(gen_random 'a-zA-Z0-9' 64)
+generate_secret_if_needed {{ template "gitlab.minio.credentials.secret" . }} --from-literal=accesskey=$(gen_random 'a-zA-Z0-9' 64) --from-literal=secretkey=$(gen_random 'a-zA-Z0-9' 64)
 
 # Gitlab runner secret
-generate_secret_if_needed gitlab-runner --from-literal=runner-registration-token=$(gen_random 'a-zA-Z0-9' 64) --from-literal=runner-token=""
+generate_secret_if_needed {{ template "gitlab.gitlab-runner.registrationToken.secret" . }} --from-literal={{ template "gitlab.gitlab-runner.registrationToken.key" . }}=$(gen_random 'a-zA-Z0-9' 64)
 
 # Registry certificates
 mkdir -p certs
 openssl req -new -newkey rsa:4096 -subj "/CN=gitlab-issuer" -nodes -x509 -keyout certs/registry-example-local.key -out certs/registry-example-local.crt
-generate_secret_if_needed gitlab-registry --from-file=registry-auth.key=certs/registry-example-local.key --from-file=registry-auth.crt=certs/registry-example-local.crt
+generate_secret_if_needed {{ template "gitlab.registry.certificate.secret" . }} --from-file=registry-auth.key=certs/registry-example-local.key --from-file=registry-auth.crt=certs/registry-example-local.crt
 
 # config/secrets.yaml
 if [ -n "$env" ]; then
@@ -60,11 +58,11 @@ $env:
   openid_connect_signing_key: |
 $(openssl genrsa 2048 | awk '{print "    " $0}')
 EOF
-  generate_secret_if_needed rails-secrets --from-file secrets.yml
+  generate_secret_if_needed {{ template "gitlab.rails-secrets.secret" . }} --from-file secrets.yml
 fi
 
 # Shell ssh host keys
 ssh-keygen -A
 mkdir -p host_keys
 cp /etc/ssh/ssh_host_* host_keys/
-generate_secret_if_needed gitlab-shell-host-keys --from-file host_keys
+generate_secret_if_needed {{ template "gitlab.gitlab-shell.hostKeys.secret" . }} --from-file host_keys

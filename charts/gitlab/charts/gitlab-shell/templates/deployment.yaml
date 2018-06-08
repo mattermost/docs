@@ -100,16 +100,16 @@ spec:
           defaultMode: 0440
           sources:
             - secret:
-                name: {{ .Values.hostKeys.secret }}
+                name: {{ template "gitlab.gitlab-shell.hostKeys.secret" . }}
             - secret:
-                name: {{ .Values.authToken.secret }}
+                name: {{ template "gitlab.gitlab-shell.authToken.secret" . }}
                 items:
-                  - key: {{ .Values.authToken.key }}
+                  - key: {{ template "gitlab.gitlab-shell.authToken.key" . }}
                     path: shell/.gitlab_shell_secret
             - secret:
-                name: {{ coalesce .Values.redis.password.secret .Values.global.redis.password.secret }}
+                name: {{ template "gitlab.redis.password.secret" . }}
                 items:
-                  - key: {{ coalesce .Values.redis.password.key .Values.global.redis.password.key }}
+                  - key: {{ template "gitlab.redis.password.key" . }}
                     path: redis/password
       # Actual config dirs that will be used in the container
       - name: shell-secrets

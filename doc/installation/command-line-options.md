@@ -68,8 +68,6 @@ See [nginx-ingress chart](../../charts/nginx/README.md)
 | redis.timeout                                | Timeout in seconds                          | 60             |
 | redis.tcpKeepalive                           | Keep alive in seconds                       | 300            |
 | redis.loglevel                               | Log verbosity                               | notice         |
-| redis.password.secret                        | Secret name                                 | gitlab-redis   |
-| redis.password.key                           | Key to password in the secret               | redis-password |
 | redis.persistence.enabled                    | Enable persistence flag                     | true           |
 | redis.persistence.accessMode                 | Redis access mode                           | ReadWriteOnce  |
 | redis.persistence.size                       | Size of volume needed for redis persistence | 5Gi            |
@@ -84,12 +82,9 @@ See [nginx-ingress chart](../../charts/nginx/README.md)
 | registry.authEndpoint                        | Auth endpoint                       | Undefined by default |
 | registry.tokenService                        | JWT token service                   | container_registry   |
 | registry.tokenIssuer                         | JWT token issuer                    | gitlab-issuer        |
-| registry.certificate.secret                  | JWT certificate                     | gitlab-registry      |
-| registry.certificate.key                     | JWT certificate private key         | registry-auth.crt    |
 | registry.replicas                            | Number of replicas                  | 1                    |
 | registry.minio.enabled                       | Enable minio flag                   | true                 |
 | registry.minio.bucket                        | Minio registry bucket name          | registry             |
-| registry.minio.credentials.secret            | Secret containing minio credentials | gitlab-minio         |
 | registry.service.annotations                 | Annotations to add to the `Service` | {}                   |
 
 ## Advanced minio configuration
@@ -100,7 +95,6 @@ See [nginx-ingress chart](../../charts/nginx/README.md)
 | minio.imageTag                               | Minio image tag                     | RELEASE.2017-12-28T01-21-00Z |
 | minio.imagePullPolicy                        | Minio image pull policy             | Always                       |
 | minio.enabled                                | Minio enable flag                   | true                         |
-| minio.credentials.secret                     | Minio credentials secret            | gitlab-minio                 |
 | minio.mountPath                              | Minio config file mount path        | /export                      |
 | minio.replicas                               | Minio number of replicas            | 4                            |
 | minio.persistence.enabled                    | Minio enable persistence flag       | true                         |
@@ -131,11 +125,9 @@ See [nginx-ingress chart](../../charts/nginx/README.md)
 | gitlab.gitaly.service.annotations                   | Annotations to add to the `Service`            | {}                                                         |
 | gitlab.gitaly.enabled                               | Gitaly enable flag                             | true                                                       |
 | gitlab.gitaly.serviceName                           | Gitaly service name                            | gitaly                                                     |
-| gitlab.gitaly.authToken.secret                      | Gitaly secret name                             | gitaly-secret                                              |
+| gitlab.gitaly.authToken.secret                      | Gitaly secret name                             | {.Release.Name}-gitaly-secret                                              |
 | gitlab.gitaly.authToken.key                         | Key to gitaly token in the secret              | token                                                      |
-| gitlab.gitaly.redis.password.secret                 | Redis secret containing redis password         | gitlab-redis                                               |
-| gitlab.gitaly.redis.password.key                    | Key to redis password in redis secret          | redis-password                                             |
-| gitlab.gitaly.shell.authToken.secret                | Shell secret                                   | gitlab-shell-secret                                        |
+| gitlab.gitaly.shell.authToken.secret                | Shell secret                                   | {Release.Name}-gitlab-shell-secret                                        |
 | gitlab.gitaly.shell.authToken.key                   | Shell key                                      | secret                                                     |
 | gitlab.gitaly.persistence.enabled                   | Gitaly enable persistence flag                 | true                                                       |
 | gitlab.gitaly.persistence.accessMode                | Gitaly persistence access mode                 | ReadWriteOnce                                              |
@@ -151,27 +143,21 @@ See [nginx-ingress chart](../../charts/nginx/README.md)
 | gitlab.gitlab-shell.service.internalPort            | Shell internal port                            | 22                                                         |
 | gitlab.gitlab-shell.service.annotations             | Annotations to add to the `Service`            | {}                                                         |
 | gitlab.gitlab-shell.enabled                         | Shell enable flag                              | true                                                       |
-| gitlab.gitlab-shell.authToken.secret                | Shell auth secret                              | gitlab-shell-secret                                        |
+| gitlab.gitlab-shell.authToken.secret                | Shell auth secret                              | {Release.Name}-gitlab-shell-secret                                        |
 | gitlab.gitlab-shell.authToken.key                   | Shell auth secret key                          | secret                                                     |
 | gitlab.gitlab-shell.unicorn.serviceName             | Unicorn service name                           | unicorn                                                    |
 | gitlab.gitlab-shell.redis.serviceName               | Redis service name                             | redis                                                      |
-| gitlab.gitlab-shell.redis.password.secret           | Redis secret                                   | gitlab-redis                                               |
-| gitlab.gitlab-shell.redis.password.key              | Key to redis password in redis secret          | redis-password                                             |
 | gitlab.sidekiq.image.repository                     | Sidekiq image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee |
 | gitlab.sidekiq.image.tag                            | Sidekiq image tag                              | latest                                                     |
 | gitlab.sidekiq.image.pullPolicy                     | Sidekiq image pull policy                      | Always                                                     |
 | gitlab.sidekiq.enabled                              | Sidekiq enabled flag                           | true                                                       |
 | gitlab.sidekiq.redis.serviceName                    | Redis service name                             | redis                                                      |
-| gitlab.sidekiq.redis.password.secret                | Redis secret                                   | gitlab-redis                                               |
-| gitlab.sidekiq.redis.password.key                   | Key to redis password in redis secret          | redis-password                                             |
 | gitlab.sidekiq.psql.password.secret                 | psql password secret                           | gitlab-postgres                                            |
 | gitlab.sidekiq.psql.password.key                    | key to psql password in psql secret            | psql-password                                              |
 | gitlab.sidekiq.gitaly.serviceName                   | gitaly service name                            | gitaly                                                     |
-| gitlab.sidekiq.gitaly.authToken.secret              | gitaly secret                                  | gitaly-secret                                              |
+| gitlab.sidekiq.gitaly.authToken.secret              | gitaly secret                                  | {.Release.Name}-gitaly-secret                                              |
 | gitlab.sidekiq.gitaly.authToken.key                 | key to gitaly token in gitaly secret           | token                                                      |
 | gitlab.sidekiq.replicas                             | Sidekiq replicas                               | 1                                                          |
-| gitlab.sidekiq.railsSecrets.secret                  | Secret containing rails secrets.yml            | rails-secrets                                              |
-| gitlab.sidekiq.railsSecrets.key                     | Key to contents of secrets.yml in rails secret | secrets.yml                                                |
 | gitlab.sidekiq.concurrency                          | Sidekiq default concurrency                    | 10                                                         |
 | gitlab.sidekiq.timeout                              | Sidekiq job timeout                            | 5                                                          |
 | gitlab.sidekiq.resources.requests.cpu               | Sidekiq minimum needed cpu                     | 100m                                                       |
@@ -190,24 +176,18 @@ See [nginx-ingress chart](../../charts/nginx/README.md)
 | gitlab.unicorn.enabled                              | Unicorn enabled flag                           | true                                                       |
 | gitlab.unicorn.workerProcesses                      | Unicorn number of workers                      | 2                                                          |
 | gitlab.unicorn.workerTimeout                        | Unicorn worker timeout                         | 60                                                         |
-| gitlab.unicorn.railsSecrets.secret                  | Secret containing rails secrets.yml            | rails-secrets                                              |
-| gitlab.unicorn.railsSecrets.key                     | Key to contents of secrets.yml in rails secret | secrets.yml                                                |
 | gitlab.unicorn.redis.serviceName                    | Redis service name                             | redis                                                      |
-| gitlab.unicorn.redis.password.secret                | Redis secret                                   | gitlab-redis                                               |
-| gitlab.unicorn.redis.password.key                   | Key to redis password in redis secret          | redis-password                                             |
 | gitlab.unicorn.psql.password.secret                 | psql secret name                               | gitlab-postgres                                            |
 | gitlab.unicorn.psql.password.key                    | Key to psql password in psql secret            | psql-password                                              |
-| gitlab.unicorn.shell.authToken.secret               | Shell token secret                             | gitlab-shell-secret                                        |
+| gitlab.unicorn.shell.authToken.secret               | Shell token secret                             | {Release.Name}-gitlab-shell-secret                                        |
 | gitlab.unicorn.shell.authToken.key                  | Key to shell token in shell secret             | secret                                                     |
 | gitlab.unicorn.gitaly.serviceName                   | Gitaly service name                            | gitaly                                                     |
-| gitlab.unicorn.gitaly.authToken.secret              | Gitaly secret name                             | gitaly-secret                                              |
+| gitlab.unicorn.gitaly.authToken.secret              | Gitaly secret name                             | {.Release.Name}-gitaly-secret                                              |
 | gitlab.unicorn.gitaly.authToken.key                 | Key to gitaly token in gitaly secret           | token                                                      |
 | gitlab.unicorn.registry.api.protocol                | Registry protocol                              | http                                                       |
 | gitlab.unicorn.registry.api.serviceName             | Registry service name                          | registry                                                   |
 | gitlab.unicorn.registry.api.port                    | Registry port                                  | 5000                                                       |
 | gitlab.unicorn.registry.tokenIssuer                 | Registry token issuer                          | gitlab-issuer                                              |
-| gitlab.unicorn.registry.certificate.secret          | Registry certificate                           | gitlab-registry                                            |
-| gitlab.unicorn.registry.certificate.key             | Registry certificate key                       | registry-auth.key                                          |
 | gitlab.unicorn.resources.requests.cpu               | Unicorn minimum cpu                            | 200m                                                       |
 | gitlab.unicorn.resources.requests.memory            | Unicorn minimum memory                         | 1.4G                                                       |
 | gitlab.unicorn.workhorse.sentryDSN                  | DSN for Sentry instance for error reporting    | ""                                                         |
@@ -217,12 +197,8 @@ See [nginx-ingress chart](../../charts/nginx/README.md)
 | gitlab.migrations.image.pullPolicy                  | Migrations pull policy                         | Always                                                     |
 | gitlab.migrations.enabled                           | Migrations enable flag                         | true                                                       |
 | gitlab.migrations.redis.serviceName                 | Redis service name                             | redis                                                      |
-| gitlab.migrations.redis.password.secret             | Redis secret                                   | gitlab-redis                                               |
-| gitlab.migrations.redis.password.key                | Key to redis password in redis secret          | redis-password                                             |
 | gitlab.migrations.psql.password.secret              | psql secret                                    | gitlab-postgres                                            |
 | gitlab.migrations.psql.password.key                 | key to psql password in psql secret            | psql-password                                              |
-| gitlab.migrations.railsSecrets.secret               | Secret containing rails secrets.yml            | rails-secrets                                              |
-| gitlab.migrations.railsSecrets.key                  | Key to contents of secrets.yml in rails secret | secrets.yml                                                |
 | gitlab.gitlab-runner.image                          | runner image                                   | gitlab/gitlab-runner:alpine-v10.5.0                        |
 | gitlab.gitlab-runner.enabled                        |                                                | redis                                                      |
 | gitlab.gitlab-runner.imagePullPolicy                | image pull policy                              | IfNotPresent                                               |

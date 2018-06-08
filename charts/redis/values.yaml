@@ -26,9 +26,6 @@ enabled: true
 timeout: 60
 tcpKeepalive: 300
 loglevel: "notice"
-password:
-  secret: gitlab-redis
-  key: redis-password
 
 metrics:
   enabled: true

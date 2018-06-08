@@ -13,7 +13,7 @@ A Kubernetes `Deployment` was chosen as the deployment method for this chart to
 allow for simple scaling of instances, while allowing for [rolling-update](https://kubernetes.io/docs/tutorials/kubernetes-basics/update-intro/)s.
 
 This chart makes use of only two secrets:
-- `certificate`: A secret that will contain the public certificate bundle to verify
+- `global.registry.certificate.secret`: A global secret that will contain the public certificate bundle to verify
 the authentication tokens provided by the associated GitLab instance(s). See
 [documentation](https://docs.gitlab.com/ee/administration/container_registry.html#disable-container-registry-but-use-gitlab-as-an-auth-endpoint) on using GitLab as an auth endpoint.
 
@@ -60,15 +60,13 @@ Table below contains all the possible charts configurations that can be supplied
 | tokenService             | JWT token service                       | container_registry   |
 | tokenIssuer              | JWT token issuer                        | gitlab-issuer        |
 | certificate.secret       | JWT certificate                         | gitlab-registry      |
-| certificate.key          | JWT certificate private key             | registry-auth.crt    |
 | replicas                 | Number of replicas                      | 1                    |
 | minio.enabled            | Enable minio flag                       | true                 |
 | minio.bucket             | Minio registry bucket name              | registry             |
-| minio.credentials.secret | Secret containing minio credentials     | gitlab-minio         |
 
 ## Chart configuration examples
 ### pullSecrets
-`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod.
 
 Additional details about private registries and their authentication methods
 can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
@@ -79,7 +77,7 @@ image:
   repository: my.registry.repository
   tag: latest
   pullPolicy: Always
-  pullSecrets: 
+  pullSecrets:
   - name: my-secret-name
   - name: my-secondary-secret-name
 ```

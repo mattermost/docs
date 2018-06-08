@@ -50,7 +50,7 @@ spec:
           - name: REDIS_CHART_PREFIX
             value: {{ template "fullname" . }}
           - name: REDIS_PASSWORD_FILE
-            value: "/config/redis-password"
+            value: "/config/password"
         ports:
           - containerPort: 26379
         volumeMounts:
@@ -58,6 +58,11 @@ spec:
             mountPath: /config/
       volumes:
       - name: {{ .Release.Name }}-config
-        secret:
-          secretName: {{ .Values.password.secret }}
+        projected:
+          sources:
+          - secret:
+              name: {{ template "gitlab.redis.password.secret" . }}
+              items:
+                - key: {{ template "gitlab.redis.password.key" . }}
+                  path: password
 {{- end -}}

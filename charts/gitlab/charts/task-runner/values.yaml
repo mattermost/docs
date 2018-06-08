@@ -4,9 +4,6 @@ image:
   # pullPolicy: IfNotPresent
   # tag: latest
 enabled: false
-railsSecrets:
-  secret: rails-secrets
-  key: secrets.yml
 global:
   # imagePullPolicy: IfNotPresent
   hosts:
@@ -23,9 +20,7 @@ global:
     # username: 'gitlab'
     password: {}
   redis:
-    password:
-      secret: gitlab-redis
-      key: redis-password
+    password: {}
   gitaly:
     authToken: {}
 backups:
@@ -48,10 +43,6 @@ redis:
   password: {}
 psql:
   password: {}
-shell:
-  authToken:
-    secret: gitlab-shell-secret
-    key: secret
 gitaly:
   # host: '0.0.0.0'
   # port: 8075
@@ -67,8 +58,6 @@ lfs:
 minio:
   enabled: true
   bucket: git-lfs
-  credentials:
-    secret: gitlab-minio
   serviceName: 'minio-svc'
   port: 9000
 registry:
@@ -79,9 +68,6 @@ registry:
     serviceName: registry
     port: 5000
   tokenIssuer: gitlab-issuer
-  certificate:
-    secret: gitlab-registry
-    key: registry-auth.key
 resources:
   # limits:
   #  cpu: 1

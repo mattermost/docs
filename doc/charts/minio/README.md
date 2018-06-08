@@ -11,7 +11,7 @@ Design choices related to the [upstream chart][minio-chart] can be found in thei
 GitLab chose to alter that chart in order to simplify configuration of the secrets, and to remove all use of secrets in environment variables. GitLab added `initContainer`s to control the population of secrets into the `config.json` and a chart-wide `enabled` flag.
 
 This chart makes use of only one secret:
-- `minio-credentials`: A secret containing the `accesskey` and `secretkey` values that will be used for authentication to the bucket(s).
+- `global.minio.credentials.secret`: A global secret containing the `accesskey` and `secretkey` values that will be used for authentication to the bucket(s).
 
 # Configuration
 
@@ -50,7 +50,6 @@ Table below contains all the possible charts configurations that can be supplied
 | imagePullPolicy              | Minio image pull policy                 | Always                       |
 | pullSecrets                  | Secrets for the image repository        |                              |
 | enabled                      | Minio enable flag                       | true                         |
-| credentials.secret           | Minio credentials secret                | gitlab-minio                 |
 | mountPath                    | Minio config file mount path            | /export                      |
 | replicas                     | Minio number of replicas                | 4                            |
 | persistence.enabled          | Minio enable persistence flag           | true                         |
@@ -72,7 +71,7 @@ Table below contains all the possible charts configurations that can be supplied
 
 ## Chart configuration examples
 ### pullSecrets
-`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod.
 
 Additional details about private registries and their authentication methods
 can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
@@ -82,7 +81,7 @@ Below is an example use of `pullSecrets`
 image: my.minio.repository
 imageTag: latest
 imagePullPolicy: Always
-pullSecrets: 
+pullSecrets:
 - name: my-secret-name
 - name: my-secondary-secret-name
 ```

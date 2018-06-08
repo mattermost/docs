@@ -77,10 +77,6 @@ authEndpoint:
 tokenService: 'container_registry'
 # This must match your GitLab Rails configuration
 tokenIssuer: 'gitlab-issuer'
-# Public side of the certificate bundle used to sign JWT auth requests
-certificate:
-  secret: gitlab-registry
-  key: registry-auth.crt
 # if replicas is >1, shared storage MUST be used.
 replicas: 1
 maxUnavailable: 1
@@ -88,5 +84,3 @@ storage: {}
 minio:
   enabled: true
   bucket: registry
-  credentials:
-    secret: gitlab-minio

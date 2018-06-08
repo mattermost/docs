@@ -49,7 +49,7 @@ spec:
             - configMap:
                 name: {{ template "minio.fullname" . }}-config-cm
             - secret:
-                name: {{ .Values.credentials.secret }}
+                name: {{ template "gitlab.minio.credentials.secret" . }}
         - name: minio-server-config
           emptyDir:
             medium: "Memory"
