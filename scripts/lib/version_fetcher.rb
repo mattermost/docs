@@ -7,7 +7,7 @@ class VersionFetcher
   class << self
 
     # GitLab Shell Version
-    define_method 'gitlab-shell'.to_sym do |version|
+    def gitlab_shell(version)
       return version if version == 'master'
 
       new_version = Net::HTTP.get(URI.parse("https://gitlab.com/gitlab-org/gitlab-ee/raw/#{ref(version)}/GITLAB_SHELL_VERSION")).strip
@@ -25,12 +25,9 @@ class VersionFetcher
     end
 
     def fetch(chart_name, ref)
-      return ref unless include?(chart_name.to_sym)
-      Version.new(send(chart_name.to_sym, ref))
-    end
-
-    def include?(chart_name)
-      respond_to?(chart_name.to_sym)
+      chart_name = chart_name.tr('-', '_').to_sym
+      return ref unless respond_to?(chart_name)
+      Version.new(send(chart_name, ref))
     end
 
     private
