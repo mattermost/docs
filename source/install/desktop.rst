@@ -103,8 +103,6 @@ A snap is available for systems that have Snapcraft installed. Snapcraft is inst
 Troubleshooting
 --------------------------------------------------
 
-Possible solutions to issues encountered when using the Desktop App.
-
 "Installation has failed" dialog
     The app data might be corrupted - remove all the files in `C:\Users...\AppData\Local\mattermost`, then try re-installing the app.
 
@@ -132,7 +130,32 @@ Desktop App constantly refreshes the page
     - Windows: Open Windows File Explorer, and navigate to the ``%USERPROFILE%\AppData\Roaming\Mattermost`` folder, then delete the ``Local Storage`` folder.
     - Mac: Open Finder, and navigate to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``Local Storage`` folder.
     - Linux: Open the file manager, and navigate to the ``~/.config/Mattermost`` folder, then delete the ``Local Storage`` folder.
-
+      
 For additional troubleshooting tips, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_.
 
-To submit an improvement or correction, click  **Edit** at the top of this page.
+Reporting Issues
+--------------------------------------------------
+
+When reporting bugs found in the Mattermost Desktop app, it is helpful to include the contents of the Developer Tools Console along with `the information on this page <https://docs.mattermost.com/process/support.html#general-questions-for-any-issues>`_. To access the Developer Tools Console, follow these instructions:
+
+  1. In the menu bar, go to ``View`` > ``Toggle Developer Tools``.
+  2. Select the ``Console`` tab.
+  3. Right-click the log window and select ``Save As``.
+  4. Save the file and then send it along with a description of your issue.
+  5. Go to ``View`` > ``Toggle Developer Tools`` to disable the Developer Tools.
+
+Windows
+~~~~~~~
+
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/jnutU-g2QA8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+macOS
+~~~~~
+
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/avKDRodDS3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+To submit an improvement or correction to this documentation, click  **Edit** at the top of this page.
