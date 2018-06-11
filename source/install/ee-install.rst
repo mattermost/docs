@@ -41,6 +41,26 @@ Upgrading to Enterprise Edition from Mattermost Team Edition
 
 If you need to migrate Team Edition prior to install, `please follow the migration guide. <http://docs.mattermost.com/administration/migrating.html>`_
 
+Upgrading to Enterprise Edition in GitLab Omnibus
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Mattermost Enterprise Edition, follow these steps:
+
+1. Disable the built-in Mattermost instance on GitLab Omnibus:
+
+ - Go to ``/etc/gitlab/gitlab.rb`` and set the following line to false
+
+   .. code-block:: text
+     mattermost['enable'] = false
+
+ - Run `sudo gitlab-ctl reconfigure` to apply the updated setting
+
+2. Install Mattermost using `one of the guides above <https://docs.mattermost.com/install/ee-install.html#installing-enterprise-edition>`_.
+3. Migrate the database used by GitLab Mattermost for your new Enterprise Edition instance.
+4. (Optional) Set up `GitLab slash command integration <https://docs.gitlab.com/ee/user/project/integrations/mattermost_slash_commands.html>`_ with your Mattermost instance.
+
+If you need to migrate Team Edition prior to install, `please follow the migration guide. <http://docs.mattermost.com/administration/migrating.html>`_
+
 Upgrading Enterprise Edition to a newer version
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
