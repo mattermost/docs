@@ -81,22 +81,77 @@ Supplementary Roles (E20)
 
 Allows Admins to grant additional permissions to specific users or to a group of users based on AD/LDAP group membership. Permissions can be granted within the scope of channels, teams or system level.
 
+Backend Infrastructure
+-----------------------
+
+Technical Admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions-backend` technical documentation. Topics covered in the technical documentation include:
+
+1. Default permissions on install
+2. Backend to frontend permission mapping
+3. XXXXXX
+
 Recipes
 --------
+This section provides some examples of common permissions use cases and how to accomplish them using the Advanced Permissions System Console interface.
+
+Team Management
+~~~~~~~~~~~~~~~~
+
+**
+
+Public and Private Channel Management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Restrict who can rename channels and edit channel header and purposes**
+Example: As the default for the entire system, restrict renaming channels and editing headers and purposes to Admins only. 
+
+.. note::
+
+  Permissions for channel renaming, editing header and editing purpose are currently grouped in a single permission. These will be split into separate permissions in a future release.
+
+**Restrict who can create channels in specific teams**
+
+Example: In Team B, restrict public channel creation to Admins. As the default for all other teams, allow everyone to create public channels.
+
+
+
+Post Management
+~~~~~~~~~~~~~~~~
+
+**Restrict who can delete posts**
+
+Example: As the default for the entire system, restrict deleting posts to only Channel, Team and System Admins.
+
+1. 
+
+**Restict who can edit posts**
+
+Example: As the default for the entire system, only allow users to edit their own posts for five minutes after posting.
+
+1. 
+
+
+Integration Management
+~~~~~~~~~~~~~~~~~~~~~~~
+
+**Restict who manage webhooks**
+
+Example: 
+
+.. note::
+
+  Permissions for creating, editing and deleting integrations are currently grouped in a single permission. These will be split into different permissions for each integration type in a future release.
 
 Administration Tools
 --------------------
 
 There are a number of CLI tools available for Admins to help in configuring and troubleshooting the permissions system:
 
-1. `Reset to default <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-reset>`_: Resets all permissions to the default on new installs.
-2. `Reset to default <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-export>`_: Exports the System Scheme and any Team Override Schemes to a jsonl file.
-3. `Reset to default <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-import>`_: Imports the System Scheme and any Team Override Schemes to your Mattermost instance from a jsonl input file in the format outputted by ``mattermost permissions export``.
+1. `Reset to default permissions <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-reset>`_: Resets all permissions to the default on new installs.
+2. `Export permission schemes <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-export>`_: Exports the System Scheme and any Team Override Schemes to a jsonl file.
+3. `Import permission schemes <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-import>`_: Imports the System Scheme and any Team Override Schemes to your Mattermost instance from a jsonl input file in the format outputted by ``mattermost permissions export``.
 
-Backend Infrastructure
------------------------
 
-Technical Admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions-backend` technical documentation.
 
 Glossary
 ----------
