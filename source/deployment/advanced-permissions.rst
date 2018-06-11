@@ -1,7 +1,7 @@
 Advanced Permissions (E10/E20)
 ===============================
 
-Advanced permissions offers Admins a way to restrict actions in Mattermost to authorized users only. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture and will be rolled out over a number of server releases, starting with Mattermost server v5.0. 
+Advanced permissions offers Admins a way to restrict actions in Mattermost to authorized users only. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture and will be rolled out over a number of server releases, starting with Mattermost server v5.0. The permissions interface can be accessed in the **System Console** > **Advanced Permissions**.
 
 .. note::
 
@@ -28,9 +28,13 @@ Set the default permissions granted to System Admins, Team Admins, Channel Admin
 
 - Team Admins: permissions granted apply to all Team Admins, in all teams.
 - Channel Admins: permissions granted apply to all Channel Admins in all channels, in all teams.
-- All members: permissions granted apply to all members, including Admins, in all channels, in all teams. 
+- All Members: permissions granted apply to all members, including Admins, in all channels, in all teams. 
 
 To override the System Scheme default permissions in a specific team, you must set up a Team Override Scheme.
+
+**System Scheme Interface** 
+
+Interface for editing permissions in the System Scheme, with panels for All members, Channel Admins, Team Admins and System Admins. Available in System Console > Advanced Permissions > System Scheme:
 
 .. image:: ../images/system-scheme.png
 
@@ -38,6 +42,24 @@ Team Override Scheme (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Available in Enterprise Edition E20*
+
+Overrides the default System Scheme permissions in specific teams for Team Admins, Channel Admins and all other team members. 
+
+- The permissions granted in a Team Override Scheme apply only in the teams which are assigned to the scheme. 
+- The System Scheme does not apply to teams that are added to a Team Override Scheme.
+- Teams can only belong to one Team Override Scheme.
+
+**Scheme List Interface** 
+
+List of all Team Override Schemes in the system. Sorted alphabetically by scheme name. Also displayed is the scheme description and tags with all asociated teams. Available in System Console > Advanced Permissions > Permissions Schemes:
+
+.. image:: ../images/team-scheme-list.png
+
+**Team Override Scheme Interface** 
+
+Interface for naming, assigning teams and editing permissions in a Team Override Scheme Scheme, with panels for All members, Channel Admins and Team Admins. Available in System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme:
+
+.. image:: ../images/team-scheme.png
 
 Channel Override Permissions (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
