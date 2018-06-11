@@ -62,6 +62,9 @@ Mattermost Server Operating System
 
 While community support exists for Fedora, FreeBSD and Arch Linux, Mattermost does not currently include production support for these platforms.
 
+.. note::
+  Please ensure that the directory you place your Mattermost installation in isn't a mounted SAN/NAS volume. This would have a negative performance impact.
+
 Database Software
 ^^^^^^^^^^^^^^^^^
 
