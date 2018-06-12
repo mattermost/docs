@@ -62,6 +62,8 @@ Release date: 2018-06-16
  
 ### Compatibility
 
+ - For a list of important changes with Mattermost v5.0, please [see our Forum announcement](https://forum.mattermost.org/t/upcoming-changes-with-mattermost-v5-0/5119).
+
 #### Deprecated Features
 
 For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
