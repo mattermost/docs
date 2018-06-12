@@ -2,6 +2,26 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2018-06-12
+
+### Removed (1 change)
+
+- Removed version number from statefulset metadata. !318
+
+### Fixed (1 change)
+
+- Resolve No longer possible to disable nginx ingress. !311
+
+### Changed (1 change, 1 of them is from the community)
+
+- Use .Release.Name in the name of all Secrets. !302 (Corey O'Brien)
+
+### Added (3 changes)
+
+- Unicorn: add support for object storage of job artifacts. !255
+- Add global setting for imagePullPolicy. !305
+- Sidekiq: add object storage configuration. !314
+
 ## 2018-06-05
 
 ### Changed (1 change)
