@@ -15,7 +15,7 @@ Release date: 2018-06-16
  - Supports use cases such as auto-detecting and censoring restricted words, and auto-linking phrases. [Read our forum post to learn more](https://forum.mattermost.org/t/coming-soon-apiv4-mattermost-post-intercept/4982).
  
 #### Permissions Schemes
- - System Scheme now sets the default permissions inherited system wide by System Admins, Team Admins, Channel Admins and everyone else. 
+ - System Scheme now sets the default permissions inherited system-wide by System Admins, Team Admins, Channel Admins and everyone else. 
  - Added new Team Schemes to override the default permissions in specific teams for Team Admins, Channel Admins and all other team members.
 
 #### Increased Character Limit on Posts
@@ -41,7 +41,7 @@ Release date: 2018-06-16
  
 #### Notifications
  - Updated email notification subject line and contents for Group Messages.
- - Added push notification styling improvements.
+ - Updated the styling of push notifications.
  
 #### System Console
  - Added a System Console setting to disable the preview mode banner when email notifications are disabled.
@@ -73,7 +73,7 @@ For a list of past and upcoming deprecated features, [see our website](https://a
 3. A Mattermost user setting to configure desktop notification duration in **Account Settings** > **Notifications** > **Desktop Notifications** has been removed.
 4. Slash commands configured to receive a GET request now have the payload encoded in the query string instead of receiving it in the body of the request, consistent with standard HTTP requests. Although unlikely, this could break custom slash commands that use GET requests incorrectly. [Ticket #10201](https://mattermost.atlassian.net/browse/MM-10201).
 5. A new `config.json` setting to whitelist types of protocols for auto-linking has been added. [Ticket #9547](https://mattermost.atlassian.net/browse/MM-9547).
-6. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) has been added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
+6. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) has been added. The setting is off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
 7. An unused `ExtraUpdateAt` field has been removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
  
 #### config.json
