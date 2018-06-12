@@ -67,9 +67,9 @@ Access Control Policy
    - Increase system security `by restricting email-based account creation to email addresses from a list of specific domains, <https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains>`_ e.g. "corp.mattermost.com", "mattermost.org", etc."
    - Choose whether to restrict or enable `cross-origin requests. <https://docs.mattermost.com/administration/config-settings.html#enable-cross-origin-requests-from>`_
    - If sharing of public links for account creation or sharing of files and images are enabled, links can be invalidated via the System Console by `regenerating salts <https://docs.mattermost.com/administration/config-settings.html#public-link-salt>`_.
+   - Optionally add `advanced passwords requirements <https://docs.mattermost.com/administration/config-settings.html#password-requirements>`_ with minimum numbers of symbols, numbers, and lower and uppercase letters.
    - Optionally restrict `creation, renaming, archiving of channels, private channels and integrations to team admins, system admins or end users <https://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`_ (E10)
    - Optionally restrict `sending team invites to team admins, system admins or end users <https://docs.mattermost.com/administration/config-settings.html#policy-enterprise>`_ (E10)
-   - Optionally add `advanced passwords requirements <https://docs.mattermost.com/administration/config-settings.html#password-requirements-enterprise>`_ with minimum numbers of symbols, numbers, and lower and uppercase letters (E10).
 
 Security Updates
 ------------------------------------
