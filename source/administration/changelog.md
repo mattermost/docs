@@ -23,7 +23,7 @@ Release date: 2018-06-16
  - For existing deployments, read [how to migrate your system](https://docs.mattermost.com/administration/important-upgrade-notes.html) to support the increased character limit.
  
 #### Combined Join/Leave Messages
- - System messages related to joining, leaving, adding and removing people from channels are combined into a single message to save space in channels.
+ - System messages related to joining, leaving, adding and removing people from channels and teams are combined into a single message to save space in channels.
 
 ### Improvements
 
@@ -39,13 +39,16 @@ Release date: 2018-06-16
  - Slash commands configured to receive a GET request now get a request body.
  - Added ability for webhooks to actually be locked to a channel.
  
+#### Notifications
+ - Updated email notification subject line and contents for Group Messages.
+ - Added push notification styling improvements.
+ 
 #### System Console
  - Added a System Console setting to disable the preview mode banner when email notifications are disabled.
  
 #### Administration
  - Added Password Requirements and Customer Branding to Team Edition.
  - Moved Themes per team to Team Edition.
- - Updated email notification subject line and contents for Group Messages to indicate the specific channel where the notification is instead of the team.
  
 #### Enterprise Edition
  - Added ``LoginIdAttribute`` to allow LDAP users to change their login ID without losing their account.
@@ -79,16 +82,15 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - Under ``"ServiceSettings":`` in ``config.json``:
    - Added ``"EnableAPITeamDeletion": false,`` to disable the permanent APIv4 delete team parameter.
-   - Added ``"ExperimentalEnableHardenedMode": false`` to
+   - Added ``"ExperimentalEnableHardenedMode": false`` to enable a hardened mode for Mattermost that makes user experience trade-offs in the interest of security.
  - Under ``"EmailSettings":`` in ``config.json``:
    - Added ``"EnablePreviewModeBanner": true,`` to allow Preview Mode banner to be displayed so users are aware that email notifications are disabled.
  - Under ``"ClusterSettings":`` in ``config.json``:
-   - Added ``"StreamingPort": 8075,`` to
-   - Added ``"MaxIdleConns": 100,`` to
-   - Added ``"MaxIdleConnsPerHost": 128,`` to
-   - Added ``"IdleConnTimeoutMilliseconds": 90000`` to
+   - Added ``"MaxIdleConns": 100,`` to add the maximum number of idle connections held open from one server to all others in the cluster.
+   - Added ``"MaxIdleConnsPerHost": 128,`` to add the maximum number of idle connections held open from one server to another server in the cluster.
+   - Added ``"IdleConnTimeoutMilliseconds": 90000`` to add the number of milliseconds to leave an idle connection open between servers in the cluster.
  - Under ``"TeamSettings":`` in ``config.json``:
-   - Added ``"ExperimentalHideTownSquareinLHS": false,`` to
+   - Added ``"ExperimentalHideTownSquareinLHS": false,`` to hide Town Square in the left-hand sidebar if there are no unread messages in the channel.
  - Under ``"DisplaySettings":`` in ``config.json``:
    - Added ``"CustomUrlSchemes": [],`` to
  - Under ``"LdapSettings":`` in ``config.json``:
@@ -96,8 +98,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    
 #### API Changes
 
- - Improved file upload API to stream files instead of loading them entirely into memory.
  - All APIv3 endpoints were removed.
+ - Improved file upload API to stream files instead of loading them entirely into memory.
  - SAML login endpoints were moved out of API package.
  - ``context.go`` was moved out of Api4 and into web.
  - ``api4/handlers.go`` was created to create the API handlers using the Context and Handler from web.
@@ -107,6 +109,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - Ping/pong and reconnection handling were added to Go WebSocket client.
  - Support was added for WebSocket custom dialer.
+ - ``channel_converted`` WebSocket event was added, which is published team-wide whenever a channel is converted from public to private.
 
 ### Known Issues
 
@@ -118,15 +121,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Searching with Elasticsearch enabled may not always highlight the searched terms.
  - Team sidebar on desktop app does not update when channels have been read on mobile.
  - Channel scroll position flickers while images and link previews load.
- - Numbered lists can sometimes extend beyond the normal post area.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
  - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
 
 ### Contributors
 
-[aeomin](https://translate.mattermost.com/user/aeomin/), [amyblais](https://github.com/amyblais), [AndersonWebStudio](https://github.com/AndersonWebStudio), [asaadmahmood](https://github.com/asaadmahmood), [balasankarc](https://github.com/balasankarc), [chclaus](https://github.com/chclaus), [chikei](https://github.com/chikei), [comharris](https://github.com/comharris), [compilenix](https://github.com/compilenix), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [cvitter](https://github.com/cvitter), [der-test](https://github.com/der-test), [dkadioglu](https://github.com/dkadioglu), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [fbartels](https://github.com/fbartels), [gnufede](https://github.com/gnufede), [grundleborg](https://github.com/grundleborg), [haraldkubota](https://github.com/haraldkubota), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jordanbuchman](https://github.com/jordanbuchman), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [lisakycho](https://github.com/lisakycho), [meilon](https://github.com/meilon), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [odontomachus](https://github.com/odontomachus), [pichouk](https://github.com/pichouk), [pjgrizel](https://github.com/pjgrizel), [rodcorsi](https://github.com/rodcorsi), [Roy-Orbison](https://github.com/Roy-Orbison), [ryoon](https://github.com/ryoon), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [sudheerDev](https://github.com/sudheerDev), [thePanz](https://github.com/thepanz), [uturkdogan](https/github.com/uturkdogan), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [yuya-oc](https://github.com/yuya-oc)
-_______________   
+[aeomin](https://translate.mattermost.com/user/aeomin/), [amyblais](https://github.com/amyblais), [AndersonWebStudio](https://github.com/AndersonWebStudio), [asaadmahmood](https://github.com/asaadmahmood), [balasankarc](https://github.com/balasankarc), [chclaus](https://github.com/chclaus), [chikei](https://github.com/chikei), [comharris](https://github.com/comharris), [compilenix](https://github.com/compilenix), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [cvitter](https://github.com/cvitter), [der-test](https://github.com/der-test), [dkadioglu](https://github.com/dkadioglu), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [fbartels](https://github.com/fbartels), [gnufede](https://github.com/gnufede), [grundleborg](https://github.com/grundleborg), [haraldkubota](https://github.com/haraldkubota), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jordanbuchman](https://github.com/jordanbuchman), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [lisakycho](https://github.com/lisakycho), [meilon](https://github.com/meilon), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [odontomachus](https://github.com/odontomachus), [pichouk](https://github.com/pichouk), [pjgrizel](https://github.com/pjgrizel), [rodcorsi](https://github.com/rodcorsi), [Roy-Orbison](https://github.com/Roy-Orbison), [ryoon](https://github.com/ryoon), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [sudheerDev](https://github.com/sudheerDev), [thePanz](https://github.com/thepanz), [uturkdogan](https/github.com/uturkdogan), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [yuya-oc](https://github.com/yuya-oc)  
 
 ## Release v4.10
 
