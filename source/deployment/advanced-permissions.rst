@@ -86,9 +86,10 @@ Backend Infrastructure
 
 Technical Admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions-backend` technical documentation. Topics covered in the technical documentation include:
 
-1. Default permissions on install
-2. Backend to frontend permission mapping
-3. XXXXXX
+1. Entity definitions XXXXXX links
+2. Frontend permissions mapping
+3. Data structuring
+
 
 Recipes
 --------
