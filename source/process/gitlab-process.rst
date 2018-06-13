@@ -169,24 +169,6 @@ Moreover, a recurring monthly meeting between a product manager at GitLab and Ma
 
 Optionally, an engineer from both GitLab and Mattermost teams also joins the meeting.
 
-Upcoming Work
----------------
-
-1. Environment variables support for `config.json` settings. - **Due: Mattermost v4.10 / GitLab v11.0**
-
- - `Disable Mattermost System Console settings that are configured via environment variables <https://mattermost.atlassian.net/browse/MM-9849>`_.
- - `Investigate what config.json-only settings need to be added to the Mattermost System Console <https://mattermost.atlassian.net/browse/MM-9850>`_.
- - `Support environment variable configuration options even if there's no entry for it in config.json <https://mattermost.atlassian.net/browse/MM-8400>`_.
- - `Update documentation <https://gitlab.com/gitlab-org/omnibus-gitlab/issues/3284>`_ and fully test the migration.
-
-2. `Add a config.json setting to disable the permanent API v4 delete team parameter <https://mattermost.atlassian.net/browse/MM-9916>`_. This allows Mattermost to disable the parameter without any changes to GitLab Omnibus. - **Due: Mattermost v5.0 / GitLab v11.1**
-
-3. `Migrate Mattermost slash command integration in GitLab to Mattermost API v4 <https://gitlab.com/gitlab-org/gitlab-ce/issues/41631>`_. - **Due: Mattermost v5.0 / GitLab v11.1**
-
-4. Releasing an extended support release (ESR) version of Mattermost and shipping it in GitLab Omnibus. `A discussion is open in the Mattermost forums <https://forum.mattermost.org/t/extended-support-release-discussion/4598>`_. - **Due: TBD**
-
-5. Bundling Mattermost Enterprise Edition in GitLab EE. `A discussion is open in GitLab repository <https://gitlab.com/gitlab-org/omnibus-gitlab/issues/1609>`_. - **Due: TBD**
-
 Templates
 --------------
 
