@@ -535,7 +535,8 @@ mattermost permissions reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Reset permissions for all users, including Admins, to their default state on new installs.
+    Reset permissions for all users, including Admins, to their default state on new installs. Note: **this will delete 
+    all custom schemes**.
 
   Format
     .. code-block:: none
