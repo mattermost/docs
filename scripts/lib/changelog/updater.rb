@@ -1,4 +1,4 @@
-require_relative '../version'
+require_relative '../changelog_version'
 
 module Changelog
   # Updates a Markdown changelog String by inserting new Markdown for a
@@ -38,7 +38,7 @@ module Changelog
     def insert(markdown)
       contents.each_with_index do |line, index|
         if line =~ /\A## (\d{4}-\d{2}-\d{2})/
-          header = Version.new($1)
+          header = ChangelogVersion.new($1)
 
           if version == header
             entries = markdown.lines

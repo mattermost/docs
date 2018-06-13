@@ -16,9 +16,8 @@ access to the `master` branch.
 ```sh
 git checkout master
 git pull master
-cd scripts
 bundle install
-scripts/changelog_manager.rb ../
+scripts/changelog_manager.rb .
 git push
 ```
 
