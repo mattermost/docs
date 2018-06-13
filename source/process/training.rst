@@ -110,10 +110,10 @@ For confidentiality of customers, internal process meetings are limited to Matte
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff only** - Each team is responsible for its own sprint planning process. Sprints are currently one week long, and start on Tuesdays. Before the next sprint begins, teams share a quick recap of their past and upcoming sprint with leads.  
+**Mattermost staff only** - Each team is responsible for its own sprint planning process. Sprints are currently one week long, and start on Tuesdays. Note that teams also share demos and short updates with the whole product team in the "Platform Meeting" (see below).
 
 - Goal: Share demos, reflect on previous sprint, and lock on tickets for next sprint.
-- Attendees: Development team members (developers and product manager), plus leads for Tuesday recap.
+- Attendees: Development team members (typically developers and product manager).
 
 Triage Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -211,9 +211,9 @@ Meeting Agenda:
 
 - **Ice-breaker** - Currently: "Questions"
 - **Roadmap check-in** - Review of roadmap status in current and next release
-- **Company update** - A summary from leads
 - **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
-- **New items** - New team relevant items are discussed
+- **Team updates** - Each development team gives a short update on their current top priorities
+- **New items** - New queued items are discussed
 - **Blind spots, Inspiration, Knowledge Share** - Colleagues share areas of concern and ask questions
 
 Post Meeting:
