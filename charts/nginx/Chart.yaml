@@ -3,17 +3,15 @@ version: 0.19.2
 appVersion: 0.14.0
 home: https://github.com/kubernetes/ingress-nginx
 description: An nginx Ingress controller that uses ConfigMap to store the nginx configuration.
+details: Nginx for use as part of GitLab deployment.
 icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/500px-Nginx_logo.svg.png
 keywords:
-  - ingress
-  - nginx
+- ingress
+- nginx
+- gitlab
 sources:
-  - https://github.com/kubernetes/ingress-nginx
+- https://github.com/kubernetes/ingress-nginx
+- https://gitlab.com/charts/gitlab/charts/nginx
 maintainers:
-  - name: jackzampolin
-    email: jack.zampolin@gmail.com
-  - name: mgoodness
-    email: mgoodness@gmail.com
-  - name: chancez
-    email: chance.zibolski@coreos.com
-engine: gotpl
+- name: GitLab Inc.
+  email: support@gitlab.com
