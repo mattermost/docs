@@ -1,17 +1,20 @@
 apiVersion: v1
 name: registry
-version: 0.0.1
-description: "Helm chart for Container Registry with GitLab"
+version: 0.1.0
+appVersion: 2.6.2
+description: Stateless, highly scalable application that stores and lets you
+  distribute Docker images
+details: Container Registry used as part of GitLab deployment.
 keywords:
 - registry
 - container
 - docker
 - gitlab
-home: https://github.com/docker/distribution
+home: https://hub.docker.com/_/registry/
+icon: https://hub.docker.com/public/images/logos/mini-logo.svg
 sources:
-- https://github.com/docker/distribution
+- https://github.com/docker/distribution-library-image
+- https://gitlab.com/charts/gitlab/charts/registry
 maintainers:
 - name: GitLab Inc.
   email: support@gitlab.com
-- name: The Distribution Team
-details: "Container Registry used as part of GitLab deployment."
