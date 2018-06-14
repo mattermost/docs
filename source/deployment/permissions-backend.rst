@@ -21,15 +21,6 @@ Permissions
 
 A **permission** describes a permitted action which may be carried out on an object. It describes the action that users who have been granted the permission may perform in the context in which they have been granted it.
 
-
-Mattermost Permissions
-
-
-
-name, description, scope
-
-Default permission assignment to roles can be found `here <>`_.
-
 Roles
 ~~~~~~
 
@@ -64,22 +55,46 @@ Additionally, the lowest-scoped scheme always takes precedence in the context. F
 Data Structure
 ----------------
 
+Permissions
+~~~~~~~~~~~~
+
+Permissions in Mattermost are a property of the server code base and are not created or modified dynamically. The current set of permissions are as described in the table below.
+
+XXXXXX GG: Please review/tweak this and then I'll create the RST table to put here: https://docs.google.com/spreadsheets/d/1z3yUIQs2JaxmUjD5Q8MZSijvbE2o8CoHdvV5Vfj-y4Y/edit#gid=0 
+
 Applicable database fields and tables.
 
-Permissions
-~~~~~~~~~~~~~~
-
-perms have scope (sys, team, chan)
-
-``User`` ``TeamMember`` ``Channel Member`` Tables
+``User`` ``TeamMember`` ``ChannelMember`` Tables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Roles assigned to users in specific contexts are represented by the ``User``, ``TeamMember`` and ``ChannelMember`` tables. 
+
+XXXXXX GG: can we expand on this, what fields are relevant?
 
 ``Roles`` Table
 ~~~~~~~~~~~~~~~~
 
+Roles are dynamic and user configurable, necessitating a database table with the following fields:
+
+- Id (Autoincrement, Primary Key)
+- Name (Unique String with Character Constraints, e.g. “team_user”).
+- Display Name (String)
+- Description (String)
+- Permissions (String - golang style “fields” with permission IDs).
+- Scheme Managed (bool) - indicates whether this role is managed as part of a scheme.
+
 ``Schemes`` Table
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
+Schemes are dynamic and user configurable, necessitating a database table with the following fields:
 
+- Id (Autoincrement, Primary Key)
+- Name (Unique String with Character Constraints, e.g. “corporate_scheme”)
+- Description (String)
+- Scope (String): Team or Channel
+- Team Admin Role (String): Empty if Channel Scope
+- Team User Role (String): Empty if Channel Scope
+- Channel Admin Role (String): Always provided
+- Channel User Role (String): Always provided
 
-  
+XXXXXX GG: What about the system admin and system user roles for the system default scheme? How are those defined if the schemes table doesn't have those fields?
