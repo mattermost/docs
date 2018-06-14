@@ -24,8 +24,12 @@ global:
   gitaly:
     authToken: {}
 backups:
-  bucketName: gitlab-backups
-
+  bucketNames:
+    backups: gitlab-backups
+    artifacts: gitlab-artifacts
+    uploads: gitlab-uploads
+    registry: registry
+    lfs: git-lfs
 extra: {}
 
 rack_attack:
