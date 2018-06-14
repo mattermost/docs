@@ -2427,7 +2427,7 @@ Custom URL Schemes
 A list of URL schemes that are used for autolinking in message text. ``http``, ``https``, ``ftp``, ``tel`` and ``mailto`` always create links.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CustomUrlSchemes": []`` which takes an array of URL schemes such as ``["git", "smtp"]`.                       |
+| This feature's ``config.json`` setting is ``"CustomUrlSchemes": []`` which takes an array of URL schemes such as ``["git", "smtp"]`.                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
