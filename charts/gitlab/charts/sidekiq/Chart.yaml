@@ -1,19 +1,17 @@
 ---
 apiVersion: v1
-description: GitLab Sidekiq
 name: sidekiq
 version: 0.1.0
 appVersion: master
+description: Gitlab Sidekiq for asynchronous task processing in rails
 keywords:
 - gitlab
 - sidekiq
 home: https://about.gitlab.com/
+icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.svg
 sources:
-- https://gitlab.com/gitlab-org/gitlab-ce
-- https://gitlab.com/gitlab-org/gitlab-ee
-- https://gitlab.com/gitlab-org/build/CNG
+- https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/sidekiq
+- https://gitlab.com/gitlab-org/build/CNG/tree/master/gitlab-sidekiq
 maintainers:
 - name: GitLab Inc.
   email: support@gitlab.com
-- name: The Distribution Team
-details: Sidekiq for GitLab Chart
