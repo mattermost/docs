@@ -19,12 +19,12 @@ Entity Definitions
 Permissions
 ~~~~~~~~~~~~
 
-A **permission** describes a permitted action which may be carried out on an object. It describes the action that users who have been granted the permission may perform in the context in which they have been granted it.
+A **permission** describes a permitted action which may be carried out on an object. It describes the action that users may perform in the context in which they have been assigned the role granting the permission.
 
 Roles
 ~~~~~~
 
-A **role** is something to which permissions are granted, that is then assigned to users, in contexts, in order to grant them the assigned permissions in that context. One user may end up with different sets of permissions granted by different roles in different contexts.
+A **role** is something to which permissions are granted, that is then assigned to users in contexts in order to grant them the assigned permissions in that context. One user may end up with different sets of permissions granted by different roles in different contexts.
 
 Scope
 ~~~~~~
@@ -62,43 +62,41 @@ Permissions in Mattermost are a property of the server code base and are not cre
 
 XXXXXX GG: Please review/tweak this and then I'll create the RST table to put here: https://docs.google.com/spreadsheets/d/1z3yUIQs2JaxmUjD5Q8MZSijvbE2o8CoHdvV5Vfj-y4Y/edit#gid=0 
 
-Applicable database fields and tables.
+Applicable database fields and tables:
 
-``User`` ``TeamMember`` ``ChannelMember`` Tables
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+``Roles`` Field
+~~~~~~~~~~~~~~~~
 
-Roles are applied to objects that represents that user’s membership in a context. These are represented by the following objects in the Mattermost data model:
+Roles are applied to objects that represents that user’s membership in a context. These are referenced in the ``Roles`` field of the ``User``, ``TeamMember``, ``ChannelMember`` and ``Schemes`` Tables.
 
-- ChannelMember for a channel context.
-- TeamMember for a team context.
-- User for the system context. 
-
-XXXXXX GG: can we expand on this, what fields are relevant in these tables?
+In the ``TeamMember`` and ``ChannelMember`` tables, it's the ``Roles`` field that contains custom roles and the ``SchemeAdmin`` and ``SchemeUser`` booleans that indicate the member object should inherit the respective roles from the relevant scheme, either the default or custom scheme assigned to the relevant team.
 
 ``Roles`` Table
 ~~~~~~~~~~~~~~~~
 
 Roles are dynamic and user configurable, necessitating a database table with the following fields:
 
-- Id (Autoincrement, Primary Key)
-- Name (Unique String with Character Constraints, e.g. “team_user”).
-- Display Name (String)
-- Description (String)
-- Permissions (String - golang style “fields” with permission IDs).
-- Scheme Managed (bool) - indicates whether this role is managed as part of a scheme.
+- ``Id`` (Autoincrement, Primary Key)
+- ``Name`` (Unique String with Character Constraints, e.g. “team_user”).
+- ``Display Name`` (String)
+- ``Description`` (String)
+- ``Permissions`` (String): Space-separated permissions names
+- ``Scheme Managed`` (bool): Indicates whether this role is managed as part of a scheme.
+- ``BuiltIn`` (bool): Indicates if this role is built in to the Mattermost system and not removable by the user.
+
+The System Scheme is built in to the product and it's roles are defined as ``BuiltIn: true`` in the ``Roles`` table.
 
 ``Schemes`` Table
 ~~~~~~~~~~~~~~~~~~
 
 Schemes are dynamic and user configurable, necessitating a database table with the following fields:
 
-- Id (Autoincrement, Primary Key)
-- Name (Unique String with Character Constraints, e.g. “corporate_scheme”)
-- Description (String)
-- Scope (String): Team or Channel
-- Team Admin Role (String): Empty if Channel Scope
-- Team User Role (String): Empty if Channel Scope
-- Channel Admin Role (String): Always provided
-- Channel User Role (String): Always provided
-
-XXXXXX GG: What about the system admin and system user roles for the system default scheme? How are those defined if the schemes table doesn't have those fields?
+- ``Id`` (Autoincrement, Primary Key)
+- ``Name`` (Unique String with Character Constraints, e.g. “corporate_scheme”)
+- ``Display`` Name
+- ``Description`` (String)
+- ``Scope`` (String): Team or Channel
+- ``Team Admin Role`` (String): Empty if Channel Scope
+- ``Team User Role`` (String): Empty if Channel Scope
+- ``Channel Admin Role`` (String): Always provided
+- ``Channel User Role`` (String): Always provided
