@@ -52,6 +52,7 @@ Deployment
    /deployment/desktop-app-deployment*
    AppConfig for EMM Solutions </deployment/mobile-appconfig.rst>
    /deployment/sso-ldap*
+   /deployment/advanced*
    /deployment/auth*
    /deployment/sso-saml.rst
    /deployment/scaling*
