@@ -435,13 +435,37 @@ mattermost import slack
       sudo ./mattermost import slack myteam slack_export.zip
 
 mattermost ldap
--------------
+----------------
 
   Description
     Commands to configure and synchronize AD/LDAP.
 
   Child Command
+    -  `mattermost ldap idmigrate`_ - Migrate the LDAP Id Attribute to a new value
     -  `mattermost ldap sync`_ - Synchronize now
+
+mattermost ldap sync
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Migrate LDAP Id Attribute to new value.
+    
+    Run this utility to change the value of your ID Attribute without your users losing their accounts. After running the command you can change the ID Attribute to the new value in your ``config.json``. For example, if your current ID Attribute was ``sAMAccountName`` and you wanted to change it to ``objectGUID``, you would:
+
+    1. Wait for an off-peak time when your users won't be impacted by a server restart.
+    2. Run the command ``mattermost ldap idmigrate objectGUID``.
+    3. Edit your ``config.json`` and change your ``IdAttribute`` field to the new value ``objectGUID``.
+    4. Restart the Mattermost server.
+
+  Format
+    .. code-block:: none
+
+      mattermost ldap idmigrate {attribute}
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost ldap idmigrate objectGUID
 
 mattermost ldap sync
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -460,7 +484,7 @@ mattermost ldap sync
       sudo ./mattermost ldap sync
 
 mattermost license
------------------
+--------------------
 
   Description
     Commands to manage licensing.
