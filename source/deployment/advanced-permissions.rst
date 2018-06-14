@@ -57,7 +57,7 @@ List of all Team Override Schemes in the system. Sorted alphabetically by scheme
 
 **Team Override Scheme Interface** 
 
-Interface for naming, assigning teams and editing permissions in a Team Override Scheme Scheme, with panels for All members, Channel Admins and Team Admins. Available in System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme:
+Interface for naming, assigning teams and editing permissions in a Team Override Scheme, with panels for All members, Channel Admins and Team Admins. Available in System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme:
 
 .. image:: ../images/team-scheme.png
 
@@ -80,16 +80,6 @@ Supplementary Roles (E20)
 *Available in a future release of Enterprise Edition E20*
 
 Allows Admins to grant additional permissions to specific users or to a group of users based on AD/LDAP group membership. Permissions can be granted within the scope of channels, teams or system level.
-
-Backend Infrastructure
------------------------
-
-Technical Admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions-backend` technical documentation. Topics covered in the technical documentation include:
-
-1. Entity definitions XXXXXX links
-2. Frontend permissions mapping
-3. Data structuring
-
 
 Recipes
 --------
@@ -183,6 +173,12 @@ There are a number of CLI tools available for Admins to help in configuring and 
 2. `Export permission schemes <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-export>`_: Exports the System Scheme and any Team Override Schemes to a jsonl file.
 3. `Import permission schemes <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-permissions-import>`_: Imports the System Scheme and any Team Override Schemes to your Mattermost instance from a jsonl input file in the format outputted by ``mattermost permissions export``.
 
+Backend Infrastructure
+-----------------------
+
+Technical Admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions-backend` technical documentation. Topics covered in the technical documentation include:
+
+XXXXXX GG
 
 
 Glossary
@@ -190,9 +186,9 @@ Glossary
 
 - Permission: The ability to execute certain actions. Permissions are granted to roles.
 - Roles: A set of permissions. Users or groups are assigned to roles.
-- Group: A set of users, usually synced from AD/LDAP. Groups are assigned to roles.
+- Group: A set of users, usually synced from AD/LDAP. Groups are assigned to roles in the context of teams, channels or system-wide.
 - Default Roles: System Admin, Team Admin, Channel Admin, Member.
 - System Scheme: A set of default roles that apply system wide
-- Team Scheme: A set of default roles that apply only in the team specified. The permissions granted to the roles in a team scheme override role permissions of a system scheme.
-- System Wide: Applies across the entire system, including all teams of which the user is a member.
+- Team Override Scheme: A set of default roles that apply only in the team specified. Permissions granted to roles in a team scheme override roles in the system scheme.
+- System-wide: Applies across the entire system, including all teams of which the user is a member.
 - Team Wide: Applies in a specific team only.
