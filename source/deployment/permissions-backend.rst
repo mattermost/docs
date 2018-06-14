@@ -38,7 +38,7 @@ Permissions live within a given scope. There are three scopes in the Mattermost 
 Context
 ~~~~~~~~
 
-A context is an instance of a scope. For example, a channel called "Developers Hangout" is an instance of channel scope. Contexts have hierarchical relationships between them that reflect the hierarchical ordering of scopes. Each context has one parent, and may have multiple children, with the ultimate parent context being the system context:
+A **context** is an instance of a scope. For example, a channel called "Developers Hangout" is an instance of channel scope. Contexts have hierarchical relationships between them that reflect the hierarchical ordering of scopes. Each context has one parent, and may have multiple children, with the ultimate parent context being the system context:
 
 - A channel context has a parent team context, whose parent is the system context. For example, the "Developers Hangout" channel is the channel context, with parent team context "Contributors Team", with parent system context.
 - A team context has a parent system context and child channel contexts. For example, the "Contributors Team" is the team context, with parent system context, and with children channel contexts such as "Developers Hangout", "Reception" and "Marketing".
@@ -67,9 +67,13 @@ Applicable database fields and tables.
 ``User`` ``TeamMember`` ``ChannelMember`` Tables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Roles assigned to users in specific contexts are represented by the ``User``, ``TeamMember`` and ``ChannelMember`` tables. 
+Roles are applied to objects that represents that user’s membership in a context. These are represented by the following objects in the Mattermost data model:
 
-XXXXXX GG: can we expand on this, what fields are relevant?
+- ChannelMember for a channel context.
+- TeamMember for a team context.
+- User for the system context. 
+
+XXXXXX GG: can we expand on this, what fields are relevant in these tables?
 
 ``Roles`` Table
 ~~~~~~~~~~~~~~~~
