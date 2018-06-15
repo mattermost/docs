@@ -145,7 +145,7 @@ Set up Mattermost Server
 
    a. Open a command prompt, and execute ``cd c:\mattermost\bin`` to change your working directory
 
-   b. Execute ``platform.exe``
+   b. Execute ``mattermost.exe``
    
    c. Verify that mattermost is running and connected to the database successfully by confirmed a console 
       log like ``Server is listening on :8065`` letting you know the service is running.
@@ -165,7 +165,7 @@ Configure the Firewall
 
    .. code:: batch
 
-      netsh advfirewall firewall add rule name="Mattermost" dir=in action=allow program="C:\mattermost\bin\platform.exe" enable=yes 
+      netsh advfirewall firewall add rule name="Mattermost" dir=in action=allow program="C:\mattermost\bin\mattermost.exe" enable=yes 
 
 Establish a Windows Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -185,7 +185,7 @@ a wrapper-utility must be used.
     .. code:: batch
 
        cd c:\mattermost\bin
-       nssm install mattermost c:\mattermost\bin\platform.exe
+       nssm install mattermost c:\mattermost\bin\mattermost.exe
        nssm set mattermost AppDirectory c:\mattermost
 
 12. Start the service by executing the following
@@ -193,7 +193,7 @@ a wrapper-utility must be used.
     .. code:: batch
 
       net start mattermost
-      tasklist /FI "IMAGENAME eq platform.exe"
+      tasklist /FI "IMAGENAME eq mattermost.exe"
 
 Verify Mattermost Connectivity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

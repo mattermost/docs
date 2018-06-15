@@ -39,18 +39,18 @@ For example, if you wanted to run `TestPostUpdate` in `api/post_test.go`, you wo
 go test -v -run='TestPostUpdate' ./api
 ```
 
-### Useful platform commands ###
+### Useful mattermost commands ###
 
-During development you may want to reset the database and generate random data for testing your changes. For this purpose, Mattermost has the following commands in the platform CLI:
+During development you may want to reset the database and generate random data for testing your changes. For this purpose, Mattermost has the following commands in the mattermost CLI:
 
 You can reset your database to the initial state using:
 ```
-platform reset
+mattermost reset
 ```
 
 After that, you can generate random data to populate the Mattermost database using:
 ```
-platform sampledata
+mattermost sampledata
 ```
 
 ### Repository structure ###
@@ -73,5 +73,5 @@ For client work, you'll be working in the [webapp repository](https://github.com
 ### Testing with GitLab Omnibus ###
 
 To test a locally compiled version of Mattermost with GitLab Omnibus, replace the following GitLab files:
- * The compiled `platform` binary in `/opt/gitlab/embedded/bin/plattermost`
+ * The compiled `mattermost` binary in `/opt/gitlab/embedded/bin/mattermost`
  * The assets (templates, i18n, fonts, webapp) in `/opt/gitlab/embedded/service/mattermost`

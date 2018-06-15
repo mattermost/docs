@@ -67,7 +67,7 @@ To enable email, configure an SMTP email service as follows:
       9. Then click **Save**
       10. Then click **Test Connection**
       11. If the test failed please look in **OTHER** > **Logs** for any
-          errors that look like ``[EROR] /api/v3/admin/test_email ...``
+          errors that look like ``[EROR] /api/v4/email/test ...``
 
 Sample SMTP Settings
 ~~~~~~~~~~~~~~~~~~~~
@@ -152,7 +152,7 @@ Checking your SMTP server is reachable
 -  Attempt to telnet to the email service to make sure the server is
    reachable.
 -  You must run the following commands from the same machine or virtual
-   instance where ``mattermost/bin/platform`` is located. So if you're
+   instance where ``mattermost/bin/mattermost`` is located. So if you're
    running Mattermost from Docker you need to
    ``docker exec -ti mattermost-dev /bin/bash``
 -  Telnet to the email server with ``telnet mail.example.com 25``. If
