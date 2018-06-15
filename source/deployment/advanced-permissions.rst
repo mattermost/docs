@@ -176,10 +176,7 @@ There are a number of CLI tools available for Admins to help in configuring and 
 Backend Infrastructure
 -----------------------
 
-Technical Admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions-backend` technical documentation. Topics covered in the technical documentation include:
-
-XXXXXX GG
-
+Technical Admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions-backend` technical documentation.
 
 Glossary
 ----------
