@@ -3626,6 +3626,24 @@ Group Unread Channels (Experimental)
 | This feature’s ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "disabled"`` with options ``disabled``, ``default_on`` and ``default_off`` for above settings respectively. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Hardened Mode (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables a hardened mode for Mattermost that makes user experience trade-offs in the interest of security.
+
+**False**: Disables hardened mode.
+
+Changes made when hardened mode is enabled:
+
+    - Failed login returns a generic error message instead of a specific message for username and password.
+    - If `multi-factor authentication (MFA) <https://docs.mattermost.com/deployment/auth.html>`_ is enabled, the route to check if a user has MFA enabled always returns true. This causes the MFA input screen to appear even if the user does not have MFA enabled. The user may enter any value to pass the screen. Note that hardened mode does not affect user experience when MFA is enforced.
+    - Password reset does not inform the user that they can not reset their SSO account through Mattermost and instead claims to have sent the password reset email.
+    - Mattermost sanitizes all 500 errors before returned to the client. Use the supplied ``request_id`` to match user facing errors with the server logs.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false`` for above settings respectively.          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Team Settings
 ~~~~~~~~~~~~~~
 
