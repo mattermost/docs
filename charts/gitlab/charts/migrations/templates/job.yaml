@@ -51,10 +51,6 @@ spec:
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
               value: '/var/opt/gitlab/config/gitlab/'
-            {{- if .Values.initialRootPassword}}
-            - name: GITLAB_ROOT_PASSWORD
-              value: {{ include "migrations.validate_root_password" . | required "migrations.initialRootPassword needs to be more than 6 characters" | quote }}
-            {{- end }}
           volumeMounts:
             - name: migrations-config
               mountPath: '/var/opt/gitlab/templates'
@@ -64,6 +60,9 @@ spec:
             - name: migrations-secrets
               mountPath: /home/git/gitlab/config/secrets.yml
               subPath: rails-secrets/secrets.yml
+            - name: migrations-secrets
+              mountPath: /home/git/gitlab/config/initial_root_password
+              subPath: migrations/initial_root_password
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
@@ -89,6 +88,11 @@ spec:
               items:
                 - key: {{ template "gitlab.psql.password.key" . }}
                   path: postgres/psql-password
+          - secret:
+              name: {{ template "gitlab.migrations.initialRootPassword.secret" . }}
+              items:
+                - key: {{ template "gitlab.migrations.initialRootPassword.key" . }}
+                  path: migrations/initial_root_password
       - name: migrations-secrets
         emptyDir:
           medium: "Memory"

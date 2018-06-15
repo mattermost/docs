@@ -34,7 +34,6 @@ Table below contains all the possible charts configurations that can be supplied
 | redis.serviceName     | Redis service name                             | redis                                          |
 | psql.password.secret  | psql secret                                    | gitlab-postgres                                |
 | psql.password.key     | key to psql password in psql secret            | psql-password                                  |
-| initialRootPassword   | Password to the gitlab root account            | Required                                       |
 
 ## Chart configuration examples
 ### image.pullSecrets
@@ -125,13 +124,5 @@ The username with which to authenticate to the database. This defaults to `gitla
 The `password` attribute for PostgreSQL has to sub keys:
 - `secret` defines the name of the kubernetes `Secret` to pull from
 - `key` defines the name of the key in the above secret that contains the password.
-
-## Chart Settings
-
-#### initialRootPassword
-
-The root password to use when seeding the database. If this is not set when the database is first seeded, then users will be asked to set the root password from the GitLab login screen in the browser.
-
-If the database has already been seeded, this field does not set the existing root password.
 
 [Job]: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/

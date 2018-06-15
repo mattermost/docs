@@ -37,9 +37,10 @@ data:
             gitaly_address: tcp://localhost:8075
   configure: |
     set -e
-    mkdir -p /init-secrets/redis /init-secrets/postgres /init-secrets/rails-secrets
+    mkdir -p /init-secrets/redis /init-secrets/postgres /init-secrets/rails-secrets /init-secrets/migrations
     cp /init-config/redis/password  /init-secrets/redis/password
     cp /init-config/postgres/psql-password  /init-secrets/postgres/psql-password
     cp /init-config/rails-secrets/secrets.yml /init-secrets/rails-secrets/secrets.yml
+    cp /init-config/migrations/initial_root_password /init-secrets/migrations/initial_root_password
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}
