@@ -1,6 +1,75 @@
-=====================================
-Export Compliance Overview
-=====================================
+========================================
+Certifications and Compliance Overview
+========================================
+
+This overview summarizes various compliance and certifications Mattermost is designed to support, including: 
+
+- GDPR Compliance
+- U.S. Export Compliance 
+
+GDPR Compliance 
+-----------------------------------------------
+
+The following overview summarizes how Mattermost, Inc. and Mattermost software comply with European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`_)
+
+Continual Commitment to the Principles of GDPR 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost is a collaboration hub for high trust organizations that is committed to supporting the principles of GDPR in protecting the data of people in the European Union through: 
+
+- **Security Infrastructure** - Continual investment in security, privacy and compliance capabilities 
+- **Contractual Obligations** - Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://about.mattermost.com/default-data-processing-addendum/>`_ in our standard `Terms of Service <https://about.mattermost.com/terms>`_
+- **Privacy Measures** - Self-certification to international standards for data transfer standards including **E.U.-U.S. Privacy Shield** 
+- **Product Features** to ensure data management and data portability
+
+To say up to date with our efforts over time, please refer back to this site or subscribe to `our regular newsletter <https://about.mattermost.com/newsletter/>`_. 
+
+Security Infrastructure 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost enables organizations to protect their information, and the information of their users and customers, through self-hosted communication infrastructure developed with a high standard of security, including: 
+
+- **Security Features** in Mattermost open source and commercial offerings that enable deployment on your organization’s own infrastructure
+- **Responsible Disclosure Policy** for security researchers around the world to confidentially report suspected vulnerabilities, which can be addressed in updates to Mattermost software 
+- **Security Reviews** conducted by both our own internal security review team and external security researchers
+- **ISO 27001 Standards** which are met to achieve alignment with international security guidelines
+
+Contractual Obligations 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost adheres to contractual obligations for ensuring the proper management of data through: 
+
+- **GDPR compliant Data Processing Addendum** included with Mattermost’s standard terms
+- **Mattermost Privacy Policy** sharing how data is handled on the online infrastructure controlled by Mattermost, Inc. 
+
+Privacy Measures 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost self-certifies that it adheres to the **E.U.-U.S. Privacy Shield** principles of notice, choice, onward transfer, security, data integrity, access and enforcement for personal data submitted by our customers and partners.
+
+Product Features
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost supports features that ensure data management and data portability.
+
+Data Management
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Data retention**: Use `data retention <https://docs.mattermost.com/administration/data-retention.html>`_ to automatically erase data after a set period of time, meeting Right to Erasure principle. In Team Edition, you can use database scripts.
+
+- **Profile deletion**: Delete a person’s personal information via `a command line tool <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-delete>`_. The command permanently deletes all user information including messages created by the user.
+
+- **Self-hosted push notification service**: Self-host your own push notification service or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/members/>`_ to meet security and compliance policies. See `mobile app guide <https://docs.mattermost.com/mobile/mobile-overview.html>`_ to learn more.
+
+Data Portability
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- **Data import**: Use the `bulk loading tool <https://docs.mattermost.com/deployment/bulk-loading.html>`_ to migrate data from an existing messaging system, or for pre-populating a new installation with data. `Review this guide <https://docs.mattermost.com/administration/migrating.html#migrating-from-hipchat-server-and-hipchat-data-center-to-mattermost>`_ that summarizes the different approaches, meeting `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`_ principle.
+
+- **Data export**: Use `compliance exports <https://docs.mattermost.com/administration/compliance-export.html>`_ to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`_ and `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`_.
+
+U.S. Export Compliance Overview
+-----------------------------------------------
 
 Summary Table
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -39,7 +108,7 @@ For these reasons, please take the time to familiarize yourself with applicable 
 jurisdictions in which you operate. Although Mattermost cannot provide advice on export matters, you will find on 
 this web page information you may need in order export Mattermost products.
 
-This overview is specific to the `U.S. Export Administration Regulations <https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear>`_ (EAR), however business operations may subject you to other regulations also, such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws/itar.html>`_.
+This overview is specific to the `U.S. Export Administration Regulations <https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear>`_ (EAR), however business operations may subject you to other regulations also, such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987>`_.
 
 General Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

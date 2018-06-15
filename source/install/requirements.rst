@@ -11,7 +11,7 @@ This guide outlines minimum software and hardware requirements for deploying Mat
 Deployment Overview
 -------------------
 
-Please see `Mattermost Deployment Overview <http://docs.mattermost.com/deployment/deployment.html>`__ for a summary of software systems who's requirements are described in this document. 
+Please see the `Mattermost Deployment Overview <http://docs.mattermost.com/deployment/deployment.html>`__ documentation for a summary of software systems whose requirements are described in this document. 
 
 .. figure:: ../images/network.PNG
    :alt: image
@@ -30,7 +30,7 @@ PC Web Experience
 -  Mac: OS 10 (Safari 9, Chrome 43+)
 -  Linux: Arch 4.0.0 (Chrome 43+)
 
-`*` IE 11 Compatiblity View is not supported. 
+`*` IE 11 Compatibility View is not supported. 
 
 Mobile App Experience
 ^^^^^^^^^^^^^^^^^^^^^
@@ -65,7 +65,7 @@ While community support exists for Fedora, FreeBSD and Arch Linux, Mattermost do
 Database Software
 ^^^^^^^^^^^^^^^^^
 
--  MySQL 5.6+
+-  MySQL 5.6, 5.7, 8 (Please see note below on MySQL 8 support)
 -  PostgreSQL 9.4+
 -  Amazon Aurora MySQL 5.6+
 
@@ -81,6 +81,15 @@ Search limitations on PostgreSQL:
 Search limitations on MySQL:
 
 - Hashtags or recent mentions of usernames containing a dot do not return search results.
+
+**MySql 8 Support**:
+
+In MySQL 8.0.4, the deafult authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password`` (https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/). If you are using MySQL 8.0.4+, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
+
+  .. code-block:: text
+   
+   [mysqld]
+   default-authentication-plugin=mysql_native_password
 
 Hardware Requirements
 ---------------------

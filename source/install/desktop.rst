@@ -28,17 +28,17 @@ Windows 10+, Windows 8.1+, Windows 7+
 
 1. Download latest version of the Mattermost desktop app:
 
-   - `64-bit version of Windows <https://releases.mattermost.com/desktop/4.0.1/mattermost-setup-4.0.1-win64.exe>`_
-   - `32-bit version of Windows <https://releases.mattermost.com/desktop/4.0.1/mattermost-setup-4.0.1-win32.exe>`_
+   - `64-bit version of Windows <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win64.exe>`_
+   - `32-bit version of Windows <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win32.exe>`_
 
-2. From the ``\Downloads`` directory right-click on the file ``mattermost-setup-4.0.1...`` and select **Open**.
+2. From the ``\Downloads`` directory right-click on the file ``mattermost-setup-4.1.2...`` and select **Open**.
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
 macOS 10.9+
 --------------------------------------------------
 
-1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.0.1/mattermost-desktop-4.0.1-osx.tar.gz>`_.
+1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-mac.zip>`_.
 
 2. Double-click the download to expand the archive.
 
@@ -55,9 +55,9 @@ Generic Linux package
 1. Download latest version of the Mattermost desktop app:
 
   64-bit systems:
-   `mattermost-desktop-4.0.1-linux-x64.tar.gz <https://releases.mattermost.com/desktop/4.0.1/mattermost-desktop-4.0.1-linux-x64.tar.gz>`_
+   `mattermost-desktop-4.1.2-linux-x64.tar.gz <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-x64.tar.gz>`_
   32-bit systems:
-   `mattermost-desktop-4.0.1-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/4.0.1/mattermost-desktop-4.0.1-linux-ia32.tar.gz>`_
+   `mattermost-desktop-4.1.2-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-ia32.tar.gz>`_
 
 2. Extract the archive to a convenient location. You can then execute ``mattermost-desktop``, which is located inside the extracted directory.
 
@@ -71,16 +71,16 @@ Unofficial, community-driven .deb packages are available.
 1. Download the latest version of the Mattermost desktop app:
 
   64-bit systems
-   `mattermost-desktop-4.0.1-linux-amd64.deb <https://releases.mattermost.com/desktop/4.0.1/mattermost-desktop-4.0.1-linux-amd64.deb>`_
+   `mattermost-desktop-4.1.2-linux-amd64.deb <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-amd64.deb>`_
   32-bit systems
-   `mattermost-desktop-4.0.1-linux-i386.deb <https://releases.mattermost.com/desktop/4.0.1/mattermost-desktop-4.0.1-linux-i386.deb>`_
+   `mattermost-desktop-4.1.2-linux-i386.deb <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-i386.deb>`_
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
   64-bit systems
-    ``sudo dpkg -i mattermost-desktop-4.0.1-linux-amd64.deb``
+    ``sudo dpkg -i mattermost-desktop-4.1.2-linux-amd64.deb``
   32-bit systems
-    ``sudo dpkg -i mattermost-desktop-4.0.1-linux-i386.deb``
+    ``sudo dpkg -i mattermost-desktop-4.1.2-linux-i386.deb``
 
 3. To run Mattermost, open **Dash** (located at top left corner) and input ``mattermost``, then click the Mattermost icon.
 
@@ -102,8 +102,6 @@ A snap is available for systems that have Snapcraft installed. Snapcraft is inst
 
 Troubleshooting
 --------------------------------------------------
-
-Possible solutions to issues encountered when using the Desktop App.
 
 "Installation has failed" dialog
     The app data might be corrupted - remove all the files in `C:\Users...\AppData\Local\mattermost`, then try re-installing the app.
@@ -132,7 +130,33 @@ Desktop App constantly refreshes the page
     - Windows: Open Windows File Explorer, and navigate to the ``%USERPROFILE%\AppData\Roaming\Mattermost`` folder, then delete the ``Local Storage`` folder.
     - Mac: Open Finder, and navigate to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``Local Storage`` folder.
     - Linux: Open the file manager, and navigate to the ``~/.config/Mattermost`` folder, then delete the ``Local Storage`` folder.
-
+      
 For additional troubleshooting tips, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_.
 
-To submit an improvement or correction, click  **Edit** at the top of this page.
+Reporting Issues
+--------------------------------------------------
+
+When reporting bugs found in the Mattermost Desktop app, it is helpful to include the contents of the Developer Tools Console along with `the information on this page <https://docs.mattermost.com/process/support.html#general-questions-for-any-issues>`_. To access the Developer Tools Console, follow these instructions:
+
+  1. In the menu bar, go to ``View`` > ``Toggle Developer Tools``.
+  2. Select the ``Console`` tab.
+  3. Right-click the log window and select ``Save As``.
+  4. Save the file and then send it along with a description of your issue.
+  5. Go to ``View`` > ``Toggle Developer Tools`` to disable the Developer Tools.
+
+Windows
+~~~~~~~
+
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/jnutU-g2QA8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+macOS
+~~~~~
+
+.. raw:: html
+
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/avKDRodDS3s" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+
+To submit an improvement or correction to this documentation, click  **Edit** at the top of this page.

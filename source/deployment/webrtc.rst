@@ -96,4 +96,4 @@ Confirm video and audio calls were `configured successfully <https://docs.matter
 Unable to access camera or microphone
 ..........................
 
-Confirm you have allowed Mattermost to access your camera and microphone. See instructions on how to give permissions on `Chrome <https://support.google.com/chrome/answer/2693767?hl=en>`_ and `Firefox <http://blog.speaklikethem.com/how-to-allow-camera-and-mic-access-in-firefox/>`_.
+Confirm you have allowed Mattermost to access your camera and microphone. See instructions on how to give permissions on `Chrome <https://support.google.com/chrome/answer/2693767?hl=en>`_ and `Firefox <https://support.ring.md/hc/en-us/articles/115008801608-Browser-settings-for-enabling-webcam-and-microphone-Mozilla-Firefox->`_.

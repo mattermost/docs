@@ -23,7 +23,11 @@ Top 10 reasons to work for Mattermost:
 9. **Learn, Master, Teach:** Building new skills, becoming experts, and training others is core to our culture.
 10. **Friends around the world:** Build relationships with staff and contributors in dozens of countries.
 
-Also, we have Meetups around the world, see `our latest Core Commiter Summit in Las Vegas, Nevada, USA. <https://www.youtube.com/watch?v=_RpmrM-5UFY>`_
+Also, we have Meetups around the world to deepen and broaden our relationships and build the future of our products together:
+
+* Check out `MatterCon 2018 in Lisbon, Portugal <https://www.youtube.com/watch?v=CZXaYttz3NA&feature=youtu.be>`_.
+* Watch highlights of `our Community Meetup in Toronto, Canada <https://www.youtube.com/watch?v=5c9oJdbXrMU>`_.
+* See `our Core Commiter Summit in Las Vegas, Nevada, USA <https://www.youtube.com/watch?v=_RpmrM-5UFY>`_.
 
 ----------------
 Working Remotely
@@ -92,11 +96,13 @@ Our culture is high trust and results-focused. We want people to take time away 
 
 When you take time-off, please remember:
 
-a) Block off time on your calendar so it's easy to see when you're away.
+a) Block off time on your calendar so it's easy to see when you're away. 
 
-b) For meetings you'll miss, message the chair with any status update.
+b) Discuss with your manager the dates you plan to take off, and decide who will be your backup.
 
-c) Post in the Standup channel dates you're away and who'll be your backup.
+c) For meetings you'll miss, message the chair with any status update.
+
+d) Post in the Standup channel the dates you'll be away and who'll be your backup. Also, block off time in the shared "Mattermost Timeoff" calendar, so it's easy for the team to see who is going to be away.
 
 There is no limit to how much time-off you can take when your work is meeting or exceeding expectations. We strongly recommend a minimum of 2 weeks per year.
 

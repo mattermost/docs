@@ -56,7 +56,7 @@ mattermost sampledata
 ### Repository structure ###
 
 For server work, you'll be working in the [server repository](https://github.com/mattermost/mattermost-server).
- * [./api/](https://github.com/mattermost/mattermost-server/tree/master/api) holds all API and application related code
+ * [./api4/](https://github.com/mattermost/mattermost-server/tree/master/api4) holds all API and application related code
  * [./model/](https://github.com/mattermost/mattermost-server/tree/master/model) holds all data model definitions and the Go driver
  * [./store/](https://github.com/mattermost/mattermost-server/tree/master/store) holds all database querying code
  * [./utils/](https://github.com/mattermost/mattermost-server/tree/master/utils) holds all utilities, such as the mail utility

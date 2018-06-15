@@ -32,10 +32,10 @@ You can follow these general guidelines to set up a Mattermost outgoing webhook 
 
 2 - Click **Add Outgoing Webhook** and add name and description for the webhook.
 
-3 - Choose the content type by which the response will be sent.
+3 - Choose the content type by which the request will be sent.
 
- - If ``application/x-www-form-urlencoded`` is chosen, the Mattermost server assumes you will be encoding the parameters in a URL format.
- - If ``application/json`` is chosen, the Mattermost server assumes you will posting JSON data.
+ - If ``application/x-www-form-urlencoded`` is chosen, the server will encode the parameters in a URL format in the request body.
+ - If ``application/json`` is chosen, the server will format the request body as JSON.
 
 4 - Select the public channel to receive webhook responses, or specify one or more trigger words that send an HTTP POST request to your application. You may configure either the channel or the trigger words for the outgoing webhook, or both. If both are specified, then the message must match both values.
 

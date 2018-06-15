@@ -770,6 +770,8 @@ mattermost team delete
 mattermost team list
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
+*Supported in Mattermost v4.10 and later*
+
   Description
     List all teams on the server.
 
@@ -806,19 +808,22 @@ mattermost user
     Commands to manage users.
 
   Child Commands
-    -  `mattermost user activate`_ - Activate a user
-    -  `mattermost user create`_ - Create a user
-    -  `mattermost user deactivate`_ - Deactivate a user
-    -  `mattermost user delete`_ - Delete a user and all posts
-    -  `mattermost user deleteall`_ - Delete all users and all posts
-    -  `mattermost user invite`_ - Send a user an email invitation to a team
-    -  `mattermost user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
-    -  `mattermost user password`_ - Set a user's password
-    -  `mattermost user resetmfa`_ - Turn off MFA for a user
-    -  `mattermost user search`_ - Search for users based on username, email, or user ID
-    -  `mattermost user verify`_ - Verify email address of a new user
 
 mattermost user activate
+
+    -  `platform user activate`_ - Activate a user
+    -  `platform user create`_ - Create a user
+    -  `platform user deactivate`_ - Deactivate a user
+    -  `platform user delete`_ - Delete a user and all posts
+    -  `platform user deleteall`_ - Delete all users and all posts
+    -  `platform user email`_ - Set a user's email
+    -  `platform user invite`_ - Send a user an email invitation to a team
+    -  `platform user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
+    -  `platform user password`_ - Set a user's password
+    -  `platform user resetmfa`_ - Turn off MFA for a user
+    -  `platform user search`_ - Search for users based on username, email, or user ID
+    -  `platform user verify`_ - Verify email address of a new user
+
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -885,7 +890,9 @@ mattermost user delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Permanently delete a user and all related information, including posts.
+    Permanently delete a user and all related information, including posts from the database.
+    
+    Does not delete content from the file storage. You can manually delete all file uploads for a given user as uploads contain the ``CreatorId`` field. User avatars are stored in ``data/users/<userid>/profile.png``.
 
   Format
     .. code-block:: none
@@ -907,6 +914,8 @@ mattermost user deleteall
 
   Description
     Permanently delete all users and all related information, including posts.
+    
+    Does not delete content from the file storage. You can manually delete all file uploads and avatars. All uploads contain the ``CreatorId`` field and user avatars are stored in ``data/users/<userid>/profile.png``.
 
   Format
     .. code-block:: none
@@ -987,6 +996,8 @@ mattermost user migrate_auth
       --dryRun Run a simulation of the migration process without changing the database.
 
 **Migrate to SAML**
+
+*Supported in Mattermost v4.8 and later*
 
   Parameters
 

@@ -52,7 +52,7 @@ Assume that the IP address of this server is 10.10.10.2.
 
 8. Test the Mattermost server to make sure everything works.
 
-    a. Change to the ``bin`` directory:
+    a. Change to the ``mattermost`` directory:
       ``cd /opt/mattermost``
     b. Start the Mattermost server as the user mattermost:
       ``sudo -u mattermost ./bin/mattermost``

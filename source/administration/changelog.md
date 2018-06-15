@@ -133,7 +133,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v4.10
 
-Release date: 2018-05-16
+ - **4.10.1, released 2018-06-04**
+   - Mattermost v4.10.1 contains a moderate severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+   - Fixed an issue where the Mattermost screen went blank when viewing "Manage Members" list while another user was added to the channel.
+   - Fixed an issue where [automatic replies](https://docs.mattermost.com/administration/config-settings.html#enable-automatic-replies-experimental) weren't properly posting or suppressing emails.
+   - Fixed an issue where a member's roles for a team wasn't properly deleted when the team was deleted via the API, causing crashing issues.
+ - **v4.10.0, released 2018-05-16**
+   - Original 4.10.0 release
 
 ### Highlights
 
@@ -168,8 +174,7 @@ Release date: 2018-05-16
  - Users' client no longer refreshes after changing a System Console or ``config.json`` setting.
  
  #### Command Line Interface (CLI)
- - Added `./platform team list` command to list all teams on the server.
- - Added `./platform permissions reset` command to reset the permissions system to its default state.
+ - Added `/platform team list` command to list all teams on the server..
 
 #### Enterprise Edition E20
  - Added cluster event types to [Performance Monitoring](https://docs.mattermost.com/deployment/metrics.html).
@@ -194,17 +199,34 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under `"TeamSettings"` in `config.json`:
    - Added ``"ExperimentalEnableAutomaticReplies": false,`` to allow users to set a custom message that will be automatically sent in response to Direct Messages.
  - Under `"LogSettings"` in `config.json`:
-   - Removed ``FileFormat`` and added ``""FileJson": true,`` and ``"ConsoleJson": true,`` to allow logged events to be written as a machine readable JSON format instead of the be printed as plain text.
+   - Removed ``FileFormat`` and added ``"FileJson": true,`` and ``"ConsoleJson": true,`` to allow logged events to be written as a machine readable JSON format instead of the be printed as plain text.
 
 #### API Changes
-
- - Support was added to REST API for sending ephemeral messages to users.
  
-#### RESTful API v4 Changes
+##### RESTful API v4 Changes
 
+ - Support was added to RESTful API for sending ephemeral messages to users.
  - An APIv4 endpoint of ``POST /channels/{channel_id}/convert`` was added to convert a channel from public to private and to restrict this setting to ``team_admin``.
  - An APIv4 endpoint of ``DELETE /teams/{team_id}/image`` was added to remove team icon and restrict it to ``team_admin``.
  
+#### Database Changes
+
+**Users Table:**
+
+ - Migrates SAML `AuthData` to lowercase via `"UPDATE Users SET AuthData=LOWER(AuthData) WHERE AuthService = 'saml'"` query.
+
+**Channels Table:**
+
+ - Removed duplicate `Name_2` index. 
+
+**Emoji Table:**
+
+ - Removed duplicate `Name_2` index. 
+
+**OAuthAccessData Table:**
+
+ - Removed duplicate `ClientId_2` index. 
+
 #### Upcoming Deprecated Features in Mattermost v5.0
 
 The following deprecations are planned for the Mattermost v5.0 release, which is scheduled for summer/2018. This list is subject to change prior to the release.
@@ -237,6 +259,8 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 
 ## Release v4.9
 
+ - **4.9.4, released 2018-06-04**
+   - Mattermost v4.9.4 contains a moderate severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **4.9.3, released 2018-05-15**
    - Fixed an issue where plugin configuration got corrupted upon saving the configuration via the System Console.
  - **4.9.2, released 2018-05-04**
@@ -328,7 +352,9 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
    - AllowEditPost
    - RestrictTeamInvite
    - RestrictCustomEmojiCreation
-   
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
 #### Upcoming Deprecated Features in Mattermost v5.0
 
 The following deprecations are planned for the Mattermost v5.0 release, which is scheduled for summer/2018. This list is subject to change prior to the release.
@@ -338,7 +364,7 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 3. A new `config.json` setting to whitelist types of protocols for auto-linking will be added. [Ticket #9547](https://mattermost.atlassian.net/browse/MM-9547).
 4. A new `config.json` setting to disable the [permanent APIv4 delete team parameter](https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput) will be added. The setting will be off by default for all new and existing installs, except those deployed on GitLab Omnibus. A System Administrator can enable the API v4 endpoint from the config.json file. [Ticket #9916](https://mattermost.atlassian.net/browse/MM-9916).
 5. An unused `ExtraUpdateAt` field will be removed from the channel model. [Ticket #9739](https://mattermost.atlassian.net/browse/MM-9739).
- 
+
 #### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
@@ -358,6 +384,20 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - It is required that any new integrations use API v4 endpoints. For more details, and for a complete list of available endpoints, see [https://api.mattermost.com/](https://api.mattermost.com/).
  - All API v3 endpoints have been deprecated and are scheduled for removal in Mattermost v5.0.
+
+#### Database Changes
+
+**Users Table:**
+
+ - Added `Timezone` column.
+ 
+**Teams Table:**
+
+ - Added `LastTeamIconUpdate` column.
+
+**Channels Table:**
+
+ - Removed `idx_channels_displayname` index.
 
 ### Known Issues
  - Google login fails on the Classic mobile apps.
@@ -379,6 +419,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v4.8
 
+ - **4.8.2, released 2018-06-04**
+   - Mattermost v4.8.2 contains a moderate severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **4.8.1, released 2018-04-09**
    - Mattermost v4.8.1 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
    - Fixed a performance issue by removing the `DisplayName` index on the Channels table.
@@ -472,6 +514,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - AllowEditPost
    - RestrictTeamInvite
    - RestrictCustomEmojiCreation
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
 #### config.json
 
@@ -633,6 +677,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
   - AllowEditPost
   - RestrictTeamInvite
 
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
+
 #### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
@@ -663,11 +709,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
 ### Database Changes
 
-**User.Position field:**
-- Increased size of `user.Position` from `35` to `128` characters.
+**Users Table:**
 
-**OAuth state parameter:**
-- Increased OAuth2 state parameter limit from `128` to `1024`.
+ - Increased size of `Position` field from 35 to 128 characters.
+
+**OAuthAuthData Table:**
+
+ - Increased size of `State` field from 128 to 1024 characters.
+
+**ChannelMemberHistory Table:**
+
+ - Removed `Email` column.
+ - Removed `Username` column.
 
 ### Known Issues
 
@@ -766,6 +819,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 - All API v3 endpoints are now deprecated, and scheduled for removal in Mattermost v5.0.
 - The permanent query parameter of the DELETE `/teams/{team_id}` APIv4 endpoint for permanently deleting a team is scheduled for removal in Mattermost v4.7.
+
+For a list of past and upcoming deprecated features, [see our website](https://about.mattermost.com/deprecated-features/).
 
 #### config.json
 
@@ -1506,7 +1561,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Added message buttons to support user interactions with posts made by incoming webhooks and custom slash commands.
 
 #### Mobile Support for AppConfig
-- iOS and Android mobile apps now support Enterprise Mobility Management (EMM) solutions through integration with [App Config](https://www.appconfig.org/). See [documentation](https://docs.mattermost.com/deployment/mobile-appconfig.html) to learn more.
+- iOS and Android mobile apps now support Enterprise Mobility Management (EMM) solutions through integration with [App Config](https://www.appconfig.org/). See [documentation](https://docs.mattermost.com/mobile/mobile-appconfig.html) to learn more.
 
 ### Improvements
 
@@ -1974,7 +2029,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 #### Native iOS and Android Apps
 - Second generation mobile apps released for [iOS](https://itunes.apple.com/us/app/mattermost/id1257222717?mt=8) and [Android](https://play.google.com/store/apps/details?id=com.mattermost.rn).
-- The apps are [EMM compatible starting with BlackBerry Dynamics](https://about.mattermost.com/mattermost-2nd-gen-mobile-apps-released-emm-compatible-starting-with-blackberry-dynamics/).
+- The apps are [EMM compatible starting with BlackBerry Dynamics](https://about.mattermost.com/releases/mattermost-2nd-gen-mobile-apps-released-emm-compatible-starting-with-blackberry-dynamics/).
 
 #### Updated Web User Interface
 - Updated the appearance of channel header and channel sidebar in the web user interface.
@@ -2692,7 +2747,7 @@ Many thanks to all our contributors. In alphabetical order:
 ### Highlights
 
 #### Native iOS and Android Apps (Beta)
-- Second generation mobile apps, built using React Native, are [available for beta testing](https://about.mattermost.com/a-native-mobile-experience-second-generation-mobile-apps-released-in-beta/) on [iOS](https://mattermost-fastlane.herokuapp.com/) and [Android](https://play.google.com/apps/testing/com.mattermost.react.native).
+- Second generation mobile apps, built using React Native, are [available for beta testing](https://about.mattermost.com/releases/a-native-mobile-experience-second-generation-mobile-apps-released-in-beta/) on [iOS](https://mattermost-fastlane.herokuapp.com/) and [Android](https://play.google.com/apps/testing/com.mattermost.react.native).
 
 #### Pinned Posts
 - Important messages can be pinned to the channel for easy reference. Pinned posts are visible to all channel members.

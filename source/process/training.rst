@@ -26,7 +26,7 @@ Hiring
 ---------------------------------------------------------
 
 - (People Ops & New Hire) Offer letter accepted via click-sign
-- (Logistics) Mail t-shirt & track jacket
+- (Logistics) Mail track jacket & socks 
 
 T-minus 1-3 weeks
 ---------------------------------------------------------
@@ -39,16 +39,25 @@ T-minus 1 week
 
 - (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on pre-release.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME@mattermost.com` is the standard naming convention.
 
-- (People Ops & New Hire) Set up payroll. Non-US Employee/Non-Canada Employee, complete bank info form for monthly wire transfer.
+- (People Ops & New Hire) Set up payroll.
+ - US FTE, receive email to complete TriNet sign-up, payroll, benefits enrollment, I-9 form, banking information, personal information, tax forms.  
+ - Non-US Employee/Non-Canada Employee, complete bank info form for monthly wire transfer.
+ - Non-US Resident Contractor, complete W8-BEN form.
+ - US Contractor, complete W-9 form.
 
 First Day
 ---------------------------------------------------------
 
-- (Manager) Posts welcome message in stand-up channel
-- (Manager) Meets New Hire for first 1-1 meeting
-- (Buddy) Meets New Hire for first 1-1 meeting
-- (CEO) Meets New Hire for welcome meeting 
+- (Manager) Posts welcome message in stand-up channel.
+- (Manager) Meets New Hire for first 1-1 meeting.
+- (Buddy) Meets New Hire for first 1-1 meeting.
+- (CEO) Meets New Hire for welcome meeting.
 - (New Hire) Confirm with Manager all HR paperwork is completed by end of first day (should have been sent in advance). 
+
+3 months 
+---------------------------------------------------------
+
+- (People Ops) US FTE - Email regarding 401K account set up.
 
 ---------------------------------------------------------
 Meetings
@@ -101,10 +110,10 @@ For confidentiality of customers, internal process meetings are limited to Matte
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff only** - Each team is responsible for its own sprint planning process. Sprints are currently one week long, and start on Tuesdays. Before the next sprint begins, teams share a quick recap of their past and upcoming sprint with leads.  
+**Mattermost staff only** - Each team is responsible for its own sprint planning process. Sprints are currently one week long, and start on Tuesdays. Note that teams also share demos and short updates with the whole product team in the "Platform Meeting" (see below).
 
 - Goal: Share demos, reflect on previous sprint, and lock on tickets for next sprint.
-- Attendees: Development team members (developers and product manager), plus leads for Tuesday recap.
+- Attendees: Development team members (typically developers and product manager).
 
 Triage Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -202,9 +211,9 @@ Meeting Agenda:
 
 - **Ice-breaker** - Currently: "Questions"
 - **Roadmap check-in** - Review of roadmap status in current and next release
-- **Company update** - A summary from leads
 - **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
-- **New items** - New team relevant items are discussed
+- **Team updates** - Each development team gives a short update on their current top priorities
+- **New items** - New queued items are discussed
 - **Blind spots, Inspiration, Knowledge Share** - Colleagues share areas of concern and ask questions
 
 Post Meeting:
@@ -294,13 +303,29 @@ An easy way to check in with team members about how things are going.
 
 Use these one-on-one or in a group as a way to open conversations about what to keep and what to change in how we do things.
 
+Shoulder Check 
+---------------------------------------------
+
+When a new owner takes over a process or a project from a previous owner, there are a finite number of "blindspots" of which the original owner is aware and the new owner will need to understand. 
+
+Using the analogy of changing lanes while driving a vehicle and learning to do a "shoulder check" for information that is not visible from standard controls, we have a process for the new owner and previous owner to jointly review processes until the transfer is complete. 
+
+This process is similar to `Mini-boss, End-boss <https://docs.mattermost.com/process/training.html#id7>`_, except that the mini-boss is also the new owner of a process, and not only a reviewer. Shoulder checks should be requested by new owners to avoid "crashing":
+
+ - Making changes to systems that break existing processes and may lose data and hurt the productivity of others downstream without notice and without a replacement system in place (behavior known as `"Dead Tarzan" <https://docs.mattermost.com/process/training.html#id9>`_). 
+ - Repeatedly investing in mis-prioritized projects due to a misunderstanding of requirements from project stakeholders and insufficient confirmation of intended outcomes. 
+
+Even when not crashing, as part of our `Self Awareness value <https://docs.mattermost.com/process/handbook.html#values>`_, top team members will constantly be seeking feedback and review from people around the company. 
+
 Mini-boss, End-boss
 ---------------------------------------------
 
-When reviewing user interface design, pull requests, or marketing materials, there are ideally two reviewers:
+After completing the initial draft of a project, there may often be more than one reviewer to approve changes. This may be for different disciplines to review the work (for example, both development and design teams reviewing code changes to the user experience) and it may also be for reviewers with different levels of experience to share feedback. 
 
-- **Mini-boss**: Reviewer with less experience to do the first review
-- **End-boss**: More experienced reviewer to do the final review
+When reviewing significant user interface changes, code changes, responses to community or customers, or changes to systems or marketing material changes, it is ideal to have at least two reviewers:
+
+- **Mini-boss**: Reviewer less experienced in domain or Mattermost standards for the first review
+- **End-boss**: Reviewer more experienced in domain or Mattermost standards for the final review for the discipline (e.g. development, design, documentation, etc.) 
 
 This system has several benefits:
 
@@ -308,33 +333,48 @@ This system has several benefits:
 2. The Mini-boss learns from the End-boss feedback, understanding what was missed, and becoming a better reviewer.
 3. Eventually the Mini-boss will be as skilled at reviewing as the End-boss, who will have nothing futher to add after the Mini-boss review. At this point, the Mini-boss becomes an End-boss, ready to train a new Mini-boss.
 
+The naming of this term comes from video games, where a person submitting material for review must pass a "mini-boss" challenge before a "end-boss" challenge for different disciplines. 
 
-Medic, Field Surgeon, Plastic Surgeon
+Brown M&Ms
 ---------------------------------------------
 
-When making project investment decisions we optimize for high impact in the context of customer obsession, empowered by ownership, while being constrained by "be proud of what you build". 
+A "brown M&M" is a mistake that could either signal dangerous oversights in the execution of a project, or be a completely innocuous and unimportant error. When a brown M&M is found, aim to rule out a dangerous error as quickly as possible. Do fast drilldowns and systematic checks to see if more brown M&Ms are found, and if so, an entire project may need to be reviewed. 
 
-The failure case is over-investing in processes and infrastructure, stealing mana from higher priority work, reducing speed and agility for the company, and unnecessarily increasing cost and bureacracy. 
+Examples of brown M&Ms may include: 
+
+a) Significant mistakes in process, consistency or documentation suggesting lack of review or lack of understanding of the pre-existing system
+b) Ambiguous definitions that would make completion of a procedure difficult or unpredictable
+
+The name brown M&M comes from a safety technique used by the American music band Van Halen, who had to set up large, complex concert stages in third tier cities, where few local workers had experience with the safety standards vital to construction. In the `contract rider <https://en.wikipedia.org/wiki/Van_Halen#Contract_riders>`_ with each venue, Van Halen required a bowl of M&M candies with all brown M&Ms removed. Failure to provide the bowl was grounds for Van Halen's stage crew to inspect all of the local vendor's work for safety issues, because it meant the vendor had not paid attention to detail, and safety could be at risk.
+
+Correct Minimums: Medic, Field Surgeon, Plastic Surgeon 
+-------------------------------------------------------
+
+When making project investment decisions, we optimize for high impact in the context of customer obsession, empowered by ownership, while being constrained by "be proud of what you build".
+
+The failure case is over-investing in processes and infrastructure, stealing mana from higher priority work, reducing speed and agility for the company and unnecessarily increasing cost and bureacracy. 
+
+The objective of optimization is to invest at minimal levels for efficiency and safety while maximizing impact. 
 
 In making these trade-offs, consider the following mindsets:
 
-- **Medic** 
+- **Correct Minimum 1: Medic** 
 
-   Fix something that's important, broken and dangerous as fast as possible. Speed is critical, do not care about "leaving a scar" in our architecture or business process, just own it and get it done. Solve the problem, DO NOT OVER BUILD.
+   Safely fix something that is important, broken and dangerous as fast as possible. Speed is critical - do not worry about "leaving a scar" in our architecture or business process, just own it and get it done. Solve the problem, **do not overbuild**.
  
-   *Example:* Something incorrect on our public website with more than 100,000 page views a month should be fixed immediately and not put on a queue tied to a longer term project. 
+   *Example:* Something incorrect on our public website with more than 100 page views a month should be fixed immediately and not delayed to be done with a longer term project, such as a website re-design. If the staging server cannot be pushed, this means manually fixing production and duplicating that change on staging, rather than trying to fix staging.
 
-- **Field Surgeon** 
+- **Correct Minimum 2: Field Surgeon** 
 
-   Triage things that are important, broken but not dangerous, and fix the most important things with a minimum of time and cost. Scarring should be a low-priority consideration--it is fine to leave scars and it is fine to spend a little energy to avoid big ones.  Solve the problem for the next stage of growth, but don't solve if to two to three stages ahead. 
+   Triage tasks that are important and broken but not dangerous, and fix the most important things with a minimum time and cost. Scarring should be a low-priority consideration--it is fine to leave scars and it is fine to spend a little energy to avoid big ones.  Solve the problem for the next stage of growth, but don't solve it in two to three stages ahead. 
 
    *Example:* In Mattermost, spend 2 mana to enable automated messages over 4000 characters to be broken into multiple posts instead of being rejected, which is a problem every developer hits when they attempt to output log information via curl commands.
 
-- **Plastic Surgeon** 
+- **Correct Minimum 3: Plastic Surgeon** 
 
    Fix and optimize critical, high volume flows in our customer experience and product with heavy investment if needed to make high impact changes. Scars can be avoided and removed to produce a high impact result.  
 
-   *Example:* Click-tracking traffic on Mattermost.com and optimizing flows to direct visitors to convert into contact and purchase actions. 
+   *Example:* Click-tracking traffic on about.mattermost.com and optimizing flows to direct visitors to learn about the product and downloading it is a flow that should be continually optimized. 
 
 --------------------------
 Terminology

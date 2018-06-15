@@ -66,14 +66,13 @@ Topic Channels
 
 Topics are a broad category for organizing discussions. Topics are similar to how a user might create a folder for organizing emails or documents::
 
-    Examples: Recruiting, Interviews, Legal Reviews, Documentation
+	Examples: Recruiting, Interviews, Legal Reviews, Documentation
 
 Users can join and leave topic-based channels, as well as add colleagues to have topic-based discussions.
 
 As teams get larger and the number of channels increase, you may start naming topics in a hierarchy to make them easier to find::
 
-	Example: Legal: Trademarks, Legal: Contracts, Legal: Licensing
-
+	Examples: Legal: Trademarks, Legal: Contracts, Legal: Licensing
 
 Meeting Channels
 ~~~~~~~~~~~~~~~~~~
@@ -104,7 +103,7 @@ If you're meeting remotely, add persistent links to your video or audio conferen
 
 When it's time to meet, your team can click the conference link to connect.
 
-Sub-Teams
+Sub-Team Channels
 ~~~~~~~~~~~~~~~~~~
 
 Sub-teams can include people from the same discipline, project teams, people with the same manager or other groups brought together for a shared purpose::
@@ -115,7 +114,7 @@ As sub-teams grow beyond a manageable size for one channel, they can sub-divide:
 
 	Examples: US: Developers, UK: Developers, SusanK's Directs, SusanK's Extended Directs
 
-Projects
+Project Channels
 ~~~~~~~~~~~~~~~~~~
 
 Project channels discuss how groups of people can come together to achieve specific outcomes::

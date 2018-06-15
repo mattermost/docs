@@ -13,8 +13,6 @@ Use these buttons to simplify complex workflows by allowing users to take quick 
 
 To try the message buttons out, you can use this `demo integration <https://github.com/mattermost/mattermost-interactive-post-demo>`_ to add polling to Mattermost channels via a `/poll` slash command.
 
-Interactive message buttons are not yet supported on Mattermost mobile apps.
-
 .. image:: ../../source/images/poll.gif
 
 .. toctree::

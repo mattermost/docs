@@ -36,6 +36,12 @@ The URL that users will use to access Mattermost. The port number is required if
 
 This field is required in Mattermost v3.8 and later.
 
+If Site URL is not set, the following features will operate incorrectly:
+
+ - email notifications will contain broken links, and email batching will not work
+ - authentication via OAuth 2.0, including GitLab, Google and Office 365, will fail
+ - plugins may not work as expected
+
 .. note:: Do not append a team name to the end of the site URL.
 
 Correct example: ``https://mattermost.example.com:8065``
@@ -217,6 +223,8 @@ Enable Account Creation
 
 Enable Team Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 **True**: Ability to create a new team is enabled for all users.
 
 **False**: Only System Administrators can create teams from the team selection page. The **Create A New Team** button is hidden in the main menu UI.
@@ -511,13 +519,20 @@ Set the time limit that users have to edit their messages after posting.
 
 **Never**: Do not allow users to edit their messages.
 
-**{n} seconds after posting**: Users can edit their messages within the specified time limit after posting.
+**{n} seconds after posting**: Users can edit their messages within the specified time limit after posting. The time limit is applied using the config.json setting ``"PostEditTimeLimit"`` described below.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature has two settings in ``config.json``. The first setting is ``"AllowEditPost": "always"`` with options ``always``, ``never``, and ``time_limit``.  |
-|                                                                                                                                                               |
-| The second setting is ``"PostEditTimeLimit": -1`` with whole number input. To enable ``PostEditTimeLimit``, set ``AllowEditPost`` to ``time_limit``.          |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AllowEditPost": "always"`` with options ``always``, ``never``, and ``time_limit`` for above settings respectively.  |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Post edit time limit
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When post editing is permitted, setting ``"PostEditTimeLimit": -1`` allows editing anytime, or setting ``"PostEditTimeLimit"`` to a positive integer restricts editing time in seconds. If post editing is disabled, this setting does not apply.
+
++--------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PostEditTimeLimit": -1`` with whole number input.   |
++--------------------------------------------------------------------------------------------------+
 
 Privacy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1847,6 +1862,8 @@ Enable OAuth 2.0 Service Provider
 
 Restrict managing integrations to Admins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 **True**: When true, webhooks and slash commands can only be created, edited and viewed by Team and System Admins, and OAuth 2.0 applications by System Admins. Integrations are available to all users after they have been created by the Admin.
 
 **False**: Any team members can create webhooks, slash commands and OAuth 2.0 applications from **Main Menu** > **Integrations**.
@@ -2135,7 +2152,7 @@ Hostname of your S3-compatible instance. Defaults to "s3.amazonaws.com".
 
 Amazon S3 Access Key ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This is required for access unless you are using an `Amazon S3 IAM Role <https://about.mattermost.com/default-iam-role>`_ with Amazon S3. Your EC2 administrator can supply you with the access key ID.
+This is required for access unless you are using an `Amazon S3 IAM Role <https://about.mattermost.com/default-iam-role-settings-documentation>`_ with Amazon S3. Your EC2 administrator can supply you with the access key ID.
 
 +-------------------------+---------------------------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3AccessKeyId``                                             |
@@ -2449,6 +2466,8 @@ Enable Custom Emoji
 
 Restrict Custom Emoji Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission has been migrated to the database and changing the config.json value no longer takes effect after upgrading to v4.9, released on April 16th, 2018. This permission can be modified using the System Console user interface.*
+
 *Available in Enterprise Edition E10 and higher*
 
 **Allow everyone to create custom emoji**: Allows everyone to create custom emoji from the **Main Menu** > **Custom Emoji**.
@@ -3698,6 +3717,24 @@ Group Unread Channels (Experimental)
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "disabled"`` with options ``disabled``, ``default_on`` and ``default_off`` for above settings respectively. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Hardened Mode (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables a hardened mode for Mattermost that makes user experience trade-offs in the interest of security.
+
+**False**: Disables hardened mode.
+
+Changes made when hardened mode is enabled:
+
+    - Failed login returns a generic error message instead of a specific message for username and password.
+    - If `multi-factor authentication (MFA) <https://docs.mattermost.com/deployment/auth.html>`_ is enabled, the route to check if a user has MFA enabled always returns true. This causes the MFA input screen to appear even if the user does not have MFA enabled. The user may enter any value to pass the screen. Note that hardened mode does not affect user experience when MFA is enforced.
+    - Password reset does not inform the user that they can not reset their SSO account through Mattermost and instead claims to have sent the password reset email.
+    - Mattermost sanitizes all 500 errors before returned to the client. Use the supplied ``request_id`` to match user facing errors with the server logs.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false`` for above settings respectively.          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Team Settings
 ~~~~~~~~~~~~~~
