@@ -94,7 +94,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``"TeamSettings":`` in ``config.json``:
    - Added ``"ExperimentalHideTownSquareinLHS": false,`` to hide Town Square in the left-hand sidebar if there are no unread messages in the channel.
  - Under ``"DisplaySettings":`` in ``config.json``:
-   - Added ``"CustomUrlSchemes": [],``.
+   - Added ``"CustomUrlSchemes": [],``, to add a list of URL schemes that are used for autolinking in message text.
  - Under ``"LdapSettings":`` in ``config.json``:
    - Added ``"LoginIdAttribute": "",`` to add an attribute in the AD/LDAP server used to log in to Mattermost.
    
