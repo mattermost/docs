@@ -49,9 +49,9 @@ Global Relay EML
 If you have chosen your file format to be Global Relay EML, you can set up an integration with Global Relay archive system. For more information, see `their homepage <https://www.globalrelay.com/gr-services/archive>`_.
 
 .. note::
-  Messages larger than 100MB will have their attachments removed because they are too large to send to Global Relay. An error is added to the server logs with id ``global_relay_attachments_removed``. It includes the post ID the attachments were removed from. A `ticket is queued to better handle large messages <https://mattermost.atlassian.net/browse/MM-10038>`_.
+  Messages larger than 250MB will have their attachments removed because they are too large to send to Global Relay. An error is added to the server logs with id ``global_relay_attachments_removed``. It includes the post ID the attachments were removed from, as well as the attachment IDs. A `ticket is queued to better handle large messages <https://mattermost.atlassian.net/browse/MM-10038>`_.
 
-For more information on GlobalRelay archive system, see `their homepage <https://www.globalrelay.com/>`_
+For more information on Global Relay archive system, see `their homepage <https://www.globalrelay.com/>`_
 
 Frequently Asked Questions (FAQ)
 ---------------------------------
