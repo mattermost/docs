@@ -4,6 +4,37 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.1
+
+Release date: 2018-07-16
+
+### Highlights
+
+### Improvements
+
+### Bug Fixes
+
+### Compatibility
+
+#### Deprecated Features
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+#### API Changes
+
+#### WebSocket Changes
+
+#### Database Changes
+
+### Known Issues
+
+### Contributors
+
+
 ## Release v5.0
 
 Release date: 2018-06-16
