@@ -444,8 +444,8 @@ mattermost ldap
     -  `mattermost ldap idmigrate`_ - Migrate the LDAP Id Attribute to a new value
     -  `mattermost ldap sync`_ - Synchronize now
 
-mattermost ldap sync
-~~~~~~~~~~~~~~~~~~~~~~~~
+mattermost ldap idmigrate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Migrate LDAP Id Attribute to new value.
