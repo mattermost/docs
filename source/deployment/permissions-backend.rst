@@ -60,10 +60,6 @@ Permissions
 
 Permissions in Mattermost are a property of the server code base and are not created or modified dynamically. The current set of permissions are as described in the table below.
 
-XXXXXX GG: Please review/tweak this and then I'll create the RST table to put here: https://docs.google.com/spreadsheets/d/1z3yUIQs2JaxmUjD5Q8MZSijvbE2o8CoHdvV5Vfj-y4Y/edit#gid=0 
-
-Applicable database fields and tables:
-
 ``Roles`` Field
 ~~~~~~~~~~~~~~~~
 
