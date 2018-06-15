@@ -3933,7 +3933,7 @@ The file must be in the same directory as your ``config.json`` file if you set a
 Jobs
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Settings to configure the how Mattermost schedules and completes periodic tasks such as the deletion of old posts with Data Retention enabled or indexing of posts with Elasticsearch. These settings control which Mattermost servers are designated as a Scheduler, a server that queues that tasks at the correct times, and as a Worker, a server that completes the given tasks.
+Settings to configure the how Mattermost schedules and completes periodic tasks such as the deletion of old posts with Data Retention enabled or indexing of posts with Elasticsearch. These settings control which Mattermost servers are designated as a Scheduler, a server that queues the tasks at the correct times, and as a Worker, a server that completes the given tasks.
 
 When running Mattermost on a single machine, both ``RunJobs`` and ``RunScheduler`` should be enabled. Without both of these enabled, Mattermost will not function properly.
 
