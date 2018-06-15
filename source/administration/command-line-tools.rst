@@ -555,8 +555,8 @@ platform permissions import
 
       sudo ./platform permissions import my-permissions-export.jsonl
 
-mattermost permissions reset
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+platform permissions reset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Reset permissions for all users, including Admins, to their default state on new installs. Note: **this will delete 
