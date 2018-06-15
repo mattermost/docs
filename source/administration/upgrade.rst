@@ -136,7 +136,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
    .. code-block:: sh
 
      cd {install-path}/mattermost
-     sudo setcap cap_net_bind_service=+ep ./bin/platform
+     sudo setcap cap_net_bind_service=+ep ./bin/mattermost
 
 #. Upgrade your ``config.json`` schema:
 
