@@ -50,6 +50,7 @@ No pull requests for major features should be **merged** to the current release 
     - Submit NOTICE.txt PR for any new libraries added from dev, if not added already. The following two files contain a list of dependencies:
         - https://github.com/mattermost/mattermost-webapp/blob/master/package.json
         - https://github.com/mattermost/mattermost-server/blob/master/Gopkg.lock
+        - https://github.com/mattermost/mattermost-mobile/blob/master/package.json
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release

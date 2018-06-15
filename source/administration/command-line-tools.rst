@@ -444,8 +444,8 @@ mattermost ldap
     -  `mattermost ldap idmigrate`_ - Migrate the LDAP Id Attribute to a new value
     -  `mattermost ldap sync`_ - Synchronize now
 
-mattermost ldap sync
-~~~~~~~~~~~~~~~~~~~~~~~~
+mattermost ldap idmigrate
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Migrate LDAP Id Attribute to new value.
@@ -515,11 +515,11 @@ mattermost permissions
     Commands to manage advanced permissions.
 
   Child Commands
-    -  `platform permissions export`_ - Export Schemes and Roles.
-    -  `platform permissions import`_ - Import Schemes and Roles from a permissions export.
-    -  `platform permissions reset`_ - Reset the permissions system to its default state on new installs.
+    -  `mattermost permissions export`_ - Export Schemes and Roles.
+    -  `mattermost permissions import`_ - Import Schemes and Roles from a permissions export.
+    -  `mattermost permissions reset`_ - Reset the permissions system to its default state on new installs.
     
-platform permissions export
+mattermost permissions export
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -538,7 +538,7 @@ platform permissions export
 
       sudo ./platform permissions export > my-permissions-export.jsonl
 
-platform permissions import
+mattermost permissions import
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -556,7 +556,7 @@ platform permissions import
       sudo ./platform permissions import my-permissions-export.jsonl
 
 mattermost permissions reset
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Reset permissions for all users, including Admins, to their default state on new installs. Note: **this will delete 
@@ -811,19 +811,22 @@ mattermost user
 
 mattermost user activate
 
-    -  `platform user activate`_ - Activate a user
-    -  `platform user create`_ - Create a user
-    -  `platform user deactivate`_ - Deactivate a user
-    -  `platform user delete`_ - Delete a user and all posts
-    -  `platform user deleteall`_ - Delete all users and all posts
-    -  `platform user email`_ - Set a user's email
-    -  `platform user invite`_ - Send a user an email invitation to a team
-    -  `platform user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
-    -  `platform user password`_ - Set a user's password
-    -  `platform user resetmfa`_ - Turn off MFA for a user
-    -  `platform user search`_ - Search for users based on username, email, or user ID
-    -  `platform user verify`_ - Verify email address of a new user
+    -  `mattermost user activate`_ - Activate a user
+    -  `mattermost user create`_ - Create a user
+    -  `mattermost user deactivate`_ - Deactivate a user
+    -  `mattermost user delete`_ - Delete a user and all posts
+    -  `mattermost user deleteall`_ - Delete all users and all posts
+    -  `mattermost user email`_ - Set a user's email
+    -  `mattermost user invite`_ - Send a user an email invitation to a team
+    -  `mattermost user migrate_auth`_ - Mass migrate all user accounts to a new authentication type
+    -  `mattermost user password`_ - Set a user's password
+    -  `mattermost user resetmfa`_ - Turn off MFA for a user
+    -  `mattermost user search`_ - Search for users based on username, email, or user ID
+    -  `mattermost user verify`_ - Verify email address of a new user
 
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+mattermost user activate
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
