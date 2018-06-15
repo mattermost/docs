@@ -515,11 +515,11 @@ mattermost permissions
     Commands to manage advanced permissions.
 
   Child Commands
-    -  `platform permissions export`_ - Export Schemes and Roles.
-    -  `platform permissions import`_ - Import Schemes and Roles from a permissions export.
-    -  `platform permissions reset`_ - Reset the permissions system to its default state on new installs.
+    -  `mattermost permissions export`_ - Export Schemes and Roles.
+    -  `mattermost permissions import`_ - Import Schemes and Roles from a permissions export.
+    -  `mattermost permissions reset`_ - Reset the permissions system to its default state on new installs.
     
-platform permissions export
+mattermost permissions export
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -538,7 +538,7 @@ platform permissions export
 
       sudo ./platform permissions export > my-permissions-export.jsonl
 
-platform permissions import
+mattermost permissions import
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -555,7 +555,7 @@ platform permissions import
 
       sudo ./platform permissions import my-permissions-export.jsonl
 
-platform permissions reset
+mattermost permissions reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
