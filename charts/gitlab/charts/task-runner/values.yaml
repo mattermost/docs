@@ -3,6 +3,11 @@ image:
   pullSecrets: []
   # pullPolicy: IfNotPresent
   # tag: latest
+
+init:
+  image: busybox
+  tag: latest
+
 enabled: false
 global:
   # imagePullPolicy: IfNotPresent

@@ -19,6 +19,8 @@
 {{- $metricsEnabled := .Values.metrics.enabled -}}
 {{- $metricsPort := .Values.metrics.port -}}
 {{- $metricsAnnotations := .Values.metrics.annotations -}}
+{{- $initImage := .Values.init.image }}
+{{- $initTag := .Values.init.tag }}
 {{- /* The below is an messy attempt to read in, and reflect on the configmap-queues.yaml template. */}}
 {{- $queueConfigList := include (print $.Template.BasePath "/configmap-queue.yaml") . | split "\n---" }}
 {{- $queues := dict }}
@@ -82,7 +84,7 @@ spec:
       initContainers:
         - name: configure
           command: ['sh', '/config/configure']
-          image: busybox
+          image: {{ $initImage }}:{{ $initTag }}
           volumeMounts:
           - name: sidekiq-config
             mountPath: /config

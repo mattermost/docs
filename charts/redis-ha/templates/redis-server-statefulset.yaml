@@ -46,7 +46,7 @@ spec:
         fsGroup: 2000
       initContainers:
         - name: configure
-          image: busybox
+          image: {{ .Values.init.image }}:{{ .Values.init.tag }}
           command: ['sh', '/config/configure']
           volumeMounts:
           - name: {{ .Release.Name }}

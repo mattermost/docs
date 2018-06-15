@@ -12,6 +12,10 @@ service:
   externalPort: 22
   internalPort: 2222
 
+init:
+  image: busybox
+  tag: latest
+
 global:
   # imagePullPolicy: IfNotPresent
   redis:

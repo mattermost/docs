@@ -48,7 +48,7 @@ spec:
       initContainers:
         - name: configure
           command: ['sh', '/config/configure']
-          image: busybox
+          image: {{ .Values.init.image }}:{{ .Values.init.tag }}
           volumeMounts:
           - name: unicorn-config
             mountPath: /config
