@@ -11,6 +11,7 @@ global:
     configureCertmanager: true
     annotations: {}
     enabled: true
+  initialRootPassword: {}
   psql:
     password: {}
     # host: myexternalsql.hostedsomewhere.else

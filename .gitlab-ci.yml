@@ -325,6 +325,8 @@ changelog_manager:
 
     #ROOT_PASSWORD=$(cat /dev/urandom | LC_TYPE=C tr -dc "[:alpha:]" | head -c 16)
     #echo "Generated root login: $ROOT_PASSWORD"
+    kubectl create secret generic "${CI_ENVIRONMENT_SLUG}-gitlab-initial-root-password" --from-literal=password=$ROOT_PASSWORD -o yaml --dry-run | kubectl replace --force -f -
+
     # YAML_FILE=""${AUTO_DEVOPS_DOMAIN//\./-}.yaml"
     # Cleanup and previous installs, as FAILED and PENDING_UPGRADE will cause errors with `upgrade`
     if [ "$CI_ENVIRONMENT_SLUG" != "production" ] && previousDeployFailed ; then
@@ -345,7 +347,6 @@ changelog_manager:
       --set global.ingress.tls.secretName=helm-charts-win-tls \
       --set global.ingress.configureCertmanager=false \
       --set certmanager.install=false \
-      --set gitlab.migrations.initialRootPassword="$ROOT_PASSWORD" \
       --set gitlab.unicorn.resources.requests.cpu=400m \
       --set gitlab.sidekiq.resources.requests.cpu=200m \
       --namespace="$KUBE_NAMESPACE" \

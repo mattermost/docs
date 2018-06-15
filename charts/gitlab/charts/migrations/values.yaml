@@ -7,7 +7,7 @@ image:
   # pullPolicy: IfNotPresent
   # tag: latest
 enabled: true
-# initialRootPassword: password
+initialRootPassword: {}
 redis:
   password: {}
 global:

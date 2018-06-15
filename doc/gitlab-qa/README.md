@@ -26,9 +26,6 @@ Ensure this by visiting the deployment from any browser, or via cURL.
 Items needed for execution, which [will be set as environment variables][qa-env]:
 - `GITLAB_USERNAME`: This will be `root`
 - `GITLAB_PASSWORD`: This will be the password for the `root` user.
-  If your deployment had the `gitlab.migrations.initialRootPassword` property set,
-  use this value. This can be retrieved with `helm get values $RELEASE_NAME`.
-  If you manually set this on first login, provide the correct value.
 - `GITLAB_URL`: The fully-qualifies URL to the deployed instance. This should be
   in the form of `https://gitlab.domain.tld`
 - `EE_LICENSE`: A string containing a GitLab EE license. This can be handled
