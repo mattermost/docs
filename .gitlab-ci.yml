@@ -318,11 +318,8 @@ changelog_manager:
       --set global.ingress.configureCertmanager=false \
       --set certmanager.install=false \
       --set gitlab.migrations.initialRootPassword="$ROOT_PASSWORD" \
-      --set gitlab.unicorn.resources.requests.cpu=200m \
-      --set gitlab.sidekiq.resources.requests.cpu=100m \
-      --set gitlab.gitlab-shell.resources.requests.cpu=100m \
-      --set redis.resources.requests.cpu=100m \
-      --set minio.resources.requests.cpu=100m \
+      --set gitlab.unicorn.resources.requests.cpu=400m \
+      --set gitlab.sidekiq.resources.requests.cpu=200m \
       --namespace="$KUBE_NAMESPACE" \
       --version="$CI_PIPELINE_ID-$CI_JOB_ID" \
       "$name" \
