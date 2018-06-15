@@ -25,7 +25,7 @@ maxUnavailable: 1
 ## Redis image version
 image:
   repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-redis-ha
-  tag: 18d18e9c7a3a6ac037887dbc4fa3085ac818a502
+  tag: 732704f18e34ba469df34b10c3b2465e0469d484
   pullPolicy: Always
   pullSecrets: []
 ## replicas number for each component

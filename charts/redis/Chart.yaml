@@ -1,7 +1,7 @@
 apiVersion: v1
 name: redis
 version: 0.1.0
-appVersion: 3.2.5
+appVersion: 3.2.6
 description: An advanced key-value cache and store.
 details: Redis used as part of GitLab deployment.
 keywords:
