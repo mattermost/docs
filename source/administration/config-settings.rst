@@ -333,12 +333,15 @@ ________
 
 Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E10 and higher*
+*Removed in June 16, 2018 release*
 
-Settings to configure the permission restrictions for sending team invite links and managing channels.
+In v5.0 and later, permissions settings have been migrated to the new `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ user interface.
 
 Enable sending team invites from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in June 16, 2018 release*
+
 Set policy on who can invite others to a team using the **Send Email Invite**, **Get Team Invite Link**, and **Add Members to Team** options on the main menu. If **Get Team Invite Link** is used to share a link, you can expire the invite code from **Team Settings > Invite Code** after the desired users have joined the team. Options include:
 
 **All team members**: Allows any team member to invite others using an email invitation, team invite link or by adding members to the team directly.
@@ -353,6 +356,9 @@ Set policy on who can invite others to a team using the **Send Email Invite**, *
 
 Enable public channel creation for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in June 16, 2018 release*
+
 Restrict the permission level required to create public channels.
 
 **All team members**: Allow all team members to create public channels.
@@ -367,6 +373,9 @@ Restrict the permission level required to create public channels.
 
 Enable public channel renaming for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in June 16, 2018 release*
+
 Restrict the permission level required to rename and set the header or purpose for public channels.
 
 **All channel members**: Allow all channel members to rename public channels.
@@ -383,6 +392,9 @@ Restrict the permission level required to rename and set the header or purpose f
 
 Enable public channel deletion for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in June 16, 2018 release*
+
 Restrict the permission level required to delete public channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_.
 
 **All channel members**: Allow all channel members to delete public channels.
@@ -399,6 +411,9 @@ Restrict the permission level required to delete public channels. Deleted channe
 
 Enable private channel creation for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in June 16, 2018 release*
+
 Restrict the permission level required to create private channels.
 
 **All team members**: Allow all team members to create private channels.
@@ -413,6 +428,9 @@ Restrict the permission level required to create private channels.
 
 Enable private channel renaming for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in June 16, 2018 release*
+
 Restrict the permission level required to rename and set the header or purpose for private channels.
 
 **All channel members**: Allow all channel members to rename private channels.
@@ -429,6 +447,9 @@ Restrict the permission level required to rename and set the header or purpose f
 
 Enable managing of private channel members for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in June 16, 2018 release*
+
 Set policy on who can add and remove members from private channels.
 
 **All team members**: Allow all team members to add and remove members.
@@ -445,6 +466,9 @@ Set policy on who can add and remove members from private channels.
 
 Enable private channel deletion for
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in June 16, 2018 release*
+
 Restrict the permission level required to delete private channels. Deleted channels can be recovered from the database using a `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_.
 
 **All channel members**: Allow all channel members to delete private channels.
@@ -461,6 +485,9 @@ Restrict the permission level required to delete private channels. Deleted chann
 
 Allow which users to delete messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in June 16, 2018 release*
+
 Restrict the permission level required to delete messages. Team Admins, Channel Admins, and System Admins can delete messages only in channels where they are members. Messages can be deleted anytime.
 
 **Message authors can delete their own messages, and Administrators can delete any message**: Allow authors to delete their own messages, and allow Team Admins, Channel Admins, and System Admins to delete any message.
@@ -475,6 +502,9 @@ Restrict the permission level required to delete messages. Team Admins, Channel 
 
 Allow users to edit their messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+*Removed in June 16, 2018 release*
+
 Set the time limit that users have to edit their messages after posting.
 
 **Any time**: Allow users to edit their messages at any time after posting.
@@ -488,58 +518,6 @@ Set the time limit that users have to edit their messages after posting.
 |                                                                                                                                                               |
 | The second setting is ``"PostEditTimeLimit": -1`` with whole number input. To enable ``PostEditTimeLimit``, set ``AllowEditPost`` to ``time_limit``.          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Enable Announcement Banner
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Enable an announcement banner across all teams. The banner is displayed at the top of the screen and is the entire width of the screen. By default, users can dismiss the banner until you either change the text of the banner or until you re-enable the banner after it has been disabled. You can prevent users from dismissing the banner, and you can control the text color and the background color.
-
-**True**: Enable the announcement banner. The banner is displayed only if ``BannerText`` has a value.
-
-**False**: Disable the announcement banner.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableBanner": false`` with options ``true`` and ``false``.  |
-+-----------------------------------------------------------------------------------------------------------+
-
-Banner Text
-^^^^^^^^^^^
-
-The text of the announcement banner.
-
-+------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BannerText": ""`` with string input.  |
-+------------------------------------------------------------------------------------+
-
-Banner Color
-^^^^^^^^^^^^
-
-The background color of the announcement banner.
-
-+---------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``""BannerColor": "#f2a93b"`` with string input.  |
-+---------------------------------------------------------------------------------------------+
-
-Banner Text Color
-^^^^^^^^^^^^^^^^^
-
-The color of the text in the announcement banner.
-
-+-------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``""BannerTextColor": "#333333"`` with string input.  |
-+-------------------------------------------------------------------------------------------------+
-
-Allow Banner Dismissal
-^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: Users can dismiss the banner until the next time they log in or the banner is updated.
-
-**False**: The banner is permanently visible until it is turned off by the System Admin.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``""AllowBannerDismissal": true`` with options ``true`` and ``false``.  |
-+-------------------------------------------------------------------------------------------------------------------+
-
 
 Privacy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -715,6 +693,14 @@ Enable Diagnostics and Error Reporting
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableDiagnostics": true`` with options ``true`` and ``false`` for above settings respectively.                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+Advanced Permissions
+-------------------------------
+*Available in Enterprise Edition E10 and higher*
+
+Advanced permissions offers Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ for more details.
 
 ________
 
@@ -2380,6 +2366,62 @@ Description of service shown in login screens and UI. When not specified, "All t
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"CustomDescriptionText": ""`` with string input.                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+________
+
+Announcement Banner
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable Announcement Banner
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable an announcement banner across all teams. The banner is displayed at the top of the screen and is the entire width of the screen. By default, users can dismiss the banner until you either change the text of the banner or until you re-enable the banner after it has been disabled. You can prevent users from dismissing the banner, and you can control the text color and the background color.
+
+**True**: Enable the announcement banner. The banner is displayed only if ``BannerText`` has a value.
+
+**False**: Disable the announcement banner.
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableBanner": false`` with options ``true`` and ``false``.  |
++-----------------------------------------------------------------------------------------------------------+
+
+Banner Text
+^^^^^^^^^^^
+
+The text of the announcement banner.
+
++------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BannerText": ""`` with string input.  |
++------------------------------------------------------------------------------------+
+
+Banner Color
+^^^^^^^^^^^^
+
+The background color of the announcement banner.
+
++---------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``""BannerColor": "#f2a93b"`` with string input.  |
++---------------------------------------------------------------------------------------------+
+
+Banner Text Color
+^^^^^^^^^^^^^^^^^
+
+The color of the text in the announcement banner.
+
++-------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``""BannerTextColor": "#333333"`` with string input.  |
++-------------------------------------------------------------------------------------------------+
+
+Allow Banner Dismissal
+^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Users can dismiss the banner until the next time they log in or the banner is updated.
+
+**False**: The banner is permanently visible until it is turned off by the System Admin.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``""AllowBannerDismissal": true`` with options ``true`` and ``false``.  |
++-------------------------------------------------------------------------------------------------------------------+
 
 ________
 
