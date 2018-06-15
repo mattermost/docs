@@ -92,8 +92,8 @@ pullSecrets:
 
 They way we've chosen to implement compartmentalized sub-charts includes the ability to disable the components that you may not want in a given deployment. For this reason, the first settings you should decided upon is `enabled:`.
 
-By default, Minio is enabled out of the box. Should you wish to disable it,
-set `enabled: false`.
+By default, Minio is enabled out of the box. Minio is not recommended for production use.
+When you are ready to disable it, set `enabled: false`.
 
 ## Configure the initContainer
 
