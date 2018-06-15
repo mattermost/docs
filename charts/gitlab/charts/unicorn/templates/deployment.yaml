@@ -190,12 +190,10 @@ spec:
           {{- if .Values.omniauth.providers }}
           {{-   range $index, $entry := .Values.omniauth.providers }}
           - secret:
-              name: {{ $entry.secretName }}
+              name: {{ $entry.secret }}
               items:
-                - key: app_id
-                  path: omniauth/{{ $entry.name }}/app_id
-                - key: app_secret
-                  path: omniauth/{{ $entry.name }}/app_secret
+                - key: {{ default "provider" $entry.key }}
+                  path: omniauth/{{ $entry.secret }}/provider
           {{-   end }}
           {{- end }}
           {{- if and $.Values.global.smtp.enabled $.Values.global.smtp.authentication }}

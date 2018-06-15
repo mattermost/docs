@@ -164,21 +164,21 @@ data:
       kerberos:
         enabled: false
       omniauth:
-      {{- if not .Values.omniauth.providers }}
-        enabled: false
-      {{- else }}
-        enabled: true
+        enabled: {{ .Values.omniauth.enabled }}
+        autoSignInWithProvider: {{ .Values.omniauth.auto_sign_in_with_provider | quote }}
+        syncProfileFromProvider: {{ .Values.omniauth.sync_profile_from_provider }}
+        syncProfileAttributes: {{ .Values.omniauth.sync_profile_attributes }}
+        allowSingleSignOn: {{ .Values.omniauth.allow_single_sign_on }}
+        blockAutoCreatedUsers: {{ .Values.omniauth.block_auto_created_users }}
+        autoLinkLdapUser: {{ .Values.omniauth.auto_link_ldap_user }}
+        autoLinkSamlUser: {{ .Values.omniauth.auto_link_saml_user }}
+        externalProviders: {{ .Values.omniauth.external_providers }}
+        {{- if .Values.omniauth.providers }}
         providers:
-        {{- range $index, $entry := .Values.omniauth.providers }}
-          - name: '{{ $entry.name }}'
-            app_id: '<%= File.read('/etc/gitlab/omniauth/{{ $entry.name }}/app_id') %>'
-            app_secret: '<%= File.read('/etc/gitlab/omniauth/{{ $entry.name}}/app_secret') %>'
-        {{-  if $entry.args }}
-            args:
-{{ toYaml $entry.args | indent 14 }}
-        {{-  end }}
+        {{-   range $index, $entry := .Values.omniauth.providers }}
+          - <%= YAML.load_file("/etc/gitlab/omniauth/{{ $entry.secret }}/provider").to_json() %>
+        {{-   end }}
         {{- end }}
-      {{- end }}
       shared:
       gitaly:
         client_path: /home/git/gitaly/bin
