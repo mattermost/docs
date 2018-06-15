@@ -6,6 +6,10 @@ imageTag: "RELEASE.2017-12-28T01-21-00Z"
 imagePullPolicy: "Always"
 pullSecrets: []
 
+minioMc:
+  image: minio/mc
+  tag: latest
+
 ## Enable/Disable
 enabled: true
 
