@@ -24,7 +24,7 @@ spec:
       initContainers:
         - name: configure
           command: ['sh', '/config/configure']
-          image: busybox
+          image: {{ .Values.init.image }}:{{ .Values.init.tag }}
           volumeMounts:
           - name: task-runner-config
             mountPath: /config
@@ -45,8 +45,14 @@ spec:
           image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
           {{ template "gitlab.imagePullPolicy" . }}
           env:
+            - name: ARTIFACTS_BUCKET_NAME
+              value: {{ .Values.backups.bucketNames.artifacts }}
+            - name: REGISTRY_BUCKET_NAME
+              value: {{ .Values.backups.bucketNames.registry }}
+            - name: LFS_BUCKET_NAME
+              value: {{ .Values.backups.bucketNames.lfs }}
             - name: BACKUP_BUCKET_NAME
-              value: {{ .Values.backups.bucketName }}
+              value: {{ .Values.backups.bucketNames.backups }}
             - name: S3_CONFIG_DIR
               value: "/etc/gitlab/minio"
             - name: S3_ENDPOINT

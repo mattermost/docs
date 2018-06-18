@@ -32,7 +32,7 @@ spec:
                 name: {{ template "gitlab.minio.credentials.secret" . }}
       containers:
       - name: minio-mc
-        image: minio/mc
+        image: {{ .Values.minioMc.image }}:{{ .Values.minioMc.tag }}
         command: ["/bin/sh", "/config/initialize"]
         env:
           - name: MINIO_ENDPOINT

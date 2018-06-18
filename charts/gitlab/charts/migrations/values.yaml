@@ -6,8 +6,13 @@ image:
   pullSecrets: []
   # pullPolicy: IfNotPresent
   # tag: latest
+
+init:
+  image: busybox
+  tag: latest
+
 enabled: true
-# initialRootPassword: password
+initialRootPassword: {}
 redis:
   password: {}
 global:

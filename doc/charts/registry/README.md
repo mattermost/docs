@@ -54,6 +54,8 @@ Table below contains all the possible charts configurations that can be supplied
 | image.tag                | Version of the image to use             | 2.6                  |
 | image.pullPolicy         | Pull policy for the registry image      |                      |
 | image.pullSecrets        | Secrets to use for image repository     |                      |
+| init.image               | initContainer image                     | busybox              |
+| init.tag                 | initContainer image tag                 | latest               |
 | enabled                  | Enable registry flag                    | true                 |
 | httpSecret               | Https secret                            |                      |
 | authEndpoint             | Auth endpoint                           | Undefined by default |

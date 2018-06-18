@@ -55,16 +55,6 @@ documentation for more help on this process.
 
 By default the chart will create Volume Claims with the expectation that a dynamic provisioner will create the underlying Persistent Volumes. If you would like to customize the storageClass or manually create and assign volumes, please review the [storage documentation](storage.md).
 
-### Initial root password
-
-Select a root password for your GitLab install. The root account will have full
-administrative access and can be used to create other accounts.
-
-*Include these options in your helm install command:*
-```
---set gitlab.migrations.initialRootPassword="example-password"
-```
-
 ### TLS certificates
 
 You should be running GitLab using https which requires TLS certificates. By default the
@@ -136,12 +126,12 @@ Once you have all of your configuration options collected, we can get any depend
 run helm. In this example, we've named our helm release "gitlab".
 
 ```
+helm repo add gitlab https://charts.gitlab.io/
 helm dependencies update
 helm upgrade --install gitlab . \
   --timeout 600 \
   --set global.hosts.domain=example.local \
   --set global.hosts.externalIP=10.10.10.10 \
-  --set gitlab.migrations.initialRootPassword="example-password" \
   --set certmanager-issuer.email=me@example.local
 ```
 
@@ -151,6 +141,19 @@ This will output the list of resources installed once the deployment finishes wh
 
 The status of the deployment can be checked by running `helm status gitlab` which can also be done while
 the deployment is taking place if you run the command in another terminal.
+
+## Initial login
+
+You can access the GitLab instance by visiting the domain specified during
+installation. If you manually created the secret for initial root password, you
+can use that to sign in as `root` user. If not, Gitlab would've automatically
+created a random password for `root` user. This can be extracted by the
+following command (replace `<name>` by name of the release - which is `gitlab`
+if you used the command above)
+
+```
+kubectl get secret <name>-gitlab-initial-root-password -ojsonpath={.data.password} | base64 -d
+```
 
 [secret-gl-certs]: secrets.md#gitlab-certificates
 [secret-reg-certs]: secrets.md#registry-certificates

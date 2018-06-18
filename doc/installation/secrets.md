@@ -77,6 +77,16 @@ kubectl create secret generic gitlab-shell-host-keys --from-file hostKeys
 
 Include this secret using `--set global.shell.hostKeys.secret=gitlab-shell-host-keys`
 
+### Initial root password
+
+Create a kubernetes secret for storing the initial root password. The password
+should be at least 6 characters long. In the following command, replace
+`<your password>` with the value.
+
+```
+kubectl create secret generic gitlab-gitlab-initial-root-password --from-literal=password=<your password>
+```
+
 ### Redis password
 
 Generate a random 64 character alpha-numeric password for Redis.

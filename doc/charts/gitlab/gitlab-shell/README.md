@@ -25,6 +25,8 @@ The `gitlab-shell` sub-chart provides a SSH server configured for Git SSH access
 | image.tag             | Shell image tag                       | latest                                         |
 | image.pullPolicy      | Shell image pull policy               | Always                                         |
 | image.pullSecrets     | Secrets for the image repository      |                                                |
+| init.image            | initContainer image                   | busybox                                        |
+| init.tag              | initContainer image tag               | latest                                         |
 | service.name          | Shell service name                    | gitlab-shell                                   |
 | service.type          | Shell service type                    | ClusterIP                                      |
 | service.externalPort  | Shell exposed port                    | 22                                             |

@@ -23,6 +23,8 @@ Table below contains all the possible charts configurations that can be supplied
 | image.tag                        | Unicorn image tag                              |                                                  |
 | image.pullPolicy                 | Unicorn image pull policy                      | Always                                           |
 | image.pullSecrets                | Secrets for the image repository               |                                                  |
+| init.image                       | initContainer image                            | busybox                                          |
+| init.tag                         | initContainer image tag                        | latest                                           |
 | service.name                     | Unicorn service name                           | unicorn                                          |
 | service.type                     | Unicorn service type                           | ClusterIP                                        |
 | service.externalPort             | Unicorn exposed port                           | 8080                                             |

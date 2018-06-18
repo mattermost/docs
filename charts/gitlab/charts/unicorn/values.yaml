@@ -6,6 +6,9 @@ image:
   pullSecrets: []
   # pullPolicy: IfNotPresent
   # tag: latest
+init:
+  image: busybox
+  tag: latest
 metrics:
   enabled: true
   annotations:
@@ -147,5 +150,5 @@ resources:
     cpu: 200m
     memory: 2G
 maxUnavailable: 1
-minReplicas: 1
-maxReplicas: 1
+minReplicas: 2
+maxReplicas: 10

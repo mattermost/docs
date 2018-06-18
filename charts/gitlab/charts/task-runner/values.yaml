@@ -3,6 +3,11 @@ image:
   pullSecrets: []
   # pullPolicy: IfNotPresent
   # tag: latest
+
+init:
+  image: busybox
+  tag: latest
+
 enabled: false
 global:
   # imagePullPolicy: IfNotPresent
@@ -24,8 +29,12 @@ global:
   gitaly:
     authToken: {}
 backups:
-  bucketName: gitlab-backups
-
+  bucketNames:
+    backups: gitlab-backups
+    artifacts: gitlab-artifacts
+    uploads: gitlab-uploads
+    registry: registry
+    lfs: git-lfs
 extra: {}
 
 rack_attack:

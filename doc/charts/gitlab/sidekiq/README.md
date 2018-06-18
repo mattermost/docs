@@ -26,6 +26,8 @@ Table below contains all the possible charts configurations that can be supplied
 | image.tag                 | Sidekiq image tag                              |                                                  |
 | image.pullPolicy          | Sidekiq image pull policy                      | Always                                           |
 | image.pullSecrets         | Secrets for the image repository               |                                                  |
+| init.image                | initContainer image                            | busybox                                          |
+| init.tag                  | initContainer image tag                        | latest                                           |
 | enabled                   | Sidekiq enabled flag                           | true                                             |
 | metrics.enabled           | Toggle Prometheus metrics exporter             | true                                             |
 | redis.serviceName         | Redis service name                             | redis                                            |

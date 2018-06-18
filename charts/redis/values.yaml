@@ -3,6 +3,9 @@ image:
   tag: '3.2.5'
   pullPolicy: 'IfNotPresent'
   pullSecrets: []
+init:
+  image: busybox
+  tag: latest
 service:
   name: redis
   type: ClusterIP

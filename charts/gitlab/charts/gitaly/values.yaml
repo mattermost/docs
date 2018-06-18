@@ -17,6 +17,10 @@ service:
 enabled: true
 serviceName: gitaly
 
+init:
+  image: busybox
+  tag: latest
+
 global:
   # imagePullPolicy: IfNotPresent
   redis:

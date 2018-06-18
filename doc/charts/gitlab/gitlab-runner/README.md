@@ -31,6 +31,8 @@ Priveleged containers have extended capabilities, for example they can mount arb
 | gitlab-runner.image                          | runner image                               | gitlab/gitlab-runner:alpine-v10.5.0 |
 | gitlab-runner.enabled                        |                                            | redis                               |
 | gitlab-runner.imagePullPolicy                | image pull policy                          | IfNotPresent                        |
+| gitlab-runner.init.image                     | initContainer image                        | busybox                             |
+| gitlab-runner.init.tag                       | initContainer image tag                    | latest                              |
 | gitlab-runner.pullSecrets                    | Secrets for the image repository           |                                     |
 | gitlab-runner.unregisterRunners              | unregister all runners before termination  | true                                |
 | gitlab-runner.concurrent                     | number of concurrent jobs                  | 20                                  |
@@ -64,7 +66,7 @@ Priveleged containers have extended capabilities, for example they can mount arb
 
 ## Chart configuration examples
 ### gitlab-runner.pullSecrets
-`pullSecrets` allow you to authenticate to a private registry to pull images for a pod. 
+`pullSecrets` allow you to authenticate to a private registry to pull images for a pod.
 
 Additional details about private registries and their authentication methods
 can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
@@ -73,7 +75,7 @@ Below is an example use of `pullSecrets`
 ```YAML
 image: my.runner.repository
 imagePullPolicy: Always
-pullSecrets: 
+pullSecrets:
 - name: my-secret-name
 - name: my-secondary-secret-name
 ```

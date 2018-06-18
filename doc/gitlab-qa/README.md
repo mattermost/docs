@@ -14,7 +14,9 @@ Install the `gitlab-qa` Gem with `gem install gitlab-qa`, per [documentation][qa
 ### Docker
 
 GitLab QA makes use of Docker, as such, you will need to have an operational
-installation. Ensure that the daemon is running, and can pull images.
+installation. Ensure that the daemon is running. Pull the GitLab QA nightly image, to ensure that the latest nightly is used for testing, in conjunction with the nightly builds of the CNG containers.
+
+`docker pull gitlab/gitlab-ee-qa:nightly`.
 
 ### Network access
 
@@ -26,9 +28,6 @@ Ensure this by visiting the deployment from any browser, or via cURL.
 Items needed for execution, which [will be set as environment variables][qa-env]:
 - `GITLAB_USERNAME`: This will be `root`
 - `GITLAB_PASSWORD`: This will be the password for the `root` user.
-  If your deployment had the `gitlab.migrations.initialRootPassword` property set,
-  use this value. This can be retrieved with `helm get values $RELEASE_NAME`.
-  If you manually set this on first login, provide the correct value.
 - `GITLAB_URL`: The fully-qualifies URL to the deployed instance. This should be
   in the form of `https://gitlab.domain.tld`
 - `EE_LICENSE`: A string containing a GitLab EE license. This can be handled

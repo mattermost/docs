@@ -52,6 +52,8 @@ Table below contains all the possible charts configurations that can be supplied
 | enabled                      | Minio enable flag                       | true                         |
 | mountPath                    | Minio config file mount path            | /export                      |
 | replicas                     | Minio number of replicas                | 4                            |
+| minioMc.image                | Minio mc image                          | minio/mc                     |
+| minioMc.tag                  | Minio mc image tag                      | latest                       |
 | persistence.enabled          | Minio enable persistence flag           | true                         |
 | persistence.accessMode       | Minio persistence access mode           | ReadWriteOnce                |
 | persistence.size             | Minio persistence volume size           | 10Gi                         |
