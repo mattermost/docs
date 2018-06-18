@@ -158,12 +158,12 @@ spec:
           - name: sidekiq-config
             mountPath: '/home/git/gitlab/config/initializers/smtp_settings.rb'
             subPath: smtp_settings.rb
-          # livenessProbe:
-          #   exec:
-          #     command:
-          #       - head
-          #       - -c1
-          #       - /dev/random
+          livenessProbe:
+            exec:
+              command:
+                - pgrep
+                - -f
+                - sidekiq
           readinessProbe:
             exec:
               command:

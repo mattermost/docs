@@ -139,5 +139,5 @@ resources:
     cpu: 200m
     memory: 2G
 maxUnavailable: 1
-minReplicas: 1
-maxReplicas: 1
+minReplicas: 2
+maxReplicas: 10

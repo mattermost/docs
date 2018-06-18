@@ -44,6 +44,7 @@ stages:
   - canary
   - stable
   - qa
+  - package
   - cleanup
 
 .test:
@@ -59,6 +60,34 @@ stages:
     - /bin/herokuish buildpack test
   only:
     - branches
+
+lint_package:
+  stage: package
+  when: always
+  script:
+    - helm init --client-only
+    - helm repo add gitlab https://charts.gitlab.io
+    - helm dependencies update
+    - helm lint --set certmanager-issuer.email=support@gitlab.com
+    - mkdir -p build
+    - helm package -d build .
+  artifacts:
+    expire_in: 3d
+    paths:
+    - build
+  except:
+    - tags
+
+release_package:
+  stage: package
+  when: always
+  script:
+    - curl --request POST --form "token=$CI_JOB_TOKEN" --form ref=master
+        --form "variables[CHART_NAME]=$CI_PROJECT_NAME"
+        --form "variables[RELEASE_REF]=$CI_COMMIT_REF_NAME"
+        https://gitlab.com/api/v4/projects/2860651/trigger/pipeline
+  only:
+    - tags
 
 review:
   stage: review
@@ -297,6 +326,8 @@ changelog_manager:
 
     #ROOT_PASSWORD=$(cat /dev/urandom | LC_TYPE=C tr -dc "[:alpha:]" | head -c 16)
     #echo "Generated root login: $ROOT_PASSWORD"
+    kubectl create secret generic "${CI_ENVIRONMENT_SLUG}-gitlab-initial-root-password" --from-literal=password=$ROOT_PASSWORD -o yaml --dry-run | kubectl replace --force -f -
+
     # YAML_FILE=""${AUTO_DEVOPS_DOMAIN//\./-}.yaml"
     # Cleanup and previous installs, as FAILED and PENDING_UPGRADE will cause errors with `upgrade`
     if [ "$CI_ENVIRONMENT_SLUG" != "production" ] && previousDeployFailed ; then
@@ -317,10 +348,12 @@ changelog_manager:
       --set global.ingress.tls.secretName=helm-charts-win-tls \
       --set global.ingress.configureCertmanager=false \
       --set certmanager.install=false \
-      --set gitlab.migrations.initialRootPassword="$ROOT_PASSWORD" \
-      --set gitlab.unicorn.resources.requests.cpu=200m \
-      --set gitlab.sidekiq.resources.requests.cpu=100m \
+      --set gitlab.unicorn.resources.requests.cpu=400m \
+      --set gitlab.unicorn.maxReplicas=3 \
+      --set gitlab.sidekiq.resources.requests.cpu=200m \
+      --set gitlab.sidekiq.maxReplicas=2 \
       --set gitlab.gitlab-shell.resources.requests.cpu=100m \
+      --set gitlab.gitlab-shell.maxReplicas=3 \
       --set redis.resources.requests.cpu=100m \
       --set minio.resources.requests.cpu=100m \
       --namespace="$KUBE_NAMESPACE" \
