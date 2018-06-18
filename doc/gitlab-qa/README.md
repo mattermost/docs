@@ -14,7 +14,9 @@ Install the `gitlab-qa` Gem with `gem install gitlab-qa`, per [documentation][qa
 ### Docker
 
 GitLab QA makes use of Docker, as such, you will need to have an operational
-installation. Ensure that the daemon is running, and can pull images.
+installation. Ensure that the daemon is running. Pull the GitLab QA nightly image, to ensure that the latest nightly is used for testing, in conjunction with the nightly builds of the CNG containers.
+
+`docker pull gitlab/gitlab-ee-qa:nightly`.
 
 ### Network access
 
