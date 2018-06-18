@@ -39,7 +39,7 @@ generate_secret_if_needed {{ template "gitlab.gitaly.authToken.secret" . }} --fr
 generate_secret_if_needed {{ template "gitlab.minio.credentials.secret" . }} --from-literal=accesskey=$(gen_random 'a-zA-Z0-9' 64) --from-literal=secretkey=$(gen_random 'a-zA-Z0-9' 64)
 
 # Gitlab runner secret
-generate_secret_if_needed {{ template "gitlab.gitlab-runner.registrationToken.secret" . }} --from-literal={{ template "gitlab.gitlab-runner.registrationToken.key" . }}=$(gen_random 'a-zA-Z0-9' 64)
+generate_secret_if_needed {{ template "gitlab.gitlab-runner.registrationToken.secret" . }} --from-literal=runner-registration-token=$(gen_random 'a-zA-Z0-9' 64) --from-literal=runner-token=""
 
 # Registry certificates
 mkdir -p certs

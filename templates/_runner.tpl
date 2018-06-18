@@ -6,8 +6,15 @@ Return the gitlab-runner registration token secret name
 {{- end -}}
 
 {{/*
-Return the gitlab-runner registration token secret key
+Override the runner charts secret name containing the tokens so everything matches
 */}}
-{{- define "gitlab.gitlab-runner.registrationToken.key" -}}
-{{- coalesce .Values.global.runner.registrationToken.key "runner-registration-token" | quote -}}
+{{- define "gitlab-runner.secret" -}}
+{{ include "gitlab.gitlab-runner.registrationToken.secret" . }}
+{{- end -}}
+
+{{/*
+Override the runner charts cache secret name to match minio
+*/}}
+{{- define "gitlab-runner.cache.secret" -}}
+{{ include "gitlab.minio.credentials.secret" . }}
 {{- end -}}
