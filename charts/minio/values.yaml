@@ -10,9 +10,6 @@ minioMc:
   image: minio/mc
   tag: latest
 
-## Enable/Disable
-enabled: true
-
 ingress:
   enabled: false
   proxyReadTimeout: 900
@@ -37,6 +34,8 @@ global:
     minio: {}
       #name: minio.example.local
       #https: false
+  minio:
+    enabled: true
 
 ## Control the InitContainer behaviors.
 init:

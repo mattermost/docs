@@ -1,4 +1,4 @@
-{{- if .Values.enabled -}}
+{{- if .Values.global.minio.enabled -}}
 {{- if coalesce .Values.ingress.enabled .Values.global.ingress.enabled | default false -}}
 {{- $minioHostname := include "gitlab.minio.hostname" . -}}
 {{- $tlsSecret := include "minio.tlsSecret" . -}}

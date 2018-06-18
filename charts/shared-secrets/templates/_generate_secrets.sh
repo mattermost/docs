@@ -35,8 +35,10 @@ generate_secret_if_needed {{ template "gitlab.gitlab-shell.authToken.secret" . }
 # Gitaly secret
 generate_secret_if_needed {{ template "gitlab.gitaly.authToken.secret" . }} --from-literal={{ template "gitlab.gitaly.authToken.key" . }}=$(gen_random 'a-zA-Z0-9' 64)
 
+{{- if .Values.global.minio.enabled -}}
 # Minio secret
 generate_secret_if_needed {{ template "gitlab.minio.credentials.secret" . }} --from-literal=accesskey=$(gen_random 'a-zA-Z0-9' 64) --from-literal=secretkey=$(gen_random 'a-zA-Z0-9' 64)
+{{- end -}}
 
 # Gitlab runner secret
 generate_secret_if_needed {{ template "gitlab.gitlab-runner.registrationToken.secret" . }} --from-literal={{ template "gitlab.gitlab-runner.registrationToken.key" . }}=$(gen_random 'a-zA-Z0-9' 64)
