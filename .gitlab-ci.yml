@@ -80,6 +80,7 @@ lint_package:
 
 release_package:
   stage: package
+  when: always
   script:
     - curl --request POST --form "token=$CI_JOB_TOKEN" --form ref=master
         --form "variables[CHART_NAME]=$CI_PROJECT_NAME"
