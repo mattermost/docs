@@ -28,6 +28,9 @@ image:
   tag: 18d18e9c7a3a6ac037887dbc4fa3085ac818a502
   pullPolicy: Always
   pullSecrets: []
+init:
+  image: busybox
+  tag: latest
 ## replicas number for each component
 replicas:
   servers: 3

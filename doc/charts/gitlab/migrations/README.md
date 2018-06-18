@@ -30,6 +30,8 @@ Table below contains all the possible charts configurations that can be supplied
 | image.tag             | Migrations image tag                           |                                                |
 | image.pullPolicy      | Migrations pull policy                         | Always                                         |
 | image.pullSecrets     | Secrets for the image repository               |                                                |
+| init.image            | initContainer image                            | busybox                                        |
+| init.tag              | initContainer image tag                        | latest                                         |
 | enabled               | Migrations enable flag                         | true                                           |
 | redis.serviceName     | Redis service name                             | redis                                          |
 | psql.password.secret  | psql secret                                    | gitlab-postgres                                |
