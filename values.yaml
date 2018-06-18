@@ -146,10 +146,8 @@ gitlab-runner:
       s3BucketName: runner-cache
       cacheShared: true
       s3BucketLocation: us-east-1
-      secretName: gitlab-minio
       s3CachePath: gitlab-runner
       s3CacheInsecure: false
-    secret: gitlab-runner
 # gitlab:
 #   migrations:
 #     enabled: false
