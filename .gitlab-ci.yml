@@ -452,7 +452,7 @@ changelog_manager:
   }
 
   function cleanup() {
-    kubectl get ingress,configmap,all -n "$KUBE_NAMESPACE" \
+    kubectl get ingress,configmap,all,pvc -n "$KUBE_NAMESPACE" \
       -o jsonpath='{range .items[*]}{.kind}{" "}{.metadata.name}{"\n"}{end}' \
       | grep "CI_ENVIRONMENT_SLUG" \
       | xargs -n2 kubectl delete -n "$KUBE_NAMESPACE" \
