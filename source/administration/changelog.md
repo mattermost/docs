@@ -115,6 +115,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
+ - [Image proxy](https://docs.mattermost.com/administration/image-proxy.html) cannot be saved in the System Console UI. Configure the settings in your `config.json` file instead.
  - Google login fails on the Classic mobile apps.
  - User can receive a video call from another browser tab while already on a call.
  - Jump link in search results does not always jump to display the expected post.
