@@ -54,7 +54,21 @@ install command:
 
 ### Google Cloud Storage
 
-TBD
+To use Google Cloud Storage to store artifacts from CI, include these options
+in your helm install command:
+
+```
+--set gitlab.unicorn.artifacts.connection.google_project=<GOOGLE_PROJECT_ID> \
+--set gitlab.unicorn.artifacts.connection.google_client_email=<GOOGLE_SERVICE_ACCOUNT_EMAIL> \
+--set gitlab.unicorn.artifacts.connection.google_json_key_string=$(cat google-private-key-credentials.json | sed 's/\([,{}\\]\)/\\\1/g') \
+--set gitlab.unicorn.artifacts.connection.provider=Google \
+--set gitlab.unicorn.artifacts.bucket=my-artifacts-bucket
+--set gitlab.sidekiq.artifacts.connection.google_project=<GOOGLE_PROJECT_ID> \
+--set gitlab.sidekiq.artifacts.connection.google_client_email=<GOOGLE_SERVICE_ACCOUNT_EMAIL> \
+--set gitlab.sidekiq.artifacts.connection.google_json_key_string=$(cat google-private-key-credentials.json | sed 's/\([,{}\\]\)/\\\1/g') \
+--set gitlab.sidekiq.artifacts.connection.provider=Google \
+--set gitlab.sidekiq.artifacts.bucket=my-artifacts-bucket
+```
 
 ## Large file storage in git repositories
 
@@ -78,7 +92,21 @@ in your helm install command:
 
 ### Google Cloud Storage
 
-TBD
+To use Google Cloud Storage for large file support in git repositories, include these
+options in your helm install command:
+
+```
+--set gitlab.unicorn.lfs.connection.google_project=<GOOGLE_PROJECT_ID> \
+--set gitlab.unicorn.lfs.connection.google_client_email=<GOOGLE_SERVICE_ACCOUNT_EMAIL> \
+--set gitlab.unicorn.lfs.connection.google_json_key_string=$(cat google-private-key-credentials.json | sed 's/\([,{}\\]\)/\\\1/g') \
+--set gitlab.unicorn.lfs.connection.provider=Google \
+--set gitlab.unicorn.lfs.bucket=my-lfs-bucket
+--set gitlab.sidekiq.lfs.connection.google_project=<GOOGLE_PROJECT_ID> \
+--set gitlab.sidekiq.lfs.connection.google_client_email=<GOOGLE_SERVICE_ACCOUNT_EMAIL> \
+--set gitlab.sidekiq.lfs.connection.google_json_key_string=$(cat google-private-key-credentials.json | sed 's/\([,{}\\]\)/\\\1/g') \
+--set gitlab.sidekiq.lfs.connection.provider=Google \
+--set gitlab.sidekiq.lfs.bucket=my-lfs-bucket
+```
 
 ## Attachments and other uploads
 
@@ -101,3 +129,19 @@ options in your helm install command:
 ```
 
 ### Google Cloud Storage
+
+To use Google Cloud Storage to store issue attachments and other uploads, include these
+options in your helm install command:
+
+```
+--set gitlab.unicorn.uploads.connection.google_project=<GOOGLE_PROJECT_ID> \
+--set gitlab.unicorn.uploads.connection.google_client_email=<GOOGLE_SERVICE_ACCOUNT_EMAIL> \
+--set gitlab.unicorn.uploads.connection.google_json_key_string=$(cat google-private-key-credentials.json | sed 's/\([,{}\\]\)/\\\1/g') \
+--set gitlab.unicorn.uploads.connection.provider=Google \
+--set gitlab.unicorn.uploads.bucket=my-uploads-bucket
+--set gitlab.sidekiq.uploads.connection.google_project=<GOOGLE_PROJECT_ID> \
+--set gitlab.sidekiq.uploads.connection.google_client_email=<GOOGLE_SERVICE_ACCOUNT_EMAIL> \
+--set gitlab.sidekiq.uploads.connection.google_json_key_string=$(cat google-private-key-credentials.json | sed 's/\([,{}\\]\)/\\\1/g') \
+--set gitlab.sidekiq.uploads.connection.provider=Google \
+--set gitlab.sidekiq.uploads.bucket=my-uploads-bucket
+```
