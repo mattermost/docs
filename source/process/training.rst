@@ -454,6 +454,11 @@ LHS
 
 The "Left-Hand Sidebar" in the Mattermost team site, used for navigation.
 
+ESR
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Extended Support Release is a version fo Mattermost maitained for a longer period of time that will recieve security fixes.
+
 Mana
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
