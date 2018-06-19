@@ -13,7 +13,5 @@ spec:
       targetPort: 26379
   selector:
     redis-role: "sentinel"
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+{{ include "labels.standard" . | indent 4 }}
 {{- end -}}

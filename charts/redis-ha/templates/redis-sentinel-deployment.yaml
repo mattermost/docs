@@ -22,7 +22,7 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - {{ template "fullname" . }}
+                  - {{ template "name" . }}
                 - key: redis-role
                   operator: In
                   values:
