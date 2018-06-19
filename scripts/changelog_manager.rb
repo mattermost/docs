@@ -8,7 +8,7 @@
 require_relative 'lib/changelog'
 
 manager = Changelog::Manager.new(File.realpath(ARGV[0]))
-release = Time.new.strftime("%Y-%m-%d")
+release = ChangelogVersion.new(Time.new.strftime("%Y-%m-%d"))
 manager.release(release)
 
 # vim: ft=ruby
