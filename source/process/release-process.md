@@ -167,7 +167,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Push next RC to acceptance and announce in Town Square with new RC link
     - Check CI servers running on release branch
 
-### I. (T-minus 5 working days) Release Candidate Testing Finished
+### I. (T-minus 6 working days) Release Candidate Testing Finished
 
 1. **(Team) Daily Release Update Meeting**
     - Confirm testing assigned in the release testing spreadsheet is complete 
@@ -191,7 +191,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 
 ### J. (T-minus 2 working days) Release Build Cut
 
-The final release is cut. If an urgent and important issue needs to be addressed between major releases, a bug fix release (e.g. 1.1.1) may be created.
+The final release is cut - RC cuts and bug fixes should be completed by this date. Only urgent and critical issues are considered for fixing.
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
