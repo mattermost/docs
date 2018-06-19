@@ -48,10 +48,18 @@ ldap:
   #   password: '_the_password_of_the_bind_user'
   #   encryption: 'plain'
 omniauth:
+  enabled: false
+  autoSignInWithProvider:
+  syncProfileFromProvider: []
+  syncProfileAttributes: ['email']
+  allowSingleSignOn: ['saml']
+  blockAutoCreatedUsers: true
+  autoLinkLdapUser: false
+  autoLinkSamlUser: false
+  externalProviders: []
   providers: []
-  # - name: google_oauth2
-  #   secretName: gitlab-google-oauth2
-  #   args: { access_type: 'offline', approval_prompt: '' }
+  # - secret: gitlab-google-oauth2
+  #   key: provider
 global:
   # imagePullPolicy: IfNotPresent
   ingress:
