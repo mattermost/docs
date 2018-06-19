@@ -165,14 +165,14 @@ data:
         enabled: false
       omniauth:
         enabled: {{ .Values.omniauth.enabled }}
-        autoSignInWithProvider: {{ .Values.omniauth.auto_sign_in_with_provider | quote }}
-        syncProfileFromProvider: {{ .Values.omniauth.sync_profile_from_provider }}
-        syncProfileAttributes: {{ .Values.omniauth.sync_profile_attributes }}
-        allowSingleSignOn: {{ .Values.omniauth.allow_single_sign_on }}
-        blockAutoCreatedUsers: {{ .Values.omniauth.block_auto_created_users }}
-        autoLinkLdapUser: {{ .Values.omniauth.auto_link_ldap_user }}
-        autoLinkSamlUser: {{ .Values.omniauth.auto_link_saml_user }}
-        externalProviders: {{ .Values.omniauth.external_providers }}
+        auto_sign_in_with_provider: {{ .Values.omniauth.autoSignInWithProvider | quote }}
+        sync_profile_from_provider: {{ .Values.omniauth.syncProfileFromProvider }}
+        sync_profile_attributes: {{ .Values.omniauth.syncProfileAttributes }}
+        allow_single_sign_on: {{ .Values.omniauth.allowSingleSignOn }}
+        block_auto_created_users: {{ .Values.omniauth.blockAutoCreatedUsers }}
+        auto_link_ldap_user: {{ .Values.omniauth.autoLinkLdapUser }}
+        auto_link_saml_user: {{ .Values.omniauth.autoLinkSamlUser }}
+        external_providers: {{ .Values.omniauth.externalProviders }}
         {{- if .Values.omniauth.providers }}
         providers:
         {{-   range $index, $entry := .Values.omniauth.providers }}
