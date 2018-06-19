@@ -21,7 +21,7 @@ spec:
       initContainers:
         - name: configure
           command: ['sh', '/config/configure']
-          image: busybox
+          image: {{ .Values.init.image }}:{{ .Values.init.tag }}
           volumeMounts:
           - name: migrations-config
             mountPath: /config
@@ -46,7 +46,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: {{ template "gitlab.gitlab-runner.registrationToken.secret" . }}
-                  key: {{ template "gitlab.gitlab-runner.registrationToken.key" . }}
+                  key: runner-registration-token
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY

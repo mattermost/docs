@@ -20,7 +20,7 @@ class ChangelogVersion < Version
   def day
     @day ||= extract_from_version(:day).to_i
   end
-  alias_method :minor, :patch
+  alias_method :patch, :day
 
   def to_s
     "%04d-%02d-%02d" % [year, month, day]

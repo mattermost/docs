@@ -126,6 +126,7 @@ Once you have all of your configuration options collected, we can get any depend
 run helm. In this example, we've named our helm release "gitlab".
 
 ```
+helm repo add gitlab https://charts.gitlab.io/
 helm dependencies update
 helm upgrade --install gitlab . \
   --timeout 600 \

@@ -24,6 +24,8 @@ Table below contains all the possible charts configurations that can be supplied
 | image.tag                    | Gitaly image tag                       | latest                                   |
 | image.pullPolicy             | Gitaly image pull policy               | Always                                   |
 | image.pullSecrets            | Secrets for the image repository       |                                          |
+| init.image                   | initContainer image                    | busybox                                  |
+| init.tag                     | initContainer image tag                | latest                                   |
 | service.name                 | Gitaly service name                    | gitaly                                   |
 | service.type                 | Gitaly service type                    | ClusterIP                                |
 | service.externalPort         | Gitaly service exposed port            | 8075                                     |

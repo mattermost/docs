@@ -5,5 +5,4 @@ image:
   pullSecrets: []
 resources: {}
 env: production
-global:
-  # imagePullPolicy: IfNotPresent
+global: {}
