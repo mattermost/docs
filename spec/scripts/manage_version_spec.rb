@@ -23,6 +23,15 @@ describe 'scripts/manage_version.rb' do
         end
       end
 
+      context 'app_version not provided' do
+        it 'sets the correct versions' do
+          stub_versions(new_version: 'chart-version')
+
+          expect(chart_file).to receive(:update_versions).with('chart-version', nil)
+          described_class.new(options)
+        end
+      end
+
       context 'chart_version not provided' do
         it 'exits if app_version has not changed' do
           stub_versions(app_version: '0.0.1', new_app_version: '0.0.1')
