@@ -12,5 +12,6 @@ spec:
   maxUnavailable: {{ .Values.maxUnavailable }}
   selector:
     matchLabels:
-      app: {{ template "fullname" . }}
+      app: {{ template "name" . }}
+      release: {{ .Release.Name }}
 {{- end -}}

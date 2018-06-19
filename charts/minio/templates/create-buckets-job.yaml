@@ -4,7 +4,7 @@ kind: Job
 metadata:
   name: {{ template "minio.createBucketsJobName" . }}
   labels:
-    app: {{ template "minio.fullname" . }}
+    app: {{ template "minio.name" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     release: "{{ .Release.Name }}"
     heritage: "{{ .Release.Service }}"
@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ template "minio.fullname" . }}
+        app: {{ template "minio.name" . }}
         release: {{ .Release.Name }}
         component: create-buckets
     spec:

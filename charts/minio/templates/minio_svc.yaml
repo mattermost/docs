@@ -16,7 +16,9 @@ spec:
   loadBalancerIP: {{ default "" .Values.minioLoadBalancerIP }}
   {{- end }}
   selector:
-    app: {{ template "minio.fullname" . }}
+    app: {{ template "minio.name" . }}
+    release: {{ .Release.Name }}
+    component: app
   ports:
     - name: service
       port: 9000
