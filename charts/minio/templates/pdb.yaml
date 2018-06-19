@@ -2,7 +2,7 @@
 apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
-  name: {{ template "minio.fullname" . }}
+  name: {{ template "minio.fullname" . }}-v1
   labels:
     app: {{ template "minio.name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
