@@ -44,7 +44,7 @@ Important Upgrade Notes
 |                                                    |                                                                                                                                                                 |
 |                                                    | To migrate a PostgreSQL database, connect to your database and run the following:                                                                               |
 |                                                    |                                                                                                                                                                 |
-|                                                    |   ALTER TABLE Posts ALTER COLUMN Message TYPE VARCHAR(65535)                                                                                                    |
+|                                                    |   ALTER TABLE Posts ALTER COLUMN Message TYPE VARCHAR(65535);                                                                                                   |
 |                                                    |                                                                                                                                                                 |
 |                                                    | Restart your Mattermost instances.                                                                                                                              |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
