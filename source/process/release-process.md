@@ -123,7 +123,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 3. QA:
     - Confirm up to date with testing merged PRs and resolved tickets
     - Confirm up to date with test updates and known issues in release testing spreadsheet
-    - Assign release testing areas to team members, communicate process to new teammates who have been added to testing
+    - Assign release testing areas to team members, communicate process to new teammates who have been added to testing, DM team members who are not QA or devs
     - After RC1 is cut: Update rctesting and CI server invite links in Release Testing spreadsheet
     - After RC1 is cut: Lock Selenium server to RC1
 4. Build:
@@ -157,6 +157,8 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://pre-release.mattermost.com/core/pl/db3sur4r53d9tyih1i4wrmi9wy))
     - Post release testing instructions to Release Discussion channel ([template](https://pre-release.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
     - Post "Bug Hunter Coin" message to Reception channel ([see example](https://pre-release.mattermost.com/core/pl/3o15eoq89fdq5m1ac5dyp4nc3e))
+    - Begin running all Selenium IDE tests
+    - At end of day, post reminders about release testing in Release Discussion and Announcements channels, DM any team members who have zero test cells marked Done
 4. Dev:
     - Run load tests against the release candidate to find potential performance issues
     - Make PRs for bug fixes to the release branch
@@ -185,9 +187,14 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Finish drafts of all art work (screenshots, GIFs and twitter banners) used for the blog post and review with PMs before sending to marketing lead for review
     - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests?scope=all&utf8=%E2%9C%93&state=opened&label_name%5B%5D=blog%20post&label_name%5B%5D=release) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)). Post to Release Discussion channel with link to request.
 4. QA:
+    - Midday: Post at-channel reminders about testing, and DM team members whose tests are not marked Done
+    - Find QA or other teammates to help finish unfinished tests if needed
+    - End of day: Verify all release tests are finished
+    - Go through all tabs of testing spreadsheet and verify all comments and questions have been filed in JIRA as needed
+    - Verify all JIRA tickets other than newly filed bugs have been tested, verified, and closed
     - As bug fixes are merged and RCs are cut, verify fixes on new RCs and post in Release Channel after testing
     - As RCs are cut, update selenium.mattermost.com to latest RC
-    - Update Selenium and manual smoke tests as needed, to prepare to run on each RC after it is cut
+
 
 ### J. (T-minus 2 working days) Release Build Cut
 
