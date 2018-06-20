@@ -26,5 +26,6 @@ spec:
     targetPort: metrics
   {{- end }}
   selector:
-    app: {{ template "fullname" . }}
+    app: {{ template "name" . }}
+    release: {{ .Release.Name }}
 {{- end -}}

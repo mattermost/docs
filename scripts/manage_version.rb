@@ -111,7 +111,9 @@ class VersionUpdater
 
     populate_chart_version
 
-    $stdout.puts "# New Versions\n# version: #{@chart_version}\n# appVersion: #{@app_version}"
+    msg = ["# New Versions\n# version: #{@chart_version}"]
+    msg << "# appVersion: #{@app_version}" if @app_version
+    $stdout.puts msg.join("\n")
 
     populate_subchart_versions if @options.include_subcharts
 

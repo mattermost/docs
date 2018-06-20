@@ -16,57 +16,66 @@ The `unicorn` chart is configured as follows: Global Settings, Ingress Settings 
 
 Table below contains all the possible charts configurations that can be supplied to `helm install` command using the `--set` flags
 
-| Parameter                     | Description                                    | Default                                          |
-| ---                           | ---                                            | ---                                              |
-| replicaCount                  | Unicorn number of replicas                     | 1                                                |
-| image.repository              | Unicorn image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee |
-| image.tag                     | Unicorn image tag                              |                                                  |
-| image.pullPolicy              | Unicorn image pull policy                      | Always                                           |
-| image.pullSecrets             | Secrets for the image repository               |                                                  |
-| init.image                    | initContainer image                            | busybox                                          |
-| init.tag                      | initContainer image tag                        | latest                                           |
-| service.name                  | Unicorn service name                           | unicorn                                          |
-| service.type                  | Unicorn service type                           | ClusterIP                                        |
-| service.externalPort          | Unicorn exposed port                           | 8080                                             |
-| service.internalPort          | Unicorn internal port                          | 8080                                             |
-| service.workhorseExternalPort | Workhorse exposed port                         | 8181                                             |
-| service.workhorseInternalPort | Workhorse internal port                        | 8181                                             |
-| enabled                       | Unicorn enabled flag                           | true                                             |
-| workerProcesses               | Unicorn number of workers                      | 2                                                |
-| workerTimeout                 | Unicorn worker timeout                         | 60                                               |
-| metrics.enabled               | Toggle Prometheus metrics exporter             | true                                             |
-| ldap.servers                  | LDAP user authentication servers               | nil                                              |
-| omniauth.providers            | Omniauth providers                             | nil                                              |
-| redis.serviceName             | Redis service name                             | redis                                            |
-| psql.password.secret          | psql secret name                               | gitlab-postgres                                  |
-| psql.password.key             | Key to psql password in psql secret            | psql-password                                    |
-| shell.authToken.secret        | Shell token secret                             | gitlab-shell-secret                              |
-| shell.authToken.key           | Key to shell token in shell secret             | secret                                           |
-| gitaly.serviceName            | Gitaly service name                            | gitaly                                           |
-| artifacts.enabled             | Enable artifacts storage                       | true                                             |
-| artifacts.proxy_download      | Proxy all artifacts downloads through GitLab   | true                                             |
-| artifacts.bucket              | Object storage bucket name                     | nil                                              |
-| artifacts.connection          | See [GitLab documentation][uplcon] for details | {}                                               |
-| lfs.enabled                   | Enable Git LFS storage                         | true                                             |
-| lfs.proxy_download            | Proxy all LFS downloads through GitLab         | true                                             |
-| lfs.bucket                    | Object storage bucket name                     | nil                                              |
-| lfs.connection                | See [GitLab documentation][lfscon] for details | {}                                               |
-| uploads.enabled               | Enable uploads storage                         | true                                             |
-| uploads.proxy_download        | Proxy all uploads downloads through GitLab     | true                                             |
-| uploads.bucket                | Object storage bucket name                     | nil                                              |
-| uploads.connection            | See [GitLab documentation][uplcon] for details | {}                                               |
-| minio.bucket                  | Name of storage bucket, when using Minio       | git-lfs                                          |
-| minio.serviceName             | Name of Minio service                          | minio-svc                                        |
-| minio.port                    | Port for Minio service                         | 9000                                             |
-| registry.api.protocol         | Registry protocol                              | http                                             |
-| registry.api.serviceName      | Registry service name                          | registry                                         |
-| registry.api.port             | Registry port                                  | 5000                                             |
-| registry.tokenIssuer          | Registry token issuer                          | gitlab-issuer                                    |
-| resources.requests.cpu        | Unicorn minimum cpu                            | 200m                                             |
-| resources.requests.memory     | Unicorn minimum memory                         | 1.4G                                             |
-| extras.google_analytics_id    | Google Analytics Id for frontend               | nil                                              |
-| rack_attack.git_basic_auth    | See [GitLab documentation][rackattack] for details | {}                                           |
-| trusted_proxies               | See [GitLab documentation][proxies] for details | []                                              |
+| Parameter                        | Description                                    | Default                                          |
+| ---                              | ---                                            | ---                                              |
+| replicaCount                     | Unicorn number of replicas                     | 1                                                |
+| image.repository                 | Unicorn image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee |
+| image.tag                        | Unicorn image tag                              |                                                  |
+| image.pullPolicy                 | Unicorn image pull policy                      | Always                                           |
+| image.pullSecrets                | Secrets for the image repository               |                                                  |
+| init.image                       | initContainer image                            | busybox                                          |
+| init.tag                         | initContainer image tag                        | latest                                           |
+| service.name                     | Unicorn service name                           | unicorn                                          |
+| service.type                     | Unicorn service type                           | ClusterIP                                        |
+| service.externalPort             | Unicorn exposed port                           | 8080                                             |
+| service.internalPort             | Unicorn internal port                          | 8080                                             |
+| service.workhorseExternalPort    | Workhorse exposed port                         | 8181                                             |
+| service.workhorseInternalPort    | Workhorse internal port                        | 8181                                             |
+| enabled                          | Unicorn enabled flag                           | true                                             |
+| workerProcesses                  | Unicorn number of workers                      | 2                                                |
+| workerTimeout                    | Unicorn worker timeout                         | 60                                               |
+| metrics.enabled                  | Toggle Prometheus metrics exporter             | true                                             |
+| ldap.servers                     | LDAP user authentication servers               | nil                                              |
+| omniauth.enabled                 | Enable OmniAuth                                | false                                            |
+| omniauth.autoSignInWithProvider  | Allow automatic SSO from this provider         | nil                                              |
+| omniauth.syncProfileFromProvider | Enable profile syncing from providers          | []                                               |
+| omniauth.syncProfileAttributes   | List of profile attributes to sync             | ['email']                                        |
+| omniauth.allowSingleSignOn       | Providers allowed automatic account creation   | ['saml']                                         |
+| omniauth.blockAutoCreatedUsers   | Block automatically created users by default   | true                                             |
+| omniauth.autoLinkLdapUser        | Automatically link LDAP users                  | false                                            |
+| omniauth.autoLinkSamlUser        | Automatically link SAML users                  | false                                            |
+| omniauth.externalProviders       | List of providers to be treated as external    | []                                               |
+| omniauth.providers               | List of secrets for Omniauth providers         | nil                                              |
+| redis.serviceName                | Redis service name                             | redis                                            |
+| psql.password.secret             | psql secret name                               | gitlab-postgres                                  |
+| psql.password.key                | Key to psql password in psql secret            | psql-password                                    |
+| shell.authToken.secret           | Shell token secret                             | gitlab-shell-secret                              |
+| shell.authToken.key              | Key to shell token in shell secret             | secret                                           |
+| gitaly.serviceName               | Gitaly service name                            | gitaly                                           |
+| artifacts.enabled                | Enable artifacts storage                       | true                                             |
+| artifacts.proxy_download         | Proxy all artifacts downloads through GitLab   | true                                             |
+| artifacts.bucket                 | Object storage bucket name                     | nil                                              |
+| artifacts.connection             | See [GitLab documentation][uplcon] for details | {}                                               |
+| lfs.enabled                      | Enable Git LFS storage                         | true                                             |
+| lfs.proxy_download               | Proxy all LFS downloads through GitLab         | true                                             |
+| lfs.bucket                       | Object storage bucket name                     | nil                                              |
+| lfs.connection                   | See [GitLab documentation][lfscon] for details | {}                                               |
+| uploads.enabled                  | Enable uploads storage                         | true                                             |
+| uploads.proxy_download           | Proxy all uploads downloads through GitLab     | true                                             |
+| uploads.bucket                   | Object storage bucket name                     | nil                                              |
+| uploads.connection               | See [GitLab documentation][uplcon] for details | {}                                               |
+| minio.bucket                     | Name of storage bucket, when using Minio       | git-lfs                                          |
+| minio.serviceName                | Name of Minio service                          | minio-svc                                        |
+| minio.port                       | Port for Minio service                         | 9000                                             |
+| registry.api.protocol            | Registry protocol                              | http                                             |
+| registry.api.serviceName         | Registry service name                          | registry                                         |
+| registry.api.port                | Registry port                                  | 5000                                             |
+| registry.tokenIssuer             | Registry token issuer                          | gitlab-issuer                                    |
+| resources.requests.cpu           | Unicorn minimum cpu                            | 200m                                             |
+| resources.requests.memory        | Unicorn minimum memory                         | 1.4G                                             |
+| extras.google_analytics_id       | Google Analytics Id for frontend               | nil                                              |
+| rack_attack.git_basic_auth       | See [GitLab documentation][rackattack] for details | {}                                           |
+| trusted_proxies                  | See [GitLab documentation][proxies] for details | []                                              |
 
 ## Chart configuration examples
 ### image.pullSecrets
@@ -483,52 +492,130 @@ Example configuration `--set` items, when using the global chart:
 
 Commas are considered [special characters](https://github.com/kubernetes/helm/blob/master/docs/using_helm.md#the-format-and-limitations-of---set) within Helm `--set` items. Be sure to escape commas in values such as `bind_dn`: `--set gitlab.unicorn.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'`
 
-#### omniauth.providers
+### OmniAuth
 
-This setting allows for the configuration of [Omniauth Providers](https://docs.gitlab.com/ee/integration/omniauth.html). It is presented as an array of maps, which will be translated into the the appropriate configuration in `gitlab.yml`, as with an installation from source. The available selection of [Supported Providers](https://docs.gitlab.com/ee/integration/omniauth.html#supported-providers) can be found in GitLab documentation.
-
-Required items:
-- `name`: The name to be given for this provider.
-- `secretName`: The name of a Kubernetes `Secret` containing two items: `app_id` and `app_secret`.
-
-The `Secret` for these entries contains two items: `app_id` and `app_secret`. To create this secret, follow the appropriate instructions for retrieval of these items, then use the following command.
-```
-kubectl create secret generic -n NAMESPACE SECRET_NAME \
-    --from-literal=app_id='APP_ID' \
-    --from-literal=app_secret='APP_SECRET'
-```
-
-If your chosen provider requires arguments, they should be supplied as items under `args` per the example below.
-
-
-An example configuration snippet:
-```YAML
-omniauth:
-  providers:
-    - name: google_oauth2
-      secretName: gitlab-google-oauth2
-      args:
-        access_type: offline
-        approval_prompt: ''
-```
-
-Example configuration `--set` items, when using the global chart:
-```
---set gitlab.unicorn.omniauth.providers[0].name=google_oauth2 \
---set gitlab.unicorn.omniauth.providers[0].secretName=gitlab-google-oauth2 \
---set gitlab.unicorn.omniauth.providers[0].args.access_type=offline \
---set gitlab.unicorn.omniauth.providers[0].args.approval_prompt=''
-```
-
-Due to the complexity of using `--set` arguments, a user may with to use a YAML snippet, passed to `helm` with `-f omniauth.yaml`. If this is done for the global chart, note that that `omniauth` should be nested under `gitlab.unicorn` as shown below.
+GitLab can leverage OmniAuth to allow users to sign in using Twitter, GitHub, Google, and other popular services. Expanded documentation can be found in [OmniAuth documentation][omniauth] for GitLab.
 
 ```YAML
 gitlab:
   unicorn:
     omniauth:
+      enabled: false
+      autoSignInWithProvider:
+      syncProfileFromProvider: []
+      syncProfileAttributes: ['email']
+      allowSingleSignOn: ['saml']
+      blockAutoCreatedUsers: true
+      autoLinkLdapUser: false
+      autoLinkSamlUser: false
+      externalProviders: []
+      providers: []
+      # - secret: gitlab-google-oauth2
+      #   key: provider
 ```
 
-Defaults to `[]`, which results in Omniauth being disabled.
+#### enabled
+
+Enable / disable the use of OmniAuth with GitLab.
+
+Defaults to `false`
+
+#### autoSignInWithProvider
+
+Single provider name to be allowed to automatically sign in. This should match the name of the provider, such as `saml` or `google_oauth2`.
+
+Defaults to `nil`
+
+#### syncProfileFromProvider
+
+List of provider names that GitLab should automatically sync profile information from. Entries should match the name of the provider, such as `saml` or `google_oauth2`
+
+Defaults to `[]`
+
+See [Keep OmniAuth user profiles up to date][omniauth-profiles]
+
+#### syncProfileAttributes
+
+List of profile attributes to sync from the provider upon login. See [Keep OmniAuth user profiles up to date][omniauth-profiles] for options.
+
+Defaults to `['email']`
+
+#### allowSingleSignOn
+
+Enable the automatic creation of accounts when signing in with OmniAuth.
+
+Defaults to `false`
+
+#### blockAutoCreatedUsers
+
+If `true` auto created users will be blocked by default and will have to be unblocked by an administrator before they are able to sign in.
+
+Defaults to `true`
+
+#### autoLinkLdapUser
+
+`autoLinkLdapUser` can be used if you have LDAP / ActiveDirectory integration enabled. When enabled, users automatically created through OmniAuth will be linked to their LDAP entry as well.
+
+Defaults to `false`
+
+#### autoLinkSamlUser
+
+`autoLinkSamlUser` can be used if you have SAML integration enabled. When enabled, users automatically created through OmniAuth will be linked to their SAML entry as well.
+
+Defaults to `false`
+
+#### externalProviders
+
+You can define which OmniAuth providers you want to be `external` so that all users **creating accounts, or logging in via these providers** will not be able to have access to internal projects. You will need to use the full name of the provider, like `google_oauth2` for Google.
+
+Defaults to `[]`
+
+See [Configure OmniAuth Providers as External](https://docs.gitlab.com/ee/integration/omniauth.html#configure-omniauth-providers-as-external)
+
+#### providers
+
+`providers` is presented as an array of maps that are used to populate `gitlab.yml` as when installed from source. The available selection of [Supported Providers](https://docs.gitlab.com/ee/integration/omniauth.html#supported-providers) can be found in GitLab documentation.
+
+Member items:
+- `secret`: (required) The name of a Kubernetes `Secret` containing the provider block.
+- `key`: (optional) The name of the key in the `Secret` containing provider block. Defaults to `provider`
+
+The `Secret` for these entries contains YAML or JSON formatted blocks, as describe in [OmniAuth Providers][omniauth-providers]. To create this secret, follow the appropriate instructions for retrieval of these items, and create a YAML or JSON file.
+
+Example of configuration of Google OAuth2:
+
+```YAML
+name: google_oauth2
+label: Google
+app_id: 'APP ID'
+app_secret: 'APP SECRET'
+args:
+  access_type: offline
+  approval_prompt: ''
+```
+
+This content can be saved `provider.yaml`, and then a secret created from it: `kubectl create secret generic -n NAMESPACE SECRET_NAME --from-file=provider=provider.yaml`
+
+Once created, the `providers` are enabled by providing the map in configuration, as shown below.
+
+```YAML
+gitlab:
+  unicorn:
+    omniauth:
+      providers:
+        - secret: gitlab-google-oauth2
+        - secret: gitlab-azure-oauth2
+        - secret: gitlab-cas3
+```
+
+Example configuration `--set` items, when using the global chart:
+```
+--set gitlab.unicorn.omniauth.providers[0].secret=gitlab-google-oauth2 \
+```
+
+Due to the complexity of using `--set` arguments, a user may wish to use a YAML snippet, passed to `helm` with `-f omniauth.yaml`.
+
+Defaults to `[]`.
 
 ### GitLab Shell
 
@@ -556,3 +643,6 @@ The `authToken` attribute for Gitaly has to sub keys:
 [uplcon]: https://docs.gitlab.com/ee/administration/uploads.html#using-object-storage
 [rackattack]: https://docs.gitlab.com/ee/security/rack_attack.html
 [proxies]: https://docs.gitlab.com/ee/install/installation.html#adding-your-trusted-proxies
+[omniauth]: https://docs.gitlab.com/ee/integration/omniauth.html
+[omniauth-providers]: https://docs.gitlab.com/ee/integration/omniauth.html
+[omniauth-profiles]: https://docs.gitlab.com/ee/integration/omniauth.html#keep-omniauth-user-profiles-up-to-date

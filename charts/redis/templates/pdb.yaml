@@ -2,7 +2,7 @@
 apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
-  name: {{ template "fullname" . }}
+  name: {{ template "fullname" . }}-v1
   labels:
     app: {{ template "name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
@@ -12,5 +12,6 @@ spec:
   maxUnavailable: {{ .Values.maxUnavailable }}
   selector:
     matchLabels:
-      app: {{ template "fullname" . }}
+      app: {{ template "name" . }}
+      release: {{ .Release.Name }}
 {{- end -}}

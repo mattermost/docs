@@ -1,6 +1,6 @@
 require_relative 'version'
 
-require 'net/http'
+require 'open-uri'
 require 'uri'
 
 class VersionFetcher
@@ -10,7 +10,7 @@ class VersionFetcher
     def gitlab_shell(version)
       return version if version == 'master'
 
-      new_version = Net::HTTP.get(URI.parse("https://gitlab.com/gitlab-org/gitlab-ee/raw/#{ref(version)}/GITLAB_SHELL_VERSION")).strip
+      new_version = URI.parse("https://gitlab.com/gitlab-org/gitlab-ee/raw/#{ref(version)}/GITLAB_SHELL_VERSION").read.strip
       $stdout.puts "# Shell appVersion: #{new_version}"
       new_version
     end
@@ -19,7 +19,7 @@ class VersionFetcher
     def gitaly(version)
       return version if version == 'master'
 
-      new_version = Net::HTTP.get(URI.parse("https://gitlab.com/gitlab-org/gitlab-ee/raw/#{ref(version)}/GITALY_SERVER_VERSION")).strip
+      new_version = URI.parse("https://gitlab.com/gitlab-org/gitlab-ee/raw/#{ref(version)}/GITALY_SERVER_VERSION").read.strip
       $stdout.puts "# Gitaly appVersion: #{new_version}"
       new_version
     end
@@ -27,7 +27,7 @@ class VersionFetcher
     def fetch(chart_name, ref)
       chart_name = chart_name.tr('-', '_').to_sym
       return ref unless respond_to?(chart_name)
-      Version.new(send(chart_name, ref))
+      Version.new(send(chart_name, ref)) if ref
     end
 
     private
