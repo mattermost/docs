@@ -12,6 +12,11 @@ To check your SSL certificate set up, test it by visiting a site such as `SSL La
 
 Please note that the apps cannot connect to servers with self-signed certificates, consider using `Let's Encrypt <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`_ instead.
 
+Login with ADFS is not working
+-------------------------------
+Those instances set up for login with ADFS with integrated windows authentication (IWA) should configure `automated fall back to form-based authentication if IWA fails <https://docops.ca.com/ca-single-sign-on/12-7/en/configuring/policy-server-configuration/authentication-schemes/authentication-chaining/configure-iwa-fallback-to-forms-using-authentication-chain>`_. 
+
+
 I see a “Connecting…” bar that does not go away
 -----------------------------------------------
 
