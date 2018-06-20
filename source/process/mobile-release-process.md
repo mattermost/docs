@@ -25,7 +25,7 @@ No pull requests for major features should be **merged** to the current release 
 4. Build:
     - Cut a beta build
 5. Marketing:
-    - Prepare a list of highlights to be included in the next platform release announcement
+    - Prepare a list of highlights to be included in the next Mattermost release announcement
 
 ### B. (T-minus 11 working days) Major feature testing
 

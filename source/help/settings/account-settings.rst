@@ -114,7 +114,9 @@ Notification sounds fire for any activity that would trigger a desktop notificat
 Notification Duration
 ^^^^^^^^^^^^^^^^^^^^^
 
-Sets how long desktop notifications will remain on screen. If set to **Unlimited**, the user will have to manually clear each notification as it appears on screen. Desktop notifications in Safari can only stay on screen for a maximum of 5 seconds.
+*Removed in June 16th, 2018 release*
+
+In Mattermost v5.0 and later, desktop notifications will stay onscreen for 5 seconds when supported by the browser and operating system.
 
 Email Notifications
 ~~~~~~~~~~~~~~~~~~~

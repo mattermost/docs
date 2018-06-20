@@ -114,7 +114,7 @@ Tips and Best Practices
 
 1. Webhooks are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <https://api.mattermost.com>`_.
 
-2. If the text in the JSON response is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
+2. If the text in the JSON response is longer than the allowable character limit per post, the message is split into multiple consecutive posts, each within the character limit. Servers running Mattermost Server v5.0 or later `can support posts up to 16383 characters <https://docs.mattermost.com/administration/important-upgrade-notes.html>`_.
 
 3. Outgoing webhooks are supported in public channels only. If you need a trigger that works in a private channel or a direct message, consider using a `slash command <https://docs.mattermost.com/developer/slash-commands.html>`_ instead.
 

@@ -49,7 +49,7 @@ If you are upgrading a server that is already running a supported version, See [
 7. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
 
       1. `cd {install-path}`
-      2. `sudo setcap cap_net_bind_service=+ep ./bin/platform`
+      2. `sudo setcap cap_net_bind_service=+ep ./bin/mattermost`
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 

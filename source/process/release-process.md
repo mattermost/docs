@@ -50,6 +50,7 @@ No pull requests for major features should be **merged** to the current release 
     - Submit NOTICE.txt PR for any new libraries added from dev, if not added already. The following two files contain a list of dependencies:
         - https://github.com/mattermost/mattermost-webapp/blob/master/package.json
         - https://github.com/mattermost/mattermost-server/blob/master/Gopkg.lock
+        - https://github.com/mattermost/mattermost-mobile/blob/master/package.json
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
@@ -166,7 +167,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Push next RC to acceptance and announce in Town Square with new RC link
     - Check CI servers running on release branch
 
-### I. (T-minus 5 working days) Release Candidate Testing Finished
+### I. (T-minus 6 working days) Release Candidate Testing Finished
 
 1. **(Team) Daily Release Update Meeting**
     - Confirm testing assigned in the release testing spreadsheet is complete 
@@ -190,7 +191,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 
 ### J. (T-minus 2 working days) Release Build Cut
 
-The final release is cut. If an urgent and important issue needs to be addressed between major releases, a bug fix release (e.g. 1.1.1) may be created.
+The final release is cut - RC cuts and bug fixes should be completed by this date. Only urgent and critical issues are considered for fixing.
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel

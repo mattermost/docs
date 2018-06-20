@@ -26,7 +26,7 @@ Checking your Mattermost Edition and Version
 
 If you're already running Mattermost, to check your Mattermost edition and version from the server run:
 
-  `platform version`
+  `mattermost version`
 
 To check your edition and version from the web interface, go to the main menu and open the "About Mattermost" dialog.
 

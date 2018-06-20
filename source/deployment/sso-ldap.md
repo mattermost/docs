@@ -125,6 +125,14 @@ If the issue persists, try performing a sync with the **User Filter** field blan
 
 Make sure that you also have at least 1 LDAP user in Mattermost or the sync will not complete.
 
+#### What is the difference between the Username Attribute, ID Attribute and Login ID Attribute?
+
+There are three AD/LDAP attributes that apear to be similar but serve a different purpose:
+
+1. **Username Attribute**: Used within the Mattermost user interface to identify and mention users. For example, if a Username Attribute is set to `john.smith`, a user typing `@john` will see `@john.smith` in their auto-complete options and posting a message with `@john.smith` will send a notification to that user that they’ve been mentioned.
+2. **ID Attribute**: Used as the unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change, such as `ObjectGUID`. If a user's ID Attribute changes, it will create a new Mattermost account unassociated with their old one. If you need to change this field after users have already logged in, use the [mattermost ldap idmigrate CLI tool](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-ldap-idmigrate).
+3. **Login ID Attribute**: The attribute in the AD/LDAP server used to log in to Mattermost. Normally this attribute is the same as the "Username Attribute" field above, or another field that users can easily remember.
+
 #### If I want to add people to channels, can I pre-create users somehow? 
 
 Yes, using the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html#bulk-loading-data).
@@ -169,6 +177,8 @@ If you are still having issues, you can [contact support](https://about.mattermo
 If the user can no longer log in to Mattermost with their AD/LDAP credentials - for example, they get an error message `An account with that email already exists`, or a new Mattermost account is created when they try to log in - this means the ID attribute for their account has changed.
 
 The issue can be fixed by changing the value of the field used for the ID attribute back to the old value.
+
+Make sure that the ID attribute is a value that does not change, and use another field for the Login ID attribute as needed.
 
 Note: Currently the value is case sensitive. If the ID attribute is set to the username and the username changes from `John.Smith` to `john.smith`, the user would have problems logging in.   
 

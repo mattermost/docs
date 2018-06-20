@@ -56,7 +56,7 @@ For install instructions, see `Prometheus install guides <https://prometheus.io/
         static_configs:
           - targets: ["<hostname1>:<port>", "<hostname2>:<port>"]
 
-3 - Enable performance monitoring in the Mattermost System Console and specify the listen address. See more detail in our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html#performance-monitoring-beta>`_.
+3 - Enable performance monitoring in the Mattermost System Console and specify the listen address. See more detail in our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html#performance-monitoring-beta>`_. After enabling performance monitoring, make sure to reboot Mattermost.
 
 .. image:: ../images/perf_monitoring_system_console.png
   :scale: 70

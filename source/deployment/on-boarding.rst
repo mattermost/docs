@@ -20,7 +20,7 @@ Common Tasks
 ------------
 
 Creating System Admin account from the command line
-  - If the System Admin leaves the organization or is otherwise unavailable, you can use the command line interface to assign the *system_admin* role to an existing user. In the ``mattermost/bin`` directory, type ``sudo ./platform roles system_admin {user-name}``, where *{user-name}* is the username of the person with the new role. For more information about using the command line interface, see :doc:`../administration/command-line-tools`.
+  - If the System Admin leaves the organization or is otherwise unavailable, you can use the command line interface to assign the *system_admin* role to an existing user. In the ``mattermost/bin`` directory, type ``sudo ./mattermost roles system_admin {user-name}``, where *{user-name}* is the username of the person with the new role. For more information about using the command line interface, see :doc:`../administration/command-line-tools`.
   - The user needs to log out and log back in before the *system_admin* role is applied.
 
 Deactivating a user

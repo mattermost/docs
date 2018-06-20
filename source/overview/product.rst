@@ -24,9 +24,9 @@ Mattermost Editions
 
 Mattermost is offered in three editions:
 
-- **Mattermost Team Edition** - An open source "virtual office" for your team under MIT license, where you get things done day-to-day. Includes open source native mobile and desktop apps, continuous archiving, unlimited search, threaded messaging, custom emoji and full access to webhooks, APIs, drivers and third party integrations. Get started by `downloading the open source server <https://about.mattermost.com/download>`_
+- **Mattermost Team Edition** - An open source "virtual office" for your team under MIT license, where you get things done day-to-day. Includes open source native mobile and desktop apps, continuous archiving, unlimited search, threaded messaging, custom branding, custom emoji and full access to webhooks, APIs, drivers and third party integrations. Get started by `downloading the open source server <https://about.mattermost.com/download>`_
 
-- **Mattermost Enterprise Edition E10** - A commercial "virtual campus" for your teams, groups and departments working on multiple projects, scaling to thousands of users. This is a commercial extension to the open source Team Edition with commercial support, corporate directory integration via AD/LDAP, advanced access controls, security, and custom branding options. Get started with a `free trial license <https://about.mattermost.com/trial/>`_.
+- **Mattermost Enterprise Edition E10** - A commercial "virtual campus" for your teams, groups and departments working on multiple projects, scaling to thousands of users. This is a commercial extension to the open source Team Edition with commercial support, corporate directory integration via AD/LDAP, advanced access controls, and security. Get started with a `free trial license <https://about.mattermost.com/trial/>`_.
 
 - **Mattermost Enterprise Edition E20** - A "virtual city" for your whole enterprise, scaling to tens of thousands of users. This commercial version includes all the features of Team Edition and E10 and adds advanced compliance, monitoring and scalability support, plus additional support benefits, including the option to purchase Premier Support with our highest-level support service level agreements. Get started with a `free trial license <https://about.mattermost.com/trial/>`_.
 
@@ -37,6 +37,7 @@ Details of each offering are as follows:
 - One-to-one and group messaging, file sharing and unlimited search history
 - Native apps for iOS, Android, Windows, Mac, Linux
 - Threaded messaging, emoji and custom emoji
+- Tools for custom branding
 - Highly customizable `third party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`_ and `command line tools <https://docs.mattermost.com/administration/command-line-tools.html>`_
 - Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`_ and `third party extensions <https://about.mattermost.com/default-app-directory/>`_
 - Easily scalable from dozens to hundreds of users
@@ -50,7 +51,6 @@ To get started, `download the open source Mattermost Team Edition server <https:
 - Active Directory / LDAP single-sign-on
 - Encrypted push notifications via HPNS
 - Multi-factor authentication
-- Tools for custom branding
 - Advanced access control policy
 - Next business day support via online ticketing system
 - Scale to handle thousands of users
