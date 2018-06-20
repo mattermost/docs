@@ -1,0 +1,5 @@
+---
+title: Remove chart version from redis-ha immutable fields
+merge_request: 337
+author:
+type: changed

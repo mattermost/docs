@@ -25,10 +25,18 @@ labels.standard prints the standard Helm labels.
 The standard labels are frequently used in metadata.
 */ -}}
 {{- define "labels.standard" -}}
-app: {{ template "name" . }}
+{{ template "labels.immutable" . }}
 heritage: {{ .Release.Service | quote }}
-release: {{ .Release.Name | quote }}
 chart: {{ template "chartref" . }}
+{{- end -}}
+
+{{- /*
+labels.immutable prints the immutable Helm labels.
+The labels that won't change and are safe to use in immutable selectors.
+*/ -}}
+{{- define "labels.immutable" -}}
+app: {{ template "name" . }}
+release: {{ .Release.Name | quote }}
 {{- end -}}
 
 {{- /*

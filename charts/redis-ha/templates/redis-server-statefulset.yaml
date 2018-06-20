@@ -14,12 +14,16 @@ metadata:
 spec:
   serviceName: {{ template "fullname" . }}
   replicas: {{ .Values.replicas.servers }}
+  selector:
+    matchLabels:
+{{ include "labels.immutable" . | indent 6 }}
+      name: "redis-server"
+      redis-node: "true"
   template:
     metadata:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/redis-configmap.yaml") . | sha256sum }}
       labels:
-        app: {{ template "fullname" . }}
         name: "redis-server"
         redis-node: "true"
 {{ include "labels.standard" . | indent 8 }}
@@ -34,7 +38,11 @@ spec:
                 - key: app
                   operator: In
                   values:
-                  - {{ template "fullname" . }}
+                  - {{ template "name" . }}
+                - key: release
+                  operator: In
+                  values:
+                  - {{ .Release.Name | quote }}
                 - key: redis-role
                   operator: In
                   values:

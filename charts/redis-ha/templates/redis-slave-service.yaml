@@ -25,9 +25,8 @@ spec:
     targetPort: metrics
   {{- end }}
   selector:
-    app: {{ template "fullname" . }}
+{{ include "labels.immutable" . | indent 4 }}
     redis-node: "true"
     redis-role: "slave"
-    release: "{{ .Release.Name }}"
   type: "{{ .Values.servers.serviceType }}"
 {{- end -}}
