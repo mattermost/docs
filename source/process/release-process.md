@@ -365,7 +365,6 @@ Once bug fix release is ready to cut:
     - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
     - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the previous release version
 5. Dev:
-    - Delete RCs after final version is shipped
     - Confirm gitlab.mattermost.com is updated to final build
     - Merge changes made to release branch into `master`
     - Update existing tickets or create new ones for the next release
