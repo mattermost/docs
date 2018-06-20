@@ -10,14 +10,6 @@ Follow these steps to configure user CBA for your browser, Mattermost Desktop Ap
   :local:
   :depth: 2
 
-Run a custom build of the Mattermost server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Fork the `mm-cba-proto <https://github.com/mattermost/mattermost-server/tree/mm-cba-proto>`_ branch from the mattermost-server repository.
-2. `Use this guide <https://docs.mattermost.com/developer/dev-setup.html>`_ to create a custom build of the server based on the branch from step 1.
-
-With this custom build, the Mattermost server can be used to log in with a client side certifiate supplied as part of mutual TLS authentication from above. This guide has made some simple assumptions about how the certificates map to Mattermost users.
-
 Set up mutual TLS authentication for the Web App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -26,6 +18,8 @@ Set up mutual TLS authentication for the Web App
 
 .. note::
   For the purposes of this guide, the Mattermost server domain name is example.mattermost.com, and the user account is ``mmuser`` with email ``mmuser@mattermost.com`` and password ``mmuser-password``.
+
+Before starting, you can download a binary built daily off of the `master` branch from here for testing: https://releases.mattermost.com/mattermost-platform/master/mattermost-enterprise-linux-amd64.tar.gz
 
 1. Create a `certificate authority (CA) key <https://en.wikipedia.org/wiki/Certificate_authority>`_ and a certificate for signing the client certificate. When establishing a TLS connection, the NGINX proxy server requests and validates a client certificate provided by the web app.
 
@@ -74,7 +68,6 @@ Set up mutual TLS authentication for the Web App
 .. code-block::
 
   openssl x509 -req -days 365 -in mmuser-mattermost.csr -CA ca.mattermost.crt -CAkey ca.mattermost.key -set_serial 01 -out mmuser-mattermost.crt
-
 
 4. Check the newly generated client certificate for ``mmuser``
 
@@ -137,7 +130,7 @@ You should see the Mattermost login page. If you see:
 Set up Mattermost server to log in with a client certificate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Make sure the custom build from the ``mm-cba-proto`` branch is licensed with a valid Enterprise Edition E20 license.
+1. Make sure your Mattermost server is licensed with a valid Enterprise Edition E20 license.
 2. In ``ExperimentalSettings`` of the ``config.json`` file, set ``ClientSideCertEnable`` to ``true`` and ``ClientSideCertCheck`` to one of the following values:
 
 - ``primary`` - After the client side certificate is verified, user's email is retrieved from the certificate and used to log in without a password.
@@ -171,7 +164,7 @@ On Ubuntu 16.04, Debian Jessie, and RHEL 7.1:
 Run the modified Mattermost React Native Mobile App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Fork the `cba <https://github.com/mattermost/mattermost-mobile/blob/cba>`_ branch from the mattermost-mobile repository.
-2. Set **ExperimentalClientSideCertEnable** to ``true`` in the `mattermost-mobile/assets/base/config.json <https://github.com/mattermost/mattermost-mobile/blob/cba/assets/base/config.json#L15>`_ file.
+1. Fork the `master <https://github.com/mattermost/mattermost-mobile/blob/master>`_ branch from the mattermost-mobile repository.
+2. Set **ExperimentalClientSideCertEnable** to ``true`` in the `mattermost-mobile/assets/base/config.json <https://github.com/mattermost/mattermost-mobile/blob/master/assets/base/config.json#L15>`_ file.
 3. `Use this guide <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`_ to build the apps based on the branch you created and modified in steps 1 and 2.
 4. Import the certificate from the previous section above into the Mattermost iOS App and use it for mutual TLS authentication. You can `watch a demonstration video of this step here <https://drive.google.com/file/d/1zzk9XQ6RBvsWbCTrIfgE0484pD7w9Ux1/view>`_.
