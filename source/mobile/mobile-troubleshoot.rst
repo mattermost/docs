@@ -12,6 +12,11 @@ To check your SSL certificate set up, test it by visiting a site such as `SSL La
 
 Please note that the apps cannot connect to servers with self-signed certificates, consider using `Let's Encrypt <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`_ instead.
 
+Login with ADFS is not working
+-------------------------------
+Those instances set up for login with ADFS with integrated windows authentication (IWA) should configure `automated fall back to form-based authentication if IWA fails <https://docops.ca.com/ca-single-sign-on/12-7/en/configuring/policy-server-configuration/authentication-schemes/authentication-chaining/configure-iwa-fallback-to-forms-using-authentication-chain>`_. 
+
+
 I see a “Connecting…” bar that does not go away
 -----------------------------------------------
 
@@ -54,7 +59,7 @@ and then ignore the gradle task with
 None of these solve my problem!
 -------------------------------
 
-For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/general/trouble-shoot>`_ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you can also email subscribers@mattermost.com for support.
+For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`_ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you can also email subscribers@mattermost.com for support.
 
 To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following things and include the results in your support request:
 

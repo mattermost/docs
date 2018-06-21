@@ -47,6 +47,7 @@ See release cutting process at [developers.mattermost.com](https://developers.ma
 - [Adding a webapp component](https://docs.mattermost.com/developer/webapp-component.html)
 - [Adding actions and selectors to Redux](https://docs.mattermost.com/developer/redux.html)
 - [Migrating a webapp component to Redux](https://docs.mattermost.com/developer/webapp-to-redux.html)
+- [Migrating redux file to Flow](https://docs.mattermost.com/developer/redux-to-flow.html)
 - [Adding an endpoint to APIv4](https://docs.mattermost.com/developer/api4.html)
 - [Developer workflow](https://docs.mattermost.com/developer/developer-flow.html)
 - [Code style guide](https://docs.mattermost.com/developer/style-guide.html)

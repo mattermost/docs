@@ -18,6 +18,7 @@ Development Process
    /developer/api-development*
    /developer/developer-flow*
    /developer/webapp-to-redux.rst
+   /developer/redux-to-flow.rst
    /developer/webapp-component.rst
    /developer/redux.rst
    /developer/webapp-end-to-end-testing.rst

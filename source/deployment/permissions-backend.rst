@@ -1,0 +1,200 @@
+Advanced Permissions: Backend Infrastructure
+=============================================
+
+This document outlines the backend server infrastructure for permissions in Mattermost and is recommended only for technical Admins or developers looking to make modifications to their installation.
+
+
+.. note::
+
+  The contents of this document apply to Mattermost Server version 5.0 and later. 
+
+
+.. contents::
+  :backlinks: top
+  :local:
+  
+Entity Definitions
+--------------------
+
+Permissions
+~~~~~~~~~~~~
+
+A **permission** describes a permitted action which may be carried out on an object. It describes the action that users may perform in the context in which they have been assigned the role granting the permission.
+
+Roles
+~~~~~~
+
+A **role** is something to which permissions are granted, that is then assigned to users in contexts in order to grant them the assigned permissions in that context. One user may end up with different sets of permissions granted by different roles in different contexts.
+
+Scope
+~~~~~~
+
+Permissions live within a given scope. There are three scopes in the Mattermost system: System, Team and Channel. Permissions cascade down the scopes from the context in which they are applied. For example, if a “Channel” scoped permission is applied to a “Team” context, the permission applies to any channels within that team. A permission is considered,
+
+- **System scope** if it makes sense only on the system level. For example, ``manage_oauth``.
+- **Team scope** if it makes sense at the team level and system level. For example, ``create_public_channel``.
+- **Channel scope** if it makes sense at channel, team and system level. For example, ``manage_public_channel_properties``.
+
+Context
+~~~~~~~~
+
+A **context** is an instance of a scope. For example, a channel called "Developers Hangout" is an instance of channel scope. Contexts have hierarchical relationships between them that reflect the hierarchical ordering of scopes. Each context has one parent, and may have multiple children, with the ultimate parent context being the system context:
+
+- A channel context has a parent team context, whose parent is the system context. For example, the "Developers Hangout" channel is the channel context, with parent team context "Contributors Team", with parent system context.
+- A team context has a parent system context and child channel contexts. For example, the "Contributors Team" is the team context, with parent system context, and with children channel contexts such as "Developers Hangout", "Reception" and "Marketing".
+
+When determining whether a user is allowed to carry out a given action in a given context, the union of the permissions of all roles that user has been assigned in the current context and its parent contexts is calculated. This enables permissions to cascade down the scope hierarchy. For example, if a users is granted the ``manage_public_channel_properties`` permission in a role in the system context, then the user has permissions to manage public channel properties in all channels, in all teams, of which they are a member.
+
+Schemes
+~~~~~~~~~
+
+Schemes describe the default roles applied to users in a context, and all child contexts. Schemes are either defined specifically for a context, or if they are not specified, the relevant parts of the parent context’s scheme are applied, ultimately climbing the hierarchy to the System Scheme, which serves the purpose of providing the system-wide defaults. For example, if Team A does not have a team-scoped scheme defined, the System Scheme will provide the defaults for all contexts in Team A.
+
+Additionally, the lowest-scoped scheme always takes precedence in the context. For example, if Team B has a team-scoped scheme, that scheme takes precedence over the System Scheme defaults for all contexts in Team B. 
+
+Data Structure
+----------------
+
+Permissions
+~~~~~~~~~~~~
+
+Permissions in Mattermost are a property of the server code base and are not created or modified dynamically. The current set of permissions are as described in the table below.
+
+**Mattermost Permissions**
+
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| Name (i18n)                       | Scope   | Description                                                                                                                                                                                       |
++===================================+=========+===================================================================================================================================================================================================+
+| invite_user                       | team    | Invite users to the team using Send Email Invite or Get Team Invite Link.                                                                                                                         |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| add_user_to_team                  | team    | Add existing server users to the current team.                                                                                                                                                    |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| use_slash_commands                | channel | Use slash commands.                                                                                                                                                                               |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_slash_commands             | system  | Create, edit and delete your own slash commands.                                                                                                                                                  |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_others_slash_commands      | system  | Edit or delete other users slash commands.                                                                                                                                                        |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| create_public_channel             | team    | Create public channels.                                                                                                                                                                           |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| create_private_channel            | team    | Create private channels.                                                                                                                                                                          |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_public_channel_members     | channel | Manage public channel members.                                                                                                                                                                    |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_private_channel_members    | channel | Manage private channel members.                                                                                                                                                                   |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| assign_system_admin_role          | system  | Grant other users System Admin role.                                                                                                                                                              |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_roles                      | system  | Manage other users system-wide roles.                                                                                                                                                             |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_team_roles                 | team    | Add and remove team members.                                                                                                                                                                      |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_channel_roles              | channel | Add and remove channel members.                                                                                                                                                                   |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_system                     | system  | Access to System Console.                                                                                                                                                                         |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| create_direct_channel             | system  | Open direct message channels.                                                                                                                                                                     |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| create_group_channel              | system  | Open group message channels.                                                                                                                                                                      |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_public_channel_properties  | channel | Edit public channel name, header and purpose.                                                                                                                                                     |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_private_channel_properties | channel | Edit private channel name, header and purpose.                                                                                                                                                    |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| list_team_channels                | team    | List public channels in a team.                                                                                                                                                                   |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| join_public_channels              | team    | Join public channels.                                                                                                                                                                             |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| delete_public_channel             | channel | Delete public channels.                                                                                                                                                                           |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| delete_private_channel            | channel | Delete private channels.                                                                                                                                                                          |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| edit_other_users                  | system  | Edit values on the `user` object of other users.                                                                                                                                                  |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| read_channel                      | channel | View posts in a channel.                                                                                                                                                                          |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| add_reaction                      | channel | Add emoji reactions to posts.                                                                                                                                                                     |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| remove_reaction                   | channel | Remove emoji reactions from posts.                                                                                                                                                                |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| remove_others_reactions           | channel | Remove other users emoji reactions from posts.                                                                                                                                                    |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| permanent_delete_user             | system  | Permanently delete other users.                                                                                                                                                                   |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| upload_file                       | system  | Upload file attachements to posts.                                                                                                                                                                |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_webhooks                   | team    | Create, edit and delete your own incoming or outgoing webhooks.                                                                                                                                   |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_others_webhooks            | team    | Edit and delete other users incoming or outgoing webhooks.                                                                                                                                        |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_oauth                      | system  | Create, edit and delete your own OAuth 2.0 apps.                                                                                                                                                  |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_system_wide_oauth          | system  | Edit or delete other users' OAuth 2.0 apps.                                                                                                                                                       |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| create_post                       | channel | Post in channels.                                                                                                                                                                                 |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| edit_post                         | channel | Authors edit their own posts. Edit post time limit is controlled by the ``"PostEditTimeLimit"`` `config <https://docs.mattermost.com/administration/config-settings.html#post-edit-time-limit>`_. |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| edit_others_posts                 | channel | Edit other users posts.                                                                                                                                                                           |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| delete_post                       | channel | Authors delete their own posts.                                                                                                                                                                   |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| delete_others_posts               | channel | Delete other users posts.                                                                                                                                                                         |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| remove_user_from_team             | team    | Remove users from team.                                                                                                                                                                           |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| create_team                       | system  | Create teams.                                                                                                                                                                                     |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_team                       | team    | Manage team.                                                                                                                                                                                      |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| import_team                       | system  | Import team.                                                                                                                                                                                      |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| view_team                         | team    | View team.                                                                                                                                                                                        |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| list_users_without_team           | system  | List users without a team.                                                                                                                                                                        |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| create_user_access_token          | system  | Create user access tokens.                                                                                                                                                                        |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| read_user_access_token            | system  | Read user access tokens.                                                                                                                                                                          |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| revoke_user_access_token          | system  | Revoke user access tokens.                                                                                                                                                                        |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_jobs                       | system  | Manage jobs.                                                                                                                                                                                      |
++-----------------------------------+---------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+``Roles`` Field
+~~~~~~~~~~~~~~~~
+
+Roles are applied to objects that represents that user’s membership in a context. These are referenced in the ``Roles`` field of the ``User``, ``TeamMember``, ``ChannelMember`` and ``Schemes`` Tables.
+
+In the ``TeamMember`` and ``ChannelMember`` tables, it's the ``Roles`` field that contains custom roles and the ``SchemeAdmin`` and ``SchemeUser`` booleans that indicate the member object should inherit the respective roles from the relevant scheme, either the default or custom scheme assigned to the relevant team.
+
+``Roles`` Table
+~~~~~~~~~~~~~~~~
+
+Roles are dynamic and user configurable, necessitating a database table with the following fields:
+
+- ``Id`` (Autoincrement, Primary Key)
+- ``Name`` (Unique String with Character Constraints, e.g. “team_user”).
+- ``Display Name`` (String)
+- ``Description`` (String)
+- ``Permissions`` (String): Space-separated permissions names
+- ``Scheme Managed`` (bool): Indicates whether this role is managed as part of a scheme.
+- ``BuiltIn`` (bool): Indicates if this role is built in to the Mattermost system and not removable by the user.
+
+The System Scheme is built in to the product and it's roles are defined as ``BuiltIn: true`` in the ``Roles`` table.
+
+``Schemes`` Table
+~~~~~~~~~~~~~~~~~~
+
+Schemes are dynamic and user configurable, necessitating a database table with the following fields:
+
+- ``Id`` (Autoincrement, Primary Key)
+- ``Name`` (Unique String with Character Constraints, e.g. “corporate_scheme”)
+- ``Display`` Name
+- ``Description`` (String)
+- ``Scope`` (String): Team or Channel
+- ``Team Admin Role`` (String): Empty if Channel Scope
+- ``Team User Role`` (String): Empty if Channel Scope
+- ``Channel Admin Role`` (String): Always provided
+- ``Channel User Role`` (String): Always provided

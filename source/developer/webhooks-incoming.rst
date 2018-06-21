@@ -81,7 +81,7 @@ Tips and Best Practices
 
 1. Webhooks are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <https://api.mattermost.com>`_.
 
-2. If the text is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
+2. If the text is longer than the allowable character limit per post, the message is split into multiple consecutive posts, each within the character limit. Servers running Mattermost Server v5.0 or later `can support posts up to 16383 characters <https://docs.mattermost.com/administration/important-upgrade-notes.html>`_.
 
 3. You can restrict who can create incoming webhooks in `System Console > Integrations > Custom Integrations <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`_.
 
@@ -172,7 +172,7 @@ To send a message to a direct message channel, add an "@" symbol followed by the
 
 This will send a message from the account that has set up the incoming webhook to the username after the "@" symbol. For example, if you create a webhook with the user ``alice`` and send a direct message to ``bob`` using a webhook, it will show up as a direct message from ``alice`` to ``bob`` regardless of other settings such as username.
 
-To send a message to a different direct message channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can `use the ``platform`` command - see details `here <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-search>`_.
+To send a message to a different direct message channel between two other users, you can specify the channel with the user IDs for the users separated with two underscore (_) symbols. To find the user ID you can `use the ``mattermost`` command - see details `here <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-search>`_.
 
 .. code-block:: text
 

@@ -18,12 +18,12 @@ Before running the bulk loading command, you must first create a `JSONL
 
   b. Run the following command:
 
-    ``sudo ./platform import bulk data.jsonl --validate``
+    ``sudo ./mattermost import bulk data.jsonl --validate``
 
 3. Resolve any errors that are reported, and validate the file again. Do not go to the next step until you can run the validate command without errors.
 
 4. Run the bulk load command in apply mode:
 
-  ``sudo ./platform import bulk data.jsonl --apply``
+  ``sudo ./mattermost import bulk data.jsonl --apply``
 
 5. When the bulk load command completes, clear all caches. Open the System Console, and click **General > Configuration > Purge All Caches**.

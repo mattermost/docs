@@ -11,5 +11,5 @@ See developers.mattermost.com for the developer flow of the following repositori
 ### Testing with GitLab Omnibus ###
 
 To test a locally compiled version of Mattermost with GitLab Omnibus, replace the following GitLab files:
- * The compiled `platform` binary in `/opt/gitlab/embedded/bin/plattermost`
+ * The compiled `mattermost` binary in `/opt/gitlab/embedded/bin/mattermost`
  * The assets (templates, i18n, fonts, webapp) in `/opt/gitlab/embedded/service/mattermost`

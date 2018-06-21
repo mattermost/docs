@@ -3,7 +3,7 @@ Account Settings
 
 --------------
 
-Account Settings is accessible from the **Main Menu** by clicking the three dots at the top of the channels pane. From here, you can configure your profile settings, notification preferences, integrations, theme settings, and display options.
+Account Settings is accessible from the **Main Menu** by clicking the three horizontal lines (or hamburger menu) at the top of the channels pane. From here, you can configure your profile settings, notification preferences, integrations, theme settings, and display options.
 
 General
 -------
@@ -114,7 +114,9 @@ Notification sounds fire for any activity that would trigger a desktop notificat
 Notification Duration
 ^^^^^^^^^^^^^^^^^^^^^
 
-Sets how long desktop notifications will remain on screen. If set to **Unlimited**, the user will have to manually clear each notification as it appears on screen. Desktop notifications in Safari can only stay on screen for a maximum of 5 seconds.
+*Removed in June 16th, 2018 release*
+
+In Mattermost v5.0 and later, desktop notifications will stay onscreen for 5 seconds when supported by the browser and operating system.
 
 Email Notifications
 ~~~~~~~~~~~~~~~~~~~

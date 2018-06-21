@@ -37,7 +37,7 @@ Lost System Administrator account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -  To reset the account, run from the command line:
-   ``./platform -assign_role -team_name="yourteam" -email="you@example.com" -role="system_admin"``.
+   ``./mattermost -assign_role -team_name="yourteam" -email="you@example.com" -role="system_admin"``.
 -  Log out and back in for the change to apply.
 
 Switching System Administrator Account to SSO Sign-in
@@ -66,7 +66,7 @@ If email sign-in was turned off before the System Administrator switched sign-in
 
   .. code-block:: none
 
-    $ sudo ./platform roles system_admin {username}
+    $ sudo ./mattermost roles system_admin {username}
 
 4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 

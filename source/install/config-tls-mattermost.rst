@@ -19,7 +19,7 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
   a. Open a terminal window and change to the Mattermost ``bin`` directory.
     ``cd /opt/mattermost/bin``
   b. Run the following command:
-    ``sudo setcap cap_net_bind_service=+ep ./platform``
+    ``sudo setcap cap_net_bind_service=+ep ./mattermost``
 
 3. Install the security certificate. You can use `Let's Encrypt <https://letsencrypt.org/>`_ to automatically install and setup the certificate, or you can specify your own certificate.
 

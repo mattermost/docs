@@ -174,7 +174,7 @@ Install in High Availability (E20): https://docs.mattermost.com/deployment/clust
 
 Verify that the software has been deployed successfully in each environment. Create, or update, automated tests to verify deployments.
 
-**Reference**: https://docs.mattermost.com/administration/liveness-check.html
+**Reference**: https://docs.mattermost.com/administration/health-check.html
 
 3.3.6 Bulk Load Data
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -240,10 +240,11 @@ Train administrators on the tasks required to manage Mattermost.
 3.3.13 Update Legal & Support Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Mattermost has configuration settings for the terms of service, privacy policy, and support URLs and emails. It is highly recommended that you modify these in your configuration so that your users have the correct legal information and can contact administrators to resolve account issues. You can find these under **System Console > Legal and Support**.
+
 .. image:: ../images/legal_and_support_settings.png
 	:alt: Legal and Support settings 
 
-Mattermost has configuration settings for the terms of service, privacy policy, and support URLs and emails. It is highly recommended that you modify these in your configuration so that your users have the correct legal information and can contact administrators to resolve account issues. You can find these under **System Console > Legal and Support**.
 
 3.3.14 Onboard Users
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -306,7 +307,7 @@ The Mattermost platform will be secured in the following ways:
 3.5.2     Security During Implementation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This section addresses security issues specifically related to the implementation effort, if any. For example, if LAN servers or workstations will he installed at a site with sensitive data preloaded on non-removable hard disk drives, address how security would be provided for the data on these devices during shipping, transport, and installation because theft of the devices could compromise the sensitive data.
+This section addresses security issues specifically related to the implementation effort, if any. For example, if LAN servers or workstations will be installed at a site with sensitive data preloaded on non-removable hard disk drives, address how security would be provided for the data on these devices during shipping, transport, and installation because theft of the devices could compromise the sensitive data.
 
 ---
 

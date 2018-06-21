@@ -78,7 +78,7 @@ notification. Notification sounds are available on IE11, Edge, Safari, Chrome an
 
 -  Turn notification sounds On or Off in **Account Settings** >
    **Notifications** > **Desktop Notification Sounds**.
--  Configure desktop notification triggers, sounds and duration in
+-  Configure desktop notification triggers and sounds in
    **Account Settings** > **Notifications** > **Desktop Notifications**.
 -  Configure channel specific desktop notifications from **Channel
    Menu** > **Notification Preferences** > **Send Desktop

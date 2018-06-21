@@ -32,10 +32,10 @@ You can follow these general guidelines to set up a Mattermost outgoing webhook 
 
 2 - Click **Add Outgoing Webhook** and add name and description for the webhook.
 
-3 - Choose the content type by which the response will be sent.
+3 - Choose the content type by which the request will be sent.
 
- - If ``application/x-www-form-urlencoded`` is chosen, the Mattermost server assumes you will be encoding the parameters in a URL format.
- - If ``application/json`` is chosen, the Mattermost server assumes you will posting JSON data.
+ - If ``application/x-www-form-urlencoded`` is chosen, the server will encode the parameters in a URL format in the request body.
+ - If ``application/json`` is chosen, the server will format the request body as JSON.
 
 4 - Select the public channel to receive webhook responses, or specify one or more trigger words that send an HTTP POST request to your application. You may configure either the channel or the trigger words for the outgoing webhook, or both. If both are specified, then the message must match both values.
 
@@ -114,7 +114,7 @@ Tips and Best Practices
 
 1. Webhooks are designed to easily allow you to post messages. For other actions such as channel creation, you must also use the `Mattermost APIs <https://api.mattermost.com>`_.
 
-2. If the text in the JSON response is longer than 4000 characters, the message is split into multiple consecutive posts, each within the 4000 character limit.
+2. If the text in the JSON response is longer than the allowable character limit per post, the message is split into multiple consecutive posts, each within the character limit. Servers running Mattermost Server v5.0 or later `can support posts up to 16383 characters <https://docs.mattermost.com/administration/important-upgrade-notes.html>`_.
 
 3. Outgoing webhooks are supported in public channels only. If you need a trigger that works in a private channel or a direct message, consider using a `slash command <https://docs.mattermost.com/developer/slash-commands.html>`_ instead.
 

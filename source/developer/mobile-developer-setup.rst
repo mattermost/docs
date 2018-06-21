@@ -137,7 +137,7 @@ If you need to add a new JavaScript dependency that is not related to React Nati
 React Native
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-As with `JavaScript only <JavaScript Only>`_, **use npm** to add your dependency and include an exact version. Then link the library in React Native by running ``react-native link <package-name>`` in a terminal.
+As with `JavaScript only <https://docs.mattermost.com/developer/mobile-developer-setup.html#javascript-only>`_, **use npm** to add your dependency and include an exact version. Then link the library in React Native by running ``react-native link <package-name>`` in a terminal.
 
 Be aware that we are using React Native Navigation. For Android, you might need to complete the linking process manually as the ``react-native link`` command won't do it for you.
 
@@ -485,7 +485,7 @@ We make use of `Match <https://docs.fastlane.tools/actions/match/>`_ to sync you
 Setting up environment variables
 ++++++++++++++++++++++++++++++++
 
-In order to use the **make build-ios** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/fastlane/fastlane/env_vars_example>`_ file under the fastlane directory to see all of them. In order to make fastlane work with these environment variables you have two options:
+In order to use the **make build-ios** command, you'll need to set a few environment variables. In this guide, we will explain some of them. You can refer to the `env_vars_example <https://github.com/mattermost/mattermost-mobile/blob/master/fastlane/env_vars_example>`_ file under the fastlane directory to see all of them. In order to make fastlane work with these environment variables you have two options:
 
 1. Copy the file with your variables to ``../mattermost-mobile/fastlane/.env`` where ``.env`` is the file name.
 
