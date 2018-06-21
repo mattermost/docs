@@ -1,4 +1,4 @@
-{{- if and .Values.enabled .Values.defaultBuckets }}
+{{- if and .Values.global.minio.enabled .Values.defaultBuckets }}
 apiVersion: batch/v1
 kind: Job
 metadata:

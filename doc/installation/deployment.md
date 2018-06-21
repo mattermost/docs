@@ -20,7 +20,7 @@ There are some secrets that need to be created (e.g. ssh keys). By default they 
 By default, the chart relies on Kubernetes `Service` objects of `type: LoadBalancer`
 to expose Gitlab services using name-based virtual servers configured with`Ingress`
 objects. You'll need to specify a domain which will contain records to resolve
-`gitlab`, `registry`, and `minio` to the appropriate IP for your chart.
+`gitlab`, `registry`, and `minio` (if enabled) to the appropriate IP for your chart.
 
 *Include these options in your helm install command:*
 ```
@@ -40,7 +40,7 @@ is already installed in your cluster.
 If you plan to manually configure your DNS records they should all point to a
 static IP. For example if you choose `example.local` and you have a static IP
 of `10.10.10.10`, then `gitlab.example.local`, `registry.example.local` and
-`minio.example.local` should all resolve to `10.10.10.10`.
+`minio.example.local` (if using minio) should all resolve to `10.10.10.10`.
 
 If you are using GKE, there is some documentation [here](../cloud/gke.md#creating-the-external-ip)
 for configuring static IPs and DNS. Consult your Cloud and/or DNS provider's
@@ -95,6 +95,13 @@ By default we use an single, non-replicated Redis instance. If desired, a highly
 --set redis.enabled=false
 --set redis-ha.enabled=true
 ```
+
+### Minio
+
+By default this chart provides an in-cluster minio deployment to provide an object storage API.
+This configuration should not be used in production.
+
+You can read more about setting up your production-ready object storage in the [external object storage](../advanced/external-object-storage/README.md)
 
 ### Outgoing email
 

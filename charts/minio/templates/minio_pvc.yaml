@@ -1,4 +1,4 @@
-{{- if and .Values.enabled .Values.persistence.enabled }}
+{{- if and .Values.global.minio.enabled .Values.persistence.enabled }}
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:

@@ -140,6 +140,8 @@ postgresql:
 
 gitlab-runner:
   install: true
+  rbac:
+    create: true
   runners:
     cache:
       cacheType: s3
