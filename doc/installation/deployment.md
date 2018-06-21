@@ -103,13 +103,6 @@ This configuration should not be used in production.
 
 You can read more about setting up your production-ready object storage in the [external object storage](../advanced/external-object-storage/README.md)
 
-If you have your external object storage ready,
-
-*Include these options in your helm install command:*
-```
---set
-```
-
 ### Outgoing email
 
 By default outgoing email is disabled. To enable it, provide details for your SMTP server
