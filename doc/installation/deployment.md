@@ -1,7 +1,5 @@
 # Deployment Guide
 
-To deploy, first clone the repository locally: `git clone git@gitlab.com:charts/gitlab.git`
-
 Before running `helm install`, you need to make some decisions about how you will run GitLab.
 Options can be specified using helm's `--set option.name=value` command line option.
 A complete list  of command line options can be found [here](./command-line-options.md).
@@ -131,6 +129,23 @@ By default, the Helm charts use the Enterprise Edition of GitLab. If desired, yo
 
 Once you have all of your configuration options collected, we can get any dependencies and
 run helm. In this example, we've named our helm release "gitlab".
+
+```
+helm repo add gitlab https://charts.gitlab.io/
+helm update
+helm upgrade --install gitlab gitlab/gitlab \
+  --timeout 600 \
+  --set global.hosts.domain=example.local \
+  --set global.hosts.externalIP=10.10.10.10 \
+  --set certmanager-issuer.email=me@example.local
+```
+
+### Deploy development branch
+
+To deploy master or a specific branch, first clone the repository locally: `git clone git@gitlab.com:charts/gitlab.git`
+and checkout the desired branch.
+
+Then use the same helm commands as above, but replace the chartname (`gitlab/gitlab`) with the path to the checked out chart.
 
 ```
 helm repo add gitlab https://charts.gitlab.io/
