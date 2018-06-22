@@ -31,6 +31,8 @@ CSV
 3. Set the export file format to CSV.
 4. Save the settings. You’re now all set!
 
+You can use the CSV format to easily transform exports in a desired format for your third-party archive system.
+
 Actiance XML
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
