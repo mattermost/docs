@@ -4,7 +4,7 @@ Mattermost Developer Toolkit
 More Power for Developers
 --------------------------
 
-This document is a work in progress, summarizing developer toolkit capabilities currently under development.
+This document is a work in progress, summarizing developer toolkit capabilities currently under development. For developer-focused documentation, see `developers.mattermost.com/extend <https://developers.mattermost.com/extend/plugins/>`_.
 
 The Mattermost Developer Toolkit gives community and in-house customer developers the power to integrate deeply with, and extend, Mattermost servers and clients in order to meet their particular requirements - without “reinventing the wheel”. We are still in the early stages of architecting the toolkit so what follows is a non-definitive list of the features we would like to offer.
 
