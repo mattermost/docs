@@ -2,20 +2,20 @@
 Product Overview
 ============================
 
-**Mattermost** empowers organizations to achieve their highest priorities through modern, enterprise-grade communication. Enjoy all the productivity benefits of workplace messaging across web, mobile and PC, with unlimited archiving, search and integrations in a single-tenant, private cloud solution under IT control.
+**Mattermost** provides high trust collaboration and messaging solutions through an open source, community-powered approach. Enjoy all the productivity benefits of workplace messaging across web, mobile and PC, with unlimited archiving, search and integrations within IT-controlled private environments in public clouds, including AWS and Azure, as well as on-premise in private clouds and virtual or physical servers. 
 
 Thousands of organizations use Mattermost around the world in 14 languages for its unmatched benefits:
 
-- **Security** - Keep vital communications, including access to mobile and desktop apps, behind your firewall. Deploy using `dozens of security features <https://docs.mattermost.com/overview/security.html>`_ vetted by top security researchers. Data stays on servers you control, encrypted using keys you control.
+- **Security** - Keep vital communications, including access to mobile and desktop apps, within your private environments. Deploy using `dozens of security features <https://docs.mattermost.com/overview/security.html>`_ vetted by global information security communities. Data stays on servers you control, encrypted using keys you control.
 
-- **Configurability** - Adapt your deployment to your needs, preferences, and existing systems. The open source Mattermost server enables advanced white labelling and customization with complete access to RESTful server APIs, drivers, webhooks and hundreds of 3rd party extensions.
+- **Configurability** - Adapt your deployment to your needs, preferences, policies and existing systems. Mattermost integrates with your evolving security, compliance and monitoring infrastructure and offers a host of app integrations, webhooks, APIs, and drivers to bring all your communication and workflow into one place. 
 
 - **Scalability** - Grow from dozens of users to tens of thousands on the same server. Built on a high performance, single-tenant infrastructure, Mattermost E20 offers cluster-based high availability deployments with horizontal scaling and advanced performance monitoring.
 
 About the Mattermost open source project
 ----------------------------------------------
 
-At its core, Mattermost is an open source, private cloud alternative to proprietary SaaS messaging for teams. The software, developed in partnership with over 500 contributors from around the world, rivals the productivity of SaaS solutions. We achieve this while offering organizations superior control, data sovereignty, configurability, freedom from lock-in, and enhanced security by keeping vital communications behind your firewall.
+At its core, Mattermost is an open source, hybrid cloud alternative to proprietary SaaS messaging for teams. The software, developed in partnership with over 500 contributors from around the world, is designed to increase the agility, efficiency and innovation in high trust organizations while keeping data and operations under IT control. 
 
 Core committers, including both community contributors and paid staff at Mattermost, Inc., determine the project roadmap. For enterprises with needs beyond the scope of the open source project, commercial "Enterprise Edition" extensions are available from Mattermost, Inc. Partnership with our core committer community, along with revenue from Enterprise Edition, ensures the continued improvement of all editions.
 
