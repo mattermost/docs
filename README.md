@@ -1,23 +1,25 @@
 # Cloud Native GitLab Helm Chart
 
 > **Notes**:
-* This chart is **alpha**. It should not be used for production deployments.
-* There are [known issues and limitations](doc/architecture/alpha.md#known-issues-and-limitations).
+* The chart is currently **beta** This means that breaking changes could still be introduced on short notice but that the project is mostly stable
+* There are [known issues and limitations](doc/architecture/beta.md#known-issues-and-limitations).
 
 
-We are working on a new cloud native method of deploying GitLab on Kubernetes.
+We are working on a new cloud native method of deploying GitLab on Kubernetes, using the [Helm chart in this repository](#helm-charts) along with a [new set of Docker containers](https://gitlab.com/gitlab-org/build/CNG) that are specific to each component of GitLab.
 
-While this is possible today using our [Omnibus GitLab based Docker image](https://docs.gitlab.com/omnibus/docker/README.html) and [corresponding Helm charts](https://gitlab.com/charts/charts.gitlab.io), there are challenges.
-One key example is that an "all-in-one container" becomes a challenge to configure and operate at scale.
-
-To address this need we are working on the [Helm chart in this repository](#helm-charts) along with a [new set of Docker containers](https://gitlab.com/gitlab-org/build/CNG) that are specific to each component of GitLab.
+The `gitlab` chart is the best way to operate GitLab on Kubernetes. This chart contains all the required components to get started, and can scale to large deployments.
 
 Some of the key benefits of the new chart and containers are:
 * Improved scalability and reliability
 * No requirement for root privileges
 * Utilization of object storage instead of NFS for storage
 
-This chart is currently in alpha, and should only be used for testing and development. If you'd like to run GitLab in production today, we recommend using the [`omnibus-gitlab` chart](https://docs.gitlab.com/ce/install/kubernetes/gitlab_omnibus.html).
+The default deployment includes:
+
+- Core GitLab components: Unicorn, Shell, Workhorse, Registry, Sidekiq, and Gitaly
+- Optional dependencies: Postgres, Redis, Minio
+- An auto-scaling, unprivileged [GitLab Runner](https://docs.gitlab.com/runner/) using the Kubernetes executor
+- Automatically provisioned SSL via [Let's Encrypt](https://letsencrypt.org/).
 
 ## Architecture and goals
 
@@ -26,7 +28,7 @@ of this project goals and architecture.
 
 ## Known issues and limitations
 
-The current alpha release of this chart contains a number of known issues and limitations. Please review our [alpha documentation](doc/architecture/alpha.md) for more details.
+The current beta release of this chart contains a number of known issues and limitations. Please review our [beta documentation](doc/architecture/beta.md) for more details.
 
 ## Quick-start installation
 

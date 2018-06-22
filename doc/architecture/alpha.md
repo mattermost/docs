@@ -1,5 +1,8 @@
 # GitLab Cloud Native Chart Alpha
 
+> **Outdated**:
+The charts are now in beta. See the [beta documentation](beta.md) for more information
+
 We have been working hard on the chart and it's underlying containers, and are excited to to reach alpha and share it with the GitLab community.
 
 This effort has required extensive changes across the  product:
