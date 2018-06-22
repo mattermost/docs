@@ -2678,7 +2678,7 @@ Export File Format
 ^^^^^^^^^^^^^^^^^^^^^^^^
 File format of the compliance export. Corresponds to the system that you want to import the data into.
 
-Currently Actiance XML and Global Relay EML are supported.
+Currently CSV, Actiance XML and Global Relay EML are supported.
 
 Run Compliance Export Job Now
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

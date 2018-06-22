@@ -18,10 +18,18 @@ Those Enterprise deployments who want to archive history beyond the data retenti
 Set Up Guide
 ----------------------------
 
-Use the following guides to configure exports for Actiance XML or Global Relay EML. Compliance exports are written to the ``exports`` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/administration/config-settings.html#storage>`_ in the chosen format.
+Use the following guides to configure exports for CSV, Actiance XML or Global Relay EML. Compliance exports are written to the ``exports`` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/administration/config-settings.html#storage>`_ in the chosen format.
 
 .. note::
   The compliance exports do not contain posts sent before the feature was enabled, but you can export past history via the ``export`` :doc:`command line tool <command-line-tools>`. Posts made prior to upgrading to Mattermost v4.5 will have less accurate channel member history information.
+
+CSV
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Go to **System Console > Advanced > Compliance Export (Beta)**.
+2. Enable compliance exports, then set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
+3. Set the export file format to CSV.
+4. Save the settings. You’re now all set!
 
 Actiance XML
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
