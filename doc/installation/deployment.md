@@ -171,10 +171,10 @@ installation. If you manually created the secret for initial root password, you
 can use that to sign in as `root` user. If not, Gitlab would've automatically
 created a random password for `root` user. This can be extracted by the
 following command (replace `<name>` by name of the release - which is `gitlab`
-if you used the command above)
+if you used the command above).
 
 ```
-kubectl get secret <name>-gitlab-initial-root-password -ojsonpath={.data.password} | base64 -d
+kubectl get secret <name>-gitlab-initial-root-password -ojsonpath={.data.password} | base64 --decode ; echo
 ```
 
 [secret-gl-certs]: secrets.md#gitlab-certificates
