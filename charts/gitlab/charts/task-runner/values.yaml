@@ -8,7 +8,7 @@ init:
   image: busybox
   tag: latest
 
-enabled: false
+enabled: true
 global:
   # imagePullPolicy: IfNotPresent
   hosts:
@@ -83,4 +83,4 @@ resources:
   #  memory: 2G
   requests:
     cpu: 200m
-    memory: 500M
+    memory: 350M

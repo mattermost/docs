@@ -84,3 +84,39 @@ Related to releasing using the proposed branching strategy
 |`0-3-stable`|       |Pick        |Fixes from master picked into branch |
 |            |       |Image update|GitLab `11.1.0` image used |
 |            |`0.3.0`|Tag         |Chart `0.3.0` released |
+
+## Releasing the chart
+
+Releasing a new version of the chart is handled by the helm release tasks in the [release tools repo](https://gitlab.com/gitlab-org/release-tools)
+
+By default, this task will be automatically run from CI when a new release image is tagged in the [CNG image repo](https://gitlab.com/gitlab-org/build/CNG)
+
+> Currently the `helm-release-tools` branch from the release tools repo is used to release the chart
+
+### Manually releasing the chart
+
+Before manually releasing the chart, ensure all the chart changes you want from `master` have been picked into the
+stable branch for the version you will release.
+
+For example, if you want to release version `0.2.1` of the charts, the changes will need to be in `0-2-stable`
+
+To manually release the chart, checkout and setup the [release tools repo](https://gitlab.com/gitlab-org/release-tools).
+
+```
+git clone git@gitlab.com:gitlab-org/release-tools.git
+git checkout helm-release-tools
+bundle install
+```
+
+Then run the appropriate helm release task:
+
+* When you want to release without changing the gitlab app version, call the release task with the new chart version (eg `0.2.1`)
+  - `bundle exec rake helm:release_chart_version[0.2.1]`
+
+* When you want to release and change both the chart version and the app version (eg `0.2.1` with GitLab `11.0.1`)
+  - `bundle exec rake helm:release_chart_version[0.2.1,11.0.1]`
+
+> You can run the script in dry-run mode which prevents pushes by setting TEST=true in your environment 
+
+> Currently, while the script is in review you will need to run the tasks with the environment variable CI=true in order
+for the release tools to accept that you aren't on the `master` branch.
