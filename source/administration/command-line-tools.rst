@@ -382,7 +382,7 @@ mattermost export
     Compliance export commands
 
   Child Commands
-    -  `mattermost export schedule`_ - Add users to a channel
+    -  `mattermost export schedule`_ - Schedule an export job
     -  `mattermost export csv`_ - Export data from Mattermost in CSV format
     -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format
 
