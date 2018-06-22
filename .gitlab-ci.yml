@@ -43,6 +43,7 @@ stages:
   - staging
   - canary
   - stable
+  - specs
   - qa
   - package
   - cleanup
@@ -101,6 +102,10 @@ review:
     - create_secret
     - deploy
     - echo "export QA_ENVIRONMENT_URL=gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN" >> variables
+    - echo "export GITLAB_ROOT_DOMAIN=$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"        >> variables
+    - echo "export GITLAB_URL=gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"         >> variables
+    - echo "export REGISTRY_URL=registry-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"     >> variables
+    - echo "export S3_ENDPOINT=https://minio-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN" >> variables
   artifacts:
     paths:
     - variables
@@ -117,7 +122,6 @@ review:
     kubernetes: active
   except:
     - master
-
 
 stop_review:
   stage: cleanup
@@ -214,6 +218,8 @@ stable:
     - deploy
     - delete canary
     - echo "export QA_ENVIRONMENT_URL=gitlab.$AUTO_DEVOPS_DOMAIN" >> variables
+    - echo "export GITLAB_ROOT_DOMAIN=$AUTO_DEVOPS_DOMAIN"        >> variables
+    - echo "export S3_ENDPOINT=https://minio.$AUTO_DEVOPS_DOMAIN" >> variables
   artifacts:
     paths:
     - variables
@@ -228,6 +234,47 @@ stable:
       - master
     kubernetes: active
 
+.specs: &specs
+  image: gunesmes/docker-capybara-chrome
+  stage: specs
+  services:
+  - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay2
+    DOCKER_HOST: tcp://docker:2375
+    GITLAB_PASSWORD: $ROOT_PASSWORD
+    RELEASE_NAME: $CI_ENVIRONMENT_SLUG
+    S3_CONFIG_PATH: /etc/gitlab/minio
+  script:
+    - source variables
+    - apt-get update && apt-get install -y --no-install-recommends curl ca-certificates
+    - curl -sSL https://get.docker.com/ | sh
+    - curl -LsO https://storage.googleapis.com/kubernetes-release/release/v1.9.3/bin/linux/amd64/kubectl
+    - chmod +x kubectl
+    - mv kubectl /usr/local/bin/kubectl
+    - mkdir -p /etc/gitlab/minio
+    - kubectl get secret ${CI_ENVIRONMENT_SLUG}-minio-secret -o jsonpath='{.data.accesskey}' | base64 --decode > /etc/gitlab/minio/accesskey
+    - kubectl get secret ${CI_ENVIRONMENT_SLUG}-minio-secret -o jsonpath='{.data.secretkey}' | base64 --decode > /etc/gitlab/minio/secretkey
+    - bundle install --without non_test
+    - bundle exec rspec -c -f d spec
+
+review_specs:
+  <<: *specs
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
+  except:
+    refs:
+      - master
+
+production_specs:
+  <<: *specs
+  environment:
+    name: production
+    url: https://gitlab.$AUTO_DEVOPS_DOMAIN
+  only:
+    refs:
+      - master
 qa:
   image: registry.gitlab.com/gitlab-org/gitlab-omnibus-builder:ruby_docker-0.0.7
   stage: qa
@@ -353,6 +400,7 @@ changelog_manager:
       --set gitlab.sidekiq.resources.requests.cpu=200m \
       --set gitlab.sidekiq.maxReplicas=2 \
       --set gitlab.gitlab-shell.resources.requests.cpu=100m \
+      --set gitlab.task-runner.enabled=true \
       --set gitlab.gitlab-shell.maxReplicas=3 \
       --set redis.resources.requests.cpu=100m \
       --set minio.resources.requests.cpu=100m \

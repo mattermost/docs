@@ -31,3 +31,4 @@ build/
 CHANGELOG
 changelogs/
 bin/
+spec/

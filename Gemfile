@@ -1,8 +1,12 @@
 source 'https://rubygems.org'
 
-gem "rugged"
+gem 'rspec'
+gem 'aws-sdk-s3'
+gem 'capybara'
+gem 'selenium-webdriver'
+gem 'chromedriver-helper'
 gem "activesupport"
 
-group :development, :test do
-  gem 'rspec', '~> 3.6.0'
+group :non_test do
+  gem "rugged"
 end
