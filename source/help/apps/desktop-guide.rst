@@ -35,8 +35,8 @@ To access a new server from your Mac desktop app environment:
 
 1. On the menu bar, go to **Mattermost > Sign into Another Server**.
 2. In the **Server Display Name** field, enter the name that you want for the tab.
-4. In the **Server URL** field, enter the complete URL of the server that you want to connect to. Must begin with either ``http://`` or ``https://``.
-5. Click **Add**.
+3. In the **Server URL** field, enter the complete URL of the server that you want to connect to. Must begin with either ``http://`` or ``https://``.
+4. Click **Add**.
 
 Editing Servers
 ~~~~~~~~~~~~~~~
