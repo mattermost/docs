@@ -1,0 +1,5 @@
+---
+title: Use minimum permissions for certmanager-issuer chart
+merge_request: 352
+author: Corey O'Brien
+type: security

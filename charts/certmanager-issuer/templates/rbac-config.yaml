@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: {{ template "fullname" . }}-admin
+  name: {{ template "fullname" . }}
   labels:
     app: {{ template "name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
@@ -11,10 +11,20 @@ metadata:
   annotations:
     namespace: {{ .Release.Namespace }}
 ---
-apiVersion: rbac.authorization.k8s.io/v1beta1
-kind: ClusterRoleBinding
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: {{ template "fullname" . }}-admin
+  namespace: {{ .Release.Namespace }}
+  name: {{ template "fullname" . }}
+rules:
+- apiGroups: ["certmanager.k8s.io"]
+  resources: ["issuers"]
+  verbs: ["get", "list", "update", "create", "patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: RoleBinding
+metadata:
+  name: {{ template "fullname" . }}
   labels:
     app: {{ template "name" . }}
     chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
@@ -22,10 +32,10 @@ metadata:
     heritage: {{ .Release.Service }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
-  kind: ClusterRole
-  name: cluster-admin
+  kind: Role
+  name: {{ template "fullname" . }}
 subjects:
   - kind: ServiceAccount
-    name: {{ template "fullname" . }}-admin
+    name: {{ template "fullname" . }}
     namespace: {{ .Release.Namespace }}
 {{- end }}

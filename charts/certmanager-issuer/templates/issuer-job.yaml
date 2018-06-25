@@ -17,7 +17,7 @@ spec:
         release: {{ .Release.Name }}
     spec:
       {{- if .Values.rbac.create }}
-      serviceAccountName: {{ template "fullname" . }}-admin
+      serviceAccountName: {{ template "fullname" . }}
       {{- end }}
       restartPolicy: OnFailure
 {{- include "pullsecrets" .Values.image | indent 6}}
