@@ -1,3 +1,5 @@
+require 'open-uri'
+
 module Gitlab
   def self.included(klass)
     klass.extend(TestHelper)
@@ -6,6 +8,16 @@ module Gitlab
   module TestHelper
     def full_command(cmd)
       "kubectl exec -it #{pod_name} -- #{cmd}"
+    end
+
+    def wait_until_app_ready(retries:30, interval: 10)
+      begin
+        URI.parse(gitlab_url).read
+      rescue
+        sleep interval
+        retries -= 1
+        retry if retries > 0
+      end
     end
 
     def sign_in
@@ -46,6 +58,13 @@ module Gitlab
       cmd = full_command("backup-utility --backup -t test-backup")
       stdout, status = Open3.capture2e(cmd)
 
+      return [stdout, status]
+    end
+
+    def run_migrations
+      cmd = full_command("gitlab-rake db:migrate")
+
+      stdout, status = Open3.capture2e(cmd)
       return [stdout, status]
     end
 
@@ -96,4 +115,3 @@ module Gitlab
     end
   end
 end
-

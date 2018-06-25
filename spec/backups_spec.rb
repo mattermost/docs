@@ -2,11 +2,15 @@ require 'spec_helper'
 
 describe "Restoring a backup" do
   before(:all) do
+    wait_until_app_ready
     ensure_backups_on_object_storage
     stdout, status = restore_from_backup
     fail stdout unless status.success?
 
     stdout, status = enforce_root_password(ENV['GITLAB_PASSWORD']) if ENV['GITLAB_PASSWORD']
+    fail stdout unless status.success?
+
+    stdout, status = run_migrations
     fail stdout unless status.success?
   end
 
