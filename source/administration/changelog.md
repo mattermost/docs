@@ -10,9 +10,30 @@ Release date: 2018-07-16
 
 ### Highlights
 
+#### Removed CSV Compliance Export
+ - Removed existing Compliance Reports feature and replaced it with a Message Export CSV Format run on a Job Server.
+
 ### Improvements
 
+ - Added a prototype for CBA.
+ - Added member count for the direct message list.
+ - Added highlighting to elasticsearch results.
+ - Ensured a blank config file has all defaults set correctly.
+ - Improved behaviour when running the CLI command outside of the bin directory.
+ - Enabled webpack public path to be dynamic.
+ - Do not disclose BannerText in client config.
+ - Made Permissions Reset CLI command custom-role aware.
+ - Security Update Check URL should have recognisable name.
+ - Respect siteURL subpath setting and serve api and static content from this path.
+ - Have permanent delete user CLI command delete FileInfos for that user's posts.
+ - Added support for serving Mattermost from subpaths.
+ - Changed all instances of "Delete" to "Archive" Channel and update relevant help texts.
+ - Converted web app plugin points and API to focus on extensibility.
+ - Added the ability to reset user emails in System Console > Users.
+
 ### Bug Fixes
+
+ - Fixed an issue where iOS could not reply to a push notification.
 
 ### Compatibility
 
