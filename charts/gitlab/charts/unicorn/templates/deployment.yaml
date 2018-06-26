@@ -124,7 +124,7 @@ spec:
               subPath: smtp_settings.rb
             - name: unicorn-config
               mountPath: '/home/git/gitlab/INSTALLATION_TYPE'
-              subPath: INSTALLATION_TYPE
+              subPath: installation_type
           livenessProbe:
             exec:
               command:

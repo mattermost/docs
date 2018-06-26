@@ -9,7 +9,7 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 data:
-  INSTALLATION_TYPE: |
+  installation_type: |
     gitlab-cng-helm-chart
   database.yml.erb: |
     production:
