@@ -5,7 +5,7 @@ Configuring CloudFront to host Mattermost static assets
 
 Configuring CloudFront to host Mattermost's static assets allows for improved caching performance and shorter load times for those members of your team geographicly distributed throughout the world. 
 
-1. Create an S3 bucket using your desired domain. In our example it will be mattermost.example.com.
+1. Create an S3 bucket using your desired domain. In our example it will be ``mattermost.example.com``.
 2. Enable static hosting for your S3 bucket.
 3. If your SiteURL is configured with a subpath (such as https://example.com/company/mattermost), your static assets must be rewritten before uploading. You can use the command below to rewrite the assets for the given subpath:
 
@@ -15,7 +15,7 @@ Configuring CloudFront to host Mattermost's static assets allows for improved ca
 
     ``aws s3 cp --acl public-read --recursive . s3://static.spinmint.com/static/``
 
-5. Set up your Mattermost app server and create a record from a subdomain of your desired domain to point directly to your app server. This is to bypass CloudFront to connect WebSockets. For our example we will use the domain ws.mattermost.example.com. If you have multiple app servers, this domain should point to the load balancer/proxy such as ALB or NGINX.
+5. Set up your Mattermost app server and create a record from a subdomain of your desired domain to point directly to your app server. This is to bypass CloudFront to connect WebSockets. For our example we will use the domain ``ws.mattermost.example.com``. If you have multiple app servers, this domain should point to the load balancer/proxy such as ALB or NGINX.
 6. Create a Web CloudFront distribution with the following configuration.
 
    a. Set Origin Domain Name to the S3 bucket you created above.
@@ -23,11 +23,11 @@ Configuring CloudFront to host Mattermost's static assets allows for improved ca
    c. Set allowed HTTP Methods to ``GET, HEAD, OPTIONS, POST, PATCH, DELETE``.
    d. Set Forward Cookies to ``All``.
    e. Set Query string forwarding and Caching to ``Forward all, cache based on all``.
-   f. Set your Alternate Domain Names to the domain you want Mattermost to be accessible from, mattermost.example.com in our example.
+   f. Set your Alternate Domain Names to the domain you want Mattermost to be accessible from, e.g. ``mattermost.example.com``.
    g. Select ``Custom SSL Certificate`` and set the certificate for your domain.
    h. Set Default Root Object to ``/static/root.html``.
 
-7. After creating your distribution. You need to add an additional origin. Select the origins tab and create an origin. Set the origin domain name to your Mattermost load balancer.
+7. After creating your distribution, you need to add an additional origin. Select the origins tab and create an origin. Set the origin domain name to your Mattermost load balancer.
 8. Next, create a behavior. 
 
    a. Set the Path Pattern to ``/api/*``.
