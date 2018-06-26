@@ -1,0 +1,5 @@
+---
+title: Limit nginx to chart namespace
+merge_request: 354
+author: Corey O'Brien
+type: security
