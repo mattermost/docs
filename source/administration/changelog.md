@@ -12,28 +12,49 @@ Release date: 2018-07-16
 
 #### Removed CSV Compliance Export
  - Removed existing Compliance Reports feature and replaced it with a Message Export CSV Format run on a Job Server.
+ 
+#### Support Mattermost on a subpath
+ - Added support for serving Mattermost from subpaths.
+ 
+#### Gfycat integration
+ - 
+ 
+#### Auto-linking plugin (Beta)
+ - 
 
 ### Improvements
 
- - Added a prototype for CBA.
+#### Web User Interface
  - Added member count for the direct message list.
  - Added highlighting to elasticsearch results.
- - Ensured a blank config file has all defaults set correctly.
+ - Changed all instances of "Delete Channel" to "Archive Channel".
+ - Added Purpose as a searchable field.
+ 
+#### Plugins
+ - Converted web app plugin points and API to focus on extensibility.
+ 
+#### Administration
+ - Added the ability to reset user emails in System Console > Users.
+ 
+#### Permissions
+ - Made Permissions Reset CLI command custom-role aware.
+ 
+#### Command Line Interface (CLI)
+ - Have permanent delete user CLI command delete FileInfos for that user's posts.
  - Improved behaviour when running the CLI command outside of the bin directory.
+ 
+#### xxxx //// category?
+ - Added a prototype for CBA.
+ - Ensured a blank config file has all defaults set correctly.
  - Enabled webpack public path to be dynamic.
  - Do not disclose BannerText in client config.
- - Made Permissions Reset CLI command custom-role aware.
- - Security Update Check URL should have recognisable name.
- - Respect siteURL subpath setting and serve api and static content from this path.
- - Have permanent delete user CLI command delete FileInfos for that user's posts.
- - Added support for serving Mattermost from subpaths.
- - Changed all instances of "Delete" to "Archive" Channel and update relevant help texts.
- - Converted web app plugin points and API to focus on extensibility.
- - Added the ability to reset user emails in System Console > Users.
+ - Ensured Security Update Check URL should have recognisable name.
+ - Don't require a server restart to run the job server for the first time.
 
 ### Bug Fixes
 
  - Fixed an issue where iOS could not reply to a push notification.
+ - Fixed an issue with an incorrect system message after converting a public channel to private.
 
 ### Compatibility
 
@@ -45,6 +66,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
+ - Under "ExperimentalSettings:" in ``config.json``:
+    - Added ``"ClientSideCertEnable": false,``, to 
+    - Added ``"ClientSideCertCheck": "secondary"``, to
+ - Under "ServiceSettings:" in ``config.json``:
+    - Added ``"ExperimentalLimitClientConfig": false``, to
+
 #### API Changes
 
 #### WebSocket Changes
@@ -52,6 +79,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Database Changes
 
 ### Known Issues
+
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
 
 ### Contributors
 
