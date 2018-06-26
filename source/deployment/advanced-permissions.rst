@@ -181,7 +181,7 @@ Technical Admins or developers looking for a deeper understanding of the permiss
 Downgrading to 4.10
 -------------------
 
-During the version 5.0 upgrade process, a migration is run to the advanced permissions system. This changes the database in ways that result in it no longer being compatible with Mattermost server 4.10. If you need to downgrade from 5.0 or newer to 4.10, it is necessary to shut down your server, run the following SQL statements to revert the changes to the database made by the migration, then start the 4.10 server.
+During the version 5.0 upgrade process, a migration is run to the advanced permissions system. This changes the database in ways that result in it no longer being compatible with Mattermost server 4.10. If you need to downgrade from 5.0 or a newer version to 4.10, it is necessary to shut down your server, run the following SQL statements to revert the changes to the database made by the migration, and then start the 4.10 server.
 
 ```
 UPDATE Teams SET SchemeId = NULL;
