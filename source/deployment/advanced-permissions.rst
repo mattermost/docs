@@ -178,6 +178,24 @@ Backend Infrastructure
 
 Technical Admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions-backend` technical documentation.
 
+Downgrading to 4.10
+-------------------
+
+During the version 5.0 upgrade process, a migration is run to the advanced permissions system. This changes the database in ways that result in it no longer being compatible with Mattermost server 4.10. If you need to downgrade from 5.0 or newer to 4.10, it is necessary to shut down your server, run the following SQL statements to revert the changes to the database made by the migration, then start the 4.10 server.
+
+```
+UPDATE Teams SET SchemeId = NULL;
+UPDATE Channels SET SchemeId = NULL;
+
+UPDATE TeamMembers SET Roles = CONCAT(Roles, ' team_user'), SchemeUser = NULL where SchemeUser = 1;
+UPDATE TeamMembers SET Roles = CONCAT(Roles, ' team_admin'), SchemeAdmin = NULL where SchemeAdmin = 1;
+
+UPDATE ChannelMembers SET Roles = CONCAT(Roles, ' channel_user'), SchemeUser = NULL where SchemeUser = 1;
+UPDATE ChannelMembers SET Roles = CONCAT(Roles, ' channel_admin'), SchemeAdmin = NULL where SchemeAdmin = 1;
+
+DELETE from Systems WHERE Name = 'migration_advanced_permissions_phase_2';
+```
+
 Glossary
 ----------
 
