@@ -66,11 +66,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
- - Under "ExperimentalSettings:" in ``config.json``:
+ - Under "ExperimentalSettings": in ``config.json``:
     - Added ``"ClientSideCertEnable": false,``, to 
     - Added ``"ClientSideCertCheck": "secondary"``, to
- - Under "ServiceSettings:" in ``config.json``:
+ - Under "ServiceSettings": in ``config.json``:
     - Added ``"ExperimentalLimitClientConfig": false``, to
+ - Under "ServiceSettings": in ``config.json``:
+    - Added ``"SiteURL": "",``, to
 
 #### API Changes
 
