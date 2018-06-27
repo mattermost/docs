@@ -1,6 +1,6 @@
 # Invoicing 
 
-TBD
+Invoices should be sent as soon as possible following the completion of a sales order. 
 
 # Collections 
 
