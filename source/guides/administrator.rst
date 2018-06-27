@@ -10,6 +10,5 @@ Invoicing and Collections
    :maxdepth: 2
    :glob:
 
-   /getting-started/implementation_plan.rst
-   /getting-started/welcome_email.rst
+   /bizops/invoice.md
 
