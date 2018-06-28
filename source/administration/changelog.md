@@ -10,17 +10,17 @@ Release date: 2018-07-16
 
 ### Highlights
 
-#### Removed CSV Compliance Export
- - Removed existing Compliance Reports feature and replaced it with a Message Export CSV Format run on a Job Server.
- 
-#### Support Mattermost on a subpath
- - Added support for serving Mattermost from subpaths.
- 
 #### Gfycat integration
  - 
  
 #### Auto-linking plugin (Beta)
- - 
+ - Automatically rewrites text matching a regular expression into a markdown link.
+
+#### Support Mattermost on a subpath
+ - Added support for serving Mattermost from subpaths to allow hosting of Mattermost at any route such as http://www.example.com/chat.
+ 
+#### Removed CSV Compliance Export
+ - Removed existing Compliance Reports feature and replaced it with a Message Export CSV Format run on a Job Server.
 
 ### Improvements
 
@@ -55,6 +55,7 @@ Release date: 2018-07-16
 
  - Fixed an issue where iOS could not reply to a push notification.
  - Fixed an issue with an incorrect system message after converting a public channel to private.
+ - Fixed an issue with being unable to add emoji reactions after expanding the message details sidebar.
 
 ### Compatibility
 
@@ -71,6 +72,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Added ``"ClientSideCertCheck": "secondary"``, to
  - Under "ServiceSettings": in ``config.json``:
     - Added ``"ExperimentalLimitClientConfig": false``, to
+    - Added ``"EnableGifPicker": true,``, ``"GfycatApiKey": "",`` and ``"GfycatApiSecret": "",``, to
  - Under "ServiceSettings": in ``config.json``:
     - Added ``"SiteURL": "",``, to
 
