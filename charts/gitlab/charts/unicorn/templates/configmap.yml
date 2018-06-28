@@ -10,7 +10,7 @@ metadata:
     heritage: {{ .Release.Service }}
 data:
   installation_type: |
-    gitlab-cng-helm-chart
+    gitlab-helm-chart
   database.yml.erb: |
     production:
       adapter: postgresql
