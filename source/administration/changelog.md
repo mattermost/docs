@@ -19,7 +19,7 @@ Release date: 2018-07-16
 #### Support Mattermost on a subpath
  - Added support for serving Mattermost from subpaths to allow hosting of Mattermost at any route such as http://www.example.com/chat.
  
-#### Removed CSV Compliance Export
+#### CSV Compliance Export
  - Removed existing Compliance Reports feature and replaced it with a Message Export CSV Format run on a Job Server.
 
 ### Improvements
