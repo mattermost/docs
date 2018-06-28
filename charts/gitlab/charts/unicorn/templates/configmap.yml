@@ -9,6 +9,8 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 data:
+  installation_type: |
+    gitlab-helm-chart
   database.yml.erb: |
     production:
       adapter: postgresql
