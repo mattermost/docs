@@ -20,7 +20,7 @@ To use an external database with the `gitlab` chart, there are a few prerequisit
 You need to set the following parameters:
 * `postgresql.install`: Set to `false` to disable the embedded database.
 * `global.psql.host`: Set to the hostname of the external database, can be a domain or an IP address.
-* `global.psql.password.secret`: The name of the secret which contains the database password for the `gitlab` user.
+* `global.psql.password.secret`: The name of the [secret which contains the database password for the `gitlab` user.](doc/installation/secrets.md#postgres-password)
 * `global.psql.password.key`: The key within the secret, which contains the password. The password should be *unencoded* value.
 
 Items below can be further customized if you are not using the defaults:
