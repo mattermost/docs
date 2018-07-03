@@ -17,7 +17,7 @@ Set up mutual TLS authentication for the Web App
   Generating the client certificates in this section is optional if you have already generated them before.
 
 .. note::
-  For the purposes of this guide, the Mattermost server domain name is example.mattermost.com, and the user account is ``mmuser`` with email ``mmuser@mattermost.com`` and password ``mmuser-password``.
+  For the purposes of this guide, the Mattermost server domain name is ``example.mattermost.com``, and the user account is ``mmuser`` with email ``mmuser@mattermost.com`` and password ``mmuser-password``.
 
 Before starting, you can download a binary built daily off of the `master` branch from here for testing: https://releases.mattermost.com/mattermost-platform/master/mattermost-enterprise-linux-amd64.tar.gz
 
@@ -63,13 +63,13 @@ Before starting, you can download a binary built daily off of the `master` branc
 
   Challenge password: mmuser-passphrase
 
-3. Sign the user's client certificate with the previously created CA certificate.
+3. Sign the user's client certificate with the previously created CA certificate:
 
 .. code-block::
 
   openssl x509 -req -days 365 -in mmuser-mattermost.csr -CA ca.mattermost.crt -CAkey ca.mattermost.key -set_serial 01 -out mmuser-mattermost.crt
 
-4. Check the newly generated client certificate for ``mmuser``
+4. Check the newly generated client certificate for ``mmuser``:
 
 .. code-block::
 
@@ -99,7 +99,7 @@ Before starting, you can download a binary built daily off of the `master` branc
  
   ...
 
-6. Confirm the CA key for ``mmuser`` works by the following curl command to the proxy
+6. Confirm the CA key for ``mmuser`` works by the following curl command to the proxy:
 
 .. code-block::
 
@@ -110,7 +110,7 @@ You should see the Mattermost login page. If you see:
  - ``No required SSL certificate was sent``, something went wrong. Review the above steps and try again.
  - ``* error reading X.509 key or certificate file: Decryption has failed.``, make sure the passphrase is included together with the certificate, because curl doesn't prompt for it separately. 
 
-7. Generate a PKCS12 file from the CA key and certificate, to install the certificate into your client machine for your browser to use.
+7. Generate a PKCS12 file from the CA key and certificate, to install the certificate into your client machine for your browser to use:
 
 .. code-block::
 
@@ -133,7 +133,7 @@ Set up Mattermost server to log in with a client certificate
 1. Make sure your Mattermost server is licensed with a valid Enterprise Edition E20 license.
 2. In ``ExperimentalSettings`` of the ``config.json`` file, set ``ClientSideCertEnable`` to ``true`` and ``ClientSideCertCheck`` to one of the following values:
 
-- ``primary`` - After the client side certificate is verified, user's email is retrieved from the certificate and used to log in without a password.
+- ``primary`` - After the client side certificate is verified, user's email is retrieved from the certificate and is used to log in without a password.
 - ``secondary`` - After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials.
 
 The ``config.json`` file should then have the following lines
@@ -164,7 +164,7 @@ On Ubuntu 16.04, Debian Jessie, and RHEL 7.1:
 Run the modified Mattermost React Native Mobile App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Fork the `master <https://github.com/mattermost/mattermost-mobile/blob/master>`_ branch from the mattermost-mobile repository.
+1. Fork the `master <https://github.com/mattermost/mattermost-mobile>`_ branch from the mattermost-mobile repository.
 2. Set **ExperimentalClientSideCertEnable** to ``true`` in the `mattermost-mobile/assets/base/config.json <https://github.com/mattermost/mattermost-mobile/blob/master/assets/base/config.json#L15>`_ file.
 3. `Use this guide <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`_ to build the apps based on the branch you created and modified in steps 1 and 2.
 4. Import the certificate from the previous section above into the Mattermost iOS App and use it for mutual TLS authentication. You can `watch a demonstration video of this step here <https://drive.google.com/file/d/1zzk9XQ6RBvsWbCTrIfgE0484pD7w9Ux1/view>`_.
