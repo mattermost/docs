@@ -30,9 +30,6 @@ Release date: 2018-07-16
  - Changed all instances of "Delete Channel" to "Archive Channel".
  - Added Purpose as a searchable field.
  
-#### Plugins
- - Converted web app plugin points and API to focus on extensibility.
- 
 #### Administration
  - Added the ability to reset user emails in System Console > Users.
  
@@ -73,10 +70,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Added ``"ClientSideCertCheck": "secondary"``, to
  - Under "ServiceSettings:" in ``config.json``:
     - Added ``"SiteURL": "",``, to
-    - Added ``"ExperimentalLimitClientConfig": false``, to
+    - Added ``"ExperimentalLimitClientConfig": false``, to limit the number of client config.json settings prior to login.
     - Added ``"EnableGifPicker": false,``, ``"GfycatApiKey": 2_KtH_W5,`` and ``"GfycatApiSecret": 3wLVZPiswc3DnaiaFoLkDvB4X0IV6CpMkj4tf2inJRsBY6-FnkT08zGmppWFgeof,``, to
  - Under ""SqlSettings:" in ``config.json``:
-    - Added ``"ConnMaxLifetimeMilliseconds": 3600000,``, to
+    - Added ``"ConnMaxLifetimeMilliseconds": 3600000,``, to configure the maximum amount of time a connection to the database may be reused.
 
 #### API Changes
 
@@ -100,6 +97,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Contributors
 
+[Alexgoodman7](https://github.com/Alexgoodman7), [amyblais](https://github.com/amyblais), [AndersonWebStudio](https://github.com/AndersonWebStudio), [asaadmahmood](https://github.com/asaadmahmood), [Brodan](https://github.com/Brodan), [cjohannsen81](https://github.com/cjohannsen81), [cometkim](https://github.com/cometkim). [comharris](https://github.com/comharris), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [cvitter](https://github.com/cvitter), [dmeza](https://github.com/dmeza), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [evelikov](https://github.com/evelikov), [fbartels](https://github.com/fbartels), [greensteve](https://github.com/greensteve), [grundleborg](https://github.com/grundleborg), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jkurian](https://github.com/jkurian), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kennethjeremyau](https://github.com/kennethjeremyau), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lisakycho](https://github.com/lisakycho), [michaelgamble](https://github.com/michaelgamble), [mkraft](https://github.com/mkraft), [pichouk](https://github.com/pichouk), [Roy-Orbison](https://github.com/Roy-Orbison), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [stanchan](https://github.com/stanchan), [sudheerDev](https://github.com/sudheerDev),[svelle](https://github.com/svelle), [tejasbubane](https://github.com/tejasbubane), [ThiefMaster](https://github.com/ThiefMaster), [wiersgallak](https://github.com/wiersgallak), [wildloop](https://github.com/wildloop), [yuya-oc](https://github.com/yuya-oc)
 
 ## Release v5.0
 
