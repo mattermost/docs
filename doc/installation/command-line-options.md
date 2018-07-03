@@ -200,35 +200,35 @@ See [nginx-ingress chart](../../charts/nginx/README.md)
 | gitlab.migrations.redis.serviceName                 | Redis service name                             | redis                                                      |
 | gitlab.migrations.psql.password.secret              | psql secret                                    | gitlab-postgres                                            |
 | gitlab.migrations.psql.password.key                 | key to psql password in psql secret            | psql-password                                              |
-| gitlab.gitlab-runner.image                          | runner image                                   | gitlab/gitlab-runner:alpine-v10.5.0                        |
-| gitlab.gitlab-runner.enabled                        |                                                | redis                                                      |
-| gitlab.gitlab-runner.imagePullPolicy                | image pull policy                              | IfNotPresent                                               |
-| gitlab.gitlab-runner.unregisterRunners              | unregister all runners before termination      | true                                                       |
-| gitlab.gitlab-runner.concurrent                     | number of concurrent jobs                      | 20                                                         |
-| gitlab.gitlab-runner.checkInterval                  | polling interval                               | 30s                                                        |
-| gitlab.gitlab-runner.rbac.create                    | whether to create rbac service account         | true                                                       |
-| gitlab.gitlab-runner.rbac.clusterWideAccess         | deploy containers of jobs cluster-wide         | false                                                      |
-| gitlab.gitlab-runner.rbac.serviceAccountName        | name of the rbac service account to create     | default                                                    |
-| gitlab.gitlab-runner.runners.image                  | default container image to use in builds       | ubuntu:16.04                                               |
-| gitlab.gitlab-runner.runners.imagePullSecrets       | imagePullSecrets                               | []                                                         |
-| gitlab.gitlab-runner.runners.privileged             | run in privieleged mode,needed for `dind`      | false                                                      |
-| gitlab.gitlab-runner.runners.namespace              | numespace to run jobs in                       | default                                                    |
-| gitlab.gitlab-runner.runners.cache.cacheType        | cache type                                     | s3                                                         |
-| gitlab.gitlab-runner.runners.cache.s3BucketName.    | name of the bucket                             | runner-cache                                               |
-| gitlab.gitlab-runner.runners.cache.cacheShared      | share the cache between runners                | true                                                       |
-| gitlab.gitlab-runner.runners.cache.s3BucketLocation | bucket region                                  | us-east-1                                                  |
-| gitlab.gitlab-runner.runners.cache.secretName       | secret to accesskey and secretkey from         | gitlab-minio                                               |
-| gitlab.gitlab-runner.runners.cache.s3CachePath      | path in the bucket                             | gitlab-runner                                              |
-| gitlab.gitlab-runner.runners.cache.s3CacheInsecure  | use http                                       | false                                                      |
-| gitlab.gitlab-runner.runners.builds.cpuLimit        | build container limit                          |                                                            |
-| gitlab.gitlab-runner.runners.build.memoryLimit      | build container limit                          |                                                            |
-| gitlab.gitlab-runner.runners.build.cpuRequests      | build container limit                          |                                                            |
-| gitlab.gitlab-runner.runners.build.memoryRequests   | build container limit                          |                                                            |
-| gitlab.gitlab-runner.runners.service.cpuLimit       | service container limit                        |                                                            |
-| gitlab.gitlab-runner.runners.service.memoryLimit    | service container limit                        |                                                            |
-| gitlab.gitlab-runner.runners.service.cpuRequests    | service container limit                        |                                                            |
-| gitlab.gitlab-runner.runners.service.memoryRequests | service container limit                        |                                                            |
-| gitlab.gitlab-runner.resources.limits.memory        | runner resources                               |                                                            |
-| gitlab.gitlab-runner.resources.limits.cpu           | runner resources                               |                                                            |
-| gitlab.gitlab-runner.resources.requests.memory      | runner resources                               |                                                            |
-| gitlab.gitlab-runner.resources.requests.cpu         | runner resources                               |                                                            |
+| gitlab-runner.image                                 | runner image                                   | gitlab/gitlab-runner:alpine-v10.5.0                        |
+| gitlab-runner.enabled                               |                                                | redis                                                      |
+| gitlab-runner.imagePullPolicy                       | image pull policy                              | IfNotPresent                                               |
+| gitlab-runner.unregisterRunners                     | unregister all runners before termination      | true                                                       |
+| gitlab-runner.concurrent                            | number of concurrent jobs                      | 20                                                         |
+| gitlab-runner.checkInterval                         | polling interval                               | 30s                                                        |
+| gitlab-runner.rbac.create                           | whether to create rbac service account         | true                                                       |
+| gitlab-runner.rbac.clusterWideAccess                | deploy containers of jobs cluster-wide         | false                                                      |
+| gitlab-runner.rbac.serviceAccountName               | name of the rbac service account to create     | default                                                    |
+| gitlab-runner.runners.image                         | default container image to use in builds       | ubuntu:16.04                                               |
+| gitlab-runner.runners.imagePullSecrets              | imagePullSecrets                               | []                                                         |
+| gitlab-runner.runners.privileged                    | run in privieleged mode,needed for `dind`      | false                                                      |
+| gitlab-runner.runners.namespace                     | numespace to run jobs in                       | default                                                    |
+| gitlab-runner.runners.cache.cacheType               | cache type                                     | s3                                                         |
+| gitlab-runner.runners.cache.s3BucketName.           | name of the bucket                             | runner-cache                                               |
+| gitlab-runner.runners.cache.cacheShared             | share the cache between runners                | true                                                       |
+| gitlab-runner.runners.cache.s3BucketLocation        | bucket region                                  | us-east-1                                                  |
+| gitlab-runner.runners.cache.secretName              | secret to accesskey and secretkey from         | gitlab-minio                                               |
+| gitlab-runner.runners.cache.s3CachePath             | path in the bucket                             | gitlab-runner                                              |
+| gitlab-runner.runners.cache.s3CacheInsecure         | use http                                       | false                                                      |
+| gitlab-runner.runners.builds.cpuLimit               | build container limit                          |                                                            |
+| gitlab-runner.runners.build.memoryLimit             | build container limit                          |                                                            |
+| gitlab-runner.runners.build.cpuRequests             | build container limit                          |                                                            |
+| gitlab-runner.runners.build.memoryRequests          | build container limit                          |                                                            |
+| gitlab-runner.runners.service.cpuLimit              | service container limit                        |                                                            |
+| gitlab-runner.runners.service.memoryLimit           | service container limit                        |                                                            |
+| gitlab-runner.runners.service.cpuRequests           | service container limit                        |                                                            |
+| gitlab-runner.runners.service.memoryRequests        | service container limit                        |                                                            |
+| gitlab-runner.resources.limits.memory               | runner resources                               |                                                            |
+| gitlab-runner.resources.limits.cpu                  | runner resources                               |                                                            |
+| gitlab-runner.resources.requests.memory             | runner resources                               |                                                            |
+| gitlab-runner.resources.requests.cpu                | runner resources                               |                                                            |
