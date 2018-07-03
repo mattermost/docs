@@ -41,7 +41,7 @@ Assuming you have set the environment variables from [Prepration, Configuration]
 the following command will perform the tests against the deployed GitLab.
 
 ```
-  gitlab-qa Test::Instance::Any EE nightly $GITLAB_URL
+  gitlab-qa Test::Instance::Any EE:nightly $GITLAB_URL
 ```
 
 **NOTE:** The above command runs with _nightly_ because the containers used as a
