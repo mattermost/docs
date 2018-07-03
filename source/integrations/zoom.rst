@@ -3,11 +3,19 @@ Zoom Plugin
 
 Mattermost's open source `Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`_ enables users to start and join voice, video and screensharing meetings using either `Zoom <https://zoom.us/>`_'s self-hosted private cloud or on-prem solutions, or its vendor-hosted SaaS solution.
 
-The plugin is installed by default and can be quickly activated. Moreover, the `open source plugin <https://github.com/mattermost/mattermost-plugin-zoom>`_ can be extended to launch other voice, video and screensharing systems, including custom self-hosted services and vendor-hosted SaaS services such as Skype and Google Hangouts, depending on your needs. 
+The plugin is installed by default and can be quickly activated. 
+
+**Usage**
 
 Once enabled, clicking a video icon in a Mattermost channel invites team members to join a Zoom call, hosted using the credentials of the user who initiated the call. 
 
 .. image:: ../images/zoom_channel_header2.png
+
+**Using other voice, video and screensharing services**
+ 
+The `open source Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`_ can be extended to launch other voice, video and screensharing systems, including custom self-hosted services and vendor-hosted SaaS services such as Skype and Google Hangouts, depending on your needs. 
+
+The following outlines the steps for enabling Zoom. 
 
 Zoom Setup Guide
 ~~~~~~~~~~~~~~~~~
