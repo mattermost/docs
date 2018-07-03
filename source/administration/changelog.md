@@ -11,13 +11,13 @@ Release date: 2018-07-16
 ### Highlights
 
 #### Gfycat integration
- - 
+ - Easy access to sharing short videos / GIFs.
  
 #### Auto-linking plugin (Beta)
- - Automatically rewrites text matching a regular expression into a markdown link.
+ - Used to add custom auto-linking on your Mattermost system, such as adding links to your issue tracker.
 
 #### Support Mattermost on a subpath
- - Added support for serving Mattermost from subpaths to allow hosting of Mattermost at any route such as http://www.example.com/chat.
+ - Added support for serving Mattermost from subpaths to allow hosting of Mattermost at any route such as http://www.example.com/company/mattermost.
  
 #### CSV Compliance Export
  - Removed existing Compliance Reports feature and replaced it with a Message Export CSV Format run on a Job Server.
@@ -56,6 +56,7 @@ Release date: 2018-07-16
  - Fixed an issue where iOS could not reply to a push notification.
  - Fixed an issue with an incorrect system message after converting a public channel to private.
  - Fixed an issue with being unable to add emoji reactions after expanding the message details sidebar.
+ - Fixed an issue where Rate limit settings could not be edited in the System Console, and weren't displayed in the User Interface if configured via config.json.
 
 ### Compatibility
 
@@ -67,14 +68,15 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
- - Under "ExperimentalSettings": in ``config.json``:
+ - Under "ExperimentalSettings:" in ``config.json``:
     - Added ``"ClientSideCertEnable": false,``, to 
     - Added ``"ClientSideCertCheck": "secondary"``, to
- - Under "ServiceSettings": in ``config.json``:
-    - Added ``"ExperimentalLimitClientConfig": false``, to
-    - Added ``"EnableGifPicker": true,``, ``"GfycatApiKey": "",`` and ``"GfycatApiSecret": "",``, to
- - Under "ServiceSettings": in ``config.json``:
+ - Under "ServiceSettings:" in ``config.json``:
     - Added ``"SiteURL": "",``, to
+    - Added ``"ExperimentalLimitClientConfig": false``, to
+    - Added ``"EnableGifPicker": false,``, ``"GfycatApiKey": 2_KtH_W5,`` and ``"GfycatApiSecret": 3wLVZPiswc3DnaiaFoLkDvB4X0IV6CpMkj4tf2inJRsBY6-FnkT08zGmppWFgeof,``, to
+ - Under ""SqlSettings:" in ``config.json``:
+    - Added ``"ConnMaxLifetimeMilliseconds": 3600000,``, to
 
 #### API Changes
 
