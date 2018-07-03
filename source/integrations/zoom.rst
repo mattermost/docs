@@ -14,7 +14,7 @@ Zoom Setup Guide
 
 .. image:: ../images/zoom_system_console.png
 
-2. If you're using a self-hosted private cloud or on-premise Zoom server, enter the **Zoom API URL** for the Zoom server, for example https://api.yourzoom.com/v2. Leave blank if you're using Zoom's vendor-hosted SaaS service.
+2. If you're using a self-hosted private cloud or on-premise Zoom server, enter the **Zoom URL** and **Zoom API URL** for the Zoom server, for example https://yourzoom.com and https://api.yourzoom.com/v2 respectively. Leave blank if you're using Zoom's vendor-hosted SaaS service.
 3. Set the API Key and API Secret (see below). 
 
 API Key and API Secret
