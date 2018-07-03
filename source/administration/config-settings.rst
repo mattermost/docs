@@ -2807,7 +2807,15 @@ SQL Query Timeout
 The number of seconds to wait for a response from the database after opening a connection and sending the query. Errors that you see in the UI or in the logs as a result of a query timeout can vary depending on the type of query.
 
 +-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with whole number input, in the *SqlSettings* section. |
+| This feature's ``config.json`` setting is ``"QueryTimeout": 30`` with whole number input.                               |
++-------------------------------------------------------------------------------------------------------------------------+
+
+Maximum Connection Lifetime
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Maximum lifetime for a connection to the database in milliseconds. Use this setting to configure a maximum connection timeout for your database. Defaults to an hour (3,600,000 milliseconds).
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ConnMaxLifetimeMilliseconds": 3600000`` with whole number input.           |
 +-------------------------------------------------------------------------------------------------------------------------+
 
 At Rest Encrypt Key
@@ -3731,6 +3739,19 @@ Changes made when hardened mode is enabled:
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false`` for above settings respectively.          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Limit Access to Client Config Settings Prior to Login
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable this setting to limit the number of client config.json settings prior to login.
+
+The complete client config is pulled after logging in.
+
+Supported for Mattermost server v5.1.0 and later, and Mattermost Mobile apps v1.9.0 and later.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ExperimentalLimitClientConfig": "false"`` with options ``true`` and ``false`` for above settings respectively.       |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Team Settings
 ~~~~~~~~~~~~~~
