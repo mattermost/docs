@@ -9,7 +9,7 @@ The plugin is installed by default and can be quickly activated.
 
 Once enabled, clicking a video icon in a Mattermost channel invites team members to join a Zoom call, hosted using the credentials of the user who initiated the call. 
 
-.. image:: ../images/zoom_channel_header2.png
+.. image:: https://user-images.githubusercontent.com/177788/42195970-568e0a1e-7e30-11e8-8d30-1d8e99f9be8b.png
 
 **Using other voice, video and screensharing services**
  
