@@ -58,7 +58,7 @@ Zoom webhook. Then hit **Save**.
 
 7. Once activated, you will see a video icon in the channel header. Clicking the icon will open a drop-down menu with three actions you can take: **Start Zoom Meeting Now**, **Start Zoom Meeting with Topic**, and **Share Zoom Meeting**.
 
-.. image:: ../images/zoom_channel_header2.png
+.. image:: https://user-images.githubusercontent.com/177788/42196048-af54d2b8-7e30-11e8-80a0-5e160ae06f03.png
 
 .. note::
    Users will need to sign-up for their own Zoom account using the same email address that they use for Mattermost. If the user attempts to start a Zoom meeting without a Zoom account, they will see the following error message: "We could not verify your Mattermost account in Zoom. Please ensure that your Mattermost email address matches your Zoom email address."
