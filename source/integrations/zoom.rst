@@ -7,7 +7,7 @@ Once enabled, clicking a video icon in a Mattermost channel invites team members
 
 .. image:: ../images/zoom_channel_header2.png
 
-In addition to being able to customize Zoom, users can also extend the open source plugin to other video conferencing systems, including custom self-hosted systems and vendor-hosted services such as Skype and Google Hangouts.
+In addition to being able to customize Zoom, users can also extend the `open source plugin <https://github.com/mattermost/mattermost-plugin-zoom>`_ to other video conferencing systems, including custom self-hosted systems and vendor-hosted SaaS services such as Skype and Google Hangouts.
 
 `Zoom <https://zoom.us/>`_ is one of the world’s leading video and web conferencing services. This documentation includes instructions on how you can set up Zoom in Mattermost.
 
@@ -18,7 +18,7 @@ Zoom Setup Guide
 
 .. image:: ../images/zoom_system_console.png
 
-2. If you're using a self-hosted private cloud or on-premise Zoom server, enter the **Zoom URL** and **Zoom API URL** for the Zoom server, for example https://yourzoom.com and https://api.yourzoom.com/v2 respectively. Leave blank if you're using Zoom's vendor-hosted SaaS service.
+2. If you're using a self-hosted private cloud or on-premise Zoom server, enter the **Zoom URL** and **Zoom API URL** for the Zoom server, for example ``https://yourzoom.com`` and ``https://api.yourzoom.com/v2`` respectively. Leave blank if you're using Zoom's vendor-hosted SaaS service.
 3. Set the **API Key** and **API Secret** (see below). 
 
 API Key and API Secret
