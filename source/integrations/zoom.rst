@@ -1,4 +1,4 @@
-Zoom Plugin (Beta)
+Zoom Plugin 
 ================================
 
 Mattermost's open source `Zoom integration <https://github.com/mattermost/mattermost-plugin-zoom>`_ enables users to start and join voice, video and screensharing meetings using Zoom without leaving the Mattermost interface. 
