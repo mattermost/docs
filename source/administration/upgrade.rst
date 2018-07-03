@@ -21,6 +21,7 @@ You should gather the following information before starting the upgrade:
 
 Existing install directory - *{install-path}*
   If you don't know where Mattermost Server is installed, use the ``whereis mattermost`` command. The output should be similar to */opt/mattermost/bin/mattermost*. The install directory is everything before the last occurrence of the string */mattermost*. In this example, the *{install-path}* is ``/opt``.
+  If that command does not produce any results because your version is older, try ``whereis platform`` instead.
 Location of your local storage directory
   The local storage directory contains all the files that users have attached to their messages. If you don't know its location, open the System Console and go to **Files > Storage** and read the value in **Local Storage Directory**. Relative paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
 Owner and group of the install directory - *{owner}* and *{group}*
@@ -81,8 +82,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
    #. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
 
-    cd {install-path}/mattermost
-    sudo setcap cap_net_bind_service=+ep ./bin/mattermost
+      .. code-block:: sh
 
         cd {install-path}
         sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
@@ -114,7 +114,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
    .. code-block:: sh
 
-     sudo cp -rn {path-to}/mattermost-upgrade/. mattermost/
+     sudo cp -an {path-to}/mattermost-upgrade/. mattermost/
      sudo rm -r {path-to}/mattermost-upgrade/
 
 #. Start Mattermost server.
