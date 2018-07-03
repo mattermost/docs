@@ -2812,7 +2812,7 @@ The number of seconds to wait for a response from the database after opening a c
 
 Maximum Connection Lifetime
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Maximum lifetime for a connection to the database in milliseconds. Use this setting to configure a maximum connection timeout for your database. Defaults to an hour (3,600,000 milliseconds).
+Maximum lifetime for a connection to the database, in milliseconds. Use this setting to configure the maximum amount of time a connection to the database may be reused. Defaults to an hour (3,600,000 milliseconds).
 
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnMaxLifetimeMilliseconds": 3600000`` with whole number input.           |
