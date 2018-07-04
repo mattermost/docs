@@ -57,16 +57,18 @@ You are welcome to document your contributions to the Mattermost open source pro
 - Headline: ``Solution builder for Mattermost open source project``
 - Description: ``[Description of your solution, its benefit to end users, and link to project. Example: "Maintainer of Mattermost-Zoom plugin which offers voice, video and screensharing for Mattermost end users through Zoom integration, either through a self-hosted private cloud deployment or a vendor-hosted SaaS service from Zoom. See the project at https://github.com/mattermost/mattermost-plugin-zoom."]`` 
 
-Code Contributors 
+Platform Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Contributors Code Contributors 
+Platform Contributors provide improvements to the core Mattermost open source projects under https://github.com/mattermost/. Contributions may be made at different levels of skill and impact: 
 
-- Level 1
-- Level 2
-- Level 3 
+- **Level 1** - Stated intention to contribute by completing `Mattermost Contributor Agreement <https://www.mattermost.org/mattermost-contributor-agreement/>`_ which adds contributor's name to `Mattermost Approved Contributor's list <https://docs.google.com/spreadsheets/u/2/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true>`_. 
+- **Level 2** - Corrections or improvements to on-screen text, documentation or help text. Cosmetic improvements to code base. 
+- **Level 3** - Corrections of minor bugs in code base other than on-screen text, documentation or help text either through spontaneous contribution or by volunteering for and being assigned a ticket by a core committer. 
+- **Level 4** - Corrections to major bugs, or the implementation of minor feature either through spontaneous contribution or by volunteering for and being assigned a ticket by a core committer. Alternatively, requesting and being assigned a ticket of 2 mana or higher by core committer and completing the project. 
+- **Level 5** - Requesting and being assigned a ticket of 8 mana or higher by core committer and completing the project. 
 
-  - They contribute features, small improvements and bug fixes to server, webapp, mobile and desktop app repos.
+All contributors Level 2 and above are eligible for a `custom-printed Mattermost Mug <https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143>`_ acknowledging their role in the open source project. 
 
 Community Leader: Eric Sethna 
 
