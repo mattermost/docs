@@ -1,0 +1,56 @@
+{{- if not (or .Values.global.ingress.configureCertmanager .Values.global.ingress.tls) -}}
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ template "shared-secrets.jobname" . }}-selfsign
+  labels:
+    app: {{ template "name" . }}
+    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-delete-policy": hook-succeeded
+spec:
+  template:
+    metadata:
+      labels:
+        app: {{ template "name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      serviceAccountName: {{ template "fullname" . }}
+      restartPolicy: Never
+{{- include "pullsecrets" .Values.image | indent 6}}
+      initContainers:
+      - name: omgwtfssl
+        image: "{{ .Values.selfsign.image.repository }}:{{ .Values.selfsign.image.tag }}"
+        env:
+        - name: SSL_SUBJECT
+          value: {{ printf "*.%s" .Values.global.hosts.domain | quote }}
+        - name: SSL_EXPIRE
+          value: "30"
+        - name: SSL_SIZE
+          value: "4096"
+        - name: SILENT
+          value: "true"
+        - name: K8S_NAME
+          value: {{ template "gitlab.wildcard-self-signed-cert-name" . }}
+        - name: K8S_NAMESPACE
+          value: {{ .Release.Namespace }}
+        volumeMounts:
+        - name: certs-path
+          mountPath: /certs
+      containers:
+      - name: kubectl
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        command:
+        - /bin/bash
+        - -ec
+        - "kubectl create -f /certs/secret.yaml || true"
+        volumeMounts:
+        - name: certs-path
+          mountPath: /certs
+      volumes:
+      - name: certs-path
+        emptyDir: {}
+{{- end -}}

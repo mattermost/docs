@@ -1,0 +1,9 @@
+{{- if not (or .Values.global.ingress.configureCertmanager .Values.global.ingress.tls) -}}
+WARNING: Automatic TLS certificate generation with cert-manager is disabled and
+no TLS certificates were provided. Self-signed certificates were generated.
+
+{{- if (index .Values "gitlab-runner").install -}}
+{{- fail "Automatic TLS certificate generation with cert-manager is disabled and no TLS certificates were provided. Self-signed certificates would be generated that do not work with gitlab-runner. Please either disable gitlab-runner by setting `gitlab-runner.install=false` or provide valid certificates." -}}
+{{- end -}}
+
+{{- end -}}

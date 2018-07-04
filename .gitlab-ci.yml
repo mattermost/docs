@@ -299,6 +299,28 @@ qa:
     refs:
       - branches
 
+debug_review:
+  stage: qa
+  when: on_failure
+  script:
+    - kubectl -n "$KUBE_NAMESPACE" describe pod
+    - kubectl -n "$KUBE_NAMESPACE" get pod,jobs,secret,ing,cm,sa,svc,role,rolebinding,pvc
+  artifacts:
+    paths:
+    - variables
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
+  variables:
+    HOST_SUFFIX: "$CI_ENVIRONMENT_SLUG"
+    DOMAIN: "-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"
+  only:
+    refs:
+      - branches
+    kubernetes: active
+  except:
+    - master
+
 changelog_manager:
   stage: changelog
   script:
@@ -500,10 +522,10 @@ changelog_manager:
   }
 
   function cleanup() {
-    kubectl get ingress,configmap,all,pvc -n "$KUBE_NAMESPACE" \
-      -o jsonpath='{range .items[*]}{.kind}{" "}{.metadata.name}{"\n"}{end}' \
+    kubectl -n "$KUBE_NAMESPACE" get ingress,svc,pdb,hpa,deploy,statefulset,job,secret,configmap,pvc,secret,clusterrole,clusterrolebinding,role,rolebinding,sa 2>&1 \
       | grep "$CI_ENVIRONMENT_SLUG" \
-      | xargs -n2 kubectl delete -n "$KUBE_NAMESPACE" \
+      | awk '{print $1}' \
+      | xargs kubectl -n "$KUBE_NAMESPACE" delete \
       || true
   }
 
