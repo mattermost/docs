@@ -11,16 +11,16 @@ Release date: 2018-07-16
 ### Highlights
 
 #### Gfycat integration
- - Easy access to sharing short videos / GIFs.
+ - Added easy access to sharing GIFs without leaving the Mattermost interface.
  
 #### Auto-linking plugin (Beta)
- - Used to add custom auto-linking on your Mattermost system, such as adding links to your issue tracker.
+ - Certain messages can now be formatted into Markdown links automatically before they are saved to the Mattermost database.
 
 #### Support Mattermost on a subpath
- - Added support for serving Mattermost from subpaths to allow hosting of Mattermost at any route such as http://www.example.com/company/mattermost.
+ - Added support for hosting Mattermost at any route (e.g., https://www.example.com/mm) with newly added subpath support.
  
 #### CSV Compliance Export
- - Removed existing Compliance Reports feature and replaced it with a Message Export CSV Format run on a Job Server.
+ - Removed existing Compliance Reports feature and replaced it with an improved Compliance Export feature that captures more data in CSV format.
 
 ### Improvements
 
@@ -32,21 +32,13 @@ Release date: 2018-07-16
  
 #### Administration
  - Added the ability to reset user emails in System Console > Users.
- 
-#### Permissions
- - Made Permissions Reset CLI command custom-role aware.
+ - Added a prototype for CBA.
+ - Don't require a server restart to run the job server for the first time.
  
 #### Command Line Interface (CLI)
+ - Made Permissions Reset CLI command custom-role aware.
  - Have permanent delete user CLI command delete FileInfos for that user's posts.
  - Improved behaviour when running the CLI command outside of the bin directory.
- 
-#### xxxx //// category?
- - Added a prototype for CBA.
- - Ensured a blank config file has all defaults set correctly.
- - Enabled webpack public path to be dynamic.
- - Do not disclose BannerText in client config.
- - Ensured Security Update Check URL should have recognisable name.
- - Don't require a server restart to run the job server for the first time.
 
 ### Bug Fixes
 
