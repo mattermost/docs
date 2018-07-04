@@ -2,7 +2,7 @@
 Mattermost Community
 ============================================================
 
-At Mattermost, we be believe workplace messaging will become a leading platform for workflow and business process. We believe building such a platform on open source infrastructure has powerful benefits.  
+At Mattermost, we be believe workplace messaging will become a leading platform for workflow and business process. We believe building such a platform on open source infrastructure has powerful advantages.  
 
 We consider people who share these beliefs, and who seek to benefit from or influence the Mattermost open source project, to be part of the "Mattermost Community". 
 
