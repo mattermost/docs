@@ -121,4 +121,4 @@ Frequently asked questions from Mattermost partners.
 Can a partner sell Mattermost products without revealing the name of an end customer? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No. Mattermost, Inc. must know all end customers with whom it does business. 
+No. Mattermost, Inc. must know all end customers with whom it does business. This is important for Mattermost to be able to service and renew the end customer if the reseller relationship is discontinued. Moreover, Mattermost cannot do business with customers in countries embargoed by the United States and this must be confirmed in any commercial transaction. 
