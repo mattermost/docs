@@ -45,10 +45,12 @@ As of July 2018, `over 1000 open source projects on GitHub reference Mattermost 
 
 Community Leader: Jason Blais 
 
-LinkedIn Recognition 
+**LinkedIn Recognition**
 
-- Title: ``Solution Builder`` 
-- Company: ``Mattermost Open Source Project`` 
+You are welcome to document your contributions to the Mattermost open source project in your resume or on LinkedIn in any matter you feel is accurate. Below is an example of an entry: 
+
+- Title: ``Open Source Solution Builder`` 
+- Organization/Company: ``Mattermost`` 
 - Location: ``[Where you did your work]`` 
 - From: ``[Date started]``
 - I currently work here: ``Check "Yes" if you continue to maintain your work`` 
