@@ -13,18 +13,17 @@ The success of Mattermost as an open source platform for messaging-based workflo
   :local:
   :depth: 2
 
-
 Users   
 ---------------------------------------------------------
 
 In general, all members of the Mattermost community are users of the open source project. They may be end users on a system, administrators, or developers on the Mattermost platform in some way, and the common bond we all share is we benefit from the project's continued and growing success. 
 
-The user community has three parts in general:  
+The user community has a number of segments: 
 
 - **End Users** - People using Mattermost to communicate and achieve their organization's top priorities. 
 - **IT Administrators** - People deploying Mattermost and supporting end users. 
 - **System Integrators** - People who extend and customize Mattermost privately but who do not share back their work with the open source community are considered "users". When the same people decide to share their work with others in the community they are recognized as "contributors"  
-- **Customers** - Organizations that purchase Mattermost Enterprise Edition as an extension of the Mattermost open source project for advanced features. 
+- **Customers** - Organizations that purchase Mattermost Enterprise Edition as an extension of the Mattermost open source project for advanced features. While the Mattermost roadmap is focused on benefiting the broad community, large customers may accelerate certain parts of the roadmap they find most valuable through large purchases of Enterprise Edition licenses. 
 
 Contributors  
 ---------------------------------------------------------
@@ -71,6 +70,7 @@ Platform Contributors provide improvements to the core Mattermost open source pr
 - **Level 3** - Corrections of minor bugs in code base other than on-screen text, documentation or help text either through spontaneous contribution or by volunteering for and being assigned a ticket by a core committer. 
 - **Level 4** - Corrections to major bugs, or the implementation of minor feature either through spontaneous contribution or by volunteering for and being assigned a ticket by a core committer. Alternatively, requesting and being assigned a ticket of 2 mana or higher by core committer and completing the project. 
 - **Level 5** - Requesting and being assigned a ticket of 8 mana or higher by core committer and completing the project. 
+- **Core Committer** - Highly skilled developer who becomes a maintainer and regular contributor to core Mattermost open source projects.
 
 All contributors Level 2 and above are eligible for a `custom-printed Mattermost Mug <https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143>`_ acknowledging their role in the open source project. 
 
@@ -137,3 +137,7 @@ Recognizing people's contributions is vital to keeping them engaged. Leverage th
 
 When possible, influence contributors to apply themselves to the highest impact tickets and projects appropriate for their skill level. Meaningful contributions early in the contributor journey are a powerful way to draw people into the community. 
 
+Mattermost Staff  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost staff are paid by Mattermost, Inc. to take on any of the contributor roles mentioned above, as well as to develop and support Mattermost Enterprise Edition as a commercial extension of the Mattermost open source project for large and sophisticated organizations. 
