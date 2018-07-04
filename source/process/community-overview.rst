@@ -106,13 +106,6 @@ Documentation Contributors update, edit and create new documentation, help text,
 
 Community Coordinator: Justin Reynolds
 
-Success Contributors 
-~~~~~~~~~~~~~~~~~~~~~~~~~~
- 
-Success Contributors share feedback, questions and answers on Mattermost through forums for `trouble shooting <https://www.mattermost.org/troubleshoot/>`_, `feature proposals <https://www.mattermost.org/feature-ideas/>`_, and `other topics <https://forum.mattermost.org>`_. 
-
-Community Coordinator: Paul Rothrock 
-
 Quality Assurance Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -121,6 +114,13 @@ Quality Assurance Contributors help find, confirm and report product defects via
 Bonus: When QA Contributor finds and reports a bug on a release candidate build of Mattermost prior to the final release of the system, the can be awarded a `Mattermost Bug Hunter Award <https://forum.mattermost.org/t/mattermost-bug-hunter-awards/4979>`_ for their contribution. 
 
 Community Coordinator: TBD
+
+Success Contributors 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+Success Contributors share feedback, questions and answers on Mattermost through forums for `trouble shooting <https://www.mattermost.org/troubleshoot/>`_, `feature proposals <https://www.mattermost.org/feature-ideas/>`_, and `other topics <https://forum.mattermost.org>`_. 
+
+Community Coordinator: Paul Rothrock 
 
 Deployment Solution Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
