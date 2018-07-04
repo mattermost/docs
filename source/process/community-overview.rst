@@ -4,9 +4,11 @@ Mattermost Community
 
 At Mattermost, we be believe workplace messaging will become a leading platform for workflow and business process. We believe building such a platform on open source infrastructure has powerful benefits.  
 
-We consider people who share these beliefs, and who seek to benefit from or influence the Mattermost open source project in pursuit of this vision, to be part of the "Mattermost Community". 
+We consider people who share these beliefs, and who seek to benefit from or influence the Mattermost open source project, to be part of the "Mattermost Community". 
 
 The success of Mattermost as an open source platform for messaging-based workflow and business process depends on empowering our community to build with us towards a shared vision. 
+
+The Mattermost community has two parts, Users and Contributors, detailed below. 
 
 .. contents::
   :backlinks: top
@@ -20,10 +22,24 @@ In general, all members of the Mattermost community are users of the open source
 
 The user community has a number of segments: 
 
-- **End Users** - People using Mattermost to communicate and achieve their organization's top priorities. 
-- **IT Administrators** - People deploying Mattermost and supporting end users. 
-- **System Integrators** - People who extend and customize Mattermost privately but who do not share back their work with the open source community are considered "users". When the same people decide to share their work with others in the community they are recognized as "contributors"  
-- **Customers** - Organizations that purchase Mattermost Enterprise Edition as an extension of the Mattermost open source project for advanced features. While the Mattermost roadmap is focused on benefiting the broad community, large customers may accelerate certain parts of the roadmap they find most valuable through large purchases of Enterprise Edition licenses. 
+End Users 
+~~~~~~~~~~~~~~~~~~~~~
+People using Mattermost to communicate and achieve their organization's top priorities.
+
+IT Administrators
+~~~~~~~~~~~~~~~~~~~~~
+
+People deploying Mattermost and supporting end users. 
+
+System Integrators
+~~~~~~~~~~~~~~~~~~~~~
+
+People who extend and customize Mattermost privately but who do not share back their work with the open source community are considered "users". When the same people decide to share their work with others in the community they are recognized as "contributors"  
+
+Customers
+~~~~~~~~~~~~~~~~~~~~~
+
+Organizations that purchase Mattermost Enterprise Edition as an extension of the Mattermost open source project for advanced features. While the Mattermost roadmap is focused on benefiting the broad community, large customers may accelerate certain parts of the roadmap they find most valuable through large purchases of Enterprise Edition licenses. 
 
 Contributors  
 ---------------------------------------------------------
