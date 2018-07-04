@@ -7,21 +7,27 @@ Mattermost Community
   :local:
   :depth: 2
 
-----
-
+===============================
 Vision for Mattermost Community 
----------------------------------------------------------
+===============================
 
-At Mattermost, we be believe workplace messaging will become a leading platform for workflow and business process. We believe building such a platform on open source infrastructure is ideal. 
+At Mattermost, we be believe workplace messaging will become a leading platform for workflow and business process. We believe building such a platform on open source infrastructure has powerful benefits.  
 
-We consider people who share these beliefs, and who seek to benefit or influence the Mattermost open source project in pursuit of this vision, to be part of the "Mattermost Community". 
+We consider people who share these beliefs, and who seek to benefit from or influence the Mattermost open source project in pursuit of this vision, to be part of the "Mattermost Community". 
 
 The success of Mattermost as an open source platform for messaging-based workflow and business process depends on empowering our community to build with us towards a shared vision. 
 
-Community Members 
+Users   
 ---------------------------------------------------------
 
-The following outlines different members of our communities: 
+In general, all members of the Mattermost community are users of the open source project. They may be end users on a system, administrators, or developers on the Mattermost platform in some way, and the common bond we all share is we benefit from the project's continued and growing success. 
+
+Contributors  
+---------------------------------------------------------
+
+A subset of the Mattermost community as "contributors" who help increase the overall benefits of Mattermost for others. This may be as simple as offering feature ideas or reporting bugs, offering professional services to install or deploy the system, or it can be as involved as building whole new products based on Mattermost, or contributing code to the underlying software. 
+
+The work of all contributors is valued, appreciated and recognized as a driving force behind the project's growth.  
 
 Solution Builders   
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -40,6 +46,9 @@ Community Leader: Jason Blais
 
 Code Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~
+
+Code Contributors 
+
   - They contribute features, small improvements and bug fixes to server, webapp, mobile and desktop app repos.
 
 Community Leader: Eric Sethna 
@@ -49,7 +58,7 @@ Community Leader: Eric Sethna
   - They ask for help troubleshooting issues, report bugs, share UX feedback and propose new features.
   - Examples: forum.mattermost.org, GitHub repos, Uservoice.
 
-4. Localization (Owner: Jason)
+4. Localization Contributors (Owner: Jason)
 
   - They help translate and maintain languages in Pootle translation server.
 
