@@ -12,14 +12,65 @@ Mattermost Community
 Vision for Mattermost Community 
 ---------------------------------------------------------
 
-At Mattermost, we be believe workplace messaging is to become a platform for workflow and business process. We believe the ideal approach to building such a platform is to develop on open source infrastructure. 
+At Mattermost, we be believe workplace messaging will become a leading platform for workflow and business process. We believe building such a platform on open source infrastructure is ideal. 
 
 We consider people who share these beliefs, and who seek to benefit or influence the Mattermost open source project in pursuit of this vision, to be part of the "Mattermost Community". 
 
-The success of Mattermost and its vision to be the open source platform for messaging-based workflow and business process depends on our community, including end users, administrators, developers, core committers and Mattermost staff. 
+The success of Mattermost as an open source platform for messaging-based workflow and business process depends on empowering our community to build with us towards a shared vision. 
+
+Community Members 
+---------------------------------------------------------
+
+The following outlines different members of our communities: 
+
+Solution Builders   
+~~~~~~~~~~~~~~~~~~~~~~~
+
+As of July 2018, `over 1000 open source projects on GitHub reference Mattermost <https://github.com/search?q=mattermost>`_. Solution Builders create a host of technologies to empower Mattermost software to solve real world problems. Technologies include: 
+
+- **Deployment Solutions** - Includes packaging and automation for Docker, Kubernetes and other leading virtualization and orchestration solutions. See `Deployment Solutions Programs <https://docs.mattermost.com/guides/orchestration.html>`_ for guidance on how to build to common Mattermost standards. 
+- **Self-hosted Integration Solutions** - Includes connectivity and integration with 3rd party applications such as Jira, Confluence, GitLab, Jenkins and other tools 
+- **SaaS-based Integration Solutions** - Includes connectivity and integration with services like Twitter, Zendesk, Salesforce and hundreds of other extensions with services like Zapier.
+- **Programming Solutions** - Includes language-specific drivers and connectors to simplify the work of other developers 
+- **Mattermost User Experience Plug-Ins** - Includes server and client-side plug-ins that enhance the native capabilities of a Mattermost server, such as voice, video and screensharing with Zoom's self-hosted or vendor-hosted solutions.  
+- **Federated Experiences** - Includes bridges with IRC, Slack and other messaging applications through solutions like Matterbridge
+- **Custom User Experiences** - Includes integrations into Terminal and Pidgin built off the same core APIs as Mattermost's Web, Desktop, iOS and Android experiences 
+
+Community Leader: Jason Blais 
+
+Code Contributors 
+~~~~~~~~~~~~~~~~~~~~~~~
+  - They contribute features, small improvements and bug fixes to server, webapp, mobile and desktop app repos.
+
+Community Leader: Eric Sethna 
+
+3. End users (Owner: Paul)
+
+  - They ask for help troubleshooting issues, report bugs, share UX feedback and propose new features.
+  - Examples: forum.mattermost.org, GitHub repos, Uservoice.
+
+4. Localization (Owner: Jason)
+
+  - They help translate and maintain languages in Pootle translation server.
+
+5. Orchestration solution maintainers (Owner: Amy)
+
+  - They create deployment solution programs to more easily install and deploy Mattermost.
+  - Examples: Modules (e.g. Puppet, Heroku), Installers (e.g. Yunohost, Chef Cookbook) and Package managers (Bitnami, HPE Gold).
+
+6. Writers (Owner: Justin)
+
+  - They help write documentation, write tutorials and “how-to” articles, and blog posts.
+
+7. Designers (Owner: Mike)
+
+  - They help with feature design and review processes.
+
+
 
 Principles
 ---------------------------------------------------------
+
 
 1. Focus on areas with high impact-to-`mana <https://docs.mattermost.com/process/training.html#mana>`_ ratio.
 2. It should be easy and straightforward to start contributing.
@@ -44,37 +95,3 @@ Context
 
   - You need to train contributors, developers and PMs to review PRs and create recognition programs that give specific roles to people.
 
-Audiences
----------------------------------------------------------
-
-1. Integration builders (Owner: Jason)
-
-  - They create extensions to Mattermost to third-party integrations and plug-ins.
-  - Some might build drivers to more easily integrate Mattermost into different programming languages.
-  - Examples: Popular third-party software (e.g. Jira, Jenkins), Slack-compatible integrations (e.g. Slackbot), Custom Mattermost integrations (e.g. Matterbridge, Mattermail), Plug-ins (e.g. Zoom).
-
-2. Code contributors (Owner: Eric)
-
-  - They contribute features, small improvements and bug fixes to server, webapp, mobile and desktop app repos.
-
-3. End users (Owner: Paul)
-
-  - They ask for help troubleshooting issues, report bugs, share UX feedback and propose new features.
-  - Examples: forum.mattermost.org, GitHub repos, Uservoice.
-
-4. Localization (Owner: Jason)
-
-  - They help translate and maintain languages in Pootle translation server.
-
-5. Orchestration solution maintainers (Owner: Amy)
-
-  - They create deployment solution programs to more easily install and deploy Mattermost.
-  - Examples: Modules (e.g. Puppet, Heroku), Installers (e.g. Yunohost, Chef Cookbook) and Package managers (Bitnami, HPE Gold).
-
-6. Writers (Owner: Justin)
-
-  - They help write documentation, write tutorials and “how-to” articles, and blog posts.
-
-7. Designers (Owner: Mike)
-
-  - They help with feature design and review processes.
