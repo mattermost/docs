@@ -3740,12 +3740,10 @@ Changes made when hardened mode is enabled:
 | This feature’s ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false`` for above settings respectively.          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Limit Access to Client Config Settings Prior to Login
+Limit Access to Config Settings Prior to Login
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Enable this setting to limit the number of client config.json settings prior to login.
-
-The complete client config is pulled after logging in.
+Enable this setting to limit the number of config settings sent to users prior to login.
 
 Supported for Mattermost server v5.1.0 and later, and Mattermost Mobile apps v1.9.0 and later.
 
