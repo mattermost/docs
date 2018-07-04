@@ -42,7 +42,7 @@ As of July 2018, `over 1000 open source projects on GitHub reference Mattermost 
 - **Federated Experiences** - Includes bridges with IRC, Slack and other messaging applications through solutions like Matterbridge
 - **Custom User Experiences** - Includes integrations into Terminal and Pidgin built off the same core APIs as Mattermost's Web, Desktop, iOS and Android experiences 
 
-Community Leader: Jason Blais 
+Community Coordinator: Jason Blais 
 
 **LinkedIn Recognition**
 
@@ -69,21 +69,21 @@ Platform Contributors provide improvements to the core Mattermost open source pr
 
 All contributors Level 2 and above are eligible for a `custom-printed Mattermost Mug <https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143>`_ acknowledging their role in the open source project. 
 
-Community Leader: Eric Sethna 
+Community Coordinator: Eric Sethna 
 
 Translation Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Translation Contributors can create and update translations to existing or new Mattermost languages at https://translate.mattermost.com. In addition, community members can become "Language owners" and help review, coordinate and supervise the translation of Mattermost into languages they speak. 
 
-Community Leader: Jason Blais 
+Community Coordinator: Jason Blais 
 
 Documentation Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Documentation Contributors update, edit and create new documentation, help text, training and other materials to help the community get the most out of Mattermost software. Core documentation is found at https://docs.mattermost.com and contributions can be made via the open source repository at https://github.com/mattermost/docs/
 
-Community Leader: Justin Reynolds
+Community Coordinator: Justin Reynolds
 
 Influence Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -100,23 +100,24 @@ Quality Assurance Contributors help find, confirm and report product defects via
 
 Bonus: When QA Contributor finds and reports a bug on a release candidate build of Mattermost prior to the final release of the system, the can be awarded a `Mattermost Bug Hunter Award <https://forum.mattermost.org/t/mattermost-bug-hunter-awards/4979>`_ for their contribution. 
 
+Community Coordinator: TBD
+
 Deployment Solution Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Deployment Solutions Contributors create packaging and automation for making it easier to deploy Mattermost, using tools such as Docker, Kubernetes and other leading virtualization and orchestration solutions. See `Deployment Solutions Programs <https://docs.mattermost.com/guides/orchestration.html>`_ for guidance on how to build to common Mattermost standards. 
 
-Community Leader: Amy Blais
+Community Coordinator: Amy Blais
 
 UX Design Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-UX Design Contributors influence the design of the Mattermost user experience through discussion in the ``ux-design`` channel on the Mattermost continous integration server at https://pre-release.mattermost.com/core/channels/ux-design and through contributions to the `Mattermost User Experience Guidelines <https://docs.mattermost.com/developer/fx-guidelines.html>`_ via https://github.com/mattermost/docs/blob/master/source/developer/fx-guidelines.rst
+UX Design Contributors influence the design of the Mattermost user experience through discussion in the ``ux-design`` channel on the Mattermost continous integration server at https://pre-release.mattermost.com/core/channels/ux-design and through contributions to the `Mattermost User Experience Guidelines <https://docs.mattermost.com/developer/fx-guidelines.html>`_ on `GitHub <https://github.com/mattermost/docs/blob/master/source/developer/fx-guidelines.rst>`_.
 
-Community Leader: Mike Gamble
+Community Coordinator: Mike Gamble
 
 Principles
 ---------------------------------------------------------
-
 
 1. Focus on areas with high impact-to-`mana <https://docs.mattermost.com/process/training.html#mana>`_ ratio.
 2. It should be easy and straightforward to start contributing.
