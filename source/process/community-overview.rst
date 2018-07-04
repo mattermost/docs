@@ -12,7 +12,11 @@ Mattermost Community
 Vision for Mattermost Community 
 ---------------------------------------------------------
 
-Increase the popularity of Mattermost by increasing brand advocacy and meaningful product benefits that would otherwise not be offered, through an engaged and empowered contributor best practices, troubleshooting guidance, feature proposals, documentation, language translations, extensions, features and low priority bug fixes.
+At Mattermost, we be believe workplace messaging is to become a platform for workflow and business process. We believe the ideal approach to building such a platform is to develop on open source infrastructure. 
+
+We consider people who share these beliefs, and who seek to benefit or influence the Mattermost open source project in pursuit of this vision, to be part of the "Mattermost Community". 
+
+The success of Mattermost and its vision to be the open source platform for messaging-based workflow and business process depends on our community, including end users, administrators, developers, core committers and Mattermost staff. 
 
 Principles
 ---------------------------------------------------------
