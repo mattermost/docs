@@ -6,7 +6,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.0
 
-Release date: 2018-06-16
+ - **5.0.1, released TBD**
+   - Fixing an issue where large exports could cause a situation where the export jobs fail completely with no workaround. 
+ - **v5.0.0, released 2018-06-16**
+   - Original 5.0.0 release
 
 ### Highlights
 
