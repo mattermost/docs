@@ -117,10 +117,10 @@ Bonus: When QA Contributor finds and reports a bug on a release candidate build 
 
 Community Coordinator: TBD
 
-Success Contributors 
+Knowledge Base Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-Success Contributors share feedback, questions and answers on Mattermost through forums for `trouble shooting <https://www.mattermost.org/troubleshoot/>`_, `feature proposals <https://www.mattermost.org/feature-ideas/>`_, and `other topics <https://forum.mattermost.org>`_. 
+Knowledge Base Contributors share feedback, questions and answers on Mattermost through forums for `trouble shooting <https://www.mattermost.org/troubleshoot/>`_, `feature proposals <https://www.mattermost.org/feature-ideas/>`_, and `other topics <https://forum.mattermost.org>`_. 
 
 Community Coordinator: Paul Rothrock 
 
