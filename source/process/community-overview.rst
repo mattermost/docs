@@ -7,9 +7,8 @@ Mattermost Community
   :local:
   :depth: 2
 
-===============================
-Vision for Mattermost Community 
-===============================
+Community 
+---------------------------------------------------------
 
 At Mattermost, we be believe workplace messaging will become a leading platform for workflow and business process. We believe building such a platform on open source infrastructure has powerful benefits.  
 
@@ -29,8 +28,10 @@ A subset of the Mattermost community as "contributors" who help increase the ove
 
 The work of all contributors is valued, appreciated and recognized as a driving force behind the project's growth.  
 
+There are many ways to contribute: 
+
 Solution Builders   
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 As of July 2018, `over 1000 open source projects on GitHub reference Mattermost <https://github.com/search?q=mattermost>`_. Solution Builders create a host of technologies to empower Mattermost software to solve real world problems. Technologies include: 
 
@@ -44,10 +45,24 @@ As of July 2018, `over 1000 open source projects on GitHub reference Mattermost 
 
 Community Leader: Jason Blais 
 
+LinkedIn Recognition 
+
+- Title: ``Solution Builder`` 
+- Company: ``Mattermost Open Source Project`` 
+- Location: ``[Where you did your work]`` 
+- From: ``[Date started]``
+- I currently work here: ``Check "Yes" if you continue to maintain your work`` 
+- Headline: ``Solution builder for Mattermost open source project``
+- Description: ``[Description of your solution, its benefit to end users, and link to project. Example: "Maintainer of Mattermost-Zoom plugin which offers voice, video and screensharing for Mattermost end users through Zoom integration, either through a self-hosted private cloud deployment or a vendor-hosted SaaS service from Zoom. See the project at https://github.com/mattermost/mattermost-plugin-zoom."]`` 
+
 Code Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Code Contributors 
+Contributors Code Contributors 
+
+- Level 1
+- Level 2
+- Level 3 
 
   - They contribute features, small improvements and bug fixes to server, webapp, mobile and desktop app repos.
 
