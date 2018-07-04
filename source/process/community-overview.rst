@@ -30,12 +30,11 @@ The work of all contributors is valued, appreciated and recognized as a driving 
 
 There are many ways to contribute: 
 
-Solution Builders   
-~~~~~~~~~~~~~~~~~~
+Solution Contributors   
+~~~~~~~~~~~~~~~~~~~~~
 
 As of July 2018, `over 1000 open source projects on GitHub reference Mattermost <https://github.com/search?q=mattermost>`_. Solution Builders create a host of technologies to empower Mattermost software to solve real world problems. Technologies include: 
 
-- **Deployment Solutions** - Includes packaging and automation for Docker, Kubernetes and other leading virtualization and orchestration solutions. See `Deployment Solutions Programs <https://docs.mattermost.com/guides/orchestration.html>`_ for guidance on how to build to common Mattermost standards. 
 - **Self-hosted Integration Solutions** - Includes connectivity and integration with 3rd party applications such as Jira, Confluence, GitLab, Jenkins and other tools 
 - **SaaS-based Integration Solutions** - Includes connectivity and integration with services like Twitter, Zendesk, Salesforce and hundreds of other extensions with services like Zapier.
 - **Programming Solutions** - Includes language-specific drivers and connectors to simplify the work of other developers 
@@ -72,29 +71,48 @@ All contributors Level 2 and above are eligible for a `custom-printed Mattermost
 
 Community Leader: Eric Sethna 
 
+Translation Contributors 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Translation Contributors can create and update translations to existing or new Mattermost languages at https://translate.mattermost.com. In addition, community members can become "Language owners" and help review, coordinate and supervise the translation of Mattermost into languages they speak. 
+
+Community Leader: Jason Blais 
+
+Documentation Contributors 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Documentation Contributors update, edit and create new documentation, help text, training and other materials to help the community get the most out of Mattermost software. Core documentation is found at https://docs.mattermost.com and contributions can be made via the open source repository at https://github.com/mattermost/docs/
+
+Community Leader: Justin Reynolds
+
+Influence Contributors 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
 3. End users (Owner: Paul)
 
   - They ask for help troubleshooting issues, report bugs, share UX feedback and propose new features.
   - Examples: forum.mattermost.org, GitHub repos, Uservoice.
 
-4. Localization Contributors (Owner: Jason)
+Quality Assurance Contributors 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  - They help translate and maintain languages in Pootle translation server.
+Quality Assurance Contributors help find, confirm and report product defects via our process at https://www.mattermost.org/filing-issues/. Anyone who encounters a verifiable defect is welcome to file a bug on the system. 
 
-5. Orchestration solution maintainers (Owner: Amy)
+Bonus: When QA Contributor finds and reports a bug on a release candidate build of Mattermost prior to the final release of the system, the can be awarded a `Mattermost Bug Hunter Award <https://forum.mattermost.org/t/mattermost-bug-hunter-awards/4979>`_ for their contribution. 
 
-  - They create deployment solution programs to more easily install and deploy Mattermost.
-  - Examples: Modules (e.g. Puppet, Heroku), Installers (e.g. Yunohost, Chef Cookbook) and Package managers (Bitnami, HPE Gold).
+Deployment Solution Contributors 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-6. Writers (Owner: Justin)
+Deployment Solutions Contributors create packaging and automation for making it easier to deploy Mattermost, using tools such as Docker, Kubernetes and other leading virtualization and orchestration solutions. See `Deployment Solutions Programs <https://docs.mattermost.com/guides/orchestration.html>`_ for guidance on how to build to common Mattermost standards. 
 
-  - They help write documentation, write tutorials and “how-to” articles, and blog posts.
+Community Leader: Amy Blais
 
-7. Designers (Owner: Mike)
+UX Design Contributors 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  - They help with feature design and review processes.
+UX Design Contributors influence the design of the Mattermost user experience through discussion in the ``ux-design`` channel on the Mattermost continous integration server at https://pre-release.mattermost.com/core/channels/ux-design and through contributions to the `Mattermost User Experience Guidelines <https://docs.mattermost.com/developer/fx-guidelines.html>`_ via https://github.com/mattermost/docs/blob/master/source/developer/fx-guidelines.rst
 
-
+Community Leader: Mike Gamble
 
 Principles
 ---------------------------------------------------------
