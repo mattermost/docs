@@ -3,6 +3,10 @@ image:
   tag: 1f8690f03f7aeef27e727396927ab3cc96ac89e7
   # pullPolicy: Always
   pullSecrets: []
+selfsign:
+  image:
+    repository: paulczar/omgwtfssl@sha256
+    tag: 7fd1f81d740ffc0f87a17cfe4a99a26f9796f682b0cc905820e75ccb6414bcf9
 resources: {}
 env: production
 global: {}
