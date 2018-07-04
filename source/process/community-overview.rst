@@ -85,13 +85,12 @@ Documentation Contributors update, edit and create new documentation, help text,
 
 Community Coordinator: Justin Reynolds
 
-Influence Contributors 
+Success Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-3. End users (Owner: Paul)
+Success Contributors share feedback, questions and answers on Mattermost through forums for `trouble shooting <https://www.mattermost.org/troubleshoot/>`_, `feature proposals <https://www.mattermost.org/feature-ideas/>`_, and `other topics <https://forum.mattermost.org>`_. 
 
-  - They ask for help troubleshooting issues, report bugs, share UX feedback and propose new features.
-  - Examples: forum.mattermost.org, GitHub repos, Uservoice.
+Community Coordinator: Paul Rothrock 
 
 Quality Assurance Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
