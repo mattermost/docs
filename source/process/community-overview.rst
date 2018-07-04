@@ -115,29 +115,20 @@ UX Design Contributors influence the design of the Mattermost user experience th
 
 Community Coordinator: Mike Gamble
 
-Principles
----------------------------------------------------------
+Coordination Contributors 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Focus on areas with high impact-to-`mana <https://docs.mattermost.com/process/training.html#mana>`_ ratio.
-2. It should be easy and straightforward to start contributing.
-3. Community building should be directed towards 3R’s: Recognition, Retention and Recruitment.
+Coordination Contributors help organize and align contributors from all the different roles above. When coordinating and leading a contributor community, key principles to keep in mind include: 
 
-Context 
----------------------------------------------------------
+1. Make it easy and realistic for contributors to get started. 
 
-1. You need a community of users to attract a community of contributors. 
- 
-  - For every 10,000 users, 100 might file bugs or request features, 10 might read the contribution guidelines, 1 might submit a patch.
+Have clear instructions and realistic expectations. Remember there are thousands of open source projects in the world so the more difficult it is to contribute the fewer contributions there will be. 
 
-2. Expectations for contributors need to be realistic.
+2. Recognize, retain and recruit
 
-  - Contributing to open source is often a hobby or a side job. Expect the majority of contributors not to be experts. 
+Recognizing people's contributions is vital to keeping them engaged. Leverage the existing programs to acknowledge the impact people are having. Retaining active contributors is hugely impactful because they're trained and ready to go on future projects, and both acknowledgement for jobs done well and new, interesting projects are key to keeping momentum going. The next more important is recruiting new contributors and being able to showcase a vibrant and active existing community to offer a model for new contributions. 
 
-3. There are thousands of other open source projects.
+3. Focus on high impact, skill appropriate contributions 
 
-  - It is very easy to leave to another project since there are many open source projects to choose from.
-
-4. Community building is mana intensive.
-
-  - You need to train contributors, developers and PMs to review PRs and create recognition programs that give specific roles to people.
+When possible, influence contributors to apply themselves to the highest impact tickets and projects appropriate for their skill level. Meaningful contributions early in the contributor journey are a powerful way to draw people into the community. 
 
