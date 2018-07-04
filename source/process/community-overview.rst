@@ -76,6 +76,8 @@ You are welcome to document your contributions to the Mattermost open source pro
 - Headline: ``Solution builder for Mattermost open source project``
 - Description: ``[Description of your solution, its benefit to end users, and link to project. Example: "Maintainer of Mattermost-Zoom plugin which offers voice, video and screensharing for Mattermost end users through Zoom integration, either through a self-hosted private cloud deployment or a vendor-hosted SaaS service from Zoom. See the project at https://github.com/mattermost/mattermost-plugin-zoom."]`` 
 
+Other contributor types beyond Solution Contributors are welcome to use and modify this LinkedIn template to document their contributions as well. 
+
 Platform Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~
 
