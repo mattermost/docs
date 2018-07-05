@@ -95,6 +95,8 @@ spec:
           - name: sidekiq-secrets
             mountPath: /sidekiq-secrets
             readOnly: false
+          resources:
+{{ toYaml $.Values.init.resources | indent 12 }}
         - name: dependencies
           image: "{{ $image }}"
           {{ template "gitlab.imagePullPolicy" $ }}
@@ -118,6 +120,8 @@ spec:
           - name: sidekiq-secrets
             mountPath: '/etc/gitlab'
             readOnly: true
+          resources:
+{{ toYaml $.Values.init.resources | indent 12 }}
 {{- include "pullsecrets" $.Values.image | indent 6}}
       containers:
         - name: {{ $name }}

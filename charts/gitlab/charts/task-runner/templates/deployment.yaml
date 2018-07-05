@@ -35,6 +35,8 @@ spec:
           - name: task-runner-secrets
             mountPath: /init-secrets
             readOnly: false
+          resources:
+{{ toYaml .Values.init.resources | indent 12 }}
 {{- include "pullsecrets" .Values.image | indent 6}}
       containers:
         - name: {{ .Chart.Name }}

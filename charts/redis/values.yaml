@@ -6,6 +6,9 @@ image:
 init:
   image: busybox
   tag: latest
+  resources:
+    requests:
+      cpu: 50m
 service:
   name: redis
   type: ClusterIP

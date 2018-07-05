@@ -20,6 +20,9 @@ serviceName: gitaly
 init:
   image: busybox
   tag: latest
+  resources:
+    requests:
+      cpu: 50m
 
 global:
   # imagePullPolicy: IfNotPresent

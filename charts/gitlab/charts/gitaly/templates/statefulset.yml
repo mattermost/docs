@@ -39,6 +39,8 @@ spec:
           - name: gitaly-secrets
             mountPath: /init-secrets
             readOnly: false
+          resources:
+{{ toYaml .Values.init.resources | indent 12 }}
       securityContext:
         runAsUser: 1000
         fsGroup: 1000

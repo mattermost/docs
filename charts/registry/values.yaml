@@ -49,6 +49,9 @@ init:
   image: "busybox"
   tag: "latest"
   pullPolicy: "IfNotPresent"
+  resources:
+    requests:
+      cpu: 50m
   script: |-
     if [ -e /config/accesskey ] ; then
       sed -e 's@ACCESS_KEY@'"$(cat /config/accesskey)"'@' -e 's@SECRET_KEY@'"$(cat /config/secretkey)"'@' /config/config.yml > /registry/config.yml
