@@ -62,7 +62,7 @@ Important Upgrade Notes
 |                                                    | Those servers with SAML authentication enabled should upgrade during non-peak hours. SAML email addresses are migrated to lowercase to prevent login issues,    |
 |                                                    | which could result in longer than usual upgrade time.                                                                                                           |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | If you use PostgreSQL database and the password contains special characters (e.g. `[]`), escape them in your password, e.g., xxx[]xxx will be xxx%5B%5Dxxx.     |
+|                                                    | If you use PostgreSQL database and the password contains special characters (e.g. ``[]``), escape them in your password, e.g., xxx[]xxx will be xxx%5B%5Dxxx.   |
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.9.0                                             | To improve the production use of Mattermost with Docker, the docker image is now running a as non-root user and listening on port 8000. Please read the         |
 |                                                    | `upgrade instructions <https://github.com/mattermost/mattermost-docker#upgrading-mattermost-to-49>`_ for important changes to existing installations.           |
