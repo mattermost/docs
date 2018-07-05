@@ -107,7 +107,7 @@ Once signed-in, the following channels are recommended for observing how the cor
 
 Observing these public channels as you work will give you a good sense of what it is like to work at Mattermost in a full time capacity to ensure joining the company aligns to your interests and desired career direction.
 
-During the tryout, candidates will submit invoices for up to 40 hours of work (Example `here <https://docs.google.com/spreadsheets/d/1Lx1f3nX64pJTJOttW_QoJwrfRekh0ISjmIwZ7_ePG1g/edit#gid=1>`_). All candidates will be paid $25/hour, regardless of position. Mattermost uses a `standard consulting agreement template <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit?usp=sharing>`_ and provides instructions for invoicing at the start of the tryout. Note that the hourly rate is not necessarily representative of the final offer that would be extended to a successful candidate.
+During the tryout, candidates will submit invoices for up to 40 hours of work (example `here <https://docs.google.com/spreadsheets/d/1Lx1f3nX64pJTJOttW_QoJwrfRekh0ISjmIwZ7_ePG1g/edit#gid=1>`_). All candidates will be paid $25/hour, regardless of position. Mattermost uses a `standard consulting agreement template <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit?usp=sharing>`_ and provides instructions for invoicing at the start of the tryout. Note that the hourly rate is not necessarily representative of the final offer that would be extended to a successful candidate.
 
 Frequently Asked Questions
 --------------------------------------------------
