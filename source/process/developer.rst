@@ -76,7 +76,7 @@ Both declined and accepted candidates will be invited to share feedback on their
 - **Email - Follow-up questions** - If your code samples look good, we'll email you some questions specific to the role.
 - **Video call - Screening interview** - Selected candidates will be invited for a 25-minute screening call with a recruiter.
 - **Video call - Soft-skills discussion** - Next, candidates will be invited to schedule a 25-minute interview with a core committer to assess soft skills and for the candidate to learn more about the role.
-- **(Optional) Sponsored open source contribution** - Candidates who appear technically strong and a cultural fit who have limited or non-existant open source portfolios may be offered sponsorship to develop their own open source portfolio and experience what it's like to work on a major open source project.
+- **Audition** - Candidates who appear technically strong and culturally fit may be offered a real-world “try out” project with Mattermost team members to simulate what it would be like to work on a major open source project.
 - **Reference Checks** - You'll be sent an email request by `SkillSurvey <http://www.skillsurvey.com/>`_ to list 3 references who can verify your past achievements.
 - **Video call - CTO interview** - Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview may include technical questions along with a discussion of either past work or results of the simulation, the candidate's interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations.
 - **Video call - CEO interview** - Finally, candidates will have a 45-minute interview with our CEO.
@@ -88,34 +88,26 @@ Notes:
 - Staff developers in the US are typically offered full-time employment through a U.S. co-employer, with local payroll via TriNet, benefits and W2 tax reporting.
 - Staff developers outside the U.S. and Canada are offered full-time consulting paperwork very similar to the click-sign agreement for the paid simulation.
 
-Sponsored Open Source Portfolio 
+Audition
 -------------------------------
 
-For candidates who show strong potential for technical and cultural fit, but who have a limited or non-existant portfolios of open source work, Mattermost may offer sponsorship for candidates to develop their own open source portfolio working on the Mattermost open source project working in modern technologies such as Golang, React, React Native and Kubernetes. 
+For the benefit of candidates and the company, Mattermost offers real-world “try out” projects with Mattermost team members to simulate what it would be like to work at the company prior to hiring. The practice of auditions in open source companies was pioneered by Automattic (creators of WordPress) and detailed by `Harvard Business Review in 2014 <https://hbr.org/2014/04/the-ceo-of-automattic-on-holding-auditions-to-build-a-strong-team>`_. This practice has been a vital part of Mattermost culture.
 
-At all times, the open source portfolio work is 100% owned by the candidate and created using the candidate's personal email and GitHub account. In general, even candidates who do not eventually become Mattermost staff find great value in having an open source portfolio that significantly broadens their employment options. 
+Candidates who show strong potential for technical and cultural fit are invited to work on tasks that are part of their desired position, complete a project designed by their potential manager, or select from open `Help Wanted tickets]<https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ to be completed per the `Mattermost contribution guidelines <https://developers.mattermost.com/contribute/getting-started/>`_. Your work will become a permanent part of the open source project that you can reference for the rest of your career. You’re also eligible to receive a `Mattermost Mug <https://twitter.com/search?q=%23mattermug&src=typd>`_ in appreciation of your first contribution. Here’s an example of `a successful project completed during a tryout <https://www.movetoiceland.com/mattermost-recipe-1-preview-videos/#.Wz2kb9hKjUK>`_.
 
-The sponsored contributions also serve as a "simulation" of working on one of the world's largest open source projects to understand how they would enjoy such a role should they decide to join the company. Your code will likely be reviewed and used by hundreds of other contributing developers. After a vetting process, successful projects are merged and the results of your simulation will be deployed by thousands of companies around in the world.
-
-Your work will become a permanent part of the open source project that you can reference for the rest of your career. You're also eligible to receive a `Mattermost Mug <https://twitter.com/search?q=%23mattermug&src=typd>`_ in appreciation of your first contribution.
-
-The sponsorship reflects an investment from the core committers to work with a high potential candidate through a series of significant contributions, answering questions, providing input and reviewing code as needed. It also reflects an investment from the candidate to explore the experience of working in open source. 
-
-The sponsorship project typically consists of a collection of challenging `Help Wanted tickets <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ to be completed per the `Mattermost contribution guidelines <../developer/contribution-guide.html>`_ in a mutually agreed timeline which could be anywhere from a couple of weekends to several weeks in duration, reflecting about 30-40 hours of open source development at the estimated skill level of the candidate.
-
-A standard sponsorship of $750 USD is paid at the outset of the project. It is not an indicator of the final offer that would be extended to a successful candidate. A `standard click-sign services agreement <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit#heading=h.u3m8fmn6xapr>`_ is used to accept the fee. The fee is paid regardless of whether the project is completed.
-
-While you're working on the project, you can join the Mattermost community site at https://pre-release.mattermost.com/core/.
+While you’re working with us, you can join the Mattermost community site `here <https://pre-release.mattermost.com/core/>`_.
 
 Once signed-in, the following channels are recommended for observing how the core committers work with the community to ship new releases:
 
-- https://pre-release.mattermost.com/core/channels/developers
-- https://pre-release.mattermost.com/core/channels/bugs
-- https://pre-release.mattermost.com/core/channels/release-checklist
-- https://pre-release.mattermost.com/core/channels/release-discussion
-- https://pre-release.mattermost.com/core/channels/peer-to-peer-help
+* [Developers](https://pre-release.mattermost.com/core/channels/developers)
+* [Bugs](https://pre-release.mattermost.com/core/channels/bugs)
+* [Release Checklist](https://pre-release.mattermost.com/core/channels/release-checklist)
+* [Release Discussion](https://pre-release.mattermost.com/core/channels/release-discussion)
+* [Peer-to-Peer Help](https://pre-release.mattermost.com/core/channels/peer-to-peer-help)
 
 Observing these public channels as you work will give you a good sense of what it is like to work at Mattermost in a full time capacity to ensure joining the company aligns to your interests and desired career direction.
+
+During the tryout, candidates will submit invoices for up to 40 hours of work (Example `here <https://docs.google.com/spreadsheets/d/1Lx1f3nX64pJTJOttW_QoJwrfRekh0ISjmIwZ7_ePG1g/edit#gid=1>`_). All candidates will be paid $25/hour, regardless of position. Mattermost uses a `standard consulting agreement template <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit?usp=sharing>`_ and provides instructions for invoicing at the start of the tryout. Note that the hourly rate is not necessarily representative of the final offer that would be extended to a successful candidate.
 
 Frequently Asked Questions
 --------------------------------------------------
@@ -123,4 +115,4 @@ Frequently Asked Questions
 Do you have internships?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-While we no longer offer internships for developers, if you get a couple of `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull requests accepted, we'll interview you for one. This will be a remote internship without supervision; you'll only get feedback on your merge requests. If you want to work on open source and qualify `please submit an application <https://jobs.lever.co/mattermost/>`_. In the cover letter field, please note that you want an internship and link to the accepted pull requests. The pull requests should be of significant value and difficulty, which is at the discretion of the hiring manager. For example, fixing 10 typos isn't as valuable as shipping 2 new features.
+While we no longer offer internships for developers, if you get a couple of `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull requests accepted, we'll interview you for one. This will be a remote internship without supervision; you'll only get feedback on your merge requests. If you want to work on open source and qualify, `please submit an application <https://jobs.lever.co/mattermost/>`_. In the cover letter field, please note that you want an internship and link to the accepted pull requests. The pull requests should be of significant value and difficulty, which is at the discretion of the hiring manager. For example, fixing 10 typos isn't as valuable as shipping 2 new features.
