@@ -34,7 +34,7 @@ Requirements
 - You're self-motivated with strong organizational skills.
 - You share our values, and work in accordance with those values.
 - You're proficient in Golang, React and/or React Native, or are able to ramp quickly into those languages.
-- You've either made substantial contributions to the Mattermost open source project or are open to completing a `Sponsored Open Source Portfolio`_ to assess your comfort in working in open source.
+- You've either made substantial contributions to the Mattermost open source project or are open to completing an `Audition`_ to assess your comfort in working in open source.
 - Ideal, but not required: Experience working in online communities, having made at least one `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull request to a Mattermost repository, working on other Golang, React or React Native apps.
 
 Levels
@@ -93,17 +93,17 @@ Audition
 
 For the benefit of candidates and the company, Mattermost offers real-world “try out” projects with Mattermost team members to simulate what it would be like to work at the company prior to hiring. The practice of auditions in open source companies was pioneered by Automattic (creators of WordPress) and detailed by `Harvard Business Review in 2014 <https://hbr.org/2014/04/the-ceo-of-automattic-on-holding-auditions-to-build-a-strong-team>`_. This practice has been a vital part of Mattermost culture.
 
-Candidates who show strong potential for technical and cultural fit are invited to work on tasks that are part of their desired position, complete a project designed by their potential manager, or select from open `Help Wanted tickets]<https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ to be completed per the `Mattermost contribution guidelines <https://developers.mattermost.com/contribute/getting-started/>`_. Your work will become a permanent part of the open source project that you can reference for the rest of your career. You’re also eligible to receive a `Mattermost Mug <https://twitter.com/search?q=%23mattermug&src=typd>`_ in appreciation of your first contribution. Here’s an example of `a successful project completed during a tryout <https://www.movetoiceland.com/mattermost-recipe-1-preview-videos/#.Wz2kb9hKjUK>`_.
+Candidates who show strong potential for technical and cultural fit are invited to work on tasks that are part of their desired position, complete a project designed by their potential manager, or select from open `Help Wanted tickets <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ to be completed per the `Mattermost contribution guidelines <https://developers.mattermost.com/contribute/getting-started/>`_. Your work will become a permanent part of the open source project that you can reference for the rest of your career. You’re also eligible to receive a `Mattermost Mug <https://twitter.com/search?q=%23mattermug&src=typd>`_ in appreciation of your first contribution. Here’s an example of `a successful project completed during a tryout <https://www.movetoiceland.com/mattermost-recipe-1-preview-videos/#.Wz2kb9hKjUK>`_.
 
 While you’re working with us, you can join the Mattermost community site `here <https://pre-release.mattermost.com/core/>`_.
 
 Once signed-in, the following channels are recommended for observing how the core committers work with the community to ship new releases:
 
-* [Developers](https://pre-release.mattermost.com/core/channels/developers)
-* [Bugs](https://pre-release.mattermost.com/core/channels/bugs)
-* [Release Checklist](https://pre-release.mattermost.com/core/channels/release-checklist)
-* [Release Discussion](https://pre-release.mattermost.com/core/channels/release-discussion)
-* [Peer-to-Peer Help](https://pre-release.mattermost.com/core/channels/peer-to-peer-help)
+* `Developers <https://pre-release.mattermost.com/core/channels/developers>`_
+* `Bugs <https://pre-release.mattermost.com/core/channels/bugs>`_
+* `Release Checklist <https://pre-release.mattermost.com/core/channels/release-checklist>`_
+* `Release Discussion <https://pre-release.mattermost.com/core/channels/release-discussion>`_
+* `Peer-to-Peer Help <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`_
 
 Observing these public channels as you work will give you a good sense of what it is like to work at Mattermost in a full time capacity to ensure joining the company aligns to your interests and desired career direction.
 
