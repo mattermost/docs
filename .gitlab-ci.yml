@@ -124,7 +124,7 @@ review:
     - master
 
 stop_review:
-  stage: cleanup
+  stage: review
   variables:
     GIT_CHECKOUT: "false"
   script:
