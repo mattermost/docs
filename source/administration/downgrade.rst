@@ -81,6 +81,3 @@ DELETE from Systems WHERE Name = 'migration_advanced_permissions_phase_2';
 
      sudo systemctl start mattermost
      
-     
-
-XXXXXX GG any more steps to be added or are applicable based on the upgrade guide? https://docs.mattermost.com/administration/upgrade.html
