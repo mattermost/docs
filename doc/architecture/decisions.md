@@ -6,7 +6,8 @@ regarding the design of the charts in this repository.
 ## Preference of Secrets in initContainer over Environment
 
 Much of the container ecosystem has, or expects, the capability to be configured
-through environment variables. This [configuration practice](https://12factor.net/config) stems from the concept of [The Twelve-Factor App](https://12factor.net). This
+through environment variables. This [configuration practice](https://12factor.net/config)
+stems from the concept of [The Twelve-Factor App](https://12factor.net). This
 greatly simplifies configuration across multiple deployment environemnts, there
 remains a security concern with passing connection secrets such as passwords and
 private keys via the container's environment.
@@ -54,13 +55,13 @@ The benefits of this are straight-forward:
 - Increased DRY behavior, leading to easier maintenance. There should be no reason
 to have duplicates of the same function across multiple sub-charts when a single
 entry will suffice.
-- Reduction of template naming conflicts. All [partials throughout a chart are
-compiled together][helm-dev-doc], and thus we can treat them like the global behavior they are.
+- Reduction of template naming conflicts. All [partials throughout a chart are compiled together][helm-dev-doc],
+and thus we can treat them like the global behavior they are.
 
 Related issue:
 - [#352](https://gitlab.com/charts/gitlab/issues/352)
 
-[helm-dev-doc]: https://docs.helm.sh/chart_template_guide/#declaring-and-using-templates-with-define-and-template)
+[helm-dev-doc]: https://docs.helm.sh/chart_template_guide/#declaring-and-using-templates-with-define-and-template
 
 ## Forked charts
 
