@@ -65,6 +65,8 @@ spec:
               mountPath: /config
             - name: minio-server-config
               mountPath: /minio
+          resources:
+{{ toYaml .Values.init.resources | indent 12 }}
 {{- include "pullsecrets" .Values | indent 6}}
       containers:
         - name: minio

@@ -66,6 +66,8 @@ spec:
           - name: {{ .Release.Name }}-metrics
             mountPath: /metrics
             readOnly: false
+          resources:
+{{ toYaml .Values.init.resources | indent 12 }}
       serviceAccountName: {{ template "redis-ha.serviceAccountName" . }}
       {{- if .Values.nodeSelector }}
       nodeSelector:
