@@ -4,7 +4,7 @@ kind: ConfigMap
 metadata:
   name: {{ template "fullname" . }}
   labels:
-{{ include "labels.standard" . | indent 4 }}
+{{ include "gitlab.standardLabels" . | indent 4 }}
 data:
   redis-slave.conf: |
     slaveof %master-ip% %master-port%

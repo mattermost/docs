@@ -9,13 +9,10 @@ kind: HorizontalPodAutoscaler
 metadata:
   name: {{ $queueName }}
   labels:
-    app: {{ template "name" $ }}
-    chart: {{ $.Chart.Name }}-{{ $.Chart.Version | replace "+" "_" }}
-    release: {{ $.Release.Name }}
-    heritage: {{ $.Release.Service }}
+{{ include "gitlab.standardLabels" $ | indent 4 }}
 spec:
   scaleTargetRef:
-    apiVersion: extensions/v1beta1
+    apiVersion: apps/v1beta2
     kind: Deployment
     name: {{ $queueName }}
   minReplicas: {{ default $.Values.minReplicas .minReplicas }}

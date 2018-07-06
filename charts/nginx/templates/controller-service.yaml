@@ -10,11 +10,8 @@ metadata:
 {{- if .Values.controller.service.labels }}
 {{ toYaml .Values.controller.service.labels | indent 4 }}
 {{- end }}
-    app: {{ template "nginx-ingress.name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
     component: "{{ .Values.controller.name }}"
-    heritage: {{ .Release.Service }}
-    release: {{ .Release.Name }}
+{{ include "gitlab.standardLabels" . | indent 4 }}
   name: {{ template "nginx-ingress.controller.fullname" . }}
 spec:
   clusterIP: "{{ .Values.controller.service.clusterIP }}"
@@ -63,7 +60,7 @@ spec:
       targetPort: "{{ $key }}-udp"
   {{- end }}
   selector:
-    app: {{ template "nginx-ingress.name" . }}
+    app: {{ template "name" . }}
     component: "{{ .Values.controller.name }}"
     release: {{ .Release.Name }}
   type: "{{ .Values.controller.service.type }}"

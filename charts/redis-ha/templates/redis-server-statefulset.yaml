@@ -8,7 +8,7 @@ metadata:
   labels:
     name: "redis-server"
     redis-node: "true"
-{{ include "labels.standard" . | indent 4 }}
+{{ include "gitlab.immutableLabels" . | indent 4 }}
   annotations:
 {{ include "gitlab.serviceAnnotations" . | indent 4 }}
 spec:

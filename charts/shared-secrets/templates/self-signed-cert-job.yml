@@ -4,10 +4,7 @@ kind: Job
 metadata:
   name: {{ template "shared-secrets.jobname" . }}-selfsign
   labels:
-    app: {{ template "name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+{{ include "gitlab.standardLabels" . | indent 4 }}
   annotations:
     "helm.sh/hook": pre-install,pre-upgrade
     "helm.sh/hook-delete-policy": hook-succeeded
@@ -45,8 +42,16 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
         command:
         - /bin/bash
-        - -ec
-        - "kubectl create -f /certs/secret.yaml || true"
+        - -exc
+        - |
+          kubectl create -f /certs/secret.yaml || true
+{{- if not .Values.global.application.name }}
+          kubectl --namespace=$namespace label \
+            secret {{ template "gitlab.wildcard-self-signed-cert-name" . }} $(echo '{{ include "gitlab.application.labels" . | replace ": " "=" | replace "\n" " " }}' | sed -E 's/=[^ ]*/-/g')
+{{- end }}
+          kubectl --namespace=$namespace label \
+            --overwrite \
+            secret {{ template "gitlab.wildcard-self-signed-cert-name" . }} {{ include "gitlab.standardLabels" . | replace ": " "=" | replace "\n" " " }}
         volumeMounts:
         - name: certs-path
           mountPath: /certs

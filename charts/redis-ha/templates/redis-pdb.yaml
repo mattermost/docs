@@ -5,7 +5,7 @@ kind: PodDisruptionBudget
 metadata:
   name: {{ template "fullname" . }}
   labels:
-{{ include "labels.standard" . | indent 4 }}
+{{ include "gitlab.standardLabels" . | indent 4 }}
 spec:
   maxUnavailable: {{ .Values.maxUnavailable }}
   selector:

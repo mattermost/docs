@@ -1,0 +1,43 @@
+{{- if and .Values.global.application.name .Values.global.application.create -}}
+apiVersion: app.k8s.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ .Values.global.application.name | quote }}
+  labels:
+{{ include "gitlab.standardLabels" . | indent 4 }}
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ .Values.global.application.name | quote }}
+  componentKinds:
+  - apiVersion: v1
+    kind: ConfigMap
+  - apiVersion: v1
+    kind: Service
+  - apiVersion: v1
+    kind: ServiceAccount
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: Role
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRole
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: RoleBinding
+  - apiVersion: rbac.authorization.k8s.io/v1
+    kind: ClusterRoleBinding
+  - apiVersion: batch/v1
+    kind: Job
+  - apiVersion: v1
+    kind: Secret
+  - apiVersion: extensions/v1beta1
+    kind: Ingress
+  - apiVersion: v1
+    kind: PersistentVolumeClaim
+  - apiVersion: apps/v1beta2
+    kind: Deployment
+  - apiVersion: autoscaling/v2beta1
+    kind: HorizontalPodAutoscaler
+  - apiVersion: apps/v1beta2
+    kind: StatefulSet
+  - apiVersion: policy/v1beta1
+    kind: PodDisruptionBudget
+{{- end -}}

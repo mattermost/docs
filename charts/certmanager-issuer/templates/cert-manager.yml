@@ -4,10 +4,7 @@ kind: ConfigMap
 metadata:
   name: {{ template "fullname" . }}-certmanager
   labels:
-    app: {{ template "name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+{{ include "gitlab.standardLabels" . | indent 4 }}
 data:
   create-issuer: |
 {{ include (print $.Template.BasePath "/_create_issuer.sh") . | indent 4 }}

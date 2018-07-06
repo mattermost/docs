@@ -4,9 +4,7 @@ kind: Issuer
 metadata:
   name: {{ .Release.Name }}-issuer
   labels:
-    app: {{ template "name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
+{{ include "gitlab.standardLabels" . | indent 4 }}
 spec:
   acme:
     # The ACME server URL
