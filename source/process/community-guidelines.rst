@@ -144,11 +144,12 @@ General Issues
 2. If an issue has a Jira ticket with a ``help-wanted`` label, there is a Help Wanted ticket in GitHub. It can be closed with the following note:
 
 .. code-block:: text
+
   Hi @username
 
   Thanks for the report! We have created a [Help Wanted issue here](link to GitHub issue) and are looking for community's help. Would you be interested helping with a pull request?
 
-3. If an issue has a Jira ticket without a ``help-wanted`` label and assigned to the current release fix version for a developer to fix, it can be closed with the following note
+3. If an issue has a Jira ticket without a ``help-wanted`` label and assigned to the current release fix version for a developer to fix, it can be closed with the following note:
 
 .. code-block:: text
 
@@ -171,7 +172,7 @@ General Issues
 Feature Requests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Respond to the issue with the following note
+Respond to the issue with the following note:
 
 .. code-block:: text
 
