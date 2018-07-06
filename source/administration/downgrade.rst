@@ -52,7 +52,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
         sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
         
         
-#. Run the following SQL statements to revert the changes to the database made by the migration. XXXXXX GG Are there commands that have to be run before entering these SQL statements?
+#. Connect to your database CLI and run the following SQL statements to revert the changes to the database made by the migration.
 
 ```
 UPDATE Teams SET SchemeId = NULL;
