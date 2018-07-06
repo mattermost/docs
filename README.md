@@ -1,8 +1,8 @@
 # Cloud Native GitLab Helm Chart
 
 > **Notes**:
-* The chart is currently **beta** This means that breaking changes could still be introduced on short notice but that the project is mostly stable
-* There are [known issues and limitations](doc/architecture/beta.md#known-issues-and-limitations).
+> * The chart is currently **beta** This means that breaking changes could still be introduced on short notice but that the project is mostly stable
+> * There are [known issues and limitations](doc/architecture/beta.md#known-issues-and-limitations).
 
 
 We are working on a new cloud native method of deploying GitLab on Kubernetes, using the [Helm chart in this repository](#helm-charts) along with a [new set of Docker containers](https://gitlab.com/gitlab-org/build/CNG) that are specific to each component of GitLab.
