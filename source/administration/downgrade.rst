@@ -1,7 +1,7 @@
 Downgrading Mattermost Server
 =============================
 
-In most cases you can downgrade Mattermost Server using the same steps as :doc:`upgrade`. The binaries can be found in the :doc:`version-archive`
+In most cases you can downgrade Mattermost Server using the same steps as :doc:`upgrade`. The binaries can be found in the :doc:`version-archive`. We do not recommend downgrading more than one version back from your current installation.
 
 Downgrade from 5.0 to 4.10
 ---------------------------
