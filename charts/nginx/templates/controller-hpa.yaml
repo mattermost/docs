@@ -5,11 +5,8 @@ apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
   labels:
-    app: {{ template "nginx-ingress.name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+{{ include "gitlab.standardLabels" . | indent 4 }}
     component: "{{ .Values.controller.name }}"
-    heritage: {{ .Release.Service }}
-    release: {{ .Release.Name }}
   name: {{ template "nginx-ingress.controller.fullname" . }}
 spec:
   scaleTargetRef:

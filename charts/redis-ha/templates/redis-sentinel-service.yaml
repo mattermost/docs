@@ -5,7 +5,7 @@ metadata:
   labels:
     name: {{ template "name" . }}
     role: service
-{{ include "labels.standard" . | indent 4 }}
+{{ include "gitlab.standardLabels" . | indent 4 }}
   name: {{ template "fullname" . }}-sentinel
 spec:
   ports:
@@ -13,5 +13,5 @@ spec:
       targetPort: 26379
   selector:
     redis-role: "sentinel"
-{{ include "labels.standard" . | indent 4 }}
+{{ include "gitlab.standardLabels" . | indent 4 }}
 {{- end -}}

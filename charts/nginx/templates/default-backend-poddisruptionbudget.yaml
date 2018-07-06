@@ -3,16 +3,13 @@ apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
   labels:
-    app: {{ template "nginx-ingress.name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+{{ include "gitlab.standardLabels" . | indent 4 }}
     component: "{{ .Values.defaultBackend.name }}"
-    heritage: {{ .Release.Service }}
-    release: {{ .Release.Name }}
   name: {{ template "nginx-ingress.defaultBackend.fullname" . }}
 spec:
   selector:
     matchLabels:
-      app: {{ template "nginx-ingress.name" . }}
+      app: {{ template "name" . }}
       release: {{ .Release.Name }}
       component: "{{ .Values.defaultBackend.name }}"
   minAvailable: {{ .Values.defaultBackend.minAvailable }}

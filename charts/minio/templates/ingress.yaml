@@ -7,10 +7,7 @@ kind: Ingress
 metadata:
   name: {{ template "minio.fullname" . }}
   labels:
-    app: {{ template "minio.name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+{{ include "gitlab.standardLabels" . | indent 4 }}
   annotations:
     kubernetes.io/ingress.class: "{{ template "minio.ingressclass" . }}"
     kubernetes.io/ingress.provider: nginx

@@ -4,10 +4,7 @@ kind: StatefulSet
 metadata:
   name: {{ template "fullname" . }}
   labels:
-    app: {{ template "name" . }}
-    chart: {{ .Chart.Name }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+{{ include "gitlab.immutableLabels" . | indent 4 }}
 spec:
   selector:
     matchLabels:

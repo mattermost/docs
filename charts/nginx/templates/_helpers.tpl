@@ -2,7 +2,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "nginx-ingress.name" -}}
+{{- define "name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 

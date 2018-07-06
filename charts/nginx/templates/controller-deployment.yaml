@@ -1,14 +1,11 @@
 {{- if .Values.enabled -}}
 {{- if eq .Values.controller.kind "Deployment" }}
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   labels:
-    app: {{ template "nginx-ingress.name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+{{ include "gitlab.standardLabels" . | indent 4 }}
     component: "{{ .Values.controller.name }}"
-    heritage: {{ .Release.Service }}
-    release: {{ .Release.Name }}
   name: {{ template "nginx-ingress.controller.fullname" . }}
 spec:
   replicas: {{ .Values.controller.replicaCount }}
@@ -16,6 +13,11 @@ spec:
   strategy:
 {{ toYaml .Values.controller.updateStrategy | indent 4 }}
   minReadySeconds: {{ .Values.controller.minReadySeconds }}
+  selector:
+    matchLabels:
+      app: {{ template "name" . }}
+      component: "{{ .Values.controller.name }}"
+      release: {{ .Release.Name }}
   template:
     metadata:
       {{- if .Values.controller.podAnnotations }}
@@ -23,7 +25,7 @@ spec:
 {{ toYaml .Values.controller.podAnnotations | indent 8}}
       {{- end }}
       labels:
-        app: {{ template "nginx-ingress.name" . }}
+        app: {{ template "name" . }}
         component: "{{ .Values.controller.name }}"
         release: {{ .Release.Name }}
         {{- if .Values.controller.podLabels }}
@@ -36,7 +38,7 @@ spec:
 {{ toYaml .Values.imagePullSecrets | indent 8 }}
       {{- end }}
       containers:
-        - name: {{ template "nginx-ingress.name" . }}-{{ .Values.controller.name }}
+        - name: {{ template "name" . }}-{{ .Values.controller.name }}
           image: "{{ .Values.controller.image.repository }}:{{ .Values.controller.image.tag }}"
           imagePullPolicy: "{{ .Values.controller.image.pullPolicy }}"
           {{- if .Values.controller.lifecycle }}

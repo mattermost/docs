@@ -1,15 +1,16 @@
 {{- if .Values.enabled }}
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: {{ template "fullname" . }}
   labels:
-    app: {{ template "name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+{{ include "gitlab.standardLabels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ template "name" . }}
+      release: {{ .Release.Name }}
   template:
     metadata:
       labels:

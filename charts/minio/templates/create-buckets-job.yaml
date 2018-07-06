@@ -4,10 +4,7 @@ kind: Job
 metadata:
   name: {{ template "minio.createBucketsJobName" . }}
   labels:
-    app: {{ template "minio.name" . }}
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
-    release: "{{ .Release.Name }}"
-    heritage: "{{ .Release.Service }}"
+{{ include "gitlab.standardLabels" . | indent 4 }}
 spec:
   activeDeadlineSeconds: 600
   template:

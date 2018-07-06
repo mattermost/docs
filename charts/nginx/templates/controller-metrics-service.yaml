@@ -8,11 +8,8 @@ metadata:
 {{ toYaml .Values.controller.metrics.service.annotations | indent 4 }}
 {{- end }}
   labels:
-    app: {{ template "nginx-ingress.name" . }}
-    chart: {{ .Chart.Name }}-{{ .Chart.Version }}
+{{ include "gitlab.standardLabels" . | indent 4 }}
     component: "{{ .Values.controller.name }}"
-    heritage: {{ .Release.Service }}
-    release: {{ .Release.Name }}
   name: {{ template "nginx-ingress.controller.fullname" . }}-metrics
 spec:
   clusterIP: "{{ .Values.controller.metrics.service.clusterIP }}"
@@ -32,7 +29,7 @@ spec:
       port: {{ .Values.controller.metrics.service.servicePort }}
       targetPort: metrics
   selector:
-    app: {{ template "nginx-ingress.name" . }}
+    app: {{ template "name" . }}
     component: "{{ .Values.controller.name }}"
     release: {{ .Release.Name }}
   type: "{{ .Values.controller.metrics.service.type }}"

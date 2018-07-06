@@ -3,6 +3,8 @@
 
 global:
   # gitlabVersion: master
+  application:
+    create: true
   hosts:
     domain: example.local
     https: true

@@ -11,10 +11,7 @@ kind: ConfigMap
 metadata:
   name: {{ printf "%s-%s" $fullname .name | trunc 63 }}
   labels:
-    app: {{ $name }}
-    chart: {{ $chart }}
-    release: {{ $releaseName }}
-    heritage: {{ $releaseService }}
+{{ include "gitlab.standardLabels" $ | indent 4 }}
     queue_pod_name: {{ .name }}
 data:
   sidekiq_queues.yml.erb: |
