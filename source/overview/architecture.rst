@@ -22,8 +22,14 @@ The binary talks to a database, typically MySQL or PostgreSQL, and a filestore w
 
 .. image:: ../images/architecture_basics.png
 
+Push Notification Service
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The Mattermost `hosted push notification service <https://docs.mattermost.com/mobile/mobile-hpns.html>`_ can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost `test push notification service <https://docs.mattermost.com/overview/faq.html#tpns>`_ or deploy their own push notification service and `compile their mobile applications <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`_ to use that service.
+
 Proxy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Proxy increases security, performance and the ability to monitor traffic connecting to Mattermost:
 
 - **Security**: The proxy manages Secure Socket Layer (TLS/SSL) encryption and sets the policy on how network traffic will be routed to the Mattermost server.
@@ -34,6 +40,7 @@ Proxy increases security, performance and the ability to monitor traffic connect
 
 Communication Protocols
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 There are also communication protocols (HTTPS and WS) that define the type of connection the user makes with the Mattermost server.
 
 **HTTPS Connection** (Secure Hypertext Transfer Protocol)
@@ -77,4 +84,3 @@ Mattermost Enterprise Edition was `load tested <https://github.com/mattermost/ma
 - 1 MySQL database server with 5 read replicas: db.r4.2xlarge (8 vCPU, 61 GB RAM)
 - 3 load test runners (for running the loadtest)
 - 3 NGINX proxies
-
