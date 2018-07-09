@@ -25,7 +25,7 @@ Release date: 2018-07-16
 ### Improvements
 
 #### Web User Interface
- - Added member count for the direct message list.
+ - Added member count for the direct message "More" menu.
  - Added highlighting for Elasticsearch results.
  - Renamed "Delete Channel" to "Archive Channel". Channels can be unarchived [from the commandline](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-channel-restore).
  - Added Channel Purpose as a searchable field in the "More Channels" menu.
@@ -35,8 +35,8 @@ Release date: 2018-07-16
  - Server restart is no longer required to run the job server for the first time.
  
 #### Command Line Interface (CLI)
- - Made Permissions Reset CLI command custom-role aware.
- - Have permanent delete user CLI command delete FileInfos for that user's posts.
+ - Made the `permissions reset` CLI command able to reset all custom-role related data.
+ - Have permanent delete user CLI command delete FileInfos for a user's posts to avoid FileInfo entries becoming orphaned.
  - Improved behaviour when running the CLI command outside of the bin directory.
 
 #### Enterprise Edition
@@ -44,10 +44,11 @@ Release date: 2018-07-16
 
 ### Bug Fixes
 
- - Fixed an issue where iOS could not reply to a push notification.
+ - Fixed an issue where users could not reply to push notifications on iOS.
  - Fixed an issue with an incorrect system message after converting a public channel to private.
  - Fixed an issue with being unable to add emoji reactions after expanding the message details sidebar.
  - Fixed an issue where [rate limiting settings](https://docs.mattermost.com/administration/config-settings.html#rate-limiting) could not be edited in the System Console, and weren't displayed in the User Interface if configured via `config.json`.
+ - Fixed an issue where deleted users shown as "Someone" in the Favorite Channels section could not be removed.
 
 ### Compatibility
 
