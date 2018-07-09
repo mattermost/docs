@@ -6,8 +6,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.0
 
- - **5.0.1, released TBD**
-   - Fixing an issue where large Global Relay exports could cause export jobs to fail completely. 
+ - **5.0.1, released 2018-07-09**
+   - Fixed an issue where large Global Relay exports could cause export jobs to fail completely. 
  - **v5.0.0, released 2018-06-16**
    - Original 5.0.0 release
 
