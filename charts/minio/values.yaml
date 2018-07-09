@@ -111,7 +111,7 @@ nodeSelector: {}
 resources:
   requests:
     memory: 256Mi
-    cpu: 250m
+    cpu: 100m
 
 ## Create a buckets after minio install
 ## An array of items, with name, policy, and purge
