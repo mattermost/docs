@@ -56,14 +56,14 @@ The WSS connection to the Mattermost server enables real-time updates and notifi
 High Availability and Scalability
 -------------------------------------------
 
-Enterprise Edition E20 supports
+Enterprise Edition E20 supports:
 
 1) Clustered Mattermost servers, which minimize latency by
 
 - storing static assets over a global CDN
 - deploying multiple Mattermost servers to host API communication closer to the location of end users
 
-They can also be used to handle scale and failure hand offs in disaster recovery scenario.
+They can also be used to handle scale and failure handoffs in disaster recovery scenario.
 
 2) Database read replicas where replicas can be
 
