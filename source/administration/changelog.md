@@ -11,41 +11,43 @@ Release date: 2018-07-16
 ### Highlights
 
 #### Gfycat integration
- - Added easy access to sharing GIFs without leaving the Mattermost interface.
+ - Added easy access to sharing GIFs without leaving the Mattermost interface. System Admins can enable this feature in **System Console > Customization > GIF**.
  
 #### Auto-linking plugin (Beta)
- - Certain messages can now be formatted into Markdown links automatically before they are saved to the Mattermost database.
+ - Messages can now be formatted into Markdown links automatically before they are saved to the Mattermost database. See [autolink plugin repository](https://github.com/mattermost/mattermost-plugin-autolink) to learn more.
 
 #### Support Mattermost on a subpath
- - Added support for hosting Mattermost at any route (e.g., https://www.example.com/mm) with newly added subpath support.
+ - Added support for hosting Mattermost at any route (e.g., https://www.example.com/mattermost) with newly added subpath support.
  
-#### CSV Compliance Export
- - Removed existing Compliance Reports feature and replaced it with an improved Compliance Export feature that captures more data in CSV format.
+#### CSV Compliance Export ([Enterprise Edition E20](https://about.mattermost.com/pricing))
+ - Extended compliance export feature with CSV format. See [documentation](https://docs.mattermost.com/administration/compliance-export.html) to learn more.
 
 ### Improvements
 
 #### Web User Interface
  - Added member count for the direct message list.
- - Added highlighting to elasticsearch results.
- - Changed all instances of "Delete Channel" to "Archive Channel".
- - Added Purpose as a searchable field.
+ - Added highlighting for Elasticsearch results.
+ - Renamed "Delete Channel" to "Archive Channel". Channels can be unarchived [from the commandline](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-channel-restore).
+ - Added Channel Purpose as a searchable field in the "More Channels" menu.
  
 #### Administration
- - Added the ability to reset user emails in System Console > Users.
- - Added a prototype for CBA.
- - Don't require a server restart to run the job server for the first time.
+ - Added the ability to reset user emails in **System Console > Users**.
+ - Server restart is no longer required to run the job server for the first time.
  
 #### Command Line Interface (CLI)
  - Made Permissions Reset CLI command custom-role aware.
  - Have permanent delete user CLI command delete FileInfos for that user's posts.
  - Improved behaviour when running the CLI command outside of the bin directory.
 
+#### Enterprise Edition
+ - Added experimental support for certificate-based authentication (CBA) to identify a user or a device before granting access to Mattermost. See [documentation](https://docs.mattermost.com/deployment/certificate-based-authentication.html) to learn more.
+
 ### Bug Fixes
 
  - Fixed an issue where iOS could not reply to a push notification.
  - Fixed an issue with an incorrect system message after converting a public channel to private.
  - Fixed an issue with being unable to add emoji reactions after expanding the message details sidebar.
- - Fixed an issue where Rate limit settings could not be edited in the System Console, and weren't displayed in the User Interface if configured via config.json.
+ - Fixed an issue where [rate limiting settings](https://docs.mattermost.com/administration/config-settings.html#rate-limiting) could not be edited in the System Console, and weren't displayed in the User Interface if configured via `config.json`.
 
 ### Compatibility
 
@@ -58,14 +60,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
  - Under "ExperimentalSettings:" in ``config.json``:
-    - Added ``"ClientSideCertEnable": false,``, to 
-    - Added ``"ClientSideCertCheck": "secondary"``, to
+    - Added ``"ClientSideCertEnable": false,``, to enable client-side certification for your Mattermost server.
+    - Added ``"ClientSideCertCheck": "secondary"``, to control whether email and password are required following client-side certification.
  - Under "ServiceSettings:" in ``config.json``:
-    - Added ``"SiteURL": "",``, to
-    - Added ``"ExperimentalLimitClientConfig": false``, to limit the number of client config.json settings prior to login.
-    - Added ``"EnableGifPicker": false,``, ``"GfycatApiKey": 2_KtH_W5,`` and ``"GfycatApiSecret": 3wLVZPiswc3DnaiaFoLkDvB4X0IV6CpMkj4tf2inJRsBY6-FnkT08zGmppWFgeof,``, to
+    - Added ``"ExperimentalLimitClientConfig": false``, to limit the number of config settings sent to users prior to login.
+    - Added ``"EnableGifPicker": false,``, ``"GfycatApiKey": 2_KtH_W5,`` and ``"GfycatApiSecret": 3wLVZPiswc3DnaiaFoLkDvB4X0IV6CpMkj4tf2inJRsBY6-FnkT08zGmppWFgeof,`` to enable a built-in GIF integration with Gfycat.
  - Under ""SqlSettings:" in ``config.json``:
-    - Added ``"ConnMaxLifetimeMilliseconds": 3600000,``, to configure the maximum amount of time a connection to the database may be reused.
+    - Added ``"ConnMaxLifetimeMilliseconds": 3600000,``, to configure the maximum lifetime for a connection to the database.
 
 #### API Changes
 
