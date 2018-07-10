@@ -56,18 +56,19 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 #. Connect to your database CLI and run the following SQL statements to revert the changes to the database made by the migration. The commands may take up to a few minutes to run on large installations.
 
-.. code-block:: sh
+  .. code-block:: sh
 
-  UPDATE Teams SET SchemeId = NULL;
-  UPDATE Channels SET SchemeId = NULL;
+    UPDATE Teams SET SchemeId = NULL;
+    UPDATE Channels SET SchemeId = NULL;
 
-  UPDATE TeamMembers SET Roles = CONCAT(Roles, ' team_user'), SchemeUser = NULL where SchemeUser = 1;
-  UPDATE TeamMembers SET Roles = CONCAT(Roles, ' team_admin'), SchemeAdmin = NULL where SchemeAdmin = 1;
+    UPDATE TeamMembers SET Roles = CONCAT(Roles, ' team_user'), SchemeUser = NULL where SchemeUser = 1;
+    UPDATE TeamMembers SET Roles = CONCAT(Roles, ' team_admin'), SchemeAdmin = NULL where SchemeAdmin = 1;
 
-  UPDATE ChannelMembers SET Roles = CONCAT(Roles, ' channel_user'), SchemeUser = NULL where SchemeUser = 1;
-  UPDATE ChannelMembers SET Roles = CONCAT(Roles, ' channel_admin'), SchemeAdmin = NULL where SchemeAdmin = 1;
+    UPDATE ChannelMembers SET Roles = CONCAT(Roles, ' channel_user'), SchemeUser = NULL where SchemeUser = 1;
+    UPDATE ChannelMembers SET Roles = CONCAT(Roles, ' channel_admin'), SchemeAdmin = NULL where SchemeAdmin = 1;
 
-  DELETE from Systems WHERE Name = 'migration_advanced_permissions_phase_2';
+    DELETE from Systems WHERE Name = 'migration_advanced_permissions_phase_2';
+ 
 
 #. Start Mattermost server.
 
@@ -82,4 +83,3 @@ Owner and group of the install directory - *{owner}* and *{group}*
    .. code-block:: sh
 
      sudo systemctl start mattermost
-     
