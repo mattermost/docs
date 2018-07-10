@@ -39,7 +39,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed ``update_status`` cluster event being sent thousands of times on restart of app servers.
 
 #### Integrations
- - Slash commands configured to receive a GET request now get a request body.
+ - Slash commands configured to receive a GET request now have the payload encoded in the query string instead of receiving it in the body of the request.
  - Added ability for webhooks to actually be locked to a channel.
  
 #### Notifications
