@@ -63,7 +63,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Added ``"ClientSideCertEnable": false,``, to enable client-side certification for your Mattermost server.
     - Added ``"ClientSideCertCheck": "secondary"``, to control whether email and password are required following client-side certification.
  - Under "ServiceSettings:" in ``config.json``:
-    - Added ``"ExperimentalLimitClientConfig": false``, to limit the number of config settings sent to users prior to login.
+    - Added ``"ExperimentalLimitClientConfig": false``, to limit the number of config settings sent to users prior to login. Supported on mobile apps v1.10 and later.
     - Added ``"EnableGifPicker": false,``, ``"GfycatApiKey": 2_KtH_W5,`` and ``"GfycatApiSecret": 3wLVZPiswc3DnaiaFoLkDvB4X0IV6CpMkj4tf2inJRsBY6-FnkT08zGmppWFgeof,`` to enable a built-in GIF integration with Gfycat.
  - Under ""SqlSettings:" in ``config.json``:
     - Added ``"ConnMaxLifetimeMilliseconds": 3600000,``, to configure the maximum lifetime for a connection to the database.
