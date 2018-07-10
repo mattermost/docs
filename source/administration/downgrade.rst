@@ -57,6 +57,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 #. Connect to your database CLI and run the following SQL statements to revert the changes to the database made by the migration. The commands may take up to a few minutes to run on large installations.
 
 .. code-block:: sh
+
   UPDATE Teams SET SchemeId = NULL;
   UPDATE Channels SET SchemeId = NULL;
 
