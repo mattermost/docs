@@ -3745,7 +3745,7 @@ Limit Access to Config Settings Prior to Login
 
 Enable this setting to limit the number of config settings sent to users prior to login.
 
-Supported for Mattermost server v5.1.0 and later, and Mattermost Mobile apps v1.9.0 and later.
+Supported for Mattermost server v5.1.0 and later, and Mattermost Mobile apps v1.10.0 and later.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"ExperimentalLimitClientConfig": "false"`` with options ``true`` and ``false`` for above settings respectively.       |
