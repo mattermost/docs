@@ -20,7 +20,7 @@ If you have Docker set up, Mattermost installs in one-line:
 
    .. code:: bash
 
-       docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
+       docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
 
 Otherwise, see step-by-step instructions:
 
@@ -30,7 +30,7 @@ macOS
 1. Install `Docker for Mac <http://docs.docker.com/installation/mac/>`_ 
 
 2. Run:
-   ``docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview``
+   ``docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview``
 
 3. When docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
@@ -42,7 +42,7 @@ Windows 10
 1. Install `Docker for Windows <http://docs.docker.com/installation/windows/>`_
 
 2. Run:
-   ``docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview``
+   ``docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview``
 
 3. When Docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
@@ -67,7 +67,7 @@ Ubuntu
 
    .. code:: bash
 
-       docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
+       docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
 
 3. When Docker is done fetching the image, open ``http://localhost:8065/``
    in your browser.
@@ -91,7 +91,7 @@ Fedora
 
    .. code:: bash
       
-        docker run --name mattermost-preview -d --publish 8065:8065 mattermost/mattermost-preview
+        docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview
        
 3. When Docker is done fetching the image, open http://localhost:8065/ in your browser.
 
