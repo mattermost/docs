@@ -25,7 +25,6 @@ Release date: 2018-07-16
 ### Improvements
 
 #### Web User Interface
- - Added member count for the direct message "More" menu.
  - Added highlighting for Elasticsearch results.
  - Renamed "Delete Channel" to "Archive Channel". Channels can be unarchived [from the commandline](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-channel-restore).
  - Added Channel Purpose as a searchable field in the "More Channels" menu.
@@ -36,10 +35,10 @@ Release date: 2018-07-16
  
 #### Command Line Interface (CLI)
  - Made the `permissions reset` CLI command able to reset all custom-role related data.
- - Have permanent delete user CLI command delete FileInfos for a user's posts to avoid FileInfo entries becoming orphaned.
- - Improved behaviour when running the CLI command outside of the bin directory.
+ - When `permanent delete user` CLI command is used, all files uploaded by the user are now deleted as well.
+ - Running the CLI outside of the bin directory is now less error prone.
 
-#### Enterprise Edition
+#### Enterprise Edition E20
  - Added experimental support for certificate-based authentication (CBA) to identify a user or a device before granting access to Mattermost. See [documentation](https://docs.mattermost.com/deployment/certificate-based-authentication.html) to learn more.
 
 ### Bug Fixes
