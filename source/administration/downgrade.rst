@@ -45,27 +45,28 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
    #. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
 
-    cd {install-path}/mattermost
-    sudo setcap cap_net_bind_service=+ep ./bin/mattermost
+   .. code-block:: sh
+    
+      cd {install-path}/mattermost
+      sudo setcap cap_net_bind_service=+ep ./bin/mattermost
 
-        cd {install-path}
-        sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
-        
-        
+      cd {install-path}
+      sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
+    
+
 #. Connect to your database CLI and run the following SQL statements to revert the changes to the database made by the migration. The commands may take up to a few minutes to run on large installations.
 
-```
-UPDATE Teams SET SchemeId = NULL;
-UPDATE Channels SET SchemeId = NULL;
+.. code-block:: sh
+  UPDATE Teams SET SchemeId = NULL;
+  UPDATE Channels SET SchemeId = NULL;
 
-UPDATE TeamMembers SET Roles = CONCAT(Roles, ' team_user'), SchemeUser = NULL where SchemeUser = 1;
-UPDATE TeamMembers SET Roles = CONCAT(Roles, ' team_admin'), SchemeAdmin = NULL where SchemeAdmin = 1;
+  UPDATE TeamMembers SET Roles = CONCAT(Roles, ' team_user'), SchemeUser = NULL where SchemeUser = 1;
+  UPDATE TeamMembers SET Roles = CONCAT(Roles, ' team_admin'), SchemeAdmin = NULL where SchemeAdmin = 1;
 
-UPDATE ChannelMembers SET Roles = CONCAT(Roles, ' channel_user'), SchemeUser = NULL where SchemeUser = 1;
-UPDATE ChannelMembers SET Roles = CONCAT(Roles, ' channel_admin'), SchemeAdmin = NULL where SchemeAdmin = 1;
+  UPDATE ChannelMembers SET Roles = CONCAT(Roles, ' channel_user'), SchemeUser = NULL where SchemeUser = 1;
+  UPDATE ChannelMembers SET Roles = CONCAT(Roles, ' channel_admin'), SchemeAdmin = NULL where SchemeAdmin = 1;
 
-DELETE from Systems WHERE Name = 'migration_advanced_permissions_phase_2';
-```
+  DELETE from Systems WHERE Name = 'migration_advanced_permissions_phase_2';
 
 #. Start Mattermost server.
 
