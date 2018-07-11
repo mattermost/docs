@@ -47,7 +47,7 @@ Follow these steps to connect your Elasticsearch server to Mattermost and genera
 7. Restart the Mattermost server.
 
  .. note::
-    Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the `config.json`. Please see `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#elasticsearch-settings>`_.
+    Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the `config.json`. Please see `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#elasticsearch>`_.
 
 Limitations
 ------------
