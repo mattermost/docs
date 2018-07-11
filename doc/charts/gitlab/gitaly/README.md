@@ -21,6 +21,8 @@ Table below contains all the possible charts configurations that can be supplied
 | Parameter                    | Description                            | Default                                  |
 | ---                          | ---                                    | ---                                      |
 | image.repository             | Gitaly image repository                | registry.com/gitlab-org/build/cng/gitaly |
+| replicaCount                 | Gitaly number of nodes                 | 1                                        |
+| storageNames                 | Ordered names of storages              | - default                                |
 | image.tag                    | Gitaly image tag                       | latest                                   |
 | image.pullPolicy             | Gitaly image pull policy               | Always                                   |
 | image.pullSecrets            | Secrets for the image repository       |                                          |

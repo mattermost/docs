@@ -52,6 +52,8 @@ global:
   redis:
     password: {}
   gitaly:
+    storageNames: {}
+    nodes: {}
     authToken: {}
 gitaly:
   # host: '0.0.0.0'

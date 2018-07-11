@@ -77,9 +77,7 @@ data:
         token: "<%= File.read('/etc/gitlab/gitaly/gitaly_token') %>"
       repositories:
         storages: # You must have at least a `default` storage path.
-          default:
-            path: /var/opt/gitlab/repo
-            gitaly_address: tcp://{{ template "gitlab.gitaly.host" . }}:{{ template "gitlab.gitaly.port" . }}
+{{ include "gitlab.gitaly.storages" . | indent 8 }}
       backup:
         path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
       gitlab_shell:

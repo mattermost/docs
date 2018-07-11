@@ -11,7 +11,7 @@ spec:
       app: {{ template "name" . }}
       release: {{ .Release.Name }}
   serviceName: {{ template "fullname" . }}
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   podManagementPolicy: Parallel
   template:
     metadata:

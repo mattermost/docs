@@ -96,6 +96,8 @@ global:
     password: {}
   gitaly:
     authToken: {}
+    storageNames: {}
+    nodes: {}
 redis:
   password: {}
 gitaly:
