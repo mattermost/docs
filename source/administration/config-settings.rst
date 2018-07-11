@@ -2848,8 +2848,8 @@ The workflow for failover without downing the server is to change the database l
 
 ________
 
-Elasticsearch (Beta)
-~~~~~~~~~~~~~~~~~~~~~
+Elasticsearch
+~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
 Changing properties in this section will require a server restart before taking effect.
