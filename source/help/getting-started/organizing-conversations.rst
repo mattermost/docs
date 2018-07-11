@@ -26,7 +26,7 @@ There is also an online status indicator next to the names in the Direct Message
 
 Managing Channels
 -----------------------------------------
-Channels can be created, joined, renamed, left and deleted.
+Channels can be created, joined, renamed, left and archived.
 
 Creating a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -62,11 +62,11 @@ Leaving a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Click the channel name at the top of the center pane to access the drop-down menu, then click **Leave Channel**. Any team member who leaves a Private Channel must be re-added by a channel member if they wish to rejoin. Team members will not receive mention notifications from channels of which they are not members.
 
-Deleting a Channel
+Archiving a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Delete Channel**. Anyone can delete the Public Channels or Private Channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-deletion-for>`_.
+Click the channel name at the top of the center pane to access the drop-down menu, then click **Archive Channel**. Anyone can archive the Public Channels or Private Channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#advanced-permissions>`_.
 
-When a channel is deleted it is removed from the user interface, but an archived copy exists on the server in case it is needed for audit reasons later. Because of this, the URL of a newly created channel cannot be the same URL name as a deleted channel.
+When a channel is archived it is removed from the user interface, but an copy exists on the server in case it is needed for audit reasons later. Because of this, the URL of a newly created channel cannot be the same URL name as an archived channel.
 
 Converting Public Channels to Private
 --------------------------------------
