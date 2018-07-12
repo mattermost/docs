@@ -1,5 +1,5 @@
-Elasticsearch Beta (E20)
-========================
+Elasticsearch (E20)
+===================
 
 *Available in Enterprise Edition E20.*
 
@@ -28,7 +28,7 @@ Configuring Elasticsearch in Mattermost
 
 Follow these steps to connect your Elasticsearch server to Mattermost and generate the post index.
 
-1. Open the **System Console** > **Advanced** > **Elasticsearch (Beta)** section.
+1. Open the **System Console** > **Advanced** > **Elasticsearch** section.
 2. Set **Enable Elasticsearch Indexing** to `true` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database will be automatically indexed on the Elasticsearch server.
 3. Set the Elasticsearch server connection details:
   a) Enter **Server Connection Address** for the Elasticsearch server you set up earlier.
@@ -47,18 +47,17 @@ Follow these steps to connect your Elasticsearch server to Mattermost and genera
 7. Restart the Mattermost server.
 
  .. note::
-    Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the `config.json`. Please see `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#elasticsearch-settings-beta>`_.
+    Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the `config.json`. Please see `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#elasticsearch>`_.
 
-Beta Limitations
------------------
+Limitations
+------------
 
 1. Elasticsearch uses a standard selection of "stop words" to keep search results relevant. Results for the following words will not be returned: 
 
   - "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if", "in", "into", "is", "it", "no", "not", "of", "on", "or", "such", "that", "the", "their", "then", "there", "these", "they", "this", "to", "was", "will", "with"  
 
 2. Searching stop words in quotes returns more results than just the searched terms (`ticket <https://mattermost.atlassian.net/browse/PLT-7314>`_).
-3. AWS Elasticsearch implementations have a limit of 1000 days of post history that is searchable in Beta.
-4. Highlighting of search terms is sometimes missing from the results list.
+3. AWS Elasticsearch implementations have a limit of 1000 days of post history that is searchable.
 
 Frequently Asked Questions (FAQ)
 --------------------------------
@@ -67,9 +66,9 @@ Do I need to use Elasticsearch?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The Elasticsearch engine is designed for large Enterprise deployments wanting to run highly efficient database searches in a cluster environment.
 
-Are there any new search features offered with Elasticsearch Beta?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The Beta implementation of Elasticsearch matches the search features currently available with database search. The Mattermost team is working on extending the Elasticsearch feature set with file name and content search, date filters, and operators and modifiers.
+Are there any new search features offered with Elasticsearch?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The current implementation of Elasticsearch matches the search features currently available with database search. The Mattermost team is working on extending the Elasticsearch feature set with file name and content search, date filters, and operators and modifiers.
 
 How do I monitor system health of an Elasticsearch server?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
