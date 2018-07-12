@@ -4,13 +4,13 @@
 global:
   # gitlabVersion: master
   application:
-    create: false
+    create: true
   hosts:
     domain: example.local
     https: true
     externalIP:
   ingress:
-    configureCertmanager: false
+    configureCertmanager: true
     annotations: {}
     enabled: true
   initialRootPassword: {}
@@ -61,7 +61,7 @@ global:
 certmanager:
   # Install cert-manager chart. Set to false if you already have cert-manager
   # installed or if you are not using cert-manager.
-  install: false
+  install: true
   # Other cert-manager configurations from upstream
   # See https://github.com/kubernetes/charts/tree/master/stable/cert-manager#configuration
   rbac:
@@ -104,7 +104,7 @@ nginx-ingress:
     createRole: true
 
 prometheus:
-  install: false
+  install: true
   rbac:
     create: true
   alertmanager:
@@ -145,7 +145,7 @@ postgresql:
 
 
 gitlab-runner:
-  install: false
+  install: true
   rbac:
     create: true
   runners:
