@@ -5,6 +5,8 @@ Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_.
 
 .. note::
   This feature is replaced by a new :doc:`Compliance Export feature <compliance-export>`, and will be removed in Mattermost v6.0. We recommend migrating to the new system.
+  
+  For a sample CSV output of the new compliance export system, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`_.
 
 This feature enables compliance exports to be produced from the System Console, with all query and download actions logged in an audit history to enable oversight and prevent unauthorized queries. 
 
