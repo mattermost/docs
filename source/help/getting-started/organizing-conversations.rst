@@ -66,7 +66,7 @@ Archiving a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Click the channel name at the top of the center pane to access the drop-down menu, then click **Archive Channel**. Anyone can archive the Public Channels or Private Channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#advanced-permissions>`_.
 
-When a channel is archived it is removed from the user interface, but an copy exists on the server in case it is needed for audit reasons later. Because of this, the URL of a newly created channel cannot be the same URL name as an archived channel.
+When a channel is archived, it is removed from the user interface, but a copy exists on the server in case it is needed for audit reasons later. Because of this, the URL of a newly created channel cannot be the same URL name as an archived channel.
 
 Converting Public Channels to Private
 --------------------------------------
