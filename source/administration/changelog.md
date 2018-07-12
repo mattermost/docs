@@ -36,6 +36,7 @@ Release date: 2018-07-16
 #### Command Line Interface (CLI)
  - Made the `permissions reset` CLI command able to reset all custom-role related data.
  - When `permanent delete user` CLI command is used, all files uploaded by the user are now deleted as well.
+ - ``export`` CLI command was updated to support scheduling exports via `export schedule`, and to export files in Actiance XML and CSV formats.
  - Running the CLI outside of the bin directory is now less error prone.
 
 #### Enterprise Edition E20
