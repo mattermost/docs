@@ -382,10 +382,52 @@ mattermost export
     Compliance export commands
 
   Child Commands
-    -  `mattermost export schedule`_ - Schedule an export job
-    -  `mattermost export csv`_ - Export data from Mattermost in CSV format
     -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format
+    -  `mattermost export csv`_ - Export data from Mattermost in CSV format
+    -  `mattermost export schedule`_ - Schedule an export job
 
+mattermost export actiance
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Export data from Mattermost in Actiance XML format.
+
+  Format
+    .. code-block:: none
+
+      mattermost export actiance
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost export actiance --exportFrom=1513102632
+
+  Options
+    .. code-block:: none
+
+          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+	 
+mattermost export csv
+~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Export data from Mattermost in CSV format.
+
+  Format
+    .. code-block:: none
+
+      mattermost export csv
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost export csv --exportFrom=1513102632
+
+  Options
+    .. code-block:: none
+
+          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+	  
 mattermost export schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -408,48 +450,6 @@ mattermost export schedule
           --format string         Output file format. Currently, only ``actiance`` is supported.
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
           --timeoutSeconds string Set how long the export should run for before timing out.
-
-mattermost export csv
-~~~~~~~~~~~~~~~~~~~~~
-
-  Description
-    Export data from Mattermost in CSV format.
-
-  Format
-    .. code-block:: none
-
-      mattermost export csv
-
-  Example
-    .. code-block:: none
-
-      sudo ./mattermost export csv --exportFrom=1513102632
-
-  Options
-    .. code-block:: none
-
-          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
-
-mattermost export actiance
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Description
-    Export data from Mattermost in Actiance XML format.
-
-  Format
-    .. code-block:: none
-
-      mattermost export actiance
-
-  Example
-    .. code-block:: none
-
-      sudo ./mattermost export actiance --exportFrom=1513102632
-
-  Options
-    .. code-block:: none
-
-          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
 
 mattermost help
 ---------------
