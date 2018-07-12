@@ -33,6 +33,8 @@ CSV
 
 You can use the CSV format to easily transform exports in a desired format for your third-party archive system.
 
+For a sample CSV output, `download a CSV export file here <https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`_.
+
 Actiance XML
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
