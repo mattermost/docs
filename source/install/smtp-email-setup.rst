@@ -69,6 +69,10 @@ To enable email, configure an SMTP email service as follows:
       11. If the test failed please look in **OTHER** > **Logs** for any
           errors that look like ``[EROR] /api/v4/email/test ...``
 
+   4. (Optional) Go to the **Security** > **Sign Up** tab and configure the following:
+
+      1.  **Enable Email Invitations:** ``true``
+
 Sample SMTP Settings
 ~~~~~~~~~~~~~~~~~~~~
 
