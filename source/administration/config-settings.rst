@@ -3230,9 +3230,9 @@ Enable API Team Deletion
 Enable Email Invitations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Email invitations and rate limiting are enabled.
+**True**: Users can invite others to the Mattermost system by email.
 
-**False**: Email invitations and rate limiting are disabled.
+**False**: Email invitations are disabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"EnableEmailInvitations": false``  with options ``true`` and ``false`` for above settings respectively.                  |
