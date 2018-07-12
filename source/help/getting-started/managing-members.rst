@@ -21,7 +21,7 @@ Direct invites are invitation emails sent from your team's server directly to th
 4. Click **Send Invitation**.
 
 .. note::
-  If you do not see the **Send Email Invite** option, confirm with your System Admin that **System Console > Security > Enable Email Invitations** is set to ``true``.
+  If you do not see the **Send Email Invite** option, confirm with your System Admin that **System Console > Security > Sign Up > Enable Email Invitations** is set to ``true``.
 
 Team Invite Link
 ~~~~~~~~~~~~~~~~
