@@ -1,7 +1,7 @@
 Architecture Overview
 ==================
 
-This page provides an overview of the Mattermost architecture with a reference architecture. For a deployment overview, `see here <https://docs.mattermost.com/deployment/deployment.html>`_.
+This page provides an overview of the Mattermost architecture with a reference architecture. For a more detailed deployment overview, `see here <https://docs.mattermost.com/deployment/deployment.html>`_.
 
 .. toctree::
     :maxdepth: 2
@@ -13,12 +13,12 @@ At its core, Mattermost is a single compiled Go binary that is exposed as Restfu
 
 It is configured using `config/config.json <https://docs.mattermost.com/administration/config-settings.html>`_ and provides the following:
 
-- **Authentication client**, which authenticates users to Mattermost. Enterprise Edition supports advanced authentication services such as AD/LDAP and SAML 2.0.
-- **Authentication provider**, which authenticates users via the OAuth 2.0 provider such as GitLab.
-- **Notification service** for email and mobile push.
-- **Data management service** to connect to database and filestore.
+- **Authentication client**, which provides the functionality for users to log into Mattermost via email and password in Team Edition. Enterprise E10 adds the ability for users to authenticate using Active Directory or LDAP and Enterprise E20 add the ability authenticate using SAML SSO providers like ADFS, OneLogin, and Okta. 
+- **Authentication provider**, which enables the Mattermost server to authenticate to other services like GitLab and Zapier using OAuth 2.0.
+- **Notification service**, which sends notifications via SMTP or a Push Notification Service for mobile applications.
+- **Data management service**, which connects to and manages the reading and writing of data to and from supported databases and file storage solutions (local, network-attached storage, Amazon S3, etc).
 
-The binary talks to a database, typically MySQL or PostgreSQL, and a filestore which can be a local file storage, NAS (network-attached storage) or an Amazon S3 bucket.
+The binary talks to a database, typically MySQL or PostgreSQL, and a filestore.
 
 .. image:: ../images/architecture_basics.png
 
@@ -30,11 +30,13 @@ The Mattermost `hosted push notification service <https://docs.mattermost.com/mo
 Proxy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Proxy increases security, performance and the ability to monitor traffic connecting to Mattermost:
+A proxy server is a server (a computer system or an application) that acts as an intermediary for requests from clients seeking resources from other servers. Mattermost recommends using a proxy in front of Mattermost to increase security, performance, and the ability to monitor and shape traffic connecting to Mattermost:
 
-- **Security**: The proxy manages Secure Socket Layer (TLS/SSL) encryption and sets the policy on how network traffic will be routed to the Mattermost server.
-- **Performance**: In a high availability configuration, the proxy balances network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also increase performance.
-- **Monitoring**: The proxy monitors traffic, such as requests and connection statistics, and records audit logs for file uploads and downloads.
+- **Security**: A proxy server can manage Secure Socket Layer (TLS/SSL) encryption and set policy on how network traffic will be routed to the Mattermost server.
+- **Performance**: In a high availability configuration the proxy server balances network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also be used to increase performance.
+- **Monitoring**: A proxy server can monitor connection traffic and record the traffic in standard audit logs that common monitoring tools like Kibana and Splunk can consume and report on. Some of the events that can be captured include file uploads and downloads which are not tracked by the Mattermost Server logging process.
+
+Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`_. For informaton on how to install and configure NGINX for your environment see `our guide <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_. Mattermost also unofficially supports other proxies including `Apache 2 <https://docs.mattermost.com/install/config-apache2.html>`_. 
 
 .. image:: ../images/architecture_with_proxy.png
 
@@ -45,11 +47,15 @@ There are also communication protocols (HTTPS and WS) that define the type of co
 
 **HTTPS Connection** (Secure Hypertext Transfer Protocol)
 
-The HTTPS connection to the Mattermost server renders pages and provides core functionality. It is a secure, encrypted protocol and is highly recommended for production.
+HTTPS connections to the Mattermost Server render pages and provides access to core platform functionality but does not include real-time interactivity (which is enabled by WSS connections).
+
+HTTPS is a secure, encrypted protocol and is highly recommended for production. Unencrypted HTTP connections may be used in initial testing and configuration but should never be used in a production environment.
 
 **WSS Connection** (Secure WebSocket Protocol)
 
-The WSS connection to the Mattermost server enables real-time updates and notifications. It is a secure, encrypted connection and is highly recommended.
+Secure WebSocket (WSS) connections to the Mattermost Server enable real-time updates and notifications between clients and the server.
+
+If a WSS connection is not available and HTTPS is substituted the system will appear to work but real time updates and notifications will not work. In this mode of operation updates will only appear on a page refresh. WSS is persistent connection to the Mattermost Server while a client is connected while HTTPS only connects to the server when a page or file is requested and will be intermittent. 
 
 .. image:: ../images/architecture_with_protocol.png
 
