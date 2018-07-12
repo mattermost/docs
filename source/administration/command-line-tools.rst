@@ -991,7 +991,7 @@ mattermost user migrate_auth
   Example
     .. code-block:: none
 
-      sudo ./mattermost user migrate_auth email ladp email
+      sudo ./mattermost user migrate_auth email ldap email
   Options
     .. code-block:: none
 
