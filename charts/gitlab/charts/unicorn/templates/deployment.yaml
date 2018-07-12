@@ -141,6 +141,10 @@ spec:
             exec:
               command:
               - /scripts/healthcheck
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/bash", "-c", "pkill -SIGQUIT -f 'unicorn master'"]
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
