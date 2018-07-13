@@ -71,6 +71,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Added ``"EnableEmailInvitations": false``, to disable email invitations on the system.
  - Under "SqlSettings:" in ``config.json``:
     - Added ``"ConnMaxLifetimeMilliseconds": 3600000,``, to configure the maximum lifetime for a connection to the database.
+    
+### API Changes
+ 
+#### RESTful API v4 Changes
+
+ - A new ``matches`` field was added to ``POST teams/{team_id}/posts/search`` to return a list of matched terms within the post. This field will only be populated on servers running version v5.1 or greater with Elasticsearch enabled.
 
 ### Known Issues
 
