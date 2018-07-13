@@ -376,20 +376,73 @@ mattermost config validate
         sudo ./mattermost config validate
 
 mattermost export
-------------------------
+-----------------
 
   Description
-    Export data from Mattermost in a format suitable for importing into a third-party archive system.
+    Compliance export commands
+
+  Child Commands
+    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format
+    -  `mattermost export csv`_ - Export data from Mattermost in CSV format
+    -  `mattermost export schedule`_ - Schedule an export job
+
+mattermost export actiance
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Export data from Mattermost in Actiance XML format.
 
   Format
     .. code-block:: none
 
-      mattermost export
+      mattermost export actiance
 
   Example
     .. code-block:: none
 
-      sudo ./mattermost export --format=actiance --exportFrom=1513102632
+      sudo ./mattermost export actiance --exportFrom=1513102632
+
+  Options
+    .. code-block:: none
+
+          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+	 
+mattermost export csv
+~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Export data from Mattermost in CSV format.
+
+  Format
+    .. code-block:: none
+
+      mattermost export csv
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost export csv --exportFrom=1513102632
+
+  Options
+    .. code-block:: none
+
+          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+	  
+mattermost export schedule
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Schedule an export job in a format suitable for importing into a third-party archive system.
+
+  Format
+    .. code-block:: none
+
+      mattermost export schedule
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost export schedule --format=actiance --exportFrom=1513102632
 
   Options
     .. code-block:: none
