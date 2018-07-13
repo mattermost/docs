@@ -104,19 +104,15 @@ To manually release the chart, checkout and setup the [release tools repo](https
 
 ```
 git clone git@gitlab.com:gitlab-org/release-tools.git
-git checkout helm-release-tools
 bundle install
 ```
 
 Then run the appropriate helm release task:
 
 * When you want to release without changing the gitlab app version, call the release task with the new chart version (eg `0.2.1`)
-  - `bundle exec rake helm:release_chart_version[0.2.1]`
+  - `bundle exec rake helm:tag_chart[0.2.1]`
 
 * When you want to release and change both the chart version and the app version (eg `0.2.1` with GitLab `11.0.1`)
-  - `bundle exec rake helm:release_chart_version[0.2.1,11.0.1]`
+  - `bundle exec rake helm:tag_chart[0.2.1,11.0.1]`
 
-> You can run the script in dry-run mode which prevents pushes by setting TEST=true in your environment 
-
-> Currently, while the script is in review you will need to run the tasks with the environment variable CI=true in order
-for the release tools to accept that you aren't on the `master` branch.
+> You can run the script in dry-run mode which prevents pushes by setting TEST=true in your environment
