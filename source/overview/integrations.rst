@@ -39,7 +39,7 @@ Slack-compatible webhooks (private and public cloud)
 Mattermost webhooks are "Slack-compatible, not Slack limited". In applications supporting Slack webhooks you can replace the Slack webhook URL with a Mattermost webhook URL and the integration will work. 
 
 - Learn about `incoming Webhooks <https://docs.mattermost.com/developer/webhooks-incoming.html>`_
-- Learn about `Outgoing Webhooks <https://docs.mattermost.com/developer/webhooks-outgoing.html>`_ 
+- Learn about `outgoing Webhooks <https://docs.mattermost.com/developer/webhooks-outgoing.html>`_ 
 
 700 app integrations using Zapier (public cloud only)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
