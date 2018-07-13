@@ -214,11 +214,16 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Check the security researcher was added to the [Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/) page
     - Confirm link to security updates appears in blog post if there are security updates in this release, with a note thanking the security researcher
     - Update [deprecated feature list](https://about.mattermost.com/deprecated-features/) in mattermost.com with new and scheduled deprecations
-2. Build:
+2. QA:
+    - Verify all PRs and tickets for the release have been tested / closed
+    - Verify Selenium server was put on final RC and build passed
+    - Verify smoke tests on platform and RN apps all passed
+    - Post QA approval in Release Discussion channel
+3. Build:
     - Tags a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC
     - Posts SHA key, md5 sum and GPG signatures of the final build to release channel
     - Post in Release Discussion with links to the EE and Team Edition bits
-3. Dev:
+4. Dev:
     - Verify the hashes (SHA-1, SHA-256 and md5) and GPG signatures are correct for both Team Edition and Enterprise Edition.
     - Test upgrade from previous version to current version, following the [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with database upgrades on both MySQL and Postgres
     - Test upgrade from Team Edition to Enterprise edition based on the [Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)
@@ -226,24 +231,19 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Run loadtests against the final release build to confirm there are no performance issues
     - Ensure [Security Policies](https://docs.mattermost.com/process/security.html) page has been updated
     - Update dependancies after release branch is cut in `mattermost-server`, `mattermost-webapp`, `desktop`, `mattermost-mobile` and `mattermost-redux`
-4. Logistics:
+5. Logistics:
     - Update [MVP page](https://www.mattermost.org/mvp/) with the most valuable contributor of the release
-5. Docs:
+6. Docs:
     - Finalize docs
       - If reviews are not complete, hold a 30 minute doc review meeting with PMs and anyone else who has changed or reviewed docs this release and wants to join
       - Merge the docs release branch to master and verify all changes on docs.mattermost.com once the build is up
       - Submit a correction PR for any incorrect formatting or other errors missed during the initial review
-6. Marketing:
+7. Marketing:
     - Receive sign off on final version of MailChimp email blast and Twitter announcement and schedule for 08:00 PST on the date of marketing announcement
     - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
     - Finalize blog post for mattermost.com, test on mobile view, and set timer for 08:00 PST on the day of release
     - Update feature lists on https://about.mattermost.com/pricing/ and https://about.mattermost.com/features/ with relevant new features
     - Add links to [Admin guide](https://docs.mattermost.com/guides/administrator.html) in the release blog post where needed
-7. QA:
-    - Verify all PRs and tickets for the release have been tested / closed
-    - Verify Selenium server was put on final RC and build passed
-    - Verify smoke tests on platform and RN apps all passed
-    - Post QA approval in Release Discussion channel
  
 If a security fix release is required, run through the following steps:
 
