@@ -55,6 +55,7 @@ Deployment
    /deployment/advanced*
    /deployment/auth*
    /deployment/sso-saml.rst
+   /deployment/certificate-based-authentication*
    /deployment/scaling*
    /deployment/cluster.rst
    /deployment/elastic*

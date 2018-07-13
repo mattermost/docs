@@ -3504,6 +3504,32 @@ To include every blocking event in the profile, set the rate to 1. To turn off p
 | This feature's ``config.json`` setting is ``"BlockProfileRate": "0"`` with decimal and whole number input between 0 and 1.                                           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Experimental Settings
+~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E20*
+
+Enable Client-Side Certification
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Enables client-side certification for your Mattermost server. See `documentation <https://docs.mattermost.com/deployment/certificate-based-authentication.html>`_ to learn more.
+
+**False**: Client-side certification is disabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ClientSideCertEnable": false`` with options ``true`` and ``false`` for the above settings respectively.                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Client-Side Certification Login Method
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Used in combination with the ``ClientSideCertEnable`` setting.
+
+**Primary**: After the client side certificate is verified, user's email is retrieved from the certificate and is used to log in without a password.
+
+**Secondary**: After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ClientSideCertCheck": secondary`` with options ``primary`` and ``secondary`` for the above settings respectively.       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Analytics Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E10 and higher*
