@@ -239,6 +239,11 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Finalize blog post for mattermost.com, test on mobile view, and set timer for 08:00 PST on the day of release
     - Update feature lists on https://about.mattermost.com/pricing/ and https://about.mattermost.com/features/ with relevant new features
     - Add links to [Admin guide](https://docs.mattermost.com/guides/administrator.html) in the release blog post where needed
+7. QA:
+    - Verify all PRs and tickets for the release have been tested / closed
+    - Verify Selenium server was put on final RC and build passed
+    - Verify smoke tests on platform and RN apps all passed
+    - Post QA approval in Release Discussion channel
  
 If a security fix release is required, run through the following steps:
 
