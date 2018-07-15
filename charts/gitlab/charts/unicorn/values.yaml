@@ -95,9 +95,9 @@ global:
     # host: '0.0.0.0'
     password: {}
   gitaly:
+    internal: ["default"]
+    external: []
     authToken: {}
-    storageNames: {}
-    nodes: {}
 redis:
   password: {}
 gitaly:

@@ -21,8 +21,10 @@ Table below contains all the possible charts configurations that can be supplied
 | Parameter                    | Description                            | Default                                  |
 | ---                          | ---                                    | ---                                      |
 | image.repository             | Gitaly image repository                | registry.com/gitlab-org/build/cng/gitaly |
-| replicaCount                 | Gitaly number of nodes                 | 1                                        |
-| storageNames                 | Ordered names of storages              | - default                                |
+| internal[]                   | Ordered names of statfulset storages   | - default                                |
+| external[].name              | name of external node storage          | - ""                                     |
+| external[].hostname          | hostname of external node              | - ""                                     |
+| external[].port              | port of external node                  | - ""                                     |
 | image.tag                    | Gitaly image tag                       | latest                                   |
 | image.pullPolicy             | Gitaly image pull policy               | Always                                   |
 | image.pullSecrets            | Secrets for the image repository       |                                          |

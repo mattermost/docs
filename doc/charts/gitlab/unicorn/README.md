@@ -210,12 +210,13 @@ The `password` attribute for PostgreSQL has to sub keys:
 
 ```YAML
 gitaly:
-  nodes:
-    - hostname: gitaly.example.local
-      port: 8075
-  serviceName: 'gitaly'
-  storageNames:
+  internal:
     - default
+    - default2
+  external:
+    - name: node1
+      hostname: node1.example.local
+      port: 8079
   authToken:
     secret: gitaly-secret
     key: token

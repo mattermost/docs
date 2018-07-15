@@ -30,7 +30,8 @@ global:
   redis:
     password: {}
   gitaly:
-    storageNames: {}
+    internal: ["default"]
+    external: {}
     authToken: {}
 backups:
   bucketNames:

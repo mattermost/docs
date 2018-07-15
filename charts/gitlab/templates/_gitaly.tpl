@@ -1,57 +1,46 @@
 {{/* ######### Gitaly related templates */}}
 
 {{/*
-Return the gitaly hostname
-If the gitaly host is provided, it will use that, otherwise it will fallback
-to the service name 'gitaly'. Preference is local, global, default.
+Return gitaly host for internal statefulsets
 */}}
-{{- define "gitlab.gitaly.host" }}
-{{- if or .Values.gitaly.host .Values.global.gitaly.host -}}
-{{- coalesce .Values.gitaly.host .Values.global.gitaly.host -}}
-{{- else if .Values.gitaly.nodes -}}
-{{- if (index .Values.gitaly.nodes .index).hostname -}}
-{{ (index .Values.gitaly.nodes .index).hostname -}}
-{{- end }}
-{{- else if .Values.global.gitaly.nodes -}}
-{{- if (index .Values.global.gitaly.nodes .index).hostname -}}
-{{ (index .Values.global.gitaly.nodes .index).hostname }}
-{{- end }}
-{{- else -}}
-{{- $podName := printf "%s-gitaly-%d" .Release.Name .index }}
-{{- $name := coalesce .Values.gitaly.serviceName .Values.global.gitaly.serviceName "gitaly" }}
-{{- printf "%s.%s-%s" $podName .Release.Name $name }}
-{{- end }}
-{{- end }}
+{{- define "gitlab.gitaly.storage.internal" -}}
+{{- $releaseName := .Release.Name -}}
+{{- $name := coalesce .Values.gitaly.serviceName .Values.global.gitaly.serviceName "gitaly" -}}
+{{- range $i, $storage := .Values.global.gitaly.internal -}}
+{{- printf "%s:\n" $storage -}}
+{{- printf  "path: /var/opt/gitlab/repo\n" | indent 2 -}}
+{{- $podName := printf "%s-gitaly-%d" $releaseName $i -}}
+{{- printf "gitaly_address: tcp://%s.%s-%s:%d\n" $podName $releaseName $name 8075 -}}
+{{- end -}}
+{{- end -}}
 
 
 {{/*
-Return the gitaly port
-Preference is local, global, default (`8075`)
+Return gitaly storage for external hosts
 */}}
-{{- define "gitlab.gitaly.port" }}
-{{- if .Values.gitaly.nodes -}}
-{{- if (index .Values.gitaly.nodes .index).port -}}
-{{ (index .Values.gitaly.nodes .index).port }}
-{{- end }}
-{{- else if .Values.global.gitaly.nodes -}}
-{{- if (index .Values.global.gitaly.nodes .index).port -}}
-{{ (index .Values.global.gitaly.nodes .index).port }}
-{{- end }}
-{{- else -}}
-8075
+{{- define "gitlab.gitaly.storage.external" -}}
+{{- range $i, $storage := .Values.global.gitaly.external -}}
+{{- printf "%s:\n" $storage.name -}}
+{{- printf  "path: /var/opt/gitlab/repo\n" | indent 2 -}}
+{{- printf "gitaly_address: tcp://%s:%v\n" $storage.hostname (default 8075 $storage.port) -}}
 {{- end -}}
-{{- end }}
+{{- end -}}
 
 
 {{/*
 Return the gitaly storages list
 */}}
 {{- define "gitlab.gitaly.storages" -}}
-{{-  $d := merge (dict) . -}}
-{{- range $i, $storageName := .Values.global.gitaly.storageNames }}
-  {{ $storageName }}:
-    path: /var/opt/gitlab/repo
-    {{- $_ := set $d "index"  $i }}
-    gitaly_address: tcp://{{ template "gitlab.gitaly.host" $d }}:{{ template "gitlab.gitaly.port" $d }}
-{{- end }}
-{{- end }}
+{{- if .Values.global.gitaly.host -}}
+default:
+  path: /var/opt/gitlab/repo
+  gitaly_address: {{ printf "tcp://%s:%d" .Values.global.gitaly.host (default 8075 .Values.global.gitaly.port) }}
+{{- else -}}
+{{- if .Values.global.gitaly.external -}}
+{{ template "gitlab.gitaly.storage.external" . }}
+{{- end -}}
+{{- if .Values.global.gitaly.internal -}}
+{{ template "gitlab.gitaly.storage.internal" . }}
+{{- end -}}
+{{- end -}}
+{{- end -}}

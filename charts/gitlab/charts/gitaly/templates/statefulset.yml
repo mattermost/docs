@@ -11,7 +11,7 @@ spec:
       app: {{ template "name" . }}
       release: {{ .Release.Name }}
   serviceName: {{ template "fullname" . }}
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{- if or .Values.global.gitaly.host }} 0 {{- else }} {{ len .Values.global.gitaly.internal }} {{- end }}
   podManagementPolicy: Parallel
   template:
     metadata:

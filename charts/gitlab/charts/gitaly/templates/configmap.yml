@@ -19,9 +19,7 @@ data:
     # listen on a TCP socket. This is insecure (no authentication)
     listen_addr = "0.0.0.0:8075"
 
-    {{- $storageNames := coalesce .Values.storageNames .Values.global.gitaly.storageNames }}
-    # {{ $storageNames }} This is to invalidate configmap upon changing the storagenames
-    <% @storages = [ {{- range $storageNames }} {{ . | quote }}, {{- end }} ] %>
+    <% @storages = [ {{- range (coalesce .Values.internal .Values.global.gitaly.internal) }} {{ . | quote }}, {{- end }} ] %>
     <% @index=`echo ${HOSTNAME##*-}`.to_i %>
     <% if @storages.length > @index %>
     [[storage]]
