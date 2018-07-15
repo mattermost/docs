@@ -6,7 +6,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.0
 
- - **5.0.1, released 2018-07-09**
+ - **v5.0.1, released 2018-07-09**
    - Fixed an issue where large Global Relay exports could cause export jobs to fail completely. 
  - **v5.0.0, released 2018-06-16**
    - Original 5.0.0 release
@@ -137,7 +137,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v4.10
 
- - **4.10.1, released 2018-06-04**
+ - **v4.10.1, released 2018-06-04**
    - Mattermost v4.10.1 contains a moderate severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
    - Fixed an issue where the Mattermost screen went blank when viewing "Manage Members" list while another user was added to the channel.
    - Fixed an issue where [automatic replies](https://docs.mattermost.com/administration/config-settings.html#enable-automatic-replies-experimental) weren't properly posting or suppressing emails.
@@ -263,13 +263,13 @@ The following deprecations are planned for the Mattermost v5.0 release, which is
 
 ## Release v4.9
 
- - **4.9.4, released 2018-06-04**
+ - **v4.9.4, released 2018-06-04**
    - Mattermost v4.9.4 contains a moderate severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
- - **4.9.3, released 2018-05-15**
+ - **v4.9.3, released 2018-05-15**
    - Fixed an issue where plugin configuration got corrupted upon saving the configuration via the System Console.
- - **4.9.2, released 2018-05-04**
+ - **v4.9.2, released 2018-05-04**
    - Fixed an issue with permissions migration when ``AllowEditPost`` was set to "Always".
- - **4.9.1, released 2018-04-27**
+ - **v4.9.1, released 2018-04-27**
    - Fixed an issue where System Console permissions settings displayed a false error when running High Availability mode.
    - Fixed a race condition on loading roles in the System Console.
    - Reverted a change causing significant performance degradation when loading posts.
@@ -423,9 +423,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v4.8
 
- - **4.8.2, released 2018-06-04**
+ - **v4.8.2, released 2018-06-04**
    - Mattermost v4.8.2 contains a moderate severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
- - **4.8.1, released 2018-04-09**
+ - **v4.8.1, released 2018-04-09**
    - Mattermost v4.8.1 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
    - Fixed a performance issue by removing the `DisplayName` index on the Channels table.
  - **v4.8.0, released 2018-03-16**
@@ -562,7 +562,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v4.7
 
- - **4.7.4, released 2018-04-09**
+ - **v4.7.4, released 2018-04-09**
    - Mattermost v4.7.4 contains multiple security fixes ranging from low to high severity. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
    - Fixed a performance issue by removing the `DisplayName` index on the Channels table.
  - **v4.7.3, released 2018-03-09**
