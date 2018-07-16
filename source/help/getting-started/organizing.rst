@@ -2,7 +2,7 @@
 Organizing Mattermost
 ==========================
 
-The importance of organizing channels increases as Mattermost spreads to thousands of users
+The importance of organizing channels increases as Mattermost spreads to thousands of users.
 
 This document shares best practices from various Mattermost deployments including:
 
@@ -36,11 +36,11 @@ For example, you might begin with a general "Marketing" channel. As conversation
 
 .. tip :: Use colons to separate sections of channel names, rather than `` - `` or `` > `` which require more spaces to display.
 
-As the organization grows, disciplines might split across business units, products and geographies, with channel names like "US: Marketing" and "UK: Marketing"
+As the organization grows, disciplines might split across business units, products and geographies, with channel names like "US: Marketing" and "UK: Marketing".
 
-.. tip :: If you need to shorten country names, use standard `2-letter country codes <http://www.nationsonline.org/oneworld/country_code_list.htm>`_
+.. tip :: If you need to shorten country names, use standard `2-letter country codes <http://www.nationsonline.org/oneworld/country_code_list.htm>`_.
 
-You can combine the hierarchies, with formats like ``[SUB-TEAM]: [TOPIC]: [SUB-TOPIC]``. For example: ``US: Mrkt: Website`` and ``UK: Mrkt: Social Media``
+You can combine the hierarchies, with formats like ``[SUB-TEAM]: [TOPIC]: [SUB-TOPIC]``. For example: ``US: Mrkt: Website`` and ``UK: Mrkt: Social Media``.
 
 .. tip :: Shorten words, particularly categories, by removing vowels, endings and redundant letter sounds. Example: Turn "Marketing" into "Mrkt", and "Project" into "Prjt".
 
@@ -101,7 +101,7 @@ On an agenda item message, you can select ``[...] > Reply`` to leave comments ab
 
 3) Header links
 
-When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts, or BlueJeans in the `channel header <https://docs.mattermost.com/help/settings/channel-settings.html#channel-header>`_.
+When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts or BlueJeans in the `channel header <https://docs.mattermost.com/help/settings/channel-settings.html#channel-header>`_.
 
 When it's time to meet, your team can click the conference link to connect.
 
@@ -128,7 +128,7 @@ Projects are often private channels rather than public channels and are used to 
 Location Channels
 ~~~~~~~~~~~~~~~~~~
 
-Location channels are useful if your teams are in different buildings, cities or regions, you can create channels to help people coordinate meetings and get-togethers::
+If your teams are in different buildings, cities or regions, you can create Location channels to help people coordinate meetings and get-togethers::
 
 	Examples: Building 10, Palo Alto, Toronto, Delaware
 
@@ -137,13 +137,12 @@ This helps share announcements and discussions relevant to only those locations.
 Data Channels
 ~~~~~~~~~~~~~~~~~~
 
-Data channels allow automatic integration. Information like new or updated support tickets or bug reports, Twitter updates, or mentions of your company name in the news can all be made available in channels your team chooses to monitor.  
+Data channels allow automatic integration. Information like new or updated support tickets or bug reports, Twitter updates or mentions of your company name in the news can all be made available in channels your team chooses to monitor.  
 There is a wide array of options::
 
 	Examples: Bugs, Support Tickets, Twitter, News Mentions
 	
-People might use these channels like a daily newspaper, reading about everything that's happened in the last day.
-While other configurations allow notifications to alert only when their username, or certain key words are mentioned.
+People might use these channels like a daily newspaper, reading about everything that's happened in the last day, while other configurations allow notifications to alert only when their username or certain key words are mentioned.
 
 ---------------------------------------------------
 Channel naming examples
