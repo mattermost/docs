@@ -380,8 +380,8 @@ Finish Mattermost Server Setup
 
 5. Update **Notification** > **Email** settings to setup an SMTP email service. The example below assumes AmazonSES.
 
-   a. Set **Send Email Notifications** to true
-   b. Set **Require Email Verification** to true
+   a. Set **Send Email Notifications** to ``true``
+   b. Set **Require Email Verification** to ``true``
    c. Set **Feedback Name** to ``No-Reply``
    d. Set **Feedback Email** to ``mattermost@example.com``
    e. Set **SMTP Username** to ``[YOUR_SMTP_USERNAME]``
@@ -391,23 +391,27 @@ Finish Mattermost Server Setup
    i. Set **Connection Security** to ``TLS``
    j. Save the Settings
 
-6. Update **File** > **Storage** settings:
+6. (Optional) Update **Security** > **Sign Up** settings:
+
+   - Set **Enable Email Invitations** to ``true``
+
+7. Update **File** > **Storage** settings:
 
    - Change **Local Directory Location** from ``./data/`` to
      ``/mattermost/data``
 
-7. Update **General** > **Logging** settings:
+8. Update **General** > **Logging** settings:
 
    - Set **Log to The Console** to ``false``
 
-8. Update **Advanced** > **Rate Limiting** settings:
+9. Update **Advanced** > **Rate Limiting** settings:
 
    - Set **Vary By Remote Address** to false
    - Set **Vary By HTTP Header** to X-Real-IP
 
-9. Feel free to modify other settings.
+10. Feel free to modify other settings.
 
-10. Login to the Mattermost server (10.0.0.2) and restart the Mattermost Service by typing the following into a command line 
+11. Login to the Mattermost server (10.0.0.2) and restart the Mattermost Service by typing the following into a command line 
 
    .. code:: batch
 
