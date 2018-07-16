@@ -59,9 +59,8 @@ function bootstrap(){
       exit 1;
     fi
 
-    password=$(cluster_admin_password_gke);
-
-    kubectl --username=admin --password=$password create -f rbac-config.yaml;
+    kubectl config set-credentials ${CLUSTER_NAME}-admin-user --username=admin --password=$(cluster_admin_password_gke)
+    kubectl --user=${CLUSTER_NAME}-admin-user create -f rbac-config.yaml;
   fi
 
   echo "Installing helm..."
