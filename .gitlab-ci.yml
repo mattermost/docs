@@ -245,6 +245,7 @@ stable:
     GITLAB_PASSWORD: $ROOT_PASSWORD
     RELEASE_NAME: $CI_ENVIRONMENT_SLUG
     S3_CONFIG_PATH: /etc/gitlab/minio
+    LANG: C.UTF-8
   script:
     - source variables
     - apt-get update && apt-get install -y --no-install-recommends curl ca-certificates

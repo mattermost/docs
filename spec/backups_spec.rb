@@ -98,14 +98,27 @@ describe "Restoring a backup" do
       end
 
       Dir.glob("/tmp/original_backup/**/*") do |file|
-        next if ['tar', '.gz'].include? File.extname(file)
+        next if ['.tar', '.gz'].include? File.extname(file)
         next if File.directory?(file)
         next if File.basename(file) == 'backup_information.yml'
 
         test_counterpart = file.gsub('original_backup', 'test_backup')
 
         expect(File.exist?(test_counterpart)).to be_truthy, "Expected #{test_counterpart} to exist"
-        expect(Digest::MD5.hexdigest(File.read(file))).to eq(Digest::MD5.hexdigest(File.read(test_counterpart))),
+
+        # Use git to verify the contents of bundles
+        if File.extname(file) == '.bundle'
+          original_content, status = Open3.capture2e("git ls-remote --heads --tags #{file}")
+          fail original_content unless status.success?
+
+          test_content, status = Open3.capture2e("git ls-remote --heads --tags #{test_counterpart}")
+          fail test_content unless status.success?
+        else
+          original_content = File.read(file)
+          test_content     = File.read(test_counterpart)
+        end
+
+        expect(Digest::MD5.hexdigest(original_content)).to eq(Digest::MD5.hexdigest(test_content)),
           "Expected #{file} to equal #{test_counterpart}"
       end
     end
