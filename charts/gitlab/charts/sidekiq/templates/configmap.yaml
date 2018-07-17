@@ -59,7 +59,7 @@ data:
           direct_upload: true
           background_upload: false
           proxy_download: {{ eq .Values.artifacts.proxy_download true }}
-          {{- if .Values.minio.enabled }}
+          {{- if .Values.global.minio.enabled }}
           connection:
             provider: AWS
             region: us-east-1
@@ -80,7 +80,7 @@ data:
           direct_upload: true
           background_upload: false
           proxy_download: {{ eq .Values.lfs.proxy_download true }}
-          {{- if .Values.minio.enabled }}
+          {{- if .Values.global.minio.enabled }}
           connection:
             provider: AWS
             region: us-east-1
@@ -101,7 +101,7 @@ data:
           direct_upload: true
           background_upload: false
           proxy_download: {{ eq .Values.uploads.proxy_download true }}
-          {{- if .Values.minio.enabled }}
+          {{- if .Values.global.minio.enabled }}
           connection:
             provider: AWS
             region: us-east-1
