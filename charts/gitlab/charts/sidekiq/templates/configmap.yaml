@@ -6,6 +6,8 @@ metadata:
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 data:
+  installation_type: |
+    gitlab-helm-chart
   database.yml.erb: |
     production:
       adapter: postgresql
