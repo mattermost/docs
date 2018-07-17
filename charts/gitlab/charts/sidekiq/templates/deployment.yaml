@@ -177,6 +177,10 @@ spec:
                 - head
                 - -c1
                 - /dev/random
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/bash", "-c", "pkill -f 'sidekiq'"]
           resources:
 {{ toYaml ( default $resources .resources ) | indent 12 }}
       volumes:
