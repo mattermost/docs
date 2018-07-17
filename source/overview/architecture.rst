@@ -9,14 +9,14 @@ This page provides an overview of the Mattermost architecture with a reference a
 Basics
 ----------
 
-At its core, Mattermost is a single compiled Go binary that is exposed as Restful JSON Web server with Javascript and Go clients. See the Restful API docs `here <https://api.mattermost.com>`_.
+At its core, Mattermost is a single compiled Go binary that is exposed as a Restful JSON Web server with Javascript and Go clients. See the Restful API docs `here <https://api.mattermost.com>`_.
 
 It is configured using `config/config.json <https://docs.mattermost.com/administration/config-settings.html>`_ and provides the following:
 
-- **Authentication client**, which provides the functionality for users to log into Mattermost via email and password in Team Edition. Enterprise E10 adds the ability for users to authenticate using Active Directory or LDAP and Enterprise E20 add the ability authenticate using SAML SSO providers like ADFS, OneLogin, and Okta. 
+- **Authentication client**, which provides the functionality for users to log into Mattermost via email and password in Team Edition. Enterprise E10 adds the ability for users to authenticate using Active Directory or LDAP, and Enterprise E20 adds the ability to authenticate using SAML SSO providers like ADFS, OneLogin, and Okta. 
 - **Authentication provider**, which enables the Mattermost server to authenticate to other services like GitLab and Zapier using OAuth 2.0.
 - **Notification service**, which sends notifications via SMTP or a Push Notification Service for mobile applications.
-- **Data management service**, which connects to and manages the reading and writing of data to and from supported databases and file storage solutions (local, network-attached storage, Amazon S3, etc).
+- **Data management service**, which connects to supported databases and file storage solutions (local, network-attached storage, Amazon S3, etc), and manages the reading and writing of data to and from them.
 
 The binary talks to a database, typically MySQL or PostgreSQL, and a filestore.
 
@@ -47,7 +47,7 @@ There are also communication protocols (HTTPS and WS) that define the type of co
 
 **HTTPS Connection** (Secure Hypertext Transfer Protocol)
 
-HTTPS connections to the Mattermost Server render pages and provides access to core platform functionality but does not include real-time interactivity (which is enabled by WSS connections).
+HTTPS connections to the Mattermost Server render pages and provide access to core platform functionality, but do not include real-time interactivity (which is enabled by WSS connections).
 
 HTTPS is a secure, encrypted protocol and is highly recommended for production. Unencrypted HTTP connections may be used in initial testing and configuration but should never be used in a production environment.
 
@@ -55,7 +55,7 @@ HTTPS is a secure, encrypted protocol and is highly recommended for production. 
 
 Secure WebSocket (WSS) connections to the Mattermost Server enable real-time updates and notifications between clients and the server.
 
-If a WSS connection is not available and HTTPS is substituted the system will appear to work but real time updates and notifications will not work. In this mode of operation updates will only appear on a page refresh. WSS is persistent connection to the Mattermost Server while a client is connected while HTTPS only connects to the server when a page or file is requested and will be intermittent. 
+If a WSS connection is not available and HTTPS is substituted the system will appear to work but real time updates and notifications will not work. In this mode of operation updates will only appear on a page refresh. WSS is a persistent connection to the Mattermost Server while a client is connected, while HTTPS is an intermittent connection and only connects to the server when a page or file is requested. 
 
 .. image:: ../images/architecture_with_protocol.png
 
@@ -64,14 +64,14 @@ High Availability and Scalability
 
 Enterprise Edition E20 supports:
 
-1) Clustered Mattermost servers, which minimize latency by
+1) Clustered Mattermost servers, which minimize latency by:
 
 - storing static assets over a global CDN
 - deploying multiple Mattermost servers to host API communication closer to the location of end users
 
-They can also be used to handle scale and failure handoffs in disaster recovery scenario.
+They can also be used to handle scale and failure handoffs in disaster recovery scenarios.
 
-2) Database read replicas where replicas can be
+2) Database read replicas, where replicas can be:
 
 - configured as a redundant backup to the active database server
 - used to scale up the number of concurrent users
