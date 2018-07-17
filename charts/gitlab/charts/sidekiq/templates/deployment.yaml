@@ -165,6 +165,9 @@ spec:
           - name: sidekiq-config
             mountPath: '/srv/gitlab/config/initializers/smtp_settings.rb'
             subPath: smtp_settings.rb
+          - name: sidekiq-config
+            mountPath: '/srv/gitlab/INSTALLATION_TYPE'
+            subPath: installation_type
           livenessProbe:
             exec:
               command:
