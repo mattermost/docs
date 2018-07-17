@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2018-07-17
+
+### Fixed (1 change)
+
+- Expanded OmniAuth configuration in Unicorn. !328
+
+### Changed (2 changes, 1 of them is from the community)
+
+- Change location of gitlab source code to /srv/gitlab. !15 (Balasankar C)
+- Remove chart version from redis-ha immutable fields. !337
+
 ## 2018-06-19
 
 ### Fixed (1 change, 1 of them is from the community)

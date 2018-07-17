@@ -1,5 +1,0 @@
----
-title: Change location of gitlab source code to /srv/gitlab
-merge_request: 15
-author: Balasankar C
-type: changed
