@@ -106,7 +106,7 @@ spec:
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
-              value: '/home/git/gitlab/config'
+              value: '/srv/gitlab/config'
             - name: SIDEKIQ_CONCURRENCY
               value: {{ default $concurrency .concurrency | quote }}
             - name: SIDEKIQ_TIMEOUT
@@ -133,7 +133,7 @@ spec:
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
-              value: '/home/git/gitlab/config'
+              value: '/srv/gitlab/config'
             - name: SIDEKIQ_CONCURRENCY
               value: {{ default $concurrency .concurrency | quote }}
             - name: SIDEKIQ_TIMEOUT
@@ -155,10 +155,10 @@ spec:
             mountPath: '/etc/gitlab'
             readOnly: true
           - name: sidekiq-secrets
-            mountPath: /home/git/gitlab/config/secrets.yml
+            mountPath: /srv/gitlab/config/secrets.yml
             subPath: rails-secrets/secrets.yml
           - name: sidekiq-config
-            mountPath: '/home/git/gitlab/config/initializers/smtp_settings.rb'
+            mountPath: '/srv/gitlab/config/initializers/smtp_settings.rb'
             subPath: smtp_settings.rb
           livenessProbe:
             exec:

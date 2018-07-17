@@ -35,7 +35,7 @@ data:
     Password = "<%= File.read("/etc/gitlab/redis/password") %>"
   unicorn.rb: |
     worker_processes {{ .Values.workerProcesses }}
-    working_directory "/home/git/gitlab"
+    working_directory "/srv/gitlab"
     listen "0.0.0.0:{{ .Values.service.internalPort }}", :tcp_nopush => true
     timeout {{ .Values.workerTimeout }}
     pid "/home/git/unicorn.pid"

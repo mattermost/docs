@@ -70,7 +70,7 @@ spec:
               mountPath: '/etc/gitlab'
               readOnly: true
             - name: task-runner-secrets
-              mountPath: /home/git/gitlab/config/secrets.yml
+              mountPath: /srv/gitlab/config/secrets.yml
               subPath: rails-secrets/secrets.yml
           resources:
 {{ toYaml .Values.resources | indent 12 }}
