@@ -66,9 +66,8 @@ data:
             host: {{ template "gitlab.minio.hostname" . }}
             endpoint: {{ template "gitlab.minio.endpoint" . }}
             path_style: true
-          {{- else if .Values.lfs.connection}}
-          connection:
-{{ toYaml .Values.lfs.connection | indent 12}}
+          {{- else if .Values.lfs.connection }}
+          connection: <%= YAML.load_file("/etc/gitlab/objectstorage/lfs").to_json() %>
           {{- end }}
       pages:
         enabled: false
@@ -128,6 +127,10 @@ data:
     if [ -e /init-config/minio ]; then
       mkdir /init-secrets/minio
       cp /init-config/minio/* /init-secrets/minio/
+    fi
+    if [ -e /init-config/objectstorage ]; then
+      mkdir -p /init-secrets/objectstorage
+      cp /init-config/objectstorage/* /init-secrets/objectstorage/
     fi
 
     cat << EOF > /init-secrets/.s3cfg

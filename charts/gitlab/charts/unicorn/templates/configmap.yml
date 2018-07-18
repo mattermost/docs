@@ -100,9 +100,8 @@ data:
             host: {{ template "gitlab.minio.hostname" . }}
             endpoint: {{ template "gitlab.minio.endpoint" . }}
             path_style: true
-          {{- else if .Values.artifacts.connection}}
-          connection:
-{{ toYaml .Values.artifacts.connection | indent 12}}
+          {{- else if .Values.artifacts.connection }}
+          connection: <%= YAML.load_file("/etc/gitlab/objectstorage/artifacts").to_json() %>
           {{- end }}
       lfs:
         enabled: {{ eq .Values.lfs.enabled true }}
@@ -121,9 +120,8 @@ data:
             host: {{ template "gitlab.minio.hostname" . }}
             endpoint: {{ template "gitlab.minio.endpoint" . }}
             path_style: true
-          {{- else if .Values.lfs.connection}}
-          connection:
-{{ toYaml .Values.lfs.connection | indent 12}}
+          {{- else if .Values.lfs.connection }}
+          connection: <%= YAML.load_file("/etc/gitlab/objectstorage/lfs").to_json() %>
           {{- end }}
       uploads:
         enabled: {{ eq .Values.uploads.enabled true }}
@@ -142,9 +140,8 @@ data:
             host: {{ template "gitlab.minio.hostname" . }}
             endpoint: {{ template "gitlab.minio.endpoint" . }}
             path_style: true
-          {{- else if .Values.uploads.connection}}
-          connection:
-{{ toYaml .Values.uploads.connection | indent 12}}
+          {{- else if .Values.uploads.connection }}
+          connection: <%= YAML.load_file("/etc/gitlab/objectstorage/uploads").to_json() %>
           {{- end }}
       pages:
         enabled: false
@@ -235,6 +232,10 @@ data:
     if [ -e /init-config/minio ]; then
       mkdir -p /init-secrets/minio
       cp /init-config/minio/* /init-secrets/minio/
+    fi
+    if [ -e /init-config/objectstorage ]; then
+      mkdir -p /init-secrets/objectstorage
+      cp /init-config/objectstorage/* /init-secrets/objectstorage/
     fi
     if [ -e /init-config/omniauth ]; then
       mkdir -p /init-secrets/omniauth
