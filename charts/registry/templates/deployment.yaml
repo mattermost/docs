@@ -84,4 +84,15 @@ spec:
           - secret:
               name: {{ template "gitlab.minio.credentials.secret" . }}
           {{- end }}
+          {{- if .Values.storage.secret }}
+          - secret:
+              name: {{ .Values.storage.secret }}
+              items:
+                - key: {{ default "config" .Values.storage.key }}
+                  path: storage/config
+                {{- if .Values.storage.extraKey }}
+                - key: {{ .Values.storage.extraKey }}
+                  path: storage/{{ .Values.storage.extraKey }}
+                {{- end }}
+          {{- end }}
 {{- end -}}

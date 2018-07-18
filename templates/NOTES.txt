@@ -7,3 +7,11 @@ no TLS certificates were provided. Self-signed certificates were generated.
 {{- end -}}
 
 {{- end -}}
+
+{{/* Migration of Registry `storage` dict to a secret */}}
+{{- if .Values.registry.storage -}}
+{{-   $keys := without (keys .Values.registry.storage) "secret" "key" "extraKey" -}}
+{{-   if len $keys | ne 0 -}}
+{{-     fail "\nregistry:\n\tThe `storage` property has been re-implemented as a secret. Please place the contents of `storage` into a secret, and provide `storage.secret` instead. See documentation." -}}
+{{-   end -}}
+{{- end -}}
