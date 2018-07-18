@@ -115,7 +115,7 @@ spec:
               items:
                 - key: registry-auth.key
                   path: registry/gitlab-registry.key
-          {{- if .Values.minio.enabled }}
+          {{- if .Values.global.minio.enabled }}
           - secret:
               name: {{ template "gitlab.minio.credentials.secret" . }}
               items:
