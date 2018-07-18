@@ -263,6 +263,7 @@ review_specs:
   environment:
     name: review/$CI_COMMIT_REF_NAME
     url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
+    on_stop: stop_review
   except:
     refs:
       - master
@@ -304,6 +305,7 @@ review_helm_test:
   environment:
     name: review/$CI_COMMIT_REF_NAME
     url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
+    on_stop: stop_review
   script:
     - export TILLER_NAMESPACE=$KUBE_NAMESPACE
     - helm test "$CI_ENVIRONMENT_SLUG"
@@ -335,6 +337,7 @@ debug_review:
   environment:
     name: review/$CI_COMMIT_REF_NAME
     url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
+    on_stop: stop_review
   variables:
     HOST_SUFFIX: "$CI_ENVIRONMENT_SLUG"
     DOMAIN: "-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"
