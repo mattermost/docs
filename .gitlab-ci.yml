@@ -290,7 +290,7 @@ qa:
     - gem install gitlab-qa
     - source variables
     - app_version=$(ruby -e "require 'yaml'; puts YAML.safe_load(File.read('Chart.yaml'))['appVersion']")
-    - qa_version="latest"
+    - qa_version="nightly"
     - if [ "$app_version" != "master"  ]; then
     -   qa_version="${app_version}-ee"
     - fi
