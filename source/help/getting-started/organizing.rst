@@ -92,8 +92,7 @@ You can number and format messages as agenda items to discuss for the next meeti
 .. tip :: Try pasting the following as an example in a channel designated for meetings::
 
 	#### 1) Agenda item example
-
-	Commentary about agenda item to be discussed.
+        #### Commentary about agenda item to be discussed.
 
 2) Threaded messaging
 
