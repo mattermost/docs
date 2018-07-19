@@ -38,7 +38,7 @@ data:
         rootcertbundle: /etc/docker/registry/certificate.crt
     storage:
       {{- if .Values.storage }}
-      {{- else if .Values.minio.enabled }}
+      {{- else if .Values.global.minio.enabled }}
       s3:
         accesskey: "ACCESS_KEY"
         secretkey: "SECRET_KEY"

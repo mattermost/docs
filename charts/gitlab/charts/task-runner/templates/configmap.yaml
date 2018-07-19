@@ -49,7 +49,7 @@ data:
         enabled: {{ eq .Values.lfs.enabled true }}
         object_store:
           enabled: true
-          {{- if .Values.minio.enabled }}
+          {{- if .Values.global.minio.enabled }}
           remote_directory: {{ .Values.minio.bucket }}
           {{- else }}
           remote_directory: {{ .Values.lfs.bucket }}
@@ -57,7 +57,7 @@ data:
           direct_upload: true
           background_upload: false
           proxy_download: {{ eq .Values.lfs.proxy_download true }}
-          {{- if .Values.minio.enabled }}
+          {{- if .Values.global.minio.enabled }}
           connection:
             provider: AWS
             region: us-east-1

@@ -9,7 +9,7 @@
 {{- $timeout := .Values.timeout -}}
 {{- $resources := .Values.resources -}}
 {{- $nodeSelector := .Values.nodeSelector -}}
-{{- $minioEnabled := .Values.minio.enabled -}}
+{{- $minioEnabled := .Values.global.minio.enabled -}}
 {{- $minioSecret := include "gitlab.minio.credentials.secret" . -}}
 {{- $redisSecret := include "gitlab.redis.password.secret" . -}}
 {{- $redisKey := include "gitlab.redis.password.key" . -}}

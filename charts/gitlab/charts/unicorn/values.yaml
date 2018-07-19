@@ -96,6 +96,9 @@ global:
     password: {}
   gitaly:
     authToken: {}
+  minio:
+    enabled:
+    credentials: {}
 redis:
   password: {}
 gitaly:
@@ -121,7 +124,6 @@ uploads:
   bucket: gitlab-uploads
   # connection: {}
 minio:
-  enabled: true
   serviceName: 'minio-svc'
   port: 9000
 registry:

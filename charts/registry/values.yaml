@@ -43,6 +43,9 @@ global:
     minio: {}
       #name: minio.example.local
       #https: false
+  minio:
+    enabled:
+    credentials: {}
 
 ## Control the InitContainer behaviors.
 init:
@@ -96,5 +99,4 @@ replicas: 1
 maxUnavailable: 1
 storage: {}
 minio:
-  enabled: true
   bucket: registry

@@ -1,3 +1,4 @@
+{{/* If using self-signed auto-generated certificates */}}
 {{- if not (or .Values.global.ingress.configureCertmanager .Values.global.ingress.tls) -}}
 WARNING: Automatic TLS certificate generation with cert-manager is disabled and
 no TLS certificates were provided. Self-signed certificates were generated.
@@ -5,7 +6,33 @@ no TLS certificates were provided. Self-signed certificates were generated.
 {{- if (index .Values "gitlab-runner").install -}}
 {{- fail "Automatic TLS certificate generation with cert-manager is disabled and no TLS certificates were provided. Self-signed certificates would be generated that do not work with gitlab-runner. Please either disable gitlab-runner by setting `gitlab-runner.install=false` or provide valid certificates." -}}
 {{- end -}}
+{{- end -}}
 
+{{/*
+Deprecation behaviors for global configuration of Minio
+*/}}
+{{- if ( hasKey .Values.minio "enabled" ) -}}
+{{-   fail "minio: chart-local `enabled` property has been moved to global. Please remove `minio.enabled` from your properties, and set `global.minio.enabled` instead." -}}
+{{- end -}}
+{{- if .Values.registry.minio -}}
+{{-   if ( hasKey .Values.registry.minio "enabled" ) -}}
+{{-     fail "registry: chart-local configuration of Minio features has been moved to global. Please remove `registry.minio.enabled` from your properties, and set `global.minio.enabled` instead." -}}
+{{-   end -}}
+{{- end -}}
+{{- if .Values.gitlab.unicorn.minio -}}
+{{-   if ( hasKey .Values.gitlab.unicorn.minio "enabled" ) -}}
+{{-     fail "unicorn: chart-local configuration of Minio features has been moved to global. Please remove `unicorn.minio.enabled` from your properties, and set `global.minio.enabled` instead." -}}
+{{-   end -}}
+{{- end -}}
+{{- if .Values.gitlab.sidekiq.minio -}}
+{{-   if ( hasKey .Values.gitlab.sidekiq.minio "enabled" ) -}}
+{{-     fail "sidekiq: chart-local configuration of Minio features has been moved to global. Please remove `sidekiq.minio.enabled` from your properties, and set `global.minio.enabled` instead." -}}
+{{-   end -}}
+{{- end -}}
+{{- if index .Values.gitlab "task-runner" "minio" -}}
+{{-   if ( hasKey ( index .Values.gitlab "task-runner" "minio" ) "enabled" ) -}}
+{{-     fail "task-runner: chart-local configuration of Minio features has been moved to global. Please remove `task-runner.minio.enabled` from your properties, and set `global.minio.enabled` instead." -}}
+{{-   end -}}
 {{- end -}}
 
 {{/* Migration of Registry `storage` dict to a secret */}}
