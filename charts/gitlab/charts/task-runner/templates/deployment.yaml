@@ -124,6 +124,13 @@ spec:
                 - key: secretkey
                   path: minio/secretkey
           {{- end }}
+          {{- if .Values.lfs.connection }}
+          - secret:
+              name: {{ .Values.lfs.connection.secret }}
+              items:
+                - key: {{ default "connection" .Values.lfs.connection.key }}
+                  path: objectstorage/lfs
+          {{- end }}
       - name: task-runner-secrets
         emptyDir:
           medium: "Memory"

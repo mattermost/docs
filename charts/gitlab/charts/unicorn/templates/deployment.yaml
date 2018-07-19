@@ -199,6 +199,27 @@ spec:
                 - key: secretkey
                   path: minio/secretkey
           {{- end }}
+          {{- if .Values.lfs.connection }}
+          - secret:
+              name: {{ .Values.lfs.connection.secret }}
+              items:
+                - key: {{ default "connection" .Values.lfs.connection.key }}
+                  path: objectstorage/lfs
+          {{- end }}
+          {{- if .Values.artifacts.connection }}
+          - secret:
+              name: {{ .Values.artifacts.connection.secret }}
+              items:
+                - key: {{ default "connection" .Values.artifacts.connection.key }}
+                  path: objectstorage/artifacts
+          {{- end }}
+          {{- if .Values.uploads.connection }}
+          - secret:
+              name: {{ .Values.uploads.connection.secret }}
+              items:
+                - key: {{ default "connection" .Values.uploads.connection.key }}
+                  path: objectstorage/uploads
+          {{- end }}
           {{- if .Values.omniauth.providers }}
           {{-   range $index, $entry := .Values.omniauth.providers }}
           - secret:
