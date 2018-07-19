@@ -61,6 +61,17 @@ init:
     else
       cp /config/config.yml  /registry/config.yml
     fi
+    if [ -d /config/storage ]; then
+      # Copy contents of storage secret(s)
+      mkdir -p /registry/storage
+      cp /config/storage/* /registry/storage/
+      # Indent /registry/storage/config 2 spaces before inserting into config.yml
+      sed -i 's/^/  /' /registry/storage/config
+      # Insert into /registry/config.yml after `storage:`
+      sed -i '/storage:/ r /registry/storage/config' /registry/config.yml
+      # Remove the now extraneous `config` file
+      rm /registry/storage/config
+    fi
     # Set to known path, to used ConfigMap
     cat /config/certificate.crt > /registry/certificate.crt
 

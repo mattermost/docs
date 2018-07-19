@@ -34,3 +34,11 @@ Deprecation behaviors for global configuration of Minio
 {{-     fail "task-runner: chart-local configuration of Minio features has been moved to global. Please remove `task-runner.minio.enabled` from your properties, and set `global.minio.enabled` instead." -}}
 {{-   end -}}
 {{- end -}}
+
+{{/* Migration of Registry `storage` dict to a secret */}}
+{{- if .Values.registry.storage -}}
+{{-   $keys := without (keys .Values.registry.storage) "secret" "key" "extraKey" -}}
+{{-   if len $keys | ne 0 -}}
+{{-     fail "\nregistry:\n\tThe `storage` property has been re-implemented as a secret. Please place the contents of `storage` into a secret, and provide `storage.secret` instead. See documentation." -}}
+{{-   end -}}
+{{- end -}}

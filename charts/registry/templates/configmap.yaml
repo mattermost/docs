@@ -38,7 +38,6 @@ data:
         rootcertbundle: /etc/docker/registry/certificate.crt
     storage:
       {{- if .Values.storage }}
-{{ toYaml .Values.storage | indent 6}}
       {{- else if .Values.global.minio.enabled }}
       s3:
         accesskey: "ACCESS_KEY"
