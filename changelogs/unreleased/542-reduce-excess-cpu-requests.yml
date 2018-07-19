@@ -1,6 +1,0 @@
----
-title: Explicitly set resources.requests.cpu=50m on initContainers to enforce reduced
-  resources
-merge_request: 369
-author:
-type: changed
