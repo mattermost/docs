@@ -2,6 +2,29 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2018-07-19
+
+### Security (4 changes, 4 of them are from the community)
+
+- Use minimum permissions for certmanager-issuer chart. !352 (Corey O'Brien)
+- Limit nginx to chart namespace. !354 (Corey O'Brien)
+- Limit rbac permission for shared-secrets. !356 (Corey O'Brien)
+- Use self-signed certificate as last resort. !360 (Corey O'Brien)
+
+### Fixed (1 change)
+
+- Expanded OmniAuth configuration in Unicorn. !328
+
+### Changed (3 changes, 1 of them is from the community)
+
+- Change location of gitlab source code to /srv/gitlab. !15 (Balasankar C)
+- Remove chart version from redis-ha immutable fields. !337
+- Explicitly set resources.requests.cpu=50m on initContainers to enforce reduced resources. !369
+
+### Added (1 change, 1 of them is from the community)
+
+- Support optional Application CRD. !363 (Corey O'Brien)
+
 ## 2018-06-19
 
 ### Fixed (1 change, 1 of them is from the community)
