@@ -31,8 +31,11 @@ global:
     password: {}
   gitaly:
     internal: ["default"]
-    external: {}
+    external: []
     authToken: {}
+  minio:
+    enabled:
+    credentials: {}
 backups:
   bucketNames:
     backups: gitlab-backups
@@ -70,7 +73,6 @@ lfs:
   # bucket:
   # connection: {}
 minio:
-  enabled: true
   bucket: git-lfs
   serviceName: 'minio-svc'
   port: 9000

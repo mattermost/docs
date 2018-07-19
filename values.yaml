@@ -27,6 +27,7 @@ global:
     internal: ['default']
     external: []
   minio:
+    enabled: true
     credentials: {}
   shell:
     authToken: {}
@@ -137,9 +138,6 @@ postgresql:
     ## ref: https://github.com/wrouesnel/postgres_exporter#adding-new-metrics-via-a-config-file
 
 # registry:
-#   enabled: false
-#
-# minio:
 #   enabled: false
 #
 # redis:

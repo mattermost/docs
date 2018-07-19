@@ -16,7 +16,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-request-buffering: {{ .Values.ingress.proxyBuffering | quote }}
     nginx.ingress.kubernetes.io/proxy-buffering: {{ .Values.ingress.proxyBuffering | quote }}
     {{ include "gitlab.certmanager_annotations" . }}
-  {{- range $key, $value := merge .Values.global.ingress.annotations .Values.ingress.annotations }}
+  {{- range $key, $value := merge .Values.ingress.annotations .Values.global.ingress.annotations }}
     {{ $key }}: {{ $value | quote }}
   {{- end }}
 spec:

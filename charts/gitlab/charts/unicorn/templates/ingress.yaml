@@ -15,7 +15,7 @@ metadata:
     nginx.ingress.kubernetes.io/proxy-read-timeout: {{ .Values.ingress.proxyReadTimeout | quote }}
     nginx.ingress.kubernetes.io/proxy-connect-timeout: {{ .Values.ingress.proxyConnectTimeout | quote }}
     {{ include "gitlab.certmanager_annotations" . }}
-  {{- range $key, $value := merge .Values.global.ingress.annotations .Values.ingress.annotations }}
+  {{- range $key, $value := merge .Values.ingress.annotations .Values.global.ingress.annotations }}
     {{ $key }}: {{ $value | quote }}
   {{- end }}
 spec:

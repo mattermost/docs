@@ -122,13 +122,13 @@ spec:
               mountPath: '/etc/gitlab'
               readOnly: true
             - name: unicorn-secrets
-              mountPath: /home/git/gitlab/config/secrets.yml
+              mountPath: /srv/gitlab/config/secrets.yml
               subPath: rails-secrets/secrets.yml
             - name: unicorn-config
-              mountPath: '/home/git/gitlab/config/initializers/smtp_settings.rb'
+              mountPath: '/srv/gitlab/config/initializers/smtp_settings.rb'
               subPath: smtp_settings.rb
             - name: unicorn-config
-              mountPath: '/home/git/gitlab/INSTALLATION_TYPE'
+              mountPath: '/srv/gitlab/INSTALLATION_TYPE'
               subPath: installation_type
           livenessProbe:
             exec:
@@ -141,6 +141,10 @@ spec:
             exec:
               command:
               - /scripts/healthcheck
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/bash", "-c", "pkill -SIGQUIT -f 'unicorn master'"]
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
@@ -186,7 +190,7 @@ spec:
               items:
                 - key: registry-auth.key
                   path: registry/gitlab-registry.key
-          {{- if .Values.minio.enabled }}
+          {{- if .Values.global.minio.enabled }}
           - secret:
               name: {{ template "gitlab.minio.credentials.secret" . }}
               items:

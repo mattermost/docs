@@ -9,7 +9,7 @@
 {{- $timeout := .Values.timeout -}}
 {{- $resources := .Values.resources -}}
 {{- $nodeSelector := .Values.nodeSelector -}}
-{{- $minioEnabled := .Values.minio.enabled -}}
+{{- $minioEnabled := .Values.global.minio.enabled -}}
 {{- $minioSecret := include "gitlab.minio.credentials.secret" . -}}
 {{- $redisSecret := include "gitlab.redis.password.secret" . -}}
 {{- $redisKey := include "gitlab.redis.password.key" . -}}
@@ -109,7 +109,7 @@ spec:
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
-              value: '/home/git/gitlab/config'
+              value: '/srv/gitlab/config'
             - name: SIDEKIQ_CONCURRENCY
               value: {{ default $concurrency .concurrency | quote }}
             - name: SIDEKIQ_TIMEOUT
@@ -138,7 +138,7 @@ spec:
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
-              value: '/home/git/gitlab/config'
+              value: '/srv/gitlab/config'
             - name: SIDEKIQ_CONCURRENCY
               value: {{ default $concurrency .concurrency | quote }}
             - name: SIDEKIQ_TIMEOUT
@@ -160,11 +160,14 @@ spec:
             mountPath: '/etc/gitlab'
             readOnly: true
           - name: sidekiq-secrets
-            mountPath: /home/git/gitlab/config/secrets.yml
+            mountPath: /srv/gitlab/config/secrets.yml
             subPath: rails-secrets/secrets.yml
           - name: sidekiq-config
-            mountPath: '/home/git/gitlab/config/initializers/smtp_settings.rb'
+            mountPath: '/srv/gitlab/config/initializers/smtp_settings.rb'
             subPath: smtp_settings.rb
+          - name: sidekiq-config
+            mountPath: '/srv/gitlab/INSTALLATION_TYPE'
+            subPath: installation_type
           livenessProbe:
             exec:
               command:
@@ -177,6 +180,10 @@ spec:
                 - head
                 - -c1
                 - /dev/random
+          lifecycle:
+            preStop:
+              exec:
+                command: ["/bin/bash", "-c", "pkill -f 'sidekiq'"]
           resources:
 {{ toYaml ( default $resources .resources ) | indent 12 }}
       volumes:

@@ -55,6 +55,9 @@ global:
     internal: ["default"]
     external: []
     authToken: {}
+  minio:
+    enabled:
+    credentials: {}
 gitaly:
   # host: '0.0.0.0'
   # port: 8075
@@ -78,9 +81,6 @@ uploads:
   bucket: gitlab-uploads
   # connection: {}
 minio:
-  enabled: true
-  credentials:
-    secret: gitlab-minio
   serviceName: 'minio-svc'
   port: 9000
 extra: {}

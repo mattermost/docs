@@ -29,7 +29,7 @@ module Gitlab
     end
 
     def enforce_root_password(password)
-      rails_dir = ENV['RAILS_DIR'] || '/home/git/gitlab'
+      rails_dir = ENV['RAILS_DIR'] || '/srv/gitlab'
       cmd = full_command("#{rails_dir}/bin/rails runner \"user = User.find(1); user.password='#{password}'; user.password_confirmation='#{password}'; user.save!\"")
 
       stdout, status = Open3.capture2e(cmd)

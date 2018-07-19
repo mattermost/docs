@@ -13,7 +13,7 @@ GitLab Helm chart provides a specific pod named `task-runner` that acts as an in
         ```
     1. Run the following command to reset the password of `root` user. Replace `#{password}` with a password of your choice
         ```bash
-        $ /home/git/gitlab/bin/rails runner "user = User.first; user.password='#{password}'; user.password_confirmation='#{password}'; user.save!"
+        $ /srv/gitlab/bin/rails runner "user = User.first; user.password='#{password}'; user.password_confirmation='#{password}'; user.save!"
         ```
 
 ## Backing up a GitLab installation

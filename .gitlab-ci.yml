@@ -263,6 +263,7 @@ review_specs:
   environment:
     name: review/$CI_COMMIT_REF_NAME
     url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
+    on_stop: stop_review
   except:
     refs:
       - master
@@ -299,6 +300,31 @@ qa:
     refs:
       - branches
 
+review_helm_test:
+  stage: qa
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
+    on_stop: stop_review
+  script:
+    - export TILLER_NAMESPACE=$KUBE_NAMESPACE
+    - helm test "$CI_ENVIRONMENT_SLUG"
+  except:
+    refs:
+      - master
+
+production_helm_test:
+  stage: qa
+  environment:
+    name: production
+    url: https://gitlab.$AUTO_DEVOPS_DOMAIN
+  script:
+    - export TILLER_NAMESPACE=$KUBE_NAMESPACE
+    - helm test "$CI_ENVIRONMENT_SLUG"
+  only:
+    refs:
+      - master
+
 debug_review:
   stage: qa
   when: on_failure
@@ -311,6 +337,7 @@ debug_review:
   environment:
     name: review/$CI_COMMIT_REF_NAME
     url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
+    on_stop: stop_review
   variables:
     HOST_SUFFIX: "$CI_ENVIRONMENT_SLUG"
     DOMAIN: "-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"
@@ -522,7 +549,7 @@ changelog_manager:
   }
 
   function cleanup() {
-    kubectl -n "$KUBE_NAMESPACE" get ingress,svc,pdb,hpa,deploy,statefulset,job,secret,configmap,pvc,secret,clusterrole,clusterrolebinding,role,rolebinding,sa 2>&1 \
+    kubectl -n "$KUBE_NAMESPACE" get ingress,svc,pdb,hpa,deploy,statefulset,job,pod,secret,configmap,pvc,secret,clusterrole,clusterrolebinding,role,rolebinding,sa 2>&1 \
       | grep "$CI_ENVIRONMENT_SLUG" \
       | awk '{print $1}' \
       | xargs kubectl -n "$KUBE_NAMESPACE" delete \

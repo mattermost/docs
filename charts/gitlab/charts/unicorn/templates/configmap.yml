@@ -34,7 +34,7 @@ data:
     Password = "<%= File.read("/etc/gitlab/redis/password") %>"
   unicorn.rb: |
     worker_processes {{ .Values.workerProcesses }}
-    working_directory "/home/git/gitlab"
+    working_directory "/srv/gitlab"
     listen "0.0.0.0:{{ .Values.service.internalPort }}", :tcp_nopush => true
     timeout {{ .Values.workerTimeout }}
     pid "/home/git/unicorn.pid"
@@ -91,7 +91,7 @@ data:
           direct_upload: true
           background_upload: false
           proxy_download: {{ eq .Values.artifacts.proxy_download true }}
-          {{- if .Values.minio.enabled }}
+          {{- if .Values.global.minio.enabled }}
           connection:
             provider: AWS
             region: us-east-1
@@ -112,7 +112,7 @@ data:
           direct_upload: true
           background_upload: false
           proxy_download: {{ eq .Values.lfs.proxy_download true }}
-          {{- if .Values.minio.enabled }}
+          {{- if .Values.global.minio.enabled }}
           connection:
             provider: AWS
             region: us-east-1
@@ -133,7 +133,7 @@ data:
           direct_upload: true
           background_upload: false
           proxy_download: {{ eq .Values.uploads.proxy_download true }}
-          {{- if .Values.minio.enabled }}
+          {{- if .Values.global.minio.enabled }}
           connection:
             provider: AWS
             region: us-east-1
