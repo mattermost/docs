@@ -138,8 +138,9 @@ The `password` attribute for PostgreSQL has to sub keys:
 ```YAML
 gitaly:
   internal:
-    - default
-    - default2
+    names:
+      - default
+      - default2
   external:
     - name: node1
       hostname: node1.example.local

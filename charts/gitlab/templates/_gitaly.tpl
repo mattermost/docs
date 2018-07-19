@@ -6,7 +6,7 @@ Return gitaly host for internal statefulsets
 {{- define "gitlab.gitaly.storage.internal" -}}
 {{- $releaseName := .Release.Name -}}
 {{- $name := coalesce .Values.gitaly.serviceName .Values.global.gitaly.serviceName "gitaly" -}}
-{{- range $i, $storage := .Values.global.gitaly.internal -}}
+{{- range $i, $storage := .Values.global.gitaly.internal.names -}}
 {{- printf "%s:\n" $storage -}}
 {{- printf  "path: /var/opt/gitlab/repo\n" | indent 2 -}}
 {{- $podName := printf "%s-gitaly-%d" $releaseName $i -}}
@@ -39,7 +39,7 @@ default:
 {{- if .Values.global.gitaly.external -}}
 {{ template "gitlab.gitaly.storage.external" . }}
 {{- end -}}
-{{- if .Values.global.gitaly.internal -}}
+{{- if .Values.global.gitaly.internal.names -}}
 {{ template "gitlab.gitaly.storage.internal" . }}
 {{- end -}}
 {{- end -}}

@@ -19,7 +19,7 @@ data:
     # listen on a TCP socket. This is insecure (no authentication)
     listen_addr = "0.0.0.0:8075"
 
-    <% @storages = [ {{- range (coalesce .Values.internal .Values.global.gitaly.internal) }} {{ . | quote }}, {{- end }} ] %>
+    <% @storages = [ {{- range (coalesce .Values.internal.names .Values.global.gitaly.internal.names) }} {{ . | quote }}, {{- end }} ] %>
     <% @index=`echo ${HOSTNAME##*-}`.to_i %>
     <% if @storages.length > @index %>
     [[storage]]

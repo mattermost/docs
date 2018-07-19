@@ -21,7 +21,7 @@ Table below contains all the possible charts configurations that can be supplied
 | Parameter                    | Description                            | Default                                  |
 | ---                          | ---                                    | ---                                      |
 | image.repository             | Gitaly image repository                | registry.com/gitlab-org/build/cng/gitaly |
-| internal[]                   | Ordered names of statfulset storages   | - default                                |
+| internal.names[]             | Ordered names of statfulset storages   | - default                                |
 | external[].name              | name of external node storage          | - ""                                     |
 | external[].hostname          | hostname of external node              | - ""                                     |
 | external[].port              | port of external node                  | - ""                                     |

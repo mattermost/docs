@@ -24,7 +24,8 @@ global:
     password: {}
   gitaly:
     authToken: {}
-    internal: ['default']
+    internal:
+      names: ['default']
     external: []
   minio:
     enabled: true
