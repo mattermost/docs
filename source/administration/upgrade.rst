@@ -115,7 +115,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
    .. code-block:: sh
 
      sudo cp -an {path-to}/mattermost-upgrade/. mattermost/
-     sudo rm -r {path-to}/mattermost-upgrade/
+     sudo rm -rf {path-to}/mattermost-upgrade/
 
 #. Start Mattermost server.
 
