@@ -154,7 +154,7 @@ For most roles, we require the ability to join meetings between 8am and 1pm Cali
 
 **2. Work from anywhere (with good internet)** 
 
-The comfort of home, freedom to travel, no commute--learn more about our `work anywhere policies <https://docs.mattermost.com/process/working-at-mattermost.html#working-remotely>`_.
+The comfort of home, freedom to travel, no commute--learn more about our `work anywhere policies <https://docs.mattermost.com/process/working-at-mattermost.html#work-anywhere>`_.
 
 **3. Paid time-off**
 
