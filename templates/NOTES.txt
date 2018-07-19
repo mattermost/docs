@@ -38,46 +38,46 @@ Deprecation behaviors for global configuration of Minio
 {{/* Migration of rails `connection` blocks to secrets */}}
 {{- if .Values.gitlab.unicorn.lfs.connection -}}
 {{-   if without (keys .Values.gitlab.unicorn.lfs.connection) "secret" "key" | len | ne 0 -}}
-{{-     fail "\ngitlab.unicorn:\n\tThe `connection` declarations have been moved to be stored in a secret. Please create a secret with these contents, and provide `gitlab.unicorn.lfs.connection.secret`" -}}
+{{-     fail "\ngitlab.unicorn:\n\tThe `lfs.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.unicorn.lfs.connection.secret`" -}}
 {{-   end -}}
 {{- end -}}
 {{- if .Values.gitlab.unicorn.artifacts.connection -}}
 {{-   if without (keys .Values.gitlab.unicorn.artifacts.connection) "secret" "key" | len | ne 0 -}}
-{{-     fail "\ngitlab.unicorn:\n\tThe `connection` declarations have been moved to be stored in a secret. Please create a secret with these contents, and provide `gitlab.unicorn.artifacts.connection.secret`" -}}
+{{-     fail "\ngitlab.unicorn:\n\tThe `artifacts.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.unicorn.artifacts.connection.secret`" -}}
 {{-   end -}}
 {{- end -}}
 {{- if .Values.gitlab.unicorn.uploads.connection -}}
 {{-   if without (keys .Values.gitlab.unicorn.uploads.connection) "secret" "key" | len | ne 0 -}}
-{{-     fail "\ngitlab.unicorn:\n\tThe `connection` declarations have been moved to be stored in a secret. Please create a secret with these contents, and provide `gitlab.unicorn.uploads.connection.secret`" -}}
+{{-     fail "\ngitlab.unicorn:\n\tThe `uploads.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.unicorn.uploads.connection.secret`" -}}
 {{-   end -}}
 {{- end -}}
 {{- if .Values.gitlab.sidekiq.lfs.connection -}}
 {{-   if without (keys .Values.gitlab.sidekiq.lfs.connection) "secret" "key" | len | ne 0 -}}
-{{-     fail "\ngitlab.sidekiq:\n\tThe `connection` declarations have been moved to be stored in a secret. Please create a secret with these contents, and provide `gitlab.sidekiq.lfs.connection.secret`" -}}
+{{-     fail "\ngitlab.sidekiq:\n\tThe `lfs.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.sidekiq.lfs.connection.secret`" -}}
 {{-   end -}}
 {{- end -}}
 {{- if .Values.gitlab.sidekiq.artifacts.connection -}}
 {{-   if without (keys .Values.gitlab.sidekiq.artifacts.connection) "secret" "key" | len | ne 0 -}}
-{{-     fail "\ngitlab.sidekiq:\n\tThe `connection` declarations have been moved to be stored in a secret. Please create a secret with these contents, and provide `gitlab.sidekiq.artifacts.connection.secret`" -}}
+{{-     fail "\ngitlab.sidekiq:\n\tThe `artifacts.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.sidekiq.artifacts.connection.secret`" -}}
 {{-   end -}}
 {{- end -}}
 {{- if .Values.gitlab.sidekiq.uploads.connection -}}
 {{-   if without (keys .Values.gitlab.sidekiq.uploads.connection) "secret" "key" | len | ne 0 -}}
-{{-     fail "\ngitlab.sidekiq:\n\tThe `connection` declarations have been moved to be stored in a secret. Please create a secret with these contents, and provide `gitlab.sidekiq.uploads.connection.secret`" -}}
+{{-     fail "\ngitlab.sidekiq:\n\tThe `uploads.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.sidekiq.uploads.connection.secret`" -}}
 {{-   end -}}
 {{- end -}}
 {{- if index .Values.gitlab "task-runner" "lfs" "connection" -}}
 {{-   if without (keys (index .Values.gitlab "task-runner" "lfs" "connection")) "secret" "key" | len | ne 0 -}}
-{{-     fail "\ngitlab.task-runner:\n\tThe `connection` declarations have been moved to be stored in a secret. Please create a secret with these contents, and provide `gitlab.task-runner.lfs.connection.secret`" -}}
+{{-     fail "\ngitlab.task-runner:\n\tThe `lfs.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.task-runner.lfs.connection.secret`" -}}
 {{-   end -}}
 {{- end -}}
 {{- if index .Values.gitlab "task-runner" "artifacts.connection" -}}
 {{-   if without (keys (index .Values "gitlab.task-runner" "artifacts.connection")) "secret" "key" | len | ne 0 -}}
-{{-     fail "\ngitlab.task-runner:\n\tThe `connection` declarations have been moved to be stored in a secret. Please create a secret with these contents, and provide `gitlab.task-runner.artifacts.connection.secret`" -}}
+{{-     fail "\ngitlab.task-runner:\n\tThe `artifacts.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.task-runner.artifacts.connection.secret`" -}}
 {{-   end -}}
 {{- end -}}
 {{- if index .Values.gitlab "task-runner" "uploads.connection" -}}
 {{-   if without (keys (index .Values.gitlab "task-runner" "uploads.connection")) "secret" "key" | len | ne 0 -}}
-{{-     fail "\ngitlab.task-runner:\n\tThe `connection` declarations have been moved to be stored in a secret. Please create a secret with these contents, and provide `gitlab.task-runner.uploads.connection.secret`" -}}
+{{-     fail "\ngitlab.task-runner:\n\tThe `uploads.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.task-runner.uploads.connection.secret`" -}}
 {{-   end -}}
 {{- end -}}
