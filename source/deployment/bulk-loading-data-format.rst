@@ -866,7 +866,7 @@ Fields of the Post object
     <tr class="row-odd">
       <td valign="middle">attachments</td>
       <td valign="middle">array</td>
-      <td>Attachments associated with the Post. Must be an array of <a href="#fields-of-the-attachment-object">Attachment</a> objects.</td>
+      <td>File attachments associated with this post. Must be an array of <a href="#fields-of-the-attachment-object">Attachment</a> objects.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
@@ -911,7 +911,7 @@ This object is a member of the Post/DirectPost object.
     <tr class="row-odd">
       <td valign="middle">attachments</td>
       <td valign="middle">array</td>
-      <td>Attachments associated with the Post. Must be an array of <a href="#fields-of-the-attachment-object">Attachment</a> objects.</td>
+      <td>File attachments associated with this post. Must be an array of <a href="#fields-of-the-attachment-object">Attachment</a> objects.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
