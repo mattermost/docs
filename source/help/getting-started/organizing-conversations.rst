@@ -32,7 +32,7 @@ Use a Direct Message when you want a private conversation with one person. Use a
 
 If your System Administrator has allowed it, you can start a Direct Message or a Group Message with people on other teams.
 
-.. tip :: Check the online status indicator next to names in the Direct Message list. It displays: online (green checkmark indicates active browser), away (orange clock indicates no browser activity for 5 minutes), do not disturb (red dash indicates disabled desktop and push notifications) and offline (grey circle indicates browser closed).
+.. tip :: Check the online status indicator next to names in the Direct Message list. It displays: online (green checkmark indicates active browser), away (orange clock indicates no browser activity for 5 minutes), do not disturb (red dash indicates disabled desktop and push notifications) and offline (white circle indicates browser is closed).
 
 -----------------------------------------
 Managing Channels
