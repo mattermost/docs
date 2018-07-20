@@ -37,7 +37,6 @@ variables:
   POSTGRES_DB: $CI_ENVIRONMENT_SLUG
 
 stages:
-  - changelog
   - test
   - review
   - staging
@@ -350,15 +349,6 @@ debug_review:
     kubernetes: active
   except:
     - master
-
-changelog_manager:
-  stage: changelog
-  script:
-    - scripts/changelog_manager.rb .
-  allow_failure: true
-  only:
-    refs:
-      - master
 
 # ---------------------------------------------------------------------------
 
