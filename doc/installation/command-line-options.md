@@ -47,6 +47,16 @@ Tables below contain all the possible charts configurations that can be supplied
 | global.email.reply_to           | Reply-to email listed in emails from GitLab                                             | noreply@example.local |
 | global.email.subject_suffix     | Suffix on the subject of all outgoing email from GitLab                                 | ""                    |
 
+## RBAC Settings
+| Parameter                                    | Default                                                           | Default                      |
+| ---                                          | ---                                                               | ---                          |
+| certmanager.rbac.create                      | Create and use RBAC resources                                     | true                         |
+| nginx-ingress.rbac.create                    | Create and use default RBAC resources                             | false                        |
+| nginx-ingress.rbac.createClusterRole         | Create and use Cluster role                                       | false                        |
+| nginx-ingress.rbac.createRole                | Create and use namespaced role                                    | true                         |
+| prometheus.rbac.create                       | Create and use RBAC resources                                     | true                         |
+| gitlab-runner.rbac.create                    | Create and use RBAC resources                                     | true                         |
+
 ## Advanced nginx ingress configuration
 
 See [nginx-ingress chart](../../charts/nginx/README.md)

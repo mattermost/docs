@@ -10,3 +10,5 @@ selfsign:
 resources: {}
 env: production
 global: {}
+rbac:
+  create: true

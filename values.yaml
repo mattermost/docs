@@ -144,6 +144,9 @@ postgresql:
 # redis:
 #   enabled: false
 
+shared-secrets:
+  rbac:
+    create: true
 
 gitlab-runner:
   install: true

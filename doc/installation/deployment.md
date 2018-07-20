@@ -125,6 +125,16 @@ By default, the Helm charts use the Enterprise Edition of GitLab. If desired, yo
 --set gitlab.unicorn.image.repository=registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ce
 ```
 
+### RBAC
+
+This chart defaults to creating and using RBAC. If your cluster does not have RBAC enabled, you will need to disable these settings:
+```
+--set certmanager.rbac.create=false
+--set nginx-ingress.rbac.createRole=false
+--set prometheus.rbac.create=false
+--set gitlab-runner.rbac.create=false
+```
+
 ## Deploy using helm
 
 Once you have all of your configuration options collected, we can get any dependencies and
