@@ -14,7 +14,9 @@ spec:
         app: {{ template "name" . }}
         release: {{ .Release.Name }}
     spec:
+      {{- if .Values.rbac.create }}
       serviceAccountName: {{ template "fullname" . }}
+      {{- end }}
       restartPolicy: Never
 {{- include "pullsecrets" .Values.image | indent 6}}
       containers:
