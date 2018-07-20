@@ -118,6 +118,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - After build is cut, tweet announcement that RC1 is ready (see [example](https://pre-release.mattermost.com/core/pl/tefx1ijyz7bs8mabuxmpq9f7pw))
 2. Logistics:
     - Mail out contributor and security researcher mugs
+      - Space out the ordering of mugs over the next 3 weeks to prevent mistakes being made by the supplier.  i.e. If there are 12 contributors to order mugs for, place an order every 2nd or 3rd day over the next 3 weeks.
     - Update [Team](http://www.mattermost.org/team/) page with new contributors
     - Provide release manager with a list of contributors for Changelog draft
 3. QA:
