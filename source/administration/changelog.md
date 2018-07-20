@@ -6,6 +6,19 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.2
 
+### Highlights
+
+#### Plugins
+ - Also for API/Websocket sections
+ 
+### Improvements
+
+ - Added support to add/delete and enable/disable plugins via CLI.
+ - Added localized timestamp support for email notification.
+ - Added ability to bulk import emoji.
+ - Added support for file attachments in bulk import.
+
+
 
 ## Release v5.1
 
