@@ -760,6 +760,9 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
         "user": "username4",
         "message": "The reply message",
         "create_at": 140012352049,
+        "attachments": [{
+            "path": "/some/valid/file/path/1"
+        }],
       }, {
         "user": "username5",
         "message": "Other reply message",
@@ -773,6 +776,11 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
         "user": "username7",
         "emoji_name": "heart",
         "create_at": 140012359034,
+      }],
+      "attachments": [{
+        "path": "/some/valid/file/path/1"
+      }, {
+        "path": "/some/valid/file/path/2"
       }]
     }
   }
@@ -855,6 +863,13 @@ Fields of the Post object
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
+    <tr class="row-odd">
+      <td valign="middle">attachments</td>
+      <td valign="middle">array</td>
+      <td>Attachments associated with the Post. Must be an array of <a href="#fields-of-the-attachment-object">Attachment</a> objects.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
   </table>
 
 Fields of the Reply object
@@ -893,6 +908,13 @@ This object is a member of the Post/DirectPost object.
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
+    <tr class="row-odd">
+      <td valign="middle">attachments</td>
+      <td valign="middle">array</td>
+      <td>Attachments associated with the Post. Must be an array of <a href="#fields-of-the-attachment-object">Attachment</a> objects.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
   </table>
 
 Fields of the Reaction object
@@ -929,6 +951,37 @@ This object is a member of the Post/DirectPost object.
       <td valign="middle">int</td>
       <td>The timestamp for the reply, in milliseconds since the Unix epoch.</td>
       <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+  </table>
+
+Fields of the Attachment object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This object is a member of the Post/Reply object.
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+   <tfoot>
+      <tr>
+        <td colspan="5">
+          [1] Not validated, but an error occurs if the file path is not found or accessible when running in apply mode.
+        </td>
+      </tr>
+    </tfoot>
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">path</td>
+      <td valign="middle">string</td>
+      <td>local file system path of the file</td>
+      <td align="center" valign="middle">No [1]</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
   </table>
