@@ -240,8 +240,14 @@ The GitLab global Gitaly settings are located under the `global.gitaly` key.
 ```YAML
 global:
   gitaly:
-    host: gitaly.example.local
-    port: 8079
+    internal:
+      names:
+        - default
+        - default2
+    external:
+      - name: node1
+        hostname: node1.example.local
+        port: 8079
     authToken:
       secret: gitaly-secret
       key: token

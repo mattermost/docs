@@ -19,10 +19,15 @@ data:
     # listen on a TCP socket. This is insecure (no authentication)
     listen_addr = "0.0.0.0:8075"
 
+    <% @storages = [ {{- range (coalesce .Values.internal.names .Values.global.gitaly.internal.names) }} {{ . | quote }}, {{- end }} ] %>
+    <% @index=`echo ${HOSTNAME##*-}`.to_i %>
+    <% if @storages.length > @index %>
     [[storage]]
-    name = "default"
+    name = "<%= @storages[@index] %>"
     path = "/home/git/repositories"
-
+    <% else %>
+    <% raise Exception, "Storage for node #{@index} is not present in the storageNames array. Did you use kubectl to scale up ? You need to solely use helm for this purpose" %>
+    <% end %>
     [auth]
     token = "<%= File.read('/etc/gitlab-secrets/gitaly/gitaly_token') %>"
 

@@ -95,6 +95,9 @@ global:
     # host: '0.0.0.0'
     password: {}
   gitaly:
+    internal:
+      names: ["default"]
+    external: []
     authToken: {}
   minio:
     enabled:

@@ -30,6 +30,9 @@ global:
   redis:
     password: {}
   gitaly:
+    internal:
+      names: ["default"]
+    external: []
     authToken: {}
   minio:
     enabled:
