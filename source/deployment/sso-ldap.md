@@ -174,13 +174,18 @@ If you are still having issues, you can [contact support](https://about.mattermo
 
 #### I updated a user account in AD/LDAP, and they can no longer log in to Mattermost
 
-If the user can no longer log in to Mattermost with their AD/LDAP credentials - for example, they get an error message `An account with that email already exists`, or a new Mattermost account is created when they try to log in - this means the ID attribute for their account has changed.
+If the user can no longer log in to Mattermost with their AD/LDAP credentials - for example, they get an error message `An account with that email already exists`, or a new Mattermost account is created when they try to log in - this means the **ID attribute** for their account has changed.
 
-The issue can be fixed by changing the value of the field used for the ID attribute back to the old value.
+The issue can be fixed by changing the value of the field used for the **ID Attribute** back to the old value.
 
-Make sure that the ID attribute is a value that does not change, and use another field for the Login ID attribute as needed.
+If you are currently using a field that sometimes changes for an **ID Attribute** (e.g. username, email that changes when someone gets married), we recommend you switch to using a non-changing field such as a GUID. 
 
-Note: Currently the value is case sensitive. If the ID attribute is set to the username and the username changes from `John.Smith` to `john.smith`, the user would have problems logging in.   
+To do this, you can: 
+
+1. Use the [CLI to migrate the **ID Attribute**](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-ldap-idmigrate) to a non-changing field
+2. Set the [**Login ID Attribute**](https://docs.mattermost.com/administration/config-settings.html#login-id-attribute) to whatever you would like users to log in with (e.g. username or email)
+
+Note: Currently the value is case sensitive. If the **ID attribute** is set to the username and the username changes from `John.Smith` to `john.smith`, the user would have problems logging in.   
 
 #### I see the log error `LDAP Result Code 4 "Size Limit Exceeded"`
 

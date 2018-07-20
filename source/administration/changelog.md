@@ -98,6 +98,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.0
 
+ - **v5.0.2, released 2018-07-16**
+   - Mattermost v5.0.2 contains a high severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v5.0.1, released 2018-07-09**
    - Fixed an issue where large Global Relay exports could cause export jobs to fail completely. 
  - **v5.0.0, released 2018-06-16**
@@ -229,6 +231,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v4.10
 
+ - **v4.10.2, released 2018-07-16**
+   - Mattermost v4.10.2 contains a high severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.10.1, released 2018-06-04**
    - Mattermost v4.10.1 contains a moderate severity security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
    - Fixed an issue where the Mattermost screen went blank when viewing "Manage Members" list while another user was added to the channel.
