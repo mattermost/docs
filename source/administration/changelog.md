@@ -13,10 +13,40 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  
 ### Improvements
 
- - Added support to add/delete and enable/disable plugins via CLI.
+#### Web User Interface (UI)
+ - Added experimental custom default channels.
+
+#### Notifications
  - Added localized timestamp support for email notification.
+
+#### Command Line Interface (CLI)
+ - Added support to add/delete and enable/disable plugins via CLI.
+ - Enhanced log output from Permanent Delete CLI command to delete FileInfos for that user's posts.
+ - Addded channel renaming to CLI.
+
+#### Category?
  - Added ability to bulk import emoji.
  - Added support for file attachments in bulk import.
+ - Allow webhook message attachments to trigger mentions.
+
+### Bug Fixes
+
+### Compatibility
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+ - Under "ExtensionSettings": in config.json:
+      - Added "EnableExperimentalExtensions": false,
+      - Added "AllowedExtensionsIDs": []
+
+### API Changes
+ 
+#### RESTful API v4 Changes
+ - Have deleteReaction API send the correct value for post.HasReactions.
 
 
 
