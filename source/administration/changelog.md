@@ -15,9 +15,14 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 #### Web User Interface (UI)
  - Added experimental custom default channels.
+ - Added support to search message attachment/plugin contents.
+ - Added link to profile pop-over from names in Join/Leave messages.
 
 #### Notifications
  - Added localized timestamp support for email notification.
+ 
+#### Administration
+ - In the compliance export status table, in System Console > Compliance > Compliance Export, add number of exported records to Details column.
 
 #### Command Line Interface (CLI)
  - Added support to add/delete and enable/disable plugins via CLI.
