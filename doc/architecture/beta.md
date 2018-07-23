@@ -24,7 +24,7 @@ Along with the issues and merge requests in this repo, a [changelog](https://git
 GitLab development and testing is taking place on [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/), however other Kubernetes deployments
 should also work. In the event of a specific non-GKE deployment issue, please raise an issue.
 
-We are currently using Kubernetes version 1.8.10 for development.
+We are currently using Kubernetes version 1.8.12 in our automated tests, and 1.9.7 for development.
 
 ## Technical support during beta
 
@@ -48,9 +48,10 @@ Helm Chart Issues/Limitations:
 
 Limitations planned to be fixed during beta:
 
-* GitLab project based import/export https://gitlab.com/charts/gitlab/issues/428
 * Cannot create a project from a template https://gitlab.com/charts/gitlab/issues/348
-* Backup procedure does not include repositories https://gitlab.com/charts/gitlab/issues/503
+* Cannot create a new branch from the UI https://gitlab.com/charts/gitlab/issues/572
+* GitLab project based import/~~export~~ https://gitlab.com/charts/gitlab/issues/428
+* ~~Backup procedure does not include repositories https://gitlab.com/charts/gitlab/issues/503~~ (fixed in `0.3.0`)
 
 Features that are currently out of scope:
 
