@@ -26,7 +26,7 @@ We then check the number of items in the array vs the string length. If the stri
 {{- define "gitlab.deprecations" -}}
 {{- $deprecated := list -}}
 {{/* add templates here */}}
-{{- $deprecated := append $deprecated (include "gitlab.deprecate.railsConnection" .) -}}
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.rails.appConfig" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.minio" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.registryStorage" .) -}}
 {{/* prepare output, check lengths */}}
@@ -36,64 +36,31 @@ We then check the number of items in the array vs the string length. If the stri
 {{- end -}}
 {{- end -}}
 
-{{/* Migration of rails `connection` blocks to secrets */}}
-{{- define "gitlab.deprecate.railsConnection" -}}
-{{- if .Values.gitlab.unicorn.lfs.connection -}}
-{{-   if without (keys .Values.gitlab.unicorn.lfs.connection) "secret" "key" | len | ne 0 }}
-gitlab.unicorn:
-    The `lfs.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.unicorn.lfs.connection.secret`
-{{-   end -}}
-{{- end -}}
-{{- if .Values.gitlab.unicorn.artifacts.connection -}}
-{{-   if without (keys .Values.gitlab.unicorn.artifacts.connection) "secret" "key" | len | ne 0 }}
-gitlab.unicorn:
-    The `artifacts.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.unicorn.artifacts.connection.secret`
-{{-   end -}}
-{{- end -}}
-{{- if .Values.gitlab.unicorn.uploads.connection -}}
-{{-   if without (keys .Values.gitlab.unicorn.uploads.connection) "secret" "key" | len | ne 0 }}
-gitlab.unicorn:
-    The `uploads.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.unicorn.uploads.connection.secret`
-{{-   end -}}
-{{- end -}}
-{{- if .Values.gitlab.sidekiq.lfs.connection -}}
-{{-   if without (keys .Values.gitlab.sidekiq.lfs.connection) "secret" "key" | len | ne 0 }}
-gitlab.sidekiq:
-    The `lfs.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.sidekiq.lfs.connection.secret`
-{{-   end -}}
-{{- end -}}
-{{- if .Values.gitlab.sidekiq.artifacts.connection -}}
-{{-   if without (keys .Values.gitlab.sidekiq.artifacts.connection) "secret" "key" | len | ne 0 }}
-gitlab.sidekiq:
-    The `artifacts.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.sidekiq.artifacts.connection.secret`
-{{-   end -}}
-{{- end -}}
-{{- if .Values.gitlab.sidekiq.uploads.connection -}}
-{{-   if without (keys .Values.gitlab.sidekiq.uploads.connection) "secret" "key" | len | ne 0 }}
-gitlab.sidekiq:
-    The `uploads.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.sidekiq.uploads.connection.secret`
-{{-   end -}}
-{{- end -}}
-{{- if index .Values.gitlab "task-runner" "lfs" "connection" -}}
-{{-   if without (keys (index .Values.gitlab "task-runner" "lfs" "connection")) "secret" "key" | len | ne 0 }}
-gitlab.task-runner:
-    The `lfs.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.task-runner.lfs.connection.secret`
-{{-   end -}}
-{{- end -}}
-{{- if index .Values.gitlab "task-runner" "artifacts.connection" -}}
-{{-   if without (keys (index .Values "gitlab.task-runner" "artifacts.connection")) "secret" "key" | len | ne 0 }}
-gitlab.task-runner:
-    The `artifacts.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.task-runner.artifacts.connection.secret`
-{{-   end -}}
-{{- end -}}
-{{- if index .Values.gitlab "task-runner" "uploads.connection" -}}
-{{-   if without (keys (index .Values.gitlab "task-runner" "uploads.connection")) "secret" "key" | len | ne 0 }}
-gitlab.task-runner:
-    The `uploads.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `gitlab.task-runner.uploads.connection.secret`
+{{/* Migration of rails shared lfs/artifacts/uploads blocks to globals */}}
+{{- define "gitlab.deprecate.rails.appConfig" -}}
+{{- range $chart := list "unicorn" "sidekiq" "task-runner" -}}
+{{-   if index $.Values.gitlab $chart -}}
+{{-     range $i, $block := list "lfs" "artifacts" "uploads" -}}
+{{-       if hasKey (index $.Values.gitlab $chart) $block }}
+{{-         with $config := index $.Values.gitlab $chart $block -}}
+{{-           range $item := list "enabled" "bucket" "proxy_download" -}}
+{{-             if hasKey $config $item }}
+gitlab.{{ $chart }}:
+    `{{ $block }}.{{ $item }}` has been moved to global. Please remove `{{ $block }}.{{ $item }}` from your properties, and set `global.appConfig.{{ $block }}.{{ $item }}`
+{{-             end -}}
+{{-           end -}}
+{{-           if .connection -}}
+{{-             if without (keys .connection) "secret" "key" | len | ne 0 }}
+gitlab.{{ $chart }}:
+    The `{{ $block }}.connection` declarations have been moved into a secret. Please create a secret with these contents, and set `global.appConfig.{{ $block }}.connection.secret`
+{{-             end -}}
+{{-           end -}}
+{{-         end -}}
+{{-       end -}}
+{{-     end -}}
 {{-   end -}}
 {{- end -}}
 {{- end -}}
-{{/* END deprecate.connection */}}
 
 {{/* Deprecation behaviors for global configuration of Minio */}}
 {{- define "gitlab.deprecate.minio" -}}

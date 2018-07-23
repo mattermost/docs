@@ -52,13 +52,13 @@ data:
       incoming_email:
         enabled: false
       artifacts:
-        enabled: {{ eq .Values.artifacts.enabled true }}
+        enabled: {{ eq .Values.global.appConfig.artifacts.enabled true }}
         object_store:
           enabled: true
-          remote_directory: {{ .Values.artifacts.bucket }}
+          remote_directory: {{ .Values.global.appConfig.artifacts.bucket }}
           direct_upload: true
           background_upload: false
-          proxy_download: {{ eq .Values.artifacts.proxy_download true }}
+          proxy_download: {{ eq .Values.global.appConfig.artifacts.proxy_download true }}
           {{- if .Values.global.minio.enabled }}
           connection:
             provider: AWS
@@ -68,17 +68,17 @@ data:
             host: {{ template "gitlab.minio.hostname" . }}
             endpoint: {{ template "gitlab.minio.endpoint" . }}
             path_style: true
-          {{- else if .Values.artifacts.connection }}
+          {{- else if .Values.global.appConfig.artifacts.connection }}
           connection: <%= YAML.load_file("/etc/gitlab/objectstorage/artifacts").to_json() %>
           {{- end }}
       lfs:
-        enabled: {{ eq .Values.lfs.enabled true }}
+        enabled: {{ eq .Values.global.appConfig.lfs.enabled true }}
         object_store:
           enabled: true
-          remote_directory: {{ .Values.lfs.bucket }}
+          remote_directory: {{ .Values.global.appConfig.lfs.bucket }}
           direct_upload: true
           background_upload: false
-          proxy_download: {{ eq .Values.lfs.proxy_download true }}
+          proxy_download: {{ eq .Values.global.appConfig.lfs.proxy_download true }}
           {{- if .Values.global.minio.enabled }}
           connection:
             provider: AWS
@@ -88,17 +88,17 @@ data:
             host: {{ template "gitlab.minio.hostname" . }}
             endpoint: {{ template "gitlab.minio.endpoint" . }}
             path_style: true
-          {{- else if .Values.lfs.connection }}
+          {{- else if .Values.global.appConfig.lfs.connection }}
           connection: <%= YAML.load_file("/etc/gitlab/objectstorage/lfs").to_json() %>
           {{- end }}
       uploads:
-        enabled: {{ eq .Values.uploads.enabled true }}
+        enabled: {{ eq .Values.global.appConfig.uploads.enabled true }}
         object_store:
           enabled: true
-          remote_directory: {{ .Values.uploads.bucket }}
+          remote_directory: {{ .Values.global.appConfig.uploads.bucket }}
           direct_upload: true
           background_upload: false
-          proxy_download: {{ eq .Values.uploads.proxy_download true }}
+          proxy_download: {{ eq .Values.global.appConfig.uploads.proxy_download true }}
           {{- if .Values.global.minio.enabled }}
           connection:
             provider: AWS
@@ -108,7 +108,7 @@ data:
             host: {{ template "gitlab.minio.hostname" . }}
             endpoint: {{ template "gitlab.minio.endpoint" . }}
             path_style: true
-          {{- else if .Values.uploads.connection }}
+          {{- else if .Values.global.appConfig.uploads.connection }}
           connection: <%= YAML.load_file("/etc/gitlab/objectstorage/uploads").to_json() %>
           {{- end }}
       pages:

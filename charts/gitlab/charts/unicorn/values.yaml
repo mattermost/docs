@@ -102,6 +102,22 @@ global:
   minio:
     enabled:
     credentials: {}
+  appConfig:
+    lfs:
+      enabled: true
+      proxy_download: true
+      bucket:
+      connection: {}
+    artifacts:
+      enabled: true
+      proxy_download: true
+      bucket:
+      connection: {}
+    uploads:
+      enabled: true
+      proxy_download: true
+      bucket:
+      connection: {}
 redis:
   password: {}
 gitaly:
@@ -111,21 +127,6 @@ gitaly:
   authToken: {}
   #   secret: gitaly-secret
   #   key: token
-artifacts:
-  enabled: true
-  proxy_download: true
-  bucket: gitlab-artifacts
-  # connection: {}
-lfs:
-  enabled: true
-  proxy_download: true
-  bucket: git-lfs
-  # connection: {}
-uploads:
-  enabled: true
-  proxy_download: true
-  bucket: gitlab-uploads
-  # connection: {}
 minio:
   serviceName: 'minio-svc'
   port: 9000
