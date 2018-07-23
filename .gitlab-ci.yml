@@ -263,6 +263,9 @@ review_specs:
     name: review/$CI_COMMIT_REF_NAME
     url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
     on_stop: stop_review
+  only:
+    refs:
+      - branches
   except:
     refs:
       - master
@@ -313,6 +316,9 @@ review_helm_test:
   script:
     - export TILLER_NAMESPACE=$KUBE_NAMESPACE
     - helm test "$CI_ENVIRONMENT_SLUG"
+  only:
+    refs:
+      - branches
   except:
     refs:
       - master
