@@ -283,7 +283,7 @@ qa:
   variables:
     DOCKER_DRIVER: overlay2
     DOCKER_HOST: tcp://docker:2375
-    QA_SCREENSHOTS_DIR: "$CI_PROJECT_DIR/screenshots"
+    QA_ARTIFACTS_DIR: $CI_PROJECT_DIR
   script:
     - docker login -u gitlab-ci-token -p "$CI_JOB_TOKEN" "$CI_REGISTRY"
     - gem install gitlab-qa
@@ -299,7 +299,7 @@ qa:
     when: on_failure
     expire_in: 7d
     paths:
-    - screenshots
+    - ./gitlab-qa-run-*
   only:
     refs:
       - branches
