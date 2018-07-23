@@ -31,11 +31,3 @@ RUN wget -q -O - ${HELM_URL} | tar zxf - \
     && mv linux-amd64/helm /usr/bin/ \
     && chmod +x /usr/bin/helm \
     && helm version --client
-
-# Install Ruby gems for changelog_manager
-RUN apk add --no-cache --virtual .ruby-gem-builddeps \
-        autoconf cmake make gcc coreutils glib-dev libc-dev libffi-dev \
-        ruby-dev openssl-dev \
-    && gem install -N rugged \
-    && gem install -N activesupport \
-    && apk del .ruby-gem-builddeps
