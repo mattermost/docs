@@ -1,0 +1,5 @@
+---
+title: Relocate lfs/artifacts/uploads configuration to global `appConfig`
+merge_request: 403
+author:
+type: changed

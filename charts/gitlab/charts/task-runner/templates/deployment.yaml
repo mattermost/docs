@@ -124,11 +124,11 @@ spec:
                 - key: secretkey
                   path: minio/secretkey
           {{- end }}
-          {{- if .Values.lfs.connection }}
+          {{- if .Values.global.appConfig.lfs.connection }}
           - secret:
-              name: {{ .Values.lfs.connection.secret }}
+              name: {{ .Values.global.appConfig.lfs.connection.secret }}
               items:
-                - key: {{ default "connection" .Values.lfs.connection.key }}
+                - key: {{ default "connection" .Values.global.appConfig.lfs.connection.key }}
                   path: objectstorage/lfs
           {{- end }}
       - name: task-runner-secrets

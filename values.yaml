@@ -30,6 +30,18 @@ global:
   minio:
     enabled: true
     credentials: {}
+  appConfig:
+    lfs:
+      bucket: git-lfs
+      connection: {}
+    artifacts:
+      bucket: gitlab-artifacts
+      connection: {}
+    uploads:
+      bucket: gitlab-uploads
+      connection: {}
+    backups:
+      bucket: gitlab-backups
   shell:
     authToken: {}
     hostKeys: {}
