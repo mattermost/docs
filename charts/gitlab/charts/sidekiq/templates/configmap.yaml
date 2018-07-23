@@ -176,9 +176,9 @@ data:
       mkdir -p /sidekiq-secrets/minio
       cp /init-secrets/minio/* /sidekiq-secrets/minio/
     fi
-    if [ -e /init-config/objectstorage ]; then
-      mkdir -p /init-secrets/objectstorage
-      cp /init-config/objectstorage/* /init-secrets/objectstorage/
+    if [ -e /init-secrets/objectstorage ]; then
+      mkdir -p /sidekiq-secrets/objectstorage
+      cp /init-secrets/objectstorage/* /sidekiq-secrets/objectstorage/
     fi
     if [ -e /init-secrets/smtp/smtp-password ]; then
       mkdir -p /sidekiq-secrets/smtp
