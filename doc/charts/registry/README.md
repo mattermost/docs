@@ -63,7 +63,6 @@ Table below contains all the possible charts configurations that can be supplied
 | tokenIssuer              | JWT token issuer                        | gitlab-issuer        |
 | certificate.secret       | JWT certificate                         | gitlab-registry      |
 | replicas                 | Number of replicas                      | 1                    |
-| minio.enabled            | Enable minio flag                       | true                 |
 | minio.bucket             | Minio registry bucket name              | registry             |
 
 ## Chart configuration examples

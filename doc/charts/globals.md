@@ -11,6 +11,7 @@ for more information on how the global variables work.
 - [PostgreSQL](#configure-postgresql-settings)
 - [Redis](#configure-redis-settings)
 - [Gitaly](#configure-gitaly-settings)
+- [Minio](#configure-minio-settings)
 
 ## Configure Host settings
 
@@ -255,3 +256,17 @@ global:
 
 For further details on these settings, see the documentation within the
 [unicorn chart](gitlab/unicorn/README.md#gitaly)
+
+## Configure Minio settings
+
+The GitLab global Minio settings are located under the `global.minio` key.
+
+```
+global:
+  minio:
+    enabled: true
+    credentials: {}
+```
+
+For further details on these settings, see the documentation within the
+[minio chart](minio/README.md)
