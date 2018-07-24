@@ -77,7 +77,7 @@ You can use a pre-packaged Mattermost plugin to pull additional user attributes 
 
 1. Configure the LdapServer, LdapPort, BaseDN, BindUsername, BindPassword, UserFilter and IdAttribute fields under LdapSettings in config.json.
   
-  - When using SAML SSO, the IdAttribute must be the email field in LDAP that is mapped to the user in SAML.
+     - When using SAML SSO, the IdAttribute must be the email field in LDAP that is mapped to the user in SAML.
      
 2. Add the plugin configuration under PluginSettings.Plugins in config.json. The list under “Attributes” will specify which AD/LDAP attributes the API endpoint pulls.
 
