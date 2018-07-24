@@ -16,7 +16,11 @@ Override the runner charts secret name containing the tokens so everything match
 Override the runner charts cache secret name to match minio
 */}}
 {{- define "gitlab-runner.cache.secret" -}}
-{{ include "gitlab.minio.credentials.secret" . }}
+{{- if .Values.runners.cache.secretName -}}
+{{    .Values.runners.cache.secretName | quote }}
+{{- else -}}
+{{    include "gitlab.minio.credentials.secret" . }}
+{{- end -}}
 {{- end -}}
 
 {{/*
