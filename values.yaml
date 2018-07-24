@@ -31,6 +31,16 @@ global:
     enabled: true
     credentials: {}
   appConfig:
+    issueClosingPattern:
+    defaultTheme:
+    webhookTimeout:
+    gravatar:
+      plainUrl:
+      sslUrl:
+    extra:
+      googleAnalyticsId:
+      piwikUrl:
+      piwikSiteId:
     lfs:
       bucket: git-lfs
       connection: {}

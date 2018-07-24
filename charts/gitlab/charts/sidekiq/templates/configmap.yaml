@@ -33,6 +33,11 @@ data:
       gitlab:
         host: {{ template "gitlab.gitlab.hostname" . }}
         https: {{ hasPrefix "https://" (include "gitlab.gitlab.url" .) }}
+        {{- with .Values.global.appConfig }}
+        issue_closing_pattern: {{ .issueClosingPattern | quote }}
+        default_theme: {{ .defaultTheme }}
+        webhook_timeout: {{ .webhookTimeout }}
+        {{- end }}
         trusted_proxies:
         {{- if .Values.trusted_proxies }}
 {{ toYaml .Values.trusted_proxies | indent 10 }}
@@ -51,6 +56,15 @@ data:
           container_registry: true
       incoming_email:
         enabled: false
+      {{- with .Values.global.appConfig }}
+      gravatar:
+        plain_url: {{ .gravatar.plainUrl }}
+        ssl_url: {{ .gravatar.sslUrl }}
+      extra:
+        google_analytics_id: {{ .extra.googleAnalyticsId | quote }}
+        piwik_url: {{ .extra.piwikUrl | quote }}
+        piwik_site_id: {{ .extra.piwikSiteId | quote }}
+      {{- end }}
       artifacts:
         enabled: {{ eq .Values.global.appConfig.artifacts.enabled true }}
         object_store:
