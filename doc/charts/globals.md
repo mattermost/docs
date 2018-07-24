@@ -280,6 +280,16 @@ with the `global.appConfig` key.
 ```
 global:
 appConfig:
+  issueClosingPattern:
+  defaultTheme:
+  webhookTimeout:
+  gravatar:
+    plainUrl:
+    sslUrl:
+  extra:
+    googleAnalyticsId:
+    piwikUrl:
+    piwikSiteId:
   lfs:
     enabled: true
     proxy_download: true
@@ -299,14 +309,67 @@ appConfig:
     bucket: gitlab-backups
 ```
 
-Details on these settings are below. Documentation is not repeated individually,
-as they are structurally identical aside default value of the `bucket` property.
-
 [unicorn]: gitlab/unicorn/README.md
 [sidekiq]: gitlab/sidekiq/README.md
 [task-runner]: gitlab/task-runner/README.md
 
+### General application settings
+
+The settings that can be used to tweak the general properties of the Rails
+application are described below.
+
+#### issueClosingPattern
+
+[Pattern to close issues automatically](https://docs.gitlab.com/ee/administration/issue_closing_pattern.html).
+It takes a string value, and defaults to an empty value.
+
+#### defaultTheme
+
+[Numeric ID of the default theme for the GitLab instance](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/lib/gitlab/themes.rb#L14-25). It takes a number, denoting the id of the theme, as value and has an empty
+default value.
+
+#### webHookTimeout
+
+[Waiting time in seconds before a hook is deemed failure](https://docs.gitlab.com/ce/user/project/integrations/webhooks.html#receiving-duplicate-or-multiple-web-hook-requests-triggered-by-one-event). It takes a
+number, denoting the time in seconds, as value and has an empty default value.
+
+### Gravatar/Libravatar settings
+
+By default, the charts work with Gravatar avatar service available at
+gravatar.com. However, if needed, a custom Libravatar service can also be used.
+It consists of two subkeys, both of which take string values pointing to URLs
+and have an empty default value.
+
+#### plainUrl
+
+[HTTP URL to libravatar instance (instead of using gravatar.com)](https://docs.gitlab.com/ee/customization/libravatar.html)
+
+#### sslUrl
+
+[HTTPS URL to libravatar instance (instead of using gravatar.com)](https://docs.gitlab.com/ee/customization/libravatar.html)
+
+### Hooking Analytics services to the GitLab instance
+
+Settings to configure Analytics services like Google Analytics and Piwik are
+defined under the `extra` key below `appConfig`.
+
+#### googleAnalyticsId
+
+Tracking ID for Google Analytics. Takes a string value as input and has an empty
+default value.
+
+#### piwikUrl
+
+Piwik URL. Takes a string value as input and has an empty default value.
+
+#### piwikSiteId
+
+Piwik Site ID. Takes a string value as input and has an empty default value.
+
 ### LFS / Artifacts / Uploads
+
+Details on these settings are below. Documentation is not repeated individually,
+as they are structurally identical aside default value of the `bucket` property.
 
 ```YAML
   enabled: true

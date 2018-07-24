@@ -1,0 +1,5 @@
+---
+title: Add option to configure missing settings from gitlab.yml
+merge_request: 395
+author: Balasankar C
+type: added
