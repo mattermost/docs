@@ -52,18 +52,6 @@ Table below contains all the possible charts configurations that can be supplied
 | shell.authToken.secret           | Shell token secret                             | gitlab-shell-secret                              |
 | shell.authToken.key              | Key to shell token in shell secret             | secret                                           |
 | gitaly.serviceName               | Gitaly service name                            | gitaly                                           |
-| artifacts.enabled                | Enable artifacts storage                       | true                                             |
-| artifacts.proxy_download         | Proxy all artifacts downloads through GitLab   | true                                             |
-| artifacts.bucket                 | Object storage bucket name                     | nil                                              |
-| artifacts.connection             | See [GitLab documentation][uplcon] for details | {}                                               |
-| lfs.enabled                      | Enable Git LFS storage                         | true                                             |
-| lfs.proxy_download               | Proxy all LFS downloads through GitLab         | true                                             |
-| lfs.bucket                       | Object storage bucket name                     | nil                                              |
-| lfs.connection                   | See [GitLab documentation][lfscon] for details | {}                                               |
-| uploads.enabled                  | Enable uploads storage                         | true                                             |
-| uploads.proxy_download           | Proxy all uploads downloads through GitLab     | true                                             |
-| uploads.bucket                   | Object storage bucket name                     | nil                                              |
-| uploads.connection               | See [GitLab documentation][uplcon] for details | {}                                               |
 | minio.bucket                     | Name of storage bucket, when using Minio       | git-lfs                                          |
 | minio.serviceName                | Name of Minio service                          | minio-svc                                        |
 | minio.port                       | Port for Minio service                         | 9000                                             |
@@ -241,136 +229,13 @@ The `authToken` attribute for Gitaly has to sub keys:
 - `secret` defines the name of the kubernetes `Secret` to pull from
 - `key` defines the name of the key in the above secret that contains the authToken.
 
-### Artifacts
-
-```YAML
-artifacts:
-  enabled: true
-  proxy_download: true
-  bucket: gitlab-artifacts
-  connection: {}
-```
-
-#### enabled
-
-Enable the use of CI artifact storage, via object storage.
-
-Defaults to `true`
-
-#### proxy_download
-
-Enable proxy of all artifacts downloads via GitLab, in place of direct downloads from the `bucket`.
-
-Defaults to `true`
-
-#### bucket
-
-Name of the bucket to use from object storage provider.
-
-Defaults to `gitlab-artifacts`.
-
-#### connection
-
-The `connection` property is a YAML block, in accordance with the documentation
-present at [GitLab Job Artifacts Administration][artifactscon] documentation. This matches to
-[Fog](https://github.com/fog), and is different between provider modules.
-
-Defaults to `{}` and will be ignored if `minio.enabled` is `true`.
-
-### LFS
-
-```YAML
-lfs:
-  enabled: true
-  proxy_download: true
-  bucket: git-lfs
-  connection: {}
-```
-
-#### enabled
-
-Enable the use of Git LFS storage, via object storage.
-
-Defaults to `true`
-
-#### proxy_download
-
-Enable proxy of all LFS downloads via GitLab, in place of direct downloads from the `bucket`.
-
-Defaults to `true`
-
-#### bucket
-
-Name of the bucket to use from object storage provider.
-
-Defaults to `git-lfs`.
-
-#### connection
-
-The `connection` property is a YAML block, in accordance with the documentation
-present at [GitLab LFS Administration][lfscon] documentation. This matches to
-[Fog](https://github.com/fog), and is different between provider modules.
-
-Defaults to `{}` and will be ignored if `minio.enabled` is `true`.
-
-### uploads
-
-```YAML
-uploads:
-  enabled: true
-  proxy_download: true
-  bucket: gitlab-uploads
-  connection: {}
-```
-
-#### enabled
-
-Enable the use of uploads, via object storage.
-
-Defaults to `true`
-
-#### proxy_download
-
-Enable proxy download of all uploaded content via GitLab, in place of direct downloads from the `bucket`.
-
-Defaults to `true`
-
-#### bucket
-
-Name of the bucket to use from object storage provider.
-
-Defaults to `nil`.
-
-#### connection
-
-The `connection` property is a YAML block, in accordance with the documentation
-present at [GitLab Uploads Administration][uplcon] documentation. This matches to
-[Fog](https://github.com/fog), and is different between provider modules.
-
-Defaults to `{}` and will be ignored if `minio.enabled` is `true`.
-
 ### Minio
 
 ```YAML
 minio:
-  enabled: true
-  credentials:
-    secret: gitlab-minio
   serviceName: 'minio-svc'
   port: 9000
 ```
-
-#### enabled
-
-Enable the use of the in-chart Minio provider for object storage. When `true`, all settings provided under `lfs.connection` will be ignored.
-
-Defaults to `true`
-
-#### credentials.secret
-
-Name of `secret` which holds the credentials (`accesskey`, `secretkey`) for accessing Minio.
-
-Defaults to `gitlab-minio`, as generated by [`shared-secrets` Job](../../../charts/gitlab/charts/shared-secrets)
 
 #### serviceName
 
@@ -643,7 +508,6 @@ The `authToken` attribute for Gitaly has to sub keys:
 [registry]: https://hub.docker.com/_/registry/
 [kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/
 [globals]: ../../globals.md
-[artifactscon]: https://docs.gitlab.com/ee/administration/job_artifacts.html#object-storage-settings
 [lfscon]: https://docs.gitlab.com/ee/workflow/lfs/lfs_administration.html
 [uplcon]: https://docs.gitlab.com/ee/administration/uploads.html#using-object-storage
 [rackattack]: https://docs.gitlab.com/ee/security/rack_attack.html

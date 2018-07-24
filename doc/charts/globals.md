@@ -11,6 +11,8 @@ for more information on how the global variables work.
 - [PostgreSQL](#configure-postgresql-settings)
 - [Redis](#configure-redis-settings)
 - [Gitaly](#configure-gitaly-settings)
+- [Minio](#configure-minio-settings)
+- [appConfig](#configure-appconfig-settings)
 
 ## Configure Host settings
 
@@ -255,3 +257,95 @@ global:
 
 For further details on these settings, see the documentation within the
 [unicorn chart](gitlab/unicorn/README.md#gitaly)
+
+## Configure Minio settings
+
+The GitLab global Minio settings are located under the `global.minio` key.
+
+```
+global:
+  minio:
+    enabled: true
+    credentials: {}
+```
+
+For further details on these settings, see the documentation within the
+[minio chart](minio/README.md)
+
+## Configure appConfig settings
+
+The [unicorn][], [sidekiq][], and [task-runner][] charts share multiple settings, which are configured
+with the `global.appConfig` key.
+
+```
+global:
+appConfig:
+  lfs:
+    enabled: true
+    proxy_download: true
+    bucket: git-lfs
+    connection: {}
+  artifacts:
+    enabled: true
+    proxy_download: true
+    bucket: gitlab-artifacts
+    connection: {}
+  uploads:
+    enabled: true
+    proxy_download: true
+    bucket: gitlab-uploads
+    connection: {}
+  backups:
+    bucket: gitlab-backups
+```
+
+Details on these settings are below. Documentation is not repeated individually,
+as they are structurally identical aside default value of the `bucket` property.
+
+[unicorn]: gitlab/unicorn/README.md
+[sidekiq]: gitlab/sidekiq/README.md
+[task-runner]: gitlab/task-runner/README.md
+
+### LFS / Artifacts / Uploads
+
+```YAML
+  enabled: true
+  proxy_download: true
+  bucket:
+  connection:
+    secret:
+    key:
+```
+
+#### enabled
+
+Enable the use of these features with object storage.
+
+Defaults to `true`
+
+#### proxy_download
+
+Enable proxy of all downloads via GitLab, in place of direct downloads from the `bucket`.
+
+Defaults to `true`
+
+#### bucket
+
+Name of the bucket to use from object storage provider.
+
+Defaults shown above.
+
+#### connection
+
+The `connection` property has been transitioned to a Kubernetes Secret. The contents
+of this secret should be in accordance with the documentation present at
+[GitLab Job Artifacts Administration][artifactscon] documentation. This matches to
+[Fog](https://github.com/fog), and is different between provider modules.
+
+Defaults to `{}` and will be ignored if `global.minio.enabled` is `true`.
+
+This property has two sub-keys: `secret` and `key`.
+- `secret` is the name of a Kubernetes Secret. This value is required to use external object storage.
+- `key` is the name of the key in the secret which houses the YAML block. Defaults to `connection`.
+
+[artifactscon]: https://docs.gitlab.com/ee/administration/job_artifacts.html#object-storage-settings

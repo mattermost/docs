@@ -19,7 +19,6 @@ We will describe all the major sections of the configuration below. When configu
 
 ```
 minio:
-  enabled:
   init:
   ingress:
     enabled:
@@ -49,7 +48,6 @@ Table below contains all the possible charts configurations that can be supplied
 | imageTag                     | Minio image tag                         | RELEASE.2017-12-28T01-21-00Z |
 | imagePullPolicy              | Minio image pull policy                 | Always                       |
 | pullSecrets                  | Secrets for the image repository        |                              |
-| enabled                      | Minio enable flag                       | true                         |
 | mountPath                    | Minio config file mount path            | /export                      |
 | replicas                     | Minio number of replicas                | 4                            |
 | minioMc.image                | Minio mc image                          | minio/mc                     |

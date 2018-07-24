@@ -63,7 +63,6 @@ Table below contains all the possible charts configurations that can be supplied
 | tokenIssuer              | JWT token issuer                        | gitlab-issuer        |
 | certificate.secret       | JWT certificate                         | gitlab-registry      |
 | replicas                 | Number of replicas                      | 1                    |
-| minio.enabled            | Enable minio flag                       | true                 |
 | minio.bucket             | Minio registry bucket name              | registry             |
 
 ## Chart configuration examples
@@ -183,14 +182,39 @@ Field `replicas` is an integer, controlling the number of [registry][] instances
 
 #### storage
 
-Field `storage` is a map, the value of which is taken directly from [Registry Configuration: `storage`](https://docs.docker.com/registry/configuration/#storage). Please refer to that documentation for extended details.
+```
+storage:
+  secret:
+  key: storage
+```
+
+Field `storage` is a reference to a Kubernetes Secret and associated key.
+The contents of this secret is taken directly from [Registry Configuration: `storage`](https://docs.docker.com/registry/configuration/#storage).
+Please refer to that documentation for extended details.
+
+Example contents of the `storage` block, to be placed in the secret:
+```
+s3:
+  accesskey: BOGUS_ACCESS_KEY
+  secretkey: BOGUS_SECRET_KEY
+  bucket: gitlab-registry
+  v4auth: true
+  region: us-east-1
+```
+
+Place the _contents_ of the `storage` block into the secret,
+and provide the following as items to the `storage` map:
+
+- `secret`: name of the Kubernetes Secret housing the YAML block.
+- `key`: name of the key in the secret to use. Defaults to `storage`.
+
 
 If you chose to use the `filesystem` driver:
 - You will need to provide persistent volumes for this data.
 - [replicas](#replicas) should be set to `1`
 
 For the sake of resiliency and simplicity, it is recommended to make use of an
-external service other than the `filesystem` driver, such as `s3`, `gcs`, `azure` or other comaptible Object Storage.
+external service, such as `s3`, `gcs`, `azure` or other compatible Object Storage.
 
 
 [registry]: https://hub.docker.com/_/registry/
