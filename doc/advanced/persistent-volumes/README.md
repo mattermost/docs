@@ -25,7 +25,7 @@ Automating theses changes is complicated due to:
 2. Unless [manually configured][guide] otherwise, the [PVC][pvc] is the only reference to dynamically provisioned [PersistentVolumes][pv]
 3. `Delete` is the default [reclaimPolicy][reclaim] for dynamically provisioned [PersistentVolumes][pv]
 
-This means in order to make changes, we need to delete the[PersistentVolumeClaim][pvc]
+This means in order to make changes, we need to delete the [PersistentVolumeClaim][pvc]
 and create a new one with our changes. But due to the default [reclaimPolicy][reclaim],
 deleting the [PersistentVolumeClaim][pvc] may delete the [PersistentVolumes][pv]
 and underlying disk. And unless configured with appropriate volumeNames and/or
@@ -34,17 +34,9 @@ labelSelectors, the chart won't know the volume to attach to.
 We will continue to look into making this process easier, but for now a manual
 process needs to be followed to make changes to your storage.
 
-## Before making storage changes
+## Locate the GitLab Volumes
 
-> **Note**: The person making the changes needs to have admin access to the cluster,
-> and appropriate access to the storage solutions being used. Often the changes
-> will first need to be applied in the storage solution, then the results need
-> to be updated in Kubernetes.
-
-Before making changes, you should ensure your [PersistentVolumes][pv] are using the `Retain` [reclaimPolicy][reclaim] so they don't
-get removed while you are making changes.
-
-First, find the volumes/claims that are being used:
+Find the volumes/claims that are being used:
 
 ```bash
 kubectl --namespace <namespace> get PersistentVolumeClaims -l release=<chart release name> -ojsonpath='{range .items[*]}{.spec.volumeName}{"\t"}{.metadata.labels.app}{"\n"}{end}'
@@ -53,7 +45,8 @@ kubectl --namespace <namespace> get PersistentVolumeClaims -l release=<chart rel
 - `<namespace>` should be replaced with the namespace where you installed the GitLab chart.
 - `<chart release name>` should be replaced with the name you used to install the GitLab chart.
 
-The command will print a list of the volume names, followed by the name of the service they are for.
+The command will print a list of the volume names, followed by the name of the
+service they are for.
 
 For example:
 
@@ -66,7 +59,21 @@ pvc-61bcd6d2-8c2d-11e8-8267-42010a9a0113	prometheus
 pvc-61bdf136-8c2d-11e8-8267-42010a9a0113	redis
 ```
 
-Next, edit each volume and change the value of `persistentVolumeReclaimPolicy` under the `spec` field, to be `Retain` rather than `Delete`
+## Before making storage changes
+
+> **Note**: The person making the changes needs to have admin access to the cluster,
+> and appropriate access to the storage solutions being used. Often the changes
+> will first need to be applied in the storage solution, then the results need
+> to be updated in Kubernetes.
+
+Before making changes, you should ensure your [PersistentVolumes][pv] are using
+the `Retain` [reclaimPolicy][reclaim] so they don't get removed while you are
+making changes.
+
+First, [find the volumes/claims that are being used](#locate-the-gitlab-volumes).
+
+Next, edit each volume and change the value of `persistentVolumeReclaimPolicy`
+under the `spec` field, to be `Retain` rather than `Delete`
 
 For example:
 
@@ -76,8 +83,9 @@ $ kubectl --namespace helm-charts-win edit PersistentVolume pvc-6247502b-8c2d-11
 
 <details>
   <summary>
-    Expand example output:
+    Editing Output:
   </summary>
+
   ```yaml
   # Please edit the object below. Lines beginning with a '#' will be ignored,
   # and an empty file will abort the edit. If an error occurs while saving this file will be
@@ -120,6 +128,243 @@ $ kubectl --namespace helm-charts-win edit PersistentVolume pvc-6247502b-8c2d-11
     phase: Bound
   ```
 </details>
+
+## Making storage changes
+
+First, make the desired changes to the disk outside of the cluster. (Resize the
+disk in gke, or create a new disk from a snapshot or clone, etc).
+
+How you do this, and whether or not it can be done live, without downtime, is
+dependant on the storage solutions you are using, and can't be covered by this
+document.
+
+Next, evaluate whether you need these changes to be reflected in the Kubernetes
+objects. For example: with expanding the disk storage size, the storage size
+settings in the [PersistentVolumeClaim][pvc] will only be used when a new volume
+resource is requested. So you would only need to increase the values in the
+[PersistentVolumeClaim][pvc] if you intend to scale up more disks (for use in
+additional gitaly pods).
+
+If you do need to have the changes reflected in Kubernetes, be sure that you've
+updated your reclaim policy on the volumes as described in the [Before making storage changes](#before-making-storage-changes)
+section.
+
+### Changes to an existing Volume
+
+First [locate the volume name](#locate-the-gitlab-volumes) you are changing.
+
+Use `kubectl edit` to make the desired config changes to the volume. (These changes
+should only be updates to reflect the real state of the attached disk)
+
+For example:
+
+```bash
+$ kubectl --namespace helm-charts-win edit PersistentVolume pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+```
+
+<details>
+  <summary>
+    Editing Output:
+  </summary>
+
+  ```yaml
+  # Please edit the object below. Lines beginning with a '#' will be ignored,
+  # and an empty file will abort the edit. If an error occurs while saving this file will be
+  # reopened with the relevant failures.
+  #
+  apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      kubernetes.io/createdby: gce-pd-dynamic-provisioner
+      pv.kubernetes.io/bound-by-controller: "yes"
+      pv.kubernetes.io/provisioned-by: kubernetes.io/gce-pd
+    creationTimestamp: 2018-07-20T14:58:43Z
+    labels:
+      failure-domain.beta.kubernetes.io/region: europe-west2
+      failure-domain.beta.kubernetes.io/zone: europe-west2-b
+    name: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+    resourceVersion: "48362431"
+    selfLink: /api/v1/persistentvolumes/pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+    uid: 650bd649-8c2d-11e8-8267-42010a9a0113
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      # Updated the storage size
+      storage: 100Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: repo-data-review-update-app-h8qogp-gitaly-0
+      namespace: helm-charts-win
+      resourceVersion: "48362307"
+      uid: 6247502b-8c2d-11e8-8267-42010a9a0113
+    gcePersistentDisk:
+      fsType: ext4
+      pdName: gke-cloud-native-81a17-pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+    persistentVolumeReclaimPolicy: Retain
+    storageClassName: standard
+  status:
+    phase: Bound
+  ```
+</details>
+
+Now that the changes have been reflected in the [volume][pv], we need to update
+the [claim][pvc].
+
+First find the claim name from the volume you just edited:
+
+```bash
+kubectl --namespace <namespace> get PersistentVolume <volume name> -ojsonpath={.data.spec.claimRef.name}
+```
+
+Then save a copy of the [claim][pvc] to your local filesystem:
+
+```bash
+kubectl --namespace <namespace> get PersistentVolumeClaim <claim name> -o yaml > <claim name>.bak.yaml
+```
+
+<details>
+  <summary>
+    Example Output:
+  </summary>
+
+  ```yaml
+  apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    annotations:
+      pv.kubernetes.io/bind-completed: "yes"
+      pv.kubernetes.io/bound-by-controller: "yes"
+      volume.beta.kubernetes.io/storage-provisioner: kubernetes.io/gce-pd
+    creationTimestamp: 2018-07-20T14:58:38Z
+    labels:
+      app: gitaly
+      release: review-update-app-h8qogp
+    name: repo-data-review-update-app-h8qogp-gitaly-0
+    namespace: helm-charts-win
+    resourceVersion: "48362433"
+    selfLink: /api/v1/namespaces/helm-charts-win/persistentvolumeclaims/repo-data-review-update-app-h8qogp-gitaly-0
+    uid: 6247502b-8c2d-11e8-8267-42010a9a0113
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 50Gi
+    storageClassName: standard
+    volumeName: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+  status:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 50Gi
+    phase: Bound
+  ```
+</details>
+
+Create a new yaml file for a new PVC object. Have it use the same `metadata.name`, `metadata.labels`, `metadata,namespace`, and `spec` fields. (With your updates applied). And drop the other settings:
+
+Example:
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: gitaly
+    release: review-update-app-h8qogp
+  name: repo-data-review-update-app-h8qogp-gitaly-0
+  namespace: helm-charts-win
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      # This is our updated field
+      storage: 100Gi
+  storageClassName: standard
+  volumeName: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+```
+
+Now delete the old [claim][pvc]:
+
+```bash
+kubectl --namespace <namespace> delete PersistentVolumeClaim <claim name>
+```
+
+Create the new claim:
+
+```bash
+kubectl --namespace <namespace> create PersistentVolumeClaim -f <new claim yaml file>
+```
+
+In a separate terminal, start watching to see when the [claim][pvc] has its status change to bound,
+and then move onto the next step to make the volume available for use in the new claim.
+
+```bash
+kubectl --namespace <namespace> get --watch PersistentVolumeClaim <claim name>
+```
+
+Edit the volume to make it available to the new claim. Remove the `.spec.claimRef` section.
+
+```
+kubectl --namespace <namespace> edit PersistentVolume <volume name>
+```
+
+<details>
+  <summary>
+    Editing Output:
+  </summary>
+
+  ```yaml
+  # Please edit the object below. Lines beginning with a '#' will be ignored,
+  # and an empty file will abort the edit. If an error occurs while saving this file will be
+  # reopened with the relevant failures.
+  #
+  apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      kubernetes.io/createdby: gce-pd-dynamic-provisioner
+      pv.kubernetes.io/bound-by-controller: "yes"
+      pv.kubernetes.io/provisioned-by: kubernetes.io/gce-pd
+    creationTimestamp: 2018-07-20T14:58:43Z
+    labels:
+      failure-domain.beta.kubernetes.io/region: europe-west2
+      failure-domain.beta.kubernetes.io/zone: europe-west2-b
+    name: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+    resourceVersion: "48362431"
+    selfLink: /api/v1/persistentvolumes/pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+    uid: 650bd649-8c2d-11e8-8267-42010a9a0113
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 100Gi
+    gcePersistentDisk:
+      fsType: ext4
+      pdName: gke-cloud-native-81a17-pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+    persistentVolumeReclaimPolicy: Retain
+    storageClassName: standard
+  status:
+    phase: Released
+  ```
+</details>
+
+Shortly after making the change to the [Volume][pv], the terminal watching the claim status should show `Bound`.
+
+Finally, [apply the changes to the GitLab chart](#apply-the-changes-to-the-gitlab-chart)
+
+### Switching to a different Volume
+
+WIP
+
+## Apply the changes to the GitLab chart
+
+After making changes to the [PersistentVolumes][pv] and [PersistentVolumeClaims][pvcs],
+you will also want to issue a helm update with the changes applied to the chart settings as well.
 
 ---
 
