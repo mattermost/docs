@@ -214,11 +214,90 @@ $ kubectl --namespace helm-charts-win edit PersistentVolume pvc-6247502b-8c2d-11
 Now that the changes have been reflected in the [volume][pv], we need to update
 the [claim][pvc].
 
-First find the claim name from the volume you just edited:
+Follow the instructions in the [Make changes to the PersistentVolumeClaim](#make-changes-to-the-persistentvolumeclaim) section.
+
+#### Update the volume to bind to the claim
+
+In a separate terminal, start watching to see when the [claim][pvc] has its status change to bound,
+and then move onto the next step to make the volume available for use in the new claim.
+
+```bash
+kubectl --namespace <namespace> get --watch PersistentVolumeClaim <claim name>
+```
+
+Edit the volume to make it available to the new claim. Remove the `.spec.claimRef` section.
+
+```bash
+kubectl --namespace <namespace> edit PersistentVolume <volume name>
+```
+
+<details>
+  <summary>
+    Editing Output:
+  </summary>
+
+  ```yaml
+  # Please edit the object below. Lines beginning with a '#' will be ignored,
+  # and an empty file will abort the edit. If an error occurs while saving this file will be
+  # reopened with the relevant failures.
+  #
+  apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      kubernetes.io/createdby: gce-pd-dynamic-provisioner
+      pv.kubernetes.io/bound-by-controller: "yes"
+      pv.kubernetes.io/provisioned-by: kubernetes.io/gce-pd
+    creationTimestamp: 2018-07-20T14:58:43Z
+    labels:
+      failure-domain.beta.kubernetes.io/region: europe-west2
+      failure-domain.beta.kubernetes.io/zone: europe-west2-b
+    name: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+    resourceVersion: "48362431"
+    selfLink: /api/v1/persistentvolumes/pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+    uid: 650bd649-8c2d-11e8-8267-42010a9a0113
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 100Gi
+    gcePersistentDisk:
+      fsType: ext4
+      pdName: gke-cloud-native-81a17-pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+    persistentVolumeReclaimPolicy: Retain
+    storageClassName: standard
+  status:
+    phase: Released
+  ```
+</details>
+
+
+Shortly after making the change to the [Volume][pv], the terminal watching the claim status should show `Bound`.
+
+Finally, [apply the changes to the GitLab chart](#apply-the-changes-to-the-gitlab-chart)
+
+### Switching to a different Volume
+
+WIP
+
+## Make changes to the PersistentVolumeClaim
+
+Find the [PersistentVolumeClaim][pvc] you want to change.
 
 ```bash
 kubectl --namespace <namespace> get PersistentVolume <volume name> -ojsonpath={.data.spec.claimRef.name}
 ```
+
+```bash
+kubectl --namespace <namespace> get PersistentVolumeClaims -l release=<chart release name> -ojsonpath='{range .items[*]}{.metadata.name}{"\t"}{.metadata.labels.app}{"\n"}{end}'
+```
+
+- `<namespace>` should be replaced with the namespace where you installed the GitLab chart.
+- `<chart release name>` should be replaced with the name you used to install the GitLab chart.
+
+The command will print a list of the PersistentVolumeClaim names, followed by the name of the
+service they are for.
+
 
 Then save a copy of the [claim][pvc] to your local filesystem:
 
@@ -302,67 +381,10 @@ Create the new claim:
 kubectl --namespace <namespace> create PersistentVolumeClaim -f <new claim yaml file>
 ```
 
-In a separate terminal, start watching to see when the [claim][pvc] has its status change to bound,
-and then move onto the next step to make the volume available for use in the new claim.
+If you are binding to the same [PersistentVolume][pv] that was previous bound to
+the claim, then proceed to [update the volume to bind to the claim](#update-the-volume-to-bind-to-the-claim)
 
-```bash
-kubectl --namespace <namespace> get --watch PersistentVolumeClaim <claim name>
-```
-
-Edit the volume to make it available to the new claim. Remove the `.spec.claimRef` section.
-
-```bash
-kubectl --namespace <namespace> edit PersistentVolume <volume name>
-```
-
-<details>
-  <summary>
-    Editing Output:
-  </summary>
-
-  ```yaml
-  # Please edit the object below. Lines beginning with a '#' will be ignored,
-  # and an empty file will abort the edit. If an error occurs while saving this file will be
-  # reopened with the relevant failures.
-  #
-  apiVersion: v1
-  kind: PersistentVolume
-  metadata:
-    annotations:
-      kubernetes.io/createdby: gce-pd-dynamic-provisioner
-      pv.kubernetes.io/bound-by-controller: "yes"
-      pv.kubernetes.io/provisioned-by: kubernetes.io/gce-pd
-    creationTimestamp: 2018-07-20T14:58:43Z
-    labels:
-      failure-domain.beta.kubernetes.io/region: europe-west2
-      failure-domain.beta.kubernetes.io/zone: europe-west2-b
-    name: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
-    resourceVersion: "48362431"
-    selfLink: /api/v1/persistentvolumes/pvc-6247502b-8c2d-11e8-8267-42010a9a0113
-    uid: 650bd649-8c2d-11e8-8267-42010a9a0113
-  spec:
-    accessModes:
-    - ReadWriteOnce
-    capacity:
-      storage: 100Gi
-    gcePersistentDisk:
-      fsType: ext4
-      pdName: gke-cloud-native-81a17-pvc-6247502b-8c2d-11e8-8267-42010a9a0113
-    persistentVolumeReclaimPolicy: Retain
-    storageClassName: standard
-  status:
-    phase: Released
-  ```
-</details>
-
-
-Shortly after making the change to the [Volume][pv], the terminal watching the claim status should show `Bound`.
-
-Finally, [apply the changes to the GitLab chart](#apply-the-changes-to-the-gitlab-chart)
-
-### Switching to a different Volume
-
-WIP
+Otherwise, if you have bound the claim to a new volume, move onto [apply the changes to the GitLab chart](#apply-the-changes-to-the-gitlab-chart)
 
 ## Apply the changes to the GitLab chart
 
@@ -391,21 +413,6 @@ helm --namespace helm-charts-win upgrade --install review-update-app-h8qogp gitl
   --set gitlab.gitaly.persistence.size=100Gi \
   <your other config settings>
 ```
-
----
-
-# WIP notes
-
-First you make the desired changes to the disk outside the cluster. (Resize the disk in gke, or create a new disk from a snapshot or clone, etc)
-Next step is to use kubectl edit on existing volume, to change their ReclaimPolicy to Retain. This is to ensure the system does not delete your existing volumes during pvc deletion.
-After this the specifics diverge a bit based on whether you are using a new disk, or re-using the same one. But from a high level:
-
-you ensure you have a volume with config that reflects your changes, and is pointing at your disk.
-You have a re-created pvc with the new options.
-You restart your pods to mount using the new options
-You delete the statefulset, but keep the pods if you are working with a statefulset
-You helm upgrade with the persistence settings that already match what you manually put in the pvcs. (Which will recreate the statefulset object)
-
 
 [pv]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes
 [pvc]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
