@@ -186,6 +186,7 @@ Field `replicas` is an integer, controlling the number of [registry][] instances
 storage:
   secret:
   key: storage
+  extraKey:
 ```
 
 Field `storage` is a reference to a Kubernetes Secret and associated key.
@@ -207,6 +208,7 @@ and provide the following as items to the `storage` map:
 
 - `secret`: name of the Kubernetes Secret housing the YAML block.
 - `key`: name of the key in the secret to use. Defaults to `storage`.
+- `extraKey`: (optional) name of an extra key on the secret, which will be mounted to `/etc/docker/registry/storage/${extraKey}` within the container. This can be used to provide the `keyfile` for the `gcs` driver.
 
 
 If you chose to use the `filesystem` driver:
