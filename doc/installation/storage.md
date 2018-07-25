@@ -13,7 +13,7 @@ For a production environment, you should review the settings of your cluster's d
 
 ## Using a custom Storage Class
 
-We recommend creating your own [Storage Class][] for use in these charts, and updating your config to use it. 
+We recommend creating your own [Storage Class][] for use in these charts, and updating your config to use it.
 
 For a production deploy of GitLab, we recommend you use [Persistent Volumes][pv] that have a reclaimPolicy set to `Retain` rather than `Delete`.  On some platforms like GKE, the default [Storage Class][] has a reclaimPolicy of `Delete`. Meaning that uninstalling GitLab, or deleting a PVC, will result in the persistent volume being completely deleted by an automated task that goes through and deletes the volume and disk from GCE.
 
@@ -35,6 +35,36 @@ and use the class in your GitLab config:
 ```
 --set gitlab.gitaly.persistence.storageClass=pd-gitlab
 ```
+
+## Configuring the storage settings
+
+> **Important**: After initial installation, making changes to your storage settings requires manually editing Kubernetes
+> objects, so it's best to plan ahead before installing your production instance of GitLab to avoid extra storage migration work.
+
+Storage configuration is provided per-service for the deployments that require persistent storage.
+
+Gitaly (used for the git repositories), PostgreSQL, Minio, and Redis are all configured similarly. For example:
+
+```
+--set gitlab.gitaly.persistence.size=50Gi
+--set gitlab.gitaly.persistence.storageClass=pd-gitlab
+--set postgresql.persistence.size=8Gi
+--set postgresql.persistence.storageClass=pd-gitlab
+--set minio.persistence.size=10Gi
+--set minio.persistence.storageClass=pd-gitlab
+--set redis.persistence.size=5Gi
+--set redis.persistence.storageClass=pd-gitlab
+```
+
+Documentation for all available persistence options for these can be found in the chart specific docs:
+
+- [Gitaly persistence configuration](../charts/gitlab/gitaly/README.md#git-repository-persistence)
+- [Minio persistence configuration](../charts/minio/README.md#persistence)
+- [Redis persistence configuration](../charts/redis/README.md#persistence)
+- [Upstream PostgreSQL chart configuration](https://github.com/helm/charts/tree/master/stable/postgresql#configuration)
+
+> **Note**: Some of the advanced persistence options differ between PostgreSQL and the others, so it's important to check
+> the specific documentation for each before making changes. 
 
 ## Manually creating Static Volumes
 
