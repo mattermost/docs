@@ -3,6 +3,29 @@
 This documentation collects reasoning and documentation regard decisions made
 regarding the design of the charts in this repository.
 
+## Breaking changes via deprecation
+
+During the development of these charts, we occasionally make improvements that require
+alterations to the properties of existing deployments. Two examples were the centralization
+of configuring the use of Minio, and the migration of external object storage configuration
+from properties to secrets (in observance of our preference).
+
+As a means of preventing a user from accidentally deploying an updated version of these
+charts which includes a breaking change against a configuration that would not function, we
+have chosen to implement [deprecation][] notifications. These are designed to detect
+properties have have been relocated, altered, replaced, or removed entirely, then inform
+the user of what changes need to be made to the configuration. This may include informing
+the user to see documentation on how to replace a property with a secret. These notifications
+will cause the helm `install` or `upgrade` commands to stop with a parse error, and output a complete list of items that need to be addressed. We have taken care to ensure a user will not be placed into a loop of error, fix, repeat.
+
+All deprecations must be addressed in order for a successful deployment to occur. We believe
+the user would prefer to be informed of a breaking change over experiencing unexpected
+behavior complete failure that requires debugging.
+
+Introduced in [!396 Deprecations: implement buffered list of deprecations](https://gitlab.com/charts/gitlab/merge_requests/396)
+
+[deprecation]: ../development/README.md#handling-configuration-deprecation
+
 ## Preference of Secrets in initContainer over Environment
 
 Much of the container ecosystem has, or expects, the capability to be configured

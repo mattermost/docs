@@ -9,6 +9,7 @@ Our contribution policies can be found in [CONTRIBUTING.md](../../CONTRIBUTING.m
 - [Common Structure for values.yaml](#common-structure-for-valuesyaml)
 - [Developing template helpers](#developing-template-helpers)
 - [When to fork from upstream charts](#when-to-fork-upstream-charts)
+- [Handling configuration deprecation](#handling-configuration-deprecation)
 
 ## Versioning and Release
 
@@ -219,3 +220,13 @@ use initContainers][initContainer-vs-env].
 
 There are some cases where it is needed to extend the functionality of a chart in
 such a way that an upstream may not accept.
+
+## Handling configuration deprecations
+
+There are times in a development where changes in behavior require a functionally breaking change. We try to avoid such changes, but some items can not be handled without such a change.
+
+To handle this, we have implemented the [deprecations template][]. This template is designed to recogonize properties that need to be replaced or relocated, and inform the user of the actions they need to take. This template will compile all messages into a list, and then cause the deployment to stop via a `fail` call. This provides a method to inform the user at the same time as preventing the deployment the chart in a broken or unexpected state.
+
+See the documentation of the [deprecations template][] for further information on the design, functionality, and how to add new deprecations.
+
+[deprecations template]: deprecations.md
