@@ -39,9 +39,87 @@ process needs to be followed to make changes to your storage.
 > **Note**: The person making the changes needs to have admin access to the cluster,
 > and appropriate access to the storage solutions being used. Often the changes
 > will first need to be applied in the storage solution, then the results need
-> to be updated in the Kubernetes.
+> to be updated in Kubernetes.
 
-TODO update existing volumes reclaimPolicy to retain
+Before making changes, you should ensure your [PersistentVolumes][pv] are using the `Retain` [reclaimPolicy][reclaim] so they don't
+get removed while you are making changes.
+
+First, find the volumes/claims that are being used:
+
+```bash
+kubectl --namespace <namespace> get PersistentVolumeClaims -l release=<chart release name> -ojsonpath='{range .items[*]}{.spec.volumeName}{"\t"}{.metadata.labels.app}{"\n"}{end}'
+```
+
+- `<namespace>` should be replaced with the namespace where you installed the GitLab chart.
+- `<chart release name>` should be replaced with the name you used to install the GitLab chart.
+
+The command will print a list of the volume names, followed by the name of the service they are for.
+
+For example:
+
+```bash
+$ kubectl --namespace helm-charts-win get PersistentVolumeClaims -l release=review-update-app-h8qogp -ojsonpath='{range .items[*]}{.spec.volumeName}{"\t"}{.metadata.labels.app}{"\n"}{end}'
+pvc-6247502b-8c2d-11e8-8267-42010a9a0113	gitaly
+pvc-61bbc05e-8c2d-11e8-8267-42010a9a0113	minio
+pvc-61bc6069-8c2d-11e8-8267-42010a9a0113	postgresql
+pvc-61bcd6d2-8c2d-11e8-8267-42010a9a0113	prometheus
+pvc-61bdf136-8c2d-11e8-8267-42010a9a0113	redis
+```
+
+Next, edit each volume and change the value of `persistentVolumeReclaimPolicy` under the `spec` field, to be `Retain` rather than `Delete`
+
+For example:
+
+```bash
+$ kubectl --namespace helm-charts-win edit PersistentVolume pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+```
+
+<details>
+  <summary>
+    Expand example output:
+  </summary>
+  ```yaml
+  # Please edit the object below. Lines beginning with a '#' will be ignored,
+  # and an empty file will abort the edit. If an error occurs while saving this file will be
+  # reopened with the relevant failures.
+  #
+  apiVersion: v1
+  kind: PersistentVolume
+  metadata:
+    annotations:
+      kubernetes.io/createdby: gce-pd-dynamic-provisioner
+      pv.kubernetes.io/bound-by-controller: "yes"
+      pv.kubernetes.io/provisioned-by: kubernetes.io/gce-pd
+    creationTimestamp: 2018-07-20T14:58:43Z
+    labels:
+      failure-domain.beta.kubernetes.io/region: europe-west2
+      failure-domain.beta.kubernetes.io/zone: europe-west2-b
+    name: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+    resourceVersion: "48362431"
+    selfLink: /api/v1/persistentvolumes/pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+    uid: 650bd649-8c2d-11e8-8267-42010a9a0113
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    capacity:
+      storage: 50Gi
+    claimRef:
+      apiVersion: v1
+      kind: PersistentVolumeClaim
+      name: repo-data-review-update-app-h8qogp-gitaly-0
+      namespace: helm-charts-win
+      resourceVersion: "48362307"
+      uid: 6247502b-8c2d-11e8-8267-42010a9a0113
+    gcePersistentDisk:
+      fsType: ext4
+      pdName: gke-cloud-native-81a17-pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+  # Changed the following line
+    persistentVolumeReclaimPolicy: Retain
+    storageClassName: standard
+  status:
+    phase: Bound
+  ```
+</details>
 
 ---
 
