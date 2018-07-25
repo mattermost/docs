@@ -37,7 +37,7 @@ variables:
   POSTGRES_DB: $CI_ENVIRONMENT_SLUG
 
 stages:
-  - test
+  - prepare
   - review
   - staging
   - canary
@@ -46,20 +46,6 @@ stages:
   - qa
   - package
   - cleanup
-
-.test:
-  services:
-    - postgres:latest
-  variables:
-    POSTGRES_DB: test
-  stage: test
-  image: gliderlabs/herokuish:latest
-  script:
-    - setup_test_db
-    - cp -R . /tmp/app
-    - /bin/herokuish buildpack test
-  only:
-    - branches
 
 lint_package:
   stage: package
@@ -95,7 +81,6 @@ review:
     - terraform_init
     - check_kube_domain
     - terraform_up
-#    - download_chart
     - ensure_namespace
     - install_tiller
     - create_secret
@@ -357,6 +342,19 @@ debug_review:
     kubernetes: active
   except:
     - master
+
+danger-review:
+  # Dockerfile in https://gitlab.com/gitlab-org/gitaly/blob/master/_support/dangercontainer/Dockerfile
+  # For now, reuse existing container to avoid duplicating effort. In future we might consider using one specific for this repository
+  image: registry.gitlab.com/gitlab-org/gitaly/dangercontainer:latest
+  stage: prepare
+  cache: {}
+  only:
+    refs:
+      - branches
+  script:
+    - git version
+    - danger --fail-on-errors=true
 
 # ---------------------------------------------------------------------------
 
