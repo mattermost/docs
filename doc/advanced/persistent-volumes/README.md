@@ -210,6 +210,7 @@ $ kubectl --namespace helm-charts-win edit PersistentVolume pvc-6247502b-8c2d-11
   ```
 </details>
 
+
 Now that the changes have been reflected in the [volume][pv], we need to update
 the [claim][pvc].
 
@@ -264,6 +265,7 @@ kubectl --namespace <namespace> get PersistentVolumeClaim <claim name> -o yaml >
   ```
 </details>
 
+
 Create a new yaml file for a new PVC object. Have it use the same `metadata.name`, `metadata.labels`, `metadata,namespace`, and `spec` fields. (With your updates applied). And drop the other settings:
 
 Example:
@@ -309,7 +311,7 @@ kubectl --namespace <namespace> get --watch PersistentVolumeClaim <claim name>
 
 Edit the volume to make it available to the new claim. Remove the `.spec.claimRef` section.
 
-```
+```bash
 kubectl --namespace <namespace> edit PersistentVolume <volume name>
 ```
 
@@ -353,6 +355,7 @@ kubectl --namespace <namespace> edit PersistentVolume <volume name>
   ```
 </details>
 
+
 Shortly after making the change to the [Volume][pv], the terminal watching the claim status should show `Bound`.
 
 Finally, [apply the changes to the GitLab chart](#apply-the-changes-to-the-gitlab-chart)
@@ -363,8 +366,31 @@ WIP
 
 ## Apply the changes to the GitLab chart
 
-After making changes to the [PersistentVolumes][pv] and [PersistentVolumeClaims][pvcs],
-you will also want to issue a helm update with the changes applied to the chart settings as well.
+After making changes to the [PersistentVolumes][pv] and [PersistentVolumeClaims][pvc],
+you will also want to issue a helm update with the changes applied to the chart
+settings as well.
+
+See the [installation storage guide](../../installation/storage.md#configuring-the-storage-settings)
+for the options.
+
+> **Note**: If you made changes to the Gitaly [volume claim][pvc], you will need to delete the
+> Gitaly [StatefulSet][statefulset] before you will be able to issue a helm update. This is
+> because the StatefulSet's Volume Template is immutable, and cannot be changed.
+>
+> You can delete the statefulset without deleting the Gitaly Pods:
+> `kubectl --namespace <namespace> delete --cascade=false StatefulSet <release-name>-gitaly`
+> The helm update command will recreate the StatefulSet, which will adopt and
+> update the Gitaly pods.
+
+Update the chart, and include the update config:
+
+Example:
+
+```bash
+helm --namespace helm-charts-win upgrade --install review-update-app-h8qogp gitlab/gitlab \
+  --set gitlab.gitaly.persistence.size=100Gi \
+  <your other config settings>
+```
 
 ---
 
@@ -384,5 +410,6 @@ You helm upgrade with the persistence settings that already match what you manua
 [pv]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes
 [pvc]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
 [reclaim]: https://kubernetes.io/docs/concepts/storage/storage-classes/#reclaim-policy
+[statefulset]: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
 [guide]: ../../installation/storage.md
 [Storage Class]: https://kubernetes.io/docs/concepts/storage/storage-classes/
