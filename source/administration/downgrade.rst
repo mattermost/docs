@@ -47,9 +47,6 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
    .. code-block:: sh
     
-      cd {install-path}/mattermost
-      sudo setcap cap_net_bind_service=+ep ./bin/mattermost
-
       cd {install-path}
       sudo cp -ra mattermost/ mattermost-back-$(date +'%F-%H-%M')/
     
@@ -61,11 +58,14 @@ Owner and group of the install directory - *{owner}* and *{group}*
       UPDATE Teams SET SchemeId = NULL;
       UPDATE Channels SET SchemeId = NULL;
 
-      UPDATE TeamMembers SET Roles = CONCAT(Roles, ' team_user'), SchemeUser = NULL where SchemeUser = 1;
-      UPDATE TeamMembers SET Roles = CONCAT(Roles, ' team_admin'), SchemeAdmin = NULL where SchemeAdmin = 1;
+      UPDATE TeamMembers SET Roles = CONCAT(Roles, ' team_user'), SchemeUser = NULL where SchemeUser = true;
+      UPDATE TeamMembers SET Roles = CONCAT(Roles, ' team_admin'), SchemeAdmin = NULL where SchemeAdmin = true;
 
-      UPDATE ChannelMembers SET Roles = CONCAT(Roles, ' channel_user'), SchemeUser = NULL where SchemeUser = 1;
-      UPDATE ChannelMembers SET Roles = CONCAT(Roles, ' channel_admin'), SchemeAdmin = NULL where SchemeAdmin = 1;
+      UPDATE ChannelMembers SET Roles = CONCAT(Roles, ' channel_user'), SchemeUser = NULL where SchemeUser = true;
+      UPDATE ChannelMembers SET Roles = CONCAT(Roles, ' channel_admin'), SchemeAdmin = NULL where SchemeAdmin = true;
+
+      UPDATE TeamMembers SET SchemeUser = NULL, SchemeAdmin = NULL;
+      UPDATE ChannelMembers SET SchemeUser = NULL, SchemeAdmin = NULL;
 
       DELETE from Systems WHERE Name = 'migration_advanced_permissions_phase_2';
  
