@@ -157,7 +157,7 @@ resources:
   #  memory: 2G
   requests:
     cpu: 200m
-    memory: 2G
+    memory: 1.5G
 maxUnavailable: 1
 minReplicas: 2
 maxReplicas: 10

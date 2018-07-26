@@ -114,7 +114,7 @@ nginx-ingress:
     resources:
       requests:
         cpu: 100m
-        memory: 200Mi
+        memory: 100Mi
     publishService:
       enabled: true
     replicaCount: 3
@@ -124,6 +124,10 @@ nginx-ingress:
   defaultBackend:
     minAvailable: 1
     replicaCount: 2
+    resources:
+      requests:
+        cpu: 5m
+        memory: 5Mi
   rbac:
     create: false
     createClusterRole: false
