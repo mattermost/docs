@@ -2,6 +2,36 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 0.4.0 (2018-07-22)
+
+### Fixed (2 changes)
+
+- runner: fix gitlab-runner.cache.secret template.
+- Fix changelog danger handling.
+
+### Changed (5 changes)
+
+- Move all Minio enabled to global configuration. !389
+- Convert registry storage block to secret. !391
+- Convert rails connection blocks to secrets. !393
+- Relocate lfs/artifacts/uploads configuration to global `appConfig`. !403
+- Update memory requests based on observations. !418
+
+### Added (3 changes, 2 of them are from the community)
+
+- support multiple gitaly instances. !377
+- Set preStop hooks to sidekiq and unicorn charts for graceful shutdown. !382 (Balasankar C)
+- Add option to configure missing settings from gitlab.yml. !395 (Balasankar C)
+
+### Other (5 changes)
+
+- Better document the initial storage configuration options. !412
+- Document deprecations behavior and deceision.
+- Update external object storage documentation.
+- add anti-affinity to nginx.
+- Remove Dockerfile since it's been moved to gitlab-org/gitlab-build-images.
+
+
 ## 0.3.2 (2018-07-26)
 
 - No changes.
