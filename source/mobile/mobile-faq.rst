@@ -25,13 +25,6 @@ Do I need to compile the mobile apps to host my own push notification server?
 
 Yes. To host your own push notification server, you'll need to compile the mobile apps. See `documentation <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`_ to learn how to compile your own mobile apps.
 
-How can I get Google SSO to work with the Mattermost Mobile Apps?
------------------------------------------------------------------
-
-The apps on the Apple App Store and Google Play Store cannot support Google SSO out of the box. This is because Google requires a unique Google API key that's specific to each organization.
-
-If you need Google SSO support, you can create a custom version of the app for your own organization. Fork the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_  repository and add support for Google SSO before compiling the app yourself. If this is something you’re interested in, please `file an issue in GitHub <https://github.com/mattermost/mattermost-mobile/issues>`_ to start the discussion.
-
 .. _push-faq:
 How do push notifications work?
 -------------------------------
@@ -93,3 +86,34 @@ The following options are available for securing your push notification service:
   - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Enterprise Edition E10 or higher, which offers a :doc:`Hosted Push Notification Service (HPNS) <mobile-hpns>`.
 
 .. Note:: For configuration details, see guides for :doc:`deploying the Mattermost App Store and Google Play apps <mobile-appstore-install>` and :doc:`deploying your own version of the apps <mobile-compile-yourself>`.
+
+How do I pre-configure the server URL for my users?
+----------------------------------------------------
+
+You can pre-configure the server URL and other settings by overriding default config.json settings and building the mobile apps yourself.
+
+1. Fork the `mattermost-mobile repository <https://github.com/mattermost/mattermost-mobile>`_. 
+2. Create the file ``/assets/override/config.json`` in your forked mattermost-mobile repository.
+3. Copy and paste all the settings from ``assets/base/config.json`` to the newly created ``/assets/override/config.json`` file that you want to override.
+4. To override the server URL, in ``/assets/override/config.json``, set ``DefaultServerURL`` to server URL of your Mattermost server.
+5. (Optional) If you want to prevent users from changing the server URL, set ``AutoSelectServerUrl`` to ``true``.
+6. (Optional) Override any other settings you'd like.
+
+After the above, your ``/assets/override/config.json`` file would look something like this:
+
+  .. code-block:: json
+  
+    {
+        "DefaultServerURL": "my-mattermost-instance.example.com",
+        "AutoSelectServerUrl": true,
+        "ExperimentalUsernamePressIsMention": true
+    }
+
+7. Finally, `compile your own version <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`_ of the Mattermost mobile applications and Mattermost push proxy server.
+
+How can I get Google SSO to work with the Mattermost Mobile Apps?
+-----------------------------------------------------------------
+
+The apps on the Apple App Store and Google Play Store cannot support Google SSO out of the box. This is because Google requires a unique Google API key that's specific to each organization.
+
+If you need Google SSO support, you can create a custom version of the app for your own organization. Fork the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_  repository and add support for Google SSO before compiling the app yourself. If this is something you’re interested in, please `file an issue in GitHub <https://github.com/mattermost/mattermost-mobile/issues>`_ to start the discussion.
