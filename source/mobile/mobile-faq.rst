@@ -87,6 +87,19 @@ The following options are available for securing your push notification service:
 
 .. Note:: For configuration details, see guides for :doc:`deploying the Mattermost App Store and Google Play apps <mobile-appstore-install>` and :doc:`deploying your own version of the apps <mobile-compile-yourself>`.
 
+How do I white label the app and customize build settings?
+----------------------------------------------------------
+
+All files in the ``/assets/base`` folder can be overriden as needed without conflicting with changes made to the upstream version of the app. To do this:
+
+1. Create the folder ``/assets/override``.
+2. Copy any files or folders that you wish to replace from ``/assets/base`` into ``/assets/override``.
+3. Make your changes to the files in ``/assets/override``.
+
+When you next compile the app or run ``make dist/assets``, the contents of those two folders will be merged with files in ``/assets/override`` taking precedence in the case of any conflicts. For binary files such as images, an overridden file will completely replace the base version, while json files will be merged so that fields not set in the overridden copy use the base version.
+
+For a more specific example of how to use this feature, see the following section.
+
 How do I pre-configure the server URL for my users?
 ----------------------------------------------------
 
