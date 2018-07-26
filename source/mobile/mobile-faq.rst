@@ -96,7 +96,7 @@ All files in the ``/assets/base`` folder can be overriden as needed without conf
 2. Copy any files or folders that you wish to replace from ``/assets/base`` into ``/assets/override``.
 3. Make your changes to the files in ``/assets/override``.
 
-When you next compile the app or run ``make dist/assets``, the contents of those two folders will be merged with files in ``/assets/override`` taking precedence in the case of any conflicts. For binary files such as images, an overridden file will completely replace the base version, while json files will be merged so that fields not set in the overridden copy use the base version.
+When you compile the app or run ``make dist/assets``, the contents of those two folders will be merged with files in ``/assets/override``, taking precedence in the case of any conflicts. For binary files such as images, an overridden file will completely replace the base version, while json files will be merged so that fields not set in the overridden copy use the base version.
 
 For a more specific example of how to use this feature, see the following section.
 
@@ -108,9 +108,9 @@ You can pre-configure the server URL and other settings by overriding default co
 1. Fork the `mattermost-mobile repository <https://github.com/mattermost/mattermost-mobile>`_. 
 2. Create the file ``/assets/override/config.json`` in your forked mattermost-mobile repository.
 3. Copy and paste all the settings from ``assets/base/config.json`` to the newly created ``/assets/override/config.json`` file that you want to override.
-4. To override the server URL, in ``/assets/override/config.json``, set ``DefaultServerURL`` to server URL of your Mattermost server.
+4. To override the server URL, set ``DefaultServerURL`` to server URL of your Mattermost server in ``/assets/override/config.json``.
 5. (Optional) If you want to prevent users from changing the server URL, set ``AutoSelectServerUrl`` to ``true``.
-6. (Optional) Override any other settings you'd like.
+6. (Optional) Override any other settings you like.
 
 After the above, your ``/assets/override/config.json`` file would look something like this:
 
