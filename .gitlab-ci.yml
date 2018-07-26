@@ -24,7 +24,7 @@
 # `.buildpacks` that contains the URLs, one on each line, in order.
 # Note: Auto CI does not work with multiple buildpacks yet
 
-image: registry.gitlab.com/charts/gitlab:latest
+image: registry.gitlab.com/gitlab-org/gitlab-build-images:gitlab-charts-build-base
 
 variables:
   GOOGLE_APPLICATION_CREDENTIALS: ${CI_PROJECT_DIR}/.google_keyfile.json
@@ -344,9 +344,7 @@ debug_review:
     - master
 
 danger-review:
-  # Dockerfile in https://gitlab.com/gitlab-org/gitaly/blob/master/_support/dangercontainer/Dockerfile
-  # For now, reuse existing container to avoid duplicating effort. In future we might consider using one specific for this repository
-  image: registry.gitlab.com/gitlab-org/gitaly/dangercontainer:latest
+  image: registry.gitlab.com/gitlab-org/gitlab-build-images:danger
   stage: prepare
   cache: {}
   only:
