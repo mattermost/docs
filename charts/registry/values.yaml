@@ -82,7 +82,7 @@ resources:
   #   memory: 1024Mi
   requests:
     cpu: 50m
-    memory: 64Mi
+    memory: 32Mi
 
 # Chart operation controls
 enabled: true

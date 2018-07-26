@@ -125,7 +125,7 @@ resources:
   #  memory: 1G
   requests:
     cpu: 200m
-    memory: 1G
+    memory: 768Mi
 maxUnavailable: 1
 
 # Define queue groups into Pods

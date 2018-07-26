@@ -42,7 +42,7 @@ resources:
   #  memory: 128Mi
   requests:
     cpu: 50m
-    memory: 64Mi
+    memory: 32Mi
 maxUnavailable: 1
 minReplicas: 2
 maxReplicas: 10
