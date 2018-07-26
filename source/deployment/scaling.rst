@@ -42,16 +42,16 @@ Based on the `hardware requirements <https://docs.mattermost.com/install/require
 
 .. image:: ../images/scaling-1.png
 
-**Sizing Guidance Using AWS**
+**Sizing Guide Using AWS**
 
 On AWS, we recommend using the following EC2 server types as a baseline:
 
 * App servers:  m5.xlarge
 * Database servers:  r4.xlarge
 
-For this purposes of this guide, we will assume medium usage (10 MB/user/month with a 2x safety factor) for `storage estimates <https://docs.mattermost.com/install/requirements.html#alternate-storage-calculations>`_ and 200 MB/user/month for data transfer estimates. We will also assume on-demand pricing with no upfront payments, though more savings (typically 40% or more) can be achieved with reserved servers on 1–3 year commitments and upfront payments.
+For the purposes of this guide, we will assume medium usage (10 MB/user/month with a 2x safety factor) for `storage estimates <https://docs.mattermost.com/install/requirements.html#alternate-storage-calculations>`_ and 200 MB/user/month for data transfer estimates. We will also assume on-demand pricing with no upfront payments, though more savings (typically 40% or more) can be achieved with reserved servers on 1–3 year commitments and upfront payments.
 
-As deployments scale above 5,000 users, additional servers are added for performance load-balancing and to provide additional redundancy (see our `High Availability Cluster guide <https://docs.mattermost.com/deployment/cluster.html#mattermost-server-configuration>`_.)
+As deployments scale above 5,000 users, additional servers are added for performance load-balancing and to provide additional redundancy (see our `High Availability Cluster guide <https://docs.mattermost.com/deployment/cluster.html#mattermost-server-configuration>`_).
 
 `This spreadsheet <https://docs.google.com/spreadsheets/d/14rXqhLa2VeBFFQC2CISxMppVMTT_DGrHEV6DHEEXU4A/>`_ illustrates how much hardware you’ll need for different-sized Mattermost deployments, as well as estimates as to how much you can expect to pay. It includes links to AWS’s cost calculator for various deployment sizes. The smaller deployment examples (i.e., 1,000 users and 5,000 users) are on the conservative side, with separate servers per function that can easily be scaled out as Mattermost is rolled out. 
 
