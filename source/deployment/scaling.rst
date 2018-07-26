@@ -40,6 +40,8 @@ Mattermost can be deployed on-premises or on the cloud platform of your choice, 
 
 Based on the `hardware requirements <https://docs.mattermost.com/install/requirements.html#hardware-requirements>`_, here’s what Mattermost’s server architecture looks like for a 10,000-user deployment:
 
+.. image:: ../images/scaling-1.png
+
 **Sizing Guidance Using AWS**
 
 On AWS, we recommend using the following EC2 server types as a baseline:
@@ -54,5 +56,7 @@ As deployments scale above 5,000 users, additional servers are added for perform
 `This spreadsheet <https://docs.google.com/spreadsheets/d/14rXqhLa2VeBFFQC2CISxMppVMTT_DGrHEV6DHEEXU4A/>`_ illustrates how much hardware you’ll need for different-sized Mattermost deployments, as well as estimates as to how much you can expect to pay. It includes links to AWS’s cost calculator for various deployment sizes. The smaller deployment examples (i.e., 1,000 users and 5,000 users) are on the conservative side, with separate servers per function that can easily be scaled out as Mattermost is rolled out. 
 
 Here’s an example of the hardware you’ll need for a 10,000-user deployment:
+
+.. image:: ../images/scaling-2.PNG
 
 For more information, check out our `Administrator's Guide <https://docs.mattermost.com/guides/administrator.html>`_.
