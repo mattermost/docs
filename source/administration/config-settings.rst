@@ -2504,7 +2504,7 @@ Enable GIF Picker
 
 Gfycat API Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-Request an API key at https://developers.gfycat.com/signup/#/. Enter the client ID you receive via email to this field. When blank, uses the default API key provided by Gfycat.
+When blank, uses the default API key provided by Gfycat. Alternatively, a unique API key can be requested at https://developers.gfycat.com/signup/#/. Enter the client ID you receive via email to this field. 
 
 +-----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GfycatApiKey": "2_KtH_W5"`` with string input.   |
