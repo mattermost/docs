@@ -203,7 +203,7 @@ For HipChat Data Center customers with limited amounts of data stored, follow th
 
 For teams with large amounts of data, the export function has been reported to fail and it may be difficult to reclaim your team's data. Consider contacting HipChat support to see if a new solution is available. 
 
-For teams unable to extract their data from HipChat, the most standard procedure is to run Mattermost and HipChat in parallel until all the users have moved to Mattermost then deprecate the HipChat instance. 
+For teams unable to extract their data from HipChat, the most standard procedure is to run Mattermost and HipChat in parallel until all the users have moved to Mattermost, then deprecate the HipChat instance. 
 
 Mattermost is currently considering developing a package to help HipChat customers migrate to Mattermost with a mix of services, import/migration tools and potentially a price discount. For more information, please contact us at https://mattermost.com/contact-us/
 
