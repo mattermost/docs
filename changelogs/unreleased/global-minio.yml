@@ -1,0 +1,5 @@
+---
+title: Move all Minio enabled to global configuration
+merge_request: 389
+author:
+type: changed
