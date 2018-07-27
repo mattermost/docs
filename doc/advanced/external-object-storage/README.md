@@ -31,6 +31,6 @@ Configure the chart to use these secrets:
 
 ```
 --set global.appConfig.lfs.connection.secret=objectstore-lfs
---set global.appConfig.lfs.connection.secret=objectstore-artifacts
---set global.appConfig.lfs.connection.secret=objectstore-uploads
+--set global.appConfig.artifacts.connection.secret=objectstore-artifacts
+--set global.appConfig.uploads.connection.secret=objectstore-uploads
 ````
