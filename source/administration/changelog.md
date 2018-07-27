@@ -17,6 +17,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added experimental custom default channels.
  - Added support to search message attachment/plugin contents.
  - Added link to profile pop-over from names in Join/Leave messages.
+ - Added autolinking to server markdown parser 
 
 #### Notifications
  - Added localized timestamp support for email notification.
@@ -28,8 +29,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support to add/delete and enable/disable plugins via CLI.
  - Enhanced log output from Permanent Delete CLI command to delete FileInfos for that user's posts.
  - Addded channel renaming to CLI.
+ 
+#### Enterprise Edition
+ - Added the Global Relay Export CLI command.
 
 #### Category?
+ - Added support for cross-origin resource sharing.
  - Added ability to bulk import emoji.
  - Added support for file attachments in bulk import.
  - Allow webhook message attachments to trigger mentions.
@@ -47,11 +52,16 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under "ExtensionSettings": in config.json:
       - Added "EnableExperimentalExtensions": false,
       - Added "AllowedExtensionsIDs": []
+ - Under
+      - Added "CorsExposedHeaders": "",
+        "CorsAllowCredentials": false,
+        "CorsDebug": false,
 
 ### API Changes
  
 #### RESTful API v4 Changes
  - Have deleteReaction API send the correct value for post.HasReactions.
+ - Added ``GET 'api/v4/channels/{channel_id:[A-Za-z0-9]+}/posts/unread'`` for scrolling overhaul to prevent having multiple requests of loading more posts when there are too many unread post.
 
 
 
