@@ -22,7 +22,7 @@ When sending an attachment, you can use any of the following to format how you w
 
 .. image:: ../images/attachments-pretext.png
 
-``text``: The text to be included in the attachment. It can be formatted using :doc:`Markdown <../help/messaging/formatting-text>`. For long texts, the message is collapsed and a “Show More” link added to expand the message.
+``text``: The text to be included in the attachment. It can be formatted using :doc:`Markdown <../help/messaging/formatting-text>`. For long texts, the message is collapsed and a “Show More” link is added to expand the message.
 
 .. image:: ../images/attachments-text.png
 
