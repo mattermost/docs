@@ -23,7 +23,7 @@ To generate the HTML files from markdown in the `/source` directory:
 4. Click "Edit the file in your fork of this project" (pencil icon) on the upper right corner.
 5. After making changes, check the "Propose file change" button.
 6. Compare changes with the original document.
-7. Click "Create a Pull Request". Make sure that the Pull Request has a descriptive title. Add comments to briefly tell others what you have worked on (optional).
+7. Click "Create a Pull Request". Make sure that the Pull Request has a descriptive title and add comments to briefly tell others what you have worked on (optional).
 
 **Signing CLA:**
 
