@@ -26,11 +26,20 @@ Client Software
 PC Web Experience
 ^^^^^^^^^^^^^^^^^
 
--  PC: Windows 7, Windows 8, Windows 10 with IE 11*, Chrome 43+, Firefox 52+, and Edge 40+ (or EdgeHTML v15+)
--  Mac: OS 10 (Safari 9, Chrome 43+)
+-  PC: Windows 7+ with IE 11*, Chrome 43+, Firefox 52+, and Edge 40+ (or EdgeHTML v15+)
+-  Mac: OS 10.8+ (Safari 9, Chrome 43+)
 -  Linux: Arch 4.0.0 (Chrome 43+)
 
 `*` IE 11 Compatibility View is not supported. 
+
+Desktop App Experience
+^^^^^^^^^^^^^^^^^^^^^
+
+- PC: Windows 7+
+- Mac: OS 10.9+
+- Linux: Ubuntu 14.04+
+
+Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
 
 Mobile App Experience
 ^^^^^^^^^^^^^^^^^^^^^
