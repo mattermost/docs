@@ -9,7 +9,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Highlights
 
 #### Plugins
- - Also for API/Websocket sections
+ - Added support to add/delete and enable/disable plugins via CLI.
+ 
+#### Searching archived channels
  
 ### Improvements
 
@@ -17,17 +19,16 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added experimental custom default channels.
  - Added support to search message attachment/plugin contents.
  - Added link to profile pop-over from names in Join/Leave messages.
- - Added autolinking to server markdown parser 
+ - Added autolinking to server markdown parser.
 
 #### Notifications
- - Added localized timestamp support for email notification.
+ - Added localized timestamp support for email notifications.
  
 #### Administration
- - In the compliance export status table, in System Console > Compliance > Compliance Export, add number of exported records to Details column.
+ - In the compliance export status table, in System Console > Compliance > Compliance Export, added a number of exported records to Details column.
 
 #### Command Line Interface (CLI)
- - Added support to add/delete and enable/disable plugins via CLI.
- - Enhanced log output from Permanent Delete CLI command to delete FileInfos for that user's posts.
+ - Enhanced log output from Permanent Delete CLI command to delete FileInfos for a user's posts.
  - Addded channel renaming to CLI.
  
 #### Enterprise Edition
@@ -37,7 +38,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for cross-origin resource sharing.
  - Added ability to bulk import emoji.
  - Added support for file attachments in bulk import.
- - Allow webhook message attachments to trigger mentions.
+ - Added support for webhook message attachments to trigger mentions.
 
 ### Bug Fixes
 
@@ -62,7 +63,28 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### RESTful API v4 Changes
  - Have deleteReaction API send the correct value for post.HasReactions.
  - Added ``GET 'api/v4/channels/{channel_id:[A-Za-z0-9]+}/posts/unread'`` for scrolling overhaul to prevent having multiple requests of loading more posts when there are too many unread post.
+ - Added support to add/delete and enable/disable plugins via CLI.
 
+#### Websocket Changes
+ - Added support to add/delete and enable/disable plugins via CLI.
+
+#### Database Changes
+
+### Known Issues
+
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
+
+### Contributors
 
 
 ## Release v5.1
