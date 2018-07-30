@@ -22,7 +22,7 @@ if you have `allowVolumeExpansion` configured to true in your [Storage Class][].
 Automating theses changes is complicated due to:
 
 1. Kubernetes does not allow changes to most fields in an existing [PersistentVolumeClaim][pvc]
-2. Unless [manually configured][guide] otherwise, the [PVC][pvc] is the only reference to dynamically provisioned [PersistentVolumes][pv]
+2. Unless [manually configured][guide], the [PVC][pvc] is the only reference to dynamically provisioned [PersistentVolumes][pv]
 3. `Delete` is the default [reclaimPolicy][reclaim] for dynamically provisioned [PersistentVolumes][pv]
 
 This means in order to make changes, we need to delete the [PersistentVolumeClaim][pvc]
@@ -148,6 +148,11 @@ additional gitaly pods).
 If you do need to have the changes reflected in Kubernetes, be sure that you've
 updated your reclaim policy on the volumes as described in the [Before making storage changes](#before-making-storage-changes)
 section.
+
+The paths we have documented for storage changes are:
+
+- [Changes to an existing Volume](#changes-to-an-existing-volume)
+- [Switching to a different Volume](#switching-to-a-different-volume)
 
 ### Changes to an existing Volume
 
@@ -278,15 +283,70 @@ Finally, [apply the changes to the GitLab chart](#apply-the-changes-to-the-gitla
 
 ### Switching to a different Volume
 
-WIP
+If you want to switch to using a new volume, using a disk that has a copy of the
+appropriate data from the old volume, then first you need to create the the new
+[Persistent Volume][pv] in Kubernetes.
+
+In order to create a [Persistent Volume][pv] for your disk, you will need to
+locate the [driver specific documentation](https://kubernetes.io/docs/concepts/storage/volumes/#types-of-volumes)
+for your storage type.
+
+There are a couple of things to keep in mind when following the driver documentation:
+
+- You need to use the driver to create a [Persistent Volume][pv], not a Pod object with a volume as shown in a lot of the documentation.
+- You do **not** want to create a [PersistentVolumeClaim][pvc] for the volume, we will be editing the existing claim instead.
+
+The driver documentation often includes examples for using the driver in a Pod, for example:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-pd
+spec:
+  containers:
+  - image: k8s.gcr.io/test-webserver
+    name: test-container
+    volumeMounts:
+    - mountPath: /test-pd
+      name: test-volume
+  volumes:
+  - name: test-volume
+    # This GCE PD must already exist.
+    gcePersistentDisk:
+      pdName: my-data-disk
+      fsType: ext4
+```
+
+What you actually want, is to create a [Persistent Volume][pv], like so:
+
+```yaml
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: test-volume
+spec:
+  capacity:
+    storage: 400Gi
+  accessModes:
+  - ReadWriteOnce
+  gcePersistentDisk:
+    pdName: my-data-disk
+    fsType: ext4
+```
+
+You normally create a local `yaml` file with the [PersistentVolume][pv] information,
+then issue a create command to Kubernetes to create the object using the file.
+
+```bash
+kubectl --namespace <your namespace> create -f <local-pv-file>.yaml
+```
+
+Once your volume is created, you can move on to [Making changes to the PersistentVolumeClaim](#make-changes-to-the-persistentvolumeclaim)
 
 ## Make changes to the PersistentVolumeClaim
 
 Find the [PersistentVolumeClaim][pvc] you want to change.
-
-```bash
-kubectl --namespace <namespace> get PersistentVolume <volume name> -ojsonpath={.data.spec.claimRef.name}
-```
 
 ```bash
 kubectl --namespace <namespace> get PersistentVolumeClaims -l release=<chart release name> -ojsonpath='{range .items[*]}{.metadata.name}{"\t"}{.metadata.labels.app}{"\n"}{end}'
@@ -404,7 +464,7 @@ for the options.
 > The helm update command will recreate the StatefulSet, which will adopt and
 > update the Gitaly pods.
 
-Update the chart, and include the update config:
+Update the chart, and include the updated configuration:
 
 Example:
 
