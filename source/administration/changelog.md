@@ -20,12 +20,17 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support to search message attachment/plugin contents.
  - Added link to profile pop-over from names in Join/Leave messages.
  - Added autolinking to server markdown parser.
+ - Added support for webhook message attachments to trigger mentions.
+ 
+#### Plugins
+ - Added pre and post plugin login hooks.
 
 #### Notifications
  - Added localized timestamp support for email notifications.
  
 #### Administration
  - In the compliance export status table, in System Console > Compliance > Compliance Export, added a number of exported records to Details column.
+ - Added support for cross-origin resource sharing.
 
 #### Command Line Interface (CLI)
  - Enhanced log output from Permanent Delete CLI command to delete FileInfos for a user's posts.
@@ -35,10 +40,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added the Global Relay Export CLI command.
 
 #### Category?
- - Added support for cross-origin resource sharing.
  - Added ability to bulk import emoji.
  - Added support for file attachments in bulk import.
- - Added support for webhook message attachments to trigger mentions.
 
 ### Bug Fixes
 
@@ -50,13 +53,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
- - Under "ExtensionSettings": in config.json:
-      - Added "EnableExperimentalExtensions": false,
-      - Added "AllowedExtensionsIDs": []
- - Under
-      - Added "CorsExposedHeaders": "",
-        "CorsAllowCredentials": false,
-        "CorsDebug": false,
+ - Under "ExtensionSettings": in ``config.json``:
+      - Added "EnableExperimentalExtensions": false, to
+      - Added "AllowedExtensionsIDs": [], to
+ - Under "ServiceSettings": in ``config.json``:
+      - Added "CorsExposedHeaders": "", "CorsAllowCredentials": false, and "CorsDebug": false, to
+ - Under "TeamSettings" in ``config.json``:
+      - Added "ViewArchivedChannels": true, to
 
 ### API Changes
  
