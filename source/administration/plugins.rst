@@ -4,7 +4,7 @@ Plugins (Beta)
 .. note::
   This is the admin documentation for plugins. If you're a developer looking to build a plugin, see `our developer documentation <https://developers.mattermost.com/extend/plugins>`_.
 
-Mattermost supports plugins, which allow users to customize and extend the platform by adding specific features. See our `demo plugin <https://github.com/mattermost/mattermost-plugin-demo>`_ that demonstrates the capabilities of a Mattermost plugin. For a starting point to write a Mattermost plugin, see our `sample plugin <https://github.com/mattermost/mattermost-plugin-demo>`_.
+Mattermost supports plugins, which allow users to customize and extend the platform by adding specific features. See our `demo plugin <https://github.com/mattermost/mattermost-plugin-demo>`_ that demonstrates the capabilities of a Mattermost plugin. For a starting point to write a Mattermost plugin, see our `sample plugin <https://github.com/mattermost/mattermost-plugin-sample>`_.
 
 There are three scenarios in which you would consider using a plugin:
 
