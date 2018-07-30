@@ -25,7 +25,7 @@ Plugins are powerful. You should only install plugins that you've thoroughly rev
 
 Server Considerations
 ~~~~~~~~~~~~~~~~~~~~~
-Plugins have the ability to execute arbitrary code on your server. If they aren't properly isolated, they can do just about *anything*. For example, they could read your config file to get your database password, connect to your database, then exfiltrate sensitive user information.
+Plugins have the ability to execute arbitrary code on your server. They can do just about *anything*. For example, they could read your config file to get your database password, connect to your database, then exfiltrate sensitive user information.
 
 Web App Considerations
 ~~~~~~~~~~~~~~~~~~~~~~
