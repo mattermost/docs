@@ -19,6 +19,18 @@ There are two main types of plugins, both of which are supported in Team and Ent
 
 Later in upcoming releases, the `Enterprise Edition <https://about.mattermost.com/pricing>`_ will also support plugins that enable you to extend Mattermost functionality to meet a specific, complex requirement such as profiling performance metrics, and to implement highly customized compliance rules for `information barriers <http://www.17a-4.com/supervision-information-barriers/>`_.
 
+Security
+--------
+Plugins are powerful. You should only install plugins that you've thoroughly reviewed as they have the potential to compromise the security of your installation.
+
+Server Considerations
+~~~~~~~~~~~~~~~~~~~~~
+Plugins have the ability to execute arbitrary code on your server. If they aren't properly isolated, they can do just about *anything*. For example, they could read your config file to get your database password, connect to your database, then exfiltrate sensitive user information.
+
+Web App Considerations
+~~~~~~~~~~~~~~~~~~~~~~
+Plugins have the ability to execute arbitrary code in client browsers. They have the ability to perform nearly any action on behalf of anyone using the web app.
+
 Set Up Guide
 --------------
 
