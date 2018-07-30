@@ -21,3 +21,9 @@ has_pick_into_stable_label = gitlab.mr_labels.find { |label| label.start_with?('
 if gitlab.branch_for_base != "master" && !has_pick_into_stable_label
   warn "Most of the time, all merge requests should target `master`. Otherwise, please set the relevant `Pick into X.Y` label."
 end
+
+has_qa_verified_label = gitlab.mr_labels.find { |label| label.start_with?('QA:verified') }
+
+unless has_qa_verified_label
+  warn "Please check the QA job and compare with builds on master. If no new failures are reported in QA job, add 'QA:verified' label."
+end
