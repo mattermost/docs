@@ -86,7 +86,7 @@ $ kubectl --namespace helm-charts-win edit PersistentVolume pvc-6247502b-8c2d-11
     Editing Output:
   </summary>
 
-  ```yaml
+  <br><pre><code>
   # Please edit the object below. Lines beginning with a '#' will be ignored,
   # and an empty file will abort the edit. If an error occurs while saving this file will be
   # reopened with the relevant failures.
@@ -126,7 +126,7 @@ $ kubectl --namespace helm-charts-win edit PersistentVolume pvc-6247502b-8c2d-11
     storageClassName: standard
   status:
     phase: Bound
-  ```
+  </code></pre><br>
 </details>
 
 ## Making storage changes
@@ -172,7 +172,7 @@ $ kubectl --namespace helm-charts-win edit PersistentVolume pvc-6247502b-8c2d-11
     Editing Output:
   </summary>
 
-  ```yaml
+  <br><pre><code>
   # Please edit the object below. Lines beginning with a '#' will be ignored,
   # and an empty file will abort the edit. If an error occurs while saving this file will be
   # reopened with the relevant failures.
@@ -212,9 +212,9 @@ $ kubectl --namespace helm-charts-win edit PersistentVolume pvc-6247502b-8c2d-11
     storageClassName: standard
   status:
     phase: Bound
-  ```
+  </code></pre><br>
 </details>
-
+<br>
 
 Now that the changes have been reflected in the [volume][pv], we need to update
 the [claim][pvc].
@@ -241,7 +241,7 @@ kubectl --namespace <namespace> edit PersistentVolume <volume name>
     Editing Output:
   </summary>
 
-  ```yaml
+  <br><pre><code>
   # Please edit the object below. Lines beginning with a '#' will be ignored,
   # and an empty file will abort the edit. If an error occurs while saving this file will be
   # reopened with the relevant failures.
@@ -273,9 +273,9 @@ kubectl --namespace <namespace> edit PersistentVolume <volume name>
     storageClassName: standard
   status:
     phase: Released
-  ```
+  </code></pre><br>
 </details>
-
+<br>
 
 Shortly after making the change to the [Volume][pv], the terminal watching the claim status should show `Bound`.
 
@@ -370,7 +370,7 @@ kubectl --namespace <namespace> get PersistentVolumeClaim <claim name> -o yaml >
     Example Output:
   </summary>
 
-  ```yaml
+  <br><pre><code>
   apiVersion: v1
   kind: PersistentVolumeClaim
   metadata:
@@ -401,9 +401,9 @@ kubectl --namespace <namespace> get PersistentVolumeClaim <claim name> -o yaml >
     capacity:
       storage: 50Gi
     phase: Bound
-  ```
+  </code></pre><br>
 </details>
-
+<br>
 
 Create a new yaml file for a new PVC object. Have it use the same `metadata.name`, `metadata.labels`, `metadata,namespace`, and `spec` fields. (With your updates applied). And drop the other settings:
 
