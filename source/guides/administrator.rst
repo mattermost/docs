@@ -80,6 +80,7 @@ Administration
    /administration/statistics.md
    /administration/upgrade.rst
    /administration/version-archive*
+    /administration/extended-support-release*
    /administration/backup*
    /administration/liveness-check*
    /administration/migrating.md
