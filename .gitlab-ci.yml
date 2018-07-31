@@ -282,7 +282,6 @@ qa:
     -   qa_version="${app_version}-ee"
     - fi
     - GITLAB_USERNAME=root GITLAB_PASSWORD=$ROOT_PASSWORD gitlab-qa Test::Instance::Any EE:$qa_version https://$QA_ENVIRONMENT_URL
-
   artifacts:
     when: on_failure
     expire_in: 7d
@@ -291,6 +290,8 @@ qa:
   only:
     refs:
       - branches
+  retry: 1
+  allow_failure: true
 
 review_helm_test:
   stage: qa
