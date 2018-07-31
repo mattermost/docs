@@ -5,7 +5,7 @@ image:
   pullSecrets: []
 
 # Configure an ACME Issuer in cert-manager. Only used if configure==true
-server: https://acme-v01.api.letsencrypt.org/directory
+server: https://acme-v02.api.letsencrypt.org/directory
 
 # Provide an email to associate with your TLS certificates
 # email:
