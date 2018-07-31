@@ -53,9 +53,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
- - Under "ExtensionSettings": in ``config.json``:
-      - Added "EnableExperimentalExtensions": false, to
-      - Added "AllowedExtensionsIDs": [], to
  - Under "ServiceSettings": in ``config.json``:
       - Added "CorsExposedHeaders": "", "CorsAllowCredentials": false, and "CorsDebug": false, to
  - Under "TeamSettings" in ``config.json``:
