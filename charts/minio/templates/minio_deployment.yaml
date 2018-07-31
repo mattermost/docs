@@ -6,6 +6,10 @@ metadata:
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 spec:
+  strategy:
+    type: Recreate
+    # The following entry allows updates without intervention, due to previous defaults.
+    rollingUpdate: null
   selector:
     matchLabels:
       app: {{ template "minio.name" . }}

@@ -7,6 +7,10 @@ metadata:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicas }}
+  strategy:
+    # The following entry allows updates without intervention, due to previous defaults.
+    rollingUpdate: null
+    type: Recreate
   selector:
     matchLabels:
       app: {{ template "name" . }}
