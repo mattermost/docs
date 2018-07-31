@@ -12,7 +12,7 @@ handled by the GitLab chart.
 Examples of changes not automatically managed after initial installation
 include:
 
- - Mounting Pods to different volumes
+ - Mounting different volumes to the Pods
  - Changing the effective accessModes or [Storage Class][]
  - Expanding the storage size of your volume*<sup>1</sup>
 
