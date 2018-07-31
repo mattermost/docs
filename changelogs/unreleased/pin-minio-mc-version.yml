@@ -1,5 +1,0 @@
----
-title: Pin the minio/mc image version to a know working tag
-merge_request: 426
-author:
-type: fixed
