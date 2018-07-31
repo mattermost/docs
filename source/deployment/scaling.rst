@@ -11,16 +11,16 @@ Single Machine Deployment
 
 Organizations less than 500 users can typically run on a single server. 
 
-- See `install guides for step-by-step configuration instructions for single machine setup. <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_
-- See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/requirements.html>`_
+- See `install guides for step-by-step configuration instructions for single machine setup <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_.
+- See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/requirements.html>`_.
 
 Multi-machine Deployment 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Deployments between 500 and 20,000 registered users with moderate usage can run on a standard three machine Mattermost deployment with a proxy, an application server, and a database server. At this scale, demands of larger organizations can typically be met by using powerful hardware in a standard configuration. 
+Deployments between 500 and 20,000 registered users with moderate usage can run on a standard three-machine Mattermost deployment with a proxy, an application server and a database server. At this scale, demands of larger organizations can typically be met by using powerful hardware in a standard configuration. 
 
 - See `install guides for step-by-step configuration instructions for multi-machine setup. <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_
-- See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/requirements.html>`_
+- See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/requirements.html>`_.
 
 Cluster-based Deployment 
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -29,7 +29,7 @@ Cluster-based Deployment
 
 Deployments over 10,000 to 20,000 registered users with moderate usage can be supported by adding additional servers in cluster-based, high availability configuration. This configuration uses a load balancer to distribute requests from users across multiple Mattermost application servers, allowing the system to scale beyond the limits of any single server. 
 
-- See `high availability deployment guide for horizontal scaling setup <https://docs.mattermost.com/deployment/cluster.html>`_
+- See `high availability deployment guide for horizontal scaling setup <https://docs.mattermost.com/deployment/cluster.html>`_.
 
 Sample Scaling Guide 
 ^^^^^^^^^^^^^^^^^^^^^^^^
