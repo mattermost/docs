@@ -79,7 +79,7 @@ If the application was registered as a trusted OAuth 2.0 app on the Mattermost s
 
 .. image:: ../images/oauth2_authorization_screen.PNG
 
-Once authorized, the application receives an access token to perform requests on behalf of that user and has full access to perform any action that the user has permissions to.
+Once authorized, the application receives an access token to perform requests on behalf of that user. The application can then perform any action for which the user has permission.
 
 Users can view a list of authorized apps from **Account Settings > Security > OAuth 2.0 Applications**, and revoke authorization from this setting.
 
