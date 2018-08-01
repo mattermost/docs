@@ -61,8 +61,8 @@ data:
           connection:
             provider: AWS
             region: us-east-1
-            aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
-            aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
+            aws_access_key_id: "<%= File.read('/etc/gitlab/objectstorage/accesskey') %>"
+            aws_secret_access_key: "<%= File.read('/etc/gitlab/objectstorage/secretkey') %>"
             host: {{ template "gitlab.minio.hostname" . }}
             endpoint: {{ template "gitlab.minio.endpoint" . }}
             path_style: true
@@ -122,19 +122,20 @@ data:
     cp /init-config/registry/gitlab-registry.key /init-secrets/registry/gitlab-registry.key
     cp /init-config/postgres/psql-password /init-secrets/postgres/psql-password
     cp /init-config/rails-secrets/secrets.yml /init-secrets/rails-secrets/secrets.yml
-    if [ -e /init-config/minio ]; then
-      mkdir /init-secrets/minio
-      cp /init-config/minio/* /init-secrets/minio/
+    if [ -e /init-config/objectstorage ]; then
+      mkdir /init-secrets/objectstorage
+      cp /init-config/objectstorage/* /init-secrets/objectstorage/
     fi
     if [ -e /init-config/objectstorage ]; then
       mkdir -p /init-secrets/objectstorage
       cp /init-config/objectstorage/* /init-secrets/objectstorage/
     fi
 
+    if [ ! -f /init-secrets/objectstorage/.s3cfg ]; then
     cat << EOF > /init-secrets/.s3cfg
     [default]
-    access_key = $(cat /init-secrets/minio/accesskey)
-    secret_key = $(cat /init-secrets/minio/secretkey)
+    access_key = $(cat /init-secrets/objectstorage/accesskey)
+    secret_key = $(cat /init-secrets/objectstorage/secretkey)
     bucket_location = us-east-1
     host_base = {{ template "gitlab.minio.hostname" . }}
     host_bucket = {{ template "gitlab.minio.hostname" . }}/%(bucket)
@@ -151,4 +152,7 @@ data:
     verbosity = WARNING
     website_endpoint = {{ template "gitlab.minio.url" . }}
     EOF
+    else
+    cp /init-secrets/objectstorage/.s3cfg /init-secrets/.s3cfg
+    fi
 {{- end }}

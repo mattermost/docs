@@ -115,14 +115,19 @@ spec:
               items:
                 - key: registry-auth.key
                   path: registry/gitlab-registry.key
-          {{- if .Values.global.minio.enabled }}
           - secret:
-              name: {{ template "gitlab.minio.credentials.secret" . }}
+              {{- if .Values.global.minio.enabled }}
+              name: {{ default (include "gitlab.minio.credentials.secret" .) .Values.backups.objectStorage.secretName }}
               items:
                 - key: accesskey
-                  path: minio/accesskey
+                  path: objectstorage/accesskey
                 - key: secretkey
-                  path: minio/secretkey
+                  path: objectstorage/secretkey
+          {{- else }}
+              name: {{ .Values.backups.objectStorage.config }}
+              items:
+                - key: config
+                  path: objectstorage/.s3cfg
           {{- end }}
           {{- if .Values.global.appConfig.lfs.connection }}
           - secret:
