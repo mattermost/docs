@@ -10,7 +10,7 @@ Mattermost Enterprise Edition v5.1.0 - `View Changelog <https://docs.mattermost.
 Mattermost Enterprise Edition v5.0.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-0>`_ - `Download <https://releases.mattermost.com/5.0.2/mattermost-5.0.2-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/5.0.2/mattermost-5.0.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``d53f3859b814f32c2e5054022e713bd94f9ff0c15df48707c529d07b548c4e8a``
-Mattermost Enterprise Edition v4.10.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-10>`_ - `Download <https://releases.mattermost.com/4.10.2/mattermost-4.10.2-linux-amd64.tar.gz>`_
+Mattermost Enterprise Edition v4.10.2 *Extended Support Release- `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-10>`_ - `Download <https://releases.mattermost.com/4.10.2/mattermost-4.10.2-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/4.10.2/mattermost-4.10.2-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``0a684d51bb139e569c90591dac7e55626dac04be157d944d0d6b0ad622afe2d1``
 Mattermost Enterprise Edition v4.9.4 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-9>`_ - `Download <https://releases.mattermost.com/4.9.4/mattermost-4.9.4-linux-amd64.tar.gz>`_
