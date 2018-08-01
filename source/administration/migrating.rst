@@ -197,7 +197,7 @@ For more information about letter case in MySQL table names and the ``--lower-ca
 Migrating from HipChat Server and HipChat Data Center to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-HipChat.com, Stride, HipChat Server and HipChat Data Center are all being discontinued by Atlassian. 
+HipChat.com, Stride, HipChat Server and HipChat Data Center are all being discontinued by Atlassian. Please refer to our `Migration Guidelines for Success <https://docs.mattermost.com>`_ to assist you through the migration process, as well addtitional information below. 
 
 For HipChat Data Center customers with limited amounts of data stored, follow the `Export data from HipChat Data Center Guide <https://confluence.atlassian.com/hipchatdc3/export-data-from-hipchat-data-center-913476832.html>`_ and use the `Mattermost ETL framework <https://github.com/Brightscout/mattermost-etl>`_ to import the solution. If you have questions or encounter issues, `please open a ticket <https://github.com/Brightscout/mattermost-etl/issues>`_. 
 
