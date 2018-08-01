@@ -1,7 +1,7 @@
 Organizing Conversations
 ======================================
 
-Conversations in Mattermost are crucial to company productivity and success. Keeping information and messages organized in channels will create an efficient workplace.
+Conversations in Mattermost are crucial to company productivity and success. Keeping information and messages organized in channels creates an efficient workplace.
 
 1. `Channel Types`_
 2. `Managing Channels`_
