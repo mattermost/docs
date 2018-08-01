@@ -8,16 +8,15 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
 
-#### Plugins
+#### Plugin System Overhaul
  - Added support to add/delete and enable/disable plugins via CLI.
  
-#### Searching archived channels
+#### Searching Archived Channels
  
 ### Improvements
 
 #### Web User Interface (UI)
  - Added experimental custom default channels.
- - Added support to search message attachment/plugin contents.
  - Added link to profile pop-over from names in Join/Leave messages.
  - Added autolinking to server markdown parser.
  - Added support for webhook message attachments to trigger mentions.
@@ -38,6 +37,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  
 #### Enterprise Edition
  - Added the Global Relay Export CLI command.
+ - Added support to search message attachment/plugin contents.
 
 #### Category?
  - Added ability to bulk import emoji.
