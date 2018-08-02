@@ -1,7 +1,7 @@
 Migrating from HipChat to Mattermost
 ===========================
 
-Migrating from HipChat to Mattermost is made simple with the use of our Bulk Load Tool and comprehensive documentation to help you along the way. Please use the following guidelines to help you extract, transform and load your data from HipChat to Mattermost. 
+You can migrate HipChat users and message histories to Mattermost using the following guidelines.
 
 Guidelines for Success
 -------------------------------
@@ -12,63 +12,44 @@ Guidelines for Success
 
 Step 1:  Set up your Mattermost Instance
 -------------------------------
-#. Download the `latest version <https://about.mattermost.com/download/>`_ of Mattermost.
-#. `Deploy <https://docs.mattermost.com/guides/administrator.html#installing-mattermost)>`_ Mattermost in your environment using the configuration that meets your organization’s needs for performance and scalability.
+#. `Download the latest version <https://about.mattermost.com/download/>`_ of Mattermost.
+#. `Deploy <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_ Mattermost in your environment using the configuration that meets your organization’s needs for performance and scalability.
+#. Request a `trial <https://mattermost.com/trial/>`_ of Mattermost Enterprise for `advanced features <https://mattermost.com/pricing/>`_. 
 
+Questions? Please visit our `trouble shooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_ for help. 
 
-Step 2:  Export your data from HipChat 
+Step 2:  Export your data from HipChat Data Center or HipChat Server
 -------------------------------
 
 HipChat Server / HipChat Data Server:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For teams with large amounts of data, the export function has been reported to fail and it may be difficult to reclaim your team’s data. Atlassian recommends upgrading to the latest version of HipChat Server or HipChat Data Center for access to the Group Export Dashboard. You can view their instructions on exporting your data `here <https://www.atlassian.com/partnerships/slack/migration>`_.
+If you’re able to upgrade HipChat Server or HipChat Data Center to the latest version, we recommend using Group Export Dashboard to export your data. If you’re unable to upgrade, see Command Line Interface procedure below. 
 
-**Using the Group Export Dashboard:**
+*Using the Group Export Dashboard:*
 
 #. Log in to your Hipchat Server (e.g. hipchat.yourcompany.com)
 #. Click on **Server Admin > Export**.
 #. Select the data to export.
 #. In the **Password** and **Confirm Password** fields, create a password to protect your archive files. (Store this password as it is not saved anywhere else)
-#. Click **Export**, and once the export is done you will receive an email with a link to download the file.
+#. Click **Export**. Once the export is done, you will receive an email with a link to download the file.
 
-**Using the Command Line Interface**
+*If you’re unable to use the Group Export Dashboard, use the Command Line Interface to export:*
 
 #. Go to **CLI**.
 #. Enter ``hipchat export --export  -p your_password``.
-#. Once the export is done you will receive an email with a link to download the file.
+#. Once the export is done, you will receive an email with a link to download the file.
 
-More detailed instructions for the Command Line Interface can be found `here <https://confluence.atlassian.com/hipchatdc3/export-data-from-hipchat-data-center-913476832.html>`_.
-
-
-HipChat Cloud: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-#. Log in at yourdomain.hipchat.com/admin/
-#. Click on the **Data Export** tab
-#. Select the data to export.
-#. In the **Password** and **Confirm Password** fields, create a password to protect your archive files. (Store this password as it is not saved anywhere else.)
-#. Click **Export**
-#. Once the export has completed, the export will be available to you in the admin console.
+More detailed instructions can be found at https://confluence.atlassian.com/hipchatdc3/export-data-from-hipchat-data-center-913476832.html.
 
 
-Step 3: Transform your data to the Mattermost import format  
+Step 3: Import your data into Mattermost 
 -------------------------------
-#. Format your HipChat data to JSONL format. We offer a comprehensive `guide <https://docs.mattermost.com/deployment/bulk-loading.html#data-format>`_ to assist in the data formatting requirements for our bulk loading process.  
-#. Consider the `Mattermost ETL framework from BrightScout <https://github.com/Brightscout/mattermost-etl>`_ to custom-configure an adapter to plug in to the Bulk Load tool. 
-#. Alternatively, consider using a partner to assist you through this step.  Please `contact us <https://about.mattermost.com/contact/>`_ if you would like some recommendations.  
+1. Follow the `Mattermost Bulk Load Tool <https://docs.mattermost.com/deployment/bulk-loading.html>`_ guide to import your data into Mattermost. 
 
+Note: Efforts are underway to source scripts from the Mattermost community to further automate this step. If you’re interested in contributing, please let us know at info@mattermost.com, Twitter or Mattermost forums at https://forum.mattermost.org
 
-Step 4:  Import your data into Mattermost 
--------------------------------
-#. Using our Bulk Loading Tool and detailed `guide <https://docs.mattermost.com/deployment/bulk-loading.html>`_, validate your data is ready for import.
-#. Once validated, use the same Bulk Loading Tool to import your data.
-#. Verify your data imported correctly.
+2. Alternatively, `contact Mattermost <https://mattermost.com/contact-us/>`_ for partner recommendations for your region to assist in your import. 
+  
 
-
-Step 5:  Optimize Mattermost to meet your organization’s unique end-user and security requirements  
--------------------------------
-#. Set `system and team level permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_. 
-#. Install `integrations <https://about.mattermost.com/community-applications/>`_ to increase your team’s efficiency.
-#. Provide `instructions to your user's <https://docs.mattermost.com/guides/user.html>`_ on how to use Mattermost to help them get acclimated with the system. 
 
