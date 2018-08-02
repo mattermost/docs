@@ -41,9 +41,9 @@ Owner and group of the install directory - *{owner}* and *{group}*
      
 #. Back up your data and application.
 
-   #. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
+   a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
 
-   #. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
+   b. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``).
 
    .. code-block:: sh
     
