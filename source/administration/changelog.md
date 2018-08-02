@@ -13,6 +13,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  
 #### Searching Archived Channels
  
+#### Romanian Language
+ - Added support for Romanian language.
+
 ### Improvements
 
 #### Web User Interface (UI)
@@ -20,6 +23,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added link to profile pop-over from names in Join/Leave messages.
  - Added autolinking to server markdown parser.
  - Added support for webhook message attachments to trigger mentions.
+ - Stripped markdown formatting characters from desktop notifications and "Commented on..." text.
  
 #### Plugins
  - Added pre and post plugin login hooks.
@@ -85,6 +89,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
 
 ### Contributors
+[alanpog](https://github.com/alanpog), [Alexgoodman7](https://github.com/Alexgoodman7), [amyblais](https://github.com/amyblais), [asaadmahmood](https://github.com/asaadmahmood), [burguyd](https://github.com/burguyd), [cometkim](https://github.com/cometkim), [comharris](https://github.com/comharris), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [der-test](https://github.com/der-test), [DHaussermann](https://github.com/DHaussermann), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [falcon78921](https://github.com/falcon78921), [fdebrabander](https://github.com/fdebrabander), [grundleborg](https://github.com/grundleborg), [herooftimeandspace](https://github.com/herooftimeandspace), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [Jessica-c53](https://github.com/Jessica-c53), [JustinReynolds-MM](https://github.com/JustinReynolds-MM), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kennethjeremyau](https://github.com/kennethjeremyau), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [mkraft](https://github.com/mkraft), [pepf](https://github.com/pepf), [pichouk](https://github.com/pichouk), [pietroglyph](https://github.com/pietroglyph), [pradeepmurugesan](https://github.com/pradeepmurugesan), [rodcorsi](https://github.com/rodcorsi), [Roy-Orbison](https://github.com/Roy-Orbison), [santos22](https://github.com/santos22), [saturninoabril](https://github.com/saturninoabril), [scherno2](https://github.com/scherno2), [seansackowitz](https://github.com/seansackowitz), [sudheerDev](https://github.com/sudheerDev), [tejasbubane](https://github.com/tejasbubane), [theblueskies](https://github.com/theblueskies), [ThiefMaster](https://github.com/ThiefMaster), [uhlhosting](https://github.com/uhlhosting), [uusijani](https://github.com/uusijani), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [yuya-oc](https://github.com/yuya-oc) 
 
 
 ## Release v5.1
