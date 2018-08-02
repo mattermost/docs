@@ -81,6 +81,7 @@ Administration
    /administration/upgrade.rst
    /administration/downgrade.rst
    /administration/version-archive*
+   /administration/extended-support-release*
    /administration/backup*
    /administration/liveness-check*
    /administration/migrating.md
