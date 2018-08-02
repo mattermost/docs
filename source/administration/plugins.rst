@@ -21,6 +21,18 @@ Later in upcoming releases, the `Enterprise Edition <https://about.mattermost.co
 
 For a list of available plugins, including those for auto-linking, auto-censoring and anti-virus scanning, as well as third-party plugins with JIRA, Zoom, GitHub and more, see the `Mattermost plugins repo <https://github.com/mattermost/mattermost-plugins>`_. 
 
+Security
+--------
+Plugins are powerful. You should only install plugins that you've thoroughly reviewed as they have the potential to compromise the security of your installation.
+
+Server Considerations
+~~~~~~~~~~~~~~~~~~~~~
+Plugins have the ability to execute arbitrary code on your server. They can do just about *anything*. For example, they could read your config file to get your database password, connect to your database, then exfiltrate sensitive user information.
+
+Web App Considerations
+~~~~~~~~~~~~~~~~~~~~~~
+Plugins have the ability to execute arbitrary code in client browsers. They have the ability to perform nearly any action on behalf of anyone using the web app.
+
 Set Up Guide
 --------------
 

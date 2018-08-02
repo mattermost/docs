@@ -4,18 +4,18 @@ Working at Mattermost
 
 The mission of Mattermost, Inc. is to give all organizations the power to achieve their highest priorities through modern communication. Our vision is a world more connected to what matters most.
 
-Our company maintains the Mattermost open source project, providing powerful, easy-to-use, self-hosted team communication across web, PC and phones.
+- Our company maintains the Mattermost open source project, providing powerful, easy-to-use, self-hosted team communication across web, PC and phones. 
 
-We also provide Mattermost Enterprise Edition, a secure, modern, enterprise messaging solution as a fully supported commercial extension of our open source software.
+- We also provide Mattermost Enterprise Edition, a secure, modern, enterprise messaging solution as a fully supported commercial extension of our open source software. 
 
-While our headquarters is in Palo Alto, California, we use Mattermost software to work remotely around the world in partnership with our community.
+While our headquarters is in Palo Alto, California, we use Mattermost software to work as a distributed organization around the world in partnership with our community.
 
 Top 10 reasons to work for Mattermost:
 
 1. **Join an outstanding team:** Work with thoughtful, talented, high performance people who care about results.
 2. **Build on the cutting edge:** Develop in Golang, React, React Native and other technologies changing the world.
-3. **Work remote:** No commute, freedom to travel, complete control of your environment.
-4. **Be recognized:** Working in open source, your contributions are public and echo on throughout your career.
+3. **Work anywhere:** No commute, freedom to travel, complete control of your environment.
+4. **Be recognized:** Working in open source, your contributions are public and echo on throughout your career. 
 5. **Growth:** Join a growing open source project, a growing business, and a growing company.
 6. **Do good:** Build open source software benefiting thousands of companies, institutions, schools and non-profits.
 7. **Improve a product you use every day:** Work on a team with deep empathy for users and customers.
@@ -23,17 +23,11 @@ Top 10 reasons to work for Mattermost:
 9. **Learn, Master, Teach:** Building new skills, becoming experts, and training others is core to our culture.
 10. **Friends around the world:** Build relationships with staff and contributors in dozens of countries.
 
-Also, we have Meetups around the world to deepen and broaden our relationships and build the future of our products together:
+----------------------------------------------------------
+Work Anywhere 
+----------------------------------------------------------
 
-* Check out `MatterCon 2018 in Lisbon, Portugal <https://www.youtube.com/watch?v=CZXaYttz3NA&feature=youtu.be>`_.
-* Watch highlights of `our Community Meetup in Toronto, Canada <https://www.youtube.com/watch?v=5c9oJdbXrMU>`_.
-* See `our Core Commiter Summit in Las Vegas, Nevada, USA <https://www.youtube.com/watch?v=_RpmrM-5UFY>`_.
-
-----------------
-Working Remotely
-----------------
-
-We're headquartered in Palo Alto, California, and like many open source companies a large portion of Mattermost, Inc. works remotely from around the world.
+We're headquartered in Palo Alto, California, and like many open source companies a large portion of Mattermost, Inc. works from anywhere in the world.
 
 This gives us tremendous advantages:
 
@@ -43,18 +37,28 @@ This gives us tremendous advantages:
 4. **Time zone coverage.** We can more easily support global customers.
 5. **Results-focused culture.** Output matters more than hours at a desk.
 
+Also, we have Meetups around the world to deepen and broaden our relationships and build the future of our products together:
+
+* Check out `MatterCon 2018 in Lisbon, Portugal <https://www.youtube.com/watch?v=CZXaYttz3NA&feature=youtu.be>`_.
+* Watch highlights of `our Community Meetup in Toronto, Canada <https://www.youtube.com/watch?v=5c9oJdbXrMU>`_.
+* See `our Core Commiter Summit in Las Vegas, Nevada, USA <https://www.youtube.com/watch?v=_RpmrM-5UFY>`_.
+
 We run as a distributed, high performance team using a few principles:
 
-1) Work from anywhere with good Internet
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Working from anywhere means more time with loved ones, no commute, and controlling everything about your workspace.
+1) Work anywhere with good Internet
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Working from anywhere means more time with loved ones, no commute and controlling everything about your workspace. 
 
-The one requirement is having a strong internet connection for occassional video or audio conferences. Ethernet connections are preferred over Wifi, since Wifi can have interference.
+The one requirement is having the ability to occassionally `join video calls using Zoom <https://support.zoom.us/hc/en-us/articles/201362023-System-Requirements-for-PC-Mac-and-Linux>`_ between 8am and 1pm California time, which requires a good enough internet connection.
+
+Recommended download/upload speeds should be 8 Mbps/512 kbps for smooth group calling and screensharing, with a bare minimum of 4 Mbps / 128 kbps. The `CRS Video Conference Bandwidth Speed Tool <http://speed.conferenceroomsystems.com/>`_ can be used to check your internet speed.
+
+There are exceptions to this requirement, for example: part time roles that don't need to take meetings, or roles providing support outside core meeting hours.
 
 2) Be explicit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Working remote means it may take time before a person reads your message and responds, so make sure you are clear.
+Working in a distributed organization means it may take time before a person reads your message and responds, so make sure you are clear. 
 
 Communicate relevant information in the first message:
 
@@ -148,10 +152,11 @@ General Benefits
 Results matter more far more than hours in an office. Your time at Mattermost is flexible. Go see the dentist, visit a friend, walk your dog--no need to ask permission.
 
 If there's something urgent going on at work, just let teammates know your status.
+For most roles, we require the ability to join meetings between 8am and 1pm California time. The exception is people who are dedicated to support in other timezones, or team members that don't need to be in real-time discussions. 
 
-**2. Work from anywhere with a strong internet connection**
+**2. Work from anywhere (with good internet)** 
 
-The comfort of home, freedom to travel, no commute--learn more about our `remote work policies <https://docs.mattermost.com/process/working-at-mattermost.html#working-remotely>`_.
+The comfort of home, freedom to travel, no commute--learn more about our `work anywhere policies <https://docs.mattermost.com/process/working-at-mattermost.html#work-anywhere>`_.
 
 **3. Paid time-off**
 
