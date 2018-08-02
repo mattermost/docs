@@ -103,6 +103,13 @@ Case Study Interview Process
 - At the beginning of the call, the customer is asked if they're in agreement that the interview be recorded to ensure accurate note-taking. Once agreed, the interview is then recorded via Zoom and the recording is transcribed after the call.
 - A draft of the case study, in appropriate format, is sent to the customer for review 1-2 weeks after the call.
 
+Writing Guidelines 
+----------------------------
+
+1. Write so that people with English as a second language can understand every sentence. 
+2. Don't disparage other products. It's okay to factually address differences on why Mattermost was selected. 
+
+
 Written Case Study Lay Out
 ----------------------------
 
@@ -110,9 +117,9 @@ Follow these steps to write a case study that is clear and concise:
 
 1. Title: Highlight the most compelling accomplishment.
 2. Executive Summary: Begin the case study with a section that includes a powerful statement that catches the reader's attention and a summary of the most important points of the entire story.
-3. About: Introduce the customer.
+3. Company: Introduce the customer, framing their relevance and impact on the world. Optionally include a sentence at the end with facts about the company such as location and founding date.   
 4. Challenges: Add a description of the challenges that the customer faced prior to using Mattermost. This section should also include goals the customer set out to achieve.
 5. Solutions: Add a section that describes how Mattermost provided a solution to the customer's challenges.
-6. Results: Add a testimonial that shows how Mattermost helped achieve the customer's goals. Include specific examples and quotations.
+6. Results: Include 3-5 specific use cases with clear business value (e.g. incident response, new employee Q&A center, etc.). Include business benefits that do one of three things a) increase revenue, b) decrease cost, c) drive efficiency. Add customer testimonials that shows how Mattermost helped achieve the customer's goals. Include specific examples and quotations.
 
 These Case Study procedures draw heavily from Hubspot's `How to Write a Case Study <https://blog.hubspot.com/blog/tabid/6307/bid/33282/the-ultimate-guide-to-creating-compelling-case-studies.aspx>`_ article. 
