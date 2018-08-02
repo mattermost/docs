@@ -77,6 +77,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Discuss worst bug on master
     - Finalize which major features will be in or out for the release
     - Begin daily triage of tickets
+        - Also start to triage tickets in the backlog
 2. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
