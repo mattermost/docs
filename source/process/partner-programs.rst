@@ -90,6 +90,7 @@ After completion of a partner agreement, partners are invited to send an overvie
 To get started, please email the following to: partner-directory@mattermost.com 
 
 - **Partner Name** - Your legal name may be shortened to fit in the directory listing. If you wish you can state your full legal name as part of your partner description 
+- **Partner Contact Information** - The best email address (and phone number, if preferred) where you can be reached
 - **Partner Description** - 30-100 words describing your business. See examples at https://about.mattermost.com/partners/
 - **City, State/Province and Country** - Location of key office or offices providing Mattermost services, or global headquarters. 
 - **Logo** - At least 200px wide
