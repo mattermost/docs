@@ -79,6 +79,7 @@ Administration
    /administration/team-settings.md
    /administration/statistics.md
    /administration/upgrade.rst
+   /administration/downgrade.rst
    /administration/version-archive*
    /administration/backup*
    /administration/liveness-check*
