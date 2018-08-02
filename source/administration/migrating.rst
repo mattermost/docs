@@ -197,11 +197,11 @@ For more information about letter case in MySQL table names and the ``--lower-ca
 Migrating from HipChat Server and HipChat Data Center to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-HipChat.com, Stride, HipChat Server and HipChat Data Center are all being discontinued by Atlassian. Please refer to our `Migration Guidelines for Success <https://docs.mattermost.com>`_ to assist you through the migration process, as well addtitional information below. 
+HipChat.com, Stride, HipChat Server and HipChat Data Center are all being discontinued by Atlassian. 
 
 For HipChat Data Center customers with limited amounts of data stored, follow the `Export data from HipChat Data Center Guide <https://confluence.atlassian.com/hipchatdc3/export-data-from-hipchat-data-center-913476832.html>`_ and use the `Mattermost ETL framework <https://github.com/Brightscout/mattermost-etl>`_ to import the solution. If you have questions or encounter issues, `please open a ticket <https://github.com/Brightscout/mattermost-etl/issues>`_. 
 
-For teams with large amounts of data, the export function has been reported to fail and it may be difficult to reclaim your team's data. Consider contacting HipChat support to see if a new solution is available. 
+For teams with large amounts of data, the export function has been reported to fail and it may be difficult to reclaim your team's data. Atlassian recommends upgrading to the latest version of HipChat Server or HipChat Data Center for access to the Group Export Dashboard.  You can view their instructions on exporting your data `here <https://www.atlassian.com/partnerships/slack/migration>`_. Consider contacting HipChat support if this solution does not allow you to extract all your data. 
 
 For teams unable to extract their data from HipChat, the most standard procedure is to run Mattermost and HipChat in parallel until all the users have moved to Mattermost, then deprecate the HipChat instance. 
 
