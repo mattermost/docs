@@ -197,7 +197,7 @@ For more information about letter case in MySQL table names and the ``--lower-ca
 Migrating from HipChat Server and HipChat Data Center to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Please see `HipChat Migration Guide <https://docs.mattermost.com/administration/hipchat-migration-guidelines.html>`_ 
+Please see `HipChat Migration Guide <https://docs.mattermost.com/administration/hipchat-migration-guidelines.html>`_.
 
 Migrating from Jabber to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
