@@ -653,7 +653,7 @@ mattermost plugin add
   Format
     .. code-block:: none
 
-      mattermost plugins add
+      mattermost plugins add {plugin tar file}
 
   Example
     .. code-block:: none
@@ -669,7 +669,7 @@ mattermost plugin delete
   Format
     .. code-block:: none
 
-      mattermost plugins delete
+      mattermost plugins delete {plugin_id}
 
   Example
     .. code-block:: none
@@ -685,7 +685,7 @@ mattermost plugin enable
   Format
     .. code-block:: none
 
-      mattermost plugins enable
+      mattermost plugins enable {plugin_id}
 
   Example
     .. code-block:: none
@@ -701,7 +701,7 @@ mattermost plugin disable
   Format
     .. code-block:: none
 
-      mattermost plugins disable
+      mattermost plugins disable {plugin_id}
 
   Example
     .. code-block:: none
