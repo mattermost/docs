@@ -12,7 +12,6 @@ Getting Started
 
    /getting-started/implementation_plan.rst
    /getting-started/welcome_email.rst
-   /getting-started/migration-announcement-email-template.rst
 
 
 Installing Mattermost
@@ -83,6 +82,7 @@ Administration
    /administration/downgrade.rst
    /administration/version-archive*
    /administration/extended-support-release*
+   /administration/migration-announcement-email-template*
    /administration/backup*
    /administration/liveness-check*
    /administration/migrating.md
