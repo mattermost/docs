@@ -82,6 +82,7 @@ Administration
    /administration/downgrade.rst
    /administration/version-archive*
    /administration/extended-support-release*
+   /administration/migration-announcement-email-template*
    /administration/backup*
    /administration/liveness-check*
    /administration/migrating.md

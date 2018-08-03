@@ -5,7 +5,7 @@ You can migrate HipChat users and message histories to Mattermost using the foll
 
 Step 1:  Set up your Mattermost Instance
 -----------------------------------------
-- `Go to Mattermost download page <https://about.mattermost.com/download/>`_ to install Mattermost in your environment using one of the installation guides for Linux binary install, Docker install, or various orchestrated installations. 
+- `Go to Mattermost download page <https://about.mattermost.com/download/>`_ to install Mattermost in your environment using one of the installation guides for Linux binary install, Docker install or various orchestrated installations. 
 
 Questions? Please visit our `troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_ for help. 
 
@@ -19,10 +19,10 @@ If you’re able to upgrade HipChat Server or HipChat Data Center to the latest 
 
 *Using the Group Export Dashboard:*
 
-#. Log in to your Hipchat Server (e.g. hipchat.yourcompany.com)
+#. Log in to your Hipchat Server (e.g. hipchat.yourcompany.com).
 #. Click on **Server Admin > Export**.
 #. Select the data to export.
-#. In the **Password** and **Confirm Password** fields, create a password to protect your archive files. (Store this password as it is not saved anywhere else)
+#. In the **Password** and **Confirm Password** fields, create a password to protect your archive files (Store this password as it is not saved anywhere else).
 #. Click **Export**. Once the export is done, you will receive an email with a link to download the file.
 
 *If you’re unable to use the Group Export Dashboard, use the Command Line Interface to export:*
@@ -64,4 +64,4 @@ Onboard users using SSO in Mattermost
 Alternatively, you can choose to set up SSO (Single Sign-on) with Mattermost if you are using an Enterprise version.  
 
 #. Configure `Active Directory/LDAP <https://docs.mattermost.com/deployment/sso-ldap.html>`_ or `SAML Single Sign-on <https://docs.mattermost.com/deployment/sso-saml.html>`_ from the **System Console**.
-#. Adjust the messaging templates above to remove "password reset" references and indicate which SSO system credentials Mattermost has configured. 
+#. Adjust the messaging templates above to remove "password reset" references and indicate which SSO system credentials Mattermost has configured.
