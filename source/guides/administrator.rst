@@ -12,6 +12,7 @@ Getting Started
 
    /getting-started/implementation_plan.rst
    /getting-started/welcome_email.rst
+   /getting-started/migration-announcement-email-template.rst
 
 
 Installing Mattermost
