@@ -676,22 +676,6 @@ mattermost plugin delete
 
       sudo ./mattermost plugin delete hovercardexample.tar.gz pluginexample.tar.gz
 
-mattermost plugin enable
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Description
-    Enable plugins for use on your Mattermost server. If enabling multiple plugins, use a space-separated list.
-
-  Format
-    .. code-block:: none
-
-      mattermost plugins enable {plugin_id}
-
-  Example
-    .. code-block:: none
-
-      sudo ./mattermost plugin enable hovercardexample.tar.gz pluginexample.tar.gz
-
 mattermost plugin disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -707,6 +691,22 @@ mattermost plugin disable
     .. code-block:: none
 
       sudo ./mattermost plugin disable hovercardexample.tar.gz pluginexample.tar.gz
+      
+mattermost plugin enable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Enable plugins for use on your Mattermost server. If enabling multiple plugins, use a space-separated list.
+
+  Format
+    .. code-block:: none
+
+      mattermost plugins enable {plugin_id}
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost plugin enable hovercardexample.tar.gz pluginexample.tar.gz
 
 mattermost plugin list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
