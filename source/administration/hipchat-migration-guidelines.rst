@@ -39,7 +39,7 @@ Step 3: Import your data into Mattermost
 
 1. Follow the `Mattermost Bulk Load Tool <https://docs.mattermost.com/deployment/bulk-loading.html>`_ guide to import your data into Mattermost. 
 
-  - Note: Efforts are underway to source scripts from the Mattermost community to further automate this step. If you’re interested in contributing, please let us know at info@mattermost.com, Twitter or Mattermost forums at https://forum.mattermost.org
+  - Note: Efforts are underway to source scripts from the Mattermost community to further automate this step. If you’re interested in contributing, please let us know at info@mattermost.com, Twitter or Mattermost forums at https://forum.mattermost.org.
 
 2. Alternatively, `contact Mattermost <https://mattermost.com/contact-us/>`_ for partner recommendations for your region to assist in your import. 
   
@@ -49,9 +49,9 @@ After importing users, you can send out an announcement via email or via your ol
  
 **Announcing Mattermost onboarding in your previous messaging system:**
  
-Use the following message template to alert users of the migration:
+Use the following message template to alert users of the migration::
 
-  @all, we’re moving communications to a new Mattermost server. You can start your new account by going to the [your new location, e.g. ``https://yourcompany.com/mattermost``], clicking on **I forgot my password** and entering the email you used on this system in the Reset Password page to set up new credentials. Your message history and channels should carry over from this system into Mattermost. Any questions? Please let us know.
+     @all, we’re moving communications to a new Mattermost server. You can start your new account by going to the [your new     location, e.g. ``https://yourcompany.com/mattermost``], clicking on **I forgot my password** and entering the email you     used on this system in the Reset Password page to set up new credentials. Your message history and channels should carry     over from this system into Mattermost. Any questions? Please let us know.
 
 **Announcing Mattermost onboarding using email using username/password:**
 
