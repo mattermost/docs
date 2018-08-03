@@ -45,7 +45,7 @@ Step 3: Import your data into Mattermost
   
 Step 4: Onboard your users into Mattermost
 ---------------------------------------------
-After importing users, you can send out an announcement, in email, in your old system or both letting users know how to log into Mattermost with their old accounts or create a new accounts. 
+After importing users, you can send out an announcement via email or via your old system (or both) to let users know how to log into Mattermost with their old accounts or how to create new accounts.
  
 **Announcing Mattermost onboarding in your previous messaging system:**
  
@@ -55,7 +55,7 @@ Use the following message template to alert users of the migration:
 
 **Announcing Mattermost onboarding using email using username/password:**
 
-#. Get a list of email address of people in the new system by running a database query on Mattermost. Run ``SELECT Email FROM Users`` from either MySQL or PostgreSQL databases. 
+#. Get a list of email addresses of people in the new system by running a database query on Mattermost. Run ``SELECT Email FROM Users`` from either MySQL or PostgreSQL databases. 
 #. Adapt the `migration announcement email template <https://docs.mattermost.com/administration/migration-announcement-email-template.html>`_ to let users know how to reclaim their old accounts or start new ones.
 
 Onboard users using SSO in Mattermost
@@ -65,4 +65,3 @@ Alternatively, you can choose to set up SSO (Single Sign-on) with Mattermost if 
 
 #. Configure `Active Directory/LDAP <https://docs.mattermost.com/deployment/sso-ldap.html>`_ or `SAML Single Sign-on <https://docs.mattermost.com/deployment/sso-saml.html>`_ from the **System Console**.
 #. Adjust the messaging templates above to remove "password reset" references and indicate which SSO system credentials Mattermost has configured. 
-
