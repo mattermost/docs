@@ -8,10 +8,17 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
 
-#### Plugin System Overhaul
- - Added support to add/delete and enable/disable plugins via CLI.
+#### Embed Mattermost in Other Apps (Beta)
+ - Added support for extensions, which allow you to embed Mattermost in other apps and websites via OAuth 2.0.
+ - A sample extension for Chrome here. For documentation on how to write an extension, see here.
+
+#### Plugins
+ - Breaking changes to the plugins framework introduced. To migrate your existing plugins to be compatible with Mattermost 5.2 and later, see our [migration guide](https://developers.mattermost.com/extend/plugins/migration/).
+ - Added support to add/delete and enable/disable plugins via the CLI.
+ - See our [demo plugin](https://github.com/mattermost/mattermost-plugin-demo) that demonstrates the capabilities of a Mattermost plugin. For a starting point to write a Mattermost plugin, see our [sample plugin](https://github.com/mattermost/mattermost-plugin-sample).
  
 #### Searching Archived Channels
+ - Added ability to search for archived channels.
  
 #### Romanian Language
  - Added support for Romanian language.
@@ -24,9 +31,28 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added autolinking to server markdown parser.
  - Added support for webhook message attachments to trigger mentions.
  - Stripped markdown formatting characters from desktop notifications and "Commented on..." text.
+ - Added ability to bulk import emoji.
+ - Added support for file attachments in bulk import.
  
-#### Plugins
- - Added pre and post plugin login hooks.
+#### New plugins (all beta)
+ - [Antivirus plugin](https://github.com/mattermost/mattermost-plugin-antivirus) to scan for viruses before uploading a file to Mattermost. Supports [ClamAV anti-virus software](https://www.clamav.net/) across browser, Desktop Apps and the Mobile Apps.
+ - [GitHub plugin](https://github.com/mattermost/mattermost-plugin-github) to subscribe to notifications, and to keep track of unread GitHub messages and open pull requests requiring your attention.
+
+#### Server Plugins: Release Candidate
+ - A release candidate (RC) is released for server plugins. Stable release is expected in v5.3 or v5.4.
+ - Added various API methods for plugins to provide the same capabilities as the REST API.
+ - Added support to intercept file uploads before the file is uploaded to a Mattermost server.
+ - Added support for plugins to respond after a user joins/leaves a channel or a team, or creates a new channel.
+ - Added support for plugins to respond prior to or after a user logs in to a Mattermost server.
+ - Added support for plugins to update user status. Sample use case is setting a user’s status to Do Not Disturb based on Google Calendar events.
+ - Added session token to context for ServeHTTP hook.
+
+#### Webapp Plugins: Beta
+ - Upcoming Mattermost UI redesign may cause breaking changes to webapp plugins. Hence, webapp plugins remain as beta in v5.2.
+ - Added support to override [...] post menu, and paperclip icon for file uploads.
+ - Added support for multiple plugins to add components at the same integration points instead of only allowing one plugin to do so.
+ - Removed ability to fully override profile popover. Instead, multiple plugins can now add to the profile popover via multiple integration points.
+ - For an up-to-date list of pluggable UI components, [see this list in our demo plugin](https://github.com/mattermost/mattermost-plugin-demo/tree/master/webapp#components).
 
 #### Notifications
  - Added localized timestamp support for email notifications.
@@ -42,10 +68,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Enterprise Edition
  - Added the Global Relay Export CLI command.
  - Added support to search message attachment/plugin contents.
-
-#### Category?
- - Added ability to bulk import emoji.
- - Added support for file attachments in bulk import.
 
 ### Bug Fixes
 
@@ -65,12 +87,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### API Changes
  
 #### RESTful API v4 Changes
- - Have deleteReaction API send the correct value for post.HasReactions.
- - Added ``GET 'api/v4/channels/{channel_id:[A-Za-z0-9]+}/posts/unread'`` for scrolling overhaul to prevent having multiple requests of loading more posts when there are too many unread post.
- - Added support to add/delete and enable/disable plugins via CLI.
+ - ``deleteReaction`` API was added to send the correct value for ``post.HasReactions``.
+ - Support for add/delete and enable/disable plugins via CLI was added.
 
 #### Websocket Changes
- - Added support to add/delete and enable/disable plugins via CLI.
+ - Support for add/delete and enable/disable plugins via CLI was added.
 
 #### Database Changes
 
