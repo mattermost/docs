@@ -7,7 +7,7 @@ Step 1:  Set up your Mattermost Instance
 -----------------------------------------
 - `Go to Mattermost download page <https://about.mattermost.com/download/>`_ to install Mattermost in your environment using one of the installation guides for Linux binary install, Docker install, or various orchestrated installations. 
 
-Questions? Please visit our `trouble shooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_ for help. 
+Questions? Please visit our `troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_ for help. 
 
 Step 2:  Export your data from HipChat Data Center or HipChat Server
 ------------------------------------------------------------------------
@@ -45,13 +45,13 @@ Step 3: Import your data into Mattermost
   
 Step 4: Onboard your users into Mattermost
 ---------------------------------------------
-After importing users, you can send out an announcement, in email, in your old system or both letting users know how to log into Mattermost with their old accounts or create a new accounts.
+After importing users, you can send out an announcement, in email, in your old system or both letting users know how to log into Mattermost with their old accounts or create a new accounts. 
  
 **Announcing Mattermost onboarding in your previous messaging system:**
  
 Use the following message template to alert users of the migration:
 
-  @all, we’re moving communications to a new Mattermost server at [your new location, e.g. https://yourcompany.com/mattermost]. You can start your new account by entering the email you used on this system on the Mattermost password reset page at [https://yourcompany.com/mattermost]`/reset_password` and setting up new credentials. Your message history and channels should carry over from this system into Mattermost. Any questions? Please let us know.
+  @all, we’re moving communications to a new Mattermost server at [your new location, e.g. ``https://yourcompany.com/mattermost``]. You can start your new account by going to the page, clicking on **I forgot my password** and entering the email you used on this system in the Reset Password page to set up new credentials. Your message history and channels should carry over from this system into Mattermost. Any questions? Please let us know.
 
 **Announcing Mattermost onboarding using email using username/password:**
 
