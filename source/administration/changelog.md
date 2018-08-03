@@ -10,7 +10,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 #### Embed Mattermost in Other Apps (Beta)
  - Added support for extensions, which allow you to embed Mattermost in other apps and websites via OAuth 2.0.
- - A sample extension for Chrome here. For documentation on how to write an extension, see here.
+ - A sample extension for Chrome [is here](https://github.com/mattermost/mattermost-chrome-extension). For documentation on how to write an extension, see here. // XXX Add a link to doc when ready
 
 #### Plugins
  - Breaking changes to the plugins framework introduced. To migrate your existing plugins to be compatible with Mattermost 5.2 and later, see our [migration guide](https://developers.mattermost.com/extend/plugins/migration/).
@@ -34,7 +34,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added ability to bulk import emoji.
  - Added support for file attachments in bulk import.
  
-#### New plugins (all beta)
+#### New Plugins (All Beta)
  - [Antivirus plugin](https://github.com/mattermost/mattermost-plugin-antivirus) to scan for viruses before uploading a file to Mattermost. Supports [ClamAV anti-virus software](https://www.clamav.net/) across browser, Desktop Apps and the Mobile Apps.
  - [GitHub plugin](https://github.com/mattermost/mattermost-plugin-github) to subscribe to notifications, and to keep track of unread GitHub messages and open pull requests requiring your attention.
 
@@ -45,6 +45,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for plugins to respond after a user joins/leaves a channel or a team, or creates a new channel.
  - Added support for plugins to respond prior to or after a user logs in to a Mattermost server.
  - Added support for plugins to update user status. Sample use case is setting a user’s status to Do Not Disturb based on Google Calendar events.
+ - Added CSRF tokens that are attached to users sessions. The tokens can be enforced as an alternative to XHR checks in the plugin request system.
  - Added session token to context for ServeHTTP hook.
 
 #### Webapp Plugins: Beta
