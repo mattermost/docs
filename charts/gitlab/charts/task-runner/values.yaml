@@ -44,7 +44,8 @@ global:
       bucket:
       connection: {}
 backups:
-  objectStorage: {}
+  objectStorage:
+    config: {}
   bucketNames:
     backups: gitlab-backups
     artifacts: gitlab-artifacts

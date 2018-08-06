@@ -122,17 +122,14 @@ data:
     cp /init-config/registry/gitlab-registry.key /init-secrets/registry/gitlab-registry.key
     cp /init-config/postgres/psql-password /init-secrets/postgres/psql-password
     cp /init-config/rails-secrets/secrets.yml /init-secrets/rails-secrets/secrets.yml
-    if [ -e /init-config/objectstorage ]; then
-      mkdir /init-secrets/objectstorage
-      cp /init-config/objectstorage/* /init-secrets/objectstorage/
-    fi
+
     if [ -e /init-config/objectstorage ]; then
       mkdir -p /init-secrets/objectstorage
-      cp /init-config/objectstorage/* /init-secrets/objectstorage/
+      cp -r /init-config/objectstorage/. /init-secrets/objectstorage/
     fi
 
     if [ ! -f /init-secrets/objectstorage/.s3cfg ]; then
-    cat << EOF > /init-secrets/.s3cfg
+    cat <<EOF > /init-secrets/.s3cfg
     [default]
     access_key = $(cat /init-secrets/objectstorage/accesskey)
     secret_key = $(cat /init-secrets/objectstorage/secretkey)
@@ -153,6 +150,6 @@ data:
     website_endpoint = {{ template "gitlab.minio.url" . }}
     EOF
     else
-    cp /init-secrets/objectstorage/.s3cfg /init-secrets/.s3cfg
+      mv /init-secrets/objectstorage/.s3cfg /init-secrets/.s3cfg
     fi
 {{- end }}

@@ -117,16 +117,16 @@ spec:
                   path: registry/gitlab-registry.key
           - secret:
               {{- if .Values.global.minio.enabled }}
-              name: {{ default (include "gitlab.minio.credentials.secret" .) .Values.backups.objectStorage.secretName }}
+              name: {{ include "gitlab.minio.credentials.secret" . }}
               items:
                 - key: accesskey
                   path: objectstorage/accesskey
                 - key: secretkey
                   path: objectstorage/secretkey
           {{- else }}
-              name: {{ .Values.backups.objectStorage.config }}
+              name: {{ required "A valid .Values.backups.objectStorage.config.secret is needed!" .Values.backups.objectStorage.config.secret }}
               items:
-                - key: config
+                - key: {{ default "config" .Values.backups.objectStorage.config.key }}
                   path: objectstorage/.s3cfg
           {{- end }}
           {{- if .Values.global.appConfig.lfs.connection }}
