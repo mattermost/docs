@@ -36,12 +36,13 @@ More detailed instructions can be found at https://confluence.atlassian.com/hipc
 
 Step 3: Import your data into Mattermost 
 ----------------------------------------
+1. Data exported from HipChat will need to be converted from .JSON to .JSONL format.  You can do this by running ``jq -c '.[]' input.json > output.jsonl`` from the commandline. 
 
-1. Follow the `Mattermost Bulk Load Tool <https://docs.mattermost.com/deployment/bulk-loading.html>`_ guide to import your data into Mattermost. 
+2. Follow the `Mattermost Bulk Load Tool <https://docs.mattermost.com/deployment/bulk-loading.html>`_ guide to import your data into Mattermost, making sure the data matches the `data formats <https://docs.mattermost.com/deployment/bulk-loading.html#data-format>`_ indicated. 
 
   - Note: Efforts are underway to source scripts from the Mattermost community to further automate this step. If you’re interested in contributing, please let us know at info@mattermost.com, Twitter or Mattermost forums at https://forum.mattermost.org.
 
-2. Alternatively, `contact Mattermost <https://mattermost.com/contact-us/>`_ for partner recommendations for your region to assist in your import. 
+3. Alternatively, `contact Mattermost <https://mattermost.com/contact-us/>`_ for partner recommendations for your region to assist in your import. 
   
 Step 4: Onboard your users into Mattermost
 ---------------------------------------------
