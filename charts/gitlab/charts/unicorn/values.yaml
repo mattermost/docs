@@ -36,6 +36,8 @@ ingress:
   annotations: {}
 workerProcesses: 2
 workerTimeout: 60
+hpa:
+  targetAverageValue: 400m
 workhorse:
   sentryDSN: ""
   extraArgs: ""
