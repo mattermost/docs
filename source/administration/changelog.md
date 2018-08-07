@@ -71,6 +71,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support to search message attachment/plugin contents.
 
 ### Bug Fixes
+ - Fixed an issue where the "Switch Channel" shortcut (⌘K) didn't work on dvorak layout on Mac.
 
 ### Compatibility
 
@@ -90,6 +91,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### RESTful API v4 Changes
  - ``deleteReaction`` API was added to send the correct value for ``post.HasReactions``.
  - Support for add/delete and enable/disable plugins via CLI was added.
+ - File download API was improved to stream files instead of loading them entirely into memory.
 
 #### Websocket Changes
  - Support for add/delete and enable/disable plugins via CLI was added.
