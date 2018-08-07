@@ -1,0 +1,5 @@
+---
+title: Add missing reference to uploads bucket in task-runner chart
+merge_request: 429
+author: Matt Welch
+type: fixed
