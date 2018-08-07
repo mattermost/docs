@@ -54,6 +54,8 @@ spec:
               value: {{ .Values.backups.bucketNames.registry }}
             - name: LFS_BUCKET_NAME
               value: {{ .Values.backups.bucketNames.lfs }}
+            - name: UPLOADS_BUCKET_NAME
+              value: {{ .Values.backups.bucketNames.uploads }}
             - name: BACKUP_BUCKET_NAME
               value: {{ .Values.backups.bucketNames.backups }}
             - name: S3_CONFIG_DIR
