@@ -4,15 +4,15 @@ Version Archive
 Mattermost Enterprise Edition
 ------------------------------
 
-Mattermost Enterprise Edition v5.1.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-1>`_ - `Download <https://releases.mattermost.com/5.1.0/mattermost-5.1.0-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/5.1.0/mattermost-5.1.0-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``7f14412231a852fb307ff0bea9f67dcbc862da9901d55d91d7838b092db6a5ae``
-Mattermost Enterprise Edition v5.0.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-0>`_ - `Download <https://releases.mattermost.com/5.0.2/mattermost-5.0.2-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/5.0.2/mattermost-5.0.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``d53f3859b814f32c2e5054022e713bd94f9ff0c15df48707c529d07b548c4e8a``
-Mattermost Enterprise Edition v4.10.2 *Extended Support Release* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-10>`_ - `Download <https://releases.mattermost.com/4.10.2/mattermost-4.10.2-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/4.10.2/mattermost-4.10.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``0a684d51bb139e569c90591dac7e55626dac04be157d944d0d6b0ad622afe2d1``
+Mattermost Enterprise Edition v5.1.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-1>`_ - `Download <https://releases.mattermost.com/5.1.1/mattermost-5.1.1-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/5.1.1/mattermost-5.1.1-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``18ab8f43ebd2652cba946e0430399ed15e10ef44a3aca88e4467ea55da265ef4``
+Mattermost Enterprise Edition v5.0.3 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-0>`_ - `Download <https://releases.mattermost.com/5.0.3/mattermost-5.0.3-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/5.0.3/mattermost-5.0.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``35863bd376f949d1fd87a012d4f5676e5eb2bdaaccaec4dd9141cf88979af6a6``
+Mattermost Enterprise Edition v4.10.3 *Extended Support Release* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-10>`_ - `Download <https://releases.mattermost.com/4.10.3/mattermost-4.10.3-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/4.10.3/mattermost-4.10.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``aec57f8097bc6d1240c1248438ea120acbc8e8e1bcd450f5d0a058df4fa2633e``
 Mattermost Enterprise Edition v4.9.4 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-9>`_ - `Download <https://releases.mattermost.com/4.9.4/mattermost-4.9.4-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/4.9.4/mattermost-4.9.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``368419bc8301ae9823c42c2b5ae69a3135b1dc640c94b8280d46941bda1b7b0b``
@@ -86,15 +86,15 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog <https://docs.mattermost.
 Mattermost Team Edition Server Archive
 ---------------------------------------
 
-Mattermost Team Edition v5.1.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-1>`_ - `Download <https://releases.mattermost.com/5.1.0/mattermost-team-5.1.0-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/5.1.0/mattermost-team-5.1.0-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``97f1e0b87a9eb0d6121a9ede91579e0a1b75b1318dce6fd92707751b51c70228``
-Mattermost Team Edition v5.0.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-0>`_ - `Download <https://releases.mattermost.com/5.0.2/mattermost-team-5.0.2-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/5.0.2/mattermost-team-5.0.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``49f0cffb4886d3aaca3b6ca6c5bc9f262c45fa376ca637ead2a953dc6f834b86``
-Mattermost Team Edition v4.10.2 *Extended Support Release* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-10>`_ - `Download <https://releases.mattermost.com/4.10.2/mattermost-team-4.10.2-linux-amd64.tar.gz>`_
-  - ``https://releases.mattermost.com/4.10.2/mattermost-team-4.10.2-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``f6a07367af07d450204c474c6683a918c1eecd3b306316f824e2148e89a96f8e``
+Mattermost Team Edition v5.1.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-1>`_ - `Download <https://releases.mattermost.com/5.1.1/mattermost-team-5.1.1-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/5.1.1/mattermost-team-5.1.1-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``66f81d2a5721289674cf45717f4f16fddded07e03daaa71c2941fa7e43c04809``
+Mattermost Team Edition v5.0.3 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-0>`_ - `Download <https://releases.mattermost.com/5.0.3/mattermost-team-5.0.3-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/5.0.3/mattermost-team-5.0.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``b3711ebd0e0240876ba751b18bd7a7349ffbf3f8a02d63ff79303aba98ca02c9``
+Mattermost Team Edition v4.10.3 *Extended Support Release* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-10>`_ - `Download <https://releases.mattermost.com/4.10.3/mattermost-team-4.10.3-linux-amd64.tar.gz>`_
+  - ``https://releases.mattermost.com/4.10.3/mattermost-team-4.10.3-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``0b78838c99cb7beedc4fa3a8fd0dbd2bd808f80ccb81eddb381a675e63e0ce24``
 Mattermost Team Edition v4.9.4 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-9>`_ - `Download <https://releases.mattermost.com/4.9.4/mattermost-team-4.9.4-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/4.9.4/mattermost-team-4.9.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``7b8ed13dc08349bcd7e0886464e7c242f5905bb6685fb28e434a2bd3e3423cfc``
