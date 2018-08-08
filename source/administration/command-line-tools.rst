@@ -136,6 +136,7 @@ mattermost channel
     -  `mattermost channel move`_ - Move a channel to another team
     -  `mattermost channel remove`_ - Remove users from a channel
     -  `mattermost channel restore`_ - Restore a channel from the archive
+    -  `mattermost channel rename`_ - Rename a channel
 
 .. _channel-value-note:
 
@@ -320,6 +321,23 @@ mattermost channel restore
 
       sudo ./mattermost channel restore 8soyabwthjnf9qibfztje5a36h
       sudo ./mattermost channel restore myteam:mychannel
+      
+mattermost channel rename
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Rename a channel. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
+
+  Format
+    .. code-block:: none
+
+      mattermost channel rename {channel} newchannelname --display_name "New Display Name"
+
+  Examples
+    .. code-block:: none
+
+      sudo ./mattermost channel rename 8soyabwthjnf9qibfztje5a36h newchannelname --display_name "New Display Name"
+      sudo ./mattermost channel rename myteam:mychannel newchannelname --display_name "New Display Name"
 
 mattermost command
 -----------------
