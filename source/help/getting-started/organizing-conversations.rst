@@ -46,7 +46,6 @@ Creating a Channel
 Create a new Public Channel or Private Channel by selecting the **+** symbol next to the *Channels* or *Private Channels* header on the left hand side. To start a direct message thread, click the **+** symbol next to the *Direct Messages* bar or select **More** at the bottom of the list to view team members you can message.
 
     .. image:: ../../images/Create_private_channel.png
-          :scale: 35
 
 Anyone can create Public Channels or Private Channels, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-creation-for>`_.
 
@@ -61,7 +60,6 @@ Adding Members to a Channel
 Click the channel name at the top of the center pane to access the drop-down menu, then click **Add Members**. Any member of a channel can add new members by clicking **Add** next to a user's name. Users already added to the channel will not appear in this modal.
 
     .. image:: ../../images/add_members.png
-          :scale: 35
 
 Removing Members from a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
