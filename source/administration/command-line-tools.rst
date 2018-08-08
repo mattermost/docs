@@ -286,7 +286,7 @@ mattermost channel move
   Options
     .. code-block:: none
 
-          --username [REQUIRED] Username of the user who is moving the team
+          --username [REQUIRED] Username of the user who is moving the team.
 
 mattermost channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -338,6 +338,11 @@ mattermost channel rename
 
       sudo ./mattermost channel rename 8soyabwthjnf9qibfztje5a36h newchannelname --display_name "New Display Name"
       sudo ./mattermost channel rename myteam:mychannel newchannelname --display_name "New Display Name"
+      
+ Options
+    .. code-block:: none
+
+          --display_name string [OPTIONAL] The name that will be displayed for the channel on Mattermost user interfaces.
 
 mattermost command
 -----------------
