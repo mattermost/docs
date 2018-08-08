@@ -92,6 +92,10 @@ If the Mattermost Android or iOS app is installed, push notifications
 can be sent to your mobile device. By default, these notifications are
 sent when you are away or offline for mentions in any channel that is not being viewed on desktop.
 
+.. tip :: Your status switches from online to away when you don't have activity in Mattermost for five or more minutes. Clicking or typing anywhere in Mattermost changes your status back to online.
+
+   Moreover, your status switches to offline if you log out, or close your mobile and desktop clients.
+
 -  Configure when push notifications are sent from **Account Settings**
    > **Notifications** > **Mobile Push Notifications** > **Send mobile
    push notifications**.
