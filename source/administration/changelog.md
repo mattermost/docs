@@ -6,6 +6,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.2
 
+### Security Update
+
+- Mattermost v5.2.0 contains medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
 ### Highlights
 
 #### Embed Mattermost in Other Apps (Beta)
@@ -13,12 +17,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - A sample extension for Chrome [is here](https://github.com/mattermost/mattermost-chrome-extension). For documentation on how to write an extension, see here. // XXX Add a link to doc when ready
 
 #### Plugins
- - Breaking changes to the plugins framework introduced. To migrate your existing plugins to be compatible with Mattermost 5.2 and later, see our [migration guide](https://developers.mattermost.com/extend/plugins/migration/).
  - Added support to add/delete and enable/disable plugins via the CLI.
  - See our [demo plugin](https://github.com/mattermost/mattermost-plugin-demo) that demonstrates the capabilities of a Mattermost plugin. For a starting point to write a Mattermost plugin, see our [sample plugin](https://github.com/mattermost/mattermost-plugin-sample).
+ - Breaking changes to the plugins framework introduced. To migrate your existing plugins to be compatible with Mattermost 5.2 and later, see our [migration guide](https://developers.mattermost.com/extend/plugins/migration/).
  
 #### Searching Archived Channels
- - Added ability to search for archived channels.
+ - Added ability to search for archived channels on desktop and mobile clients.
  
 #### Romanian Language
  - Added support for Romanian language.
@@ -54,9 +58,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for multiple plugins to add components at the same integration points instead of only allowing one plugin to do so.
  - Removed ability to fully override profile popover. Instead, multiple plugins can now add to the profile popover via multiple integration points.
  - For an up-to-date list of pluggable UI components, [see this list in our demo plugin](https://github.com/mattermost/mattermost-plugin-demo/tree/master/webapp#components).
-
-#### Notifications
- - Added localized timestamp support for email notifications.
  
 #### Administration
  - In the compliance export status table, in System Console > Compliance > Compliance Export, added a number of exported records to Details column.
@@ -68,7 +69,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  
 #### Enterprise Edition
  - Added the Global Relay Export CLI command.
- - Added support to search message attachment/plugin contents.
+ - Added support to search plugin contents.
 
 ### Bug Fixes
  - Fixed an issue where the "Switch Channel" shortcut (⌘K) didn't work on dvorak layout on Mac.
