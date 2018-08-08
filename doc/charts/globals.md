@@ -307,6 +307,19 @@ appConfig:
     connection: {}
   backups:
     bucket: gitlab-backups
+  incomingEmail:
+    enabled: false
+    address: ""
+    host: "imap.gmail.com"
+    port: 993
+    ssl: true
+    startTls: false
+    user: ""
+    password:
+      secret:
+      key: password
+    mailbox: inbox
+    idleTimeout: 60
 ```
 
 [unicorn]: gitlab/unicorn/README.md
@@ -412,3 +425,8 @@ This property has two sub-keys: `secret` and `key`.
 - `key` is the name of the key in the secret which houses the YAML block. Defaults to `connection`.
 
 [artifactscon]: https://docs.gitlab.com/ee/administration/job_artifacts.html#object-storage-settings
+
+
+### Incoming email settings
+
+These settings are explained in [command line options page](../installation/command-line-options.md#incoming-email-configuration).

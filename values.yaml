@@ -52,6 +52,19 @@ global:
       connection: {}
     backups:
       bucket: gitlab-backups
+    incomingEmail:
+      enabled: false
+      address: ""
+      host: "imap.gmail.com"
+      port: 993
+      ssl: true
+      startTls: false
+      user: ""
+      password:
+        secret: ""
+        key: password
+      mailbox: inbox
+      idleTimeout: 60
   shell:
     authToken: {}
     hostKeys: {}
