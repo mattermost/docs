@@ -1,0 +1,5 @@
+---
+title: Enable NGINX Ingress metrics by default
+merge_request: 434
+author:
+type: added

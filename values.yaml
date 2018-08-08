@@ -134,6 +134,14 @@ nginx-ingress:
     minAvailable: 2
     scope:
       enabled: true
+    stats:
+      enabled: true
+    metrics:
+      enabled: true
+      service:
+        annotations:
+          prometheus.io/scrape: "true"
+          prometheus.io/port: "10254"
   defaultBackend:
     minAvailable: 1
     replicaCount: 2
