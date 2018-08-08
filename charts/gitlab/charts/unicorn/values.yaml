@@ -103,6 +103,9 @@ global:
     enabled:
     credentials: {}
   appConfig:
+    incomingEmail:
+      enabled: false
+      address:
     lfs:
       enabled: true
       proxy_download: true
