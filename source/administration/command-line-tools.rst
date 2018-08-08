@@ -635,7 +635,7 @@ mattermost plugin
 --------------------
 
   Description
-    Commands to manage advanced permissions.
+    Commands to manage plugins.
 
   Child Commands
     -  `mattermost plugin add`_ - Add plugins to your Mattermost server.
