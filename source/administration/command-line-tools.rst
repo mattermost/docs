@@ -135,8 +135,8 @@ mattermost channel
     -  `mattermost channel modify`_ - Modify a channel's public/private type
     -  `mattermost channel move`_ - Move a channel to another team
     -  `mattermost channel remove`_ - Remove users from a channel
-    -  `mattermost channel restore`_ - Restore a channel from the archive
     -  `mattermost channel rename`_ - Rename a channel
+    -  `mattermost channel restore`_ - Restore a channel from the archive
 
 .. _channel-value-note:
 
@@ -304,6 +304,28 @@ mattermost channel remove
 
       sudo ./mattermost channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
       sudo ./mattermost channel remove myteam:mychannel user@example.com username
+      
+mattermost channel rename
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Rename a channel. Channels can be specified by *{team}:{channel}* using the team and channel names, or by using channel IDs.
+
+  Format
+    .. code-block:: none
+
+      mattermost channel rename {channel} newchannelname --display_name "New Display Name"
+
+  Examples
+    .. code-block:: none
+
+      sudo ./mattermost channel rename 8soyabwthjnf9qibfztje5a36h newchannelname --display_name "New Display Name"
+      sudo ./mattermost channel rename myteam:mychannel newchannelname --display_name "New Display Name"
+      
+  Options
+    .. code-block:: none
+
+      --display_name string   Channel Display Name
 
 mattermost channel restore
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -321,28 +343,6 @@ mattermost channel restore
 
       sudo ./mattermost channel restore 8soyabwthjnf9qibfztje5a36h
       sudo ./mattermost channel restore myteam:mychannel
-      
-mattermost channel rename
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-  Description
-    Rename a channel. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
-
-  Format
-    .. code-block:: none
-
-      mattermost channel rename {channel} newchannelname --display_name "New Display Name"
-
-  Examples
-    .. code-block:: none
-
-      sudo ./mattermost channel rename 8soyabwthjnf9qibfztje5a36h newchannelname --display_name "New Display Name"
-      sudo ./mattermost channel rename myteam:mychannel newchannelname --display_name "New Display Name"
-      
- Options
-    .. code-block:: none
-
-          --display_name string   Channel Display Name
 
 mattermost command
 -----------------
