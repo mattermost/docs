@@ -111,6 +111,7 @@ mattermost
     -  `mattermost ldap`_ - AD/LDAP related utilities
     -  `mattermost license`_ - Licensing commands
     -  `mattermost permissions`_ - Management of the permissions system
+    -  `mattermost plugin`_ - Management of plugins
     -  `mattermost reset`_ - Reset the database to initial state
     -  `mattermost roles`_ - Management of user roles
     -  `mattermost sampledata`_ - Sample data generation
@@ -629,6 +630,99 @@ mattermost permissions reset
     .. code-block:: none
 
           --confirm   Confirm you really want to reset the permissions system and a DB backup has been performed.
+
+mattermost plugin
+--------------------
+
+  Description
+    Commands to manage plugins.
+
+  Child Commands
+    -  `mattermost plugin add`_ - Add plugins to your Mattermost server.
+    -  `mattermost plugin delete`_ - Delete previously uploaded plugins.
+    -  `mattermost plugin disable`_ - Enable plugins for use.
+    -  `mattermost plugin enable`_ - Disable plugins.
+    -  `mattermost plugin list`_ - List plugins installed on your Mattermost server.
+    
+mattermost plugin add
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Add plugins to your Mattermost server. If adding multiple plugins, use a space-separated list.
+
+  Format
+    .. code-block:: none
+
+      mattermost plugins add {plugin tar file}
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost plugin add hovercardexample.tar.gz pluginexample.tar.gz
+
+mattermost plugin delete
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Delete previously uploaded plugins from your Mattermost server. If deleting multiple plugins, use a space-separated list.
+
+  Format
+    .. code-block:: none
+
+      mattermost plugins delete {plugin_id}
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost plugin delete hovercardexample.tar.gz pluginexample.tar.gz
+
+mattermost plugin disable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Disable plugins. Disabled plugins are immediately removed from the user interface and logged out of all sessions. If disabling multiple plugins, use a space-separated list.
+
+  Format
+    .. code-block:: none
+
+      mattermost plugins disable {plugin_id}
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost plugin disable hovercardexample.tar.gz pluginexample.tar.gz
+      
+mattermost plugin enable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Enable plugins for use on your Mattermost server. If enabling multiple plugins, use a space-separated list.
+
+  Format
+    .. code-block:: none
+
+      mattermost plugins enable {plugin_id}
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost plugin enable hovercardexample.tar.gz pluginexample.tar.gz
+
+mattermost plugin list
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    List all active and inactive plugins installed on your Mattermost server.
+
+  Format
+    .. code-block:: none
+
+      mattermost plugins list
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost plugin list
 
 mattermost reset
 ---------------
