@@ -342,7 +342,7 @@ mattermost channel rename
  Options
     .. code-block:: none
 
-          --display_name string [OPTIONAL] The name that will be displayed for the channel on Mattermost user interfaces.
+          --display_name string   Channel Display Name
 
 mattermost command
 -----------------
