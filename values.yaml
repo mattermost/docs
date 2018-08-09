@@ -96,6 +96,14 @@ global:
   service:
     annotations: {}
   antiAffinity: soft
+  # configuration of certificates container & custom CA injection
+  certificates:
+    image:
+      repository: registry.gitlab.com/gitlab-org/build/cng/alpine-certificates
+      tag: alpine-certificates
+    customCAs: []
+    # - secret: custom-CA
+    # - secret: more-custom-CAs
 
 certmanager:
   # Install cert-manager chart. Set to false if you already have cert-manager

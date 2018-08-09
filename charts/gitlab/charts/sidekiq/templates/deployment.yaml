@@ -83,6 +83,7 @@ spec:
                   release: {{ $releaseName }}
       {{- end }}
       initContainers:
+{{ include "gitlab.certificates.initContainer" $ | indent 8 }}
         - name: configure
           command: ['sh', '/config/configure']
           image: {{ $initImage }}:{{ $initTag }}
@@ -168,6 +169,7 @@ spec:
           - name: sidekiq-config
             mountPath: '/srv/gitlab/INSTALLATION_TYPE'
             subPath: installation_type
+{{ include "gitlab.certificates.volumeMount" $ | indent 10 }}
           livenessProbe:
             exec:
               command:
@@ -263,6 +265,7 @@ spec:
       - name: sidekiq-secrets
         emptyDir:
           medium: "Memory"
+{{ include "gitlab.certificates.volumes" $ | indent 6 }}
     {{- if $podNodeSelector }}
       nodeSelector:
 {{ toYaml $podNodeSelector | indent 8 }}
