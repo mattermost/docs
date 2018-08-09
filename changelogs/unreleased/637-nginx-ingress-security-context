@@ -1,0 +1,5 @@
+---
+title: Add securtyContext to nginx-ingress-controller deployment to run as non-root user and upgrade image version to 0.15.0
+merge_request: 431
+author:
+type: changed
