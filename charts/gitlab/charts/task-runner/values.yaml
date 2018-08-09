@@ -46,12 +46,6 @@ global:
 backups:
   objectStorage:
     config: {}
-  bucketNames:
-    backups: gitlab-backups
-    artifacts: gitlab-artifacts
-    uploads: gitlab-uploads
-    registry: registry
-    lfs: git-lfs
 extra: {}
 
 rack_attack:
