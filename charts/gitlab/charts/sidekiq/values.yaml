@@ -60,6 +60,9 @@ global:
     enabled:
     credentials: {}
   appConfig:
+    incomingEmail:
+      enabled: false
+      address:
     lfs:
       enabled: true
       proxy_download: true
@@ -118,6 +121,8 @@ trusted_proxies: []
 minReplicas: 1
 maxReplicas: 10
 concurrency: 10
+hpa:
+  targetAverageValue: 400m
 timeout: 5
 resources:
   # limits:

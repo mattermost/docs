@@ -86,9 +86,12 @@ data:
           snippets: true
           builds: true
           container_registry: true
-      incoming_email:
-        enabled: false
       {{- with .Values.global.appConfig }}
+      {{- if eq .incomingEmail.enabled true }}
+      incoming_email:
+        enabled: {{ eq .incomingEmail.enabled true }}
+        address: {{ .incomingEmail.address | quote }}
+      {{- end }}
       gravatar:
         plain_url: {{ .gravatar.plainUrl }}
         ssl_url: {{ .gravatar.sslUrl }}

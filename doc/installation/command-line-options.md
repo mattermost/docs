@@ -28,7 +28,7 @@ Tables below contain all the possible charts configurations that can be supplied
 | minio.ingress.tls.secretName                 | Existing `Secret` containing TLS certificate and key for minio    | {Release.Name}-minio-tls     |
 | registry.ingress.tls.secretName              | Existing `Secret` containing TLS certificate and key for registry | {Release.Name}-registry-tls  |
 
-## Email configuration
+## Outgoing Email configuration
 
 | Parameter                       | Description                                                                             | Default               |
 | ---                             | ---                                                                                     | ---                   |
@@ -46,6 +46,23 @@ Tables below contain all the possible charts configurations that can be supplied
 | global.email.display_name       | Name that appears as the sender for emails from GitLab                                  | GitLab                |
 | global.email.reply_to           | Reply-to email listed in emails from GitLab                                             | noreply@example.local |
 | global.email.subject_suffix     | Suffix on the subject of all outgoing email from GitLab                                 | ""                    |
+
+## Incoming Email configuration
+
+| Parameter                                          | Description                                                                                              | Default               |
+| ---                                                | ---                                                                                                      | ---                   |
+| global.appConfig.incomingEmail.enabled             | Enable incoming email                                                                                    | false                 |
+| global.appConfig.incomingEmail.address             | The email address to reference the item being replied to (example: gitlab-incoming+%{key}@gmail.com)     | empty                 |
+| global.appConfig.incomingEmail.host                | Host for IMAP                                                                                            | empty                 |
+| global.appConfig.incomingEmail.port                | Port for IMAP                                                                                            | 993                   |
+| global.appConfig.incomingEmail.ssl                 | Whether IMAP server uses SSL                                                                             | true                  |
+| global.appConfig.incomingEmail.startTls            | Whether IMAP server uses StartTLS                                                                        | false                 |
+| global.appConfig.incomingEmail.user                | Username for IMAP authentication                                                                         | empty                 |
+| global.appConfig.incomingEmail.password.secret     | Name of a `Secret` containing the IMAP password                                                          | empty                 |
+| global.appConfig.incomingEmail.password.key        | Key in `global.appConfig.incomingEmail.password.secret` that contains the IMAP password                  | password              |
+| global.appConfig.incomingEmail.mailbox             | Mailbox where incoming mail will end up.                                                                 | inbox                 |
+| global.appConfig.incomingEmail.idleTimeout         | The IDLE command timeout                                                                                 | 60                    |
+
 
 ## RBAC Settings
 | Parameter                                    | Default                                                           | Default                      |

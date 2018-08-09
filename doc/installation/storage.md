@@ -64,7 +64,7 @@ Documentation for all available persistence options for these can be found in th
 - [Upstream PostgreSQL chart configuration](https://github.com/helm/charts/tree/master/stable/postgresql#configuration)
 
 > **Note**: Some of the advanced persistence options differ between PostgreSQL and the others, so it's important to check
-> the specific documentation for each before making changes. 
+> the specific documentation for each before making changes.
 
 ## Manually creating Static Volumes
 
@@ -93,6 +93,14 @@ and using the volumeName in your GitLab config:
 ```
 --set gitlab.gitaly.persistence.volumeName=pv-gitaly
 ```
+
+## Making changes to storage after installation
+
+After the initial installation, storage changes like migrating to new volumes,
+or changing disk sizes, require editing the Kubernetes objects outside of the the
+Helm upgrade command.
+
+See the [managing persistent volumes documentation](../advanced/persistent-volumes/README.md).
 
 [pv]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes
 [Storage Class]: https://kubernetes.io/docs/concepts/storage/storage-classes/

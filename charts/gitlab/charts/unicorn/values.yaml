@@ -36,6 +36,8 @@ ingress:
   annotations: {}
 workerProcesses: 2
 workerTimeout: 60
+hpa:
+  targetAverageValue: 400m
 workhorse:
   sentryDSN: ""
   extraArgs: ""
@@ -103,6 +105,9 @@ global:
     enabled:
     credentials: {}
   appConfig:
+    incomingEmail:
+      enabled: false
+      address:
     lfs:
       enabled: true
       proxy_download: true

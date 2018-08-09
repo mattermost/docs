@@ -54,6 +54,19 @@ global:
       bucket: gitlab-backups
     registry:
       bucket: registry
+    incomingEmail:
+      enabled: false
+      address: ""
+      host: "imap.gmail.com"
+      port: 993
+      ssl: true
+      startTls: false
+      user: ""
+      password:
+        secret: ""
+        key: password
+      mailbox: inbox
+      idleTimeout: 60
   shell:
     authToken: {}
     hostKeys: {}
@@ -123,6 +136,14 @@ nginx-ingress:
     minAvailable: 2
     scope:
       enabled: true
+    stats:
+      enabled: true
+    metrics:
+      enabled: true
+      service:
+        annotations:
+          prometheus.io/scrape: "true"
+          prometheus.io/port: "10254"
   defaultBackend:
     minAvailable: 1
     replicaCount: 2

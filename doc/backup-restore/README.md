@@ -19,11 +19,12 @@ GitLab Helm chart provides a specific pod named `task-runner` that acts as an in
 
 ## Object storage
 
-We provide a minio instance out of the box when using this charts unless an external object storage is specified. The default behavior of the runner pod is consistent with this behavior such that it defaults to connect to our minio unless specific settings are given. The task-runner uses `s3cmd` to connect to object storage. In order to configure connectivity to external object storage `gitlab.task-runner.backups.objectStorage.config.secret` should be specified which points to a kubernetes secret containing the full `.s3cfg` file. `gitlab.task-runner.backups.objectStorage.config.key` needs to also be specified ( in case it is different from the default `config` key) which points to the key in the secret that has the `.s3cfg` as it's value.
+We provide a minio instance out of the box when using this charts unless an external object storage is specified. The default behavior of the task-runner pod is consistent with this behavior such that it defaults to connect to our minio unless specific settings are given. The task-runner uses `s3cmd` to connect to object storage. In order to configure connectivity to external object storage `gitlab.task-runner.backups.objectStorage.config.secret` should be specified which points to a kubernetes secret containing a `.s3cfg` file. `gitlab.task-runner.backups.objectStorage.config.key` should be specified if different from the default of `config`. This points to the key containing the contents of a .s3cfg file.
 
 It should look like this:
 
-`helm install gitlab --set gitlab.task-runner.backups.objectStorage.config.secret=my-s3cfg \
+`helm install gitlab \
+  --set gitlab.task-runner.backups.objectStorage.config.secret=my-s3cfg \
   --set gitlab.task-runner.backups.objectStorage.config.key=config .`
 
 A sample `.s3cfg` file can be found [here](https://s3tools.org/kb/item14.htm)
