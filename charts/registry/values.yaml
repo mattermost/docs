@@ -99,5 +99,4 @@ minReplicas: 2
 maxReplicas: 10
 maxUnavailable: 1
 storage: {}
-minio:
-  bucket: registry
+minio: {}

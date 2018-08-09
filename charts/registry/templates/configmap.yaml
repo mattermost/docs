@@ -44,7 +44,7 @@ data:
         secretkey: "SECRET_KEY"
         region: us-east-1
         regionendpoint: {{ template "registry.minio.url" . }}
-        bucket: {{ .Values.minio.bucket }}
+        bucket: {{ coalesce .Values.minio.bucket .Values.global.registry.bucket }}
         secure: true
         v4auth: true
         rootdirectory: /
