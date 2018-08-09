@@ -33,6 +33,7 @@ Table below contains all the possible charts configurations that can be supplied
 | service.workhorseInternalPort    | Workhorse internal port                        | 8181                                             |
 | enabled                          | Unicorn enabled flag                           | true                                             |
 | workerProcesses                  | Unicorn number of workers                      | 2                                                |
+| hpa.targetAverageValue           | Set the autoscaling target value               | 400m                                             |
 | workerTimeout                    | Unicorn worker timeout                         | 60                                               |
 | metrics.enabled                  | Toggle Prometheus metrics exporter             | true                                             |
 | ldap.servers                     | LDAP user authentication servers               | nil                                              |

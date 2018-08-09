@@ -37,6 +37,7 @@ Table below contains all the possible charts configurations that can be supplied
 | cron_jobs                 | Auxiliary cron jobs                            | {}                                               |
 | replicas                  | Sidekiq replicas                               | 1                                                |
 | concurrency               | Sidekiq default concurrency                    | 10                                               |
+| hpa.targetAverageValue    | Set the autoscaling target value               | 400m                                             |
 | timeout                   | Sidekiq job timeout                            | 5                                                |
 | resources.requests.cpu    | Sidekiq minimum needed cpu                     | 100m                                             |
 | resources.requests.memory | Sidekiq minimum needed memory                  | 600M                                             |
