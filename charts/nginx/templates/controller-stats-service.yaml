@@ -3,6 +3,8 @@
 apiVersion: v1
 kind: Service
 metadata:
+  name: {{ template "nginx-ingress.controller.fullname" . }}-stats
+  namespace: {{ $.Release.Namespace }}
 {{- if .Values.controller.stats.service.annotations }}
   annotations:
 {{ toYaml .Values.controller.stats.service.annotations | indent 4 }}
@@ -10,7 +12,6 @@ metadata:
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
     component: "{{ .Values.controller.name }}"
-  name: {{ template "nginx-ingress.controller.fullname" . }}-stats
 spec:
   clusterIP: "{{ .Values.controller.stats.service.clusterIP }}"
 {{- if .Values.controller.stats.service.externalIPs }}

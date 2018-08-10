@@ -3,10 +3,11 @@
 apiVersion: apps/v1beta2
 kind: DaemonSet
 metadata:
+  name: {{ template "nginx-ingress.controller.fullname" . }}
+  namespace: {{ $.Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
     component: "{{ .Values.controller.name }}"
-  name: {{ template "nginx-ingress.controller.fullname" . }}
 spec:
   revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
   updateStrategy:

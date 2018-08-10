@@ -4,10 +4,11 @@
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
+  name: {{ template "nginx-ingress.controller.fullname" . }}
+  namespace: {{ $.Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
     component: "{{ .Values.controller.name }}"
-  name: {{ template "nginx-ingress.controller.fullname" . }}
 spec:
   scaleTargetRef:
     apiVersion: apps/v1beta1

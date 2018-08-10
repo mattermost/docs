@@ -38,6 +38,7 @@ apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: {{ $queueName }}
+  namespace: {{ $.Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" $ | indent 4 }}
     queue-pod-name: {{ .name }}

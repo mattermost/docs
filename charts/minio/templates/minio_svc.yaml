@@ -3,6 +3,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: {{ template "minio.fullname" . }}-svc
+  namespace: {{ $.Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
   annotations:
