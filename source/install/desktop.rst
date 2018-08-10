@@ -46,7 +46,7 @@ macOS 10.9+
 
 `Homebrew <https://brew.sh>`_ users can install with ``brew cask install mattermost``.
 
-Linux (Beta)
+Linux
 --------------------------------------------------
 
 Generic Linux package
