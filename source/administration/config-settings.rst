@@ -341,7 +341,7 @@ Allow users to view archived channels
 **False**: Users are unable to share permalinks and search for content of channels that have been archived.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ViewArchivedChannels": true`` with options ``true`` and ``false`` for above settings respectively.                     |
+| This feature's ``config.json`` setting is ``"ViewArchivedChannels": true`` with options ``true`` and ``false`` for above settings respectively.       |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
