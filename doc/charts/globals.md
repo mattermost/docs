@@ -13,7 +13,7 @@ for more information on how the global variables work.
 - [Gitaly](#configure-gitaly-settings)
 - [Minio](#configure-minio-settings)
 - [appConfig](#configure-appconfig-settings)
-- [Custom Certificat Authorities](#custom-certificate-authorities)
+- [Custom Certificate Authorities](#custom-certificate-authorities)
 
 ## Configure Host settings
 
@@ -434,13 +434,16 @@ These settings are explained in [command line options page](../installation/comm
 
 ## Custom Certificate Authorities
 
-Some users may need to add custome certificate authorities. To provide this functionaliy, we provide a mechanism for injecting these into the application via secrets. There is a container that will incorporate your CAs into the system certificates, and then inject them into application containers.
+> **NOTE**: These settings do not affect charts from outside of this repository, via requirements.yaml.
+
+Some users may need to add custom certificate authorities, such as when using internally issued SSL certificates for TLS services. To provide this functionaliy, we provide a mechanism for injecting these custom root CAs into the application via secrets.
 
 ```
 global:
   certificates:
     customCAs:
-      - secret: xx
+      - secret: internal-cas
+      - secret: other-custom-cas
 ```
 
 A user can provide any number of secrets, each containing any number of keys that hold PEM encoded CA certificates. These are configured as entries under `global.certificates.customCAs`. All keys within the secret will be mounted, so all keys across all secrets must be unique.
