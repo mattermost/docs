@@ -3782,9 +3782,9 @@ Group Unread Channels (Experimental)
 
 **Disabled**: Unread channels section is disabled for all users.
  
-**Default On**:  Enables the unread channels sidebar section by default. Users can turned it off in **Account Settings** > **Sidebar**.
+**Default On**:  Enables the unread channels sidebar section by default. Users can turn it off in **Account Settings** > **Sidebar**.
 
-**Default Off**: Disables the unread channels sidebar section by default. Users can turned it on in **Account Settings** > **Sidebar**.
+**Default Off**: Disables the unread channels sidebar section by default. Users can turn it on in **Account Settings** > **Sidebar**.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "disabled"`` with options ``disabled``, ``default_on`` and ``default_off`` for above settings respectively. |
