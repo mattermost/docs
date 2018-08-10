@@ -5,8 +5,12 @@ image:
   pullSecrets: []
 selfsign:
   image:
-    repository: paulczar/omgwtfssl@sha256
-    tag: 7fd1f81d740ffc0f87a17cfe4a99a26f9796f682b0cc905820e75ccb6414bcf9
+    repository: registry.gitlab.com/gitlab-org/build/cng/cfssl-self-sign
+    tag: 584-add-cfssl-for-self-signed
+  keyAlgorithm: "rsa"
+  keySize: "4096"
+  expiry: "365d"
+  caSubject: "GitLab Helm Chart"
 resources: {}
 env: production
 global: {}

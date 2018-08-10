@@ -19,24 +19,28 @@ spec:
       restartPolicy: Never
 {{- include "pullsecrets" .Values.image | indent 6}}
       initContainers:
-      - name: omgwtfssl
+      - name: cfssl-self-sign
         image: "{{ .Values.selfsign.image.repository }}:{{ .Values.selfsign.image.tag }}"
         env:
-        - name: SSL_SUBJECT
-          value: {{ printf "*.%s" .Values.global.hosts.domain | quote }}
-        - name: SSL_EXPIRE
-          value: "30"
-        - name: SSL_SIZE
-          value: "4096"
-        - name: SILENT
-          value: "true"
-        - name: K8S_NAME
-          value: {{ template "gitlab.wildcard-self-signed-cert-name" . }}
-        - name: K8S_NAMESPACE
-          value: {{ .Release.Namespace }}
+        - name: CA_SUBJECT
+          value: {{ .Values.selfsign.caSubject | quote }} # defaults to GitLab in container
+        - name: CA_ORG
+          value: {{ .Release.Namespace | quote }} # defaults to GitLab in container
+        - name: CA_ORG_UNIT
+          value: {{ .Release.Name | quote }} # defaults to Cloud Native in container
+        - name: CERT_SUBJECT
+          value: {{ .Values.global.hosts.domain | quote }} # defaults to GitLab in container
+        - name: CERT_DOMAIN
+          value: {{ .Values.global.hosts.domain | quote }} # defaults to example.com in container
+        - name: EXPIRY
+          value: {{ .Values.selfsign.expiry | quote }} # defaults to 8076h in container
+        - name: ALGORITHM
+          value: {{ .Values.selfsign.keyAlgorithm | quote }} # defaults to ecdsa in container
+        - name: KEY_SIZE
+          value: {{ .Values.selfsign.keySize | quote }} # defaults to 256 inside container
         volumeMounts:
         - name: certs-path
-          mountPath: /certs
+          mountPath: /output
       containers:
       - name: kubectl
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -44,17 +48,28 @@ spec:
         - /bin/bash
         - -exc
         - |
-          kubectl create -f /certs/secret.yaml || true
+          certname={{ template "gitlab.wildcard-self-signed-cert-name" . }}
+          # create wildcard certificate secret
+          kubectl create secret tls $certname \
+            --cert=/output/wildcard.pem --key=/output/wildcard-key.pem || true
 {{- if not .Values.global.application.name }}
           kubectl --namespace=$namespace label \
-            secret {{ template "gitlab.wildcard-self-signed-cert-name" . }} $(echo '{{ include "gitlab.application.labels" . | replace ": " "=" | replace "\n" " " }}' | sed -E 's/=[^ ]*/-/g')
+            secret $certname  $(echo '{{ include "gitlab.application.labels" . | replace ": " "=" | replace "\n" " " }}' | sed -E 's/=[^ ]*/-/g')
 {{- end }}
+          kubectl --namespace=$namespace label --overwrite \
+            secret $certname {{ include "gitlab.standardLabels" . | replace ": " "=" | replace "\n" " " }}
+          # create CA certificate secret
+          kubectl create secret generic ${certname}-ca \
+            --from-file=cfssl_ca=/output/ca.pem || true
+{{- if not .Values.global.application.name }}
           kubectl --namespace=$namespace label \
-            --overwrite \
-            secret {{ template "gitlab.wildcard-self-signed-cert-name" . }} {{ include "gitlab.standardLabels" . | replace ": " "=" | replace "\n" " " }}
+            secret ${certname}-ca  $(echo '{{ include "gitlab.application.labels" . | replace ": " "=" | replace "\n" " " }}' | sed -E 's/=[^ ]*/-/g')
+{{- end }}
+          kubectl --namespace=$namespace label --overwrite \
+            secret ${certname}-ca {{ include "gitlab.standardLabels" . | replace ": " "=" | replace "\n" " " }}
         volumeMounts:
         - name: certs-path
-          mountPath: /certs
+          mountPath: /output
       volumes:
       - name: certs-path
         emptyDir: {}
