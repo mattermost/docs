@@ -333,6 +333,17 @@ Specifies how names are displayed in the user interface.
 | This feature's ``config.json`` setting is ``"TeammateNameDisplay": "username"`` with options ``username``, ``nickname_full_name``, and ``full_name``. |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Allow users to view archived channels
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Allows users to share permalinks and search for content of channels that have been archived.  Users can only view the content in channels of which they were a member before the channel was archived. 
+
+**False**: Users are unable to share permalinks and search for content of channels that have been archived.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ViewArchivedChannels": true`` with options ``true`` and ``false`` for above settings respectively.                     |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 ________
 
 Policy
