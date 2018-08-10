@@ -108,10 +108,10 @@ Troubleshooting
 
 Desktop App window is black and doesn't load the page
     1. First, make sure you have installed the latest Desktop App version `from our website <https://about.mattermost.com/download/#mattermostApps>`_. Check your app version from **Help > Version**.
-    1. Try to clear cache and reload the app from **View** > **Clear Cache and Reload** or by pressing CTRL/CMD+SHIFT+R.
-    1. Quit the app and restart it to see if the issue clears.
-    1. Disable GPU hardware acceleration from **File > Settings** on Windows and Linux, **Mattermost > Settings** on macOS, by deselecting **Use GPU hardware acceleration**.
-    1. If you are using a special video driver such as Optimus, try disabling it to see if the problem is resolved.
+    2. Try to clear cache and reload the app from **View** > **Clear Cache and Reload** or by pressing CTRL/CMD+SHIFT+R.
+    3. Quit the app and restart it to see if the issue clears.
+    4. Disable GPU hardware acceleration from **File > Settings** on Windows and Linux, **Mattermost > Settings** on macOS, by deselecting **Use GPU hardware acceleration**.
+    5. If you are using a special video driver such as Optimus, try disabling it to see if the problem is resolved.
 
     If none of the above steps resolve the issue, please open a new ticket in the `Mattermost Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_.
 
