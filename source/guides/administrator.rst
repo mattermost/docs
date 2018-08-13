@@ -55,7 +55,6 @@ Deployment
    /deployment/advanced*
    /deployment/auth*
    /deployment/sso-saml.rst
-   /deployment/certificate-based-authentication*
    /deployment/scaling*
    /deployment/cluster.rst
    /deployment/elastic*
@@ -65,6 +64,7 @@ Deployment
    /deployment/metrics*
    /deployment/customize-mattermost.rst
    /deployment/ssl-client-certificate*
+   /deployment/certificate-based-authentication*
    /deployment/client-side-data.rst
 
 Administration
