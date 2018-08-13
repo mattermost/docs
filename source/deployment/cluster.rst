@@ -274,7 +274,7 @@ Mattermost schedules and completes periodic tasks via the `job server <https://d
  - Compliance exports
  - Elasticsearch indexing
 
-Run all job servers with ``--noschedule flag``, then set ``JobSettings.RunScheduled`` to ``true`` in config.json for all app servers in the cluster. The cluster leader at any given time will then be responsible for scheduling recurring jobs.
+Run all job servers with ``--noschedule flag``, then set ``JobSettings.RunScheduled`` to ``true`` in config.json for all app servers in the cluster. The cluster leader will then be responsible for scheduling recurring jobs at any given time.
 
 For increased performance, use a standalone job server when running in High Availability mode.
 
