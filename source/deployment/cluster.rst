@@ -274,7 +274,7 @@ Mattermost schedules and completes periodic tasks via the `job server <https://d
  - Compliance exports
  - Elasticsearch indexing
 
-When running in High Availablity mode, the ``JobSettings.RunScheduled`` setting should be set to ``false`` in config.json. This will make all the app servers also be Job Servers, allowing the High Availability cluster leader election process to run only a single scheduler. Otherwise, all the app servers run the scheduled jobs causing the jobs to be run multiple times (once per app server).
+Run all job servers with ``--noschedule flag``, then set ``JobSettings.RunScheduled`` to ``true`` in config.json for all app servers in the cluster. The cluster leader at any given time will then be responsible for scheduling recurring jobs.
 
 For increased performance, use a standalone job server when running in High Availability mode.
 
