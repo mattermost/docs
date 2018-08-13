@@ -22,7 +22,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Breaking changes to the plugins framework introduced. To migrate your existing plugins to be compatible with Mattermost 5.2 and later, see our [migration guide](https://developers.mattermost.com/extend/plugins/migration/).
  
 #### Searching Archived Channels
- - Added ability to search for archived channels on desktop and mobile clients.
+ - Added ability to search for archived channel content on desktop and mobile clients.
  
 #### Romanian Language
  - Added support for Romanian language.
@@ -32,7 +32,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Web User Interface (UI)
  - Added experimental custom default channels.
  - Added link to profile pop-over from names in Join/Leave messages.
- - Added autolinking to server markdown parser.
  - Added support for webhook message attachments to trigger mentions.
  - Stripped markdown formatting characters from desktop notifications and "Commented on..." text.
  - Added ability to bulk import emoji.
