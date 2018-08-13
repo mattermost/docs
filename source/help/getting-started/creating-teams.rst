@@ -48,7 +48,7 @@ the system domain, ``https://domain.com/teamurl/``.
 -  It cannot start with the following restricted words: ``signup``,
    ``login``, ``admin``, ``channel``, ``post``, ``api``, ``oauth``
    
-Best Practices for Using a Single Team vs Multiple Teams
+Best Practices for Using a Single Team vs. Multiple Teams
 -----------------------------------------------------------------
 
 Mattermost can be deployed both to a single team and to multiple teams.
