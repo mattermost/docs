@@ -48,19 +48,19 @@ the system domain, ``https://domain.com/teamurl/``.
 -  It must be 2 - 15 characters in length.
 -  It cannot start with the following restricted words: ``signup``,
    ``login``, ``admin``, ``channel``, ``post``, ``api``, ``oauth``
-Best Practices for Deploying to a Single Team vs. Multiple Teams
+   
+Best Practices for Using a Single Team vs Multiple Teams
 -----------------------------------------------------------------
 
 Mattermost can be deployed both to a single team and to multiple teams.
 
 Currently, we recommend deploying to a single team for the following reasons:
 
-* Single team deployments promote communication across the organization. When you add multiple teams, groups can become siloed. 
-* We don’t yet support cross-team searches and cross-team channels, which can impact the cross-team user experience. 
-* General searches, flagged posts and recent mentions are available across single team deployments only.
-* Channels and integrations (e.g., slash commands) are only persistent across single team deployments.
+* Single team deployments promote communication across the organization. When you add multiple teams, groups can become isolated. 
+* We don’t yet support search or channels across teams, which can impact cross-team user experience. This includes general searches, flagged posts and recent mentions.
+* Integrations (e.g. webhooks and slash commands) are only persistent across single team deployments.
 
-Some Mattermost customers prefer multiple team deployments. Best practices for multiple teams are as follows:
+However, some Mattermost customers prefer multiple team deployments for the following reasons:
 
-* Teams are most useful when there is a purpose for each of them. For example, create one team for internal users and another team for external users.
-* Performance is generally better when users are scattered across multiple channels instead of all of them being in the same one. With multiple channels, there is less content to load per team or channel switch and database queries are faster.
+* Teams are useful when there is a purpose for each of them. For example, one team is used for staff members and another team for external users.
+* Performance is better when users are scattered across multiple teams instead of all in the same one. With multiple teams, there is less content to load per team or channel switch and database queries are faster.
