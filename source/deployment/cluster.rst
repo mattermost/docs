@@ -267,16 +267,14 @@ The process is based on a widely used `bully leader election algorithm <https://
 Job Server
 ^^^^^^^^^^^^^^^^
 
-Mattermost schedules and completes periodic tasks via the `job server <https://docs.mattermost.com/administration/config-settings.html#jobs>`_. These tasks include:
+Mattermost runs periodic tasks via the `job server <https://docs.mattermost.com/administration/config-settings.html#jobs>`_. These tasks include:
 
  - LDAP sync
  - Data retention
  - Compliance exports
  - Elasticsearch indexing
 
-Run all job servers with ``--noschedule flag``, then set ``JobSettings.RunScheduled`` to ``true`` in config.json for all app servers in the cluster. The cluster leader will then be responsible for scheduling recurring jobs at any given time.
-
-For increased performance, use a standalone job server when running in High Availability mode.
+Run all job servers with ``--noschedule flag``, then set ``JobSettings.RunScheduler`` to ``true`` in config.json for all app servers in the cluster. The cluster leader will then be responsible for scheduling recurring jobs.
 
 Upgrade Guide
 -------------
