@@ -3830,6 +3830,14 @@ The team URL of the primary team of which users on the server are members. When 
 | This feature's ``config.json`` setting is ``"ExperimentalPrimaryTeam": ""`` with string input.                  |
 +-----------------------------------------------------------------------------------------------------------------+
 
+Default Channels (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+XXXX /// Description
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": ""`` with string input.              |
++-----------------------------------------------------------------------------------------------------------------+
+
 Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Users can leave Public and Private Channels by clicking the "x" beside the channel name.
