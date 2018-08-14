@@ -3832,11 +3832,15 @@ The team URL of the primary team of which users on the server are members. When 
 
 Default Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-XXXX /// Description
+Default channels every user is added to automatically after joining a new team. Only applies to public channels, but affects all teams on the server.
 
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": ""`` with string input.              |
-+-----------------------------------------------------------------------------------------------------------------+
+When not set, every user is added to ``off-topic`` and ``town-square`` channel by default.
+
+Note that even if ``town-square`` is not listed, every user is added to that channel after joining a new team.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": ""`` which takes an array of channel names such as ``["announcement", "developers"]``.     |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
