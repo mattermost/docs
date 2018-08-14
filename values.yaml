@@ -52,6 +52,7 @@ global:
       connection: {}
     backups:
       bucket: gitlab-backups
+      tmpBucket: tmp
     incomingEmail:
       enabled: false
       address: ""
