@@ -20,6 +20,8 @@ DirectChannel
   Optional. If present, DirectChannel objects must occur after all Post objects in the file and before any DirectPost objects.
 DirectPost
   Optional. If present, DirectPost objects must occur after all other objects in the file. Each DirectPost object defines the usernames of the channel members and the username of the user who posted the message. If the corresponding usernames are not in the data file, then they must exist in the Mattermost database.
+Emoji
+  Optional. If present, Emoji objects must occur after all User objects.
 
 With the exception of the Version object, each object has a field or a combination of fields that is used as the unique identifier of that object. The bulk loader uses the unique identifier to determine if the object being imported is a new object or an update to an existing object.
 
@@ -1120,5 +1122,54 @@ Fields of the DirectPost object
       <td>The emoji reactions to this direct post. Must be an array of <a href="#fields-of-the-reaction-object">Reaction</a> objects.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
+    </tr>
+  </table>
+
+Emoji object
+-----------
+
+If present, Emoji objects must occur after all User objects.
+
+Example Emoji object
+~~~~~~~~~~~~~~~~~~~
+
+For clarity, the object is shown using regular JSON formatting, but in the data file it cannot be spread across several lines. It must be all on one line.
+
+.. code-block:: javascript
+
+  {
+  "type": "emoji",
+  "emoji": {
+    "name": "emoji-name",
+    "image": "/path/to/emoji/image"
+    }
+  }
+
+Fields of the Emoji object
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">name</td>
+      <td valign="middle">string</td>
+      <td>The emoji name.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">image</td>
+      <td valign="middle">string</td>
+      <td>The file path to the emoji image.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
     </tr>
   </table>
