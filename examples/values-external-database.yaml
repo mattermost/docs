@@ -1,0 +1,13 @@
+# This is an example values.yaml. It shows how to set up an external postgresql instead of the in-cluster postgresql provided by default
+postgresql:
+  install: false
+global:
+  psql:
+    host: production.postgress.hostname.local
+    password:
+      secret: my-postgres-secret
+      key: secret
+    port: 5432
+    database: mydb
+    username: myusername
+

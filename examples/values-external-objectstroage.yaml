@@ -1,0 +1,17 @@
+# This is an example values.yaml. It shows how to configure external object storage instead of the in-cluster minio provided by default
+global:
+  minio:
+    enabled: false
+  appConfig:
+    lfs:
+      connection:
+        secret: objectstore-lfs
+    artifacts:
+      connection:
+        secret: objectstore-artifacts
+    uploads:
+      connection:
+        secret: objectstore-uploads
+registry:
+  storage:
+    secret: registry-storage
