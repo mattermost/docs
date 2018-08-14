@@ -83,7 +83,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
  - Under "ServiceSettings": in ``config.json``:
-      - Added "CorsExposedHeaders": "", "CorsAllowCredentials": false, and "CorsDebug": false, to
+      - Added "CorsExposedHeaders": "", to add a whitelist of headers that will be accessible to the requester.
+      - Added "CorsAllowCredentials": false, to allow requests that pass validation to include the ``Access-Control-Allow-Credentials`` header.
+      - Added "CorsDebug": false, to prints messages to the logs to help when developing an integration that uses CORS.
  - Under "TeamSettings" in ``config.json``:
       - Added "ViewArchivedChannels": true, to allow users to share permalinks and search for content of channels that have been archived.
 
@@ -98,6 +100,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Support for add/delete and enable/disable plugins via CLI was added.
 
 #### Database Changes
+ - Added two new columns in the ``OutgoingWebhooks`` table, "Username" and "IconURL".
 
 ### Known Issues
 
