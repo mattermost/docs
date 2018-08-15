@@ -46,11 +46,13 @@ spec:
     matchLabels:
       app: {{ $name }}
       release: {{ $releaseName }}
+      queue-pod-name: {{ .name }}
   template:
     metadata:
       labels:
         app: {{ $name }}
         release: {{ $releaseName }}
+        queue-pod-name: {{ .name }}
       annotations:
         checksum/configmap: {{ $configMapChecksum }}
         checksum/configmap-pod: {{ pluck ( .name | quote ) $queues | last | sha256sum }}
