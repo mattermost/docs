@@ -157,12 +157,13 @@ run helm. In this example, we've named our helm release "gitlab".
 
 ```
 helm repo add gitlab https://charts.gitlab.io/
-helm update
-helm upgrade --install gitlab gitlab/gitlab \
+helm repo update
+helm upgrade --install \
   --timeout 600 \
   --set global.hosts.domain=example.local \
   --set global.hosts.externalIP=10.10.10.10 \
-  --set certmanager-issuer.email=me@example.local
+  --set certmanager-issuer.email=me@example.local \
+  gitlab gitlab/gitlab
 ```
 
 ### Deploy development branch
