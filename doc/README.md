@@ -8,3 +8,4 @@ Documentation Organization:
 - [Minikube](minikube/README.md)
 - [Helm](helm/README.md)
 - [Troubleshooting](troubleshooting/README.md)
+- [Example values.yaml files](../examples/README.md)
