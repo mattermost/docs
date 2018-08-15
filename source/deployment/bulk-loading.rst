@@ -20,6 +20,7 @@ You can import the following data types:
 - Posts' Reactions
 - Direct Message and Group Message channels
 - Direct Messages and Group Messages
+- Custom Emojis
 
 Importing additional types of posts is not yet supported.
 
