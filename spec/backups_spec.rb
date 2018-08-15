@@ -12,6 +12,9 @@ describe "Restoring a backup" do
 
     stdout, status = run_migrations
     fail stdout unless status.success?
+
+    # Wait for the site to come up after the restore/migrations
+    wait_until_app_ready
   end
 
   describe 'Restored gitlab instance' do
