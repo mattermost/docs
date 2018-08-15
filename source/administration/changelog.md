@@ -14,7 +14,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 #### Embed Mattermost in Other Apps (Beta)
  - Added support for extensions, which allow you to embed Mattermost in other apps and websites via OAuth 2.0.
- - A sample extension for Chrome [is here](https://github.com/mattermost/mattermost-chrome-extension). For documentation on how to write an extension, see here. // XXX Add a link to doc when ready
+ - A sample extension for Chrome [is here](https://github.com/mattermost/mattermost-chrome-extension).
 
 #### Plugins
  - Added support to add/delete and enable/disable plugins via the CLI.
@@ -83,11 +83,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
  - Under "ServiceSettings": in ``config.json``:
-      - Added "CorsExposedHeaders": "", to add a whitelist of headers that will be accessible to the requester.
-      - Added "CorsAllowCredentials": false, to allow requests that pass validation to include the ``Access-Control-Allow-Credentials`` header.
-      - Added "CorsDebug": false, to prints messages to the logs to help when developing an integration that uses CORS.
+      - Added ``"CorsExposedHeaders": ""``, to add a whitelist of headers that will be accessible to the requester.
+      - Added ``"CorsAllowCredentials": false``, to allow requests that pass validation to include the ``Access-Control-Allow-Credentials`` header.
+      - Added ``"CorsDebug": false``, to print messages to the logs to help when developing an integration that uses CORS.
  - Under "TeamSettings" in ``config.json``:
-      - Added "ViewArchivedChannels": true, to allow users to share permalinks and search for content of channels that have been archived.
+      - Added ``"ViewArchivedChannels": true``, to allow users to share permalinks and search for content of channels that have been archived.
+      - Added ``"ExperimentalDefaultChannels": ""``, to allow choosing the default channels every user is added to automatically after joining a new team.
 
 ### API Changes
  
@@ -100,7 +101,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Support for add/delete and enable/disable plugins via CLI was added.
 
 #### Database Changes
- - Added two new columns in the ``OutgoingWebhooks`` table, "Username" and "IconURL".
+ - Two new columns were added in the ``OutgoingWebhooks`` table, "Username" and "IconURL".
 
 ### Known Issues
 
