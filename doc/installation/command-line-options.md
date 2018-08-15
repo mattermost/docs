@@ -14,7 +14,8 @@ Tables below contain all the possible charts configurations that can be supplied
 | global.psql.password.secret                     | Global name of the secret containing the psql password                       | _Uses in-cluster non-production postgress_ |
 | global.psql.password.key                        | Key pointing to the psql password in the psql secret                         | _Uses in-cluster non-production postgress_ |
 | global.time_zone                                | Global time zone                                                             | UTC                                        |
-| global.service.annotations                      | Annotations to add to every `Service`                                        | {}                                         |
+| global.service.annotations                      | Annotations to add to every `Service`                                        | {}                     |
+| global.registry.bucket                          | registry bucket name                    | registry             |
 
 ## TLS configuration
 

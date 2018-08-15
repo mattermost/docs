@@ -50,19 +50,17 @@ spec:
           {{ template "gitlab.imagePullPolicy" . }}
           env:
             - name: ARTIFACTS_BUCKET_NAME
-              value: {{ .Values.backups.bucketNames.artifacts }}
+              value: {{ .Values.global.appConfig.artifacts.bucket }}
             - name: REGISTRY_BUCKET_NAME
-              value: {{ .Values.backups.bucketNames.registry }}
+              value: {{ .Values.global.registry.bucket }}
             - name: LFS_BUCKET_NAME
-              value: {{ .Values.backups.bucketNames.lfs }}
+              value: {{ .Values.global.appConfig.lfs.bucket }}
             - name: UPLOADS_BUCKET_NAME
-              value: {{ .Values.backups.bucketNames.uploads }}
+              value: {{ .Values.global.appConfig.uploads.bucket }}
             - name: BACKUP_BUCKET_NAME
-              value: {{ .Values.backups.bucketNames.backups }}
-            - name: S3_CONFIG_DIR
-              value: "/etc/gitlab/minio"
-            - name: S3_ENDPOINT
-              value: {{ template "gitlab.minio.endpoint" .}}
+              value: {{ .Values.global.appConfig.backups.bucket }}
+            - name: TMP_BUCKET_NAME
+              value: {{ .Values.global.appConfig.backups.tmpBucket }}
             - name: GITALY_FEATURE_DEFAULT_ON
               value: "1"
             - name: CONFIG_TEMPLATE_DIRECTORY
@@ -119,14 +117,19 @@ spec:
               items:
                 - key: registry-auth.key
                   path: registry/gitlab-registry.key
-          {{- if .Values.global.minio.enabled }}
           - secret:
-              name: {{ template "gitlab.minio.credentials.secret" . }}
+              {{- if .Values.global.minio.enabled }}
+              name: {{ include "gitlab.minio.credentials.secret" . }}
               items:
                 - key: accesskey
-                  path: minio/accesskey
+                  path: objectstorage/accesskey
                 - key: secretkey
-                  path: minio/secretkey
+                  path: objectstorage/secretkey
+          {{- else }}
+              name: {{ required "A valid backups.objectStorage.config.secret is needed!" .Values.backups.objectStorage.config.secret }}
+              items:
+                - key: {{ default "config" .Values.backups.objectStorage.config.key }}
+                  path: objectstorage/.s3cfg
           {{- end }}
           {{- if .Values.global.appConfig.lfs.connection }}
           - secret:

@@ -52,6 +52,7 @@ global:
       connection: {}
     backups:
       bucket: gitlab-backups
+      tmpBucket: tmp
     incomingEmail:
       enabled: false
       address: ""
@@ -70,6 +71,7 @@ global:
     hostKeys: {}
   railsSecrets: {}
   registry:
+    bucket: registry
     certificate: {}
   runner:
     registrationToken: {}
