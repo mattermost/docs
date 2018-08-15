@@ -22,6 +22,10 @@ module Gitlab
 
     def sign_in
       visit '/users/sign_in'
+
+      # Return if already signed in
+      return if has_selector?('.qa-user-avatar')
+
       fill_in 'Username or email', with: 'root'
       fill_in 'Password', with: ENV['GITLAB_PASSWORD']
       click_button 'Sign in'
