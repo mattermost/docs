@@ -1,5 +1,0 @@
----
-title: Fix the labels on sidekiq deployments to not all match the same pods.
-merge_request: 442
-author: Matthias van de Meent (Cofano Software Solutions)
-type: fixed
