@@ -349,8 +349,12 @@ danger-review:
   stage: prepare
   cache: {}
   only:
+    variables:
+      - $DANGER_GITLAB_API_TOKEN
+  except:
     refs:
-      - branches
+      - master
+      - tags
   script:
     - git version
     - danger --fail-on-errors=true
