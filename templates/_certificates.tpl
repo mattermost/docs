@@ -28,6 +28,10 @@
         name: {{ $customCA.secret }}
         # items not specified, will mount all keys
     {{- end }}
+    {{- if not (or $.Values.global.ingress.configureCertmanager $.Values.global.ingress.tls) }}
+    - secret:
+        name: {{ template "gitlab.wildcard-self-signed-cert-name" $ }}-ca
+    {{- end }}
 {{- end -}}
 
 {{- define "gitlab.certificates.volumeMount" -}}
