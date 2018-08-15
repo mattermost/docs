@@ -15,15 +15,17 @@ metadata:
     queue_pod_name: {{ .name }}
 data:
   sidekiq_queues.yml.erb: |
+    {{- if .queues }}
+    :queues:
+{{ toYaml .queues | indent 6 }}
+    {{- else }}
+    <%= YAML.load_file('/srv/gitlab/config/sidekiq_queues.yml').to_yaml %>
+    {{- end }}
     {{- if .concurrency }}
     :concurrency: {{ .concurrency }}
     {{- end }}
     {{- if .timeout }}
     :timeout: {{ .timeout }}
-    {{- end }}
-    {{- if .queues }}
-    :queues:
-{{ toYaml .queues | indent 6 }}
     {{- end }}
 # Leave this here - This line denotes end of block to the parser.
 ---
