@@ -13,6 +13,7 @@ for more information on how the global variables work.
 - [Gitaly](#configure-gitaly-settings)
 - [Minio](#configure-minio-settings)
 - [appConfig](#configure-appconfig-settings)
+- [Custom Certificate Authorities](#custom-certificate-authorities)
 
 ## Configure Host settings
 
@@ -430,3 +431,32 @@ This property has two sub-keys: `secret` and `key`.
 ### Incoming email settings
 
 These settings are explained in [command line options page](../installation/command-line-options.md#incoming-email-configuration).
+
+## Custom Certificate Authorities
+
+> **NOTE**: These settings do not affect charts from outside of this repository, via requirements.yaml.
+
+Some users may need to add custom certificate authorities, such as when using internally issued SSL certificates for TLS services. To provide this functionaliy, we provide a mechanism for injecting these custom root CAs into the application via secrets.
+
+```
+global:
+  certificates:
+    customCAs:
+      - secret: internal-cas
+      - secret: other-custom-cas
+```
+
+A user can provide any number of secrets, each containing any number of keys that hold PEM encoded CA certificates. These are configured as entries under `global.certificates.customCAs`. All keys within the secret will be mounted, so all keys across all secrets must be unique.
+
+> **NOTE** These secrets can be named in any fashion, but they _must not_ contain key names that collide.
+
+To create a secret:
+
+`kubectl create secret generic custom-ca --from-file=unique_name=/path/to/cert`
+
+To configure:
+
+```
+helm install gitlab \
+  --set global.certificates.customCAs[0].secret=custom-ca
+```

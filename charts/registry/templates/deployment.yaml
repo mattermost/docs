@@ -44,6 +44,7 @@ spec:
                   release: {{ .Release.Name }}
       {{- end }}
       initContainers:
+{{ include "gitlab.certificates.initContainer" . | indent 8 }}
         - name: configure
           image: {{ .Values.init.image }}:{{ .Values.init.tag}}
           imagePullPolicy: {{ .Values.init.pullPolicy }}
@@ -64,6 +65,7 @@ spec:
           - name: registry-server-config
             mountPath: /etc/docker/registry/
             readOnly: true
+{{ include "gitlab.certificates.volumeMount" . | indent 10 }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
@@ -95,4 +97,5 @@ spec:
                   path: storage/{{ .Values.storage.extraKey }}
                 {{- end }}
           {{- end }}
+{{ include "gitlab.certificates.volumes" . | indent 6 }}
 {{- end -}}
