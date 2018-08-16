@@ -49,17 +49,24 @@ spec:
       initContainers:
 {{ include "gitlab.certificates.initContainer" . | indent 8 }}
         - name: configure
-          command: ['sh', '/config/configure']
+          command: ['sh']
+          args: [ '-c', 'sh -x /config-unicorn/configure ; sh -x /config-workhorse/configure']
           image: {{ .Values.init.image }}:{{ .Values.init.tag }}
           volumeMounts:
           - name: unicorn-config
-            mountPath: /config
+            mountPath: /config-unicorn
+            readOnly: true
+          - name: workhorse-config
+            mountPath: /config-workhorse
             readOnly: true
           - name: init-unicorn-secrets
             mountPath: /init-config
             readOnly: true
           - name: unicorn-secrets
-            mountPath: /init-secrets
+            mountPath: /init-secrets-unicorn
+            readOnly: false
+          - name: workhorse-secrets
+            mountPath: /init-secrets-workhorse
             readOnly: false
           resources:
 {{ toYaml .Values.init.resources | indent 12 }}
@@ -93,13 +100,9 @@ spec:
           ports:
             - containerPort: {{ .Values.service.internalPort }}
               name: unicorn
-            - containerPort: {{ .Values.service.workhorseInternalPort }}
-              name: workhorse
           env:
             - name: GITALY_FEATURE_DEFAULT_ON
               value: "1"
-            - name: GITLAB_WORKHORSE_EXTRA_ARGS
-              value: {{ .Values.workhorse.extraArgs | quote }}
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
@@ -131,6 +134,12 @@ spec:
             - name: unicorn-config
               mountPath: '/srv/gitlab/INSTALLATION_TYPE'
               subPath: installation_type
+            - name: shared-upload-directory
+              mountPath: /srv/gitlab/public/uploads/tmp
+              readOnly: false
+            - name: shared-artifact-directory
+              mountPath: /srv/gitlab/shared
+              readOnly: false
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
           livenessProbe:
             exec:
@@ -149,6 +158,45 @@ spec:
                 command: ["/bin/bash", "-c", "pkill -SIGQUIT -f 'unicorn master'"]
           resources:
 {{ toYaml .Values.resources | indent 12 }}
+        - name: gitlab-workhorse
+          image: "{{ .Values.workhorse.image }}:{{ coalesce .Values.workhorse.tag (include "gitlab.versionTag" . ) }}"
+          {{ template "gitlab.imagePullPolicy" . }}
+          ports:
+            - containerPort: {{ .Values.service.workhorseInternalPort }}
+              name: workhorse
+          env:
+            - name: GITLAB_WORKHORSE_EXTRA_ARGS
+              value: {{ .Values.workhorse.extraArgs | quote }}
+            - name: CONFIG_TEMPLATE_DIRECTORY
+              value: '/var/opt/gitlab/templates'
+            - name: CONFIG_DIRECTORY
+              value: '/var/opt/gitlab/config/gitlab/'
+          volumeMounts:
+            - name: workhorse-config
+              mountPath: '/var/opt/gitlab/templates'
+            - name: workhorse-secrets
+              mountPath: '/etc/gitlab'
+              readOnly: true
+            - name: shared-upload-directory
+              mountPath: /srv/gitlab/public/uploads/tmp
+              readOnly: false
+            - name: shared-artifact-directory
+              mountPath: /srv/gitlab/shared
+              readOnly: false
+{{ include "gitlab.certificates.volumeMount" . | indent 12 }}
+          livenessProbe:
+            exec:
+              command:
+              - /scripts/healthcheck
+            initialDelaySeconds: 20
+            timeoutSeconds: 30
+            periodSeconds: 60
+          readinessProbe:
+            exec:
+              command:
+              - /scripts/healthcheck
+          resources:
+{{ toYaml .Values.workhorse.resources | indent 12 }}
       volumes:
 {{- if .Values.metrics.enabled }}
       - name: unicorn-metrics
@@ -158,6 +206,9 @@ spec:
       - name: unicorn-config
         configMap:
           name: {{ template "fullname" . }}
+      - name: workhorse-config
+        configMap:
+            name: {{ .Release.Name }}-workhorse-config
       - name: init-unicorn-secrets
         projected:
           defaultMode: 0400
@@ -192,6 +243,11 @@ spec:
               items:
                 - key: registry-auth.key
                   path: registry/gitlab-registry.key
+          - secret:
+              name: {{ template "gitlab.workhorse.secret" . }}
+              items:
+                - key: {{ template "gitlab.workhorse.key" . }}
+                  path: gitlab-workhorse/secret
           {{- if .Values.global.minio.enabled }}
           - secret:
               name: {{ template "gitlab.minio.credentials.secret" . }}
@@ -239,6 +295,15 @@ spec:
                   path: smtp/smtp-password
           {{- end }}
       - name: unicorn-secrets
+        emptyDir:
+          medium: "Memory"
+      - name: workhorse-secrets
+        emptyDir:
+          medium: "Memory"
+      - name: shared-upload-directory
+        emptyDir:
+          medium: "Memory"
+      - name: shared-artifact-directory
         emptyDir:
           medium: "Memory"
 {{ include "gitlab.certificates.volumes" . | indent 6 }}

@@ -98,6 +98,7 @@ global:
   service:
     annotations: {}
   antiAffinity: soft
+  workhorse: {}
   # configuration of certificates container & custom CA injection
   certificates:
     image:
