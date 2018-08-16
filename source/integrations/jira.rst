@@ -22,7 +22,7 @@ JIRA Setup Guide
 Enable JIRA on your Mattermost instance
 .........................................
 
-1 - (Optional) Create a new user account for your JIRA plugin, which can act as a bot account posting JIRA updates to Mattermost channels.
+1 - (Optional) Create a new user account for your JIRA plugin, which can act as a bot account posting JIRA updates to Mattermost channels. Make sure you login as the user, and join the team and channels you intend to post to.
 
 2 - Enable JIRA in **System Console > Plugins > JIRA**. 
 
