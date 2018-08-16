@@ -28,7 +28,12 @@ of this project goals and architecture.
 
 ## Known issues and limitations
 
-The current beta release of this chart contains a number of known issues and limitations. Please review our [beta documentation](doc/architecture/beta.md) for more details.
+Some features of GitLab are not currently available:
+
+* [GitLab Pages](https://gitlab.com/charts/gitlab/issues/37)
+* [GitLab Geo](https://gitlab.com/charts/gitlab/issues/8)
+* [No in-cluster HA database](https://gitlab.com/charts/gitlab/issues/48)
+* MySQL will not be supported, as support is [deprecated within GitLab](https://docs.gitlab.com/omnibus/settings/database.html#using-a-mysql-database-management-server-enterprise-edition-only)
 
 ## Quick-start installation
 
