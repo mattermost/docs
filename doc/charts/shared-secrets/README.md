@@ -18,8 +18,11 @@ Table below contains all the possible charts configurations that can be supplied
 | image.tag                    | Gitaly image tag                       | 1f8690f03f7aeef27e727396927ab3cc96ac89e7 |
 | image.pullPolicy             | Gitaly image pull policy               | Always                                   |
 | image.pullSecrets            | Secrets for the image repository       |                                          |
-| selfsign.image               | selfsign image repository              | paulczar/omgwtfssl@sha256                |
-| init.tag                     | selfsign image tag                     | 7fd1f81d740ffc0f87a17cfe4a99a26f9796f682b0cc905820e75ccb6414bcf9                                   |
+| selfsign.image               | selfsign image repository              | registry.gitlab.com/gitlab-org/build/cnf/cfssl-self-sign |
+| selfsign.tag                 | selfsign image tag                     | ---------------------------------------------------------------- |
+| selfsign.keyAlgorithm        | selfsign cert key algorithm            | rsa                                      |
+| selfsign.keySize             | selfsign cert key size                 | 4096                                     |
+| selfsign.caSubject           | selfsign CA Subject                    | GitLab Helm Chart                        |
 | resources                    | resource requests, limits              |                                          |
 | env                          | Rails environment                      | production                               |
 | rbac.create                  | Create RBAC roles and bindings         | true                                     |

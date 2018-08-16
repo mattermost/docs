@@ -1,0 +1,6 @@
+---
+title: Replace self-signed certificate generation, automatically CA add to custom
+  CAs
+merge_request: 441
+author:
+type: changed
