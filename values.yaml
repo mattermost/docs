@@ -108,7 +108,8 @@ global:
     # - secret: custom-CA
     # - secret: more-custom-CAs
 
-certmanager-issuer:
+# Settings to for the Let's Encrypt ACME Issuer
+# certmanager-issuer:
   # The email address to register certificates requested from Let's Encrypt. Required if using Let's Encrypt.
   # email: email@example.com
 
