@@ -37,7 +37,7 @@ More detailed instructions can be found at https://confluence.atlassian.com/hipc
 Step 3: Import your data into Mattermost 
 ----------------------------------------
 
-1. Follow the `Mattermost Bulk Load Tool <https://docs.mattermost.com/deployment/bulk-loading.html>`_ guide to import your data into Mattermost. 
+1. Follow the `Mattermost Bulk Load Tool <https://docs.mattermost.com/deployment/bulk-loading.html>`_ guide to import your data into Mattermost. Files exported from HipChat will need to be converted to the format required by Mattermost. Please `contact us <https://mattermost.zendesk.com/hc/en-us/requests/new>`_ if you require assistance in the conversion. 
 
   - Note: Efforts are underway to source scripts from the Mattermost community to further automate this step. If you’re interested in contributing, please let us know at info@mattermost.com, Twitter or Mattermost forums at https://forum.mattermost.org.
 
@@ -51,7 +51,7 @@ After importing users, you can send out an announcement via email or via your ol
  
 Use the following message template to alert users of the migration::
 
-     @all, we’re moving communications to a new Mattermost server. You can start your new account by going to the [your new     location, e.g. ``https://yourcompany.com/mattermost``], clicking on **I forgot my password** and entering the email you     used on this system in the Reset Password page to set up new credentials. Your message history and channels should carry     over from this system into Mattermost. Any questions? Please let us know.
+     @all, we’re moving communications to a new Mattermost server. You can start your new account by going to the [your new location, e.g. ``https://yourcompany.com/mattermost``], clicking on **I forgot my password** and entering the email you used on this system in the Reset Password page to set up new credentials. Your message history and channels should carry over from this system into Mattermost. Any questions? Please let us know.
 
 **Announcing Mattermost onboarding using email using username/password:**
 
