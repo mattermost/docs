@@ -157,7 +157,7 @@ run helm. In this example, we've named our helm release "gitlab".
 
 ```
 helm repo add gitlab https://charts.gitlab.io/
-helm update
+helm repo update
 helm upgrade --install gitlab gitlab/gitlab \
   --timeout 600 \
   --set global.hosts.domain=example.local \
