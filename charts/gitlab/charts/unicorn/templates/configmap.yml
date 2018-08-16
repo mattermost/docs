@@ -28,10 +28,6 @@ data:
     production:
       # Redis (single instance)
       url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" }}
-  workhorse-config.toml.erb: |
-    [redis]
-    URL = "tcp://{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" }}"
-    Password = "<%= File.read("/etc/gitlab/redis/password") %>"
   unicorn.rb: |
     worker_processes {{ .Values.workerProcesses }}
     working_directory "/srv/gitlab"
@@ -60,6 +56,7 @@ data:
 
     ENV['GITLAB_UNICORN_MEMORY_MIN'] = (400 * 1 << 20).to_s
     ENV['GITLAB_UNICORN_MEMORY_MAX'] = (650 * 1 << 20).to_s
+
   gitlab.yml.erb: |
     production: &base
       gitlab:
@@ -208,6 +205,7 @@ data:
         upload_pack: true
         receive_pack: true
       workhorse:
+        secret_file: /etc/gitlab/gitlab-workhorse/secret
       git:
         bin_path: /usr/bin/git
       webpack:
@@ -235,30 +233,49 @@ data:
         key: /etc/gitlab/registry/gitlab-registry.key
         issuer: {{ .Values.registry.tokenIssuer }}
   configure: |
-    set -e
-    mkdir -p /init-secrets/redis /init-secrets/shell /init-secrets/gitaly \
-      /init-secrets/registry /init-secrets/postgres /init-secrets/rails-secrets
-    cp /init-config/redis/password /init-secrets/redis/password
-    cp /init-config/shell/.gitlab_shell_secret /init-secrets/shell/.gitlab_shell_secret
-    cp /init-config/gitaly/gitaly_token /init-secrets/gitaly/gitaly_token
-    cp /init-config/registry/gitlab-registry.key /init-secrets/registry/gitlab-registry.key
-    cp /init-config/postgres/psql-password /init-secrets/postgres/psql-password
-    cp /init-config/rails-secrets/secrets.yml /init-secrets/rails-secrets/secrets.yml
-    if [ -e /init-config/minio ]; then
-      mkdir -p /init-secrets/minio
-      cp /init-config/minio/* /init-secrets/minio/
-    fi
-    if [ -e /init-config/objectstorage ]; then
-      mkdir -p /init-secrets/objectstorage
-      cp /init-config/objectstorage/* /init-secrets/objectstorage/
-    fi
-    if [ -e /init-config/omniauth ]; then
-      mkdir -p /init-secrets/omniauth
-      cp -r /init-config/omniauth/* /init-secrets/omniauth/
-    fi
-    if [ -e /init-config/smtp/smtp-password ]; then
-      mkdir -p /init-secrets/smtp
-      cp /init-config/smtp/smtp-password /init-secrets/smtp/
-    fi
+      set -e
+      config_dir="/init-config"
+      secret_dir="/init-secrets-unicorn"
+
+      for secret in redis shell gitaly registry postgres rails-secrets gitlab-workhorse ; do
+        mkdir -p "${secret_dir}/${secret}"
+        cp -v -r "${config_dir}/${secret}/." "${secret_dir}/${secret}/"
+      done
+      if [ -e "${config_dir}/minio" ]; then
+        mkdir -p "${secret_dir}/minio"
+        cp -v -r "${config_dir}/minio/." "${secret_dir}/minio/"
+      fi
+      if [ -e "${config_dir}/objectstorage" ]; then
+        mkdir -p "${secret_dir}/objectstorage"
+        cp -v -r "${config_dir}/objectstorage/." "${secret_dir}/objectstorage/"
+      fi
+      if [ -e "${config_dir}/omniauth" ]; then
+        mkdir -p "${secret_dir}/omniauth"
+        cp -v -r "${config_dir}/omniauth/." "${secret_dir}/omniauth/"
+      fi
+      if [ -e "${config_dir}/smtp/smtp-password" ]; then
+        mkdir -p "${secret_dir}/smtp"
+        cp -v -r "${config_dir}/smtp/smtp-password" "${secret_dir}/smtp/"
+      fi
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{.Release.Name }}-workhorse-config
+  labels:
+{{ include "gitlab.standardLabels" . | indent 4 }}
+data:
+  installation_type: |
+    gitlab-helm-chart
+  workhorse-config.toml.erb: |
+    [redis]
+    URL = "tcp://{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" }}"
+    Password = "<%= File.read("/etc/gitlab/redis/password") %>"
+  configure: |
+      set -e
+      mkdir -p /init-secrets-workhorse/gitlab-workhorse
+      cp /init-config/gitlab-workhorse/secret /init-secrets-workhorse/gitlab-workhorse/secret
+      mkdir -p /init-secrets-workhorse/redis
+      cp /init-config/redis/password /init-secrets-workhorse/redis/
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}

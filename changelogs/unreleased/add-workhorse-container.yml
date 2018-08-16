@@ -1,0 +1,5 @@
+---
+title: Move gitlab-workhorse to a separate container
+merge_request: 397
+author: Ian Baum
+type: added
