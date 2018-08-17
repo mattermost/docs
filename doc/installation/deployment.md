@@ -165,6 +165,8 @@ helm upgrade --install gitlab gitlab/gitlab \
   --set certmanager-issuer.email=me@example.local
 ```
 
+You can also use `--version <installation version>` option if you would like to install a specific version of GitLab.
+
 ### Deploy development branch
 
 To deploy master or a specific branch, first clone the repository locally: `git clone git@gitlab.com:charts/gitlab.git`

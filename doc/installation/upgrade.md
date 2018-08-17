@@ -1,0 +1,13 @@
+# Upgrade Guide
+
+Before upgrading your GitLab installation, you need to check the [change log](https://gitlab.com/charts/gitlab/blob/master/CHANGELOG.md) corresponding to the specific release you want to upgrade to. Also note that you need to provide all values using `helm upgrade --set key=value` syntax or `-f values.yml` instead of using `--reuse-values` because some of the current values might be depricated.
+
+
+# Steps
+Following are the steps to upgrade GitLab to a newer version:
+
+
+1. Check the [change log](https://gitlab.com/charts/gitlab/blob/master/CHANGELOG.md) for the specific version you would like to upgrade to
+2. Go through [deployment documentation](./deployment.md) step by step
+3. Decide on all the values you need to set
+4. Do `helm upgrade gitlab . --version <new version> ` followed by all `--set` values you extracted in step 3

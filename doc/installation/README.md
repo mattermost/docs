@@ -33,8 +33,10 @@ Follow the instructions to connect to the Kubernetes cluster of your choice.
 ### 3. Deploy
 
 With the environment setup and configuration generated,
-we can proceed to [deployment][].
+we can proceed to [deployment][]. Or if you are upgrading an existing
+installation follow [upgrade docs][]
 
 [Google Kubernetes Engine]: ../cloud/gke.md
 [resources]: resources.md
 [deployment]: deployment.md
+[upgrade docs]: upgrade.md
