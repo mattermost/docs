@@ -3,6 +3,9 @@
 WARNING: Automatic TLS certificate generation with cert-manager is disabled and
 no TLS certificates were provided. Self-signed certificates were generated.
 
+You may retrieve the CA root for these certificates from the `{{ template "gitlab.wildcard-self-signed-cert-name" $ }}-ca` secret, via the following command. It can then be imported to a web browser or system store.
+
+    kubectl get secret {{ template "gitlab.wildcard-self-signed-cert-name" $ }}-ca -ojsonpath={.data.cfssl_ca} | base64 --decode > {{ template "gitlab.gitlab.hostname" $ }}.ca.pem
 {{- if (index .Values "gitlab-runner").install -}}
 {{- fail "Automatic TLS certificate generation with cert-manager is disabled and no TLS certificates were provided. Self-signed certificates would be generated that do not work with gitlab-runner. Please either disable gitlab-runner by setting `gitlab-runner.install=false` or provide valid certificates." -}}
 {{- end -}}
