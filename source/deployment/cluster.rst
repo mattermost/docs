@@ -11,7 +11,6 @@ High availability in Mattermost consists of running redundant Mattermost applica
 
   This document applies to Mattermost Server version 4.0 and later. For previous versions, see :doc:`cluster-310`.
 
-
 .. contents::
   :backlinks: top
   :local:
@@ -264,6 +263,18 @@ Leader Election
 In Mattermost v4.2 and later, a cluster leader election process assigns any scheduled task such as LDAP sync to run on a single node in a multi-node cluster environment.
 
 The process is based on a widely used `bully leader election algorithm <https://en.wikipedia.org/wiki/Bully_algorithm>`_ where the process with the lowest node ID number from amongst the non-failed processes is selected as the "leader". 
+
+Job Server
+^^^^^^^^^^^^^^^^
+
+Mattermost runs periodic tasks via the `job server <https://docs.mattermost.com/administration/config-settings.html#jobs>`_. These tasks include:
+
+ - LDAP sync
+ - Data retention
+ - Compliance exports
+ - Elasticsearch indexing
+
+Run all job servers with ``--noschedule flag``, then set ``JobSettings.RunScheduler`` to ``true`` in config.json for all app servers in the cluster. The cluster leader will then be responsible for scheduling recurring jobs.
 
 Upgrade Guide
 -------------
