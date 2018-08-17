@@ -95,7 +95,7 @@ HIPAA compliance
 
 Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a deployment team trained on `HIPAA-compliance requirements and standards <http://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`_.
 
-- Mattermost offers HIPAA-relevant **Technincal Safeguards** including:
+- Mattermost offers HIPAA-relevant **Technical Safeguards** including:
 
      - `Integrity Controls <https://docs.mattermost.com/overview/security.html#integrity-audit-controls>`_
      - `Access Control <https://docs.mattermost.com/overview/security.html#access-control-policy>`_
