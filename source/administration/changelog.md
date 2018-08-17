@@ -4,6 +4,123 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.2
+
+### Security Update
+
+- Mattermost v5.2.0 contains medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+### Highlights
+
+#### Embed Mattermost in Other Apps (Beta)
+ - Added support for extensions, which allow you to embed Mattermost in other apps and websites via OAuth 2.0.
+ - A sample extension for Chrome [is here](https://github.com/mattermost/mattermost-chrome-extension).
+
+#### Plugins
+ - Added support to add/delete and enable/disable plugins via the CLI.
+ - See our [demo plugin](https://github.com/mattermost/mattermost-plugin-demo) that demonstrates the capabilities of a Mattermost plugin. For a starting point to write a Mattermost plugin, see our [sample plugin](https://github.com/mattermost/mattermost-plugin-sample).
+ - Breaking changes to the plugins framework introduced. To migrate your existing plugins to be compatible with Mattermost 5.2 and later, see our [migration guide](https://developers.mattermost.com/extend/plugins/migration/).
+ 
+#### Searching Archived Channels
+ - Added ability to search for archived channel content on desktop and mobile clients.
+ 
+#### Romanian Language
+ - Added support for Romanian language.
+
+### Improvements
+
+#### Web User Interface (UI)
+ - Added experimental custom default channels.
+ - Added link to profile pop-over from names in Join/Leave messages.
+ - Added support for webhook message attachments to trigger mentions.
+ - Stripped markdown formatting characters from desktop notifications and "Commented on..." text.
+ - Added ability to bulk import emoji.
+ - Added support for file attachments in bulk import.
+ 
+#### New Plugins (All Beta)
+ - [Antivirus plugin](https://github.com/mattermost/mattermost-plugin-antivirus) to scan for viruses before uploading a file to Mattermost. Supports [ClamAV anti-virus software](https://www.clamav.net/) across browser, Desktop Apps and the Mobile Apps.
+ - [GitHub plugin](https://github.com/mattermost/mattermost-plugin-github) to subscribe to notifications, and to keep track of unread GitHub messages and open pull requests requiring your attention.
+
+#### Server Plugins: Release Candidate
+ - A release candidate (RC) is released for server plugins. Stable release is expected in v5.3 or v5.4.
+ - Added various API methods for plugins to provide the same capabilities as the REST API.
+ - Added support to intercept file uploads before the file is uploaded to a Mattermost server.
+ - Added support for plugins to respond after a user joins/leaves a channel or a team, or creates a new channel.
+ - Added support for plugins to respond prior to or after a user logs in to a Mattermost server.
+ - Added support for plugins to update user status. Sample use case is setting a user’s status to Do Not Disturb based on Google Calendar events.
+ - Added CSRF tokens that are attached to users sessions. The tokens can be enforced as an alternative to XHR checks in the plugin request system.
+ - Added session token to context for ServeHTTP hook.
+
+#### Webapp Plugins: Beta
+ - Upcoming Mattermost UI redesign may cause breaking changes to webapp plugins. Hence, webapp plugins remain as beta in v5.2.
+ - Added support to override [...] post menu, and paperclip icon for file uploads.
+ - Added support for multiple plugins to add components at the same integration points instead of only allowing one plugin to do so.
+ - Removed ability to fully override profile popover. Instead, multiple plugins can now add to the profile popover via multiple integration points.
+ - For an up-to-date list of pluggable UI components, [see this list in our demo plugin](https://github.com/mattermost/mattermost-plugin-demo/tree/master/webapp#components).
+ 
+#### Administration
+ - In the compliance export status table, in System Console > Compliance > Compliance Export, added a number of exported records to Details column.
+ - Added support for cross-origin resource sharing.
+
+#### Command Line Interface (CLI)
+ - Enhanced log output from Permanent Delete CLI command to delete FileInfos for a user's posts.
+ - Addded channel renaming to CLI.
+ 
+#### Enterprise Edition
+ - Added the Global Relay Export CLI command.
+ - Added support to search plugin contents.
+
+### Bug Fixes
+ - Fixed an issue where the "Switch Channel" shortcut (⌘K) didn't work on dvorak layout on Mac.
+ - Fixed an issue where the Custom Integrations section in the System Console was blank after role changes.
+
+### Compatibility
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+ - Under "ServiceSettings": in ``config.json``:
+      - Added ``"CorsExposedHeaders": ""``, to add a whitelist of headers that will be accessible to the requester.
+      - Added ``"CorsAllowCredentials": false``, to allow requests that pass validation to include the ``Access-Control-Allow-Credentials`` header.
+      - Added ``"CorsDebug": false``, to print messages to the logs to help when developing an integration that uses CORS.
+ - Under "TeamSettings" in ``config.json``:
+      - Added ``"ViewArchivedChannels": true``, to allow users to share permalinks and search for content of channels that have been archived.
+      - Added ``"ExperimentalDefaultChannels": ""``, to allow choosing the default channels every user is added to automatically after joining a new team.
+
+### API Changes
+ 
+#### RESTful API v4 Changes
+ - ``deleteReaction`` API was added to send the correct value for ``post.HasReactions``.
+ - Support for add/delete and enable/disable plugins via CLI was added.
+ - File download API was improved to stream files instead of loading them entirely into memory.
+
+#### Websocket Changes
+ - Support for add/delete and enable/disable plugins via CLI was added.
+
+#### Database Changes
+ - Two new columns were added in the ``OutgoingWebhooks`` table, "Username" and "IconURL".
+
+### Known Issues
+
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
+
+### Contributors
+[aeomin](https://github.com/aeomin), [alanpog](https://github.com/alanpog), [Alexgoodman7](https://github.com/Alexgoodman7), [amyblais](https://github.com/amyblais), [archroller](https://github.com/archroller), [asaadmahmood](https://github.com/asaadmahmood), [burguyd](https://github.com/burguyd), [chikei](https://github.com/chikei), [cometkim](https://github.com/cometkim), [comharris](https://github.com/comharris), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [der-test](https://github.com/der-test), [DHaussermann](https://github.com/DHaussermann), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [falcon78921](https://github.com/falcon78921), [fdebrabander](https://github.com/fdebrabander), [grundleborg](https://github.com/grundleborg), [herooftimeandspace](https://github.com/herooftimeandspace), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [it33](https://github.com/it33), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [Jessica-c53](https://github.com/Jessica-c53), [JustinReynolds-MM](https://github.com/JustinReynolds-MM), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [kennethjeremyau](https://github.com/kennethjeremyau), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [meilon](https://github.com/meilon), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [pepf](https://github.com/pepf), [pichouk](https://github.com/pichouk), [pietroglyph](https://github.com/pietroglyph), [pjgrizel](https://github.com/pjgrizel), [pradeepmurugesan](https://github.com/pradeepmurugesan), [rodcorsi](https://github.com/rodcorsi), [Roy-Orbison](https://github.com/Roy-Orbison), [ryoon](https://github.com/ryoon), [santos22](https://github.com/santos22), [saturninoabril](https://github.com/saturninoabril), [scherno2](https://github.com/scherno2), [seansackowitz](https://github.com/seansackowitz), [sudheerDev](https://github.com/sudheerDev), [tejasbubane](https://github.com/tejasbubane), [theblueskies](https://github.com/theblueskies), [ThiefMaster](https://github.com/ThiefMaster), [uhlhosting](https://github.com/uhlhosting), [uusijani](https://github.com/uusijani), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [yuya-oc](https://github.com/yuya-oc) 
+
+
 ## Release v5.1
 
  - **v5.1.1, released 2018-08-07**

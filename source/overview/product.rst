@@ -4,7 +4,7 @@ Product Overview
 
 **Mattermost** provides high trust collaboration and messaging solutions through an open source, community-powered approach. Enjoy all the productivity benefits of workplace messaging across web, mobile and PC, with unlimited archiving, search and integrations within IT-controlled private environments in public clouds, including AWS and Azure, as well as on-premise in private clouds and virtual or physical servers. 
 
-Thousands of organizations use Mattermost around the world in 14 languages for its unmatched benefits:
+Thousands of organizations use Mattermost around the world in 15 languages for its unmatched benefits:
 
 - **Security** - Keep vital communications, including access to mobile and desktop apps, within your private environments. Deploy using `dozens of security features <https://docs.mattermost.com/overview/security.html>`_ vetted by global information security communities. Data stays on servers you control, encrypted using keys you control.
 

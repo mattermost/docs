@@ -6,6 +6,7 @@ Use the search box to find messages and replies that match the search terms that
 - Multiple-word search terms return results that contain all of the terms.
 - When results appear, click **Jump** to view that post in the channel archive.
 - File attachments and their filenames are not searched. If file attachments show up in the search results, it's because they are attached to messages that match the search query.
+- Archived channels can be searched as long as you are a member of that channel. To remove archived channels from your search results, you can leave those channels. If you are unable to see messages in archived channels in your search results, ask your System Administrator if *Allow users to view archived channels* has been disabled under **System Console > Users and Teams**.
 -  You can use search modifiers such as ``from:dave`` to return results only from certain people or in certain channels. For more information about this, see the `Search Modifiers`_ section.
 
 Like many search engines, common words such as ``the``, ``which``, and ``are`` (known as "stop words"), as well as two-letter and one-letter
