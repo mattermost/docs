@@ -29,15 +29,32 @@ If you are not sure whether RBAC is enabled in your cluster, or to learn more, r
 
 > **Note**: Ensure you have kubectl installed and it is up to date. Older versions do not have support for RBAC and will generate errors.
 
-Helm's Tiller will need to be granted permissions to perform operations. These instructions grant cluster wide permissions, however for more advanced deployments [permissions can be restricted to a single namespace](https://docs.helm.sh/using_helm/#example-deploy-tiller-in-a-namespace-restricted-to-deploying-resources-only-in-that-namespace). To grant access to the cluster, we will create a new `tiller` service account and bind it to the `cluster-admin` role.
+Helm's Tiller will need to be granted permissions to perform operations. These instructions grant cluster wide permissions, however for more advanced deployments [permissions can be restricted to a single namespace](https://docs.helm.sh/using_helm/#example-deploy-tiller-in-a-namespace-restricted-to-deploying-resources-only-in-that-namespace). 
 
-Copy the `rbac-config.yaml` file out of the examples:
+To grant access to the cluster, we will create a new `tiller` service account and bind it to the `cluster-admin` role:
 
+```yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: tiller
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1beta1
+kind: ClusterRoleBinding
+metadata:
+  name: tiller
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: tiller
+    namespace: kube-system
 ```
-cp doc/helm/examples/rbac-config.yaml rbac-config.yaml
-```
 
-Next we need to connect to the cluster and upload the RBAC config.
+For ease of use, these instructions will utilize the [sample YAML file](examples/rbac-config.yaml) in this repository. To apply the configuration, we first need to connect to the cluster.
 
 ### Connect to the cluster
 
@@ -86,14 +103,14 @@ gcloud container clusters describe <cluster-name> --zone <zone> --project <proje
 This command will output the admin password. We need the password to authenticate with `kubectl` and create the role.
 
 ```
-kubectl --username=admin --password=xxxxxxxxxxxxxx create -f rbac-config.yaml
+kubectl --username=admin --password=xxxxxxxxxxxxxx create -f https://gitlab.com/charts/gitlab/raw/master/doc/helm/examples/rbac-config.yaml
 ```
 
 #### Upload the RBAC config
 
 For other clusters like Amazon EKS, you can direclty upload the RBAC configuration. 
 
-kubectl create -f rbac-config.yaml
+kubectl create -f https://gitlab.com/charts/gitlab/raw/master/doc/helm/examples/rbac-config.yaml
 
 ## Initialize Helm
 
