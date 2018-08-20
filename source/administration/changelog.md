@@ -4,6 +4,9 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.3
+
+
 ## Release v5.2
 
 ### Security Update
