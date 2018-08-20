@@ -274,7 +274,7 @@ qa:
     QA_ARTIFACTS_DIR: $CI_PROJECT_DIR
   script:
     - docker login -u gitlab-ci-token -p "$CI_JOB_TOKEN" "$CI_REGISTRY"
-    - gem install gitlab-qa
+    - gem install gitlab-qa -v 2.2.0
     - source variables
     - app_version=$(ruby -e "require 'yaml'; puts YAML.safe_load(File.read('Chart.yaml'))['appVersion']")
     - qa_version="nightly"
