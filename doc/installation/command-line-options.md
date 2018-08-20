@@ -16,6 +16,7 @@ Tables below contain all the possible charts configurations that can be supplied
 | global.time_zone                                | Global time zone                                                             | UTC                                        |
 | global.service.annotations                      | Annotations to add to every `Service`                                        | {}                     |
 | global.registry.bucket                          | registry bucket name                    | registry             |
+| global.application.create                       | Create an [Application resource](https://github.com/kubernetes-sigs/application) for GitLab                                    | false
 
 ## TLS configuration
 

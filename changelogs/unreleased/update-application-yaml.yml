@@ -1,0 +1,6 @@
+---
+title: Add additional instructions to application.yaml, switch to v1beta1 of the CRD,
+  and trigger purely off the create flag
+merge_request: 401
+author:
+type: changed
