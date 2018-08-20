@@ -1,9 +1,8 @@
 # Required tools
 
-- [kubectl][] latest version
-- [helm][] latest version
+1. [`kubectl`][kubectl] version 1.8 or higher, compatible with your cluster. ([+/- 1 minor release from your cluster](https://kubernetes.io/docs/tasks/tools/install-kubectl/#before-you-begin))
+1. [`Helm`][helm], we recommend v2.9.1 or higher.
 
-Minimum required versions will be defined in beta.
 
 ### kubectl
 
@@ -28,5 +27,5 @@ Follow the [helm][] document for installation instructions.
 Once the tools are configured, you can continue to configuring your
 [Kubernetes cluster](README.md#where-do-you-want-to-install-GitLab).
 
-[kubectl]: https://kubernetes.io/docs/tasks/tools/install-kubectl/
+[kubectl]: https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl
 [helm]: ../helm/README.md
