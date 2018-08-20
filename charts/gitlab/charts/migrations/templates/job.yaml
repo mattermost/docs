@@ -49,6 +49,8 @@ spec:
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
               value: '/var/opt/gitlab/config/gitlab/'
+            - name: BYPASS_SCHEMA_VERSION
+              value: 'true'
           volumeMounts:
             - name: migrations-config
               mountPath: '/var/opt/gitlab/templates'
