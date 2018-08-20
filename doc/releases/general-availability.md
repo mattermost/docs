@@ -1,0 +1,71 @@
+# GitLab Cloud Native Chart General Availability
+
+We have been working hard on the chart and it's underlying containers, and are excited to to reach general availability and share it with the GitLab community.
+
+This effort has required extensive changes across the product:
+* Support for directly uploading to object storage
+* No dependency on shared storage
+* New containers for each component of GitLab
+* New Helm chart
+
+While much of the underlying work has been completed, there are a few changes that will be arriving after beta has started. This means that there are a few features of GitLab [that may not work as expected](#known-issues-and-limitations).
+
+## Release cadence
+
+We will be releasing a new version of the chart with each new GitLab patch.
+In order to maximize our testing opportunity in beta, there will be additional releases between GitLab patches for any chart specific changes that we want to release.
+
+More information on how we are versioning the chart can be found in the [release documentation](../development/release.md).
+
+Along with the issues and merge requests in this repo, a [changelog](https://gitlab.com/charts/gitlab/blob/master/CHANGELOG.md) is available to more easily follow along with updates.
+
+## Kubernetes deployment support
+
+GitLab development and testing is taking place on [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/), however other Kubernetes deployments
+should also work. In the event of a specific non-GKE deployment issue, please raise an issue.
+
+We are currently using Kubernetes version 1.8.12 in our automated tests, and 1.9.7 for development.
+
+## Technical support
+
+Before opening an issue please review the [known issues and limitations](#known-issues-and-limitations), and [search](https://gitlab.com/charts/gitlab/issues) to see if a similar issue already exists.
+
+We greatly appreciate the wider testing of the community, and encourage [detailed issues to be reported](https://gitlab.com/charts/gitlab/issues/new) so we can address them.
+
+We welcome any improvements contributed in the form of [Merge Requests](https://gitlab.com/charts/gitlab/merge_requests).
+
+## Breaking changes from Beta
+
+Several changes occurred during the beta cycle, which require being adddress prior to the use of the general availability charts. These will require changes to related values, if deviated from the previous defaults.
+
+The list of breaking changes:
+* [minio chart's enabled flag](../charts/globals.md#configure-minio-settings) has been [moved to global configuration](https://gitlab.com/charts/gitlab/merge_requests/389)
+* [registry chart's storage configuration](../charts/registry/README.md#storage) has been [reimplemented as a secret](https://gitlab.com/charts/gitlab/issues/548)
+* [Object storage configuration](../charts/globals.md#lfs-artifacts-uploads) has been [re-implemented as globally configured secrets](https://gitlab.com/charts/gitlab/issues/502)
+
+## Known issues and limitations
+
+The chart and containers are a work in progress, and not all features are fully functional. Below is a list of the known issues and limitations, although it may not be exhaustive. We recommend also reviewing the [open issues](https://gitlab.com/charts/gitlab/issues).
+
+Helm Chart Issues/Limitations:
+
+* No in-cluster HA database https://gitlab.com/charts/gitlab/issues/48
+* No GitLab Pages support https://gitlab.com/charts/gitlab/issues/37
+* No GitLab Geo support https://gitlab.com/charts/gitlab/issues/8
+
+Features that are currently out of scope:
+
+* Support for MySQL https://gitlab.com/charts/gitlab/issues/250
+* Mattermost https://gitlab.com/charts/gitlab/issues/251
+* Relative URL as the GitLab Endpoint https://gitlab.com/charts/gitlab/issues/406
+
+## Goals for general availability
+
+Our goals for the charts in generally available are:
+
+* High availability, with self-healing pods
+* Scalable to very large deployments
+* Down-time free upgrades
+* Production grade monitoring, logging
+* Mature support and documentation for common Kubernetes deployment targets, like: on-premise, EKS, AKS, PKS.
+* No breaking changes
