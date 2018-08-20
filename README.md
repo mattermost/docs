@@ -1,15 +1,8 @@
 # Cloud Native GitLab Helm Chart
 
-> **Notes**:
-> * The chart is currently **beta** This means that breaking changes could still be introduced on short notice but that the project is mostly stable
-> * There are [known issues and limitations](#known-issues-and-limitations).
-
-
-We are working on a new cloud native method of deploying GitLab on Kubernetes, using the [Helm chart in this repository](#helm-charts) along with a [new set of Docker containers](https://gitlab.com/gitlab-org/build/CNG) that are specific to each component of GitLab.
-
 The `gitlab` chart is the best way to operate GitLab on Kubernetes. This chart contains all the required components to get started, and can scale to large deployments.
 
-Some of the key benefits of the new chart and containers are:
+Some of the key benefits of this chart and [corresponding containers](https://gitlab.com/gitlab-org/build/CNG) are:
 * Improved scalability and reliability
 * No requirement for root privileges
 * Utilization of object storage instead of NFS for storage
