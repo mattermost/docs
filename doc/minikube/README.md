@@ -35,7 +35,7 @@ For the purposes of cross-plaform compatibility in this guide, we'll stick with 
 ### Starting / Stopping Minikube
 
 
-Resource requests must higher than default for developing the GitLab chart. Key configuration items can be found with `minkube start --help`. A selection is provided below, for what we may want to change according to the pieces being tested, and the requirements as listed .
+Minikube resource requests must be set higher than default for developing the GitLab chart. Key configuration items can be found with `minkube start --help`. A selection is provided below, for what we may want to change according to the pieces being tested, and the requirements as listed .
 
 - `--cpus int`: Number of CPUs allocated to the minikube VM (default `2`). 
     - The absolute minimum necessary CPU is `2`. Deploying the _complete_ chart requires `3`.
@@ -110,7 +110,7 @@ For further details on [Helm][helm], we'll move to [Developing for Helm](../helm
 
 ## Deploying the chart
 
-When deploying this chart into minikube, some resources need to be reduced or disabled.
+When deploying this chart into minikube, some chart resources need to be reduced or disabled.
 It is not possible to use the `nginx-ingress` chart to provide ports 22 / 80 / 443. It is best to disable it, and set the ingress class by setting `nginx-ingress.enabled=false,global.ingress.class="nginx"`.
 The `certmanager` chart can not be used with minikube. You must disable this by setting `certmanager.install=false,global.ingress.configureCertmanager=false`.
 As a result, if you do not provide your own SSL certificates, self-signed certificates will be generated. 
@@ -130,6 +130,11 @@ Example `/etc/hosts` file addition:
 192.168.99.100 gitlab.some.domain registry.some.domain minio.some.domain
 ```
 
+### Incorporating Self-Signed CA
+
+Once the chart is deployed, if using self-signed certificates, the user will be given the notice on how to fetch the CA certificate that was generated. This certificate can be added to the system store, so that all browsers, Docker daemon, and `git` command recogonize the deployed certificates as trusted. The method depends on your operating system.
+
+[BounCA](https://www.bounca.org) has a [good tutorial, covering most operating systems](https://www.bounca.org/tutorials/install_root_certificate.html)
 
 [minikube-getting-started]: https://kubernetes.io/docs/getting-started-guides/minikube/
 [k8s-io]: https://kubernetes.io/
