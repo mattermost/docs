@@ -323,7 +323,7 @@ Fields of the Emoji object
     <tr class="row-odd">
       <td valign="middle">image</td>
       <td valign="middle">string</td>
-      <td>The path (either absolute or relative to the `mattermost` binary) to the image file for this emoji.</td>
+      <td>The path (either absolute or relative to the current working directory) to the image file for this emoji.</td>
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
@@ -1144,7 +1144,7 @@ This object is a member of the Post/DirectPost object.
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
-tr class="row-odd">
+    <tr class="row-odd">
       <td valign="middle">flagged_by</td>
       <td valign="middle">array</td>
       <td>Must contain a list of members who have flagged the post.</td>
