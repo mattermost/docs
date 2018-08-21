@@ -7,7 +7,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v5.2
 
 - **v5.2.1, released TBD**
-  - Fixing an issue related to the Searching Archived Channels feature.
+  - Disabling the ability to search archived channels by default, given multiple issues were raised after v5.2.0 was released. The feature can be enabled in v5.2.1 via ``ExperimentalViewArchivedChannels`` setting.
 - **v5.2.0, released 2018-08-16**
   - Original 5.2.0 release
 
