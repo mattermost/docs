@@ -30,7 +30,8 @@ Follow the instructions to connect to the Kubernetes cluster of your choice.
 ### 3. Deploy
 
 With the environment setup and configuration generated,
-we can proceed to [deployment][].
+we can proceed to [deployment][]. Or if you are upgrading an existing
+installation follow [upgrade docs][]
 
 ### 4. Migrate data from an existing GitLab
 
@@ -44,3 +45,4 @@ Then proceed to the [restore documentation](../backup-restore/README.md#restorin
 [Google Kubernetes Engine]: ../cloud/gke.md
 [resources]: resources.md
 [deployment]: deployment.md
+[upgrade docs]: upgrade.md
