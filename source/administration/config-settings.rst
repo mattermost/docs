@@ -18,6 +18,9 @@ Finally, if a setting is configured through an environment variable, modifying i
 
 For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented here.
 
+.. note::
+   If a setting is set through an environment variable and any other changes are made in the System Console, that setting will be written back to the ``config.json``.
+
 .. contents::
   :depth: 2
   :local:
