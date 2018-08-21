@@ -1,7 +1,21 @@
 # Gitlab version mappings
 
-The table below shows the mapping between chart versions and GitLab versions. Read more about our charts versioning [here](https://gitlab.com/charts/gitlab/blob/master/doc/development/release.md#chart-versioning)
+The table below maps some of the key previous chart versions and GitLab versions.
 
 | Chart version | GitLab version |
 |---------------|----------------|
-| 0.3.5         | 10.7.0         |
+| 1.0.0         | 11.2.0         |
+| 0.3.5        	| 11.1.4     	 |
+| 0.2.4        	| 11.0.4     	 |
+
+
+To see the full list, you can issue the following command with helm:
+
+```
+helm repo add gitlab https://charts.gitlab.io/
+helm search -l gitlab/gitlab
+```
+
+Read more about our charts versioning [here](https://gitlab.com/charts/gitlab/blob/master/doc/development/release.md#chart-versioning)
+
+
