@@ -63,3 +63,4 @@ However, some Mattermost customers prefer multiple team deployments for the foll
 
 * Teams are useful when there is a purpose for each of them. For example, one team is used for staff members and another team for external users.
 * Performance is better when users are scattered across multiple teams instead of all in the same one. With multiple teams, there is less content to load per team or channel switch and database queries are faster.
+* Creating a shared team across all users of the system and using `advanced permissions <https://docs.mattermost.com/deployment/advanced-permissions.html#recipes>`_ can be a solution to system-wide announcements for utilizing multiple teams. 
