@@ -34,10 +34,23 @@ For the purposes of cross-plaform compatibility in this guide, we'll stick with 
 
 ### Starting / Stopping Minikube
 
+
+Resource requests must higher than default for developing the GitLab chart. Key configuration items can be found with `minkube start --help`. A selection is provided below, for what we may want to change according to the pieces being tested, and the requirements as listed .
+
+- `--cpus int`: Number of CPUs allocated to the minikube VM (default `2`). 
+    - The absolute minimum necessary CPU is `2`. Deploying the _complete_ chart requires `3`.
+- `--memory int`: Amount of RAM allocated to the minikube VM (default `2048`).
+    - The absolute same minimum is `5120` (5 GB). Recommendation is `8192` (8 GB).
+- `--disk-size string`: Disk size allocated to the minikube VM (format: `<number>[<unit>]`, where unit = `b`, `k`, `m` or `g`) (default `20g`). See [Storage](https://docs.gitlab.com/ce/install/requirements.html#storage) and [Database](https://docs.gitlab.com/ce/install/requirements.html#database) requirements of GitLab. **Note**: *this is created in your home directory under `~/.minikube/machines/minikube/`*
+- `--kubernetes-version string`: The kubernetes version that the minikube VM will use (ex: `v1.2.3`)
+- `--registry-mirror stringSlice`: Registry mirrors to pass to the Docker daemon
+
+*Note: changing these values in a second `start` commands requires first `delete`ing the existing instance with `minikube delete`, or manually you can alter the properties with VirtualBox Manager*
+
 Once you have all the tools installed and configured, starting at stopping Minikube can be done with:
 
 ```
-minikube start
+minikube start --cpu 3 --memory 8192
 ```
 
 This command should output something similar to:
@@ -60,16 +73,6 @@ Kubectl is now configured to use the cluster.
 Stopping local Kubernetes cluster...
 Machine stopped.
 ```
-
-While this is simple, we may want to provide higher than default resources for developing GitLab applications. Key configuration items can be found with `minkube start --help`. A selection is provided below, for what we may want to change according to the pieces being tested, and the requirements as listed .
-
-- `--cpus int`: Number of CPUs allocated to the minikube VM (default `2`). See [CPU](https://docs.gitlab.com/ce/install/requirements.html#cpu) requirements of GitLab
-- `--memory int`: Amount of RAM allocated to the minikube VM (default `2048`). See [Memory](https://docs.gitlab.com/ce/install/requirements.html#memory) requirements of GitLab
-- `--disk-size string`: Disk size allocated to the minikube VM (format: `<number>[<unit>]`, where unit = `b`, `k`, `m` or `g`) (default `20g`). See [Storage](https://docs.gitlab.com/ce/install/requirements.html#storage) and [Database](https://docs.gitlab.com/ce/install/requirements.html#database) requirements of GitLab. **Note**: *this is created in your home directory under `~/.minikube/machines/minikube/`*
-- `--kubernetes-version string`: The kubernetes version that the minikube VM will use (ex: `v1.2.3`)
-- `--registry-mirror stringSlice`: Registry mirrors to pass to the Docker daemon
-
-*Note: changing these values in a second `start` commands requires first `delete`ing the existing instance with `minikube delete`, or manually you can alter the properties with VirtualBox Manager*
 
 ## Using Minikube
 
@@ -104,6 +107,29 @@ You can find the URL for the dashboard by calling `minikube dashboard --url`.
 Once your Minikube is up and running, you can hook [Helm] to it with `helm init`.
 
 For further details on [Helm][helm], we'll move to [Developing for Helm](../helm/README.md)
+
+## Deploying the chart
+
+When deploying this chart into minikube, some resources need to be reduced or disabled.
+It is not possible to use the `nginx-ingress` chart to provide ports 22 / 80 / 443. It is best to disable it, and set the ingress class by setting `nginx-ingress.enabled=false,global.ingress.class="nginx"`.
+The `certmanager` chart can not be used with minikube. You must disable this by setting `certmanager.install=false,global.ingress.configureCertmanager=false`.
+As a result, if you do not provide your own SSL certificates, self-signed certificates will be generated. 
+The `gitlab-runner` chart is not compatible with self-signed certificates at this time, and as such, should be disabled by setting `gitlab-runner.install=false`
+
+When using the recommended 3 CPU, 8 GB, use [values-minikube.yaml](../../examples/values-minikube.yaml) as a basis.
+If using _absolute minimum_ resources, you must reduce all replicas and disable unneeded services. See [values-minikube-minimum.yaml](../../examples/values-minikube-minimum.yaml) a reasonable base.
+
+### Handling DNS
+
+The example configurations provided configure the domain as `192.168.99.100.nip.io` in attempt to reduce the overhead of handling alterations to host files, or other domain name resolution services. However, this relies on the network reachability of [nip.io](http://nip.io).
+
+If this is not available to you, then you may need to make alterations to your `/etc/hosts` file, or provide another means of DNS resolution.
+
+Example `/etc/hosts` file addition:
+```text
+192.168.99.100 gitlab.some.domain registry.some.domain minio.some.domain
+```
+
 
 [minikube-getting-started]: https://kubernetes.io/docs/getting-started-guides/minikube/
 [k8s-io]: https://kubernetes.io/
