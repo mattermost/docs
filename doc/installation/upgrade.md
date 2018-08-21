@@ -5,8 +5,8 @@ Before upgrading your GitLab installation, you need to check the [change log](ht
 Mappings between chart versioning and GitLab versioning can be found [here](./version-mappings.md)
 
 # Steps
-Following are the steps to upgrade GitLab to a newer version:
 
+The following are the steps to upgrade GitLab to a newer version:
 
 1. Check the [change log](https://gitlab.com/charts/gitlab/blob/master/CHANGELOG.md) for the specific version you would like to upgrade to
 2. Go through [deployment documentation](./deployment.md) step by step
