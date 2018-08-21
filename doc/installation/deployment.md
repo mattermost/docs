@@ -167,6 +167,8 @@ helm upgrade --install gitlab gitlab/gitlab \
 
 You can also use `--version <installation version>` option if you would like to install a specific version of GitLab.
 
+Mappings between chart versions and GitLab versions can be found [here](./version-mappings.md)
+
 ### Deploy development branch
 
 To deploy master or a specific branch, first clone the repository locally: `git clone git@gitlab.com:charts/gitlab.git`
