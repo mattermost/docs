@@ -1520,6 +1520,8 @@ _________
 
 Sessions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+User sessions are cleared when a user tries to log in. Additionally, a job runs every 24 hours to cleanse sessions from the sessions database tables. 
+
 Session length for email and AD/LDAP authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Set the number of days before web sessions expire and users will need to log in again.
@@ -1554,7 +1556,7 @@ Set the number of minutes to cache a session in memory.
 
 Session Idle Timeout (minutes)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited. User sessions are cleared when a user tries to login in. Additionally, a job runs every 24 hours to cleanse sessions from the sessions database tables.    
+The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited.    
 
 Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
 
