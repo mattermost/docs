@@ -1,6 +1,6 @@
 # External object stoarge
 
-Gitlab relies on object storage in Kubernetes highly-available persisted data.
+Gitlab relies on object storage for highly-available persistent data in Kubernetes.
 By default, an S3-compatible storage solution named `minio` is deployed with the
 chart, but for production quality deployments, we recommend using a hosted
 object storage solution like Google Cloud Storage or AWS S3.
