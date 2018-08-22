@@ -415,9 +415,7 @@ Defaults shown above.
 #### connection
 
 The `connection` property has been transitioned to a Kubernetes Secret. The contents
-of this secret should be in accordance with the documentation present at
-[GitLab Job Artifacts Administration][artifactscon] documentation. This matches to
-[Fog](https://github.com/fog), and is different between provider modules.
+of this secret should be a yaml config file.
 
 Defaults to `{}` and will be ignored if `global.minio.enabled` is `true`.
 
@@ -425,7 +423,20 @@ This property has two sub-keys: `secret` and `key`.
 - `secret` is the name of a Kubernetes Secret. This value is required to use external object storage.
 - `key` is the name of the key in the secret which houses the YAML block. Defaults to `connection`.
 
-[artifactscon]: https://docs.gitlab.com/ee/administration/job_artifacts.html#object-storage-settings
+Valid configuration keys can be found at
+[GitLab Job Artifacts Administration][artifactscon] documentation. This matches to
+[Fog](https://github.com/fog), and is different between provider modules.
+
+Example contents to be placed in the secret:
+
+```
+provider: AWS
+aws_access_key_id: BOGUS_ACCESS_KEY
+aws_secret_access_key: BOGUS_SECRET_KEY
+region: us-east-1
+```
+
+[artifactscon]: https://docs.gitlab.com/ee/administration/job_artifacts.html#s3-compatible-connection-settings
 
 
 ### Incoming email settings
