@@ -1520,7 +1520,7 @@ _________
 
 Sessions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-User sessions are cleared when a user tries to log in. Additionally, a job runs every 24 hours to cleanse sessions from the sessions database tables. 
+User sessions are cleared when a user tries to log in. Additionally, a job runs every 24 hours to clear sessions from the sessions database table. 
 
 Session length for email and AD/LDAP authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
