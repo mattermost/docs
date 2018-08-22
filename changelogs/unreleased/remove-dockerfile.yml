@@ -1,5 +1,0 @@
----
-title: Remove Dockerfile since it's been moved to gitlab-org/gitlab-build-images
-merge_request:
-author:
-type: other

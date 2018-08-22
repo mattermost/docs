@@ -1,5 +1,0 @@
----
-title: Default sidekiq chart queues to upstream source defaults
-merge_request: 449
-author:
-type: changed

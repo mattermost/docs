@@ -1,5 +1,0 @@
----
-title: 'Minio/Redis: add spec.strategy.type=Recreate (#633)'
-merge_request: 423
-author:
-type: fixed
