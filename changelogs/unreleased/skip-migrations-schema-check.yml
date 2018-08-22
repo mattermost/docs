@@ -1,6 +1,0 @@
----
-title: Rails pods, except migrations, will wait for their desired schema version before
-  starting
-merge_request: 462
-author:
-type: changed

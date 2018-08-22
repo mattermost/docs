@@ -1,5 +1,0 @@
----
-title: Set preStop hooks to sidekiq and unicorn charts for graceful shutdown
-merge_request: 382
-author: Balasankar C
-type: added

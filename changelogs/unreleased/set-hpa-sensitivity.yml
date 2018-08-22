@@ -1,5 +1,0 @@
----
-title: Use targetValue instead of targetUtilization fo hpa autoscaling
-merge_request: 433
-author:
-type: performance

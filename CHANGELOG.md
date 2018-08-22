@@ -2,6 +2,56 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.0.0 (2018-08-22)
+
+### Fixed (4 changes, 1 of them is from the community)
+
+- Minio/Redis: add spec.strategy.type=Recreate (#633). !423
+- Add missing reference to uploads bucket in task-runner chart. !429 (Matt Welch)
+- runner: fix gitlab-runner.cache.secret template.
+- Fix changelog danger handling.
+
+### Changed (12 changes)
+
+- Move all Minio enabled to global configuration. !389
+- Convert registry storage block to secret. !391
+- Convert rails connection blocks to secrets. !393
+- Add additional instructions to application.yaml, switch to v1beta1 of the CRD, and trigger purely off the create flag. !401
+- Relocate lfs/artifacts/uploads configuration to global `appConfig`. !403
+- Update memory requests based on observations. !418
+- Update certmanager to v0.4.0 (#617). !424
+- Allow external object storage for task-runner. !427
+- Replace self-signed certificate generation, automatically CA add to custom CAs. !441
+- Default sidekiq chart queues to upstream source defaults. !449
+- Rails pods, except migrations, will wait for their desired schema version before starting. !462
+- Bump the gitalb-runner chart version to 0.1.33. !468
+
+### Performance (1 change)
+
+- Use targetValue instead of targetUtilization fo hpa autoscaling. !433
+
+### Added (7 changes, 3 of them are from the community)
+
+- support multiple gitaly instances. !377
+- Set preStop hooks to sidekiq and unicorn charts for graceful shutdown. !382 (Balasankar C)
+- Add option to configure missing settings from gitlab.yml. !395 (Balasankar C)
+- Move gitlab-workhorse to a separate container. !397 (Ian Baum)
+- Implment support for incoming emails by adding a mailroom chart. !425
+- Enable NGINX Ingress metrics by default. !434
+- Add capability to inject custom root CAs. !436
+
+### Other (8 changes)
+
+- Better document the initial storage configuration options. !412
+- Restructure examples and link docs. !445
+- Add retreival of self-signed CA to NOTES.txt output when in use. !457
+- Add example values for Minikube. !459
+- Document deprecations behavior and deceision.
+- Update external object storage documentation.
+- add anti-affinity to nginx.
+- Remove Dockerfile since it's been moved to gitlab-org/gitlab-build-images.
+
+
 ## 0.3.5 (2018-07-31)
 
 ### Fixed (1 change)
