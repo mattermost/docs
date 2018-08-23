@@ -175,6 +175,8 @@ See [nginx-ingress chart](../../charts/nginx/README.md)
 | gitlab.gitaly.persistence.volumeName                | Existing persistent volume name                |                                                  |
 | gitlab.gitaly.persistence.matchLabels               | Label-value matches to bind                    |                                                  |
 | gitlab.gitaly.persistence.matchExpressions          | Label-expression matches to bind               |                                                  |
+| gitlab.gitaly.securityContext.runAsUser             | User ID under which the pod should be started  | 1000                                             |
+| gitlab.gitaly.securityContext.fsGroup               | Group ID under which the pod should be started | 1000                                             |
 | gitlab.gitlab-shell.replicaCount                    | Shell replicas                                 | 1                                                          |
 | gitlab.gitlab-shell.image.repository                | Shell image repository                         | registry.gitlab.com/gitlab-org/build/cng/gitlab-shell      |
 | gitlab.gitlab-shell.image.tag                       | Shell image tag                                | latest                                                     |
