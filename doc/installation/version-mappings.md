@@ -18,4 +18,5 @@ helm search -l gitlab/gitlab
 
 Read more about our charts versioning [here](https://gitlab.com/charts/gitlab/blob/master/doc/development/release.md#chart-versioning)
 
-
+Check the [releases documentation](../releases/README.md) for information on important releases,
+and see the [changelog](https://gitlab.com/charts/gitlab/blob/master/CHANGELOG.md) for the full details on any release.   
