@@ -1,5 +1,5 @@
 ---
 title: Fixed setting the connection to a non-default redis port
-merge_request:
+merge_request: 470
 author:
 type: fixed
