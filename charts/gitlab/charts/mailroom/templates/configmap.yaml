@@ -22,13 +22,13 @@ data:
         :delivery_method: sidekiq
         {{- end }}
         :delivery_options:
-          :redis_url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" }}
+          :redis_url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
           :namespace: resque:gitlab
           :queue: email_receiver
           :worker: EmailReceiverWorker
         :arbitration_method: redis
         :arbitration_options:
-          :redis_url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" }}
+          :redis_url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
           :namespace: mail_room:gitlab
   configure: |
     set -e
