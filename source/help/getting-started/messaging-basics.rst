@@ -3,7 +3,7 @@ Messaging Basics
 
 --------------
 
-**Write messages** using the text input box at the bottom of Mattermost.
+**Write messages** using the text input box at the bottom of the screen.
 Press ENTER to send a message. Use SHIFT+ENTER to create a new
 line without sending a message.
 
@@ -16,7 +16,7 @@ text.
 **Notify teammates** when they are needed by typing ``@username``.
 
 **Format your messages** using Markdown that supports text styling,
-headings, links, emoticons, code blocks, block quotes, tables, lists and
+headings, links, emojis, code blocks, block quotes, tables, lists and
 in-line images.
 
 You can use either ``_`` or ``*`` for italics and bold text. See the table below for examples.
@@ -24,12 +24,12 @@ You can use either ``_`` or ``*`` for italics and bold text. See the table below
 .. image:: ../../images/messagesTable1.PNG
    :alt: markdown
 
-**Quickly add emoji** by typing ":" followed by two characters, which will open an emoji
-autocomplete. If the existing emoji don't cover what you want to
+**Quickly add an emoji** by typing ":" followed by two characters, which will open an emoji
+autocomplete. If the existing emoji doesn't cover what you want to
 express, you can also create your own `Custom
 Emoji <http://docs.mattermost.com/help/settings/custom-emoji.html>`__.
 
-**Attach files** by dragging and dropping into Mattermost or clicking
+**Attach files** by dragging and dropping them into Mattermost or clicking
 the attachment icon in the text input box.
 
 **Flag messages for follow up** by clicking the flag icon next to the
