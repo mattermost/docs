@@ -41,7 +41,6 @@ Table below contains all the possible charts configurations that can be supplied
 | persistence.size             | Gitaly persistence volume size         | 50Gi                                     |
 | persistence.subPath          | Gitaly persistence volume mount path   |                                          |
 | persistence.storageClass     | storageClassName for provisioning      |                                          |
-| persistence.volumeName       | Existing persistent volume name        |                                          |
 | persistence.matchLabels      | Label-value matches to bind            |                                          |
 | persistence.matchExpressions | Label-expression matches to bind       |                                          |
 
@@ -135,10 +134,13 @@ This chart provisions a PersistentVolumeClaim and mounts a corresponding persist
 You'll need physical storage available in the Kubernetes cluster for this to work. If you'd rather use emptyDir,
 disable PersistentVolumeClaim by: `persitence.enabled: false`
 
+> **Note:** The persistence settings for gitaly are used in a volumeClaimTemplate, that should be valid for all your
+> gitaly pods. You should *not* include settings that are meant to reference a single specific volume (ie volumeName).
+> If you want to reference a specific volume, you need to manually create the PersistentVolumeClaim.
+
 ```
 persistence:
   enabled: true
-  volumeName: gitlab-repo-data
   storageClass: standard
   accessMode: ReadWriteOnce
   size: 50Gi
@@ -150,10 +152,6 @@ persistence:
 #### enabled
 
 Sets whether or not to use a PersistentVolumeClaims for the repo data. Otherwise a emptyDir volume is used. Defaults to true.
-
-#### volumeName
-
-If set, the chart will use the existing named PersistentVolume. Use this when you are not using dynamic provisioning. Defaults to unset.
 
 #### storageClass
 

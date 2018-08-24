@@ -15,7 +15,7 @@ For a production environment, you should review the settings of your cluster's d
 
 We recommend creating your own [Storage Class][] for use in these charts, and updating your config to use it.
 
-For a production deploy of GitLab, we recommend you use [Persistent Volumes][pv] that have a reclaimPolicy set to `Retain` rather than `Delete`.  On some platforms like GKE, the default [Storage Class][] has a reclaimPolicy of `Delete`. Meaning that uninstalling GitLab, or deleting a PVC, will result in the persistent volume being completely deleted by an automated task that goes through and deletes the volume and disk from GCE.
+For a production deploy of GitLab, we recommend you use [Persistent Volumes][pv] that have a reclaimPolicy set to `Retain` rather than `Delete`.  On some platforms like GKE, the default [Storage Class][] has a reclaimPolicy of `Delete`. Meaning that uninstalling GitLab, or deleting a PVC, will result in the persistent volume being completely deleted by an automated task that goes through and deletes the volume and disk from GCE. (The gitaly PVCs do not get deleted in this case because they belong to a [StatefulSet][])
 
 For example, create a new [Storage Class][] object in your GKE cluster:
 
@@ -68,11 +68,11 @@ Documentation for all available persistence options for these can be found in th
 
 ## Manually creating Static Volumes
 
-If the cluster does not have a dynamic provisioner, you will need to create the [Persistent Volumes][pv] manually, and provide the `volumeName` to the application. This chart will still take care of creating the volume claim, and it will attempt to bind to the volume you created. More information on how to provide the `volumeName`, and additional claim information, is available in the chart documentation for each included application.
+If the cluster does not have a dynamic provisioner, you will need to create the [Persistent Volumes][pv] manually.
 
 For example, create a new volume for an existing GCE disk:
 
-```
+```yaml
 kind: PersistentVolume
 apiVersion: v1
 metadata:
@@ -88,11 +88,39 @@ spec:
     pdName: pd-gitaly-disk
 ```
 
-and using the volumeName in your GitLab config:
+### Manually creating PersistentVolumeClaims
 
+For services that are deployed using a [StatefulSet][], like `gitaly`, you will also need to manually create the [PersistentVolumeClaim][pvc].
+These claims will be automatically used by the StatefulSet Pods, based on their name. [StatefulSet][]s match PVC names using the following:
+`<mount-name>-<statefulset-pod-name>` and StatefulSet Pod names are determined using `<statefulset-name>-<pod-index>`, and in our chart the
+StatefulSet names are determined using `<chart-release-name>-<service-name>`.
+
+The `gitaly` service has a mount called `repo-data`. So if you installed the chart with the name `gitlab` when using helm install, the PVC name for the first gitaly pod would be
+`repo-data-gitlab-gitaly-0`
+
+Example:
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: repo-data-gitlab-gitaly-0
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 50
+  storageClassName: standard
+  volumeName: pv-gitaly
 ```
---set gitlab.gitaly.persistence.volumeName=pv-gitaly
-```
+
+> For services that do not use a [StatefulSet][]; once you create the volume, you can provide the `volumeName` to the config and this chart will still take care of creating the [volume claim][pvc], and it will attempt to bind to the volume you created. More information on how to provide the `volumeName`, and additional claim information, is available in the chart documentation for each included application.
+>
+>
+> Using the volumeName in your config:
+>
+>`--set minio.persistence.volumeName=pv-minio`
 
 ## Making changes to storage after installation
 
@@ -103,4 +131,6 @@ Helm upgrade command.
 See the [managing persistent volumes documentation](../advanced/persistent-volumes/README.md).
 
 [pv]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes
+[pvc]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
 [Storage Class]: https://kubernetes.io/docs/concepts/storage/storage-classes/
+[StatefulSet]: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
