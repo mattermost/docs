@@ -6,6 +6,56 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.3
 
+### Highlights
+
+### Improvements
+- Added username and profile picture to outgoing webhooks setup page.
+- Added "Deactivate Account" option under Account Settings > Advanced.
+- Created an telemetry event for when telemetry is turned off from the System Console.
+- Added member count for the direct messages list.
+
+### Bug Fixes
+- Fixed an issue where closing an archive channel did not redirect user to the last viewed channel.
+
+### Compatibility
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+### API Changes
+- Added postId to the PostDropDownMenuAction and Component for plugins.
+- Added PostId to PostActionIntegrationRequest to, e.g. delete the post, when an action button is pressed.
+- Added FileInfo and get file []byte in plugin api.
+- Added API GET 'api/v4/channels/{channel_id:[A-Za-z0-9]+}/posts/unread' to allow jumping into the last unread post and returning a list of posts around it.
+ 
+#### RESTful API v4 Changes
+
+
+#### Websocket Changes
+
+
+#### Database Changes
+
+
+### Known Issues
+
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
+
+### Contributors
+
 
 ## Release v5.2
 
