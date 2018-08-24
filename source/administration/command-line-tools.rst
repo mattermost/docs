@@ -1,8 +1,9 @@
 Command Line Tools
 ==================
 
-From the directory where the Mattermost server is installed, a
-``mattermost`` command is available for configuring the system, including:
+From the directory where the Mattermost server is installed, a ``mattermost`` command is available for configuring the system. For an overview of the Mattermost command line interface (CLI), `read this excellent article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`_ from Santos.
+
+These ``mattermost`` commands include:
 
 **General Administration**
 
