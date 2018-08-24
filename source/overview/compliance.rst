@@ -29,7 +29,7 @@ Security Infrastructure
 
 Mattermost enables organizations to protect their information, and the information of their users and customers, through self-hosted communication infrastructure that has been developed with a high standard of security. The features of this security infrastructure include: 
 
-- **Security Features** in Mattermost open-source and commercial offerings that enable deployment of your organization’s own infrastructure
+- **Security Features** in Mattermost open source and commercial offerings that enable deployment of your organization’s own infrastructure
 - **Responsible Disclosure Policy** for security researchers around the world to confidentially report suspected vulnerabilities, which can be addressed in updates to Mattermost software 
 - **Security Reviews** conducted by both our own internal security review team and external security researchers
 - **ISO 27001 Standards** which are met to achieve alignment with international security guidelines
