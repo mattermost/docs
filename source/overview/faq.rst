@@ -307,6 +307,13 @@ Where can I find the license agreement for Mattermost Enterprise Edition?
 
 See our `frequently asked questions about licensing <https://about.mattermost.com/pricing/#faq>`_.
 
+What happens if my department buys Mattermost Enterprise Edition and then central IT buys a high volume license that also covers my department?   
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost Enterprise Edition subscriptions and support benefits are licensed per production instance. 
+
+When the subscription term for your department's production instance expires you can either discontinue your department's production instance and move to the instance hosted by central IT (which can optionally provision one or more teams for your department to control), or you can renew your subscription to maintain control of your department's instance (perhaps to configure or customize the system in a manner highly specific to your line-of-business) in addition to using the instance from central IT. 
+
 Integration
 ------------------
 
