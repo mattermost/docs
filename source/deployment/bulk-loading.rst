@@ -18,8 +18,11 @@ You can import the following data types:
 - Posts (regular, non-reply posts)
 - Posts' Replies
 - Posts' Reactions
+- Posts' File Attachments
 - Direct Message and Group Message channels
 - Direct Messages and Group Messages
+- Permissions Schemes
+- Custom Emoji
 
 Importing additional types of posts is not yet supported.
 
