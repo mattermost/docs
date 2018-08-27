@@ -159,13 +159,13 @@ information on this site without obtaining professional advice regarding particu
 FAQ
 -----------------------------------------------
 
-To be compliant with GDPR, do I need the Enterprise Edition feature of hiding the contents of email notifications?
+To be compliant with GDPR, do I need to remove message contents of email notifications?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Based on our interpretation of GDPR, we believe it is not necessary to hide the contents of email notifications to remain compliant for the following reasons:
+Based on our interpretation of GDPR, we believe it is not necessary to hide message content in email notifications to remain compliant for the following reasons:
 
 1. Every user has the ability to disable email notifications in their account settings, providing them with ultimate control over whether or not they want information sent via email. From our research, this seems aligned with what most other products do currently, but we will follow any updates on interpretations of GDPR closely to see if we need to make changes in this area.
 
-2. Mattermost offers TLS encryption to protect the communication between the Mattermost server and the email server. 
+2. Mattermost offers :ref:`TLS encryption <email-tls>` to protect the communication between the Mattermost server and the email server. 
 
-3. For those who are uncertain if the first two points cover GDPR compliance, we offer the ability to disable notifications completely on your Mattermost server. Note that to use Mattermost in production with no email notifications, you will also need to disable a "preview" notice banner. 
+3. For those who are uncertain if the first two points cover GDPR compliance, we offer the ability to :ref:`disable notifications completely <email-notification-config>` on your Mattermost server. Note that to use Mattermost in production with no email notifications, you will also need to :ref:`disable a "preview mode" notice banner <email-preview-mode-banner-config>`. 
