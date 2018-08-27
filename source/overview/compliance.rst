@@ -112,13 +112,13 @@ This overview is specific to the `U.S. Export Administration Regulations <https:
 General Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start by taking a look at the `U.S. Bureau of Industry and Security <https://www.bis.doc.gov/>`_ website. Then, navigate to `Part 730 <https://www.bis.doc.gov/index.php/documents/regulation-docs/410-part-730-general-information/file>`_ of the U.S. Export Administration Regulations to understand what the regulations cover and review on “Subject to
+Start by taking a look at the `U.S. Bureau of Industry and Security <https://www.bis.doc.gov/>`_ website. Then, navigate to `Part 730 <https://www.bis.doc.gov/index.php/documents/regulation-docs/410-part-730-general-information/file>`_ of the U.S. Export Administration Regulations to understand what the regulations cover and what is “Subject to
 the EAR” under `734.2 <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`_ (“export controlled”). 
 
 Export Classification and Licensing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Although what is subject to the Export Administration Regulations is quite broad, an export license
+Although what is subject to the Export Administration Regulations is quite broad, that does not mean an export license
 is required for every transaction. The foundation of understanding export controls related to hardware, software and
 technology can be found within the `Commerce Control List <https://www.bis.doc.gov/index.php/regulations/commerce-control-list-ccl>`_ (CCL), which has 10 categories, 0-9, and is set up as a positive list. The first step is determining if the item to be exported is subject to the EAR.
 
