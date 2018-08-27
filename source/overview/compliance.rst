@@ -154,3 +154,18 @@ developments, and Mattermost does not represent, warrant or guarantee that it is
 This information is subject to change without notice. The materials on this site are not intended to constitute legal
 advice or to be used as a substitute for specific legal advice. You should not act (or refrain from acting) based upon
 information on this site without obtaining professional advice regarding particular facts and circumstances.
+
+
+FAQ
+-----------------------------------------------
+
+To be compliant with GDPR, do I need the Enterprise Edition feature of hiding the contents of email notifications?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Based on our interpretation of GDPR, we believe it is not necessary to hide the contents of email notifications to remain compliant for the following reasons:
+
+1. Every user has the ability to disable email notifications in their account settings, providing them with ultimate control over whether or not they want information sent via email. From our research, this seems aligned with what most other products do currently, but we will follow any updates on interpretations of GDPR closely to see if we need to make changes in this area.
+
+2. Mattermost offers TLS encryption to protect the communication between the Mattermost server and the email server. 
+
+3. For those who are uncertain if the first two points cover GDPR compliance, we offer the ability to disable notifications completely on your Mattermost server. Note that to use Mattermost in production with no email notifications, you will also need to disable a "preview" notice banner. 
