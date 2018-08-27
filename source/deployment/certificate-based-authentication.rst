@@ -51,10 +51,4 @@ On Ubuntu 16.04, Debian Jessie, and RHEL 7.1:
 
 4. Go to https://example.mattermost.com and try to log in. The server should require the x.509 cert to have an ``emailAddress`` equal to the Mattermost user's email.
 
-Run the modified Mattermost React Native Mobile App
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Fork the `master <https://github.com/mattermost/mattermost-mobile>`_ branch from the mattermost-mobile repository.
-2. Set **ExperimentalClientSideCertEnable** to ``true`` in the `mattermost-mobile/assets/base/config.json <https://github.com/mattermost/mattermost-mobile/blob/master/assets/base/config.json#L15>`_ file.
-3. `Use this guide <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`_ to build the apps based on the branch you created and modified in steps 1 and 2.
-4. Import the certificate from the previous section above into the Mattermost iOS App and use it for mutual TLS authentication. You can `watch a demonstration video of this step here <https://drive.google.com/file/d/1zzk9XQ6RBvsWbCTrIfgE0484pD7w9Ux1/view>`_.
+5. Import the certificate into the Mattermost iOS App and use it for mutual TLS authentication. You can `watch a demonstration video of this step here <https://drive.google.com/file/d/1zzk9XQ6RBvsWbCTrIfgE0484pD7w9Ux1/view>`_.
