@@ -119,16 +119,23 @@ Follow these steps to write a case study that is clear and concise:
 
 1. Title: Highlight the most compelling use case and/or business benefit from Results section (see step #6 below). 
 2. Executive Summary: 
+
    a) Open with a sentence on how the organization transformed after using Mattermost.
    b) Include the most important points of the story.
+
 3. Organization (3-5 sentences): 
+   
    a) Introduce the customer and their industry, framing their relevance and impact on the world in the first 1 or 2 sentences. 
    b) Optionally include a sentence with facts about the company such as location and founding date at the end of this section.
+
 4. Challenges: 
+   
    a) 1-2 sentences on the problem(s) the company faced before using Mattermost. Then elaborate on the consequences of the problem, including quotations as appropriate.
    b) One sentence on the goal they sought to achieve and criteria for a solution (which may introduce new requirements not included in the previous section, e.g. budget, timeline, expanding user base, etc.).
+
 5. Solutions: Describes how Mattermost provided a solution to the customer’s goal and addressed its challenges.
 6. Results: 
+   
    a) Include 3-5 specific use cases with clear business value (e.g. incident response, new employee Q&A center, etc.). 
    b) Include business benefits that do one of three things i) increase revenue, ii) decrease cost, iii) drive efficiency. 
    c) Add customer testimonials that show how Mattermost helped achieve the customer’s goals. Include specific examples and quotations.
