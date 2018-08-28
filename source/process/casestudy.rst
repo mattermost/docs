@@ -107,7 +107,7 @@ Writing Guidelines
 ----------------------------
 
 1. DO NOT use slang or jargon. Write so that people with English as a second language can understand every sentence. 
-2. DO NOT debase the competition or disparage other products. It's okay to factually address differences on why Mattermost was selected. 
+2. DO NOT criticize the competition or disparage other products. It's okay to factually address differences on why Mattermost was selected. 
 3. DO NOT mention staff size if less than 250 people.
 4. DO NOT use hyperbole (e.g. "game changing").
 
