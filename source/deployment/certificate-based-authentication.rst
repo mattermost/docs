@@ -5,7 +5,7 @@ Certificate-Based Authentication (Experimental)
 
 Certificate-based authentication (CBA) can be used to identify a user or a device before granting access to Mattermost, providing an additional layer of security to access the system.
 
-Follow these steps to configure user CBA for your browser, Mattermost Desktop Apps, and the Mattermost iOS App. Support for the Mattermost Android App is planned. It is expected that you can manage certificate distribution for each personal device (BYOD) and their lifecycle management with a service like `OpenSSL <https://www.openssl.org/>`_.
+Follow these steps to configure user CBA for your browser, Mattermost Desktop Apps and the Mattermost iOS App. Support for the Mattermost Android App is planned. It is expected that you can manage certificate distribution for each personal device (BYOD) and their lifecycle management with a service like `OpenSSL <https://www.openssl.org/>`_.
 
 Before you begin, follow the `official guides to install Mattermost <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_ on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
 
