@@ -2,6 +2,13 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.0.2 (2018-08-28)
+
+### Fixed (1 change)
+
+- Fixed setting the connection to a non-default redis port. !470
+
+
 ## 1.0.1 (2018-08-22)
 
 - No changes.
