@@ -2938,7 +2938,7 @@ Changing properties in this section will require a server restart before taking 
 
 Enable Elasticsearch Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True:** indexing of new posts occurs automatically. Search queries will use database search until "Enable Elasticsearch for search queries" is enabled. `Learn more about Elasticsearch in our documentation.<https://about.mattermost.com/default-elasticsearch-documentation/>`_
+**True:** indexing of new posts occurs automatically. Search queries will use database search until "Enable Elasticsearch for search queries" is enabled. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`_.
 
 **False:** Elasticsearch indexing is disabled and new posts are not indexed. If indexing is disabled and re-enabled after an index is created, it is recommended to purge and rebuild the index to ensure complete search results. 
 
@@ -2948,7 +2948,7 @@ Enable Elasticsearch Indexing
 
 Server Connection Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation.<https://about.mattermost.com/default-elasticsearch-documentation/>`_
+The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`_.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionUrl": ""`` with string input.                                   |
