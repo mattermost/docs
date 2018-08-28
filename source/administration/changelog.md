@@ -8,6 +8,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
 
+#### Search Date Filters
+
 #### IdAttribute Setting for SAML
 - Made the new LDAP login ID attribute to also work for SAML with LDAP sync.
 
