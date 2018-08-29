@@ -117,7 +117,8 @@ Written Case Study Lay Out
 
 Follow these steps to write a case study that is clear and concise:
 
-1. Title: Highlight the most compelling use case and/or business benefit from Results section (see step #6 below). 
+1. Title: Highlight the most compelling use case and/or business benefit from Results section (see step #6 below).
+
 2. Executive Summary: 
 
    a) Open with a sentence on how the organization transformed after using Mattermost.
@@ -134,6 +135,7 @@ Follow these steps to write a case study that is clear and concise:
    b) One sentence on the goal they sought to achieve and criteria for a solution (which may introduce new requirements not included in the previous section, e.g. budget, timeline, expanding user base, etc.).
 
 5. Solutions: Describes how Mattermost provided a solution to the customer’s goal and addressed its challenges.
+
 6. Results: 
    
    a) Include 3-5 specific use cases with clear business value (e.g. incident response, new employee Q&A center, etc.). 
