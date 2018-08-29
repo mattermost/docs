@@ -28,6 +28,11 @@ Some features of GitLab are not currently available:
 * [No in-cluster HA database](https://gitlab.com/charts/gitlab/issues/48)
 * MySQL will not be supported, as support is [deprecated within GitLab](https://docs.gitlab.com/omnibus/settings/database.html#using-a-mysql-database-management-server-enterprise-edition-only)
 
+## Release Notes
+
+Check the [releases documentation](doc/releases/README.md) for information on important releases,
+and see the [changelog](CHANGELOG.md) for the full details on any release.   
+
 ## Quick-start installation
 
 See the [installation documentation](doc/installation/README.md) for a quick-start to using this chart.
