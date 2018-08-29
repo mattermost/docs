@@ -134,6 +134,7 @@ Example Scheme object
 For clarity, the object is shown using regular JSON formatting, but in the data file it cannot be spread across several lines. It must be all on one line.
 
 .. code-block:: javascript
+
   {
     "type": "scheme",
     "scheme": {
@@ -295,6 +296,7 @@ Example Emoji object
 For clarity, the object is shown using regular JSON formatting, but in the data file it cannot be spread across several lines. It must be all on one line.
 
 .. code-block:: javascript
+
   {
     "name": "custom-emoji-troll",
     "image": "bulkdata/emoji/trollolol.png"
