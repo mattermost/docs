@@ -18,9 +18,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 - Added "Deactivate Account" option under Account Settings > Advanced.
 - Created an telemetry event for when telemetry is turned off from the System Console.
 - Added member count for the direct messages list.
+- Added support for attachments import to Direct Message channels.
 
 ### Bug Fixes
 - Fixed an issue where closing an archive channel did not redirect user to the last viewed channel.
+- Disallow reacting to existing emoji in an archived channel.
+- Fixed an issue where clicking twice on "+" to add a public (or private) channel added recently archived channel back to the left-hand side.
 
 ### Compatibility
 
@@ -35,6 +38,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Added PostId to PostActionIntegrationRequest to, e.g. delete the post, when an action button is pressed.
 - Added FileInfo and get file []byte in plugin api.
 - Added API GET 'api/v4/channels/{channel_id:[A-Za-z0-9]+}/posts/unread' to allow jumping into the last unread post and returning a list of posts around it.
+- Added GET user LDAP attributes to plugin API.
  
 #### RESTful API v4 Changes
 
