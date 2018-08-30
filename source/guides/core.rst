@@ -17,6 +17,10 @@ Development Process
    /process/release-process*
    /process/mobile-release*
    /process/deprecated-features*
+   /developer/style*
+   /developer/fx*
+   /developer/localization.rst
+   /process/definitions.rst
 
 Community Process
 -------------------
