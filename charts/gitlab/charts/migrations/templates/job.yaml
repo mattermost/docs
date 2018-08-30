@@ -30,6 +30,8 @@ spec:
           - name: migrations-secrets
             mountPath: /init-secrets
             readOnly: false
+          resources:
+{{ toYaml .Values.init.resources | indent 12 }}
       restartPolicy: OnFailure
 {{- include "pullsecrets" .Values.image | indent 6}}
       containers:

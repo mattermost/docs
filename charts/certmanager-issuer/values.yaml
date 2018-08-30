@@ -13,4 +13,6 @@ server: https://acme-v02.api.letsencrypt.org/directory
 rbac:
   create: true
 
-resources: {}
+resources:
+  requests:
+    cpu: 50m
