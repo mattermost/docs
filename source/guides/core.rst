@@ -19,8 +19,8 @@ Development Process
    /process/deprecated-features*
    /developer/style*
    /developer/fx*
-   /developer/localization.rst
-   /process/definitions.rst
+   /developer/localization*
+   /process/definitions*
 
 Community Process
 -------------------
