@@ -116,3 +116,16 @@ Changelog
    :glob:
 
    /administration/changelog*
+   
+Unofficial Enhancements
+-----------------------
+
+Documentation on early previews and unofficial functionality
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   /install/prod-windows-2012*
+   /deployment/webrtc*
+   /developer/toolkit*
