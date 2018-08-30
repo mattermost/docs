@@ -23,7 +23,7 @@ Development Process
    /developer/redux.rst
    /developer/webapp-end-to-end-testing.rst
    /developer/running-mattermost*
-      /developer/core-developer-handbook*
+   /developer/core-developer-handbook*
 
 Unofficial Enhancements
 -----------------------
