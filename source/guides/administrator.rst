@@ -120,7 +120,7 @@ Changelog
 Unofficial Enhancements
 -----------------------
 
-Documentation on early previews and unofficial functionality
+Documentation on early previews and unofficial functionality.
 
 .. toctree::
    :maxdepth: 1
