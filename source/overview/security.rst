@@ -116,3 +116,25 @@ Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a d
      - Organizational requirements and other standards.
 
 To learn more, please review `HIPAA requirements from the US Department of Health and Human Services <http://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`_.
+
+
+
+FINRA compliance
+------------------------------------
+
+Mattermost Enterprise Edition E20 is designed to meet the cybersecurity requirements of the United States Financial Industry Regulatory Authority (FINRA) as part of a customer's existing operational systems, including technology governance, system change management, risk assessments, technical controls, incident response, vendor management, data loss prevention, and staff training.
+
+FINRA reviews a firm’s ability to protect the confidentiality, integrity and availability of sensitive customer information. This includes reviewing each firm’s compliance with SEC regulations, including:
+
+- Regulation S-P (17 CFR §248.30), which requires firms to adopt written policies and procedures to protect customer information against cyber-attacks and other forms of unauthorized access
+
+- Regulation S-ID (17 CFR §248.201-202), which outlines a firm's duties regarding the detection, prevention, and mitigation of identity theft
+
+- The Securities Exchange Act of 1934 (17 CFR §240.17a-4(f)), which requires firms to preserve electronically stored records in a non-rewriteable, non-erasable format
+
+Mattermost supports FINRA compliance as part of a customer's integrated operations in the following ways: 
+
+- **Continous archiving** - Configuration as a non-rewriteable, non-erasable system of record for all messages and files entered into the system. Moreover, automated compliance exports and integration support for Smarsh/Actiance and Global Relay provide 3rd party eDiscovery options.  
+- **Secure deployment** - Deployment within private, public and on-premesis networks with existing FINRA-compliant safeguards and infrastructure to protect customer information from cyber attack.
+- **Support for intrusion detection** - Ability to support multi-layered intrusion detection from authentication systems to application servers to database access, including configuration of proxy, application and database logging to deeply audit system interactions.  
+- **Multi-layered disaster recovery** - High availability configuration, automated data back up and enterprise information archiving integration to prevent data loss and recover from disaster.
