@@ -9,21 +9,26 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Highlights
 
 #### Search Date Filters
+- Only show search results matching the date filter criteria.
 
 #### IdAttribute Setting for SAML
-- Made the new LDAP login ID attribute to also work for SAML with LDAP sync.
+- Made the new LDAP login ID attribute to also work for SAML with LDAP sync. This allows new users with same email as deactivated user to access Mattermost without access to deactivated user's message history by utilizing an ID attribute instead of an Email attribute for authorization.
 
 ### Improvements
-- Added username and profile picture to outgoing webhooks setup page.
+
+#### Web User Interface (UI)
+- Added username and profile pictures to Outgoing Webhooks setup page.
 - Added "Deactivate Account" option under Account Settings > Advanced.
-- Created an telemetry event for when telemetry is turned off from the System Console.
-- Added member count for the direct messages list.
+- Added member count for the Direct Messages list.
 - Added support for attachments import to Direct Message channels.
 
+#### Administration
+- Created an telemetry event for when telemetry is turned off from the System Console.
+
 ### Bug Fixes
-- Fixed an issue where closing an archive channel did not redirect user to the last viewed channel.
-- Disallow reacting to existing emoji in an archived channel.
-- Fixed an issue where clicking twice on "+" to add a public (or private) channel added recently archived channel back to the left-hand side.
+- Fixed an issue where closing an archive channel did not redirect users to the last viewed channel.
+- Fixed an issue where users were able to react to existing emoji(s) in an archived channel.
+- Fixed an issue where clicking "+" twice to add a public or private channel added a recently archived channel back to the left-hand side.
 
 ### Compatibility
 
@@ -33,15 +38,20 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
+ - Under "LdapSettings": in ``config.json``:
+    - Added ``"IdAttribute": "",`` to
+ - Under "SamlSettings": in ``config.json``:
+    - Added ``"EnableSyncWithLdapIncludeAuth": false,`` to
+
 ### API Changes
-- Added postId to the PostDropDownMenuAction and Component for plugins.
-- Added PostId to PostActionIntegrationRequest to, e.g. delete the post, when an action button is pressed.
-- Added FileInfo and get file []byte in plugin api.
-- Added API GET 'api/v4/channels/{channel_id:[A-Za-z0-9]+}/posts/unread' to allow jumping into the last unread post and returning a list of posts around it.
-- Added GET user LDAP attributes to plugin API.
  
 #### RESTful API v4 Changes
 
+ - ``postId`` was added to the ``PostDropDownMenuAction`` and Component for plugins.
+ - ``PostId`` was added to ``PostActionIntegrationRequest`` to, e.g. delete a post when an action button is pressed.
+ - ``FileInfo`` and ``get file []byte`` were added in plugin api.
+ - GET ``api/v4/channels/{channel_id:[A-Za-z0-9]+}/posts/unread`` was added to allow jumping into the last unread post and returning a list of posts around it.
+ - GET user LDAP attributes were added to the plugin API.
 
 #### Websocket Changes
 
