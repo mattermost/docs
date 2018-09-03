@@ -56,13 +56,13 @@ and then ignore the gradle task with
 
   ./gradlew assembleRelease -x bundleReleaseJsAndAssets
 
-I have mobile connection issues with per-app VPN deployed on AirWatch
+I have mobile connection issues with per-app VPN deployed on an EMM provider
 --------------------------------------------------------------------------------
 
-The following steps are for AirWatch, but similar steps can be taken to troubleshoot connection issues with per-app VPN deployed on other EMM providers, such as MobileIron or BlackBerry Dynamics.
+Take the following steps to troubleshoot connection issues with per-app VPN deployed on other EMM providers, such as AirWatch, MobileIron or BlackBerry Dynamics.
 
-1. Build a new version of the app with ``IOS_BUILD_FOR_RELEASE`` set to ``false``. This enables a debug option for the app.
-2. Deploy the new app in AirWatch.
+1. Build a new version of the app with ``IOS_BUILD_FOR_RELEASE`` set to ``false`` in Fastlane. This enables a debug option for the app.
+2. Deploy the new app in your EMM provider.
 
 This will help debug the JavaScript code of the mobile apps. To confirm the debug build is running successfully, launch the React Native packager and run the app on your phone. Both the packager and the app need to be connected on the same network. When the app opens, a green bar should appear at the top indicating that the JavaScript code is loading.
 
