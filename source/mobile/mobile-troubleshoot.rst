@@ -62,17 +62,16 @@ I have mobile connection issues with per-app VPN deployed on AirWatch
 The following steps are for AirWatch, but similar steps can be taken to troubleshoot connection issues with per-app VPN deployed on other EMM providers, such as MobileIron or BlackBerry Dynamics.
 
 1. Build a new version of the app with ``IOS_BUILD_FOR_RELEASE`` set to ``false``. This enables a debug option for the app.
-2. Deploy the new app in AirWatch and start collecting the debug logs.
+2. Deploy the new app in AirWatch.
 
 This will help debug the JavaScript code of the mobile apps. To confirm the debug build is running successfully, launch the React Native packager and run the app on your phone. Both the packager and the app need to be connected on the same network. When the app opens, a green bar should appear at the top indicating that the JavaScript code is loading.
 
-If the debug logs don't provide any relevant information, then you need to debug the native code:
+If debugging the JavaScript code doesn't provide any relevant information, then you need to debug the native code:
 
-3. Install Homebrew, NodeJs, Watchman, react-native-cli, Xcode and Cocoapods.
-4. Get access to the profile certificates used with the bundle ID of the app in steps 1 and 2 above.
-5. Deploy the app to your phone via Xcode using the bundle ID and profile certificates from step 4. You can use the `instructions here <https://developers.mattermost.com/contribute/mobile/developer-setup/>`_ to complete the deployment.
+3. Get access to the profile certificates used with the bundle ID of the app in steps 1 and 2 above.
+4. Deploy the app to your phone via Xcode using the bundle ID and profile certificates from step 3. You can use the `instructions here <https://developers.mattermost.com/contribute/mobile/developer-setup/>`_ to complete the deployment.
 
-Now, the debug logs will provide information for the native code as well.
+Now, you can try to debug the native code as well.
 
 For questions or help interpreting the logs, create a new post in our forums at `forum.mattermost.org <http://forum.mattermost.org/>`_.
 
