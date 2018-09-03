@@ -1,4 +1,4 @@
 Mattermost Developer's Guide
 ============================
 
-Detailed information on contributing to the Mattermost open source project can be found at `https://developers.mattermost.com/contribute/getting-started/ <https://developers.mattermost.com/contribute/getting-started/>`_.
+Detailed developer documentation is available at `https://developers.mattermost.com <https://developers.mattermost.com>`_.
