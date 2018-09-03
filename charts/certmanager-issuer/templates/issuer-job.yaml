@@ -26,6 +26,8 @@ spec:
           volumeMounts:
             - name: scripts
               mountPath: /scripts
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
       volumes:
       - name: scripts
         configMap:

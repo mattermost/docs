@@ -16,3 +16,6 @@ env: production
 global: {}
 rbac:
   create: true
+resources:
+  requests:
+    cpu: 50m

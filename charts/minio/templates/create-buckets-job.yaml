@@ -39,4 +39,6 @@ spec:
         volumeMounts:
           - name: minio-configuration
             mountPath: /config
+        resources:
+{{ toYaml .Values.init.resources | indent 10 }}
     {{- end }}
