@@ -22,6 +22,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 - Added member count for the Direct Messages list.
 - Added support for attachments import to Direct Message channels.
 
+#### Performance
+- Added short delay before querying server in suggestion lists to prevent spamming.
+
 #### Administration
 - Created an telemetry event for when telemetry is turned off from the System Console.
 
@@ -29,6 +32,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 - Fixed an issue where closing an archive channel did not redirect users to the last viewed channel.
 - Fixed an issue where users were able to react to existing emoji(s) in an archived channel.
 - Fixed an issue where clicking "+" twice to add a public or private channel added a recently archived channel back to the left-hand side.
+- Fixed an issue where channel autocomplete appeared to include all public channels, including deleted channels and channels one has never joined.
 
 ### Compatibility
 
