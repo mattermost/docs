@@ -232,6 +232,8 @@ See [nginx-ingress chart](../../charts/nginx/README.md)
 | gitlab.unicorn.registry.tokenIssuer                 | Registry token issuer                          | gitlab-issuer                                              |
 | gitlab.unicorn.resources.requests.cpu               | Unicorn minimum cpu                            | 200m                                                       |
 | gitlab.unicorn.resources.requests.memory            | Unicorn minimum memory                         | 1.4G                                                       |
+| gitlab.unicorn.workhorse.image                      | Workhorse image repository                     | registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ee |
+| gitlab.unicorn.workhorse.tag                        | Workhorse image tag                            |                                                            |
 | gitlab.unicorn.workhorse.sentryDSN                  | DSN for Sentry instance for error reporting    | ""                                                         |
 | gitlab.unicorn.workhorse.extraArgs                  | String of extra parameters for workhorse       | ""                                                         |
 | gitlab.migrations.image.repository                  | Migrations image repository                    | registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee   |
