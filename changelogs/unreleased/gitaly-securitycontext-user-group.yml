@@ -1,0 +1,5 @@
+---
+title: Allow to define under which user and group gitaly is running
+merge_request: 473
+author: Michael Schmid <michael@amazee.io>
+type: added

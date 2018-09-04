@@ -39,8 +39,8 @@ spec:
           resources:
 {{ toYaml .Values.init.resources | indent 12 }}
       securityContext:
-        runAsUser: 1000
-        fsGroup: 1000
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
 {{- include "pullsecrets" .Values.image | indent 6}}
       {{- if eq (default .Values.global.antiAffinity .Values.antiAffinity) "hard" }}
       affinity:

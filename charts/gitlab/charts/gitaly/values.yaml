@@ -96,3 +96,8 @@ resources:
 
 ## For PodDisruptionBudget, how many pods can be unavailable at one time
 maxUnavailable: 1
+
+## Allow to overwrite under which User and Group we're running.
+securityContext:
+  runAsUser: 1000
+  fsGroup: 1000
