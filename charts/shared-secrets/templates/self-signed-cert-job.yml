@@ -72,8 +72,8 @@ spec:
         volumeMounts:
         - name: certs-path
           mountPath: /output
-          resources:
-{{ toYaml .Values.resources | indent 12 }}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
       volumes:
       - name: certs-path
         emptyDir: {}
