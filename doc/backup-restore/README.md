@@ -34,7 +34,7 @@ when restoring a backup.
 --set global.appConfig.backups.tmpBucket=gitlab-tmp-storage
 ```
 
-## Backup up and Restoring GitLab instances
+## Backup and Restoring procedures
 
 - [Backing up a GitLab installation](backup.md)
 - [Restoring a GitLab installation](restore.md)
