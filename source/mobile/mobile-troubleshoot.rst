@@ -61,8 +61,12 @@ I have mobile connection issues with per-app VPN deployed on an EMM provider
 
 Take the following steps to troubleshoot connection issues with per-app VPN deployed on other EMM providers, such as AirWatch, MobileIron or BlackBerry Dynamics.
 
-1. Build a new version of the app with ``IOS_BUILD_FOR_RELEASE`` set to ``false`` in Fastlane. This enables a debug option for the app.
-2. Deploy the new app in your EMM provider.
+1. Build a new version of the app with debug option enabled. You can build the app with Fastlane or XCode.
+
+ - If you use Fastlane, set **IOS_BUILD_FOR_RELEASE** to ``false``. 
+ - If you use Xcode, set **Archive** to ``Debug`` for both ``Mattermost`` and ``MattermostShare`` schemas.
+
+2. Deploy the new app in your EMM provider using Development mode, not the Release mode.
 
 This will help debug the JavaScript code of the mobile apps. To confirm the debug build is running successfully, launch the React Native packager and run the app on your phone. Both the packager and the app need to be connected on the same network. When the app opens, a green bar should appear at the top indicating that the JavaScript code is loading.
 
