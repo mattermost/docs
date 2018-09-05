@@ -53,7 +53,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - ``postId`` was added to the ``PostDropDownMenuAction`` and Component for plugins.
  - ``PostId`` was added to ``PostActionIntegrationRequest`` to, e.g. delete a post when an action button is pressed.
  - ``FileInfo`` and ``get file []byte`` were added in plugin api.
- - GET ``api/v4/channels/{channel_id:[A-Za-z0-9]+}/posts/unread`` was added to allow jumping into the last unread post and returning a list of posts around it.
  - GET user LDAP attributes were added to the plugin API.
 
 #### Websocket Changes
