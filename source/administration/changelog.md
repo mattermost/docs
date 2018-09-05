@@ -9,28 +9,28 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Highlights
 
 #### Search Date Filters
-- Only show search results matching the date filter criteria.
+- Search for messages before, on, or after a specified date.
 
 #### IdAttribute Setting for SAML
-- Made the new LDAP login ID attribute to also work for SAML with LDAP sync. This allows new users with same email as deactivated user to access Mattermost without access to deactivated user's message history by utilizing an ID attribute instead of an Email attribute for authorization.
+- Added a new `IdAttribute` setting for SAML, which allows SAML users to change their email address without losing their account.
 
 ### Improvements
 
 #### Web User Interface (UI)
-- Added username and profile pictures to Outgoing Webhooks setup page.
-- Added "Deactivate Account" option under Account Settings > Advanced.
-- Added member count for the Direct Messages list.
-- Added support for attachments import to Direct Message channels.
+- Added ability to set username and profile picture in **Outgoing Webhooks** setup page.
+- Added "Deactivate Account" option under **Account Settings > Advanced**.
+- Added member count for the **More Direct Messages** list.
 
 #### Performance
-- Added short delay before querying server in suggestion lists to prevent spamming.
+- Improved channel switcher performance by adding a short delay after the last character has been typed before querying  the server for new autocomplete results.
 
 #### Administration
-- Created an telemetry event for when telemetry is turned off from the System Console.
+- Created a telemetry event for when telemetry is turned off from the System Console.
+- Added support for attachments in Direct Message channels to the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html).
 
 ### Bug Fixes
-- Fixed an issue where closing an archive channel did not redirect users to the last viewed channel.
-- Fixed an issue where users were able to react to existing emoji(s) in an archived channel.
+- Fixed an issue where closing an archived channel did not redirect users to the last viewed channel.
+- Fixed an issue where users were able to react to existing emojis in an archived channel.
 - Fixed an issue where clicking "+" twice to add a public or private channel added a recently archived channel back to the left-hand side.
 - Fixed an issue where channel autocomplete appeared to include all public channels, including deleted channels and channels one has never joined.
 
@@ -40,12 +40,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
-#### Changes to Team Edition and Enterprise Edition:
+#### Changes to Enterprise Edition:
 
- - Under "LdapSettings": in ``config.json``:
-    - Added ``"IdAttribute": "",`` to
  - Under "SamlSettings": in ``config.json``:
-    - Added ``"EnableSyncWithLdapIncludeAuth": false,`` to
+    - Added ``"EnableSyncWithLdapIncludeAuth": false,`` to override the SAML ID attribute with the AD/LDAP ID attribute if configured, or override the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present. See [documentation](https://about.mattermost.com/default-saml-ldap-sync) to learn more.
+    - Added ``"IdAttribute": "",`` to set the attribute in the SAML Assertion that will be used to bind users from SAML to users in Mattermost.
 
 ### API Changes
  
