@@ -75,6 +75,13 @@ Composing Tweets:
 2. **Use the active voice**. Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!" 
 3. **Include at most one link**. To provide a clear call to action include at most one link per tweet, and place it near the end of the tweet.
 4. **Use exclamation marks only for exciting announcements**. An exclamation mark can be used when the announcement is exciting, but using an exclamation mark should be avoided when it can be confused with a signal for community to panic, e.g. "Security update released!".
+
+Checklist for Twitter accounts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. No exclamation marks used, unless tweet is for an exciting announcement.
+2. For a product question, a doc, ticket or pull request was linked to.
+3. When asking someone to take action, "Would you be open to" was used instead of "Would you like to".
    
 Guidelines for release announcements
 ---------------------------------------------------------
