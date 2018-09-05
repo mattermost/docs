@@ -79,9 +79,9 @@ Composing Tweets:
 Checklist for Twitter accounts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. No exclamation marks used, unless tweet is for an exciting announcement.
-2. For a product question, a doc, ticket or pull request was linked to.
-3. When asking someone to take action, "Would you be open to" was used instead of "Would you like to".
+1. Avoid exclamation marks unless the tweet is for an exciting announcement.
+2. For a product question, add a link to a relevant doc, ticket or pull request.
+3. When asking someone to take action, use "Would you be open to" instead of "Would you like to".
    
 Guidelines for release announcements
 ---------------------------------------------------------
