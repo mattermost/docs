@@ -342,7 +342,7 @@ Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Removed in June 16, 2018 release*
 
-In v5.0 and later, permissions settings have been migrated to the new `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ user interface.
+Permission policy settings are available in Enterprise Edition E10 and E20. In v5.0 and later, these settings are found in the `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ page instead of configuration settings. 
 
 Enable sending team invites from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
