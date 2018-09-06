@@ -1,6 +1,6 @@
 #!/bin/bash
 # This bash script shall create a GKE cluster, an external IP, setup kubectl to
-# connect to the cluster without chaning the home kube config and finally installs
+# connect to the cluster without changing the home kube config and finally installs
 # helm with the appropriate service account if RBAC is enabled
 
 set -e
