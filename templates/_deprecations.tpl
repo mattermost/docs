@@ -29,6 +29,7 @@ We then check the number of items in the array vs the string length. If the stri
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.rails.appConfig" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.minio" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.registryStorage" .) -}}
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.registryHttpSecret" .) -}}
 {{/* prepare output, check lengths */}}
 {{- $message := join "\n" $deprecated -}}
 {{- if lt (len $deprecated) (len $message) -}}
@@ -103,5 +104,13 @@ gitlab.task-runner:
 registry:
     The `storage` property has been moved into a secret. Please create a secret with these contents, and set `storage.secret`.
 {{-   end -}}
+{{- end -}}
+{{- end -}}
+
+{{/* Migration of Registry `httpSecret` property to secret */}}
+{{- define "gitlab.deprecate.registryHttpSecret" -}}
+{{- if .Values.registry.httpSecret -}}
+registry:
+    The `httpSecret` property has been moved into a secret. Please create a secret with these contents, and set `global.registry.httpSecret.secret` and `global.registry.httpSecret.key`.
 {{- end -}}
 {{- end -}}

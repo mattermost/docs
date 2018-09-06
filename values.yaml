@@ -74,6 +74,7 @@ global:
   registry:
     bucket: registry
     certificate: {}
+    httpSecret: {}
   runner:
     registrationToken: {}
   # Outgoing email server settings

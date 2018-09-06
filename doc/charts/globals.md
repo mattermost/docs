@@ -10,6 +10,7 @@ for more information on how the global variables work.
 - [GitLab Version](#gitlab-version)
 - [PostgreSQL](#configure-postgresql-settings)
 - [Redis](#configure-redis-settings)
+- [Registry](#configure-registry-settings)
 - [Gitaly](#configure-gitaly-settings)
 - [Minio](#configure-minio-settings)
 - [appConfig](#configure-appconfig-settings)
@@ -235,6 +236,21 @@ global:
 
 For further details on these settings, see the documentation within the
 [unicorn chart](gitlab/unicorn/README.md#redis)
+
+## Configure Registry settings
+
+The global Registry settings are located under the `global.registry` key.
+
+```YAML
+global:
+  registry:
+    bucket: registry
+    certificate:
+    httpSecret:
+```
+
+For futher details on these settings, see the documentation within the
+[registry chart](registry/README.md)
 
 ## Configure Gitaly settings
 
