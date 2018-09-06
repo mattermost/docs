@@ -1,5 +1,4 @@
 {{- if .Values.enabled -}}
-{{- $httpSecret := randAlphaNum 128 | b64enc -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -28,7 +27,7 @@ data:
     # Filled from chart
     http:
       addr: :{{ .Values.service.internalPort }}
-      secret: {{ default $httpSecret .Values.httpSecret }}
+      secret: "HTTP_SECRET"
     auth:
       token:
         realm: {{ template "registry.authEndpoint" . }}/jwt/auth

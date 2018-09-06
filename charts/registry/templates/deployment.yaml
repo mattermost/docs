@@ -82,6 +82,11 @@ spec:
               items:
                   - key: registry-auth.crt
                     path: certificate.crt
+          - secret:
+              name: {{ template "gitlab.registry.httpSecret.secret" . }}
+              items:
+                - key: {{ template "gitlab.registry.httpSecret.key" . }}
+                  path: httpSecret
           {{- if .Values.global.minio.enabled }}
           - secret:
               name: {{ template "gitlab.minio.credentials.secret" . }}

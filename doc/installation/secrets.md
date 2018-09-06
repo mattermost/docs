@@ -27,11 +27,14 @@ To specify your own secrets, proceed to [manual secret creation](#manual-secret-
 - [Passwords](#passwords)
   * [Redis password](#redis-password)
   * [Postgres password](#postgres-password)
-  * [GitLab Shell Secret](#gitLab-shell-secret)
+  * [Registry HTTP Secret](#registry-http-secret)
+  * [GitLab Shell Secret](#gitlab-shell-secret)
   * [Gitaly Secret](#gitaly-secret)
   * [Minio Secret](#minio-secret)
-- [Chart specific secrets](#chart-specific-secrets)
+- [External Services](#external-services)
   * [Unicorn Omniauth](#unicorn-omniauth)
+  * [SMTP Password](#smtp-password)
+  * [IMAP Password](#imap-password-for-incoming-emails)
 
 ### Registry authentication certificates
 
@@ -131,6 +134,14 @@ Generate a set of random 20 & 64 character alpha-numeric keys for database passw
 
 ```
 kubectl create secret generic gitlab-postgresql-password --from-literal=postgres-password=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
+```
+
+### Registry HTTP Secret
+
+Generate a random 64 character alpha-numeric key key shared by all registry pods.
+
+```
+kubectl create secret generic gitlab-registry-httpsecret --from-literal=secret=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64 | base64 )
 ```
 
 ## External services
