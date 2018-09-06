@@ -31,7 +31,7 @@ If you’re able to upgrade HipChat Server or HipChat Data Center to the latest 
 #. Enter ``hipchat export --export  -p your_password``.
 #. Once the export is done, you will receive an email with a link to download the file.
 
-More detailed instructions can be found at https://confluence.atlassian.com/hipchatdc3/export-data-from-hipchat-data-center-913476832.html.
+More detailed instructions can be found at https://confluence.atlassian.com/hipchatdc3/export-data-from-hipchat-data-center-913476832.html and https://confluence.atlassian.com/hipchatkb/exporting-from-hipchat-server-or-data-center-for-data-portability-950821555.html.
 
 
 Step 3: Import your data into Mattermost 
@@ -39,7 +39,7 @@ Step 3: Import your data into Mattermost
 
 1. Follow the `Mattermost Bulk Load Tool <https://docs.mattermost.com/deployment/bulk-loading.html>`_ guide to import your data into Mattermost. Files exported from HipChat will need to be converted to the format required by Mattermost. Please `contact us <https://mattermost.zendesk.com/hc/en-us/requests/new>`_ if you require assistance in the conversion. 
 
-  - Note: Efforts are underway to source scripts from the Mattermost community to further automate this step. If you’re interested in contributing, please let us know at info@mattermost.com, Twitter or Mattermost forums at https://forum.mattermost.org.
+  - Note: Efforts are underway to source scripts from the Mattermost community to further automate this step. One solution already submitted by the community is `HipMost </https://github.com/orbitalimpact/hipmost>`_.  If you’re interested in contributing or testing any community contributed solution, please let us know at info@mattermost.com, Twitter or Mattermost forums at https://forum.mattermost.org.
 
 2. Alternatively, `contact Mattermost <https://mattermost.com/contact-us/>`_ for partner recommendations for your region to assist in your import. 
   
