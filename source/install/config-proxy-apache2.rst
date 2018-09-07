@@ -5,7 +5,7 @@ Configuring Apache2 as a proxy for Mattermost Server (Unofficial)
 
 .. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated <https://github.com/mattermost/docs/issues/1295>`_. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/config-proxy-apache2.rst>`_.
 
-In order to use Apache as a reverse proxy for the mattermost server, you need to install and enable the following apache modules: `mod_rewrite` , `mod_proxy`, `mod_proxy_http` and `mod_proxy_wstunnel`. Follow the instructions from your linux distribution to do so.
+In order to use Apache as a reverse proxy for the mattermost server, you need to install and enable the following apache modules: ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http`` and ``mod_proxy_wstunnel``. Follow the instructions from your linux distribution to do so.
 
 The Apache2 proxy configuration is done through the ``/etc/apache2/sites-available`` directory. If you're setting up Mattermost on a subdomain you'll want to create a new configuration along the lines of ``mysubdomain.mydomain.com.conf``.
 
@@ -14,8 +14,8 @@ Copy the `default` configuration file found in the same directory.
 **To configure Apache2 as a proxy**
 
 1. SSH into your server
-2. Make sure the apache modules: `mod_rewrite` , `mod_proxy`, `mod_proxy_http` and `mod_proxy_wstunnel` are installed and enabled. If not, follow the instructions from your linux distribution to do so.
-3. Create/open the above mentioned, correct file (000-default or a new subdomain configuration).
+2. Make sure the apache modules: ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http`` and ``mod_proxy_wstunnel`` are installed and enabled. If not, follow the instructions from your linux distribution to do so.
+3. Create/open the above mentioned file (000-default or a new subdomain configuration).
 4. Edit your configuration using the guide below.
 
 	1. If you're not setting up a subdomain your ``ServerName`` will simply be set to ``mydomain.com``.
