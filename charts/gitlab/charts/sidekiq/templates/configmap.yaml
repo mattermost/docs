@@ -33,6 +33,9 @@ data:
       gitlab:
         host: {{ template "gitlab.gitlab.hostname" . }}
         https: {{ hasPrefix "https://" (include "gitlab.gitlab.url" .) }}
+        {{- with .Values.global.hosts.ssh }}
+        ssh_host: {{ . | quote }}
+        {{- end }}
         {{- with .Values.global.appConfig }}
         issue_closing_pattern: {{ .issueClosingPattern | quote }}
         default_theme: {{ .defaultTheme }}
