@@ -13,15 +13,15 @@ Copy the `default` configuration file found in the same directory.
 
 **To configure Apache2 as a proxy**
 
-1. SSH into your server
-2. Make sure the apache modules: ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http`` and ``mod_proxy_wstunnel`` are installed and enabled. If not, follow the instructions from your linux distribution to do so.
+1. SSH into your server.
+2. Make sure the apache modules ``mod_rewrite`` , ``mod_proxy``, ``mod_proxy_http`` and ``mod_proxy_wstunnel`` are installed and enabled. If not, follow the instructions from your linux distribution to do so.
 3. Create/open the above mentioned file (000-default or a new subdomain configuration).
-4. Edit your configuration using the guide below.
+4. Edit your configuration using the guide below:
 
 	1. If you're not setting up a subdomain your ``ServerName`` will simply be set to ``mydomain.com``.
 	2. ``ServerAlias`` can been added too if you want to capture ``www.mydomain.com``.
-	3. Remember to change the values to match your server's name etc.
-	4. Save once finished
+	3. Remember to change the values to match your server's name, etc.
+	4. Save once finished.
 
 .. code-block:: apacheconf
 
@@ -48,9 +48,9 @@ Copy the `default` configuration file found in the same directory.
 
 		</VirtualHost>
 
-4. Because you'll likely have not set up the subdomain before now on Apache2, run ``a2ensite mysubdomain.mydomain.com`` to enable the site (do not run ``a2ensite mysubdomain.mydomain.com.conf``)
+5. Because you'll likely have not set up the subdomain before now on Apache2, run ``a2ensite mysubdomain.mydomain.com`` to enable the site (do not run ``a2ensite mysubdomain.mydomain.com.conf``).
 
-5. Restart Apache2
+6. Restart Apache2
 
 	- On Ubuntu 14.04 and RHEL 6: ``sudo service apache2 restart``
 	- On Ubuntu 16.04 and RHEL 7: ``sudo systemctl restart apache2``
