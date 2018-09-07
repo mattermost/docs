@@ -1,0 +1,5 @@
+---
+title: Adds option to specify separate hostname for ssh access
+merge_request: 487
+author: Gijs Kunze
+type: added
