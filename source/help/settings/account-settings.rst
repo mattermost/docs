@@ -271,3 +271,14 @@ Preview pre-release features
 Turn on preview features to view them early, ahead of their official release:
 
 - **Show markdown preview option in message input box** Turning this on will show a "Preview" option when typing in the text input box. Pressing "Preview" shows what the Markdown formatting in the message looks like before the message is sent.
+
+Deactivate Account
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use this setting to deactivate your account. After deactivating, an email notification is sent confirming the deactivation was successful.
+
+Deactivating your account removes your ability to log in to the Mattermost server and disables all email and mobile notifications. To reactivate your account, contact your System Administrator.
+
+Only available for accounts with email login, and if your System Administrator has set ``EnableUserDeactivation`` to ``true`` in ``config.json``.
+
+For accounts with other authentication methods such as AD/LDAP or SAML, or for accounts that do not have this setting available, contact your Ssytem Administrator to deactivate your account.
