@@ -77,12 +77,13 @@ URL
   The actions are backed by an integration that handles HTTP POST requests when users click the message button. The URL parameter determines where this action is sent to. The request contains an ``application/json`` JSON string.
 
 Context
-  The requests sent to the specified URL contain the user id and any context that was provided in the action definition. A simple example is given below:
+  The requests sent to the specified URL contain the user id, post id and any context that was provided in the action definition. A simple example is given below:
   
   .. code-block:: text
 
     {
     "user_id": "rd49ehbqyjytddasoownkuqrxe",
+    "post_id": "gqrnh3675jfxzftnjyjfe4udeh",
     "context": {
       "action": "do_something"
       }
@@ -96,6 +97,7 @@ Context
 
       {
       "user_id": "rd49ehbqyjytddasoownkuqrxe",
+      "post_id": "gqrnh3675jfxzftnjyjfe4udeh",
       "context": {
         "repo": "mattermost/mattermost-server"
         "pr": 1234,
@@ -111,6 +113,7 @@ Context
 
       {
       "user_id": "rd49ehbqyjytddasoownkuqrxe",
+      "post_id": "gqrnh3675jfxzftnjyjfe4udeh",
       "context": {
         "repo": "mattermost/mattermost-server"
         "pr": 1234,
@@ -127,6 +130,7 @@ Context
 
       {
       "user_id": "rd49ehbqyjytddasoownkuqrxe",
+      "post_id": "gqrnh3675jfxzftnjyjfe4udeh",
       "context": {
         "repo": "mattermost/mattermost-server"
         "pr": 1234,
@@ -141,6 +145,7 @@ Context
 
       {
       "user_id": "rd49ehbqyjytddasoownkuqrxe",
+      "post_id": "gqrnh3675jfxzftnjyjfe4udeh",
       "context": {
         "action_id": "someunguessableactionid"
         }
