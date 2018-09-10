@@ -77,22 +77,25 @@ Screen and Content Dimensions
 ****************************
 
 Web/Desktop App
----------------
+-------------------
 
-The web app supports two main modes of displaying the app: desktop view and mobile view. The primary way the app is used is in desktop view, but when the screen is 768 pixels or less wide, it switches to mobile view. This mobile view is also used by mobile browsers and the Classic App.
+The webapp supports two main modes of displaying the app: desktop view and mobile view. The app is primarily used in desktop view, but when the screen is 768 pixels or less wide, it switches to mobile view. The mobile view is also used in mobile browsers and the Classic App.
 
 For desktop view:
-- The target screen sizes are 1280 x 800 or 1920 x 1080. Note that the space available for content will be smaller than this due to the the frame of the window and system-specific components like the taskbar on Windows. For example, the desktop app on Windows 10 only has a usable height of 717 pixels high when the tab bar is visible at 1280 x 800 resolution.
-- The minimum content size is 769 x 600. When the width is 768 or less, the app switches to mobile view. When the height is below 600, UI elements may become misplaced.
+
+ - The target screen sizes are 1280 x 800 or 1920 x 1080. Note that the space available for content will be smaller than this due to the the frame of the window and system-specific components like the taskbar on Windows. For example, the desktop app on Windows 10 only has a usable height of 717 pixels when the tab bar is visible at 1280 x 800 resolution.
+ - The minimum content size is 769 x 600. When the width is 768 or less, the app switches to mobile view. When the height is below 600, UI elements may become misplaced.
 
 For mobile view:
-- The minimum and target content size is 320 x 460, matching the available space when the app is opened in Safari on an iPhone 5.
+
+ - The minimum and target content size is 320 x 460, matching the available space when the app is opened in Safari on an iPhone 5.
 
 Mobile App
 ----------
 
 At this time, the mobile app only supports an equivalent of mobile view. In that view:
-- The minimum and target content size is 320 x 568, matching the screen size of an iPhone 5. Note that you'll still need to leave space for system-specific components like the status bar or soft buttons on iOS, but much more of the screen is usable.
+
+ - The minimum and target content size is 320 x 568, matching the screen size of an iPhone 5. Note that you'll still need to leave space for system-specific components like the status bar or soft buttons on iOS, but much more of the screen is usable.
 
 -----
 
