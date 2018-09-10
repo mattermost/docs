@@ -1,7 +1,7 @@
 Mattermost Integration Guide
 ----------------------------
 
-Documentation on extending and integrating with the Mattermost server. For developer focused documentation, see `https://developers.mattermost.com/ <https://developers.mattermost.com/>`_. 
+Documentation on extending and integrating with the Mattermost server. For developer focused documentation, see `https://developers.mattermost.com/ <https://developers.mattermost.com/>`_. To help you get started with a building and contributing an integration, please also see our `Integration Contributions Guidelines </integrations/integration_contribution_guidelines*/>`_.  
 
   .. note::
     To see a list of open source integrations please see the `Mattermost Integrations Directory <https://about.mattermost.com/community-applications/>`_ 
