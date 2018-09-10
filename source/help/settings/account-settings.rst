@@ -281,4 +281,4 @@ Deactivating your account removes your ability to log in to the Mattermost serve
 
 Only available for accounts with email login, and if your System Administrator has set ``EnableUserDeactivation`` to ``true`` in ``config.json``.
 
-For accounts with other authentication methods such as AD/LDAP or SAML, or for accounts that do not have this setting available, contact your Ssytem Administrator to deactivate your account.
+For accounts with other authentication methods such as AD/LDAP or SAML, or for accounts that do not have this setting available, contact your System Administrator to deactivate your account.
