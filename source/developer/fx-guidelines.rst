@@ -73,7 +73,7 @@ We’re using `BEM methodology <https://en.bem.info/method/>`_  and would advise
 
 -----
 
-Target Screen and Content Dimensions
+Screen and Content Dimensions
 ****************************
 
 Web/Desktop App
