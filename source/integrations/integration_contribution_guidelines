@@ -9,7 +9,7 @@ Please use the guidelines below to help you as you get started:
  - Outline the user stories that this integration will support
  - Choose what `integration type <https://developers.mattermost.com/integrate/getting-started/how-should-i-integrate/>`_ is ideal for your user stories
  - If required by your integration, determine the authentication method best for your integration.  (See more information on `Personal Access Tokens <https://docs.mattermost.com/developer/personal-access-tokens.html/>`_ & `OAuth 2.0 applications <https://docs.mattermost.com/developer/oauth-2-0-applications.html/>`_ to help you decide.)
- - Consider the user experience.  Review our `guidelines for UX <https://docs.mattermost.com/developer/fx-guidelines.html) for user experience design/>for ideas and guidance. We are happy to give feedback as well on our contributors server!
+ - Consider the user experience.  Review our `guidelines for UX <https://docs.mattermost.com/developer/fx-guidelines.html/>`_ for user experience design for ideas and guidance. We are happy to give feedback as well on our contributors server!
 
 **Develop your integration**
  - Check out our `Getting Started guide <https://developers.mattermost.com/contribute/getting-started//>`_, review integration samples, or use our `Developer toolkit <https://docs.mattermost.com/developer/toolkit.html/>`_ to help you as you are starting development.
@@ -26,4 +26,4 @@ Please use the guidelines below to help you as you get started:
  - Want an example?  Feel free to check `this one <https://github.com/matterhorn-chat/matterhorn/>`_out! 
 
 **Submit your integration**
-`Give us a link<https://www.mattermost.org/share-your-mattermost-projects//>`_ to your project and supporting materials. We’ll add it to our `community contributions<https://about.mattermost.com/community-applications//>`_ page and share with others that its available!
+`Give us a link<https://www.mattermost.org/share-your-mattermost-projects//>`_ to your project and supporting materials. We’ll add it to our `community contributions <https://about.mattermost.com/community-applications//>`_ page and share with others that its available!
