@@ -6,7 +6,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.3
 
-- Mattermost v5.3.0 contains a **XXXXX** level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+- Mattermost v5.3.0 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
 
@@ -22,6 +22,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 - Added ability to set username and profile picture in **Outgoing Webhooks** setup page.
 - Added "Deactivate Account" option under **Account Settings > Advanced**.
 - Added member count for the **More Direct Messages** list.
+- Expanded shortened (e.g. bitly) links for previewable content such as images and YouTube links.
 
 #### Performance
 - Improved channel switcher performance by adding a short delay after the last character has been typed before querying  the server for new autocomplete results.
@@ -52,16 +53,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
 #### RESTful API v4 Changes
 
- - ``postId`` was added to the ``PostDropDownMenuAction`` and Component for plugins.
- - ``PostId`` was added to ``PostActionIntegrationRequest`` to, e.g. delete a post when an action button is pressed.
- - ``FileInfo`` and ``get file []byte`` were added in plugin api.
- - GET user LDAP attributes were added to the plugin API.
-
-#### Websocket Changes
-
-
-#### Database Changes
-
+ - Added ``postId`` to the ``PostDropDownMenuAction`` and Component for plugins. This ensures that a drop-down menu for plugins is possible.
+ - Added ``PostId`` to ``PostActionIntegrationRequest``. This ensures, for instance, that a post is deleted when an action button is pressed.
+ - Added ``FileInfo`` and ``file []byte`` support to the plugin API. This ensures that File Info is received for a specific fileId and that the file is read for a specific path.
+ - Added ``GetLDAPUserAttributes`` to the plugin API. This ensures that the functionality that the ``ldapextras`` built-in plugin had is added back.
 
 ### Known Issues
 
