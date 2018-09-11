@@ -50,8 +50,9 @@ GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade to Matte
 
  - Go to ``/etc/gitlab/gitlab.rb`` and set the following line to false
 
-.. code-block:: text
-  mattermost['enable'] = false
+   .. code-block:: text
+
+    mattermost['enable'] = false
 
  - Run `sudo gitlab-ctl reconfigure` to apply the updated setting
 
