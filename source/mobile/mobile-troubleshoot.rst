@@ -56,6 +56,29 @@ and then ignore the gradle task with
 
   ./gradlew assembleRelease -x bundleReleaseJsAndAssets
 
+I have mobile connection issues with per-app VPN deployed on an EMM provider
+--------------------------------------------------------------------------------
+
+Take the following steps to troubleshoot connection issues with per-app VPN deployed on other EMM providers, such as AirWatch, MobileIron or BlackBerry Dynamics.
+
+1. Build a new version of the app with debug option enabled. You can build the app with Fastlane or XCode.
+
+ - If you use Fastlane, set **IOS_BUILD_FOR_RELEASE** to ``false``. 
+ - If you use Xcode, set **Archive** to ``Debug`` for both ``Mattermost`` and ``MattermostShare`` schemas.
+
+2. Deploy the new app in your EMM provider using Development mode, not the Release mode.
+
+This will help debug the JavaScript code of the mobile apps. To confirm the debug build is running successfully, launch the React Native packager and run the app on your phone. Both the packager and the app need to be connected on the same network. When the app opens, a green bar should appear at the top indicating that the JavaScript code is loading.
+
+If debugging the JavaScript code doesn't provide any relevant information, then you need to debug the native code:
+
+3. Get access to the profile certificates used with the bundle ID of the app in steps 1 and 2 above.
+4. Deploy the app to your phone via Xcode using the bundle ID and profile certificates from step 3. You can use the `instructions here <https://developers.mattermost.com/contribute/mobile/developer-setup/>`_ to complete the deployment.
+
+Now, you can try to debug the native code as well.
+
+For questions or help interpreting the logs, create a new post in our forums at `forum.mattermost.org <http://forum.mattermost.org/>`_.
+
 None of these solve my problem!
 -------------------------------
 
