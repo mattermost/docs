@@ -6,6 +6,7 @@ global:
     #   secretName:  example-local-tls
   hosts:
     domain: example.local
+    # ssh: git.example.local
     https: true
 
 # NGINX chart provides

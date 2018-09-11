@@ -8,6 +8,7 @@ Tables below contain all the possible charts configurations that can be supplied
 | ---                                             | ---                                                                          | ---                                        |
 | global.hosts.domain                             | Domain name that will be used for all publicly exposed services              | Required                                   |
 | global.hosts.externalIP | Static IP to assign to nginx ingress controller                              | Required                                   |
+| global.hosts.ssh                                | Domain name that will be used for git ssh access                             | gitlab.{global.hosts.domain}                                          |
 | gitlab.migrations.initialRootPassword.secret    | Global name of the secret containing the root account password               | {Release.Name}-gitlab-initial-root-password |
 | gitlab.migrations.initialRootPassword.key       | Key pointing to the root account password in the migrations secret           | password           |
 | global.psql.host                                | Global hostname of an external psql, overrides subcharts' psql configuration | _Uses in-cluster non-production postgress_ |
