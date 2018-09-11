@@ -1225,14 +1225,15 @@ Enable Synchronizing SAML Accounts With AD/LDAP
 
 Override SAML Bind Data with AD/LDAP Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute if configured or override the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present. See `documentation <https://about.mattermost.com/default-saml-ldap-sync>`_ to learn more.
+**True**: Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute if configured or overrides the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present. See `documentation <https://about.mattermost.com/default-saml-ldap-sync>`_ to learn more.
 
-**False**: Mattermost utilizes the the email attribute to bind users to SAML. 
+**False**: Mattermost utilizes the email attribute to bind users to SAML. 
 
-**Note**: Moving from true to false, will remove the override from happening.  To prevent the disabling of user accounts, SAML IDs must match the LDAP Ids when this feature is enabled.  This setting should be set to false unless LDAP sync is enabled.
+.. note::
+  Moving from true to false will prevent the override from happening. To prevent the disabling of user accounts, SAML IDs must match the LDAP Ids when this feature is enabled. This setting should be set to false unless LDAP sync is enabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSyncWithLdapIncludeAuth": false`` with options ``true`` and ``false`` for above settings respectively.                       |
+| This feature's ``config.json`` setting is ``"EnableSyncWithLdapIncludeAuth": false`` with options ``true`` and ``false`` for above settings respectively.            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 SAML SSO URL
