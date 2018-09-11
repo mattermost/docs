@@ -1324,7 +1324,7 @@ The attribute in the SAML Assertion that will be used to populate the username f
 
 Id Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(Optional) The attribute in the SAML Assertion that will be used to bind users from SAML to users in Mattermost.
+(Optional) The attribute in the SAML Assertion used to bind users from SAML to users in Mattermost.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input.                                                                                   |
