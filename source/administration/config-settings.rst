@@ -218,7 +218,7 @@ Enable Account Creation
 
 Enable Account Deactivation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Ability for users to deactivate their own account on the server.  If a user deactivates their own account, they will get an email notification confirming they were deactivated. 
+**True**: Ability for users to deactivate their own account from **Account Settings > Advanced**.  If a user deactivates their own account, they will get an email notification confirming they were deactivated. 
 
 **False**: Ability for users to deactivate their own account is disabled.  
 
@@ -1225,11 +1225,11 @@ Enable Synchronizing SAML Accounts With AD/LDAP
 
 Override SAML Bind Data with AD/LDAP Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Mattermost will override the SAML ID attribute with the AD/LDAP ID attribute if configured or override the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present. 
+**True**: Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute if configured or override the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present. See `documentation <https://about.mattermost.com/default-saml-ldap-sync>`_ to learn more.
 
-**False**: Mattermost will utilize the the email attribute to bind users to SAML. 
+**False**: Mattermost utilizes the the email attribute to bind users to SAML. 
 
-**Note**: Moving from true to false, will remove the override from happening.  To prevent the disabling of user accounts, SAML IDs must match the LDAP Ids when this feature is enabled.  
+**Note**: Moving from true to false, will remove the override from happening.  To prevent the disabling of user accounts, SAML IDs must match the LDAP Ids when this feature is enabled.  This setting should be set to false unless LDAP sync is enabled.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSyncWithLdapIncludeAuth": false`` with options ``true`` and ``false`` for above settings respectively.                       |
