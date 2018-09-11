@@ -29,7 +29,7 @@ posts in specific channels.
 Before:, After: and On:
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Use ``before:`` to find posts before a specified date and ``after:`` to find posts after a specified date. Use both ``before:`` and ``after:`` together to search in a specified date range.  Use ``on:`` to find posts from a specific date.  You can use the date picker UI to specify the date or you can type it in YYYY-MM-DD format.
+Use ``before:`` to find posts before a specified date and ``after:`` to find posts after a specified date. Use both ``before:`` and ``after:`` together to search in a specified date range.  Use ``on:`` to find posts from a specific date.  You can use the date picker to select a date or you can type it in YYYY-MM-DD format.
 
 -  For example: Searching ``website before: 2018-09-01`` will return messages containing the keyword ``website`` posted prior to September 1, 2018.     
 -  Searching ``website after: 2018-08-01`` will return messages containing the keyword ``website`` posted after August 1, 2018.  
