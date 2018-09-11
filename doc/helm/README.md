@@ -2,6 +2,12 @@
 
 This document is intended to provide an overview of working with [Helm][helm] for [Kubernetes][k8s-io].
 
+## Supported versions
+
+This chart currently only tested and support with Helm `v2`.
+
+Helm `v1` is explicitly not supported. Helm `v3` may work, but there has been and will not be any testing for the time being.
+
 ## Helm is not stand-alone
 
 To make use of Helm, you must have a [Kubernetes][k8s-io] cluster. Follow the [dependencies documentation](../installation/dependencies.md)
