@@ -27,6 +27,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Performance
 - Improved channel switcher performance by adding a short delay after the last character has been typed before querying  the server for new autocomplete results.
 
+#### Integrations
+- Added support for interactive message buttons to, for instance, delete or edit the post after clicking on a message button.
+
 #### Administration
 - Created a telemetry event for when telemetry is turned off from the System Console.
 - Added support for attachments in Direct Message channels to the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html).
@@ -50,13 +53,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Added ``"IdAttribute": "",`` to set the attribute in the SAML Assertion that will be used to bind users from SAML to users in Mattermost.
 
 ### API Changes
- 
-#### RESTful API v4 Changes
 
- - Added ``postId`` to the ``PostDropDownMenuAction`` and Component for plugins. This ensures that a drop-down menu for plugins is possible.
- - Added ``PostId`` to ``PostActionIntegrationRequest``. This ensures, for instance, that a post is deleted when an action button is pressed.
- - Added ``FileInfo`` and ``file []byte`` support to the plugin API. This ensures that File Info is received for a specific fileId and that the file is read for a specific path.
- - Added ``GetLDAPUserAttributes`` to the plugin API. This ensures that the functionality that the ``ldapextras`` built-in plugin had is added back.
+#### Plugin API Changes (Release Candidate)
+ - Added ``postId`` as a property for ``PostDropDownMenuComponent`` and as a parameter for the ``PostDropDownMenuAction`` function to improve the ability to add options to the post "..." action menu.
+ - Added ``FileInfo`` and ``file []byte`` to retrieve File Info for a specific fileId and to ensure the file is read for a specific path.
+ - Added ``GetLDAPUserAttributes``, which matches the functionality of the ``ldapextras`` built-in plugin that was removed in Mattermst v5.2.
 
 ### Known Issues
 
