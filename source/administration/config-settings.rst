@@ -3330,17 +3330,6 @@ Specifies the connection strings for the search replica databases. A search repl
 Team Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Allow User Deactivation
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: Users with an email login can deactivate their accounts from **Account Settings > Advanced**.
-
-**False**: Users cannot deactivate their own account, and must ask their System Administrator to do so.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"EnableUserDeactivation": false`` with options ``true`` and ``false`` for above settings respectively.                   |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 User Status Away Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
