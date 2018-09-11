@@ -223,7 +223,7 @@ Enable Account Deactivation
 **False**: Ability for users to deactivate their own account is disabled.  
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableUserDeactivation": false`` with options ``true`` and ``false`` for above settings respectively.                        |
+| This feature's ``config.json`` setting is ``"EnableUserDeactivation": false`` with options ``true`` and ``false`` for above settings respectively.                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Team Creation
