@@ -1132,7 +1132,7 @@ The attribute in the AD/LDAP server used as a unique identifier in Mattermost. I
 
 If a user's ID Attribute changes, it will create a new Mattermost account unassociated with their old one.
 
-If you need to change this field after users have already logged in, use the `mattermost ldap idmigrate <https://about.mattermost.com/default-platform-ldap-idmigrate>`_ CLI tool.
+If you need to change this field after users have already logged in, use the `mattermost ldap idmigrate <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-ldap-idmigrate>`_ CLI tool.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input.                                                                                   |
@@ -1327,7 +1327,7 @@ Id Attribute
 (Optional) The attribute in the SAML Assertion that will be used to bind users from SAML to users in Mattermost.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input.                                                                             |
+| This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input.                                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 First Name Attribute
