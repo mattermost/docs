@@ -172,7 +172,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Push next RC to acceptance and announce in Town Square with new RC link
     - Check CI servers running on release branch
 6. Marketing:
-    - Finish draft of blog post for mattermost.com and send for release manager and PMs to review before sending for marketing lead to review
+    - Finish draft of blog post for mattermost.com and send for release manager and PMs to review
         - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
 
 ### I. (T-minus 6 working days) Release Candidate Testing Finished
@@ -200,6 +200,8 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Verify all JIRA tickets other than newly filed bugs have been tested, verified, and closed
     - As bug fixes are merged and RCs are cut, verify fixes on new RCs and post in Release Channel after testing
     - As RCs are cut, update selenium.mattermost.com to latest RC
+5. Marketing:
+    - Finish PM review of blog post for mattermost.com and send for marketing lead to review
 
 ### J. (T-minus 2 working days) Release Build Cut
 
@@ -243,6 +245,8 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
       - Merge the docs release branch to master and verify all changes on docs.mattermost.com once the build is up
       - Submit a correction PR for any incorrect formatting or other errors missed during the initial review
 7. Marketing:
+    - Receive sign off on final version of MailChimp email blast and Twitter announcement and schedule for 08:00 PST on the date of marketing announcement
+      - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
     - Finalize blog post for mattermost.com, test on mobile view, and set timer for 08:00 PST on the day of release
     - Update feature lists on https://about.mattermost.com/pricing/ and https://about.mattermost.com/features/ with relevant new features
     - Add links to [Admin guide](https://docs.mattermost.com/guides/administrator.html) in the release blog post where needed
