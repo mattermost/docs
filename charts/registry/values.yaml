@@ -46,6 +46,9 @@ global:
   minio:
     enabled:
     credentials: {}
+  registry:
+    certificate: {}
+    httpSecret: {}
 
 ## Control the InitContainer behaviors.
 init:
@@ -61,6 +64,9 @@ init:
     else
       cp /config/config.yml  /registry/config.yml
     fi
+    # Place the `http.secret` value from the kubernetes secret
+    sed -i -e 's@HTTP_SECRET@'"$(cat /config/httpSecret)"'@' /registry/config.yml
+    # Insert any provided `storage` block from kubernetes secret
     if [ -d /config/storage ]; then
       # Copy contents of storage secret(s)
       mkdir -p /registry/storage
@@ -86,8 +92,6 @@ resources:
 
 # Chart operation controls
 enabled: true
-# Will be auto-populated if not present (`{{ randAlphaNum 128 | b64enc | quote }}`)
-httpSecret: ''
 # Protocol/Host only. '/jwt/auth' will be appended.
 authEndpoint:
 # Do not change this

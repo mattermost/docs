@@ -10,6 +10,7 @@ for more information on how the global variables work.
 - [GitLab Version](#gitlab-version)
 - [PostgreSQL](#configure-postgresql-settings)
 - [Redis](#configure-redis-settings)
+- [Registry](#configure-registry-settings)
 - [Gitaly](#configure-gitaly-settings)
 - [Minio](#configure-minio-settings)
 - [appConfig](#configure-appconfig-settings)
@@ -236,6 +237,21 @@ global:
 For further details on these settings, see the documentation within the
 [unicorn chart](gitlab/unicorn/README.md#redis)
 
+## Configure Registry settings
+
+The global Registry settings are located under the `global.registry` key.
+
+```YAML
+global:
+  registry:
+    bucket: registry
+    certificate:
+    httpSecret:
+```
+
+For futher details on these settings, see the documentation within the
+[registry chart](registry/README.md)
+
 ## Configure Gitaly settings
 
 The GitLab global Gitaly settings are located under the `global.gitaly` key.
@@ -280,47 +296,47 @@ with the `global.appConfig` key.
 
 ```
 global:
-appConfig:
-  issueClosingPattern:
-  defaultTheme:
-  webhookTimeout:
-  gravatar:
-    plainUrl:
-    sslUrl:
-  extra:
-    googleAnalyticsId:
-    piwikUrl:
-    piwikSiteId:
-  lfs:
-    enabled: true
-    proxy_download: true
-    bucket: git-lfs
-    connection: {}
-  artifacts:
-    enabled: true
-    proxy_download: true
-    bucket: gitlab-artifacts
-    connection: {}
-  uploads:
-    enabled: true
-    proxy_download: true
-    bucket: gitlab-uploads
-    connection: {}
-  backups:
-    bucket: gitlab-backups
-  incomingEmail:
-    enabled: false
-    address: ""
-    host: "imap.gmail.com"
-    port: 993
-    ssl: true
-    startTls: false
-    user: ""
-    password:
-      secret:
-      key: password
-    mailbox: inbox
-    idleTimeout: 60
+  appConfig:
+    issueClosingPattern:
+    defaultTheme:
+    webhookTimeout:
+    gravatar:
+      plainUrl:
+      sslUrl:
+    extra:
+      googleAnalyticsId:
+      piwikUrl:
+      piwikSiteId:
+    lfs:
+      enabled: true
+      proxy_download: true
+      bucket: git-lfs
+      connection: {}
+    artifacts:
+      enabled: true
+      proxy_download: true
+      bucket: gitlab-artifacts
+      connection: {}
+    uploads:
+      enabled: true
+      proxy_download: true
+      bucket: gitlab-uploads
+      connection: {}
+    backups:
+      bucket: gitlab-backups
+    incomingEmail:
+      enabled: false
+      address: ""
+      host: "imap.gmail.com"
+      port: 993
+      ssl: true
+      startTls: false
+      user: ""
+      password:
+        secret:
+        key: password
+      mailbox: inbox
+      idleTimeout: 60
 ```
 
 [unicorn]: gitlab/unicorn/README.md

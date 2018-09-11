@@ -16,6 +16,7 @@ This chart makes use of only two secrets:
 - `global.registry.certificate.secret`: A global secret that will contain the public certificate bundle to verify
 the authentication tokens provided by the associated GitLab instance(s). See
 [documentation](https://docs.gitlab.com/ee/administration/container_registry.html#disable-container-registry-but-use-gitlab-as-an-auth-endpoint) on using GitLab as an auth endpoint.
+- `global.registry.httpSecret.secret`: A global secret that will contain the [shared secret](https://docs.docker.com/registry/configuration/#http) between registry pods.
 
 # Configuration
 
@@ -141,14 +142,18 @@ exposed. For this integration, we make use of the `auth.token.x` settings of
 
 #### httpSecret
 
-Field `httpSecret` is a string that correlates to the `http.secret` value of [registry][].
-This value will be automatically populated with a random string of 128 alpha-numeric
-characters encoded to base64.
+Field `httpSecret` is a map that contains two items: `secret` and `key`.
 
-You should only need to supply this value when using a load balancer across
-multiple clusters. See the following note from the [Registry configuration documents][docker-distribution-config-docs]:
+The content of key this references correlates to the `http.secret` value of [registry][].
+This value should be populated with a cryptographically generated random string.
 
-> If you are building a cluster of registries behind a load balancer, you MUST ensure the secret is the same for all registries.
+The `shared-secrets` Job will automatically create this secret if not provided. It will be
+filled with a securely generated 128 character alpha-numeric string that is base64 encoded.
+
+To create this secret manually:
+```
+kubectl create secret generic gitlab-registry-httpsecret --from-literal=secret=strongrandomstring
+```
 
 #### authEndpoint
 

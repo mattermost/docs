@@ -1,6 +1,6 @@
 #!/bin/bash
 # This bash script shall create a GKE cluster, an external IP, setup kubectl to
-# connect to the cluster without chaning the home kube config and finally installs
+# connect to the cluster without changing the home kube config and finally installs
 # helm with the appropriate service account if RBAC is enabled
 
 set -e
@@ -36,7 +36,7 @@ function bootstrap(){
   gcloud container clusters create $CLUSTER_NAME --zone $ZONE \
     --cluster-version $CLUSTER_VERSION --machine-type $MACHINE_TYPE \
     --scopes "https://www.googleapis.com/auth/ndev.clouddns.readwrite","https://www.googleapis.com/auth/compute","https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" \
-    --node-version $CLUSTER_VERSION --num-nodes $NUM_NODES --project $PROJECT $EXTRA_CREATE_ARGS;
+    --node-version $CLUSTER_VERSION --num-nodes $NUM_NODES --project $PROJECT --enable-basic-auth $EXTRA_CREATE_ARGS;
 
   if ${USE_STATIC_IP}; then
     gcloud compute addresses create $external_ip_name --region $REGION --project $PROJECT;

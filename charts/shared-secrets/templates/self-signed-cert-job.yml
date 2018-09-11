@@ -41,6 +41,8 @@ spec:
         volumeMounts:
         - name: certs-path
           mountPath: /output
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
       containers:
       - name: kubectl
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
@@ -70,6 +72,8 @@ spec:
         volumeMounts:
         - name: certs-path
           mountPath: /output
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
       volumes:
       - name: certs-path
         emptyDir: {}

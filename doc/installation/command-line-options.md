@@ -8,6 +8,7 @@ Tables below contain all the possible charts configurations that can be supplied
 | ---                                             | ---                                                                          | ---                                        |
 | global.hosts.domain                             | Domain name that will be used for all publicly exposed services              | Required                                   |
 | global.hosts.externalIP | Static IP to assign to nginx ingress controller                              | Required                                   |
+| global.hosts.ssh                                | Domain name that will be used for git ssh access                             | gitlab.{global.hosts.domain}                                          |
 | gitlab.migrations.initialRootPassword.secret    | Global name of the secret containing the root account password               | {Release.Name}-gitlab-initial-root-password |
 | gitlab.migrations.initialRootPassword.key       | Key pointing to the root account password in the migrations secret           | password           |
 | global.psql.host                                | Global hostname of an external psql, overrides subcharts' psql configuration | _Uses in-cluster non-production postgress_ |
@@ -175,6 +176,8 @@ See [nginx-ingress chart](../../charts/nginx/README.md)
 | gitlab.gitaly.persistence.volumeName                | Existing persistent volume name                |                                                  |
 | gitlab.gitaly.persistence.matchLabels               | Label-value matches to bind                    |                                                  |
 | gitlab.gitaly.persistence.matchExpressions          | Label-expression matches to bind               |                                                  |
+| gitlab.gitaly.securityContext.runAsUser             | User ID under which the pod should be started  | 1000                                             |
+| gitlab.gitaly.securityContext.fsGroup               | Group ID under which the pod should be started | 1000                                             |
 | gitlab.gitlab-shell.replicaCount                    | Shell replicas                                 | 1                                                          |
 | gitlab.gitlab-shell.image.repository                | Shell image repository                         | registry.gitlab.com/gitlab-org/build/cng/gitlab-shell      |
 | gitlab.gitlab-shell.image.tag                       | Shell image tag                                | latest                                                     |
@@ -232,6 +235,8 @@ See [nginx-ingress chart](../../charts/nginx/README.md)
 | gitlab.unicorn.registry.tokenIssuer                 | Registry token issuer                          | gitlab-issuer                                              |
 | gitlab.unicorn.resources.requests.cpu               | Unicorn minimum cpu                            | 200m                                                       |
 | gitlab.unicorn.resources.requests.memory            | Unicorn minimum memory                         | 1.4G                                                       |
+| gitlab.unicorn.workhorse.image                      | Workhorse image repository                     | registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ee |
+| gitlab.unicorn.workhorse.tag                        | Workhorse image tag                            |                                                            |
 | gitlab.unicorn.workhorse.sentryDSN                  | DSN for Sentry instance for error reporting    | ""                                                         |
 | gitlab.unicorn.workhorse.extraArgs                  | String of extra parameters for workhorse       | ""                                                         |
 | gitlab.migrations.image.repository                  | Migrations image repository                    | registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee   |
