@@ -26,7 +26,7 @@ Client Software
 PC Web Experience
 ^^^^^^^^^^^^^^^^^
 
--  PC: Windows 7+ with IE 11*, Chrome 43+, Firefox 52+, and Edge 40+ (or EdgeHTML v15+)
+-  PC: Windows 7+ with IE 11*, Chrome 43+, Firefox 52+ and Edge 40+ (or EdgeHTML v15+)
 -  Mac: OS 10.8+ with Chrome 43+ and Safari 9+
 -  Linux: Chrome 43+ and Firefox 52+
 
