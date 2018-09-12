@@ -58,7 +58,7 @@ Binding SAML to ID Attribute Instead of Email
  
 Alternatively, you can choose to use the SAML Id Attribute instead of email to bind the user.  
 
-Configuring this will allow you to reuse an email address for a new user without the old user's information being exposed. For instance, if a user with an email address joe.smith@mattermost.com was once an employee, a new employee named Joe Smith can use the same email. This configuration is also useful when a user has a name change and their email needs to be updated instead of needint to create a new email address.
+Configuring this will allow you to reuse an email address for a new user without the old user's information being exposed. For instance, if a user with an email address joe.smith@mattermost.com was once an employee, a new employee named Joe Smith can use the same email. This configuration is also useful when a user has a name change and their email needs to be updated instead of needing to create a new email address.
 
 To bind users to the SAML Id Attribute instead of email: 
 
