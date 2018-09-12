@@ -53,8 +53,8 @@ When enabled, SAML synchronization with AD/LDAP occurs in phases:
  - If any attribute of the user has changed, that attribute is copied from the LDAP server and the user is marked as updated.
  - If the corresponding ``LdapSettings.EmailAttribute`` is not found, the user is assumed to be deleted from the LDAP server, and deactivated from Mattermost by setting the ``Users.DeleteAt`` field to a valid timestamp.
  
- Binding SAML to ID Attribute Instead of Email
- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Binding SAML to ID Attribute Instead of Email
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
 Alternatively, you can choose use the SAML Id Attribute to bind the user instead of email.  Configuring this will allow you to reuse an email address for a new user without the old user's old post information being exposed. For instance joe.smith@mattermost.com was once an employee, and a new employee named Joe Smith is hired requiring the same email. This configuration is also useful when an user has a name change and their email needs to be updated instead of creating a new email address. To bind users to the SAML Id Attribute instead of email: 
 
