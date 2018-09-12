@@ -27,8 +27,8 @@ PC Web Experience
 ^^^^^^^^^^^^^^^^^
 
 -  PC: Windows 7+ with IE 11*, Chrome 43+, Firefox 52+, and Edge 40+ (or EdgeHTML v15+)
--  Mac: OS 10.8+ (Safari 9, Chrome 43+)
--  Linux: Arch 4.0.0 (Chrome 43+)
+-  Mac: OS 10.8+ with Chrome 43+ and Safari 9+
+-  Linux: Chrome 43+ and Firefox 52+
 
 `*` IE 11 Compatibility View is not supported. 
 
