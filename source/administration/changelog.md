@@ -61,6 +61,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
+ - When "Enable sign-in with username" is set to false, logging in with LDAP account with MFA enabled results in "Error trying to authenticate MFA token" error.
  - Google login fails on the Classic mobile apps.
  - User can receive a video call from another browser tab while already on a call.
  - Jump link in search results does not always jump to display the expected post.
