@@ -172,8 +172,9 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Push next RC to acceptance and announce in Town Square with new RC link
     - Check CI servers running on release branch
 6. Marketing:
-    - Finish draft of blog post for mattermost.com and send for release manager and PMs to review
+    - Finish draft of blog post for mattermost.com and all art work (screenshots, GIFs and twitter banners) used for the blog post
         - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
+    - Send blog post for release manager and PMs to review
 
 ### I. (T-minus 6 working days) Release Candidate Testing Finished
 
@@ -188,9 +189,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Confirm Changelog reflects any changes since it was merged (including known issues and contributors from all repositories)
       - If there is a security fix, confirm the Changelog recommends upgrade, with a note mentioning the security level and thanking the security researcher (security process doc for example)
 3. Marketing:
-    - Finish drafts of all art work (screenshots, GIFs and twitter banners) used for the blog post and review with PMs before sending to marketing lead for review
-    - Receive sign off on final version of MailChimp email blast and Twitter announcement and schedule for 08:00 PST on the date of marketing announcement
-      - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
+    - Send blog post for mattermost.com and all related art work for marketing lead to review
     - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests?scope=all&utf8=%E2%9C%93&state=opened&label_name%5B%5D=blog%20post&label_name%5B%5D=release) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)). Post to Release Discussion channel with link to request.
 4. QA:
     - Midday: Post at-channel reminders about testing, and DM team members whose tests are not marked Done
@@ -200,8 +199,6 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Verify all JIRA tickets other than newly filed bugs have been tested, verified, and closed
     - As bug fixes are merged and RCs are cut, verify fixes on new RCs and post in Release Channel after testing
     - As RCs are cut, update selenium.mattermost.com to latest RC
-5. Marketing:
-    - Finish PM review of blog post for mattermost.com and send for marketing lead to review
 
 ### J. (T-minus 2 working days) Release Build Cut
 
