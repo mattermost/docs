@@ -3,10 +3,11 @@
 apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
+  name: {{ template "nginx-ingress.defaultBackend.fullname" . }}
+  namespace: {{ $.Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
     component: "{{ .Values.defaultBackend.name }}"
-  name: {{ template "nginx-ingress.defaultBackend.fullname" . }}
 spec:
   replicas: {{ .Values.defaultBackend.replicaCount }}
   revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}

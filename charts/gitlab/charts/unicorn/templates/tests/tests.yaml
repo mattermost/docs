@@ -3,6 +3,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ template "fullname" . }}-tests
+  namespace: {{ $.Release.Namespace }}
 data:
   test_login: |
     set -e

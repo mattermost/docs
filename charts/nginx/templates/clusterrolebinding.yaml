@@ -3,9 +3,10 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
+  name: {{ template "nginx-ingress.fullname" . }}
+  namespace: {{ $.Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
-  name: {{ template "nginx-ingress.fullname" . }}
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
@@ -13,6 +14,6 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: {{ template "nginx-ingress.fullname" . }}
-    namespace: {{ .Release.Namespace }}
+    namespace: {{ $.Release.Namespace }}
 {{- end -}}
 {{- end -}}
