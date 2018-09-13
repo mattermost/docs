@@ -53,28 +53,12 @@ When enabled, SAML synchronization with AD/LDAP occurs in phases:
  - If any attribute of the user has changed, that attribute is copied from the LDAP server and the user is marked as updated.
  - If the corresponding ``LdapSettings.EmailAttribute`` is not found, the user is assumed to be deleted from the LDAP server, and deactivated from Mattermost by setting the ``Users.DeleteAt`` field to a valid timestamp.
  
-Binding SAML to ID Attribute Instead of Email
+Override SAML Data with AD/LDAP Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-Alternatively, you can choose to use the SAML Id Attribute instead of email to bind the user.  
-
-Configuring this will allow you to reuse an email address for a new user without the old user's information being exposed. For instance, if a user with an email address joe.smith@mattermost.com was once an employee, a new employee named Joe Smith can use the same email. This configuration is also useful when a user has a name change and their email needs to be updated instead of needing to create a new email address.
-
-To bind users to the SAML Id Attribute instead of email: 
+Alternatively, you can choose to override the SAML bind data with the AD/LDAP information.  This will help keep ensure new users are not created when the email address changes for a user. 
 
 1. Configure SAML with AD/LDAP synchronization as specified above.  
-2. Map the SAML ``Id Attribute`` on **System Console > SAML > Id Attribute**. To ensure existing user accounts do not get disabled in this process, ensure the SAML IDs match the LDAP IDs. 
+2. If using the "Id Attribute", map the SAML ``Id Attribute`` on **System Console > SAML > Id Attribute**. To ensure existing user accounts do not get disabled in this process, ensure the SAML IDs match the LDAP IDs. 
 3. Set **System Console > SAML > Enable Synchronizing SAML Accounts With AD/LDAP** to ``true``.
 4. Run AD/LDAP sync in **System Console > AD/LDAP > AD/LDAP Synchronize Now**.
-
-This process was designed for backwards compatibility to email binding. Here is a more detailed explanation of the process that will be applied to any new accounts added after the configuration is set up:  
-
- - A user authenticated with SAML is bound to the SAML service user using the Id Attribute (as long as it has been configured) or their email. 
- - When the user tries to login, and the SAML server responds with a valid authentication, then the server uses the "Id" field of the SAML authentication to search the user. 
- - If the ID already exists, it logs in as that user. 
- - If the ID does not exist, it checks for the email. 
- - If the email exists, it logs in and updates the autentication data to the ID, instead of the email. 
- - If the ID and the email do not exist, it will create a new Mattermost account and allow the user to log in. 
- 
-.. note::
-  For existing accounts without an updated SAML ID attribute, the AD/LDAP email will be used and duplicate accounts could be created.  
