@@ -49,7 +49,7 @@ For more information on building your own plugin, see our `developer documentati
 Plugin Uploads
 ~~~~~~~~~~~~~~~~~~
 
-Mattermost supports plugin uploads by System Admins, which allow you to customize and extend the platform that would otherwise not be available. These plugins are not pre-packaged in Mattermost, and have either been developed by the community or by a Mattermost staff member.
+Mattermost supports plugin uploads by System Admins, which allow you to customize and extend the platform in ways that would otherwise not be available. These plugins are not pre-packaged in Mattermost, and have either been developed by the community or by a Mattermost staff member.
 
 By default, plugin uploads are disabled on your server. To enable them, set **PluginSettings > EnableUploads** to ``true`` in your ``config.json`` file. You can disable plugin uploads anytime to control which plugins are installed on your server. This action won't disable plugins already installed on your server.
 

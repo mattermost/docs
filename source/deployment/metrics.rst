@@ -194,13 +194,22 @@ If enabled, you can run the profiler by
 
 where you can replace ``localhost`` with the server name. The profiling reports are available at ``<ip>:<port>``, which include:
 
-    - ``/debug/pprof``/ for CPU profiling
-    - ``/debug/pprof/cmdline``/ for command line profiling
-    - ``/debug/pprof/symbol``/ for symbol profiling
-    - ``/debug/pprof/goroutine``/ for GO routine profiling
-    - ``/debug/pprof/heap``/ for heap profiling
-    - ``/debug/pprof/threadcreate``/ for threads profiling
-    - ``/debug/pprof/block``/ for block profiling
+    - ``/debug/pprof/`` for CPU profiling
+    - ``/debug/pprof/cmdline/`` for command line profiling
+    - ``/debug/pprof/symbol/`` for symbol profiling
+    - ``/debug/pprof/goroutine/`` for GO routine profiling
+    - ``/debug/pprof/heap/`` for heap profiling
+    - ``/debug/pprof/threadcreate/`` for threads profiling
+    - ``/debug/pprof/block/`` for block profiling
 
 .. image:: ../images/perf_monitoring_go_metrics.png
 
+Frequently Asked Questions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Why Are Chart Labels Difficult To Distinguish?
+------------------------------------------------
+
+The chart labels used in server filters and legends are based on the hostname of your machines. If the hostnames are similar, then it will be difficult to distinguish the labels.
+
+You can either set more descriptive hostnames for your machines or change the display name with a ``relabel_config`` in  `Prometheus configuration <https://prometheus.io/docs/prometheus/latest/configuration/configuration/#relabel_config>`_.

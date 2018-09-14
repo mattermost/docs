@@ -162,3 +162,13 @@ Official documentation for configuring deep linking on iOS can be found `here <h
 **Setup for Android:**
 
 Please refer to the the App Links Assistant in Android Studio for configuring `deep linking on Android <https://developer.android.com/studio/write/app-link-indexing>`_.
+
+How do I connect users across internal and external networks?
+-----------------------------------------------------------------
+
+By setting up global network traffic management, you can send a user to an internal or external network when connecting with a mobile app. Moreover, you can have two separate layers of restrictions on internal and external traffic, such as:
+
+ - In the internal network, deploy on a private network via per device VPN
+ - In the external network, deploy with `TLS mutual auth <https://docs.mattermost.com/deployment/ssl-client-certificate.html>`_ with an NGINX proxy, and `client-side certificates <https://docs.mattermost.com/deployment/certificate-based-authentication.html>`_ for desktop and iOS.
+ 
+Many services such as Microsoft Azure provide options for `managing network traffic <https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview>`_, or you can engage a services partner to assist.

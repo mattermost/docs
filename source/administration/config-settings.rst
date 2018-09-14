@@ -18,6 +18,9 @@ Finally, if a setting is configured through an environment variable, modifying i
 
 For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented here.
 
+.. note::
+   If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
+
 .. contents::
   :depth: 2
   :local:
@@ -342,24 +345,13 @@ Specifies how names are displayed in the user interface.
 | This feature's ``config.json`` setting is ``"TeammateNameDisplay": "username"`` with options ``username``, ``nickname_full_name``, and ``full_name``. |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Allow users to view archived channels
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: Allows users to view permalinks and search for content of channels that have been archived.  Users can only view the content in channels of which they were a member before the channel was archived. 
-
-**False**: Users are unable to view permalinks and search for content of channels that have been archived.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ViewArchivedChannels": true`` with options ``true`` and ``false`` for above settings respectively.       |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 ________
 
 Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Removed in June 16, 2018 release*
 
-In v5.0 and later, permissions settings have been migrated to the new `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ user interface.
+Permission policy settings are available in Enterprise Edition E10 and E20. In v5.0 and later, these settings are found in the `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ page instead of configuration settings. 
 
 Enable sending team invites from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1550,6 +1542,8 @@ _________
 
 Sessions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+User sessions are cleared when a user tries to log in. Additionally, a job runs every 24 hours to clear sessions from the sessions database table. 
+
 Session length for email and AD/LDAP authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Set the number of days before web sessions expire and users will need to log in again.
@@ -1584,7 +1578,7 @@ Set the number of minutes to cache a session in memory.
 
 Session Idle Timeout (minutes)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited.
+The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited.    
 
 Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
 
@@ -1652,15 +1646,20 @@ Settings to configure email and mobile push notifications.
 
 Email
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _email-notification-config:
+
 Enable Email Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Enables sending of email notifications.
 
-**False**: Disables email notifications for developers who may want to skip email setup for faster development. Setting this to true removes the **Preview Mode: Email notifications have not been configured** banner (requires logging out and logging back in after setting is changed)
+**False**: Disables email notifications for developers who may want to skip email setup for faster development. To remove the **Preview Mode: Email notifications have not been configured** banner, also set **Enable Preview Mode Banner** to ``false``. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SendEmailNotifications": false`` with options ``true`` and ``false`` for above settings respectively.                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. _email-preview-mode-banner-config:
 
 Enable Preview Mode Banner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1781,6 +1780,8 @@ The email address your Global Relay server monitors for incoming compliance expo
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EmailAddress": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. _email-tls:
 
 Connection Security
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2967,7 +2968,7 @@ Changing properties in this section will require a server restart before taking 
 
 Enable Elasticsearch Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True:** indexing of new posts occurs automatically. Search queries will use database search until "Enable Elasticsearch for search queries" is enabled. `Learn more about Elasticsearch in our documentation.<https://about.mattermost.com/default-elasticsearch-documentation/>`_
+**True:** indexing of new posts occurs automatically. Search queries will use database search until "Enable Elasticsearch for search queries" is enabled. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`_.
 
 **False:** Elasticsearch indexing is disabled and new posts are not indexed. If indexing is disabled and re-enabled after an index is created, it is recommended to purge and rebuild the index to ensure complete search results. 
 
@@ -2977,7 +2978,7 @@ Enable Elasticsearch Indexing
 
 Server Connection Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation.<https://about.mattermost.com/default-elasticsearch-documentation/>`_
+The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`_.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionUrl": ""`` with string input.                                   |
@@ -3893,7 +3894,9 @@ Team Settings
 
 Primary Team (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The team URL of the primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled. 
+The primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled.
+
+If the team URL of the primary team is https://example.mattermost.com/myteam/, then set the value to ``myteam`` in ``config.json``.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalPrimaryTeam": ""`` with string input.                  |
@@ -3945,7 +3948,16 @@ Town Square is Hidden in Left-Hand Sidebar (Experimental)
 | This feature's ``config.json`` setting is ``"ExperimentalHideTownSquareinLHS": false`` with options ``true`` and ``false`` for above settings respectively.                  |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Allow Users to View Archived Channels (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+**True**: Allows users to view permalinks and search for content of channels that have been archived.  Users can only view the content in channels of which they were a member before the channel was archived. 
+
+**False**: Users are unable to view permalinks and search for content of channels that have been archived.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ViewArchivedChannels": false`` with options ``true`` and ``false`` for above settings respectively.      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Automatic Replies (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
