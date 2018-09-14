@@ -33,6 +33,7 @@ Installing Mattermost
    /install/docker-local*
    /install/prod-docker*
    /install/docker-ebs*
+   /install/deploy-cloudron*
    /install/troubleshooting*
    /install/desktop*
    /install/smtp*
