@@ -8,7 +8,7 @@ Configuring this will allow you to reuse an email address for a new user without
 This process was designed for backwards compatibility to email binding. Here is a more detailed explanation of the process that will be applied to any new accounts added or accounts logging in after the configuration is set up:  
 
  - A user authenticated with SAML is bound to the SAML service user using the Id Attribute (as long as it has been configured) or bound by email using the email received from SAML. 
- - When the user tries to login the SAML server responds with a valid authentication, then the server uses the "Id" field of the SAML authentication to search the user. 
+ - When the user tries to login and the SAML server responds with a valid authentication, then the server uses the "Id" field of the SAML authentication to search the user. 
  - If a user bound to that ID already exists, it logs in as that user. 
  - If a user bound to that ID does not exist, it will search base on the email. 
  - If a user bound to the email exists, it logs in with email and updates the autentication data to the ID, instead of the email. 
