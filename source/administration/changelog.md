@@ -6,6 +6,19 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.4
 
+### Highlights
+
+### Improvements
+ - Added a new Command Line Interface for removing all users from a channel.
+ - Channel switcher performance improvements.
+ - Updated incoming and outgoing webhook description to 500 characters.
+
+#### Config
+ - Added "EnablePublicChannelsMaterialization": true.
+ 
+#### API
+ - Slash commands with GET crush query parameters on configured endpoint URL.
+ 
 
 
 ## Release v5.3
