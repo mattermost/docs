@@ -61,6 +61,7 @@ Deployment
    /deployment/sso-gitlab*
    /deployment/sso-google*
    /deployment/sso-office*
+   /deployment/saml-faq*
    /deployment/metrics*
    /deployment/customize-mattermost.rst
    /deployment/ssl-client-certificate*
