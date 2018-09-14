@@ -26,6 +26,19 @@ posts in specific channels.
 -  For example: Searching ``Mattermost in:town-square`` only returns
    messages in Town Square that contain ``Mattermost``.
 
+Before:, After: and On:
+^^^^^^^^^^^^^^^^^^^^^^
+
+Use ``before:`` to find posts before a specified date and ``after:`` to find posts after a specified date. Use both ``before:`` and ``after:`` together to search in a specified date range.  Use ``on:`` to find posts from a specific date.  You can use the date picker to select a date or you can type it in YYYY-MM-DD format.
+
+-  For example: Searching ``website before: 2018-09-01`` will return messages containing the keyword ``website`` posted prior to September 1, 2018.     
+-  Searching ``website after: 2018-08-01`` will return messages containing the keyword ``website`` posted after August 1, 2018.  
+-  Searching ``website before: 2018-09-01 after: 2018-08-01`` will return all messages that contain the keyword ``website`` that were posted between August 1, 2018 and September 1, 2018. 
+-  Searching ``website on: 2018-09-01`` will return messages that contain the keyword ``website`` that were posted on September 1, 2018.
+
+.. image:: ../../images/calendar2.png
+
+
 Quotation Marks
 ^^^^^^^^^^^^^^^^^
 
