@@ -1,11 +1,11 @@
 Bind Authentication to ID Attribute instead of Email
 ------------------------------------------
 
-Alternatively, you can choose to use an Id Attribute instead of email to bind the user.  We recommend chosing an ID that is unique and will not change over time.  
+Alternatively, you can use an Id Attribute instead of email to bind the user.  We recommend chosing an ID that is unique and will not change over time.  
 
-Configuring this will allow you to reuse an email address for a new user without the old user's information being exposed. For instance, if a user with an email address joe.smith@mattermost.com was once an employee, a new employee named Joe Smith can use the same email. This configuration is also useful when a user's name changes and their email needs to be updated. 
+Configuring with an Id Attribute allows you to reuse an email address for a new user without the old user's information being exposed. For instance, if a user with an email address joe.smith@mattermost.com was once an employee, a new employee named Joe Smith can use the same email. This configuration is also useful when a user's name changes and their email needs to be updated. 
 
-This process was designed for backwards compatibility to email binding. Here is a more detailed explanation of the process that will be applied to any new accounts added or accounts logging in after the configuration is set up:  
+This process was designed with backwards compatibility to email binding. Here is the process applied to new account creations and to accounts logging in after the configuration:
 
  - A user authenticated with SAML is bound to the SAML service user using the Id Attribute (as long as it has been configured) or bound by email using the email received from SAML. 
  - When the user tries to login and the SAML server responds with a valid authentication, then the server uses the "Id" field of the SAML authentication to search the user. 
