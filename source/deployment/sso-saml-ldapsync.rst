@@ -61,6 +61,7 @@ Alternatively, you can choose to override the SAML bind data with the AD/LDAP in
 We recommend using this configuration with the SAML ID Attribute to help ensure that new users are not created when the email address changes for a user. To ensure existing user accounts do not get disabled in this process, ensure the SAML IDs match the LDAP IDs by exporting data from both systems and comparing the ID data or mapping ID Attributes for both AD/LDAP and SAML within Mattermost to fields that hold the same data.  
 
 1. Map the SAML ``Id Attribute`` on **System Console > SAML > Id Attribute**.  
+2. Set **System Console > SAML > Override SAML bind data with AD/LDAP information** to ``true``. 
 2. Set **System Console > SAML > Enable Synchronizing SAML Accounts With AD/LDAP** to ``true``.
 3. Run AD/LDAP sync in **System Console > AD/LDAP > AD/LDAP Synchronize Now**. 
 
