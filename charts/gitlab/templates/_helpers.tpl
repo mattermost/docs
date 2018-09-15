@@ -26,3 +26,18 @@ latest
 {{- $appVersion -}}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Returns the image repository depending on the value of global.edition.
+
+Used to switch the deployment from Enterprise Edition (default) to Community
+Edition. If global.edition=ce, returns image.repository from the chart's
+"values.ce.yaml" file. Otherwise returns .Values.image.repository.
+*/}}
+{{- define "image.repository" -}}
+{{- if eq "ce" .Values.global.edition -}}
+{{ index .Values "global" "communityEdition" .Chart.Name "image" "repository" }}
+{{- else -}}
+{{ .Values.image.repository }}
+{{- end -}}
+{{- end -}}

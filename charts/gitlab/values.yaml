@@ -2,9 +2,29 @@
 # This is a YAML-formatted file.
 
 global:
+  edition: ee
   hosts:
     domain: example.local
     https: true
+  communityEdition:
+    # When global.edition=ce the variables defined here will override those in
+    # values.yaml in the respective charts to switch the deployment from
+    # Enterprise Edition to Community Edition.
+    # See the image.repository and workhorse.image template helpers.
+    migrations:
+      image:
+        repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ce
+    sidekiq:
+      image:
+        repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ce
+    task-runner:
+      image:
+        repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ce
+    unicorn:
+      image:
+        repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ce
+      workhorse:
+        image: registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ce
 
 gitlab-runner:
   enabled: false
