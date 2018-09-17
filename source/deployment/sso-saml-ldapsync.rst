@@ -64,6 +64,6 @@ To ensure existing user accounts do not get disabled in this process, ensure the
 
 1. Set the SAML ``Id Attribute`` on **System Console > SAML > Id Attribute**.  
 2. Set **System Console > SAML > Override SAML bind data with AD/LDAP information** to ``true``. 
-2. Set **System Console > SAML > Enable Synchronizing SAML Accounts With AD/LDAP** to ``true``.
-3. Run AD/LDAP sync in **System Console > AD/LDAP > AD/LDAP Synchronize Now**. 
+3. Set **System Console > SAML > Enable Synchronizing SAML Accounts With AD/LDAP** to ``true``.
+4. Run AD/LDAP sync in **System Console > AD/LDAP > AD/LDAP Synchronize Now**. 
 
