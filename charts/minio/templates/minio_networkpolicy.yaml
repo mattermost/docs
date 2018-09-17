@@ -3,6 +3,7 @@ kind: NetworkPolicy
 apiVersion: {{ template "minio.networkPolicy.apiVersion" . }}
 metadata:
   name: {{ template "minio.fullname" . }}
+  namespace: {{ $.Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 spec:

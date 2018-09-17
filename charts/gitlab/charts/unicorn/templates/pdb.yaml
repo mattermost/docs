@@ -3,6 +3,7 @@ apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
   name: {{ template "fullname" . }}
+  namespace: {{ $.Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 spec:

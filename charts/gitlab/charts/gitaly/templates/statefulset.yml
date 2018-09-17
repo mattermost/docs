@@ -3,6 +3,7 @@ apiVersion: apps/v1beta2
 kind: StatefulSet
 metadata:
   name: {{ template "fullname" . }}
+  namespace: {{ $.Release.Namespace }}
   labels:
 {{ include "gitlab.immutableLabels" . | indent 4 }}
 spec:
