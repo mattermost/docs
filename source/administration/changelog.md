@@ -123,9 +123,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ability to bulk import emoji.
  - Added support for file attachments in bulk import.
  
-#### New Plugins (All Beta)
- - [Antivirus plugin](https://github.com/mattermost/mattermost-plugin-antivirus) to scan for viruses before uploading a file to Mattermost. Supports [ClamAV anti-virus software](https://www.clamav.net/) across browser, Desktop Apps and the Mobile Apps.
- - [GitHub plugin](https://github.com/mattermost/mattermost-plugin-github) to subscribe to notifications, and to keep track of unread GitHub messages and open pull requests requiring your attention.
+#### Plugins (All Beta)
+ - New [antivirus plugin](https://github.com/mattermost/mattermost-plugin-antivirus) to scan for viruses before uploading a file to Mattermost. Supports [ClamAV anti-virus software](https://www.clamav.net/) across browser, Desktop Apps and the Mobile Apps.
+ - New [GitHub plugin](https://github.com/mattermost/mattermost-plugin-github) to subscribe to notifications, and to keep track of unread GitHub messages and open pull requests requiring your attention.
+ - [Zoom plugin](https://docs.mattermost.com/integrations/zoom.html) now has one option to start a meeting rather than three separate ones to simplify the user experience.
 
 #### Server Plugins: Release Candidate
  - A release candidate (RC) is released for server plugins. Stable release is expected in v5.3 or v5.4.
