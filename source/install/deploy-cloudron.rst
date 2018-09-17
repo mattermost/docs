@@ -1,7 +1,11 @@
 .. _deploy-cloudron:
 
-Deploy Mattermost on Cloudron
-=============================
+Deploy Mattermost on Cloudron (Unofficial)
+==========================================
+
+Unofficial, community-maintained guides for deploying Mattermost on Cloudron.
+
+.. important:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. You can `edit this page on GitHub <https://github.com/mattermost/docs/blob/master/source/install/deploy-cloudron.rst>`_.
 
 Mattermost is available as a 1-click install on `Cloudron <https://cloudron.io>`_. For those unaware,
 Cloudron makes it easy to run apps like Mattermost on your server and keep them up-to-date and secure.
@@ -20,10 +24,9 @@ The Mattermost app will be already setup to use MySQL. Email sending should also
 Demo
 ====
 
-There is a `demo available <https://my-demo.cloudron.me>`_ (username: cloudron password: cloudron)
+A demo is available `here <https://my-demo.cloudron.me>`_ (username: ``cloudron``, password: ``cloudron``).
 
 Package Source
 ==============
 
 The Cloudron package (with automated tests) is developed `here <https://git.cloudron.io/cloudron/mattermost-app>`_.
-
