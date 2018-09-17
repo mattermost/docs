@@ -79,7 +79,7 @@ Screen and Content Dimensions
 Web/Desktop App
 -------------------
 
-The webapp supports two main modes of displaying the app: desktop view and mobile view. The app is primarily used in desktop view, but when the screen is 768 pixels or less wide, it switches to mobile view. The mobile view is also used in mobile browsers and the Classic App.
+The webapp supports two main modes of displaying the app: desktop view and mobile/tablet view. The app is primarily used in desktop view, but when the screen is 768 pixels or less wide, it switches to mobile view. The mobile view is also used in mobile browsers and the Classic App.
 
 For desktop view:
 
