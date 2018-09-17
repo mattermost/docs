@@ -56,11 +56,13 @@ When enabled, SAML synchronization with AD/LDAP occurs in phases:
 Override SAML Data with AD/LDAP Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-Alternatively, you can choose to override the SAML bind data with the AD/LDAP information. This will process will override SAML email address with AD/LDAP email address data or SAML Id Attribute with AD/LDAP Id Attribute if configured. For more infomation binding user with the SAML ID Attribute, please refer to this `documentation <https://docs.mattermost.com/deployment/sso-saml-okta.html#bind-authentication-to-id-attribute-instead-of-email>`_.  
+Alternatively, you can choose to override SAML bind data with AD/LDAP information. For more infomation binding user with the SAML ID Attribute, please refer to this `documentation <https://docs.mattermost.com/deployment/saml-faq.html#bind-authentication-to-id-attribute-instead-of-email>`_.  
 
-We recommend using this configuration with the SAML ID Attribute to help ensure that new users are not created when the email address changes for a user. To ensure existing user accounts do not get disabled in this process, ensure the SAML IDs match the LDAP IDs by exporting data from both systems and comparing the ID data or mapping ID Attributes for both AD/LDAP and SAML within Mattermost to fields that hold the same data.  
+This process overrides SAML email address with AD/LDAP email address data or SAML Id Attribute with AD/LDAP Id Attribute if configured. We recommend using this configuration with the SAML ID Attribute to help ensure new users are not created when the email address changes for a user. 
 
-1. Map the SAML ``Id Attribute`` on **System Console > SAML > Id Attribute**.  
+To ensure existing user accounts do not get disabled in this process, ensure the SAML IDs match the LDAP IDs by exporting data from both systems and comparing the ID data. Mapping ID Attributes for both AD/LDAP and SAML within Mattermost to fields that hold the same data will ensure the IDs match as well.  
+
+1. Set the SAML ``Id Attribute`` on **System Console > SAML > Id Attribute**.  
 2. Set **System Console > SAML > Override SAML bind data with AD/LDAP information** to ``true``. 
 2. Set **System Console > SAML > Enable Synchronizing SAML Accounts With AD/LDAP** to ``true``.
 3. Run AD/LDAP sync in **System Console > AD/LDAP > AD/LDAP Synchronize Now**. 
