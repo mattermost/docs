@@ -12,6 +12,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added a new Command Line Interface for removing all users from a channel.
  - Channel switcher performance improvements.
  - Updated incoming and outgoing webhook description to 500 characters.
+ - Added a basic Data Export Command Line.
+ - Expose slack attachment parsing functions in the model package.
+ - Extended bulk import to support themes across teams.
+ 
+#### Bug Fixes
+ - When "Enable sign-in with username" is set to false, logging in with LDAP account with MFA enabled results in "Error trying to authenticate MFA token" error.
 
 #### Config
  - Added "EnablePublicChannelsMaterialization": true.
