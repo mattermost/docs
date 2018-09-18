@@ -56,9 +56,14 @@ When enabled, SAML synchronization with AD/LDAP occurs in phases:
 Override SAML Data with AD/LDAP Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-Alternatively, you can choose to override the SAML bind data with the AD/LDAP information. This will help ensure that new users are not created when the email address changes for a user. 
+Alternatively, you can choose to override SAML bind data with AD/LDAP information. For more infomation on binding a user with the SAML ID Attribute, please refer to this `documentation <https://docs.mattermost.com/deployment/saml-faq.html#bind-authentication-to-id-attribute-instead-of-email>`_.  
 
-1. Configure SAML with AD/LDAP synchronization as specified above.  
-2. If using the "Id Attribute", map the SAML ``Id Attribute`` on **System Console > SAML > Id Attribute**. To ensure existing user accounts do not get disabled in this process, ensure the SAML IDs match the LDAP IDs. 
+This process overrides SAML email address with AD/LDAP email address data or SAML Id Attribute with AD/LDAP Id Attribute if configured. We recommend using this configuration with the SAML ID Attribute to help ensure new users are not created when the email address changes for a user. 
+
+To ensure existing user accounts do not get disabled in this process, ensure the SAML IDs match the LDAP IDs by exporting data from both systems and comparing the ID data. Mapping ID Attributes for both AD/LDAP and SAML within Mattermost to fields that hold the same data will ensure the IDs match as well.  
+
+1. Set the SAML ``Id Attribute`` on **System Console > SAML > Id Attribute**.  
+2. Set **System Console > SAML > Override SAML bind data with AD/LDAP information** to ``true``. 
 3. Set **System Console > SAML > Enable Synchronizing SAML Accounts With AD/LDAP** to ``true``.
-4. Run AD/LDAP sync in **System Console > AD/LDAP > AD/LDAP Synchronize Now**.
+4. Run AD/LDAP sync in **System Console > AD/LDAP > AD/LDAP Synchronize Now**. 
+
