@@ -33,8 +33,16 @@ global:
     enabled: true
     credentials: {}
   appConfig:
+    defaultCanCreateGroup: true
+    usernameChangingEnabled: true
     issueClosingPattern:
     defaultTheme:
+    defaultProjectsFeatures:
+      issues: true
+      mergeRequests: true
+      wiki: true
+      snippets: true
+      builds: true
     webhookTimeout:
     gravatar:
       plainUrl:

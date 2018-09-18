@@ -297,8 +297,16 @@ with the `global.appConfig` key.
 ```
 global:
   appConfig:
+    defaultCanCreateGroup: true
+    usernameChangingEnabled: true
     issueClosingPattern:
     defaultTheme:
+    defaultProjectsFeatures:
+      issues: true
+      mergeRequests: true
+      wiki: true
+      snippets: true
+      builds: true
     webhookTimeout:
     gravatar:
       plainUrl:
@@ -348,6 +356,18 @@ global:
 The settings that can be used to tweak the general properties of the Rails
 application are described below.
 
+#### defaultCanCreateGroup
+
+A flag to decide if users are allowed to create groups.
+
+Defaults to `true`.
+
+#### usernameChangingEnabled
+
+A flag to decide if users are allowed to change their username.
+
+Defaults to `true`.
+
 #### issueClosingPattern
 
 [Pattern to close issues automatically](https://docs.gitlab.com/ee/administration/issue_closing_pattern.html).
@@ -357,6 +377,22 @@ It takes a string value, and defaults to an empty value.
 
 [Numeric ID of the default theme for the GitLab instance](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/lib/gitlab/themes.rb#L14-25). It takes a number, denoting the id of the theme, as value and has an empty
 default value.
+
+#### defaultProjectsFeatures
+
+Flags to decide if new projects should by default be created with respective
+feature.
+
+All flags default to `true`.
+
+```YAML
+defaultProjectsFeatures:
+  issues: true
+  mergeRequests: true
+  wiki: true
+  snippets: true
+  builds: true
+```
 
 #### webHookTimeout
 

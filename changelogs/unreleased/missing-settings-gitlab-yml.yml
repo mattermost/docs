@@ -1,0 +1,5 @@
+---
+title: Add missing settings to configure gitlab.yml
+merge_request: 496
+author: Erik Sundell
+type: added
