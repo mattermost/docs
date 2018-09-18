@@ -135,7 +135,7 @@ By default, the Helm charts use the Enterprise Edition of GitLab. If desired, yo
 
 *To deploy the Community Edition, include this option in your helm install command:*
 ```
---set gitlab.global.edition=ce
+--set global.edition=ce
 ```
 
 ### RBAC
