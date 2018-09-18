@@ -113,10 +113,10 @@ Partner Evaluation License
 
 As a Value-Added Reseller you can request a renewable 1-year E20 license for up to 20 users.
 
-- Go to https://www.mattermost.com/trial/ to complete a trial form, enter [RESELLER] after your organization name.
-- In the “Where are you with Mattermost” section select “other.” 
-- Please send an email to partners@mattermost.com letting us know this has been completed so your application can be reviewed and matched against our certified reseller database.
-- Please expect delivery in 2-3 business days
+- Go to https://www.mattermost.com/trial/ to complete a trial form and enter [RESELLER] after your organization name.
+- In the “Where are you with Mattermost” section, select “other”. 
+- Please send an email to partners@mattermost.com letting us know the above have been completed so your application can be reviewed and matched against our certified reseller database.
+- Please expect delivery in 2-3 business days.
 
 Mattermost Partner Program FAQ 
 ------------------------------------------------
