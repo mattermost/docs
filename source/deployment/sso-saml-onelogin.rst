@@ -126,7 +126,7 @@ It is also recommended to post an announcement about how the migration will work
 
 You can also configure SAML for OneLogin by editing ``config.json`` to enable SAML based on :ref:`SAML configuration settings <saml-enterprise>`. You must restart the Mattermost server for the changes to take effect.
 
-.. include:: saml-faq.rst
+.. include:: sso-saml-faq.rst
 
 .. include:: sso-saml-ldapsync.rst
 
