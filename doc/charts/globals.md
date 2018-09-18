@@ -143,12 +143,29 @@ The GitLab global host settings are located under the `global.ingress` key.
 |name|type|default|
 |:---|:---|:------|
 |[global.ingress.enabled](#global-ingress-enabled)|boolean|true|
+|[global.ingress.configureCertmanager](#global-ingress-configurecertmanger)|boolean|true|
 |[global.ingress.tls.secretName](#global-ingress-tls-secretName)|string|(empty)|
 |[global.ingress.annotations.*annotation-key*](#global-ingress-annotations-annotation-key)|string|(empty)|
 
 ### global.ingress.enabled
 
 Global setting that controls whether to create ingress objects for services that support them. Defaults to `true`.
+
+### global.ingress.configureCertmanager
+
+Global setting that controls the automatic configuration of [cert-manager](https://github.com/helm/charts/tree/master/stable/cert-manager) for ingress objects.
+
+If `true`, relies on `certmanager-issuer.email` being set.
+
+If `false`, and `global.ingress.tls.secretName` is not set, this will activate automatic self-signed certificate generation, which creates a **wildcard** certificate for all ingress objects.
+
+**NOTE:** If you wish to use an external `cert-manager`, you must provide the following:
+- `gitlab.unicorn.ingress.tls.secretName`
+- `registry.ingress.tls.secretName`
+- `minio.ingress.tls.secretName`
+- `global.ingress.annotations`
+
+Defaults to `true`.
 
 ### global.ingress.tls.secretName
 
