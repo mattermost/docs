@@ -19,8 +19,8 @@ if there is a shared tls secret for all ingresses.
 Returns the workhorse image depending on the value of global.edition.
 
 Used to switch the deployment from Enterprise Edition (default) to Community
-Edition. If global.edition=ce, returns workhorse.image from the chart's
-"values.ce.yaml" file. Otherwise returns .Values.workhorse.image.
+Edition. If global.edition=ce, returns the Community Edition workhorse.image
+value set in the Gitlab values.yaml. Otherwise returns .Values.workhorse.image.
 */}}
 {{- define "workhorse.image" -}}
 {{- if eq "ce" .Values.global.edition -}}

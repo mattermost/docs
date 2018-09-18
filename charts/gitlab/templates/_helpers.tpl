@@ -31,8 +31,8 @@ latest
 Returns the image repository depending on the value of global.edition.
 
 Used to switch the deployment from Enterprise Edition (default) to Community
-Edition. If global.edition=ce, returns image.repository from the chart's
-"values.ce.yaml" file. Otherwise returns .Values.image.repository.
+Edition. If global.edition=ce, returns the Community Edition image.repository
+value set in the Gitlab values.yaml. Otherwise returns .Values.image.repository.
 */}}
 {{- define "image.repository" -}}
 {{- if eq "ce" .Values.global.edition -}}
