@@ -70,14 +70,6 @@ Set the external IP address that will be claimed from the provider. This will be
 [nginx chart](nginx/README.md#configuring-the-service), in place of the more complex `nginx.service.loadBalancerIP`.
 Defaults to `nil`.
 
-#### tls.secretName
-
-Set the name of the [Kubernetes TLS Secret][Secret] that contains a **wildcard** certificate and key to use for all subdomains
-of the base `domain` ([See our docs on creating the secrets][GitLab Secrets]). Alternatively you can give each host a different
-certificate in their own `tls` section. See `gitlab.tls.secretName` and `registry.tls.secretName` below.
-
-Defaults to not being set.
-
 ### gitlab
 
 The `gitlab` section of `global.hosts` includes configuration for the GitLab external hostname, and which internal service
@@ -89,8 +81,7 @@ The hostname for gitlab. If set, this hostname is used, regardless of the `globa
 
 #### gitlab.https
 
-Set to true for the GitLab external url to use `https://` instead of `http`. Defaults to false. If set to true, the `gitlab.tls.secretName`
-should also be provided
+Set to true for the GitLab external url to use `https://` instead of `http`. Defaults to `false`, but is combined with `https` in logical `OR`.
 
 #### gitlab.serviceName
 
@@ -100,11 +91,6 @@ current `.Release.Name`) to create the proper internal serviceName. This will de
 #### gitlab.servicePort
 
 The named port of the `service` where the GitLab server can be reached. This defaults to `workhorse`.
-
-#### gitlab.tls.secretName
-
-The name of the [Kubernetes TLS Secret][Secret] that containers a certificate and key for the gitlab external hostname.
-Falls back to the `global.hosts.tls.secretName` when not provided. Defaults to not being set.
 
 ### registry
 
@@ -117,8 +103,7 @@ The hostname for Registry. If set, this hostname is used, regardless of the `glo
 
 #### registry.https
 
-Set to true for the Registry external url to use `https://` instead of `http`. Defaults to false. If set to true, the `registry.tls.secretName`
-should also be provided
+Set to true for the Registry external url to use `https://` instead of `http`. Defaults to `false`, but is combined with `https` in logical `OR`.
 
 #### registry.serviceName
 
@@ -128,11 +113,6 @@ current `.Release.Name`) to create the proper internal serviceName. This will de
 #### registry.servicePort
 
 The named port of the `service` where the Registry server can be reached. This defaults to `registry`.
-
-#### registry.tls.secretName
-
-The name of the [Kubernetes TLS Secret][Secret] that containers a certificate and key for the Registry external hostname.
-Falls back to the `global.hosts.tls.secretName` when not provided. Defaults to not being set.
 
 ### minio
 
@@ -145,8 +125,7 @@ The hostname for Minio. If set, this hostname is used, regardless of the `global
 
 #### minio.https
 
-Set to true for the Minio external url to use `https://` instead of `http`. Defaults to false. If set to true, the `minio.tls.secretName`
-should also be provided
+Set to true for the Minio external url to use `https://` instead of `http`. Defaults to `false`, but is combined with `https` in logical `OR`.
 
 #### minio.serviceName
 
@@ -156,11 +135,6 @@ current `.Release.Name`) to create the proper internal serviceName. This will de
 #### minio.servicePort
 
 The named port of the `service` where the Minio server can be reached. This defaults to `minio`.
-
-#### minio.tls.secretName
-
-The name of the [Kubernetes TLS Secret][Secret] that containers a certificate and key for the Minio external hostname.
-Falls back to the `global.hosts.tls.secretName` when not provided. Defaults to not being set.
 
 ## Configure Ingress settings
 
@@ -178,7 +152,7 @@ Global setting that controls whether to create ingress objects for services that
 
 ### global.ingress.tls.secretName
 
-The name of the [Kubernetes TLS Secret][Secret] that contains a **wildcard** certificate and key for the domain used in `global.hosts.domain`.
+The name of the [Kubernetes TLS Secret](https://kubernetes.io/docs/concepts/services-networking/ingress/#tls) that contains a **wildcard** certificate and key for the domain used in `global.hosts.domain`.
 
 Defaults to not being set.
 
