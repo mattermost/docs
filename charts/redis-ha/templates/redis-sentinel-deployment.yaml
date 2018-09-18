@@ -8,9 +8,14 @@ metadata:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 spec:
   replicas: {{ .Values.replicas.sentinels }}
+  selector:
+    matchLabels:
+{{ include "labels.standard" . | indent 6 }}
+      name: "redis-sentinel"
   template:
     metadata:
       labels:
+        name: "redis-sentinel"
 {{ include "labels.standard" . | indent 8 }}
     spec:
       affinity:
