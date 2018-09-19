@@ -78,3 +78,9 @@ In v1.5 and later of the iOS and Android apps, messages and files are deleted fr
 2. When the user puts the app into the background.
 
 In v1.4 and earlier of the mobile apps, messages and files are not cleared from local storage when the data retention policy is enabled.
+
+Why is data retention feature beta?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The job to carry a data deletion has not been tested on a system with 10,000s of concurrent active users.
+
