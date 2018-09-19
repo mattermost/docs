@@ -16,16 +16,17 @@ if there is a shared tls secret for all ingresses.
 {{- end -}}
 
 {{/*
-Returns the workhorse image depending on the value of global.edition.
+Returns the workhorse image repository depending on the value of global.edition.
 
 Used to switch the deployment from Enterprise Edition (default) to Community
-Edition. If global.edition=ce, returns the Community Edition workhorse.image
-value set in the Gitlab values.yaml. Otherwise returns .Values.workhorse.image.
+Edition. If global.edition=ce, returns the Community Edition image repository
+set in the Gitlab values.yaml, otherwise returns the Enterprise Edition
+image repository.
 */}}
-{{- define "workhorse.image" -}}
+{{- define "workhorse.repository" -}}
 {{- if eq "ce" .Values.global.edition -}}
-{{ index .Values "global" "communityEdition" .Chart.Name "workhorse" "image" }}
+{{ index .Values "global" "communityImages" .Chart.Name "workhorse" "repository" }}
 {{- else -}}
-{{ .Values.workhorse.image }}
+{{ index .Values "global" "enterpriseImages" .Chart.Name "workhorse" "repository" }}
 {{- end -}}
 {{- end -}}

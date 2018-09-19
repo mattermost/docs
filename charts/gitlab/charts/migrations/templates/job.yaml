@@ -37,7 +37,7 @@ spec:
 {{- include "pullsecrets" .Values.image | indent 6}}
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ include "image.repository" . }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
+          image: "{{ coalesce .Values.image.repository (include "image.repository" .) }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
           args:
             - /scripts/wait-for-deps
             - /scripts/db-migrate
