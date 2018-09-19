@@ -8,7 +8,7 @@ global:
     https: true
   enterpriseImages:
     # Default repositories used to pull Gitlab Enterprise Edition images.
-    # See the image.repository and workhorse.image template helpers.
+    # See the image.repository and workhorse.repository template helpers.
     migrations:
       repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee
     sidekiq:
@@ -21,7 +21,7 @@ global:
         repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ee
   communityImages:
     # Default repositories used to pull Gitlab Community Edition images.
-    # See the image.repository and workhorse.image template helpers.
+    # See the image.repository and workhorse.repository template helpers.
     migrations:
       repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ce
     sidekiq:
