@@ -77,7 +77,7 @@ URL
   The actions are backed by an integration that handles HTTP POST requests when users click the message button. The URL parameter determines where this action is sent to. The request contains an ``application/json`` JSON string.
 
 Context
-  The requests sent to the specified URL contain the user id, post id and any context that was provided in the action definition. The post id can be used to, for example, delete or edit the post after clicking on a message button.
+  The requests sent to the specified URL contain the user id, post id, channel id, team id, and any context that was provided in the action definition. The post id can be used to, for example, delete or edit the post after clicking on a message button.
   
   A simple example of a request is given below:
   
@@ -86,6 +86,8 @@ Context
     {
     "user_id": "rd49ehbqyjytddasoownkuqrxe",
     "post_id": "gqrnh3675jfxzftnjyjfe4udeh",
+    "channel_id": "j6j53p28k6urx15fpcgsr20psq",
+    "team_id": "5xxzt146eax4tul69409opqjlf",
     "context": {
       "action": "do_something"
       }
@@ -100,6 +102,8 @@ Context
       {
       "user_id": "rd49ehbqyjytddasoownkuqrxe",
       "post_id": "gqrnh3675jfxzftnjyjfe4udeh",
+      "channel_id": "j6j53p28k6urx15fpcgsr20psq",
+      "team_id": "5xxzt146eax4tul69409opqjlf",
       "context": {
         "repo": "mattermost/mattermost-server"
         "pr": 1234,
@@ -116,6 +120,8 @@ Context
       {
       "user_id": "rd49ehbqyjytddasoownkuqrxe",
       "post_id": "gqrnh3675jfxzftnjyjfe4udeh",
+      "channel_id": "j6j53p28k6urx15fpcgsr20psq",
+      "team_id": "5xxzt146eax4tul69409opqjlf",
       "context": {
         "repo": "mattermost/mattermost-server"
         "pr": 1234,
@@ -133,6 +139,8 @@ Context
       {
       "user_id": "rd49ehbqyjytddasoownkuqrxe",
       "post_id": "gqrnh3675jfxzftnjyjfe4udeh",
+      "channel_id": "j6j53p28k6urx15fpcgsr20psq",
+      "team_id": "5xxzt146eax4tul69409opqjlf",
       "context": {
         "repo": "mattermost/mattermost-server"
         "pr": 1234,
