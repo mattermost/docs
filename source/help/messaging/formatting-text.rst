@@ -158,7 +158,7 @@ This can be accomplished in one of two ways:
 To add syntax highlighting, type the language to be highlighted after the ``````` at the beginning of the code block. Mattermost also offers four different code themes (GitHub, Solarized Dark, Solarized Light, Monokai) that can be changed in **Account Settings** > **Display** > **Theme** > **Custom Theme** > **Center Channel Styles**
 
 Supported languages are:
-``actionscript``, ``applescript``, ``bash``, ``clojure``, ``coffeescript``, ``cpp``, ``cs``, ``css``, ``d``, ``dart``, ``delphi``, ``diff``, ``django``, ``dockerfile``, ``erlang``, ``fortran``, ``fsharp``, ``gcode``, ``go``, ``groovy``, ``handlebars``, ``haskell``, ``haxe``, ``java``, ``javascript``, ``json``, ``julia``, ``kotlin``, ``less``, ``lisp``, ``lua``, ``makefile``, ``markdown``, ``matlab``, ``objectivec``, ``ocaml``, ``perl``, ``php``, ``powershell``, ``puppet``, ``python``, ``r``, ``ruby``, ``rust``, ``scala``, ``scheme``, ``scss``, ``smalltalk``, ``sql``, ``swift``, ``tex``, ``vbnet``, ``vbscript``, ``verilog``, ``xml``, ``yaml``
+``actionscript``, ``applescript``, ``bash``, ``clojure``, ``coffeescript``, ``cpp``, ``cs``, ``css``, ``d``, ``dart``, ``delphi``, ``diff``, ``django``, ``dockerfile``, ``erlang``, ``fortran``, ``fsharp``, ``gcode``, ``go``, ``groovy``, ``handlebars``, ``haskell``, ``haxe``, ``java``, ``javascript``, ``json``, ``julia``, ``kotlin``, ``less``, ``lisp``, ``lua``, ``makefile``, ``markdown``, ``matlab``, ``objectivec``, ``ocaml``, ``perl``, ``php``, ``powershell``, ``puppet``, ``python``, ``r``, ``ruby``, ``rust``, ``scala``, ``scheme``, ``scss``, ``smalltalk``, ``sql``, ``stylus``, ``swift``, ``tex``, ``text``, ``vbnet``, ``vbscript``, ``verilog``, ``xml``, ``yaml``
 
 Example:
 
