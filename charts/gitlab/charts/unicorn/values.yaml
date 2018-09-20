@@ -4,6 +4,7 @@
 image:
   pullSecrets: []
   # pullPolicy: IfNotPresent
+  # repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee
   # tag: latest
 init:
   image: busybox
@@ -44,6 +45,7 @@ workhorse:
     requests:
       cpu: 100m
       memory: 100M
+  # image: registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ee
 ldap:
   servers: {}
   # 'main' is the GitLab 'provider ID' of this LDAP server

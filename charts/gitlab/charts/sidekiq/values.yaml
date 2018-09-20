@@ -4,6 +4,7 @@
 image:
   pullSecrets: []
   # pullPolicy: IfNotPresent
+  # repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee
   # tag: latest
 
 init:
