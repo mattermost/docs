@@ -1,0 +1,5 @@
+---
+title: Add a global flag to set the gitlab edition that will be installed
+merge_request: 499
+author: Scott Leggett
+type: added
