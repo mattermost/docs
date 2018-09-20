@@ -1,7 +1,7 @@
 image:
-  repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ee
   pullSecrets: []
   # pullPolicy: IfNotPresent
+  # repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ee
   # tag: latest
 
 init:

@@ -2,9 +2,9 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 image:
-  repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee
   pullSecrets: []
   # pullPolicy: IfNotPresent
+  # repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee
   # tag: latest
 init:
   image: busybox
@@ -39,13 +39,13 @@ workerTimeout: 60
 hpa:
   targetAverageValue: 400m
 workhorse:
-  image: registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ee
   sentryDSN: ""
   extraArgs: ""
   resources:
     requests:
       cpu: 100m
       memory: 100M
+  # image: registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ee
 ldap:
   servers: {}
   # 'main' is the GitLab 'provider ID' of this LDAP server

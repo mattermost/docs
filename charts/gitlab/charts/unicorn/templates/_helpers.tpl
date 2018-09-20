@@ -14,3 +14,19 @@ if there is a shared tls secret for all ingresses.
 {{- end -}}
 {{- pluck "secretName" .Values.ingress.tls .Values.global.ingress.tls $defaultName | first -}}
 {{- end -}}
+
+{{/*
+Returns the workhorse image repository depending on the value of global.edition.
+
+Used to switch the deployment from Enterprise Edition (default) to Community
+Edition. If global.edition=ce, returns the Community Edition image repository
+set in the Gitlab values.yaml, otherwise returns the Enterprise Edition
+image repository.
+*/}}
+{{- define "workhorse.repository" -}}
+{{- if eq "ce" .Values.global.edition -}}
+{{ index .Values "global" "communityImages" .Chart.Name "workhorse" "repository" }}
+{{- else -}}
+{{ index .Values "global" "enterpriseImages" .Chart.Name "workhorse" "repository" }}
+{{- end -}}
+{{- end -}}

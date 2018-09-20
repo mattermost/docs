@@ -26,3 +26,19 @@ latest
 {{- $appVersion -}}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Returns the image repository depending on the value of global.edition.
+
+Used to switch the deployment from Enterprise Edition (default) to Community
+Edition. If global.edition=ce, returns the Community Edition image repository
+set in the Gitlab values.yaml, otherwise returns the Enterprise Edition
+image repository.
+*/}}
+{{- define "image.repository" -}}
+{{- if eq "ce" .Values.global.edition -}}
+{{ index .Values "global" "communityImages" .Chart.Name "repository" }}
+{{- else -}}
+{{ index .Values "global" "enterpriseImages" .Chart.Name "repository" }}
+{{- end -}}
+{{- end -}}
