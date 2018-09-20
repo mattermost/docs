@@ -55,6 +55,9 @@ spec:
       annotations:
         checksum/configmap: {{ $configMapChecksum }}
         checksum/configmap-pod: {{ pluck ( .name | quote ) $queues | last | sha256sum }}
+      {{- range $key, $value := $.Values.annotations }}
+        {{ $key }}: {{ $value | quote }}
+      {{- end }}
 {{- if $metricsEnabled }}
 {{ toYaml $metricsAnnotations | indent 8 }}
 {{- end }}

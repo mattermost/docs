@@ -21,6 +21,7 @@ service:
   internalPort: 8075
 enabled: true
 serviceName: gitaly
+annotations: {}
 
 init:
   image: busybox
