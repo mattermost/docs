@@ -17,7 +17,7 @@ Assume that the IP address of this server is 10.10.10.2
 
 3. Extract the Mattermost Server files.
 
-  ``tar -xvzf *.gz``
+  ``tar xvzf *.gz``
 
 4. Move the extracted file to the ``/opt`` directory.
 
