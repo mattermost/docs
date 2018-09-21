@@ -2,6 +2,28 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.1.0 (2018-09-22)
+
+### Fixed (1 change)
+
+- Fix indentation error in self-signed-certs Job of shared-secrts.
+
+### Changed (1 change)
+
+- Registry: move http.secret to k8s secret (auto-generated). !485
+
+### Added (3 changes, 2 of them are from the community)
+
+- Allow to define under which user and group gitaly is running. !473 (Michael Schmid <michael@amazee.io>)
+- Ensure job resources can be configured. !482
+- Adds option to specify separate hostname for ssh access. !487 (Gijs Kunze)
+
+### Other (2 changes, 1 of them is from the community)
+
+- Added namespace to resources. !443 (Matthias van de Meent (Cofano Software Solutions))
+- Update GitLab Version to 11.3.0.
+
+
 ## 1.0.2 (2018-08-28)
 
 ### Fixed (1 change)
