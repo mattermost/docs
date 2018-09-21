@@ -10,7 +10,7 @@ Notes:
 
 Pre-work for the current release begins at the code complete date of the previous release. See "Code Complete" section below for details.
 
-### C. (T-minus 12 working days) Release Branch Cut
+### B. (T-minus 12 working days) Release Branch Cut
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
