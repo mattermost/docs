@@ -1,3 +1,5 @@
+# Bug Fix Release Process
+
 ## Release Timeline
 
 Notes:
@@ -12,9 +14,8 @@ Pre-work for the current release begins at the code complete date of the previou
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
-    - Verify all items in the last posted release checklist are complete
     - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel. [See example](https://pre-release.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
-    - Draft Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
+    - Draft Changelog in a WIP PR with updates for known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version
     - Submit NOTICE.txt PR for any new libraries added from dev, if not added already. The following two files contain a list of dependencies:
         - https://github.com/mattermost/mattermost-webapp/blob/master/package.json
@@ -33,7 +34,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Prepare bullet points and release headline for release announcement. Release manager to review the outline (benefits and order of major features) with PMs before sending to Justin to work on
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
     
-### C. (T-minus 11 working days) Release bug testing
+### C. (T-minus 11 working days) Release Bug Testing
 
 1. QA:
     - Prioritize testing merged PRs and resolved tickets for this release
@@ -43,12 +44,8 @@ Pre-work for the current release begins at the code complete date of the previou
 
 ### D. (T-minus 10 working days) Judgment Day
 
-Day when Leads and PMs decide which major features are included in the release, and which are postponed.
-
 1. **(Team) Judgment Day Meeting (10:00am San Francisco time)**: 
     - Discuss worst bug on master
-    - Finalize which major features will be in or out for the release
-        -  Discuss reverting feature(s) if 5 or more bugs found
     - Begin daily triage of tickets
         - Also start to triage tickets in the backlog
 2. Release Manager:
@@ -59,7 +56,6 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Confirm date of marketing announcement for the release date with Marketing, and update release channel header if needed
       - If release day falls on a Friday, the blog post goes out on the Friday and the emailed newsletter goes out the following Tuesday.
     - Post a reminder to devs in the Release Discussion channel of the the code complete date with the ZBB count [see example](https://pre-release.mattermost.com/core/pl/coggyys9atg7fqyam81q3gkmoo)
-    - Based on results of Team Meeting discussion, create tickets for features that need to be turned on or off for the release
     - Ask release PM to review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
 3. Leads:
     - Finalize roadmap for next release, and identify planned marketing bullet points
@@ -218,7 +214,6 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Receive sign off on final version of MailChimp email blast and Twitter announcement and schedule for 08:00 PST on the date of marketing announcement
       - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
     - Finalize blog post for mattermost.com, test on mobile view, and set timer for 08:00 PST on the day of release
-    - Update feature lists on https://about.mattermost.com/pricing/ and https://about.mattermost.com/features/ with relevant new features
     - Add links to [Admin guide](https://docs.mattermost.com/guides/administrator.html) in the release blog post where needed
 
 ### J. (T-minus 0 working days) Release Day
