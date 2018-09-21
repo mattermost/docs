@@ -1,6 +1,4 @@
-============================================================
-Security Release Process
-============================================================
+# Security Release Process
 
 If a security fix release is required, run through the following steps:
 
