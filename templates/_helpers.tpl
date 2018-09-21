@@ -236,3 +236,33 @@ Returns gitlabUrl needed for gitlab-runner
 {{- define "gitlab.wildcard-self-signed-cert-name" -}}
 {{- default (printf "%s-wildcard-tls" .Release.Name) .Values.global.ingress.tls.secretName -}}
 {{- end -}}
+
+{{/*
+Detect if `x.ingress.tls.secretName` are set
+Return value if either `global.ingress.tls.secretName` or all three `x.ingress.tls.secretName` are set.
+Return empty if not
+
+We're explicitly checking for an actual value being present, not the existance of map.
+*/}}
+{{- define "gitlab.ingress.tls.configured" -}}
+{{/* Pull the value, if it exists */}}
+{{- $global   := pluck "secretName" $.Values.global.ingress.tls | first -}}
+{{- $unicorn  := pluck "secretName" $.Values.gitlab.unicorn.ingress.tls | first -}}
+{{- $registry := pluck "secretName" $.Values.registry.ingress.tls | first -}}
+{{- $minio    := pluck "secretName" $.Values.minio.ingress.tls | first -}}
+{{/* Set each item to configured value, or !enabled
+     This works because `false` is the same as empty, so we'll use the value when `enabled: true`
+     - default "" (not true) => ''
+     - default "" (not false) => 'true'
+     - default "valid" (not true) => 'valid'
+     - default "valid" (not false) => 'true'
+     Now, disabled sub-charts won't block this template from working properly.
+*/}}
+{{- $unicorn :=  default $unicorn (not $.Values.gitlab.unicorn.enabled) -}}
+{{- $registry :=  default $registry (not $.Values.registry.enabled) -}}
+{{- $minio :=  default $minio (not $.Values.global.minio.enabled) -}}
+{{/* Check that all enabled items have been configured */}}
+{{- if or $global (and $unicorn (and $registry $minio)) -}}
+true
+{{- end -}}
+{{- end -}}
