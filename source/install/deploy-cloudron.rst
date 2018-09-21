@@ -19,7 +19,7 @@ Installation
 To get started, first `install Cloudron <https://cloudron.io/get.html>`_ on a VPS provider like Digital Ocean
 and then install Mattermost from the `Cloudron Store <https://cloudron.io/store/org.mattermost.cloudronapp.html>`_.
 
-The Mattermost app will be already setup to use MySQL. Email sending should also work out of the box.
+The Mattermost app will be configured with MySQL and SMTP email notifications service.
 
 Demo
 ====
