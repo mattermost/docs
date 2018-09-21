@@ -1,4 +1,4 @@
-# Release Process
+# Feature Release
 
 Mattermost core team works on a monthly release process, with a new version shipping on the 16th of each month in [binary form](http://docs.mattermost.com/administration/upgrade.html#mattermost-team-edition). 
 
