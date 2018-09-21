@@ -1,7 +1,7 @@
 # Required tools
 
 1. [`kubectl`][kubectl] version 1.8 or higher, compatible with your cluster. ([+/- 1 minor release from your cluster](https://kubernetes.io/docs/tasks/tools/install-kubectl/#before-you-begin))
-1. [`Helm`][helm] `v2.9` or higher.
+1. [`Helm`][helm] `v2.x`, we require 2.9 or higher.
 
 
 ### kubectl

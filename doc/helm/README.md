@@ -19,7 +19,7 @@ Helm consists of two parts, `helm` client and `tiller` server inside Kubernetes.
 
 # Getting Helm
 
-> **Note**: We support using Helm version 2.9.0 or higher.
+> **Note**: We support using Helm versions in the 2.x line with 2.9.0 being our minimum supported version.
 
 You can get Helm from the project's [releases page](https://github.com/kubernetes/helm/releases), or follow other options under the official documentation of [Installing Helm](https://docs.helm.sh/using_helm/#installing-helm).
 
