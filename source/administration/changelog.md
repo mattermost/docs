@@ -19,6 +19,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Desktop notifications should follow teammate name display setting.
  - Moved hiding join/leave messages to TE.
  - Restrict team membership based on email domains.
+ - Plugins without a server or webapp component should fail to be activated.
+ - Added account setting option to hide channel switcher button in the sidebar.
+ - Close channel autocomplete after two consecutive tildes used for strikethrough formatting.
  
 #### Bug Fixes
  - When "Enable sign-in with username" is set to false, logging in with LDAP account with MFA enabled results in "Error trying to authenticate MFA token" error.
