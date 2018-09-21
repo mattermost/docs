@@ -14,7 +14,10 @@ Development Process
    :glob:
 
    /process/overview*
-   /process/release-process*
+   /process/feature-release*
+   /process/bug-fix-release*
+   /process/dot-release*
+   /process/security-release*
    /process/mobile-release*
    /process/deprecated-features*
    /developer/style*
