@@ -1,4 +1,4 @@
-# Dot Release
+# Dot Release Process
 
 If a bug fix release is required, run through the following steps:
 
