@@ -1,5 +1,5 @@
 ============================================================
-Bug Fix Release
+Dot Release
 ============================================================
 
 If a bug fix release is required, run through the following steps:
