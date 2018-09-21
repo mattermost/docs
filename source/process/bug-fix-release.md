@@ -8,7 +8,7 @@ Notes:
 
 Pre-work for the current release begins at the code complete date of the previous release. See "Code Complete" section below for details.
 
-### C. (T-minus 12 working days) Cut-off for merging major features
+### C. (T-minus 12 working days) Release Branch Cut
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
@@ -22,6 +22,9 @@ Pre-work for the current release begins at the code complete date of the previou
         - https://github.com/mattermost/mattermost-mobile/blob/master/package.json
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
 2. Dev:
+    - Cut release branch both for server and mobile
+      - Merge database upgrade before cutting the branch
+      - Point translation server to release branch after cutting
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
       - After the cut-off, any PRs that include significant code changes, require approval of the release manager before merging
 3. Logistics:
@@ -30,7 +33,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Prepare bullet points and release headline for release announcement. Release manager to review the outline (benefits and order of major features) with PMs before sending to Justin to work on
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
     
-### C. (T-minus 11 working days) Major feature testing
+### C. (T-minus 11 working days) Release bug testing
 
 1. QA:
     - Prioritize testing merged PRs and resolved tickets for this release
@@ -45,6 +48,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 1. **(Team) Judgment Day Meeting (10:00am San Francisco time)**: 
     - Discuss worst bug on master
     - Finalize which major features will be in or out for the release
+        -  Discuss reverting feature(s) if 5 or more bugs found
     - Begin daily triage of tickets
         - Also start to triage tickets in the backlog
 2. Release Manager:
@@ -253,7 +257,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
         - Submit a PR for changelog against the `vX.X-documentation` branch and add a `Work in Progress` label for it
         - Submit a PR to change version number in `docs/source/conf.py` against the `vX.X-documentation` branch
 3. Logistics:
-    - Close the release in Jira ([releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased))
+    - Close the release in Jira both for server and mobile ([releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased))
         - If there are many unresolved tickets in the current release, ask the release manager to review the ticket queue
         - Otherwise, release the fix version (Actions > [...] > Release)
 4. Build:
