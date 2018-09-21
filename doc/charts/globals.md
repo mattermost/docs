@@ -81,7 +81,7 @@ The hostname for gitlab. If set, this hostname is used, regardless of the `globa
 
 #### gitlab.https
 
-Set to true for the GitLab external url to use `https://` instead of `http`. Defaults to `false`, but is combined with `https` in logical `OR`.
+If `hosts.https` or `gitlab.https` are `true`, the GitLab external url to use `https://` instead of `http://`. Defaults to `false`.
 
 #### gitlab.serviceName
 
@@ -103,7 +103,7 @@ The hostname for Registry. If set, this hostname is used, regardless of the `glo
 
 #### registry.https
 
-Set to true for the Registry external url to use `https://` instead of `http`. Defaults to `false`, but is combined with `https` in logical `OR`.
+If `hosts.https` or `registry.https` are `true`, the Registry external url to use `https://` instead of `http://`. Defaults to `false`.
 
 #### registry.serviceName
 
@@ -125,7 +125,7 @@ The hostname for Minio. If set, this hostname is used, regardless of the `global
 
 #### minio.https
 
-Set to true for the Minio external url to use `https://` instead of `http`. Defaults to `false`, but is combined with `https` in logical `OR`.
+If `hosts.https` or `minio.https` are `true`, the Minio external url to use `https://` instead of `http://`. Defaults to `false`.
 
 #### minio.serviceName
 
