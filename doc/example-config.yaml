@@ -3,10 +3,10 @@ global:
   ingress:
     enabled: true
     # tls:
-    #   secretName:  example-local-tls
+    #   secretName:  example-com-tls
   hosts:
-    domain: example.local
-    # ssh: git.example.local
+    domain: example.com
+    # ssh: git.example.com
     https: true
 
 # NGINX chart provides

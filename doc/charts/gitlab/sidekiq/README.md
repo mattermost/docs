@@ -144,7 +144,7 @@ gitaly:
       - default2
   external:
     - name: node1
-      hostname: node1.example.local
+      hostname: node1.example.com
       port: 8079
   authToken:
     secret: gitaly-secret

@@ -45,9 +45,9 @@ Tables below contain all the possible charts configurations that can be supplied
 | global.smtp.authentication      | Type of SMTP authentication ("plain", "login", "cram_md5", or "" for no authentication) | plain                 |
 | global.smtp.starttls_auto       | Use STARTTLS if enabled on the mail server                                              | false                 |
 | global.smtp.openssl_verify_mode | TLS verification mode ("none", "peer", or "ssl/tls")                                    | peer                  |
-| global.email.from               | Email address that appears as the sender for emails from GitLab                         | gitlab@example.local  |
+| global.email.from               | Email address that appears as the sender for emails from GitLab                         | gitlab@example.com  |
 | global.email.display_name       | Name that appears as the sender for emails from GitLab                                  | GitLab                |
-| global.email.reply_to           | Reply-to email listed in emails from GitLab                                             | noreply@example.local |
+| global.email.reply_to           | Reply-to email listed in emails from GitLab                                             | noreply@example.com |
 | global.email.subject_suffix     | Suffix on the subject of all outgoing email from GitLab                                 | ""                    |
 
 ## Incoming Email configuration

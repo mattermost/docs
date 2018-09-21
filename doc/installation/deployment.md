@@ -22,7 +22,7 @@ objects. You'll need to specify a domain which will contain records to resolve
 
 *Include these options in your helm install command:*
 ```
---set global.hosts.domain=example.local
+--set global.hosts.domain=example.com
 ```
 
 #### Dynamic IPs with external-dns
@@ -36,9 +36,9 @@ is already installed in your cluster.
 #### Static IP
 
 If you plan to manually configure your DNS records they should all point to a
-static IP. For example if you choose `example.local` and you have a static IP
-of `10.10.10.10`, then `gitlab.example.local`, `registry.example.local` and
-`minio.example.local` (if using minio) should all resolve to `10.10.10.10`.
+static IP. For example if you choose `example.com` and you have a static IP
+of `10.10.10.10`, then `gitlab.example.com`, `registry.example.com` and
+`minio.example.com` (if using minio) should all resolve to `10.10.10.10`.
 
 If you are using GKE, there is some documentation [here](../cloud/gke.md#creating-the-external-ip)
 for configuring static IPs and DNS. Consult your Cloud and/or DNS provider's
@@ -68,7 +68,7 @@ For the default configuration, you must specify an email address to register you
 certificates.
 *Include these options in your helm install command:*
 ```
---set certmanager-issuer.email=me@example.local
+--set certmanager-issuer.email=me@example.com
 ```
 
 ### Postgresql
@@ -158,9 +158,9 @@ helm repo add gitlab https://charts.gitlab.io/
 helm repo update
 helm upgrade --install gitlab gitlab/gitlab \
   --timeout 600 \
-  --set global.hosts.domain=example.local \
+  --set global.hosts.domain=example.com \
   --set global.hosts.externalIP=10.10.10.10 \
-  --set certmanager-issuer.email=me@example.local
+  --set certmanager-issuer.email=me@example.com
 ```
 
 You can also use `--version <installation version>` option if you would like to install a specific version of GitLab.
@@ -179,9 +179,9 @@ helm repo add gitlab https://charts.gitlab.io/
 helm dependencies update
 helm upgrade --install gitlab . \
   --timeout 600 \
-  --set global.hosts.domain=example.local \
+  --set global.hosts.domain=example.com \
   --set global.hosts.externalIP=10.10.10.10 \
-  --set certmanager-issuer.email=me@example.local
+  --set certmanager-issuer.email=me@example.com
 ```
 
 ## Monitoring the Deployment

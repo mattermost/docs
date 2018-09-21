@@ -48,7 +48,7 @@ Generate a certificate-key pair:
 
 ```
 mkdir -p certs
-openssl req -new -newkey rsa:4096 -subj "/CN=gitlab-issuer" -nodes -x509 -keyout certs/registry-example-local.key -out certs/registry-example-local.crt
+openssl req -new -newkey rsa:4096 -subj "/CN=gitlab-issuer" -nodes -x509 -keyout certs/registry-example-com.key -out certs/registry-example-com.crt
 ```
 
 Create a secret containing these certificates.
@@ -56,7 +56,7 @@ Create a secret containing these certificates.
 `gitlab-registry` secret.
 
 ```
-kubectl create secret generic gitlab-registry --from-file=registry-auth.key=certs/registry-example-local.key --from-file=registry-auth.crt=certs/registry-example-local.crt
+kubectl create secret generic gitlab-registry --from-file=registry-auth.key=certs/registry-example-com.key --from-file=registry-auth.crt=certs/registry-example-com.crt
 ```
 
 Include this secret using `--set global.registry.certificate.secret=gitlab-registry`

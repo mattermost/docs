@@ -39,7 +39,7 @@ Many charts need to be provided with the same information, for example we need t
 
 ```
 redis:
-  host: redis.example.local
+  host: redis.example.com
   serviceName: redis
   port: 8080
   password:

@@ -70,7 +70,7 @@ This chart should be attached the Unicorn service, and should also use the same 
 
 ```YAML
 redis:
-  host: redis.example.local
+  host: redis.example.com
   serviceName: redis
   port: 6379
 ```
@@ -95,7 +95,7 @@ Credentials will be sourced from `global.redis.password` values.
 
 ```YAML
 unicorn:
-  host: unicorn.example.local
+  host: unicorn.example.com
   serviceName: unicorn
   port: 8080
 ```

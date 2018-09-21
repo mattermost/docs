@@ -161,7 +161,7 @@ Field `authEndpoint` is a string, providing the URL to the GitLab instance(s) th
 
 The value should include the protocol and hostname only. The chart template will automatically append the necessary request path. The resulting value will be populated to `auth.token.realm` inside the container.
 
-Example: `authEndpoint: "https://gitlab.example.local"`
+Example: `authEndpoint: "https://gitlab.example.com"`
 
 By default this field is populated with gitlab hostname configuration set using the [Global Settings][globals].
 

@@ -136,7 +136,7 @@ No annotations are provided by default.
 
 ```YAML
 redis:
-  host: redis.example.local
+  host: redis.example.com
   serviceName: redis
   port: 6379
   password:
@@ -166,7 +166,7 @@ The `password` attribute for Redis has to sub keys:
 
 ```YAML
 psql:
-  host: psql.example.local
+  host: psql.example.com
   port: 5432
   database: gitlabhq_production
   username: gitlab
@@ -207,7 +207,7 @@ gitaly:
       - default2
   external:
     - name: node1
-      hostname: node1.example.local
+      hostname: node1.example.com
       port: 8079
   authToken:
     secret: gitaly-secret
@@ -256,11 +256,11 @@ Defaults to `9000`.
 
 ```YAML
 registry:
-  host: registry.example.local
+  host: registry.example.com
   port: 443
   api:
     protocol: http
-    host: registry.example.local
+    host: registry.example.com
     serviceName: registry
     port: 5000
   tokenIssuer: gitlab-issuer
