@@ -16,7 +16,14 @@ PREEMPTIBLE=${PREEMPTIBLE-false}
 EXTRA_CREATE_ARGS=${EXTRA_CREATE_ARGS-""}
 USE_STATIC_IP=${USE_STATIC_IP-false};
 external_ip_name=${CLUSTER_NAME}-external-ip;
-SCRIPT_PATH=$(dirname "$(readlink -f "$0")")
+
+# MacOS does not support readlink, but it does have perl
+KERNEL_NAME=$(uname -s)
+if [ "${KERNEL_NAME}" = "Darwin" ]; then
+  SCRIPT_PATH=$(perl -e 'use Cwd "abs_path";use File::Basename;print dirname(abs_path(shift))' "$0")
+else
+  SCRIPT_PATH=$(dirname "$(readlink -f "$0")")
+fi
 
 source $SCRIPT_PATH/common.sh;
 
