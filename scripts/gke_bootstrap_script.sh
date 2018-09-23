@@ -96,8 +96,6 @@ if [ -z "$1" ]; then
   echo "You need to pass up or down";
 fi
 
-SCRIPT_PATH=$(dirname "$(readlink -f "$0")")
-
 case $1 in
   up)
     bootstrap;
