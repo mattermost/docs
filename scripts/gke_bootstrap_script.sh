@@ -16,9 +16,9 @@ PREEMPTIBLE=${PREEMPTIBLE-false}
 EXTRA_CREATE_ARGS=${EXTRA_CREATE_ARGS-""}
 USE_STATIC_IP=${USE_STATIC_IP-false};
 external_ip_name=${CLUSTER_NAME}-external-ip;
-DIR=$(dirname "$(readlink -f "$0")")
+SCRIPT_PATH=$(dirname "$(readlink -f "$0")")
 
-source $DIR/common.sh;
+source $SCRIPT_PATH/common.sh;
 
 function bootstrap(){
   set -e
@@ -96,7 +96,7 @@ if [ -z "$1" ]; then
   echo "You need to pass up or down";
 fi
 
-DIR=$(dirname "$(readlink -f "$0")")
+SCRIPT_PATH=$(dirname "$(readlink -f "$0")")
 
 case $1 in
   up)
@@ -106,7 +106,7 @@ case $1 in
     cleanup_gke_resources;
     ;;
   chaos)
-    $DIR/kube-monkey.sh;
+    $SCRIPT_PATH/kube-monkey.sh;
     ;;
   *)
     echo "Unknown command $1";
