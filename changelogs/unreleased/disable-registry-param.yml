@@ -1,0 +1,5 @@
+---
+title: Add registry.enabled param in unicorn chart
+merge_request:
+author:
+type: added
