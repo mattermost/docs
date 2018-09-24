@@ -35,12 +35,7 @@ installation follow [upgrade docs][]
 
 ### 4. Migrate data from an existing GitLab
 
-To migrate your existing GitLab instance to your deployed Kubernetes GitLab instance, take a backup of your existing instance.
-Then proceed to the [restore documentation](../backup-restore/README.md#restoring-a-gitLab-installation).
-
-> To obtain a backup tarball of an existing GitLab instance that used other installation methods like an omnibus-gitlab package or GitLab-Omnibus helm chart, follow the instructions [given in documentation](https://docs.gitlab.com/ee/raketasks/backup_restore.html#creating-a-backup-of-the-gitlab-system)
->
-> **Note**: If you are restoring a backup taken from another instance, you must migrate your existing instance to using object storage before taking the backup. See [issue 646](https://gitlab.com/charts/gitlab/issues/646)
+To migrate your existing GitLab instance to your deployed Kubernetes GitLab instance, follow the [migration documentation](./migration/index.md).
 
 [Google Kubernetes Engine]: ../cloud/gke.md
 [resources]: resources.md
