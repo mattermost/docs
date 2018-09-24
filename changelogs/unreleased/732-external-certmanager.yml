@@ -1,0 +1,5 @@
+---
+title: Better handle self-signed certificate behaviors in NOTES.txt
+merge_request: 500
+author:
+type: fixed

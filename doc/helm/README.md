@@ -19,13 +19,13 @@ Helm consists of two parts, `helm` client and `tiller` server inside Kubernetes.
 
 # Getting Helm
 
-> **Note**: If you are installing on Amazon EKS, you must use Helm version 2.9.0 or higher.
+> **Note**: We support using Helm versions in the 2.x line with 2.9.0 being our minimum supported version.
 
 You can get Helm from the project's [releases page](https://github.com/kubernetes/helm/releases), or follow other options under the official documentation of [Installing Helm](https://docs.helm.sh/using_helm/#installing-helm).
 
 # Initialize Helm and Tiller
 
-Tiller is deployed into the cluster and interacts with the Kubernetes API to deploy your applications. If role based access control (RBAC) is enabled, Tiller will need to be [granted permissions](#preparing-for-helm-with-rbac) to allow it to talk to the Kubernetes API. 
+Tiller is deployed into the cluster and interacts with the Kubernetes API to deploy your applications. If role based access control (RBAC) is enabled, Tiller will need to be [granted permissions](#preparing-for-helm-with-rbac) to allow it to talk to the Kubernetes API.
 
 If RBAC is not enabled, skip to [initalizing Helm](#initialize-helm).
 
@@ -35,7 +35,7 @@ If you are not sure whether RBAC is enabled in your cluster, or to learn more, r
 
 > **Note**: Ensure you have kubectl installed and it is up to date. Older versions do not have support for RBAC and will generate errors.
 
-Helm's Tiller will need to be granted permissions to perform operations. These instructions grant cluster wide permissions, however for more advanced deployments [permissions can be restricted to a single namespace](https://docs.helm.sh/using_helm/#example-deploy-tiller-in-a-namespace-restricted-to-deploying-resources-only-in-that-namespace). 
+Helm's Tiller will need to be granted permissions to perform operations. These instructions grant cluster wide permissions, however for more advanced deployments [permissions can be restricted to a single namespace](https://docs.helm.sh/using_helm/#example-deploy-tiller-in-a-namespace-restricted-to-deploying-resources-only-in-that-namespace).
 
 To grant access to the cluster, we will create a new `tiller` service account and bind it to the `cluster-admin` role:
 
@@ -114,7 +114,7 @@ kubectl --username=admin --password=xxxxxxxxxxxxxx create -f https://gitlab.com/
 
 #### Upload the RBAC config
 
-For other clusters like Amazon EKS, you can direclty upload the RBAC configuration. 
+For other clusters like Amazon EKS, you can direclty upload the RBAC configuration.
 
 kubectl create -f https://gitlab.com/charts/gitlab/raw/master/doc/helm/examples/rbac-config.yaml
 

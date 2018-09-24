@@ -27,9 +27,9 @@ Tables below contain all the possible charts configurations that can be supplied
 | global.ingress.configureCertmanager          | Configure cert-manager to get certificates from Let's Encrypt     | true                         |
 | certmanager-issuer.email                     | Email for Let's Encrypt account                                   | false                        |
 | global.ingress.tls.secretName                | Existing `Secret` containing wildcard TLS certificate and key     | _none_                       |
-| gitlab.unicorn.ingress.tls.secretName        | Existing `Secret` containing TLS certificate and key for gitlab   | {Release.Name}-gitlab-tls    |
-| minio.ingress.tls.secretName                 | Existing `Secret` containing TLS certificate and key for minio    | {Release.Name}-minio-tls     |
-| registry.ingress.tls.secretName              | Existing `Secret` containing TLS certificate and key for registry | {Release.Name}-registry-tls  |
+| gitlab.unicorn.ingress.tls.secretName        | Existing `Secret` containing TLS certificate and key for gitlab   | _none_                       |
+| minio.ingress.tls.secretName                 | Existing `Secret` containing TLS certificate and key for minio    | _none_                       |
+| registry.ingress.tls.secretName              | Existing `Secret` containing TLS certificate and key for registry | _none_                       |
 
 ## Outgoing Email configuration
 
