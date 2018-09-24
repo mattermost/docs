@@ -17,11 +17,15 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - With "Send messages on CTRL+ENTER = ON", channel and user autocomplete now work.
  - Autofocus cursor on edit box before modal fully loads.
  - Desktop notifications should follow teammate name display setting.
- - Moved hiding join/leave messages to TE.
+ - Moved hiding join/leave messages to Team Edition.
  - Restrict team membership based on email domains.
  - Plugins without a server or webapp component should fail to be activated.
  - Added account setting option to hide channel switcher button in the sidebar.
  - Close channel autocomplete after two consecutive tildes used for strikethrough formatting.
+ - Added hook ID to webhook requests in server logs.
+ - Added "edit_others_posts" as a permission setting for Team Edition.
+ - Updated the pinned post list when it's open and the channel is switched so that the pinned post list updates to show the other channel's pinned posts.
+ - Added mute/unmute option to channel dropdown menu.
  
 #### Bug Fixes
  - When "Enable sign-in with username" is set to false, logging in with LDAP account with MFA enabled results in "Error trying to authenticate MFA token" error.
