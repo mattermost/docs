@@ -90,23 +90,15 @@ Video, Audio, and Screen Sharing
 What support is available for video and audio calling and screen sharing?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In all editions, open source `one-on-one video and audio calling is currently available in beta <https://docs.mattermost.com/deployment/webrtc.html>`_ using the WebRTC standard.
+Today, the following open source options are available:
 
-After many conversations with users and customers we realized:
+1. `One-on-one video and audio calling in beta <https://docs.mattermost.com/deployment/webrtc.html>`_ using the WebRTC standard, installed by default on all Mattermost servers. Plan is to release a default plugin based on WebRTC which supports functionality beyond one-on-one calls.
+2. `Zoom plugin <https://docs.mattermost.com/integrations/zoom.html>`_ enables users to start and join voice, video and screensharing meetings using either Zoom’s self-hosted private cloud or on-prem solutions, or its vendor-hosted SaaS solution. The plugin is installed by default on all Mattermost servers.
+3. BigBlueButton plugin for one-on-one video and audio calling, video conferencing and screenshare, created by Blindside Networks, available in Beta. A test install is provided to try out the feature on a Mattermost install. For production use, you can self-host a server running BigBlueButton, or reach out to Blindside Networks about hosting it for you. More information can be found on their `GitHub repository <https://github.com/blindsidenetworks/mattermost-plugin-bigbluebutton>`_
 
-1. Most people using Mattermost need top quality video/audio/screen sharing solutions, which are predominantly proprietary.
-2. Integrating an organization's choice of video/audio/screen sharing solution is paramount.
+Support for other 3rd party video, audio and screensharing solutions via plugins is planned. A plugin for WebEx is currently in development by the Mattermost community, with updates posted in the `WebEx Plugin community channel <https://pre-release.mattermost.com/core/channels/webex-plugin>`_.
 
-Today, you can neatly link video/audio/screen sharing solutions, like Zoom and Skype for Business, to channels by using markdown formatting the header (Example: ``[Click for video call](https://link_to_solution)``).
-
-In future, we plan to add:
-
-- A plug-in option for user profiles to connect directly to a person using 3rd party video/audio/screen sharing products, including custom and phone-based solutions.
-- A plug-in option for linking channels and teams to on-demand video/audio/screen sharing solutions
-- A default, open source one-on-one video and audio calling plug-in based on WebRTC
-- A directory of 3rd party video/audio/screen sharing solutions that plug-in to Mattermost
-
-The timeline for these additions would not be before the second half of 2017.
+Note that you also neatly link video, audio and screensharing solutions, like Zoom and Skype for Business, to channels by using markdown formatting in the channel header. Example: ``[Click for video call](https://link_to_solution)``.
 
 Enterprise Edition
 ------------------
