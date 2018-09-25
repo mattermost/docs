@@ -26,3 +26,17 @@ Table below contains all the possible charts configurations that can be supplied
 | resources                    | resource requests, limits              |                                          |
 | env                          | Rails environment                      | production                               |
 | rbac.create                  | Create RBAC roles and bindings         | true                                     |
+
+## Disable functionality
+
+Some users may wish to explicitly disable the functionality provided by this sub-chart. To do this, we have provided the `enabled` flag as a boolean, defaulting to `true`.
+
+To disable the chart, pass `--set shared-secrets.enabled=false`, or pass the following in a YAML via the `-f` flag to `helm`
+
+```YAML
+shared-secrets:
+  enabled: false
+```
+
+> **NOTE:** If you disable this sub-chart, you **must** manually create all secrets, and provide all necessary secret content.
+See [installation/secrets](../../installation/secrets.md#manual-secret-creation-optional) for further details.
