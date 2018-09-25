@@ -1,6 +1,12 @@
 # Security Release Process
 
-If a security fix release is required, run through the following steps:
+If a security fix release is required, run through the below steps.
+
+## Release Timeline
+
+Notes:
+- All cut-off dates are based on 10am ([San Francisco Time](http://everytimezone.com/)) on the day stated.
+- T-minus counts are measured in "working days" (weekdays other than major holidays concurrent in US and Canada) prior to release day.
 
 ### A. (T-minus 4 working days) Code complete
 
