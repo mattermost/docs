@@ -26,9 +26,19 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added "edit_others_posts" as a permission setting for Team Edition.
  - Updated the pinned post list when it's open and the channel is switched so that the pinned post list updates to show the other channel's pinned posts.
  - Added mute/unmute option to channel dropdown menu.
+ - Added a button to copy the information from webhooks/slash commands such as url and token.
+ - Added interactive menus to message attachments.
+ - If a user begins typing and the cursor is not in an input box, automatically put the cursor into the center channel text input box.
+ - Added "Commented on..." text for files and message attachment type posts.
+ - Restore last viewed channel on logout.
+ - Added jumboemoji.
+ - Added a draft indicator in the channel sidebar and channel switcher for channels with unsent messages.
+ - Added a mute icon to mobile view.
+ - Added tooltips to post info overlay buttons.
  
 #### Bug Fixes
  - When "Enable sign-in with username" is set to false, logging in with LDAP account with MFA enabled results in "Error trying to authenticate MFA token" error.
+ - Fixed an issue where log-in page flashed briefly during process of verifying an updated email address.
 
 #### Config
  - Added "EnablePublicChannelsMaterialization": true.
