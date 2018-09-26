@@ -41,7 +41,7 @@ global:
 #### domain
 
 The base domain. GitLab and Registry will be exposed on the subdomain of this setting. This defaults to `example.local`,
-but is not used for hosts that have their `name` property configured. See the `gitlab.name` and `registry.name` sections below.
+but is not used for hosts that have their `name` property configured. See the `gitlab.name`, `minio.name`, and `registry.name` sections below.
 
 #### hostSuffix
 
