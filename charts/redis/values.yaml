@@ -1,6 +1,6 @@
 image:
   repository: redis
-  tag: '3.2.6'
+  tag: '3.2.12'
   pullPolicy: 'IfNotPresent'
   pullSecrets: []
 init:
