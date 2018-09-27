@@ -23,24 +23,24 @@ The GitLab global host settings are located under the `global.hosts` key.
 ```YAML
 global:
   hosts:
-    domain: example.local
+    domain: example.com
     hostSuffix: staging
     https: false
     externalIP:
     gitlab:
-      name: gitlab.example.local
+      name: gitlab.example.com
       https: false
     registry:
-      name: registry.example.local
+      name: registry.example.com
       https: false
     minio:
-      name: minio.example.local
+      name: minio.example.com
       https: false
 ```
 
 #### domain
 
-The base domain. GitLab and Registry will be exposed on the subdomain of this setting. This defaults to `example.local`,
+The base domain. GitLab and Registry will be exposed on the subdomain of this setting. This defaults to `example.com`,
 but is not used for hosts that have their `name` property configured. See the `gitlab.name`, `minio.name`, and `registry.name` sections below.
 
 #### hostSuffix
@@ -53,11 +53,11 @@ Defaults to being unset. If set the suffix is appended to the subdomain with a h
 ```yaml
 global:
   hosts:
-    domain: example.local
+    domain: example.com
     hostSuffix: staging
 ```
 
-The above config would result in using external hostnames like: `gitlab-staging.example.local` and `registry-staging.example.local`
+The above config would result in using external hostnames like: `gitlab-staging.example.com` and `registry-staging.example.com`
 
 #### https
 
@@ -201,7 +201,7 @@ The GitLab global PostgreSQL settings are located under the `global.psql` key.
 ```YAML
 global:
   psql:
-    host: db.example.local
+    host: db.example.com
     port: 5432
     password:
       secret: gitlab-postgres
@@ -218,7 +218,7 @@ The GitLab global Redis settings are located under the `global.redis` key.
 ```YAML
 global:
   redis:
-    host: redis.example.local
+    host: redis.example.com
     port: 6379
     password:
       secret: gitlab-redis
@@ -256,7 +256,7 @@ global:
         - default2
     external:
       - name: node1
-        hostname: node1.example.local
+        hostname: node1.example.com
         port: 8079
     authToken:
       secret: gitaly-secret

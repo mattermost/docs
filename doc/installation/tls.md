@@ -18,7 +18,7 @@ using various tools. This chart comes ready to integrate with a popular choice [
 helm repo update
 helm dep update
 helm install ...
-  --set certmanager-issuer.email=you@example.local
+  --set certmanager-issuer.email=you@example.com
 ```
 
 Installing certmanager is controlled by the `certmanager.install` setting, and using it in the charts is controlled by the
@@ -32,7 +32,7 @@ It is possible to make use of an external `cert-manager` but provide an Issuer a
 ```
 helm install ...
   --set certmanager.install=false \
-  --set certmanager-issuer.email=you@example.local \
+  --set certmanager-issuer.email=you@example.com \
   --set global.ingress.annotations."kubernetes\.io/tls-acme"=true
 ```
 

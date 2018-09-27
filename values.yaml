@@ -7,7 +7,7 @@ global:
     create: false
     links: []
   hosts:
-    domain: example.local
+    domain: example.com
     https: true
     externalIP:
     ssh: ~

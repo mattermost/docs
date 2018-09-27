@@ -66,7 +66,7 @@ In order to use the Community Edition, set `image.repository` to `registry.gitla
 
 ```YAML
 redis:
-  host: redis.example.local
+  host: redis.example.com
   serviceName: redis
   port: 6379
   password:
@@ -96,7 +96,7 @@ The `password` attribute for Redis has to sub keys:
 
 ```YAML
 psql:
-  host: psql.example.local
+  host: psql.example.com
   port: 5432
   database: gitlabhq_production
   username: gitlab

@@ -15,7 +15,7 @@ enabled: true
 global:
   # imagePullPolicy: IfNotPresent
   hosts:
-    domain: example.local
+    domain: example.com
     hostSuffix:
     https: true
     gitlab: {}

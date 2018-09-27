@@ -4,7 +4,7 @@
 global:
   edition: ee
   hosts:
-    domain: example.local
+    domain: example.com
     https: true
   enterpriseImages:
     # Default repositories used to pull Gitlab Enterprise Edition images.

@@ -26,13 +26,13 @@ global:
     tls: {}
       # secretName:
   hosts:
-    domain: example.local
+    domain: example.com
     hostSuffix:
     https: true
     tls: {}
       # secretName:
     minio: {}
-      #name: minio.example.local
+      #name: minio.example.com
       #https: false
   minio:
     enabled: true
