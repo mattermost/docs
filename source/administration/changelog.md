@@ -6,46 +6,96 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.4
 
+Release date: 2018-10-16
+
 ### Highlights
 
-### Improvements
- - Added a new Command Line Interface for removing all users from a channel.
- - Channel switcher performance improvements.
- - Updated incoming and outgoing webhook description to 500 characters.
+#### Basic Export Tool
  - Added a basic Data Export Command Line.
- - Extended bulk import to support themes across teams.
+
+### Improvements
+
+#### Web User Interface (UI)
  - With "Send messages on CTRL+ENTER = ON", channel and user autocomplete now work.
- - Autofocus cursor on edit box before modal fully loads.
- - Desktop notifications should follow teammate name display setting.
- - Moved hiding join/leave messages to Team Edition.
- - Restrict team membership based on email domains.
- - Plugins without a server or webapp component should fail to be activated.
+ - Cursor is now autofocused on edit box before the modal fully loads.
+ - Desktop notifications follow teammate name display setting.
  - Added account setting option to hide channel switcher button in the sidebar.
- - Close channel autocomplete after two consecutive tildes used for strikethrough formatting.
- - Added hook ID to webhook requests in server logs.
- - Added "edit_others_posts" as a permission setting for Team Edition.
- - Updated the pinned post list when it's open and the channel is switched so that the pinned post list updates to show the other channel's pinned posts.
+ - Channel autocomplete closes after two consecutive tildes used for strikethrough formatting.
  - Added mute/unmute option to channel dropdown menu.
- - Added a button to copy the information from webhooks/slash commands such as url and token.
+ - Added a button to copy the information from webhooks/slash commands such as the url and token.
  - Added interactive menus to message attachments.
- - If a user begins typing and the cursor is not in an input box, automatically put the cursor into the center channel text input box.
+ - If a user begins typing and the cursor is not in an input box, the cursor is automatically put into the center channel text input box.
  - Added "Commented on..." text for files and message attachment type posts.
- - Restore last viewed channel on logout.
- - Added jumboemoji.
+ - Added support for jumboemojis.
  - Added a draft indicator in the channel sidebar and channel switcher for channels with unsent messages.
  - Added a mute icon to mobile view.
  - Added tooltips to post info overlay buttons.
+ - Added a feature to send code block on CTRL + ENTER.
+ - Expanded post text box area when composing long posts.
+ - Added support for searching in direct message and group message channels using the "in:" modifier.
+ - Updated the pinned post list when it's open and the channel is switched so that the pinned post list updates to show the other channel's pinned posts.
+ - Restore last viewed channel on logout.
+ - Extended bulk import to support themes across teams.
+
+#### Command Line Interface (CLI)
+ - Added a new Command Line Interface for removing all users from a channel.
+ 
+#### Performance
+ - Improved channel switcher performance.
+ 
+#### Integrations
+ - Plugins without a server or webapp component now fail to be activated.
+ - Updated incoming and outgoing webhook description to 500 characters.
+ - Added hook ID to webhook requests in server logs.
+ 
+#### Administration
+ - Moved hiding join/leave messages to Team Edition.
+ - Added ``edit_others_posts`` as a permission setting for Team Edition.
+ 
+#### Compliance
+ - Added changes for E20 custom service terms.
+ - Team membership can be restricted based on email domains.
  
 #### Bug Fixes
- - When "Enable sign-in with username" is set to false, logging in with LDAP account with MFA enabled results in "Error trying to authenticate MFA token" error.
+ - Fixed an issue where logging in with LDAP account with MFA enabled resulted in "Error trying to authenticate MFA token" error when "Enable sign-in with username" was set to false.
  - Fixed an issue where log-in page flashed briefly during process of verifying an updated email address.
 
-#### Config
+### Compatibility
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Enterprise Edition:
  - Added "EnablePublicChannelsMaterialization": true.
  
-#### API
+### API Changes
+
+#### Plugin API Changes
  - Slash commands with GET crush query parameters on configured endpoint URL.
+ - Added a GetServerVersion() string methode to the plugin API.
+ - Added paging to elasticsearch API.
  
+#### Database Changes
+ - ``AlterColumnTypeIfExists`` column was added to the ``OutgoingWebhooks`` table.
+ - ``AlterColumnTypeIfExists`` column was added to the ``IncomingWebhooks`` table.
+ - ``CreateColumnIfNotExists`` column was added to the ``AcceptedServiceTermsId`` table.
+
+### Known Issues
+
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
+
+### Contributors
 
 
 ## Release v5.3
