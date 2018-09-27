@@ -1,4 +1,4 @@
-# External object stoarge
+# External object storage
 
 Gitlab relies on object storage for highly-available persistent data in Kubernetes.
 By default, an S3-compatible storage solution named `minio` is deployed with the
