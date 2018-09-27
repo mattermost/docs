@@ -24,17 +24,19 @@ Release date: 2018-10-16
  - Added mute/unmute option to channel dropdown menu.
  - Added a button to copy the information from webhooks/slash commands such as the url and token.
  - Added interactive menus to message attachments.
+ - Added support for consecutive messages in the right-hand side.
  - If a user begins typing and the cursor is not in an input box, the cursor is automatically put into the center channel text input box.
  - Added "Commented on..." text for files and message attachment type posts.
  - Added support for jumboemojis.
  - Added a draft indicator in the channel sidebar and channel switcher for channels with unsent messages.
  - Added a mute icon to mobile view.
  - Added tooltips to post info overlay buttons.
- - Added a feature to send code block on CTRL + ENTER.
+ - Added a feature to post a code block on CTRL + ENTER.
  - Expanded post text box area when composing long posts.
  - Added support for searching in direct message and group message channels using the "in:" modifier.
  - Updated the pinned post list when it's open and the channel is switched so that the pinned post list updates to show the other channel's pinned posts.
  - Restore last viewed channel on logout.
+ - Redirect user to the archived channel view (rather than to Town Square) when a channel is archived.
  - Extended bulk import to support themes across teams.
 
 #### Command Line Interface (CLI)
@@ -47,6 +49,9 @@ Release date: 2018-10-16
  - Plugins without a server or webapp component now fail to be activated.
  - Updated incoming and outgoing webhook description to 500 characters.
  - Added hook ID to webhook requests in server logs.
+ 
+#### Notifications
+- Added support for notifying users when desktop/browser sessions expire.
  
 #### Administration
  - Moved hiding join/leave messages to Team Edition.
