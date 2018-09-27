@@ -219,6 +219,7 @@ postgresql:
 #   enabled: false
 
 shared-secrets:
+  enabled: true
   rbac:
     create: true
 

@@ -1,3 +1,10 @@
+{{/* If shared-secrets is disable, manual secret creation will be needed */}}
+{{- if not (index .Values "shared-secrets").enabled }}
+The automatic generation of secrets has been disabled by `shared-secrets.enabled: false`.
+The user should ensure all necessary secrets are created according to documentation, or
+the deployment will fail to operate correctly.
+
+{{- end }}
 {{/* If using self-signed auto-generated certificates, and a service needing them is enabled */}}
 {{- if or .Values.gitlab.unicorn.enabled (or .Values.registry.enabled .Values.global.minio.enabled) -}}
 {{- if not (or .Values.global.ingress.configureCertmanager (include "gitlab.ingress.tls.configured" .)) -}}

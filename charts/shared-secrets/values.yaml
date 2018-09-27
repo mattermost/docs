@@ -14,6 +14,7 @@ selfsign:
 resources: {}
 env: production
 global: {}
+enabled: false
 rbac:
   create: true
 resources:
