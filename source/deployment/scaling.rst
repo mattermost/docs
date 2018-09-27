@@ -9,9 +9,7 @@ Server requirements vary based on usage and it is highly recommended that pilots
 Single Machine Deployment 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Organizations with less than 2,000 users can typically run on a single server.
-
-However, depending on usage and server configuration, running a single server with more than 2,000 users may not cause performance issues.
+Organizations can typically run Mattermost on a single server with up to 2,000 users, though higher numbers have been observed based on different usage and server configurations.
 
 - See `install guides for step-by-step configuration instructions for single machine setup <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_.
 - See `hardware and software requirements for hardware sizing <https://docs.mattermost.com/install/requirements.html>`_.
