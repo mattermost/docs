@@ -35,7 +35,9 @@ Release date: 2018-10-16
  - Expanded post text box area when composing long posts.
  - Added support for searching in direct message and group message channels using the "in:" modifier.
  - Updated the pinned post list when it's open and the channel is switched so that the pinned post list updates to show the other channel's pinned posts.
+ - Added support for notifying users when desktop/browser sessions expire.
  - Restore last viewed channel on logout.
+ - Download of common file types is not forced when viewing a public link.
  - Redirect user to the archived channel view (rather than to Town Square) when a channel is archived.
  - Extended bulk import to support themes across teams.
 
@@ -49,9 +51,6 @@ Release date: 2018-10-16
  - Plugins without a server or webapp component now fail to be activated.
  - Updated incoming and outgoing webhook description to 500 characters.
  - Added hook ID to webhook requests in server logs.
- 
-#### Notifications
-- Added support for notifying users when desktop/browser sessions expire.
  
 #### Administration
  - Moved hiding join/leave messages to Team Edition.
