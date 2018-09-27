@@ -56,7 +56,7 @@ Release date: 2018-10-16
  - Added changes for E20 custom service terms.
  - Team membership can be restricted based on email domains.
  
-#### Bug Fixes
+### Bug Fixes
  - Fixed an issue where logging in with LDAP account with MFA enabled resulted in "Error trying to authenticate MFA token" error when "Enable sign-in with username" was set to false.
  - Fixed an issue where log-in page flashed briefly during process of verifying an updated email address.
 
