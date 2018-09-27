@@ -104,7 +104,7 @@ Troubleshooting
 --------------------------------------------------
 
 "Installation has failed" dialog
-    The app data might be corrupted - remove all the files in `C:\Users...\AppData\Local\mattermost`, then try re-installing the app.
+    The app data might be corrupted - remove all the files in ``C:\Users...\AppData\Local\mattermost``, then try re-installing the app.
 
 Desktop App window is black and doesn't load the page
     1. First, make sure you have installed the latest Desktop App version `from our website <https://about.mattermost.com/download/#mattermostApps>`_. Check your app version from **Help > Version**.
