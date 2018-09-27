@@ -94,23 +94,19 @@ In MySQL 8.0.4, the deafult authentication plugin was changed from ``mysql_nativ
 Hardware Requirements
 ---------------------
 
-Usage of CPU, RAM and storage space can vary significantly based on user behavior. For deployments larger than 500 users, it's highly recommended usage patterns in a small pilot deployment representative of your large organization are observed before rolling out the full scale service.
+Usage of CPU, RAM and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
+
+Moreover, memory requirements can be driven by peak file sharing activity. Recommendation is based on default 50 MB maximum file size, which can be `adjusted from the System Console <https://docs.mattermost.com/administration/config-settings.html#maximum-file-size>`_. Changing this number may change memory requirements.
+
+For deployments larger than 2,000 users, it is recommended to use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`_.
 
 Hardware Sizing for Team Deployments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Most small to medium Mattermost team deployments can be supported on a single server with the following specifications based on registered users:
 
--  1 - 1,000 users - 1 vCPU/cores, 2 GB RAM, and 45-90 GB storage
--  1,000 - 2,000 users - 2 vCPUs/cores, 4 GB RAM, and 90-180 GB storage
-
-For larger deployments, hardware requirements vary based on usage. You can use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`_.
-
-.. note::
-
-  1. Memory requirements are largely driven by peak file sharing activity. Recommendation is based on default 50 MB max file size, which can be adjusted from the System Console. Changing this number may change memory requirements. 
-  2. Storage recommendation is based on storing 3 years of archives with moderate file sharing.
-  3. Solid state drives (SSD) can be used in place of disk storage for higher concurrency.
+ -  1 - 1,000 users - 1 vCPU/cores, 2 GB RAM
+ -  1,000 - 2,000 users - 2 vCPUs/cores, 4 GB RAM
 
 .. _hardware-sizing-for-enterprise:
 
@@ -122,10 +118,6 @@ For Enterprise Edition deployments with multi-server set up, see `our scaling gu
 It is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs. You can use the Mattermost open source load testing framework to simulate usage of your system: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`_.
 
 Mattermost's `performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`_ tools can be used for detailed performance measurements and inspect the running system to ensure sizing and installation is correct. 
-
-.. note::
-
-  Regular hard drives (HDD) can be used in place of solid-state hard drives (SSD) if having top performance is not a priority. If using a mix of HDD and SSD drives, the greatest performance gain comes from using SSD in the database server.
 
 Alternate Storage Calculations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
