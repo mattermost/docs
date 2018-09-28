@@ -94,67 +94,30 @@ In MySQL 8.0.4, the deafult authentication plugin was changed from ``mysql_nativ
 Hardware Requirements
 ---------------------
 
-Usage of CPU, RAM and storage space can vary significantly based on user behavior. For deployments larger than 500 users, it's highly recommended usage patterns in a small pilot deployment representative of your large organization are observed before rolling out the full scale service.
+Usage of CPU, RAM and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
+
+Moreover, memory requirements can be driven by peak file sharing activity. Recommendation is based on default 50 MB maximum file size, which can be `adjusted from the System Console <https://docs.mattermost.com/administration/config-settings.html#maximum-file-size>`_. Changing this number may change memory requirements.
+
+For deployments larger than 2,000 users, it is recommended to use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`_.
 
 Hardware Sizing for Team Deployments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Most small to medium Mattermost team deployments can be supported on a single server with the following specifications based on registered users:
 
--  250-500 users - 2 vCPUs/cores, 4 GB RAM, and 45-90 GB storage
--  500-1,000 users - 4 vCPUs/cores, 8 GB RAM, and 90-180 GB storage
--  1,000-2,000 users - 4-8 vCPUs/cores, 16-32 GB RAM, and 180-360 GB storage
-
-Notes:
-
-1. Memory requirements are largely driven by peak file sharing activity. Recommendation is based on default 50 MB max file size, which can be adjusted from the System Console. Changing this number may change memory requirements. 
-2. Larger deployments should estimate utilization based on pilots representative of full scale usage. 
-3. Storage recommendation is based on storing 3 years of archives with moderate file sharing.
-4. Solid state drives (SSD) can be used in place of disk storage for higher concurrency.
+ -  1 - 1,000 users - 1 vCPU/cores, 2 GB RAM
+ -  1,000 - 2,000 users - 2 vCPUs/cores, 4 GB RAM
 
 .. _hardware-sizing-for-enterprise:
-
-Mattermost Load Test Framework
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-For Mattermost Enterprise Edition deployments, an open source load testing framework is available to simulate usage: https://github.com/mattermost/mattermost-load-test
-
-The system can be used to place a deployment under estimated user activity load and to log in and inspect the running system to ensure sizing and installation is correct. 
-
-Mattermost's `performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`_ tools can be used to look into detailed behavior. 
 
 Hardware Sizing for Enterprise Deployments (Multi-Server)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost can also be configured with a redundant, highly available, highly scalable mode to support large organizations. The following is an example that can be scaled up or down in size:
+For Enterprise Edition deployments with a multi-server setup, see `our scaling guide <https://docs.mattermost.com/deployment/scaling.html>`_.
 
-For enterprise deployments of 10,000-20,000 registered users with moderate usage and a peak of 2,000-4,000 concurrent users, the following hardware deployment configurations are recommended:
+It is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs. You can use the Mattermost open source load testing framework to simulate usage of your system: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`_.
 
-**Proxy Server** 
-
-- One server with 4-8 vCPUs/cores, 16-32 GB RAM.
-- Minimum 4 GB SSD (solid state drive) storage for the binary and related files.
-- (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality. Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline.
-
-**Mattermost Server** (1 to 2 depending on level of redundancy and high availability required) 
-
-- One server with 4-8 vCPUs/cores, 16-32 GB RAM.
-- Minimum 4 GB SSD (solid state drive) storage for the binary and related files.
-- (Optional) Add one additional identical server for high availability mode, where one Mattermost server can be disabled or upgraded without interrupting service quality. Second server should be sized to carry the full load of the first server so performance does not degrade when the first server is taken offline. Note: The high availability option is available only by `contacting the Enterprise Edition team <https://about.mattermost.com/contact/>`_.
-
-**Network Attached Storage** 
-
-- One NAS server with 4-8 TB of storage (based on moderate storage of 10 MB per user per month times 20,000 users times 3 years of history, times 2x safety factor) or sized appropriately for your desired usage requirements. For high availability it is recommended you select a NAS server offering redundancy.
-
-**Database Server** (2 recommended for redundancy) 
-
-- One database server with 8-16 vCPUs/cores, 16-32 GB memory.
-- Minimum 100 GB SSD (solid state drive) storage for the binary and related files.
-- (Recommended) Add one identical database server to setup a Master-Slave configuration where the master can failover to slave with minimal disruption to service.
-
-**Notes:**
-
-- Regular hard drives can be used in place of solid-state hard drives if having top performance is not a priority. If using a mix of HDD and SSD drives, the greatest performance gain would come from using SSD in the database server.
+Mattermost's `performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`_ tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct. 
 
 Alternate Storage Calculations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
