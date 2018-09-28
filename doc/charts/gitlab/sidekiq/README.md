@@ -41,6 +41,7 @@ Table below contains all the possible charts configurations that can be supplied
 | timeout                   | Sidekiq job timeout                            | 5                                                |
 | resources.requests.cpu    | Sidekiq minimum needed cpu                     | 100m                                             |
 | resources.requests.memory | Sidekiq minimum needed memory                  | 600M                                             |
+| annotations               | Pod annotations                                |                                                  |
 
 ## Chart configuration examples
 ### image.pullSecrets

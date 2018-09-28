@@ -43,6 +43,7 @@ Table below contains all the possible charts configurations that can be supplied
 | persistence.storageClass     | storageClassName for provisioning      |                                          |
 | persistence.matchLabels      | Label-value matches to bind            |                                          |
 | persistence.matchExpressions | Label-expression matches to bind       |                                          |
+| annotations                  | Pod annotations                        |                                          |
 
 ## Chart configuration examples
 ### image.pullSecrets

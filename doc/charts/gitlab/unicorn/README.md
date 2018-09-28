@@ -67,6 +67,8 @@ Table below contains all the possible charts configurations that can be supplied
 | trusted_proxies                  | See [GitLab documentation][proxies] for details | []                                              |
 | gitlab.unicorn.workhorse.image   | Workhorse image repository                     | registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ee |
 | gitlab.unicorn.workhorse.tag     | Workhorse image tag                            |                                                  |
+| annotations                      | Pod annotations                                |                                                  |
+
 ## Chart configuration examples
 ### image.pullSecrets
 `pullSecrets` allow you to authenticate to a private registry to pull images for a pod.

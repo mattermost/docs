@@ -34,6 +34,7 @@ The `gitlab-shell` sub-chart provides a SSH server configured for Git SSH access
 | enabled               | Shell enable flag                     | true                                           |
 | unicorn.serviceName   | Unicorn service name                  | unicorn                                        |
 | redis.serviceName     | Redis service name                    | redis                                          |
+| annotations           | Pod annotations                       |                                                |
 
 ## Chart configuration examples
 ### image.pullSecrets

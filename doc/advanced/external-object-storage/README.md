@@ -14,6 +14,8 @@ To disable minio, set this option and then follow the related documentation belo
 You can see an [example of the full configuration](https://gitlab.com/charts/gitlab/blob/master/examples/values-external-objectstroage.yaml)
 in the [examples documentation](https://gitlab.com/charts/gitlab/tree/master/examples).
 
+This documentation specifies usage of access and secret keys for AWS. It is also possible to use [IAM roles](./aws-iam-roles.md).
+
 ## Docker Registry images
 
 Configuration of object storage for the `registry` chart is done via the `registry.storage` key, and the `global.registry.bucket` key.

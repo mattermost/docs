@@ -26,6 +26,7 @@ We will describe all the major sections of the configuration below. When configu
 registry:
   enabled:
   image:
+  annotations:
   service:
   httpSecret:
   authEndpoint:
@@ -65,6 +66,7 @@ Table below contains all the possible charts configurations that can be supplied
 | certificate.secret       | JWT certificate                         | gitlab-registry      |
 | replicas                 | Number of replicas                      | 1                    |
 | minio.bucket             | Legacy registry bucket name             | Undefined by default |
+| annotations              | Pod annotations                         |                      |
 
 ## Chart configuration examples
 ### pullSecrets
