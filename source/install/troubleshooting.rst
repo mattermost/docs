@@ -73,13 +73,13 @@ If email sign-in was turned off before the System Administrator switched sign-in
 User statues get stuck on away or offline status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you notice more than user being stuck at an Away or Offline status, try one of the following steps:
+If you notice more than one user being stuck at an Away or Offline status, try one of the following steps:
 
-1. If you are using an NGINX proxy, configure IP Hash loadbalancing to determine what server should be selected for the next request (based on the client’s IP address) `as described here <http://nginx.org/en/docs/http/load_balancing.html>`_.
+1. If you are using an NGINX proxy, configure IP Hash load balancing to determine what server should be selected for the next request (based on the client’s IP address) `as described here <http://nginx.org/en/docs/http/load_balancing.html>`_.
 
 2. If you are using an AWS Application Load Balancer (ALB), enable Sticky Sessions feature in Amazon EC2’s Elastic Load Balancing `as described here <https://aws.amazon.com/blogs/aws/new-elastic-load-balancing-feature-sticky-sessions/>`_.
 
-If neither of the above steps help resolve the issue, please open a new topic `in the Mattermost forums <https://forum.mattermost.org/>`_.
+If neither of the above steps help resolve the issue, please open a new topic `in the Mattermost forums <https://forum.mattermost.org/>`_ for further troubleshooting.
 
 System Console settings revert to previous values after saving
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
