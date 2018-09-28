@@ -113,11 +113,11 @@ Most small to medium Mattermost team deployments can be supported on a single se
 Hardware Sizing for Enterprise Deployments (Multi-Server)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-For Enterprise Edition deployments with multi-server set up, see `our scaling guide <https://docs.mattermost.com/deployment/scaling.html>`_.
+For Enterprise Edition deployments with a multi-server setup, see `our scaling guide <https://docs.mattermost.com/deployment/scaling.html>`_.
 
 It is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs. You can use the Mattermost open source load testing framework to simulate usage of your system: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`_.
 
-Mattermost's `performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`_ tools can be used for detailed performance measurements and inspect the running system to ensure sizing and installation is correct. 
+Mattermost's `performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`_ tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct. 
 
 Alternate Storage Calculations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
