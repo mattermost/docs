@@ -11,7 +11,7 @@ Release date: 2018-10-16
 ### Highlights
 
 #### Basic Export Tool
- - Added a basic Data Export Command Line.
+ - Created a basic exporter tool to extract objects from Mattermost for allowing to merge two servers.
 
 ### Improvements
 
@@ -52,7 +52,7 @@ Release date: 2018-10-16
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Enterprise Edition:
- - Added "EnablePublicChannelsMaterialization": true.
+ - Added ``"EnablePublicChannelsMaterialization": true.``
  
 ### API Changes
 
