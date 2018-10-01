@@ -109,6 +109,7 @@ mattermost
     -  `mattermost export`_ - Compliance export commands
     -  `mattermost help`_ - Generate full documentation for the CLI
     -  `mattermost import`_ - Import data
+    -  `mattermost jobserver`_ - Start the Mattermost job server
     -  `mattermost ldap`_ - AD/LDAP related utilities
     -  `mattermost license`_ - Licensing commands
     -  `mattermost permissions`_ - Management of the permissions system
@@ -511,6 +512,22 @@ mattermost import slack
     .. code-block:: none
 
       sudo ./mattermost import slack myteam slack_export.zip
+
+mattermost jobserver
+--------------------
+
+  Description
+    Start the Mattermost job server.
+    
+  Format
+    .. code-block:: none
+
+      mattermost jobserver
+      
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost jobserver
 
 mattermost ldap
 ----------------
