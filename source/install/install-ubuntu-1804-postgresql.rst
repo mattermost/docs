@@ -5,7 +5,7 @@ Installing PostgreSQL Database Server
 
 Install and set up the database for use by the Mattermost server. You can install either PostgreSQL or MySQL.
 
-Assume that the IP address of this server is 10.10.10.1
+Assume that the IP address of this server is 10.10.10.1.
 
 **To install PostgreSQL on Ubuntu Server 18.04:**
 
@@ -56,7 +56,7 @@ Assume that the IP address of this server is 10.10.10.1
 
     ``listen_addresses = '*'``
 
-  d. Restart PostgreSQL for the change to take effect:
+  c. Restart PostgreSQL for the change to take effect:
 
     ``sudo systemctl restart postgresql``
 
