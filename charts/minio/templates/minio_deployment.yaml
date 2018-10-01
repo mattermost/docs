@@ -27,8 +27,8 @@ spec:
         component: app
     spec:
       securityContext:
-        runAsUser: 1000
-        fsGroup: 1000
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
 {{- if .Values.nodeSelector }}
       nodeSelector:
 {{ toYaml .Values.nodeSelector | indent 8 }}
