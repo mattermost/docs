@@ -18,19 +18,40 @@ Release date: 2018-10-16
 #### Web User Interface (UI)
  - Added a draft indicator in the channel sidebar and channel switcher for channels with unsent messages.
  - Added support for jumboemojis.
- - If a user begins typing and the cursor is not in an input box, the cursor is automatically put into the center channel text input box.
  - Added support for searching in direct message and group message channels using the "in:" modifier.
  - Last viewed channel on logout is restored on next session.
+ - Added support for consecutive messages in the right-hand side.
+ - Added tooltips to post info overlay buttons.
+ - Added a feature to post a code block on CTRL + ENTER.
+ - Expanded post text box area when composing long posts.
+ - Updated the pinned post list when it's open and the channel is switched so that the pinned post list updates to show the other channel's pinned posts.
+ - Download of common file types is not forced when viewing a public link.
 
 #### Command Line Interface (CLI)
  - Added a new Command Line Interface for removing all users from a channel.
  
+#### Performance	
+ - Improved channel switcher performance.
+ 
 #### Integrations
  - Added interactive menus to message attachments.
+ - Added a button to copy the information from webhooks/slash commands such as the url and token.
+ - Added "Commented on..." text for files and message attachment type posts.
+ - Updated incoming and outgoing webhook description to 500 characters.
+ - Added hook ID to webhook requests in server logs.
+ - Plugins without a server or webapp component now fail to be activated.
  
 #### Notifications
  - Desktop notifications now follow teammate name display setting.
  - Added a mute/unmute option to channel dropdown menu.
+ - Added a mute icon to mobile view.
+ - Added support for notifying users when desktop/browser sessions expire.
+ 
+#### Autocomplete and Focus
+ - With "Send messages on CTRL+ENTER = ON", channel and user autocomplete now work.
+ - Cursor is now autofocused on edit box before the modal fully loads.
+ - Channel autocomplete closes after two consecutive tildes used for strikethrough formatting.
+ - If a user begins typing and the cursor is not in an input box, the cursor is automatically put into the center channel text input box.
  
 #### Administration
  - Moved hiding join/leave messages to Team Edition.
