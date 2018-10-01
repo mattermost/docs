@@ -16,45 +16,26 @@ Release date: 2018-10-16
 ### Improvements
 
 #### Web User Interface (UI)
- - With "Send messages on CTRL+ENTER = ON", channel and user autocomplete now work.
- - Cursor is now autofocused on edit box before the modal fully loads.
- - Desktop notifications follow teammate name display setting.
- - Added account setting option to hide channel switcher button in the sidebar.
- - Channel autocomplete closes after two consecutive tildes used for strikethrough formatting.
- - Added mute/unmute option to channel dropdown menu.
- - Added a button to copy the information from webhooks/slash commands such as the url and token.
- - Added interactive menus to message attachments.
- - Added support for consecutive messages in the right-hand side.
- - If a user begins typing and the cursor is not in an input box, the cursor is automatically put into the center channel text input box.
- - Added "Commented on..." text for files and message attachment type posts.
- - Added support for jumboemojis.
  - Added a draft indicator in the channel sidebar and channel switcher for channels with unsent messages.
- - Added a mute icon to mobile view.
- - Added tooltips to post info overlay buttons.
- - Added a feature to post a code block on CTRL + ENTER.
- - Expanded post text box area when composing long posts.
+ - Added support for jumboemojis.
+ - If a user begins typing and the cursor is not in an input box, the cursor is automatically put into the center channel text input box.
  - Added support for searching in direct message and group message channels using the "in:" modifier.
- - Updated the pinned post list when it's open and the channel is switched so that the pinned post list updates to show the other channel's pinned posts.
- - Added support for notifying users when desktop/browser sessions expire.
- - Restore last viewed channel on logout.
- - Download of common file types is not forced when viewing a public link.
- - Redirect user to the archived channel view (rather than to Town Square) when a channel is archived.
- - Extended bulk import to support themes across teams.
+ - Last viewed channel on logout is restored on next session.
 
 #### Command Line Interface (CLI)
  - Added a new Command Line Interface for removing all users from a channel.
  
-#### Performance
- - Improved channel switcher performance.
- 
 #### Integrations
- - Plugins without a server or webapp component now fail to be activated.
- - Updated incoming and outgoing webhook description to 500 characters.
- - Added hook ID to webhook requests in server logs.
+ - Added interactive menus to message attachments.
+ 
+#### Notifications
+ - Desktop notifications now follow teammate name display setting.
+ - Added a mute/unmute option to channel dropdown menu.
  
 #### Administration
  - Moved hiding join/leave messages to Team Edition.
  - Added ``edit_others_posts`` as a permission setting for Team Edition.
+ - Added account setting option to hide channel switcher button in the sidebar.
  
 #### Compliance
  - Added changes for E20 custom service terms.
@@ -101,6 +82,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Contributors
 
+[aeomin](https://github.com/aeomin), [amyblais](https://github.com/amyblais), [asaadmahmood](https://github.com/asaadmahmood), [ArchRoller](https://github.com/archroller), [avasconcelos114](https://github.com/avasconcelos114), [balcsida](https://github.com/balcsida), [bezumkin](https://github.com/bezumkin), [ccpaging](https://github.com/ccpaging), [chetanyakan](https://github.com/chetanyakan), [chikei](https://github.com/chikei), [cimfalab](https://github.com/cimfalab), [cjbirk](https://github.com/cjbirk), [cometkim](https://github.com/cometkim), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [cvitter](https://github.com/cvitter), [danmaas](https://github.com/danmaas), [der-test](https://github.com/der-test), [DHaussermann](https://github.com/DHaussermann), [dmitrysamuylovpharo](https://github.com/dmitrysamuylovpharo), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [FurmanovD](https://github.com/FurmanovD), [gramakri](https://github.com/gramakri), [greensteve](https://github.com/greensteve), [grundleborg](https://github.com/grundleborg), [gvengel](https://github.com/gvengel), [hanzei](https://github.com/hanzei), [harshilsharma](https://github.com/harshilsharma), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [jazzzz](https://github.com/jazzzz), [jespino](https://github.com/jespino), [jkurian](https://github.com/jkurian), [JustinReynolds-MM](https://github.com/JustinReynolds-MM), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [kongr45gpen](https://github.com/kongr45gpen), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [meilon](https://github.com/meilon), [mikroskeem](https://github.com/mikroskeem), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [n1aba](https://github.com/n1aba), [n7st](https://github.com/n7st), [pichouk](https://github.com/pichouk), [pjgrizel](https://github.com/pjgrizel), [pkuhner](https://github.com/pkuhner), [robert843](https://github.com/robert843), [rodcorsi](https://github.com/rodcorsi), [ryoon](https://github.com/ryoon), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [sudheerDev](https://github.com/sudheerDev), [tejasbubane](https://github.com/tejasbubane), [thawn](https://github.com/thawn), [thePanz](https://github.com/thepanz), [ThiefMaster](https://github.com/ThiefMaster), [uhlhosting](https://github.com/uhlhosting), [wget](https://github.com/wget), [xcompass](https://github.com/xcompass), [yuya-oc](https://github.com/yuya-oc), [zetaab](https://github.com/zetaab) 
 
 ## Release v5.3
 
