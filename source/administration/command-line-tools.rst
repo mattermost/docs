@@ -73,6 +73,11 @@ On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so y
   .. code-block:: bash
 
     docker exec -it <your-mattermost-container-name> mattermost version
+    
+Using the CLI on Docker Preview
+-------------------------------
+
+The preceding documentation and command reference below also applies to the Mattermost docker preview image.
 
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
