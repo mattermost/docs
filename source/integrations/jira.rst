@@ -1,9 +1,16 @@
 .. _jira:
 
-JIRA Webhook Plugin 
+JIRA Plugin 
 ================================
 
 Set up a JIRA integration for your Mattermost instance within minutes using a pre-packaged JIRA webhook plugin.
+
+**Usage**
+
+Once enabled, JIRA posts notifications to a Mattermost channel when an issue is created, updated or deleted.
+
+.. image:: ../../source/images/jira_sample.png
+  :width: 300 px
 
 This plugin allows you to connect your JIRA projects with multiple channels across your teams. The following JIRA events are supported:
 
