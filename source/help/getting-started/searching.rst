@@ -37,7 +37,7 @@ Use ``before:`` to find posts before a specified date and ``after:`` to find pos
 -  Searching ``website on: 2018-09-01`` will return messages that contain the keyword ``website`` that were posted on September 1, 2018.
 
 .. image:: ../../images/calendar2.png
-
+  :width: 300 px
 
 Quotation Marks
 ^^^^^^^^^^^^^^^^^
