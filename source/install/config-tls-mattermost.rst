@@ -1,10 +1,10 @@
 Configuring TLS on Mattermost Server
 ====================================
 
-You have two options if you want users to connect with HTTPS: 
+You have two options if you want users to connect with HTTPS:
 
-  1. Set up TLS on Mattermost Server. 
-  2. Install a proxy such as NGINX and set up TLS on the proxy. 
+  1. Set up TLS on Mattermost Server.
+  2. Install a proxy such as NGINX and set up TLS on the proxy.
 
 The easiest option is to set up TLS on the Mattermost Server, but if you expect to have more than 200 users, use a proxy for better performance. A proxy server also provides standard HTTP request logs.
 
@@ -29,7 +29,7 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
 
     a. Change the **Use Let's Encrypt** setting to ``true``.
     b. Restart the Mattermost server for these changes to take effect.
-    
+
 .. note::
    If Let's Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let's Encrypt certification.
 

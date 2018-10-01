@@ -49,6 +49,6 @@ Create the System Admin user and set up Mattermost for general use.
 
   ``sudo restart mattermost``
 
-  On Ubuntu 16.04, Debian Jessie, and RHEL 7.1:
+  On Ubuntu 16.04, 18.04, Debian Jessie, and RHEL 7.1:
 
   ``sudo systemctl restart mattermost``
