@@ -3059,7 +3059,7 @@ This setting allows system administrators to limit the addresses that user-creat
 
 If a user needs to develop an integration locally on their development workstation, use this setting to specify the domain, IP address, or CIDR notation for those machines. This will allow users to host the app they're developing on their workstation. **Not recommended for use in production**, since this can allow a user to extract confidential data from your server or internal network.
 
-By default, user-supplied URLs such as those used for Open Graph metadata, webhooks, or slash commands will not be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. Push notification, OAuth 2.0, WebRTC, and other administrator-provided URLs are trusted and not affected by this setting.
+By default, user-supplied URLs such as those used for Open Graph metadata, webhooks, or slash commands will not be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. Push notification, OAuth 2.0, WebRTC, and other URLs entered via the System Console are trusted and not affected by this setting.
 
 Separate two or more domains with spaces instead of commas, for example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``
 
