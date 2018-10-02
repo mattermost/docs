@@ -45,16 +45,12 @@ By default, GitLab will an deploy an ingress which will create an associated Ela
 
 We recommend [using your own certificates](../installation/tls.md#option-2-use-your-own-wildcard-certificate), and then mapping your desired DNS name to the created ELB using a CNAME record.
 
-Also consider that [Amazon's Elastic Load Balancers](https://docs.aws.amazon.com/eks/latest/userguide/load-balancing.html) require adding the special annotation below:
-
-```yaml
-nginx-ingress:
-  controller:
-    service:
-      annotations:
-        service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
-        service.beta.kubernetes.io/aws-load-balancer-backend-protocol: tcp
-```
+> **NOTE:**
+>
+> For environments where internal loadbalancers are required,
+> [Amazon's Elastic Load Balancers](https://docs.aws.amazon.com/eks/latest/userguide/load-balancing.html)
+> require [special annotations](../../examples/eks_loadbalancer_annotations.yml).
+> 
 
 # Next Steps
 
