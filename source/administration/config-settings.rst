@@ -3342,6 +3342,19 @@ Enable API Team Deletion
 SQL Settings
 ~~~~~~~~~~~~
 
+Enable Public Channels Materialization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. note::
+  This setting serves a fast way for System Admins to disable public channels materialization if it causes unexpected performance degradation. It will be removed in Mattermost v5.6, releasing on December 16, 2018.
+
+**True**: Use materialization for public channels to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI. This materialized table is leveraged in various queries to avoid scanning through the inflated ``Channels`` table for public channels, when most of these are just direct messages in a large deployment. With the reduced table size (and correspondingly reduced index size) in the materialized table, the database has more options at its disposal.
+
+**False**: Disables materialization for public channels.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnablePublicChannelsMaterialization": true`` with options ``true`` and ``false``.                    |
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Read Replicas (Enterprise Edition)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting. A server restart is required for changes to this setting to take effect.
