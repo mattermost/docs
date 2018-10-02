@@ -3055,11 +3055,13 @@ Enable Developer Mode
 
 Allow untrusted internal connections to
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In testing environments, such as when developing integrations locally on a development machine, use this setting to specify domains, IP addresses, or CIDR notations to allow internal connections. **Not recommended for use in production**, since this can allow a user to extract confidential data from your server or internal network.
+This setting allows system administrators to limit the addresses that user-created webhooks and slash commands have access to. This will prevent them from potentially gaining access to network resources via Mattermost that they do not have access to themselves.
 
-By default, user-supplied URLs such as those used for Open Graph metadata, webhooks, or slash commands will not be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. Push notification, OAuth 2.0 and WebRTC server URLs are trusted and not affected by this setting.
+If a user needs to develop an integration locally on their development workstation, use this setting to specify the domain, IP address or CIDR notation for those machines. This will allow users to host the app they're developing on their workstation. **Not recommended for use in production**, since this can allow a user to extract confidential data from your server or internal network.
 
-Separate two or more domains with spaces instead of commas, for example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``
+By default, user-supplied URLs such as those used for Open Graph metadata, webhooks or slash commands will not be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. Push notification, OAuth 2.0, WebRTC and other URLs entered via the System Console are trusted and not affected by this setting.
+
+Separate two or more domains with spaces instead of commas, for example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``.
 
 IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution. For example, if the domain "webhooks.internal.example.com" resolves to the IP address 10.0.16.20, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
 
