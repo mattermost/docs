@@ -1,6 +1,6 @@
 # Storage Guide
 
-Some of the applications run within the GitLab chart require persistent storage to maintain state. This includes:
+The following applications within the GitLab chart require persistent storage to maintain state.
 
  - [gitaly](../charts/gitlab/gitaly) (persists the git repositories)
  - [postgres](https://github.com/kubernetes/charts/tree/master/stable/postgresql) (persists the gitlab database data)
