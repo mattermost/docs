@@ -35,6 +35,7 @@ Release date: 2018-10-16
  
 #### Integrations
  - Added interactive menus to message attachments.
+ - Added a autotranslation plugin.
  - Added a button to copy the information from webhooks/slash commands such as the url and token.
  - Added "Commented on..." text for files and message attachment type posts.
  - Updated incoming and outgoing webhook description to 500 characters.
@@ -65,6 +66,7 @@ Release date: 2018-10-16
 ### Bug Fixes
  - Fixed an issue where logging in with LDAP account with MFA enabled resulted in "Error trying to authenticate MFA token" error when "Enable sign-in with username" was set to false.
  - Fixed an issue where log-in page flashed briefly during process of verifying an updated email address.
+ - Fixed an issue where ""GET /api/v4/redirect_location" responses got stuck when “EnableLinkPreviews” was set to "false”.
 
 ### Compatibility
 
