@@ -7,7 +7,7 @@ Some of the applications run within the GitLab chart require persistent storage 
  - [redis](../charts/redis) (persists gitlab job data)
  - [minio](../charts/minio) (persists the object storage data)
 
-By default these applications will create a [Persistent Volume Claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) for the storage they need, and use the cluster's [dynamic volume provisioning](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic), and the default Storage Class, to acquire access to a [Persistent Volume][pv].
+By default these applications will create a [Persistent Volume Claim][pvc] for the storage they need, and use the cluster's [dynamic volume provisioning](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic), and the default Storage Class, to acquire access to a [Persistent Volume][pv].
 
 For a production environment, you should review the settings of your cluster's default storage class to ensure they are what you desire. We recommend that Volumes be setup with a `reclaimPolicy` of `Retain`, and ideally with fast SSD storage if available. If the default storage class does not meet these requirements, you will want to look at using a custom storage class.
 
