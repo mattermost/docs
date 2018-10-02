@@ -77,7 +77,7 @@ On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so y
 Using the CLI on Docker Preview
 -------------------------------
 
-The preceding documentation and command reference below also applies to the Mattermost docker preview image.
+The preceding documentation and command reference below also applies to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`_.
 
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
