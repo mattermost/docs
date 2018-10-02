@@ -75,14 +75,15 @@ Release date: 2018-10-16
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Enterprise Edition:
- - Added ``"EnablePublicChannelsMaterialization": true.``
+
+- Under "SqlSettings": in ``config.json``:
+ - Added ``"EnablePublicChannelsMaterialization": true``, to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI.
  
 ### API Changes
 
 #### Plugin API Changes
- - Slash commands with GET crush query parameters on configured endpoint URL.
- - Added a GetServerVersion() string methode to the plugin API.
- - Added paging to elasticsearch API.
+ - Added slash commands with GET crush query parameters on configured endpoint URL to avoid parameters specified by both the user and Mattermost from being duplicated.
+ - Added a GetServerVersion() string method to the plugin API to return the current server version.
  
 #### Database Changes
  - ``AlterColumnTypeIfExists`` column was added to the ``OutgoingWebhooks`` table.
