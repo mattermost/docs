@@ -127,7 +127,65 @@ The integration can respond with an update to the original post, or with an ephe
     "ephemeral_text": "You updated the post!"
   }
 
-.. image:: ../../source/images/message_menu.png
+.. image:: ../../source/images/message-menu.png
+
+Message menus for channels
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can also provide a list of channels for message menus that the user can choose from. Users can only to select from public channels in their teams.
+
+Specify ``channels`` as your action's ``data_source`` as follows:
+
+  {
+    "attachments": [
+      {
+        "pretext": "This is the attachment pretext.",
+        "text": "This is the attachment text.",
+        "actions": [
+          {
+            "name": "Select an option...",
+            "integration": {
+              "url": "http://127.0.0.1:7357/action_options",
+              "context": {
+                "action": "do_something"
+              }
+            },
+            "type": "select",
+            "data_source": "channels"
+          }
+        ]
+      }
+    ]
+  }
+
+Message menus for users
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Similar to channels, you can also provide a list of users for message menus. The user can choose anyone part of the Mattermost system.
+
+Specify ``users`` as your action's ``data_source`` as follows:
+
+  {
+    "attachments": [
+      {
+        "pretext": "This is the attachment pretext.",
+        "text": "This is the attachment text.",
+        "actions": [
+          {
+            "name": "Select an option...",
+            "integration": {
+              "url": "http://127.0.0.1:7357/action_options",
+              "context": {
+                "action": "do_something"
+              }
+            },
+            "type": "select",
+            "data_source": "users"
+          }
+        ]
+      }
+    ]
+  }
 
 Parameters
 ~~~~~~~~~~~~
