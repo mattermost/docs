@@ -243,7 +243,7 @@ If enabled, this feature groups unread channels at the top of the channel sideba
 
 Channel Switcher
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hide the channel switcher at the bottom of the sidebar used to jump between channels quickly. It can also be accessed using CTRL/CMD + K.
+Hide the channel switcher at the bottom of the sidebar used to jump between channels quickly. The channel switcher can also be accessed using CTRL/CMD + K.
 
 Automatically close direct messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
