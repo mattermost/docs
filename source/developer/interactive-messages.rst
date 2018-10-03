@@ -7,9 +7,9 @@ Mattermost supports interactive messages for `incoming <https://docs.mattermost.
 
 Use interactive messages to simplify complex workflows by allowing users to take quick actions directly through your integration post. For example, they enable your integration to:
 
-- update sales opportunities in your CRM system from Mattermost
+- mark a task complete in your project management tracker
 - conduct a customer survey or a poll
-- file a report on market trends
+- initiate a command to merge a branch into a release
 
 To try it out, you can use this `matterpoll plugin <https://github.com/matterpoll/matterpoll>`_ to add polling to Mattermost channels via a ``/poll`` slash command.
 
@@ -190,7 +190,7 @@ Specify ``users`` as your action's ``data_source`` as follows:
 Parameters
 ~~~~~~~~~~~~
 
-Below we give a brief description of each parameter to help you customize the interactive message in Mattermost. For more information on message attachments, `see our documentation <https://docs.mattermost.com/developer/message-attachments.html>`_.
+Below is a brief description of each parameter to help you customize the interactive message in Mattermost. For more information on message attachments, `see our documentation <https://docs.mattermost.com/developer/message-attachments.html>`_.
 
 Name
   Give your action a descriptive name.
@@ -233,7 +233,7 @@ Context
         }
       }
       
-  When the message button is clicked, your integration sends a request to the specified URL with the intention to merge the pull request identified by the context.
+  In the example above, when the message button is clicked, your integration sends a request to the specified URL with the intention to merge the pull request identified by the context.
 
   2. **Authenticating the server**. An important property of the context parameter is that it's kept confidential. Hence, if your integration is not behind a firewall, you could add a token to your context without users ever being able to see it:
 
