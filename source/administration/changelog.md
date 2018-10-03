@@ -67,6 +67,7 @@ Release date: 2018-10-16
  - Fixed an issue where logging in with LDAP account with MFA enabled resulted in "Error trying to authenticate MFA token" error when "Enable sign-in with username" was set to false.
  - Fixed an issue where log-in page flashed briefly during process of verifying an updated email address.
  - Fixed an issue where ""GET /api/v4/redirect_location" responses got stuck when “EnableLinkPreviews” was set to "false”.
+ - Fixed an issue where Account Settings teammate name display setting changed when System Console teammate name display setting was changed.
 
 ### Compatibility
 
