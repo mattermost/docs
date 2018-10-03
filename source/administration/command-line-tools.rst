@@ -305,6 +305,12 @@ mattermost channel remove
 
       sudo ./mattermost channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
       sudo ./mattermost channel remove myteam:mychannel user@example.com username
+      sudo ./mattermost channel remove myteam:mychannel --all-users
+      
+  Options
+    .. code-block:: none
+
+          --all-users string     Remove all users from the channel.
       
 mattermost channel rename
 ~~~~~~~~~~~~~~~~~~~~~~~~
