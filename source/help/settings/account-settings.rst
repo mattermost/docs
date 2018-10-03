@@ -237,13 +237,17 @@ Select what language Mattermost displays in the user interface. Options include:
 Sidebar
 --------
 
-Automatically close direct messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`_.
-
 Group unreads channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`_, by replacing ``disabled`` with either ``default_off`` or ``default_on`` in config.json.
+
+Channel Switcher
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hide the channel switcher at the bottom of the sidebar used to jump between channels quickly. It can also be accessed using CTRL/CMD + K.
+
+Automatically close direct messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`_.
 
 Advanced
 --------
