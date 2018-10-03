@@ -11,7 +11,7 @@ In Mattermost Enterprise Edition E20, you can outline custom Terms of Service fo
 
  Users on mobile do not have to accept the terms of service with mobile support scheduled for an upcoming release.
 
-Configurting Terms of Service
+Configuring Terms of Service
 --------------------------------
 
 To enable custom terms of service:
