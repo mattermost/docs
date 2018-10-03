@@ -20,7 +20,7 @@ Search Modifiers
 From: and In:
 ^^^^^^^^^^^^^
 
-Use ``from:`` to find posts from specific users and ``in:`` to find posts in specific public or private channels, as well as direct message and group messages.
+Use ``from:`` to find posts from specific users and ``in:`` to find posts in specific public or private channels, as well as direct and group messages.
 
 -  For example: Searching ``Mattermost in:town-square`` only returns
    messages in Town Square that contain ``Mattermost``.
