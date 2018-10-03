@@ -33,6 +33,13 @@ Your **Team Icon** appears in the team sidebar, visible if users are members of 
 
 You can upload a team icon in BMP, JPG or PNG format. Square images with a solid background color are recommended, since transparency in PNG icons fills with a white background in the Team Sidebar. Removing the team icon resets it to the default icon that contains the first two letters of the team name.
 
+Allow only users with a specific email domain to join this team
+~~~~~~~~~~~~~~~~
+
+Specifying domains in this setting prevents users from joining the team when their email domain is not on the list. Only users that have an email domain matching the defined domains may join the team. 
+
+Users without a matching domain on the team prior to the domain being specified, will not be removed after the domain is added. 
+
 Allow anyone to join this team
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
