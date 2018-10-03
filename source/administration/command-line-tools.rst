@@ -310,7 +310,7 @@ mattermost channel remove
   Options
     .. code-block:: none
 
-          --all-users string     Remove all users from the indicated channel.
+          --all-users string     Remove all users from the channel.
       
 mattermost channel rename
 ~~~~~~~~~~~~~~~~~~~~~~~~
