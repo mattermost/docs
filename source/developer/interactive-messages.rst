@@ -1,29 +1,31 @@
-.. _interactive-message-buttons:
+.. _interactive-messages:
 
-Interactive Message Buttons
+Interactive Messages
 ============================
 
-Mattermost supports interactive message buttons for `incoming <https://docs.mattermost.com/developer/webhooks-incoming.html>`_ and `outgoing webhooks <https://docs.mattermost.com/developer/webhooks-outgoing.html>`_, and for `custom slash commands <https://docs.mattermost.com/developer/slash-commands.html>`_ via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity.
+Mattermost supports interactive messages for `incoming <https://docs.mattermost.com/developer/webhooks-incoming.html>`_ and `outgoing webhooks <https://docs.mattermost.com/developer/webhooks-outgoing.html>`_, `custom slash commands <https://docs.mattermost.com/developer/slash-commands.html>`_ and `plugins <https://docs.mattermost.com/administration/plugins.html>`_ via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity.
 
-Use these buttons to simplify complex workflows by allowing users to take quick actions directly through your integration post. For example, the buttons enable your integration to:
+Use interactive messages to simplify complex workflows by allowing users to take quick actions directly through your integration post. For example, they enable your integration to:
 
 - update sales opportunities in your CRM system from Mattermost
 - conduct a customer survey or a poll
 - file a report on market trends
 
-To try the message buttons out, you can use this `demo integration <https://github.com/mattermost/mattermost-interactive-post-demo>`_ to add polling to Mattermost channels via a `/poll` slash command.
+To try it out, you can use this `matterpoll plugin <https://github.com/matterpoll/matterpoll>`_ to add polling to Mattermost channels via a ``/poll`` slash command.
 
-.. image:: ../../source/images/poll.gif
+.. image:: ../../source/images/matterpoll.png
 
 .. toctree::
-   :maxdepth: 2
+  :maxdepth: 2
 
-Button Options
----------------
+Message Buttons
+----------------
 
 Add message buttons as ``actions`` in your integration `message attachments <https://docs.mattermost.com/developer/message-attachments.html>`_.
 
-The following payload gives an example webhook that uses message buttons.
+.. image:: ../../source/images/poll.gif
+
+The following payload gives an example that uses message buttons.
 
 .. code-block:: text
 
@@ -68,7 +70,69 @@ The integration can respond with an update to the original post, or with an ephe
 
 .. image:: ../../source/images/interactive_message.gif
 
-Below we give a brief description of each parameter to help you customize the webhook post in Mattermost. For more information on message attachments, `see our documentation <https://docs.mattermost.com/developer/message-attachments.html>`_.
+Message Menus
+----------------
+
+Similar to buttons, add message menus as ``actions`` in your integration `message attachments <https://docs.mattermost.com/developer/message-attachments.html>`_.
+
+.. image:: ../../source/images/message_menus.png
+
+The following payload gives an example that uses message menus.
+
+.. code-block:: text
+
+  {
+    "attachments": [
+      {
+        "pretext": "This is the attachment pretext.",
+        "text": "This is the attachment text.",
+        "actions": [
+          {
+            "name": "Select an option...",
+            "integration": {
+              "url": "http://127.0.0.1:7357/action_options",
+              "context": {
+                "action": "do_something"
+              }
+            },
+            "type": "select",
+            "options": [
+                    {
+                        "text": "Option1",
+                        "value": "opt1"
+                    },
+                    {
+                        "text": "Option2",
+                        "value": "opt2"
+                    },
+                    {
+                        "text": "Option3",
+                        "value": "opt3"
+                    }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+
+The integration can respond with an update to the original post, or with an ephemeral message:
+
+.. code-block:: text
+
+  {
+    "update": {
+      "message": "Updated!"
+    },
+    "ephemeral_text": "You updated the post!"
+  }
+
+.. image:: ../../source/images/message_menu.png
+
+Parameters
+~~~~~~~~~~~~
+
+Below we give a brief description of each parameter to help you customize the interactive message in Mattermost. For more information on message attachments, `see our documentation <https://docs.mattermost.com/developer/message-attachments.html>`_.
 
 Name
   Give your action a descriptive name.
@@ -156,6 +220,8 @@ Context
       {
       "user_id": "rd49ehbqyjytddasoownkuqrxe",
       "post_id": "gqrnh3675jfxzftnjyjfe4udeh",
+      "channel_id": "j6j53p28k6urx15fpcgsr20psq",
+      "team_id": "5xxzt146eax4tul69409opqjlf",
       "context": {
         "action_id": "someunguessableactionid"
         }
@@ -167,8 +233,7 @@ Tips and Best Practices
 ------------------------
 
 1. The external application may be written in any programming language. It needs to provide a URL which receives the request sent by your Mattermost server and responds with in the required JSON format.
-2. Message attachments allow for rich formatting, but don't go overboard. Use the least amount of formatting and number of action buttons required for your integration post.
-3. To get started, you can use this `demo integration <https://github.com/mattermost/mattermost-interactive-post-demo>`_ to add polling to Mattermost channels via a `/poll` slash command.
+2. To get started, you can use this `sample plugin <https://github.com/matterpoll/matterpoll>`_ to add polling to Mattermost channels via a `/poll` slash command.
 
 Share Your Integration
 -----------------------
@@ -182,23 +247,20 @@ Slack Compatibility
 
 Like Slack, actions are specified in an "actions" list within the message attachment. Moreover, your integrations can react with ephemeral messages or message updates similar to Slack.
 
-However, the schema for these objects is different and Mattermost interactive message buttons are not intended to be Slack compatible:
-
- - Slack requires a Slack App and action URL to be pre-configured beforehand. Mattermost instead allows any webhook or slash command to create an interactive message without pre-configuration.
- - With Slack, when a user performs an action, the request made to your integration contains information such as channel and team ids. With Mattermost, the request only contains the user id and additional information you specified in your context, which might include team and channel ids if these values are needed by your integration.
+However, the schema for these objects is slightly different given Slack requires a Slack App and action URL to be pre-configured beforehand. Mattermost instead allows an integration to create an interactive message without pre-configuration.
 
 Troubleshooting
 --------------------
 
-Message buttons don't show up for slash commands
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Interactive messages don't show up for slash commands
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Make sure the `response type <https://docs.mattermost.com/developer/slash-commands.html#message-type>`_ of your slash command is set to ``in_channel``, not ``ephemeral``.
 
 Ephemeral messages do not have a state, and therefore do not support interactive message buttons at this time.
 
-Message button triggers no action and returns a 400 error
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Message buttons and menus do not trigger an action and return a 400 error
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 It is likely for one of three reasons:
 
