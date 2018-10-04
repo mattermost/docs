@@ -19,6 +19,7 @@ Development Process
    /process/dot-release*
    /process/security-release*
    /process/mobile-release*
+   /process/release-faq*
    /process/deprecated-features*
    /developer/style*
    /developer/fx*
