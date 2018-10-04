@@ -9,7 +9,7 @@ In Mattermost Enterprise Edition E20, you can outline custom Terms of Service fo
 
 .. note::
 
- Users on mobile do not have to accept the terms of service with mobile support scheduled for an upcoming release.
+ Users on mobile will not be presented with the custom Terms of Services. Mobile support is scheduled for an upcoming release.
 
 Configuring Terms of Service
 --------------------------------
@@ -17,7 +17,7 @@ Configuring Terms of Service
 To enable custom terms of service:
 
 1. Go to **System Console > Customization > Legal and Support**.
-2. Set **Enable Custom Terms of Service** to true.
+2. Set **Enable Custom Terms of Service** to **true**.
 3. Set **Custom Terms of Service Text** which contains your terms. Note that Markdown-formatting, including lists, headings and bolding, is supported.
 4. Click **Save**.
 
@@ -43,7 +43,7 @@ How do I know if my users accepted the terms of service?
 Each time a user agrees to the terms of service, the agreement is recorded in the database:
 
  - A new field <XXX> in the **Users** table indicates if a user has accepted the most recent terms of service.
- - Each time a user accepts the terms, the action is recorded in the **Audits** table, containing the username, timestampt of acceptance, and other relevant information.
+ - Each time a user accepts the terms, the action is recorded in the **Audits** table, containing the username, timestamp of acceptance, and other relevant information.
 
 Why isn't this feature in Team Edition for GDPR compliance?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
