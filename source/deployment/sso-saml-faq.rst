@@ -1,7 +1,7 @@
 Bind Authentication to ID Attribute instead of Email
 ------------------------------------------
 
-Alternatively, you can use an Id Attribute instead of email to bind the user.  We recommend chosing an ID that is unique and will not change over time.  
+Alternatively, you can use an Id Attribute instead of email to bind the user.  We recommend choosing an ID that is unique and will not change over time.  
 
 Configuring with an Id Attribute allows you to reuse an email address for a new user without the old user's information being exposed. For instance, if a user with an email address joe.smith@mattermost.com was once an employee, a new employee named Joe Smith can use the same email. This configuration is also useful when a user's name changes and their email needs to be updated. 
 
