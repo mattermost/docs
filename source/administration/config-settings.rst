@@ -2671,7 +2671,7 @@ Enable Custom Terms of Service (Beta)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20*.
 
-**True**: New users must accept custom terms of service before accessing any Mattermost teams on desktop or web. Existing users must accept them after login or a page refresh. Users on mobile do not have to accept the terms of service with mobile support scheduled for an upcoming release.
+**True**: New users must accept custom terms of service before accessing any Mattermost teams on desktop or web. Existing users must accept them after login or a page refresh. Users on mobile will not be presented with the custom Terms of Services. Mobile support is scheduled for an upcoming release.
 
 **False**: During account creation or login, users can review terms of service included via **System Console > Legal and Support > Terms of Service link**.
 
