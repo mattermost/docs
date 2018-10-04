@@ -323,12 +323,12 @@ Allow Team Administrators to edit others posts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *This permission is stored in the database and can be modified using the System Console user interface.*
 
-**True**: Team Administrators and System Administrators can edit other user's posts.  
+**True**: Team Administrators and System Administrators can edit other users' posts.  
 
-**False**:  Only System Administrators can edit other user's posts.
+**False**:  Only System Administrators can edit other users' posts.
 
 .. note::
-This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions (https://docs.mattermost.com/deployment/advanced-permissions.html)`_ to configure this permission.   
+This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ to configure this permission.   
 
 
 Enable Team Directory
