@@ -274,14 +274,14 @@ qa:
     QA_ARTIFACTS_DIR: $CI_PROJECT_DIR
   script:
     - docker login -u gitlab-ci-token -p "$CI_JOB_TOKEN" "$CI_REGISTRY"
-    - gem install gitlab-qa -v 2.2.0
+    - gem install gitlab-qa
     - source variables
     - app_version=$(ruby -e "require 'yaml'; puts YAML.safe_load(File.read('Chart.yaml'))['appVersion']")
     - qa_version="nightly"
     - if [ "$app_version" != "master"  ]; then
     -   qa_version="${app_version}-ee"
     - fi
-    - GITLAB_USERNAME=root GITLAB_PASSWORD=$ROOT_PASSWORD gitlab-qa Test::Instance::Any EE:$qa_version https://$QA_ENVIRONMENT_URL
+    - GITLAB_USERNAME=root GITLAB_PASSWORD=$ROOT_PASSWORD GITLAB_ADMIN_USERNAME=root GITLAB_ADMIN_PASSWORD=$ROOT_PASSWORD gitlab-qa Test::Instance::Any EE:$qa_version https://$QA_ENVIRONMENT_URL
   artifacts:
     when: on_failure
     expire_in: 7d
