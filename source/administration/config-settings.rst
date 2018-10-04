@@ -319,6 +319,18 @@ This setting only affects the UI, not permissions on the server. For instance, a
 | This feature's ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``any`` and ``team`` for above settings respectively.                      |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Allow Team Administrators to edit others posts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission is stored in the database and can be modified using the System Console user interface.*
+
+**True**: Team Administrators and System Administrators can edit other users' posts.  
+
+**False**:  Only System Administrators can edit other users' posts.
+
+.. note::
+This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ to configure this permission.   
+
+
 Enable Team Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Removed in May 16th, 2016 release*
