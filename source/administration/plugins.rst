@@ -62,7 +62,7 @@ Once enabled, install plugins in one of the following ways:
 
 2) Manually:
  - Extract `plugin.tar.gz` to a folder with the same name as the plugin id you specified in ``plugin.json/plugin.json``.
- - Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to `./plugins`.
+ - Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to ``./plugins``.
  - Restart the Mattermost server.
 
 If you run your Mattermost server in `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`_, plugins need to be uploaded on all app servers manually.
@@ -70,6 +70,7 @@ If you run your Mattermost server in `High Availability mode <https://docs.matte
 Once installed, your plugins directory should look similar to:
 
 .. code-block:: none
+
   plugins
   ├── com.mattermost.demo-plugin
   │   ├── plugin.json
