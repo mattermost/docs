@@ -37,10 +37,15 @@ Items needed for execution, which [will be set as environment variables][qa-env]
 - `GITLAB_VERSION`: The version of GitLab QA version to run. See [determine running version of GitLab](#determine-running-version-of-gitlab) above.
 - `GITLAB_USERNAME`: This will be `root`
 - `GITLAB_PASSWORD`: This will be the password for the `root` user.
+- `GITLAB_ADMIN_USERNAME`: This will be `root`
+- `GITLAB_ADMIN_PASSWORD`: This will be the password for the `root` user.
 - `GITLAB_URL`: The fully-qualifies URL to the deployed instance. This should be
   in the form of `https://gitlab.domain.tld`
 - `EE_LICENSE`: A string containing a GitLab EE license. This can be handled
   via `export EE_LICENSE=$(cat GitLab.gitlab-license)`
+- `GITHUB_ACCESS_TOKEN`: A string containing a valid GitHub Personal Access Token.
+  This will be used to test the GitHub importer. For GitLab team members, you can
+  find the access token for the `GitLab QA` user in 1password.
 
 Retrieve the above items, and export them as environment variables.
 
