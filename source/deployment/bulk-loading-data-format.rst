@@ -538,6 +538,32 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
       "teams": [
         {
           "name": "team-name",
+          "theme": [
+            {
+              "awayIndicator":"#DBBD4E",
+              "buttonBg":"#23A1FF",
+              "buttonColor":"#FFFFFF",
+              "centerChannelBg":"#ffffff",
+              "centerChannelColor":"#333333",
+              "codeTheme":"github",
+              "image":"/static/files/a4a388b38b32678e83823ef1b3e17766.png",
+              "linkColor":"#2389d7",
+              "mentionBg":"#2389d7",
+              "mentionColor":"#ffffff",
+              "mentionHighlightBg":"#fff2bb",
+              "mentionHighlightLink":"#2f81b7",
+              "newMessageSeparator":"#FF8800",
+              "onlineIndicator":"#7DBE00",
+              "sidebarBg":"#fafafa",
+              "sidebarHeaderBg":"#3481B9",
+              "sidebarHeaderTextColor":"#ffffff",
+              "sidebarText":"#333333",
+              "sidebarTextActiveBorder":"#378FD2",
+              "sidebarTextActiveColor":"#111111",
+              "sidebarTextHoverBg":"#e6f2fa",
+              "sidebarUnreadText":"#333333",
+              "type":"Mattermost",
+              }
           "roles": "team_user team_admin",
           "channels": [
             {
@@ -848,6 +874,13 @@ This object is a member of the User object.
       <td>The name of the team this user should be a member of.</td>
       <td align="center" valign="middle">No [1]</td>
       <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">theme</td>
+      <td valign="middle">string</td>
+      <td>The user’s theme for the specified team. Formatted as a Mattermost theme string.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">roles</td>
