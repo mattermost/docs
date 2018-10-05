@@ -255,6 +255,11 @@ Send Messages on CTRL+ENTER
 
 If enabled, press ENTER to insert a new line and CTRL+ENTER posts the message. If disabled, SHIFT+ENTER inserts a new line and ENTER posts the message.
 
+Send code block messages on CTRL+ENTER
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If enabled, press ENTER to insert a new line inside an open code block. Pressing CTRL+ENTER automatically closes the code block and posts the message. If disabled, SHIFT+ENTER inserts a new line and ENTER posts the message. 
+
 Enable Post Formatting
 ~~~~~~~~~~~~~~~~~~~~~~
 
