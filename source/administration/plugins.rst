@@ -60,12 +60,36 @@ Once enabled, install plugins in one of the following ways:
  - Navigate to **Plugins > Management** and upload the `plugin.tar.gz` you generated above.
  - Click "Activate" under the plugin after it has uploaded.
 
-2) Through `config.json`:
- - Extract `plugin.tar.gz` to a folder with the same name as the plugin id you specified in ``plugin.json/plugin.yaml``.
+2) Manually:
+ - Extract `plugin.tar.gz` to a folder with the same name as the plugin id you specified in ``plugin.json/plugin.json``.
  - Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to `./plugins`.
  - Restart the Mattermost server.
 
-If you run your Mattermost server in `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`_, plugins need to be uploaded on all app servers.
+If you run your Mattermost server in `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`_, plugins need to be uploaded on all app servers manually.
+
+Once installed, your plugins directory should look similar to:
+
+.. code-block:: none
+  plugins
+  ├── com.mattermost.demo-plugin
+  │   ├── plugin.json
+  │   ├── server
+  │   │   ├── plugin-darwin-amd64
+  │   │   ├── plugin-linux-amd64
+  │   │   └── plugin-windows-amd64.exe
+  │   └── webapp
+  │       └── main.js
+  ├── jira
+  │   ├── plugin.exe
+  │   └── plugin.yaml
+  ├── zoom
+  │   ├── plugin.json
+  │   ├── server
+  │   │   └── plugin.exe
+  │   └── webapp
+  │       └── zoom_bundle.js
+
+It is recommended that you automate plugin deployment as part of your Mattermost deployment jobs.
 
 Frequently Asked Questions (FAQ)
 ---------------------------------
