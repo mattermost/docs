@@ -752,6 +752,30 @@ Fields of the User object
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
+      <td valign="middle">use_markdown_preview</td>
+      <td valign="middle">bool</td>
+      <td>Enable previewing markdown formatting. Can have one the following values:<br>
+          <kbd>"True"</kbd> <br>
+          <kbd>"False"</kbd> </td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    <tr class="row-odd">
+      <td valign="middle">use_formatting</td>
+      <td valign="middle">bool</td>
+      <td>Enable the use of markdown formatting. Can have one the following values:<br>
+          <kbd>"True"</kbd> <br>
+          <kbd>"False"</kbd> </td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    <tr class="row-odd">
+      <td valign="middle">show_unread_section</td>
+      <td valign="middle">bool</td>
+      <td>Enable showing unread messages at top of channel sidebar. Can have one the following values:<br>
+          <kbd>"True"</kbd> <br>
+          <kbd>"False"</kbd> </td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    <tr class="row-odd">
       <td valign="middle">notify_props</td>
       <td valign="middle"><b>UserNotifyProps</b> object</td>
       <td>The user’s notify props, as defined by the <b>UserNotifyProps</b> object.</td>
