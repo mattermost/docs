@@ -42,7 +42,7 @@ How do I know if my users accepted the terms of service?
 
 Each time a user agrees to the terms of service, the agreement is recorded in the database:
 
- - A new field <XXX> in the **Users** table indicates if a user has accepted the most recent terms of service.
+ - A new field ``AcceptedServiceTermsId`` in the **Users** table indicates the most recent terms of service the user has accepted.
  - Each time a user accepts the terms, the action is recorded in the **Audits** table, containing the username, timestamp of acceptance, and other relevant information.
 
 Why isn't this feature in Team Edition for GDPR compliance?
