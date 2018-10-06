@@ -1,19 +1,25 @@
 Mattermost Integration Guide
 ----------------------------
 
-Are you looking to install an integration? See one of the sample integrations below or visit the `Mattermost Integrations Directory <https://about.mattermost.com/community-applications/>`_.
+**Are you looking to install an integration?**
+
+See one of the sample integrations below or visit the `Mattermost Integrations Directory <https://about.mattermost.com/community-applications/>`_.
 
 .. toctree::
    :maxdepth: 1
    :glob:
    
    /integrations/jira*
-   /integrations/zapier*
    /integrations/zoom*
+   /integrations/zapier*
 
-Are you looking to develop an integration? See `our developer documentation <https://developers.mattermost.com/>`_. 
+**Are you looking to develop an integration?**
 
-Are you looking for an overview of what capabilities Mattermost offers for integrations? See our documentation below. 
+See `our developer documentation <https://developers.mattermost.com/>`_. 
+
+**Are you looking for an overview of what capabilities Mattermost offers for integrations?**
+
+See our documentation below. 
 
 .. toctree::
    :maxdepth: 1
