@@ -61,15 +61,27 @@ That said, forgiving does not mean allowing the product to be used incorrectly b
 Technical Guidelines
 ********************
 
-Bootstrap Classes
+Plugins
 -----------------
 
-Since we’re using `bootstrap <http://getbootstrap.com/>`_, try to utilize `bootstrap classes <http://getbootstrap.com/css/>`_ as much as possible rather than creating new styles or using inline styles.
+By default, every new feature should be a plugin. Why?
 
-Custom Styles
--------------
+ - Isolates complexity.
+ - Disabled by default and must be turned on by a System Admin.
+ - Grows the plugin ecosystem with better support for external plugins.
 
-We’re using `BEM methodology <https://en.bem.info/method/>`_  and would advise everyone to do so when creating new classes or ids. There are many places in our app that currently don’t follow BEM, but we’re trying to improve the codebase. `Here <http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/>`_ is a brief overview of the BEM syntax.
+Reasons you might not want to write a plugin:
+
+ - The feature requires high performance access.
+ - The feature would be used or extended by a plugin (e.g. bot accounts or Account Settings modal).
+ - The feature would be used by every Mattermost instance (e.g. flagged messages, replies).
+
+Reasons to write a plugin:
+
+ - To customize the Mattermost user interface.
+ - To extend Mattermost functionality to meet a specific, complex requirement.
+ - To build integrations that are managed by your Mattermost server.
+ - To prototype a new feature with a plugin.
 
 -----
 
