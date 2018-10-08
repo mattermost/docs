@@ -754,7 +754,7 @@ Fields of the User object
     <tr class="row-odd">
       <td valign="middle">use_markdown_preview</td>
       <td valign="middle">bool</td>
-      <td>Enable previewing markdown formatting. Can have one the following values:<br>
+      <td>Enable preview of message markdown formatting. Can have one the following values:<br>
           <kbd>"True"</kbd> <br>
           <kbd>"False"</kbd> </td>
       <td align="center" valign="middle">Yes</td>
@@ -762,7 +762,7 @@ Fields of the User object
     <tr class="row-odd">
       <td valign="middle">use_formatting</td>
       <td valign="middle">bool</td>
-      <td>Enable the use of markdown formatting. Can have one the following values:<br>
+      <td>Enable post formatting for links, emoji, text styles and line breaks. Can have one the following values:<br>
           <kbd>"True"</kbd> <br>
           <kbd>"False"</kbd> </td>
       <td align="center" valign="middle">Yes</td>
