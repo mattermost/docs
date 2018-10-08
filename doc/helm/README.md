@@ -114,7 +114,7 @@ for this example we will include the cluster's name in it.
 ```
 CLUSTER_NAME=name-of-cluster
 kubectl config set-credentials $CLUSTER_NAME-admin-user --username=admin --password=xxxxxxxxxxxxxx
-kubectl --user=$CLUSTER_NAME-admin-user create -f rbac-config.yaml
+kubectl --user=$CLUSTER_NAME-admin-user create -f https://gitlab.com/charts/gitlab/raw/master/doc/helm/examples/rbac-config.yaml
 ```
 
 #### Upload the RBAC config
