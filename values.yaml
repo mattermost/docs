@@ -33,6 +33,7 @@ global:
     enabled: true
     credentials: {}
   appConfig:
+    enableUsagePing: true
     issueClosingPattern:
     defaultTheme:
     webhookTimeout:

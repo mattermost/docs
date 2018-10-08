@@ -67,6 +67,7 @@ data:
         ssh_host: {{ . | quote }}
         {{- end }}
         {{- with .Values.global.appConfig }}
+        usage_ping_enabled: {{ eq .enableUsagePing true }}
         issue_closing_pattern: {{ .issueClosingPattern | quote }}
         default_theme: {{ .defaultTheme }}
         webhook_timeout: {{ .webhookTimeout }}
