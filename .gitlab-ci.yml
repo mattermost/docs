@@ -78,12 +78,11 @@ release_package:
 review:
   stage: review
   script:
-    - terraform_init
     - check_kube_domain
-    - terraform_up
     - ensure_namespace
     - install_tiller
     - create_secret
+    - install_external_dns
     - deploy
     - echo "export QA_ENVIRONMENT_URL=gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN" >> variables
     - echo "export GITLAB_ROOT_DOMAIN=$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"        >> variables
@@ -113,10 +112,8 @@ stop_review:
     GIT_CHECKOUT: "false"
   script:
     - git checkout master
-    - terraform_init
     - delete
     - cleanup
-    - terraform_down
   environment:
     name: review/$CI_COMMIT_REF_NAME
     action: stop
@@ -442,7 +439,7 @@ danger-review:
       --set releaseOverride="$CI_ENVIRONMENT_SLUG" \
       --set global.hosts.hostSuffix="$HOST_SUFFIX" \
       --set global.hosts.domain="$AUTO_DEVOPS_DOMAIN" \
-      --set global.hosts.externalIP="$DOMAIN_IP" \
+      --set global.ingress.annotations."external-dns\.alpha\.kubernetes\.io/ttl"="10" \
       --set global.ingress.tls.secretName=helm-charts-win-tls \
       --set global.ingress.configureCertmanager=false \
       --set certmanager.install=false \
@@ -530,6 +527,25 @@ danger-review:
     echo ""
   }
 
+  function install_external_dns() {
+    echo "Checking External DNS..."
+    release_name="gitlab-external-dns"
+    if ! helm status --tiller-namespace "${TILLER_NAMESPACE}" "${release_name}" > /dev/null 2>&1 ; then
+      # We need to store the credentials in a secret
+      kubectl create secret generic "${release_name}-secret" --from-literal="credentials.json=${GOOGLE_CLOUD_KEYFILE_JSON}"
+      helm install stable/external-dns \
+        -n "${release_name}" \
+        --namespace "${TILLER_NAMESPACE}" \
+        --set provider="google" \
+        --set domain-filter[0]="helm-charts.win" \
+        --set google.project="${GOOGLE_PROJECT_ID}" \
+        --set google.serviceAccountSecret="${release_name}-secret" \
+        --set txtOwnerId="${TILLER_NAMESPACE}" \
+        --set rbac.create="true" \
+        --set policy="sync"
+    fi
+  }
+
   function create_secret() {
     kubectl create secret -n "$KUBE_NAMESPACE" \
       docker-registry gitlab-registry-docker \
@@ -556,30 +572,6 @@ danger-review:
       | awk '{print $1}' \
       | xargs kubectl -n "$KUBE_NAMESPACE" delete \
       || true
-  }
-
-  function terraform_up() {
-    pushd ci/terraform/
-    terraform apply -input=false -auto-approve -var environment=${CI_ENVIRONMENT_SLUG}
-    export DOMAIN_IP=$(terraform output loadBalancerIP)
-    popd
-  }
-
-  function terraform_down() {
-    pushd ci/terraform
-    terraform destroy -input=false -force -var environment=${CI_ENVIRONMENT_SLUG}
-    popd
-  }
-
-  function terraform_init() {
-    pushd ci/terraform
-    echo ${GOOGLE_CLOUD_KEYFILE_JSON} > ${GOOGLE_APPLICATION_CREDENTIALS}
-    # gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
-    # gcloud config set project $GOOGLE_PROJECT_ID
-    terraform init -input=false \
-      -backend-config="bucket=${GOOGLE_STORAGE_BUCKET}" \
-      -backend-config="prefix=terraform/${CI_ENVIRONMENT_SLUG}"
-    popd
   }
 
 before_script:
