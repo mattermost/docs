@@ -561,7 +561,6 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
               "sidebarTextActiveColor":"#111111",
               "sidebarTextHoverBg":"#e6f2fa",
               "sidebarUnreadText":"#333333",
-              "type":"Mattermost",
               }
           "roles": "team_user team_admin",
           "channels": [
