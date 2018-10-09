@@ -546,7 +546,6 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
               "centerChannelBg":"#ffffff",
               "centerChannelColor":"#333333",
               "codeTheme":"github",
-              "image":"/static/files/a4a388b38b32678e83823ef1b3e17766.png",
               "linkColor":"#2389d7",
               "mentionBg":"#2389d7",
               "mentionColor":"#ffffff",
