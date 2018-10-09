@@ -206,8 +206,9 @@ User object
     </tr>
   </table>
   
- UserTeamMembership object
- --------------------------
+  
+UserTeamMembership object
+----------------------------
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -224,7 +225,7 @@ User object
     <tr class="row-odd">
       <td valign="middle">roles</td>
       <td valign="middle">string</td>
-      <td>The roles the user has have within this team. Will be one of the following values:<br>
+      <td>The roles the user has within this team. Will be one of the following values:<br>
           <kbd>"team_user"</kbd><br>
           <kbd>"team_admin team_user"</kbd>
       </td>
@@ -249,7 +250,7 @@ UserChannelMembership object
     <tr class="row-odd">
       <td valign="middle">roles</td>
       <td valign="middle">string</td>
-      <td>The roles the user have within this channel. Will be one of the following values:<br>
+      <td>The roles the user has within this channel. Will be one of the following values:<br>
           <kbd>"channel_user"</kbd><br>
           <kbd>"channel_user channel_admin"</kbd>
       </td>
