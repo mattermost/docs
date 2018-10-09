@@ -26,6 +26,8 @@ Table below contains all the possible charts configurations that can be supplied
 | resources                    | resource requests, limits              |                                          |
 | env                          | Rails environment                      | production                               |
 | rbac.create                  | Create RBAC roles and bindings         | true                                     |
+| securitContext.runAsUser     | User ID to run the container as        | 65534                                    |
+| securitContext.fsGroup       | User ID to mount filesystems as        | 65534                                    |
 
 ## Disable functionality
 

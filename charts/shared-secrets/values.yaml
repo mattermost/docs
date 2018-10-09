@@ -20,3 +20,7 @@ rbac:
 resources:
   requests:
     cpu: 50m
+securityContext:
+  # in debian/alpine based images, this is `nobody:nogroup`
+  runAsUser: 65534
+  fsGroup: 65534
