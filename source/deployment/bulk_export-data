@@ -12,22 +12,16 @@ Version object
       <th class="head">Field name</th>
       <th class="head">Type</th>
       <th class="head">Description</th>
-      <th class="head">Validated</th>
-      <th class="head">Mandatory</th>
     </tr>
     <tr class="row-odd">
       <td valign="middle">type</td>
       <td valign="middle">string</td>
       <td>Must be the string "version"</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">version</td>
       <td valign="middle">number</td>
       <td>Must be the number 1.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
   </table>
   
@@ -41,22 +35,16 @@ Team object
       <th class="head">Field name</th>
       <th class="head">Type</th>
       <th class="head">Description</th>
-      <th class="head">Validated</th>
-      <th class="head">Mandatory</th>
     </tr>
     <tr class="row-odd">
       <td valign="middle">name</td>
       <td valign="middle">string</td>
       <td>The team name.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">display_name</td>
       <td valign="middle">string</td>
       <td>The display name for the team.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">type</td>
@@ -64,15 +52,11 @@ Team object
       <td>The type of team. Can have one the following values:<br>
           <kbd>"O"</kbd> for an open team<br>
           <kbd>"I"</kbd> for an invite-only team.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">description</td>
       <td valign="middle">string</td>
       <td>The team description.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">allow_open_invite</td>
@@ -81,15 +65,11 @@ Team object
         <kbd>true</kbd><br>
         <kbd>false</kbd>
       </td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">scheme</td>
       <td valign="middle">string</td>
       <td>The name of the Scheme that should be applied to this team.</td>
-      <td align="center" valign="middle">No [1]</td>
-      <td align="center" valign="middle">No</td>
     </tr>
   </table>
 
@@ -103,29 +83,21 @@ Channel object
       <th class="head">Field name</th>
       <th class="head">Type</th>
       <th class="head">Description</th>
-      <th class="head">Validated</th>
-      <th class="head">Mandatory</th>
     </tr>
     <tr class="row-odd">
       <td valign="middle">team</td>
       <td valign="middle">string</td>
       <td>The name of the team this channel belongs to.</td>
-      <td align="center" valign="middle">No [1]</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">name</td>
       <td valign="middle">string</td>
       <td>The name of the channel.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">display_name</td>
       <td valign="middle">string</td>
       <td>The display name for the channel.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">type</td>
@@ -133,29 +105,21 @@ Channel object
       <td>The type of channel. Can have one the following values:<br>
           <kbd>"O"</kbd> for a public channel.<br>
           <kbd>"P"</kbd> for a private channel.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">header</td>
       <td valign="middle">string</td>
       <td>The channel header.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">purpose</td>
       <td valign="middle">string</td>
       <td>The channel purpose.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">scheme</td>
       <td valign="middle">string</td>
       <td>The name of the Scheme that should be applied to this team.</td>
-      <td align="center" valign="middle">No [1]</td>
-      <td align="center" valign="middle">No</td>
     </tr>
   </table>
   
@@ -168,42 +132,27 @@ User object
       <th class="head">Field name</th>
       <th class="head">Type</th>
       <th class="head">Description</th>
-      <th class="head">Validated</th>
-      <th class="head">Mandatory</th>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">profile_image</td>
-      <td valign="middle">string</td>
-      <td>The user’s profile image. This must be an existing file path.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">username</td>
       <td valign="middle">string</td>
       <td>The user’s username. This is the unique identifier for the user.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">email</td>
       <td valign="middle">string</td>
       <td>The user’s email address.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">auth_service</td>
       <td valign="middle">string</td>
-      <td>The authentication service to use for this user account. If not provided, it defaults to password-based authentication. Must be one of the following values:<br>
+      <td>The authentication service used for this user account. <br>
         <kbd>""</kbd> or not provided - password authentication.<br>
         <kbd>"gitlab"</kbd> - GitLab authentication.<br>
         <kbd>"ldap"</kbd> - LDAP authentication (E10 and E20)<br>
         <kbd>"saml"</kbd> - Generic SAML based authentication (E20)<br>
         <kbd>"google"</kbd> - Google OAuth authentication (E20)<br>
         <kbd>"office365"</kbd> - Microsoft Office 365 OAuth Authentication (E20)</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">auth_data</td>
@@ -216,123 +165,43 @@ User object
         <kbd>"saml"</kbd> - The value of the SAML Email address attribute.<br>
         <kbd>"google"</kbd> - The value of the OAuth Id attribute.<br>
         <kbd>"office365"</kbd> - The value of the OAuth Id attribute.</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">password</td>
-      <td valign="middle">string</td>
-      <td>A password for the user. Can be present only when password-based authentication is used. When password-based authentication is used and the password is not present, the bulk loader generates a password.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">nickname</td>
       <td valign="middle">string</td>
       <td>The user’s nickname.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">first_name</td>
       <td valign="middle">string</td>
       <td>The user’s first name.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">last_name</td>
       <td valign="middle">string</td>
       <td>The user’s last name.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">position</td>
       <td valign="middle">string</td>
       <td>The user’s position.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">roles</td>
       <td valign="middle">string</td>
-      <td>The user’s roles. Must be one of the following values:<br>
+      <td>The user’s roles. Will be one of the following values:<br>
         <kbd>"system_user"</kbd><br>
         <kbd>"system_admin system_user"</kbd></td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">locale</td>
       <td valign="middle">string</td>
-      <td>The user’s locale. This must be a valid locale for which Mattermost has been localised.</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
+      <td>The user’s locale which Mattermost has been localised.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">teams</td>
       <td valign="middle">array</td>
       <td>The teams which the user will be made a member of. Must be an array of <b>UserTeamMembership</b> objects.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">theme</td>
-      <td valign="middle">string</td>
-      <td>The user’s theme. Formatted as a Mattermost theme string.</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">use_military_time</td>
-      <td valign="middle">string</td>
-      <td>How times should be displayed to this user. Must be one of the following values:<br>
-        <kbd>"true"</kbd> - Use 24 hour clock.<br>
-        <kbd>"false"</kbd> - Use 12 hour clock.</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">collapse_previews</td>
-      <td valign="middle">string</td>
-      <td>Whether to collapse or expand link previews by default. Must be one of the following values:<br>
-        <kbd>"true"</kbd> - Collapsed by default.<br>
-        <kbd>"false"</kbd> - Expanded by default.</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">message_display</td>
-      <td valign="middle">string</td>
-      <td>Which style to use for displayed messages. Must be one of the following values:<br>
-        <kbd>"clean"</kbd> - Use the standard style.<br>
-        <kbd>"compact"</kbd> - Use the compact style.</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">channel_display_mode</td>
-      <td valign="middle">string</td>
-      <td>How to display channel messages. Must be one of the following values:<br>
-        <kbd>"full"</kbd> - Use the full width of the screen.<br>
-        <kbd>"centered"</kbd> - Use a fixed width, centered block.</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">tutorial_step</td>
-      <td valign="middle">string</td>
-      <td>Where to start the user tutorial. Must be one of the following values:<br>
-        <kbd>"1"</kbd>, <kbd>"2"</kbd> or <kbd>"3"</kbd> - Start from the specified tutorial step.<br>
-        <kbd>"999"</kbd> - Skip the user tutorial.</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">notify_props</td>
-      <td valign="middle"><b>UserNotifyProps</b> object</td>
-      <td>The user’s notify props, as defined by the <b>UserNotifyProps</b> object.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
@@ -343,37 +212,23 @@ User object
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
-    <tfoot><tr><td colspan="5">[1] Not validated, but an error occurs if no such team exists when running in apply mode.</td></tr></tfoot>
     <tr class="row-odd">
       <th class="head">Field name</th>
       <th class="head">Type</th>
       <th class="head">Description</th>
-      <th class="head">Validated</th>
-      <th class="head">Mandatory</th>
     </tr>
     <tr class="row-odd">
       <td valign="middle">name</td>
       <td valign="middle">string</td>
-      <td>The name of the team this user should be a member of.</td>
-      <td align="center" valign="middle">No [1]</td>
-      <td align="center" valign="middle">Yes</td>
+      <td>The name of the team this user is be a member of.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">roles</td>
       <td valign="middle">string</td>
-      <td>The roles the user should have within this team. Must be one of the following values:<br>
+      <td>The roles the user has have within this team. Will be one of the following values:<br>
           <kbd>"team_user"</kbd><br>
           <kbd>"team_admin team_user"</kbd>
       </td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">channels</td>
-      <td valign="middle">array</td>
-      <td>The channels within this team that the user should be made a member of. Must be an array of <b>UserChannelMembership</b> objects.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
     </tr>
   </table>
 
@@ -382,47 +237,23 @@ UserChannelMembership object
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
-    <tfoot><tr><td colspan="5">[1] Not validated, but an error occurs if the parent channel does not exist when running in apply mode.</td></tr></tfoot>
     <tr class="row-odd">
       <th class="head">Field name</th>
       <th class="head">Type</th>
       <th class="head">Description</th>
-      <th class="head">Validated</th>
-      <th class="head">Mandatory</th>
     </tr>
     <tr class="row-odd">
       <td valign="middle">name</td>
       <td valign="middle">string</td>
-      <td>The name of the channel in the parent team that this user should be a member of.</td>
-      <td align="center" valign="middle">No [1]</td>
-      <td align="center" valign="middle">Yes</td>
+      <td>The name of the channel in the parent team that this user is be a member of.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">roles</td>
       <td valign="middle">string</td>
-      <td>The roles the user should have within this channel. Must be one of the following values:<br>
+      <td>The roles the user have within this channel. Will be one of the following values:<br>
           <kbd>"channel_user"</kbd><br>
           <kbd>"channel_user channel_admin"</kbd>
       </td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">notify_props</td>
-      <td valign="middle">object</td>
-      <td>The notify preferences for this user in this channel. Must be a <b>ChannelNotifyProps</b> object</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">favorite</td>
-      <td valign="middle">boolean</td>
-      <td>Whether to favorite the channel. Must be one of the following values:<br>
-          <kbd>"true"</kbd> - Yes.<br>
-          <kbd>"false"</kbd> - No.</td>
-      </td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
     </tr>
   </table>
 
@@ -431,83 +262,35 @@ Post object
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
-    <tfoot>
-      <tr>
-        <td colspan="5">[1] Not validated, but an error occurs if the team does not exist when running in apply mode.<br>
-        [2] Not validated, but an error occurs if the channel does not exist in the corresponding team when running in apply mode.<br>
-        [3] Not validated, but an error occurs if the user does not exist when running in apply mode.
-        </td>
-      </tr>
-    </tfoot>
     <tr class="row-odd">
       <th class="head">Field name</th>
       <th class="head">Type</th>
       <th class="head">Description</th>
-      <th class="head">Validated</th>
-      <th class="head">Mandatory</th>
     </tr>
     <tr class="row-odd">
       <td valign="middle">team</td>
       <td valign="middle">string</td>
       <td>The name of the team that this post is in.</td>
-      <td align="center" valign="middle">No [1]</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">channel</td>
       <td valign="middle">string</td>
       <td>The name of the channel that this post is in.</td>
-      <td align="center" valign="middle">No [2]</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">user</td>
       <td valign="middle">string</td>
       <td>The username of the user for this post.</td>
-      <td align="center" valign="middle">No [3]</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">message</td>
       <td valign="middle">string</td>
       <td>The message that the post contains.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">create_at</td>
       <td valign="middle">int</td>
       <td>The timestamp for the post, in milliseconds since the Unix epoch.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">Yes</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">flagged_by</td>
-      <td valign="middle">array</td>
-      <td>Must contain a list of members who have flagged the post.</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">replies</td>
-      <td valign="middle">array</td>
-      <td>The posts in reply to this post. Must be an array of <a href="#fields-of-the-reply-object">Reply</a> objects.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">reactions</td>
-      <td valign="middle">array</td>
-      <td>The emoji reactions to this post. Must be an array of <a href="#fields-of-the-reaction-object">Reaction</a> objects.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">attachments</td>
-      <td valign="middle">array</td>
-      <td>File attachments associated with this post. Must be an array of <a href="#fields-of-the-attachment-object">Attachment</a> objects.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
     </tr>
   </table>
   
@@ -520,49 +303,20 @@ Reply object
       <th class="head">Field name</th>
       <th class="head">Type</th>
       <th class="head">Description</th>
-      <th class="head">Validated</th>
-      <th class="head">Mandatory</th>
     </tr>
     <tr class="row-odd">
       <td valign="middle">user</td>
       <td valign="middle">string</td>
       <td>The username of the user for this reply.</td>
-      <td align="center" valign="middle">No [3]</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">message</td>
       <td valign="middle">string</td>
       <td>The message that the reply contains.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">create_at</td>
       <td valign="middle">int</td>
       <td>The timestamp for the reply, in milliseconds since the Unix epoch.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">Yes</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">flagged_by</td>
-      <td valign="middle">array</td>
-      <td>Must contain a list of members who have flagged the post.</td>
-      <td align="center" valign="middle">No</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">reactions</td>
-      <td valign="middle">array</td>
-      <td>The emoji reactions to this post. Must be an array of <a href="#fields-of-the-reaction-object">Reaction</a> objects.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">attachments</td>
-      <td valign="middle">array</td>
-      <td>The file attachments to this post. Must be an array of <a href="#fields-of-the-attachment-object">Attachment</a> objects.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
     </tr>
   </table>
