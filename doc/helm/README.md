@@ -108,8 +108,13 @@ gcloud container clusters describe <cluster-name> --zone <zone> --project <proje
 
 This command will output the admin password. We need the password to authenticate with `kubectl` and create the role.
 
+We will also create an admin user for this cluster.  Use a name you prefer but
+for this example we will include the cluster's name in it.
+
 ```
-kubectl --username=admin --password=xxxxxxxxxxxxxx create -f https://gitlab.com/charts/gitlab/raw/master/doc/helm/examples/rbac-config.yaml
+CLUSTER_NAME=name-of-cluster
+kubectl config set-credentials $CLUSTER_NAME-admin-user --username=admin --password=xxxxxxxxxxxxxx
+kubectl --user=$CLUSTER_NAME-admin-user create -f https://gitlab.com/charts/gitlab/raw/master/doc/helm/examples/rbac-config.yaml
 ```
 
 #### Upload the RBAC config
