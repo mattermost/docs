@@ -459,6 +459,27 @@ mattermost export csv
 
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
 	  
+mattermost export bulk
+~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Export data to a file compatible with the Mattermost Bulk Import format..
+
+  Format
+    .. code-block:: none
+
+      mattermost export bulk
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost export bulk --all-teams file.json
+
+  Options
+    .. code-block:: none
+
+          --all-teams bool     Export all teams from the server.
+	  
 mattermost export schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
