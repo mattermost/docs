@@ -18,7 +18,7 @@ You can export the following basic data types:
 - Users' notification preferences
 - Posts (regular, non-reply posts)
 
-.. include:: bulk_export_data.rst
+.. include:: bulk-export-data.rst
 
 Running the bulk export command
 ===============================
