@@ -229,7 +229,7 @@ data:
           {{- end }}
       ## Registry Integration
       registry:
-        enabled: true
+        enabled: {{ .Values.registry.enabled }}
         host: {{ template "gitlab.registry.host" . }}
         {{- if .Values.registry.port }}
         port: {{ .Values.registry.port }}
