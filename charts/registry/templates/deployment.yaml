@@ -19,6 +19,7 @@ spec:
         release: {{ .Release.Name }}
       annotations:
         checksum/configmap: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
+        cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
     spec:
       securityContext:
         runAsUser: 1000

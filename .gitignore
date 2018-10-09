@@ -1,4 +1,3 @@
 config.yaml
-ci/terraform/.terraform
 charts/*.tgz
 Gemfile.lock

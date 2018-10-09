@@ -56,6 +56,7 @@ Table below contains all the possible charts configurations that can be supplied
 | minio.bucket                     | Name of storage bucket, when using Minio       | git-lfs                                          |
 | minio.serviceName                | Name of Minio service                          | minio-svc                                        |
 | minio.port                       | Port for Minio service                         | 9000                                             |
+| registry.enabled                 | Add/Remove registry link in all projects menu  | true                                             |
 | registry.api.protocol            | Registry protocol                              | http                                             |
 | registry.api.serviceName         | Registry service name                          | registry                                         |
 | registry.api.port                | Registry port                                  | 5000                                             |

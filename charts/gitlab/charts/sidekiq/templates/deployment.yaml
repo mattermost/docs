@@ -54,6 +54,7 @@ spec:
         release: {{ $releaseName }}
       annotations:
         checksum/configmap: {{ $configMapChecksum }}
+        cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
         checksum/configmap-pod: {{ pluck ( .name | quote ) $queues | last | sha256sum }}
 {{- if $metricsEnabled }}
 {{ toYaml $metricsAnnotations | indent 8 }}
