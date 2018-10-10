@@ -3,7 +3,7 @@
 ## Release Timeline
 
 Notes:
-- All cut-off dates are based on 10am ([San Francisco Time](http://everytimezone.com/)) on the day stated.
+- All cut-off dates are based on 10am ([San Francisco Time](https://everytimezone.com/)) on the day stated.
 - T-minus counts are measured in "working days" (weekdays other than major holidays concurrent in US and Canada) prior to release day.
 
 ### A. (Code complete date of previous release) Beginning of release
@@ -16,7 +16,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Post this checklist in Release Checklist channel
     - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel. [See example](https://pre-release.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
     - Draft Changelog in a WIP PR with updates for known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
-    - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version
+    - Update [Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version
     - Review submitted NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch.
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
 2. Dev:
@@ -86,7 +86,7 @@ Pre-work for the current release begins at the code complete date of the previou
 2. Logistics:
     - Mail out contributor and security researcher mugs
       - Space out the ordering of mugs over the next 3 weeks to prevent mistakes being made by the supplier.  i.e. If there are 12 contributors to order mugs for, place an order every 2nd or 3rd day over the next 3 weeks.
-    - Update [Team](http://www.mattermost.org/team/) page with new contributors
+    - Update [Team](https://www.mattermost.org/team/) page with new contributors
     - Provide release manager with a list of contributors for Changelog draft
 3. QA:
     - Confirm up to date with testing merged PRs and resolved tickets
@@ -106,7 +106,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Submit Changelog PR for team review
     - Submit any remaining documentation PRs for product updates in the release
     - Submit documentation for [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go) and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13) to  API documentation
-    - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
+    - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](https://docs.mattermost.com/administration/config-settings.html#configuration-settings)
     - Confirm all new diagnostics are documented in the telemetry docs (https://docs.mattermost.com/administration/telemetry.html)
 
 ### G. (T-minus 7 working days) Release Candidate Testing
@@ -195,7 +195,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Post in Release Discussion with links to the EE and Team Edition bits
 4. Dev:
     - Verify the hashes (SHA-1, SHA-256 and md5) and GPG signatures are correct for both Team Edition and Enterprise Edition.
-    - Test upgrade from previous version to current version, following the [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with database upgrades on both MySQL and Postgres
+    - Test upgrade from previous version to current version, following the [Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with database upgrades on both MySQL and Postgres
     - Test upgrade from Team Edition to Enterprise edition based on the [Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)
     - Review any changes made to install guides, and test if necessary
     - Ensure [Security Policies](https://docs.mattermost.com/process/security.html) page has been updated
@@ -209,7 +209,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
       - Submit a correction PR for any incorrect formatting or other errors missed during the initial review
 7. Marketing:
     - Receive sign off on final version of MailChimp email blast and Twitter announcement and schedule for 08:00 PST on the date of marketing announcement
-      - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
+      - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](https://eepurl.com/cAl5Rv)
     - Finalize blog post for mattermost.com, test on mobile view, and set timer for 08:00 PST on the day of release
     - Add links to [Admin guide](https://docs.mattermost.com/guides/administrator.html) in the release blog post where needed
 
@@ -241,7 +241,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
         - Week after release (for GitLab dev owner)
             - [Submit Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/MM-9872)
     - Confirm that [mattermost-docker](https://github.com/mattermost/mattermost-docker/releases) has been updated to the latest version (contact the maintainer via direct message on pre-release if necessary)
-    - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
+    - Contact owners of [community installers](https://www.mattermost.org/installation/) or submit PRs to update install version number
       - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release. See [example](https://pre-release.mattermost.com/core/pl/fgjqthmn67nujjtx4fcrn1hd9a).
       - For Chef Cookbook, open a new issue to announce the new release. See [example](https://github.com/ist-dsi/mattermost-cookbook/issues/22).
       - For Yunohost, open a new pull request to update the version. See [example](https://github.com/YunoHost-Apps/mattermost_ynh/pull/103).
