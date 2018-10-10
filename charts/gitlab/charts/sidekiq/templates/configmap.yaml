@@ -144,7 +144,16 @@ data:
       cron_jobs:
 {{ toYaml .Values.cron_jobs | indent 8 }}
       {{- end }}
+      ## Registry Integration
       registry:
+        enabled: {{ .Values.registry.enabled }}
+        host: {{ template "gitlab.registry.host" . }}
+        {{- if .Values.registry.port }}
+        port: {{ .Values.registry.port }}
+        {{- end }}
+        api_url: {{ default "http" .Values.registry.api.protocol }}://{{ template "gitlab.registry.api.host" . }}:{{ default 5000 .Values.registry.api.port }}
+        key: /etc/gitlab/registry/gitlab-registry.key
+        issuer: {{ .Values.registry.tokenIssuer }}
       gitlab_ci:
       ldap:
         enabled: false
@@ -189,24 +198,25 @@ data:
 {{ toYaml .Values.rack_attack.git_basic_auth | indent 10 }}
           {{- end }}
   configure: |
-    set -e
-    mkdir -p /sidekiq-secrets/redis /sidekiq-secrets/postgres \
-    /sidekiq-secrets/gitaly /sidekiq-secrets/rails-secrets
-    cp /init-secrets/redis/password /sidekiq-secrets/redis/password
-    cp /init-secrets/gitaly/gitaly_token /sidekiq-secrets/gitaly/gitaly_token
-    cp /init-secrets/postgres/psql-password /sidekiq-secrets/postgres/psql-password
-    cp /init-secrets/rails-secrets/secrets.yml /sidekiq-secrets/rails-secrets/secrets.yml
-    if [ -e /init-secrets/minio ]; then
-      mkdir -p /sidekiq-secrets/minio
-      cp /init-secrets/minio/* /sidekiq-secrets/minio/
-    fi
-    if [ -e /init-secrets/objectstorage ]; then
-      mkdir -p /sidekiq-secrets/objectstorage
-      cp /init-secrets/objectstorage/* /sidekiq-secrets/objectstorage/
-    fi
-    if [ -e /init-secrets/smtp/smtp-password ]; then
-      mkdir -p /sidekiq-secrets/smtp
-      cp /init-secrets/smtp/smtp-password /sidekiq-secrets/smtp/
-    fi
+      set -e
+      config_dir="/init-secrets"
+      secret_dir="/sidekiq-secrets"
+
+      for secret in redis gitaly registry postgres rails-secrets ; do
+        mkdir -p "${secret_dir}/${secret}"
+        cp -v -r "${config_dir}/${secret}/." "${secret_dir}/${secret}/"
+      done
+      if [ -e "${config_dir}/minio" ]; then
+        mkdir -p "${secret_dir}/minio"
+        cp -v -r "${config_dir}/minio/." "${secret_dir}/minio/"
+      fi
+      if [ -e "${config_dir}/objectstorage" ]; then
+        mkdir -p "${secret_dir}/objectstorage"
+        cp -v -r "${config_dir}/objectstorage/." "${secret_dir}/objectstorage/"
+      fi
+      if [ -e "${config_dir}/smtp/smtp-password" ]; then
+        mkdir -p "${secret_dir}/smtp"
+        cp -v -r "${config_dir}/smtp/smtp-password" "${secret_dir}/smtp/"
+      fi
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}
