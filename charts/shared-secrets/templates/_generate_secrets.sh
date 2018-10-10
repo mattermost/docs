@@ -2,6 +2,8 @@ namespace={{ .Release.Namespace }}
 release={{ .Release.Name }}
 env={{ .Values.env }}
 
+pushd $(mktemp -d)
+
 # Args pattern, length
 function gen_random(){
   head -c 4096 /dev/urandom | LC_CTYPE=C tr -cd $1 | head -c $2
