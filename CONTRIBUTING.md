@@ -1,1 +1,1 @@
-Please see [Contribution Guidelines](http://docs.mattermost.com/developer/contribution-guide.html)
+Please see [Contribution Guidelines](https://docs.mattermost.com/developer/contribution-guide.html)
