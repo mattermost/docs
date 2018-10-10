@@ -414,6 +414,7 @@ mattermost export
 
   Child Commands
     -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format
+    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost Bulk Import format
     -  `mattermost export csv`_ - Export data from Mattermost in CSV format
     -  `mattermost export schedule`_ - Schedule an export job
 
@@ -437,7 +438,28 @@ mattermost export actiance
     .. code-block:: none
 
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
-	 
+
+mattermost export bulk
+~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Export data to a file compatible with the Mattermost Bulk Import format.
+
+  Format
+    .. code-block:: none
+
+      mattermost export bulk
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost export bulk --all-teams file.json
+
+  Options
+    .. code-block:: none
+
+          --all-teams bool     Export all teams from the server.
+	  
 mattermost export csv
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -458,27 +480,6 @@ mattermost export csv
     .. code-block:: none
 
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
-	  
-mattermost export bulk
-~~~~~~~~~~~~~~~~~~~~~
-
-  Description
-    Export data to a file compatible with the Mattermost Bulk Import format..
-
-  Format
-    .. code-block:: none
-
-      mattermost export bulk
-
-  Example
-    .. code-block:: none
-
-      sudo ./mattermost export bulk --all-teams file.json
-
-  Options
-    .. code-block:: none
-
-          --all-teams bool     Export all teams from the server.
 	  
 mattermost export schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
