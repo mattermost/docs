@@ -1,8 +1,8 @@
 # Mattermost Documentation
 
-This repository generates the documentation available at http://docs.mattermost.com/
+This repository generates the documentation available at https://docs.mattermost.com/
 
-All documentation is available under the terms of a [Creative Commons License](http://creativecommons.org/licenses/by-nc-sa/3.0/).
+All documentation is available under the terms of a [Creative Commons License](https://creativecommons.org/licenses/by-nc-sa/3.0/).
 
 ## Usage
 
@@ -27,7 +27,7 @@ To generate the HTML files from markdown in the `/source` directory:
 
 **Signing CLA:**
 
-Please read the [Mattermost Contributor Agreement](http://www.mattermost.org/mattermost-contributor-agreement/) and sign it (at the bottom of the page), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
+Please read the [Mattermost Contributor Agreement](https://www.mattermost.org/mattermost-contributor-agreement/) and sign it (at the bottom of the page), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
 
 **Additional process for Core Committers for Doc Repo:**
 
