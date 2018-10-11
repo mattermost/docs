@@ -9,7 +9,7 @@ Mattermost's outgoing webhooks feature  can be used with this fairly easily as l
 Sending information from Mattermost
 ------------------------------------
 
-Mattermost's :doc:`interactive message buttons <interactive-messages>` send information using a parameter called "context." The easiest way to get all the information from Mattermost is to use the following configuration, which will pass the entire payload to your script as a string:
+Mattermost's :doc:`interactive message buttons <../developer/interactive-messages>` send information using a parameter called "context." The easiest way to get all the information from Mattermost is to use the following configuration, which will pass the entire payload to your script as a string:
 
 
   {
