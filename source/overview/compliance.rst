@@ -78,6 +78,8 @@ For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has rece
 
 Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interace to accessibility tools. 
 
+Any technical issue in a current or future product release that would prevent compliance with accessibility ratings above would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://www.mattermost.org/filing-issues/>`_ so that it may be resolved. 
+
 U.S. Export Compliance Overview
 -----------------------------------------------
 
