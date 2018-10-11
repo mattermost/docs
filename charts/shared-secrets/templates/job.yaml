@@ -16,6 +16,9 @@ spec:
         app: {{ template "name" . }}
         release: {{ .Release.Name }}
     spec:
+      securityContext:
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
       {{- if .Values.rbac.create }}
       serviceAccountName: {{ template "fullname" . }}
       {{- end }}
@@ -29,10 +32,14 @@ spec:
           volumeMounts:
             - name: scripts
               mountPath: /scripts
+            - name: ssh
+              mountPath: /etc/ssh
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
       - name: scripts
         configMap:
           name: {{ template "fullname" . }}
+      - name: ssh
+        emptyDir: {}
 {{- end -}}

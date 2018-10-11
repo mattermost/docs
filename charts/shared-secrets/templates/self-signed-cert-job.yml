@@ -17,6 +17,9 @@ spec:
         app: {{ template "name" . }}
         release: {{ .Release.Name }}
     spec:
+      securityContext:
+        runAsUser: {{ .Values.securityContext.runAsUser }}
+        fsGroup: {{ .Values.securityContext.fsGroup }}
       serviceAccountName: {{ template "fullname" . }}
       restartPolicy: Never
 {{- include "pullsecrets" .Values.image | indent 6}}
