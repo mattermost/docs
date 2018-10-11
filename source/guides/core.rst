@@ -58,6 +58,7 @@ Joining the Team
    /process/security*
    /process/training*
    /process/people-ops*
+   /process/pm-faq*
    /process/developer*
 
 Marketing  
