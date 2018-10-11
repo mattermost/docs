@@ -410,12 +410,12 @@ mattermost export
 -----------------
 
   Description
-    Compliance export commands
+   Commands for exporting data for compliance and for merging multiple Mattermost instances.
 
   Child Commands
-    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format
-    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost Bulk Import format
-    -  `mattermost export csv`_ - Export data from Mattermost in CSV format
+    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license.
+    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost Bulk Import format. 
+    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license.
     -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance
@@ -448,7 +448,7 @@ mattermost export bulk
   Format
     .. code-block:: none
 
-      mattermost export bulk
+      mattermost export bulk 
 
   Example
     .. code-block:: none
@@ -458,7 +458,7 @@ mattermost export bulk
   Options
     .. code-block:: none
 
-          --all-teams bool     Export all teams from the server.
+          --all-teams bool     Export all teams from the server.  This is currently required until additional options are added.
 	  
 mattermost export csv
 ~~~~~~~~~~~~~~~~~~~~~
