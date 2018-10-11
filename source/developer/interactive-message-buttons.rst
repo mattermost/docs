@@ -1,4 +1,4 @@
 Interactive Message Buttons
 ============================
 
-See our updated documentation for <interactive-messages>.
+See our updated documentation for :doc:`interactive-messages`.
