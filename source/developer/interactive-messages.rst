@@ -3,7 +3,7 @@
 Interactive Messages
 ============================
 
-Mattermost supports interactive messages for `incoming <https://docs.mattermost.com/developer/webhooks-incoming.html>`_ and `outgoing webhooks <https://docs.mattermost.com/developer/webhooks-outgoing.html>`_, `custom slash commands <https://docs.mattermost.com/developer/slash-commands.html>`_ and `plugins <https://docs.mattermost.com/administration/plugins.html>`_ via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity.
+Mattermost supports interactive messages for :doc:`incoming <webhooks-incoming>` and :doc:`outgoing webhooks <webhooks-outgoing>`, :doc:`custom slash commands <slash-commands>` and :doc:`plugins <../administration/plugins>` via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity.
 
 Use interactive messages to simplify complex workflows by allowing users to take quick actions directly through your integration post. For example, they enable your integration to:
 
@@ -13,7 +13,7 @@ Use interactive messages to simplify complex workflows by allowing users to take
 
 To try it out, you can use this `matterpoll plugin <https://github.com/matterpoll/matterpoll>`_ to add polling to Mattermost channels via a ``/poll`` slash command.
 
-.. image:: ../../source/images/matterpoll.png
+.. image:: ../../source/images/poll.gif
 
 .. toctree::
   :maxdepth: 2
@@ -22,8 +22,6 @@ Message Buttons
 ----------------
 
 Add message buttons as ``actions`` in your integration `message attachments <https://docs.mattermost.com/developer/message-attachments.html>`_.
-
-.. image:: ../../source/images/poll.gif
 
 The following payload gives an example that uses message buttons.
 
@@ -75,7 +73,7 @@ Message Menus
 
 Similar to buttons, add message menus as ``actions`` in your integration `message attachments <https://docs.mattermost.com/developer/message-attachments.html>`_.
 
-.. image:: ../../source/images/message_menus.png
+.. image:: ../../source/images/message-menus.png
 
 The following payload gives an example that uses message menus.
 
@@ -126,8 +124,6 @@ The integration can respond with an update to the original post, or with an ephe
     },
     "ephemeral_text": "You updated the post!"
   }
-
-.. image:: ../../source/images/message-menu.png
 
 Message menus for channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -188,7 +184,7 @@ Specify ``users`` as your action's ``data_source`` as follows:
   }
 
 Parameters
-~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 Below is a brief description of each parameter to help you customize the interactive message in Mattermost. For more information on message attachments, `see our documentation <https://docs.mattermost.com/developer/message-attachments.html>`_.
 
@@ -311,14 +307,14 @@ Troubleshooting
 --------------------
 
 Interactive messages don't show up for slash commands
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Make sure the `response type <https://docs.mattermost.com/developer/slash-commands.html#message-type>`_ of your slash command is set to ``in_channel``, not ``ephemeral``.
 
 Ephemeral messages do not have a state, and therefore do not support interactive message buttons at this time.
 
 Message buttons and menus do not trigger an action and return a 400 error
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It is likely for one of three reasons:
 
