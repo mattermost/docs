@@ -78,7 +78,7 @@ Compliance with accessibility standards is achieved in the following ways:
 
 - **WCAG 2.0** - For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has received a 3rd party "A" rating and is working towards an "AA" rating.  
 
-- **ADA** - Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interace to accessibility tools. 
+- **ADA** - Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools. 
 
 - **Remediation** - Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://www.mattermost.org/filing-issues/>`_ so that it may be resolved. 
 
