@@ -22,7 +22,7 @@ You can export the following basic data types:
 
 Running the bulk export command
 ===============================
-The export command runs in the `CLI <https://docs.mattermost.com/administration/command-line-tools.html>`_ and operates in the security context of the CLI.  It has permissions to access all information in the Mattermost database. 
+The export command runs in the `CLI <https://docs.mattermost.com/administration/command-line-tools.html>`_.  It has permissions to access all information in the Mattermost database. 
 
 To run the export command: 
 
