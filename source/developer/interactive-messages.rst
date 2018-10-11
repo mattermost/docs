@@ -132,6 +132,8 @@ You can also provide a list of channels for message menus that the user can choo
 
 Specify ``channels`` as your action's ``data_source`` as follows:
 
+.. code-block:: text
+
   {
     "attachments": [
       {
@@ -160,6 +162,8 @@ Message menus for users
 Similar to channels, you can also provide a list of users for message menus. The user can choose anyone part of the Mattermost system.
 
 Specify ``users`` as your action's ``data_source`` as follows:
+
+.. code-block:: text
 
   {
     "attachments": [
