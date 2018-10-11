@@ -45,7 +45,7 @@ Actiance XML
 
 If you have chosen your file format to be Actiance XML, you can set up an integration with Actiance Vantage archive system. For more information, see `their homepage <https://www.actiance.com/products/vantage/>`_.
 
-For a sample Actiance outpout, `download a Actiance XML export file here <https://github.com/mattermost/docs/blob/master/source/samples/actiance_export.xml>`_.
+For a sample Actiance outpout, `download an Actiance XML export file here <https://github.com/mattermost/docs/blob/master/source/samples/actiance_export.xml>`_.
 
 .. note::
   In Actiance XML exports, channel type is prepended to the channel names.
