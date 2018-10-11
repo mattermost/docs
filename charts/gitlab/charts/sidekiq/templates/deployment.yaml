@@ -226,6 +226,11 @@ spec:
               items:
                 - key: {{ template "gitlab.psql.password.key" $ }}
                   path: postgres/psql-password
+          - secret:
+              name: {{ template "gitlab.registry.certificate.secret" $ }}
+              items:
+                - key: registry-auth.key
+                  path: registry/gitlab-registry.key
           {{- if $minioEnabled }}
           - secret:
               name: {{ $minioSecret }}
