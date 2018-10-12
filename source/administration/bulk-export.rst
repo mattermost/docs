@@ -9,14 +9,12 @@ Data from one Mattermost instance into another can be exported in the a `JSONL
 
 You can export the following basic data types:
 
-- Version
 - Teams
 - Channels (Public & Private)
 - Users
 - Users' Team memberships
 - Users' Channel memberships
-- Users' notification preferences
-- Posts (regular, non-reply posts)
+- Posts (Posts in the Public/Private channels, and also replies to those posts.)
 
 .. include:: bulk-export-data.rst
 
@@ -27,10 +25,10 @@ The export command runs in the `CLI <https://docs.mattermost.com/administration/
 To run the export command: 
 
 1.  Navigate to the directory where the Mattermost server is installed. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``.
-2.  Run the following command to extract data from all teams on the server. Note that you can change the file name and file location to specify where the file is exported and prevent any overwrites to compliance exports if you have the enabled. 
+2.  Run the following command to extract data from all teams on the server. Note that you can change the file name and specify an abosulte or relative path to dictate where the file is exported. 
   
   ``sudo ./mattermost export bulk --all-teams file.json``
   ``sudo ./mattermost export bulk --all-teams /home/user/bulk_data.json``
   
-3.  Retrieve your file from your specified location or if not specified from the local storage location configured at **System Console > Files > Storage > Local Storage Directory**. Your data will be located in the ``./exports/`` folder.
+3.  Retrieve your file from the location you specified.  
 
