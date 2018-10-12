@@ -1,6 +1,6 @@
 Bulk export data
 =================
-At this time, the export supports attributes of the objects listed below.   Configuration for exporting specific areas of the server, exporting additional types of posts, reactions, file attachments, webhooks and bot messages are not yet supported. Deleted objects are not yet supported as well.  For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea formum <https://mattermost.uservoice.com/forums/306457-general>`_.  
+At this time, the export supports attributes of the objects listed below.   Configuration for exporting specific areas of the server, exporting additional types of posts, reactions, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.  For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea formum <https://mattermost.uservoice.com/forums/306457-general>`_.  
 
 Version object
 --------------
