@@ -10,7 +10,7 @@
 * A Helm charts based deployment running the same GitLab version as the
   omnibus-gitlab package based installation.
 
-* An S3 service which the Helm chart based deployment is configured to
+* Object storage service which the Helm chart based deployment is configured to
   use. For production use, we recommend you use an [external object storage] and
   have the login credentials to access it ready. If you are using the built-in
   Minio service, [read the docs](minio.md) on how to grab the login credentials
