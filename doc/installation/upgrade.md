@@ -11,4 +11,5 @@ The following are the steps to upgrade GitLab to a newer version:
 1. Check the [change log](https://gitlab.com/charts/gitlab/blob/master/CHANGELOG.md) for the specific version you would like to upgrade to
 2. Go through [deployment documentation](./deployment.md) step by step
 3. Decide on all the values you need to set
-4. Do `helm upgrade gitlab . --version <new version> ` followed by all `--set` values you extracted in step 3
+4. If you would like to use the GitLab operator go through the steps outlined in [Operator installation](./operator.md)
+5. Do `helm upgrade gitlab . --version <new version> ` followed by all `--set` values you extracted in step 3

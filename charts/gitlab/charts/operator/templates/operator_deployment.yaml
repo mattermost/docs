@@ -1,0 +1,30 @@
+{{- if and .Values.global.operator.enabled (not .Values.global.operator.bootstrap) }}
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: {{ template "fullname" . }}
+  labels:
+{{ include "gitlab.standardLabels" . | indent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: operator
+{{ include "gitlab.standardLabels" . | indent 6 }}
+  template:
+    metadata:
+      labels:
+        component: operator
+{{ include "gitlab.standardLabels" . | indent 8 }}
+    spec:
+      serviceAccountName: {{ template "fullname" . }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
+          env:
+          - name: API_SUBGROUP
+            value: {{ .Release.Name }}
+          {{ template "gitlab.imagePullPolicy" . }}
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+{{- end }}
