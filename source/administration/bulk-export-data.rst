@@ -15,12 +15,12 @@ Version object
     <tr class="row-odd">
       <td valign="middle">type</td>
       <td valign="middle">string</td>
-      <td>Must be the string "version"</td>
+      <td>The string "version"</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">version</td>
       <td valign="middle">number</td>
-      <td>Must be the number 1.</td>
+      <td>The number 1.</td>
     </tr>
   </table>
   
@@ -47,7 +47,7 @@ Team object
     <tr class="row-odd">
       <td valign="middle">type</td>
       <td valign="middle">string</td>
-      <td>The type of team. Can have one the following values:<br>
+      <td>The type of team. Will have one the following values:<br>
           <kbd>"O"</kbd> for an open team<br>
           <kbd>"I"</kbd> for an invite-only team.</td>
     </tr>
@@ -59,7 +59,7 @@ Team object
     <tr class="row-odd">
       <td valign="middle">allow_open_invite</td>
       <td valign="middle">bool</td>
-      <td>Whether to allow open invitations. Must have one of the following values:<br>
+      <td>Whether to allow open invitations. Will have one of the following values:<br>
         <kbd>true</kbd><br>
         <kbd>false</kbd>
       </td>
@@ -67,7 +67,7 @@ Team object
     <tr class="row-odd">
       <td valign="middle">scheme</td>
       <td valign="middle">string</td>
-      <td>The name of the Scheme that should be applied to this team.</td>
+      <td>The name of the permissions scheme that applies to this team.</td>
     </tr>
   </table>
 
@@ -99,7 +99,7 @@ Channel object
     <tr class="row-odd">
       <td valign="middle">type</td>
       <td valign="middle">string</td>
-      <td>The type of channel. Can have one the following values:<br>
+      <td>The type of channel. Will have one the following values:<br>
           <kbd>"O"</kbd> for a public channel.<br>
           <kbd>"P"</kbd> for a private channel.</td>
     </tr>
@@ -116,7 +116,7 @@ Channel object
     <tr class="row-odd">
       <td valign="middle">scheme</td>
       <td valign="middle">string</td>
-      <td>The name of the Scheme that should be applied to this team.</td>
+      <td>The name of the Scheme that applies to this team.</td>
     </tr>
   </table>
   
@@ -144,7 +144,7 @@ User object
       <td valign="middle">auth_service</td>
       <td valign="middle">string</td>
       <td>The authentication service used for this user account. <br>
-        <kbd>""</kbd> or not provided - password authentication.<br>
+        <kbd>""</kbd><br>
         <kbd>"gitlab"</kbd> - GitLab authentication.<br>
         <kbd>"ldap"</kbd> - LDAP authentication (E10 and E20)<br>
         <kbd>"saml"</kbd> - Generic SAML based authentication (E20)<br>
@@ -156,7 +156,7 @@ User object
       <td valign="middle">string</td>
       <td>The authentication data if <kbd>auth_service</kbd> is used. The value depends on the <kbd>auth_service</kbd> that is specified.<br>
         The data comes from the following fields for the respective auth_services:<br>
-        <kbd>""</kbd> or not provided - must be omitted.<br>
+        <kbd>""</kbd><br>
         <kbd>"gitlab"</kbd> - The value of the Id attribute provided in the Gitlab auth data.<br>
         <kbd>"ldap"</kbd> - The value of the LDAP attribute specified as the "ID Attribute" in the Mattermost LDAP configuration.<br>
         <kbd>"saml"</kbd> - The value of the SAML Email address attribute.<br>
@@ -186,21 +186,17 @@ User object
     <tr class="row-odd">
       <td valign="middle">roles</td>
       <td valign="middle">string</td>
-      <td>The user’s roles. Will be one of the following values:<br>
-        <kbd>"system_user"</kbd><br>
-        <kbd>"system_admin system_user"</kbd></td>
+      <td>The user’s roles. </td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">locale</td>
       <td valign="middle">string</td>
-      <td>The user’s locale which Mattermost has been localised.</td>
+      <td>The user’s localization configuration.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">teams</td>
       <td valign="middle">array</td>
-      <td>The teams which the user will be made a member of. Must be an array of <b>UserTeamMembership</b> objects.</td>
-      <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
+      <td>The teams which the user is member of. Is an array of <b>UserTeamMembership</b> objects.</td>
     </tr>
   </table>
   
@@ -223,10 +219,7 @@ UserTeamMembership object
     <tr class="row-odd">
       <td valign="middle">roles</td>
       <td valign="middle">string</td>
-      <td>The roles the user has within this team. Will be one of the following values:<br>
-          <kbd>"team_user"</kbd><br>
-          <kbd>"team_admin team_user"</kbd>
-      </td>
+      <td>The roles the user has within this team. </td>
     </tr>
   </table>
 
@@ -243,15 +236,12 @@ UserChannelMembership object
     <tr class="row-odd">
       <td valign="middle">name</td>
       <td valign="middle">string</td>
-      <td>The name of the channel in the parent team that this user is be a member of.</td>
+      <td>The name of the channel in the parent team that this user is a member of.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">roles</td>
       <td valign="middle">string</td>
-      <td>The roles the user has within this channel. Will be one of the following values:<br>
-          <kbd>"channel_user"</kbd><br>
-          <kbd>"channel_user channel_admin"</kbd>
-      </td>
+      <td>The roles the user has within this channel. </td>
     </tr>
   </table>
 
