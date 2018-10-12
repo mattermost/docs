@@ -116,7 +116,7 @@ Channel object
     <tr class="row-odd">
       <td valign="middle">scheme</td>
       <td valign="middle">string</td>
-      <td>The name of the Scheme that applies to this team.</td>
+      <td>The name of the permissions scheme that applies to this team.</td>
     </tr>
   </table>
   
@@ -214,7 +214,7 @@ UserTeamMembership object
     <tr class="row-odd">
       <td valign="middle">name</td>
       <td valign="middle">string</td>
-      <td>The name of the team this user is be a member of.</td>
+      <td>The name of the team this user is a member of.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">roles</td>
