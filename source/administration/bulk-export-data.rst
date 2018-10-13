@@ -2,7 +2,9 @@ Bulk export data
 =================
 At this time, the export supports attributes of the objects listed below. All Mattermost Bulk Export data files will begin with a `Version` object as the first line of the file. This indicates the version of the Mattermost Bulk Import file format with which the exported data is compatible.
 
-Configuration for exporting specific areas of the server, exporting additional types of posts, reactions, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.  For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`_.  
+Configuration for exporting specific areas of the server, exporting additional types of posts, reactions, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.  
+
+For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`_.  
 
 Version object
 --------------
