@@ -5,9 +5,9 @@ Bulk Export Tool
 =================
 
 Data from one Mattermost instance into another can be exported in the `JSONL
-<http://jsonlines.org>`_ file using the `bulk loading feature <https://docs.mattermost.com/deployment/bulk-loading.html>`_. This tool is useful if you have created a server for a proof of concept and have created another server for production use and want to retain the history from the proof of concept instance. 
+<http://jsonlines.org>`_ file using the `bulk loading feature <https://docs.mattermost.com/deployment/bulk-loading.html>`_. This tool is useful if you have created a server for a proof of concept, have created another server for production use and now want to retain the history from the proof of concept instance.
 
-You can export the following basic data types:
+You can export the following data types:
 
 - Teams
 - Channels (Public & Private)
