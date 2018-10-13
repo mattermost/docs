@@ -1,6 +1,8 @@
 Bulk export data
 =================
-At this time, the export supports attributes of the objects listed below.   Configuration for exporting specific areas of the server, exporting additional types of posts, reactions, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.  For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea formum <https://mattermost.uservoice.com/forums/306457-general>`_.  
+At this time, the export supports attributes of the objects listed below. All Mattermost Bulk Export data files will begin with a `Version` object as the first line of the file. This indicates the version of the Mattermost Bulk Import file format with which the exported data is compatible.
+
+Configuration for exporting specific areas of the server, exporting additional types of posts, reactions, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.  For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`_.  
 
 Version object
 --------------
@@ -143,8 +145,7 @@ User object
     <tr class="row-odd">
       <td valign="middle">auth_service</td>
       <td valign="middle">string</td>
-      <td>The authentication service used for this user account. <br>
-        <kbd>""</kbd><br>
+      <td>The authentication service used for this user account. This field will be absent for user/password authentication.<br>
         <kbd>"gitlab"</kbd> - GitLab authentication.<br>
         <kbd>"ldap"</kbd> - LDAP authentication (E10 and E20)<br>
         <kbd>"saml"</kbd> - Generic SAML based authentication (E20)<br>
@@ -156,7 +157,6 @@ User object
       <td valign="middle">string</td>
       <td>The authentication data if <kbd>auth_service</kbd> is used. The value depends on the <kbd>auth_service</kbd> that is specified.<br>
         The data comes from the following fields for the respective auth_services:<br>
-        <kbd>""</kbd><br>
         <kbd>"gitlab"</kbd> - The value of the Id attribute provided in the Gitlab auth data.<br>
         <kbd>"ldap"</kbd> - The value of the LDAP attribute specified as the "ID Attribute" in the Mattermost LDAP configuration.<br>
         <kbd>"saml"</kbd> - The value of the SAML Email address attribute.<br>
