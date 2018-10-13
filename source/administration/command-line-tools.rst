@@ -414,7 +414,7 @@ mattermost export
 
   Child Commands
     -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license.
-    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost Bulk Import format. 
+    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_.
     -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license.
     -  `mattermost export schedule`_ - Schedule an export job
 
@@ -443,7 +443,7 @@ mattermost export bulk
 ~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Export data to a file compatible with the Mattermost Bulk Import format.
+    Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_.
 
   Format
     .. code-block:: none
@@ -458,7 +458,7 @@ mattermost export bulk
   Options
     .. code-block:: none
 
-          --all-teams bool     Export all teams from the server.  This is currently required until additional options are added.
+	  --all-teams bool [REQUIRED]  Export all teams from the server.
 	  
 mattermost export csv
 ~~~~~~~~~~~~~~~~~~~~~
