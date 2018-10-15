@@ -86,6 +86,7 @@ Administration
    /administration/backup*
    /administration/liveness-check*
    /administration/migrating.md
+   /administration/bulk-export.rst
    /administration/encryption*
    /administration/image-proxy*
    /administration/plugins*
