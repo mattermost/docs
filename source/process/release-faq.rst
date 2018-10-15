@@ -3,7 +3,7 @@ Frequently Asked Questions
 
 **Q1: When is release branch cut for a bug release?**
  
- - A: On the day prior feature release ships.
+ - A: On the day prior feature release ships after final has been cut.
 
 **Q2: When is release branch cut for a feature release?**
  
