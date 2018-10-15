@@ -24,6 +24,7 @@ Development Process
    /developer/fx*
    /developer/localization*
    /process/definitions*
+   /process/pm-faq*
 
 Community Process
 -------------------
@@ -67,7 +68,6 @@ Joining the Team
    /process/security*
    /process/training*
    /process/people-ops*
-   /process/pm-faq*
    /process/developer*
 
 Marketing  
