@@ -1,0 +1,40 @@
+# values-minikube.yaml
+# This example intended as baseline to use Minikube for the deployment of GitLab
+# - Minimized CPU/Memory load, can fit into 2 CPU, 4 GB of RAM (barely)
+# - Services that are not compatible with how Minikube runs are disabled
+# - Some services entirely removed, or scaled down to 1 replica.
+# - Configured to use 192.168.99.100, and nip.io for the domain
+
+# Minimal settings
+global:
+  hosts:
+    domain: example.com
+    externalIP: 1.1.1.1
+certmanager-issuer:
+  email: me@example.com
+# GitLab Runner needs to be privileged for Docker Build to function.
+# Note: that privileged runners **are insecure** and can compromise your cluster.
+gitlab-runner:
+  runners:
+    privileged: true
+# Reduce replica counts, reducing CPU & memory requirements
+nginx-ingress:
+  controller:
+    replicaCount: 1
+    minAvailable: 1
+  defaultBackend:
+    minAvailable: 1
+    replicaCount: 1
+gitlab:
+  unicorn:
+    minReplicas: 1
+    maxReplicas: 1
+  sidekiq:
+    minReplicas: 1
+    maxReplicas: 1
+  gitlab-shell:
+    minReplicas: 1
+    maxReplicas: 1
+registry:
+  minReplicas: 1
+  maxReplicas: 1
