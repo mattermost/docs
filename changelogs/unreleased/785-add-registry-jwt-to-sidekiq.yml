@@ -1,5 +1,0 @@
----
-title: 'Sidekiq: add credentials for Registry, #785'
-merge_request: 535
-author:
-type: fixed
