@@ -1,5 +1,0 @@
----
-title: Add registry.enabled param in unicorn chart
-merge_request: 508
-author: Flavien Peyre
-type: added

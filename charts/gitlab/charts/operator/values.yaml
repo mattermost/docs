@@ -1,0 +1,30 @@
+# Default values for sidekiq.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+image:
+  repository: registry.gitlab.com/charts/components/gitlab-operator
+  tag: latest
+  pullSecrets: []
+  pullPolicy: Always
+
+init:
+  resources:
+    requests:
+      cpu: 50m
+
+install:
+  # Install the operator as well
+  enabled: true
+  image:
+    repository: gcr.io/google_containers/hyperkube
+    tag: v1.9.0
+    pullSecrets: []
+    #pullPolicy: IfNotPresent
+
+resources:
+  # limits:
+  #  cpu: 1
+  #  memory: 2G
+  requests:
+    cpu: 100m
+    memory: 64M

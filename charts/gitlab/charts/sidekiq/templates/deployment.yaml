@@ -43,6 +43,9 @@ metadata:
 {{ include "gitlab.standardLabels" $ | indent 4 }}
     queue-pod-name: {{ .name }}
 spec:
+  {{- if $.Values.global.operator.enabled }}
+  paused: true
+  {{- end }}
   selector:
     matchLabels:
       app: {{ $name }}
@@ -117,6 +120,10 @@ spec:
               value: {{ default $concurrency .concurrency | quote }}
             - name: SIDEKIQ_TIMEOUT
               value: {{ default $timeout .timeout | quote }}
+{{- if $.Values.global.operator.enabled }}
+            - name: BYPASS_SCHEMA_VERSION
+              value: 'true'
+{{- end }}
           volumeMounts:
           - name: sidekiq-config
             mountPath: '/var/opt/gitlab/templates'
