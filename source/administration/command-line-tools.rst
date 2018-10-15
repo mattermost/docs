@@ -413,9 +413,9 @@ mattermost export
    Commands for exporting data for compliance and for merging multiple Mattermost instances.
 
   Child Commands
-    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license.
-    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_.
-    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license.
+    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license
+    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_
+    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license
     -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance
