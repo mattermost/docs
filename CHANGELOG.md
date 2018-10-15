@@ -2,6 +2,21 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.1.5 (2018-10-15)
+
+### Fixed (1 change)
+
+- Sidekiq: add credentials for Registry, #785. !535
+
+### Added (1 change, 1 of them is from the community)
+
+- Add registry.enabled param in unicorn chart. !508 (Flavien Peyre)
+
+### Other (1 change)
+
+- Update GitLab Version to 11.3.5.
+
+
 ## 1.1.4 (2018-10-05)
 
 ### Other (1 change)
