@@ -67,8 +67,16 @@ Tables below contain all the possible charts configurations that can be supplied
 | global.appConfig.incomingEmail.idleTimeout         | The IDLE command timeout                                                                                 | 60                    |
 
 
+## GitLab Shell
+
+| Parameter              | Description                              | Default |
+| ---                    | ---                                      | ---     |
+| global.shell.port      | Port number to expose on Ingress for SSH |         |
+| global.shell.authToken | Secret containing shared secret          |         |
+| global.shell.hostKeys  | Secret containing SSH host keys          |         |
+
 ## RBAC Settings
-| Parameter                                    | Default                                                           | Default                      |
+| Parameter                                    | Description                                                       | Default                      |
 | ---                                          | ---                                                               | ---                          |
 | certmanager.rbac.create                      | Create and use RBAC resources                                     | true                         |
 | nginx-ingress.rbac.create                    | Create and use default RBAC resources                             | false                        |
