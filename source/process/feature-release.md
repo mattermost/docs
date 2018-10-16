@@ -132,6 +132,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 4. Build:
     - Review all `TODO` notes, including one for uncommenting upgrade code
     - Confirm all PRs in [`/enterprise`](https://github.com/mattermost/enterprise/pulls) repo have been merged.
+    - Update Redux before each RC and Final build
     - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 3.5.0-RC1) according to the Release Candidate Checklist in ``mattermost/process``
     - After branching, the database version in sql_upgrade.go on master is set to the next scheduled release version (e.g. 3.6.0)
     - CI servers are updated to the release branch
@@ -225,6 +226,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Verify smoke tests on platform and RN apps all passed
     - Post QA approval in Release Discussion channel
 3. Build:
+    - Update Redux before each RC and Final build
     - Tags a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC
     - Posts SHA key, md5 sum and GPG signatures of the final build to release channel
     - Post in Release Discussion with links to the EE and Team Edition bits
@@ -296,7 +298,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the previous release version
 5. Dev:
     - Confirm oss.mattermost.com is updated to final build
-    - Merge changes made to release branch into `master`
+    - Cut release branch for Bug Fix release
     - Update existing tickets or create new ones for the next release
 6. Marketing:
     - Turn on CrazyEgg for blog post page
