@@ -95,7 +95,7 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog <https://docs.mattermost.
 Mattermost Team Edition Server Archive
 ---------------------------------------
 
-Mattermost Team Edition v5.4.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-3>`_ - `Download <https://releases.mattermost.com/5.4.0/mattermost-team-5.4.0-linux-amd64.tar.gz>`_
+Mattermost Team Edition v5.4.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-4>`_ - `Download <https://releases.mattermost.com/5.4.0/mattermost-team-5.4.0-linux-amd64.tar.gz>`_
   - ``https://releases.mattermost.com/5.4.0/mattermost-team-5.4.0-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``6b6f3ea9e0faf3895d71f38cf90737468a8db07b12370762be6cf60c6983355a``
 Mattermost Team Edition v5.3.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-3>`_ - `Download <https://releases.mattermost.com/5.3.1/mattermost-team-5.3.1-linux-amd64.tar.gz>`_
