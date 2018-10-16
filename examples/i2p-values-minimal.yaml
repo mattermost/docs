@@ -10,6 +10,9 @@ global:
   hosts:
     domain: example.com
     externalIP: 1.1.1.1
+  # Use standard ingress class name to share with deployed apps
+  ingress:
+    class: nginx
 certmanager-issuer:
   email: me@example.com
 # GitLab Runner needs to be privileged for Docker Build to function.
@@ -22,6 +25,8 @@ nginx-ingress:
   controller:
     replicaCount: 1
     minAvailable: 1
+    # Use standard ingress class name to share with deployed apps
+    ingressClass: nginx
   defaultBackend:
     minAvailable: 1
     replicaCount: 1
