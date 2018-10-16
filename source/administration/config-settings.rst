@@ -319,6 +319,18 @@ This setting only affects the UI, not permissions on the server. For instance, a
 | This feature's ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``any`` and ``team`` for above settings respectively.                      |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Allow Team Administrators to edit others posts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission is stored in the database and can be modified using the System Console user interface.*
+
+**True**: Team Administrators and System Administrators can edit other users' posts.  
+
+**False**:  Only System Administrators can edit other users' posts.
+
+.. note::
+This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ to configure this permission.   
+
+
 Enable Team Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Removed in May 16th, 2016 release*
@@ -2667,6 +2679,28 @@ So you don't miss messages, please make sure to change this value to an email yo
 | This feature's ``config.json`` setting is ``"SupportEmail":"feedback@mattermost.com"`` with string input.                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Custom Terms of Service (Beta)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20*.
+
+**True**: New users must accept custom terms of service before accessing any Mattermost teams on desktop or web. Existing users must accept them after login or a page refresh. Users on mobile will not be presented with the custom Terms of Services. Mobile support is scheduled for an upcoming release.
+
+**False**: During account creation or login, users can review terms of service included via **System Console > Legal and Support > Terms of Service link**.
+
+.. note::
+
+  This setting can only be modified using the System Console user interface.
+
+Custom Terms of Service Text (Beta)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20*.
+
+Text that will appear in your custom Terms of Service. Supports Markdown-formatted text.
+
+.. note::
+
+  This setting can only be modified using the System Console user interface.
+
 ________
 
 Mattermost App Links
@@ -3343,6 +3377,39 @@ Enable API Team Deletion
 
 SQL Settings
 ~~~~~~~~~~~~
+
+Enable Public Channels Materialization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. note::
+  This setting provides a fast way for System Admins to disable public channels materialization if it causes unexpected performance degradation. The feature will be enabled permanently and this setting will be removed in Mattermost v5.6, to be released on December 16, 2018.
+
+**True**: Enables materialization of public channels to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI. Notably, this allows the database to exclude direct messages for many queries, resulting in better query plans and more efficient indexes.
+
+**False**: Disables materialization for public channels. 
+
+If this feature is disabled and then later re-enabled, an offline migration is necessary to synchronize the materialized table. Use the following steps:
+
+1. Shut down your application servers.
+2. Connect to your Mattermost database.
+3. Execute the following queries:
+
+.. code:: sql
+
+  DELETE FROM PublicChannels;
+  INSERT INTO PublicChannels
+      (Id, DeleteAt, TeamId, DisplayName, Name, Header, Purpose)
+  SELECT
+      c.Id, c.DeleteAt, c.TeamId, c.DisplayName, c.Name, c.Header, c.Purpose
+  FROM
+      Channels c
+  WHERE
+      c.Type = 'O';
+
+The queries above rebuild the materialized `PublicChannels` table without modifying the authoritative `Channels` table.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnablePublicChannelsMaterialization": true`` with options ``true`` and ``false``.                    |
++---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Read Replicas (Enterprise Edition)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
