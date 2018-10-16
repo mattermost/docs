@@ -8,6 +8,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release date: 2018-11-16
 
+ - Fixed an issue where config.ServiceSettings.SiteURL could contain a trailing slash.
+ - Possible caching bug with archiving/unarchiving channels through API.
+ - Improvement to UX when trying to edit pending post from reply thread.
+
 
 ## Release v5.4
 
