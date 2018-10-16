@@ -14,7 +14,9 @@ for more information on how the global variables work.
 - [Gitaly](#configure-gitaly-settings)
 - [Minio](#configure-minio-settings)
 - [appConfig](#configure-appconfig-settings)
+- [GitLab Shell](#configure-gitlab-shell-settings)
 - [Custom Certificate Authorities](#custom-certificate-authorities)
+- [Application Resource](#application-resource)
 
 ## Configure Host settings
 
@@ -492,6 +494,30 @@ region: us-east-1
 ### Incoming email settings
 
 These settings are explained in [command line options page](../installation/command-line-options.md#incoming-email-configuration).
+
+## Configure GitLab Shell
+
+There are several items for the global configuration of [GitLab Shell](gitlab/gitlab-shell/README.md) chart.
+
+```yaml
+global:
+  shell:
+    port:
+    authToken: {}
+    hostKeys: {}
+```
+
+### Ingress port
+
+You can control the port use by the Ingress to pass SSH traffic, as well as the port used in SSH URLs provided from GitLab via `global.shell.port`. This defaults to `22`
+
+### Authorization token
+
+See [authToken](gitlab/gitlab-shell#authtoken) in chart specific documentaion.
+
+### Host Keys
+
+See [hostKeys](gitlab/gitlab-shell#hostkeyssecret) in chart specific documentaion.
 
 ## Custom Certificate Authorities
 

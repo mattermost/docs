@@ -8,6 +8,6 @@ metadata:
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 data:
-  22: "{{ .Release.Namespace }}/{{ template "fullname" . }}:{{ .Values.service.externalPort }}"
+  {{ include "gitlab.shell.port" . | int }}: "{{ .Release.Namespace }}/{{ template "fullname" . }}:{{ .Values.service.externalPort }}"
 {{- end -}}
 {{- end -}}

@@ -211,6 +211,7 @@ data:
         secret_file: /etc/gitlab/shell/.gitlab_shell_secret
         upload_pack: true
         receive_pack: true
+        ssh_port: {{ include "gitlab.shell.port" . | int }}
       workhorse:
         secret_file: /etc/gitlab/gitlab-workhorse/secret
       git:
