@@ -1,9 +1,9 @@
-# values-minikube.yaml
-# This example intended as baseline to use Minikube for the deployment of GitLab
-# - Minimized CPU/Memory load, can fit into 2 CPU, 4 GB of RAM (barely)
-# - Services that are not compatible with how Minikube runs are disabled
-# - Some services entirely removed, or scaled down to 1 replica.
-# - Configured to use 192.168.99.100, and nip.io for the domain
+# i2p-values-minimal.yaml
+# This example intended to be used in conjunction with our I2P demo
+# - Minimized CPU/Memory load
+# - Services are scaled down to 1 replica.
+# - The standard `nginx` ingress class it used, so it can be shared with deployed apps
+# - A privileged runner is deployed, so docker-in-docker can be used
 
 # Minimal settings
 global:
