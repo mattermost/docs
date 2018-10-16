@@ -81,8 +81,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Enterprise Edition:
 
-- Under "SqlSettings": in ``config.json``:
- - Added ``"EnablePublicChannelsMaterialization": true``, to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI.
+ - Under "SqlSettings": in ``config.json``:
+   - Added ``"EnablePublicChannelsMaterialization": true``, to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI.
  
 ### API Changes
 
