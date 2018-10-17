@@ -12,7 +12,7 @@ In order to easily support SSH replicas, and avoid using shared storage for the 
 
 # Configuration
 
-The `gitlab-shell` chart is configured in two parts: external services, and chart settings.
+The `gitlab-shell` chart is configured in two parts: external services, and chart settings. The port exposed through the Ingress is configured with `global.shell.port`, and defaults to `22`.
 
 ## Installation command line options
 

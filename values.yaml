@@ -138,8 +138,6 @@ certmanager:
 
 nginx-ingress:
   enabled: true
-  tcp:
-    22: "enabled"
   tcpExternalConfig: "true"
   controller:
     config:
