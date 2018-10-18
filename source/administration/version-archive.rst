@@ -1,6 +1,8 @@
 Version Archive
 ===========================
 
+To verify the GPG signature of a Mattermost release, use the public key stored in Keybase: https://keybase.io/mattermost.
+
 Mattermost Enterprise Edition
 ------------------------------
 
