@@ -10,7 +10,7 @@ Notes:
 
 Pre-work for the current release begins at the code complete date of the previous release. See "Code Complete" section below for details.
 
-### B. (T-minus 12 working days) Release Branch Cut
+### B. (T-minus 12 working days)
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
@@ -20,9 +20,6 @@ Pre-work for the current release begins at the code complete date of the previou
     - Review submitted NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch.
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
 2. Dev:
-    - Cut release branch both for server and mobile
-      - Merge database upgrade before cutting the branch
-      - Point translation server to release branch after cutting
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
       - After the cut-off, any PRs that include significant code changes, require approval of the release manager before merging
 3. Logistics:
@@ -60,8 +57,6 @@ Pre-work for the current release begins at the code complete date of the previou
     - Start drafting blog post, tweet, and email for the release announcement
     
 ### E. (T-minus 9 working days) Code complete
-
-**Stabilization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version. Exceptions can be made by the Release Manager during triage.
 
 1. **(Team) Code Complete Meeting (10:00am San Francisco time)**:
     - Team review of Changelog
@@ -223,8 +218,6 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Schedule a release retrospective meeting, to be held within 5 days from the release
     - Post key dates for the next release in the header of the Release Discussion channel and remove links to RC candidates and testing spreadsheet
         - Make sure that statutory holidays for Canada and US are accounted for in the release dates
-    - Check for any [UserVoice](https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0) feature suggestions that were completed in the current release
-      - Find the [release tweet](https://twitter.com/mattermosthq/status/854781715914555393) and insert a link to the tweet next to the feature that shipped with the release.
     - For the next release, create the following team meetings. If they conflict with existing meetings, check with meeting owner to reschedule or reschedule the release meeting
       - PM Release Update meeting on T-15 at 7:30am San Francisco time
       - Major Feature Complete Meeting on T-12 at 10:00am San Francisco time
