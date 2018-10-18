@@ -28,6 +28,10 @@ Some features of GitLab are not currently available:
 * [No in-cluster HA database](https://gitlab.com/charts/gitlab/issues/48)
 * MySQL will not be supported, as support is [deprecated within GitLab](https://docs.gitlab.com/omnibus/settings/database.html#using-a-mysql-database-management-server-enterprise-edition-only)
 
+Limitations:
+
+* Support is only available for Postgres 9.6. Backup and restore [will not work with other versions](https://gitlab.com/charts/gitlab/issues/852).
+
 ## Release Notes
 
 Check the [releases documentation](doc/releases/README.md) for information on important releases,
