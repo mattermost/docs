@@ -82,7 +82,7 @@ If the compliance export job is run automatically, manually via the System Conso
 
 If the ``--exportFrom`` option is specified with the CLI command, all posts that have been made since the supplied timestamp will be exported.
 
-When ran manually via the System Console, CSV and Actiance XML files are written to the `exports` subdirectory of the configured `Local Storage Directory <https://docs.mattermost.com/administration/config-settings.html?#local-storage-directory>`_.  Files will be written to a folder with named based on an epoch time range.  Global Relay EML export format will be mailed to the configured email address when ran manually. 
+When run manually via the System Console, CSV and Actiance XML files are written to the `exports` subdirectory of the configured `Local Storage Directory <https://docs.mattermost.com/administration/config-settings.html?#local-storage-directory>`_.  Files will be written to a folder with names based on an epoch time range.  Global Relay EML export format will be mailed to the configured email address when run manually. 
 
 Why are compliance exports beta?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
