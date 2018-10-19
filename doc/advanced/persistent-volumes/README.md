@@ -452,7 +452,7 @@ After making changes to the [PersistentVolumes][pv] and [PersistentVolumeClaims]
 you will also want to issue a helm update with the changes applied to the chart
 settings as well.
 
-See the [installation storage guide](../../installation/storage.md#configuring-the-storage-settings)
+See the [installation storage guide](../../installation/storage.md#using-the-custom-storage-class)
 for the options.
 
 > **Note**: If you made changes to the Gitaly [volume claim][pvc], you will need to delete the

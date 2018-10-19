@@ -10,47 +10,48 @@ For a fully functional GitLab instance, you will need a few resources before dep
 
 For the most up to date instructions, follow Amazon's [EKS getting started guide](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html).
 
-## Persistent volume management
+Administrators may also want to consider the [new AWS Service Operator for Kubernetes](https://aws.amazon.com/blogs/opensource/aws-service-operator-kubernetes-available/)
+to simplify this process.
+
+> **Note:**
+>
+> Enabling the AWS Service Operator requires a method of managing roles within the cluster. The initial
+> services handling that management task are provided by third party developers. Administrators should
+> keep that in mind when planning for deployment.
+
+## Persistent Volume Management
 
 There are two methods to manage volume claims on Kubernetes:
-1. Manually creating each persistent volume (recommended on EKS)
-1. Utilizing dynamic provisioning to automatically create the persistent volumes
+1. Manually create a persistent volume
+1. Automatic persistent volume creation through dynamic provisioning
 
-### Manual provisioning of volumes (Recommended)
+Learn more in the  [cluster storage](../installation/storage.md) documentation.
 
-Manually creating the volumes allows you to control the zone of each volume, as well as all other details supported by the underlying storage. 
+> **Special Consideration:**
+>
+> We currently recommend using manual provisioning of persistent volumes. Amazon EKS
+> clusters default to spanning multiple zones. Dynamic provisioning, if not configured
+> to use a storage class locked to a particular zone leads to a scenario where pods may
+> exist in a different zone from storage volumes and be unable to access data.
+>
+> Administrators who need to deploy in multiple zones should familiarize themselves
+> with [how to set up cluster storage](../installation/storage.md) and review
+> [Amazon's own documentation on storage classes](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html)
+> when defining their storage solution.
 
-Follow our documentation on [manually creating persistent volumes](../installation/storage.md##manually-creating-static-volumes).
-
-### Dynamic provisioning of volumes
-
-Dynamic provisioning utilizes a Kubernetes provisioner, like `aws-ebs`, to automatically create persistent volumes to fulfill each claim. 
-
-With EKS, there are a few important details to keep in mind:
-
-1. Clusters are required to span multiple AZ's
-1. Kubernetes volume provisioners create volumes across zones without regard to which pod they belong to. This leads to scenarios where a pod with multiple volumes being unable to start due to the volumes being in different zones.
-1. There is no default Storage Class.
-
-The easiest way to solve this and still utilize dynamic provisioning is to utilize, or create, a Storage Class that is locked to a specific zone. 
-> **Note**: Restricting volumes to specific zone will cause GitLab and any other application using this Storage Class to only reside in that zone. For multiple zone support, utilize [manually provisioned volumes](#manual-provisioning-of-volumes).
-
-To create the storage class, download and edit Amazon EKS's [sample Storage Class](https://docs.aws.amazon.com/eks/latest/userguide/storage-classes.html) and add the following parameter:
-
-```yaml
-parameters: 
-  zone: <desired-zone>
-```
-
-Then [specify the Storage Class](../installation/storage.md#using-a-custom-storage-class) name when deploying GitLab.
-
-## External access to GitLab
+## External Access to GitLab
 
 By default, GitLab will an deploy an ingress which will create an associated Elastic Load Balancer. Since the DNS names of ELB's cannot be known ahead of time, it is difficult to utilize Let's Encrypt to automatically provision HTTPS certificates. 
 
 We recommend [using your own certificates](../installation/tls.md#option-2-use-your-own-wildcard-certificate), and then mapping your desired DNS name to the created ELB using a CNAME record.
 
+> **NOTE:**
+>
+> For environments where internal loadbalancers are required,
+> [Amazon's Elastic Load Balancers](https://docs.aws.amazon.com/eks/latest/userguide/load-balancing.html)
+> require [special annotations](../../examples/eks_loadbalancer_annotations.yml).
+> 
+
 # Next Steps
 
 Continue with the [installation of the chart](../installation/README.md) once you have the cluster up and running, and have the static IP and DNS entry ready.
-

@@ -1,62 +1,68 @@
 # Storage Guide
 
-Some of the applications run within the GitLab chart require persistent storage to maintain state. This includes:
+## Overview
+
+The following applications within the GitLab chart require persistent storage to maintain state.
 
  - [gitaly](../charts/gitlab/gitaly) (persists the git repositories)
  - [postgres](https://github.com/kubernetes/charts/tree/master/stable/postgresql) (persists the gitlab database data)
  - [redis](../charts/redis) (persists gitlab job data)
  - [minio](../charts/minio) (persists the object storage data)
 
-By default these applications will create a [Persistent Volume Claim](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims) for the storage they need, and use the cluster's [dynamic volume provisioning](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic), and the default Storage Class, to acquire access to a [Persistent Volume][pv].
+The administrator may choose to provision this storage using [dynamic][] or [static][] volume provisioning.
 
-For a production environment, you should review the settings of your cluster's default storage class to ensure they are what you desire. We recommend that Volumes be setup with a `reclaimPolicy` of `Retain`, and ideally with fast SSD storage if available. If the default storage class does not meet these requirements, you will want to look at using a custom storage class.
+> **Important:** Minimize extra storage migration tasks after installation through pre-planning. Changes made
+> after the first deployment require manual edits to existing Kubernetes objects prior to running `helm upgrade`.
 
-## Using a custom Storage Class
+## Typical Installation Behavior
 
-We recommend creating your own [Storage Class][] for use in these charts, and updating your config to use it.
+The installer creates storage using the default storage class and [dynamic volume provisioning][dynamic]. Applications
+connect to this storage through a [Persistent Volume Claim][pvc]. Administrators are encouraged to use [dynamic volume provisioning][dynamic]
+instead of [static volume provisioning][static] when it is available.
 
-For a production deploy of GitLab, we recommend you use [Persistent Volumes][pv] that have a reclaimPolicy set to `Retain` rather than `Delete`.  On some platforms like GKE, the default [Storage Class][] has a reclaimPolicy of `Delete`. Meaning that uninstalling GitLab, or deleting a PVC, will result in the persistent volume being completely deleted by an automated task that goes through and deletes the volume and disk from GCE. (The gitaly PVCs do not get deleted in this case because they belong to a [StatefulSet][])
+> Administrators should determine the default storage class in their production environment using `kubectl get storageclass`
+> and then examine it using `kubectl describe storageclass *STORAGE_CLASS_NAME*`. Some providers, such as Amazon EKS, do not provide a default storage class.
 
-For example, create a new [Storage Class][] object in your GKE cluster:
+## Configuring Cluster Storage
 
-```
-kind: StorageClass
-apiVersion: storage.k8s.io/v1
-metadata:
-  name: pd-gitlab
-provisioner: kubernetes.io/gce-pd
-reclaimPolicy: Retain
-parameters:
-  type: pd-standard
-```
+### Recommendations
 
-and use the class in your GitLab config:
+The default storage class should:
 
-```
---set gitlab.gitaly.persistence.storageClass=pd-gitlab
-```
+* Use fast SSD storage when available
+* Set `reclaimPolicy` to `Retain`
 
-## Configuring the storage settings
+> Uninstalling GitLab without the `reclaimPolicy` set to `Retain` allows automated jobs to completely delete the volume, disk and data.
+> Some platforms set the default `reclaimPolicy` to `Delete`. The `gitaly` persistent volume claims do not follow this rule because
+> they belong to a [StatefulSet][].
 
-> **Important**: After initial installation, making changes to your storage settings requires manually editing Kubernetes
-> objects, so it's best to plan ahead before installing your production instance of GitLab to avoid extra storage migration work.
+### Minimal Storage Class Configurations
 
-Storage configuration is provided per-service for the deployments that require persistent storage.
+The following `YAML` configurations provide the bare minimum required to create a custom storage class for GitLab. Replace
+`CUSTOM_STORAGE_CLASS_NAME` with a value appropriate for the target installation environment.
 
-Gitaly (used for the git repositories), PostgreSQL, Minio, and Redis are all configured similarly. For example:
+* [Example Storage Class for GKE on Google Cloud](../../examples/storage/gke_storage_class.yml)
+* [Example Storage Class for EKS on Amazon Web Services](../../examples/storage/eks_storage_class.yml)
 
-```
---set gitlab.gitaly.persistence.size=50Gi
---set gitlab.gitaly.persistence.storageClass=pd-gitlab
---set postgresql.persistence.size=8Gi
---set postgresql.persistence.storageClass=pd-gitlab
---set minio.persistence.size=10Gi
---set minio.persistence.storageClass=pd-gitlab
---set redis.persistence.size=5Gi
---set redis.persistence.storageClass=pd-gitlab
+> Some users report that Amazon EKS exhibits behavior where the creation of nodes are not always
+> in the same zone as the pods. Setting the ***zone*** parameter above will mitigate any risk.
+
+### Using the Custom Storage Class
+
+Set the custom storage class to the cluster default and it will be used for all dynamic provisioning.
+
+```sh
+kubectl patch storageclass CUSTOM_STORAGE_CLASS_NAME -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
 
-Documentation for all available persistence options for these can be found in the chart specific docs:
+Alternatively, the custom storage class and other options may be provided per service to helm during installation. View
+the provided [example configuration file](../../examples/storage/helm_options.yml) and modify for your environment.
+
+```sh
+$ helm install -upgrade gitlab gitlab/gitlab -f HELM_OPTIONS_YAML_FILE
+```
+
+Follow the links below for further reading and additional persistence options:
 
 - [Gitaly persistence configuration](../charts/gitlab/gitaly/README.md#git-repository-persistence)
 - [Minio persistence configuration](../charts/minio/README.md#persistence)
@@ -66,61 +72,70 @@ Documentation for all available persistence options for these can be found in th
 > **Note**: Some of the advanced persistence options differ between PostgreSQL and the others, so it's important to check
 > the specific documentation for each before making changes.
 
-## Manually creating Static Volumes
+## Using Static Volume Provisioning
 
-If the cluster does not have a dynamic provisioner, you will need to create the [Persistent Volumes][pv] manually.
+Dynamic volume provisioning is recommended, however, some clusters or environments may not support it. Adminstrators
+will need to create the [Persistent Volume][pv] manually.
 
-For example, create a new volume for an existing GCE disk:
+### Using Google GKE
 
-```yaml
-kind: PersistentVolume
-apiVersion: v1
-metadata:
-  name: pv-gitaly
-spec:
-  accessModes:
-  - ReadWriteOnce
-  capacity:
-    storage: 50Gi
-  storageClassName: standard
-  gcePersistentDisk:
-    fsType: ext4
-    pdName: pd-gitaly-disk
+1. [Create a persistent disk in the cluster.](https://kubernetes.io/docs/concepts/storage/volumes/#creating-a-pd)
+
+```sh
+$ gcloud compute disks create --size=50GB --zone=*GKE_ZONE* *DISK_VOLUME_NAME*
+```
+
+1. Create the Persistent Volume after modifying the [example `YAML` configuration](../../examples/storage/gke_pv_example.yml).
+
+```sh
+$ kubectl create -f *PV_YAML_FILE*
+```
+
+### Using Amazon EKS
+
+1. [Create a persistent disk in the cluster.](https://kubernetes.io/docs/concepts/storage/volumes/#creating-an-ebs-volume)
+
+```sh
+$ aws ec2 create-volume --availability-zone=*AWS_ZONE* --size=10 --volume-type=gp2
+```
+
+1. Create the Persistent Volume after modifying the [example `YAML` configuration](../../examples/storage/eks_pv_example.yml).
+
+```sh
+$ kubectl create -f *PV_YAML_FILE*
 ```
 
 ### Manually creating PersistentVolumeClaims
 
-For services that are deployed using a [StatefulSet][], like `gitaly`, you will also need to manually create the [PersistentVolumeClaim][pvc].
-These claims will be automatically used by the StatefulSet Pods, based on their name. [StatefulSet][]s match PVC names using the following:
-`<mount-name>-<statefulset-pod-name>` and StatefulSet Pod names are determined using `<statefulset-name>-<pod-index>`, and in our chart the
-StatefulSet names are determined using `<chart-release-name>-<service-name>`.
+The ***gitaly*** service deploys using a [StatefulSet][]. Create the [PersistentVolumeClaim][pvc]
+using the following naming convention for it to be properly recognized and used.
 
-The `gitaly` service has a mount called `repo-data`. So if you installed the chart with the name `gitlab` when using helm install, the PVC name for the first gitaly pod would be
-`repo-data-gitlab-gitaly-0`
-
-Example:
-
-```yaml
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: repo-data-gitlab-gitaly-0
-spec:
-  accessModes:
-  - ReadWriteOnce
-  resources:
-    requests:
-      storage: 50
-  storageClassName: standard
-  volumeName: pv-gitaly
+```
+<mount-name>-<statefulset-pod-name>
 ```
 
-> For services that do not use a [StatefulSet][]; once you create the volume, you can provide the `volumeName` to the config and this chart will still take care of creating the [volume claim][pvc], and it will attempt to bind to the volume you created. More information on how to provide the `volumeName`, and additional claim information, is available in the chart documentation for each included application.
+The `mount-name` for ***gitaly*** is ***repo-data***. The StatefulSet pod names are created using:
+
+```
+<statefulset-name>-<pod-index>
+```
+
+The GitLab Cloud Native Chart determines the `statefulset-name` using:
+
+```
+<chart-release-name>-<service-name>
+```
+
+The correct name for the ***gitaly*** PersistentVolumeClaim is: ***repo-data-gitlab-gitaly-0***.
+
+Modify the [example YAML configuration](../../examples/storage/gitaly_persistent_volume_claim.yml) for your environment and reference it when invoking `helm`.
+
+> The other services that do not use a [StatefulSet][] allow administrators to provide the `volumeName`
+> to the config. This chart will still take care of creating the [volume claim][pvc] and attempt to bind
+> to the manually created volume. Check the chart documentation for each included application.
 >
->
-> Using the volumeName in your config:
->
->`--set minio.persistence.volumeName=pv-minio`
+> For most cases, just modify the [example yaml config](../../examples/storage/use_manual_volumes.yml) keeping only those services which
+> will use the manually created disk volumes.
 
 ## Making changes to storage after installation
 
@@ -134,3 +149,5 @@ See the [managing persistent volumes documentation](../advanced/persistent-volum
 [pvc]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
 [Storage Class]: https://kubernetes.io/docs/concepts/storage/storage-classes/
 [StatefulSet]: https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/
+[dynamic]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#dynamic
+[static]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#static
