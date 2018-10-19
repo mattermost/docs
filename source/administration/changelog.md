@@ -91,9 +91,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added a GetServerVersion() string method to the plugin API to return the current server version.
  
 #### Database Changes
- - ``AlterColumnTypeIfExists`` column was added to the ``OutgoingWebhooks`` table.
- - ``AlterColumnTypeIfExists`` column was added to the ``IncomingWebhooks`` table.
- - ``CreateColumnIfNotExists`` column was added to the ``AcceptedServiceTermsId`` table.
+ - ``Description`` column was added to the ``OutgoingWebhooks`` table.
+ - ``Description`` column was added to the ``IncomingWebhooks`` table.
+ - ``AcceptedServiceTermsId`` column was added to the ``Users`` table.
+ - ``PublicChannels`` table was added.
 
 ### Known Issues
 
