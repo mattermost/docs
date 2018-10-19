@@ -73,6 +73,11 @@ On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so y
   .. code-block:: bash
 
     docker exec -it <your-mattermost-container-name> mattermost version
+    
+Using the CLI on Docker Preview
+-------------------------------
+
+The preceding documentation and command reference below also applies to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`_.
 
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -109,6 +114,7 @@ mattermost
     -  `mattermost export`_ - Compliance export commands
     -  `mattermost help`_ - Generate full documentation for the CLI
     -  `mattermost import`_ - Import data
+    -  `mattermost jobserver`_ - Start the Mattermost job server
     -  `mattermost ldap`_ - AD/LDAP related utilities
     -  `mattermost license`_ - Licensing commands
     -  `mattermost permissions`_ - Management of the permissions system
@@ -539,6 +545,22 @@ mattermost import slack
     .. code-block:: none
 
       sudo ./mattermost import slack myteam slack_export.zip
+
+mattermost jobserver
+--------------------
+
+  Description
+    Start the Mattermost job server.
+    
+  Format
+    .. code-block:: none
+
+      mattermost jobserver
+      
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost jobserver
 
 mattermost ldap
 ----------------
