@@ -1,5 +1,0 @@
----
-title: Add safe-to-evict annotation to stateless deployments
-merge_request: 523
-author:
-type: changed

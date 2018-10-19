@@ -1,5 +1,0 @@
----
-title: Make gke bootstrap script work on MacOS
-merge_request:
-author: Robert Marshall
-type: fixed

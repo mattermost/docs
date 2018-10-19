@@ -1,5 +1,0 @@
----
-title: Update redis version to 3.2.12
-merge_request: 511
-author:
-type: security
