@@ -2,6 +2,39 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.2.0 (2018-10-22)
+
+### Security (1 change)
+
+- Update redis version to 3.2.12. !511
+
+### Fixed (4 changes, 1 of them is from the community)
+
+- Better handle self-signed certificate behaviors in NOTES.txt. !500
+- NGINX: populate ingressClass from template. !520
+- Move shared-secrets jobs run as non-root. !533
+- Make gke bootstrap script work on MacOS. (Robert Marshall)
+
+### Changed (1 change)
+
+- Add safe-to-evict annotation to stateless deployments. !523
+
+### Added (6 changes, 2 of them are from the community)
+
+- Add missing settings to configure gitlab.yml. !496 (Erik Sundell)
+- Add a global flag to set the gitlab edition that will be installed. !499 (Scott Leggett)
+- Allow disabled shared-secrets chart. !510
+- Add Gitlab operator to run upgrades of Gitlab. !516
+- Move jobs management into the operator if it is enabled. !517
+- Add control of exposed SSH port. !531
+
+### Other (3 changes, 1 of them is from the community)
+
+- Update Helm minimum requirement to 2.9. !505
+- Use example.com in documentation and examples as per RFC2606. !512 (Scott Leggett)
+- Update GitLab Version to 11.4.0.
+
+
 ## 1.1.6 (2018-10-17)
 
 ### Other (1 change)

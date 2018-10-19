@@ -1,5 +1,0 @@
----
-title: 'NGINX: populate ingressClass from template'
-merge_request: 520
-author:
-type: fixed
