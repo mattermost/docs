@@ -12,7 +12,7 @@ Install the 64-bit version of Ubuntu Server on each machine that hosts one or mo
 2. After the system is installed, make sure that it's up to date with the most recent security patches. Open a terminal window and issue the following commands:
 
   ``sudo apt-get update``
-  
+
   ``sudo apt-get upgrade``
 
 Now that the system is up to date, you can start installing the components that make up a Mattermost system.

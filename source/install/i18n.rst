@@ -1,9 +1,9 @@
 ..  _i18n:
 
-Chinese, Korean & Japanese Search
+Chinese, Japanese & Korean Search
 =================================
 
-Enabling search for Chinese, Korean and Japanese requires special configuration, since these languages do not contain spaces. 
+Enabling search for Chinese, Japanese & Korean (CJK) requires special configuration, since these languages do not contain spaces. 
 
 - See `database requirements documentation <https://docs.mattermost.com/install/requirements.html#database-software>`_ for how to setup search for these languages. 
 
@@ -61,6 +61,14 @@ Postgres:
     sudo apt-get install --yes postgresql-server-dev-9.3 libpq-dev
     git clone https://github.com/amutu/zhparser.git
     SCWS_HOME=/usr/local make && make install
+
+.. note::
+  通过 Docker 镜像（mattermost/mattermost-prod-db）应用数据库的用户，请按照下述方法安装依赖。
+
+  .. code:: bash
+
+    # Alpine 通过 apk add 命令安装依赖
+    apk add wget tar gcc git postgresql-dev 
 
 创建extension以及增加解析配置:
 ~~~~~~~~~~~~~~~~~~~~

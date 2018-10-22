@@ -18,6 +18,9 @@ Finally, if a setting is configured through an environment variable, modifying i
 
 For any setting that is not set in ``config.json`` or in environment variables, the Mattermost server uses the default value as documented here.
 
+.. note::
+   If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
+
 .. contents::
   :depth: 2
   :local:
@@ -179,17 +182,17 @@ Default Server Language
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Default language for system messages and logs. Changing this will require a server restart before taking effect.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``it``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``it``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ro``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Default Client Language
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Default language for newly created users and pages where the user hasn't logged in.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``it``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``it``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ro``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Available Languages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -198,9 +201,9 @@ Sets which languages are available for users in **Account Settings** > **Display
 .. note::
   Servers which upgraded to v3.1 need to manually set this field blank to have new languages added by default.
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``de``, ``en``, ``es``, ``fr``, ``it``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``de``, ``en``, ``es``, ``fr``, ``it``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ro``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
 
@@ -216,6 +219,15 @@ Enable Account Creation
 | This feature's ``config.json`` setting is ``"EnableUserCreation": true`` with options ``true`` and ``false`` for above settings respectively.                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Account Deactivation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Ability for users to deactivate their own account from **Account Settings > Advanced**.  If a user deactivates their own account, they will get an email notification confirming they were deactivated. 
+
+**False**: Ability for users to deactivate their own account is disabled.  
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableUserDeactivation": false`` with options ``true`` and ``false`` for above settings respectively.                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Team Creation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -307,6 +319,18 @@ This setting only affects the UI, not permissions on the server. For instance, a
 | This feature's ``config.json`` setting is ``"RestrictDirectMessage": "any"`` with options ``any`` and ``team`` for above settings respectively.                      |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Allow Team Administrators to edit others posts
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*This permission is stored in the database and can be modified using the System Console user interface.*
+
+**True**: Team Administrators and System Administrators can edit other users' posts.  
+
+**False**:  Only System Administrators can edit other users' posts.
+
+.. note::
+This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ to configure this permission.   
+
+
 Enable Team Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Removed in May 16th, 2016 release*
@@ -339,7 +363,7 @@ Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Removed in June 16, 2018 release*
 
-In v5.0 and later, permissions settings have been migrated to the new `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ user interface.
+Permission policy settings are available in Enterprise Edition E10 and E20. In v5.0 and later, these settings are found in the `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ page instead of configuration settings. 
 
 Enable sending team invites from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1203,6 +1227,19 @@ Enable Synchronizing SAML Accounts With AD/LDAP
 | This feature's ``config.json`` setting is ``"EnableSyncWithLdap": false`` with options ``true`` and ``false`` for above settings respectively.                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Override SAML Bind Data with AD/LDAP Information
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute if configured or overrides the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present. See `documentation <https://about.mattermost.com/default-saml-ldap-sync>`_ to learn more.
+
+**False**: Mattermost uses the email attribute to bind users to SAML. 
+
+.. note::
+  Moving from true to false will prevent the override from happening. To prevent the disabling of user accounts, SAML IDs must match the LDAP IDs when this feature is enabled. This setting should be set to false unless LDAP sync is enabled.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSyncWithLdapIncludeAuth": false`` with options ``true`` and ``false`` for above settings respectively.            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 SAML SSO URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The URL where Mattermost sends a SAML request to start login sequence.
@@ -1287,6 +1324,14 @@ The attribute in the SAML Assertion that will be used to populate the username f
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UsernameAttribute": ""`` with string input.                                                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Id Attribute
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Optional) The attribute in the SAML Assertion used to bind users from SAML to users in Mattermost.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input.                                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 First Name Attribute
@@ -1509,6 +1554,8 @@ _________
 
 Sessions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+User sessions are cleared when a user tries to log in. Additionally, a job runs every 24 hours to clear sessions from the sessions database table. 
+
 Session length for email and AD/LDAP authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Set the number of days before web sessions expire and users will need to log in again.
@@ -1543,7 +1590,7 @@ Set the number of minutes to cache a session in memory.
 
 Session Idle Timeout (minutes)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited.
+The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited.    
 
 Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
 
@@ -1561,6 +1608,34 @@ Enable HTTP cross-origin requests from specific domains separated by spaces. Typ
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowCorsFrom": ""`` with string input.                                                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+CORS Exposed Headers
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Whitelist of headers that will be accessible to the requester.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CorsExposedHeaders": ""`` with string input.                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+CORS Allow Credentials
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Requests that pass validation will include the ``Access-Control-Allow-Credentials`` header.
+
+**False**: Requests won't include the ``Access-Control-Allow-Credentials`` header.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CorsAllowCredentials": false`` with options ``true`` and ``false`` for above settings respectively.                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+CORS Debug
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Prints messages to the logs to help when developing an integration that uses CORS. These messages will include the structured key value pair ``"source":"cors"``.
+
+**False**: Debug messages not printed to the logs.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CorsDebug": false`` with options ``true`` and ``false`` for above settings respectively.                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Insecure Outgoing Connections
@@ -1583,15 +1658,20 @@ Settings to configure email and mobile push notifications.
 
 Email
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _email-notification-config:
+
 Enable Email Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Enables sending of email notifications.
 
-**False**: Disables email notifications for developers who may want to skip email setup for faster development. Setting this to true removes the **Preview Mode: Email notifications have not been configured** banner (requires logging out and logging back in after setting is changed)
+**False**: Disables email notifications for developers who may want to skip email setup for faster development. To remove the **Preview Mode: Email notifications have not been configured** banner, also set **Enable Preview Mode Banner** to ``false``. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SendEmailNotifications": false`` with options ``true`` and ``false`` for above settings respectively.                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. _email-preview-mode-banner-config:
 
 Enable Preview Mode Banner
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1712,6 +1792,8 @@ The email address your Global Relay server monitors for incoming compliance expo
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EmailAddress": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. _email-tls:
 
 Connection Security
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2597,6 +2679,28 @@ So you don't miss messages, please make sure to change this value to an email yo
 | This feature's ``config.json`` setting is ``"SupportEmail":"feedback@mattermost.com"`` with string input.                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Custom Terms of Service (Beta)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20*.
+
+**True**: New users must accept custom terms of service before accessing any Mattermost teams on desktop or web. Existing users must accept them after login or a page refresh. Users on mobile will not be presented with the custom Terms of Services. Mobile support is scheduled for an upcoming release.
+
+**False**: During account creation or login, users can review terms of service included via **System Console > Legal and Support > Terms of Service link**.
+
+.. note::
+
+  This setting can only be modified using the System Console user interface.
+
+Custom Terms of Service Text (Beta)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20*.
+
+Text that will appear in your custom Terms of Service. Supports Markdown-formatted text.
+
+.. note::
+
+  This setting can only be modified using the System Console user interface.
+
 ________
 
 Mattermost App Links
@@ -2898,7 +3002,7 @@ Changing properties in this section will require a server restart before taking 
 
 Enable Elasticsearch Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True:** indexing of new posts occurs automatically. Search queries will use database search until "Enable Elasticsearch for search queries" is enabled. `Learn more about Elasticsearch in our documentation.<https://about.mattermost.com/default-elasticsearch-documentation/>`_
+**True:** indexing of new posts occurs automatically. Search queries will use database search until "Enable Elasticsearch for search queries" is enabled. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`_.
 
 **False:** Elasticsearch indexing is disabled and new posts are not indexed. If indexing is disabled and re-enabled after an index is created, it is recommended to purge and rebuild the index to ensure complete search results. 
 
@@ -2908,7 +3012,7 @@ Enable Elasticsearch Indexing
 
 Server Connection Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation.<https://about.mattermost.com/default-elasticsearch-documentation/>`_
+The address of the Elasticsearch server. `Learn more about Elasticsearch in our documentation <https://about.mattermost.com/default-elasticsearch-documentation/>`_.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionUrl": ""`` with string input.                                   |
@@ -2985,11 +3089,13 @@ Enable Developer Mode
 
 Allow untrusted internal connections to
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-In testing environments, such as when developing integrations locally on a development machine, use this setting to specify domains, IP addresses, or CIDR notations to allow internal connections. **Not recommended for use in production**, since this can allow a user to extract confidential data from your server or internal network.
+This setting allows system administrators to limit the addresses that user-created webhooks and slash commands have access to. This will prevent them from potentially gaining access to network resources via Mattermost that they do not have access to themselves.
 
-By default, user-supplied URLs such as those used for Open Graph metadata, webhooks, or slash commands will not be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. Push notification, OAuth 2.0 and WebRTC server URLs are trusted and not affected by this setting.
+If a user needs to develop an integration locally on their development workstation, use this setting to specify the domain, IP address or CIDR notation for those machines. This will allow users to host the app they're developing on their workstation. **Not recommended for use in production**, since this can allow a user to extract confidential data from your server or internal network.
 
-Separate two or more domains with spaces instead of commas, for example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``
+By default, user-supplied URLs such as those used for Open Graph metadata, webhooks or slash commands will not be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. Push notification, OAuth 2.0, WebRTC and other URLs entered via the System Console are trusted and not affected by this setting.
+
+Separate two or more domains with spaces instead of commas, for example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``.
 
 IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution. For example, if the domain "webhooks.internal.example.com" resolves to the IP address 10.0.16.20, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
 
@@ -3271,6 +3377,39 @@ Enable API Team Deletion
 
 SQL Settings
 ~~~~~~~~~~~~
+
+Enable Public Channels Materialization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. note::
+  This setting provides a fast way for System Admins to disable public channels materialization if it causes unexpected performance degradation. The feature will be enabled permanently and this setting will be removed in Mattermost v5.6, to be released on December 16, 2018.
+
+**True**: Enables materialization of public channels to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI. Notably, this allows the database to exclude direct messages for many queries, resulting in better query plans and more efficient indexes.
+
+**False**: Disables materialization for public channels. 
+
+If this feature is disabled and then later re-enabled, an offline migration is necessary to synchronize the materialized table. Use the following steps:
+
+1. Shut down your application servers.
+2. Connect to your Mattermost database.
+3. Execute the following queries:
+
+.. code:: sql
+
+  DELETE FROM PublicChannels;
+  INSERT INTO PublicChannels
+      (Id, DeleteAt, TeamId, DisplayName, Name, Header, Purpose)
+  SELECT
+      c.Id, c.DeleteAt, c.TeamId, c.DisplayName, c.Name, c.Header, c.Purpose
+  FROM
+      Channels c
+  WHERE
+      c.Type = 'O';
+
+The queries above rebuild the materialized `PublicChannels` table without modifying the authoritative `Channels` table.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnablePublicChannelsMaterialization": true`` with options ``true`` and ``false``.                    |
++---------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Read Replicas (Enterprise Edition)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3782,9 +3921,9 @@ Group Unread Channels (Experimental)
 
 **Disabled**: Unread channels section is disabled for all users.
  
-**Default On**:  Enables the unread channels sidebar section by default. Users can turned it off in **Account Settings** > **Sidebar**.
+**Default On**:  Enables the unread channels sidebar section by default. Users can turn it off in **Account Settings** > **Sidebar**.
 
-**Default Off**: Disables the unread channels sidebar section by default. Users can turned it on in **Account Settings** > **Sidebar**.
+**Default Off**: Disables the unread channels sidebar section by default. Users can turn it on in **Account Settings** > **Sidebar**.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "disabled"`` with options ``disabled``, ``default_on`` and ``default_off`` for above settings respectively. |
@@ -3824,11 +3963,25 @@ Team Settings
 
 Primary Team (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The team URL of the primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled. 
+The primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled.
+
+If the team URL of the primary team is https://example.mattermost.com/myteam/, then set the value to ``myteam`` in ``config.json``.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalPrimaryTeam": ""`` with string input.                  |
 +-----------------------------------------------------------------------------------------------------------------+
+
+Default Channels (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Default channels every user is added to automatically after joining a new team. Only applies to public channels, but affects all teams on the server.
+
+When not set, every user is added to ``off-topic`` and ``town-square`` channel by default.
+
+Note that even if ``town-square`` is not listed, every user is added to that channel after joining a new team.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": ""`` which takes an array of channel names such as ``["announcement", "developers"]``.     |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable X to Leave Channels from Left-Hand Sidebar (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3864,7 +4017,16 @@ Town Square is Hidden in Left-Hand Sidebar (Experimental)
 | This feature's ``config.json`` setting is ``"ExperimentalHideTownSquareinLHS": false`` with options ``true`` and ``false`` for above settings respectively.                  |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Allow Users to View Archived Channels (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+**True**: Allows users to view permalinks and search for content of channels that have been archived.  Users can only view the content in channels of which they were a member before the channel was archived. 
+
+**False**: Users are unable to view permalinks and search for content of channels that have been archived.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ViewArchivedChannels": false`` with options ``true`` and ``false`` for above settings respectively.      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Automatic Replies (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4040,7 +4202,7 @@ Set whether or not this Mattermost server will schedule tasks that will be compl
 
 When running Mattermost on a single machine, this setting should always be enabled.
 
-When running Mattermost in High Availablity mode, this setting should always be enabled. In a High Availability cluster, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created.
+When running Mattermost in High Availablity mode, this setting should always be enabled. In a High Availability cluster, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created. See `High Availability documentation <https://docs.mattermost.com/deployment/cluster.html#job-server>`_ for more details.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false`` for above settings respectively. |

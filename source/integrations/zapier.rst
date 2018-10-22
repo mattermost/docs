@@ -11,7 +11,6 @@ This documentation includes:
 - `Message Formatting Tips <https://docs.mattermost.com/integrations/zapier.html#id6>`_ - Tips from the Mattermost team on formatting Zapier integration messages.
 - `Troubleshooting Guide <https://docs.mattermost.com/integrations/zapier.html#id8>`_ - Advice on troubleshooting common setup issues.
 
-
 Zapier Setup Guide
 --------------------------------
 Zapier is authorized using OAuth2.0. The setup guide requires that a System Admin register the Zapier app on their Mattermost server and can then optionally allow any users with a Zapier account to create integrations.
@@ -19,6 +18,8 @@ Zapier is authorized using OAuth2.0. The setup guide requires that a System Admi
 Enable Zapier on your Mattermost Instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The first time you set up Zapier on your Mattermost instance you will be required to enable an OAuth 2.0 application which can be used by everyone on your server. Your System Admin must execute these steps.
+
+To learn more about OAuth 2.0 applications, including what permissions they have access to, see the `OAuth 2.0 documentation <https://docs.mattermost.com/developer/oauth-2-0-applications.html>`_.
 
 Enable OAuth 2.0
 ```````````````````````````
@@ -40,7 +41,6 @@ Register Zapier as an OAuth 2.0 Application
 3. Click **Save** to create the application. You will be provided with a **Client ID** and **Client Secret**. Save these values, or share them with your team to connect Zapier in the steps below.
 
 .. image:: ../images/zapier-oauth.png
-
 
 Create a Zap
 ~~~~~~~~~~~~~~~~~~~~~~~~~

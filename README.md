@@ -1,8 +1,8 @@
 # Mattermost Documentation
 
-This repository generates the documentation available at http://docs.mattermost.com/
+This repository generates the documentation available at https://docs.mattermost.com/
 
-All documentation is available under the terms of a [Creative Commons License](http://creativecommons.org/licenses/by-nc-sa/3.0/).
+All documentation is available under the terms of a [Creative Commons License](https://creativecommons.org/licenses/by-nc-sa/3.0/).
 
 ## Usage
 
@@ -20,14 +20,14 @@ To generate the HTML files from markdown in the `/source` directory:
 
 1. Sign the Contributor License Agreement (see instructions in the next section).
 3. On the Mattermost Documentation page that you want to edit, click the GitHub icon on the upper right corner that says "Edit".
-4. Click "Edit this file" (pencil icon).
-5. After making changes, check the "Create a new branch for this commit and start a pull request".
-6. Make sure that the Pull Request has a descriptive title. Add comments to briefly tell others what you have worked on (optional).
-7. Click "Create a Pull Request".
+4. Click "Edit the file in your fork of this project" (pencil icon) on the upper right corner.
+5. After making changes, check the "Propose file change" button.
+6. Compare changes with the original document.
+7. Click "Create a Pull Request". Make sure that the Pull Request has a descriptive title and add comments to briefly tell others what you have worked on (optional).
 
 **Signing CLA:**
 
-Please read the [Mattermost Contributor Agreement](http://www.mattermost.org/mattermost-contributor-agreement/) and sign it (at the bottom of the page), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
+Please read the [Mattermost Contributor Agreement](https://www.mattermost.org/mattermost-contributor-agreement/) and sign it (at the bottom of the page), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
 
 **Additional process for Core Committers for Doc Repo:**
 

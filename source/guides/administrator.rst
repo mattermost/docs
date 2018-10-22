@@ -24,6 +24,7 @@ Installing Mattermost
    /install/requirements.rst
    Installing on Ubuntu 14.04 LTS </install/install-ubuntu-1404.rst>
    Installing on Ubuntu 16.04 LTS </install/install-ubuntu-1604.rst>
+   Installing on Ubuntu 18.04 LTS </install/install-ubuntu-1804.rst>
    Installing on Debian Jessie </install/install-debian-88.rst>
    Installing on RHEL 6.6 </install/install-rhel-66.rst>
    Installing on RHEL 7.1 </install/install-rhel-71.rst>
@@ -33,6 +34,7 @@ Installing Mattermost
    /install/docker-local*
    /install/prod-docker*
    /install/docker-ebs*
+   /install/deploy-cloudron*
    /install/troubleshooting*
    /install/desktop*
    /install/smtp*
@@ -55,7 +57,6 @@ Deployment
    /deployment/advanced*
    /deployment/auth*
    /deployment/sso-saml.rst
-   /deployment/certificate-based-authentication*
    /deployment/scaling*
    /deployment/cluster.rst
    /deployment/elastic*
@@ -65,6 +66,7 @@ Deployment
    /deployment/metrics*
    /deployment/customize-mattermost.rst
    /deployment/ssl-client-certificate*
+   /deployment/certificate-based-authentication*
    /deployment/client-side-data.rst
 
 Administration
@@ -79,10 +81,14 @@ Administration
    /administration/team-settings.md
    /administration/statistics.md
    /administration/upgrade.rst
+   /administration/downgrade.rst
    /administration/version-archive*
+   /administration/extended-support-release*
+   /administration/migration-announcement-email-template*
    /administration/backup*
    /administration/liveness-check*
    /administration/migrating.md
+   /administration/bulk-export.rst
    /administration/encryption*
    /administration/image-proxy*
    /administration/plugins*
@@ -113,3 +119,16 @@ Changelog
    :glob:
 
    /administration/changelog*
+   
+Unofficial Enhancements
+-----------------------
+
+Documentation on early previews and unofficial functionality.
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   /install/prod-windows-2012*
+   /deployment/webrtc*
+   /developer/toolkit*

@@ -1,8 +1,9 @@
 Command Line Tools
 ==================
 
-From the directory where the Mattermost server is installed, a
-``mattermost`` command is available for configuring the system, including:
+From the directory where the Mattermost server is installed, a ``mattermost`` command is available for configuring the system. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`_ from Santos.
+
+These ``mattermost`` commands include:
 
 **General Administration**
 
@@ -72,6 +73,11 @@ On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so y
   .. code-block:: bash
 
     docker exec -it <your-mattermost-container-name> mattermost version
+    
+Using the CLI on Docker Preview
+-------------------------------
+
+The preceding documentation and command reference below also applies to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`_.
 
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -108,9 +114,11 @@ mattermost
     -  `mattermost export`_ - Compliance export commands
     -  `mattermost help`_ - Generate full documentation for the CLI
     -  `mattermost import`_ - Import data
+    -  `mattermost jobserver`_ - Start the Mattermost job server
     -  `mattermost ldap`_ - AD/LDAP related utilities
     -  `mattermost license`_ - Licensing commands
     -  `mattermost permissions`_ - Management of the permissions system
+    -  `mattermost plugin`_ - Management of plugins
     -  `mattermost reset`_ - Reset the database to initial state
     -  `mattermost roles`_ - Management of user roles
     -  `mattermost sampledata`_ - Sample data generation
@@ -134,6 +142,7 @@ mattermost channel
     -  `mattermost channel modify`_ - Modify a channel's public/private type
     -  `mattermost channel move`_ - Move a channel to another team
     -  `mattermost channel remove`_ - Remove users from a channel
+    -  `mattermost channel rename`_ - Rename a channel
     -  `mattermost channel restore`_ - Restore a channel from the archive
 
 .. _channel-value-note:
@@ -284,7 +293,7 @@ mattermost channel move
   Options
     .. code-block:: none
 
-          --username [REQUIRED] Username of the user who is moving the team
+          --username [REQUIRED] Username of the user who is moving the team.
 
 mattermost channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -302,6 +311,34 @@ mattermost channel remove
 
       sudo ./mattermost channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
       sudo ./mattermost channel remove myteam:mychannel user@example.com username
+      sudo ./mattermost channel remove myteam:mychannel --all-users
+      
+  Options
+    .. code-block:: none
+
+          --all-users string     Remove all users from the channel.
+      
+mattermost channel rename
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Rename a channel. Channels can be specified by *{team}:{channel}* using the team and channel names, or by using channel IDs.
+
+  Format
+    .. code-block:: none
+
+      mattermost channel rename {channel} newchannelname --display_name "New Display Name"
+
+  Examples
+    .. code-block:: none
+
+      sudo ./mattermost channel rename 8soyabwthjnf9qibfztje5a36h newchannelname --display_name "New Display Name"
+      sudo ./mattermost channel rename myteam:mychannel newchannelname --display_name "New Display Name"
+      
+  Options
+    .. code-block:: none
+
+      --display_name string   Channel Display Name
 
 mattermost channel restore
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -379,11 +416,12 @@ mattermost export
 -----------------
 
   Description
-    Compliance export commands
+   Commands for exporting data for compliance and for merging multiple Mattermost instances.
 
   Child Commands
-    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format
-    -  `mattermost export csv`_ - Export data from Mattermost in CSV format
+    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license
+    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_
+    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license
     -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance
@@ -406,7 +444,28 @@ mattermost export actiance
     .. code-block:: none
 
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
-	 
+
+mattermost export bulk
+~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_.
+
+  Format
+    .. code-block:: none
+
+      mattermost export bulk 
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost export bulk --all-teams file.json
+
+  Options
+    .. code-block:: none
+
+	  --all-teams bool [REQUIRED]  Export all teams from the server.
+	  
 mattermost export csv
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -486,6 +545,22 @@ mattermost import slack
     .. code-block:: none
 
       sudo ./mattermost import slack myteam slack_export.zip
+
+mattermost jobserver
+--------------------
+
+  Description
+    Start the Mattermost job server.
+    
+  Format
+    .. code-block:: none
+
+      mattermost jobserver
+      
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost jobserver
 
 mattermost ldap
 ----------------
@@ -629,6 +704,99 @@ mattermost permissions reset
     .. code-block:: none
 
           --confirm   Confirm you really want to reset the permissions system and a DB backup has been performed.
+
+mattermost plugin
+--------------------
+
+  Description
+    Commands to manage plugins.
+
+  Child Commands
+    -  `mattermost plugin add`_ - Add plugins to your Mattermost server.
+    -  `mattermost plugin delete`_ - Delete previously uploaded plugins.
+    -  `mattermost plugin disable`_ - Enable plugins for use.
+    -  `mattermost plugin enable`_ - Disable plugins.
+    -  `mattermost plugin list`_ - List plugins installed on your Mattermost server.
+    
+mattermost plugin add
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Add plugins to your Mattermost server. If adding multiple plugins, use a space-separated list.
+
+  Format
+    .. code-block:: none
+
+      mattermost plugins add {plugin tar file}
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost plugin add hovercardexample.tar.gz pluginexample.tar.gz
+
+mattermost plugin delete
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Delete previously uploaded plugins from your Mattermost server. If deleting multiple plugins, use a space-separated list.
+
+  Format
+    .. code-block:: none
+
+      mattermost plugins delete {plugin_id}
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost plugin delete hovercardexample.tar.gz pluginexample.tar.gz
+
+mattermost plugin disable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Disable plugins. Disabled plugins are immediately removed from the user interface and logged out of all sessions. If disabling multiple plugins, use a space-separated list.
+
+  Format
+    .. code-block:: none
+
+      mattermost plugins disable {plugin_id}
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost plugin disable hovercardexample.tar.gz pluginexample.tar.gz
+      
+mattermost plugin enable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Enable plugins for use on your Mattermost server. If enabling multiple plugins, use a space-separated list.
+
+  Format
+    .. code-block:: none
+
+      mattermost plugins enable {plugin_id}
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost plugin enable hovercardexample.tar.gz pluginexample.tar.gz
+
+mattermost plugin list
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    List all active and inactive plugins installed on your Mattermost server.
+
+  Format
+    .. code-block:: none
+
+      mattermost plugins list
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost plugin list
 
 mattermost reset
 ---------------

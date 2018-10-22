@@ -8,8 +8,12 @@ The input data file must be a valid `JSONL
 
 Version
   Mandatory. The Version object must be the first line in the file, and must occur only once.
+Scheme
+  Optional. If present, Scheme objects must occur after the Version object but before any Team objects.
+Emoji
+  Optional. If present, Emoji objects must occur after the Version objects but before any Team objects.
 Team
-  Optional. If present, Team objects must occur after the Version object and before any Channel objects.
+  Optional. If present, Team objects must occur after any Scheme objects and before any Channel objects.
 Channel
   Optional. If present, Channel objects must occur after all Team objects and before any User objects.
 User
@@ -29,6 +33,9 @@ The identifiers for each object are listed in the following table:
   :header: Object, Unique Identifier
 
   Version, Not Applicable
+  Scheme, *name*
+  Role, *name*
+  Emoji, *name*
   Team, *name*
   Channel, "*name*, *team*"
   User, *username*
@@ -38,6 +45,7 @@ The identifiers for each object are listed in the following table:
   Post, "*channel*, *message*, *create_at*"
   Reply, "*post*, *message*, *create_at*"
   Reaction, "*post*, *emoji_name*, *create_at*"
+  Attachment, "*path*"
   DirectChannel, *members*
   DirectPost,  "*channel_members*, *user*, *message*, *create_at* "
 
@@ -115,6 +123,214 @@ Fields of the Version object
     </tr>
   </table>
 
+Scheme object
+-------------
+
+Scheme objects represent Permissions Schemes in the Mattermost permissions system. If present, Scheme objects must occur after the Version object and before any Team objects.
+
+Example Scheme object
+~~~~~~~~~~~~~~~~~~~~~
+
+For clarity, the object is shown using regular JSON formatting, but in the data file it cannot be spread across several lines. It must be all on one line.
+
+.. code-block:: javascript
+
+  {
+    "type": "scheme",
+    "scheme": {
+      "name": "custom_scheme_name",
+      "display_name": "Custom Scheme Name",
+      "description": "This is a custom override scheme.",
+      "scope": "team",
+      "default_team_admin_role": {
+        "name": "custom_scheme_team_admin_role",
+        "display_name": "Custom Scheme Team Admin Role",
+        "description": "This is the default team admin role for the custom scheme.",
+        "permissions": ["add_user_to_team", "manage_team_roles"],
+      },
+      "default_team_user_role": {
+        "name": "custom_scheme_team_user_role",
+        "display_name": "Custom Scheme Team User Role",
+        "description": "This is the default team user role for the custom scheme.",
+        "permissions": ["create_public_channel", "create_private_channel"],
+      },
+      "default_channel_admin_role": {
+        "name": "custom_scheme_channel_admin_role",
+        "display_name": "Custom Scheme Channel Admin Role",
+        "description": "This is the default channel admin role for the custom scheme.",
+        "permissions": ["manage_private_channel_members", "manage_channel_roles"],
+      },
+      "default_channel_user_role": {
+        "name": "custom_scheme_channel_user_role",
+        "display_name": "Custom Scheme Channel User Role",
+        "description": "This is the default channel user role for the custom scheme.",
+        "permissions": ["manage_public_channel_members", "manage_public_channel_properties"],
+      },
+    }
+  }
+
+Fields of the Scheme object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">name</td>
+      <td valign="middle">string</td>
+      <td>The scheme name.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">display_name</td>
+      <td valign="middle">string</td>
+      <td>The display name for the scheme.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">scope</td>
+      <td valign="middle">string</td>
+      <td>The scope for the scheme. Must be either "team" or "channel".</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">description</td>
+      <td valign="middle">string</td>
+      <td>The description of the scheme.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">default_team_admin_role</td>
+      <td valign="middle"><b>Role</b> object</td>
+      <td>The default role applied to Team Admins in teams using this scheme. This field is mandatory if the scheme scope is set to "team", otherwise must <b>not</b> be present.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">default_team_user_role</td>
+      <td valign="middle"><b>Role</b> object</td>
+      <td>The default role applied to Team Users in teams using this scheme. This field is mandatory if the scheme scope is set to "team", otherwise must <b>not</b> be present.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">default_channel_admin_role</td>
+      <td valign="middle"><b>Role</b> object</td>
+      <td>The default role applied to Channel Admins in channels using this scheme. This field is mandatory for both "team" and "channel" scope schemes.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">default_channel_user_role</td>
+      <td valign="middle"><b>Role</b> object</td>
+      <td>The default role applied to Channel Users in channels using this scheme. This field is mandatory for both "team" and "channel" scope schemes.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+  </table>
+
+Fields of the Role object
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This object is a member of the Scheme object.
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">name</td>
+      <td valign="middle">string</td>
+      <td>The scheme name.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">display_name</td>
+      <td valign="middle">string</td>
+      <td>The display name for the scheme.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">description</td>
+      <td valign="middle">string</td>
+      <td>The description of the scheme.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">permissions</td>
+      <td valign="middle">array</td>
+      <td>The permissions the role should grant. This is an array of strings where the strings are the names of individual permissions in the Mattermost permissions system.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+  </table>
+
+Emoji object
+------------
+
+Emoji objects represent custom Emoji. If present, Emoji objects must occur after the Version object and before any Team objects.
+
+Example Emoji object
+~~~~~~~~~~~~~~~~~~~~
+
+For clarity, the object is shown using regular JSON formatting, but in the data file it cannot be spread across several lines. It must be all on one line.
+
+.. code-block:: javascript
+
+  {
+    "name": "custom-emoji-troll",
+    "image": "bulkdata/emoji/trollolol.png"
+  }
+
+Fields of the Emoji object
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">name</td>
+      <td valign="middle">string</td>
+      <td>The scheme name.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">image</td>
+      <td valign="middle">string</td>
+      <td>The path (either absolute or relative to the current working directory) to the image file for this emoji.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+  </table>
+
 Team object
 -----------
 
@@ -144,6 +360,7 @@ Fields of the Team object
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tfoot><tr><td colspan="5">[1] Not validated, but an error occurs if no such scheme exists when running in apply mode.</td></tr></tfoot>
     <tr class="row-odd">
       <th class="head">Field name</th>
       <th class="head">Type</th>
@@ -191,6 +408,13 @@ Fields of the Team object
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
+    <tr class="row-odd">
+      <td valign="middle">scheme</td>
+      <td valign="middle">string</td>
+      <td>The name of the Scheme that should be applied to this team.</td>
+      <td align="center" valign="middle">No [1]</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
   </table>
 
 Channel object
@@ -223,7 +447,7 @@ Fields of the Channel object
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
-    <tfoot><tr><td colspan="5">[1] Not validated, but an error occurs if no such team exists when running in apply mode.</td></tr></tfoot>
+    <tfoot><tr><td colspan="5">[1] Not validated, but an error occurs if no such team/scheme exists when running in apply mode.</td></tr></tfoot>
     <tr class="row-odd">
       <th class="head">Field name</th>
       <th class="head">Type</th>
@@ -238,43 +462,50 @@ Fields of the Channel object
       <td align="center" valign="middle">No [1]</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
-  <tr class="row-odd">
-    <td valign="middle">name</td>
-    <td valign="middle">string</td>
-    <td>The name of the channel.</td>
-    <td align="center" valign="middle">Yes</td>
-    <td align="center" valign="middle">Yes</td>
-  </tr>
-  <tr class="row-odd">
-    <td valign="middle">display_name</td>
-    <td valign="middle">string</td>
-    <td>The display name for the channel.</td>
-    <td align="center" valign="middle">Yes</td>
-    <td align="center" valign="middle">yes</td>
-  </tr>
-  <tr class="row-odd">
-    <td valign="middle">type</td>
-    <td valign="middle">string</td>
-    <td>The type of channel. Can have one the following values:<br>
-        <kbd>"O"</kbd> for a public channel.<br>
-        <kbd>"P"</kbd> for a private channel.</td>
-    <td align="center" valign="middle">Yes</td>
-    <td align="center" valign="middle">Yes</td>
-  </tr>
-  <tr class="row-odd">
-    <td valign="middle">header</td>
-    <td valign="middle">string</td>
-    <td>The channel header.</td>
-    <td align="center" valign="middle">Yes</td>
-    <td align="center" valign="middle">No</td>
-  </tr>
-  <tr class="row-odd">
-    <td valign="middle">purpose</td>
-    <td valign="middle">string</td>
-    <td>The channel purpose.</td>
-    <td align="center" valign="middle">Yes</td>
-    <td align="center" valign="middle">No</td>
-  </tr>
+    <tr class="row-odd">
+      <td valign="middle">name</td>
+      <td valign="middle">string</td>
+      <td>The name of the channel.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">display_name</td>
+      <td valign="middle">string</td>
+      <td>The display name for the channel.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">type</td>
+      <td valign="middle">string</td>
+      <td>The type of channel. Can have one the following values:<br>
+          <kbd>"O"</kbd> for a public channel.<br>
+          <kbd>"P"</kbd> for a private channel.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">header</td>
+      <td valign="middle">string</td>
+      <td>The channel header.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">purpose</td>
+      <td valign="middle">string</td>
+      <td>The channel purpose.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">scheme</td>
+      <td valign="middle">string</td>
+      <td>The name of the Scheme that should be applied to this team.</td>
+      <td align="center" valign="middle">No [1]</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
   </table>
 
 User object
@@ -307,6 +538,30 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
       "teams": [
         {
           "name": "team-name",
+          "theme": [
+            {
+              "awayIndicator":"#DBBD4E",
+              "buttonBg":"#23A1FF",
+              "buttonColor":"#FFFFFF",
+              "centerChannelBg":"#ffffff",
+              "centerChannelColor":"#333333",
+              "codeTheme":"github",
+              "linkColor":"#2389d7",
+              "mentionBg":"#2389d7",
+              "mentionColor":"#ffffff",
+              "mentionHighlightBg":"#fff2bb",
+              "mentionHighlightLink":"#2f81b7",
+              "newMessageSeparator":"#FF8800",
+              "onlineIndicator":"#7DBE00",
+              "sidebarBg":"#fafafa",
+              "sidebarHeaderBg":"#3481B9",
+              "sidebarHeaderTextColor":"#ffffff",
+              "sidebarText":"#333333",
+              "sidebarTextActiveBorder":"#378FD2",
+              "sidebarTextActiveColor":"#111111",
+              "sidebarTextHoverBg":"#e6f2fa",
+              "sidebarUnreadText":"#333333",
+              }
           "roles": "team_user team_admin",
           "channels": [
             {
@@ -438,7 +693,7 @@ Fields of the User object
     <tr class="row-odd">
       <td valign="middle">teams</td>
       <td valign="middle">array</td>
-      <td>The teams which the user will be made a member of. Must be an array of <b>TeamMembership</b> objects.</td>
+      <td>The teams which the user will be made a member of. Must be an array of <b>UserTeamMembership</b> objects.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
@@ -494,6 +749,37 @@ Fields of the User object
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>
+    <tr class="row-odd">
+      <td valign="middle">use_markdown_preview</td>
+      <td valign="middle">bool</td>
+      <td>Enable preview of message markdown formatting. Can have one the following values:<br>
+          <kbd>"True"</kbd> <br>
+          <kbd>"False"</kbd> </td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    <tr class="row-odd">
+      <td valign="middle">use_formatting</td>
+      <td valign="middle">bool</td>
+      <td>Enable post formatting for links, emoji, text styles and line breaks. Can have one the following values:<br>
+          <kbd>"True"</kbd> <br>
+          <kbd>"False"</kbd> </td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    <tr class="row-odd">
+      <td valign="middle">show_unread_section</td>
+      <td valign="middle">bool</td>
+      <td>Enable showing unread messages at top of channel sidebar. Can have one the following values:<br>
+          <kbd>"True"</kbd> <br>
+          <kbd>"False"</kbd> </td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+    <tr class="row-odd">
+      <td valign="middle">notify_props</td>
+      <td valign="middle"><b>UserNotifyProps</b> object</td>
+      <td>The user’s notify props, as defined by the <b>UserNotifyProps</b> object.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
   </table>
 
 Fields of the UserNotifyProps object
@@ -520,17 +806,6 @@ This object is a member of the User object.
       <kbd>"mention"</kbd> - Only for mentions.<br>
       <kbd>"none"</kbd> - Never.</td>
       <td align="center" valign="middle">Yes</td>
-      <td align="center" valign="middle">No</td>
-    </tr>
-    <tr class="row-odd">
-      <td valign="middle">desktop_duration</td>
-      <td valign="middle">string</td>
-      <td>Preference for how long desktop notifications remain on screen. Must be one of the following values:<br>
-      <kbd>"3"</kbd> - 3 seconds.<br>
-      <kbd>"5"</kbd> - 5 seconds.<br>
-      <kbd>"10"</kbd> - 10 seconds.<br>
-      <kbd>"0"</kbd> - Unlimited.</td>
-      <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
@@ -623,6 +898,13 @@ This object is a member of the User object.
       <td align="center" valign="middle">Yes</td>
     </tr>
     <tr class="row-odd">
+      <td valign="middle">theme</td>
+      <td valign="middle">string</td>
+      <td>The user’s theme for the specified team. Formatted as a Mattermost theme string.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
       <td valign="middle">roles</td>
       <td valign="middle">string</td>
       <td>The roles the user should have within this team. Must be one of the following values:<br>
@@ -635,7 +917,7 @@ This object is a member of the User object.
     <tr class="row-odd">
       <td valign="middle">channels</td>
       <td valign="middle">array</td>
-      <td>The channels within this team that the user should be made a member of. Must be an array of <b>ChannelMembership</b> objects.</td>
+      <td>The channels within this team that the user should be made a member of. Must be an array of <b>UserChannelMembership</b> objects.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
@@ -720,6 +1002,17 @@ This object is a member of the ChannelMembership object.
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
+      <td valign="middle">mobile</td>
+      <td valign="middle">string</td>
+      <td>Preference for sending mobile notifications. Must be one of the following values:<br>
+      <kbd>"default"</kbd> - Global default.<br>
+      <kbd>"all"</kbd> - For all activity.<br>
+      <kbd>"mention"</kbd> - Only for mentions.<br>
+      <kbd>"none"</kbd> - Never.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
       <td valign="middle">mark_unread</td>
       <td valign="middle">string</td>
       <td>Preference for marking channel as unread. Must be one of the following values:<br>
@@ -760,6 +1053,9 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
         "user": "username4",
         "message": "The reply message",
         "create_at": 140012352049,
+        "attachments": [{
+            "path": "/some/valid/file/path/1"
+        }],
       }, {
         "user": "username5",
         "message": "Other reply message",
@@ -773,6 +1069,11 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
         "user": "username7",
         "emoji_name": "heart",
         "create_at": 140012359034,
+      }],
+      "attachments": [{
+        "path": "/some/valid/file/path/1"
+      }, {
+        "path": "/some/valid/file/path/2"
       }]
     }
   }
@@ -855,6 +1156,13 @@ Fields of the Post object
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
+    <tr class="row-odd">
+      <td valign="middle">attachments</td>
+      <td valign="middle">array</td>
+      <td>File attachments associated with this post. Must be an array of <a href="#fields-of-the-attachment-object">Attachment</a> objects.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
   </table>
 
 Fields of the Reply object
@@ -892,6 +1200,27 @@ This object is a member of the Post/DirectPost object.
       <td>The timestamp for the reply, in milliseconds since the Unix epoch.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">flagged_by</td>
+      <td valign="middle">array</td>
+      <td>Must contain a list of members who have flagged the post.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">reactions</td>
+      <td valign="middle">array</td>
+      <td>The emoji reactions to this post. Must be an array of <a href="#fields-of-the-reaction-object">Reaction</a> objects.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">attachments</td>
+      <td valign="middle">array</td>
+      <td>The file attachments to this post. Must be an array of <a href="#fields-of-the-attachment-object">Attachment</a> objects.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
     </tr>
   </table>
 
@@ -933,13 +1262,44 @@ This object is a member of the Post/DirectPost object.
     </tr>
   </table>
 
+Fields of the Attachment object
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This object is a member of the Post/DirectPost object.
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+   <tfoot>
+      <tr>
+        <td colspan="5">
+          [1] Not validated, but an error occurs if the file path is not found or accessible when running in apply mode.
+        </td>
+      </tr>
+    </tfoot>
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+      <th class="head">Validated</th>
+      <th class="head">Mandatory</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">path</td>
+      <td valign="middle">string</td>
+      <td>The path to the file to be attached to the post.</td>
+      <td align="center" valign="middle">No [1]</td>
+      <td align="center" valign="middle">Yes</td>
+    </tr>
+  </table>
+
 DirectChannel object
----------------------
+--------------------
 
 A direct channel can have from two to eight users as members of the channel. If there are only two members, Mattermost treats it as a Direct Message channel. If there are three or more members, Mattermost treats it as a Group Message channel.
 
 Example DirectChannel object
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For clarity, the object is shown using regular JSON formatting, but in the data file it cannot be spread across several lines. It must be all on one line.
 
@@ -963,7 +1323,7 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
   }
 
 Fields of the DirectChannel object
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. raw:: html
 
@@ -1054,7 +1414,7 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
   }
 
 Fields of the DirectPost object
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. raw:: html
 

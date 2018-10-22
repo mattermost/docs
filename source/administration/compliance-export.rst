@@ -45,6 +45,8 @@ Actiance XML
 
 If you have chosen your file format to be Actiance XML, you can set up an integration with Actiance Vantage archive system. For more information, see `their homepage <https://www.actiance.com/products/vantage/>`_.
 
+For a sample Actiance outpout, `download an Actiance XML export file here <https://github.com/mattermost/docs/blob/master/source/samples/actiance_export.xml>`_.
+
 .. note::
   In Actiance XML exports, channel type is prepended to the channel names.
 
@@ -76,6 +78,17 @@ Run the ``export`` :doc:`command line tool <command-line-tools>`. You can specif
 What happens if I export data manually?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the compliance export job is run automatically, manually via the System Console, or manually via the CLI (without the ``--exportFrom`` option), it exports all posts that were made since the last post that the previous execution of the job exported. If this is the first time that the job has ever run, all posts that were made since the feature was enabled will be exported.
+If the compliance export job is run automatically, manually via the System Console, or manually via the CLI (without the ``--exportFrom`` option), it exports all posts that were made since the last post that the previous execution of the job exported. If this is the first time that the job has ever run, all posts that were made since the feature was enabled will be exported.  
 
 If the ``--exportFrom`` option is specified with the CLI command, all posts that have been made since the supplied timestamp will be exported.
+
+When run manually via the System Console, CSV and Actiance XML files are written to the `exports` subdirectory of the configured `Local Storage Directory <https://docs.mattermost.com/administration/config-settings.html?#local-storage-directory>`_.  Files will be written to a folder with names based on an epoch time range.  Global Relay EML export format will be mailed to the configured email address when run manually. 
+
+Why are compliance exports beta?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This feature is labelled as beta for the following reasons:
+
+1. The job to carry out a compliance export has not been tested on a system with 10,000s of concurrent active users.
+2. Exports do not yet include messages with special types, namely system messages, webhook message attachments and custom plugin messages.
+3. There isn't yet a way to distinguish who edited or deleted a message, nor which message is a reply or an edit of another message.

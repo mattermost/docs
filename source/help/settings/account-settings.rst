@@ -226,8 +226,9 @@ Select what language Mattermost displays in the user interface. Options include:
 - Nederlands - Dutch
 - Polski - Polish
 - Português (Brasil) - Portuguese
-- Pусский - Russian
+- Română - Romanian
 - Türkçe - Turkish
+- Pусский - Russian
 - 한국어 - Korean
 - 中文 (简体) - Simplified Chinese
 - 中文 (繁體) - Traditional Chinese
@@ -236,13 +237,17 @@ Select what language Mattermost displays in the user interface. Options include:
 Sidebar
 --------
 
-Automatically close direct messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`_.
-
 Group unreads channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`_, by replacing ``disabled`` with either ``default_off`` or ``default_on`` in config.json.
+
+Channel Switcher
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hide the channel switcher at the bottom of the sidebar used to jump between channels quickly. The channel switcher can also be accessed using CTRL/CMD + K.
+
+Automatically close direct messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`_.
 
 Advanced
 --------
@@ -254,13 +259,18 @@ Send Messages on CTRL+ENTER
 
 If enabled, press ENTER to insert a new line and CTRL+ENTER posts the message. If disabled, SHIFT+ENTER inserts a new line and ENTER posts the message.
 
+Send code block messages on CTRL+ENTER
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If enabled, press ENTER to insert a new line inside an open code block. Pressing CTRL+ENTER automatically closes the code block and posts the message. If disabled, SHIFT+ENTER inserts a new line and ENTER posts the message. 
+
 Enable Post Formatting
 ~~~~~~~~~~~~~~~~~~~~~~
 
 This setting controls whether post formatting is rendered. When "On", posts will be rendered with `markdown formatting <http://docs.mattermost.com/help/messaging/formatting-text.html>`_, emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown.
 
-Enable Join/Leave Messages (Enterprise Edition)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable Join/Leave Messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting controls whether system messages about users joining or leaving a channel are visible. When **On** these messages will appear. When **Off**, these messages will be hidden. If any users are added to or removed from a channel, a system message will still be shown even if this setting is **Off**.
 
@@ -270,3 +280,14 @@ Preview pre-release features
 Turn on preview features to view them early, ahead of their official release:
 
 - **Show markdown preview option in message input box** Turning this on will show a "Preview" option when typing in the text input box. Pressing "Preview" shows what the Markdown formatting in the message looks like before the message is sent.
+
+Deactivate Account
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use this setting to deactivate your account. After deactivating, an email notification is sent confirming the deactivation was successful.
+
+Deactivating your account removes your ability to log in to the Mattermost server and disables all email and mobile notifications. To reactivate your account, contact your System Administrator.
+
+Only available for accounts with email login, and if your System Administrator has set ``EnableUserDeactivation`` to ``true`` in ``config.json``.
+
+For accounts with other authentication methods such as AD/LDAP or SAML, or for accounts that do not have this setting available, contact your System Administrator to deactivate your account.

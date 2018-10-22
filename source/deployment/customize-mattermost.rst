@@ -23,7 +23,7 @@ The Mattermost webapp is licensed under the Apache 2.0 license. To modify and us
 
 It is possible to customize certain parts of the webapp without forking by using our :doc:`Custom Branding <../administration/branding>` settings. 
 
-To replace the logo in email notifications, change the file located in the ``/images`` directory. 
+To replace the logo in email notifications, change the file located in the ``/images`` directory. To change the app icon, modify the ``/app/components/app_icon.js`` file.
 
 Mattermost Server
 -----------------

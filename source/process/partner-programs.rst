@@ -57,16 +57,18 @@ Becoming a Mattermost Value-Added Reseller ("VAR")
 Order Processing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- For each customer opportunity, `complete a deal registration form <https://about.mattermost.com/reseller-deal-registration/>`_ to be eligible for a reseller discount.
+- For each customer opportunity, you must `complete a deal registration form <https://about.mattermost.com/reseller-deal-registration/>`_ to be eligible for a reseller discount.
 - Once the deal is registered Mattermost will review the registration and contact you regarding approval, rejection or to obtain more information.
-- Request a quotation from your Mattermost Strategic Alliance Manager for customer purchase, including email address of customer contact who will receive the license key.
-- Sign quotation to issue a purchase order.
+- Request a quotation from your Mattermost Strategic Alliance Manager for customer purchase, including the email address of the customer contact who will receive the license key.
+- The customer must sign the quotation before you issue a purchase order.
 - Mattermost, Inc. will then: 
 
    - Review the terms and conditions of the order
    - Send the customer contact a request to complete a `customer registration form <https://about.mattermost.com/customer-registration/>`_ (password provided after PO is sent), which includes an agreement to accept `Enterprise Edition Subscription Terms for Purchase by Resale <https://about.mattermost.com/customer-terms-and-conditions/>`_.
    - After the customer registration form is complete, it will be reviewed within one business day and a license key issued via email
    - Issue you an invoice (payment due within 30 days)
+
+- If a partner has registered a deal, received approval and the customer purchases online, the partner may invoice Mattermost for a referral fee equal to the discount off list price for the product with an invoice note "Referral fee for deal registration [DEAL_REGISTRATION_NUMBER]" (sent to payments@mattermost.com).
 
 Mattermost Deployment Solutions Partner Program
 ------------------------------------------------------------
@@ -90,6 +92,7 @@ After completion of a partner agreement, partners are invited to send an overvie
 To get started, please email the following to: partner-directory@mattermost.com 
 
 - **Partner Name** - Your legal name may be shortened to fit in the directory listing. If you wish you can state your full legal name as part of your partner description 
+- **Partner Contact Information** - The best email address (and phone number, if preferred) where you can be reached
 - **Partner Description** - 30-100 words describing your business. See examples at https://about.mattermost.com/partners/
 - **City, State/Province and Country** - Location of key office or offices providing Mattermost services, or global headquarters. 
 - **Logo** - At least 200px wide
@@ -110,9 +113,10 @@ Partner Evaluation License
 
 As a Value-Added Reseller you can request a renewable 1-year E20 license for up to 20 users.
 
-- Go to https://about.mattermost.com/trial/ to complete a trial form, enter [RESELLER] after your organization name.
-- In the “Tell us more” section enter “1 Year Reseller License Request” so your application can be reviewed and matched against our certified reseller database.
-- Please expect delivery in 2-3 business days
+- Go to https://www.mattermost.com/trial/ to complete a trial form and enter [RESELLER] after your organization name.
+- In the “Where are you with Mattermost” section, select “other”. 
+- Please send an email to partners@mattermost.com letting us know the above have been completed so your application can be reviewed and matched against our certified reseller database.
+- Please expect delivery in 2-3 business days.
 
 Mattermost Partner Program FAQ 
 ------------------------------------------------

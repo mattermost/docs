@@ -6,6 +6,7 @@ Use the search box to find messages and replies that match the search terms that
 - Multiple-word search terms return results that contain all of the terms.
 - When results appear, click **Jump** to view that post in the channel archive.
 - File attachments and their filenames are not searched. If file attachments show up in the search results, it's because they are attached to messages that match the search query.
+- Archived channels can be searched as long as you are a member of that channel. To remove archived channels from your search results, you can leave those channels. If you are unable to see messages in archived channels in your search results, ask your System Administrator if *Allow users to view archived channels* has been disabled under **System Console > Users and Teams**.
 -  You can use search modifiers such as ``from:dave`` to return results only from certain people or in certain channels. For more information about this, see the `Search Modifiers`_ section.
 
 Like many search engines, common words such as ``the``, ``which``, and ``are`` (known as "stop words"), as well as two-letter and one-letter
@@ -19,11 +20,24 @@ Search Modifiers
 From: and In:
 ^^^^^^^^^^^^^
 
-Use ``from:`` to find posts from specific users and ``in:`` to find
-posts in specific channels.
+Use ``from:`` to find posts from specific users and ``in:`` to find posts in specific public or private channels, as well as direct and group messages.
 
 -  For example: Searching ``Mattermost in:town-square`` only returns
    messages in Town Square that contain ``Mattermost``.
+-  Searching ``Mattermost in: @john.doe`` returns messages that contain ``Mattermost`` in your direct message history with John Doe. 
+
+Before:, After: and On:
+^^^^^^^^^^^^^^^^^^^^^^
+
+Use ``before:`` to find posts before a specified date and ``after:`` to find posts after a specified date. Use both ``before:`` and ``after:`` together to search in a specified date range.  Use ``on:`` to find posts from a specific date.  You can use the date picker to select a date or you can type it in YYYY-MM-DD format.
+
+-  For example: Searching ``website before: 2018-09-01`` will return messages containing the keyword ``website`` posted prior to September 1, 2018.     
+-  Searching ``website after: 2018-08-01`` will return messages containing the keyword ``website`` posted after August 1, 2018.  
+-  Searching ``website before: 2018-09-01 after: 2018-08-01`` will return all messages that contain the keyword ``website`` that were posted between August 1, 2018 and September 1, 2018. 
+-  Searching ``website on: 2018-09-01`` will return messages that contain the keyword ``website`` that were posted on September 1, 2018.
+
+.. image:: ../../images/calendar2.png
+  :width: 300 px
 
 Quotation Marks
 ^^^^^^^^^^^^^^^^^
