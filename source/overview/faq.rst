@@ -34,17 +34,17 @@ Mattermost provides an open source, well-documented load test simulator to verif
 What features are available on different Mattermost clients?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following chart highlights the end user features of Mattermost and their support across Web, Desktop, and Mobile applications (iOS and Android).
+The following chart highlights the end user features of Mattermost and their support across Web, Desktop and Mobile applications (iOS and Android).
 
 .. csv-table::
     :header: "Feature", "Web", "Desktop", "Mobile"
 
     "**Channels**"
     "Create a new channel", "X", "X", "X"
-    "Join channel", "X", "X", "X"
-    "Leave channel", "X", "X", "X"
-    "Favorite channel", "X", "X", "X"
-    "Mute channel", "X", "X", "X"
+    "Join a channel", "X", "X", "X"
+    "Leave a channel", "X", "X", "X"
+    "Favorite a channel", "X", "X", "X"
+    "Mute a channel", "X", "X", "X"
     "Manage members", "X", "X", "X"
     "Add members", "X", "X", "X"
     "Edit channel", "X", "X", "X"
@@ -58,7 +58,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "File sharing", "X", "X", "X"
     "@ mentions", "X", "X", "X"
     "Hashtags", "X", "X", "v1.13"
-    "Search (with in, from, before, on and after)", "X", "X", "X"
+    "Search (with in:, from:, before:, on: and after:)", "X", "X", "X"
     "Search highlighting", "X", "X", "v1.15"
     "View/marking pinned or flagged posts", "X", "X", "X"
     "Image link previews", "X", "X", "X"
@@ -78,7 +78,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "Multi-team support for notifications", "X", "X", "X"
     "Team switching", "X", "X", "X" 
     "Team-based theming", "X", "X", "X"
-    "Create new team", "X", "X",
+    "Create a new team", "X", "X",
     "Join existing team", "X", "X", "X"
     "Get team invite link", "X", "X",
     "Add members to team", "X", "X",
