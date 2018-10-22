@@ -86,12 +86,9 @@
 1. Follow [official documentation](../../backup-restore/restore.md#restoring-the-secrets)
    on how to restore the secrets from package based installation.
 
-1. Restart the pods to make sure changes are applied
+1. Restart all pods to make sure changes are applied
     ```
-    $ helm upgrade <deployment name> gitlab/gitlab \
-      --timeout 600 \
-      --reuse-values \
-      --recreate-pods
+    kubectl delete pods -lrelease=<helm release name>
     ```
 
 1. Visit the Helm based deployment and confirm projects, groups, users, issues

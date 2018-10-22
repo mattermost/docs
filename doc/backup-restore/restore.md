@@ -81,16 +81,12 @@ Follow these [troubleshooting steps](../troubleshooting/README.md#included-gitla
 
 ## Restart the pods
 
-In order to use the new changes, the `unicorn` and `sidekiq` pods need to be restarted. The easiest way to restart everything is to run:
+In order to use the new changes, the `unicorn` and `sidekiq` pods need to be restarted. The safest way to restart those pods is to run:
 
 ```
-$ helm upgrade gitlab gitlab/gitlab \
-  --timeout 600 \
-  --reuse-values \
-  --recreate-pods
+kubectl delete pods -lapp=sidekiq,release=<helm release name>
+kubectl delete pods -lapp=unicorn,release=<helm release name>
 ```
-
-where the first `gitlab` is the release name you used when installing.
 
 ## (Optional) Reset the root user's password
 
