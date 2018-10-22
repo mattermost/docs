@@ -23,35 +23,49 @@ Software Requirements
 Client Software
 ~~~~~~~~~~~~~~~
 
-PC Web Experience
+Desktop Apps
 ^^^^^^^^^^^^^^^^^
 
--  PC: Windows 7+ with IE 11*, Chrome 43+, Firefox 52+ and Edge 40+ (or EdgeHTML v15+)
--  Mac: OS 10.8+ with Chrome 43+ and Safari 9+
--  Linux: Chrome 43+ and Firefox 52+
+.. csv-table::
+    :header: "Operating System", "Technical Requirement"
 
-`*` IE 11 Compatibility View is not supported. 
-
-Desktop App Experience
-^^^^^^^^^^^^^^^^^^^^^
-
-- PC: Windows 7+
-- Mac: OS 10.9+
-- Linux: Ubuntu 14.04+
+    "Windows", "Windows 7, 8.1 and 10"
+    "Mac", "MacOS 10.12+"
+    "Linux", "Ubuntu LTS releases 14.04 or later"
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
 
-Mobile App Experience
+PC Web
+^^^^^^^^^^^^^^^^^
+
+.. csv-table::
+    :header: "Browser", "Technical Requirement"
+
+    "Chrome", "v56+"
+    "Firefox", "v60+"
+    "Safari", "v12+"
+    "Internet Explorer", "v11*"
+    "Edge", "v42+"
+
+`*` IE 11 Compatibility View is not supported. 
+
+Mobile Apps
 ^^^^^^^^^^^^^^^^^^^^^
 
--  iPhone 4s and later with iOS 9+
--  Android devices with Android 5+
+.. csv-table::
+    :header: "Operating System", "Technical Requirement"
 
-Mobile Web Experience
+    "iOS", "iPhone 5s devices and later with iOS 11+"
+    "Android", "Android devices with Android 8+"
+
+Mobile Web
 ^^^^^^^^^^^^^^^^^^^^^
 
--  iPhone 4s and higher (Safari on iOS 9+, Chrome 43+)
--  Android 5 and higher (Chrome 43+)
+.. csv-table::
+    :header: "Browser", "Technical Requirement"
+
+    "iOS", "iOS 11+ with Safari 12+ or Chrome 56+"
+    "Android", "Android 8+ with Chrome 56+"
 
 Email Client
 ^^^^^^^^^^^^
