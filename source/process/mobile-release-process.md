@@ -9,7 +9,7 @@ Notes:
 - All cut-off dates are based on 10am (San Francisco Time) on the day stated.
 - T-minus counts are measured in "working days" (weekdays other than major holidays in the US and Canada) prior to release day.
 
-### A. (T-minus 12 working days) Cut-off for merging major features
+### A. (T-minus 15 working days) Cut-off for merging major features
 
 No pull requests for major features should be **merged** to the current release after this date. In special cases, exceptions can be made by the Release Manager.
 
@@ -27,13 +27,13 @@ No pull requests for major features should be **merged** to the current release 
 5. Marketing:
     - Prepare a list of highlights to be included in the next Mattermost release announcement
 
-### B. (T-minus 11 working days) Major feature testing
+### B. (T-minus 14 working days) Major feature testing
 
 1. QA:
     - Prioritize testing merged PRs and resolved tickets
     - Write and update tests in the Release Testing spreadsheet
     
-### C. (T-minus 10 working days) Judgment Day
+### C. (T-minus 13 working days) Judgment Day
 
 Day when PM decides which major features are included in the release, and which are postponed.
 
@@ -47,7 +47,7 @@ Day when PM decides which major features are included in the release, and which 
 3. PM:
     - Review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
 
-### D. (T-minus 8 working days) Code Complete and Release Candidate Cut 
+### D. (T-minus 9 working days) Code Complete and Release Candidate Cut 
 
 **Stabilization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version. Exceptions can be made by the Release Manager during triage.
 
@@ -67,7 +67,7 @@ Day when PM decides which major features are included in the release, and which 
 5. Docs:
     - Submit any remaining documentation PRs for product updates in the release
 
-### E. (T-minus 7 working days) Release Candidate Testing
+### E. (T-minus 8 working days) Release Candidate Testing
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
