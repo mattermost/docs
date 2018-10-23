@@ -10,7 +10,7 @@ Notes:
 
 Pre-work for the current release begins at the code complete date of the previous release. See "Code Complete" section below for details.
 
-### B. (T-minus 12 working days)
+### B. (T-minus 15 working days)
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
@@ -28,7 +28,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Prepare bullet points and release headline for release announcement. Release manager to review the outline (benefits and order of major features) with PMs before sending to Justin to work on
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
     
-### C. (T-minus 11 working days) Release Bug Testing
+### C. (T-minus 14 working days) Release Bug Testing
 
 1. QA:
     - Prioritize testing merged PRs and resolved tickets for this release
@@ -36,7 +36,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Prioritize updating tests in the Release Testing spreadsheet and in Selenium IDE
     - Identify most-affected areas and queue Selenium tests to be updated and run
 
-### D. (T-minus 10 working days) Judgment Day
+### D. (T-minus 13 working days) Judgment Day
 
 1. **(Team) Judgment Day Meeting (10:00am San Francisco time)**: 
     - Discuss worst bug on master
@@ -56,7 +56,7 @@ Pre-work for the current release begins at the code complete date of the previou
 4. Marketing:
     - Start drafting blog post, tweet, and email for the release announcement
     
-### E. (T-minus 9 working days) Code complete
+### E. (T-minus 12 working days) Code complete
 
 1. **(Team) Code Complete Meeting (10:00am San Francisco time)**:
     - Team review of Changelog
@@ -71,7 +71,7 @@ Pre-work for the current release begins at the code complete date of the previou
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
 
-### F. (T-minus 8 working days) Release Candidate Cut
+### F. (T-minus 9 working days) Release Candidate Cut
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
@@ -105,7 +105,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](https://docs.mattermost.com/administration/config-settings.html#configuration-settings)
     - Confirm all new diagnostics are documented in the telemetry docs (https://docs.mattermost.com/administration/telemetry.html)
 
-### G. (T-minus 7 working days) Release Candidate Testing
+### G. (T-minus 8 working days) Release Candidate Testing
 
 1. **(Team) Daily Release Update Meeting**
     - Triage Jira tickets
@@ -138,7 +138,7 @@ Pre-work for the current release begins at the code complete date of the previou
         - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
     - Send blog post for release manager and PMs to review
 
-### H. (T-minus 6 working days) Release Candidate Testing Finished
+### H. (T-minus 7 working days) Release Candidate Testing Finished
 
 1. **(Team) Daily Release Update Meeting**
     - Confirm testing assigned in the release testing spreadsheet is complete 
