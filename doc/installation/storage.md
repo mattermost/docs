@@ -64,9 +64,9 @@ $ helm install -upgrade gitlab gitlab/gitlab -f HELM_OPTIONS_YAML_FILE
 
 Follow the links below for further reading and additional persistence options:
 
-- [Gitaly persistence configuration](../charts/gitlab/gitaly/README.md#git-repository-persistence)
-- [Minio persistence configuration](../charts/minio/README.md#persistence)
-- [Redis persistence configuration](../charts/redis/README.md#persistence)
+- [Gitaly persistence configuration](../charts/gitlab/gitaly/index.md#git-repository-persistence)
+- [Minio persistence configuration](../charts/minio/index.md#persistence)
+- [Redis persistence configuration](../charts/redis/index.md#persistence)
 - [Upstream PostgreSQL chart configuration](https://github.com/helm/charts/tree/master/stable/postgresql#configuration)
 
 > **Note**: Some of the advanced persistence options differ between PostgreSQL and the others, so it's important to check
@@ -143,7 +143,7 @@ After the initial installation, storage changes like migrating to new volumes,
 or changing disk sizes, require editing the Kubernetes objects outside of the the
 Helm upgrade command.
 
-See the [managing persistent volumes documentation](../advanced/persistent-volumes/README.md).
+See the [managing persistent volumes documentation](../advanced/persistent-volumes/index.md).
 
 [pv]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes
 [pvc]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims

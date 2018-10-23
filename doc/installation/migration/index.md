@@ -96,4 +96,4 @@
    Also verify if the uploaded files (avatars, files uploaded to issues, etc.)
    are loaded fine.
 
-[external object storage]: ../../advanced/external-object-storage/README.md
+[external object storage]: ../../advanced/external-object-storage/index.md

@@ -12,7 +12,7 @@ Technical details for how the utility works can be found in the [architecture do
 
 ## Object storage
 
-We provide a minio instance out of the box when using this charts unless an [external object storage](../advanced/external-object-storage/README.md) is specified. The default behavior of the task-runner pod defaults to connect to our minio unless specific settings are given.
+We provide a minio instance out of the box when using this charts unless an [external object storage](../advanced/external-object-storage/index.md) is specified. The default behavior of the task-runner pod defaults to connect to our minio unless specific settings are given.
 
 The task-runner uses `s3cmd` to connect to object storage. In order to configure connectivity to external object storage `gitlab.task-runner.backups.objectStorage.config.secret` should be specified which points to a kubernetes secret containing a `.s3cfg` file. `gitlab.task-runner.backups.objectStorage.config.key` should be specified if different from the default of `config`. This points to the key containing the contents of a .s3cfg file.
 

@@ -11,12 +11,12 @@ There are some common global settings that apply to multiple charts. See the [Gl
 on the different global configuration.
 
 ## Charts:
-- [NGINX](nginx/README.md)
-- [Redis](redis/README.md)
-- [Minio](minio/README.md)
-- [Registry](registry/README.md)
-- GitLab/[sidekiq](gitlab/sidekiq/README.md)
-- GitLab/[gitlab-shell](gitlab/gitlab-shell/README.md)
-- GitLab/[gitaly](gitlab/gitaly/README.md)
-- GitLab/[unicorn](gitlab/unicorn/README.md)
-- GitLab/[migrations](gitlab/migrations/README.md)
+- [NGINX](nginx/index.md)
+- [Redis](redis/index.md)
+- [Minio](minio/index.md)
+- [Registry](registry/index.md)
+- GitLab/[sidekiq](gitlab/sidekiq/index.md)
+- GitLab/[gitlab-shell](gitlab/gitlab-shell/index.md)
+- GitLab/[gitaly](gitlab/gitaly/index.md)
+- GitLab/[unicorn](gitlab/unicorn/index.md)
+- GitLab/[migrations](gitlab/migrations/index.md)

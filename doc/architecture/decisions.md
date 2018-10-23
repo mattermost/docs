@@ -24,7 +24,7 @@ behavior complete failure that requires debugging.
 
 Introduced in [!396 Deprecations: implement buffered list of deprecations](https://gitlab.com/charts/gitlab/merge_requests/396)
 
-[deprecation]: ../development/README.md#handling-configuration-deprecation
+[deprecation]: ../development/index.md#handling-configuration-deprecation
 
 ## Preference of Secrets in initContainer over Environment
 
@@ -89,7 +89,7 @@ Related issue:
 ## Forked charts
 
 The following charts have been forked or re-created in this repository following
-our [guidelines for forking](../development/README.md#guidelines-for-forking)
+our [guidelines for forking](../development/index.md#guidelines-for-forking)
 
 ### redis
 

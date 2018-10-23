@@ -106,7 +106,7 @@ You can find the URL for the dashboard by calling `minikube dashboard --url`.
 
 Once your Minikube is up and running, you can hook [Helm] to it with `helm init`.
 
-For further details on [Helm][helm], we'll move to [Developing for Helm](../helm/README.md)
+For further details on [Helm][helm], we'll move to [Developing for Helm](../helm/index.md)
 
 ## Deploying the chart
 

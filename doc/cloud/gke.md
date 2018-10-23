@@ -16,7 +16,7 @@ We have created a [bootstrap script](../../scripts/gke_bootstrap_script.sh) to a
 * Setup kubectl, and connect it to the cluster
 * Initialize Helm and install Tiller
 
-Google Cloud SDK is a dependency of this script, you will have to make sure it is [set up correctly](../helm/README.md#connect-to-the-cluster) in order for the script to work.
+Google Cloud SDK is a dependency of this script, you will have to make sure it is [set up correctly](../helm/index.md#connect-to-the-cluster) in order for the script to work.
 
 The script reads various parameters from environment variables and an argument `up` or `down` for bootstrap and clean up respectively.
 
@@ -87,4 +87,4 @@ Follow [This](https://cloud.google.com/dns/quickstart) to create the DNS entry.
 
 # Next Steps
 
-Continue with the [installation of the chart](../installation/README.md) once you have the cluster up and running, and have the static IP and DNS entry ready.
+Continue with the [installation of the chart](../installation/index.md) once you have the cluster up and running, and have the static IP and DNS entry ready.

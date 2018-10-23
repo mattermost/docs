@@ -6,8 +6,8 @@
 
 GitLab backup restores are taken by running the `backup-utility` command on the `task-runner` pod provided in the chart.
 
-Before running the restore for the first time, you should ensure the [task-runner is properly configured](README.md) for
-access to [object storage](README.md#object-storage)
+Before running the restore for the first time, you should ensure the [task-runner is properly configured](index.md) for
+access to [object storage](index.md#object-storage)
 
 The backup utility provided by GitLab Helm chart supports restoring a tarball from any of the following locations
 
@@ -77,7 +77,7 @@ Once you have the secrets created as a local yaml file:
 ### Restore the runner registration token
 
 After restoring, the included runner will not be able to register to the instance because it no longer has the correct registration token.
-Follow these [troubleshooting steps](../troubleshooting/README.md#included-gitlab-runner-failing-to-register) to get it updated.
+Follow these [troubleshooting steps](../troubleshooting/index.md#included-gitlab-runner-failing-to-register) to get it updated.
 
 ## Restart the pods
 
@@ -103,5 +103,5 @@ The restoration process does not update the `gitlab-initial-root-password` secre
 
 ## Additional Information
 
-- [GitLab Chart Backup/Restore Introduction](README.md)
+- [GitLab Chart Backup/Restore Introduction](index.md)
 - [Backing up a GitLab installation](backup.md)

@@ -54,4 +54,4 @@ We recommend [using your own certificates](../installation/tls.md#option-2-use-y
 
 # Next Steps
 
-Continue with the [installation of the chart](../installation/README.md) once you have the cluster up and running, and have the static IP and DNS entry ready.
+Continue with the [installation of the chart](../installation/index.md) once you have the cluster up and running, and have the static IP and DNS entry ready.

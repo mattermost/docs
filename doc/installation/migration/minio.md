@@ -49,4 +49,4 @@ task-runner pods. Follow the steps to grab it from the sidekiq pod
    corresponding endpoint. So, you need not set `endpoint` value in your
    connection settings in `gitlab.rb` file.
 
-[external object storage]: ../../advanced/external-object-storage/README.md
+[external object storage]: ../../advanced/external-object-storage/index.md
