@@ -11,6 +11,8 @@ Release date: 2018-11-16
  - Fixed an issue where config.ServiceSettings.SiteURL could contain a trailing slash.
  - Possible caching bug with archiving/unarchiving channels through API.
  - Improvement to UX when trying to edit pending post from reply thread.
+ - Fixed an issue where "Enable Post Formatting" does not actually require page refresh.
+ - Fixed an issue where User AuthService Export value of "" could be incompatible for importer.
 
 
 ## Release v5.4
