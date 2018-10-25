@@ -1,0 +1,5 @@
+---
+title: Add additional cleanup policy to Helm prehooks
+merge_request: 550
+author:
+type: added
