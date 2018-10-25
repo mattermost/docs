@@ -95,7 +95,7 @@ disabling it, as shown below.
 ```
 helm install ...
   --set certmanager.install=false \
-  --set global.ingress.confgureCertmanager=false \
+  --set global.ingress.configureCertmanager=false \
   --set gitlab-runner.install=false
 ```
 
