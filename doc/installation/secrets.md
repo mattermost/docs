@@ -150,7 +150,7 @@ Some charts have further secrets to enable functionality that can not be automat
 
 ### Unicorn Omniauth
 
-In order to enable the use of [Omniauth Providers](https://docs.gitlab.com/ee/integration/omniauth.html) with the deployed GitLab, please follow the [instructions in the Unicorn chart](../charts/gitlab/unicorn/README.md#omniauth.providers)
+In order to enable the use of [Omniauth Providers](https://docs.gitlab.com/ee/integration/omniauth.html) with the deployed GitLab, please follow the [instructions in the Unicorn chart](../charts/gitlab/unicorn/index.md#omniauth.providers)
 
 ### SMTP password
 

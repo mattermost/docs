@@ -16,7 +16,7 @@ The default deployment includes:
 
 ## Architecture and goals
 
-See [architecture documentation](doc/architecture/README.md) for an overview
+See [architecture documentation](doc/architecture/index.md) for an overview
 of this project goals and architecture.
 
 ## Known issues and limitations
@@ -30,18 +30,18 @@ Some features of GitLab are not currently available:
 
 ## Release Notes
 
-Check the [releases documentation](doc/releases/README.md) for information on important releases,
+Check the [releases documentation](doc/releases/index.md) for information on important releases,
 and see the [changelog](CHANGELOG.md) for the full details on any release.   
 
 ## Quick-start installation
 
-See the [installation documentation](doc/installation/README.md) for a quick-start to using this chart.
+See the [installation documentation](doc/installation/index.md) for a quick-start to using this chart.
 
 ## Detailed documentation
 
-See the [repository documentation](doc/README.md) for detailed documentation on charts, tools, and advanced configuration.
+See the [repository documentation](doc/index.md) for detailed documentation on charts, tools, and advanced configuration.
 
 ## Contributing
 
 Please see the [contribution guidelines](CONTRIBUTING.md)
-And then check out the [development styleguide](doc/development/README.md).
+And then check out the [development styleguide](doc/development/index.md).

@@ -25,7 +25,7 @@ Follow the [helm][] document for installation instructions.
 # Next Steps
 
 Once the tools are configured, you can continue to configuring your
-[Kubernetes cluster](README.md#where-do-you-want-to-install-GitLab).
+[Kubernetes cluster](index.md#where-do-you-want-to-install-GitLab).
 
 [kubectl]: https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl
-[helm]: ../helm/README.md
+[helm]: ../helm/index.md

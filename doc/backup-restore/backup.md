@@ -2,8 +2,8 @@
 
 GitLab backups are taken by running the `backup-utility` command on the `task-runner` pod provided in the chart.
 
-Before running the backup for the first time, you should ensure the [task-runner is properly configured](README.md) for
-access to [object storage](README.md#object-storage)
+Before running the backup for the first time, you should ensure the [task-runner is properly configured](index.md) for
+access to [object storage](index.md#object-storage)
 
 Follow these steps for backing up a GitLab Helm chart based installation
 
@@ -43,5 +43,5 @@ You should also save a copy of the rails secrets. (These are not included in the
 
 ## Additional Information
 
-- [GitLab Chart Backup/Restore Introduction](README.md)
+- [GitLab Chart Backup/Restore Introduction](index.md)
 - [Restoring a GitLab installation](restore.md)

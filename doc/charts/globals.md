@@ -69,7 +69,7 @@ the nginx chart has access to the certificates.
 #### externalIP
 
 Set the external IP address that will be claimed from the provider. This will be templated into the
-[nginx chart](nginx/README.md#configuring-the-service), in place of the more complex `nginx.service.loadBalancerIP`.
+[nginx chart](nginx/index.md#configuring-the-service), in place of the more complex `nginx.service.loadBalancerIP`.
 Defaults to `nil`.
 
 ### gitlab
@@ -211,7 +211,7 @@ global:
 ```
 
 For further details on these settings, see the documentation within the
-[unicorn chart](gitlab/unicorn/README.md#postgresql)
+[unicorn chart](gitlab/unicorn/index.md#postgresql)
 
 ## Configure Redis settings
 
@@ -228,7 +228,7 @@ global:
 ```
 
 For further details on these settings, see the documentation within the
-[unicorn chart](gitlab/unicorn/README.md#redis)
+[unicorn chart](gitlab/unicorn/index.md#redis)
 
 ## Configure Registry settings
 
@@ -243,7 +243,7 @@ global:
 ```
 
 For futher details on these settings, see the documentation within the
-[registry chart](registry/README.md)
+[registry chart](registry/index.md)
 
 ## Configure Gitaly settings
 
@@ -266,7 +266,7 @@ global:
 ```
 
 For further details on these settings, see the documentation within the
-[unicorn chart](gitlab/unicorn/README.md#gitaly)
+[unicorn chart](gitlab/unicorn/index.md#gitaly)
 
 ## Configure Minio settings
 
@@ -280,7 +280,7 @@ global:
 ```
 
 For further details on these settings, see the documentation within the
-[minio chart](minio/README.md)
+[minio chart](minio/index.md)
 
 ## Configure appConfig settings
 
@@ -341,9 +341,9 @@ global:
       idleTimeout: 60
 ```
 
-[unicorn]: gitlab/unicorn/README.md
-[sidekiq]: gitlab/sidekiq/README.md
-[task-runner]: gitlab/task-runner/README.md
+[unicorn]: gitlab/unicorn/index.md
+[sidekiq]: gitlab/sidekiq/index.md
+[task-runner]: gitlab/task-runner/index.md
 
 ### General application settings
 
@@ -497,7 +497,7 @@ These settings are explained in [command line options page](../installation/comm
 
 ## Configure GitLab Shell
 
-There are several items for the global configuration of [GitLab Shell](gitlab/gitlab-shell/README.md) chart.
+There are several items for the global configuration of [GitLab Shell](gitlab/gitlab-shell/index.md) chart.
 
 ```yaml
 global:

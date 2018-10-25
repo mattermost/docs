@@ -28,7 +28,7 @@ Configuration of object storage for the `registry` chart is done via the `regist
 the global is used by GitLab backups.
 
 Create the secret using yaml config per documentation, then configure the chart to make use of this secret.
-See the [registry chart documentation on storage](../../charts/registry/README.md#storage) for full details.
+See the [registry chart documentation on storage](../../charts/registry/index.md#storage) for full details.
 
 ### Registry example
 
@@ -101,7 +101,7 @@ You also need to provide connection configuration through the `gitlab.task-runne
 --set gitlab.task-runner.backups.objectStorage.config.key=config
 ```
 
-See the [backup/restore object storage documentation](../../backup-restore/README.md#object-storage) for full details.
+See the [backup/restore object storage documentation](../../backup-restore/index.md#object-storage) for full details.
 
 Create the secret using the [s3cmd config file format](https://s3tools.org/kb/item14.htm) per the documentation.
 

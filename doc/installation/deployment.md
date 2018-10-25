@@ -76,7 +76,7 @@ certificates.
 By default this chart provides an in-cluster postgresql database. This
 configuration should not be used in production.
 
-You can read more about setting up your production-ready database in the [advanced database docs](../advanced/external-db/README.md).
+You can read more about setting up your production-ready database in the [advanced database docs](../advanced/external-db/index.md).
 
 If you have an external postgres database ready,
 
@@ -102,7 +102,7 @@ By default we use an single, non-replicated Redis instance. If desired, a highly
 By default this chart provides an in-cluster minio deployment to provide an object storage API.
 This configuration should not be used in production.
 
-You can read more about setting up your production-ready object storage in the [external object storage](../advanced/external-object-storage/README.md)
+You can read more about setting up your production-ready object storage in the [external object storage](../advanced/external-object-storage/index.md)
 
 ### Outgoing email
 
