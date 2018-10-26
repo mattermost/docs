@@ -8,11 +8,43 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release date: 2018-11-16
 
+### Bug Fixes
  - Fixed an issue where config.ServiceSettings.SiteURL could contain a trailing slash.
  - Possible caching bug with archiving/unarchiving channels through API.
  - Improvement to UX when trying to edit pending post from reply thread.
  - Fixed an issue where "Enable Post Formatting" does not actually require page refresh.
  - Fixed an issue where User AuthService Export value of "" could be incompatible for importer.
+
+### Compatibility
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+ 
+### API Changes
+
+#### Plugin API Changes
+
+#### Websocket Event Changes
+ 
+#### Database Changes
+
+### Known Issues
+
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
+
+### Contributors
+
 
 
 ## Release v5.4
