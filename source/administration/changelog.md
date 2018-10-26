@@ -14,6 +14,7 @@ Release date: 2018-11-16
  - Improvement to UX when trying to edit pending post from reply thread.
  - Fixed an issue where "Enable Post Formatting" does not actually require page refresh.
  - Fixed an issue where User AuthService Export value of "" could be incompatible for importer.
+ - Fixed an issue where clicking the two arrows to expand/collapse an image doesn't work after posting an image.
 
 ### Compatibility
 
