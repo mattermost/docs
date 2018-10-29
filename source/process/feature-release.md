@@ -55,9 +55,7 @@ No pull requests for major features should be **merged** to the current release 
         - Point translation server to release branch after cutting
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
       - After the cut-off, any PRs that include significant code changes, require approval of the release manager before merging
-4. Logistics:
-    - Notify community about upcoming release in Reception [see example](https://pre-release.mattermost.com/core/pl/aq434e5dt3ntmfdowhekxjzi4r)
-5. Marketing:
+4. Marketing:
     - Prepare bullet points and release headline for release announcement. Release manager to review the outline (benefits and order of major features) with PMs before sending to Justin to work on
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
     
@@ -123,6 +121,7 @@ Day when Leads and PMs decide which major features are included in the release, 
       - Space out the ordering of mugs over the next 3 weeks to prevent mistakes being made by the supplier.  i.e. If there are 12 contributors to order mugs for, place an order every 2nd or 3rd day over the next 3 weeks.
     - Update [Team](http://www.mattermost.org/team/) page with new contributors
     - Provide release manager with a list of contributors for Changelog draft
+    - Notify community about upcoming release in Reception [see example](https://pre-release.mattermost.com/core/pl/aq434e5dt3ntmfdowhekxjzi4r)
 3. QA:
     - Confirm up to date with testing merged PRs and resolved tickets
     - Confirm up to date with test updates and known issues in release testing spreadsheet
