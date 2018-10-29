@@ -108,6 +108,8 @@ Day when Leads and PMs decide which major features are included in the release, 
     - If there are any breaking compatibility changes in the release, open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) to make sure GitLab is aware. Post a link to the issue in the Release Discussion channel
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
+4. QA:
+    - Identify any new teammates who will be joining release testing, DM them an intro to the testing process and timeframe, send them the [hardware/software survey](https://drive.google.com/open?id=1IUiNO2S5fgWVn-Y_cyouxheukqKyGQC0_2UX64Ejwk8)
 
 ### G. (T-minus 9 working days) Release Candidate Cut
 
@@ -125,7 +127,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 3. QA:
     - Confirm up to date with testing merged PRs and resolved tickets
     - Confirm up to date with test updates and known issues in release testing spreadsheet
-    - Assign release testing areas to team members, communicate process to new teammates who have been added to testing, DM team members who are not QA or devs
+    - Assign release testing areas to team members
     - After RC1 is cut: Update rctesting and CI server invite links in Release Testing spreadsheet
     - After RC1 is cut: Lock Selenium server to RC1
 4. Build:
@@ -161,6 +163,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 3. QA:
     - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://pre-release.mattermost.com/core/pl/db3sur4r53d9tyih1i4wrmi9wy))
     - Post release testing instructions to Release Discussion channel ([template](https://pre-release.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
+    - DM reminders to team members who are not QA or devs, or who are new to release testing
     - Post "Bug Hunter Coin" message to Reception channel ([see example](https://pre-release.mattermost.com/core/pl/3o15eoq89fdq5m1ac5dyp4nc3e))
     - Begin running all Selenium IDE tests
     - At end of day, post reminders about release testing in Release Discussion and Announcements channels, DM any team members who have zero test cells marked Done
