@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.2.1 (2018-10-29)
+
+### Fixed (1 change)
+
+- Skip custom CA mounts when unnecessary. !544
+
+### Other (1 change)
+
+- Update GitLab Version to 11.4.2.
+
+
 ## 1.2.0 (2018-10-22)
 
 ### Security (1 change)
