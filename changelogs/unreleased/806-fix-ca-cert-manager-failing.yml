@@ -1,5 +1,0 @@
----
-title: Skip custom CA mounts when unnecessary
-merge_request: 544
-author:
-type: fixed
