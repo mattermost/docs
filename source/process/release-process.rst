@@ -1,4 +1,4 @@
 Release Process
 ========================
 
-See the new `feature relase process <https://docs.mattermost.com/process/feature-release.html>`_.
+See the new `feature release process <https://docs.mattermost.com/process/feature-release.html>`_.
