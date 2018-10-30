@@ -5,7 +5,7 @@ Mattermost supports an early preview of video and audio calling option using a s
 
 The feature is a working prototype for community development and not recommended for production. It has been tested on Chrome and Firefox running on Mac and Windows and the Mattermost Mac and Windows Apps using a Mattermost server running in SSL mode.
 
-.. note:: This feature will be replaced by a plug-in architecture allowing multiple video and audio calling providers to connect into Mattermost, and features described in this section will be re-written as a plug-in.
+.. note:: This feature will be removed in Mattermost 5.6 in favor of open source plugins. For more information, see `this forum post <https://forum.mattermost.org/t/built-in-webrtc-video-and-audio-calls-removed-in-v5-6-in-favor-of-open-source-plugins/5998>`_.
 
 Configuring video and audio calls with WebRTC
 ----------------------------------------------
