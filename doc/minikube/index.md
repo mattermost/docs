@@ -50,7 +50,7 @@ Minikube resource requests must be set higher than default for developing the Gi
 Once you have all the tools installed and configured, starting at stopping Minikube can be done with:
 
 ```
-minikube start --cpu 3 --memory 8192
+minikube start --cpus 3 --memory 8192
 ```
 
 This command should output something similar to:
