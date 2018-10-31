@@ -15,6 +15,7 @@ Development Process
 
    /process/overview*
    /process/deprecated-features*
+   /process/software-requirements*
    /developer/style*
    /developer/fx*
    /developer/localization*
