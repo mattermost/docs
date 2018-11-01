@@ -25,7 +25,7 @@ No pull requests for major features should be **submitted** to the current relea
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
-    - Follow that major feature PR reviews are prioritized
+    - Follow that major feature PR reviews are prioritized and post a list of outstanding feature PRs in the Release Discussion channel
     - Check that major features for platform have a corresponding ticket for RN, and vice versa, where applicable
     - Check that all major features are behind a feature flag
     - Confirm with PMs that each Enterprise feature is in the correct [pricing SKU](https://about.mattermost.com/pricing/)
@@ -48,8 +48,10 @@ No pull requests for major features should be **merged** to the current release 
     - Draft Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
     - Review [software requirements](https://docs.mattermost.com/install/requirements.html#software-requirements) are up-to-date based on [these guidelines](https://docs.mattermost.com/process/software-requirements.html). If not, update documentation accordingly, and note changes in the Changelog.
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version
+    - Ask PMs if there are any notable breaking changes or deprecated features in the release
     - Review submitted NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch.
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
+    - Post a reminder in the French Localization channel about the due date for translations - [Example](https://pre-release.mattermost.com/core/pl/7wqx4zehotgu7efhmbz51mxfqa)
 3. Dev:
     - Cut release branch both for server and mobile
         - Merge database upgrade before cutting the branch
@@ -95,7 +97,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     
 ### F. (T-minus 12 working days) Code complete
 
-**Stabilization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version. Exceptions can be made by the Release Manager during triage.
+**Stabilization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version. Exceptions can be made by the Release Manager during triage. Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google.com/document/d/1QxB_A1qkEJBKAvQpRa7JiSQLZhwg6HAEajNRNa7ldGg/edit)
 
 1. **(Team) Code Complete Meeting (10:00am San Francisco time)**:
     - Team review of Changelog
@@ -143,6 +145,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 5. Docs:
     - Submit Changelog PR for team review
     - Submit any remaining documentation PRs for product updates in the release
+    - Check that a redirect page has been set up in mattermost.com for any links added to the System Console
     - Submit documentation for [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go) and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13) to  API documentation
     - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
     - Confirm all new diagnostics are documented in the telemetry docs (https://docs.mattermost.com/administration/telemetry.html)
@@ -260,7 +263,9 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
     - Schedule a release retrospective meeting, to be held within 5 days from the release
-    - Post key dates for the next release in the header of the Release Discussion channel and remove links to RC candidates and testing spreadsheet
+    - Prepare and post [release metrics](https://docs.google.com/spreadsheets/d/1Aoj4OTaWoyrKIcQNiHH1MVoRG51T20Y_0w2tg5oVw-M/edit#gid=825551144)
+    - Post the MVP winner announcement in the [Contributors channel](https://pre-release.mattermost.com/core/channels/tickets)
+    - Post key dates for the next release in the Release Discussion channel and remove links to RC candidates and testing spreadsheet from the header
         - Make sure that statutory holidays for Canada and US are accounted for in the release dates
     - Check for any [UserVoice](https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0) feature suggestions that were completed in the current release
       - Find the [release tweet](https://twitter.com/mattermosthq/status/854781715914555393) and insert a link to the tweet next to the feature that shipped with the release.
