@@ -24,7 +24,7 @@ Pre-work for the current release begins at the code complete date of the previou
 2. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
       - After the cut-off, any PRs that include significant code changes, require approval of the release manager before merging
-    - Post a reminder in the French Localization channel about the due date for translations - [Example](https://pre-release.mattermost.com/core/pl/7wqx4zehotgu7efhmbz51mxfqa)
+    - Post a reminder in the French Localization channel about the due date for translations - [Example](https://pre-release.mattermost.com/core/pl/7wqx4zehotgu7efhmbz51mxfqa). Follow that translations are prioritized at https://translate.mattermost.com/projects/mattermost/
 3. Marketing:
     - Prepare bullet points and release headline for release announcement. Release manager to review the outline (benefits and order of major features) with PMs before sending to Justin to work on
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
