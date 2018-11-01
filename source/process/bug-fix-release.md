@@ -18,11 +18,13 @@ Pre-work for the current release begins at the code complete date of the previou
     - Draft Changelog in a WIP PR with updates for known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
     - Review [software requirements](https://docs.mattermost.com/install/requirements.html#software-requirements) are up-to-date based on [these guidelines](https://docs.mattermost.com/process/software-requirements.html). If not, update documentation accordingly, and note changes in the Changelog
     - Update [Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version
+    - Ask PMs if there are any notable breaking changes or deprecated features in the release
     - Review submitted NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch.
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
 2. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
       - After the cut-off, any PRs that include significant code changes, require approval of the release manager before merging
+    - Post a reminder in the French Localization channel about the due date for translations - [Example](https://pre-release.mattermost.com/core/pl/7wqx4zehotgu7efhmbz51mxfqa). Follow that translations are prioritized at https://translate.mattermost.com/projects/mattermost/
 3. Marketing:
     - Prepare bullet points and release headline for release announcement. Release manager to review the outline (benefits and order of major features) with PMs before sending to Justin to work on
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
@@ -56,6 +58,8 @@ Pre-work for the current release begins at the code complete date of the previou
     - Start drafting blog post, tweet, and email for the release announcement
     
 ### E. (T-minus 12 working days) Code complete
+
+Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google.com/document/d/1QxB_A1qkEJBKAvQpRa7JiSQLZhwg6HAEajNRNa7ldGg/edit)
 
 1. **(Team) Code Complete Meeting (10:00am San Francisco time)**:
     - Team review of Changelog
@@ -103,6 +107,7 @@ Pre-work for the current release begins at the code complete date of the previou
 5. Docs:
     - Submit Changelog PR for team review
     - Submit any remaining documentation PRs for product updates in the release
+    - Check that a redirect page has been set up in mattermost.com for any links added to the System Console
     - Submit documentation for [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go) and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13) to  API documentation
     - Confirm changes to config.json in compatibility section of Changelog are written back to [settings documentation](https://docs.mattermost.com/administration/config-settings.html#configuration-settings)
     - Confirm all new diagnostics are documented in the telemetry docs (https://docs.mattermost.com/administration/telemetry.html)
@@ -219,6 +224,9 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
     - Schedule a release retrospective meeting, to be held within 5 days from the release
+    - Prepare and post [release metrics](https://docs.google.com/spreadsheets/d/1Aoj4OTaWoyrKIcQNiHH1MVoRG51T20Y_0w2tg5oVw-M/edit#gid=825551144)
+    - Post an MVP winner announcement in the [Contributors channel](https://pre-release.mattermost.com/core/channels/tickets)
+    - Post key dates for the next release in the Release Discussion channel and remove links to RC candidates and testing spreadsheet from the header
     - Post key dates for the next release in the header of the Release Discussion channel and remove links to RC candidates and testing spreadsheet
         - Make sure that statutory holidays for Canada and US are accounted for in the release dates
     - For the next release, create the following team meetings. If they conflict with existing meetings, check with meeting owner to reschedule or reschedule the release meeting
