@@ -51,7 +51,7 @@ No pull requests for major features should be **merged** to the current release 
     - Ask PMs if there are any notable breaking changes or deprecated features in the release
     - Review submitted NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch.
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
-    - Post a reminder in the French Localization channel about the due date for translations - [Example](https://pre-release.mattermost.com/core/pl/7wqx4zehotgu7efhmbz51mxfqa)
+    - Post a reminder in the French Localization channel about the due date for translations - [Example](https://pre-release.mattermost.com/core/pl/7wqx4zehotgu7efhmbz51mxfqa). Follow that translations are prioritized at https://translate.mattermost.com/projects/mattermost/
 3. Dev:
     - Cut release branch both for server and mobile
         - Merge database upgrade before cutting the branch
