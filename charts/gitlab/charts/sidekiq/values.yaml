@@ -107,6 +107,10 @@ global:
       providers: []
       # - secret: gitlab-google-oauth2
       #   key: provider
+    pseudonymizer:
+      configMap:
+      bucket:
+      connection: {}
 gitaly:
   # host: '0.0.0.0'
   # port: 8075
@@ -152,6 +156,8 @@ cron_jobs: {}
   #   cron: "0 * * * *"
   # pages_domain_verification_cron_worker:
   #   cron: "*/15 * * * *"
+  # pseudonymizer_worker:
+  #   cron: "0 * * * *"
 
 trusted_proxies: []
 

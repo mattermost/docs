@@ -72,6 +72,10 @@ global:
       providers: []
       # - secret: gitlab-google-oauth2
       #   key: provider
+    pseudonymizer:
+      configMap:
+      bucket:
+      connection: {}
 backups:
   objectStorage:
     config: {}
