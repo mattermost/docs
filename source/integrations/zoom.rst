@@ -41,15 +41,14 @@ Zoom Setup Guide
 
 4. Next, copy the webhook URL above the **Save** button, which is used to configure the plugin in Zoom:
 
-.. note::
-   Before pasting the webhook URL into Zoom, make sure to replace ``SITEURL`` with the `site URL of your Mattermost instance <https://docs.mattermost.com/administration/config-settings.html#site-url>`_, and ``WEBHOOKSECRET`` with the secret generated in **System Console > Webhook Secret**.
-
-
   - Switch to the **Webhook** tab in https://developer.zoom.us/me/ and enter ``https://SITEURL/plugins/zoom/webhook?secret=WEBHOOKSECRET`` as the Endpoint.
   - Enter the username and password of the Zoom developer account.
   - Hit **Save**.
 
 .. image:: ../images/zoom_webhook.png
+
+.. note::
+   Before pasting the webhook URL into Zoom, make sure to replace ``SITEURL`` with the `site URL of your Mattermost instance <https://docs.mattermost.com/administration/config-settings.html#site-url>`_, and ``WEBHOOKSECRET`` with the secret generated in **System Console > Webhook Secret**.
 
 5. Enable settings for `overriding usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ and `overriding profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_.
 
