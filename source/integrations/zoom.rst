@@ -44,6 +44,7 @@ Zoom Setup Guide
 .. note::
    Before pasting the webhook URL into Zoom, make sure to replace ``SITEURL`` with the `site URL of your Mattermost instance <https://docs.mattermost.com/administration/config-settings.html#site-url>`_, and ``WEBHOOKSECRET`` with the secret generated in **System Console > Webhook Secret**.
 
+
   - Switch to the **Webhook** tab in https://developer.zoom.us/me/ and enter ``https://SITEURL/plugins/zoom/webhook?secret=WEBHOOKSECRET`` as the Endpoint.
   - Enter the username and password of the Zoom developer account.
   - Hit **Save**.
