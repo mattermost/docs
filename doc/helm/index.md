@@ -140,12 +140,6 @@ previously had Helm/Tiller installed, run the following to ensure that the deplo
 helm init --upgrade --service-account tiller
 ```
 
-### Patching Helm Tiller for EKS
-
-Helm Tiller requires a flag to be enabled to work properly on EKS:
-
-`kubectl -n kube-system patch deployment tiller-deploy -p '{"spec": {"template": {"spec": {"automountServiceAccountToken": true}}}}'`
-
 # Additional Information
 
 The Distribution Team has a [training presentation for Helm Charts](https://docs.google.com/presentation/d/1CStgh5lbS-xOdKdi3P8N9twaw7ClkvyqFN3oZrM1SNw/present).
