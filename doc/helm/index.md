@@ -121,7 +121,9 @@ kubectl --user=$CLUSTER_NAME-admin-user create -f https://gitlab.com/charts/gitl
 
 For other clusters like Amazon EKS, you can direclty upload the RBAC configuration.
 
+```
 kubectl create -f https://gitlab.com/charts/gitlab/raw/master/doc/helm/examples/rbac-config.yaml
+```
 
 ## Initialize Helm
 
