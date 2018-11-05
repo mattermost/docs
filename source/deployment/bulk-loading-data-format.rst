@@ -1484,7 +1484,7 @@ Fields of the DirectPost object
         <tr class="row-odd">
       <td valign="middle">attachments</td>
       <td valign="middle">array</td>
-      <td>The emoji reactions to this direct post. Must be an array of <a href="#fields-of-the-attachment-object">Attachment</a> objects.</td>
+      <td>The attachments to this direct post. Must be an array of <a href="#fields-of-the-attachment-object">Attachment</a> objects.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
