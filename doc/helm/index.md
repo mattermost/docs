@@ -121,7 +121,9 @@ kubectl --user=$CLUSTER_NAME-admin-user create -f https://gitlab.com/charts/gitl
 
 For other clusters like Amazon EKS, you can direclty upload the RBAC configuration.
 
+```
 kubectl create -f https://gitlab.com/charts/gitlab/raw/master/doc/helm/examples/rbac-config.yaml
+```
 
 ## Initialize Helm
 
@@ -137,12 +139,6 @@ previously had Helm/Tiller installed, run the following to ensure that the deplo
 ```
 helm init --upgrade --service-account tiller
 ```
-
-### Patching Helm Tiller for EKS
-
-Helm Tiller requires a flag to be enabled to work properly on EKS:
-
-`kubectl -n kube-system patch deployment tiller-deploy -p '{"spec": {"template": {"spec": {"automountServiceAccountToken": true}}}}'`
 
 # Additional Information
 
