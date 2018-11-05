@@ -9,21 +9,24 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Release date: 2018-11-16
 
 ### Bug Fixes
- - Fixed an issue where config.ServiceSettings.SiteURL could contain a trailing slash.
- - Possible caching bug with archiving/unarchiving channels through API.
- - Improvement to UX when trying to edit pending post from reply thread.
- - Fixed an issue where "Enable Post Formatting" did not actually require page refresh.
- - Fixed an issue where User AuthService Export value of "" could be incompatible for importer.
  - Fixed an issue where clicking the two arrows to expand/collapse an image didn't work after posting an image.
  - Fixed an issue where switching signin from email/password to SAML (OKTA and OneLogin) showed session expiry message instead of success message.
  - Fixed an issue with Out-of-Office feature where the reply message did not get inserted consistently.
  - Fixed an issue where bolded channel names rendered over top of unbolded channel names in desktop.
+ - Fixed an issue where config.ServiceSettings.SiteURL could contain a trailing slash.
+ - Fixed a caching bug with archiving/unarchiving channels through API.
+ - Fixed UX issues when trying to edit pending posts from reply thread.
+ - Fixed an issue where "Enable Post Formatting" did not actually require page refresh.
+ - Fixed an issue where User AuthService Export value of "" could be incompatible for importer.
  - Fixed an issue where search results that did not match case were not highlighted when returning hashtags in search results.
  - Fixed issues with indentation on the right-hand side in desktop app compact view.
  - Fixed an issue where the post header for BOT messages was cutting off username before using available horizontal space.
  - Fixed an issue where "undefined" was briefly shown on refresh with combined system messages.
  - Fixed an issue where profile popover was cut-off at right-hand side root post.
- - Improved UX for plugins that have no settings but showed a blank page when clicking on the "Settings" link from "Management" page in System Console.
+ - Fixed UX issues for plugins that had no settings but showed a blank page when clicking on the "Settings" link from "Management" page in System Console.
+ - Fixed an issue where uploading a plugin resulted in a JS error and a blank page.
+ - Fixed an issue where an inactive team icon did not fill bounding box.
+ - Fixed an issue where there was no hover effect on emoji reaction.
  
 ### API Changes
 
