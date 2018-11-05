@@ -459,7 +459,7 @@ mattermost export bulk
   Example
     .. code-block:: none
 
-      sudo ./mattermost export bulk --all-teams file.json
+      sudo ./mattermost export bulk file.json --all-teams
 
   Options
     .. code-block:: none
