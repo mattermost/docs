@@ -126,7 +126,6 @@ Day when Leads and PMs decide which major features are included in the release, 
       - Space out the ordering of mugs over the next 3 weeks to prevent mistakes being made by the supplier.  i.e. If there are 12 contributors to order mugs for, place an order every 2nd or 3rd day over the next 3 weeks.
     - Update [Team](http://www.mattermost.org/team/) page with new contributors
     - Provide release manager with a list of contributors for Changelog draft
-    - Notify community about upcoming release in Reception [see example](https://pre-release.mattermost.com/core/pl/aq434e5dt3ntmfdowhekxjzi4r)
 3. QA:
     - Confirm up to date with testing merged PRs and resolved tickets
     - Confirm up to date with test updates and known issues in release testing spreadsheet
