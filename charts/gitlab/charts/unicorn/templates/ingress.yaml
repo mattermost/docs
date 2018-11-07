@@ -28,6 +28,10 @@ spec:
             backend:
               serviceName: {{ template "fullname" . }}
               servicePort: {{ .Values.service.workhorseExternalPort }}
+          - path: /admin/sidekiq
+            backend:
+              serviceName: {{ template "fullname" . }}
+              servicePort: {{ .Values.service.externalPort }}
   {{- if $tlsSecret }}
   tls:
     - hosts:
