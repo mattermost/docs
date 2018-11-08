@@ -20,21 +20,14 @@ Release date: 2018-11-16
  - Fixed an issue where User AuthService Export value of "" could be incompatible for importer.
  - Fixed an issue where search results that did not match case were not highlighted when returning hashtags in search results.
  - Fixed issues with indentation on the right-hand side in desktop app compact view.
- - Fixed an issue where the post header for BOT messages was cutting off username before using available horizontal space.
+ - Fixed an issue where the post header for bot messages was cutting off username before using available horizontal space.
  - Fixed an issue where "undefined" was briefly shown on refresh with combined system messages.
  - Fixed an issue where profile popover was cut-off at right-hand side root post.
  - Fixed UX issues for plugins that had no settings but showed a blank page when clicking on the "Settings" link from "Management" page in System Console.
  - Fixed an issue where uploading a plugin resulted in a JS error and a blank page.
  - Fixed an issue where an inactive team icon did not fill bounding box.
- - Fixed an issue where there was no hover effect on emoji reaction.
- 
-### API Changes
-
-#### Plugin API Changes
-
-#### Websocket Event Changes
- 
-#### Database Changes
+ - Fixed an issue where there was no hover effect on emoji reactions.
+ - Fixed an issue where a permanent announcement banner pushed the bottom of a channel sidebar off screen.
 
 ### Known Issues
 
