@@ -324,6 +324,11 @@ global:
       proxy_download: true
       bucket: gitlab-uploads
       connection: {}
+    packages:
+      enabled: true
+      proxy_download: true
+      bucket: gitlab-packages
+      connection: {}
     backups:
       bucket: gitlab-backups
     incomingEmail:
@@ -432,7 +437,7 @@ Piwik URL. Takes a string value as input and has an empty default value.
 
 Piwik Site ID. Takes a string value as input and has an empty default value.
 
-### LFS / Artifacts / Uploads
+### LFS / Artifacts / Uploads / Packages
 
 Details on these settings are below. Documentation is not repeated individually,
 as they are structurally identical aside default value of the `bucket` property.

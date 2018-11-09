@@ -47,9 +47,11 @@ s3:
 kubectl create secret generic registry-storage --from-file=config=registry-storage.yaml
 ```
 
-## LFS, Artifacts, Uploads
+## LFS, Artifacts, Uploads, Packages
 
-Configuration of object storage for LFS, artifacts, and uploads is done via the `global.appConfig.lfs`, `global.appConfig.artifacts`, and `global.appConfig.uploads` keys.
+Configuration of object storage for LFS, artifacts, uploads, and packages is done
+via the `global.appConfig.lfs`, `global.appConfig.artifacts`, `global.appConfig.uploads`,
+and `global.appConfig.packages` keys.
 
 ```
 --set global.appConfig.lfs.bucket=gitlab-lfs-storage
@@ -63,6 +65,10 @@ Configuration of object storage for LFS, artifacts, and uploads is done via the 
 --set global.appConfig.uploads.bucket=gitlab-uploads-storage
 --set global.appConfig.uploads.connection.secret=object-storage
 --set global.appConfig.uploads.connection.key=connection
+
+--set global.appConfig.packages.bucket=gitlab-uploads-storage
+--set global.appConfig.packages.connection.secret=object-storage
+--set global.appConfig.packages.connection.key=connection
 ````
 
 > **Note**: Currently you need to use a different bucket for each, otherwise performing a restore from backup will not properly function.

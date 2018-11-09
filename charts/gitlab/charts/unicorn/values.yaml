@@ -128,6 +128,11 @@ global:
       proxy_download: true
       bucket:
       connection: {}
+    packages:
+      enabled: true
+      proxy_download: true
+      bucket:
+      connection: {}
 redis:
   password: {}
 gitaly:

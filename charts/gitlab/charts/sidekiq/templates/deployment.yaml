@@ -269,6 +269,13 @@ spec:
                 - key: {{ default "connection" $.Values.global.appConfig.uploads.connection.key }}
                   path: objectstorage/uploads
           {{- end }}
+          {{- if $.Values.global.appConfig.packages.connection }}
+          - secret:
+              name: {{ $.Values.global.appConfig.packages.connection.secret }}
+              items:
+                - key: {{ default "connection" $.Values.global.appConfig.packages.connection.key }}
+                  path: objectstorage/packages
+          {{- end }}
           {{- if and $.Values.global.smtp.enabled $.Values.global.smtp.authentication }}
           - secret:
               name: {{ $.Values.global.smtp.password.secret | required "Missing required secret containing the SMTP password. Make sure to set `global.smtp.password.secret`" }}
