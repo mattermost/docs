@@ -78,6 +78,11 @@ global:
       proxy_download: true
       bucket:
       connection: {}
+    packages:
+      enabled: true
+      proxy_download: true
+      bucket:
+      connection: {}
 gitaly:
   # host: '0.0.0.0'
   # port: 8075

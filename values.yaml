@@ -63,6 +63,9 @@ global:
     uploads:
       bucket: gitlab-uploads
       connection: {}
+    packages:
+      bucket: gitlab-packages
+      connection: {}
     backups:
       bucket: gitlab-backups
       tmpBucket: tmp
@@ -247,4 +250,3 @@ gitlab-runner:
 #     enabled: false
 #   gitlab-shell:
 #     enabled: false
-

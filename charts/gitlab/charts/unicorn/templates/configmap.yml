@@ -164,6 +164,27 @@ data:
           {{- else if .Values.global.appConfig.uploads.connection }}
           connection: <%= YAML.load_file("/etc/gitlab/objectstorage/uploads").to_json() %>
           {{- end }}
+      packages:
+        enabled: {{ eq .Values.global.appConfig.packages.enabled true }}
+        storage_path: /srv/gitlab/shared/packages
+        object_store:
+          enabled: true
+          remote_directory: {{ .Values.global.appConfig.packages.bucket }}
+          direct_upload: true
+          background_upload: false
+          proxy_download: {{ eq .Values.global.appConfig.packages.proxy_download true }}
+          {{- if .Values.global.minio.enabled }}
+          connection:
+            provider: AWS
+            region: us-east-1
+            aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
+            aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
+            host: {{ template "gitlab.minio.hostname" . }}
+            endpoint: {{ template "gitlab.minio.endpoint" . }}
+            path_style: true
+          {{- else if .Values.global.appConfig.packages.connection }}
+          connection: <%= YAML.load_file("/etc/gitlab/objectstorage/packages").to_json() %>
+          {{- end }}
       pages:
         enabled: false
       mattermost:

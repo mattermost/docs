@@ -19,6 +19,11 @@ global:
       connection:
         secret: objectstore-uploads
         key: connection
+    packages:
+      bucket: gitlab-packages-storage
+      connection:
+        secret: objectstore-packages
+        key: connection
     registry:
       bucket: gitlab-registry-storage
     backups:
