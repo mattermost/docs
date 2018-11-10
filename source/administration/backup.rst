@@ -57,7 +57,7 @@ Deploying Mattermost in `high availability mode <https://docs.mattermost.com/dep
 
 A properly deployed high availability setup automatically switches over to a redundant system should a single server fail. High availability does not protect against failures such as data corruption, since errors would propagate to redundant systems.
 
-A "complete" disaster recovery solution would protect against both real-time hardware failures using high availability, data corruption failures using automated, and failures of the primary data center by offering both offsite backup and offsite redundant infrastructure. Because the complexity of a full disaster recovery solution is high, it is common for customers to consider trade-offs in cost and complexity relative to the anticipated risks and target recovery times.
+A "complete" disaster recovery solution would protect against both real-time hardware failures using high availability, data corruption failures using automation, and failures of the primary data center by offering both offsite backup and offsite redundant infrastructure. Because the complexity of a full disaster recovery solution is high, it is common for customers to consider trade-offs in cost and complexity relative to the anticipated risks and target recovery times.
 
 Failover from single sign-in outage 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
