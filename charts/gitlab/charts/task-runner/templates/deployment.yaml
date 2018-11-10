@@ -140,6 +140,13 @@ spec:
                 - key: {{ default "connection" .Values.global.appConfig.lfs.connection.key }}
                   path: objectstorage/lfs
           {{- end }}
+          {{- if .Values.global.appConfig.packages.connection }}
+          - secret:
+              name: {{ .Values.global.appConfig.packages.connection.secret }}
+              items:
+                - key: {{ default "connection" .Values.global.appConfig.packages.connection.key }}
+                  path: objectstorage/packages
+          {{- end }}
       - name: task-runner-secrets
         emptyDir:
           medium: "Memory"
