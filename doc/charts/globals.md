@@ -247,7 +247,7 @@ For futher details on these settings, see the documentation within the
 
 ## Configure Gitaly settings
 
-The GitLab global Gitaly settings are located under the `global.gitaly` key.
+The global Gitaly settings are located under the `global.gitaly` key.
 
 ```YAML
 global:
@@ -259,14 +259,102 @@ global:
     external:
       - name: node1
         hostname: node1.example.com
-        port: 8079
+        port: 8075
     authToken:
       secret: gitaly-secret
       key: token
 ```
 
-For further details on these settings, see the documentation within the
-[unicorn chart](gitlab/unicorn/index.md#gitaly)
+### Gitaly hosts
+
+[Gitaly][gitaly] is a service that provides high-level RPC access to Git repositories,
+which handles all Git calls made by GitLab.
+
+Administrators can chose to use Gitaly nodes in the following ways:
+- internal to the chart, as part of a `StatefulSet` via [Gitaly chart](gitlab/gitaly/)
+- external to the chart, as external pets
+- mixed environment using both internal and external nodes
+
+See [Repostiry Storage Paths][storage] documentation for details on managing which
+nodes will be used for new projects.
+
+**NOTE:** If `gitaly.host` is provided, `gitaly.internal` and `gitaly.external`
+properties will _be ignored_. See [deprecated Gitaly settings](#deprecated-gitaly-settings).
+
+#### Internal
+
+The `internal` key currently consist of one key, `names`. `names` is a list of
+[storage names][storage] to be managed by chart. For each name listed here, _in logical order_,
+one pod will be spawned, named `${releaseName}-gitaly-${ordinal}`, where `ordinal` is
+the index within the `names` list. If dynamic provisioning is enabled, the `PersistentVolumeClaim` will match.
+
+This list defaults to `['default']`, which provides for 1 pod related to one [storage path][storage].
+
+**NOTE:** Manual scaling of this item is required, adding or removing entries in
+`gitaly.internal.names`. When scaling down, any repository
+that has not been moved to another node will become unavailable. Because the
+Gitaly chart is a `StatefulSet`, dynamically provisioned disks _will not_
+be reclaimed. This means the data disks will persist, and the data on them can be
+accessed when the set is scaled up again by re-adding a node to the `names` list.
+
+A sample [configuration of multiple internal nodes](../../examples/gitaly/values-multiple-internal.yaml)
+can be found under the examples folder.
+
+#### External
+
+The `external` key provides a configuration for Gitaly nodes external to the cluster.
+Each item of this list has 3 keys:
+- `name`: the name of the [storage][storage]
+- `hostname`: the host of Gitaly services
+- `port`: (optional) the port number to reach the host on. Defaults to `8075`.
+
+**NOTE:** You must have an entry with `name: default`.
+
+A sample [configuration of multiple external nodes](../../examples/gitaly/values-multiple-external.yaml)
+can be found under the examples folder.
+
+#### Mixed
+
+It is possible to use both internal and external Gitaly nodes. Some caveats should
+be noted:
+- There must always be a node named `default`, which Internal provides by default.
+- External nodes will be populated first, then Internal.
+
+A sample [configuration of mixed internal and external nodes](../../examples/gitaly/values-multiple-mixed.yaml)
+can be found under the examples folder.
+
+### authToken
+
+The `authToken` attribute for Gitaly has to sub keys:
+- `secret` defines the name of the kubernetes `Secret` to pull from
+- `key` defines the name of the key in the above secret that contains the authToken.
+
+**NOTE:** All Gitaly nodes **must** to share the same authentication token.
+
+### Deprecated Gitaly settings
+
+#### host
+
+**Deprecated**
+
+The hostname of the Gitaly server to use. This can be omitted in lieu of `serviceName`.
+
+If this setting is used, it will override any values of `internal` or `external`.
+
+#### port
+
+**Deprecated**
+
+The port on which to connect to the Gitaly server. Defaults to `8075`.
+
+#### serviceName
+
+**Deprecated**
+
+The name of the `service` which is operating the Gitaly server. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Gitaly as a part of the overall GitLab chart. This will default to `gitaly`
+
+[gitaly]: https://gitlab.com/gitlab-org/gitaly
+[storage]: https://docs.gitlab.com/ee/administration/repository_storage_paths.html
 
 ## Configure Minio settings
 
