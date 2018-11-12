@@ -402,22 +402,22 @@ danger-review:
     rm /tmp/license.gitlab
 
     kubectl -n "$KUBE_NAMESPACE" exec -it ${task_runner_pod} -- /srv/gitlab/bin/rails runner -e production \
-     "
-     content = File.read('/tmp/license.gitlab').strip;
-     FileUtils.rm_f('/tmp/license.gitlab');
+     '
+     content = File.read("/tmp/license.gitlab").strip;
+     FileUtils.rm_f("/tmp/license.gitlab");
 
      unless License.where(data:content).empty?
-       puts 'License already exists';
+       puts "License already exists";
        Kernel.exit 0;
      end
 
      unless License.new(data: content).save
-       puts 'Could not add license';
+       puts "Could not add license";
        Kernel.exit 0;
      end
 
-     puts 'License added';
-     "
+     puts "License added";
+     '
   }
 
   function setup_test_db() {
