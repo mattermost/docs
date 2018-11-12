@@ -216,85 +216,6 @@ stable:
       - master
     kubernetes: active
 
-.specs: &specs
-  image: gunesmes/docker-capybara-chrome
-  stage: specs
-  services:
-  - docker:dind
-  variables:
-    DOCKER_DRIVER: overlay2
-    DOCKER_HOST: tcp://docker:2375
-    GITLAB_PASSWORD: $ROOT_PASSWORD
-    RELEASE_NAME: $CI_ENVIRONMENT_SLUG
-    S3_CONFIG_PATH: /etc/gitlab/minio
-  script:
-    - source variables
-    - apt-get update && apt-get install -y --no-install-recommends curl ca-certificates
-    - curl -sSL https://get.docker.com/ | sh
-    - curl -LsO https://storage.googleapis.com/kubernetes-release/release/v1.9.3/bin/linux/amd64/kubectl
-    - chmod +x kubectl
-    - mv kubectl /usr/local/bin/kubectl
-    - mkdir -p /etc/gitlab/minio
-    - kubectl get secret ${CI_ENVIRONMENT_SLUG}-minio-secret -o jsonpath='{.data.accesskey}' | base64 --decode > /etc/gitlab/minio/accesskey
-    - kubectl get secret ${CI_ENVIRONMENT_SLUG}-minio-secret -o jsonpath='{.data.secretkey}' | base64 --decode > /etc/gitlab/minio/secretkey
-    - bundle install -j $(nproc) --without non_test --path gems
-    - bundle exec rspec -c -f d spec
-  cache:
-    key: "${CI_JOB_NAME}"
-    paths:
-    - gems
-
-review_specs:
-  <<: *specs
-  environment:
-    name: review/$CI_COMMIT_REF_NAME
-    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
-    on_stop: stop_review
-  only:
-    refs:
-      - branches
-  except:
-    refs:
-      - master
-
-production_specs:
-  <<: *specs
-  environment:
-    name: production
-    url: https://gitlab.$AUTO_DEVOPS_DOMAIN
-  only:
-    refs:
-      - master
-qa:
-  image: registry.gitlab.com/gitlab-org/gitlab-omnibus-builder:ruby_docker-0.0.7
-  stage: qa
-  services:
-  - docker:dind
-  variables:
-    DOCKER_DRIVER: overlay2
-    DOCKER_HOST: tcp://docker:2375
-    QA_ARTIFACTS_DIR: $CI_PROJECT_DIR
-  script:
-    - docker login -u gitlab-ci-token -p "$CI_JOB_TOKEN" "$CI_REGISTRY"
-    - gem install gitlab-qa
-    - source variables
-    - app_version=$(ruby -e "require 'yaml'; puts YAML.safe_load(File.read('Chart.yaml'))['appVersion']")
-    - qa_version="nightly"
-    - if [ "$app_version" != "master"  ]; then
-    -   qa_version="${app_version}-ee"
-    - fi
-    - GITLAB_USERNAME=root GITLAB_PASSWORD=$ROOT_PASSWORD GITLAB_ADMIN_USERNAME=root GITLAB_ADMIN_PASSWORD=$ROOT_PASSWORD gitlab-qa Test::Instance::Any EE:$qa_version https://$QA_ENVIRONMENT_URL
-  artifacts:
-    when: on_failure
-    expire_in: 7d
-    paths:
-    - ./gitlab-qa-run-*
-  only:
-    refs:
-      - branches
-  retry: 1
-  allow_failure: true
-
 review_helm_test:
   stage: qa
   environment:
@@ -614,6 +535,88 @@ danger-review:
       | xargs kubectl -n "$KUBE_NAMESPACE" delete \
       || true
   }
+
+.specs: &specs
+  image: gunesmes/docker-capybara-chrome
+  stage: specs
+  services:
+  - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay2
+    DOCKER_HOST: tcp://docker:2375
+    GITLAB_PASSWORD: $ROOT_PASSWORD
+    RELEASE_NAME: $CI_ENVIRONMENT_SLUG
+    S3_CONFIG_PATH: /etc/gitlab/minio
+  script:
+    - source variables
+    - apt-get update && apt-get install -y --no-install-recommends curl ca-certificates
+    - curl -sSL https://get.docker.com/ | sh
+    - curl -LsO https://storage.googleapis.com/kubernetes-release/release/v1.9.3/bin/linux/amd64/kubectl
+    - chmod +x kubectl
+    - mv kubectl /usr/local/bin/kubectl
+    - mkdir -p /etc/gitlab/minio
+    - kubectl get secret ${CI_ENVIRONMENT_SLUG}-minio-secret -o jsonpath='{.data.accesskey}' | base64 --decode > /etc/gitlab/minio/accesskey
+    - kubectl get secret ${CI_ENVIRONMENT_SLUG}-minio-secret -o jsonpath='{.data.secretkey}' | base64 --decode > /etc/gitlab/minio/secretkey
+    - bundle install -j $(nproc) --without non_test --path gems
+    - bundle exec rspec -c -f d spec
+  after_script:
+    - *auto_devops
+    - add_license
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+    - gems
+
+review_specs:
+  <<: *specs
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
+    on_stop: stop_review
+  only:
+    refs:
+      - branches
+  except:
+    refs:
+      - master
+
+production_specs:
+  <<: *specs
+  environment:
+    name: production
+    url: https://gitlab.$AUTO_DEVOPS_DOMAIN
+  only:
+    refs:
+      - master
+qa:
+  image: registry.gitlab.com/gitlab-org/gitlab-omnibus-builder:ruby_docker-0.0.7
+  stage: qa
+  services:
+  - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay2
+    DOCKER_HOST: tcp://docker:2375
+    QA_ARTIFACTS_DIR: $CI_PROJECT_DIR
+  script:
+    - docker login -u gitlab-ci-token -p "$CI_JOB_TOKEN" "$CI_REGISTRY"
+    - gem install gitlab-qa
+    - source variables
+    - app_version=$(ruby -e "require 'yaml'; puts YAML.safe_load(File.read('Chart.yaml'))['appVersion']")
+    - qa_version="nightly"
+    - if [ "$app_version" != "master"  ]; then
+    -   qa_version="${app_version}-ee"
+    - fi
+    - GITLAB_USERNAME=root GITLAB_PASSWORD=$ROOT_PASSWORD GITLAB_ADMIN_USERNAME=root GITLAB_ADMIN_PASSWORD=$ROOT_PASSWORD gitlab-qa Test::Instance::Any EE:$qa_version https://$QA_ENVIRONMENT_URL
+  artifacts:
+    when: on_failure
+    expire_in: 7d
+    paths:
+    - ./gitlab-qa-run-*
+  only:
+    refs:
+      - branches
+  retry: 1
+  allow_failure: true
 
 before_script:
   - *auto_devops
