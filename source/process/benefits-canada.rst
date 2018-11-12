@@ -13,4 +13,4 @@ Canada-based employees are employed through a Canadian co-employer, who offers p
 - Accidental Death and Dismemberment 
 - Emergency Travel Assistance 
 
-For full benefits information, please see [mysunlife.ca portal](https://www.sunnet.sunlife.com/signin/mysunlife/home.wca?) and contact forms and numbers listed there. 
+For full benefits information, please see `mysunlife.ca portal <https://www.sunnet.sunlife.com/signin/mysunlife/home.wca?>`_ and contact forms and numbers listed there. 
