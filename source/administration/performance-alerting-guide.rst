@@ -28,23 +28,31 @@ If you would also like to get email alerts, you can follow `these instructions <
 
 The `Mattermost dashboards <https://grafana.com/dashboards?search=mattermost>`_ for Grafana come with some partially pre-configured alerts on the following charts:
 
-* CPU utilization rate
-* Memory usage
+* CPU Utilization Rate
+* Memory Usage
 * Number of Goroutines
-* Number of API errors per second
-* Mean API request time
+* Number of API Errors per Second
+* Mean API Request Time
 
 To configure alerts 1) set an appropriate threshold and 2) enable notifications. Enabling notifications are the same for each chart, but setting the correct threshold can have some variances that are better handled on a per-chart basis.
 
 For each chart, click on the chart name and click “Edit”:
 
+.. image:: ../images/perf-1.png
+
 Then click on the “Alert” tab:
+
+.. image:: ../images/perf-2.png
 
 The alert threshold, which will be discussed in the sections below, is the last field under “Conditions” (the one set to 600 in the screenshot above).
 
 See the sections below for how to set the threshold for each individual chart. If you would like to add your own custom alert conditions, configure them here.
 
+.. image:: ../images/perf-3.png
+
 To enable the notifications for any alerts, click on the “Notification” tab on the left and select “Mattermost Alerts Channel” under “Send to”:
+
+.. image:: ../images/perf-4.png
 
 Fill in a message if you would like to add more context to the alert.
 
@@ -57,9 +65,11 @@ CPU Utilization Rate
 
 CPU Utilization Rate is fairly straightforward. It tracks the CPU usage of the app servers as a percentage. The maximum percentage is based on the number of CPU cores or vCPUs your app server has. For example, if you have four CPU cores and your app server was at 100% utilization rate on all four cores, the graph would show 400% for that app server.
 
-It’s best to set the alert threshold based on your average CPU utilization and how many cores/vCPUs your app servers have. Take a look at the chart over the last seven days. You’ll want to set the threshold somewhere between your maximum CPU usage (cores * 100) and the CPU usage you see. The lower you set the threshold, the more alerts, and therefore the more false positive, you will get. Set the threshold too high and you may not receive an alert for an incident until it’s gotten worse. The same principle applies to all alerts, regardless of the chart.
+It’s best to set the alert threshold based on your average CPU utilization and how many cores/vCPUs your app servers have. Take a look at the chart over the last seven days. You’ll want to set the threshold somewhere between your maximum CPU usage (cores * 100) and the CPU usage you see. The lower you set the threshold, the more alerts, and therefore the more false positives, you will get. Set the threshold too high and you may not receive an alert for an incident until it’s gotten worse. The same principle applies to all alerts, regardless of the chart.
 
 For example, on our daily build server that much of the team and community works out of, we have the threshold set to 15%:
+
+.. image:: ../images/perf-5.png
 
 This is well below our maximum CPU usage as we don’t have a high load. It’s also above our average usage at peak times, so we will get alerts if we start experiencing irregularly high CPU usage.
 
@@ -70,6 +80,8 @@ Memory Usage is also straightforward. It involves simply tracking the megabytes 
 
 Here’s how we have the alert set on our daily build server: 
 
+.. image:: ../images/perf-6.png
+
 Number of Goroutines
 ---------------------
 
@@ -79,14 +91,18 @@ Set the threshold somewhere above the average number of goroutines you see durin
 
 Here’s how we have it set on our daily build server:
 
+.. image:: ../images/perf-7.png
+
 Number of API Errors per Second
 --------------------------------
 
 Any 4xx or 5xx HTTP response status codes are counted as a REST API error. API errors themselves are not necessarily a problem. There are many legitimate reasons for an API error to occur, such as users’ sessions expiring or clients requesting to see if a resource exists and being given a “404 Not Found” response. It is normal to have some API errors that scale with your installation base.
 
-That said, errors against the REST API can be indicative of deployment and other issues. For example, if one of your app servers did not deploy correctly for whatever reason it may begin returning a high number of API errors. Another example would be a rogue bot spamming the API with bad requests. Alerts on API errors per second would help catch these and other issues.
+That said, errors against the REST API can be indicative of deployment and other issues. For example, if one of your app servers did not deploy correctly for whatever reason, it may begin returning a high number of API errors. Another example would be a rogue bot spamming the API with bad requests. Alerts on API errors per second would help catch these and other issues.
 
 Here’s how it’s set on our daily build server:
+
+.. image:: ../images/perf-8.png
 
 Mean API Request Time
 ----------------------
@@ -97,10 +113,12 @@ You’ll want to set the alert threshold a little above what the mean request ti
 
 Here’s how it’s set on our daily build server:
 
+.. image:: ../images/perf-9.png
+
 Other Alerts
 -------------
 
-If you want more alerts, you can set them up on any of the Grafana charts you wish.
+If you want more alerts, you can set them up on any of the Grafana charts you'd like.
 
 
 
