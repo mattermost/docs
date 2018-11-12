@@ -97,6 +97,7 @@ Administration
    /administration/compliance*
    /administration/compliance-export*
    /administration/data-retention*
+   /administration/performance-alerting-guide*
    
 Mobile Apps
 -----------
