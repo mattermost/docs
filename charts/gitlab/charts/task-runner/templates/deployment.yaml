@@ -68,7 +68,7 @@ spec:
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
-              value: '/var/opt/gitlab/config/gitlab/'
+              value: '/srv/gitlab/config'
           volumeMounts:
             - name: task-runner-config
               mountPath: '/var/opt/gitlab/templates'

@@ -90,7 +90,7 @@ spec:
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
-              value: '/var/opt/gitlab/config/gitlab/'
+              value: '/srv/gitlab/config'
             - name: WORKHORSE_ARCHIVE_CACHE_DISABLED
               value: "1"
           volumeMounts:
@@ -115,7 +115,7 @@ spec:
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
-              value: '/var/opt/gitlab/config/gitlab/'
+              value: '/srv/gitlab/config'
 {{- if .Values.metrics.enabled }}
             - name: prometheus_multiproc_dir
               value: /metrics
@@ -179,7 +179,7 @@ spec:
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
-              value: '/var/opt/gitlab/config/gitlab/'
+              value: '/srv/gitlab/config'
           volumeMounts:
             - name: workhorse-config
               mountPath: '/var/opt/gitlab/templates'
