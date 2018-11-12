@@ -96,7 +96,7 @@ Here’s how we have it set on our daily build server:
 Number of API Errors per Second
 --------------------------------
 
-Any 4xx or 5xx HTTP response status codes are counted as a REST API error. API errors themselves are not necessarily a problem. There are many legitimate reasons for an API error to occur, such as users’ sessions expiring or clients requesting to see if a resource exists and being given a “404 Not Found” response. It is normal to have some API errors that scale with your installation base.
+Any 4xx or 5xx HTTP response status codes are counted as a REST API error. API errors themselves are not necessarily a problem. There are many legitimate reasons for an API error to occur, such as users’ sessions expiring or clients requesting to see if a resource exists and is being given a “404 Not Found” response. It is normal to have some API errors that scale with your installation base.
 
 That said, errors against the REST API can be indicative of deployment and other issues. For example, if one of your app servers did not deploy correctly for whatever reason, it may begin returning a high number of API errors. Another example would be a rogue bot spamming the API with bad requests. Alerts on API errors per second would help catch these and other issues.
 
@@ -119,11 +119,3 @@ Other Alerts
 -------------
 
 If you want more alerts, you can set them up on any of the Grafana charts you'd like.
-
-
-
-
-
-
-
-
