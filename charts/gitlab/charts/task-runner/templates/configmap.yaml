@@ -93,6 +93,32 @@ data:
           {{- end }}
       pages:
         enabled: false
+      {{- with .Values.global.appConfig }}
+      ldap:
+      {{- if not .ldap.servers }}
+        enabled: false
+      {{- else }}
+        enabled: true
+        servers:
+{{ toYaml .ldap.servers | indent 10 }}
+      {{- end }}
+      omniauth:
+        enabled: {{ .omniauth.enabled }}
+        auto_sign_in_with_provider: {{ .omniauth.autoSignInWithProvider | quote }}
+        sync_profile_from_provider: {{ .omniauth.syncProfileFromProvider }}
+        sync_profile_attributes: {{ .omniauth.syncProfileAttributes }}
+        allow_single_sign_on: {{ .omniauth.allowSingleSignOn }}
+        block_auto_created_users: {{ .omniauth.blockAutoCreatedUsers }}
+        auto_link_ldap_user: {{ .omniauth.autoLinkLdapUser }}
+        auto_link_saml_user: {{ .omniauth.autoLinkSamlUser }}
+        external_providers: {{ .omniauth.externalProviders }}
+        {{- if .omniauth.providers }}
+        providers:
+        {{-   range $index, $entry := .omniauth.providers }}
+          - <%= YAML.load_file("/etc/gitlab/omniauth/{{ $entry.secret }}/provider").to_json() %>
+        {{-   end }}
+        {{- end }}
+      {{- end }}
       gitaly:
         client_path: /home/git/gitaly/bin
         token: "<%= File.read('/etc/gitlab/gitaly/gitaly_token') %>"
