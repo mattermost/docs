@@ -65,7 +65,7 @@ The following post metadata is sent in all push notifications:
 - ``Root ID`` (only if the post is in a thread)
 - ``Type`` (create or clear push notification)
 - ``Category`` (iOS only, determines if the notifications can be replied to)
-- ``Badge number`` (what the notification badge on the app icon should be set to when the notification is recieved)
+- ``Badge number`` (what the notification badge on the app icon should be set to when the notification is received)
 
 Additional metadata may be sent depending on the System Console setting for `Push Notification Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_:
 
