@@ -1,0 +1,5 @@
+---
+title: Make LDAP and Omniauth configuration global to unicorn and sidekiq
+merge_request: 567
+author:
+type: changed
