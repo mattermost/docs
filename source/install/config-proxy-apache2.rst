@@ -21,7 +21,8 @@ Copy the `default` configuration file found in the same directory.
 	1. If you're not setting up a subdomain your ``ServerName`` will simply be set to ``mydomain.com``.
 	2. ``ServerAlias`` can been added too if you want to capture ``www.mydomain.com``.
 	3. Remember to change the values to match your server's name, etc.
-	4. Save once finished.
+	4. If you have enabled TLS in the Mattermost settings, you must use the protocol ``wss://`` instead of ``ws://`` in the ``RewriteRule``
+	5. Save once finished.
 
 .. code-block:: apacheconf
 
