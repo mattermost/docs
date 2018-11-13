@@ -34,6 +34,7 @@ Release Process
    /process/dot-release*
    /process/security-release*
    /process/mobile-release*
+   /process/release-faq*
 
 Community Process
 -------------------
