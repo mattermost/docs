@@ -11,7 +11,7 @@ Frequently Asked Questions
 
 **Q3: How are PRs merged for release?**
  
- - A: PRs are first merged to master. The dev who submitted the fix is then responsible cherry-picking it to the bug release branch.
+ - A: PRs are first merged to master. The dev who submitted the fix is then responsible for cherry-picking it to the bug release branch.
 
 **Q4: How are PRs merged for a feature release?**
  
@@ -21,9 +21,9 @@ Frequently Asked Questions
 
  - A: Bugs are branched off from previous release.
 
-**Q6: What is pre-release on?**
+**Q6: What is community.mattermost on?**
  
- - A: For feature releases pre-release is kept on the RCs. For the bugfix release we might want to keep it on master. 
+ - A: For Feature releases community.mattermost is kept on the RCs. For Bug Fix releases keep it on master. 
 
 **Q7: How to remove feature/bug from a release?**
  
@@ -44,19 +44,18 @@ Frequently Asked Questions
 **Q11: How does release team monitor what changes went into a release?**
 
  - A: Monitor the commit history of the respective release branch, e.g. https://github.com/mattermost/mattermost-server/commits/release-5.4 contains commits that shipped with mattermost-server v5.4. Jira ticket is resolved after cherry picking is done.
- - A: Jira query for tickets that need to wait for next release for testing and to remember to cherry-pick?
 
 **Q12: What changes were made to the dev release process to account for the rotating feature and bug fix releases? https://developers.mattermost.com/internal/release-process/**
 
- - A:
+ - A: PR with changes was merged `here <https://github.com/mattermost/mattermost-developer-documentation/pull/182>`_.
 
 **Q13: What changes were made to the team release process to account for the rotating feature and bug fix releases? https://docs.mattermost.com/process/release-process.html**
 
- - A:
+ - A: Separate checklists for `Bug Fix release <https://docs.mattermost.com/process/bug-fix-release.html>`_ and `Feature release <https://docs.mattermost.com/process/feature-release.html>`_ were created.
 
 **Q14: How does Redux branching work?**
 
- - A: https://pre-release.mattermost.com/core/pl/uc31wdd413d58gdxh1jwxidoxc Should be documented in Dev release process
+ - A: TBD.
 
 **Q15: How does translations branching work?**
 
@@ -64,7 +63,7 @@ Frequently Asked Questions
 
 **Q16: How does cutting mobile builds work?**
 
- - A:
+ - A: TBD.
 
 **Q17: How does updating dependancies work?**
  
