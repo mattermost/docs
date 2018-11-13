@@ -70,7 +70,7 @@ The following post metadata is sent in all push notifications:
 Additional metadata may be sent depending on the System Console setting for `Push Notification Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_:
 
 - **Send generic description with sender and channel names**: ``Channel name`` metadata will be included
-- **Send full message snippet**: ``Message content`` metadata will be included
+- **Send full message snippet**: ``Post content`` and ``Channel name`` metadata will be included
 
 
 What are my options for securing the mobile apps?
