@@ -294,8 +294,8 @@ spec:
                 - key: {{ default "connection" .Values.global.appConfig.packages.connection.key }}
                   path: objectstorage/packages
           {{- end }}
-          {{- if .Values.omniauth.providers }}
-          {{-   range $index, $entry := .Values.omniauth.providers }}
+          {{- if .Values.global.appConfig.omniauth.providers }}
+          {{-   range $index, $entry := .Values.global.appConfig.omniauth.providers }}
           - secret:
               name: {{ $entry.secret }}
               items:
