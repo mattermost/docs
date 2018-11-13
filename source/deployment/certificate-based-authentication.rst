@@ -30,7 +30,7 @@ Set up Mattermost server to log in with a client certificate
 
 The ``config.json`` file should then have the following lines
 
-.. code-block::
+.. code-block:: text
 
   "ExperimentalSettings": {
       "ClientSideCertEnable": true,
@@ -41,13 +41,13 @@ The ``config.json`` file should then have the following lines
 
 On Ubuntu 14.04 and RHEL 6.6:
 
-.. code-block::
+.. code-block:: text
 
   sudo restart mattermost
 
 On Ubuntu 16.04, Debian Jessie, and RHEL 7.1:
 
-.. code-block::
+.. code-block:: text
 
   sudo systemctl restart mattermost
 

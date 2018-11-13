@@ -20,11 +20,11 @@ Search Modifiers
 From: and In:
 ^^^^^^^^^^^^^
 
-Use ``from:`` to find posts from specific users and ``in:`` to find
-posts in specific channels.
+Use ``from:`` to find posts from specific users and ``in:`` to find posts in specific public or private channels, as well as direct and group messages.
 
 -  For example: Searching ``Mattermost in:town-square`` only returns
    messages in Town Square that contain ``Mattermost``.
+-  Searching ``Mattermost in: @john.doe`` returns messages that contain ``Mattermost`` in your direct message history with John Doe. 
 
 Before:, After: and On:
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -37,7 +37,7 @@ Use ``before:`` to find posts before a specified date and ``after:`` to find pos
 -  Searching ``website on: 2018-09-01`` will return messages that contain the keyword ``website`` that were posted on September 1, 2018.
 
 .. image:: ../../images/calendar2.png
-
+  :width: 300 px
 
 Quotation Marks
 ^^^^^^^^^^^^^^^^^

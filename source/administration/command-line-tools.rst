@@ -73,6 +73,11 @@ On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so y
   .. code-block:: bash
 
     docker exec -it <your-mattermost-container-name> mattermost version
+    
+Using the CLI on Docker Preview
+-------------------------------
+
+The preceding documentation and command reference below also applies to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`_.
 
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -109,6 +114,7 @@ mattermost
     -  `mattermost export`_ - Compliance export commands
     -  `mattermost help`_ - Generate full documentation for the CLI
     -  `mattermost import`_ - Import data
+    -  `mattermost jobserver`_ - Start the Mattermost job server
     -  `mattermost ldap`_ - AD/LDAP related utilities
     -  `mattermost license`_ - Licensing commands
     -  `mattermost permissions`_ - Management of the permissions system
@@ -305,6 +311,12 @@ mattermost channel remove
 
       sudo ./mattermost channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
       sudo ./mattermost channel remove myteam:mychannel user@example.com username
+      sudo ./mattermost channel remove myteam:mychannel --all-users
+      
+  Options
+    .. code-block:: none
+
+          --all-users string     Remove all users from the channel.
       
 mattermost channel rename
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -404,11 +416,12 @@ mattermost export
 -----------------
 
   Description
-    Compliance export commands
+   Commands for exporting data for compliance and for merging multiple Mattermost instances.
 
   Child Commands
-    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format
-    -  `mattermost export csv`_ - Export data from Mattermost in CSV format
+    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license
+    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_
+    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license
     -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance
@@ -431,7 +444,28 @@ mattermost export actiance
     .. code-block:: none
 
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
-	 
+
+mattermost export bulk
+~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_.
+
+  Format
+    .. code-block:: none
+
+      mattermost export bulk 
+
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost export bulk file.json --all-teams
+
+  Options
+    .. code-block:: none
+
+	  --all-teams bool [REQUIRED]  Export all teams from the server.
+	  
 mattermost export csv
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -511,6 +545,22 @@ mattermost import slack
     .. code-block:: none
 
       sudo ./mattermost import slack myteam slack_export.zip
+
+mattermost jobserver
+--------------------
+
+  Description
+    Start the Mattermost job server.
+    
+  Format
+    .. code-block:: none
+
+      mattermost jobserver
+      
+  Example
+    .. code-block:: none
+
+      sudo ./mattermost jobserver
 
 mattermost ldap
 ----------------

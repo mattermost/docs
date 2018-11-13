@@ -4,6 +4,116 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.4
+
+Release date: 2018-10-16
+
+**Note: Mobile app version 1.13+ is required for servers 5.4+**
+
+- Mattermost v5.4.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+### Highlights
+
+#### Basic Export Tool
+ - Created a basic exporter tool to extract objects from Mattermost for allowing to merge two servers.
+
+### Improvements
+
+#### Web User Interface (UI)
+ - Added a draft indicator in the channel sidebar and channel switcher for channels with unsent messages.
+ - Added support for jumboemojis.
+ - Added support for searching in direct message and group message channels using the "in:" modifier.
+ - Last viewed channel on logout is restored on next session.
+ - Added support for consecutive messages in the right-hand side.
+ - Added tooltips to post info overlay buttons.
+ - Added a feature to post a code block on CTRL + ENTER.
+ - Expanded post text box area when composing long posts.
+ - Updated the pinned post list when it's open and the channel is switched so that the pinned post list updates to show the other channel's pinned posts.
+ - Download of common file types is not forced when viewing a public link.
+
+#### Command Line Interface (CLI)
+ - Added a new Command Line Interface for removing all users from a channel.
+ 
+#### Performance	
+ - Improved channel switcher performance.
+ 
+#### Integrations
+ - Added interactive menus to message attachments.
+ - Added a autotranslation plugin.
+ - Added a button to copy the information from webhooks/slash commands such as the url and token.
+ - Added "Commented on..." text for files and message attachment type posts.
+ - Updated incoming and outgoing webhook description to 500 characters.
+ - Added hook ID to webhook requests in server logs.
+ - Plugins without a server or webapp component now fail to be activated.
+ 
+#### Notifications
+ - Desktop notifications now follow teammate name display setting.
+ - Added a mute/unmute option to channel dropdown menu.
+ - Added a mute icon to mobile view.
+ - Added support for notifying users when desktop/browser sessions expire.
+ 
+#### Autocomplete and Focus
+ - With "Send messages on CTRL+ENTER = ON", channel and user autocomplete now work.
+ - Cursor is now autofocused on edit box before the modal fully loads.
+ - Channel autocomplete closes after two consecutive tildes used for strikethrough formatting.
+ - If a user begins typing and the cursor is not in an input box, the cursor is automatically put into the center channel text input box.
+ 
+#### Administration
+ - Moved hiding join/leave messages to Team Edition.
+ - Added ``edit_others_posts`` as a permission setting for Team Edition.
+ - Added account setting option to hide channel switcher button in the sidebar.
+ 
+#### Compliance
+ - Added changes for E20 custom service terms.
+ - Team membership can be restricted based on email domains.
+ 
+### Bug Fixes
+ - Fixed an issue where logging in with LDAP account with MFA enabled resulted in "Error trying to authenticate MFA token" error when "Enable sign-in with username" was set to false.
+ - Fixed an issue where log-in page flashed briefly during process of verifying an updated email address.
+ - Fixed an issue where ""GET /api/v4/redirect_location" responses got stuck when “EnableLinkPreviews” was set to "false”.
+ - Fixed an issue where Account Settings teammate name display setting changed when System Console teammate name display setting was changed.
+
+### Compatibility
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Enterprise Edition:
+
+ - Under "SqlSettings": in ``config.json``:
+   - Added ``"EnablePublicChannelsMaterialization": true``, to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI.
+ 
+### API Changes
+
+#### Plugin API Changes
+ - Added slash commands with GET crush query parameters on configured endpoint URL to avoid parameters specified by both the user and Mattermost from being duplicated.
+ - Added a GetServerVersion() string method to the plugin API to return the current server version.
+ 
+#### Database Changes
+ - ``Description`` column was added to the ``OutgoingWebhooks`` table.
+ - ``Description`` column was added to the ``IncomingWebhooks`` table.
+ - ``AcceptedServiceTermsId`` column was added to the ``Users`` table.
+ - ``PublicChannels`` table was added.
+
+### Known Issues
+
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
+
+### Contributors
+
+[aeomin](https://github.com/aeomin), [amyblais](https://github.com/amyblais), [asaadmahmood](https://github.com/asaadmahmood), [ArchRoller](https://github.com/archroller), [avasconcelos114](https://github.com/avasconcelos114), [balcsida](https://github.com/balcsida), [bezumkin](https://github.com/bezumkin), [ccpaging](https://github.com/ccpaging), [chetanyakan](https://github.com/chetanyakan), [chikei](https://github.com/chikei), [cimfalab](https://github.com/cimfalab), [cjbirk](https://github.com/cjbirk), [cometkim](https://github.com/cometkim), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [cvitter](https://github.com/cvitter), [danmaas](https://github.com/danmaas), [der-test](https://github.com/der-test), [DHaussermann](https://github.com/DHaussermann), [dmitrysamuylovpharo](https://github.com/dmitrysamuylovpharo), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [FurmanovD](https://github.com/FurmanovD), [gramakri](https://github.com/gramakri), [greensteve](https://github.com/greensteve), [grundleborg](https://github.com/grundleborg), [gvengel](https://github.com/gvengel), [hanzei](https://github.com/hanzei), [harshilsharma](https://github.com/harshilsharma), [hmhealey](https://github.com/hmhealey), [jasonblais](https://github.com/jasonblais), [jazzzz](https://github.com/jazzzz), [jespino](https://github.com/jespino), [jkurian](https://github.com/jkurian), [JustinReynolds-MM](https://github.com/JustinReynolds-MM), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [kongr45gpen](https://github.com/kongr45gpen), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [meilon](https://github.com/meilon), [mikroskeem](https://github.com/mikroskeem), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [n1aba](https://github.com/n1aba), [n7st](https://github.com/n7st), [pichouk](https://github.com/pichouk), [pjgrizel](https://github.com/pjgrizel), [pkuhner](https://github.com/pkuhner), [robert843](https://github.com/robert843), [rodcorsi](https://github.com/rodcorsi), [ryoon](https://github.com/ryoon), [R-Wang97](https://github.com/R-Wang97), [saturninoabril](https://github.com/saturninoabril), [sudheerDev](https://github.com/sudheerDev), [tejasbubane](https://github.com/tejasbubane), [thawn](https://github.com/thawn), [thePanz](https://github.com/thepanz), [ThiefMaster](https://github.com/ThiefMaster), [uhlhosting](https://github.com/uhlhosting), [wget](https://github.com/wget), [xcompass](https://github.com/xcompass), [yuya-oc](https://github.com/yuya-oc), [zetaab](https://github.com/zetaab) 
+
 ## Release v5.3
 
 Mattermost v5.3.0 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
