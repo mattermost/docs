@@ -11,6 +11,7 @@ Release date: 2018-11-16
 ### Bug Fixes
  - Fixed an issue where clicking the two arrows to expand/collapse an image didn't work after posting an image.
  - Fixed an issue where switching signin from email/password to SAML (OKTA and OneLogin) showed session expiry message instead of success message.
+ - Fixed an issue where a draft that was started a while ago suddenly appeared as a post in the channel even though user did not take any action to post it.
  - Fixed an issue with Out-of-Office feature where the reply message did not get inserted consistently.
  - Fixed an issue where bolded channel names rendered over top of unbolded channel names in desktop.
  - Fixed an issue where config.ServiceSettings.SiteURL could contain a trailing slash.
@@ -28,6 +29,7 @@ Release date: 2018-11-16
  - Fixed an issue where an inactive team icon did not fill bounding box.
  - Fixed an issue where there was no hover effect on emoji reactions.
  - Fixed an issue where a permanent announcement banner pushed the bottom of a channel sidebar off screen.
+ - Fixed an issue where cancelling a change to Notifications settings in Account Settings appeared to save the change.
 
 ### Known Issues
 
