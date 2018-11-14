@@ -176,6 +176,11 @@ data:
       cp -r /init-config/objectstorage/. /init-secrets/objectstorage/
     fi
 
+    if [ -e /init-config/omniauth ]; then
+      mkdir -p /init-secrets/omniauth
+      cp -r /init-config/omniauth/. /init-secrets/omniauth/
+    fi
+
     if [ ! -f /init-secrets/objectstorage/.s3cfg ]; then
     cat <<EOF > /init-secrets/.s3cfg
     [default]

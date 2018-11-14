@@ -257,6 +257,10 @@ data:
         mkdir -p "${secret_dir}/objectstorage"
         cp -v -r "${config_dir}/objectstorage/." "${secret_dir}/objectstorage/"
       fi
+      if [ -e "${config_dir}/omniauth" ]; then
+        mkdir -p "${secret_dir}/omniauth"
+        cp -v -r "${config_dir}/omniauth/." "${secret_dir}/omniauth/"
+      fi
       if [ -e "${config_dir}/smtp/smtp-password" ]; then
         mkdir -p "${secret_dir}/smtp"
         cp -v -r "${config_dir}/smtp/smtp-password" "${secret_dir}/smtp/"
