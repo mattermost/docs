@@ -229,6 +229,7 @@ review_helm_test:
   only:
     refs:
       - branches
+    kubernetes: active
   except:
     refs:
       - master
@@ -244,6 +245,7 @@ production_helm_test:
   only:
     refs:
       - master@charts/gitlab
+    kubernetes: active
 
 
 debug_review:
@@ -264,7 +266,7 @@ debug_review:
     DOMAIN: "-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"
   only:
     refs:
-      - branches@charts/gitlab
+      - branches
     kubernetes: active
   except:
     - master
@@ -577,7 +579,8 @@ review_specs:
     on_stop: stop_review
   only:
     refs:
-      - branches@charts/gitlab
+      - branches
+    kubernetes: active
   except:
     refs:
       - master
@@ -589,7 +592,9 @@ production_specs:
     url: https://gitlab.$AUTO_DEVOPS_DOMAIN
   only:
     refs:
-      - master@charts/gitlab
+      - master
+    kubernetes: active
+
 qa:
   image: registry.gitlab.com/gitlab-org/gitlab-omnibus-builder:ruby_docker-0.0.7
   stage: qa
@@ -617,6 +622,7 @@ qa:
   only:
     refs:
       - branches
+    kubernetes: active
   retry: 1
   allow_failure: true
 
