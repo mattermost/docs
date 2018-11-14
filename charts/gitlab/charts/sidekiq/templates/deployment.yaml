@@ -255,15 +255,7 @@ spec:
           {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "uploads" "config" $.Values.global.appConfig.uploads) | nindent 10 }}
           {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "packages" "config" $.Values.global.appConfig.packages) | nindent 10 }}
           {{- include "gitlab.appConfig.pseudonymizer.mountSecrets" $ | nindent 10 }}
-          {{- if $.Values.global.appConfig.omniauth.providers }}
-          {{-   range $index, $entry := $.Values.global.appConfig.omniauth.providers }}
-          - secret:
-              name: {{ $entry.secret }}
-              items:
-                - key: {{ default "provider" $entry.key }}
-                  path: omniauth/{{ $entry.secret }}/provider
-          {{-   end }}
-          {{- end }}
+          {{- include "gitlab.appConfig.omniauth.mountSecrets" $ | nindent 10 }}
           {{- if and $.Values.global.smtp.enabled $.Values.global.smtp.authentication }}
           - secret:
               name: {{ $.Values.global.smtp.password.secret | required "Missing required secret containing the SMTP password. Make sure to set `global.smtp.password.secret`" }}

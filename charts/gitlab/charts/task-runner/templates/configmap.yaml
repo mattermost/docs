@@ -45,25 +45,8 @@ data:
       {{- include "gitlab.appConfig.pseudonymizer.configuration" $ | nindent 6 }}
       pages:
         enabled: false
-      {{- with .Values.global.appConfig }}
       {{- include "gitlab.appConfig.ldap.configuration" $ | nindent 6 }}
-      omniauth:
-        enabled: {{ .omniauth.enabled }}
-        auto_sign_in_with_provider: {{ .omniauth.autoSignInWithProvider | quote }}
-        sync_profile_from_provider: {{ .omniauth.syncProfileFromProvider }}
-        sync_profile_attributes: {{ .omniauth.syncProfileAttributes }}
-        allow_single_sign_on: {{ .omniauth.allowSingleSignOn }}
-        block_auto_created_users: {{ .omniauth.blockAutoCreatedUsers }}
-        auto_link_ldap_user: {{ .omniauth.autoLinkLdapUser }}
-        auto_link_saml_user: {{ .omniauth.autoLinkSamlUser }}
-        external_providers: {{ .omniauth.externalProviders }}
-        {{- if .omniauth.providers }}
-        providers:
-        {{-   range $index, $entry := .omniauth.providers }}
-          - <%= YAML.load_file("/etc/gitlab/omniauth/{{ $entry.secret }}/provider").to_json() %>
-        {{-   end }}
-        {{- end }}
-      {{- end }}
+      {{- include "gitlab.appConfig.omniauth.configuration" $ | nindent 6 }}
       gitaly:
         client_path: /home/git/gitaly/bin
         token: "<%= File.read('/etc/gitlab/gitaly/gitaly_token') %>"
