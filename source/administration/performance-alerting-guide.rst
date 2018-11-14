@@ -113,7 +113,7 @@ You’ll want to set the alert threshold a little above what the mean request ti
 
 Here’s how it’s set on our daily build server:
 
-.. image:: ../images/perf-9.png
+.. image:: ../images/perf-9-b.png
 
 Other Alerts
 -------------
