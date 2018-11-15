@@ -191,32 +191,34 @@ data:
         enabled: false
       gravatar:
       gitlab_ci:
+      {{- with .Values.global.appConfig }}
       ldap:
-      {{- if not .Values.ldap.servers }}
+      {{- if not .ldap.servers }}
         enabled: false
       {{- else }}
         enabled: true
         servers:
-{{ toYaml .Values.ldap.servers | indent 10 }}
+{{ toYaml .ldap.servers | indent 10 }}
       {{- end }}
-      kerberos:
-        enabled: false
       omniauth:
-        enabled: {{ .Values.omniauth.enabled }}
-        auto_sign_in_with_provider: {{ .Values.omniauth.autoSignInWithProvider | quote }}
-        sync_profile_from_provider: {{ .Values.omniauth.syncProfileFromProvider }}
-        sync_profile_attributes: {{ .Values.omniauth.syncProfileAttributes }}
-        allow_single_sign_on: {{ .Values.omniauth.allowSingleSignOn }}
-        block_auto_created_users: {{ .Values.omniauth.blockAutoCreatedUsers }}
-        auto_link_ldap_user: {{ .Values.omniauth.autoLinkLdapUser }}
-        auto_link_saml_user: {{ .Values.omniauth.autoLinkSamlUser }}
-        external_providers: {{ .Values.omniauth.externalProviders }}
-        {{- if .Values.omniauth.providers }}
+        enabled: {{ .omniauth.enabled }}
+        auto_sign_in_with_provider: {{ .omniauth.autoSignInWithProvider | quote }}
+        sync_profile_from_provider: {{ .omniauth.syncProfileFromProvider }}
+        sync_profile_attributes: {{ .omniauth.syncProfileAttributes }}
+        allow_single_sign_on: {{ .omniauth.allowSingleSignOn }}
+        block_auto_created_users: {{ .omniauth.blockAutoCreatedUsers }}
+        auto_link_ldap_user: {{ .omniauth.autoLinkLdapUser }}
+        auto_link_saml_user: {{ .omniauth.autoLinkSamlUser }}
+        external_providers: {{ .omniauth.externalProviders }}
+        {{- if .omniauth.providers }}
         providers:
-        {{-   range $index, $entry := .Values.omniauth.providers }}
+        {{-   range $index, $entry := .omniauth.providers }}
           - <%= YAML.load_file("/etc/gitlab/omniauth/{{ $entry.secret }}/provider").to_json() %>
         {{-   end }}
         {{- end }}
+      {{- end }}
+      kerberos:
+        enabled: false
       shared:
       gitaly:
         client_path: /home/git/gitaly/bin

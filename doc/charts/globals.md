@@ -500,6 +500,157 @@ region: us-east-1
 
 These settings are explained in [command line options page](../installation/command-line-options.md#incoming-email-configuration).
 
+### LDAP
+
+#### ldap.servers
+
+This setting allows for the configuration of [LDAP](https://docs.gitlab.com/ee/administration/auth/ldap.html) user authentication. It is presented as a map, which will be translated into the the appropriate LDAP servers configuration in `gitlab.yml`, as with an installation from source.
+
+An example configuration snippet:
+```YAML
+ldap:
+  servers:
+    # 'main' is the GitLab 'provider ID' of this LDAP server
+    main:
+      label: 'LDAP'
+      host: '_your_ldap_server'
+      port: 636
+      uid: 'sAMAccountName'
+      bind_dn: 'cn=administrator,cn=Users,dc=domain,dc=net'
+```
+
+Example configuration `--set` items, when using the global chart:
+```
+--set global.appConfig.ldap.servers.main.label='LDAP' \
+--set global.appConfig.ldap.servers.main.host='your_ldap_server' \
+--set global.appConfig.ldap.servers.main.port='636' \
+--set global.appConfig.ldap.servers.main.uid='sAMAccountName' \
+--set global.appConfig.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'
+```
+
+Commas are considered [special characters](https://github.com/kubernetes/helm/blob/master/docs/using_helm.md#the-format-and-limitations-of---set) within Helm `--set` items. Be sure to escape commas in values such as `bind_dn`: `--set global.appConfig.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'`
+
+### OmniAuth
+
+GitLab can leverage OmniAuth to allow users to sign in using Twitter, GitHub, Google, and other popular services. Expanded documentation can be found in [OmniAuth documentation][omniauth] for GitLab.
+
+```YAML
+omniauth:
+  enabled: false
+  autoSignInWithProvider:
+  syncProfileFromProvider: []
+  syncProfileAttributes: ['email']
+  allowSingleSignOn: ['saml']
+  blockAutoCreatedUsers: true
+  autoLinkLdapUser: false
+  autoLinkSamlUser: false
+  externalProviders: []
+  providers: []
+  # - secret: gitlab-google-oauth2
+  #   key: provider
+```
+
+#### enabled
+
+Enable / disable the use of OmniAuth with GitLab.
+
+Defaults to `false`
+
+#### autoSignInWithProvider
+
+Single provider name to be allowed to automatically sign in. This should match the name of the provider, such as `saml` or `google_oauth2`.
+
+Defaults to `nil`
+
+#### syncProfileFromProvider
+
+List of provider names that GitLab should automatically sync profile information from. Entries should match the name of the provider, such as `saml` or `google_oauth2`
+
+Defaults to `[]`
+
+See [Keep OmniAuth user profiles up to date][omniauth-profiles]
+
+#### syncProfileAttributes
+
+List of profile attributes to sync from the provider upon login. See [Keep OmniAuth user profiles up to date][omniauth-profiles] for options.
+
+Defaults to `['email']`
+
+#### allowSingleSignOn
+
+Enable the automatic creation of accounts when signing in with OmniAuth.
+
+Defaults to `false`
+
+#### blockAutoCreatedUsers
+
+If `true` auto created users will be blocked by default and will have to be unblocked by an administrator before they are able to sign in.
+
+Defaults to `true`
+
+#### autoLinkLdapUser
+
+`autoLinkLdapUser` can be used if you have LDAP / ActiveDirectory integration enabled. When enabled, users automatically created through OmniAuth will be linked to their LDAP entry as well.
+
+Defaults to `false`
+
+#### autoLinkSamlUser
+
+`autoLinkSamlUser` can be used if you have SAML integration enabled. When enabled, users automatically created through OmniAuth will be linked to their SAML entry as well.
+
+Defaults to `false`
+
+#### externalProviders
+
+You can define which OmniAuth providers you want to be `external` so that all users **creating accounts, or logging in via these providers** will not be able to have access to internal projects. You will need to use the full name of the provider, like `google_oauth2` for Google.
+
+Defaults to `[]`
+
+See [Configure OmniAuth Providers as External](https://docs.gitlab.com/ee/integration/omniauth.html#configure-omniauth-providers-as-external)
+
+#### providers
+
+`providers` is presented as an array of maps that are used to populate `gitlab.yml` as when installed from source. The available selection of [Supported Providers](https://docs.gitlab.com/ee/integration/omniauth.html#supported-providers) can be found in GitLab documentation.
+
+Member items:
+- `secret`: (required) The name of a Kubernetes `Secret` containing the provider block.
+- `key`: (optional) The name of the key in the `Secret` containing provider block. Defaults to `provider`
+
+The `Secret` for these entries contains YAML or JSON formatted blocks, as describe in [OmniAuth Providers][omniauth-providers]. To create this secret, follow the appropriate instructions for retrieval of these items, and create a YAML or JSON file.
+
+Example of configuration of Google OAuth2:
+
+```YAML
+name: google_oauth2
+label: Google
+app_id: 'APP ID'
+app_secret: 'APP SECRET'
+args:
+  access_type: offline
+  approval_prompt: ''
+```
+
+This content can be saved `provider.yaml`, and then a secret created from it: `kubectl create secret generic -n NAMESPACE SECRET_NAME --from-file=provider=provider.yaml`
+
+Once created, the `providers` are enabled by providing the map in configuration, as shown below.
+
+```YAML
+omniauth:
+  providers:
+    - secret: gitlab-google-oauth2
+    - secret: gitlab-azure-oauth2
+    - secret: gitlab-cas3
+```
+
+Example configuration `--set` items, when using the global chart:
+```
+--set global.appConfig.omniauth.providers[0].secret=gitlab-google-oauth2 \
+```
+
+Due to the complexity of using `--set` arguments, a user may wish to use a YAML snippet, passed to `helm` with `-f omniauth.yaml`.
+
+Defaults to `[]`.
+
 ## Configure GitLab Shell
 
 There are several items for the global configuration of [GitLab Shell](gitlab/gitlab-shell/index.md) chart.
@@ -564,3 +715,7 @@ global:
   application:
     create: true
 ```
+
+[omniauth]: https://docs.gitlab.com/ee/integration/omniauth.html
+[omniauth-providers]: https://docs.gitlab.com/ee/integration/omniauth.html
+[omniauth-profiles]: https://docs.gitlab.com/ee/integration/omniauth.html#keep-omniauth-user-profiles-up-to-date

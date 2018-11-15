@@ -30,6 +30,8 @@ We then check the number of items in the array vs the string length. If the stri
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.minio" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.registryStorage" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.registryHttpSecret" .) -}}
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.omniauth" .) -}}
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.ldap" .) -}}
 {{/* prepare output, check lengths */}}
 {{- $message := join "\n" $deprecated -}}
 {{- if lt (len $deprecated) (len $message) -}}
@@ -114,3 +116,21 @@ registry:
     The `httpSecret` property has been moved into a secret. Please create a secret with these contents, and set `global.registry.httpSecret.secret` and `global.registry.httpSecret.key`.
 {{- end -}}
 {{- end -}}
+
+{{/* Deprecation behaviors for configuration of Omniauth */}}
+{{- define "gitlab.deprecate.unicorn.omniauth" -}}
+{{- if hasKey .Values.gitlab.unicorn "omniauth" -}}
+unicorn:
+    Chart-local configuration of Omniauth has been moved to global. Please remove `unicorn.omniauth.*` settings from your properties, and set `global.appConfig.omniauth.*` instead.
+{{- end -}}
+{{- end -}}
+{{/* END deprecate.unicorn.omniauth */}}
+
+{{/* Deprecation behaviors for configuration of LDAP */}}
+{{- define "gitlab.deprecate.unicorn.ldap" -}}
+{{- if hasKey .Values.gitlab.unicorn "ldap" -}}
+unicorn:
+    Chart-local configuration of LDAP has been moved to global. Please remove `unicorn.ldap.*` settings from your properties, and set `global.appConfig.ldap.*` instead.
+{{- end -}}
+{{- end -}}
+{{/* END deprecate.unicorn.ldap */}}
