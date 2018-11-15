@@ -19,7 +19,7 @@ Elasticsearch allows you to search large volumes of data quickly, and in near re
 When to use Elasticsearch
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts we recommend using Elasticsearch for optimum search performance.
+The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance.
 
 Setting up an Elasticsearch Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
