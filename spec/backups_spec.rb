@@ -44,7 +44,7 @@ describe "Restoring a backup" do
       image_selector = '#content-body > div.issue-details.issuable-details > div.detail-page-description.content-block > div:nth-child(2) > div > div.description.js-task-list-container.is-task-list-enabled > div.wiki > p > a > img'
 
       expect(page).to have_selector(image_selector)
-      image_src = page.evaluate_script("$('#{image_selector}')[0].src")
+      image_src = page.all("img.js-lazy-loaded")[1][:src]
 
       open(image_src) do |f|
         expect(f.status[0]).to eq '200'
