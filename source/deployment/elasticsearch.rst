@@ -18,7 +18,7 @@ Elasticsearch allows you to search large volumes of data quickly, and in near re
 
 Setting up an Elasticsearch Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The setup process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`_.
+The setup process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`_. Elasticsearch v5.0 and later is supported.
 
 .. note::
   You must install the `ICU Analyzer Plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`_ when setting up Elasticsearch for Mattermost.
