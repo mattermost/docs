@@ -73,12 +73,18 @@ certificates.
 
 ### Postgresql
 
-By default this chart provides an in-cluster postgresql database. This
-configuration should not be used in production.
+By default this chart provides an in-cluster postgresql database, for trial
+purposes only.
+
+> **NOTE: This configuration is not recommended for use in production.**
+>
+> - The container runs as root
+> - A single, non-resilient Deployment is used
 
 You can read more about setting up your production-ready database in the [advanced database docs](../advanced/external-db/index.md).
 
-If you have an external postgres database ready,
+If you have an external postgres database ready, the chart can be configured to
+use it as shown below.
 
 *Include these options in your helm install command:*
 ```
