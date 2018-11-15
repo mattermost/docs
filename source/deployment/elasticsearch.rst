@@ -16,6 +16,11 @@ Overview
 
 Elasticsearch allows you to search large volumes of data quickly, and in near real time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and is updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated. 
 
+When to use Elasticsearch
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts we recommend using Elasticsearch for optimum search performance.
+
 Setting up an Elasticsearch Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The setup process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`_. Elasticsearch v5.0 and later is supported.
