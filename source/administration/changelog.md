@@ -56,7 +56,8 @@ Release date: 2018-11-16
 
 Release date: 2018-10-16
 
-**Note: Mobile app version 1.13+ is required for servers 5.4+**
+ - **Note: Mobile app version 1.13+ is required for servers 5.4+**
+ - **Note: Enterprise Edition E20 customers running Elasticsearch, we are investigating search issues for Elasticsearch v6.0+ on Mattermost 5.4 and later**
 
 - Mattermost v5.4.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
