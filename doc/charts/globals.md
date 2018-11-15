@@ -432,6 +432,10 @@ global:
         key: password
       mailbox: inbox
       idleTimeout: 60
+    pseudonymizer:
+      configMap:
+      bucket: gitlab-pseudo
+      connection: {}
 ```
 
 [unicorn]: gitlab/unicorn/index.md
@@ -582,7 +586,6 @@ region: us-east-1
 ```
 
 [artifactscon]: https://docs.gitlab.com/ee/administration/job_artifacts.html#s3-compatible-connection-settings
-
 
 ### Incoming email settings
 
@@ -738,6 +741,66 @@ Example configuration `--set` items, when using the global chart:
 Due to the complexity of using `--set` arguments, a user may wish to use a YAML snippet, passed to `helm` with `-f omniauth.yaml`.
 
 Defaults to `[]`.
+
+### Pseudonymizer settings
+
+```
+global:
+  appConfig:
+    pseudonymizer:
+      configMap:
+      bucket: gitlab-pseudo
+      connection: {}
+```
+
+Use these settings to configure [Pseudonymizer service](https://docs.gitlab.com/ee/administration/pseudonymizer.html)
+
+#### configMap
+
+Name of the configmap having custom manifest file. Defaults to empty.
+
+GitLab ships with a [default manifest file for Pseudonymizer](https://gitlab.com/gitlab-org/gitlab-ee/blob/master/config/pseudonymizer.yml).
+Users can provide a custom one as a configmap. First, create a configmap
+
+```bash
+kubectl create configmap <name of the configmap> --from-file=pseudonymizer.yml=<path to pseudonymizer_config.yml>
+```
+
+**`Note:`** Please make sure the key specified in the above command to create
+configmap is `pseudonymizer.yml`.  It is used to point the service to the
+correct location and thus an incorrect key will cause Pseudonymizer to not work.
+
+Pass the argument `--set global.appConfig.pseudonymizer.configMap=<name of the configmap>`
+to `helm install` command to instruct GitLab to use this manifest instead of the
+default one.
+
+#### bucket
+
+Name of the bucket to use from object storage provider. Defaults to
+`gitlab-pseudo`.
+
+#### connection
+
+Details of the Kubernetes secret that contains connection information for the
+object storage provider. The contents of this secret should be a yaml config file.
+
+Defaults to `{}` and will be ignored if `global.minio.enabled` is `true`.
+
+This property has two sub-keys: `secret` and `key`.
+- `secret` is the name of a Kubernetes Secret. This value is required to use external object storage.
+- `key` is the name of the key in the secret which houses the YAML block. Defaults to `connection`.
+
+The content of the secret matches to [Fog](https://github.com/fog), and is
+different between provider modules.
+
+Example contents to be placed in the secret:
+
+```
+provider: AWS
+aws_access_key_id: BOGUS_ACCESS_KEY
+aws_secret_access_key: BOGUS_SECRET_KEY
+region: us-east-1
+```
 
 ## Configure GitLab Shell
 

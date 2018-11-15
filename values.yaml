@@ -106,6 +106,10 @@ global:
       providers: []
       # - secret: gitlab-google-oauth2
       #   key: provider
+    pseudonymizer:
+      configMap:
+      bucket: gitlab-pseudo
+      connection: {}
   shell:
     authToken: {}
     hostKeys: {}

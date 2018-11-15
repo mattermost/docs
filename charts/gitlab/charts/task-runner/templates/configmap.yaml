@@ -91,6 +91,22 @@ data:
           {{- else if .Values.global.appConfig.packages.connection }}
           connection: <%= YAML.load_file("/etc/gitlab/objectstorage/packages").to_json() %>
           {{- end }}
+      pseudonymizer:
+        manifest: config/pseudonymizer.yml
+        upload:
+          remote_directory: {{ .Values.global.appConfig.pseudonymizer.bucket }}
+          {{- if .Values.global.minio.enabled }}
+          connection:
+            provider: AWS
+            region: us-east-1
+            aws_access_key_id: "<%= File.read('/etc/gitlab/objectstorage/accesskey') %>"
+            aws_secret_access_key: "<%= File.read('/etc/gitlab/objectstorage/secretkey') %>"
+            host: {{ template "gitlab.minio.hostname" . }}
+            endpoint: {{ template "gitlab.minio.endpoint" . }}
+            path_style: true
+          {{- else if .Values.global.appConfig.pseudonymizer.connection }}
+          connection: <%= YAML.load_file("/etc/gitlab/objectstorage/pseudonymizer").to_json() %>
+          {{- end }}
       pages:
         enabled: false
       {{- with .Values.global.appConfig }}
