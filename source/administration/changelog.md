@@ -10,12 +10,12 @@ Release date: 2018-11-16
 
 ### Bug Fixes
  - Fixed an issue where clicking the two arrows to expand/collapse an image didn't work after posting an image.
- - Fixed an issue where switching signin from email/password to SAML (OKTA and OneLogin) showed session expiry message instead of success message.
- - Fixed an issue where a draft that was started a while ago suddenly appeared as a post in the channel even though user did not take any action to post it.
- - Fixed an issue with Out-of-Office feature where the reply message did not get inserted consistently.
+ - Fixed an issue where switching authentication methods from email/password to SAML (OKTA and OneLogin) showed session expiry message instead of a success message.
+ - Fixed an issue where message drafts occasionally posted to the channel even though user did not take any action to post it.
+ - Fixed an issue with Autoresponder feature where the reply message did not get inserted consistently.
  - Fixed an issue where bolded channel names rendered over top of unbolded channel names in desktop.
  - Fixed an issue where config.ServiceSettings.SiteURL could contain a trailing slash.
- - Fixed a caching bug with archiving/unarchiving channels through API.
+ - Fixed a caching issue with archiving/unarchiving channels through API.
  - Fixed UX issues when trying to edit pending posts from reply thread.
  - Fixed an issue where "Enable Post Formatting" did not actually require page refresh.
  - Fixed an issue where User AuthService Export value of "" could be incompatible for importer.
@@ -24,12 +24,12 @@ Release date: 2018-11-16
  - Fixed an issue where the post header for bot messages was cutting off username before using available horizontal space.
  - Fixed an issue where "undefined" was briefly shown on refresh with combined system messages.
  - Fixed an issue where profile popover was cut-off at right-hand side root post.
- - Fixed UX issues for plugins that had no settings but showed a blank page when clicking on the "Settings" link from "Management" page in System Console.
+ - Fixed UX issues for some plugins that displayed a blank page when clicking on the "Settings" link from "Management" page in System Console.
  - Fixed an issue where uploading a plugin resulted in a JS error and a blank page.
- - Fixed an issue where an inactive team icon did not fill bounding box.
+ - Fixed an issue where some team icons did not fill bounding box on MacOS.
  - Fixed an issue where there was no hover effect on emoji reactions.
  - Fixed an issue where a permanent announcement banner pushed the bottom of a channel sidebar off screen.
- - Fixed an issue where cancelling a change to Notifications settings in Account Settings appeared to save the change.
+ - Fixed an issue where cancelling a change to channel notifications settings appeared to save the change.
 
 ### Known Issues
 
@@ -38,7 +38,6 @@ Release date: 2018-11-16
  - Jump link in search results does not always jump to display the expected post.
  - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
  - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
- - Searching with Elasticsearch enabled may not always highlight the searched terms.
  - Team sidebar on desktop app does not update when channels have been read on mobile.
  - Channel scroll position flickers while images and link previews load.
  - Slack import through the CLI fails if email notifications are enabled.
