@@ -4,6 +4,54 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.5
+
+Release date: 2018-11-16
+
+### Bug Fixes
+ - Fixed an issue where clicking the two arrows to expand/collapse an image didn't work after posting an image.
+ - Fixed an issue where switching authentication methods from email/password to SAML (OKTA and OneLogin) showed session expiry message instead of a success message.
+ - Fixed an issue where message drafts occasionally posted to the channel even though user did not take any action to post it.
+ - Fixed an issue with Autoresponder feature where the reply message did not get inserted consistently.
+ - Fixed an issue where bolded channel names rendered over top of unbolded channel names in desktop.
+ - Fixed an issue where config.ServiceSettings.SiteURL could contain a trailing slash.
+ - Fixed a caching issue with archiving/unarchiving channels through API.
+ - Fixed UX issues when trying to edit pending posts from reply thread.
+ - Fixed an issue where "Enable Post Formatting" did not actually require page refresh.
+ - Fixed an issue where User AuthService Export value of "" could be incompatible for importer.
+ - Fixed an issue where search results that did not match case were not highlighted when returning hashtags in search results.
+ - Fixed issues with indentation on the right-hand side in desktop app compact view.
+ - Fixed an issue where the post header for bot messages was cutting off username before using available horizontal space.
+ - Fixed an issue where "undefined" was briefly shown on refresh with combined system messages.
+ - Fixed an issue where profile popover was cut-off at right-hand side root post.
+ - Fixed UX issues for some plugins that displayed a blank page when clicking on the "Settings" link from "Management" page in System Console.
+ - Fixed an issue where uploading a plugin resulted in a JS error and a blank page.
+ - Fixed an issue where some team icons did not fill bounding box on MacOS.
+ - Fixed an issue where there was no hover effect on emoji reactions.
+ - Fixed an issue where a permanent announcement banner pushed the bottom of a channel sidebar off screen.
+ - Fixed an issue where cancelling a change to channel notifications settings appeared to save the change.
+
+### Compatibility
+
+**Mobile app version 1.13+ is required for servers 5.4+**
+
+### Known Issues
+
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
+
+### Contributors
+
+[aeomin](https://github.com/aeomin), [Akash4927](https://github.com/Akash4927), [alexander-akhmetov](https://github.com/alexander-akhmetov), [amogozov](https://github.com/amogozov), [amorriscode](https://github.com/amorriscode), [amyblais](https://github.com/amyblais), [anchepiece](https://github.com/anchepiece), [ArchRoller](https://github.com/archroller), [asaadmahmood](https://github.com/asaadmahmood), [avasconcelos114](https://github.com/avasconcelos114), [Charliekenney23](https://github.com/Charliekenney23), [charvp](https://github.com/charvp), [chetanyakan](https://github.com/chetanyakan), [chikei](https://github.com/chikei), [cjohannsen81](https://github.com/cjohannsen81), [cobenash](https://github.com/cobenash), [cometkim](https://github.com/cometkim), [cored](https://github.com/cored), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [cvitter](https://github.com/cvitter), [czertbytes](https://github.com/czertbytes), [danmaas](https://github.com/danmaas), [der-test](https://github.com/der-test), [DHaussermann](https://github.com/DHaussermann), [dos1701](https://github.com/dos1701), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [florianeichin](https://github.com/florianeichin), [fraziern](https://github.com/fraziern), [grundleborg](https://github.com/grundleborg), [gupsho](https://github.com/gupsho), [gy741](https://github.com/gy741), [hanzei](https://github.com/hanzei), [harshilsharma](https://github.com/harshilsharma), [harshilsharma](https://github.com/harshilsharma), [hmhealey](https://github.com/hmhealey), [it33](https://github.com/it33), [jasimmons](https://github.com/jasimmons), [jasonblais](https://github.com/jasonblais), [JayaKrishnaNamburu](https://github.com/JayaKrishnaNamburu), [jespino](https://github.com/jespino), [JtheBAB](https://github.com/JtheBAB), [JustinReynolds-MM](https://github.com/JustinReynolds-MM), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [KerryAlsace](https://github.com/KerryAlsace), [klingtnet](https://github.com/klingtnet), [knrt10](https://github.com/knrt10), [leblanc-simon](https://github.com/leblanc-simon), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [lologarithm](https://github.com/lologarithm), [MattMattV](https://github.com/MattMattV), [meilon](https://github.com/meilon), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [mojicaj](https://github.com/mojicaj), [mukulrawat1986](https://github.com/mukulrawat1986), [n7st](https://github.com/n7st), [pichouk](https://github.com/pichouk), [pjgrizel](https://github.com/pjgrizel), [powhu](https://github.com/powhu), [pradeepmurugesan](https://github.com/pradeepmurugesan), [pushkyn](https://github.com/pushkyn), [robert843](https://github.com/robert843), [rodcorsi](https://github.com/rodcorsi), [rononline](https://github.com/rononline), [ryoon](https://github.com/ryoon), [s4kh](https://github.com/s4kh), [SaashaJoshi](https://github.com/SaashaJoshi), [saturninoabril](https://github.com/saturninoabril), [SergeyShpak](https://github.com/SergeyShpak), [sonasingh46](https://github.com/sonasingh46), [sudheerDev](https://github.com/sudheerDev), [thePanz](https://github.com/thePanz), [torlenor](https://github.com/torlenor), [tyvsmith](https://github.com/tyvsmith), [uhlhosting](https://github.com/uhlhosting), [uusijani](https://github.com/uusijani), [VPashkov](https://github.com/VPashkov), [waseem18](https://github.com/waseem18), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [yuya-oc](https://github.com/yuya-oc)
+
 ## Release v5.4
 
 Release date: 2018-10-16
