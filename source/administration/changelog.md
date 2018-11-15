@@ -31,6 +31,10 @@ Release date: 2018-11-16
  - Fixed an issue where a permanent announcement banner pushed the bottom of a channel sidebar off screen.
  - Fixed an issue where cancelling a change to channel notifications settings appeared to save the change.
 
+### Compatibility
+
+**Mobile app version 1.13+ is required for servers 5.4+**
+
 ### Known Issues
 
  - Google login fails on the Classic mobile apps.
