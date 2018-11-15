@@ -18,9 +18,15 @@ in the task runner container and as the name suggests it is a script used for do
 
 ### Backups
 
-The backup utility script when run without any arguments creates a backup tar and uploads it to object storage. The sequence of execution is:
-1. Backup the repositories and database using the [GitLab backup rake task](https://gitlab.com/gitlab-org/build/CNG/blob/master/gitlab-task-runner/scripts/bin/backup-utility#L121)
+The backup utility script when run without any arguments creates a backup tar and uploads it to object storage.
+ You can skip parts of the backup process by using `--skip <component>` for every component that you want to skip in the backup process. Skippable components are db, repositories, and any of the object storages (e.g. artifacts, lfs, registry, ...).
+ There is also an option to manually set a part of the name of the generated backup tar via the `-t <backup-name>` command line flag, which will result in the backup file `<backup-name>_gitlab_backup.tar` to be created.
+
+The sequence of execution is:
+
+1. Backup the repositories and database using the [GitLab backup rake task](https://gitlab.com/gitlab-org/build/CNG/blob/master/gitlab-task-runner/scripts/bin/backup-utility#L121) if they are not marked to be skipped
 2. For each of object storage backends
+   - skip if applicable
    - tar the existing data in the corresponding object storage bucket naming it `<bucket-name>.tar`
    - Move the tar to the backup location on disk
 3. Write a `backup_information.yml` file which contains some metadata identifying the version of gitlab, the time of the backup and the skipped items if any.
