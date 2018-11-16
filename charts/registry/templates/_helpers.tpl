@@ -38,7 +38,7 @@ if there is a shared tls secret for all ingresses.
 {{- end -}}
 
 {{/*
-Returns the minio Url, ex: `http://minio.example.local`
+Returns the minio Url, ex: `http://minio.example.com`
 If `global.hosts.https` or `global.hosts.minio.https` is true, it uses https, otherwise http.
 Calls into the `gitlab.minio.hostname` function for the hostname part of the url.
 */}}

@@ -15,7 +15,7 @@ Follow the installation instructions for [Omnibus GitLab][]. When you perform th
 
 ## Configure Omnibus GitLab
 
-Create a minimal `gitlab.rb` file to be placed at `/etc/gitlab/gitlab.rb`. Be _very_ explicit about what is enabled on this node, use the contents below.
+Create a minimal `gitlab.rb` file to be placed at `/etc/gitlab/gitlab.rb`. Be _very_ explicit about what is enabled on this node, use the contents below based on [Running Gitaly on its own server docs](https://docs.gitlab.com/ce/administration/gitaly/#running-gitaly-on-its-own-server).
 
 _**NOTE**: The values below should be replaced_
 - `AUTH_TOKEN` should be replaced with the value in the [`gitaly-secret` secret][gitaly-secret]

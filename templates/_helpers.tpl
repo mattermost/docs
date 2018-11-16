@@ -27,7 +27,7 @@ otherwise the hostname will be assembled using `gitlab` as the prefix, and the `
 {{- end -}}
 
 {{/*
-Returns the GitLab Url, ex: `http://gitlab.example.local`
+Returns the GitLab Url, ex: `http://gitlab.example.com`
 If `global.hosts.https` or `global.hosts.gitlab.https` is true, it uses https, otherwise http.
 Calls into the `gitlab.gitlabHost` function for the hostname part of the url.
 */}}
@@ -68,9 +68,9 @@ Returns the minio url.
   reference to the chart's $ object.
   eg: `template "assembleHost" (dict "name" "minio" "context" .)`
 
-  The hostname will be the combined name with the domain. eg: If domain is `example.local`, it will produce `minio.example.local`
+  The hostname will be the combined name with the domain. eg: If domain is `example.com`, it will produce `minio.example.com`
   Additionally if `global.hosts.hostSuffix` is set, it will append a hyphen, then the suffix to the name:
-  eg: If hostSuffix is `beta` it will produce `minio-beta.example.local`
+  eg: If hostSuffix is `beta` it will produce `minio-beta.example.com`
 */}}
 {{- define "gitlab.assembleHost" -}}
 {{- $name := .name -}}

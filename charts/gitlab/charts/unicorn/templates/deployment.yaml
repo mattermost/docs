@@ -7,6 +7,9 @@ metadata:
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 spec:
+  {{- if .Values.global.operator.enabled }}
+  paused: true
+  {{- end }}
   replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
@@ -19,6 +22,7 @@ spec:
         release: {{ .Release.Name }}
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yml") . | sha256sum }}
+        cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
       {{- range $key, $value := .Values.annotations }}
         {{ $key }}: {{ $value | quote }}
       {{- end }}
@@ -80,12 +84,16 @@ spec:
           args:
             - /scripts/wait-for-deps
           env:
+{{- if .Values.global.operator.enabled }}
+            - name: BYPASS_SCHEMA_VERSION
+              value: 'true'
+{{- end }}
             - name: GITALY_FEATURE_DEFAULT_ON
               value: "1"
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
-              value: '/var/opt/gitlab/config/gitlab/'
+              value: '/srv/gitlab/config'
             - name: WORKHORSE_ARCHIVE_CACHE_DISABLED
               value: "1"
           volumeMounts:
@@ -110,7 +118,7 @@ spec:
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
-              value: '/var/opt/gitlab/config/gitlab/'
+              value: '/srv/gitlab/config'
 {{- if .Values.metrics.enabled }}
             - name: prometheus_multiproc_dir
               value: /metrics
@@ -174,7 +182,7 @@ spec:
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
-              value: '/var/opt/gitlab/config/gitlab/'
+              value: '/srv/gitlab/config'
           volumeMounts:
             - name: workhorse-config
               mountPath: '/var/opt/gitlab/templates'
@@ -282,8 +290,15 @@ spec:
                 - key: {{ default "connection" .Values.global.appConfig.uploads.connection.key }}
                   path: objectstorage/uploads
           {{- end }}
-          {{- if .Values.omniauth.providers }}
-          {{-   range $index, $entry := .Values.omniauth.providers }}
+          {{- if .Values.global.appConfig.packages.connection }}
+          - secret:
+              name: {{ .Values.global.appConfig.packages.connection.secret }}
+              items:
+                - key: {{ default "connection" .Values.global.appConfig.packages.connection.key }}
+                  path: objectstorage/packages
+          {{- end }}
+          {{- if .Values.global.appConfig.omniauth.providers }}
+          {{-   range $index, $entry := .Values.global.appConfig.omniauth.providers }}
           - secret:
               name: {{ $entry.secret }}
               items:

@@ -1,0 +1,21 @@
+# gitaly/values-multiple-external.yaml
+# This example intended as an example of configuring multiple Gitaly
+# nodes outside of this chart, without using internal pods.
+# This provides an example of:
+# - two external nodes
+# - disable internal
+# https://gitlab.com/charts/gitlab/tree/master/doc/
+
+global:
+  gitaly:
+    internal: []  # disable populating internal nodes
+    external:
+      - name: default                   # required
+        hostname: node1.git.example.com # required
+        port: 8075                      # optional, default shown
+      - name: secondary                 # required
+        hostname: node2.git.example.com # required
+        port: 8075                      # optional, default shown
+gitlab:
+  gitaly:
+    enabled: false

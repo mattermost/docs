@@ -22,7 +22,7 @@ objects. You'll need to specify a domain which will contain records to resolve
 
 *Include these options in your helm install command:*
 ```
---set global.hosts.domain=example.local
+--set global.hosts.domain=example.com
 ```
 
 #### Dynamic IPs with external-dns
@@ -36,9 +36,9 @@ is already installed in your cluster.
 #### Static IP
 
 If you plan to manually configure your DNS records they should all point to a
-static IP. For example if you choose `example.local` and you have a static IP
-of `10.10.10.10`, then `gitlab.example.local`, `registry.example.local` and
-`minio.example.local` (if using minio) should all resolve to `10.10.10.10`.
+static IP. For example if you choose `example.com` and you have a static IP
+of `10.10.10.10`, then `gitlab.example.com`, `registry.example.com` and
+`minio.example.com` (if using minio) should all resolve to `10.10.10.10`.
 
 If you are using GKE, there is some documentation [here](../cloud/gke.md#creating-the-external-ip)
 for configuring static IPs and DNS. Consult your Cloud and/or DNS provider's
@@ -68,17 +68,23 @@ For the default configuration, you must specify an email address to register you
 certificates.
 *Include these options in your helm install command:*
 ```
---set certmanager-issuer.email=me@example.local
+--set certmanager-issuer.email=me@example.com
 ```
 
 ### Postgresql
 
-By default this chart provides an in-cluster postgresql database. This
-configuration should not be used in production.
+By default this chart provides an in-cluster postgresql database, for trial
+purposes only.
 
-You can read more about setting up your production-ready database in the [advanced database docs](../advanced/external-db/README.md).
+> **NOTE: This configuration is not recommended for use in production.**
+>
+> - The container runs as root
+> - A single, non-resilient Deployment is used
 
-If you have an external postgres database ready,
+You can read more about setting up your production-ready database in the [advanced database docs](../advanced/external-db/index.md).
+
+If you have an external postgres database ready, the chart can be configured to
+use it as shown below.
 
 *Include these options in your helm install command:*
 ```
@@ -102,7 +108,7 @@ By default we use an single, non-replicated Redis instance. If desired, a highly
 By default this chart provides an in-cluster minio deployment to provide an object storage API.
 This configuration should not be used in production.
 
-You can read more about setting up your production-ready object storage in the [external object storage](../advanced/external-object-storage/README.md)
+You can read more about setting up your production-ready object storage in the [external object storage](../advanced/external-object-storage/index.md)
 
 ### Outgoing email
 
@@ -158,30 +164,48 @@ helm repo add gitlab https://charts.gitlab.io/
 helm repo update
 helm upgrade --install gitlab gitlab/gitlab \
   --timeout 600 \
-  --set global.hosts.domain=example.local \
+  --set global.hosts.domain=example.com \
   --set global.hosts.externalIP=10.10.10.10 \
-  --set certmanager-issuer.email=me@example.local
+  --set certmanager-issuer.email=me@example.com
 ```
 
 You can also use `--version <installation version>` option if you would like to install a specific version of GitLab.
 
 Mappings between chart versions and GitLab versions can be found [here](./version-mappings.md)
 
-### Deploy development branch
+#### GitLab operator (experimental)
 
-To deploy master or a specific branch, first clone the repository locally: `git clone git@gitlab.com:charts/gitlab.git`
-and checkout the desired branch.
+If you would like to use GitLab operator to achieve zero downtime upgrades, please follow the [documentation for using the operator](./operator.md)
 
-Then use the same helm commands as above, but replace the chartname (`gitlab/gitlab`) with the path to the checked out chart.
+### Deploy Development Branch
 
+Deploy master or a specific branch by first cloning the repository locally:
+
+```sh
+$ git clone git@gitlab.com:charts/gitlab.git
 ```
-helm repo add gitlab https://charts.gitlab.io/
-helm dependencies update
-helm upgrade --install gitlab . \
+
+Check out the appropriate branch and modify `requirements.yaml` if testing changes to external dependencies.
+
+> **Note:**
+>
+> It is possible to test external dependencies using a local repository. Use `file://PATH_TO_DEPENDENCY_REPO`
+> where the path may be relative to the chartpath or absolute. For example, if using
+> `/home/USER/charts/gitlab` as the main checkout and `/home/USER/charts/gitlab-runner`, the
+> relative path would be `file://../gitlab-runner/` and the absolute path would be
+> `file:///home/USER/charts/gitlab-runner/`. Pay close attention with absolute paths as it
+> is very easy to miss the leading slash on the filepath.
+
+Run the following helm commands to install:
+
+```sh
+$ helm repo add gitlab https://charts.gitlab.io/
+$ helm dependencies update
+$ helm upgrade --install gitlab . \
   --timeout 600 \
-  --set global.hosts.domain=example.local \
+  --set global.hosts.domain=example.com \
   --set global.hosts.externalIP=10.10.10.10 \
-  --set certmanager-issuer.email=me@example.local
+  --set certmanager-issuer.email=me@example.com
 ```
 
 ## Monitoring the Deployment

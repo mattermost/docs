@@ -47,30 +47,6 @@ workhorse:
       cpu: 100m
       memory: 100M
   # image: registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ee
-ldap:
-  servers: {}
-  # 'main' is the GitLab 'provider ID' of this LDAP server
-  # main:
-  #   label: 'LDAP'
-  #   host: '_your_ldap_server'
-  #   port: 636
-  #   uid: 'sAMAccountName'
-  #   bind_dn: '_the_full_dn_of_the_user_you_will_bind_with'
-  #   password: '_the_password_of_the_bind_user'
-  #   encryption: 'plain'
-omniauth:
-  enabled: false
-  autoSignInWithProvider:
-  syncProfileFromProvider: []
-  syncProfileAttributes: ['email']
-  allowSingleSignOn: ['saml']
-  blockAutoCreatedUsers: true
-  autoLinkLdapUser: false
-  autoLinkSamlUser: false
-  externalProviders: []
-  providers: []
-  # - secret: gitlab-google-oauth2
-  #   key: provider
 global:
   # imagePullPolicy: IfNotPresent
   ingress:
@@ -79,17 +55,17 @@ global:
     tls: {}
       # secretName:
   hosts:
-    domain: example.local
+    domain: example.com
     hostSuffix:
     https: true
     gitlab: {}
-      #name: gitlab.example.local
+      #name: gitlab.example.com
       #https: false
     registry: {}
-      #name: registry.example.local
+      #name: registry.example.com
       #https: false
     minio: {}
-      #name: minio.example.local
+      #name: minio.example.com
       #https: false
   psql: {}
     # host: '0.0.0.0'
@@ -129,6 +105,35 @@ global:
       proxy_download: true
       bucket:
       connection: {}
+    packages:
+      enabled: true
+      proxy_download: true
+      bucket:
+      connection: {}
+    ldap:
+      servers: {}
+      # 'main' is the GitLab 'provider ID' of this LDAP server
+      # main:
+      #   label: 'LDAP'
+      #   host: '_your_ldap_server'
+      #   port: 636
+      #   uid: 'sAMAccountName'
+      #   bind_dn: '_the_full_dn_of_the_user_you_will_bind_with'
+      #   password: '_the_password_of_the_bind_user'
+      #   encryption: 'plain'
+    omniauth:
+      enabled: false
+      autoSignInWithProvider:
+      syncProfileFromProvider: []
+      syncProfileAttributes: ['email']
+      allowSingleSignOn: ['saml']
+      blockAutoCreatedUsers: true
+      autoLinkLdapUser: false
+      autoLinkSamlUser: false
+      externalProviders: []
+      providers: []
+      # - secret: gitlab-google-oauth2
+      #   key: provider
 redis:
   password: {}
 gitaly:
@@ -142,6 +147,7 @@ minio:
   serviceName: 'minio-svc'
   port: 9000
 registry:
+  enabled: true
   host:
   # port: 443
   api:

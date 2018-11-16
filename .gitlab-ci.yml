@@ -78,13 +78,13 @@ release_package:
 review:
   stage: review
   script:
-    - terraform_init
     - check_kube_domain
-    - terraform_up
     - ensure_namespace
     - install_tiller
     - create_secret
+    - install_external_dns
     - deploy
+    - add_license
     - echo "export QA_ENVIRONMENT_URL=gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN" >> variables
     - echo "export GITLAB_ROOT_DOMAIN=$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"        >> variables
     - echo "export GITLAB_URL=gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"         >> variables
@@ -113,10 +113,8 @@ stop_review:
     GIT_CHECKOUT: "false"
   script:
     - git checkout master
-    - terraform_init
     - delete
     - cleanup
-    - terraform_down
   environment:
     name: review/$CI_COMMIT_REF_NAME
     action: stop
@@ -217,81 +215,6 @@ stable:
     refs:
       - master
     kubernetes: active
-
-.specs: &specs
-  image: gunesmes/docker-capybara-chrome
-  stage: specs
-  services:
-  - docker:dind
-  variables:
-    DOCKER_DRIVER: overlay2
-    DOCKER_HOST: tcp://docker:2375
-    GITLAB_PASSWORD: $ROOT_PASSWORD
-    RELEASE_NAME: $CI_ENVIRONMENT_SLUG
-    S3_CONFIG_PATH: /etc/gitlab/minio
-  script:
-    - source variables
-    - apt-get update && apt-get install -y --no-install-recommends curl ca-certificates
-    - curl -sSL https://get.docker.com/ | sh
-    - curl -LsO https://storage.googleapis.com/kubernetes-release/release/v1.9.3/bin/linux/amd64/kubectl
-    - chmod +x kubectl
-    - mv kubectl /usr/local/bin/kubectl
-    - mkdir -p /etc/gitlab/minio
-    - kubectl get secret ${CI_ENVIRONMENT_SLUG}-minio-secret -o jsonpath='{.data.accesskey}' | base64 --decode > /etc/gitlab/minio/accesskey
-    - kubectl get secret ${CI_ENVIRONMENT_SLUG}-minio-secret -o jsonpath='{.data.secretkey}' | base64 --decode > /etc/gitlab/minio/secretkey
-    - bundle install --without non_test
-    - bundle exec rspec -c -f d spec
-
-review_specs:
-  <<: *specs
-  environment:
-    name: review/$CI_COMMIT_REF_NAME
-    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
-    on_stop: stop_review
-  only:
-    refs:
-      - branches
-  except:
-    refs:
-      - master
-
-production_specs:
-  <<: *specs
-  environment:
-    name: production
-    url: https://gitlab.$AUTO_DEVOPS_DOMAIN
-  only:
-    refs:
-      - master
-qa:
-  image: registry.gitlab.com/gitlab-org/gitlab-omnibus-builder:ruby_docker-0.0.7
-  stage: qa
-  services:
-  - docker:dind
-  variables:
-    DOCKER_DRIVER: overlay2
-    DOCKER_HOST: tcp://docker:2375
-    QA_ARTIFACTS_DIR: $CI_PROJECT_DIR
-  script:
-    - docker login -u gitlab-ci-token -p "$CI_JOB_TOKEN" "$CI_REGISTRY"
-    - gem install gitlab-qa -v 2.2.0
-    - source variables
-    - app_version=$(ruby -e "require 'yaml'; puts YAML.safe_load(File.read('Chart.yaml'))['appVersion']")
-    - qa_version="nightly"
-    - if [ "$app_version" != "master"  ]; then
-    -   qa_version="${app_version}-ee"
-    - fi
-    - GITLAB_USERNAME=root GITLAB_PASSWORD=$ROOT_PASSWORD gitlab-qa Test::Instance::Any EE:$qa_version https://$QA_ENVIRONMENT_URL
-  artifacts:
-    when: on_failure
-    expire_in: 7d
-    paths:
-    - ./gitlab-qa-run-*
-  only:
-    refs:
-      - branches
-  retry: 1
-  allow_failure: true
 
 review_helm_test:
   stage: qa
@@ -442,7 +365,7 @@ danger-review:
       --set releaseOverride="$CI_ENVIRONMENT_SLUG" \
       --set global.hosts.hostSuffix="$HOST_SUFFIX" \
       --set global.hosts.domain="$AUTO_DEVOPS_DOMAIN" \
-      --set global.hosts.externalIP="$DOMAIN_IP" \
+      --set global.ingress.annotations."external-dns\.alpha\.kubernetes\.io/ttl"="10" \
       --set global.ingress.tls.secretName=helm-charts-win-tls \
       --set global.ingress.configureCertmanager=false \
       --set certmanager.install=false \
@@ -459,6 +382,42 @@ danger-review:
       --version="$CI_PIPELINE_ID-$CI_JOB_ID" \
       "$name" \
       .
+  }
+
+  function add_license() {
+    if [ -z "${REVIEW_APPS_EE_LICENSE}" ]; then echo "License not found" && return; fi
+
+    while [ -z "$(kubectl get pods -n ${KUBE_NAMESPACE} --field-selector=status.phase=Running -lapp=task-runner,release=${CI_ENVIRONMENT_SLUG} --no-headers -o=custom-columns=NAME:.metadata.name)" ]; do
+      echo "Waiting till task-runner pod is ready";
+      sleep 5;
+    done
+
+    task_runner_pod=$(kubectl get pods -n ${KUBE_NAMESPACE} --field-selector=status.phase=Running -lapp=task-runner,release=${CI_ENVIRONMENT_SLUG} --no-headers -o=custom-columns=NAME:.metadata.name)
+
+    if [ -z "${task_runner_pod}" ]; then echo "Task runner pod not found" && return; fi
+    echo "Task runner pod is ${task_runner_pod}"
+
+    echo "${REVIEW_APPS_EE_LICENSE}" > /tmp/license.gitlab
+    kubectl -n "$KUBE_NAMESPACE" cp /tmp/license.gitlab ${task_runner_pod}:/tmp/license.gitlab
+    rm /tmp/license.gitlab
+
+    kubectl -n "$KUBE_NAMESPACE" exec -it ${task_runner_pod} -- /srv/gitlab/bin/rails runner -e production \
+     '
+     content = File.read("/tmp/license.gitlab").strip;
+     FileUtils.rm_f("/tmp/license.gitlab");
+
+     unless License.where(data:content).empty?
+       puts "License already exists";
+       Kernel.exit 0;
+     end
+
+     unless License.new(data: content).save
+       puts "Could not add license";
+       Kernel.exit 0;
+     end
+
+     puts "License added";
+     '
   }
 
   function setup_test_db() {
@@ -530,6 +489,25 @@ danger-review:
     echo ""
   }
 
+  function install_external_dns() {
+    echo "Checking External DNS..."
+    release_name="gitlab-external-dns"
+    if ! helm status --tiller-namespace "${TILLER_NAMESPACE}" "${release_name}" > /dev/null 2>&1 ; then
+      # We need to store the credentials in a secret
+      kubectl create secret generic "${release_name}-secret" --from-literal="credentials.json=${GOOGLE_CLOUD_KEYFILE_JSON}"
+      helm install stable/external-dns \
+        -n "${release_name}" \
+        --namespace "${TILLER_NAMESPACE}" \
+        --set provider="google" \
+        --set domain-filter[0]="helm-charts.win" \
+        --set google.project="${GOOGLE_PROJECT_ID}" \
+        --set google.serviceAccountSecret="${release_name}-secret" \
+        --set txtOwnerId="${TILLER_NAMESPACE}" \
+        --set rbac.create="true" \
+        --set policy="sync"
+    fi
+  }
+
   function create_secret() {
     kubectl create secret -n "$KUBE_NAMESPACE" \
       docker-registry gitlab-registry-docker \
@@ -558,29 +536,87 @@ danger-review:
       || true
   }
 
-  function terraform_up() {
-    pushd ci/terraform/
-    terraform apply -input=false -auto-approve -var environment=${CI_ENVIRONMENT_SLUG}
-    export DOMAIN_IP=$(terraform output loadBalancerIP)
-    popd
-  }
+.specs: &specs
+  image: gunesmes/docker-capybara-chrome
+  stage: specs
+  services:
+  - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay2
+    DOCKER_HOST: tcp://docker:2375
+    GITLAB_PASSWORD: $ROOT_PASSWORD
+    RELEASE_NAME: $CI_ENVIRONMENT_SLUG
+    S3_CONFIG_PATH: /etc/gitlab/minio
+  script:
+    - source variables
+    - apt-get update && apt-get install -y --no-install-recommends curl ca-certificates
+    - curl -sSL https://get.docker.com/ | sh
+    - curl -LsO https://storage.googleapis.com/kubernetes-release/release/v1.9.3/bin/linux/amd64/kubectl
+    - chmod +x kubectl
+    - mv kubectl /usr/local/bin/kubectl
+    - mkdir -p /etc/gitlab/minio
+    - kubectl get secret ${CI_ENVIRONMENT_SLUG}-minio-secret -o jsonpath='{.data.accesskey}' | base64 --decode > /etc/gitlab/minio/accesskey
+    - kubectl get secret ${CI_ENVIRONMENT_SLUG}-minio-secret -o jsonpath='{.data.secretkey}' | base64 --decode > /etc/gitlab/minio/secretkey
+    - bundle install -j $(nproc) --without non_test --path gems
+    - bundle exec rspec -c -f d spec
+  after_script:
+    - *auto_devops
+    - add_license
+  cache:
+    key: "${CI_JOB_NAME}"
+    paths:
+    - gems
 
-  function terraform_down() {
-    pushd ci/terraform
-    terraform destroy -input=false -force -var environment=${CI_ENVIRONMENT_SLUG}
-    popd
-  }
+review_specs:
+  <<: *specs
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
+    on_stop: stop_review
+  only:
+    refs:
+      - branches
+  except:
+    refs:
+      - master
 
-  function terraform_init() {
-    pushd ci/terraform
-    echo ${GOOGLE_CLOUD_KEYFILE_JSON} > ${GOOGLE_APPLICATION_CREDENTIALS}
-    # gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
-    # gcloud config set project $GOOGLE_PROJECT_ID
-    terraform init -input=false \
-      -backend-config="bucket=${GOOGLE_STORAGE_BUCKET}" \
-      -backend-config="prefix=terraform/${CI_ENVIRONMENT_SLUG}"
-    popd
-  }
+production_specs:
+  <<: *specs
+  environment:
+    name: production
+    url: https://gitlab.$AUTO_DEVOPS_DOMAIN
+  only:
+    refs:
+      - master
+qa:
+  image: registry.gitlab.com/gitlab-org/gitlab-omnibus-builder:ruby_docker-0.0.7
+  stage: qa
+  services:
+  - docker:dind
+  variables:
+    DOCKER_DRIVER: overlay2
+    DOCKER_HOST: tcp://docker:2375
+    QA_ARTIFACTS_DIR: $CI_PROJECT_DIR
+  script:
+    - docker login -u gitlab-ci-token -p "$CI_JOB_TOKEN" "$CI_REGISTRY"
+    - gem install gitlab-qa
+    - source variables
+    - app_version=$(ruby -e "require 'yaml'; puts YAML.safe_load(File.read('Chart.yaml'))['appVersion']")
+    - qa_version="nightly"
+    - if [ "$app_version" != "master"  ]; then
+    -   qa_version="${app_version}-ee"
+    - fi
+    - GITLAB_USERNAME=root GITLAB_PASSWORD=$ROOT_PASSWORD GITLAB_ADMIN_USERNAME=root GITLAB_ADMIN_PASSWORD=$ROOT_PASSWORD EE_LICENSE=$REVIEW_APPS_EE_LICENSE gitlab-qa Test::Instance::Any EE:$qa_version https://$QA_ENVIRONMENT_URL
+  artifacts:
+    when: on_failure
+    expire_in: 7d
+    paths:
+    - ./gitlab-qa-run-*
+  only:
+    refs:
+      - branches
+  retry: 1
+  allow_failure: true
 
 before_script:
   - *auto_devops

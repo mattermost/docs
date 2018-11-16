@@ -2,6 +2,8 @@ namespace={{ .Release.Namespace }}
 release={{ .Release.Name }}
 env={{ .Values.env }}
 
+pushd $(mktemp -d)
+
 # Args pattern, length
 function gen_random(){
   head -c 4096 /dev/urandom | LC_CTYPE=C tr -cd $1 | head -c $2
@@ -53,8 +55,8 @@ generate_secret_if_needed {{ template "gitlab.gitlab-runner.registrationToken.se
 
 # Registry certificates
 mkdir -p certs
-openssl req -new -newkey rsa:4096 -subj "/CN=gitlab-issuer" -nodes -x509 -keyout certs/registry-example-local.key -out certs/registry-example-local.crt
-generate_secret_if_needed {{ template "gitlab.registry.certificate.secret" . }} --from-file=registry-auth.key=certs/registry-example-local.key --from-file=registry-auth.crt=certs/registry-example-local.crt
+openssl req -new -newkey rsa:4096 -subj "/CN=gitlab-issuer" -nodes -x509 -keyout certs/registry-example-com.key -out certs/registry-example-com.crt
+generate_secret_if_needed {{ template "gitlab.registry.certificate.secret" . }} --from-file=registry-auth.key=certs/registry-example-com.key --from-file=registry-auth.crt=certs/registry-example-com.crt
 
 # config/secrets.yaml
 if [ -n "$env" ]; then

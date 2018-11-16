@@ -31,19 +31,19 @@ global:
     tls: {}
       # secretName:
   hosts:
-    domain: example.local
+    domain: example.com
     hostSuffix:
     https: true
     tls: {}
       # secretName:
     gitlab: {}
-      #name: gitlab.example.local
+      #name: gitlab.example.com
       #https: false
     registry: {}
-      #name: registry.example.local
+      #name: registry.example.com
       #https: false
     minio: {}
-      #name: minio.example.local
+      #name: minio.example.com
       #https: false
   minio:
     enabled:

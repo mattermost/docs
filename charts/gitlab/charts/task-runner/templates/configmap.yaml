@@ -70,8 +70,71 @@ data:
           {{- else if .Values.global.appConfig.lfs.connection }}
           connection: <%= YAML.load_file("/etc/gitlab/objectstorage/lfs").to_json() %>
           {{- end }}
+      packages:
+        enabled: {{ eq .Values.global.appConfig.packages.enabled true }}
+        storage_path: /srv/gitlab/shared/packages
+        object_store:
+          enabled: true
+          remote_directory: {{ .Values.global.appConfig.packages.bucket }}
+          direct_upload: true
+          background_upload: false
+          proxy_download: {{ eq .Values.global.appConfig.packages.proxy_download true }}
+          {{- if .Values.global.minio.enabled }}
+          connection:
+            provider: AWS
+            region: us-east-1
+            aws_access_key_id: "<%= File.read('/etc/gitlab/objectstorage/accesskey') %>"
+            aws_secret_access_key: "<%= File.read('/etc/gitlab/objectstorage/secretkey') %>"
+            host: {{ template "gitlab.minio.hostname" . }}
+            endpoint: {{ template "gitlab.minio.endpoint" . }}
+            path_style: true
+          {{- else if .Values.global.appConfig.packages.connection }}
+          connection: <%= YAML.load_file("/etc/gitlab/objectstorage/packages").to_json() %>
+          {{- end }}
+      pseudonymizer:
+        manifest: config/pseudonymizer.yml
+        upload:
+          remote_directory: {{ .Values.global.appConfig.pseudonymizer.bucket }}
+          {{- if .Values.global.minio.enabled }}
+          connection:
+            provider: AWS
+            region: us-east-1
+            aws_access_key_id: "<%= File.read('/etc/gitlab/objectstorage/accesskey') %>"
+            aws_secret_access_key: "<%= File.read('/etc/gitlab/objectstorage/secretkey') %>"
+            host: {{ template "gitlab.minio.hostname" . }}
+            endpoint: {{ template "gitlab.minio.endpoint" . }}
+            path_style: true
+          {{- else if .Values.global.appConfig.pseudonymizer.connection }}
+          connection: <%= YAML.load_file("/etc/gitlab/objectstorage/pseudonymizer").to_json() %>
+          {{- end }}
       pages:
         enabled: false
+      {{- with .Values.global.appConfig }}
+      ldap:
+      {{- if not .ldap.servers }}
+        enabled: false
+      {{- else }}
+        enabled: true
+        servers:
+{{ toYaml .ldap.servers | indent 10 }}
+      {{- end }}
+      omniauth:
+        enabled: {{ .omniauth.enabled }}
+        auto_sign_in_with_provider: {{ .omniauth.autoSignInWithProvider | quote }}
+        sync_profile_from_provider: {{ .omniauth.syncProfileFromProvider }}
+        sync_profile_attributes: {{ .omniauth.syncProfileAttributes }}
+        allow_single_sign_on: {{ .omniauth.allowSingleSignOn }}
+        block_auto_created_users: {{ .omniauth.blockAutoCreatedUsers }}
+        auto_link_ldap_user: {{ .omniauth.autoLinkLdapUser }}
+        auto_link_saml_user: {{ .omniauth.autoLinkSamlUser }}
+        external_providers: {{ .omniauth.externalProviders }}
+        {{- if .omniauth.providers }}
+        providers:
+        {{-   range $index, $entry := .omniauth.providers }}
+          - <%= YAML.load_file("/etc/gitlab/omniauth/{{ $entry.secret }}/provider").to_json() %>
+        {{-   end }}
+        {{- end }}
+      {{- end }}
       gitaly:
         client_path: /home/git/gitaly/bin
         token: "<%= File.read('/etc/gitlab/gitaly/gitaly_token') %>"
@@ -127,6 +190,11 @@ data:
     if [ -e /init-config/objectstorage ]; then
       mkdir -p /init-secrets/objectstorage
       cp -r /init-config/objectstorage/. /init-secrets/objectstorage/
+    fi
+
+    if [ -e /init-config/omniauth ]; then
+      mkdir -p /init-secrets/omniauth
+      cp -r /init-config/omniauth/. /init-secrets/omniauth/
     fi
 
     if [ ! -f /init-secrets/objectstorage/.s3cfg ]; then

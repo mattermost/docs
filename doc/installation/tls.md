@@ -18,7 +18,7 @@ using various tools. This chart comes ready to integrate with a popular choice [
 helm repo update
 helm dep update
 helm install ...
-  --set certmanager-issuer.email=you@example.local
+  --set certmanager-issuer.email=you@example.com
 ```
 
 Installing certmanager is controlled by the `certmanager.install` setting, and using it in the charts is controlled by the
@@ -32,7 +32,7 @@ It is possible to make use of an external `cert-manager` but provide an Issuer a
 ```
 helm install ...
   --set certmanager.install=false \
-  --set certmanager-issuer.email=you@example.local \
+  --set certmanager-issuer.email=you@example.com \
   --set global.ingress.annotations."kubernetes\.io/tls-acme"=true
 ```
 
@@ -76,7 +76,7 @@ Add your full chain certificates to the cluster as secrets, and then pass those 
 
 ```
 helm install ...
-  --set cert-manager.install=false \
+  --set certmanager.install=false \
   --set global.ingress.configureCertmanager=false \
   --set gitlab.unicorn.ingress.tls.secretName=RELEASE-gitlab-tls \
   --set registry.ingress.tls.secretName=RELEASE-registry-tls \
@@ -87,7 +87,7 @@ helm install ...
 
 These charts also provide the capability to provide a auto-generated self-signed wildcard certificate.
 This can be useful in environments where Let's Encrypt is not an option, but security via SSL is stil
-desired. This functionality is provided by the [shared-secrets](../charts/shared-secrets/README.md) chart.
+desired. This functionality is provided by the [shared-secrets](../charts/shared-secrets/index.md) chart.
 
 > **Note**: The `gitlab-runner` chart does not function properly with self-signed certificates. We recommend
 disabling it, as shown below.
@@ -95,7 +95,7 @@ disabling it, as shown below.
 ```
 helm install ...
   --set certmanager.install=false \
-  --set global.ingress.confgureCertmanager=false \
+  --set global.ingress.configureCertmanager=false \
   --set gitlab-runner.install=false
 ```
 

@@ -41,10 +41,10 @@ describe "Restoring a backup" do
     it 'Issue attachments should load correctly' do
       visit '/root/testproject1/issues/1'
 
-      image_selector = '#content-body > div.issue-details.issuable-details > div.detail-page-description.content-block > div:nth-child(2) > div > div.description.js-task-list-container.is-task-list-enabled > div.wiki > p > a > img'
+      image_selector = 'div.wiki > p > a > img'
 
       expect(page).to have_selector(image_selector)
-      image_src = page.evaluate_script("$('#{image_selector}')[0].src")
+      image_src = page.all("img.js-lazy-loaded")[1][:src]
 
       open(image_src) do |f|
         expect(f.status[0]).to eq '200'
@@ -70,7 +70,7 @@ describe "Restoring a backup" do
       object_storage.get_object(
         response_target: '/tmp/original_backup.tar',
         bucket: 'gitlab-backups',
-        key: '0_11.0.0-pre_gitlab_backup.tar'
+        key: '0_11.3.4-ee_gitlab_backup.tar'
       )
 
       cmd = 'mkdir -p /tmp/original_backup && tar -xf /tmp/original_backup.tar -C /tmp/original_backup'
