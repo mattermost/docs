@@ -267,7 +267,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Check for any [UserVoice](https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0) feature suggestions that were completed in the current release
       - Find the [release tweet](https://twitter.com/mattermosthq/status/854781715914555393) and insert a link to the tweet next to the feature that shipped with the release.
     - For the next release, create the following team meetings. If they conflict with existing meetings, check with meeting owner to reschedule or reschedule the release meeting
-      - Major Feature Complete Meeting on T-15 at 10:00am San Francisco time
+      - Feature Complete Meeting on T-15 at 10:00am San Francisco time
       - Judgment Day Meeting on T-13 at 10:00am San Francisco time
       - Code Complete Meeting on T-12 at 10:00am San Francisco time
       - Release Triage and Update Meeting each weekday starting at T-13 and ending at T-2 at 9:30am San Francisco time for PM, QA and release dev.
