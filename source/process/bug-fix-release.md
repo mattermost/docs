@@ -226,7 +226,6 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Prepare and post [release metrics](https://docs.google.com/spreadsheets/d/1Aoj4OTaWoyrKIcQNiHH1MVoRG51T20Y_0w2tg5oVw-M/edit#gid=825551144)
     - Post an MVP winner announcement in the [Contributors channel](https://pre-release.mattermost.com/core/channels/tickets)
     - Post key dates for the next release in the Release Discussion channel and remove links to RC candidates and testing spreadsheet from the header
-    - Post key dates for the next release in the header of the Release Discussion channel and remove links to RC candidates and testing spreadsheet
         - Make sure that statutory holidays for Canada and US are accounted for in the release dates
     - For the next release, create the following team meetings. If they conflict with existing meetings, check with meeting owner to reschedule or reschedule the release meeting
       - PM Release Update meeting on T-15 at 7:30am San Francisco time
