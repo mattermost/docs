@@ -1,10 +1,10 @@
 {{- if .Values.enabled -}}
-{{- if or .Values.rbac.create .Values.rbac.createClusterRole -}}
+{{- if and .Values.rbac.create (not .Values.controller.scope.enabled) -}}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: {{ template "nginx-ingress.fullname" . }}
-  namespace: {{ $.Release.Namespace }}
+  namespace: {{ .Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 roleRef:
@@ -13,7 +13,7 @@ roleRef:
   name: {{ template "nginx-ingress.fullname" . }}
 subjects:
   - kind: ServiceAccount
-    name: {{ template "nginx-ingress.fullname" . }}
-    namespace: {{ $.Release.Namespace }}
+    name: {{ template "nginx-ingress.serviceAccountName" . }}
+    namespace: {{ .Release.Namespace }}
 {{- end -}}
 {{- end -}}

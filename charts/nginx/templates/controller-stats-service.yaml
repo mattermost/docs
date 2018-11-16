@@ -7,7 +7,9 @@ metadata:
   namespace: {{ $.Release.Namespace }}
 {{- if .Values.controller.stats.service.annotations }}
   annotations:
-{{ toYaml .Values.controller.stats.service.annotations | indent 4 }}
+  {{- range $key, $value := .Values.controller.stats.service.annotations }}
+    {{ $key }}: {{ $value | quote }}
+  {{- end }}
 {{- end }}
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
@@ -30,7 +32,7 @@ spec:
       port: {{ .Values.controller.stats.service.servicePort }}
       targetPort: stats
   selector:
-    app: {{ template "name" . }}
+    app: {{ template "nginx-ingress.name" . }}
     component: "{{ .Values.controller.name }}"
     release: {{ .Release.Name }}
   type: "{{ .Values.controller.stats.service.type }}"

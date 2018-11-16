@@ -1,5 +1,5 @@
 {{- if .Values.enabled -}}
-{{- if or .Values.rbac.create .Values.rbac.createRole -}}
+{{- if .Values.rbac.create -}}
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
 metadata:
@@ -78,5 +78,12 @@ rules:
     verbs:
       - create
       - patch
+{{- if .Values.podSecurityPolicy.enabled }}
+  - apiGroups:      ['extensions']
+    resources:      ['podsecuritypolicies']
+    verbs:          ['use']
+    resourceNames:  [{{ template "nginx-ingress.fullname" . }}]
+{{- end }}
+
 {{- end -}}
 {{- end -}}
