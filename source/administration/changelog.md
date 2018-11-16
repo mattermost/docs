@@ -8,6 +8,85 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release date: 2018-12-16
 
+### Highlights
+
+ - Scrolling Overhaul
+ - Idiomatic error handling
+
+### Improvements
+
+ - Added ability to remove profile pictures.
+ - Removed support for automatically unmarshalling a plugin's server configuration, as there was no way to safely synchronize reads and writes to these public fields across multiple plugin threads without additional plugin coordination.
+
+#### Performance
+ - Return fewer user autocomplete matches.
+
+#### Bulk Import
+ - Added capability to export reactions of posts during bulk export.
+ - Added bulk import email intervals to specify an email batching interval during bulk import.
+ 
+#### CLI
+ - Added the ``team search`` CLI command to search for teams based on team names.
+ - Added ``webhook list`` CLI command to allow listing webhooks, for a team, or for all teams.
+ - Added a ``team list`` CLI command for listing commands under a team.
+ - Added CLI command "command delete" to allow deleting slash commands.
+ - Created CLI command ``config get``.
+ - Added CLI command ``config show``.
+ - Added ``team archive`` CLI command to archive a team by name.
+ - Added ``create webhook-incoming`` CLI command to create incoming webhook.
+ - Added ``command create`` to create slash commands in the CLI.
+ - Created ``config set`` CLI command.
+ 
+### Bug Fixes
+
+### Compatibility
+
+#### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Enterprise Edition:
+ - Added "TLSMinVer": "1.2", "TLSStrictTransport": false, "TLSStrictTransportMaxAge": 63072000, "TLSOverwriteCiphers": [],
+ - Added "GroupFilter": "",
+ 
+### API Changes
+
+#### Plugin API Changes
+ - Added ``getChannelMembersTimezone`` to get all timezones from users for a specific channel.
+ - Added paging to elasticsearch API.
+ - Added key value store set with expiry method to the plugin API.
+ - Added ``SetDefaultProfileImage`` to reset the user profile image to a generated one.
+ - Added ``GetChannelMembers`` method to the plugin API.
+ - Added a delete brand image action on the APIv4 to add ability to remove custom branding image.
+ - Added ``GetPostsForChannel`` method to plugin API.
+ - Added the plugin API equivalent of the ``model/client4.go`` to ``GetChannelStats`` method.
+ - ``GetEmojiImage`` added to plugin API as an equivalent in ``model/client4.go``.
+ - Added ``GetEmojiByName`` method to plugin API as an equivalent in ``model/client4.go``.
+ - Added ``GetUsersInTeam`` method to plugin API an an equilavent in ``model/client4.go``.
+ - Added ``GetUsersInChannel`` to plugin API.
+ - Added ``GetTeamsForUser`` to plugin API.
+ - Added ``GetUsersInChannelByStatus`` to plugin API.
+ 
+#### Database Changes
+
+#### Websocket Event Changes
+
+### Known Issues
+
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
+
+### Contributors
+
 
 
 ## Release v5.5
