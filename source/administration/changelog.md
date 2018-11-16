@@ -12,18 +12,35 @@ Release date: 2018-12-16
 
  - Scrolling Overhaul
  - Idiomatic error handling
+ - Removed support for WebRTC
 
 ### Improvements
 
- - Added ability to remove profile pictures.
+#### ?
+ - Enabled push notifications to use TPNS by default.
  - Removed support for automatically unmarshalling a plugin's server configuration, as there was no way to safely synchronize reads and writes to these public fields across multiple plugin threads without additional plugin coordination.
+ - Introduced mlog/human package to consume and reformat structured logging.
+ - Committs to migrate Mattermost Webapp to Redux.
+ 
+#### User Interface
+ - Added ability to remove profile pictures.
+ - Added an option to be able to clear search results.
+ 
+#### Notifications
+ - Added a channel notification setting to disable (or enable) @-channel @-here @-all notifications in specific channels.
 
 #### Performance
  - Return fewer user autocomplete matches.
+ 
+#### Plugins
+ - Added "min_server_version" in plugin.json manifest to enable built-in control for preventing load/enable of plugin if server version is not met.
 
 #### Bulk Import
  - Added capability to export reactions of posts during bulk export.
  - Added bulk import email intervals to specify an email batching interval during bulk import.
+ - Included favorite channels in bulk export.
+ - Included User Notify Props in the Bulk Export.
+ - Included the per-channel NotifyProps for Users in Bulk Export.
  
 #### CLI
  - Added the ``team search`` CLI command to search for teams based on team names.
@@ -36,6 +53,9 @@ Release date: 2018-12-16
  - Added ``create webhook-incoming`` CLI command to create incoming webhook.
  - Added ``command create`` to create slash commands in the CLI.
  - Created ``config set`` CLI command.
+ - Added ``modify-incoming webhook`` CLI command to modify incoming webhook.
+ - Added CLI command ``command create`` revision to check the ``EnableOnlyAdminIntegrations`` setting and to only allow team admins to create slash commands if this is set to ``true``.
+ - Added ``webhook create-outgoing`` command in the CLI.
  
 ### Bug Fixes
 
@@ -48,6 +68,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Enterprise Edition:
  - Added "TLSMinVer": "1.2", "TLSStrictTransport": false, "TLSStrictTransportMaxAge": 63072000, "TLSOverwriteCiphers": [],
  - Added "GroupFilter": "",
+ - Removed ``EnablePublicChannelsMaterialization``
+ - Removed ``"ExperimentalLimitClientConfig": false,``
+ - Removed ``"WebrtcSettings": {`` (all the settings)
  
 ### API Changes
 
@@ -78,6 +101,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``GetTeamsUnreadForUser`` to plugin API.
  - Added GetChannelMembersByIds to Plugin API.
  - Added ``GetFileLink`` method to plugin API.
+ - Added plugin API for ``UploadFile`` method.
+ - Added ``plugin methods`` to plugin API.
+ - Added ``GETEmojilist`` to plugin API.
+ - Added ``SetProfileImage`` to plugin API.
+ - Added ``GetTeamIcon`` plugin API method.
+ - Added ``SetTeamIcon`` to plugin API.
  
 #### Database Changes
 
