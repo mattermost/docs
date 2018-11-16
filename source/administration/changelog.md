@@ -58,6 +58,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``SetDefaultProfileImage`` to reset the user profile image to a generated one.
  - Added ``GetChannelMembers`` method to the plugin API.
  - Added a delete brand image action on the APIv4 to add ability to remove custom branding image.
+ - Added plugin API method to return user's profile image.
  - Added ``GetPostsForChannel`` method to plugin API.
  - Added the plugin API equivalent of the ``model/client4.go`` to ``GetChannelStats`` method.
  - ``GetEmojiImage`` added to plugin API as an equivalent in ``model/client4.go``.
@@ -66,6 +67,17 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``GetUsersInChannel`` to plugin API.
  - Added ``GetTeamsForUser`` to plugin API.
  - Added ``GetUsersInChannelByStatus`` to plugin API.
+ - Added ``GetChannelsForTeamForUser`` to plugin API.
+ - Added ``GetUsersByUsernames`` to plugin API.
+ - Added ``GetPostsSince()`` to plugin API.
+ - Added ``GetPostsAfter()`` to plugin API.
+ - Added ``GetPostsBefore()`` to plugin API.
+ - Added ``GetPostThread()`` to plugin API.
+ - Added plugin API for ``GetEmoji`` method.
+ - Added plugin API for ``SearchChannels`` method.
+ - Added ``GetTeamsUnreadForUser`` to plugin API.
+ - Added GetChannelMembersByIds to Plugin API.
+ - Added ``GetFileLink`` method to plugin API.
  
 #### Database Changes
 
