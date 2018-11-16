@@ -156,6 +156,22 @@ data:
           {{- else if .Values.global.appConfig.packages.connection }}
           connection: <%= YAML.load_file("/etc/gitlab/objectstorage/packages").to_json() %>
           {{- end }}
+      pseudonymizer:
+        manifest: config/pseudonymizer.yml
+        upload:
+          remote_directory: {{ .Values.global.appConfig.pseudonymizer.bucket }}
+          {{- if .Values.global.minio.enabled }}
+          connection:
+            provider: AWS
+            region: us-east-1
+            aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
+            aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
+            host: {{ template "gitlab.minio.hostname" . }}
+            endpoint: {{ template "gitlab.minio.endpoint" . }}
+            path_style: true
+          {{- else if .Values.global.appConfig.pseudonymizer.connection }}
+          connection: <%= YAML.load_file("/etc/gitlab/objectstorage/pseudonymizer").to_json() %>
+          {{- end }}
       pages:
         enabled: false
       mattermost:
@@ -176,11 +192,33 @@ data:
         key: /etc/gitlab/registry/gitlab-registry.key
         issuer: {{ .Values.registry.tokenIssuer }}
       gitlab_ci:
+      {{- with .Values.global.appConfig }}
       ldap:
+      {{- if not .ldap.servers }}
         enabled: false
-      kerberos:
-        enabled: false
+      {{- else }}
+        enabled: true
+        servers:
+{{ toYaml .ldap.servers | indent 10 }}
+      {{- end }}
       omniauth:
+        enabled: {{ .omniauth.enabled }}
+        auto_sign_in_with_provider: {{ .omniauth.autoSignInWithProvider | quote }}
+        sync_profile_from_provider: {{ .omniauth.syncProfileFromProvider }}
+        sync_profile_attributes: {{ .omniauth.syncProfileAttributes }}
+        allow_single_sign_on: {{ .omniauth.allowSingleSignOn }}
+        block_auto_created_users: {{ .omniauth.blockAutoCreatedUsers }}
+        auto_link_ldap_user: {{ .omniauth.autoLinkLdapUser }}
+        auto_link_saml_user: {{ .omniauth.autoLinkSamlUser }}
+        external_providers: {{ .omniauth.externalProviders }}
+        {{- if .omniauth.providers }}
+        providers:
+        {{-   range $index, $entry := .omniauth.providers }}
+          - <%= YAML.load_file("/etc/gitlab/omniauth/{{ $entry.secret }}/provider").to_json() %>
+        {{-   end }}
+        {{- end }}
+      {{- end }}
+      kerberos:
         enabled: false
       shared:
       gitaly:
@@ -234,6 +272,10 @@ data:
       if [ -e "${config_dir}/objectstorage" ]; then
         mkdir -p "${secret_dir}/objectstorage"
         cp -v -r "${config_dir}/objectstorage/." "${secret_dir}/objectstorage/"
+      fi
+      if [ -e "${config_dir}/omniauth" ]; then
+        mkdir -p "${secret_dir}/omniauth"
+        cp -v -r "${config_dir}/omniauth/." "${secret_dir}/omniauth/"
       fi
       if [ -e "${config_dir}/smtp/smtp-password" ]; then
         mkdir -p "${secret_dir}/smtp"

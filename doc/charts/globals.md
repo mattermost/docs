@@ -247,7 +247,7 @@ For futher details on these settings, see the documentation within the
 
 ## Configure Gitaly settings
 
-The GitLab global Gitaly settings are located under the `global.gitaly` key.
+The global Gitaly settings are located under the `global.gitaly` key.
 
 ```YAML
 global:
@@ -259,14 +259,102 @@ global:
     external:
       - name: node1
         hostname: node1.example.com
-        port: 8079
+        port: 8075
     authToken:
       secret: gitaly-secret
       key: token
 ```
 
-For further details on these settings, see the documentation within the
-[unicorn chart](gitlab/unicorn/index.md#gitaly)
+### Gitaly hosts
+
+[Gitaly][gitaly] is a service that provides high-level RPC access to Git repositories,
+which handles all Git calls made by GitLab.
+
+Administrators can chose to use Gitaly nodes in the following ways:
+- internal to the chart, as part of a `StatefulSet` via [Gitaly chart](gitlab/gitaly/)
+- external to the chart, as external pets
+- mixed environment using both internal and external nodes
+
+See [Repostiry Storage Paths][storage] documentation for details on managing which
+nodes will be used for new projects.
+
+**NOTE:** If `gitaly.host` is provided, `gitaly.internal` and `gitaly.external`
+properties will _be ignored_. See [deprecated Gitaly settings](#deprecated-gitaly-settings).
+
+#### Internal
+
+The `internal` key currently consist of one key, `names`. `names` is a list of
+[storage names][storage] to be managed by chart. For each name listed here, _in logical order_,
+one pod will be spawned, named `${releaseName}-gitaly-${ordinal}`, where `ordinal` is
+the index within the `names` list. If dynamic provisioning is enabled, the `PersistentVolumeClaim` will match.
+
+This list defaults to `['default']`, which provides for 1 pod related to one [storage path][storage].
+
+**NOTE:** Manual scaling of this item is required, adding or removing entries in
+`gitaly.internal.names`. When scaling down, any repository
+that has not been moved to another node will become unavailable. Because the
+Gitaly chart is a `StatefulSet`, dynamically provisioned disks _will not_
+be reclaimed. This means the data disks will persist, and the data on them can be
+accessed when the set is scaled up again by re-adding a node to the `names` list.
+
+A sample [configuration of multiple internal nodes](../../examples/gitaly/values-multiple-internal.yaml)
+can be found under the examples folder.
+
+#### External
+
+The `external` key provides a configuration for Gitaly nodes external to the cluster.
+Each item of this list has 3 keys:
+- `name`: the name of the [storage][storage]
+- `hostname`: the host of Gitaly services
+- `port`: (optional) the port number to reach the host on. Defaults to `8075`.
+
+**NOTE:** You must have an entry with `name: default`.
+
+A sample [configuration of multiple external nodes](../../examples/gitaly/values-multiple-external.yaml)
+can be found under the examples folder.
+
+#### Mixed
+
+It is possible to use both internal and external Gitaly nodes. Some caveats should
+be noted:
+- There must always be a node named `default`, which Internal provides by default.
+- External nodes will be populated first, then Internal.
+
+A sample [configuration of mixed internal and external nodes](../../examples/gitaly/values-multiple-mixed.yaml)
+can be found under the examples folder.
+
+### authToken
+
+The `authToken` attribute for Gitaly has to sub keys:
+- `secret` defines the name of the kubernetes `Secret` to pull from
+- `key` defines the name of the key in the above secret that contains the authToken.
+
+**NOTE:** All Gitaly nodes **must** to share the same authentication token.
+
+### Deprecated Gitaly settings
+
+#### host
+
+**Deprecated**
+
+The hostname of the Gitaly server to use. This can be omitted in lieu of `serviceName`.
+
+If this setting is used, it will override any values of `internal` or `external`.
+
+#### port
+
+**Deprecated**
+
+The port on which to connect to the Gitaly server. Defaults to `8075`.
+
+#### serviceName
+
+**Deprecated**
+
+The name of the `service` which is operating the Gitaly server. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Gitaly as a part of the overall GitLab chart. This will default to `gitaly`
+
+[gitaly]: https://gitlab.com/gitlab-org/gitaly
+[storage]: https://docs.gitlab.com/ee/administration/repository_storage_paths.html
 
 ## Configure Minio settings
 
@@ -344,6 +432,10 @@ global:
         key: password
       mailbox: inbox
       idleTimeout: 60
+    pseudonymizer:
+      configMap:
+      bucket: gitlab-pseudo
+      connection: {}
 ```
 
 [unicorn]: gitlab/unicorn/index.md
@@ -495,10 +587,220 @@ region: us-east-1
 
 [artifactscon]: https://docs.gitlab.com/ee/administration/job_artifacts.html#s3-compatible-connection-settings
 
-
 ### Incoming email settings
 
 These settings are explained in [command line options page](../installation/command-line-options.md#incoming-email-configuration).
+
+### LDAP
+
+#### ldap.servers
+
+This setting allows for the configuration of [LDAP](https://docs.gitlab.com/ee/administration/auth/ldap.html) user authentication. It is presented as a map, which will be translated into the the appropriate LDAP servers configuration in `gitlab.yml`, as with an installation from source.
+
+An example configuration snippet:
+```YAML
+ldap:
+  servers:
+    # 'main' is the GitLab 'provider ID' of this LDAP server
+    main:
+      label: 'LDAP'
+      host: '_your_ldap_server'
+      port: 636
+      uid: 'sAMAccountName'
+      bind_dn: 'cn=administrator,cn=Users,dc=domain,dc=net'
+```
+
+Example configuration `--set` items, when using the global chart:
+```
+--set global.appConfig.ldap.servers.main.label='LDAP' \
+--set global.appConfig.ldap.servers.main.host='your_ldap_server' \
+--set global.appConfig.ldap.servers.main.port='636' \
+--set global.appConfig.ldap.servers.main.uid='sAMAccountName' \
+--set global.appConfig.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'
+```
+
+Commas are considered [special characters](https://github.com/kubernetes/helm/blob/master/docs/using_helm.md#the-format-and-limitations-of---set) within Helm `--set` items. Be sure to escape commas in values such as `bind_dn`: `--set global.appConfig.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'`
+
+### OmniAuth
+
+GitLab can leverage OmniAuth to allow users to sign in using Twitter, GitHub, Google, and other popular services. Expanded documentation can be found in [OmniAuth documentation][omniauth] for GitLab.
+
+```YAML
+omniauth:
+  enabled: false
+  autoSignInWithProvider:
+  syncProfileFromProvider: []
+  syncProfileAttributes: ['email']
+  allowSingleSignOn: ['saml']
+  blockAutoCreatedUsers: true
+  autoLinkLdapUser: false
+  autoLinkSamlUser: false
+  externalProviders: []
+  providers: []
+  # - secret: gitlab-google-oauth2
+  #   key: provider
+```
+
+#### enabled
+
+Enable / disable the use of OmniAuth with GitLab.
+
+Defaults to `false`
+
+#### autoSignInWithProvider
+
+Single provider name to be allowed to automatically sign in. This should match the name of the provider, such as `saml` or `google_oauth2`.
+
+Defaults to `nil`
+
+#### syncProfileFromProvider
+
+List of provider names that GitLab should automatically sync profile information from. Entries should match the name of the provider, such as `saml` or `google_oauth2`
+
+Defaults to `[]`
+
+See [Keep OmniAuth user profiles up to date][omniauth-profiles]
+
+#### syncProfileAttributes
+
+List of profile attributes to sync from the provider upon login. See [Keep OmniAuth user profiles up to date][omniauth-profiles] for options.
+
+Defaults to `['email']`
+
+#### allowSingleSignOn
+
+Enable the automatic creation of accounts when signing in with OmniAuth.
+
+Defaults to `false`
+
+#### blockAutoCreatedUsers
+
+If `true` auto created users will be blocked by default and will have to be unblocked by an administrator before they are able to sign in.
+
+Defaults to `true`
+
+#### autoLinkLdapUser
+
+`autoLinkLdapUser` can be used if you have LDAP / ActiveDirectory integration enabled. When enabled, users automatically created through OmniAuth will be linked to their LDAP entry as well.
+
+Defaults to `false`
+
+#### autoLinkSamlUser
+
+`autoLinkSamlUser` can be used if you have SAML integration enabled. When enabled, users automatically created through OmniAuth will be linked to their SAML entry as well.
+
+Defaults to `false`
+
+#### externalProviders
+
+You can define which OmniAuth providers you want to be `external` so that all users **creating accounts, or logging in via these providers** will not be able to have access to internal projects. You will need to use the full name of the provider, like `google_oauth2` for Google.
+
+Defaults to `[]`
+
+See [Configure OmniAuth Providers as External](https://docs.gitlab.com/ee/integration/omniauth.html#configure-omniauth-providers-as-external)
+
+#### providers
+
+`providers` is presented as an array of maps that are used to populate `gitlab.yml` as when installed from source. The available selection of [Supported Providers](https://docs.gitlab.com/ee/integration/omniauth.html#supported-providers) can be found in GitLab documentation.
+
+Member items:
+- `secret`: (required) The name of a Kubernetes `Secret` containing the provider block.
+- `key`: (optional) The name of the key in the `Secret` containing provider block. Defaults to `provider`
+
+The `Secret` for these entries contains YAML or JSON formatted blocks, as describe in [OmniAuth Providers][omniauth-providers]. To create this secret, follow the appropriate instructions for retrieval of these items, and create a YAML or JSON file.
+
+Example of configuration of Google OAuth2:
+
+```YAML
+name: google_oauth2
+label: Google
+app_id: 'APP ID'
+app_secret: 'APP SECRET'
+args:
+  access_type: offline
+  approval_prompt: ''
+```
+
+This content can be saved `provider.yaml`, and then a secret created from it: `kubectl create secret generic -n NAMESPACE SECRET_NAME --from-file=provider=provider.yaml`
+
+Once created, the `providers` are enabled by providing the map in configuration, as shown below.
+
+```YAML
+omniauth:
+  providers:
+    - secret: gitlab-google-oauth2
+    - secret: gitlab-azure-oauth2
+    - secret: gitlab-cas3
+```
+
+Example configuration `--set` items, when using the global chart:
+```
+--set global.appConfig.omniauth.providers[0].secret=gitlab-google-oauth2 \
+```
+
+Due to the complexity of using `--set` arguments, a user may wish to use a YAML snippet, passed to `helm` with `-f omniauth.yaml`.
+
+Defaults to `[]`.
+
+### Pseudonymizer settings
+
+```
+global:
+  appConfig:
+    pseudonymizer:
+      configMap:
+      bucket: gitlab-pseudo
+      connection: {}
+```
+
+Use these settings to configure [Pseudonymizer service](https://docs.gitlab.com/ee/administration/pseudonymizer.html)
+
+#### configMap
+
+Name of the configmap having custom manifest file. Defaults to empty.
+
+GitLab ships with a [default manifest file for Pseudonymizer](https://gitlab.com/gitlab-org/gitlab-ee/blob/master/config/pseudonymizer.yml).
+Users can provide a custom one as a configmap. First, create a configmap
+
+```bash
+kubectl create configmap <name of the configmap> --from-file=pseudonymizer.yml=<path to pseudonymizer_config.yml>
+```
+
+**`Note:`** Please make sure the key specified in the above command to create
+configmap is `pseudonymizer.yml`.  It is used to point the service to the
+correct location and thus an incorrect key will cause Pseudonymizer to not work.
+
+Pass the argument `--set global.appConfig.pseudonymizer.configMap=<name of the configmap>`
+to `helm install` command to instruct GitLab to use this manifest instead of the
+default one.
+
+#### bucket
+
+Name of the bucket to use from object storage provider. Defaults to
+`gitlab-pseudo`.
+
+#### connection
+
+Details of the Kubernetes secret that contains connection information for the
+object storage provider. The contents of this secret should be a yaml config file.
+
+Defaults to `{}` and will be ignored if `global.minio.enabled` is `true`.
+
+This property has two sub-keys: `secret` and `key`.
+- `secret` is the name of a Kubernetes Secret. This value is required to use external object storage.
+- `key` is the name of the key in the secret which houses the YAML block. Defaults to `connection`.
+
+The content of the secret matches to [Fog](https://github.com/fog), and is
+different between provider modules.
+
+Example contents to be placed in the secret:
+
+```
+provider: AWS
+aws_access_key_id: BOGUS_ACCESS_KEY
+aws_secret_access_key: BOGUS_SECRET_KEY
+region: us-east-1
+```
 
 ## Configure GitLab Shell
 
@@ -564,3 +866,7 @@ global:
   application:
     create: true
 ```
+
+[omniauth]: https://docs.gitlab.com/ee/integration/omniauth.html
+[omniauth-providers]: https://docs.gitlab.com/ee/integration/omniauth.html
+[omniauth-profiles]: https://docs.gitlab.com/ee/integration/omniauth.html#keep-omniauth-user-profiles-up-to-date

@@ -83,6 +83,34 @@ global:
       proxy_download: true
       bucket:
       connection: {}
+    ldap:
+      servers: {}
+      # 'main' is the GitLab 'provider ID' of this LDAP server
+      # main:
+      #   label: 'LDAP'
+      #   host: '_your_ldap_server'
+      #   port: 636
+      #   uid: 'sAMAccountName'
+      #   bind_dn: '_the_full_dn_of_the_user_you_will_bind_with'
+      #   password: '_the_password_of_the_bind_user'
+      #   encryption: 'plain'
+    omniauth:
+      enabled: false
+      autoSignInWithProvider:
+      syncProfileFromProvider: []
+      syncProfileAttributes: ['email']
+      allowSingleSignOn: ['saml']
+      blockAutoCreatedUsers: true
+      autoLinkLdapUser: false
+      autoLinkSamlUser: false
+      externalProviders: []
+      providers: []
+      # - secret: gitlab-google-oauth2
+      #   key: provider
+    pseudonymizer:
+      configMap:
+      bucket:
+      connection: {}
 gitaly:
   # host: '0.0.0.0'
   # port: 8075
@@ -128,6 +156,8 @@ cron_jobs: {}
   #   cron: "0 * * * *"
   # pages_domain_verification_cron_worker:
   #   cron: "*/15 * * * *"
+  # pseudonymizer_worker:
+  #   cron: "0 * * * *"
 
 trusted_proxies: []
 

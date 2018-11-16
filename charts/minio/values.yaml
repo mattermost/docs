@@ -124,6 +124,7 @@ defaultBuckets:
   - name: gitlab-backups
   - name: gitlab-packages
   - name: tmp
+  - name: gitlab-pseudo
   ## If enabled, must be a string with length > 0
   # - name: example
   ## Can be one of none|download|upload|public, defaults to `none`
