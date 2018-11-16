@@ -32,6 +32,8 @@ Notes:
     - If the dot release takes place during a regular release, update ``ci-linux-mysql-prev`` to dot-release RCs for the previous release and keep ``rctesting.reddogsofwar`` on the latest regular release version
     - Test the new RC to verify fixes merged to the release branch work
     - Post in Release Discussion channel after testing
+2. Logistics:
+    - If the security researcher has not previously received a security researcher mug, order one for them 
 
 ### D. (T-minus 0 working days) Release Build Cut
 
