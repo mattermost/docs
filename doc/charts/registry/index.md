@@ -86,6 +86,15 @@ image:
   - name: my-secondary-secret-name
 ```
 
+### annotations
+`annotations` allows you to add annotations to the registry pods. 
+
+Below is an example use of `annotations`
+```YAML
+annotations:
+  kubernetes.io/example-annotation: annotation-value
+``` 
+
 ## Enable the sub-chart
 
 They way we've chosen to implement compartmentalized sub-charts includes the ability to disable the components that you may not want in a given deployment. For this reason, the first settings you should decided upon is `enabled:`.

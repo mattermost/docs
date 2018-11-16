@@ -60,6 +60,15 @@ image:
   - name: my-secondary-secret-name
 ```
 
+### annotations
+`annotations` allows you to add annotations to the sidekiq pods. 
+
+Below is an example use of `annotations`
+```YAML
+annotations:
+  kubernetes.io/example-annotation: annotation-value
+``` 
+
 ## Using the Community Edition of this chart
 
 By default, the Helm charts use the Enterprise Edition of GitLab. If desired, you can instead use the Community Edition. Learn more about the [difference between the two](https://about.gitlab.com/installation/ce-or-ee/).

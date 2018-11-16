@@ -63,6 +63,15 @@ image:
   - name: my-secondary-secret-name
 ```
 
+### annotations
+`annotations` allows you to add annotations to the gitaly pods.
+
+Below is an example use of `annotations`
+```YAML
+annotations:
+  kubernetes.io/example-annotation: annotation-value
+``` 
+
 ## External Services
 
 This chart should be attached the Unicorn service, and should also use the same Redis as the attached Unicorn service.

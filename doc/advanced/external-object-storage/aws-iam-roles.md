@@ -1,7 +1,7 @@
 # IAM roles for AWS
 
 The default configuration for external object storage in the charts is to use access and secret keys. 
-It is also possible to use IAM roles instead in combination with [kube2iam](https://github.com/jtblin/kube2iam) or [kiam](https://github.com/uswitch/kiam). 
+It is also possible to use IAM roles in combination with [kube2iam](https://github.com/jtblin/kube2iam) or [kiam](https://github.com/uswitch/kiam). 
 
 ## IAM role
 
@@ -16,10 +16,10 @@ IAM roles can be specified by adding annotations and changing the secrets, as sp
 An IAM role can be specified via the annotations key:
 
 ```
---set registry.annotations."iam\.amazonaws\.com/role"=gitlab-registry
+--set registry.annotations."iam\.amazonaws\.com/role"=<role name>
 ```
 
-The `registry-storage.yaml` secret can be specified without access and secret key:
+When creating the [registry-storage.yaml](./index.md#registry-example) secret, omit the access and secret key:
 
 ```yaml
 s3:
@@ -28,16 +28,19 @@ s3:
   region: us-east-1
 ```
 
+*Note*: If you provide the keypair, IAM role will be ignored. See [AWS documentation](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default) for more details. 
+
 ### LFS, Artifacts, Uploads
 
 For LFS, artifacts and uploads an IAM role can be specified via the annotations key in the `unicorn` and `sidekiq` configuration:
 
 ```
---set gitlab.sidekiq.annotations."iam\.amazonaws\.com/role"=gitlab-storage
---set gitlab.unicorn.annotations."iam\.amazonaws\.com/role"=gitlab-storage
+--set gitlab.sidekiq.annotations."iam\.amazonaws\.com/role"=<role name>
+--set gitlab.unicorn.annotations."iam\.amazonaws\.com/role"=<role name>
 ```
 
-The `object-storage.yaml` can also be specified without access and secret keys, but it is necessary to add the `use_iam_profile` key:
+For the [object-storage.yaml](./index.md#object-storage-example) secret, omit the access and secret key.
+As unicorn uses Fog for S3 storage, the [use_iam_profile](https://docs.gitlab.com/ee/administration/job_artifacts.html#s3-compatible-connection-settings) key should be added for Fog to use the role:
 
 ```yaml
 provider: AWS
@@ -47,13 +50,13 @@ region: us-east-1
 
 ### Backups
 
-The `task-runner` configuration also allows for annotations to be set to upload backups to S3:
+The `task-runner` configuration allows for annotations to be set to upload backups to S3:
 
 ```
---set gitlab.task-runner.annotations."iam\.amazonaws\.com/role"=gitlab-backups
+--set gitlab.task-runner.annotations."iam\.amazonaws\.com/role"=<role name>
 ```
 
-The `s3cmd.config` secret can simply be changed to not include the access and secret keys:
+The [s3cmd.config](./index.md#backups-storage-example) secret is to be created without the access and secret keys:
 
 ```
 [default]
