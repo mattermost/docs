@@ -1609,7 +1609,7 @@ Enable cross-origin requests from
 Enable HTTP cross-origin requests from specific domains separated by spaces. Type ``*`` to allow CORS from any domain or leave it blank to disable it.
 
 .. note::
-  If the Site URL entered in this parameter and the URL are you using to access the site to make the configration changes in the System Console do not match, you will lose access to the System Console.  Please make sure you have entered this information correctly before saving.  If you do experience lost access System Console after changing this setting, you can remove or reset your entry in the config.json to restorce access. 
+  If the domain entered and the URL are you using to access the site to make the configration changes in the System Console do not match, you will lose access to the System Console.  Please make sure you have entered this information correctly before saving.  If you do experience lost access System Console after changing this setting, you can remove or reset your entry in the config.json to restorce access. 
   
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowCorsFrom": ""`` with string input.                                                                                 |
