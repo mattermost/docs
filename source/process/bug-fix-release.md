@@ -256,7 +256,6 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
         - If there are many unresolved tickets in the current release, ask the release manager to review the ticket queue
         - Otherwise, release the fix version (Actions > [...] > Release)
 4. Build:
-    - Put pre-release back on master
     - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
     - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the previous release version
 5. Dev:
