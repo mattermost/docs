@@ -21,10 +21,13 @@ Release date: 2018-12-16
  - Removed support for automatically unmarshalling a plugin's server configuration, as there was no way to safely synchronize reads and writes to these public fields across multiple plugin threads without additional plugin coordination.
  - Introduced mlog/human package to consume and reformat structured logging.
  - Committs to migrate Mattermost Webapp to Redux.
+ - Added aria labels to resolve accessibility issues with lack of alt text and unlabeled buttons.
  
 #### User Interface
  - Added ability to remove profile pictures.
  - Added an option to be able to clear search results.
+ - Ensured that system messages will render @{username} so that users can click the username and see the username popover.
+ - Group Messaging: Show existing group messages in the DM More list.
  
 #### Notifications
  - Added a channel notification setting to disable (or enable) @-channel @-here @-all notifications in specific channels.
@@ -34,6 +37,8 @@ Release date: 2018-12-16
  
 #### Plugins
  - Added "min_server_version" in plugin.json manifest to enable built-in control for preventing load/enable of plugin if server version is not met.
+ - Allow plugins to add channel header tooltips.
+ - Removed "System Console > Plugins > Configuration" page and moved enabling plugins setting to the Management page.
 
 #### Bulk Import
  - Added capability to export reactions of posts during bulk export.
