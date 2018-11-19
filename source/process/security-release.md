@@ -8,6 +8,8 @@ Notes:
 - All cut-off dates are based on 10am ([San Francisco Time](http://everytimezone.com/)) on the day stated.
 - T-minus counts are measured in "working days" (weekdays other than major holidays concurrent in US and Canada) prior to release day.
 
+// To be updated
+
 ### A. (T-minus 4 working days) Code complete
 
 1. Release Manager:
