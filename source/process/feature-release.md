@@ -213,6 +213,8 @@ Day when Leads and PMs decide which major features are included in the release, 
 
 ### J. (T-minus 2 working days) Release Build Cut
 
+// To be updated
+
 The final release is cut - RC cuts and bug fixes should be completed by this date. Only urgent and critical issues are considered for fixing.
 
 1. QA Release Manager:
@@ -260,6 +262,8 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Add links to [Admin guide](https://docs.mattermost.com/guides/administrator.html) in the release blog post where needed
 
 ### K. (T-minus 0 working days) Release Day
+
+// To be updated
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
