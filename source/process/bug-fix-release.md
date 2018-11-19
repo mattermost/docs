@@ -6,6 +6,8 @@ Notes:
 - All cut-off dates are based on 10am ([San Francisco Time](https://everytimezone.com/)) on the day stated.
 - T-minus counts are measured in "working days" (weekdays other than major holidays concurrent in US and Canada) prior to release day.
 
+// To be updated
+
 ### A. (Code complete date of previous release) Beginning of release
 
 Pre-work for the current release begins at the code complete date of the previous release. See "Code Complete" section below for details.
