@@ -9,6 +9,8 @@ Notes:
 - All cut-off dates are based on 10am (San Francisco Time) on the day stated.
 - T-minus counts are measured in "working days" (weekdays other than major holidays in the US and Canada) prior to release day.
 
+// To be updated
+
 ### A. (T-minus 15 working days) Cut-off for merging major features
 
 No pull requests for major features should be **merged** to the current release after this date. In special cases, exceptions can be made by the Release Manager.
