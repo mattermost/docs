@@ -21,6 +21,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Release.Name }}-shared-secrets-jobspec
+  namespace: {{ .Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 data:
