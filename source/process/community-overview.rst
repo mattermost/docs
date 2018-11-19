@@ -2,13 +2,11 @@
 Mattermost Community
 ============================================================
 
-At Mattermost, we be believe workplace messaging will become a leading platform for workflow and business process. We believe building such a platform on open source infrastructure has powerful advantages.  
+Everything we do at Mattermost is in service of our "Community". This includes the open source world of contributors, the commercial world of customers and partners, and world in-between, of users of our products and services.
 
-We consider people who share these beliefs, and who seek to benefit from or influence the Mattermost open source project, to be part of the "Mattermost Community". 
+- Note: We DO NOT subscribe to the dogmatic definition of "Community" in some open source projects as being entirely non-commercial, where community recognition is revoked the moment someone pays you money (becoming a "Customer") or when you pay someone money ("becoming a "Employee") as part of their involvement in an open source project. In constrast, we believe a professional relationship with our work strengthens community ties. It's not at all disqualifying. 
 
-The success of Mattermost as an open source platform for messaging-based workflow and business process depends on empowering our community to build with us towards a shared vision. 
-
-The Mattermost community has two parts, Users and Contributors, detailed below. 
+The Mattermost community has two parts, Users and Contributors, some which overlap and some which do not, they're detailed below: 
 
 .. contents::
   :backlinks: top
