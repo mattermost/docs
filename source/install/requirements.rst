@@ -41,7 +41,7 @@ PC Web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "Chrome", "v56+"
+    "Chrome", "v61+"
     "Firefox", "v60+"
     "Safari", "v12+"
     "Internet Explorer", "v11*"
