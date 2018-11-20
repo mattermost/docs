@@ -368,7 +368,7 @@ mattermost command
     -  `mattermost command create`_ - Create a custom slash command for a specified team.
     -  `mattermost command delete`_ - Delete a slash command.
     -  `mattermost command move`_ - Move a slash command to a different team.
-    -  `mattermost command team list`_ - List all commands on specified teams or all teams by default.
+    -  `mattermost command list`_ - List all commands on specified teams or all teams by default.
 
 mattermost command create 
 ~~~~~~~~~~~~~~~~~~~~
@@ -434,7 +434,7 @@ mattermost command move
       sudo ./mattermost command move newteam oldteam:command-trigger-word
       sudo ./mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
       
-mattermost command team list
+mattermost command list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
