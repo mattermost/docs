@@ -8,7 +8,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release date: 2018-11-16
 
- - **Note: Enterprise Edition E20 customers running Elasticsearch, we are investigating search issues for Elasticsearch v6.0+ on Mattermost 5.4 and later**
+ - **Note: Enterprise Edition E20 customers running Elasticsearch, we have identified a bug preventing Elasticsearch v6.0+ from working in Mattermost 5.4 and 5.5. This issue will be resolved in 5.6.**
 
 ### Bug Fixes
  - Fixed an issue where clicking the two arrows to expand/collapse an image didn't work after posting an image.
@@ -59,7 +59,7 @@ Release date: 2018-11-16
 Release date: 2018-10-16
 
  - **Note: Mobile app version 1.13+ is required for servers 5.4+**
- - **Note: Enterprise Edition E20 customers running Elasticsearch, we are investigating search issues for Elasticsearch v6.0+ on Mattermost 5.4 and later**
+ - **Note: Enterprise Edition E20 customers running Elasticsearch, we have identified a bug preventing Elasticsearch v6.0+ from working in Mattermost 5.4 and 5.5. This issue will be resolved in 5.6.**
 
 - Mattermost v5.4.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
