@@ -125,6 +125,7 @@ mattermost
     -  `mattermost server`_ - Run the Mattermost server
     -  `mattermost team`_ - Management of teams
     -  `mattermost user`_ - Management of users
+    -  `mattermost webhook`_ - Management of webhooks
     -  `mattermost version`_ - Display version information
 
 mattermost channel
@@ -364,10 +365,10 @@ mattermost command
     Commands for slash command management.
 
   Child Commands
-    -  `mattermost command create`_ - Create a custom slash command for a specified team
-    -  `mattermost command delete`_ - Delete a slash command
-    -  `mattermost command move`_ - Move a slash command to a different team
-    -  `mattermost command team list`_ - List all commands on specified teams
+    -  `mattermost command create`_ - Create a custom slash command for a specified team.
+    -  `mattermost command delete`_ - Delete a slash command.
+    -  `mattermost command move`_ - Move a slash command to a different team.
+    -  `mattermost command team list`_ - List all commands on specified teams or all teams by default.
 
 mattermost command create 
 ~~~~~~~~~~~~~~~~~~~~
@@ -431,13 +432,13 @@ mattermost command move
     .. code-block:: none
 
       sudo ./mattermost command move newteam oldteam:command-trigger-word
-      sudo ./mattermost channel move newteam o8soyabwthjnf9qibfztje5a36h
+      sudo ./mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
       
 mattermost command team list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    List all commands on specified teams.
+    List all commands on specified teams or all teams by default.
 
   Format
     .. code-block:: none
@@ -458,7 +459,7 @@ mattermost config
   Child Command
     - `mattermost config get`_ - Gets the value of a config setting by its name in dot notation.
     - `mattermost config set`_ - Gets the value of a config setting by its name in dot notation.
-    - `mattermost config show`_ - Writes the server configuration to STDOUT in pretty-print format.
+    - `mattermost config show`_ - Prints the current mattermost configuration in an easy to read format.
     - `mattermost config validate`_ - Validate the configuration file.
 
 mattermost config get
@@ -507,7 +508,7 @@ mattermost config show
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Writes the server configuration to STDOUT in pretty-print format. 
+    Prints the current mattermost configuration in an easy to read format. 
 
   Format
     .. code-block:: none
@@ -546,10 +547,10 @@ mattermost export
    Commands for exporting data for compliance and for merging multiple Mattermost instances.
 
   Child Commands
-    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license
-    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_
-    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license
-    -  `mattermost export schedule`_ - Schedule an export job
+    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license.
+    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_.
+    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license.
+    -  `mattermost export schedule`_ - Schedule an export job.
 
 mattermost export actiance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -696,7 +697,7 @@ mattermost ldap
     Commands to configure and synchronize AD/LDAP.
 
   Child Command
-    -  `mattermost ldap idmigrate`_ - Migrate the LDAP Id Attribute to a new value
+    -  `mattermost ldap idmigrate`_ - Migrate the LDAP Id Attribute to a new value.
     -  `mattermost ldap sync`_ - Synchronize now
 
 mattermost ldap idmigrate
