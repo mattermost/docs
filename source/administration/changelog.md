@@ -8,6 +8,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release date: 2018-11-16
 
+ - **Note: Enterprise Edition E20 customers running Elasticsearch, we are investigating search issues for Elasticsearch v6.0+ on Mattermost 5.4 and later**
+
 ### Bug Fixes
  - Fixed an issue where clicking the two arrows to expand/collapse an image didn't work after posting an image.
  - Fixed an issue where switching authentication methods from email/password to SAML (OKTA and OneLogin) showed session expiry message instead of a success message.
