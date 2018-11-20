@@ -2,6 +2,14 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.2.5 (2018-11-20)
+
+### Other (2 changes)
+
+- Mount configuration files directly to /srv/gitlab/config instead of /var/opt/gitlab/config/gitlab. !565
+- Update GitLab Version to 11.4.6.
+
+
 ## 1.2.4 (2018-11-05)
 
 ### Other (1 change)
