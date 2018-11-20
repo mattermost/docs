@@ -25,16 +25,13 @@ No pull requests for major features should be **submitted** to the current relea
 
 1. QA Release Manager:
     - Post this checklist in Release Checklist channel
-2. QA - For each team:
+2. Each team (PM and QA own):
     - Follow that major feature PR reviews are prioritized and post a list of outstanding feature PRs in the Release Discussion channel
     - Check that major features for platform have a corresponding ticket for RN, and vice versa, where applicable
     - Check that all major features are behind a feature flag
-    - Confirm with PMs that each Enterprise feature is in the correct [pricing SKU](https://about.mattermost.com/pricing/)
-    - Review any features that are currently in beta and confirm with PMs if there are any to be promoted
+    - Check that each Enterprise feature is in the correct [pricing SKU](https://about.mattermost.com/pricing/)
+    - Review any features that are currently in beta and check if any are promoted
     - Confirm all config settings and new features have diagnostics
-3. PM - For each team:
-    - Prepare outline for release announcement based on your team's work. This includes an outline, benefits, order of major features, and which features have an accompanying screenshot. 
-    - Review outline with devs and QA in your team.
 
 ### C. (T-minus 15 working days) Cut-off for merging features
 
@@ -56,6 +53,8 @@ No pull requests for major features should be **merged** to the current release 
     - Draft Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version, including breaking changes or deprecated features in the release
 ). Follow that translations are prioritized at https://translate.mattermost.com/projects/mattermost/
+    - Prepare outline for release announcement based on team's work. This includes an outline, benefits, order of major features, and which features have an accompanying screenshot 
+    - Review outline with devs and QA in your team
 4. Dev Ops:
     - Cut release branch both for server and mobile
         - Merge database upgrade before cutting the branch
