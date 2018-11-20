@@ -1,5 +1,0 @@
----
-title: Mount configuration files directly to /srv/gitlab/config instead of /var/opt/gitlab/config/gitlab
-merge_request: 565
-author:
-type: other
