@@ -293,6 +293,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{.Release.Name }}-workhorse-config
+  namespace: {{ $.Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 data:

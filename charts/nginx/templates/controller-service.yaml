@@ -6,7 +6,9 @@ metadata:
   namespace: {{ $.Release.Namespace }}
 {{- if .Values.controller.service.annotations }}
   annotations:
-{{ toYaml .Values.controller.service.annotations | indent 4 }}
+  {{- range $key, $value := .Values.controller.service.annotations }}
+    {{ $key }}: {{ $value | quote }}
+  {{- end }}
 {{- end }}
   labels:
 {{- if .Values.controller.service.labels }}
@@ -15,6 +17,9 @@ metadata:
     component: "{{ .Values.controller.name }}"
 {{ include "gitlab.standardLabels" . | indent 4 }}
 spec:
+  # 0.31.0 gates this on `if .Values.controller.service.clusterIP`,
+  # but that breaks upgrades due to immutability.
+  # See https://github.com/helm/charts/pull/7933
   clusterIP: "{{ .Values.controller.service.clusterIP }}"
 {{- if .Values.controller.service.externalIPs }}
   externalIPs:
@@ -34,6 +39,7 @@ spec:
   healthCheckNodePort: {{ .Values.controller.service.healthCheckNodePort }}
 {{- end }}
   ports:
+    {{- if .Values.controller.service.enableHttp }}
     - name: http
       port: 80
       protocol: TCP
@@ -41,6 +47,8 @@ spec:
       {{- if (and (eq .Values.controller.service.type "NodePort") (not (empty .Values.controller.service.nodePorts.http))) }}
       nodePort: {{ .Values.controller.service.nodePorts.http }}
       {{- end }}
+    {{- end }}
+    {{- if .Values.controller.service.enableHttps }}
     - name: https
       port: 443
       protocol: TCP
@@ -48,6 +56,7 @@ spec:
       {{- if (and (eq .Values.controller.service.type "NodePort") (not (empty .Values.controller.service.nodePorts.https))) }}
       nodePort: {{ .Values.controller.service.nodePorts.https }}
       {{- end }}
+    {{- end }}
     - name: gitlab-shell
       port: {{ include "gitlab.shell.port" $ | int }}
       protocol: TCP
@@ -65,7 +74,7 @@ spec:
       targetPort: "{{ $key }}-udp"
   {{- end }}
   selector:
-    app: {{ template "name" . }}
+    app: {{ template "nginx-ingress.name" . }}
     component: "{{ .Values.controller.name }}"
     release: {{ .Release.Name }}
   type: "{{ .Values.controller.service.type }}"

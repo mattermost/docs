@@ -209,9 +209,9 @@ nginx-ingress:
         cpu: 5m
         memory: 5Mi
   rbac:
-    create: false
-    createClusterRole: false
-    createRole: true
+    create: true
+  serviceAccount:
+    create: true
 
 prometheus:
   install: true

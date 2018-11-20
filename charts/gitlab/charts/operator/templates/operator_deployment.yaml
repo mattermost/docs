@@ -3,6 +3,7 @@ apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: {{ template "fullname" . }}
+  namespace: {{ .Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 spec:

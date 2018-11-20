@@ -2,7 +2,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "name" -}}
+{{- define "nginx-ingress.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
 
@@ -62,6 +62,17 @@ We truncate at 63 chars because some Kubernetes name fields are limited to this 
 
 {{- define "nginx-ingress.tcp-configmap" -}}
 {{ default (printf "%s-%s" (include "nginx-ingress.fullname" .) "tcp") .Values.tcpExternalConfig }}
+{{- end -}}
+
+{{/*
+Create the name of the service account to use
+*/}}
+{{- define "nginx-ingress.serviceAccountName" -}}
+{{- if .Values.serviceAccount.create -}}
+    {{ default (include "nginx-ingress.fullname" .) .Values.serviceAccount.name }}
+{{- else -}}
+    {{ default "default" .Values.serviceAccount.name }}
+{{- end -}}
 {{- end -}}
 
 {{- define "nginx-ingress.controller.ingress-class" -}}
