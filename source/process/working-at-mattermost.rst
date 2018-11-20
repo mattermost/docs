@@ -100,13 +100,14 @@ Our culture is high trust and results-focused. We want people to take time away 
 
 When you take time-off, please remember:
 
-a) Block off time on your calendar so it's easy to see when you're away. 
+a) Discuss with your manager the dates you plan to take off, and decide who will be your backup.
 
-b) Discuss with your manager the dates you plan to take off, and decide who will be your backup.
+b) For meetings you'll miss, message the chair with any status update.
 
-c) For meetings you'll miss, message the chair with any status update.
+c) Post in the [Stand-up channel](https://pre-release.mattermost.com/private-core/channels/stand-up
+) the dates you'll be away and who'll be your backup. 
 
-d) Post in the Standup channel the dates you'll be away and who'll be your backup. Also, block off time in the shared "Mattermost Timeoff" calendar, so it's easy for the team to see who is going to be away.
+d) Block off time in the shared [Mattermost Timeoff calendar](https://calendar.google.com/calendar/embed?src=mattermost.com_mg3nulgf6e70e50ohlq2rrkcnc%40group.calendar.google.com&ctz=America%2FLos_Angeles), so it's easy for the team to see who is going to be away.
 
 There is no limit to how much time-off you can take when your work is meeting or exceeding expectations. We strongly recommend a minimum of 2 weeks per year.
 
