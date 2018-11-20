@@ -13,6 +13,7 @@ Release date: 2018-12-16
  - Scrolling Overhaul
  - Idiomatic error handling
  - Removed support for WebRTC
+ - Romanian language promoted out of beta
 
 ### Improvements
 
@@ -46,6 +47,7 @@ Release date: 2018-12-16
  - Included favorite channels in bulk export.
  - Included User Notify Props in the Bulk Export.
  - Included the per-channel NotifyProps for Users in Bulk Export.
+ - Added capability to bulk export custom emojis.
  
 #### CLI
  - Added the ``team search`` CLI command to search for teams based on team names.
