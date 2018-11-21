@@ -1,5 +1,0 @@
----
-title: Make LDAP and Omniauth configuration global to rails based containers
-merge_request: 567
-author:
-type: changed

@@ -2,6 +2,33 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.3.0 (2018-11-22)
+
+### Fixed (1 change)
+
+- Serve sidekiq assets directly from unicorn. !560
+
+### Changed (2 changes)
+
+- Make LDAP and Omniauth configuration global to rails based containers. !567
+- Pin the operator image to a specific sha digest. !571
+
+### Added (5 changes, 1 of them is from the community)
+
+- Add additional cleanup policy to Helm prehooks. !550
+- Add GitLab Rails, workhorse and runner secret to documentation. !552 (Maikel Vlasman)
+- Add support for Maven repositories. !558
+- Add support for Pseudonymizer. !562
+- Registry: default storage `delete` enabled. !579
+
+### Other (4 changes)
+
+- Add docs about using charts on OpenShift Origin. !555
+- Mount configuration files directly to /srv/gitlab/config instead of /var/opt/gitlab/config/gitlab. !565
+- Update nginx-ingress fork to 0.30.0. !578
+- Update GitLab Version to 11.5.0.
+
+
 ## 1.2.4 (2018-11-05)
 
 ### Other (1 change)
