@@ -275,7 +275,7 @@ This object is a member of the User object.
     <tr class="row-odd">
       <td valign="middle">mention_keys</td>
       <td valign="middle">string</td>
-      <td>Preference for custom non-case sensitive words that trigger mentions. Words must be separated by commas.</td>
+      <td>Preference for custom non-case sensitive words that trigger mentions. Words are separated by commas.</td>
     </tr>
   </table>
 
