@@ -26,6 +26,7 @@ Release date: 2018-12-16
  
 #### User Interface
  - Added ability to remove profile pictures.
+ - Added support for interactive dialogs.
  - Added an option to be able to clear search results.
  - Ensured that system messages will render @{username} so that users can click the username and see the username popover.
  - Group Messaging: Show existing group messages in the DM More list.
@@ -65,6 +66,7 @@ Release date: 2018-12-16
  - Added ``webhook create-outgoing`` command in the CLI.
  
 ### Bug Fixes
+ - Fixed an issue where pinned post list refreshed when user posted a new message.
 
 ### Compatibility
 
@@ -82,6 +84,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### API Changes
 
 #### Plugin API Changes
+
+- **Changed ``GetTeamMembers(teamId string, offset, limit int)`` to ``GetTeamMembers(teamId string, page, perPage int)`` to be clearer and consistent with other APIs**
+- **Changed ``GetPublicChannelsForTeam(teamId string, offset, limit int)`` to ``GetPublicChannelsForTeam(teamId string, page, perPage int)`` to be clearer and more consistent with other APIs**
  - Added ``getChannelMembersTimezone`` to get all timezones from users for a specific channel.
  - Added paging to elasticsearch API.
  - Added key value store set with expiry method to the plugin API.
