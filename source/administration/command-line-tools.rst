@@ -270,9 +270,9 @@ mattermost channel modify
   Options
     .. code-block:: none
 
-          --username [REQUIRED] Username of the user who is changing the channel privacy.
-          --public   Change a private channel to be public.
-          --private  Change a public channel to be private.
+          --username [REQUIRED]  Username of the user who is changing the channel privacy.
+          --public               Change a private channel to be public.
+          --private              Change a public channel to be private.
 
 mattermost channel move
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -389,17 +389,17 @@ mattermost command create
   Options
     .. code-block:: none
 
-          --title string  Command Title
-          --description string        Command Description
-          --trigger-word string [REQUIRED]     Command Trigger Word
-          --url  string   [REQUIRED]    Command Callback URL
-          --creator string  [REQUIRED]   Command Creator's Username
-          --response-username string 	Command Response Username
-          --icon string	Command icon URL
-          --autocomplete bool  Show command in autocomplete list
-          --autocompleteDesc string  Short command description for autocomplete list
-          --autocompleteHint string  Command arguments displayed as help in autocomplete list
-          --post bool Use POST method for callback URL
+          --title string                     Command Title
+          --description string               Command Description
+          --trigger-word string [REQUIRED]   Command Trigger Word
+          --url  string   [REQUIRED]         Command Callback URL
+          --creator string  [REQUIRED]       Command Creator's Username
+          --response-username string 	     Command Response Username
+          --icon string	                     Command icon URL
+          --autocomplete bool                Show command in autocomplete list
+          --autocompleteDesc string          Short command description for autocomplete list
+          --autocompleteHint string          Command arguments displayed as help in autocomplete list
+          --post bool                        Use POST method for callback URL
 
 mattermost command delete
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -457,16 +457,16 @@ mattermost config
     Commands for managing the configuration file.
 
   Child Command
-    - `mattermost config get`_ - Gets the value of a config setting by its name in dot notation.
-    - `mattermost config set`_ - Gets the value of a config setting by its name in dot notation.
-    - `mattermost config show`_ - Prints the current mattermost configuration in an easy to read format.
+    - `mattermost config get`_ - Retrieve the value of a config setting by its name in dot notation.
+    - `mattermost config set`_ - Set the value of a config setting by its name in dot notation.
+    - `mattermost config show`_ - Print the current mattermost configuration in an easy to read format.
     - `mattermost config validate`_ - Validate the configuration file.
 
 mattermost config get
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Gets the value of a config setting by its name in dot notation. 
+    Retrieve the value of a config setting by its name in dot notation. 
 
   Format
     .. code-block:: none
@@ -487,7 +487,7 @@ mattermost config set
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Sets the value of a config setting by its name in dot notation. Accepts multiple values for array settings. 
+    Set the value of a config setting by its name in dot notation. Accepts multiple values for array settings. 
 
   Format
     .. code-block:: none
@@ -508,7 +508,7 @@ mattermost config show
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Prints the current mattermost configuration in an easy to read format. 
+    Print the current mattermost configuration in an easy to read format. 
 
   Format
     .. code-block:: none
@@ -1076,7 +1076,7 @@ mattermost team archive
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Archive teams based on name.
+    Archive teams based on name. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
     .. code-block:: none
@@ -1172,7 +1172,7 @@ mattermost team search
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Search for teams based on name. 
+    Search for teams based on name. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
     .. code-block:: none
@@ -1574,12 +1574,12 @@ mattermost webhook create-incoming
   Options
     .. code-block:: none
 
-          --channel string Channel ID
-          --user string User ID
-          --display-name string Incoming webhook display name
-          --description string Incoming webhook description
-          --lock-to-channel boolean (True/False) Lock incoming webhook to channel
-          --icon [iconURL] Icon URL
+          --channel string           Channel ID
+          --user string              User ID
+          --display-name string      Incoming webhook display name
+          --description string       Incoming webhook description
+          --lock-to-channel boolean  (True/False) Lock incoming webhook to channel
+          --icon [iconURL]           Icon URL
 
 mattermost webhook create-outgoing
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1599,16 +1599,16 @@ mattermost webhook create-outgoing
 
   Options
     .. code-block:: none
-          --team string [REQUIRED] Team name or ID
-          --channel string Channel name or ID
-          --user string [REQUIRED] User username, email, or ID (required)
-          --display-name string [REQUIRED] Outgoing webhook display name
-          --description string Outgoing webhook description
-          --trigger-words string [REQUIRED] Words to trigger webhook (word1\nword2)
-          --trigger-when. Integer When to trigger webhook (either when trigger word is first (enter 1) or when it's anywhere (enter 0))
-          --icon [iconURL] Icon URL
-          --url string [REQUIRED] Callback URLs (url1\url2)
-          --content-type string Content-type
+          --team string [REQUIRED]           Team name or ID
+          --channel string                   Channel name or ID
+          --user string [REQUIRED]           User username, email, or ID (required)
+          --display-name string [REQUIRED]   Outgoing webhook display name
+          --description string               Outgoing webhook description
+          --trigger-words string [REQUIRED]  Words to trigger webhook (word1\nword2)
+          --trigger-when integer             When to trigger webhook (either when trigger word is first (enter 1) or when it's anywhere (enter 0))
+          --icon [iconURL]                   Icon URL
+          --url string [REQUIRED]            Callback URLs (url1\url2)
+          --content-type string              Content-type
 	  
 mattermost webhook list
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1651,11 +1651,11 @@ mattermost webhook modify-incoming
   Options
     .. code-block:: none
 
-          --channel string Channel ID
-          --display-name string Incoming webhook display name
-          --description string Incoming webhook description
-          --lock-to-channel boolean (True/False) Lock incoming webhook to channel
-          --icon [iconURL] Icon URL    
+          --channel string              Channel ID
+          --display-name string         Incoming webhook display name
+          --description string          Incoming webhook description
+          --lock-to-channel boolean     (True/False) Lock incoming webhook to channel
+          --icon [iconURL]              Icon URL    
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
