@@ -489,7 +489,7 @@ Emoji object
     <tr class="row-odd">
       <td valign="middle">name</td>
       <td valign="middle">string</td>
-      <td>The scheme name.</td>
+      <td>The emoji name.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">image</td>
