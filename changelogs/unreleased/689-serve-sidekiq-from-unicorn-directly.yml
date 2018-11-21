@@ -1,5 +1,0 @@
----
-title: Serve sidekiq assets directly from unicorn
-merge_request: 560
-author:
-type: fixed
