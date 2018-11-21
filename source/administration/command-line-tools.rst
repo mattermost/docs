@@ -125,8 +125,8 @@ mattermost
     -  `mattermost server`_ - Run the Mattermost server
     -  `mattermost team`_ - Management of teams
     -  `mattermost user`_ - Management of users
-    -  `mattermost webhook`_ - Management of webhooks
     -  `mattermost version`_ - Display version information
+    -  `mattermost webhook`_ - Management of webhooks
 
 mattermost channel
 -----------------
@@ -527,7 +527,7 @@ mattermost config validate
     Makes sure the configuration file has the following properties:
 
     - Is valid JSON.
-    - Has attributes of the correct type, such as *bool*, *int*, and *str*.
+    - Has attributes of the correct type, such as *bool*, *int* and *str*.
     - All entries are valid. For example, checks that entries are below the maximum length.
 
     Format
@@ -1037,13 +1037,13 @@ mattermost team
     Commands to manage teams.
 
   Child Commands
-    -  `mattermost team add`_ - Add users to a team
-    -  `mattermost team archive`_ - Archive teams based on name
-    -  `mattermost team create`_ - Create a team
-    -  `mattermost team delete`_ - Delete a team
-    -  `mattermost team list`_ - List all teams
-    -  `mattermost team remove`_ - Remove users from a team
-    -  `mattermost team search`_ - Search for teams based on name
+    -  `mattermost team add`_ - Add users to a team.
+    -  `mattermost team archive`_ - Archive teams based on name.
+    -  `mattermost team create`_ - Create a team.
+    -  `mattermost team delete`_ - Delete a team.
+    -  `mattermost team list`_ - List all teams.
+    -  `mattermost team remove`_ - Remove users from a team.
+    -  `mattermost team search`_ - Search for teams based on name.
 
 .. _team-value-note:
 
@@ -1559,7 +1559,7 @@ mattermost webhook create-incoming
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Create incoming webhook within specific channel 
+    Create incoming webhook within specific channel.
 
   Format
     .. code-block:: none
@@ -1585,7 +1585,7 @@ mattermost webhook create-outgoing
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Create outgoing webhook which allows external posting of messages from a specific channel 
+    Create outgoing webhook which allows external posting of messages from a specific channel.
 
   Format
     .. code-block:: none
@@ -1636,7 +1636,7 @@ mattermost webhook modify-incoming
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Modify existing incoming webhook by changing its title, description, channel or icon url 
+    Modify existing incoming webhook by changing its title, description, channel or icon url.
 
   Format
     .. code-block:: none
