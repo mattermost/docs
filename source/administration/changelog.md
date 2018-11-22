@@ -11,27 +11,28 @@ Release date: 2018-12-16
 ### Highlights
 
  - Scrolling Overhaul
- - Idiomatic error handling
  - Removed support for WebRTC
- - Romanian language promoted out of beta
+ - Romanian language was promoted out of beta
 
 ### Improvements
 
 #### ?
- - Enabled push notifications to use TPNS by default.
  - Removed support for automatically unmarshalling a plugin's server configuration, as there was no way to safely synchronize reads and writes to these public fields across multiple plugin threads without additional plugin coordination.
  - Introduced mlog/human package to consume and reformat structured logging.
  - Committs to migrate Mattermost Webapp to Redux.
- - Added aria labels to resolve accessibility issues with lack of alt text and unlabeled buttons.
+ - Idiomatic error handling
  
 #### User Interface
  - Added ability to remove profile pictures.
  - Added support for interactive dialogs.
+ - Added progress bar to uploads.
  - Added an option to be able to clear search results.
  - Ensured that system messages will render @{username} so that users can click the username and see the username popover.
  - Group Messaging: Show existing group messages in the DM More list.
+ - Added aria labels to resolve accessibility issues with lack of alt text and unlabeled buttons.
  
 #### Notifications
+ - Enabled push notifications to use TPNS by default.
  - Added a channel notification setting to disable (or enable) @-channel @-here @-all notifications in specific channels.
 
 #### Performance
@@ -41,6 +42,16 @@ Release date: 2018-12-16
  - Added "min_server_version" in plugin.json manifest to enable built-in control for preventing load/enable of plugin if server version is not met.
  - Allow plugins to add channel header tooltips.
  - Removed "System Console > Plugins > Configuration" page and moved enabling plugins setting to the Management page.
+ 
+#### Slash Commands
+ - Added support for multiple responses to the User Interface from a slash command.
+ - Added an option to send a message when an invalid slash command is entered.
+ 
+#### Administration
+ - Terms of Service feature improvements.
+ 
+#### Enterprise Edition (E20)
+ - Data Retention was promoted out of beta.
 
 #### Bulk Import
  - Added capability to export reactions of posts during bulk export.
@@ -85,8 +96,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Plugin API Changes
 
-- **Changed ``GetTeamMembers(teamId string, offset, limit int)`` to ``GetTeamMembers(teamId string, page, perPage int)`` to be clearer and consistent with other APIs**
-- **Changed ``GetPublicChannelsForTeam(teamId string, offset, limit int)`` to ``GetPublicChannelsForTeam(teamId string, page, perPage int)`` to be clearer and more consistent with other APIs**
+ - **Changed ``GetTeamMembers(teamId string, offset, limit int)`` to ``GetTeamMembers(teamId string, page, perPage int)`` to be clearer and consistent with other APIs**
+ - **Changed ``GetPublicChannelsForTeam(teamId string, offset, limit int)`` to ``GetPublicChannelsForTeam(teamId string, page, perPage int)`` to be clearer and more consistent with other APIs**
+ - Removed ``model.ChannelList`` from plugin API return parameter.
+ - Added ``GetPluginConfig`` and ``SavePluginConfig`` plugin APIs for allowing plugins to get or update only their own configuration.
  - Added ``getChannelMembersTimezone`` to get all timezones from users for a specific channel.
  - Added paging to elasticsearch API.
  - Added key value store set with expiry method to the plugin API.
@@ -119,6 +132,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``SetProfileImage`` to plugin API.
  - Added ``GetTeamIcon`` plugin API method.
  - Added ``SetTeamIcon`` to plugin API.
+ - Added ``CreateDirectChannel`` plugin API.
+ - Added ``RemoveTeamIcon`` plugin API.
  
 #### Database Changes
 
