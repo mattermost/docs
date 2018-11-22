@@ -6,9 +6,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.5
 
-Release date: 2018-11-16
-
- - **Note: Enterprise Edition E20 customers running Elasticsearch, we have identified a bug preventing Elasticsearch v6.0+ from working in Mattermost 5.4 and 5.5. This issue will be resolved in 5.6.**
+- **v5.5.1, released TBD** 
+  - Fixing a bug preventing Elasticsearch v6.0+ from working in Mattermost 5.4 and 5.5.
+- **v5.5.0, released 2018-11-16**
+  - Original 5.5.0 release
 
 ### Bug Fixes
  - Fixed an issue where clicking the two arrows to expand/collapse an image didn't work after posting an image.
