@@ -2681,7 +2681,7 @@ So you don't miss messages, please make sure to change this value to an email yo
 | This feature's ``config.json`` setting is ``"SupportEmail":"feedback@mattermost.com"`` with string input.                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Custom Terms of Service (Beta)
+Enable Custom Terms of Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20*.
 
@@ -2693,7 +2693,7 @@ Enable Custom Terms of Service (Beta)
 
   This setting can only be modified using the System Console user interface.
 
-Custom Terms of Service Text (Beta)
+Custom Terms of Service Text
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20*.
 
