@@ -44,7 +44,7 @@ No pull requests for major features should be **merged** to the current release 
 2. QA Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
-    - Queue a list of MVP candidates in alphabetical order to the MVP Discussion channel. [See example](https://community.mattermost.com/core/pl/h3gy69h5ujfpzedtxmsnjfubko)
+    - Queue a list of MVP candidates in alphabetical order to the MVP Discussion channel. [See example](https://community.mattermost.com/core/pl/h3gy69h5ujfpzedtxmsnjfubko). Review [contributions](https://github.com/mattermost/mattermost-webapp/graphs/contributors) since last release's Code Complete for Webapp, Server, Docs, Mobile, Redux, Desktop and API Reference repos
     - Review [software requirements](https://docs.mattermost.com/install/requirements.html#software-requirements) are up-to-date based on [these guidelines](https://docs.mattermost.com/process/software-requirements.html). If not, update documentation accordingly, and note changes in the Changelog.
     - Review submitted NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch.
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
