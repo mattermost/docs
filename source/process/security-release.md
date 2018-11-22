@@ -32,6 +32,8 @@ Notes:
     - If the dot release takes place during a regular release, update ``ci-linux-mysql-prev`` to dot-release RCs for the previous release and keep ``rctesting.reddogsofwar`` on the latest regular release version
     - Test the new RC to verify fixes merged to the release branch work
     - Post in Release Discussion channel after testing
+2. Logistics:
+    - If the security researcher has not previously received a security researcher mug, order one for them 
 
 ### D. (T-minus 0 working days) Release Build Cut
 
@@ -52,7 +54,7 @@ Once security fix release is ready to cut:
       - For Yunohost, open a new pull request to update the version. See [example](https://github.com/kemenaran/mattermost_ynh/pull/11).
       - For OpenShift, open a new pull request to update the version. See [example](https://github.com/goern/mattermost-openshift/pull/13).
     - Update Security Research Hall of Fame on the [Responsible Disclosure Policy](https://about.mattermost.com/report-security-issue/) page
-    - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) 10 working days after the dot release has shipped
+    - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) 30 days after the dot release has shipped
       - Update Security Issues spreadsheet with issue number from posted update (e.g. v3.2.0.1)
 3. Marketing:
     - Prepare [blog post](https://about.mattermost.com/releases/mattermost-4-10/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send to marketing lead for review. Once reviewed, schedule for 08:00 PST on the day after dot release

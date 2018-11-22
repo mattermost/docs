@@ -61,6 +61,28 @@ That said, forgiving does not mean allowing the product to be used incorrectly b
 Technical Guidelines
 ********************
 
+Plugins
+-----------------
+
+By default, every new feature should be a plugin. Why?
+
+ - Isolates complexity.
+ - Disabled by default and must be turned on by a System Admin.
+ - Grows the plugin ecosystem with better support for external plugins.
+
+Reasons you might not want to write a plugin:
+
+ - The feature requires high performance access.
+ - The feature would be used or extended by a plugin (e.g. bot accounts or Account Settings modal).
+ - The feature would be used by every Mattermost instance (e.g. flagged messages, replies).
+
+Reasons to write a plugin:
+
+ - To customize the Mattermost user interface.
+ - To extend Mattermost functionality to meet a specific, complex requirement.
+ - To build integrations that are managed by your Mattermost server.
+ - To prototype a new feature with a plugin.
+
 Bootstrap Classes
 -----------------
 

@@ -17,7 +17,7 @@ Why does the open source repository contain code specific to the commercial vers
 
 The commercial version of Mattermost is designed to never lock-in your data. Portions of the commercial version are shared with the open source version to ensure upgrade and downgrade across editions happens without data loss.
 
-Does Mattermost support 508 Compliance? 
+Does Mattermost support 508 Compliance?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, please see our `VPAT <https://docs.mattermost.com/overview/vpat.html>`_ form for details. Mattermost Enterprise Edition has been purchased by multiple US public sector organizations, including US federal agencies and the Department of Defense. 
@@ -339,6 +339,79 @@ Does Mattermost have an official website-based plug-in to offer anonymous chat t
 
 Not yet. You can `upvote the feature proposal online <https://mattermost.uservoice.com/forums/306457-general/suggestions/8810731-implement-a-site-chat-feature>`_ to add your support. If you create such a plug-in, we would love to see it open sourced and made available to the community. 
 
+Product Questions
+-----------------
+
+**What features are available on different Mattermost clients?**
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following chart highlights the end user features of Mattermost and their support across Web, Desktop and Mobile applications (iOS and Android).
+
+.. csv-table::
+    :header: "Feature", "Web", "Desktop", "Mobile"
+
+    "**CHANNELS**"
+    "Create a new channel", "X", "X", "X"
+    "Join a channel", "X", "X", "X"
+    "Leave a channel", "X", "X", "X"
+    "Favorite a channel", "X", "X", "X"
+    "Mute a channel", "X", "X", "X"
+    "Manage members", "X", "X", "X"
+    "Add members", "X", "X", "X"
+    "Edit channel", "X", "X", "X"
+    "Archive members", "X", "X", "X"
+    **MESSAGES**
+    "Threaded messages", "X", "X", "X"
+    "Markdown", "X", "X", "O"
+    "Emojis", "X", "X", "X"
+    "Emoji reactions", "X", "X", "X"
+    "Viewing emoji reactions", "X", "X", "v1.13"
+    "File sharing", "X", "X", "X"
+    "@ mentions", "X", "X", "X"
+    "Hashtags", "X", "X", "v1.13"
+    "Search (with in:, from:, before:, on: and after:)", "X", "X", "X"
+    "Search highlighting", "X", "X", "v1.15"
+    "View/marking pinned or flagged posts", "X", "X", "X"
+    "Image link previews", "X", "X", "X"
+    "Website previews", "X", "X", "X"
+    "Notifications", "X", "X", "X"
+    **INTEGRATIONS**
+    "Slash commands", "X", "X", "O"
+    "Server-side plugins", "X", "X", "X"
+    "User interface plugins", "X", "X",
+    "Oauth applications", "X", "X", "X"
+    "Incoming webhooks", "X", "X", "X"
+    "Outgoing webhooks", "X", "X", "X"
+    "Message attachments", "X", "X", "X"
+    "Message buttons", "X", "X", "X"
+    "Message menus", "X", "X", "X"
+    **TEAMS**
+    "Multi-team support for notifications", "X", "X", "X"
+    "Team switching", "X", "X", "X" 
+    "Team-based theming", "X", "X", "X"
+    "Create a new team", "X", "X",
+    "Join existing team", "X", "X", "X"
+    "Get team invite link", "X", "X",
+    "Add members to team", "X", "X",
+    "Manage members", "X", "X",
+    "Leave team", "X", "X",
+    **OTHER**
+    "Custom user interface themes", "X", "X", "O"
+    "Localization for 15 languages", "X", "X", "X"
+    "Account settings", "X", "X", "O"
+    "OAuth login with Google/Office 365", "X", "X",
+    "Connect to multiple Mattermost servers from a single interface and switch with shortcut keys (similar to tabs in web browser", " ", "X", 
+    "Auto-start Mattermost when a user logs into their machine", " ", "X"    
+    "(Windows) Add Mattermost to Start menu, taskbar and system tray", " ", "X", 
+    "(Windows/Mac) Deep link to the desktop app via mattermost:// protocol if app is already installed", " ", "X", 
+    "(Mac) Add Mattermost to the applications Dock", " ", "X", 
+    "(Linux) Desktop Entry for the application to more easily integrate into a desktop environment", " ", "X", 
+
+**Legend:**
+
+* X - Full Support
+
+* O - Partial support
 
 Design Decisions
 ----------------

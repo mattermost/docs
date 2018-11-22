@@ -15,6 +15,7 @@ Development Process
 
    /process/overview*
    /process/deprecated-features*
+   /process/software-requirements*
    /developer/style*
    /developer/fx*
    /developer/localization*
@@ -33,6 +34,7 @@ Release Process
    /process/dot-release*
    /process/security-release*
    /process/mobile-release*
+   /process/release-faq*
 
 Community Process
 -------------------

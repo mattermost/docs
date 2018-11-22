@@ -270,6 +270,8 @@ Max Notifications Per Channel
 
 Maximum total number of users in a channel before @all, @here, and @channel no longer send notifications to maximize performance.
 
+If you want to increase this value, the recommendation is to increase it a little at a time and monitor system health with `performance monitoring metrics <https://docs.mattermost.com/deployment/metrics.html>`_. We also recommend only increasing this value if large channels have restricted permissions for who can post to the channel (for instance, a read-only Town Square channel).
+
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxNotificationsPerChannel": 1000`` with whole number input.                                                                    |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1606,6 +1608,9 @@ Enable cross-origin requests from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Enable HTTP cross-origin requests from specific domains separated by spaces. Type ``*`` to allow CORS from any domain or leave it blank to disable it.
 
+.. note::
+ Please make sure you have entered your Site URL before enabling this setting to prevent losing access to the System Console after saving.  If you experience lost access to the System Console after changing this setting, you can set your `Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_ through the ``config.json`` file.
+  
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowCorsFrom": ""`` with string input.                                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+

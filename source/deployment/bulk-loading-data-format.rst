@@ -7,7 +7,7 @@ The input data file must be a valid `JSONL
 <http://jsonlines.org>`_ file with the following objects, each on its own line in the file. The objects must occur in the file in the order listed.
 
 Version
-  Mandatory. The Version object must be the first line in the file, and must occur only once.
+  Mandatory. The Version object must be the first line in the file, and must occur only once. The version is the version of the bulk importer tool, which is currently ``1``. 
 Scheme
   Optional. If present, Scheme objects must occur after the Version object but before any Team objects.
 Emoji
@@ -80,7 +80,7 @@ The following fragment is from a file that imports two teams, each with two chan
 Version object
 --------------
 
-The Version object must be the first object in the data file, and can appear only once.
+The Version object must be the first object in the data file, and can appear only once.  The version represents the version of the bulk import tool and currently is ``1``. 
 
 Example Version object
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -318,7 +318,7 @@ Fields of the Emoji object
     <tr class="row-odd">
       <td valign="middle">name</td>
       <td valign="middle">string</td>
-      <td>The scheme name.</td>
+      <td>The emoji name.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
     </tr>
@@ -1478,6 +1478,13 @@ Fields of the DirectPost object
       <td valign="middle">reactions</td>
       <td valign="middle">array</td>
       <td>The emoji reactions to this direct post. Must be an array of <a href="#fields-of-the-reaction-object">Reaction</a> objects.</td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+        <tr class="row-odd">
+      <td valign="middle">attachments</td>
+      <td valign="middle">array</td>
+      <td>The attachments to this direct post. Must be an array of <a href="#fields-of-the-attachment-object">Attachment</a> objects.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>

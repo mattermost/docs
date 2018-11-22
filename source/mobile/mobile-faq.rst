@@ -52,6 +52,27 @@ The full process is outlined below:
 
 .. Note:: The use of push notifications with iOS and Android applications will require a moment where the contents of push notifications are visible unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reasons, there is an option to omit the contents of Mattermost messages from push notifications in order to meet certain compliance requirements.
 
+What post metadata is sent in mobile push notifications?
+--------------------------------------------------------
+
+The following post metadata is sent in all push notifications:
+
+- ``Team ID``
+- ``Channel ID``
+- ``Post ID``
+- ``User ID`` (post author)
+- ``Username`` (post author or webhook override username)
+- ``Root ID`` (only if the post is in a thread)
+- ``Type`` (create or clear push notification)
+- ``Category`` (iOS only, determines if the notifications can be replied to)
+- ``Badge number`` (what the notification badge on the app icon should be set to when the notification is received)
+
+Additional metadata may be sent depending on the System Console setting for `Push Notification Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_:
+
+- **Send generic description with sender and channel names**: ``Channel name`` metadata will be included
+- **Send full message snippet**: ``Post content`` and ``Channel name`` metadata will be included
+
+
 What are my options for securing the mobile apps?
 -------------------------------------------------
 
