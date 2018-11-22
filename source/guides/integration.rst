@@ -29,7 +29,8 @@ See our documentation below.
    /developer/webhooks*
    /developer/slash*
    /developer/message-attachments*
-   /developer/interactive-message-buttons*
+   /developer/interactive-messages*
+   /developer/interactive-message-dialogs*
    /developer/personal-access-tokens*
    /developer/oauth*
    /developer/integration*
