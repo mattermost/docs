@@ -2737,7 +2737,7 @@ ________
 Compliance
 --------------------------------
 
-Data Retention Policy (Beta)
+Data Retention Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
