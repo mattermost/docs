@@ -1,15 +1,11 @@
 .. _custom-terms-of-service:
 
-Custom Terms of Service (Beta) (E20)
+Custom Terms of Service (E20)
 =====================================
 
 Available in `Enterprise Edition E20 and higher <https://about.mattermost.com/pricing/>`_.
 
-In Mattermost Enterprise Edition E20, you can outline custom Terms of Service for your team members to accept before they can access Mattermost on web or desktop.
-
-.. note::
-
- Users on mobile will not be presented with the custom Terms of Services. Mobile support is scheduled for an upcoming release.
+In Mattermost Enterprise Edition E20, you can outline custom Terms of Service for your team members to accept before they can access Mattermost on web, desktop or mobile.
 
 Configuring Terms of Service
 --------------------------------
