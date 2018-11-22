@@ -1,4 +1,4 @@
-Data Retention Policy Beta (E20)
+Data Retention Policy (E20)
 =================================
 
 Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_.
