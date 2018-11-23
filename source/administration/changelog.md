@@ -15,6 +15,7 @@ Release date: 2018-12-16
  - Romanian language was promoted out of beta
  - LDAP Groups Sync
  - Removed mobile view support on IE11.
+ - Channel sidebar reorganization settings.
 
 ### Improvements
 
@@ -28,6 +29,8 @@ Release date: 2018-12-16
  - Added ability to remove profile pictures.
  - Added support for interactive dialogs.
  - Added progress bar to uploads.
+ - Added infinite scroll.
+ - Added an Admin Badge to profile popover.
  - Added an option to be able to clear search results.
  - Ensured that system messages will render @{username} so that users can click the username and see the username popover.
  - Group Messaging: Show existing group messages in the DM More list.
