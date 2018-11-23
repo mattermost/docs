@@ -19,7 +19,7 @@ in the task runner container and as the name suggests it is a script used for do
 ### Backups
 
 The backup utility script when run without any arguments creates a backup tar and uploads it to object storage.
-You can skip parts of the backup process by using `--skip <component>` for every component that you want to skip in the backup process. Skippable components are the database (`db`), repositories (`repositories`, and any of the object storages (`artifacts`, `lfs`, `packages`, `registry` and `uploads`).
+You can skip parts of the backup process by using `--skip <component>` for every component that you want to skip in the backup process. Skippable components are the database (`db`), repositories (`repositories`), and any of the object storages (`artifacts`, `lfs`, `packages`, `registry` and `uploads`).
 There is also an option to manually set a part of the name of the generated backup tar via the `-t <backup-name>` command line flag, which will result in the backup file `<backup-name>_gitlab_backup.tar` to be created.
 
 The sequence of execution is:
