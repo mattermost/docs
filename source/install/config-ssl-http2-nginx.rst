@@ -73,8 +73,6 @@ You can use any certificate that you want, but these instructions show you how t
       listen 443 ssl http2;
       server_name    {domain-name} ;
 
-      #Oldest compatible clients: Firefox 27, Chrome 30, IE 11 on Windows 7, Edge, Opera 17, Safari 9, Android 5.0, and Java 8
-
       ssl on;
       ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain.pem;
       ssl_certificate_key /etc/letsencrypt/live/{domain-name}/privkey.pem;
