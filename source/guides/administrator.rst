@@ -41,6 +41,7 @@ Installing Mattermost
    /install/config-cloudfront*
    /install/i18n*
    /install/config-apache2.rst
+   Installing Mattermost TE Helm Chart in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
 
 Deployment
 ----------
