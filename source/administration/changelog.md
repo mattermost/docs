@@ -13,6 +13,8 @@ Release date: 2018-12-16
  - Scrolling Overhaul
  - Removed support for WebRTC
  - Romanian language was promoted out of beta
+ - LDAP Groups Sync
+ - Removed mobile view support on IE11.
 
 ### Improvements
 
@@ -88,6 +90,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Enterprise Edition:
  - Added "TLSMinVer": "1.2", "TLSStrictTransport": false, "TLSStrictTransportMaxAge": 63072000, "TLSOverwriteCiphers": [],
  - Added "GroupFilter": "",
+ - Added "DisablePostMetadata": false
  - Removed ``EnablePublicChannelsMaterialization``
  - Removed ``"ExperimentalLimitClientConfig": false,``
  - Removed ``"WebrtcSettings": {`` (all the settings)
@@ -99,6 +102,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - **Changed ``GetTeamMembers(teamId string, offset, limit int)`` to ``GetTeamMembers(teamId string, page, perPage int)`` to be clearer and consistent with other APIs**
  - **Changed ``GetPublicChannelsForTeam(teamId string, offset, limit int)`` to ``GetPublicChannelsForTeam(teamId string, page, perPage int)`` to be clearer and more consistent with other APIs**
  - Removed ``model.ChannelList`` from plugin API return parameter.
+ - Added cursor to posts list such as ``next_post_id`` and ``previous_post_id`` for Scrolling Overhaul.
+ - Added userId to the "posts/unread" path for Scrolling Overhaul.
+ - Add API GET ``api/v4/channels/{channel_id:[A-Za-z0-9]+}/posts/unread`` for scrolling overhaul.
  - Added ``GetPluginConfig`` and ``SavePluginConfig`` plugin APIs for allowing plugins to get or update only their own configuration.
  - Added ``getChannelMembersTimezone`` to get all timezones from users for a specific channel.
  - Added paging to elasticsearch API.
@@ -134,6 +140,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``SetTeamIcon`` to plugin API.
  - Added ``CreateDirectChannel`` plugin API.
  - Added ``RemoveTeamIcon`` plugin API.
+ - Added ``SubmitDialogResponse`` and ``SubmitDialogRequest``.
  
 #### Database Changes
 
