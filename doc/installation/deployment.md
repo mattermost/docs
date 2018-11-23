@@ -173,40 +173,11 @@ You can also use `--version <installation version>` option if you would like to 
 
 Mappings between chart versions and GitLab versions can be found [here](./version-mappings.md)
 
+Instructions for installing a development branch rather than a tagged release can be found [here](../development/deploy.md).
+
 #### GitLab operator (experimental)
 
 If you would like to use GitLab operator to achieve zero downtime upgrades, please follow the [documentation for using the operator](./operator.md)
-
-### Deploy Development Branch
-
-Deploy master or a specific branch by first cloning the repository locally:
-
-```sh
-$ git clone git@gitlab.com:charts/gitlab.git
-```
-
-Check out the appropriate branch and modify `requirements.yaml` if testing changes to external dependencies.
-
-> **Note:**
->
-> It is possible to test external dependencies using a local repository. Use `file://PATH_TO_DEPENDENCY_REPO`
-> where the path may be relative to the chartpath or absolute. For example, if using
-> `/home/USER/charts/gitlab` as the main checkout and `/home/USER/charts/gitlab-runner`, the
-> relative path would be `file://../gitlab-runner/` and the absolute path would be
-> `file:///home/USER/charts/gitlab-runner/`. Pay close attention with absolute paths as it
-> is very easy to miss the leading slash on the filepath.
-
-Run the following helm commands to install:
-
-```sh
-$ helm repo add gitlab https://charts.gitlab.io/
-$ helm dependencies update
-$ helm upgrade --install gitlab . \
-  --timeout 600 \
-  --set global.hosts.domain=example.com \
-  --set global.hosts.externalIP=10.10.10.10 \
-  --set certmanager-issuer.email=me@example.com
-```
 
 ## Monitoring the Deployment
 

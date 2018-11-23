@@ -5,6 +5,7 @@ Our contribution policies can be found in [CONTRIBUTING.md](../../CONTRIBUTING.m
 **Table of Contents**
 - [Versioning and Release](#versioning-and-release)
 - [Changelog Entries](#changelog-entries)
+- [Installing the chart from the repo](#installing-the-chart-from-the-repo)
 - [Naming Conventions](#naming-conventions)
 - [Common Structure for values.yaml](#common-structure-for-valuesyaml)
 - [Developing template helpers](#developing-template-helpers)
@@ -18,6 +19,10 @@ Details on the version scheme, branching and tags can be found in [release docum
 ## Changelog Entries
 
 All `CHANGELOG.md` entries should be created via the [changelog entries](changelog.md) workflow.
+
+## Installing the chart from the repo
+
+Details on installing from the git repo can be found in the [dev deployment](deploy.md) documentation.
 
 ## Naming Conventions
 
