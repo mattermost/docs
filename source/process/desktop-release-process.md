@@ -5,16 +5,17 @@ This document outlines the release process for the Mattermost Desktop App. It is
 ## Release Timeline
 
 Notes:
-- All cut-off dates are based on 15:00 GMT (UTC-00) on the day stated. 
+
+- All cut-off dates are based on 10am ([San Francisco Time](https://everytimezone.com/)) on the day stated.
 - T-minus counts are measured in "working days" (weekdays other than major holidays concurrent in US and Canada) prior to release day.
 
-// To be updated
+Usually most of these steps are covered by platform [feature release process](https://docs.mattermost.com/process/feature-release.html) and by platform [bug fix release process](https://docs.mattermost.com/process/bug-fix-release.html). However, it is recommended to review these steps in addition to the aforementioned processes, to ensure each step is covered.
 
 ### A. (Code complete date of previous release) Beginning of release
 
 Pre-work for the current release begins at the code complete date of the previous release. See "Code Complete and Release Candidate Cut" section below for details.
 
-### B. (T-minus 12 working days) Release Date Announcement
+### B. (T-minus 15 working days) Release Date Announcement
 
 1. PM:
     - Post this checklist in Desktop App channel
@@ -27,7 +28,7 @@ Pre-work for the current release begins at the code complete date of the previou
 2. Dev/PM:
     - Prioritize reviewing, testing, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/desktop/pulls) marked for the current release
 
-### C. (T-minus 7 working days) Code Complete and Release Candidate Cut
+### C. (T-minus 9 working days) Code Complete and Release Candidate Cut
 
 **Stabilization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for the next version.
 
@@ -49,7 +50,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Tweet announcement that RC1 is ready
     - Queue art work for Twitter announcement
 
-### D. (T-minus 6 working days) Release Candidate Testing
+### D. (T-minus 8 working days) Release Candidate Testing
 
 1. PM:
     - Post this checklist in Desktop App channel
@@ -68,7 +69,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Test the new RC to verify fixes merged to the release branch work and post in Desktop App channel after testing
     - Update the meta issue with download links to the new RCs and a list of approved fixes
 
-### E. (T-minus 4 working days) Release Candidate Testing Finished
+### E. (T-minus 7 working days) Release Candidate Testing Finished
 
 1. PM:
     - Post this checklist in Desktop App channel
