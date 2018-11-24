@@ -83,9 +83,11 @@ Day when Leads and PMs decide which major features are included in the release, 
 4. Marketing:
     - Start drafting blog post, tweet, and email for the release announcement
     
-### F. (T-minus 12 working days) Code complete
+### F. (T-minus 12 working days) Code Complete
 
-**Stabilization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version. Exceptions can be made by the QA Release Manager during triage. Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google.com/document/d/1QxB_A1qkEJBKAvQpRa7JiSQLZhwg6HAEajNRNa7ldGg/edit)
+**Stabilization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version. Exceptions can be made by the QA Release Manager during triage.
+
+Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google.com/document/d/1QxB_A1qkEJBKAvQpRa7JiSQLZhwg6HAEajNRNa7ldGg/edit) for reference.
 
 1. **(Team) Code Complete Meeting (10:00am San Francisco time)**:
     - Team review of Changelog
@@ -105,14 +107,14 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
     - Update the GitHub meta issue:
-       - Include a link to the changelog on the documentation branch
+       - Include a link to changelog on the documentation branch
        - Post comments to the meta issue with approved fixes for the next RCs
        - Update download links and testing server links to the latest RCs
-    - Check that translations are in progress at https://translate.mattermost.com/projects/mattermost/ and nudge translations as needed
-    - Check that a redirect page has been set up in mattermost.com for any links added to the System Console
+    - Check that translations are in progress at https://translate.mattermost.com/projects/mattermost/ and reach out to translations if needed
+    - Check that a redirect page has been set up in mattermost.com for any new links added to the System Console
 2. Logistics:
     - Mail out contributor and security researcher mugs
-      - Space out the ordering of mugs over the next 3 weeks to prevent mistakes being made by the supplier.  i.e. If there are 12 contributors to order mugs for, place an order every 2nd or 3rd day over the next 3 weeks.
+      - Space out the ordering of mugs over three weeks to prevent mistakes being made by the supplier. For instance, if there are 12 contributors to order mugs for, place an order every 2nd or 3rd day over the next 3 weeks.
     - Update [Team](http://www.mattermost.org/team/) page with new contributors
     - Add list of contributors to Changelog draft
 3. QA Release Manager:
@@ -121,16 +123,15 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Assign release testing areas to team members
     - After RC1 is cut: Update rctesting and CI server invite links in Release Testing spreadsheet
     - After RC1 is cut: Lock Selenium server to RC1
-    - After RC1 is cut: Ttweet announcement that RC1 is ready. [See example](https://community.mattermost.com/core/pl/tefx1ijyz7bs8mabuxmpq9f7pw)
+    - After RC1 is cut: Tweet announcement that RC1 is ready. [See example](https://community.mattermost.com/core/pl/tefx1ijyz7bs8mabuxmpq9f7pw)
 4. Dev Ops:
     - Review all `TODO` notes, including one for uncommenting upgrade code
     - Confirm all PRs in [`/enterprise`](https://github.com/mattermost/enterprise/pulls) repo have been merged.
     - Update Redux before each RC and Final build
-    - Master is tagged and branched and “Release Candidate 1″ is cut (e.g. 3.5.0-RC1) according to the Release Candidate Checklist in ``mattermost/process``
-    - After branching, the database version in sql_upgrade.go on master is set to the next scheduled release version (e.g. 3.6.0)
-    - CI servers are updated to the release branch
-    - Translation server is locked to the release branch
-    - Run daily automated upgrade tests to avoid catching upgrade bugs late
+    - Tag and branch `master`, and cut RC1 (e.g. 3.5.0-RC1) according to the [Dev Release Process](https://developers.mattermost.com/internal/release-process/)
+    - After branching, set the database version in ``sql_upgrade.go`` on master to the next scheduled release version (e.g. 3.6.0)
+    - Update CI servers and Translation server to the release branch
+    - Run daily automated upgrade tests to catch upgrade bugs
 5. PM - for each team:
     - Finish changelog PR and queue for QA review
     - Submit documentation PRs for product updates in the release
@@ -142,12 +143,11 @@ Day when Leads and PMs decide which major features are included in the release, 
 
 1. **(Team) Daily Release Update Meeting**
     - Triage Jira tickets
-    - Decide when to cut next RC or final
 2. QA Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
     - Post list of tickets to be fixed to the Release Discussion channel ([see example](https://community.mattermost.com/core/pl/65k77x3bnigw5f9ffohfxonnfy))
-    - Update Changelog “Known Issues” section with any significant issues that were found and not fixed for the final release
+    - Update Changelog "Known Issues" section with any significant issues that were found and not fixed for the final release
     - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://community.mattermost.com/core/pl/db3sur4r53d9tyih1i4wrmi9wy))
     - Post release testing instructions to Release Discussion channel ([template](https://community.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
     - DM reminders to team members who are not QA or devs, or who are new to release testing
@@ -155,10 +155,10 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Begin running all Selenium IDE tests
     - At end of day, post reminders about release testing in Release Discussion and Announcements channels, DM any team members who have zero test cells marked Done
 4. Dev Ops:
-    - Cherry pick bug fixes to the release branch, unless completed by devs
-    - Run daily automated upgrade tests to avoid catching upgrade bugs late
+    - Cherry-pick bug fixes to the release branch, unless completed by devs
+    - Run daily automated upgrade tests to catch upgrade bugs
     - Cut new RCs after verifying with QA Release Manager (approved fixes should be merged)
-    - Check CI servers running on release branch
+    - Check CI servers are running on the release branch
 5. Marketing:
     - Finish draft of blog post for mattermost.com and all art work (screenshots, GIFs and twitter banners) used for the blog post
         - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
@@ -169,12 +169,10 @@ Day when Leads and PMs decide which major features are included in the release, 
 1. **(Team) Daily Release Update Meeting**
     - Confirm testing assigned in the release testing spreadsheet is complete 
     - Continue triaging Jira tickets
+    - Decide when to cut next RC or final    
 2. QA Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
-    - Verify that the final translations PR for the release is submitted
-    - Confirm Changelog reflects any changes since it was merged (including known issues and contributors from all repositories)
-      - If there is a security fix, confirm the Changelog recommends upgrade, with a note mentioning the security level and thanking the security researcher
 3. Marketing:
     - Send blog post for mattermost.com and all related art work for marketing lead to review
 4. PM GitLab Relationship Owner:
@@ -192,24 +190,29 @@ Day when Leads and PMs decide which major features are included in the release, 
 
 The final release is cut - RC cuts and bug fixes should be completed by this date. Only urgent and critical issues are considered for fixing.
 
+Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google.com/document/d/1QxB_A1qkEJBKAvQpRa7JiSQLZhwg6HAEajNRNa7ldGg/edit) for reference.
+
 1. **(Team) Daily Release Update Meeting**
     - Continue to triage Jira tickets
     - If no blocking issues are found, PM, Dev and QA sign off on the release and plan to cut final
 2. QA Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
+    - Verify that the final translations PR for the release is submitted
+    - Confirm Changelog reflects any changes since it was merged (including known issues and contributors from all repositories)
+      - If there is a security fix, confirm the Changelog recommends upgrade, with a note mentioning the security level and thanking the security researcher
     - Verify all PRs and tickets for the release have been tested / closed
     - Verify Selenium server was put on final RC and build passed
     - Verify smoke tests on platform and RN apps all passed
     - Post QA approval in Release Discussion channel
-4. PM GitLab Relationship Owner:
+3. PM GitLab Relationship Owner:
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/gitlab-process.html#merge-requests) and [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC.
 5. Dev Ops:
     - Update Redux before each RC and Final build
     - Test upgrade from previous version to current version, following the [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with database upgrades on both MySQL and Postgres
     - Test upgrade from Team Edition to Enterprise edition based on the [Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)
     - Review any changes made to install guides, and test if necessary
-    - Tag a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC
+    - Tag a new release (e.g. 1.1.0) and run an official build which should essentially be identical to the last RC
     - Verify the hashes (SHA-1, SHA-256 and md5) and GPG signatures are correct for both Team Edition and Enterprise Edition.
     - Ensure [Security Policies](https://docs.mattermost.com/process/security.html) page has been updated
     - Update dependancies after release branch is cut in `mattermost-server`, `mattermost-webapp`, `desktop`, `mattermost-mobile` and `mattermost-redux`
@@ -235,7 +238,6 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Receive sign off on final version of MailChimp email blast and Twitter announcement and schedule for 08:00 PST on the date of marketing announcement
       - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
     - Finalize blog post for mattermost.com, test on mobile view, and set timer for 08:00 PST on the day of release
-    - Add links to [Admin guide](https://docs.mattermost.com/guides/administrator.html) in the release blog post where needed
 
 ### K. (T-minus 0 working days) Release Day
 
@@ -310,14 +312,8 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
 
 ## Release Numbering
 
-Mattermost numbers its stable releases based on the following format:  
-  `[Version Number].[Major Build Number].[Minor Build Number]`
+Mattermost numbers its stable releases based on the following format: `[Version Number].[Major Build Number].[Minor Build Number]`
 
-Version Number:
-- Indicates a major system release (e.g. 1.x.x, 2.x.x)
-
-Major Build Number:
-- Indicates significant new functionality, (e.g. 0.5.x, 0.6.x, 0.7.x)
-
-Minor Build Number:
-- Indicates a bug fix or security release (e.g. 1.2.5, 1.2.6)
+- Version Number indicates a major system release (e.g. 1.x.x, 2.x.x)
+- Major Build Number indicates significant new functionality, (e.g. 0.5.x, 0.6.x, 0.7.x)
+- Minor Build Number indicates a bug fix or security release (e.g. 1.2.5, 1.2.6)
