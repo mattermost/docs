@@ -10,12 +10,14 @@ Release date: 2018-12-16
 
 ### Highlights
 
- - Scrolling Overhaul
- - Removed support for WebRTC
- - Romanian language was promoted out of beta
- - LDAP Groups Sync
- - Removed mobile view support on IE11.
- - Channel sidebar reorganization settings.
+ - Added different channel sidebar reorganization settings, such as the ability to sort channels by recent posts.
+ - Added support for interactive dialogs.
+ - Added support for Post Metadata
+ - Added support for infinite scroll to allow users to browser channel history more easily.
+ - Removed support for WebRTC. Full details can be found [here](https://forum.mattermost.org/t/built-in-webrtc-video-and-audio-calls-removed-in-v5-6-in-favor-of-open-source-plugins/5998).
+ - Romanian language was promoted out of beta.
+ - Removed support for mobile view on IE11
+ - Added support for LDAP Groups Sync
 
 ### Improvements
 
@@ -26,14 +28,12 @@ Release date: 2018-12-16
  - Idiomatic error handling
  
 #### User Interface
- - Added ability to remove profile pictures.
- - Added support for interactive dialogs.
+ - Added ability to remove profile pictures in Account Settings.
  - Added progress bar to uploads.
- - Added infinite scroll.
- - Added an Admin Badge to profile popover.
+ - Added an admin badge to profile popover to allow users to see if a user is a server admin.
  - Added an option to be able to clear search results.
  - Ensured that system messages will render @{username} so that users can click the username and see the username popover.
- - Group Messaging: Show existing group messages in the DM More list.
+ - Group Messaging: Show existing group messages in the Direct Messages More list.
  - Added aria labels to resolve accessibility issues with lack of alt text and unlabeled buttons.
  
 #### Notifications
