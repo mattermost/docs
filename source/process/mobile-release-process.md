@@ -1,6 +1,6 @@
 # Mobile App Release Process
 
-The Mattermost Mobile Apps team works on a monthly release process, with a new version submitted to the iOS App Store and Google Play Store on the 5th of each month. Note: iOS App Store approval may take a few days after the 5th. 
+The Mattermost Mobile Apps team works on a monthly release process, with a new version submitted to the iOS App Store and Google Play Store on the 16th of each month. Note: iOS App Store approval may be completed a few days after the 16th. 
 
 ## Release Timeline
 
@@ -9,7 +9,7 @@ Notes:
 - All cut-off dates are based on 10am (San Francisco Time) on the day stated.
 - T-minus counts are measured in "working days" (weekdays other than major holidays in the US and Canada) prior to release day.
 
-// To be updated
+Usually most of these steps are covered by platform [feature release process](https://docs.mattermost.com/process/feature-release.html) and by platform [bug fix release process](https://docs.mattermost.com/process/bug-fix-release.html). However, it is recommended to review these steps in addition to the aforementioned processes, to ensure each step is covered.
 
 ### A. (T-minus 15 working days) Cut-off for merging major features
 
