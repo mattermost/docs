@@ -59,6 +59,8 @@ spec:
               value: {{ .Values.global.appConfig.lfs.bucket }}
             - name: UPLOADS_BUCKET_NAME
               value: {{ .Values.global.appConfig.uploads.bucket }}
+            - name: PACKAGES_BUCKET_NAME
+              value: {{ .Values.global.appConfig.packages.bucket }}
             - name: BACKUP_BUCKET_NAME
               value: {{ .Values.global.appConfig.backups.bucket }}
             - name: TMP_BUCKET_NAME
