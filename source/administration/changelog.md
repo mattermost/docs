@@ -17,7 +17,6 @@ Release date: 2018-12-16
  - Removed support for WebRTC. Full details can be found [here](https://forum.mattermost.org/t/built-in-webrtc-video-and-audio-calls-removed-in-v5-6-in-favor-of-open-source-plugins/5998).
  - Romanian language was promoted out of beta.
  - Removed support for mobile view on IE11
- - Added support for LDAP Groups Sync
 
 ### Improvements
 
