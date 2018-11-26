@@ -8,10 +8,10 @@ This document will describe in how to deploy MM TE Helm Chart in an existing Git
 You will need:
   - A running Kubernetes cluster :)
   - A running GitLab Helm Chart
-  - The name of the secret that holds the Postgres password
-  - The name of the secret that holds the Minio keys
-  - The service name for Postgres and the port
-  - The service name for Minio and the port
+  - The name of the secret that holds the Postgres password. If you installed the Gilab Helm  Chart using the chart name as ``gitlab`` then the secret name will be ``gitlab-postgresql-password``
+  - The name of the secret that holds the Minio keys. If you installed the Gilab Helm  Chart using the chart name as ``gitlab`` then the secret name will be ``gitlab-minio-secret``
+  - The service name for Postgres and the port. If you installed the Gilab Helm  Chart using the chart name as ``gitlab`` and in the ``default`` namespace then the service name will be ``gitlab-postgresql`` and port ``5432``
+  - The service name for Minio and the port.  If you installed the Gilab Helm  Chart using the chart name as ``gitlab`` and in the ``default`` namespace then the service name will be ``gitlab-minio-svc`` and port ``9000``
   - The names of ``kubernetes.io/ingress.class``, ``kubernetes.io/ingress.provider`` and ``certmanager.k8s.io/issuer``
 
 
@@ -216,14 +216,14 @@ Values that you need to replace in the ``values.yaml``:
 - **<GITLAB.APP.SECRET>**: The Application secret. The value you created in the step `Create the OAUTH with GitLab`_
 - **<GITLAB.APP.ID>**: The Application secret. The value you created in the step `Create the OAUTH with GitLab`_
 - **<YOUR.GITLAB.DOMAIN>**: The GitLab domain name. eg. ``gitlab.example.com``
-- **<GITLAB.POSTGRES.USERNAME>**: The GitLab Postgres username
-- **<GITLAB.POSTGRES.PASSWD.SECRET>**: Secret that holds the Postgres password
-- **<GITLAB.POSTGRES.HOST>**: Postgres host. Check the Kubernetes service, in a basic deployment of GitLab will be ``gitlab-postgresql``
-- **<GITLAB.POSTGRES.PORT>**: Postgres port. Check the Kubernetes service, in a basic deployment of GitLab will be ``5432``
+- **<GITLAB.POSTGRES.USERNAME>**: The GitLab Postgres username. Default ``gitlab``
+- **<GITLAB.POSTGRES.PASSWD.SECRET>**: Secret that holds the Postgres password. Default ``gitlab-postgresql-password``
+- **<GITLAB.POSTGRES.HOST>**: Postgres host. Check the Kubernetes service. Default ``gitlab-postgresql``
+- **<GITLAB.POSTGRES.PORT>**: Postgres port. Check the Kubernetes service. Default ``5432``
 - **<MATTERMOST.DATABASE.NAME>**: Mattermost database name that you choose, eg. ``mattermost-db``
-- **<GITLAB.MINIO.HOST>**: Minio host. Check the Kubernetes service, in a basic deployment of GitLab will be ``gitlab-minio-svc``
-- **<GITLAB.MINIO.PORT>**: Minio port. Check the Kubernetes service, in a basic deployment of GitLab will be ``9000``
-- **<GITLAB.MINIO.SECRET>**: Secret that holds the Minio keys.
+- **<GITLAB.MINIO.HOST>**: Minio host. Check the Kubernetes service. Default ``gitlab-minio-svc``
+- **<GITLAB.MINIO.PORT>**: Minio port. Check the Kubernetes service. Default ``9000``
+- **<GITLAB.MINIO.SECRET>**: Secret that holds the Minio keys. Default ``gitlab-minio-secret``
 - **<MATTERMOST.MINIO.BUCKET.NAME>**: Mattermost Minio bucket, eg. ``mattermost-data``
 
 After the changes you can deploy the Mattermost Team Edition Helm Chart running the following command:
