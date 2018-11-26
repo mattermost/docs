@@ -25,6 +25,7 @@ Some features of GitLab are not currently available:
 
 * [GitLab Pages](https://gitlab.com/charts/gitlab/issues/37)
 * [GitLab Geo](https://gitlab.com/charts/gitlab/issues/8)
+* [GitLab Elastic Search support](https://gitlab.com/charts/gitlab/issues/976)
 * [No in-cluster HA database](https://gitlab.com/charts/gitlab/issues/48)
 * MySQL will not be supported, as support is [deprecated within GitLab](https://docs.gitlab.com/omnibus/settings/database.html#using-a-mysql-database-management-server-enterprise-edition-only)
 
