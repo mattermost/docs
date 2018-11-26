@@ -233,7 +233,7 @@ The submission payload sent to the integration is:
 
 Optionally, the dialog can send an event back to the integration if ``notify_on_cancel`` parameter is set to true. If this happens, ``cancelled`` will be set to true on the above payload, and ``submission`` will be empty.
 
-Moreover, Mattermost also allows the integration itself to perform input validation. For example, you can require the user to enter a number between 0 and 10, and return the following response body if the condition isn't satisfied:
+Moreover, Mattermost also allows the integration itself to perform input validation. This can be done by responding to the dialog submission request with a JSON body containing an `errors` field. The `errors` field can contain a JSON object, mapping input field names to string error messages you would like to display to the user. For example, if you have a field named `num_between_0_and_10`, you can enforce the user to enter a number between 0 and 10 by returning the following response body if the condition isn't satisfied:
 
 .. code-block:: json
 
