@@ -16,16 +16,17 @@ Pre-work for the current release begins at the code complete date of the previou
 
 1. QA Release Manager:
     - Post this checklist in Release Checklist channel
-    - Review [contributions](https://github.com/mattermost/mattermost-webapp/graphs/contributors) since last release's Code Complete for Webapp, Server, Docs, Mobile, Redux, Desktop and API Reference repos and queue a list of MVP candidates in alphabetical order to the MVP Discussion channel. [See example](https://community.mattermost.com/core/pl/h3gy69h5ujfpzedtxmsnjfubko).
-    - Review submitted NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch.
+    - Review [contributions](https://github.com/mattermost/mattermost-webapp/graphs/contributors) since last release's Code Complete for Webapp, Server, Docs, Mobile, Redux, Desktop and API Reference repos and queue a list of MVP candidates in alphabetical order to the MVP Discussion channel. [See example](https://community.mattermost.com/core/pl/h3gy69h5ujfpzedtxmsnjfubko)
+    - Review submitted NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch
     - Post a reminder in the French Localization channel about the due date for translations, which is T-5 working days. [See example](https://community.mattermost.com/core/pl/7wqx4zehotgu7efhmbz51mxfqa
-2. PM - For each team:
+    - Start posting a list of release bugs in the Release Discussion channel
+2. PMs - For each team:
     - Draft Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version, including breaking changes or deprecated features in the release
 ).
-    - Prepare outline for release announcement based on team's work. This includes an outline, benefits, order of major features, and which features have an accompanying screenshot. Review outline with devs and QA in your team
+    - Prepare outline for release announcement based on team's work and review outline with devs and QA in your team
 3. PM Release Manager:
-    - Review release outline together with other PMs and decide order of features for release announce. After review, send outline to Marketing who works on release announce draft. [See example](https://oss.mattermost.com/mattermost/pl/5t459hruhfd7bpi46tnf8zq8yo).
+    - Review release outline together with other PMs and decide order of items for release announce. After review, send outline to Marketing who works on release announce draft. [See example](https://oss.mattermost.com/mattermost/pl/5t459hruhfd7bpi46tnf8zq8yo)
     
 ### C. (T-minus 14 working days) Release Bug Testing
 
@@ -39,7 +40,6 @@ Pre-work for the current release begins at the code complete date of the previou
 
 1. **(Team) Judgment Day Meeting (10:00am San Francisco time)**: 
     - Discuss worst bug on master
-    - Finalize which major features will be in or out for the release. Discuss reverting feature(s) if 5 or more bugs found
     - Discuss release highlights for marketing
     - Begin daily triage of tickets, including bug tickets in the backlog
 2. QA Release Manager:
@@ -50,7 +50,7 @@ Pre-work for the current release begins at the code complete date of the previou
       - If release day falls on a Friday, the blog post goes out on the Friday and the emailed newsletter goes out the following Tuesday.
     - Post a reminder to devs in the Release Discussion channel of the the code complete date with the ZBB count [see example](https://pre-release.mattermost.com/core/pl/coggyys9atg7fqyam81q3gkmoo)
     - Ask release PM to review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
-3. PM - For each team:
+3. PMs - For each team:
     - Based on results of Team Meeting discussion, update Changelog PR and create tickets based on what's in/out of the release
     - Review JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
     - Finalize roadmap for next release, and identify planned marketing bullet points
@@ -113,7 +113,6 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
 
 ### G. (T-minus 8 working days) Release Candidate Testing
 
-
 1. **(Team) Daily Release Update Meeting**
     - Triage Jira tickets
 2. QA Release Manager:
@@ -127,12 +126,12 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Post "Bug Hunter Coin" message to Reception channel ([see example](https://community.mattermost.com/core/pl/3o15eoq89fdq5m1ac5dyp4nc3e))
     - Begin running all Selenium IDE tests
     - At end of day, post reminders about release testing in Release Discussion and Announcements channels, DM any team members who have zero test cells marked Done
-4. Dev Ops:
+3. Dev Ops:
     - Cherry-pick bug fixes to the release branch, unless completed by devs
     - Run daily automated upgrade tests to catch upgrade bugs
     - Cut new RCs after verifying with QA Release Manager (approved fixes should be merged)
     - Check CI servers are running on the release branch
-5. Marketing:
+4. Marketing:
     - Finish draft of blog post for mattermost.com and all art work (screenshots, GIFs and twitter banners) used for the blog post
         - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
     - Send blog post for PMs and QA to review
@@ -149,8 +148,8 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
 3. Marketing:
     - Send blog post for mattermost.com and all related art work for marketing lead to review
 4. PM GitLab Relationship Owner:
-    - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests?scope=all&utf8=%E2%9C%93&state=opened&label_name%5B%5D=blog%20post&label_name%5B%5D=release) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)). Post to Release Discussion channel with link to request.
-5. QA Release Manager:
+    - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests?scope=all&utf8=%E2%9C%93&state=opened&label_name%5B%5D=blog%20post&label_name%5B%5D=release) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)). Post to Release Discussion channel with link to request
+5. QA:
     - Midday: Post at-channel reminders about testing, and DM team members whose tests are not marked Done
     - Find QA or other teammates to help finish unfinished tests if needed
     - End of day: Verify all release tests are finished
@@ -180,7 +179,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Post QA approval in Release Discussion channel
 3. PM GitLab Relationship Owner:
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/gitlab-process.html#merge-requests) and [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC.
-5. Dev Ops:
+4. Dev Ops:
     - Update Redux before each RC and Final build
     - Test upgrade from previous version to current version, following the [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with database upgrades on both MySQL and Postgres
     - Test upgrade from Team Edition to Enterprise edition based on the [Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)
@@ -222,8 +221,6 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Post the MVP winner announcement in the [Contributors channel](https://community.mattermost.com/core/channels/tickets)
     - Post key dates for the next release in the Release Discussion channel and remove links to RC candidates and testing spreadsheet from the header
         - Make sure that statutory holidays for Canada and US are accounted for in the release dates
-    - Check for any [UserVoice](https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0) feature suggestions that were completed in the current release
-      - Find the [release tweet](https://twitter.com/mattermosthq/status/854781715914555393) and insert a link to the tweet next to the feature that shipped with the release.
     - Close the release in Jira both for webapp and mobile ([releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased))
         - If there are many unresolved tickets in the current release, ask the release manager to review the ticket queue
         - Otherwise, release the fix version (Actions > [...] > Release)
