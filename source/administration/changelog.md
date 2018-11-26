@@ -10,7 +10,6 @@ Release date: 2018-12-16
 
 ### Highlights
 
- - Added different channel sidebar reorganization settings, such as the ability to sort channels by recent posts.
  - Added support for interactive dialogs.
  - Added support for Post Metadata
  - Added support for infinite scroll to allow users to browser channel history more easily.
@@ -28,6 +27,7 @@ Release date: 2018-12-16
  
 #### User Interface
  - Added ability to remove profile pictures in Account Settings.
+ - Added different channel sidebar reorganization settings, such as the ability to sort channels by recent posts.
  - Added progress bar to uploads.
  - Added an admin badge to profile popover to allow users to see if a user is a server admin.
  - Added an option to be able to clear search results.
