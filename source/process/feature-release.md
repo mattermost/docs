@@ -48,7 +48,8 @@ No pull requests for major features should be **merged** to the current release 
     - Prepare outline for release announcement based on team's work. This includes an outline, benefits, order of major features, and which features have an accompanying screenshot. Review outline with devs and QA in your team
 4. Dev Ops:
     - Cut release branch both for server and mobile. Merge database upgrade before cutting the branch
-    - Point translation server to release branch after cutting
+      - Merge database upgrade before cutting the branch
+      - Point translation server to release branch after cutting
 5. PM Release Manager:
     - Review release outline together with other PMs and decide order of features for release announce. After review, send outline to Marketing who works on release announce draft. [See example](https://oss.mattermost.com/mattermost/pl/5t459hruhfd7bpi46tnf8zq8yo).
     
@@ -76,7 +77,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Confirm date of marketing announcement for the release date with Marketing, and update release channel header if needed
        - If release day falls on a Friday, the blog post goes out on the Friday and the emailed newsletter goes out the following Tuesday.
     - Post a reminder to devs in the Release Discussion channel of the code complete date with the ZBB count [see example](https://community.mattermost.com/core/pl/coggyys9atg7fqyam81q3gkmoo)
-3. PM - For each team:
+3. PMs - For each team:
     - Based on results of Team Meeting discussion, update Changelog PR and create tickets based on what's in/out of the release
     - Review JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
     - Finalize roadmap for next release, and identify planned marketing bullet points
@@ -132,7 +133,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - After branching, set the database version in ``sql_upgrade.go`` on master to the next scheduled release version (e.g. 3.6.0)
     - Update CI servers and Translation server to the release branch
     - Run daily automated upgrade tests to catch upgrade bugs
-5. PM - for each team:
+5. PMs - for each team:
     - Finish changelog PR and queue for QA review
     - Submit documentation PRs for product updates in the release
         - Confirm all new diagnostics are documented in the telemetry docs (https://docs.mattermost.com/administration/telemetry.html)
@@ -154,12 +155,12 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Post "Bug Hunter Coin" message to Reception channel ([see example](https://community.mattermost.com/core/pl/3o15eoq89fdq5m1ac5dyp4nc3e))
     - Begin running all Selenium IDE tests
     - At end of day, post reminders about release testing in Release Discussion and Announcements channels, DM any team members who have zero test cells marked Done
-4. Dev Ops:
+3. Dev Ops:
     - Cherry-pick bug fixes to the release branch, unless completed by devs
     - Run daily automated upgrade tests to catch upgrade bugs
     - Cut new RCs after verifying with QA Release Manager (approved fixes should be merged)
     - Check CI servers are running on the release branch
-5. Marketing:
+4. Marketing:
     - Finish draft of blog post for mattermost.com and all art work (screenshots, GIFs and twitter banners) used for the blog post
         - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
     - Send blog post for PMs and QA to review
@@ -207,7 +208,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Post QA approval in Release Discussion channel
 3. PM GitLab Relationship Owner:
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/gitlab-process.html#merge-requests) and [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC.
-5. Dev Ops:
+4. Dev Ops:
     - Update Redux before each RC and Final build
     - Test upgrade from previous version to current version, following the [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with database upgrades on both MySQL and Postgres
     - Test upgrade from Team Edition to Enterprise edition based on the [Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)
@@ -248,12 +249,12 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Prepare and post [release metrics](https://docs.google.com/spreadsheets/d/1Aoj4OTaWoyrKIcQNiHH1MVoRG51T20Y_0w2tg5oVw-M/edit#gid=825551144)
     - Post the MVP winner announcement in the [Contributors channel](https://community.mattermost.com/core/channels/tickets)
     - Post key dates for the next release in the Release Discussion channel and remove links to RC candidates and testing spreadsheet from the header
-        - Make sure that statutory holidays for Canada and US are accounted for in the release dates
+       - Make sure that statutory holidays for Canada and US are accounted for in the release dates
     - Check for any [UserVoice](https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0) feature suggestions that were completed in the current release
       - Find the [release tweet](https://twitter.com/mattermosthq/status/854781715914555393) and insert a link to the tweet next to the feature that shipped with the release.
     - Close the release in Jira both for webapp and mobile ([releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased))
-        - If there are many unresolved tickets in the current release, ask the release manager to review the ticket queue
-        - Otherwise, release the fix version (Actions > [...] > Release)
+      - If there are many unresolved tickets in the current release, ask the release manager to review the ticket queue
+      - Otherwise, release the fix version (Actions > [...] > Release)
     - Prepare tickets for the next release, with a corresponding vX.X prefix, and put the tickets in the appropriate sprints as follows:
        - The week RC is cut:
             - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
