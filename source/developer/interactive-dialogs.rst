@@ -1,15 +1,15 @@
-.. _interactive-message-dialogs:
+.. _interactive-dialogs:
 
-Interactive Message Dialogs:
+Interactive Dialogs:
 ========================================
 
-Interactive message dialogs are used by integrations deployed on the Mattermost server. They are a way for integrations to receive some input in the style of a form from users and have that input submitted back to the integration. Use them to gather structured information from the end user to perform an action or a request.
+Interactive dialogs are used by applications that integrate with the Mattermost server. They are a method for integrations to receive some form-styled input from users and have that input submitted back to the integration. Use them to gather structured information from the end user to perform an action or a request.
 
 Integrations open dialogs by sending an HTTP POST, containing some data in the request body, to an endpoint on the Mattermost server. Integrations can use this endpoint to open dialogs when users :doc:`click message buttons or select an option from a menu <interactive-messages>`, or use a :doc:`custom slash command <slash-commands>`.
 
-Moreover, :doc:`plugins <../administration/plugins>` can trigger a dialog based on user actions. For instance, if a plugin adds a button in the channel header, clicking that button may open a message dialog.
+Moreover, :doc:`plugins <../administration/plugins>` can trigger a dialog based on user actions. For instance, if a plugin adds a button in the channel header, clicking that button may open a dialog.
 
-Here is an example of what a message dialog looks like to create a JIRA issue within the Mattermost user interface.
+Here is an example of what a dialog looks like to create a JIRA issue within the Mattermost user interface.
 
 // XXX <add screenshot>
 
@@ -19,7 +19,7 @@ Here is an example of what a message dialog looks like to create a JIRA issue wi
 Parameters
 -----------------------
 
-Interactive message dialogs support the following parameters: 
+Interactive dialogs support the following parameters: 
 
 .. csv-table::
     :header: "Parameter", "Type", "Description"
@@ -52,11 +52,7 @@ Sample JSON is given below. Form submissions are sent back to the URL defined by
 Elements
 -----------------------
 
-Each dialog supports up to five elements for users to enter information. If your form needs more than five fields, such as for collecting survey responses, consider chaining dialogs together with buttons or menus to serialize workflows.
-
-// XXX Joram: I don't think we actually have this limit, do we? The sample dialog you prepared has more than 5.
-
-The form elements support the following fields:
+Each dialog supports elements for users to enter information.
 
 - **text**: Single-line plain text field. Use this for inputs such as names, email addresses or phone numbers.
 - **textarea**: Multi-line plain text field. Use this field when the answer is expected to be longer than 150 characters. 
@@ -92,8 +88,8 @@ The full list of supported fields are included below:
 .. csv-table::
     :header: "Field", "Type", "Description"
 
-    "display_name", "String", "Display name of the field shown to the user in the message dialog. Maximum 24 characters."
-    "name", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same message dialog."
+    "display_name", "String", "Display name of the field shown to the user in the dialog. Maximum 24 characters."
+    "name", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same dialog."
     "type", "String", "Set this value to ``text`` for a text element."
     "subtype", "String", "(Optional) One of ``text``, ``email``, ``number``, ``tel``, or ``url``. Default is ``text``. Use this to set which keypad is presented to users on mobile when entering the field."
     "min_length", "Integer", "(Optional) Minimum input length allowed for an element. Default is 0."
@@ -126,8 +122,8 @@ The list of supported fields is the same as for the ``textarea`` type element.
 .. csv-table::
     :header: "Field", "Type", "Description"
 
-    "display_name", "String", "Display name of the field shown to the user in the message dialog. Maximum 24 characters."
-    "name", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same message dialog."
+    "display_name", "String", "Display name of the field shown to the user in the dialog. Maximum 24 characters."
+    "name", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same dialog."
     "type", "String", "Set this value to ``textarea`` for a textarea element."
     "subtype", "String", "(Optional) One of ``text``, ``email``, ``number``, ``tel``, or ``url``. Default is ``text``. Use this to set which keypad is presented to users on mobile when entering the field."
     "min_length", "Integer", "(Optional) Minimum input length allowed for an element. Default is 0."
@@ -199,8 +195,8 @@ The list of supported fields for the ``select`` type element is included below:
 .. csv-table::
     :header: "Field", "Type", "Description"
 
-    "display_name", "String", "Display name of the field shown to the user in the message dialog. Maximum 24 characters."
-    "name", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same message dialog."
+    "display_name", "String", "Display name of the field shown to the user in the dialog. Maximum 24 characters."
+    "name", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same dialog."
     "type", "String", "Set this value to ``select`` for a select element."
     "data_source", "String", "(Optional) One of ``users``, or ``channels``. If none specified, assumes a manual list of options is provided by the integration."
     "options", "String", "(Optional) An array of options for the select element. Not applicable for ``users`` or ``channels`` data sources."
@@ -216,12 +212,6 @@ When a user submits a dialog, Mattermost will perform client-side input validati
 
   - All required fields are filled
   - All formats are correct (e.g. email, telephone number, etc.)
-
-Moreover, Mattermost also allows the integration itself to perform input validation.
-
-// XXX Joram can we have an example of this? Using a Go example is okay.
-
-// XXX <include a transition here to the next section>
 
 The submission payload sent to the integration is:
 
@@ -243,7 +233,13 @@ The submission payload sent to the integration is:
 
 Optionally, the dialog can send an event back to the integration if ``notify_on_cancel`` parameter is set to true. If this happens, ``cancelled`` will be set to true on the above payload, and ``submission`` will be empty.
 
-Once the request is submitted, we recommend the integration to respond with a system message or an ephemeral message confirming the submission.
+Moreover, Mattermost also allows the integration itself to perform input validation. For example, you can require the user to enter a number between 0 and 10, and return the following response body if the condition isn't satisfied:
+
+.. code-block:: json
+
+  {"errors": {"num_between_0_and_10": "Enter a number between 0 and 10."}}
+
+Finally, once the request is submitted, we recommend the integration to respond with a system message or an ephemeral message confirming the submission.
 
 .. note::
 
@@ -252,7 +248,7 @@ Once the request is submitted, we recommend the integration to respond with a sy
 Example
 -----------------------
 
-Below is a full example of a JSON payload that creates an interactive message dialog in Mattermost
+Below is a full example of a JSON payload that creates an interactive dialog in Mattermost
 
 .. code-block:: json
 
