@@ -30,7 +30,7 @@ See our documentation below.
    /developer/slash*
    /developer/message-attachments*
    /developer/interactive-messages*
-   /developer/interactive-message-dialogs*
+   /developer/interactive-dialogs*
    /developer/personal-access-tokens*
    /developer/oauth*
    /developer/integration*
