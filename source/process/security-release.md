@@ -10,7 +10,7 @@ Notes:
 
 ### A. (T-minus 4 working days) Code Complete
 
-1. Release Manager:
+1. QA Release Manager:
     - Once the list of security issues to be fixed is finalized, post this checklist in Release Checklist channel
     - Notify community about upcoming security release through a Twitter announcement and in changelog with links to approved fixes and a date tagged as "TBD"
     - Make a post in Announcements channel announcing the security release to the rest of the team with links to approved tickets and include a link to the ticket to submit the GitLab MR
@@ -39,7 +39,7 @@ Notes:
 
 Once security fix release is ready to cut:
 
-1. Dev:
+1. Dev Ops:
     - Tag a new release (e.g. 1.1.1) and run an official build
     - Verify hashes and GPG signatures are correct, once build is cut
     - Delete RCs after final version is shipped
@@ -60,4 +60,3 @@ Once security fix release is ready to cut:
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/gitlab-process.html#merge-requests) and [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC.
 4. Marketing:
     - Prepare [blog post](https://about.mattermost.com/releases/mattermost-4-10/) for mattermost.com, MailChimp email blast, and [Twitter announcement](https://twitter.com/mattermosthq/status/827193482578112512), and send to marketing lead for review. Once reviewed, schedule for 08:00 PST on the day after dot release
-    
