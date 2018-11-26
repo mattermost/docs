@@ -16,10 +16,9 @@ Usually most of these steps are covered by platform [feature release process](ht
 No pull requests for major features should be **merged** to the current release after this date. In special cases, exceptions can be made by the Release Manager.
 
 1. QA Release Manager:
-    - Post this checklist in Release Checklist channel
-    - Draft Changelog in a WIP PR with updates for highlights, feature additions and bug fixes
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
 2. PM:
+    - Draft Changelog in a WIP PR with updates for highlights, feature additions and bug fixes
     - Prioritize reviewing major features, ensuring any bugs and UX issues get fixed
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the pull request queue marked for the current release
@@ -42,37 +41,31 @@ Day when PM decides which major features are included in the release, and which 
 1. **(Team) Triage Meeting**:
     - Begin daily triage of tickets
 2. QA Release Manager:
-    - Post this checklist in Release Checklist channel
-    - Verify all items in the last posted release checklist are complete
-    - Update Changelog PR based on what's in/out of the release
     - Post a link to Native Mobile Apps channel for query of remaining bugs in this release
 3. PM:
+    - Update Changelog PR based on what's in/out of the release
     - Review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
 
 ### D. (T-minus 9 working days) Code Complete and Release Candidate Cut 
 
 **Stabilization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version. Exceptions can be made by the Release Manager during triage.
 
-1. QA Release Manager:
-    - Post this checklist in Release Checklist channel
-    - Verify all items in the last posted release checklist are complete
-2. Dev:
+1. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the pull request queue marked for the current release
     - Check the minimum server version required and submit pull request to update in fastlane files
-3. Build:
+2. Build:
     - Create release branch for mattermost-mobile and mattermost-redux
     - Cut release candidate build
-4. QA Release Manager:
+3. QA Release Manager:
     - Confirm all pull requests merged into the current release have been tested
     - Ensure the release testing spreadsheet covers any changes and new features, and confirm known issues are listed in the relevant tests
     - Assign each area of the spreadsheet to a team member and give the core team access permissions
-5. Docs:
+4. Docs:
     - Submit any remaining documentation PRs for product updates in the release
 
 ### E. (T-minus 8 working days) Release Candidate Testing
 
 1. QA Release Manager:
-    - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
     - Post list of tickets to be fixed to the Native Mobile Apps channel
     - Update Changelog for any new bug fixes
@@ -97,33 +90,29 @@ Day when PM decides which major features are included in the release, and which 
 The final release is cut. If an urgent and important issue needs to be addressed between major releases, a bug fix release (e.g. 1.1.1) may be created.
 
 1. QA Release Manager:
-    - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
-    - Submit changelog PR for review
-        - Merge changelog PR after review is complete
 2. Dev Ops: 
     - Tags the release and cuts the final build
     - Upload the .ipa and .apk files to GitHub
 3. Marketing:
     - Finish draft of marketing images and send to marketing lead for review
 4. PM:
+    - Submit changelog PR for review
+        - Merge changelog PR after review is complete
     - Finalize docs
       - If reviews are not complete, hold a 30 minute doc review meeting with PMs and anyone else who has changed or reviewed docs this release and wants to join
       - Submit a correction PR for any incorrect formatting or other errors missed during the initial review
+    - Submit final build to Google Play Store and iTunes Connect
     
 ### G. (T-minus 0 working days) Release Day and Build Submitted to App Stores 
 
 1. QA Release Manager:
-    - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
     - Schedule a release retrospective meeting, to be held within 5 days from the release 
-    - Post key dates for the next release in the header of the Native Mobile Apps channel and remove links to RC candidates and testing spreadsheet
-        - Make sure that statutory holidays for Canada and US are accounted for in the release dates
     - Check for any [UserVoice](https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0) feature suggestions that were completed in the current release
 2. Dev Ops:
     - Merge the release branch back in to master
     - Review and update project dependencies as needed
-    - Submit final build to Google Play Store and iTunes Connect
     - Confirm that minimum server version required is clear in update notes 
     - Create release in GitHub 
     - Close the release in Jira
