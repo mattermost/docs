@@ -37,7 +37,7 @@ ingress:
 workerProcesses: 2
 workerTimeout: 60
 hpa:
-  targetAverageValue: 400m
+  targetAverageValue: 1
 workhorse:
   sentryDSN: ""
   extraArgs: ""
@@ -169,11 +169,11 @@ rack_attack:
 trusted_proxies: []
 resources:
   # limits:
-  #  cpu: 1
-  #  memory: 2G
+  #  cpu: 1.5
+  #  memory: 1.5G
   requests:
-    cpu: 100m
-    memory: 1.4G
+    cpu: 300m
+    memory: 1.2G
 maxUnavailable: 1
 minReplicas: 2
 maxReplicas: 10
