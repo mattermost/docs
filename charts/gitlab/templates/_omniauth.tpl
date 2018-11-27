@@ -27,7 +27,7 @@ omniauth:
     name: {{ $entry.secret }}
     items:
       - key: {{ default "provider" $entry.key }}
-        path: {{ printf "/etc/gitlab/omniauth/%s/%s" $entry.secret $entry.key | quote }}
+        path: {{ printf "omniauth/%s/%s" $entry.secret $entry.key | quote }}
 {{-   end }}
 {{- end -}}
 {{- end -}}
