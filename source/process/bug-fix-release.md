@@ -16,16 +16,17 @@ Pre-work for the current release begins at the code complete date of the previou
 
 1. QA Release Manager:
     - Post this checklist in Release Checklist channel
-    - Review [contributions](https://github.com/mattermost/mattermost-webapp/graphs/contributors) since last release's Code Complete for Webapp, Server, Docs, Mobile, Redux, Desktop and API Reference repos and queue a list of MVP candidates in alphabetical order to the MVP Discussion channel. [See example](https://community.mattermost.com/core/pl/h3gy69h5ujfpzedtxmsnjfubko)
     - Review submitted NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch
     - Post a reminder in the French Localization channel about the due date for translations, which is T-5 working days. [See example](https://community.mattermost.com/core/pl/7wqx4zehotgu7efhmbz51mxfqa
     - Start posting a list of release bugs in the Release Discussion channel
-2. PMs - For each team:
+2. Operations:
+    - Review [contributions](https://github.com/mattermost/mattermost-webapp/graphs/contributors) since last release's Code Complete for Webapp, Server, Docs, Mobile, Redux, Desktop and API Reference repos and queue a list of MVP candidates in alphabetical order to the MVP Discussion channel. [See example](https://community.mattermost.com/core/pl/h3gy69h5ujfpzedtxmsnjfubko)
+3. PMs - For each team:
     - Draft Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version, including breaking changes or deprecated features in the release
 ).
     - Prepare outline for release announcement based on team's work and review outline with devs and QA in your team
-3. PM Release Manager:
+4. PM Release Manager:
     - Review release outline together with other PMs and decide order of items for release announce. After review, send outline to Marketing who works on release announce draft. [See example](https://oss.mattermost.com/mattermost/pl/5t459hruhfd7bpi46tnf8zq8yo)
     
 ### C. (T-minus 14 working days) Release Bug Testing
@@ -84,7 +85,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
        - Update download links and testing server links to the latest RCs
     - Check that translations are in progress at https://translate.mattermost.com/projects/mattermost/ and reach out to translations if needed
     - Check that a redirect page has been set up in mattermost.com for any new links added to the System Console
-2. Logistics:
+2. Operations:
     - Mail out contributor and security researcher mugs
       - Space out the ordering of mugs over the next 3 weeks to prevent mistakes being made by the supplier.  i.e. If there are 12 contributors to order mugs for, place an order every 2nd or 3rd day over the next 3 weeks.
     - Update [Team](https://www.mattermost.org/team/) page with new contributors
@@ -188,7 +189,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Verify the hashes (SHA-1, SHA-256 and md5) and GPG signatures are correct for both Team Edition and Enterprise Edition.
     - Ensure [Security Policies](https://docs.mattermost.com/process/security.html) page has been updated
     - Update dependancies after release branch is cut in `mattermost-server`, `mattermost-webapp`, `desktop`, `mattermost-mobile` and `mattermost-redux`
-5. Logistics:
+5. Operations:
     - Update [MVP page](https://www.mattermost.org/mvp/) with the most valued professional of the release and order the contributor's coaster
 6. PM Release Manager:
     - Finalize docs
@@ -218,7 +219,6 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Verify all items in the last posted release checklist are complete, if not alert the release manager
     - Schedule a release retrospective meeting, to be held within 5 days from the release
     - Prepare and post [release metrics](https://docs.google.com/spreadsheets/d/1Aoj4OTaWoyrKIcQNiHH1MVoRG51T20Y_0w2tg5oVw-M/edit#gid=825551144)
-    - Post the MVP winner announcement in the [Contributors channel](https://community.mattermost.com/core/channels/tickets)
     - Post key dates for the next release in the Release Discussion channel and remove links to RC candidates and testing spreadsheet from the header
         - Make sure that statutory holidays for Canada and US are accounted for in the release dates
     - Close the release in Jira both for webapp and mobile ([releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased))
@@ -238,7 +238,8 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Confirm that [mattermost-docker](https://github.com/mattermost/mattermost-docker/releases) has been updated to the latest version (contact the maintainer via direct message on community.mattermost.com if necessary)
 2. PM Release Manager:
     - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
-3. Logistics:
+3. Operations:
+    - Post the MVP winner announcement in the [Contributors channel](https://community.mattermost.com/core/channels/tickets)
     - For the next release, create the following team meetings. If they conflict with existing meetings, check with meeting owner to reschedule or reschedule the release meeting
       - Feature Complete Meeting on T-15 at 10:00am San Francisco time
       - Judgment Day Meeting on T-13 at 10:00am San Francisco time
