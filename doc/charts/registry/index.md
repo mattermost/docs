@@ -234,6 +234,8 @@ If you chose to use the `filesystem` driver:
 For the sake of resiliency and simplicity, it is recommended to make use of an
 external service, such as `s3`, `gcs`, `azure` or other compatible Object Storage.
 
+**NOTE:** The chart will populate `delete.enabled: true` into this configuration by default if not specified by the user. This keeps expected behaviors in line with the default use of Minio, as well as the Omnibus GitLab. Any user provided value will supercede this default.
+
 
 [registry]: https://hub.docker.com/_/registry/
 [docker-distribution]: https://github.com/docker/distribution

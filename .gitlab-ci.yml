@@ -73,7 +73,8 @@ release_package:
         --form "variables[RELEASE_REF]=$CI_COMMIT_REF_NAME"
         https://gitlab.com/api/v4/projects/2860651/trigger/pipeline
   only:
-    - tags
+    - tags@charts/gitlab
+
 
 review:
   stage: review
@@ -228,6 +229,7 @@ review_helm_test:
   only:
     refs:
       - branches
+    kubernetes: active
   except:
     refs:
       - master
@@ -242,7 +244,9 @@ production_helm_test:
     - helm test --cleanup "$CI_ENVIRONMENT_SLUG"
   only:
     refs:
-      - master
+      - master@charts/gitlab
+    kubernetes: active
+
 
 debug_review:
   stage: qa
@@ -576,6 +580,7 @@ review_specs:
   only:
     refs:
       - branches
+    kubernetes: active
   except:
     refs:
       - master
@@ -588,6 +593,8 @@ production_specs:
   only:
     refs:
       - master
+    kubernetes: active
+
 qa:
   image: registry.gitlab.com/gitlab-org/gitlab-omnibus-builder:ruby_docker-0.0.7
   stage: qa
@@ -615,6 +622,7 @@ qa:
   only:
     refs:
       - branches
+    kubernetes: active
   retry: 1
   allow_failure: true
 
