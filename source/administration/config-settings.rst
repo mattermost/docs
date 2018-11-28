@@ -1378,7 +1378,7 @@ Preferred Language Attribute
 
 Login Button Text
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(Optional) The text that appears in the login button on the login page. Defaults to ``With SAML``.
+(Optional) The text that appears in the login button on the login page. Defaults to ``SAML``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonText": ""`` with string input.                                                                               |
