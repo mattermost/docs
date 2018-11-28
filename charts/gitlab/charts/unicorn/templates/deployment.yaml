@@ -317,11 +317,9 @@ spec:
         emptyDir:
           medium: "Memory"
       - name: shared-upload-directory
-        emptyDir:
-          medium: "Memory"
+        emptyDir: {}
       - name: shared-artifact-directory
-        emptyDir:
-          medium: "Memory"
+        emptyDir: {}
 {{ include "gitlab.certificates.volumes" . | indent 6 }}
     {{- if .Values.nodeSelector }}
       nodeSelector:
