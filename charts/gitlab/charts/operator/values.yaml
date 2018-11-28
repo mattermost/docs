@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 image:
   repository: registry.gitlab.com/charts/components/gitlab-operator@sha256
-  tag: c8cd1f2ab0bb837d33abf131c88486d07c9b773a807de1bfb099adbb96658412
+  tag: 30d875871102cc6257489feba11d5b115e81d66f1d4b832aa888bb35bd44c83b
   pullSecrets: []
   # pullPolicy: IfNotPresent
 
