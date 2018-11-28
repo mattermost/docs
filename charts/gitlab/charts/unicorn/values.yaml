@@ -33,6 +33,7 @@ ingress:
   proxyBodySize: "512m"
   tls: {}
     # secretName:
+    # enabled: true
   annotations: {}
 workerProcesses: 2
 workerTimeout: 60
@@ -53,6 +54,7 @@ global:
     annotations: {}
     tls: {}
       # secretName:
+      # enabled: true
   hosts:
     domain: example.com
     hostSuffix:

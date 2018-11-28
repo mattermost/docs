@@ -44,3 +44,27 @@ This can happen when the runner registration token has been changed in GitLab. (
   ```
   kubectl create secret generic <runner-secret-name> --from-literal=runner-registration-token=<new-shared-runner-token> --from-literal=runner-token=""
   ```
+
+## Too many redirects
+
+This can happen when you have TLS termination before the nginx ingress, and the tls-secrets are specified in the configuration.
+
+1. Update your values to set `global.ingress.annotations."nginx.ingress.kubernetes.io/ssl-redirect": "false"`  
+   Via a values file:
+    ```yml
+    # values.yml
+    global:
+      ingress:
+        annotations:
+          "nginx.ingress.kubernetes.io/ssl-redirect": "false"
+    ```
+   Via the helm CLI:
+    ```sh
+    helm ... --set-string global.ingress.annotations."nginx.ingress.kubernetes.io/ssl-redirect"=false
+    ```
+1. Apply the change
+
+>>>
+**NOTE:**
+When using an external service for SSL termination, that service is responsible for redirecting to https (if so desired).
+>>>

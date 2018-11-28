@@ -63,8 +63,11 @@ The above config would result in using external hostnames like: `gitlab-staging.
 
 #### https
 
-Set to false for external urls to use `http://` instead of `https`. Defaults to true. If set to true, you will need to ensure
-the nginx chart has access to the certificates.
+Set to false for external urls to use `http://` instead of `https`. Defaults to true.
+
+If set to true, you will need to ensure the nginx chart has access to the certificates.
+
+In cases where you have TLS-termination in front of your ingresses, you probably want to look at [`global.ingress.tls.enabled`](#globalingresstlsenabled)
 
 #### externalIP
 
@@ -146,6 +149,7 @@ The GitLab global host settings are located under the `global.ingress` key.
 |:---|:---|:------|
 |[global.ingress.enabled](#global-ingress-enabled)|boolean|true|
 |[global.ingress.configureCertmanager](#global-ingress-configurecertmanger)|boolean|true|
+|[global.ingress.tls.enabled](#global-ingress-tls-enabled)|boolean|true|
 |[global.ingress.tls.secretName](#global-ingress-tls-secretName)|string|(empty)|
 |[global.ingress.annotations.*annotation-key*](#global-ingress-annotations-annotation-key)|string|(empty)|
 
@@ -166,6 +170,12 @@ If `false`, and `global.ingress.tls.secretName` is not set, this will activate a
 - `registry.ingress.tls.secretName`
 - `minio.ingress.tls.secretName`
 - `global.ingress.annotations`
+
+Defaults to `true`.
+
+### global.ingress.tls.enabled
+
+When set to `false`, this disables TLS in Gitlab. This is useful for cases in which you cannot use TLS termination of ingresses, such as when you have a TLS-terminating proxy before the ingress controller. If you want to disable https completely, this should be set to `false` together with [`global.hosts.https`](#https)
 
 Defaults to `true`.
 
