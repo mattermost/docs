@@ -39,7 +39,7 @@ After all pods get in the running state you can login in your GitLab.
 **Create an OAuth application with GitLab**
 --------------------------------
 
-To create the OAUTH to set Mattermost to use Gitlab auth please follow the instructions `here <https://docs.mattermost.com/administration/config-settings.html?highlight=gitlab#gitlab>`_.
+To create the OAuth app to allow Mattermost to use GitLab as the authentication provider please follow the instructions `here <https://docs.mattermost.com/administration/config-settings.html?highlight=gitlab#gitlab>`_.
 
 Please take note on the ``Application ID``, ``Application Secret Key``, ``User API Endpoint``, ``Auth Endpoint``, ``Token Endpoint`` we will use those values later when deploying Mattermost.
 
