@@ -203,7 +203,7 @@ User object
     <tr class="row-odd">
       <td valign="middle">notify_props</td>
       <td valign="middle"><b>UserNotifyProps</b> object</td>
-      <td>The user’s notify props, as defined by the <b>UserNotifyProps</b> object.</td>
+      <td>The user’s notification preferences, as defined by the <b>UserNotifyProps</b> object.</td>
     </tr>
   </table>
 
