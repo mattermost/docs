@@ -91,6 +91,7 @@ options, such as GitLab and Registry hostnames.
 |name|type|default|
 |:---|:---|:------|
 |[ingress.enabled](#ingress-enabled)|boolean|false|
+|[ingress.tls.enabled](#ingress-tls-enabled)|boolean|true|
 |[ingress.tls.secretName](#ingress-tls-secretName)|string|(empty)|
 |[ingress.annotations.*annotation-key*](#ingress-annotations-annotation-key)|string|(empty)|
 
@@ -101,6 +102,13 @@ Setting that controls whether to create ingress objects for services that suppor
 When `false` the `global.ingress.enabled` setting is used.
 
 Defaults to `false`.
+
+### ingress.tls.enabled
+
+When set to `false`, you disable TLS for Gitlab Unicorn. This is mainly useful for cases in which you cannot use TLS termination at ingress-level, like when you have a TLS-terminating proxy before the ingress controller.
+
+Defaults to `true`.
+
 
 ### ingress.tls.secretName
 
