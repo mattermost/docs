@@ -1,0 +1,5 @@
+---
+title: robert17 Move LFS and Upload temporary storage to ephemeral disk
+merge_request: 981
+author: Robert Jordan
+type: fixed
