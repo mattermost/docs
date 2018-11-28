@@ -13,7 +13,7 @@ omniauth:
   {{- if .omniauth.providers }}
   providers:
   {{-   range $index, $entry := .omniauth.providers }}
-    - <%= YAML.load_file({{ printf "/etc/gitlab/omniauth/%s/%s" $entry.secret $entry.key | quote }}).to_json() %>
+    - <%= YAML.load_file({{ printf "/etc/gitlab/omniauth/%s/%s" $entry.secret (default "provider" $entry.key) | quote }}).to_json() %>
   {{-   end }}
   {{- end }}
 {{- end -}}
@@ -27,7 +27,7 @@ omniauth:
     name: {{ $entry.secret }}
     items:
       - key: {{ default "provider" $entry.key }}
-        path: {{ printf "omniauth/%s/%s" $entry.secret $entry.key | quote }}
+        path: {{ printf "omniauth/%s/%s" $entry.secret (default "provider" $entry.key) | quote }}
 {{-   end }}
 {{- end -}}
 {{- end -}}
