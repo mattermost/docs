@@ -20,9 +20,9 @@ Details on the version scheme, branching and tags can be found in [release docum
 
 All `CHANGELOG.md` entries should be created via the [changelog entries](changelog.md) workflow.
 
-## Installing the chart from the repo
+## Installation from Repo
 
-Details on installing from the git repo can be found in the [dev deployment](deploy.md) documentation.
+Details on installing from the git repo can be found in the [developer deployment](deploy.md) documentation.
 
 ## Naming Conventions
 

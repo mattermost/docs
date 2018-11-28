@@ -173,7 +173,7 @@ You can also use `--version <installation version>` option if you would like to 
 
 Mappings between chart versions and GitLab versions can be found [here](./version-mappings.md)
 
-Instructions for installing a development branch rather than a tagged release can be found [here](../development/deploy.md).
+Instructions for installing a development branch rather than a tagged release can be found in the [developer deploy documentation](../development/deploy.md).
 
 #### GitLab operator (experimental)
 

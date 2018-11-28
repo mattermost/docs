@@ -1,14 +1,14 @@
 ### Deploy Development Branch
 
-Deploy master or a specific branch by first cloning the repository locally:
+Clone the repository, and checkout the branch you want to deploy:
 
 ```sh
 git clone git@gitlab.com:charts/gitlab.git
+git checkout <BRANCH_NAME>
 ```
 
-Check out the appropriate branch and modify `requirements.yaml` if testing changes to external dependencies.
-
 > **Note:**
+> You can test changes to external dependencies by modifying `requirements.yaml`
 >
 > It is possible to test external dependencies using a local repository. Use `file://PATH_TO_DEPENDENCY_REPO`
 > where the path may be relative to the chartpath or absolute. For example, if using
