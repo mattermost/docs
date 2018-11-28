@@ -11,9 +11,8 @@ Release date: 2018-12-16
 ### Highlights
 
  - Added support for interactive dialogs.
- - Added support for Post Metadata
- - Added support for infinite scroll to allow users to browser channel history more easily.
  - Removed support for WebRTC. Full details can be found [here](https://forum.mattermost.org/t/built-in-webrtc-video-and-audio-calls-removed-in-v5-6-in-favor-of-open-source-plugins/5998).
+ - Added support for Ukrainian language.
  - Romanian language was promoted out of beta.
  - Removed support for mobile view on IE11
 
@@ -79,6 +78,7 @@ Release date: 2018-12-16
  - Added ``modify-incoming webhook`` CLI command to modify incoming webhook.
  - Added CLI command ``command create`` revision to check the ``EnableOnlyAdminIntegrations`` setting and to only allow team admins to create slash commands if this is set to ``true``.
  - Added ``webhook create-outgoing`` command in the CLI.
+ - Added ``webhook delete`` CLI command.
  
 ### Bug Fixes
  - Fixed an issue where pinned post list refreshed when user posted a new message.
@@ -92,7 +92,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Enterprise Edition:
  - Added "TLSMinVer": "1.2", "TLSStrictTransport": false, "TLSStrictTransportMaxAge": 63072000, "TLSOverwriteCiphers": [],
  - Added "GroupFilter": "",
- - Added "DisablePostMetadata": false
+ - Added "EnablePostMetadata": false
  - Removed ``EnablePublicChannelsMaterialization``
  - Removed ``"ExperimentalLimitClientConfig": false,``
  - Removed ``"WebrtcSettings": {`` (all the settings)
