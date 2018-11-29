@@ -35,13 +35,13 @@ Installing Mattermost
    /install/prod-docker*
    /install/docker-ebs*
    /install/deploy-cloudron*
+   Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
    /install/troubleshooting*
    /install/desktop*
    /install/smtp*
    /install/config-cloudfront*
    /install/i18n*
    /install/config-apache2.rst
-   Installing Mattermost TE Helm Chart in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
 
 Deployment
 ----------
