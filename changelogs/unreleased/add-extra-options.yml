@@ -1,0 +1,5 @@
+---
+title: Add extraInitContainers, extraContainers, extraVolumes and extraVolumeMounts to template options
+merge_request: 580
+author:
+type: other

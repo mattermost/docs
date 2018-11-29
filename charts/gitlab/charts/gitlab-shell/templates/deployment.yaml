@@ -21,11 +21,13 @@ spec:
         cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
     spec:
       initContainers:
+{{ include "gitlab.extraInitContainers" . | indent 8 }}
 {{ include "gitlab.certificates.initContainer" . | indent 8 }}
         - name: configure
           command: ['sh', '/config/configure']
           image: {{ .Values.init.image }}:{{ .Values.init.tag }}
           volumeMounts:
+{{ include "gitlab.extraVolumeMounts" . | indent 10 }}
           - name: shell-config
             mountPath: /config
             readOnly: true
@@ -63,6 +65,7 @@ spec:
                   release: {{ .Release.Name }}
       {{- end }}
       containers:
+{{ include "gitlab.extraContainers" . | indent 8 }}
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.parseAppVersion" .Chart.AppVersion) }}"
           {{ template "gitlab.imagePullPolicy" . }}
@@ -84,6 +87,7 @@ spec:
             - name: shell-secrets
               mountPath: '/etc/gitlab-secrets'
               readOnly: true
+{{ include "gitlab.extraVolumeMounts" . | indent 12 }}
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
           livenessProbe:
             exec:
@@ -99,6 +103,7 @@ spec:
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
+{{ include "gitlab.extraVolumes" . | indent 6 }}
       - name: shell-config
         configMap:
           name: {{ template "fullname" . }}

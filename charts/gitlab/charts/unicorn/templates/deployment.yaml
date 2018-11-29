@@ -52,12 +52,14 @@ spec:
                   release: {{ .Release.Name }}
       {{- end }}
       initContainers:
+{{ include "gitlab.extraInitContainers" . | indent 8 }}
 {{ include "gitlab.certificates.initContainer" . | indent 8 }}
         - name: configure
           command: ['sh']
           args: [ '-c', 'sh -x /config-unicorn/configure ; sh -x /config-workhorse/configure']
           image: {{ .Values.init.image }}:{{ .Values.init.tag }}
           volumeMounts:
+{{ include "gitlab.extraVolumeMounts" . | indent 10 }}
           - name: unicorn-config
             mountPath: /config-unicorn
             readOnly: true
@@ -94,6 +96,7 @@ spec:
             - name: WORKHORSE_ARCHIVE_CACHE_DISABLED
               value: "1"
           volumeMounts:
+{{ include "gitlab.extraVolumeMounts" . | indent 12 }}
             - name: unicorn-config
               mountPath: '/var/opt/gitlab/templates'
             - name: unicorn-secrets
@@ -103,6 +106,7 @@ spec:
 {{ toYaml .Values.init.resources | indent 12 }}
 {{- include "pullsecrets" .Values.image | indent 6}}
       containers:
+{{ include "gitlab.extraContainers" . | indent 8 }}
         - name: {{ .Chart.Name }}
           image: "{{ coalesce .Values.image.repository (include "image.repository" .) }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
           {{ template "gitlab.imagePullPolicy" . }}
@@ -150,6 +154,7 @@ spec:
               mountPath: /srv/gitlab/shared
               readOnly: false
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
+{{ include "gitlab.extraVolumeMounts" . | indent 12 }}
           livenessProbe:
             exec:
               command:
@@ -193,6 +198,7 @@ spec:
               mountPath: /srv/gitlab/shared
               readOnly: false
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
+{{ include "gitlab.extraVolumeMounts" . | indent 12 }}
           livenessProbe:
             exec:
               command:
@@ -207,6 +213,7 @@ spec:
           resources:
 {{ toYaml .Values.workhorse.resources | indent 12 }}
       volumes:
+{{ include "gitlab.extraVolumes" . | indent 6 }}
 {{- if .Values.metrics.enabled }}
       - name: unicorn-metrics
         emptyDir:

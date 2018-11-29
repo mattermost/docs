@@ -45,11 +45,13 @@ spec:
                   release: {{ .Release.Name }}
       {{- end }}
       initContainers:
+{{ include "gitlab.extraInitContainers" . | indent 8 }}
 {{ include "gitlab.certificates.initContainer" . | indent 8 }}
         - name: configure
           command: ['sh', '/config/configure']
           image: {{ .Values.init.image }}:{{ .Values.init.tag }}
           volumeMounts:
+{{ include "gitlab.extraVolumeMounts" . | indent 10 }}
           - name: mailroom-config
             mountPath: /config/configure
             subPath: configure
@@ -64,6 +66,7 @@ spec:
 {{ toYaml .Values.init.resources | indent 12 }}
 {{- include "pullsecrets" .Values.image | indent 6}}
       containers:
+{{ include "gitlab.extraContainers" . | indent 8 }}
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
           {{ template "gitlab.imagePullPolicy" . }}
@@ -74,6 +77,7 @@ spec:
             - name: mailroom-secrets
               mountPath: '/etc/gitlab'
               readOnly: true
+{{ include "gitlab.extraVolumeMounts" . | indent 12 }}
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
           livenessProbe:
             exec:
@@ -94,6 +98,7 @@ spec:
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
+{{ include "gitlab.extraVolumes" . | indent 6 }}
       - name: mailroom-config
         configMap:
           name: {{ template "fullname" . }}

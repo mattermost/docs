@@ -88,11 +88,13 @@ spec:
                   release: {{ $releaseName }}
       {{- end }}
       initContainers:
+{{ include "gitlab.extraInitContainers" $ | indent 8 }}
 {{ include "gitlab.certificates.initContainer" $ | indent 8 }}
         - name: configure
           command: ['sh', '/config/configure']
           image: {{ $initImage }}:{{ $initTag }}
           volumeMounts:
+{{ include "gitlab.extraVolumeMounts" $ | indent 10 }}
           - name: sidekiq-config
             mountPath: /config
             readOnly: true
@@ -125,6 +127,7 @@ spec:
               value: 'true'
 {{- end }}
           volumeMounts:
+{{ include "gitlab.extraVolumeMounts" $ | indent 10 }}
           - name: sidekiq-config
             mountPath: '/var/opt/gitlab/templates'
             readOnly: true
@@ -135,6 +138,7 @@ spec:
 {{ toYaml $.Values.init.resources | indent 12 }}
 {{- include "pullsecrets" $.Values.image | indent 6}}
       containers:
+{{ include "gitlab.extraContainers" $ | indent 8 }}
         - name: {{ $name }}
           image: "{{ $image }}"
           {{ template "gitlab.imagePullPolicy" $ }}
@@ -159,6 +163,7 @@ spec:
             name: metrics
 {{- end }}
           volumeMounts:
+{{ include "gitlab.extraVolumeMounts" $ | indent 10 }}
 {{- if $metricsEnabled }}
           - name: sidekiq-metrics
             mountPath: '/metrics'
@@ -198,6 +203,7 @@ spec:
           resources:
 {{ toYaml ( default $resources .resources ) | indent 12 }}
       volumes:
+{{ include "gitlab.extraVolumes" $ | indent 6 }}
 {{- if $metricsEnabled }}
       - name: sidekiq-metrics
         emptyDir:

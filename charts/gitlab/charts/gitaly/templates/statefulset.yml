@@ -24,10 +24,12 @@ spec:
     spec:
       terminationGracePeriodSeconds: 30
       initContainers:
+{{ include "gitlab.extraInitContainers" . | indent 8 }}
         - name: configure
           command: ['sh', '/config/configure']
           image: {{ .Values.init.image }}:{{ .Values.init.tag }}
           volumeMounts:
+{{ include "gitlab.extraVolumeMounts" . | indent 10 }}
           - name: gitaly-config
             mountPath: /config
             readOnly: true
@@ -65,6 +67,7 @@ spec:
                   release: {{ .Release.Name }}
       {{- end }}
       containers:
+{{ include "gitlab.extraContainers" . | indent 8 }}
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.parseAppVersion" .Chart.AppVersion) }}"
           {{ template "gitlab.imagePullPolicy" . }}
@@ -89,6 +92,7 @@ spec:
                 fieldRef:
                   fieldPath: metadata.name
           volumeMounts:
+{{ include "gitlab.extraVolumeMounts" . | indent 12 }}
             - name: gitaly-config
               mountPath: '/etc/gitaly/templates'
             - name: gitaly-secrets
@@ -116,6 +120,7 @@ spec:
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
+{{ include "gitlab.extraVolumes" . | indent 6 }}
       - name: gitaly-config
         configMap:
           name: {{ template "fullname" . }}
