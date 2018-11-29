@@ -366,12 +366,12 @@ The following chart highlights the end user features of Mattermost and their sup
     "Markdown", "X", "X", "O"
     "Emojis", "X", "X", "X"
     "Emoji reactions", "X", "X", "X"
-    "Viewing emoji reactions", "X", "X", "v1.13"
+    "Viewing emoji reactions", "X", "X", "X"
     "File sharing", "X", "X", "X"
     "@ mentions", "X", "X", "X"
-    "Hashtags", "X", "X", "v1.13"
+    "Hashtags", "X", "X", "X"
     "Search (with in:, from:, before:, on: and after:)", "X", "X", "X"
-    "Search highlighting", "X", "X", "v1.15"
+    "Search highlighting", "X", "X", "???"
     "View/marking pinned or flagged posts", "X", "X", "X"
     "Image link previews", "X", "X", "X"
     "Website previews", "X", "X", "X"
@@ -401,17 +401,10 @@ The following chart highlights the end user features of Mattermost and their sup
     "Localization for 15 languages", "X", "X", "X"
     "Account settings", "X", "X", "O"
     "OAuth login with Google/Office 365", "X", "X",
-    "Connect to multiple Mattermost servers from a single interface and switch with shortcut keys (similar to tabs in web browser", " ", "X", 
-    "Auto-start Mattermost when a user logs into their machine", " ", "X"    
-    "(Windows) Add Mattermost to Start menu, taskbar and system tray", " ", "X", 
-    "(Windows/Mac) Deep link to the desktop app via mattermost:// protocol if app is already installed", " ", "X", 
-    "(Mac) Add Mattermost to the applications Dock", " ", "X", 
-    "(Linux) Desktop Entry for the application to more easily integrate into a desktop environment", " ", "X", 
 
 **Legend:**
 
 * X - Full Support
-
 * O - Partial support
 
 Design Decisions
