@@ -10,11 +10,18 @@ Release date: 2018-12-16
 
 ### Highlights
 
- - Added support for interactive dialogs.
- - Removed support for WebRTC. Full details can be found [here](https://forum.mattermost.org/t/built-in-webrtc-video-and-audio-calls-removed-in-v5-6-in-favor-of-open-source-plugins/5998).
- - Added support for Ukrainian language.
+#### Interactive Dialogs
+ - Added support for interactive dialogs to more easily collect structured information from users to perform an action or request via an integration.
+ 
+#### 16 Total Languages
+ - Added support for Ukrainian language, bringing the total languages supported by Mattermost to 16.
  - Romanian language was promoted out of beta.
- - Removed support for mobile view on IE11
+ 
+#### Removed support for WebRTC
+ - Full details can be found [here](https://forum.mattermost.org/t/built-in-webrtc-video-and-audio-calls-removed-in-v5-6-in-favor-of-open-source-plugins/5998).
+ 
+#### Removed support for IE11 Mobile View
+ - Removed support for mobile view on IE11 due to low usage and in order to invest that effort in maintaining a high quality experience on other more used browsers.
 
 ### Improvements
 
@@ -26,25 +33,40 @@ Release date: 2018-12-16
  
 #### User Interface
  - Added ability to remove profile pictures in Account Settings.
- - Added different channel sidebar reorganization settings, such as the ability to sort channels by recent posts.
- - Added progress bar to uploads.
+ - Added different experimental channel sidebar reorganization settings, such as the ability to sort channels by recent posts.
  - Added an admin badge to profile popover to allow users to see if a user is a server admin.
  - Added an option to be able to clear search results.
- - Ensured that system messages will render @{username} so that users can click the username and see the username popover.
- - Group Messaging: Show existing group messages in the Direct Messages More list.
- - Added aria labels to resolve accessibility issues with lack of alt text and unlabeled buttons.
  
 #### Notifications
  - Enabled push notifications to use TPNS by default.
- - Added a channel notification setting to disable (or enable) @-channel @-here @-all notifications in specific channels.
+ - Added a channel notification setting to disable @-channel @-here @-all notifications in specific channels.
 
 #### Performance
  - Return fewer user autocomplete matches.
  
 #### Plugins
  - Added "min_server_version" in plugin.json manifest to enable built-in control for preventing load/enable of plugin if server version is not met.
- - Allow plugins to add channel header tooltips.
- - Removed "System Console > Plugins > Configuration" page and moved enabling plugins setting to the Management page.
+ - Added ability for plugins to add channel header tooltips.
+ 
+#### Bulk Import/Export
+ - Added capability to export reactions of posts during bulk export.
+ - Added bulk import email intervals to specify an email batching interval during bulk import.
+ - Included favorite channels in bulk export.
+ - Added User Notify Props and per-channel NotifyProps in Bulk Export.
+ - Added capability to bulk export custom emojis.
+ 
+#### Command Line Interface (CLI)
+ - Added ``command create`` CLI command to check the ``EnableOnlyAdminIntegrations`` setting and to only allow team admins to create slash commands if this is set to ``true``.
+ - Added ``team search`` CLI command to search for teams based on team names.
+ - Added ``webhook list`` CLI command to allow listing webhooks for a team or multiple teams.
+ - Added ``team list`` CLI command for listing commands under a team.
+ - Added ``command delete`` CLI command to allow deleting slash commands.
+ - Added ``team archive`` CLI command to archive a team by name.
+ - Added ``create webhook-incoming`` CLI command to create incoming webhooks.
+ - Added ``command create`` CLI command to create slash commands.
+ - Added ``modify-incoming webhook`` CLI command to modify incoming webhooks.
+ - Added ``webhook create-outgoing`` CLI command to create outgoing webhooks.
+ - Added ``webhook delete`` CLI command to delete webhooks.
  
 #### Slash Commands
  - Added support for multiple responses to the User Interface from a slash command.
@@ -52,36 +74,14 @@ Release date: 2018-12-16
  
 #### Administration
  - Terms of Service feature improvements.
+ - Removed "System Console > Plugins > Configuration" page and moved enabling plugins setting to the Management page.
  
 #### Enterprise Edition (E20)
  - Data Retention was promoted out of beta.
-
-#### Bulk Import
- - Added capability to export reactions of posts during bulk export.
- - Added bulk import email intervals to specify an email batching interval during bulk import.
- - Included favorite channels in bulk export.
- - Included User Notify Props in the Bulk Export.
- - Included the per-channel NotifyProps for Users in Bulk Export.
- - Added capability to bulk export custom emojis.
- 
-#### CLI
- - Added the ``team search`` CLI command to search for teams based on team names.
- - Added ``webhook list`` CLI command to allow listing webhooks, for a team, or for all teams.
- - Added a ``team list`` CLI command for listing commands under a team.
- - Added CLI command "command delete" to allow deleting slash commands.
- - Created CLI command ``config get``.
- - Added CLI command ``config show``.
- - Added ``team archive`` CLI command to archive a team by name.
- - Added ``create webhook-incoming`` CLI command to create incoming webhook.
- - Added ``command create`` to create slash commands in the CLI.
- - Created ``config set`` CLI command.
- - Added ``modify-incoming webhook`` CLI command to modify incoming webhook.
- - Added CLI command ``command create`` revision to check the ``EnableOnlyAdminIntegrations`` setting and to only allow team admins to create slash commands if this is set to ``true``.
- - Added ``webhook create-outgoing`` command in the CLI.
- - Added ``webhook delete`` CLI command.
  
 ### Bug Fixes
- - Fixed an issue where pinned post list refreshed when user posted a new message.
+
+ - Fixed an issue where pinned post list refreshed when a user posted a new message.
 
 ### Compatibility
 
@@ -89,13 +89,12 @@ Release date: 2018-12-16
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
-#### Changes to Enterprise Edition:
- - Added "TLSMinVer": "1.2", "TLSStrictTransport": false, "TLSStrictTransportMaxAge": 63072000, "TLSOverwriteCiphers": [],
- - Added "GroupFilter": "",
- - Added "EnablePostMetadata": false
- - Removed ``EnablePublicChannelsMaterialization``
- - Removed ``"ExperimentalLimitClientConfig": false,``
- - Removed ``"WebrtcSettings": {`` (all the settings)
+#### Changes to Team Edition and Enterprise Edition:
+
+ - Under ``"ServiceSettings"`` in ``config.json``:
+    - Added ``"TLSMinVer": "1.2"``, ``"TLSStrictTransport": false``, ``"TLSStrictTransportMaxAge": 63072000`` and ``"TLSOverwriteCiphers": []``, to enable push notifications to use TPNS by default.
+ - Under ``"ExperimentalSettings"`` in ``config.json``:
+    - Added ``"EnablePostMetadata": false``, to 
  
 ### API Changes
 
