@@ -36,6 +36,10 @@ Table below contains all the possible charts configurations that can be supplied
 | redis.serviceName     | Redis service name                             | redis                                          |
 | psql.password.secret  | psql secret                                    | gitlab-postgres                                |
 | psql.password.key     | key to psql password in psql secret            | psql-password                                  |
+| extraInitContainers   | List of extra init containers to include       |                                                |
+| extraContainers       | List of extra containers to include            |                                                |
+| extraVolumes          | List of extra volumes to create                |                                                |
+| extraVolumeMounts     | List of extra volumes mountes to do            |                                                |
 
 ## Chart configuration examples
 ### image.pullSecrets
