@@ -51,53 +51,49 @@ Deployment
 
    /deployment/on-boarding*
    /deployment/bulk-loading.rst
+   /administration/migrating.md
+   /administration/hipchat-migration-guidelines*
+   /administration/bulk-export.rst
    /deployment/desktop-app-deployment*
    AppConfig for EMM Solutions </deployment/mobile-appconfig.rst>
-   /deployment/sso-ldap*
-   /deployment/advanced*
-   /deployment/auth*
-   /deployment/sso-saml.rst
-   /deployment/scaling*
-   /deployment/cluster.rst
-   /deployment/elastic*
-   /deployment/sso-gitlab*
-   /deployment/sso-google*
-   /deployment/sso-office*
-   /deployment/metrics*
+   /administration/encryption*
+   /administration/image-proxy*
    /deployment/customize-mattermost.rst
    /deployment/ssl-client-certificate*
    /deployment/certificate-based-authentication*
-   /deployment/client-side-data.rst
 
-Administration
---------------
+Upgrading Mattermost
+----------------------------
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
+   :glob:
+   
+   /administration/upgrade.rst
+   /administration/important-upgrade-notes*   
+   /administration/downgrade.rst
+   /administration/changelog*
+   /administration/version-archive*
+   /administration/extended-support-release*
+
+Administration
+----------------------------
+
+.. toctree::
+   :maxdepth: 2
    :glob:
 
    /administration/command*
    /administration/config*
+   /deployment/client-side-data.rst
    /administration/team-settings.md
    /administration/statistics.md
-   /administration/upgrade.rst
-   /administration/downgrade.rst
-   /administration/version-archive*
-   /administration/extended-support-release*
    /administration/migration-announcement-email-template*
    /administration/backup*
    /administration/liveness-check*
-   /administration/migrating.md
-   /administration/bulk-export.rst
-   /administration/encryption*
-   /administration/image-proxy*
    /administration/plugins*
    /administration/announcement-banner.rst
    /administration/branding*
-   /administration/compliance*
-   /administration/compliance-export*
-   /administration/data-retention*
-   /administration/performance-alerting-guide*
    
 Mobile Apps
 -----------
@@ -112,14 +108,54 @@ Mobile Apps
    /mobile/mobile-faq.rst
    /mobile/mobile-troubleshoot.rst
 
-Changelog
-----------
+User Provisioning
+----------------------------
 
 .. toctree::
    :maxdepth: 2
    :glob:
+   
+   /deployment/sso-ldap*
+   /deployment/auth*
+   /deployment/sso-saml.rst
+   /deployment/sso-gitlab*
+   /deployment/sso-google*
+   /deployment/sso-office*
+   
+Access Control
+----------------------------
 
-   /administration/changelog*
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   
+   /deployment/advanced*
+   /deployment/permissions-backend*
+
+Scale
+----------------------------
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   
+   /deployment/scaling*
+   /deployment/cluster*
+   /deployment/elastic*
+   /deployment/metrics*
+   /administration/performance-alerting-guide*
+
+Compliance
+----------------------------
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   
+   /administration/compliance*
+   /administration/compliance-export*
+   /administration/data-retention*
+   /administration/custom-terms-of-service*
    
 Unofficial Enhancements
 -----------------------
