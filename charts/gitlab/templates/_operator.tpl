@@ -15,7 +15,7 @@ Else if the version is a 'x.x' version, we use the 'vx.x.x' image tag
 Else we just use the version passed as the image tag
 */}}
 {{- define "gitlab.operator.parseVersion" -}}
-{{- $version := coalesce . "master" -}}
+{{- $version := (coalesce . "master") | toString -}}
 {{- if eq $version "master" -}}
 latest
 {{- else if regexMatch "^\\d+\\.\\d+$" $version -}}

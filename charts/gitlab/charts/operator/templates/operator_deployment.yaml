@@ -21,7 +21,7 @@ spec:
       serviceAccountName: {{ template "fullname" . }}
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.operator.parseVersion" (.Values.version | quote) ) }}"
+          image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.operator.parseVersion" .Values.version ) }}"
           env:
           - name: API_SUBGROUP
             value: {{ .Release.Name }}
