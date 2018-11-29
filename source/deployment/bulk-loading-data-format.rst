@@ -776,7 +776,7 @@ Fields of the User object
      <tr class="row-odd">
       <td valign="middle">email_interval</td>
       <td valign="middle">string</td>
-      <td>Specify an email batching interval during bulk import. Can have one the following values:<br>
+      <td>Specify an email batching interval during bulk import. Can have one of the following values:<br>
           <kbd>"immediate"</kbd> - Emails are sent immediately.  <br>
           <kbd>"fifteen"</kbd> - Emails are batched and sent every 15 minutes.<br>
           <kbd>"hour"</kbd> - Emails are batched and sent every hour.<br> </td>
