@@ -59,8 +59,6 @@ Deployment
    /administration/encryption*
    /administration/image-proxy*
    /deployment/customize-mattermost.rst
-   /deployment/ssl-client-certificate*
-   /deployment/certificate-based-authentication*
 
 Upgrading Mattermost
 ----------------------------
@@ -121,6 +119,8 @@ User Provisioning
    /deployment/sso-gitlab*
    /deployment/sso-google*
    /deployment/sso-office*
+   /deployment/ssl-client-certificate*
+   /deployment/certificate-based-authentication*
    
 Access Control
 ----------------------------
