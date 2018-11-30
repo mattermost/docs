@@ -33,6 +33,8 @@ Release date: 2018-12-16
  
 #### User Interface
  - Added ability to remove profile pictures in Account Settings.
+ - Added a new bar that shows progress on uploads.
+ - Added a new badge to the profile popover that indicates a user is a server admin.
  - Added different experimental channel sidebar reorganization settings, such as the ability to sort channels by recent posts.
  - Added an admin badge to profile popover to allow users to see if a user is a server admin.
  - Added an option to be able to clear search results.
@@ -47,6 +49,7 @@ Release date: 2018-12-16
 #### Plugins
  - Added "min_server_version" in plugin.json manifest to enable built-in control for preventing load/enable of plugin if server version is not met.
  - Added ability for plugins to add channel header tooltips.
+ - Stop hashing plugin keys on write.
  
 #### Bulk Import/Export
  - Added capability to export reactions of posts during bulk export.
@@ -142,6 +145,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``CreateDirectChannel`` plugin API.
  - Added ``RemoveTeamIcon`` plugin API.
  - Added ``SubmitDialogResponse`` and ``SubmitDialogRequest``.
+ - Added ``SearchUsers(search *UserSearch)`` method to plugin API.
  
 #### Database Changes
 
