@@ -1560,7 +1560,7 @@ User sessions are cleared when a user tries to log in. Additionally, a job runs 
 
 Session length for email and AD/LDAP authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-She number of days from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
+Set the number of days from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
 
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
@@ -1570,7 +1570,7 @@ After changing this setting, the new session length will take effect after the n
 
 Session length for mobile apps (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-She number of days from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
+Set the number of days from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
 
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
