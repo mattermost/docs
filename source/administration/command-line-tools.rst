@@ -1595,20 +1595,23 @@ mattermost webhook create-outgoing
   Examples
     .. code-block:: none
 
-      sudo ./mattermost webhook create-outgoing --team myteam --channel mychannel --user myusername --display-name mywebhook --description "My cool webhook" --trigger-when 1 --trigger-words "build\ntest" --icon http://localhost:8000/my-slash-handler-bot-icon.png --urls http://localhost:8000/my-webhook-handler --content-type "application/json"
+      sudo ./mattermost webhook create-outgoing --team myteam --channel mychannel --user myusername --display-name mywebhook --description "My cool webhook" --trigger-when start --trigger-word "build" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json"
+
+      sudo ./mattermost webhook create-outgoing --team myotherteam --channel mychannel --user myusername --display-name myotherwebhook --description "My cool webhook" --trigger-when exact --trigger-word "build" --trigger-word "test" --trigger-word "third-trigger" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --url http://example.com --content-type "application/json"
 
   Options
     .. code-block:: none
-          --team string [REQUIRED]           Team name or ID
-          --channel string                   Channel name or ID
-          --user string [REQUIRED]           User username, email, or ID (required)
-          --display-name string [REQUIRED]   Outgoing webhook display name
-          --description string               Outgoing webhook description
-          --trigger-words string [REQUIRED]  Words to trigger webhook (word1\nword2)
-          --trigger-when integer             When to trigger webhook (either when trigger word is first (enter 1) or when it's anywhere (enter 0))
-          --icon [iconURL]                   Icon URL
-          --url string [REQUIRED]            Callback URLs (url1\url2)
-          --content-type string              Content-type
+          --team string [REQUIRED]                Team name or ID
+          --channel string                        Channel name or ID
+          --user string [REQUIRED]                User username, email, or ID 
+          --display-name string [REQUIRED]        Outgoing webhook display name
+          --description string                    Outgoing webhook description
+          --trigger-words stringArray [REQUIRED]  Words to trigger webhook 
+          --trigger-when string [REQUIRED]        When to trigger webhook (exact: for first word matches a trigger word exactly, start: for first word starts with a trigger word) (default "exact")
+          --icon [iconURL]                        Icon URL
+          --url stringArray [REQUIRED]            Callback URLs 
+          --content-type string                   Content-type
+	  --h, --help				  Help for create-outgoing
 	  
 mattermost webhook list
 ~~~~~~~~~~~~~~~~~~~~~~
