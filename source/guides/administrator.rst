@@ -107,6 +107,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /administration/migrating.md
    /administration/hipchat-migration-guidelines*
    /administration/migration-announcement-email-template*
+   /administration/user-provisioning*
    /deployment/sso-ldap*
    /deployment/auth*
    /deployment/sso-saml.rst
