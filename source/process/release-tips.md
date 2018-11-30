@@ -51,6 +51,4 @@ not getting to 100%.
     - Include CTAs and avoid including external links unless they direct to Mattermost website or documentation.
     - Give release outline for all PMs and Rich before giving to Justin.
   - Email:
- - Check that the link on the email banner is correct.
-
-
+    - Check that the link on the email banner is correct.
