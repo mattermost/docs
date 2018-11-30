@@ -3,7 +3,7 @@
 AD/LDAP Groups (Alpha) (E20)
 ===========================
 
-This feature is current offered as an alpha release for Enterprise Edition 20 customers via a custom build. Please see `this forum post <https://TODO.com>`_ for more details. 
+This feature is currently offered as an alpha release for Enterprise Edition 20 customers via a custom build. Please see `this forum post <https://TODO.com>`_ for more details. 
 
 Overview
 --------------------
@@ -12,21 +12,21 @@ Groups are a convenient way to manage default membership for users in teams and 
 
 Pre-installation notes
 ----------------------
-The group filter is configuration setting available under **System Console > AD/LDAP** and the synchronization of groups happens with the synchronization of users. The group feature has no implications to users' authentication to Mattermost. 
+The group filter is a configuration setting available under **System Console > AD/LDAP** and the synchronization of groups happens with the synchronization of users. The group feature has no implications to users' authentication to Mattermost. 
 
 Getting started
 ---------------
 
-Mattermost groups synced to AD/LDAP groups are configured first at **System Console > Authentication > AD/LDAP** and then on the new **Access Control > Groups** page.
+Mattermost groups synced to AD/LDAP groups are configured first at **System Console > Authentication > AD/LDAP** and then on **Access Control > Groups** page.
 
 AD/LDAP group synchronization
 -----------------------------
 
-To synchronize your AD/LDAP groups to Mattermost, you will need to specify the filter used to retrieve groups. Enter in the filter for your AD/LDAP group under **System Console > Authentication > AD/LDAP > Group Filter**. 
+To synchronize your AD/LDAP groups to Mattermost, you will need to specify the filter used to retrieve groups. Enter your AD/LDAP group under **System Console > Authentication > AD/LDAP > Group Filter**. 
  
 .. image:: ../images/Group_filter.png
 
-During the initial synchronization, AD/LDAP groups, nested groups, and associated users will be retrieved based on the filter you entered.  Synchronization of groups will occur after user synchronization.  
+During the initial synchronization, AD/LDAP groups, nested groups and associated users will be retrieved based on the filter you entered.  Synchronization of groups will occur after user synchronization.  
 
 On subsequent synchronizations:
  - Additional AD/LDAP groups will be retrieved if they match your group filter.
@@ -47,18 +47,18 @@ Groups that have been returned from your AD/LDAP group filter will be available 
 
 .. image:: ../images/Groups_listing.png
 
-Groups can be linked individually by the inline “Linked” button or by using the checkbox next the group name to select multiple groups and using the blue “Link Selected Groups” button. When selecting multiple groups and there is a mix of “Linked” and “Not Linked” states, the bulk action of the button will be “Link Selected Groups” until all selected are marked “Linked”
+Groups can be linked individually by the inline “Linked” button or by using the checkbox next the group name to select multiple groups and by using the blue “Link Selected Groups” button. When selecting multiple groups with a mix of “Linked” and “Not Linked” states, the bulk action of the button will be “Link Selected Groups” until all selected are marked “Linked”.
 
-If you see a “Linked Failed” message, click on the message or you can check the box before the group name exposing the inline link message again, allowing you to try the link again.
+If you see a “Linked Failed” message, either click on the message or check the box before the group name to expose the inline link message, allowing you to try the link again.
 
 Configure the group
 -------------------
 
-AD/LDAP groups that have been linked to Mattermost groups are able to be configured.  To configure the group select “Configure”.  This will open up the Group Configuration page.  On this page you will see the group Profile, which includes the group name.  This name is automatically mapped from the AD/LDAP group common name attribute and is read-only.  
+AD/LDAP groups that have been linked to Mattermost groups are able to be configured.  To configure the group, select “Configure”.  This will open up the Group Configuration page.  On this page you will see the group Profile, which includes the group name.  This name is automatically mapped from the AD/LDAP group common name attribute and is read-only.  
 
 Add default teams or channels for the group
 --------------------------------------------
-To add the default Team or Channels that you want the group members to default in, select either “Add Team” or “Add Channel” on from the blue “Add Team or Channel” button.  You may select multiple teams and channels.  
+To add the default Team or Channels that you want the group members to default in, select either “Add Team” or “Add Channel” from the blue “Add Team or Channel” button.  You may select multiple teams and channels.  
 
 .. image:: ../images/Add_Team_Or_Channel.png
 
@@ -76,7 +76,7 @@ Channels are nested below the Team they belong to in the team and channel list.
  - private channels are indicated by:
 .. image::../images/private_channel.png icon.  
 
-Teams added will include default channels, Town Square, and Off-Topic. Adding a channel without setting the team will add the implied team to the listing below, but not to the group specifically.
+Teams added will include default channels, Town Square and Off-Topic. Adding a channel without setting the team will add the implied team to the listing below, but not to the group specifically.
 
 Teams and channels membership synchronization
 ----------------------------------------------
@@ -99,14 +99,14 @@ Users who have logged in and accessed Mattermost will be visible in the members 
 
 .. image:: ../images/Group_Members.png
 
-Users will be removed from the group on subsequent synchronizations, however they will not be removed from the teams and channels that they were defaulted to in the synchronization. If a user is removed from a AD/LDAP group and then later re-added, they will be defaulted again into the teams and channels configured in the group. If a member is removed all together from the AD/LDAP system all their team and channel memberships will be removed. 
+Users will be removed from the group on subsequent synchronizations. However, they will not be removed from the teams and channels that they were defaulted to in the synchronization. If a user is removed from a AD/LDAP group and then later re-added, they will be defaulted again into the teams and channels configured in the group. If a member is removed altogether from the AD/LDAP system, all their team and channel memberships will be removed. 
 
 ..note:: 
-When a member removes themselves manually from a channel, that action is tracked in the Channel Member History table.  Users are not re-added to channels in which they previously removed themselves. 
+When a member removes themselves manually from a channel, that action is tracked in the Channel Member History table.  Users are not re-added to channels from which they previously removed themselves. 
 
 Managing groups
 ---------------
-Once a group has been configured, it can be edited to change the default team and channels, by clicking “Edit” on the group on the list view.  
+Once a group has been configured, it can be edited to change the default team and channels by clicking “Edit” on the group on the list view.  
 
 Deleting groups
 ---------------
@@ -141,4 +141,4 @@ You can manually initiate a synchronization from **System Console > Authenticati
 How do nested groups work with AD/LDAP Group Sync?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Users within nested groups are included as members of parent groups. The group filter that you specify can include any type of LDAP group on your system. The 'memberof' LDAP attribute is used to determine nested groups that belong to a parent group.   
+Users within nested groups are included as members of parent groups. The group filter that you specify can include any type of LDAP group on your system. The ``memberof`` LDAP attribute is used to determine nested groups that belong to a parent group.
