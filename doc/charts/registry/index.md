@@ -256,10 +256,10 @@ external service, such as `s3`, `gcs`, `azure` or other compatible Object Storag
 [docker-distribution-config-docs]: https://docs.docker.com/registry/configuration
 [registry-config]: https://github.com/docker/distribution-library-image/blob/master/registry/config-example.yml
 
-[Service]: ../../../charts/registry/templates/service.yaml
-[Deployment]: ../../../charts/registry/templates/deployment.yaml
-[ConfigMap]: ../../../charts/registry/templates/configmap.yaml
-[values.yml]: ../../../charts/registry/values.yaml
+[Service]: https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/service.yaml
+[Deployment]: https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/deployment.yaml
+[ConfigMap]: https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/configmap.yaml
+[values.yml]: https://gitlab.com/charts/gitlab/blob/master/charts/registry/values.yaml
 [globals]: ../globals.md
 
 [kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/

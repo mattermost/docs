@@ -41,7 +41,7 @@ helm install ...
 To make use of an external `cert-manager` and `Issuer` resource you must provide several items, so that self-signed certificates
 are not activated.
 
-1. Annotations to activate the external `cert-manager` (see [documentation](cm-annotations) for further details)
+1. Annotations to activate the external `cert-manager` (see [documentation][cm-annotations] for further details)
 1. Names of TLS secrets for each service (this deactivates [self-signed behaviors](#option-4-use-auto-generated-self-signed-wildcard-certificate))
 
 ```

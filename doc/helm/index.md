@@ -10,7 +10,7 @@ Helm `v1` is explicitly not supported. Helm `v3` may work, but there has not bee
 
 ## Helm is not stand-alone
 
-To make use of Helm, you must have a [Kubernetes][k8s-io] cluster. Follow the [dependencies documentation](../installation/dependencies.md)
+To make use of Helm, you must have a [Kubernetes][k8s-io] cluster. Follow the [dependencies documentation](../installation/tools.md)
 to ensure you can access your cluster using `kubectl`.
 
 Helm consists of two parts, `helm` client and `tiller` server inside Kubernetes.

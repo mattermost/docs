@@ -116,8 +116,8 @@ The `certmanager` chart can not be used with minikube. You must disable this by 
 As a result, if you do not provide your own SSL certificates, self-signed certificates will be generated. 
 The `gitlab-runner` chart is not compatible with self-signed certificates at this time, and as such, should be disabled by setting `gitlab-runner.install=false`
 
-When using the recommended 3 CPU, 8 GB, use [values-minikube.yaml](../../examples/values-minikube.yaml) as a basis.
-If using _absolute minimum_ resources, you must reduce all replicas and disable unneeded services. See [values-minikube-minimum.yaml](../../examples/values-minikube-minimum.yaml) a reasonable base.
+When using the recommended 3 CPU, 8 GB, use [values-minikube.yaml](https://gitlab.com/charts/gitlab/blob/master/examples/values-minikube.yaml) as a basis.
+If using _absolute minimum_ resources, you must reduce all replicas and disable unneeded services. See [values-minikube-minimum.yaml](https://gitlab.com/charts/gitlab/blob/master/examples/values-minikube-minimum.yaml) a reasonable base.
 
 ### Handling DNS
 

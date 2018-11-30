@@ -19,7 +19,7 @@ release.
 
 ## Usage
 
-The [gke bootstrap script](../../scripts/gke_bootstrap_script.sh) takes an argument `chaos` which install and unleashes kube monkey
+The [gke bootstrap script](https://gitlab.com/charts/gitlab/blob/master/scripts/gke_bootstrap_script.sh) takes an argument `chaos` which install and unleashes kube monkey
 scheduling a run 60s after installing kube monkey by default. It also sets up the needed service account and role if RBAC is enabled.
 
 To install and unleash kube monkey run `scripts/gke-bootstrap-script.sh chaos`

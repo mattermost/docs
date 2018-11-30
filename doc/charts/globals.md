@@ -324,7 +324,7 @@ Gitaly chart is a `StatefulSet`, dynamically provisioned disks _will not_
 be reclaimed. This means the data disks will persist, and the data on them can be
 accessed when the set is scaled up again by re-adding a node to the `names` list.
 
-A sample [configuration of multiple internal nodes](../../examples/gitaly/values-multiple-internal.yaml)
+A sample [configuration of multiple internal nodes](https://gitlab.com/charts/gitlab/blob/master/examples/gitaly/values-multiple-internal.yaml)
 can be found under the examples folder.
 
 #### External
@@ -337,7 +337,7 @@ Each item of this list has 3 keys:
 
 **NOTE:** You must have an entry with `name: default`.
 
-A sample [configuration of multiple external nodes](../../examples/gitaly/values-multiple-external.yaml)
+A sample [configuration of multiple external nodes](https://gitlab.com/charts/gitlab/blob/master/examples/gitaly/values-multiple-external.yaml)
 can be found under the examples folder.
 
 #### Mixed
@@ -347,7 +347,7 @@ be noted:
 - There must always be a node named `default`, which Internal provides by default.
 - External nodes will be populated first, then Internal.
 
-A sample [configuration of mixed internal and external nodes](../../examples/gitaly/values-multiple-mixed.yaml)
+A sample [configuration of mixed internal and external nodes](https://gitlab.com/charts/gitlab/blob/master/examples/gitaly/values-multiple-mixed.yaml)
 can be found under the examples folder.
 
 ### authToken
@@ -468,7 +468,6 @@ global:
 
 [unicorn]: gitlab/unicorn/index.md
 [sidekiq]: gitlab/sidekiq/index.md
-[task-runner]: gitlab/task-runner/index.md
 
 ### General application settings
 

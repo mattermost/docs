@@ -1,8 +1,9 @@
 # Development Styleguide
 
-Our contribution policies can be found in [CONTRIBUTING.md](../../CONTRIBUTING.md)
+Our contribution policies can be found in [CONTRIBUTING.md](https://gitlab.com/charts/gitlab/tree/master/CONTRIBUTING.md)
 
 **Table of Contents**
+
 - [Versioning and Release](#versioning-and-release)
 - [Changelog Entries](#changelog-entries)
 - [Installing the chart from the repo](#installing-the-chart-from-the-repo)

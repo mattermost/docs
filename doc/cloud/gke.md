@@ -10,7 +10,8 @@ To make getting started easier, we have provided a script to [automate cluster c
 
 ### Scripted cluster creation
 
-We have created a [bootstrap script](../../scripts/gke_bootstrap_script.sh) to automate much of the setup process for users on GCP/GKE. It will:
+We have created a [bootstrap script](https://gitlab.com/charts/gitlab/blob/master/scripts/gke_bootstrap_script.sh) to automate much of the setup process for users on GCP/GKE. It will:
+
 * Create a new GKE cluster
 * Allow the cluster to modify DNS records
 * Setup kubectl, and connect it to the cluster

@@ -49,8 +49,7 @@ We recommend [using your own certificates](../installation/tls.md#option-2-use-y
 >
 > For environments where internal loadbalancers are required,
 > [Amazon's Elastic Load Balancers](https://docs.aws.amazon.com/eks/latest/userguide/load-balancing.html)
-> require [special annotations](../../examples/eks_loadbalancer_annotations.yml).
-> 
+> require [special annotations](https://gitlab.com/charts/gitlab/blob/master/examples/eks_loadbalancer_annotations.yml).
 
 # Next Steps
 
