@@ -43,5 +43,14 @@ not getting to 100%.
  - HA: Test server available.
  - Scale: Via loadtests.
 
+### Release marketing
+
+ - Blog post:
+    - Follow [guidelines](https://docs.mattermost.com/process/marketing-guidelines.html#guidelines-for-release-announcements).
+    - Audience: end-users, admin/tech.
+    - Include CTAs and avoid including external links unless they direct to Mattermost website or documentation.
+    - Give release outline for all PMs and Rich before giving to Justin.
+  - Email:
+ - Check that the link on the email banner is correct.
 
 
