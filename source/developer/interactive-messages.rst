@@ -288,7 +288,7 @@ Context
 
   Then, when the integration receives the request, it can act based on the action id.
   
-  3. **Authenticating the server**.Sometimes, you might want to include a customer header in requests to be consumed by the integration. In such a case, you could add a Custom Header to your message, and it will be included in the HTTP Header field when the request is presented to the integration.
+  3. **Authenticating the server**.Sometimes, you might want to include a custome header in requests to be consumed by the integration. In such cases, you could add a Custom Header to your message, and it will be added to the HTTP Header field.
  
     .. code-block:: text
 
@@ -298,7 +298,7 @@ Context
         },
        "custom_header": "some value",
       }
-Requests sent with a custom header, will have  `X-Custom-Header` assigned to header key and value of what has been defined by inside  `customer_header`. 
+To setup custom request header, add `customer_header` parameter to your JSON message. Request headers that are sent this way,  will automatically have an additional header field with the key `X-Custom-Header` and value of what has been originally set in JSON message.  
 
 Tips and Best Practices
 ------------------------
