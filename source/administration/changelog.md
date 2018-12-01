@@ -49,7 +49,7 @@ Release date: 2018-12-16
 #### Plugins
  - Added "min_server_version" in plugin.json manifest to enable built-in control for preventing load/enable of plugin if server version is not met.
  - Added ability for plugins to add channel header tooltips.
- - Stop hashing plugin keys on write.
+ - Stop hashing plugin keys on write. **////XXXX**
  
 #### Bulk Import/Export
  - Added capability to export reactions of posts during bulk export.
@@ -105,47 +105,43 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - **Changed ``GetTeamMembers(teamId string, offset, limit int)`` to ``GetTeamMembers(teamId string, page, perPage int)`` to be clearer and consistent with other APIs**
  - **Changed ``GetPublicChannelsForTeam(teamId string, offset, limit int)`` to ``GetPublicChannelsForTeam(teamId string, page, perPage int)`` to be clearer and more consistent with other APIs**
- - Removed ``model.ChannelList`` from plugin API return parameter.
- - Added cursor to posts list such as ``next_post_id`` and ``previous_post_id`` for Scrolling Overhaul.
- - Added userId to the "posts/unread" path for Scrolling Overhaul.
- - Add API GET ``api/v4/channels/{channel_id:[A-Za-z0-9]+}/posts/unread`` for scrolling overhaul.
- - Added ``GetPluginConfig`` and ``SavePluginConfig`` plugin APIs for allowing plugins to get or update only their own configuration.
+ - Added ``GetPluginConfig`` and ``SavePluginConfig`` to the plugin API to allow plugins to get or update only their own configuration.
  - Added ``getChannelMembersTimezone`` to get all timezones from users for a specific channel.
  - Added paging to elasticsearch API.
  - Added key value store set with expiry method to the plugin API.
  - Added ``SetDefaultProfileImage`` to reset the user profile image to a generated one.
- - Added ``GetChannelMembers`` method to the plugin API.
- - Added a delete brand image action on the APIv4 to add ability to remove custom branding image.
+ - Added ``deleteBrandImage`` to the API to add ability to remove custom branding image.
  - Added plugin API method to return user's profile image.
- - Added ``GetPostsForChannel`` method to plugin API.
- - Added the plugin API equivalent of the ``model/client4.go`` to ``GetChannelStats`` method.
- - ``GetEmojiImage`` added to plugin API as an equivalent in ``model/client4.go``.
- - Added ``GetEmojiByName`` method to plugin API as an equivalent in ``model/client4.go``.
- - Added ``GetUsersInTeam`` method to plugin API an an equilavent in ``model/client4.go``.
- - Added ``GetUsersInChannel`` to plugin API.
- - Added ``GetTeamsForUser`` to plugin API.
- - Added ``GetUsersInChannelByStatus`` to plugin API.
- - Added ``GetChannelsForTeamForUser`` to plugin API.
- - Added ``GetUsersByUsernames`` to plugin API.
- - Added ``GetPostsSince()`` to plugin API.
- - Added ``GetPostsAfter()`` to plugin API.
- - Added ``GetPostsBefore()`` to plugin API.
- - Added ``GetPostThread()`` to plugin API.
- - Added plugin API for ``GetEmoji`` method.
- - Added plugin API for ``SearchChannels`` method.
- - Added ``GetTeamsUnreadForUser`` to plugin API.
- - Added GetChannelMembersByIds to Plugin API.
- - Added ``GetFileLink`` method to plugin API.
- - Added plugin API for ``UploadFile`` method.
- - Added ``plugin methods`` to plugin API.
- - Added ``GETEmojilist`` to plugin API.
- - Added ``SetProfileImage`` to plugin API.
- - Added ``GetTeamIcon`` plugin API method.
- - Added ``SetTeamIcon`` to plugin API.
- - Added ``CreateDirectChannel`` plugin API.
- - Added ``RemoveTeamIcon`` plugin API.
- - Added ``SubmitDialogResponse`` and ``SubmitDialogRequest``.
- - Added ``SearchUsers(search *UserSearch)`` method to plugin API.
+ - Added ``GetChannelMembers`` method to the plugin API.
+ - Added ``GetPostsForChannel`` method to the plugin API.
+ - Added ``GetChannelStats`` method to the plugin API.
+ - Added ``GetEmojiImage`` to the plugin API.
+ - Added ``GetEmojiByName`` to the plugin API.
+ - Added ``GetUsersInTeam`` to the plugin API.
+ - Added ``GetUsersInChannel`` to the plugin API.
+ - Added ``GetTeamsForUser`` to the plugin API.
+ - Added ``GetUsersInChannelByStatus`` to the plugin API.
+ - Added ``GetChannelsForTeamForUser`` to the plugin API.
+ - Added ``GetUsersByUsernames`` to the plugin API.
+ - Added ``GetPostsSince()`` to the plugin API.
+ - Added ``GetPostsAfter()`` to the plugin API.
+ - Added ``GetPostsBefore()`` to the plugin API.
+ - Added ``GetPostThread()`` to the plugin API.
+ - Added plugin API for ``GetEmoji`` method to the plugin API.
+ - Added ``SearchChannels`` method to the plugin API.
+ - Added ``GetTeamsUnreadForUser`` to the plugin API.
+ - Added ``GetChannelMembersByIds`` to the plugin API.
+ - Added ``GetFileLink`` method to the plugin API.
+ - Added ``UploadFile`` to the plugin API.
+ - Added ``plugin methods`` to the plugin API.
+ - Added ``GETEmojilist`` to the plugin API.
+ - Added ``SetProfileImage`` to the plugin API.
+ - Added ``GetTeamIcon`` to the plugin API.
+ - Added ``SetTeamIcon`` to the plugin API.
+ - Added ``CreateDirectChannel`` to the plugin API.
+ - Added ``RemoveTeamIcon`` to the plugin API.
+ - Added ``SubmitDialogResponse`` and ``SubmitDialogRequest`` APIs for interactive dialogs.
+ - Added ``SearchUsers(search *UserSearch)`` method to the plugin API.
  
 #### Database Changes
 
