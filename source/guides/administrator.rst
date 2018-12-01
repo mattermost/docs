@@ -131,7 +131,7 @@ Learn how to maintain your Mattermost system.
    /administration/command*
    /administration/team-settings.md
    /administration/statistics.md
-   /administration/liveness-check*.
+   /administration/liveness-check*
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
  
