@@ -154,6 +154,19 @@ This chart defaults to creating and using RBAC. If your cluster does not have RB
 --set gitlab-runner.rbac.create=false
 ```
 
+### CPU and RAM Resource Requirements
+
+The resource requests, and number of replicas for the GitLab components (not postgresql, redis, or minio) in this Chart
+are set by default to be adequate for a small production deployment. This is intended to fit in a cluster with at least 8vCPU
+and 30gb of RAM. If you are trying to deploy a non-production instance, you can reduce the defaults in order to fit into
+a smaller cluster.
+
+The [minimal GKE example values file](../../examples/values-gke-minimum.yaml) provides an example of tuning the resources
+to fit within a 3vCPU 12gb cluster.
+
+The [minimal minikube example values file](../../examples/values-minikube-minimum.yaml) provides an example of tuning the
+resources to fit within a 2vCPU, 4gb minikube instance.
+
 ## Deploy using helm
 
 Once you have all of your configuration options collected, we can get any dependencies and
