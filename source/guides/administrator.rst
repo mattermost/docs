@@ -61,7 +61,7 @@ Learn how to host Mattermost to meet your networking requirements.
    /administration/image-proxy*
    /administration/encryption*  
    /deployment/client-side-data.rst
-  /administration/backup*
+   /administration/backup*
   
 
 Configure Mattermost
