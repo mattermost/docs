@@ -16,7 +16,7 @@ Use the following materials as a template to help you plan and document the impl
    /getting-started/welcome_email.rst
 
 
-Install Mattermost
+Installing Mattermost
 ---------------------
 
 Learn how to get Mattermost running on your environment.
@@ -46,7 +46,7 @@ Learn how to get Mattermost running on your environment.
    /install/i18n*
    /install/config-apache2.rst
 
-Deploy Mattermost
+Deployment
 -----------------
 
 Learn how to host Mattermost to meet your networking requirements.
@@ -79,7 +79,7 @@ Learn how to configure settings to meet your unique requirements.
     /administration/branding.rst
    
 
-Mattermost Mobile
+Mobile Apps
 ------------------
 
 Learn how to configure and administer Mattermost apps.
@@ -119,7 +119,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /deployment/advanced*
    /deployment/permissions-backend*
 
-Administer Mattermost
+Administration
 ----------------------------
 
 Learn how to maintain your Mattermost system.
@@ -176,8 +176,8 @@ Learn how to adhere to your security and regulations.
    /administration/data-retention*
    /administration/custom-terms-of-service*
 
-Scale Mattermost
------------------
+Scaling Mattermost
+------------------
 
 Learn how to support growth within Mattermost.
 
