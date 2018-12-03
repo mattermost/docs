@@ -45,9 +45,11 @@ Groups that have been returned from your AD/LDAP group filter will be available 
 
 .. image:: ../images/Groups_listing.png
 
-Groups can be linked individually by the inline “Linked” button or by using the checkbox next the group name to select multiple groups and by using the blue “Link Selected Groups” button. When selecting multiple groups with a mix of “Linked” and “Not Linked” states, the bulk action of the button will be “Link Selected Groups” until all selected are marked “Linked”.  
+Groups can be linked individually by the inline “Linked” button or by using the checkbox next the group name to select multiple groups and by using the blue “Link Selected Groups” button. When selecting multiple groups with a mix of “Linked” and “Not Linked” states, the bulk action of the button will be “Link Selected Groups” until all selected are marked “Linked”. Using the bulk action speeds the process of creating Mattermost groups from your AD/LDAP Groups.  
 
 If you see a “Linked Failed” message, either click on the message or check the box before the group name to expose the inline link message, allowing you to try the link again.
+
+.. image:: ../images/LinkFailed.png
 
 Configure the group
 -------------------
