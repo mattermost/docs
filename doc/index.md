@@ -1,7 +1,6 @@
 # GitLab cloud native Helm Chart
 
 This is the official and recommended way to install GitLab on a cloud native environment.
-For more information on other available GitLab Helm Charts, see the [charts overview](./charts/index.md).
 
 ## Introduction
 
@@ -15,10 +14,9 @@ The default deployment includes:
 - An auto-scaling, unprivileged [GitLab Runner](https://docs.gitlab.com/runner/) using the Kubernetes executor
 - Automatically provisioned SSL via [Let's Encrypt](https://letsencrypt.org/).
 
-- [Charts](charts/index.md) (laid out as the charts are)
-- [Example values.yaml files](https://gitlab.com/charts/gitlab/tree/master/examples)
-- [Minikube](minikube/index.md)
-- [Helm](helm/index.md)
+For more information on other available GitLab Helm Charts, see the [charts overview](./charts/index.md).
+
+There are also some [example values.yaml files](https://gitlab.com/charts/gitlab/tree/master/examples).
 
 ## Limitations
 

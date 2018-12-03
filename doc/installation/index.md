@@ -1,5 +1,8 @@
 # Installing GitLab using Helm
-> **Note**: There are currently [known limitations](../../index.md#known-issues-and-limitations) when using this chart, and not all features of GitLab are available.
+
+NOTE: **Note**:
+There are currently [known limitations](../../index.md#known-issues-and-limitations)
+when using this chart, and not all features of GitLab are available.
 
 Install GitLab on Kubernetes with the cloud native GitLab Helm chart. Follow the instructions below to get started.
 
@@ -17,28 +20,26 @@ In order to install GitLab in a Kubernetes cluster, there are a few required too
 
 ### 2. Where do you want to install GitLab?
 
-Follow the instructions to connect to the Kubernetes cluster of your choice.
+NOTE: **Note**:
+[Kubernetes 1.8 or higher is required](#requirements), due to the usage of certain
+Kubernetes features.
 
-> **Note**: [Kubernetes 1.8 or higher is required](#requirements), due to the usage of certain Kubernetes features.
+Follow the instructions to connect to the Kubernetes cluster of your choice:
 
-* [Google Kubernetes Engine][]
-* [Amazon EKS](../cloud/eks.md)
-* [OpenShift Origin](../cloud/openshift.md)
-* Azure Container Service - Documentation to be added.
-* Pivotal Container Service - Documentation to be added.
-* On-Premises solutions - Documentation to be added.
+- [Google Kubernetes Engine](../cloud/gke.md)
+- [Amazon EKS](../cloud/eks.md)
+- [OpenShift Origin](../cloud/openshift.md)
+- Azure Container Service - Documentation to be added.
+- Pivotal Container Service - Documentation to be added.
+- On-Premises solutions - Documentation to be added.
 
 ### 3. Deploy
 
-With the environment setup and configuration generated,
-we can proceed to [deployment][]. Or if you are upgrading an existing
-installation follow [upgrade docs][]
+With the environment setup and configuration generated, we can proceed to
+[deployment](deployment.md).
+
+If you are upgrading an existing installation follow [upgrade docs](upgrade.md).
 
 ### 4. Migrate data from an existing GitLab
 
 To migrate your existing GitLab instance to your deployed Kubernetes GitLab instance, follow the [migration documentation](./migration/index.md).
-
-[Google Kubernetes Engine]: ../cloud/gke.md
-[resources]: resources.md
-[deployment]: deployment.md
-[upgrade docs]: upgrade.md

@@ -10,28 +10,27 @@ and should perform setup the day prior to the demo itself.
 
 ## GKE setup
 
-### Gcloud user
+Make sure to have a `gcloud` user with permissions to access the `cloud-native`
+project. All the [installation procedures](../installation/index.md) will
+need to be done in this project.
 
-Make sure to have a gcloud user with permissions to access `cloud-native` project. All the [installation procedures](../installation/index.md) will need to be done
-in this project.
+1. You will need to have [`gcloud`](https://cloud.google.com/sdk/gcloud/) tool
+   installed on your system:
 
-### gcloud installation
+    ```sh
+    mkdir gcloud-build && cd gcloud-build;
+    wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-189.0.0-linux-x86_64.tar.gz;
+    tar -xzf google-cloud-sdk-189.0.0-linux-x86_64.tar.gz
+    ./google-cloud-sdk/install.sh
+    source google-cloud-sdk/path.bash.inc && echo "source google-cloud-sdk/path.bash.inc" >> $HOME/.profile
+    ```
 
-You will need to have [gcloud](https://cloud.google.com/sdk/gcloud/) tool installed on your system.
+1. Run `gcloud` and interactively go through its authentication and
+   initialization:
 
-#### Install gcloud:
-
-```
-mkdir gcloud-build && cd gcloud-build;
-wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-189.0.0-linux-x86_64.tar.gz;
-tar -xzf google-cloud-sdk-189.0.0-linux-x86_64.tar.gz
-./google-cloud-sdk/install.sh
-source google-cloud-sdk/path.bash.inc && echo "source google-cloud-sdk/path.bash.inc" >> $HOME/.profile
-```
-
-#### Initialize gcloud
-
-Run `./google-cloud-sdk/bin/gcloud init` and interactively go through authentication and initialization of gcloud.
+    ```sh
+    ./google-cloud-sdk/bin/gcloud init
+    ```
 
 ### Domain name
 
@@ -48,26 +47,20 @@ Follow our [kube monkey](../kube-monkey/index.md) guide for running kube monkey,
 
 In order to test LFS storage in the chart, you will need to have the ability to use `git lfs`.
 
-### Install git-lfs
+1. Start by [installing `git-lfs`](https://git-lfs.github.com).
+1. Next, have a non-text file on hand to add to your test repository via LFS.
+   A good example is [the GitLab logo](https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo.png):
 
-Start by installing `git-lfs`, per instructions at https://git-lfs.github.com
-
-### Prepare binary source
-
-Next, have a non-text file on hand to add to your test repository via LFS. A good example is [the GitLab logo](https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo.png).
-
-### Example workflow
-
-```
-git clone URL
-cd project
-curl -JLO https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo.png
-git lfs track "*.png"
-git add .gitattributes
-git add logo.png
-git commit -m "Add logo via LFS"
-git push origin master
-```
+    ```sh
+    git clone URL
+    cd project
+    curl -JLO https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo.png
+    git lfs track "*.png"
+    git add .gitattributes
+    git add logo.png
+    git commit -m "Add logo via LFS"
+    git push origin master
+    ```
 
 ## External resources
 

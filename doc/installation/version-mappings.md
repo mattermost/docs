@@ -13,7 +13,6 @@ The table below maps some of the key previous chart versions and GitLab versions
 | 0.3.5 | 11.1.4 |
 | 0.2.4 | 11.0.4 |
 
-
 To see the full list, you can issue the following command with helm:
 
 ```

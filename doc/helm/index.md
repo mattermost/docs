@@ -4,40 +4,58 @@ This document is intended to provide an overview of working with [Helm][helm] fo
 
 ## Supported versions
 
-This chart currently only tested and support with Helm `v2`.
+This chart is currently only tested and support with Helm `v2`.
 
 Helm `v1` is explicitly not supported. Helm `v3` may work, but there has not been and will not be any testing for the time being.
 
 ## Helm is not stand-alone
 
-To make use of Helm, you must have a [Kubernetes][k8s-io] cluster. Follow the [dependencies documentation](../installation/tools.md)
-to ensure you can access your cluster using `kubectl`.
+To make use of Helm, you must have a [Kubernetes][k8s-io] cluster. Follow the
+[dependencies documentation](../installation/tools.md) to ensure you can access
+your cluster using `kubectl`.
 
-Helm consists of two parts, `helm` client and `tiller` server inside Kubernetes.
+Helm consists of two parts, the `helm` (client) and `tiller` (server) inside
+Kubernetes.
 
-> **Note**: If you are not able to run tiller in your cluster, for example on OpenShift, it is possible to use [tiller locally](#local-tiller) and avoid deploying it into the cluster. This should only be used when Tiller cannot be normally deployed.
+NOTE: **Note**:
+If you are not able to run tiller in your cluster, for example on OpenShift,
+it's possible to use [tiller locally](#local-tiller) and avoid deploying it
+into the cluster. This should only be used when tiller cannot be normally deployed.
 
 # Getting Helm
 
-> **Note**: We support using Helm versions in the 2.x line with 2.9.0 being our minimum supported version.
+NOTE: **Note**:
+We support using Helm versions in the 2.x line with 2.9.0 being our minimum
+supported version.
 
-You can get Helm from the project's [releases page](https://github.com/kubernetes/helm/releases), or follow other options under the official documentation of [Installing Helm](https://docs.helm.sh/using_helm/#installing-helm).
+You can get Helm from the project's [releases page](https://github.com/kubernetes/helm/releases),
+or follow other options under the official documentation of
+[Installing Helm](https://docs.helm.sh/using_helm/#installing-helm).
 
 # Initialize Helm and Tiller
 
-Tiller is deployed into the cluster and interacts with the Kubernetes API to deploy your applications. If role based access control (RBAC) is enabled, Tiller will need to be [granted permissions](#preparing-for-helm-with-rbac) to allow it to talk to the Kubernetes API.
+Tiller is deployed into the cluster and interacts with the Kubernetes API to
+deploy your applications. If role based access control (RBAC) is enabled, Tiller
+will need to be [granted permissions](#preparing-for-helm-with-rbac) to allow it
+to talk to the Kubernetes API.
 
 If RBAC is not enabled, skip to [initalizing Helm](#initialize-helm).
 
-If you are not sure whether RBAC is enabled in your cluster, or to learn more, read through our [RBAC documentation](../installation/rbac.md).
+If you are not sure whether RBAC is enabled in your cluster, or to learn more,
+read through our [RBAC documentation](../installation/rbac.md).
 
 ## Preparing for Helm with RBAC
 
-> **Note**: Ensure you have kubectl installed and it is up to date. Older versions do not have support for RBAC and will generate errors.
+NOTE: **Note**:
+Ensure you have `kubectl` installed and it's up to date. Older versions do not
+have support for RBAC and will generate errors.
 
-Helm's Tiller will need to be granted permissions to perform operations. These instructions grant cluster wide permissions, however for more advanced deployments [permissions can be restricted to a single namespace](https://docs.helm.sh/using_helm/#example-deploy-tiller-in-a-namespace-restricted-to-deploying-resources-only-in-that-namespace).
+Helm's Tiller will need to be granted permissions to perform operations. These
+instructions grant cluster wide permissions, however for more advanced deployments
+[permissions can be restricted to a single namespace](https://docs.helm.sh/using_helm/#example-deploy-tiller-in-a-namespace-restricted-to-deploying-resources-only-in-that-namespace).
 
-To grant access to the cluster, we will create a new `tiller` service account and bind it to the `cluster-admin` role:
+To grant access to the cluster, we will create a new `tiller` service account
+and bind it to the `cluster-admin` role:
 
 ```yaml
 apiVersion: v1
@@ -60,17 +78,17 @@ subjects:
     namespace: kube-system
 ```
 
-For ease of use, these instructions will utilize the [sample YAML file](examples/rbac-config.yaml) in this repository. To apply the configuration, we first need to connect to the cluster.
+For ease of use, these instructions will utilize the
+[sample YAML file](examples/rbac-config.yaml) in this repository. To apply the
+configuration, we first need to connect to the cluster.
 
-### Connect to the cluster
+You can either use:
 
-You can use:
+- [GKE cluster](#connect-to-gke-cluster)
+- [EKS cluster](#connect-to-eks-cluster)
+- [Local minikube cluster](#connect-to-local-minikube-cluster)
 
-* [GKE cluster](#connect-to-gke-cluster)
-* [EKS cluster](#connect-to-eks-cluster)
-* [Local minikube cluster](#connect-to-local-minikube-cluster)
-
-#### Connect to GKE cluster
+### Connect to GKE cluster
 
 The command for connection to the cluster can be obtained from the [Google Cloud Platform Console][gcp-k8s]
 by the individual cluster.
@@ -79,17 +97,18 @@ Look for the **Connect** button in the clusters list page.
 
 **Or**
 
-Use the command below, filling in your cluster's informtion:
+Use the command below, filling in your cluster's information:
 
-```
+```sh
 gcloud container clusters get-credentials <cluster-name> --zone <zone> --project <project-id>
 ```
 
-#### Connect to EKS cluster
+### Connect to EKS cluster
 
-For the most up to date instructions, follow the Amazon EKS documentation on [connecting to a cluster](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html#eks-configure-kubectl).
+For the most up to date instructions, follow the Amazon EKS documentation on
+[connecting to a cluster](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html#eks-configure-kubectl).
 
-#### Connect to local minikube cluster
+### Connect to local minikube cluster
 
 If you are doing local development, you can use `minikube` as your
 local cluster. If `kubectl cluster-info` is not showing `minikube` as the current
@@ -156,7 +175,6 @@ Some information on how all the inner workings behave:
 
 Helm repository has some additional information on developing with helm in it's
 [tips and tricks section](https://github.com/kubernetes/helm/blob/master/docs/charts_tips_and_tricks.md).
-
 
 [helm]: https://helm.sh
 [helm-using]: https://docs.helm.sh/using_helm
