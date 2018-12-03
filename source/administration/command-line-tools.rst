@@ -39,7 +39,7 @@ These ``mattermost`` commands include:
 Using the CLI
 ^^^^^^^^^^^^^
 
-To run the CLI commands, you must be in the directory that contains the Mattermost executable. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``. Also, if you followed our installation process, you must run the commands as the user *mattermost*. The name of the executable is ``mattermost``.
+To run the CLI commands, you must be in the directory that contains the Mattermost executable. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``. Also, if you followed our `installation process <../guides/administrator.html#installing-mattermost>`_, you must run the commands as the user *mattermost*. The name of the executable is ``mattermost``.
 
 **For example, to get the Mattermost version on a default installation of Mattermost:**
 
