@@ -4,14 +4,11 @@
 #
 # - all pods start with a single replica, rather than their other highly available defaults
 # - resource requests are tuned down to the mimimal requirements for a single user to fully use GitLab
-# - prometheus and the gitlab task-runner (used for backups and maintanance) are disabled
+# - prometheus, gitlab ci runner, and the gitlab task-runner (used for backups and maintanance) are disabled
 prometheus:
   install: false
 gitlab-runner:
-  resources:
-    requests:
-      memory: 128Mi
-      cpu: 50m
+  install: false
 nginx-ingress:
   controller:
     replicaCount: 1
