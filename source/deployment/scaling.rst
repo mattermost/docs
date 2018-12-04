@@ -62,3 +62,20 @@ Here’s an example of the hardware you’ll need for a 10,000-user deployment:
 .. image:: ../images/scaling-3.PNG
 
 For more information, check out our `Administrator's Guide <https://docs.mattermost.com/guides/administrator.html>`_.
+
+Hosting Recommendation for 100,000+ users 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following matrix presents key features for a successful multi-region Mattermost implementation that scales to 100,000 users with support for high availability and geographically based traffic routing in on premises, AWS, and Azure deployments.
+
+.. csv-table::
+    :header: "Feature", "On Premises", "Amazon AWS", "Azure"
+
+    "Multi-region/data center support", "Yes", "Regions: 16", "Regions: 54"
+    "Auto scaling for Mattermost nodes", "Yes - using a solution like Kubernetes", "`AWS Auto Scaling <https://aws.amazon.com/ec2/autoscaling/>`_", "`Azure Autoscale <https://azure.microsoft.com/en-us/features/autoscale/>`_"
+    "Geographic based traffic routing", "Yes", "`Route 53 <https://aws.amazon.com/route53/>`_", "`Azure DNS <https://azure.microsoft.com/en-us/services/dns/>`_"
+    "Load balancing", "Yes", "`Elastic Load Balancer <https://aws.amazon.com/elasticloadbalancing/>`_", "`Azure Load Balancer <https://azure.microsoft.com/en-us/services/load-balancer/>`_"
+    "Multi-region, HA storage", "Yes", "`S3 <https://aws.amazon.com/s3/>`_", "?"
+    "Multi-region, HA MySQL", "Yes - using a solution like Galera", "`Aurora <https://aws.amazon.com/rds/aurora/>`_ / `RDS for MySQL <https://aws.amazon.com/rds/mysql/>`_", "`Azure MySQL <https://azure.microsoft.com/en-us/services/mysql/>`_"
+    "Multi-region, HA PostgreSQL", "Yes", "`Aurora <https://aws.amazon.com/rds/aurora/>`_ / `RDS for PostgreSQL <https://aws.amazon.com/rds/postgresql/>`_", "`Azure PostgreSQL <https://azure.microsoft.com/en-us/services/postgresql/>`_"
+    "Multi-region, HA elasticsearch", "Yes", "`Amazon Elasticsearch Service <https://aws.amazon.com/elasticsearch-service/>`_", "No"
