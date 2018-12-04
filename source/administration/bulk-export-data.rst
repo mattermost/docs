@@ -202,7 +202,7 @@ User object
     </tr>
     <tr class="row-odd">
       <td valign="middle">notify_props</td>
-      <td valign="middle"><b>UserNotifyProps</b> object</td>
+      <td valign="middle">object</td>
       <td>The user’s notify preferences, as defined by the <b>UserNotifyProps</b> object.</td>
     </tr>
   </table>
@@ -260,7 +260,7 @@ This object is a member of the User object.
     <tr class="row-odd">
       <td valign="middle">channel</td>
       <td valign="middle">string</td>
-      <td>Whether @all, @channel and @here trigger mentions. Will be one of the following values:<br>
+      <td>Preference for whether @all, @channel and @here trigger mentions. Will be one of the following values:<br>
       <kbd>"true"</kbd> - Mentions are triggered.<br>
       <kbd>"false"</kbd> - Mentions are not triggered.</td>
     </tr>
