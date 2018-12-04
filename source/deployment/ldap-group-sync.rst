@@ -8,26 +8,25 @@ This feature is currently offered as an alpha release for Enterprise Edition E20
 Overview
 --------------------
 
-The groups feature is useful for organizations that have many new users to onboard or onboard users frequently and want to ensure users are added to default teams and channels that are pertinent to them. The group feature currently supports creating groups by synchronization with your AD/LDAP system groups. AD/LDAP nested groups are also supported.
+The groups feature is useful for organizations that have many new users to onboard or that onboard users frequently and want to ensure users are added to default teams and channels that are pertinent to them. The group feature currently supports creating groups by synchronization with your AD/LDAP system groups. AD/LDAP nested groups are also supported.
 
 Pre-installation notes
 ----------------------
 
-The group filter is an optional configuration setting available under **System Console > AD/LDAP**. If the group filter configuration is left blank then all groups matching the default filter ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` will be available to be linked in the groups list view at **Access Control > Groups**.  
+The group filter is an optional configuration setting available under **System Console > AD/LDAP**. If the group filter configuration is left blank, then all groups matching the default filter ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` will be available to be linked in the groups list view at **Access Control > Groups**.  
 
-The synchronization of groups happens with the synchronization of users, during which, Mattermost queries AD/LDAP for updated account information.  Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/deployment/sso-ldap.html?highlight=ldap#configure-ad-ldap-synchronization>`_. for more information.   The group feature has no implications to users' authentication to Mattermost.  
-
+The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/deployment/sso-ldap.html?highlight=ldap#configure-ad-ldap-synchronization>`_. for more information. The group feature has no implications to users' authentication to Mattermost.
 
 AD/LDAP group synchronization
 -----------------------------
 
-To synchronize specfic AD/LDAP groups to Mattermost, specify the filter used to retrieve groups. Enter your AD/LDAP group under **System Console > Authentication > AD/LDAP > Group Filter**. If the group filter configuration is left blank then all groups matching the default filter ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` are  returned. Synchronization of groups will occur after user synchronization.  
+To synchronize specfic AD/LDAP groups to Mattermost, specify the filter used to retrieve groups. Enter your AD/LDAP group under **System Console > Authentication > AD/LDAP > Group Filter**. If the group filter configuration is left blank, then all groups matching the default filter ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` are  returned. Synchronization of groups will occur after user synchronization.  
  
 .. image:: ../images/Group_filter.png
 
 On subsequent synchronizations (for linked groups- see **Linking AD/LDAP groups to Mattermost groups** below): 
 
- - Users that have been added to an AD/LDAP group will be added to the synchronized Mattermost group and they will be added to the synced teams and channels.
+ - Users that have been added to an AD/LDAP group will be added to the synchronized Mattermost group and to the synced teams and channels.
  - AD/LDAP groups that are no longer included in your filter that have a corresponding Mattermost group are deleted.  
  - Users that have been removed from a AD/LDAP group are removed from the synchronized Mattermost group (their memberships will not be removed from the team and channel, however). 
 
@@ -56,7 +55,7 @@ Configure the group
 
 AD/LDAP groups that have been linked to Mattermost groups are able to be configured.  To configure the group, select “Configure”.  This will open up the Group Configuration page.  
 
-The Group Configuration page displays the group profile, which includes the group name.  This name is automatically mapped from the AD/LDAP group common name attribute and is read-only.  
+The Group Configuration page displays the group profile which includes the group name.  This name is automatically mapped from the AD/LDAP group common name attribute and is read-only.  
 
 Add default teams or channels for the group
 --------------------------------------------
@@ -66,31 +65,31 @@ To add the default Team or Channels that you want the group members to default i
 
 Channels are nested below the Team they belong to in the team and channel list.  
 
- - Teams that are open for anyone to join are indicated by:
+Teams that are open for anyone to join are indicated by:
  
-.. image::  ../images/open_team.png  
+.. image:: ../images/open_team.png  
    
- - Teams that are not open for anyone to join are indicated by:
+Teams that are not open for anyone to join are indicated by:
  
 .. image:: ../images/private_team.png 
  
- - Public channels are indicated by: 
+Public channels are indicated by: 
  
-.. image:: ../images/public_channel.png icon 
+.. image:: ../images/public_channel.png
 
- - Private channels are indicated by:
+Private channels are indicated by:
  
-.. image::../images/private_channel.png icon.  
+.. image:: ../images/private_channel.png  
 
-Teams added include default channels set in the `ExperimentalDefaultChannels config setting <https://docs.mattermost.com/administration/config-settings.html?highlight=configuration%20settings#default-channels-experimental>`_, Town Square and Off-Topic. Adding a channel without setting the team adds the implied team to the listing below, but not to the group specifically.  Teams are listed in parentheses after the channel name in the channel selector.
+Teams added include default channels set in the `ExperimentalDefaultChannels config setting <https://docs.mattermost.com/administration/config-settings.html?highlight=configuration%20settings#default-channels-experimental>`_ (Town Square and Off-Topic). Adding a channel without setting the team adds the implied team to the listing below, but not to the group specifically.  Teams are listed in parentheses after the channel name in the channel selector.
 
 Teams and channels membership synchronization
 ----------------------------------------------
 
-Default teams and channels will be added to the group member's user interface when they login for the first time after the group has been configured with the specified teams and channels. It may take a few seconds to load all team and channel memberships for a user depending on the number of teams and channels the group is defaulted to. In our testing, it took 6s for an organization with 200,000 users and 30,000 linked groups.   This process is independent of the AD/LDAP synchronization process to support future functionality of groups.
+Default teams and channels will be added to the group member's user interface when they login for the first time after the group has been configured with the specified teams and channels. It may take a few seconds to load all team and channel memberships for a user depending on the number of teams and channels the group is defaulted to. In our testing, it took 6s for an organization with 200,000 users and 30,000 linked groups. This process is independent of the AD/LDAP synchronization process to support future functionality of groups.
 
 .. note::
-Users are not removed from the team or channel on subsequent synchronizations of the AD/LDAP groups.  Users will need to be manually removed from the Team or Channel per the existing functionality.  They will not be re-added if they were manually removed.
+Users are not removed from the team or channel on subsequent synchronizations of the AD/LDAP groups.  Users will need to be manually removed from the team or channel per the existing functionality.  They will not be re-added if they were manually removed.
 
 .. image:: ../images/Team_Channel_Membership_Sync.png
 
@@ -107,7 +106,7 @@ Users who have logged in and accessed Mattermost will be visible in the members 
 
 Users can be removed from the group on subsequent synchronizations. However, they will not be removed from teams and channels. If a user is removed from a AD/LDAP group and then later re-added, they will be defaulted again into the teams and channels configured in the group. 
 
-..note:: 
+.. note:: 
 When a member removes themselves manually from a channel, that action is tracked in the Channel Member History table.  Users are not re-added to channels from which they previously removed themselves. 
 
 Managing groups
@@ -139,10 +138,9 @@ LDAP group sync will be in beta for a period of time until:
 Why can't my existing users see the teams and channels they have been synced to?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The next scheduled synchronization job that is ran after the configuration of a group will add the teams and channels for any existing users.  You can manually initiate a synchronization from **System Console > Authentication > AD/LDAP > AD/LDAP Synchronize Now**.  
+The next scheduled synchronization job that is run after the configuration of a group will add the teams and channels for any existing users.  You can manually initiate a synchronization from **System Console > Authentication > AD/LDAP > AD/LDAP Synchronize Now**.  
 
 How do nested groups work with AD/LDAP Group Sync?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Users within nested groups are included as members of parent groups. The group filter that you specify can include any type of LDAP group on your system. The ``member`` LDAP attribute is used to determine nested groups that belong to a parent group.
-
