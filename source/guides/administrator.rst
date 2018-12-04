@@ -15,7 +15,6 @@ Use the following materials as a template to help you plan and document the impl
    /getting-started/implementation_plan.rst
    /getting-started/welcome_email.rst
 
-
 Installing Mattermost
 ---------------------
 
@@ -62,7 +61,6 @@ Learn how to host Mattermost to meet your networking requirements.
    /administration/encryption*  
    /deployment/client-side-data.rst
    /administration/backup*
-  
 
 Configure Mattermost
 ---------------------
@@ -77,7 +75,6 @@ Learn how to configure settings to meet your unique requirements.
     /administration/config-settings.rst
     /deployment/customize-mattermost.rst 
     /administration/branding.rst
-   
 
 Mobile Apps
 ------------------
@@ -192,7 +189,6 @@ Learn how to support growth within Mattermost.
    /deployment/metrics*
    /administration/performance-alerting-guide*
 
-   
 Unofficial Enhancements
 -----------------------
 
