@@ -170,7 +170,8 @@ Learn how to adhere to your security and regulations.
 .. toctree::
    :maxdepth: 2
    :glob:
-   
+
+   /administration/ediscovery*
    /administration/compliance*
    /administration/compliance-export*
    /administration/data-retention*
