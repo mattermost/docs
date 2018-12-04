@@ -71,10 +71,10 @@ Learn how to configure settings to meet your unique requirements.
    :maxdepth: 2
    :glob:
 
-    /deployment/on-boarding.rst  
-    /administration/config-settings.rst
-    /deployment/customize-mattermost.rst 
-    /administration/branding.rst
+   /deployment/on-boarding.rst  
+   /administration/config-settings.rst
+   /deployment/customize-mattermost.rst 
+   /administration/branding.rst
 
 Mobile Apps
 ------------------
