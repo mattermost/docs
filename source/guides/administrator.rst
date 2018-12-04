@@ -70,7 +70,7 @@ Configure Mattermost
 Learn how to configure settings to meet your unique requirements.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :glob:
 
     /deployment/on-boarding*   
