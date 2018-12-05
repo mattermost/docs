@@ -184,7 +184,7 @@ Learn how to support growth within Mattermost.
    :glob:
    
    /deployment/scaling*
-   /deployment/cluster*
+   /deployment/cluster.rst*
    /deployment/elastic*
    /deployment/metrics*
    /administration/performance-alerting-guide*
