@@ -27,15 +27,47 @@ Some features of GitLab are not currently available using the Helm chart:
 - [No in-cluster HA database](https://gitlab.com/charts/gitlab/issues/48)
 - MySQL will not be supported, as support is [deprecated within GitLab](https://docs.gitlab.com/omnibus/settings/database.html#using-a-mysql-database-management-server-enterprise-edition-only)
 
-## Requirements
+## GitLab version mappings
 
-In order to deploy GitLab on Kubernetes, the following are required:
+The table below maps some of the key previous chart versions and GitLab versions.
 
-1. `helm` and `kubectl` [installed on your computer](installation/tools.md).
-1. A Kubernetes cluster, version 1.8 or higher. 6vCPU and 16GB of RAM is recommended.
-   - [Google GKE](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-container-cluster)
-   - [Amazon EKS](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html)
-   - [Microsoft AKS](https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough-portal)
+| Chart version | GitLab version |
+|---------------|----------------|
+| 1.5.0 | 11.7.0 |
+| 1.4.0 | 11.6.0 |
+| 1.3.0 | 11.5.0 |
+| 1.2.0 | 11.4.0 |
+| 1.1.0 | 11.3.0 |
+| 1.0.0 | 11.2.0 |
+| 0.3.5 | 11.1.4 |
+| 0.2.4 | 11.0.4 |
+
+To see the full list of the `gitlab` chart versions and the GitLab version they
+maps to, issue the following command with [helm](installation/tools.md#helm):
+
+```sh
+helm repo add gitlab https://charts.gitlab.io/
+helm search -l gitlab/gitlab
+```
+
+You will receive an output similar to:
+
+```
+NAME                    CHART VERSION   APP VERSION
+gitlab/gitlab           1.5.0           11.7.0
+gitlab/gitlab           1.4.4           11.6.5
+gitlab/gitlab           1.4.3           11.6.4
+gitlab/gitlab           1.4.2           11.6.3
+gitlab/gitlab           1.4.1           11.6.2
+```
+
+Read more about our [charts versioning](development/release.md) in our
+development docs.
+
+Make sure to also check the [releases documentation](releases/index.md) for
+information on important releases, and see the
+[changelog](https://gitlab.com/charts/gitlab/blob/master/CHANGELOG.md) for the
+full details on any release.
 
 ## Installing GitLab using the Helm Chart
 
@@ -51,6 +83,7 @@ Once your GitLab Chart is installed, configuration changes and chart updates
 should be done using `helm upgrade`:
 
 ```sh
+helm repo add gitlab https://charts.gitlab.io/
 helm repo update
 helm upgrade --reuse-values gitlab gitlab/gitlab
 ```
@@ -65,6 +98,11 @@ To uninstall the GitLab Chart, run the following:
 helm delete gitlab
 ```
 
+## Migrate from Omnibus GitLab to Kubernetes
+
+To migrate your existing Omnibus GitLab instance to your Kubernetes cluster,
+follow the [migration documentation](installation/migration/index.md).
+
 ## Advanced configuration
 
 See [Advanced Configuration](advanced/index.md).
@@ -76,6 +114,3 @@ See [Troubleshooting](troubleshooting/index.md).
 ## Misc
 
 [Weekly demos preparation](preparation/index.md)
-
-[kube-srv]: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services---service-types
-[storageclass]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#storageclasses

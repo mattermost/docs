@@ -58,6 +58,7 @@ Customers who would like to get started quickly and easily should begin with thi
 The gitlab chart is made of multiple subcharts. These charts provide individual components of the GitLab software.
 
 Subcharts included are :
+
 * [sidekiq](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/sidekiq)
 * [unicorn](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/unicorn)
 * [gitlab-shell](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/gitlab-shell)

@@ -16,7 +16,7 @@ You can retrieve your previous `--set` arguments cleanly, with
 file via `-f`. Thus `helm upgrade gitlab gitlab/gitlab -f gitlab.yaml`.
 This safely replaces the behavior of `--reuse-values`
 
-Mappings between chart versioning and GitLab versioning can be found [here](./version-mappings.md)
+Mappings between chart versioning and GitLab versioning can be found [here](../index.md#gitlab-version-mappings).
 
 ## Steps
 
