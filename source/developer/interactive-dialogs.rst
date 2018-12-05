@@ -1,6 +1,6 @@
 .. _interactive-dialogs:
 
-Interactive Dialogs:
+Interactive Dialogs
 ========================================
 
 Interactive dialogs are used by applications that integrate with the Mattermost server. They are a method for integrations to receive some form-styled input from users and have that input submitted back to the integration. Use them to gather structured information from the end user to perform an action or a request.
@@ -9,7 +9,7 @@ Integrations open dialogs by sending an HTTP POST, containing some data in the r
 
 Moreover, :doc:`plugins <../administration/plugins>` can trigger a dialog based on user actions. For instance, if a plugin adds a button in the channel header, clicking that button may open a dialog.
 
-Here is an example of what a dialog looks like to create a JIRA issue within the Mattermost user interface.
+Here is an example of what a dialog looks like for creating a JIRA issue within the Mattermost user interface:
 
 // XXX <add screenshot>
 
@@ -56,7 +56,7 @@ Each dialog supports elements for users to enter information.
 
 - **text**: Single-line plain text field. Use this for inputs such as names, email addresses or phone numbers.
 - **textarea**: Multi-line plain text field. Use this field when the answer is expected to be longer than 150 characters. 
-- **select**: Message menu. Use this for pre-selected choices. Can either be static menus, or dynamic menus generated from users and public channels of the system. For more information on message menus, see :doc:`the documentation <interactive-messages>`.
+- **select**: Message menu. Use this for pre-selected choices. Can either be static menus or dynamic menus generated from users and public channels of the system. For more information on message menus, see :doc:`the documentation <interactive-messages>`.
 
 Each element is required by default. Otherwise the client will return an error as shown below. Note that the error message will appear below the help text, if one is specified. To make an element optional, set the field ``"optional": "true"``.
 
@@ -136,7 +136,7 @@ The list of supported fields is the same as for the ``textarea`` type element.
 Select Elements
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Select elements are message menus that allow users to select one pre-defined option from a list. Below is an example of a select element that asks for one of three different options.
+Select elements are message menus that allow users to select one predefined option from a list. Below is an example of a select element that asks for one of three different options.
 
 // XXX <add screenshot for an example>
 
@@ -248,7 +248,7 @@ Finally, once the request is submitted, we recommend the integration to respond 
 Example
 -----------------------
 
-Below is a full example of a JSON payload that creates an interactive dialog in Mattermost
+Below is a full example of a JSON payload that creates an interactive dialog in Mattermost:
 
 .. code-block:: json
 
