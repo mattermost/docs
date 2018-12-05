@@ -13,53 +13,53 @@ The groups feature is useful for organizations that have many new users to onboa
 Pre-installation notes
 ----------------------
 
-The group filter is an optional configuration setting available under **System Console > AD/LDAP**. If the group filter configuration is left blank, then all groups matching the default filter ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` will be available to be linked in the groups list view at **Access Control > Groups**.  
+For customers that have enabled syncrhonization with AD/LDAP, all groups matching the default filter ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` will be available to be linked in the groups list view at **Access Control > Groups**.  The group filter is an optional configuration setting available under **System Console > AD/LDAP**, which will allow you to specify the groups you would like to be able to access in Mattermost.   
 
-The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/deployment/sso-ldap.html?highlight=ldap#configure-ad-ldap-synchronization>`_. for more information. The group feature has no implications to users' authentication to Mattermost.
+The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/deployment/sso-ldap.html?highlight=ldap#configure-ad-ldap-synchronization>`_. for more information. The group feature has no effect on users' authentication to Mattermost.
 
 AD/LDAP group synchronization
 -----------------------------
 
-To synchronize specfic AD/LDAP groups to Mattermost, specify the filter used to retrieve groups. Enter your AD/LDAP group under **System Console > Authentication > AD/LDAP > Group Filter**. If the group filter configuration is left blank, then all groups matching the default filter ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` are  returned. Synchronization of groups will occur after user synchronization.  
+To synchronize specific AD/LDAP groups to Mattermost, specify the filter used to retrieve groups. Enter your AD/LDAP group under **System Console > Authentication > AD/LDAP > Group Filter**. If the group filter configuration is left blank, then all groups matching the default filter ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` are  returned. Synchronization of groups will occur after user synchronization.  
+
+After the AD/LDAP groups have been synchronized, go to **System Console > Access Control > Groups** to link and configure Mattermost groups. 
  
 .. image:: ../images/Group_filter.png
 
-On subsequent synchronizations (for linked groups- see **Linking AD/LDAP groups to Mattermost groups** below): 
-
- - Users that have been added to an AD/LDAP group will be added to the synchronized Mattermost group and to the synced teams and channels.
- - AD/LDAP groups that are no longer included in your filter that have a corresponding Mattermost group are deleted.  
- - Users that have been removed from a AD/LDAP group are removed from the synchronized Mattermost group (their memberships will not be removed from the team and channel, however). 
-
 .. note::
-The sync process does not create Mattermost groups.  Mattermost groups are created when you “link” the AD/LDAP group as outlined in the next section. Existing users are added to the Mattermost groups on the next synchronization and new users are added on their first login.  
+The sync process does not create Mattermost groups.  Mattermost groups are created when you “link” the AD/LDAP group as outlined in the next section **Linking AD/LDAP groups to Mattermost groups** . Existing AD/LDAP users are added to the Mattermost groups on the next synchronization and new users are added on their first login. 
+
+On subsequent synchronizations and once groups are linked: 
+
+ - Users that have been added to an AD/LDAP group will be added to the linked Mattermost group and to teams and channels configured for that group.
+ - Mattermost groups that are linked to AD/LDAP groups no longer included in your filter are deleted.  
+ - Users removed from an AD/LDAP group are removed from the linked Mattermost group, but their channel and team membership is not revoked. 
 
 .. image:: ../images/Group_Group_Member_Sync.png
- 
-After the AD/LDAP groups have been synchronized, go to **System Console > Access Control > Groups** to link and configure Mattermost groups. 
 
 Linking AD/LDAP groups to Mattermost groups
 --------------------------------------------
 
-Groups that have been returned from your AD/LDAP group filter will be available in a list view on the Groups page. The link action will create Mattermost groups corresponding to the AD/LDAP group. AD/LDAP groups that have been linked to a Mattermost group will display the ‘Linked’ icon. AD/LDAP groups that have not been linked to a Mattermost group will display the ‘Not Linked’ icon. AD/LDAP groups that are not linked do not create a Mattermost group.  
+Groups that have been returned from the default filter or your AD/LDAP group filter will be available in a list view on the Groups page. The link action will create Mattermost groups corresponding to the AD/LDAP group. AD/LDAP groups that have been linked to a Mattermost group will display the ‘Linked’ icon. AD/LDAP groups that have not been linked to a Mattermost group will display the ‘Not Linked’ icon. An AD/LDAP group that is not linked does not create a Mattermost group.  
 
 .. image:: ../images/Groups_listing.png
 
 Groups can be linked individually by the inline “Linked” button or by using the checkbox next the group name to select multiple groups and by using the blue “Link Selected Groups” button. When selecting multiple groups with a mix of “Linked” and “Not Linked” states, the bulk action of the button will be “Link Selected Groups” until all selected are marked “Linked”. Using the bulk action speeds the process of creating Mattermost groups from your AD/LDAP Groups.  
 
-If you see a “Linked Failed” message, either click on the message or check the box before the group name to expose the inline link message, allowing you to try the link again.
+If you see a “Link Failed” message, either click on the message or check the box before the group name to expose the inline link message, allowing you to try the link again.
 
 .. image:: ../images/LinkFailed.png
 
 Configure the group
 -------------------
 
-AD/LDAP groups that have been linked to Mattermost groups are able to be configured.  To configure the group, select “Configure”.  This will open up the Group Configuration page.  
+AD/LDAP groups that have been linked to Mattermost groups can be configured to add team and channels.  To configure the group, select “Configure”.  This will open up the Group Configuration page.  
 
 The Group Configuration page displays the group profile which includes the group name.  This name is automatically mapped from the AD/LDAP group common name attribute and is read-only.  
 
 Add default teams or channels for the group
 --------------------------------------------
-To add the default Team or Channels that you want the group members to default in, select either “Add Team” or “Add Channel” from the blue “Add Team or Channel” button.  You may select multiple teams and channels.  
+To add the teams and channels that you want the group members to default in, select either “Add Team” or “Add Channel” from the blue “Add Team or Channel” button. 
 
 .. image:: ../images/Add_Team_Or_Channel.png
 
@@ -81,21 +81,25 @@ Private channels are indicated by:
  
 .. image:: ../images/private_channel.png  
 
-Teams added include default channels set in the `ExperimentalDefaultChannels config setting <https://docs.mattermost.com/administration/config-settings.html?highlight=configuration%20settings#default-channels-experimental>`_ (Town Square and Off-Topic). Adding a channel without setting the team adds the implied team to the listing below, but not to the group specifically.  Teams are listed in parentheses after the channel name in the channel selector.
+When a team is added, the ```Town Square```, ```Off-Topic``` channels will also be added as default, as well as any default channels set in the `ExperimentalDefaultChannels config setting <https://docs.mattermost.com/administration/config-settings.html?highlight=configuration%20settings#default-channels-experimental>`_. 
+
+When a channel is added without setting the team explicitly, the team will be shown in the Team and Channel Membership listing, but it will not be added to the group specifically. Because of this dependency, when the channel is removed, the team will also be removed.  Teams are listed in parentheses after the channel name in the channel selector.
 
 Teams and channels membership synchronization
 ----------------------------------------------
 
-Default teams and channels will be added to the group member's user interface when they login for the first time after the group has been configured with the specified teams and channels. It may take a few seconds to load all team and channel memberships for a user depending on the number of teams and channels the group is defaulted to. In our testing, it took 6s for an organization with 200,000 users and 30,000 linked groups. This process is independent of the AD/LDAP synchronization process to support future functionality of groups.
+For new users, default teams and channels will be added when they log in for the first time. For existing users, default teams and channels will be added to after the next scheduled AD/LDAP sychronization. 
+
+It may take a few seconds to load all team and channel memberships for a user depending on the number of teams and channels the group is defaulted to. In our testing, it took 6 seconds for an organization with 200,000 users and 30,000 linked groups.
 
 .. note::
-Users are not removed from the team or channel on subsequent synchronizations of the AD/LDAP groups.  Users will need to be manually removed from the team or channel per the existing functionality.  They will not be re-added if they were manually removed.
+Users are not removed from the team or channel on subsequent synchronizations of the AD/LDAP groups.  Users will need to be manually removed from the team or channel per the existing functionality. This is being considered for a future improvement. They will not be re-added if they were manually removed or removed themselves.
 
 .. image:: ../images/Team_Channel_Membership_Sync.png
 
 Remove configured teams and channels from a group
 -------------------------------------------------
-To remove a team or channel configured for a group, click “Remove” to the right of the team or channel name. 
+To remove a team or channel configured for a group, click “Remove” to the right of the team or channel name. Users already part of the team and channel will not be removed from that channel by this action. 
 
 View users belonging to the group
 ---------------------------------
@@ -104,18 +108,18 @@ Users who have logged in and accessed Mattermost will be visible in the members 
 
 .. image:: ../images/Group_Members.png
 
-Users can be removed from the group on subsequent synchronizations. However, they will not be removed from teams and channels. If a user is removed from a AD/LDAP group and then later re-added, they will be defaulted again into the teams and channels configured in the group. 
+Users can be removed from the Mattermost group on subsequent synchronizations. However, they will not be removed from teams and channels. If a user is removed from an AD/LDAP group and then later re-added, they will be defaulted again into the teams and channels configured in the group. If a user is deactivated in AD/LDAP, they be removed from the group and will lose access to the teams and channels configured.
 
 .. note:: 
 When a member removes themselves manually from a channel, that action is tracked in the Channel Member History table.  Users are not re-added to channels from which they previously removed themselves. 
 
 Managing groups
 ---------------
-Once a group has been configured, it can be edited to change the default teams and channels by clicking “Edit” on the group on the list view.  
+Once a group has been configured, the default teams and channels can be changed by clicking "Edit" on the group list view.  
 
 Deleting groups
 ---------------
-Groups can be deleted by adjusting your AD/LDAP group filter to remove the group or by unlinking the group on the groups listing page. If you add the group back by re-adjusting the AD/LDAP group filter and link the group again on the group configuration page, the previous configurations will be available.
+Mattermost groups can be deleted by adjusting your AD/LDAP group filter to remove the group or by unlinking the group on the groups listing page. If you add the group back by re-adjusting the AD/LDAP group filter and link the group again on the group configuration page, the previous team and channel configurations will be available.
 
 Frequently Asked Questions
 ----------------------------
@@ -123,7 +127,7 @@ Frequently Asked Questions
 Why is AD/LDAP Group Sync in alpha?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We want to make sure we have tested this feature in environments that have different AD/LDAP system and group structures to ensure the feature works well in the different varieties of environments our customers have. Our testing has included Active Directory and Open LDAP systems. 
+We want to make sure we have tested this feature in environments that have different AD/LDAP system and group structures to ensure the feature works well in the different varieties of environments our customers have, as well as collect feedback on the functionality. Our testing has included Active Directory and Open LDAP systems. 
 
 When will AD/LDAP Group Sync be in beta?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -138,9 +142,9 @@ LDAP group sync will be in beta for a period of time until:
 Why can't my existing users see the teams and channels they have been synced to?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The next scheduled synchronization job that is run after the configuration of a group will add the teams and channels for any existing users.  You can manually initiate a synchronization from **System Console > Authentication > AD/LDAP > AD/LDAP Synchronize Now**.  
+Existing Mattermost users that are members of linked Mattermost groups will be added to teams and channels on the next scheduled synchronization job that is run after teams and channels are added to the Mattermost group. You can manually initiate a synchronization from **System Console > Authentication > AD/LDAP > AD/LDAP Synchronize Now**.  
 
 How do nested groups work with AD/LDAP Group Sync?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Users within nested groups are included as members of parent groups. The group filter that you specify can include any type of LDAP group on your system. The ``member`` LDAP attribute is used to determine nested groups that belong to a parent group.
+Users within nested groups are included as members of parent groups. The group filter that you specify can include any type of AD/LDAP group on your system. The ``member`` AD/LDAP attribute is used to determine nested groups that belong to a parent group.
