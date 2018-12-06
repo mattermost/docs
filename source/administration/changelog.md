@@ -6,8 +6,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.5
 
-- **v5.5.1, released TBD** 
-  - Fixing a bug preventing Elasticsearch v6.0+ from working in Mattermost 5.4 and 5.5.
+- **v5.5.1, released 2018-12-06** 
+  - Fixed a bug preventing Elasticsearch v6.0+ from working in Mattermost server versions 5.4 and 5.5.
 - **v5.5.0, released 2018-11-16**
   - Original 5.5.0 release
 
@@ -60,7 +60,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Release date: 2018-10-16
 
  - **Note: Mobile app version 1.13+ is required for servers 5.4+**
- - **Note: Enterprise Edition E20 customers running Elasticsearch, we have identified a bug preventing Elasticsearch v6.0+ from working in Mattermost 5.4 and 5.5. This issue will be resolved in 5.6.**
 
 - Mattermost v5.4.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
