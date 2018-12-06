@@ -2694,7 +2694,7 @@ Enable Custom Terms of Service
 
 **True**: When true, new users must accept the terms of service before accessing any Mattermost teams on desktop, web or mobile. Existing users must accept them after login or a page refresh. To update terms of service link displayed in account creation and login pages, go to **System Console > Legal and Support > Terms of Service Link**.
 
-**False**: During account creation or login, users can review terms of service included via **System Console > Legal and Support > Terms of Service link**.
+**False**: During account creation or login, users can review terms of service by accessing the link configured via **System Console > Legal and Support > Terms of Service link**.
 
 Custom Terms of Service Text
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
