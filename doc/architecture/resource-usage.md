@@ -84,3 +84,49 @@ are per pod.
 - **Recommended Limits**
   * cpu: > 1.4 (greater than average load)
   * memory: > 1.4G (greater than stress task)
+
+
+### Sidekiq
+
+- **Idle values**
+  * 0 tasks, 1 pods
+    - cpu: 0
+    - memory: 450M
+
+
+- **Minimal Load**
+  * ~20 tasks (create pipeline), 1 pods
+    - cpu: 50m
+    - memory: 550M
+
+
+- **Average Loads**
+   * x concurrent users, x pods
+     - cpu: x
+     - memory: x
+   * x concurrent users, x pods
+     - cpu: x
+     - memory: x
+
+
+- **Stressful Task**
+  * x
+    - cpu: x
+    - memory: x
+
+
+- **Heavy Load**
+  * x concurrent users, x pods
+    - cpu: x
+    - memory: x
+
+
+- **Default Requests**
+  * cpu: x (from minimal load)
+  * memory: x (from average loads)
+  * target cpu average: x (from average loads)
+
+
+- **Recommended Limits**
+  * cpu: > x (greater than average load)
+  * memory: > x (greater than stress task)
