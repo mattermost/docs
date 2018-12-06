@@ -1,0 +1,5 @@
+---
+title: Add support for impersonation_enabled flag in gitlab.yml
+merge_request: 593
+author:
+type: added

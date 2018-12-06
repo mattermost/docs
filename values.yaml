@@ -38,6 +38,7 @@ global:
     credentials: {}
   appConfig:
     enableUsagePing: true
+    enableImpersonation:
     defaultCanCreateGroup: true
     usernameChangingEnabled: true
     issueClosingPattern:
