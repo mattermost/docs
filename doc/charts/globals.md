@@ -591,10 +591,10 @@ Examples for [AWS][fog-aws] and [Google][fog-gcs] providers can be found in
 - [rails.s3.yaml](../../examples/objectstorage/rails.s3.yaml)
 - [rails.gcs.yaml](../../examples/objectstorage/rails.gcs.yaml)
 
-[fog-aws]: http://fog.io/storage/#using-amazon-s3-and-fog
-[fog-gcs]: http://fog.io/storage/#google-cloud-storage
+[fog-aws]: https://fog.io/storage/#using-amazon-s3-and-fog
+[fog-gcs]: https://fog.io/storage/#google-cloud-storage
 
-Once you have created a YAML file containing the contents of the `connection`, create the secret in Kubernetes
+Once a YAML file containing the contents of the `connection` has been created, use this file to create the secret in Kubernetes
 
 ```bash
 kubectl create secret generic gitlab-rails-storage \
@@ -811,7 +811,7 @@ Examples for [AWS][fog-aws] and [Google][fog-gcs] providers can be found in
 - [rails.s3.yaml](../../examples/objectstorage/rails.s3.yaml)
 - [rails.gcs.yaml](../../examples/objectstorage/rails.gcs.yaml)
 
-Once you have created a YAML file containing the contents of the `connection`, create the secret in Kubernetes
+Once a YAML file containing the contents of the `connection` has been created, create the secret in Kubernetes
 
 ```bash
 kubectl create secret generic gitlab-rails-storage \

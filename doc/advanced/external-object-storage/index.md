@@ -11,8 +11,8 @@ To disable minio, set this option and then follow the related documentation belo
 --set global.minio.enabled=false
 ```
 
-You can see an [example of the full configuration](https://gitlab.com/charts/gitlab/blob/master/examples/values-external-objectstroage.yaml)
-in the [examples documentation](https://gitlab.com/charts/gitlab/tree/master/examples).
+An [example of the full configuration](https://gitlab.com/charts/gitlab/blob/master/examples/values-external-objectstroage.yaml)
+has been provided in the [examples](https://gitlab.com/charts/gitlab/tree/master/examples).
 
 ## Docker Registry images
 
@@ -27,8 +27,7 @@ Configuration of object storage for the `registry` chart is done via the `regist
 > **Note**: The bucket name needs to be set both in the secret, and in `global.registry.bucket`. The secret is used in the registry server, and
 the global is used by GitLab backups.
 
-Create the secret per documentation, then configure the chart to make use of this secret.
-See the [registry chart documentation on storage](../../charts/registry/index.md#storage) for full details.
+Create the secret per [registry chart documentation on storage](../../charts/registry/index.md#storage), then configure the chart to make use of this secret.
 
 Examples for [S3][storage-s3] and [GCS][storage-gcs] drivers can be found in
 [examples/objectstorage](../../examples/objectstorage).
@@ -40,9 +39,9 @@ Examples for [S3][storage-s3] and [GCS][storage-gcs] drivers can be found in
 
 ### Registry configuration
 
-1. Decide on which storage service you will use.
+1. Decide on which storage service to use.
 1. Copy appropriate file to `registry-storage.yaml`.
-1. Edit with the correct values for your deployment.
+1. Edit with the correct values for the environment.
 1. Follow [registry chart documentation on storage](../../charts/registry/index.md#storage) for creating the secret.
 1. Configure the chart as documented.
 
@@ -74,25 +73,25 @@ and `global.appConfig.packages` keys.
 --set global.appConfig.pseudonymizer.connection.key=connection
 ````
 
-> **Note**: Currently you need to use a different bucket for each, otherwise performing a restore from backup will not properly function.
+> **Note**: Currently a different bucket is needed for each, otherwise performing a restore from backup will not properly function.
 
 See the [charts/globals documentaion on appConfig](../../charts/globals.md#configure-appconfig-settings) for full details.
 
-Create the secret(s) per the documentation, and then configure the chart to use the provided secrets. Note, you can use the same secret for all 3 if you so chose. See the [connection details documentation](../../charts/globals.md#connection).
+Create the secret(s) per the [connection details documentation](../../charts/globals.md#connection), and then configure the chart to use the provided secrets. Note, the same secret can be used for all three.
 
 Examples for [AWS][fog-aws] and [Google][fog-gcs] providers can be found in
 [examples/objectstorage](../../../examples/objectstorage).
 - [rails.s3.yaml](../../../examples/objectstorage/rails.s3.taml)
 - [rails.gcs.yaml](../../../examples/objectstorage/rails.gcs.yaml)
 
-[fog-aws]: http://fog.io/storage/#using-amazon-s3-and-fog
-[fog-gcs]: http://fog.io/storage/#google-cloud-storage
+[fog-aws]: https://fog.io/storage/#using-amazon-s3-and-fog
+[fog-gcs]: https://fog.io/storage/#google-cloud-storage
 
 ### appConfig configuration
 
-1. Decide on which storage service you will use.
+1. Decide on which storage service to use.
 1. Copy appropriate file to `rails.yaml`.
-1. Edit with the correct values for your deployment.
+1. Edit with the correct values for the environment.
 1. Follow [connection details documentation](../../charts/globals.md#connection) for creating the secret.
 1. Configure the chart as documented.
 
@@ -100,9 +99,9 @@ Examples for [AWS][fog-aws] and [Google][fog-gcs] providers can be found in
 
 Backups are also stored in object storage, and need to be configured to point
 externally rather than the included minio service. The backup/restore procedure makes
-use of two separate buckets. A bucket for storing your backups (`global.appConfig.backups.bucket`),
+use of two separate buckets. A bucket for storing backups (`global.appConfig.backups.bucket`),
 and a tmp bucket for preserving existing data during the restore process (`global.appConfig.backups.tmpBucket`).
-You also need to provide connection configuration through the `gitlab.task-runner.backups.objectStorage.config` key.
+A connection configuration through the `gitlab.task-runner.backups.objectStorage.config` key must also be provided.
 
 ```
 --set global.appConfig.backups.bucket=gitlab-backup-storage
@@ -116,7 +115,7 @@ See the [backup/restore object storage documentation](../../backup-restore/index
 Create the secret using the [s3cmd config file format](https://s3tools.org/kb/item14.htm) per the documentation.
 
 > **Note**: In order to backup/restore files from the other object storage locations, the s3cmd config file needs to be
-> configured to authenticate as a user with sufficient access to read/write to all your GitLab buckets.
+> configured to authenticate as a user with sufficient access to read/write to all GitLab buckets.
 
 ### Backups storage example
 
