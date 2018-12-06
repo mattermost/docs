@@ -22,7 +22,7 @@ Once saved, all users must accept the terms of service by clicking **I Agree** n
 
 .. note::
 
- If you make an update to your terms of service, make sure to update your terms of service link at **System Console > Customization > Legal and Support > Terms of Service link**.
+ If you make an update to your Terms of Service, make sure to update your terms of service link at **System Console > Customization > Legal and Support > Terms of Service link**.
  
  This link is presented to all users on each log in, and is easily accessible to end users after accepting the terms.
 
