@@ -249,43 +249,12 @@ spec:
               items:
                 - key: registry-auth.key
                   path: registry/gitlab-registry.key
-          {{- if $minioEnabled }}
-          - secret:
-              name: {{ $minioSecret }}
-              items:
-                - key: accesskey
-                  path: minio/accesskey
-                - key: secretkey
-                  path: minio/secretkey
-          {{- end }}
-          {{- if $.Values.global.appConfig.lfs.connection }}
-          - secret:
-              name: {{ $.Values.global.appConfig.lfs.connection.secret }}
-              items:
-                - key: {{ default "connection" $.Values.global.appConfig.lfs.connection.key }}
-                  path: objectstorage/lfs
-          {{- end }}
-          {{- if $.Values.global.appConfig.artifacts.connection }}
-          - secret:
-              name: {{ $.Values.global.appConfig.artifacts.connection.secret }}
-              items:
-                - key: {{ default "connection" $.Values.global.appConfig.artifacts.connection.key }}
-                  path: objectstorage/artifacts
-          {{- end }}
-          {{- if $.Values.global.appConfig.uploads.connection }}
-          - secret:
-              name: {{ $.Values.global.appConfig.uploads.connection.secret }}
-              items:
-                - key: {{ default "connection" $.Values.global.appConfig.uploads.connection.key }}
-                  path: objectstorage/uploads
-          {{- end }}
-          {{- if $.Values.global.appConfig.packages.connection }}
-          - secret:
-              name: {{ $.Values.global.appConfig.packages.connection.secret }}
-              items:
-                - key: {{ default "connection" $.Values.global.appConfig.packages.connection.key }}
-                  path: objectstorage/packages
-          {{- end }}
+          {{- include "gitlab.minio.mountSecrets" $ | nindent 10 }}
+          {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "lfs" "config" $.Values.global.appConfig.lfs) | nindent 10 }}
+          {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "artifacts" "config" $.Values.global.appConfig.artifacts) | nindent 10 }}
+          {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "uploads" "config" $.Values.global.appConfig.uploads) | nindent 10 }}
+          {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "packages" "config" $.Values.global.appConfig.packages) | nindent 10 }}
+          {{- include "gitlab.appConfig.pseudonymizer.mountSecrets" $ | nindent 10 }}
           {{- if $.Values.global.appConfig.omniauth.providers }}
           {{-   range $index, $entry := $.Values.global.appConfig.omniauth.providers }}
           - secret:
@@ -294,13 +263,6 @@ spec:
                 - key: {{ default "provider" $entry.key }}
                   path: omniauth/{{ $entry.secret }}/provider
           {{-   end }}
-          {{- end }}
-          {{- if $.Values.global.appConfig.pseudonymizer.connection }}
-          - secret:
-              name: {{ $.Values.global.appConfig.pseudonymizer.connection.secret }}
-              items:
-                - key: {{ default "connection" $.Values.global.appConfig.pseudonymizer.connection.key }}
-                  path: objectstorage/pseudonymizer
           {{- end }}
           {{- if and $.Values.global.smtp.enabled $.Values.global.smtp.authentication }}
           - secret:

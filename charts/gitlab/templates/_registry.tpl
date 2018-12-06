@@ -35,3 +35,15 @@ to the service name
 {{-     printf "%s-%s" .Release.Name $name -}}
 {{-   end -}}
 {{- end -}}
+
+{{- define "gitlab.appConfig.registry.configuration" -}}
+registry:
+  enabled: {{ or (not (kindIs "bool" .Values.registry.enabled)) .Values.registry.enabled }}
+  host: {{ template "gitlab.registry.host" . }}
+  {{- if .Values.registry.port }}
+  port: {{ .Values.registry.port }}
+  {{- end }}
+  api_url: {{ default "http" .Values.registry.api.protocol }}://{{ template "gitlab.registry.api.host" . }}:{{ default 5000 .Values.registry.api.port }}
+  key: /etc/gitlab/registry/gitlab-registry.key
+  issuer: {{ .Values.registry.tokenIssuer }}
+{{- end -}}{{/* "gitlab.appConfig.registry.configuration" */}}

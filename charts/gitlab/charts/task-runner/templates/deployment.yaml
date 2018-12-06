@@ -132,34 +132,18 @@ spec:
               items:
                 - key: registry-auth.key
                   path: registry/gitlab-registry.key
+          {{- if not .Values.global.minio.enabled }}
           - secret:
-              {{- if .Values.global.minio.enabled }}
-              name: {{ include "gitlab.minio.credentials.secret" . }}
-              items:
-                - key: accesskey
-                  path: objectstorage/accesskey
-                - key: secretkey
-                  path: objectstorage/secretkey
-          {{- else }}
               name: {{ required "A valid backups.objectStorage.config.secret is needed!" .Values.backups.objectStorage.config.secret }}
               items:
                 - key: {{ default "config" .Values.backups.objectStorage.config.key }}
                   path: objectstorage/.s3cfg
           {{- end }}
-          {{- if .Values.global.appConfig.lfs.connection }}
-          - secret:
-              name: {{ .Values.global.appConfig.lfs.connection.secret }}
-              items:
-                - key: {{ default "connection" .Values.global.appConfig.lfs.connection.key }}
-                  path: objectstorage/lfs
-          {{- end }}
-          {{- if .Values.global.appConfig.packages.connection }}
-          - secret:
-              name: {{ .Values.global.appConfig.packages.connection.secret }}
-              items:
-                - key: {{ default "connection" .Values.global.appConfig.packages.connection.key }}
-                  path: objectstorage/packages
-          {{- end }}
+          {{- include "gitlab.minio.mountSecrets" $ | nindent 10 }}
+          {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "lfs" "config" $.Values.global.appConfig.lfs) | nindent 10 }}
+          {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "packages" "config" $.Values.global.appConfig.packages) | nindent 10 }}
+          # End of mount secrets for object storage
+          {{- include "gitlab.appConfig.pseudonymizer.mountSecrets" $ | nindent 10 }}
           {{- if .Values.global.appConfig.omniauth.providers }}
           {{-   range $index, $entry := .Values.global.appConfig.omniauth.providers }}
           - secret:
@@ -169,13 +153,6 @@ spec:
                   path: omniauth/{{ $entry.secret }}/provider
           {{-   end }}
           {{-   end }}
-          {{- if .Values.global.appConfig.pseudonymizer.connection }}
-          - secret:
-              name: {{ .Values.global.appConfig.pseudonymizer.connection.secret }}
-              items:
-                - key: {{ default "connection" .Values.global.appConfig.pseudonymizer.connection.key }}
-                  path: objectstorage/pseudonymizer
-          {{- end }}
       - name: task-runner-secrets
         emptyDir:
           medium: "Memory"
