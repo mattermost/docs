@@ -1,31 +1,28 @@
 .. _custom-terms-of-service:
 
-Custom Terms of Service (Beta) (E20)
+Custom Terms of Service (E20)
 =====================================
 
 Available in `Enterprise Edition E20 and higher <https://about.mattermost.com/pricing/>`_.
 
-In Mattermost Enterprise Edition E20, you can outline custom Terms of Service for your team members to accept before they can access Mattermost on web or desktop.
-
-.. note::
-
- Users on mobile will not be presented with the custom Terms of Services. Mobile support is scheduled for an upcoming release.
+In Mattermost Enterprise Edition E20, you can outline custom Terms of Service for your team members to accept before they can access Mattermost on web, desktop or mobile.
 
 Configuring Terms of Service
 --------------------------------
 
 To enable custom terms of service:
 
-1. Go to **System Console > Customization > Legal and Support**.
+1. Go to **System Console > Customization > Custom Terms of Service**.
 2. Set **Enable Custom Terms of Service** to **true**.
 3. Set **Custom Terms of Service Text** which contains your terms. Note that Markdown-formatting, including lists, headings and bolding, is supported.
-4. Click **Save**.
+4. Set **Re-Acceptance Period**, which sets the number of days before Terms of Service acceptance expires, and the terms must be re-accepted. Set to 0 if you don't want your terms to expire.
+5. Click **Save**.
 
 Once saved, all users must accept the terms of service by clicking **I Agree** next time they log in, or on the next page refresh. If they do not accept, they will be logged out.
 
 .. note::
 
- If you make an update to your terms of service, make sure to update your terms of service link at **System Console > Customization > Legal and Support > Terms of Service link**.
+ If you make an update to your Terms of Service, make sure to update your terms of service link at **System Console > Customization > Legal and Support > Terms of Service link**.
  
  This link is presented to all users on each log in, and is easily accessible to end users after accepting the terms.
 
