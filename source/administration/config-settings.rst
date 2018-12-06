@@ -2704,7 +2704,7 @@ Re-Acceptance Period
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The number of days before Terms of Service acceptance expires, and the terms must be re-accepted.
 
-Defaults to 365 days. 0 is unlimited.
+Defaults to 365 days. 0 indicates the terms do not expire.
 
 ________
 
