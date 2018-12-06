@@ -11,7 +11,7 @@ To disable minio, set this option and then follow the related documentation belo
 --set global.minio.enabled=false
 ```
 
-You can see an [example of the full configuration](https://gitlab.com/charts/gitlab/blob/master/examples/values-external-objectstroage.yaml)
+You can see an [example of the full configuration](https://gitlab.com/charts/gitlab/blob/master/examples/values-external-objectstorage.yaml)
 in the [examples documentation](https://gitlab.com/charts/gitlab/tree/master/examples).
 
 ## Docker Registry images
