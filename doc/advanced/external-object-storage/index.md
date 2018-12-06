@@ -11,7 +11,7 @@ To disable minio, set this option and then follow the related documentation belo
 --set global.minio.enabled=false
 ```
 
-An [example of the full configuration](https://gitlab.com/charts/gitlab/blob/master/examples/values-external-objectstroage.yaml)
+An [example of the full configuration](https://gitlab.com/charts/gitlab/blob/master/examples/values-external-objectstorage.yaml)
 has been provided in the [examples](https://gitlab.com/charts/gitlab/tree/master/examples).
 
 ## Docker Registry images
@@ -81,7 +81,7 @@ Create the secret(s) per the [connection details documentation](../../charts/glo
 
 Examples for [AWS][fog-aws] and [Google][fog-gcs] providers can be found in
 [examples/objectstorage](../../../examples/objectstorage).
-- [rails.s3.yaml](../../../examples/objectstorage/rails.s3.taml)
+- [rails.s3.yaml](../../../examples/objectstorage/rails.s3.yaml)
 - [rails.gcs.yaml](../../../examples/objectstorage/rails.gcs.yaml)
 
 [fog-aws]: https://fog.io/storage/#using-amazon-s3-and-fog
