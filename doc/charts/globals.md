@@ -389,6 +389,7 @@ with the `global.appConfig` key.
 global:
   appConfig:
     enableUsagePing: true
+    enableImpersonation: true
     defaultCanCreateGroup: true
     usernameChangingEnabled: true
     issueClosingPattern:
@@ -462,6 +463,12 @@ application are described below.
 A flag to disable the [usage ping support](https://docs.gitlab.com/ee/user/admin_area/settings/usage_statistics.html).
 
 Defaults to `true`
+
+#### enableImpersonation
+
+A flag to disable [user impersonation by Administrators](https://docs.gitlab.com/ee/api/README.html#disable-impersonation).
+
+Defaults to `nil`.
 
 #### defaultCanCreateGroup
 
