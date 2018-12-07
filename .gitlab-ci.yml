@@ -84,6 +84,7 @@ review:
     - install_tiller
     - create_secret
     - install_external_dns
+    - if ! crdExists || previousDeployFailed ; then OPERATOR_BOOTSTRAP=true deploy ; fi
     - deploy
     - add_license
     - echo "export QA_ENVIRONMENT_URL=gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN" >> variables
@@ -320,6 +321,18 @@ danger-review:
     return $status
   }
 
+  function crdExists() {
+    echo "Checking for existing GitLab Operator CRD"
+    kubectl get crd/gitlabs.${CI_ENVIRONMENT_SLUG}.gitlab.com >/dev/null 2>&1
+    status=$?
+    if [ $status -eq 0 ]; then
+      echo "GitLab Operator CRD exists."
+    else
+      echo "GitLab Operator CRD does NOT exist."
+    fi
+    return $status
+  }
+
   function deploy() {
     track="${1-stable}"
     name="$CI_ENVIRONMENT_SLUG"
@@ -363,9 +376,14 @@ danger-review:
     helm repo add gitlab https://charts.gitlab.io/
     helm dep update .
 
+    # If OPERATOR_BOOTSTRAP is set, we _do not_ want to use --wait / --timeout
+    WAIT="--wait --timeout 600"
+    if [ -n "${OPERATOR_BOOTSTRAP}" ]; then
+      WAIT=""
+    fi
+
     helm upgrade --install \
-      --wait \
-      --timeout 600 \
+      $WAIT \
       --set releaseOverride="$CI_ENVIRONMENT_SLUG" \
       --set global.hosts.hostSuffix="$HOST_SUFFIX" \
       --set global.hosts.domain="$AUTO_DEVOPS_DOMAIN" \
@@ -382,6 +400,8 @@ danger-review:
       --set gitlab.gitlab-shell.maxReplicas=3 \
       --set redis.resources.requests.cpu=100m \
       --set minio.resources.requests.cpu=100m \
+      --set global.operator.enabled=true \
+      --set global.operator.bootstrap=${OPERATOR_BOOTSTRAP-false} \
       --namespace="$KUBE_NAMESPACE" \
       --version="$CI_PIPELINE_ID-$CI_JOB_ID" \
       "$name" \
@@ -533,7 +553,12 @@ danger-review:
   }
 
   function cleanup() {
-    kubectl -n "$KUBE_NAMESPACE" get ingress,svc,pdb,hpa,deploy,statefulset,job,pod,secret,configmap,pvc,secret,clusterrole,clusterrolebinding,role,rolebinding,sa 2>&1 \
+    $gitlabs=''
+    if crdExists ; then
+      $gitlabs=',gitlabs'
+    fi
+
+    kubectl -n "$KUBE_NAMESPACE" get ingress,svc,pdb,hpa,deploy,statefulset,job,pod,secret,configmap,pvc,secret,clusterrole,clusterrolebinding,role,rolebinding,sa,crd${gitlabs} 2>&1 \
       | grep "$CI_ENVIRONMENT_SLUG" \
       | awk '{print $1}' \
       | xargs kubectl -n "$KUBE_NAMESPACE" delete \
