@@ -13,7 +13,7 @@ The groups feature is useful for organizations that have many new users to onboa
 Pre-installation notes
 ----------------------
 
-For customers that have enabled syncrhonization with AD/LDAP, all groups matching the default filter ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` will be available to be linked in the groups list view at **Access Control > Groups**.  The group filter is an optional configuration setting available under **System Console > AD/LDAP**, which will allow you to specify the groups you would like to be able to access in Mattermost.   
+For customers that have enabled synchronization with AD/LDAP, all groups matching the default filter ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` will be available to be linked in the groups list view at **Access Control > Groups**. The group filter is an optional configuration setting available under **System Console > AD/LDAP**, which will allow you to specify the groups you would like to be able to access in Mattermost.   
 
 The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/deployment/sso-ldap.html?highlight=ldap#configure-ad-ldap-synchronization>`_. for more information. The group feature has no effect on users' authentication to Mattermost.
 
@@ -53,9 +53,9 @@ If you see a “Link Failed” message, either click on the message or check the
 Configure the group
 -------------------
 
-AD/LDAP groups that have been linked to Mattermost groups can be configured to add team and channels.  To configure the group, select “Configure”.  This will open up the Group Configuration page.  
+AD/LDAP groups that have been linked to Mattermost groups can be configured to add team and channels. To configure the group, select “Configure”. This will open up the Group Configuration page.  
 
-The Group Configuration page displays the group profile which includes the group name.  This name is automatically mapped from the AD/LDAP group common name attribute and is read-only.  
+The Group Configuration page displays the group profile which includes the group name. This name is automatically mapped from the AD/LDAP group common name attribute and is read-only.  
 
 Add default teams or channels for the group
 --------------------------------------------
@@ -83,17 +83,17 @@ Private channels are indicated by:
 
 When a team is added, the ```Town Square```, ```Off-Topic``` channels will also be added as default, as well as any default channels set in the `ExperimentalDefaultChannels config setting <https://docs.mattermost.com/administration/config-settings.html?highlight=configuration%20settings#default-channels-experimental>`_. 
 
-When a channel is added without setting the team explicitly, the team will be shown in the Team and Channel Membership listing, but it will not be added to the group specifically. Because of this dependency, when the channel is removed, the team will also be removed.  Teams are listed in parentheses after the channel name in the channel selector.
+When a channel is added without setting the team explicitly, the team will be shown in the Team and Channel Membership listing, but it will not be added to the group specifically. Because of this dependency, when the channel is removed, the team will also be removed. Teams are listed in parentheses after the channel name in the channel selector.
 
 Teams and channels membership synchronization
 ----------------------------------------------
 
-For new users, default teams and channels will be added when they log in for the first time. For existing users, default teams and channels will be added to after the next scheduled AD/LDAP sychronization. 
+For new users, default teams and channels will be added when they log in for the first time. For existing users, default teams and channels will be added after the next scheduled AD/LDAP sychronization. 
 
 It may take a few seconds to load all team and channel memberships for a user depending on the number of teams and channels the group is defaulted to. In our testing, it took 6 seconds for an organization with 200,000 users and 30,000 linked groups.
 
 .. note::
-Users are not removed from the team or channel on subsequent synchronizations of the AD/LDAP groups.  Users will need to be manually removed from the team or channel per the existing functionality. This is being considered for a future improvement. They will not be re-added if they were manually removed or removed themselves.
+Users are not removed from the team or channel on subsequent synchronizations of the AD/LDAP groups. Users will need to be manually removed from the team or channel per the existing functionality. This is being considered for a future improvement. They will not be re-added if they were manually removed or removed themselves.
 
 .. image:: ../images/Team_Channel_Membership_Sync.png
 
@@ -108,7 +108,7 @@ Users who have logged in and accessed Mattermost will be visible in the members 
 
 .. image:: ../images/Group_Members.png
 
-Users can be removed from the Mattermost group on subsequent synchronizations. However, they will not be removed from teams and channels. If a user is removed from an AD/LDAP group and then later re-added, they will be defaulted again into the teams and channels configured in the group. If a user is deactivated in AD/LDAP, they be removed from the group and will lose access to the teams and channels configured.
+Users can be removed from the Mattermost group on subsequent synchronizations. However, they will not be removed from teams and channels. If a user is removed from an AD/LDAP group and then later re-added, they will be defaulted again into the teams and channels configured in the group. If a user is deactivated in AD/LDAP, they be removed from the group and will lose access to Mattermost.
 
 .. note:: 
 When a member removes themselves manually from a channel, that action is tracked in the Channel Member History table.  Users are not re-added to channels from which they previously removed themselves. 
