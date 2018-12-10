@@ -3383,6 +3383,39 @@ Enable API Team Deletion
 SQL Settings
 ~~~~~~~~~~~~
 
+Enable Public Channels Materialization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. note::
+  This setting provided a fast way for System Admins to disable public channels materialization if it caused unexpected performance degradation in Mattermost v5.4 or v5.5. The feature was permanently permanently and this setting removed in Mattermost v5.6, released on December 16, 2018.
+
+**True**: Enables materialization of public channels to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI. Notably, this allows the database to exclude direct messages for many queries, resulting in better query plans and more efficient indexes.
+
+**False**: Disables materialization for public channels. 
+
+If this feature is disabled and then later re-enabled, an offline migration is necessary to synchronize the materialized table. Use the following steps:
+
+1. Shut down your application servers.
+2. Connect to your Mattermost database.
+3. Execute the following queries:
+
+.. code:: sql
+
+  DELETE FROM PublicChannels;
+  INSERT INTO PublicChannels
+      (Id, DeleteAt, TeamId, DisplayName, Name, Header, Purpose)
+  SELECT
+      c.Id, c.DeleteAt, c.TeamId, c.DisplayName, c.Name, c.Header, c.Purpose
+  FROM
+      Channels c
+  WHERE
+      c.Type = 'O';
+
+The queries above rebuild the materialized `PublicChannels` table without modifying the authoritative `Channels` table.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnablePublicChannelsMaterialization": true`` with options ``true`` and ``false``.                    |
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Read Replicas (Enterprise Edition)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting. A server restart is required for changes to this setting to take effect.
