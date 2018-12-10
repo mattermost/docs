@@ -2,7 +2,20 @@ Bulk export data
 =================
 At this time, the export supports attributes of the objects listed below. All Mattermost Bulk Export data files will begin with a `Version` object as the first line of the file. This indicates the version of the Mattermost Bulk Import file format with which the exported data is compatible.
 
-Configuration for exporting specific areas of the server, exporting additional types of posts, reactions, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.  
+You can export the following data types:
+
+- Teams
+- Channels (Public & Private)
+- Users
+- Users' Team memberships
+- Users' Channel memberships
+- Users' notification preferences
+- Posts (regular, non-reply posts)
+- Posts' Replies
+- Posts' Reactions
+- Custom Emoji
+
+Configuration for exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.  
 
 For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`_.  
 
@@ -325,7 +338,7 @@ UserChannelMembership object
         <tr class="row-odd">
       <td valign="middle">notify_props</td>
       <td valign="middle">object</td>
-      <td>The notify preferences for this user in this channel. </td>
+      <td>The notify preferences for this user in this channelas defined by the <b>ChannelNotifyProps</b> object.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">favorite</td>
