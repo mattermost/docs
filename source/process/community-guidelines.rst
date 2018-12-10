@@ -320,4 +320,4 @@ Sample Responses
 
   .. code-block:: text
 
-    Thank you for reaching out. We recommend opening a support ticket where our team can help you troubleshoot the issue in more detail. 
+    Thank you for reaching out. We recommend opening a support ticket where our team can best help you troubleshoot the issue. For more information about Enterprise Edition support levels, see https://about.mattermost.com/support/. 
