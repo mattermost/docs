@@ -786,7 +786,7 @@ Fields of the User object
     <tr class="row-odd">
       <td valign="middle">notify_props</td>
       <td valign="middle"><b>UserNotifyProps</b> object</td>
-      <td>The user’s notify props, as defined by the <b>UserNotifyProps</b> object.</td>
+      <td>The user’s notify preferences, as defined by the <b>UserNotifyProps</b> object.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
