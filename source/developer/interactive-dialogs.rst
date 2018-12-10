@@ -228,7 +228,7 @@ The submission payload sent to the integration is:
           "some_element_name": "<value of that element>",
           "some_other_element": "<value of some other element>"
       },
-      “cancelled”: false
+      "cancelled": false
   }
 
 Optionally, the dialog can send an event back to the integration if ``notify_on_cancel`` parameter is set to true. If this happens, ``cancelled`` will be set to true on the above payload, and ``submission`` will be empty.
