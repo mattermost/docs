@@ -2090,8 +2090,9 @@ Plugins (Beta)
 --------------------------------
 Settings to configure plugins.
 
-Configuration
+Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Enable Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2103,8 +2104,6 @@ Enable Plugins
 | This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false`` for above settings respectively.                                    | 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Management
-~~~~~~~~~~~~~~~~~~~~~~~~~
 Upload Plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
