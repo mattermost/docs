@@ -384,7 +384,7 @@ mattermost command create
   Examples
     .. code-block:: none
 
-      sudo ./mattermost command create myteam --title MyCommand --description "My Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
+       ./mattermost command create myteam --title MyCommand --description "My Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
 
   Options
     .. code-block:: none
@@ -415,7 +415,7 @@ mattermost command delete
   Examples
     .. code-block:: none
 
-      sudo ./mattermost command delete commandID
+       ./mattermost command delete commandID
 
 mattermost command move
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -448,7 +448,7 @@ mattermost command list
   Examples
     .. code-block:: none
 
-      sudo ./mattermost command list myteam      
+       ./mattermost command list myteam      
 
 mattermost config
 ---------------
@@ -476,7 +476,7 @@ mattermost config get
   Examples
     .. code-block:: none
 
-      sudo ./mattermost config get SqlSettings.DriverName
+       ./mattermost config get SqlSettings.DriverName
 
  Options
     .. code-block:: none
@@ -497,7 +497,7 @@ mattermost config set
   Examples
     .. code-block:: none
 
-      sudo ./mattermost config set SqlSettings.DriverName mysql
+       ./mattermost config set SqlSettings.DriverName mysql
 
  Options
     .. code-block:: none
@@ -518,7 +518,7 @@ mattermost config show
   Examples
     .. code-block:: none
 
-      sudo ./mattermost config show
+       ./mattermost config show
 
 mattermost config validate
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1086,7 +1086,7 @@ mattermost team archive
   Examples
     .. code-block:: none
 
-      sudo ./mattermost team archive team1  
+       ./mattermost team archive team1  
       
 mattermost team create
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1182,7 +1182,7 @@ mattermost team search
   Examples
     .. code-block:: none
 
-      sudo ./mattermost team search team1  
+       ./mattermost team search team1  
       
 mattermost user
 ---------------
@@ -1552,6 +1552,7 @@ mattermost webhook
   Child Commands
     -  `mattermost webhook create-incoming`_ - Create incoming webhook within specific channel. 
     -  `mattermost webhook create-outgoing`_ - Create outgoing webhook within specific channel.
+    -  `mattermost webhook delete`_ - Delete webhooks .
     -  `mattermost webhook list`_ - List all webhooks.
     -  `mattermost webhook modify-incoming`_ - Modify existing incoming webhook by changing its title, description, channel or icon url.
 
@@ -1569,7 +1570,7 @@ mattermost webhook create-incoming
   Examples
     .. code-block:: none
 
-      sudo ./mattermost webhook create-incoming --channel [channelID] --user [userID] --display-name [display-name] --description [webhookDescription] --lock-to-channel --icon [iconURL]
+       ./mattermost webhook create-incoming --channel [channelID] --user [userID] --display-name [display-name] --description [webhookDescription] --lock-to-channel --icon [iconURL]
 
   Options
     .. code-block:: none
@@ -1595,9 +1596,9 @@ mattermost webhook create-outgoing
   Examples
     .. code-block:: none
 
-      sudo ./mattermost webhook create-outgoing --team myteam --channel mychannel --user myusername --display-name mywebhook --description "My cool webhook" --trigger-when start --trigger-word "build" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json"
+       ./mattermost webhook create-outgoing --team myteam --channel mychannel --user myusername --display-name mywebhook --description "My cool webhook" --trigger-when start --trigger-word "build" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json"
 
-      sudo ./mattermost webhook create-outgoing --team myotherteam --channel mychannel --user myusername --display-name myotherwebhook --description "My cool webhook" --trigger-when exact --trigger-word "build" --trigger-word "test" --trigger-word "third-trigger" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --url http://example.com --content-type "application/json"
+       ./mattermost webhook create-outgoing --team myotherteam --channel mychannel --user myusername --display-name myotherwebhook --description "My cool webhook" --trigger-when exact --trigger-word "build" --trigger-word "test" --trigger-word "third-trigger" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --url http://example.com --content-type "application/json"
 
   Options
     .. code-block:: none
@@ -1613,6 +1614,22 @@ mattermost webhook create-outgoing
           --content-type string                   Content-type
 	  --h, --help				  Help for create-outgoing
 	  
+mattermost webhook delete
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+   Delete incoming and outgoing webhooks. If deleting multiple webhooks, use a space-separated list. 
+
+  Format
+    .. code-block:: none
+
+      mattermost webhook delete [webhookID]
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost webhook delete ggwpz8c1oj883euk98wfm9n1cr
+	  
 mattermost webhook list
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1627,8 +1644,8 @@ mattermost webhook list
   Examples
     .. code-block:: none
 
-      sudo ./mattermost webhook list team1
-      sudo ./mattermost webhook list 
+       ./mattermost webhook list team1
+       ./mattermost webhook list 
 
   Options
     .. code-block:: none
@@ -1649,7 +1666,7 @@ mattermost webhook modify-incoming
   Examples
     .. code-block:: none
 
-      sudo ./mattermost webhook modify-incoming [webhookID] --channel [channelID] --display-name [displayName] --description [webhookDescription] --lock-to-channel --icon [iconURL]
+       ./mattermost webhook modify-incoming [webhookID] --channel [channelID] --display-name [displayName] --description [webhookDescription] --lock-to-channel --icon [iconURL]
 
   Options
     .. code-block:: none
