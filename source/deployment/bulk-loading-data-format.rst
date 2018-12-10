@@ -782,6 +782,7 @@ Fields of the User object
           <kbd>"hour"</kbd> - Emails are batched and sent every hour.<br> </td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
+     </tr>
     <tr class="row-odd">
       <td valign="middle">notify_props</td>
       <td valign="middle"><b>UserNotifyProps</b> object</td>
