@@ -310,14 +310,14 @@ Sample Responses
 
   .. code-block:: text
 
-    Thank you for your inquiry. Our team responded to you in the forums and we're happy to help with further questions there.
+    Thank you for reaching out. Our team responded to you in the forums and we're happy to help with further questions there.
 
   .. code-block:: text
 
-    Thank you for your inquiry. Our team monitors and responds to forum inquiries. We're happy to help with further questions there.
+    Thank you for reaching out. Our team monitors and responds to forum inquiries. We're happy to help with further questions there.
 
 5. Customer requesting help to address an issue they are having with a deployment or specific feature in the system.
 
   .. code-block:: text
 
-    Thank you for your inquiry. We recommend opening a support ticket where our team can help you troubleshoot the issue in more detail. 
+    Thank you for reaching out. We recommend opening a support ticket where our team can help you troubleshoot the issue in more detail. 
