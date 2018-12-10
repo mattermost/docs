@@ -11,7 +11,7 @@ Moreover, :doc:`plugins <../administration/plugins>` can trigger a dialog based 
 
 Here is an example of what a dialog looks like for creating a JIRA issue within the Mattermost user interface:
 
-// XXX <add screenshot>
+.. image:: ../../source/images/interactive-dialog-example.png
 
 .. toctree::
   :maxdepth: 2
@@ -42,7 +42,7 @@ Sample JSON is given below. Form submissions are sent back to the URL defined by
       "dialog": {
           "callback_id": "<ID specified by the integration to identify the request>",
           "title": "<title of the dialog>",
-          "elements": [<Array of UI elements to display in the dialog>],
+          "elements": ["<Array of UI elements to display in the dialog>"],
           "submit_label": "<label of the button to complete the dialog>",
           "notify_on_cancel": false,
           "state": "<string provided by the integration that will be echoed back with dialog submission>",
@@ -60,28 +60,26 @@ Each dialog supports elements for users to enter information.
 
 Each element is required by default. Otherwise the client will return an error as shown below. Note that the error message will appear below the help text, if one is specified. To make an element optional, set the field ``"optional": "true"``.
 
-// XXX <add screenshot>
+.. image:: ../../source/images/interactive-dialog-error.png
 
 Text Elements
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Text elements are single-line plain text fields. Below is an example of a text element that asks for an email address.
 
-// XXX <add screenshot for an example>
+.. image:: ../../source/images/interactive-dialog-text.png
 
 .. code-block:: json
 
   {
-    "display_name": "Email Address",
+    "display_name": "Email",
     "name": "email",
     "type": "text",
     "subtype": "email",
-    "placeholder": "you@example.com"
+    "placeholder": "placeholder@example.com"
   }
 
 There is an optional ``"subtype": "email"`` field in the above example, which specifies the keyboard layout used on mobile. For this example, the email keypad is shown to the user given the subtype is set to ``email``.
-
-// XXX <add screenshots to illustrate the difference>
 
 The full list of supported fields are included below:
 
@@ -102,9 +100,7 @@ The full list of supported fields are included below:
 Textarea Elements
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Textarea elements are multi-line plain text fields. Below is an example of a textarea element that asks for a ticket description.
-
-// XXX <add screenshot for an example>
+Textarea elements are multi-line plain text fields. A sample JSON is provided below:
 
 .. code-block:: json
 
@@ -138,12 +134,14 @@ Select Elements
 
 Select elements are message menus that allow users to select one predefined option from a list. Below is an example of a select element that asks for one of three different options.
 
-// XXX <add screenshot for an example>
+.. image:: ../../source/images/interactive-dialog-select.png
+
+.. image:: ../../source/images/interactive-dialog-select-menu.png
 
 .. code-block:: json
 
   {
-    "display_name": "Options",
+    "display_name": "Option Selector",
     "name": "options",
     "type": "select",
     "options": [
@@ -177,8 +175,6 @@ For users, use
     "data_source": "users"
   }
 
-// XXX <add screenshot for an example>
-
 and for public channels, use
 
   {
@@ -187,8 +183,6 @@ and for public channels, use
     "type": "select",
     "data_source": "channels"
   }
-
-// XXX <add screenshot for an example>
 
 The list of supported fields for the ``select`` type element is included below:
 
@@ -378,7 +372,7 @@ Below is a full example of a JSON payload that creates an interactive dialog in 
      }
   }
 
-// XXX <add screenshot for the example>
+.. image:: ../../source/images/interactive-dialog-complete-example.png
 
 Share Your Integration
 -----------------------
