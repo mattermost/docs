@@ -3954,6 +3954,7 @@ Changes made when hardened mode is enabled:
 
 Limit Access to Config Settings Prior to Login
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in December 16, 2018 release*
 
 Enable this setting to limit the number of config settings sent to users prior to login.
 
