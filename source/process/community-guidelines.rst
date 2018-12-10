@@ -240,7 +240,7 @@ Principles
 
 1. **Avoid acronyms**. Avoid acronyms when possible. For example, say "pull request" instead of "PR", since only a subset of tweet readers are active GitHub users. 
 2. **Use the active voice**. Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!" 
-3. **Include at most one link**. To provide a clear call to action include at most one link per tweet, and place it near the end of the tweet.
+3. **Include at most one link**. To provide a clear call to action, include at most one link per tweet and place it near the end of the tweet.
 4. **Use exclamation marks only for exciting announcements**. An exclamation mark can be used when the announcement is exciting, but using an exclamation mark should be avoided when it can be confused with a signal for community to panic, e.g. "Security update released!".
 5. **Be welcoming**. When asking someone to take action, use "Would you be open to" instead of "Would you like to".
 
@@ -249,18 +249,18 @@ Response Writing Tips
 
 1. When to like (heart) a tweet where Mattermost is mentioned?
 
- - Our team is on site at event and tags our handle.
+ - Our team is on site at an event and tags our handle.
  - A community member shares an event we are at, received a Mattermug, or shared a positive experience and mentions us.
 
 2. When to retweet a post?
 
- - A community member released an integration and mentions us 
- - Mattermug tweets from community members
+ - A community member released an integration and mentions us.
+ - Mattermug tweets from community members.
   
 Sample Responses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Requests for more information such as a preview of our product
+1. Requests for more information such as a preview of our product.
 
 .. code-block:: text
 
