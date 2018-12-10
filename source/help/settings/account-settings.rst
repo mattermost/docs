@@ -208,7 +208,7 @@ Message Display
 
 Select the formatting for messages in the center channel. "Compact" mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
 
-Channel Display Mode
+Channel Display
 ~~~~~~~~~~~~~~~~~~~~
 
 Select if the text in the center channel is fixed width and centered, or full width.
