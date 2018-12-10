@@ -82,11 +82,6 @@ Release date: 2018-12-16
 #### Enterprise Edition (E20)
  - Data Retention was promoted out of beta.
 
- #### Database Changes
- - ``ExpireAt`` column was added to the ``PluginKeyValueStore`` table.
- - Migrating user's accepted terms of service data into the new table called ``UserTermsOfService``.
- - Indexes removed ``idx_users_email_lower``, ``idx_users_username_lower``, ``idx_users_nickname_lower``, ``idx_users_firstname_lower`` and ``idx_users_lastname_lower``.
-
 ### Bug Fixes
 
  - Fixed an issue where pinned post list refreshed when a user posted a new message.
@@ -149,6 +144,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``SearchUsers(search *UserSearch)`` method to the plugin API.
 
 #### Database Changes
+
+ - ``ExpireAt`` column was added to the ``PluginKeyValueStore`` table.
+ - Migrated user's accepted terms of service data into a new table called ``UserTermsOfService``.
+ - Removed ``idx_users_email_lower``, ``idx_users_username_lower``, ``idx_users_nickname_lower``, ``idx_users_firstname_lower`` and ``idx_users_lastname_lower`` indexes.
 
 #### Websocket Event Changes
 
