@@ -1552,7 +1552,7 @@ mattermost webhook
   Child Commands
     -  `mattermost webhook create-incoming`_ - Create incoming webhook within specific channel. 
     -  `mattermost webhook create-outgoing`_ - Create outgoing webhook within specific channel.
-    - 
+    -  `mattermost webhook delete`_ - Delete incoming and outgoing webhooks.
     -  `mattermost webhook list`_ - List all webhooks.
     -  `mattermost webhook modify-incoming`_ - Modify existing incoming webhook by changing its title, description, channel or icon url.
 
