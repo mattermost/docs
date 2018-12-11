@@ -1615,7 +1615,7 @@ mattermost webhook create-outgoing
           --h, --help         Help for create-outgoing
 
 mattermost webhook delete
- ~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
    Description
     Delete incoming and outgoing webhooks. If deleting multiple webhooks, use a space-separated list. 
