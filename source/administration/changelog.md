@@ -12,16 +12,27 @@ Release date: 2018-12-16
 
 #### Interactive Dialogs
  - Added support for interactive dialogs to more easily collect structured information from users to perform an action or request via an integration.
+ 
+#### Command Line Interface (CLI)
+ - Added ``command create`` CLI command to check the ``EnableOnlyAdminIntegrations`` setting and to only allow team admins to create slash commands if this is set to ``true``.
+ - Added ``team search`` CLI command to search for teams based on team names.
+ - Added ``webhook list`` CLI command to allow listing webhooks for a team or multiple teams.
+ - Added ``team list`` CLI command for listing commands under a team.
+ - Added ``command delete`` CLI command to allow deleting slash commands.
+ - Added ``team archive`` CLI command to archive a team by name.
+ - Added ``create webhook-incoming`` CLI command to create incoming webhooks.
+ - Added ``command create`` CLI command to create slash commands.
+ - Added ``modify-incoming webhook`` CLI command to modify incoming webhooks.
+ - Added ``webhook create-outgoing`` CLI command to create outgoing webhooks.
+ - Added ``webhook delete`` CLI command to delete webhooks.
 
 #### 16 Total Languages
  - Added support for Ukrainian language, bringing the total languages supported by Mattermost to 16.
  - Romanian language was promoted out of beta.
 
-#### Removed support for WebRTC
- - Full details can be found [here](https://forum.mattermost.org/t/built-in-webrtc-video-and-audio-calls-removed-in-v5-6-in-favor-of-open-source-plugins/5998).
-
-#### Removed support for IE11 Mobile View
- - Removed support for mobile view on IE11 due to low usage and in order to invest that effort in maintaining a high quality experience on other more used browsers.
+#### Deprecated Features
+ - Removed support for WebRTC. Full details can be found [here](https://forum.mattermost.org/t/built-in-webrtc-video-and-audio-calls-removed-in-v5-6-in-favor-of-open-source-plugins/5998).
+ - Removed support for IE11 Mobile View due to low usage and in order to invest that effort in maintaining a high quality experience on other more used browsers.
 
 ### Improvements
 
@@ -57,19 +68,6 @@ Release date: 2018-12-16
  - Included favorite channels in bulk export.
  - Added User Notify Props and per-channel NotifyProps in Bulk Export.
  - Added capability to bulk export custom emojis.
-
-#### Command Line Interface (CLI)
- - Added ``command create`` CLI command to check the ``EnableOnlyAdminIntegrations`` setting and to only allow team admins to create slash commands if this is set to ``true``.
- - Added ``team search`` CLI command to search for teams based on team names.
- - Added ``webhook list`` CLI command to allow listing webhooks for a team or multiple teams.
- - Added ``team list`` CLI command for listing commands under a team.
- - Added ``command delete`` CLI command to allow deleting slash commands.
- - Added ``team archive`` CLI command to archive a team by name.
- - Added ``create webhook-incoming`` CLI command to create incoming webhooks.
- - Added ``command create`` CLI command to create slash commands.
- - Added ``modify-incoming webhook`` CLI command to modify incoming webhooks.
- - Added ``webhook create-outgoing`` CLI command to create outgoing webhooks.
- - Added ``webhook delete`` CLI command to delete webhooks.
 
 #### Slash Commands
  - Added support for multiple responses to the User Interface from a slash command.
