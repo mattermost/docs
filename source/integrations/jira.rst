@@ -25,6 +25,9 @@ If you'd like to see support for additional events, `let us know <https://matter
 JIRA Setup Guide
 ~~~~~~~~~~~~~~~~~
 
+.. note::
+    Make sure that the JIRA Plugin is enabled in **System Console > Plugins > Management** before continuing setup.
+
 Enable JIRA on your Mattermost instance
 .........................................
 
