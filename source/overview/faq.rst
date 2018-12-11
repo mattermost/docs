@@ -398,7 +398,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "Leave team", "X", "X",
     **OTHER**
     "Custom user interface themes", "X", "X", "O"
-    "Localization for 15 languages", "X", "X", "X"
+    "Localization for 16 languages", "X", "X", "X"
     "Account settings", "X", "X", "O"
     "OAuth login with Google/Office 365", "X", "X",
     "Connect to multiple Mattermost servers from a single interface and switch with shortcut keys (similar to tabs in web browser", " ", "X", 

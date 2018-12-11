@@ -208,7 +208,7 @@ Message Display
 
 Select the formatting for messages in the center channel. "Compact" mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
 
-Channel Display Mode
+Channel Display
 ~~~~~~~~~~~~~~~~~~~~
 
 Select if the text in the center channel is fixed width and centered, or full width.
@@ -229,6 +229,7 @@ Select what language Mattermost displays in the user interface. Options include:
 - Română - Romanian
 - Türkçe - Turkish
 - Pусский - Russian
+- Yкраїнська - Ukrainian
 - 한국어 - Korean
 - 中文 (简体) - Simplified Chinese
 - 中文 (繁體) - Traditional Chinese
