@@ -7,7 +7,7 @@ description: Web-based Git-repository manager with wiki and issue-tracking featu
 keywords:
 - gitlab
 home: https://about.gitlab.com/
-icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.svg
+icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.png
 sources:
 - https://gitlab.com/charts/gitlab
 maintainers:
