@@ -3284,7 +3284,7 @@ Allow Secure TLS Transports Only
 
 **True**: Only allow secure TLS transport, forcing the browser to request all resources via HTTPS. Learn more `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`_.
 
-**False**: No restrictions on TLS transport. Resources can be requested via HTTP or HTTPs.
+**False**: No restrictions on TLS transport. Resources are requested via HTTP or HTTPs.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TLSStrictTransport": false`` with options ``true`` and ``false`` for above settings respectively.         |
@@ -3293,9 +3293,7 @@ Allow Secure TLS Transports Only
 Secure TLS Transport Expiry
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The time in seconds that the browser remembers a site is only to be accessed using HTTPS. After this period, a site can be accessed using HTTP unless ``TLSStrictTransport`` is set to ``true``.
-
-Defaults to two years.
+The time in seconds that the browser remembers a site is only to be accessed using HTTPS. After this period, a site can be accessed using HTTP unless ``TLSStrictTransport`` is set to ``true``. Defaults to two years.
 
 +-------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TLSStrictTransportMaxAge": 63072000`` with whole number input. |
@@ -3430,8 +3428,8 @@ SQL Settings
 
 Enable Public Channels Materialization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. note::
-  This setting provided a fast way for System Admins to disable public channels materialization if it caused unexpected performance degradation in Mattermost v5.4 or v5.5. The feature was permanent and this setting was removed in Mattermost v5.6, released on December 16, 2018.
+
+*Removed in December 16, 2018 release. The public channel materialization feature has become a permanent feature after thoroughly tested for performance.*
 
 **True**: Enables materialization of public channels to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI. Notably, this allows the database to exclude direct messages for many queries, resulting in better query plans and more efficient indexes.
 
