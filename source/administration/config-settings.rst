@@ -1860,7 +1860,7 @@ Please review full documentation on `push Notifications and mobile applications 
   The ``http://push-test.mattermost.com`` provided for testing push notifications prior to compiling your own service please make sure `to read about its limitations <http://docs.mattermost.com/deployment/push.html#push-notifications-for-team-edition-users>`_.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PushNotificationServer": ""`` with string input.                                                                        |
+| This feature's ``config.json`` setting is ``"PushNotificationServer": "https://push-test.mattermost.com"`` with string input.                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Push Notification Contents
@@ -3761,6 +3761,17 @@ Used in combination with the ``ClientSideCertEnable`` setting.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ClientSideCertCheck": secondary`` with options ``primary`` and ``secondary`` for the above settings respectively.       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Post Metadata 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables post metadata to be loaded and used to load channels with more accurate scroll positioning. Enabling this setting may increase channel and post load times. 
+
+**False**: Post metadata is not loaded.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnablePostMetadata": false`` with options ``true`` and ``false`` for the above settings respectively.                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Analytics Settings
