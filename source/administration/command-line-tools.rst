@@ -1612,7 +1612,7 @@ mattermost webhook create-outgoing
           --icon [iconURL]                        Icon URL
           --url stringArray [REQUIRED]            Callback URLs 
           --content-type string                   Content-type
-    --h, --help         Help for create-outgoing
+          --h, --help         Help for create-outgoing
 
 mattermost webhook delete
  ~~~~~~~~~~~~~~~~~~~~~~
