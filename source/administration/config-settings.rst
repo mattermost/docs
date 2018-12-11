@@ -3431,7 +3431,7 @@ SQL Settings
 Enable Public Channels Materialization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. note::
-  This setting provided a fast way for System Admins to disable public channels materialization if it caused unexpected performance degradation in Mattermost v5.4 or v5.5. The feature was permanently permanently and this setting removed in Mattermost v5.6, released on December 16, 2018.
+  This setting provided a fast way for System Admins to disable public channels materialization if it caused unexpected performance degradation in Mattermost v5.4 or v5.5. The feature was permanent and this setting was removed in Mattermost v5.6, released on December 16, 2018.
 
 **True**: Enables materialization of public channels to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI. Notably, this allows the database to exclude direct messages for many queries, resulting in better query plans and more efficient indexes.
 
