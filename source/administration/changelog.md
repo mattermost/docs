@@ -11,80 +11,78 @@ Release date: 2018-12-16
 ### Highlights
 
 #### Interactive Dialogs
- - Added support for interactive dialogs to more easily collect structured information from users to perform an action or request via an integration.
- 
+ - Added support for interactive dialogs to more easily collect structured information from users to perform an action or submit a request via an integration. [Learn more here](https://docs.mattermost.com/developer/interactive-dialogs.html)
+
+#### Languages
+ - Added support for Ukrainian language, bringing the number of supported languages to 16.
+ - Romanian language promoted out of beta.
+
 #### Command Line Interface (CLI)
- - Added ``command create`` CLI command to check the ``EnableOnlyAdminIntegrations`` setting and to only allow team admins to create slash commands if this is set to ``true``.
- - Added ``team search`` CLI command to search for teams based on team names.
- - Added ``webhook list`` CLI command to allow listing webhooks for a team or multiple teams.
- - Added ``team list`` CLI command for listing commands under a team.
- - Added ``command delete`` CLI command to allow deleting slash commands.
- - Added ``team archive`` CLI command to archive a team by name.
- - Added ``create webhook-incoming`` CLI command to create incoming webhooks.
- - Added ``command create`` CLI command to create slash commands.
- - Added ``modify-incoming webhook`` CLI command to modify incoming webhooks.
- - Added ``webhook create-outgoing`` CLI command to create outgoing webhooks.
- - Added ``webhook delete`` CLI command to delete webhooks.
-
-#### 16 Total Languages
- - Added support for Ukrainian language, bringing the total languages supported by Mattermost to 16.
- - Romanian language was promoted out of beta.
-
-#### Deprecated Features
- - Removed support for WebRTC. Full details can be found [here](https://forum.mattermost.org/t/built-in-webrtc-video-and-audio-calls-removed-in-v5-6-in-favor-of-open-source-plugins/5998).
- - Removed support for IE11 Mobile View due to low usage and in order to invest that effort in maintaining a high quality experience on other more used browsers.
+ - Added new CLI commands to improve admin productivity, including:
+   - ``command create`` to create a custom slash command for a specified team.
+   - ``command delete`` to delete a slash command.
+   - ``command move`` to move a slash command to a different team.
+   - ``command list`` to list all commands on specified teams or all teams by default.
+   - ``config get`` to retrieve the value of a config setting by its name in dot notation.
+   - ``config set`` to set the value of a config setting by its name in dot notation.
+   - ``config show`` to print the current Mattermost configuration in an easy to read format.
+   - ``team archive`` to archive teams based on name.
+   - ``team search`` to search for teams based on name.
+   - ``webhook create-incoming`` to create incoming webhook within specific channel.
+   - ``webhook create-outgoing`` to create outgoing webhook within specific channel.
+   - ``webhook delete`` to delete a webhook.
+   - ``webhook list`` to list all webhooks for a team or across the server.
+   - ``webhook modify-incoming`` to modify existing incoming webhook by changing its title, description, channel or icon url.
 
 ### Improvements
 
-#### ?
- - Removed support for automatically unmarshalling a plugin's server configuration, as there was no way to safely synchronize reads and writes to these public fields across multiple plugin threads without additional plugin coordination.
- - Introduced mlog/human package to consume and reformat structured logging.
- - Committs to migrate Mattermost Webapp to Redux.
- - Idiomatic error handling
-
 #### User Interface
  - Added ability to remove profile pictures in Account Settings.
- - Added a new bar that shows progress on uploads.
- - Added a new badge to the profile popover that indicates a user is a server admin.
- - Added different experimental channel sidebar reorganization settings, such as the ability to sort channels by recent posts.
- - Added an admin badge to profile popover to allow users to see if a user is a server admin.
+ - Added a new loading bar that shows progress on file uploads.
+ - Added a new badge to the profile popover that indicates if a user is a System Admin.
+ - Added new channel sidebar reorganization options for the `ExperimentalGroupUnreadChannels` config.json setting, such as the ability to sort channels by recent messages.
  - Added an option to be able to clear search results.
 
 #### Notifications
- - Enabled push notifications to use TPNS by default.
+ - Enabled push notifications by default on new Mattermost installs, via an encrypted TPNS (test push notification service).
  - Added a channel notification setting to disable @-channel @-here @-all notifications in specific channels.
 
 #### Performance
- - Return fewer user autocomplete matches.
+ - Increased performance for returning user autocomplete results.
 
 #### Plugins
  - Added "min_server_version" in plugin.json manifest to enable built-in control for preventing load/enable of plugin if server version is not met.
  - Added ability for plugins to add channel header tooltips.
  - Stop hashing plugin keys on write. **////XXXX**
+ #### ?
+ - Removed support for automatically unmarshalling a plugin's server configuration, as there was no way to safely synchronize reads and writes to these public fields across multiple plugin threads without additional plugin coordination.
+ - Introduced mlog/human package to consume and reformat structured logging.
 
 #### Bulk Import/Export
- - Added capability to export reactions of posts during bulk export.
- - Added bulk import email intervals to specify an email batching interval during bulk import.
- - Included favorite channels in bulk export.
- - Added User Notify Props and per-channel NotifyProps in Bulk Export.
- - Added capability to bulk export custom emojis.
+ - Added custom emoji and emoji reactions to bulk export tool.
+ - Added favorite channels to bulk export tool.
+ - Added user and channel notification preferences to bulk export tool.
+ - Added the ability to specify an email batching interval for bulk import.
 
 #### Slash Commands
- - Added support for multiple responses to the User Interface from a slash command.
+ - Added support for multiple responses from a slash command.
  - Added an option to send a message when an invalid slash command is entered.
 
 #### Administration
- - Terms of Service feature improvements.
- - Removed "System Console > Plugins > Configuration" page and moved enabling plugins setting to the Management page.
+ - Terms of Service promoted out of beta, with support for mobile apps.
+ - Removed **System Console > Plugins (Beta) > Configuration** page and moved enabling plugins setting to the **Plugins (Beta) > Management** page.
 
 #### Enterprise Edition (E20)
- - Data Retention was promoted out of beta.
+ - Data Retention promoted out of beta.
 
 ### Bug Fixes
-
  - Fixed an issue where pinned post list refreshed when a user posted a new message.
 
 ### Compatibility
+
+#### Deprecated Features
+ - Removed support for WebRTC in beta. Full details can be found [here](https://forum.mattermost.org/t/built-in-webrtc-video-and-audio-calls-removed-in-v5-6-in-favor-of-open-source-plugins/5998).
+ - Removed support for IE11 Mobile View due to low usage and instability in order to invest that effort in maintaining a high quality experience on other more used browsers. Mobile View is still supported on Chrome, Firefox, Safari, Edge as well as the Desktop Apps.
 
 #### config.json
 
@@ -93,61 +91,63 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
  - Under ``"ServiceSettings"`` in ``config.json``:
-    - Added ``"TLSMinVer": "1.2"``, ``"TLSStrictTransport": false``, ``"TLSStrictTransportMaxAge": 63072000`` and ``"TLSOverwriteCiphers": []``, to enable push notifications to use TPNS by default.
+    - Added ``"TLSMinVer": "1.2"``, ``"TLSStrictTransport": false``, ``"TLSStrictTransportMaxAge": 63072000`` and ``"TLSOverwriteCiphers": []``, to configure TLS connection when not using a reverse proxy such as NGINX.
  - Under ``"ExperimentalSettings"`` in ``config.json``:
-    - Added ``"EnablePostMetadata": false``, to
+    - Added ``"EnablePostMetadata": false``, to 
 
 ### API Changes
 
-#### Plugin API Changes
+#### RESTful API v4 Changes
+ - Added ``/channels/{channel_id}/timezones`` to get a list of timezones for the users who are in the specified channel.
 
- - **Changed ``GetTeamMembers(teamId string, offset, limit int)`` to ``GetTeamMembers(teamId string, page, perPage int)`` to be clearer and consistent with other APIs**
- - **Changed ``GetPublicChannelsForTeam(teamId string, offset, limit int)`` to ``GetPublicChannelsForTeam(teamId string, page, perPage int)`` to be clearer and more consistent with other APIs**
- - Added ``GetPluginConfig`` and ``SavePluginConfig`` to the plugin API to allow plugins to get or update only their own configuration.
- - Added ``getChannelMembersTimezone`` to get all timezones from users for a specific channel.
+//
  - Added paging to elasticsearch API.
  - Added key value store set with expiry method to the plugin API.
  - Added ``SetDefaultProfileImage`` to reset the user profile image to a generated one.
  - Added ``deleteBrandImage`` to the API to add ability to remove custom branding image.
  - Added plugin API method to return user's profile image.
- - Added ``GetChannelMembers`` method to the plugin API.
- - Added ``GetPostsForChannel`` method to the plugin API.
- - Added ``GetChannelStats`` method to the plugin API.
- - Added ``GetEmojiImage`` to the plugin API.
- - Added ``GetEmojiByName`` to the plugin API.
- - Added ``GetUsersInTeam`` to the plugin API.
- - Added ``GetUsersInChannel`` to the plugin API.
- - Added ``GetTeamsForUser`` to the plugin API.
- - Added ``GetUsersInChannelByStatus`` to the plugin API.
- - Added ``GetChannelsForTeamForUser`` to the plugin API.
- - Added ``GetUsersByUsernames`` to the plugin API.
- - Added ``GetPostsSince()`` to the plugin API.
- - Added ``GetPostsAfter()`` to the plugin API.
- - Added ``GetPostsBefore()`` to the plugin API.
- - Added ``GetPostThread()`` to the plugin API.
- - Added plugin API for ``GetEmoji`` method to the plugin API.
- - Added ``SearchChannels`` method to the plugin API.
- - Added ``GetTeamsUnreadForUser`` to the plugin API.
- - Added ``GetChannelMembersByIds`` to the plugin API.
- - Added ``GetFileLink`` method to the plugin API.
- - Added ``UploadFile`` to the plugin API.
- - Added ``plugin methods`` to the plugin API.
- - Added ``GETEmojilist`` to the plugin API.
- - Added ``SetProfileImage`` to the plugin API.
- - Added ``GetTeamIcon`` to the plugin API.
- - Added ``SetTeamIcon`` to the plugin API.
- - Added ``CreateDirectChannel`` to the plugin API.
- - Added ``RemoveTeamIcon`` to the plugin API.
  - Added ``SubmitDialogResponse`` and ``SubmitDialogRequest`` APIs for interactive dialogs.
- - Added ``SearchUsers(search *UserSearch)`` method to the plugin API.
+
+#### Plugin API Changes
+ - **Changed ``GetTeamMembers(teamId string, offset, limit int)`` to ``GetTeamMembers(teamId string, page, perPage int)`` to be clearer and consistent with other APIs**
+ - **Changed ``GetPublicChannelsForTeam(teamId string, offset, limit int)`` to ``GetPublicChannelsForTeam(teamId string, page, perPage int)`` to be clearer and more consistent with other APIs**
+ - Added the following plugin API methods. For more information on each method, see the [server plugin reference](https://developers.mattermost.com/extend/plugins/server/reference/).
+     - ``GetChannelsForTeamForUser``     
+     - ``GetChannelMembers``
+     - ``GetChannelMembersByIds``
+     - ``GetChannelStats``
+     - ``GetEmoji``
+     - ``GetEmojiByName``
+     - ``GetEmojiImage``
+     - ``GetEmojiList``
+     - ``GetPluginConfig``
+     - ``SavePluginConfig``
+     - ``GetPostsAfter``
+     - ``GetPostsBefore``
+     - ``GetPostsSince``
+     - ``GetPostsForChannel``
+     - ``GetPostThread``
+     - ``GetTeamsForUser``
+     - ``GetTeamsUnreadForUser``
+     - ``GetTeamIcon``
+     - ``SetTeamIcon``
+     - ``RemoveTeamIcon``
+     - ``GetUsersByUsernames``
+     - ``GetUsersInChannel``
+     - ``GetUsersInChannelByStatus``
+     - ``GetUsersInTeam``
+     - ``CreateDirectChannel``
+     - ``SearchChannels``
+     - ``SearchUsers`` 
+     - ``GetFileLink``
+     - ``UploadFile``
+     - ``SetProfileImage``
 
 #### Database Changes
 
  - ``ExpireAt`` column was added to the ``PluginKeyValueStore`` table.
  - Migrated user's accepted terms of service data into a new table called ``UserTermsOfService``.
  - Removed ``idx_users_email_lower``, ``idx_users_username_lower``, ``idx_users_nickname_lower``, ``idx_users_firstname_lower`` and ``idx_users_lastname_lower`` indexes.
-
-#### Websocket Event Changes
 
 ### Known Issues
 
