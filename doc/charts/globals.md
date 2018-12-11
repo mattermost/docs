@@ -581,7 +581,7 @@ Defaults shown above.
 #### connection
 
 The `connection` property has been transitioned to a Kubernetes Secret. The contents
-of this secret should be a yaml config file.
+of this secret should be a YAML formatted file.
 
 Defaults to `{}` and will be ignored if `global.minio.enabled` is `true`.
 
@@ -593,13 +593,19 @@ Valid configuration keys can be found at
 [GitLab Job Artifacts Administration][artifactscon] documentation. This matches to
 [Fog](https://github.com/fog), and is different between provider modules.
 
-Example contents to be placed in the secret:
+Examples for [AWS][fog-aws] and [Google][fog-gcs] providers can be found in
+[examples/objectstorage](../../examples/objectstorage).
+- [rails.s3.yaml](../../examples/objectstorage/rails.s3.yaml)
+- [rails.gcs.yaml](../../examples/objectstorage/rails.gcs.yaml)
 
-```
-provider: AWS
-aws_access_key_id: BOGUS_ACCESS_KEY
-aws_secret_access_key: BOGUS_SECRET_KEY
-region: us-east-1
+[fog-aws]: https://fog.io/storage/#using-amazon-s3-and-fog
+[fog-gcs]: https://fog.io/storage/#google-cloud-storage
+
+Once a YAML file containing the contents of the `connection` has been created, use this file to create the secret in Kubernetes
+
+```bash
+kubectl create secret generic gitlab-rails-storage \
+    --from-file=connection=rails.yaml
 ```
 
 [artifactscon]: https://docs.gitlab.com/ee/administration/job_artifacts.html#s3-compatible-connection-settings
@@ -799,7 +805,7 @@ Name of the bucket to use from object storage provider. Defaults to
 #### connection
 
 Details of the Kubernetes secret that contains connection information for the
-object storage provider. The contents of this secret should be a yaml config file.
+object storage provider. The contents of this secret should be a YAML formatted file.
 
 Defaults to `{}` and will be ignored if `global.minio.enabled` is `true`.
 
@@ -807,16 +813,16 @@ This property has two sub-keys: `secret` and `key`.
 - `secret` is the name of a Kubernetes Secret. This value is required to use external object storage.
 - `key` is the name of the key in the secret which houses the YAML block. Defaults to `connection`.
 
-The content of the secret matches to [Fog](https://github.com/fog), and is
-different between provider modules.
+Examples for [AWS][fog-aws] and [Google][fog-gcs] providers can be found in
+[examples/objectstorage](../../examples/objectstorage).
+- [rails.s3.yaml](../../examples/objectstorage/rails.s3.yaml)
+- [rails.gcs.yaml](../../examples/objectstorage/rails.gcs.yaml)
 
-Example contents to be placed in the secret:
+Once a YAML file containing the contents of the `connection` has been created, create the secret in Kubernetes
 
-```
-provider: AWS
-aws_access_key_id: BOGUS_ACCESS_KEY
-aws_secret_access_key: BOGUS_SECRET_KEY
-region: us-east-1
+```bash
+kubectl create secret generic gitlab-rails-storage \
+    --from-file=connection=rails.yaml
 ```
 
 ## Configure GitLab Shell

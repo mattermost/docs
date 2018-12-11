@@ -205,15 +205,10 @@ Field `storage` is a reference to a Kubernetes Secret and associated key.
 The contents of this secret is taken directly from [Registry Configuration: `storage`](https://docs.docker.com/registry/configuration/#storage).
 Please refer to that documentation for extended details.
 
-Example contents of the `storage` block, to be placed in the secret:
-```
-s3:
-  accesskey: BOGUS_ACCESS_KEY
-  secretkey: BOGUS_SECRET_KEY
-  bucket: gitlab-registry
-  v4auth: true
-  region: us-east-1
-```
+Examples for [S3][storage-s3] and [GCS][storage-gcs] drivers can be found in
+[examples/objectstorage](../../examples/objectstorage).
+- [registry.s3.yaml](../../examples/objectstorage/registry.s3.yaml)
+- [registry.gcs.yaml](../../examples/objectstorage/registry.gcs.yaml)
 
 Place the _contents_ of the `storage` block into the secret,
 and provide the following as items to the `storage` map:
@@ -222,6 +217,16 @@ and provide the following as items to the `storage` map:
 - `key`: name of the key in the secret to use. Defaults to `storage`.
 - `extraKey`: (optional) name of an extra key on the secret, which will be mounted to `/etc/docker/registry/storage/${extraKey}` within the container. This can be used to provide the `keyfile` for the `gcs` driver.
 
+```bash
+# Example using S3
+kubectl create secret generic registry-storage \
+    --from-file=config=registry-storage.yaml
+# Example using GCS with JSON key
+# - Note: `registry.storage.extraKey=gcs.json`
+kubectl create secret generic registry-storage \
+    --from-file=config=registry-storage.yaml \
+    --from-file=gcs.json=example-project-382839-gcs-bucket.json
+```
 
 If you chose to use the `filesystem` driver:
 - You will need to provide persistent volumes for this data.
@@ -230,7 +235,7 @@ If you chose to use the `filesystem` driver:
 For the sake of resiliency and simplicity, it is recommended to make use of an
 external service, such as `s3`, `gcs`, `azure` or other compatible Object Storage.
 
-**NOTE:** The chart will populate `delete.enabled: true` into this configuration by default if not specified by the user. This keeps expected behaviors in line with the default use of Minio, as well as the Omnibus GitLab. Any user provided value will supercede this default.
+**NOTE:** The chart will populate `delete.enabled: true` into this configuration by default if not specified by the user. This keeps expected behaviors in line with the default use of Minio, as well as the Omnibus GitLab. Any user provided value will supersede this default.
 
 
 [registry]: https://hub.docker.com/_/registry/
@@ -246,3 +251,6 @@ external service, such as `s3`, `gcs`, `azure` or other compatible Object Storag
 [globals]: ../globals.md
 
 [kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/
+
+[storage-s3]: https://docs.docker.com/registry/storage-drivers/s3
+[storage-gcs]: https://docs.docker.com/registry/storage-drivers/gcs
