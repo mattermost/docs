@@ -238,8 +238,30 @@ Select what language Mattermost displays in the user interface. Options include:
 Sidebar
 --------
 
+Channel grouping and sorting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These settings are experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-organization>`_.
+
+Channel grouping
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Channels can be grouped by type (Public, Private, or Direct Message), or all channel types can be grouped in a single list.
+
+Channel sorting
+^^^^^^^^^^^^^^^^^^
+Channels can be sorted within their sidebar sections alphabetically (default) or by most recent post.
+
+Unreads grouped separately
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If enabled, this feature groups unread channels at the top of the channel sidebar.
+
+Favorites grouped separately
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If enabled, this feature groups favorite channels in their own sidebar section.
+
 Group unreads channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+*Removed in December 16, 2018* release*
 If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`_, by replacing ``disabled`` with either ``default_off`` or ``default_on`` in config.json.
 
 Channel Switcher
