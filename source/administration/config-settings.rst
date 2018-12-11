@@ -3268,6 +3268,52 @@ Path and filename of the license file on disk. On startup, if Mattermost cannot 
 | This feature's ``config.json`` setting is ``"LicenseFileLocation": ""`` with string input.  |
 +---------------------------------------------------------------------------------------------+
 
+TLS Minimum Version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The minimum TLS version used by the Mattermost server. TLS v1.2 is default given insecurities for TLS 1.0 and 1.1.
+
+This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer such as NGINX.
+
++-------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TLSMinVer": "1.2"`` with string input. |
++-------------------------------------------------------------------------------------+
+
+Allow Secure TLS Transports Only
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Only allow secure TLS transport, forcing the browser to request all resources via HTTPS. Learn more `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`_.
+
+**False**: No restrictions on TLS transport. Resources can be requested via HTTP or HTTPs.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TLSStrictTransport": false`` with options ``true`` and ``false`` for above settings respectively.         |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Secure TLS Transport Expiry
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The time in seconds that the browser remembers a site is only to be accessed using HTTPS. After this period, a site can be accessed using HTTP unless ``TLSStrictTransport`` is set to ``true``.
+
+Defaults to two years.
+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TLSStrictTransportMaxAge": 63072000`` with whole number input. |
++-------------------------------------------------------------------------------------------------------------+
+
+TLS Cipher Overwrites
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set TLS ciphers overwrites to meet requirements from legacy clients which don't support modern ciphers, or to limit the types of accepted ciphers.
+
+If none specified, the Mattermost server assumes a set of currently considered secure ciphers, and allows overwrites in the edge case. See the ``ServerTLSSupportedCiphers`` variable in `/model/config.go <https://github.com/DSchalla/mattermost-server/blob/master/model/config.go>`_ for the list of ciphers considered secure.
+
+This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer such as NGINX.
+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TLSStrictTransportMaxAge": 63072000`` with whole number input. |
++-------------------------------------------------------------------------------------------------------------+
+
 Go Routine Health Threshold
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
