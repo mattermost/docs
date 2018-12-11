@@ -39,14 +39,14 @@ These ``mattermost`` commands include:
 Using the CLI
 ^^^^^^^^^^^^^
 
-To run the CLI commands, you must be in the directory that contains the Mattermost executable. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``. The name of the executable is ``mattermost``.
+To run the CLI commands, you must be in the directory that contains the Mattermost executable. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``. Also, if you followed our `installation process <../guides/administrator.html#installing-mattermost>`_, you must run the commands as the user *mattermost*. The name of the executable is ``mattermost``.
 
 **For example, to get the Mattermost version on a default installation of Mattermost:**
 
   .. code-block:: bash
 
     cd /opt/mattermost/bin
-    sudo ./mattermost version
+    ./mattermost version
 
 Using the CLI on GitLab Omnibus
 -------------------------------
@@ -85,7 +85,7 @@ Mattermost 3.6 and later
 The new CLI tool is supported in Mattermost 3.6 and later. To see available commands in the old CLI tool, see `Mattermost 3.5 and earlier`_.
 
 .. note::
-  For Mattermost 4.10 and earlier, the commands used the ``platform`` executable instead of ``mattermost``. For example, to check the Mattermost version, one would run ``sudo ./platform version`` instead of ``sudo ./mattermost version``.
+  For Mattermost 4.10 and earlier, the commands used the ``platform`` executable instead of ``mattermost``. For example, to check the Mattermost version, one would run ``./platform version`` instead of ``./mattermost version``.
 
 Notes:
 
@@ -171,8 +171,8 @@ mattermost channel add
   Examples
     .. code-block:: none
 
-      sudo ./mattermost channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
-      sudo ./mattermost channel add myteam:mychannel user@example.com username
+      ./mattermost channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
+      ./mattermost channel add myteam:mychannel user@example.com username
 
 mattermost channel archive
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -188,8 +188,8 @@ mattermost channel archive
   Examples
     .. code-block:: none
 
-      sudo ./mattermost channel archive 8soyabwthjnf9qibfztje5a36h
-      sudo ./mattermost channel archive myteam:mychannel
+      ./mattermost channel archive 8soyabwthjnf9qibfztje5a36h
+      ./mattermost channel archive myteam:mychannel
 
 mattermost channel create
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -205,8 +205,8 @@ mattermost channel create
   Examples
     .. code-block:: none
 
-      sudo ./mattermost channel create --team myteam --name mynewchannel --display_name "My New Channel"
-      sudo ./mattermost channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
+      ./mattermost channel create --team myteam --name mynewchannel --display_name "My New Channel"
+      ./mattermost channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
 
   Options
     .. code-block:: none
@@ -232,8 +232,8 @@ mattermost channel delete
   Examples
     .. code-block:: none
 
-      sudo ./mattermost channel delete 8soyabwthjnf9qibfztje5a36h
-      sudo ./mattermost channel delete myteam:mychannel
+      ./mattermost channel delete 8soyabwthjnf9qibfztje5a36h
+      ./mattermost channel delete myteam:mychannel
 
 mattermost channel list
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -249,7 +249,7 @@ mattermost channel list
   Example
     .. code-block:: none
 
-      sudo ./mattermost channel list myteam
+      ./mattermost channel list myteam
 
 mattermost channel modify
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -265,14 +265,14 @@ mattermost channel modify
   Example
     .. code-block:: none
 
-      sudo ./mattermost channel modify myteam:mychannel --username myusername --private
+      ./mattermost channel modify myteam:mychannel --username myusername --private
 
   Options
     .. code-block:: none
 
-          --username [REQUIRED]  Username of the user who is changing the channel privacy.
-          --public               Change a private channel to be public.
-          --private              Change a public channel to be private.
+          --username [REQUIRED] Username of the user who is changing the channel privacy.
+          --public   Change a private channel to be public.
+          --private  Change a public channel to be private.
 
 mattermost channel move
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -288,8 +288,8 @@ mattermost channel move
   Example
     .. code-block:: none
 
-      sudo ./mattermost channel move newteam 8soyabwthjnf9qibfztje5a36h --username myusername
-      sudo ./mattermost channel move newteam myteam:mychannel --username myusername
+      ./mattermost channel move newteam 8soyabwthjnf9qibfztje5a36h --username myusername
+      ./mattermost channel move newteam myteam:mychannel --username myusername
 
   Options
     .. code-block:: none
@@ -310,9 +310,9 @@ mattermost channel remove
   Examples
     .. code-block:: none
 
-      sudo ./mattermost channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
-      sudo ./mattermost channel remove myteam:mychannel user@example.com username
-      sudo ./mattermost channel remove myteam:mychannel --all-users
+      ./mattermost channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
+      ./mattermost channel remove myteam:mychannel user@example.com username
+      ./mattermost channel remove myteam:mychannel --all-users
       
   Options
     .. code-block:: none
@@ -333,8 +333,8 @@ mattermost channel rename
   Examples
     .. code-block:: none
 
-      sudo ./mattermost channel rename 8soyabwthjnf9qibfztje5a36h newchannelname --display_name "New Display Name"
-      sudo ./mattermost channel rename myteam:mychannel newchannelname --display_name "New Display Name"
+      ./mattermost channel rename 8soyabwthjnf9qibfztje5a36h newchannelname --display_name "New Display Name"
+      ./mattermost channel rename myteam:mychannel newchannelname --display_name "New Display Name"
       
   Options
     .. code-block:: none
@@ -355,8 +355,8 @@ mattermost channel restore
   Examples
     .. code-block:: none
 
-      sudo ./mattermost channel restore 8soyabwthjnf9qibfztje5a36h
-      sudo ./mattermost channel restore myteam:mychannel
+      ./mattermost channel restore 8soyabwthjnf9qibfztje5a36h
+      ./mattermost channel restore myteam:mychannel
 
 mattermost command
 -----------------
@@ -367,8 +367,8 @@ mattermost command
   Child Commands
     -  `mattermost command create`_ - Create a custom slash command for a specified team.
     -  `mattermost command delete`_ - Delete a slash command.
-    -  `mattermost command move`_ - Move a slash command to a different team.
     -  `mattermost command list`_ - List all commands on specified teams or all teams by default.
+    -  `mattermost command move`_ - Move a slash command to a different team.
 
 mattermost command create 
 ~~~~~~~~~~~~~~~~~~~~
@@ -394,8 +394,8 @@ mattermost command create
           --trigger-word string [REQUIRED]   Command Trigger Word
           --url  string   [REQUIRED]         Command Callback URL
           --creator string  [REQUIRED]       Command Creator's Username
-          --response-username string 	     Command Response Username
-          --icon string	                     Command icon URL
+          --response-username string       Command Response Username
+          --icon string                      Command icon URL
           --autocomplete bool                Show command in autocomplete list
           --autocompleteDesc string          Short command description for autocomplete list
           --autocompleteHint string          Command arguments displayed as help in autocomplete list
@@ -417,23 +417,6 @@ mattermost command delete
 
        ./mattermost command delete commandID
 
-mattermost command move
-~~~~~~~~~~~~~~~~~~~~~~
-
-  Description
-    Move a slash command to a different team. Commands can be specified by {team}:{command-trigger-word}, or by using command IDs.
-
-  Format
-    .. code-block:: none
-
-      mattermost command move
-
-  Examples
-    .. code-block:: none
-
-      sudo ./mattermost command move newteam oldteam:command-trigger-word
-      sudo ./mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
-      
 mattermost command list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -448,7 +431,24 @@ mattermost command list
   Examples
     .. code-block:: none
 
-       ./mattermost command list myteam      
+       ./mattermost command list myteam
+
+mattermost command move
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Move a slash command to a different team. Commands can be specified by {team}:{command-trigger-word}, or by using command IDs.
+
+  Format
+    .. code-block:: none
+
+      mattermost command move
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost command move newteam oldteam:command-trigger-word
+      ./mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
 
 mattermost config
 ---------------
@@ -482,7 +482,7 @@ mattermost config get
     .. code-block:: none
 
           --path string  Optional subpath; defaults to value in Site URL.
-	  
+    
 mattermost config set
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -502,8 +502,8 @@ mattermost config set
  Options
     .. code-block:: none
 
-          --path string  Optional subpath; defaults to value in Site URL.	  
-	  
+          --path string  Optional subpath; defaults to value in Site URL.   
+    
 mattermost config show
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -527,7 +527,7 @@ mattermost config validate
     Makes sure the configuration file has the following properties:
 
     - Is valid JSON.
-    - Has attributes of the correct type, such as *bool*, *int* and *str*.
+    - Has attributes of the correct type, such as *bool*, *int*, and *str*.
     - All entries are valid. For example, checks that entries are below the maximum length.
 
     Format
@@ -538,7 +538,7 @@ mattermost config validate
     Example
       .. code-block:: none
 
-        sudo ./mattermost config validate
+        ./mattermost config validate
 
 mattermost export
 -----------------
@@ -547,10 +547,10 @@ mattermost export
    Commands for exporting data for compliance and for merging multiple Mattermost instances.
 
   Child Commands
-    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license.
-    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_.
-    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license.
-    -  `mattermost export schedule`_ - Schedule an export job.
+    -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license
+    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_
+    -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license
+    -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -566,7 +566,7 @@ mattermost export actiance
   Example
     .. code-block:: none
 
-      sudo ./mattermost export actiance --exportFrom=1513102632
+      ./mattermost export actiance --exportFrom=1513102632
 
   Options
     .. code-block:: none
@@ -587,7 +587,7 @@ mattermost export bulk
   Example
     .. code-block:: none
 
-      sudo ./mattermost export bulk file.json --all-teams
+      ./mattermost export bulk file.json --all-teams
 
   Options
     .. code-block:: none
@@ -608,7 +608,7 @@ mattermost export csv
   Example
     .. code-block:: none
 
-      sudo ./mattermost export csv --exportFrom=1513102632
+      ./mattermost export csv --exportFrom=1513102632
 
   Options
     .. code-block:: none
@@ -629,7 +629,7 @@ mattermost export schedule
   Example
     .. code-block:: none
 
-      sudo ./mattermost export schedule --format=actiance --exportFrom=1513102632
+      ./mattermost export schedule --format=actiance --exportFrom=1513102632
 
   Options
     .. code-block:: none
@@ -672,7 +672,7 @@ mattermost import slack
   Example
     .. code-block:: none
 
-      sudo ./mattermost import slack myteam slack_export.zip
+      ./mattermost import slack myteam slack_export.zip
 
 mattermost jobserver
 --------------------
@@ -688,7 +688,7 @@ mattermost jobserver
   Example
     .. code-block:: none
 
-      sudo ./mattermost jobserver
+      ./mattermost jobserver
 
 mattermost ldap
 ----------------
@@ -697,7 +697,7 @@ mattermost ldap
     Commands to configure and synchronize AD/LDAP.
 
   Child Command
-    -  `mattermost ldap idmigrate`_ - Migrate the LDAP Id Attribute to a new value.
+    -  `mattermost ldap idmigrate`_ - Migrate the LDAP Id Attribute to a new value
     -  `mattermost ldap sync`_ - Synchronize now
 
 mattermost ldap idmigrate
@@ -721,7 +721,7 @@ mattermost ldap idmigrate
   Example
     .. code-block:: none
 
-      sudo ./mattermost ldap idmigrate objectGUID
+      ./mattermost ldap idmigrate objectGUID
 
 mattermost ldap sync
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -737,7 +737,7 @@ mattermost ldap sync
   Example
     .. code-block:: none
 
-      sudo ./mattermost ldap sync
+      ./mattermost ldap sync
 
 mattermost license
 --------------------
@@ -762,7 +762,7 @@ mattermost license upload
   Example
     .. code-block:: none
 
-      sudo ./mattermost license upload /path/to/license/mylicensefile.mattermost-license
+      ./mattermost license upload /path/to/license/mylicensefile.mattermost-license
 
 mattermost permissions
 --------------------
@@ -792,7 +792,7 @@ mattermost permissions export
   Example
     .. code-block:: none
 
-      sudo ./mattermost permissions export > my-permissions-export.jsonl
+      ./mattermost permissions export > my-permissions-export.jsonl
 
 mattermost permissions import
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -809,7 +809,7 @@ mattermost permissions import
   Example
     .. code-block:: none
 
-      sudo ./mattermost permissions import my-permissions-export.jsonl
+      ./mattermost permissions import my-permissions-export.jsonl
 
 mattermost permissions reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -826,7 +826,7 @@ mattermost permissions reset
   Example
     .. code-block:: none
 
-      sudo ./mattermost permissions reset
+      ./mattermost permissions reset
 
   Options
     .. code-block:: none
@@ -860,7 +860,7 @@ mattermost plugin add
   Example
     .. code-block:: none
 
-      sudo ./mattermost plugin add hovercardexample.tar.gz pluginexample.tar.gz
+      ./mattermost plugin add hovercardexample.tar.gz pluginexample.tar.gz
 
 mattermost plugin delete
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -876,7 +876,7 @@ mattermost plugin delete
   Example
     .. code-block:: none
 
-      sudo ./mattermost plugin delete hovercardexample.tar.gz pluginexample.tar.gz
+      ./mattermost plugin delete hovercardexample.tar.gz pluginexample.tar.gz
 
 mattermost plugin disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -892,7 +892,7 @@ mattermost plugin disable
   Example
     .. code-block:: none
 
-      sudo ./mattermost plugin disable hovercardexample.tar.gz pluginexample.tar.gz
+      ./mattermost plugin disable hovercardexample.tar.gz pluginexample.tar.gz
       
 mattermost plugin enable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -908,7 +908,7 @@ mattermost plugin enable
   Example
     .. code-block:: none
 
-      sudo ./mattermost plugin enable hovercardexample.tar.gz pluginexample.tar.gz
+      ./mattermost plugin enable hovercardexample.tar.gz pluginexample.tar.gz
 
 mattermost plugin list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -924,7 +924,7 @@ mattermost plugin list
   Example
     .. code-block:: none
 
-      sudo ./mattermost plugin list
+      ./mattermost plugin list
 
 mattermost reset
 ---------------
@@ -966,7 +966,7 @@ mattermost roles member
   Example
     .. code-block:: none
 
-      sudo ./mattermost roles member user1
+      ./mattermost roles member user1
 
 mattermost roles system\_admin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -982,7 +982,7 @@ mattermost roles system\_admin
   Example
     .. code-block:: none
 
-      sudo ./mattermost roles system_admin user1
+      ./mattermost roles system_admin user1
 
 mattermost sampledata
 -------------------
@@ -999,7 +999,7 @@ mattermost sampledata
   Example
     .. code-block:: none
 
-      sudo ./mattermost sampledata --seed 10 --teams 4 --users 30
+      ./mattermost sampledata --seed 10 --teams 4 --users 30
 
   Options
     .. code-block:: none
@@ -1070,7 +1070,7 @@ mattermost team add
   Example
     .. code-block:: none
 
-      sudo ./mattermost team add myteam user@example.com username
+      ./mattermost team add myteam user@example.com username
 
 mattermost team archive
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1086,8 +1086,8 @@ mattermost team archive
   Examples
     .. code-block:: none
 
-       ./mattermost team archive team1  
-      
+       ./mattermost team archive team1
+
 mattermost team create
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1102,8 +1102,8 @@ mattermost team create
   Examples
     .. code-block:: none
 
-      sudo ./mattermost team create --name mynewteam --display_name "My New Team"
-      sudo ./mattermost teams create --name private --display_name "My New Private Team" --private
+      ./mattermost team create --name mynewteam --display_name "My New Team"
+      ./mattermost teams create --name private --display_name "My New Private Team" --private
 
   Options
     .. code-block:: none
@@ -1127,7 +1127,7 @@ mattermost team delete
   Example
     .. code-block:: none
 
-      sudo ./mattermost team delete myteam
+      ./mattermost team delete myteam
 
   Options
     .. code-block:: none
@@ -1150,7 +1150,7 @@ mattermost team list
   Example
     .. code-block:: none
 
-      sudo ./mattermost team list
+      ./mattermost team list
 
 mattermost team remove
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1166,7 +1166,7 @@ mattermost team remove
   Example
     .. code-block:: none
 
-      sudo ./mattermost team remove myteam user@example.com username
+      ./mattermost team remove myteam user@example.com username
 
 mattermost team search
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1182,8 +1182,8 @@ mattermost team search
   Examples
     .. code-block:: none
 
-       ./mattermost team search team1  
-      
+       ./mattermost team search team1 
+
 mattermost user
 ---------------
 
@@ -1223,8 +1223,8 @@ mattermost user activate
   Examples
     .. code-block:: none
 
-      sudo ./mattermost user activate user@example.com
-      sudo ./mattermost user activate username1 username2
+      ./mattermost user activate user@example.com
+      ./mattermost user activate username1 username2
 
 mattermost user create
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1240,8 +1240,8 @@ mattermost user create
   Examples
     .. code-block:: none
 
-      sudo ./mattermost user create --email user@example.com --username userexample --password Password1
-      sudo ./mattermost user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
+      ./mattermost user create --email user@example.com --username userexample --password Password1
+      ./mattermost user create --firstname Joe --system_admin --email joe@example.com --username joe --password Password1
 
   Options
     .. code-block:: none
@@ -1269,8 +1269,8 @@ mattermost user deactivate
   Examples
     .. code-block:: none
 
-      sudo ./mattermost user deactivate user@example.com
-      sudo ./mattermost user deactivate username
+      ./mattermost user deactivate user@example.com
+      ./mattermost user deactivate username
 
 mattermost user delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1288,7 +1288,7 @@ mattermost user delete
   Example
     .. code-block:: none
 
-      sudo ./mattermost user delete user@example.com
+      ./mattermost user delete user@example.com
 
   Options
     .. code-block:: none
@@ -1311,7 +1311,7 @@ mattermost user deleteall
   Example
     .. code-block:: none
 
-      sudo ./mattermost user deleteall
+      ./mattermost user deleteall
 
   Options
     .. code-block:: none
@@ -1332,7 +1332,7 @@ mattermost user email
   Example	
     .. code-block:: none	
 	
-      sudo ./mattermost user email user@example.com newuser@example.com
+      ./mattermost user email user@example.com newuser@example.com
 
 mattermost user invite
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1348,8 +1348,8 @@ mattermost user invite
   Examples
     .. code-block:: none
 
-      sudo ./mattermost user invite user@example.com myteam
-      sudo ./mattermost user invite user@example.com myteam1 myteam2
+      ./mattermost user invite user@example.com myteam
+      ./mattermost user invite user@example.com myteam1 myteam2
 
 mattermost user migrate_auth
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1374,7 +1374,7 @@ mattermost user migrate_auth
   Example
     .. code-block:: none
 
-      sudo ./mattermost user migrate_auth email ldap email
+      ./mattermost user migrate_auth email ldap email
   Options
     .. code-block:: none
 
@@ -1460,7 +1460,7 @@ mattermost user migrate_auth
   Example
     .. code-block:: none
 
-      sudo ./mattermost user migrate_auth email saml users.json
+      ./mattermost user migrate_auth email saml users.json
 
   Options
     .. code-block:: none
@@ -1482,7 +1482,7 @@ mattermost user password
   Example
     .. code-block:: none
 
-      sudo ./mattermost user password user@example.com Password1
+      ./mattermost user password user@example.com Password1
 
 mattermost user resetmfa
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1498,7 +1498,7 @@ mattermost user resetmfa
   Example
     .. code-block:: none
 
-      sudo ./mattermost user resetmfa user@example.com
+      ./mattermost user resetmfa user@example.com
 
 mattermost user search
 ~~~~~~~~~~~~~~~~~~~~
@@ -1514,7 +1514,7 @@ mattermost user search
   Example
     .. code-block:: none
 
-      sudo ./mattermost user search user1@example.com user2@example.com
+      ./mattermost user search user1@example.com user2@example.com
 
 mattermost user verify
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1530,7 +1530,7 @@ mattermost user verify
   Example
     .. code-block:: none
 
-      sudo ./mattermost user verify user1
+      ./mattermost user verify user1
 
 mattermost version
 ------------------
@@ -1542,7 +1542,7 @@ mattermost version
     .. code-block:: none
 
       mattermost version
-      
+
 mattermost webhook
 ---------------
 
@@ -1552,7 +1552,7 @@ mattermost webhook
   Child Commands
     -  `mattermost webhook create-incoming`_ - Create incoming webhook within specific channel. 
     -  `mattermost webhook create-outgoing`_ - Create outgoing webhook within specific channel.
-    -  `mattermost webhook delete`_ - Delete webhooks.
+    - 
     -  `mattermost webhook list`_ - List all webhooks.
     -  `mattermost webhook modify-incoming`_ - Modify existing incoming webhook by changing its title, description, channel or icon url.
 
@@ -1612,24 +1612,24 @@ mattermost webhook create-outgoing
           --icon [iconURL]                        Icon URL
           --url stringArray [REQUIRED]            Callback URLs 
           --content-type string                   Content-type
-	  --h, --help				  Help for create-outgoing
-	  
+    --h, --help         Help for create-outgoing
+
 mattermost webhook delete
-~~~~~~~~~~~~~~~~~~~~~~
+ ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-   Delete incoming and outgoing webhooks. If deleting multiple webhooks, use a space-separated list. 
+   Description
+    Delete incoming and outgoing webhooks. If deleting multiple webhooks, use a space-separated list. 
 
-  Format
-    .. code-block:: none
+   Format
+     .. code-block:: none
 
-      mattermost webhook delete [webhookID]
+       mattermost webhook delete [webhookID]
 
-  Examples
-    .. code-block:: none
+   Examples
+     .. code-block:: none
 
-       ./mattermost webhook delete ggwpz8c1oj883euk98wfm9n1cr
-	  
+        ./mattermost webhook delete ggwpz8c1oj883euk98wfm9n1cr
+
 mattermost webhook list
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1677,10 +1677,11 @@ mattermost webhook modify-incoming
           --lock-to-channel boolean     (True/False) Lock incoming webhook to channel
           --icon [iconURL]              Icon URL    
 
+
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Typing ``sudo ./platform -help`` brings up documentation for the CLI tool. To return the help documentation in GitLab omnibus, type
+Typing ``./platform -help`` brings up documentation for the CLI tool. To return the help documentation in GitLab omnibus, type
 
     .. code-block:: none
 
