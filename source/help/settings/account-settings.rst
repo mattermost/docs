@@ -261,7 +261,9 @@ If enabled, this feature groups favorite channels in their own sidebar section.
 
 Group unreads channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-*Removed in December 16, 2018* release*
+
+*Removed in December 16, 2018 release*
+
 If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`_, by replacing ``disabled`` with either ``default_off`` or ``default_on`` in config.json.
 
 Channel Switcher
