@@ -20,8 +20,28 @@ module Gitlab
       end
     end
 
+    def wait(max: 60, time: 0.1, reload: true)
+      start = Time.now
+
+      while Time.now - start < max
+        result = yield
+        return result if result
+
+        sleep(time)
+
+        page.refresh if reload
+      end
+
+      false
+    end
+
     def sign_in
       visit '/users/sign_in'
+
+      # Give time for the app to fully load
+      wait(max: 500) do
+        has_css?('.login-page') || has_css?('.qa-user-avatar')
+      end
 
       # Return if already signed in
       return if has_selector?('.qa-user-avatar')
