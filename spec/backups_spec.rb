@@ -35,7 +35,7 @@ describe "Restoring a backup" do
 
     it 'Should have runner registered' do
       visit '/admin/runners'
-      expect(page.all('#content-body > div > div.runners-content .gl-responsive-table-row').count).to be > 1
+      expect(page).to have_css('#content-body > div > div.runners-content .gl-responsive-table-row', minimum: 2)
     end
 
     it 'Issue attachments should load correctly' do
