@@ -93,7 +93,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``"ServiceSettings"`` in ``config.json``:
     - Added ``"TLSMinVer": "1.2"``, ``"TLSStrictTransport": false``, ``"TLSStrictTransportMaxAge": 63072000`` and ``"TLSOverwriteCiphers": []``, to configure TLS connection when not using a reverse proxy such as NGINX.
  - Under ``"ExperimentalSettings"`` in ``config.json``:
-    - Added ``"EnablePostMetadata": false``, to 
+    - Added ``"EnablePostMetadata": false``, to disable post metadata from being loaded.
 
 ### API Changes
 
