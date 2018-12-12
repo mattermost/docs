@@ -67,6 +67,7 @@ data:
         ssh_host: {{ . | quote }}
         {{- end }}
         {{- with .Values.global.appConfig }}
+        impersonation_enabled: {{ .enableImpersonation }}
         usage_ping_enabled: {{ eq .enableUsagePing true }}
         default_can_create_group: {{ eq .defaultCanCreateGroup true }}
         username_changing_enabled: {{ eq .usernameChangingEnabled true }}
