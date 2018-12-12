@@ -30,7 +30,7 @@ Here is a light way to install it:
     --set global.hosts.domain=<YOUR.DOMAIN> \
     --set global.hosts.externalIP=<EXTERNAL.IP> \
     --set certmanager-issuer.email=<EMAIL>
- 
+
 - **<YOUR.DOMAIN>**: your desired domain, eg. ``gitlab.example.com``
 - **<EXTERNAL.IP>**: the external IP pointing to your Kubernetes cluster
 - **<EMAIL>**: email to register in Let's Encrypt to retrieve TLS certificates
@@ -206,7 +206,7 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
 
 Values that you need to replace in the above ``values.yaml`` file:
 
-- **<YOUR.MATTERMOST.DOMAIN>**: URL that users will use to access Mattermost, matching the `Site URL field <https://docs.mattermost.com/administration/config-settings.html#site-url>`_, e.g. ``mattermost.gitlab.example.com``.
+- **<YOUR.MATTERMOST.DOMAIN>**: URL that users will use to access Mattermost, matching the `Site URL field <https://docs.mattermost.com/administration/config-settings.html#site-url>`_, e.g. **``mattermost.gitlab.example.com``**.
 - **<NAME.OF.YOUR.TLS.SECRET>**: A name to store the TLS certificate for you domains, e.g. ``mattermost-tls``.
 - **<INGRESS.CLASS>**: The ingress class. In a basic GitLab deployment, this is ``gitlab-nginx``.
 - **<INGRESS.PROVIDER>**: The ingress provider. In a basic GitLab deployment, this is ``nginx``.
