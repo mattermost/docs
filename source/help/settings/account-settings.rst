@@ -249,7 +249,7 @@ Channels can be grouped by type (Public, Private, or Direct Message), or all cha
 
 Channel sorting
 ^^^^^^^^^^^^^^^^^^
-Channels can be sorted within their sidebar sections alphabetically (default) or by most recent post.
+Channels can be sorted within their sidebar sections alphabetically (default) or by most recent message.
 
 Unreads grouped separately
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -262,7 +262,7 @@ If enabled, this feature groups favorite channels in their own sidebar section.
 Group unreads channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Removed in December 16, 2018 release*
+*Removed in December 16, 2018 release and replaced by a new `ExperimentalChannelOrganization` setting*
 
 If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`_, by replacing ``disabled`` with either ``default_off`` or ``default_on`` in config.json.
 
