@@ -108,7 +108,7 @@ Users who have logged in and accessed Mattermost will be visible in the members 
 
 .. image:: ../images/Group_Members.png
 
-Users can be removed from the Mattermost group on subsequent synchronizations. However, they will not be removed from teams and channels. If a user is removed from an AD/LDAP group and then later re-added, they will be defaulted again into the teams and channels configured in the group. If a user is deactivated in AD/LDAP, they be removed from the group and will lose access to Mattermost.
+Users can be removed from the Mattermost group on subsequent synchronizations. However, they will not be removed from teams and channels. If a user is removed from an AD/LDAP group and then later re-added, they will be defaulted again into the teams and channels configured in the group. If a user is deactivated in AD/LDAP or filtered from the AD/LDAP user filter, they will be removed from the group and will lose access to Mattermost.  If that user is reactivated, they will regain access and will have access to the teams and channels as well as any additional teams and channels added to the Mattermost Group configuration. 
 
 .. note:: 
 When a member removes themselves manually from a channel, that action is tracked in the Channel Member History table.  Users are not re-added to channels from which they previously removed themselves. 
