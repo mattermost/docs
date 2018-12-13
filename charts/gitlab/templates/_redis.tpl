@@ -22,3 +22,10 @@ to 6379 default
 {{- define "gitlab.redis.port" -}}
 {{- coalesce .Values.redis.port .Values.global.redis.port 6379 -}}
 {{- end -}}
+
+{{/*
+Return the redis scheme, or redis. Allowing people to use rediss clusters
+*/}}
+{{- define "gitlab.redis.scheme" -}}
+{{- coalesce .Values.redis.scheme .Values.global.redis.scheme "redis" -}}
+{{- end -}}
