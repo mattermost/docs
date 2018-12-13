@@ -3925,7 +3925,7 @@ Sidebar Organization (Experimental)
 
 Group Unread Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Removed in December 16, 2018 release and replaced by a new ``ExperimentalChannelOrganization`` setting*
+*Removed in December 16, 2018 release and replaced by a new ExperimentalChannelOrganization setting*
 
 **Disabled**: Unread channels section is disabled for all users.
  
