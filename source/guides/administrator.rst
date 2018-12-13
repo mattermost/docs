@@ -199,5 +199,4 @@ Documentation on early previews and unofficial functionality.
    :glob:
 
    /install/prod-windows-2012*
-   /deployment/webrtc*
    /developer/toolkit*
