@@ -107,6 +107,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /administration/user-provisioning*
    /deployment/sso-ldap*
    /deployment/auth*
+   /deployment/ldap-group-sync.rst
    /deployment/sso-saml.rst
    /deployment/sso-gitlab*
    /deployment/sso-google*

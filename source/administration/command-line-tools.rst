@@ -126,6 +126,7 @@ mattermost
     -  `mattermost team`_ - Management of teams
     -  `mattermost user`_ - Management of users
     -  `mattermost version`_ - Display version information
+    -  `mattermost webhook`_ - Management of webhooks
 
 mattermost channel
 -----------------
@@ -364,7 +365,73 @@ mattermost command
     Commands for slash command management.
 
   Child Commands
-    -  `mattermost command move`_ - Move a slash command to a different team
+    -  `mattermost command create`_ - Create a custom slash command for a specified team.
+    -  `mattermost command delete`_ - Delete a slash command.
+    -  `mattermost command list`_ - List all commands on specified teams or all teams by default.
+    -  `mattermost command move`_ - Move a slash command to a different team.
+
+mattermost command create 
+~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Create a custom slash command for a specified team. 
+
+  Format
+    .. code-block:: none
+
+      mattermost command create 
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost command create myteam --title MyCommand --description "My Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
+
+  Options
+    .. code-block:: none
+
+          --title string                     Command Title
+          --description string               Command Description
+          --trigger-word string [REQUIRED]   Command Trigger Word
+          --url  string   [REQUIRED]         Command Callback URL
+          --creator string  [REQUIRED]       Command Creator's Username
+          --response-username string       Command Response Username
+          --icon string                      Command icon URL
+          --autocomplete bool                Show command in autocomplete list
+          --autocompleteDesc string          Short command description for autocomplete list
+          --autocompleteHint string          Command arguments displayed as help in autocomplete list
+          --post bool                        Use POST method for callback URL
+
+mattermost command delete
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Delete a slash command. Commands can be specified by command ID.
+
+  Format
+    .. code-block:: none
+
+      mattermost command delete {commandID}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost command delete commandID
+
+mattermost command list
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    List all commands on specified teams or all teams by default.
+
+  Format
+    .. code-block:: none
+
+      mattermost command list {team}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost command list myteam
 
 mattermost command move
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -390,7 +457,68 @@ mattermost config
     Commands for managing the configuration file.
 
   Child Command
+    - `mattermost config get`_ - Retrieve the value of a config setting by its name in dot notation.
+    - `mattermost config set`_ - Set the value of a config setting by its name in dot notation.
+    - `mattermost config show`_ - Print the current mattermost configuration in an easy to read format.
     - `mattermost config validate`_ - Validate the configuration file.
+
+mattermost config get
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Retrieve the value of a config setting by its name in dot notation. 
+
+  Format
+    .. code-block:: none
+
+      mattermost config get {config.name}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost config get SqlSettings.DriverName
+
+ Options
+    .. code-block:: none
+
+          --path string  Optional subpath; defaults to value in Site URL.
+    
+mattermost config set
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Set the value of a config setting by its name in dot notation. Accepts multiple values for array settings. 
+
+  Format
+    .. code-block:: none
+
+      mattermost config set {config.name} {setting new value}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost config set SqlSettings.DriverName mysql
+
+ Options
+    .. code-block:: none
+
+          --path string  Optional subpath; defaults to value in Site URL.   
+    
+mattermost config show
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Print the current mattermost configuration in an easy to read format. 
+
+  Format
+    .. code-block:: none
+
+      mattermost config show 
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost config show
 
 mattermost config validate
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -909,11 +1037,13 @@ mattermost team
     Commands to manage teams.
 
   Child Commands
-    -  `mattermost team add`_ - Add users to a team
-    -  `mattermost team create`_ - Create a team
-    -  `mattermost team delete`_ - Delete a team
-    -  `mattermost team list`_ - List all teams
-    -  `mattermost team remove`_ - Remove users from a team
+    -  `mattermost team add`_ - Add users to a team.
+    -  `mattermost team archive`_ - Archive teams based on name.
+    -  `mattermost team create`_ - Create a team.
+    -  `mattermost team delete`_ - Delete a team.
+    -  `mattermost team list`_ - List all teams.
+    -  `mattermost team remove`_ - Remove users from a team.
+    -  `mattermost team search`_ - Search for teams based on name.
 
 .. _team-value-note:
 
@@ -941,6 +1071,22 @@ mattermost team add
     .. code-block:: none
 
       ./mattermost team add myteam user@example.com username
+
+mattermost team archive
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Archive teams based on name. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
+
+  Format
+    .. code-block:: none
+
+      mattermost team archive {team}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost team archive team1
 
 mattermost team create
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1021,6 +1167,22 @@ mattermost team remove
     .. code-block:: none
 
       ./mattermost team remove myteam user@example.com username
+
+mattermost team search
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Search for teams based on name. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
+
+  Format
+    .. code-block:: none
+
+      mattermost team search {team}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost team search team1 
 
 mattermost user
 ---------------
@@ -1380,6 +1542,141 @@ mattermost version
     .. code-block:: none
 
       mattermost version
+
+mattermost webhook
+---------------
+
+  Description
+    Commands to manage webhooks.
+
+  Child Commands
+    -  `mattermost webhook create-incoming`_ - Create incoming webhook within specific channel. 
+    -  `mattermost webhook create-outgoing`_ - Create outgoing webhook within specific channel.
+    -  `mattermost webhook delete`_ - Delete incoming and outgoing webhooks.
+    -  `mattermost webhook list`_ - List all webhooks.
+    -  `mattermost webhook modify-incoming`_ - Modify existing incoming webhook by changing its title, description, channel or icon url.
+
+mattermost webhook create-incoming
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Create incoming webhook within specific channel.
+
+  Format
+    .. code-block:: none
+
+      mattermost webhook create-incoming 
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost webhook create-incoming --channel [channelID] --user [userID] --display-name [display-name] --description [webhookDescription] --lock-to-channel --icon [iconURL]
+
+  Options
+    .. code-block:: none
+
+          --channel string           Channel ID
+          --user string              User ID
+          --display-name string      Incoming webhook display name
+          --description string       Incoming webhook description
+          --lock-to-channel boolean  (True/False) Lock incoming webhook to channel
+          --icon [iconURL]           Icon URL
+
+mattermost webhook create-outgoing
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Create outgoing webhook which allows external posting of messages from a specific channel.
+
+  Format
+    .. code-block:: none
+
+      mattermost webhook create-outgoing
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost webhook create-outgoing --team myteam --channel mychannel --user myusername --display-name mywebhook --description "My cool webhook" --trigger-when start --trigger-word "build" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json"
+
+       ./mattermost webhook create-outgoing --team myotherteam --channel mychannel --user myusername --display-name myotherwebhook --description "My cool webhook" --trigger-when exact --trigger-word "build" --trigger-word "test" --trigger-word "third-trigger" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --url http://example.com --content-type "application/json"
+
+  Options
+    .. code-block:: none
+          --team string [REQUIRED]                Team name or ID
+          --channel string                        Channel name or ID
+          --user string [REQUIRED]                User username, email, or ID 
+          --display-name string [REQUIRED]        Outgoing webhook display name
+          --description string                    Outgoing webhook description
+          --trigger-words stringArray [REQUIRED]  Words to trigger webhook 
+          --trigger-when string [REQUIRED]        When to trigger webhook (exact: for first word matches a trigger word exactly, start: for first word starts with a trigger word) (default "exact")
+          --icon [iconURL]                        Icon URL
+          --url stringArray [REQUIRED]            Callback URLs 
+          --content-type string                   Content-type
+          --h, --help         Help for create-outgoing
+
+mattermost webhook delete
+~~~~~~~~~~~~~~~~~~~~~~
+
+   Description
+    Delete incoming and outgoing webhooks. If deleting multiple webhooks, use a space-separated list. 
+
+   Format
+     .. code-block:: none
+
+       mattermost webhook delete [webhookID]
+
+   Examples
+     .. code-block:: none
+
+        ./mattermost webhook delete ggwpz8c1oj883euk98wfm9n1cr
+
+mattermost webhook list
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    List all webhooks. 
+
+  Format
+    .. code-block:: none
+
+      mattermost webhook list {team}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost webhook list team1
+       ./mattermost webhook list 
+
+  Options
+    .. code-block:: none
+
+          --team string  Specific team results to return.  If not specified, all teams will be included.
+
+mattermost webhook modify-incoming
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Modify existing incoming webhook by changing its title, description, channel or icon url.
+
+  Format
+    .. code-block:: none
+
+      mattermost webhook modify-incoming {webhookId}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost webhook modify-incoming [webhookID] --channel [channelID] --display-name [displayName] --description [webhookDescription] --lock-to-channel --icon [iconURL]
+
+  Options
+    .. code-block:: none
+
+          --channel string              Channel ID
+          --display-name string         Incoming webhook display name
+          --description string          Incoming webhook description
+          --lock-to-channel boolean     (True/False) Lock incoming webhook to channel
+          --icon [iconURL]              Icon URL    
+
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

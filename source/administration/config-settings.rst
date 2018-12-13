@@ -1378,7 +1378,7 @@ Preferred Language Attribute
 
 Login Button Text
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(Optional) The text that appears in the login button on the login page. Defaults to ``With SAML``.
+(Optional) The text that appears in the login button on the login page. Defaults to ``SAML``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonText": ""`` with string input.                                                                               |
@@ -1869,7 +1869,7 @@ Please review full documentation on `push Notifications and mobile applications 
   The ``http://push-test.mattermost.com`` provided for testing push notifications prior to compiling your own service please make sure `to read about its limitations <http://docs.mattermost.com/deployment/push.html#push-notifications-for-team-edition-users>`_.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PushNotificationServer": ""`` with string input.                                                                        |
+| This feature's ``config.json`` setting is ``"PushNotificationServer": "https://push-test.mattermost.com"`` with string input.                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Push Notification Contents
@@ -2027,8 +2027,9 @@ Plugins (Beta)
 --------------------------------
 Settings to configure plugins.
 
-Configuration
+Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Enable Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2040,8 +2041,6 @@ Enable Plugins
 | This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false`` for above settings respectively.                                    | 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Management
-~~~~~~~~~~~~~~~~~~~~~~~~~
 Upload Plugin
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2618,27 +2617,30 @@ So you don't miss messages, please make sure to change this value to an email yo
 | This feature's ``config.json`` setting is ``"SupportEmail":"feedback@mattermost.com"`` with string input.                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Custom Terms of Service (Beta)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Custom Terms of Service
+~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*.
 
-**True**: New users must accept custom terms of service before accessing any Mattermost teams on desktop or web. Existing users must accept them after login or a page refresh. Users on mobile will not be presented with the custom Terms of Services. Mobile support is scheduled for an upcoming release.
-
-**False**: During account creation or login, users can review terms of service included via **System Console > Legal and Support > Terms of Service link**.
+Enable Custom Terms of Service
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
-  This setting can only be modified using the System Console user interface.
+  This page can only be modified using the System Console user interface.
 
-Custom Terms of Service Text (Beta)
+**True**: When true, new users must accept the terms of service before accessing any Mattermost teams on desktop, web or mobile. Existing users must accept them after login or a page refresh. To update terms of service link displayed in account creation and login pages, go to **System Console > Legal and Support > Terms of Service Link**.
+
+**False**: During account creation or login, users can review terms of service by accessing the link configured via **System Console > Legal and Support > Terms of Service link**.
+
+Custom Terms of Service Text
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E20*.
-
 Text that will appear in your custom Terms of Service. Supports Markdown-formatted text.
 
-.. note::
+Re-Acceptance Period
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The number of days before Terms of Service acceptance expires, and the terms must be re-accepted.
 
-  This setting can only be modified using the System Console user interface.
+Defaults to 365 days. 0 indicates the terms do not expire.
 
 ________
 
@@ -2674,7 +2676,7 @@ ________
 Compliance
 --------------------------------
 
-Data Retention Policy (Beta)
+Data Retention Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
@@ -3203,6 +3205,50 @@ Path and filename of the license file on disk. On startup, if Mattermost cannot 
 | This feature's ``config.json`` setting is ``"LicenseFileLocation": ""`` with string input.  |
 +---------------------------------------------------------------------------------------------+
 
+TLS Minimum Version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The minimum TLS version used by the Mattermost server. TLS v1.2 is default given insecurities for TLS 1.0 and 1.1.
+
+This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer such as NGINX.
+
++-------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TLSMinVer": "1.2"`` with string input. |
++-------------------------------------------------------------------------------------+
+
+Enable Strict Transport Security (HSTS)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Adds the Strict Transport Security (HSTS) header to all responses, forcing the browser to request all resources via HTTPS. Learn more `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`_.
+
+**False**: No restrictions on TLS transport. Strict Transport Security (HSTS) header is not added to responses.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TLSStrictTransport": false`` with options ``true`` and ``false`` for above settings respectively.         |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Secure TLS Transport Expiry
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The time in seconds that the browser remembers a site is only to be accessed using HTTPS. After this period, a site can be accessed using HTTP unless ``TLSStrictTransport`` is set to ``true``. Defaults to two years. Learn more `here <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`_.
+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TLSStrictTransportMaxAge": 63072000`` with whole number input. |
++-------------------------------------------------------------------------------------------------------------+
+
+TLS Cipher Overwrites
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Set TLS ciphers overwrites to meet requirements from legacy clients which don't support modern ciphers, or to limit the types of accepted ciphers.
+
+If none specified, the Mattermost server assumes a set of currently considered secure ciphers, and allows overwrites in the edge case. See the ``ServerTLSSupportedCiphers`` variable in `/model/config.go <https://github.com/mattermost/mattermost-server/blob/master/model/config.go>`_ for the list of ciphers considered secure.
+
+This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer such as NGINX.
+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"TLSStrictTransportMaxAge": 63072000`` with whole number input. |
++-------------------------------------------------------------------------------------------------------------+
+
 Go Routine Health Threshold
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -3319,8 +3365,8 @@ SQL Settings
 
 Enable Public Channels Materialization
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. note::
-  This setting provides a fast way for System Admins to disable public channels materialization if it causes unexpected performance degradation. The feature will be enabled permanently and this setting will be removed in Mattermost v5.6, to be released on December 16, 2018.
+
+*Removed in December 16, 2018 release. The public channel materialization feature has become a permanent feature after thoroughly tested for performance.*
 
 **True**: Enables materialization of public channels to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI. Notably, this allows the database to exclude direct messages for many queries, resulting in better query plans and more efficient indexes.
 
@@ -3654,6 +3700,17 @@ Used in combination with the ``ClientSideCertEnable`` setting.
 | This feature's ``config.json`` setting is ``"ClientSideCertCheck": secondary`` with options ``primary`` and ``secondary`` for the above settings respectively.       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Post Metadata 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Load channels with more accurate scroll positioning by loading post metadata. Enabling this setting may increase channel and post load times. 
+
+**False**: Post metadata is not loaded.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnablePostMetadata": false`` with options ``true`` and ``false`` for the above settings respectively.                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Analytics Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E10 and higher*
@@ -3855,8 +3912,20 @@ Enable Preview Features (Experimental)
 | This feature’s ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false`` for above settings respectively.                    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Sidebar Organization (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables channel sidebar organization options in **Account Settings** > **Sidebar** > **Channel grouping and sorting** including options for grouping unread channels, sorting channels by most recent post and combining all channel types into a single list. 
+
+**False**: Hides the channel sidebar organization options in **Account Settings** > **Sidebar** > **Channel grouping and sorting**.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ExperimentalChannelOrganization": false`` with options ``true`` and ``false`` for above settings respectively.         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Group Unread Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in December 16, 2018 release and replaced by a new ``ExperimentalChannelOrganization`` setting*
 
 **Disabled**: Unread channels section is disabled for all users.
  
@@ -3888,6 +3957,7 @@ Changes made when hardened mode is enabled:
 
 Limit Access to Config Settings Prior to Login
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in December 16, 2018 release*
 
 Enable this setting to limit the number of config settings sent to users prior to login.
 

@@ -206,7 +206,7 @@ Message Display
 
 Select the formatting for messages in the center channel. "Compact" mode decreases the spacing around posts, collapses link previews, and hides thumbnails so only file names are shown. Some formatting types, such as block quotes and headings, are also reduced in size.
 
-Channel Display Mode
+Channel Display
 ~~~~~~~~~~~~~~~~~~~~
 
 Select if the text in the center channel is fixed width and centered, or full width.
@@ -227,6 +227,7 @@ Select what language Mattermost displays in the user interface. Options include:
 - Română - Romanian
 - Türkçe - Turkish
 - Pусский - Russian
+- Yкраїнська - Ukrainian
 - 한국어 - Korean
 - 中文 (简体) - Simplified Chinese
 - 中文 (繁體) - Traditional Chinese
@@ -235,8 +236,32 @@ Select what language Mattermost displays in the user interface. Options include:
 Sidebar
 --------
 
+Channel grouping and sorting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These settings are experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#experimental-sidebar-organization>`_.
+
+Channel grouping
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Channels can be grouped by type (Public, Private, or Direct Message), or all channel types can be grouped in a single list.
+
+Channel sorting
+^^^^^^^^^^^^^^^^^^
+Channels can be sorted within their sidebar sections alphabetically (default) or by most recent message.
+
+Unreads grouped separately
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If enabled, this feature groups unread channels at the top of the channel sidebar.
+
+Favorites grouped separately
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If enabled, this feature groups favorite channels in their own sidebar section.
+
 Group unreads channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Removed in December 16, 2018 release and replaced by a new `ExperimentalChannelOrganization` setting*
+
 If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`_, by replacing ``disabled`` with either ``default_off`` or ``default_on`` in config.json.
 
 Channel Switcher

@@ -47,7 +47,7 @@ PC Web
     "Internet Explorer", "v11*"
     "Edge", "v42+"
 
-`*` IE 11 Compatibility View is not supported. 
+`*` IE 11 Compatibility View and mobile view are not supported. 
 
 Mobile Apps
 ^^^^^^^^^^^^^^^^^^^^^
