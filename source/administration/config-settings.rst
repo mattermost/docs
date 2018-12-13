@@ -3766,7 +3766,7 @@ Used in combination with the ``ClientSideCertEnable`` setting.
 Enable Post Metadata 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables post metadata to be loaded and used to load channels with more accurate scroll positioning. Enabling this setting may increase channel and post load times. 
+**True**: Load channels with more accurate scroll positioning by loading post metadata. Enabling this setting may increase channel and post load times. 
 
 **False**: Post metadata is not loaded.
 
@@ -3988,7 +3988,7 @@ Sidebar Organization (Experimental)
 
 Group Unread Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Removed in December 16, 2018 release*
+*Removed in December 16, 2018 release and replaced by a new ``ExperimentalChannelOrganization`` setting*
 
 **Disabled**: Unread channels section is disabled for all users.
  
