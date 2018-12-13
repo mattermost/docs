@@ -1602,6 +1602,7 @@ mattermost webhook create-outgoing
 
   Options
     .. code-block:: none
+    
           --team string [REQUIRED]                Team name or ID
           --channel string                        Channel name or ID
           --user string [REQUIRED]                User username, email, or ID 
