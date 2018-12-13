@@ -1860,7 +1860,7 @@ Please review full documentation on `push Notifications and mobile applications 
   The ``http://push-test.mattermost.com`` provided for testing push notifications prior to compiling your own service please make sure `to read about its limitations <http://docs.mattermost.com/deployment/push.html#push-notifications-for-team-edition-users>`_.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PushNotificationServer": ""`` with string input.                                                                        |
+| This feature's ``config.json`` setting is ``"PushNotificationServer": "https://push-test.mattermost.com"`` with string input.                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Push Notification Contents
@@ -3763,6 +3763,17 @@ Used in combination with the ``ClientSideCertEnable`` setting.
 | This feature's ``config.json`` setting is ``"ClientSideCertCheck": secondary`` with options ``primary`` and ``secondary`` for the above settings respectively.       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Post Metadata 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Load channels with more accurate scroll positioning by loading post metadata. Enabling this setting may increase channel and post load times. 
+
+**False**: Post metadata is not loaded.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnablePostMetadata": false`` with options ``true`` and ``false`` for the above settings respectively.                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Analytics Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E10 and higher*
@@ -3964,8 +3975,20 @@ Enable Preview Features (Experimental)
 | This feature’s ``config.json`` setting is ``"EnablePreviewFeatures": true`` with options ``true`` and ``false`` for above settings respectively.                    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Sidebar Organization (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables channel sidebar organization options in **Account Settings** > **Sidebar** > **Channel grouping and sorting** including options for grouping unread channels, sorting channels by most recent post and combining all channel types into a single list. 
+
+**False**: Hides the channel sidebar organization options in **Account Settings** > **Sidebar** > **Channel grouping and sorting**.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ExperimentalChannelOrganization": false`` with options ``true`` and ``false`` for above settings respectively.         |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Group Unread Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in December 16, 2018 release and replaced by a new ``ExperimentalChannelOrganization`` setting*
 
 **Disabled**: Unread channels section is disabled for all users.
  
