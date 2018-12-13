@@ -92,9 +92,8 @@ What support is available for video and audio calling and screen sharing?
 
 The following open-source options are available:
 
-1. `One-on-one video and audio calling in beta <https://docs.mattermost.com/deployment/webrtc.html>`_ using the WebRTC standard, installed by default on all Mattermost servers. Plan is to release a default plugin based on WebRTC which supports functionality beyond one-on-one calls.
-2. `Zoom plugin <https://docs.mattermost.com/integrations/zoom.html>`_ enables users to start and join voice, video and screensharing meetings using either Zoom’s self-hosted private cloud or on-prem solutions, or its vendor-hosted SaaS solution. The plugin is installed by default on all Mattermost servers.
-3. `BigBlueButton plugin <https://github.com/blindsidenetworks/mattermost-plugin-bigbluebutton>`_ for one-on-one video and audio calling, video conferencing and screenshare, created by Blindside Networks, available in Beta. A test install is provided to try out the feature on a Mattermost install. For production use, you can self-host a server running BigBlueButton, or reach out to Blindside Networks about hosting it for you.
+1. `Zoom plugin <https://docs.mattermost.com/integrations/zoom.html>`_ enables users to start and join voice, video and screensharing meetings using either Zoom’s self-hosted private cloud or on-prem solutions, or its vendor-hosted SaaS solution. The plugin is installed by default on all Mattermost servers.
+2. `BigBlueButton plugin <https://github.com/blindsidenetworks/mattermost-plugin-bigbluebutton>`_ for one-on-one video and audio calling, video conferencing and screenshare, created by Blindside Networks, available in Beta. A test install is provided to try out the feature on a Mattermost install. For production use, you can self-host a server running BigBlueButton, or reach out to Blindside Networks about hosting it for you.
 
 Support for other 3rd party video, audio and screensharing solutions via plugins is planned. A plugin for WebEx is currently in development by the Mattermost community, with updates posted in the `WebEx Plugin community channel <https://pre-release.mattermost.com/core/channels/webex-plugin>`_.
 
@@ -366,12 +365,12 @@ The following chart highlights the end user features of Mattermost and their sup
     "Markdown", "X", "X", "O"
     "Emojis", "X", "X", "X"
     "Emoji reactions", "X", "X", "X"
-    "Viewing emoji reactions", "X", "X", "v1.13"
+    "Viewing emoji reactions", "X", "X", "X"
     "File sharing", "X", "X", "X"
     "@ mentions", "X", "X", "X"
-    "Hashtags", "X", "X", "v1.13"
+    "Hashtags", "X", "X", "X"
     "Search (with in:, from:, before:, on: and after:)", "X", "X", "X"
-    "Search highlighting", "X", "X", "v1.15"
+    "Search highlighting", "X", "X", "v1.17"
     "View/marking pinned or flagged posts", "X", "X", "X"
     "Image link previews", "X", "X", "X"
     "Website previews", "X", "X", "X"
@@ -401,17 +400,10 @@ The following chart highlights the end user features of Mattermost and their sup
     "Localization for 16 languages", "X", "X", "X"
     "Account settings", "X", "X", "O"
     "OAuth login with Google/Office 365", "X", "X",
-    "Connect to multiple Mattermost servers from a single interface and switch with shortcut keys (similar to tabs in web browser", " ", "X", 
-    "Auto-start Mattermost when a user logs into their machine", " ", "X"    
-    "(Windows) Add Mattermost to Start menu, taskbar and system tray", " ", "X", 
-    "(Windows/Mac) Deep link to the desktop app via mattermost:// protocol if app is already installed", " ", "X", 
-    "(Mac) Add Mattermost to the applications Dock", " ", "X", 
-    "(Linux) Desktop Entry for the application to more easily integrate into a desktop environment", " ", "X", 
 
 **Legend:**
 
 * X - Full Support
-
 * O - Partial support
 
 Design Decisions

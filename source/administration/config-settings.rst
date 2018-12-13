@@ -1560,7 +1560,9 @@ User sessions are cleared when a user tries to log in. Additionally, a job runs 
 
 Session length for email and AD/LDAP authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Set the number of days before web sessions expire and users will need to log in again.
+Set the number of days from the last time a user entered their credentials to the expiry of the user's session on email and AD/LDAP authentication.
+
+After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SessionLengthWebInDays" : 30`` with whole number input.                                                                 |
@@ -1568,7 +1570,9 @@ Set the number of days before web sessions expire and users will need to log in 
 
 Session length for mobile apps (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Set the number of days before native mobile sessions expire.
+Set the number of days from the last time a user entered their credentials to the expiry of the user's session on mobile apps.
+
+After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SessionLengthMobileInDays" : 30`` with whole number input.                                                              |
@@ -1576,7 +1580,9 @@ Set the number of days before native mobile sessions expire.
 
 Session length for GitLab SSO authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Set the number of days before SSO sessions expire.
+Set the number of days from the last time a user entered their credentials to the expiry of the user's session. If the authentication method is SAML or GitLab, the user may automatically be logged back in to Mattermost if they are already logged in to SAML or GitLab.
+
+After changing this setting, the setting will take effect after the next time the user enters their credentials.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SessionLengthSSOInDays" : 30`` with whole number input.                                                                 |
@@ -1608,6 +1614,9 @@ Enable cross-origin requests from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Enable HTTP cross-origin requests from specific domains separated by spaces. Type ``*`` to allow CORS from any domain or leave it blank to disable it.
 
+.. note::
+ Please make sure you have entered your Site URL before enabling this setting to prevent losing access to the System Console after saving.  If you experience lost access to the System Console after changing this setting, you can set your `Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_ through the ``config.json`` file.
+  
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowCorsFrom": ""`` with string input.                                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1996,78 +2005,6 @@ To manage who can create personal access tokens or to search users by token ID, 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUserAccessTokens": false`` with options ``true`` and ``false`` for above settings respectively.                   |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-________
-
-WebRTC (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~
-Enable Mattermost WebRTC
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: Mattermost will allow making one-on-one video calls on Chrome, Firefox and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_ on a server running in SSL mode.
-
-**False**: Mattermost doesn't allow one-on-one video calls.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false`` for above settings respectively.                                   |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Gateway Websocket URL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This is the websocket used to signal and establish communication between the peers. Enter ``wss://<mattermost-webrtc-gateway-url>:<port>``. Make sure you use WS or WSS in your URL depending on your server configuration.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GatewayWebsocketUrl": ""`` with string input                                                                            |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Gateway Admin URL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Mattermost WebRTC uses this URL to obtain valid tokens for each peer to establish the connection. Enter ``https://<mattermost-webrtc-gateway-url>:<port>/admin``. Make sure you use HTTP or HTTPS in your URL depending on your server configuration.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GatewayAdminUrl": ""`` with string input                                                                                |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Gateway Admin Secret
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Enter your admin secret password to access the Gateway Admin URL.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GatewayAdminSecret": ""`` with string input                                                                             |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-STUN URI
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Enter your STUN URI as ``stun:<your-stun-url>:<port>``. STUN is a standardized network protocol to allow an end host to assist devices to access its public IP address if it is located behind a NAT.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"StunURI": ""`` with string input                                                                                        |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-TURN URI
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Enter your TURN URI as ``turn:<your-turn-url>:<port>``. TURN is a standardized network protocol to allow an end host to assist devices to establish a connection by using a relay public IP address if it is located behind a symmetric NAT.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TurnURI": ""`` with string input                                                                                        |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-TURN Username
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Enter your TURN Server Username.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TurnUsername": ""`` with string input                                                                                   |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-TURN Shared Key
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Enter your TURN Server Shared Key. This is used to created dynamic passwords to establish the connection. Each password is valid for a short period of time.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TurnSharedKey": ""`` with string input                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -3097,7 +3034,7 @@ This setting allows system administrators to limit the addresses that user-creat
 
 If a user needs to develop an integration locally on their development workstation, use this setting to specify the domain, IP address or CIDR notation for those machines. This will allow users to host the app they're developing on their workstation. **Not recommended for use in production**, since this can allow a user to extract confidential data from your server or internal network.
 
-By default, user-supplied URLs such as those used for Open Graph metadata, webhooks or slash commands will not be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. Push notification, OAuth 2.0, WebRTC and other URLs entered via the System Console are trusted and not affected by this setting.
+By default, user-supplied URLs such as those used for Open Graph metadata, webhooks or slash commands will not be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. Push notification and OAuth 2.0 and other URLs entered via the System Console are trusted and not affected by this setting.
 
 Separate two or more domains with spaces instead of commas, for example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``.
 

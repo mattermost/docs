@@ -41,7 +41,7 @@ PC Web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "Chrome", "v56+"
+    "Chrome", "v61+"
     "Firefox", "v60+"
     "Safari", "v12+"
     "Internet Explorer", "v11*"
@@ -123,8 +123,8 @@ Moreover, memory requirements can be driven by peak file sharing activity. Recom
 
 For deployments larger than 2,000 users, it is recommended to use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`_.
 
-Hardware Sizing for Team Deployments
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hardware Requirements for Team Deployments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Most small to medium Mattermost team deployments can be supported on a single server with the following specifications based on registered users:
 
@@ -133,14 +133,27 @@ Most small to medium Mattermost team deployments can be supported on a single se
 
 .. _hardware-sizing-for-enterprise:
 
-Hardware Sizing for Enterprise Deployments (Multi-Server)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hardware Requirements for Enterprise Deployments (Multi-Server)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Scale Requirements
+^^^^^^^^^^^^^^^^^^^^
 
 For Enterprise Edition deployments with a multi-server setup, see `our scaling guide <https://docs.mattermost.com/deployment/scaling.html>`_.
 
 It is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs. You can use the Mattermost open source load testing framework to simulate usage of your system: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`_.
 
 Mattermost's `performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`_ tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct. 
+
+System Requirements
+^^^^^^^^^^^^^^^^^^^^
+
+For Enterprise Edition deployments with a multi-server setup, we highly recommend the following systems to support your Mattermost deployment:
+
+   - Prometheus to track system health of your Mattermost deployment, through  `performance monitoring feature <https://docs.mattermost.com/deployment/metrics.html>`_ available in Enterprise Edition E20.
+   - Grafana to visualize the system health metrics collected by Prometheus with the  `performance monitoring feature <https://docs.mattermost.com/deployment/metrics.html>`_. Grafana 5.0.0 and later is recommended.
+   - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 5.0 and later is supported. `Learn more here <https://docs.mattermost.com/deployment/elasticsearch.html>`_.
+   - Minio to support a cloud storage system compatible with Amazon S3. Learn more about file storage configuration options `in our documentation <https://docs.mattermost.com/administration/config-settings.html#files>`_.
 
 Alternate Storage Calculations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

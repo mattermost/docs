@@ -184,9 +184,7 @@ Choose a 12-hour or 24-hour time preference that appears on the time stamp for a
 Teammate Name Display
 ~~~~~~~~~~~~~~~~~~~~~
 
-*Moved to a System Console setting in July 16th, 2017 release*
-
-Configure how names are displayed in Mattermost: nickname, username or full name.
+Configure how names are displayed in the user interface: nickname, username or full name. The default for this setting is dependent on the `configuration set by the System Admin <https://docs.mattermost.com/administration/config-settings.html#teammate-name-display>`_.
 
 Timezone
 ~~~~~~~~~~~~~~~~~~~~~

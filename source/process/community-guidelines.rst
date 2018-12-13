@@ -229,3 +229,95 @@ Action:
 
 Benefit:
   Describe how your recommended Position and Action will address listeners' specific needs. State the results clearly and quantifiably. 
+
+Mattermost Twitter
+---------------------------------------------------------
+
+Guidelines for Mattermost `Twitter responses <https://twitter.com/mattermost>`_.
+
+Principles
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. **Avoid acronyms**. Avoid acronyms when possible. For example, say "pull request" instead of "PR", since only a subset of tweet readers are active GitHub users. 
+2. **Use the active voice**. Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!" 
+3. **Include at most one link**. To provide a clear call to action, include at most one link per tweet and place it near the end of the tweet.
+4. **Use exclamation marks only for exciting announcements**. An exclamation mark can be used when the announcement is exciting, but using an exclamation mark should be avoided when it can be confused with a signal for community to panic, e.g. "Security update released!".
+5. **Be welcoming**. When asking someone to take action, use "Would you be open to" instead of "Would you like to".
+
+Response Writing Tips
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. When to like (heart) a tweet where Mattermost is mentioned?
+
+ - Our team is on site at an event and tags our handle.
+ - A community member shares an event we are at, received a Mattermug, or shared a positive experience and mentions us.
+
+2. When to retweet a post?
+
+ - A community member released an integration and mentions us.
+ - Mattermug tweets from community members.
+  
+Sample Responses
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Requests for more information such as a preview of our product.
+
+.. code-block:: text
+
+  Thank you for your interest in Mattermost. You can learn more about us at www.mattermost.com where you can also download a trial of our product.
+
+2. Requests for a specific feature or group of features. 
+
+ - Multiple Feature Requests:
+
+  .. code-block:: text
+
+    Thank you for the suggestions @username. Would you be open to contributing them in the feature idea forum so they can discussed and upvoted by the community? You get 10 votes in the feature idea forum, and each one influences the future of the project.
+
+    https://mattermost.uservoice.com/
+
+ - Single Feature Request: 
+
+  .. code-block:: text
+
+    Thank you for the suggestion @username. Would you be open to contributing it in the feature idea forum so it can discussed and upvoted by the community? You get 10 votes in the feature idea forum, and each one influences the future of the project.
+
+    https://mattermost.uservoice.com/
+
+ - Planned Feature Request: 
+
+  .. code-block:: text
+
+    Thank you for your feedback.  We are excited to share that [feature] will be available in our [edition] Edition soon.  Please see our forum post for more information: [link to forum post]
+
+ - Shipped Feature Request: 
+
+  .. code-block:: text
+
+    Thank you for your feedback.  Mattermost already supports [feature].  You can learn more about it in our documentation:  [link to docs]
+
+3. Feedback about their experience, not specific to a feature or a product.
+
+  .. code-block:: text
+
+    Appreciate the feedback. If your team has suggestions on how to improve Mattermost, we would love to hear more in our feature proposal forum. You get 10 votes there, and each one influences the future of the project: https://mattermost.uservoice.com/
+
+  .. code-block:: text
+
+    Thanks @{username}, highly appreciate your feedback. If you have additional feedback about your experience, we'd love to hear. You can share at http://forum.mattermost.org to start a discussion.
+
+4. Tweet of forum post, asking someone from Mattermost team to respond.
+
+  .. code-block:: text
+
+    Thank you for reaching out. Our team responded to you in the forums and we're happy to help with further questions there.
+
+  .. code-block:: text
+
+    Thank you for reaching out. Our team monitors and responds to forum inquiries. We're happy to help with further questions there.
+
+5. Customer requesting help to address an issue they are having with a deployment or specific feature in the system.
+
+  .. code-block:: text
+
+    Thank you for reaching out. We recommend opening a support ticket where our team can best help you troubleshoot the issue. For more information about Enterprise Edition support levels, see https://about.mattermost.com/support/. 

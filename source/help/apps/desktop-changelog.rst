@@ -1,6 +1,58 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.2.0
+----------------------------
+
+- **Release date:** November 27, 2018
+- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win32.exe>`_ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win64.exe>`_ | `Mac <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-mac.dmg>`_ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-linux-x64.tar.gz>`_ 
+- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.2.0>`_
+
+**Note:** Mattermost v4.2.0 contains a high level security fix. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`_ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`_.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added English (UK), Portuguese (BR), Spanish (ES) and Spanish (MX) to the spell checker.
+- Added `Ctrl/Cmd+F` shortcut to work as browser-like search.
+- Preserved case of first letter in spellcheck.
+- Added support for session expiry notification.
+
+Windows
+^^^^^^^^^^^^^
+
+- Set "app start on login" preference as enabled by default and synchronized its state with config.json.
+
+Mac
+^^^^^^^^^^^^^
+
+- Added **.dmg** package to support installation.
+- Added "Hide" option to Login Items in Preferences.
+
+Linux
+^^^^^^^^^^^^^
+
+- [tar.gz] Added support for using SVG icons for Linux application menus in place of PNG icons.
+- Updated categories in order to be listed under the appropriate submenu of the application starter.
+- Set "app start on login" preference as enabled by default and synchronized its state with config.json.
+- Added AppImage packages as an unofficial build.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v2.0.12. Electron is the underlying technology used to build the Desktop apps.
+- Artifact names are now configured via `electron-builder.json`.
+
+Contributors
+~~~~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+- `danmaas <https://github.com/danmaas>`_, `hmhealey <https://github.com/hmhealey>`_, `j1mc <https://github.com/j1mc>`_, `jasonblais <https://github.com/jasonblais>`_, `lieut-data <https://github.com/lieut-data>`_, `rodcorsi <https://github.com/rodcorsi>`_, `scherno2 <https://github.com/scherno2>`_, `sudheerDev <https://github.com/sudheerDev>`_, `svelle <https://github.com/svelle>`_, `torlenor <https://github.com/torlenor>`_, `yuya-oc <https://github.com/yuya-oc>`_
+
 Release v4.1.2
 ----------------------------
 

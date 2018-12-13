@@ -35,6 +35,7 @@ Release Process
    /process/security-release*
    /process/mobile-release*
    /process/release-faq*
+   /process/release-tips*
 
 Community Process
 -------------------
