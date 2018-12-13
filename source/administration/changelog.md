@@ -51,12 +51,10 @@ Release date: 2018-12-16
  - Increased performance for returning user autocomplete results.
 
 #### Plugins
- - Added "min_server_version" in plugin.json manifest to enable built-in control for preventing load/enable of plugin if server version is not met.
+ - Added a "min_server_version" field to plugin.json manifest, which enables built-in control for preventing loading plugins that are not compatible with the Mattermost server version.
  - Added ability for plugins to add channel header tooltips.
- - Stop hashing plugin keys on write. **////XXXX**
- #### ?
- - Removed support for automatically unmarshalling a plugin's server configuration, as there was no way to safely synchronize reads and writes to these public fields across multiple plugin threads without additional plugin coordination.
- - Introduced mlog/human package to consume and reformat structured logging.
+ - Stopped hashing plugin keys on write to more effectively enumerate the keys stored by a plugin.
+ - Removed support for automatically unmarshalling a plugin's server configuration.
 
 #### Bulk Import/Export
  - Added custom emoji and emoji reactions to bulk export tool.
@@ -71,6 +69,7 @@ Release date: 2018-12-16
 #### Administration
  - Terms of Service promoted out of beta, with support for mobile apps.
  - Removed **System Console > Plugins (Beta) > Configuration** page and moved enabling plugins setting to the **Plugins (Beta) > Management** page.
+ - Introduced mlog/human package to consume and reformat structured logging with a human readable output.
 
 #### Enterprise Edition (E20)
  - Data Retention promoted out of beta.
@@ -98,15 +97,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### API Changes
 
 #### RESTful API v4 Changes
- - Added ``/channels/{channel_id}/timezones`` to get a list of timezones for the users who are in the specified channel.
-
-//
- - Added paging to elasticsearch API.
- - Added key value store set with expiry method to the plugin API.
- - Added ``SetDefaultProfileImage`` to reset the user profile image to a generated one.
- - Added ``deleteBrandImage`` to the API to add ability to remove custom branding image.
- - Added plugin API method to return user's profile image.
- - Added ``SubmitDialogResponse`` and ``SubmitDialogRequest`` APIs for interactive dialogs.
+ - Added ``GET /channels/{channel_id}/timezones`` to get a list of timezones for the users who are in the specified channel.
+ - Added ``page`` and ``per_page`` properties to ``POST /teams/{team_id}/posts/search`` call for Elasticsearch paging.
+ - Added ``DELETE /users/{user_id}/image`` to remove a user's profile picture.
+ - Added ``DELETE /brand/image`` to remove a custom branding image.
+ - Added ``POST /actions/dialogs/open`` and ``POST /actions/dialogs/submit`` to open and submit requests via interactive dialogs.
 
 #### Plugin API Changes
  - **Changed ``GetTeamMembers(teamId string, offset, limit int)`` to ``GetTeamMembers(teamId string, page, perPage int)`` to be clearer and consistent with other APIs**
@@ -127,6 +122,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
      - ``GetPostsSince``
      - ``GetPostsForChannel``
      - ``GetPostThread``
+     - ``GetProfileImage``
+     - ``SetProfileImage``
      - ``GetTeamsForUser``
      - ``GetTeamsUnreadForUser``
      - ``GetTeamIcon``
@@ -142,10 +139,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
      - ``GetFileLink``
      - ``UploadFile``
      - ``SetProfileImage``
+     - ``KVSetWithExpiry``
+     - ``KVDeleteAll``
+     - ``KVList``
 
 #### Database Changes
 
- - ``ExpireAt`` column was added to the ``PluginKeyValueStore`` table.
+ - Added ``ExpireAt`` column to the ``PluginKeyValueStore`` table.
  - Migrated user's accepted terms of service data into a new table called ``UserTermsOfService``.
  - Removed ``idx_users_email_lower``, ``idx_users_username_lower``, ``idx_users_nickname_lower``, ``idx_users_firstname_lower`` and ``idx_users_lastname_lower`` indexes.
 
