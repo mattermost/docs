@@ -56,6 +56,7 @@ Deployment
    /deployment/sso-ldap*
    /deployment/advanced*
    /deployment/auth*
+   /deployment/ldap-group-sync.rst
    /deployment/sso-saml.rst
    /deployment/scaling*
    /deployment/cluster.rst
