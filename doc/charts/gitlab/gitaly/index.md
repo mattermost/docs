@@ -18,32 +18,36 @@ The `gitaly` chart is configured in two parts: external services, and chart sett
 
 Table below contains all the possible charts configurations that can be supplied to `helm install` command using the `--set` flags
 
-| Parameter                    | Description                            | Default                                  |
-| ---                          | ---                                    | ---                                      |
-| image.repository             | Gitaly image repository                | registry.com/gitlab-org/build/cng/gitaly |
-| internal.names[]             | Ordered names of statfulset storages   | - default                                |
-| external[].name              | name of external node storage          | - ""                                     |
-| external[].hostname          | hostname of external node              | - ""                                     |
-| external[].port              | port of external node                  | - ""                                     |
-| image.tag                    | Gitaly image tag                       | latest                                   |
-| image.pullPolicy             | Gitaly image pull policy               | Always                                   |
-| image.pullSecrets            | Secrets for the image repository       |                                          |
-| init.image                   | initContainer image                    | busybox                                  |
-| init.tag                     | initContainer image tag                | latest                                   |
-| service.name                 | Gitaly service name                    | gitaly                                   |
-| service.type                 | Gitaly service type                    | ClusterIP                                |
-| service.externalPort         | Gitaly service exposed port            | 8075                                     |
-| service.internalPort         | Gitaly internal port                   | 8075                                     |
-| enabled                      | Gitaly enable flag                     | true                                     |
-| serviceName                  | Gitaly service name                    | gitaly                                   |
-| persistence.enabled          | Gitaly enable persistence flag         | true                                     |
-| persistence.accessMode       | Gitaly persistence access mode         | ReadWriteOnce                            |
-| persistence.size             | Gitaly persistence volume size         | 50Gi                                     |
-| persistence.subPath          | Gitaly persistence volume mount path   |                                          |
-| persistence.storageClass     | storageClassName for provisioning      |                                          |
-| persistence.matchLabels      | Label-value matches to bind            |                                          |
-| persistence.matchExpressions | Label-expression matches to bind       |                                          |
-| annotations                  | Pod annotations                        |                                          |
+| Parameter                    | Description                              | Default                                  |
+| ---                          | ---                                      | ---                                      |
+| image.repository             | Gitaly image repository                  | registry.com/gitlab-org/build/cng/gitaly |
+| internal.names[]             | Ordered names of statfulset storages     | - default                                |
+| external[].name              | name of external node storage            | - ""                                     |
+| external[].hostname          | hostname of external node                | - ""                                     |
+| external[].port              | port of external node                    | - ""                                     |
+| image.tag                    | Gitaly image tag                         | latest                                   |
+| image.pullPolicy             | Gitaly image pull policy                 | Always                                   |
+| image.pullSecrets            | Secrets for the image repository         |                                          |
+| init.image                   | initContainer image                      | busybox                                  |
+| init.tag                     | initContainer image tag                  | latest                                   |
+| service.name                 | Gitaly service name                      | gitaly                                   |
+| service.type                 | Gitaly service type                      | ClusterIP                                |
+| service.externalPort         | Gitaly service exposed port              | 8075                                     |
+| service.internalPort         | Gitaly internal port                     | 8075                                     |
+| enabled                      | Gitaly enable flag                       | true                                     |
+| serviceName                  | Gitaly service name                      | gitaly                                   |
+| persistence.enabled          | Gitaly enable persistence flag           | true                                     |
+| persistence.accessMode       | Gitaly persistence access mode           | ReadWriteOnce                            |
+| persistence.size             | Gitaly persistence volume size           | 50Gi                                     |
+| persistence.subPath          | Gitaly persistence volume mount path     |                                          |
+| persistence.storageClass     | storageClassName for provisioning        |                                          |
+| persistence.matchLabels      | Label-value matches to bind              |                                          |
+| persistence.matchExpressions | Label-expression matches to bind         |                                          |
+| extraInitContainers          | List of extra init containers to include |                                          |
+| extraContainers              | List of extra containers to include      |                                          |
+| extraVolumes                 | List of extra volumes to create          |                                          |
+| extraVolumeMounts            | List of extra volumes mountes to do      |                                          |
+| annotations                  | Pod annotations                          |                                          |
 
 ## Chart configuration examples
 ### image.pullSecrets

@@ -29,11 +29,13 @@ spec:
             backend:
               serviceName: {{ template "minio.fullname" . }}-svc
               servicePort: {{ .Values.servicePort }}
-  {{- if $tlsSecret }}
+  {{- if (and $tlsSecret (eq (include "gitlab.ingress.tls.enabled" $) "true" )) }}
   tls:
     - hosts:
       - {{ $minioHostname }}
       secretName: {{ $tlsSecret }}
+  {{- else }}
+  tls: []
   {{- end }}
 {{- end -}}
 {{- end -}}

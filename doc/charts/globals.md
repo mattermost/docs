@@ -63,8 +63,11 @@ The above config would result in using external hostnames like: `gitlab-staging.
 
 #### https
 
-Set to false for external urls to use `http://` instead of `https`. Defaults to true. If set to true, you will need to ensure
-the nginx chart has access to the certificates.
+Set to false for external urls to use `http://` instead of `https`. Defaults to true.
+
+If set to true, you will need to ensure the nginx chart has access to the certificates.
+
+In cases where you have TLS-termination in front of your ingresses, you probably want to look at [`global.ingress.tls.enabled`](#globalingresstlsenabled)
 
 #### externalIP
 
@@ -146,6 +149,7 @@ The GitLab global host settings are located under the `global.ingress` key.
 |:---|:---|:------|
 |[global.ingress.enabled](#global-ingress-enabled)|boolean|true|
 |[global.ingress.configureCertmanager](#global-ingress-configurecertmanger)|boolean|true|
+|[global.ingress.tls.enabled](#global-ingress-tls-enabled)|boolean|true|
 |[global.ingress.tls.secretName](#global-ingress-tls-secretName)|string|(empty)|
 |[global.ingress.annotations.*annotation-key*](#global-ingress-annotations-annotation-key)|string|(empty)|
 
@@ -166,6 +170,12 @@ If `false`, and `global.ingress.tls.secretName` is not set, this will activate a
 - `registry.ingress.tls.secretName`
 - `minio.ingress.tls.secretName`
 - `global.ingress.annotations`
+
+Defaults to `true`.
+
+### global.ingress.tls.enabled
+
+When set to `false`, this disables TLS in Gitlab. This is useful for cases in which you cannot use TLS termination of ingresses, such as when you have a TLS-terminating proxy before the ingress controller. If you want to disable https completely, this should be set to `false` together with [`global.hosts.https`](#https)
 
 Defaults to `true`.
 
@@ -379,6 +389,7 @@ with the `global.appConfig` key.
 global:
   appConfig:
     enableUsagePing: true
+    enableImpersonation: true
     defaultCanCreateGroup: true
     usernameChangingEnabled: true
     issueClosingPattern:
@@ -452,6 +463,12 @@ application are described below.
 A flag to disable the [usage ping support](https://docs.gitlab.com/ee/user/admin_area/settings/usage_statistics.html).
 
 Defaults to `true`
+
+#### enableImpersonation
+
+A flag to disable [user impersonation by Administrators](https://docs.gitlab.com/ee/api/README.html#disable-impersonation).
+
+Defaults to `nil`.
 
 #### defaultCanCreateGroup
 
@@ -564,7 +581,7 @@ Defaults shown above.
 #### connection
 
 The `connection` property has been transitioned to a Kubernetes Secret. The contents
-of this secret should be a yaml config file.
+of this secret should be a YAML formatted file.
 
 Defaults to `{}` and will be ignored if `global.minio.enabled` is `true`.
 
@@ -576,13 +593,19 @@ Valid configuration keys can be found at
 [GitLab Job Artifacts Administration][artifactscon] documentation. This matches to
 [Fog](https://github.com/fog), and is different between provider modules.
 
-Example contents to be placed in the secret:
+Examples for [AWS][fog-aws] and [Google][fog-gcs] providers can be found in
+[examples/objectstorage](../../examples/objectstorage).
+- [rails.s3.yaml](../../examples/objectstorage/rails.s3.yaml)
+- [rails.gcs.yaml](../../examples/objectstorage/rails.gcs.yaml)
 
-```
-provider: AWS
-aws_access_key_id: BOGUS_ACCESS_KEY
-aws_secret_access_key: BOGUS_SECRET_KEY
-region: us-east-1
+[fog-aws]: https://fog.io/storage/#using-amazon-s3-and-fog
+[fog-gcs]: https://fog.io/storage/#google-cloud-storage
+
+Once a YAML file containing the contents of the `connection` has been created, use this file to create the secret in Kubernetes
+
+```bash
+kubectl create secret generic gitlab-rails-storage \
+    --from-file=connection=rails.yaml
 ```
 
 [artifactscon]: https://docs.gitlab.com/ee/administration/job_artifacts.html#s3-compatible-connection-settings
@@ -782,7 +805,7 @@ Name of the bucket to use from object storage provider. Defaults to
 #### connection
 
 Details of the Kubernetes secret that contains connection information for the
-object storage provider. The contents of this secret should be a yaml config file.
+object storage provider. The contents of this secret should be a YAML formatted file.
 
 Defaults to `{}` and will be ignored if `global.minio.enabled` is `true`.
 
@@ -790,16 +813,16 @@ This property has two sub-keys: `secret` and `key`.
 - `secret` is the name of a Kubernetes Secret. This value is required to use external object storage.
 - `key` is the name of the key in the secret which houses the YAML block. Defaults to `connection`.
 
-The content of the secret matches to [Fog](https://github.com/fog), and is
-different between provider modules.
+Examples for [AWS][fog-aws] and [Google][fog-gcs] providers can be found in
+[examples/objectstorage](../../examples/objectstorage).
+- [rails.s3.yaml](../../examples/objectstorage/rails.s3.yaml)
+- [rails.gcs.yaml](../../examples/objectstorage/rails.gcs.yaml)
 
-Example contents to be placed in the secret:
+Once a YAML file containing the contents of the `connection` has been created, create the secret in Kubernetes
 
-```
-provider: AWS
-aws_access_key_id: BOGUS_ACCESS_KEY
-aws_secret_access_key: BOGUS_SECRET_KEY
-region: us-east-1
+```bash
+kubectl create secret generic gitlab-rails-storage \
+    --from-file=connection=rails.yaml
 ```
 
 ## Configure GitLab Shell

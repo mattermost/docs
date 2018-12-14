@@ -55,12 +55,14 @@ spec:
                   release: {{ .Release.Name }}
       {{- end }}
       initContainers:
+{{ include "gitlab.extraInitContainers" . | indent 8 }}
 {{ include "gitlab.certificates.initContainer" . | indent 8 }}
         - name: configure
           command: ['sh']
           args: [ '-c', 'sh -x /config-unicorn/configure ; sh -x /config-workhorse/configure']
           image: {{ .Values.init.image }}:{{ .Values.init.tag }}
           volumeMounts:
+{{ include "gitlab.extraVolumeMounts" . | indent 10 }}
           - name: unicorn-config
             mountPath: /config-unicorn
             readOnly: true
@@ -97,6 +99,7 @@ spec:
             - name: WORKHORSE_ARCHIVE_CACHE_DISABLED
               value: "1"
           volumeMounts:
+{{ include "gitlab.extraVolumeMounts" . | indent 12 }}
             - name: unicorn-config
               mountPath: '/var/opt/gitlab/templates'
             - name: unicorn-secrets
@@ -106,6 +109,7 @@ spec:
 {{ toYaml .Values.init.resources | indent 12 }}
 {{- include "pullsecrets" .Values.image | indent 6}}
       containers:
+{{ include "gitlab.extraContainers" . | indent 8 }}
         - name: {{ .Chart.Name }}
           image: "{{ coalesce .Values.image.repository (include "image.repository" .) }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
           {{ template "gitlab.imagePullPolicy" . }}
@@ -153,6 +157,7 @@ spec:
               mountPath: /srv/gitlab/shared
               readOnly: false
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
+{{ include "gitlab.extraVolumeMounts" . | indent 12 }}
           livenessProbe:
             exec:
               command:
@@ -196,6 +201,7 @@ spec:
               mountPath: /srv/gitlab/shared
               readOnly: false
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
+{{ include "gitlab.extraVolumeMounts" . | indent 12 }}
           livenessProbe:
             exec:
               command:
@@ -210,6 +216,7 @@ spec:
           resources:
 {{ toYaml .Values.workhorse.resources | indent 12 }}
       volumes:
+{{ include "gitlab.extraVolumes" . | indent 6 }}
 {{- if .Values.metrics.enabled }}
       - name: unicorn-metrics
         emptyDir:
@@ -260,52 +267,12 @@ spec:
               items:
                 - key: {{ template "gitlab.workhorse.key" . }}
                   path: gitlab-workhorse/secret
-          {{- if .Values.global.minio.enabled }}
-          - secret:
-              name: {{ template "gitlab.minio.credentials.secret" . }}
-              items:
-                - key: accesskey
-                  path: minio/accesskey
-                - key: secretkey
-                  path: minio/secretkey
-          {{- end }}
-          {{- if .Values.global.appConfig.lfs.connection }}
-          - secret:
-              name: {{ .Values.global.appConfig.lfs.connection.secret }}
-              items:
-                - key: {{ default "connection" .Values.global.appConfig.lfs.connection.key }}
-                  path: objectstorage/lfs
-          {{- end }}
-          {{- if .Values.global.appConfig.artifacts.connection }}
-          - secret:
-              name: {{ .Values.global.appConfig.artifacts.connection.secret }}
-              items:
-                - key: {{ default "connection" .Values.global.appConfig.artifacts.connection.key }}
-                  path: objectstorage/artifacts
-          {{- end }}
-          {{- if .Values.global.appConfig.uploads.connection }}
-          - secret:
-              name: {{ .Values.global.appConfig.uploads.connection.secret }}
-              items:
-                - key: {{ default "connection" .Values.global.appConfig.uploads.connection.key }}
-                  path: objectstorage/uploads
-          {{- end }}
-          {{- if .Values.global.appConfig.packages.connection }}
-          - secret:
-              name: {{ .Values.global.appConfig.packages.connection.secret }}
-              items:
-                - key: {{ default "connection" .Values.global.appConfig.packages.connection.key }}
-                  path: objectstorage/packages
-          {{- end }}
-          {{- if .Values.global.appConfig.omniauth.providers }}
-          {{-   range $index, $entry := .Values.global.appConfig.omniauth.providers }}
-          - secret:
-              name: {{ $entry.secret }}
-              items:
-                - key: {{ default "provider" $entry.key }}
-                  path: omniauth/{{ $entry.secret }}/provider
-          {{-   end }}
-          {{- end }}
+          {{- include "gitlab.minio.mountSecrets" $ | nindent 10 }}
+          {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "artifacts" "config" $.Values.global.appConfig.artifacts) | nindent 10 }}
+          {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "lfs" "config" $.Values.global.appConfig.lfs) | nindent 10 }}
+          {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "uploads" "config" $.Values.global.appConfig.uploads) | nindent 10 }}
+          {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "packages" "config" $.Values.global.appConfig.packages) | nindent 10 }}
+          {{- include "gitlab.appConfig.omniauth.mountSecrets" $ | nindent 10 }}
           {{- if and $.Values.global.smtp.enabled $.Values.global.smtp.authentication }}
           - secret:
               name: {{ .Values.global.smtp.password.secret | required "Missing required secret containing the SMTP password. Make sure to set `global.smtp.password.secret`" }}
@@ -320,11 +287,9 @@ spec:
         emptyDir:
           medium: "Memory"
       - name: shared-upload-directory
-        emptyDir:
-          medium: "Memory"
+        emptyDir: {}
       - name: shared-artifact-directory
-        emptyDir:
-          medium: "Memory"
+        emptyDir: {}
 {{ include "gitlab.certificates.volumes" . | indent 6 }}
     {{- if .Values.nodeSelector }}
       nodeSelector:

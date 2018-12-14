@@ -35,106 +35,18 @@ data:
         email_display_name: GitLab
         email_reply_to: noreply@example.com
         email_subject_suffix: ''
-        default_projects_features:
-          issues: true
-          merge_requests: true
-          wiki: true
-          snippets: true
-          builds: true
-          container_registry: true
+        {{- include "gitlab.appConfig.defaultProjectsFeatures.configuration" $ | nindent 8 }}
       incoming_email:
         enabled: false
       artifacts:
         enabled: true
-      lfs:
-        enabled: {{ eq .Values.global.appConfig.lfs.enabled true }}
-        object_store:
-          enabled: true
-          {{- if .Values.global.minio.enabled }}
-          remote_directory: {{ .Values.minio.bucket }}
-          {{- else }}
-          remote_directory: {{ .Values.global.appConfig.lfs.bucket }}
-          {{- end }}
-          direct_upload: true
-          background_upload: false
-          proxy_download: {{ eq .Values.global.appConfig.lfs.proxy_download true }}
-          {{- if .Values.global.minio.enabled }}
-          connection:
-            provider: AWS
-            region: us-east-1
-            aws_access_key_id: "<%= File.read('/etc/gitlab/objectstorage/accesskey') %>"
-            aws_secret_access_key: "<%= File.read('/etc/gitlab/objectstorage/secretkey') %>"
-            host: {{ template "gitlab.minio.hostname" . }}
-            endpoint: {{ template "gitlab.minio.endpoint" . }}
-            path_style: true
-          {{- else if .Values.global.appConfig.lfs.connection }}
-          connection: <%= YAML.load_file("/etc/gitlab/objectstorage/lfs").to_json() %>
-          {{- end }}
-      packages:
-        enabled: {{ eq .Values.global.appConfig.packages.enabled true }}
-        storage_path: /srv/gitlab/shared/packages
-        object_store:
-          enabled: true
-          remote_directory: {{ .Values.global.appConfig.packages.bucket }}
-          direct_upload: true
-          background_upload: false
-          proxy_download: {{ eq .Values.global.appConfig.packages.proxy_download true }}
-          {{- if .Values.global.minio.enabled }}
-          connection:
-            provider: AWS
-            region: us-east-1
-            aws_access_key_id: "<%= File.read('/etc/gitlab/objectstorage/accesskey') %>"
-            aws_secret_access_key: "<%= File.read('/etc/gitlab/objectstorage/secretkey') %>"
-            host: {{ template "gitlab.minio.hostname" . }}
-            endpoint: {{ template "gitlab.minio.endpoint" . }}
-            path_style: true
-          {{- else if .Values.global.appConfig.packages.connection }}
-          connection: <%= YAML.load_file("/etc/gitlab/objectstorage/packages").to_json() %>
-          {{- end }}
-      pseudonymizer:
-        manifest: config/pseudonymizer.yml
-        upload:
-          remote_directory: {{ .Values.global.appConfig.pseudonymizer.bucket }}
-          {{- if .Values.global.minio.enabled }}
-          connection:
-            provider: AWS
-            region: us-east-1
-            aws_access_key_id: "<%= File.read('/etc/gitlab/objectstorage/accesskey') %>"
-            aws_secret_access_key: "<%= File.read('/etc/gitlab/objectstorage/secretkey') %>"
-            host: {{ template "gitlab.minio.hostname" . }}
-            endpoint: {{ template "gitlab.minio.endpoint" . }}
-            path_style: true
-          {{- else if .Values.global.appConfig.pseudonymizer.connection }}
-          connection: <%= YAML.load_file("/etc/gitlab/objectstorage/pseudonymizer").to_json() %>
-          {{- end }}
+      {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "lfs" "config" $.Values.global.appConfig.lfs "context" $) | nindent 6 }}
+      {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "packages" "config" $.Values.global.appConfig.packages "context" $) | nindent 6 }}
+      {{- include "gitlab.appConfig.pseudonymizer.configuration" $ | nindent 6 }}
       pages:
         enabled: false
-      {{- with .Values.global.appConfig }}
-      ldap:
-      {{- if not .ldap.servers }}
-        enabled: false
-      {{- else }}
-        enabled: true
-        servers:
-{{ toYaml .ldap.servers | indent 10 }}
-      {{- end }}
-      omniauth:
-        enabled: {{ .omniauth.enabled }}
-        auto_sign_in_with_provider: {{ .omniauth.autoSignInWithProvider | quote }}
-        sync_profile_from_provider: {{ .omniauth.syncProfileFromProvider }}
-        sync_profile_attributes: {{ .omniauth.syncProfileAttributes }}
-        allow_single_sign_on: {{ .omniauth.allowSingleSignOn }}
-        block_auto_created_users: {{ .omniauth.blockAutoCreatedUsers }}
-        auto_link_ldap_user: {{ .omniauth.autoLinkLdapUser }}
-        auto_link_saml_user: {{ .omniauth.autoLinkSamlUser }}
-        external_providers: {{ .omniauth.externalProviders }}
-        {{- if .omniauth.providers }}
-        providers:
-        {{-   range $index, $entry := .omniauth.providers }}
-          - <%= YAML.load_file("/etc/gitlab/omniauth/{{ $entry.secret }}/provider").to_json() %>
-        {{-   end }}
-        {{- end }}
-      {{- end }}
+      {{- include "gitlab.appConfig.ldap.configuration" $ | nindent 6 }}
+      {{- include "gitlab.appConfig.omniauth.configuration" $ | nindent 6 }}
       gitaly:
         client_path: /home/git/gitaly/bin
         token: "<%= File.read('/etc/gitlab/gitaly/gitaly_token') %>"
@@ -167,15 +79,7 @@ data:
 {{ toYaml .Values.rack_attack.git_basic_auth | indent 10 }}
           {{- end }}
       ## Registry Integration
-      registry:
-        enabled: true
-        host: {{ template "gitlab.registry.host" . }}
-        {{- if .Values.registry.port }}
-        port: {{ .Values.registry.port }}
-        {{- end }}
-        api_url: {{ default "http" .Values.registry.api.protocol }}://{{ template "gitlab.registry.api.host" . }}:{{ default 5000 .Values.registry.api.port }}
-        key: /etc/gitlab/registry/gitlab-registry.key
-        issuer: {{ .Values.registry.tokenIssuer }}
+      {{- include "gitlab.appConfig.registry.configuration" $ | nindent 6 }}
   configure: |
     set -e
     mkdir -p /init-secrets/redis /init-secrets/shell /init-secrets/gitaly \
@@ -191,6 +95,10 @@ data:
       mkdir -p /init-secrets/objectstorage
       cp -r /init-config/objectstorage/. /init-secrets/objectstorage/
     fi
+    if [ -e /init-config/minio ]; then
+      mkdir -p /init-secrets/minio
+      cp -r /init-config/minio/. /init-secrets/minio/
+    fi
 
     if [ -e /init-config/omniauth ]; then
       mkdir -p /init-secrets/omniauth
@@ -200,8 +108,8 @@ data:
     if [ ! -f /init-secrets/objectstorage/.s3cfg ]; then
     cat <<EOF > /init-secrets/.s3cfg
     [default]
-    access_key = $(cat /init-secrets/objectstorage/accesskey)
-    secret_key = $(cat /init-secrets/objectstorage/secretkey)
+    access_key = $(cat /init-secrets/minio/accesskey)
+    secret_key = $(cat /init-secrets/minio/secretkey)
     bucket_location = us-east-1
     host_base = {{ template "gitlab.minio.hostname" . }}
     host_bucket = {{ template "gitlab.minio.hostname" . }}/%(bucket)

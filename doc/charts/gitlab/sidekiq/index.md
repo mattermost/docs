@@ -20,28 +20,32 @@ The `sidekiq` chart is configured in three parts: chart-wide external services, 
 
 Table below contains all the possible charts configurations that can be supplied to `helm install` command using the `--set` flags
 
-| Parameter                 | Description                                    | Default                                          |
-| ---                       | ---                                            | ---                                              |
-| image.repository          | Sidekiq image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee |
-| image.tag                 | Sidekiq image tag                              |                                                  |
-| image.pullPolicy          | Sidekiq image pull policy                      | Always                                           |
-| image.pullSecrets         | Secrets for the image repository               |                                                  |
-| init.image                | initContainer image                            | busybox                                          |
-| init.tag                  | initContainer image tag                        | latest                                           |
-| enabled                   | Sidekiq enabled flag                           | true                                             |
-| metrics.enabled           | Toggle Prometheus metrics exporter             | true                                             |
-| redis.serviceName         | Redis service name                             | redis                                            |
-| psql.password.secret      | psql password secret                           | gitlab-postgres                                  |
-| psql.password.key         | key to psql password in psql secret            | psql-password                                    |
-| gitaly.serviceName        | gitaly service name                            | gitaly                                           |
-| cron_jobs                 | Auxiliary cron jobs                            | {}                                               |
-| replicas                  | Sidekiq replicas                               | 1                                                |
-| concurrency               | Sidekiq default concurrency                    | 10                                               |
-| hpa.targetAverageValue    | Set the autoscaling target value               | 400m                                             |
-| timeout                   | Sidekiq job timeout                            | 5                                                |
-| resources.requests.cpu    | Sidekiq minimum needed cpu                     | 100m                                             |
-| resources.requests.memory | Sidekiq minimum needed memory                  | 600M                                             |
-| annotations               | Pod annotations                                |                                                  |
+| Parameter                 | Description                              | Default                                                    |
+| ---                       | ---                                      | ---                                                        |
+| image.repository          | Sidekiq image repository                 | registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee |
+| image.tag                 | Sidekiq image tag                        |                                                            |
+| image.pullPolicy          | Sidekiq image pull policy                | Always                                                     |
+| image.pullSecrets         | Secrets for the image repository         |                                                            |
+| init.image                | initContainer image                      | busybox                                                    |
+| init.tag                  | initContainer image tag                  | latest                                                     |
+| enabled                   | Sidekiq enabled flag                     | true                                                       |
+| metrics.enabled           | Toggle Prometheus metrics exporter       | true                                                       |
+| redis.serviceName         | Redis service name                       | redis                                                      |
+| psql.password.secret      | psql password secret                     | gitlab-postgres                                            |
+| psql.password.key         | key to psql password in psql secret      | psql-password                                              |
+| gitaly.serviceName        | gitaly service name                      | gitaly                                                     |
+| cron_jobs                 | Auxiliary cron jobs                      | {}                                                         |
+| replicas                  | Sidekiq replicas                         | 1                                                          |
+| concurrency               | Sidekiq default concurrency              | 10                                                         |
+| hpa.targetAverageValue    | Set the autoscaling target value         | 400m                                                       |
+| timeout                   | Sidekiq job timeout                      | 5                                                          |
+| resources.requests.cpu    | Sidekiq minimum needed cpu               | 100m                                                       |
+| resources.requests.memory | Sidekiq minimum needed memory            | 600M                                                       |
+| extraInitContainers       | List of extra init containers to include |                                                            |
+| extraContainers           | List of extra containers to include      |                                                            |
+| extraVolumes              | List of extra volumes to create          |                                                            |
+| extraVolumeMounts         | List of extra volumes mountes to do      |                                                            |
+| annotations               | Pod annotations                          |                                                            |
 
 ## Chart configuration examples
 ### image.pullSecrets

@@ -4,24 +4,24 @@ Defaults to using the information from the chart appVersion field, but can be
 overridden using the global.gitlabVersion field in values.
 */}}
 {{- define "gitlab.operator.gitlabVersion" -}}
-{{- template "gitlab.operator.parseAppVersion" (coalesce .Values.global.gitlabVersion .Chart.AppVersion) -}}
+{{- template "gitlab.parseAppVersion" (coalesce .Values.global.gitlabVersion .Chart.AppVersion) -}}
 {{- end -}}
 
 {{/*
-Returns a Gitlab version from the passed in app version or branchname
+Returns a image tag from the passed in version
 
 If the version is 'master' we use the 'latest' image tag.
-Else if the version is a semver version, we use the 'x.x.x' semver notation.
+Else if the version is a 'x.x' version, we use the 'vx.x.x' image tag
 Else we just use the version passed as the image tag
 */}}
-{{- define "gitlab.operator.parseAppVersion" -}}
-{{- $appVersion := coalesce . "master" -}}
-{{- if eq $appVersion "master" -}}
+{{- define "gitlab.operator.parseVersion" -}}
+{{- $version := (coalesce . "master") | toString -}}
+{{- if eq $version "master" -}}
 latest
-{{- else if regexMatch "^\\d+\\.\\d+\\.\\d+(-rc\\d+)?(-pre)?$" $appVersion -}}
-{{- printf "%s" $appVersion -}}
+{{- else if regexMatch "^\\d+\\.\\d+$" $version -}}
+{{- printf "v%s" $version -}}
 {{- else -}}
-{{- $appVersion -}}
+{{- $version -}}
 {{- end -}}
 {{- end -}}
 

@@ -28,11 +28,13 @@ spec:
         runAsUser: 1000
         fsGroup: 1000
       initContainers:
+{{ include "gitlab.extraInitContainers" . | indent 8 }}
 {{ include "gitlab.certificates.initContainer" . | indent 8 }}
         - name: configure
           command: ['sh', '/config/configure']
           image: {{ .Values.init.image }}:{{ .Values.init.tag }}
           volumeMounts:
+{{ include "gitlab.extraVolumeMounts" . | indent 10 }}
           - name: task-runner-config
             mountPath: /config
             readOnly: true
@@ -46,6 +48,7 @@ spec:
 {{ toYaml .Values.init.resources | indent 12 }}
 {{- include "pullsecrets" .Values.image | indent 6}}
       containers:
+{{ include "gitlab.extraContainers" . | indent 8 }}
         - name: {{ .Chart.Name }}
           args:
             - /bin/bash
@@ -75,6 +78,7 @@ spec:
             - name: CONFIG_DIRECTORY
               value: '/srv/gitlab/config'
           volumeMounts:
+{{ include "gitlab.extraVolumeMounts" . | indent 12 }}
             - name: task-runner-config
               mountPath: '/var/opt/gitlab/templates'
             - name: task-runner-secrets
@@ -87,6 +91,7 @@ spec:
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
+{{ include "gitlab.extraVolumes" . | indent 6 }}
       - name: task-runner-config
         projected:
           sources:
@@ -130,50 +135,18 @@ spec:
               items:
                 - key: registry-auth.key
                   path: registry/gitlab-registry.key
+          {{- if not .Values.global.minio.enabled }}
           - secret:
-              {{- if .Values.global.minio.enabled }}
-              name: {{ include "gitlab.minio.credentials.secret" . }}
-              items:
-                - key: accesskey
-                  path: objectstorage/accesskey
-                - key: secretkey
-                  path: objectstorage/secretkey
-          {{- else }}
               name: {{ required "A valid backups.objectStorage.config.secret is needed!" .Values.backups.objectStorage.config.secret }}
               items:
                 - key: {{ default "config" .Values.backups.objectStorage.config.key }}
                   path: objectstorage/.s3cfg
           {{- end }}
-          {{- if .Values.global.appConfig.lfs.connection }}
-          - secret:
-              name: {{ .Values.global.appConfig.lfs.connection.secret }}
-              items:
-                - key: {{ default "connection" .Values.global.appConfig.lfs.connection.key }}
-                  path: objectstorage/lfs
-          {{- end }}
-          {{- if .Values.global.appConfig.packages.connection }}
-          - secret:
-              name: {{ .Values.global.appConfig.packages.connection.secret }}
-              items:
-                - key: {{ default "connection" .Values.global.appConfig.packages.connection.key }}
-                  path: objectstorage/packages
-          {{- end }}
-          {{- if .Values.global.appConfig.omniauth.providers }}
-          {{-   range $index, $entry := .Values.global.appConfig.omniauth.providers }}
-          - secret:
-              name: {{ $entry.secret }}
-              items:
-                - key: {{ default "provider" $entry.key }}
-                  path: omniauth/{{ $entry.secret }}/provider
-          {{-   end }}
-          {{-   end }}
-          {{- if .Values.global.appConfig.pseudonymizer.connection }}
-          - secret:
-              name: {{ .Values.global.appConfig.pseudonymizer.connection.secret }}
-              items:
-                - key: {{ default "connection" .Values.global.appConfig.pseudonymizer.connection.key }}
-                  path: objectstorage/pseudonymizer
-          {{- end }}
+          {{- include "gitlab.minio.mountSecrets" $ | nindent 10 }}
+          {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "lfs" "config" $.Values.global.appConfig.lfs) | nindent 10 }}
+          {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "packages" "config" $.Values.global.appConfig.packages) | nindent 10 }}
+          {{- include "gitlab.appConfig.pseudonymizer.mountSecrets" $ | nindent 10 }}
+          {{- include "gitlab.appConfig.omniauth.mountSecrets" $ | nindent 10 }}
       - name: task-runner-secrets
         emptyDir:
           medium: "Memory"

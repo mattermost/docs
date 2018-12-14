@@ -22,6 +22,7 @@ ingress:
   proxyBuffering: "off"
   tls: {}
     # secretName:
+    # enabled: true
   annotations: {}
 
 global:
@@ -30,6 +31,7 @@ global:
     annotations: {}
     tls: {}
       # secretName:
+      # enabled: true
   hosts:
     domain: example.com
     hostSuffix:

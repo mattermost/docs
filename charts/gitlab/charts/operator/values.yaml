@@ -7,6 +7,9 @@ image:
   pullSecrets: []
   # pullPolicy: IfNotPresent
 
+# Which version of the operator to deploy
+version: 0.1
+
 init:
   resources:
     requests:

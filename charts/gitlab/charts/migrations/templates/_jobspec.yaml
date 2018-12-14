@@ -17,11 +17,13 @@ spec:
         runAsUser: 1000
         fsGroup: 1000
       initContainers:
+{{ include "gitlab.extraInitContainers" . | indent 8 }}
 {{ include "gitlab.certificates.initContainer" . | indent 8 }}
         - name: configure
           command: ['sh', '/config/configure']
           image: {{ .Values.init.image }}:{{ .Values.init.tag }}
           volumeMounts:
+{{ include "gitlab.extraVolumeMounts" . | indent 10 }}
           - name: migrations-config
             mountPath: /config
             readOnly: true
@@ -36,6 +38,7 @@ spec:
       restartPolicy: OnFailure
 {{- include "pullsecrets" .Values.image | indent 6}}
       containers:
+{{ include "gitlab.extraContainers" . | indent 8 }}
         - name: {{ .Chart.Name }}
           image: "{{ coalesce .Values.image.repository (include "image.repository" .) }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
           args:
@@ -66,10 +69,12 @@ spec:
             - name: migrations-secrets
               mountPath: /srv/gitlab/config/initial_root_password
               subPath: migrations/initial_root_password
+{{ include "gitlab.extraVolumeMounts" . | indent 12 }}
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
+{{ include "gitlab.extraVolumes" . | indent 6 }}
       - name: migrations-config
         configMap:
           name: {{ template "fullname" . }}

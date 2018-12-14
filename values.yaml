@@ -17,6 +17,8 @@ global:
     configureCertmanager: true
     annotations: {}
     enabled: true
+    # tls:
+    #   enabled: true
   initialRootPassword: {}
   psql:
     password: {}
@@ -36,6 +38,7 @@ global:
     credentials: {}
   appConfig:
     enableUsagePing: true
+    enableImpersonation:
     defaultCanCreateGroup: true
     usernameChangingEnabled: true
     issueClosingPattern:

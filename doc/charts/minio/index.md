@@ -23,7 +23,8 @@ minio:
   ingress:
     enabled:
     tls:
-      secretName
+      enabled:
+      secretName:
     annotations:
     proxyReadTimeout:
     proxyBodySize:
@@ -129,6 +130,12 @@ Setting that controls whether to create ingress objects for services that suppor
 When `false` the `global.ingress.enabled` setting is used.
 
 Defaults to `false`.
+
+### tls.enabled
+
+When set to `false`, you disable TLS for Minio. This is mainly useful for cases in which you cannot use TLS termination at ingress-level, like when you have a TLS-terminating proxy before the ingress controller.
+
+Defaults to `true`.
 
 ### tls.secretName
 
