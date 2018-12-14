@@ -1,6 +1,6 @@
 .. _custom-terms-of-service:
 
-Custom Terms of Service (E20)
+Custom Terms of Service (Beta) (E20)
 =====================================
 
 Available in `Enterprise Edition E20 and higher <https://about.mattermost.com/pricing/>`_.
@@ -25,6 +25,12 @@ Once saved, all users must accept the terms of service by clicking **I Agree** n
  If you make an update to your Terms of Service, make sure to update your terms of service link at **System Console > Customization > Legal and Support > Terms of Service link**.
  
  This link is presented to all users on each log in, and is easily accessible to end users after accepting the terms.
+ 
+ .. note::
+ Please note there are a known issue with this feature: 
+ 
+ 1. `Login is not working when Terms of Service is enabled and MFA is enforced <https://mattermost.atlassian.net/browse/MM-13509>`_.
+  
 
 Frequently Asked Questions
 ----------------------------
