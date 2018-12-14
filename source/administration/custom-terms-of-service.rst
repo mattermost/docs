@@ -1,6 +1,6 @@
 .. _custom-terms-of-service:
 
-Custom Terms of Service (E20)
+Custom Terms of Service (Beta) (E20)
 =====================================
 
 Available in `Enterprise Edition E20 and higher <https://about.mattermost.com/pricing/>`_.
@@ -48,3 +48,13 @@ Why isn't this feature in Team Edition for GDPR compliance?
 Terms of service is presented to users on login and account creation, and available to users at all times in the link specified at **System Console > Customization > Legal and Support > Terms of Service link**.
 
 This feature is intended to meet compliance requirements for large Enterprise companies.
+
+Why are custom terms of service beta?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This feature is labelled as beta while we verify the quality of the feature in various scenarios. Known issues include:
+
+- Login fails when custom terms of service is enabled and MFA is enforced.
+- Terms of service re-appears on page refresh even if it was already accepted.
+- Terms of service text disappears in the System Console on save until next refresh.
+- Terms of service loads immediately following an update to terms, instead of after login or a page refresh.

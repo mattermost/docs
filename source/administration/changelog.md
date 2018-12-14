@@ -151,6 +151,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Custom Terms of Service returns on refresh after clicking to agree.
  - Google login fails on the Classic mobile apps.
  - User can receive a video call from another browser tab while already on a call.
