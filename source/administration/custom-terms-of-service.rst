@@ -50,7 +50,7 @@ Terms of service is presented to users on login and account creation, and availa
 This feature is intended to meet compliance requirements for large Enterprise companies.
 
 Why are custom terms of service beta?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This feature is labelled as beta while we verify the quality of the feature in various scenarios. Known issues include:
 
