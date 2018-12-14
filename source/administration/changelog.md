@@ -67,7 +67,7 @@ Release date: 2018-12-16
  - Added an option to send a message when an invalid slash command is entered.
 
 #### Administration
- - Terms of Service promoted out of beta, with support for mobile apps.
+ - Added mobile support for Custom Terms of Service (Beta)
  - Removed **System Console > Plugins (Beta) > Configuration** page and moved enabling plugins setting to the **Plugins (Beta) > Management** page.
  - Introduced mlog/human package to consume and reformat structured logging with a human readable output.
 
