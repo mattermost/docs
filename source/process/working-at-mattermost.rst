@@ -117,21 +117,27 @@ Please take off holidays relevant to your culture, resident country and preferen
 
 We're headquartered in the US and have a large Canadian contingent, so below are holidays we're expecting people from those countries to take off:
 
-US & Canadian Holidays for 2018:
+Remaining US & Canadian Holidays for 2018:
 
-- US & Canadian New Year's (1/1/2018)
-- Canadian Family Day (2/19/2018)
-- US & Canadian Good Friday (3/30/2018)
-- Canadian Victoria Day (5/21/2018)
-- Canada Day (7/1/2018)
-- Canada Day additional statutory holiday (7/2/2018)
-- US Independence Day (7/4/2018)
-- Canadian Civic / Provincial Day (8/6/2018)
-- US Labor Day, Canadian Labour Day (9/3/2018)
-- Canadian Thanksgiving (10/8/2018)
-- US Thanksgiving (11/22/2018)
 - US & Canadian Christmas Day (12/25/2018)
 - Canadian Boxing Day (12/26/2018)
+
+US & Canadian Holidays for 2019:
+
+- US & Canadian New Year's (1/1/2019)
+- Canadian Family Day (2/18/2019)
+- US & Canadian Good Friday (4/19/2019)
+- Canadian Victoria Day (5/20/2019)
+- Canada Day (7/1/2019)
+- Canada Day additional statutory holiday (7/2/2019)
+- US Independence Day (7/4/2019)
+- Canadian Civic / Provincial Day (8/5/2019)
+- US Labor Day, Canadian Labour Day (9/2/2019)
+- Canadian Thanksgiving (10/14/2019)
+- US Thanksgiving (11/28/2019)
+- US & Canadian Christmas Day (12/25/2019)
+- Canadian Boxing Day (12/26/2019)
+
 
 It's up to meeting chairs to decide whether to reschedule if few people can attend (e.g. if there are a lot of US or Canadians in the meeting).
 
