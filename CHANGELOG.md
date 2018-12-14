@@ -2,6 +2,15 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.3.4 (2018-12-14)
+
+### Other (3 changes)
+
+- Update GitLab Runner chart 0.1.38. !590
+- Fix Broken Icon Image on Helm Hub. !597
+- Update GitLab Version to 11.5.4.
+
+
 ## 1.3.3 (2018-12-06)
 
 ### Other (1 change)
