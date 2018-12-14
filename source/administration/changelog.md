@@ -151,6 +151,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
+ - Custom Terms of Service returns on refresh after clicking to agree.
  - Google login fails on the Classic mobile apps.
  - User can receive a video call from another browser tab while already on a call.
  - Jump link in search results does not always jump to display the expected post.
