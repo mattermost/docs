@@ -1,6 +1,6 @@
 .. _custom-terms-of-service:
 
-Custom Terms of Service (E20)
+Custom Terms of Service (Beta) (E20)
 =====================================
 
 Available in `Enterprise Edition E20 and higher <https://about.mattermost.com/pricing/>`_.
@@ -49,10 +49,12 @@ Terms of service is presented to users on login and account creation, and availa
 
 This feature is intended to meet compliance requirements for large Enterprise companies.
 
-Known Issues
-----------------------------
+Why are custom terms of service beta?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
- - Custom Terms of Service does not display for SAML or oAuth on mobile apps.
- - Custom Terms of Service returns on refresh after clicking to agree.
- 
+This feature is labelled as beta while we verify the quality of the feature in various scenarios. Known issues include:
+
+- Login fails when custom terms of service is enabled and MFA is enforced.
+- Terms of service re-appears on page refresh even if it was already accepted.
+- Terms of service text disappears in the System Console on save until next refresh.
+- Terms of service loads immediately following an update to terms, instead of after login or a page refresh.
