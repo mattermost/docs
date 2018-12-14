@@ -48,3 +48,11 @@ Why isn't this feature in Team Edition for GDPR compliance?
 Terms of service is presented to users on login and account creation, and available to users at all times in the link specified at **System Console > Customization > Legal and Support > Terms of Service link**.
 
 This feature is intended to meet compliance requirements for large Enterprise companies.
+
+Known Issues
+----------------------------
+
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Custom Terms of Service does not display for SAML or oAuth on mobile apps.
+ - Custom Terms of Service returns on refresh after clicking to agree.
+ 
