@@ -10,7 +10,7 @@ service:
   internalPort: 5000
   clusterIP: '0.0.0.0'
 
-## Enable/Disable
+## Enable/Disable Chart
 enabled: true
 
 ingress:
@@ -98,8 +98,9 @@ resources:
     cpu: 50m
     memory: 32Mi
 
-# Chart operation controls
-enabled: true
+## Node labels for pod assignment
+## ref: https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector
+nodeSelector: {}
 # Protocol/Host only. '/jwt/auth' will be appended.
 authEndpoint:
 # Do not change this
