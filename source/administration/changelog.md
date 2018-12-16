@@ -6,7 +6,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.6
 
-Release date: 2018-12-16
+Release date: 2018-12-14
 
 ### Highlights
 
