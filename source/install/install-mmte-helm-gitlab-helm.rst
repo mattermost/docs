@@ -9,11 +9,11 @@ Pre-requisites
 ----------------------------
 
   - A running Kubernetes cluster with PostgreSQL database.
-  - A running GitLab Helm Chart with chart name **<GITLAB>**.
-  - The name of the secret that holds your PostgreSQL password, ``<GITLAB>-postgresql-password``.
-  - The name of the secret that holds your Minio keys, ``<GITLAB>-minio-secret``.
-  - The service name for your PostgreSQL, ``<GITLAB>-postgresql``, and the port. If you installed the GitLab helm chart in ``default`` namespace, then the port is ``5432``.
-  - The service name for Minio and the port, ``<GITLAB>-minio-svc``, and the port. If you installed the GitLab helm chart in ``default`` namespace, then the port is ``9000``.
+  - A running GitLab Helm Chart with chart name ``<gitlab>``.
+  - The name of the secret that holds your PostgreSQL password, ``<gitlab>-postgresql-password``.
+  - The name of the secret that holds your Minio keys, ``<gitlab>-minio-secret``.
+  - The service name for your PostgreSQL, ``<gitlab>-postgresql``, and the port. If you installed the GitLab helm chart in ``default`` namespace, then the port is ``5432``.
+  - The service name for Minio and the port, ``<gitlab>-minio-svc``, and the port. If you installed the GitLab helm chart in ``default`` namespace, then the port is ``9000``.
   - The names of ``kubernetes.io/ingress.class``, ``kubernetes.io/ingress.provider`` and ``certmanager.k8s.io/issuer``.
 
 Deploy GitLab Helm Chart
@@ -27,13 +27,13 @@ Here is a light way to install it:
 
   $ helm upgrade --install gitlab gitlab/gitlab \
     --timeout 600 \
-    --set global.hosts.domain=<YOUR.DOMAIN> \
-    --set global.hosts.externalIP=<EXTERNAL.IP> \
-    --set certmanager-issuer.email=<EMAIL>
+    --set global.hosts.domain=``<your-domain>`` \
+    --set global.hosts.externalIP=``<external-ip>`` \
+    --set certmanager-issuer.email=``<email>``
 
-- **<YOUR.DOMAIN>**: your desired domain, eg. ``gitlab.example.com``
-- **<EXTERNAL.IP>**: the external IP pointing to your Kubernetes cluster
-- **<EMAIL>**: email to register in Let's Encrypt to retrieve TLS certificates
+- ``<your-domain>``: your desired domain, eg. ``gitlab.example.com``
+- ``<external-ip>``: the external IP pointing to your Kubernetes cluster
+- ``<email>``: email to register in Let's Encrypt to retrieve TLS certificates
 
 After all pods are running, log in to GitLab.
 
@@ -48,7 +48,8 @@ Deploy Mattermost Team Edition Helm Chart
 --------------------------------------------
 
 Requirements:
-  - Mattermost Team Edition Helm Chart Version => 1.4.0
+
+  - Mattermost Team Edition Helm Chart Version: 1.4.0
 
 To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``MySql`` chart and configure InitContainer and Environment variables in ``values.yaml`` as follows:
 
@@ -60,7 +61,7 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
 
   # Mattermost configuration:
   config:
-    siteUrl: "https://<YOUR.MATTERMOST.DOMAIN>"
+    siteUrl: "https://<your-mattermost-domain>"
     siteName: "Mattermost"
     enableSignUpWithEmail: false
 
@@ -68,30 +69,30 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
     enabled: true
     path: /
     annotations:
-      kubernetes.io/ingress.class:  <INGRESS.CLASS>
-      kubernetes.io/ingress.provider: <INGRESS.PROVIDER>
-      certmanager.k8s.io/issuer:  <CERTMANAGER.ISSUER>
+      kubernetes.io/ingress.class:  <ingress-class>
+      kubernetes.io/ingress.provider: <ingress-provider>
+      certmanager.k8s.io/issuer:  <certmanager-issuer>
     hosts:
-      - <YOUR.MATTERMOST.DOMAIN>
+      - <your-mattermost-domain>
     tls:
-      - secretName: <NAME.OF.YOUR.TLS.SECRET>
+      - secretName: <name-of-your-tls-secret>
         hosts:
-          - <YOUR.MATTERMOST.DOMAIN>
+          - <your-mattermost-domain>
 
   auth:
     gitlab:
       Enable: "true"
-      Secret: "<GITLAB.APP.SECRET>"
-      Id: "<GITLAB.APP.ID>"
+      Secret: "<gitlab-app-secret>"
+      Id: "<gitlab-app-id>"
       Scope: ""
-      AuthEndpoint: "https://<YOUR.GITLAB.DOMAIN>/oauth/authorize"
-      TokenEndpoint: "https://<YOUR.GITLAB.DOMAIN>/oauth/token"
-      UserApiEndpoint: "https://<YOUR.GITLAB.DOMAIN>/api/v4/user"
+      AuthEndpoint: "https://<your-gitlab-domain>/oauth/authorize"
+      TokenEndpoint: "https://<your-gitlab-domain>/oauth/token"
+      UserApiEndpoint: "https://<your-gitlab-domain>/api/v4/user"
 
   externalDB:
     enabled: true
-    existingUser: <GITLAB.POSTGRES.USERNAME>
-    existingSecret: "<GITLAB.POSTGRES.PASSWD.SECRET>"
+    existingUser: <gitlab-postgres-username>
+    existingSecret: "<gitlab-postgres.passwd-secret>"
 
   mysql:
     enabled: false
@@ -101,24 +102,24 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
     - name: POSTGRES_PASSWORD_GITLAB
       valueFrom:
         secretKeyRef:
-          name: <GITLAB.POSTGRES.PASSWD.SECRET>
+          name: <gitlab-postgres-passwd-secret>
           key: postgres-password
     - name: POSTGRES_USER_GITLAB
-      value: <GITLAB.POSTGRES.USERNAME>
+      value: <gitlab-postgres-username>
     - name: POSTGRES_HOST_GITLAB
-      value: <GITLAB.POSTGRES.HOST>
+      value: <gitlab-postgres-host>
     - name: POSTGRES_PORT_GITLAB
-      value: "<GITLAB.POSTGRES.PORT>"
+      value: "<gitlab-postgres-port>"
     - name: POSTGRES_DB_NAME_MATTERMOST
-      value: <MATTERMOST.DATABASE.NAME>
+      value: <mattermost-database-name>
     - name: MM_SQLSETTINGS_DRIVERNAME
       value: "postgres"
     - name: MM_SQLSETTINGS_DATASOURCE
       value: postgres://$(POSTGRES_USER_GITLAB):$(POSTGRES_PASSWORD_GITLAB)@$(POSTGRES_HOST_GITLAB):$(POSTGRES_PORT_GITLAB)/$(POSTGRES_DB_NAME_MATTERMOST)?sslmode=disable&connect_timeout=10
     - name: MINIO_ENDPOINT
-      value: <GITLAB.MINIO.HOST>
+      value: <gitlab-minio-host>
     - name: MINIO_PORT
-      value: "<GITLAB.MINIO.PORT>"
+      value: "<gitlab-minio-port>"
     - name: MM_FILESETTINGS_DRIVERNAME
       value: amazons3
     - name: MM_FILESETTINGS_AMAZONS3ENDPOINT
@@ -126,15 +127,15 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
     - name: MM_FILESETTINGS_AMAZONS3ACCESSKEYID
       valueFrom:
         secretKeyRef:
-          name: <GITLAB.MINIO.SECRET>
+          name: <gitlab-minio-secret>
           key: accesskey
     - name: MM_FILESETTINGS_AMAZONS3SECRETACCESSKEY
       valueFrom:
         secretKeyRef:
-          name: <GITLAB.MINIO.SECRET>
+          name: <gitlab-minio-secret>
           key: secretkey
     - name: MM_FILESETTINGS_AMAZONS3BUCKET
-      value: <MATTERMOST.MINIO.BUCKET.NAME>
+      value: <mattermost-minio-bucket-name>
 
 
   ## Additional init containers
@@ -149,13 +150,13 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
               name: gitlab-postgresql-password
               key: postgres-password
         - name: POSTGRES_USER_GITLAB
-          value: <GITLAB.POSTGRES.USERNAME>
+          value: <gitlab-postgres-username>
         - name: POSTGRES_HOST_GITLAB
-          value:<GITLAB.POSTGRES.HOST>
+          value:<gitlab-postgres-host>
         - name: POSTGRES_PORT_GITLAB
-          value: "<GITLAB.POSTGRES.PORT>"
+          value: "<gitlab-postgres-port>"
         - name: POSTGRES_DB_NAME_MATTERMOST
-          value: <MATTERMOST.DATABASE.NAME>
+          value: <mattermost-database-name>
       command:
         - sh
         - "-c"
@@ -172,21 +173,21 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
       image: "minio/mc:RELEASE.2018-07-13T00-53-22Z"
       env:
         - name: MINIO_ENDPOINT
-          value: <GITLAB.MINIO.HOST>
+          value: <gitlab-minio-host>
         - name: MINIO_PORT
-          value: "<GITLAB.MINIO.PORT>"
+          value: "<gitlab-minio-port>"
         - name: MINIO_ACCESS_KEY
           valueFrom:
             secretKeyRef:
-              name: <GITLAB.MINIO.SECRET>
+              name: <gitlab-minio-secret>
               key: accesskey
         - name: MINIO_SECRET_KEY
           valueFrom:
             secretKeyRef:
-              name: <GITLAB.MINIO.SECRET>
+              name: <gitlab-minio-secret>
               key: secretkey
         - name: MATTERMOST_BUCKET_NAME
-          value: <MATTERMOST.MINIO.BUCKET.NAME>
+          value: <mattermost-minio-bucket-name>
       command:
         - sh
         - "-c"
@@ -204,25 +205,25 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
             exit 0
           fi
 
-Values that you need to replace in the above ``values.yaml`` file:
+Values that you need to replace in the above ``values.yaml`` file are listed below. Note that we assume the GitLab chart name is ``gitlab``.
 
-- **<YOUR.MATTERMOST.DOMAIN>**: URL that users will use to access Mattermost, matching the `Site URL field <https://docs.mattermost.com/administration/config-settings.html#site-url>`_, e.g. **``mattermost.gitlab.example.com``**.
-- **<NAME.OF.YOUR.TLS.SECRET>**: A name to store the TLS certificate for you domains, e.g. ``mattermost-tls``.
-- **<INGRESS.CLASS>**: The ingress class. In a basic GitLab deployment, this is ``gitlab-nginx``.
-- **<INGRESS.PROVIDER>**: The ingress provider. In a basic GitLab deployment, this is ``nginx``.
-- **<CERTMANAGER.ISSUER>**: The cert manager issuer. In a basic GitLab deployment, this is ``gitlab-issuer``.
-- **<GITLAB.APP.SECRET>**: The Application secret, which you created in step `Create the OAUTH with GitLab`_.
-- **<GITLAB.APP.ID>**: The Application ID, which you created in step `Create the OAUTH with GitLab`_.
-- **<YOUR.GITLAB.DOMAIN>**: The GitLab domain name, e.g. ``gitlab.example.com``.
-- **<GITLAB.POSTGRES.USERNAME>**: The GitLab PostgreSQL username. Default is ``gitlab``.
-- **<GITLAB.POSTGRES.PASSWD.SECRET>**: Secret that holds your PostgreSQL password. Default is ``gitlab-postgresql-password``.
-- **<GITLAB.POSTGRES.HOST>**: Postgres host of your Kubernetes service. Default is ``gitlab-postgresql``.
-- **<GITLAB.POSTGRES.PORT>**: Postgres port of your Kubernetes service. Default is ``5432``.
-- **<MATTERMOST.DATABASE.NAME>**: Mattermost database, e.g. ``mattermost-db``.
-- **<GITLAB.MINIO.HOST>**: Minio host of your Kubernetes service. Default is ``gitlab-minio-svc``.
-- **<GITLAB.MINIO.PORT>**: Minio port of your Kubernetes service. Default is ``9000``.
-- **<GITLAB.MINIO.SECRET>**: Secret that holds your Minio keys. Default is ``gitlab-minio-secret``.
-- **<MATTERMOST.MINIO.BUCKET.NAME>**: Mattermost Minio bucket name, e.g. ``mattermost-data``.
+- ``<your-mattermost-domain>``: URL that users will use to access Mattermost, matching the `Site URL field <https://docs.mattermost.com/administration/config-settings.html#site-url>`_, e.g. ``mattermost.gitlab.example.com``.
+- <name-of-your-tls-secret>``: A name to store the TLS certificate for you domains, e.g. ``mattermost-tls``.
+- ``<ingress-class>``: The ingress class. In a basic GitLab deployment, this is ``gitlab-nginx``.
+- ``<ingress-provider>``: The ingress provider. In a basic GitLab deployment, this is ``nginx``.
+- ``<certmanager-issuer>``: The cert manager issuer. In a basic GitLab deployment, this is ``gitlab-issuer``.
+- ``<gitlab-ap-secret>``: The Application secret, which you created in step `Create the OAUTH with GitLab`_.
+- ``<gitlab-app-id>``: The Application ID, which you created in step `Create the OAUTH with GitLab`_.
+- ``<your-gitlab-domain>``: The GitLab domain name, e.g. ``gitlab.example.com``.
+- ``<gitlab-postgres.username>``: The GitLab PostgreSQL username. Default is ``gitlab``.
+- ``<gitlab-postgres.passwd-secret>``: Secret that holds your PostgreSQL password. Default is ``gitlab-postgresql-password``.
+- ``<gitlab-postgres-host>``: Postgres host of your Kubernetes service. Default is ``gitlab-postgresql``.
+- ``<gitlab-postgres-port>``: Postgres port of your Kubernetes service. Default is ``5432``.
+- ``<mattermost-database-name>``: Mattermost database, e.g. ``mattermost-db``.
+- ``<gitlab-minio-host>``: Minio host of your Kubernetes service. Default is ``gitlab-minio-svc``.
+- ``<gitlab-minio-port>``: Minio port of your Kubernetes service. Default is ``9000``.
+- ``<gitlab-minio-secret>``: Secret that holds your Minio keys. Default is ``gitlab-minio-secret``.
+- ``<mattermost-minio-bucket-name>``: Mattermost Minio bucket name, e.g. ``mattermost-data``.
 
 After these changes, deploy the Mattermost Team Edition Helm Chart with following command:
 
