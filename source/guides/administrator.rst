@@ -38,6 +38,7 @@ Learn how to get Mattermost running on your environment.
    /install/prod-docker*
    /install/docker-ebs*
    /install/deploy-cloudron*
+   Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
    /install/troubleshooting*
    /install/desktop*
    /install/smtp*
