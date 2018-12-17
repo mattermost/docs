@@ -19,7 +19,7 @@ Mattermost is a collaboration hub for highly-trusted organizations and is commit
 
 - **Security Infrastructure** - Continual investment in security, privacy and compliance capabilities 
 - **Contractual Obligations** - Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://about.mattermost.com/default-data-processing-addendum/>`_ in our standard `Terms of Service <https://about.mattermost.com/terms>`_
-- **Privacy Measures** - Privacy measures are outlined comprehensively in our `Privacy Policy <https://mattermost.com/privacy-policy/>`_.
+- **Privacy Measures** - Privacy measures are outlined in our `Privacy Policy <https://mattermost.com/privacy-policy/>`_.
 - **Product Features** to ensure data management and data portability
 
 To say up to date with our efforts, please subscribe to `our regular newsletter <https://about.mattermost.com/newsletter/>`_. 
