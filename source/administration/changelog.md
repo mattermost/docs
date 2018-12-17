@@ -80,8 +80,8 @@ Release date: 2018-12-16
 ### Compatibility
 
 #### Deprecated Features
- - Removed support for WebRTC in beta. Full details can be found [here](https://forum.mattermost.org/t/built-in-webrtc-video-and-audio-calls-removed-in-v5-6-in-favor-of-open-source-plugins/5998).
- - Removed support for IE11 Mobile View due to low usage and instability in order to invest that effort in maintaining a high quality experience on other more used browsers. Mobile View is still supported on Chrome, Firefox, Safari, Edge as well as the Desktop Apps.
+ - Replaced WebRTC prototype with other video and audio calling solutions. [Learn more here](https://docs.mattermost.com/deployment/video-and-audio-calling.html).
+ - Removed support for IE11 Mobile View due to low usage and instability in order to invest that effort in maintaining a high quality experience on other more used browsers. End users on IE11 will thus have an increased minimum screen size.
 
 #### config.json
 
