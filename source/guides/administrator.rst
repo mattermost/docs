@@ -202,3 +202,4 @@ Documentation on early previews and unofficial functionality.
 
    /install/prod-windows-2012*
    /developer/toolkit*
+   /deployment/video-and-audio-calling*
