@@ -16,7 +16,7 @@ data:
   generate-secrets: |
 {{ include (print $.Template.BasePath "/_generate_secrets.sh") . | indent 4 }}
 ---
-{{- if .Values.global.operator.enabled -}}
+{{ if .Values.global.operator.enabled -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
