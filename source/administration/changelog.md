@@ -7,8 +7,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v5.6
 
 - **v5.6.1, release date TBD** 
-  - Fixing an issue where a user is not redirected to the account creation page on a fresh install.
-  - Fixing an issue where a user created and promoted to System Admin via CLI could not access the System Console.
+  - Fixing an issue where a user is not redirected to the account creation page on a fresh install ([#13520](https://mattermost.atlassian.net/browse/MM-13520)).
+  - Fixing an issue where a user created and promoted to System Admin via CLI could not access the System Console ([#13536](https://mattermost.atlassian.net/browse/MM-13536)).
 - **v5.6.0, released 2018-12-16**
   - Original 5.6.0 release
 
