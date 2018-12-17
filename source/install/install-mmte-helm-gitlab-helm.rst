@@ -137,7 +137,6 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
     - name: MM_FILESETTINGS_AMAZONS3BUCKET
       value: <mattermost-minio-bucket-name>
 
-
   ## Additional init containers
   extraInitContainers: |
     - name: bootstrap-database
