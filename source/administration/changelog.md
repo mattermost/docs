@@ -7,8 +7,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v5.6
 
 - **v5.6.1, release date TBD** 
-  - Fixed an issue where a user was not redirected to the account creaion page on a fresh install.
-  - Fixed an issue where a user created and promoted to System Admin via CLI could not access the System Console.
+  - Fixing an issue where a user is not redirected to the account creation page on a fresh install.
+  - Fixing an issue where a user created and promoted to System Admin via CLI could not access the System Console.
 - **v5.6.0, released 2018-12-16**
   - Original 5.6.0 release
 
