@@ -28,7 +28,7 @@ Notice
 
 When the decision to deprecate a feature or function is made, the product manager responsible for the feature carries out the following actions:
 
-1. Adds the scheduled deprecation to the `deprecated features page <https://about.mattermost.com/deprecated-features/>`_, which has a record of past and future deprecations.
+1. Adds the scheduled deprecation to the `deprecated features page <https://about.mattermost.com/deprecated-features/>`_ with a note of what it's been replaced with, which has a record of past and future deprecations.
 2. Prepares a forum post describing the reasons for deprecating the feature, providing an opportunity for the community to share feedback. See a `sample forum post <https://forum.mattermost.org/t/switching-teammate-name-display-to-a-system-console-setting/3366>`_.
 3. Creates a JIRA ticket for removing the feature, including a prefix “Deprecation:” and a fix version matching the removal target date.
 
