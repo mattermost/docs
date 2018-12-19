@@ -8,7 +8,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 - **v5.6.1, release date TBD** 
   - Fixing an issue where a user is not redirected to the account creation page on a fresh install ([#13520](https://mattermost.atlassian.net/browse/MM-13520)).
-  - Fixing an issue where a user created and promoted to System Admin via CLI could not access the System Console ([#13536](https://mattermost.atlassian.net/browse/MM-13536)).
+  - Fixing slow channel switching load times, where every channel switch triggered a fetch for users in all group message channels ([#13552](https://mattermost.atlassian.net/browse/MM-13552)).
 - **v5.6.0, released 2018-12-16**
   - Original 5.6.0 release
 
