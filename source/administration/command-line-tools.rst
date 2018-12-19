@@ -1452,6 +1452,34 @@ mattermost user migrate_auth
         with file("saml_users.json", "w") as fd:
             json.dump(mapping, fd)
 
+    ADFS:
+
+    .. code-block:: python
+
+        import ldap
+        import json
+        import getpass
+
+        ldap_host = input('Ldap Host (example ldap://localhost:389): ')
+        base_dn = input('Base DN (example dc=mm,dc=test,dc=com): ')
+        bind_dn = input('Bind DN (example cn=admin,dc=mm,dc=test,dc=com): ')
+        password = getpass.getpass('Password: ')
+        user_object_class = input('User object class (example iNetOrgPerson): ')
+        username_field = input('Username field: ')
+        mail_field = input('Mail field: ')
+
+        l = ldap.initialize(ldap_host)
+        l.simple_bind_s(bind_dn, password)
+        r = l.search_s(base_dn, ldap.SCOPE_SUBTREE, '(objectClass='+user_object_class+')', [username_field, mail_field])
+
+        mapping = {}
+        for dn, entry in r:
+            if mail_field in entry and len(entry[mail_field]) >= 1 and username_field in entry and len(entry[username_field]) >= 1:
+                mapping[entry[mail_field][0].decode('utf-8')] = entry[username_field][0].decode('utf-8')
+
+        with open("saml_users.json", "w") as fd:
+            json.dump(mapping, fd)
+
   Format
     .. code-block:: none
 
