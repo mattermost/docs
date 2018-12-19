@@ -10,7 +10,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
   - Fixed an issue where a user is not redirected to the account creation page on a fresh Mattermost server install.
   - Fixed an issue where file uploads crashed the webapp for some users.
   - Fixed slow channel switching load times, where every channel switch fetched for users in all group message channels.
-  - Fixed JIRA plugin not working due to a rename of the JIRA plugin plugin directory structure.
+  - Fixed JIRA plugin not working due to a rename of the JIRA plugin directory structure.
 - **v5.6.0, released 2018-12-16**
   - Original 5.6.0 release
 
