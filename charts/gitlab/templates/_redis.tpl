@@ -27,5 +27,12 @@ to 6379 default
 Return the redis scheme, or redis. Allowing people to use rediss clusters
 */}}
 {{- define "gitlab.redis.scheme" -}}
-{{- coalesce .Values.redis.scheme .Values.global.redis.scheme "redis" -}}
+{{- $default := "redis" -}}
+{{- $valid := list "redis" "rediss" "tcp" -}}
+{{- $name := coalesce .Values.redis.scheme .Values.global.redis.scheme $default -}}
+{{- if has $name $valid -}}
+{{ $name }}
+{{- else -}}
+{{ cat "Invalid redis scheme" $name | fail }}
+{{- end -}}
 {{- end -}}
