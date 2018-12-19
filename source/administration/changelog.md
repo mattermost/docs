@@ -9,6 +9,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 - **v5.6.1, release date TBD** 
   - Fixing an issue where a user is not redirected to the account creation page on a fresh install ([#13520](https://mattermost.atlassian.net/browse/MM-13520)).
   - Fixing slow channel switching load times, where every channel switch triggered a fetch for users in all group message channels ([#13552](https://mattermost.atlassian.net/browse/MM-13552)).
+  - Fixing JIRA plugin not working due to the plugin directory structure being renamed [#13558](https://mattermost.atlassian.net/browse/MM-13558)
 - **v5.6.0, released 2018-12-16**
   - Original 5.6.0 release
 
