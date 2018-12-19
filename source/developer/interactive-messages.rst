@@ -1,9 +1,11 @@
 .. _interactive-messages:
 
-Interactive Messages
-============================
+Interactive Messages: Buttons and Menus
+========================================
 
-Mattermost supports interactive messages for :doc:`incoming <webhooks-incoming>` and :doc:`outgoing webhooks <webhooks-outgoing>`, :doc:`custom slash commands <slash-commands>` and :doc:`plugins <../administration/plugins>` via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity.
+Mattermost supports interactive message buttons and menus for :doc:`incoming <webhooks-incoming>` and :doc:`outgoing webhooks <webhooks-outgoing>`, :doc:`custom slash commands <slash-commands>`, and :doc:`plugins <../administration/plugins>` via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity.
+
+For information on interactive dialogs, :doc:`see here <interactive-dialogs>`.
 
 Use interactive messages to simplify complex workflows by allowing users to take quick actions directly through your integration post. For example, they enable your integration to:
 
@@ -190,7 +192,7 @@ Specify ``users`` as your action's ``data_source`` as follows:
 Parameters
 ^^^^^^^^^^^^^
 
-Below is a brief description of each parameter to help you customize the interactive message in Mattermost. For more information on message attachments, `see our documentation <https://docs.mattermost.com/developer/message-attachments.html>`_.
+Below is a brief description of each parameter to help you customize the interactive message button and menu in Mattermost. For more information on message attachments, `see our documentation <https://docs.mattermost.com/developer/message-attachments.html>`_.
 
 Name
   Give your action a descriptive name.
@@ -310,7 +312,7 @@ However, the schema for these objects is slightly different given Slack requires
 Troubleshooting
 --------------------
 
-Interactive messages don't show up for slash commands
+Message buttons and menus don't show up for slash commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Make sure the `response type <https://docs.mattermost.com/developer/slash-commands.html#message-type>`_ of your slash command is set to ``in_channel``, not ``ephemeral``.

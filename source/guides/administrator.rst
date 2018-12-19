@@ -38,6 +38,7 @@ Learn how to get Mattermost running on your environment.
    /install/prod-docker*
    /install/docker-ebs*
    /install/deploy-cloudron*
+   Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
    /install/troubleshooting*
    /install/desktop*
    /install/smtp*
@@ -107,6 +108,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /administration/user-provisioning*
    /deployment/sso-ldap*
    /deployment/auth*
+   /deployment/ldap-group-sync.rst
    /deployment/sso-saml.rst
    /deployment/sso-gitlab*
    /deployment/sso-google*
@@ -199,5 +201,5 @@ Documentation on early previews and unofficial functionality.
    :glob:
 
    /install/prod-windows-2012*
-   /deployment/webrtc*
    /developer/toolkit*
+   /deployment/video-and-audio-calling*

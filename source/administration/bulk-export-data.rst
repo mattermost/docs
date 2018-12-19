@@ -2,7 +2,20 @@ Bulk export data
 =================
 At this time, the export supports attributes of the objects listed below. All Mattermost Bulk Export data files will begin with a `Version` object as the first line of the file. This indicates the version of the Mattermost Bulk Import file format with which the exported data is compatible.
 
-Configuration for exporting specific areas of the server, exporting additional types of posts, reactions, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.  
+You can export the following data types:
+
+- Teams
+- Channels (Public & Private)
+- Users
+- Users' Team memberships
+- Users' Channel memberships
+- Users' notification preferences
+- Posts (regular, non-reply posts)
+- Posts' Replies
+- Posts' Reactions
+- Custom Emoji
+
+Configuration for exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.  
 
 For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.uservoice.com/forums/306457-general>`_.  
 
@@ -200,11 +213,88 @@ User object
       <td valign="middle">array</td>
       <td>The teams which the user is member of. Is an array of <b>UserTeamMembership</b> objects.</td>
     </tr>
+    <tr class="row-odd">
+      <td valign="middle">notify_props</td>
+      <td valign="middle">object</td>
+      <td>The user’s notify preferences, as defined by the <b>UserNotifyProps</b> object.</td>
+    </tr>
   </table>
-  
-  
+
+UserNotifyProps object
+----------------------
+This object is a member of the User object.
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">desktop</td>
+      <td valign="middle">string</td>
+      <td>Preference for sending desktop notifications. Will be one of the following values:<br>
+      <kbd>"all"</kbd> - For all activity.<br>
+      <kbd>"mention"</kbd> - Only for mentions.<br>
+      <kbd>"none"</kbd> - Never.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">desktop_sound</td>
+      <td valign="middle">string</td>
+      <td>Preference for whether desktop notification sound is played. Will be one of the following values:<br>
+      <kbd>"true"</kbd> - Sound is played.<br>
+      <kbd>"false"</kbd> - Sound is not played.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">email</td>
+      <td valign="middle">string</td>
+      <td>Preference for email notifications. Will be one of the following values:<br>
+      <kbd>"true"</kbd> - Email notifications are sent immediately.<br>
+      <kbd>"false"</kbd> - Email notifications are not sent.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">mobile</td>
+      <td valign="middle">string</td>
+      <td>Preference for sending mobile push notifications. Will be one of the following values:<br>
+      <kbd>"all"</kbd> - For all activity.<br>
+      <kbd>"mention"</kbd> - Only for mentions.<br>
+      <kbd>"none"</kbd> - Never.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">mobile_push_status</td>
+      <td valign="middle">string</td>
+      <td>Preference for when push notifications are triggered. Will be one of the following values:<br>
+      <kbd>"online"</kbd> - When online, away or offline.<br>
+      <kbd>"away"</kbd> - When away or offline.<br>
+      <kbd>"offline"</kbd> - When offline.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">channel</td>
+      <td valign="middle">string</td>
+      <td>Preference for whether @all, @channel and @here trigger mentions. Will be one of the following values:<br>
+      <kbd>"true"</kbd> - Mentions are triggered.<br>
+      <kbd>"false"</kbd> - Mentions are not triggered.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">comments</td>
+      <td valign="middle">string</td>
+      <td>Preference for reply mention notifications. Will be one of the following values:<br>
+      <kbd>"any"</kbd> - Trigger notifications on messages in reply threads that the user starts or participates in.<br>
+      <kbd>"root"</kbd> - Trigger notifications on messages in threads that the user starts.<br>
+      <kbd>"never"</kbd> - Do not trigger notifications on messages in reply threads unless the user is mentioned.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">mention_keys</td>
+      <td valign="middle">string</td>
+      <td>Preference for custom non-case sensitive words that trigger mentions. Words are separated by commas.</td>
+    </tr>
+  </table>
+
+
 UserTeamMembership object
-----------------------------
+-------------------------
 .. raw:: html
 
   <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
@@ -245,6 +335,60 @@ UserChannelMembership object
       <td valign="middle">string</td>
       <td>The roles the user has within this channel. </td>
     </tr>
+        <tr class="row-odd">
+      <td valign="middle">notify_props</td>
+      <td valign="middle">object</td>
+      <td>The notify preferences for this user in this channelas defined by the <b>ChannelNotifyProps</b> object.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">favorite</td>
+      <td valign="middle">boolean</td>
+      <td>Whether the channel is marked as a favorite for this user. Will be one of the following values<br>
+          <kbd>"true"</kbd> - Yes.<br>
+          <kbd>"false"</kbd> - No.</td>
+      </td>
+    </tr>
+  </table>
+
+ChannelNotifyProps object
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This object is a member of the ChannelMembership object.
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">desktop</td>
+      <td valign="middle">string</td>
+      <td>Preference for sending desktop notifications. Will be one of the following values:<br>
+      <kbd>"default"</kbd> - Global default.<br>
+      <kbd>"all"</kbd> - For all activity.<br>
+      <kbd>"mention"</kbd> - Only for mentions.<br>
+      <kbd>"none"</kbd> - Never.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">mobile</td>
+      <td valign="middle">string</td>
+      <td>Preference for sending mobile notifications. Will be one of the following values:<br>
+      <kbd>"default"</kbd> - Global default.<br>
+      <kbd>"all"</kbd> - For all activity.<br>
+      <kbd>"mention"</kbd> - Only for mentions.<br>
+      <kbd>"none"</kbd> - Never.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">mark_unread</td>
+      <td valign="middle">string</td>
+      <td>Preference for marking channel as unread. Will be one of the following values:<br>
+          <kbd>"all"</kbd> - For all unread messages.<br>
+          <kbd>"mention"</kbd> - Only for mentions.
+      </td>
+    </tr>
   </table>
 
 Post object
@@ -282,6 +426,10 @@ Post object
       <td valign="middle">int</td>
       <td>The timestamp for the post, in milliseconds since the Unix epoch.</td>
     </tr>
+        <tr class="row-odd">
+      <td valign="middle">reactions</td>
+      <td valign="middle">array</td>
+      <td>The emoji reactions to this post. Will be an array of Reaction objects.</td>
   </table>
   
 Reply object
@@ -308,5 +456,57 @@ Reply object
       <td valign="middle">create_at</td>
       <td valign="middle">int</td>
       <td>The timestamp for the reply, in milliseconds since the Unix epoch.</td>
+    </tr>
+  </table>
+  
+Reaction object
+---------------
+
+This object is a member of the Post object.
+
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">user</td>
+      <td valign="middle">string</td>
+      <td>The username of the user for this reply.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">emoji_name</td>
+      <td valign="middle">string</td>
+      <td>The emoji of the reaction.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">create_at</td>
+      <td valign="middle">int</td>
+      <td>The timestamp for the reply, in milliseconds since the Unix epoch.</td>
+    </tr>
+  </table>
+
+Emoji object
+------------
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">name</td>
+      <td valign="middle">string</td>
+      <td>The emoji name.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">image</td>
+      <td valign="middle">string</td>
+      <td>The path (either absolute or relative to the current working directory) to the image file for this emoji.</td>
     </tr>
   </table>
