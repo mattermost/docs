@@ -7,10 +7,13 @@ describe "Restoring a backup" do
     stdout, status = restore_from_backup
     fail stdout unless status.success?
 
+    stdout, status = run_migrations
+    fail stdout unless status.success?
+
     stdout, status = enforce_root_password(ENV['GITLAB_PASSWORD']) if ENV['GITLAB_PASSWORD']
     fail stdout unless status.success?
 
-    stdout, status = run_migrations
+    stdout, status = set_runner_token
     fail stdout unless status.success?
 
     # Wait for the site to come up after the restore/migrations
@@ -70,7 +73,7 @@ describe "Restoring a backup" do
       object_storage.get_object(
         response_target: '/tmp/original_backup.tar',
         bucket: 'gitlab-backups',
-        key: '0_11.3.4-ee_gitlab_backup.tar'
+        key: '0_11.6.0-pre_gitlab_backup.tar'
       )
 
       cmd = 'mkdir -p /tmp/original_backup && tar -xf /tmp/original_backup.tar -C /tmp/original_backup'

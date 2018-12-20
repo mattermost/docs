@@ -1,4 +1,5 @@
 require 'open-uri'
+require "base64"
 
 module Gitlab
   def self.included(klass)
@@ -71,7 +72,7 @@ module Gitlab
     end
 
     def restore_from_backup
-      backup = ENV['BACKUP_TIMESTAMP'] || '0_11.3.4-ee'
+      backup = ENV['BACKUP_TIMESTAMP'] || '0_11.6.0-pre'
       cmd = full_command("backup-utility --restore -t #{backup}")
       stdout, status = Open3.capture2e(cmd)
 
@@ -92,6 +93,14 @@ module Gitlab
       return [stdout, status]
     end
 
+    def set_runner_token
+      rails_dir = ENV['RAILS_DIR'] || '/srv/gitlab'
+      cmd = full_command("#{rails_dir}/bin/rails runner \"settings = ApplicationSetting.current; settings.set_runners_registration_token('#{runner_registration_token}'); settings.save!\"")
+
+      stdout, status = Open3.capture2e(cmd)
+      return [stdout, status]
+    end
+
     def pod_name
       filters = 'app=task-runner'
 
@@ -100,6 +109,12 @@ module Gitlab
       end
 
       @pod ||= `kubectl get pod -l #{filters} -o jsonpath="{.items[0].metadata.name}"`
+    end
+
+    def runner_registration_token
+      @runner_registration_token ||= Base64.decode64(
+        IO.popen(%W[kubectl get secret -o jsonpath="{.data.runner-registration-token}" -- #{ENV['RELEASE_NAME']}-gitlab-runner-secret], &:read)
+      )
     end
 
     def object_storage
@@ -126,7 +141,7 @@ module Gitlab
 
     def ensure_backups_on_object_storage
       storage_url = 'https://storage.googleapis.com/gitlab-charts-ci/test-backups'
-      backup_file_names = ['11.3.4-ee_gitlab_backup.tar']
+      backup_file_names = ['11.6.0-pre_gitlab_backup.tar']
       backup_file_names.each do |file_name|
         file = open("#{storage_url}/#{file_name}").read
         object_storage.put_object(
