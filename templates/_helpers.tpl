@@ -138,6 +138,23 @@ use the name of the service the upstream chart creates
 {{- end -}}
 
 {{/*
+Return the configmap for initializing the PostgreSQL database. This is used to enable the 
+necessary postgres extensions for Gitlab to work
+This overrides the upstream postegresql chart so that we can deterministically
+use the name of the initdb scripts ConfigMap the upstream chart creates
+*/}}
+{{- define "gitlab.psql.initdbscripts" -}}
+{{- printf "%s-%s-%s" .Release.Name "postgresql" "init-db" -}}
+{{- end -}}
+
+{{/*
+Alias of gitlab.psql.initdbscripts
+*/}}
+{{- define "postgresql.initdbScriptsCM" -}}
+{{- template "gitlab.psql.initdbscripts" . -}}
+{{- end -}}
+
+{{/*
 Alias of gitlab.psql.host
 */}}
 {{- define "postgresql.fullname" -}}
@@ -187,11 +204,11 @@ Alias of gitlab.psql.password.secret to override upstream postgresql chart namin
 
 {{/*
 Return the name of the key in a secret that contains the postgres password
-Uses `postgres-password` to match upstream postgresql chart when not using an
+Uses `postgresql-password` to match upstream postgresql chart when not using an
   external postegresql
 */}}
 {{- define "gitlab.psql.password.key" -}}
-{{- default "postgres-password" .Values.global.psql.password.key | quote -}}
+{{- default "postgresql-password" .Values.global.psql.password.key | quote -}}
 {{- end -}}
 
 {{/*

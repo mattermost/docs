@@ -539,11 +539,13 @@ redis-ha:
 ## See requirements.yaml for current version
 postgresql:
   install: true
-  postgresUser: gitlab
-  postgresDatabase: gitlabhq_production
-  imageTag: 9.6.8
+  postgresqlUsername: gitlab
+  postgresqlDatabase: gitlabhq_production
+  image:
+    tag: 9.6
   usePasswordFile: true
   existingSecret: 'secret'
+  initdbScriptsConfigMap: 'configmap'
   metrics:
     enabled: true
     ## Optionally define additional custom metrics

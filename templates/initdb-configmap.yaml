@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "gitlab.psql.initdbscripts" . }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+{{ include "gitlab.standardLabels" . | indent 4 }}
+data:
+  enable_extensions.sql: |
+    \connect {{ template "gitlab.psql.database" .}}
+    CREATE EXTENSION pg_trgm;
+# Leave this here - This line denotes end of block to the parser.
