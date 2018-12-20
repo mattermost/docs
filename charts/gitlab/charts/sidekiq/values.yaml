@@ -16,6 +16,8 @@ init:
 
 enabled: true
 
+annotations: {}
+
 metrics:
   enabled: true
   port: 3807

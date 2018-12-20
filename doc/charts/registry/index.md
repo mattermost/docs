@@ -26,6 +26,7 @@ We will describe all the major sections of the configuration below. When configu
 registry:
   enabled:
   image:
+  annotations:
   service:
   httpSecret:
   authEndpoint:
@@ -66,6 +67,7 @@ Table below contains all the possible charts configurations that can be supplied
 | certificate.secret       | JWT certificate                         | gitlab-registry      |
 | replicas                 | Number of replicas                      | 1                    |
 | minio.bucket             | Legacy registry bucket name             | Undefined by default |
+| annotations              | Pod annotations                         |                      |
 
 ## Chart configuration examples
 ### pullSecrets
@@ -84,6 +86,16 @@ image:
   - name: my-secret-name
   - name: my-secondary-secret-name
 ```
+
+### annotations
+
+`annotations` allows you to add annotations to the registry pods. 
+
+Below is an example use of `annotations`
+```YAML
+annotations:
+  kubernetes.io/example-annotation: annotation-value
+``` 
 
 ## Enable the sub-chart
 
