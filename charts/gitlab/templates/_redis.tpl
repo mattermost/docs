@@ -22,3 +22,16 @@ to 6379 default
 {{- define "gitlab.redis.port" -}}
 {{- coalesce .Values.redis.port .Values.global.redis.port 6379 -}}
 {{- end -}}
+
+{{/*
+Return the redis scheme, or redis. Allowing people to use rediss clusters
+*/}}
+{{- define "gitlab.redis.scheme" -}}
+{{- $valid := list "redis" "rediss" "tcp" -}}
+{{- $name := coalesce .Values.redis.scheme .Values.global.redis.scheme "redis" -}}
+{{- if has $name $valid -}}
+{{ $name }}
+{{- else -}}
+{{ cat "Invalid redis scheme" $name | fail }}
+{{- end -}}
+{{- end -}}
