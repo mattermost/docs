@@ -13,6 +13,8 @@ service:
 ## Enable/Disable
 enabled: true
 
+annotations: {}
+
 ingress:
   enabled: true
   proxyReadTimeout: 900

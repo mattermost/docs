@@ -23,6 +23,9 @@ spec:
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yml") . | sha256sum }}
         cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
+      {{- range $key, $value := .Values.annotations }}
+        {{ $key }}: {{ $value | quote }}
+      {{- end }}
 {{- if .Values.metrics.enabled }}
 {{ toYaml .Values.metrics.annotations | indent 8 }}
 {{- end }}

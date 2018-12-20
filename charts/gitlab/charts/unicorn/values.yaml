@@ -12,6 +12,7 @@ init:
   resources:
     requests:
       cpu: 50m
+annotations: {}
 metrics:
   enabled: true
   annotations:

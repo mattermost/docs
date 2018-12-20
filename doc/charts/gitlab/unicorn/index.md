@@ -61,6 +61,7 @@ Table below contains all the possible charts configurations that can be supplied
 | extraContainers                | List of extra containers to include                |                                                              |
 | extraVolumes                   | List of extra volumes to create                    |                                                              |
 | extraVolumeMounts              | List of extra volumes mountes to do                |                                                              |
+| annotations                    | Pod annotations                                    |                                                              |
 
 ## Chart configuration examples
 ### image.pullSecrets
@@ -78,6 +79,16 @@ image:
   - name: my-secret-name
   - name: my-secondary-secret-name
 ```
+
+### annotations
+
+`annotations` allows you to add annotations to the unicorn pods. 
+
+Below is an example use of `annotations`
+```YAML
+annotations:
+  kubernetes.io/example-annotation: annotation-value
+``` 
 
 ## Using the Community Edition of this chart
 

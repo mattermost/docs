@@ -38,6 +38,8 @@ The `gitlab-shell` sub-chart provides a SSH server configured for Git SSH access
 | extraContainers      | List of extra containers to include      |                                                |
 | extraVolumes         | List of extra volumes to create          |                                                |
 | extraVolumeMounts    | List of extra volumes mountes to do      |                                                |
+| annotations          | Pod annotations                          |                                                |
+
 ## Chart configuration examples
 ### image.pullSecrets
 `pullSecrets` allow you to authenticate to a private registry to pull images for a pod.
@@ -55,6 +57,16 @@ image:
   - name: my-secret-name
   - name: my-secondary-secret-name
 ```
+
+### annotations
+
+`annotations` allows you to add annotations to the gitlab-shell pods.
+
+Below is an example use of `annotations`
+```YAML
+annotations:
+  kubernetes.io/example-annotation: annotation-value
+``` 
 
 ## External Services
 

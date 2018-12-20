@@ -12,6 +12,7 @@ init:
       cpu: 50m
 
 enabled: true
+annotations: {}
 global:
   # imagePullPolicy: IfNotPresent
   hosts:
