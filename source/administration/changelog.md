@@ -6,10 +6,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.6
 
-- **v5.6.1, release date TBD** 
-  - Fixing an issue where a user is not redirected to the account creation page on a fresh install ([#13520](https://mattermost.atlassian.net/browse/MM-13520)).
-  - Fixing slow channel switching load times, where every channel switch triggered a fetch for users in all group message channels ([#13552](https://mattermost.atlassian.net/browse/MM-13552)).
-  - Fixing JIRA plugin not working due to the plugin directory structure of the JIRA plugin being renamed ([#13558](https://mattermost.atlassian.net/browse/MM-13558)).
+- **v5.6.1, released 2018-12-20** 
+  - Fixed an issue where a user is not redirected to the account creation page on a fresh Mattermost server install.
+  - Fixed an issue where file uploads crashed the webapp for some users.
+  - Fixed slow channel switching load times, where every channel switch fetched users from all group message channels.
+  - Fixed JIRA plugin not working due to a rename of the JIRA plugin directory structure.
 - **v5.6.0, released 2018-12-16**
   - Original 5.6.0 release
 
