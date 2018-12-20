@@ -28,7 +28,7 @@ data:
   resque.yml.erb: |
     production:
       # Redis (single instance)
-      url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
+      url: {{ template "gitlab.redis.scheme" . }}://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
   gitlab.yml.erb: |
     production: &base
       gitlab:

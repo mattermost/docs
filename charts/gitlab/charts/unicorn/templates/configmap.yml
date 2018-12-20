@@ -28,7 +28,7 @@ data:
   resque.yml.erb: |
     production:
       # Redis (single instance)
-      url: redis://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
+      url: {{ template "gitlab.redis.scheme" . }}://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
   unicorn.rb: |
     worker_processes {{ .Values.workerProcesses }}
     working_directory "/srv/gitlab"
@@ -187,7 +187,7 @@ data:
     gitlab-helm-chart
   workhorse-config.toml.erb: |
     [redis]
-    URL = "tcp://{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}"
+    URL = "{{ template "gitlab.redis.scheme" . }}://{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}"
     Password = "<%= File.read("/etc/gitlab/redis/password") %>"
   configure: |
       set -e
