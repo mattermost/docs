@@ -112,13 +112,9 @@ module Gitlab
     end
 
     def runner_registration_token
-      filters = 'app=shared-secrets'
-
-      if ENV['RELEASE_NAME']
-        filters="#{filters},release=#{ENV['RELEASE_NAME']}"
-      end
-
-      @runner_registration_token ||= Base64.decode64(`kubectl get secret #{ENV['RELEASE_NAME']}-gitlab-runner-secret -o jsonpath="{.data.runner-registration-token}"`)
+      @runner_registration_token ||= Base64.decode64(
+        IO.popen(%W[kubectl get secret -o jsonpath="{.data.runner-registration-token}" -- #{ENV['RELEASE_NAME']}-gitlab-runner-secret], &:read)
+      )
     end
 
     def object_storage
