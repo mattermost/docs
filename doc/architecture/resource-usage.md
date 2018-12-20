@@ -84,3 +84,52 @@ are per pod.
 - **Recommended Limits**
   * cpu: > 1.4 (greater than average load)
   * memory: > 1.4G (greater than stress task)
+
+
+### Sidekiq
+
+Load was tested using https://gitlab.com/andrewn/gitlab-load-kit and a custom executor that targeted the pipeline trigger api on a single project. This api was hit with 20 requests concurrently for varying amounts of time.
+
+- **Idle values**
+  * 0 tasks, 1 pods
+    - cpu: 0
+    - memory: 450M
+
+
+- **Minimal Load**
+  * ~20 tasks (create a single pipeline once), 1 pods
+    - cpu: 50m
+    - memory: 625M
+
+
+- **Average Loads**
+   * ~7 trigger pipelines/second for 1min, 2 pods
+     - cpu: 310m
+     - memory: 640M
+   * ~7 trigger pipelines/second for 5min, 4 pods
+     - cpu: 360m
+     - memory 650M
+
+
+- **Stressful Task**
+  * Export the linux kernel as GitLab project
+    - cpu: 1
+    - memory: 840M
+
+
+- **Heavy Load**
+  * ~6 trigger pipelines/second for 20min, 10 pods
+    - cpu: 920m
+    - memory: 710M
+
+
+- **Default Requests**
+  * cpu: 50m (from minimal load)
+  * memory: 650M (from average load)
+  * target cpu average: 350m (from average loads)
+    - *In the future [we should be using custom metrics](https://gitlab.com/charts/gitlab/issues/1008) that measure the number of busy workers.*
+
+
+- **Recommended Limits**
+  * cpu: > 1 (greater than stress task)
+  * memory: > 840M (greater than stress task)

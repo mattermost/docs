@@ -166,21 +166,21 @@ minReplicas: 1
 maxReplicas: 10
 concurrency: 10
 hpa:
-  targetAverageValue: 400m
+  targetAverageValue: 350m
 timeout: 5
 resources:
   # limits:
   #  cpu: 500m
   #  memory: 1G
   requests:
-    cpu: 200m
-    memory: 768Mi
+    cpu: 50m
+    memory: 650M
 maxUnavailable: 1
 
 # Define queue groups into Pods
 pods:
   - name: all-in-1
-    concurrency: 10
+    concurrency: 25
     # minReplicas: 1
     # maxReplicas: 10
     queues:

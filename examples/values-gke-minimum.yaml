@@ -57,8 +57,8 @@ gitlab:
       limits:
         memory: 1.5G
       requests:
-        cpu: 100m
-        memory: 500Mi
+        cpu: 50m
+        memory: 625M
   gitlab-shell:
     minReplicas: 1
   task-runner:
