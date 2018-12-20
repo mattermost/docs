@@ -65,6 +65,7 @@ image:
 ```
 
 ### annotations
+
 `annotations` allows you to add annotations to the sidekiq pods. 
 
 Below is an example use of `annotations`

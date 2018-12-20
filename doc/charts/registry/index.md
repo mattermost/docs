@@ -88,6 +88,7 @@ image:
 ```
 
 ### annotations
+
 `annotations` allows you to add annotations to the registry pods. 
 
 Below is an example use of `annotations`

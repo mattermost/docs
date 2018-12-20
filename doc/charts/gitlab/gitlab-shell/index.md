@@ -59,6 +59,7 @@ image:
 ```
 
 ### annotations
+
 `annotations` allows you to add annotations to the gitlab-shell pods.
 
 Below is an example use of `annotations`

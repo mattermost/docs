@@ -68,6 +68,7 @@ image:
 ```
 
 ### annotations
+
 `annotations` allows you to add annotations to the gitaly pods.
 
 Below is an example use of `annotations`
