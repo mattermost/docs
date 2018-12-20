@@ -1,4 +1,5 @@
 require 'open-uri'
+require "base64"
 
 module Gitlab
   def self.included(klass)
@@ -92,6 +93,14 @@ module Gitlab
       return [stdout, status]
     end
 
+    def set_runner_token
+      rails_dir = ENV['RAILS_DIR'] || '/srv/gitlab'
+      cmd = full_command("#{rails_dir}/bin/rails runner \"settings = ApplicationSetting.current; settings.set_runner_registration_token('#{runner_registration_token}'); settings.save!\"")
+
+      stdout, status = Open3.capture2e(cmd)
+      return [stdout, status]
+    end
+
     def pod_name
       filters = 'app=task-runner'
 
@@ -100,6 +109,16 @@ module Gitlab
       end
 
       @pod ||= `kubectl get pod -l #{filters} -o jsonpath="{.items[0].metadata.name}"`
+    end
+
+    def runner_registration_token
+      filters = 'app=shared-secrets'
+
+      if ENV['RELEASE_NAME']
+        filters="#{filters},release=#{ENV['RELEASE_NAME']}"
+      end
+
+      @runner_registration_token ||= Base64.decode64(`kubectl get secret #{ENV['RELEASE_NAME']}-gitlab-runner-secret -o jsonpath="{.data.runner-registration-token}"`)
     end
 
     def object_storage

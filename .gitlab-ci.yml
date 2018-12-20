@@ -566,6 +566,11 @@ danger-review:
   after_script:
     - *auto_devops
     - add_license
+  artifacts:
+    when: on_failure
+    expire_in: 7d
+    paths:
+    - /tmp/screenshots
   cache:
     key: "${CI_JOB_NAME}"
     paths:
