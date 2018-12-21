@@ -2,6 +2,32 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.4.0 (2018-12-22)
+
+### Fixed (1 change, 1 of them is from the community)
+
+- Move LFS and Upload temporary storage to ephemeral disk. !587 (Robert Jordan)
+
+### Changed (1 change)
+
+- Refine unicorn resource resqeusts. !586
+
+### Added (6 changes, 1 of them is from the community)
+
+- Added option for annotations for use with IAM roles. !504 (Deniz Zoeteman)
+- Add the operator version label to the gitlab custom resource. !582
+- Added example values file for a minimal gke cluster. !589
+- Add examples for GCS object storage. !592
+- Add support for impersonation_enabled flag in gitlab.yml. !593
+- Allow support for using rediss urls. !600
+
+### Other (3 changes)
+
+- Add extraInitContainers, extraContainers, extraVolumes and extraVolumeMounts to template options. !580
+- Operator Version 0.1. !605
+- Update GitLab Version to 11.6.0.
+
+
 ## 1.3.4 (2018-12-14)
 
 ### Other (3 changes)
