@@ -71,9 +71,22 @@ Upgrading Enterprise Edition to a newer version
 Changing a License Key
 ----------------------
 
-Make sure that the new license is for a number of users that is greater than or equal to the current total number of users on your system. To find the total number of users, go to the REPORTING section of the System Console and click **Site Statistics**. The total number of users is in the **Total Users** field. The license is rejected if this value is greater than allowed by the key.
+Make sure that the new license is for a number of users that is greater than or equal to the current total number of users on your system. To find the total number of users, go to the REPORTING section of the System Console and click **Site Statistics**. The total number of users is in the **Total Active Users** field. The license is rejected if this value is greater than allowed by the key.
 
-**To install a new license key**:
+To install a new license key:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Through the command line interface (CLI):**
+
+Use this command to upload a new license, or replace an existing license, with a new one.
+
+.. code-block:: none
+
+  mattermost license upload {license}
+
+See `documentation for more information on the command line tools <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-license-upload>`_.
+
+**Through the System Console:**
 
 1. In the OTHER section of the System Console, click **Edition and License**. The *Edition and License* page opens.
 2. Click **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
