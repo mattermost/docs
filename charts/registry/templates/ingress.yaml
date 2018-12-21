@@ -1,5 +1,5 @@
 {{- if .Values.enabled -}}
-{{- if coalesce .Values.ingress.enabled .Values.global.ingress.enabled | default false -}}
+{{- if eq (include "gitlab.ingress.enabled" $) "true" -}}
 {{- $hostname := include "registry.hostname" . -}}
 {{- $tlsSecret := include "registry.tlsSecret" . -}}
 apiVersion: extensions/v1beta1

@@ -284,3 +284,21 @@ Return true in any other case.
 {{-   true }}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Detect if `.Values.ingress.enabled` is set
+Returns `ingress.enabled` if it is a boolean,
+Returns `global.ingress.enabled` if it is a boolean, and `ingress.enabled` is not.
+Return true in any other case.
+*/}}
+{{- define "gitlab.ingress.enabled" -}}
+{{- $globalSet := and (hasKey .Values.global.ingress "enabled") (kindIs "bool" .Values.global.ingress.enabled) -}}
+{{- $localSet := and (hasKey .Values.ingress "enabled") (kindIs "bool" .Values.ingress.enabled) -}}
+{{- if $localSet }}
+{{-   .Values.ingress.enabled }}
+{{- else if $globalSet }}
+{{-  .Values.global.ingress.enabled }}
+{{- else }}
+{{-   true }}
+{{- end -}}
+{{- end -}}

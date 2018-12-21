@@ -1,5 +1,5 @@
 {{- if .Values.global.minio.enabled -}}
-{{- if coalesce .Values.ingress.enabled .Values.global.ingress.enabled | default false -}}
+{{- if eq (include "gitlab.ingress.enabled" $) "true" -}}
 {{- $minioHostname := include "gitlab.minio.hostname" . -}}
 {{- $tlsSecret := include "minio.tlsSecret" . -}}
 apiVersion: extensions/v1beta1
