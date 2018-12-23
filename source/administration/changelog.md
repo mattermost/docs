@@ -6,6 +6,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.6
 
+- **v5.6.2, released 2018-12-22** 
+  - Fixed JIRA plugin not sending messages back to Mattermost channels.
 - **v5.6.1, released 2018-12-20** 
   - Fixed an issue where a user is not redirected to the account creation page on a fresh Mattermost server install.
   - Fixed an issue where file uploads crashed the webapp for some users.
