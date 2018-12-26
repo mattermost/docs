@@ -113,13 +113,12 @@ There is no limit to how much time-off you can take when your work is meeting or
 2) Holidays
 ~~~~~~~~~~~
 
-Please take off holidays relevant to your culture, resident country and preferences. Please just follow the TIME OFF process in 1) above.
+Please take off holidays relevant to your culture, resident country and preferences. When doing so, please follow the time-off process in 1) above.
 
 We're headquartered in the US and have a large Canadian contingent, so below are holidays we're expecting people from those countries to take off:
 
 Remaining US & Canadian Holidays for 2018:
 
-- US & Canadian Christmas Day (12/25/2018)
 - Canadian Boxing Day (12/26/2018)
 
 US & Canadian Holidays for 2019:
