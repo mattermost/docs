@@ -117,10 +117,6 @@ Please take off holidays relevant to your culture, resident country and preferen
 
 We're headquartered in the US and have a large Canadian contingent, so below are holidays we're expecting people from those countries to take off:
 
-Remaining US & Canadian Holidays for 2018:
-
-- Canadian Boxing Day (12/26/2018)
-
 US & Canadian Holidays for 2019:
 
 - US & Canadian New Year's (1/1/2019)
