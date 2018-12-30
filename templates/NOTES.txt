@@ -12,7 +12,7 @@ WARNING: Automatic TLS certificate generation with cert-manager is disabled and 
 
 You may retrieve the CA root for these certificates from the `{{ template "gitlab.wildcard-self-signed-cert-name" $ }}-ca` secret, via the following command. It can then be imported to a web browser or system store.
 
-    kubectl get secret {{ template "gitlab.wildcard-self-signed-cert-name" $ }}-ca -ojsonpath={.data.cfssl_ca} | base64 --decode > {{ template "gitlab.gitlab.hostname" $ }}.ca.pem
+    kubectl get secret {{ template "gitlab.wildcard-self-signed-cert-name" $ }}-ca -ojsonpath='{.data.cfssl_ca}' | base64 --decode > {{ template "gitlab.gitlab.hostname" $ }}.ca.pem
 
 If you do not wish to use self-signed certificates, please set the following properties:
   - global.ingress.tls.secretName
