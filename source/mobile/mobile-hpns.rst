@@ -36,7 +36,7 @@ Follow these steps to set up HPNS:
 
 4. Check the box "I understand and accept the Mattermost Hosted Push Notification Service Terms of Service and Privacy Policy" after reading the documents referenced
 
-.. Note:: The default **Push Notification Server** address is https://push.mattermost.com and the server is hosted inside the United States. Mattermost also offers a push notification server hosted in Germany. If you wish to use that server please update the **Push Notification Server** address to https://hpns-de.mattermost.com/.
+.. Note:: The default **Push Notification Server** address is https://push.mattermost.com and the server is hosted inside the United States. Mattermost also offers a push notification server hosted in Germany. If you wish to use that server, please update the **Push Notification Server** address to https://hpns-de.mattermost.com/.
 
 5. Click **Save**
 
