@@ -8,6 +8,21 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release date: 2019-01-16
 
+### Bug Fixes
+ - Fixed a SQL syntax error when a non-existant channelId was attempted to be viewed.
+ - Fixed an issue where OpenGraph and Post Metadata cache was purged on any config change with the image proxy enabled.
+ - Added a check for percent value on upload progress to prevent app from crashing.
+ - Fixed an issue where multi-line announcement banner text did not expand its background.
+ - Fixed an issue where channel modal text and icons were misaligned if only one channel type was available (sidebar reorg).
+ - Fixed an issue where every channel switch triggered a fetch for users in all Group Message channels for the user.
+ - Fixed an issue where user was not redirected to sign up page to create first account on fresh install.
+ - Fixed an issue where scrollbar appeared in team sidebar when a user was a member of too many teams.
+ - Fixed an issue where wide images posted by webhook could be cut off on the right-hand side.
+ - Fixed an issue where leaving a team showed a 403 error in the console.
+ - Fixed an issue where Code Theme did not save unless other colours changed.
+ - Fixed an issue where Webapp only showed a star or mention count for active team.
+ - Fixed an issue where Web mobile view was missing mute option in the channel menu.
+ - Removed "participant is typing" as soon as the post arrives.
 
 
 ## Release v5.6
