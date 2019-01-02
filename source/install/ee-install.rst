@@ -78,7 +78,7 @@ To install a new license key:
 
 **Through the command line interface (CLI):**
 
-Use this command to upload a new license, or replace an existing license, with a new one.
+Use this command to upload a new license or to replace an existing license with a new one.
 
 .. code-block:: none
 
