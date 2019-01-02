@@ -18,7 +18,7 @@ After purchasing a subscription to Mattermost E10 or higher from Mattermost, Inc
 
 If you use HPNS you need to ensure that the push proxy can be reached on port 443 from the Mattermost server, for TPNS it is port 80. If you host your own proxy server the default port is 8086.
 
-Mattermost, Inc. also offers a free basic hosted service for testing setups called the Test Push Notification Service (TPNS). It does not offer a production-level uptime expectation, nor does it offer encrypted transport.
+Mattermost, Inc. also offers a free basic hosted service for testing setups called the Test Push Notification Service (TPNS). It does not offer a production-level uptime service level agreements (SLAs).
 
 
 Setting up HPNS push notifications in Enterprise Edition
