@@ -394,7 +394,7 @@ mattermost command create
           --trigger-word string [REQUIRED]   Command Trigger Word
           --url  string   [REQUIRED]         Command Callback URL
           --creator string  [REQUIRED]       Command Creator's Username
-          --response-username string       Command Response Username
+          --response-username string         Command Response Username
           --icon string                      Command icon URL
           --autocomplete bool                Show command in autocomplete list
           --autocompleteDesc string          Short command description for autocomplete list
