@@ -199,6 +199,7 @@ stable:
     - ensure_namespace
     - install_tiller
     - create_secret
+    - if ! crdExists || previousDeployFailed ; then OPERATOR_BOOTSTRAP=true deploy ; fi
     - deploy
     - delete canary
     - echo "export QA_ENVIRONMENT_URL=gitlab.$AUTO_DEVOPS_DOMAIN" >> variables
