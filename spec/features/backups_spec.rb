@@ -25,14 +25,12 @@ describe "Restoring a backup" do
 
     it 'Home page should show projects' do
       visit '/'
-      page.save_screenshot("/tmp/screenshots/1.png")
       expect(page).to have_content 'Projects'
       expect(page).to have_content 'Administrator / testproject1'
     end
 
     it 'Navigating to testproject1 repo should work' do
       visit '/root/testproject1'
-      page.save_screenshot("/tmp/screenshots/2.png")
       expect(page).to have_content 'Dockerfile'
     end
 

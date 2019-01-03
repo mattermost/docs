@@ -596,7 +596,7 @@ danger-review:
     when: on_failure
     expire_in: 7d
     paths:
-    - /tmp/screenshots
+    - tmp/capybara
   cache:
     key: "${CI_JOB_NAME}"
     paths:

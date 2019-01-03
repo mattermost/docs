@@ -50,7 +50,6 @@ module Gitlab
       fill_in 'Username or email', with: 'root'
       fill_in 'Password', with: ENV['GITLAB_PASSWORD']
       click_button 'Sign in'
-      page.save_screenshot("/tmp/screenshots/sign_in.png")
     end
 
     def enforce_root_password(password)
