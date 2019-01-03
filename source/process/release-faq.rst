@@ -1,5 +1,5 @@
 Frequently Asked Questions
-===============
+==========================
 
 **Q1: When is release branch cut for a bug release?**
  

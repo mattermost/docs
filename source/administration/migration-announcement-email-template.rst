@@ -1,5 +1,5 @@
 Migration Announcement Email
-===========================
+============================
 
 To notify your end users of your migration to Mattermost, we created a sample email template that you can use.
 

@@ -238,7 +238,7 @@ Train administrators on the tasks required to manage Mattermost.
 **Reference**: https://docs.mattermost.com/guides/administrator.html
 
 3.3.13 Update Legal & Support Settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost has configuration settings for the terms of service, privacy policy, and support URLs and emails. It is highly recommended that you modify these in your configuration so that your users have the correct legal information and can contact administrators to resolve account issues. You can find these under **System Console > Legal and Support**.
 
@@ -317,7 +317,7 @@ This section addresses security issues specifically related to the implementatio
 This section describes the support software, materials, equipment, and facilities required for the implementation, as well as the personnel requirements and training necessary for the implementation.  The information provided in this section is not site-specific.  If there are additional support requirements not covered by the subsequent sections, others may be added as needed.
 
 4.1      Hardware, Software, Facilities, and Materials
-.........................................
+......................................................
 
 In this section, list support software, materials, equipment, and facilities required for the implementation, if any.
 
@@ -372,6 +372,6 @@ If the training will be provided by State staff, provide the course name(s) and 
 This section describes the performance monitoring tool and techniques and how it will be used to help decide if the implementation is successful: https://docs.mattermost.com/deployment/metrics.html
 
 4.4      Configuration Management Interface
-.........................................
+...........................................
 
 This section describes the interactions required with the Configuration Management (CM) representative on CM-related issues, such as when software listings will be distributed, and how to confirm that libraries have been moved from the development to the production environment.

@@ -44,7 +44,7 @@ Postgres:
 以Ubuntu 14.04 PosgreSQL 9.3 数据库 mattermost 为例。
 
 编译scws:
-~~~~~~~~
+~~~~~~~~~
 
 .. code:: bash
 
@@ -54,7 +54,7 @@ Postgres:
     make install
 
 编译zhparser:
-~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 .. code:: bash
 
@@ -71,7 +71,7 @@ Postgres:
     apk add wget tar gcc git postgresql-dev 
 
 创建extension以及增加解析配置:
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: bash
 
@@ -82,7 +82,7 @@ Postgres:
 
 
 配置postgresql
-~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 将 /etc/postgresql/9.3/main/postgresql.conf 中 default_text_search_config 的值更改为 simple_zh_cfg，然后重启postgresql: sudo service postgresql restart
 

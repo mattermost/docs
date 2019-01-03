@@ -1,7 +1,7 @@
 :orphan:
 
 Benefits specific to Canada-based employees
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Canada-based employees are employed through a Canadian co-employer, who offers payroll with direct deposit to Canadian accounts, T4 tax forms, and for full time employees, additional benefits through Sun Life Financial, including: 
 

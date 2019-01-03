@@ -191,7 +191,7 @@ Release date: March 28, 2018
 This release contains multiple security updates for Windows, Mac and Linux, and it is highly recommended that users upgrade to this version.
 
 Architectural Changes
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 - Minor version upgrade of Electron from v1.7.11 to v1.7.13. Electron is the underlying technology used to build the Desktop apps.
 

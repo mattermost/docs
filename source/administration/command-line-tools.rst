@@ -97,7 +97,7 @@ Notes:
    If you automate user creation through the CLI tool with SMTP enabled, emails will be sent to all new users created. If you run such a load script, it is best to disable SMTP or to use test accounts so that new account creation emails aren't unintentionally sent to people at your organization who aren't expecting them.
 
 mattermost
---------
+----------
 
   Description
     Commands for configuring and managing your Mattermost instance and users.
@@ -128,8 +128,8 @@ mattermost
     -  `mattermost version`_ - Display version information
     -  `mattermost webhook`_ - Management of webhooks
 
-mattermost channel
------------------
+mattermost channel 
+------------------
 
   Description
     Commands for channel management.
@@ -157,8 +157,8 @@ mattermost channel
     
     Also, the team and channel names in the URL should be written in lowercase.
 
-mattermost channel add
-~~~~~~~~~~~~~~~~~~~~
+mattermost channel add 
+~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Add users to a channel. If adding multiple users, use a space-separated list.
@@ -174,8 +174,8 @@ mattermost channel add
       ./mattermost channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
       ./mattermost channel add myteam:mychannel user@example.com username
 
-mattermost channel archive
-~~~~~~~~~~~~~~~~~~~~~~~~
+mattermost channel archive 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `mattermost channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
@@ -191,8 +191,8 @@ mattermost channel archive
       ./mattermost channel archive 8soyabwthjnf9qibfztje5a36h
       ./mattermost channel archive myteam:mychannel
 
-mattermost channel create
-~~~~~~~~~~~~~~~~~~~~~~~
+mattermost channel create 
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Create a channel.
@@ -218,8 +218,8 @@ mattermost channel create
           --purpose string        Channel purpose
           --team string           Team name or ID
 
-mattermost channel delete
-~~~~~~~~~~~~~~~~~~~~~~~
+mattermost channel delete 
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
@@ -235,8 +235,8 @@ mattermost channel delete
       ./mattermost channel delete 8soyabwthjnf9qibfztje5a36h
       ./mattermost channel delete myteam:mychannel
 
-mattermost channel list
-~~~~~~~~~~~~~~~~~~~~~~~~
+mattermost channel list 
+~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     List all channels on a specified team. Archived channels are appended with ``(archived)``.
@@ -252,7 +252,7 @@ mattermost channel list
       ./mattermost channel list myteam
 
 mattermost channel modify
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Modify a channel's public/private type.
@@ -275,7 +275,7 @@ mattermost channel modify
           --private  Change a public channel to be private.
 
 mattermost channel move
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/Outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by using channel IDs.
@@ -297,7 +297,7 @@ mattermost channel move
           --username [REQUIRED] Username of the user who is moving the team.
 
 mattermost channel remove
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Remove users from a channel.
@@ -320,7 +320,7 @@ mattermost channel remove
           --all-users string     Remove all users from the channel.
       
 mattermost channel rename
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Rename a channel. Channels can be specified by *{team}:{channel}* using the team and channel names, or by using channel IDs.
@@ -342,7 +342,7 @@ mattermost channel rename
       --display_name string   Channel Display Name
 
 mattermost channel restore
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Restore a channel from the archive. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
@@ -359,7 +359,7 @@ mattermost channel restore
       ./mattermost channel restore myteam:mychannel
 
 mattermost command
------------------
+------------------
 
   Description
     Commands for slash command management.
@@ -371,7 +371,7 @@ mattermost command
     -  `mattermost command move`_ - Move a slash command to a different team.
 
 mattermost command create 
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Create a custom slash command for a specified team. 
@@ -402,7 +402,7 @@ mattermost command create
           --post bool                        Use POST method for callback URL
 
 mattermost command delete
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Delete a slash command. Commands can be specified by command ID.
@@ -418,7 +418,7 @@ mattermost command delete
        ./mattermost command delete commandID
 
 mattermost command list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     List all commands on specified teams or all teams by default.
@@ -434,7 +434,7 @@ mattermost command list
        ./mattermost command list myteam
 
 mattermost command move
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Move a slash command to a different team. Commands can be specified by {team}:{command-trigger-word}, or by using command IDs.
@@ -451,7 +451,7 @@ mattermost command move
       ./mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
 
 mattermost config
----------------
+-----------------
 
   Description
     Commands for managing the configuration file.
@@ -463,7 +463,7 @@ mattermost config
     - `mattermost config validate`_ - Validate the configuration file.
 
 mattermost config get
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Retrieve the value of a config setting by its name in dot notation. 
@@ -484,7 +484,7 @@ mattermost config get
           --path string  Optional subpath; defaults to value in Site URL.
     
 mattermost config set
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Set the value of a config setting by its name in dot notation. Accepts multiple values for array settings. 
@@ -521,7 +521,7 @@ mattermost config show
        ./mattermost config show
 
 mattermost config validate
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Makes sure the configuration file has the following properties:
@@ -574,7 +574,7 @@ mattermost export actiance
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
 
 mattermost export bulk
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_.
@@ -591,7 +591,7 @@ mattermost export bulk
 
   Options
     .. code-block:: none
-
+ 
 	  --all-teams bool [REQUIRED]  Export all teams from the server.
 	  
 mattermost export csv
@@ -650,7 +650,7 @@ mattermost help
       mattermost help {outputdir}
 
 mattermost import
-----------------
+-----------------
 
   Description
     Import data into Mattermost.
@@ -659,7 +659,7 @@ mattermost import
     -  `mattermost import slack`_ - Import a team from Slack.
 
 mattermost import slack
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Import a team from a Slack export zip file.
@@ -691,7 +691,7 @@ mattermost jobserver
       ./mattermost jobserver
 
 mattermost ldap
-----------------
+---------------
 
   Description
     Commands to configure and synchronize AD/LDAP.
@@ -701,7 +701,7 @@ mattermost ldap
     -  `mattermost ldap sync`_ - Synchronize now
 
 mattermost ldap idmigrate
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Migrate LDAP Id Attribute to new value.
@@ -724,7 +724,7 @@ mattermost ldap idmigrate
       ./mattermost ldap idmigrate objectGUID
 
 mattermost ldap sync
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
   Description
     Synchronize all AD/LDAP users now.
@@ -740,7 +740,7 @@ mattermost ldap sync
       ./mattermost ldap sync
 
 mattermost license
---------------------
+------------------
 
   Description
     Commands to manage licensing.
@@ -749,7 +749,7 @@ mattermost license
     -  `mattermost license upload`_ - Upload a license.
 
 mattermost license upload
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Upload a license. This command replaces the current license if one is already uploaded.
@@ -765,7 +765,7 @@ mattermost license upload
       ./mattermost license upload /path/to/license/mylicensefile.mattermost-license
 
 mattermost permissions
---------------------
+----------------------
 
   Description
     Commands to manage advanced permissions.
@@ -776,7 +776,7 @@ mattermost permissions
     -  `mattermost permissions reset`_ - Reset the permissions system to its default state on new installs.
     
 mattermost permissions export
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Prints to stdout a jsonl representation of Schemes and Roles from a Mattermost instance. Used to export 
@@ -795,7 +795,7 @@ mattermost permissions export
       ./mattermost permissions export > my-permissions-export.jsonl
 
 mattermost permissions import
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Creates Roles and Schemes on a Mattermost instance from a jsonl input file in the format outputted by
@@ -812,7 +812,7 @@ mattermost permissions import
       ./mattermost permissions import my-permissions-export.jsonl
 
 mattermost permissions reset
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Reset permissions for all users, including Admins, to their default state on new installs. Note: **this will delete 
@@ -834,7 +834,7 @@ mattermost permissions reset
           --confirm   Confirm you really want to reset the permissions system and a DB backup has been performed.
 
 mattermost plugin
---------------------
+-----------------
 
   Description
     Commands to manage plugins.
@@ -847,7 +847,7 @@ mattermost plugin
     -  `mattermost plugin list`_ - List plugins installed on your Mattermost server.
     
 mattermost plugin add
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Add plugins to your Mattermost server. If adding multiple plugins, use a space-separated list.
@@ -863,7 +863,7 @@ mattermost plugin add
       ./mattermost plugin add hovercardexample.tar.gz pluginexample.tar.gz
 
 mattermost plugin delete
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Delete previously uploaded plugins from your Mattermost server. If deleting multiple plugins, use a space-separated list.
@@ -879,7 +879,7 @@ mattermost plugin delete
       ./mattermost plugin delete hovercardexample.tar.gz pluginexample.tar.gz
 
 mattermost plugin disable
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Disable plugins. Disabled plugins are immediately removed from the user interface and logged out of all sessions. If disabling multiple plugins, use a space-separated list.
@@ -895,7 +895,7 @@ mattermost plugin disable
       ./mattermost plugin disable hovercardexample.tar.gz pluginexample.tar.gz
       
 mattermost plugin enable
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Enable plugins for use on your Mattermost server. If enabling multiple plugins, use a space-separated list.
@@ -911,7 +911,7 @@ mattermost plugin enable
       ./mattermost plugin enable hovercardexample.tar.gz pluginexample.tar.gz
 
 mattermost plugin list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     List all active and inactive plugins installed on your Mattermost server.
@@ -927,7 +927,7 @@ mattermost plugin list
       ./mattermost plugin list
 
 mattermost reset
----------------
+----------------
 
   Description
     Completely erase the database causing the loss of all data. This resets Mattermost to its initial state.
@@ -943,7 +943,7 @@ mattermost reset
           --confirm   Confirm you really want to delete everything and a DB backup has been performed.
 
 mattermost roles
----------------
+----------------
 
   Description
     Commands to manage user roles.
@@ -953,7 +953,7 @@ mattermost roles
     -  `mattermost roles system_admin`_ - Make a user into a System Admin
 
 mattermost roles member
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Remove system admin privileges from a user.
@@ -969,7 +969,7 @@ mattermost roles member
       ./mattermost roles member user1
 
 mattermost roles system\_admin
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Promote a user to a System Admin.
@@ -985,7 +985,7 @@ mattermost roles system\_admin
       ./mattermost roles system_admin user1
 
 mattermost sampledata
--------------------
+---------------------
 
   Description
     .. versionadded:: 4.7
@@ -1020,7 +1020,7 @@ mattermost sampledata
           -w, --workers int                    How many workers to run during the import. (default 2)
 
 mattermost server
-----------------
+-----------------
 
   Description
     Runs the Mattermost server.
@@ -1031,7 +1031,7 @@ mattermost server
       mattermost server
 
 mattermost team
-----------------
+---------------
 
   Description
     Commands to manage teams.
@@ -1057,7 +1057,7 @@ mattermost team
     Also, the team and channel names in the URL should be written in lowercase.
 
 mattermost team add
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
   Description
     Add users to a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
@@ -1073,7 +1073,7 @@ mattermost team add
       ./mattermost team add myteam user@example.com username
 
 mattermost team archive
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Archive teams based on name. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
@@ -1089,7 +1089,7 @@ mattermost team archive
        ./mattermost team archive team1
 
 mattermost team create
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Create a team.
@@ -1114,7 +1114,7 @@ mattermost team create
           --private               Create a private team.
 
 mattermost team delete
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Permanently delete a team along with all related information, including posts from the database. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
@@ -1135,7 +1135,7 @@ mattermost team delete
           --confirm   Confirm you really want to delete the team and a DB backup has been performed.
 
 mattermost team list
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 *Supported in Mattermost v4.10 and later*
 
@@ -1153,7 +1153,7 @@ mattermost team list
       ./mattermost team list
 
 mattermost team remove
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Remove users from a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
@@ -1227,7 +1227,7 @@ mattermost user activate
       ./mattermost user activate username1 username2
 
 mattermost user create
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Create a user.
@@ -1256,7 +1256,7 @@ mattermost user create
           --username string    Username
 
 mattermost user deactivate
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Deactivate a user. Deactivated users are immediately logged out of all sessions and are unable to log back in.
@@ -1273,7 +1273,7 @@ mattermost user deactivate
       ./mattermost user deactivate username
 
 mattermost user delete
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Permanently delete a user and all related information, including posts from the database.
@@ -1296,7 +1296,7 @@ mattermost user delete
           --confirm   Confirm you really want to delete the user and a DB backup has been performed.
 
 mattermost user deleteall
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Permanently delete all users and all related information, including posts.
@@ -1319,7 +1319,7 @@ mattermost user deleteall
           --confirm   Confirm you really want to delete the user and a DB backup has been performed.
           
 mattermost user email	
-~~~~~~~~~~~~~~~~~~~~~~~~	
+~~~~~~~~~~~~~~~~~~~~~
 	
   Description	
     Set a user's email.	
@@ -1335,7 +1335,7 @@ mattermost user email
       ./mattermost user email user@example.com newuser@example.com
 
 mattermost user invite
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Send a user an email invite to a team. You can invite a user to multiple teams by listing the team names or team IDs.
@@ -1352,7 +1352,7 @@ mattermost user invite
       ./mattermost user invite user@example.com myteam1 myteam2
 
 mattermost user migrate_auth
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Migrates all existing Mattermost user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP, or from AD/LDAP to SAML. Output will display any accounts that are not migrated successfully.
@@ -1501,7 +1501,7 @@ mattermost user resetmfa
       ./mattermost user resetmfa user@example.com
 
 mattermost user search
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Search for users based on username, email, or user ID.
@@ -1517,7 +1517,7 @@ mattermost user search
       ./mattermost user search user1@example.com user2@example.com
 
 mattermost user verify
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Verify the email address of a new user.
@@ -1544,7 +1544,7 @@ mattermost version
       mattermost version
 
 mattermost webhook
----------------
+------------------
 
   Description
     Commands to manage webhooks.
@@ -1557,7 +1557,7 @@ mattermost webhook
     -  `mattermost webhook modify-incoming`_ - Modify existing incoming webhook by changing its title, description, channel or icon url.
 
 mattermost webhook create-incoming
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Create incoming webhook within specific channel.
@@ -1583,7 +1583,7 @@ mattermost webhook create-incoming
           --icon [iconURL]           Icon URL
 
 mattermost webhook create-outgoing
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Create outgoing webhook which allows external posting of messages from a specific channel.
@@ -1616,7 +1616,7 @@ mattermost webhook create-outgoing
           --h, --help         Help for create-outgoing
 
 mattermost webhook delete
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Description
     Delete incoming and outgoing webhooks. If deleting multiple webhooks, use a space-separated list. 
@@ -1632,7 +1632,7 @@ mattermost webhook delete
         ./mattermost webhook delete ggwpz8c1oj883euk98wfm9n1cr
 
 mattermost webhook list
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     List all webhooks. 
@@ -1654,7 +1654,7 @@ mattermost webhook list
           --team string  Specific team results to return.  If not specified, all teams will be included.
 
 mattermost webhook modify-incoming
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Modify existing incoming webhook by changing its title, description, channel or icon url.
@@ -1680,7 +1680,7 @@ mattermost webhook modify-incoming
 
 
 Mattermost 3.5 and earlier
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Typing ``./platform -help`` brings up documentation for the CLI tool. To return the help documentation in GitLab omnibus, type
 

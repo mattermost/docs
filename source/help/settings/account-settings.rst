@@ -254,7 +254,7 @@ Unreads grouped separately
 If enabled, this feature groups unread channels at the top of the channel sidebar.
 
 Favorites grouped separately
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If enabled, this feature groups favorite channels in their own sidebar section.
 
 Group unreads channels

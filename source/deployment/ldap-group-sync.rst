@@ -1,7 +1,7 @@
 .. _ldap-group-sync:
 
 AD/LDAP Groups (Alpha) (E20)
-===========================
+============================
 
 This feature is currently offered as an alpha release for Enterprise Edition E20 customers via a custom build. Please see `this forum post <https://forum.mattermost.org/t/ldap-group-sync-alpha-release/6351>`_ for more details. 
 

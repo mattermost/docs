@@ -35,7 +35,7 @@ Community Questions
 -------------------
 
 How can I get involved or contribute to Mattermost? 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can get involved and contribute to Mattermost in the following ways:
 
@@ -343,7 +343,7 @@ Product Questions
 -----------------
 
 **What features are available on different Mattermost clients?**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The following chart highlights the end user features of Mattermost and their support across Web, Desktop and Mobile applications (iOS and Android).
 

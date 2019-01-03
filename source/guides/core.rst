@@ -50,7 +50,7 @@ Community Process
    /process/community-guidelines*
 
 Core Developer Handbook
--------------------
+-----------------------
 .. toctree::
    :maxdepth: 2
    :glob:

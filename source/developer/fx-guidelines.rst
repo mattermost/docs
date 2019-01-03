@@ -96,7 +96,7 @@ We’re using `BEM methodology <https://en.bem.info/method/>`_  and would advise
 -----
 
 Screen and Content Dimensions
-****************************
+*****************************
 
 Web/Desktop App
 -------------------
@@ -582,7 +582,7 @@ Items in a menu should be grouped together based on the category they belong to.
 -----
 
 Notifications: Header Bar
----------------------
+-------------------------
 
 The header bar appears as a dropdown bar from the top of the screen. The header bar:
 

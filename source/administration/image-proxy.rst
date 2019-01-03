@@ -10,7 +10,7 @@ Proxy servers also provide a layer of caching, and can be made faster and more r
 also helps preserve posts by protecting them from dead images.
 
 Configuration Keys
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 Three configuration keys are included: ``ImageProxyType``, ``ImageProxyURL`` and ``ImageProxyOptions``. When these
 keys are configured, posts served to the client will have their markdown modified such that all images are 

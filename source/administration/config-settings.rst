@@ -2731,7 +2731,6 @@ Run Deletion Job Now
 This button initiates a Data Retention deletion job immediately.
 
 You can monitor the status of the job in the data deletion job table below this button.
-________
 
 Compliance Export (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2768,7 +2767,6 @@ Run Compliance Export Job Now
 This button initiates a Compliance Export job immediately.
 
 You can monitor the status of the job in the compliance export job table below this button.
-________
 
 Advanced
 --------------------------------
@@ -3405,7 +3403,7 @@ Specifies the connection strings for the read replica databases. Each string mus
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 
 Search Replicas (Enterprise Edition)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting. A server restart is required for changes to this setting to take effect.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -4160,7 +4158,7 @@ Select the themes that can be chosen by users when ``"EnableThemeSelection"`` is
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Display Settings  (Experimental)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Timezone
 ^^^^^^^^^^^^^^^^^^^^^^^^^

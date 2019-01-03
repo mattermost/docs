@@ -118,7 +118,7 @@ Bonus: When QA Contributor finds and reports a bug on a release candidate build 
 Community Coordinator: TBD
 
 Knowledge Base Contributors 
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
 Knowledge Base Contributors share feedback, questions and answers on Mattermost through forums for `trouble shooting <https://www.mattermost.org/troubleshoot/>`_, `feature proposals <https://www.mattermost.org/feature-ideas/>`_, and `other topics <https://forum.mattermost.org>`_. 
 
