@@ -80,7 +80,7 @@ If the post is successful Mattermost will return a message that looks like the f
 
 When the export process is complete (the execution time is based on the number of records to return and the current server load) you will need to send another HTTP Post request to Mattermost to retrieve and download a zip file containing the report that looks like the following curl request:
 
-.. code-block::
+.. code-block:: json
 
   curl --request GET \
   -H 'Authorization: Bearer p9o1qx457fbc9gdrn39z9ah59o' \
