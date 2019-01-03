@@ -554,9 +554,9 @@ danger-review:
   }
 
   function cleanup() {
-    $gitlabs=''
+    gitlabs=''
     if crdExists ; then
-      $gitlabs=',gitlabs'
+      gitlabs=',gitlabs'
     fi
 
     kubectl -n "$KUBE_NAMESPACE" get ingress,svc,pdb,hpa,deploy,statefulset,job,pod,secret,configmap,pvc,secret,clusterrole,clusterrolebinding,role,rolebinding,sa,crd${gitlabs} 2>&1 \
