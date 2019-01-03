@@ -27,6 +27,9 @@ GEM
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
       xpath (~> 3.1)
+    capybara-screenshot (1.0.22)
+      capybara (>= 1.0, < 4)
+      launchy
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (1.2.0)
@@ -36,6 +39,8 @@ GEM
     ffi (1.9.25)
     io-like (0.3.0)
     jmespath (1.4.0)
+    launchy (2.4.3)
+      addressable (~> 2.3)
     mini_mime (1.0.0)
     mini_portile2 (2.3.0)
     nokogiri (1.8.2)
@@ -70,9 +75,10 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk-s3
   capybara
+  capybara-screenshot
   chromedriver-helper
   rspec
   selenium-webdriver
 
 BUNDLED WITH
-   1.16.2
+   1.17.1
