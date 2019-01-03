@@ -22,7 +22,7 @@ The process is approximately as follows:
 6. Mattermost case study coordinator:
 
    -  Commissions a banner to be featured in the case study blog post. Please see "Marketing: Graphics" channel for examples on how to commission banners.
-   -  Creates a draft blog post in WordPress. The draft is then reviewed for formatting, grammar, and other `style guidelines <https://docs.mattermost.com/process/marketing-guidelines.html>`_.
+   -  Creates a draft blog post in WordPress. The draft is then reviewed for formatting, grammar, and other `style guidelines <https://docs.mattermost.com/process/marketing-guidelines.html>`__.
 
 7. When the customer has completed a review of the draft case study and approved it, the customer feedback is incorporated into the draft blog post (in Wordpress).
 8. A link to the final draft of the blog post is sent to the customer prior to publishing it (using preview mode in WordPress).
@@ -142,4 +142,4 @@ Follow these steps to write a case study that is clear and concise:
    b) Include business benefits that do one of three things i) increase revenue, ii) decrease cost, iii) drive efficiency. 
    c) Add customer testimonials that show how Mattermost helped achieve the customer’s goals. Include specific examples and quotations.
 
-These Case Study procedures draw heavily from Hubspot's `How to Write a Case Study <https://blog.hubspot.com/blog/tabid/6307/bid/33282/the-ultimate-guide-to-creating-compelling-case-studies.aspx>`_ article. 
+These Case Study procedures draw heavily from Hubspot's `How to Write a Case Study <https://blog.hubspot.com/blog/tabid/6307/bid/33282/the-ultimate-guide-to-creating-compelling-case-studies.aspx>`__ article. 

@@ -5,10 +5,10 @@ Release v4.2.0
 ----------------------------
 
 - **Release date:** November 27, 2018
-- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win32.exe>`_ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win64.exe>`_ | `Mac <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-mac.dmg>`_ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-linux-x64.tar.gz>`_ 
-- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.2.0>`_
+- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win32.exe>`__ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win64.exe>`__ | `Mac <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-mac.dmg>`__ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-linux-x64.tar.gz>`__ 
+- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.2.0>`__
 
-**Note:** Mattermost v4.2.0 contains a high level security fix. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`_ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`_.
+**Note:** Mattermost v4.2.0 contains a high level security fix. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
 
 Improvements
 ~~~~~~~~~~~~~~~
@@ -51,7 +51,7 @@ Contributors
 
 Many thanks to all our contributors. In alphabetical order:
 
-- `danmaas <https://github.com/danmaas>`_, `hmhealey <https://github.com/hmhealey>`_, `j1mc <https://github.com/j1mc>`_, `jasonblais <https://github.com/jasonblais>`_, `lieut-data <https://github.com/lieut-data>`_, `rodcorsi <https://github.com/rodcorsi>`_, `scherno2 <https://github.com/scherno2>`_, `sudheerDev <https://github.com/sudheerDev>`_, `svelle <https://github.com/svelle>`_, `torlenor <https://github.com/torlenor>`_, `yuya-oc <https://github.com/yuya-oc>`_
+- `danmaas <https://github.com/danmaas>`__, `hmhealey <https://github.com/hmhealey>`__, `j1mc <https://github.com/j1mc>`__, `jasonblais <https://github.com/jasonblais>`__, `lieut-data <https://github.com/lieut-data>`__, `rodcorsi <https://github.com/rodcorsi>`__, `scherno2 <https://github.com/scherno2>`__, `sudheerDev <https://github.com/sudheerDev>`__, `svelle <https://github.com/svelle>`__, `torlenor <https://github.com/torlenor>`__, `yuya-oc <https://github.com/yuya-oc>`__
 
 Release v4.1.2
 ----------------------------
@@ -59,8 +59,8 @@ Release v4.1.2
 This release contains a bug fix for all platforms.
 
 - **Release date:** May 25, 2018
-- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win32.exe>`_ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win64.exe>`_ | `Mac <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-mac.zip>`_ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-x64.tar.gz>`_ 
-- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/tree/v4.1.2>`_
+- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win32.exe>`__ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win64.exe>`__ | `Mac <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-mac.zip>`__ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-x64.tar.gz>`__ 
+- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/tree/v4.1.2>`__
 
 Bug Fixes
 ~~~~~~~~~~~~~~~
@@ -76,8 +76,8 @@ Release v4.1.1
 This release contains multiple bug fixes for Mac due to an incorrect build for v4.1.0. Windows and Linux apps are not affected.
 
 - **Release date:** May 17, 2018
-- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-setup-4.1.1-win32.exe>`_ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-setup-4.1.1-win64.exe>`_ | `Mac <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-mac.zip>`_ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-linux-x64.tar.gz>`_ 
-- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/tree/v4.1.1>`_
+- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-setup-4.1.1-win32.exe>`__ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-setup-4.1.1-win64.exe>`__ | `Mac <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-mac.zip>`__ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.1.1/mattermost-desktop-4.1.1-linux-x64.tar.gz>`__ 
+- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/tree/v4.1.1>`__
 
 Bug Fixes
 ~~~~~~~~~~~~~~~
@@ -114,7 +114,7 @@ All Platforms
   - Fixed Mac and Linux crashing after toggling "Show Mattermost icon in menu bar" app setting.
 - Updated design for loading animation icon.
 - Improved appearance of server tabs.
-- Enabled `Certificate Transparency <https://www.certificate-transparency.org/what-is-ct>`_ verification in HTTPS.
+- Enabled `Certificate Transparency <https://www.certificate-transparency.org/what-is-ct>`__ verification in HTTPS.
 
 Windows
 ^^^^^^^^^^^^^
@@ -181,7 +181,7 @@ Contributors
 
 Many thanks to all our contributors. In alphabetical order:
 
-- `Autre31415 <https://github.com/Autre31415>`_, `dmeza <https://github.com/dmeza>`_, `hmhealey <https://github.com/hmhealey>`_, `jasonblais <https://github.com/jasonblais>`_, `kethinov <https://github.com/kethinov>`_, `lieut-data <https://github.com/lieut-data>`_, `lip-d <https://github.com/lip-d>`_, `mkraft <https://github.com/mkraft>`_, `yuya-oc <https://github.com/yuya-oc>`_
+- `Autre31415 <https://github.com/Autre31415>`__, `dmeza <https://github.com/dmeza>`__, `hmhealey <https://github.com/hmhealey>`__, `jasonblais <https://github.com/jasonblais>`__, `kethinov <https://github.com/kethinov>`__, `lieut-data <https://github.com/lieut-data>`__, `lip-d <https://github.com/lip-d>`__, `mkraft <https://github.com/mkraft>`__, `yuya-oc <https://github.com/yuya-oc>`__
 
 Release v4.0.1
 --------------
@@ -191,7 +191,7 @@ Release date: March 28, 2018
 This release contains multiple security updates for Windows, Mac and Linux, and it is highly recommended that users upgrade to this version.
 
 Architectural Changes
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 - Minor version upgrade of Electron from v1.7.11 to v1.7.13. Electron is the underlying technology used to build the Desktop apps.
 
@@ -314,7 +314,7 @@ Contributors
 
 Many thanks to all our contributors. In alphabetical order:
 
- - `csduarte <https://github.com/csduarte>`_, `dmeza <https://github.com/dmeza>`_, `jasonblais <https://github.com/jasonblais>`_, `jarredwitt <https://github.com/jarredwitt>`_, `wvds <https://github.com/wvds>`_, `yuya-oc <https://github.com/yuya-oc>`_
+ - `csduarte <https://github.com/csduarte>`__, `dmeza <https://github.com/dmeza>`__, `jasonblais <https://github.com/jasonblais>`__, `jarredwitt <https://github.com/jarredwitt>`__, `wvds <https://github.com/wvds>`__, `yuya-oc <https://github.com/yuya-oc>`__
 
 ----
 
@@ -347,7 +347,7 @@ All Platforms
 ^^^^^^^^^^^^^
 
 - Added an inline spell checker for English, French, German, Spanish, and Dutch.
-- Removed an obsolete "Display secure content only" option, following an `upgrade of the Electron app to Chrome v56 <https://github.com/electron/electron/commit/2e0780308c7ef2258422efd34c968091d7cd5b65>`_.
+- Removed an obsolete "Display secure content only" option, following an `upgrade of the Electron app to Chrome v56 <https://github.com/electron/electron/commit/2e0780308c7ef2258422efd34c968091d7cd5b65>`__.
 - Reset app window position when restoring it off-screen from a minimized state.
 - Improved page loading and app view rendering.
 
@@ -373,7 +373,7 @@ Windows
 ^^^^^^^^^^^^^
 
 - Focus is now set to the next top-level window after closing the main app window.
-- Fixed an issue where the app remained in the `"classic" ALT+TAB window switcher <https://www.askvg.com/how-to-get-windows-xp-styled-classic-alttab-screen-in-windows-vista-and-7/>`_ after closing the main app window.
+- Fixed an issue where the app remained in the `"classic" ALT+TAB window switcher <https://www.askvg.com/how-to-get-windows-xp-styled-classic-alttab-screen-in-windows-vista-and-7/>`__ after closing the main app window.
 
 Mac
 ^^^^^^^^^^^^^
@@ -393,36 +393,36 @@ All Platforms
 ^^^^^^^^^^^^^
 
 - `If you click twice on the tab bar, and then attempt to use the "Zoom in/out" to change font size, the app window doesn't render properly <https://github.com/mattermost/desktop/issues/334>`__
-- `Holding down CTRL, SHIFT or ALT buttons and clicking a channel opens a new application window <https://github.com/mattermost/desktop/issues/406>`_
-- `Unable to upload a SAML certificate file from the file upload dialog <https://github.com/mattermost/desktop/issues/497>`_
+- `Holding down CTRL, SHIFT or ALT buttons and clicking a channel opens a new application window <https://github.com/mattermost/desktop/issues/406>`__
+- `Unable to upload a SAML certificate file from the file upload dialog <https://github.com/mattermost/desktop/issues/497>`__
 
 Windows
 ^^^^^^^^^^^^^
 
-- [Windows 7] `Sometimes the app tries to render the page inside the app instead of in a new browser tab when clicking links <https://github.com/mattermost/desktop/issues/369>`_
+- [Windows 7] `Sometimes the app tries to render the page inside the app instead of in a new browser tab when clicking links <https://github.com/mattermost/desktop/issues/369>`__
 
 Mac
 ^^^^^^^^^^^^^
 
-- `After uploading a file with a keyboard shortcut, focus isn't set back to the message box <https://github.com/mattermost/desktop/issues/341>`_
+- `After uploading a file with a keyboard shortcut, focus isn't set back to the message box <https://github.com/mattermost/desktop/issues/341>`__
 - The application crashes when a file upload dialog is canceled without closing Quick Look.
 
 Linux (Beta)
 ^^^^^^^^^^^^^
 
-- [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing **Quit** only minimizes the app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`_
-- [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`_
+- [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing **Quit** only minimizes the app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`__
+- [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`__
 
 Contributors
 ~~~~~~~~~~~~
 
 Many thanks to all our contributors. In alphabetical order:
 
-- `jasonblais <https://github.com/jasonblais>`_, `jnugh <https://github.com/jnugh>`_, `yuya-oc <https://github.com/yuya-oc>`_
+- `jasonblais <https://github.com/jasonblais>`__, `jnugh <https://github.com/jnugh>`__, `yuya-oc <https://github.com/yuya-oc>`__
 
 Thanks also to those who reported bugs that benefited the release, in alphabetical order:
 
-- `esethna <https://github.com/esethna>`_ (`#524 <https://github.com/mattermost/desktop/issues/524>`_), `hanzei <https://github.com/hanzei>`_ (`#523 <https://github.com/mattermost/desktop/issues/523>`_)
+- `esethna <https://github.com/esethna>`__ (`#524 <https://github.com/mattermost/desktop/issues/524>`__), `hanzei <https://github.com/hanzei>`__ (`#523 <https://github.com/mattermost/desktop/issues/523>`__)
 
 ----
 
@@ -491,32 +491,32 @@ Known Issues
 All Platforms
 ^^^^^^^^^^^^^
 
- - `If you click twice on the tab bar, and then attempt to use the "Zoom in/out" to change font size, the app window doesn't render properly <https://github.com/mattermost/desktop/issues/334>`_
- - `After using CTRL+K, an added row appears in the message box <https://github.com/mattermost/desktop/issues/426>`_
- - `Holding down CTRL, SHIFT or ALT buttons and clicking a channel opens a new application window <https://github.com/mattermost/desktop/issues/406>`_
+ - `If you click twice on the tab bar, and then attempt to use the "Zoom in/out" to change font size, the app window doesn't render properly <https://github.com/mattermost/desktop/issues/334>`__
+ - `After using CTRL+K, an added row appears in the message box <https://github.com/mattermost/desktop/issues/426>`__
+ - `Holding down CTRL, SHIFT or ALT buttons and clicking a channel opens a new application window <https://github.com/mattermost/desktop/issues/406>`__
 
 Windows
 ^^^^^^^^^^^^^
 
- - [Windows 7] `Sometimes the app tries to render the page inside the app instead of in a new browser tab when clicking links <https://github.com/mattermost/desktop/issues/369>`_
+ - [Windows 7] `Sometimes the app tries to render the page inside the app instead of in a new browser tab when clicking links <https://github.com/mattermost/desktop/issues/369>`__
 
 Mac
 ^^^^^^^^^^^^^
 
- - `After uploading a file with a keyboard shortcut, focus isn't set back to the message box <https://github.com/mattermost/desktop/issues/341>`_
+ - `After uploading a file with a keyboard shortcut, focus isn't set back to the message box <https://github.com/mattermost/desktop/issues/341>`__
 
 Linux (Beta)
 ^^^^^^^^^^^^^
 
- - [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing **Quit** only minimizes the app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`_
- - [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`_
+ - [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing **Quit** only minimizes the app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`__
+ - [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`__
 
 Contributors
 ~~~~~~~~~~~~
 
 Many thanks to all our contributors. In alphabetical order:
 
- - `asaadmahmood <https://github.com/asaadmahmood>`_, `jasonblais <https://github.com/jasonblais>`_, `jnugh <https://github.com/jnugh>`_, `yuya-oc <https://github.com/yuya-oc>`_
+ - `asaadmahmood <https://github.com/asaadmahmood>`__, `jasonblais <https://github.com/jasonblais>`__, `jnugh <https://github.com/jnugh>`__, `yuya-oc <https://github.com/yuya-oc>`__
 
 ----
 
@@ -581,7 +581,7 @@ All Platforms
 Windows
 ^^^^^^^
 
--  [Windows 7] `Sometimes the app tries to render clicked linked inside the app, instead of in a new browser tab <https://github.com/mattermost/desktop/issues/369>`_
+-  [Windows 7] `Sometimes the app tries to render clicked linked inside the app, instead of in a new browser tab <https://github.com/mattermost/desktop/issues/369>`__
 
 Mac
 ^^^
@@ -592,8 +592,8 @@ Linux (Beta)
 ^^^^^^^^^^^^
 
 -  [Ubuntu - 64 bit] `Right clicking taskbar icon and choosing Quit only minimizes the
-   app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`_
--  [Ubuntu - 64 bit] `Direct message notification pop ups do not properly render <https://github.com/mattermost/mattermost-server/issues/3589>`_
+   app <https://github.com/mattermost/desktop/issues/90#issuecomment-233712183>`__
+-  [Ubuntu - 64 bit] `Direct message notification pop ups do not properly render <https://github.com/mattermost/mattermost-server/issues/3589>`__
 
 Contributors
 ~~~~~~~~~~~~
@@ -611,7 +611,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 Thanks also to those who reported bugs that benefited the release, in alphabetical order:
 
-- ellisd (`#383 <https://github.com/mattermost/desktop/issues/383>`_), `it33 <https://github.com/it33>`_ (`#384 <https://github.com/mattermost/desktop/issues/384>`_), `jnugh <https://github.com/jnugh>`_ (`#392 <https://github.com/mattermost/desktop/issues/392>`_), `lfbrock <https://github.com/lfbrock>`_ (`#382 <https://github.com/mattermost/desktop/issues/382>`_), `yuya-oc <https://github.com/yuya-oc>`_ (`#391 <https://github.com/mattermost/desktop/issues/391>`_)
+- ellisd (`#383 <https://github.com/mattermost/desktop/issues/383>`__), `it33 <https://github.com/it33>`__ (`#384 <https://github.com/mattermost/desktop/issues/384>`__), `jnugh <https://github.com/jnugh>`__ (`#392 <https://github.com/mattermost/desktop/issues/392>`__), `lfbrock <https://github.com/lfbrock>`__ (`#382 <https://github.com/mattermost/desktop/issues/382>`__), `yuya-oc <https://github.com/yuya-oc>`__ (`#391 <https://github.com/mattermost/desktop/issues/391>`__)
 
 --------------
 
@@ -716,7 +716,7 @@ Linux (Beta)
 ^^^^^^^^^^^^
 
 -  [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app
--  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`_
+-  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`__
 
 Contributors
 ~~~~~~~~~~~~
@@ -839,7 +839,7 @@ Linux (Beta)
 ^^^^^^^^^^^^^
 
 -  [Ubuntu - 64 bit] Right clicking taskbar icon and choosing **Quit** only minimizes the app
--  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`_
+-  [Ubuntu - 64 bit] `Direct message notification comes as a streak of line instead of a pop up <https://github.com/mattermost/mattermost-server/issues/3589>`__
 
 Contributors
 ~~~~~~~~~~~~

@@ -6,7 +6,7 @@ SMTP Email Setup
 To run in production, Mattermost requires SMTP email to be enabled for email notifications and password reset for systems using email-based authentication.
 
 How to Enable Email
-~~~~~~~~~~~~~~~~~~~
+-------------------
 
 To enable email, configure an SMTP email service as follows:
 
@@ -74,7 +74,7 @@ To enable email, configure an SMTP email service as follows:
       1.  **Enable Email Invitations:** ``true``
 
 Sample SMTP Settings
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 Amazon SES
 ^^^^^^^^^^
@@ -124,7 +124,7 @@ Office365 / Outlook
 - Set **Connection Security** to **STARTTLS**
 
 Troubleshooting SMTP
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
 TLS/STARTTLS Requirements 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -180,4 +180,4 @@ Checking your SMTP server is reachable
 
 .. note::
   For additional troubleshooting tips, see
-  the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. To submit an improvement or correction, click  **Edit** at the top of this page.
+  the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__. To submit an improvement or correction, click  **Edit** at the top of this page.

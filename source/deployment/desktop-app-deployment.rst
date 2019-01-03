@@ -3,7 +3,7 @@ Desktop App Deployment Guide
 
 Mattermost desktop applications are available for Windows, Mac and Linux operating systems.
 
-You can `download the apps directly from our download page <https://about.mattermost.com/downloads/>`_ and visit our `installation guides <https://docs.mattermost.com/install/desktop.html>`_ for help during setup and for troubleshooting tips.
+You can `download the apps directly from our download page <https://about.mattermost.com/downloads/>`__ and visit our `installation guides <https://docs.mattermost.com/install/desktop.html>`__ for help during setup and for troubleshooting tips.
 
 This page provides a guide on how to customize and distribute your own Mattermost Desktop App, and how to distribute the official Windows Desktop App silently to end users, pre-configured with the server URL and other app settings.
 
@@ -15,7 +15,7 @@ This page provides a guide on how to customize and distribute your own Mattermos
 Custom Build Configuration
 ---------------------------
 
-You can customize and distribute your own Mattermost Desktop application by configuring `src/common/config/buildConfig.js <https://github.com/mattermost/desktop/blob/master/src/common/config/buildConfig.js>`_.
+You can customize and distribute your own Mattermost Desktop application by configuring `src/common/config/buildConfig.js <https://github.com/mattermost/desktop/blob/master/src/common/config/buildConfig.js>`__.
 
 1. Configure the Desktop App's `buildConfig.js` file. There are multiple parameters you can configure to customize the user experience:
 
@@ -23,7 +23,7 @@ You can customize and distribute your own Mattermost Desktop application by conf
 ~~~~~~~~~~~~~~~~
 
   Description
-    List of server URLs and their display names added to the desktop app by default, which the user cannot modify. Users can still add servers `through the Server Management page <https://docs.mattermost.com/help/apps/desktop-guide.html#server-management>`_ unless ``enableServerManagement`` is set to false. 
+    List of server URLs and their display names added to the desktop app by default, which the user cannot modify. Users can still add servers `through the Server Management page <https://docs.mattermost.com/help/apps/desktop-guide.html#server-management>`__ unless ``enableServerManagement`` is set to false. 
     
     Expects an array of key-value pairs.
 
@@ -68,14 +68,14 @@ You can customize and distribute your own Mattermost Desktop application by conf
 
       enableServerManagement: true
 
-2. To build the application, follow the `Mattermost Desktop Development Guide <https://github.com/yuya-oc/desktop/blob/master/docs/development.md>`_.
+2. To build the application, follow the `Mattermost Desktop Development Guide <https://github.com/yuya-oc/desktop/blob/master/docs/development.md>`__.
 
 Windows App: Pre-Configuration and Silent Deployment
 ------------------------------------------------------
 
-You can distribute the official Windows Desktop App silently to end users, pre-configured with the server URL. You can also set all the `app settings <https://docs.mattermost.com/help/apps/desktop-guide.html#app-options>`_ except for the **Start app on login** option.
+You can distribute the official Windows Desktop App silently to end users, pre-configured with the server URL. You can also set all the `app settings <https://docs.mattermost.com/help/apps/desktop-guide.html#app-options>`__ except for the **Start app on login** option.
 
-1. Download the latest Windows installer from the `Mattermost download page <https://about.mattermost.com/download/#mattermostApps>`_.
+1. Download the latest Windows installer from the `Mattermost download page <https://about.mattermost.com/download/#mattermostApps>`__.
 
 2. Move the executable file into a shared place such as a file server.
 

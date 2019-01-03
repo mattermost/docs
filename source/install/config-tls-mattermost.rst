@@ -18,7 +18,7 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
 
   ``sudo setcap cap_net_bind_service=+ep /opt/mattermost/bin/mattermost``
 
-3. Install the security certificate. You can use `Let's Encrypt <https://letsencrypt.org/>`_ to automatically install and setup the certificate, or you can specify your own certificate.
+3. Install the security certificate. You can use `Let's Encrypt <https://letsencrypt.org/>`__ to automatically install and setup the certificate, or you can specify your own certificate.
 
   **To use a Let's Encrypt certificate**:
 
@@ -28,7 +28,7 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
     b. Restart the Mattermost server for these changes to take effect.
 
 .. note::
-   If Let's Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let's Encrypt certification.
+   If Let's Encrypt is enabled, forward port 80 through a firewall, with `Forward80To443 <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let's Encrypt certification.
 
 **To use your own certificate**:
 
