@@ -8,7 +8,7 @@ script:
   - make html
 deploy:
   provider: script
-  script: aws s3 sync build/html dist s3://docs.mattermost.com/ --region=us-east-1 --acl public-read --delete
+  script: aws s3 sync build/html s3://docs.mattermost.com/ --region=us-east-1 --acl public-read --delete
   skip_cleanup: true
   on:
     repo: mattermost/docs
