@@ -91,11 +91,11 @@ Summary Table
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | Mattermost Product                            | Export Control Classification Number (ECCN)                                                                                                     |
 +===============================================+=================================================================================================================================================+
-| Mattermost Enterprise Edition E10             | `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__   |
-|                                               | with a License Exception available of `ENC <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__ |
+| Mattermost Enterprise Edition E10             | `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__  |
+|                                               | with a License Exception available of `ENC <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__|
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| Mattermost Enterprise Edition E20             | `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__   |
-|                                               | with a License Exception available of `ENC <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__ |
+| Mattermost Enterprise Edition E20             | `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__  |
+|                                               | with a License Exception available of `ENC <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__|
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | Mattermost Team Edition                       | Not subject to the U.S. Export Administration Regulations (EAR) given software is publicly available                                            |
 |                                               | and fully available to compile from publicly available source code at https://github.com/mattermost/                                            |

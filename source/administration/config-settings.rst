@@ -1826,7 +1826,7 @@ Skip Server Certificate Verification
 **False**: Mattermost will verify the email server certificate.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SkipServerCertificateVerification": false`` with options ``false` and ``true`` for above settings respectively.                    |
+| This feature's ``config.json`` setting is ``"SkipServerCertificateVerification": false`` with options ``false` and ``true`` for above settings respectively.         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Security Alerts
@@ -3138,7 +3138,7 @@ Inter-Node Listen Address
 The address the Mattermost Server will listen on for inter-node communication. When setting up your network you should secure the listen address so that only machines in the cluster have access to that port. This can be done in different ways, for example, using IPsec, security groups, or routing tables.
 
 +-----------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"InterNodeListenAddress": ":8075"`` with string input. |
+| This feature’s ``config.json`` setting is ``"InterNodeListenAddress": ":8075"`` with string input.  |
 +-----------------------------------------------------------------------------------------------------+
 
 Inter-Node URLs
@@ -4067,7 +4067,7 @@ Latest Android Version
 The latest version of the Android React Native app that is recommended for use.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AndroidLatestVersion": ""`` with whole number and decimal input. For example, `1.2.0`        |
+| This feature's ``config.json`` setting is ``"AndroidLatestVersion": ""`` with whole number and decimal input. For example, `1.2.0`      |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 
 Minimum Android Version
