@@ -16,7 +16,7 @@ spec:
     metadata:
       labels:
         component: operator
-{{ include "gitlab.standardLabels" . | indent 8 }}
+{{ include "gitlab.immutableLabels" . | indent 6 }}
     spec:
       serviceAccountName: {{ template "fullname" . }}
       containers:
