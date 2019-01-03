@@ -3,7 +3,7 @@
 Troubleshooting
 ===============
 
-This document summarizes common troubleshooting issues and techinques.
+This document summarizes common troubleshooting issues and techniques.
 
 .. contents::
     :backlinks: top
