@@ -3,10 +3,10 @@
 Using an Outbound Proxy
 =======================
 
-To use Mattermost behind a proxy you will need to set the `HTTP_PROXY` and `HTTPS_PROXY` environment variables to the URL for your proxy server. To set these when running the Mattermost server via `systemd` modify the `mattermost.service` like this:
+To use Mattermost behind a proxy, you need to set the ``HTTP_PROXY`` and ``HTTPS_PROXY`` environment variables to the URL for your proxy server. To set these when running the Mattermost server via ``systemd``, modify the ``mattermost.service`` like this:
   
   .. note::
-    Be sure to replace `127.0.0.1:3128` with the correct values for your proxy servers
+    Be sure to replace `127.0.0.1:3128` with the correct values for your proxy servers.
 
   .. code-block:: none
 
@@ -31,3 +31,4 @@ To use Mattermost behind a proxy you will need to set the `HTTP_PROXY` and `HTTP
 
     [Install]
     WantedBy=postgresql.service
+    
