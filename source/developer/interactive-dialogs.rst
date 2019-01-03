@@ -21,7 +21,7 @@ Opening a Dialog
 
 To open a dialog, your integration must first receive an HTTP request from the Mattermost server. This request will be triggered by a slash command or an interactive message. It will include a trigger ID.
 
-Once you have the trigger ID you can use it to open the interactive dialog by sending an HTTP POST requst to ``https://<your-mattermost-url>/api/v4/actions/dialogs/open``. See the below section for what to include in the body of that HTTP request.
+Once you have the trigger ID you can use it to open the interactive dialog by sending an HTTP POST request to ``https://<your-mattermost-url>/api/v4/actions/dialogs/open``. See the below section for what to include in the body of that HTTP request.
 
 Parameters
 -----------------------
