@@ -1,5 +1,5 @@
 Bind Authentication to ID Attribute instead of Email
-------------------------------------------
+----------------------------------------------------
 
 Alternatively, you can use an Id Attribute instead of email to bind the user.  We recommend choosing an ID that is unique and will not change over time.  
 

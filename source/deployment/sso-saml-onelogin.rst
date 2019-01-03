@@ -19,7 +19,7 @@ Create a OneLogin connection app for Mattermost SSO
 
   .. image:: ../../source/images/onelogin_1_new_app.png
 
-  d. In the **Display Name** field, enter a name for the application, and optionally upload an app icon. You can use the Mattermost logo for the icon, which you can download from `Branding Guidelines <http://www.mattermost.org/brand-guidelines/>`_ page.
+  d. In the **Display Name** field, enter a name for the application, and optionally upload an app icon. You can use the Mattermost logo for the icon, which you can download from `Branding Guidelines <http://www.mattermost.org/brand-guidelines/>`__ page.
 
   .. image:: ../../source/images/onelogin_2_basic_configuration.png
 
@@ -28,7 +28,7 @@ Create a OneLogin connection app for Mattermost SSO
 
 2. Configure the app.
   a. Click the **Configuration** tab and enter the following values:
-    - **Recipient**: ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_.
+    - **Recipient**: ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__.
     - **ACS (Consumer) URL**: ``https://<your-mattermost-url>/login/sso/saml``
     - **ACS (Consumer) URL Validator**: ``https:\/\/<your-mattermost-url>\/login\/sso\/saml``
 

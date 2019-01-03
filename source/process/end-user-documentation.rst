@@ -1,11 +1,11 @@
 Creating and Editing Mattermost User’s Guide
 ====================================================================================
 
-This document describes the best practices for creating `Mattermost documentation for end users <https://docs.mattermost.com/guides/user.html>`_.
+This document describes the best practices for creating `Mattermost documentation for end users <https://docs.mattermost.com/guides/user.html>`__.
 
 Follow these steps:
 
-1. Start the document by describing the benefits of the feature for end users (`please see this example <https://docs.mattermost.com/help/messaging/attaching-files.html>`_).
+1. Start the document by describing the benefits of the feature for end users (`please see this example <https://docs.mattermost.com/help/messaging/attaching-files.html>`__).
 
 2. Proceed to explain how to use the feature - use short bullet points as well as screenshots as applicable.
 

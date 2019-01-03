@@ -7,7 +7,7 @@ Electronic discovery (also known as eDiscovery) refers to a process where where 
 
 This page describes how to extract data from Mattermost for eDiscovery. There are three primary methods that can be used to accomplish the goal of extracting user post data from Mattermost:
 
-- `Mattermost Compliance Exports <https://docs.mattermost.com/administration/compliance-export.html>`_
+- `Mattermost Compliance Exports <https://docs.mattermost.com/administration/compliance-export.html>`__
 - Mattermost RESTful API
 - Mattermost database using standard SQL queries
 
@@ -24,14 +24,14 @@ Mattermost Enterprise E20 has compliance report export capabilities.
 
 Mattermost can export compliance related data, including the content of messages and who might have seen those messages, in three formats: Actiance XML, Global Relay EML and generic CSV. Reports can be configured to run on a delay basis and stored in a shared location.
 
-For more information about the exports feature and how to set up reporting, see `our documentation <https://docs.mattermost.com/administration/compliance-export.html>`_.
+For more information about the exports feature and how to set up reporting, see `our documentation <https://docs.mattermost.com/administration/compliance-export.html>`__.
 
 Mattermost RESTful API
 ------------------------------------
 
 The Mattermost API can be used to export a user's posts in CSV compliance format that is part of Mattermost Enterprise E20. The following section outlines how to use the API to create and retrieve a report for a specific user via the API. Please note that full documentation for the Mattermost API can be found at https://api.mattermost.com.
 
-To use the API, you must first authenticate `as described here <https://api.mattermost.com/#tag/authentication>`_. The account you are authenticating with must have ``manage_system`` permissions. If you are using Curl you can authenticate using the following command:
+To use the API, you must first authenticate `as described here <https://api.mattermost.com/#tag/authentication>`__. The account you are authenticating with must have ``manage_system`` permissions. If you are using Curl you can authenticate using the following command:
 
 .. code-block:: json
 
@@ -58,7 +58,7 @@ Include the ``token`` value sent in the response as part of the Authorization he
 
   curl -i -H 'Authorization: Bearer yi94pwci6ibjfc9phbikhqutbe http://yourmattermosturl/api/v4/users/me
 
-Once you are authenticated in to Mattermost you can use the `Compliance API to create a new compliance report <https://api.mattermost.com/#tag/compliance%2Fpaths%2F~1compliance~1reports%2Fpost>`_. The curl based example below demonstrates how to send a request that bases the authentication token and asks Mattermost to create a report that spans posts from Dec 31, 2017 - 8:15 PM to Dec 31, 2018 - 8:15 PM for a user with the email address craig@mattermost.com
+Once you are authenticated in to Mattermost you can use the `Compliance API to create a new compliance report <https://api.mattermost.com/#tag/compliance%2Fpaths%2F~1compliance~1reports%2Fpost>`__. The curl based example below demonstrates how to send a request that bases the authentication token and asks Mattermost to create a report that spans posts from Dec 31, 2017 - 8:15 PM to Dec 31, 2018 - 8:15 PM for a user with the email address craig@mattermost.com
 
 .. note::
 
@@ -80,7 +80,7 @@ If the post is successful Mattermost will return a message that looks like the f
 
 When the export process is complete (the execution time is based on the number of records to return and the current server load) you will need to send another HTTP Post request to Mattermost to retrieve and download a zip file containing the report that looks like the following curl request:
 
-.. code-block::
+.. code-block:: json
 
   curl --request GET \
   -H 'Authorization: Bearer p9o1qx457fbc9gdrn39z9ah59o' \

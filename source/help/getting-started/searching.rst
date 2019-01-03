@@ -27,7 +27,7 @@ Use ``from:`` to find posts from specific users and ``in:`` to find posts in spe
 -  Searching ``Mattermost in: @john.doe`` returns messages that contain ``Mattermost`` in your direct message history with John Doe. 
 
 Before:, After: and On:
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 Use ``before:`` to find posts before a specified date and ``after:`` to find posts after a specified date. Use both ``before:`` and ``after:`` together to search in a specified date range.  Use ``on:`` to find posts from a specific date.  You can use the date picker to select a date or you can type it in YYYY-MM-DD format.
 
@@ -88,7 +88,7 @@ Technical Notes
 ---------------
 
 Searching Chinese, Korean and Japanese
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  The best experience for searching in Chinese, Korean and Japanese is
    to use MySQL 5.7.6 or later with special configuration. Please see
@@ -97,7 +97,7 @@ Searching Chinese, Korean and Japanese
    ``*`` to the end of search terms.
 
 Differences between MySQL and Postgres search
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By default, Mattermost uses full text search support included in MySQL
 and PostgreSQL. These databases have slightly different search behavior.

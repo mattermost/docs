@@ -8,7 +8,7 @@ This configuration is not recommended for use in production, as it currently doe
 Heroku Installation
 --------------------
 
-1. Sign up for a free account on `Heroku <https://www.heroku.com/>`_
+1. Sign up for a free account on `Heroku <https://www.heroku.com/>`__
 
 2. Click the |HerokuDeploy|_ button
 
@@ -24,7 +24,7 @@ Heroku Installation
     - ``FILE_SETTINGS__AMAZON_S3_ACCESS_KEY_ID``: The access key for your Amazon S3. Only required for driver name `amazons3`.
     - ``FILE_SETTINGS__AMAZON_S3_SECRET_ACCESS_KEY``: The secret access key for your Amazon S3. Only required for driver name amazons3.
     - ``FILE_SETTINGS__AMAZON_S3_BUCKET``: The name you selected for your S3 bucket in AWS. Only required for driver name amazons3.
-    - ``FILE_SETTINGS__AMAZON_S3_REGION``: The AWS region you selected when creating your S3 bucket. Refer to `AWS Reference Documentation <http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`_ and choose this variable from the Region column.
+    - ``FILE_SETTINGS__AMAZON_S3_REGION``: The AWS region you selected when creating your S3 bucket. Refer to `AWS Reference Documentation <http://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region>`__ and choose this variable from the Region column.
 4. Click **"Deploy for Free"**
 
 

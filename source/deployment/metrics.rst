@@ -3,9 +3,9 @@ Performance Monitoring (E20)
 
 *Available in Enterprise Edition E20*.
 
-Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`_ and `Grafana <http://grafana.org/>`_.
+Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <http://grafana.org/>`__.
 
-The integration supports data collection from several Mattermost servers, particularly useful if you're running Mattermost `in high availability mode <https://docs.mattermost.com/deployment/cluster.html>`_.
+The integration supports data collection from several Mattermost servers, particularly useful if you're running Mattermost `in high availability mode <https://docs.mattermost.com/deployment/cluster.html>`__.
 
 .. contents::
     :backlinks: top
@@ -17,9 +17,9 @@ Details on integrating your Mattermost server with Prometheus and Grafana.
 Installing Prometheus
 ------------------------------------------------
 
-1 - `Download a precompiled binary for Prometheus <https://prometheus.io/download/>`_. Binaries are provided for many popular distributions, including Darwin, Linux and Windows.
+1 - `Download a precompiled binary for Prometheus <https://prometheus.io/download/>`__. Binaries are provided for many popular distributions, including Darwin, Linux and Windows.
 
-For install instructions, see `Prometheus install guides <https://prometheus.io/docs/introduction/getting_started/>`_.
+For install instructions, see `Prometheus install guides <https://prometheus.io/docs/introduction/getting_started/>`__.
 
 2 - The following settings are recommended in the Prometheus configuration file named ``prometheus.yml``:
 
@@ -58,7 +58,7 @@ For install instructions, see `Prometheus install guides <https://prometheus.io/
 
 The ``<hostname1>:<port>`` parameter has to be replaced with your Mattermost host ip address and port to scrape the data. It connects to ``/metrics`` using http. 
 
-3 - Enable performance monitoring in the Mattermost System Console and specify the listen address. See more detail in our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html#performance-monitoring-beta>`_. After enabling performance monitoring, make sure to reboot Mattermost.
+3 - Enable performance monitoring in the Mattermost System Console and specify the listen address. See more detail in our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html#performance-monitoring-beta>`__. After enabling performance monitoring, make sure to reboot Mattermost.
 
 .. image:: ../images/perf_monitoring_system_console.png
   :scale: 70
@@ -67,39 +67,39 @@ The ``<hostname1>:<port>`` parameter has to be replaced with your Mattermost hos
 
 5 - Finally, run ``vi prometheus.yml`` to finish configuring Prometheus.
 
-For starting the Prometheus service, read the `comprehensive guides provided by Prometheus <https://prometheus.io/docs/introduction/getting_started/#starting-prometheus>`_.
+For starting the Prometheus service, read the `comprehensive guides provided by Prometheus <https://prometheus.io/docs/introduction/getting_started/#starting-prometheus>`__.
 
 6 - Once the service has started, you can access the data in ``<localhost>:<port>/graph``.
 
 While you can use the Prometheus service to create graphs, we'll focus on creating metric and analytics dashboards in Grafana.
 
-.. note:: For troubleshooting advice, check the `Prometheus FAQ page <https://prometheus.io/docs/introduction/faq/>`_.
+.. note:: For troubleshooting advice, check the `Prometheus FAQ page <https://prometheus.io/docs/introduction/faq/>`__.
 
 Installing Grafana
 ------------------------------------------------
 
-1 - `Download a precompiled binary for Grafana <http://docs.grafana.org/installation/debian/>`_ on Ubuntu or Debian. Binaries are also available for other distributions, including Redhat, Windows and Mac.
+1 - `Download a precompiled binary for Grafana <http://docs.grafana.org/installation/debian/>`__ on Ubuntu or Debian. Binaries are also available for other distributions, including Redhat, Windows and Mac.
 
-For install instructions, see `Grafana install guides <http://docs.grafana.org/installation/debian/>`_
+For install instructions, see `Grafana install guides <http://docs.grafana.org/installation/debian/>`__
 
-2 - The Grafana package is installed as a service, so it is easy to start the server. See their `install guides <http://docs.grafana.org/installation/debian/>`_ to learn more.
+2 - The Grafana package is installed as a service, so it is easy to start the server. See their `install guides <http://docs.grafana.org/installation/debian/>`__ to learn more.
 
 3 - The default HTTP port is ``3000`` and default username and password are ``admin``.
 
-.. note:: For troubleshooting advice, check the `Grafana Troubleshooting page <http://docs.grafana.org/installation/troubleshooting/>`_.
+.. note:: For troubleshooting advice, check the `Grafana Troubleshooting page <http://docs.grafana.org/installation/troubleshooting/>`__.
 
-For user guides and tutorials, check the `Grafana documentation to learn more <http://docs.grafana.org/guides/basic_concepts/>`_.
+For user guides and tutorials, check the `Grafana documentation to learn more <http://docs.grafana.org/guides/basic_concepts/>`__.
 
 Getting Started
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To help you get started, you can download three sample dashboards shared in Grafana:
 
- - `Mattermost Performance KPI Metrics <https://grafana.com/dashboards/2539>`_, which contains key metrics for monitoring performance and system health.
- - `Mattermost Performance Monitoring <https://grafana.com/dashboards/2542>`_, which contains detailed charts for performance monitoring.
- - `Mattermost Performance Monitoring (Bonus Metrics) <https://grafana.com/dashboards/2545>`_, which contains additional metrics such as emails sent or files uploaded, which may be important to monitor in some deployments.
+ - `Mattermost Performance KPI Metrics <https://grafana.com/dashboards/2539>`__, which contains key metrics for monitoring performance and system health.
+ - `Mattermost Performance Monitoring <https://grafana.com/dashboards/2542>`__, which contains detailed charts for performance monitoring.
+ - `Mattermost Performance Monitoring (Bonus Metrics) <https://grafana.com/dashboards/2545>`__, which contains additional metrics such as emails sent or files uploaded, which may be important to monitor in some deployments.
 
-See `this guide <http://docs.grafana.org/reference/export_import/>`_ to learn how to import Grafana dashboards either from the UI or from the HTTP API.
+See `this guide <http://docs.grafana.org/reference/export_import/>`__ to learn how to import Grafana dashboards either from the UI or from the HTTP API.
 
 Statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -188,7 +188,7 @@ The Prometheus integration also provides standard GO metrics for HTTP server run
     - ``go_gc_duration_seconds`` for garbage collection duration
     - ``go_memstats_heap_objects`` for object tracking on the heap
 
-To learn how to set up runtime profiling, see the `pprof package GO documentation <https://golang.org/pkg/net/http/pprof/>`_.  You can also visit the ``ip:port/metrics`` page for a complete list of metrics with descriptions.
+To learn how to set up runtime profiling, see the `pprof package GO documentation <https://golang.org/pkg/net/http/pprof/>`__.  You can also visit the ``ip:port/metrics`` page for a complete list of metrics with descriptions.
 
 If enabled, you can run the profiler by
 
@@ -214,4 +214,4 @@ Why Are Chart Labels Difficult To Distinguish?
 
 The chart labels used in server filters and legends are based on the hostname of your machines. If the hostnames are similar, then it will be difficult to distinguish the labels.
 
-You can either set more descriptive hostnames for your machines or change the display name with a ``relabel_config`` in  `Prometheus configuration <https://prometheus.io/docs/prometheus/latest/configuration/configuration/#relabel_config>`_.
+You can either set more descriptive hostnames for your machines or change the display name with a ``relabel_config`` in  `Prometheus configuration <https://prometheus.io/docs/prometheus/latest/configuration/configuration/#relabel_config>`__.

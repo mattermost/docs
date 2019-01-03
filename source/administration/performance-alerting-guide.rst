@@ -5,13 +5,13 @@ Mattermost uses Prometheus and Grafana to track performance metrics of the Matte
 
 **Prerequisites**
 
-Set up performance monitoring for Mattermost. See our `documentation <https://docs.mattermost.com/deployment/metrics.html>`_ to learn more.
+Set up performance monitoring for Mattermost. See our `documentation <https://docs.mattermost.com/deployment/metrics.html>`__ to learn more.
 
 To get alerts, first set up a Notification Channel in Grafana. Here’s how you can set it up to automatically post alerts in Mattermost:
 
 1. In Mattermost:
   a. Create an Alerts channel
-  b. Create an `incoming webhook <https://docs.mattermost.com/developer/webhooks-incoming.html>`_ for the Alerts channel and copy the URL
+  b. Create an `incoming webhook <https://docs.mattermost.com/developer/webhooks-incoming.html>`__ for the Alerts channel and copy the URL
 
 2. In Grafana:
   a. Under the alert icon in the sidebar, click ''Notification channels''
@@ -22,11 +22,11 @@ To get alerts, first set up a Notification Channel in Grafana. Here’s how you 
   f. Include an @ mention in the mention field, if you want to send mentions when an alert is posted to Mattermost
   g. Press ''Send Test'' to test the alert
 
-If you would also like to get email alerts, you can follow `these instructions <http://docs.grafana.org/alerting/notifications/#email.>`_ to set that up.
+If you would also like to get email alerts, you can follow `these instructions <http://docs.grafana.org/alerting/notifications/#email.>`__ to set that up.
 
 **Configuring Alerts**
 
-The `Mattermost dashboards <https://grafana.com/dashboards?search=mattermost>`_ for Grafana come with some partially pre-configured alerts on the following charts:
+The `Mattermost dashboards <https://grafana.com/dashboards?search=mattermost>`__ for Grafana come with some partially pre-configured alerts on the following charts:
 
 * CPU Utilization Rate
 * Memory Usage

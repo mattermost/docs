@@ -3,9 +3,9 @@ Using Mattermost Desktop App
 
 Mattermost desktop applications are available for Windows, Mac and Linux operating systems.
 
-You can `download the apps directly from our download page <https://about.mattermost.com/downloads/>`_ and visit our `installation guides <https://docs.mattermost.com/install/desktop.html>`_ for help during setup and for troubleshooting tips.
+You can `download the apps directly from our download page <https://about.mattermost.com/downloads/>`__ and visit our `installation guides <https://docs.mattermost.com/install/desktop.html>`__ for help during setup and for troubleshooting tips.
 
-To view the latest updates, please see our `changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`_.
+To view the latest updates, please see our `changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`__.
 
 Below are a few tips to get you started and to configure your experience on the desktop app:
 
@@ -60,7 +60,7 @@ To remove a server from your desktop app environment:
 App Options
 -----------
 
-In addition to `Mattermost Account Settings <https://docs.mattermost.com/help/settings/account-settings.html>`_ , the desktop app provides additional options to customize your experience.
+In addition to `Mattermost Account Settings <https://docs.mattermost.com/help/settings/account-settings.html>`__ , the desktop app provides additional options to customize your experience.
 
 The options appear in the Settings page, available from the **File > Settings** or by CTRL/CMD+COMMA.
 

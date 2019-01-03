@@ -1,7 +1,7 @@
 Deprecation Policy
 ===============================
 
-This document outlines the process for announcing deprecated features to the community. The guiding principle is `no surprises <https://docs.mattermost.com/developer/manifesto.html#no-surprises>`_ with guaranteed long-term stability, where admins or users should never run into anything unexpected while using Mattermost.
+This document outlines the process for announcing deprecated features to the community. The guiding principle is `no surprises <https://docs.mattermost.com/developer/manifesto.html#no-surprises>`__ with guaranteed long-term stability, where admins or users should never run into anything unexpected while using Mattermost.
 
 Definition of a Deprecated Feature
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -28,15 +28,15 @@ Notice
 
 When the decision to deprecate a feature or function is made, the product manager responsible for the feature carries out the following actions:
 
-1. Adds the scheduled deprecation to the `deprecated features page <https://about.mattermost.com/deprecated-features/>`_ with a note of what it's been replaced with.
-2. Prepares a forum post describing the reasons for deprecating the feature, providing an opportunity for the community to share feedback. See a `sample forum post <https://forum.mattermost.org/t/switching-teammate-name-display-to-a-system-console-setting/3366>`_.
+1. Adds the scheduled deprecation to the `deprecated features page <https://about.mattermost.com/deprecated-features/>`__ with a note of what it's been replaced with.
+2. Prepares a forum post describing the reasons for deprecating the feature, providing an opportunity for the community to share feedback. See a `sample forum post <https://forum.mattermost.org/t/switching-teammate-name-display-to-a-system-console-setting/3366>`__.
 3. Creates a JIRA ticket for removing the feature, including a prefix “Deprecation:” and a fix version matching the removal target date.
 
 Moreover, the acting release manager takes the following actions:
 
-1. `12 working days before each release <https://docs.mattermost.com/process/release-process.html#c-t-minus-12-working-days-cut-off-for-merging-major-features>`_, adds a list of deprecated features to the compatibility section of the `changelog <https://docs.mattermost.com/administration/changelog.html>`_ and `important upgrade notes <https://docs.mattermost.com/administration/important-upgrade-notes.html>`_. The changelog should include deprecations scheduled for upcoming releases.
-2. `12 working days before each release <https://docs.mattermost.com/process/release-process.html#c-t-minus-12-working-days-cut-off-for-merging-major-features>`_, sends the list of deprecated features to the marketing manager, who includes this information in the release announcement.
-3. `2 working days before each release <https://docs.mattermost.com/process/release-process.html#h-t-minus-2-working-days-release-build-cut>`_, ensures the `deprecated features page <https://about.mattermost.com/deprecated-features/>`_ is up to date.
+1. `12 working days before each release <https://docs.mattermost.com/process/release-process.html#c-t-minus-12-working-days-cut-off-for-merging-major-features>`__, adds a list of deprecated features to the compatibility section of the `changelog <https://docs.mattermost.com/administration/changelog.html>`__ and `important upgrade notes <https://docs.mattermost.com/administration/important-upgrade-notes.html>`__. The changelog should include deprecations scheduled for upcoming releases.
+2. `12 working days before each release <https://docs.mattermost.com/process/release-process.html#c-t-minus-12-working-days-cut-off-for-merging-major-features>`__, sends the list of deprecated features to the marketing manager, who includes this information in the release announcement.
+3. `2 working days before each release <https://docs.mattermost.com/process/release-process.html#h-t-minus-2-working-days-release-build-cut>`__, ensures the `deprecated features page <https://about.mattermost.com/deprecated-features/>`__ is up to date.
 
 Removal target date
 ~~~~~~~~~~~~~~~~~~~~~
