@@ -39,6 +39,7 @@ Installing Mattermost
    /install/desktop*
    /install/smtp*
    /install/config-cloudfront*
+   /install/outbound-proxy.rst
    /install/i18n*
    /install/config-apache2.rst
 
