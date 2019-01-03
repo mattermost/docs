@@ -2,13 +2,13 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   API version 3 is now removed. See `api.mattermost.com <https://api.mattermost.com/#tag/APIv3-Deprecation>`_ to learn more.
+   API version 3 is now removed. See `api.mattermost.com <https://api.mattermost.com/#tag/APIv3-Deprecation>`__ to learn more.
 
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                         |
 +====================================================+=================================================================================================================================================================+
 | v5.6.0                                             | Built-in WebRTC is removed. See `here for more details <https://forum.mattermost.org/t/built-in-webrtc-video-and-audio-calls-removed-in-v5-6-                   | 
-|                                                    | in-favor-of-open-source-plugins/5998>`_.                                                                                                                        |
+|                                                    | in-favor-of-open-source-plugins/5998>`__.                                                                                                                        |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | If **EnablePublicChannelsMaterialization** setting in ``config.json`` is set to ``false``, an offline migration prior to upgrade may be required to synchronize |
 |                                                    | the materialized table for public channels to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere  |
@@ -43,7 +43,7 @@ Important Upgrade Notes
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.1.0                                             | ``mattermost export`` CLI command is renamed to ``mattermost export schedule``. Make sure to update your scripts if you use this command.                       |                                        
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| v5.0.0                                             | All API v3 endpoints are removed. `See documentation <https://api.mattermost.com/#tag/APIv3-Deprecation>`_ to learn how to migrate your integrations to API v4. |
+| v5.0.0                                             | All API v3 endpoints are removed. `See documentation <https://api.mattermost.com/#tag/APIv3-Deprecation>`__ to learn how to migrate your integrations to API v4. |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | ``platform`` binary is renamed to ``mattermost`` for a clearer install and upgrade experience. You should point your ``systemd`` service file at the new        |
 |                                                    | ``mattermost`` binary. All command line tools, including the bulk loading tool and developer tools, are also be renamed from ``platform`` to ``mattermost``.    |
@@ -57,7 +57,7 @@ Important Upgrade Notes
 |                                                    | If you rely on custom protocols auto-linking in Mattermost, whitelist them in ``config.json`` before upgrading.                                                 |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | A new ``config.json`` setting to disable the `permanent APIv4 delete team parameter                                                                             |
-|                                                    | <https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput>`_ is added. The setting will be off by default for all new and existing          |
+|                                                    | <https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput>`__ is added. The setting will be off by default for all new and existing          |
 |                                                    | installs, except those deployed on GitLab Omnibus. If you reply on the APIv4 parameter, enable the setting in `config.json` before upgrading.                   |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | An unused ``ExtraUpdateAt`` field will be removed from the channel model.                                                                                       |
@@ -85,7 +85,7 @@ Important Upgrade Notes
 |                                                    | Restart your Mattermost instances.                                                                                                                              |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Deployments on Enterprise E20 will need to enable ``RunJobs`` in the ``config.json`` and allow the permissions migration to complete before using `Team         |
-|                                                    | Override Schemes <https://docs.mattermost.com/deployment/advanced-permissions.html>`_.                                                                          |
+|                                                    | Override Schemes <https://docs.mattermost.com/deployment/advanced-permissions.html>`__.                                                                          |
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.10.0                                            | Old email invitation links will no longer work due to a bug fix where teams could be re-joined via the link.                                                    |
 |                                                    | Team invite links copied from the Team Invite Link dialog, password reset links and email verification links are not affected and are still valid.              |
@@ -101,7 +101,7 @@ Important Upgrade Notes
 |                                                    | If you use PostgreSQL database and the password contains special characters (e.g. ``[]``), escape them in your password, e.g., xxx[]xxx will be xxx%5B%5Dxxx.   |
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.9.0                                             | To improve the production use of Mattermost with Docker, the docker image is now running a as non-root user and listening on port 8000. Please read the         |
-|                                                    | `upgrade instructions <https://github.com/mattermost/mattermost-docker#upgrading-mattermost-to-49>`_ for important changes to existing installations.           |
+|                                                    | `upgrade instructions <https://github.com/mattermost/mattermost-docker#upgrading-mattermost-to-49>`__ for important changes to existing installations.           |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Several configuration settings have been migrated to roles in the database and changing their config.json values no longer takes effect. These permissions      |
 |                                                    | can still be modified by their respective System Console settings as before. The affected config.json settings are:                                             |
@@ -125,13 +125,13 @@ Important Upgrade Notes
 |                                                    | editing time in seconds. If post editing is disabled, this setting does not apply.                                                                              |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | If using Let's Encrypt without a proxy server, the server will fail to start with an error message unless the `Forward80To443                                   |
-|                                                    | <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting is set to ``true``.                          |
+|                                                    | <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`__ ``config.json`` setting is set to ``true``.                          |
 |                                                    |                                                                                                                                                                 |
 |                                                    | If forwarding port 80 to 443, the server will fail to start with an error message unless the `ListenAddress                                                     |
-|                                                    | <https://docs.mattermost.com/administration/config-settings.html#listen-address>`_ ``config.json`` setting is set to listen on port 443.                        |
+|                                                    | <https://docs.mattermost.com/administration/config-settings.html#listen-address>`__ ``config.json`` setting is set to listen on port 443.                        |
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.6.2                                             | If using Let's Encrypt without a proxy server, forward port 80 through a firewall, with the `Forward80To443                                                     |
-|                                                    | <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`_ ``config.json`` setting set to ``true`` to complete the Let's        |
+|                                                    | <https://docs.mattermost.com/administration/config-settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete the Let's        |
 |                                                    | Encrypt certification.                                                                                                                                          |
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.4.0                                             | Composite database indexes were added to the ``Posts`` table. This may lead to longer ugprade times for servers with more than 1 million messages.              |
@@ -147,16 +147,16 @@ Important Upgrade Notes
 |                                                    | This change may cause private integrations to break in testing environments, which may point to a URL such as http://127.0.0.1:1021/my-command.                 |
 |                                                    |                                                                                                                                                                 |
 |                                                    | If you point private integrations to such URLs, you may whitelist such domains, IP addresses, or CIDR notations via the                                         |
-|                                                    | `AllowedUntrustedInternalConnections config setting <https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to>`_ |
+|                                                    | `AllowedUntrustedInternalConnections config setting <https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to>`__ |
 |                                                    | in your local environment. Although not recommended, you may also whitelist the addresses in your production environments. See                                  |
-|                                                    | `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to>`_.                       |
+|                                                    | `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to>`__.                       |
 |                                                    |                                                                                                                                                                 |
 |                                                    | Push notification, OAuth 2.0 and WebRTC server URLs are trusted and not affected by this setting.                                                               |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Uploaded file attachments are now grouped by day and stored in ``/data/<date-of-upload-as-YYYYMMDD>/teams/...`` of your file storage system.                    |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Mattermost `/platform` repo has been separated to `/mattermost-webapp` and `/mattermost-server`. This may affect you if you have a private fork of the          |
-|                                                    | `/platform` repo. `More details here <https://forum.mattermost.org/t/mattermost-separating-platform-into-two-repositories-on-september-6th/3708>`_.             |
+|                                                    | `/platform` repo. `More details here <https://forum.mattermost.org/t/mattermost-separating-platform-into-two-repositories-on-september-6th/3708>`__.             |
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v4.0.0                                             | (High Availability Only)                                                                                                                                        |
 |                                                    |                                                                                                                                                                 |
@@ -180,7 +180,7 @@ Important Upgrade Notes
 |                                                    |   3. Make sure that the **File Log Directory** field is either empty or has a directory path only.It must not have a filename as part of the path.              |
 |                                                    +-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Backwards compatibility with the old CLI tool was removed. If you have any scripts that rely on the old CLI, they must be revised to use the                    |
-|                                                    | `new CLI  <../administration/command-line-tools.html>`_.                                                                                                        |
+|                                                    | `new CLI  <../administration/command-line-tools.html>`__.                                                                                                        |
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v3.6.0                                             | Update the maximum number of files that can be open.                                                                                                            |
 |                                                    |                                                                                                                                                                 |

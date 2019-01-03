@@ -3,7 +3,7 @@ SSL Client Certificate Setup (Beta)
 
 Follow these steps to configure SSL client certificates for your browser and the Mattermost Desktop Apps on Windows, Mac and Linux. SSL client certificates are not yet supported on the Mattermost mobile apps.
 
-Before you begin, follow the `official guides to install Mattermost <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_ on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
+Before you begin, follow the `official guides to install Mattermost <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__ on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
 
 For the purposes of this guide, the Mattermost server domain name is ``example.mattermost.com``, and the user account is ``mmuser`` with email ``mmuser@mattermost.com`` and password ``mmuser-password``.
 
@@ -13,7 +13,7 @@ For the purposes of this guide, the Mattermost server domain name is ``example.m
 Set up mutual TLS authentication for the Web App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Create a `certificate authority (CA) key <https://en.wikipedia.org/wiki/Certificate_authority>`_ and a certificate for signing the client certificate. When establishing a TLS connection, the NGINX proxy server requests and validates a client certificate provided by the web app.
+1. Create a `certificate authority (CA) key <https://en.wikipedia.org/wiki/Certificate_authority>`__ and a certificate for signing the client certificate. When establishing a TLS connection, the NGINX proxy server requests and validates a client certificate provided by the web app.
 
 .. code-block:: none
 
@@ -124,4 +124,4 @@ You should see the Mattermost login page. If you see:
 Troubleshooting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Follow this process <https://www.mattermost.org/troubleshoot/>`_ to resolve configuration issues and to ask for help.
+`Follow this process <https://www.mattermost.org/troubleshoot/>`__ to resolve configuration issues and to ask for help.

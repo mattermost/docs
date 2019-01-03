@@ -13,7 +13,7 @@ When an ESR is at the end of its life cycle, there will be announcements ahead o
 
 After a release reaches its end-of-life, no further updates will be provided for that version. 
 
-To receive updates about Extended Support Releases, sign up for our mailing list `here <http://eepurl.com/dCKn2P>`_. 
+To receive updates about Extended Support Releases, sign up for our mailing list `here <http://eepurl.com/dCKn2P>`__. 
 
  
 What is included in an Extended Support Release dot release? 
@@ -29,7 +29,7 @@ If your organization prefers to have the newest features and improvements, Exten
 
 How do I install the Extended Support Release?
 ----------------------------------------------
-Follow our normal `install <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_ or `upgrade <https://docs.mattermost.com/administration/upgrade.html>`_ guides. When downloading the Mattermost version, choose an Extended Support Release from the list below. 
+Follow our normal `install <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__ or `upgrade <https://docs.mattermost.com/administration/upgrade.html>`__ guides. When downloading the Mattermost version, choose an Extended Support Release from the list below. 
 
 What are the current supported ESR versions? 
 --------------------------------------------
@@ -37,6 +37,6 @@ What are the current supported ESR versions?
 +-------------+----------------+-----------------------------------------------------------------------------------------+
 | Version     | Release Date   | Latest Dot Release Download link                                                        |
 +=============+================+=========================================================================================+
-| 4.10        |  2018-05-16    |  `4.10.2 <https://releases.mattermost.com/4.10.2/mattermost-4.10.2-linux-amd64.tar.gz>`_|
+| 4.10        |  2018-05-16    |  `4.10.2 <https://releases.mattermost.com/4.10.2/mattermost-4.10.2-linux-amd64.tar.gz>`__|
 +-------------+----------------+-----------------------------------------------------------------------------------------+
 

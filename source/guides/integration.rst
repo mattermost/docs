@@ -3,7 +3,7 @@ Mattermost Integration Guide
 
 **Are you looking to install an integration?**
 
-See one of the sample integrations below or visit the `Mattermost Integrations Directory <https://about.mattermost.com/community-applications/>`_.
+See one of the sample integrations below or visit the `Mattermost Integrations Directory <https://about.mattermost.com/community-applications/>`__.
 
 .. toctree::
    :maxdepth: 1
@@ -15,7 +15,7 @@ See one of the sample integrations below or visit the `Mattermost Integrations D
 
 **Are you looking to develop an integration?**
 
-See `our developer documentation <https://developers.mattermost.com/>`_. 
+See `our developer documentation <https://developers.mattermost.com/>`__. 
 
 **Are you looking for an overview of what capabilities Mattermost offers for integrations?**
 
@@ -37,4 +37,4 @@ See our documentation below.
    /integrations/embedding*
    /integrations/webhook*
 
-Come `join our "Contributors" community channel <https://pre-release.mattermost.com/core/channels/tickets>`_ on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our `"Developers" channel <https://pre-release.mattermost.com/core/channels/developers>`_ for technical discussions and our `"Developer Toolkit" channel <https://pre-release.mattermost.com/core/channels/developer-toolkit>`_ for all integrations and plugins discussions.
+Come `join our "Contributors" community channel <https://pre-release.mattermost.com/core/channels/tickets>`__ on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our `"Developers" channel <https://pre-release.mattermost.com/core/channels/developers>`__ for technical discussions and our `"Developer Toolkit" channel <https://pre-release.mattermost.com/core/channels/developer-toolkit>`__ for all integrations and plugins discussions.

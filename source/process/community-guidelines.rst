@@ -59,7 +59,7 @@ Principles
 Creating Help Wanted Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To create a Help Wanted issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`_, follow these steps:
+To create a Help Wanted issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`__, follow these steps:
 
 1 - Create a ticket in Jira that is well-defined and unambiguous.
 
@@ -69,27 +69,27 @@ The issue should be written with the mindset that the contributor might have no 
     Below are a few reasons why Jira tickets for Help Wanted issues are recommended:
 
       1. Jira tickets can be used to prioritize Help Wanted issues internally and are easily searchable by Mattermost staff, community, and customers
-      2. Each Jira ticket goes through the  `triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`_ for dev and PM approval
+      2. Each Jira ticket goes through the  `triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`__ for dev and PM approval
       3. Zapier integration automatically creates GitHub Help Wanted issues from labelled Jira tickets, requiring no additional mana
       4. Resolved Jira tickets are automatically assigned to a QA, who tests them against the ``master`` branch.
 
 2 - After creating the ticket, add "(Proposed APR)" to its title, so the triage team knows to consider it for a ``help-wanted`` label.
 
-3 - If the Jira ticket is accepted as a Help Wanted issue during `triage <https://docs.mattermost.com/process/training.html#triage-meeting>`_, a ``help-wanted`` label is added. This action automatically triggers a zap that creates a new issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`_.
+3 - If the Jira ticket is accepted as a Help Wanted issue during `triage <https://docs.mattermost.com/process/training.html#triage-meeting>`__, a ``help-wanted`` label is added. This action automatically triggers a zap that creates a new issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`__.
 
     - To accept a ticket as a Help Wanted issue, the description should be unambiguous, and include UI description and help text so the change can be implemented and tested by any contributor
     - The triage team also adds the appropriate difficulty level (one of ``Introductory``, ``Intermediate`` and ``Advanced``) and programming language (``Go`` and ``ReactJS``) to the description of the Jira ticket
 
 4 - After triage, PM on community rotation reviews formatting of the GitHub issue and adds appropriate labels for difficulty level and programming language as defined by the triage team.
 
-`See an example Help Wanted issue here <https://github.com/mattermost/mattermost-server/issues/4755>`_.
+`See an example Help Wanted issue here <https://github.com/mattermost/mattermost-server/issues/4755>`__.
 
 Managing Help Wanted Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once a Help Wanted issue is added, the PM on community rotation is responsible for:
 
-- answering questions from community members, which get automatically posted in the `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`_
+- answering questions from community members, which get automatically posted in the `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`__
 - following up with a community member if there hasn't been a response for more than two weeks
 
 Closing Help Wanted Issues
@@ -103,7 +103,7 @@ Once a pull request for an open GitHub Help Wanted issue is merged, please ensur
 Mattermost Community Forums
 ---------------------------------------------------------
 
-Guidelines for Mattermost `community forums <https://forum.mattermost.org>`_ and public Mattermost `GitHub repositories <https://github.com/mattermost>`_.
+Guidelines for Mattermost `community forums <https://forum.mattermost.org>`__ and public Mattermost `GitHub repositories <https://github.com/mattermost>`__.
 
 Principles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -210,7 +210,7 @@ To ask someone to add a license to a GitHub repo, open an issue with the followi
 Difficult Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To respond to tough questions, use the `SCIPAB method <https://www.mandel.com/top-ten-reasons/tools-methodology/scipab>`_ to help formulate a response and send for community lead to review. 
+To respond to tough questions, use the `SCIPAB method <https://www.mandel.com/top-ten-reasons/tools-methodology/scipab>`__ to help formulate a response and send for community lead to review. 
 
 Situation:
   State what you know about your listeners' circumstances that are relevant to your discussion or presentation, e.g., current state of their business, technology, industry, or plans. 
@@ -233,7 +233,7 @@ Benefit:
 Mattermost Twitter
 ---------------------------------------------------------
 
-Guidelines for Mattermost `Twitter responses <https://twitter.com/mattermost>`_.
+Guidelines for Mattermost `Twitter responses <https://twitter.com/mattermost>`__.
 
 Principles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

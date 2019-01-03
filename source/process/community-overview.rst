@@ -53,7 +53,7 @@ There are many ways to contribute:
 Solution Contributors   
 ~~~~~~~~~~~~~~~~~~~~~
 
-As of July 2018, `over 1000 open source projects on GitHub reference Mattermost <https://github.com/search?q=mattermost>`_. Solution Builders create a host of technologies to empower Mattermost software to solve real world problems. Technologies include: 
+As of July 2018, `over 1000 open source projects on GitHub reference Mattermost <https://github.com/search?q=mattermost>`__. Solution Builders create a host of technologies to empower Mattermost software to solve real world problems. Technologies include: 
 
 - **Self-hosted Integration Solutions** - Includes connectivity and integration with 3rd party applications such as Jira, Confluence, GitLab, Jenkins and other tools 
 - **SaaS-based Integration Solutions** - Includes connectivity and integration with services like Twitter, Zendesk, Salesforce and hundreds of other extensions with services like Zapier.
@@ -83,14 +83,14 @@ Platform Contributors
 
 Platform Contributors provide improvements to the core Mattermost open source projects under https://github.com/mattermost/. Contributions may be made at different levels of skill and impact: 
 
-- **Level 1** - Stated intention to contribute by completing `Mattermost Contributor Agreement <https://www.mattermost.org/mattermost-contributor-agreement/>`_ which adds contributor's name to `Mattermost Approved Contributor's list <https://docs.google.com/spreadsheets/u/2/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true>`_. 
+- **Level 1** - Stated intention to contribute by completing `Mattermost Contributor Agreement <https://www.mattermost.org/mattermost-contributor-agreement/>`__ which adds contributor's name to `Mattermost Approved Contributor's list <https://docs.google.com/spreadsheets/u/2/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true>`__. 
 - **Level 2** - Corrections or improvements to on-screen text, documentation or help text. Cosmetic improvements to code base. 
 - **Level 3** - Corrections of minor bugs in code base other than on-screen text, documentation or help text either through spontaneous contribution or by volunteering for and being assigned a ticket by a core committer. 
 - **Level 4** - Corrections to major bugs, or the implementation of minor feature either through spontaneous contribution or by volunteering for and being assigned a ticket by a core committer. Alternatively, requesting and being assigned a ticket of 2 mana or higher by core committer and completing the project. 
 - **Level 5** - Requesting and being assigned a ticket of 8 mana or higher by core committer and completing the project. 
 - **Core Committer** - Highly skilled developer who becomes a maintainer and regular contributor to core Mattermost open source projects.
 
-All contributors Level 2 and above are eligible for a `custom-printed Mattermost Mug <https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143>`_ acknowledging their role in the open source project. 
+All contributors Level 2 and above are eligible for a `custom-printed Mattermost Mug <https://forum.mattermost.org/t/limited-edition-mattermost-mugs/143>`__ acknowledging their role in the open source project. 
 
 Community Coordinator: Eric Sethna 
 
@@ -113,28 +113,28 @@ Quality Assurance Contributors
 
 Quality Assurance Contributors help find, confirm and report product defects via our process at https://www.mattermost.org/filing-issues/. Anyone who encounters a verifiable defect is welcome to file a bug on the system. 
 
-Bonus: When QA Contributor finds and reports a bug on a release candidate build of Mattermost prior to the final release of the system, the can be awarded a `Mattermost Bug Hunter Award <https://forum.mattermost.org/t/mattermost-bug-hunter-awards/4979>`_ for their contribution. 
+Bonus: When QA Contributor finds and reports a bug on a release candidate build of Mattermost prior to the final release of the system, the can be awarded a `Mattermost Bug Hunter Award <https://forum.mattermost.org/t/mattermost-bug-hunter-awards/4979>`__ for their contribution. 
 
 Community Coordinator: TBD
 
 Knowledge Base Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-Knowledge Base Contributors share feedback, questions and answers on Mattermost through forums for `trouble shooting <https://www.mattermost.org/troubleshoot/>`_, `feature proposals <https://www.mattermost.org/feature-ideas/>`_, and `other topics <https://forum.mattermost.org>`_. 
+Knowledge Base Contributors share feedback, questions and answers on Mattermost through forums for `trouble shooting <https://www.mattermost.org/troubleshoot/>`__, `feature proposals <https://www.mattermost.org/feature-ideas/>`__, and `other topics <https://forum.mattermost.org>`__. 
 
 Community Coordinator: Paul Rothrock 
 
 Deployment Solution Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Deployment Solutions Contributors create packaging and automation for making it easier to deploy Mattermost, using tools such as Docker, Kubernetes and other leading virtualization and orchestration solutions. See `Deployment Solutions Programs <https://docs.mattermost.com/guides/orchestration.html>`_ for guidance on how to build to common Mattermost standards. 
+Deployment Solutions Contributors create packaging and automation for making it easier to deploy Mattermost, using tools such as Docker, Kubernetes and other leading virtualization and orchestration solutions. See `Deployment Solutions Programs <https://docs.mattermost.com/guides/orchestration.html>`__ for guidance on how to build to common Mattermost standards. 
 
 Community Coordinator: Amy Blais
 
 UX Design Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-UX Design Contributors influence the design of the Mattermost user experience through discussion in the ``ux-design`` channel on the Mattermost continous integration server at https://pre-release.mattermost.com/core/channels/ux-design and through contributions to the `Mattermost User Experience Guidelines <https://docs.mattermost.com/developer/fx-guidelines.html>`_ on `GitHub <https://github.com/mattermost/docs/blob/master/source/developer/fx-guidelines.rst>`_.
+UX Design Contributors influence the design of the Mattermost user experience through discussion in the ``ux-design`` channel on the Mattermost continous integration server at https://pre-release.mattermost.com/core/channels/ux-design and through contributions to the `Mattermost User Experience Guidelines <https://docs.mattermost.com/developer/fx-guidelines.html>`__ on `GitHub <https://github.com/mattermost/docs/blob/master/source/developer/fx-guidelines.rst>`__.
 
 Community Coordinator: Mike Gamble
 

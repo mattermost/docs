@@ -1,7 +1,7 @@
 Architecture Overview
 =====================
 
-This page provides an overview of the Mattermost architecture with reference architecture. For a more detailed deployment overview, `check out our deployment wiki <https://docs.mattermost.com/deployment/deployment.html>`_.
+This page provides an overview of the Mattermost architecture with reference architecture. For a more detailed deployment overview, `check out our deployment wiki <https://docs.mattermost.com/deployment/deployment.html>`__.
 
 .. toctree::
     :maxdepth: 2
@@ -9,9 +9,9 @@ This page provides an overview of the Mattermost architecture with reference arc
 Basics
 ----------
 
-At its core, Mattermost is a single-compiled Go binary that is exposed as a Restful JSON web server with Javascript and Go clients. See the Restful API docs `here <https://api.mattermost.com>`_.
+At its core, Mattermost is a single-compiled Go binary that is exposed as a Restful JSON web server with Javascript and Go clients. See the Restful API docs `here <https://api.mattermost.com>`__.
 
-It is configured using `config/config.json <https://docs.mattermost.com/administration/config-settings.html>`_ and provides the following:
+It is configured using `config/config.json <https://docs.mattermost.com/administration/config-settings.html>`__ and provides the following:
 
 - **Authentication client**, which provides the functionality for users to log into Mattermost via email address and password in Team Edition. Enterprise E10 adds the ability for users to authenticate using Active Directory or LDAP, and Enterprise E20 adds the ability to authenticate using SAML SSO providers like ADFS, OneLogin and Okta. 
 - **Authentication provider**, which enables the Mattermost server to authenticate to other services like GitLab and Zapier using OAuth 2.0.
@@ -25,7 +25,7 @@ The binary talks to a database, typically MySQL or PostgreSQL, and a filestore.
 Push Notification Service
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The Mattermost `hosted push notification service <https://docs.mattermost.com/mobile/mobile-hpns.html>`_ can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost `test push notification service <https://docs.mattermost.com/overview/faq.html#tpns>`_ or deploy their own push notification service and `compile their mobile applications <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`_ to use that service.
+The Mattermost `hosted push notification service <https://docs.mattermost.com/mobile/mobile-hpns.html>`__ can be used to send push notifications to mobile clients. Team Edition users can deploy the service using the Mattermost `test push notification service <https://docs.mattermost.com/overview/faq.html#tpns>`__ or deploy their own push notification service and `compile their mobile applications <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`__ to use that service.
 
 Proxy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -36,7 +36,7 @@ A proxy server is a server (a computer system or an application) that acts as an
 - **Performance**: In a high availability configuration, the proxy server balances the network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also be used to increase performance.
 - **Monitoring**: A proxy server can monitor connection traffic and record traffic in standard audit logs that common monitoring tools like Kibana and Splunk can consume and report on. Some of the events that can be captured include file uploads and downloads, which are not tracked by the Mattermost Server logging process.
 
-Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`_. For informaton on how to install and configure NGINX for your environment, see `our guide <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`_. Mattermost also unofficially supports other proxies including `Apache 2 <https://docs.mattermost.com/install/config-apache2.html>`_. 
+Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For informaton on how to install and configure NGINX for your environment, see `our guide <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__. Mattermost also unofficially supports other proxies including `Apache 2 <https://docs.mattermost.com/install/config-apache2.html>`__. 
 
 .. image:: ../images/architecture_with_proxy.png
 
@@ -84,7 +84,7 @@ Moreover, search replicas are also supported to handle search queries.
 Reference Architecture
 ----------------------------------
 
-Mattermost Enterprise Edition was `load tested <https://github.com/mattermost/mattermost-load-test>`_ with 60,000 concurrent active users with:
+Mattermost Enterprise Edition was `load tested <https://github.com/mattermost/mattermost-load-test>`__ with 60,000 concurrent active users with:
 
 - 6 Mattermost servers: m4.2xlarge (8 vCPU, 32 GB RAM)
 - 1 MySQL database server with 5 read replicas: db.r4.2xlarge (8 vCPU, 61 GB RAM)

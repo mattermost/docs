@@ -5,7 +5,7 @@ The following are troubleshooting suggestions on common error messages and issue
 
 1. System Administrator locks themselves out of the system
 
-  If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline>`_.
+  If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline>`__.
 
 2. Received error message: `An account with that username already exists. Please contact your Administrator.`
 
@@ -25,8 +25,8 @@ The following are troubleshooting suggestions on common error messages and issue
 
 5. Unable to switch to SAML authentication successfully
 
-  First, ensure you have installed the `XML Security Library <https://www.aleksey.com/xmlsec/download.html>`_ on your Mattermost instance and that **it is available in your** PATH.
+  First, ensure you have installed the `XML Security Library <https://www.aleksey.com/xmlsec/download.html>`__ on your Mattermost instance and that **it is available in your** PATH.
 
   Second, ensure you have completed each step of the SAML configuration.
 
-If you are still having trouble with configuration, feel free to post in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`_ and we'll be happy to help with issues during setup.
+If you are still having trouble with configuration, feel free to post in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`__ and we'll be happy to help with issues during setup.

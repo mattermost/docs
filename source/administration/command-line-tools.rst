@@ -1,7 +1,7 @@
 Command Line Tools
 ==================
 
-From the directory where the Mattermost server is installed, a ``mattermost`` command is available for configuring the system. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`_ from Santos.
+From the directory where the Mattermost server is installed, a ``mattermost`` command is available for configuring the system. For an overview of the Mattermost command line interface (CLI), `read this article <https://medium.com/@santosjs/plugging-in-to-the-mattermost-cli-8cdcef2bd1f6>`__ from Santos.
 
 These ``mattermost`` commands include:
 
@@ -39,7 +39,7 @@ These ``mattermost`` commands include:
 Using the CLI
 ^^^^^^^^^^^^^
 
-To run the CLI commands, you must be in the directory that contains the Mattermost executable. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``. Also, if you followed our `installation process <../guides/administrator.html#installing-mattermost>`_, you must run the commands as the user *mattermost*. The name of the executable is ``mattermost``.
+To run the CLI commands, you must be in the directory that contains the Mattermost executable. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``. Also, if you followed our `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user *mattermost*. The name of the executable is ``mattermost``.
 
 **For example, to get the Mattermost version on a default installation of Mattermost:**
 
@@ -77,7 +77,7 @@ On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so y
 Using the CLI on Docker Preview
 -------------------------------
 
-The preceding documentation and command reference below also applies to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`_.
+The preceding documentation and command reference below also applies to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`__.
 
 Mattermost 3.6 and later
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -548,7 +548,7 @@ mattermost export
 
   Child Commands
     -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license
-    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_
+    -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`__
     -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license
     -  `mattermost export schedule`_ - Schedule an export job
 
@@ -577,7 +577,7 @@ mattermost export bulk
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`_.
+    Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`__.
 
   Format
     .. code-block:: none

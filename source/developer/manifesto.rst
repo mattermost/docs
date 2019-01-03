@@ -11,7 +11,7 @@ Mattermost is an open source, private cloud alternative to proprietary communica
 History 
 ---------------
 
-The project was `created by a video game company <https://www.mattermost.org/why-we-made-mattermost-an-open-source-slack-alternative/>`_ who previously used a proprietary, SaaS-based messenger which was bought by a big company and neglected. The SaaS messenger started having outages, it crashed, it lost files, and export didn't work. When they stopped their subscription, the SaaS messenger paywalled them from their own data. 
+The project was `created by a video game company <https://www.mattermost.org/why-we-made-mattermost-an-open-source-slack-alternative/>`__ who previously used a proprietary, SaaS-based messenger which was bought by a big company and neglected. The SaaS messenger started having outages, it crashed, it lost files, and export didn't work. When they stopped their subscription, the SaaS messenger paywalled them from their own data. 
 
 Lesson learned, the company started using messaging software they'd developed for their video game players, and eventually open sourced the software in 2015. The software became surprisingly popular and eventually the company left the video game business, renamed itself "Mattermost, Inc." and shifted focus to expanding the open source project, funded by creating commercial Enterprise Edition extensions. 
 
@@ -20,7 +20,7 @@ Because of how we started, we're committed to never allowing commercial versions
 Stewardship Principles for the Mattermost Open Source Project  
 ------------------------------------------------------------------
 
-Mattermost, Inc. is for-profit company focused on making the open source `Mattermost Team Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`_ highly successful and popular for teams, while also generating revenue for our commercial `Mattermost Enterprise Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`_ for large and sophisticated organizations. 
+Mattermost, Inc. is for-profit company focused on making the open source `Mattermost Team Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`__ highly successful and popular for teams, while also generating revenue for our commercial `Mattermost Enterprise Edition <https://docs.mattermost.com/overview/product.html#mattermost-editions>`__ for large and sophisticated organizations. 
 
 The following stewardship principles for our open source work helps keep our intent and purpose clear: 
 
@@ -64,7 +64,7 @@ Let people work simply. Team Edition is for teams needing a "virtual office" whe
 
 For non-technical users with basic IT skills, Team Edition aspires to be an ideal workplace messaging solution deployed on a private network, emphasizing simplicity and fast time-to-value. For sophisticated organizations with advanced security, configurability and scalability needs, the commercial Enterprise Edition extension strives to be an ideal solution. 
 
-For organizations who seek other options, full source code of the server and webapp for creating Team Edition should be available for the development of open source variants, including commercial variants, `provided the Mattermost trademark is not used and other protocols are respected. <https://docs.mattermost.com/overview/faq.html#how-can-i-create-a-derivative-work-of-mattermost-as-my-own-commercial-solution>`_ 
+For organizations who seek other options, full source code of the server and webapp for creating Team Edition should be available for the development of open source variants, including commercial variants, `provided the Mattermost trademark is not used and other protocols are respected. <https://docs.mattermost.com/overview/faq.html#how-can-i-create-a-derivative-work-of-mattermost-as-my-own-commercial-solution>`__ 
 
 -----
 

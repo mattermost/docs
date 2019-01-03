@@ -3,7 +3,7 @@
 AD/LDAP Groups (Alpha) (E20)
 ============================
 
-This feature is currently offered as an alpha release for Enterprise Edition E20 customers via a custom build. Please see `this forum post <https://forum.mattermost.org/t/ldap-group-sync-alpha-release/6351>`_ for more details. 
+This feature is currently offered as an alpha release for Enterprise Edition E20 customers via a custom build. Please see `this forum post <https://forum.mattermost.org/t/ldap-group-sync-alpha-release/6351>`__ for more details. 
 
 Overview
 --------------------
@@ -15,7 +15,7 @@ Pre-installation notes
 
 For customers that have enabled synchronization with AD/LDAP, all groups matching the default filter ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` will be available to be linked in the groups list view at **Access Control > Groups**. The group filter is an optional configuration setting available under **System Console > AD/LDAP**, which will allow you to specify the groups you would like to be able to access in Mattermost. 
 
-The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/deployment/sso-ldap.html?highlight=ldap#configure-ad-ldap-synchronization>`_. for more information. The group feature has no effect on users' authentication to Mattermost.
+The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/deployment/sso-ldap.html?highlight=ldap#configure-ad-ldap-synchronization>`__. for more information. The group feature has no effect on users' authentication to Mattermost.
 
 AD/LDAP group synchronization
 -----------------------------
@@ -83,7 +83,7 @@ Private channels are indicated by:
  
 .. image:: ../images/private_channel.png  
 
-When a team is added, the ```Town Square```, ```Off-Topic``` channels will also be added as default, as well as any default channels set in the `ExperimentalDefaultChannels config setting <https://docs.mattermost.com/administration/config-settings.html?highlight=configuration%20settings#default-channels-experimental>`_. 
+When a team is added, the ```Town Square```, ```Off-Topic``` channels will also be added as default, as well as any default channels set in the `ExperimentalDefaultChannels config setting <https://docs.mattermost.com/administration/config-settings.html?highlight=configuration%20settings#default-channels-experimental>`__. 
 
 When a channel is added without setting the team explicitly, the team will be shown in the Team and Channel Membership listing, but it will not be added to the group specifically. Because of this dependency, when the channel is removed, the team will also be removed. Teams are listed in parentheses after the channel name in the channel selector.
 

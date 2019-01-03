@@ -180,4 +180,4 @@ Checking your SMTP server is reachable
 
 .. note::
   For additional troubleshooting tips, see
-  the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. To submit an improvement or correction, click  **Edit** at the top of this page.
+  the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__. To submit an improvement or correction, click  **Edit** at the top of this page.

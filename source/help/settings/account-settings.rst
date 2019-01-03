@@ -55,7 +55,7 @@ Multi-factor Authentication
 
 When this option is available you can require a phone-based passcode in addition to your password for sign-in.
 
-To enable, download Google Authenticator from `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`_ or `Google Play <https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en>`_ for your phone, then:
+To enable, download Google Authenticator from `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`__ or `Google Play <https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&hl=en>`__ for your phone, then:
 
 1. Click the **Add MFA to your account** button.
 2. Use Google Authenticator to scan the QR code that appears.
@@ -99,7 +99,7 @@ Desktop Notifications
 
 Desktop notifications appear in the corner of your main monitor when there is activity in Mattermost.
 
-When `Desktop App <https://about.mattermost.com/download/#mattermostApps>`_ notifications are set to "Only for mentions and direct messages", an empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. A solid red circle with a post count is displayed when a message with an at-mention is received.
+When `Desktop App <https://about.mattermost.com/download/#mattermostApps>`__ notifications are set to "Only for mentions and direct messages", an empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. A solid red circle with a post count is displayed when a message with an at-mention is received.
 
 Send Desktop Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -145,11 +145,11 @@ By default, you receive notifications when someone posts a message that contains
 Reply Notifications
 ~~~~~~~~~~~~~~~~~~~
 
-In addition to **Words that Trigger Mentions**, this setting allows you to receive mention notifications when someone replies to a thread that you started or participated in. You are considered to start a thread when you post a message to which other members of your team reply. You are considered to participate in a thread when you post a message using the `reply button <https://docs.mattermost.com/help/getting-started/messaging-basics.html#messaging-basics>`_ in an already existing thread.
+In addition to **Words that Trigger Mentions**, this setting allows you to receive mention notifications when someone replies to a thread that you started or participated in. You are considered to start a thread when you post a message to which other members of your team reply. You are considered to participate in a thread when you post a message using the `reply button <https://docs.mattermost.com/help/getting-started/messaging-basics.html#messaging-basics>`__ in an already existing thread.
 
 Automatic Direct Message Replies
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Set a custom message that will be automatically sent in response to Direct Messages. Mentions in Public and Private Channels will not trigger the automated reply. Enabling Automatic Replies sets your status to Out of Office and disables email and push notifications. This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#enable-automatic-replies-experimental>`_.
+Set a custom message that will be automatically sent in response to Direct Messages. Mentions in Public and Private Channels will not trigger the automated reply. Enabling Automatic Replies sets your status to Out of Office and disables email and push notifications. This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html?highlight=config%20settings#enable-automatic-replies-experimental>`__.
 
 Display
 -------
@@ -184,17 +184,17 @@ Choose a 12-hour or 24-hour time preference that appears on the time stamp for a
 Teammate Name Display
 ~~~~~~~~~~~~~~~~~~~~~
 
-Configure how names are displayed in the user interface: nickname, username or full name. The default for this setting is dependent on the `configuration set by the System Admin <https://docs.mattermost.com/administration/config-settings.html#teammate-name-display>`_.
+Configure how names are displayed in the user interface: nickname, username or full name. The default for this setting is dependent on the `configuration set by the System Admin <https://docs.mattermost.com/administration/config-settings.html#teammate-name-display>`__.
 
 Timezone
 ~~~~~~~~~~~~~~~~~~~~~
 
-Select the timezone used for timestamps in the user interface and email notifications. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#timezone>`_ by replacing ``false`` with ``true`` in config.json.
+Select the timezone used for timestamps in the user interface and email notifications. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#timezone>`__ by replacing ``false`` with ``true`` in config.json.
 
 Website Link Previews
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#link-previews>`_.
+When available, the first web link in a message will show a preview of the website content below the message. This `setting must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#link-previews>`__.
 
 Link Previews
 ~~~~~~~~~~~~~
@@ -239,7 +239,7 @@ Sidebar
 Channel grouping and sorting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-These settings are experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#sidebar-organization-experimental>`_.
+These settings are experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#sidebar-organization-experimental>`__.
 
 Channel grouping
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -262,7 +262,7 @@ Group unreads channels
 
 *Removed in December 16, 2018 release and replaced by a new ExperimentalChannelOrganization setting*
 
-If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`_, by replacing ``disabled`` with either ``default_off`` or ``default_on`` in config.json.
+If enabled, this feature groups unread channels at the top of the channel sidebar. This setting is experimental and can be disabled from **Account Settings** -> **Sidebar** -> **Group Unreads Channels**. The setting `must first be enabled by the System Admin <https://docs.mattermost.com/administration/config-settings.html#group-unread-channels-experimental>`__, by replacing ``disabled`` with either ``default_off`` or ``default_on`` in config.json.
 
 Channel Switcher
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -270,7 +270,7 @@ Hide the channel switcher at the bottom of the sidebar used to jump between chan
 
 Automatically close direct messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`_.
+Hide Direct Message conversations with no activity for 7 days. These conversations can be reopened with the “+” button in the sidebar or by using the Channel Switcher (CTRL+K). This setting is experimental and `must be enabled by your System Admin <https://docs.mattermost.com/administration/config-settings.html#autoclose-direct-messages-in-sidebar-experimental>`__.
 
 Advanced
 --------
@@ -290,7 +290,7 @@ If enabled, press ENTER to insert a new line inside an open code block. Pressing
 Enable Post Formatting
 ~~~~~~~~~~~~~~~~~~~~~~
 
-This setting controls whether post formatting is rendered. When "On", posts will be rendered with `markdown formatting <http://docs.mattermost.com/help/messaging/formatting-text.html>`_, emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown.
+This setting controls whether post formatting is rendered. When "On", posts will be rendered with `markdown formatting <http://docs.mattermost.com/help/messaging/formatting-text.html>`__, emoji, autolinked URLs, and line breaks. When "Off", the raw text will be shown.
 
 Enable Join/Leave Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~

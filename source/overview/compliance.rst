@@ -10,7 +10,7 @@ This overview summarizes various compliances and certifications Mattermost is de
 GDPR Compliance 
 -----------------------------------------------
 
-The following overview summarizes how Mattermost, Inc. and Mattermost software comply with the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`_)
+The following overview summarizes how Mattermost, Inc. and Mattermost software comply with the European Union's General Data Protection Regulation, also known as Regulation (EU): 2016/679 (`See full text <http://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`__)
 
 Continual Commitment to the Principles of GDPR 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,11 +18,11 @@ Continual Commitment to the Principles of GDPR
 Mattermost is a collaboration hub for highly-trusted organizations and is committed to supporting the principles of GDPR to protect the data of people in the European Union. Mattermost completes this mission through the use of: 
 
 - **Security Infrastructure** - Continual investment in security, privacy and compliance capabilities 
-- **Contractual Obligations** - Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://about.mattermost.com/default-data-processing-addendum/>`_ in our standard `Terms of Service <https://about.mattermost.com/terms>`_
-- **Privacy Measures** - Privacy measures are outlined in our `Privacy Policy <https://mattermost.com/privacy-policy/>`_.
+- **Contractual Obligations** - Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://about.mattermost.com/default-data-processing-addendum/>`__ in our standard `Terms of Service <https://about.mattermost.com/terms>`__
+- **Privacy Measures** - Privacy measures are outlined in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
 - **Product Features** to ensure data management and data portability
 
-To say up to date with our efforts, please subscribe to `our regular newsletter <https://about.mattermost.com/newsletter/>`_. 
+To say up to date with our efforts, please subscribe to `our regular newsletter <https://about.mattermost.com/newsletter/>`__. 
 
 Security Infrastructure 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,7 +45,7 @@ Mattermost adheres to contractual obligations for ensuring the proper management
 Privacy Measures 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost outlines security measures to maintain the safety of personal data submitted by our customers and partners in our `Privacy Policy <https://mattermost.com/privacy-policy/>`_.
+Mattermost outlines security measures to maintain the safety of personal data submitted by our customers and partners in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
 
 Product Features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,18 +55,18 @@ Mattermost supports features that ensure data management and data portability.
 Data Management
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- **Data Retention**: Use `data retention <https://docs.mattermost.com/administration/data-retention.html>`_ to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
+- **Data Retention**: Use `data retention <https://docs.mattermost.com/administration/data-retention.html>`__ to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
 
-- **Profile Deletion**: Delete a user’s personal information via `a command line tool <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-delete>`_. The command permanently deletes all user information including messages created by the user.
+- **Profile Deletion**: Delete a user’s personal information via `a command line tool <https://docs.mattermost.com/administration/command-line-tools.html#platform-user-delete>`__. The command permanently deletes all user information including messages created by the user.
 
-- **Self-Hosted Push Notification Service**: Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/members/>`_ to meet security and compliance policies. See `mobile app guide <https://docs.mattermost.com/mobile/mobile-overview.html>`_ to learn more.
+- **Self-Hosted Push Notification Service**: Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/members/>`__ to meet security and compliance policies. See `mobile app guide <https://docs.mattermost.com/mobile/mobile-overview.html>`__ to learn more.
 
 Data Portability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- **Data Import**: Use the `bulk loading tool <https://docs.mattermost.com/deployment/bulk-loading.html>`_ to migrate data from an existing messaging system, or for pre-populating a new installation with data. `Review this guide <https://docs.mattermost.com/administration/migrating.html#migrating-from-hipchat-server-and-hipchat-data-center-to-mattermost>`_ which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`_ principle.
+- **Data Import**: Use the `bulk loading tool <https://docs.mattermost.com/deployment/bulk-loading.html>`__ to migrate data from an existing messaging system, or for pre-populating a new installation with data. `Review this guide <https://docs.mattermost.com/administration/migrating.html#migrating-from-hipchat-server-and-hipchat-data-center-to-mattermost>`__ which summarizes the different approaches and meets the `Right to Data Portability <https://gdpr-info.eu/art-20-gdpr/>`__ principle.
 
-- **Data Export**: Use `compliance exports <https://docs.mattermost.com/administration/compliance-export.html>`_ to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`_ and `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`_.
+- **Data Export**: Use `compliance exports <https://docs.mattermost.com/administration/compliance-export.html>`__ to export conversations from public, private and direct message channels in XML or EML format. Those in Team Edition can export conversations directly from the database, both `in MySQL <https://www.itworld.com/article/2833078/it-management/3-ways-to-import-and-export-a-mysql-database.html>`__ and `in PostgreSQL <https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database>`__.
 
 
 Accessibility Compliance 
@@ -74,13 +74,13 @@ Accessibility Compliance
 
 Compliance with accessibility standards is achieved in the following ways: 
 
-- **508 Compliance** - For U.S. public sector organizations seeking to confirm 508 compliance, Mattermost publicly shares its `Voluntary Product Accessibility Template (VPAT) online <https://docs.mattermost.com/overview/vpat.html>`_.
+- **508 Compliance** - For U.S. public sector organizations seeking to confirm 508 compliance, Mattermost publicly shares its `Voluntary Product Accessibility Template (VPAT) online <https://docs.mattermost.com/overview/vpat.html>`__.
 
 - **WCAG 2.0** - For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has received a 3rd party "A" rating and is working towards an "AA" rating.  
 
 - **ADA** - Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools. 
 
-- **Remediation** - Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://www.mattermost.org/filing-issues/>`_ so that it may be resolved. 
+- **Remediation** - Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://www.mattermost.org/filing-issues/>`__ so that it may be resolved. 
 
 U.S. Export Compliance Overview
 -----------------------------------------------
@@ -91,11 +91,11 @@ Summary Table
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | Mattermost Product                            | Export Control Classification Number (ECCN)                                                                                                     |
 +===============================================+=================================================================================================================================================+
-| Mattermost Enterprise Edition E10             | `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`_   |
-|                                               | with a License Exception available of `ENC <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`_ |
+| Mattermost Enterprise Edition E10             | `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__   |
+|                                               | with a License Exception available of `ENC <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__ |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| Mattermost Enterprise Edition E20             | `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`_   |
-|                                               | with a License Exception available of `ENC <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`_ |
+| Mattermost Enterprise Edition E20             | `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__   |
+|                                               | with a License Exception available of `ENC <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__ |
 +-----------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------+
 | Mattermost Team Edition                       | Not subject to the U.S. Export Administration Regulations (EAR) given software is publicly available                                            |
 |                                               | and fully available to compile from publicly available source code at https://github.com/mattermost/                                            |
@@ -121,44 +121,44 @@ of assets, the denial of export privileges, and suspension or debarment from Gov
 For these reasons, please take the time to familiarize yourself with applicable export (and import) controls in the
 jurisdictions in which you operate. Although Mattermost cannot provide advice on export matters, this web page provides the information needed in order export Mattermost products.
 
-This overview is specific to the `U.S. Export Administration Regulations <https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear>`_ (EAR), however, business operations may subject you to other regulations such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987>`_.
+This overview is specific to the `U.S. Export Administration Regulations <https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear>`__ (EAR), however, business operations may subject you to other regulations such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987>`__.
 
 General Information
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Start by taking a look at the `U.S. Bureau of Industry and Security <https://www.bis.doc.gov/>`_ website. Then, navigate to `Part 730 <https://www.bis.doc.gov/index.php/documents/regulation-docs/410-part-730-general-information/file>`_ of the U.S. Export Administration Regulations to understand what the regulations cover and what is “Subject to
-the EAR” under `734.2 <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`_ (“export controlled”). 
+Start by taking a look at the `U.S. Bureau of Industry and Security <https://www.bis.doc.gov/>`__ website. Then, navigate to `Part 730 <https://www.bis.doc.gov/index.php/documents/regulation-docs/410-part-730-general-information/file>`__ of the U.S. Export Administration Regulations to understand what the regulations cover and what is “Subject to
+the EAR” under `734.2 <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`__ (“export controlled”). 
 
 Export Classification and Licensing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Although what is subject to the Export Administration Regulations is quite broad, that does not mean an export license
 is required for every transaction. The foundation of understanding export controls related to hardware, software and
-technology can be found within the `Commerce Control List <https://www.bis.doc.gov/index.php/regulations/commerce-control-list-ccl>`_ (CCL), which has 10 categories, 0-9, and is set up as a positive list. The first step is determining if the item to be exported is subject to the EAR.
+technology can be found within the `Commerce Control List <https://www.bis.doc.gov/index.php/regulations/commerce-control-list-ccl>`__ (CCL), which has 10 categories, 0-9, and is set up as a positive list. The first step is determining if the item to be exported is subject to the EAR.
 
-At Mattermost, our Team Edition software is `outside the scope of the EAR <https://www.bis.doc.gov/index.php/policy-guidance/encryption/1-encryption-items-not-subject-to-the-ear>`_, as it is derived from publicly available encryption source code and the complete software package for both the source code (https://github.com/mattermost/) and binary versions are publicly available. Mattermost enterprise software is found in `Category 5, Part 2 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`_ of the CCL as Telecommunications and Information Security items (hardware, software and technology). Most items in this category have encryption.
+At Mattermost, our Team Edition software is `outside the scope of the EAR <https://www.bis.doc.gov/index.php/policy-guidance/encryption/1-encryption-items-not-subject-to-the-ear>`__, as it is derived from publicly available encryption source code and the complete software package for both the source code (https://github.com/mattermost/) and binary versions are publicly available. Mattermost enterprise software is found in `Category 5, Part 2 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__ of the CCL as Telecommunications and Information Security items (hardware, software and technology). Most items in this category have encryption.
 
-Often a license exception under `Part 740 <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`_ is available where a Commerce Control List item lists the available license exception(s) specific to an Export Control Classification Number (ECCN), based on a combination of factors. 
+Often a license exception under `Part 740 <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__ is available where a Commerce Control List item lists the available license exception(s) specific to an Export Control Classification Number (ECCN), based on a combination of factors. 
 
-Mattermost Enterprise Edition software is found under `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`_, with a license exception available from `“ENC” <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`_ for our E10 and E20 software, with encryption features derived from open-source software. Encryption products, under the export regulations, have multiple levels of controls and requirements. BIS has a separate section of their website that has an overview, and many links, covering encryption under `Policy Guidelines <https://www.bis.doc.gov/index.php/policy-guidance/encryption>`_ that you may want to review. These guidelines include helpful flow charts for determining if an item is subject to encryption controls, tables and other details.
+Mattermost Enterprise Edition software is found under `ECCN 5D002 <https://www.bis.doc.gov/index.php/documents/regulations-docs/federal-register-notices/federal-register-2014/951-ccl5-pt2/file>`__, with a license exception available from `“ENC” <https://www.bis.doc.gov/index.php/documents/regulation-docs/415-part-740-license-exceptions/file>`__ for our E10 and E20 software, with encryption features derived from open-source software. Encryption products, under the export regulations, have multiple levels of controls and requirements. BIS has a separate section of their website that has an overview, and many links, covering encryption under `Policy Guidelines <https://www.bis.doc.gov/index.php/policy-guidance/encryption>`__ that you may want to review. These guidelines include helpful flow charts for determining if an item is subject to encryption controls, tables and other details.
 
 The other key areas to be aware of for an export of Mattermost software or technology are:
 
 **Sanctions**: There are comprehensive sanctions to Cuba, Iran, North Korea, Sudan, Syria and other countries/territories
 with specific prohibitions, such as Russia and Venezuela. Details can be
-located at `BIS <https://www.bis.doc.gov/index.php/forms-documents/regulations-docs/federal-register-notices/federal-register-2014/1063-746-1/file>`_ and `OFAC <https://www.treasury.gov/resource-center/sanctions/Pages/default.aspx>`_. The countries and their sanctions are subject to change.
+located at `BIS <https://www.bis.doc.gov/index.php/forms-documents/regulations-docs/federal-register-notices/federal-register-2014/1063-746-1/file>`__ and `OFAC <https://www.treasury.gov/resource-center/sanctions/Pages/default.aspx>`__. The countries and their sanctions are subject to change.
 
 **WMD (Weapons of Mass Destruction)**: Mattermost, its customers and its business partners may not export to parties involved
-in `proliferation <https://www.bis.doc.gov/index.php/documents/regulation-docs/413-part-736-general-prohibitions/file>`_ of weapons of mass destruction, along with other prohibited end-uses under the U.S. Export Administration Regulations (“EAR”).
+in `proliferation <https://www.bis.doc.gov/index.php/documents/regulation-docs/413-part-736-general-prohibitions/file>`__ of weapons of mass destruction, along with other prohibited end-uses under the U.S. Export Administration Regulations (“EAR”).
 
-**General Prohibitions**: Information on General Prohibitions under the EAR is located `here <https://www.bis.doc.gov/index.php/forms-documents/doc_view/413-part-736-general-prohibitions>`_. Application of the applicability of these General Prohibitions is based on a combination of factors. These include: classification of the commodity, destination, end-user, end-use and conduct.
+**General Prohibitions**: Information on General Prohibitions under the EAR is located `here <https://www.bis.doc.gov/index.php/forms-documents/doc_view/413-part-736-general-prohibitions>`__. Application of the applicability of these General Prohibitions is based on a combination of factors. These include: classification of the commodity, destination, end-user, end-use and conduct.
 
-**Restricted Parties**: You may not export to parties listed on the US government's `restricted parties lists <https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern>`_, and should be screening against these prior to export. There is a `consolidated screening list <http://apps.export.gov/csl-search#/csl-search>`_ provided by the U.S. government at export.gov at no charge that can be used for screening.
+**Restricted Parties**: You may not export to parties listed on the US government's `restricted parties lists <https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern>`__, and should be screening against these prior to export. There is a `consolidated screening list <http://apps.export.gov/csl-search#/csl-search>`__ provided by the U.S. government at export.gov at no charge that can be used for screening.
 
 **Deemed Exports**:  Release of controlled technology to foreign persons in the U.S. is "deemed" to be an export to the
-person’s country or countries of nationality and is found in `734.2(b) <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`_ of the EAR, which you can read about under the Export Administration Regulations on the BIS website.
+person’s country or countries of nationality and is found in `734.2(b) <https://www.bis.doc.gov/index.php/documents/regulation-docs/412-part-734-scope-of-the-export-administration-regulations/file>`__ of the EAR, which you can read about under the Export Administration Regulations on the BIS website.
 
-**Know Your Customer**: By reviewing the BIS website, you will notice that it is very important to “know your customers," and to be aware of `“Red Flags” <https://www.bis.doc.gov/index.php/compliance-a-training/export-management-a-compliance/freight-forwarder-guidance/23-compliance-a-training/51-red-flag-indicators>`_. Be sure to screen business partners and customers to ensure compliance.
+**Know Your Customer**: By reviewing the BIS website, you will notice that it is very important to “know your customers," and to be aware of `“Red Flags” <https://www.bis.doc.gov/index.php/compliance-a-training/export-management-a-compliance/freight-forwarder-guidance/23-compliance-a-training/51-red-flag-indicators>`__. Be sure to screen business partners and customers to ensure compliance.
 
 Disclaimer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
