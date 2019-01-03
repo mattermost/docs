@@ -5,7 +5,7 @@ The reStructuredText specification allows for a certain degree of flexibility in
 
 However, for consistency and ease of use, the Mattermost documentation should use a single convention, despite the existence of allowable alternatives.
 
-For more information about reStructuredText markup, see the `reStructuredText Markup Specification <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`_. Additional markup constructs are implemented by Sphinx, the documentation generator used by Mattermost. For information about the additional constructs, see `Sphinx Markup Constructs <http://www.sphinx-doc.org/en/stable/markup/index.html>`_.
+For more information about reStructuredText markup, see the `reStructuredText Markup Specification <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`_. Additional markup constructs are implemented by Sphinx, the documentation generator used by Mattermost. For information about the additional constructs, see `Sphinx Markup Constructs <https://www.sphinx-doc.org/en/1.7/markup/index.html>`_.
 
 Use the following markup conventions in Mattermost documentation:
 
