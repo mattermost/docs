@@ -48,7 +48,7 @@ module Gitlab
         # Return if already signed in
         return if has_selector?('.qa-user-avatar')
         # Operate specifically within the user login form, avoiding registation form
-        within(:xpath, '//div#login-pane') do
+        within('div#login-pane') do
           fill_in 'Username or email', with: 'root'
           fill_in 'Password', with: ENV['GITLAB_PASSWORD']
         end
