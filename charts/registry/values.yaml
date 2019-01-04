@@ -75,6 +75,8 @@ init:
       # Copy contents of storage secret(s)
       mkdir -p /registry/storage
       cp /config/storage/* /registry/storage/
+      # Ensure there is a new line in the end
+      echo '' >> /registry/storage/config
       # Default `delete.enabled: true` if not present.
       ## Note: busybox grep doesn't support multiline, so we chain `egrep`.
       if ! $(egrep -A1 '^delete:\s*$' /registry/storage/config | egrep -q '\s{2,4}enabled:') ; then
