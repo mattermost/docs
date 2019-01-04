@@ -36,20 +36,32 @@ module Gitlab
       false
     end
 
-    def sign_in
-      visit '/users/sign_in'
+    def sign_in(retries:6, interval: 5)
+      begin
+        visit '/users/sign_in'
 
-      # Give time for the app to fully load
-      wait(max: 500) do
-        has_css?('.login-page') || has_css?('.qa-user-avatar')
+        # Give time for the app to fully load
+        wait(max: 500) do
+          has_css?('.login-page') || has_css?('.qa-user-avatar')
+        end
+
+        # Return if already signed in
+        return if has_selector?('.qa-user-avatar')
+        # Operate specifically within the user login form, avoiding registation form
+        within('div#login-pane') do
+          fill_in 'Username or email', with: 'root'
+          fill_in 'Password', with: ENV['GITLAB_PASSWORD']
+        end
+        click_button 'Sign in'
+        # Check the login was a success (200, at `/`)
+        page.driver.status_code.should eql 200
+        expect(page).to have_current_path('/', ignore_query: true)
+
+      rescue
+        sleep interval
+        retries -= 1
+        retry if retries > 0
       end
-
-      # Return if already signed in
-      return if has_selector?('.qa-user-avatar')
-
-      fill_in 'Username or email', with: 'root'
-      fill_in 'Password', with: ENV['GITLAB_PASSWORD']
-      click_button 'Sign in'
     end
 
     def enforce_root_password(password)
