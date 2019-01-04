@@ -77,6 +77,10 @@ init:
       cp /config/storage/* /registry/storage/
       # Default `delete.enabled: true` if not present.
       ## Note: busybox grep doesn't support multiline, so we chain `egrep`.
+      #
+      # Ensure there is a new line in the end
+      echo '' >> /registry/storage/config
+
       if ! $(egrep -A1 '^delete:\s*$' /registry/storage/config | egrep -q '\s{2,4}enabled:') ; then
         echo 'delete:' >> /registry/storage/config
         echo '  enabled: true' >> /registry/storage/config
