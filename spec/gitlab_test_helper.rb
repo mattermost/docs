@@ -55,7 +55,7 @@ module Gitlab
         click_button 'Sign in'
         # Check the login was a success (200, at `/`)
         page.driver.status_code.should eql 200
-        expect(page).to have_current_path('/', only_path: true)
+        expect(page).to have_current_path('/', ignore_query: true)
 
       rescue
         sleep interval
