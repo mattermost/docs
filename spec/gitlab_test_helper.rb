@@ -94,7 +94,7 @@ module Gitlab
 
     def set_runner_token
       rails_dir = ENV['RAILS_DIR'] || '/srv/gitlab'
-      cmd = full_command("#{rails_dir}/bin/rails runner \"settings = ApplicationSetting.current; settings.set_runners_registration_token('#{runner_registration_token}'); settings.save!\"")
+      cmd = full_command("#{rails_dir}/bin/rails runner \"settings = ApplicationSetting.current; settings.set_runners_registration_token('#{runner_registration_token}'); settings.save!; ApplicationSetting.expire \"")
 
       stdout, status = Open3.capture2e(cmd)
       return [stdout, status]
