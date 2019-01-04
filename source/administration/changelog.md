@@ -26,6 +26,7 @@ Release date: 2019-01-16
  - Fixed an issue where Webapp only showed a star or mention count for active team.
  - Fixed an issue where Web mobile view was missing the mute option in the channel menu.
  - Fixed an issue where the "participant is typing" appeared a few seconds after a message was posted.
+ - Fixed an issue where a profile popover got cut off on the right-hand side if it included an admin badge and a long username.
 
 ### Compatibility
 
