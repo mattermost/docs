@@ -2,6 +2,13 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.4.2 (2019-01-05)
+
+### Other (1 change)
+
+- Update GitLab Version to 11.6.3.
+
+
 ## 1.4.1 (2019-01-02)
 
 ### Other (1 change)
