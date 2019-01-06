@@ -5,9 +5,9 @@ omniauth:
   {{- if .omniauth.autoSignInWithProvider }}
   auto_sign_in_with_provider: {{ .omniauth.autoSignInWithProvider | quote }}
   {{- end }}
-  sync_profile_from_provider: {{ .omniauth.syncProfileFromProvider }}
-  sync_profile_attributes: {{ .omniauth.syncProfileAttributes }}
-  allow_single_sign_on: {{ .omniauth.allowSingleSignOn }}
+  sync_profile_from_provider: {{ toJson .omniauth.syncProfileFromProvider }}
+  sync_profile_attributes: {{ toJson .omniauth.syncProfileAttributes }}
+  allow_single_sign_on: {{ toJson .omniauth.allowSingleSignOn }}
   block_auto_created_users: {{ .omniauth.blockAutoCreatedUsers }}
   auto_link_ldap_user: {{ .omniauth.autoLinkLdapUser }}
   auto_link_saml_user: {{ .omniauth.autoLinkSamlUser }}

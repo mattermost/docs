@@ -1,6 +1,0 @@
----
-title: Error 500 when you don't set the parameter auto_sign_in_with_provider with
-  OmniAuth enabled.
-merge_request:
-author:
-type: fixed
