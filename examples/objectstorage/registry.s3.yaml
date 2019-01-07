@@ -8,4 +8,5 @@ s3:
   accesskey: BOGUS_ACCESS_KEY
   secretkey: BOGUS_SECRET_KEY
   region: us-east-1
+  # regionendpoint: "https://minio.example.com:9000"
   v4auth: true

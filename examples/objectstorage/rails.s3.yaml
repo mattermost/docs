@@ -8,3 +8,9 @@ region: us-east-1
 # Specify access/secret keys
 aws_access_key_id: BOGUS_ACCESS_KEY
 aws_secret_access_key: BOGUS_SECRET_KEY
+# The below settings are for S3 compatible endpoints
+#   See https://docs.gitlab.com/ee/administration/job_artifacts.html#s3-compatible-connection-settings
+# aws_signature_version: 4
+# host: storage.example.com
+# endpoint: "https://minio.example.com:9000"
+# path_style: false
