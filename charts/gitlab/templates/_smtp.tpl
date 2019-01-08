@@ -11,6 +11,7 @@ ActionMailer::Base.delivery_method = :smtp
 ActionMailer::Base.smtp_settings = {
   address: {{ .Values.global.smtp.address | quote }},
   port: {{ .Values.global.smtp.port | int }},
+  ca_file: "/etc/ssl/certs/ca-certificates.crt",
   {{- if .Values.global.smtp.domain }}
   domain: {{ .Values.global.smtp.domain | quote }},
   {{- end }}
