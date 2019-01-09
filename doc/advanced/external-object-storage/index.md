@@ -47,11 +47,11 @@ Examples for [S3][storage-s3](any s3 compatible) and [GCS][storage-gcs] drivers 
 1. Follow [registry chart documentation on storage](../../charts/registry/index.md#storage) for creating the secret.
 1. Configure the chart as documented.
 
-## LFS, Artifacts, Uploads, Packages
+## LFS, Artifacts, Uploads, Packages, Pseudonymizer
 
 Configuration of object storage for LFS, artifacts, uploads, and packages is done
 via the `global.appConfig.lfs`, `global.appConfig.artifacts`, `global.appConfig.uploads`,
-and `global.appConfig.packages` keys.
+`global.appConfig.packages` and `global.appConfig.pseudonymizer` keys.
 
 ```
 --set global.appConfig.lfs.bucket=gitlab-lfs-storage
@@ -66,11 +66,11 @@ and `global.appConfig.packages` keys.
 --set global.appConfig.uploads.connection.secret=object-storage
 --set global.appConfig.uploads.connection.key=connection
 
---set global.appConfig.packages.bucket=gitlab-uploads-storage
+--set global.appConfig.packages.bucket=gitlab-packages-storage
 --set global.appConfig.packages.connection.secret=object-storage
 --set global.appConfig.packages.connection.key=connection
 
---set global.appConfig.pseudonymizer.bucket=gitlab-uploads-storage
+--set global.appConfig.pseudonymizer.bucket=gitlab-pseudonymizer-storage
 --set global.appConfig.pseudonymizer.connection.secret=object-storage
 --set global.appConfig.pseudonymizer.connection.key=connection
 ````
