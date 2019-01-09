@@ -1,42 +1,96 @@
-# Default values for gitlab-chart.
-# This is a YAML-formatted file.
+# Default values for gitlab/gitlab chart
 
+## NOTICE
+# Due to the scope and complexity of this chart, all possible values are
+# not documented in this file. Extensive documentation for these values
+# and more can be found at https://gitlab.com/charts/gitlab/
+
+## Advanced Configuration
+# Documentation for advanced configuration can be found under doc/advanced
+# - external PostgreSQL
+# - exteranl Gitaly
+# - external Redis
+# - external NGINX
+# - PersistentVolume configuration
+# - external Object Storage providers 
+
+## The global properties are used to configure multiple charts at once.
+## Extended documenation at doc/charts/globals.md
 global:
+  ## GitLab operator is Alpha. Not for production use.
   operator:
     enabled: false
+
+  ## doc/installation/deployment.md#deploy-the-community-edition
+  # edition: ee
+
+  ## doc/charts/globals.md#gitlab-version
   # gitlabVersion: master
+
+  ## doc/charts/globals.md#application-resource
   application:
     create: false
     links: []
+  ## doc/charts/globals.md#configure-host-settings
   hosts:
     domain: example.com
+    # hostSuffix:
     https: true
     externalIP:
     ssh: ~
+
+  ## doc/charts/globals.md#configure-ingress-settings
   ingress:
     configureCertmanager: true
     annotations: {}
     enabled: true
     # tls:
     #   enabled: true
+
+  ## Initial root password for this GitLab installation
+  ## Secret created according to doc/installation/secrets.md#initial-root-password
+  ## If allowing shared-secrets generation, this is OPTIONAL.
   initialRootPassword: {}
+    # secret: RELEASE-gitlab-initial-root-password
+    # key: password
+
+  ## doc/charts/globals.md#configure-postgresql-settings
   psql:
     password: {}
-    # host: myexternalsql.hostedsomewhere.else
+      # secret:
+      # key:
+    # host: postgresql.hostedsomewhere.else
     # port: 123
     # username: gitlab
     # database: gitlabhq_production
+
+  ## doc/charts/globals.md#configure-redis-settings
   redis:
     password: {}
+      # secret:
+      # key:
+    # host: redis.hostedsomewhere.else
+    # port: 6379
+
+  ## doc/charts/globals.md#configure-gitaly-settings
   gitaly:
     authToken: {}
+      # secret:
+      # key:
     internal:
       names: ['default']
     external: []
+
+  ## doc/charts/globals.md#configure-minio-settings
   minio:
     enabled: true
     credentials: {}
+      # secret:
+
+  ## doc/charts/globals.md#configure-appconfig-settings
+  ## Rails based portions of this chart share many settings
   appConfig:
+    ## doc/charts/globals.md#general-application-settings
     enableUsagePing: true
     enableImpersonation:
     defaultCanCreateGroup: true
@@ -50,32 +104,51 @@ global:
       snippets: true
       builds: true
     webhookTimeout:
+
+    ## doc/charts/globals.md#gravatarlibravatar-settings
     gravatar:
       plainUrl:
       sslUrl:
+
+    ## doc/charts/globals.md#hooking-analytics-services-to-the-gitlab-instance
     extra:
       googleAnalyticsId:
       piwikUrl:
       piwikSiteId:
+
+    ## doc/charts/globals.md#lfs-artifacts-uploads-packages
     lfs:
       bucket: git-lfs
       connection: {}
+        # secret:
+        # key:
     artifacts:
       bucket: gitlab-artifacts
       connection: {}
+        # secret:
+        # key:
     uploads:
       bucket: gitlab-uploads
       connection: {}
+        # secret:
+        # key:
     packages:
       bucket: gitlab-packages
       connection: {}
+
+    ## doc/charts/globals.md#pseudonymizer-settings
     pseudonymizer:
       configMap:
       bucket: gitlab-pseudo
       connection: {}
+        # secret:
+        # key:
     backups:
       bucket: gitlab-backups
       tmpBucket: tmp
+
+    ## doc/charts/globals.md#incoming-email-settings
+    ## doc/installation/deployment.md#incoming-email
     incomingEmail:
       enabled: false
       address: ""
@@ -89,9 +162,11 @@ global:
         key: password
       mailbox: inbox
       idleTimeout: 60
+
+    ## doc/charts/globals.md#ldap
     ldap:
       servers: {}
-      # 'main' is the GitLab 'provider ID' of this LDAP server
+      ## 'main' is the GitLab 'provider ID' of this LDAP server
       # main:
       #   label: 'LDAP'
       #   host: '_your_ldap_server'
@@ -100,6 +175,8 @@ global:
       #   bind_dn: '_the_full_dn_of_the_user_you_will_bind_with'
       #   password: '_the_password_of_the_bind_user'
       #   encryption: 'plain'
+
+    ## doc/charts/globals.md#omniauth
     omniauth:
       enabled: false
       autoSignInWithProvider:
@@ -113,22 +190,45 @@ global:
       providers: []
       # - secret: gitlab-google-oauth2
       #   key: provider
+
+  ## doc/charts/globals.md#configure-gitlab-shell-settings
   shell:
     authToken: {}
+      # secret:
+      # key:
     hostKeys: {}
+      # secret:
+
+  ## Rails application secrets 
+  ## Secret created according to doc/installation/secrets.md#gitlab-rails-secret
+  ## If allowing shared-secrets generation, this is OPTIONAL.
   railsSecrets: {}
+    # secret:
+
+  ## doc/charts/globals.md#configure-registry-settings
   registry:
     bucket: registry
     certificate: {}
+      # secret:
     httpSecret: {}
+      # secret:
+      # key:
+
+  ## GitLab Runner
+  ## Secret created according to doc/installation/secrets.md#gitlab-runner-secret
+  ## If allowing shared-secrets generation, this is OPTIONAL.
   runner:
     registrationToken: {}
-  # Outgoing email server settings
+      # secret:
+
+  ## doc/installation/deployment.md#outgoing-email
+  ## Outgoing email server settings
   smtp:
     enabled: false
     address: smtp.mailgun.org
     port: 2525
     user_name: ""
+    ## doc/installation/secrets.md#smtp-password
     password:
       secret: ""
       key: password
@@ -136,17 +236,30 @@ global:
     authentication: "plain"
     starttls_auto: false
     openssl_verify_mode: "peer"
-  # Email persona used in email sent by GitLab
+
+  ## doc/installation/deployment.md#outgoing-email
+  ## Email persona used in email sent by GitLab
   email:
     from: ''
     display_name: GitLab
     reply_to: ''
     subject_suffix: ''
+
+  ## Timezone for containers.
   time_zone: UTC
+
+  ## Global Service Annotations
   service:
     annotations: {}
+
   antiAffinity: soft
+
+  ## doc/installation/secrets.md#gitlab-workhorse-secret
   workhorse: {}
+    # secret:
+    # key:
+
+  ## doc/charts/globals.md#custom-certificate-authorities
   # configuration of certificates container & custom CA injection
   certificates:
     image:
@@ -156,11 +269,14 @@ global:
     # - secret: custom-CA
     # - secret: more-custom-CAs
 
-# Settings to for the Let's Encrypt ACME Issuer
+## Settings to for the Let's Encrypt ACME Issuer
 # certmanager-issuer:
-  # The email address to register certificates requested from Let's Encrypt. Required if using Let's Encrypt.
+  ## The email address to register certificates requested from Let's Encrypt.
+  ## Required if using Let's Encrypt.
   # email: email@example.com
 
+## Installation & configuration of stable/cert-manager
+## See requirements.yaml for current version
 certmanager:
   # Install cert-manager chart. Set to false if you already have cert-manager
   # installed or if you are not using cert-manager.
@@ -170,6 +286,9 @@ certmanager:
   rbac:
     create: true
 
+## doc/charts/nginx/index.md
+## doc/architecture/decisions.md#nginx-ingress
+## Installation & configuration of charts/nginx
 nginx-ingress:
   enabled: true
   tcpExternalConfig: "true"
@@ -216,6 +335,8 @@ nginx-ingress:
   serviceAccount:
     create: true
 
+## Installation & configuration of stable/prometheus
+## See requirements.yaml for current version
 prometheus:
   install: true
   rbac:
@@ -231,10 +352,19 @@ prometheus:
   pushgateway:
     enabled: false
 
+## Configuration of Redis
+## doc/architecture/decisions.md#redis
+## doc/charts/redis
+# redis:
+#   enabled: false
+## doc/architecture/decisions.md#redis-ha
+## doc/charts/redis-ha
 redis-ha:
   enabled: false
   nameOverride: redis
 
+## Instllation & configuration of stable/prostgresql
+## See requirements.yaml for current version
 postgresql:
   install: true
   postgresUser: gitlab
@@ -247,17 +377,23 @@ postgresql:
     ## Optionally define additional custom metrics
     ## ref: https://github.com/wrouesnel/postgres_exporter#adding-new-metrics-via-a-config-file
 
+## Installation & configuration charts/registry
+## doc/architecture/decisions.md#registry
+## doc/charts/registry/
 # registry:
 #   enabled: false
-#
-# redis:
-#   enabled: false
 
+
+## Automatic shared secret generation
+## doc/installation/secrets.md
+## doc/charts/shared-secrets
 shared-secrets:
   enabled: true
   rbac:
     create: true
 
+## Installation & configuration of gitlab/gitlab-runner
+## See requirements.yaml for current version
 gitlab-runner:
   install: true
   rbac:
@@ -271,14 +407,22 @@ gitlab-runner:
       s3BucketLocation: us-east-1
       s3CachePath: gitlab-runner
       s3CacheInsecure: false
+
+## Settings for individual sub-charts under GitLab
+## Note: Many of these settings are configurable via globals
 # gitlab:
+## doc/charts/gitlab/migrations
 #   migrations:
 #     enabled: false
+## doc/charts/gitlab/unicorn 
 #   unicorn:
 #     enabled: false
+## doc/charts/gitlab/sidekiq 
 #   sidekiq:
 #     enabled: false
+## doc/charts/gitlab/gitaly 
 #   gitaly:
 #     enabled: false
+## doc/charts/gitlab/gitlab-shell
 #   gitlab-shell:
 #     enabled: false
