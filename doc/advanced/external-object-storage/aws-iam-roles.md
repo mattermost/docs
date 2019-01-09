@@ -30,9 +30,9 @@ s3:
 
 *Note*: If you provide the keypair, IAM role will be ignored. See [AWS documentation](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default) for more details. 
 
-### LFS, Artifacts, Uploads
+### LFS, Artifacts, Uploads, Packages, Pseudonymizer
 
-For LFS, artifacts and uploads an IAM role can be specified via the annotations key in the `unicorn` and `sidekiq` configuration:
+For LFS, artifacts, uploads, packages and pseudonymizer an IAM role can be specified via the annotations key in the `unicorn` and `sidekiq` configuration:
 
 ```
 --set gitlab.sidekiq.annotations."iam\.amazonaws\.com/role"=<role name>
