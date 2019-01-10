@@ -1,5 +1,5 @@
 Frequently Asked Questions
-===============
+==========================
 
 **Q1: When is release branch cut for a bug release?**
  
@@ -47,11 +47,11 @@ Frequently Asked Questions
 
 **Q12: What changes were made to the dev release process to account for the rotating feature and bug fix releases? https://developers.mattermost.com/internal/release-process/**
 
- - A: PR with changes was merged `here <https://github.com/mattermost/mattermost-developer-documentation/pull/182>`_.
+ - A: PR with changes was merged `here <https://github.com/mattermost/mattermost-developer-documentation/pull/182>`__.
 
 **Q13: What changes were made to the team release process to account for the rotating feature and bug fix releases? https://docs.mattermost.com/process/release-process.html**
 
- - A: Separate checklists for `Bug Fix release <https://docs.mattermost.com/process/bug-fix-release.html>`_ and `Feature release <https://docs.mattermost.com/process/feature-release.html>`_ were created.
+ - A: Separate checklists for `Bug Fix release <https://docs.mattermost.com/process/bug-fix-release.html>`__ and `Feature release <https://docs.mattermost.com/process/feature-release.html>`__ were created.
 
 **Q14: How does Redux branching work?**
 

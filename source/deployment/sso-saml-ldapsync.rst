@@ -10,7 +10,7 @@ To configure SAML synchronization with AD/LDAP:
 
 1. Go to **System Console > SAML** and set **Enable Synchronizing SAML Accounts With AD/LDAP** to `true`.
 2. Go to **System Console > AD/LDAP** and set **Enable Synchronization with AD/LDAP** to `true`.
-3. Set the rest of the AD/LDAP settings based on `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html#ad-ldap>`_ to connect Mattermost with your AD/LDAP server.
+3. Set the rest of the AD/LDAP settings based on `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html#ad-ldap>`__ to connect Mattermost with your AD/LDAP server.
 
  - If you don't want to enable AD/LDAP sign-in, keep **Enable sign-in with AD/LDAP** as ``false``.
 
@@ -42,7 +42,7 @@ When enabled, SAML synchronization with AD/LDAP occurs in phases:
 
 1. Get all the current LDAP users from the Mattermost database who have ``Users.AuthService`` set to ``ldap``. This is a SQL query issued against the Mattermost database: ``SELECT * FROM Users WHERE AuthService = 'ldap'``.
 2. Get all the current SAML users from the Mattermost database who have ``Users.AuthService`` set to ``saml``. This is a SQL query issued against the Mattermost database: ``SELECT * FROM Users WHERE AuthService = 'saml'``.
-3. Get all the current LDAP users from the LDAP server as defined by ``LdapSettings.UserFilter``. This is an `LDAP query <https://github.com/mattermost/mattermost-server/blob/master/scripts/ldap-check.sh>`_ issued against the LDAP server. Users are retrieved in batches as defined by ``LdapSettings.MaxPageSize``.
+3. Get all the current LDAP users from the LDAP server as defined by ``LdapSettings.UserFilter``. This is an `LDAP query <https://github.com/mattermost/mattermost-server/blob/master/scripts/ldap-check.sh>`__ issued against the LDAP server. Users are retrieved in batches as defined by ``LdapSettings.MaxPageSize``.
 4. Update LDAP attributes. For each existing Mattermost user retrieved in step 1, attempt to find a match against the list of LDAP users from step 3. To find matches, ``Users.AuthData`` field of the Mattermost user is compared against the ``LdapSettings.IdAttribute`` LDAP setting.
 
  - If any attribute of the user has changed, that attribute is copied from the LDAP server and the user is marked as updated.
@@ -56,7 +56,7 @@ When enabled, SAML synchronization with AD/LDAP occurs in phases:
 Override SAML Data with AD/LDAP Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-Alternatively, you can choose to override SAML bind data with AD/LDAP information. For more infomation on binding a user with the SAML ID Attribute, please refer to this `documentation <https://docs.mattermost.com/deployment/sso-saml-okta.html#bind-authentication-to-id-attribute-instead-of-email>`_.  
+Alternatively, you can choose to override SAML bind data with AD/LDAP information. For more infomation on binding a user with the SAML ID Attribute, please refer to this `documentation <https://docs.mattermost.com/deployment/sso-saml-okta.html#bind-authentication-to-id-attribute-instead-of-email>`__.  
 
 This process overrides SAML email address with AD/LDAP email address data or SAML Id Attribute with AD/LDAP Id Attribute if configured. We recommend using this configuration with the SAML ID Attribute to help ensure new users are not created when the email address changes for a user. 
 

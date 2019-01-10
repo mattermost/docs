@@ -16,6 +16,13 @@ Here is an example of what a dialog looks like for creating a JIRA issue within 
 .. toctree::
   :maxdepth: 2
 
+Opening a Dialog
+-----------------------
+
+To open a dialog, your integration must first receive an HTTP request from the Mattermost server. This request will be triggered by a slash command or an interactive message. It will include a trigger ID.
+
+Once you have the trigger ID you can use it to open the interactive dialog by sending an HTTP POST request to ``https://<your-mattermost-url>/api/v4/actions/dialogs/open``. See the below section for what to include in the body of that HTTP request.
+
 Parameters
 -----------------------
 
@@ -32,7 +39,7 @@ Interactive dialogs support the following parameters:
     "notify_on_cancel", "String", "(Optional) When true, sends an event back to the integration whenever there's a user-induced dialog cancellation. No other data is sent back with the event. Default is ``false``."
     "state", "Boolean", "(Optional) String provided by the integration that will be echoed back with dialog submission. Default is `` ``."
 
-Sample JSON is given below. Form submissions are sent back to the URL defined by the integration.
+Sample JSON is given below. Form submissions are sent back to the URL defined by the integration. You must also include the trigger ID you received from the slash command or interactive message.
 
 .. code-block:: json
 
@@ -377,9 +384,9 @@ Below is a full example of a JSON payload that creates an interactive dialog in 
 Share Your Integration
 -----------------------
 
-If you've built an integration for Mattermost, please consider `sharing your work <https://www.mattermost.org/share-your-mattermost-projects/>`_ in our `app directory <https://about.mattermost.com/default-app-directory/>`_.
+If you've built an integration for Mattermost, please consider `sharing your work <https://www.mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://about.mattermost.com/default-app-directory/>`__.
 
-The `app directory <https://about.mattermost.com/default-app-directory/>`_ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or on-prem infrastructure.
+The `app directory <https://about.mattermost.com/default-app-directory/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or on-prem infrastructure.
 
 Slack Compatibility
 --------------------

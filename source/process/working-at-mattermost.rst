@@ -39,9 +39,9 @@ This gives us tremendous advantages:
 
 Also, we have Meetups around the world to deepen and broaden our relationships and build the future of our products together:
 
-* Check out `MatterCon 2018 in Lisbon, Portugal <https://www.youtube.com/watch?v=CZXaYttz3NA&feature=youtu.be>`_.
-* Watch highlights of `our Community Meetup in Toronto, Canada <https://www.youtube.com/watch?v=5c9oJdbXrMU>`_.
-* See `our Core Commiter Summit in Las Vegas, Nevada, USA <https://www.youtube.com/watch?v=_RpmrM-5UFY>`_.
+* Check out `MatterCon 2018 in Lisbon, Portugal <https://www.youtube.com/watch?v=CZXaYttz3NA&feature=youtu.be>`__.
+* Watch highlights of `our Community Meetup in Toronto, Canada <https://www.youtube.com/watch?v=5c9oJdbXrMU>`__.
+* See `our Core Commiter Summit in Las Vegas, Nevada, USA <https://www.youtube.com/watch?v=_RpmrM-5UFY>`__.
 
 We run as a distributed, high performance team using a few principles:
 
@@ -49,9 +49,9 @@ We run as a distributed, high performance team using a few principles:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Working from anywhere means more time with loved ones, no commute and controlling everything about your workspace. 
 
-The one requirement is having the ability to occassionally `join video calls using Zoom <https://support.zoom.us/hc/en-us/articles/201362023-System-Requirements-for-PC-Mac-and-Linux>`_ between 8am and 1pm California time, which requires a good enough internet connection.
+The one requirement is having the ability to occassionally `join video calls using Zoom <https://support.zoom.us/hc/en-us/articles/201362023-System-Requirements-for-PC-Mac-and-Linux>`__ between 8am and 1pm California time, which requires a good enough internet connection.
 
-Recommended download/upload speeds should be 8 Mbps/512 kbps for smooth group calling and screensharing, with a bare minimum of 4 Mbps / 128 kbps. The `CRS Video Conference Bandwidth Speed Tool <http://speed.conferenceroomsystems.com/>`_ can be used to check your internet speed.
+Recommended download/upload speeds should be 8 Mbps/512 kbps for smooth group calling and screensharing, with a bare minimum of 4 Mbps / 128 kbps. The `CRS Video Conference Bandwidth Speed Tool <http://speed.conferenceroomsystems.com/>`__ can be used to check your internet speed.
 
 There are exceptions to this requirement, for example: part time roles that don't need to take meetings, or roles providing support outside core meeting hours.
 
@@ -62,7 +62,7 @@ Working in a distributed organization means it may take time before a person rea
 
 Communicate relevant information in the first message:
 
-- Avoid "Are you free to talk?" and "`Can we talk about something at 3pm? <https://www.nytimes.com/2015/08/16/jobs/when-youre-in-charge-your-whisper-may-feel-like-a-shout.html?_r=0>`_", instead use "Can we speak about ulimit issue Customer X is having?"
+- Avoid "Are you free to talk?" and "`Can we talk about something at 3pm? <https://www.nytimes.com/2015/08/16/jobs/when-youre-in-charge-your-whisper-may-feel-like-a-shout.html?_r=0>`__", instead use "Can we speak about ulimit issue Customer X is having?"
 
 Write unambiguously:
 
@@ -76,7 +76,7 @@ When working on problems, make sure to be clear about next steps, and either fol
 
 4) Hang out
 ~~~~~~~~~~~
-We have `warm-ups <https://docs.mattermost.com/process/training.html#warm-ups>`_ in some meetings to learn more about each other. It's part of a culture where we get to know each other.
+We have `warm-ups <https://docs.mattermost.com/process/training.html#warm-ups>`__ in some meetings to learn more about each other. It's part of a culture where we get to know each other.
 
 Find time after meetings and video conferences to get to know your teammates. Ask them about their weekends and how their life is outside of work.
 
@@ -86,7 +86,7 @@ When you meet in person at off-sites and events, build on those relationships.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When something's not clearly documented, take the initiative to figure out what's going on and update the documentation for the people who come after you.
 
-`Learn, Master, Teach <https://docs.mattermost.com/process/training.html#learn-master-teach>`_ is a model we use to pass on training after you've been trained to help grow everyone at the company.
+`Learn, Master, Teach <https://docs.mattermost.com/process/training.html#learn-master-teach>`__ is a model we use to pass on training after you've been trained to help grow everyone at the company.
 
 
 -------------
@@ -104,9 +104,9 @@ a) Discuss with your manager the dates you plan to take off, and decide who will
 
 b) For meetings you'll miss, message the chair with any status updates.
 
-c) Post in the `Stand-up channel <https://community.mattermost.com/private-core/channels/stand-up>`_ the dates you'll be away and who'll be your backup. 
+c) Post in the `Stand-up channel <https://community.mattermost.com/private-core/channels/stand-up>`__ the dates you'll be away and who'll be your backup. 
 
-d) Block off time in the shared `Mattermost Timeoff calendar <https://calendar.google.com/calendar/embed?src=mattermost.com_mg3nulgf6e70e50ohlq2rrkcnc%40group.calendar.google.com&ctz=America%2FLos_Angeles>`_, so it's easy for the team to see who is going to be away.
+d) Block off time in the shared `Mattermost Timeoff calendar <https://calendar.google.com/calendar/embed?src=mattermost.com_mg3nulgf6e70e50ohlq2rrkcnc%40group.calendar.google.com&ctz=America%2FLos_Angeles>`__, so it's easy for the team to see who is going to be away.
 
 There is no limit to how much time-off you can take when your work is meeting or exceeding expectations. We strongly recommend a minimum of 2 weeks per year.
 
@@ -157,12 +157,12 @@ For most roles, we require the ability to join meetings between 8am and 1pm Cali
 
 **2. Work from anywhere (with good internet)** 
 
-The comfort of home, freedom to travel, no commute--learn more about our `work anywhere policies <https://docs.mattermost.com/process/working-at-mattermost.html#work-anywhere>`_.
+The comfort of home, freedom to travel, no commute--learn more about our `work anywhere policies <https://docs.mattermost.com/process/working-at-mattermost.html#work-anywhere>`__.
 
 **3. Paid time-off**
 
-Just as flexible as our working hours, learn more about our `paid time-off policies <https://docs.mattermost.com/process/working-at-mattermost.html#paid-time-off>`_.
+Just as flexible as our working hours, learn more about our `paid time-off policies <https://docs.mattermost.com/process/working-at-mattermost.html#paid-time-off>`__.
 
 **4. Additional US and Canadian employee benefits**
 
-Mattermost uses professional employment organizations in the United States and Canada and are able to offer additional `benefits to US employees <benefits-us.html>`_ and `benefits to Canadian employees <benefits-canada.html>`_.
+Mattermost uses professional employment organizations in the United States and Canada and are able to offer additional `benefits to US employees <benefits-us.html>`__ and `benefits to Canadian employees <benefits-canada.html>`__.

@@ -1,7 +1,7 @@
 Upgrading to version 3.0
 ========================
 
-Use these instructions if you are upgrading from 2.0.0, 2.1.0, or 2.2.0. If you are upgrading from a version earlier than 2.0.0, you must first `upgrade to version 2.0 <../administration/upgrading-to-2.0.html>`_. 
+Use these instructions if you are upgrading from 2.0.0, 2.1.0, or 2.2.0. If you are upgrading from a version earlier than 2.0.0, you must first `upgrade to version 2.0 <../administration/upgrading-to-2.0.html>`__. 
 
 You must upgrade to 3.0 before upgrading to the latest version of Mattermost.
 
@@ -40,7 +40,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 **Upgrading to version 3.0**
 
-1. Read the following post in the Mattermost forum which describes the steps that were taken to ensure success when upgrading to version 3.0. `Mattermost 3.0 upgrade example <https://forum.mattermost.org/t/mattermost-3-0-upgrade-example/1541>`_
+1. Read the following post in the Mattermost forum which describes the steps that were taken to ensure success when upgrading to version 3.0. `Mattermost 3.0 upgrade example <https://forum.mattermost.org/t/mattermost-3-0-upgrade-example/1541>`__
 
 2. In a terminal window on the server that hosts Mattermost Server, change to your home directory. If any, delete files and directories that might still exist from a previous download.
 

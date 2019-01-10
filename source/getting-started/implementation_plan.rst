@@ -13,8 +13,8 @@ Mattermost is an open source, private cloud alternative to proprietary SaaS mess
 
  - Team Edition
 
- - Enterprise Edition (E10) which adds additional features to the platform including `AD/LDAP Integration <https://docs.mattermost.com/deployment/sso-ldap.html>`_, `Multi-Factor Authentication ("MFA") <https://docs.mattermost.com/deployment/auth.html>`_, `Encrypted Push Notifications <https://docs.mattermost.com/mobile/mobile-hpns.html>`_, `Branding <https://docs.mattermost.com/administration/branding.html>`_, `Advanced Access Control Policy <https://docs.mattermost.com/administration/config-settings.html#policy>`_, and next business day support.
- - Enterprise Edition (E20) includes E10 features plus `SAML 2.0 Authentication <https://docs.mattermost.com/deployment/sso-saml.html>`_, `Compliance Reporting <https://docs.mattermost.com/administration/compliance.html>`_, `High Availability <https://docs.mattermost.com/deployment/cluster.html>`_, `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`_, `Performance Monitoring <https://docs.mattermost.com/deployment/metrics.html>`_, `Data Retention Policy <https://docs.mattermost.com/administration/data-retention.html>`_, and enterprise class support.
+ - Enterprise Edition (E10) which adds additional features to the platform including `AD/LDAP Integration <https://docs.mattermost.com/deployment/sso-ldap.html>`__, `Multi-Factor Authentication ("MFA") <https://docs.mattermost.com/deployment/auth.html>`__, `Encrypted Push Notifications <https://docs.mattermost.com/mobile/mobile-hpns.html>`__, `Branding <https://docs.mattermost.com/administration/branding.html>`__, `Advanced Access Control Policy <https://docs.mattermost.com/administration/config-settings.html#policy>`__, and next business day support.
+ - Enterprise Edition (E20) includes E10 features plus `SAML 2.0 Authentication <https://docs.mattermost.com/deployment/sso-saml.html>`__, `Compliance Reporting <https://docs.mattermost.com/administration/compliance.html>`__, `High Availability <https://docs.mattermost.com/deployment/cluster.html>`__, `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__, `Performance Monitoring <https://docs.mattermost.com/deployment/metrics.html>`__, `Data Retention Policy <https://docs.mattermost.com/administration/data-retention.html>`__, and enterprise class support.
 
 The purpose of this Implementation Plan is to:
 
@@ -57,7 +57,7 @@ A Mattermost Enterprise E20 implementation consists of the following system comp
  - **Mattermost Server**
    - The Mattermost Server is a single binary that includes the RESTful JSON web service, authentication client, authentication provider, notification service, and data management service. The Mattermost Server can be deployed in stand-alone or high availability mode where two or more servers are clustered together using gossip protocol and a proxy server that routes traffic from client applications to healthy servers in the cluster.
  - **Mattermost Database**
-   - A MySQL or PostgreSQL database in stand-alone or high-availability configurations (master with read replicas). When choosing the database, consider the `inherent search limitations of the database type <https://docs.mattermost.com/install/requirements.html#database-software>`_ and whether `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`_ is most appropriate for your deployment.
+   - A MySQL or PostgreSQL database in stand-alone or high-availability configurations (master with read replicas). When choosing the database, consider the `inherent search limitations of the database type <https://docs.mattermost.com/install/requirements.html#database-software>`__ and whether `Elasticsearch <https://docs.mattermost.com/deployment/elasticsearch.html>`__ is most appropriate for your deployment.
  - **Mattermost Push Notification Service**
    - Hosted or on-prem service that pushes notifications to Mattermost Android and Mattermost iOS mobile applications.
  - **Mattermost Client Applications**
@@ -238,7 +238,7 @@ Train administrators on the tasks required to manage Mattermost.
 **Reference**: https://docs.mattermost.com/guides/administrator.html
 
 3.3.13 Update Legal & Support Settings
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost has configuration settings for the terms of service, privacy policy, and support URLs and emails. It is highly recommended that you modify these in your configuration so that your users have the correct legal information and can contact administrators to resolve account issues. You can find these under **System Console > Legal and Support**.
 
@@ -317,7 +317,7 @@ This section addresses security issues specifically related to the implementatio
 This section describes the support software, materials, equipment, and facilities required for the implementation, as well as the personnel requirements and training necessary for the implementation.  The information provided in this section is not site-specific.  If there are additional support requirements not covered by the subsequent sections, others may be added as needed.
 
 4.1      Hardware, Software, Facilities, and Materials
-.........................................
+......................................................
 
 In this section, list support software, materials, equipment, and facilities required for the implementation, if any.
 
@@ -372,6 +372,6 @@ If the training will be provided by State staff, provide the course name(s) and 
 This section describes the performance monitoring tool and techniques and how it will be used to help decide if the implementation is successful: https://docs.mattermost.com/deployment/metrics.html
 
 4.4      Configuration Management Interface
-.........................................
+...........................................
 
 This section describes the interactions required with the Configuration Management (CM) representative on CM-related issues, such as when software listings will be distributed, and how to confirm that libraries have been moved from the development to the production environment.

@@ -6,7 +6,7 @@ In most cases you can upgrade Mattermost Server in a few minutes, but the upgrad
 Upgrading to the Latest Version
 -------------------------------
 
-If you are upgrading from version 3.0 or later, these instructions apply to you. If you are upgrading from a version earlier than 3.0.0, you must first `upgrade to version 3.0.3 <../administration/upgrading-to-3.0.html>`_.
+If you are upgrading from version 3.0 or later, these instructions apply to you. If you are upgrading from a version earlier than 3.0.0, you must first `upgrade to version 3.0.3 <../administration/upgrading-to-3.0.html>`__.
 
 .. _before-you-begin:
 
@@ -30,7 +30,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 **To upgrade Mattermost Server**:
 
 .. note::
-  If you are upgrading an HA cluster, `review these upgrade notes instead <https://docs.mattermost.com/deployment/cluster.html#upgrade-guide>`_.
+  If you are upgrading an HA cluster, `review these upgrade notes instead <https://docs.mattermost.com/deployment/cluster.html#upgrade-guide>`__.
 
 #. Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
 
@@ -40,7 +40,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
      cd ~
 
-#. Download `the latest version of Mattermost Server <https://about.mattermost.com/download/>`_. In the following command, replace ``X.X.X`` with the version that you want to download:
+#. Download `the latest version of Mattermost Server <https://about.mattermost.com/download/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
 
    *Enterprise Edition*
 

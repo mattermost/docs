@@ -39,20 +39,20 @@ The following guidelines are intended to help developers of Mattermost integrati
 
 Community projects may be named using “for Mattermost”, for example:
 
-- `GitLab Integration Service for Mattermost <https://github.com/NotSqrt/mattermost-integration-gitlab>`_
-- `Giphy Integration Service for Mattermost <https://github.com/numberly/mattermost-integration-giphy>`_
+- `GitLab Integration Service for Mattermost <https://github.com/NotSqrt/mattermost-integration-gitlab>`__
+- `Giphy Integration Service for Mattermost <https://github.com/numberly/mattermost-integration-giphy>`__
 
 Alternatively, community projects may concatenate names containing Mattermost, for example:
 
-- `Matterbridge <https://github.com/42wim/matterbridge>`_ – is a Mattermost bridge connecting with IRC
-- `Mattersend <https://github.com/mtorromeo/mattersend>`_ – is a Mattermost integration for sending webhook events
+- `Matterbridge <https://github.com/42wim/matterbridge>`__ – is a Mattermost bridge connecting with IRC
+- `Mattersend <https://github.com/mtorromeo/mattersend>`__ – is a Mattermost integration for sending webhook events
 
 Exception: Please don’t use the name “matterbot”, as that is an internal service under development.
 
 When there are multiple open source projects for similar Mattermost integrations we ask our community to include the owner of the repo, for example:
 
-- `Hubot Adapter for Mattermost by Heitor Lessa <https://github.com/renanvicente/hubot-mattermost>`_
-- `Hubot Adapter for Mattermost by Andy Lo-A-Foe <https://github.com/loafoe/hubot-matteruser>`_
+- `Hubot Adapter for Mattermost by Heitor Lessa <https://github.com/renanvicente/hubot-mattermost>`__
+- `Hubot Adapter for Mattermost by Andy Lo-A-Foe <https://github.com/loafoe/hubot-matteruser>`__
 
 Product Description
 -------------------------------
@@ -71,7 +71,7 @@ Mattermost Team Edition Description
 
 When redistributing the open source Mattermost Team Edition binary, the following description may be used:
 
-  Mattermost Team Edition is an open source, self-hosted alternative to proprietary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.com/download <https://about.mattermost.com/download>`_.
+  Mattermost Team Edition is an open source, self-hosted alternative to proprietary SaaS messaging. Mattermost brings all your team communication into one place, making it searchable and accessible anywhere. Deploys as single Linux binary on MySQL or PostgreSQL under an MIT license from `mattermost.com/download <https://about.mattermost.com/download>`__.
 
 
 Mattermost Enterprise Edition Description

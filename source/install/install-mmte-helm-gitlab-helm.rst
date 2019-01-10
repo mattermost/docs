@@ -19,7 +19,7 @@ Pre-requisites
 Deploy GitLab Helm Chart
 ----------------------------
 
-To deploy Gitlab Helm Chart, follow the instructions described `here <https://docs.gitlab.com/ee/install/kubernetes/gitlab_chart.html>`_.
+To deploy Gitlab Helm Chart, follow the instructions described `here <https://docs.gitlab.com/ee/install/kubernetes/gitlab_chart.html>`__.
 
 Here is a light way to install it:
 
@@ -40,7 +40,7 @@ After all pods are running, log in to GitLab.
 Create an OAuth application with GitLab
 --------------------------------------------
 
-To create the OAuth application to allow Mattermost to use GitLab as the authentication provider, please follow the instructions `here <https://docs.mattermost.com/deployment/sso-gitlab.html>`_.
+To create the OAuth application to allow Mattermost to use GitLab as the authentication provider, please follow the instructions `here <https://docs.mattermost.com/deployment/sso-gitlab.html>`__.
 
 Please take note of the ``Application ID``, ``Application Secret Key``, ``User API Endpoint``, ``Auth Endpoint`` and ``Token Endpoint`` settings, as these values will be used later when deploying Mattermost.
 
@@ -206,13 +206,13 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
 
 Values that you need to replace in the above ``values.yaml`` file are listed below. Note that we assume the GitLab chart name is ``gitlab``.
 
-- ``<your-mattermost-domain>``: URL that users will use to access Mattermost, matching the `Site URL field <https://docs.mattermost.com/administration/config-settings.html#site-url>`_, e.g. ``mattermost.gitlab.example.com``.
+- ``<your-mattermost-domain>``: URL that users will use to access Mattermost, matching the `Site URL field <https://docs.mattermost.com/administration/config-settings.html#site-url>`__, e.g. ``mattermost.gitlab.example.com``.
 - <name-of-your-tls-secret>``: A name to store the TLS certificate for you domains, e.g. ``mattermost-tls``.
 - ``<ingress-class>``: The ingress class. In a basic GitLab deployment, this is ``gitlab-nginx``.
 - ``<ingress-provider>``: The ingress provider. In a basic GitLab deployment, this is ``nginx``.
 - ``<certmanager-issuer>``: The cert manager issuer. In a basic GitLab deployment, this is ``gitlab-issuer``.
-- ``<gitlab-ap-secret>``: The Application secret, which you created in step `Create the OAUTH with GitLab`_.
-- ``<gitlab-app-id>``: The Application ID, which you created in step `Create the OAUTH with GitLab`_.
+- ``<gitlab-ap-secret>``: The Application secret, which you created in step `Create an OAuth application with GitLab`_.
+- ``<gitlab-app-id>``: The Application ID, which you created in step `Create an OAuth application with GitLab`_.
 - ``<your-gitlab-domain>``: The GitLab domain name, e.g. ``gitlab.example.com``.
 - ``<gitlab-postgres.username>``: The GitLab PostgreSQL username. Default is ``gitlab``.
 - ``<gitlab-postgres.passwd-secret>``: Secret that holds your PostgreSQL password. Default is ``gitlab-postgresql-password``.
@@ -235,4 +235,4 @@ Wait for the pods to run. Then access your Mattermost server, and log in with yo
 Troubleshooting
 ---------------------
 
-If you have any trouble installing Mattermost Team Edition in GitLab Helm Chart deployment, let us know in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`_ and we'll be happy to help.
+If you have any trouble installing Mattermost Team Edition in GitLab Helm Chart deployment, let us know in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`__ and we'll be happy to help.

@@ -1,7 +1,7 @@
 Zoom Plugin 
 ================================
 
-Mattermost's open source `Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`_ enables users to start and join voice, video and screensharing meetings using either `Zoom <https://zoom.us/>`_'s self-hosted private cloud or on-prem solutions, or its vendor-hosted SaaS solution.
+Mattermost's open source `Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`__ enables users to start and join voice, video and screensharing meetings using either `Zoom <https://zoom.us/>`__'s self-hosted private cloud or on-prem solutions, or its vendor-hosted SaaS solution.
 
 The plugin is installed by default and can be quickly activated. 
 
@@ -13,7 +13,7 @@ Once enabled, clicking a video icon in a Mattermost channel invites team members
 
 **Using other voice, video and screensharing services**
  
-The `open source Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`_ can be extended to launch other voice, video and screensharing systems, including custom self-hosted services and vendor-hosted SaaS services such as Skype and Google Hangouts, depending on your needs. 
+The `open source Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`__ can be extended to launch other voice, video and screensharing systems, including custom self-hosted services and vendor-hosted SaaS services such as Skype and Google Hangouts, depending on your needs. 
 
 The following outlines the steps for enabling Zoom. 
 
@@ -33,7 +33,7 @@ Zoom Setup Guide
   - Paste the **API Key** and **API Secret** into the fields in the System Console, and hit **Save**.
 
 .. important::
-  To generate an **API Key** and **API Secret** requires a `Pro, Business, Education, or API Zoom plan <https://zoom.us/pricing>`_.
+  To generate an **API Key** and **API Secret** requires a `Pro, Business, Education, or API Zoom plan <https://zoom.us/pricing>`__.
   
   Only one paid account is required to generate an **API Key** and **API Secret**. The free Zoom plan can be used for other user accounts.
 
@@ -46,11 +46,11 @@ Zoom Setup Guide
   - Hit **Save**.
   
 .. note::
-   Before pasting the webhook URL into Zoom, make sure to replace ``SITEURL`` with the `site URL of your Mattermost instance <https://docs.mattermost.com/administration/config-settings.html#site-url>`_, and ``WEBHOOKSECRET`` with the secret generated in **System Console > Webhook Secret**.
+   Before pasting the webhook URL into Zoom, make sure to replace ``SITEURL`` with the `site URL of your Mattermost instance <https://docs.mattermost.com/administration/config-settings.html#site-url>`__, and ``WEBHOOKSECRET`` with the secret generated in **System Console > Webhook Secret**.
 
 .. image:: ../images/zoom_webhook.png
 
-5. Enable settings for `overriding usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`_ and `overriding profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`_.
+5. Enable settings for `overriding usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ and `overriding profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__.
 
 6. Activate the plugin at **System Console > Plugins > Management** by clicking **Activate** for Zoom.
 

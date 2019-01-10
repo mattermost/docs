@@ -1,5 +1,5 @@
 Welcome to Mattermost!
-====================
+======================
 
 This article covers the basics of Mattermost and gives a general overview of the application to help you start using it the right way.
 

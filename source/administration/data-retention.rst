@@ -1,7 +1,7 @@
 Data Retention Policy (E20)
 =================================
 
-Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`_.
+Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`__.
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users.
 
@@ -51,7 +51,7 @@ Second, if the files were uploaded prior to Mattermost v4.2, you will need to de
 1. Wait until all files uploaded prior to Mattermost v4.2 are past the file retention policy duration.
 2. Delete the ``teams/`` folder in the root of your  Mattermost storage directory.
 
-Note that these files will still be removed from the Mattermost user interface if they were uploaded in Mattermost v3.5 or later, which contain the `FileInfo table <https://docs.mattermost.com/administration/changelog.html#database-changes-from-v3-4-to-v3-5>`_. 
+Note that these files will still be removed from the Mattermost user interface if they were uploaded in Mattermost v3.5 or later, which contain the `FileInfo table <https://docs.mattermost.com/administration/changelog.html#database-changes-from-v3-4-to-v3-5>`__. 
 
 Why do I see ``Pending`` in the deletion job table with no details?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,7 +65,7 @@ How do I set a custom policy per team or channel?
 
 Setting custom policies for each team and channel are in the roadmap but not yet supported.
 
-If you are interested in this feature, consider upvoting the `existing feature proposal <https://mattermost.uservoice.com/forums/306457-general/suggestions/31731844-ee-data-retention-policy-for-individual-teams-and>`_ and share your feedback in the comments.
+If you are interested in this feature, consider upvoting the `existing feature proposal <https://mattermost.uservoice.com/forums/306457-general/suggestions/31731844-ee-data-retention-policy-for-individual-teams-and>`__ and share your feedback in the comments.
 
 How is data retention handled in the mobile apps?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
