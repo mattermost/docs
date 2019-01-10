@@ -236,8 +236,8 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
             - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
         - The week RC is cut:
             - [Loadtest x.x release candidate compared to x.x release](https://mattermost.atlassian.net/browse/MM-12532)
-        - Release week (for GitLab dev owner)
-            - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197)
+        - The week RC is cut (for GitLab dev owner):
+            - Test RC1 with the latest GitLab build during release testing cycle
         - Release week (for dependancies owner)
             - Upgrade dependancies for Webapp, Server and Redux
         - Week after release (for GitLab dev owner)
