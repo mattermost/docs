@@ -162,13 +162,13 @@ Feature Screenshot Development
 
 When taking a screenshot of a feature, use this checklist to guide your work:
 
-- **Profiles**: Profile pictures and real people’s names should be filled out throughout the screenshot. For the profile picture, use either normal-looking Avatars or stock photography.
-- **Content**: Show the feature in action. If you are highlighting a specific feature, try to have that screenshot focused on it rather than displaying the whole app. For example, if you are highlighting 1-1 direct message conversations, only include that conversation in your screenshot. Finally, ensure that the contents of the screenshot shows the Mattermost product in the best light - give whoever is viewing it a positive emotion.
-- **Use Cases**: Model a real world interaction. When possible, highlight DevOps use cases since they are familiar to the majority of our users.
-- **Clarity**: Avoid truncating the channel header text, or cutting off messages due to the scroll position in the center pane. All text should be fully visible.
-- **Size**: Provide screenshots that are double in size than needed - this ensures the screenshot does not rasterise on retina displays. The definite size per screenshot can vary - however, a standard will be established per type/category of the screenshot. For example, screenshots of the center pane should be 750px in size (with the shadows).
-- **Spacing**: Add additional spacing to a screenshot if necessary to highlight a feature.
-- **Calibration**: Make sure that the zoom level is at default level, and that the screenshot is not pixelated. Add a box shadow with the screenshot (0 2px 50 0 rgba(black, 0.1)), as well as a grey outline so that it looks good on both dark and light backgrounds.
+1. **Profiles**: Profile pictures and real people’s names should be filled out throughout the screenshot. For the profile picture, use either normal-looking Avatars or stock photography.
+2. **Content**: Show the feature in action. If you are highlighting a specific feature, try to have that screenshot focused on it rather than displaying the whole app. For example, if you are highlighting 1-1 direct message conversations, only include that conversation in your screenshot. Finally, ensure that the contents of the screenshot shows the Mattermost product in the best light - give whoever is viewing it a positive emotion.
+3. **Use Cases**: Model a real world interaction. When possible, highlight DevOps use cases since they are familiar to the majority of our users.
+4. **Clarity**: Avoid truncating the channel header text, or cutting off messages due to the scroll position in the center pane. All text should be fully visible.
+5. **Size**: Provide screenshots that are double in size than needed - this ensures the screenshot does not rasterise on retina displays. The definite size per screenshot can vary - however, a standard will be established per type/category of the screenshot. For example, screenshots of the center pane should be 750px in size (with the shadows).
+6. **Spacing**: Add additional spacing to a screenshot if necessary to highlight a feature.
+7. **Calibration**: Make sure that the zoom level is at default level, and that the screenshot is not pixelated. Add a box shadow with the screenshot (0 2px 50 0 rgba(black, 0.1)), as well as a grey outline so that it looks good on both dark and light backgrounds.
 
 Screenshot Development of Mattermost User Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
