@@ -79,7 +79,7 @@ via the `global.appConfig.lfs`, `global.appConfig.artifacts`, `global.appConfig.
 
 See the [charts/globals documentaion on appConfig](../../charts/globals.md#configure-appconfig-settings) for full details.
 
-Create the secret(s) per the [connection details documentation](../../charts/globals.md#connection), and then configure the chart to use the provided secrets. Note, the same secret can be used for all three.
+Create the secret(s) per the [connection details documentation](../../charts/globals.md#connection), and then configure the chart to use the provided secrets. Note, the same secret can be used for all of them.
 
 Examples for [AWS][fog-aws](any S3 compatible) and [Google][fog-gcs] providers can be found in
 [examples/objectstorage](../../../examples/objectstorage).
