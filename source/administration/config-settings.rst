@@ -1861,12 +1861,12 @@ Location of Mattermost Push Notification Service (MPNS), which re-sends push not
 To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://about.mattermost.com/mattermost-ios-app>`__ or the `Mattermost Android App on Google Play <https://about.mattermost.com/mattermost-android-app>`__:
 
 - For Enterprise Edition, enter ``http://push.mattermost.com`` for the push notification server hosted in the United States. If you prefer to use a push notification server hosted in Germany, enter ``https://hpns-de.mattermost.com/`` 
-- For Team Edition, enter ``http://push-test.mattermost.com``
+- For Team Edition, enter ``https://push-test.mattermost.com``
 
 Please review full documentation on `push Notifications and mobile applications <http://docs.mattermost.com/deployment/push.html>`__ including guidance on compiling your own mobile apps and MPNS before deploying to production.
 
 .. note::
-  The ``http://push-test.mattermost.com`` provided for testing push notifications prior to compiling your own service please make sure `to read about its limitations <http://docs.mattermost.com/deployment/push.html#push-notifications-for-team-edition-users>`__.
+  The ``https://push-test.mattermost.com`` provided for testing push notifications prior to compiling your own service please make sure `to read about its limitations <http://docs.mattermost.com/deployment/push.html#push-notifications-for-team-edition-users>`_.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PushNotificationServer": "https://push-test.mattermost.com"`` with string input.                                        |
@@ -1888,7 +1888,7 @@ Push Notification Contents
 
 To confirm push notifications are working:
 
-1. Go to **System Console > Notifications > Mobile Push > Send Push Notifications** and select **Use iOS and Android apps on iTunes and Google Play with TPNS**.
+1. Go to **System Console > Notifications > Mobile Push > Send Push Notifications** and select **Use TPNS connection to send notifications to iOS and Android apps**.
 2. Set **Push Notification Server** to *http://push.mattermost.com* if using Enterprise Edition. If using Team Edition, set the value to *http://push-test.mattermost.com*.
 3. To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://about.mattermost.com/mattermost-ios-app>`__ or the `Mattermost Android App on Google Play <https://about.mattermost.com/mattermost-android-app>`__ and log in to your team site.
 4. Close the app on your device, and close any other connections to your team site.

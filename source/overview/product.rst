@@ -49,7 +49,7 @@ To get started, `download the open source Mattermost Team Edition server <https:
 **Mattermost Enterprise Edition E10** is a commercial enterprise messaging solution for teams, groups and departments working on multiple projects scaling from hundreds to thousands of users. E10 is your "virtual campus", offering security, configuration and access control options for larger organizations, including:
 
 - Active Directory / LDAP single-sign-on
-- Encrypted push notifications via HPNS
+- Encrypted push notifications with service level agreements (SLAs) via HPNS
 - Multi-factor authentication
 - Advanced access control policy
 - Next business day support via online ticketing system

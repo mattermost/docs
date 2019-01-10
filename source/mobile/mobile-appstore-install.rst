@@ -9,8 +9,8 @@ To deploy the apps hosted in the Apple App Store and Google Play, we recommend y
   
 2. Enable mobile push notifications
   - Go to **System Console > Notifications > Mobile Push**
-  - If testing the apps, or using Team Edition: Select "Use iOS and Android apps on iTunes and Google Play with TPNS"
-  - If using the apps in production with Enterprise Edition: Select "Use encrypted, production-quality HPNS connection to iOS and Android apps"
+  - If testing the apps, or using Team Edition: Select "Use TPNS connection to send notifications to iOS and Android apps"
+  - If using the apps in production with Enterprise Edition: Select "Use HPNS connection with uptime SLA to send notifications to iOS and Android apps"
 
 .. image:: ../images/mobile_hpns.png
 
