@@ -157,50 +157,18 @@ Mattermost and Representative Logos
 6. When the background color is dark, use the white/inverted version of representative logo. When the background color is light, use the dark/primary version of representative logo.
 7. If the color of the representative logo is the same as the color of the title, make sure to make them distinctive from each other by slightly reducing the size of the logo.
 
-Feature Screenshot
-^^^^^^^^^^^^^^^^^^^
+Feature Screenshot Development
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When taking a screenshot of a feature, follow these guidelines:
+When taking a screenshot of a feature, use this checklist to guide your work:
 
-1. **Complete**: Profile pictures and real people names should be filled out. Use either in-house art, free, or purchased clip art. If you're modifying the image such as changing username and profile picture, make sure to do it throughout the image. Don't show any bugs or UX defects in the product and use the "Mattermost" theme when appropriate.
-2. **Authentic**: Try to model a real world interaction. When possible, highlight DevOps use cases since they are familiar to the majority of our users.
-3. **Oversized**: Provide screenshots that are at least 20-30% larger than needed, so that there is room to rotate and crop the image as needed.
-4. **Illustrative**: Try to find screenshots that are representative of the feature.
-5. **Easy to follow**: The screenshot should be easy to understand at a glance. Avoid using short forms or acronyms in conversations, and choose images that are clear.
-
-Screenshot Development of Mattermost User Interface
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The purpose is to highlight and illustrate the best features of Mattermost user interface.
-
-To choose the best screenshot image, follow this order: an end-user screenshot that best illustrates the feature > screenshot of System Console or other settings help text > screenshot of documentation > screenshot of a code mentioning the feature and/or Mattermost.
-
-Setup
-~~~~~~~~~~~~~
-
-- Use the Mattermost Desktop app, which has a nicer border.
-- Create a secondary account with [first.last]+blah@mattermost.com email address. This makes triggering notifications for yourself easier (for the screenshot). You can also use a second browser to login to the second account while taking the screenshot.
-
-Checklist
-~~~~~~~~~~~~~
-
-- Screen size: Provide screenshots that are 20-30% larger than needed - this will make it easier for the screenshot to be included in blog posts, documentation, and others. To do this, close the right-hand sidebar and shrink your screen horizontally to make it narrower, leaving the screen wide enough until the "mobile send button" no longer appears in the bottom-right corner. Make sure not to cut off any sides of the page in the screenshot.
-- Left-hand side: Include Favorite, Public, and Private channels on the left-hand side. Make sure that you scroll all the way to the top in the channel list on the left-hand side for the screenshot.
-- Favorites channel list: Include one Public channel, a Direct Message channel with someone who is online, as well as a Group Direct Message channel using people with short names to avoid truncation.
-- Center pane: Make the center pane one of the Favorited channels. Make sure that the heading of the center pane is fully visible to avoid truncation. Also, make the first message in the center pane fully visible right below the channel header.
-- Profiles: Profile pictures and real people's names should be filled out throughout the screenshot. For the profile picture, use either normal-looking Avatars or stock photography.
-- Clarity: Do not include an "unread posts" indicator in the left-hand side, but you can have a few mentions. Also, avoid showing any text with acronyms and abbreviations. Do not show any bugs or defects. Make sure that the area of focus is big enough to read in blog posts, documentation, and others.
-- Outline: Ensure that the screenshot has a grey outline so that it looks good on both dark and light backgrounds.
-- Outstanding look: Ensure that the contents of the screenshot shows the Mattermost product in the best light.
-   
-   - Show the feature in action.
-   - Make sure that the screenshot is positive - give whoever is viewing it a positive emotion.
-   - Show how the feature can be extended and customized. For instance, use custom slash commands instead of the default commands.
-
-Animated GIFs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Animated GIFs with two images that look very similar should not be created since visually it looks like a mistake.
+- **Profiles**: Profile pictures and real people’s names should be filled out throughout the screenshot. For the profile picture, use either normal-looking Avatars or stock photography.
+- **Content**: Show the feature in action. If you are highlighting a specific feature, try to have that screenshot focused on it rather than displaying the whole app. For example, if you are highlighting 1-1 direct message conversations, only include that conversation in your screenshot. Finally, ensure that the contents of the screenshot shows the Mattermost product in the best light - give whoever is viewing it a positive emotion.
+- **Use Cases**: Model a real world interaction. When possible, highlight DevOps use cases since they are familiar to the majority of our users.
+- **Clarity**: Avoid truncating the channel header text, or cutting off messages due to the scroll position in the center pane. All text should be fully visible.
+- **Size**: Provide screenshots that are double in size than needed - this ensures the screenshot does not rasterise on retina displays. The definite size per screenshot can vary - however, a standard will be established per type/category of the screenshot. For example, screenshots of the center pane should be 750px in size (with the shadows).
+- **Outstanding Look**: Make sure that the zoom level is at default level, and that the screenshot is not pixelated. Add a box shadow with the screenshot (0 2px 50 0 rgba(black, 0.1)), as well as a grey outline so that it looks good on both dark and light backgrounds.
+- **Spacing**: Add additional spacing to a screenshot if necessary to highlight a feature.
 
 Step-by-Step Asset Review Guide for Ops
 ----------------------------------------
