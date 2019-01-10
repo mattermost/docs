@@ -262,12 +262,12 @@ Leader Election
 
 In Mattermost v4.2 and later, a cluster leader election process assigns any scheduled task such as LDAP sync to run on a single node in a multi-node cluster environment.
 
-The process is based on a widely used `bully leader election algorithm <https://en.wikipedia.org/wiki/Bully_algorithm>`_ where the process with the lowest node ID number from amongst the non-failed processes is selected as the "leader". 
+The process is based on a widely used `bully leader election algorithm <https://en.wikipedia.org/wiki/Bully_algorithm>`__ where the process with the lowest node ID number from amongst the non-failed processes is selected as the "leader". 
 
 Job Server
 ^^^^^^^^^^^^^^^^
 
-Mattermost runs periodic tasks via the `job server <https://docs.mattermost.com/administration/config-settings.html#jobs>`_. These tasks include:
+Mattermost runs periodic tasks via the `job server <https://docs.mattermost.com/administration/config-settings.html#jobs>`__. These tasks include:
 
  - LDAP sync
  - Data retention
@@ -390,7 +390,7 @@ When high availability is enabled, the System Console displays the server status
 A server status of red can occur for the following reasons:
 
 - **Configuration file mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same configuration file to function properly.
-- **Server version mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`_ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
+- **Server version mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
 - **Server is down**: If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping the down server in 15 second intervals. When the server comes back up, any new messages are sent to it.
 
 WebSocket Disconnect
@@ -403,7 +403,7 @@ App Refreshes Continuously
 
 When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different `config.json` files in an HA cluster.
 
-Modify configuration settings directly through ``config.json`` `following these steps <https://docs.mattermost.com/deployment/cluster.html#updating-configuration-changes-while-operating-continuously>`_.
+Modify configuration settings directly through ``config.json`` `following these steps <https://docs.mattermost.com/deployment/cluster.html#updating-configuration-changes-while-operating-continuously>`__.
 
 Messages Do Not Post Until After Reloading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -21,7 +21,7 @@ Follow these guidelines to develop a clear and concise guest blog post:
 - Begin the article with a short bio and introduction of the author(s). Include a link to the guest company's website the first time it is mentioned in the text.
 - Include a screenshot of the guest company's logo in the post.
 - At the end of the post, include a short summary of the guest company as well as a call for readers to share feedback.
-- Also, refer to `style guidelines <https://docs.mattermost.com/process/marketing-guidelines.html>`_ while writing the article.
+- Also, refer to `style guidelines <https://docs.mattermost.com/process/marketing-guidelines.html>`__ while writing the article.
 - Choose a relevant visual for the blog post, such as a photo of the author or the guest company's building.
 
 Mattermost Recipes
@@ -34,4 +34,4 @@ Mattermost recipes are technical posts that show how to use Mattermost alongside
  - **Discussion:** This section discusses the strategy used in the solution, and also points out opportunities for extending the solution. If there are any tools or techniques used in the solution, this is the place you can elaborate on them.
  - **See Also:** The final section is optional, and is for links to other documentation about the tools mentioned in the recipe.
 
-For an example Mattermost recipe, `please read this blog post <https://about.mattermost.com/learn/connect-irc-to-mattermost/>`_.
+For an example Mattermost recipe, `please read this blog post <https://about.mattermost.com/learn/connect-irc-to-mattermost/>`__.

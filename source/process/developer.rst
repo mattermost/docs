@@ -8,9 +8,9 @@ Working in open source means your work is publicly visible. Your code will recei
 
 Core committers include volunteer developers from the community, staff by organizations deploying and investing in Mattermost, as well as staff paid by Mattermost, Inc.
 
-This document summarizes the responsibilities and requirements of core committers employed by Mattermost, Inc., skill level requirements, and hiring process. Staff developers work closely with Mattermost product management to envision, design, plan, develop, coordinate, review, and merge improvements per our `contribution guidelines <../developer/contribution-guide.html>`_ on a regular basis.
+This document summarizes the responsibilities and requirements of core committers employed by Mattermost, Inc., skill level requirements, and hiring process. Staff developers work closely with Mattermost product management to envision, design, plan, develop, coordinate, review, and merge improvements per our `contribution guidelines <../developer/contribution-guide.html>`__ on a regular basis.
 
-Ideally, developers are "full stack", and comfortable moving across backend and frontend projects. As part of our `learn, master, teach <training.html#learn-master-teach>`_ mindset, our environment has people consistently cross-training, becoming experts, and passing on knowledge to new team members rotating into new areas of responsibility. That said, we also welcome engineers who prefer to specialize in backend and frontend, since there's ample projects to find in both areas.  
+Ideally, developers are "full stack", and comfortable moving across backend and frontend projects. As part of our `learn, master, teach <training.html#learn-master-teach>`__ mindset, our environment has people consistently cross-training, becoming experts, and passing on knowledge to new team members rotating into new areas of responsibility. That said, we also welcome engineers who prefer to specialize in backend and frontend, since there's ample projects to find in both areas.  
 
 Responsibilities
 -------------------------
@@ -19,7 +19,7 @@ Responsibilities
 - Support and collaborate with our community service engineers to find the root cause of issues, find, deliver, and document effective solutions. 
 - Engage with the core team and the open source community to collaborate on improving Mattermost.
 - Propose, coordinate, manage, review, and merge code contributed by the rest of the community and work with them to get it ready for production.
-- Work with our `documentation team <documentation-guidelines.html>`_ to create and maintain technical information around features, configuration, and troubleshooting.
+- Work with our `documentation team <documentation-guidelines.html>`__ to create and maintain technical information around features, configuration, and troubleshooting.
 - Take initiative in improving the software in small or large ways to address pain points in your own experience as a developer.
 - Keep code easy to maintain. Keep it easy for others to contribute code.
 - Help identify, vet, and recruit other developers to join our community and, when appropriate, as staff developers. 
@@ -35,7 +35,7 @@ Requirements
 - You share our values, and work in accordance with those values.
 - You're proficient in Golang, React and/or React Native, or are able to ramp quickly into those languages.
 - You've either made substantial contributions to the Mattermost open source project or are open to completing an `Audition`_ to assess your comfort in working in open source.
-- Ideal, but not required: Experience working in online communities, having made at least one `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull request to a Mattermost repository, working on other Golang, React or React Native apps.
+- Ideal, but not required: Experience working in online communities, having made at least one `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`__ pull request to a Mattermost repository, working on other Golang, React or React Native apps.
 
 Levels
 -------------------------
@@ -72,12 +72,12 @@ Candidates for developer roles on the Mattermost staff can expect the hiring pro
 
 Both declined and accepted candidates will be invited to share feedback on their hiring experience so we can continually improve our process.
 
-- **Application/Email - Review of code samples** - In `your application <https://jobs.lever.co/mattermost/>`_ we welcome you to include links to any public open source work you've done, including GitHub, GitLab or BitBucket profiles. If you'd like to share privately we can send you our ID for GitHub, GitLab or BitBucket, or we can review code you send in via email. If you really want to impress us, `make a contribution to our open source project by completing a Help Wanted ticket. <../developer/contribution-guide.html>`_
+- **Application/Email - Review of code samples** - In `your application <https://jobs.lever.co/mattermost/>`__ we welcome you to include links to any public open source work you've done, including GitHub, GitLab or BitBucket profiles. If you'd like to share privately we can send you our ID for GitHub, GitLab or BitBucket, or we can review code you send in via email. If you really want to impress us, `make a contribution to our open source project by completing a Help Wanted ticket. <../developer/contribution-guide.html>`__
 - **Email - Follow-up questions** - If your code samples look good, we'll email you some questions specific to the role.
 - **Video call - Screening interview** - Selected candidates will be invited for a 25-minute screening call with a recruiter.
 - **Video call - Soft-skills discussion** - Next, candidates will be invited to schedule a 25-minute interview with a core committer to assess soft skills and for the candidate to learn more about the role.
 - **Audition** - Candidates who appear technically strong and culturally fit may be offered a real-world “try out” project with Mattermost team members to simulate what it would be like to work on a major open source project.
-- **Reference Checks** - You'll be sent an email request by `SkillSurvey <http://www.skillsurvey.com/>`_ to list 3 references who can verify your past achievements.
+- **Reference Checks** - You'll be sent an email request by `SkillSurvey <http://www.skillsurvey.com/>`__ to list 3 references who can verify your past achievements.
 - **Video call - CTO interview** - Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview may include technical questions along with a discussion of either past work or results of the simulation, the candidate's interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations.
 - **Video call - CEO interview** - Finally, candidates will have a 45-minute interview with our CEO.
 - **Email - Offer** - Successful candidates will receive an offer via email. Mattermost offers compensation competitive with a candidate's local market opportunities.
@@ -91,23 +91,23 @@ Notes:
 Audition
 -------------------------------
 
-For the benefit of candidates and the company, Mattermost offers real-world “try out” projects with Mattermost team members to simulate what it would be like to work at the company prior to hiring. The practice of auditions in open source companies was pioneered by Automattic (creators of WordPress) and detailed by `Harvard Business Review in 2014 <https://hbr.org/2014/04/the-ceo-of-automattic-on-holding-auditions-to-build-a-strong-team>`_. This practice has been a vital part of Mattermost culture.
+For the benefit of candidates and the company, Mattermost offers real-world “try out” projects with Mattermost team members to simulate what it would be like to work at the company prior to hiring. The practice of auditions in open source companies was pioneered by Automattic (creators of WordPress) and detailed by `Harvard Business Review in 2014 <https://hbr.org/2014/04/the-ceo-of-automattic-on-holding-auditions-to-build-a-strong-team>`__. This practice has been a vital part of Mattermost culture.
 
-Candidates who show strong potential for technical and cultural fit are invited to work on tasks that are part of their desired position, complete a project designed by their potential manager, or select from open `Help Wanted tickets <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`_ to be completed per the `Mattermost contribution guidelines <https://developers.mattermost.com/contribute/getting-started/>`_. Your work will become a permanent part of the open source project that you can reference for the rest of your career. You’re also eligible to receive a `Mattermost Mug <https://twitter.com/search?q=%23mattermug&src=typd>`_ in appreciation of your first contribution. Here’s an example of `a successful project completed during a tryout <https://www.movetoiceland.com/mattermost-recipe-1-preview-videos/#.Wz2kb9hKjUK>`_.
+Candidates who show strong potential for technical and cultural fit are invited to work on tasks that are part of their desired position, complete a project designed by their potential manager, or select from open `Help Wanted tickets <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`__ to be completed per the `Mattermost contribution guidelines <https://developers.mattermost.com/contribute/getting-started/>`__. Your work will become a permanent part of the open source project that you can reference for the rest of your career. You’re also eligible to receive a `Mattermost Mug <https://twitter.com/search?q=%23mattermug&src=typd>`__ in appreciation of your first contribution. Here’s an example of `a successful project completed during a tryout <https://www.movetoiceland.com/mattermost-recipe-1-preview-videos/#.Wz2kb9hKjUK>`__.
 
-While you’re working with us, you can join the Mattermost community site `here <https://pre-release.mattermost.com/core/>`_.
+While you’re working with us, you can join the Mattermost community site `here <https://pre-release.mattermost.com/core/>`__.
 
 Once signed-in, the following channels are recommended for observing how the core committers work with the community to ship new releases:
 
-* `Developers <https://pre-release.mattermost.com/core/channels/developers>`_
-* `Bugs <https://pre-release.mattermost.com/core/channels/bugs>`_
-* `Release Checklist <https://pre-release.mattermost.com/core/channels/release-checklist>`_
-* `Release Discussion <https://pre-release.mattermost.com/core/channels/release-discussion>`_
-* `Peer-to-Peer Help <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`_
+* `Developers <https://pre-release.mattermost.com/core/channels/developers>`__
+* `Bugs <https://pre-release.mattermost.com/core/channels/bugs>`__
+* `Release Checklist <https://pre-release.mattermost.com/core/channels/release-checklist>`__
+* `Release Discussion <https://pre-release.mattermost.com/core/channels/release-discussion>`__
+* `Peer-to-Peer Help <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`__
 
 Observing these public channels as you work will give you a good sense of what it is like to work at Mattermost in a full time capacity to ensure joining the company aligns to your interests and desired career direction.
 
-During the tryout, candidates will submit invoices for up to 40 hours of work (example `here <https://docs.google.com/spreadsheets/d/1Lx1f3nX64pJTJOttW_QoJwrfRekh0ISjmIwZ7_ePG1g/edit#gid=1>`_). All candidates will be paid $25/hour, regardless of position. Mattermost uses a `standard consulting agreement template <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit?usp=sharing>`_ and provides instructions for invoicing at the start of the tryout. Note that the hourly rate is not necessarily representative of the final offer that would be extended to a successful candidate.
+During the tryout, candidates will submit invoices for up to 40 hours of work (example `here <https://docs.google.com/spreadsheets/d/1Lx1f3nX64pJTJOttW_QoJwrfRekh0ISjmIwZ7_ePG1g/edit#gid=1>`__). All candidates will be paid $25/hour, regardless of position. Mattermost uses a `standard consulting agreement template <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit?usp=sharing>`__ and provides instructions for invoicing at the start of the tryout. Note that the hourly rate is not necessarily representative of the final offer that would be extended to a successful candidate.
 
 Frequently Asked Questions
 --------------------------------------------------
@@ -115,4 +115,4 @@ Frequently Asked Questions
 Do you have internships?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-While we no longer offer internships for developers, if you get a couple of `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`_ pull requests accepted, we'll interview you for one. This will be a remote internship without supervision; you'll only get feedback on your merge requests. If you want to work on open source and qualify, `please submit an application <https://jobs.lever.co/mattermost/>`_. In the cover letter field, please note that you want an internship and link to the accepted pull requests. The pull requests should be of significant value and difficulty, which is at the discretion of the hiring manager. For example, fixing 10 typos isn't as valuable as shipping 2 new features.
+While we no longer offer internships for developers, if you get a couple of `Help Wanted <https://github.com/search?utf8=%E2%9C%93&q=org%3Amattermost+state%3Aopen+Help+Wanted&type=Issues&ref=searchresults?>`__ pull requests accepted, we'll interview you for one. This will be a remote internship without supervision; you'll only get feedback on your merge requests. If you want to work on open source and qualify, `please submit an application <https://jobs.lever.co/mattermost/>`__. In the cover letter field, please note that you want an internship and link to the accepted pull requests. The pull requests should be of significant value and difficulty, which is at the discretion of the hiring manager. For example, fixing 10 typos isn't as valuable as shipping 2 new features.

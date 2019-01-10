@@ -21,7 +21,7 @@ Public Channels are open to everyone on a team. New team members are automatical
 Private Channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Private Channels are for sensitive topics and are only visible to select team members. In Team Edition, any member of a Private channel can add or remove other members from Private channels, but in Enterprise Edition `these permissions can be restricted to the Channel Admin and System Admin <http://docs.mattermost.com/help/getting-started/managing-members.html#user-roles>`_.
+Private Channels are for sensitive topics and are only visible to select team members. In Team Edition, any member of a Private channel can add or remove other members from Private channels, but in Enterprise Edition `these permissions can be restricted to the Channel Admin and System Admin <http://docs.mattermost.com/help/getting-started/managing-members.html#user-roles>`__.
 
 Direct Messages and Group Messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -47,7 +47,7 @@ Create a new Public Channel or Private Channel by selecting the **+** symbol nex
 
     .. image:: ../../images/Create_private_channel.png
 
-Anyone can create Public Channels or Private Channels, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-creation-for>`_.
+Anyone can create Public Channels or Private Channels, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-creation-for>`__.
 
 Joining a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -70,7 +70,7 @@ Naming a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Channels can be identified in two ways:
 
-1. Channel display name: This is the channel name appearing in the Mattermost user interface. Click the channel name at the top of the center pane to access the drop-down menu, then click **Rename Channel**. Anyone can rename the channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`_.
+1. Channel display name: This is the channel name appearing in the Mattermost user interface. Click the channel name at the top of the center pane to access the drop-down menu, then click **Rename Channel**. Anyone can rename the channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#enable-public-channel-renaming-for>`__.
 2. Channel handle: This is part of the channel URL. You may also change the channel handle when renaming a channel, but changing channel handles may break existing links.
 
 For example, for the following channel: https://pre-release.mattermost.com/core/channels/ux-design
@@ -86,7 +86,7 @@ Click the channel name at the top of the center pane to access the drop-down men
 Archiving a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Archive Channel**. Anyone can archive the Public Channels or Private Channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#id2>`_.
+Click the channel name at the top of the center pane to access the drop-down menu, then click **Archive Channel**. Anyone can archive the Public Channels or Private Channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#id2>`__.
 
 When a channel is archived, it is removed from the user interface, but a copy exists on the server in case it is needed for audit reasons later. Because of this, the URL of a newly created channel cannot be the same URL name as an archived channel.
 
@@ -97,7 +97,7 @@ Click the channel name at the top of the center pane to access the drop-down men
 
 When a channel is converted, history and membership are preserved. Membership in a private channel is by invitation only. Publicly shared files remain accessible to anyone with the link. 
 
-Note that conversion of private channels to public channels is not supported in the user interface given security concerns of sharing private channel history; however, this function is available via `CLI command <https://docs.mattermost.com/administration/command-line-tools.html#platform-channel-modify>`_.
+Note that conversion of private channels to public channels is not supported in the user interface given security concerns of sharing private channel history; however, this function is available via `CLI command <https://docs.mattermost.com/administration/command-line-tools.html#platform-channel-modify>`__.
 
 Favoriting a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

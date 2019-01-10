@@ -2,9 +2,9 @@ Plugins (Beta)
 ===============
 
 .. note::
-  This is the admin documentation for plugins. If you're a developer looking to build a plugin, see `our developer documentation <https://developers.mattermost.com/extend/plugins>`_.
+  This is the admin documentation for plugins. If you're a developer looking to build a plugin, see `our developer documentation <https://developers.mattermost.com/extend/plugins>`__.
 
-Mattermost supports plugins, which allow users to customize and extend the platform by adding specific features. See our `demo plugin <https://github.com/mattermost/mattermost-plugin-demo>`_ that demonstrates the capabilities of a Mattermost plugin. For a starting point to write a Mattermost plugin, see our `sample plugin <https://github.com/mattermost/mattermost-plugin-sample>`_.
+Mattermost supports plugins, which allow users to customize and extend the platform by adding specific features. See our `demo plugin <https://github.com/mattermost/mattermost-plugin-demo>`__ that demonstrates the capabilities of a Mattermost plugin. For a starting point to write a Mattermost plugin, see our `sample plugin <https://github.com/mattermost/mattermost-plugin-sample>`__.
 
 There are three scenarios in which you would consider using a plugin:
 
@@ -14,12 +14,12 @@ There are three scenarios in which you would consider using a plugin:
 
 There are two main types of plugins, both of which are supported in Team and Enterprise Editions:
 
- - **Webapp plugins (Beta)**: Allows you to customize the Mattermost user interface, by overriding elements such as the profile popover, channel header or the sidebar. For a sample plugin, see `our zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`_.
- - **Server plugins (Release Candidate)**: Makes it easier to integrate with third-party systems such as JIRA, GitLab or Jenkins. A sample plugin for a video and audio call system with Zoom `is available here <https://github.com/mattermost/mattermost-plugin-zoom>`_. A sample plugin that auto-censors restricted words and intercepts them `is described here <https://forum.mattermost.org/t/coming-soon-apiv4-mattermost-post-intercept/4982>`_.
+ - **Webapp plugins (Beta)**: Allows you to customize the Mattermost user interface, by overriding elements such as the profile popover, channel header or the sidebar. For a sample plugin, see `our Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`__.
+ - **Server plugins (Release Candidate)**: Makes it easier to integrate with third-party systems such as JIRA, GitLab or Jenkins. A sample plugin for a video and audio call system with Zoom `is available here <https://github.com/mattermost/mattermost-plugin-zoom>`__. A sample plugin that auto-censors restricted words and intercepts them `is described here <https://forum.mattermost.org/t/coming-soon-apiv4-mattermost-post-intercept/4982>`__.
 
-Later in upcoming releases, the `Enterprise Edition <https://about.mattermost.com/pricing>`_ will also support plugins that enable you to extend Mattermost functionality to meet a specific, complex requirement such as profiling performance metrics, and to implement highly customized compliance rules for `information barriers <http://www.17a-4.com/supervision-information-barriers/>`_.
+Later in upcoming releases, the `Enterprise Edition <https://about.mattermost.com/pricing>`__ will also support plugins that enable you to extend Mattermost functionality to meet a specific, complex requirement such as profiling performance metrics, and to implement highly customized compliance rules for `information barriers <http://www.17a-4.com/supervision-information-barriers/>`__.
 
-For a list of available plugins, including those for auto-linking, auto-censoring and anti-virus scanning, as well as third-party plugins with JIRA, Zoom, GitHub and more, see the `Mattermost plugins repo <https://github.com/mattermost/mattermost-plugins>`_. 
+For a list of available plugins, including those for auto-linking, auto-censoring and anti-virus scanning, as well as third-party plugins with JIRA, Zoom, GitHub and more, see the `Mattermost plugins repo <https://github.com/mattermost/mattermost-plugins>`__. 
 
 Security
 --------
@@ -44,7 +44,7 @@ To enable plugins, follow these two simple steps.
  - Activating or deactivating pre-packaged Mattermost plugins.
  - Upload and install a plugin for your Mattermost server, or remove them.
 
-For more information on building your own plugin, see our `developer documentation <https://developers.mattermost.com/extend/plugins/>`_.
+For more information on building your own plugin, see our `developer documentation <https://developers.mattermost.com/extend/plugins/>`__.
 
 Plugin Uploads
 ~~~~~~~~~~~~~~~~~~
@@ -65,7 +65,7 @@ Once enabled, install plugins in one of the following ways:
  - Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to ``./plugins``.
  - Restart the Mattermost server.
 
-If you run your Mattermost server in `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`_, plugins need to be uploaded on all app servers manually.
+If you run your Mattermost server in `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`__, plugins need to be uploaded on all app servers manually.
 
 Once installed, your plugins directory should look similar to:
 
@@ -98,7 +98,7 @@ Frequently Asked Questions (FAQ)
 Where can I share feedback on plugins?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can share feedback in our `forums <https://forum.mattermost.org>`_ by creating a new forum post or by replying to `our open issue <https://forum.mattermost.org/t/mattermost-plugins-in-beta/4123>`_.
+You can share feedback in our `forums <https://forum.mattermost.org>`__ by creating a new forum post or by replying to `our open issue <https://forum.mattermost.org/t/mattermost-plugins-in-beta/4123>`__.
 
 All feedback is highly welcome!
 

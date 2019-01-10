@@ -15,10 +15,10 @@ The pre-release server runs daily builds of the Mattermost open source project, 
 
 To get started: 
 
-1. Sign-up for the `Mattermost pre-release server <https://pre-release.mattermost.com/signup_user_complete/?id=f1924a8db44ff3bb41c96424cdc20676>`_
+1. Sign-up for the `Mattermost pre-release server <https://pre-release.mattermost.com/signup_user_complete/?id=f1924a8db44ff3bb41c96424cdc20676>`__
 
 2. After signing in and completing the tutorial, in the left hand sidebar go to Direct Messages > More then open a channel to **@hanna** and send her a note with the codename of your company, as assigned in your pre-sales discussion. 
 
 3. Hanna will add you to a special private channel to discuss your deployment with Mattermost sales and technical staff. 
 
-Following the evaluation period, if the customer includes `Premier Support <https://about.mattermost.com/support/>`_ with their subscription, the real time discussion channel with Mattermost, Inc. will persist and be staffed by the Mattermost customer success team for Premier Customers. 
+Following the evaluation period, if the customer includes `Premier Support <https://about.mattermost.com/support/>`__ with their subscription, the real time discussion channel with Mattermost, Inc. will persist and be staffed by the Mattermost customer success team for Premier Customers. 

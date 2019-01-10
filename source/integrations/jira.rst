@@ -17,13 +17,16 @@ This plugin allows you to connect your JIRA projects with multiple channels acro
   - Issue: Updated - when an issue is reopened, and when the issue is resolved or closed.
   - Issue: Deleted - when an open issue is deleted. If the issue was already resolved, deleting it won't send a message to Mattermost.
 
-If you'd like to see support for additional events, `let us know <https://mattermost.uservoice.com/forums/306457-general>`_.
+If you'd like to see support for additional events, `let us know <https://mattermost.uservoice.com/forums/306457-general>`__.
 
 .. toctree::
 	:maxdepth: 2
 
 JIRA Setup Guide
 ~~~~~~~~~~~~~~~~~
+
+.. note::
+    Make sure that the JIRA Plugin is enabled in **System Console > Plugins > Management** before continuing setup.
 
 Enable JIRA on your Mattermost instance
 .........................................
@@ -42,7 +45,7 @@ Enable JIRA on your Mattermost instance
 .. note::
    Before pasting the webhook URL into JIRA, make sure to replace ``teamurl`` and ``channelurl`` with the Mattermost team URL and channel URL you want the JIRA events to post to. The values should be in lower case. 
    
-   Moreover, replace ``siteurl`` with the `site URL of your Mattermost instance <https://docs.mattermost.com/administration/config-settings.html#site-url>`_, and ``webhooksecret`` with the secret generated in step 3. 
+   Moreover, replace ``siteurl`` with the `site URL of your Mattermost instance <https://docs.mattermost.com/administration/config-settings.html#site-url>`__, and ``webhooksecret`` with the secret generated in step 3. 
    
    For instance, if the team URL is ``contributors``, channel URL is ``town-square`` and site URL is ``https://ci-linux-postgres.mattermost.com``, then the final webhook URL on the above screenshot would be 
    
@@ -60,7 +63,7 @@ Configure the webhook in your JIRA project
 
 6 - On the left-hand sidebar, go to **Advanced > WebHooks**. Then click the **Create a Webhook** button to display the webhook creation form. Choose a unique name and add the JIRA webhook URL from step 4 as the URL. 
 
-7 - (Optional) Set a description and a custom JQL query to determine which types of tickets trigger events. For more information on JQL queries, refer to the `Atlassian help documentation <https://confluence.atlassian.com/jirasoftwarecloud/advanced-searching-764478330.html>`_.
+7 - (Optional) Set a description and a custom JQL query to determine which types of tickets trigger events. For more information on JQL queries, refer to the `Atlassian help documentation <https://confluence.atlassian.com/jirasoftwarecloud/advanced-searching-764478330.html>`__.
 
 8 - Finally, set which issue events send messages to Mattermost channels. The following are supported:
 
@@ -83,7 +86,7 @@ Frequently Asked Questions (FAQ)
 Why is the Mattermost domain missing from my webhook URL?
 ..........................................................
 
-This is because `Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_ hasn't been set. As a result, the webhook URL displayed in **System Console > Plugins > JIRA** is of the form ``/plugins/jira/...``.
+This is because `Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__ hasn't been set. As a result, the webhook URL displayed in **System Console > Plugins > JIRA** is of the form ``/plugins/jira/...``.
 
 To resolve it, set your Site URL in **System Console > General > Configuration**.
 
@@ -94,8 +97,8 @@ Try the following troubleshooting steps:
 
 1. Confirm **User** field is set in **System Console > Plugins > JIRA**. The plugin needs to be attached to a user account for the webhook to post messages.
 2. Confirm the team URL and channel URL you specified in the JIRA webhook URL is in lower case.
-3. For issue updated events, only status changes when the ticket is reopened, or when resolved/closed are supported. If you'd like to see support for additional events, `let us know <https://mattermost.uservoice.com/forums/306457-general>`_.
-4. If you specified a JQL query in your JIRA webhook page, paste the JQL to JIRA issue search and make sure it returns results. If it doesn't, the query may be incorrect. Refer to the `Atlassian documentation <https://confluence.atlassian.com/jirasoftwarecloud/advanced-searching-764478330.html>`_ for help.
+3. For issue updated events, only status changes when the ticket is reopened, or when resolved/closed are supported. If you'd like to see support for additional events, `let us know <https://mattermost.uservoice.com/forums/306457-general>`__.
+4. If you specified a JQL query in your JIRA webhook page, paste the JQL to JIRA issue search and make sure it returns results. If it doesn't, the query may be incorrect. Refer to the `Atlassian documentation <https://confluence.atlassian.com/jirasoftwarecloud/advanced-searching-764478330.html>`__ for help.
 5. Use a curl command to make a POST request to the webhook URL. If curl command completes with a ``200 OK`` response, the plugin is configured correctly. For instance, you can run the following command
 
    .. code-block:: text
@@ -106,7 +109,7 @@ Try the following troubleshooting steps:
    
    Note that the curl command won't result in an actual post in your channel.
 
-If you are still having trouble with configuration, feel free to post in our `Troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_ and we'll be happy to help with issues during setup.
+If you are still having trouble with configuration, feel free to post in our `Troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ and we'll be happy to help with issues during setup.
 
 How do I disable the plugin quickly in an emergency?
 .....................................................

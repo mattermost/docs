@@ -4,7 +4,7 @@ Data Format
 ===========
 
 The input data file must be a valid `JSONL
-<http://jsonlines.org>`_ file with the following objects, each on its own line in the file. The objects must occur in the file in the order listed.
+<http://jsonlines.org>`__ file with the following objects, each on its own line in the file. The objects must occur in the file in the order listed.
 
 Version
   Mandatory. The Version object must be the first line in the file, and must occur only once. The version is the version of the bulk importer tool, which is currently ``1``. 
@@ -773,10 +773,20 @@ Fields of the User object
           <kbd>"False"</kbd> </td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
+     <tr class="row-odd">
+      <td valign="middle">email_interval</td>
+      <td valign="middle">string</td>
+      <td>Specify an email batching interval during bulk import. Can have one of the following values:<br>
+          <kbd>"immediate"</kbd> - Emails are sent immediately.  <br>
+          <kbd>"fifteen"</kbd> - Emails are batched and sent every 15 minutes.<br>
+          <kbd>"hour"</kbd> - Emails are batched and sent every hour.<br> </td>
+      <td align="center" valign="middle">Yes</td>
+      <td align="center" valign="middle">Yes</td>
+     </tr>
     <tr class="row-odd">
       <td valign="middle">notify_props</td>
       <td valign="middle"><b>UserNotifyProps</b> object</td>
-      <td>The user’s notify props, as defined by the <b>UserNotifyProps</b> object.</td>
+      <td>The user’s notify preferences, as defined by the <b>UserNotifyProps</b> object.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
@@ -821,7 +831,7 @@ This object is a member of the User object.
       <td valign="middle">email</td>
       <td valign="middle">string</td>
       <td>Preference for email notifications. Must be one of the following values:<br>
-      <kbd>"true"</kbd> - Email notifications are sent immediately.<br>
+      <kbd>"true"</kbd> - Email notifications are sent based on the email_interval setting <br>
       <kbd>"false"</kbd> - Email notifications are not sent.</td>
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>

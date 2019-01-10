@@ -53,7 +53,7 @@ Save the below HTML code in a file called ``mattermost-button-example.html`` the
 Embedding Mattermost in web applications using an iframe  
 ----------------------------------------------------------
 
-.. warning:: Any web application embedded into another using an iframe is at risk of security exploits, since the outer application intercepts all user input into the embedded application, an exploit known as `Click-Jacking <https://en.wikipedia.org/wiki/Clickjacking>`_. By default, Mattermost disables embedding. If you choose to embed Mattermost using the following instructions we highly recommend it is done only on a private network that you control. 
+.. warning:: Any web application embedded into another using an iframe is at risk of security exploits, since the outer application intercepts all user input into the embedded application, an exploit known as `Click-Jacking <https://en.wikipedia.org/wiki/Clickjacking>`__. By default, Mattermost disables embedding. If you choose to embed Mattermost using the following instructions we highly recommend it is done only on a private network that you control. 
 
 To embed Mattermost in an iframe by overriding Mattermost security features: 
 
@@ -64,7 +64,7 @@ To embed Mattermost in an iframe by overriding Mattermost security features:
 
 2. Update your NGINX configuration to strip out the security policy settings in the HTTP header.
 
-    - See `community example <https://forum.mattermost.org/t/how-can-we-load-mattermost-in-iframe/165/6>`_ for details.
+    - See `community example <https://forum.mattermost.org/t/how-can-we-load-mattermost-in-iframe/165/6>`__ for details.
 
 Embedding Mattermost in mobile applications 
 -------------------------------------------------------

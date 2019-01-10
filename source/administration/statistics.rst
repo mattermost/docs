@@ -5,9 +5,9 @@ Statistics on users, posts and channels are tracked for each system and team. En
 
 .. note::
 
-  To maximize performance for large Enterprise deployments, statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. You can re-enable them by changing the ``MaxUsersForStatistics`` value `in config.json <https://docs.mattermost.com/administration/config-settings.html#maximum-users-for-statistics>`_.
+  To maximize performance for large Enterprise deployments, statistics for total posts, total hashtag posts, total file posts, posts per day, and active users with posts per day are disabled. You can re-enable them by changing the ``MaxUsersForStatistics`` value `in config.json <https://docs.mattermost.com/administration/config-settings.html#maximum-users-for-statistics>`__.
 
-For advanced metrics for Enterprise deployments, `see performance monitoring documentation to learn more <http://docs.mattermost.com/deployment/metrics.html>`_.
+For advanced metrics for Enterprise deployments, `see performance monitoring documentation to learn more <http://docs.mattermost.com/deployment/metrics.html>`__.
 
 Site Statistics
 -----------------
@@ -62,7 +62,7 @@ Master DB Conns
     The number of active connections currently on your master database.
 
 Replica DB Conns
-    The number of active connections currently on one or more of `your read replica databases <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`_.
+    The number of active connections currently on one or more of `your read replica databases <https://docs.mattermost.com/deployment/cluster.html#database-configuration>`__.
 
 Channel Types
     This chart displays the number of public channels and private channels in a visual format, including channels that might have been deleted.

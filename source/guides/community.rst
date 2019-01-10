@@ -78,6 +78,6 @@ Agent Coulson takes complex ideas and explains them simply and effectively. Thor
 
 As a communications company, clarity matters. If you see content that doesn't speak in the "Voice of Mattermost", we’d gladly accept issue reports and pull requests.
 
-[1] This example relies on knowledge of the 2012 movie "Avengers", which we consider a "global" reference, not a culture-specific reference, since it achieved `record-breaking sales <https://en.wikipedia.org/wiki/The_Avengers_(2012_film)>`_ around the world--in the United States, Mexico, Brazil, Ecuador, Bolivia, Taiwan, the Philippines, Hong Kong, the United Arab Emirates, Argentina, Peru and Central America, among other regions. 
+[1] This example relies on knowledge of the 2012 movie "Avengers", which we consider a "global" reference, not a culture-specific reference, since it achieved `record-breaking sales <https://en.wikipedia.org/wiki/The_Avengers_(2012_film)>`__ around the world--in the United States, Mexico, Brazil, Ecuador, Bolivia, Taiwan, the Philippines, Hong Kong, the United Arab Emirates, Argentina, Peru and Central America, among other regions. 
 
 

@@ -6,7 +6,7 @@ Mattermost's **Deployment Solutions Programs** help IT administrators understand
 
 This is an optional program for third-party developers to increase awareness about their work and to enable Mattermost to refer its communities to different solutions. 
 
-Any person or any company interested in discussing deployment solutions with Mattermost can join the `Deployment Solutions discussion channel <https://pre-release.mattermost.com/core/channels/installers-and-images>`_ on the Mattermost community server to speak to peers and Mattermost community managers. 
+Any person or any company interested in discussing deployment solutions with Mattermost can join the `Deployment Solutions discussion channel <https://pre-release.mattermost.com/core/channels/installers-and-images>`__ on the Mattermost community server to speak to peers and Mattermost community managers. 
 
 Deployment solutions are recognized by Mattermost at three-levels: 
 
@@ -14,8 +14,8 @@ Deployment solutions are recognized by Mattermost at three-levels:
 
    Examples: 
 
-   - `Puppet deployment solution for Mattermost <https://forge.puppet.com/liger1978/mattermost>`_ by Richard Grainger
-   - `Heroku deployment solution for Mattermost <https://chrisdecairos.ca/deploying-mattermost-to-heroku/>`_ by Christopher De Cairos
+   - `Puppet deployment solution for Mattermost <https://forge.puppet.com/liger1978/mattermost>`__ by Richard Grainger
+   - `Heroku deployment solution for Mattermost <https://chrisdecairos.ca/deploying-mattermost-to-heroku/>`__ by Christopher De Cairos
 
 
 - **Registered Deployment Solutions** - Orchestration solutions that follow detailed Mattermost guidelines on keeping up-to-date with the latest Mattermost version and security updates (typically a one-line change), linking to official documentation, supporting branding guidelines, and maintaining a changelog. This level of engagement allows Mattermost to more prominently promote the work, knowing that it's committed to meeting explicit standards. 
@@ -89,5 +89,5 @@ Branding
 Upgrade 
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-1. **Support upgrade of Mattermost**. Enable user interface or commandline upgrade of a Mattermost deployment to latest version based on `upgrade procedure when Mattermost is embedded <https://docs.mattermost.com/developer/integration-faq.html#how-should-i-automate-the-install-and-upgrade-of-mattermost-when-included-in-another-application>`_
+1. **Support upgrade of Mattermost**. Enable user interface or commandline upgrade of a Mattermost deployment to latest version based on `upgrade procedure when Mattermost is embedded <https://docs.mattermost.com/developer/integration-faq.html#how-should-i-automate-the-install-and-upgrade-of-mattermost-when-included-in-another-application>`__
 

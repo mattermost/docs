@@ -5,7 +5,7 @@ The reStructuredText specification allows for a certain degree of flexibility in
 
 However, for consistency and ease of use, the Mattermost documentation should use a single convention, despite the existence of allowable alternatives.
 
-For more information about reStructuredText markup, see the `reStructuredText Markup Specification <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`_. Additional markup constructs are implemented by Sphinx, the documentation generator used by Mattermost. For information about the additional constructs, see `Sphinx Markup Constructs <http://www.sphinx-doc.org/en/stable/markup/index.html>`_.
+For more information about reStructuredText markup, see the `reStructuredText Markup Specification <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`__. Additional markup constructs are implemented by Sphinx, the documentation generator used by Mattermost. For information about the additional constructs, see `Sphinx Markup Constructs <https://www.sphinx-doc.org/en/1.7/markup/index.html>`__.
 
 Use the following markup conventions in Mattermost documentation:
 
@@ -110,13 +110,13 @@ External Links
 
 URLs are automatically rendered as links in Sphinx; however, where possible, it is preferred that hyperlinks are created within the text of a sentence. Hyperlinks within a sentence can be created using the following formatting:
 
-``Link display text <URL-of-website>`_``, for example:
+``Link display text <URL-of-website>`__``, for example:
 
 .. code-block:: none
 
-  `Mattermost Manifesto <https://www.mattermost.org/manifesto/>`_
+  `Mattermost Manifesto <https://www.mattermost.org/manifesto/>`__
 
-The link renders as: `Mattermost Manifesto <https://www.mattermost.org/manifesto/>`_
+The link renders as: `Mattermost Manifesto <https://www.mattermost.org/manifesto/>`__
 
 .. _relative-links-in-rst:
 
@@ -202,7 +202,7 @@ To use a literal block with no syntax highlighting, use the Sphinx code-block di
 Code Blocks with Syntax Highlighting
 ------------------------------------
 
-To create a code block with syntax highlighting, use the Sphinx code-block directive with the language set to the language that you want highlighted. `Many languages are available <http://pygments.org/docs/lexers/>`_, but in Mattermost documentation the most likely ones are as follows:
+To create a code block with syntax highlighting, use the Sphinx code-block directive with the language set to the language that you want highlighted. `Many languages are available <http://pygments.org/docs/lexers/>`__, but in Mattermost documentation the most likely ones are as follows:
 
 - go
 - rest

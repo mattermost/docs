@@ -12,8 +12,8 @@ To backup your Mattermost server:
 
 1. Backup your Mattermost database using standard MySQL or PostgreSQL procedures depending on your database version.
 
-      - `MySQL backup documentation <https://dev.mysql.com/doc/refman/5.6/en/backup-types.html>`_ is available online. Use the selector on the page to choose your MySQL version. 
-      - `PostgreSQL backup documentation <https://www.postgresql.org/docs/9.5/static/backup-dump.html>`_ is available online. Use the navigation at the top of the page to select your PostgreSQL version. 
+      - `MySQL backup documentation <https://dev.mysql.com/doc/refman/5.6/en/backup-types.html>`__ is available online. Use the selector on the page to choose your MySQL version. 
+      - `PostgreSQL backup documentation <https://www.postgresql.org/docs/9.5/static/backup-dump.html>`__ is available online. Use the navigation at the top of the page to select your PostgreSQL version. 
      
 2. Backup your server settings stored in ``config/config.json``.
 
@@ -48,7 +48,7 @@ Recoverying from a failure using a backup is typically a manual process and will
 High availability deployment 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Deploying Mattermost in `high availability mode <https://docs.mattermost.com/deployment/cluster.html>`_ allows for fast, automated recovery from a component failure, such as a specific server running out of disk space or having a hardware issue, by running on redundant servers. Options include: 
+Deploying Mattermost in `high availability mode <https://docs.mattermost.com/deployment/cluster.html>`__ allows for fast, automated recovery from a component failure, such as a specific server running out of disk space or having a hardware issue, by running on redundant servers. Options include: 
 
 - Deploying redundant Mattermost servers, to protect against failures in the Mattermost server.
 - Deploying redundant databases, to protect against failures in the database.
@@ -78,9 +78,9 @@ In each case, the user cannot reach the SSO provider, and cannot log in. In this
 
 1) Configure your SSO provider for high availability 
 
-If you're using a self-hosted single sign-on provider, several options are available for `high availability configurations that protect your system from unplanned outages. <https://docs.microsoft.com/en-us/microsoft-identity-manager/pam/high-availability-disaster-recovery-considerations-bastion-environment>`_
+If you're using a self-hosted single sign-on provider, several options are available for `high availability configurations that protect your system from unplanned outages. <https://docs.microsoft.com/en-us/microsoft-identity-manager/pam/high-availability-disaster-recovery-considerations-bastion-environment>`__
 
-For SaaS-based authentication providers, while you still have a dependency on service uptime, you can set up redundancy in source systems from which data is being pulled. For example, with the OneLogin SaaS-based authentication service, you can set up `high availability LDAP connectivity <https://support.onelogin.com/hc/en-us/articles/204262680-High-Availability-for-LDAP>`_ to further reduce the chances of an outage. 
+For SaaS-based authentication providers, while you still have a dependency on service uptime, you can set up redundancy in source systems from which data is being pulled. For example, with the OneLogin SaaS-based authentication service, you can set up `high availability LDAP connectivity <https://support.onelogin.com/hc/en-us/articles/204262680-High-Availability-for-LDAP>`__ to further reduce the chances of an outage. 
 
 2) Set up your own IDP to provide an automated or manual SSO failover option 
 
@@ -94,7 +94,7 @@ When users are unable to reach your organization's SSO provider during an outage
 
 Once IT is contacted about an SSO outage issue, they can temporarily change a user's account from SSO to email-password using the System Console, and the end user can use password to claim the account, until the SSO outage is over and the account can be converted back to SSO. 
 
-If the administrator is unable to log into the System Console because of the SSO outage, they can switch their authentication method to email-password to gain access using the `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`_.
+If the administrator is unable to log into the System Console because of the SSO outage, they can switch their authentication method to email-password to gain access using the `command line tool <https://docs.mattermost.com/administration/command-line-tools.html>`__.
 
 It is highly important after the outage to switch everyone back to SSO from email-password to maintain consistency and security.
 
