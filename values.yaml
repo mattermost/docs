@@ -542,7 +542,7 @@ postgresql:
   postgresqlUsername: gitlab
   postgresqlDatabase: gitlabhq_production
   image:
-    tag: 9.6.11-r36
+    tag: 9.6.11-r53
   usePasswordFile: true
   existingSecret: 'secret'
   initdbScriptsConfigMap: 'configmap'

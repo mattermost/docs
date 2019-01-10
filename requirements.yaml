@@ -9,7 +9,7 @@ dependencies:
   repository: https://kubernetes-charts.storage.googleapis.com/
   condition: prometheus.install
 - name: postgresql
-  version: 3.6.0
+  version: 3.9.1
   repository: https://kubernetes-charts.storage.googleapis.com/
   condition: postgresql.install
 - name: gitlab-runner
