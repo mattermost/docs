@@ -12,6 +12,7 @@ Release date: 2019-01-16
 
 ### Bug Fixes
 
+ - Fixed an issue where push notification to clear unread messages badge from another client was not being forwarded. There are cases on the mobile app where the badge could still linger - see [MM-13722](https://mattermost.atlassian.net/browse/MM-13722) for more details.
  - Fixed a SQL syntax error when a non-existent channelId was attempted to be viewed.
  - Fixed an issue where OpenGraph and Post Metadata cache were purged on any config change with the image proxy enabled.
  - Added a check for percent value on file upload progress to prevent the app from crashing.
