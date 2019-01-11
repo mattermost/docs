@@ -61,6 +61,8 @@ Table below contains all the possible charts configurations that can be supplied
 | persistence.volumeName       | Minio existing persistent volume name   |                              |
 | persistence.matchLabels      | Minio label-value matches to bind       |                              |
 | persistence.matchExpressions | Minio label-expression matches to bind  |                              |
+| securityContext.runAsUser    | User ID to start the pod with           | 1000                         |
+| securityContext.fsGroup      | Group ID to start the pod with          | 1000                         |
 | serviceType                  | Minio service type                      | ClusterIP                    |
 | servicePort                  | Minio service port                      | 9000                         |
 | resources.requests.memory    | Minio minimum memory requested          | 256Mi                        |
@@ -217,6 +219,12 @@ The `policy` property is not required, and default value is `none`.
 The `purge` property is provided as a means to cause any existing bucket to be removed with force, at installation time. This only comes into play when using a pre-existing `PersistentVolume` for the [volumeName](#volumeName) property of [persistence](#persistence). If you make use of a dynamically created `PersistentVolume`, this will have no valuable affect as it only happens at chart installation and there will be no data in the `PersistentVolume` that was just created.
 
 This property is not required, and the default value is `false`. You may specify this property, with a value of `true`, in order to cause a bucket to purged with force: `mc rm -r --force`
+
+## Security Context
+
+These options allow control over which `user` and/ or `group` is used to start the pod.
+
+For in-depth information about security context, please refer to the official [Kubernetes documentation](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/).
 
 ## Service Type and Port
 
