@@ -22,12 +22,12 @@ Set up a connection app for Mattermost SSO
 
 4. Enter **General Settings** for the application, including ``App name`` and ``App logo`` (optional). It is recommended to display the application icon to users, including in the Okta Mobile app.
 
-  If you’d like to use a Mattermost logo for the application, you are free to download one `from our page <http://www.mattermost.org/brand-guidelines/>`_.
+  If you’d like to use a Mattermost logo for the application, you are free to download one `from our page <http://www.mattermost.org/brand-guidelines/>`__.
 
 	.. image:: ../../source/images/okta_2_general_settings.PNG
 
 5. Enter **SAML Settings**, including:
- - Single sign on URL: ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_.
+ - Single sign on URL: ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__.
  - Audience URL: For instance, ``mattermost``
  - Name ID format: ``unspecified``
  - Application username: ``Email``

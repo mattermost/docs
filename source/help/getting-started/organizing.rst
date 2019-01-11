@@ -38,7 +38,7 @@ For example, you might begin with a general "Marketing" channel. As conversation
 
 As the organization grows, disciplines might split across business units, products and geographies, with channel names like "US: Marketing" and "UK: Marketing".
 
-.. tip :: If you need to shorten country names, use standard `2-letter country codes <http://www.nationsonline.org/oneworld/country_code_list.htm>`_.
+.. tip :: If you need to shorten country names, use standard `2-letter country codes <http://www.nationsonline.org/oneworld/country_code_list.htm>`__.
 
 You can combine the hierarchies, with formats like ``[SUB-TEAM]: [TOPIC]: [SUB-TOPIC]``. For example: ``US: Mrkt: Website`` and ``UK: Mrkt: Social Media``.
 
@@ -100,7 +100,7 @@ On an agenda item message, you can select ``[...] > Reply`` to leave comments ab
 
 3) Header links
 
-When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts or BlueJeans in the `channel header <https://docs.mattermost.com/help/settings/channel-settings.html#channel-header>`_.
+When meeting remotely, add persistent links to your video or audio conferencing solution, like Zoom, Google Hangouts or BlueJeans in the `channel header <https://docs.mattermost.com/help/settings/channel-settings.html#channel-header>`__.
 
 When it's time to meet, your team can click the conference link to connect.
 

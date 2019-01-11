@@ -120,7 +120,7 @@ Then in ``config.json`` set the ``AllowCorsFrom`` setting to match the domain be
   "AllowCorsFrom": "domain.com domain.com:443 im.domain.com",
   "SessionLengthWebInDays": 30,
 
-For other troubleshooting tips for WebSocket errors, see `potential solutions here <https://docs.mattermost.com/install/troubleshooting.html#please-check-connection-mattermost-unreachable-if-issue-persists-ask-administrator-to-check-websocket-port>`_.
+For other troubleshooting tips for WebSocket errors, see `potential solutions here <https://docs.mattermost.com/install/troubleshooting.html#please-check-connection-mattermost-unreachable-if-issue-persists-ask-administrator-to-check-websocket-port>`__.
 
 **How do I setup an NGINX proxy with the Mattermost Docker installation?**
 

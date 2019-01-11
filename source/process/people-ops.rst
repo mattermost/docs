@@ -23,7 +23,7 @@ For example, monthly fee, salary, start date, title, etc. People ops will send y
 Regular Compensation 
 ==============================================================
 
-1. Employees of our US entity, Mattermost, Inc., receive salary by semi-monthly direct deposit via TriNet. Pay slips are available via `TriNet's portal <https://www.hrpassport.com/>`_.
+1. Employees of our US entity, Mattermost, Inc., receive salary by semi-monthly direct deposit via TriNet. Pay slips are available via `TriNet's portal <https://www.hrpassport.com/>`__.
 
 2. Employees of our Canadian co-employer receive salary by direct deposit semi-monthly via ADP. 
 

@@ -59,7 +59,7 @@ Principles
 Creating Help Wanted Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To create a Help Wanted issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`_, follow these steps:
+To create a Help Wanted issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`__, follow these steps:
 
 1 - Create a ticket in Jira that is well-defined and unambiguous.
 
@@ -69,27 +69,27 @@ The issue should be written with the mindset that the contributor might have no 
     Below are a few reasons why Jira tickets for Help Wanted issues are recommended:
 
       1. Jira tickets can be used to prioritize Help Wanted issues internally and are easily searchable by Mattermost staff, community, and customers
-      2. Each Jira ticket goes through the  `triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`_ for dev and PM approval
+      2. Each Jira ticket goes through the  `triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`__ for dev and PM approval
       3. Zapier integration automatically creates GitHub Help Wanted issues from labelled Jira tickets, requiring no additional mana
       4. Resolved Jira tickets are automatically assigned to a QA, who tests them against the ``master`` branch.
 
 2 - After creating the ticket, add "(Proposed APR)" to its title, so the triage team knows to consider it for a ``help-wanted`` label.
 
-3 - If the Jira ticket is accepted as a Help Wanted issue during `triage <https://docs.mattermost.com/process/training.html#triage-meeting>`_, a ``help-wanted`` label is added. This action automatically triggers a zap that creates a new issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`_.
+3 - If the Jira ticket is accepted as a Help Wanted issue during `triage <https://docs.mattermost.com/process/training.html#triage-meeting>`__, a ``help-wanted`` label is added. This action automatically triggers a zap that creates a new issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`__.
 
     - To accept a ticket as a Help Wanted issue, the description should be unambiguous, and include UI description and help text so the change can be implemented and tested by any contributor
     - The triage team also adds the appropriate difficulty level (one of ``Introductory``, ``Intermediate`` and ``Advanced``) and programming language (``Go`` and ``ReactJS``) to the description of the Jira ticket
 
 4 - After triage, PM on community rotation reviews formatting of the GitHub issue and adds appropriate labels for difficulty level and programming language as defined by the triage team.
 
-`See an example Help Wanted issue here <https://github.com/mattermost/mattermost-server/issues/4755>`_.
+`See an example Help Wanted issue here <https://github.com/mattermost/mattermost-server/issues/4755>`__.
 
 Managing Help Wanted Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once a Help Wanted issue is added, the PM on community rotation is responsible for:
 
-- answering questions from community members, which get automatically posted in the `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`_
+- answering questions from community members, which get automatically posted in the `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`__
 - following up with a community member if there hasn't been a response for more than two weeks
 
 Closing Help Wanted Issues
@@ -103,7 +103,7 @@ Once a pull request for an open GitHub Help Wanted issue is merged, please ensur
 Mattermost Community Forums
 ---------------------------------------------------------
 
-Guidelines for Mattermost `community forums <https://forum.mattermost.org>`_ and public Mattermost `GitHub repositories <https://github.com/mattermost>`_.
+Guidelines for Mattermost `community forums <https://forum.mattermost.org>`__ and public Mattermost `GitHub repositories <https://github.com/mattermost>`__.
 
 Principles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -210,7 +210,7 @@ To ask someone to add a license to a GitHub repo, open an issue with the followi
 Difficult Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To respond to tough questions, use the `SCIPAB method <https://www.mandel.com/top-ten-reasons/tools-methodology/scipab>`_ to help formulate a response and send for community lead to review. 
+To respond to tough questions, use the `SCIPAB method <https://www.mandel.com/top-ten-reasons/tools-methodology/scipab>`__ to help formulate a response and send for community lead to review. 
 
 Situation:
   State what you know about your listeners' circumstances that are relevant to your discussion or presentation, e.g., current state of their business, technology, industry, or plans. 
@@ -229,3 +229,95 @@ Action:
 
 Benefit:
   Describe how your recommended Position and Action will address listeners' specific needs. State the results clearly and quantifiably. 
+
+Mattermost Twitter
+---------------------------------------------------------
+
+Guidelines for Mattermost `Twitter responses <https://twitter.com/mattermost>`__.
+
+Principles
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. **Avoid acronyms**. Avoid acronyms when possible. For example, say "pull request" instead of "PR", since only a subset of tweet readers are active GitHub users. 
+2. **Use the active voice**. Avoid "has", "was", "have been" when possible. For example, instead of "Hackfest has started!" say "Hackfest starts now!" 
+3. **Include at most one link**. To provide a clear call to action, include at most one link per tweet and place it near the end of the tweet.
+4. **Use exclamation marks only for exciting announcements**. An exclamation mark can be used when the announcement is exciting, but using an exclamation mark should be avoided when it can be confused with a signal for community to panic, e.g. "Security update released!".
+5. **Be welcoming**. When asking someone to take action, use "Would you be open to" instead of "Would you like to".
+
+Response Writing Tips
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. When to like (heart) a tweet where Mattermost is mentioned?
+
+ - Our team is on site at an event and tags our handle.
+ - A community member shares an event we are at, received a Mattermug, or shared a positive experience and mentions us.
+
+2. When to retweet a post?
+
+ - A community member released an integration and mentions us.
+ - Mattermug tweets from community members.
+  
+Sample Responses
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Requests for more information such as a preview of our product.
+
+.. code-block:: text
+
+  Thank you for your interest in Mattermost. You can learn more about us at www.mattermost.com where you can also download a trial of our product.
+
+2. Requests for a specific feature or group of features. 
+
+ - Multiple Feature Requests:
+
+  .. code-block:: text
+
+    Thank you for the suggestions @username. Would you be open to contributing them in the feature idea forum so they can discussed and upvoted by the community? You get 10 votes in the feature idea forum, and each one influences the future of the project.
+
+    https://mattermost.uservoice.com/
+
+ - Single Feature Request: 
+
+  .. code-block:: text
+
+    Thank you for the suggestion @username. Would you be open to contributing it in the feature idea forum so it can discussed and upvoted by the community? You get 10 votes in the feature idea forum, and each one influences the future of the project.
+
+    https://mattermost.uservoice.com/
+
+ - Planned Feature Request: 
+
+  .. code-block:: text
+
+    Thank you for your feedback.  We are excited to share that [feature] will be available in our [edition] Edition soon.  Please see our forum post for more information: [link to forum post]
+
+ - Shipped Feature Request: 
+
+  .. code-block:: text
+
+    Thank you for your feedback.  Mattermost already supports [feature].  You can learn more about it in our documentation:  [link to docs]
+
+3. Feedback about their experience, not specific to a feature or a product.
+
+  .. code-block:: text
+
+    Appreciate the feedback. If your team has suggestions on how to improve Mattermost, we would love to hear more in our feature proposal forum. You get 10 votes there, and each one influences the future of the project: https://mattermost.uservoice.com/
+
+  .. code-block:: text
+
+    Thanks @{username}, highly appreciate your feedback. If you have additional feedback about your experience, we'd love to hear. You can share at http://forum.mattermost.org to start a discussion.
+
+4. Tweet of forum post, asking someone from Mattermost team to respond.
+
+  .. code-block:: text
+
+    Thank you for reaching out. Our team responded to you in the forums and we're happy to help with further questions there.
+
+  .. code-block:: text
+
+    Thank you for reaching out. Our team monitors and responds to forum inquiries. We're happy to help with further questions there.
+
+5. Customer requesting help to address an issue they are having with a deployment or specific feature in the system.
+
+  .. code-block:: text
+
+    Thank you for reaching out. We recommend opening a support ticket where our team can best help you troubleshoot the issue. For more information about Enterprise Edition support levels, see https://about.mattermost.com/support/. 

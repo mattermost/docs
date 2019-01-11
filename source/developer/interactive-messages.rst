@@ -1,9 +1,11 @@
 .. _interactive-messages:
 
-Interactive Messages
-============================
+Interactive Messages: Buttons and Menus
+========================================
 
-Mattermost supports interactive messages for :doc:`incoming <webhooks-incoming>` and :doc:`outgoing webhooks <webhooks-outgoing>`, :doc:`custom slash commands <slash-commands>` and :doc:`plugins <../administration/plugins>` via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity.
+Mattermost supports interactive message buttons and menus for :doc:`incoming <webhooks-incoming>` and :doc:`outgoing webhooks <webhooks-outgoing>`, :doc:`custom slash commands <slash-commands>`, and :doc:`plugins <../administration/plugins>` via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity.
+
+For information on interactive dialogs, :doc:`see here <interactive-dialogs>`.
 
 Use interactive messages to simplify complex workflows by allowing users to take quick actions directly through your integration post. For example, they enable your integration to:
 
@@ -11,7 +13,7 @@ Use interactive messages to simplify complex workflows by allowing users to take
 - conduct a customer survey or a poll
 - initiate a command to merge a branch into a release
 
-To try it out, you can use this `matterpoll plugin <https://github.com/matterpoll/matterpoll>`_ to add polling to Mattermost channels via a ``/poll`` slash command.
+To try it out, you can use this `matterpoll plugin <https://github.com/matterpoll/matterpoll>`__ to add polling to Mattermost channels via a ``/poll`` slash command.
 
 .. image:: ../../source/images/poll.gif
 
@@ -21,7 +23,7 @@ To try it out, you can use this `matterpoll plugin <https://github.com/matterpol
 Message Buttons
 ----------------
 
-Add message buttons as ``actions`` in your integration `message attachments <https://docs.mattermost.com/developer/message-attachments.html>`_.
+Add message buttons as ``actions`` in your integration `message attachments <https://docs.mattermost.com/developer/message-attachments.html>`__.
 
 The following payload gives an example that uses message buttons.
 
@@ -71,7 +73,7 @@ The integration can respond with an update to the original post, or with an ephe
 Message Menus
 ----------------
 
-Similar to buttons, add message menus as ``actions`` in your integration `message attachments <https://docs.mattermost.com/developer/message-attachments.html>`_.
+Similar to buttons, add message menus as ``actions`` in your integration `message attachments <https://docs.mattermost.com/developer/message-attachments.html>`__.
 
 .. image:: ../../source/images/message-menus.png
 
@@ -190,7 +192,7 @@ Specify ``users`` as your action's ``data_source`` as follows:
 Parameters
 ^^^^^^^^^^^^^
 
-Below is a brief description of each parameter to help you customize the interactive message in Mattermost. For more information on message attachments, `see our documentation <https://docs.mattermost.com/developer/message-attachments.html>`_.
+Below is a brief description of each parameter to help you customize the interactive message button and menu in Mattermost. For more information on message attachments, `see our documentation <https://docs.mattermost.com/developer/message-attachments.html>`__.
 
 Name
   Give your action a descriptive name.
@@ -291,14 +293,14 @@ Tips and Best Practices
 ------------------------
 
 1. The external application may be written in any programming language. It needs to provide a URL which receives the request sent by your Mattermost server and responds with in the required JSON format.
-2. To get started, you can use this `sample plugin <https://github.com/matterpoll/matterpoll>`_ to add polling to Mattermost channels via a `/poll` slash command.
+2. To get started, you can use this `sample plugin <https://github.com/matterpoll/matterpoll>`__ to add polling to Mattermost channels via a `/poll` slash command.
 
 Share Your Integration
 -----------------------
 
-If you've built an integration for Mattermost, please consider `sharing your work <https://www.mattermost.org/share-your-mattermost-projects/>`_ in our `app directory <https://about.mattermost.com/default-app-directory/>`_.
+If you've built an integration for Mattermost, please consider `sharing your work <https://www.mattermost.org/share-your-mattermost-projects/>`__ in our `app directory <https://about.mattermost.com/default-app-directory/>`__.
 
-The `app directory <https://about.mattermost.com/default-app-directory/>`_ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or on-prem infrastructure.
+The `app directory <https://about.mattermost.com/default-app-directory/>`__ lists open source integrations developed by the Mattermost community and are available for download, customization and deployment to your private cloud or on-prem infrastructure.
 
 Slack Compatibility
 --------------------
@@ -310,10 +312,10 @@ However, the schema for these objects is slightly different given Slack requires
 Troubleshooting
 --------------------
 
-Interactive messages don't show up for slash commands
+Message buttons and menus don't show up for slash commands
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Make sure the `response type <https://docs.mattermost.com/developer/slash-commands.html#message-type>`_ of your slash command is set to ``in_channel``, not ``ephemeral``.
+Make sure the `response type <https://docs.mattermost.com/developer/slash-commands.html#message-type>`__ of your slash command is set to ``in_channel``, not ``ephemeral``.
 
 Ephemeral messages do not have a state, and therefore do not support interactive message buttons at this time.
 
@@ -322,7 +324,7 @@ Message buttons and menus do not trigger an action and return a 400 error
 
 It is likely for one of three reasons:
 
-1. Mattermost wasn't able to connect to the integration. If the integration is on your internal infrastructure, it'll need to be whitelisted (see `"AllowedUntrustedInternalConnections" config.json setting <https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to>`_). The log will include the text ``err=address forbidden`` in the error message.
+1. Mattermost wasn't able to connect to the integration. If the integration is on your internal infrastructure, it'll need to be whitelisted (see `"AllowedUntrustedInternalConnections" config.json setting <https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to>`__). The log will include the text ``err=address forbidden`` in the error message.
 
 2. The integration didn't return HTTP status 200. The log will include the text ``status=XXX`` in the error message.
 

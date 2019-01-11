@@ -58,3 +58,6 @@ api/data/*
 .ctags
 tags
 source/developer/localization.md
+
+# IDEs
+.idea/

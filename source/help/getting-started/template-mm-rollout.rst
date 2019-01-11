@@ -14,19 +14,19 @@ To get started, go to http://{web-address} and log in. The login depends on how 
 
 When you log in for the first time, page through the brief tutorial. When done, you're at the Mattermost interface where you can start chatting with colleagues.
 
-Every time you log in, you end up in the Town Square channel in a team that you are a member of. Within a team, conversations take place in channels, private groups, and direct messages. For more information about writing messages, see `Messaging Basics <https://docs.mattermost.com/help/getting-started/messaging-basics.html>`_
+Every time you log in, you end up in the Town Square channel in a team that you are a member of. Within a team, conversations take place in channels, private groups, and direct messages. For more information about writing messages, see `Messaging Basics <https://docs.mattermost.com/help/getting-started/messaging-basics.html>`__
 
-To learn how to send, edit, and reply to messages, see `Sending Messages <https://docs.mattermost.com/help/messaging/sending-messages.html>`_
+To learn how to send, edit, and reply to messages, see `Sending Messages <https://docs.mattermost.com/help/messaging/sending-messages.html>`__
 
 Teams
   In most cases, only one team is visible to you, but multiple teams are allowed. If you are a member of more than one team, you can see the list of teams beside the navigation panel in the Team Sidebar.
 
   Each team has its own set of public channels, private groups, and direct messages that are visible only to the members of that team.
 
-  To create a team, see `Creating Teams <https://docs.mattermost.com/help/getting-started/creating-teams.html>`_
+  To create a team, see `Creating Teams <https://docs.mattermost.com/help/getting-started/creating-teams.html>`__
 
 Public Channels
-  You have access to all public channels in your team, and can add yourself to any public channel in the team. To find out how to create, join, and manage channels, see `Managing Channels <https://docs.mattermost.com/help/getting-started/organizing-conversations.html#managing-channels>`_
+  You have access to all public channels in your team, and can add yourself to any public channel in the team. To find out how to create, join, and manage channels, see `Managing Channels <https://docs.mattermost.com/help/getting-started/organizing-conversations.html#managing-channels>`__
 
 Private Groups
   Private groups are channels that are invite-only. The conversations are visible only to the channel members.
@@ -34,7 +34,7 @@ Private Groups
 Direct Messages and Group Messages
   Direct Messages are for conversations between two people. Group Messages are Direct Messages that have conversations among three or more people. Both are visible only to the people involved.
 
-For more information about using channels, groups, and direct messages, see `Organizing Conversations <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`_
+For more information about using channels, groups, and direct messages, see `Organizing Conversations <https://docs.mattermost.com/help/getting-started/organizing-conversations.html>`__
 
 Instructions for System Administrator
 -------------------------------------

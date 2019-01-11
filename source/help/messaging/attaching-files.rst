@@ -6,7 +6,7 @@ team to visually understand your ideas. Sharing videos, voice recordings,
 screenshots, and photos will make your messages more effective and clear.
 
 How to Attach Files
-------------------
+-------------------
 You can attach files in the following ways:
 
 -  Use the attachment icon - click the paperclip icon inside the message input box
@@ -52,7 +52,7 @@ The following media formats are supported on most browsers:
 Other document previews (Word, Excel, PPT) are not yet supported.
 
 Attachment Limits and Sizes
----------------------
+---------------------------
 Please note that Mattermost supports a maximum of five (5) attached 
 files per post.
 

@@ -34,7 +34,7 @@ Your **Team Icon** appears in the team sidebar, visible if users are members of 
 You can upload a team icon in BMP, JPG or PNG format. Square images with a solid background color are recommended, since transparency in PNG icons fills with a white background in the Team Sidebar. Removing the team icon resets it to the default icon that contains the first two letters of the team name.
 
 Allow only users with a specific email domain to join this team
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Specifying domains in this setting prevents users from joining the team when their email domain is not on the list. Only users that have an email domain matching the defined domains may join the team. 
 
@@ -58,4 +58,4 @@ Import
 Import from Slack (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can import channels and users from Slack into Mattermost from **Slack** > **Administration** > **Workspace settings** > **Import/Export Data** > **Export** > **Start Export**. Please review our documentation on `Slack Import <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack>`_ for more details.
+You can import channels and users from Slack into Mattermost from **Slack** > **Administration** > **Workspace settings** > **Import/Export Data** > **Export** > **Start Export**. Please review our documentation on `Slack Import <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack>`__ for more details.

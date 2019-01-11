@@ -6,6 +6,8 @@ In-depth documentation on installation, deployment and administration of Matterm
 Getting Started
 ---------------------
 
+Use the following materials as a template to help you plan and document the implementation of Mattermost at your organization. 
+
 .. toctree::
    :maxdepth: 2
    :glob:
@@ -13,9 +15,10 @@ Getting Started
    /getting-started/implementation_plan.rst
    /getting-started/welcome_email.rst
 
-
 Installing Mattermost
 ---------------------
+
+Learn how to get Mattermost running on your environment.
 
 .. toctree::
    :maxdepth: 1
@@ -35,71 +38,50 @@ Installing Mattermost
    /install/prod-docker*
    /install/docker-ebs*
    /install/deploy-cloudron*
+   Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
    /install/troubleshooting*
    /install/desktop*
    /install/smtp*
    /install/config-cloudfront*
+   /install/outbound-proxy.rst
    /install/i18n*
    /install/config-apache2.rst
 
 Deployment
-----------
+-----------------
+
+Learn how to host Mattermost to meet your networking requirements.
 
 .. toctree::
    :maxdepth: 2
    :glob:
 
-   /deployment/on-boarding*
-   /deployment/bulk-loading.rst
+   /deployment/deployment.md 
    /deployment/desktop-app-deployment*
    AppConfig for EMM Solutions </deployment/mobile-appconfig.rst>
-   /deployment/sso-ldap*
-   /deployment/advanced*
-   /deployment/auth*
-   /deployment/sso-saml.rst
-   /deployment/scaling*
-   /deployment/cluster.rst
-   /deployment/elastic*
-   /deployment/sso-gitlab*
-   /deployment/sso-google*
-   /deployment/sso-office*
-   /deployment/metrics*
-   /deployment/customize-mattermost.rst
-   /deployment/ssl-client-certificate*
-   /deployment/certificate-based-authentication*
+   /administration/image-proxy*
+   /administration/encryption*  
    /deployment/client-side-data.rst
+   /administration/backup*
 
-Administration
---------------
+Configure Mattermost
+---------------------
+
+Learn how to configure settings to meet your unique requirements.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :glob:
 
-   /administration/command*
-   /administration/config*
-   /administration/team-settings.md
-   /administration/statistics.md
-   /administration/upgrade.rst
-   /administration/downgrade.rst
-   /administration/version-archive*
-   /administration/extended-support-release*
-   /administration/migration-announcement-email-template*
-   /administration/backup*
-   /administration/liveness-check*
-   /administration/migrating.md
-   /administration/bulk-export.rst
-   /administration/encryption*
-   /administration/image-proxy*
-   /administration/plugins*
-   /administration/announcement-banner.rst
-   /administration/branding*
-   /administration/compliance*
-   /administration/compliance-export*
-   /administration/data-retention*
-   
+   /deployment/on-boarding.rst  
+   /administration/config-settings.rst
+   /deployment/customize-mattermost.rst 
+   /administration/branding.rst
+
 Mobile Apps
------------
+------------------
+
+Learn how to configure and administer Mattermost apps.
 
 .. toctree::
    :maxdepth: 2
@@ -111,15 +93,105 @@ Mobile Apps
    /mobile/mobile-faq.rst
    /mobile/mobile-troubleshoot.rst
 
-Changelog
-----------
+Onboard Users
+--------------
+
+Learn how to get your users into and comfortable using Mattermost.
 
 .. toctree::
    :maxdepth: 2
    :glob:
 
-   /administration/changelog*
+   /deployment/bulk-loading.rst
+   /administration/migrating.md
+   /administration/hipchat-migration-guidelines*
+   /administration/migration-announcement-email-template*
+   /administration/user-provisioning*
+   /deployment/sso-ldap*
+   /deployment/auth*
+   /deployment/ldap-group-sync.rst
+   /deployment/sso-saml.rst
+   /deployment/sso-gitlab*
+   /deployment/sso-google*
+   /deployment/sso-office*
+   /deployment/ssl-client-certificate*
+   /deployment/certificate-based-authentication*
+   /deployment/advanced*
+   /deployment/permissions-backend*
+
+Administration
+----------------------------
+
+Learn how to maintain your Mattermost system.
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   /administration/command*
+   /administration/team-settings.md
+   /administration/statistics.md
+   /administration/liveness-check*
+   /administration/announcement-banner.rst
+   /administration/bulk-export.rst
+ 
+Upgrade Mattermost
+----------------------------
+
+Learn how to keep Mattermost current with fixes and new features.
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
    
+   /administration/upgrade.rst
+   /administration/important-upgrade-notes*   
+   /administration/changelog*
+   /administration/version-archive*
+   /administration/extended-support-release*  
+   /administration/downgrade.rst
+
+Mattermost Integrations
+----------------------------
+
+Learn how to extend Mattermost by integrating your workflows.
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   /administration/plugins*
+
+Mattermost Compliance
+----------------------------
+
+Learn how to adhere to your security and regulations.
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   /administration/ediscovery*
+   /administration/compliance*
+   /administration/compliance-export*
+   /administration/data-retention*
+   /administration/custom-terms-of-service*
+
+Scaling Mattermost
+------------------
+
+Learn how to support growth within Mattermost.
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   
+   /deployment/scaling*
+   /deployment/cluster*
+   /deployment/elastic*
+   /deployment/metrics*
+   /administration/performance-alerting-guide*
+
 Unofficial Enhancements
 -----------------------
 
@@ -130,5 +202,5 @@ Documentation on early previews and unofficial functionality.
    :glob:
 
    /install/prod-windows-2012*
-   /deployment/webrtc*
    /developer/toolkit*
+   /deployment/video-and-audio-calling*

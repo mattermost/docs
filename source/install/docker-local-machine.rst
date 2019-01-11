@@ -7,11 +7,11 @@ The following instructions use Docker to install Mattermost in *Preview Mode* fo
 
 Note: This configuration should not be used in production, as it's using a known password string and contains other non-production configuration settings, and it does not support upgrade. 
 
-If you're looking for a production installation with Docker, please see the `Mattermost Production Docker Deployment Guide <http://docs.mattermost.com/install/prod-docker.html>`_.
+If you're looking for a production installation with Docker, please see the `Mattermost Production Docker Deployment Guide <http://docs.mattermost.com/install/prod-docker.html>`__.
 
 .. note::
   If you have any problems installing Mattermost, see
-  the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. For help with inviting users to your system, see `inviting team members <https://docs.mattermost.com/help/getting-started/managing-members.html#inviting-team-members>`_ and other `getting started information <https://docs.mattermost.com/guides/user.html#getting-started>`_.   To submit an improvement or correction, click  **Edit** at the top of this page.
+  the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__. For help with inviting users to your system, see `inviting team members <https://docs.mattermost.com/help/getting-started/managing-members.html#inviting-team-members>`__ and other `getting started information <https://docs.mattermost.com/guides/user.html#getting-started>`__.   To submit an improvement or correction, click  **Edit** at the top of this page.
   
 One-line Docker Install
 -----------------------
@@ -27,7 +27,7 @@ Otherwise, see step-by-step instructions:
 macOS
 ^^^^^^^^
 
-1. Install `Docker for Mac <http://docs.docker.com/installation/mac/>`_ 
+1. Install `Docker for Mac <http://docs.docker.com/installation/mac/>`__ 
 
 2. Run:
    ``docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview``
@@ -39,7 +39,7 @@ macOS
 Windows 10
 ^^^^^^^^^^
 
-1. Install `Docker for Windows <http://docs.docker.com/installation/windows/>`_
+1. Install `Docker for Windows <http://docs.docker.com/installation/windows/>`__
 
 2. Run:
    ``docker run --name mattermost-preview -d --publish 8065:8065 --add-host dockerhost:127.0.0.1 mattermost/mattermost-preview``
@@ -98,7 +98,7 @@ Fedora
 Arch Linux
 ^^^^^^^^^^
 
-To install the preview on Arch Linux, see the `installation guide <https://wiki.archlinux.org/index.php/Mattermost#With_Docker>`_ on the Arch Linux wiki.
+To install the preview on Arch Linux, see the `installation guide <https://wiki.archlinux.org/index.php/Mattermost#With_Docker>`__ on the Arch Linux wiki.
 
 Setting up SMTP Email (Recommended) 
 -----------------------------------

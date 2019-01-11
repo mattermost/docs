@@ -27,7 +27,7 @@ When responding to issues:
 
     - For reproducible bugs, create a Jira ticket
     - For product questions or troubleshooting, update docs.mattermost.com if appropriate
-    - For feature proposals, ask them to `create a feature proposal <https://www.mattermost.org/feature-ideas/>`_ and post the link back
+    - For feature proposals, ask them to `create a feature proposal <https://www.mattermost.org/feature-ideas/>`__ and post the link back
 
   - If appropriate, ask if the community member would be interested in contributing the feature / bug fix
 
@@ -37,11 +37,11 @@ Community channels
 
 The various community channels are outlined below. On a daily basis, the Community Manager helps with notifying team members about issues in need of a response and, if necessary, asks for help from a developer.
 
-1. `Peer-to-peer Help Channel <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`_: Forum Issues / GitLab / Stack Overflow
+1. `Peer-to-peer Help Channel <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`__: Forum Issues / GitLab / Stack Overflow
 
   - Description:
 
-    - Community Manager reviews new `GitHub mattermost/mattermost-server <https://github.com/mattermost/mattermost-server>`_ and `GitHub mattermost/mattermost-mobile <https://github.com/mattermost/mattermost-mobile/issues>`_ issues daily, and responds to all new issues:
+    - Community Manager reviews new `GitHub mattermost/mattermost-server <https://github.com/mattermost/mattermost-server>`__ and `GitHub mattermost/mattermost-mobile <https://github.com/mattermost/mattermost-mobile/issues>`__ issues daily, and responds to all new issues:
 
         - Bug Report: Try to reproduce, or ask another team member to reproduce
         - Troubleshooting: Request to move to forums
@@ -49,7 +49,7 @@ The various community channels are outlined below. On a daily basis, the Communi
 
     - Community Manager posts "[Help Wanted] #forum #github @here @[dev on rotation] These forum posts are open to everyone in the community. If you find something you think you know the answer to or can help with, please help post a response and be part of creating a vibrant Mattermost community!" with a list that includes:
 
-      - Forum and `GitHub mattermost/mattermost-server <https://github.com/mattermost/mattermost-server>`_ posts that are >=2 days old (this gives community members a chance to respond first)
+      - Forum and `GitHub mattermost/mattermost-server <https://github.com/mattermost/mattermost-server>`__ posts that are >=2 days old (this gives community members a chance to respond first)
       - New forum posts referencing Enterprise features or upgrade issues after a release
       - Forum posts with a new reply to questions asked by the core team
 
@@ -59,7 +59,7 @@ The various community channels are outlined below. On a daily basis, the Communi
 
     - Review the list for posts that haven’t been answered, and either reply (with help from dev if needed) or route to the appropriate person, following up to make sure a response is posted
     
-2. `Peer-to-peer Help Channel <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`_: UserVoice Issues
+2. `Peer-to-peer Help Channel <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`__: UserVoice Issues
 
   - Description:
 
@@ -72,7 +72,7 @@ The various community channels are outlined below. On a daily basis, the Communi
         - Started: When a developer has begun to work on the Jira ticket (the ticket shows that it is in progress)
         - Help Wanted: Ticket that is open to any contributor wanting to work on the issue
         - Completed: When ticket is resolved
-        - Declined: When the suggestion does not fit with the `product vision <https://www.mattermost.org/manifesto/>`_
+        - Declined: When the suggestion does not fit with the `product vision <https://www.mattermost.org/manifesto/>`__
         
       - where a PM might want to ask a question for clarification or ideas on how to design something
       - where the requester specifies they want to work on the feature
@@ -83,7 +83,7 @@ The various community channels are outlined below. On a daily basis, the Communi
 
         - Thank you [NAME] for nominating the feature! It is now available in Mattermost [X.Y]. Would anyone like to help re-tweet the announcement? [LINK TO TWEET]
         
-        - Updates a `spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`_ that tracks UserVoice issues announced in upcoming releases.
+        - Updates a `spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`__ that tracks UserVoice issues announced in upcoming releases.
 
     - Sales Responsibility - Enterprise Edition:
     
@@ -91,9 +91,9 @@ The various community channels are outlined below. On a daily basis, the Communi
       
         - Thank you [NAME] for nominating the feature! It is now available in Mattermost [X.Y].
         
-      - Updates `Spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`_ to track UserVoice issues to be announced in upcoming releases.
+      - Updates `Spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`__ to track UserVoice issues to be announced in upcoming releases.
 
-3. Weekly, usually Wednesdays, `Peer-to-peer Help Channel <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`_: GitHub , GitLab and StackOverflow issues with Activity Older than 7 days (that have not been created by Mattermost staff)
+3. Weekly, usually Wednesdays, `Peer-to-peer Help Channel <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`__: GitHub , GitLab and StackOverflow issues with Activity Older than 7 days (that have not been created by Mattermost staff)
 
   - Description:
 

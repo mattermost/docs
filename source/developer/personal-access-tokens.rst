@@ -3,7 +3,7 @@
 Personal Access Tokens
 =======================
 
-Personal access tokens function similar to session tokens and can be used by integrations to `authenticate against the REST API <https://about.mattermost.com/default-api-authentication>`_. It is the most commonly used type of token for integrations.
+Personal access tokens function similar to session tokens and can be used by integrations to `authenticate against the REST API <https://about.mattermost.com/default-api-authentication>`__. It is the most commonly used type of token for integrations.
 
 .. toctree::
    :maxdepth: 2
@@ -42,7 +42,7 @@ Then hit **Save**.
   
 8 - Copy the access token now for your integration and store it in a secure location. You won't be able to see it again!
 
-9 - You're all set! You can now use the personal access token for integrations to interact with your Mattermost server and `authenticate against the Mattermost REST API <https://about.mattermost.com/default-api-authentication>`_.
+9 - You're all set! You can now use the personal access token for integrations to interact with your Mattermost server and `authenticate against the Mattermost REST API <https://about.mattermost.com/default-api-authentication>`__.
 
 .. image:: ../../source/images/access_token_settings.png
   :width: 500 px
@@ -74,7 +74,7 @@ Frequently Asked Questions (FAQ)
 How do personal access tokens differ from regular session tokens?
 ..................................................................
 
-- Personal access tokens do not expire. As a result, you can more easily integrate with Mattermost, bypassing the `session length limits set in the System Console <https://docs.mattermost.com/administration/config-settings.html#sessions>`_.
+- Personal access tokens do not expire. As a result, you can more easily integrate with Mattermost, bypassing the `session length limits set in the System Console <https://docs.mattermost.com/administration/config-settings.html#sessions>`__.
 - Personal access tokens can be used to authenticate against the API more easily, including with AD/LDAP and SAML accounts.
 - You can optionally assign additional roles for the account creating personal access tokens. This lets the account post to any channel in Mattermost, including direct messages.
 
@@ -83,7 +83,7 @@ Besides the above differences, personal access tokens are exactly the same as re
 Can I set personal access tokens to expire?
 ............................................
 
-Not in Mattermost, but you can automate your integration to cycle its token `through the REST API <https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`_.
+Not in Mattermost, but you can automate your integration to cycle its token `through the REST API <https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`__.
 
 How do I identify a badly behaving personal access token?
 ..........................................................

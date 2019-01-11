@@ -16,7 +16,7 @@ Apply the style guide in the following situations:
 - when you convert a document from Markdown to reStructuredText
 - when you revise a document
 
-When you revise a document, apply the style guide rules to the part that you changed. If you have time to update the rest of the document, then do so. If the scope is significantly greater than you originally anticipated, then do what you can and what makes sense, and then create an `issue in GitHub <https://github.com/mattermost/docs/issues>`_. Give the issue an appropriate title, such as *File XXX converted to .rst, but needs updating for style guide*.
+When you revise a document, apply the style guide rules to the part that you changed. If you have time to update the rest of the document, then do so. If the scope is significantly greater than you originally anticipated, then do what you can and what makes sense, and then create an `issue in GitHub <https://github.com/mattermost/docs/issues>`__. Give the issue an appropriate title, such as *File XXX converted to .rst, but needs updating for style guide*.
 
 Write in the Context of Achievement
 -----------------------------------
