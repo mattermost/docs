@@ -69,6 +69,10 @@ global:
     packages:
       bucket: gitlab-packages
       connection: {}
+    pseudonymizer:
+      configMap:
+      bucket: gitlab-pseudo
+      connection: {}
     backups:
       bucket: gitlab-backups
       tmpBucket: tmp
@@ -109,10 +113,6 @@ global:
       providers: []
       # - secret: gitlab-google-oauth2
       #   key: provider
-    pseudonymizer:
-      configMap:
-      bucket: gitlab-pseudo
-      connection: {}
   shell:
     authToken: {}
     hostKeys: {}
@@ -232,8 +232,8 @@ prometheus:
     enabled: false
 
 redis-ha:
-  nameOverride: redis
   enabled: false
+  nameOverride: redis
 
 postgresql:
   install: true
@@ -263,6 +263,7 @@ gitlab-runner:
   rbac:
     create: true
   runners:
+    locked: false
     cache:
       cacheType: s3
       s3BucketName: runner-cache

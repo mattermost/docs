@@ -31,7 +31,7 @@ the global is used by GitLab backups.
 
 Create the secret per [registry chart documentation on storage](../../charts/registry/index.md#storage), then configure the chart to make use of this secret.
 
-Examples for [S3][storage-s3] and [GCS][storage-gcs] drivers can be found in
+Examples for [S3][storage-s3](any s3 compatible) and [GCS][storage-gcs] drivers can be found in
 [examples/objectstorage](../../examples/objectstorage).
 - [registry.s3.yaml](../../examples/objectstorage/registry.s3.yaml)
 - [registry.gcs.yaml](../../examples/objectstorage/registry.gcs.yaml)
@@ -47,11 +47,11 @@ Examples for [S3][storage-s3] and [GCS][storage-gcs] drivers can be found in
 1. Follow [registry chart documentation on storage](../../charts/registry/index.md#storage) for creating the secret.
 1. Configure the chart as documented.
 
-## LFS, Artifacts, Uploads, Packages
+## LFS, Artifacts, Uploads, Packages, Pseudonymizer
 
 Configuration of object storage for LFS, artifacts, uploads, and packages is done
 via the `global.appConfig.lfs`, `global.appConfig.artifacts`, `global.appConfig.uploads`,
-and `global.appConfig.packages` keys.
+`global.appConfig.packages` and `global.appConfig.pseudonymizer` keys.
 
 ```
 --set global.appConfig.lfs.bucket=gitlab-lfs-storage
@@ -66,11 +66,11 @@ and `global.appConfig.packages` keys.
 --set global.appConfig.uploads.connection.secret=object-storage
 --set global.appConfig.uploads.connection.key=connection
 
---set global.appConfig.packages.bucket=gitlab-uploads-storage
+--set global.appConfig.packages.bucket=gitlab-packages-storage
 --set global.appConfig.packages.connection.secret=object-storage
 --set global.appConfig.packages.connection.key=connection
 
---set global.appConfig.pseudonymizer.bucket=gitlab-uploads-storage
+--set global.appConfig.pseudonymizer.bucket=gitlab-pseudonymizer-storage
 --set global.appConfig.pseudonymizer.connection.secret=object-storage
 --set global.appConfig.pseudonymizer.connection.key=connection
 ````
@@ -79,9 +79,9 @@ and `global.appConfig.packages` keys.
 
 See the [charts/globals documentaion on appConfig](../../charts/globals.md#configure-appconfig-settings) for full details.
 
-Create the secret(s) per the [connection details documentation](../../charts/globals.md#connection), and then configure the chart to use the provided secrets. Note, the same secret can be used for all three.
+Create the secret(s) per the [connection details documentation](../../charts/globals.md#connection), and then configure the chart to use the provided secrets. Note, the same secret can be used for all of them.
 
-Examples for [AWS][fog-aws] and [Google][fog-gcs] providers can be found in
+Examples for [AWS][fog-aws](any S3 compatible) and [Google][fog-gcs] providers can be found in
 [examples/objectstorage](../../../examples/objectstorage).
 - [rails.s3.yaml](../../../examples/objectstorage/rails.s3.yaml)
 - [rails.gcs.yaml](../../../examples/objectstorage/rails.gcs.yaml)
