@@ -263,6 +263,7 @@ gitlab-runner:
   rbac:
     create: true
   runners:
+    locked: false
     cache:
       cacheType: s3
       s3BucketName: runner-cache
