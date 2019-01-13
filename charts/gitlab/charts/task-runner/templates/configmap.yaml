@@ -51,6 +51,8 @@ data:
 {{ include "gitlab.appConfig.repositories" . | indent 6 }}
       backup:
         path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
+{{ include "gitlab.configYaml.shell" . | indent 6 }}
+{{ include "gitlab.configYaml.shell.secret_file" . | indent 8 }}
       gitlab_shell:
         path: /home/git/gitlab-shell/
         hooks_path: /home/git/gitlab-shell/hooks/
