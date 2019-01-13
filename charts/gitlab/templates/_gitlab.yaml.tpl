@@ -9,3 +9,10 @@ repositories:
   storages: # You must have at least a `default` storage path.
 {{ include "gitlab.gitaly.storages" . | indent 4 }}
 {{- end -}}
+
+{{- define "gitlab.configYaml.extra" -}}
+extra:
+  google_analytics_id: {{ .extra.googleAnalyticsId | quote }}
+  piwik_url: {{ .extra.piwikUrl | quote }}
+  piwik_site_id: {{ .extra.piwikSiteId | quote }}
+{{- end -}}

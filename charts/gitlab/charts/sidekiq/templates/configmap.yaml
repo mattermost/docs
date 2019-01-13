@@ -65,10 +65,7 @@ data:
       gravatar:
         plain_url: {{ .gravatar.plainUrl }}
         ssl_url: {{ .gravatar.sslUrl }}
-      extra:
-        google_analytics_id: {{ .extra.googleAnalyticsId | quote }}
-        piwik_url: {{ .extra.piwikUrl | quote }}
-        piwik_site_id: {{ .extra.piwikSiteId | quote }}
+{{ include "gitlab.configYaml.extra" . | indent 6 }}
       {{- end }}
       {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "artifacts" "config" $.Values.global.appConfig.artifacts "context" $) | nindent 6 }}
       {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "lfs" "config" $.Values.global.appConfig.lfs "context" $) | nindent 6 }}
