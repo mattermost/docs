@@ -104,7 +104,7 @@ Troubleshooting
 --------------------------------------------------
 
 "Installation has failed" dialog
-    The app data might be corrupted - remove all the files in ``C:\Users...\AppData\Local\mattermost``, then try re-installing the app.
+    The app data might be corrupted - remove all the files in ``%LOCALAPPDATA%\mattermost``, then try re-installing the app.
 
 Desktop App window is black and doesn't load the page
     1. First, make sure you have installed the latest Desktop App version `from our website <https://about.mattermost.com/download/#mattermostApps>`__. Check your app version from **Help > Version**.
@@ -122,20 +122,20 @@ Desktop App is not visible, but you can see the Mattermost icon in the Task Bar
 
   **To reset the Desktop App screen location**:
     1. If the Desktop App is running, right-click the Mattermost icon in the task bar and click **Close Window**.
-    2. Open Windows File Explorer, and navigate to the ``%USERPROFILE%\AppData\Roaming\Mattermost`` folder.
+    2. Open Windows File Explorer, and navigate to the ``%APPDATA%\Mattermost`` folder.
     3. Delete the file ``bounds-info.json``
 
 Desktop App constantly refreshes the page
   This issue can occur when localStorage has an unexpected state. To resolve the issue:
 
-    - Windows: Open Windows File Explorer, and navigate to the ``%USERPROFILE%\AppData\Roaming\Mattermost`` folder, then delete the ``Local Storage`` folder.
+    - Windows: Open Windows File Explorer, and navigate to the ``%APPDATA%\Mattermost`` folder, then delete the ``Local Storage`` folder.
     - Mac: Open Finder, and navigate to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``Local Storage`` folder.
     - Linux: Open the file manager, and navigate to the ``~/.config/Mattermost`` folder, then delete the ``Local Storage`` folder.
       
 Desktop App constantly asks to log in to Mattermost server
   This issue can occur after a crash or unexpected shutdown of the Desktop app that causes the app data to be corrupted. To resolve the issue:
 
-    - Windows: Open Windows File Explorer, and navigate to the ``%USERPROFILE%\AppData\Roaming\Mattermost`` folder, then delete the ``IndexedDB`` folder.
+    - Windows: Open Windows File Explorer, and navigate to the ``%APPDATA%\Mattermost`` folder, then delete the ``IndexedDB`` folder.
     - Mac: Open Finder, and navigate to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``IndexedDB`` folder.
     - Linux: Open the file manager, and navigate to the ``~/.config/Mattermost`` folder, then delete the ``IndexedDB`` folder.
 
