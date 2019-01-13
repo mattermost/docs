@@ -138,11 +138,7 @@ data:
         {{- if .Values.extra }}
 {{ toYaml .Values.extra | indent 8 }}
         {{- end }}
-      rack_attack:
-        git_basic_auth:
-          {{- if .Values.rack_attack.git_basic_auth.enabled }}
-{{ toYaml .Values.rack_attack.git_basic_auth | indent 10 }}
-          {{- end }}
+{{ include "gitlab.appConfig.rackAttack" . | indent 6 }}
       ## Registry Integration
       {{- include "gitlab.appConfig.registry.configuration" $ | nindent 6 }}
   configure: |
