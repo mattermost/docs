@@ -1452,6 +1452,47 @@ mattermost user migrate_auth
         with file("saml_users.json", "w") as fd:
             json.dump(mapping, fd)
 
+    ADFS:
+
+    .. code-block:: python
+
+        import ldap
+        import json
+        import getpass
+
+        ldap_host = input('Ldap Host (example ldap://localhost:389): ')
+        base_dn = input('Base DN (example dc=mm,dc=test,dc=com): ')
+        bind_dn = input('Bind DN (example ORGANIZATION\username): ')
+        password = getpass.getpass('Password: ')
+        user_object_class = input('User object class (example organizationalPerson): ')
+        username_field = input('Username field (example sAMAccountName): ')
+        mail_field = input('Mail field (example mail): ')
+
+        l = ldap.initialize(ldap_host)
+        l.simple_bind_s(bind_dn, password)
+        page_control = ldap.controls.libldap.SimplePagedResultsControl(True, size=1000, cookie='')
+        r = l.search_ext(base_dn, ldap.SCOPE_SUBTREE, '(objectClass='+user_object_class+')', [username_field, mail_field],         serverctrls=[page_control])
+
+        mapping = {}
+        while True:
+            rtype, rdata, rmsgid, serverctrls = l.result3(r)
+        
+            for dn, entry in rdata:
+                if mail_field in entry and len(entry[mail_field]) >= 1 and username_field in entry and len(entry[username_field]) >= 1:
+                    mapping[entry[mail_field][0].decode('utf-8')] = entry[username_field][0].decode('utf-8')
+
+            controls = [control for control in serverctrls if control.controlType == ldap.controls.libldap.SimplePagedResultsControl.controlType]
+            if not controls:
+                print('The server ignores RFC 2696 control')
+                break
+            if not controls[0].cookie:
+                break
+            page_control.cookie = controls[0].cookie
+            r = l.search_ext(base_dn, ldap.SCOPE_SUBTREE, '(objectClass='+user_object_class+')', [username_field, mail_field], serverctrls=[page_control])
+
+        with open("saml_users.json", "w") as fd:
+            json.dump(mapping, fd)
+
   Format
     .. code-block:: none
 
