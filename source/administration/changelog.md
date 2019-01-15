@@ -56,7 +56,7 @@ Release date: 2019-01-16
 
 Release date: 2018-12-16
 
- - **v5.6.1, released TBD**
+ - **v5.6.1, released 2019-01-16**
    - Mattermost v5.6.1 contains medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Highlights
@@ -221,7 +221,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.5
 
- - **v5.5.2, released TBD**
+ - **v5.5.2, released 2019-01-16**
    - Mattermost v5.5.2 contains medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.5.1, released 2018-12-06** 
   - Fixed a bug preventing Elasticsearch v6.0+ from working in Mattermost server versions 5.4 and 5.5.
@@ -819,7 +819,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v4.10
 
- - **v4.10.5, released TBD**
+ - **v4.10.5, released 2019-01-16**
    - Mattermost v4.10.5 contains medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.10.4, released 2018-09-16**
    - Mattermost v4.10.4 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 14 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
