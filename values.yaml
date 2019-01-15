@@ -8,7 +8,7 @@
 ## Advanced Configuration
 # Documentation for advanced configuration can be found under doc/advanced
 # - external PostgreSQL
-# - exteranl Gitaly
+# - external Gitaly
 # - external Redis
 # - external NGINX
 # - PersistentVolume configuration
@@ -190,6 +190,7 @@ global:
       providers: []
       # - secret: gitlab-google-oauth2
       #   key: provider
+  ## End of global.appConfig
 
   ## doc/charts/globals.md#configure-gitlab-shell-settings
   shell:
@@ -268,6 +269,7 @@ global:
     customCAs: []
     # - secret: custom-CA
     # - secret: more-custom-CAs
+## End of global
 
 ## Settings to for the Let's Encrypt ACME Issuer
 # certmanager-issuer:
@@ -356,7 +358,7 @@ prometheus:
 ## doc/architecture/decisions.md#redis
 ## doc/charts/redis
 # redis:
-#   enabled: false
+#   enabled: true
 ## doc/architecture/decisions.md#redis-ha
 ## doc/charts/redis-ha
 redis-ha:
