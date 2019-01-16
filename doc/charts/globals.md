@@ -620,6 +620,8 @@ These settings are explained in [command line options page](../installation/comm
 
 This setting allows for the configuration of [LDAP](https://docs.gitlab.com/ee/administration/auth/ldap.html) user authentication. It is presented as a map, which will be translated into the the appropriate LDAP servers configuration in `gitlab.yml`, as with an installation from source.
 
+Configuring passwords can be done by supplying a `secret` which holds the password. This password then will be injected into GitLab's configuration at runtime.
+
 An example configuration snippet:
 ```YAML
 ldap:
@@ -631,6 +633,9 @@ ldap:
       port: 636
       uid: 'sAMAccountName'
       bind_dn: 'cn=administrator,cn=Users,dc=domain,dc=net'
+      password:
+        secret: my-ldap-password-secret
+        key: the-key-containing-the-password
 ```
 
 Example configuration `--set` items, when using the global chart:
@@ -640,6 +645,8 @@ Example configuration `--set` items, when using the global chart:
 --set global.appConfig.ldap.servers.main.port='636' \
 --set global.appConfig.ldap.servers.main.uid='sAMAccountName' \
 --set global.appConfig.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'
+--set global.appConfig.ldap.servers.main.password.secret='my-ldap-password-secret'
+--set global.appConfig.ldap.servers.main.password.key='the-key-containing-the-password'
 ```
 
 Commas are considered [special characters](https://github.com/kubernetes/helm/blob/master/docs/using_helm.md#the-format-and-limitations-of---set) within Helm `--set` items. Be sure to escape commas in values such as `bind_dn`: `--set global.appConfig.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'`
