@@ -166,6 +166,10 @@ data:
         mkdir -p "${secret_dir}/objectstorage"
         cp -v -r "${config_dir}/objectstorage/." "${secret_dir}/objectstorage/"
       fi
+      if [ -e "${config_dir}/ldap" ]; then
+        mkdir -p "${secret_dir}/ldap"
+        cp -v -r "${config_dir}/ldap/." "${secret_dir}/ldap/"
+      fi
       if [ -e "${config_dir}/omniauth" ]; then
         mkdir -p "${secret_dir}/omniauth"
         cp -v -r "${config_dir}/omniauth/." "${secret_dir}/omniauth/"
