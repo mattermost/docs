@@ -49,7 +49,7 @@ spec:
       GitLab is provisioned with a randomly generated administrator password. To retrieve it: 
 
       ```
-      kubectl get secret {{ .Release.Name }}-gitlab-initial-root-password -ojsonpath={.data.password} | base64 --decode ; echo
+      kubectl get secret {{ .Release.Name }}-gitlab-initial-root-password -ojsonpath='{.data.password}' | base64 --decode ; echo
       ```
 
       {{ end -}}

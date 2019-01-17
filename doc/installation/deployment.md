@@ -209,7 +209,7 @@ following command (replace `<name>` by name of the release - which is `gitlab`
 if you used the command above).
 
 ```
-kubectl get secret <name>-gitlab-initial-root-password -ojsonpath={.data.password} | base64 --decode ; echo
+kubectl get secret <name>-gitlab-initial-root-password -ojsonpath='{.data.password}' | base64 --decode ; echo
 ```
 
 [secret-gl-certs]: secrets.md#gitlab-certificates
