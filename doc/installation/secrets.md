@@ -9,6 +9,7 @@ Gitlab Components:
 
 Optional External Services
 * SMTP server
+* LDAP
 * Omniauth
 * IMAP for incoming emails (via mail_room service)
 
@@ -40,6 +41,7 @@ documentation.
   * [Registry HTTP secret](#registry-http-secret)
 - [External Services](#external-services)
   * [Unicorn Omniauth](#unicorn-omniauth)
+  * [LDAP Password](#ldap-password)
   * [SMTP Password](#smtp-password)
   * [IMAP Password](#imap-password-for-incoming-emails)
 
@@ -204,6 +206,17 @@ Some charts have further secrets to enable functionality that can not be automat
 ### Unicorn Omniauth
 
 In order to enable the use of [Omniauth Providers](https://docs.gitlab.com/ee/integration/omniauth.html) with the deployed GitLab, please follow the [instructions in the Unicorn chart](../charts/gitlab/unicorn/index.md#omniauth.providers)
+
+### LDAP Password
+
+If you need password authentication to connect with your LDAP server, you must store the password in a Kubernetes secret.
+
+```
+kubectl create secret generic ldap-main-password --from-literal=password=yourpasswordhere
+```
+
+Then use `--set global.appConfig.ldap.servers.main.password.secret=ldap-main-password` to 
+inject the password into your configuration.
 
 ### SMTP password
 

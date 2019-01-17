@@ -32,6 +32,7 @@ We then check the number of items in the array vs the string length. If the stri
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.registryHttpSecret" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.omniauth" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.ldap" .) -}}
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.global.appConfig.ldap.password" .) -}}
 {{/* prepare output, check lengths */}}
 {{- $message := join "\n" $deprecated -}}
 {{- if lt (len $deprecated) (len $message) -}}
@@ -134,3 +135,18 @@ unicorn:
 {{- end -}}
 {{- end -}}
 {{/* END deprecate.unicorn.ldap */}}
+
+{{- define "gitlab.deprecate.global.appConfig.ldap.password" -}}
+{{- if .Values.global.appConfig.ldap.servers -}}
+{{-   $hasPlaintextPassword := dict -}}
+{{-   range $name, $config := .Values.global.appConfig.ldap.servers -}}
+{{-     if and (hasKey $config "password") (kindIs "string" $config.password) -}}
+{{-       $_ := set $hasPlaintextPassword "true" "true" -}}
+{{-     end -}}
+{{-   end -}}
+{{-   if hasKey $hasPlaintextPassword "true" -}}
+global.appConfig.ldap:
+     Plain-text configuration of LDAP passwords has been deprecated in favor of secret configuration. Please create a secret containing the password, and set `password.secret` and `password.key`.
+{{-   end -}}
+{{- end -}}
+{{- end -}}{{/* "gitlab.deprecate.global.appConfig.ldap.password" */}}
