@@ -58,7 +58,7 @@ data:
         email_subject_suffix: {{ .Values.global.email.subject_suffix | quote }}
       {{- with .Values.global.appConfig }}
       {{- if eq .incomingEmail.enabled true }}
-{{ include "gitlab.configYaml.incoming_email" . | indent 6 }}
+{{ include "gitlab.appConfig.incoming_email" . | indent 6 }}
       {{- end }}
       gravatar:
         plain_url: {{ .gravatar.plainUrl }}

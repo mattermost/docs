@@ -10,7 +10,7 @@ repositories:
 {{ include "gitlab.gitaly.storages" . | indent 4 }}
 {{- end -}}
 
-{{- define "gitlab.configYaml.incoming_email" -}}
+{{- define "gitlab.appConfig.incoming_email" -}}
 incoming_email:
   enabled: {{ eq .incomingEmail.enabled true }}
   address: {{ .incomingEmail.address | quote }}
