@@ -10,7 +10,7 @@ repositories:
 {{ include "gitlab.gitaly.storages" . | indent 4 }}
 {{- end -}}
 
-{{- define "gitlab.configYaml.extra" -}}
+{{- define "gitlab.appConfig.extra" -}}
 extra:
   google_analytics_id: {{ .extra.googleAnalyticsId | quote }}
   piwik_url: {{ .extra.piwikUrl | quote }}
