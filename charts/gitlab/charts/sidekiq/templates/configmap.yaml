@@ -92,8 +92,8 @@ data:
       kerberos:
         enabled: false
       shared:
-{{ include "gitlab.configYaml.gitaly" . | indent 6 }}
-{{ include "gitlab.configYaml.repositories" . | indent 6 }}
+{{ include "gitlab.appConfig.gitaly" . | indent 6 }}
+{{ include "gitlab.appConfig.repositories" . | indent 6 }}
       backup:
         path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
       gitlab_shell:
