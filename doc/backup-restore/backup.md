@@ -36,7 +36,7 @@ You should also save a copy of the rails secrets. (These are not included in the
 1. Save a copy of the rails secrets
 
   ```
-  $ kubectl get secrets <rails-secret-name> -o "jsonpath={.data['secrets\.yml']}" | base64 --decode > secrets.yaml
+  $ kubectl get secrets <rails-secret-name> -o jsonpath="{.data['secrets\.yml']}" | base64 --decode > secrets.yaml
   ```
 
 1. Store `secrets.yml` in a secure location, you may need it to fully restore your backups.
