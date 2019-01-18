@@ -118,9 +118,9 @@ data:
 {{ include "gitlab.appConfig.repositories" . | indent 6 }}
       backup:
         path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
-{{ include "gitlab.configYaml.shell" . | indent 6 }}
-{{ include "gitlab.configYaml.shell.ssh_port" . | indent 8 }}
-{{ include "gitlab.configYaml.shell.secret_file" . | indent 8 }}
+{{ include "gitlab.appConfig.shell" . | indent 6 }}
+{{ include "gitlab.appConfig.shell.ssh_port" . | indent 8 }}
+{{ include "gitlab.appConfig.shell.secret_file" . | indent 8 }}
       workhorse:
         secret_file: /etc/gitlab/gitlab-workhorse/secret
       git:

@@ -96,7 +96,7 @@ data:
 {{ include "gitlab.appConfig.repositories" . | indent 6 }}
       backup:
         path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
-{{ include "gitlab.configYaml.shell" . | indent 6 }}
+{{ include "gitlab.appConfig.shell" . | indent 6 }}
       workhorse:
       git:
         bin_path: /usr/bin/git
