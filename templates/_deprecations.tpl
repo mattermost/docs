@@ -20,8 +20,6 @@ chart:
 Compile all deprecations into a single message, and call fail.
 
 Due to gotpl scoping, we can't make use of `range`, so we have to add action lines.
-
-We then check the number of items in the array vs the string length. If the string length is larger than the size of the array, then we have message contents. We are assured of this because `join "\n"` will insert n-1 "\n" into the string, thus a 3 item array, with no contents will be turned into a 2 character string.
 */}}
 {{- define "gitlab.deprecations" -}}
 {{- $deprecated := list -}}
@@ -33,9 +31,13 @@ We then check the number of items in the array vs the string length. If the stri
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.omniauth" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.ldap" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.global.appConfig.ldap.password" .) -}}
-{{/* prepare output, check lengths */}}
+
+{{- /* prepare output */}}
+{{- $deprecated := without $deprecated "" -}}
 {{- $message := join "\n" $deprecated -}}
-{{- if lt (len $deprecated) (len $message) -}}
+
+{{- /* print output */}}
+{{- if $message -}}
 {{-   printf "\nDEPRECATIONS:\n%s" $message | fail -}}
 {{- end -}}
 {{- end -}}

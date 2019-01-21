@@ -47,12 +47,8 @@ data:
         enabled: false
       {{- include "gitlab.appConfig.ldap.configuration" $ | nindent 6 }}
       {{- include "gitlab.appConfig.omniauth.configuration" $ | nindent 6 }}
-      gitaly:
-        client_path: /home/git/gitaly/bin
-        token: "<%= File.read('/etc/gitlab/gitaly/gitaly_token') %>"
-      repositories:
-        storages: # You must have at least a `default` storage path.
-{{ include "gitlab.gitaly.storages" . | indent 10 }}
+{{ include "gitlab.appConfig.gitaly" . | indent 6 }}
+{{ include "gitlab.appConfig.repositories" . | indent 6 }}
       backup:
         path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
       gitlab_shell:
