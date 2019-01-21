@@ -1,5 +1,0 @@
----
-title: 'Rails: set CA certificate path for SMTP'
-merge_request: 625
-author:
-type: fixed
