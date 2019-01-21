@@ -1,5 +1,0 @@
----
-title: Ensure the operator deployment uses the immutable labels properly
-merge_request: 613
-author:
-type: fixed

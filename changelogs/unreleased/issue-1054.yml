@@ -1,6 +1,0 @@
----
-title: Fix 500 error when you don't set the parameter auto_sign_in_with_provider with
-  OmniAuth enabled.
-merge_request: 623
-author: David Kulak
-type: fixed

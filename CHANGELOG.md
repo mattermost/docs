@@ -2,6 +2,36 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.5.0 (2019-01-22)
+
+### Fixed (5 changes, 1 of them is from the community)
+
+- Generate omniauth attribute values correctly as expected by GitLab. !610
+- Ensure the operator deployment uses the immutable labels properly. !613
+- Ensure a newline before appending to registry/storage/config to make sure yaml is rendered correctly. !621
+- Fix 500 error when you don't set the parameter auto_sign_in_with_provider with OmniAuth enabled. !623 (David Kulak)
+- Rails: set CA certificate path for SMTP. !625
+
+### Changed (1 change)
+
+- Update gitlab-operator version to 0.2. !645
+
+### Performance (1 change)
+
+- Add retry options for migration jobspec. !642
+
+### Added (3 changes, 3 of them are from the community)
+
+- Allow configuration of securityContext user/group on all deployments with persistent volumes. !519 (Mike Rennie)
+- add the node selector for registry chart. !602 (Jubel Han)
+- Provide a way to reference a secret containing the LDAP password. !634 (Matthias van de Meent (Cofano Software Solutions))
+
+### Other (2 changes)
+
+- Move ingress enabled detection to helper method. !607
+- Update GitLab Version to 11.7.0.
+
+
 ## 1.4.4 (2019-01-17)
 
 ### Other (1 change)
