@@ -19,13 +19,14 @@ entry.
 
 - Add safe-to-evict annotation to stateless deployments. !523
 
-### Added (6 changes, 2 of them are from the community)
+### Added (7 changes, 3 of them are from the community)
 
 - Add missing settings to configure gitlab.yml. !496 (Erik Sundell)
 - Add a global flag to set the gitlab edition that will be installed. !499 (Scott Leggett)
 - Allow disabled shared-secrets chart. !510
 - Add Gitlab operator to run upgrades of Gitlab. !516
 - Move jobs management into the operator if it is enabled. !517
+- Provide a way to disable the usage ping options. !525 (Mike Rennie)
 - Add control of exposed SSH port. !531
 
 ### Other (3 changes, 1 of them is from the community)
