@@ -11,7 +11,7 @@ entry.
 - runner: fix gitlab-runner.cache.secret template.
 - Fix changelog danger handling.
 
-### Changed (12 changes)
+### Changed (13 changes)
 
 - Move all Minio enabled to global configuration. !389
 - Convert registry storage block to secret. !391
@@ -21,6 +21,7 @@ entry.
 - Update memory requests based on observations. !418
 - Update certmanager to v0.4.0 (#617). !424
 - Allow external object storage for task-runner. !427
+- Add securtyContext to nginx-ingress-controller deployment to run as non-root user and upgrade image version to 0.15.0. !431
 - Replace self-signed certificate generation, automatically CA add to custom CAs. !441
 - Default sidekiq chart queues to upstream source defaults. !449
 - Rails pods, except migrations, will wait for their desired schema version before starting. !462
