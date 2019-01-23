@@ -31,3 +31,10 @@ ssh_port: {{ include "gitlab.shell.port" . | int }}
 {{- define "gitlab.appConfig.shell.secret_file" -}}
 secret_file: /etc/gitlab/shell/.gitlab_shell_secret
 {{- end -}}
+
+{{- define "gitlab.appConfig.extra" -}}
+extra:
+  google_analytics_id: {{ .extra.googleAnalyticsId | quote }}
+  piwik_url: {{ .extra.piwikUrl | quote }}
+  piwik_site_id: {{ .extra.piwikSiteId | quote }}
+{{- end -}}
