@@ -174,9 +174,9 @@ MatterCon
 
 MatterCon is an annual conference for Mattermosters and the contributor community to come together. In 2018 it was held in Lisbon, Portugal. In 2019, in Punta Cana, Dominican Republic. 
 
-It's a time for Mattermosters and top contributors from our community to get together, celebrate our achievements, build shared experiences and empathy to increase the efficiency of working together. 
+It's a time for Mattermosters and top contributors from our community to get together, celebrate our achievements and build shared experiences and empathy to increase the efficiency of working together. 
 
 Traditions
 ~~~~~~~~~~
 
-One night of the grand up traditionally teams get together for a dinner and afterwards there's an option to play a round of "hot seat". In hot seat one person volunteers to receive feedback from the rest of the group, one "like" (something they do well) and one "wish" (an opportunity to improve). After everyone has shared feedback the volunteer has the option of making a commitment to the group on making a change in how they work, and to ask the group's help to share feedback on the change and keep them accountable.  
+One night of the grand up traditionally teams get together for a dinner and afterwards there is an option to play a round of "hot seat". In hot seat one person volunteers to receive feedback from the rest of the group - one "like" (something they do well) and one "wish" (an opportunity to improve). After everyone has shared feedback, the volunteer has the option of making a commitment to the group on making a change in how they work and to ask the group's help to share feedback on the change and keep them accountable.  
