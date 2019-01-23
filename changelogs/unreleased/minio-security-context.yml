@@ -1,5 +1,0 @@
----
-title: Allow configuration of securityContext user/group on all deployments with persistent volumes
-merge_request: 519
-author: Mike Rennie
-type: added

@@ -58,17 +58,12 @@ data:
         email_subject_suffix: {{ .Values.global.email.subject_suffix | quote }}
       {{- with .Values.global.appConfig }}
       {{- if eq .incomingEmail.enabled true }}
-      incoming_email:
-        enabled: {{ eq .incomingEmail.enabled true }}
-        address: {{ .incomingEmail.address | quote }}
+{{ include "gitlab.appConfig.incoming_email" . | indent 6 }}
       {{- end }}
       gravatar:
         plain_url: {{ .gravatar.plainUrl }}
         ssl_url: {{ .gravatar.sslUrl }}
-      extra:
-        google_analytics_id: {{ .extra.googleAnalyticsId | quote }}
-        piwik_url: {{ .extra.piwikUrl | quote }}
-        piwik_site_id: {{ .extra.piwikSiteId | quote }}
+{{ include "gitlab.appConfig.extra" . | indent 6 }}
       {{- end }}
       {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "artifacts" "config" $.Values.global.appConfig.artifacts "context" $) | nindent 6 }}
       {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "lfs" "config" $.Values.global.appConfig.lfs "context" $) | nindent 6 }}
@@ -96,11 +91,7 @@ data:
 {{ include "gitlab.appConfig.repositories" . | indent 6 }}
       backup:
         path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
-      gitlab_shell:
-        path: /home/git/gitlab-shell/
-        hooks_path: /home/git/gitlab-shell/hooks/
-        upload_pack: true
-        receive_pack: true
+{{ include "gitlab.appConfig.shell" . | indent 6 }}
       workhorse:
       git:
         bin_path: /usr/bin/git
@@ -114,10 +105,6 @@ data:
           address: 0.0.0.0
           port: {{ .Values.metrics.port }}
 {{- end }}
-      extra:
-        {{- if .Values.extra }}
-{{ toYaml .Values.extra | indent 8 }}
-        {{- end }}
   configure: |
       set -e
       config_dir="/init-secrets"

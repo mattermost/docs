@@ -120,8 +120,8 @@ If your SMTP server requires authentication make sure to read the section on pro
 your password in the [secrets documentation](secrets.md#smtp-password).
 You can disable authentication settings with `--set global.smtp.authentication=""`.
 
-If your Kubernetes cluster is on GKE, be aware that smtp [ports 25, 465, and 587
-are blocked](https://cloud.google.com/compute/docs/tutorials/sending-mail/#using_standard_email_ports).
+If your Kubernetes cluster is on GKE, be aware that smtp [port 25
+is blocked](https://cloud.google.com/compute/docs/tutorials/sending-mail/#using_standard_email_ports).
 
 ### Incoming email
 

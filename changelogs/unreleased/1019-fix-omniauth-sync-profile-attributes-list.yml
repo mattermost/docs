@@ -1,5 +1,0 @@
----
-title: Generate omniauth attribute values correctly as expected by GitLab
-merge_request: 610
-author:
-type: fixed
