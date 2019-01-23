@@ -125,11 +125,7 @@ data:
         ip_whitelist:
           - 0.0.0.0/0
         sidekiq_exporter:
-      rack_attack:
-        git_basic_auth:
-          {{- if .Values.rack_attack.git_basic_auth.enabled }}
-{{ toYaml .Values.rack_attack.git_basic_auth | indent 10 }}
-          {{- end }}
+{{ include "gitlab.appConfig.rackAttack" . | indent 6 }}
       ## Registry Integration
       {{- include "gitlab.appConfig.registry.configuration" $ | nindent 6 }}
   configure: |

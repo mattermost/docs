@@ -105,11 +105,6 @@ data:
           address: 0.0.0.0
           port: {{ .Values.metrics.port }}
 {{- end }}
-      rack_attack:
-        git_basic_auth:
-          {{- if .Values.rack_attack.git_basic_auth.enabled }}
-{{ toYaml .Values.rack_attack.git_basic_auth | indent 10 }}
-          {{- end }}
   configure: |
       set -e
       config_dir="/init-secrets"

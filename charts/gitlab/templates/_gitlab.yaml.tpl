@@ -10,6 +10,7 @@ repositories:
 {{ include "gitlab.gitaly.storages" . | indent 4 }}
 {{- end -}}
 
+
 {{- define "gitlab.appConfig.incoming_email" -}}
 incoming_email:
   enabled: {{ eq .incomingEmail.enabled true }}
@@ -37,4 +38,12 @@ extra:
   google_analytics_id: {{ .extra.googleAnalyticsId | quote }}
   piwik_url: {{ .extra.piwikUrl | quote }}
   piwik_site_id: {{ .extra.piwikSiteId | quote }}
+{{- end -}}
+
+{{- define "gitlab.appConfig.rackAttack" -}}
+rack_attack:
+  git_basic_auth:
+    {{- if .Values.rack_attack.git_basic_auth.enabled }}
+  {{ toYaml .Values.rack_attack.git_basic_auth | indent 2 }}
+    {{- end }}
 {{- end -}}
