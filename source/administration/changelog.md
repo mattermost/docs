@@ -15,6 +15,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Moved MFA to Team Edition.
  - Improved error handling of slash commands.
  - Optimize file attachment memory usage where possible.
+ - Added an option to send as message when an invalid slash command is entered in RHS chat.
+ - Added a channel notification setting for disabling channel mentions.
+ - Added an option to add user to a channel from the profile pop-over.
  
 ### Config
  - Adds ability to configure group display name and unique identifier
