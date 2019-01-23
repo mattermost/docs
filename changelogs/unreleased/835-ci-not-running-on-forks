@@ -1,5 +1,0 @@
----
-title: CI now does not run any tasks which the repository is not configured for, and would always fail for that reason.
-merge_request: 569
-author: Matthias van de Meent (Cofano Software Solutions)
-type: changed
