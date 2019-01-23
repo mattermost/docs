@@ -8,13 +8,16 @@ entry.
 
 - Move LFS and Upload temporary storage to ephemeral disk. !587 (Robert Jordan)
 
-### Changed (1 change)
+### Changed (2 changes, 1 of them is from the community)
 
+- CI now does not run any tasks which the repository is not configured for. !569 (Matthias van de Meent (Cofano Software Solutions))
 - Refine unicorn resource resqeusts. !586
 
-### Added (6 changes, 1 of them is from the community)
+### Added (8 changes, 3 of them are from the community)
 
 - Added option for annotations for use with IAM roles. !504 (Deniz Zoeteman)
+- Provide a way to skip certain steps in the backup-procedure. !574 (Matthias van de Meent (Cofano Software Solutions))
+- Add global and chart-local ingress.tls.enabled flags. !577 (Matthias van de Meent (Cofano Software Solutions))
 - Add the operator version label to the gitlab custom resource. !582
 - Added example values file for a minimal gke cluster. !589
 - Add examples for GCS object storage. !592
