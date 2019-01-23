@@ -1,5 +1,0 @@
----
-title: Define .metadata.namespace for resources which should have had that defined.
-merge_request: 573
-author: Matthias van de Meent (Cofano Software Solutions)
-type: fixed

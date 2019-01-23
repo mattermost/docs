@@ -119,9 +119,10 @@ entry.
 
 ## 1.3.0 (2018-11-22)
 
-### Fixed (1 change)
+### Fixed (2 changes, 1 of them is from the community)
 
 - Serve sidekiq assets directly from unicorn. !560
+- Define .metadata.namespace for resources which should have had that defined. !573 (Matthias van de Meent (Cofano Software Solutions))
 
 ### Changed (2 changes)
 
