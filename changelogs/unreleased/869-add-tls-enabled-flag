@@ -1,5 +1,0 @@
----
-title: Add global and chart-local ingress.tls.enabled flags
-merge_request: 577
-author: Matthias van de Meent (Cofano Software Solutions)
-type: added
