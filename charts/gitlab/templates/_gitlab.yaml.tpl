@@ -9,3 +9,9 @@ repositories:
   storages: # You must have at least a `default` storage path.
 {{ include "gitlab.gitaly.storages" . | indent 4 }}
 {{- end -}}
+
+{{- define "gitlab.appConfig.incoming_email" -}}
+incoming_email:
+  enabled: {{ eq .incomingEmail.enabled true }}
+  address: {{ .incomingEmail.address | quote }}
+{{- end -}}
