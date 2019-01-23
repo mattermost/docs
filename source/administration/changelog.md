@@ -6,6 +6,25 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.8
 
+### Improvements
+ - Made posting idempotent.
+ - Add support for sending a message to a different channel than where the slash command was issued from.
+ - Added server support for updating a plugin instead of having to remove and install as two separate actions.
+ - Added the ability to search users by role in System Console > Users.
+ - Added a CLI command to modify an outgoing webhook.
+ - Moved MFA to Team Edition.
+ - Improved error handling of slash commands.
+ - Optimize file attachment memory usage where possible.
+ 
+### Config
+ - Adds ability to configure group display name and unique identifier
+ 
+### API
+ - Added ability to search teams to plugin API.
+ - Added GetTeamStats to plugin API.
+ - Added a new API endpoint to get the bulk reactions for posts.
+ - Added plugin api for update user active method.
+ - Add GetFile API in app and plugin.
 
 
 ## Release v5.6
