@@ -1,6 +1,0 @@
----
-title: Ensure a newline before appending to registry/storage/config to make sure yaml
-  is rendered correctly
-merge_request: 621
-author:
-type: fixed
