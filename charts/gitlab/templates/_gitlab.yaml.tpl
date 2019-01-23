@@ -10,6 +10,12 @@ repositories:
 {{ include "gitlab.gitaly.storages" . | indent 4 }}
 {{- end -}}
 
+{{- define "gitlab.appConfig.incoming_email" -}}
+incoming_email:
+  enabled: {{ eq .incomingEmail.enabled true }}
+  address: {{ .incomingEmail.address | quote }}
+{{- end -}}
+
 {{- define "gitlab.appConfig.shell" -}}
 gitlab_shell:
   path: /home/git/gitlab-shell/
