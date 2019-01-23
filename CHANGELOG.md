@@ -105,6 +105,10 @@ entry.
 
 ## 1.3.2 (2018-12-04)
 
+### Added (1 change, 1 of them is from the community)
+
+- Add packages to the backups task list. !585 (Matthias van de Meent (Cofano Software Solutions))
+
 ### Other (1 change)
 
 - Update GitLab Version to 11.5.2.
