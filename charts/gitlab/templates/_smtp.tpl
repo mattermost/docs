@@ -25,6 +25,9 @@ ActionMailer::Base.smtp_settings = {
   {{- else }}
   enable_starttls_auto: false,
   {{- end }}
+  {{- if has .Values.global.smtp.tls (list true false) }}
+  tls: {{ .Values.global.smtp.tls }},
+  {{- end }}
   {{- if eq .Values.global.smtp.openssl_verify_mode "peer" }}
   openssl_verify_mode: 'peer'
   {{- else if eq .Values.global.smtp.openssl_verify_mode "none" }}

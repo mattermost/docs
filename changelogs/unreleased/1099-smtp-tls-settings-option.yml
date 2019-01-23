@@ -1,0 +1,5 @@
+---
+title: Add tls option to smtp settings
+merge_request:
+author: Igor Storozhuk
+type: added
