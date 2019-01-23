@@ -15,3 +15,19 @@ incoming_email:
   enabled: {{ eq .incomingEmail.enabled true }}
   address: {{ .incomingEmail.address | quote }}
 {{- end -}}
+
+{{- define "gitlab.appConfig.shell" -}}
+gitlab_shell:
+  path: /home/git/gitlab-shell/
+  hooks_path: /home/git/gitlab-shell/hooks/
+  upload_pack: true
+  receive_pack: true
+{{- end -}}
+
+{{- define "gitlab.appConfig.shell.ssh_port" -}}
+ssh_port: {{ include "gitlab.shell.port" . | int }}
+{{- end -}}
+
+{{- define "gitlab.appConfig.shell.secret_file" -}}
+secret_file: /etc/gitlab/shell/.gitlab_shell_secret
+{{- end -}}
