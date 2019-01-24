@@ -49,7 +49,7 @@ If you find a new integration or installer in the `Mattermost Facebook page <htt
       
       Here's the form: https://spinpunch.wufoo.com/forms/mattermost-integrations-and-installers/
       
-      We'd also like to welcome you to join our public integrations community channel on our nightly build server: https://pre-release.mattermost.com/core/channels/integrations
+      We'd also like to welcome you to join our public integrations community channel on our nightly build server: https://community.mattermost.com/core/channels/integrations
 
       Thanks for being a valued member of the Mattermost Community!
 
