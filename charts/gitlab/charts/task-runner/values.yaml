@@ -27,6 +27,11 @@ global:
     # port: '5432'
     # database: 'gitlabhq_production'
     # username: 'gitlab'
+    # ssl:
+    #   secret: gitlab-ssl-secret
+    #   clientKey: client-key.pem
+    #   clientCertificate: client-cert.pem
+    #   serverCA: server-ca.pem
     password: {}
   redis:
     password: {}

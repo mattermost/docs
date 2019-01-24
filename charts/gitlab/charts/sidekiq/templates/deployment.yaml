@@ -98,6 +98,7 @@ spec:
           image: {{ $initImage }}:{{ $initTag }}
           volumeMounts:
 {{ include "gitlab.extraVolumeMounts" $ | indent 10 }}
+{{ include "gitlab.psql.ssl.volumeMount" $ | indent 10 }}
           - name: sidekiq-config
             mountPath: /config
             readOnly: true
@@ -207,6 +208,7 @@ spec:
 {{ toYaml ( default $resources .resources ) | indent 12 }}
       volumes:
 {{ include "gitlab.extraVolumes" $ | indent 6 }}
+{{ include "gitlab.psql.ssl.volume" $ | indent 6 }}
 {{- if $metricsEnabled }}
       - name: sidekiq-metrics
         emptyDir:
