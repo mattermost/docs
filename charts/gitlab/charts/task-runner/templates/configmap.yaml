@@ -17,6 +17,7 @@ data:
       password: <%= File.read("/etc/gitlab/postgres/psql-password") %>
       host: {{ template "gitlab.psql.host" . }}
       port: {{ template "gitlab.psql.port" . }}
+{{- include "gitlab.psql.ssl.config" . | indent 6 }}
   resque.yml.erb: |
     production:
       # Redis (single instance)
@@ -120,4 +121,6 @@ data:
     else
       mv /init-secrets/objectstorage/.s3cfg /init-secrets/.s3cfg
     fi
+    secret_dir="/init-secrets"
+{{- include "gitlab.psql.ssl.initScript" . | indent 4 }}
 {{- end }}

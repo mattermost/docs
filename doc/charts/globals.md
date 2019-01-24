@@ -223,6 +223,23 @@ global:
 For further details on these settings, see the documentation within the
 [unicorn chart](gitlab/unicorn/index.md#postgresql)
 
+If you want to connect Gitlab with the PostgreSQL database over mutual TLS,
+create a secret containing the client key, client certificate and server
+certificate authority as different secret keys. Then describe the secret's
+structure using the mapping *global.psql.ssl*.
+
+```YAML
+global:
+  psql:
+    host: db.example.com
+    # ... further settings like in the previous example ...
+    ssl:
+      secret: db-example-ssl-secrets # Name of the secret
+      clientKey: key.pem             # Secret key of the certificate's key
+      clientCertificate: cert.pem    # Secret key storing the certificate
+      serverCA: server-ca.pem        # Secret key containing the CA for the database server
+```
+
 ## Configure Redis settings
 
 The GitLab global Redis settings are located under the `global.redis` key.

@@ -1,0 +1,5 @@
+---
+title: "Adds configuration options for connecting Gitlab with database using mutual TLS."
+merge_request: 626
+author: Lukas Grundmann
+type: added

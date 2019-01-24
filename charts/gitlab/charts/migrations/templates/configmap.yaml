@@ -21,6 +21,7 @@ data:
       #   hosts:
       #     - host1.example.com
       #     - host2.example.com
+{{- include "gitlab.psql.ssl.config" . | indent 6 }}
   resque.yml.erb: |
     production:
       # Redis (single instance)
@@ -40,6 +41,8 @@ data:
     cp /init-config/postgres/psql-password  /init-secrets/postgres/psql-password
     cp /init-config/rails-secrets/secrets.yml /init-secrets/rails-secrets/secrets.yml
     cp /init-config/migrations/initial_root_password /init-secrets/migrations/initial_root_password
+    secret_dir="/init-secrets" 
+{{- include "gitlab.psql.ssl.initScript" . | indent 4 }}
 {{- if .Values.global.operator.enabled }}
 ---
 apiVersion: v1

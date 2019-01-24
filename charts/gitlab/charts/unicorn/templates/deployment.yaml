@@ -63,6 +63,7 @@ spec:
           image: {{ .Values.init.image }}:{{ .Values.init.tag }}
           volumeMounts:
 {{ include "gitlab.extraVolumeMounts" . | indent 10 }}
+{{ include "gitlab.psql.ssl.volumeMount" . | indent 10 }}
           - name: unicorn-config
             mountPath: /config-unicorn
             readOnly: true
@@ -217,6 +218,7 @@ spec:
 {{ toYaml .Values.workhorse.resources | indent 12 }}
       volumes:
 {{ include "gitlab.extraVolumes" . | indent 6 }}
+{{ include "gitlab.psql.ssl.volume" . | indent 6 }}
 {{- if .Values.metrics.enabled }}
       - name: unicorn-metrics
         emptyDir:
