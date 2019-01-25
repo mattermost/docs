@@ -5,7 +5,7 @@
 
 function validate_required_tools(){
   if [ -z "$PROJECT" ]; then
-    echo "$PROJECT needs to be set to your project id";
+    echo "\$PROJECT needs to be set to your project id";
     exit 1;
   fi
 
