@@ -133,3 +133,56 @@ Load was tested using https://gitlab.com/andrewn/gitlab-load-kit and a custom ex
 - **Recommended Limits**
   * cpu: > 1 (greater than stress task)
   * memory: > 840M (greater than stress task)
+
+
+### GitLab Shell
+
+Load was tested using a bash loop calling  `nohup git clone <project> <random-path-name>` in order to have some concurrency.
+In future tests we will try to include sustained concurrent load, to better match the types of tests we have done for the other services.
+
+- **Idle values**
+  * 0 tasks, 2 pods
+    - cpu: 0
+    - memory: 5M
+
+
+- **Minimal Load**
+  * 1 tasks (one empty clone), 2 pods
+    - cpu: 0
+    - memory: 5M
+
+
+- **Average Loads**
+   * 5 concurrent clones, 2 pods
+     - cpu: 0.1
+     - memory: 5M
+   * 20 concurrent clones, 2 pods
+     - cpu: 0.08
+     - memory: 6M
+
+
+- **Stressful Task**
+  * SSH clone the linux kernel (17MB/s)
+    - cpu: 0.28
+    - memory: 17M
+  * SSH push the linux kernel (2MB/s)
+    - cpu: 0.14
+    - memory: 13M
+    - *Upload connection speed was likely a factor during our tests*
+
+
+- **Heavy Load**
+  * 100 concurrent clones, 4 pods
+    - cpu: 0.11
+    - memory: 7M
+
+
+- **Default Requests**
+  * cpu: 0 (from minimal load)
+  * memory: 6M (from average load)
+  * target cpu average: 0.1 (from average loads)
+
+
+- **Recommended Limits**
+  * cpu: > 0.3 (greater than stress task)
+  * memory: > 20M (greater than stress task)
