@@ -18,27 +18,28 @@ The `gitlab-shell` chart is configured in two parts: external services, and char
 
 The `gitlab-shell` sub-chart provides a SSH server configured for Git SSH access to GitLab.
 
-| Parameter            | Description                              | Default                                        |
-| ---                  | ---                                      | ---                                            |
-| replicaCount         | Shell replicas                           | 1                                              |
-| image.repository     | Shell image repository                   | registry.com/gitlab-org/build/cng/gitlab-shell |
-| image.tag            | Shell image tag                          | latest                                         |
-| image.pullPolicy     | Shell image pull policy                  | Always                                         |
-| image.pullSecrets    | Secrets for the image repository         |                                                |
-| init.image           | initContainer image                      | busybox                                        |
-| init.tag             | initContainer image tag                  | latest                                         |
-| service.name         | Shell service name                       | gitlab-shell                                   |
-| service.type         | Shell service type                       | ClusterIP                                      |
-| service.externalPort | Shell exposed port                       | 22                                             |
-| service.internalPort | Shell internal port                      | 22                                             |
-| enabled              | Shell enable flag                        | true                                           |
-| unicorn.serviceName  | Unicorn service name                     | unicorn                                        |
-| redis.serviceName    | Redis service name                       | redis                                          |
-| extraInitContainers  | List of extra init containers to include |                                                |
-| extraContainers      | List of extra containers to include      |                                                |
-| extraVolumes         | List of extra volumes to create          |                                                |
-| extraVolumeMounts    | List of extra volumes mountes to do      |                                                |
-| annotations          | Pod annotations                          |                                                |
+| Parameter              | Description                              | Default                                        |
+| ---                    | ---                                      | ---                                            |
+| replicaCount           | Shell replicas                           | 1                                              |
+| image.repository       | Shell image repository                   | registry.com/gitlab-org/build/cng/gitlab-shell |
+| image.tag              | Shell image tag                          | latest                                         |
+| image.pullPolicy       | Shell image pull policy                  | Always                                         |
+| image.pullSecrets      | Secrets for the image repository         |                                                |
+| init.image             | initContainer image                      | busybox                                        |
+| init.tag               | initContainer image tag                  | latest                                         |
+| service.name           | Shell service name                       | gitlab-shell                                   |
+| service.type           | Shell service type                       | ClusterIP                                      |
+| service.externalPort   | Shell exposed port                       | 22                                             |
+| service.internalPort   | Shell internal port                      | 22                                             |
+| hpa.targetAverageValue | Set the autoscaling target value         | 100m                                           |
+| enabled                | Shell enable flag                        | true                                           |
+| unicorn.serviceName    | Unicorn service name                     | unicorn                                        |
+| redis.serviceName      | Redis service name                       | redis                                          |
+| extraInitContainers    | List of extra init containers to include |                                                |
+| extraContainers        | List of extra containers to include      |                                                |
+| extraVolumes           | List of extra volumes to create          |                                                |
+| extraVolumeMounts      | List of extra volumes mountes to do      |                                                |
+| annotations            | Pod annotations                          |                                                |
 
 ## Chart configuration examples
 ### image.pullSecrets
@@ -66,7 +67,7 @@ Below is an example use of `annotations`
 ```YAML
 annotations:
   kubernetes.io/example-annotation: annotation-value
-``` 
+```
 
 ## External Services
 
