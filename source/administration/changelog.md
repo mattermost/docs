@@ -10,21 +10,40 @@ Release Date 16/02/2019
 
 ### Highlights
 
+ - Added support for emoji picker for mobile web view.
+ - Moved MFA to Team Edition.
 
 ### Improvements
- - Made posting idempotent.
- - Add support for sending a message to a different channel than where the slash command was issued from.
- - Added server support for updating a plugin instead of having to remove and install as two separate actions.
+
+#### Notifications
+ - Added a channel notification setting for disabling channel mentions.
+ 
+#### Administration
+ - Added an option to add user to a channel from the profile pop-over.
  - Added the ability to search users by role in System Console > Users.
  - Added a CLI command to modify an outgoing webhook.
- - Moved MFA to Team Edition.
+
+#### Performance
+ - Made posting idempotent.
+
+#### Slash Commands
+ - Add support for sending a message to a different channel than where the slash command was issued from.
  - Improved error handling of slash commands.
- - Optimize file attachment memory usage where possible.
  - Added an option to send as message when an invalid slash command is entered in RHS chat.
- - Added a channel notification setting for disabling channel mentions.
- - Added an option to add user to a channel from the profile pop-over.
+
+#### Plugins
+ - Added server support for updating a plugin instead of having to remove and install as two separate actions.
+ 
+#### Attachments
+ - Optimize file attachment memory usage where possible.
+ 
+#### Integrations 
+ - Allow "true"/"false" for bool values in webhook payload.
 
 ### Bug Fixes
+ 
+ - Fixed an issue where "[user] is typing ..." was not removed when message was composed and sent very quickly.
+ - 
 
 ### Compatibility
 
@@ -35,6 +54,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
   
   - Added ability to configure group display name and unique identifier.
+  - Integrate image proxy into server and switch on by default.
 
 ### API Changes
 
