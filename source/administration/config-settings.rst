@@ -1468,7 +1468,7 @@ Require Email Verification
 
 Email Invite Salt
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-32-character (to be randomly generated via System Console) salt added to signing of email invites. Click **Regenerate** to create new salt.
+32-character (to be randomly generated via System Console) salt added to signing of email invitation links. Email invitation links expire after 24 hours except if the salt is regenerated, then existing email invitation links invalidate immediately.  Click **Regenerate** to create new salt.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"InviteSalt": ""`` with string input.                                                                                    |
