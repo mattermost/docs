@@ -6,6 +6,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.8
 
+Release Date 16/02/2019
+
+### Highlights
+
+
 ### Improvements
  - Made posting idempotent.
  - Add support for sending a message to a different channel than where the slash command was issued from.
@@ -18,16 +23,49 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added an option to send as message when an invalid slash command is entered in RHS chat.
  - Added a channel notification setting for disabling channel mentions.
  - Added an option to add user to a channel from the profile pop-over.
+
+### Bug Fixes
+
+### Compatibility
+
+### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
  
-### Config
- - Adds ability to configure group display name and unique identifier
- 
-### API
+#### Changes to Team Edition and Enterprise Edition:
+  
+  - Added ability to configure group display name and unique identifier.
+
+### API Changes
+
+#### RESTful API v4 Changes
  - Added ability to search teams to plugin API.
  - Added GetTeamStats to plugin API.
  - Added a new API endpoint to get the bulk reactions for posts.
  - Added plugin api for update user active method.
  - Add GetFile API in app and plugin.
+
+#### Database Changes
+
+#### Websocket Event Changes
+
+### Known Issues
+
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Custom Terms of Service returns on refresh after clicking to agree.
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
+
+### Contributors
 
 
 ## Release v5.6
