@@ -42,8 +42,8 @@ resources:
   #  cpu: 100m
   #  memory: 128Mi
   requests:
-    cpu: 50m
-    memory: 32Mi
+    cpu: 0
+    memory: 6M
 maxUnavailable: 1
 minReplicas: 2
 maxReplicas: 10
