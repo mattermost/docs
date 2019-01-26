@@ -89,7 +89,7 @@ Managing Help Wanted Issues
 
 Once a Help Wanted issue is added, the PM on community rotation is responsible for:
 
-- answering questions from community members, which get automatically posted in the `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`__
+- answering questions from community members, which get automatically posted in the `Community Heartbeat channel <https://community.mattermost.com/core/channels/community-heartbeat>`__
 - following up with a community member if there hasn't been a response for more than two weeks
 
 Closing Help Wanted Issues
