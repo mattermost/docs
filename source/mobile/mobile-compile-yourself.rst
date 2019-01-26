@@ -3,11 +3,11 @@ Build Your Own Version of the Mattermost Mobile Apps
 
 To deploy in production with privately-hosted mobile apps compiled by your organization in an Enterprise App Store:
 
-1. Compile your own iOS and Android mobile applications from the `open source repository <https://github.com/mattermost/mattermost-mobile>`_
+1. Compile your own iOS and Android mobile applications from the `open source repository <https://github.com/mattermost/mattermost-mobile>`__
   - See the :doc:`mobile developer guide <../developer/mobile-developer-setup>` for help setting up your environment and building the apps
-  - Note: If your server version is not supported by the Mattermost apps, you will need to use the Mattermost Classic app repositories for `iOS <https://github.com/mattermost/mattermost-ios-classic>`_ and `Android  <https://github.com/mattermost/mattermost-android-classic>`_
+  - Note: If your server version is not supported by the Mattermost apps, you will need to use the Mattermost Classic app repositories for `iOS <https://github.com/mattermost/mattermost-ios-classic>`__ and `Android  <https://github.com/mattermost/mattermost-android-classic>`__
 
-2. Compile your own Mattermost Push Notification Service (MPNS) from the `open source repository <https://github.com/mattermost/push-proxy>`_
+2. Compile your own Mattermost Push Notification Service (MPNS) from the `open source repository <https://github.com/mattermost/push-proxy>`__
   - To secure your push notifications, make sure to use encrypted TLS connections between:
 
     - MPNS and Apple Push Notification Service
@@ -34,4 +34,4 @@ To deploy in production with privately-hosted mobile apps compiled by your organ
 
 6. Deploy to an Enterprise App Store
 
-7. Confirm you're subscribed to `Mattermost Security Bulletins <https://about.mattermost.com/security-bulletin/>`_. In future, when notified of security updates, apply them promptly. 
+7. Confirm you're subscribed to `Mattermost Security Bulletins <https://about.mattermost.com/security-bulletin/>`__. In future, when notified of security updates, apply them promptly. 

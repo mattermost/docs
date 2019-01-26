@@ -6,7 +6,7 @@ In most cases you can downgrade Mattermost Server using the same steps as :doc:`
 Downgrade from 5.0 to 4.10
 ---------------------------
 
-During the version 5.0 upgrade process, a migration is run to enable new features of the `advanced permissions system <https://docs.mattermost.com/deployment/advanced-permissions.html>`_. This changes the database in ways that result in it no longer being compatible with Mattermost server 4.10. If you need to downgrade from 5.0 or later to 4.10, it is necessary to follow the steps below.
+During the version 5.0 upgrade process, a migration is run to enable new features of the `advanced permissions system <https://docs.mattermost.com/deployment/advanced-permissions.html>`__. This changes the database in ways that result in it no longer being compatible with Mattermost server 4.10. If you need to downgrade from 5.0 or later to 4.10, it is necessary to follow the steps below.
 
 You should gather the following information before starting the upgrade:
 

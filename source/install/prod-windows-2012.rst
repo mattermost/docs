@@ -5,7 +5,7 @@ Production Install on Windows Server (Unofficial)
 
 Install Mattermost in production mode on one, two or three machines.
 
-.. attention:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated. <https://github.com/mattermost/docs/issues/360>`_
+.. attention:: This unofficial guide is maintained by the Mattermost community and this deployment configuration is not yet officially supported by Mattermost, Inc. `Community testing, feedback and improvements are welcome and greatly appreciated. <https://github.com/mattermost/docs/issues/360>`__
  
 .. contents::
   :backlinks: top

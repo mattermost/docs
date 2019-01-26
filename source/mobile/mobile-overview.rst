@@ -27,7 +27,7 @@ This option is recommended for:
 Use an EMM provider
 --------------------
 
-To meet other security and compliance policies, you can :doc:`deploy the Mattermost apps with any EMM provider <mobile-appconfig>` that supports `AppConfig <https://www.appconfig.org/members/>`_, such as MobileIron, Blackberry UEM, or Airwatch. You will still need to choose either the App Store/Google Play versions or apps compiled yourself to use in conjunction with the EMM provider.
+To meet other security and compliance policies, you can :doc:`deploy the Mattermost apps with any EMM provider <mobile-appconfig>` that supports `AppConfig <https://www.appconfig.org/members/>`__, such as MobileIron, Blackberry UEM, or Airwatch. You will still need to choose either the App Store/Google Play versions or apps compiled yourself to use in conjunction with the EMM provider.
 
 This option is recommended for:
 

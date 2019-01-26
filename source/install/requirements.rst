@@ -35,6 +35,8 @@ Desktop Apps
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
 
+`*` Integrated Windows Authentication is not supported by Mattermost desktop apps. `Follow these instructions to configure IWA to fall back to forms-based authentication <https://docops.ca.com/ca-single-sign-on/12-7/en/configuring/policy-server-configuration/authentication-schemes/authentication-chaining/configure-iwa-fallback-to-forms-using-authentication-chain>`__.
+
 PC Web
 ^^^^^^^^^^^^^^^^^
 
@@ -57,6 +59,8 @@ Mobile Apps
 
     "iOS", "iPhone 5s devices and later with iOS 11+"
     "Android", "Android devices with Android 8+"
+
+`*` Integrated Windows Authentication is not supported by Mattermost mobile apps. `Follow these instructions to configure IWA to fall back to forms-based authentication <https://docops.ca.com/ca-single-sign-on/12-7/en/configuring/policy-server-configuration/authentication-schemes/authentication-chaining/configure-iwa-fallback-to-forms-using-authentication-chain>`__.
 
 Mobile Web
 ^^^^^^^^^^^^^^^^^^^^^
@@ -81,7 +85,7 @@ Mattermost Server Operating System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Ubuntu 14.04, Ubuntu 16.04, Debian Jessie, CentOS 6.6+, CentOS 7.1+, RedHat Enterprise Linux 6.6+, RedHat Enterprise Linux 7.1+, Oracle Linux 6.6+, Oracle Linux 7.1+
-- Using Mattermost `Docker image <https://docs.mattermost.com/install/prod-docker.html>`_ on a Docker-compatible operating system (Linux-based OS is still recommended)
+- Using Mattermost `Docker image <https://docs.mattermost.com/install/prod-docker.html>`__ on a Docker-compatible operating system (Linux-based OS is still recommended)
 
 While community support exists for Fedora, FreeBSD and Arch Linux, Mattermost does not currently include production support for these platforms.
 
@@ -119,9 +123,9 @@ Hardware Requirements
 
 Usage of CPU, RAM and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
 
-Moreover, memory requirements can be driven by peak file sharing activity. Recommendation is based on default 50 MB maximum file size, which can be `adjusted from the System Console <https://docs.mattermost.com/administration/config-settings.html#maximum-file-size>`_. Changing this number may change memory requirements.
+Moreover, memory requirements can be driven by peak file sharing activity. Recommendation is based on default 50 MB maximum file size, which can be `adjusted from the System Console <https://docs.mattermost.com/administration/config-settings.html#maximum-file-size>`__. Changing this number may change memory requirements.
 
-For deployments larger than 2,000 users, it is recommended to use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`_.
+For deployments larger than 2,000 users, it is recommended to use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`__.
 
 Hardware Requirements for Team Deployments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -139,21 +143,21 @@ Hardware Requirements for Enterprise Deployments (Multi-Server)
 Scale Requirements
 ^^^^^^^^^^^^^^^^^^^^
 
-For Enterprise Edition deployments with a multi-server setup, see `our scaling guide <https://docs.mattermost.com/deployment/scaling.html>`_.
+For Enterprise Edition deployments with a multi-server setup, see `our scaling guide <https://docs.mattermost.com/deployment/scaling.html>`__.
 
-It is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs. You can use the Mattermost open source load testing framework to simulate usage of your system: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`_.
+It is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs. You can use the Mattermost open source load testing framework to simulate usage of your system: `https://github.com/mattermost/mattermost-load-test <https://github.com/mattermost/mattermost-load-test>`__.
 
-Mattermost's `performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`_ tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct. 
+Mattermost's `performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`__ tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct. 
 
 System Requirements
 ^^^^^^^^^^^^^^^^^^^^
 
 For Enterprise Edition deployments with a multi-server setup, we highly recommend the following systems to support your Mattermost deployment:
 
-   - Prometheus to track system health of your Mattermost deployment, through  `performance monitoring feature <https://docs.mattermost.com/deployment/metrics.html>`_ available in Enterprise Edition E20.
-   - Grafana to visualize the system health metrics collected by Prometheus with the  `performance monitoring feature <https://docs.mattermost.com/deployment/metrics.html>`_. Grafana 5.0.0 and later is recommended.
-   - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 5.0 and later is supported. `Learn more here <https://docs.mattermost.com/deployment/elasticsearch.html>`_.
-   - Minio to support a cloud storage system compatible with Amazon S3. Learn more about file storage configuration options `in our documentation <https://docs.mattermost.com/administration/config-settings.html#files>`_.
+   - Prometheus to track system health of your Mattermost deployment, through  `performance monitoring feature <https://docs.mattermost.com/deployment/metrics.html>`__ available in Enterprise Edition E20.
+   - Grafana to visualize the system health metrics collected by Prometheus with the  `performance monitoring feature <https://docs.mattermost.com/deployment/metrics.html>`__. Grafana 5.0.0 and later is recommended.
+   - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 5.0 and later is supported. `Learn more here <https://docs.mattermost.com/deployment/elasticsearch.html>`__.
+   - Minio to support a cloud storage system compatible with Amazon S3. Learn more about file storage configuration options `in our documentation <https://docs.mattermost.com/administration/config-settings.html#files>`__.
 
 Alternate Storage Calculations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

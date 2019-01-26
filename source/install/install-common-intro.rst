@@ -4,4 +4,4 @@ For the database, you can install either MySQL or PostgreSQL. The proxy is NGINX
 
 .. note::
   If you have any problems installing Mattermost, see
-  the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_. To submit an improvement or correction, click  **Edit** at the top of this page.
+  the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__. To submit an improvement or correction, click  **Edit** at the top of this page.

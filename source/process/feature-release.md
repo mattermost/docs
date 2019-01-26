@@ -236,6 +236,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Verify the hashes (SHA-1, SHA-256 and md5) and GPG signatures are correct for both Team Edition and Enterprise Edition.
     - Test upgrade from previous version to current version, following the [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with database upgrades on both MySQL and Postgres
     - Test upgrade from Team Edition to Enterprise edition based on the [Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-team-edition-to-enterprise-edition)
+    - Test fresh install of current version, following the [Install Guide](https://docs.mattermost.com/guides/administrator.html#installing-mattermost)
     - Review any changes made to install guides, and test if necessary
     - Ensure [Security Policies](https://docs.mattermost.com/process/security.html) page has been updated
     - Update dependancies after release branch is cut in `mattermost-server`, `mattermost-webapp`, `desktop`, `mattermost-mobile` and `mattermost-redux`
@@ -276,8 +277,8 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
             - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
        - The week RC is cut:
             - [Loadtest x.x release candidate compared to x.x release](https://mattermost.atlassian.net/browse/MM-12532)
-       - Release week (for GitLab dev owner)
-            - [Test Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/PLT-2197)
+       - The week RC is cut (for GitLab dev owner):
+            - Test RC1 with the latest GitLab build during release testing cycle
        - Release week (for dependancies owner)
             - Upgrade dependancies for Webapp, Server and Redux
        - Week after release (for GitLab dev owner)

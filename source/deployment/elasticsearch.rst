@@ -3,7 +3,7 @@ Elasticsearch (E20)
 
 *Available in Enterprise Edition E20.*
 
-`Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`_ is a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment <https://docs.mattermost.com/deployment/cluster.html>`_.
+`Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html>`__ is a distributed, RESTful search engine supporting highly efficient database searches in a `cluster environment <https://docs.mattermost.com/deployment/cluster.html>`__.
 
 .. toctree::
     :maxdepth: 2
@@ -23,10 +23,10 @@ The default Mattermost database search starts to show performance degradation at
 
 Setting up an Elasticsearch Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The setup process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`_. Elasticsearch v5.0 and later is supported.
+The setup process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`__. Elasticsearch v5.0 and later is supported.
 
 .. note::
-  You must install the `ICU Analyzer Plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`_ when setting up Elasticsearch for Mattermost.
+  You must install the `ICU Analyzer Plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`__ when setting up Elasticsearch for Mattermost.
 
 Configuring Elasticsearch in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -52,7 +52,7 @@ Follow these steps to connect your Elasticsearch server to Mattermost and genera
 7. Restart the Mattermost server.
 
  .. note::
-    Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the `config.json`. Please see `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#elasticsearch>`_.
+    Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the `config.json`. Please see `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#elasticsearch>`__.
 
 Limitations
 ------------
@@ -61,7 +61,7 @@ Limitations
 
   - "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if", "in", "into", "is", "it", "no", "not", "of", "on", "or", "such", "that", "the", "their", "then", "there", "these", "they", "this", "to", "was", "will", "with"  
 
-2. Searching stop words in quotes returns more results than just the searched terms (`ticket <https://mattermost.atlassian.net/browse/PLT-7314>`_).
+2. Searching stop words in quotes returns more results than just the searched terms (`ticket <https://mattermost.atlassian.net/browse/PLT-7314>`__).
 3. AWS Elasticsearch implementations have a limit of 1000 days of post history that is searchable.
 
 Frequently Asked Questions (FAQ)
@@ -77,6 +77,6 @@ The current implementation of Elasticsearch matches the search features currentl
 
 How do I monitor system health of an Elasticsearch server?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-You can use this Prometheus exporter to monitor `various metrics <https://github.com/justwatchcom/elasticsearch_exporter#metrics>`_ about Elasticsearch: `justwatchcom/elasticsearch_exporter <https://github.com/justwatchcom/elasticsearch_exporter>`_
+You can use this Prometheus exporter to monitor `various metrics <https://github.com/justwatchcom/elasticsearch_exporter#metrics>`__ about Elasticsearch: `justwatchcom/elasticsearch_exporter <https://github.com/justwatchcom/elasticsearch_exporter>`__
 
-You may also refer to this excellent `article about Elasticsearch performance monitoring <https://www.datadoghq.com/blog/monitor-elasticsearch-performance-metrics/#key-elasticsearch-performance-metrics-to-monitor>`_. It is not written specifically for Prometheus which `Mattermost's performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`_ system uses, but has several tips and best practices.
+You may also refer to this excellent `article about Elasticsearch performance monitoring <https://www.datadoghq.com/blog/monitor-elasticsearch-performance-metrics/#key-elasticsearch-performance-metrics-to-monitor>`__. It is not written specifically for Prometheus which `Mattermost's performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`__ system uses, but has several tips and best practices.

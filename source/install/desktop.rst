@@ -9,16 +9,16 @@ Mattermost desktop applications are available for Windows, Mac and Linux operati
  - (Windows) Add Mattermost to Start menu, taskbar and system tray
  - (Windows/Mac) Deep link to the desktop app via mattermost:// protocol if app is already installed
  - (Mac) Add Mattermost to the applications Dock
- - (Linux) ``Desktop Entry`` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`_
+ - (Linux) ``Desktop Entry`` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`__
 
 Below is a list of additional resources:
 
- - `Guide for configuring your desktop app experience <https://docs.mattermost.com/help/apps/desktop-guide.html>`_
- - `Changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`_
+ - `Guide for configuring your desktop app experience <https://docs.mattermost.com/help/apps/desktop-guide.html>`__
+ - `Changelog <https://docs.mattermost.com/help/apps/desktop-changelog.html>`__
  - Contributor’s guide (coming soon)
- - `Source code <https://github.com/mattermost/desktop>`_
+ - `Source code <https://github.com/mattermost/desktop>`__
 
-You can `download the apps directly from our downloads page <https://about.mattermost.com/downloads/>`_. You may also use the following installation guides for Windows, Mac and Linux.
+You can `download the apps directly from our downloads page <https://about.mattermost.com/downloads/>`__. You may also use the following installation guides for Windows, Mac and Linux.
 
 .. contents::
     :backlinks: top
@@ -28,8 +28,8 @@ Windows 10+, Windows 8.1+, Windows 7+
 
 1. Download latest version of the Mattermost desktop app:
 
-   - `64-bit version of Windows <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win64.exe>`_
-   - `32-bit version of Windows <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win32.exe>`_
+   - `64-bit version of Windows <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win64.exe>`__
+   - `32-bit version of Windows <https://releases.mattermost.com/desktop/4.1.2/mattermost-setup-4.1.2-win32.exe>`__
 
 2. From the ``\Downloads`` directory right-click on the file ``mattermost-setup-4.1.2...`` and select **Open**.
 
@@ -38,13 +38,13 @@ This will start an installer for the app. Once finished, the Mattermost desktop 
 macOS 10.9+
 --------------------------------------------------
 
-1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-mac.zip>`_.
+1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-mac.zip>`__.
 
 2. Double-click the download to expand the archive.
 
 3. Drag the extracted file to the ``Applications`` folder.
 
-`Homebrew <https://brew.sh>`_ users can install with ``brew cask install mattermost``.
+`Homebrew <https://brew.sh>`__ users can install with ``brew cask install mattermost``.
 
 Linux
 --------------------------------------------------
@@ -55,9 +55,9 @@ Generic Linux package
 1. Download latest version of the Mattermost desktop app:
 
   64-bit systems:
-   `mattermost-desktop-4.1.2-linux-x64.tar.gz <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-x64.tar.gz>`_
+   `mattermost-desktop-4.1.2-linux-x64.tar.gz <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-x64.tar.gz>`__
   32-bit systems:
-   `mattermost-desktop-4.1.2-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-ia32.tar.gz>`_
+   `mattermost-desktop-4.1.2-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-ia32.tar.gz>`__
 
 2. Extract the archive to a convenient location. You can then execute ``mattermost-desktop``, which is located inside the extracted directory.
 
@@ -71,9 +71,9 @@ Unofficial, community-driven .deb packages are available.
 1. Download the latest version of the Mattermost desktop app:
 
   64-bit systems
-   `mattermost-desktop-4.1.2-linux-amd64.deb <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-amd64.deb>`_
+   `mattermost-desktop-4.1.2-linux-amd64.deb <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-amd64.deb>`__
   32-bit systems
-   `mattermost-desktop-4.1.2-linux-i386.deb <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-i386.deb>`_
+   `mattermost-desktop-4.1.2-linux-i386.deb <https://releases.mattermost.com/desktop/4.1.2/mattermost-desktop-4.1.2-linux-i386.deb>`__
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
@@ -87,12 +87,12 @@ Unofficial, community-driven .deb packages are available.
 Arch Linux-based systems
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-To install the desktop client on Arch Linux, see the `Mattermost page <https://wiki.archlinux.org/index.php/Mattermost>`_ on the Arch Linux wiki.
+To install the desktop client on Arch Linux, see the `Mattermost page <https://wiki.archlinux.org/index.php/Mattermost>`__ on the Arch Linux wiki.
 
 Snapcraft package
 ~~~~~~~~~~~~~~~~~
 
-A snap is available for systems that have Snapcraft installed. Snapcraft is installed by default on Ubuntu 16.04 and later, but for most other Linux distributions you can install it manually. To install Snapcraft, see `Install snapd <https://snapcraft.io/docs/core/install>`_ on the Snapcraft website.
+A snap is available for systems that have Snapcraft installed. Snapcraft is installed by default on Ubuntu 16.04 and later, but for most other Linux distributions you can install it manually. To install Snapcraft, see `Install snapd <https://snapcraft.io/docs/core/install>`__ on the Snapcraft website.
 
 1. At the command line, execute the following command:
 
@@ -104,16 +104,16 @@ Troubleshooting
 --------------------------------------------------
 
 "Installation has failed" dialog
-    The app data might be corrupted - remove all the files in ``C:\Users...\AppData\Local\mattermost``, then try re-installing the app.
+    The app data might be corrupted - remove all the files in ``%LOCALAPPDATA%\mattermost``, then try re-installing the app.
 
 Desktop App window is black and doesn't load the page
-    1. First, make sure you have installed the latest Desktop App version `from our website <https://about.mattermost.com/download/#mattermostApps>`_. Check your app version from **Help > Version**.
+    1. First, make sure you have installed the latest Desktop App version `from our website <https://about.mattermost.com/download/#mattermostApps>`__. Check your app version from **Help > Version**.
     2. Try to clear cache and reload the app from **View** > **Clear Cache and Reload** or by pressing CTRL/CMD+SHIFT+R.
     3. Quit the app and restart it to see if the issue clears.
     4. Disable GPU hardware acceleration from **File > Settings** on Windows and Linux, **Mattermost > Settings** on macOS, by deselecting **Use GPU hardware acceleration**.
     5. If you are using a special video driver such as Optimus, try disabling it to see if the problem is resolved.
 
-    If none of the above steps resolve the issue, please open a new ticket in the `Mattermost Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`_.
+    If none of the above steps resolve the issue, please open a new ticket in the `Mattermost Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__.
 
 Desktop App is not visible, but you can see the Mattermost icon in the Task Bar
   This issue can occur on Windows in a multiple-monitor setup. When you disconnect the monitor that Mattermost is displayed on, Mattermost continues to display at screen coordinates that no longer exist.
@@ -122,30 +122,31 @@ Desktop App is not visible, but you can see the Mattermost icon in the Task Bar
 
   **To reset the Desktop App screen location**:
     1. If the Desktop App is running, right-click the Mattermost icon in the task bar and click **Close Window**.
-    2. Open Windows File Explorer, and navigate to the ``%USERPROFILE%\AppData\Roaming\Mattermost`` folder.
+    2. Open Windows File Explorer, and navigate to the ``%APPDATA%\Mattermost`` folder.
     3. Delete the file ``bounds-info.json``
 
 Desktop App constantly refreshes the page
   This issue can occur when localStorage has an unexpected state. To resolve the issue:
 
-    - Windows: Open Windows File Explorer, and navigate to the ``%USERPROFILE%\AppData\Roaming\Mattermost`` folder, then delete the ``Local Storage`` folder.
+    - Windows: Open Windows File Explorer, and navigate to the ``%APPDATA%\Mattermost`` folder, then delete the ``Local Storage`` folder.
     - Mac: Open Finder, and navigate to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``Local Storage`` folder.
     - Linux: Open the file manager, and navigate to the ``~/.config/Mattermost`` folder, then delete the ``Local Storage`` folder.
       
 Desktop App constantly asks to log in to Mattermost server
   This issue can occur after a crash or unexpected shutdown of the Desktop app that causes the app data to be corrupted. To resolve the issue:
 
+
     - Windows: Open Windows File Explorer, and navigate to the ``%USERPROFILE%\AppData\Roaming\Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
     - Mac: Open Finder, and navigate to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
     - Linux: Open the file manager, and navigate to the ``~/.config/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
 
 
-For additional troubleshooting tips, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`_.
+For additional troubleshooting tips, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__.
 
 Reporting Issues
 --------------------------------------------------
 
-When reporting bugs found in the Mattermost Desktop app, it is helpful to include the contents of the Developer Tools Console along with `the information on this page <https://docs.mattermost.com/process/support.html#general-questions-for-any-issues>`_. To access the Developer Tools Console, follow these instructions:
+When reporting bugs found in the Mattermost Desktop app, it is helpful to include the contents of the Developer Tools Console along with `the information on this page <https://docs.mattermost.com/process/support.html#general-questions-for-any-issues>`__. To access the Developer Tools Console, follow these instructions:
 
   1. In the menu bar, go to ``View`` > ``Toggle Developer Tools``.
   2. Select the ``Console`` tab.

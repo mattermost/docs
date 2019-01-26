@@ -15,9 +15,9 @@ Follow these steps to queue an asset for a new community project:
 Integrations and Installers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you find a new integration or installer in the `Mattermost Facebook page <https://www.facebook.com/MattermostHQ/?fref=ts>`_, `Mattermost Twitter page <https://twitter.com/mattermosthq>`_, `GitHub <https://github.com/search?utf8=%E2%9C%93&q=mattermost>`_ or elsewhere you feel Mattermost should promote:
+If you find a new integration or installer in the `Mattermost Facebook page <https://www.facebook.com/MattermostHQ/?fref=ts>`__, `Mattermost Twitter page <https://twitter.com/mattermosthq>`__, `GitHub <https://github.com/search?utf8=%E2%9C%93&q=mattermost>`__ or elsewhere you feel Mattermost should promote:
 
-1. Post a request to the `Contributors team "Integrations and Apps" channel <https://pre-release.mattermost.com/core/channels/integrations>`_ with:
+1. Post a request to the `Contributors team "Integrations and Apps" channel <https://pre-release.mattermost.com/core/channels/integrations>`__ with:
 
   - mention to @jason
   - link to suggested integration
@@ -55,7 +55,7 @@ If you find a new integration or installer in the `Mattermost Facebook page <htt
 
       - The Mattermost Team
 
-3. When a contributor submits an integration via the `Wufoo form <https://spinpunch.wufoo.com/forms/mattermost-integrations-and-installers/>`_, a Zapier webhook posts relevant information into the `Integrations and Apps channel <https://pre-release.mattermost.com/core/channels/integrations>`_.
+3. When a contributor submits an integration via the `Wufoo form <https://spinpunch.wufoo.com/forms/mattermost-integrations-and-installers/>`__, a Zapier webhook posts relevant information into the `Integrations and Apps channel <https://pre-release.mattermost.com/core/channels/integrations>`__.
 
 4. Ops replies to each new Wufoo post with a numbered project title and project status. Example:
 
@@ -66,19 +66,19 @@ If you find a new integration or installer in the `Mattermost Facebook page <htt
 Media Articles
 ^^^^^^^^^^^^^^^
 
-When a relevant article on Mattermost is found in the news, add a new entry into `this Google document <https://docs.google.com/document/d/1kwCmn6JYeORdLV0noIk4iaxZx0iqR6OWUuzw5cZl6rA/edit>`_ and follow the process specified there.
+When a relevant article on Mattermost is found in the news, add a new entry into `this Google document <https://docs.google.com/document/d/1kwCmn6JYeORdLV0noIk4iaxZx0iqR6OWUuzw5cZl6rA/edit>`__ and follow the process specified there.
 
 Step-by-Step Asset Creation Guide for Artists
 ----------------------------------------------
 
 Follow these steps to create an asset for integration or feature promotion or for guest blog posts.
 
-You can find sample templates `in this Google drive <https://drive.google.com/open?id=0Bx-9w8QDFlfcbUh2bGdkRElJaWs>`_.
+You can find sample templates `in this Google drive <https://drive.google.com/open?id=0Bx-9w8QDFlfcbUh2bGdkRElJaWs>`__.
 
 Integration or Feature Promotion
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Use this `template (dark background) <https://www.dropbox.com/s/a8tbqxiik1m9i8u/20170717_template_dark.tif?dl=0>`_ or this `template (light background) <https://www.dropbox.com/s/codoct7np20fx3l/20170717_template_light.tif?dl=0>`_ as a starting point.
+1. Use this `template (dark background) <https://www.dropbox.com/s/a8tbqxiik1m9i8u/20170717_template_dark.tif?dl=0>`__ or this `template (light background) <https://www.dropbox.com/s/codoct7np20fx3l/20170717_template_light.tif?dl=0>`__ as a starting point.
 2. Update the title following the guidelines in `Feature Title`_.
 3. Update the footer and the creator name following the guidelines in `Feature Footer`_ and in `Feature Creator`_.
 4. Update representative art following the guidelines in `Feature Representative Art`_.
@@ -89,10 +89,10 @@ Integration or Feature Promotion
 Guest Blog Posts
 ^^^^^^^^^^^^^^^^^
 
-1. Use this `template <https://drive.google.com/file/d/0Bx-9w8QDFlfcQURoRnF1YllZWWc/view?usp=sharing>`_ as a starting point.
+1. Use this `template <https://drive.google.com/file/d/0Bx-9w8QDFlfcQURoRnF1YllZWWc/view?usp=sharing>`__ as a starting point.
 2. Update the title following the guidelines in `Feature Title`_.
 3. Update representative logo following the guidelines in `Mattermost and Representative Logos`_.
-4. Obtain a photo of the guest company member and apply a gray-scale effect. You can also consider applying a `Puppet Module effect <https://www.mattermost.org/puppet-module-for-mattermost/>`_.
+4. Obtain a photo of the guest company member and apply a gray-scale effect. You can also consider applying a `Puppet Module effect <https://www.mattermost.org/puppet-module-for-mattermost/>`__.
 5. Add a 1 pixel grey stroke border around the rectangular boundary of the banner.
 6. Save the finished asset draft in both .TIF and .PNG format, and upload to your "Dropbox Share" folder.
 
@@ -205,8 +205,8 @@ Animated GIFs with two images that look very similar should not be created since
 Step-by-Step Asset Review Guide for Ops
 ----------------------------------------
 
-1. Upload the artists "work in progress" files to the `Archive Dropbox sub-folder <https://www.dropbox.com/home/marketing/Twitter/archive>`_ in `Twitter Marketing <https://www.dropbox.com/sh/13h55hakbvm7iva/AAARooC0rV8JCKBI_8VUj_tga?dl=0>`_
-2. In the `Contributors team <https://pre-release.mattermost.com/core/channels/integrations>`_, find the appropriate conversation thread for the queued project, and add a comment mentioning @jason with the following:
+1. Upload the artists "work in progress" files to the `Archive Dropbox sub-folder <https://www.dropbox.com/home/marketing/Twitter/archive>`__ in `Twitter Marketing <https://www.dropbox.com/sh/13h55hakbvm7iva/AAARooC0rV8JCKBI_8VUj_tga?dl=0>`__
+2. In the `Contributors team <https://pre-release.mattermost.com/core/channels/integrations>`__, find the appropriate conversation thread for the queued project, and add a comment mentioning @jason with the following:
 
   - Link to the image in Dropbox
   - Proposed tweet text with a note to specify whether or not the mention in the text is the Twitter handle of the user. 

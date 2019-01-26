@@ -125,7 +125,7 @@ E.g.: Active Directory on Windows Server 2016.
 #### Is there a limit on the number of users the LDAP server can return in a single query? If so, have you set the Maximum Page Size in Mattermost?
 Many LDAP servers have an upper limit on the number of users returned, so they might be hitting that limit. An error will appear in the logs usually informing of this case, but it's good to try anyway. 
 
-#### Can you send an example user from you system? 
+#### Can you send an example user from your system? 
 ldapsearch command format is preferred.
 
 #### Is the server properly licensed?
@@ -137,11 +137,26 @@ Check the licensing page in the system console.
 
 #### Are there any errors in the Mattermost logs?
 
-#### Send us your config.json.
+#### Send us your config.json. For example:
+```
+grep "TLS" /opt/mattermost/config/config.json 
+        "TLSCertFile": "",
+        "TLSKeyFile": "",
+        "TLSMinVer": "1.2",
+        "TLSStrictTransport": false,
+        "TLSStrictTransportMaxAge": 63072000,
+        "TLSOverwriteCiphers": [],
+        "ConnectionSecurity": "STARTTLS",
+```
 
 #### Send your proxy configuration if you are using one.
 
 #### Have you followed one of the setup guides?
+
+#### Check the status of the SSL certificate being used on Mattermost. For example:
+```
+echo | openssl s_client -showcerts -connect <URL>:443 -CApath /etc/ssl/ && echo | openssl s_client -connect <URL>:443 2>/dev/null | openssl x509 -noout -dates -text
+```
 
 ## GitLab Issues
 

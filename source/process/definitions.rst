@@ -16,13 +16,13 @@ This list describes the quality levels of Mattermost features, and what can be e
 
 Production Level Quality
   - Recommended for use in production environments
-  - Eligible for commercial support by `Mattermost, Inc. <https://about.mattermost.com/support/>`_
+  - Eligible for commercial support by `Mattermost, Inc. <https://about.mattermost.com/support/>`__
   - Documentation is complete
   - Included in security reviews
   - Tested on several platforms
 Beta Level Quality
   - Is a work in progress
-  - Not recommended in production without `Premier Support <https://about.mattermost.com/support/>`_ engagement with Mattermost, Inc.
+  - Not recommended in production without `Premier Support <https://about.mattermost.com/support/>`__ engagement with Mattermost, Inc.
   - Minimal documentation
   - Disabled by default and must be turned on with a run-time feature flag
   - Tested thoroughly on a small set of platforms, with tickets and work items drafted, and made available for testing and feedback on additional platforms
@@ -60,14 +60,14 @@ The following list describes the support levels that are available. Not all feat
 
 Eligible for official support
 - Feature is production quality and in either Active Development or Maintenance Mode
-- Commercial `Enterprise Edition support <https://about.mattermost.com/support/>`_ is able to cover this feature area
+- Commercial `Enterprise Edition support <https://about.mattermost.com/support/>`__ is able to cover this feature area
 - Community pull requests for fixes are tested and merged
 
 Eligible for Premier Support only
 - Early or custom features developed for a specific enterprise (Experimental quality?)
 - Beta Level Quality
-- Not eligible for standard `Enterprise Edition support <https://about.mattermost.com/support/>`_, only supported via Premier Support agreement
+- Not eligible for standard `Enterprise Edition support <https://about.mattermost.com/support/>`__, only supported via Premier Support agreement
 
 Eligible for peer-to-peer support
 - Configuration is unofficial, for example, deployment to an operating system that is not officially supported.
-- `Enterprise Edition support <https://about.mattermost.com/support/>`_ will not support the configuration.
+- `Enterprise Edition support <https://about.mattermost.com/support/>`__ will not support the configuration.

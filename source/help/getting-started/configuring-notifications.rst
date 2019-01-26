@@ -58,7 +58,7 @@ Desktop Notifications
 -------------------------------------
 
 Desktop notifications are browser notifications that appear in the corner of your main monitor for activity in channels you are not actively viewing. By default, these notifications are sent for any mentions or `selected
-keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`__. Desktop notifications are available on Edge, Firefox, Safari, Chrome and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_.
+keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`__. Desktop notifications are available on Edge, Firefox, Safari, Chrome and `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`__.
 
 -  Configure when desktop notifications are sent in **Account
    Settings** > **Notifications** > **Desktop Notifications** > **Send
@@ -68,14 +68,14 @@ keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-
    Notifications**. By default, all channels use the global setting
    configured in *Account Settings*.
    
-When `Desktop App <https://about.mattermost.com/download/#mattermostApps>`_ notifications are set to "Only for mentions and direct messages," an empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. A solid red circle with a post count is displayed when a message with an at-mention is received.
+When `Desktop App <https://about.mattermost.com/download/#mattermostApps>`__ notifications are set to "Only for mentions and direct messages," an empty red circle is displayed over the upper right corner of the Mattermost dock icon when any message without an at-mention is received. A solid red circle with a post count is displayed when a message with an at-mention is received.
    
 Notification Sounds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A notification sound plays for all activity that would cause a desktop
 notification. Notification sounds are available on IE11, Edge, Safari, Chrome and
-`Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`_.
+`Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`__.
 
 -  Turn notification sounds On or Off in **Account Settings** >
    **Notifications** > **Desktop Notification Sounds**.

@@ -4,7 +4,7 @@ Data Format
 ===========
 
 The input data file must be a valid `JSONL
-<http://jsonlines.org>`_ file with the following objects, each on its own line in the file. The objects must occur in the file in the order listed.
+<http://jsonlines.org>`__ file with the following objects, each on its own line in the file. The objects must occur in the file in the order listed.
 
 Version
   Mandatory. The Version object must be the first line in the file, and must occur only once. The version is the version of the bulk importer tool, which is currently ``1``. 
@@ -538,30 +538,29 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
       "teams": [
         {
           "name": "team-name",
-          "theme": [
-            {
-              "awayIndicator":"#DBBD4E",
-              "buttonBg":"#23A1FF",
-              "buttonColor":"#FFFFFF",
-              "centerChannelBg":"#ffffff",
-              "centerChannelColor":"#333333",
-              "codeTheme":"github",
-              "linkColor":"#2389d7",
-              "mentionBg":"#2389d7",
-              "mentionColor":"#ffffff",
-              "mentionHighlightBg":"#fff2bb",
-              "mentionHighlightLink":"#2f81b7",
-              "newMessageSeparator":"#FF8800",
-              "onlineIndicator":"#7DBE00",
-              "sidebarBg":"#fafafa",
-              "sidebarHeaderBg":"#3481B9",
-              "sidebarHeaderTextColor":"#ffffff",
-              "sidebarText":"#333333",
-              "sidebarTextActiveBorder":"#378FD2",
-              "sidebarTextActiveColor":"#111111",
-              "sidebarTextHoverBg":"#e6f2fa",
-              "sidebarUnreadText":"#333333",
-              }
+          "theme": "{
+              \"awayIndicator\":\"#DBBD4E\",
+              \"buttonBg\":\"#23A1FF\",
+              \"buttonColor\":\"#FFFFFF\",
+              \"centerChannelBg\":\"#ffffff\",
+              \"centerChannelColor\":\"#333333\",
+              \"codeTheme\":\"github\",
+              \"linkColor\":\"#2389d7\",
+              \"mentionBg\":\"#2389d7\",
+              \"mentionColor\":\"#ffffff\",
+              \"mentionHighlightBg\":\"#fff2bb\",
+              \"mentionHighlightLink\":\"#2f81b7\",
+              \"newMessageSeparator\":\"#FF8800\",
+              \"onlineIndicator\":\"#7DBE00\",
+              \"sidebarBg\":\"#fafafa\",
+              \"sidebarHeaderBg\":\"#3481B9\",
+              \"sidebarHeaderTextColor\":\"#ffffff\",
+              \"sidebarText\":\"#333333\",
+              \"sidebarTextActiveBorder\":\"#378FD2\",
+              \"sidebarTextActiveColor\":\"#111111\",
+              \"sidebarTextHoverBg\":\"#e6f2fa\",
+              \"sidebarUnreadText\":\"#333333\",
+              }",
           "roles": "team_user team_admin",
           "channels": [
             {

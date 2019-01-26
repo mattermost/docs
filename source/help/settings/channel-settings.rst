@@ -46,7 +46,7 @@ Adding links to the Channel Header
 
 Frequently used links to documents, video calls, or other sites can be added to the channel header using markdown.
 
-Example: [Google Hangout](https://plus.google.com/hangouts/_/store.com/shipping)
+Example: `Google Hangout <https://plus.google.com/hangouts/_/store.com/shipping>`_
 
 
 Channel Purpose

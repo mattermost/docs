@@ -4,9 +4,9 @@ Mobile Apps FAQ
 Can I connect to multiple Mattermost servers using the mobile apps?
 -------------------------------------------------------------------
 
-At the moment, we only support connecting to one server at a time; however, we are aware that this is one of the `top feature requests <https://mattermost.uservoice.com/forums/306457-general/suggestions/10975938-ios-and-android-apps-should-allow-multiple-server>`_ for the mobile app. We are currently investigating some technical challenges, such as how to handle push notifications coming from multiple servers. We expect to add multiserver support by end of 2018.
+At the moment, we only support connecting to one server at a time; however, we are aware that this is one of the `top feature requests <https://mattermost.uservoice.com/forums/306457-general/suggestions/10975938-ios-and-android-apps-should-allow-multiple-server>`__ for the mobile app. We are currently investigating some technical challenges, such as how to handle push notifications coming from multiple servers. We expect to add multiserver support by end of 2018.
 
-As a workaround, you can install both the released "Mattermost" app and sign up to be a `tester <https://github.com/mattermost/mattermost-mobile/blob/master/README.md#testing>`_ for the "Mattermost Beta" app. This allows you to connect and log in to a different server from each app.
+As a workaround, you can install both the released "Mattermost" app and sign up to be a `tester <https://github.com/mattermost/mattermost-mobile/blob/master/README.md#testing>`__ for the "Mattermost Beta" app. This allows you to connect and log in to a different server from each app.
 
 Is there a tablet version of the mobile apps?
 ---------------------------------------------
@@ -23,7 +23,7 @@ App data is wiped from the device when a user logs out of the app. If the user i
 Do I need to compile the mobile apps to host my own push notification server?
 ------------------------------------------------------------------------------
 
-Yes. To host your own push notification server, you'll need to compile the mobile apps. See `documentation <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`_ to learn how to compile your own mobile apps.
+Yes. To host your own push notification server, you'll need to compile the mobile apps. See `documentation <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`__ to learn how to compile your own mobile apps.
 
 .. _push-faq:
 How do push notifications work?
@@ -67,7 +67,7 @@ The following post metadata is sent in all push notifications:
 - ``Category`` (iOS only, determines if the notifications can be replied to)
 - ``Badge number`` (what the notification badge on the app icon should be set to when the notification is received)
 
-Additional metadata may be sent depending on the System Console setting for `Push Notification Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_:
+Additional metadata may be sent depending on the System Console setting for `Push Notification Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__:
 
 - **Send generic description with sender and channel names**: ``Channel name`` metadata will be included
 - **Send full message snippet**: ``Post content`` and ``Channel name`` metadata will be included
@@ -91,7 +91,7 @@ What are my options for securing push notifications?
 The following options are available for securing your push notification service:
 
 1.  Protecting notification contents
-  - You can `choose what type of information to include in push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`_, like excluding the message contents if your compliance policies require it. Default server settings have message contents turned off.
+  - You can `choose what type of information to include in push notifications <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__, like excluding the message contents if your compliance policies require it. Default server settings have message contents turned off.
 
 2. Disabling push notifications
   - Push notifications can also be disabled entirely depending on security requirements. Default server settings have push notifications disabled.
@@ -126,7 +126,7 @@ How do I pre-configure the server URL for my users?
 
 You can pre-configure the server URL and other settings by overriding default config.json settings and building the mobile apps yourself.
 
-1. Fork the `mattermost-mobile repository <https://github.com/mattermost/mattermost-mobile>`_. 
+1. Fork the `mattermost-mobile repository <https://github.com/mattermost/mattermost-mobile>`__. 
 2. Create the file ``/assets/override/config.json`` in your forked mattermost-mobile repository.
 3. Copy and paste all the settings from ``assets/base/config.json`` to the newly created ``/assets/override/config.json`` file that you want to override.
 4. To override the server URL, set ``DefaultServerURL`` to server URL of your Mattermost server in ``/assets/override/config.json``.
@@ -143,14 +143,14 @@ After the above, your ``/assets/override/config.json`` file would look something
         "ExperimentalUsernamePressIsMention": true
     }
 
-7. Finally, `compile your own version <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`_ of the Mattermost mobile applications and Mattermost push proxy server.
+7. Finally, `compile your own version <https://docs.mattermost.com/mobile/mobile-compile-yourself.html>`__ of the Mattermost mobile applications and Mattermost push proxy server.
 
 How can I get Google SSO to work with the Mattermost Mobile Apps?
 -----------------------------------------------------------------
 
 The apps on the Apple App Store and Google Play Store cannot support Google SSO out of the box. This is because Google requires a unique Google API key that's specific to each organization.
 
-If you need Google SSO support, you can create a custom version of the app for your own organization. Fork the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_  repository and add support for Google SSO before compiling the app yourself. If this is something you’re interested in, please `file an issue in GitHub <https://github.com/mattermost/mattermost-mobile/issues>`_ to start the discussion.
+If you need Google SSO support, you can create a custom version of the app for your own organization. Fork the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`__  repository and add support for Google SSO before compiling the app yourself. If this is something you’re interested in, please `file an issue in GitHub <https://github.com/mattermost/mattermost-mobile/issues>`__ to start the discussion.
 
 How do I configure Deep Linking?
 --------------------------------------
@@ -178,11 +178,11 @@ The app checks for platform specific configuration on app install. If no configu
 4. Add an entitlement that specifies the domains your app supports via the Xcode entitlements manager.
 5. Before installing the app with the new entitlement, make sure that you can view the contents of the ``apple-app-site-association`` file via a browser by navigating to ``https://<your-site-name>/.well-known/apple-app-site-association``. The app will check for this file on install and if found, will allow outside permalinks to open the app.
 
-Official documentation for configuring deep linking on iOS can be found `here <https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html>`_.
+Official documentation for configuring deep linking on iOS can be found `here <https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html>`__.
 
 **Setup for Android:**
 
-Please refer to the the App Links Assistant in Android Studio for configuring `deep linking on Android <https://developer.android.com/studio/write/app-link-indexing>`_.
+Please refer to the the App Links Assistant in Android Studio for configuring `deep linking on Android <https://developer.android.com/studio/write/app-link-indexing>`__.
 
 How do I connect users across internal and external networks?
 -----------------------------------------------------------------
@@ -190,6 +190,6 @@ How do I connect users across internal and external networks?
 By setting up global network traffic management, you can send a user to an internal or external network when connecting with a mobile app. Moreover, you can have two separate layers of restrictions on internal and external traffic, such as:
 
  - In the internal network, deploy on a private network via per device VPN
- - In the external network, deploy with `TLS mutual auth <https://docs.mattermost.com/deployment/ssl-client-certificate.html>`_ with an NGINX proxy, and `client-side certificates <https://docs.mattermost.com/deployment/certificate-based-authentication.html>`_ for desktop and iOS.
+ - In the external network, deploy with `TLS mutual auth <https://docs.mattermost.com/deployment/ssl-client-certificate.html>`__ with an NGINX proxy, and `client-side certificates <https://docs.mattermost.com/deployment/certificate-based-authentication.html>`__ for desktop and iOS.
  
-Many services such as Microsoft Azure provide options for `managing network traffic <https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview>`_, or you can engage a services partner to assist.
+Many services such as Microsoft Azure provide options for `managing network traffic <https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview>`__, or you can engage a services partner to assist.
