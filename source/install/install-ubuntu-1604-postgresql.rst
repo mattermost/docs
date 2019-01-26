@@ -46,7 +46,7 @@ Assume that the IP address of this server is 10.10.10.1
 
   ``exit``
 
-9. Allow PostgreSQL to listen on all assigned IP Addresses. Open ``/etc/postgresql/9.5/main/postgresql.conf`` as root in a text editor.
+9. (Optional) If you use a different server for your database and the Mattermost app server, and have proper firewall configuration, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/etc/postgresql/9.5/main/postgresql.conf`` as root in a text editor.
 
   a. Find the following line:
 
