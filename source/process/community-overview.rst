@@ -134,7 +134,7 @@ Community Coordinator: Amy Blais
 UX Design Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-UX Design Contributors influence the design of the Mattermost user experience through discussion in the ``ux-design`` channel on the Mattermost continous integration server at https://pre-release.mattermost.com/core/channels/ux-design and through contributions to the `Mattermost User Experience Guidelines <https://docs.mattermost.com/developer/fx-guidelines.html>`__ on `GitHub <https://github.com/mattermost/docs/blob/master/source/developer/fx-guidelines.rst>`__.
+UX Design Contributors influence the design of the Mattermost user experience through discussion in the ``ux-design`` channel on the Mattermost continous integration server at https://community.mattermost.com/core/channels/ux-design and through contributions to the `Mattermost User Experience Guidelines <https://docs.mattermost.com/developer/fx-guidelines.html>`__ on `GitHub <https://github.com/mattermost/docs/blob/master/source/developer/fx-guidelines.rst>`__.
 
 Community Coordinator: Mike Gamble
 
