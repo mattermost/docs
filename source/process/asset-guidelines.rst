@@ -17,7 +17,7 @@ Integrations and Installers
 
 If you find a new integration or installer in the `Mattermost Facebook page <https://www.facebook.com/MattermostHQ/?fref=ts>`__, `Mattermost Twitter page <https://twitter.com/mattermosthq>`__, `GitHub <https://github.com/search?utf8=%E2%9C%93&q=mattermost>`__ or elsewhere you feel Mattermost should promote:
 
-1. Post a request to the `Contributors team "Integrations and Apps" channel <https://pre-release.mattermost.com/core/channels/integrations>`__ with:
+1. Post a request to the `Contributors team "Integrations and Apps" channel <https://community.mattermost.com/core/channels/integrations>`__ with:
 
   - mention to @jason
   - link to suggested integration
@@ -49,13 +49,13 @@ If you find a new integration or installer in the `Mattermost Facebook page <htt
       
       Here's the form: https://spinpunch.wufoo.com/forms/mattermost-integrations-and-installers/
       
-      We'd also like to welcome you to join our public integrations community channel on our nightly build server: https://pre-release.mattermost.com/core/channels/integrations
+      We'd also like to welcome you to join our public integrations community channel on our nightly build server: https://community.mattermost.com/core/channels/integrations
 
       Thanks for being a valued member of the Mattermost Community!
 
       - The Mattermost Team
 
-3. When a contributor submits an integration via the `Wufoo form <https://spinpunch.wufoo.com/forms/mattermost-integrations-and-installers/>`__, a Zapier webhook posts relevant information into the `Integrations and Apps channel <https://pre-release.mattermost.com/core/channels/integrations>`__.
+3. When a contributor submits an integration via the `Wufoo form <https://spinpunch.wufoo.com/forms/mattermost-integrations-and-installers/>`__, a Zapier webhook posts relevant information into the `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`__.
 
 4. Ops replies to each new Wufoo post with a numbered project title and project status. Example:
 
@@ -206,7 +206,7 @@ Step-by-Step Asset Review Guide for Ops
 ----------------------------------------
 
 1. Upload the artists "work in progress" files to the `Archive Dropbox sub-folder <https://www.dropbox.com/home/marketing/Twitter/archive>`__ in `Twitter Marketing <https://www.dropbox.com/sh/13h55hakbvm7iva/AAARooC0rV8JCKBI_8VUj_tga?dl=0>`__
-2. In the `Contributors team <https://pre-release.mattermost.com/core/channels/integrations>`__, find the appropriate conversation thread for the queued project, and add a comment mentioning @jason with the following:
+2. In the `Contributors team <https://community.mattermost.com/core/channels/integrations>`__, find the appropriate conversation thread for the queued project, and add a comment mentioning @jason with the following:
 
   - Link to the image in Dropbox
   - Proposed tweet text with a note to specify whether or not the mention in the text is the Twitter handle of the user. 

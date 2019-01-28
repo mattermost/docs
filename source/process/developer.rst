@@ -99,11 +99,11 @@ While you’re working with us, you can join the Mattermost community site `here
 
 Once signed-in, the following channels are recommended for observing how the core committers work with the community to ship new releases:
 
-* `Developers <https://pre-release.mattermost.com/core/channels/developers>`__
-* `Bugs <https://pre-release.mattermost.com/core/channels/bugs>`__
-* `Release Checklist <https://pre-release.mattermost.com/core/channels/release-checklist>`__
-* `Release Discussion <https://pre-release.mattermost.com/core/channels/release-discussion>`__
-* `Peer-to-Peer Help <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`__
+* `Developers <https://community.mattermost.com/core/channels/developers>`__
+* `Bugs <https://community.mattermost.com/core/channels/bugs>`__
+* `Release Checklist <https://community.mattermost.com/core/channels/release-checklist>`__
+* `Release Discussion <https://community.mattermost.com/core/channels/release-discussion>`__
+* `Peer-to-Peer Help <https://community.mattermost.com/core/channels/peer-to-peer-help>`__
 
 Observing these public channels as you work will give you a good sense of what it is like to work at Mattermost in a full time capacity to ensure joining the company aligns to your interests and desired career direction.
 

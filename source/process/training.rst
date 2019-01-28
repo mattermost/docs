@@ -37,7 +37,7 @@ T-minus 1-3 weeks
 T-minus 1 week
 ---------------------------------------------------------
 
-- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on pre-release.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME@mattermost.com` is the standard naming convention.
+- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on community.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME@mattermost.com` is the standard naming convention.
 
 - (People Ops & New Hire) Set up payroll.
  - US FTE, receive email to complete TriNet sign-up, payroll, benefits enrollment, I-9 form, banking information, personal information, tax forms.  
@@ -95,10 +95,10 @@ Developer Meeting
 
 Procedure:
 
-1. (Team and Public): Post meeting agenda in `Developers Meeting channel <https://pre-release.mattermost.com/core/channels/developers-meeting>`__ (open to the public). Please see instructions on `how to queue an item <https://pre-release.mattermost.com/core/pl/q4wcrcnxhtf1fr9grneb6fbrxy>`__.
+1. (Team and Public): Post meeting agenda in `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__ (open to the public). Please see instructions on `how to queue an item <https://community.mattermost.com/core/pl/q4wcrcnxhtf1fr9grneb6fbrxy>`__.
 2. (Team and Public): At the time of the meeting:
 
-      - Join the **Hangouts** link posted in the meeting agenda in the `Developers Meeting channel <https://pre-release.mattermost.com/core/channels/developers-meeting>`__.
+      - Join the **Hangouts** link posted in the meeting agenda in the `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__.
 
 
 Mattermost Staff Meetings
@@ -187,7 +187,7 @@ The meeting includes presentations and demos, controlled agenda items (e.g. queu
 
 Procedure:
 
-1. (Vice Chair) the day before the meeting, post a reminder in `Platform Meeting private channel <https://pre-release.mattermost.com/core/channels/platform-meeting>`__ (Mattermost Inc only)
+1. (Vice Chair) the day before the meeting, post a reminder in `Platform Meeting private channel <https://community.mattermost.com/core/channels/platform-meeting>`__ (Mattermost Inc only)
 
 ::
 
@@ -199,13 +199,13 @@ Procedure:
 
 2. (Team) At time of meeting:
 
-   - Join the **Zoom** link in the header of the `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`__.
+   - Join the **Zoom** link in the header of the `Platform private channel <https://community.mattermost.com/core/channels/platform-discussion>`__.
    - Open the **Notes** link in the header to see the agenda.
 
 3. (Vice-Chair) Post `meeting notes template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`__ into Platform Meeting Notes.
    
    - Add **Follow-ups** from previous meeting.
-   - Add **New items** queued in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`__ (Mattermost Inc only).
+   - Add **New items** queued in `Platform private channel <https://community.mattermost.com/core/channels/platform-discussion>`__ (Mattermost Inc only).
 
 Meeting Agenda:
 
@@ -218,7 +218,7 @@ Meeting Agenda:
 
 Post Meeting:
 
-- If there are follow-up items, these are posted to the  `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`__ (Mattermost Inc only).
+- If there are follow-up items, these are posted to the  `Platform private channel <https://community.mattermost.com/core/channels/platform-discussion>`__ (Mattermost Inc only).
 
 Meeting Elements
 -----------------------

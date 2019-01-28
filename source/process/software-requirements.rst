@@ -2,7 +2,7 @@
 Mattermost Software Requirements
 =================================
 
-This document provides easy-to-follow guidelines for determining which software versions Mattermost requires. For past discussion on why these guidelines were chosen, see `this conversation <https://pre-release.mattermost.com/core/pl/sb4fq6qhyfbb5xjdp7x3ud146e>`__.
+This document provides easy-to-follow guidelines for determining which software versions Mattermost requires. For past discussion on why these guidelines were chosen, see `this conversation <https://community.mattermost.com/core/pl/sb4fq6qhyfbb5xjdp7x3ud146e>`__.
 
 Current software requirements are `documented here <https://docs.mattermost.com/install/requirements.html#software-requirements>`__.
 
