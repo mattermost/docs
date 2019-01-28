@@ -640,7 +640,7 @@ Staff must use their full name for their username as in `first.last` on the comm
 
 Contributors team
 ---------------------------------------------------------
-This is a team open for any and all to join.  It is the main place where core staff, contributors, users, customers and partners interact.  Our goal is todo as much work as possible in the open.  If you find yourself creating a private channel on this team you should pause and ask yourself if it really needs to be private.  Mattermost staff will be sync'ed to the appropriate channels based on their LDAP group sync settings.
+This is a team open for any and all to join.  It is the main place where core staff, contributors, users, customers and partners interact.  Our goal is to do as much work as possible in the open.  If you find yourself creating a private channel on this team you should pause and ask yourself if it really needs to be private.  Mattermost staff will be sync'ed to the appropriate channels based on their LDAP group sync settings.
 
 Mattermost Staff team
 ---------------------------------------------------------
