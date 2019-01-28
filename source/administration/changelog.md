@@ -10,10 +10,14 @@ Release Date 16/02/2019
 
 ### Highlights
 
+ - Added support for infinite scroll.
  - Added support for emoji picker for mobile web view.
  - Moved MFA to Team Edition.
 
 ### Improvements
+
+#### User Interface (UI)
+ - Improved sorting of emoji in emoji autocomplete and emoji picker search results.
 
 #### Notifications
  - Added a channel notification setting for disabling channel mentions.
@@ -22,6 +26,7 @@ Release Date 16/02/2019
  - Added an option to add user to a channel from the profile pop-over.
  - Added the ability to search users by role in System Console > Users.
  - Added a CLI command to modify an outgoing webhook.
+ - Added a CLI command "team restore".
 
 #### Performance
  - Made posting idempotent.
@@ -43,8 +48,9 @@ Release Date 16/02/2019
 ### Bug Fixes
  
  - Fixed an issue where "[user] is typing ..." was not removed when message was composed and sent very quickly.
- - 
-
+ - Fixed an issue where announcement banner should not display at all when the banner is enabled and text field is blank.
+ - Fixed an issue where language was not set if selected in "Account Settings".
+ 
 ### Compatibility
 
 ### config.json
