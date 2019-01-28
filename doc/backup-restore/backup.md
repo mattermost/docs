@@ -12,7 +12,7 @@ Follow these steps for backing up a GitLab Helm chart based installation
 1. Ensure the task runner pod is running, by executing the following command
 
     ```
-    $ kubectl get pods --all-namespaces | grep task-runner
+    $ kubectl get pods -lrelease=RELEASE_NAME,app=task-runner
     ```
 1. Run the backup utility
     ```

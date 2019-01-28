@@ -22,7 +22,7 @@ The steps for restoring a GitLab installation are
 1. Make sure you have a running GitLab instance by deploying the charts. Ensure the `task-runner` pod is enabled and running by executing the following command
 
     ```
-    $ kubectl get pods --all-namespaces | grep task-runner
+    $ kubectl get pods -lrelease=RELEASE_NAME,app=task-runner
     ```
 1. Get the tarball ready in any of the above locations. Make sure it is named in the `<timestamp>_<version>_gitlab_backup.tar` format.
 1. Run the backup utility to restore the tarball
