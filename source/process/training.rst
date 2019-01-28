@@ -636,16 +636,16 @@ Example of finished Mattermost Avatar:
 Mattermost Teams and Naming Conventions
 ---------------------------------------------------------
 
-Staff must use their full name for their username as in `first.last` on the community server.  Staff are also encouraged to link to their github account using the command `/github connect` so your github handle will appear on your profile popover card.  All Mattermost core staff should be issued a OneLogin account with a username of `first.last`.  If issued a OneLogin account you should switch your sign-in method from email/password to OneLogin via the `Account Settings > Security > Sign-in Method` page.  Once this is done your username will be set from SAML.
+Staff must use their full name for their username as in `first.last` on the community server.  Staff are also encouraged to link to their github account using the command `/github connect` so your github handle will appear on your profile popover card.  All Mattermost  staff should be issued a OneLogin account with a username of `first.last`.  If issued a OneLogin account you should switch your sign-in method from email/password to OneLogin via the `Account Settings > Security > Sign-in Method` page.  Once this is done your username will be set from SAML.
 
 Contributors team
 ---------------------------------------------------------
-This is a team open for any and all to join.  It is the main place where core staff, contributors, users, customers and partners interact.  Our goal is to do as much work as possible in the open.  If you find yourself creating a private channel on this team you should pause and ask yourself if it really needs to be private.  Mattermost staff will be sync'ed to the appropriate channels based on their LDAP group sync settings.
+This is a team open for any and all to join.  It is the main place where staff, contributors, users, customers and partners interact.  Our goal is to do as much work as possible in the open.  If you find yourself creating a private channel on this team you should pause and ask yourself if it really needs to be private.  Mattermost staff will be sync'ed to the appropriate channels based on their LDAP group sync settings.
 
-Mattermost Staff team
+Staff team
 ---------------------------------------------------------
-This is restricted to people with an `@mattermost.com` email address.  It is meant for Mattermost employees and core staff.  This is where we will discuss internal company matters.  Since this team only includes people with mattermost.com email address you should prefer creating public channels.  Also if you find yourself creating a channel here you should ask yourself if it would be better served to have one the Contributors team.  Mattermost staff will be sync'ed to the appropriate channels based on their LDAP group sync settings.
+This is restricted to people with an `@mattermost.com` email address.  It is meant for Mattermost employees and staff.  This is where we will discuss internal company matters.  Since this team only includes people with mattermost.com email address you should prefer creating public channels.  Also if you find yourself creating a channel here you should ask yourself if it would be better served to have one the Contributors team.  Mattermost staff will be sync'ed to the appropriate channels based on their LDAP group sync settings.
 
 Partners team
 ---------------------------------------------------------
-This is an invite only team meant for Mattermost core staff and partners.  This is a team for core staff to interact with partners and for partners to interact with other partners.  You should prefer public channels when you want partner to partner interactions and private channels when you want core staff to partner interactions.  Remember any partner added to the team will be able to join any public channel.
+This is an invite only team meant for Mattermost staff and partners.  This is a team for staff to interact with partners and for partners to interact with other partners.  You should prefer public channels when you want partner to partner interactions and private channels when you want staff to partner interactions.  Remember any partner added to the team will be able to join any public channel.
