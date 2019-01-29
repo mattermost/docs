@@ -636,7 +636,7 @@ Example of finished Mattermost Avatar:
 Mattermost Teams and Naming Conventions
 ---------------------------------------------------------
 
-Staff must use their full name for their username as in `first.last` on the community server.  Staff are also encouraged to link to their github account using the command `/github connect` so your github handle will appear on your profile popover card.  All Mattermost  staff should be issued a OneLogin account with a username of `first.last`.  If issued a OneLogin account you should switch your sign-in method from email/password to OneLogin via the `Account Settings > Security > Sign-in Method` page.  Once this is done your username will be set from SAML.
+Staff must use their full name for their username, as in ``first.last``, on the community server. Staff are also encouraged to link to their Github account using the command `/github connect` so that your Github handle will appear on your profile popover card.  All Mattermost  staff should be issued a OneLogin account with a username of ``first.last``.  If issued a OneLogin account, you should switch your sign-in method from email/password to OneLogin via the `Account Settings > Security > Sign-in Method` page.  Once this is done, your username will be set from SAML.
 
 Contributors team
 ---------------------------------------------------------
@@ -644,8 +644,8 @@ This is a team open for any and all to join.  It is the main place where staff, 
 
 Staff team
 ---------------------------------------------------------
-This is restricted to people with an `@mattermost.com` email address.  It is meant for Mattermost employees and staff.  This is where we will discuss internal company matters.  Since this team only includes people with mattermost.com email address you should prefer creating public channels.  Also if you find yourself creating a channel here you should ask yourself if it would be better served to have one the Contributors team.  Mattermost staff will be sync'ed to the appropriate channels based on their LDAP group sync settings.
+This is restricted to people with an `@mattermost.com` email address.  It is meant for Mattermost employees and staff and it is where we discuss internal company matters.  Since this team only includes people with mattermost.com email address, you should prefer creating public channels.  Also, if you find yourself creating a channel here, you should ask yourself if it would be better served to have it in the Contributors team.  Mattermost staff will be sync'ed to the appropriate channels based on their LDAP group sync settings.
 
 Partners team
 ---------------------------------------------------------
-This is an invite only team meant for Mattermost staff and partners.  This is a team for staff to interact with partners and for partners to interact with other partners.  You should prefer public channels when you want partner to partner interactions and private channels when you want staff to partner interactions.  Remember any partner added to the team will be able to join any public channel.
+This is an invite only team meant for Mattermost staff and partners.  This is a team for staff to interact with partners and for partners to interact with other partners. You should prefer public channels when you want partner-to-partner interactions and private channels when you want staff-to-partner interactions.  Remember that any partner added to the team will be able to join any public channel.
