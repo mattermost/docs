@@ -2534,6 +2534,10 @@ Enable GIF Picker
 | This feature's ``config.json`` setting is ``"EnableGifPicker": false`` with options ``true`` and ``false`` for above settings respectively.                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. note::
+
+  Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work
+
 Gfycat API Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 When blank, uses the default API key provided by Gfycat. Alternatively, a unique API key can be requested at https://developers.gfycat.com/signup/#/. Enter the client ID you receive via email to this field. 
