@@ -7,14 +7,12 @@ Mattermost, Inc. is a company based on the Mattermost open source project. Matte
 Mission
 ------------------------------------------
 
-Our mission is to empower every organization to achieve their highest priorities through modern communication.
+Our mission is to make the world more safe and productive by developing and delivering secure, open source collaboration software that is trusted, flexible and offers fast time-to-value. 
 
-Our vision is a world more connected to what matters most.
-
-Values
+Leadership Principles 
 ------------------------------------------
 
-Values are deliberate choices defining our behavior. When facing complexity, uncertainty, or ambiguity (CUA) we determine our point of view and our actions through the lens of our values:
+Leadership principles are deliberate choices defining our behavior. When facing complexity, uncertainty, or ambiguity (CUA) we determine our point of view and our actions through the lens of our values:
 
 - **Customer Obsession** - We exist to make customers successful. In everything we do, start with customer perspective and work backwards. Earn and keep their trust.
 
@@ -24,7 +22,9 @@ Values are deliberate choices defining our behavior. When facing complexity, unc
 
 - **Self-Awareness** - We understand and seek to understand our strengths and growth opportunities, as individuals and organizations. We are open to critique and share critique constructively and respectfully. 
 
-- **Be proud of what you build** - Insist on high standards. Ensure that you're building the highest quality products, services, and processes possible, and constantly raising the bar. 
+- **Insist on High Standards** — Have relentless high standards. Continually raise the bar for high-quality products and processes.
+
+- **Earn Trust** — Make decisions based on maximizing the trust of others in your judgement. Be open, self-critical and factual.
 
 Products
 ------------------------------------------
