@@ -10,7 +10,7 @@ Release Date 16/02/2019
 
 ### Highlights
 
- - Added support for infinite scroll.
+ - Added support for LDAP Group Sync.
  - Added support for emoji picker for mobile web view.
  - Moved MFA to Team Edition.
 
