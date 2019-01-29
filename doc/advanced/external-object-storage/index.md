@@ -121,15 +121,38 @@ Create the secret using the [s3cmd config file format](https://s3tools.org/kb/it
 
 ### Backups storage example
 
-**s3cmd.config**
+1. Create a file called `s3cmd.config` containing:
 
-```
-[default]
-access_key = BOGUS_ACCESS_KEY
-secret_key = BOGUS_SECRET_KEY
-bucket_location = us-east-1
-```
+    * On Amazon S3
 
-```bash
-kubectl create secret generic s3cmd-config --from-file=config=s3cmd.config
-```
+    ```
+    [default]
+    access_key = BOGUS_ACCESS_KEY
+    secret_key = BOGUS_SECRET_KEY
+    bucket_location = us-east-1
+    ```
+
+    * On Google Cloud Storage
+
+    ```
+    [default]
+    host_base = storage.googleapis.com
+    host_bucket = storage.googleapis.com
+    use_https = True
+    signature_v2 = True
+
+    # Access and secret key can be generated in the interoperability
+    # https://console.cloud.google.com/storage/settings
+    # See Docs: https://cloud.google.com/storage/docs/interoperability
+    access_key = BOGUS_ACCESS_KEY
+    secret_key = BOGUS_SECRET_KEY
+
+    # Multipart needs to be disabled for GCS !
+    enable_multipart = False
+    ```
+
+1. Create the secret
+
+    ```bash
+    kubectl create secret generic s3cmd-config --from-file=config=s3cmd.config
+    ```
