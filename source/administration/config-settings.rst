@@ -2536,7 +2536,7 @@ Enable GIF Picker
 
 .. note::
 
-  Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work
+  Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work.
 
 Gfycat API Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^
