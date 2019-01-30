@@ -44,6 +44,7 @@ Tables below contain all the possible charts configurations that can be supplied
 | global.smtp.domain              | Optional HELO domain for SMTP                                                           | ""                    |
 | global.smtp.authentication      | Type of SMTP authentication ("plain", "login", "cram_md5", or "" for no authentication) | plain                 |
 | global.smtp.starttls_auto       | Use STARTTLS if enabled on the mail server                                              | false                 |
+| global.smtp.tls                 | Enables SMTP/TLS (SMTPS: SMTP over direct TLS connection)                               | _none_                |
 | global.smtp.openssl_verify_mode | TLS verification mode ("none", "peer", or "ssl/tls")                                    | peer                  |
 | global.email.from               | Email address that appears as the sender for emails from GitLab                         | gitlab@example.com  |
 | global.email.display_name       | Name that appears as the sender for emails from GitLab                                  | GitLab                |
