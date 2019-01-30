@@ -302,7 +302,7 @@ Administrators can chose to use Gitaly nodes in the following ways:
 - external to the chart, as external pets
 - mixed environment using both internal and external nodes
 
-See [Repostiry Storage Paths][storage] documentation for details on managing which
+See [Repository Storage Paths][storage] documentation for details on managing which
 nodes will be used for new projects.
 
 **NOTE:** If `gitaly.host` is provided, `gitaly.internal` and `gitaly.external`
