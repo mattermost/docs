@@ -610,9 +610,9 @@ Valid configuration keys can be found at
 [Fog](https://github.com/fog), and is different between provider modules.
 
 Examples for [AWS][fog-aws] and [Google][fog-gcs] providers can be found in
-[examples/objectstorage](../../examples/objectstorage).
-- [rails.s3.yaml](../../examples/objectstorage/rails.s3.yaml)
-- [rails.gcs.yaml](../../examples/objectstorage/rails.gcs.yaml)
+[examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
+- [rails.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.s3.yaml)
+- [rails.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.gcs.yaml)
 
 [fog-aws]: https://fog.io/storage/#using-amazon-s3-and-fog
 [fog-gcs]: https://fog.io/storage/#google-cloud-storage
@@ -837,9 +837,9 @@ This property has two sub-keys: `secret` and `key`.
 - `key` is the name of the key in the secret which houses the YAML block. Defaults to `connection`.
 
 Examples for [AWS][fog-aws] and [Google][fog-gcs] providers can be found in
-[examples/objectstorage](../../examples/objectstorage).
-- [rails.s3.yaml](../../examples/objectstorage/rails.s3.yaml)
-- [rails.gcs.yaml](../../examples/objectstorage/rails.gcs.yaml)
+[examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
+- [rails.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.s3.yaml)
+- [rails.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.gcs.yaml)
 
 Once a YAML file containing the contents of the `connection` has been created, create the secret in Kubernetes
 

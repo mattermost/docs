@@ -218,9 +218,9 @@ The contents of this secret is taken directly from [Registry Configuration: `sto
 Please refer to that documentation for extended details.
 
 Examples for [S3][storage-s3] and [GCS][storage-gcs] drivers can be found in
-[examples/objectstorage](../../examples/objectstorage).
-- [registry.s3.yaml](../../examples/objectstorage/registry.s3.yaml)
-- [registry.gcs.yaml](../../examples/objectstorage/registry.gcs.yaml)
+[examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
+- [registry.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.s3.yaml)
+- [registry.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.gcs.yaml)
 
 Place the _contents_ of the `storage` block into the secret,
 and provide the following as items to the `storage` map:
