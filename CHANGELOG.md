@@ -2,6 +2,14 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.5.1 (2019-01-31)
+
+### Other (2 changes)
+
+- Update gitlab-runner to 0.1.45/11.7.0. !654
+- Update GitLab Version to 11.7.3.
+
+
 ## 1.5.0 (2019-01-22)
 
 ### Fixed (5 changes, 1 of them is from the community)
