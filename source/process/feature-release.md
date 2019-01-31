@@ -32,7 +32,7 @@ No pull requests for major features should be **submitted** to the current relea
     - Review any features that are currently in beta and confirm with PMs if there are any to be promoted
     - Confirm all config settings and new features have diagnostics
 
-### C. (T-minus 15 working days) Cut-off for merging features
+### C. (T-minus 15 working days) Feature Complete
 
 No pull requests for major features should be **merged** to the current release after this date. In special cases, exceptions can be made by the Release Manager.
 
