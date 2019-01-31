@@ -1,8 +1,11 @@
 # Pre-install preparations
 
-This document covers our weekly demos preparation steps but can also be useful to anyone who tries to install using the charts before going through [installation](../installation/index.md).
+This document covers our weekly demos preparation steps but can also be useful
+to anyone who tries to install using the charts before going through the
+[installation](../../installation/index.md).
+
 The person giving the demo needs to go throw this document before the demo,
-and should perform setup the day prior to the demo itself.
+and should perform the setup the day prior to the demo itself:
 
 - [GKE setup](#gke-setup)
 - [External resources](#external-resources)
@@ -11,10 +14,10 @@ and should perform setup the day prior to the demo itself.
 ## GKE setup
 
 Make sure to have a `gcloud` user with permissions to access the `cloud-native`
-project. All the [installation procedures](../installation/index.md) will
+project. All the [installation procedures](../../installation/index.md) will
 need to be done in this project.
 
-1. You will need to have [`gcloud`](https://cloud.google.com/sdk/gcloud/) tool
+1. You will need to have the [`gcloud`](https://cloud.google.com/sdk/gcloud/) tool
    installed on your system:
 
     ```sh
@@ -34,18 +37,22 @@ need to be done in this project.
 
 ### Domain name
 
-During the demo you will need a valid domain name that will resolve to our cluster load balancer through a wild card entry.
-Make sure to have one of the Domain names ready for the demo either by creating a new one or by using an existing one.
+During the demo you will need a valid domain name that will resolve to our
+cluster load balancer through a wild card entry. Make sure to have one of the
+Domain names ready for the demo either by creating a new one or by using an
+existing one.
 
-We usually use `cloud-native-win` or `k8s-ftw`
+We usually use `cloud-native-win` or `k8s-ftw`.
 
 ## Kube monkey
 
-Follow our [kube monkey](../kube-monkey/index.md) guide for running kube monkey, this is usually done after the demo.
+Follow our [kube monkey](../kube-monkey/index.md) guide for running kube monkey,
+this is usually done after the demo.
 
 ## Git LFS
 
-In order to test LFS storage in the chart, you will need to have the ability to use `git lfs`.
+In order to test LFS storage in the chart, you will need to have the ability to
+use `git lfs`:
 
 1. Start by [installing `git-lfs`](https://git-lfs.github.com).
 1. Next, have a non-text file on hand to add to your test repository via LFS.
@@ -76,7 +83,7 @@ within the project.
 ### PostgreSQL
 
 Preparation of chart-external PostgreSQL services (as a pet or SaaS), can
-be found in [advanced/external-db](../advanced/external-db/index.md). This
+be found in [advanced/external-db](../../advanced/external-db/index.md). This
 can be done several ways documented there. Once that is configured, the chart
 should be configured with the external service by making use of the `globals.psql`
 properties section of the global chart.
@@ -84,7 +91,7 @@ properties section of the global chart.
 ### Redis
 
 Preparation of chart-external Redis services (as a pet or SaaS), can
-be found in [advanced/external-redis](../advanced/external-redis/index.md).
+be found in [advanced/external-redis](../../advanced/external-redis/index.md).
 This can be done as documented there. Once that is configured, the chart should
 be configured with the external service by making use of the `globals.redis`
 properties section of the global chart.
@@ -92,7 +99,7 @@ properties section of the global chart.
 ### Gitaly
 
 Preparation of chart-external Gitaly services can
-be found in [advanced/external-gitaly](../advanced/external-gitaly/index.md).
+be found in [advanced/external-gitaly](../../advanced/external-gitaly/index.md).
 This can be done as documented there. Once that is configured, the chart should
 be configured with the external service by making use of the `globals.gitaly`
 properties section of the global chart.
@@ -107,7 +114,8 @@ endpoint in your cluster.
 Cursory instructions for [creating a set of OAuth credentials can be found
 here](https://support.google.com/cloud/answer/6158849?hl=en).
 
-The credentials from GCP can be added per the [`unicorn` chart's `omniauth.providers` configuration documentation](../charts/gitlab/unicorn/index.md#omniauthproviders).
+The credentials from GCP can be added per the
+[`unicorn` chart's `omniauth.providers` configuration documentation](../../charts/gitlab/unicorn/index.md#omniauthproviders).
 
 ## Run GitLab QA
 

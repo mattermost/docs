@@ -113,4 +113,4 @@ See [Troubleshooting](troubleshooting/index.md).
 
 ## Misc
 
-[Weekly demos preparation](preparation/index.md)
+[Weekly demos preparation](development/preparation/index.md)
