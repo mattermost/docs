@@ -8,12 +8,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Mattermost v5.7.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-- **v5.7.1, released TBD** 
+- **v5.7.1, released 2019-02-01** 
   - Mattermost v5.7.1 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.7.0, released 2019-01-16**
   - Original 5.7.0 release
-
-Release date: 2019-01-16
 
 ### Bug Fixes
 
@@ -59,7 +57,7 @@ Release date: 2019-01-16
 
 ## Release v5.6
 
-- **v5.6.4, released TBD** 
+- **v5.6.4, released 2019-02-01** 
   - Mattermost v5.6.4 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.6.3, released 2019-01-16**
   - Mattermost v5.6.3 contains medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
@@ -236,7 +234,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.5
 
-- **v5.5.3, released TBD** 
+- **v5.5.3, released 2019-02-01** 
   - Mattermost v5.5.3 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.5.2, released 2019-01-16**
   - Mattermost v5.5.2 contains medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
@@ -836,7 +834,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v4.10
 
- - **v4.10.6, released TBD** 
+ - **v4.10.6, released 2019-02-01** 
    - Mattermost v4.10.6 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.10.5, released 2019-01-16**
    - Mattermost v4.10.5 contains medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
