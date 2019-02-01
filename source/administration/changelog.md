@@ -13,45 +13,47 @@ Release Date 16/02/2019
 ### Highlights
 
  - Added support for LDAP Group Sync.
- - Added support for emoji picker for mobile web view.
  - Moved MFA to Team Edition.
+ - Enhanced image performance.
 
 ### Improvements
 
 #### User Interface (UI)
- - Improved sorting of emoji in emoji autocomplete and emoji picker search results.
+ - Improved sorting of emoji in the emoji autocomplete and emoji picker search results.
+ - Added support for emoji picker for mobile web view.
 
 #### Notifications
- - Added a channel notification setting for disabling channel mentions.
+ - Added a channel notification setting to disable at-channel mentions.
  
 #### Administration
- - Added an option to add user to a channel from the profile pop-over.
- - Added the ability to search users by role in System Console > Users.
+ - Added an option to add users to a channel from the profile pop-over.
+ - Added the ability to search users by role in **System Console** > **Users**.
  - Added a CLI command to modify an outgoing webhook.
- - Added a CLI command "team restore".
+ - Added a CLI command to restore a team.
 
 #### Performance
  - Made posting idempotent.
 
 #### Slash Commands
- - Add support for sending a message to a different channel than where the slash command was issued from.
+ - Added support for sending a message to a different channel than where the slash command was issued from.
  - Improved error handling of slash commands.
- - Added an option to send as message when an invalid slash command is entered in RHS chat.
+ - Added an option to send a message when an invalid slash command is entered on the right-hand side.
 
 #### Plugins
- - Added server support for updating a plugin instead of having to remove and install as two separate actions.
+ - Added server support for updating a plugin instead of having to remove and install them as two separate actions.
  
 #### Attachments
- - Optimize file attachment memory usage where possible.
+ - Optimized file attachment memory usage where possible.
  
 #### Integrations 
- - Allow "true"/"false" for bool values in webhook payload.
+ - Enabled "true"/"false" for bool values in webhook payload.
 
 ### Bug Fixes
  
- - Fixed an issue where "[user] is typing ..." was not removed when message was composed and sent very quickly.
- - Fixed an issue where announcement banner should not display at all when the banner is enabled and text field is blank.
- - Fixed an issue where language was not set if selected in "Account Settings".
+ - Fixed an issue where "[user] is typing ..." was not removed when a message was composed and sent very quickly.
+ - Fixed an issue where an announcement banner displayed when the banner was enabled but the text field was blank.
+ - Fixed an issue where a language was not set if selected in Account Settings.
+ - Fixed an issue where removing rows from Send Email Invite modal didn't remove them immediately.
  
 ### Compatibility
 
@@ -60,9 +62,13 @@ Release Date 16/02/2019
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
  
 #### Changes to Team Edition and Enterprise Edition:
-  
-  - Added ability to configure group display name and unique identifier.
-  - Integrate image proxy into server and switch on by default.
+ 
+ - Under ``"ServiceSettings"`` in ``config.json``:
+    - ``"ExperimentalLdapGroupSync": false``, ``"GroupFilter": ""``, ``"GroupDisplayNameAttribute": ""``, ``"GroupIdAttribute": ""``, ``"ExperimentalStrictCSRFEnforcement": false``, to add the ability to configure group display name and unique identifier.
+ - Under ``"ImageProxySettings":`` in ``config.json``:
+    - Added ``"Enable": true,``, ``"ImageProxyType": "local",``, ``"RemoteImageProxyURL": "",`` and ``"RemoteImageProxyOptions": ""``, to allow integrating image proxy into the server and switching it on by default.
+ - Under ``"ExperimentalSettings":`` in ``config.json``:
+    - Added ``"LinkMetadataTimeoutMilliseconds": 5000``, to
 
 ### API Changes
 
