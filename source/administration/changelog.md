@@ -12,9 +12,14 @@ Release Date 16/02/2019
 
 ### Highlights
 
- - Added support for LDAP Group Sync.
- - Moved MFA to Team Edition.
- - Enhanced image performance.
+#### Added support for LDAP Group Sync
+ - Lets admins set default team and channel membership based on LDAP groups. See more details [in the documentation](https://docs.mattermost.com/deployment/ldap-group-sync.html).
+
+#### Added multi-factor authentication support to Team Edition
+ - See more details on [this Forum post](https://forum.mattermost.org/t/multi-factor-authentication-mfa-in-team-edition/6287).
+ 
+#### Enhanced image performance
+ - Improved performance for images by adding support for image proxy servers, which are now integrated into the server and switched on by default.
 
 ### Improvements
 
@@ -64,7 +69,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
  
  - Under ``"ServiceSettings"`` in ``config.json``:
-    - ``"ExperimentalLdapGroupSync": false``, ``"GroupFilter": ""``, ``"GroupDisplayNameAttribute": ""``, ``"GroupIdAttribute": ""``, ``"ExperimentalStrictCSRFEnforcement": false``, to add the ability to configure group display name and unique identifier.
+    - Added ``"ExperimentalLdapGroupSync": false``, ``"GroupFilter": ""``, ``"GroupDisplayNameAttribute": ""``, ``"GroupIdAttribute": ""`` and ``"ExperimentalStrictCSRFEnforcement": false``, to add the ability to configure group display name and unique identifier.
  - Under ``"ImageProxySettings":`` in ``config.json``:
     - Added ``"Enable": true,``, ``"ImageProxyType": "local",``, ``"RemoteImageProxyURL": "",`` and ``"RemoteImageProxyOptions": ""``, to allow integrating image proxy into the server and switching it on by default.
  - Under ``"ExperimentalSettings":`` in ``config.json``:
@@ -73,11 +78,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### API Changes
 
 #### RESTful API v4 Changes
- - Added ability to search teams to plugin API.
- - Added GetTeamStats to plugin API.
+ - Added ``SearchTeams`` to plugin API to add the ability to search teams.
+ - Added ``GetTeamStats`` to plugin API to add the ability to get team statistics.
  - Added a new API endpoint to get the bulk reactions for posts.
- - Added plugin api for update user active method.
- - Add GetFile API in app and plugin.
+ - Added ``UpdateUserActive`` to plugin API to allow updating user's status as active or inactive.
+ - Add ``GetFile`` to plugin to add the ability to get files.
 
 #### Database Changes
 
@@ -101,6 +106,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Contributors
 
+**////////XXXXXX Add translators**
+
+[adzimzf](https://github.com/adzimzf), [amorriscode](https://github.com/amorriscode), [amyblais](https://github.com/amyblais), [asaadmahmood](https://github.com/asaadmahmood), [avasconcelos114](https://github.com/avasconcelos114), [bradcoughlin](https://github.com/bradcoughlin), [cometkim](https://github.com/cometkim), [comharris](https://github.com/comharris), [coreyhulen](https://github.com/coreyhulen), [cpanato](https://github.com/cpanato), [crspeller](https://github.com/crspeller), [csduarte](https://github.com/csduarte), [cvitter](https://github.com/cvitter), [danmaas](https://github.com/danmaas), [dannymohammad](https://github.com/dannymohammad), [deanwhillier](https://github.com/deanwhillier), [DHaussermann](https://github.com/DHaussermann), [dmamills](https://github.com/dmamills), [dom3k](https://github.com/dom3k), [DSchalla](https://github.com/DSchalla), [dv29](https://github.com/dv29), [enahum](https://github.com/enahum), [esethna](https://github.com/esethna), [gabrieljackson](https://github.com/gabrieljackson), [grundleborg](https://github.com/grundleborg), [hanzei](https://github.com/hanzei), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [it33](https://github.com/it33), [ja11sop](https://github.com/ja11sop), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [JtheBAB](https://github.com/JtheBAB), [JustinReynolds-MM](https://github.com/JustinReynolds-MM), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kosgrz](https://github.com/kosgrz), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [maruTA-bis5](https://github.com/maruTA-bis5), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mollyyoung](https://github.com/mollyyoung), [nashik](https://github.com/nashik), [nlowe](https://github.com/nlowe), [Ovski4](https://github.com/Ovski4), [pichouk](https://github.com/pichouk), [pradeepmurugesan](https://github.com/pradeepmurugesan), [s4kh](https://github.com/s4kh), [sadohert](https://github.com/sadohert), [sapnasivakumar](https://github.com/sapnasivakumar), [saturninoabril](https://github.com/saturninoabril), [Sheshagiri](https://github.com/Sheshagiri), [sonasingh46](https://github.com/sonasingh46), [sudheerDev](https://github.com/sudheerDev), [svelle](https://github.com/svelle), [tomocy](https://github.com/tomocy), [unigiriunini](https://github.com/unigiriunini), [wiersgallak](https://github.com/wiersgallak), [yuya-oc](https://github.com/yuya-oc), [zeroimpl](https://github.com/zeroimpl), [zetaab](https://github.com/zetaab)
 
 ## Release v5.6
 
