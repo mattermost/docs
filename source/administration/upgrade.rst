@@ -24,8 +24,6 @@ Existing install directory - *{install-path}*
   If that command does not produce any results because your version is older, try ``whereis platform`` instead.
 Location of your local storage directory
   The local storage directory contains all the files that users have attached to their messages. If you don't know its location, open the System Console and go to **Files > Storage** and read the value in **Local Storage Directory**. Relative paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
-Owner and group of the install directory - *{owner}* and *{group}*
-  Use the ``ls -l {install-path}/mattermost/bin/mattermost`` command to get the owner and group.
 
 **To upgrade Mattermost Server**:
 
@@ -38,7 +36,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
    .. code-block:: sh
 
-     cd ~
+     cd /tmp
 
 #. Download `the latest version of Mattermost Server <https://about.mattermost.com/download/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
 
@@ -106,7 +104,7 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
    .. code-block:: sh
 
-     sudo chown -hR {owner}:{group} {path-to}/mattermost-upgrade/
+     sudo chown -hR mattermost:mattermost /tmp/mattermost-upgrade/
 
 #. Copy the new files to your install directory and remove the temporary files.
 
@@ -114,8 +112,8 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
    .. code-block:: sh
 
-     sudo cp -an {path-to}/mattermost-upgrade/. mattermost/
-     sudo rm -rf {path-to}/mattermost-upgrade/
+     sudo cp -an /tmp/mattermost-upgrade/. mattermost/
+     sudo rm -rf /tmp/mattermost-upgrade/
 
 #. Start Mattermost server.
 
