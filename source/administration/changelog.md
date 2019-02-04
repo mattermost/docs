@@ -31,7 +31,6 @@ Release Date 16/02/2019
  - Added a channel notification setting to disable at-channel mentions.
  
 #### Administration
- - Added an option to add users to a channel from the profile pop-over.
  - Added the ability to search users by role in **System Console** > **Users**.
  - Added a CLI command to modify an outgoing webhook.
  - Added a CLI command to restore a team.
