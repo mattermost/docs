@@ -407,6 +407,9 @@ Naming specific repeated mistake helps us find patterns, avoid repeated mistakes
 List of Terms
 ---------------------------
 
+.. _id8:
+.. _out-of-5:
+
 0/5, 1/5, 2/5, 3/5, 4/5, 5/5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
