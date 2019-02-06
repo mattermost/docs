@@ -34,6 +34,62 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 #. Review the :doc:`important-upgrade-notes` to make sure you are aware of any actions you need to take before or after upgrading from your particular version.
 
+**With a script**
+
+*Preparing the script*
+
+`Save the script<https://docs.mattermost.com/administration/update_mattermost.sh>`__ to your mattermost server.
+
+Make it executable.
+
+.. code-block:: sh
+
+     chmod +x ./update_mattermost.sh
+    
+Please adjust the parameters at the beginning of the script according to your environment.
+
+*Start the script*
+
+To start the update process start the script and add the desired version number as argument.
+
+.. code-block:: sh
+
+     sh update_mattermost.sh %VERSION%
+
+Example:
+
+.. code-block:: sh
+
+     sh update_mattermost.sh 5.7.1
+     
+After the update the following additional steps are required:
+     
+#. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+
+   .. code-block:: sh
+
+     cd {install-path}/mattermost
+     sudo setcap cap_net_bind_service=+ep ./bin/mattermost
+
+#. Upgrade your ``config.json`` schema:
+
+   #. Open the System Console and change a setting, then revert it. This should enable the Save button for that page.
+   #. Click **Save**.
+   #. Refresh the page.
+
+   Your current settings are preserved, and new settings are added with default values.
+
+After the server is upgraded, users might need to refresh their browsers to experience any new features.
+
+3. Re-instate, if needed the ``plugins`` directory, then restart the mattermost service.
+
+    .. code-block:: sh
+
+      cd {install-path}/mattermost
+      sudo mv plugins~/ plugins
+
+**Manually**
+
 #. In a terminal window on the server that hosts Mattermost Server, change to your home directory. If any, delete files and directories that might still exist from a previous download.
 
    .. code-block:: sh
