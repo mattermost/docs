@@ -162,8 +162,6 @@ Community Moderators and Community Support Champions include users outside Matte
 
 Community Coordinator: Amy Blais
 
-Community 
-
 Mattermost Staff  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
