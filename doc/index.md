@@ -29,45 +29,20 @@ Some features of GitLab are not currently available using the Helm chart:
 
 ## GitLab version mappings
 
-The table below maps some of the key previous chart versions and GitLab versions.
+The GitLab chart doesn't have the same version number as GitLab itself.
+Breaking changes are anticipated that may need to be introduced to the chart
+that would warrant a major version bump, and the requirement for these changes
+could completely block other development on these charts until completed.
 
-| Chart version | GitLab version |
-|---------------|----------------|
-| 1.5.0 | 11.7.0 |
-| 1.4.0 | 11.6.0 |
-| 1.3.0 | 11.5.0 |
-| 1.2.0 | 11.4.0 |
-| 1.1.0 | 11.3.0 |
-| 1.0.0 | 11.2.0 |
-| 0.3.5 | 11.1.4 |
-| 0.2.4 | 11.0.4 |
-
-To see the full list of the `gitlab` chart versions and the GitLab version they
-maps to, issue the following command with [helm](installation/tools.md#helm):
+To quickly see the full list of the `gitlab` chart versions and the GitLab version
+they map to, issue the following command with [helm](installation/tools.md#helm):
 
 ```sh
 helm repo add gitlab https://charts.gitlab.io/
 helm search -l gitlab/gitlab
 ```
 
-You will receive an output similar to:
-
-```
-NAME                    CHART VERSION   APP VERSION
-gitlab/gitlab           1.5.0           11.7.0
-gitlab/gitlab           1.4.4           11.6.5
-gitlab/gitlab           1.4.3           11.6.4
-gitlab/gitlab           1.4.2           11.6.3
-gitlab/gitlab           1.4.1           11.6.2
-```
-
-Read more about our [charts versioning](development/release.md) in our
-development docs.
-
-Make sure to also check the [releases documentation](releases/index.md) for
-information on important releases, and see the
-[changelog](https://gitlab.com/charts/gitlab/blob/master/CHANGELOG.md) for the
-full details on any release.
+For more information, visit the [version mappings docs](installation/version_mappings.md).
 
 ## Charts
 
@@ -76,7 +51,7 @@ documented individually, and laid in a structure that matches the
 [charts](https://gitlab.com/charts/gitlab/tree/master/charts) directory structure.
 
 Non-GitLab components are packaged and documented on the top level. GitLab
-component services are documented under the [GitLab](gitlab/index.md) chart:
+component services are documented under the [GitLab](charts/gitlab/index.md) chart:
 
 - [NGINX](charts/nginx/index.md)
 - [Redis](charts/redis/index.md)
