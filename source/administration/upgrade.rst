@@ -105,6 +105,8 @@ Location of your local storage directory
    .. code-block:: sh
 
      sudo chown -hR mattermost:mattermost /tmp/mattermost-upgrade/
+     
+If you have used a different *{owner}* and *{group}* while setting up the server adjust the command accordingly.
 
 #. Copy the new files to your install directory and remove the temporary files.
 
