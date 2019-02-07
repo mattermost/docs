@@ -120,9 +120,9 @@ Community Coordinator: TBD
 Knowledge Base Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-Knowledge Base Contributors share feedback, questions and answers on Mattermost through forums for `trouble shooting <https://www.mattermost.org/troubleshoot/>`__, `feature proposals <https://www.mattermost.org/feature-ideas/>`__, and `other topics <https://forum.mattermost.org>`__. 
+Knowledge Base Contributors share feedback, questions and answers on Mattermost through forums for `trouble shooting <https://www.mattermost.org/troubleshoot/>`__, `feature proposals <https://www.mattermost.org/feature-ideas/>`__, Github Issues and `Mattermost community server <https://community.mattermost.com>`_.
 
-Community Coordinator: Paul Rothrock 
+Community Coordinator: Amy Blais
 
 Deployment Solution Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -153,14 +153,7 @@ Recognizing people's contributions is vital to keeping them engaged. Leverage th
 
 3. Focus on high impact, skill appropriate contributions 
 
-When possible, influence contributors to apply themselves to the highest impact tickets and projects appropriate for their skill level. Meaningful contributions early in the contributor journey are a powerful way to draw people into the community. 
-
-Community Moderators / Community Support Champions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Community Moderators and Community Support Champions include users outside Mattermost staff who help troubleshoot technical issues that other users are hitting. This is done on Github Issues, on the Forum and on `Mattermost community server <https://community.mattermost.com>`_.
-
-Community Coordinator: Amy Blais
+When possible, influence contributors to apply themselves to the highest impact tickets and projects appropriate for their skill level. Meaningful contributions early in the contributor journey are a powerful way to draw people into the community.
 
 Mattermost Staff  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
