@@ -69,6 +69,31 @@ information on important releases, and see the
 [changelog](https://gitlab.com/charts/gitlab/blob/master/CHANGELOG.md) for the
 full details on any release.
 
+## Charts
+
+The main GitLab chart is based on a variety of other charts. Each sub-chart is
+documented individually, and laid in a structure that matches the
+[charts](https://gitlab.com/charts/gitlab/tree/master/charts) directory structure.
+
+Non-GitLab components are packaged and documented on the top level. GitLab
+component services are documented under the [GitLab](gitlab/index.md) chart:
+
+- [NGINX](charts/nginx/index.md)
+- [Redis](charts/redis/index.md)
+- [Minio](charts/minio/index.md)
+- [Registry](charts/registry/index.md)
+- GitLab/[sidekiq](charts/gitlab/sidekiq/index.md)
+- GitLab/[gitlab-shell](charts/gitlab/gitlab-shell/index.md)
+- GitLab/[gitaly](charts/gitlab/gitaly/index.md)
+- GitLab/[unicorn](charts/gitlab/unicorn/index.md)
+- GitLab/[migrations](charts/gitlab/migrations/index.md)
+
+## Global settings
+
+There are some common global settings that apply to multiple charts. See the
+[Globals documentation](charts/globals.md) for details on the different global
+configuration.
+
 ## Installing GitLab using the Helm Chart
 
 The `gitlab` chart includes all required dependencies, and takes a few minutes
