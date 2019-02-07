@@ -14,8 +14,6 @@ The default deployment includes:
 - An auto-scaling, unprivileged [GitLab Runner](https://docs.gitlab.com/runner/) using the Kubernetes executor
 - Automatically provisioned SSL via [Let's Encrypt](https://letsencrypt.org/).
 
-For more information on other available GitLab Helm Charts, see the [charts overview](./charts/index.md).
-
 There are also some [example values.yaml files](https://gitlab.com/charts/gitlab/tree/master/examples).
 
 ## Limitations
@@ -44,7 +42,7 @@ helm search -l gitlab/gitlab
 
 For more information, visit the [version mappings docs](installation/version_mappings.md).
 
-## Charts
+## List of charts
 
 The main GitLab chart is based on a variety of other charts. Each sub-chart is
 documented individually, and laid in a structure that matches the
