@@ -109,6 +109,11 @@ See [Advanced Configuration](advanced/index.md).
 
 See [Troubleshooting](troubleshooting/index.md).
 
+## Contributing
+
+See the [developer documentation](development/index.md) to learn how to contribute
+to the GitLab charts.
+
 ## Misc
 
 [Weekly demos preparation](development/preparation/index.md)
