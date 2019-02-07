@@ -35,9 +35,15 @@ secret_file: /etc/gitlab/shell/.gitlab_shell_secret
 
 {{- define "gitlab.appConfig.extra" -}}
 extra:
+  {{ if .extra.googleAnalyticsId }}
   google_analytics_id: {{ .extra.googleAnalyticsId | quote }}
+  {{- end }}
+  {{ if .extra.piwik_url }}
   piwik_url: {{ .extra.piwikUrl | quote }}
+  {{- end }}
+  {{ if .extra.piwik_site_id }}
   piwik_site_id: {{ .extra.piwikSiteId | quote }}
+  {{- end }}
 {{- end -}}
 
 {{- define "gitlab.appConfig.rackAttack" -}}
