@@ -120,7 +120,7 @@ Community Coordinator: TBD
 Knowledge Base Contributors 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-Knowledge Base Contributors share feedback, questions and answers on Mattermost through forums for `trouble shooting <https://www.mattermost.org/troubleshoot/>`__, `feature proposals <https://www.mattermost.org/feature-ideas/>`__, Github Issues and `Mattermost community server <https://community.mattermost.com>`_.
+Knowledge Base Contributors share feedback, questions and answers on Mattermost through forums for `trouble shooting <https://www.mattermost.org/troubleshoot/>`__, `feature proposals <https://www.mattermost.org/feature-ideas/>`__, Github issues and the `Mattermost community server <https://community.mattermost.com>`_.
 
 Community Coordinator: Amy Blais
 
