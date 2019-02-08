@@ -32,9 +32,9 @@ the global is used by GitLab backups.
 Create the secret per [registry chart documentation on storage](../../charts/registry/index.md#storage), then configure the chart to make use of this secret.
 
 Examples for [S3][storage-s3](any s3 compatible) and [GCS][storage-gcs] drivers can be found in
-[examples/objectstorage](../../examples/objectstorage).
-- [registry.s3.yaml](../../examples/objectstorage/registry.s3.yaml)
-- [registry.gcs.yaml](../../examples/objectstorage/registry.gcs.yaml)
+[examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
+- [registry.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.s3.yaml)
+- [registry.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.gcs.yaml)
 
 [storage-s3]: https://docs.docker.com/registry/storage-drivers/s3
 [storage-gcs]: https://docs.docker.com/registry/storage-drivers/gcs
@@ -82,9 +82,9 @@ See the [charts/globals documentaion on appConfig](../../charts/globals.md#confi
 Create the secret(s) per the [connection details documentation](../../charts/globals.md#connection), and then configure the chart to use the provided secrets. Note, the same secret can be used for all of them.
 
 Examples for [AWS][fog-aws](any S3 compatible) and [Google][fog-gcs] providers can be found in
-[examples/objectstorage](../../../examples/objectstorage).
-- [rails.s3.yaml](../../../examples/objectstorage/rails.s3.yaml)
-- [rails.gcs.yaml](../../../examples/objectstorage/rails.gcs.yaml)
+[examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
+- [rails.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.s3.yaml)
+- [rails.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.gcs.yaml)
 
 [fog-aws]: https://fog.io/storage/#using-amazon-s3-and-fog
 [fog-gcs]: https://fog.io/storage/#google-cloud-storage

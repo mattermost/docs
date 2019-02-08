@@ -1,44 +1,55 @@
 # Installing GitLab using Helm
-> **Note**: There are currently [known limitations](../../index.md#known-issues-and-limitations) when using this chart, and not all features of GitLab are available.
 
-Install GitLab on Kubernetes with the cloud native GitLab Helm chart. Follow the instructions below to get started.
+NOTE: **Note**:
+There are currently [known limitations](../index.md#limitations)
+when using this chart, and not all features of GitLab are available.
+
+Install GitLab on Kubernetes with the cloud native GitLab Helm chart.
 
 ## Requirements
 
-1. A Kubernetes cluster, version 1.8 or higher.
-1. [`kubectl`](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl) version 1.8 or higher, compatible with your cluster. ([+/- 1 minor release from your cluster](https://kubernetes.io/docs/tasks/tools/install-kubectl/#before-you-begin))
-1. [`Helm`](https://docs.helm.sh/using_helm/#installing-helm) `v2.x`, we require 2.9 or higher. See also our [documentation on Helm](../helm/index.md)
+In order to deploy GitLab on Kubernetes, the following are required:
 
-## Get started with GitLab
+1. kubectl 1.8 or higher, compatible with your cluster
+   ([+/- 1 minor release from your cluster](https://kubernetes.io/docs/tasks/tools/install-kubectl/#before-you-begin)).
+1. Helm 2.9 or higher.
+1. A Kubernetes cluster, version 1.8 or higher. 6vCPU and 16GB of RAM is recommended.
 
-### 1. Prerequisites
+## Environment setup
 
-In order to install GitLab in a Kubernetes cluster, there are a few required tools. To get started, [prepare your computer](tools.md).
+Before proceeding to deploying GitLab, you need to prepare your environment.
 
-### 2. Where do you want to install GitLab?
+### Tools
 
-Follow the instructions to connect to the Kubernetes cluster of your choice.
+`helm` and `kubectl` need to be [installed on your computer](tools.md).
 
-> **Note**: [Kubernetes 1.8 or higher is required](#requirements), due to the usage of certain Kubernetes features.
+### Cloud cluster preparation
 
-* [Google Kubernetes Engine][]
-* [Amazon EKS](../cloud/eks.md)
-* [OpenShift Origin](../cloud/openshift.md)
-* Azure Container Service - Documentation to be added.
-* Pivotal Container Service - Documentation to be added.
-* On-Premises solutions - Documentation to be added.
+NOTE: **Note**:
+[Kubernetes 1.8 or higher is required](#requirements), due to the usage of certain
+Kubernetes features.
 
-### 3. Deploy
+Follow the instructions to create and connect to the Kubernetes cluster of your
+choice:
 
-With the environment setup and configuration generated,
-we can proceed to [deployment][]. Or if you are upgrading an existing
-installation follow [upgrade docs][]
+- [Google Kubernetes Engine](cloud/gke.md)
+- [Amazon EKS](cloud/eks.md)
+- [OpenShift Origin](cloud/openshift.md)
+- Azure Container Service - Documentation to be added.
+- Pivotal Container Service - Documentation to be added.
+- On-Premises solutions - Documentation to be added.
 
-### 4. Migrate data from an existing GitLab
+## Deploying GitLab
 
-To migrate your existing GitLab instance to your deployed Kubernetes GitLab instance, follow the [migration documentation](./migration/index.md).
+With the environment set up and configuration generated, you can now proceed to
+the [deployment of GitLab](deployment.md).
 
-[Google Kubernetes Engine]: ../cloud/gke.md
-[resources]: resources.md
-[deployment]: deployment.md
-[upgrade docs]: upgrade.md
+## Upgrading GitLab
+
+If you are upgrading an existing Kubernetes installation, follow the
+[upgrade documentation](upgrade.md) instead.
+
+## Migrating from Omnibus GitLab to Kubernetes
+
+To migrate your existing Omnibus GitLab instance to your Kubernetes cluster,
+follow the [migration documentation](migration/index.md).

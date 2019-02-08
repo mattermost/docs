@@ -29,7 +29,7 @@ We will bump it for:
 ### Example release scenarios:
 
 |Chart Version|GitLab Version|Release Scenario|
-|-|-|-|
+|-------------|--------------|----------------|
 |`0.2.0`|`11.0.0`| GitLab 11 release, and Chart beta |
 |`0.2.1`|`11.0.1`| GitLab patch release |
 |`0.2.2`|`11.0.1`| Chart changes released |
@@ -45,7 +45,6 @@ We will bump it for:
 |`3.0.0`|`12.0.0`| GitLab 12 release |
 
 <sup>1</sup> If we have two chart version that both would need to be upgraded to the same image version for a security release, we will just update the newer one. Otherwise automating release logic will be overly complicated. Users can workaround if needed by manually specifying the image version, or upgrading their chart.
-
 
 ### Future iteration
 

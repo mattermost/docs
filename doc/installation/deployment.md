@@ -40,7 +40,7 @@ static IP. For example if you choose `example.com` and you have a static IP
 of `10.10.10.10`, then `gitlab.example.com`, `registry.example.com` and
 `minio.example.com` (if using minio) should all resolve to `10.10.10.10`.
 
-If you are using GKE, there is some documentation [here](../cloud/gke.md#creating-the-external-ip)
+If you are using GKE, there is some documentation [here](cloud/gke.md#creating-the-external-ip)
 for configuring static IPs and DNS. Consult your Cloud and/or DNS provider's
 documentation for more help on this process.
 
@@ -161,10 +161,10 @@ are set by default to be adequate for a small production deployment. This is int
 and 30gb of RAM. If you are trying to deploy a non-production instance, you can reduce the defaults in order to fit into
 a smaller cluster.
 
-The [minimal GKE example values file](../../examples/values-gke-minimum.yaml) provides an example of tuning the resources
+The [minimal GKE example values file](https://gitlab.com/charts/gitlab/tree/master/examples/values-gke-minimum.yaml) provides an example of tuning the resources
 to fit within a 3vCPU 12gb cluster.
 
-The [minimal minikube example values file](../../examples/values-minikube-minimum.yaml) provides an example of tuning the
+The [minimal minikube example values file](https://gitlab.com/charts/gitlab/tree/master/examples/values-minikube-minimum.yaml) provides an example of tuning the
 resources to fit within a 2vCPU, 4gb minikube instance.
 
 ## Deploy using helm
@@ -184,11 +184,11 @@ helm upgrade --install gitlab gitlab/gitlab \
 
 You can also use `--version <installation version>` option if you would like to install a specific version of GitLab.
 
-Mappings between chart versions and GitLab versions can be found [here](./version-mappings.md)
+Mappings between chart versions and GitLab versions can be found [here](../index.md#gitlab-version-mappings).
 
 Instructions for installing a development branch rather than a tagged release can be found in the [developer deploy documentation](../development/deploy.md).
 
-#### GitLab operator (experimental)
+### GitLab operator (experimental)
 
 If you would like to use GitLab operator to achieve zero downtime upgrades, please follow the [documentation for using the operator](./operator.md)
 

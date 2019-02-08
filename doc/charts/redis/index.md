@@ -10,7 +10,7 @@ It [was decided][issue-112] that this chart will have persistence based on [RDB]
 
 We will add the capability to split Redis queues based on class, along with High Availability features in the future.
 
-# Configuration
+## Configuration
 
 We will describe all the major sections of the configuration below. When configuring from the parent chart, these values will be as such:
 
@@ -76,14 +76,16 @@ Table below contains all the possible charts configurations that can be supplied
 | persistence.matchExpressions | Label-expression matches to bind            |                |
 
 ## Chart configuration examples
+
 ### image.pullSecrets
+
 `pullSecrets` allow you to authenticate to a private registry to pull images for a pod.
 
 Additional details about private registries and their authentication methods
 can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
 
 Below is an example use of `pullSecrets`
-```YAML
+```yaml
 image:
   repository: my.minio.repository
   tag: latest
@@ -195,10 +197,10 @@ It is also possible to entirely disable snapshotting by providing an empty array
 [redis.conf]: http://download.redis.io/redis-stable/redis.conf
 [redis-config-docs]: https://redis.io/topics/config
 
-[Service]: ../../../charts/redis/templates/service.yaml
-[Deployment]: ../../../charts/redis/templates/deployment.yaml
-[ConfigMap]: ../../../charts/redis/templates/configmap.yaml
-[values.yaml]: ../../../charts/redis/values.yaml
+[Service]: https://gitlab.com/charts/gitlab/blob/master/charts/redis/templates/service.yaml
+[Deployment]: https://gitlab.com/charts/gitlab/blob/master/charts/redis/templates/deployment.yaml
+[ConfigMap]: https://gitlab.com/charts/gitlab/blob/master/charts/redis/templates/configmap.yaml
+[values.yaml]: https://gitlab.com/charts/gitlab/blob/master/charts/redis/values.yaml
 
 [PersistentVolume]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/
 [PersistentVolumeClaim]: https://kubernetes.io/docs/concepts/storage/volumes/#persistentvolumeclaim
@@ -208,4 +210,4 @@ It is also possible to entirely disable snapshotting by providing an empty array
 [persistence]: https://redis.io/topics/persistence
 [access-modes]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
 
-[issue-112]:https://gitlab.com/charts/gitlab/issues/112
+[issue-112]: https://gitlab.com/charts/gitlab/issues/112

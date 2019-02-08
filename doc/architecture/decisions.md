@@ -98,14 +98,14 @@ Our [redis chart][] was altered from upstream [redis][].
 - Populate the password directly into the `redis.conf` instead of via Environment
 - Make use of pre-existing Kubernetes secrets instead of creating new ones from properties.
 
-[redis chart]: ../../charts/redis
+[redis chart]: ../charts/redis/index.md
 [redis]: https://github.com/kubernetes/charts/tree/master/stable/redis
 
 ### redis-ha
 
 Our [redis-ha chart][] was altered from upstream [redis-ha][].
 
-[redis-ha chart]: ../../charts/redis-ha
+[redis-ha chart]: ../charts/redis-ha/index.md
 [redis-ha]: https://github.com/kubernetes/charts/tree/master/stable/redis-ha
 
 ### minio
@@ -117,7 +117,7 @@ Our [minio chart][] was altered from upstream [minio][].
 - Automate the creation of multiple buckets via `defaultBuckets` in place of
 `defaultBucket.*` properties.
 
-[minio chart]: ../../charts/minio
+[minio chart]: ../charts/minio/index.md
 [minio]: https://github.com/kubernetes/charts/tree/master/stable/minio
 
 ### registry
@@ -127,7 +127,7 @@ Our [registry chart][] was altered from upstream [docker-registry][].
 - Enable the use of in-chart Minio services automatically.
 - Automatically hook authentication to the GitLab services.
 
-[registry chart]: ../../charts/registry
+[registry chart]: ../charts/registry/index.md
 [docker-registry]: https://github.com/kubernetes/charts/tree/master/stable/docker-registry
 
 ### nginx-ingress
@@ -137,5 +137,5 @@ Our [nginx-ingress chart][] was altered from upstream [nginx-ingress][].
 - Add feature to allow for the tcp configmap to be external to the chart
 - Add feature to allow ingress class to be templated based on release name
 
-[nginx-ingress chart]: ../../charts/nginx
+[nginx-ingress chart]: ../charts/nginx/index.md
 [nginx-ingress]: https://github.com/kubernetes/charts/tree/master/stable/nginx-ingress

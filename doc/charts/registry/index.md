@@ -218,9 +218,9 @@ The contents of this secret is taken directly from [Registry Configuration: `sto
 Please refer to that documentation for extended details.
 
 Examples for [S3][storage-s3] and [GCS][storage-gcs] drivers can be found in
-[examples/objectstorage](../../examples/objectstorage).
-- [registry.s3.yaml](../../examples/objectstorage/registry.s3.yaml)
-- [registry.gcs.yaml](../../examples/objectstorage/registry.gcs.yaml)
+[examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
+- [registry.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.s3.yaml)
+- [registry.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.gcs.yaml)
 
 Place the _contents_ of the `storage` block into the secret,
 and provide the following as items to the `storage` map:
@@ -256,10 +256,10 @@ external service, such as `s3`, `gcs`, `azure` or other compatible Object Storag
 [docker-distribution-config-docs]: https://docs.docker.com/registry/configuration
 [registry-config]: https://github.com/docker/distribution-library-image/blob/master/registry/config-example.yml
 
-[Service]: ../../../charts/registry/templates/service.yaml
-[Deployment]: ../../../charts/registry/templates/deployment.yaml
-[ConfigMap]: ../../../charts/registry/templates/configmap.yaml
-[values.yml]: ../../../charts/registry/values.yaml
+[Service]: https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/service.yaml
+[Deployment]: https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/deployment.yaml
+[ConfigMap]: https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/configmap.yaml
+[values.yml]: https://gitlab.com/charts/gitlab/blob/master/charts/registry/values.yaml
 [globals]: ../globals.md
 
 [kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/
