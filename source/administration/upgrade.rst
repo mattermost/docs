@@ -107,7 +107,7 @@ Location of your local storage directory
      sudo chown -hR mattermost:mattermost /tmp/mattermost-upgrade/
      
    .. note::
-     If you didn't use ``mattermost`` as the owner and group of the install directory, run ``sudo chown -hR {owner}:{group} tmp/mattermost-upgrade/``
+     If you didn't use ``mattermost`` as the owner and group of the install directory, run ``sudo chown -hR {owner}:{group} tmp/mattermost-upgrade/``.
 
      If you're uncertain what owner or group was defined, use the ``ls -l {install-path}/mattermost/bin/mattermost`` command to obtain them.
 
