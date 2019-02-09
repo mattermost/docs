@@ -163,7 +163,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Update Changelog “Known Issues” section with any significant issues that were found and not fixed for the final release
 3. QA:
     - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://community.mattermost.com/core/pl/db3sur4r53d9tyih1i4wrmi9wy))
-    - Post release testing instructions to Release Discussion channel ([template](https://communitye.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
+    - Post release testing instructions to Release Discussion channel ([template](https://community.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
     - DM reminders to team members who are not QA or devs, or who are new to release testing
     - Post "Bug Hunter Coin" message to Reception channel ([see example](https://community.mattermost.com/core/pl/3o15eoq89fdq5m1ac5dyp4nc3e))
     - Begin running all Selenium IDE tests
