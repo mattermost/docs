@@ -1596,7 +1596,7 @@ mattermost webhook
     -  `mattermost webhook delete`_ - Delete incoming and outgoing webhooks.
     -  `mattermost webhook list`_ - List all webhooks.
     -  `mattermost webhook modify-incoming`_ - Modify existing incoming webhook by changing its title, description, channel or icon url.
-    -  `mattermost webhook modify-outgoing`_ - Modify existing outgoing webhook by changing its title, description, channel or icon url.
+    -  `mattermost webhook modify-outgoing`_ - Modify existing outgoing webhook by changing its title, description, channel, icon, url, content-type, and triggers.
 
 mattermost webhook create-incoming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1724,7 +1724,7 @@ mattermost webhook modify-outgoing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Modify existing outgoing webhook by changing its title, description, channel or icon url.
+    Modify existing outgoing webhook by changing its title, description, channel, trigger words, icon url, callback url, or content type.
 
   Format
     .. code-block:: none
