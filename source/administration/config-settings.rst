@@ -3953,6 +3953,20 @@ Changes made when hardened mode is enabled:
 | This feature’s ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false`` for above settings respectively.          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Ldap Group Sync (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20 and higher*
+
+**True**: Enables AD/LDAP Group Sync configurable under **Access Controls > Groups**.
+
+**False**: Disables AD/LDAP Group Sync.  
+
+For more information on AD/LDAP Group Sync, please see the `_AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>_. 
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ExperimentalLdapGroupSyn": false`` with options ``true`` and ``false`` for above settings respectively.          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Limit Access to Config Settings Prior to Login
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Removed in December 16, 2018 release*
