@@ -3959,12 +3959,12 @@ Enable Ldap Group Sync (Experimental)
 
 **True**: Enables AD/LDAP Group Sync configurable under **Access Controls > Groups**.
 
-**False**: Disables AD/LDAP Group Sync.  
+**False**: Disables AD/LDAP Group Sync and removes the **Access Controls > Groups** from the System Console.  
 
-For more information on AD/LDAP Group Sync, please see the `_AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>_. 
+For more information on AD/LDAP Group Sync, please see the `_AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>>`__.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ExperimentalLdapGroupSyn": false`` with options ``true`` and ``false`` for above settings respectively.          |
+| This feature’s ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false`` for above settings respectively.          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Limit Access to Config Settings Prior to Login
