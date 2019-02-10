@@ -1405,13 +1405,11 @@ ________
 
 MFA
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E10 and higher*
-
 Configure security settings for multi-factor authentication.
 
 The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication.
 
-If you choose to run Mattermost outside your private network, bypassing your existing security protocols, it is recommended you upgrade to Mattermost Enterprise Edition to set up a multi-factor authentication service specifically for accessing Mattermost.
+If you choose to run Mattermost outside your private network, bypassing your existing security protocols, it is recommended you set up a multi-factor authentication service specifically for accessing Mattermost.
 
 Enable Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1426,6 +1424,7 @@ Enable Multi-factor Authentication
 
 Enforce Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
 
 **True**: When true, `multi-factor authentication (MFA) <https://docs.mattermost.com/deployment/auth.html>`__ is required for login. New users will be required to configure MFA on sign-up. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete. If your system has users with login options other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.
 
