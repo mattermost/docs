@@ -11,21 +11,21 @@ The groups feature is useful for organizations that have many new users to onboa
 Pre-installation notes
 ----------------------
 
-For customers that have enabled synchronization with AD/LDAP, all groups matching the default filter ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` will be available to be linked in the groups list view at **Access Control > Groups**. The group filter is an optional configuration setting available under **System Console > AD/LDAP**, which will allow you to specify the groups you would like to be able to access in Mattermost. 
+For customers that have enabled synchronization with AD/LDAP, all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` will be available to be linked in the groups list view at **Access Control > Groups**. The group filter is an optional configuration setting available under **System Console > AD/LDAP**, which will allow you to specify the groups you would like to be able to access in Mattermost. 
 
 The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/deployment/sso-ldap.html?highlight=ldap#configure-ad-ldap-synchronization>`__. for more information. The group feature has no effect on users' authentication to Mattermost.
 
 Enable AD/LDAP group synchronization
 ------------------------------------
 
-To enable this feature, edit the ```config.json file``` setting ```ExperimentalLdapGroupSync``` before starting the server or restart the server after changing. 
+To enable this feature, edit the ``config.json file`` setting ``ExperimentalLdapGroupSync`` before starting the server or restart the server after changing. 
 
 AD/LDAP group synchronization
 -----------------------------
 
 To synchronize specific AD/LDAP groups to Mattermost, specify the Group ID Attribute under **System Console > Authentication > AD/LDAP**.  
 
-Additionally, you can specify the Group filter used to retrieve groups.  If the group filter configuration is left blank, then all groups matching the default filter ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` are returned.  You can also set the attribute used to populate the Mattermost Group name under ```Group Display Name Attribute```.   
+Additionally, you can specify the Group filter used to retrieve groups.  If the group filter configuration is left blank, then all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` are returned.  You can also set the attribute used to populate the Mattermost Group name under ``Group Display Name Attribute``.   
 
 Synchronization of groups will occur after user synchronization and results for group synchronization are available on the synchonization status table (located at the bottom of the AD/LDAP configuration page). 
 
@@ -88,7 +88,7 @@ Private channels are indicated by:
  
 .. image:: ../images/private_channel.png  
 
-When a team is added, the ```Town Square```, ```Off-Topic``` channels will also be added as default, as well as any default channels set in the `ExperimentalDefaultChannels config setting <https://docs.mattermost.com/administration/config-settings.html?highlight=configuration%20settings#default-channels-experimental>`__. 
+When a team is added, the ``Town Square``, ``Off-Topic`` channels will also be added as default, as well as any default channels set in the `ExperimentalDefaultChannels config setting <https://docs.mattermost.com/administration/config-settings.html?highlight=configuration%20settings#default-channels-experimental>`__. 
 
 When a channel is added without setting the team explicitly, the team will be shown in the Team and Channel Membership listing, but it will not be added to the group specifically. Because of this dependency, when the channel is removed, the team will also be removed. Teams are listed in parentheses after the channel name in the channel selector.
 
