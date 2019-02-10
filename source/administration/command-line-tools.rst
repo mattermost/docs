@@ -1591,18 +1591,18 @@ mattermost webhook
     Commands to manage webhooks.
 
   Child Commands
-    -  `mattermost webhook create-incoming`_ - Create incoming webhook within specific channel. 
-    -  `mattermost webhook create-outgoing`_ - Create outgoing webhook within specific channel.
+    -  `mattermost webhook create-incoming`_ - Create an incoming webhook within specific channel. 
+    -  `mattermost webhook create-outgoing`_ - Create an outgoing webhook within specific channel.
     -  `mattermost webhook delete`_ - Delete incoming and outgoing webhooks.
     -  `mattermost webhook list`_ - List all webhooks.
-    -  `mattermost webhook modify-incoming`_ - Modify existing incoming webhook by changing its title, description, channel or icon url.
-    -  `mattermost webhook modify-outgoing`_ - Modify existing outgoing webhook by changing its title, description, channel, icon, url, content-type, and triggers.
+    -  `mattermost webhook modify-incoming`_ - Modify an existing incoming webhook by changing its title, description, channel or icon url.
+    -  `mattermost webhook modify-outgoing`_ - Modify an existing outgoing webhook by changing its title, description, channel, icon, url, content-type, and triggers.
 
 mattermost webhook create-incoming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Create incoming webhook within specific channel.
+    Create an incoming webhook within specific channel.
 
   Format
     .. code-block:: none
@@ -1628,7 +1628,7 @@ mattermost webhook create-outgoing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Create outgoing webhook which allows external posting of messages from a specific channel.
+    Create an outgoing webhook which allows external posting of messages from a specific channel.
 
   Format
     .. code-block:: none
@@ -1699,7 +1699,7 @@ mattermost webhook modify-incoming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Modify existing incoming webhook by changing its title, description, channel or icon url.
+    Modify an existing incoming webhook by changing its title, description, channel or icon url.
 
   Format
     .. code-block:: none
@@ -1724,7 +1724,7 @@ mattermost webhook modify-outgoing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Modify existing outgoing webhook by changing its title, description, channel, trigger words, icon url, callback url, or content type.
+    Modify an existing outgoing webhook by changing its title, description, channel, trigger words, icon url, callback url, or content type.
 
   Format
     .. code-block:: none
