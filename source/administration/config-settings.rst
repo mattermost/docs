@@ -1078,6 +1078,41 @@ This filter uses the permissions of the **Bind Username** account to execute the
 | This feature's ``config.json`` setting is ``"UserFilter": ""`` with string input.                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Group Filter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Optional) Enter an AD/LDAP Filter to use when searching for group objects (accepts `general syntax <http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__). Only the groups selected by the query will be able accessible to Mattermost. 
+
+This filter is defaulted to ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` when blank.  
+
+.. note::
+  This filter is used only when AD/LDAP Group Sync is enabled.  See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ for more information on enabling and configuring AD/LDAP Group Sync. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GroupFilter": ""`` with string input.                                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Group Display Name Attribute
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Optional) Enter an AD/LDAP Group Display name attribute to use to populate Mattermost Group names. 
+
+.. note::
+  This attribute is used only when AD/LDAP Group Sync is enabled.  See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ for more information on enabling and configuring AD/LDAP Group Sync. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GroupDisplayNameAttribute": ""`` with string input.                                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Group Id Attribute
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Required) Enter an AD/LDAP Group ID attribute to use as a unique identifier for Groups.  This should be an AD/LDAP value that does not change.
+
+.. note::
+  This attribute is used only when AD/LDAP Group Sync is enabled.  See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ for more information on enabling and configuring AD/LDAP Group Sync. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GroupIdAttribute": ""`` with string input.                                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 First Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 (Optional) The attribute in the AD/LDAP server used to populate the first name of users in Mattermost. When set, users cannot edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their first name in Account Settings.
