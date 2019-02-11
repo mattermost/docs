@@ -1780,18 +1780,10 @@ Enable SMTP Authentication
 
 **True**: SMTP username and password are used for authenticating to the SMTP server.
 
-**False**: Mattermost doesn't attempt to autehenticate to the SMTP server.
+**False**: Mattermost doesn't attempt to authenticate to the SMTP server.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSMTPAuth": false`` with options ``true`` and ``false`` for above settings respectively.                           |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Customer Type
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Type of Global Relay customer account your organization has, either ``A9/Type 9`` or ``A10/Type 10``.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CustomerType": A9/Type 9`` with options ``A9/Type 9`` and ``A10/Type 10`` for above settings respectively.              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 SMTP Server Username
@@ -1808,14 +1800,6 @@ The password associated with the SMTP username.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SMTPPassword": ""`` with string input.                                                                                  |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Email Address
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The email address your Global Relay server monitors for incoming compliance exports.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EmailAddress": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. _email-tls:
@@ -2779,6 +2763,40 @@ Export File Format
 File format of the compliance export. Corresponds to the system that you want to import the data into.
 
 Currently CSV, Actiance XML and Global Relay EML are supported.
+
+If Global Relay is chosen, then the following options will be presented:
+
+Global Relay Customer Account
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Type of Global Relay customer account your organization has, either ``A9/Type 9`` or ``A10/Type 10``.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CustomerType": A9/Type 9`` with options ``A9/Type 9`` and ``A10/Type 10`` for above settings respectively.              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Global Relay SMTP Username
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The username for authenticating to the Global Relay SMTP server.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SmtpUsername": ""`` with string input.                                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Global Relay SMTP Password
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The password associated with the Global Relay SMTP username.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SmtpPassword": ""`` with string input.                                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Global Relay Email Address
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The email address your Global Relay server monitors for incoming compliance exports.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EmailAddress": ""`` with string input.                                                                                  |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Run Compliance Export Job Now
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
