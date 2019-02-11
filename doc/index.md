@@ -2,6 +2,9 @@
 
 This is the official and recommended way to install GitLab on a cloud native environment.
 
+Do note that it is not necessary to have GitLab installed on Kubernetes in order to use
+the [GitLab Kubernetes integration](https://docs.gitlab.com/ee/user/project/clusters/).
+
 ## Introduction
 
 The `gitlab` chart is the best way to operate GitLab on Kubernetes. This chart
@@ -23,7 +26,12 @@ Some features of GitLab are not currently available using the Helm chart:
 - [GitLab Pages](https://gitlab.com/charts/gitlab/issues/37)
 - [GitLab Geo](https://gitlab.com/charts/gitlab/issues/8)
 - [No in-cluster HA database](https://gitlab.com/charts/gitlab/issues/48)
+- [Elasticsearch support](https://gitlab.com/charts/gitlab/issues/976)
+
+Database limitations:
+
 - MySQL will not be supported, as support is [deprecated within GitLab](https://docs.gitlab.com/omnibus/settings/database.html#using-a-mysql-database-management-server-enterprise-edition-only)
+- Support is only available for Postgres 9.6. Backup and restore [will not work with other versions](https://gitlab.com/charts/gitlab/issues/852).
 
 ## GitLab version mappings
 
