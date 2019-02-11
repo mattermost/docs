@@ -3996,7 +3996,7 @@ Enable AD/LDAP Group Sync (Experimental)
 
 **False**: Disables AD/LDAP Group Sync and removes the **Access Controls > Groups** from the System Console.  
 
-For more information on AD/LDAP Group Sync, please see the `_AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_.
+For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false`` for above settings respectively.               |
