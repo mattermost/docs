@@ -3988,7 +3988,7 @@ Changes made when hardened mode is enabled:
 | This feature’s ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false`` for above settings respectively.          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Ldap Group Sync (Experimental)
+Enable AD/LDAP Group Sync (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20 and higher*
 
