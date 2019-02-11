@@ -18,7 +18,7 @@ The synchronization of groups happens with the synchronization of users, during 
 Enable AD/LDAP group synchronization
 ------------------------------------
 
-To enable this feature, edit the ``config.json file`` setting ``ExperimentalLdapGroupSync`` before starting the server or restart the server after changing. 
+To enable this feature, edit the ``config.json file`` setting ``ExperimentalLdapGroupSync``. Then restart the Mattermost server after changing.
 
 AD/LDAP group synchronization
 -----------------------------
@@ -27,7 +27,7 @@ To synchronize specific AD/LDAP groups to Mattermost, specify the Group ID Attri
 
 Additionally, you can specify the Group filter used to retrieve groups.  If the group filter configuration is left blank, then all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` are returned.  You can also set the attribute used to populate the Mattermost Group name under ``Group Display Name Attribute``.   
 
-Synchronization of groups will occur after user synchronization and results for group synchronization are available on the synchonization status table (located at the bottom of the AD/LDAP configuration page). 
+Synchronization of groups occurs after user synchronization and results for group synchronization are available on the synchonization status table (located at the bottom of the AD/LDAP configuration page). 
 
 After the AD/LDAP groups have been synchronized, go to **System Console > Access Control > Groups** to link and configure Mattermost groups. 
  
@@ -135,7 +135,7 @@ Mattermost groups can be deleted by adjusting your AD/LDAP group filter to remov
 Frequently Asked Questions
 ----------------------------
 
-Why is AD/LDAP Group Sync in alpha?
+Why is AD/LDAP Group Sync experimental?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We want to make sure we have tested this feature in environments that have different AD/LDAP system and group structures to ensure the feature works well in the different varieties of environments our customers have, as well as collect feedback on the functionality. Our testing has included Active Directory and Open LDAP systems. 
