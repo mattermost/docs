@@ -88,7 +88,7 @@ Tables below contain all the possible charts configurations that can be supplied
 
 ## Advanced nginx ingress configuration
 
-See [nginx-ingress chart](../../charts/nginx/index.md)
+See [nginx-ingress chart](../charts/nginx/index.md)
 
 ## Advanced in-cluster redis configuration
 

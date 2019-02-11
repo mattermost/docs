@@ -1,20 +1,10 @@
-# Development Styleguide
+# Development styleguide
 
-Our contribution policies can be found in [CONTRIBUTING.md](../../CONTRIBUTING.md)
-
-**Table of Contents**
-- [Versioning and Release](#versioning-and-release)
-- [Changelog Entries](#changelog-entries)
-- [Installing the chart from the repo](#installing-the-chart-from-the-repo)
-- [Naming Conventions](#naming-conventions)
-- [Common Structure for values.yaml](#common-structure-for-valuesyaml)
-- [Developing template helpers](#developing-template-helpers)
-- [When to fork from upstream charts](#when-to-fork-upstream-charts)
-- [Handling configuration deprecation](#handling-configuration-deprecation)
+Our contribution policies can be found in [CONTRIBUTING.md](https://gitlab.com/charts/gitlab/tree/master/CONTRIBUTING.md)
 
 ## Versioning and Release
 
-Details on the version scheme, branching and tags can be found in [release document](release.md)
+Details on the version scheme, branching and tags can be found in [release document](release.md).
 
 ## Changelog Entries
 
@@ -24,6 +14,26 @@ All `CHANGELOG.md` entries should be created via the [changelog entries](changel
 
 Details on installing from the git repo can be found in the [developer deployment](deploy.md) documentation.
 
+## Running GitLab QA
+
+[GitLab QA](https://gitlab.com/gitlab-org/gitlab-qa) can be used against a
+deployed cloud native GitLab installation.
+
+[Read more in the GitLab QA chart docs](gitlab-qa/index.md).
+
+## Kube monkey
+
+[kube monkey](https://github.com/asobti/kube-monkey) is an implementation of
+Netflix's [chaos monkey](https://github.com/Netflix/chaosmonkey) for kubernetes
+clusters. It schedules randomly killing of pods in order to test fault tolerance
+of a highly available system.
+
+[Read more in the kube monkey chart docs](kube-monkey/index.md).
+
+## Developing for Kubernetes with Minikube
+
+Read how to [use minikube for setting up a local Kubernetes development environment](minikube/index.md).
+
 ## Naming Conventions
 
 We are using [camelCase](https://en.wikipedia.org/wiki/Camel_case) for our function names, and properties where they are used in values.yaml
@@ -32,7 +42,8 @@ Example: `gitlab.assembleHost`
 
 Template functions are placed into namespaces according to the chart they are associated with, and named to match the affected populated value in the target file. Note that chart _global_ functions generally fall under the `gitlab.*` namespace.
 
-Exmaples:
+Examples:
+
 - `gitlab.redis.host`: provides the host name of the Redis server, as a part of the `gitlab` chart.
 - `registry.minio.url`: provides the URL to the Minio host as part of the `registry` chart.
 
@@ -42,7 +53,7 @@ Many charts need to be provided with the same information, for example we need t
 
 ### Connecting to other services
 
-```
+```yaml
 redis:
   host: redis.example.com
   serviceName: redis
@@ -74,7 +85,7 @@ For example, where `registry` was the owning chart, and the other charts need to
 
 The owning chart should define its certificate secret like the following:
 
-```
+```yaml
 certificate:
   secret: <secret name>
   key: <key name inside the secret to fetch>
@@ -82,7 +93,7 @@ certificate:
 
 Other charts should share the same certificate secret like the following:
 
-```
+```yaml
 registry:
   certificate:
     secret: <secret name>
@@ -95,7 +106,7 @@ For example, where `redis` was the owning chart, and the other charts need to re
 
 The owning chart should define its password secret like the following:
 
-```
+```yaml
 password:
   secret: <secret name>
   key: <key name inside the secret to fetch>
@@ -103,7 +114,7 @@ password:
 
 Other charts should share the same password secret like the following:
 
-```
+```yaml
 redis:
   password:
     secret: <secret name>
@@ -114,7 +125,7 @@ redis:
 
 The owning chart should define its authToken secret like the following:
 
-```
+```yaml
 authToken:
   secret: <secret name>
   key: <key name inside the secret to fetch>
@@ -122,7 +133,7 @@ authToken:
 
 Other charts should share the same password secret like the following:
 
-```
+```yaml
 gitaly:
   authToken:
     secret: <secret name>
