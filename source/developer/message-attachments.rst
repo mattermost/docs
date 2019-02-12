@@ -143,14 +143,11 @@ You need to add an "attachment" key to the post's props JSON field. The value is
 
 .. code-block:: bash
 
-  curl -i -X POST -H 'Content-Type: application/json' -d '{"channel_id":"qmd5oqtwoibz8cuzxzg5ekshgr", "message":"Test message #testing", "props":{"attachments": [{"pretext": "This is the attachment pretext.","text": "This is the attachment text."}]}}' http://{your-mattermost-site}/posts
+  POST /posts HTTP/1.1
+  Host: {your-mattermost-site}
+  User-Agent: curl/7.63.0
+  Accept: */*
+  Content-Type: application/json
+  Content-Length: 192
 
-Below is an example HTTP request:
-
-.. code-block:: http
-
-  curl --header "Content-Type: application/json"
-  --request POST
-  -H "Authorization: Bearer xxxxxxxxxxxxxxxxxxxxx"
-  --data '{"channel_id":"qmd5oqtwoibz8cuzxzg5ekshgr", "message":"Test message #testing", "props":{"attachments": [{"pretext": "This is the attachment pretext.","text": "This is the attachment text."}]}}'
-  https://url:port/api/v4/posts
+  {"channel_id":"qmd5oqtwoibz8cuzxzg5ekshgr", "message":"Test message #testing", "props":{"attachments": [{"pretext": "This is the attachment pretext.","text": "This is the attachment text."}]}}
