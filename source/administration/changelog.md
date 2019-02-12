@@ -83,10 +83,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``UpdateUserActive`` to plugin API to allow updating user's status as active or inactive.
  - Add ``GetFile`` to plugin to add the ability to get files.
 
-#### Database Changes
-
-#### Websocket Event Changes
-
 ### Known Issues
 
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
