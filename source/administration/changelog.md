@@ -36,11 +36,10 @@ Release Date 2019-02-16
  - Added a CLI command to restore a team.
 
 #### Performance
- - Made posting idempotent.
+ - Added network connectivity improvements where the server no longer allows clients to auto-retry posts and to cause posts to appear twice.
 
 #### Slash Commands
  - Added support for sending a message to a different channel than where the slash command was issued from.
- - Improved error handling of slash commands.
  - Added an option to send a message beginning with a "/" from the right-hand side.
 
 #### Plugins
@@ -48,9 +47,6 @@ Release Date 2019-02-16
  
 #### Attachments
  - Optimized file attachment memory usage where possible.
- 
-#### Integrations 
- - Enabled "true"/"false" for bool values in webhook payload.
 
 ### Bug Fixes
  
@@ -79,7 +75,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### RESTful API v4 Changes
  - Added ``SearchTeams`` to plugin API to add the ability to search teams.
  - Added ``GetTeamStats`` to plugin API to add the ability to get team statistics.
- - Added a new API endpoint to get the bulk reactions for posts.
+ - Added ``/api/v4/posts/ids/reactions`` API endpoint to get the bulk reactions for posts.
  - Added ``UpdateUserActive`` to plugin API to allow updating user's status as active or inactive.
  - Add ``GetFile`` to plugin to add the ability to get files.
 
