@@ -1043,6 +1043,7 @@ mattermost team
     -  `mattermost team delete`_ - Delete a team.
     -  `mattermost team list`_ - List all teams.
     -  `mattermost team remove`_ - Remove users from a team.
+    -  `mattermost team restore`_ - Restore a previously archived team.    
     -  `mattermost team search`_ - Search for teams based on name.
 
 .. _team-value-note:
@@ -1151,6 +1152,22 @@ mattermost team list
     .. code-block:: none
 
       ./mattermost team list
+
+mattermost team restore
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Restore a previously archived team.
+
+  Format
+    .. code-block:: none
+
+      mattermost team restore {team}
+
+  Example
+    .. code-block:: none
+
+      ./mattermost team restore myteam 
 
 mattermost team remove
 ~~~~~~~~~~~~~~~~~~~~~~
