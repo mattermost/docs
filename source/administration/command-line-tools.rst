@@ -1153,7 +1153,7 @@ mattermost team list
 
       ./mattermost team list
 
-mattermost team resotre
+mattermost team restore
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
