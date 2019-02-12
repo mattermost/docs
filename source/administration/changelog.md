@@ -6,7 +6,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.8
 
-Release Date 16/02/2019
+Release Date 2019-02-16
 
 - Mattermost v5.8.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
@@ -41,7 +41,7 @@ Release Date 16/02/2019
 #### Slash Commands
  - Added support for sending a message to a different channel than where the slash command was issued from.
  - Improved error handling of slash commands.
- - Added an option to send a message when an invalid slash command is entered on the right-hand side.
+ - Added an option to send a message beginning with a "/" from the right-hand side.
 
 #### Plugins
  - Added server support for updating a plugin instead of having to remove and install them as two separate actions.
@@ -72,7 +72,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``"ImageProxySettings":`` in ``config.json``:
     - Added ``"Enable": true,``, ``"ImageProxyType": "local",``, ``"RemoteImageProxyURL": "",`` and ``"RemoteImageProxyOptions": ""``, to allow integrating image proxy into the server and switching it on by default.
  - Under ``"ExperimentalSettings":`` in ``config.json``:
-    - Added ``"LinkMetadataTimeoutMilliseconds": 5000``, to
+    - Added ``"LinkMetadataTimeoutMilliseconds": 5000`` and ``"DisablePostMetadata": false``, to enable post metadata by default.
 
 ### API Changes
 
