@@ -1,3 +1,5 @@
+.. _image-proxy:
+
 Image Proxy
 ================================
 
@@ -9,39 +11,22 @@ third-party servers.
 Proxy servers also provide a layer of caching, and can be made faster and more reliable than third-party sites. This caching 
 also helps preserve posts by protecting them from dead images.
 
-Configuration Keys
-~~~~~~~~~~~~~~~~~~
+The local proxy is using `willnorris/imageproxy <https://github.com/willnorris/imageproxy>`_, and is enabled by the Mattermost server by default.
 
-Three configuration keys are included: ``ImageProxyType``, ``ImageProxyURL`` and ``ImageProxyOptions``. When these
-keys are configured, posts served to the client will have their markdown modified such that all images are 
-loaded through a proxy.
+You may alternatively use `atmos/camo <https://github.com/atmos/camo>`_ http proxy to route images through SSL:
 
-Image Proxy Type
-........................
+.. _atmos-camo:
 
-Configure an image proxy to load all Markdown images through a proxy. The image proxy prevents users from making insecure image requests to third-party sites and provides caching for increased performance.
-
-Image Proxy URL
-........................
-
-URL of your image proxy server.
-
-Image Proxy Options
-........................
-
-Additional options for basic image adjustments such as the URL signing key. Contact your image proxy 
-service provider to learn more about what options are supported.
-
-Setup Guide
-~~~~~~~~~~~~~~~~~
+Set Up Guide for atmos/camo Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This guide gives an example of how to set up an image proxy using ``atmos/camo``:
 
 Deploy an ``atmos/camo`` (https://github.com/atmos/camo) instance to image-proxy.mattermost.com and update the 
-configuration in the system console. For example:
- - "ImageProxyType": "atmos/camo",
- - "ImageProxyURL": "https://image-proxy.mattermost.com",
- - "ImageProxyOptions": the secret string that was used as the ``CAMO_KEY`` for the atmos/camo deployment.
+configuration in **System Console > Files > Storage**. For example:
+ - **Image Proxy Type**: ``atmos/camo``
+ - **Remote Image Proxy URL**: ``https://image-proxy.mattermost.com``
+ - **Remote Image Proxy Options**: ``CAMO_KEY``, which is the secret string used for the sample ``atmos/camo`` deployment.
 
 .. image:: ../images/image-proxy.png
 
