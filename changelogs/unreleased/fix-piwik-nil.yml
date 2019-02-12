@@ -1,0 +1,5 @@
+---
+title: Ensure Piwik and Google Analytics are disabled by default
+merge_request:
+author:
+type: fixed
