@@ -179,4 +179,4 @@ It's a time for Mattermosters and top contributors from our community to get tog
 Traditions
 ~~~~~~~~~~
 
-One night of the grand up traditionally teams get together for a dinner and afterwards there is an option to play a round of "hot seat". In hot seat one person volunteers to receive feedback from the rest of the group - one "like" (something they do well) and one "wish" (an opportunity to improve). After everyone has shared feedback, the volunteer has the option of making a commitment to the group on making a change in how they work and to ask the group's help to share feedback on the change and keep them accountable.  
+During one night of the meet up, teams get together for a dinner and afterwards there is an option to play a round of "hot seat". In hot seat one person volunteers to receive feedback from the rest of the group - one "like" (something they do well) and one "wish" (an opportunity to improve). After everyone has shared feedback, the volunteer has the option of making a commitment to the group on making a change in how they work and to ask the group's help to share feedback on the change and keep them accountable.  
