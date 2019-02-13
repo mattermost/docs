@@ -1,8 +1,9 @@
 # Configure Charts using Globals
 
-To reduce configuration duplication when installing our wrapper Helm chart, several configuration settings are available
-to be set in the `global` section of `values.yml`. These global settings are used across several charts, all other settings
-are scoped within their chart. See the [Helm documentation on globals](https://docs.helm.sh/developing_charts/#global-values)
+To reduce configuration duplication when installing our wrapper Helm chart, several
+configuration settings are available to be set in the `global` section of `values.yml`.
+These global settings are used across several charts, while all other settings are scoped
+within their chart. See the [Helm documentation on globals](https://docs.helm.sh/developing_charts/#global-values)
 for more information on how the global variables work.
 
 - [Hosts](#configure-host-settings)
@@ -40,15 +41,29 @@ global:
       https: false
 ```
 
-#### domain
+| Name                 | Type     | Default        | Description |
+| :------------------- | :------: | :------------- | :---------- |
+| domain               | String   | `example.com`  | The base domain. GitLab and Registry will be exposed on the subdomain of this setting. This defaults to `example.com`, but is not used for hosts that have their `name` property configured. See the `gitlab.name`, `minio.name`, and `registry.name` sections below. |
+| externalIP           |          | `nil`          | Set the external IP address that will be claimed from the provider. This will be templated into the [nginx chart](nginx/index.md#configuring-the-service), in place of the more complex `nginx.service.loadBalancerIP`. |
+| https                | Boolean  | `true`         | If set to true, you will need to ensure the nginx chart has access to the certificates. In cases where you have TLS-termination in front of your ingresses, you probably want to look at [`global.ingress.tls.enabled`](#globalingresstlsenabled). Set to false for external urls to use `http://` instead of `https`. |
+| hostSuffix           | String   | (empty)        | [See Below](#hostsuffix). |
+| gitlab.https         | Boolean  | `false`        | If `hosts.https` or `gitlab.https` are `true`, the GitLab external url will use `https://` instead of `http://`. |
+| gitlab.name          | String   |                | The hostname for gitlab. If set, this hostname is used, regardless of the `global.hosts.domain` and `global.hosts.hostSuffix` settings. |
+| gitlab.serviceName   | String   | `unicorn`      | The name of the `service` which is operating the GitLab server. The chart will template the hostname of the service (and current `.Release.Name`) to create the proper internal serviceName. |
+| gitlab.servicePort   | String   | `workhorse`    | The named port of the `service` where the GitLab server can be reached. |
+| minio.https          | Boolean  | `false`        | If `hosts.https` or `minio.https` are `true`, the Minio external url will use `https://` instead of `http://`. |
+| minio.name           | String   |                | The hostname for Minio. If set, this hostname is used, regardless of the `global.hosts.domain` and `global.hosts.hostSuffix` settings. |
+| minio.serviceName    | String   | `minio`        | The name of the `service` which is operating the Minio server. The chart will template the hostname of the service (and current `.Release.Name`) to create the proper internal serviceName. |
+| minio.servicePort    | String   | `minio`        | The named port of the `service` where the Minio server can be reached. |
+| registry.https       | Boolean  | `false`        | If `hosts.https` or `registry.https` are `true`, the Registry external url will use `https://` instead of `http://`. |
+| registry.name        | String   |                | The hostname for Registry. If set, this hostname is used, regardless of the `global.hosts.domain` and `global.hosts.hostSuffix` settings. |
+| registry.serviceName | String   | `registry`     | The name of the `service` which is operating the Registry server. The chart will template the hostname of the service (and current `.Release.Name`) to create the proper internal serviceName. |
+| registry.servicePort | String   | `registry`     | The named port of the `service` where the Registry server can be reached. |
 
-The base domain. GitLab and Registry will be exposed on the subdomain of this setting. This defaults to `example.com`,
-but is not used for hosts that have their `name` property configured. See the `gitlab.name`, `minio.name`, and `registry.name` sections below.
+### hostSuffix
 
-#### hostSuffix
-
-Appended to the subdomain when assembling a hostname using the base `domain`. But this is not used for hosts that have their
-own `name` set.
+Appended to the subdomain when assembling a hostname using the base `domain`, but
+is not used for hosts that have their own `name` set.
 
 Defaults to being unset. If set the suffix is appended to the subdomain with a hyphen.
 
@@ -61,150 +76,47 @@ global:
 
 The above config would result in using external hostnames like: `gitlab-staging.example.com` and `registry-staging.example.com`
 
-#### https
-
-Set to false for external urls to use `http://` instead of `https`. Defaults to true.
-
-If set to true, you will need to ensure the nginx chart has access to the certificates.
-
-In cases where you have TLS-termination in front of your ingresses, you probably want to look at [`global.ingress.tls.enabled`](#globalingresstlsenabled)
-
-#### externalIP
-
-Set the external IP address that will be claimed from the provider. This will be templated into the
-[nginx chart](nginx/index.md#configuring-the-service), in place of the more complex `nginx.service.loadBalancerIP`.
-Defaults to `nil`.
-
-### gitlab
-
-The `gitlab` section of `global.hosts` includes configuration for the GitLab external hostname, and which internal service
-to point the hostname to.
-
-#### gitlab.name
-
-The hostname for gitlab. If set, this hostname is used, regardless of the `global.hosts.domain` and `global.hosts.hostSuffix` settings.
-
-#### gitlab.https
-
-If `hosts.https` or `gitlab.https` are `true`, the GitLab external url to use `https://` instead of `http://`. Defaults to `false`.
-
-#### gitlab.serviceName
-
-The name of the `service` which is operating the GitLab server. The chart will template the hostname of the service (and
-current `.Release.Name`) to create the proper internal serviceName. This will default to `unicorn`
-
-#### gitlab.servicePort
-
-The named port of the `service` where the GitLab server can be reached. This defaults to `workhorse`.
-
-### registry
-
-The `registry` section of `global.hosts` includes configuration for the Registry external hostname, and which internal service
-to point the hostname to.
-
-#### registry.name
-
-The hostname for Registry. If set, this hostname is used, regardless of the `global.hosts.domain` and `global.hosts.hostSuffix` settings.
-
-#### registry.https
-
-If `hosts.https` or `registry.https` are `true`, the Registry external url to use `https://` instead of `http://`. Defaults to `false`.
-
-#### registry.serviceName
-
-The name of the `service` which is operating the Registry server. The chart will template the hostname of the service (and
-current `.Release.Name`) to create the proper internal serviceName. This will default to `registry`
-
-#### registry.servicePort
-
-The named port of the `service` where the Registry server can be reached. This defaults to `registry`.
-
-### minio
-
-The `minio` section of `global.hosts` includes configuration for the Minio external hostname, and which internal service
-to point the hostname to.
-
-#### minio.name
-
-The hostname for Minio. If set, this hostname is used, regardless of the `global.hosts.domain` and `global.hosts.hostSuffix` settings.
-
-#### minio.https
-
-If `hosts.https` or `minio.https` are `true`, the Minio external url to use `https://` instead of `http://`. Defaults to `false`.
-
-#### minio.serviceName
-
-The name of the `service` which is operating the Minio server. The chart will template the hostname of the service (and
-current `.Release.Name`) to create the proper internal serviceName. This will default to `minio`
-
-#### minio.servicePort
-
-The named port of the `service` where the Minio server can be reached. This defaults to `minio`.
-
 ## Configure Ingress settings
 
-The GitLab global host settings are located under the `global.ingress` key.
+The GitLab global host settings for Ingress are located under the `global.ingress` key.
 
-|name|type|default|
-|:---|:---|:------|
-|[global.ingress.enabled](#global-ingress-enabled)|boolean|true|
-|[global.ingress.configureCertmanager](#global-ingress-configurecertmanger)|boolean|true|
-|[global.ingress.tls.enabled](#global-ingress-tls-enabled)|boolean|true|
-|[global.ingress.tls.secretName](#global-ingress-tls-secretName)|string|(empty)|
-|[global.ingress.annotations.*annotation-key*](#global-ingress-annotations-annotation-key)|string|(empty)|
-
-### global.ingress.enabled
-
-Global setting that controls whether to create ingress objects for services that support them. Defaults to `true`.
+| Name                                        | Type    | Default | Description |
+| :------------------------------------------ | :-----: | :------ | :---------- |
+| global.ingress.annotations.*annotation-key* | String  | (empty) | Where `annotation-key` is a string that will be used with the value as an annotation on every ingress. For Example: `global.ingress.annotations."nginx\.ingress\.kubernetes\.io/enable-access-log"=true`. No global annotations are provided by default. |
+| global.ingress.configureCertmanager         | Boolean | `true`  | [See below](#global-ingress-configureCertmanager) |
+| global.ingress.enabled                      | Boolean | `true`  | Global setting that controls whether to create ingress objects for services that support them. |
+| global.ingress.tls.enabled                  | Boolean | `true`  | When set to `false`, this disables TLS in Gitlab. This is useful for cases in which you cannot use TLS termination of ingresses, such as when you have a TLS-terminating proxy before the ingress controller. If you want to disable https completely, this should be set to `false` together with [`global.hosts.https`](#https). |
+| global.ingress.tls.secretName               | String  | (empty) | The name of the [Kubernetes TLS Secret](https://kubernetes.io/docs/concepts/services-networking/ingress/#tls) that contains a **wildcard** certificate and key for the domain used in `global.hosts.domain`. |
 
 ### global.ingress.configureCertmanager
 
-Global setting that controls the automatic configuration of [cert-manager](https://github.com/helm/charts/tree/master/stable/cert-manager) for ingress objects.
+Global setting that controls the automatic configuration of [cert-manager](https://github.com/helm/charts/tree/master/stable/cert-manager) for ingress objects. Defaults to `true`.
 
 If `true`, relies on `certmanager-issuer.email` being set.
 
-If `false`, and `global.ingress.tls.secretName` is not set, this will activate automatic self-signed certificate generation, which creates a **wildcard** certificate for all ingress objects.
+If `false`, and `global.ingress.tls.secretName` is not set, this will activate automatic
+self-signed certificate generation, which creates a **wildcard** certificate for all
+ingress objects.
 
 **NOTE:** If you wish to use an external `cert-manager`, you must provide the following:
+
 - `gitlab.unicorn.ingress.tls.secretName`
 - `registry.ingress.tls.secretName`
 - `minio.ingress.tls.secretName`
 - `global.ingress.annotations`
 
-Defaults to `true`.
-
-### global.ingress.tls.enabled
-
-When set to `false`, this disables TLS in Gitlab. This is useful for cases in which you cannot use TLS termination of ingresses, such as when you have a TLS-terminating proxy before the ingress controller. If you want to disable https completely, this should be set to `false` together with [`global.hosts.https`](#https)
-
-Defaults to `true`.
-
-### global.ingress.tls.secretName
-
-The name of the [Kubernetes TLS Secret](https://kubernetes.io/docs/concepts/services-networking/ingress/#tls) that contains a **wildcard** certificate and key for the domain used in `global.hosts.domain`.
-
-Defaults to not being set.
-
-### global.ingress.annotations.annotation-key
-
-Where `annotation-key` is a string that will be used with the value as an annotation on every ingress.
-
-ex:
-
-`global.ingress.annotations."nginx\.ingress\.kubernetes\.io/enable-access-log"=true`
-
-No global annotations are provided by default.
-
 ## GitLab Version
 
-The GitLab version used in the default image tag for the charts can be changed using the `global.gitlabVersion` key.
+The GitLab version used in the default image tag for the charts can be changed using
+the `global.gitlabVersion` key.
 
 ```bash
 --set global.gitlabVersion=11.0.1
 ```
 
-This impacts the default image tag used in the `unicorn`, `sidekiq`, and `migration` charts. Note that the `gitaly`, `gitlab-shell` and `gitlab-runner`
-image tags should be separately updated to versions compatible with the GitLab version.
+This impacts the default image tag used in the `unicorn`, `sidekiq`, and `migration`
+charts. Note that the `gitaly`, `gitlab-shell` and `gitlab-runner` image tags should
+be separately updated to versions compatible with the GitLab version.
 
 ## Configure PostgreSQL settings
 
