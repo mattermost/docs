@@ -124,10 +124,36 @@ And here is how it renders in Mattermost:
 
 .. image:: ../images/attachments-example.png
 
-
 Known Issues
 ------------
 
 1. ``color`` parameter does not support "good", "warning", and "danger" values
 2. Footer information fields are not yet supported (``footer``, ``footer_icon``, and timestamp ``ts``)
 3. Message Attachment contents do not show up in search
+
+Frequently Asked Questions
+---------------------------
+
+Can I send a message attachment via the API?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes, you can use the `create post RESTful API <https://api.mattermost.com/#tag/posts%2Fpaths%2F~1posts%2Fpost>`_.
+
+You need to add an "attachment" key to the post's props JSON field. The value is an array of message attachments you want attached to the post. See below for an example curl command.
+
+.. code-block:: bash
+
+  curl -i -X POST -H 'Content-Type: application/json' -d '{"channel_id":"qmd5oqtwoibz8cuzxzg5ekshgr", "message":"Test message #testing", "props":{"attachments": [{"pretext": "This is the attachment pretext.","text": "This is the attachment text."}]}}' http://{your-mattermost-site}/posts
+
+Below is an example HTTP request:
+
+.. code-block:: http
+
+  POST /posts HTTP/1.1
+  Host: {your-mattermost-site}
+  User-Agent: curl/7.63.0
+  Accept: */*
+  Content-Type: application/json
+  Content-Length: 192
+
+  {"channel_id":"qmd5oqtwoibz8cuzxzg5ekshgr", "message":"Test message #testing", "props":{"attachments": [{"pretext": "This is the attachment pretext.","text": "This is the attachment text."}]}}
