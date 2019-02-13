@@ -117,6 +117,7 @@ mattermost
     -  `mattermost jobserver`_ - Start the Mattermost job server
     -  `mattermost ldap`_ - AD/LDAP related utilities
     -  `mattermost license`_ - Licensing commands
+    -  `mattermost logs`_ - Display humand-readable logs
     -  `mattermost permissions`_ - Management of the permissions system
     -  `mattermost plugin`_ - Management of plugins
     -  `mattermost reset`_ - Reset the database to initial state
@@ -763,6 +764,28 @@ mattermost license upload
     .. code-block:: none
 
       ./mattermost license upload /path/to/license/mylicensefile.mattermost-license
+
+mattermost logs
+------------------
+
+  Description
+    Displays Mattermost logs in a human-readable format.
+
+  Format
+    .. code-block:: none
+
+      mattermost logs
+
+  Example
+    .. code-block:: none
+
+      ./mattermost logs --logrus
+
+  Options
+    .. code-block:: none
+
+          --logrus   Displays Mattermost logs in `logrus format <https://github.com/sirupsen/logrus>`_. Else, standard output is returned.
+
 
 mattermost permissions
 ----------------------
