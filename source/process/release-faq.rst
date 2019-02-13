@@ -7,7 +7,7 @@ Tick-tock refers to even-numbered releases (e.g. v5.6) containing new features, 
 
 The primary goal of our release cycle is to improve quality and build trust with our users in every release. A tick-tock release cycle allows new features to soak in our test environments for longer, allowing us to identify and fix bugs before releasing the features. 
 
-There is no change to the process or release schedule for security issues. When security issues are found that warrant a patch release, we follow the [security release process outlined here](https://docs.mattermost.com/process/security-release.html).
+There is no change to the process or release schedule for security issues. When security issues are found that warrant a patch release, we follow the `security release process outlined here<https://docs.mattermost.com/process/security-release.html>`_.
 
 Release Numbering
 -----------------
