@@ -174,7 +174,7 @@ MatterCon
 
 MatterCon is an annual conference for Mattermosters and the contributor community to come together. In 2018 it was held in Lisbon, Portugal. In 2019, in Punta Cana, Dominican Republic. 
 
-It's a time for Mattermosters and top contributors from our community to get together, celebrate our achievements and build shared experiences and empathy to increase the efficiency of working together. 
+It's a time for Mattermosters and top contributors from our community to get together, to celebrate our achievements and to build shared experiences and empathy to increase the efficiency of working together. 
 
 Traditions
 ~~~~~~~~~~
