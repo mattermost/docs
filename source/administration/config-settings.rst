@@ -3732,16 +3732,25 @@ Used in combination with the ``ClientSideCertEnable`` setting.
 | This feature's ``config.json`` setting is ``"ClientSideCertCheck": secondary`` with options ``primary`` and ``secondary`` for the above settings respectively.       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Post Metadata 
+Disable Post Metadata 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Load channels with more accurate scroll positioning by loading post metadata. Enabling this setting may increase channel and post load times. 
+**True**: Disabling post metadata is only recommended if you are experiencing a significant decrease in performance around channel and post load times. 
 
-**False**: Post metadata is not loaded.
+**False**: Load channels with more accurate scroll positioning by loading post metadata.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnablePostMetadata": false`` with options ``true`` and ``false`` for the above settings respectively.                   |
+| This feature's ``config.json`` setting is ``"DisablePostMetadata": false`` with options ``true`` and ``false`` for the above settings respectively.                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Link Metadata Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a configurable timeout for requests made to return link metadata. If the metadata is not returned before this timeout expires, the message will post without requiring metadata. This timeout covers the failure cases of broken URLs and bad content types on slow network connections.
+
++---------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LinkMetadataTimeoutMilliseconds": 5000`` with whole number input                   |
++---------------------------------------------------------------------------------------------------------------------------------+
 
 Analytics Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
