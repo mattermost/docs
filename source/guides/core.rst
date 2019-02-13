@@ -29,6 +29,7 @@ Release Process
    :maxdepth: 2
    :glob:
 
+   /process/release-overview*
    /process/feature-release*
    /process/bug-fix-release*
    /process/dot-release*
