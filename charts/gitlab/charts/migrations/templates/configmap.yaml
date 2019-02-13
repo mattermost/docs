@@ -35,14 +35,10 @@ data:
             path: /var/opt/gitlab/repo
             gitaly_address: tcp://localhost:8075
   configure: |
-    set -e
-    mkdir -p /init-secrets/redis /init-secrets/postgres /init-secrets/rails-secrets /init-secrets/migrations
-    cp /init-config/redis/password  /init-secrets/redis/password
-    cp /init-config/postgres/psql-password  /init-secrets/postgres/psql-password
-    cp /init-config/rails-secrets/secrets.yml /init-secrets/rails-secrets/secrets.yml
-    cp /init-config/migrations/initial_root_password /init-secrets/migrations/initial_root_password
-    secret_dir="/init-secrets" 
-{{- include "gitlab.psql.ssl.initScript" . | indent 4 }}
+    {{- include "gitlab.scripts.configure.secrets" (dict
+          "required" "redis postgres rails-secrets migrations"
+        ) | nindent 4 -}}
+    {{- include "gitlab.psql.ssl.initScript" . | nindent 4 }}
 {{- if .Values.global.operator.enabled }}
 ---
 apiVersion: v1
