@@ -7,7 +7,7 @@ and `nginx-default-backend` which is `defaultbackend` from the [`gcr.io/google_c
 
 ## Configuring NGINX
 
-See [documentation in the nginx chart](../../../charts/nginx/index.md) for configuration details.
+See [documentation in the nginx chart](https://gitlab.com/charts/gitlab/blob/master/charts/nginx/index.md) for configuration details.
 
 ### Global Settings
 
