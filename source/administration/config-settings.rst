@@ -2316,14 +2316,51 @@ Maximum file size for message attachments entered in megabytes in the System Con
 
 .. warning:: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network disruptions.
 
-Image Proxy
+Enable Image Proxy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Includes three configuration keys: ``ImageProxyType``, ``ImageProxyURL`` and ``ImageProxyOptions``. When these keys are configured, posts served to the client will have their markdown modified enabling all images to be loaded through a proxy. See `documentation <https://docs.mattermost.com/administration/image-proxy.html>`__ for more details.
+When true, enables an image proxy for loading external images. The image proxy is used by the Mattermost apps to prevent them from connecting directly to remote servers. This anonymizes their connections and prevents them from accessing insecure content.
+
+See the :doc:`documentation <image-proxy>` to learn more.
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``.                   |
++---------------------------------------------------------------------------------------------------------------------+
+
+Image Proxy Type
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The type of image proxy used by Mattermost. There are two options:
+
+**local**: The Mattermost server itself acts as the image proxy. This is the default option.
+
+**atmos/camo**: An external `atmos/camo <https://github.com/atmos/camo>`_ image proxy is used.
+
+See the :doc:`documentation <atmos-camo>` to learn more.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ImageProxyType": ""``, ``"ImageProxyURL": ""`` and ``"ImageProxyOptions": ""`` with string input.      |
+| This feature's ``config.json`` setting is ``"ImageProxyType": "local"``, with options ``local`` and ``atmos/camo`` for above settings respectively. |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Remote Image Proxy URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The URL of the ``atmos/camo`` proxy. This setting is not needed when using the local image proxy.
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RemoteImageProxyURL": ""`` with string input.                          |
++---------------------------------------------------------------------------------------------------------------------+
+
+Remote Image Proxy Options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The URL signing key passed to an ``atmos/camo`` image proxy. This setting is not needed when using the local image proxy.
+
+See the :doc:`documentation <atmos-camo>` to learn more.
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RemoteImageProxyOptions": ""`` with string input.                      |
++---------------------------------------------------------------------------------------------------------------------+
 
 ________
 
