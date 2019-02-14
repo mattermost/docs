@@ -241,8 +241,17 @@ such a way that an upstream may not accept.
 
 There are times in a development where changes in behavior require a functionally breaking change. We try to avoid such changes, but some items can not be handled without such a change.
 
-To handle this, we have implemented the [deprecations template][]. This template is designed to recogonize properties that need to be replaced or relocated, and inform the user of the actions they need to take. This template will compile all messages into a list, and then cause the deployment to stop via a `fail` call. This provides a method to inform the user at the same time as preventing the deployment the chart in a broken or unexpected state.
+To handle this, we have implemented the [deprecations template][]. This template is designed to recognize properties that need to be replaced or relocated, and inform the user of the actions they need to take. This template will compile all messages into a list, and then cause the deployment to stop via a `fail` call. This provides a method to inform the user at the same time as preventing the deployment the chart in a broken or unexpected state.
 
 See the documentation of the [deprecations template][] for further information on the design, functionality, and how to add new deprecations.
 
 [deprecations template]: deprecations.md
+
+## Verifying registry
+
+In development mode, verifying registry with Docker clients can be difficult. This is partly due to issues with SSL certificates of
+the registry. In situations like this it is easier to expose the registry over HTTP (see `global.hosts.registry.https`) and use an 
+[insecure registry](https://docs.docker.com/registry/insecure/).
+
+Also, if you're deploying Minio (`global.minio.enabled` which is `true` by default), you need to make sure that the its hostname can
+be resolved from registry container.
