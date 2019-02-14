@@ -23,7 +23,7 @@ The local image proxy is enabled on the Mattermost server by default. When using
 atmos/camo Image Proxy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The `atmos/camo <https://github.com/atmos/camo>`_ image proxy is a standalone image proxy that can be deployed separately from the Mattermost server. It provides additional configuration options over the built-in image proxy, and it can also also be used if isolation between the Mattermost server and image proxy is desired.
+The `atmos/camo <https://github.com/atmos/camo>`_ image proxy is a standalone image proxy that can be deployed separately from the Mattermost server. It provides additional configuration options over the built-in image proxy, and it can also be used if isolation between the Mattermost server and image proxy is desired.
 
 This guide gives an example of how to set up an image proxy using ``atmos/camo``:
 
