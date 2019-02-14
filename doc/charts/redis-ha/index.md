@@ -19,27 +19,27 @@ section lists the parameters that can be configured during installation.
 The following table lists the configurable parameters of the Redis chart and their
 default values.
 
-| Parameter                        | Description                                                                                                                  | Default                                                   |
-| -------------------------------- | -----------------------------------------------------                                                                        | --------------------------------------------------------- |
-| `image.pullPolicy`               | Pull policy for the Redis image                                                                                              |                                                           |
-| `image.pullSecrets`              | Secrets to use for image repository                                                                                          |                                                           |
-| `image.repository`               | Redis image                                                                                                                  | `registry.gitlab.com/gitlab-org/build/cng/gitlab-redis-ha`|
-| `image.tag`                      | Version of the Redis image to use                                                                                            | `latest`                                                  |
-| `init.image`                     | initContainer image                                                                                                          | `busybox`                                                 |
-| `init.tag  `                     | initContainer image tag                                                                                                      | `latest`                                                  |
-| `metrics.enabled`                | Toggle Prometheus Redis exporter sidecar container                                                                           | true                                                      |
-| `nodeSelector`                   | Node labels for pod assignment                                                                                               | {}                                                        |
-| `rbac.create`                    |  whether RBAC resources should be created                                                                                    | true                                                      |
-| `replicas.sentinels`             | Number of sentinel pods                                                                                                      | 3                                                         |
-| `replicas.servers`               | Number of redis master/slave pods                                                                                            | 3                                                         |
-| `resources.master`               | CPU/Memory for master nodes resource requests/limits                                                                         | Memory: `200Mi`, CPU: `100m`                              |
-| `resources.sentinel`             | CPU/Memory for sentinel node resource requests/limits                                                                        | Memory: `200Mi`, CPU: `100m`                              |
-| `resources.slave`                | CPU/Memory for slave nodes  resource requests/limits                                                                         | Memory: `200Mi`, CPU: `100m`                              |
-| `servers.annotations`            | See Appliance mode                                                                                                           | ``                                                        |
-| `servers.serviceType`            | Set to "LoadBalancer" to enable access from the VPC                                                                          | ClusterIP                                                 |
-| `serviceAccount.create`          | whether a new service account name that the agent will use should be created.                                                | true                                                      |
-| `serviceAccount.name`            | service account to be used.  If not set and serviceAccount.create is `true` a name is generated using the fullname template. | ``                                                        |
-| `tolerations`                    | Toleration labels for pod assignment                                                                                         | []                                                        |
+| Parameter               | Default                      | Description |
+| ----------------------- | ---------------------------- | ----------- |
+| `image.pullPolicy`      |                              | Pull policy for the Redis image.                       |
+| `image.pullSecrets`     |                              | Secrets to use for image repository.                   |
+| `image.repository`      | `registry.gitlab.com/gitlab-org/build/cng/gitlab-redis-ha`| Redis image.              |
+| `image.tag`             | `latest`                     | Version of the Redis image to use.                     |
+| `init.image`            | `busybox`                    | initContainer image.                                   |
+| `init.tag  `            | `latest`                     | initContainer image tag.                               |
+| `metrics.enabled`       | true                         | Toggle Prometheus Redis exporter sidecar container.    |
+| `nodeSelector`          | {}                           | Node labels for pod assignment.                        |
+| `rbac.create`           | true                         | Whether RBAC resources should be created.              |
+| `replicas.sentinels`    | 3                            | Number of sentinel pods.                               |
+| `replicas.servers`      | 3                            | Number of redis master/slave pods.                     |
+| `resources.master`      | Memory: `200Mi`, CPU: `100m` | CPU/Memory for master nodes resource requests/limits.  |
+| `resources.sentinel`    | Memory: `200Mi`, CPU: `100m` | CPU/Memory for sentinel node resource requests/limits. |
+| `resources.slave`       | Memory: `200Mi`, CPU: `100m` | CPU/Memory for slave nodes  resource requests/limits.  |
+| `servers.annotations`   | ``                           | See Appliance mode.                                    |
+| `servers.serviceType`   | ClusterIP                    | Set to "LoadBalancer" to enable access from the VPC.   |
+| `serviceAccount.create` | true                         | Whether a new service account name that the agent will use should be created. |
+| `serviceAccount.name`   | ``                           | Service account to be used. If not set and serviceAccount.create is `true` a name is generated using the fullname template. |
+| `tolerations`           | []                           | Toleration labels for pod assignment.                  |
 
 ## Chart configuration examples
 
