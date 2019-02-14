@@ -81,6 +81,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
 
+ - On a server using a subpath, the URL opens a blank page if the system admin changes the Site URL in the System Console UI. The system admin should restart the server to fix it.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Custom Terms of Service returns on refresh after clicking to agree.
  - Google login fails on the Classic mobile apps.
