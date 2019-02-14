@@ -65,7 +65,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
  - Under ``"ServiceSettings"`` in ``config.json``:
     - Added ``"ExperimentalLdapGroupSync": false``, ``"GroupFilter": ""``, ``"GroupDisplayNameAttribute": ""`` and ``"GroupIdAttribute": ""``, to add the ability to configure group display name and unique identifier.
-    - Added ``"ExperimentalStrictCSRFEnforcement": false``, to implement CSRF protection tokens.
  - Under ``"ImageProxySettings":`` in ``config.json``:
     - Added ``"Enable": true,``, ``"ImageProxyType": "local",``, ``"RemoteImageProxyURL": "",`` and ``"RemoteImageProxyOptions": ""``, to allow integrating image proxy into the server and switching it on by default.
  - Under ``"ExperimentalSettings":`` in ``config.json``:
