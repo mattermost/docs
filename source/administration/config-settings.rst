@@ -2284,11 +2284,9 @@ Maximum file size for message attachments entered in megabytes in the System Con
 Enable Image Proxy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When true, enables an image proxy for loading all Markdown images.
+When true, enables an image proxy for loading external images. The image proxy is used by the Mattermost apps to prevent them from connecting directly to remote servers. This anonymizes their connections and prevents them from accessing insecure content.
 
-The image proxy prevents users from making insecure image requests, provides caching for increased performance, and automates image adjustments such as resizing.
-
-See :doc:`documentation <image-proxy>` to learn more.
+See the :doc:`documentation <image-proxy>` to learn more.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``.                   |
@@ -2297,11 +2295,13 @@ See :doc:`documentation <image-proxy>` to learn more.
 Image Proxy Type
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configure an image proxy to load all Markdown images through a proxy. There are two options:
+The type of image proxy used by Mattermost. There are two options:
 
-**local**: The local proxy is using `willnorris/imageproxy <https://github.com/willnorris/imageproxy>`_, and is included in the Mattermost server by default.
+**local**: The Mattermost server itself acts as the image proxy. This is the default option.
 
-**atmos/camo**: An alternative image proxy supported by Mattermost. Uses the `atmos/camo <https://github.com/atmos/camo>`_ http proxy to route images through SSL. See the :doc:`set up documentation <atmos-camo>` to learn more.
+**atmos/camo**: An external `atmos/camo <https://github.com/atmos/camo>`_ image proxy is used.
+
+See the :doc:`documentation <atmos-camo>` to learn more.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ImageProxyType": "local"``, with options ``local`` and ``atmos/camo`` for above settings respectively. |
@@ -2310,7 +2310,7 @@ Configure an image proxy to load all Markdown images through a proxy. There are 
 Remote Image Proxy URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-URL of your remote image proxy server for the ``atmos/camo`` proxy.
+The URL of the ``atmos/camo`` proxy. This setting is not needed when using the local image proxy.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RemoteImageProxyURL": ""`` with string input.                          |
@@ -2319,7 +2319,9 @@ URL of your remote image proxy server for the ``atmos/camo`` proxy.
 Remote Image Proxy Options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Additional options such as the URL signing key. Refer to your image proxy documentation to learn more about what options are supported.
+The URL signing key passed to an ``atmos/camo`` image proxy. This setting is not needed when using the local image proxy.
+
+See the :doc:`documentation <atmos-camo>` to learn more.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RemoteImageProxyOptions": ""`` with string input.                      |

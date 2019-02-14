@@ -11,14 +11,19 @@ third-party servers.
 Proxy servers also provide a layer of caching, and can be made faster and more reliable than third-party sites. This caching 
 also helps preserve posts by protecting them from dead images.
 
-The local proxy is using `willnorris/imageproxy <https://github.com/willnorris/imageproxy>`_, and is enabled by the Mattermost server by default.
-
 You may alternatively use `atmos/camo <https://github.com/atmos/camo>`_ http proxy to route images through SSL:
+
+Local Image Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The local image proxy is enabled on the Mattermost server by default. When using the local image proxy, Mattermost apps will download external images through the Mattermost server itself.
 
 .. _atmos-camo:
 
-Set Up Guide for atmos/camo Proxy
+atmos/camo Image Proxy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The `atmos/camo <https://github.com/atmos/camo>`_ image proxy is a standalone image proxy that can be deployed separately from the Mattermost server. It provides additional configuration options over the built-in image proxy, and it can also also be used if isolation between the Mattermost server and image proxy is desired.
 
 This guide gives an example of how to set up an image proxy using ``atmos/camo``:
 
