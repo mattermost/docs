@@ -446,36 +446,37 @@ Valid configuration keys can be found in the [GitLab Job Artifacts Administratio
 documentation. This matches to [Fog](https://github.com/fog), and is different between
 provider modules.
 
-Examples for [AWS][fog-aws] and [Google][fog-gcs] providers can be found in
-[examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
+Examples for [AWS](https://fog.io/storage/#using-amazon-s3-and-fog) and [Google](https://fog.io/storage/#google-cloud-storage)
+providers can be found in [examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
+
 - [rails.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.s3.yaml)
 - [rails.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.gcs.yaml)
 
-[fog-aws]: https://fog.io/storage/#using-amazon-s3-and-fog
-[fog-gcs]: https://fog.io/storage/#google-cloud-storage
-
-Once a YAML file containing the contents of the `connection` has been created, use this file to create the secret in Kubernetes
+Once a YAML file containing the contents of the `connection` has been created, use
+this file to create the secret in Kubernetes.
 
 ```bash
 kubectl create secret generic gitlab-rails-storage \
     --from-file=connection=rails.yaml
 ```
 
-[artifactscon]: https://docs.gitlab.com/ee/administration/job_artifacts.html#s3-compatible-connection-settings
-
 ### Incoming email settings
 
-These settings are explained in [command line options page](../installation/command-line-options.md#incoming-email-configuration).
+These settings are explained in the [command line options page](../installation/command-line-options.md#incoming-email-configuration).
 
 ### LDAP
 
 #### ldap.servers
 
-This setting allows for the configuration of [LDAP](https://docs.gitlab.com/ee/administration/auth/ldap.html) user authentication. It is presented as a map, which will be translated into the the appropriate LDAP servers configuration in `gitlab.yml`, as with an installation from source.
+This setting allows for the configuration of [LDAP](https://docs.gitlab.com/ee/administration/auth/ldap.html)
+user authentication. It is presented as a map, which will be translated into the the
+appropriate LDAP servers configuration in `gitlab.yml`, as with an installation from source.
 
-Configuring passwords can be done by supplying a `secret` which holds the password. This password then will be injected into GitLab's configuration at runtime.
+Configuring passwords can be done by supplying a `secret` which holds the password.
+This password then will be injected into GitLab's configuration at runtime.
 
 An example configuration snippet:
+
 ```YAML
 ldap:
   servers:
@@ -491,7 +492,8 @@ ldap:
         key: the-key-containing-the-password
 ```
 
-Example configuration `--set` items, when using the global chart:
+Example `--set` configuration items, when using the global chart:
+
 ```
 --set global.appConfig.ldap.servers.main.label='LDAP' \
 --set global.appConfig.ldap.servers.main.host='your_ldap_server' \
@@ -502,11 +504,14 @@ Example configuration `--set` items, when using the global chart:
 --set global.appConfig.ldap.servers.main.password.key='the-key-containing-the-password'
 ```
 
-Commas are considered [special characters](https://github.com/kubernetes/helm/blob/master/docs/using_helm.md#the-format-and-limitations-of---set) within Helm `--set` items. Be sure to escape commas in values such as `bind_dn`: `--set global.appConfig.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'`
+> **Note:** Commas are considered [special characters](https://github.com/kubernetes/helm/blob/master/docs/using_helm.md#the-format-and-limitations-of---set)
+  within Helm `--set` items. Be sure to escape commas in values such as `bind_dn`: `--set global.appConfig.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'`.
 
 ### OmniAuth
 
-GitLab can leverage OmniAuth to allow users to sign in using Twitter, GitHub, Google, and other popular services. Expanded documentation can be found in [OmniAuth documentation][omniauth] for GitLab.
+GitLab can leverage OmniAuth to allow users to sign in using Twitter, GitHub, Google,
+and other popular services. Expanded documentation can be found in the [OmniAuth documentation](https://docs.gitlab.com/ee/integration/omniauth.html)
+for GitLab.
 
 ```YAML
 omniauth:
@@ -524,73 +529,34 @@ omniauth:
   #   key: provider
 ```
 
-#### enabled
-
-Enable / disable the use of OmniAuth with GitLab.
-
-Defaults to `false`
-
-#### autoSignInWithProvider
-
-Single provider name to be allowed to automatically sign in. This should match the name of the provider, such as `saml` or `google_oauth2`.
-
-Defaults to `nil`
-
-#### syncProfileFromProvider
-
-List of provider names that GitLab should automatically sync profile information from. Entries should match the name of the provider, such as `saml` or `google_oauth2`
-
-Defaults to `[]`
-
-See [Keep OmniAuth user profiles up to date][omniauth-profiles]
-
-#### syncProfileAttributes
-
-List of profile attributes to sync from the provider upon login. See [Keep OmniAuth user profiles up to date][omniauth-profiles] for options.
-
-Defaults to `['email']`
-
-#### allowSingleSignOn
-
-Enable the automatic creation of accounts when signing in with OmniAuth.
-
-Defaults to `false`
-
-#### blockAutoCreatedUsers
-
-If `true` auto created users will be blocked by default and will have to be unblocked by an administrator before they are able to sign in.
-
-Defaults to `true`
-
-#### autoLinkLdapUser
-
-`autoLinkLdapUser` can be used if you have LDAP / ActiveDirectory integration enabled. When enabled, users automatically created through OmniAuth will be linked to their LDAP entry as well.
-
-Defaults to `false`
-
-#### autoLinkSamlUser
-
-`autoLinkSamlUser` can be used if you have SAML integration enabled. When enabled, users automatically created through OmniAuth will be linked to their SAML entry as well.
-
-Defaults to `false`
-
-#### externalProviders
-
-You can define which OmniAuth providers you want to be `external` so that all users **creating accounts, or logging in via these providers** will not be able to have access to internal projects. You will need to use the full name of the provider, like `google_oauth2` for Google.
-
-Defaults to `[]`
-
-See [Configure OmniAuth Providers as External](https://docs.gitlab.com/ee/integration/omniauth.html#configure-omniauth-providers-as-external)
+| Name                      | Type    | Default     | Description |
+| :------------------------ | :-----: | :---------- | :---------- |
+| `allowSingleSignOn`       | Boolean | `false`     | Enable the automatic creation of accounts when signing in with OmniAuth. |
+| `autoLinkLdapUser`        | Boolean | `false`     | Can be used if you have LDAP / ActiveDirectory integration enabled. When enabled, users automatically created through OmniAuth will be linked to their LDAP entry as well. |
+| `autoLinkSamlUser`        | Boolean | `false`     | Can be used if you have SAML integration enabled. When enabled, users automatically created through OmniAuth will be linked to their SAML entry as well. |
+| `autoSignInWithProvider`  |         | `nil`       | Single provider name allowed to automatically sign in. This should match the name of the provider, such as `saml` or `google_oauth2`. |
+| `blockAUtoCreatedUsers`   | Boolean | `true`      | If `true` auto created users will be blocked by default and will have to be unblocked by an administrator before they are able to sign in. |
+| `enabled`                 | Boolean | `false`     | Enable / disable the use of OmniAuth with GitLab. |
+| `externalProviders`       |         | `[]`        | You can define which OmniAuth providers you want to be `external`, so that all users **creating accounts, or logging in via these providers** will be unable to access internal projects. You will need to use the full name of the provider, like `google_oauth2` for Google. See [Configure OmniAuth Providers as External](https://docs.gitlab.com/ee/integration/omniauth.html#configure-omniauth-providers-as-external). |
+| `providers`               |         | `[]`        | [See below](#providers). |
+| `syncProfileAttributes`   |         | `['email']` | List of profile attributes to sync from the provider upon login. See [Keep OmniAuth user profiles up to date](https://docs.gitlab.com/ee/integration/omniauth.html#keep-omniauth-user-profiles-up-to-date) for options. |
+| `syncProfileFromProvider` |         | `[]`        | List of provider names that GitLab should automatically sync profile information from. Entries should match the name of the provider, such as `saml` or `google_oauth2`. See [Keep OmniAuth user profiles up to date](https://docs.gitlab.com/ee/integration/omniauth.html#keep-omniauth-user-profiles-up-to-date). |
 
 #### providers
 
-`providers` is presented as an array of maps that are used to populate `gitlab.yml` as when installed from source. The available selection of [Supported Providers](https://docs.gitlab.com/ee/integration/omniauth.html#supported-providers) can be found in GitLab documentation.
+`providers` is presented as an array of maps that are used to populate `gitlab.yml`
+as when installed from source. See GitLab documentation for the available selection
+of [Supported Providers](https://docs.gitlab.com/ee/integration/omniauth.html#supported-providers).
 
 Member items:
 - `secret`: (required) The name of a Kubernetes `Secret` containing the provider block.
-- `key`: (optional) The name of the key in the `Secret` containing provider block. Defaults to `provider`
+- `key`: (optional) The name of the key in the `Secret` containing the provider block.
+  Defaults to `provider`
 
-The `Secret` for these entries contains YAML or JSON formatted blocks, as describe in [OmniAuth Providers][omniauth-providers]. To create this secret, follow the appropriate instructions for retrieval of these items, and create a YAML or JSON file.
+The `Secret` for these entries contains YAML or JSON formatted blocks, as described
+in [OmniAuth Providers](https://docs.gitlab.com/ee/integration/omniauth.html). To
+create this secret, follow the appropriate instructions for retrieval of these items,
+and create a YAML or JSON file.
 
 Example of configuration of Google OAuth2:
 
@@ -604,9 +570,14 @@ args:
   approval_prompt: ''
 ```
 
-This content can be saved `provider.yaml`, and then a secret created from it: `kubectl create secret generic -n NAMESPACE SECRET_NAME --from-file=provider=provider.yaml`
+This content can be saved as `provider.yaml`, and then a secret created from it:
 
-Once created, the `providers` are enabled by providing the map in configuration, as shown below.
+```bash
+kubectl create secret generic -n NAMESPACE SECRET_NAME --from-file=provider=provider.yaml
+```
+
+Once created, the `providers` are enabled by providing the map in configuration, as
+shown below:
 
 ```YAML
 omniauth:
@@ -617,15 +588,19 @@ omniauth:
 ```
 
 Example configuration `--set` items, when using the global chart:
-```
+
+```bash
 --set global.appConfig.omniauth.providers[0].secret=gitlab-google-oauth2 \
 ```
 
-Due to the complexity of using `--set` arguments, a user may wish to use a YAML snippet, passed to `helm` with `-f omniauth.yaml`.
+Due to the complexity of using `--set` arguments, a user may wish to use a YAML snippet,
+passed to `helm` with `-f omniauth.yaml`.
 
 Defaults to `[]`.
 
 ### Pseudonymizer settings
+
+Use these settings to configure the [Pseudonymizer service](https://docs.gitlab.com/ee/administration/pseudonymizer.html).
 
 ```
 global:
@@ -636,49 +611,49 @@ global:
       connection: {}
 ```
 
-Use these settings to configure [Pseudonymizer service](https://docs.gitlab.com/ee/administration/pseudonymizer.html)
+| Name          | Type    | Default         | Description |
+| :------------ | :-----: | :-------------- | :---------- |
+| `bucket`      | String  | `gitlab-pseudo` | Name of the bucket to use from the object storage provider. |
+| `configMap`   | String  |                 | [See Below](#configMap). |
+| `connnection` |         | `{}`            | [See Below](#connection). |
 
 #### configMap
 
-Name of the configmap having custom manifest file. Defaults to empty.
+Name of the configMap having a custom manifest file. Defaults to empty.
 
 GitLab ships with a [default manifest file for Pseudonymizer](https://gitlab.com/gitlab-org/gitlab-ee/blob/master/config/pseudonymizer.yml).
-Users can provide a custom one as a configmap. First, create a configmap
+Users can provide a custom one as a configMap. First, create a configMap:
 
 ```bash
 kubectl create configmap <name of the configmap> --from-file=pseudonymizer.yml=<path to pseudonymizer_config.yml>
 ```
 
-**`Note:`** Please make sure the key specified in the above command to create
-configmap is `pseudonymizer.yml`.  It is used to point the service to the
-correct location and thus an incorrect key will cause Pseudonymizer to not work.
+> **Note:** Please make sure the key specified in the above command to create configMap
+  is `pseudonymizer.yml`. It is used to point the service to the correct location and
+  an incorrect key will cause Pseudonymizer to not work.
 
 Pass the argument `--set global.appConfig.pseudonymizer.configMap=<name of the configmap>`
-to `helm install` command to instruct GitLab to use this manifest instead of the
+to the `helm install` command to instruct GitLab to use this manifest instead of the
 default one.
-
-#### bucket
-
-Name of the bucket to use from object storage provider. Defaults to
-`gitlab-pseudo`.
 
 #### connection
 
-Details of the Kubernetes secret that contains connection information for the
+Details of the Kubernetes secret that contains the connection information for the
 object storage provider. The contents of this secret should be a YAML formatted file.
 
 Defaults to `{}` and will be ignored if `global.minio.enabled` is `true`.
 
-This property has two sub-keys: `secret` and `key`.
+This property has two sub-keys: `secret` and `key`:
 - `secret` is the name of a Kubernetes Secret. This value is required to use external object storage.
 - `key` is the name of the key in the secret which houses the YAML block. Defaults to `connection`.
 
-Examples for [AWS][fog-aws] and [Google][fog-gcs] providers can be found in
-[examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
+Examples for [AWS](https://fog.io/storage/#using-amazon-s3-and-fog) and [Google](https://fog.io/storage/#google-cloud-storage)
+providers can be found in [examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage):
 - [rails.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.s3.yaml)
 - [rails.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.gcs.yaml)
 
-Once a YAML file containing the contents of the `connection` has been created, create the secret in Kubernetes
+Once a YAML file containing the contents of the `connection` has been created, create
+the secret in Kubernetes:
 
 ```bash
 kubectl create secret generic gitlab-rails-storage \
@@ -687,7 +662,8 @@ kubectl create secret generic gitlab-rails-storage \
 
 ## Configure GitLab Shell
 
-There are several items for the global configuration of [GitLab Shell](gitlab/gitlab-shell/index.md) chart.
+There are several items for the global configuration of [GitLab Shell](gitlab/gitlab-shell/index.md)
+chart.
 
 ```yaml
 global:
@@ -697,23 +673,20 @@ global:
     hostKeys: {}
 ```
 
-### Ingress port
-
-You can control the port use by the Ingress to pass SSH traffic, as well as the port used in SSH URLs provided from GitLab via `global.shell.port`. This defaults to `22`
-
-### Authorization token
-
-See [authToken](gitlab/gitlab-shell#authtoken) in chart specific documentaion.
-
-### Host Keys
-
-See [hostKeys](gitlab/gitlab-shell#hostkeyssecret) in chart specific documentaion.
+| Name        | Type    | Default | Description |
+| :---------- | :-----: | :------ | :---------- |
+| `port`      | Integer | `22`    | You can control the port used by the Ingress to pass SSH traffic, as well as the port used in SSH URLs provided from GitLab via `global.shell.port`. |
+| `authToken` |         |         | See [authToken](gitlab/gitlab-shell/index.md#authtoken) in the GitLab Shell chart specific documentation. |
+| `hostKeys`  |         |         | See [hostKeys](gitlab/gitlab-shell/index.md#hostkeys-secret) in the GitLab Shell chart specific documentation. |
 
 ## Custom Certificate Authorities
 
-> **NOTE**: These settings do not affect charts from outside of this repository, via requirements.yaml.
+> **Note**: These settings do not affect charts from outside of this repository,
+  via `requirements.yaml`.
 
-Some users may need to add custom certificate authorities, such as when using internally issued SSL certificates for TLS services. To provide this functionaliy, we provide a mechanism for injecting these custom root CAs into the application via secrets.
+Some users may need to add custom certificate authorities, such as when using internally
+issued SSL certificates for TLS services. To provide this functionaliy, we provide
+a mechanism for injecting these custom root CAs into the application via secrets.
 
 ```
 global:
@@ -723,13 +696,18 @@ global:
       - secret: other-custom-cas
 ```
 
-A user can provide any number of secrets, each containing any number of keys that hold PEM encoded CA certificates. These are configured as entries under `global.certificates.customCAs`. All keys within the secret will be mounted, so all keys across all secrets must be unique.
+A user can provide any number of secrets, each containing any number of keys that hold
+PEM encoded CA certificates. These are configured as entries under `global.certificates.customCAs`.
+All keys within the secret will be mounted, so all keys across all secrets must be unique.
 
-> **NOTE** These secrets can be named in any fashion, but they _must not_ contain key names that collide.
+> **Note** These secrets can be named in any fashion, but they *must not* contain
+  key names that collide.
 
 To create a secret:
 
-`kubectl create secret generic custom-ca --from-file=unique_name=/path/to/cert`
+```bash
+kubectl create secret generic custom-ca --from-file=unique_name=/path/to/cert
+```
 
 To configure:
 
@@ -740,21 +718,15 @@ helm install gitlab \
 
 ## Application Resource
 
-GitLab optionally includes an [Application resource](https://github.com/kubernetes-sigs/application), which can created to identify the GitLab application within the cluster. Requires the [Application CRD](https://github.com/kubernetes-sigs/application#installing-the-crd), version`v1beta1`, to already be deployed to the cluster.
+GitLab optionally includes an [Application resource](https://github.com/kubernetes-sigs/application),
+which can created to identify the GitLab application within the cluster. Requires the
+[Application CRD](https://github.com/kubernetes-sigs/application#installing-the-crd),
+version `v1beta1`, to already be deployed to the cluster.
 
-To enable, set to `global.application.create` to `true`:
+To enable, set `global.application.create` to `true`:
 
 ```yaml
 global:
   application:
     create: true
 ```
-
-[omniauth]: https://docs.gitlab.com/ee/integration/omniauth.html
-[omniauth-providers]: https://docs.gitlab.com/ee/integration/omniauth.html
-[omniauth-profiles]: https://docs.gitlab.com/ee/integration/omniauth.html#keep-omniauth-user-profiles-up-to-date
-
-[gitaly]: https://gitlab.com/gitlab-org/gitaly
-[storage]: https://docs.gitlab.com/ee/administration/repository_storage_paths.html
-[unicorn]: gitlab/unicorn/index.md
-[sidekiq]: gitlab/sidekiq/index.md
