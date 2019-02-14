@@ -6,10 +6,10 @@
                 "optional" "your optional secrets dirs" // optional, default "minio objectstorage ldap omniauth smtp"
     ) }}
 */}}
-{{- define "gitlab.scripts.configure.secrets" }}
+{{- define "gitlab.scripts.configure.secrets" -}}
 set -e
 config_dir="/init-config"
-secret_dir="/secrets-target"
+secret_dir="/init-secrets"
 
 for secret in {{ default "redis shell gitaly registry postgres rails-secrets gitlab-workhorse" $.required }} ; do
   mkdir -p "${secret_dir}/${secret}"

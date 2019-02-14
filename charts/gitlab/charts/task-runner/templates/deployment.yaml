@@ -43,7 +43,7 @@ spec:
             mountPath: /init-config
             readOnly: true
           - name: task-runner-secrets
-            mountPath: /secrets-target
+            mountPath: /init-secrets
             readOnly: false
           resources:
 {{ toYaml .Values.init.resources | indent 12 }}

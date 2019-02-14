@@ -103,10 +103,10 @@ spec:
             mountPath: /config
             readOnly: true
           - name: init-sidekiq-secrets
-            mountPath: /init-secrets
+            mountPath: /init-config
             readOnly: true
           - name: sidekiq-secrets
-            mountPath: /sidekiq-secrets
+            mountPath: /init-secrets
             readOnly: false
           resources:
 {{ toYaml $.Values.init.resources | indent 12 }}

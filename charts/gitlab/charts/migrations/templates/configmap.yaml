@@ -35,9 +35,7 @@ data:
             path: /var/opt/gitlab/repo
             gitaly_address: tcp://localhost:8075
   configure: |
-    {{- include "gitlab.scripts.configure.secrets" (dict
-          "required" "redis postgres rails-secrets migrations"
-        ) | nindent 4 -}}
+    {{- include "gitlab.scripts.configure.secrets" (dict "required" "redis postgres rails-secrets migrations" ) | nindent 4 -}}
     {{- include "gitlab.psql.ssl.initScript" . | nindent 4 }}
 {{- if .Values.global.operator.enabled }}
 ---

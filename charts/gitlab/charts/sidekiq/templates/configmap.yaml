@@ -107,9 +107,7 @@ data:
           port: {{ .Values.metrics.port }}
 {{- end }}
   configure: |
-    {{- include "gitlab.scripts.configure.secrets" (dict
-          "required" "redis gitaly registry postgres rails-secrets"
-          ) | nindent 4 -}}
+    {{- include "gitlab.scripts.configure.secrets" (dict "required" "redis gitaly registry postgres rails-secrets" ) | nindent 4 -}}
     {{- include "gitlab.psql.ssl.initScript" . | nindent 4 }}
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}

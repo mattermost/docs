@@ -8,10 +8,7 @@ metadata:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 data:
   configure: |
-    {{- include "gitlab.scripts.configure.secrets" (dict
-          "required" "redis shell"
-          ) | nindent 4 -}}
-    set -e
+    {{- include "gitlab.scripts.configure.secrets" (dict "required" "redis shell" ) | nindent 4 -}}
     mkdir -p /${secret_dir}/ssh
     cp /${config_dir}/ssh_host_* /${secret_dir}/ssh/
     chmod 0400 /${secret_dir}/ssh/ssh_host_*

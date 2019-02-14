@@ -69,9 +69,7 @@ data:
       ## Registry Integration
       {{- include "gitlab.appConfig.registry.configuration" $ | nindent 6 }}
   configure: |
-    {{- include "gitlab.scripts.configure.secrets" (dict
-          "required" "redis shell gitaly registry postgres rails-secrets gitlab-workhorse"
-          ) | nindent 4 -}}
+    {{- include "gitlab.scripts.configure.secrets" (dict "required" "redis shell gitaly registry postgres rails-secrets gitlab-workhorse") | nindent 4 -}}
     {{- include "gitlab.psql.ssl.initScript" . | nindent 4 }}
 
     if [ ! -f /${secret_dir}/objectstorage/.s3cfg ]; then
