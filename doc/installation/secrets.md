@@ -139,9 +139,9 @@ Replace `<name>` with the name of the release.
 ```
 cat << EOF > secrets.yml
 production:
-  secret_key_base: $(gen_random 'a-f0-9' 128)
-  otp_key_base: $(gen_random 'a-f0-9' 128)
-  db_key_base: $(gen_random 'a-f0-9' 128)
+  secret_key_base: $(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 128)
+  otp_key_base: $(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 128)
+  db_key_base: $(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 128)
   openid_connect_signing_key: |
 $(openssl genrsa 2048 | awk '{print "    " $0}')
 EOF
