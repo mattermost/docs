@@ -95,15 +95,15 @@ For the benefit of candidates and the company, Mattermost offers real-world “t
 
 Candidates who show strong potential for technical and cultural fit are invited to work on tasks that are part of their desired position, complete a project designed by their potential manager, or select from open `Help Wanted tickets <https://github.com/mattermost/mattermost-server/issues?q=is%3Aissue+%5BHelp+Wanted%5D+is%3Aopen>`__ to be completed per the `Mattermost contribution guidelines <https://developers.mattermost.com/contribute/getting-started/>`__. Your work will become a permanent part of the open source project that you can reference for the rest of your career. You’re also eligible to receive a `Mattermost Mug <https://twitter.com/search?q=%23mattermug&src=typd>`__ in appreciation of your first contribution. Here’s an example of `a successful project completed during a tryout <https://www.movetoiceland.com/mattermost-recipe-1-preview-videos/#.Wz2kb9hKjUK>`__.
 
-While you’re working with us, you can join the Mattermost community site `here <https://pre-release.mattermost.com/core/>`__.
+While you’re working with us, you can join the Mattermost community site `here <https://community.mattermost.com/core/>`__.
 
 Once signed-in, the following channels are recommended for observing how the core committers work with the community to ship new releases:
 
-* `Developers <https://pre-release.mattermost.com/core/channels/developers>`__
-* `Bugs <https://pre-release.mattermost.com/core/channels/bugs>`__
-* `Release Checklist <https://pre-release.mattermost.com/core/channels/release-checklist>`__
-* `Release Discussion <https://pre-release.mattermost.com/core/channels/release-discussion>`__
-* `Peer-to-Peer Help <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`__
+* `Developers <https://community.mattermost.com/core/channels/developers>`__
+* `Bugs <https://community.mattermost.com/core/channels/bugs>`__
+* `Release Checklist <https://community.mattermost.com/core/channels/release-checklist>`__
+* `Release Discussion <https://community.mattermost.com/core/channels/release-discussion>`__
+* `Peer-to-Peer Help <https://community.mattermost.com/core/channels/peer-to-peer-help>`__
 
 Observing these public channels as you work will give you a good sense of what it is like to work at Mattermost in a full time capacity to ensure joining the company aligns to your interests and desired career direction.
 

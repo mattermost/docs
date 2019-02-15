@@ -6,7 +6,7 @@ The goal of the localization process is to consistently produce high quality tra
 Translation Process
 -------------------
 
-If you're interested in contributing translations to Mattermost, please join the `Mattermost localization channel to discuss <https://pre-release.mattermost.com/core/channels/localization>`__. Below are descriptions of the overall localization process.
+If you're interested in contributing translations to Mattermost, please join the `Mattermost localization channel to discuss <https://community.mattermost.com/core/channels/localization>`__. Below are descriptions of the overall localization process.
 
 Initial Translation
 -------------------
@@ -18,7 +18,7 @@ To translate a language:
 2 - Confirm that the language you want to help translate is listed in the `Translation Server <http://translate.mattermost.com>`__.
 
     - If it is, perhaps offer to help translate or review and make suggestions.
-    - If not, ask to setup your language on the `Mattermost localization channel <https://pre-release.mattermost.com/core/channels/localization>`__, so you can start helping with the translation.
+    - If not, ask to setup your language on the `Mattermost localization channel <https://community.mattermost.com/core/channels/localization>`__, so you can start helping with the translation.
 
 3 - Review translation rules written by localization leads, when applicable:
 
@@ -98,7 +98,7 @@ Translations require updates on a monthly basis as features are added and change
 
 Below are current official reviewers and maintainers for languages that have reached at least Beta-quality. Official reviewers submit final translations for languages; maintainers suggest translations and step in when official reviewers aren't able to help in a certain release.
 
-If you're interested in contributing to the process, please join the `Mattermost localization channel to discuss <https://pre-release.mattermost.com/core/channels/localization>`__. Creating localization channels is also encouraged - see examples of current channels including `Italian <https://pre-release.mattermost.com/core/channels/i18n-italian>`__, `German <https://pre-release.mattermost.com/core/channels/i18n-german>`__ and `Swedish <https://pre-release.mattermost.com/core/channels/i18n-swedish>`__.
+If you're interested in contributing to the process, please join the `Mattermost localization channel to discuss <https://community.mattermost.com/core/channels/localization>`__. Creating localization channels is also encouraged - see examples of current channels including `Italian <https://community.mattermost.com/core/channels/i18n-italian>`__, `German <https://community.mattermost.com/core/channels/i18n-german>`__ and `Swedish <https://community.mattermost.com/core/channels/i18n-swedish>`__.
 
 +------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 | Language                                 | Official Reviewer(s)                                                                                                  | Maintainers                                                                                          |

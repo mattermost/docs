@@ -38,7 +38,7 @@ def setup(app):
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = ['sphinx_sitemap']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -61,7 +61,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Mattermost'
-copyright = u'2015-2018 Mattermost'
+copyright = u'2015-2019 Mattermost'
 author = u'Mattermost'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -119,6 +119,8 @@ todo_include_todos = False
 
 
 # -- Options for HTML output ----------------------------------------------
+
+html_baseurl = 'https://docs.mattermost.com/'
 
 # Global variables available to all templates
 html_context = {
