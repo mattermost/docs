@@ -2334,7 +2334,7 @@ The type of image proxy used by Mattermost. There are two options:
 
 **atmos/camo**: An external `atmos/camo <https://github.com/atmos/camo>`_ image proxy is used.
 
-See the :doc:`documentation <atmos-camo>` to learn more.
+See the `documentation <https://docs.mattermost.com/administration/image-proxy.html#atmos-camo-image-proxy>`_ to learn more.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ImageProxyType": "local"``, with options ``local`` and ``atmos/camo`` for above settings respectively. |
@@ -2354,7 +2354,7 @@ Remote Image Proxy Options
 
 The URL signing key passed to an ``atmos/camo`` image proxy. This setting is not needed when using the local image proxy.
 
-See the :doc:`documentation <atmos-camo>` to learn more.
+See the `documentation <https://docs.mattermost.com/administration/image-proxy.html#atmos-camo-image-proxy>`_ to learn more.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RemoteImageProxyOptions": ""`` with string input.                      |
