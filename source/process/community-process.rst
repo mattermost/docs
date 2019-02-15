@@ -37,7 +37,7 @@ Community channels
 
 The various community channels are outlined below. On a daily basis, the Community Manager helps with notifying team members about issues in need of a response and, if necessary, asks for help from a developer.
 
-1. `Peer-to-peer Help Channel <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`__: Forum Issues / GitLab / Stack Overflow
+1. `Peer-to-peer Help Channel <https://community.mattermost.com/core/channels/peer-to-peer-help>`__: Forum Issues / GitLab / Stack Overflow
 
   - Description:
 
@@ -59,7 +59,7 @@ The various community channels are outlined below. On a daily basis, the Communi
 
     - Review the list for posts that haven’t been answered, and either reply (with help from dev if needed) or route to the appropriate person, following up to make sure a response is posted
     
-2. `Peer-to-peer Help Channel <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`__: UserVoice Issues
+2. `Peer-to-peer Help Channel <https://community.mattermost.com/core/channels/peer-to-peer-help>`__: UserVoice Issues
 
   - Description:
 
@@ -93,7 +93,7 @@ The various community channels are outlined below. On a daily basis, the Communi
         
       - Updates `Spreadsheet <https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0>`__ to track UserVoice issues to be announced in upcoming releases.
 
-3. Weekly, usually Wednesdays, `Peer-to-peer Help Channel <https://pre-release.mattermost.com/core/channels/peer-to-peer-help>`__: GitHub , GitLab and StackOverflow issues with Activity Older than 7 days (that have not been created by Mattermost staff)
+3. Weekly, usually Wednesdays, `Peer-to-peer Help Channel <https://community.mattermost.com/core/channels/peer-to-peer-help>`__: GitHub , GitLab and StackOverflow issues with Activity Older than 7 days (that have not been created by Mattermost staff)
 
   - Description:
 

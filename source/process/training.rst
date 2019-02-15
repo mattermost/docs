@@ -37,7 +37,7 @@ T-minus 1-3 weeks
 T-minus 1 week
 ---------------------------------------------------------
 
-- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on pre-release.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME@mattermost.com` is the standard naming convention.
+- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on community.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME.LAST_NAME@mattermost.com` is the standard naming convention.
 
 - (People Ops & New Hire) Set up payroll.
  - US FTE, receive email to complete TriNet sign-up, payroll, benefits enrollment, I-9 form, banking information, personal information, tax forms.  
@@ -95,10 +95,10 @@ Developer Meeting
 
 Procedure:
 
-1. (Team and Public): Post meeting agenda in `Developers Meeting channel <https://pre-release.mattermost.com/core/channels/developers-meeting>`__ (open to the public). Please see instructions on `how to queue an item <https://pre-release.mattermost.com/core/pl/q4wcrcnxhtf1fr9grneb6fbrxy>`__.
+1. (Team and Public): Post meeting agenda in `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__ (open to the public). Please see instructions on `how to queue an item <https://community.mattermost.com/core/pl/q4wcrcnxhtf1fr9grneb6fbrxy>`__.
 2. (Team and Public): At the time of the meeting:
 
-      - Join the **Hangouts** link posted in the meeting agenda in the `Developers Meeting channel <https://pre-release.mattermost.com/core/channels/developers-meeting>`__.
+      - Join the **Hangouts** link posted in the meeting agenda in the `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__.
 
 
 Mattermost Staff Meetings
@@ -187,7 +187,7 @@ The meeting includes presentations and demos, controlled agenda items (e.g. queu
 
 Procedure:
 
-1. (Vice Chair) the day before the meeting, post a reminder in `Platform Meeting private channel <https://pre-release.mattermost.com/core/channels/platform-meeting>`__ (Mattermost Inc only)
+1. (Vice Chair) the day before the meeting, post a reminder in `Platform Meeting private channel <https://community.mattermost.com/core/channels/platform-meeting>`__ (Mattermost Inc only)
 
 ::
 
@@ -199,13 +199,13 @@ Procedure:
 
 2. (Team) At time of meeting:
 
-   - Join the **Zoom** link in the header of the `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`__.
+   - Join the **Zoom** link in the header of the `Platform private channel <https://community.mattermost.com/core/channels/platform-discussion>`__.
    - Open the **Notes** link in the header to see the agenda.
 
 3. (Vice-Chair) Post `meeting notes template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`__ into Platform Meeting Notes.
    
    - Add **Follow-ups** from previous meeting.
-   - Add **New items** queued in `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`__ (Mattermost Inc only).
+   - Add **New items** queued in `Platform private channel <https://community.mattermost.com/core/channels/platform-discussion>`__ (Mattermost Inc only).
 
 Meeting Agenda:
 
@@ -218,7 +218,7 @@ Meeting Agenda:
 
 Post Meeting:
 
-- If there are follow-up items, these are posted to the  `Platform private channel <https://pre-release.mattermost.com/core/channels/platform-discussion>`__ (Mattermost Inc only).
+- If there are follow-up items, these are posted to the  `Platform private channel <https://community.mattermost.com/core/channels/platform-discussion>`__ (Mattermost Inc only).
 
 Meeting Elements
 -----------------------
@@ -406,6 +406,9 @@ Naming specific repeated mistake helps us find patterns, avoid repeated mistakes
 
 List of Terms
 ---------------------------
+
+.. _id8:
+.. _out-of-5:
 
 0/5, 1/5, 2/5, 3/5, 4/5, 5/5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -632,3 +635,20 @@ Example of finished Mattermost Avatar:
 
 .. image:: https://cloud.githubusercontent.com/assets/177788/25364270/0425b738-2916-11e7-9a23-5ced2d9dfc8f.png
 
+---------------------------------------------------------
+Mattermost Teams and Naming Conventions
+---------------------------------------------------------
+
+Staff must use their full name for their username, as in ``first.last``, on the community server. Staff are also encouraged to link to their Github account using the command `/github connect` so that your Github handle will appear on your profile popover card.  All Mattermost  staff should be issued a OneLogin account with a username of ``first.last``.  If issued a OneLogin account, you should switch your sign-in method from email/password to OneLogin via the `Account Settings > Security > Sign-in Method` page.  Once this is done, your username will be set from SAML.
+
+Contributors team
+---------------------------------------------------------
+This is a team open for any and all to join.  It is the main place where staff, contributors, users, customers and partners interact.  Our goal is to do as much work as possible in the open.  If you find yourself creating a private channel on this team you should pause and ask yourself if it really needs to be private.  Mattermost staff will be sync'ed to the appropriate channels based on their LDAP group sync settings.
+
+Staff team
+---------------------------------------------------------
+This is restricted to people with an `@mattermost.com` email address.  It is meant for Mattermost employees and staff and it is where we discuss internal company matters.  Since this team only includes people with mattermost.com email address, you should prefer creating public channels.  Also, if you find yourself creating a channel here, you should ask yourself if it would be better served to have it in the Contributors team.  Mattermost staff will be sync'ed to the appropriate channels based on their LDAP group sync settings.
+
+Partners team
+---------------------------------------------------------
+This is an invite only team meant for Mattermost staff and partners.  This is a team for staff to interact with partners and for partners to interact with other partners. You should prefer public channels when you want partner-to-partner interactions and private channels when you want staff-to-partner interactions.  Remember that any partner added to the team will be able to join any public channel.

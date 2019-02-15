@@ -55,6 +55,5 @@ Why are custom terms of service beta?
 This feature is labelled as beta while we verify the quality of the feature in various scenarios. Known issues include:
 
 - Login fails when custom terms of service is enabled and MFA is enforced.
-- Terms of service re-appears on page refresh even if it was already accepted.
 - Terms of service text disappears in the System Console on save until next refresh.
 - Terms of service loads immediately following an update to terms, instead of after login or a page refresh.

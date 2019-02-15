@@ -37,4 +37,4 @@ See our documentation below.
    /integrations/embedding*
    /integrations/webhook*
 
-Come `join our "Contributors" community channel <https://pre-release.mattermost.com/core/channels/tickets>`__ on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our `"Developers" channel <https://pre-release.mattermost.com/core/channels/developers>`__ for technical discussions and our `"Developer Toolkit" channel <https://pre-release.mattermost.com/core/channels/developer-toolkit>`__ for all integrations and plugins discussions.
+Come `join our "Contributors" community channel <https://community.mattermost.com/core/channels/tickets>`__ on our community server, where you can discuss questions with community members and the Mattermost core team. Join our `"Developers" channel <https://community.mattermost.com/core/channels/developers>`__ for technical discussions and our `"Developer Toolkit" channel <https://community.mattermost.com/core/channels/developer-toolkit>`__ for all integrations and plugins discussions.

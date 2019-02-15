@@ -166,3 +166,17 @@ Just as flexible as our working hours, learn more about our `paid time-off polic
 **4. Additional US and Canadian employee benefits**
 
 Mattermost uses professional employment organizations in the United States and Canada and are able to offer additional `benefits to US employees <benefits-us.html>`__ and `benefits to Canadian employees <benefits-canada.html>`__.
+
+
+---------
+MatterCon 
+---------
+
+MatterCon is an annual conference for Mattermosters and the contributor community to come together. In 2018 it was held in Lisbon, Portugal. In 2019, in Punta Cana, Dominican Republic. 
+
+It's a time for Mattermosters and top contributors from our community to get together, to celebrate our achievements and to build shared experiences and empathy to increase the efficiency of working together. 
+
+Traditions
+~~~~~~~~~~
+
+During one night of the meet up, teams get together for a dinner and afterwards there is an option to play a round of "hot seat". In hot seat one person volunteers to receive feedback from the rest of the group - one "like" (something they do well) and one "wish" (an opportunity to improve). After everyone has shared feedback, the volunteer has the option of making a commitment to the group on making a change in how they work and to ask the group's help to share feedback on the change and keep them accountable.  

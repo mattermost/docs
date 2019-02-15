@@ -12,8 +12,10 @@ Mobile Web Experience
   If you log out or your account is deactivated, the data in the browser cache may reside until the cache expires or the temporary file system store on the operating system is cleared, depending on your operating system.
 
 
-Next Generation Native Mobile Apps
+Mobile App Experience
 ----------------------------------
+
+To speed up initial loading time, Mattermost mobile apps cache data locally on the device for v1.1 and later. Below are common questions on cached data: 
 
 **1. What data is stored locally with the new mobile apps on a mobile device?**
 
@@ -24,6 +26,8 @@ Next Generation Native Mobile Apps
   - avatars, usernames, and email addresses of people in the currently open channel
 
   In addition, metadata that the app uses for keeping track of its operations is also cached. The metadata includes user IDs, channel IDs, team IDs, and message IDs.
+  
+  Currently, cache cannot be reset remotely on connected mobile devices.
 
 **2. What about push notifications?**
   Push notification storage is managed by the operating system on the device. Mattermost can be configured to send limited amounts of information that does not include the message text or channel name, and it can also be configured to not send push notifications at all.

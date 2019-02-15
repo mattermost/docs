@@ -57,7 +57,7 @@ Create a Zap
   a. **Select the Action App**. Search for “Mattermost”.
   b. **Select the Action Event**. Select **Post a Message**. The Mattermost team plans to expand the actions available here.
   c. **Connect the Action Account**. Click **Connect a New Account** and enter the following fields:
-    1. **Mattermost URL**: This is the URL you use to access your Mattermost site. Do not include a slash at the end of the URL and do not append a team to the end of the server URL. For example, ``https://pre-release.mattermost.com/core`` is the entire URL to the Contributors team on our pre-release server. The **Mattermost URL** entered here would be ``https://pre-release.mattermost.com``.
+    1. **Mattermost URL**: This is the URL you use to access your Mattermost site. Do not include a slash at the end of the URL and do not append a team to the end of the server URL. For example, ``https://community.mattermost.com/core`` is the entire URL to the Contributors team on our community server. The **Mattermost URL** entered here would be ``https://community.mattermost.com``.
     2. **Client ID/Secret**: If Zapier has been enabled as an OAuth application as per the steps above, then these values can be found by navigating to one of your Mattermost teams, then **Main Menu** > **Integrations** > **OAuth 2.0 Applications**. Click **Show Secret** next to the Zapier app, then obtain the Client ID and Client Secret.
     3. **Login to Mattermost**. After completing the above fields you will be prompted to login to your Mattermost account if you are not logged in already. If you’re having trouble connecting then please read our `troubleshooting guide <https://docs.mattermost.com/integrations/zapier.html#id6>`__.
     4. You'll then be prompted to allow Zapier to access your Mattermost account. Click **Allow**.
@@ -87,7 +87,7 @@ Here are some useful tips we recommend to get the most out of Zapier integration
 Examples
 ~~~~~~~~~~~~~
 
-The Mattermost team has over 50 zaps integrated on our `Pre-Release Contributors team <https://pre-release.mattermost.com/core/>`__ used for internal communication and interacting with contributors. The `Community Heartbeat channel <https://pre-release.mattermost.com/core/channels/community-heartbeat>`__ integrates all our community services in one accessible location. These zaps are formatted in two ways depending on the service:
+The Mattermost team has over 50 zaps integrated on our `Community Contributors team <https://community.mattermost.com/core/>`__ used for internal communication and interacting with contributors. The `Community Heartbeat channel <https://community.mattermost.com/core/channels/community-heartbeat>`__ integrates all our community services in one accessible location. These zaps are formatted in two ways depending on the service:
 
 **GitHub Issues and Comments, UserVoice Suggestions and Comments, GitLab MM Issues, GitLab Omnibus MM Issues:**
 
@@ -123,15 +123,15 @@ Cannot connect a Mattermost account
 
 1. **"Token named access_token was not found in oauth response!"**
   a. Possible Solution: Try removing any trailing ``/``'s on the end of your **Mattermost URL**.
-    - Correct: ``https://pre-release.mattermost.com``
-    - Incorrect: ``https://pre-release.mattermost.com/``
+    - Correct: ``https://community.mattermost.com``
+    - Incorrect: ``https://community.mattermost.com/``
 
     .. image:: ../images/zapier-error1.png
 
 2. **"[Server URL] returned (404)"**
   a. Possible Solution: The **Mattermost URL** cannot have a team appended to the end of the server URL.
-    - Correct: ``https://pre-release.mattermost.com``
-    - Incorrect: ``https://pre-release.mattermost.com/core``
+    - Correct: ``https://community.mattermost.com``
+    - Incorrect: ``https://community.mattermost.com/core``
 
   .. image:: ../images/zapier-error2.png
 

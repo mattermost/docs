@@ -196,6 +196,8 @@ Use the read replica feature to scale the database. The Mattermost server can be
 
 On large deployments, consider using the search replica feature to isolate search queries onto one or more database servers. A search replica is similar to a read replica, but is used only for handling search queries.
 
+If there are no search replicas, the server uses the read replicas instead. Similarly, if there are no read replicas, the server falls back to master.
+
 Sizing Databases
 ````````````````
 
