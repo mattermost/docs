@@ -28,7 +28,7 @@ Learn how to get Mattermost running on your environment.
    Installing on Ubuntu 14.04 LTS </install/install-ubuntu-1404.rst>
    Installing on Ubuntu 16.04 LTS </install/install-ubuntu-1604.rst>
    Installing on Ubuntu 18.04 LTS </install/install-ubuntu-1804.rst>
-   Installing on Debian Jessie </install/install-debian-88.rst>
+   Installing on Debian Stretch </install/install-debian.rst>
    Installing on RHEL 6.6 </install/install-rhel-66.rst>
    Installing on RHEL 7.1 </install/install-rhel-71.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
