@@ -1,3 +1,5 @@
+.. _image-proxy:
+
 Image Proxy
 ================================
 
@@ -9,39 +11,27 @@ third-party servers.
 Proxy servers also provide a layer of caching, and can be made faster and more reliable than third-party sites. This caching 
 also helps preserve posts by protecting them from dead images.
 
-Configuration Keys
-~~~~~~~~~~~~~~~~~~
+You may alternatively use `atmos/camo <https://github.com/atmos/camo>`_ http proxy to route images through SSL:
 
-Three configuration keys are included: ``ImageProxyType``, ``ImageProxyURL`` and ``ImageProxyOptions``. When these
-keys are configured, posts served to the client will have their markdown modified such that all images are 
-loaded through a proxy.
+Local Image Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Image Proxy Type
-........................
+The local image proxy is enabled on the Mattermost server by default. When using the local image proxy, Mattermost apps will download external images through the Mattermost server itself.
 
-Configure an image proxy to load all Markdown images through a proxy. The image proxy prevents users from making insecure image requests to third-party sites and provides caching for increased performance.
+.. _atmos-camo:
 
-Image Proxy URL
-........................
+atmos/camo Image Proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-URL of your image proxy server.
-
-Image Proxy Options
-........................
-
-Additional options for basic image adjustments such as the URL signing key. Contact your image proxy 
-service provider to learn more about what options are supported.
-
-Setup Guide
-~~~~~~~~~~~~~~~~~
+The `atmos/camo <https://github.com/atmos/camo>`_ image proxy is a standalone image proxy that can be deployed separately from the Mattermost server. It provides additional configuration options over the built-in image proxy, and it can also be used if isolation between the Mattermost server and image proxy is desired.
 
 This guide gives an example of how to set up an image proxy using ``atmos/camo``:
 
 Deploy an ``atmos/camo`` (https://github.com/atmos/camo) instance to image-proxy.mattermost.com and update the 
-configuration in the system console. For example:
- - "ImageProxyType": "atmos/camo",
- - "ImageProxyURL": "https://image-proxy.mattermost.com",
- - "ImageProxyOptions": the secret string that was used as the ``CAMO_KEY`` for the atmos/camo deployment.
+configuration in **System Console > Files > Storage**. For example:
+ - **Image Proxy Type**: ``atmos/camo``
+ - **Remote Image Proxy URL**: ``https://image-proxy.mattermost.com``
+ - **Remote Image Proxy Options**: ``CAMO_KEY``, which is the secret string used for the sample ``atmos/camo`` deployment.
 
 .. image:: ../images/image-proxy.png
 
