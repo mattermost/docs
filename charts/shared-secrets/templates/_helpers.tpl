@@ -11,3 +11,13 @@ reduce collision
 {{- $rand := randAlphaNum 3 | lower }}
 {{- printf "%s.%d-%s" $name .Release.Revision $rand | trunc 63 | trimSuffix "-" -}}
 {{- end -}}
+{{/*
+Create the name of the service account to use
+*/}}
+{{- define "shared-secrets.serviceAccountName" -}}
+{{- if .Values.serviceAccount.create -}}
+    {{ default (include "fullname" .) .Values.serviceAccount.name }}
+{{- else -}}
+    {{ default "default" .Values.serviceAccount.name }}
+{{- end -}}
+{{- end -}}
