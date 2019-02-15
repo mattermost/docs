@@ -99,6 +99,7 @@ Location of your local storage directory
    .. code-block:: sh
 
      sudo mv mattermost/plugins/ mattermost/plugins~
+	 sudo mv mattermost/client/plugins/ mattermost/client/plugins~
     
 #. Change ownership of the new files before copying them.
 
@@ -157,6 +158,7 @@ After the server is upgraded, users might need to refresh their browsers to expe
 
       cd {install-path}/mattermost
       sudo mv plugins~/ plugins
+	  sudo mv client/plugins~/ mattermost/client/plugins
 
 Upgrading Team Edition to Enterprise Edition
 --------------------------------------------
