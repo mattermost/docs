@@ -35,6 +35,20 @@ Windows 10+, Windows 8.1+, Windows 7+
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
+Group Policies
+~~~~~~~~~~~~~~~~~~~~~
+Copy the ``mattermost.admx`` from ``%INSTALLDIR%\gpo_template`` to ``C:\Windows\PolicyDefinitions`` or if available ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions``
+and ``mattermost.adml`` from ``%INSTALLDIR%\gpo_template\en-US`` to ``C:\Windows\PolicyDefinitions\en-US`` or if available ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions\en-US``
+then open the Group Policy Management Console and you should see under "Computer Configuration" --> "Administrative Templates" --> "Mattermost" the policies.
+
+Following Group Policies are available:
+
++------------------------+-----------------------------------------------------+----------------------+
+| Group Policy           | Description                                         | Required Version     |
++========================+=====================================================+======================+
+| Disable Auto Updater   | Controls the behavior of the internal Autoupdater   | 4.3 or later         |
++------------------------+-----------------------------------------------------+----------------------+
+
 macOS 10.9+
 --------------------------------------------------
 
@@ -107,6 +121,8 @@ Troubleshooting
     The app data might be corrupted - remove all the files in ``%LOCALAPPDATA%\mattermost``, then try re-installing the app.
 
 Desktop App window is black and doesn't load the page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
     1. First, make sure you have installed the latest Desktop App version `from our website <https://about.mattermost.com/download/#mattermostApps>`__. Check your app version from **Help > Version**.
     2. Try to clear cache and reload the app from **View** > **Clear Cache and Reload** or by pressing CTRL/CMD+SHIFT+R.
     3. Quit the app and restart it to see if the issue clears.
@@ -116,6 +132,8 @@ Desktop App window is black and doesn't load the page
     If none of the above steps resolve the issue, please open a new ticket in the `Mattermost Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__.
 
 Desktop App is not visible, but you can see the Mattermost icon in the Task Bar
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
   This issue can occur on Windows in a multiple-monitor setup. When you disconnect the monitor that Mattermost is displayed on, Mattermost continues to display at screen coordinates that no longer exist.
 
   To resolve this issue, you can reset the Desktop App screen location by deleting the screen location file. When the file is not present, the Desktop App displays on the primary monitor by default.
@@ -126,6 +144,8 @@ Desktop App is not visible, but you can see the Mattermost icon in the Task Bar
     3. Delete the file ``bounds-info.json``
 
 Desktop App constantly refreshes the page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
   This issue can occur when localStorage has an unexpected state. To resolve the issue:
 
     - Windows: Open Windows File Explorer, and navigate to the ``%APPDATA%\Mattermost`` folder, then delete the ``Local Storage`` folder.
@@ -133,6 +153,8 @@ Desktop App constantly refreshes the page
     - Linux: Open the file manager, and navigate to the ``~/.config/Mattermost`` folder, then delete the ``Local Storage`` folder.
       
 Desktop App constantly asks to log in to Mattermost server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
   This issue can occur after a crash or unexpected shutdown of the Desktop app that causes the app data to be corrupted. To resolve the issue:
 
     - Windows: Open Windows File Explorer, and navigate to the ``%APPDATA%\Mattermost`` folder, then delete the ``IndexedDB`` folder.

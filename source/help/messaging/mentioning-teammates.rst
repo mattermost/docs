@@ -30,7 +30,9 @@ If the person you mentioned does not belong to the channel, a System Message is 
 @channel and @all
 ~~~~~~~~~~~~~~~~~
 
-You can mention an entire channel by typing ``@channel`` or ``@all``. All members of the channel receive a mention notification that behaves the same way as if the members had been mentioned personally. If used in Town Square, it notifies all members of your team.
+You can mention an entire channel by typing ``@channel`` or ``@all``. All members of the channel receive a mention notification that behaves the same way as if the members had been mentioned personally. If used in Town Square, it notifies all members of your team. 
+
+You can ignore channel-wide mentions in specific channels in the **Channel Menu > Notification Preferences > Ignore mentions for @channel, @here and @all**.
 
 .. code-block:: none
 
@@ -42,6 +44,8 @@ If a channel has five or more members, you are prompted to confirm that you want
 ~~~~~
 
 You can mention everyone who is online in a channel by typing ``@here``. This sends a desktop notification and push notification to members of the channel who are online. It's counted as a mention in the sidebar. Members who are offline do not receive a notification, and when they come back to the site they will not see a mention counted in the channel sidebar. Members who are away receive a desktop notification only if they have notifications set to "all activity", and they will not see a mention counted in the sidebar.
+
+You can ignore channel-wide mentions in specific channels in the **Channel Menu > Notification Preferences > Ignore mentions for @channel, @here and @all**.
 
 .. code-block:: none
 

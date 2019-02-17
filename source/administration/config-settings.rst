@@ -1086,6 +1086,41 @@ This filter uses the permissions of the **Bind Username** account to execute the
 | This feature's ``config.json`` setting is ``"UserFilter": ""`` with string input.                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Group Filter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Optional) Enter an AD/LDAP Filter to use when searching for group objects (accepts `general syntax <http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__). Only the groups selected by the query will be able accessible to Mattermost. 
+
+This filter is defaulted to ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` when blank.  
+
+.. note::
+  This filter is used only when AD/LDAP Group Sync is enabled.  See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ for more information on enabling and configuring AD/LDAP Group Sync (*Available in Enterprise Edition E20 and higher*). 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GroupFilter": ""`` with string input.                                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Group Display Name Attribute
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Optional) Enter an AD/LDAP Group Display name attribute used to populate Mattermost Group names. 
+
+.. note::
+  This attribute is used only when AD/LDAP Group Sync is enabled.  See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ for more information on enabling and configuring AD/LDAP Group Sync (*Available in Enterprise Edition E20 and higher*). 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GroupDisplayNameAttribute": ""`` with string input.                                                                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Group Id Attribute
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Required) Enter an AD/LDAP Group ID attribute to use as a unique identifier for Groups.  This should be an AD/LDAP value that does not change.
+
+.. note::
+  This attribute is used only when AD/LDAP Group Sync is enabled.  See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ for more information on enabling and configuring AD/LDAP Group Sync (*Available in Enterprise Edition E20 and higher*). 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GroupIdAttribute": ""`` with string input.                                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 First Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 (Optional) The attribute in the AD/LDAP server used to populate the first name of users in Mattermost. When set, users cannot edit their first name, since it is synchronized with the LDAP server. When left blank, users can set their first name in Account Settings.
@@ -1416,13 +1451,11 @@ ________
 
 MFA
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E10 and higher*
-
 Configure security settings for multi-factor authentication.
 
 The default recommendation for secure deployment is to host Mattermost within your own private network, with VPN clients on mobile, so everything works under your existing security policies and authentication protocols, which may already include multi-factor authentication.
 
-If you choose to run Mattermost outside your private network, bypassing your existing security protocols, it is recommended you upgrade to Mattermost Enterprise Edition to set up a multi-factor authentication service specifically for accessing Mattermost.
+If you choose to run Mattermost outside your private network, bypassing your existing security protocols, it is recommended you set up a multi-factor authentication service specifically for accessing Mattermost.
 
 .. note::
   If your MFA server uses Windows Integrated Authentication, `follow these instructions to configure IWA to fall back to forms-based authentication <https://docops.ca.com/ca-single-sign-on/12-7/en/configuring/policy-server-configuration/authentication-schemes/authentication-chaining/configure-iwa-fallback-to-forms-using-authentication-chain>`__.
@@ -1440,6 +1473,7 @@ Enable Multi-factor Authentication
 
 Enforce Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
 
 **True**: When true, `multi-factor authentication (MFA) <https://docs.mattermost.com/deployment/auth.html>`__ is required for login. New users will be required to configure MFA on sign-up. Logged in users without MFA configured are redirected to the MFA setup page until configuration is complete. If your system has users with login options other than AD/LDAP and email, MFA must be enforced with the authentication provider outside of Mattermost.
 
@@ -2280,14 +2314,51 @@ Maximum file size for message attachments entered in megabytes in the System Con
 
 .. warning:: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network disruptions.
 
-Image Proxy
+Enable Image Proxy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Includes three configuration keys: ``ImageProxyType``, ``ImageProxyURL`` and ``ImageProxyOptions``. When these keys are configured, posts served to the client will have their markdown modified enabling all images to be loaded through a proxy. See `documentation <https://docs.mattermost.com/administration/image-proxy.html>`__ for more details.
+When true, enables an image proxy for loading external images. The image proxy is used by the Mattermost apps to prevent them from connecting directly to remote servers. This anonymizes their connections and prevents them from accessing insecure content.
+
+See the :doc:`documentation <image-proxy>` to learn more.
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``.                   |
++---------------------------------------------------------------------------------------------------------------------+
+
+Image Proxy Type
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The type of image proxy used by Mattermost. There are two options:
+
+**local**: The Mattermost server itself acts as the image proxy. This is the default option.
+
+**atmos/camo**: An external `atmos/camo <https://github.com/atmos/camo>`_ image proxy is used.
+
+See the `documentation <https://docs.mattermost.com/administration/image-proxy.html#atmos-camo-image-proxy>`_ to learn more.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ImageProxyType": ""``, ``"ImageProxyURL": ""`` and ``"ImageProxyOptions": ""`` with string input.      |
+| This feature's ``config.json`` setting is ``"ImageProxyType": "local"``, with options ``local`` and ``atmos/camo`` for above settings respectively. |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Remote Image Proxy URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The URL of the ``atmos/camo`` proxy. This setting is not needed when using the local image proxy.
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RemoteImageProxyURL": ""`` with string input.                          |
++---------------------------------------------------------------------------------------------------------------------+
+
+Remote Image Proxy Options
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The URL signing key passed to an ``atmos/camo`` image proxy. This setting is not needed when using the local image proxy.
+
+See the `documentation <https://docs.mattermost.com/administration/image-proxy.html#atmos-camo-image-proxy>`_ to learn more.
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RemoteImageProxyOptions": ""`` with string input.                      |
++---------------------------------------------------------------------------------------------------------------------+
 
 ________
 
@@ -3734,16 +3805,25 @@ Used in combination with the ``ClientSideCertEnable`` setting.
 | This feature's ``config.json`` setting is ``"ClientSideCertCheck": secondary`` with options ``primary`` and ``secondary`` for the above settings respectively.       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Post Metadata 
+Disable Post Metadata 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Load channels with more accurate scroll positioning by loading post metadata. Enabling this setting may increase channel and post load times. 
+**True**: Disabling post metadata is only recommended if you are experiencing a significant decrease in performance around channel and post load times. 
 
-**False**: Post metadata is not loaded.
+**False**: Load channels with more accurate scroll positioning by loading post metadata.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnablePostMetadata": false`` with options ``true`` and ``false`` for the above settings respectively.                   |
+| This feature's ``config.json`` setting is ``"DisablePostMetadata": false`` with options ``true`` and ``false`` for the above settings respectively.                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Link Metadata Timeout
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Adds a configurable timeout for requests made to return link metadata. If the metadata is not returned before this timeout expires, the message will post without requiring metadata. This timeout covers the failure cases of broken URLs and bad content types on slow network connections.
+
++---------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LinkMetadataTimeoutMilliseconds": 5000`` with whole number input                   |
++---------------------------------------------------------------------------------------------------------------------------------+
 
 Analytics Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3914,7 +3994,7 @@ This setting determines whether team leave/join system messages are posted in th
 
 Allow Authentication Transfer (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E20 and higher*
+*Available in Enterprise Edition E10 and higher*
 
 **True**: Users can change their sign-in method to any that is enabled on the server, either via Account Settings or the APIs.
 
@@ -3987,6 +4067,20 @@ Changes made when hardened mode is enabled:
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false`` for above settings respectively.          |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable AD/LDAP Group Sync (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20 and higher*
+
+**True**: Enables AD/LDAP Group Sync configurable under **Access Controls > Groups**.
+
+**False**: Disables AD/LDAP Group Sync and removes the **Access Controls > Groups** from the System Console.  
+
+For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_.
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false`` for above settings respectively.               |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Limit Access to Config Settings Prior to Login
