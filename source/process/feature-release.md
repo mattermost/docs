@@ -301,7 +301,6 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
     - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the previous release version
 5. Dev:
-    - Confirm oss.mattermost.com is updated to final build
     - Cut release branch for Bug Fix release
     - Update existing tickets or create new ones for the next release
 6. Marketing:
