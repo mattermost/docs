@@ -120,6 +120,13 @@ Location of your local storage directory
      sudo cp -an /tmp/mattermost-upgrade/. mattermost/
      sudo rm -rf /tmp/mattermost-upgrade/
 
+#. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+
+   .. code-block:: sh
+
+     cd {install-path}/mattermost
+     sudo setcap cap_net_bind_service=+ep ./bin/mattermost
+
 #. Start Mattermost server.
 
    On Ubuntu 14.04 and RHEL 6.6:
@@ -133,13 +140,6 @@ Location of your local storage directory
    .. code-block:: sh
 
      sudo systemctl start mattermost
-
-#. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
-
-   .. code-block:: sh
-
-     cd {install-path}/mattermost
-     sudo setcap cap_net_bind_service=+ep ./bin/mattermost
 
 #. Upgrade your ``config.json`` schema:
 
