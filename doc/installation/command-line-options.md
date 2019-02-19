@@ -88,6 +88,8 @@ Tables below contain all the possible charts configurations that can be supplied
 
 ## Advanced nginx ingress configuration
 
+Prefix nginx ingress values with `nginx-ingress`. For example, set the controller image tag using `nginx-ingress.controller.image.tag`.
+
 See [nginx-ingress chart](../charts/nginx/index.md)
 
 ## Advanced in-cluster redis configuration
