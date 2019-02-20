@@ -32,7 +32,7 @@ No pull requests for major features should be **submitted** to the current relea
     - Review any features that are currently in beta and confirm with PMs if there are any to be promoted
     - Confirm all config settings and new features have diagnostics
 
-### C. (T-minus 15 working days) Cut-off for merging features
+### C. (T-minus 15 working days) Feature Complete
 
 No pull requests for major features should be **merged** to the current release after this date. In special cases, exceptions can be made by the Release Manager.
 
@@ -45,7 +45,7 @@ No pull requests for major features should be **merged** to the current release 
     - Verify all items in the last posted release checklist are complete
     - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel. [See example](https://community.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
     - Draft Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
-    - Review [software requirements](https://docs.mattermost.com/install/requirements.html#software-requirements) are up-to-date based on [these guidelines](https://docs.mattermost.com/process/software-requirements.html). If not, update documentation accordingly, and note changes in the Changelog.
+    - Review [supported OS versions](https://docs.mattermost.com/install/requirements.html#server-software) and review that [software requirements](https://docs.mattermost.com/install/requirements.html#software-requirements) are up-to-date based on [these guidelines](https://docs.mattermost.com/process/software-requirements.html). If not, update documentation accordingly, and note changes in the Changelog
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version
     - Ask PMs if there are any notable breaking changes or deprecated features in the release
     - Review submitted NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch.
@@ -163,7 +163,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Update Changelog “Known Issues” section with any significant issues that were found and not fixed for the final release
 3. QA:
     - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://community.mattermost.com/core/pl/db3sur4r53d9tyih1i4wrmi9wy))
-    - Post release testing instructions to Release Discussion channel ([template](https://communitye.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
+    - Post release testing instructions to Release Discussion channel ([template](https://community.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
     - DM reminders to team members who are not QA or devs, or who are new to release testing
     - Post "Bug Hunter Coin" message to Reception channel ([see example](https://community.mattermost.com/core/pl/3o15eoq89fdq5m1ac5dyp4nc3e))
     - Begin running all Selenium IDE tests
@@ -301,7 +301,6 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
     - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the previous release version
 5. Dev:
-    - Confirm oss.mattermost.com is updated to final build
     - Cut release branch for Bug Fix release
     - Update existing tickets or create new ones for the next release
 6. Marketing:

@@ -157,16 +157,18 @@ Mattermost and Representative Logos
 6. When the background color is dark, use the white/inverted version of representative logo. When the background color is light, use the dark/primary version of representative logo.
 7. If the color of the representative logo is the same as the color of the title, make sure to make them distinctive from each other by slightly reducing the size of the logo.
 
-Feature Screenshot
-^^^^^^^^^^^^^^^^^^^
+Feature Screenshot Development
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When taking a screenshot of a feature, follow these guidelines:
+When taking a screenshot of a feature, use this checklist to guide your work:
 
-1. **Complete**: Profile pictures and real people names should be filled out. Use either in-house art, free, or purchased clip art. If you're modifying the image such as changing username and profile picture, make sure to do it throughout the image. Don't show any bugs or UX defects in the product and use the "Mattermost" theme when appropriate.
-2. **Authentic**: Try to model a real world interaction. When possible, highlight DevOps use cases since they are familiar to the majority of our users.
-3. **Oversized**: Provide screenshots that are at least 20-30% larger than needed, so that there is room to rotate and crop the image as needed.
-4. **Illustrative**: Try to find screenshots that are representative of the feature.
-5. **Easy to follow**: The screenshot should be easy to understand at a glance. Avoid using short forms or acronyms in conversations, and choose images that are clear.
+1. **Profiles**: Profile pictures and real people’s names should be filled out throughout the screenshot. For the profile picture, use either normal-looking Avatars or stock photography.
+2. **Content**: Show the feature in action. If you are highlighting a specific feature, try to have that screenshot focused on it rather than displaying the whole app. For example, if you are highlighting 1-1 direct message conversations, only include that conversation in your screenshot. Finally, ensure that the contents of the screenshot shows the Mattermost product in the best light - give whoever is viewing it a positive emotion.
+3. **Use Cases**: Model a real world interaction. When possible, highlight DevOps use cases since they are familiar to the majority of our users.
+4. **Clarity**: Avoid truncating the channel header text, or cutting off messages due to the scroll position in the center pane. All text should be fully visible.
+5. **Size**: Provide screenshots that are double in size than needed - this ensures the screenshot does not rasterize on retina displays. The definite size per screenshot can vary - however, a standard will be established per type/category of the screenshot. For example, screenshots of the center pane should be 750px in size (with the shadows).
+6. **Spacing**: Add additional spacing to a screenshot if necessary to highlight a feature.
+7. **Calibration**: Make sure that the zoom level is at default level, and that the screenshot is not pixelated. Add a box shadow with the screenshot (0 2px 50 0 rgba(black, 0.1)), as well as a grey outline so that it looks good on both dark and light backgrounds.
 
 Screenshot Development of Mattermost User Interface
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

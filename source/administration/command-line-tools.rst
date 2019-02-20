@@ -117,6 +117,7 @@ mattermost
     -  `mattermost jobserver`_ - Start the Mattermost job server
     -  `mattermost ldap`_ - AD/LDAP related utilities
     -  `mattermost license`_ - Licensing commands
+    -  `mattermost logs`_ - Display humand-readable logs
     -  `mattermost permissions`_ - Management of the permissions system
     -  `mattermost plugin`_ - Management of plugins
     -  `mattermost reset`_ - Reset the database to initial state
@@ -764,6 +765,28 @@ mattermost license upload
 
       ./mattermost license upload /path/to/license/mylicensefile.mattermost-license
 
+mattermost logs
+------------------
+
+  Description
+    Displays Mattermost logs in a human-readable format.
+
+  Format
+    .. code-block:: none
+
+      mattermost logs
+
+  Example
+    .. code-block:: none
+
+      ./mattermost logs --logrus
+
+  Options
+    .. code-block:: none
+
+          --logrus   Displays Mattermost logs in `logrus format <https://github.com/sirupsen/logrus>`_. Else, standard output is returned.
+
+
 mattermost permissions
 ----------------------
 
@@ -1043,6 +1066,7 @@ mattermost team
     -  `mattermost team delete`_ - Delete a team.
     -  `mattermost team list`_ - List all teams.
     -  `mattermost team remove`_ - Remove users from a team.
+    -  `mattermost team restore`_ - Restore a previously archived team.    
     -  `mattermost team search`_ - Search for teams based on name.
 
 .. _team-value-note:
@@ -1151,6 +1175,22 @@ mattermost team list
     .. code-block:: none
 
       ./mattermost team list
+
+mattermost team restore
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Restore a previously archived team.
+
+  Format
+    .. code-block:: none
+
+      mattermost team restore {team}
+
+  Example
+    .. code-block:: none
+
+      ./mattermost team restore myteam 
 
 mattermost team remove
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1591,17 +1631,18 @@ mattermost webhook
     Commands to manage webhooks.
 
   Child Commands
-    -  `mattermost webhook create-incoming`_ - Create incoming webhook within specific channel. 
-    -  `mattermost webhook create-outgoing`_ - Create outgoing webhook within specific channel.
+    -  `mattermost webhook create-incoming`_ - Create an incoming webhook within specific channel. 
+    -  `mattermost webhook create-outgoing`_ - Create an outgoing webhook within specific channel.
     -  `mattermost webhook delete`_ - Delete incoming and outgoing webhooks.
     -  `mattermost webhook list`_ - List all webhooks.
-    -  `mattermost webhook modify-incoming`_ - Modify existing incoming webhook by changing its title, description, channel or icon url.
+    -  `mattermost webhook modify-incoming`_ - Modify an existing incoming webhook by changing its title, description, channel or icon url.
+    -  `mattermost webhook modify-outgoing`_ - Modify an existing outgoing webhook by changing its title, description, channel, icon, url, content-type, and triggers.
 
 mattermost webhook create-incoming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Create incoming webhook within specific channel.
+    Create an incoming webhook within specific channel.
 
   Format
     .. code-block:: none
@@ -1627,7 +1668,7 @@ mattermost webhook create-outgoing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Create outgoing webhook which allows external posting of messages from a specific channel.
+    Create an outgoing webhook which allows external posting of messages from a specific channel.
 
   Format
     .. code-block:: none
@@ -1698,7 +1739,7 @@ mattermost webhook modify-incoming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Modify existing incoming webhook by changing its title, description, channel or icon url.
+    Modify an existing incoming webhook by changing its title, description, channel or icon url.
 
   Format
     .. code-block:: none
@@ -1718,7 +1759,34 @@ mattermost webhook modify-incoming
           --description string          Incoming webhook description
           --lock-to-channel boolean     (True/False) Lock incoming webhook to channel
           --icon [iconURL]              Icon URL    
+	  
+mattermost webhook modify-outgoing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+  Description
+    Modify an existing outgoing webhook by changing its title, description, channel, trigger words, icon url, callback url, or content type.
+
+  Format
+    .. code-block:: none
+
+      mattermost webhook modify-outgoing {webhookId}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost webhook modify-outgoing [webhookId] --channel [channelId] --display-name [displayName] --description "New webhook description" --icon http://localhost:8000/my-slash-handler-bot-icon.png --url http://localhost:8000/my-webhook-handler --content-type "application/json" --trigger-word test --trigger-when start`
+
+  Options
+    .. code-block:: none
+
+          --channel string              Channel ID
+          --display-name string         Incoming webhook display name
+          --description string          Incoming webhook description
+	  --trigger-word string array	Word(s) to trigger webhook
+	  --trigger-when string		When to trigger webhook (exact: for first word matches a trigger word exactly, start: for first word starts with a trigger word)")
+          --icon [iconURL]              Icon URL 
+	  --url [callbackURL]           Callback URL 
+	  --content-type string         Content type 
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

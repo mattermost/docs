@@ -18,6 +18,11 @@ To mute or unmute a channel, click the channel
 name at the top of the page to access the channel menu, then click
 **Notification Preferences > Mute channel**.
 
+Ignore mentions for @channel, @here and @all
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+By default, you will recieve mention notifications for any uses of @channel, @all or @here in a channel. When enabled, the channel will ignore mention notifications for channel wide mentions. Any messages containing @channel, @all or @here will still mark the channel unread, unless channel mute is enabled.
+
 Send Desktop Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 

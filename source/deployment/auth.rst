@@ -1,12 +1,10 @@
 ..  _auth_mfa:
-Multi-Factor Authentication (E10)
-=================================
+Multi-Factor Authentication
+===========================
 
-For organizations who require multi-factor authentication ("MFA") as part of their IT security policy, and who choose not to secure Mattermost behind a firewall with their existing MFA infrastructure, Mattermost Enterprise Edition offers a smartphone-based MFA check, in addition to email-password or Active Directory/LDAP authentication, to sign in to the Mattermost server. 
+For organizations who require multi-factor authentication ("MFA") as part of their IT security policy, and who choose not to secure Mattermost behind a firewall with their existing MFA infrastructure, Mattermost offers a smartphone-based MFA check, in addition to email-password or Active Directory/LDAP authentication, to sign in to the Mattermost server. 
 
 Supported smartphones include iOS, Android, Blackberry and Windows Phone devices that are able to install `Google Authenticator <https://support.google.com/accounts/answer/1066447?hl=en>`__. Other than requiring internet access to download and install Google Authenticator, the phone used for Mattermost MFA does not require internet access.
-
-- **Note:** The open source Mattermost Team Edition is designed to offer "modern communication behind your firewall" and is used extensively by security professionals, `including former members of the United States FBI, CIA, and NSA in addition to the former CIO of the U.S. Whitehouse. <https://about.mattermost.com/customer-stories/open-source-mattermost-software-helps-ex-cia-nsa-fbi-hunt-us-fugitives/>`__ The MFA feature in Mattermost Enterprise Edition is considered an optional convenience feature in lieu of operating on a secured private network. 
 
 Enabling MFA
 ------------
@@ -15,8 +13,8 @@ This option can be enabled by the System Administrator in the `System Console <h
 
 End users can set up this feature in the `Account Settings <http://docs.mattermost.com/help/settings/account-settings.html#multi-factor-authentication-enterprise>`__ menu under **Security** > **Multi-factor Authentication**.
 
-Enforcing MFA
--------------
+Enforcing MFA (E10)
+-------------------
 
 This option can be enabled by the System Administrator in the `System Console <http://docs.mattermost.com/administration/config-settings.html#mfa>`__ under **Authentication** > **MFA** > **Enforce Multi-factor Authentication**
 

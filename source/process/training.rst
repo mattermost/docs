@@ -37,7 +37,7 @@ T-minus 1-3 weeks
 T-minus 1 week
 ---------------------------------------------------------
 
-- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on community.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME@mattermost.com` is the standard naming convention.
+- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on community.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME.LAST_NAME@mattermost.com` is the standard naming convention.
 
 - (People Ops & New Hire) Set up payroll.
  - US FTE, receive email to complete TriNet sign-up, payroll, benefits enrollment, I-9 form, banking information, personal information, tax forms.  
@@ -407,6 +407,9 @@ Naming specific repeated mistake helps us find patterns, avoid repeated mistakes
 List of Terms
 ---------------------------
 
+.. _id8:
+.. _out-of-5:
+
 0/5, 1/5, 2/5, 3/5, 4/5, 5/5
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -632,3 +635,20 @@ Example of finished Mattermost Avatar:
 
 .. image:: https://cloud.githubusercontent.com/assets/177788/25364270/0425b738-2916-11e7-9a23-5ced2d9dfc8f.png
 
+---------------------------------------------------------
+Mattermost Teams and Naming Conventions
+---------------------------------------------------------
+
+Staff must use their full name for their username, as in ``first.last``, on the community server. Staff are also encouraged to link to their Github account using the command `/github connect` so that your Github handle will appear on your profile popover card.  All Mattermost  staff should be issued a OneLogin account with a username of ``first.last``.  If issued a OneLogin account, you should switch your sign-in method from email/password to OneLogin via the `Account Settings > Security > Sign-in Method` page.  Once this is done, your username will be set from SAML.
+
+Contributors team
+---------------------------------------------------------
+This is a team open for any and all to join.  It is the main place where staff, contributors, users, customers and partners interact.  Our goal is to do as much work as possible in the open.  If you find yourself creating a private channel on this team you should pause and ask yourself if it really needs to be private.  Mattermost staff will be sync'ed to the appropriate channels based on their LDAP group sync settings.
+
+Staff team
+---------------------------------------------------------
+This is restricted to people with an `@mattermost.com` email address.  It is meant for Mattermost employees and staff and it is where we discuss internal company matters.  Since this team only includes people with mattermost.com email address, you should prefer creating public channels.  Also, if you find yourself creating a channel here, you should ask yourself if it would be better served to have it in the Contributors team.  Mattermost staff will be sync'ed to the appropriate channels based on their LDAP group sync settings.
+
+Partners team
+---------------------------------------------------------
+This is an invite only team meant for Mattermost staff and partners.  This is a team for staff to interact with partners and for partners to interact with other partners. You should prefer public channels when you want partner-to-partner interactions and private channels when you want staff-to-partner interactions.  Remember that any partner added to the team will be able to join any public channel.

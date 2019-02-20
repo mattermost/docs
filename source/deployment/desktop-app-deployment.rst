@@ -96,8 +96,8 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
         echo   "version": 1,
         echo   "teams": [
         echo     {
-        echo       "name": "pre-release",
-        echo       "url": "https://pre-release.mattermost.com/core"
+        echo       "name": "community",
+        echo       "url": "https://community.mattermost.com/core"
         echo     }
         echo   ],
         echo   "notifications": {

@@ -25,7 +25,6 @@ Learn how to get Mattermost running on your environment.
    :glob:
 
    /install/requirements.rst
-   Installing on Ubuntu 14.04 LTS </install/install-ubuntu-1404.rst>
    Installing on Ubuntu 16.04 LTS </install/install-ubuntu-1604.rst>
    Installing on Ubuntu 18.04 LTS </install/install-ubuntu-1804.rst>
    Installing on Debian Jessie </install/install-debian-88.rst>

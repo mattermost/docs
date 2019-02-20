@@ -11,13 +11,12 @@ Installing Enterprise Edition
 
 To install Mattermost Enterprise Edition directly please use one of the following guides:
 
-1. `Production Enterprise Edition on Ubuntu 14.04 <https://docs.mattermost.com/install/install-ubuntu-1404.html>`__
-2. `Production Enterprise Edition on Ubuntu 16.04 <https://docs.mattermost.com/install/install-ubuntu-1604.html>`__
-3. `Production Enterprise Edition on Ubuntu 18.04 <https://docs.mattermost.com/install/install-ubuntu-1804.html>`__
-4. `Production Enterprise Edition on RHEL 7.1 <https://docs.mattermost.com/install/install-rhel-71.html>`__
-5. `Production Enterprise Edition on RHEL 6.6 <https://docs.mattermost.com/install/install-rhel-66.html>`__
-6. `Production Enterprise Edition on Debian Jessie <https://docs.mattermost.com/install/install-debian-88.html>`__
-7. `Production Docker Deployment using Docker Compose <https://docs.mattermost.com/install/prod-docker.html>`__
+1. `Production Enterprise Edition on Ubuntu 16.04 <https://docs.mattermost.com/install/install-ubuntu-1604.html>`__
+2. `Production Enterprise Edition on Ubuntu 18.04 <https://docs.mattermost.com/install/install-ubuntu-1804.html>`__
+3. `Production Enterprise Edition on RHEL 7.1 <https://docs.mattermost.com/install/install-rhel-71.html>`__
+4. `Production Enterprise Edition on RHEL 6.6 <https://docs.mattermost.com/install/install-rhel-66.html>`__
+5. `Production Enterprise Edition on Debian Jessie <https://docs.mattermost.com/install/install-debian-88.html>`__
+6. `Production Docker Deployment using Docker Compose <https://docs.mattermost.com/install/prod-docker.html>`__
 
 Upgrading to Mattermost Enterprise Edition
 -------------------------------------------------
