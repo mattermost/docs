@@ -1,5 +1,5 @@
 {{/*
-  Inclusion procedure:
+  Include using:
   {{ include "gitlab.scripts.configure" (
             dict
                 "required" "your required secrets dirs" // optional, default "redis shell gitaly registry postgres rails-secrets gitlab-workhorse"

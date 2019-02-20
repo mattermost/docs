@@ -72,8 +72,8 @@ data:
     {{- include "gitlab.scripts.configure.secrets" (dict "required" "redis shell gitaly registry postgres rails-secrets") | nindent 4 -}}
     {{- include "gitlab.psql.ssl.initScript" . | nindent 4 }}
 
-    if [ ! -f /${secret_dir}/objectstorage/.s3cfg ]; then
-    cat <<EOF > /${secret_dir}/.s3cfg
+    if [ ! -f "/${secret_dir}/objectstorage/.s3cfg" ]; then
+    cat <<EOF > "/${secret_dir}/.s3cfg"
     [default]
     access_key = $(cat /init-secrets/minio/accesskey)
     secret_key = $(cat /init-secrets/minio/secretkey)
@@ -94,6 +94,6 @@ data:
     website_endpoint = {{ template "gitlab.minio.url" . }}
     EOF
     else
-      mv /${secret_dir}/objectstorage/.s3cfg /${secret_dir}/.s3cfg
+      mv "/${secret_dir}/objectstorage/.s3cfg" "/${secret_dir}/.s3cfg"
     fi
 {{- end }}
