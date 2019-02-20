@@ -66,33 +66,33 @@ not required to provided all values.
 The table below contains all the possible chart configurations that can be supplied
 to the `helm install` command using the `--set` flags:
 
-| Parameter                    | Default         | Description                                 |
-| ---------------------------- | --------------- | ------------------------------------------- |
-| enabled                      | `true`          | Enable flag for the chart                   |
-| image.pullPolicy             | `IfNotPresent`  | Redis image pull policy                     |
-| image.pullSecrets            |                 | Secrets for the image repository            |
-| image.repository             | `redis`         | Redis image repository                      |
-| image.tag                    | `3.2.5`         | Redis image tag                             |
-| init.image                   | `busybox`       | initContainer image                         |
-| init.tag                     | `latest`        | initContainer image tag                     |
-| loglevel                     | `notice`        | Log verbosity                               |
-| metrics.enabled              | `true`          | Toggle Prometheus exporter sidecar          |
-| persistence.accessMode       | `ReadWriteOnce` | Redis access mode                           |
-| persistence.enabled          | `true`          | Enable persistence flag                     |
-| persistence.matchExpressions |                 | Label-expression matches to bind            |
-| persistence.matchLabels      |                 | Label-value matches to bind                 |
-| persistence.size             | `5Gi`           | Size of volume needed for redis persistence |
-| persistence.storageClass     |                 | storageClassName for provisioning           |
-| persistence.subPath          |                 | Subpath to mount persistence volume at      |
-| persistence.volumeName       |                 | Existing persistent volume name             |
-| replicas                     | `1`             | Number of replicas                          |
-| service.clusterIP            | `0.0.0.0`       | Cluster IP                                  |
-| service.externalPort         | `6379`          | Redis internal port                         |
-| service.internalPort         | `6379`          | Redis exposed port                          |
-| service.name                 | `redis`         | Redis service name                          |
-| service.type                 | `ClusterIP`     | Redis service type                          |
-| timeout                      | `60`            | Timeout in seconds                          |
-| tcpKeepalive                 | `300`           | Keep alive in seconds                       |
+| Parameter                      | Default         | Description                                 |
+| ------------------------------ | --------------- | ------------------------------------------- |
+| `enabled`                      | `true`          | Enable flag for the chart                   |
+| `image.pullPolicy`             | `IfNotPresent`  | Redis image pull policy                     |
+| `image.pullSecrets`            |                 | Secrets for the image repository            |
+| `image.repository`             | `redis`         | Redis image repository                      |
+| `image.tag`                    | `3.2.5`         | Redis image tag                             |
+| `init.image`                   | `busybox`       | initContainer image                         |
+| `init.tag`                     | `latest`        | initContainer image tag                     |
+| `loglevel`                     | `notice`        | Log verbosity                               |
+| `metrics.enabled`              | `true`          | Toggle Prometheus exporter sidecar          |
+| `persistence.accessMode`       | `ReadWriteOnce` | Redis access mode                           |
+| `persistence.enabled`          | `true`          | Enable persistence flag                     |
+| `persistence.matchExpressions` |                 | Label-expression matches to bind            |
+| `persistence.matchLabels`      |                 | Label-value matches to bind                 |
+| `persistence.size`             | `5Gi`           | Size of volume needed for redis persistence |
+| `persistence.storageClass`     |                 | storageClassName for provisioning           |
+| `persistence.subPath`          |                 | Subpath to mount persistence volume at      |
+| `persistence.volumeName`       |                 | Existing persistent volume name             |
+| `replicas`                     | `1`             | Number of replicas                          |
+| `service.clusterIP`            | `0.0.0.0`       | Cluster IP                                  |
+| `service.externalPort`         | `6379`          | Redis internal port                         |
+| `service.internalPort`         | `6379`          | Redis exposed port                          |
+| `service.name`                 | `redis`         | Redis service name                          |
+| `service.type`                 | `ClusterIP`     | Redis service type                          |
+| `timeout`                      | `60`            | Timeout in seconds                          |
+| `tcpKeepalive`                 | `300`           | Keep alive in seconds                       |
  
 ## Chart configuration examples
 
@@ -155,12 +155,12 @@ a Prometheus server to discover and scrape the exposed metrics.
 
 More details about certain redis configuration options are explained below:
 
-| Name           | Type      | Default  | Description |
-| :------------- | :-------: | :------- | :---------- |
-| `loglevel`     | String    | `notice` | [See below](#loglevel). |
-| `password`     |           |          | The redis chart sources credentials from the `global.redis.password` global value. |
-| `tcpKeepalive` | Integer   | `300`    | Provides the number of seconds to wait for a client connection to be detected as 'dead' by the underlying TCP socket (`SO_KEEPALIVE`). See [redis tcpkeepalive documentation](https://redis.io/topics/clients#tcp-keepalive). |
-| `timeout`      | Integer   | `60`     | Provides the number of seconds before an idle client connection will be terminated by the Redis service. See [redis timeouts documentation](https://redis.io/topics/clients#client-timeouts). |
+| Name           | Type    | Default  | Description |
+| :------------- | :-----: | :------- | :---------- |
+| `loglevel`     | String  | `notice` | [See below](#loglevel). |
+| `password`     |         |          | The redis chart sources credentials from the `global.redis.password` global value. |
+| `tcpKeepalive` | Integer | `300`    | Provides the number of seconds to wait for a client connection to be detected as 'dead' by the underlying TCP socket (`SO_KEEPALIVE`). See [redis tcpkeepalive documentation](https://redis.io/topics/clients#tcp-keepalive). |
+| `timeout`      | Integer | `60`     | Provides the number of seconds before an idle client connection will be terminated by the Redis service. See [redis timeouts documentation](https://redis.io/topics/clients#client-timeouts). |
 
 ### loglevel
 
@@ -180,17 +180,17 @@ volume for the Redis data. You'll need physical storage available in the Kuberne
 cluster for this to work. If you'd rather use emptyDir, disable PersistentVolumeClaim
 with `persitence.enabled: false`.
 
-| Name             | Type    | Default         | Description |
-|:---------------- |:-------:|:--------------- |:----------- |
-| accessMode       | String  | `ReadWriteOnce` | Sets the accessMode requested in the PersistentVolumeClaim. See [Kubernetes Access Modes Documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) for details. |
-| enabled          | Boolean | `true`          | Sets whether or not to use a PersistentVolumeClaims for the Redis data. Otherwise an emptyDir volume is used. |
-| matchExpressions | Array   |                 | Accepts an array of label condition objects to match against when choosing a volume to bind. This is used in the `PersistentVolumeClaim` `selector` section. See the [volumes documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector). |
-| matchLabels      | Map     |                 | Accepts a dictionary (Map) of label name and label values to match against when choosing a volume to bind. This is used in the `PersistentVolumeClaim` `selector` section. See the [volumes documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector). |
-| save             | Array   |                 | [See Below](#save). |
-| size             | String  | `5Gi`           | The minimum volume size to request for the data persistence. |
-| storageClass     | String  |                 | Sets the storageClassName on the Volume Claim for dynamic provisioning. When unset or null, the default provisioner will be used. If set to `-` (hyphen), dynamic provisioning is disabled. |
-| subPath          | String  |                 | Sets the path within the volume to mount, rather than the volume root. The root is used if the subPath is empty. Defaults to empty. |
-| volumeName       | String  |                 | If set, the chart will use the existing named PersistentVolume. Use this when you are not using dynamic provisioning. |
+| Name               | Type    | Default         | Description |
+|:------------------ |:-------:|:--------------- |:----------- |
+| `accessMode`       | String  | `ReadWriteOnce` | Sets the accessMode requested in the PersistentVolumeClaim. See [Kubernetes Access Modes Documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes) for details. |
+| `enabled`          | Boolean | `true`          | Sets whether or not to use a PersistentVolumeClaims for the Redis data. Otherwise an emptyDir volume is used. |
+| `matchExpressions` | Array   |                 | Accepts an array of label condition objects to match against when choosing a volume to bind. This is used in the `PersistentVolumeClaim` `selector` section. See the [volumes documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector). |
+| `matchLabels`      | Map     |                 | Accepts a dictionary (Map) of label name and label values to match against when choosing a volume to bind. This is used in the `PersistentVolumeClaim` `selector` section. See the [volumes documentation](https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector). |
+| `save`             | Array   |                 | [See Below](#save). |
+| `size`             | String  | `5Gi`           | The minimum volume size to request for the data persistence. |
+| `storageClass`     | String  |                 | Sets the storageClassName on the Volume Claim for dynamic provisioning. When unset or null, the default provisioner will be used. If set to `-` (hyphen), dynamic provisioning is disabled. |
+| `subPath`          | String  |                 | Sets the path within the volume to mount, rather than the volume root. The root is used if the subPath is empty. Defaults to empty. |
+| `volumeName`       | String  |                 | If set, the chart will use the existing named PersistentVolume. Use this when you are not using dynamic provisioning. |
 
 ### save
 
