@@ -1,14 +1,17 @@
 #!/usr/bin/env bash
-set -o errexit
+
+# Immedially exit if a command run from a loop, a pipeline or a compound
+# command statement fails
+set -e
 
 ################################################################################
 # Configuration - please adapt it to your environment
 ################################################################################
 
-# Path to mattermost directory
+# Mattermost path
 mattermostdir="/opt/mattermost"
 
-# Path for backup
+# Backup path
 backupdir="/opt"
 
 # Temporary path for download
@@ -27,33 +30,33 @@ backupdatabase=0
 ################################################################################
 
 # Check dependencies
-#
+
 if ((EUID != 0)); then
-    echo "[-] This script needs to be run as root to work properly. Aborting..."
+    echo "[-] This script needs to be run as root to work properly. Aborted."
     exit 1
 fi
 
 if ! type "systemctl" >/dev/null 2>&1 && ! type "service" >/dev/null 2>&1; then
-    echo "[-] Access to the daemon manager (systemd or sysvinit) is not accessible. Aborting..."
+    echo "[-] The daemon manager (systemd or sysvinit) is not accessible. Aborted."
     exit 1
 fi
 
 if ! type "wget" >/dev/null 2>&1 && ! type "curl" >/dev/null 2>&1; then
-    echo "[-] Access to a download tool like (wget or curl) is not accessible. Aborting..."
+    echo "[-] A download tool like wget or curl is not accessible. Aborted."
     exit 1
 fi
 
 # Check requirements
-if [[ "$edition" != "Team" ]] && [[ "$edition" != "Enterprise" ]]; then
-    echo "[-] The edition must aither be \"Team\" or \"Enterprise\"."
+if [[ "${edition}" != "Team" ]] && [[ "${edition}" != "Enterprise" ]]; then
+    echo "[-] The edition must either be \"Team\" or \"Enterprise\". Aborted."
     exit 1
 fi
 
 # Ask for database backup
-if [ $backupdatabase -eq 0 ]; then
+if [ "${backupdatabase}" -eq 0 ]; then
     read -r -p "[?] Do you have a current backup of the Mattermost database? [Y/n] " input
 
-    case $input in
+    case "$input" in
         [yY])
             echo "[+] Starting the update process of Mattermost..."
         ;;
@@ -65,41 +68,35 @@ if [ $backupdatabase -eq 0 ]; then
 fi
 
 # Check if mattermost exists in the path provided above
-if [ ! -f "$mattermostdir/bin/mattermost" ];  then
+if [ ! -f "${mattermostdir}/bin/mattermost" ];  then
     echo "Mattermost not found please check the path for the Mattermost directory"
     exit 1
 fi
 
 # Get version from argument
-if [ -z "$1" ]; then
+if [ -z "${1}" ]; then
     echo "Please specify the version of Mattermost to download"
     exit 1
 fi
-version="$1"
+version="${1}"
 
-if [[ "$edition" == "Team" ]]; then
-    url="https://releases.mattermost.com/$version/mattermost-team-$version-linux-amd64.tar.gz"
+if [[ "${edition}" == "Team" ]]; then
+    url="https://releases.mattermost.com/${version}/mattermost-team-${version}-linux-amd64.tar.gz"
 else
-    url="https://releases.mattermost.com/$version/mattermost-$version-linux-amd64.tar.gz"
+    url="https://releases.mattermost.com/${version}/mattermost-${version}-linux-amd64.tar.gz"
 fi
 
 # Main
 
-# Delete old backup folder
-if [ -d "$backupdir/mattermost-backup" ]; then
-    echo "[+] Deleting old mattermost backup..."
-    rm -rf "$backupdir/mattermost-backup" 2>/dev/null
-fi
-
 # Get the file
-echo "[+] Downloading Mattermost $edition \"$version\"..."
+echo "[+] Downloading Mattermost ${edition} \"${version}\"..."
 if type "curl" >/dev/null 2>&1; then
-    if ! curl -LC - "$url" -o "$downloaddir/mattermost-upgrade.tar.gz"; then
+    if ! curl -LC - "${url}" -o "${downloaddir}/mattermost-upgrade.tar.gz"; then
         echo "[-] An issue occurred when downloading the Mattermost update package."
         exit 1
     fi
 else
-    if ! wget "$url" -o "$downloaddir/mattermost-upgrade.tar.gz"; then
+    if ! wget "${url}" -o "${downloaddir}/mattermost-upgrade.tar.gz"; then
         echo "[-] An issue occurred when downloading the Mattermost update package."
         exit 1
     fi
@@ -108,8 +105,8 @@ fi
 echo "[+] The Mattermost update package has been downloaded with successful"
 
 echo "[+] Extracting Mattermost update package..."
-mkdir -p "$downloaddir/mattermost-upgrade"
-tar -xf "$downloaddir/mattermost-upgrade.tar.gz" -C "$downloaddir/mattermost-upgrade/"
+mkdir -p "${downloaddir}/mattermost-upgrade"
+tar -xf "${downloaddir}/mattermost-upgrade.tar.gz" -C "${downloaddir}/mattermost-upgrade/"
 
 echo "[+] Stopping Mattermost service..."
 if type systemctl >/dev/null 2>&1;  then
@@ -120,35 +117,38 @@ fi
 
 if pgrep mattermost > /dev/null; then
     echo "[-] Mattermost is still running. Update not possible. Aborting..."
-    rm -rf "$downloaddir/mattermost-upgrade"
-    rm -f "$downloaddir/mattermost-upgrade.tar.gz"
+    rm -rf "${downloaddir}/mattermost-upgrade"
+    rm -f "${downloaddir}/mattermost-upgrade.tar.gz"
     exit 1
 fi
 
 echo "[+] Creating backup of Mattermost..."
-cp -ra "$mattermostdir" "$backupdir/mattermost-backup"
+cp -ra "${mattermostdir}" "${backupdir}/mattermost-backup-$(date +'%F-%H-%M')/"
 
-echo "[+]] Preparing update..."
-USER="$(stat -c '%U' $mattermostdir/bin/mattermost)"
-GROUP="$(stat -c '%G' $mattermostdir/bin/mattermost)"
-chown -hR "$USER":"$GROUP" $downloaddir/mattermost-upgrade/
+echo "[+] Preparing update..."
+USER="$(stat -c '%U' ${mattermostdir}/bin/mattermost)"
+GROUP="$(stat -c '%G' ${mattermostdir}/bin/mattermost)"
+chown -hR "$USER":"$GROUP" "${downloaddir}/mattermost-upgrade/"
 
 # Clean up mattermost directory
-find "$mattermostdir" -mindepth 1 -maxdepth 1 -not \( -path "$mattermostdir/config" -o -path "$mattermostdir/logs" -o -path "$mattermostdir/plugins" -o -path "$mattermostdir/data" \) -delete
+find "${mattermostdir}" -mindepth 1 -maxdepth 1 -not \( -path "${mattermostdir}/config" -o -path "${mattermostdir}/logs" -o -path "${mattermostdir}/plugins" -o -path "${mattermostdir}/data" \) -delete
 
 # Rename plugin directory
-if [ $plugins -eq 0 ];  then
+if [ "${plugins}" -eq 0 ];  then
     echo "[+] Renaming plugin folder..."
-    mv "$mattermostdir/plugins/" "$mattermostdir/plugins~"
-    mv "$mattermostdir/client/plugins/" "$mattermostdir/client/plugins~"
+    mv "${mattermostdir}/plugins/" "${mattermostdir}/plugins~"
+    mv "${mattermostdir}/client/plugins/" "${mattermostdir}/client/plugins~"
 fi
 
 echo "[+] Updating Mattermost..."
-cp -an $downloaddir/mattermost-upgrade/. $mattermostdir
+cp -an "${downloaddir}/mattermost-upgrade/*" ${mattermostdir}
 
 echo "[+] Cleaning Mattermost temporary files..."
-rm -rf "$downloaddir/mattermost-upgrade/"
-rm -f "$downloaddir/mattermost-upgrade.gz"
+rm -rf "${downloaddir}/mattermost-upgrade/"
+rm -f "${downloaddir}/mattermost-upgrade.gz"
+
+echo "[+] Allowing Mattermost to run on port 0-1023..."
+setcap cap_net_bind_service=+ep "${mattermostdir}/bin/mattermost"
 
 echo "[+] Starting Mattermost service..."
 if type systemctl >/dev/null 2>&1;  then
@@ -159,10 +159,10 @@ fi
 
 echo "[+] Mattermost updated with successful"
 
-if [ $plugins -eq 0 ];  then
+if [ "${plugins}" -eq 0 ];  then
     echo "*************************************************"
-    echo "Dont forget to activate your plugins"
-    echo "mv \"$mattermostdir/plugins~\" \"$mattermostdir/plugins\""
-    echo "mv \"$mattermostdir/client/plugins\" \"$mattermostdir/client/plugins~\""
+    echo "Dont forget to reactivate your plugins"
+    echo "mv \"${mattermostdir}/plugins~\" \"${mattermostdir}/plugins\""
+    echo "mv \"${mattermostdir}/client/plugins\" \"${mattermostdir}/client/plugins~\""
     echo "*************************************************"
 fi
