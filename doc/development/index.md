@@ -249,9 +249,12 @@ See the documentation of the [deprecations template][] for further information o
 
 ## Verifying registry
 
-In development mode, verifying registry with Docker clients can be difficult. This is partly due to issues with SSL certificates of
-the registry. In situations like this it is easier to expose the registry over HTTP (see `global.hosts.registry.https`) and use an 
-[insecure registry](https://docs.docker.com/registry/insecure/).
+In development mode, verifying registry with Docker clients can be difficult. This is partly due to issues with certificate of
+the registry. You can either [add the certificate](https://docs.docker.com/registry/insecure/#use-self-signed-certificates) or
+[expose the registry over HTTP](https://docs.docker.com/registry/insecure/#deploy-a-plain-http-registry) (see `global.hosts.registry.https`).
+Note that adding the certificate is more secure than the insecure registry solution.
 
-Also, if you're deploying Minio (`global.minio.enabled` which is `true` by default), you need to make sure that the its hostname can
-be resolved from registry container.
+
+Also, if you're deploying Minio (`global.minio.enabled` which is `true` by default) you need to make sure that its external
+domain name (see `global.hosts.minio.name`) can be resolved from the registry containers, especially when you're using custom
+domain names with local name resolution (e.g. dnsmasq, etc.)
