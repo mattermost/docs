@@ -21,4 +21,4 @@ for secret in {{ default "minio objectstorage ldap omniauth smtp" $.optional }} 
     cp -v -r "${config_dir}/${secret}/." "${secret_dir}/${secret}/"
   fi
 done
-{{- end -}}
+{{ end -}}
