@@ -31,6 +31,7 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.omniauth" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.ldap" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.global.appConfig.ldap.password" .) -}}
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.sidekiq.cronJobs" .) -}}
 
 {{- /* prepare output */}}
 {{- $deprecated := without $deprecated "" -}}
@@ -152,3 +153,12 @@ global.appConfig.ldap:
 {{-   end -}}
 {{- end -}}
 {{- end -}}{{/* "gitlab.deprecate.global.appConfig.ldap.password" */}}
+
+{{/* Deprecation behaviors for configuration of cron jobs */}}
+{{- define "gitlab.deprecate.sidekiq.cronJobs" -}}
+{{- if hasKey .Values.gitlab.sidekiq "cron_jobs" -}}
+sidekiq:
+    Chart-local configuration of cron jobs has been moved to global. Please remove `sidekiq.cron_jobs.*` settings from your properties, and set `global.appConfig.cron_jobs.*` instead.
+{{- end -}}
+{{- end -}}
+{{/* END deprecate.sidekiq.cronJobs */}}

@@ -35,7 +35,6 @@ to the `helm install` command using the `--set` flags:
 | --------------------------- | ----------------- | ---------------------------------------- | 
 | `annotations`               |                   | Pod annotations                          | 
 | `concurrency`               | `10`              | Sidekiq default concurrency              | 
-| `cron_jobs`                 | `{}`              | Auxiliary cron jobs                      | 
 | `enabled`                   | `true`            | Sidekiq enabled flag                     | 
 | `extraContainers`           |                   | List of extra containers to include      | 
 | `extraInitContainers`       |                   | List of extra init containers to include | 
@@ -186,28 +185,8 @@ on a per-pod basis.
 | Name          | Type    | Default | Description |
 |:------------- |:-------:|:------- |:----------- |
 | `concurrency` | Integer | `25`    | The number of tasks to process simultaneously. |
-| `cron_jobs`   |         |         | [See below](#cron_jobs). |
 | `replicas`    | Integer | `1`     | The number of `replicas` to use by default per pod definition. |
 | `timeout`     | Integer | `4`     | The sidekiq shutdown timeout. The number of seconds after sidekiq gets the TERM signal before it forcefully shuts down its processes. |
-
-### cron_jobs
-
-Sidekiq includes maintenance jobs that can be configured to run on a periodic basis
-using cron style schedules. A few examples are included below. See the sample
-[gitlab.yml](https://gitlab.com/gitlab-org/gitlab-ee/blob/master/config/gitlab.yml.example#L237-302)
-for more job examples.
-
-Cron jobs are configured globally for all Sidekiq pods. There are no per-pod settings.
-
-```YAML
-cron_jobs:
-  stuck_ci_jobs_worker:
-    cron: "0 * * * *"
-  pipeline_schedule_worker:
-    cron: "19 * * * *"
-  expire_build_artifacts_worker:
-    cron: "50 * * * *"
-```
 
 ## Per-pod Settings
 

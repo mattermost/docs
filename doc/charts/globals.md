@@ -464,6 +464,7 @@ global:
       configMap:
       bucket: gitlab-pseudo
       connection: {}
+    cron_jobs: {}
 ```
 
 [unicorn]: gitlab/unicorn/index.md
@@ -846,6 +847,28 @@ Once a YAML file containing the contents of the `connection` has been created, c
 ```bash
 kubectl create secret generic gitlab-rails-storage \
     --from-file=connection=rails.yaml
+```
+
+### Cron jobs related settings
+
+Sidekiq includes maintenance jobs that can be configured to run on a periodic
+basis using cron style schedules. A few examples are included below. See the
+sample [gitlab.yml](https://gitlab.com/gitlab-org/gitlab-ee/blob/master/config/gitlab.yml.example#L237-302)
+for more job examples.
+
+These settings are shared between Sidekiq, Unicorn (for showing tooltips in UI)
+and task-runner (for debugging purposes) pods.
+
+```YAML
+global:
+  appConfig:
+    cron_jobs:
+      stuck_ci_jobs_worker:
+        cron: "0 * * * *"
+      pipeline_schedule_worker:
+        cron: "19 * * * *"
+      expire_build_artifacts_worker:
+        cron: "50 * * * *"
 ```
 
 ## Configure GitLab Shell

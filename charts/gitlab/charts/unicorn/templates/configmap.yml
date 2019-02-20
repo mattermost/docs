@@ -90,6 +90,7 @@ data:
       {{- if eq .incomingEmail.enabled true }}
 {{ include "gitlab.appConfig.incoming_email" . | indent 6 }}
       {{- end }}
+      {{- include "gitlab.appConfig.cronJobs" . | nindent 6 }}
       gravatar:
         plain_url: {{ .gravatar.plainUrl }}
         ssl_url: {{ .gravatar.sslUrl }}

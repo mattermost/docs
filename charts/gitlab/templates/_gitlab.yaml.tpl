@@ -53,3 +53,10 @@ rack_attack:
   {{ toYaml .Values.rack_attack.git_basic_auth | indent 2 }}
     {{- end }}
 {{- end -}}
+
+{{- define "gitlab.appConfig.cronJobs" -}}
+{{- if .cron_jobs }}
+cron_jobs:
+{{ toYaml .cron_jobs | indent 2 }}
+{{- end }}
+{{- end }}

@@ -39,6 +39,9 @@ data:
         {{- include "gitlab.appConfig.defaultProjectsFeatures.configuration" $ | nindent 8 }}
       incoming_email:
         enabled: false
+      {{- with .Values.global.appConfig }}
+      {{- include "gitlab.appConfig.cronJobs" . | nindent 6 }}
+      {{- end }}
       artifacts:
         enabled: true
       {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "lfs" "config" $.Values.global.appConfig.lfs "context" $) | nindent 6 }}
