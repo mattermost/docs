@@ -88,6 +88,7 @@ use it as shown below.
 
 *Include these options in your helm install command:*
 ```
+--set postgresql.install=false
 --set global.psql.host=production.postgress.hostname.local
 --set global.psql.password.secret=kubernetes_secret_name
 --set global.psql.password.key=key_that_contains_postgres_password
