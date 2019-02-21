@@ -1,5 +1,5 @@
 ---
-title: Extracted shared configure configuratino of the ruby-based pods into it's own
+title: Extract shared configuration script of ruby-based pods into own template
   template
 merge_request: 685
 author: Matthias van de Meent (Cofano Software Solutions)
