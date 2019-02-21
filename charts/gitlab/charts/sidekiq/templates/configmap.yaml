@@ -64,6 +64,7 @@ data:
       gravatar:
         plain_url: {{ .gravatar.plainUrl }}
         ssl_url: {{ .gravatar.sslUrl }}
+      {{- include "gitlab.appConfig.cronJobs" . | nindent 6 }}
 {{ include "gitlab.appConfig.extra" . | indent 6 }}
       {{- end }}
       {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "artifacts" "config" $.Values.global.appConfig.artifacts "context" $) | nindent 6 }}
@@ -76,10 +77,6 @@ data:
       mattermost:
         enabled: false
       gravatar:
-      {{- if .Values.cron_jobs }}
-      cron_jobs:
-{{ toYaml .Values.cron_jobs | indent 8 }}
-      {{- end }}
       ## Registry Integration
       {{- include "gitlab.appConfig.registry.configuration" $ | nindent 6 }}
       gitlab_ci:
