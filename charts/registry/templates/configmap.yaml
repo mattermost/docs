@@ -36,6 +36,7 @@ data:
         issuer: {{ .Values.tokenIssuer | quote }}
         # This is provided from the initContainer execution, at a known path.
         rootcertbundle: /etc/docker/registry/certificate.crt
+        autoredirect: {{ .Values.authAutoRedirect }}
     storage:
       {{- if .Values.storage }}
       {{- else if .Values.global.minio.enabled }}
