@@ -1,7 +1,7 @@
 apiVersion: v1
 name: registry
-version: 0.1.0
-appVersion: 2.6.2
+version: 0.2.0
+appVersion: 2.7.1
 description: Stateless, highly scalable application that stores and lets you
   distribute Docker images
 details: Container Registry used as part of GitLab deployment.

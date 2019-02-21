@@ -241,8 +241,20 @@ such a way that an upstream may not accept.
 
 There are times in a development where changes in behavior require a functionally breaking change. We try to avoid such changes, but some items can not be handled without such a change.
 
-To handle this, we have implemented the [deprecations template][]. This template is designed to recogonize properties that need to be replaced or relocated, and inform the user of the actions they need to take. This template will compile all messages into a list, and then cause the deployment to stop via a `fail` call. This provides a method to inform the user at the same time as preventing the deployment the chart in a broken or unexpected state.
+To handle this, we have implemented the [deprecations template][]. This template is designed to recognize properties that need to be replaced or relocated, and inform the user of the actions they need to take. This template will compile all messages into a list, and then cause the deployment to stop via a `fail` call. This provides a method to inform the user at the same time as preventing the deployment the chart in a broken or unexpected state.
 
 See the documentation of the [deprecations template][] for further information on the design, functionality, and how to add new deprecations.
 
 [deprecations template]: deprecations.md
+
+## Verifying registry
+
+In development mode, verifying Registry with Docker clients can be difficult. This is partly due to issues with certificate of
+the registry. You can either [add the certificate](https://docs.docker.com/registry/insecure/#use-self-signed-certificates) or
+[expose the registry over HTTP](https://docs.docker.com/registry/insecure/#deploy-a-plain-http-registry) (see `global.hosts.registry.https`).
+Note that adding the certificate is more secure than the insecure registry solution.
+
+Please keep in mind that Registry uses the external domain name of Minio service (see `global.hosts.minio.name`). You may
+encounter an error when using internal domain names, e.g. with custom TLDs for development environment. The common symptom
+is that you can login to the Registry but you can't push or pull images. This is generally because the Registry container(s)
+can not resolve the Minio domain name and find the correct endpoint (you can see the errors in container logs).

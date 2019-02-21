@@ -1,6 +1,6 @@
 image:
   repository: registry
-  tag: '2.6.2'
+  tag: '2.7.1'
   pullPolicy: 'IfNotPresent'
   pullSecrets: []
 service:
@@ -111,6 +111,10 @@ authEndpoint:
 tokenService: 'container_registry'
 # This must match your GitLab Rails configuration
 tokenIssuer: 'gitlab-issuer'
+# Must to be `false` to support Windows clients
+# See https://gitlab.com/gitlab-org/omnibus-gitlab/issues/3964
+authAutoRedirect: false
+
 # if replicas is >1, shared storage MUST be used.
 minReplicas: 2
 maxReplicas: 10
