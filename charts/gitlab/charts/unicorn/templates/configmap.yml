@@ -130,35 +130,8 @@ data:
       ## Registry Integration
       {{- include "gitlab.appConfig.registry.configuration" $ | nindent 6 }}
   configure: |
-      set -e
-      config_dir="/init-config"
-      secret_dir="/init-secrets-unicorn"
-
-      for secret in redis shell gitaly registry postgres rails-secrets gitlab-workhorse ; do
-        mkdir -p "${secret_dir}/${secret}"
-        cp -v -r "${config_dir}/${secret}/." "${secret_dir}/${secret}/"
-      done
-      if [ -e "${config_dir}/minio" ]; then
-        mkdir -p "${secret_dir}/minio"
-        cp -v -r "${config_dir}/minio/." "${secret_dir}/minio/"
-      fi
-      if [ -e "${config_dir}/objectstorage" ]; then
-        mkdir -p "${secret_dir}/objectstorage"
-        cp -v -r "${config_dir}/objectstorage/." "${secret_dir}/objectstorage/"
-      fi
-      if [ -e "${config_dir}/ldap" ]; then
-        mkdir -p "${secret_dir}/ldap"
-        cp -v -r "${config_dir}/ldap/." "${secret_dir}/ldap/"
-      fi
-      if [ -e "${config_dir}/omniauth" ]; then
-        mkdir -p "${secret_dir}/omniauth"
-        cp -v -r "${config_dir}/omniauth/." "${secret_dir}/omniauth/"
-      fi
-      if [ -e "${config_dir}/smtp/smtp-password" ]; then
-        mkdir -p "${secret_dir}/smtp"
-        cp -v -r "${config_dir}/smtp/smtp-password" "${secret_dir}/smtp/"
-      fi
-{{- include "gitlab.psql.ssl.initScript" . | indent 6 }}
+    {{- include "gitlab.scripts.configure.secrets" (dict) | nindent 4 -}}
+    {{- include "gitlab.psql.ssl.initScript" . | nindent 4 }}
 ---
 apiVersion: v1
 kind: ConfigMap

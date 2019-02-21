@@ -74,7 +74,7 @@ spec:
             mountPath: /init-config
             readOnly: true
           - name: unicorn-secrets
-            mountPath: /init-secrets-unicorn
+            mountPath: /init-secrets
             readOnly: false
           - name: workhorse-secrets
             mountPath: /init-secrets-workhorse
