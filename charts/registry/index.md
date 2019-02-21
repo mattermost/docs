@@ -3,15 +3,10 @@ Forked from https://github.com/helm/charts/tree/master/stable/docker-registry
 With a few tweaks to make it play nicely with GitLab, including Minio S3
 storage and GitLab authentication endpoint.
 
-## Notable additional configuration
+## Configuration
 
-Parameter | Description | Default
---- | --- | ---
-`enabled` | enable/disable registry | `true`
-`authEndpoint` | override authentication endpoint (only host and port) | `global.hosts.gitlab.name`
-`authAutoRedirect` | enable/disable authentication auto-redirect (don't change it to `false` otherwise Windows clients won't work) | `true`
-`tokenIssuer` | authentication token issuer (must match your GitLab Rails configuration) | `gitlab-issuer`
-`minio.bucket` | Minio bucket name to use, precedes `.global.registry.bucket` | ``
+In addition to the original configuration that are inherited from the upstream,
+this chart also introduces some additional configuration. See [additional options](../../doc/charts/registry/index.md#installation-command-line-options)
 
 ## Development
 

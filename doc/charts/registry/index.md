@@ -54,19 +54,20 @@ Table below contains all the possible charts configurations that can be supplied
 | Parameter                | Description                             | Default              |
 | ---                      | ---                                     | ---                  |
 | image.repository         | Registry image                          | registry             |
-| image.tag                | Version of the image to use             | 2.6                  |
+| image.tag                | Version of the image to use             | 2.7.1                |
 | image.pullPolicy         | Pull policy for the registry image      |                      |
 | image.pullSecrets        | Secrets to use for image repository     |                      |
 | init.image               | initContainer image                     | busybox              |
 | init.tag                 | initContainer image tag                 | latest               |
 | enabled                  | Enable registry flag                    | true                 |
 | httpSecret               | Https secret                            |                      |
-| authEndpoint             | Auth endpoint                           | Undefined by default |
+| authEndpoint             | Auth endpoint (only host and port)      | global.hosts.gitlab.name |
+| authAutoRedirect         | Auth auto-redirect (must be true for Windows clients to work)  | true              |
 | tokenService             | JWT token service                       | container_registry   |
 | tokenIssuer              | JWT token issuer                        | gitlab-issuer        |
 | certificate.secret       | JWT certificate                         | gitlab-registry      |
 | replicas                 | Number of replicas                      | 1                    |
-| minio.bucket             | Legacy registry bucket name             | Undefined by default |
+| minio.bucket             | Legacy registry bucket name             | global.registry.bucket |
 | annotations              | Pod annotations                         |                      |
 
 ## Chart configuration examples

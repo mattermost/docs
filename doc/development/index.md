@@ -249,12 +249,12 @@ See the documentation of the [deprecations template][] for further information o
 
 ## Verifying registry
 
-In development mode, verifying registry with Docker clients can be difficult. This is partly due to issues with certificate of
+In development mode, verifying Registry with Docker clients can be difficult. This is partly due to issues with certificate of
 the registry. You can either [add the certificate](https://docs.docker.com/registry/insecure/#use-self-signed-certificates) or
 [expose the registry over HTTP](https://docs.docker.com/registry/insecure/#deploy-a-plain-http-registry) (see `global.hosts.registry.https`).
 Note that adding the certificate is more secure than the insecure registry solution.
 
-
-Also, if you're deploying Minio (`global.minio.enabled` which is `true` by default) you need to make sure that its external
-domain name (see `global.hosts.minio.name`) can be resolved from the registry containers, especially when you're using custom
-domain names with local name resolution (e.g. dnsmasq, etc.)
+Please keep in mind that Registry uses the external domain name of Minio service (see `global.hosts.minio.name`). You may
+encounter an error when using internal domain names, e.g. with custom TLDs for development environment. The common symptom
+is that you can login to the Registry but you can't push or pull images. This is generally because the Registry container(s)
+can not resolve the Minio domain name and find the correct endpoint (you can see the errors in container logs).
