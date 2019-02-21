@@ -15,6 +15,9 @@ resources: {}
 env: production
 global: {}
 enabled: false
+serviceAccount:
+  create: true
+  name: # Specify a pre-existing ServiceAccount name
 rbac:
   create: true
 resources:

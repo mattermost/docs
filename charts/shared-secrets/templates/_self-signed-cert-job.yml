@@ -21,7 +21,7 @@ spec:
       securityContext:
         runAsUser: {{ .Values.securityContext.runAsUser }}
         fsGroup: {{ .Values.securityContext.fsGroup }}
-      serviceAccountName: {{ template "fullname" . }}
+      serviceAccountName: {{ template "shared-secrets.serviceAccountName" . }}
       restartPolicy: Never
 {{- include "pullsecrets" .Values.image | indent 6}}
       initContainers:
