@@ -8,6 +8,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release Date 2019-03-16
 
+### Security fixes
+
 ### Bug Fixes
 
  - Fixed an issue where a broken image displayed on login page if custom branding was enabled but no image had been uploaded.
