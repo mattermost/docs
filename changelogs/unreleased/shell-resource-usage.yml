@@ -1,6 +1,0 @@
----
-title: Update the gitlab-shell resource requests to be a bit lower, reflecting latest
-  testing
-merge_request: 656
-author:
-type: changed
