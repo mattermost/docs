@@ -47,7 +47,7 @@ PC Web
     "Firefox", "v60+"
     "Safari", "v12+"
     "Internet Explorer", "v11*"
-    "Edge", "v42+"
+    "Edge", "v44+"
 
 `*` IE 11 Compatibility View and mobile view are not supported. 
 
