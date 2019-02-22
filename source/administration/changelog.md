@@ -14,7 +14,13 @@ Release Date 2019-03-16
 
  - Fixed an issue where a broken image displayed on login page if custom branding was enabled but no image had been uploaded.
  - Fixed an issue where the emoji `Recently Used` cleared entirely after logging out and back in.
- - 
+ - Fixed an issue where at-channel, at-all, at-here followed by a period were not highlighted as mentions.
+ - Fixed an issue where emoji not included in our list of text-based emoji were not rendered as jumboemoji.
+ - Fixed an issue where the Mattermost icon was pixelated in bookmark rendering on Google Chrome.
+ - Fixed an issue where **System Console > Users** page had broken User Interface on narrow screens.
+ - Fixed an issue where at-channel alert showed incorrect number of timezones.
+ - Fixed an issue where leading whitespace with emoji affected emoji size so that they didn't render as jumboemoji.
+ - Fixed an issue where the admin panel graphs did not load smoothly.
  
 ### Compatibility
 
