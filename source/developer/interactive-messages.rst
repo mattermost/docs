@@ -15,7 +15,7 @@ Use interactive messages to simplify complex workflows by allowing users to take
 
 To try it out, you can use this `matterpoll plugin <https://github.com/matterpoll/matterpoll>`__ to add polling to Mattermost channels via a ``/poll`` slash command.
 
-.. image:: ../../source/images/poll.gif
+.. image:: ../../source/images/poll.png
 
 .. toctree::
   :maxdepth: 2
