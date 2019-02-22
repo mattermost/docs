@@ -1,5 +1,0 @@
----
-title: Switched gitlab-shell HPA to use a target cpu value, rather than a percentage
-merge_request: 655
-author:
-type: changed

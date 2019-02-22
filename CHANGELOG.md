@@ -2,6 +2,31 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.6.0 (2019-02-22)
+
+### Fixed (1 change)
+
+- Ensure Piwik and Google Analytics are disabled by default.
+
+### Changed (4 changes)
+
+- Switched gitlab-shell HPA to use a target cpu value, rather than a percentage. !655
+- Update the gitlab-shell resource requests to be a bit lower, reflecting latest testing. !656
+- Upgrade registry to version 2.7.1. !681
+- Use gitlab-operator version 0.3. !692
+
+### Added (2 changes, 2 of them are from the community)
+
+- Adds configuration options for connecting Gitlab with database using mutual TLS. !626 (Lukas Grundmann)
+- Add tls option to smtp settings. !648 (Igor Storozhuk)
+
+### Other (3 changes)
+
+- Restructure the documentation. !588
+- Allow static ServiceAccount Name in shared-secrets. !688
+- Update GitLab Version to 11.8.0.
+
+
 ## 1.5.3 (2019-02-05)
 
 ### Other (1 change)
