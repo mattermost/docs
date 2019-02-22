@@ -82,7 +82,7 @@
    [explicitly changed](https://docs.gitlab.com/omnibus/settings/backups.html#manually-manage-backup-directory)
    in `gitlab.rb`.
 
-1. [Restore backup tarball to Helm chart based deployment](../..//backup-restore/restore.md)
+1. [Restore backup tarball to Helm chart based deployment](../../backup-restore/restore.md)
 
 1. Follow [official documentation](../../backup-restore/restore.md#restoring-the-secrets)
    on how to restore the secrets from package based installation.
