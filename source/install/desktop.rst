@@ -43,11 +43,15 @@ then open the Group Policy Management Console and you should see under "Computer
 
 Following Group Policies are available:
 
-+------------------------+-----------------------------------------------------+----------------------+
-| Group Policy           | Description                                         | Required Version     |
-+========================+=====================================================+======================+
-| Disable Auto Updater   | Controls the behavior of the internal Autoupdater   | 4.3 or later         |
-+------------------------+-----------------------------------------------------+----------------------+
++--------------------------------------+---------------------------------------------------+----------------+----------------------+
+| Group Policy                         | Description                                       | Type of Policy | Required Version     |
++======================================+===================================================+================+======================+
+| Disable Auto Updater                 | Controls the behavior of the internal Autoupdater | Machine        | 4.3 or later         |
++--------------------------------------+---------------------------------------------------+----------------+----------------------+
+| Prevent adding new Mattermost server | Prevent adding new Mattermost server              | Machine/User   | 4.3 or later         |
++--------------------------------------+---------------------------------------------------+----------------+----------------------+
+| Server addresses                     | Predefine one or more Mattermost server addresses | Machine/User   | 4.3 or later         |
++--------------------------------------+---------------------------------------------------+----------------+----------------------+
 
 macOS 10.9+
 --------------------------------------------------
