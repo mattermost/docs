@@ -2570,7 +2570,7 @@ Restrict Custom Emoji Creation
 
 **Allow System and Team Admins to create custom emoji**: The Custom Emoji option is hidden from the Main Menu for users who are not System or Team Admins.
 
-**Only allow System Admins to create custom emoji**: The Custom Emoji option is hidden from the Main Menu for users who are not System or Team Admins.
+**Only allow System Admins to create custom emoji**: The Custom Emoji option is hidden from the Main Menu for users who are not System Admins.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictCustomEmojiCreation": "all"`` with options ``all``, ``admin`` and ``system_admin`` for above settings respectively. |
