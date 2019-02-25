@@ -12,6 +12,7 @@ Release Date 2019-03-16
 
 ### Bug Fixes
 
+ - Fixed an issue where emoji reactions did not appear on posts right away.
  - Fixed an issue where a broken image displayed on login page if custom branding was enabled but no image had been uploaded.
  - Fixed an issue where the emoji `Recently Used` cleared entirely after logging out and back in.
  - Fixed an issue where at-channel, at-all, at-here followed by a period were not highlighted as mentions.
@@ -21,6 +22,8 @@ Release Date 2019-03-16
  - Fixed an issue where at-channel alert showed incorrect number of timezones.
  - Fixed an issue where leading whitespace with emoji affected emoji size so that they didn't render as jumboemoji.
  - Fixed an issue where the admin panel graphs did not load smoothly.
+ - Fixed an issue with inconsistent formatting in page header on **System Console > Notifications > Mobile Push**.
+ - Fixed an issue 
  
 ### Compatibility
 
