@@ -76,7 +76,6 @@ data:
         enabled: false
       mattermost:
         enabled: false
-      gravatar:
       ## Registry Integration
       {{- include "gitlab.appConfig.registry.configuration" $ | nindent 6 }}
       gitlab_ci:
