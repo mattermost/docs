@@ -75,7 +75,6 @@ data:
         enabled: false
       mattermost:
         enabled: false
-      gravatar:
       {{- if .Values.cron_jobs }}
       cron_jobs:
 {{ toYaml .Values.cron_jobs | indent 8 }}
