@@ -593,16 +593,16 @@ The following table summarizes abbreviations used in the above table:
         <p>&nbsp;</p>
     </embed>
 
-Leadership Coaching
+Consulting Advisers 
 --------------------------
 
-To advance the skills of senior and functional leaders, we bring in experts to advise on key functions, including sales, operations, product, marketing, strategy, general management, and other specialized topics. 
+To provide guidance, coaching and development for senior and functional leaders, we bring in experts to advise in key areas. 
 
-- As an example, `Jono Bacon <http://www.jonobacon.org/about/>`__--a leading author, speaker and consultant on open source community advocacy--meets with our community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways.
+- As an example, `Jono Bacon <http://www.jonobacon.org/about/>`__--a leading author, speaker and consultant on open source community advocacy--meets with our CEO and community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways.
 
-Many thought leaders and conference speakers are open to consulting projects with the right clients, and Mattermost is a flexible client. There's no travel involved, we meet over video conference, `our consulting process is straight forward <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit#heading=h.pwxwwq4ezzfx>`__, we're easy to work with, and we take advising seriously. 
+Meetings typically take place over phone or video calls. We bring on advisers with `standard consulting agreements <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit#heading=h.pwxwwq4ezzfx>`_ on either a time and materials basis or a recurring fee. 
 
-When hiring, we are also open to bringing in a leader's personal mentors as consultants and company advisers when skill sets are appropriate.
+We use a range of advisers from senior board-level contributors to operational and subject-matter experts.
 
 ---------------------------------------------------------
 Mattermost Avatar
