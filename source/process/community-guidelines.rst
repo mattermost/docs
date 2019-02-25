@@ -41,8 +41,6 @@ Off-boarding
 How to run a community design meeting?
 ---------------------------------------------------------
 
-Invite various Mattermost communities to attend a meeting to review the approach
-
 Objectives
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1. Avoid blindspots in design by reviewing use cases with user communities.
@@ -53,21 +51,21 @@ Preparations
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1. Research existing solutions to understand potential use cases brought up by communities.
 2. Draft a proposed design for the problem - this can be a rough outline, more concrete mockups or final design.
-3. Decide two meetings times: one for European and Asian communities, another for North and South American communities.
+3. Decide two meeting times: one for European and Asian communities, another for North and South American communities.
 
  - Avoid regional holidays
  - Aim for typical working hours in the regions
  
 4. Prepare agenda.
 
- - Introductions of Mattermost team part of the meeting
+ - Introductions of Mattermost team members part of the meeting
  - Review of use cases
  - Review of proposed design approach
  - Open discussion and Q&A
  - Actions and decisions
  - Review of next steps
 
-5. Create a public meeting link everyone have permission to access, such as a Zoom link.
+5. Create a public meeting link everyone has permission to access, such as a Zoom link.
 6. Prepare an RSVP form for customers, see `example here <https://docs.google.com/forms/d/e/1FAIpQLSdg5NWkI4JcAmGwL3KgoYdtirXTS4wb1GJRXd_20kX2lTo3mw/viewform>`_.
 
 Announce
