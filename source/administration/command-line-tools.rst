@@ -659,6 +659,29 @@ mattermost import
   Child Command
     -  `mattermost import slack`_ - Import a team from Slack.
 
+mattermost import bulk
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Import data from a Mattermost Bulk Import File.
+
+  Format
+    .. code-block:: none
+
+      mattermost import bulk {file}
+
+  Options
+    .. code-block:: none
+
+          --apply         Save the import data to the database. Use with caution - this cannot be reverted.
+          --validate      Validate the import data without making any changes to the system.
+          --workers int   How many workers to run whilst doing the import. (default 2)
+
+  Example
+    .. code-block:: none
+
+      ./mattermost import bulk bulk-file.jsonl
+
 mattermost import slack
 ~~~~~~~~~~~~~~~~~~~~~~~
 
