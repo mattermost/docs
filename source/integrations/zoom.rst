@@ -30,9 +30,10 @@ Zoom Setup Guide
 
   - Go to https://marketplace.zoom.us/ and log in.
   - In the top left click on **Develop** and then **Build App**.
-  - Enter a name for your app, disable **Intend to publish this App...** and select **Account-level App**.
+  - Enter a name for your app and disable **Intend to publish this app on Zoom Marketplace**.
+  - Choose **Account-level app** as the app type.
   - Select **JWT API Credentials** as authentication type.
-  - Click create.
+  - Click **Create**.
   - Enter the **Company Name** and **Developer Contact Information** for your app.
   - Go to the **App Credentials** tab on the left. Here you'll find your **API Key** and **API Secret**.
   - Paste the **API Key** and **API Secret** into the fields in the System Console, and hit **Save**.
