@@ -657,6 +657,7 @@ mattermost import
     Import data into Mattermost.
 
   Child Command
+    -  `mattermost import bulk`_ - Import a Mattermost Bulk Import File.
     -  `mattermost import slack`_ - Import a team from Slack.
 
 mattermost import bulk
