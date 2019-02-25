@@ -3,11 +3,11 @@ Release Overview
 
 Mattermost adopts a monthly tick-tock release cycle, with a new version shipping on the 16th of each month in `binary form <http://docs.mattermost.com/administration/upgrade.html#mattermost-team-edition>`_. 
 
-Tick-tock refers to even-numbered releases (e.g. v5.6) containing new features, and odd numbered releases (e.g. v5.7) containing bug fixes and performance improvements only.
+Tick-tock refers to even-numbered releases (e.g. v5.6) containing new features, and odd-numbered releases (e.g. v5.7) containing only bug fixes and performance improvements.
 
 The primary goal of our release cycle is to improve quality and build trust with our users in every release. A tick-tock release cycle allows new features to soak in our test environments for longer, allowing us to identify and fix bugs before releasing the features. 
 
-There is no change to the process or release schedule for security issues. When security issues are found that warrant a patch release, we follow the `security release process outlined here<https://docs.mattermost.com/process/security-release.html>`_.
+There is no change to the process or release schedule for security issues. When security issues are found that warrant a patch release, we follow the `security release process outlined here <https://docs.mattermost.com/process/security-release.html>`_.
 
 Release Numbering
 -----------------
@@ -41,7 +41,7 @@ Frequently Asked Questions
 
 **Q1: Will tick-tock releases delay features?**
 
-You can view current, near term and future priorities on `our website here <https://mattermost.com/roadmap/>`_. While tick-tock releases will mean only shipping new features every other release, it will improve the quality of features shipped. We want to avoid rushing to ship new features and then fixing bugs over a number of releases, and instead we will ship high-quality features out the gate.
+- A: You can view current, near term and future priorities on `our website here <https://mattermost.com/roadmap/>`_. While tick-tock releases will mean only shipping new features every other release, it will improve the quality of features shipped. We want to avoid rushing to ship new features and then fixing bugs over a number of releases, and instead we will ship high-quality features out the gate.
 
 **Q2: What is the release cycle for the React Native mobile apps?**
 
@@ -57,7 +57,7 @@ You can view current, near term and future priorities on `our website here <http
 
 **Q5: When is release branch cut for a feature release?**
  
- - A: On feature cut-off date (T-12).
+ - A: On feature cut-off date (T-15).
 
 **Q6: How are PRs merged for release?**
  
@@ -122,4 +122,3 @@ You can view current, near term and future priorities on `our website here <http
 **Q21: What is the process for community PRs?**
 
  - A: Review, merge and cherry-pick.
-
