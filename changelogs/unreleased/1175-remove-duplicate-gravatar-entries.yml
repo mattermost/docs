@@ -1,0 +1,5 @@
+---
+title: Remove duplicate gravatar entries from 'gitlab.yml.erb'
+merge_request: 700
+author:
+type: fixed
