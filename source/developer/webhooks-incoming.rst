@@ -41,7 +41,7 @@ Let's learn how to create a simple incoming webhook that posts the following mes
   # or
   curl -i -X POST --data-urlencode 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
-If you're running cURL on Windows, ensure inner double quotes are escaped with a backslash. Here's an example payload on Windows:
+If you're running `cURL on Windows <https://curl.haxx.se/windows/>`__, ensure inner double quotes are escaped with a backslash. Here's an example payload on Windows:
 
 .. code-block:: text
 
