@@ -30,6 +30,7 @@ data:
     production:
       # Redis (single instance)
       url: {{ template "gitlab.redis.scheme" . }}://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
+      id:
   gitlab.yml.erb: |
     production: &base
       gitlab:
