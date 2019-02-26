@@ -45,7 +45,7 @@ If you're running `cURL on Windows <https://curl.haxx.se/windows/>`__, ensure in
 
 .. code-block:: text
 
-  curl -i -X POST -H 'Content-Type: application/json' -d '{\"text\": \"Hello, this is some text\nThis is more text. :tada:\"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
+  curl -i -X POST -H "Content-Type: application/json" -d "{\"text\": \"Hello, this is some text\nThis is more text. :tada:\"}" http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
 See `developer documentation <https://developers.mattermost.com/integrate/incoming-webhooks/>`__ for details on what parameters are supported by incoming webhooks. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://about.mattermost.com/default-plugins>`__. The following payload gives an example webhook that uses additional parameters and formatting options:
 
