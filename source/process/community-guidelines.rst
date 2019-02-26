@@ -71,7 +71,7 @@ Preparations
 Announce
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1. Prepare a forum post, see `example here <https://forum.mattermost.org/t/community-design-meeting-folded-reply-threads/6729>`_.
-2. Tweet about it, see `example here <link to be added>`_.
+2. Tweet about it, see `example here <https://twitter.com/mattermost/status/1100235276436365312>`_.
 3. Post in appropriate channels on https://community.mattermost.com.
 4. Post in UserVoice if related to an existing feature proposal, see `example here <https://mattermost.uservoice.com/forums/306457-general/suggestions/19572469-make-threads-collapsible#{toggle_previous_statuses}>`_.
 5. Ask customer success teams to share with interested customers.
