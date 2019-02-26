@@ -1,0 +1,5 @@
+---
+title: Set the life span of Registry certificate to 10 years
+merge_request: 701
+author:
+type: fixed
