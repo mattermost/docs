@@ -117,6 +117,10 @@ global:
       proxy_download: true
       bucket:
       connection: {}
+    externalDiffs:
+      proxy_download: true
+      bucket:
+      connection: {}
     ldap:
       servers: {}
       # 'main' is the GitLab 'provider ID' of this LDAP server

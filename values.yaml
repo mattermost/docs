@@ -135,7 +135,7 @@ global:
       piwikUrl:
       piwikSiteId:
 
-    ## doc/charts/globals.md#lfs-artifacts-uploads-packages
+    ## doc/charts/globals.md#lfs-artifacts-uploads-packages-external-mr-diffs
     lfs:
       bucket: git-lfs
       connection: {}
@@ -153,6 +153,9 @@ global:
         # key:
     packages:
       bucket: gitlab-packages
+      connection: {}
+    externalDiffs:
+      bucket: gitlab-mr-diffs
       connection: {}
 
     ## doc/charts/globals.md#pseudonymizer-settings

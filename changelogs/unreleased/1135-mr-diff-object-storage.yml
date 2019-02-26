@@ -1,0 +1,5 @@
+---
+title: Add support for using object storage for storing MR diffs
+merge_request: 698
+author:
+type: added

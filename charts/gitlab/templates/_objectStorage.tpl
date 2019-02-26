@@ -11,7 +11,7 @@ Usage:
 */}}
 {{- define "gitlab.appConfig.objectStorage.configuration" -}}
 {{ .name }}:
-  enabled: {{ eq .config.enabled true }}
+  enabled: {{ if kindIs "bool" .config.enabled }}{{ eq .config.enabled true }}{{ end }}
   object_store:
     enabled: true
     remote_directory: {{ .config.bucket }}
