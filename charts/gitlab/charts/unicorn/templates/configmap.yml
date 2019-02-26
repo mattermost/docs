@@ -30,6 +30,7 @@ data:
     production:
       # Redis (single instance)
       url: {{ template "gitlab.redis.scheme" . }}://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
+      id:
   unicorn.rb: |
     worker_processes {{ .Values.workerProcesses }}
     working_directory "/srv/gitlab"
