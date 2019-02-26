@@ -1,5 +1,5 @@
 ---
 title: Set the Redis client ID to nil as some servers have that command disabled
-merge_request:
-author:
+merge_request: 666
+author: Vic Iglesias
 type: fixed
