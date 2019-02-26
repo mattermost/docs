@@ -13,9 +13,9 @@ Once enabled, clicking a video icon in a Mattermost channel invites team members
 
 **Using other voice, video and screensharing services**
 
-The `open source Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`__ can be extended to launch other voice, video and screensharing systems, including custom self-hosted services and vendor-hosted SaaS services such as Skype and Google Hangouts, depending on your needs.
+The `open source Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`__ can be used as a sample to create other audio and video conferencing extensions, including custom self-hosted services and vendor-hosted SaaS services such as WebEx, Skype for Business and Google Hangouts, depending on your needs.
 
-The following outlines the steps for enabling Zoom.
+The following guide outlines the steps for enabling Zoom.
 
 Zoom Setup Guide
 ~~~~~~~~~~~~~~~~~
