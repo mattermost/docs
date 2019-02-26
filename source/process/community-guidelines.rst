@@ -78,13 +78,18 @@ Announce
 
 Holding the Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^
-1. Record the meeting.
+1. Record the meeting. Mention that sharing video is optional.
 2. Follow the agenda.
 3. Thank everyone for joining the call.
 
 After the Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1. Share a summary in all respective channels, including the meeting recording.
+
+Tips
+^^^^^^^^^^^^^^^^^^^^^^^^
+1. Do not use your personal Zoom meeting link for the call.
+2. Note in all announcements that sharing video is optional.
 
 GitHub Help Wanted Issues in Mattermost-Server Repository
 -----------------------------------------------------------
