@@ -131,7 +131,7 @@ Procedure:
 
 **During meeting:**
 
-1. (Vice Chair) At 7:58am PST on the day meeting is held, post a reminder in `Cust Obs Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_. 
+1. (Vice Chair) At 7:58am Palo Alto time on the day meeting is held, post a reminder in `Cust Obs Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_. 
 
   .. code-block:: none
 
@@ -141,7 +141,7 @@ Procedure:
 
 2. (Team) Join the **Zoom** link in the header of the `Cust Obs Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_, and open the **Meeting Notes** link in the header to see the agenda.
 
-3. (Vice Chair) Start Zoom recording at 8:00am PST.
+3. (Vice Chair) Start Zoom recording at 8:00am Palo Alto time.
 
 3. (Chair) Run through the agenda:
 
