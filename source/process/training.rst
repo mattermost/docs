@@ -115,8 +115,8 @@ Attendees:
 
 Objectives:
 
-- Share important company-wide updates with staff across the organization.
-- Educate staff on key customer use cases and needs.
+- Reaffirm our obsession with making customers safer and more productive
+- Share how we're aligning resources to make customers successful
 
 Time:
 
@@ -126,7 +126,7 @@ Procedure:
 
 **Before meeting:**
 
-1. (Chair) Schedules items for the weekly agenda, includes company update from CEO or CTO, and customer updates.
+1. (Chair) Schedules items for the weekly agenda.
 2. (Team) Shares potential meeting agenda topics with Chair via direct message. Must be shared at least 24 hours prior to meeting start and be aligned with the meeting objectives above.
 
 **During meeting:**
@@ -141,16 +141,16 @@ Procedure:
 
 2. (Team) Join the **Zoom** link in the header of the `Cust Obs Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_, and open the **Meeting Notes** link in the header to see the agenda.
 
-3. (Vice Chair) Start Zoom recording at 8:02am PST.
+3. (Vice Chair) Start Zoom recording at 8:00am PST.
 
 3. (Chair) Run through the agenda:
 
-  - **Welcome new team members**: Team members introduce themselves, including their role, their direct report, and something interesting about themselves. 60-120 seconds per person.
-  - **Company update**: CEO or CTO provide important updates about the company. Lasts at most 5 minutes.
-  - **Hot topic**: Most important topic to share with all staff that week. Examples include: Series A marketing announce; FOSDEM event. Lasts 5-10 minutes.
-  - **Mini topics**: If there is room in the agenda, mini-topics may be queued by team members, if they meet the meeting objectives. Please share with meeting chair at least 24 hours prior to meeting start. Each topic lasts 2-3 minutes.
+  - **Welcome new team members**: Team members introduced by direct reports, including their name, their role, and something interesting about them. 60-120 seconds per person.
+  - **Company update**: Leadership team provides brief updates about the company. Lasts at most 5 minutes total.
+  - **Hot topic**: Most important topic to share with all staff that week. Examples include: Series A marketing announce; FOSDEM event. Lasts at most 5-10 minutes.
+  - **Mini topics**: If there is room in the agenda, mini-topics that align with the meeting objectives may be queued by team members. Please share with Chair at least 24 hours prior to meeting start. Each topic lasts at most 3 minutes.
   - **Customers**: Key updates, use cases or stories from customers. At minimum, one of the customer success managers shares a customer one-pager. Each customer update lasts at most 5 minutes, for a total of at most 10-15 minutes for this section.
-  - **Questions/Feedback**: At end of meeting, chair asks if there are any questions. If not, meeting is concluded with a reminder to share feedback via survey.
+  - **Questions/Feedback**: At end of meeting, Chair asks if there are any questions. If not, meeting is concluded with a reminder to share feedback via survey.
   
 4. (Vice Chair) During meeting, mute attendees who are not speaking to reduce background noise.
 
