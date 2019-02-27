@@ -111,7 +111,7 @@ Search limitations on MySQL:
 
 **MySql 8 Support**:
 
-In MySQL 8.0.4, the deafult authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password`` (https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/). If you are using MySQL 8.0.4+, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
+In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password`` (https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/). If you are using MySQL 8.0.4+, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
 
   .. code-block:: text
    
