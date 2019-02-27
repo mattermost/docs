@@ -116,7 +116,7 @@ Attendees:
 Objectives:
 
 - Share important company-wide updates with staff across the organization.
-- Educate staff on key customer use cases and feature requests.
+- Educate staff on key customer use cases and needs.
 
 Time:
 
