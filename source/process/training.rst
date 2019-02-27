@@ -146,7 +146,7 @@ Procedure:
 3. (Chair) Run through the agenda:
 
   - **Welcome new team members**: Team members introduced by direct reports, including their name, their role, and something interesting about them. 60-120 seconds per person.
-  - **Company update**: Leadership team provides brief updates about the company. Lasts at most 5 minutes total.
+  - **Introduction**: One of the founders does an introduction to the CO meeting.
   - **Hot topic**: Most important topic to share with all staff that week. Examples include: Series A marketing announce; FOSDEM event. Lasts at most 5-10 minutes.
   - **Mini topics**: If there is room in the agenda, mini-topics that align with the meeting objectives may be queued by team members. Please share with Chair at least 24 hours prior to meeting start. Each topic lasts at most 3 minutes.
   - **Customers**: Key updates, use cases or stories from customers. At minimum, one of the customer success managers shares a customer one-pager. Each customer update lasts at most 5 minutes, for a total of at most 10-15 minutes for this section.
