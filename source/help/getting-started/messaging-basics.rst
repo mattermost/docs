@@ -3,9 +3,15 @@ Messaging Basics
 
 --------------
 
+.. |Main menu icon| image:: ../../images/sidebar_main_menu_icon.png
+  :width: 33
+  :alt: Main menu
+
 **Write messages** using the text input box at the bottom of the screen.
 Press ENTER to send a message. Use SHIFT+ENTER to create a new
-line without sending a message.
+line without sending a message. To swap send/new line keyboard behavior  
+change the settings under:  
+|Main menu icon| > "Account Settings" > "Advanced" > "Send messages on CTRL+ENTER".
 
 **Reply to messages** by clicking the reply arrow next to the message
 text.
