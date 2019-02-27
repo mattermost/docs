@@ -25,7 +25,7 @@ Native applications for iOS and Android are available for interacting with the M
 
 ### Mobile Web Experience
 
-End users can securely share messages and files using a web-mobiled-based Mattermost experience on iOS and Android devices. Please see [Software and Hardware Requirements](http://docs.mattermost.com/install/requirements.html) documentation for full details.
+End users can securely share messages and files using a mobile Web-based Mattermost experience on iOS and Android devices. Please see [Software and Hardware Requirements](http://docs.mattermost.com/install/requirements.html) documentation for full details.
 
 ### Email Client
 
