@@ -1,5 +1,5 @@
 ============================================================
-Mattermost Community Guidelines
+Community Playbook
 ============================================================
 
 This document provides easy-to-follow community guidelines for:
@@ -11,16 +11,13 @@ This document provides easy-to-follow community guidelines for:
 
 ----
 
-Mattermost Community Playbook
----------------------------------------------------------
-
 How to get community involved in a campaign?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------------
 
 Examples include React Native Apps, Redux and APIv4 campaigns.
 
 On-boarding
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Create a forum post letting developers know about the campaign and ways to contribute
 2. Create a contribution guide including developer machine set up
@@ -29,7 +26,7 @@ On-boarding
  - For a high priority Help Wanted ticket, reach out to contributors directly in the GitHub repository for best engagement
 
 Retention
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Identify active contributors and thank them personally for their work
 2. For work in progress tickets or submitted pull requests, follow up with contributor once a week for status updates and questions to make sure contributors aren't blocked and feel more comfortable to ask questions. If there hasn't been activity in more than two weeks, ask if you can help them in some way.
@@ -37,9 +34,62 @@ Retention
 4. If applicable, assign roles to top contributors (such as team lead, code reviewer, tester) to give a sense of ownership to the contributor
 
 Off-boarding
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. When a campaign is finished, offer suggestions for other campaigns or projects they might be interested in.
+
+How to run a community design meeting?
+---------------------------------------------------------
+
+Objectives
+^^^^^^^^^^^^^^^^^^^^^^^^
+1. Avoid blindspots in design by reviewing use cases with user communities.
+2. Confirm proposed approach for design aligns with solving the problem discussed.
+3. Brainstorm ideas for solving open design questions.
+
+Preparations
+^^^^^^^^^^^^^^^^^^^^^^^^
+1. Research existing solutions to understand potential use cases brought up by communities.
+2. Draft a proposed design for the problem - this can be a rough outline, more concrete mockups or final design.
+3. Decide two meeting times: one for European and Asian communities, another for North and South American communities.
+
+ - Avoid regional holidays
+ - Aim for typical working hours in the regions
+ 
+4. Prepare agenda.
+
+ - Introductions of Mattermost team members part of the meeting
+ - Review of use cases
+ - Review of proposed design approach
+ - Open discussion and Q&A
+ - Actions and decisions
+ - Review of next steps
+
+5. Create a public meeting link everyone has permission to access, such as a Zoom link.
+6. Prepare an RSVP form for customers, see `example here <https://docs.google.com/forms/d/e/1FAIpQLSdg5NWkI4JcAmGwL3KgoYdtirXTS4wb1GJRXd_20kX2lTo3mw/viewform>`_.
+
+Announce
+^^^^^^^^^^^^^^^^^^^^^^^^
+1. Prepare a forum post, see `example here <https://forum.mattermost.org/t/community-design-meeting-folded-reply-threads/6729>`_.
+2. Tweet about it, see `example here <https://twitter.com/mattermost/status/1100235276436365312>`_.
+3. Post in appropriate channels on https://community.mattermost.com.
+4. Post in UserVoice if related to an existing feature proposal, see `example here <https://mattermost.uservoice.com/forums/306457-general/suggestions/19572469-make-threads-collapsible#{toggle_previous_statuses}>`_.
+5. Ask customer success teams to share with interested customers.
+
+Holding the Meeting
+^^^^^^^^^^^^^^^^^^^^^^^^
+1. Record the meeting. Mention that sharing video is optional.
+2. Follow the agenda.
+3. Thank everyone for joining the call.
+
+After the Meeting
+^^^^^^^^^^^^^^^^^^^^^^^^
+1. Share a summary in all respective channels, including the meeting recording.
+
+Tips
+^^^^^^^^^^^^^^^^^^^^^^^^
+1. Do not use your personal Zoom meeting link for the call.
+2. Note in all announcements that sharing video is optional.
 
 GitHub Help Wanted Issues in Mattermost-Server Repository
 -----------------------------------------------------------
