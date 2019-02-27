@@ -16,7 +16,7 @@ Mattermost, Inc. is located at::
 Letter of Employment 
 ==============================================================
 
-If you need a letter from Mattermost verifying your employment or contractor status, please send the request to people@mattermost.com citing what information is needed. 
+If you need a letter from Mattermost verifying your employment or contractor status, please send the request to hr@mattermost.com citing what information is needed. 
 
 For example, monthly fee, salary, start date, title, etc. People ops will send you the letter once it is completed.
 
