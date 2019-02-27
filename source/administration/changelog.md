@@ -23,7 +23,9 @@ Release Date 2019-03-16
  - Fixed an issue where leading whitespace with emoji affected emoji size so that they didn't render as jumboemoji.
  - Fixed an issue where the admin panel graphs did not load smoothly.
  - Fixed an issue with inconsistent formatting in page header on **System Console > Notifications > Mobile Push**.
- - Fixed an issue 
+ - Fixed an issue where invite tokens with a 48-hour expiry were cleaned up after 24 hours.
+ - Fixed an issue where a blank screen appeared when opening a Group Message channel from "More" modal using Enter key.
+ - 
  
 ### Compatibility
 
