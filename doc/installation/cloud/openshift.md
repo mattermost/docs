@@ -88,7 +88,7 @@ installations on OpenShift:
 1. Create the service account and `rolebinding` for RBAC and [install Tiller](../tools.md#helm):
 
     ```bash
-    kubectl create -f https://gitlab.com/charts/gitlab/raw/master/doc/helm/examples/rbac-config.yaml
+    kubectl create -f https://gitlab.com/charts/gitlab/raw/master/doc/installation/examples/rbac-config.yaml
     helm init --service-account tiller
     ```
 
