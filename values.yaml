@@ -31,6 +31,7 @@ global:
   application:
     create: false
     links: []
+    allowClusterRoles: true
   ## doc/charts/globals.md#configure-host-settings
   hosts:
     domain: example.com
