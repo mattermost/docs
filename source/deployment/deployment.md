@@ -165,7 +165,7 @@ Images and files shared by users are stored and retrieved in one of three option
 
 ## Deployment Options
 
-Mattermost Enterprise Edition customers can contact Mattermost, Inc. for advisory on deployment options for their specific environments. The following section describes common deployment configurations.
+Mattermost Enterprise Edition customers can contact Mattermost, Inc. for advice on deployment options for their specific environments. The following section describes common deployment configurations.
 
 ### Mobile devices with VPN clients (recommended)
 
