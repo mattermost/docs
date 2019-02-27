@@ -1,0 +1,5 @@
+---
+title: Allow Disabling of ClusterRoles in ApplicationCRD
+merge_request: 702
+author:
+type: added

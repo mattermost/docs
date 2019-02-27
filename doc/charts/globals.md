@@ -758,3 +758,25 @@ global:
   application:
     create: true
 ```
+
+Some environments, such as Google GKE Marketplace, do not allow the creation
+of ClusterRole resources. Set the following values to disable ClusterRole
+components in the Application Custom Resource Definition as well as the
+relevant charts packaged with Cloud Native GitLab.
+
+```yaml
+global:
+  application:
+    allowClusterRoles: false
+  operator:
+     enabled: false
+nginx:
+  controller:
+    scope:
+      enabled: true
+gitlab-runner:
+  rbac:
+    clusterWideAccess: false
+certmanager:
+  install: false
+```
