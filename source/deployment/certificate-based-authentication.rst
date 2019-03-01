@@ -39,13 +39,13 @@ The ``config.json`` file should then have the following lines
 
 3. Restart the Mattermost server.
 
-On Ubuntu 14.04 and RHEL 6.6:
+On Ubuntu 14.04 and RHEL 6:
 
 .. code-block:: text
 
   sudo restart mattermost
 
-On Ubuntu 16.04, Debian Jessie, and RHEL 7.1:
+On Ubuntu 16.04, Debian Jessie, and RHEL 7:
 
 .. code-block:: text
 
