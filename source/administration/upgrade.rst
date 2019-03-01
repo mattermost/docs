@@ -62,13 +62,13 @@ Location of your local storage directory
 
 #. Stop Mattermost Server.
 
-   On Ubuntu 14.04 and RHEL 6.6:
+   On Ubuntu 14.04 and RHEL 6:
 
    .. code-block:: sh
 
      sudo service mattermost stop
 
-   On Ubuntu 16.04 and RHEL 7.1:
+   On Ubuntu 16.04 and RHEL 7:
 
    .. code-block:: sh
 
@@ -130,13 +130,13 @@ Location of your local storage directory
 
 #. Start Mattermost server.
 
-   On Ubuntu 14.04 and RHEL 6.6:
+   On Ubuntu 14.04 and RHEL 6:
 
    .. code-block:: sh
 
      sudo service mattermost start
 
-   On Ubuntu 16.04 and RHEL 7.1:
+   On Ubuntu 16.04 and RHEL 7:
 
    .. code-block:: sh
 
