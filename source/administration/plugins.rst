@@ -93,7 +93,7 @@ It is recommended that you automate plugin deployment as part of your Mattermost
 Plugin Uploads in High Availability Mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you run your Mattermost server in :doc:`High Availability mode <cluster>`, you must manually extract the plugin package into the Mattermost server plugins directory on each server. The steps assume you previously generated a ``plugin.tar.gz`` file:
+If you run your Mattermost server in `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`_, you must manually extract the plugin package into the Mattermost server plugins directory on each server. The steps assume you previously generated a ``plugin.tar.gz`` file:
 
 1. Extract ``plugin.tar.gz`` to a folder with the same name as the plugin id specified in ``plugin.json/plugin.json``.
 2. Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to ``./plugins``.
