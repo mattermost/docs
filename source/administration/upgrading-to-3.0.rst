@@ -59,9 +59,9 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 5. Stop Mattermost Server.
 
-  On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost stop``
+  On Ubuntu 14.04 and RHEL 6: ``sudo service mattermost stop``
 
-  On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl stop mattermost``
+  On Ubuntu 16.04 and RHEL 7: ``sudo systemctl stop mattermost``
 
 6. Back up your data and application.
   a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
@@ -98,9 +98,9 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 11. Start Mattermost server.
 
-  On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost start``
+  On Ubuntu 14.04 and RHEL 6: ``sudo service mattermost start``
 
-  On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl start mattermost``
+  On Ubuntu 16.04 and RHEL 7: ``sudo systemctl start mattermost``
 
 12. Upgrade your ``config.json`` schema: Open the System Console and make a change and then save the change. Your current settings are preserved, and new settings are added with default values.
 
