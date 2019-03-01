@@ -3,4 +3,4 @@
 Production Install on RHEL 7.1+
 ===============================
 
-This document is superseded by :doc:`install-rhel-71`.
+This document is superseded by :doc:`install-rhel-7`.
