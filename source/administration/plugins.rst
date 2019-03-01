@@ -57,11 +57,11 @@ Once enabled, install plugins in one of the following ways. The steps assume you
 
 1) Through System Console UI:
  - Log in to Mattermost as a System Admin.
- - Navigate to **Plugins > Management** and upload `plugin.tar.gz`.
+ - Navigate to **Plugins > Management** and upload ``plugin.tar.gz``.
  - Click "Activate" under the plugin after it has uploaded.
 
 2) Manually:
- - Extract `plugin.tar.gz` to a folder with the same name as the plugin id you specified in ``plugin.json/plugin.json``.
+ - Extract ``plugin.tar.gz`` to a folder with the same name as the plugin id you specified in ``plugin.json/plugin.json``.
  - Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to ``./plugins``.
  - Restart the Mattermost server.
 
@@ -95,8 +95,8 @@ Plugin Uploads in High Availability Mode
 
 If you run your Mattermost server in :doc:`High Availability mode <cluster>`, you must manually extract the plugin package into the Mattermost server plugins directory on each server. The steps assume you previously generated a ``plugin.tar.gz`` file:
 
-1. Extract *plugin.tar.gz* to a folder with the same name as the plugin id specified in `plugin.json/plugin.json`.
-2. Add the plugin to the directory set by **PluginSettings > Directory** in your `config.json` file. If none is set, defaults to `./plugins`.
+1. Extract ``plugin.tar.gz`` to a folder with the same name as the plugin id specified in ``plugin.json/plugin.json``.
+2. Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to ``./plugins``.
 3. Repeat step 2 for each server.
 4. Restart each Mattermost server.
 
