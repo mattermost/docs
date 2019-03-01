@@ -29,7 +29,10 @@ Release Date 2019-03-16
  
 ### Compatibility
 
-**Mobile app version 1.13+ is required for servers 5.4+**
+#### Breaking Changes
+
+ - 
+ - Mobile app version 1.13+ is required for servers 5.4+**
 
 ### config.json
 
