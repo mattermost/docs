@@ -13,6 +13,7 @@ Release Date 2019-03-16
 ### Bug Fixes
 
  - Fixed an issue where emoji reactions did not appear on posts right away.
+ - Fixed an issue where email notification setting in the webapp was out of sync with the mobile apps.
  - Fixed an issue where a broken image displayed on login page if custom branding was enabled but no image had been uploaded.
  - Fixed an issue where the emoji `Recently Used` cleared entirely after logging out and back in.
  - Fixed an issue where at-channel, at-all, at-here followed by a period were not highlighted as mentions.
@@ -25,6 +26,7 @@ Release Date 2019-03-16
  - Fixed an issue with inconsistent formatting in page header on **System Console > Notifications > Mobile Push**.
  - Fixed an issue where invite tokens with a 48-hour expiry were cleaned up after 24 hours.
  - Fixed an issue where a blank screen appeared when opening a Group Message channel from "More" modal using Enter key.
+ - Fixed an issue where Zoom plugin caused link metadata code to print warnings.
  - Fixed an issue where 
  
 ### Compatibility
