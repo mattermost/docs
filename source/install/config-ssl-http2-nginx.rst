@@ -35,11 +35,11 @@ You can use any certificate that you want, but these instructions show you how t
 
 5. Stop NGINX.
 
-  On Ubuntu 14.04 and RHEL 6.6:
+  On Ubuntu 14.04 and RHEL 6:
 
   ``sudo service nginx stop``
 
-  On Ubuntu 16.04, Ubuntu 18.04 and RHEL 7.1:
+  On Ubuntu 16.04, Ubuntu 18.04 and RHEL 7:
 
   ``sudo systemctl stop nginx``
 
@@ -104,11 +104,11 @@ You can use any certificate that you want, but these instructions show you how t
 
 9. Restart NGINX.
 
-  On Ubuntu 14.04 and RHEL 6.6:
+  On Ubuntu 14.04 and RHEL 6:
 
   ``sudo service nginx start``
 
-  On Ubuntu 16.04, Ubuntu 18.04 and RHEL 7.1:
+  On Ubuntu 16.04, Ubuntu 18.04 and RHEL 7:
 
   ``sudo systemctl start nginx``
 
