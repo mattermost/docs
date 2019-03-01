@@ -41,9 +41,9 @@ Owner and group of the install directory - *{owner}* and *{group}*
 
 4. Stop Mattermost Server.
 
-  On Ubuntu 14.04 and RHEL 6.6: ``sudo service mattermost stop``
+  On Ubuntu 14.04 and RHEL 6: ``sudo service mattermost stop``
 
-  On Ubuntu 16.04 and RHEL 7.1: ``sudo systemctl stop mattermost``
+  On Ubuntu 16.04 and RHEL 7: ``sudo systemctl stop mattermost``
 
 5. Back up your data and application.
   a. Back up your database using your organization’s standard procedures for backing up MySQL or PostgreSQL.
