@@ -1,6 +1,8 @@
 Enterprise On-Boarding Overview
 ===============================
 
+.. note:: If you're looking to deploy Mattermost for fewer than 25 to 50 people, it's quick and easy with a wide range of quick start guides at XXX. The following overview is for large or sophisticated enterprise deployments, with hundreds to thousands of users in high trust data centers. 
+
 Project planning and definition 
 - Success Metrics // reduction of email, MAU, DAU 
 - Project Plan // development, testing, pilot, roll out 
