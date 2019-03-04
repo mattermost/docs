@@ -158,7 +158,7 @@ After the server is upgraded, users might need to refresh their browsers to expe
 
       cd {install-path}/mattermost
       sudo mv plugins~/ plugins
-      sudo mv client/plugins~/ mattermost/client/plugins
+      sudo mv client/plugins~/ client/plugins
 
 Upgrading Team Edition to Enterprise Edition
 --------------------------------------------
