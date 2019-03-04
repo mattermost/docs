@@ -29,3 +29,6 @@ To remove an item from the flagged list, click the flag beside a message to clea
 .. image:: ../../images/unflag.png
   :width: 500px
 
+.. Note::
+   The amount of flagged messages you can have in a channel is only limited to disk space.
+   
