@@ -4095,6 +4095,17 @@ Supported for Mattermost server v5.1.0 and later, and Mattermost Mobile apps v1.
 | This feature’s ``config.json`` setting is ``"ExperimentalLimitClientConfig": "false"`` with options ``true`` and ``false`` for above settings respectively.       |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Disable Legacy MFA
+^^^^^^^^^^^^^^^^^^^^
+
+**True**:
+
+**False**: 
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false`` for above settings respectively.                      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Team Settings
 ~~~~~~~~~~~~~~
 
