@@ -61,8 +61,8 @@ Once enabled, install plugins in one of the following ways. The steps assume you
  - Click "Activate" under the plugin after it has uploaded.
 
 2) Manually:
- - Extract ``plugin.tar.gz`` to a folder with the same name as the plugin id you specified in ``plugin.json/plugin.json``.
- - Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to ``./plugins``.
+ - Extract ``plugin.tar.gz`` to a folder with the same name as the plugin id you specified in ``plugin.json``.
+ - Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to ``./plugins`` relative to your Mattermost installation directory.
  - Restart the Mattermost server.
 
 Once installed, your plugins directory should look similar to:
@@ -95,8 +95,17 @@ Plugin Uploads in High Availability Mode
 
 If you run your Mattermost server in `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`_, you must manually extract the plugin package into the Mattermost server plugins directory on each server. The steps assume you previously generated a ``plugin.tar.gz`` file:
 
-1. Extract ``plugin.tar.gz`` to a folder with the same name as the plugin id specified in ``plugin.json/plugin.json``.
-2. Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to ``./plugins``.
+1. Extract ``plugin.tar.gz`` to a folder with the same name as the plugin id specified in ``plugin.json``.
+2. Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to ``./plugins`` relative to your Mattermost installation directory. The resulting directory structure should look something like:
+
+.. code-block:: none
+
+  mattermost/
+      plugins/
+          com.mattermost.server-hello-world/
+              plugin.json
+              plugin.exe
+
 3. Repeat step 2 for each server.
 4. Restart each Mattermost server.
 
