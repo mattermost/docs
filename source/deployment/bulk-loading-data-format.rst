@@ -704,7 +704,7 @@ Fields of the User object
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
-      <td valign="middle">use_military_time</td>
+      <td valign="middle">military_time</td>
       <td valign="middle">string</td>
       <td>How times should be displayed to this user. Must be one of the following values:<br>
         <kbd>"true"</kbd> - Use 24 hour clock.<br>
