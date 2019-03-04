@@ -2,6 +2,18 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.6.1 (2019-03-04)
+
+### Fixed (1 change)
+
+- Remove duplicate gravatar entries from 'gitlab.yml.erb'. !700
+
+### Other (2 changes)
+
+- Update gitlab-runner to 0.2.0/11.8.0. !697
+- Update GitLab Version to 11.8.1.
+
+
 ## 1.6.0 (2019-02-22)
 
 ### Fixed (1 change)
