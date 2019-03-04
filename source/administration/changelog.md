@@ -27,14 +27,13 @@ Release Date 2019-03-16
  - Fixed an issue where invite tokens with a 48-hour expiry were cleaned up after 24 hours.
  - Fixed an issue where a blank screen appeared when opening a Group Message channel from "More" modal using Enter key.
  - Fixed an issue where Zoom plugin caused link metadata code to print warnings.
- - Fixed an issue where 
  
 ### Compatibility
 
 #### Breaking Changes
 
  - Users with an outdated mobile version (such as a custom built app) might experience issues if the config.json is based on the new default.json ``DisableLegacyMFA``.
- - Mobile app version 1.13+ is required for servers 5.4+**
+ - Mobile app version 1.13+ is required for servers 5.4+
 
 ### config.json
 
