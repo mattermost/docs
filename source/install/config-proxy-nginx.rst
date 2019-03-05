@@ -80,7 +80,7 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 
   On Ubuntu 14.04 and RHEL 6: ``sudo service nginx restart``
 
-  On Ubuntu 16.04, Ubuntu 18.04, Debian Jessie, and RHEL 7: ``sudo systemctl restart nginx``
+  On Ubuntu 16.04, Ubuntu 18.04, Debian Stretch, and RHEL 7: ``sudo systemctl restart nginx``
 
 7. Verify that you can see Mattermost through the proxy.
 
