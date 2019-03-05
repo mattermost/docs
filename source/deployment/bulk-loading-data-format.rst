@@ -298,8 +298,11 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
 .. code-block:: javascript
 
   {
+  "type": "emoji",
+  "emoji": {
     "name": "custom-emoji-troll",
     "image": "bulkdata/emoji/trollolol.png"
+    }
   }
 
 Fields of the Emoji object
