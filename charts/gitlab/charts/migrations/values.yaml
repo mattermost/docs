@@ -18,6 +18,13 @@ enabled: true
 initialRootPassword: {}
 redis:
   password: {}
+gitaly:
+  # host: '0.0.0.0'
+  # port: 8075
+  # serviceName: 'gitaly'
+  authToken: {}
+  #   secret: gitaly-secret
+  #   key: token
 global:
   # imagePullPolicy: IfNotPresent
   psql: {}
@@ -35,6 +42,11 @@ global:
     #   serverCA: server-ca.pem
   redis:
     password: {}
+  gitaly:
+    internal:
+      names: ["default"]
+    external: []
+    authToken: {}
 resources:
   requests:
     cpu: 50m

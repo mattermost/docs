@@ -26,18 +26,16 @@ data:
     production:
       # Redis (single instance)
       url: {{ template "gitlab.redis.scheme" . }}://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
-  gitlab.yml: |
+  gitlab.yml.erb: |
     production: &base
       gitlab:
-      repositories:
-        storages:
-          default:
-            path: /var/opt/gitlab/repo
-            gitaly_address: tcp://localhost:8075
+{{ include "gitlab.appConfig.gitaly" . | indent 6 }}
+{{ include "gitlab.appConfig.repositories" . | indent 6 }}
   configure: |
     set -e
-    mkdir -p /init-secrets/redis /init-secrets/postgres /init-secrets/rails-secrets /init-secrets/migrations
+    mkdir -p /init-secrets/redis /init-secrets/gitaly /init-secrets/postgres /init-secrets/rails-secrets /init-secrets/migrations
     cp /init-config/redis/password  /init-secrets/redis/password
+    cp /init-config/gitaly/gitaly_token  /init-secrets/gitaly/gitaly_token
     cp /init-config/postgres/psql-password  /init-secrets/postgres/psql-password
     cp /init-config/rails-secrets/secrets.yml /init-secrets/rails-secrets/secrets.yml
     cp /init-config/migrations/initial_root_password /init-secrets/migrations/initial_root_password
