@@ -45,7 +45,7 @@ On Ubuntu 14.04 and RHEL 6:
 
   sudo restart mattermost
 
-On Ubuntu 16.04, Debian Jessie, and RHEL 7:
+On Ubuntu 16.04, Debian Stretch, and RHEL 7:
 
 .. code-block:: text
 
