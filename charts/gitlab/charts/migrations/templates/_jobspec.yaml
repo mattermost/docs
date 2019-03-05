@@ -92,6 +92,11 @@ spec:
                 - key: secrets.yml
                   path: rails-secrets/secrets.yml
           - secret:
+              name: {{ template "gitlab.gitaly.authToken.secret" . }}
+              items:
+                - key: {{ template "gitlab.gitaly.authToken.key" . }}
+                  path: gitaly/gitaly_token
+          - secret:
               name: {{ template "gitlab.redis.password.secret" . }}
               items:
                 - key: {{ template "gitlab.redis.password.key" . }}
