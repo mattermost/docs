@@ -13,20 +13,20 @@ Release Date 2019-03-16
 ### Bug Fixes
 
  - Fixed an issue where emoji reactions did not appear on posts right away.
+ - Fixed an issue where the emoji `Recently Used` cleared entirely after logging out and back in.
+ - Fixed an issue where emoji not included in our list of text-based emoji were not rendered as jumboemoji.
  - Fixed an issue where email notification setting in the webapp was out of sync with the mobile apps.
  - Fixed an issue where a broken image displayed on login page if custom branding was enabled but no image had been uploaded.
- - Fixed an issue where the emoji `Recently Used` cleared entirely after logging out and back in.
  - Fixed an issue where at-channel, at-all, at-here followed by a period were not highlighted as mentions.
- - Fixed an issue where emoji not included in our list of text-based emoji were not rendered as jumboemoji.
  - Fixed an issue where the Mattermost icon was pixelated in bookmark rendering on Google Chrome.
- - Fixed an issue where **System Console > Users** page had broken User Interface on narrow screens.
- - Fixed an issue where at-channel alert showed incorrect number of timezones.
+ - Fixed an issue where **System Console > Users** page had broken user interface on narrow screens.
+ - Fixed an issue where at-channel notification showed incorrect number of timezones.
  - Fixed an issue where leading whitespace with emoji affected emoji size so that they didn't render as jumboemoji.
- - Fixed an issue where the admin panel graphs did not load smoothly.
+ - Fixed an issue where the System Console graphs did not load smoothly.
  - Fixed an issue with inconsistent formatting in page header on **System Console > Notifications > Mobile Push**.
- - Fixed an issue where invite tokens with a 48-hour expiry were cleaned up after 24 hours.
- - Fixed an issue where a blank screen appeared when opening a Group Message channel from "More" modal using Enter key.
- - Fixed an issue where Zoom plugin caused link metadata code to print warnings.
+ - Fixed an issue where invite tokens with a 48-hour expiry expired after 24 hours.
+ - Fixed an issue where a blank screen appeared when opening a group message channel from "More" modal using Enter key.
+ - Fixed an issue where Zoom plugin caused link metadata code to print warnings in the System Console.
  
 ### Compatibility
 
