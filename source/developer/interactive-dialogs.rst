@@ -184,6 +184,8 @@ For users, use
 
 and for public channels, use
 
+.. code-block:: json
+
   {
     "display_name": "Post this message to",
     "name": "channel",
