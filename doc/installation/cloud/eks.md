@@ -5,6 +5,54 @@ deploying the `gitlab` chart.
 
 ## Creating the EKS cluster
 
+To get started easier, a script is provided to automate the cluster creation.
+Alternatively, a cluster can be created manually as well.
+
+### Scripted cluster creation
+
+A [bootstrap script](https://gitlab.com/charts/gitlab/blob/master/scripts/eks_bootstrap_script)
+has been created to automate much of the setup process for users on EKS.
+
+The script will:
+
+1. Create a new EKS cluster.
+1. Setup `kubectl`, and connect it to the cluster.
+1. Initialize Helm and install Tiller.
+
+The script uses [eksctl](https://eksctl.io) to initialize the cluster. If it cannot locate it in your PATH, it will install it
+to a temporary location.
+
+To authenticate, eksctl uses the same options as the aws command line. See the AWS documentation for how to
+use [environment variables](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html), or [configuration files](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-files.html).
+
+The script reads various parameters from environment variables, or command line arguments and an argument
+`up` or `down` for bootstrap and clean up respectively.
+
+The table below describes all variables.
+
+| Variable        | Description                                                                 | Default value                    |
+|-----------------|-----------------------------------------------------------------------------|----------------------------------|
+| REGION          | The region where your cluster lives                                         | us-east-2                        |
+| CLUSTER_NAME    | The name of the cluster                                                     | gitlab-cluster                   |
+| CLUSTER_VERSION | The version of your EKS cluster                                             | 1.10                             |
+| NUM_NODES       | The number of nodes required                                                | 2                                |
+| MACHINE_TYPE    | The type of nodes to deploy                                                 | m5.xlarge                        |
+| SERVICE_ACCOUNT | The service account name to use for helm/tilller                            | tiller                           |
+
+Run the script, by passing in your desired parameters. It can work with the
+default parameters.
+
+```bash
+./scripts/eks_bootstrap_script up
+```
+
+The script can also be used to clean up the created EKS resources:
+
+```bash
+./scripts/eks_bootstrap_script down
+```
+
+### Manual cluster creation
 For the most up to date instructions, follow Amazon's
 [EKS getting started guide](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html).
 
