@@ -162,7 +162,8 @@ class VersionUpdater
 
   def populate_subchart_versions
     @subchart_versions = subcharts.map do |sub_chart|
-      [ sub_chart, VersionFetcher.fetch(sub_chart.name, @app_version, @options.gitlab_repo) ]
+      version_fetcher = VersionFetcher.new(@app_version, @options.gitlab_repo)
+      [ sub_chart, version_fetcher.fetch(sub_chart.name) ]
     end
   end
 
