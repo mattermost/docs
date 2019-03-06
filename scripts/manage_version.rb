@@ -5,6 +5,7 @@ require 'yaml'
 
 require_relative 'lib/version'
 require_relative 'lib/version_fetcher'
+require_relative 'lib/version_mapping'
 
 Options = Struct.new(
   :working_dir,
@@ -119,7 +120,16 @@ class VersionUpdater
 
     return if options.dry_run
 
-    chart.update_versions(@chart_version, @app_version)
+    # Never change appVersion in master branch
+    chart.update_versions(@chart_version, branch == 'master' ? nil : @app_version)
+
+    # Only insert into version_mapping when we have both versions, as releases
+    unless @app_version.nil?
+      if chart.version.release? && @app_version.release?
+        version_mapping.insert_version(chart.version, @app_version)
+        version_mapping.finalize
+      end
+    end
 
     if @options.include_subcharts
       @subchart_versions.each do |sub_chart, update_app_version|
@@ -138,6 +148,10 @@ class VersionUpdater
 
   def subcharts
     @subcharts ||= Dir[File.join(working_dir, 'charts', 'gitlab', 'charts', '*', 'Chart.yaml')].map { |path| ChartFile.new(path) }
+  end
+
+  def version_mapping
+    @version_mapping ||= VersionMapping.new(File.join(working_dir, 'doc/installation/version_mappings.md'))
   end
 
   def populate_subchart_versions
@@ -181,6 +195,18 @@ class VersionUpdater
         @chart_version = chart.version
       end
     end
+  end
+
+  def branch
+    @branch ||= get_current_branch
+  end
+
+  def get_current_branch
+    git_command = 'git rev-parse --abbrev-ref HEAD 2>&1'.freeze
+
+    output = `#{git_command}`.chomp
+
+    raise(StandardError.new(output)) unless $?.success?
   end
 end
 
