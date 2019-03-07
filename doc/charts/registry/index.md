@@ -13,6 +13,7 @@ A Kubernetes `Deployment` was chosen as the deployment method for this chart to
 allow for simple scaling of instances, while allowing for [rolling-update](https://kubernetes.io/docs/tutorials/kubernetes-basics/update-intro/)s.
 
 This chart makes use of only two secrets:
+
 - `global.registry.certificate.secret`: A global secret that will contain the public certificate bundle to verify
 the authentication tokens provided by the associated GitLab instance(s). See
 [documentation](https://docs.gitlab.com/ee/administration/container_registry.html#disable-container-registry-but-use-gitlab-as-an-auth-endpoint) on using GitLab as an auth endpoint.
@@ -71,7 +72,9 @@ Table below contains all the possible charts configurations that can be supplied
 | annotations              | Pod annotations                         |                      |
 
 ## Chart configuration examples
+
 ### pullSecrets
+
 `pullSecrets` allow you to authenticate to a private registry to pull images for a pod.
 
 Additional details about private registries and their authentication methods
@@ -90,13 +93,13 @@ image:
 
 ### annotations
 
-`annotations` allows you to add annotations to the registry pods. 
+`annotations` allows you to add annotations to the registry pods.
 
 Below is an example use of `annotations`
 ```YAML
 annotations:
   kubernetes.io/example-annotation: annotation-value
-``` 
+```
 
 ## Enable the sub-chart
 
@@ -110,6 +113,7 @@ set `enabled: false`.
 This section dictates the settings for the container image used by this sub-chart's [Deployment][]. You can change the included version of the Registry and `pullPolicy`.
 
 Default settings:
+
 - `tag: '2.6'`
 - `pullPolicy: 'IfNotPresent'`
 
@@ -119,6 +123,7 @@ This section controls the name and type of the [Service][]. These settings will
 be populated by the [values.yml][].
 
 By default, the [Service][] is configured as:
+
 - `type: ClusterIP` on `0.0.0.0`, restricting access to the interal network of the Kubernetes cluster.
 - `name:` is set to `registry`.
 
@@ -220,6 +225,7 @@ Please refer to that documentation for extended details.
 
 Examples for [S3][storage-s3] and [GCS][storage-gcs] drivers can be found in
 [examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
+
 - [registry.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.s3.yaml)
 - [registry.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.gcs.yaml)
 
@@ -242,6 +248,7 @@ kubectl create secret generic registry-storage \
 ```
 
 If you chose to use the `filesystem` driver:
+
 - You will need to provide persistent volumes for this data.
 - [replicas](#replicas) should be set to `1`
 
@@ -250,12 +257,11 @@ external service, such as `s3`, `gcs`, `azure` or other compatible Object Storag
 
 **NOTE:** The chart will populate `delete.enabled: true` into this configuration by default if not specified by the user. This keeps expected behaviors in line with the default use of Minio, as well as the Omnibus GitLab. Any user provided value will supersede this default.
 
-
 [registry]: https://hub.docker.com/_/registry/
 [docker-distribution]: https://github.com/docker/distribution
 [docker-distribution-library]: https://github.com/docker/distribution-library-image
 [docker-distribution-config-docs]: https://docs.docker.com/registry/configuration
-[registry-config]: https://github.com/docker/distribution-library-image/blob/master/registry/config-example.yml
+[registry-config]: https://github.com/docker/distribution-library-image/blob/master/config-example.yml
 
 [Service]: https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/service.yaml
 [Deployment]: https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/deployment.yaml
