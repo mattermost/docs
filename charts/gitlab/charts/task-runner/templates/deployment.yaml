@@ -122,11 +122,13 @@ spec:
               items:
                 - key: {{ template "gitlab.gitaly.authToken.key" . }}
                   path: gitaly/gitaly_token
+          {{- if .Values.global.redis.password.enabled }}
           - secret:
               name: {{ template "gitlab.redis.password.secret" . }}
               items:
                 - key: {{ template "gitlab.redis.password.key" . }}
                   path: redis/password
+          {{- end }}
           - secret:
               name: {{ template "gitlab.psql.password.secret" . }}
               items:

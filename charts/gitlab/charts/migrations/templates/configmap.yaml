@@ -25,7 +25,7 @@ data:
   resque.yml.erb: |
     production:
       # Redis (single instance)
-      url: {{ template "gitlab.redis.scheme" . }}://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
+      url: {{ template "gitlab.redis.url" . }}
       id:
   gitlab.yml.erb: |
     production: &base
@@ -33,7 +33,7 @@ data:
 {{ include "gitlab.appConfig.gitaly" . | indent 6 }}
 {{ include "gitlab.appConfig.repositories" . | indent 6 }}
   configure: |
-    {{- include "gitlab.scripts.configure.secrets" (dict "required" "redis postgres rails-secrets migrations gitaly" "optional" "nil") | nindent 4 -}}
+    {{- include "gitlab.scripts.configure.secrets" (dict "required" "postgres rails-secrets migrations gitaly") | nindent 4 -}}
     {{- include "gitlab.psql.ssl.initScript" . | nindent 4 }}
 {{- if .Values.global.operator.enabled }}
 ---
