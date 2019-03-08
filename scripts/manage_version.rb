@@ -9,6 +9,7 @@ require_relative 'lib/version_mapping'
 
 Options = Struct.new(
   :working_dir,
+  :gitlab_repo,
   :app_version,
   :chart_version,
   :include_subcharts,
@@ -23,6 +24,7 @@ class VersionOptionsParser
       # defaults
       options.working_dir = Dir.pwd
       options.include_subcharts = false
+      options.gitlab_repo = "https://gitlab.com/gitlab-org/gitlab-ee"
 
       OptionParser.new do |opts|
         opts.banner = "Usage: #{__FILE__} [options] \n\n"
@@ -37,6 +39,10 @@ class VersionOptionsParser
 
         opts.on("-d", "--directory [string]", String, "Working directory for the script") do |value|
           options.working_dir = value
+        end
+
+        opts.on("--gitlab-repo [string]", String, "URL of GitLab repo to fetch component versions from") do |value|
+          options.gitlab_repo = value
         end
 
         opts.on("-a", "--include-subcharts", "Attempt to update subcharts as well") do |value|
@@ -156,7 +162,8 @@ class VersionUpdater
 
   def populate_subchart_versions
     @subchart_versions = subcharts.map do |sub_chart|
-      [ sub_chart, VersionFetcher.fetch(sub_chart.name, @app_version) ]
+      version_fetcher = VersionFetcher.new(@app_version, @options.gitlab_repo)
+      [ sub_chart, version_fetcher.fetch(sub_chart.name) ]
     end
   end
 
