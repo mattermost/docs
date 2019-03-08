@@ -29,7 +29,7 @@ data:
   resque.yml.erb: |
     production:
       # Redis (single instance)
-      url: {{ template "gitlab.redis.scheme" . }}://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
+      url: {{ template "gitlab.redis.url" . }}
       id:
   unicorn.rb: |
     worker_processes {{ .Values.workerProcesses }}
@@ -148,12 +148,16 @@ data:
   workhorse-config.toml.erb: |
     [redis]
     URL = "{{ template "gitlab.redis.scheme" . }}://{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}"
+    {{- if .Values.global.redis.password.enabled }}
     Password = "<%= File.read("/etc/gitlab/redis/password") %>"
+    {{- end }}
   configure: |
       set -e
       mkdir -p /init-secrets-workhorse/gitlab-workhorse
       cp /init-config/gitlab-workhorse/secret /init-secrets-workhorse/gitlab-workhorse/secret
+      {{- if .Values.global.redis.password.enabled }}
       mkdir -p /init-secrets-workhorse/redis
       cp /init-config/redis/password /init-secrets-workhorse/redis/
+      {{- end }}
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}

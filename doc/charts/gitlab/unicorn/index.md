@@ -143,6 +143,7 @@ redis:
   serviceName: redis
   port: 6379
   password:
+    enabled: true
     secret: gitlab-redis
     key: redis-password
 ```
@@ -152,8 +153,9 @@ redis:
 | `host`            | String  |         | The hostname of the Redis server with the database to use. This can be omitted in lieu of `serviceName`. |
 | `serviceName`     | String  | `redis` | The name of the `service` which is operating the Redis database. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Redis as a part of the overall GitLab chart. |
 | `port`            | Integer | `6379`  | The port on which to connect to the Redis server. |
-| `password.key`    | String  |         | The `password.key` attribute for PostgreSQL defines the name of the key in the secret (below) that contains the password. |
-| `password.secret` | String  |         | The `password.secret` attribute for PostgreSQL defines the name of the kubernetes `Secret` to pull from. |
+| `password.key`    | String  |         | The `password.key` attribute for Redis defines the name of the key in the secret (below) that contains the password. |
+| `password.secret` | String  |         | The `password.secret` attribute for Redis defines the name of the kubernetes `Secret` to pull from. |
+| `password.enabled`| Bool    | true    | The `password.enabled` provides a toggle for using a password with the Redis instance. |
 
 ### PostgreSQL
 

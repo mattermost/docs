@@ -6,11 +6,13 @@ describe 'scripts/manage_version.rb' do
   describe VersionUpdater do
     let(:chart_file) { instance_double("ChartFile") }
     let(:options) { Options.new }
+    let(:version_mapping) { instance_double("VersionMapping") }
 
     before do
       allow_any_instance_of(described_class).to receive(:subcharts).and_return([])
       allow_any_instance_of(described_class).to receive(:chart).and_return(chart_file)
       allow_any_instance_of(described_class).to receive(:working_dir).and_return(nil)
+      allow_any_instance_of(described_class).to receive(:version_mapping).and_return(version_mapping)
     end
 
     describe 'populate_chart_version' do
@@ -19,6 +21,7 @@ describe 'scripts/manage_version.rb' do
           stub_versions(new_version: 'chart-version', new_app_version: 'app-version')
 
           expect(chart_file).to receive(:update_versions).with('chart-version', 'app-version')
+          expect(version_mapping).not_to receive(:insert_version)
           described_class.new(options)
         end
       end
@@ -28,6 +31,17 @@ describe 'scripts/manage_version.rb' do
           stub_versions(new_version: 'chart-version')
 
           expect(chart_file).to receive(:update_versions).with('chart-version', nil)
+          expect(version_mapping).not_to receive(:insert_version)
+          described_class.new(options)
+        end
+      end
+
+      context 'chart_version and app_version provided on master branch' do
+        it 'ignores app_version for update_versions, adds version mapping entry' do
+          stub_versions(new_version: '1.0.0', app_version: 'master', new_app_version: '1.0.0', branch: 'master')
+
+          expect(chart_file).to receive(:update_versions).with('1.0.0', nil)
+          expect(version_mapping).to receive(:insert_version).with('1.0.0', '1.0.0')
           described_class.new(options)
         end
       end
@@ -46,6 +60,7 @@ describe 'scripts/manage_version.rb' do
             stub_versions(version: '0.0.1', app_version: 'master', new_app_version: '10.8.1')
 
             expect(chart_file).to receive(:update_versions).with('0.0.2', '10.8.1')
+            expect(version_mapping).to receive(:insert_version).with('0.0.2', '10.8.1')
             described_class.new(options)
           end
 
@@ -53,6 +68,7 @@ describe 'scripts/manage_version.rb' do
             stub_versions(version: '0.0.1', app_version: 'master', new_app_version: '10.8.0')
 
             expect(chart_file).to receive(:update_versions).with('0.1.0', '10.8.0')
+            expect(version_mapping).to receive(:insert_version).with('0.1.0', '10.8.0')
             described_class.new(options)
           end
 
@@ -60,6 +76,7 @@ describe 'scripts/manage_version.rb' do
             stub_versions(version: '0.0.1', app_version: 'master', new_app_version: '11.0.0')
 
             expect(chart_file).to receive(:update_versions).with('1.0.0', '11.0.0')
+            expect(version_mapping).to receive(:insert_version).with('1.0.0', '11.0.0')
             described_class.new(options)
           end
 
@@ -67,6 +84,7 @@ describe 'scripts/manage_version.rb' do
             stub_versions(version: '0.0.1', app_version: 'master', new_app_version: '11.0.0-rc1')
 
             expect(chart_file).to receive(:update_versions).with('1.0.0', '11.0.0-rc1')
+            expect(version_mapping).not_to receive(:insert_version)
             described_class.new(options)
           end
         end
@@ -75,6 +93,7 @@ describe 'scripts/manage_version.rb' do
           stub_versions(version: '0.0.1', app_version: '10.8.0', new_app_version: '10.8.1')
 
           expect(chart_file).to receive(:update_versions).with('0.0.2', '10.8.1')
+          expect(version_mapping).to receive(:insert_version).with('0.0.2', '10.8.1')
           described_class.new(options)
         end
 
@@ -82,6 +101,7 @@ describe 'scripts/manage_version.rb' do
           stub_versions(version: '0.0.1', app_version: '10.7.5', new_app_version: '10.8.1')
 
           expect(chart_file).to receive(:update_versions).with('0.1.0', '10.8.1')
+          expect(version_mapping).to receive(:insert_version).with('0.1.0', '10.8.1')
           described_class.new(options)
         end
 
@@ -89,6 +109,7 @@ describe 'scripts/manage_version.rb' do
           stub_versions(version: '0.0.1', app_version: '10.8.5', new_app_version: '11.1.5')
 
           expect(chart_file).to receive(:update_versions).with('1.0.0', '11.1.5')
+          expect(version_mapping).to receive(:insert_version).with('1.0.0', '11.1.5')
           described_class.new(options)
         end
 
@@ -96,6 +117,7 @@ describe 'scripts/manage_version.rb' do
           stub_versions(version: '0.0.1', app_version: '11.0.0-rc1', new_app_version: '11.0.0-rc2')
 
           expect(chart_file).to receive(:update_versions).with('0.0.1', '11.0.0-rc2')
+          expect(version_mapping).not_to receive(:insert_version)
           described_class.new(options)
         end
       end
@@ -103,11 +125,18 @@ describe 'scripts/manage_version.rb' do
   end
 end
 
-def stub_versions(new_version: nil, version: '0.0.1', new_app_version: nil, app_version: '0.0.1')
+def stub_versions(new_version: nil, version: '0.0.1', new_app_version: nil, app_version: '0.0.1', branch: nil)
   options.chart_version = Version.new(new_version) if new_version
   options.app_version = Version.new(new_app_version) if new_app_version
 
   allow(chart_file).to receive(:version).and_return(Version.new(version)) if version
   allow(chart_file).to receive(:app_version).and_return(Version.new(app_version)) if app_version
-  allow(chart_file).to receive(:update_versions).and_return(true)
+  allow(chart_file).to receive(:update_versions) do | chart_ver, app_ver |
+    allow(chart_file).to receive(:version).and_return(Version.new(chart_ver)) if chart_ver
+    allow(chart_file).to receive(:app_version).and_return(Version.new(app_ver)) if app_ver
+  end
+
+  allow(version_mapping).to receive(:finalize).and_return(true)
+
+  allow_any_instance_of(described_class).to receive(:branch).and_return(branch)
 end

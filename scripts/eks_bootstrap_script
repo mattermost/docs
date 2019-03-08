@@ -1,0 +1,121 @@
+#!/bin/sh
+# This script will
+# 1. create an EKS cluster
+# 2. create an external IP
+# 3. add a context to $HOME/.kube/config
+# 5. Install tiller with a dedicated service account
+
+set -e
+
+# MacOS does not support readlink, but it does have perl
+KERNEL_NAME=$(uname -s)
+if [ "${KERNEL_NAME}" = "Darwin" ]; then
+  SCRIPT_PATH=$(perl -e 'use Cwd "abs_path";use File::Basename;print dirname(abs_path(shift))' "$0")
+else
+  SCRIPT_PATH=$(dirname "$(readlink -f "$0")")
+fi
+
+source "${SCRIPT_PATH}/common.sh"
+
+# Set default values
+cluster_name=${CLUSTER_NAME-gitlab-cluster}
+nodes=${NUM_NODES-2}
+kubernetes_version=${CLUSTER_VERSION-1.10}
+region="${REGION-us-east-2}"
+node_type="${MACHINE_TYPE-m5.xlarge}"
+service_account="${SERVICE_ACCOUNT-tiller}"
+
+function print_help(){
+  cat <<EOF
+Usage: ${0} ARGS (up|down)
+-c NAME - Name of the cluster to use. Defaults to gitlab-cluster
+-n NODES - number of nodes to use. Defaults to 2
+-k VERSION - Kubernetes version to use. Defaults to 1.10
+-r REGION - Region to install the cluster in. Defaults to us-east-2
+-m TYPE - Type of nodes to use. Default m5.xlarge
+-s SA - Service account to use for helm/tiller. Default tiller
+up - create a cluster
+down - delete a cluster
+list - display information about running clusters
+EOF
+}
+
+function do_up(){
+  local cluster_name="${1}"
+  local nodes="${2}"
+  local kubernetes_version="${3}"
+  local region="${4}"
+  local node_type="${5}"
+  local sa="${6}"
+
+  eksctl create cluster --name="${cluster_name}" --nodes="${nodes}" --version="${kubernetes_version}" --region="${region}" --node-type="${node_type}"
+  kubectl create serviceaccount "${sa}" --namespace kube-system
+  kubectl create clusterrolebinding "${sa}" --clusterrole=cluster-admin --serviceaccount="kube-system:${sa}"
+  helm init --service-account "${sa}"
+}
+
+function do_down(){
+  local cluster_name="${1}"
+  local region="${2}"
+
+  eksctl delete cluster --wait --region "${region}" --name ${cluster_name}
+}
+
+function do_list(){
+  local cluster_name="${1}"
+  local region="${2}"
+
+  eksctl get cluster -r "${region}" "${cluster_name}"
+}
+
+while getopts c:n:kr:m:s: opt
+do
+  case "${opt}" in
+    c)
+      cluster_name="${OPTARG}"
+      ;;
+    n)
+      nodes="${OPTARG}"
+      ;;
+    k)
+      kubernetes_version="${OPTARG}"
+      ;;
+    m)
+      node_type="${OPTARG}"
+      ;;
+    r)
+      region="${OPTARG}"
+      ;;
+    s)
+      service_account="${OPTARG}"
+      ;;
+    [?])
+      print_help
+      ;;
+  esac
+done
+shift $((OPTIND -1))
+
+validate_eks_required_tools
+
+# Ensure we can connect to aws
+if ! eksctl get cluster -v 0 > /dev/null
+then
+  >&2 echo "Cannot connect to AWS. Ensure credentials are configured"
+  exit 1
+fi
+
+case ${1} in
+  up)
+    do_up "${cluster_name}" "${nodes}" "${kubernetes_version}" "${region}" "${node_type}" "${service_account}"
+    ;;
+  down)
+    do_down "${cluster_name}" "${region}"
+    ;;
+  list)
+    do_list "${2}" "${region}"
+    ;;
+  *)
+    print_help
+    exit 1
+esac
