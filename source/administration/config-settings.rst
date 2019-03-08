@@ -4099,6 +4099,7 @@ Disable Legacy MFA
 ^^^^^^^^^^^^^^^^^^^^
 
 **True**:
+Disables the legacy `checkMfa` endpoint which is only required to support mobile clients before the version 1.17 when you are using Multifactor-Authentication. Recommended to set to `true` if upgrading the mobile application in your environment is possible. 
 
 **False**: 
 
