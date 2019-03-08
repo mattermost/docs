@@ -4102,6 +4102,7 @@ Disable Legacy MFA
 Disables the legacy `checkMfa` endpoint which is only required to support mobile clients before the version 1.17 when you are using Multifactor-Authentication. Recommended to set to `true` if upgrading the mobile application in your environment is possible. 
 
 **False**: 
+Keeps the legacy `checkMfa` endpoint enabled to support mobile versions older than version 1.17. Please note that doing so will open up an information disclosure about the MFA status of system users.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false`` for above settings respectively.                      |
