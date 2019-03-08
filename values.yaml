@@ -67,7 +67,8 @@ global:
 
   ## doc/charts/globals.md#configure-redis-settings
   redis:
-    password: {}
+    password:
+      enabled: true
       # secret:
       # key:
     # host: redis.hostedsomewhere.else

@@ -8,7 +8,7 @@ metadata:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 data:
   configure: |
-    {{- include "gitlab.scripts.configure.secrets" (dict "required" "redis shell" ) | nindent 4 -}}
+    {{- include "gitlab.scripts.configure.secrets" (dict "required" "shell" ) | nindent 4 -}}
     mkdir -p /${secret_dir}/ssh
     cp /${config_dir}/ssh_host_* /${secret_dir}/ssh/
     chmod 0400 /${secret_dir}/ssh/ssh_host_*
@@ -31,7 +31,9 @@ data:
     redis:
       host: {{ template "gitlab.redis.host" . }}
       port: {{ template "gitlab.redis.port" . }}
+      {{- if .Values.global.redis.password.enabled }}
       pass: "<%= File.read("/etc/gitlab-secrets/redis/password") %>"
+      {{- end }}
       database: nil
       namespace: resque:gitlab
 

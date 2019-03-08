@@ -159,6 +159,7 @@ global:
     host: redis.example.com
     port: 6379
     password:
+      enabled: true
       secret: gitlab-redis
       key: redis-password
 ```
