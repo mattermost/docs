@@ -21,7 +21,7 @@ The script will:
 1. Initialize Helm and install Tiller.
 
 Google Cloud SDK is a dependency of this script, so make sure it's
-[set up correctly](../tools.md#connect-to-the-cluster) in order for the script
+[set up correctly](../tools.md#connecting-to-the-gke-cluster) in order for the script
 to work.
 
 The script reads various parameters from environment variables and an argument
