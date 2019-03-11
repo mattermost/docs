@@ -3,8 +3,7 @@
 Pinning Messages
 ================
 
-All members of a channel can pin important or useful messages to that channel. The list of pinned messages is visible to all channel members.
-
+All members of a channel can pin important or useful messages to that channel. The list of pinned messages is visible to all channel members. There is no limit to the number of pinned posts in a channel.
 
 Pinned messages are marked with the pinned icon, |pinned-icon|. For example:
 
@@ -28,7 +27,3 @@ To view the complete list of pinned messages, click the pin icon |pin-icon|, loc
 
 1. Mouse over the message that you want to un pin. The [...] link appears.
 2. Click **[...] > Un-pin from channel**
-
-.. Note::
-   The amount of pinned messages you can have in a channel is only limited to disk space.
-   
