@@ -33,11 +33,10 @@ T-minus 1-3 weeks
 
 - (People Ops & New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. Since these items are company property, you do not need to buy insurance or extended warranties for them, but you do need to report any loss or damage to People@mattermost.com as soon as it occurs.
 - (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology and training materials.
+- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on community.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME.LAST_NAME@mattermost.com` is the standard naming convention.
  
 T-minus 1 week
 ---------------------------------------------------------
-
-- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on community.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME.LAST_NAME@mattermost.com` is the standard naming convention.
 
 - (People Ops & New Hire) Set up payroll.
  - US FTE, receive email to complete TriNet sign-up, payroll, benefits enrollment, I-9 form, banking information, personal information, tax forms.  
@@ -50,9 +49,14 @@ First Day
 
 - (Manager) Posts welcome message in stand-up channel.
 - (Manager) Meets New Hire for first 1-1 meeting.
+- (People Ops) Meets New Hire for check-in meeting.
 - (Buddy) Meets New Hire for first 1-1 meeting.
-- (CEO) Meets New Hire for welcome meeting.
 - (New Hire) Confirm with Manager all HR paperwork is completed by end of first day (should have been sent in advance). 
+
+First Week
+---------------------------------------------------------
+- (CEO) Meets New Hire for welcome meeting.
+
 
 3 months 
 ---------------------------------------------------------
