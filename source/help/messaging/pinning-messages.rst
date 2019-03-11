@@ -3,8 +3,7 @@
 Pinning Messages
 ================
 
-All members of a channel can pin important or useful messages to that channel. The list of pinned messages is visible to all channel members.
-
+All members of a channel can pin important or useful messages to that channel. The list of pinned messages is visible to all channel members. There is no limit to the number of pinned posts in a channel.
 
 Pinned messages are marked with the pinned icon, |pinned-icon|. For example:
 
