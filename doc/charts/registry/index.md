@@ -1,86 +1,110 @@
 # Using the Container Registry
 
 The `registry` sub-chart provides the Registry component to a complete cloud-native
-GitLab deployment on Kubernetes. This sub-chart makes use of the upstream [registry][]
-[container][docker-distribution-library] containing [Docker Distribution][docker-distribution]. This chart is composed of 3 primary parts: [Service][], [Deployment][], and [ConfigMap][].
+GitLab deployment on Kubernetes. This sub-chart makes use of the upstream
+[registry](https://hub.docker.com/_/registry/) [container](https://github.com/docker/distribution-library-image)
+containing [Docker Distribution](https://github.com/docker/distribution). This chart
+is composed of 3 primary parts: [Service](https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/service.yaml),
+[Deployment](https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/deployment.yaml),
+and [ConfigMap](https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/configmap.yaml).
 
-All configuration is handled according to the official [Registry configuration documentation][docker-distribution-config-docs]
-using `/etc/docker/registry/config.yml` variables provided to the [Deployment][], populated from the [ConfigMap][]. The [ConfigMap][] overrides the upstream defaults, but is [based upon them][registry-config].
+All configuration is handled according to the official [Registry configuration documentation](https://docs.docker.com/registry/configuration)
+using `/etc/docker/registry/config.yml` variables provided to the `Deployment` populated
+from the `ConfigMap`. The `ConfigMap` overrides the upstream defaults, but is
+[based on them](https://github.com/docker/distribution-library-image/blob/master/config-example.yml).
+See below for more details:
+
+- [distribution/cmd/registry/config-example.yml](https://github.com/docker/distribution/blob/master/cmd/registry/config-example.yml)
+- [distribution-library-image/config-example.yml](https://github.com/docker/distribution-library-image/blob/master/config-example.yml)
 
 ## Design Choices
 
-A Kubernetes `Deployment` was chosen as the deployment method for this chart to
-allow for simple scaling of instances, while allowing for [rolling-update](https://kubernetes.io/docs/tutorials/kubernetes-basics/update-intro/)s.
+A Kubernetes `Deployment` was chosen as the deployment method for this chart to allow
+for simple scaling of instances, while allowing for
+[rolling updates](https://kubernetes.io/docs/tutorials/kubernetes-basics/update-intro/).
 
 This chart makes use of only two secrets:
 
-- `global.registry.certificate.secret`: A global secret that will contain the public certificate bundle to verify
-the authentication tokens provided by the associated GitLab instance(s). See
-[documentation](https://docs.gitlab.com/ee/administration/container_registry.html#disable-container-registry-but-use-gitlab-as-an-auth-endpoint) on using GitLab as an auth endpoint.
-- `global.registry.httpSecret.secret`: A global secret that will contain the [shared secret](https://docs.docker.com/registry/configuration/#http) between registry pods.
+- `global.registry.certificate.secret`: A global secret that will contain the public
+  certificate bundle to verify the authentication tokens provided by the associated
+  GitLab instance(s). See [documentation](https://docs.gitlab.com/ee/administration/container_registry.html#disable-container-registry-but-use-gitlab-as-an-auth-endpoint)
+  on using GitLab as an auth endpoint.
+- `global.registry.httpSecret.secret`: A global secret that will contain the
+  [shared secret](https://docs.docker.com/registry/configuration/#http) between registry pods.
 
-# Configuration
+## Configuration
 
-We will describe all the major sections of the configuration below. When configuring from the parent chart, these values will be as such:
+We will describe all the major sections of the configuration below. When configuring
+from the parent chart, these values will be:
 
 ```
 registry:
   enabled:
   image:
+    tag: 2.6
+    pullPolicy: IfoNtPresent
   annotations:
   service:
+    type: ClusterIP
+    name: registry
   httpSecret:
+    secret:
+    key:
   authEndpoint:
   tokenIssuer:
   certificate:
-  replicas:
+    secret: gitlab-registry
+    key: registry-auth.crt
+  replicas: 1
   storage:
+    secret:
+    key: storage
+    extraKey:
   ingress:
-    enabled:
+    enabled: false
     tls:
-      enabled:
-      secretName:
+      enabled: true
+      serviceName: redis
     annotations:
     proxyReadTimeout:
     proxyBodySize:
     proxyBuffering:
 ```
 
-If you should chose to deploy this chart as a standalone, remove the top level `registry`.
+If you chose to deploy this chart as a standalone, remove the `registry` at the top level.
 
 ## Installation command line options
 
-Table below contains all the possible charts configurations that can be supplied to `helm install` command using the `--set` flags
-
-| Parameter                | Description                             | Default              |
-| ---                      | ---                                     | ---                  |
-| image.repository         | Registry image                          | registry             |
-| image.tag                | Version of the image to use             | 2.7.1                |
-| image.pullPolicy         | Pull policy for the registry image      |                      |
-| image.pullSecrets        | Secrets to use for image repository     |                      |
-| init.image               | initContainer image                     | busybox              |
-| init.tag                 | initContainer image tag                 | latest               |
-| enabled                  | Enable registry flag                    | true                 |
-| httpSecret               | Https secret                            |                      |
-| authEndpoint             | Auth endpoint (only host and port)      | global.hosts.gitlab.name |
-| authAutoRedirect         | Auth auto-redirect (must be true for Windows clients to work)  | true              |
-| tokenService             | JWT token service                       | container_registry   |
-| tokenIssuer              | JWT token issuer                        | gitlab-issuer        |
-| certificate.secret       | JWT certificate                         | gitlab-registry      |
-| replicas                 | Number of replicas                      | 1                    |
-| minio.bucket             | Legacy registry bucket name             | global.registry.bucket |
-| annotations              | Pod annotations                         |                      |
+| Parameter            | Default                    | Description                         |
+| -------------------- | -------------------------- | ----------------------------------- |
+| `annotations`        |                            | Pod annotations                     |
+| `authAutoRedirect`   | `true`                     | Auth auto-redirect (must be true for Windows clients to work) |
+| `authEndpoint`       | `global.hosts.gitlab.name` | Auth endpoint (only host and port)  |
+| `certificate.secret` | `gitlab-registry`          | JWT certificate                     |
+| `enabled`            | `true`                     | Enable registry flag                |
+| `httpSecret`         |                            | Https secret                        |
+| `image.pullPolicy`   |                            | Pull policy for the registry image  |
+| `image.pullSecrets`  |                            | Secrets to use for image repository |
+| `image.repository`   | `registry`                 | Registry image                      |
+| `image.tag`          | `2.7.1`                    | Version of the image to use         |
+| `init.image`         | `busybox`                  | initContainer image                 |
+| `init.tag`           | `latest`                   | initContainer image tag             |
+| `minio.bucket`       | `global.registry.bucket`   | Legacy registry bucket name         |
+| `replicas`           | `1`                        | Number of replicas                  |
+| `tokenService`       | `container_registry`       | JWT token service                   |
+| `tokenIssuer`        | `gitlab-issuer`            | JWT token issuer                    |
 
 ## Chart configuration examples
 
 ### pullSecrets
 
-`pullSecrets` allow you to authenticate to a private registry to pull images for a pod.
+`pullSecrets` allows you to authenticate to a private registry to pull images for a pod.
 
-Additional details about private registries and their authentication methods
-can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
+Additional details about private registries and their authentication methods can be
+found in the [Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
 
-Below is an example use of `pullSecrets`
+Below is an example use of `pullSecrets`:
+
 ```YAML
 image:
   repository: my.registry.repository
@@ -96,6 +120,7 @@ image:
 `annotations` allows you to add annotations to the registry pods.
 
 Below is an example use of `annotations`
+
 ```YAML
 annotations:
   kubernetes.io/example-annotation: annotation-value
@@ -103,14 +128,17 @@ annotations:
 
 ## Enable the sub-chart
 
-They way we've chosen to implement compartmentalized sub-charts includes the ability to disable the components that you may not want in a given deployment. For this reason, the first settings you should decided upon is `enabled:`.
+The way we've chosen to implement compartmentalized sub-charts includes the ability
+to disable the components that you may not want in a given deployment. For this reason,
+the first setting you should decide on is `enabled`.
 
-By default, Registry is enabled out of the box. Should you wish to disable it,
-set `enabled: false`.
+By default, Registry is enabled out of the box. Should you wish to disable it, set `enabled: false`.
 
 ## Configuring the `image`
 
-This section dictates the settings for the container image used by this sub-chart's [Deployment][]. You can change the included version of the Registry and `pullPolicy`.
+This section details the settings for the container image used by this sub-chart's
+[Deployment](https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/deployment.yaml).
+You can change the included version of the Registry and `pullPolicy`.
 
 Default settings:
 
@@ -119,98 +147,87 @@ Default settings:
 
 ## Configuring the `service`
 
-This section controls the name and type of the [Service][]. These settings will
-be populated by the [values.yml][].
+This section controls the name and type of the [Service](https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/service.yaml).
+These settings will be populated by [values.yaml](https://gitlab.com/charts/gitlab/blob/master/charts/registry/values.yaml).
 
-By default, the [Service][] is configured as:
+By default, the Service is configured as:
 
-- `type: ClusterIP` on `0.0.0.0`, restricting access to the interal network of the Kubernetes cluster.
+- `type: ClusterIP` on `0.0.0.0`, restricting access to the internal network of the Kubernetes cluster.
 - `name:` is set to `registry`.
 
 ## Configuring the `ingress`
 
 This section controls the registry ingress.
 
-### enabled
-
-Setting that controls whether to create ingress objects for services that support them.
-
-When `false` the `global.ingress.enabled` setting is used.
-
-Defaults to `false`.
-
-### tls.enabled
-
-When set to `false`, you disable TLS for the Registry subchart. This is mainly useful for cases in which you cannot use TLS termination at ingress-level, like when you have a TLS-terminating proxy before the ingress controller.
-
-Defaults to `true`.
-
-### tls.secretName
-
-The name of the Kubernetes TLS Secret that contains a valid certificate and key for the registry url.
-
-When not set, the `global.ingress.tls.secretName` is used instead.
-
-Defaults to not being set.
-
-### annotations
-
-This field is an exact match to the standard `annotations` for [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress).
+| Name              | Type    | Default | Description |
+|:----------------- |:-------:|:------- |:----------- |
+| `annotations`     | String  |         | This field is an exact match to the standard `annotations` for [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress). |
+| `enabled`         | Boolean | `false` | Setting that controls whether to create ingress objects for services that support them. When `false` the `global.ingress.enabled` setting is used. |
+| `tls.enabled`     | Boolean | `true`  | When set to `false`, you disable TLS for the Registry subchart. This is mainly useful for cases in which you cannot use TLS termination at ingress-level, like when you have a TLS-terminating proxy before the ingress controller. |
+| `tls.serviceName` | String  | `redis` | The name of the Kubernetes TLS Secret that contains a valid certificate and key for the registry url. When not set, the `global.ingress.tls.secretName` is used instead. Defaults to not being set. |
 
 ## Defining the Registry Configuration
 
-The following properties of this chart pertains to the configuration of the underlying
-[registry][] container. Only most critical values for integration with GitLab are
-exposed. For this integration, we make use of the `auth.token.x` settings of
-[Docker Distribution][docker-distribution], controlling authentication to the registry via JWT
- [authentication tokens](https://docs.docker.com/registry/spec/auth/token/).
+The following properties of this chart pertain to the configuration of the underlying
+[registry](https://hub.docker.com/_/registry/) container. Only the most critical values
+for integration with GitLab are exposed. For this integration, we make use of the `auth.token.x`
+settings of [Docker Distribution](https://github.com/docker/distribution), controlling
+authentication to the registry via JWT [authentication tokens](https://docs.docker.com/registry/spec/auth/token/).
 
-#### httpSecret
+### httpSecret
 
 Field `httpSecret` is a map that contains two items: `secret` and `key`.
 
-The content of key this references correlates to the `http.secret` value of [registry][].
-This value should be populated with a cryptographically generated random string.
+The content of the key this references correlates to the `http.secret` value of
+[registry](https://hub.docker.com/_/registry/). This value should be populated with
+a cryptographically generated random string.
 
-The `shared-secrets` Job will automatically create this secret if not provided. It will be
+The `shared-secrets` job will automatically create this secret if not provided. It will be
 filled with a securely generated 128 character alpha-numeric string that is base64 encoded.
 
 To create this secret manually:
+
 ```
 kubectl create secret generic gitlab-registry-httpsecret --from-literal=secret=strongrandomstring
 ```
 
-#### authEndpoint
+### authEndpoint
 
-Field `authEndpoint` is a string, providing the URL to the GitLab instance(s) that the [registry][] will authenticate to.
+The `authEndpoint` field is a string, providing the URL to the GitLab instance(s) that
+the [registry](https://hub.docker.com/_/registry/) will authenticate to.
 
-The value should include the protocol and hostname only. The chart template will automatically append the necessary request path. The resulting value will be populated to `auth.token.realm` inside the container.
+The value should include the protocol and hostname only. The chart template will automatically
+append the necessary request path. The resulting value will be populated to `auth.token.realm`
+inside the container. For example: `authEndpoint: "https://gitlab.example.com"`
 
-Example: `authEndpoint: "https://gitlab.example.com"`
+By default this field is populated with the gitlab hostname configuration set by the
+[Global Settings](../globals.md).
 
-By default this field is populated with gitlab hostname configuration set using the [Global Settings][globals].
+### certificate
 
-#### certificate
+The `certificate` field is a map containing two items: `secret` and `key`.
 
-Field `certificate` is a map containing two items: `secret` and `key`.
-
-`secret` is a string containing the name of the [Kubernetes Secret][kubernetes-secret] that houses the certificate bundle to be used to verify the tokens created by the GitLab instance(s).
+`secret` is a string containing the name of the [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/)
+that houses the certificate bundle to be used to verify the tokens created by the GitLab instance(s).
 
 `key` is the name of the `key` in the `Secret` which houses the certificate
-bundle that will be provided to the [registry][] container as `auth.token.rootcertbundle`.
+bundle that will be provided to the [registry](https://hub.docker.com/_/registry/)
+container as `auth.token.rootcertbundle`.
 
 Default Example:
+
 ```
 certificate:
   secret: gitlab-registry
   key: registry-auth.crt
 ```
 
-#### replicas
+### replicas
 
-Field `replicas` is an integer, controlling the number of [registry][] instances to create as a part of the set. This defaults to `1`.
+The `replicas` field is an integer, controlling the number of [registry](https://hub.docker.com/_/registry/)
+instances to create as a part of the set. This defaults to `1`.
 
-#### storage
+### storage
 
 ```
 storage:
@@ -219,27 +236,31 @@ storage:
   extraKey:
 ```
 
-Field `storage` is a reference to a Kubernetes Secret and associated key.
-The contents of this secret is taken directly from [Registry Configuration: `storage`](https://docs.docker.com/registry/configuration/#storage).
-Please refer to that documentation for extended details.
+The `storage` field is a reference to a Kubernetes Secret and associated key. The content
+of this secret is taken directly from [Registry Configuration: `storage`](https://docs.docker.com/registry/configuration/#storage).
+Please refer to that documentation for more details.
 
-Examples for [S3][storage-s3] and [GCS][storage-gcs] drivers can be found in
-[examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
+Examples for [AWS s3](https://docs.docker.com/registry/storage-drivers/s3) and
+[Google GCS](https://docs.docker.com/registry/storage-drivers/gcs) drivers can be
+found in [examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage):
 
 - [registry.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.s3.yaml)
 - [registry.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.gcs.yaml)
 
-Place the _contents_ of the `storage` block into the secret,
-and provide the following as items to the `storage` map:
+Place the *contents* of the `storage` block into the secret, and provide the following
+as items to the `storage` map:
 
 - `secret`: name of the Kubernetes Secret housing the YAML block.
 - `key`: name of the key in the secret to use. Defaults to `storage`.
-- `extraKey`: (optional) name of an extra key on the secret, which will be mounted to `/etc/docker/registry/storage/${extraKey}` within the container. This can be used to provide the `keyfile` for the `gcs` driver.
+- `extraKey`: *(optional)* name of an extra key in the secret, which will be mounted
+  to `/etc/docker/registry/storage/${extraKey}` within the container. This can be
+  used to provide the `keyfile` for the `gcs` driver.
 
 ```bash
 # Example using S3
 kubectl create secret generic registry-storage \
     --from-file=config=registry-storage.yaml
+
 # Example using GCS with JSON key
 # - Note: `registry.storage.extraKey=gcs.json`
 kubectl create secret generic registry-storage \
@@ -255,21 +276,7 @@ If you chose to use the `filesystem` driver:
 For the sake of resiliency and simplicity, it is recommended to make use of an
 external service, such as `s3`, `gcs`, `azure` or other compatible Object Storage.
 
-**NOTE:** The chart will populate `delete.enabled: true` into this configuration by default if not specified by the user. This keeps expected behaviors in line with the default use of Minio, as well as the Omnibus GitLab. Any user provided value will supersede this default.
-
-[registry]: https://hub.docker.com/_/registry/
-[docker-distribution]: https://github.com/docker/distribution
-[docker-distribution-library]: https://github.com/docker/distribution-library-image
-[docker-distribution-config-docs]: https://docs.docker.com/registry/configuration
-[registry-config]: https://github.com/docker/distribution-library-image/blob/master/config-example.yml
-
-[Service]: https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/service.yaml
-[Deployment]: https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/deployment.yaml
-[ConfigMap]: https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/configmap.yaml
-[values.yml]: https://gitlab.com/charts/gitlab/blob/master/charts/registry/values.yaml
-[globals]: ../globals.md
-
-[kubernetes-secret]: https://kubernetes.io/docs/concepts/configuration/secret/
-
-[storage-s3]: https://docs.docker.com/registry/storage-drivers/s3
-[storage-gcs]: https://docs.docker.com/registry/storage-drivers/gcs
+NOTE: **Note:** The chart will populate `delete.enabled: true` into this configuration
+  by default if not specified by the user. This keeps expected behavior in line with
+  the default use of Minio, as well as the Omnibus GitLab. Any user provided value
+  will supersede this default.
