@@ -44,12 +44,6 @@ One setting option was added to `config.json`. Below is a list of the additions 
  - Under ``"ServiceSettings"`` in ``config.json``:
     - Added ``"DisableLegacyMFA": true,`` to disable the checkMFA endpoint by default.
 
-### API Changes
-
-### Websocket Event Changes
-
-### Database Changes
-
 ### Known Issues
 
  - On a server using a subpath, the URL opens a blank page if the system admin changes the Site URL in the System Console UI. The system admin should restart the server to fix it.
