@@ -19,7 +19,7 @@ An IAM role can be specified via the annotations key:
 --set registry.annotations."iam\.amazonaws\.com/role"=<role name>
 ```
 
-When creating the [registry-storage.yaml](./index.md#registry-example) secret, omit the access and secret key:
+When creating the [registry-storage.yaml](../../charts/registry/index.md#storage) secret, omit the access and secret key:
 
 ```yaml
 s3:
@@ -39,7 +39,7 @@ For LFS, artifacts, uploads, packages and pseudonymizer an IAM role can be speci
 --set gitlab.unicorn.annotations."iam\.amazonaws\.com/role"=<role name>
 ```
 
-For the [object-storage.yaml](./index.md#object-storage-example) secret, omit the access and secret key.
+For the [object-storage.yaml](../../charts/globals.md#connection) secret, omit the access and secret key.
 As unicorn uses Fog for S3 storage, the [use_iam_profile](https://docs.gitlab.com/ee/administration/job_artifacts.html#s3-compatible-connection-settings) key should be added for Fog to use the role:
 
 ```yaml

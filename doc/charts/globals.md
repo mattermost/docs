@@ -15,7 +15,7 @@ for more information on how the global variables work.
 - [Gitaly](#configure-gitaly-settings)
 - [Minio](#configure-minio-settings)
 - [appConfig](#configure-appconfig-settings)
-- [GitLab Shell](#configure-gitlab-shell-settings)
+- [GitLab Shell](#configure-gitlab-shell)
 - [Custom Certificate Authorities](#custom-certificate-authorities)
 - [Application Resource](#application-resource)
 
@@ -44,8 +44,8 @@ global:
 | Name                   | Type    | Default       | Description |
 |:---------------------- |:-------:|:------------- |:----------- |
 | `domain`               | String  | `example.com` | The base domain. GitLab and Registry will be exposed on the subdomain of this setting. This defaults to `example.com`, but is not used for hosts that have their `name` property configured. See the `gitlab.name`, `minio.name`, and `registry.name` sections below. |
-| `externalIP`           |         | `nil`         | Set the external IP address that will be claimed from the provider. This will be templated into the [nginx chart](nginx/index.md#configuring-the-service), in place of the more complex `nginx.service.loadBalancerIP`. |
-| `https`                | Boolean | `true`        | If set to true, you will need to ensure the nginx chart has access to the certificates. In cases where you have TLS-termination in front of your ingresses, you probably want to look at [`global.ingress.tls.enabled`](#globalingresstlsenabled). Set to false for external urls to use `http://` instead of `https`. |
+| `externalIP`           |         | `nil`         | Set the external IP address that will be claimed from the provider. This will be templated into the [nginx chart](nginx/index.md#configuring-nginx), in place of the more complex `nginx.service.loadBalancerIP`. |
+| `https`                | Boolean | `true`        | If set to true, you will need to ensure the nginx chart has access to the certificates. In cases where you have TLS-termination in front of your ingresses, you probably want to look at [`global.ingress.tls.enabled`](#configure-ingress-settings). Set to false for external urls to use `http://` instead of `https`. |
 | `hostSuffix`           | String  |               | [See Below](#hostsuffix). |
 | `gitlab.https`         | Boolean | `false`       | If `hosts.https` or `gitlab.https` are `true`, the GitLab external url will use `https://` instead of `http://`. |
 | `gitlab.name`          | String  |               | The hostname for gitlab. If set, this hostname is used, regardless of the `global.hosts.domain` and `global.hosts.hostSuffix` settings. |
@@ -83,9 +83,9 @@ The GitLab global host settings for Ingress are located under the `global.ingres
 | Name                           | Type    | Default | Description |
 |:------------------------------ |:-------:|:------- |:----------- |
 | `annotations.*annotation-key*` | String  |         | Where `annotation-key` is a string that will be used with the value as an annotation on every ingress. For Example: `global.ingress.annotations."nginx\.ingress\.kubernetes\.io/enable-access-log"=true`. No global annotations are provided by default. |
-| `configureCertmanager`         | Boolean | `true`  | [See below](#global-ingress-configureCertmanager). |
+| `configureCertmanager`         | Boolean | `true`  | [See below](#globalingressconfigurecertmanager). |
 | `enabled`                      | Boolean | `true`  | Global setting that controls whether to create ingress objects for services that support them. |
-| `tls.enabled`                  | Boolean | `true`  | When set to `false`, this disables TLS in Gitlab. This is useful for cases in which you cannot use TLS termination of ingresses, such as when you have a TLS-terminating proxy before the ingress controller. If you want to disable https completely, this should be set to `false` together with [`global.hosts.https`](#https). |
+| `tls.enabled`                  | Boolean | `true`  | When set to `false`, this disables TLS in Gitlab. This is useful for cases in which you cannot use TLS termination of ingresses, such as when you have a TLS-terminating proxy before the ingress controller. If you want to disable https completely, this should be set to `false` together with [`global.hosts.https`](#configure-host-settings). |
 | `tls.secretName`               | String  |         | The name of the [Kubernetes TLS Secret](https://kubernetes.io/docs/concepts/services-networking/ingress/#tls) that contains a **wildcard** certificate and key for the domain used in `global.hosts.domain`. |
 
 ### global.ingress.configureCertmanager
@@ -415,7 +415,7 @@ under the `extra` key below `appConfig`:
 | `extra.piwikSiteId`       | String | (empty) | Piwik Site ID. |
 | `extra.piwikUrl`          | String | (empty) | Piwik Url. |
 
-### LFS / Artifacts / Uploads / Packages / External MR diffs
+### LFS, Artifacts, Uploads, Packages, and External MR diffs
 
 Details on these settings are below. Documentation is not repeated individually,
 as they are structurally identical aside from the default value of the `bucket` property.
@@ -706,7 +706,7 @@ global:
 |:----------- |:-------:|:------- |:----------- |
 | `port`      | Integer | `22`    | You can control the port used by the Ingress to pass SSH traffic, as well as the port used in SSH URLs provided from GitLab via `global.shell.port`. |
 | `authToken` |         |         | See [authToken](gitlab/gitlab-shell/index.md#authtoken) in the GitLab Shell chart specific documentation. |
-| `hostKeys`  |         |         | See [hostKeys](gitlab/gitlab-shell/index.md#hostkeys-secret) in the GitLab Shell chart specific documentation. |
+| `hostKeys`  |         |         | See [hostKeys](gitlab/gitlab-shell/index.md#hostkeyssecret) in the GitLab Shell chart specific documentation. |
 
 ## Custom Certificate Authorities
 

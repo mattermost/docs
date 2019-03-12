@@ -115,7 +115,7 @@ Cursory instructions for [creating a set of OAuth credentials can be found
 here](https://support.google.com/cloud/answer/6158849?hl=en).
 
 The credentials from GCP can be added per the
-[`unicorn` chart's `omniauth.providers` configuration documentation](../../charts/gitlab/unicorn/index.md#omniauthproviders).
+[`globals` chart's `omniauth.providers` configuration documentation](../../charts/globals.md#omniauth).
 
 ## Run GitLab QA
 

@@ -12,7 +12,7 @@ from properties to secrets (in observance of our preference).
 
 As a means of preventing a user from accidentally deploying an updated version of these
 charts which includes a breaking change against a configuration that would not function, we
-have chosen to implement [deprecation][] notifications. These are designed to detect
+have chosen to implement [deprecation](../development/index.md#handling-configuration-deprecations) notifications. These are designed to detect
 properties have have been relocated, altered, replaced, or removed entirely, then inform
 the user of what changes need to be made to the configuration. This may include informing
 the user to see documentation on how to replace a property with a secret. These notifications
@@ -23,8 +23,6 @@ the user would prefer to be informed of a breaking change over experiencing unex
 behavior complete failure that requires debugging.
 
 Introduced in [!396 Deprecations: implement buffered list of deprecations](https://gitlab.com/charts/gitlab/merge_requests/396)
-
-[deprecation]: ../development/index.md#handling-configuration-deprecation
 
 ## Preference of Secrets in initContainer over Environment
 
