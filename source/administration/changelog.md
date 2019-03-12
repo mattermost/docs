@@ -8,7 +8,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release Date 2019-03-16
 
-- Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Bug Fixes
 
@@ -32,7 +32,8 @@ Release Date 2019-03-16
 
 #### Breaking Changes
 
- - Users with an outdated mobile version (such as a custom built app) might experience issues if the config.json is based on the new default.json ``DisableLegacyMFA``.
+ - If **DisableLegacyMfa** setting in ``config.json`` is set to ``true`` and multi-factor authentication is enabled, ensure your users have upgraded to mobile app version 1.17 or later. Otherwise, users who have MFA enabled may not be able to log in successfully. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
+ - The public IP of the Mattermost application server is considered a reserved IP for additional security hardening in the context of untrusted external requests such as Open Graph metadata, webhooks or slash commands. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
  - Mobile app version 1.13+ is required for servers 5.4+
 
 ### config.json
@@ -42,7 +43,7 @@ One setting option was added to `config.json`. Below is a list of the additions 
 #### Changes to Team Edition and Enterprise Edition:
  
  - Under ``"ServiceSettings"`` in ``config.json``:
-    - Added ``"DisableLegacyMFA": true,`` to disable the checkMFA endpoint by default.
+    - Added ``"DisableLegacyMFA": true,`` for additional security hardening.
 
 ### Known Issues
 
