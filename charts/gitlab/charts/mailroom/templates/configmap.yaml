@@ -16,7 +16,7 @@ data:
         :ssl: {{ .ssl }}
         :start_tls: {{ .startTls }}
         :email: {{ .user }}
-        :password: <%= File.read("/etc/gitlab/mailroom/password") %>
+        :password: "<%= File.read("/etc/gitlab/mailroom/password") %>"
         :idle_timeout: {{ .idleTimeout }}
         :name: {{ .mailbox }}
         :delete_after_delivery: true
