@@ -8,7 +8,7 @@ Important Upgrade Notes
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
 | v5.9.0                                             | If **DisableLegacyMfa** setting in ``config.json`` is set to ``true``, and `multi-factor authentication <https://docs.mattermost.com/deployment/auth.html>`_ is  |
-|                                                    | enabled, ensure your users have upgraded to mobile app version 1.17 or later. Otherwise, users who have MFA enabled may not be able log in successfully.         |
+|                                                    | enabled, ensure your users have upgraded to mobile app version 1.17 or later. Otherwise, users who have MFA enabled may not be able to log in successfully.      |
 |                                                    |                                                                                                                                                                  |
 |                                                    | If the setting is not defined in the ``config.json`` file, the **DisableLegacyMfa** setting is set to ``false`` by default to ensure no breaking changes.        |
 |                                                    |                                                                                                                                                                  |
