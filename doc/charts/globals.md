@@ -415,7 +415,7 @@ under the `extra` key below `appConfig`:
 | `extra.piwikSiteId`       | String | (empty) | Piwik Site ID. |
 | `extra.piwikUrl`          | String | (empty) | Piwik Url. |
 
-### LFS / Artifacts / Uploads / Packages / External MR diffs
+### LFS, Artifacts, Uploads, Packages, and External MR diffs
 
 Details on these settings are below. Documentation is not repeated individually,
 as they are structurally identical aside from the default value of the `bucket` property.
