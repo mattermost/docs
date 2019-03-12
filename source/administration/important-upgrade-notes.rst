@@ -11,7 +11,6 @@ Important Upgrade Notes
 |                                                    | enabled, ensure your users have upgraded to mobile app version 1.17 or later. Otherwise, users who have MFA enabled may not be able log in successfully.         |
 |                                                    |                                                                                                                                                                  |
 |                                                    | If the setting is not defined in the ``config.json`` file, the **DisableLegacyMfa** setting is set to ``false`` by default to ensure no breaking changes.        |
-|                                                    | default value is `false` to avoid breaking current installations. If possible, ensure all users update to the latest mobile version and change the setting to    |
 |                                                    |                                                                                                                                                                  |
 |                                                    | We recommend setting **DisableLegacyMfa** to ``true`` for additional security hardening.                                                                         |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
