@@ -242,7 +242,18 @@ Moreover, Mattermost also allows the integration itself to perform input validat
 
   {"errors": {"num_between_0_and_10": "Enter a number between 0 and 10."}}
 
-Finally, once the request is submitted, we recommend the integration to respond with a system message or an ephemeral message confirming the submission.
+Finally, once the request is submitted, we recommend the integration to respond with a system message or an ephemeral message confirming the submission. This should be a separate request back to Mattermost once the service has received (and responded to) a submission request from a dialog:
+
+.. code-block:: none
+
+  response := &model.SubmitDialogResponse{
+	    Errors: map[string]string{
+			    someKey: "Some error",
+			},
+  }
+  w.Header().Set("Content-Type", "application/json")
+  w.WriteHeader(http.StatusOK)
+  _, _ = w.Write(response.ToJson())
 
 .. note::
 
