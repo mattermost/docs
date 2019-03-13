@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.6.2 (2019-03-13)
+
+### Fixed (1 change)
+
+- Add Gitaly configuration to migrations job. !710
+
+### Other (1 change)
+
+- Update GitLab Version to 11.8.2.
+
+
 ## 1.6.1 (2019-03-04)
 
 ### Fixed (1 change)
