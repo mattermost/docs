@@ -5,6 +5,7 @@ require 'yaml'
 require 'net/http'
 require 'json'
 require 'cgi'
+require 'zip'
 
 class CNGImageSync
   CI_API_V4_URL = ENV['CI_API_V4_URL'] || "https://dev.gitlab.org/api/v4".freeze
@@ -19,20 +20,7 @@ class CNGImageSync
   COM_REGISTRY_USERNAME = ENV['COM_REGISTRY_USERNAME']
   COM_REGISTRY_PASSWORD = ENV['COM_REGISTRY_PASSWORD']
 
-
   GITLAB_VERSION = YAML.load_file('Chart.yaml')['appVersion'].strip.freeze
-  # All the components that aren't listed here, use `latest` as image tag.
-  SPECIFIC_VERSION_MAPPING = {
-    "gitlab-rails-ee"=> GITLAB_VERSION,
-    "gitlab-task-runner-ee"=> GITLAB_VERSION,
-    "gitlab-unicorn-ee"=> GITLAB_VERSION,
-    "gitlab-sidekiq-ee"=> GITLAB_VERSION,
-    "gitlab-workhorse-ee"=> GITLAB_VERSION,
-    "cfssl-self-sign"=> YAML.load_file('charts/shared-secrets/values.yaml')['selfsign']['image']['tag'],
-    "alpine-certificates"=> YAML.load_file('values.yaml')['global']['certificates']['image']['tag'],
-    "gitlab-shell"=> YAML.load_file('charts/gitlab/charts/gitlab-shell/Chart.yaml')['appVersion'],
-    "gitaly"=> YAML.load_file('charts/gitlab/charts/gitaly/Chart.yaml')['appVersion'],
-  }.freeze
 
   class << self
     def get_api(uri, token=ENV['DEV_API_TOKEN'])
@@ -45,32 +33,11 @@ class CNGImageSync
       res
     end
 
-    # Get the commit associated to a tag
-    def get_tag_commit(tag)
-      tags_uri = URI("#{CI_API_V4_URL}/projects/#{CGI.escape(PROJECT_PATH)}/repository/tags/#{tag}")
-      res = get_api(tags_uri)
-      JSON.parse(res.body)['commit']['id']
-    end
-
-    def get_last_pipeline(commit)
-      commit_uri = URI("#{CI_API_V4_URL}/projects/#{CGI.escape(PROJECT_PATH)}/repository/commits/#{commit}")
-      res = get_api(commit_uri)
-      JSON.parse(res.body)['last_pipeline']['id']
-    end
-
-    def get_jobs_in_pipeline(pipeline_id)
-      jobs_uri = URI("#{CI_API_V4_URL}/projects/#{CGI.escape(PROJECT_PATH)}/pipelines/#{pipeline_id}/jobs")
-      res = get_api(jobs_uri)
-      JSON.parse(res.body).map { |x| x['name'] }
-    end
-
     def get_components(version)
-      commit = get_tag_commit(version)
-      puts "Commit for tag #{version} is #{commit}"
-      pipeline = get_last_pipeline(commit)
-      puts "Last pipeline for commit #{commit} is : #{pipeline}"
-
-      get_jobs_in_pipeline(pipeline)
+      artifact_uri = URI("#{CI_API_V4_URL}/projects/#{CGI.escape(DEV_PROJECT_PATH)}/jobs/artifacts/v#{version}-ee/raw/artifacts/image_versions.txt?job=component-details")
+      res = get_api(artifact_uri)
+      components = res.body.split("\n")
+      components.map { |c| c.split(":") }.to_h
     end
 
     def authenticate_registry(registry, username, password)
@@ -78,8 +45,7 @@ class CNGImageSync
     end
 
     def pull_and_tag_images(initial_registry, new_registry, components)
-      components.each do |component|
-        version = SPECIFIC_VERSION_MAPPING["#{component}"] || "latest"
+      components.each do |component, version|
         puts "#{component}:#{version}"
         initial_ref = "#{initial_registry}/#{component}:#{version}".downcase
         target_repo = "#{new_registry}/#{component}".downcase
@@ -90,8 +56,7 @@ class CNGImageSync
     end
 
     def push_images(registry, components)
-      components.each do |component|
-        version = SPECIFIC_VERSION_MAPPING[component] || "latest"
+      components.each do |component, version|
         ref = "#{registry}/#{component}:#{version}".downcase
         image = Docker::Image.get(ref)
         image.push(nil, repo_tag: ref)
