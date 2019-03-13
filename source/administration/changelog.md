@@ -37,10 +37,12 @@ Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http:
 
 ### config.json
 
-One setting option was added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
  
 #### Changes to Team Edition and Enterprise Edition:
  
+ - Under `` in ``config.json``:
+    - **Enable Image Proxy** setting is now ``false`` by default. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
  - Under ``"ServiceSettings"`` in ``config.json``:
     - Added ``"DisableLegacyMFA": true,`` for additional security hardening.
 
