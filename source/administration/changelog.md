@@ -41,8 +41,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
 #### Changes to Team Edition and Enterprise Edition:
  
- - Under `` in ``config.json``:
-    - **Enable Image Proxy** setting is now ``false`` by default. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
+ - **Enable Image Proxy** setting is now ``false`` by default. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
  - Under ``"ServiceSettings"`` in ``config.json``:
     - Added ``"DisableLegacyMFA": true,`` for additional security hardening.
 
