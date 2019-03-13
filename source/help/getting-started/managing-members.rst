@@ -11,7 +11,7 @@ If enabled by your System Admin, you can add people to your team in one of three
 Direct Invites
 ~~~~~~~~~~~~~~
 
-Direct invites are invitation emails sent from your team's server directly to the invited person's email address. A link within the invitation directs them to an account creation page. Invitation links sent by email expire after 48 hours.
+Direct invites are invitation emails sent from your team's server directly to the invited person's email address. A link within the invitation directs them to an account creation page. Invitation links sent by email expire after 48 hours and can be used only one time.
 
 **To send a direct invite**:
 
