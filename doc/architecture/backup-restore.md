@@ -50,7 +50,7 @@ When given a `-t` parameter it looks into backup bucket in object storage for a 
 given a `-f` parameter it expects that the given url is a valid uri of a backup tar in a location accessible from the container.
 
 After fetching the backup tar the sequence of execution is:
-1. For repositories and database run the [GitLab backup rake task](https://gitlab.com/gitlab-org/gitlab-ce/tree/master/lib/tasks/gitlab/backup.rb)
+1. For repositories and database run the [GitLab backup rake task](https://gitlab.com/gitlab-org/gitlab-ce/tree/master/lib/tasks/gitlab/backup.rake)
 2. For each of object storage backends
    - tar the existing data in the corresponding object storage bucket naming it `<backup-name>.tar`
    - upload it to `tmp` bucket in object storage
