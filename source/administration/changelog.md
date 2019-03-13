@@ -15,6 +15,7 @@ Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http:
  - Fixed an issue where emoji reactions did not appear on posts right away.
  - Fixed an issue where the emoji `Recently Used` cleared entirely after logging out and back in.
  - Fixed an issue where emoji not included in our list of text-based emoji were not rendered as jumboemoji.
+ - Fixed an issue where the default server/client locales got reverted to ``en`` on server startup.
  - Fixed an issue where email notification setting in the webapp was out of sync with the mobile apps.
  - Fixed an issue where a broken image displayed on login page if custom branding was enabled but no image had been uploaded.
  - Fixed an issue where at-channel, at-all, at-here followed by a period were not highlighted as mentions.
