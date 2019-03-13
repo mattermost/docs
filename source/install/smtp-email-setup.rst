@@ -106,8 +106,8 @@ Gmail
 -  Set **Connection Security** to **STARTTLS**
 
 .. warning::
-  Additional configuration is required on the Google end to allow SMTP email to relay throuh their servers.
-  See `SMTP relay: Route outgoing non-Gmail messages through Google <https://support.google.com/a/answer/2956491?hl=en>`__ for the required steps.
+   Additional configuration is required on the Google end to allow SMTP email to relay throuh their servers.
+  See `SMTP relay: Route outgoing non-Gmail messages through Google <https://support.google.com/a/answer/2956491?hl=en>`_ for the required steps.
 
 Hotmail
 ^^^^^^^
