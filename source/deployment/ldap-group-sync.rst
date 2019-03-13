@@ -25,7 +25,10 @@ AD/LDAP group synchronization
 
 To synchronize specific AD/LDAP groups to Mattermost, specify the Group ID Attribute under **System Console > Authentication > AD/LDAP**.  
 
-Additionally, you can specify the Group filter used to retrieve groups.  If the group filter configuration is left blank, then all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` are returned.  You can also set the attribute used to populate the Mattermost Group name under ``Group Display Name Attribute``.   
+Additionally, you can specify the Group filter used to retrieve groups.  If the group filter configuration is left blank, then all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` are returned.  You can also set the attribute used to populate the Mattermost Group name under ``Group Display Name Attribute``. 
+
+.. note:: 
+Attribute values for Group ID and Group Display Name are case sensitive. 
 
 Synchronization of groups occurs after user synchronization and results for group synchronization are available on the synchonization status table (located at the bottom of the AD/LDAP configuration page). 
 
