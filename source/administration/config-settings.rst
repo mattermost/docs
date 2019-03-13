@@ -1502,14 +1502,6 @@ Require Email Verification
 | This feature's ``config.json`` setting is ``"RequireEmailVerification": false`` with options ``true`` and ``false`` for above settings respectively.                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Email Invite Salt
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-32-character (to be randomly generated via System Console) salt added to signing of email invitation links. Email invitation links expire after 24 hours except if the salt is regenerated, then existing email invitation links invalidate immediately.  Click **Regenerate** to create new salt.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"InviteSalt": ""`` with string input.                                                                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Enable Open Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Users can sign up to the server from the root page without an invite.
