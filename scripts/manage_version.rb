@@ -211,9 +211,11 @@ class VersionUpdater
   def get_current_branch
     git_command = 'git rev-parse --abbrev-ref HEAD 2>&1'.freeze
 
-    output = `#{git_command}`.chomp
+    output = `#{git_command}`
 
     raise(StandardError.new(output)) unless $?.success?
+
+    output.chomp
   end
 end
 
