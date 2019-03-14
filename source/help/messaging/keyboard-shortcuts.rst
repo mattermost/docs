@@ -11,13 +11,13 @@ Navigation
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
 | On Windows                             | On Mac                                 | Description                                                                  |
 +========================================+========================================+==============================================================================+
-| ALT+UP                                 | ALT+UP                                 | Previous channel or direct message in left hand sidebar                      |
+| ALT+UP                                 | OPTION+UP                              | Previous channel or direct message in left hand sidebar                      |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
-| ALT+DOWN                               | ALT+DOWN                               | Next channel or direct message in left hand sidebar                          |
+| ALT+DOWN                               | OPTION+DOWN                            | Next channel or direct message in left hand sidebar                          |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
-| ALT+SHIFT+UP                           | ALT+SHIFT+UP                           | Previous channel or direct message in left hand sidebar with unread messages |
+| ALT+SHIFT+UP                           | OPTION+SHIFT+UP                        | Previous channel or direct message in left hand sidebar with unread messages |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
-| ALT+SHIFT+DOWN                         | ALT+SHIFT+DOWN                         | Next channel or direct message in left hand sidebar with unread messages     |
+| ALT+SHIFT+DOWN                         | OPTION+SHIFT+DOWN                      | Next channel or direct message in left hand sidebar with unread messages     |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
 | CTRL+K                                 | CMD+K                                  | Open a quick channel switcher dialog                                         |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
