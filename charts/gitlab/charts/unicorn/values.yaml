@@ -189,3 +189,5 @@ resources:
 maxUnavailable: 1
 minReplicas: 2
 maxReplicas: 10
+helmTests:
+  enabled: true
