@@ -3611,10 +3611,10 @@ Skip Server Certificate Verification
 
 Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input. This setting only applies to the mobile apps.                                      |
+| This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
 Login Button Border Color
