@@ -66,7 +66,7 @@ init:
     if [ -e /config/accesskey ] ; then
       sed -e 's@ACCESS_KEY@'"$(cat /config/accesskey)"'@' -e 's@SECRET_KEY@'"$(cat /config/secretkey)"'@' /config/config.yml > /registry/config.yml
     else
-      cp /config/config.yml  /registry/config.yml
+      cp -v -r -L /config/config.yml  /registry/config.yml
     fi
     # Place the `http.secret` value from the kubernetes secret
     sed -i -e 's@HTTP_SECRET@'"$(cat /config/httpSecret)"'@' /registry/config.yml
@@ -74,7 +74,7 @@ init:
     if [ -d /config/storage ]; then
       # Copy contents of storage secret(s)
       mkdir -p /registry/storage
-      cp /config/storage/* /registry/storage/
+      cp -v -r -L /config/storage/* /registry/storage/
       # Ensure there is a new line in the end
       echo '' >> /registry/storage/config
       # Default `delete.enabled: true` if not present.
