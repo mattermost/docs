@@ -139,7 +139,7 @@ class VersionUpdater
 
     if @options.include_subcharts
       @subchart_versions.each do |sub_chart, update_app_version|
-        sub_chart.update_versions(@chart_version, update_app_version)
+        sub_chart.update_versions(@chart_version, branch == 'master' ? nil : update_app_version) 
       end
     end
   end
