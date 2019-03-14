@@ -45,18 +45,17 @@ Returns mount definition for the volume mount definition above.
 {{- end -}}
 
 {{/*
-Returns a shell script snippet, which extends the script of a configure 
-container to copy the mutual TLS files to the proper location. Further 
+Returns a shell script snippet, which extends the script of a configure
+container to copy the mutual TLS files to the proper location. Further
 it sets the permissions correctly.
 */}}
 {{- define "gitlab.psql.ssl.initScript" -}}
 {{- if .Values.global.psql.ssl }}
 if [ -d /etc/postgresql/ssl ]; then
   mkdir -p /${secret_dir}/postgres/ssl
-  cp /etc/postgresql/ssl/* /${secret_dir}/postgres/ssl/
+  cp -v -r -L /etc/postgresql/ssl/* /${secret_dir}/postgres/ssl/
   chmod 600 /${secret_dir}/postgres/ssl/*
   chmod 700 /${secret_dir}/postgres/ssl
 fi
 {{- end -}}
 {{- end -}}
-
