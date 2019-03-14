@@ -1,4 +1,4 @@
-{{- if .Values.enabled -}}
+{{- if and .Values.enabled (not .Values.helmTests.disabled) -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
