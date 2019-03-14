@@ -109,6 +109,63 @@ Mattermost Staff Meetings
 ----------------------------------------------------
 
 For confidentiality of customers, internal process meetings are limited to Mattermost staff only.
+
+Customer Obsession All-Hands Meeting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Attendees:
+
+- All Mattermost Staff
+
+Objectives:
+
+- Reaffirm our obsession with making customers safer and more productive
+- Share how we're aligning resources to make customers successful
+
+Time:
+
+- Weekly meeting on Wednesdays from 8:00am to 8:25am Palo Alto time.
+
+Procedure:
+
+**Before meeting:**
+
+1. (Chair) Schedules items for the weekly agenda.
+2. (Team) Shares potential meeting agenda topics with Chair via direct message. Must be shared at least 24 hours prior to meeting start and be aligned with the meeting objectives above.
+
+**During meeting:**
+
+1. (Vice Chair) At 7:58am Palo Alto time on the day meeting is held, post a reminder in `Cust Obs Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_. 
+
+  .. code-block:: none
+
+    @channel Customer Obsession meeting starting now https://zoom.us/j/2244480297
+    
+    Meeting notes: https://docs.google.com/document/d/16F86k0I_ipjhHofm5pP6yA_dWTNvmA4ZBr_z53_087Q/edit
+
+2. (Team) Join the **Zoom** link in the header of the `Cust Obs Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_, and open the **Meeting Notes** link in the header to see the agenda.
+
+3. (Vice Chair) Start Zoom recording at 8:00am Palo Alto time.
+
+3. (Chair) Run through the agenda, which comprises one or more of the following items:
+
+  - **Introduction**: One of the founders does an introduction to the CO meeting.
+  - **Welcome new team members**: Team members introduced by direct reports, including their name, their role, and something interesting about them. At most 2 minutes per person.
+  - **Hot topics**: Examples include: Series A marketing announce; FOSDEM event. Lasts at most 5 minutes per topic.
+  - **Customer topics**: Key updates, use cases or stories from customers. At minimum, one of the customer success managers shares about a customer. Each customer update lasts at most 5 minutes, for a total of at most 10-15 minutes for this section.
+  - **Feedback**: At end of meeting, Chair concludes meeting with a reminder to share feedback via survey.
+
+**After meeting:**
+
+1. (Vice Chair) Share meeting recording and link to feedback survey.
+
+  .. code-block:: none
+
+    ### All Hands Meeting: February 20, 2019
+    
+    Meeting recording (and transcript) [here](https://zoom.us/recording/play/j7MHmiva3D7G4KqIcL6qV2Z46NMJZDpsdYo4B0GPDtmrRC0owvEJnC8Xpa9tAyxy?continueMode=true).
+    
+    Share your thoughts on this week's meeting [here](https://goo.gl/forms/AgCNmu3JxTDmSQvp2) @here.
  
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
