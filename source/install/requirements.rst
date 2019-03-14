@@ -58,7 +58,7 @@ Mobile Apps
     :header: "Operating System", "Technical Requirement"
 
     "iOS", "iPhone 5s devices and later with iOS 11+"
-    "Android", "Android devices with Android 8+"
+    "Android", "Android devices with Android 7+"
 
 `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. `Follow these instructions to configure IWA to fall back to forms-based authentication <https://docops.ca.com/ca-single-sign-on/12-7/en/configuring/policy-server-configuration/authentication-schemes/authentication-chaining/configure-iwa-fallback-to-forms-using-authentication-chain>`__.
 
@@ -69,7 +69,7 @@ Mobile Web
     :header: "Browser", "Technical Requirement"
 
     "iOS", "iOS 11+ with Safari 12+ or Chrome 56+"
-    "Android", "Android 8+ with Chrome 56+"
+    "Android", "Android 7+ with Chrome 56+"
 
 Email Client
 ^^^^^^^^^^^^
