@@ -10,11 +10,11 @@ data:
   configure: |
     set -e
     mkdir -p /init-secrets/gitaly /init-secrets/shell
-    cp /init-config/.gitlab_shell_secret  /init-secrets/shell/.gitlab_shell_secret
-    cp /init-config/gitaly_token  /init-secrets/gitaly/gitaly_token
+    cp -v -r -L /init-config/.gitlab_shell_secret  /init-secrets/shell/.gitlab_shell_secret
+    cp -v -r -L /init-config/gitaly_token  /init-secrets/gitaly/gitaly_token
     {{- if .Values.global.redis.password.enabled }}
     mkdir -p /init-secrets/redis
-    cp /init-config/redis_password  /init-secrets/redis/redis_password
+    cp -v -r -L /init-config/redis_password  /init-secrets/redis/redis_password
     {{- end }}
   config.toml.erb: |
     # The directory where Gitaly's executables are stored

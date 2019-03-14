@@ -1,5 +1,5 @@
 ---
 title: Provide Kubernetes 1.8 backwards compatibility for init-container secret copying
-merge_request:
-author:
+merge_request: 720
+author: Fabian Jucker
 type: fixed

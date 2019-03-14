@@ -10,7 +10,7 @@ data:
   configure: |
     {{- include "gitlab.scripts.configure.secrets" (dict "required" "shell" ) | nindent 4 -}}
     mkdir -p /${secret_dir}/ssh
-    cp /${config_dir}/ssh_host_* /${secret_dir}/ssh/
+    cp -v -r -L /${config_dir}/ssh_host_* /${secret_dir}/ssh/
     chmod 0400 /${secret_dir}/ssh/ssh_host_*
   config.yml.erb: |
     # GitLab user. git by default
