@@ -3611,7 +3611,7 @@ Skip Server Certificate Verification
 
 Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
@@ -3619,7 +3619,7 @@ Specify the color of the email login button for white labeling purposes. Use a h
 
 Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
@@ -3627,7 +3627,7 @@ Specify the color of the email login button border for white labeling purposes. 
 
 Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
@@ -3676,7 +3676,7 @@ AD/LDAP Settings
 
 Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
@@ -3684,7 +3684,7 @@ Specify the color of the AD/LDAP login button for white labeling purposes. Use a
 
 Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
@@ -3692,7 +3692,7 @@ Specify the color of the AD/LDAP login button border for white labeling purposes
 
 Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
@@ -3705,7 +3705,7 @@ SAML Settings
 
 Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
@@ -3713,7 +3713,7 @@ Specify the color of the SAML login button for white labeling purposes. Use a he
 
 Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
@@ -3721,7 +3721,7 @@ Specify the color of the SAML login button border for white labeling purposes. U
 
 Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
