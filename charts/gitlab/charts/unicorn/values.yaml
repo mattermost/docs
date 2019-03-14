@@ -190,4 +190,4 @@ maxUnavailable: 1
 minReplicas: 2
 maxReplicas: 10
 helmTests:
-  disabled: false
+  enabled: true
