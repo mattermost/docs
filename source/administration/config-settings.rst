@@ -4103,7 +4103,7 @@ Disable Legacy MFA API Endpoint
 **False**: Keeps the legacy ``checkMfa`` endpoint enabled to support mobile versions 1.16 and earlier. Keeping the endpoint enabld creates an information disclosure about whether a user has set up MFA.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false`` for above settings respectively.                      |
+| This feature’s ``config.json`` setting is ``"DisableLegacyMFA": false,`` with options ``true`` and ``false`` for above settings respectively.                     |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Team Settings
