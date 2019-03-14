@@ -143,16 +143,13 @@ Procedure:
 
 3. (Vice Chair) Start Zoom recording at 8:00am Palo Alto time.
 
-3. (Chair) Run through the agenda:
+3. (Chair) Run through the agenda, which comprises one or more of the following items:
 
-  - **Welcome new team members**: Team members introduced by direct reports, including their name, their role, and something interesting about them. 60-120 seconds per person.
   - **Introduction**: One of the founders does an introduction to the CO meeting.
-  - **Hot topic**: Most important topic to share with all staff that week. Examples include: Series A marketing announce; FOSDEM event. Lasts at most 5-10 minutes.
-  - **Mini topics**: If there is room in the agenda, mini-topics that align with the meeting objectives may be queued by team members. Please share with Chair at least 24 hours prior to meeting start. Each topic lasts at most 3 minutes.
-  - **Customers**: Key updates, use cases or stories from customers. At minimum, one of the customer success managers shares a customer one-pager. Each customer update lasts at most 5 minutes, for a total of at most 10-15 minutes for this section.
-  - **Questions/Feedback**: At end of meeting, Chair asks if there are any questions. If not, meeting is concluded with a reminder to share feedback via survey.
-  
-4. (Vice Chair) During meeting, mute attendees who are not speaking to reduce background noise.
+  - **Welcome new team members**: Team members introduced by direct reports, including their name, their role, and something interesting about them. At most 2 minutes per person.
+  - **Hot topics**: Examples include: Series A marketing announce; FOSDEM event. Lasts at most 5 minutes per topic.
+  - **Customer topics**: Key updates, use cases or stories from customers. At minimum, one of the customer success managers shares about a customer. Each customer update lasts at most 5 minutes, for a total of at most 10-15 minutes for this section.
+  - **Feedback**: At end of meeting, Chair concludes meeting with a reminder to share feedback via survey.
 
 **After meeting:**
 
