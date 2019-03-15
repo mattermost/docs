@@ -121,3 +121,8 @@ maxReplicas: 10
 maxUnavailable: 1
 storage: {}
 minio: {}
+
+# https://github.com/docker/distribution/blob/master/docs/configuration.md#compatibility
+compatibility:
+  schema1:
+    enabled: false
