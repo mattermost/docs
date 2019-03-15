@@ -32,3 +32,5 @@ CHANGELOG
 changelogs/
 bin/
 spec/
+dependencies.yml
+dependencies_io/
