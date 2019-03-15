@@ -18,6 +18,9 @@ Local Image Proxy
 
 The local image proxy is enabled on the Mattermost server by default. When using the local image proxy, Mattermost apps will download external images through the Mattermost server itself.
 
+.. note:: 
+   With the local image proxy enabled, requests for images hosted on the local network are now affected by the ``AllowUntrustedInternalConnections`` setting. See `documentation <https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to>`_ for more information or if you are seeing unintentionally blocked images.
+
 .. _atmos-camo:
 
 atmos/camo Image Proxy

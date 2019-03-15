@@ -84,6 +84,7 @@ Mattermost v5.8.0 contains low to high level security fixes. [Upgrading](http://
  
 #### Enhanced image performance
  - Improved performance for images by adding support for image proxy servers, which are now integrated into the server and switched on by default.
+ - Note that this may cause problems loading images from within your local network due to security settings. See [here](https://docs.mattermost.com/administration/image-proxy.html#local-image-proxy) for more information.
 
 ### Improvements
 
