@@ -44,7 +44,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
  - **Enable Image Proxy** setting is now ``false`` by default. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
  - Under ``"ServiceSettings"`` in ``config.json``:
-    - Added ``"DisableLegacyMFA": false,`` to ensure no breaking changes. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
+    - Added ``"DisableLegacyMFA": false,`` to keep the legacy checkMfa endpoint enabled to support mobile versions 1.16 and earlier. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
 
 ### Known Issues
 
