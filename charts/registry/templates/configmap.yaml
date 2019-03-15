@@ -37,6 +37,13 @@ data:
         # This is provided from the initContainer execution, at a known path.
         rootcertbundle: /etc/docker/registry/certificate.crt
         autoredirect: {{ .Values.authAutoRedirect }}
+    {{- if .Values.compatibility }}
+    compatibility:
+      {{- if .Values.compatibility.schema1 }}
+      schema1:
+        enabled: {{ eq true .Values.compatibility.schema1.enabled }}
+      {{- end }}
+    {{- end }}
     storage:
       {{- if .Values.storage }}
       {{- else if .Values.global.minio.enabled }}

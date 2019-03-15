@@ -60,6 +60,9 @@ registry:
     secret:
     key: storage
     extraKey:
+  compatibility:
+    schema1:
+      enabled: false
   ingress:
     enabled: false
     tls:
@@ -81,6 +84,7 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 | `authAutoRedirect`   | `true`                     | Auth auto-redirect (must be true for Windows clients to work) |
 | `authEndpoint`       | `global.hosts.gitlab.name` | Auth endpoint (only host and port)  |
 | `certificate.secret` | `gitlab-registry`          | JWT certificate                     |
+| `compatiblity`       |                            | Configuration of compatility settings |
 | `enabled`            | `true`                     | Enable registry flag                |
 | `httpSecret`         |                            | Https secret                        |
 | `image.pullPolicy`   |                            | Pull policy for the registry image  |
@@ -222,6 +226,29 @@ certificate:
   key: registry-auth.crt
 ```
 
+### compatiblity
+
+The `compatibility` field is a map relating directly to the configuration file's
+[compatiblity](https://github.com/docker/distribution/blob/master/docs/configuration.md#compatibility)
+section.
+
+Default contents:
+
+```
+compatibility:
+  schema1:
+    enabled: false
+```
+
+#### schema1
+
+The `schema1` section controls the compatibility of the service with version 1
+of the Docker manifest schema. This setting is provide as a means of supporting
+Docker clients earlier than `1.10`, after which schema v2 is used by default.
+
+If you _must_ support older verions of Docker clients, you can do so by setting
+`registry.compatbility.schema1.enabled: true`.
+
 ### replicas
 
 The `replicas` field is an integer, controlling the number of [registry](https://hub.docker.com/_/registry/)
@@ -280,3 +307,4 @@ NOTE: **Note:** The chart will populate `delete.enabled: true` into this configu
   by default if not specified by the user. This keeps expected behavior in line with
   the default use of Minio, as well as the Omnibus GitLab. Any user provided value
   will supersede this default.
+
