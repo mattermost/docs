@@ -298,8 +298,11 @@ For clarity, the object is shown using regular JSON formatting, but in the data 
 .. code-block:: javascript
 
   {
+  "type": "emoji",
+  "emoji": {
     "name": "custom-emoji-troll",
     "image": "bulkdata/emoji/trollolol.png"
+    }
   }
 
 Fields of the Emoji object
@@ -704,7 +707,7 @@ Fields of the User object
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
-      <td valign="middle">use_military_time</td>
+      <td valign="middle">military_time</td>
       <td valign="middle">string</td>
       <td>How times should be displayed to this user. Must be one of the following values:<br>
         <kbd>"true"</kbd> - Use 24 hour clock.<br>

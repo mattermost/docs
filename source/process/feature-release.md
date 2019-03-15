@@ -45,7 +45,7 @@ No pull requests for major features should be **merged** to the current release 
     - Verify all items in the last posted release checklist are complete
     - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel. [See example](https://community.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
     - Draft Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
-    - Review [software requirements](https://docs.mattermost.com/install/requirements.html#software-requirements) are up-to-date based on [these guidelines](https://docs.mattermost.com/process/software-requirements.html). If not, update documentation accordingly, and note changes in the Changelog.
+    - Review [supported OS versions](https://docs.mattermost.com/install/requirements.html#server-software) and review that [software requirements](https://docs.mattermost.com/install/requirements.html#software-requirements) are up-to-date based on [these guidelines](https://docs.mattermost.com/process/software-requirements.html). If not, update documentation accordingly, and note changes in the Changelog
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version
     - Ask PMs if there are any notable breaking changes or deprecated features in the release
     - Review submitted NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch.
@@ -251,7 +251,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Receive sign off on final version of MailChimp email blast and Twitter announcement and schedule for 08:00 PST on the date of marketing announcement
       - **Note:** If the release contains a security update, also draft a Mailchimp email blast for the [Security Bulletin mailing list](http://eepurl.com/cAl5Rv)
     - Finalize blog post for mattermost.com, test on mobile view, and set timer for 08:00 PST on the day of release
-    - Update feature lists on https://about.mattermost.com/pricing/ and https://about.mattermost.com/features/ with relevant new features
+    - Update feature lists on https://mattermost.com/pricing/ and https://mattermost.com/product/ with relevant new features
     - Add links to [Admin guide](https://docs.mattermost.com/guides/administrator.html) in the release blog post where needed
 
 ### K. (T-minus 0 working days) Release Day
@@ -301,7 +301,6 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
     - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the previous release version
 5. Dev:
-    - Confirm oss.mattermost.com is updated to final build
     - Cut release branch for Bug Fix release
     - Update existing tickets or create new ones for the next release
 6. Marketing:
@@ -309,6 +308,8 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
     - Update @mattermosthq Twitter profile with the next release date
     - Prepare retweet of GitLab release tweet ([see example here](https://community.mattermost.com/core/pl/k7wchwj5mtrhucj6don96yx3sc))
+7. QA:
+    - Merge any updates made to Selenium tests during release testing
 
 ### L. (T-plus 5 working days) Release Updates
 1. Release Manager:

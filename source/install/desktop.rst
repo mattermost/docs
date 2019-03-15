@@ -35,6 +35,20 @@ Windows 10+, Windows 8.1+, Windows 7+
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
+Group Policies
+~~~~~~~~~~~~~~~~~~~~~
+Copy the ``mattermost.admx`` from ``%INSTALLDIR%\gpo_template`` to ``C:\Windows\PolicyDefinitions`` or if available ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions``
+and ``mattermost.adml`` from ``%INSTALLDIR%\gpo_template\en-US`` to ``C:\Windows\PolicyDefinitions\en-US`` or if available ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions\en-US``
+then open the Group Policy Management Console and you should see under "Computer Configuration" --> "Administrative Templates" --> "Mattermost" the policies.
+
+Following Group Policies are available:
+
++------------------------+-----------------------------------------------------+----------------------+
+| Group Policy           | Description                                         | Required Version     |
++========================+=====================================================+======================+
+| Disable Auto Updater   | Controls the behavior of the internal Autoupdater   | 4.3 or later         |
++------------------------+-----------------------------------------------------+----------------------+
+
 macOS 10.9+
 --------------------------------------------------
 
@@ -143,9 +157,10 @@ Desktop App constantly asks to log in to Mattermost server
 
   This issue can occur after a crash or unexpected shutdown of the Desktop app that causes the app data to be corrupted. To resolve the issue:
 
-    - Windows: Open Windows File Explorer, and navigate to the ``%APPDATA%\Mattermost`` folder, then delete the ``IndexedDB`` folder.
-    - Mac: Open Finder, and navigate to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``IndexedDB`` folder.
-    - Linux: Open the file manager, and navigate to the ``~/.config/Mattermost`` folder, then delete the ``IndexedDB`` folder.
+
+    - Windows: Open Windows File Explorer, and navigate to the ``%APPDATA%\Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
+    - Mac: Open Finder, and navigate to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
+    - Linux: Open the file manager, and navigate to the ``~/.config/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
 
 
 For additional troubleshooting tips, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__.

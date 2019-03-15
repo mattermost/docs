@@ -62,13 +62,13 @@ Location of your local storage directory
 
 #. Stop Mattermost Server.
 
-   On Ubuntu 14.04 and RHEL 6.6:
+   On Ubuntu 14.04 and RHEL 6:
 
    .. code-block:: sh
 
      sudo service mattermost stop
 
-   On Ubuntu 16.04 and RHEL 7.1:
+   On Ubuntu 16.04 and RHEL 7:
 
    .. code-block:: sh
 
@@ -99,6 +99,7 @@ Location of your local storage directory
    .. code-block:: sh
 
      sudo mv mattermost/plugins/ mattermost/plugins~
+     sudo mv mattermost/client/plugins/ mattermost/client/plugins~
     
 #. Change ownership of the new files before copying them.
 
@@ -120,26 +121,26 @@ Location of your local storage directory
      sudo cp -an /tmp/mattermost-upgrade/. mattermost/
      sudo rm -rf /tmp/mattermost-upgrade/
 
-#. Start Mattermost server.
-
-   On Ubuntu 14.04 and RHEL 6.6:
-
-   .. code-block:: sh
-
-     sudo service mattermost start
-
-   On Ubuntu 16.04 and RHEL 7.1:
-
-   .. code-block:: sh
-
-     sudo systemctl start mattermost
-
 #. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
 
    .. code-block:: sh
 
      cd {install-path}/mattermost
      sudo setcap cap_net_bind_service=+ep ./bin/mattermost
+
+#. Start Mattermost server.
+
+   On Ubuntu 14.04 and RHEL 6:
+
+   .. code-block:: sh
+
+     sudo service mattermost start
+
+   On Ubuntu 16.04 and RHEL 7:
+
+   .. code-block:: sh
+
+     sudo systemctl start mattermost
 
 #. Upgrade your ``config.json`` schema:
 
@@ -157,6 +158,7 @@ After the server is upgraded, users might need to refresh their browsers to expe
 
       cd {install-path}/mattermost
       sudo mv plugins~/ plugins
+      sudo mv client/plugins~/ client/plugins
 
 Upgrading Team Edition to Enterprise Edition
 --------------------------------------------

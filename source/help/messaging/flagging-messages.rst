@@ -1,7 +1,7 @@
 Flagging Messages
 -------------------
 
-Flags are a way to mark messages for follow up. Your flags are personal, and cannot be seen by other users.
+Flags are a way to mark messages for follow up. Your flags are personal, and cannot be seen by other users. There is no limit to the number of posts you can flag.
 
 One way we like to use flags is to mark messages we want to respond to later. It's useful when someone asks for something that requires work. We flag the post, keep doing what we're doing, and then go back to our list of flagged posts. After the work is completed, we can reply back to the post and unflag it to clear it from the list.
 
@@ -28,4 +28,4 @@ To remove an item from the flagged list, click the flag beside a message to clea
 
 .. image:: ../../images/unflag.png
   :width: 500px
-
+   

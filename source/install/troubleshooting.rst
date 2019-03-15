@@ -70,7 +70,7 @@ If email sign-in was turned off before the System Administrator switched sign-in
 
 4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 
-User statues get stuck on away or offline status
+User statuses get stuck on away or offline status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you notice more than one user being stuck at an Away or Offline status, try one of the following steps:

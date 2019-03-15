@@ -25,7 +25,10 @@ AD/LDAP group synchronization
 
 To synchronize specific AD/LDAP groups to Mattermost, specify the Group ID Attribute under **System Console > Authentication > AD/LDAP**.  
 
-Additionally, you can specify the Group filter used to retrieve groups.  If the group filter configuration is left blank, then all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` are returned.  You can also set the attribute used to populate the Mattermost Group name under ``Group Display Name Attribute``.   
+Additionally, you can specify the Group filter used to retrieve groups.  If the group filter configuration is left blank, then all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` are returned.  You can also set the attribute used to populate the Mattermost Group name under ``Group Display Name Attribute``. 
+
+.. note:: 
+   Attribute values for Group ID and Group Display Name are case sensitive. 
 
 Synchronization of groups occurs after user synchronization and results for group synchronization are available on the synchonization status table (located at the bottom of the AD/LDAP configuration page). 
 
@@ -34,7 +37,7 @@ After the AD/LDAP groups have been synchronized, go to **System Console > Access
 .. image:: ../images/Group_filter.png
 
 .. note::
-The sync process does not create Mattermost groups.  Mattermost groups are created when you “link” the AD/LDAP group as outlined in the next section **Linking AD/LDAP groups to Mattermost groups**. Existing AD/LDAP users are added to the Mattermost groups on the next synchronization and new users are added on their first login. 
+   The sync process does not create Mattermost groups.  Mattermost groups are created when you “link” the AD/LDAP group as outlined in the next section **Linking AD/LDAP groups to Mattermost groups**. Existing AD/LDAP users are added to the Mattermost groups on the next synchronization and new users are added on their first login. 
 
 On subsequent synchronizations and once groups are linked: 
 
@@ -100,7 +103,7 @@ For new users, default teams and channels will be added when they log in for the
 It may take a few seconds to load all team and channel memberships for a user depending on the number of teams and channels the group is defaulted to. In our testing, it took 6 seconds for an organization with 200,000 users and 30,000 linked groups.
 
 .. note::
-Users are not removed from the team or channel on subsequent synchronizations of the AD/LDAP groups. Users will need to be manually removed from the team or channel per the existing functionality. This is being considered for a future improvement. They will not be re-added if they were manually removed or removed themselves.
+   Users are not removed from the team or channel on subsequent synchronizations of the AD/LDAP groups. Users will need to be manually removed from the team or channel per the existing functionality. This is being considered for a future improvement. They will not be re-added if they were manually removed or removed themselves.
 
 .. image:: ../images/Team_Channel_Membership_Sync.png
 
@@ -118,7 +121,7 @@ Users who have logged in and accessed Mattermost will be visible in the members 
 Users can be removed from the Mattermost group on subsequent synchronizations. However, they will not be removed from teams and channels. 
 
 .. note:: 
-When a member removes themselves manually from a channel, that action is tracked in the Channel Member History table.  Users are not re-added to channels from which they previously removed themselves. 
+   When a member removes themselves manually from a channel, that action is tracked in the Channel Member History table.  Users are not re-added to channels from which they previously removed themselves. 
 
 Disabling and re-activating LDAP/AD users
 -----------------------------------------

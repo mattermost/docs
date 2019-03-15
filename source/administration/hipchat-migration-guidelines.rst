@@ -39,9 +39,11 @@ Step 3: Import your data into Mattermost
 
 1. Follow the `Mattermost Bulk Load Tool <https://docs.mattermost.com/deployment/bulk-loading.html>`__ guide to import your data into Mattermost. Files exported from HipChat will need to be converted to the format required by Mattermost. Please `contact us <https://mattermost.zendesk.com/hc/en-us/requests/new>`__ if you require assistance in the conversion. 
 
-  - Note: Efforts are underway to source scripts from the Mattermost community to further automate this step. One solution already submitted by the community is `HipMost <https://github.com/orbitalimpact/hipmost>`__.  If you’re interested in contributing or testing any community contributed solution, please let us know at info@mattermost.com, Twitter or Mattermost forums at https://forum.mattermost.org.
+2. You are also encouraged to use the HipChat import tool created by Herzum: https://github.com/herzum/HC2MM.
 
-2. Alternatively, `contact Mattermost <https://mattermost.com/contact-us/>`__ for partner recommendations for your region to assist in your import. 
+If you’re interested in contributing or testing any community contributed solution, please let us know at info@mattermost.com, Twitter or Mattermost forums at https://forum.mattermost.org.
+
+3. Alternatively, `contact Mattermost <https://mattermost.com/contact-us/>`__ for partner recommendations for your region to assist in your import. 
   
 Step 4: Onboard your users into Mattermost
 ---------------------------------------------

@@ -5,7 +5,8 @@ Messaging Basics
 
 **Write messages** using the text input box at the bottom of the screen.
 Press ENTER to send a message. Use SHIFT+ENTER to create a new
-line without sending a message.
+line without sending a message. To send messages on CTRL+ENTER and use ENTER to insert new lines go to **Main Menu** > **Account Settings** > **Advanced** > **Send messages on CTRL+ENTER**.
+
 
 **Reply to messages** by clicking the reply arrow next to the message
 text.

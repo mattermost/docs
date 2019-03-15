@@ -33,11 +33,10 @@ T-minus 1-3 weeks
 
 - (People Ops & New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. Since these items are company property, you do not need to buy insurance or extended warranties for them, but you do need to report any loss or damage to People@mattermost.com as soon as it occurs.
 - (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology and training materials.
+- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on community.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME.LAST_NAME@mattermost.com` is the standard naming convention.
  
 T-minus 1 week
 ---------------------------------------------------------
-
-- (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on community.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME.LAST_NAME@mattermost.com` is the standard naming convention.
 
 - (People Ops & New Hire) Set up payroll.
  - US FTE, receive email to complete TriNet sign-up, payroll, benefits enrollment, I-9 form, banking information, personal information, tax forms.  
@@ -50,9 +49,14 @@ First Day
 
 - (Manager) Posts welcome message in stand-up channel.
 - (Manager) Meets New Hire for first 1-1 meeting.
+- (People Ops) Meets New Hire for check-in meeting.
 - (Buddy) Meets New Hire for first 1-1 meeting.
-- (CEO) Meets New Hire for welcome meeting.
 - (New Hire) Confirm with Manager all HR paperwork is completed by end of first day (should have been sent in advance). 
+
+First Week
+---------------------------------------------------------
+- (CEO) Meets New Hire for welcome meeting.
+
 
 3 months 
 ---------------------------------------------------------
@@ -106,7 +110,63 @@ Mattermost Staff Meetings
 
 For confidentiality of customers, internal process meetings are limited to Mattermost staff only.
 
+Customer Obsession All-Hands Meeting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Attendees:
+
+- All Mattermost Staff
+
+Objectives:
+
+- Reaffirm our obsession with making customers safer and more productive
+- Share how we're aligning resources to make customers successful
+
+Time:
+
+- Weekly meeting on Wednesdays from 8:00am to 8:25am Palo Alto time.
+
+Procedure:
+
+**Before meeting:**
+
+1. (Chair) Schedules items for the weekly agenda.
+2. (Team) Shares potential meeting agenda topics with Chair via direct message. Must be shared at least 24 hours prior to meeting start and be aligned with the meeting objectives above.
+
+**During meeting:**
+
+1. (Vice Chair) At 7:58am Palo Alto time on the day meeting is held, post a reminder in `Cust Obs Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_. 
+
+  .. code-block:: none
+
+    @channel Customer Obsession meeting starting now https://zoom.us/j/2244480297
+    
+    Meeting notes: https://docs.google.com/document/d/16F86k0I_ipjhHofm5pP6yA_dWTNvmA4ZBr_z53_087Q/edit
+
+2. (Team) Join the **Zoom** link in the header of the `Cust Obs Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_, and open the **Meeting Notes** link in the header to see the agenda.
+
+3. (Vice Chair) Start Zoom recording at 8:00am Palo Alto time.
+
+3. (Chair) Run through the agenda, which comprises one or more of the following items:
+
+  - **Introduction**: One of the founders does an introduction to the CO meeting.
+  - **Welcome new team members**: Team members introduced by direct reports, including their name, their role, and something interesting about them. At most 2 minutes per person.
+  - **Hot topics**: Examples include: Series A marketing announce; FOSDEM event. Lasts at most 5 minutes per topic.
+  - **Customer topics**: Key updates, use cases or stories from customers. At minimum, one of the customer success managers shares about a customer. Each customer update lasts at most 5 minutes, for a total of at most 10-15 minutes for this section.
+  - **Feedback**: At end of meeting, Chair concludes meeting with a reminder to share feedback via survey.
+
+**After meeting:**
+
+1. (Vice Chair) Share meeting recording and link to feedback survey.
+
+  .. code-block:: none
+
+    ### All Hands Meeting: February 20, 2019
+    
+    Meeting recording (and transcript) [here](https://zoom.us/recording/play/j7MHmiva3D7G4KqIcL6qV2Z46NMJZDpsdYo4B0GPDtmrRC0owvEJnC8Xpa9tAyxy?continueMode=true).
+    
+    Share your thoughts on this week's meeting [here](https://goo.gl/forms/AgCNmu3JxTDmSQvp2) @here.
+ 
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -593,16 +653,16 @@ The following table summarizes abbreviations used in the above table:
         <p>&nbsp;</p>
     </embed>
 
-Leadership Coaching
+Consulting Advisers 
 --------------------------
 
-To advance the skills of senior and functional leaders, we bring in experts to advise on key functions, including sales, operations, product, marketing, strategy, general management, and other specialized topics. 
+To provide guidance, coaching and development for senior and functional leaders, we bring in experts to advise in key areas. 
 
-- As an example, `Jono Bacon <http://www.jonobacon.org/about/>`__--a leading author, speaker and consultant on open source community advocacy--meets with our community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways.
+- As an example, `Jono Bacon <http://www.jonobacon.org/about/>`__--a leading author, speaker and consultant on open source community advocacy--meets with our CEO and community team regularly to refine our processes and understanding. There's a range of similiarly adept company advisers that help advance our thinking and capabilities in critical ways.
 
-Many thought leaders and conference speakers are open to consulting projects with the right clients, and Mattermost is a flexible client. There's no travel involved, we meet over video conference, `our consulting process is straight forward <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit#heading=h.pwxwwq4ezzfx>`__, we're easy to work with, and we take advising seriously. 
+Meetings typically take place over phone or video calls. We bring on advisers with `standard consulting agreements <https://docs.google.com/document/d/1G4wFLq_wHHEDJ-hrv5Kmu022mFJgh3rJ4-glM0W6riI/edit#heading=h.pwxwwq4ezzfx>`_ on either a time and materials basis or a recurring fee. 
 
-When hiring, we are also open to bringing in a leader's personal mentors as consultants and company advisers when skill sets are appropriate.
+We use a range of advisers from senior board-level contributors to operational and subject-matter experts.
 
 ---------------------------------------------------------
 Mattermost Avatar

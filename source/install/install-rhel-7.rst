@@ -1,10 +1,10 @@
-.. _install-rhel-66:
+.. _install-rhel-7:
 
 =================================
-Installing Mattermost on RHEL 6.6
+Installing Mattermost on RHEL 7
 =================================
 
-You can also use these instructions to install Mattermost on CentOS 6, Oracle Linux 6, or Scientific Linux 6. With the exception of the operating system that you install, the process is identical.
+You can also use these instructions to install Mattermost on CentOS 7, Oracle Linux 7, or Scientific Linux 7. With the exception of the operating system that you install, the process is identical.
 
 .. include:: install-common-intro.rst
 
@@ -12,10 +12,10 @@ You can also use these instructions to install Mattermost on CentOS 6, Oracle Li
   :backlinks: top
   :local:
 
-.. include:: install-rhel-66-server.rst
-.. include:: install-rhel-66-mysql.rst
-.. include:: install-rhel-66-postgresql.rst
-.. include:: install-rhel-66-mattermost.rst
+.. include:: install-rhel-7-server.rst
+.. include:: install-rhel-7-mysql.rst
+.. include:: install-rhel-7-postgresql.rst
+.. include:: install-rhel-7-mattermost.rst
 .. include:: config-mattermost-server.rst
 .. include:: config-tls-mattermost.rst
 .. include:: install-rhel-nginx.rst

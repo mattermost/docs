@@ -1,1 +1,1 @@
-Please see :doc:`install-debian-88`.
+Please see :doc:`install-debian`.

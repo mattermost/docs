@@ -12,14 +12,14 @@ The main benefits of using a proxy are as follows:
   -  Port mapping ``:80`` to ``:8065``
   -  Standard request logs
 
-**To install NGINX on RHEL 6.6 or 7.1:**
+**To install NGINX on RHEL 6 or 7:**
 
 1. Log in to the server that will host the proxy, and open a terminal window.
 
 2. Create the file /etc/yum.repos.d/nginx.repo.
   ``sudo touch /etc/yum.repos.d/nginx.repo``
 
-3. Open the file as root in a text editor and add the following contents, where *{version}* is **6** for RHEL 6.6, and **7** for RHEL 7.1:
+3. Open the file as root in a text editor and add the following contents, where *{version}* is **6** for RHEL 6, and **7** for RHEL 7:
 
   .. code-block:: none
   
@@ -34,21 +34,21 @@ The main benefits of using a proxy are as follows:
   ``sudo yum install nginx.x86_64``
 
 5. After the installation is complete, start NGINX.
-    On RHEL 6.6:
+    On RHEL 6:
   
     ``sudo service nginx start``
   
-    On RHEL 7.1:
+    On RHEL 7:
   
     ``sudo systemctl start nginx``
   
 6. **Optional** Set NGINX to start at system boot.
   
-    On RHEL 6.6:
+    On RHEL 6:
   
     ``sudo chkconfig nginx on``
   
-    On RHEL 7.1:
+    On RHEL 7:
   
     ``sudo systemctl enable nginx``
 

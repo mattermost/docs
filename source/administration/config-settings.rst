@@ -1502,14 +1502,6 @@ Require Email Verification
 | This feature's ``config.json`` setting is ``"RequireEmailVerification": false`` with options ``true`` and ``false`` for above settings respectively.                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Email Invite Salt
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-32-character (to be randomly generated via System Console) salt added to signing of email invitation links. Email invitation links expire after 24 hours except if the salt is regenerated, then existing email invitation links invalidate immediately.  Click **Regenerate** to create new salt.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"InviteSalt": ""`` with string input.                                                                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Enable Open Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Users can sign up to the server from the root page without an invite.
@@ -2570,7 +2562,7 @@ Restrict Custom Emoji Creation
 
 **Allow System and Team Admins to create custom emoji**: The Custom Emoji option is hidden from the Main Menu for users who are not System or Team Admins.
 
-**Only allow System Admins to create custom emoji**: The Custom Emoji option is hidden from the Main Menu for users who are not System or Team Admins.
+**Only allow System Admins to create custom emoji**: The Custom Emoji option is hidden from the Main Menu for users who are not System Admins.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictCustomEmojiCreation": "all"`` with options ``all``, ``admin`` and ``system_admin`` for above settings respectively. |
@@ -2684,7 +2676,7 @@ Support Email
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Set an email for feedback or support requests.
 
-So you don't miss messages, please make sure to change this value to an email your system administrator receives, example: `support@yourcompany.com`.
+So you don't miss messages, please make sure to change this value to an email your system administrator receives, example: `support@yourcompany.com`.  This address is displayed on email notifications and during the Getting Started tutorial for end users to ask support questions.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SupportEmail":"feedback@mattermost.com"`` with string input.                                                            |
@@ -3619,7 +3611,7 @@ Skip Server Certificate Verification
 
 Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
@@ -3627,7 +3619,7 @@ Specify the color of the email login button for white labeling purposes. Use a h
 
 Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
@@ -3635,7 +3627,7 @@ Specify the color of the email login button border for white labeling purposes. 
 
 Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
@@ -3684,7 +3676,7 @@ AD/LDAP Settings
 
 Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
@@ -3692,7 +3684,7 @@ Specify the color of the AD/LDAP login button for white labeling purposes. Use a
 
 Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
@@ -3700,7 +3692,7 @@ Specify the color of the AD/LDAP login button border for white labeling purposes
 
 Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
@@ -3713,7 +3705,7 @@ SAML Settings
 
 Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
@@ -3721,7 +3713,7 @@ Specify the color of the SAML login button for white labeling purposes. Use a he
 
 Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
@@ -3729,7 +3721,7 @@ Specify the color of the SAML login button border for white labeling purposes. U
 
 Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
@@ -4157,7 +4149,7 @@ Town Square is Hidden in Left-Hand Sidebar (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
 
-**True**: When ``"ExperimentalTownSquareIsReadOnly": true``, hides Town Square in the left-hand sidebar if there are no unread messages in the channel.
+**True**: Hides Town Square in the left-hand sidebar if there are no unread messages in the channel.
 
 **False**: Town Square is always visible in the left-hand sidebar even if all messages have been read.
 

@@ -184,6 +184,8 @@ For users, use
 
 and for public channels, use
 
+.. code-block:: json
+
   {
     "display_name": "Post this message to",
     "name": "channel",
@@ -240,7 +242,7 @@ Moreover, Mattermost also allows the integration itself to perform input validat
 
   {"errors": {"num_between_0_and_10": "Enter a number between 0 and 10."}}
 
-Finally, once the request is submitted, we recommend the integration to respond with a system message or an ephemeral message confirming the submission.
+Finally, once the request is submitted, we recommend the integration to respond with a system message or an ephemeral message confirming the submission. This should be a separate request back to Mattermost once the service has received and responded to a submission request from a dialog. This can be done either via `the REST API <https://api.mattermost.com/#tag/posts%2Fpaths%2F~1posts~1ephemeral%2Fpost>`_, or via the `Plugin API <https://developers.mattermost.com/extend/plugins/server/reference/#API.SendEphemeralPost>`_ if you are developing a plugin.
 
 .. note::
 
