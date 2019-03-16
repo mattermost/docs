@@ -6,6 +6,10 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
+Mattermost Enterprise Edition v5.9.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-9>`__ - `Download <https://releases.mattermost.com/5.9.0/mattermost-5.9.0-linux-amd64.tar.gz>`__
+  - ``https://releases.mattermost.com/5.9.0/mattermost-5.9.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``bc8e6ee168d658ed008b3006b979a609482c68de00b447885c2e255e792ddaa7``
+  - GPG Signature: https://releases.mattermost.com/5.9.0/mattermost-5.9.0-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v5.8.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-8>`__ - `Download <https://releases.mattermost.com/5.8.1/mattermost-5.8.1-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.8.1/mattermost-5.8.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``44ff0c559c76aa8643b42f640f927505187732f6341be51215f2a3f459bbf42f``
@@ -119,6 +123,10 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog <https://docs.mattermost.
 Mattermost Team Edition Server Archive
 ---------------------------------------
 
+Mattermost Team Edition v5.9.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-9>`__ - `Download <https://releases.mattermost.com/5.9.0/mattermost-team-5.9.0-linux-amd64.tar.gz>`__
+  - ``https://releases.mattermost.com/5.9.0/mattermost-team-5.9.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``2cf606f1fc9da05e3a4591292faa63d19c1495d6c618b1283711e7e98e750225``
+  - GPG Signature: https://releases.mattermost.com/5.9.0/mattermost-team-5.9.0-linux-amd64.tar.gz.sig
 Mattermost Team Edition v5.8.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-8>`__ - `Download <https://releases.mattermost.com/5.8.1/mattermost-team-5.8.1-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.8.1/mattermost-team-5.8.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``a8e49ad0692ab62d179bbe5f420d884e32d49010876d281294ac640044781ab7``
