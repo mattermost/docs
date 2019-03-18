@@ -28,7 +28,7 @@ Windows 10+, Windows 8.1+, Windows 7+
 
 1. Download latest version of the Mattermost desktop app:
 
-   - `64-bit version of Windows <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win64.exe>`__
+   - `64-bit version of Windows <https://releases.mattermost.com/desktop/4.2.1/mattermost-setup-4.2.0-win64.exe>`__
    - `32-bit version of Windows <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win32.exe>`__
 
 2. From the ``\Downloads`` directory right-click on the file ``mattermost-setup-4.2.0...`` and select **Open**.
