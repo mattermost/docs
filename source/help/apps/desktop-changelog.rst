@@ -1,6 +1,24 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.2.1
+----------------------------
+
+This release contains a bug fix for all platforms.
+
+- **Release date:** TBD
+- **Download Binary:**
+- **View Source Code:**
+
+Bug Fixes
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixing an issue where the links to the same subdomain open in smaller window in Mattermost app.
+
+
 Release v4.2.0
 ----------------------------
 
