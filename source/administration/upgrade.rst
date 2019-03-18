@@ -56,7 +56,7 @@ Location of your local storage directory
 
    .. code-block:: sh
 
-     tar -x --transform='s,^[^/]\+,\0-upgrade,' -f mattermost*.gz
+     tar -xf mattermost*.gz --transform='s,^[^/]\+,\0-upgrade,'
   
    The ``transform`` option adds a suffix to the topmost extracted directory so it does not conflict with the usual install directory.
 
@@ -87,14 +87,14 @@ Location of your local storage directory
 
 #. Remove all files *except special directories* from within the current mattermost directory.
 
-   The special directories within mattermost are ``config``, ``logs``, ``plugins``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*). The following command clears the contents of mattermost, preserving only those directories and their contents.
-   You should first modify the second part of the command to ``xargs echo rm -r`` to verify what will be executed.
+   The special directories within mattermost are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data`` (unless you have a different value configured for local storage, as per *Before you begin*). The following command clears the contents of mattermost, preserving only those directories and their contents.
+   You should first modify the last part to ``xargs echo rm -r`` to verify what will be executed.
 
    .. code-block:: sh
 
-     sudo find mattermost/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sudo xargs rm -r
+     find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data \) -prune \) | sort | sudo xargs rm -r
     
-#. Rename the ``plugins`` directory so they do not interfere with the upgrade.
+#. Rename the ``plugins`` directories so they do not interfere with the upgrade.
 
    .. code-block:: sh
 
@@ -119,7 +119,7 @@ Location of your local storage directory
    .. code-block:: sh
 
      sudo cp -an /tmp/mattermost-upgrade/. mattermost/
-     sudo rm -rf /tmp/mattermost-upgrade/
+     sudo rm -r /tmp/mattermost-upgrade/
 
 #. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
 
@@ -150,15 +150,15 @@ Location of your local storage directory
 
    Your current settings are preserved, and new settings are added with default values.
 
-After the server is upgraded, users might need to refresh their browsers to experience any new features.
-
-14. Re-instate the ``plugins`` directory, then restart the mattermost service.
+#. Reinstate the ``plugins`` directories, then restart the mattermost service.
 
     .. code-block:: sh
 
       cd {install-path}/mattermost
       sudo mv plugins~/ plugins
       sudo mv client/plugins~/ client/plugins
+
+After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
 Upgrading Team Edition to Enterprise Edition
 --------------------------------------------
