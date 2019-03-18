@@ -85,7 +85,7 @@ Holding the Meeting
 After the Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1. Share a summary in all respective channels, including the meeting recording.
-2. Send a survey asking how valuable the meeting was, feedback on additional use cases, and feedback on improving the meeting in future. `See example here <https://community.mattermost.com/core/pl/jfcmekbw738o3f3ykbbhofkg8r>`_.
+2. Send a survey asking how valuable the meeting was, feedback on additional use cases and feedback on improving the meeting in the future. `See example here <https://community.mattermost.com/core/pl/jfcmekbw738o3f3ykbbhofkg8r>`_.
 
 Tips
 ^^^^^^^^^^^^^^^^^^^^^^^^
