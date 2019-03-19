@@ -10,13 +10,19 @@ Release Date 2019-04-16
 
 ### Highlights
  - Bot accounts (?)
- - Config in database (?)
+ - Configuration in database (?)
 
 ### Improvements
 
  - Implemented CSRF protection Tokens.
+ - Added support for joining a team after a user logins with the link to join a team and is prompted to set up MFA for the first time.
+
+#### User Interface (UI)
+ - Added ability to use "c" and "sh" for code block syntax highlighting.
+ - Added support for plugins to create link tooltips.
  - Words that trigger mentions now support Chinese.
- - Improved default session timeout behavour, including changing the default ``SessionLengthWebInDays`` from 30 to 180 days.
+ - Added support for rendering emojis and hyperlinks in message attachment title.
+ - Added support for showing channel name in post input placeholder.
  
 #### Bulk Import/Export
  - Added User Preference fields in the bulk export.
@@ -29,12 +35,15 @@ Release Date 2019-04-16
  - Created CLI command ``webhook show`` to allow seeing the webhook detailed information.
  
 #### Administration
+ - Improved default session timeout behavour, including changing the default ``SessionLengthWebInDays`` from 30 to 180 days.
+ - Added full text search to the system console panel to easily find options in the configuration.
  - Split manage emoji permissions into create, delete own and delete others (Advanced Permissions).
  - Updated Mattermost to default to console logging in a human readable format.
  - Added support for LDAP groups search.
 
 ### Bug Fixes
- 
+ - Fixed an issue where big selects in interactive dialogs weren't usable.
+ - Fixed an issue where a channel did not get removed from the Unreads section if user navigated out of it via a permalink.
  
 ### Compatibility
 
