@@ -482,7 +482,7 @@ This password will then be injected into GitLab's configuration at runtime.
 
 If the LDAP server uses a custom CA or self-signed certificate you must:
 1. Ensure the Custom CA/Self-Signed certificate is created as a secret in the cluster/namespace e.g. `kubectl -n gitlab create secret generic my-custom-ca --from-file=my-custom-ca.pem`
-1. Ensure you have specified the `-set global.certificates.customCAs[0].secret=my-custom-ca.pem`. This will ensure that the CA is mounted in the relevant pods under /etc/ssl/certs/ca-cert-my-custom-ca.pem - but does not currently include it into the relevant LDAP configuration.
+1. Ensure you have specified the `--set global.certificates.customCAs[0].secret=my-custom-ca.pem`. This will ensure that the CA is mounted in the relevant pods under `/etc/ssl/certs/ca-cert-my-custom-ca.pem`.
 1. Specify the file as `global.appConfig.ldap.servers.main.ca_file=/etc/ssl/certs/ca-cert-my-custom-ca.pem`
 
 An example configuration snippet:
