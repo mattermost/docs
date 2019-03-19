@@ -8,6 +8,54 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release Date 2019-04-16
 
+### Highlights
+ - Bot accounts (?)
+ - Config in database (?)
+
+### Improvements
+
+ - Implemented CSRF protection Tokens.
+ - Words that trigger mentions now support Chinese.
+ 
+#### Bulk Import/Export
+ - Added User Preference fields in the bulk export.
+ - Added ability to include deactivated users in bulk import.
+ 
+#### CLI
+ - Created CLI command ``command show`` to allow seeing a slash command's detailed information.
+ - Created CLI command ``team rename`` to allow renaming teams.
+ - Created CLI command ``channel search`` to allow searching channels.
+ - Created CLI command ``webhook show`` to allow seeing the webhook detailed information.
+ 
+#### Administration
+ - Split manage emoji permissions into create, delete own and delete others (Advanced Permissions).
+ - Updated Mattermost to default to console logging in a human readable format.
+
+### Bug Fixes
+ 
+ 
+### Compatibility
+
+ - Deprecated configurable ``timezones.json`` in favour of the existing hard-coded list built into the server.
+
+### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+ 
+#### Changes to Team Edition and Enterprise Edition:
+
+### API Changes
+ - Added ``GetUsers`` API method to add ability to list users.
+ - Added the ``SearchPostsInTeam`` method to the plugin API to be able to search posts in a team.
+ - Added ``GetTeamMembersForUser`` and ``GetChannelMembersForUser`` to the plugin API to add ability to get team and channel members for a specific user.
+
+### Known Issues
+ 
+### Contributors
+
+Thank you to everyone who contributed to the Mattermost project in March 2019!
+
+
 
 ## Release v5.9
 
