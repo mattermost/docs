@@ -16,6 +16,7 @@ Release Date 2019-04-16
 
  - Implemented CSRF protection Tokens.
  - Words that trigger mentions now support Chinese.
+ - Improved default session timeout behavour, including changing the default ``SessionLengthWebInDays`` from 30 to 180 days.
  
 #### Bulk Import/Export
  - Added User Preference fields in the bulk export.
@@ -30,6 +31,7 @@ Release Date 2019-04-16
 #### Administration
  - Split manage emoji permissions into create, delete own and delete others (Advanced Permissions).
  - Updated Mattermost to default to console logging in a human readable format.
+ - Added support for LDAP groups search.
 
 ### Bug Fixes
  
@@ -43,6 +45,8 @@ Release Date 2019-04-16
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
  
 #### Changes to Team Edition and Enterprise Edition:
+ - ``ExperimentalSettings.RestrictSystemAdmin``
+ - "reply-to"
 
 ### API Changes
  - Added ``GetUsers`` API method to add ability to list users.
