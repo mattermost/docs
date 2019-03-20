@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.6.3 (2019-03-20)
+
+### Changed (1 change)
+
+- Allow disabling of the unicorn helm test. !721
+
+### Other (1 change)
+
+- Update GitLab Version to 11.8.3.
+
+
 ## 1.6.2 (2019-03-13)
 
 ### Fixed (1 change)
