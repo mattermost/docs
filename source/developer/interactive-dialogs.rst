@@ -37,7 +37,7 @@ Interactive dialogs support the following parameters:
     "icon_url", "String", "(Optional) The URL of the icon used for your dialog. If none specified, no icon is displayed."
     "submit_label", "String", "(Optional) Label of the button to complete the dialog. Default is ``Submit``."
     "notify_on_cancel", "String", "(Optional) When true, sends an event back to the integration whenever there's a user-induced dialog cancellation. No other data is sent back with the event. Default is ``false``."
-    "state", "Boolean", "(Optional) String provided by the integration that will be echoed back with dialog submission. Default is `` ``."
+    "state", "String", "(Optional) String provided by the integration that will be echoed back with dialog submission. Default is `` ``."
 
 Sample JSON is given below. Form submissions are sent back to the URL defined by the integration. You must also include the trigger ID you received from the slash command or interactive message.
 
@@ -99,10 +99,10 @@ The full list of supported fields are included below:
     "subtype", "String", "(Optional) One of ``text``, ``email``, ``number``, ``tel``, or ``url``. Default is ``text``. Use this to set which keypad is presented to users on mobile when entering the field."
     "min_length", "Integer", "(Optional) Minimum input length allowed for an element. Default is 0."
     "max_length", "Integer", "(Optional) Maximum input length allowed for an element. Default is 150. If you expect the input to be greater 150 characters, consider using a ``textarea`` type element instead."
-    "optional", "String", "(Optional) Set to true if this form element is not required. Default is ``false``."
-    "help_text", "Integer", "(Optional) Set help text for this form element. Maximum 150 characters."
-    "default", "Integer", "(Optional) Set a default value for this form element. Maximum 150 characters."
-    "placeholder", "Integer", "(Optional) A string displayed to help guide users in completing the element. Maximum 150 characters."
+    "optional", "Boolean", "(Optional) Set to true if this form element is not required. Default is ``false``."
+    "help_text", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
+    "default", "String", "(Optional) Set a default value for this form element. Maximum 150 characters."
+    "placeholder", "String", "(Optional) A string displayed to help guide users in completing the element. Maximum 150 characters."
     
 Textarea Elements
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -131,10 +131,10 @@ The list of supported fields is the same as for the ``textarea`` type element.
     "subtype", "String", "(Optional) One of ``text``, ``email``, ``number``, ``tel``, or ``url``. Default is ``text``. Use this to set which keypad is presented to users on mobile when entering the field."
     "min_length", "Integer", "(Optional) Minimum input length allowed for an element. Default is 0."
     "max_length", "Integer", "(Optional) Maximum input length allowed for an element. Default is 3,000."
-    "optional", "String", "(Optional) Set to true if this form element is not required. Default is ``false``."
-    "help_text", "Integer", "(Optional) Set help text for this form element. Maximum 150 characters."
-    "default", "Integer", "(Optional) Set a default value for this form element. Maximum 3,000 characters."
-    "placeholder", "Integer", "(Optional) A string displayed to help guide users in completing the element. Maximum 3,000 characters."
+    "optional", "Boolean", "(Optional) Set to true if this form element is not required. Default is ``false``."
+    "help_text", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
+    "default", "String", "(Optional) Set a default value for this form element. Maximum 3,000 characters."
+    "placeholder", "String", "(Optional) A string displayed to help guide users in completing the element. Maximum 3,000 characters."
 
 Select Elements
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -203,10 +203,10 @@ The list of supported fields for the ``select`` type element is included below:
     "type", "String", "Set this value to ``select`` for a select element."
     "data_source", "String", "(Optional) One of ``users``, or ``channels``. If none specified, assumes a manual list of options is provided by the integration."
     "options", "String", "(Optional) An array of options for the select element. Not applicable for ``users`` or ``channels`` data sources."
-    "optional", "String", "(Optional) Set to true if this form element is not required. Default is ``false``."
-    "help_text", "Integer", "(Optional) Set help text for this form element. Maximum 150 characters."
-    "default", "Integer", "(Optional) Set a default value for this form element. Maximum 3,000 characters."
-    "placeholder", "Integer", "(Optional) A string displayed to help guide users in completing the element. Maximum 3,000 characters."
+    "optional", "Boolean", "(Optional) Set to true if this form element is not required. Default is ``false``."
+    "help_text", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
+    "default", "String", "(Optional) Set a default value for this form element. Maximum 3,000 characters."
+    "placeholder", "String", "(Optional) A string displayed to help guide users in completing the element. Maximum 3,000 characters."
 
 Dialog Submission
 -----------------------
