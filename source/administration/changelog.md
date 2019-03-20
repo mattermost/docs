@@ -44,6 +44,7 @@ Release Date 2019-04-16
 ### Bug Fixes
  - Fixed an issue where big selects in interactive dialogs weren't usable.
  - Fixed an issue where a channel did not get removed from the Unreads section if user navigated out of it via a permalink.
+ - Fixed an issue where a link from Access Control Groups to Group Filter on AD/LDAP did not work for subpath Site URL.
  
 ### Compatibility
 
