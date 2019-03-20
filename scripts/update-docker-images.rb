@@ -15,10 +15,8 @@ class CNGImageSync
   COM_PROJECT_PATH = ENV['COM_CNG_PROJECT'] || "gitlab-org/build/cng".freeze
   DEV_PROJECT_REGISTRY = ENV['DEV_CNG_REGISTRY'] || "#{DEV_REGISTRY_URL}/#{DEV_PROJECT_PATH}".freeze
   COM_PROJECT_REGISTRY = ENV['COM_CNG_REGISTRY'] || "#{COM_REGISTRY_URL}/#{COM_PROJECT_PATH}".freeze
-  DEV_REGISTRY_USERNAME = ENV['DEV_REGISTRY_USERNAME'] || 'gitlab-ci-token'.freeze
-  DEV_REGISTRY_PASSWORD = ENV['DEV_REGISTRY_PASSWORD'] || ENV['CI_JOB_TOKEN']
-  COM_REGISTRY_USERNAME = ENV['COM_REGISTRY_USERNAME']
-  COM_REGISTRY_PASSWORD = ENV['COM_REGISTRY_PASSWORD']
+  DEV_REGISTRY_PASSWORD = ENV['DEV_API_TOKEN'] || ENV['CI_JOB_TOKEN']
+  COM_REGISTRY_PASSWORD = ENV['COM_API_TOKEN']
 
   GITLAB_VERSION = YAML.load_file('Chart.yaml')['appVersion'].strip.freeze
 
@@ -40,8 +38,8 @@ class CNGImageSync
       components.map { |c| c.split(":") }.to_h
     end
 
-    def authenticate_registry(registry, username, password)
-      Docker.authenticate!(username: username, password: password, serveraddress: registry)
+    def authenticate_registry(registry, password)
+      Docker.authenticate!(username: ENV['CI_REGISTRY_USER'], password: password, serveraddress: registry)
     end
 
     def pull_and_tag_images(initial_registry, new_registry, components)
@@ -66,12 +64,9 @@ class CNGImageSync
     def check_auth
       message = <<~MESSAGE
           Login credentials for registries are missing. Make sure the following environment variables are set
-            DEV_REGISTRY_USERNAME - Username to access docker registry on dev (Ignore if on Dev CI)
-            DEV_REGISTRY_PASSWORD - Password to access docker registry on dev (Ignore if on Dev CI)
-            COM_REGISTRY_USERNAME - Username to access docker registry on com
-            COM_REGISTRY_PASSWORD - Password to access docker registry on com
+            COM_API_TOKEN - PAT with access to gitlab.com API
       MESSAGE
-      raise message if DEV_REGISTRY_USERNAME.nil? || DEV_REGISTRY_PASSWORD.nil? || COM_REGISTRY_USERNAME.nil? || COM_REGISTRY_PASSWORD.nil?
+      raise message if COM_REGISTRY_PASSWORD.nil?
     end
 
     def execute
@@ -80,10 +75,10 @@ class CNGImageSync
       puts "Syncing images for version #{GITLAB_VERSION}"
       components = get_components(GITLAB_VERSION)
 
-      authenticate_registry(DEV_REGISTRY_URL, DEV_REGISTRY_USERNAME, DEV_REGISTRY_PASSWORD)
+      authenticate_registry(DEV_REGISTRY_URL, DEV_REGISTRY_PASSWORD)
       pull_and_tag_images(DEV_PROJECT_REGISTRY, COM_PROJECT_REGISTRY, components)
 
-      authenticate_registry(COM_REGISTRY_URL, COM_REGISTRY_USERNAME, COM_REGISTRY_PASSWORD)
+      authenticate_registry(COM_REGISTRY_URL, COM_REGISTRY_PASSWORD)
       push_images(COM_PROJECT_REGISTRY, components)
 
       puts "Sync completed"
