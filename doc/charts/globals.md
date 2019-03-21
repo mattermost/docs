@@ -478,13 +478,6 @@ LDAP servers configuration in `gitlab.yml`, as with an installation from source.
 Configuring passwords can be done by supplying a `secret` which holds the password.
 This password will then be injected into GitLab's configuration at runtime.
 
-**Note:** Custom CA or Self Signed LDAP Certificates
-
-If the LDAP server uses a custom CA or self-signed certificate you must:
-1. Ensure the Custom CA/Self-Signed certificate is created as a secret in the cluster/namespace e.g. `kubectl -n gitlab create secret generic my-custom-ca --from-file=my-custom-ca.pem`
-1. Ensure you have specified the `--set global.certificates.customCAs[0].secret=my-custom-ca.pem`. This will ensure that the CA is mounted in the relevant pods under `/etc/ssl/certs/ca-cert-my-custom-ca.pem`.
-1. Specify the file as `global.appConfig.ldap.servers.main.ca_file=/etc/ssl/certs/ca-cert-my-custom-ca.pem`
-
 An example configuration snippet:
 
 ```YAML
@@ -516,6 +509,24 @@ Example `--set` configuration items, when using the global chart:
 
 NOTE: **Note:** Commas are considered [special characters](https://github.com/kubernetes/helm/blob/master/docs/using_helm.md#the-format-and-limitations-of---set)
   within Helm `--set` items. Be sure to escape commas in values such as `bind_dn`: `--set global.appConfig.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'`.
+
+#### Using a custom CA or self signed LDAP certificates
+
+If the LDAP server uses a custom CA or self-signed certificate you must:
+
+1. Ensure that the custom CA/Self-Signed certificate is created as a secret in the cluster/namespace:
+```bash
+kubectl -n gitlab create secret generic my-custom-ca --from-file=my-custom-ca.pem
+```
+
+1. Then, specify:
+
+```bash
+--set global.certificates.customCAs[0].secret=my-custom-ca.pem
+--set global.appConfig.ldap.servers.main.ca_file=/etc/ssl/certs/ca-cert-my-custom-ca.pem
+```
+
+This will ensure that the CA is mounted in the relevant pods under `/etc/ssl/certs/ca-cert-my-custom-ca.pem` and specifies it's use in the LDAP configuration.
 
 ### OmniAuth
 
