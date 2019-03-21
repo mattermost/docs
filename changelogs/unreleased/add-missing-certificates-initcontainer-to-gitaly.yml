@@ -1,5 +1,0 @@
----
-title: Add missing certificates initContainer to gitaly
-merge_request: 716
-author: Harry Lee (tclh123)
-type: fixed

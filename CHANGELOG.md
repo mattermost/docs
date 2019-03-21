@@ -2,6 +2,36 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.7.0 (2019-03-22)
+
+### Fixed (5 changes, 3 of them are from the community)
+
+- Set the Redis client ID to nil as some servers have that command disabled. !666 (Vic Iglesias)
+- Set the life span of Registry certificate to 10 years. !701
+- Add Gitaly configuration to migrations job. !710
+- Add missing certificates initContainer to gitaly. !716 (Harry Lee (tclh123))
+- Provide Kubernetes 1.8 backwards compatibility for init-container secret copying. !720 (Fabian Jucker)
+
+### Changed (3 changes, 1 of them is from the community)
+
+- Extract shared configuration script of ruby-based pods into own template. !685 (Matthias van de Meent (Cofano Software Solutions))
+- Move cron_jobs setting from sidekiq to global context. !693
+- Allow disabling of the unicorn helm test. !721
+
+### Added (5 changes, 1 of them is from the community)
+
+- Allow use of password-less Redis services (external). !665 (Vic Iglesias)
+- Add support for using object storage for storing MR diffs. !698
+- Allow Disabling of ClusterRoles in ApplicationCRD. !702
+- Add eks_bootstrap_script. !706
+- Registry: Add caompatibility for Docker manifest schema1. !724
+
+### Other (2 changes)
+
+- Automate version mapping updates. !704
+- Update GitLab Version to 11.9.0.
+
+
 ## 1.6.1 (2019-03-04)
 
 ### Fixed (1 change)
