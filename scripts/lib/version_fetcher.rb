@@ -8,7 +8,7 @@ class VersionFetcher
   def initialize(version, repo)
     @version = Version.new(version)
     @repo = repo
-    @api_token = ENV['DEV_API_TOKEN']
+    @api_token = ENV['FETCH_DEV_ARTIFACTS_PAT']
     @api_url = if @repo.start_with?('gitlab/')
                  'https://dev.gitlab.org/api/v4'
                elsif @repo.start_with?('gitlab-org/')
