@@ -1,0 +1,11 @@
+repos:
+  # Registry chart / container
+  - url: https://github.com/docker/distribution.git
+    installed: 2.7.1
+    versions: L.Y.Y # locked to 2.X.X
+    tag_prefix: "v" # 'docs-v2.5.0-2016-07-28' was detected, need to use prefix
+    replace_in_files:
+      # although these are patterns, they're used in replacement, can not use regex
+      charts/registry/values.yaml: "tag: '{version_clean}'"
+      # blanket replacement is dangerous, but can't use two because duplicate key.
+      doc/charts/registry/index.md: "{version_clean}" # change all versions
