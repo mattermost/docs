@@ -15,13 +15,14 @@ class CNGImageSync
   COM_PROJECT_PATH = ENV['COM_CNG_PROJECT'] || "gitlab-org/build/cng".freeze
   DEV_PROJECT_REGISTRY = ENV['DEV_CNG_REGISTRY'] || "#{DEV_REGISTRY_URL}/#{DEV_PROJECT_PATH}".freeze
   COM_PROJECT_REGISTRY = ENV['COM_CNG_REGISTRY'] || "#{COM_REGISTRY_URL}/#{COM_PROJECT_PATH}".freeze
-  DEV_REGISTRY_PASSWORD = ENV['DEV_API_TOKEN'] || ENV['CI_JOB_TOKEN']
-  COM_REGISTRY_PASSWORD = ENV['COM_API_TOKEN']
+  DEV_REGISTRY_PASSWORD = ENV['FETCH_DEV_ARTIFACTS_PAT'] || ENV['CI_JOB_TOKEN']
+  COM_REGISTRY_PASSWORD = ENV['PUSH_IMAGES_PAT']
+  DEV_API_TOKEN = ENV['FETCH_DEV_ARTIFACTS_PAT']
 
   GITLAB_VERSION = YAML.load_file('Chart.yaml')['appVersion'].strip.freeze
 
   class << self
-    def get_api(uri, token=ENV['DEV_API_TOKEN'])
+    def get_api(uri, token = DEV_API_TOKEN)
       req = Net::HTTP::Get.new(uri)
       req['PRIVATE-TOKEN'] = token
       res = Net::HTTP.start(uri.hostname, uri.port, use_ssl: true) do |http|
@@ -68,7 +69,7 @@ class CNGImageSync
     def check_auth
       message = <<~MESSAGE
           Login credentials for registries are missing. Make sure the following environment variables are set
-            COM_API_TOKEN - PAT with access to gitlab.com API
+            PUSH_IMAGES_PAT - PAT with access to gitlab.com API
       MESSAGE
       raise message if COM_REGISTRY_PASSWORD.nil?
     end
