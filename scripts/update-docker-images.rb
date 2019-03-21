@@ -33,6 +33,7 @@ class CNGImageSync
 
     def get_components(version)
       artifact_uri = URI("#{CI_API_V4_URL}/projects/#{CGI.escape(DEV_PROJECT_PATH)}/jobs/artifacts/v#{version}-ee/raw/artifacts/image_versions.txt?job=component-details")
+      puts "Fetching component list from #{artifact_uri}"
       res = get_api(artifact_uri)
       components = res.body.split("\n")
       components.map { |c| c.split(":") }.to_h
@@ -44,9 +45,10 @@ class CNGImageSync
 
     def pull_and_tag_images(initial_registry, new_registry, components)
       components.each do |component, version|
-        puts "#{component}:#{version}"
         initial_ref = "#{initial_registry}/#{component}:#{version}".downcase
         target_repo = "#{new_registry}/#{component}".downcase
+        puts "Pulling #{initial_ref}"
+        STDOUT.flush
 
         image = Docker::Image.create(fromImage: initial_ref)
         image.tag(repo: target_repo, tag: version)
@@ -56,6 +58,8 @@ class CNGImageSync
     def push_images(registry, components)
       components.each do |component, version|
         ref = "#{registry}/#{component}:#{version}".downcase
+        puts "Pushing #{ref}"
+        STDOUT.flush
         image = Docker::Image.get(ref)
         image.push(nil, repo_tag: ref)
       end
