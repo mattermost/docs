@@ -41,7 +41,7 @@ from the parent chart, these values will be:
 registry:
   enabled:
   image:
-    tag: 2.6
+    tag: '2.7.1'
     pullPolicy: IfoNtPresent
   annotations:
   service:
@@ -146,7 +146,7 @@ You can change the included version of the Registry and `pullPolicy`.
 
 Default settings:
 
-- `tag: '2.6'`
+- `tag: '2.7.1'`
 - `pullPolicy: 'IfNotPresent'`
 
 ## Configuring the `service`
