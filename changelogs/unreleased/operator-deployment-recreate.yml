@@ -1,0 +1,5 @@
+---
+title: Update operator to use recreate deployment strategy
+merge_request: 728
+author:
+type: changed
