@@ -22,6 +22,46 @@ of the GitLab chart, then you are encountering a bug. Please open an issue on ou
 [issue #630](https://gitlab.com/charts/gitlab/issues/630) where we recovered our
 CI server from this problem.
 
+## Application containers constantly initializing
+
+If you experience Sidekiq, Unicorn, or other Rails based containers in a constant
+state of Initializing, you're likely waiting on the `dependencies` container to
+pass.
+
+If you check the logs of a given Pod specifically for the `dependencies` container,
+you may see the following repeated:
+
+```
+Checking database connection and schema version
+WARNING: This version of GitLab depends on gitlab-shell 8.7.1, ...
+Database Schema
+Current version: 0
+Codebase version: 20190301182457
+```
+
+This is an indication that the `migrations` Job has not yet completed. The purpose
+of this Job is to both ensure that the database is seeded, as well as all
+relevant migrations are in place. The application containers are attempting to
+wait for the database to be at or above their expected database version. This is
+to ensure that the application does not malfunction to the schema not matching
+expectations of the codebase.
+
+1. Find the `migrations` Job. `kubectl get job -lapp=migrations`
+1. Find the Pod being run by the Job. `kubectl get pod -ljob-name=<job-name>`
+1. Examine the output, checking the `STATUS` column.
+
+If the `STATUS` is `Running`, continue. If the `STATUS` is `Completed`, the application conainers should start shortly after the next check passes.
+
+Examine the logs from this pod. `kubectl logs <pod-name>`
+
+Any failures during the run of this job should be addressed. These will block
+the use of the application until resolved. Possible problems are:
+
+- Unreachable or failed authentication to the configured PostgreSQL database
+- Unreachable or failed authentication to the configured Redis services
+- Failure to reach a Gitaly instance
+
+
 ## Included GitLab Runner failing to register
 
 This can happen when the runner registration token has been changed in GitLab. (This often happens after you have restored a backup)
