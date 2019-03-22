@@ -9,8 +9,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Release Date 2019-04-16
 
 ### Highlights
- - Bot accounts (?)
  - Configuration in database (?)
+ - Restricted System Admin (?)
 
 ### Improvements
 
