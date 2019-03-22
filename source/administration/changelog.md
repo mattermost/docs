@@ -11,6 +11,8 @@ Release Date 2019-04-16
 ### Highlights
  - Configuration in database (?)
  - Restricted System Admin (?)
+ - Interactive ephemeral messages (?)
+ - Elasticsearch autocomplete (?)
 
 ### Improvements
 
