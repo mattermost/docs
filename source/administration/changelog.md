@@ -13,6 +13,7 @@ Release Date 2019-04-16
  - Restricted System Admin (?)
  - Interactive ephemeral messages (?)
  - Elasticsearch autocomplete (?)
+ - One directional scrolling (?)
 
 ### Improvements
 
@@ -47,6 +48,7 @@ Release Date 2019-04-16
  - Fixed an issue where big selects in interactive dialogs weren't usable.
  - Fixed an issue where a channel did not get removed from the Unreads section if user navigated out of it via a permalink.
  - Fixed an issue where a link from Access Control Groups to Group Filter on AD/LDAP did not work for subpath Site URL.
+ - Fixed an issue where expired channels appeared in "My Channels" section of channel switcher if using the setting for "Automatically Close Direct Messages".
  
 ### Compatibility
 
@@ -64,6 +66,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``GetUsers`` API method to add ability to list users.
  - Added the ``SearchPostsInTeam`` method to the plugin API to be able to search posts in a team.
  - Added ``GetTeamMembersForUser`` and ``GetChannelMembersForUser`` to the plugin API to add ability to get team and channel members for a specific user.
+ - Added ``GetBundleInfo() string`` method to the plugin API to add the ability to store assets elsewhere.
 
 ### Known Issues
  
