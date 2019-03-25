@@ -10,7 +10,7 @@ Notes:
 
 Pre-work for the current release begins at the code complete date of the previous release. See "Code Complete" section below for details.
 
-### B. (T-minus 15 working days)
+### B. (T-minus 16 working days)
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
@@ -29,7 +29,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Prepare bullet points and release headline for release announcement. Release manager to review the outline (benefits and order of major features) with PMs before sending to Justin to work on
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
     
-### C. (T-minus 14 working days) Release Bug Testing
+### C. (T-minus 15 working days) Release Bug Testing
 
 1. QA:
     - Prioritize testing merged PRs and resolved tickets for this release
@@ -37,7 +37,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Prioritize updating tests in the Release Testing spreadsheet and in Selenium IDE
     - Identify most-affected areas and queue Selenium tests to be updated and run
 
-### D. (T-minus 13 working days) Judgment Day
+### D. (T-minus 14 working days) Judgment Day
 
 1. **(Team) Judgment Day Meeting (10:00am San Francisco time)**: 
     - Discuss worst bug on master
