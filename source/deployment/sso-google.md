@@ -3,8 +3,7 @@ ___
 
 Follow these steps to configure Mattermost to use Google as a single sign-on (SSO) service for team creation, account creation and sign-in.
 
-.. note::
-    Google SSO is not yet supported in the mobile app. If you want to use Google SSO on mobile, you'll have to [build your own app](https://developers.mattermost.com/contribute/mobile/build-your-own/).
+**Note: Google SSO is not yet supported in the mobile app. If you want to use Google SSO on mobile, you'll have to [build your own app](https://developers.mattermost.com/contribute/mobile/build-your-own/).**
 
 1 - [Log in](https://accounts.google.com/login) to your Google account.
 
