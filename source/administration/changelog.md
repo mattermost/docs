@@ -26,6 +26,8 @@ Release Date 2019-04-16
  - Words that trigger mentions now support Chinese.
  - Added support for rendering emojis and hyperlinks in message attachment title.
  - Added support for showing channel name in post input placeholder.
+ - Created a new set of widgets to build dropdown menus.
+ - Added support for markdown in plugin system console help text fields.
  
 #### Bulk Import/Export
  - Added User Preference fields in the bulk export.
@@ -43,6 +45,8 @@ Release Date 2019-04-16
  - Split manage emoji permissions into create, delete own and delete others (Advanced Permissions).
  - Updated Mattermost to default to console logging in a human readable format.
  - Added support for LDAP groups search.
+ - Added a setting to the system console to change the minimum length of hashtags.
+ - Added new configuration for setting Reply-To header in outbound Mattermost emails.
 
 ### Bug Fixes
  - Fixed an issue where big selects in interactive dialogs weren't usable.
