@@ -41,6 +41,11 @@ class CNGImageSync
     end
 
     def authenticate_registry(registry, password)
+      # `CI_REGISTRY_USER` variable translates to `gitlab-ci-token` internally,
+      # which will work with GitLab's container registry authentication as long
+      # as the password is a valid PAT. In other words, as long as the password
+      # is a valid PAT, we need not bother about a username and can simply use
+      # `gitlab-ci-token`, which is what we are doing here.
       Docker.authenticate!(username: ENV['CI_REGISTRY_USER'], password: password, serveraddress: registry)
     end
 
