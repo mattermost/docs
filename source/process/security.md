@@ -336,6 +336,8 @@ For more information on Business Resiliency, see the [Mattermost Business Contin
 
 1. Business process, HR process and policies are regularly reviewed for potential threats and vulnerabilities.
 
+1. A penetration test on the software is performed regularly. A copy of penetration results may be requested by customers upon five (5) day written notice at any time, but no more than once per twelve (12) month period.
+
 ## Business Continuity Plan
 
 This document outlines Mattermost, Inc.'s **Disaster Recovery and Business Continuity Plan (DRBCP)** informed by the Federal Financial Institutions Examination Council guidelines on Business Continuity Planning in the context of Mattermost, Inc. being a vendor providing self-hosted software and consulting services to financial institutions. 
