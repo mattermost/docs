@@ -47,8 +47,10 @@ Release Date 2019-04-16
  - Added support for LDAP groups search.
  - Added a setting to the system console to change the minimum length of hashtags.
  - Added new configuration for setting Reply-To header in outbound Mattermost emails.
+ - Added support for invalidating all email invitations from the system console.
 
 ### Bug Fixes
+ - Fixed an issue where enterprise features became unavailable when the enterprise license expired with a 15 day grace period.
  - Fixed an issue where big selects in interactive dialogs weren't usable.
  - Fixed an issue where a channel did not get removed from the Unreads section if user navigated out of it via a permalink.
  - Fixed an issue where a link from Access Control Groups to Group Filter on AD/LDAP did not work for subpath Site URL.
