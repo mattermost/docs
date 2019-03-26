@@ -23,12 +23,25 @@ When opened, edit it to look something like the following:
 		ServerName mysubdomain.mydomain.com
 		ServerAdmin hostmaster@mydomain.com
 		ProxyPreserveHost On
+		ProxyRequests Off
 		
 		RewriteEngine On
 		RewriteCond %{REQUEST_URI} /api/v[0-9]+/(users/)?websocket [NC,OR]
 		RewriteCond %{HTTP:UPGRADE} ^WebSocket$ [NC,OR]
 		RewriteCond %{HTTP:CONNECTION} ^Upgrade$ [NC]
 		RewriteRule .* ws://127.0.0.1:8065%{REQUEST_URI} [P,QSA,L]
+		RewriteCond %{DOCUMENT_ROOT}/%{REQUEST_FILENAME} !-f
+		RewriteRule .* http://127.0.0.1:8065%{REQUEST_URI} [P,QSA,L]
+		RequestHeader set X-Forwarded-Proto "https"
+
+		RequestHeader unset If-Modified-Since
+		RequestHeader unset If-None-Match
+
+		<LocationMatch "/api/(?<version>v[0-9]+)/(?<users>users/)?websocket$">
+			Require all granted
+			ProxyPassReverse ws://127.0.0.1:8065/api/v%{env:MATCH_VERSION}/%{env:MATCH_USERS}websocket
+			ProxyPassReverseCookieDomain 127.0.0.1 mattermost.mycompany.ch
+		</LocationMatch>
 
 		<Location />
 			Require all granted
