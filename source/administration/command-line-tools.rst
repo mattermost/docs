@@ -1663,6 +1663,7 @@ mattermost webhook
     -  `mattermost webhook list`_ - List all webhooks.
     -  `mattermost webhook modify-incoming`_ - Modify an existing incoming webhook by changing its title, description, channel or icon url.
     -  `mattermost webhook modify-outgoing`_ - Modify an existing outgoing webhook by changing its title, description, channel, icon, url, content-type, and triggers.
+    -  `mattermost webhook move-outgoing`_ - Move an existing outgoing webhook to a new team.
 
 mattermost webhook create-incoming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1813,6 +1814,23 @@ mattermost webhook modify-outgoing
           --icon [iconURL]              Icon URL 
 	  --url [callbackURL]           Callback URL 
 	  --content-type string         Content type 
+
+mattermost webhook move-outgoing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Move an existing outgoing webhook to a new team.
+
+  Format
+    .. code-block:: none
+
+      mattermost webhook move-outgoing {newTeam} {oldTeam}:{webhookId}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost webhook move-outgoing [newTeam] [oldTeam]:[webhookId]
+ 
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
