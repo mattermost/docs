@@ -71,6 +71,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added the ``SearchPostsInTeam`` method to the plugin API to be able to search posts in a team.
  - Added ``GetTeamMembersForUser`` and ``GetChannelMembersForUser`` to the plugin API to add ability to get team and channel members for a specific user.
  - Added ``GetBundleInfo() string`` method to the plugin API to add the ability to store assets elsewhere.
+ 
+### Websocket Event Changes
+
+### Database Changes
 
 ### Known Issues
  
