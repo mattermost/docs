@@ -10,7 +10,6 @@ Release Date 2019-04-16
 
 ### Highlights
  - Configuration in database (?)
- - Restricted System Admin (?)
  - Interactive ephemeral messages (?)
  - Elasticsearch autocomplete (?)
  - One directional scrolling (?)
@@ -52,6 +51,7 @@ Release Date 2019-04-16
  - Added a setting to the system console to change the minimum length of hashtags.
  - Added new configuration for setting Reply-To header in outbound Mattermost emails.
  - Added support for invalidating all email invitations from the system console.
+ - Cloud - Restricted System Admin.
 
 ### Bug Fixes
  - Fixed an issue where enterprise features became unavailable when the enterprise license expired with a 15 day grace period.
