@@ -512,21 +512,22 @@ NOTE: **Note:** Commas are considered [special characters](https://github.com/ku
 
 #### Using a custom CA or self signed LDAP certificates
 
-If the LDAP server uses a custom CA or self-signed certificate you must:
+If the LDAP server uses a custom CA or self-signed certificate, you must:
 
 1. Ensure that the custom CA/Self-Signed certificate is created as a secret in the cluster/namespace:
-```bash
-kubectl -n gitlab create secret generic my-custom-ca --from-file=my-custom-ca.pem
-```
+
+   ```bash
+   kubectl -n gitlab create secret generic my-custom-ca --from-file=my-custom-ca.pem
+   ```
 
 1. Then, specify:
 
-```bash
---set global.certificates.customCAs[0].secret=my-custom-ca.pem
---set global.appConfig.ldap.servers.main.ca_file=/etc/ssl/certs/ca-cert-my-custom-ca.pem
-```
+   ```bash
+   --set global.certificates.customCAs[0].secret=my-custom-ca.pem
+   --set global.appConfig.ldap.servers.main.ca_file=/etc/ssl/certs/ca-cert-my-custom-ca.pem
+   ```
 
-This will ensure that the CA is mounted in the relevant pods under `/etc/ssl/certs/ca-cert-my-custom-ca.pem` and specifies it's use in the LDAP configuration.
+This will ensure that the CA is mounted in the relevant pods under `/etc/ssl/certs/ca-cert-my-custom-ca.pem` and specifies its use in the LDAP configuration.
 
 ### OmniAuth
 
