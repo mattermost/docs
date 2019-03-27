@@ -14,11 +14,15 @@ Release Date 2019-04-16
  - Interactive ephemeral messages (?)
  - Elasticsearch autocomplete (?)
  - One directional scrolling (?)
+ - NPS (?)
 
 ### Improvements
 
+#### (Category?)
  - Implemented CSRF protection Tokens.
- - Added support for joining a team after a user logins with the link to join a team and is prompted to set up MFA for the first time.
+ - Added support for joining a team after a user logs in with the link to join a team and is prompted to set up MFA for the first time.
+ - Added plugin support for bot accounts.
+ - Created a plugin component to override file previews.
 
 #### User Interface (UI)
  - Added ability to use "c" and "sh" for code block syntax highlighting.
