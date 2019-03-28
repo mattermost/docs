@@ -72,36 +72,36 @@ spec:
     matchLabels:
       app.kubernetes.io/name: {{ .Release.Name }}
   componentKinds:
-  - apiVersion: v1
+  - group: core
     kind: ConfigMap
-  - apiVersion: v1
+  - group: core
     kind: Service
-  - apiVersion: v1
+  - group: core
     kind: ServiceAccount
-  - apiVersion: rbac.authorization.k8s.io/v1
+  - group: rbac.authorization.k8s.io
     kind: Role
-  - apiVersion: rbac.authorization.k8s.io/v1
+  - group: rbac.authorization.k8s.io
     kind: RoleBinding
 {{ if eq .Values.global.application.allowClusterRoles true -}}
-  - apiVersion: rbac.authorization.k8s.io/v1
+  - group: rbac.authorization.k8s.io
     kind: ClusterRole
-  - apiVersion: rbac.authorization.k8s.io/v1
+  - group: rbac.authorization.k8s.io
     kind: ClusterRoleBinding
 {{- end }}
-  - apiVersion: batch/v1
+  - group: batch
     kind: Job
-  - apiVersion: v1
+  - group: core
     kind: Secret
-  - apiVersion: extensions/v1beta1
+  - group: extensions
     kind: Ingress
-  - apiVersion: v1
+  - group: core
     kind: PersistentVolumeClaim
-  - apiVersion: apps/v1beta2
+  - group: apps
     kind: Deployment
-  - apiVersion: autoscaling/v2beta1
+  - group: autoscaling
     kind: HorizontalPodAutoscaler
-  - apiVersion: apps/v1beta2
+  - group: apps
     kind: StatefulSet
-  - apiVersion: policy/v1beta1
+  - group: policy
     kind: PodDisruptionBudget
 {{- end -}}
