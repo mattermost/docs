@@ -59,6 +59,7 @@ Release Date 2019-04-16
  - Fixed an issue where a channel did not get removed from the Unreads section if user navigated out of it via a permalink.
  - Fixed an issue where a link from Access Control Groups to Group Filter on AD/LDAP did not work for subpath Site URL.
  - Fixed an issue where expired channels appeared in "My Channels" section of channel switcher if using the setting for "Automatically Close Direct Messages".
+ - Fixed an issue where the text box reverted to default size after user returned from Integrations page.
  
 ### Compatibility
 
