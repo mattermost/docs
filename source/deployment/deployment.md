@@ -25,7 +25,7 @@ Native applications for iOS and Android are available for interacting with the M
 
 ### Mobile Web Experience
 
-End users can securely share messages and files using a web-mobiled-based Mattermost experience on iOS and Android devices. Please see [Software and Hardware Requirements](http://docs.mattermost.com/install/requirements.html) documentation for full details.
+End users can securely share messages and files using a mobile Web-based Mattermost experience on iOS and Android devices. Please see [Software and Hardware Requirements](http://docs.mattermost.com/install/requirements.html) documentation for full details.
 
 ### Email Client
 
@@ -165,7 +165,7 @@ Images and files shared by users are stored and retrieved in one of three option
 
 ## Deployment Options
 
-Mattermost Enterprise Edition customers can contact Mattermost, Inc. for advisory on deployment options for their specific environments. The following section describes common deployment configurations.
+Mattermost Enterprise Edition customers can contact Mattermost, Inc. for advice on deployment options for their specific environments. The following section describes common deployment configurations.
 
 ### Mobile devices with VPN clients (recommended)
 

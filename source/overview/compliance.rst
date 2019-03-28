@@ -19,7 +19,7 @@ Mattermost is a collaboration hub for highly-trusted organizations and is commit
 
 - **Security Infrastructure** - Continual investment in security, privacy and compliance capabilities 
 - **Contractual Obligations** - Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://about.mattermost.com/default-data-processing-addendum/>`__ in our standard `Terms of Service <https://about.mattermost.com/terms>`__
-- **Privacy Measures** - Privacy measures are outlined in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
+- **Privacy Measures** - Self-certification to international standards for data transfer standards including **E.U.-U.S. Privacy Shield**. Privacy measures are outlined in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
 - **Product Features** to ensure data management and data portability
 
 To say up to date with our efforts, please subscribe to `our regular newsletter <https://about.mattermost.com/newsletter/>`__. 
@@ -44,6 +44,8 @@ Mattermost adheres to contractual obligations for ensuring the proper management
 
 Privacy Measures 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost self-certifies that it adheres to the **E.U.-U.S. Privacy Shield** principles of notice, choice, onward transfer, security, data integrity, access and enforcement for personal data submitted by our customers and partners. 
 
 Mattermost outlines security measures to maintain the safety of personal data submitted by our customers and partners in our `Privacy Policy <https://mattermost.com/privacy-policy/>`__.
 
@@ -151,7 +153,7 @@ located at `BIS <https://www.bis.doc.gov/index.php/forms-documents/regulations-d
 **WMD (Weapons of Mass Destruction)**: Mattermost, its customers and its business partners may not export to parties involved
 in `proliferation <https://www.bis.doc.gov/index.php/documents/regulation-docs/413-part-736-general-prohibitions/file>`__ of weapons of mass destruction, along with other prohibited end-uses under the U.S. Export Administration Regulations (“EAR”).
 
-**General Prohibitions**: Information on General Prohibitions under the EAR is located `here <https://www.bis.doc.gov/index.php/forms-documents/doc_view/413-part-736-general-prohibitions>`__. Application of the applicability of these General Prohibitions is based on a combination of factors. These include: classification of the commodity, destination, end-user, end-use and conduct.
+**General Prohibitions**: Information on General Prohibitions under the EAR is located `here <https://www.bis.doc.gov/index.php/documents/regulations-docs/413-part-736-general-prohibitions/file>`__. Application of the applicability of these General Prohibitions is based on a combination of factors. These include: classification of the commodity, destination, end-user, end-use and conduct.
 
 **Restricted Parties**: You may not export to parties listed on the US government's `restricted parties lists <https://www.bis.doc.gov/index.php/policy-guidance/lists-of-parties-of-concern>`__, and should be screening against these prior to export. There is a `consolidated screening list <http://apps.export.gov/csl-search#/csl-search>`__ provided by the U.S. government at export.gov at no charge that can be used for screening.
 

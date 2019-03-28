@@ -53,19 +53,17 @@ Mattermost supports plugin uploads by System Admins, which allow you to customiz
 
 By default, plugin uploads are disabled on your server. To enable them, set **PluginSettings > EnableUploads** to ``true`` in your ``config.json`` file. You can disable plugin uploads anytime to control which plugins are installed on your server. This action won't disable plugins already installed on your server.
 
-Once enabled, install plugins in one of the following ways:
+Once enabled, install plugins in one of the following ways. The steps assume you previously generated a ``plugin.tar.gz`` file.
 
 1) Through System Console UI:
  - Log in to Mattermost as a System Admin.
- - Navigate to **Plugins > Management** and upload the `plugin.tar.gz` you generated above.
+ - Navigate to **Plugins > Management** and upload ``plugin.tar.gz``.
  - Click "Activate" under the plugin after it has uploaded.
 
 2) Manually:
- - Extract `plugin.tar.gz` to a folder with the same name as the plugin id you specified in ``plugin.json/plugin.json``.
- - Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to ``./plugins``.
+ - Extract ``plugin.tar.gz`` to a folder with the same name as the plugin id you specified in ``plugin.json``.
+ - Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to ``./plugins`` relative to your Mattermost installation directory.
  - Restart the Mattermost server.
-
-If you run your Mattermost server in `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`__, plugins need to be uploaded on all app servers manually.
 
 Once installed, your plugins directory should look similar to:
 
@@ -91,6 +89,25 @@ Once installed, your plugins directory should look similar to:
   │       └── zoom_bundle.js
 
 It is recommended that you automate plugin deployment as part of your Mattermost deployment jobs.
+
+Plugin Uploads in High Availability Mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you run your Mattermost server in `High Availability mode <https://docs.mattermost.com/deployment/cluster.html>`_, you must manually extract the plugin package into the Mattermost server plugins directory on each server. The steps assume you previously generated a ``plugin.tar.gz`` file:
+
+1. Extract ``plugin.tar.gz`` to a folder with the same name as the plugin id specified in ``plugin.json``.
+2. Add the plugin to the directory set by **PluginSettings > Directory** in your ``config.json`` file. If none is set, defaults to ``./plugins`` relative to your Mattermost installation directory. The resulting directory structure should look something like:
+
+.. code-block:: none
+
+  mattermost/
+      plugins/
+          com.mattermost.server-hello-world/
+              plugin.json
+              plugin.exe
+
+3. Repeat step 2 for each server.
+4. Restart each Mattermost server.
 
 Frequently Asked Questions (FAQ)
 ---------------------------------

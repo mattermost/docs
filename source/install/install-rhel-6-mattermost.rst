@@ -1,4 +1,4 @@
-..  _install-rhel-71-mattermost:
+..  _install-rhel-66-mattermost:
 
 Installing Mattermost Server
 ============================
@@ -7,7 +7,7 @@ Install Mattermost Server on a 64-bit machine.
 
 Assume that the IP address of this server is 10.10.10.2
 
-**To install Mattermost Server on RHEL 7.1**
+**To install Mattermost Server on RHEL 6**
 
 1. Log in to the server that will host Mattermost Server and open a terminal window.
 
@@ -17,7 +17,7 @@ Assume that the IP address of this server is 10.10.10.2
 
 3. Extract the Mattermost Server files.
 
-  ``tar -xvzf *.gz``
+  ``tar xvzf *.gz``
 
 4. Move the extracted file to the ``/opt`` directory.
 
@@ -30,7 +30,7 @@ Assume that the IP address of this server is 10.10.10.2
   .. note::
     The storage directory will contain all the files and images that your users post to Mattermost, so you need to make sure that the drive is large enough to hold the anticipated number of uploaded files and images.
 
-6. Set up a system user and group called ``mattermost`` that will run this service, and set the ownership and permissions.
+6. Set up a system user and group called *mattermost* that will run this service, and set the ownership and permissions.
 
   a. ``sudo useradd --system --user-group mattermost``
   b. ``sudo chown -R mattermost:mattermost /opt/mattermost``
@@ -40,68 +40,43 @@ Assume that the IP address of this server is 10.10.10.2
 
   -  If you are using PostgreSQL:
     1.  Set ``"DriverName"`` to ``"postgres"``
-    2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>`` and ``<host-name-or-IP>`` with the appropriate values:
+    2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values:
      ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"``.
   -  If you are using MySQL:
     1.  Set ``"DriverName"`` to ``"mysql"``
-    2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>`` and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``:
+    2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>``  and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``:
       ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"``
 
 8. Test the Mattermost server to make sure everything works.
 
     a. Change to the ``mattermost`` directory:
       ``cd /opt/mattermost``
-    b. Start the Mattermost server as the user mattermost:
+    b. Start the Mattermost server as the user *mattermost*:
 
       ``sudo -u mattermost ./bin/mattermost``
 
   When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing CTRL+C in the terminal window.
 
-9. Set up Mattermost to use the systemd init daemon which handles
-   supervision of the Mattermost process.
+9. Setup Mattermost to use the Upstart daemon which handles supervision of the Mattermost process.
 
   a. Create the Mattermost configuration file:
 
-    ``sudo touch /etc/systemd/system/mattermost.service``
+    ``sudo touch /etc/init/mattermost.conf``
 
   b. Open the configuration file in your favorite text editor, and copy the following lines into the file:
 
     .. code-block:: none
 
-      [Unit]
-      Description=Mattermost
-      After=syslog.target network.target postgresql-9.4.service
-
-      [Service]
-      Type=notify
-      WorkingDirectory=/opt/mattermost
-      User=mattermost
-      ExecStart=/opt/mattermost/bin/mattermost
-      PIDFile=/var/spool/mattermost/pid/master.pid
-      TimeoutStartSec=3600
-      LimitNOFILE=49152
-
-      [Install]
-      WantedBy=multi-user.target
-
-    .. note::
-      If you are using MySQL, replace ``postgresql-9.4.service`` by ``mysqld.service`` in the ``[unit]`` section.
-     
-  c. Make the service executable.
-
-    ``sudo chmod 664 /etc/systemd/system/mattermost.service``
-
-  d. Reload the systemd services.
-
-    ``sudo systemctl daemon-reload``
-
-  e. Set Mattermost to start on boot.
-
-    ``sudo systemctl enable mattermost``
+      start on runlevel [2345]
+      stop on runlevel [016]
+      respawn
+      limit nofile 50000 50000
+      chdir /opt/mattermost
+      exec bin/mattermost
 
 10. Start the Mattermost server.
 
-  ``sudo systemctl start mattermost``
+  ``sudo start mattermost``
 
 11. Verify that Mattermost is running.
 

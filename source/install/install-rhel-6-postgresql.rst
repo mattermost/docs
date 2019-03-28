@@ -1,4 +1,4 @@
-..  _install-rhel-71-postgresql:
+..  _install-rhel-6-postgresql:
 
 Installing PostgreSQL Database
 ==============================
@@ -7,18 +7,11 @@ Installing PostgreSQL Database
 
 2. Download the PostgreSQL 9.4 Yum repository.
 
-  For RHEL 7
-    ``curl -O https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-redhat94-9.4-3.noarch.rpm``
-  For CentOS 7
-    ``curl -O https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-centos94-9.4-3.noarch.rpm``
-  For Scientific Linux
-    ``curl -O https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-sl94-9.4-3.noarch.rpm``
-  For Oracle
-    ``curl -O https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64/pgdg-oraclelinux-9.4-3.noarch.rpm``
+  ``wget https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-6-x86_64/pgdg-redhat94-9.4-3.noarch.rpm``
 
 3. Install the Yum repository from the file that you downloaded.
 
-  ``sudo yum localinstall pgdg-*-9.4-3.noarch.rpm``
+  ``sudo yum localinstall pgdg-redhat94-9.4-3.noarch.rpm``
 
 4. Install PostgreSQL.
 
@@ -26,19 +19,19 @@ Installing PostgreSQL Database
 
 5. Initialize the database.
 
-  ``sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb``
+  ``sudo service postgresql-9.4 initdb``
 
 6. Set PostgreSQL to start on boot.
 
-  ``sudo systemctl enable postgresql-9.4``
+  ``sudo chkconfig postgresql-9.4 on``
 
 7. Start the PostgreSQL server.
 
-  ``sudo systemctl start postgresql-9.4``
+  ``sudo service postgresql-9.4 start``
 
 8. Switch to the *postgres* Linux user account that was created during the installation.
 
-  ``sudo -iu postgres``
+  ``sudo --login --user postgres``
 
 9. Start the PostgreSQL interactive terminal.
 
@@ -67,9 +60,9 @@ Installing PostgreSQL Database
 
   ``exit``
 
-15. Allow PostgreSQL to listen on all assigned IP Addresses.
+15. Allow Postgres to listen on all assigned IP Addresses.
 
-  a. Open ``/var/lib/pgsql/9.4/data/postgresql.conf`` as root in a text editor.
+  a. Open ``/etc/postgresql/9.4/main/postgresql.conf`` as root in a text editor.
 
   b. Find the following line:
 
@@ -81,7 +74,7 @@ Installing PostgreSQL Database
 
   d. Restart PostgreSQL for the change to take effect:
 
-    ``sudo systemctl restart postgresql-9.4``
+    ``sudo service postgresql-9.4 restart``
 
 16. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database.
 
@@ -107,7 +100,7 @@ Installing PostgreSQL Database
 
 17. Reload PostgreSQL:
 
-  ``sudo systemctl reload postgresql-9.4``
+  ``sudo service postgresql-9.4 reload``
 
 18. Verify that you can connect with the user *mmuser*.
 

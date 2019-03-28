@@ -33,11 +33,12 @@ Production Docker Setup on Ubuntu
 3. **Deploy the Mattermost Production Docker** setup by running:
 
    .. code:: bash
-
+   
+       sudo apt-get install git
        git clone https://github.com/mattermost/mattermost-docker.git
        cd mattermost-docker
        docker-compose build
-       mkdir -pv ./volumes/app/mattermost/{data,logs,config}
+       mkdir -pv ./volumes/app/mattermost/{data,logs,config,plugins,client-plugins}
        chown -R 2000:2000 ./volumes/app/mattermost/
        docker-compose up -d
 

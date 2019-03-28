@@ -267,6 +267,8 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
     - Update @mattermosthq Twitter profile with the next release date
     - Prepare retweet of GitLab release tweet ([see example here](https://community.mattermost.com/core/pl/k7wchwj5mtrhucj6don96yx3sc))
+7. QA:
+    - Merge any updates made to Selenium tests during release testing
 
 ### K. (T-plus 5 working days) Release Updates
 1. Release Manager:

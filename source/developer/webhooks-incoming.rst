@@ -41,11 +41,11 @@ Let's learn how to create a simple incoming webhook that posts the following mes
   # or
   curl -i -X POST --data-urlencode 'payload={"text": "Hello, this is some text\nThis is more text. :tada:"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
-If you're running cURL on Windows, ensure inner double quotes are escaped with a backslash. Here's an example payload on Windows:
+If you're running `cURL on Windows <https://curl.haxx.se/windows/>`__, ensure inner double quotes are escaped with a backslash. Here's an example payload on Windows:
 
 .. code-block:: text
 
-  curl -i -X POST -H 'Content-Type: application/json' -d '{\"text\": \"Hello, this is some text\nThis is more text. :tada:\"}' http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
+  curl -i -X POST -H "Content-Type: application/json" -d "{\"text\": \"Hello, this is some text\nThis is more text. :tada:\"}" http://{your-mattermost-site}/hooks/xxx-generatedkey-xxx
 
 See `developer documentation <https://developers.mattermost.com/integrate/incoming-webhooks/>`__ for details on what parameters are supported by incoming webhooks. For instance, you can override the username and profile picture the messages post as, or specify a custom post type when sending a webhook message for use by `plugins <https://about.mattermost.com/default-plugins>`__. The following payload gives an example webhook that uses additional parameters and formatting options:
 

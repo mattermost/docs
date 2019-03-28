@@ -11,7 +11,7 @@ If enabled by your System Admin, you can add people to your team in one of three
 Direct Invites
 ~~~~~~~~~~~~~~
 
-Direct invites are invitation emails sent from your team's server directly to the invited person's email address. A link within the invitation directs them to an account creation page. Invitation links sent by email expire after 24 hours or invalidate immediately if the System Admin regenerates the `Email Invite Salt <https://docs.mattermost.com/administration/config-settings.html#email-invite-salt>`_.
+Direct invites are invitation emails sent from your team's server directly to the invited person's email address. A link within the invitation directs them to an account creation page. Invitation links sent by email expire after 48 hours and can be used only one time.
 
 **To send a direct invite**:
 
@@ -48,7 +48,7 @@ If someone you want to add to your team already has an account on the server, yo
 User Roles
 ----------
 
-There are four types of user roles with different permission levels in Mattermost: System Admins, Team Admins, Members, and Inactive accounts. To view a list of users on the team and what their roles are, Team Administrators can go to the three dot **Main Menu** and select **Manage Members**.
+There are five types of user roles with different permission levels in Mattermost: System Admins, Team Admins, Channel Admins, Members, and Inactive accounts. To view a list of users on the team and what their roles are, Team Administrators can go to the three dot **Main Menu** and select **Manage Members**.
 
 Member
 ~~~~~~

@@ -47,7 +47,7 @@ PC Web
     "Firefox", "v60+"
     "Safari", "v12+"
     "Internet Explorer", "v11*"
-    "Edge", "v42+"
+    "Edge", "v44+"
 
 `*` IE 11 Compatibility View and mobile view are not supported. 
 
@@ -58,7 +58,7 @@ Mobile Apps
     :header: "Operating System", "Technical Requirement"
 
     "iOS", "iPhone 5s devices and later with iOS 11+"
-    "Android", "Android devices with Android 8+"
+    "Android", "Android devices with Android 7+"
 
 `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. `Follow these instructions to configure IWA to fall back to forms-based authentication <https://docops.ca.com/ca-single-sign-on/12-7/en/configuring/policy-server-configuration/authentication-schemes/authentication-chaining/configure-iwa-fallback-to-forms-using-authentication-chain>`__.
 
@@ -69,7 +69,7 @@ Mobile Web
     :header: "Browser", "Technical Requirement"
 
     "iOS", "iOS 11+ with Safari 12+ or Chrome 56+"
-    "Android", "Android 8+ with Chrome 56+"
+    "Android", "Android 7+ with Chrome 56+"
 
 Email Client
 ^^^^^^^^^^^^
@@ -84,7 +84,7 @@ Server Software
 Mattermost Server Operating System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
--  Ubuntu 14.04, Ubuntu 16.04, Debian Jessie, CentOS 6.6+, CentOS 7.1+, RedHat Enterprise Linux 6.6+, RedHat Enterprise Linux 7.1+, Oracle Linux 6.6+, Oracle Linux 7.1+
+- Ubuntu 14.04, Ubuntu 16.04, Debian Stretch, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 6+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+
 - Using Mattermost `Docker image <https://docs.mattermost.com/install/prod-docker.html>`__ on a Docker-compatible operating system (Linux-based OS is still recommended)
 
 While community support exists for Fedora, FreeBSD and Arch Linux, Mattermost does not currently include production support for these platforms.
@@ -111,7 +111,7 @@ Search limitations on MySQL:
 
 **MySql 8 Support**:
 
-In MySQL 8.0.4, the deafult authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password`` (https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/). If you are using MySQL 8.0.4+, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
+In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password`` (https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/). If you are using MySQL 8.0.4+, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
 
   .. code-block:: text
    
