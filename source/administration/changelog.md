@@ -9,11 +9,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Release Date 2019-04-16
 
 ### Highlights
- - Configuration in database (?)
- - Interactive ephemeral messages (?)
- - Elasticsearch autocomplete (?)
- - One directional scrolling (?)
- - NPS (?)
+ - Configuration in database
+ - Interactive ephemeral messages
+ - Elasticsearch autocomplete
+ - One directional infinite scroll
 
 ### Improvements
 
@@ -27,39 +26,42 @@ Release Date 2019-04-16
  - Added ability to use "c" and "sh" for code block syntax highlighting.
  - Added support for plugins to create link tooltips.
  - Words that trigger mentions now support Chinese.
- - Added support for rendering emojis and hyperlinks in message attachment title.
+ - Added support for rendering emojis and hyperlinks in message attachment titles.
  - Added support for showing channel name in post input placeholder.
  - Created a new set of widgets to build dropdown menus.
  - Added support for markdown in plugin system console help text fields.
+ - Added ability to convert Excel cells to markdown table when pasting in Mattermost.
  
 #### Bulk Import/Export
  - Added User Preference fields in the bulk export.
  - Added ability to include deactivated users in bulk import.
  
 #### CLI
- - Created CLI command ``command show`` to allow seeing a slash command's detailed information.
+ - Created CLI command ``command show`` to allow seeing detailed information of a slash command.
+ - Created CLI command ``webhook show`` to allow seeing detailed information of a webhook.
  - Created CLI command ``team rename`` to allow renaming teams.
- - Created CLI command ``channel search`` to allow searching channels.
- - Created CLI command ``webhook show`` to allow seeing the webhook detailed information.
+ - Created CLI command ``channel search`` to allow searching for channels.
  
 #### Administration
  - Improved default session timeout behavour, including changing the default ``SessionLengthWebInDays`` from 30 to 180 days.
  - Added full text search to the system console panel to easily find options in the configuration.
- - Split manage emoji permissions into create, delete own and delete others (Advanced Permissions).
+ - (Advanced Permissions) Split managing emoji permissions into "create", "delete own" and "delete others".
  - Updated Mattermost to default to console logging in a human readable format.
  - Added support for LDAP groups search.
  - Added a setting to the system console to change the minimum length of hashtags.
  - Added new configuration for setting Reply-To header in outbound Mattermost emails.
  - Added support for invalidating all email invitations from the system console.
- - Cloud - Restricted System Admin.
+ - Added support for a restricted System Admin role in Cloud.
 
 ### Bug Fixes
- - Fixed an issue where enterprise features became unavailable when the enterprise license expired with a 15 day grace period.
+ - Fixed an issue where enterprise features became immediately unavailable when the enterprise license expired with a 15 day grace period.
  - Fixed an issue where big selects in interactive dialogs weren't usable.
- - Fixed an issue where a channel did not get removed from the Unreads section if user navigated out of it via a permalink.
+ - Fixed an issue where a channel did not get removed from the Unreads section if a user navigated out of it via a permalink.
  - Fixed an issue where a link from Access Control Groups to Group Filter on AD/LDAP did not work for subpath Site URL.
- - Fixed an issue where expired channels appeared in "My Channels" section of channel switcher if using the setting for "Automatically Close Direct Messages".
- - Fixed an issue where the text box reverted to default size after user returned from Integrations page.
+ - Fixed an issue where expired channels appeared in "My Channels" section of channel switcher if using the **Automatically Close Direct Messages** setting.
+ - Fixed an issue where the text box reverted to default size after a user returned from the Integrations page.
+ - Fixed an issue where the profile popover wasn't allowed to close itself when opened through an at-mention.
+ - Fixed an issue where filtering by first name with Korean characters no longer worked for at-mentions.
  
 ### Compatibility
 
@@ -74,9 +76,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - "reply-to"
 
 ### API Changes
- - Added ``GetUsers`` API method to add ability to list users.
+ - Added ``GetUsers`` API method to add the ability to list users.
  - Added the ``SearchPostsInTeam`` method to the plugin API to be able to search posts in a team.
- - Added ``GetTeamMembersForUser`` and ``GetChannelMembersForUser`` to the plugin API to add ability to get team and channel members for a specific user.
+ - Added ``GetTeamMembersForUser`` and ``GetChannelMembersForUser`` to the plugin API to add the ability to get team and channel members for a specific user.
  - Added ``GetBundleInfo() string`` method to the plugin API to add the ability to store assets elsewhere.
  
 ### Websocket Event Changes
