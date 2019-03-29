@@ -157,6 +157,7 @@ global:
       bucket: gitlab-packages
       connection: {}
     externalDiffs:
+      when:
       bucket: gitlab-mr-diffs
       connection: {}
 

@@ -81,6 +81,7 @@ data:
         enabled: {{ if kindIs "bool" $.Values.global.appConfig.packages.enabled }}{{ eq $.Values.global.appConfig.packages.enabled true }}{{ end }}
         {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "packages" "config" $.Values.global.appConfig.packages "context" $) | nindent 8 }}
       external_diffs:
+        when: {{ $.Values.global.appConfig.externalDiffs.when }}
         enabled: {{ if kindIs "bool" $.Values.global.appConfig.externalDiffs.enabled }}{{ eq $.Values.global.appConfig.externalDiffs.enabled true }}{{ end }}
         {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "external_diffs" "config" $.Values.global.appConfig.externalDiffs "context" $) | nindent 8 }}
       {{- include "gitlab.appConfig.pseudonymizer.configuration" $ | nindent 6 }}

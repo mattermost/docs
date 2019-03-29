@@ -91,6 +91,7 @@ global:
       bucket:
       connection: {}
     externalDiffs:
+      when:
       proxy_download: true
       bucket:
       connection: {}
