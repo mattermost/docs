@@ -72,10 +72,13 @@ Release Date 2019-04-16
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
  
 #### Changes to Team Edition and Enterprise Edition:
- - "RestrictSystemAdmin": false
- - "MinimumHashtagLength": 3
- - "EnableClickToReply": false
- - "EnableAutocomplete": false, "ChannelIndexReplicas": 1, "ChannelIndexShards": 1, "UserIndexReplicas": 1, "UserIndexShards": 1,
+
+- Under ``"ExperimentalSettings":`` in ``config.json``:
+   - Added ``"RestrictSystemAdmin": false``, to 
+- Under ``"ServiceSettings":`` in ``config.json``:
+   - Added ``"MinimumHashtagLength": 3``, to add the ability to change the minimum length of hashtags.
+- Under ``"ElasticsearchSettings":`` in ``config.json``: 
+   - Added ``"EnableAutocomplete": false``, ``"ChannelIndexReplicas": 1``, ``"ChannelIndexShards": 1``, ``"UserIndexReplicas": 1``, and ``"UserIndexShards": 1``, to 
 
 ### API Changes
  - Added ``GetUsers`` API method to add the ability to list users.
