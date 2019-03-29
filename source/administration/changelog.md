@@ -72,8 +72,10 @@ Release Date 2019-04-16
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
  
 #### Changes to Team Edition and Enterprise Edition:
- - ``ExperimentalSettings.RestrictSystemAdmin``
- - "reply-to"
+ - "RestrictSystemAdmin": false
+ - "MinimumHashtagLength": 3
+ - "EnableClickToReply": false
+ - "EnableAutocomplete": false, "ChannelIndexReplicas": 1, "ChannelIndexShards": 1, "UserIndexReplicas": 1, "UserIndexShards": 1,
 
 ### API Changes
  - Added ``GetUsers`` API method to add the ability to list users.
