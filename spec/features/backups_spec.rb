@@ -42,7 +42,7 @@ describe "Restoring a backup" do
     it 'Issue attachments should load correctly' do
       visit '/root/testproject1/issues/1'
 
-      image_selector = 'div.wiki > p > a > img'
+      image_selector = 'div.md > p > a > img'
 
       expect(page).to have_selector(image_selector)
       image_src = page.all("img.js-lazy-loaded")[1][:src]
