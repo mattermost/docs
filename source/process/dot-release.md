@@ -44,7 +44,7 @@ Once bug fix release is ready to cut:
 2. Release Manager:
     - Merge the Changelog PR with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-5.1))
     - Update the [version archive](https://docs.mattermost.com/administration/version-archive.html)
-    - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
+    - Update [Mattermost server download page](https://mattermost.com/download) with the links to the EE and TE bits
       - Test the download links before and after updating the page
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
       - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release. See [example](https://community.mattermost.com/core/pl/5eh8fw3jaiyzzqoc6nfwfaioya).
