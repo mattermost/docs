@@ -10,26 +10,24 @@ Usage:
      ) }}
 */}}
 {{- define "gitlab.appConfig.objectStorage.configuration" -}}
-{{ .name }}:
-  enabled: {{ if kindIs "bool" .config.enabled }}{{ eq .config.enabled true }}{{ end }}
-  object_store:
-    enabled: true
-    remote_directory: {{ .config.bucket }}
-    direct_upload: true
-    background_upload: false
-    proxy_download: {{ or (not (kindIs "bool" .config.proxy_download)) .config.proxy_download }}
-    {{- if .context.Values.global.minio.enabled }}
-    connection:
-      provider: AWS
-      region: us-east-1
-      aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
-      aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
-      host: {{ template "gitlab.minio.hostname" .context }}
-      endpoint: {{ template "gitlab.minio.endpoint" .context }}
-      path_style: true
-    {{- else if .config.connection }}
-    connection: <%= YAML.load_file("/etc/gitlab/objectstorage/{{ .name }}").to_json() %>
-    {{- end -}}
+object_store:
+  enabled: true
+  remote_directory: {{ .config.bucket }}
+  direct_upload: true
+  background_upload: false
+  proxy_download: {{ or (not (kindIs "bool" .config.proxy_download)) .config.proxy_download }}
+  {{- if .context.Values.global.minio.enabled }}
+  connection:
+    provider: AWS
+    region: us-east-1
+    aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
+    aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
+    host: {{ template "gitlab.minio.hostname" .context }}
+    endpoint: {{ template "gitlab.minio.endpoint" .context }}
+    path_style: true
+  {{- else if .config.connection }}
+  connection: <%= YAML.load_file("/etc/gitlab/objectstorage/{{ .name }}").to_json() %>
+  {{- end -}}
 {{- end -}}{{/* "gitlab.appConfig.objectStorage.configuration" */}}
 
 

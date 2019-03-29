@@ -97,11 +97,21 @@ data:
         ssl_url: {{ .gravatar.sslUrl }}
 {{ include "gitlab.appConfig.extra" . | indent 6 }}
       {{- end }}
-      {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "artifacts" "config" $.Values.global.appConfig.artifacts "context" $) | nindent 6 }}
-      {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "lfs" "config" $.Values.global.appConfig.lfs "context" $) | nindent 6 }}
-      {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "uploads" "config" $.Values.global.appConfig.uploads "context" $) | nindent 6 }}
-      {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "packages" "config" $.Values.global.appConfig.packages "context" $) | nindent 6 }}
-      {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "external_diffs" "config" $.Values.global.appConfig.externalDiffs "context" $) | nindent 6 }}
+      artifacts:
+        enabled: {{ if kindIs "bool" $.Values.global.appConfig.artifacts.enabled }}{{ eq $.Values.global.appConfig.artifacts.enabled true }}{{ end }}
+        {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "artifacts" "config" $.Values.global.appConfig.artifacts "context" $) | nindent 8 }}
+      lfs:
+        enabled: {{ if kindIs "bool" $.Values.global.appConfig.lfs.enabled }}{{ eq $.Values.global.appConfig.lfs.enabled true }}{{ end }}
+        {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "lfs" "config" $.Values.global.appConfig.lfs "context" $) | nindent 8 }}
+      uploads:
+        enabled: {{ if kindIs "bool" $.Values.global.appConfig.uploads.enabled }}{{ eq $.Values.global.appConfig.uploads.enabled true }}{{ end }}
+        {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "uploads" "config" $.Values.global.appConfig.uploads "context" $) | nindent 8 }}
+      packages:
+        enabled: {{ if kindIs "bool" $.Values.global.appConfig.packages.enabled }}{{ eq $.Values.global.appConfig.packages.enabled true }}{{ end }}
+        {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "packages" "config" $.Values.global.appConfig.packages "context" $) | nindent 8 }}
+      external_diffs:
+        enabled: {{ if kindIs "bool" $.Values.global.appConfig.externalDiffs.enabled }}{{ eq $.Values.global.appConfig.externalDiffs.enabled true }}{{ end }}
+        {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "external_diffs" "config" $.Values.global.appConfig.externalDiffs "context" $) | nindent 8 }}
       pages:
         enabled: false
       mattermost:
