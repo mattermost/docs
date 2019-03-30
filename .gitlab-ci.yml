@@ -301,6 +301,8 @@ check_docs_internal_links:
     - bundle exec nanoc
     # Check the internal links
     - bundle exec nanoc check internal_links
+    # Check the internal anchor links
+    - bundle exec nanoc check internal_anchors
 
 # ---------------------------------------------------------------------------
 
