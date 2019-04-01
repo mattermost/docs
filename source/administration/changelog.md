@@ -31,6 +31,7 @@ Release Date 2019-04-16
  - Created a new set of widgets to build dropdown menus.
  - Added support for markdown in plugin system console help text fields.
  - Added ability to convert Excel cells to markdown table when pasting in Mattermost.
+ - Added ability to render emojis in interactive message buttons.
  
 #### Bulk Import/Export
  - Added User Preference fields in the bulk export.
@@ -46,6 +47,7 @@ Release Date 2019-04-16
  - Improved default session timeout behavour, including changing the default ``SessionLengthWebInDays`` from 30 to 180 days.
  - Added full text search to the system console panel to easily find options in the configuration.
  - (Advanced Permissions) Split managing emoji permissions into "create", "delete own" and "delete others".
+ - (Advanced Permissions) Added ``List_Public_Teams``, ``Join_Public_Teams``, ``List_Private_Teams`` and ``Join_Private_Teams`` permissions.
  - Updated Mattermost to default to console logging in a human readable format.
  - Added support for LDAP groups search.
  - Added a setting to the system console to change the minimum length of hashtags.
@@ -55,7 +57,6 @@ Release Date 2019-04-16
 
 ### Bug Fixes
  - Fixed an issue where enterprise features became immediately unavailable when the enterprise license expired with a 15 day grace period.
- - Fixed an issue where big selects in interactive dialogs weren't usable.
  - Fixed an issue where a channel did not get removed from the Unreads section if a user navigated out of it via a permalink.
  - Fixed an issue where a link from Access Control Groups to Group Filter on AD/LDAP did not work for subpath Site URL.
  - Fixed an issue where expired channels appeared in "My Channels" section of channel switcher if using the **Automatically Close Direct Messages** setting.
