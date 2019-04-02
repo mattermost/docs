@@ -693,6 +693,13 @@ Fields of the User object
       <td align="center" valign="middle">No</td>
     </tr>
     <tr class="row-odd">
+      <td valign="middle">delete_at</td>
+      <td valign="middle">int64</td>
+      <td>Timestamp for when the user was deactivated. Null if active.</td>
+      <td align="center" valign="middle">No</td>
+      <td align="center" valign="middle">No</td>
+    </tr>
+    <tr class="row-odd">
       <td valign="middle">teams</td>
       <td valign="middle">array</td>
       <td>The teams which the user will be made a member of. Must be an array of <b>UserTeamMembership</b> objects.</td>
