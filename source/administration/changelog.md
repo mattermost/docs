@@ -9,34 +9,39 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Release Date 2019-04-16
 
 ### Highlights
- - Configuration in database
- - Interactive ephemeral messages
- - Elasticsearch autocomplete
- - One directional infinite scroll
+
+#### Infinite One Directional Scrolling
+ - Removed the “Load more messages” button at the top of the screen to make it easier to read messages.
+ 
+#### Interactive Ephemeral Messages
+ - Added ability to modify message attachments, allowing for richer integrations.
+
+#### Configuration in Database
+ - Added support for managing configuration options directly in the database. This option honors the current ``config.json`` to maintain backwards compatibility while providing a way to easily manage configuration settings from the system console in more complex environments.
+
+#### Elasticsearch autocomplete
+ - Added a new flag that supports autocompletion for Elasticsearch queries. When the flag is enabled, Elasticsearch will use indexed data to determine the autocompletions for users and channels.
 
 ### Improvements
 
-#### (Category?)
- - Implemented CSRF protection Tokens.
- - Added support for joining a team after a user logs in with the link to join a team and is prompted to set up MFA for the first time.
- - Added plugin support for bot accounts.
- - Created a plugin component to override file previews.
-
 #### User Interface (UI)
  - Added ability to use "c" and "sh" for code block syntax highlighting.
- - Added support for plugins to create link tooltips.
- - Words that trigger mentions now support Chinese.
+ - Words that trigger mentions now supports Chinese.
  - Added support for rendering emojis and hyperlinks in message attachment titles.
- - Added support for showing channel name in post input placeholder.
- - Created a new set of widgets to build dropdown menus.
+ - Added support for showing the channel name in the message box.
  - Added support for markdown in plugin system console help text fields.
  - Added ability to convert Excel cells to markdown table when pasting in Mattermost.
  - Added ability to render emojis in interactive message buttons.
  
+#### Plugins
+ - Added plugin support for bot accounts.
+ - Created a plugin component to override file previews.
+ - Added support for plugins to create link tooltips.
+ 
 #### Bulk Import/Export
- - Added User Preference fields in the bulk export.
+ - Added User Preference fields in bulk export.
+ - Added ability to include direct and group message channels and their posts in bulk export.
  - Added ability to include deactivated users in bulk import.
- - Added ability to include direct and group message channels and their posts in the bulk export.
  
 #### CLI
  - Created CLI command ``command show`` to allow seeing detailed information of a slash command.
@@ -52,13 +57,12 @@ Release Date 2019-04-16
  - Updated Mattermost to default to console logging in a human readable format.
  - Added support for LDAP groups search.
  - Added a setting to the system console to change the minimum length of hashtags.
- - Added new configuration for setting Reply-To header in outbound Mattermost emails.
+ - Added support for setting Reply-To header in outbound Mattermost emails.
  - Added support for invalidating all email invitations from the system console.
- - Added support for a restricted System Admin role in Cloud.
 
 ### Bug Fixes
  - Fixed an issue where enterprise features became immediately unavailable when the enterprise license expired with a 15 day grace period.
- - Fixed an issue where a channel did not get removed from the Unreads section if a user navigated out of it via a permalink.
+ - Fixed an issue where a channel did not get removed from the unreads section if the user navigated out of it via a permalink.
  - Fixed an issue where a link from Access Control Groups to Group Filter on AD/LDAP did not work for subpath Site URL.
  - Fixed an issue where expired channels appeared in "My Channels" section of channel switcher if using the **Automatically Close Direct Messages** setting.
  - Fixed an issue where the text box reverted to default size after a user returned from the Integrations page.
@@ -67,7 +71,7 @@ Release Date 2019-04-16
  
 ### Compatibility
 
- - Deprecated configurable ``timezones.json`` in favour of the existing hard-coded list built into the server.
+ - Deprecated configurable ``timezones.json`` in favour of the existing hard-coded list built into the server. **XXXX NEEDS MORE DETAILS**
 
 ### config.json
 
@@ -80,11 +84,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Under ``"ServiceSettings":`` in ``config.json``:
    - Added ``"MinimumHashtagLength": 3``, to add the ability to change the minimum length of hashtags.
 - Under ``"ElasticsearchSettings":`` in ``config.json``: 
-   - Added ``"EnableAutocomplete": false``, ``"ChannelIndexReplicas": 1``, ``"ChannelIndexShards": 1``, ``"UserIndexReplicas": 1``, and ``"UserIndexShards": 1``, to 
+   - Added ``"EnableAutocomplete": false``, ``"ChannelIndexReplicas": 1``, ``"ChannelIndexShards": 1``, ``"UserIndexReplicas": 1``, and ``"UserIndexShards": 1``, to enable autocompletion for Elasticsearch queries.
 
 ### API Changes
  - Added ``GetUsers`` API method to add the ability to list users.
- - Added the ``SearchPostsInTeam`` method to the plugin API to be able to search posts in a team.
+ - Added the ``SearchPostsInTeam`` method to the plugin API to add the ability to search posts in a team.
  - Added ``GetTeamMembersForUser`` and ``GetChannelMembersForUser`` to the plugin API to add the ability to get team and channel members for a specific user.
  - Added ``GetBundleInfo() string`` method to the plugin API to add the ability to store assets elsewhere.
  
