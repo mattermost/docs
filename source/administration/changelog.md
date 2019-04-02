@@ -36,6 +36,7 @@ Release Date 2019-04-16
 #### Bulk Import/Export
  - Added User Preference fields in the bulk export.
  - Added ability to include deactivated users in bulk import.
+ - Added ability to include direct and group message channels and their posts in the bulk export.
  
 #### CLI
  - Created CLI command ``command show`` to allow seeing detailed information of a slash command.
