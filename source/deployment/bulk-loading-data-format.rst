@@ -695,7 +695,7 @@ Fields of the User object
     <tr class="row-odd">
       <td valign="middle">delete_at</td>
       <td valign="middle">int64</td>
-      <td>Timestamp for when the user was deactivated. Null if active.</td>
+      <td>Timestamp for when the user was deactivated. Null if user is active.</td>
       <td align="center" valign="middle">No</td>
       <td align="center" valign="middle">No</td>
     </tr>
