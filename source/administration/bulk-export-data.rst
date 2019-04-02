@@ -209,6 +209,61 @@ User object
       <td>The user’s localization configuration.</td>
     </tr>
     <tr class="row-odd">
+      <td valign="middle">use_markdown_preview</td>
+      <td valign="middle">bool</td>
+      <td>"True" if the user has enabled markdown preview in the message input box.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">use_formatting</td>
+      <td valign="middle">bool</td>
+      <td>"True" if the user has enabled post formatting for links, emoji, text styles and line breaks.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">show_unread_section</td>
+      <td valign="middle">string</td>
+      <td>"True" if the user has enabled showing unread messages at top of channel sidebar.</td>
+    </tr> 
+    <tr class="row-odd">
+      <td valign="middle">theme</td>
+      <td valign="middle">string</td>
+      <td>The user’s theme. Formatted as a Mattermost theme string.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">military_time</td>
+      <td valign="middle">string</td>
+      <td>"True" if the user has enabled a 24 hour clock. "False" if using a 12 hour clock.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">collapse_previews</td>
+      <td valign="middle">string</td>
+      <td>"True" if user collapses link preview by default. "False" is user expands link previews by default.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">message_display</td>
+      <td valign="middle">string</td>
+      <td>"clean" if the user uses the standard style. "compact" if the user uses compact style.</td>
+    </tr> 
+    <tr class="row-odd">
+      <td valign="middle">channel_display_mode</td>
+      <td valign="middle">string</td>
+      <td>"full" if the users displays channel messages at the full width of the screen. "centered" if the user uses a fixed width, centered block</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">tutorial_step</td>
+      <td valign="middle">string</td>
+      <td>"1", "2" or "3" starts user with the specified tutorial step."999" skips the tutorial.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">email_interval</td>
+      <td valign="middle">string</td>
+      <td>Specify an email batching interval during bulk import. </td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">delete_at</td>
+      <td valign="middle">string</td>
+      <td>TODO.</td>
+    </tr>    
+    <tr class="row-odd">
       <td valign="middle">teams</td>
       <td valign="middle">array</td>
       <td>The teams which the user is member of. Is an array of <b>UserTeamMembership</b> objects.</td>
