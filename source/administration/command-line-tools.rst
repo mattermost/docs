@@ -146,6 +146,7 @@ mattermost channel
     -  `mattermost channel remove`_ - Remove users from a channel
     -  `mattermost channel rename`_ - Rename a channel
     -  `mattermost channel restore`_ - Restore a channel from the archive
+    -  `mattermost channel search`_ -  Search a channel by name
 
 .. _channel-value-note:
 
@@ -358,6 +359,29 @@ mattermost channel restore
 
       ./mattermost channel restore 8soyabwthjnf9qibfztje5a36h
       ./mattermost channel restore myteam:mychannel
+      
+mattermost channel search
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Search for a channel by channel name. 
+    
+  Format
+    .. code-block:: none
+
+      mattermost channel search {channelName}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost channel search mychannel
+      ./mattermost channel search --team myteam mychannel
+      ./mattermost channel search --team f1924a8db44ff3bb41c96424cdc20676 mychannel
+      
+  Options
+    .. code-block:: none
+
+      --team   Team Name or Team ID
 
 mattermost command
 ------------------
@@ -1092,6 +1116,7 @@ mattermost team
     -  `mattermost team delete`_ - Delete a team.
     -  `mattermost team list`_ - List all teams.
     -  `mattermost team remove`_ - Remove users from a team.
+    -  `mattermost team rename`_ - Rename a team.
     -  `mattermost team restore`_ - Restore a previously archived team.    
     -  `mattermost team search`_ - Search for teams based on name.
 
@@ -1202,22 +1227,6 @@ mattermost team list
 
       ./mattermost team list
 
-mattermost team restore
-~~~~~~~~~~~~~~~~~~~~~~
-
-  Description
-    Restore a previously archived team.
-
-  Format
-    .. code-block:: none
-
-      mattermost team restore {team}
-
-  Example
-    .. code-block:: none
-
-      ./mattermost team restore myteam 
-
 mattermost team remove
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1233,6 +1242,43 @@ mattermost team remove
     .. code-block:: none
 
       ./mattermost team remove myteam user@example.com username
+      
+mattermost team rename
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Rename a team.
+
+  Format
+    .. code-block:: none
+
+      mattermost channel rename {team} newteamname --display_name "New Display Name"
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost channel rename myteam newteamname --display_name "New Display Name"
+      
+  Options
+    .. code-block:: none
+
+      --display_name string   Team Display Name
+      
+mattermost team restore
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Restore a previously archived team.
+
+  Format
+    .. code-block:: none
+
+      mattermost team restore {team}
+
+  Example
+    .. code-block:: none
+
+      ./mattermost team restore myteam       
 
 mattermost team search
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1663,7 +1709,8 @@ mattermost webhook
     -  `mattermost webhook list`_ - List all webhooks.
     -  `mattermost webhook modify-incoming`_ - Modify an existing incoming webhook by changing its title, description, channel or icon url.
     -  `mattermost webhook modify-outgoing`_ - Modify an existing outgoing webhook by changing its title, description, channel, icon, url, content-type, and triggers.
-
+    -  `mattermost webhook show`_ - Show information about a webhook by providing the webhook ID.
+    
 mattermost webhook create-incoming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1813,6 +1860,22 @@ mattermost webhook modify-outgoing
           --icon [iconURL]              Icon URL 
 	  --url [callbackURL]           Callback URL 
 	  --content-type string         Content type 
+
+mattermost webhook show
+~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Show information about a webhook by providing the webhook ID. Returns display name, channel ID and Team ID for both incoming and outgoing webhooks.  Additionally returns callback URL, username, and icon URL for outgoing webhooks.
+
+  Format
+    .. code-block:: none
+
+      mattermost webhook show [webhookId]
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost webhook show [webhookId]
 
 Mattermost 3.5 and earlier
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
