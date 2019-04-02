@@ -1,0 +1,5 @@
+---
+title: Mount object storage secrets related to external diffs to pods
+merge_request: 745
+author:
+type: fixed
