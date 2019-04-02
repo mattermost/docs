@@ -364,7 +364,7 @@ mattermost channel search
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Search for a channel by channel name. 
+    Search for a channel by channel name. Returns channel display name, channel Id, and indicates if it is archived.
     
   Format
     .. code-block:: none
@@ -1865,7 +1865,7 @@ mattermost webhook show
 ~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Show information about a webhook by providing the webhook ID. Returns display name, channel ID and Team ID for both incoming and outgoing webhooks.  Additionally returns callback URL, username, and icon URL for outgoing webhooks.
+    Show information about a webhook by providing the webhook ID. Returns display name, channel ID and team ID for both incoming and outgoing webhooks.  Additionally returns callback URL, username, and icon URL for outgoing webhooks.
 
   Format
     .. code-block:: none
