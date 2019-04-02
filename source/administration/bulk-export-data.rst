@@ -241,12 +241,12 @@ User object
     <tr class="row-odd">
       <td valign="middle">message_display</td>
       <td valign="middle">string</td>
-      <td>"clean" if the user uses the standard style. "compact" if the user uses compact style.</td>
+      <td>The style the user prefers for displayed messages. "clean" if the user uses the standard style. "compact" if the user uses compact style.</td>
     </tr> 
     <tr class="row-odd">
       <td valign="middle">channel_display_mode</td>
       <td valign="middle">string</td>
-      <td>"full" if the users displays channel messages at the full width of the screen. "centered" if the user uses a fixed width, centered block</td>
+      <td>"Full" if the users displays channel messages at the full width of the screen. "centered" if the user uses a fixed width, centered block</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">tutorial_step</td>
@@ -260,8 +260,8 @@ User object
     </tr>
     <tr class="row-odd">
       <td valign="middle">delete_at</td>
-      <td valign="middle">string</td>
-      <td>TODO.</td>
+      <td valign="middle">int64</td>
+      <td>Timestamp of when a user was deactivated. Is null if the user is active</td>
     </tr>    
     <tr class="row-odd">
       <td valign="middle">teams</td>
