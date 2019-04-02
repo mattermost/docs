@@ -19,7 +19,7 @@ Notes:
 
 Pre-work for the current release begins at the code complete date of the previous release. See "Code Complete" section below for details.
 
-### B. (T-minus 18 working days) Cut-off for submitting features
+### B. (T-minus 23 working days) Cut-off for submitting features
 
 No pull requests for major features should be **submitted** to the current release after this date. In special cases, exceptions can be made by the Release Manager. 
 
@@ -32,7 +32,7 @@ No pull requests for major features should be **submitted** to the current relea
     - Review any features that are currently in beta and confirm with PMs if there are any to be promoted
     - Confirm all config settings and new features have diagnostics
 
-### C. (T-minus 15 working days) Feature Complete
+### C. (T-minus 20 working days) Feature Complete
 
 No pull requests for major features should be **merged** to the current release after this date. In special cases, exceptions can be made by the Release Manager.
 
@@ -61,7 +61,7 @@ No pull requests for major features should be **merged** to the current release 
     - Prepare bullet points and release headline for release announcement. Release manager to review the outline (benefits and order of major features) with PMs before sending to Justin to work on
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
     
-### D. (T-minus 14 working days) Feature testing
+### D. (T-minus 19 working days) Feature testing
 
 1. QA:
     - Prioritize testing merged PRs and resolved tickets for this release
@@ -69,7 +69,7 @@ No pull requests for major features should be **merged** to the current release 
     - Prioritize updating tests in the Release Testing spreadsheet and in Selenium IDE
     - Identify most-affected areas and queue Selenium tests to be updated and run
 
-### E. (T-minus 13 working days) Judgment Day
+### E. (T-minus 15 working days) Judgment Day
 
 Day when Leads and PMs decide which major features are included in the release, and which are postponed.
 
@@ -94,7 +94,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 4. Marketing:
     - Start drafting blog post, tweet, and email for the release announcement
     
-### F. (T-minus 12 working days) Code complete
+### F. (T-minus 14 working days) Code complete
 
 **Stabilization** period begins when all features for release have been committed. During this period, only **bugs** can be committed to the release branch. Non-bug pull requests are tagged for next version. Exceptions can be made by the Release Manager during triage. Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google.com/document/d/1QxB_A1qkEJBKAvQpRa7JiSQLZhwg6HAEajNRNa7ldGg/edit)
 
