@@ -3964,7 +3964,7 @@ The location of the plugin files. If blank, they are stored in the ./plugins dir
 
 ------
 
-Experimental settings in config.json
+Experimental settings
 -----------------------------------------
 
 There are a number of settings considered "experimental" and these may be replaced or removed in a future release.
