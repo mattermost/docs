@@ -241,22 +241,22 @@ User object
     <tr class="row-odd">
       <td valign="middle">message_display</td>
       <td valign="middle">string</td>
-      <td>The style the user prefers for displayed messages. "clean" if the user uses the standard style. "compact" if the user uses compact style.</td>
+      <td>The style the user prefers for displayed messages. Options are "clean" if the user uses the standard style or "compact" if the user uses compact style.</td>
     </tr> 
     <tr class="row-odd">
       <td valign="middle">channel_display_mode</td>
       <td valign="middle">string</td>
-      <td>"Full" if the users displays channel messages at the full width of the screen. "centered" if the user uses a fixed width, centered block</td>
+      <td>"Full" if the users displays channel messages at the full width of the screen or "centered" if the user uses a fixed width, centered block</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">tutorial_step</td>
       <td valign="middle">string</td>
-      <td>"1", "2" or "3" starts user with the specified tutorial step."999" skips the tutorial.</td>
+      <td>"1", "2" or "3" indicates which specified tutorial step to start with for the user. "999" skips the tutorial.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">email_interval</td>
       <td valign="middle">string</td>
-      <td>Specify an email batching interval during bulk import. </td>
+      <td>Email batching interval to use during bulk import. </td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">delete_at</td>
