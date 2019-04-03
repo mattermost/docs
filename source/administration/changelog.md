@@ -54,7 +54,6 @@ Release Date 2019-04-16
  - Added full text search to the system console panel to easily find options in the configuration.
  - (Advanced Permissions) Split managing emoji permissions into "create", "delete own" and "delete others".
  - (Advanced Permissions) Added ``List_Public_Teams``, ``Join_Public_Teams``, ``List_Private_Teams`` and ``Join_Private_Teams`` permissions.
- - Updated Mattermost to default to console logging in a human readable format.
  - Added support for LDAP groups search.
  - Added a setting to the system console to change the minimum length of hashtags.
  - Added support for setting Reply-To header in outbound Mattermost emails.
@@ -71,9 +70,11 @@ Release Date 2019-04-16
  
 ### Compatibility
 
- - Deprecated configurable ``timezones.json`` in favour of the existing hard-coded list built into the server. **XXXX NEEDS MORE DETAILS**
+#### Deprecated Features
 
-### config.json
+ - Deprecated configurable ``timezones.json`` in favour of the existing hard-coded list built into the server.
+
+#### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
  
@@ -91,10 +92,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added the ``SearchPostsInTeam`` method to the plugin API to add the ability to search posts in a team.
  - Added ``GetTeamMembersForUser`` and ``GetChannelMembersForUser`` to the plugin API to add the ability to get team and channel members for a specific user.
  - Added ``GetBundleInfo() string`` method to the plugin API to add the ability to store assets elsewhere.
- 
-### Websocket Event Changes
 
 ### Database Changes
+ - Granted the following permissions for the System Admin, in preparation for an upcoming bot accounts feature:
+   - PERMISSION_CREATE_BOT
+   - PERMISSION_READ_BOTS
+   - PERMISSION_READ_OTHERS_BOTS
+   - PERMISSION_MANAGE_BOTS
+   - PERMISSION_MANAGE_OTHERS_BOTS
 
 ### Known Issues
  
