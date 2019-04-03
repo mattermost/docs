@@ -1779,7 +1779,7 @@ So you don't miss messages, please make sure to change this value to an email yo
 
 Notification Reply-To Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Email address used in the Reply-To header when sending notification emails from Mattermost..
+Email address used in the Reply-To header when sending notification emails from Mattermost.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ReplyToAddress": ""`` with string input.                                                                                 |
