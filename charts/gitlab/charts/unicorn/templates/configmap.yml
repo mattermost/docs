@@ -57,8 +57,8 @@ data:
       defined?(::Prometheus::Client.reinitialize_on_pid_change) && Prometheus::Client.reinitialize_on_pid_change
     end
 
-    ENV['GITLAB_UNICORN_MEMORY_MIN'] = (400 * 1 << 20).to_s
-    ENV['GITLAB_UNICORN_MEMORY_MAX'] = (650 * 1 << 20).to_s
+    ENV['GITLAB_UNICORN_MEMORY_MIN'] = ({{ int .Values.memory.min }} * 1 << 20).to_s
+    ENV['GITLAB_UNICORN_MEMORY_MAX'] = ({{ int .Values.memory.max }} * 1 << 20).to_s
 
   gitlab.yml.erb: |
     production: &base
