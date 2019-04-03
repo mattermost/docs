@@ -43,7 +43,7 @@ Release Date 2019-04-16
  - Added ability to include direct and group message channels and their posts in bulk export.
  - Added ability to include deactivated users in bulk import.
  
-#### CLI
+#### Command Line Tools (CLI)
  - Created CLI command ``command show`` to allow seeing detailed information of a slash command.
  - Created CLI command ``webhook show`` to allow seeing detailed information of a webhook.
  - Created CLI command ``team rename`` to allow renaming teams.
@@ -102,6 +102,19 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - PERMISSION_MANAGE_OTHERS_BOTS
 
 ### Known Issues
+ - On a server using a subpath, the URL opens a blank page if the system admin changes the Site URL in the System Console UI. The system admin should restart the server to fix it.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - User can receive a video call from another browser tab while already on a call.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
  
 ### Contributors
 
