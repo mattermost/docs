@@ -41,6 +41,8 @@ to the `helm install` command using the `--set` flags.
 | `image.tag`                      |                       | Unicorn image tag                              |
 | `init.image`                     | `busybox`             | initContainer image                            |
 | `init.tag`                       | `latest`              | initContainer image tag                        |
+| `memory.min`                     | `400`                 | The minimum memory threshold (in megabytes) for the Unicorn worker killer |
+| `memory.max`                     | `650`                 | The maximum memory threshold (in megabytes) for the Unicorn worker killer |
 | `metrics.enabled`                | `true`                | Toggle Prometheus metrics exporter             |
 | `minio.bucket`                   | `git-lfs`             | Name of storage bucket, when using Minio       |
 | `minio.port`                     | `9000`                | Port for Minio service                         |
@@ -97,7 +99,7 @@ image:
 ```YAML
 annotations:
   kubernetes.io/example-annotation: annotation-value
-``` 
+```
 
 ## Using the Community Edition of this chart
 
@@ -132,6 +134,12 @@ you can set the body size with either of the following two parameters too:
 
 - `gitlab.unicorn.ingress.annotations."nginx\.ingress\.kubernetes\.io/proxy-body-size"`
 - `global.ingress.annotations."nginx\.ingress\.kubernetes\.io/proxy-body-size"`
+
+## Memory
+
+Memory thresholds for the [unicorn-worker-killer](https://docs.gitlab.com/ee/administration/operations/unicorn.html#unicorn-worker-killer)
+can be customized using the `memory.min` and `memory.max` chart values. While the default values are sane, you can increase (or lower)
+these values to fine-tune them for your environment or troubleshoot performance issues.
 
 ## External Services
 
