@@ -17,7 +17,7 @@ Release Date 2019-04-16
  - Added ability to modify message attachments, allowing for richer integrations.
 
 #### Configuration in Database
- - Added support for managing configuration options directly in the database. This option honors the current ``config.json`` to maintain backwards compatibility while providing a way to easily manage configuration settings from the system console in more complex environments.
+ - Added experimental support for storing ``config.json`` in the database, improving the system console experience on read-only filesystems. Storing the configuration in the database is optional, as the existing ``config.json`` remains fully supported.
 
 #### Elasticsearch autocomplete
  - Added a new flag that supports autocompletion for Elasticsearch queries. When the flag is enabled, Elasticsearch will use indexed data to determine the autocompletions for users and channels.
