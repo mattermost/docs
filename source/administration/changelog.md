@@ -81,7 +81,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
 - Under ``"ExperimentalSettings":`` in ``config.json``:
-   - Added ``"RestrictSystemAdmin": false``, to 
+   - Added ``"RestrictSystemAdmin": false``, to optionally constrain even system admins from changing critical settings.
 - Under ``"ServiceSettings":`` in ``config.json``:
    - Added ``"MinimumHashtagLength": 3``, to add the ability to change the minimum length of hashtags.
 - Under ``"ElasticsearchSettings":`` in ``config.json``: 
