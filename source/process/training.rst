@@ -89,12 +89,12 @@ For efficiency, when Mattermost works with advisors and consultants who engage w
 Meeting Etiquette
 ---------------------------------------------------------
 
-Inspired by Corey Hulen's blog article of `6 Annoying Things People Do During Video Conferencing <http://hulen.com/video-conf-peevs/>_
+Inspired by Corey Hulen's blog article of `6 Annoying Things People Do During Video Conferencing <http://hulen.com/video-conf-peevs/>`__.
 
 1. Avoid responding to messages in chat while on a meeting:
 
-  - It can be distracting when someone tries to covertly respond to a message. First, other people on call may hear your keyboard and notice you’re looking somewhere else. Second, if they are in the same channel as you, they can see the message `You're typing...` in Mattermost
-  - **Tip**: If you feel the need to respond immediately and are easily distracted, set yourself to "Do not disturb" mode while in meetings.
+  - It can be distracting when someone tries to covertly respond to a message. First, other people on call may hear your keyboard and notice you’re looking somewhere else. Second, if they are in the same channel as you, they can see the message ``[User] is typing...`` in Mattermost.
+  - **Tip**: If you feel the need to respond immediately and are easily distracted, set yourself to "Do Not Disturb" mode while in meetings.
 
 2. Avoid answering calls or checking text messages on your cell phone:
 
@@ -102,8 +102,8 @@ Inspired by Corey Hulen's blog article of `6 Annoying Things People Do During Vi
 
 3. Display your video on a monitor with your camera:
 
-  - If you have your video display on a second monitor, it may cause you to look away from the camera, not looking at the camera when talking. It almost feels like you’re talking to someone else in the room behind your computer monitor
-  - **Tip**: Either move your camera, or move your video window so they are somewhat inline and remember to look towards the camera.
+  - If you have your video display on a second monitor, it may cause you to look away from the camera, not looking at the camera when talking. It almost feels like you’re talking to someone else in the room behind your computer monitor.
+  - **Tip**: Either move your camera, or move your video window so they are somewhat inline. Also remember to look towards the camera.
 
 4. Mute audio in large video conferences when not speaking:
  
