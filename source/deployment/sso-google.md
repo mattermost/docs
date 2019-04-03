@@ -9,7 +9,9 @@ Follow these steps to configure Mattermost to use Google as a single sign-on (SS
 
 ![google_1_credentials](../../source/images/google_1_credentials.png)
 
-2 - In the **Dashboard** click the option to **ENABLE APIS AND SERVICES** (insert screenshot)
+2 - In the **Dashboard** click the option to **ENABLE APIS AND SERVICES** 
+
+![google_enable_api](../../source/images/google_enable_api.png)
 
 Once in the API Library scroll down to [Google+ API](https://console.developers.google.com/apis/api/plus/overview) and click **Enable** in the header. This might take a few minutes to propagate through Google's systems.
 
@@ -17,7 +19,9 @@ Once in the API Library scroll down to [Google+ API](https://console.developers.
 
 ![google_2_oauth_consent_screen](../../source/images/google_2_oauth_consent_screen.png)
 
-Scroll down and you will need to input the domain used by your Mattermost instance that is authorised to access the API. For example if it is hosted on `mattermost.yourdomain.com` (Insert screenshot) 
+Scroll further down and you will need add the domain used by your Mattermost instance to a list that is authorised to access the API. For example if it is hosted on `mattermost.yourdomain.com` you would add `yourdomain.com`.
+
+![google_authorised_domains](../../source/images/google_authorised_domains.png)
 
 4 - Under the **Credentials** header, click **Create credentials**, choose **OAuth client ID** from the drop-down list.
 
