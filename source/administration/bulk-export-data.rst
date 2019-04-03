@@ -261,7 +261,7 @@ User object
     <tr class="row-odd">
       <td valign="middle">delete_at</td>
       <td valign="middle">int64</td>
-      <td>Timestamp of when a user was deactivated. Null if the user is active.</td>
+      <td>Timestamp of when the user was deactivated.</td>
     </tr>    
     <tr class="row-odd">
       <td valign="middle">teams</td>
