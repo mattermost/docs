@@ -13,6 +13,11 @@ spec:
   updateStrategy:
 {{ toYaml .Values.controller.updateStrategy | indent 4 }}
   minReadySeconds: {{ .Values.controller.minReadySeconds }}
+  selector:
+    matchLabels:
+      app: {{ template "name" . }}
+      component: "{{ .Values.controller.name }}"
+      release: {{ .Release.Name }}
   template:
     metadata:
       annotations:
