@@ -1782,7 +1782,7 @@ Notification Reply-To Address
 Email address used in the Reply-To header when sending notification emails from Mattermost.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ReplyToAddress": ""`` with string input.                                                                                 |
+| This feature's ``config.json`` setting is ``"ReplyToAddress": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Notification Footer Mailing Address
