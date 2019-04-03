@@ -11,7 +11,7 @@ Release Date 2019-04-16
 ### Highlights
 
 #### Infinite One Directional Scrolling
- - Removed the “Load more messages” button at the top of the screen to make it easier to read messages.
+ - Simply scroll to load and read more posts. It's no longer necessary to click “Load more messages” button at the top of the screen.
  
 #### Interactive Ephemeral Messages
  - Added ability to modify message attachments, allowing for richer integrations.
