@@ -82,7 +82,7 @@ spec:
     kind: Role
   - group: rbac.authorization.k8s.io
     kind: RoleBinding
-{{ if eq .Values.global.application.allowClusterRoles true -}}
+{{- if eq .Values.global.application.allowClusterRoles true }}
   - group: rbac.authorization.k8s.io
     kind: ClusterRole
   - group: rbac.authorization.k8s.io
@@ -98,6 +98,10 @@ spec:
     kind: PersistentVolumeClaim
   - group: apps
     kind: Deployment
+{{- if eq (index .Values "nginx-ingress" "controller" "kind") "DaemonSet" }}
+  - group: apps
+    kind: DaemonSet
+{{- end }}
   - group: autoscaling
     kind: HorizontalPodAutoscaler
   - group: apps
