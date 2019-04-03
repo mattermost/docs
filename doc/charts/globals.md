@@ -510,6 +510,25 @@ Example `--set` configuration items, when using the global chart:
 NOTE: **Note:** Commas are considered [special characters](https://github.com/kubernetes/helm/blob/master/docs/using_helm.md#the-format-and-limitations-of---set)
   within Helm `--set` items. Be sure to escape commas in values such as `bind_dn`: `--set global.appConfig.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'`.
 
+#### Using a custom CA or self signed LDAP certificates
+
+If the LDAP server uses a custom CA or self-signed certificate, you must:
+
+1. Ensure that the custom CA/Self-Signed certificate is created as a secret in the cluster/namespace:
+
+   ```bash
+   kubectl -n gitlab create secret generic my-custom-ca --from-file=my-custom-ca.pem
+   ```
+
+1. Then, specify:
+
+   ```bash
+   --set global.certificates.customCAs[0].secret=my-custom-ca.pem
+   --set global.appConfig.ldap.servers.main.ca_file=/etc/ssl/certs/ca-cert-my-custom-ca.pem
+   ```
+
+This will ensure that the CA is mounted in the relevant pods under `/etc/ssl/certs/ca-cert-my-custom-ca.pem` and specifies its use in the LDAP configuration.
+
 ### OmniAuth
 
 GitLab can leverage OmniAuth to allow users to sign in using Twitter, GitHub, Google,
