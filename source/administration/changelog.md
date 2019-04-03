@@ -14,7 +14,7 @@ Release Date 2019-04-16
  - Simply scroll to load and read more posts. It's no longer necessary to click “Load more messages” button at the top of the screen.
  
 #### Interactive Ephemeral Messages
- - Added ability to modify message attachments, allowing for richer integrations.
+ - Added support for [message actions and buttons](https://docs.mattermost.com/developer/interactive-messages.html) in ephemeral messages.
 
 #### Configuration in Database
  - Added experimental support for storing ``config.json`` in the database, improving the system console experience on read-only filesystems. Storing the configuration in the database is optional, as the existing ``config.json`` remains fully supported.
