@@ -75,57 +75,41 @@ release_package:
   only:
     - tags@charts/gitlab
 
-.review_template:
+
+review:
   stage: review
-  variables:
-    HOST_SUFFIX: "$CI_ENVIRONMENT_SLUG"
-    DOMAIN: "-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN"
-    VARIABLES_FILE: "variables/${CI_JOB_NAME}"
   script:
-    - mkdir -p $(dirname "${VARIABLES_FILE}")
     - check_kube_domain
     - ensure_namespace
     - install_tiller
     - create_secret
-    - install_external_dns "${DNS_PROVIDER}" "${KUBE_INGRESS_BASE_DOMAIN}"
+    - install_external_dns
     - if ! crdExists || previousDeployFailed ; then OPERATOR_BOOTSTRAP=true deploy ; fi
     - deploy
     - add_license
-    - echo "export QA_ENVIRONMENT_URL=gitlab-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN" >> "${VARIABLES_FILE}"
-    - echo "export GITLAB_ROOT_DOMAIN=$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN"        >> "${VARIABLES_FILE}"
-    - echo "export GITLAB_URL=gitlab-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN"         >> "${VARIABLES_FILE}"
-    - echo "export REGISTRY_URL=registry-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN"     >> "${VARIABLES_FILE}"
-    - echo "export S3_ENDPOINT=https://minio-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN" >> "${VARIABLES_FILE}"
+    - echo "export QA_ENVIRONMENT_URL=gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN" >> variables
+    - echo "export GITLAB_ROOT_DOMAIN=$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"        >> variables
+    - echo "export GITLAB_URL=gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"         >> variables
+    - echo "export REGISTRY_URL=registry-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"     >> variables
+    - echo "export S3_ENDPOINT=https://minio-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN" >> variables
   artifacts:
     paths:
     - variables
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
+    on_stop: stop_review
+  variables:
+    HOST_SUFFIX: "$CI_ENVIRONMENT_SLUG"
+    DOMAIN: "-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"
   only:
     refs:
       - branches
-    variables:
-      - $KUBECONFIG
+    kubernetes: active
   except:
     - master
 
-review_gke:
-  variables:
-    DNS_PROVIDER: "google"
-  extends: .review_template
-  environment:
-    name: gke_review/$CI_COMMIT_REF_NAME
-    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN
-    on_stop: stop_review_gke
-
-review_eks:
-  variables:
-    DNS_PROVIDER: "aws"
-  extends: .review_template
-  environment:
-    name: eks_review/$CI_COMMIT_REF_NAME
-    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN
-    on_stop: stop_review_eks
-
-.stop_review_template:
+stop_review:
   stage: review
   variables:
     GIT_CHECKOUT: "false"
@@ -133,27 +117,17 @@ review_eks:
     - git checkout master
     - delete
     - cleanup
+  environment:
+    name: review/$CI_COMMIT_REF_NAME
+    action: stop
   when: manual
   allow_failure: true
   only:
     refs:
       - branches
-    variables:
-      - $KUBECONFIG
+    kubernetes: active
   except:
     - master
-
-stop_review_gke:
-  extends: .stop_review_template
-  environment:
-    name: gke_review/$CI_COMMIT_REF_NAME
-    action: stop
-
-stop_review_eks:
-  extends: .stop_review_template
-  environment:
-    name: eks_review/$CI_COMMIT_REF_NAME
-    action: stop
 
 # Keys that start with a dot (.) will not be processed by GitLab CI.
 # Staging and canary jobs are disabled by default, to enable them
@@ -178,9 +152,9 @@ stop_review_eks:
     - deploy
   environment:
     name: staging
-    url: https://gitlab-staging.$KUBE_INGRESS_BASE_DOMAIN
+    url: https://gitlab-staging.$AUTO_DEVOPS_DOMAIN
   variables:
-    DOMAIN: -staging.$KUBE_INGRESS_BASE_DOMAIN
+    DOMAIN: -staging.$AUTO_DEVOPS_DOMAIN
   only:
     refs:
       - master
@@ -202,9 +176,9 @@ stop_review_eks:
     - deploy canary
   environment:
     name: production
-    url: https://gitlab.$KUBE_INGRESS_BASE_DOMAIN
+    url: https://gitlab.$AUTO_DEVOPS_DOMAIN
   variables:
-    DOMAIN: ".$KUBE_INGRESS_BASE_DOMAIN"
+    DOMAIN: ".$AUTO_DEVOPS_DOMAIN"
   when: manual
   only:
     refs:
@@ -228,17 +202,17 @@ stable:
     - if ! crdExists || previousDeployFailed ; then OPERATOR_BOOTSTRAP=true deploy ; fi
     - deploy
     - delete canary
-    - echo "export QA_ENVIRONMENT_URL=gitlab.$KUBE_INGRESS_BASE_DOMAIN" >> variables
-    - echo "export GITLAB_ROOT_DOMAIN=$KUBE_INGRESS_BASE_DOMAIN"        >> variables
-    - echo "export S3_ENDPOINT=https://minio.$KUBE_INGRESS_BASE_DOMAIN" >> variables
+    - echo "export QA_ENVIRONMENT_URL=gitlab.$AUTO_DEVOPS_DOMAIN" >> variables
+    - echo "export GITLAB_ROOT_DOMAIN=$AUTO_DEVOPS_DOMAIN"        >> variables
+    - echo "export S3_ENDPOINT=https://minio.$AUTO_DEVOPS_DOMAIN" >> variables
   artifacts:
     paths:
     - variables
   environment:
     name: production
-    url: https://gitlab.$KUBE_INGRESS_BASE_DOMAIN
+    url: https://gitlab.$AUTO_DEVOPS_DOMAIN
   variables:
-    DOMAIN: ".$KUBE_INGRESS_BASE_DOMAIN"
+    DOMAIN: ".$AUTO_DEVOPS_DOMAIN"
 #  when: manual
   only:
     refs:
@@ -248,9 +222,9 @@ stable:
 review_helm_test:
   stage: qa
   environment:
-    name: gke_review/$CI_COMMIT_REF_NAME
-    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN
-    on_stop: stop_review_gke
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
+    on_stop: stop_review
   script:
     - export TILLER_NAMESPACE=$KUBE_NAMESPACE
     - helm test --cleanup "$CI_ENVIRONMENT_SLUG"
@@ -266,7 +240,7 @@ production_helm_test:
   stage: qa
   environment:
     name: production
-    url: https://gitlab.$KUBE_INGRESS_BASE_DOMAIN
+    url: https://gitlab.$AUTO_DEVOPS_DOMAIN
   script:
     - export TILLER_NAMESPACE=$KUBE_NAMESPACE
     - helm test --cleanup "$CI_ENVIRONMENT_SLUG"
@@ -286,12 +260,12 @@ debug_review:
     paths:
     - variables
   environment:
-    name: gke_review/$CI_COMMIT_REF_NAME
-    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN
-    on_stop: stop_review_gke
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
+    on_stop: stop_review
   variables:
     HOST_SUFFIX: "$CI_ENVIRONMENT_SLUG"
-    DOMAIN: "-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN"
+    DOMAIN: "-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN"
   only:
     refs:
       - branches
@@ -409,7 +383,7 @@ check_docs_internal_links:
     #echo "Generated root login: $ROOT_PASSWORD"
     kubectl create secret generic "${CI_ENVIRONMENT_SLUG}-gitlab-initial-root-password" --from-literal=password=$ROOT_PASSWORD -o yaml --dry-run | kubectl replace --force -f -
 
-    # YAML_FILE=""${KUBE_INGRESS_BASE_DOMAIN//\./-}.yaml"
+    # YAML_FILE=""${AUTO_DEVOPS_DOMAIN//\./-}.yaml"
     # Cleanup and previous installs, as FAILED and PENDING_UPGRADE will cause errors with `upgrade`
     if [ "$CI_ENVIRONMENT_SLUG" != "production" ] && previousDeployFailed ; then
       echo "Deployment in bad state, cleaning up $CI_ENVIRONMENT_SLUG"
@@ -429,7 +403,7 @@ check_docs_internal_links:
       $WAIT \
       --set releaseOverride="$CI_ENVIRONMENT_SLUG" \
       --set global.hosts.hostSuffix="$HOST_SUFFIX" \
-      --set global.hosts.domain="$KUBE_INGRESS_BASE_DOMAIN" \
+      --set global.hosts.domain="$AUTO_DEVOPS_DOMAIN" \
       --set global.ingress.annotations."external-dns\.alpha\.kubernetes\.io/ttl"="10" \
       --set global.ingress.tls.secretName=helm-charts-win-tls \
       --set global.ingress.configureCertmanager=false \
@@ -521,8 +495,8 @@ check_docs_internal_links:
   }
 
   function check_kube_domain() {
-    if [ -z ${KUBE_INGRESS_BASE_DOMAIN+x} ]; then
-      echo "In order to deploy, KUBE_INGRESS_BASE_DOMAIN must be set as a variable at the group or project level, or manually added in .gitlab-cy.yml"
+    if [ -z ${AUTO_DEVOPS_DOMAIN+x} ]; then
+      echo "In order to deploy, AUTO_DEVOPS_DOMAIN must be set as a variable at the group or project level, or manually added in .gitlab-cy.yml"
       false
     else
       true
@@ -554,34 +528,21 @@ check_docs_internal_links:
   }
 
   function install_external_dns() {
-    local provider="${1}"
-    local domain_filter="${2}"
-    local helm_args=''
-
     echo "Checking External DNS..."
     release_name="gitlab-external-dns"
     if ! helm status --tiller-namespace "${TILLER_NAMESPACE}" "${release_name}" > /dev/null 2>&1 ; then
-      case "${provider}" in
-        google)
-          # We need to store the credentials in a secret
-          kubectl create secret generic "${release_name}-secret" --from-literal="credentials.json=${GOOGLE_CLOUD_KEYFILE_JSON}"
-          helm_args=" --set google.project='${GOOGLE_PROJECT_ID}' --set google.serviceAccountSecret='${release_name}-secret'"
-          ;;
-        aws)
-          echo "Installing external-dns, ensure the NodeGroup has the permissions specified in"
-          echo "https://github.com/helm/charts/tree/master/stable/external-dns#iam-permissions"
-          ;;
-      esac
-
+      # We need to store the credentials in a secret
+      kubectl create secret generic "${release_name}-secret" --from-literal="credentials.json=${GOOGLE_CLOUD_KEYFILE_JSON}"
       helm install stable/external-dns \
         -n "${release_name}" \
         --namespace "${TILLER_NAMESPACE}" \
-        --set provider="${provider}" \
-        --set domain-filter[0]="${domain_filter}" \
+        --set provider="google" \
+        --set domain-filter[0]="helm-charts.win" \
+        --set google.project="${GOOGLE_PROJECT_ID}" \
+        --set google.serviceAccountSecret="${release_name}-secret" \
         --set txtOwnerId="${TILLER_NAMESPACE}" \
         --set rbac.create="true" \
-        --set policy='sync' \
-        ${helm_args}
+        --set policy="sync"
     fi
   }
 
@@ -629,9 +590,8 @@ check_docs_internal_links:
     GITLAB_PASSWORD: $ROOT_PASSWORD
     RELEASE_NAME: $CI_ENVIRONMENT_SLUG
     S3_CONFIG_PATH: /etc/gitlab/minio
-    VARIABLES_FILE: "variables/review_gke"
   script:
-    - source "${VARIABLES_FILE}"
+    - source variables
     - apt-get update && apt-get install -y --no-install-recommends curl ca-certificates
     - curl -LsO https://storage.googleapis.com/kubernetes-release/release/v1.9.3/bin/linux/amd64/kubectl
     - chmod +x kubectl
@@ -657,9 +617,9 @@ check_docs_internal_links:
 review_specs:
   <<: *specs
   environment:
-    name: gke_review/$CI_COMMIT_REF_NAME
-    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN
-    on_stop: stop_review_gke
+    name: review/$CI_COMMIT_REF_NAME
+    url: https://gitlab-$CI_ENVIRONMENT_SLUG.$AUTO_DEVOPS_DOMAIN
+    on_stop: stop_review
   only:
     refs:
       - branches
@@ -672,13 +632,13 @@ production_specs:
   <<: *specs
   environment:
     name: production
-    url: https://gitlab.$KUBE_INGRESS_BASE_DOMAIN
+    url: https://gitlab.$AUTO_DEVOPS_DOMAIN
   only:
     refs:
       - master
     kubernetes: active
 
-.qa:
+qa:
   image: registry.gitlab.com/gitlab-org/gitlab-omnibus-builder:ruby_docker-0.0.7
   stage: qa
   services:
@@ -690,7 +650,7 @@ production_specs:
   script:
     - docker login -u gitlab-ci-token -p "$CI_JOB_TOKEN" "$CI_REGISTRY"
     - gem install gitlab-qa
-    - source "${VARIABLES_FILE}"
+    - source variables
     - app_version=$(ruby -e "require 'yaml'; puts YAML.safe_load(File.read('Chart.yaml'))['appVersion']")
     - qa_version="nightly"
     - if [ "$app_version" != "master"  ]; then
@@ -708,16 +668,6 @@ production_specs:
     kubernetes: active
   retry: 1
   allow_failure: true
-
-qa_gke:
-  extends: .qa
-  variables:
-    VARIABLES_FILE: "variables/review_gke"
-
-qa_eks:
-  extends: .qa
-  variables:
-    VARIABLES_FILE: "variables/review_eks"
 
 before_script:
   - *auto_devops
