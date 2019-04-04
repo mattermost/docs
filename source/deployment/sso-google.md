@@ -5,7 +5,7 @@ Follow these steps to configure Mattermost to use Google as a single sign-on (SS
 
 **Note: Google SSO is not yet supported in the mobile app. If you want to use Google SSO on mobile, you'll have to [build your own app](https://developers.mattermost.com/contribute/mobile/build-your-own/).**
 
-1 - Go to [Google API Manager](https://console.developers.google.com), click **Dashboard** in the left hand sidebar, click **Create a project** and enter "Mattermost - your-company-name" as the **Project Name**, then click **Create**.
+1 - Go to [Google API Manager](https://console.developers.google.com), click **Credentials** in the left hand sidebar, click **Create a project** and enter "Mattermost - your-company-name" as the **Project Name**, then click **Create**.
 
 ![google_1_credentials](../../source/images/google_1_credentials.png)
 
@@ -15,15 +15,15 @@ Follow these steps to configure Mattermost to use Google as a single sign-on (SS
 
 Once in the API Library scroll down to [Google+ API](https://console.developers.google.com/apis/api/plus/overview) and click **Enable** in the header. This might take a few minutes to propagate through Google's systems.
 
-3 - Under the **Credentials** header, click the **OAuth consent screen** header and enter "Mattermost" as the **Product name shown to users**, then click **Save**.
+3 - Leave the Google+ API menu and return to the **APIs & Services menu** and in the left hand sidebar select **Credentials**, click the **OAuth consent screen** header and enter "Mattermost" as the **Product name shown to users**, then click **Save**.
 
 ![google_2_oauth_consent_screen](../../source/images/google_2_oauth_consent_screen.png)
 
-Scroll further down and you will need add the domain used by your Mattermost instance to a list that is authorised to access the API. For example if it is hosted on `mattermost.yourdomain.com` you would add `yourdomain.com`.
+Scroll further down and you will need to add the domain used by your Mattermost instance to a list that is authorised to access the API. For example if it is hosted on `mattermost.yourdomain.com` you would add `yourdomain.com`.
 
 ![google_authorised_domains](../../source/images/google_authorised_domains.png)
 
-4 - Under the **Credentials** header, click **Create credentials**, choose **OAuth client ID** from the drop-down list.
+4 - Select **Credentials** and click **Create credentials**, choose **OAuth client ID** from the drop-down list.
 
 ![google_3_oauth_client_id](../../source/images/google_3_oauth_client_id.png)
 
