@@ -67,7 +67,6 @@ Tables below contain all the possible charts configurations that can be supplied
 | global.appConfig.incomingEmail.mailbox             | Mailbox where incoming mail will end up.                                                                 | inbox                 |
 | global.appConfig.incomingEmail.idleTimeout         | The IDLE command timeout                                                                                 | 60                    |
 
-
 ## GitLab Shell
 
 | Parameter              | Description                              | Default |
@@ -289,3 +288,18 @@ See [nginx-ingress chart](../charts/nginx/index.md)
 | gitlab-runner.resources.limits.cpu                  | runner resources                               |                                                            |
 | gitlab-runner.resources.requests.memory             | runner resources                               |                                                            |
 | gitlab-runner.resources.requests.cpu                | runner resources                               |                                                            |
+
+## External Charts
+
+GitLab makes use of several other charts. These are [treated as parent-child relationships](https://helm.sh/docs/developing_charts/#chart-dependencies).
+Ensure that any properties you wish to configure are provided as `chart-name.property`.
+
+## Prometheus
+
+Prefix Prometheus values with `prometheus`. For example, set the persistence
+storage value using `prometheus.server.persistentVolume.size`.
+
+Refer to the [Prometheus chart documentation][prometheus-configuration] for the
+exhaustive list of configuration options.
+
+[prometheus-configuration]: https://github.com/helm/charts/tree/master/stable/prometheus#configuration
