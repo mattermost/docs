@@ -47,11 +47,12 @@ Examples for [S3][storage-s3](any s3 compatible) and [GCS][storage-gcs] drivers 
 1. Follow [registry chart documentation on storage](../../charts/registry/index.md#storage) for creating the secret.
 1. Configure the chart as documented.
 
-## LFS, Artifacts, Uploads, Packages, Pseudonymizer
+## LFS, Artifacts, Uploads, Packages, External Diffs, Pseudonymizer
 
-Configuration of object storage for LFS, artifacts, uploads, and packages is done
-via the `global.appConfig.lfs`, `global.appConfig.artifacts`, `global.appConfig.uploads`,
-`global.appConfig.packages` and `global.appConfig.pseudonymizer` keys.
+Configuration of object storage for LFS, artifacts, uploads, packages, external
+diffs, and pseudonymizer is done via the `global.appConfig.lfs`,
+`global.appConfig.artifacts`, `global.appConfig.uploads`,
+`global.appConfig.packages`, `global.appConfig.externalDiffs` and `global.appConfig.pseudonymizer` keys.
 
 ```
 --set global.appConfig.lfs.bucket=gitlab-lfs-storage
@@ -70,12 +71,20 @@ via the `global.appConfig.lfs`, `global.appConfig.artifacts`, `global.appConfig.
 --set global.appConfig.packages.connection.secret=object-storage
 --set global.appConfig.packages.connection.key=connection
 
+--set global.appConfig.externalDiffs.bucket=gitlab-externaldiffs-storage
+--set global.appConfig.externalDiffs.connection.secret=object-storage
+--set global.appConfig.externalDiffs.connection.key=connection
+
 --set global.appConfig.pseudonymizer.bucket=gitlab-pseudonymizer-storage
 --set global.appConfig.pseudonymizer.connection.secret=object-storage
 --set global.appConfig.pseudonymizer.connection.key=connection
 ````
 
 > **Note**: Currently a different bucket is needed for each, otherwise performing a restore from backup will not properly function.
+
+> **Note**: Storing MR diffs on external storage is not enabled by default. So,
+> for the object storage settings for `externalDiffs` to take effect,
+> `global.appConfig.externalDiffs.enabled` key should have a `true` value.
 
 See the [charts/globals documentaion on appConfig](../../charts/globals.md#configure-appconfig-settings) for full details.
 
