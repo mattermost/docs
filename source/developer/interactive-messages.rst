@@ -312,6 +312,13 @@ However, the schema for these objects is slightly different given Slack requires
 Troubleshooting
 --------------------
 
+Are message buttons and menus supported in ephemeral messages?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Yes, they are supported in Mattermost 5.10 and later.
+
+To update the ephemeral message itself with message buttons or menus, use the `UpdateEphemeralMessage API call < link ... >_, instead of using the update response parameter.
+
 Message buttons and menus do not trigger an action and return a 400 error
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
