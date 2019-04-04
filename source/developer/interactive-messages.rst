@@ -317,7 +317,7 @@ Are message buttons and menus supported in ephemeral messages?
 
 Yes, they are supported in Mattermost 5.10 and later.
 
-To update the ephemeral message itself with message buttons or menus, use the `UpdateEphemeralMessage API call < link ... >_, instead of using the update response parameter.
+With plugins, you can update the ephemeral message itself with message buttons or menus with the `UpdateEphemeralMessage plugin API <https://developers.mattermost.com/extend/plugins/server/reference/#API.UpdateEphemeralPost>_.
 
 Message buttons and menus do not trigger an action and return a 400 error
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
