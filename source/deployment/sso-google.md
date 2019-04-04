@@ -19,7 +19,7 @@ Once in the API Library, scroll down to [Google+ API](https://console.developers
 
 ![google_2_oauth_consent_screen](../../source/images/google_2_oauth_consent_screen.png)
 
-Scroll further down and you will need to add the domain used by your Mattermost instance to a list that is authorised to access the API. For example, if it is hosted on `mattermost.yourdomain.com` you would add `yourdomain.com`.
+Scroll further down to add your Mattermost instance to a list of authorized domains that can access the API. For example, if it is hosted on `mattermost.yourdomain.com` add `yourdomain.com`.
 
 ![google_authorised_domains](../../source/images/google_authorised_domains.png)
 
