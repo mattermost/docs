@@ -15,7 +15,7 @@ Follow these steps to configure Mattermost to use Google as a single sign-on (SS
 
 Once in the API Library, scroll down to [Google+ API](https://console.developers.google.com/apis/api/plus/overview) and click **Enable** in the header. This might take a few minutes to propagate through Google's systems.
 
-3 - Leave the Google+ API menu and return to the **APIs & Services menu** and in the left hand sidebar select **Credentials**, click the **OAuth consent screen** header and enter "Mattermost" as the **Product name shown to users**, then click **Save**.
+3 - Leave the Google+ API menu to return to the **APIs & Services menu**. In the left hand sidebar select **Credentials**, click the **OAuth consent screen** header and enter "Mattermost" as the **Product name shown to users**, then click **Save**.
 
 ![google_2_oauth_consent_screen](../../source/images/google_2_oauth_consent_screen.png)
 
