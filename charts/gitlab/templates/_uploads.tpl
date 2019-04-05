@@ -11,5 +11,5 @@ Usage:
 {{- define "gitlab.appConfig.uploads.configuration" -}}
 uploads:
   enabled: {{ if kindIs "bool" .config.enabled }}{{ eq .config.enabled true }}{{ end }}
-  {{- include "gitlab.appConfig.objectStorage.configuration" (dict "config" .config "context" .context) | nindent 2 }}
+  {{- include "gitlab.appConfig.objectStorage.configuration" (dict "name" "uploads" "config" .config "context" .context) | nindent 2 }}
 {{- end -}}{{/* "gitlab.appConfig.uploads.configuration" */}}
