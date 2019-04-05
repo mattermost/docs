@@ -112,6 +112,13 @@ module Gitlab
       return [stdout, status]
     end
 
+    def wait_for_dependencies
+      cmd = full_command("/scripts/wait-for-deps")
+
+      stdout, status = Open3.capture2e(cmd)
+      return [stdout, status]
+    end
+
     def pod_name
       filters = 'app=task-runner'
 
