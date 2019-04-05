@@ -20,17 +20,25 @@
 .idea/
 *.tmproj
 # Project/CI/CD related items
+.gitlab
+.gitlab-ci.yml
+.dockerignore
+.helmignore
+Dangerfile
+Gemfile
+Gemfile.lock
 ci/
 doc/
+examples/
 images/
 certs/
 scripts/
 spec/
 build/
-*.md
-CHANGELOG
 changelogs/
+# CHANGELOG.md
 bin/
 spec/
+# dependencies.io
 dependencies.yml
 dependencies_io/
