@@ -1,5 +1,0 @@
----
-title: Fix support for NGINX Ingress DaemonSets
-merge_request: 748
-author:
-type: fixed

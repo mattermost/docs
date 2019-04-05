@@ -2,6 +2,18 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.7.3 (2019-04-05)
+
+### Fixed (2 changes)
+
+- Mount object storage secrets related to external diffs to pods. !745
+- Fix support for NGINX Ingress DaemonSets. !748
+
+### Other (1 change)
+
+- Update GitLab Version to 11.9.6.
+
+
 ## 1.7.2 (2019-04-02)
 
 ### Fixed (1 change)
