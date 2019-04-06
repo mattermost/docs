@@ -339,6 +339,7 @@ global:
       connection: {}
     externalDiffs:
       enabled:
+      when:
       proxy_download: true
       bucket: gitlab-mr-diffs
       connection: {}
@@ -464,6 +465,13 @@ this file to create the secret in Kubernetes.
 kubectl create secret generic gitlab-rails-storage \
     --from-file=connection=rails.yaml
 ```
+
+#### when (only for External MR Diffs)
+
+`externalDiffs` setting has an additional  key `when` to
+[conditionally store specific diffs on object storage](https://docs.gitlab.com/ee/administration/merge_request_diffs.html#alternative-in-database-storage).
+This setting is left empty by default in the Charts, for a default value to be
+assigned by the Rails code.
 
 ### Incoming email settings
 
