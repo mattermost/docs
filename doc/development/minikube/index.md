@@ -128,11 +128,10 @@ in the [Minikube getting started guide](https://kubernetes.io/docs/getting-start
 ### Enable Addons
 
 Minikube handles some features apart from the base configuration. For the
-development of this project, we'll need access to `Ingress` and `kube-dns`:
+development of this project, we'll need access to `Ingress`:
 
 ```sh
 minikube addons enable ingress
-minikube addons enable kube-dns
 ```
 
 ### Connecting to the dashboard
