@@ -3,7 +3,7 @@ Voice, Video and Screensharing
 
 Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect by voice or video call, or to share your screen with team members in Mattermost.
 
-See the current options below, including self-hosted on-prem or self-hosted private cloud solutions, and vendor-hosted SaaS solutions.
+Here are some popular options below, including self-hosted on-prem or self-hosted private cloud solutions, and vendor-hosted SaaS solutions.
 
 .. tip :: You can also neatly link voice, video and screensharing solutions to channels by using Markdown formatting in the channel header. Example: ``[Click for video call](https://link_to_solution)``.
 
