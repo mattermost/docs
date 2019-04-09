@@ -5,6 +5,8 @@ Interactive Messages: Buttons and Menus
 
 Mattermost supports interactive message buttons and menus for :doc:`incoming <webhooks-incoming>` and :doc:`outgoing webhooks <webhooks-outgoing>`, :doc:`custom slash commands <slash-commands>`, and :doc:`plugins <../administration/plugins>` via actions. They help make your integrations richer by completing common tasks inside Mattermost conversations, increasing user engagement and productivity.
 
+.. image:: ../../source/images/interactive-messages.png
+
 For information on interactive dialogs, :doc:`see here <interactive-dialogs>`.
 
 Use interactive messages to simplify complex workflows by allowing users to take quick actions directly through your integration post. For example, they enable your integration to:
