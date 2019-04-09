@@ -16,9 +16,6 @@ Release Date 2019-04-16
 #### Configuration in Database
  - Added experimental support for storing ``config.json`` in the database, improving the system console experience on read-only filesystems. Storing the configuration in the database is optional, as the existing ``config.json`` remains fully supported.
 
-#### Elasticsearch autocomplete
- - Added a new flag that supports autocompletion for Elasticsearch queries. When the flag is enabled, Elasticsearch will use indexed data to determine the autocompletions for users and channels.
-
 ### Improvements
 
 #### User Interface (UI)
@@ -83,8 +80,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added ``"RestrictSystemAdmin": false``, to optionally constrain even system admins from changing critical settings.
 - Under ``"ServiceSettings":`` in ``config.json``:
    - Added ``"MinimumHashtagLength": 3``, to add the ability to change the minimum length of hashtags.
-- Under ``"ElasticsearchSettings":`` in ``config.json``: 
-   - Added ``"EnableAutocomplete": false``, ``"ChannelIndexReplicas": 1``, ``"ChannelIndexShards": 1``, ``"UserIndexReplicas": 1``, and ``"UserIndexShards": 1``, to enable autocompletion for Elasticsearch queries.
 
 ### API Changes
  - Added ``GetUsers`` API method to add the ability to list users.
