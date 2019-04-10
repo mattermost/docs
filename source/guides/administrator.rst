@@ -160,6 +160,8 @@ Learn how to extend Mattermost by integrating your workflows.
    :glob:
 
    /administration/plugins*
+   /developer/toolkit*
+   /deployment/video-and-audio-calling*
 
 Mattermost Compliance
 ----------------------------
@@ -201,5 +203,3 @@ Documentation on early previews and unofficial functionality.
    :glob:
 
    /install/prod-windows-2012*
-   /developer/toolkit*
-   /deployment/video-and-audio-calling*
