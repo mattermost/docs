@@ -463,7 +463,7 @@ When an MMTA is breached, it is most likely from an unknown bug or an unknown vu
  
 The end result is confidential information passing through an MMTA may be used to exploit other systems the customer operates, with no way to trace the root of the breach to mitigate it in future.
  
-As an example, when `OneLogin reported a security breach that allowed the attacker to decrypt encrypted data impacting 2000 customers and 70 SaaS apps <https://krebsonsecurity.com/2017/06/onelogin-breach-exposed-ability-to-decrypt-data/>`_ (2017). Details were vague and there was little customers could do to analyze their risk or reduce risk in future. 
+As an example, when `OneLogin reported a security breach that allowed the attacker to decrypt encrypted data impacting 2000 customers and 70 SaaS apps <https://krebsonsecurity.com/2017/06/onelogin-breach-exposed-ability-to-decrypt-data/>`_ (2017), details were vague and there was little customers could do to analyze their risk or reduce risk in future. 
 
 In contrast, an open source, self-hosted collaboration solution remains within the layers of physical security and network security enterprises use to protect their most valuable assets, with full access to logging and system histories to know when, where and how an attack might have occurred.
  
