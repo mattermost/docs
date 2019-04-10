@@ -56,6 +56,7 @@ Release Date 2019-04-16
 ### Bug Fixes
  - Fixed an issue where enterprise features became immediately unavailable when the enterprise license expired with a 15 day grace period.
  - Fixed an issue where an at-mention for username that starts with "all" did not highlight their entire username.
+ - Fixed an issue where the ``migrate_auth`` command did not work with valid license file.
  - Fixed an issue where a channel did not get removed from the unreads section if the user navigated out of it via a permalink.
  - Fixed an issue where a link from Access Control Groups to Group Filter on AD/LDAP did not work for subpath Site URL.
  - Fixed an issue where expired channels appeared in "My Channels" section of channel switcher if using the **Automatically Close Direct Messages** setting.
