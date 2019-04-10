@@ -422,7 +422,7 @@ In contrast, Mattermost is hosted by the customer. Not only can data be encrypte
 
 If it’s unclear from the vendor’s documentation whether or not your data can be read, ask them directly. 
 
-**Moreover, high trust enterprises need more than encryption, they need privacy, total data ownership, auditability, and control of their infrastructure.**
+**Moreover, high trust enterprises need more than encryption - they need privacy, total data ownership, auditability, and control of their infrastructure.**
  
 *Privacy* means a 3rd party service cannot monitor the identity, IP address, location or access patterns of your employees, nor their activity on your system, nor provide that information either intentionally through a court order (which you may never be informed about) or unintentionally through a data breach.
  
