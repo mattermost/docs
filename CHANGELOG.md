@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.7.4 (2019-04-10)
+
+### Fixed (1 change)
+
+- Ensure README present in helm package. !752
+
+### Other (1 change)
+
+- Update GitLab Version to 11.9.7.
+
+
 ## 1.7.3 (2019-04-05)
 
 ### Fixed (2 changes)

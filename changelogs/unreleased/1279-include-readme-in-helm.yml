@@ -1,5 +1,0 @@
----
-title: Ensure README present in helm package
-merge_request: 752
-author:
-type: fixed
