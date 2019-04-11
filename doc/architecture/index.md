@@ -1,4 +1,4 @@
-# Architecture of helm.gitlab.io
+# Architecture of Cloud native GitLab Helm charts
 
 Documentation Organization:
 
