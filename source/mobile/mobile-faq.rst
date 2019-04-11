@@ -4,7 +4,7 @@ Mobile Apps FAQ
 Can I connect to multiple Mattermost servers using the mobile apps?
 -------------------------------------------------------------------
 
-At the moment, we only support connecting to one server at a time; however, we are aware that this is one of the `top feature requests <https://mattermost.uservoice.com/forums/306457-general/suggestions/10975938-ios-and-android-apps-should-allow-multiple-server>`__ for the mobile app. We are currently investigating some technical challenges, such as how to handle push notifications coming from multiple servers. We expect to add multiserver support by end of 2018.
+At the moment, we only support connecting to one server at a time; however, we are aware that this is one of the `top feature requests <https://mattermost.uservoice.com/forums/306457-general/suggestions/10975938-ios-and-android-apps-should-allow-multiple-server>`__ for the mobile app. We are currently investigating some technical challenges, such as how to handle push notifications coming from multiple servers.
 
 As a workaround, you can install both the released "Mattermost" app and sign up to be a `tester <https://github.com/mattermost/mattermost-mobile/blob/master/README.md#testing>`__ for the "Mattermost Beta" app. This allows you to connect and log in to a different server from each app.
 
