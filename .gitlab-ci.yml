@@ -723,7 +723,7 @@ production_specs_eks:
   variables:
     VARIABLES_FILE: "variables/stable_eks"
   environment:
-    name: gke_production
+    name: eks_production
     url: https://gitlab.$KUBE_INGRESS_BASE_DOMAIN
 
 .qa:
