@@ -8,7 +8,7 @@ NOTE: **Note:** Google provides a whitepaper for [deploying production-ready Git
 Google Kubernetes Engine][whitepaper], including all steps and external
 resource configuration. These are alternative to this document, and the
 deployed chart will behave slightly differently. For example, the default
-comain is configured with [xip.io](http://xip.io), which will not function with
+domain is configured with [xip.io](http://xip.io), which will not function with
 Let's Encrypt.
 
 [whitepaper]: https://cloud.google.com/solutions/deploying-production-ready-gitlab-on-gke
