@@ -770,7 +770,8 @@ sync_images:
     DOCKER_HOST: tcp://docker:2375
   script:
     - bundle install
-    - bundle exec rake images:sync
+    - bundle exec rake images:sync[ee]
+    - bundle exec rake images:sync[ce]
   only:
     - tags@gitlab/charts/gitlab
 
