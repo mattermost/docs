@@ -272,7 +272,7 @@ review_helm_test:
 production_helm_test:
   stage: qa
   environment:
-    name: production
+    name: gke_production
     url: https://gitlab.$KUBE_INGRESS_BASE_DOMAIN
   script:
     - export TILLER_NAMESPACE=$KUBE_NAMESPACE
