@@ -720,6 +720,7 @@ production_specs_gke:
 
 production_specs_eks:
   extends: .production_specs
+  allow_failure: true
   variables:
     VARIABLES_FILE: "variables/stable_eks"
   environment:
