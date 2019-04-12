@@ -1777,6 +1777,14 @@ So you don't miss messages, please make sure to change this value to an email yo
 | This feature's ``config.json`` setting is ``"FeedbackEmail": ""`` with string input.                                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Notification Reply-To Address
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Email address used in the Reply-To header when sending notification emails from Mattermost.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ReplyToAddress": ""`` with string input.                                                                                |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Notification Footer Mailing Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Organization name and mailing address displayed in the footer of email notifications from Mattermost, such as "© ABC Corporation, 565 Knight Way, Palo Alto, California, 94305, USA". If the field is left empty, the organization name and mailing address will not be displayed.
