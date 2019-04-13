@@ -33,7 +33,7 @@ class CNGImageSync
     end
 
     def get_components(version)
-      artifact_uri = URI("#{CI_API_V4_URL}/projects/#{CGI.escape(DEV_PROJECT_PATH)}/jobs/artifacts/v#{version}-ee/raw/artifacts/image_versions.txt?job=component-details")
+      artifact_uri = URI("#{CI_API_V4_URL}/projects/#{CGI.escape(DEV_PROJECT_PATH)}/jobs/artifacts/v#{version}/raw/artifacts/image_versions.txt?job=component-details")
       puts "Fetching component list from #{artifact_uri}"
       res = get_api(artifact_uri)
       components = res.body.split("\n")
@@ -79,11 +79,12 @@ class CNGImageSync
       raise message if COM_REGISTRY_PASSWORD.nil?
     end
 
-    def execute
+    def execute(edition: 'ee')
       check_auth
 
-      puts "Syncing images for version #{GITLAB_VERSION}"
-      components = get_components(GITLAB_VERSION)
+      version = edition == 'ce' ? GITLAB_VERSION : "#{GITLAB_VERSION}-ee"
+      puts "Syncing images for version #{version}"
+      components = get_components(version)
 
       authenticate_registry(DEV_REGISTRY_URL, DEV_REGISTRY_PASSWORD)
       pull_and_tag_images(DEV_PROJECT_REGISTRY, COM_PROJECT_REGISTRY, components)
