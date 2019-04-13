@@ -186,10 +186,9 @@ Procedure:
 
 3. (Chair) Run through the agenda, which comprises one or more of the following items:
 
-  - **Introduction**: One of the founders does an introduction to the CO meeting.
-  - **Welcome new team members**: Team members introduced by direct reports, including their name, their role, and something interesting about them. At most 2 minutes per person.
-  - **Hot topics**: Examples include: Series A marketing announce; FOSDEM event. Lasts at most 5 minutes per topic.
-  - **Customer topics**: Key updates, use cases or stories from customers. At minimum, one of the customer success managers shares about a customer. Each customer update lasts at most 5 minutes, for a total of at most 10-15 minutes for this section.
+  - **Introduction**: One of the founders does an introduction to the meeting.
+  - **Welcome new team members**: New team members introduced by their direct manager, including their name, their role, and something interesting about them. At most 2 minutes per person. If a manager is away, the introduction is postponed to the next meeting.
+  - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key updates, use cases or stories from customers.
   - **Feedback**: At end of meeting, Chair concludes meeting with a reminder to share feedback via survey.
 
 **After meeting:**
