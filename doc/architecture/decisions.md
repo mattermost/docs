@@ -6,8 +6,8 @@ regarding the design of the charts in this repository.
 ## Attempt to catch problematic configurations
 
 Due to the complexity of these charts and their level of flexibility, there are some
-overlaps where it is possible to produce a configuration that would behave in a manner
-which would be unpredictable, or even entirely non-functional deployment. In an effort
+overlaps where it is possible to produce a configuration that would lead to an
+unpredictable, or entirely non-functional deployment. In an effort
 to prevent known problematic settings combinations, we have implemented template logic
 designed to detect and warn the user that their configuration will not work.
 
