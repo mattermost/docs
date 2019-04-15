@@ -9,7 +9,7 @@ The design makes use of multiple templates, providing a modular method of declar
 1. The last item in `templates/NOTES.txt` `include`s the `gitlab.deprecations` template from `templates/_deprecations.tpl`.
 1. The `gitlab.deprecations` template `include`s further templates in the same file, collecting their outputs (strings) into a `list`.
 1. Each individual template handles detection of now errant configuration, and outputs messages informing the user of how to address the change, or outputs nothing.
-1. The `gitlab.deprecations` template checks if any messages were collected. If any messages where, it outputs them under a header of `DEPRECATIONS:` using the `fail` function.
+1. The `gitlab.deprecations` template checks if any messages were collected. If any messages were, it outputs them under a header of `DEPRECATIONS:` using the `fail` function.
 1. The `fail` function results in the termination of the deployment process, preventing the user from deploying with a broken configuration.
 
 ## Template naming
