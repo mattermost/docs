@@ -101,7 +101,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - On a server using a subpath, the URL opens a blank page if the system admin changes the Site URL in the System Console UI. The system admin should restart the server to fix it.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
- - User can receive a video call from another browser tab while already on a call.
  - Jump link in search results does not always jump to display the expected post.
  - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
  - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
@@ -110,7 +109,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Channel scroll position flickers while images and link previews load.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
- - CTRL/CMD+U shortcut to upload a file doesn’t work on Firefox.
  
 ### Contributors
 
