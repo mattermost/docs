@@ -1,7 +1,7 @@
 {{/*
 Template for checking configuration
 
-The messages templated here will be combined into a single `fail` call. This creates a means for the user to receive all messages at one time, in place a frustrating iterative approach.
+The messages templated here will be combined into a single `fail` call. This creates a means for the user to receive all messages at one time, instead of a frustrating iterative approach.
 
 - `define` a new template, prefixed `gitlab.checkConfig.`
 - Check for known problems in configuration, and directly output messages (see message format below)
