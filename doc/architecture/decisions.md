@@ -11,7 +11,7 @@ which would be unpredictable, or even entirely non-functional deployment. In an 
 to prevent known problematic settings combinations, we have implemented template logic
 designed to detect and warn the user that their configuration will not work.
 
-This replicates the behavior of deprecations, but is specific to ensureing functional configuration.
+This replicates the behavior of deprecations, but is specific to ensuring functional configuration.
 
 Introduced in [!757 checkConfig: add methods to test for known errors](https://gitlab.com/charts/gitlab/merge_requests/757)
 
