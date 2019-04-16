@@ -14,6 +14,8 @@ You can export the following data types:
 - Posts' Replies
 - Posts' Reactions
 - Custom Emoji
+- Direct Message Channels 
+- Direct Message Posts
 
 Configuration for exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.  
 
@@ -564,4 +566,52 @@ Emoji object
       <td valign="middle">string</td>
       <td>The path (either absolute or relative to the current working directory) to the image file for this emoji.</td>
     </tr>
+  </table>
+  
+DirectChannel object
+----------------------
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">members</td>
+      <td valign="middle">array</td>
+      <td>List of channel members.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">header</td>
+      <td valign="middle">string</td>
+      <td>The channel header.</td>
+    </tr>
+  </table>
+  
+DirectPost object
+----------------------
+.. raw:: html
+
+  <table width="100%" border="1" cellpadding="5px" style="margin-bottom:20px;">
+    <tr class="row-odd">
+      <th class="head">Field name</th>
+      <th class="head">Type</th>
+      <th class="head">Description</th>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">user</td>
+      <td valign="middle">string</td>
+      <td>The username of the user for this post.</td>
+    </tr>
+    <tr class="row-odd">
+      <td valign="middle">message</td>
+      <td valign="middle">string</td>
+      <td>The message that the post contains.</td>
+    </tr>
+        <tr class="row-odd">
+      <td valign="middle">create_at</td>
+      <td valign="middle">int</td>
+      <td>The timestamp for the post, in milliseconds since the Unix epoch.</td>
   </table>
