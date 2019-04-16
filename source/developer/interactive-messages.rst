@@ -314,12 +314,12 @@ However, the schema for these objects is slightly different given Slack requires
 Troubleshooting
 --------------------
 
-Message buttons and menus don't show up for slash commands
+Are message buttons and menus supported in ephemeral messages?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Make sure the `response type <https://docs.mattermost.com/developer/slash-commands.html#message-type>`__ of your slash command is set to ``in_channel``, not ``ephemeral``.
+Yes, they are supported in Mattermost 5.10 and later.
 
-Ephemeral messages do not have a state, and therefore do not support interactive message buttons at this time.
+With plugins, you can update the ephemeral message itself with message buttons or menus with the `UpdateEphemeralMessage plugin API <https://developers.mattermost.com/extend/plugins/server/reference/#API.UpdateEphemeralPost>`_.
 
 Message buttons and menus do not trigger an action and return a 400 error
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
