@@ -100,7 +100,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - PERMISSION_MANAGE_OTHERS_BOTS
 
 ### Known Issues
- - Client-side plugins cannot use the existing file input to upload files when registering additional attachment options.
+ - Attachments menu on mobile view is visually partly cut off in the right-hand side.
  - Content for ephemeral messages is not displayed on Mattermost Mobile Apps.
  - On a server using a subpath, the URL opens a blank page if the system admin changes the Site URL in the System Console UI. The system admin should restart the server to fix it.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
