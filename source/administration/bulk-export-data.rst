@@ -14,8 +14,8 @@ You can export the following data types:
 - Posts' Replies
 - Posts' Reactions
 - Custom Emoji
-- Direct Channels 
-- Direct Posts
+- Direct Message Channels 
+- Direct Message Posts
 
 Configuration for exporting specific areas of the server, exporting additional types of posts, permissions schemes, file attachments, webhooks and bot messages are not yet supported. Deleted objects are also not yet supported.  
 
@@ -581,7 +581,7 @@ DirectChannel object
     <tr class="row-odd">
       <td valign="middle">members</td>
       <td valign="middle">array</td>
-      <td>A List of members.</td>
+      <td>A list of channel members.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">header</td>
