@@ -3010,6 +3010,14 @@ Maximum lifetime for a connection to the database, in milliseconds. Use this set
 | This feature's ``config.json`` setting is ``"ConnMaxLifetimeMilliseconds": 3600000`` with whole number input.           |
 +-------------------------------------------------------------------------------------------------------------------------+
 
+Minimum Hashtag Length
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>`_.
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MinimumHashtagLength": 3`` with whole number input.           |
++-------------------------------------------------------------------------------------------------------------------------+
+
 At Rest Encrypt Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Advanced > Database** and click **Regenerate**, which displays the value until you click **Save**.
@@ -3107,6 +3115,14 @@ Enable Elasticsearch for search queries
 | This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false`` for above settings respectively.                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Elasticsearch for autocomplete queries
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Elasticsearch will be used for all autocomplete queries using the latest index. Autocomplete results may be incomplete  until a bulk index of the existing users and channels database is finished.
+**False**: Database autocomplete is used.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false`` for above settings respectively.                          |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ________
 
 
@@ -4094,6 +4110,17 @@ For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync d
 | This feature’s ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false`` for above settings respectively.               |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Strict CSRF Token Enforcement (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header. When the user logs in, an additional cookie is created with the CSRF token contained.
+
+**False**: Disables CSRF protection tokens.  
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false`` for above settings respectively.               |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Limit Access to Config Settings Prior to Login
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Removed in December 16, 2018 release*
@@ -4117,11 +4144,22 @@ Disable Legacy MFA API Endpoint
 | This feature’s ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false`` for above settings respectively.                      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Restrict System Admin (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Restricts the System Admin from viewing and modifying a subset of server configuration settings from the System Console. Not recommended for use in on-prem installations. This is intended to support Mattermost Private Cloud in giving the System Admin role to users but restricting certain actions only for Cloud Administrators.
+
+**False**: No restrictions are applied to the System Admin role. 
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"RestrictSystemAdmin": false,`` with options ``true`` and ``false`` for above settings respectively.                      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Team Settings
 ~~~~~~~~~~~~~~
 
 Primary Team (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled.
 
 If the team URL of the primary team is https://example.mattermost.com/myteam/, then set the value to ``myteam`` in ``config.json``.
