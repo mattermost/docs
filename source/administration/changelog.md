@@ -100,8 +100,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - PERMISSION_MANAGE_OTHERS_BOTS
 
 ### Known Issues
- - Attachments menu on mobile view is partly cut off in the right-hand side.
+ - Attachments menu on mobile view is partly cut off on the right-hand side.
+ - Clicking on the attachment icon doesn't bring up the dropdown menu on mobile browser.
  - Content for ephemeral messages is not displayed on mobile apps.
+ - When login is done through SAML, text in **Account Settings** > **General** > **Email** is misaligned.
  - On a server using a subpath, the URL opens a blank page if the system admin changes the Site URL in the System Console UI. The system admin should restart the server to fix it.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
