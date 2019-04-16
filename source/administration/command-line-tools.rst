@@ -394,6 +394,7 @@ mattermost command
     -  `mattermost command delete`_ - Delete a slash command.
     -  `mattermost command list`_ - List all commands on specified teams or all teams by default.
     -  `mattermost command move`_ - Move a slash command to a different team.
+    -  `mattermost command show`_ - Show a custom slash command.
 
 mattermost command create 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -474,6 +475,22 @@ mattermost command move
 
       ./mattermost command move newteam oldteam:command-trigger-word
       ./mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
+      
+mattermost command show
+~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Show a custom slash command. Commands can be specified by command ID.
+
+  Format
+    .. code-block:: none
+
+      command show commandID
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost command show commandID
 
 mattermost config
 -----------------
