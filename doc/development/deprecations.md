@@ -9,7 +9,7 @@ The design makes use of multiple templates, providing a modular method of declar
 1. The last item in `templates/NOTES.txt` `include`s the `gitlab.deprecations` template from `templates/_deprecations.tpl`.
 1. The `gitlab.deprecations` template `include`s further templates in the same file, collecting their outputs (strings) into a `list`.
 1. Each individual template handles detection of now errant configuration, and outputs messages informing the user of how to address the change, or outputs nothing.
-1. The `gitlab.deprecations` template checks if any messages were collected. If any messages where, it ouputs them under a header of `DEPRECATIONS:` using the `fail` function.
+1. The `gitlab.deprecations` template checks if any messages were collected. If any messages were, it outputs them under a header of `DEPRECATIONS:` using the `fail` function.
 1. The `fail` function results in the termination of the deployment process, preventing the user from deploying with a broken configuration.
 
 ## Template naming
@@ -32,7 +32,7 @@ chart:
 
 - The `if` statement preceding the message _should not_ trim the newline after it. (`}}` not `-}}`) This ensures the formatting and readability for the user.
 - The message should declare which chart, relative to the global chart, that is affected. This helps the user understand where the property came from in the charts, and configuration properties. Example: `gitlab.unicorn`, `minio`, `registry`.
-- The message should inform the user of the propery that has been altered / relocated / deprecated, and what action should be taken. Name the property relative to the affected chart. For example, `gitlab.unicorn.minio.enabled` would be referenced as `minio.enabled` because the chart affected by the deprecation is `gitlab.unicorn.
+- The message should inform the user of the property that has been altered / relocated / deprecated, and what action should be taken. Name the property relative to the affected chart. For example, `gitlab.unicorn.minio.enabled` would be referenced as `minio.enabled` because the chart affected by the deprecation is `gitlab.unicorn`.
 
 Example message:
 
@@ -44,4 +44,4 @@ gitlab.unicorn:
 
 ## Activating new deprecations
 
-Once a template has been defined, and logic placed within it for the detection of affected properties, activiating this new template is simple. Simple add a line beneath `add templates here` in the `gitlab.deprecations` template, according to the format presented.
+Once a template has been defined, and logic placed within it for the detection of affected properties, activating this new template is simple. Simple add a line beneath `add templates here` in the `gitlab.deprecations` template, according to the format presented.

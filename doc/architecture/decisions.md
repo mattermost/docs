@@ -3,6 +3,18 @@
 This documentation collects reasoning and documentation regard decisions made
 regarding the design of the Helm charts in this repository.
 
+## Attempt to catch problematic configurations
+
+Due to the complexity of these charts and their level of flexibility, there are some
+overlaps where it is possible to produce a configuration that would lead to an
+unpredictable, or entirely non-functional deployment. In an effort
+to prevent known problematic settings combinations, we have implemented template logic
+designed to detect and warn the user that their configuration will not work.
+
+This replicates the behavior of deprecations, but is specific to ensuring functional configuration.
+
+Introduced in [!757 checkConfig: add methods to test for known errors](https://gitlab.com/charts/gitlab/merge_requests/757)
+
 ## Breaking changes via deprecation
 
 During the development of these charts, we occasionally make improvements that require

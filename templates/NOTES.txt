@@ -34,3 +34,5 @@ WARNING: Automatic TLS certificate generation with cert-manager is disabled and 
 {{- end -}}
 {{/* run deprecations */}}
 {{ include "gitlab.deprecations" . }}
+{{/* run checkConfig */}}
+{{ include "gitlab.checkConfig" . }}
