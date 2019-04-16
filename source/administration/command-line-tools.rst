@@ -480,12 +480,12 @@ mattermost command show
 ~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Show a custom slash command. Commands can be specified by command ID.
+    Show a custom slash command. Commands can be specified by command ID. Returns command ID, team ID, trigger word, display name and creator username.
 
   Format
     .. code-block:: none
 
-      command show commandID
+      command show {commandID}
 
   Examples
     .. code-block:: none
