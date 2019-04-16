@@ -43,7 +43,7 @@ How to run a community design meeting?
 
 Objectives
 ^^^^^^^^^^^^^^^^^^^^^^^^
-1. Avoid blindspots in design by reviewing use cases with user communities.
+1. Avoid blindspots in design by shaping requirements and use cases with user communities.
 2. Confirm proposed approach for design aligns with solving the problem discussed.
 3. Brainstorm ideas for solving open design questions.
 
@@ -85,11 +85,18 @@ Holding the Meeting
 After the Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1. Share a summary in all respective channels, including the meeting recording.
+2. Send a survey asking how valuable the meeting was, feedback on additional use cases and feedback on improving the meeting in the future. `See example here <https://community.mattermost.com/core/pl/jfcmekbw738o3f3ykbbhofkg8r>`_.
 
 Tips
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1. Do not use your personal Zoom meeting link for the call.
 2. Note in all announcements that sharing video is optional.
+3. Use `Mattermost` in your name to identify staff from community members on the call.
+
+Future Improvements
+^^^^^^^^^^^^^^^^^^^^^^^^
+1. Consider sequencing design review meetings with design priorities.
+2. Encourage less vocal attendees to share feedback via written chat.
 
 GitHub Help Wanted Issues in Mattermost-Server Repository
 -----------------------------------------------------------

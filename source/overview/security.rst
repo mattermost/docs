@@ -90,6 +90,8 @@ Security Policies
 
 For information on internal security policies, development guidelines, business continuity plans and common security-related questions from enterprises, please see our `Security Policies <https://docs.mattermost.com/process/security.html>`__ documentation.
 
+Moreover, Mattermost performs a penetration test on the software no less than once per twelve (12) month period. Customer may request a copy of any penetration test results upon five (5) day written notice at any time, but no more than once per twelve (12) month period.
+
 HIPAA compliance
 ------------------------------------
 
@@ -116,8 +118,6 @@ Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a d
      - Organizational requirements and other standards.
 
 To learn more, please review `HIPAA requirements from the US Department of Health and Human Services <http://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`__.
-
-
 
 FINRA compliance
 ------------------------------------

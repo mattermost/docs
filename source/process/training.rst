@@ -86,6 +86,43 @@ Recurring meetings with more than two people should have one or more regular slo
 
 For efficiency, when Mattermost works with advisors and consultants who engage with 2 or more internal team members, we aim to schedule meetings in regular slots (or a collection of regular slots) 2-4 weeks apart. 
 
+Meeting Etiquette
+---------------------------------------------------------
+
+Inspired by Corey Hulen's blog article of `6 Annoying Things People Do During Video Conferencing <http://hulen.com/video-conf-peevs/>`__.
+
+1. Avoid responding to messages in chat while on a meeting:
+
+  - It can be distracting when someone tries to covertly respond to a message. First, other people on call may hear your keyboard and notice you’re looking somewhere else. Second, if they are in the same channel as you, they can see the message ``[User] is typing...`` in Mattermost.
+  - **Tip**: If you feel the need to respond immediately and are easily distracted, set yourself to "Do Not Disturb" mode while in meetings.
+
+2. Avoid answering calls or checking text messages on your cell phone:
+
+  - **Tip**: Put your phone on silent and place it out of arm’s reach, face down, so you don’t feel compelled to act.
+
+3. Display your video on a monitor with your camera:
+
+  - If you have your video display on a second monitor, it may cause you to look away from the camera, not looking at the camera when talking. It almost feels like you’re talking to someone else in the room behind your computer monitor.
+  - **Tip**: Either move your camera, or move your video window so they are somewhat inline. Also remember to look towards the camera.
+
+4. Mute audio in large video conferences when not speaking:
+ 
+  - When not muted, others can hear random noises, like a fan running or a loud click-clack keyboard, which can be distracting.
+  - **Tip**: Set your Zoom meetings to be on mute by default via Zoom settings.
+
+5. Avoid fidgeting uncontrollably or spinning in your office chair:
+
+  - **Tip** If you’re in a group meeting and not doing much talking, feel free to stop your video.
+
+6. Avoid connecting with your computer but also dialing in via cell phone:
+ 
+  - If you connect with your computer and dial in, there are two of you in the meeting and the voice/video are not synced when you talk. In large groups, there will be a random cell phone number that no one will know who they are.
+  - **Tip**: If you're having a bad internet connection and have to dial in, exit the Zoom meeting on your computer.
+  
+7. When presenting, increase window zoom size or set Powerpoint slides to presenter mode:
+
+  - Otherwise, the text on screen may be too hard for others to see.
+
 Open Meetings
 ---------------------------------------------------------
 
@@ -149,10 +186,9 @@ Procedure:
 
 3. (Chair) Run through the agenda, which comprises one or more of the following items:
 
-  - **Introduction**: One of the founders does an introduction to the CO meeting.
-  - **Welcome new team members**: Team members introduced by direct reports, including their name, their role, and something interesting about them. At most 2 minutes per person.
-  - **Hot topics**: Examples include: Series A marketing announce; FOSDEM event. Lasts at most 5 minutes per topic.
-  - **Customer topics**: Key updates, use cases or stories from customers. At minimum, one of the customer success managers shares about a customer. Each customer update lasts at most 5 minutes, for a total of at most 10-15 minutes for this section.
+  - **Introduction**: One of the founders does an introduction to the meeting.
+  - **Welcome new team members**: New team members introduced by their direct manager, including their name, their role, and something interesting about them. At most 2 minutes per person. If a manager is away, the introduction is postponed to the next meeting.
+  - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key updates, use cases or stories from customers.
   - **Feedback**: At end of meeting, Chair concludes meeting with a reminder to share feedback via survey.
 
 **After meeting:**
