@@ -581,7 +581,7 @@ DirectChannel object
     <tr class="row-odd">
       <td valign="middle">members</td>
       <td valign="middle">array</td>
-      <td>A list of channel members.</td>
+      <td>List of channel members.</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">header</td>
