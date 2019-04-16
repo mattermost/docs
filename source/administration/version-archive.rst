@@ -6,6 +6,10 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
+Mattermost Enterprise Edition v5.10.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-10>`__ - `Download <https://releases.mattermost.com/5.10.0/mattermost-5.10.0-linux-amd64.tar.gz>`__
+  - ``https://releases.mattermost.com/5.10.0/mattermost-5.10.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``210416d6def6424e33b358c2f5808adfbdf15adf3ffba6768d16d7777230b24f``
+  - GPG Signature: https://releases.mattermost.com/5.10.0/mattermost-5.10.0-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v5.9.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-9>`__ - `Download <https://releases.mattermost.com/5.9.0/mattermost-5.9.0-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.9.0/mattermost-5.9.0-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``bc8e6ee168d658ed008b3006b979a609482c68de00b447885c2e255e792ddaa7``
@@ -123,6 +127,10 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog <https://docs.mattermost.
 Mattermost Team Edition Server Archive
 ---------------------------------------
 
+Mattermost Team Edition v5.10.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-10>`__ - `Download <https://releases.mattermost.com/5.10.0/mattermost-team-5.10.0-linux-amd64.tar.gz>`__
+  - ``https://releases.mattermost.com/5.10.0/mattermost-team-5.10.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``c2ec7fee131d6ec77e7fbef8328ed912e4f5232de3ccd136a1a1c0d7e9f427b0``
+  - GPG Signature: https://releases.mattermost.com/5.10.0/mattermost-team-5.10.0-linux-amd64.tar.gz.sig
 Mattermost Team Edition v5.9.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-9>`__ - `Download <https://releases.mattermost.com/5.9.0/mattermost-team-5.9.0-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.9.0/mattermost-team-5.9.0-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``2cf606f1fc9da05e3a4591292faa63d19c1495d6c618b1283711e7e98e750225``
