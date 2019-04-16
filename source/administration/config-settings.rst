@@ -3015,7 +3015,7 @@ Minimum Hashtag Length
 Minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>`_.
 
 +-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MinimumHashtagLength": 3`` with whole number input.           |
+| This feature's ``config.json`` setting is ``"MinimumHashtagLength": 3`` with whole number input.                        |
 +-------------------------------------------------------------------------------------------------------------------------+
 
 At Rest Encrypt Key
@@ -3109,6 +3109,7 @@ This button purges the entire Elasticsearch index. Typically only used if the in
 Enable Elasticsearch for search queries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Elasticsearch will be used for all search queries using the latest index. Search results may be incomplete until a bulk index of the existing post database is finished.
+
 **False**: Database search is used for search queries.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3118,10 +3119,11 @@ Enable Elasticsearch for search queries
 Enable Elasticsearch for autocomplete queries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Elasticsearch will be used for all autocomplete queries using the latest index. Autocomplete results may be incomplete  until a bulk index of the existing users and channels database is finished.
+
 **False**: Database autocomplete is used.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false`` for above settings respectively.                          |
+| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false`` for above settings respectively.                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ________
 
@@ -4118,7 +4120,7 @@ Strict CSRF Token Enforcement (Experimental)
 **False**: Disables CSRF protection tokens.  
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false`` for above settings respectively.               |
+| This feature’s ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false`` for above settings respectively.       |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Limit Access to Config Settings Prior to Login
@@ -4152,7 +4154,7 @@ Restrict System Admin (Experimental)
 **False**: No restrictions are applied to the System Admin role. 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"RestrictSystemAdmin": false,`` with options ``true`` and ``false`` for above settings respectively.                      |
+| This feature’s ``config.json`` setting is ``"RestrictSystemAdmin": false,`` with options ``true`` and ``false`` for above settings respectively.                  |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Team Settings
