@@ -71,8 +71,9 @@ You can run a production deployment on macOS by `installing Docker Compose using
 Other options:
 --------------
 
-To install Mattermost Team Edition instead of Mattermost Enterprise Edition, open ``docker-compose.yaml`` and comment out the following line:
+To install Mattermost Team Edition instead of Mattermost Enterprise Edition, open ``docker-compose.yaml`` and uncomment the following lines:
 
   .. code-block:: text
 
-    dockerfile: Dockerfile-enterprise
+      # args:
+      #   - edition=team
