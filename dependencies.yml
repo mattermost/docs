@@ -1,8 +1,16 @@
 version: 2
 
 dependencies:
-- type: git_repos
+- type: git-repos
   path: dependencies_io/git_repos.yml
+  manifest_updates:
+    filters:
+    - name: ".*docker/distribution.*"
+      versions: L.Y.Y # locked to 2.X.X
+    - name: ".*minio.*" # minio/mc, YYYY-MM-DDTHH-mm-SSZ
+      versions_regex: '\d\d\d\d-\d\d-\d\dT\d\d-\d\d-\d\dZ'
+    - name: ".*" # everything else
+      versions: "Y.Y.Y"
   settings:
     branch_prefix: dependencies_io/
 
