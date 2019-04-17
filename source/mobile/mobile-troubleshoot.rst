@@ -14,7 +14,7 @@ Please note that the apps cannot connect to servers with self-signed certificate
 
 Login with ADFS/Office365 is not working
 ----------------------------------------
-Those instances set up for login with ADFS with Integrated Windows Authentication (IWA) should configure `automated fall back to form-based authentication if IWA fails <https://docops.ca.com/ca-single-sign-on/12-7/en/configuring/policy-server-configuration/authentication-schemes/authentication-chaining/configure-iwa-fallback-to-forms-using-authentication-chain>`_. 
+In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
 
 I see a “Connecting…” bar that does not go away
 -----------------------------------------------
