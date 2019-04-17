@@ -202,7 +202,15 @@ Procedure:
     Meeting recording (and transcript) [here](https://zoom.us/recording/play/j7MHmiva3D7G4KqIcL6qV2Z46NMJZDpsdYo4B0GPDtmrRC0owvEJnC8Xpa9tAyxy?continueMode=true).
     
     Share your thoughts on this week's meeting [here](https://goo.gl/forms/AgCNmu3JxTDmSQvp2) @here.
- 
+
+Frequently Asked Questions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Why don't new people introduce themselves?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Not everyone is comfortable with speaking in front of 60+ people. Not everyone speaks clear English. We don’t want the first company-wide meeting to be anxious for new team members, hence, managers intro them.
+
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
