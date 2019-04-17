@@ -29,10 +29,10 @@ Mattermost v5.10.0 contains a medium level security fix. [Upgrading](http://docs
  - Added ability to convert Excel cells to markdown table when pasting in Mattermost.
  - Added ability to render emojis in interactive message buttons.
  
-#### Plugins
- - Added plugin support for bot accounts.
+#### Plugins (Beta)
  - Created a plugin component to override file previews.
  - Added support for plugins to create link tooltips.
+ - Added experimental support for plugins to use bot accounts.
  
 #### Bulk Import/Export
  - Added User Preference fields in bulk export.
