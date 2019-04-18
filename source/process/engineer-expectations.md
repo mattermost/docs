@@ -11,7 +11,7 @@ This is the general timeline and expectations for new engineers starting at Matt
   - HR set up (benefits, health insurance, etc.)
 - Meet the team
   - Meet with a different team member for 30min each day
-- Meet with your mentor (dev lead)
+- Meet with your mentor for the week (dev lead)
   - Meet for at least 10-15 minutes everyday
 - Attend weekly team/company meetings to get the feeling for them
   - Sprint Planning
