@@ -187,7 +187,10 @@ Procedure:
 3. (Chair) Run through the agenda, which comprises one or more of the following items:
 
   - **Introduction**: One of the founders does an introduction to the meeting.
-  - **Welcome new team members**: New team members introduced by their direct manager, including their name, their role, and something interesting about them. At most 2 minutes per person. If a manager is away, the introduction is postponed to the next meeting.
+  - **Welcome new team members**:
+     - New team members introduced by their manager, including name, role, what they're working on, timezone, additional info as appropriate (max 2 minutes) 
+     - If new hire or manager is away, postpone to next meeting 
+     - New hire can opt-in to introduce themselves if they choose (default is not to require public speaking) 
   - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key updates, use cases or stories from customers.
   - **Feedback**: At end of meeting, Chair concludes meeting with a reminder to share feedback via survey.
 
@@ -206,8 +209,7 @@ Procedure:
 Frequently Asked Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Why don't new people introduce themselves?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Why don't new people introduce themselves?**
 
 Not everyone is comfortable with speaking in front of 60+ people. Not everyone speaks clear English. We don’t want the first company-wide meeting to be anxious for new team members, hence, managers intro them.
 
