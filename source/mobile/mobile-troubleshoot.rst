@@ -55,6 +55,12 @@ and then ignore the gradle task with
 
   ./gradlew assembleRelease -x bundleReleaseJsAndAssets
 
+No image previews available in the mobile app
+---------------------------------------------
+
+This can happen if the server running Mattermost has its mime types not set up correctly.
+A server running Linux has this file located in ``/etc/mime.types``. This might vary depending on your specific OS and distribution.
+
 None of these solve my problem!
 -------------------------------
 
