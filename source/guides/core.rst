@@ -57,6 +57,7 @@ Core Developer Handbook
 
    /developer/core-developer-handbook*
    /process/support*
+   /process/engineer-expectations*
 
 Documentation Style Guide
 -------------------------
