@@ -567,6 +567,20 @@ A one-line change to code can cost more mana than a 100-line change due to risk 
 
 Every feature added has an initial and on-going mana cost, which is taken into account in feature decisions.
 
+Mattermost staff 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Mattermost staff refers to all people paid by Mattermost who work on a dedicated basis, including paid part-time contributors.
+
+Mattermost employee 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A Mattermost employee refers to Mattermost staff who reside in countries where we are able to provide employment relationships and who are employed there, such as the United States, Canada and other countries via Professional Employement Organizations. 
+
+The term "Mattermost employee" excludes staff that work with Mattermost through a consulting contract relationship in countries where Mattermost is not able to offer a formal employment relationship. 
+
+When talking about colleagues, it's more common to use the term "Mattermost staff", which includes people paid by Mattermost through both employment and consulting relationships. 
+
 RHS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
