@@ -20,3 +20,7 @@ The operator makes use of Kubernetes CustomResourceDefinitions (CRD). Since Helm
 The first command will install only the `CRD` but will not actually attempt to deploy the operator. The second command will deploy the operator itself, now that the CRD is in place.
 
 **NOTE:** This needs done only the first time you install the operator, further upgrades will follow the normal [upgrade procedures](./upgrade.md)
+
+**NOTE:** Test new versions of the operator by setting `gitlab.operator.image.tag` to either the branch name of a gitlab-operator container build or a specific tagged release number.
+
+**NOTE:** The operator is transitioning from a ClusterRole to a regular Role that operates within a namespace. Operator containers after version 0.4 will have this new behavior by default.
