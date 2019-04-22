@@ -2,6 +2,30 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.8.0 (2019-04-22)
+
+### Fixed (2 changes)
+
+- Quote read passwords in yml files. !717
+- Ensure README present in helm package. !752
+
+### Changed (2 changes)
+
+- Update operator to use recreate deployment strategy. !728
+- Bump gitlab-operator to v0.4. !744
+
+### Added (3 changes, 1 of them is from the community)
+
+- Expose unicorn memory limits via chart values. !738 (Paul Nicholson)
+- Add support for when setting for external diffs. !743
+- ElasticSearch is now available. !746
+
+### Other (2 changes)
+
+- Update gitlab-runner to 0.4.0/11.10.0. !765
+- Update GitLab Version to 11.10.0.
+
+
 ## 1.7.5 (2019-04-11)
 
 ### Other (1 change)
