@@ -1,5 +1,0 @@
----
-title: Expose unicorn memory limits via chart values
-merge_request: 738
-author: Paul Nicholson
-type: added
