@@ -29,7 +29,7 @@ Priveleged containers have extended capabilities, for example they can mount arb
 | Parameter                                    | Description                                | Default                             |
 | ---                                          | ---                                        | ---                                 |
 | gitlab-runner.image                          | runner image                               | gitlab/gitlab-runner:alpine-v10.5.0 |
-| gitlab-runner.enabled                        |                                            | redis                               |
+| gitlab-runner.enabled                        |                                            | true                                |
 | gitlab-runner.imagePullPolicy                | image pull policy                          | IfNotPresent                        |
 | gitlab-runner.init.image                     | initContainer image                        | busybox                             |
 | gitlab-runner.init.tag                       | initContainer image tag                    | latest                              |
