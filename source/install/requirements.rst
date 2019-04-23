@@ -31,7 +31,7 @@ Desktop Apps
 
     "Windows", "Windows 7, 8.1 and 10"
     "Mac", "MacOS 10.12+"
-    "Linux", "Ubuntu LTS releases 14.04 or later"
+    "Linux", "Ubuntu LTS releases 16.04 or later"
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
 
@@ -68,8 +68,8 @@ Mobile Web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 11+ with Safari 12+ or Chrome 56+"
-    "Android", "Android 7+ with Chrome 56+"
+    "iOS", "iOS 11+ with Safari 12+ or Chrome 61+"
+    "Android", "Android 7+ with Chrome 61+"
 
 Email Client
 ^^^^^^^^^^^^
@@ -84,7 +84,7 @@ Server Software
 Mattermost Server Operating System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Ubuntu 14.04, Ubuntu 16.04, Debian Stretch, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 6+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+
+- Ubuntu 16.04, Ubuntu 18.04, Debian Stretch, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 6+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+
 - Using Mattermost `Docker image <https://docs.mattermost.com/install/prod-docker.html>`__ on a Docker-compatible operating system (Linux-based OS is still recommended)
 
 While community support exists for Fedora, FreeBSD and Arch Linux, Mattermost does not currently include production support for these platforms.
