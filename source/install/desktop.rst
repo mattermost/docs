@@ -118,6 +118,8 @@ Troubleshooting
 --------------------------------------------------
 
 "Installation has failed" dialog
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
     The app data might be corrupted - remove all the files in ``%LOCALAPPDATA%\mattermost``, then try re-installing the app.
 
 Desktop App window is black and doesn't load the page
@@ -161,6 +163,14 @@ Desktop App constantly asks to log in to Mattermost server
     - Windows: Open Windows File Explorer, and navigate to the ``%APPDATA%\Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
     - Mac: Open Finder, and navigate to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
     - Linux: Open the file manager, and navigate to the ``~/.config/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
+
+Internal error: BrowserWindow 'unresponsive' event has been emitted
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Clicking "Show Details" on the dialog provides logs. Ways to resolve the issue:
+
+  1. Clear the cache via CTRL+SHIFT+R (or View > Clear Cache and Reload).
+  2. Go to App Settings (via CTRL+COMMA or File > Settings) and unselect hardware acceleration.
 
 
 For additional troubleshooting tips, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__.
