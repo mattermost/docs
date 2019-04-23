@@ -153,6 +153,8 @@ Customer Obsession All-Hands Meeting
 Attendees:
 
 - All Mattermost Staff
+- Chair: Jason Blais
+- Vice Chair: Camille Harris
 
 Objectives:
 
