@@ -9,6 +9,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Release Date 2019-05-16
 
 ### Bug Fixes
+ - Fixed an issue where plugin settings link didn't appear until refreshing after uploading a plugin.
+ - Fixed an issue where **System Console** > **Users** bottom line of "user actions" menu was cut off for the last three users in the screen.
  
 ### Compatibility
 
