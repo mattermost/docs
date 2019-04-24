@@ -2,6 +2,14 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.8.1 (2019-04-24)
+
+### Other (2 changes)
+
+- Update gitlab-runner to 0.4.1/11.10.1. !768
+- Update GitLab Version to 11.10.1.
+
+
 ## 1.8.0 (2019-04-22)
 
 ### Fixed (2 changes)
