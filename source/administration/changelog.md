@@ -11,6 +11,16 @@ Release Date 2019-05-16
 ### Bug Fixes
  - Fixed an issue where plugin settings link didn't appear until refreshing after uploading a plugin.
  - Fixed an issue where **System Console** > **Users** bottom line of "user actions" menu was cut off for the last three users in the screen.
+ - Fixed an issue where a post action (via button or menu) reset the profile picture of the webhook post.
+ - Fixed an issue where corners on image previews were squared instead of rounded.
+ - Fixed an issue where the post action menu overlapped with posts on iOS/Safari on mobile view.
+ - Fixed an issue where flagged post containing only file attachments didn't render in sidebar until loaded in centre.
+ - Fixed an issue where some strings in Channel Settings weren't localizable.
+ - Fixed an issue where clicking "Open" downloaded an image instead of opening it.
+ - Fixed an issue where an at-mention user autocomplete overlapped with channel header when drafting a long message containing a file attachment.
+ - Fixed an issue where the reply bar showed gaps between posts in compact view.
+ - Fixed an issue where markdown preview of nested lists displayed differently from styling in posted message.
+ - Fixed an issue where Safari suggested auto-corrections in channel switcher.
  
 ### Compatibility
 
