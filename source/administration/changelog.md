@@ -122,9 +122,13 @@ Thank you to everyone who contributed to the Mattermost project in March 2019!
 
 ## Release v5.9
 
-Release Date 2019-03-16
-
 Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+- **v5.9.1, released 2019-04-24** 
+  - Mattermost v5.9.1 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+  - Turned image proxy off by default, unless a server already had it enabled (including new installs). Also, warnings about not getting embedded content for a post were downgraded or removed. See [important upgrade notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
+- **v5.9.0, released 2019-04-16**
+  - Original 5.9.0 release
 
 ### Bug Fixes
 
@@ -188,6 +192,9 @@ Thank you to everyone who contributed to the Mattermost project in February 2019
 
 Mattermost v5.8.0 contains low to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
+- **v5.8.2, released 2019-04-24** 
+  - Mattermost v5.8.2 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+  - Turned image proxy off by default, unless a server already had it enabled (including new installs). Also, warnings about not getting embedded content for a post were downgraded or removed. See [important upgrade notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
 - **v5.8.1, released 2019-03-16** 
   - Mattermost v5.8.1 contains a medium level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
   - Turned image proxy off by default, unless a server already had it enabled (including new installs). Also, warnings about not getting embedded content for a post were downgraded or removed. See [important upgrade notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
@@ -1124,6 +1131,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v4.10
 
+ - **v4.10.9, released 2019-04-24** 
+   - Mattermost v4.10.9 contains a medium level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.10.8, released 2019-03-16** 
    - Mattermost v4.10.8 contains a medium level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
  - **v4.10.7, released 2019-02-16** 
