@@ -154,6 +154,7 @@ Attendees:
 
 - All Mattermost Staff
 - Chair: Jason Blais
+- Co-Chairs: Co-founders
 - Vice Chair: Camille Harris
 
 Objectives:
@@ -186,7 +187,7 @@ Procedure:
 
 3. (Vice Chair) Start Zoom recording at 8:00am Palo Alto time.
 
-3. (Chair) Run through the agenda, which comprises one or more of the following items:
+3. (Chair & Co-Chairs) Run through the agenda, which comprises one or more of the following items:
 
   - **Introduction**: One of the founders does an introduction to the meeting.
   - **Week 2 Welcomes of new team members**:
@@ -194,7 +195,7 @@ Procedure:
      - If new hire or manager is away, postpone to next meeting 
      - New hire can opt-in to introduce themselves if they choose (default is not to require public speaking) 
   - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key updates, use cases or stories from customers.
-  - **Feedback**: At end of meeting, Chair concludes meeting with a reminder to share feedback via survey.
+  - **Feedback**: At end of meeting, concludes meeting with a reminder to share feedback via survey.
 
 **After meeting:**
 
