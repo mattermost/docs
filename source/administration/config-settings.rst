@@ -1061,7 +1061,7 @@ The username used to perform the AD/LDAP search. This should be an account creat
 
 Bind Password
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Password of the user given in **Bind Username**. This field is required, and anonymous bind is not currently supported.
+Password of the user given in **Bind Username**. Anonymous bind is not currently supported.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BindPassword": ""`` with string input.                                                                                  |
