@@ -38,9 +38,9 @@ ingress:
   annotations: {}
 workerProcesses: 2
 workerTimeout: 60
-memory:
-  min: 400
-  max: 650
+memory: # in MB units
+  min: 700
+  max: 1024
 hpa:
   targetAverageValue: 1
 workhorse:
