@@ -805,6 +805,7 @@ qa_gke:
     VARIABLES_FILE: "variables/review_gke"
   environment:
     name: gke_review/$CI_COMMIT_REF_NAME
+    on_stop: stop_review_gke
 
 qa_eks:
   extends: .qa_branch
@@ -812,6 +813,7 @@ qa_eks:
     VARIABLES_FILE: "variables/review_eks"
   environment:
     name: eks_review/$CI_COMMIT_REF_NAME
+    on_stop: stop_review_eks
 
 qa_gke_production:
   extends: .qa_production
