@@ -23,6 +23,9 @@ Release Date 2019-05-16
  - Fixed an issue where Safari suggested auto-corrections in channel switcher.
  - Fixed an issue on Safari where the mention badge count didn't update immediately.
  - Fixed an issue where the post action menu overlapped with posts on iOS/Safari on mobile view.
+ - Fixed an issue where interactive dialog's description text colour was difficult to see on dark themes.
+ - Fixed an issue where delete permissions for custom emoji team admin role were not always granted.
+ - Fixed an issue with a slight scroll pop on reaching loading indictor of search results.
  
 ### Compatibility
 
