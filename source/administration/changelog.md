@@ -130,6 +130,17 @@ Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http:
   - Mattermost v5.9.1 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.9.0, released 2019-04-16**
   - Original 5.9.0 release
+  
+### Important Upgrade Note
+If **DisableLegacyMfa** setting in ``config.json`` is set to ``true`` and [multi-factor authentication]( https://docs.mattermost.com/deployment/auth.html) is enabled, ensure your users have upgraded to mobile app version 1.17 or later. Otherwise, users who have MFA enabled may not be able to log in successfully.
+
+If the setting is not defined in the ``config.json`` file, the **DisableLegacyMfa** setting is set to ``false`` by default to ensure no breaking changes.
+
+We recommend setting **DisableLegacyMfa** to ``true`` for additional security hardening.                                                                         
+
+The public IP of the Mattermost application server is considered a reserved IP for additional security hardening in the context of untrusted external requests such as Open Graph metadata, webhooks or slash commands.
+
+[See documentation](https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to) for additional information.
 
 ### Bug Fixes
 
