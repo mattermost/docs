@@ -38,3 +38,15 @@ when restoring a backup.
 
 - [Backing up a GitLab installation](backup.md)
 - [Restoring a GitLab installation](restore.md)
+
+## Troubleshooting
+
+### Pod eviction issues
+
+Backups require being stored temporarily on disk. By default, the task-runner pod only has a memfs filesystem for the tmp directory. If you find your task-runner pod being evicted due to low resources, then you should attach a persistent disk to the pod to act as a tmp volume. On GKE, add the following settings to your helm command:
+
+```
+--set gitlab.task-runner.persistence.enabled=true
+```
+
+For other providers, you may need to create a persistent volume. See our [Storage documentation](../installation/storage.md) for possible examples on how to do this.
