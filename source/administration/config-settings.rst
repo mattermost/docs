@@ -625,6 +625,9 @@ Logging
 Output logs to console
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. note::
+   Logs are rotated once the log file reaches a size of 100 MB or more.
+
 **True**: Output log messages to the console based on **ConsoleLevel** option. The server writes messages to the standard output stream (stdout).
 
 **False**: Output log messages are not written to the console.
