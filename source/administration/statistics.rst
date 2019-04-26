@@ -98,3 +98,8 @@ Recent Active Users
 
 Newly Created Users
     Most recent users who have joined the team.
+
+Troubleshooting
+-----------------
+
+  If the statistics page is loading endlessly and you get an error message saying "Not enough data for a meaningful representation", check whether you are using an ad blocker. An ad blocker can prevent this page from loading data. To test this, temporarily disable your ad blocker, or view the page in a browser without an ad blocker installed.
