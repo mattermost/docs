@@ -133,3 +133,38 @@ resources:
   requests:
     cpu: 50m
     memory: 350M
+
+## Enable persistence using Persistent Volume Claims
+## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+##
+persistence:
+  enabled: false
+
+  ## task-runner temporarily Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  # storageClass: "-"
+  accessMode: ReadWriteOnce
+  size: 10Gi
+
+  ## If subPath is set mount a sub folder of a volume instead of the root of the volume.
+  ## This is especially handy for volume plugins that don't natively support sub mounting (like glusterfs).
+  ##
+  subPath: ""
+
+  ## if volumeName is set, use this existing PersistentVolume
+  # volumeName:
+
+  ## Only bind to a volume with the following exactly matched labels with values.
+  ## ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector
+  matchLabels: {}
+
+  ## Only bind to a volume with the following exppression matched labels.
+  ## ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector
+  matchExpressions: []
+
+
