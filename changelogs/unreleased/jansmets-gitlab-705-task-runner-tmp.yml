@@ -1,0 +1,5 @@
+---
+title: Persistent storage for task-runner tmp directory
+merge_request: 769
+author: jansmets
+type: added

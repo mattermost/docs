@@ -8,6 +8,9 @@ metadata:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 spec:
   replicas: 1
+  strategy:
+    rollingUpdate: null
+    type: Recreate
   selector:
     matchLabels:
       app: {{ template "name" . }}
@@ -88,6 +91,12 @@ spec:
             - name: task-runner-secrets
               mountPath: /srv/gitlab/config/secrets.yml
               subPath: rails-secrets/secrets.yml
+            - name: task-runner-tmp
+              mountPath: '/srv/gitlab/tmp'
+              {{- if and .Values.persistence.enabled .Values.persistence.subPath }}
+              subPath: "{{ .Values.persistence.subPath }}"
+              {{- end }}
+              readOnly: false
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
@@ -103,6 +112,13 @@ spec:
             - configMap:
                 name: {{ .Values.global.appConfig.pseudonymizer.configMap }}
             {{- end }}
+      - name: task-runner-tmp
+        {{- if .Values.persistence.enabled }}
+        persistentVolumeClaim:
+          claimName: {{ template "fullname" . }}-tmp
+        {{- else }}
+        emptyDir: {}
+        {{- end }}
       - name: init-task-runner-secrets
         projected:
           defaultMode: 0400
