@@ -3,75 +3,98 @@
 Production Docker Deployment
 ==============================
 
-Deploy Mattermost using a multi-node production configuration using `Docker Compose <https://docs.docker.com/compose/>`__. Docker Compose experience recommended.
+Deploy Mattermost using a multi-container production configuration. Docker experience recommended.
 
-For a single-node preview of Mattermost (without email) see `Local Machine Setup using Docker <http://docs.mattermost.com/install/docker-local-machine.html>`__.
+For a single-container preview of Mattermost (without email) see `Local Machine Setup using Docker <http://docs.mattermost.com/install/docker-local-machine.html>`__.
 
 If you have any problems installing, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__. To submit an improvement or correction, click Edit at the top of this page.
 
-Production Docker Setup on Ubuntu
+Install Docker
 ----------------------------------------------------
 
-1. **Install Docker** using `the Ubuntu online guide <https://docs.docker.com/installation/ubuntulinux/>`__ or these instructions:
+First ensure you have Docker installed on your server (try to run ``docker version``). If not you should follow the Docker documentation to install it :
 
-   .. code:: bash
+- `Debian <https://docs.docker.com/install/linux/docker-ce/debian/>`__
+- `Ubuntu <https://docs.docker.com/install/linux/docker-ce/ubuntu/>`__
+- `CentOS <https://docs.docker.com/install/linux/docker-ce/centos/>`__
+- `Fedora <https://docs.docker.com/install/linux/docker-ce/fedora/>`__
+- `MacOS <https://docs.docker.com/docker-for-mac/>`__
 
-       sudo apt-get update
-       sudo apt-get install wget
-       wget -qO- https://get.docker.com/ | sh
-       sudo usermod -aG docker <username>
-       sudo service docker start
-       newgrp docker
+Docker images
+----------------------------------------------------
 
-2. **Install Docker Compose** using `the online guide <https://docs.docker.com/compose/install/>`__. You have to download the latest release from `Docker Compose Github's page <https://github.com/docker/compose/releases/>`__ and put the binary on your :code:`/usr/local/bin` folder. Usually, you can use the following command, replacing :code:`$dockerComposeVersion` by the Docker Compose version to install :
+To run a Mattermost server, you will need 2 Docker images :
 
-   .. code:: bash
-   
-      curl -L https://github.com/docker/compose/releases/download/$dockerComposeVersion/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
-      sudo chmod +x /usr/local/bin/docker-compose
+- one for the application itself
+- one for the database (this is optionnal if you want to use an existing PostgreSQL database)
 
-3. **Deploy the Mattermost Production Docker** setup by running:
+Those images are available on `Docker Hub <https://hub.docker.com/u/mattermost>`__. If you prefer to build them yourself, you can follow the `instructions on Github <https://github.com/mattermost/mattermost-docker#docker-images>`__. Docker Hub images are :
 
-   .. code:: bash
+- `mattemost/mattermost-team-edition <https://hub.docker.com/r/mattermost/mattermost-team-edition>`__ for the application if you want to use Mattermost Team Edition
+- `mattemost/mattermost-enterprise-edition <https://hub.docker.com/r/mattermost/mattermost-enterprise-edition>`__ for the application if you want to use Mattermost Enterprise Edition
+- `mattermost/mattermost-prod-db <https://hub.docker.com/r/mattermost/mattermost-prod-db>`__ for the database
 
-       git clone https://github.com/mattermost/mattermost-docker.git
-       cd mattermost-docker
-       docker-compose build
-       mkdir -pv ./volumes/app/mattermost/{data,logs,config}
-       chown -R 2000:2000 ./volumes/app/mattermost/
-       docker-compose up -d
-
-4. **Configure TLS** by following `the instructions <https://github.com/mattermost/mattermost-docker#install-with-ssl-certificate>`__
-
-5. **Configure Email** by following the `SMTP email setup guide <http://docs.mattermost.com/install/smtp-email-setup.html>`__
-
-6. (Optional) to enable enterprise features under **System Console** > **Edition and License** upload your `trial license <https://about.mattermost.com/trial/>`__ or `subscription license file <https://about.mattermost.com/pricing/>`__ received via email.
-
-7. **Configure your server** based on `configuration settings documentation <http://docs.mattermost.com/administration/config-settings.html>`__
-
-Additional Guides:
-
-- **Start, stop and remove containers** using `management instructions. <https://github.com/mattermost/mattermost-docker/#startingstopping-docker>`__
-
-- **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker#aws>`__
+All images have tags corresponding to the Mattermost version. For example, ``mattemost/mattermost-team-edition:5.7.3`` is Mattermost 5.7.3 Team Edition.
 
 
-Production Docker Setup on Arch Linux
-------------------------------------------------------------
+Prepare environment
+----------------------------------------------------
 
-To install on Arch Linux, see the `installation guide <https://wiki.archlinux.org/index.php/Mattermost>`__ on the Arch Linux wiki.
+The ``app`` container need to communicate with the ``db`` container. In order to do this, we use a custom Docker network to connect both containers.
+
+  .. code-block:: bash
+
+    docker network create mattermost-net
+
+Also, Mattermost application and database need to persists data to disk (database, uploaded files, configuration, etc.). You can use Docker bind-mounts to mount persistent folderq inside the containers. Because the Mattermost application is running with a user having UID and GID ``2000``, you need to prepare the folders before running your images :
+
+  .. code-block:: bash
+
+    mkdir -p /docker/volumes/mattermost/app/{data,logs,config,plugins}
+    chown -R 2000:2000 /docker/volumes/mattermost/app
+
+Then you need to choose a database name, user and password. Those values will be transmitted as environment variables to the database and the application.
+
+.. code-block:: bash
+
+  MATTERMOST_DB_USER=mattermost
+  MATTERMOST_DB_PASSWORD=tb8Bs64oydFuOvvILGsiEGjnhDA0q4cz
+  MATTERMOST_DATABASE=mattermost
+
+**Use custom values here and backup them. If you lost your database credentials, it will require some manual intervention to recover.**
+
+Run Docker containers
+----------------------------------------------------
+
+Then you are ready to deploy your Mattermost containers. Because every infrastructure is different, we just provide `docker run` command examples to run the containers. It will give you the information about environment variables and mount points required by the containers, so you will be able to adapt it to your deployment tool (Docker Compose, Docker Swarm, Kubernetes, etc.). If you want deeper information about the images, and other deployment examples, you should check the `Github repository for Mattermost Docker images <https://github.com/mattermost/mattermost-docker>`__.
 
 
-Production Docker Setup on macOS
-------------------------------------------------------------
+To deploy the database container, run :
 
-You can run a production deployment on macOS by `installing Docker Compose using the online guide <https://docs.docker.com/docker-for-mac/>`__ then following the above instructions.
+.. code-block:: bash
 
-Other options:
---------------
+  docker run -d --name mattermost-db --net mattermost-net --network-alias db \
+  -e POSTGRES_USER=$MATTERMOST_DB_USER -e POSTGRES_PASSWORD=$MATTERMOST_DB_PASSWORD -e POSTGRES_DB=$MATTERMOST_DATABASE \
+  -v /docker/volumes/mattermost/db/data:/var/lib/postgresql/data -v /etc/localtime:/etc/localtime:ro \
+  mattermost/mattermost-prod-db
 
-To install Mattermost Team Edition instead of Mattermost Enterprise Edition, open ``docker-compose.yaml`` and comment out the following line:
+Then run the application container :
 
-  .. code-block:: text
+.. code-block:: bash
 
-    dockerfile: Dockerfile-enterprise
+  docker run -d --name mattermost-app --net mattermost-net \
+  -e MM_USERNAME=$MATTERMOST_DB_USER -e MM_PASSWORD=$MATTERMOST_DB_PASSWORD -e MM_DBNAME=$MATTERMOST_DATABASE \
+  -v /docker/volumes/mattermost/app/config:/mattermost/config \
+  -v /docker/volumes/mattermost/app/data:/mattermost/data \
+  -v /docker/volumes/mattermost/app/logs:/mattermost/logs \
+  -v /docker/volumes/mattermost/app/plugins:/mattermost/plugins \
+  -v /docker/volumes/mattermost/app/client-plugins:/mattermost/client/plugins \
+  -v /etc/localtime:/etc/localtime:ro \
+  mattermost/mattermost-prod-app
+
+The application is running, you just need to expose it to the outside world now. The ``app`` container serve the Mattermost application on its port ``8000``.
+
+Expose application
+----------------------------------------------------
+
+There are a lot of different ways to expose your server : with a reverse-proxy or not, enabling TLS or not (using Let's Encrypt or not), etc. This choice is yours because it depends a lot on your needs and your infrastructure. The only think you need to do is to expose the port ``8000`` of the ``app`` container, by direct binding to the host network, or using a reverse-proxy.
