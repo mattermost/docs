@@ -57,7 +57,7 @@ Frequently Asked Questions
 
 **Q5: When is release branch cut for a feature release?**
  
- - A: On feature cut-off date (T-15).
+ - A: On feature cut-off date (T-20).
 
 **Q6: How are PRs merged for release?**
  
@@ -81,11 +81,11 @@ Frequently Asked Questions
 
 **Q11: How are NOTICE.txt PRs submitted?**
 
- - A: Same as Q3.
+ - A: Same as Q6.
 
 **Q12: How are translation PRs submitted?**
 
- - A: Same as Q3.
+ - A: Same as Q6.
 
 **Q13: Is an improvement a feature or a bug?**
 
