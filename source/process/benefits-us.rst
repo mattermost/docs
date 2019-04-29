@@ -19,15 +19,15 @@ The Company pays 100% of premiums for medical, 100% of premiums for dental and 1
 
 **Insurance & Company Contribution Cap**
 
-- Medical Employee Only: $520.00
-- Medical Employee + Spouse: $860.00
-- Medical Employee + Child(ren):	$790.50
-- Medical Employee + Spouse + Child(ren):	$1047.50
+- Medical Employee Only: $593.00
+- Medical Employee + Spouse: $981.50
+- Medical Employee + Child(ren):	$901.50
+- Medical Employee + Spouse + Child(ren):	$1195.00
  
-- Group Dental Employee Only: $38.46
-- Group Dental Employee + Spouse: $58.65
-- Group Dental Employee + Child(ren): $58.65
-- Group Dental Employee + Spouse + Child(ren): $78.84
+- Group Dental Employee Only: $35.37
+- Group Dental Employee + Spouse: $53.94
+- Group Dental Employee + Child(ren): $53.94
+- Group Dental Employee + Spouse + Child(ren): $72.51
 
 - Group Vision Employee Only: $9.17
 - Group Vision Employee + Spouse: $13.78
@@ -36,4 +36,4 @@ The Company pays 100% of premiums for medical, 100% of premiums for dental and 1
 
 Employees are responsible for the remainder of the premium cost, if any. A summary of plan options showing remainder of premium costs after employer contribution will be provided with your offer. 
 
-**401K** - Our 401K retirement savings program is available through `Ubquity <https://www.myubiquity.com/>`__ after 3-months of full-time employment. 
+**401K** - Our 401K retirement savings program is available through `Ubiquity <https://www.myubiquity.com/>`__ after 3-months of full-time employment. 
