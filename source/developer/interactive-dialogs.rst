@@ -270,7 +270,7 @@ Below is a full example of a JSON payload that creates an interactive dialog in 
               "subtype":"",
               "default":"default text",
               "placeholder":"placeholder",
-              "help_text":"This a test regular input in an interactive dialog triggered by a test integration.",
+              "help_text":"This a regular input in an interactive dialog triggered by a test integration.",
               "optional":false,
               "min_length":0,
               "max_length":0,
@@ -284,7 +284,7 @@ Below is a full example of a JSON payload that creates an interactive dialog in 
               "subtype":"email",
               "default":"",
               "placeholder":"placeholder@bladekick.com",
-              "help_text":"This a test regular email input in an interactive dialog triggered by a test integration.",
+              "help_text":"This a regular email input in an interactive dialog triggered by a test integration.",
               "optional":false,
               "min_length":0,
               "max_length":0,
@@ -375,7 +375,7 @@ Below is a full example of a JSON payload that creates an interactive dialog in 
               ]
            }
         ],
-        "submit_label":"Submit Test",
+        "submit_label":"Submit",
         "notify_on_cancel":true,
         "state":"somestate"
      }
