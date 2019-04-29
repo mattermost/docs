@@ -28,8 +28,10 @@ spec:
           env:
           - name: GITLAB_CLASS
             value: {{ .Release.Name }}
+          {{- if not (eq (default "" .Values.crdPrefix) "") }}
           - name: CRD_PREFIX
-            value: {{ .Release.Name }}
+            value: {{ .Values.crdPrefix }}
+          {{- end }}
           {{ template "gitlab.imagePullPolicy" . }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}

@@ -52,5 +52,9 @@ Returns the operator group name. A subgroup with the release name is chosen
 */}}
 
 {{- define "gitlab.operator.groupName" -}}
-{{ printf "%s.gitlab.com" .Release.Name }}
+{{- if eq (default "" .Values.crdPrefix) "" -}}
+gitlab.com
+{{- else -}}
+{{ printf "%s.gitlab.com" .Values.crdPrefix }}
+{{- end -}}
 {{- end -}}
