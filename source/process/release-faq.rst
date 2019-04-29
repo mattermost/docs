@@ -53,76 +53,76 @@ Frequently Asked Questions
 
 **Q: When is release branch cut for a quality release?**
  
- - A: On the day prior feature release ships after final has been cut.
+- A: On the day prior feature release ships after final has been cut.
 
 **Q: When is release branch cut for a feature release?**
  
- - A: On feature cut-off date (T-20).
+- A: On feature cut-off date (T-20).
 
 **Q: How are PRs merged for release?**
  
- - A: PRs are first merged to master. The dev who submitted the fix is then responsible for cherry-picking it to the quality release branch.
+- A: PRs are first merged to master. The dev who submitted the fix is then responsible for cherry-picking it to the quality release branch.
 
 **Q: How are PRs merged for a feature release?**
  
- - A: PRs are submitted and merged to master (no change).
+- A: PRs are submitted and merged to master (no change).
 
 **Q: How does quality release work?**
 
- - A: Bugs are branched off from the previous feature release.
+- A: Bugs are branched off from the previous feature release.
  
 **Q: How is cherry-picking done?**
 
- - A: 
+- A: 
 
 **Q: What is community.mattermost kept on?**
  
- - A: For Feature releases community.mattermost is kept on the RCs. For Bug Fix releases keep it on master.
+- A: For Feature releases community.mattermost is kept on the RCs. For Bug Fix releases keep it on master.
  
 **Q: What is community-daily.mattermost kept on?**
  
- - A:
+- A:
 
 **Q: How to remove a feature/bug from a release?**
  
- - A: Revert from release branch. Optionally revert from master.
+- A: Revert from release branch. Optionally revert from master.
 
 **Q: How are NOTICE.txt PRs submitted?**
 
- - A: PRs are first merged to master. The dev who submitted the fix is then responsible for cherry-picking it to the release branch.
+- A: PRs are first merged to master. The dev who submitted the fix is then responsible for cherry-picking it to the release branch.
 
 **Q: Is an improvement a feature or a bug?**
 
- - A: Usually features / Story tickets.
+- A: Usually features / Story tickets.
  
 **Q: How does release team monitor what changes went into a release?**
 
- - A: Monitor the commit history of the respective release branch, e.g. https://github.com/mattermost/mattermost-server/commits/release-5.4 contains commits that shipped with mattermost-server v5.4. Jira ticket is resolved after cherry picking is done.
+- A: Monitor the commit history of the respective release branch, e.g. https://github.com/mattermost/mattermost-server/commits/release-5.4 contains commits that shipped with mattermost-server v5.4. Jira ticket is resolved after cherry picking is done.
 
 **Q: What changes were made to the dev release process to account for the rotating feature and quality releases? https://developers.mattermost.com/internal/release-process/**
 
- - A: PR with changes was merged `here <https://github.com/mattermost/mattermost-developer-documentation/pull/182>`__.
+- A: PR with changes was merged `here <https://github.com/mattermost/mattermost-developer-documentation/pull/182>`__.
 
 **Q: What changes were made to the team release process to account for the rotating feature and quality releases? https://docs.mattermost.com/process/release-process.html**
 
- - A: Separate checklists for `Bug Fix release <https://docs.mattermost.com/process/bug-fix-release.html>`__ and `Feature release <https://docs.mattermost.com/process/feature-release.html>`__ were created.
+- A: Separate checklists for `Bug Fix release <https://docs.mattermost.com/process/bug-fix-release.html>`__ and `Feature release <https://docs.mattermost.com/process/feature-release.html>`__ were created.
 
 **Q: How does Redux branching work?**
 
- - A: TBD.
+- A: TBD.
 
 **Q: How does translations branching work?**
 
- - A: Lock the translation server to the release branch. The translation PR will be submitted against the release branch and it can just be merged directly to the release branch without cherry-picking. When the translation server is locked back to master, the next PR against master will include those translations that went in for the release branch.
+- A: Lock the translation server to the release branch. The translation PR will be submitted against the release branch and it can just be merged directly to the release branch without cherry-picking. When the translation server is locked back to master, the next PR against master will include those translations that went in for the release branch.
 
 **Q: How does cutting mobile builds work?**
 
- - A: See instructions here: https://developers.mattermost.com/internal/mobile-build-process/.
+- A: See instructions here: https://developers.mattermost.com/internal/mobile-build-process/.
 
 **Q: How does updating dependancies work?**
  
- - A: Dependancy updates will only occur in feature releases, unless they contain security fixes.
+- A: Dependancy updates will only occur in feature releases, unless they contain security fixes.
 
 **Q: What is the process for community PRs?**
 
- - A: Review, merge and cherry-pick.
+- A: Review, merge and cherry-pick.
