@@ -121,7 +121,7 @@ Frequently Asked Questions
 
 **Q: How does cutting mobile builds work?**
 
- - A: TBD.
+ - A: See instructions here: https://developers.mattermost.com/internal/mobile-build-process/.
 
 **Q: How does updating dependancies work?**
  
