@@ -26,7 +26,7 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.operator.parseVersion" .Values.version ) }}"
           env:
-          - name: API_SUBGROUP
+          - name: GITLAB_CLASS
             value: {{ .Release.Name }}
           {{ template "gitlab.imagePullPolicy" . }}
           resources:
