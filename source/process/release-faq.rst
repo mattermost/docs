@@ -91,10 +91,6 @@ Frequently Asked Questions
 
  - A: PRs are first merged to master. The dev who submitted the fix is then responsible for cherry-picking it to the release branch.
 
-**Q: How are translation PRs submitted?**
-
- - A: PRs are merged directly to the release branch.
-
 **Q: Is an improvement a feature or a bug?**
 
  - A: Usually features / Story tickets.
@@ -117,7 +113,7 @@ Frequently Asked Questions
 
 **Q: How does translations branching work?**
 
- - A: Lock the translation server to the release branch. The translation PR will be done against the release branch and we can just merge it, forget about master and cherry-picking at this point, then when we lock the translation server back to master the next PR against master will include those translations that went in for the release branch.
+ - A: Lock the translation server to the release branch. The translation PR will be submitted against the release branch and it can just be merged directly to the release branch without cherry-picking. When the translation server is locked back to master, the next PR against master will include those translations that went in for the release branch.
 
 **Q: How does cutting mobile builds work?**
 
