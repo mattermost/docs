@@ -26,6 +26,8 @@ Release Date 2019-05-16
  - Fixed an issue where interactive dialog's description text colour was difficult to see on dark themes.
  - Fixed an issue where delete permissions for custom emoji team admin role were not always granted.
  - Fixed an issue with a slight scroll pop on reaching loading indictor of search results.
+ - Fixed an issue where adding a user to a channel that is in your unreads section caused the channel to become read in your view.
+ - Fixed an issue where the channel menu dropdown icon had an unnecessary tooltip.
  
 ### Compatibility
 
