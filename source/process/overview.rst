@@ -80,7 +80,7 @@ Tickets Accepting Pull Requests
 
 If you'd like to improve the product beyond bug fixes, you can select from a list of tickets accepting pull requests prepared by the core team.
 
-`Help Wanted GitHub issues <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%5BHelp%20Wanted%5D>`__ and `Accepting Pull Requests <https://mattermost.atlassian.net/issues/?filter=10101>`__ (APR) tickets are intended to be unambiguous projects that could be reasonably completed by contributors outside the core team and are welcome contributions.
+`Help Wanted GitHub issues <https://mattermost.com/pl/help-wanted-server>`__ and `Accepting Pull Requests <https://mattermost.atlassian.net/issues/?filter=10101>`__ (APR) tickets are intended to be unambiguous projects that could be reasonably completed by contributors outside the core team and are welcome contributions.
 
 You can choose any ticket marked "Open", even if it's assigned, and comment to let people know you're working on it. If you have questions post in `Mattermost forum <http://forum.mattermost.org/>`__ or join the `Contributors <https://community.mattermost.com/core/channels/tickets>`__ channel.
 
