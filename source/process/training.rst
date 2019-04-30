@@ -638,7 +638,7 @@ Product managers are responsible for aligning teams to strategic priorities, lea
 Resources
 --------------------------
 
-The following is a list of recommended resources for developing skills "the Mattermost way" in different areas. For the ones that require purchase you can message @matterbot to request an order, whether as physical books, digital books, audiobooks or other formats.
+The following is a list of recommended resources for developing skills "the Mattermost way" in different areas. For the ones that require purchase, message your manager to request an order, whether as physical books, digital books, audiobooks or other formats.
 
 
 Developers
