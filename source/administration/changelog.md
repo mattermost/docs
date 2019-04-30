@@ -9,15 +9,15 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Release Date 2019-05-16
 
 ### Bug Fixes
- - Fixed an issue where plugin settings link didn't appear until refreshing after uploading a plugin.
+ - Fixed an issue where plugin settings link didn't appear until refresh after uploading a plugin.
  - Fixed an issue where **System Console** > **Users** bottom line of "user actions" menu was cut off for the last three users in the screen.
  - Fixed an issue where corners on image previews were squared instead of rounded.
  - Fixed an issue where the hover effect was missing on images.
  - Fixed an issue where a post action (via button or menu) reset the profile picture of the webhook post.
  - Fixed an issue where flagged post containing only file attachments didn't render in sidebar until loaded in centre.
- - Fixed an issue where some strings in Channel Settings weren't localizable.
+ - Fixed an issue where some strings in channel settings weren't localizable.
  - Fixed an issue where clicking "Open" downloaded an image instead of opening it.
- - Fixed an issue where an at-mention user autocomplete overlapped with channel header when drafting a long message containing a file attachment.
+ - Fixed an issue where an at-mention user autocomplete overlapped with the channel header when drafting a long message containing a file attachment.
  - Fixed an issue where the reply bar showed gaps between posts in compact view.
  - Fixed an issue where markdown preview of nested lists displayed differently from styling in posted message.
  - Fixed an issue where Safari suggested auto-corrections in channel switcher.
@@ -29,6 +29,7 @@ Release Date 2019-05-16
  - Fixed an issue where adding a user to a channel that is in your unreads section caused the channel to become read in your view.
  - Fixed an issue where the channel menu dropdown icon had an unnecessary tooltip.
  - Fixed an issue on LDAP Groups where adding a group to a team provided a Permission confirmation modal.
+ - Fixed an issue on mobile view where clicking on the attachment icon didn't bring up the dropdown menu.
  
 ### Compatibility
 
