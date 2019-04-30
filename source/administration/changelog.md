@@ -131,16 +131,12 @@ Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http:
 - **v5.9.0, released 2019-04-16**
   - Original 5.9.0 release
   
-### Important Upgrade Note
-If **DisableLegacyMfa** setting in ``config.json`` is set to ``true`` and [multi-factor authentication]( https://docs.mattermost.com/deployment/auth.html) is enabled, ensure your users have upgraded to mobile app version 1.17 or later. Otherwise, users who have MFA enabled may not be able to log in successfully.
+### Breaking Changes since the last release
 
-If the setting is not defined in the ``config.json`` file, the **DisableLegacyMfa** setting is set to ``false`` by default to ensure no breaking changes.
+ - If **DisableLegacyMfa** setting in ``config.json`` is set to ``true`` and multi-factor authentication is enabled, ensure your users have upgraded to mobile app version 1.17 or later. Otherwise, users who have MFA enabled may not be able to log in successfully. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
+ - The public IP of the Mattermost application server is considered a reserved IP for additional security hardening in the context of untrusted external requests such as Open Graph metadata, webhooks or slash commands. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
 
-We recommend setting **DisableLegacyMfa** to ``true`` for additional security hardening.                                                                         
-
-The public IP of the Mattermost application server is considered a reserved IP for additional security hardening in the context of untrusted external requests such as Open Graph metadata, webhooks or slash commands.
-
-[See documentation](https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to) for additional information.
+**IMPORTANT:** If you upgrade from another release then 5.8, please read the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Bug Fixes
 
@@ -160,13 +156,6 @@ The public IP of the Mattermost application server is considered a reserved IP f
  - Fixed an issue where invite tokens with a 48-hour expiry expired after 24 hours.
  - Fixed an issue where a blank screen appeared when opening a group message channel from "More" modal using Enter key.
  - Fixed an issue where Zoom plugin caused link metadata code to print warnings in the System Console.
- 
-### Compatibility
-
-#### Breaking Changes
-
- - If **DisableLegacyMfa** setting in ``config.json`` is set to ``true`` and multi-factor authentication is enabled, ensure your users have upgraded to mobile app version 1.17 or later. Otherwise, users who have MFA enabled may not be able to log in successfully. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
- - The public IP of the Mattermost application server is considered a reserved IP for additional security hardening in the context of untrusted external requests such as Open Graph metadata, webhooks or slash commands. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
 
 ### config.json
 
@@ -211,6 +200,12 @@ Mattermost v5.8.0 contains low to high level security fixes. [Upgrading](http://
   - Turned image proxy off by default, unless a server already had it enabled (including new installs). Also, warnings about not getting embedded content for a post were downgraded or removed. See [important upgrade notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
 - **v5.8.0, released 2019-02-16**
   - Original 5.8.0 release
+
+### Breaking Changes since the last release
+
+- The local image proxy has been added, and images displayed within the client are now affected by the ``AllowUntrustedInternalConnections`` setting. See [documentation](https://docs.mattermost.com/administration/image-proxy.html#local-image-proxy) for more details if you have trouble loading images.
+
+**IMPORTANT:** If you upgrade from another release then 5.7, please read the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
 
