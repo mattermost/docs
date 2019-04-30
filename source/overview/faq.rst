@@ -428,7 +428,7 @@ If it’s unclear from the vendor’s documentation whether or not your data can
  
 *Total data ownership* means a 3rd party cannot prevent you from accessing your data at any time. It means no 3rd party can read your data, analyze it or monetize it. It means should you end your commercial relationship you maintain your records with any and all backups. It also means you can delete your data at any time and verify that no additional copies remain.
 
-*Audibility* means being able to fully observe, monitor and trace the operations of your systems to detect 
+*Audibility* means being able to fully observe, monitor and trace the operations of your systems.
  
 *Control of infrastructure* means being able to operate and customize your system to the specific needs of your business, including the ability to run on public and private networks, as well as on-prem, and interoperate with critical legacy systems with full observability and transparency down to reading the source code.
  
