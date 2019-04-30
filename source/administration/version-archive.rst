@@ -10,7 +10,7 @@ Mattermost Enterprise Edition v5.10.0 - `View Changelog <https://docs.mattermost
   - ``https://releases.mattermost.com/5.10.0/mattermost-5.10.0-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``210416d6def6424e33b358c2f5808adfbdf15adf3ffba6768d16d7777230b24f``
   - GPG Signature: https://releases.mattermost.com/5.10.0/mattermost-5.10.0-linux-amd64.tar.gz.sig
-Mattermost Enterprise Edition v5.9.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-9>`__ - `Download <https://releases.mattermost.com/5.9.1/mattermost-5.9.1-linux-amd64.tar.gz>`__
+Mattermost Enterprise Edition v5.9.1 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-9>`__ - `Download <https://releases.mattermost.com/5.9.1/mattermost-5.9.1-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.9.1/mattermost-5.9.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``15a127a427ced24017150297fdc21e454c044fa7bd02788ea13fa3f9069e7d43``
   - GPG Signature: https://releases.mattermost.com/5.9.1/mattermost-5.9.1-linux-amd64.tar.gz.sig
@@ -50,7 +50,7 @@ Mattermost Enterprise Edition v5.0.3 - `View Changelog <https://docs.mattermost.
   - ``https://releases.mattermost.com/5.0.3/mattermost-5.0.3-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``35863bd376f949d1fd87a012d4f5676e5eb2bdaaccaec4dd9141cf88979af6a6``
   - GPG Signature: https://releases.mattermost.com/5.0.3/mattermost-5.0.3-linux-amd64.tar.gz.sig
-Mattermost Enterprise Edition v4.10.9 *Extended Support Release* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-10>`__ - `Download <https://releases.mattermost.com/4.10.9/mattermost-4.10.9-linux-amd64.tar.gz>`__
+Mattermost Enterprise Edition v4.10.9 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v4-10>`__ - `Download <https://releases.mattermost.com/4.10.9/mattermost-4.10.9-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/4.10.9/mattermost-4.10.9-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``697636b0481ccbd60eb300ef0f5b47863c55ea0e37d55f7c0f3acc44ebc097fd``
   - GPG Signature: https://releases.mattermost.com/4.10.9/mattermost-4.10.9-linux-amd64.tar.gz.sig
