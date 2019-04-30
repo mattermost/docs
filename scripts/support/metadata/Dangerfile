@@ -6,6 +6,8 @@ if gitlab.mr_labels.empty?
   fail "Please add labels to this merge request."
 end
 
+warn "You may want to add ~Distribution label to this MR for gitlab-insights" unless gitlab.mr_labels.include?("Distribution")
+
 unless gitlab.mr_json["assignee"]
   warn "This merge request does not have any assignee yet. Setting an assignee clarifies who needs to take action on the merge request at any given time."
 end
