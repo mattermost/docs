@@ -12,11 +12,11 @@ Guide for testing Desktop v4.3.0-rc0 locally
 Installing Group Policy files locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Using a newly created Windows VM or dedicated Windows computer – make sure to use a Windows version that supports ``Edit group policy`` out of the box (i.e. Windows 10 Pro or Enterprise)
+1. Using a newly created Windows VM or dedicated Windows computer – make sure to use a Windows version that supports ``Edit group policy`` out of the box (i.e. Windows 10 Pro or Enterprise).
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00001.png
 
-2. Navigate to the `Mattermost Desktop <https://github.com/mattermost/desktop>`__ repo on `Github.com <https://github.com/>`__
+2. Navigate to the `Mattermost Desktop <https://github.com/mattermost/desktop>`__ repo on `Github.com <https://github.com/>`__.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00002.png
 
@@ -34,7 +34,7 @@ Installing Group Policy files locally
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00005.png
 
-7. Navigate to the C:\Windows\PolicyDefinitions folder and paste the files copied in the last step. 
+7. Navigate to the ``C:\Windows\PolicyDefinitions`` folder and paste the files copied in the last step. 
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00006.png
 
@@ -49,7 +49,7 @@ Installing Group Policy files locally
 Configurate Mattermost using Group Policy settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Run the ``Edit group policy`` application by clicking start, typing ``gpedit`` into the search field and clicking on the resulting ``Edit group policy`` search option.
+1. Run the ``Edit group policy`` application by clicking ``Start``, typing ``gpedit`` into the search field and clicking on the resulting ``Edit group policy`` search option.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00009.png
 
@@ -57,7 +57,7 @@ Configurate Mattermost using Group Policy settings
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00010.png
 
-3. In the resulting window for ``DefaultServerList``, click on `Enabled` to turn the feature on and then click on the ``Show…`` button in the ``Options:`` section of the window to add default servers.
+3. In the resulting window for ``DefaultServerList``, click on ``Enabled`` to turn the feature on and then click on the ``Show…`` button in the ``Options:`` section of the window to add default servers.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00011.png
 
