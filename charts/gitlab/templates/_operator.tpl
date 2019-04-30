@@ -52,5 +52,5 @@ Returns the operator group name. A subgroup with the release name is chosen
 */}}
 
 {{- define "gitlab.operator.groupName" -}}
-{{ printf "gitlab.com" }}
+{{ printf "%s.gitlab.com" .Release.Name }}
 {{- end -}}
