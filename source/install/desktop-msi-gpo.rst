@@ -1,4 +1,4 @@
-.. _install-msi-gpo-test:
+.. _desktop-msi-gpo:
 
 Desktop MSI/GPO Installation Guides
 ===================================
@@ -9,8 +9,8 @@ Desktop MSI/GPO Installation Guides
 Guide for testing Desktop v4.3.0-rc0 locally
 --------------------------------------------
 
-Installing Group Policy files locally
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Download Group Policy and MSI Installer files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Using a newly created Windows VM or dedicated Windows computer – make sure to use a Windows version that supports ``Edit group policy`` out of the box (i.e. Windows 10 Pro or Enterprise).
 
@@ -26,28 +26,36 @@ Installing Group Policy files locally
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00003.png
 
-5. Browse to the folder the files were downloaded to and unzip the ``desktop-4.3.0-rc0.zip`` file in place.
+Installing Group Policy files locally
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Browse to the folder the above files were downloaded to and unzip the ``desktop-4.3.0-rc0.zip`` file in place.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00004.png
 
-6. Navigate to the unzipped ``desktop-4.3.0-rc0\resources\windows\gpo`` folder and copy the contents.
+2. Navigate to the unzipped ``desktop-4.3.0-rc0\resources\windows\gpo`` folder and copy the contents.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00005.png
 
-7. Navigate to the ``C:\Windows\PolicyDefinitions`` folder and paste the files copied in the last step. 
+3. Navigate to the ``C:\Windows\PolicyDefinitions`` folder and paste the files copied in the last step. 
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00006.png
 
-8. Verify the ``mattermost.admx`` file is in the ``C:\Windows\PolicyDefinitions`` folder.
+4. Verify the ``mattermost.admx`` file is in the ``C:\Windows\PolicyDefinitions`` folder.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00007.png
 
-9. Verify the ``mattermost.adml`` file is in the ``C:\Windows\PolicyDefinitions\en-US`` folder.
+5. Verify the ``mattermost.adml`` file is in the ``C:\Windows\PolicyDefinitions\en-US`` folder.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00008.png
 
-Configurate Mattermost using Group Policy settings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Notes:
+
+* ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions`` can be used instead of ``C:\Windows\PolicyDefinitions`` if available.
+* ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions\en-US`` can be used instead of ``C:\Windows\PolicyDefinitions\en-US`` if available.
+
+Configure Mattermost using Group Policy settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Run the ``Edit group policy`` application by clicking ``Start``, typing ``gpedit`` into the search field and clicking on the resulting ``Edit group policy`` search option.
 
@@ -67,8 +75,8 @@ Configurate Mattermost using Group Policy settings
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00012.png
 
-Verify Group Policy settings were applied
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Verify Group Policy settings have been applied
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. To verify the settings applied correctly, open up the ``Registry Editor`` by clicking on the ``Start`` button, typing ``Registry Editor`` in the search field and selecting the ``Registry Editor`` option in the search results.
 
@@ -96,7 +104,7 @@ Install Mattermost Desktop using the MSI installer
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00017.png
 
 Verify Group Policy settings in the installed Desktop app
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Launch the newly installed Mattermost app from the ``Start`` menu.
 

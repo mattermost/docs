@@ -35,19 +35,21 @@ Windows 10+, Windows 8.1+, Windows 7+
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
-Group Policies
-~~~~~~~~~~~~~~~~~~~~~
-Copy the ``mattermost.admx`` from ``%INSTALLDIR%\gpo_template`` to ``C:\Windows\PolicyDefinitions`` or if available ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions``
-and ``mattermost.adml`` from ``%INSTALLDIR%\gpo_template\en-US`` to ``C:\Windows\PolicyDefinitions\en-US`` or if available ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions\en-US``
-then open the Group Policy Management Console and you should see under "Computer Configuration" --> "Administrative Templates" --> "Mattermost" the policies.
+Group Policies and MSI Installer support (v4.3 RC0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`See here <desktop-msi-gpo.html>`__ for instructions on installing, configuring and verifying supported Group Policies as well as installing the Mattermost desktop app via an MSI installer that conforms to the defined Group Policies.
 
-Following Group Policies are available:
+The following Group Policies are available:
 
-+------------------------+-----------------------------------------------------+----------------------+
-| Group Policy           | Description                                         | Required Version     |
-+========================+=====================================================+======================+
-| Disable Auto Updater   | Controls the behavior of the internal Autoupdater   | 4.3 or later         |
-+------------------------+-----------------------------------------------------+----------------------+
++----------------------------+-----------------------------------------------------------------------------+----------------------+
+| Group Policy               | Description                                                                 | Required Version     |
++============================+=============================================================================+======================+
+| Enable Auto Updater        | If disabled, the app auto-updater is disabled.                              | 4.3 or later         |
++----------------------------+-----------------------------------------------------------------------------+----------------------+
+| Enable Server Management   | If disabled, managimanagement of servers in the app settings is disabled.   | 4.3 or later         |
++----------------------------+-----------------------------------------------------------------------------+----------------------+
+| Default Server List        | Define one or more default, permanent servers.                              | 4.3 or later         |
++----------------------------+-----------------------------------------------------------------------------+----------------------+
 
 macOS 10.9+
 --------------------------------------------------
