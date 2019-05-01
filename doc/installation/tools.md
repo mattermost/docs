@@ -127,7 +127,7 @@ for this example we will include the cluster's name in it:
 ```sh
 CLUSTER_NAME=name-of-cluster
 kubectl config set-credentials $CLUSTER_NAME-admin-user --username=admin --password=xxxxxxxxxxxxxx
-kubectl --user=$CLUSTER_NAME-admin-user create -f https://gitlab.com/charts/gitlab/raw/master/doc/helm/examples/rbac-config.yaml
+kubectl --user=$CLUSTER_NAME-admin-user create -f https://gitlab.com/charts/gitlab/raw/master/doc/installation/examples/rbac-config.yaml
 ```
 
 #### Upload the RBAC config in non-GKE clusters
@@ -135,7 +135,7 @@ kubectl --user=$CLUSTER_NAME-admin-user create -f https://gitlab.com/charts/gitl
 For other clusters like Amazon EKS, you can directly upload the RBAC configuration:
 
 ```sh
-kubectl create -f https://gitlab.com/charts/gitlab/raw/master/doc/helm/examples/rbac-config.yaml
+kubectl create -f https://gitlab.com/charts/gitlab/raw/master/doc/installation/examples/rbac-config.yaml
 ```
 
 ### Initializing Helm
