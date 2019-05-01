@@ -46,7 +46,7 @@ The following Group Policies are available:
 +============================+=============================================================================+======================+
 | Enable Auto Updater        | If disabled, the app auto-updater is disabled.                              | 4.3 or later         |
 +----------------------------+-----------------------------------------------------------------------------+----------------------+
-| Enable Server Management   | If disabled, managimanagement of servers in the app settings is disabled.   | 4.3 or later         |
+| Enable Server Management   | If disabled, management of servers in the app settings are disabled.        | 4.3 or later         |
 +----------------------------+-----------------------------------------------------------------------------+----------------------+
 | Default Server List        | Define one or more default, permanent servers.                              | 4.3 or later         |
 +----------------------------+-----------------------------------------------------------------------------+----------------------+
