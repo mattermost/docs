@@ -1,7 +1,8 @@
 .. _desktop-msi-gpo:
 
-Desktop MSI/GPO Installation Guides
-===================================
+Desktop MSI Installer and Group Policy Installation Guides (Alpha)
+==================================================================
+The Mattermost desktop app MSI installer and Group Policy (GPO) definitions are currently in Alpha testing, packaged in v4.3.0-rc0. This guide provides steps to test the installer and Group Policies using the test build available `here <https://github.com/mattermost/desktop/releases/tag/v4.3.0-rc0>`_.
 
 .. contents::
     :backlinks: top
