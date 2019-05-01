@@ -2142,7 +2142,10 @@ ________
 
 Files
 --------------------------------
-Mattermost currently supports storing files on the local filesystem and to Amazon S3 and compatible containers like `Minio <https://www.minio.io/>`__. or Digital Ocean Spaces.
+Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3 compatible containers. 
+
+.. note::
+  We have tested Mattermost with `Minio <https://www.minio.io/>`__ and `Digital Ocean Spaces <https://www.digitalocean.com/docs/spaces/>`_ products but not all S3 compaible containers on the market. If you are looking to use other S3 compatible containters we advise completing your own testing.
 
 Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~
