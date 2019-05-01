@@ -160,6 +160,27 @@ Create the secret using the [s3cmd config file format](https://s3tools.org/kb/it
     enable_multipart = False
     ```
 
+    * On Azure Storage
+
+    ```
+    [default]
+    # Setup endpoint: hostname of the Web App
+    host_base = https://your_minio_setup.azurewebsites.net
+    host_bucket = https://your_minio_setup.azurewebsites.net
+    # Leave as default
+    bucket_location = us-west-1
+    use_https = True
+
+    # Setup access keys
+    # Access Key = Azure Storage Account name
+    access_key =  BOGUS_ACCOUNT_NAME
+    # Secret Key = Azure Storage Account Key
+    secret_key = BOGUS_KEY
+
+    # Use S3 v4 signature APIs
+    signature_v2 = False
+    ``` 
+
 1. Create the secret
 
     ```bash
