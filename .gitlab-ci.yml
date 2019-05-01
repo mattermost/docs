@@ -451,6 +451,7 @@ check_docs_internal_links:
       --set minio.resources.requests.cpu=100m \
       --set global.operator.enabled=true \
       --set global.operator.bootstrap=${OPERATOR_BOOTSTRAP-false} \
+      --set gitlab.operator.crdPrefix="$CI_ENVIRONMENT_SLUG" \
       --namespace="$KUBE_NAMESPACE" \
       --version="$CI_PIPELINE_ID-$CI_JOB_ID" \
       "$name" \
