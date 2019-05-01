@@ -16,6 +16,10 @@ has been provided in the [examples](https://gitlab.com/charts/gitlab/tree/master
 
 This documentation specifies usage of access and secret keys for AWS. It is also possible to use [IAM roles](./aws-iam-roles.md).
 
+## Azure Blob Storage
+
+GitLab uses [fog](https://github.com/fog/fog), but [doesn't currently support fog-azure](https://gitlab.com/gitlab-org/gitlab-ce/issues/55624). To make use Azure Blob Storage, you will have to setup a [minio-azure gateway](./minio-azure-gateway.md).
+
 ## Docker Registry images
 
 Configuration of object storage for the `registry` chart is done via the `registry.storage` key, and the `global.registry.bucket` key.
@@ -31,13 +35,15 @@ the global is used by GitLab backups.
 
 Create the secret per [registry chart documentation on storage](../../charts/registry/index.md#storage), then configure the chart to make use of this secret.
 
-Examples for [S3][storage-s3](any s3 compatible) and [GCS][storage-gcs] drivers can be found in
+Examples for [S3][storage-s3](any s3 compatible), [Azure][storage-azure] and [GCS][storage-gcs] drivers can be found in
 [examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
 - [registry.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.s3.yaml)
 - [registry.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.gcs.yaml)
+- [registry.azure.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.azure.yaml)
 
 [storage-s3]: https://docs.docker.com/registry/storage-drivers/s3
 [storage-gcs]: https://docs.docker.com/registry/storage-drivers/gcs
+[storage-azure]: https://docs.docker.com/registry/storage-drivers/azure
 
 ### Registry configuration
 
@@ -90,13 +96,15 @@ See the [charts/globals documentaion on appConfig](../../charts/globals.md#confi
 
 Create the secret(s) per the [connection details documentation](../../charts/globals.md#connection), and then configure the chart to use the provided secrets. Note, the same secret can be used for all of them.
 
-Examples for [AWS][fog-aws](any S3 compatible) and [Google][fog-gcs] providers can be found in
+Examples for [AWS][fog-aws](any S3 compatible like [Azure using Minio][minio-azure] ) and [Google][fog-gcs] providers can be found in
 [examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
 - [rails.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.s3.yaml)
 - [rails.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.gcs.yaml)
+- [rails.azure.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.azure.yaml)
 
 [fog-aws]: https://fog.io/storage/#using-amazon-s3-and-fog
 [fog-gcs]: https://fog.io/storage/#google-cloud-storage
+[minio-azure]: ./aws-iam-roles.md
 
 ### appConfig configuration
 
