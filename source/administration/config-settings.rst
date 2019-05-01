@@ -2145,7 +2145,7 @@ Files
 Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3 compatible containers. 
 
 .. note::
-  We have tested Mattermost with `Minio <https://www.minio.io/>`__ and `Digital Ocean Spaces <https://www.digitalocean.com/docs/spaces/>`_ products but not all S3 compaible containers on the market. If you are looking to use other S3 compatible containters we advise completing your own testing.
+  We have tested Mattermost with `Minio <https://www.minio.io/>`__ and `Digital Ocean Spaces <https://www.digitalocean.com/docs/spaces/>`_ products but not all S3 compatible containers on the market. If you are looking to use other S3 compatible containers we advise completing your own testing.
 
 Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~
