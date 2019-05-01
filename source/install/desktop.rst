@@ -35,7 +35,7 @@ Windows 10+, Windows 8.1+, Windows 7+
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
-Group Policies and MSI Installer support (v4.3 RC0)
+Group Policies (GPO) and MSI Installer support (Alpha)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 `See here <desktop-msi-gpo.html>`__ for instructions on installing, configuring and verifying supported Group Policies as well as installing the Mattermost desktop app via an MSI installer that conforms to the defined Group Policies.
 
