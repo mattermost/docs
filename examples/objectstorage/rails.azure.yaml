@@ -1,5 +1,5 @@
 # Example configuration of `connection` secret for Rails
-# Example for Azure Storage
+# Example for Azure Blob Storage
 #   See https://gitlab.com/charts/gitlab/blob/master/doc/charts/globals.md#connection
 #   See https://gitlab.com/charts/gitlab/blob/master/doc/advanced/external-object-storage
 
