@@ -51,7 +51,7 @@ az appservice plan create \
     --location "WestUS"
 ```
 
-Create a Web app configured with the [minio/minio] docker container, the name you specify will be used in the URL of the web app:
+Create a Web app configured with the [minio/minio](https://hub.docker.com/r/minio/minio) docker container, the name you specify will be used in the URL of the web app:
 
 ```
 az webapp create \
