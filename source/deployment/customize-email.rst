@@ -6,9 +6,14 @@ Most of the time these templates do not need to be modified.
 In case additional modifications are necessary, all available props in each email are listed below.  
 
 The email templates are located in the Mattermost server directory in the ``templates`` folder.
+The corresponding Strings for each prop can be found in the ``i18n`` folder. 
 
 .. note::
-  The props between different email templates are not interchangable without additional server code changes.
+  The props between different email templates are not interchangable without additional server code changes.  
+
+.. note::
+  Changes made inside of the ``templates`` or ``i18n`` folder might get overwritten during a server update. 
+  Please make sure to backup them accordingly.
 
 
 Available templates
