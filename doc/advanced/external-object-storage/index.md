@@ -104,7 +104,7 @@ Examples for [AWS][fog-aws](any S3 compatible like [Azure using Minio][minio-azu
 
 [fog-aws]: https://fog.io/storage/#using-amazon-s3-and-fog
 [fog-gcs]: https://fog.io/storage/#google-cloud-storage
-[minio-azure]: ./aws-iam-roles.md
+[minio-azure]: ./azure-minio-gateway.md
 
 ### appConfig configuration
 
