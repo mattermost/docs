@@ -2,16 +2,16 @@ Email Templates
 ====================
 
 Mattermost has a few email templates that are sent out when a specific event occurs.
-Most of the time these do not need to be modified.
-In case additional modifications are neccessary all available props in each email are listed below.  
+Most of the time these templates do not need to be modified.
+In case additional modifications are necessary, all available props in each email are listed below.  
 
 The email templates are located in the Mattermost server directory in the ``templates`` folder.
 
 .. note::
-  The props between different email templates are not interchangable without additional server code changes!
+  The props between different email templates are not interchangable without additional server code changes.
 
 
-Available templates:
+Available templates
 ------------------------
 
 
