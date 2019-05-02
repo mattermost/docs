@@ -148,7 +148,7 @@ For other troubleshooting tips for WebSocket errors, see `potential solutions he
     environment:
       # set same as db credentials and dbname
       - MM_USERNAME=mmuser
-      - MM_PASSWORD=mmuser_password
+      - MM_PASSWORD=mmuser-password
       - MM_DBNAME=mattermost
       - VIRTUAL_HOST=mymattermost.tld
     expose:

@@ -103,14 +103,14 @@ for Mattermost to utilize.
     .. code:: sql
 
        CREATE DATABASE mattermost;
-       CREATE USER mmuser IDENTIFIED BY 'mmuser_password';
+       CREATE USER mmuser IDENTIFIED BY 'mmuser-password';
        GRANT ALL ON mattermost.* TO mmuser;
        exit
 
 21. To confirm the database and user were configured correctly
 
     a. Connect to the MySQL server/datbase by executing ``mysql -u mmuser -p mattermost`` 
-    b. When prompted, entering ``mmuser_password``
+    b. When prompted, entering ``mmuser-password``
     c. If If successful, you will be at the ``mysql>`` prompt 
     d. Type ``exit`` to finish
 
@@ -136,7 +136,7 @@ Set up Mattermost Server
    * Update database name and server in the the connection string:
      
      * Old: ``"DataSource": "mmuser:mostest@tcp(dockerhost:3306)/mattermost_test?charset=utf8mb4,utf8"``    
-     * New: ``"DataSource": "mmuser:mmuser_password@tcp(10.0.0.1:3306)/mattermost?charset=utf8mb4,utf8"``
+     * New: ``"DataSource": "mmuser:mmuser-password@tcp(10.0.0.1:3306)/mattermost?charset=utf8mb4,utf8"``
 
    .. note :: Optionally you may continue to edit configuration settings in ``config.json`` or use the 
       System Console described in a later section to finish the configuration.

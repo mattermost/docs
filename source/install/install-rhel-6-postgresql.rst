@@ -43,7 +43,7 @@ Installing PostgreSQL Database
 
 11.  Create the Mattermost user 'mmuser'.
 
-  ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';``
+  ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``
 
   .. note::
     Use a password that is more secure than 'mmuser-password'.
