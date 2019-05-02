@@ -164,7 +164,6 @@ Sent to the user when account has been deactivated.
 
 **Body Props**:
  - SiteURL: URL of the Mattermost server
- - ServerURL: 
  - Title: Message heading
  - Info: Message body
  - Warning: Warning Text
