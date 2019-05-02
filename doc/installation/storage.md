@@ -145,6 +145,10 @@ Helm upgrade command.
 
 See the [managing persistent volumes documentation](../advanced/persistent-volumes/index.md).
 
+## Optional volumes
+
+* For larger installations, you may need to add persistent storage to the task-runner pod to get backups/restores working. See our [troubleshooting documentation](../backup-restore/#pod-eviction-issues) for a guide on how to do this.
+
 [pv]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes
 [pvc]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
 [Storage Class]: https://kubernetes.io/docs/concepts/storage/storage-classes/
