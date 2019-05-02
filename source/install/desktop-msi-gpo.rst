@@ -62,7 +62,7 @@ Configure Mattermost using Group Policy settings
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00009.png
 
-2. In the ``Edit group policy`` window, navigate to ``Local Computer Policy\Computer Configuration\Administrative Templates\Mattermost`` and double click on ``DefaultServerList`` (or any of the available options).
+2. In the ``Edit group policy`` window, navigate to ``Local Computer Policy\Computer Configuration\Administrative Templates\Mattermost``. A list of the available policies can be found `here <https://docs.mattermost.com/install/desktop.html#group-policies-gpo-and-msi-installer-support-alpha>`_. In this example, double click on ``DefaultServerList`` to set one or more default servers that will appear on app launch. 
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00010.png
 
