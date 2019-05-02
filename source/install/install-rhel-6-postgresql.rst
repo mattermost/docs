@@ -54,7 +54,7 @@ Installing PostgreSQL Database
 
 13. Exit the PostgreSQL interactive terminal.
 
-  ``postgre=# \q``
+  ``postgres=# \q``
 
 14. Log out of the *postgres* account.
 

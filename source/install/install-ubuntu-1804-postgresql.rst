@@ -40,7 +40,7 @@ Assume that the IP address of this server is 10.10.10.1.
 
 7. Exit the PostgreSQL interactive terminal.
 
-  ``postgre=# \q``
+  ``postgres=# \q``
 
 8. Log out of the *postgres* account.
 
