@@ -6,7 +6,7 @@ Most of the time these templates do not need to be modified.
 In case additional modifications are necessary, all available props in each email are listed below.  
 
 The email templates are located in the Mattermost server directory in the ``templates`` folder.
-The corresponding Strings for each prop can be found in the ``i18n`` folder. 
+The corresponding strings for each prop can be found in the ``i18n`` folder. 
 
 .. note::
   The props between different email templates are not interchangable without additional server code changes.  
@@ -30,7 +30,7 @@ Sent to the user when username has been changed.
  - SiteURL: URL of the Mattermost server
  - Title: Message heading
  - Info: Message body
- - Warning: Warning Text
+ - Warning: Warning text
 
 
 SendEmailChangeVerifyEmail
@@ -57,7 +57,7 @@ Sent to the user when email has been changed succesfully.
  - SiteURL: URL of the Mattermost server
  - Title: Message heading
  - Info: Message body
- - Warning: Warning Text
+ - Warning: Warning text
 
 
 SendVerifyEmail
@@ -84,7 +84,7 @@ Sent to the user when sign-in method has been changed (i.e. from email to LDAP, 
  - SiteURL: URL of the Mattermost server
  - Title: Message heading
  - Info: Message body
- - Warning: Warning Text
+ - Warning: Warning text
 
 
 SendWelcomeEmail
@@ -117,7 +117,7 @@ Sent to the user when password has been changed.
  - SiteURL: URL of the Mattermost server
  - Title: Message heading
  - Info: Message body
- - Warning: Warning Text
+ - Warning: Warning text
 
 
 SendAccessTokenEmail
@@ -130,7 +130,7 @@ Sent to the user when an access token has been added to the account.
  - SiteURL: URL of the Mattermost server
  - Title: Message heading
  - Info: Message body
- - Warning: Warning Text
+ - Warning: Warning text
 
 
 SendPasswordResetEmail
@@ -158,7 +158,7 @@ Sent to the user when multi-factor authentication method has been changed.
  - SiteURL: URL of the Mattermost server
  - Info: Message body
  - Title: Message heading
- - Warning: Warning Text
+ - Warning: Warning text
 
 
 SendDeactivateAccountEmail
@@ -171,7 +171,7 @@ Sent to the user when account has been deactivated.
  - SiteURL: URL of the Mattermost server
  - Title: Message heading
  - Info: Message body
- - Warning: Warning Text
+ - Warning: Warning text
 
 
 SendInviteEmails
