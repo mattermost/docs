@@ -46,6 +46,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Websocket Event Changes
 
 ### Known Issues
+ - Buttons inside ephemeral posts are not clickable / functional on the mobile app.
  
 ### Contributors
 
