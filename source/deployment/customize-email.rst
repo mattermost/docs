@@ -43,8 +43,8 @@ Sent to the user when email change has been requested. Contains verification lin
  - SiteURL: URL of the Mattermost server
  - Title: Message heading
  - Info: Message body
- - VerifyURL: Link for Verification
- - VerifyButton: Button for Verification
+ - VerifyURL: Link for verification
+ - VerifyButton: Button for verification
 
 
 SendEmailChangeEmail
@@ -70,7 +70,7 @@ Sent to the user upon account creation to verify email address.
  - SiteURL: URL of the Mattermost server
  - Title: Message heading
  - Info: Message body
- - VerifyURL: Link for Verification
+ - VerifyURL: Link for verification
  - Button: Button for confirmation
 
 
@@ -101,10 +101,10 @@ Sent to the user when account has been created. May also contain download links 
  - Info2: Continuation of message body
  - Info3: Continuation of message body
 
-Optional Props:
+**Optional Props**:
  - AppDownloadInfo
  - AppDownloadLink
- - VerifyURL: Link for Verification
+ - VerifyURL: Link for verification
 
 
 SendPasswordChangeEmail
