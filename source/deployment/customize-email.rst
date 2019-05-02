@@ -1,5 +1,5 @@
 Email Templates
-====================
+===============
 
 Mattermost has a few email templates that are sent out when a specific event occurs.
 Most of the time these templates do not need to be modified.
@@ -11,17 +11,17 @@ The corresponding Strings for each prop can be found in the ``i18n`` folder.
 .. note::
   The props between different email templates are not interchangable without additional server code changes.  
 
-.. note::
+.. warning::
   Changes made inside of the ``templates`` or ``i18n`` folder might get overwritten during a server update. 
   Please make sure to backup them accordingly.
 
 
 Available templates
-------------------------
+-------------------
 
 
 SendChangeUsernameEmail
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **Purpose**:
 Sent to the user when username has been changed.
@@ -43,12 +43,12 @@ Sent to the user when email change has been requested. Contains verification lin
  - SiteURL: URL of the Mattermost server
  - Title: Message heading
  - Info: Message body
- - VerifyUrl: Link for Verification
+ - VerifyURL: Link for Verification
  - VerifyButton: Button for Verification
 
 
 SendEmailChangeEmail
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 **Purpose**:
 Sent to the user when email has been changed succesfully.
@@ -61,7 +61,7 @@ Sent to the user when email has been changed succesfully.
 
 
 SendVerifyEmail
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 **Purpose**:
 Sent to the user upon account creation to verify email address.
@@ -70,12 +70,12 @@ Sent to the user upon account creation to verify email address.
  - SiteURL: URL of the Mattermost server
  - Title: Message heading
  - Info: Message body
- - VerifyUrl: Link for Verification
+ - VerifyURL: Link for Verification
  - Button: Button for confirmation
 
 
 SendSignInChangeEmail
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 **Purpose**:
 Sent to the user when sign-in method has been changed (i.e. from email to LDAP, etc.)
@@ -88,7 +88,7 @@ Sent to the user when sign-in method has been changed (i.e. from email to LDAP, 
 
 
 SendWelcomeEmail
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 **Purpose**:
 Sent to the user when account has been created. May also contain download links to Apps as well as email verification links.
@@ -104,11 +104,11 @@ Sent to the user when account has been created. May also contain download links 
 Optional Props:
  - AppDownloadInfo
  - AppDownloadLink
- - VerifyUrl: Link for Verification
+ - VerifyURL: Link for Verification
 
 
 SendPasswordChangeEmail
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **Purpose**:
 Sent to the user when password has been changed.
@@ -121,7 +121,7 @@ Sent to the user when password has been changed.
 
 
 SendAccessTokenEmail
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 **Purpose**:
 Sent to the user when an access token has been added to the account.
@@ -134,7 +134,7 @@ Sent to the user when an access token has been added to the account.
 
 
 SendPasswordResetEmail
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 **Purpose**:
 Sent to the user when password request has been initiated.
@@ -144,12 +144,12 @@ Sent to the user when password request has been initiated.
  - Title: Message heading
  - Info1: Message body
  - Info2: Continuation of message body
- - ResetUrl: Url to reset password
+ - ResetURL: URL to reset password
  - Button: Button for confirmation
 
 
 SendMfaChangeEmail
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 **Purpose**:
 Sent to the user when multi-factor authentication method has been changed.
@@ -162,7 +162,7 @@ Sent to the user when multi-factor authentication method has been changed.
 
 
 SendDeactivateAccountEmail
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Purpose**:
 Sent to the user when account has been deactivated.
@@ -175,7 +175,7 @@ Sent to the user when account has been deactivated.
 
 
 SendInviteEmails
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 **Purpose**:
 Sent to the user when team invite via email has been used.
