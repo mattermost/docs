@@ -29,7 +29,7 @@ Assume that the IP address of this server is 10.10.10.1.
 
 5.  Create the Mattermost user 'mmuser'.
 
-  ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';``
+  ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``
 
   .. note::
     Use a password that is more secure than 'mmuser-password'.
@@ -40,7 +40,7 @@ Assume that the IP address of this server is 10.10.10.1.
 
 7. Exit the PostgreSQL interactive terminal.
 
-  ``postgre=# \q``
+  ``postgres=# \q``
 
 8. Log out of the *postgres* account.
 
