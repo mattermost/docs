@@ -28,8 +28,8 @@ Learn how to get Mattermost running on your environment.
    Installing on Ubuntu 16.04 LTS </install/install-ubuntu-1604.rst>
    Installing on Ubuntu 18.04 LTS </install/install-ubuntu-1804.rst>
    Installing on Debian Stretch </install/install-debian.rst>
-   Installing on RHEL 6.6 </install/install-rhel-6.rst>
-   Installing on RHEL 7.1 </install/install-rhel-7.rst>
+   Installing on RHEL 6 </install/install-rhel-6.rst>
+   Installing on RHEL 7 </install/install-rhel-7.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
    /install/ee-install*
    /install/deploy-bitnami*
@@ -40,6 +40,7 @@ Learn how to get Mattermost running on your environment.
    Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
    /install/troubleshooting*
    /install/desktop*
+   /install/desktop-msi-gpo*
    /install/smtp*
    /install/config-cloudfront*
    /install/outbound-proxy.rst
@@ -57,7 +58,6 @@ Learn how to host Mattermost to meet your networking requirements.
 
    /deployment/deployment.md 
    /deployment/desktop-app-deployment*
-   AppConfig for EMM Solutions </deployment/mobile-appconfig.rst>
    /administration/image-proxy*
    /administration/encryption*  
    /deployment/client-side-data.rst
@@ -129,9 +129,8 @@ Learn how to maintain your Mattermost system.
    :glob:
 
    /administration/command*
-   /administration/team-settings.md
    /administration/statistics.md
-   /administration/liveness-check*
+   /administration/health-check*
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
  
@@ -190,6 +189,7 @@ Learn how to support growth within Mattermost.
    
    /deployment/scaling*
    /deployment/cluster*
+   /deployment/cluster-310*
    /deployment/elastic*
    /deployment/metrics*
    /administration/performance-alerting-guide*
