@@ -129,7 +129,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Confirm up to date with test updates and known issues in release testing spreadsheet
     - Assign release testing areas to team members
     - After RC1 is cut: Update rctesting and CI server invite links in Release Testing spreadsheet
-    - After RC1 is cut: Lock Selenium server to RC1
+    - After RC1 is cut: Lock Selenium server to RC1 and begin running all Selenium IDE tests
 4. Build:
     - Review all `TODO` notes, including one for uncommenting upgrade code
     - Confirm all PRs in [`/enterprise`](https://github.com/mattermost/enterprise/pulls) repo have been merged.
@@ -158,11 +158,11 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Post list of tickets to be fixed to the Release Discussion channel ([see example](https://community.mattermost.com/core/pl/65k77x3bnigw5f9ffohfxonnfy))
     - Update Changelog “Known Issues” section with any significant issues that were found and not fixed for the final release
 3. QA:
-    - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://community.mattermost.com/core/pl/db3sur4r53d9tyih1i4wrmi9wy))
-    - Post release testing instructions to Release Discussion channel ([template](https://community.mattermost.com/core/pl/uprogtcqzpbk7nkmdkfnhqkcac))
+    - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://docs.google.com/document/d/1UvTsvwZXmEL9QPjxmjoIkR2AcwGtOjql8cYRfk2N8eA/edit#bookmark=id.ghe4vz9zd1v))
+    - Post release testing instructions to Release Discussion channel ([template](https://docs.google.com/document/d/1UvTsvwZXmEL9QPjxmjoIkR2AcwGtOjql8cYRfk2N8eA/edit#bookmark=id.u28aar2hx7hg))
+    - Post reminders in Announcements channel ([template](https://docs.google.com/document/d/1UvTsvwZXmEL9QPjxmjoIkR2AcwGtOjql8cYRfk2N8eA/edit#bookmark=id.pirw51cwsja5)) and Customer Support channel ([template](https://docs.google.com/document/d/1UvTsvwZXmEL9QPjxmjoIkR2AcwGtOjql8cYRfk2N8eA/edit#bookmark=id.ke0fh13gidni))
     - DM reminders to team members who are not QA or devs, or who are new to release testing
     - Post "Bug Hunter Coin" message to Reception channel ([see example](https://community.mattermost.com/core/pl/3o15eoq89fdq5m1ac5dyp4nc3e))
-    - Begin running all Selenium IDE tests
     - At end of day, post reminders about release testing in Release Discussion and Announcements channels, DM any team members who have zero test cells marked Done
 4. Dev:
     - Make PRs for bug fixes to the release branch
