@@ -18,7 +18,7 @@ The synchronization of groups happens with the synchronization of users, during 
 Enable AD/LDAP group synchronization
 ------------------------------------
 
-To enable this feature, go to **System Console > Advanced > Experimental > Enable AD/LDAP Group Sync. You can also edit the ``config.json file`` setting ``ExperimentalLdapGroupSync``. Then restart the Mattermost server after changing.  
+To enable this feature, go to **System Console > Advanced > Experimental > Enable AD/LDAP Group Sync**. You can also edit the ``config.json file`` setting ``ExperimentalLdapGroupSync``. Then restart the Mattermost server after changing.  
 
 AD/LDAP group synchronization
 -----------------------------
