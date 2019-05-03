@@ -28,7 +28,7 @@ spec:
           env:
           - name: GITLAB_CLASS
             value: {{ .Release.Name }}
-          {{- if not (eq (default "" .Values.crdPrefix) "") }}
+          {{- if .Values.crdPrefix }}
           - name: CRD_PREFIX
             value: {{ .Values.crdPrefix }}
           {{- end }}

@@ -34,4 +34,4 @@ resources:
 
 # A prefix for group name of GitLab CRD. It can be used for distinguishing
 # different CRDs in a cluster, e.g. for development purposes such GitLab CI.
-# crdPrefix:
+#crdPrefix:
