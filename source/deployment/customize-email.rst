@@ -265,7 +265,7 @@ SendMfaChangeEmail
 **Purpose**:
 Sent to the user when multi-factor authentication method has been changed.
 
-**Body Props when MFA was activated**:
+**Body Props when MFA is activated**:
 
 +---------+------------------------------+------------------------------------------+
 | Prop    | Content                      | i18n String                              |
@@ -280,7 +280,7 @@ Sent to the user when multi-factor authentication method has been changed.
 +---------+------------------------------+------------------------------------------+
 
 
-**Body Props when MFA was deactivated**:
+**Body Props when MFA is deactivated**:
 
 +---------+------------------------------+--------------------------------------------+
 | Prop    | Content                      | i18n String                                |
@@ -365,6 +365,7 @@ Sent to the user as a notification for new messages or mentions.
 This email can change depending on settings and type of channel the notification is sent for.
 
 **For group channels**:
+
 **With full notification contents enabled**: 
 
 +------------+------------------+-------------------------------------------------+
@@ -392,6 +393,7 @@ This email can change depending on settings and type of channel the notification
 
 
 **For direct messages**:
+
 **With full notification contents enabled**: 
 
 +------------+---------------------------+-----------------------------------------+
@@ -419,6 +421,7 @@ This email can change depending on settings and type of channel the notification
 
 
 **Notifications**:
+
 **With full notification contents enabled**: 
 
 +------------+------------------+-----------------------------------------------+
