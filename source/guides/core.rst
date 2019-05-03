@@ -55,7 +55,6 @@ Core Developer Handbook
    :maxdepth: 2
    :glob:
 
-   /developer/core-developer-handbook*
    /process/support*
    /process/engineer-expectations*
 
@@ -78,6 +77,7 @@ Joining the Team
    /process/handbook*
    /process/working-at-mattermost*
    /process/security*
+   /process/security-release*
    /process/training*
    /process/people-ops*
    /process/developer*
