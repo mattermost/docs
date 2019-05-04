@@ -17,7 +17,7 @@ for various use cases and customizations of these charts.
 Let us say we would like to have a basic GitLab installation using the included
 `values-base.yaml`. we would be doing the following:
 
-1. `cp examples/values-base.yaml ./``
+1. `cp examples/values-base.yaml ./`
 1. Open the file in a text editor
 1. Change `gitlab.hosts.domain` and `gitlab.hosts.externalIP` with our own values
 1. Change `smtp` block with our values making sure we have the needed secret. Alternatively we can omit the block completely if we do not need to configure `smtp`. Finally we save the file
