@@ -248,17 +248,6 @@ The color of the on_hover state should be the same as in active state, with opac
 |
 ---------------------------
 
-Display: Tooltips
----------------------------
-
-Tooltips text can be title case or sentence case.
-
-- Tooltips should be title case if the tooltip is a noun, e.g. "Pinned Posts", or "Flagged Posts".
-- Tooltips should be sentence case if they are declaring an action, e.g. "Flag for follow up", or "Create new private channel".
-
-|
----------------------------
-
 Display: Icons
 --------------
 
@@ -308,6 +297,16 @@ Instructions containing a link to an external resource (ie: a blog article or do
 
 ---------------------------
 
+Display: Tooltips
+---------------------------
+
+Tooltips text can be title case or sentence case.
+
+- Tooltips should be title case if the tooltip is a noun, e.g. "Pinned Posts", or "Flagged Posts".
+- Tooltips should be sentence case if they are declaring an action, e.g. "Flag for follow up", or "Create new private channel".
+
+|
+---------------------------
 
 Display: Username display
 ---------------------------
