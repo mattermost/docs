@@ -254,7 +254,7 @@ Display: Tooltips
 Tooltips text can be title case or sentence case.
 
 - Tooltips will be title case if the tooltip is a noun, e.g. Pinned Posts, or Flagged Posts.
-- Tooltips will be sentence case if they are announcing an action, e.g. Flag for follow up, or Create new private channel.
+- Tooltips should be sentence case if they are declaring an action, e.g. "Flag for follow up", or "Create new private channel".
 
 |
 ---------------------------
