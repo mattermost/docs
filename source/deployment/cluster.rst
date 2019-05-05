@@ -96,10 +96,10 @@ Configuration Settings
 
   .. code-block:: none
 
-    soft nofile 65536
-    hard nofile 65536
-    soft nproc 8192
-    hard nproc 8192
+    * soft nofile 65536
+    * hard nofile 65536
+    * soft nproc 8192
+    * hard nproc 8192
 
 3. Increase the number of websocket connections
 
