@@ -58,6 +58,7 @@ Learn how to host Mattermost to meet your networking requirements.
 
    /deployment/deployment.md 
    /deployment/desktop-app-deployment*
+   /mobile/mobile-appconfig.rst
    /administration/image-proxy*
    /administration/encryption*  
    /deployment/client-side-data.rst
@@ -189,7 +190,6 @@ Learn how to support growth within Mattermost.
    
    /deployment/scaling*
    /deployment/cluster*
-   /deployment/cluster-310*
    /deployment/elastic*
    /deployment/metrics*
    /administration/performance-alerting-guide*
