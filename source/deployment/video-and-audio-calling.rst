@@ -25,6 +25,13 @@ Kopano WebMeetings
 - Supports a self-hosted on-prem solution.
 - Source code + docs: https://stash.kopano.io/projects/KM/repos/mattermost-plugin-kopanowebmeetings/browse
 
+SIP PBX
+~~~~~~~~~~~~~~~~~~~~
+
+- Connect your company's individual desk extensions, external telephone lines and mobile networks with Mattermost, developed by bytemine GmbH.
+- Supports a self-hosted on-prem solution.
+- Source code + docs: https://github.com/bytemine/mattersip
+
 BigBlueButton
 ~~~~~~~~~~~~~~~~~~~~
 
