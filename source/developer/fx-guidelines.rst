@@ -248,7 +248,6 @@ The color of the on_hover state should be the same as in active state, with opac
 |
 ---------------------------
 
-
 Display: Icons
 --------------
 
@@ -277,7 +276,7 @@ Display: Instructions
 
 Instructions, such as “A password reset link has been sent to ``you@email.com`` for your account. Please check your inbox.”, should be displayed as sentences ending in periods. One-line links, such as “Find it here”, should not end in periods or commas, but question marks are okay.
 
-Instructions containing a link to an external resource (ie: a blog article or docs.mattermost.com), should not be hard-coded. A redirect page from about.mattermost.com should be used in product instructions. Redirect pages should be formatted as ``https://about.mattermost.com/default-[SUBJECT]``. An about.mattermost.com page can be requested from the Product team at Mattermost. 
+Instructions containing a link to an external resource (ie: a blog article or docs.mattermost.com), should not be hard-coded. A redirect page from about.mattermost.com should be used in product instructions. Redirect pages should be formatted as ``https://about.mattermost.com/default-[SUBJECT]``. An about.mattermost.com page can be requested from the Product team at Mattermost.
 
     **Example:**
 
@@ -298,6 +297,16 @@ Instructions containing a link to an external resource (ie: a blog article or do
 
 ---------------------------
 
+Display: Tooltips
+---------------------------
+
+Tooltip text may be title case or sentence case depending on its context.
+
+- Tooltips should be title case if the tooltip is a noun, e.g. "Pinned Posts", or "Flagged Posts".
+- Tooltips should be sentence case if they are declaring an action, e.g. "Flag for follow up", or "Create new private channel".
+
+|
+---------------------------
 
 Display: Username display
 ---------------------------
@@ -404,7 +413,7 @@ Notice messages should not:
     ..  image:: ../images/systemnotice2.png
         :alt: Bad System Notice
 
-   
+
     Correct:
         This is an example of a good system notice:
 
