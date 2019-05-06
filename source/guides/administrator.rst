@@ -130,6 +130,7 @@ Learn how to maintain your Mattermost system.
    :glob:
 
    /administration/command*
+   /administration/scripts*
    /administration/statistics.md
    /administration/health-check*
    /administration/announcement-banner.rst
