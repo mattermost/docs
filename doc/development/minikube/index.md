@@ -174,7 +174,7 @@ helm repo add gitlab https://charts.gitlab.io/
 helm repo update
 helm upgrade --install gitlab gitlab/gitlab \
   --timeout 600 \
-  -f https://gitlab.com/charts/gitlab/raw/master/examples/values-minikube-minimum.yaml
+  -f https://gitlab.com/charts/gitlab/raw/master/examples/values-minikube.yaml
 ```
 
 ### Deploying GitLab with minimal settings
@@ -220,7 +220,7 @@ covering most operating systems.
 
 ### Logging in
 
-You can access the GitLab instance by visiting the domain specified, [https://192.168.99.100.nip.io](https://192.168.99.100.nip.io) is used in these examples. If you manually created the secret for initial root password, you can use that to sign in as root user. If not, Gitlab automatically created a random password for the root user. This can be extracted by the following command (replace <name> by name of the release - which is gitlab if you used the command above).
+You can access the GitLab instance by visiting the domain specified, [https://gitlab.192.168.99.100.nip.io](https://gitlab.192.168.99.100.nip.io) is used in these examples. If you manually created the secret for initial root password, you can use that to sign in as root user. If not, Gitlab automatically created a random password for the root user. This can be extracted by the following command (replace <name> by name of the release - which is gitlab if you used the command above).
 
 ```shell
 kubectl get secret <name>-gitlab-initial-root-password -ojsonpath='{.data.password}' | base64 --decode ; echo
