@@ -94,6 +94,7 @@ Marketing
    /process/marketing-guidelines*
    /process/asset-guidelines*
    /process/end-user-documentation*
+   /process/integrations-directory*
 
    
 Partners
