@@ -113,13 +113,11 @@ Configuration Settings
 Cluster Discovery
 ^^^^^^^^^^^^^^^^^
 
-If you have non-standard (i.e. not simple) network configurations, then you may need to use the `Override Hostname <https://docs.mattermost.com/administration/config-settings.html#override-hostname>`_ setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in High Availability mode. The `Override Hostname <https://docs.mattermost.com/administration/config-settings.html#override-hostname>`_ is intended to be different for each clustered node ``config.json`` if you need to force discovery.
+If you have non-standard (i.e. not simple) network configurations, then you may need to use the `Override Hostname <https://docs.mattermost.com/administration/config-settings.html#override-hostname>`_ setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in High Availability mode. The `Override Hostname <https://docs.mattermost.com/administration/config-settings.html#override-hostname>`_ is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
 
-If ``UseIpAddress`` is set to ``true``, it tries to get the IP address by looking for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://golang.org/pkg/net/#InterfaceAddrs>`_. Otherwise it tries to get the hostname usings the `os.Hostname() <https://golang.org/pkg/os/#Hostname>`_ built-in go fuction.
+If ``UseIpAddress`` is set to ``true``, it tries to get the IP address by looking for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://golang.org/pkg/net/#InterfaceAddrs>`_. Otherwise it tries to get the hostname using the `os.Hostname() <https://golang.org/pkg/os/#Hostname>`_ built-in go function.
 
-You can also ``SELECT * FROM ClusterDiscovery`` to see how it is filled in the Hostname field or what address it will use by placing it into the database for other machines to attempt contact. We attempt to make a connection to the ``url Hostname:Port`` and ``Hostname:PortGossipPort``.
-
-You must also make sure you have all the correct ports open so the cluster can gossip correctly.
+You can also ``SELECT * FROM ClusterDiscovery`` to see how it is filled in the Hostname field or what address it will use by placing it into the database for other machines to attempt contact. We attempt to make a connection to the ``url Hostname:Port`` and ``Hostname:PortGossipPort``. You must also make sure you have all the correct ports open so the cluster can gossip correctly.
 
 In short, you should use:
 
