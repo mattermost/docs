@@ -117,7 +117,7 @@ If you have non-standard (i.e. not simple) network configurations, then you may 
 
 If ``UseIpAddress`` is set to ``true``, it tries to get the IP address by looking for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://golang.org/pkg/net/#InterfaceAddrs>`_. Otherwise it tries to get the hostname using the `os.Hostname() <https://golang.org/pkg/os/#Hostname>`_ built-in go function.
 
-You can also ``SELECT * FROM ClusterDiscovery`` to see how it is filled in the Hostname field or what address it will use by placing it into the database for other machines to attempt contact. We attempt to make a connection to the ``url Hostname:Port`` and ``Hostname:PortGossipPort``. You must also make sure you have all the correct ports open so the cluster can gossip correctly.
+You can also run ``SELECT * FROM ClusterDiscovery`` against your database to see how it has filled in the Hostname field. That field will be the hostname or IP address the server will use to attempt contact with other nodes in the cluster. We attempt to make a connection to the ``url Hostname:Port`` and ``Hostname:PortGossipPort``. You must also make sure you have all the correct ports open so the cluster can gossip correctly. These ports are under ``ClusterSettings`` in your configuration.
 
 In short, you should use:
 
