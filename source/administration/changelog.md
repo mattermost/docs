@@ -258,7 +258,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
  
  - Under ``"ServiceSettings"`` in ``config.json``:
-    - Added ``"ExperimentalLdapGroupSync": false``, ``"GroupFilter": ""``, ``"GroupDisplayNameAttribute": ""`` and ``"GroupIdAttribute": ""``, to add the ability to configure group display name and unique identifier.
+    - Added ``"ExperimentalLdapGroupSync": false``, to add support for experimental LDAP Group Sync feature. 
+ - Under ``"LdapSettings"`` in ``config.json``:  
+    - Added ``"GroupFilter": ""``, ``"GroupDisplayNameAttribute": ""`` and ``"GroupIdAttribute": ""``, to add the ability to configure group display name and unique identifier.
  - Under ``"ImageProxySettings":`` in ``config.json``:
     - Added ``"Enable": true,``, ``"ImageProxyType": "local",``, ``"RemoteImageProxyURL": "",`` and ``"RemoteImageProxyOptions": ""``, to allow integrating image proxy into the server and switching it on by default.
  - Under ``"ExperimentalSettings":`` in ``config.json``:
