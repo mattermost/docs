@@ -1,0 +1,5 @@
+---
+title: Enable Sidekiq Memory Killer Configuration
+merge_request: 776
+author:
+type: added

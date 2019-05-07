@@ -28,6 +28,12 @@ metrics:
 redis:
   password: {}
 
+# https://docs.gitlab.com/ee/administration/operations/sidekiq_memory_killer.html#sidekiq-memorykiller
+memoryKiller:
+  maxRss: 2000000
+  graceTime: 900
+  shutdownWait: 30
+
 global:
   # imagePullPolicy: IfNotPresent
   hosts:

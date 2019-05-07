@@ -56,6 +56,9 @@ to the `helm install` command using the `--set` flags:
 | `resources.requests.cpu`    | `100m`            | Sidekiq minimum needed cpu               | 
 | `resources.requests.memory` | `600M`            | Sidekiq minimum needed memory            | 
 | `timeout`                   | `5`               | Sidekiq job timeout                      | 
+| `memoryKiller.maxRss`       | `2000000`         | Maximum RSS before delayed shutdown triggered expressed in kilobytes |
+| `memoryKiller.graceTime`    | `900`             | Time to wait before a triggered shutdown expressed in seconds|
+| `memoryKiller.shutdownWait` | `30`              | Amount of time after triggered shutdown for existing jobs to finish expressed in seconds |
 
 ## Chart configuration examples
 
@@ -187,6 +190,13 @@ on a per-pod basis.
 | `concurrency` | Integer | `25`    | The number of tasks to process simultaneously. |
 | `replicas`    | Integer | `1`     | The number of `replicas` to use by default per pod definition. |
 | `timeout`     | Integer | `4`     | The sidekiq shutdown timeout. The number of seconds after sidekiq gets the TERM signal before it forcefully shuts down its processes. |
+| `memoryKiller.maxRss`       | Integer | `2000000`         | Maximum RSS before delayed shutdown triggered expressed in kilobytes |
+| `memoryKiller.graceTime`    | Integer | `900`             | Time to wait before a triggered shutdown expressed in seconds|
+| `memoryKiller.shutdownWait` | Integer | `30`              | Amount of time after triggered shutdown for existing jobs to finish expressed in seconds |
+
+NOTE: **Note**: [Detailed documentation of the sidekiq memory killer is
+  available](https://docs.gitlab.com/ee/administration/operations/sidekiq_memory_killer.html#sidekiq-memorykiller)
+  in the Omnibus documentation.
 
 ## Per-pod Settings
 
