@@ -129,10 +129,12 @@ Marketing
 ---------
 
 1. Add integration/plugin creators to changelog’s list of contributors.
-E.g. for March release, add any new ones from February.
+
+ - E.g. for March release, add any new ones from February.
 
 2. Post a tweet for all new integrations.
-E.g. https://twitter.com/Mattermost/status/1102709312231596032.
+
+ - E.g. https://twitter.com/Mattermost/status/1102709312231596032.
 
 Release Date T-0
 ------------------
