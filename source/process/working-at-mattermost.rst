@@ -120,9 +120,11 @@ We're headquartered in the US and have a large Canadian contingent, so below are
 US & Canadian Holidays for 2019:
 
 - US & Canadian New Year's (1/1/2019)
-- Canadian Family Day (2/18/2019)
+- US MLK Jr. Day (1/21/2019)
+- Canadian Family Day & US Presidents' Day (2/18/2019)
 - US & Canadian Good Friday (4/19/2019)
 - Canadian Victoria Day (5/20/2019)
+- US Memorial Day (5/27/2019)
 - Canada Day (7/1/2019)
 - Canada Day additional statutory holiday (7/2/2019)
 - US Independence Day (7/4/2019)
