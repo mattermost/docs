@@ -37,16 +37,6 @@ Release Date 2019-05-16
  - Fixed an issue on LDAP Groups where adding a group to a team provided an unnecessary permission confirmation modal.
  - Fixed an issue on mobile view where clicking on the attachment icon didn't bring up the dropdown menu.
 
-### config.json
- 
-#### Changes to Team Edition and Enterprise Edition:
-
-### API Changes
-
-### Database Changes
-
-### Websocket Event Changes
-
 ### Known Issues
  - Buttons inside ephemeral posts are not clickable / functional on the mobile app.
  - On a server using a subpath, the URL opens a blank page if the system admin changes the Site URL in the System Console UI. The system admin should restart the server to fix it.
