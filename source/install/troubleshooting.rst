@@ -218,7 +218,7 @@ For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521
 ``context deadline exceeded``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This error appears when a request from Mattermost to another system, such as an Elasticsearch server, experiences a timeout.
+This error appears when a request from Mattermost to another system, such as an Elasticsearch server, experiences a connection timeout.
 
 **Solution:**
 
