@@ -222,6 +222,6 @@ This error appears when a request from Mattermost to another system, such as an 
 
 **Solution:**
 
-1. Verify that the Mattermost server is able to connect to the system referenced in the error message
-2. Increase the request timeout value for that integration in the Mattermost config file
+1. Verify that the Mattermost server is able to connect to the system referenced in the error message.
+2. Increase the request timeout value for that integration in the Mattermost config file.
 3. Ensure the target system is behaving properly and has sufficient resources to handle current load.
