@@ -214,3 +214,14 @@ As security and encryption standards often change rapidly, it is best to check f
 For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521r1;``
 
 *Note: Setting multiple curves requires nginx 1.11.0, if you can only set one curve, the most compatible is prime256v1.*
+
+``context deadline exceeded``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This error appears when a request from Mattermost to another system, such as an Elasticsearch server, experiences a connection timeout.
+
+**Solution:**
+
+1. Verify that the Mattermost server is able to connect to the system referenced in the error message.
+2. Increase the request timeout value for that integration in the Mattermost config file.
+3. Ensure the target system is behaving properly and has sufficient resources to handle current load.
