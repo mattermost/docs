@@ -66,6 +66,7 @@ if [ -n "$env" ]; then
   otp_key_base=$(gen_random 'a-f0-9' 128) # equavilent to secureRandom.hex(64)
   db_key_base=$(gen_random 'a-f0-9' 128) # equavilent to secureRandom.hex(64)
   openid_connect_signing_key=$(openssl genrsa 2048);
+  lets_encrypt_private_key=$(openssl genrsa 2048);
 
   cat << EOF > secrets.yml
 $env:
@@ -73,6 +74,8 @@ $env:
   otp_key_base: $otp_key_base
   db_key_base: $db_key_base
   openid_connect_signing_key: |
+$(openssl genrsa 2048 | awk '{print "    " $0}')
+  lets_encrypt_private_key: |
 $(openssl genrsa 2048 | awk '{print "    " $0}')
 EOF
   generate_secret_if_needed {{ template "gitlab.rails-secrets.secret" . }} --from-file secrets.yml
