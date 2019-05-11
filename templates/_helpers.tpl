@@ -144,7 +144,7 @@ Alias of gitlab.psql.host
 Return the db database name
 */}}
 {{- define "gitlab.psql.database" -}}
-{{- coalesce .Values.global.psql.database "gitlabhq_production" | quote -}}
+{{- coalesce .Values.global.psql.database "gitlabhq_production" | squote -}}
 {{- end -}}
 
 {{/*
