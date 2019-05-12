@@ -81,7 +81,7 @@ When the integration is not open source, mark the license as "N/A - not open sou
 Download URL
 ^^^^^^^^^^^^^
 
-Link to the README file on the Github project which typically includes install instructions.
+Link to the README file on the GitHub project which typically includes install instructions.
 
 Source Code URL
 ^^^^^^^^^^^^^^^^
