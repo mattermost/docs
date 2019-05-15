@@ -209,6 +209,10 @@ Procedure:
     
     Share your thoughts on this week's meeting [here](https://goo.gl/forms/AgCNmu3JxTDmSQvp2) @here.
 
+2. (Vice Chair) Post recording to Cust Obs Prep channel, with timecode of co-founder's introduction.
+
+3. (Chair & Co-Chairs) Review recording and decide if the introduction is converted to a YouTube video and included in onboarding documentation. Sample recordings include discussions of leadership principles, mission and core values.
+
 Frequently Asked Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
