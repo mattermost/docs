@@ -54,7 +54,7 @@ With TCP socket
      # IPv4 local connections:
      host    all             all             ip_address/32   md5
 
-- Run the setup using
+- Run the setup using:
 
   .. code-block:: bash
 
