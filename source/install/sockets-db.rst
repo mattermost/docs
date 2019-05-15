@@ -31,7 +31,7 @@ With TCP socket
 
    ``sudo -u postgres createuser -P mmuser``
 
-- Create the Mattermost database, owned by `mmuser` user:
+- Create the Mattermost database, owned by ``mmuser`` user:
 
   ``sudo -u postgres createdb -O mmuser mattermostdb``
 
