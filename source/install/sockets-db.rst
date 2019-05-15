@@ -35,7 +35,7 @@ With TCP socket
 
   ``sudo -u postgres createdb -O mmuser mattermostdb``
 
-- In the connections and authentications section, set the listen_address list
+- In the connections and authentications section, set the ``listen_address`` list
   line per your needs:
 
    .. code-block:: bash
