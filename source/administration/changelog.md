@@ -130,7 +130,7 @@ Mattermost v5.10.0 contains medium to high level security fixes. [Upgrading](htt
 
  - Deprecated configurable ``timezones.json`` in favour of the existing hard-coded list built into the server.
 
-#### config.json
+### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
  
@@ -187,7 +187,7 @@ Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http:
 - **v5.9.0, released 2019-03-16**
   - Original 5.9.0 release
   
-### Breaking Changes since the last release
+### Breaking Changes since last release
 
  - If **DisableLegacyMfa** setting in ``config.json`` is set to ``true`` and multi-factor authentication is enabled, ensure your users have upgraded to mobile app version 1.17 or later. Otherwise, users who have MFA enabled may not be able to log in successfully. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
  - The public IP of the Mattermost application server is considered a reserved IP for additional security hardening in the context of untrusted external requests such as Open Graph metadata, webhooks or slash commands. See [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html) for more details.
@@ -257,7 +257,7 @@ Mattermost v5.8.0 contains low to high level security fixes. [Upgrading](http://
 - **v5.8.0, released 2019-02-16**
   - Original 5.8.0 release
 
-### Breaking Changes since the last release
+### Breaking Changes since last release
 
 - The local image proxy has been added, and images displayed within the client are now affected by the ``AllowUntrustedInternalConnections`` setting. See [documentation](https://docs.mattermost.com/administration/image-proxy.html#local-image-proxy) for more details if you have trouble loading images.
 
@@ -308,10 +308,6 @@ Mattermost v5.8.0 contains low to high level security fixes. [Upgrading](http://
  - Fixed an issue where an announcement banner displayed when the banner was enabled but the text field was blank.
  - Fixed an issue where a language was not set if selected in Account Settings.
  - Fixed an issue where removing rows from Send Email Invite modal didn't remove them immediately.
- 
-### Compatibility
-
-**Mobile app version 1.13+ is required for servers 5.4+**
 
 ### config.json
 
@@ -390,10 +386,6 @@ Mattermost v5.7.0 contains low to medium level security fixes. [Upgrading](http:
  - Fixed an issue where Web mobile view was missing the mute option in the channel menu.
  - Fixed an issue where the "participant is typing" appeared a few seconds after a message was posted.
  - Fixed an issue where a profile popover got cut off on the right-hand side if it included an admin badge and a long username.
-
-### Compatibility
-
-**Mobile app version 1.13+ is required for servers 5.4+**
 
 ### Known Issues
 
@@ -509,9 +501,7 @@ Mattermost v5.7.0 contains low to medium level security fixes. [Upgrading](http:
 ### Bug Fixes
  - Fixed an issue where pinned post list refreshed when a user posted a new message.
 
-### Compatibility
-
-#### config.json
+### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
@@ -631,10 +621,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Fixed an issue where a permanent announcement banner pushed the bottom of a channel sidebar off screen.
  - Fixed an issue where cancelling a change to channel notifications settings appeared to save the change.
 
-### Compatibility
-
-**Mobile app version 1.13+ is required for servers 5.4+**
-
 ### Known Issues
 
  - Google login fails on the Classic mobile apps.
@@ -726,9 +712,7 @@ Release date: 2018-10-16
  - Fixed an issue where ""GET /api/v4/redirect_location" responses got stuck when “EnableLinkPreviews” was set to "false”.
  - Fixed an issue where Account Settings teammate name display setting changed when System Console teammate name display setting was changed.
 
-### Compatibility
-
-#### config.json
+### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
@@ -814,9 +798,7 @@ Mattermost v5.3.0 contains a high level security fix. [Upgrading](http://docs.ma
 - Fixed an issue where clicking "+" twice to add a public or private channel added a recently archived channel back to the left-hand side.
 - Fixed an issue where channel autocomplete appeared to include all public channels, including deleted channels and channels one has never joined.
 
-### Compatibility
-
-#### config.json
+### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
@@ -935,10 +917,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Bug Fixes
  - Fixed an issue where the "Switch Channel" shortcut (⌘K) didn't work on dvorak layout on Mac.
  - Fixed an issue where the Custom Integrations section in the System Console was blank after role changes.
-
-### Compatibility
-
-#### config.json
+ 
+### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
@@ -1043,9 +1023,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Fixed an issue where [rate limiting settings](https://docs.mattermost.com/administration/config-settings.html#rate-limiting) could not be edited in the System Console, and weren't displayed in the User Interface if configured via `config.json`.
  - Fixed an issue where deleted users shown as "Someone" in the Favorite Channels section could not be removed.
 
-### Compatibility
-
-#### config.json
+### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
@@ -1164,7 +1142,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
  - For a list of important changes with Mattermost v5.0, please [see our Forum announcement](https://forum.mattermost.org/t/upcoming-changes-with-mattermost-v5-0/5119).
 
-#### config.json
+### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
