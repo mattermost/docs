@@ -102,6 +102,7 @@ Configuring Mattermost
 
   - For MySQL, set it to ``mmuser:mmuser_password@unix(/run/mysqld/mysqld.sock)/mattermostdb?charset=utf8mb4,utf8``.
   - For PostgreSQL
-    - TCP socket: ``postgres://mmuser:mmuser_password@127.0.0.1:5432/mattermostdb?sslmode=disable&connect_timeout=10``    - Unix socket: ``postgres:///mattermostdb?host=/run/postgresql``, mattermostdb is the name of the database and /run/postgresql is the directory containing the Unix socket
+    - TCP socket: ``postgres://mmuser:mmuser_password@127.0.0.1:5432/mattermostdb?sslmode=disable&connect_timeout=10``    
+    - Unix socket: ``postgres:///mattermostdb?host=/run/postgresql``, where ``mattermostdb`` is the name of the database and ``/run/postgresql`` is the directory containing the Unix socket.
 
 
