@@ -75,7 +75,7 @@ With Unix socket
 
      sudo -u postgres createuser mattermost
 
-- Setup the Unix socket by adding the following line to ``/var/lib/postgres/data/pg_hba.conf:``
+- Setup the Unix socket by adding the following line to ``/var/lib/postgres/data/pg_hba.conf``:
 
   .. code-block:: bash
 
