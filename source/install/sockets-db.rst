@@ -69,7 +69,7 @@ With Unix socket
 
      sudo -u postgres createuser mattermost
 
-- Create the Mattermost database, owned by `mattermost` user:
+- Create the Mattermost database, owned by ``mattermost`` user:
 
   .. code-block:: bash
 
