@@ -1,7 +1,7 @@
 Using Sockets for Database
 ====================
 
-Mattermost requires a database back-end. If you plan running it on the machine,
+Mattermost requires a database back-end. If you plan to run it on the machine,
 install MySQL or PostgreSQL as database. In this document let's understand how
 you can use sockets for setting up db.
 
