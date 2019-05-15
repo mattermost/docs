@@ -50,7 +50,7 @@ A user can access the Team Selection page by also clicking the "+" icon at the b
 Invite Code
 ~~~~~~~~~~~
 
-The **Invite Code** is used as part of the URL in the team invitation link retrieved from the **Main Menu** > **Get Team Invite Link**. Click **Re-Generate** and then **Save** to generate a new team invitation link and invalidate the previous link.
+The **Invite Code** is used as part of the URL in the team invitation link retrieved from the **Main Menu** > **Get Team Invite Link**. Click **Regenerate** to generate a new team invitation link and invalidate the previous link.
 
 Import
 ------

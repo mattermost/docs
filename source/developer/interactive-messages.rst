@@ -311,8 +311,8 @@ Like Slack, actions are specified in an "actions" list within the message attach
 
 However, the schema for these objects is slightly different given Slack requires a Slack App and action URL to be pre-configured beforehand. Mattermost instead allows an integration to create an interactive message without pre-configuration.
 
-Troubleshooting
---------------------
+Frequently Asked Questions
+----------------------------------
 
 Are message buttons and menus supported in ephemeral messages?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -321,7 +321,7 @@ Yes, they are supported in Mattermost 5.10 and later.
 
 With plugins, you can update the ephemeral message itself with message buttons or menus with the `UpdateEphemeralMessage plugin API <https://developers.mattermost.com/extend/plugins/server/reference/#API.UpdateEphemeralPost>`_. This is currently not supported with other integration types.
 
-Message buttons and menus do not trigger an action and return a 400 error
+Why does an interactive button or menu return a 400 error?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 It is likely for one of three reasons:
@@ -331,3 +331,14 @@ It is likely for one of three reasons:
 2. The integration didn't return HTTP status 200. The log will include the text ``status=XXX`` in the error message.
 
 3. The integration didn't return a valid JSON response. The log will include the text ``err=some json error message`` in the error message.
+
+How do I manage properties of an interactive message?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Use ``update.Props`` in the following ways to manage properties (``Props``) of an interactive message after a user does an action via an interactive button or menu:
+
+ - ``update.Props == nil`` - Do not update ``Props`` field.
+ - ``update.Props == {}`` - Clear all properties, except the username and icon of the original message, as well as whether the message was pinned to channel or contained emoji reactions.
+ - ``update.Props == some_props`` - Post will be updated to ``some_props``. Username and icon of the original message, and whether the message was pinned to channel or contained emoji reactions will not be updated.
+ 
+Note that in 5.10 and earlier, ``Update.Props == nil`` incorrectly cleared all properties of the interactive message.

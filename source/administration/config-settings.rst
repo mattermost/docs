@@ -1102,7 +1102,7 @@ This filter is defaulted to ```(|(objectClass=group)(objectClass=groupOfNames)(o
 
 Group Display Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(Optional) Enter an AD/LDAP Group Display name attribute used to populate Mattermost Group names. 
+(Required) Enter an AD/LDAP Group Display name attribute used to populate Mattermost Group names. 
 
 .. note::
   This attribute is used only when AD/LDAP Group Sync is enabled.  See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ for more information on enabling and configuring AD/LDAP Group Sync (*Available in Enterprise Edition E20 and higher*). 
