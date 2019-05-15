@@ -83,7 +83,7 @@ With Unix socket
 
 - Restart postgresql.service.
 
-- Run the setup using
+- Run the setup using:
 
   .. code-block:: bash
 
