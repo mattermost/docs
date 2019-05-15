@@ -26,7 +26,7 @@ PostgreSQL
 With TCP socket
 ---------------
 
-- Create the new user while connecting to the server as `postgres` user
+- Create the new user while connecting to the server as ``postgres`` user
   (you will be prompted for a password for the new user):
 
    ``sudo -u postgres createuser -P mmuser``
