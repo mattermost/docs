@@ -1,4 +1,4 @@
-Using Sockets For DB
+Using Sockets for Database
 ====================
 
 Mattermost requires a database back-end. If you plan running it on the machine,
