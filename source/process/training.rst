@@ -194,7 +194,7 @@ Procedure:
      - New team members introduced on their second week by their manager, including name, role, what they're working on, timezone, additional info as appropriate (max 2 minutes) 
      - If new hire or manager is away, postpone to next meeting 
      - New hire can opt-in to introduce themselves if they choose (default is not to require public speaking) 
-  - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key updates, use cases or stories from customers.
+  - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key updates, use cases or stories from customers. Links to publicly shared documents or slides may be included in meeting notes.
   - **Feedback**: At end of meeting, concludes meeting with a reminder to share feedback via survey.
 
 **After meeting:**
