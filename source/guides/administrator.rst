@@ -31,7 +31,7 @@ Learn how to get Mattermost running on your environment.
    Installing on RHEL 6.6 </install/install-rhel-66.rst>
    Installing on RHEL 7.1 </install/install-rhel-71.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
-   Instructions on setting up a socket based mattermost db </install/sockets-db.rst>
+   Instructions on setting up a socket-based Mattermost database </install/sockets-db.rst>
    /install/ee-install*
    /install/deploy-bitnami*
    /install/docker-local*
