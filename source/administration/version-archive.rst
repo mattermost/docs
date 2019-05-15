@@ -6,6 +6,10 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
+Mattermost Enterprise Edition v5.11.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-110>`__ - `Download <https://releases.mattermost.com/5.11.0/mattermost-5.11.0-linux-amd64.tar.gz>`__
+  - ``https://releases.mattermost.com/5.11.0/mattermost-5.11.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ````
+  - GPG Signature: https://releases.mattermost.com/5.11.0/mattermost-5.11.0-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v5.10.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-10>`__ - `Download <https://releases.mattermost.com/5.10.0/mattermost-5.10.0-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.10.0/mattermost-5.10.0-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``210416d6def6424e33b358c2f5808adfbdf15adf3ffba6768d16d7777230b24f``
