@@ -43,7 +43,7 @@ With TCP socket
       /var/lib/postgres/data/postgresql.conf
       listen_address = 'localhost,my_local_ip_address'
 
-  You can use '*' to listen on all available address.
+  You can use '*' to listen on all available addresses.
 
 - Then add a line like the following to the authentication config:
 
