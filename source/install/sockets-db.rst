@@ -20,7 +20,7 @@ MySQL
 PostgreSQL
 ----------
 
-- Install and configure postgres SQL.
+- Install and configure PostgreSQL.
 - Choose between TCP or UNIX Socket, and jump to the corresponding section.
 
 With TCP socket
