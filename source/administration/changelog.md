@@ -8,6 +8,32 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release Date 2019-06-16
 
+### Breaking Changes since last release
+
+### Highlights
+
+Bot accounts
+
+
+### Improvements
+
+### Bug Fixes
+
+### Compatibility
+
+### config.json
+
+### Database Changes
+
+### API Changes
+
+### Websocket Event Changes
+
+### Known Issues
+
+### Contributors
+
+
 
 ## Release v5.11
 
