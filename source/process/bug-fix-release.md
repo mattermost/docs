@@ -1,4 +1,4 @@
-# Bug Fix Release Process
+# Quality Release Process
 
 ## Release Timeline
 
