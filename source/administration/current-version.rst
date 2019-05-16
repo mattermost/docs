@@ -11,7 +11,7 @@ Mattermost Enterprise Edition v5.11.0 - `View Changelog <https://docs.mattermost
   - SHA-256 Checksum: ``ad2db1a68103fb3ce9383f857eddc817848d548334b510b2dd2491f13f59ea4d``
   - GPG Signature: https://releases.mattermost.com/5.11.0/mattermost-5.11.0-linux-amd64.tar.gz.sig
 
-Mattermost Team Edition Server Archive
+Mattermost Team Edition Server
 ---------------------------------------
 
 Mattermost Team Edition v5.11.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-11>`__ - `Download <https://releases.mattermost.com/5.11.0/mattermost-team-5.11.0-linux-amd64.tar.gz>`__
