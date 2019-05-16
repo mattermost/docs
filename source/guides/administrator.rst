@@ -148,7 +148,7 @@ Learn how to keep Mattermost current with fixes and new features.
    /administration/upgrade.rst
    /administration/important-upgrade-notes*   
    /administration/changelog*
-   /administration/version-archive*
+   /administration/current-version*
    /administration/extended-support-release*  
    /administration/downgrade.rst
 
@@ -216,3 +216,4 @@ Archived documents.
    :glob:
    
    /archive/changelog*
+   /archvie/archived_version*
