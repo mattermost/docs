@@ -17,6 +17,10 @@ Bot accounts
 
 ### Improvements
 - LDAP Groups - Added ability to switch a team or channel to be group-constrained via the CLI.
+- Added a ``command modify`` command in the CLI to be able to modify slash commands.
+- Support converting user accounts to bot accounts through the CLI.
+- Support running two Mattermost instances on the same domain using subpaths.
+- Implement a new command for migrating configuration to/from the database.
 
 ### Bug Fixes
 
@@ -33,6 +37,7 @@ PluginSettings
 ### Database Changes
 
 ### API Changes
+ - Updated api4/handlers to use gziphandler wrapper if server configured to use gzip, to make it so that the Mattermost server can respond to REST API requests with compressed data (via gzip) to reduce the amount of bandwidth used.
 
 ### Websocket Event Changes
 
