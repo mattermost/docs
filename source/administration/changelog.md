@@ -61,8 +61,8 @@ Mattermost v5.11.0 contains low level security fixes. [Upgrading](http://docs.ma
 
 Mattermost v5.10.0 contains medium to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-- **v5.10.1, release date TBD** 
-  - Fixing an issue on Internet Explorer (IE11) where the system console opens a blank page.
+- **v5.10.1, released 2019-05-16** 
+  - Fixed an issue on Internet Explorer (IE11) where the system console opened a blank page.
 - **v5.10.0, released 2019-04-16**
   - Original 5.10.0 release
 
