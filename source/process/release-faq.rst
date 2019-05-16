@@ -81,7 +81,7 @@ Frequently Asked Questions
  
 **Q: What is community-daily.mattermost kept on?**
  
-- A:
+- A: Normally on master.
 
 **Q: How to remove a feature/bug from a release?**
  
