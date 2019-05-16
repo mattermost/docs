@@ -16,12 +16,19 @@ Bot accounts
 
 
 ### Improvements
+- LDAP Groups - Added ability to switch a team or channel to be group-constrained via the CLI.
 
 ### Bug Fixes
 
 ### Compatibility
 
 ### config.json
+
+"NotificationLogSettings": {
+        "EnableConsole": true, "ConsoleLevel": "DEBUG", "ConsoleJson": true, "EnableFile": true, "FileLevel": "INFO", "FileJson": true, and "FileLocation": "", to implement a structured logger to keep track of push notifications.
+
+PluginSettings
+ "EnableHealthCheck": true, - all plugins are periodically monitored, and restarted or deactivated based on their health status.
 
 ### Database Changes
 
