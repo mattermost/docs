@@ -86,6 +86,10 @@ For install instructions, see `Grafana install guides <http://docs.grafana.org/i
 
 3 - The default HTTP port is ``3000`` and default username and password are ``admin``.
 
+4 - A Mattermost data source should be added, with settings defined in the screenshot below.
+
+.. image:: ../images/mattermost_datasource.png
+
 .. note:: For troubleshooting advice, check the `Grafana Troubleshooting page <http://docs.grafana.org/installation/troubleshooting/>`__.
 
 For user guides and tutorials, check the `Grafana documentation to learn more <http://docs.grafana.org/guides/basic_concepts/>`__.
