@@ -15,7 +15,7 @@ Follow these steps to queue an asset for a new community project:
 Integrations and Installers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you find a new integration or installer in the `Mattermost Facebook page <https://www.facebook.com/MattermostHQ/?fref=ts>`__, `Mattermost Twitter page <https://twitter.com/mattermosthq>`__, `GitHub <https://github.com/search?utf8=%E2%9C%93&q=mattermost>`__ or elsewhere you feel Mattermost should promote:
+If you find a new integration or installer in the `Mattermost Facebook page <https://www.facebook.com/Mattermost-2300985916642531/>`__, `Mattermost Twitter page <https://twitter.com/mattermost>`__, `GitHub <https://github.com/search?utf8=%E2%9C%93&q=mattermost>`__ or elsewhere you feel Mattermost should promote:
 
 1. Post a request to the `Contributors team "Integrations and Apps" channel <https://community.mattermost.com/core/channels/integrations>`__ with:
 
