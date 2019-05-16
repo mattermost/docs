@@ -205,3 +205,14 @@ Documentation on early previews and unofficial functionality.
    :glob:
 
    /install/prod-windows-2012*
+   
+   Mattermost Archive
+----------------------------
+
+Archived documents.
+
+.. toctree::
+   :maxdepth: 2
+   :glob:
+   
+   /archive/changelog*
