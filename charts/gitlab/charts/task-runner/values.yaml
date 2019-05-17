@@ -49,6 +49,16 @@ global:
       proxy_download: true
       bucket:
       connection: {}
+    artifacts:
+      enabled: true
+      proxy_download: true
+      bucket:
+      connection: {}
+    uploads:
+      enabled: true
+      proxy_download: true
+      bucket:
+      connection: {}
     packages:
       enabled: true
       proxy_download: true
