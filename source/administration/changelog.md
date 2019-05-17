@@ -13,16 +13,30 @@ Release Date 2019-06-16
 ### Highlights
 
 Bot accounts
-
+System Console re-org
+NPS
+Infinite scroll (not supported on IE11)
 
 ### Improvements
 - LDAP Groups - Added ability to switch a team or channel to be group-constrained via the CLI.
-- Added a ``command modify`` command in the CLI to be able to modify slash commands.
-- Support converting user accounts to bot accounts through the CLI.
-- Support running two Mattermost instances on the same domain using subpaths.
-- Implement a new command for migrating configuration to/from the database.
+- Added support for running two Mattermost instances on the same domain using subpaths.
+- Added an option to add a user to a channel from the profile pop-over.
+
+#### CLI
+- Added a ``command modify`` CLI command to be able to modify slash commands.
+- Added support for converting user accounts to bot accounts through the CLI.
+- Implemented a new command for migrating configuration to and from the database.
+
+#### Plugins
+ - Added support for markdown in plugin system console help text fields.
 
 ### Bug Fixes
+ - Fixed an issue where releasing a mouse click while the cursor was outside of the Rename Channel modal would close the modal.
+ - Fixed an issue where a whitepage occured after uploading a plugin with invalid settings_schema value.
+ - Fixed an issue where the announcement banner overlapped channel content.
+ - Fixed an issue where license expiration notice banner could not be dismissed prior the to license expiration date.
+ - Fixed an issue where the channel switcher auto-complete didn't function properly when auto-completing the name of a person who was the first person named in a group message channel.
+ - Fixed an issue where inline images in markdown preview don't get expanded.
 
 ### Compatibility
 
@@ -37,7 +51,8 @@ PluginSettings
 ### Database Changes
 
 ### API Changes
- - Updated api4/handlers to use gziphandler wrapper if server configured to use gzip, to make it so that the Mattermost server can respond to REST API requests with compressed data (via gzip) to reduce the amount of bandwidth used.
+ - Updated api4/handlers to use gziphandler wrapper if server is configured to use gzip. This ensures that the Mattermost server can respond to REST API requests with compressed data (via gzip) to reduce the amount of bandwidth used.
+ - Add API command to create and delete a team and channel
 
 ### Websocket Event Changes
 
