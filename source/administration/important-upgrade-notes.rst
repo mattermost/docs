@@ -7,10 +7,10 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
-| v5.12.0                                            | For LDAP Group Sync Managed channels and teams to properly reflect removal of users when they are removed from synced groups on mobile, 
-|                                                    | customers will need to upgrade the mobile app as well when they upgrade their server. |
+| v5.12.0                                            | For LDAP Group Sync Managed channels and teams to properly reflect removal of users when they are removed from synced groups on mobile,                          |
+|                                                    | customers will need to upgrade the mobile app to the latest version (v1.20).                                                                                     |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Plugin / API related
+|                                                    | ``DeleteEphemeralMessage`` now accepts a ``postId string`` which affects any plugins that rely on API, especially the Giphy plugin.                              |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.11.0                                            | If your integration uses ``Update.Props == nil`` to clear ``Props``, this will no longer work in 5.11+. Instead, use ``Update.Props == {}`` to clear properties. |
 |                                                    |                                                                                                                                                                  |
