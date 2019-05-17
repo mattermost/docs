@@ -16,6 +16,7 @@ Bot accounts
 System Console re-org
 NPS
 Infinite scroll (not supported on IE11)
+Promoted Polish to 'official'
 
 ### Improvements
 - LDAP Groups - Added ability to switch a team or channel to be group-constrained via the CLI.
@@ -29,6 +30,7 @@ Infinite scroll (not supported on IE11)
 
 #### Plugins
  - Added support for markdown in plugin system console help text fields.
+ - Added support for plugins to override ephemeral posts.
 
 ### Bug Fixes
  - Fixed an issue where releasing a mouse click while the cursor was outside of the Rename Channel modal would close the modal.
