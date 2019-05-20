@@ -1,6 +1,4 @@
 {{- if .Values.enabled }}
-{{- $metricsEnabled := .Values.metrics.enabled -}}
-{{- $metricsAnnotations := .Values.metrics.annotations -}}
 
 apiVersion: apps/v1beta2
 kind: Deployment
@@ -22,8 +20,8 @@ spec:
         release: {{ .Release.Name }}
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yaml") . | sha256sum }}
-{{- if $metricsEnabled }}
-{{ toYaml $metricsAnnotations | indent 8 }}
+{{- if .Values.metrics.enabled }}
+{{ toYaml .Values.metrics.annotations | indent 8 }}
 {{- end }}
     spec:
       securityContext:

@@ -10,7 +10,7 @@ data:
   gitlab-monitor.yml.erb: |
     server:
       listen_address: 0.0.0.0
-      listen_port: 9168
+      listen_port: {{ .Values.service.internalPort }}
 
     probes:
       db_common: &db_common

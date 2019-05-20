@@ -15,8 +15,6 @@ global:
       repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee
     task-runner:
       repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ee
-    gitlab-monitor:
-      repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-monitor
     unicorn:
       repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee
       workhorse:
@@ -30,8 +28,6 @@ global:
       repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ce
     task-runner:
       repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ce
-    gitlab-monitor:
-      repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-monitor
     unicorn:
       repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ce
       workhorse:

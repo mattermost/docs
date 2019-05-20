@@ -30,7 +30,6 @@ to the `helm install` command using the `--set` flags.
 | `extraInitContainers`            |                       | List of extra init containers to include       |
 | `extraVolumeMounts`              |                       | List of extra volumes mountes to do            |
 | `extraVolumes`                   |                       | List of extra volumes to create                |
-| `hpa.targetAverageValue`         | `100m`                | Set the autoscaling target value               |
 | `image.pullPolicy`               | `IfNotPresent`        | GitLab image pull policy                       |
 | `image.pullSecrets`              |                       | Secrets for the image repository               |
 | `image.repository`               | `registry.gitlab.com/gitlab-org/build/cng/gitlab-monitor` | Unicorn image repository |
@@ -38,11 +37,12 @@ to the `helm install` command using the `--set` flags.
 | `init.image`                     | `busybox`             | initContainer image                            |
 | `init.tag`                       | `latest`              | initContainer image tag                        |
 | `metrics.enabled`                | `true`                | Toggle Prometheus metrics exporter             |
+| `metrics.port`                   | `9168`                | Listen port for the Prometheus metrics exporter       |
 | `resources.requests.cpu`         | `50m`                 | gitlab-monitor minimum cpu                            |
 | `resources.requests.memory`      | `150M`                | gitlab-monitor minimum memory                         |
-| `service.externalPort`           | `8080`                | gitlab-monitor exposed port                           |
-| `service.internalPort`           | `8080`                | gitlab-monitor internal port                          |
-| `service.name`                   | `unicorn`             | gitlab-monitor service name                           |
+| `service.externalPort`           | `9168`                | gitlab-monitor exposed port                           |
+| `service.internalPort`           | `9168`                | gitlab-monitor internal port                          |
+| `service.name`                   | `gitlab-monitor`      | gitlab-monitor service name                           |
 | `service.type`                   | `ClusterIP`           | gitlab-monitor service type                           |
 
 ## Chart configuration examples

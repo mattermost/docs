@@ -45,8 +45,3 @@ resources:
   requests:
     cpu: 50m
     memory: 150M
-maxUnavailable: 1
-minReplicas: 1
-maxReplicas: 2
-hpa:
-  targetAverageValue: 100m
