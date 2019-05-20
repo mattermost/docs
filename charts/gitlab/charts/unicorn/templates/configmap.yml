@@ -32,6 +32,9 @@ data:
       url: {{ template "gitlab.redis.url" . }}
       id:
   unicorn.rb: |
+    # This file should be equivalent to `unicorn.rb` from:
+    # * gitlab-ce: https://gitlab.com/gitlab-org/gitlab-ce/blob/master/config/unicorn.rb.example
+    # * omnibus: https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/gitlab/templates/default/unicorn.rb.erb
     worker_processes {{ .Values.workerProcesses }}
     working_directory "/srv/gitlab"
     listen "0.0.0.0:{{ .Values.service.internalPort }}", :tcp_nopush => true
@@ -39,7 +42,26 @@ data:
     pid "/home/git/unicorn.pid"
     preload_app true
 
+    require_relative "/srv/gitlab/lib/gitlab/cluster/lifecycle_events"
+
+    before_exec do |server|
+      # Signal application hooks that we're about to restart
+      Gitlab::Cluster::LifecycleEvents.do_master_restart
+    end
+
     before_fork do |server, worker|
+      # Signal application hooks that we're about to fork
+      Gitlab::Cluster::LifecycleEvents.do_before_fork
+
+      # The following is only recommended for memory/DB-constrained
+      # installations.  It is not needed if your system can house
+      # twice as many worker_processes as you have configured.
+      #
+      # This allows a new master process to incrementally
+      # phase out the old master process with SIGTTOU to avoid a
+      # thundering herd (especially in the "preload_app false" case)
+      # when doing a transparent upgrade.  The last worker spawned
+      # will then kill off the old master process with a SIGQUIT.
       old_pid = "#{server.config[:pid]}.oldbin"
       if old_pid != server.pid
         begin
@@ -48,13 +70,21 @@ data:
         rescue Errno::ENOENT, Errno::ESRCH
         end
       end
-
-      ActiveRecord::Base.connection.disconnect! if defined?(ActiveRecord::Base)
+      #
+      # Throttle the master from forking too quickly by sleeping.  Due
+      # to the implementation of standard Unix signal handlers, this
+      # helps (but does not completely) prevent identical, repeated signals
+      # from being lost when the receiving process is busy.
+      # sleep 1
     end
 
     after_fork do |server, worker|
-      ActiveRecord::Base.establish_connection if defined?(ActiveRecord::Base)
-      defined?(::Prometheus::Client.reinitialize_on_pid_change) && Prometheus::Client.reinitialize_on_pid_change
+      # Signal application hooks of worker start
+      Gitlab::Cluster::LifecycleEvents.do_worker_start
+
+      # per-process listener ports for debugging/admin/migrations
+      # addr = "127.0.0.1:#{9293 + worker.nr}"
+      # server.listen(addr, :tries => -1, :delay => 5, :tcp_nopush => true)
     end
 
     ENV['GITLAB_UNICORN_MEMORY_MIN'] = ({{ int .Values.memory.min }} * 1 << 20).to_s
