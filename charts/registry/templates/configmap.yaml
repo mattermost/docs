@@ -60,6 +60,10 @@ data:
         blobdescriptor: 'inmemory'
       delete:
         enabled: true
+      {{- if not .Values.minio.redirect }}
+      redirect:
+        disable: true
+      {{- end }}
       {{- else }}
 {{ include (print $.Template.BasePath "/_storage_default.yaml") . | indent 6}}
       {{- end }}

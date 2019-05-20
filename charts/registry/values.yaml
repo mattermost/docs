@@ -120,7 +120,8 @@ minReplicas: 2
 maxReplicas: 10
 maxUnavailable: 1
 storage: {}
-minio: {}
+minio:
+  redirect: false
 
 # https://github.com/docker/distribution/blob/master/docs/configuration.md#compatibility
 compatibility:

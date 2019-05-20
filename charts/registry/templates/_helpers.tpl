@@ -38,15 +38,24 @@ if there is a shared tls secret for all ingresses.
 {{- end -}}
 
 {{/*
-Returns the minio Url, ex: `http://minio.example.com`
-If `global.hosts.https` or `global.hosts.minio.https` is true, it uses https, otherwise http.
-Calls into the `gitlab.minio.hostname` function for the hostname part of the url.
+Returns the minio URL.
+If `registry.redirect` is set to `true` it will return the external domain name of minio, 
+e.g. `https://minio.example.com`, otherwise it will fallback to the internal minio service
+URL, e.g. `http://minio-svc:9000`.
+
+For external domain name, if `global.hosts.https` or `global.hosts.minio.https` is true,
+it uses https, otherwise http. Calls into the `gitlab.minio.hostname` function for the
+hostname part of the url.
 */}}
 {{- define "registry.minio.url" -}}
-{{- if or .Values.global.hosts.https .Values.global.hosts.minio.https -}}
-{{-   printf "https://%s" (include "gitlab.minio.hostname" .) -}}
+{{- if .Values.minio.redirect -}}
+  {{- if or .Values.global.hosts.https .Values.global.hosts.minio.https -}}
+  {{-   printf "https://%s" (include "gitlab.minio.hostname" .) -}}
+  {{- else -}}
+  {{-   printf "http://%s" (include "gitlab.minio.hostname" .) -}}
+  {{- end -}}
 {{- else -}}
-{{-   printf "http://%s" (include "gitlab.minio.hostname" .) -}}
+  {{- include "gitlab.minio.endpoint" . -}}
 {{- end -}}
 {{- end -}}
 
