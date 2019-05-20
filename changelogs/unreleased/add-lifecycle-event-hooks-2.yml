@@ -1,0 +1,5 @@
+---
+title: Ensure unicorn.rb issues appropriate lifecycle hooks
+merge_request: 791
+author:
+type: fixed
