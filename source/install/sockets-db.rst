@@ -29,7 +29,7 @@ With TCP socket
 - Create the new user while connecting to the server as ``postgres`` user
   (you will be prompted for a password for the new user):
 
-   ``sudo -u postgres createuser -P mmuser``
+  ``sudo -u postgres createuser -P mmuser``
 
 - Create the Mattermost database, owned by ``mmuser`` user:
 
@@ -102,7 +102,8 @@ Configuring Mattermost
 
   - For MySQL, set it to ``mmuser:mmuser_password@unix(/run/mysqld/mysqld.sock)/mattermostdb?charset=utf8mb4,utf8``.
   - For PostgreSQL
+    
     - TCP socket: ``postgres://mmuser:mmuser_password@127.0.0.1:5432/mattermostdb?sslmode=disable&connect_timeout=10``    
+    
     - Unix socket: ``postgres:///mattermostdb?host=/run/postgresql``, where ``mattermostdb`` is the name of the database and ``/run/postgresql`` is the directory containing the Unix socket.
-
 
