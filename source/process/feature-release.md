@@ -45,6 +45,7 @@ No pull requests for major features should be **merged** to the current release 
     - Confirm all config settings and new features have diagnostics
     - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel. [See example](https://community.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
     - Draft Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
+      - Note the type of release and add a link to release doc that defines the type (https://docs.mattermost.com/process/release-faq.html#release-overview)
     - Review [supported OS versions](https://docs.mattermost.com/install/requirements.html#server-software) and review that [software requirements](https://docs.mattermost.com/install/requirements.html#software-requirements) are up-to-date based on [these guidelines](https://docs.mattermost.com/process/software-requirements.html). If not, update documentation accordingly, and note changes in the Changelog
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version
     - Ask PMs if there are any notable breaking changes or deprecated features in the release
@@ -199,7 +200,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Go through all tabs of testing spreadsheet and verify all comments and questions have been filed in JIRA as needed
     - Verify all JIRA tickets other than newly filed bugs have been tested, verified, and closed
     - As bug fixes are merged and RCs are cut, verify fixes on new RCs and post in Release Channel after testing
-    - As RCs are cut, update selenium.mattermost.com to latest RC
+    - As RCs are cut, update selenium.test.mattermost.com to latest RC
 
 ### J. (T-minus 2 working days) Release Build Cut
 
@@ -299,7 +300,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
         - Otherwise, release the fix version (Actions > [...] > Release)
 4. Build:
     - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
-    - Update [ci-linux-mysql-prev](https://ci-linux-mysql-prev.mattermost.com) to the previous release version
+    - Update https://prev.test.mattermost.com to the previous release version
 5. Dev:
     - Cut release branch for Bug Fix release
     - Update existing tickets or create new ones for the next release
