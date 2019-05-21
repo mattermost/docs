@@ -29,7 +29,7 @@ Notes:
 ### C. (T-minus 2 working days) Release Candidate Testing
 
 1. QA:
-    - If the dot release takes place during a regular release, update ``ci-linux-mysql-prev`` to dot-release RCs for the previous release and keep ``rctesting.reddogsofwar`` on the latest regular release version
+    - If the dot release takes place during a regular release, update ``prev.test.mattermost.com`` to dot-release RCs for the previous release and keep ``rc.test.mattermost.com`` on the latest regular release version
     - Test the new RC to verify fixes merged to the release branch work
     - Post in Release Discussion channel after testing
 
