@@ -342,7 +342,7 @@ Here we summarize meeting elements that can be re-used for meetings across teams
 Ice-breaker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- 2-3 minute exercises designed to learn more a colleagues at the start of a recurring meeting
+- 2-3 minute exercises designed to learn more about colleagues at the start of a recurring meeting
 - Typically rotates in random order with names pulled from the `R&D Meeting Ice-breaker List <https://docs.google.com/spreadsheets/d/1dCgKFdYkaDYd7yzgbK2VcqscZ1Ni5uNnnkZZv63XtOg/edit#gid=0>`__, three colleagues per meeting (2 R&D staff, 1 'other' (e.g. Sales, Ops, etc)
 
 - Examples:
