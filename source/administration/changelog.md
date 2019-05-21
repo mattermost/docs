@@ -16,17 +16,22 @@ Bot accounts
 System Console re-org
 NPS
 Infinite scroll (not supported on IE11)
+LDAP Group Sync removals
 Promoted Polish to 'official'
 
 ### Improvements
-- LDAP Groups - Added ability to switch a team or channel to be group-constrained via the CLI.
-- Added support for running two Mattermost instances on the same domain using subpaths.
-- Added an option to add a user to a channel from the profile pop-over.
+ - LDAP Groups - Added ability to switch a team or channel to be group-constrained via the CLI.
+ - Added support for running two Mattermost instances on the same domain using subpaths.
+ - Added support for importing threads from Slack.
+
+#### User Interface (UI)
+ - Added an option to add a user to a channel from the profile pop-over.
+ - Removed ``@`` for full name display in push notifications.
 
 #### CLI
-- Added a ``command modify`` CLI command to be able to modify slash commands.
-- Added support for converting user accounts to bot accounts through the CLI.
-- Implemented a new command for migrating configuration to and from the database.
+ - Added a ``command modify`` CLI command to be able to modify slash commands.
+ - Added support for converting user accounts to bot accounts through the CLI.
+ - Implemented a new command for migrating configuration to and from the database.
 
 #### Plugins
  - Added support for markdown in plugin system console help text fields.
@@ -39,6 +44,7 @@ Promoted Polish to 'official'
  - Fixed an issue where license expiration notice banner could not be dismissed prior the to license expiration date.
  - Fixed an issue where the channel switcher auto-complete didn't function properly when auto-completing the name of a person who was the first person named in a group message channel.
  - Fixed an issue where inline images in markdown preview don't get expanded.
+ - Fixed an issue where replies to the parent post were not left aligned.
 
 ### Compatibility
 
@@ -54,7 +60,12 @@ PluginSettings
 
 ### API Changes
  - Updated api4/handlers to use gziphandler wrapper if server is configured to use gzip. This ensures that the Mattermost server can respond to REST API requests with compressed data (via gzip) to reduce the amount of bandwidth used.
- - Add API command to create and delete a team and channel
+ - Added an API command to create and delete a team and channel.
+ - LDAP removals
+    - Added API endpoints ``getGroupsByChannel`` and ``GetGroupsByTeam`` to retrieve groups by team and by channel.
+    - Added ``group_constrained`` API to both ``/users`` and ``/users/search`` endpoints to be able to limit users listed to those allowed by group-constraints.
+    - Added ``GET /groups`` API endpoint.
+ - Added ``KVCompareAndSet(key string, old []byte, new []byte)`` to Plugin API to add support for transactional semantics with KV Store in plugin framework.
 
 ### Websocket Event Changes
 
