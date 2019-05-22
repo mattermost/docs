@@ -41,6 +41,7 @@ No pull requests for major features should be **merged** to the current release 
 2. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
+    - After release branches are cut, ask dev to cut an RN build
     - Check that all features are behind a feature flag
     - Confirm all config settings and new features have diagnostics
     - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel. [See example](https://community.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
@@ -55,6 +56,7 @@ No pull requests for major features should be **merged** to the current release 
     - Cut release branch both for server and mobile
         - Merge database upgrade before cutting the branch
         - Point translation server to release branch after cutting
+        - Cut an RN build for the next release
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
       - After the cut-off, any PRs that include significant code changes, require approval of the release manager before merging
 4. Marketing:
@@ -303,6 +305,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Update https://prev.test.mattermost.com to the previous release version
 5. Dev:
     - Cut release branch for Bug Fix release
+    - Cut an RN build for the next release
     - Update existing tickets or create new ones for the next release
 6. Marketing:
     - Turn on CrazyEgg for blog post page
