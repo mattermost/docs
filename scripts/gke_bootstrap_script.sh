@@ -12,6 +12,7 @@ CLUSTER_NAME=${CLUSTER_NAME-gitlab-cluster}
 MACHINE_TYPE=${MACHINE_TYPE-n1-standard-4}
 RBAC_ENABLED=${RBAC_ENABLED-true}
 NUM_NODES=${NUM_NODES-2}
+INT_NETWORK=${INT_NETWORK-default}
 PREEMPTIBLE=${PREEMPTIBLE-false}
 EXTRA_CREATE_ARGS=${EXTRA_CREATE_ARGS-""}
 USE_STATIC_IP=${USE_STATIC_IP-false};
@@ -45,6 +46,7 @@ function bootstrap(){
     --scopes "https://www.googleapis.com/auth/ndev.clouddns.readwrite","https://www.googleapis.com/auth/compute","https://www.googleapis.com/auth/devstorage.read_only","https://www.googleapis.com/auth/logging.write","https://www.googleapis.com/auth/monitoring","https://www.googleapis.com/auth/servicecontrol","https://www.googleapis.com/auth/service.management.readonly","https://www.googleapis.com/auth/trace.append" \
     --node-version $CLUSTER_VERSION --num-nodes $NUM_NODES \
     --enable-ip-alias \
+    --network $INT_NETWORK \
     --project $PROJECT --enable-basic-auth $EXTRA_CREATE_ARGS;
 
   if ${USE_STATIC_IP}; then
