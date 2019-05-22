@@ -2,6 +2,31 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.9.0 (2019-05-22)
+
+### Changed (4 changes)
+
+- Transition Operator from Cluster to Namespace Role. !764
+- Replace subgroup with GitLab class annotation. !772
+- Rename subgroup to CRD prefix. !773
+- Add default Referrer-Policy to nginx-ingress headers. !774
+
+### Performance (1 change)
+
+- Unicorn: increase worker memory defaults.
+
+### Added (3 changes, 1 of them is from the community)
+
+- Add checkConfig logic to detect known bad configurations. !757
+- Persistent storage for task-runner tmp directory. !769 (jansmets)
+- Enable Sidekiq Memory Killer Configuration. !776
+
+### Other (2 changes)
+
+- Update gitlab-runner to 0.5.0/11.11.0. !798
+- Update GitLab Version to 11.11.0.
+
+
 ## 1.8.4 (2019-05-01)
 
 ### Other (1 change)
