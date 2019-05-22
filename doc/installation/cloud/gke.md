@@ -42,7 +42,7 @@ The table below describes all variables.
 | Variable        | Description                                                                 | Default value                    |
 |-----------------|-----------------------------------------------------------------------------|----------------------------------|
 | REGION          | The region where your cluster lives                                         | us-central1                      |
-| ZONE            | The zone where your cluster instances lives                                 | us-central1-a                     |
+| ZONE            | The zone where your cluster instances lives                                 | us-central1-a                    |
 | CLUSTER_NAME    | The name of the cluster                                                     | gitlab-cluster                   |
 | CLUSTER_VERSION | The version of your GKE cluster                                             | GKE default, check the [GKE release notes](https://cloud.google.com/kubernetes-engine/release-notes) |
 | MACHINE_TYPE    | The cluster instances' type                                                 | n1-standard-4                    |
@@ -51,6 +51,7 @@ The table below describes all variables.
 | RBAC_ENABLED    | If you know whether your cluster has RBAC enabled set this variable.        | true                             |
 | PREEMPTIBLE     | Cheaper, clusters live at *most* 24 hrs. No SLA on nodes/disks              | false                            |
 | USE_STATIC_IP   | Create a static IP for Gitlab instead of an ephemeral IP with managed DNS   | false                            |
+| INT_NETWORK     | The IP space to use within this cluster                                     | default                          |
 
 Run the script, by passing in your desired parameters. It can work with the
 default parameters except for `PROJECT` which is required:
