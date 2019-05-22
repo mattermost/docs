@@ -1,5 +1,0 @@
----
-title: Add default Referrer-Policy to nginx-ingress headers
-merge_request: 774
-author:
-type: changed
