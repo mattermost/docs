@@ -305,6 +305,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Update https://prev.test.mattermost.com to the previous release version
 5. Dev:
     - Cut release branch for Bug Fix release
+    - Cut an RN build for the next release
     - Update existing tickets or create new ones for the next release
 6. Marketing:
     - Turn on CrazyEgg for blog post page
