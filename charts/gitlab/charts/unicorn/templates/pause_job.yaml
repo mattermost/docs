@@ -59,7 +59,6 @@ metadata:
     "helm.sh/hook-weight": "-4"
     "helm.sh/hook-delete-policy": hook-succeeded,hook-failed,before-hook-creation
 spec:
-  backoffLimit: 3
   template:
     metadata:
       name: {{ template "fullname" . }}-pause-runner
@@ -71,5 +70,5 @@ spec:
       containers:
       - name: pause-task
         image: "registry.gitlab.com/gitlab-org/build/cng/kubectl:v1.9.3"
-        command: ["/usr/local/bin/kubectl", "--namespace", "{{ $.Release.Namespace }}", "rollout", "pause", "deployment", "{{ include "fullname" . }}"]
+        command: ["sh", "-c", "/usr/local/bin/kubectl -n {{ $.Release.Namespace }} rollout pause deployment {{ include "fullname" . }} || true"]
 {{- end }}
