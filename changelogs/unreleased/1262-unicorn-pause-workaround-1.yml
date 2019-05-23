@@ -1,0 +1,5 @@
+---
+title: Workaround for pausing Unicorn deployment during Helm upgrade
+merge_request: 783
+author:
+type: fixed
