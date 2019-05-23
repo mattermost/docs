@@ -12,14 +12,14 @@ Release Date 2019-06-16
 
  - Plugin **XXXXXXXX**
 
-**IMPORTANT:** If you upgrade from another release than 5.10, please read the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+**IMPORTANT:** If you upgrade from another release than 5.11, please read the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
 
-#### Infinite scroll
+#### Infinite Scroll
  - Makes reading messages easier. Older posts are loaded automatically as you scroll up rather than having to click the "Load more messages" button at the top of the screen. This feature is not supported on Internet Explorer (IE11).
  
-#### Bot accounts
+#### Bot Accounts
  - Users longer have to rely on creating fake user accounts to act as bots for integrations. Instead, users can create a real bot account and use the generate bot access token to interact with users and complete tasks.
  - Users can can also use these bots to post to any channel in the system, whether it’s a private team, private channel or a direct message channel.
  - Integrations tied to bot accounts (instead of user accounts) no longer break if a user leaves the company and their account gets deactivated.
@@ -57,7 +57,7 @@ Release Date 2019-06-16
 #### Command Line Interface (CLI)
  - Added a ``command modify`` CLI command to be able to modify slash commands.
  - Added support for converting user accounts to bot accounts through the CLI.
- - Implemented a new command for migrating configuration to and from the database.
+ - Implemented a new command ``MigrateConfig`` for migrating configuration to and from the database.
  - For LDAP Groups, added the ability to switch a team or channel to be group-constrained via the CLI.
  
 #### Administration
@@ -75,21 +75,25 @@ Release Date 2019-06-16
 
 ### config.json
 
-"NotificationLogSettings": {
-        "EnableConsole": true, "ConsoleLevel": "DEBUG", "ConsoleJson": true, "EnableFile": true, "FileLevel": "INFO", "FileJson": true, and "FileLocation": "", to implement a structured logger to keep track of push notifications.
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
-PluginSettings
- "EnableHealthCheck": true, - all plugins are periodically monitored, and restarted or deactivated based on their health status.
+#### Changes to Team Edition and Enterprise Edition:
+
+ - Under ``"PluginSettings":`` in ``config.json``:
+  - Added ``"EnableHealthCheck": true``, to ensure all plugins are periodically monitored, and restarted or deactivated based on their health status.
+ - Under ``"NotificationLogSettings":`` in ``config.json``:
+   - Added ``"EnableConsole": true``, ``"ConsoleLevel": "DEBUG"``, ``"ConsoleJson": true``, ``"EnableFile": true``, ``"FileLevel": "INFO"``, ``"FileJson": true``, and ``"FileLocation": ""``, to implement a structured logger to keep track of push notifications.
+ - Under ``"ServiceSettings":`` in ``config.json``:
+   - Added ``"EnableBotAccountCreation": false`` and ``"DisableBotsWhenOwnerIsDeactivated": true``, to enable bot accounts.
 
 ### Database Changes
 
 ### API Changes
- - Updated api4/handlers to use gziphandler wrapper if server is configured to use gzip. This ensures that the Mattermost server can respond to REST API requests with compressed data (via gzip) to reduce the amount of bandwidth used.
+ - Updated API to use gziphandler wrapper if server is configured to use gzip. This ensures that the Mattermost server can respond to REST API requests with compressed data (via gzip) to reduce the amount of bandwidth used.
  - Added an API command to create and delete a team and channel.
- - LDAP removals
+ - LDAP Group Sync:
     - Added API endpoints ``getGroupsByChannel`` and ``GetGroupsByTeam`` to retrieve groups by team and by channel.
     - Added ``group_constrained`` API to both ``/users`` and ``/users/search`` endpoints to be able to limit users listed to those allowed by group-constraints.
-    - Added ``GET /groups`` API endpoint.
  - Added ``KVCompareAndSet(key string, old []byte, new []byte)`` to Plugin API to add support for transactional semantics with KV Store in plugin framework.
 
 ### Websocket Event Changes
