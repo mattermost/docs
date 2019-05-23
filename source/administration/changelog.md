@@ -39,7 +39,7 @@ Release Date 2019-06-16
  - Users can manage the membership of private teams and channel with groups, eliminating the need to individually add and remove members. Users in the groups will be automatically removed from the team or channel when removed from an associated group.
  
 #### User/Channel Search & AutoComplete in ElasticSearch
- - A new flag in the System console > Elasticsearch to enable the usage of Elasticsearch for autocompletion queries. When that flag is enabled, Elasticsearch will use its indexed data for the autocompletions.
+ - Added a new flag in the System console > Elasticsearch to enable the usage of Elasticsearch for autocompletion queries. When that flag is enabled, Elasticsearch will use its indexed data for the autocompletions.
 
 ### Improvements
 
@@ -80,7 +80,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
 
  - Under ``"PluginSettings":`` in ``config.json``:
-  - Added ``"EnableHealthCheck": true``, to ensure all plugins are periodically monitored, and restarted or deactivated based on their health status.
+   - Added ``"EnableHealthCheck": true``, to ensure all plugins are periodically monitored, and restarted or deactivated based on their health status.
  - Under ``"NotificationLogSettings":`` in ``config.json``:
    - Added ``"EnableConsole": true``, ``"ConsoleLevel": "DEBUG"``, ``"ConsoleJson": true``, ``"EnableFile": true``, ``"FileLevel": "INFO"``, ``"FileJson": true``, and ``"FileLocation": ""``, to implement a structured logger to keep track of push notifications.
  - Under ``"ServiceSettings":`` in ``config.json``:
