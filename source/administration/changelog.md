@@ -10,43 +10,68 @@ Release Date 2019-06-16
 
 ### Breaking Changes since last release
 
+ - Plugin **XXXXXXXX**
+
+**IMPORTANT:** If you upgrade from another release than 5.10, please read the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
 ### Highlights
 
-Bot accounts
-System Console re-org
-NPS
-Infinite scroll (not supported on IE11)
-LDAP Group Sync removals
-Promoted Polish to 'official'
+#### Infinite scroll
+ - Makes reading messages easier. Older posts are loaded automatically as you scroll up rather than having to click the "Load more messages" button at the top of the screen. This feature is not supported on Internet Explorer (IE11).
+ 
+#### Bot accounts
+ - Users longer have to rely on creating fake user accounts to act as bots for integrations. Instead, users can create a real bot account and use the generate bot access token to interact with users and complete tasks.
+ - Users can can also use these bots to post to any channel in the system, whether it’s a private team, private channel or a direct message channel.
+ - Integrations tied to bot accounts (instead of user accounts) no longer break if a user leaves the company and their account gets deactivated.
+ 
+#### Jira V2.0
+ - Deep two-way integration between Jira and Mattermost.
+ - Users can send issue creation, issue updates and comments to Mattermost channels. Users can also take quick actions in Mattermost, including creating Jira issues, attaching Mattermost messages to Jira issues and transitioning issues via slash commands.
+ - For a full feature set for 2.0, see https://github.com/mattermost/mattermost-plugin-jira#jira-20-features.
+
+#### System Console Reorganization
+ - Informational architecture restructure of the system console to make a more logical flow to the settings and to provide a more cohesive experience for hiding features on the Mattermost Private Cloud product, where the system admin should not have access to change configurations that affect the environment directly.
+
+#### Net Promoter Score (NPS)
+ - We are gathering user feedback that we will use to improve the user experience and hear directly from our users. It can be disabled via **XXXXXX**.
+ 
+#### LDAP Group Sync Removals
+ - Users can manage the membership of private teams and channel with groups, eliminating the need to individually add and remove members. Users in the groups will be automatically removed from the team or channel when removed from an associated group.
+ 
+#### User/Channel Search & AutoComplete in ElasticSearch
+ - A new flag in the System console > Elasticsearch to enable the usage of Elasticsearch for autocompletion queries. When that flag is enabled, Elasticsearch will use its indexed data for the autocompletions.
 
 ### Improvements
- - LDAP Groups - Added ability to switch a team or channel to be group-constrained via the CLI.
- - Added support for running two Mattermost instances on the same domain using subpaths.
- - Added support for importing threads from Slack.
 
 #### User Interface (UI)
  - Added an option to add a user to a channel from the profile pop-over.
  - Removed ``@`` for full name display in push notifications.
-
-#### CLI
- - Added a ``command modify`` CLI command to be able to modify slash commands.
- - Added support for converting user accounts to bot accounts through the CLI.
- - Implemented a new command for migrating configuration to and from the database.
-
+ 
 #### Plugins
  - Added support for markdown in plugin system console help text fields.
  - Added support for plugins to override ephemeral posts.
 
+#### Localization
+ - Promoted Polish language to 'official'.
+
+#### Command Line Interface (CLI)
+ - Added a ``command modify`` CLI command to be able to modify slash commands.
+ - Added support for converting user accounts to bot accounts through the CLI.
+ - Implemented a new command for migrating configuration to and from the database.
+ - For LDAP Groups, added the ability to switch a team or channel to be group-constrained via the CLI.
+ 
+#### Administration
+ - Added support for running two Mattermost instances on the same domain using subpaths.
+ - Added support for importing threads from Slack.
+
 ### Bug Fixes
  - Fixed an issue where releasing a mouse click while the cursor was outside of the Rename Channel modal would close the modal.
- - Fixed an issue where a whitepage occured after uploading a plugin with invalid settings_schema value.
+ - Fixed an issue where a whitepage occured after uploading a plugin with an invalid ``settings_schema`` value.
  - Fixed an issue where the announcement banner overlapped channel content.
- - Fixed an issue where license expiration notice banner could not be dismissed prior the to license expiration date.
- - Fixed an issue where the channel switcher auto-complete didn't function properly when auto-completing the name of a person who was the first person named in a group message channel.
- - Fixed an issue where inline images in markdown preview don't get expanded.
+ - Fixed an issue where license expiration notice banner could not be dismissed prior to the license expiration date.
+ - Fixed an issue where the channel switcher autocomplete didn't function properly when autocompleting the name of a person who was the first person named in a group message channel.
+ - Fixed an issue where inline images in markdown preview didn't get expanded.
  - Fixed an issue where replies to the parent post were not left aligned.
-
-### Compatibility
 
 ### config.json
 
@@ -70,6 +95,18 @@ PluginSettings
 ### Websocket Event Changes
 
 ### Known Issues
+ - Buttons inside ephemeral posts are not clickable / functional on the mobile app.
+ - On a server using a subpath, the URL opens a blank page if the system admin changes the Site URL in the System Console UI. The system admin should restart the server to fix it.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
 
 ### Contributors
 
