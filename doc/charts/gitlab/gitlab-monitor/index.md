@@ -32,7 +32,7 @@ to the `helm install` command using the `--set` flags.
 | `extraVolumes`                   |                       | List of extra volumes to create                |
 | `image.pullPolicy`               | `IfNotPresent`        | GitLab image pull policy                       |
 | `image.pullSecrets`              |                       | Secrets for the image repository               |
-| `image.repository`               | `registry.gitlab.com/gitlab-org/build/cng/gitlab-monitor` | Unicorn image repository |
+| `image.repository`               | `registry.gitlab.com/gitlab-org/build/cng/gitlab-monitor` | gitlab-monitor image repository |
 | `image.tag`                      |                       | Unicorn image tag                              |
 | `init.image`                     | `busybox`             | initContainer image                            |
 | `init.tag`                       | `latest`              | initContainer image tag                        |
@@ -67,7 +67,7 @@ image:
 
 ### annotations
 
-`annotations` allows you to add annotations to the unicorn pods. For example:
+`annotations` allows you to add annotations to the gitlab-monitor pods. For example:
 
 ```YAML
 annotations:
