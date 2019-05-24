@@ -2,7 +2,7 @@
 Creating New Jira Bug Tickets
 ---------------------------------------------------------
 
-Bugs are any “obvious errors” on how the product or feature is functioning as well as any UI issues. If you’re not reporting an obvious error, please file a Story ticket instead. Errors on `unsupported platforms <https://docs.mattermost.com/install/requirements.html>`_ are not considered bugs.
+Bugs are any “obvious errors” on how the product or a feature is functioning as well as any UI issues. If you’re not reporting an obvious error, please file a Story ticket instead. Errors on `unsupported platforms <https://docs.mattermost.com/install/requirements.html>`_ are not considered bugs.
 
 1. Confirm you’re filing a new issue
 ---------------------------------------------------------
@@ -12,7 +12,7 @@ Bugs are any “obvious errors” on how the product or feature is functioning a
 2. Confirm the bug is not a confidential issue
 ---------------------------------------------------------
 
- - If your issue involves security, or includes confidential information or customer information, please mark the bug ticket as internal.
+ - If your issue involves security or if it involves confidential information or customer information, please mark the bug ticket as internal.
 
 3. Information needed on Mattermost bug tickets
 ---------------------------------------------------------
