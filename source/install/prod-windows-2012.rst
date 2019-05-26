@@ -14,7 +14,7 @@ Install Windows Server 2012+
 ----------------------------
 
 1. Set up 3 machines with any edition of Windows Server 2012+ (except core) with 2GB of RAM or more. The
-   servers will be used for the Web Proxy & SSL Termination, Mattermost, and Database.  The screenshots 
+   servers will be used for the Web Proxy and SSL Termination, Mattermost, and Database.  The screenshots 
    used in this guide are from Microsoft Server 2012, but similar steps should work for other versions.
 
    -  **Optional:** You can also use a single machine for all 3
@@ -31,7 +31,7 @@ Set up Database Server
 1.  Login to the database server.  For the purposes of this guide we will assume this server has an IP
     address of 10.0.0.1.
 
-Install & Configure MySQL
+Install and Configure MySQL
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2. `Download the MySQL 5.6+ <http://dev.mysql.com/downloads/windows/installer/>`__ installer, or (PostgreSQL 9.3+).

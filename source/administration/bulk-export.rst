@@ -14,7 +14,7 @@ from the proof of concept instance.
 You can export the following data types:
 
 - Teams
-- Channels (Public & Private)
+- Channels (Public and Private)
 - Users
 - Users' Team memberships
 - Users' Channel memberships

@@ -184,7 +184,7 @@ Large quantities of data can be imported from a JSON file into Mattermost at the
 You can import the following data types:
 
  - Teams
- - Channels (Public & Private)
+ - Channels (Public and Private)
  - Users
  - Users’ Team memberships
  - Users’ Channel memberships
@@ -237,7 +237,7 @@ Train administrators on the tasks required to manage Mattermost.
 
 **Reference**: https://docs.mattermost.com/guides/administrator.html
 
-3.3.13 Update Legal & Support Settings
+3.3.13 Update Legal and Support Settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost has configuration settings for the terms of service, privacy policy, and support URLs and emails. It is highly recommended that you modify these in your configuration so that your users have the correct legal information and can contact administrators to resolve account issues. You can find these under **System Console > Legal and Support**.

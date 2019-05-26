@@ -67,7 +67,7 @@ account using a one-click sign in option.
 
 AD/LDAP Sign In
 ~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E10 & E20*
+*Available in Enterprise Edition E10 and E20*
 
 When enabled by your System Admin, you can sign in with your AD/LDAP
 credentials. This lets you use the same username and password for
