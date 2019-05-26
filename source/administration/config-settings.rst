@@ -3751,6 +3751,18 @@ Specify the color of the SAML login button for white labeling purposes. Use a he
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
+SAML session lengths
+^^^^^^^^^^^^^^^^^^^^^^
+
+SAML session length is defined per
+
+- ``url`` : ``environment/session_lengths``
+- ``title`` : ``admin.sidebar.sessionLengths``
+- ``type`` : ``TYPE_NUMBER``
+- ``label`` : ``mobileSessionDays``
+- ``help_text`` : ``admin.service.ssoSessionDaysDesc``
+- ``placeholder``: ``sessionIdleTimeout``
+
 Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
