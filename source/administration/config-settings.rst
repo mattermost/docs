@@ -3027,6 +3027,15 @@ A 32-character key for encrypting and decrypting sensitive fields in the databas
 
 When using High Availability, the salt must be identical in each instance of Mattermost.
 
+The following fields are encrypted using this key
+- ``SqlSettings.DriverName``
+- ``SqlSettings.DataSource``
+- ``SqlSettings.MaxIdleConns``
+- ``SqlSettings.MaxOpenConns``
+- ``SqlSettings.Trace``
+- ``SqlSettings.QueryTimeout``
+- ``SqlSettings.ConnMaxLifetimeMilliseconds``
+
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
 +------------------------------------------------------------------------------------------+
