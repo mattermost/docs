@@ -84,7 +84,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``"NotificationLogSettings":`` in ``config.json``:
    - Added ``"EnableConsole": true``, ``"ConsoleLevel": "DEBUG"``, ``"ConsoleJson": true``, ``"EnableFile": true``, ``"FileLevel": "INFO"``, ``"FileJson": true``, and ``"FileLocation": ""``, to implement a structured logger to keep track of push notifications.
  - Under ``"ServiceSettings":`` in ``config.json``:
-   - Added ``"EnableBotAccountCreation": false`` and ``"DisableBotsWhenOwnerIsDeactivated": true``, to enable bot accounts.
+   - Added ``"EnableBotAccountCreation": false`` and ``"DisableBotsWhenOwnerIsDeactivated": true``, to enable bot accounts. 
+   - Added ``"TrustedProxyIPHeader": []``, to explicitly define which IP headers are trusted.
 
 ### Database Changes
 
