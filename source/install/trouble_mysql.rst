@@ -14,7 +14,7 @@ use. But once MySQL is installed the configuration instructions are the
 same. For all distributions you must create a ``mattermost`` database
 and a ``mattermost`` database user. Failure to create these database
 objects or improperly referencing them from the Mattermost configuration
-file, ``/opt/mattermost/config/config.jason``, causes Mattermost to
+file, ``/opt/mattermost/config/config.json``, causes Mattermost to
 fail. The troubleshooting tips given here deal with these specific
 issues.
 
@@ -25,7 +25,7 @@ like the following:
 
  ::
 
-    Uptime: 877134  Threads: 1  Questions: 9902  Slow queries: 0  Opens: 522  
+    Uptime: 877134  Threads: 1  Questions: 9902  Slow queries: 0  Opens: 522
     Flush tables: 1  Open tables: 371  Queries per second avg: 0.011
 
 If MySQL is not running, review the instructions for installation on
@@ -38,7 +38,7 @@ your distribution.
   not directly manipulating the MySQL database for a working
   Mattermost installation.
 
- The ``mattermost`` Database
+The ``mattermost`` Database
 -----------------------
 
 The database created during installation is named ``mattermost``. If you
@@ -56,7 +56,7 @@ database. This may mean that you have failed to create a database named
 ``mattermost`` or you may have incorrectly referenced this database from
 the ``/opt/mattermost/config/config.json`` file.
 
- **Checking that the Database Exists**
+**Checking that the Database Exists**
 
 To confirm that the ``mattermost`` database exists, open MySQL as root
 by executing ``mysql -u root -p``. When prompted, enter your
@@ -77,7 +77,7 @@ following:
     +--------------------+
     5 rows in set (0.03 sec)
 
- **No ``mattermost`` Database**
+**No ``mattermost`` Database**
 
 If the ``mattermost`` database doesn't exist, create a database named
 ``mattermost`` by opening MySQL as root and issuing the command:
@@ -90,7 +90,7 @@ After creation of the database, attempt to restart the Mattermost server
 by navigating to the ``/opt/mattermost/bin`` directory and entering the
 command ``sudo -u mattermost ./platform``.
 
-**The mattermost Database Exists**
+**The ``mattermost`` Database Exists**
 
 If the ``mattermost`` database does exist, confirm that you have defined
 the database driver correctly in the
@@ -118,14 +118,14 @@ prompt by issuing the command
 You may also have specified an IP address rather than the wild card
 ``%``.
 
-     **Note**
+.. note::
 
-    A MySQL user is fully defined by their username and the host that
-    they access MySQL from. These elements are separated by the ``@``
-    sign. The ``%`` character is a wild card indicating that the user
-    can access MySQL from any IP address. If the user you created
-    accesses MySQL from a specific IP address such as ``10.10.10.2``,
-    please adjust your actions accordingly.
+A MySQL user is fully defined by their username and the host that
+they access MySQL from. These elements are separated by the ``@``
+sign. The ``%`` character is a wild card indicating that the user
+can access MySQL from any IP address. If the user you created
+accesses MySQL from a specific IP address such as ``10.10.10.2``,
+please adjust your actions accordingly.
 
 If the user and host combination that you created does not exist, you
 will see an error such as:
@@ -133,12 +133,12 @@ will see an error such as:
  ::
 
     [2017/09/20 17:06:18 EDT] [INFO] Pinging SQL master database
-    [2017/09/20 17:06:18 EDT] [EROR] Failed to ping DB retrying in 10 seconds 
+    [2017/09/20 17:06:18 EDT] [EROR] Failed to ping DB retrying in 10 seconds
     err-Error 1045: Access denied for user 'mmuser'@'localhost' (using password: YES)
 
- **Checking that mmuser Exists**
+**Checking that ``mmuser`` Exists**
 
- To check that this user exists log in to MySQL as root:
+To check that this user exists, log in to MySQL as root:
 ``mysql -u root -p``.
 
 When prompted, enter the root password that you created when installing
@@ -159,20 +159,20 @@ like the following
     +------------------+-----------+
     5 rows in set (0.00 sec)
 
- **User Doesn't Exist**
+**User Doesn't Exist**
 
 If ``'mmuser'@'%'`` does not exist, create this user by logging into
-MySQL as root and issuing the command: 
+MySQL as root and issuing the command:
 :samp: `create user 'mmuser'@'%' identified by '{mmuser-password}';`.
 
 After creating a user, ensure that this user has rights to the
 ``mattermost`` database by following the instructions given in
 :ref:`mysql_grants`.
 
- **User Exists**
+**User Exists**
 
 If the user ``mmuser`` exists, the DataSource element of the
-``/opt/mattermost/config/config.jason`` file may be incorrect. Open this
+``/opt/mattermost/config/config.json`` file may be incorrect. Open this
 file and search for ``DataSource``. It's value should be:
 
  ::
@@ -181,9 +181,9 @@ file and search for ``DataSource``. It's value should be:
 
 If you correct an error, restart the Mattermost server by navigating to
 the ``/opt/mattermost/bin`` directory and issuing the command:
-``sudo -u mattermost       ./platform``.
+``sudo -u mattermost ./platform``.
 
- The User Password
+The User Password
 -----------------
 
 Mattermost will fail if you use an incorrect password for ``mmuser``. An
@@ -192,12 +192,12 @@ incorrect password displays an error message such as the following:
  ::
 
     [2017/09/20 17:09:10 EDT] [INFO] Pinging SQL master database
-    [2017/09/20 17:09:10 EDT] [EROR] Failed to ping DB retrying in 10 seconds 
+    [2017/09/20 17:09:10 EDT] [EROR] Failed to ping DB retrying in 10 seconds
     err-Error 1045: Access denied for user 'mmuser'@'localhost' (using password: YES)
 
- **The Password in config.jason**
+**The Password in ``config.json``**
 
-The DataSource element of the ``/opt/mattermost/config/config.jason``
+The DataSource element of the ``/opt/mattermost/config/config.json``
 file references the ``mmuser`` password. Open this file and search for
 ``DataSource``. It's value should be:
 
@@ -209,7 +209,7 @@ Check that the password is correct. If you correct an error, restart the
 Mattermost server by navigating to ``/opt/mattermost/bin`` and issuing
 the command: ``sudo -u mattermost ./platform``.
 
- **Unsure of Password**
+**Unsure of Password**
 
 If you are not sure that the ``mmuser`` password is correct, attempt to
 log in to MySQL as ``mmuser`` by issuing the command
@@ -218,16 +218,16 @@ login fails, you are not using the correct password.
 
 With a new database installation, the easiest solution for an unknown
 password is to remove the existing ``mmuser`` and then recreate that
-user. You do this by logging in to MySQL as root and issuing the
+user. You can do this by logging in to MySQL as root and issuing the
 following commands:
 
- 1. ``drop user mmuser;``
+- ``drop user mmuser;``
 
- 2. ``flush privileges;``
+- ``flush privileges;``
 
- 3. :samp: `create user 'mmuser'@'%' identified by '{mmuser-password}';`
+- :samp: `create user 'mmuser'@'%' identified by '{mmuser-password}';`
 
- If you recreate ``mmuser``, ensure that this user has rights to the
+If you recreate ``mmuser``, ensure that this user has rights to the
 ``mattermost`` database by following the instructions given in
 :ref: `mysql_grants`.
 
@@ -241,18 +241,18 @@ database. If this is the case, you may see an error message such as:
  ::
 
     [2017/09/20 17:20:53 EDT] [INFO] Pinging SQL master database
-    [2017/09/20 17:20:53 EDT] [EROR] Failed to ping DB retrying in 10 seconds 
+    [2017/09/20 17:20:53 EDT] [EROR] Failed to ping DB retrying in 10 seconds
     err-Error 1044: Access denied for user 'mmuser'@'%' to database 'mattermost
 
-     **Note**
+.. note::
 
-    Examine the error message closely. The user name displayed in the
-    error message is the user identified in the ``DataSource`` element
-    of the ``/opt/mattermost/config/config.jason`` file. For example, if
-    the error message reads
-    ``Access denied for user 'muser'@'%' ...`` you will know
-    that you have misidentified the user as ``muser`` in the
-    ``config.jason`` file.
+Examine the error message closely. The user name displayed in the
+error message is the user identified in the ``DataSource`` element
+of the ``/opt/mattermost/config/config.json`` file. For example, if
+the error message reads
+``Access denied for user 'muser'@'%' ...`` you will know
+that you have misidentified the user as ``muser`` in the
+``config.json`` file.
 
 You can check if the user ``mmuser`` has access to the ``mattermost``
 database by logging in to MySQL as ``mmuser`` and issuing the command:
@@ -268,9 +268,9 @@ database by logging in to MySQL as ``mmuser`` and issuing the command:
     +--------------------+
     1 rows in set (0.00 sec)
 
- .. _mysql_grants:
+.. _mysql_grants:
 
- **Granting Privileges to mmuser**
+**Granting Privileges to mmuser**
 
 If the ``mattermost`` database exists and ``mmuser`` cannot view it,
 exit from MySQL and then log in again as root. Issue the command
