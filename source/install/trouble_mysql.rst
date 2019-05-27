@@ -90,7 +90,7 @@ After creation of the database, attempt to restart the Mattermost server
 by navigating to the ``/opt/mattermost/bin`` directory and entering the
 command ``sudo -u mattermost ./platform``.
 
-**The mattermost Database Exists**
+**The ``mattermost`` Database Exists**
 
 If the ``mattermost`` database does exist, confirm that you have defined
 the database driver correctly in the
