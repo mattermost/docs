@@ -138,7 +138,7 @@ will see an error such as:
 
  **Checking that ``mmuser`` Exists**
 
- To check that this user exists log in to MySQL as root:
+ To check that this user exists, log in to MySQL as root:
 ``mysql -u root -p``.
 
 When prompted, enter the root password that you created when installing
