@@ -195,7 +195,7 @@ incorrect password displays an error message such as the following:
     [2017/09/20 17:09:10 EDT] [EROR] Failed to ping DB retrying in 10 seconds 
     err-Error 1045: Access denied for user 'mmuser'@'localhost' (using password: YES)
 
- **The Password in config.jason**
+ **The Password in ``config.jason``**
 
 The DataSource element of the ``/opt/mattermost/config/config.jason``
 file references the ``mmuser`` password. Open this file and search for
