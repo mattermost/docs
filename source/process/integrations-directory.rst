@@ -139,17 +139,17 @@ Marketing
 Announce
 ---------
 
-Once the integration entry has been added to the directory, please reply back in the Integrations channel with a screenshot of the entry that was added, link to its install guide, and an at-mention for Integrations PM. Example:
+Once the integration entry has been added to the directory, please reply back in the Integrations channel with a screenshot of the entry that was added, a link to its install guide, and an at-mention for Integrations PM. Example:
 
-```
-@jason.blais Standup Raven Plugin added to https://integrations.mattermost.com
+  .. code-block:: none
+  
+    [@-username] Standup Raven Plugin added to https://integrations.mattermost.com
 
-https://github.com/standup-raven/standup-raven/blob/master/README.md
+    https://github.com/standup-raven/standup-raven/blob/master/README.md
 
-[Attached image]
-```
+    [Attached image]
 
-b) Once Integrations PM has acknowledged, please re-post to `Announcements channel <https://community-daily.mattermost.com/private-core/channels/announcements>`_.
+b) Once Integrations PM has acknowledged, please re-post to `Announcements channel <https://community.mattermost.com/private-core/channels/announcements>`_.
 
 Release Date T-0
 ------------------
