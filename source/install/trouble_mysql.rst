@@ -136,7 +136,7 @@ will see an error such as:
     [2017/09/20 17:06:18 EDT] [EROR] Failed to ping DB retrying in 10 seconds 
     err-Error 1045: Access denied for user 'mmuser'@'localhost' (using password: YES)
 
- **Checking that mmuser Exists**
+ **Checking that ``mmuser`` Exists**
 
  To check that this user exists log in to MySQL as root:
 ``mysql -u root -p``.
