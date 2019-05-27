@@ -120,7 +120,7 @@ You may also have specified an IP address rather than the wild card
 
 .. note::
 
-    A MySQL user is fully defined by their username and the host that
+  A MySQL user is fully defined by their username and the host that
     they access MySQL from. These elements are separated by the ``@``
     sign. The ``%`` character is a wild card indicating that the user
     can access MySQL from any IP address. If the user you created
