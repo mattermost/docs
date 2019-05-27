@@ -118,7 +118,7 @@ prompt by issuing the command
 You may also have specified an IP address rather than the wild card
 ``%``.
 
-     **Note**
+.. note::
 
     A MySQL user is fully defined by their username and the host that
     they access MySQL from. These elements are separated by the ``@``
