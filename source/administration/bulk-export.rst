@@ -5,7 +5,7 @@ Bulk Export Tool
 =================
 
 Moving data from one Mattermost instance into another begins with exporting data
-to a JSONL file `JSONL <http://jsonlines.org>`__ file using the
+to a `JSONL <http://jsonlines.org>`__ file using the
 `bulk loading feature <https://docs.mattermost.com/deployment/bulk-loading.html>`__.
 This tool is useful if you have created a server for a proof of concept, have
 created another server for production use and now want to retain the history
