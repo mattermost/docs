@@ -111,7 +111,7 @@ the ``/opt/mattermost/bin`` directory and entering the command
 The Database User
 -----------------
 
-During installation you create a MySQL database user from the *mysql*
+During the installation you should create a MySQL database user from the *mysql*
 prompt by issuing the command
 :samp: `create user 'mmuser'@'%' identified by '{mmuser-password}';`. The
 ``mmuser-password`` value is a placeholder for the password you chose.
