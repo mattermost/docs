@@ -35,7 +35,7 @@ your distribution.
 
   Some of the commands used in this section alter the database. **Use
   these commands only if your Mattermost installation has failed.** Do
-  not directly manipulating the MySQL database for a working
+  not directly manipulate the MySQL database for a working
   Mattermost installation.
 
 The ``mattermost`` Database
