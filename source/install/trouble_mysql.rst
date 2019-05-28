@@ -86,7 +86,7 @@ If the ``mattermost`` database doesn't exist, create a database named
 If you accidentally created a database with the wrong name, you can
 remove it by issuing the command: :samp:`drop database {misnamed};`.
 
-After creation of the database, attempt to restart the Mattermost server
+After creating of the database, attempt to restart the Mattermost server
 by navigating to the ``/opt/mattermost/bin`` directory and entering the
 command ``sudo -u mattermost ./platform``.
 
