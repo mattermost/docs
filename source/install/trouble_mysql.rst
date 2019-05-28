@@ -173,7 +173,7 @@ After creating a user, ensure that this user has rights to the
 
 If the user ``mmuser`` exists, the DataSource element of the
 ``/opt/mattermost/config/config.json`` file may be incorrect. Open this
-file and search for ``DataSource``. It's value should be:
+file and search for ``DataSource``. Its value should be:
 
  ::
 
