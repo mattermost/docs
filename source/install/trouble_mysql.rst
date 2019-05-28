@@ -144,7 +144,7 @@ To check that this user exists, log in to MySQL as root:
 When prompted, enter the root password that you created when installing
 MySQL. From the ``mysql`` prompt enter the command
 ``select User, Host from mysql.user;``. You should see something
-like the following
+like the following:
 
  ::
 
