@@ -217,7 +217,7 @@ log in to MySQL as ``mmuser`` by issuing the command
 login fails, you are not using the correct password.
 
 With a new database installation, the easiest solution for an unknown
-password is to remove the existing ``mmuser`` and then recreate that
+password is to remove the existing ``mmuser`` and then recreating that
 user. You can do this by logging in to MySQL as root and issuing the
 following commands:
 
