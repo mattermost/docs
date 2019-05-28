@@ -19,7 +19,7 @@ fail. The troubleshooting tips given here deal with these specific
 issues.
 
 Before proceeding, confirm that your MySQL server is running. You can do
-this by issuing the command: ``mysqladmin -u root -p status``. When
+this by issuing the command ``mysqladmin -u root -p status``. When
 prompted, enter your password. If MySQL is running you should see output
 like the following:
 
