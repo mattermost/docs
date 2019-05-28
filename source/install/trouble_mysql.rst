@@ -10,7 +10,7 @@ MySQL database issues that you may encounter when you start up
 Mattermost for the first time.
 
 How you install MySQL varies depending upon which Linux distribution you
-use. But once MySQL is installed the configuration instructions are the
+use. However, once MySQL is installed, the configuration instructions are the
 same. For all distributions you must create a ``mattermost`` database
 and a ``mattermost`` database user. Failure to create these database
 objects or improperly referencing them from the Mattermost configuration
