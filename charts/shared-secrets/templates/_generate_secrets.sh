@@ -84,7 +84,6 @@ if [ -n "$env" ]; then
     otp_key_base=$(fetch_rails_value secrets.yml "${env}.otp_key_base")
     db_key_base=$(fetch_rails_value secrets.yml "${env}.db_key_base")
     openid_connect_signing_key=$(fetch_rails_value secrets.yml "${env}.openid_connect_signing_key")
-    lets_encrypt_private_key=$(fetch_rails_value secrets.yml "${env}.lets_encrypt_private_key")
   fi;
 
   # Generate defaults for any unset secrets
@@ -92,7 +91,6 @@ if [ -n "$env" ]; then
   otp_key_base="${otp_key_base:-$(gen_random 'a-f0-9' 128)}" # equavilent to secureRandom.hex(64)
   db_key_base="${db_key_base:-$(gen_random 'a-f0-9' 128)}" # equavilent to secureRandom.hex(64)
   openid_connect_signing_key="${openid_connect_signing_key:-$(openssl genrsa 2048)}"
-  lets_encrypt_private_key="${lets_encrypt_private_key:-$(openssl genrsa 2048)}"
 
   # Update the existing secret
   cat << EOF > rails-secrets.yml
@@ -109,8 +107,6 @@ stringData:
       db_key_base: $db_key_base
       openid_connect_signing_key: |
 $(echo "${openid_connect_signing_key}" | awk '{print "        " $0}')
-      lets_encrypt_private_key: |
-$(echo "${lets_encrypt_private_key}" | awk '{print "        " $0}')
 EOF
   kubectl --namespace=$namespace apply -f rails-secrets.yml
   label_secret $rails_secret
