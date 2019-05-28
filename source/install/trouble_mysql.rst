@@ -2,7 +2,7 @@ MySQL Installation Troubleshooting
 ==================================
 
 Before you can run the Mattermost server, you must first install and
-configure a database. You start Mattermost by navigating to the
+configure a database. You can start Mattermost by navigating to the
 ``/opt/mattermost/bin`` directory and entering the command
 ``sudo -u mattermost ./platform``. If the Mattermost server cannot
 connect to the database, it will fail to start. This section deals with
