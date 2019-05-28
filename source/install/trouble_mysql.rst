@@ -42,8 +42,8 @@ The ``mattermost`` Database
 -----------------------
 
 The database created during installation is named ``mattermost``. If you
-fail to create this database or you misname it, when you attempt to
-start the Mattermost server you will see an error such as:
+fail to create this database or you misname it, you will see an error such
+as the following when you attempt to start the Mattermost server:
 
  ::
 
@@ -113,6 +113,7 @@ The Database User
 
 During the installation you should create a MySQL database user from the *mysql*
 prompt by issuing the command
+
 :samp: `create user 'mmuser'@'%' identified by '{mmuser-password}';`. The
 ``mmuser-password`` value is a placeholder for the password you chose.
 You may also have specified an IP address rather than the wild card
@@ -163,6 +164,7 @@ like the following:
 
 If ``'mmuser'@'%'`` does not exist, create this user by logging into
 MySQL as root and issuing the command:
+
 :samp: `create user 'mmuser'@'%' identified by '{mmuser-password}';`.
 
 After creating a user, ensure that this user has rights to the
