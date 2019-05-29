@@ -9,7 +9,7 @@ recipes might include information on:
 - Enablement of KPIs
 - Enabling user requests
 
-Organising Product Recipes
+Organizing Product Recipes
 --------------------------
 
 Defined are the things you should be following for organising product recipes.
