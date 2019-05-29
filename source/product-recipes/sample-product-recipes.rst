@@ -1,3 +1,8 @@
+Sample Product Recipes
+=======================
+
+This is a sample product recipe.
+
 Problem Statement
 -----------------
 
