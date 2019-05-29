@@ -57,4 +57,4 @@ Defining Recipe Category For Search and Retrieval
 
 Define the categories and tags for the users. For enabling the users of product
 recipes easily search and retrieve the recipe. Add tech, line of business,
-architecture, environement information.
+architecture and environment information.
