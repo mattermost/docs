@@ -114,8 +114,9 @@ The Database User
 During the installation you should create a MySQL database user from the *mysql*
 prompt by issuing the command
 
-:samp: `create user 'mmuser'@'%' identified by '{mmuser-password}';`. The
-``mmuser-password`` value is a placeholder for the password you chose.
+:samp: `create user 'mmuser'@'%' identified by '{mmuser-password}';`.
+
+The ``mmuser-password`` value is a placeholder for the password you chose.
 You may also have specified an IP address rather than the wild card
 ``%``.
 
