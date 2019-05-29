@@ -33,7 +33,7 @@ Pre-Installation/Pre-Configuration Notes
 Define the pre-installation information. Projects installation has pre-installation
 steps describing the things you should setup when installating a requirement.
 Briefly describe the pre-installation or pre-configuration notes. Things you
-might include
+might include:
 
 - Environment information
 - Version information
