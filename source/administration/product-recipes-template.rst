@@ -31,7 +31,7 @@ Pre-Installation/Pre-Configuration Notes
 ----------------------------------------
 
 Define the pre-installation information. Breifly describe the pre-installation
-or pre-configuration notes. Things you might include
+or pre-configuration notes. Things you might include:
 
 - Environment information
 - Version information
