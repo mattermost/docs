@@ -20,7 +20,7 @@ The user perspective might include
 - The dependecies the user is having
 - The user case user would run the installation in
 
-The organisation perspective might include
+The organization perspective might include:
 
 - How much effort the organisations adds in implementing the solution
 - How many work hours are put on implementing the solution for the user
