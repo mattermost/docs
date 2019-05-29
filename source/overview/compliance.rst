@@ -184,3 +184,12 @@ Based on our interpretation of GDPR, it is not required to hide message contents
 2. Mattermost offers :ref:`TLS encryption <email-tls>` to protect communication between the Mattermost server and the SMTP email server. 
 
 3. For those who are uncertain if the first two points cover GDPR compliance, we offer the ability to :ref:`disable notifications completely <email-notification-config>` on your Mattermost server. To use Mattermost in production with no email notifications, you also need to :ref:`disable a "preview mode" notice banner <email-preview-mode-banner-config>`. 
+
+Are the server access logs containing IP addresses a GDPR compliance issue? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Based on our interpretation of `article 49 of GDPR <https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679&from=EN>`_, processing personal data for the purpose of ensuring network and information security is acceptable. Moreover:
+
+- You can control access to the logs via restricted access to the System Console and the server.
+- As a self-hosted software, you have full control and ownership of the logs, with the ability to set up a purge schedule to meet your needs.
+- You can use a reverse proxy to provide obfuscation to IP addresses.
