@@ -18,6 +18,6 @@ Below are the things you should follow for organizing product recipes.
 - You should write all the product recipes in the `product-recipes` directory.
 - If you create any new file you should add the file in the table of contents
   document.
-- Every product recipe should be linked with blog.
+- Every product recipe should be linked with a blog.
 - Different teams and members can use product recipe created, make sure you
   properly add the tags so that the user can get the information easily.
