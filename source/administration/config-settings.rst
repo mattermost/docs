@@ -2159,11 +2159,13 @@ File Storage System
 |                         | ``amazons3``        |
 +-------------------------+---------------------+
 
-This selects which file storage system is used, Local File System or Amazon S3.
+This selects which file storage system is used, Local File System or Amazon S3 or MinIO (using the same DriverName as Amazon S3: ``amazons3``).
 
 **Local File System**: Files and images are stored in the specified local file directory.
 
 **Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields. The ``amazons3`` driver is compatible with Minio (Beta) and Digital Ocean Spaces based on the provided access key, bucket and region fields.
+
+**MinIO**: MinIO is an open source, self-hosted alternative to Amazon S3 and thus finds common ground with our community, providing cloud-like functionality but in a secure, self-hosted environment and is fully compatible with our S3 driver. To get started with MinIO you can download and run it locally from this page: `Download MinIO <https://min.io/download>`_.
 
 Local Storage Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2180,6 +2182,9 @@ Amazon S3 Bucket
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The name of the bucket for your S3 compatible object storage instance.
 
+.. note::
+  For MinIO, you can find this name in the left side bar of your MinIO browser if you want use an existing MinIO bucket or you can create a new one with the desired name.
+
 +-------------------------+---------------------------------------------+
 | ``config.json`` setting | ``AmazonS3Bucket``                          |
 +-------------------------+---------------------------------------------+
@@ -2189,7 +2194,11 @@ The name of the bucket for your S3 compatible object storage instance.
 
 Amazon S3 Region
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AWS region you selected when creating your S3 bucket. If no region is set, Mattermost attempts to get the appropriate region from AWS, or sets it to 'us-east-1' if none found. For Minio or Digital Ocean Spaces leave this setting empty
+AWS region you selected when creating your S3 bucket. If no region is set, Mattermost attempts to get the appropriate region from AWS, or sets it to 'us-east-1' if none found.
+
+.. note::
+  For Digital Ocean Spaces leave this setting empty.
+  For MinIO you can leave it empty or set it to ``None``.
 
 +-------------------------+---------------------------------------------+
 | ``config.json`` setting | ``AmazonS3Region``                          |
@@ -2204,6 +2213,7 @@ Hostname of your S3-compatible instance. Defaults to "s3.amazonaws.com".
 
 .. note::
   For Digital Ocean Spaces, the hostname should be set to ``<region>``.digitaloceanspaces.com, where ``<region>`` is the abbreviation for the region you chose when setting up the Space. It can be ``nyc3``, ``ams3``, or ``sgp1``.
+  For MinIO, the hostname is the URL at which you have hosted your MinIO instance or ``localhost:9000`` if you are hosting it locally.
 
 +-------------------------+------------------------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3Endpoint``                                             |
@@ -2216,6 +2226,9 @@ Amazon S3 Access Key ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This is required for access unless you are using an `Amazon S3 IAM Role <https://about.mattermost.com/default-iam-role-settings-documentation>`__ with Amazon S3. Your EC2 administrator can supply you with the access key ID.
 
+.. note::
+  For MinIO, you can find this in your terminal window with the name ``AccessKey`` when you start a new MinIO server.
+
 +-------------------------+---------------------------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3AccessKeyId``                                             |
 +-------------------------+---------------------------------------------------------------------+
@@ -2225,6 +2238,9 @@ This is required for access unless you are using an `Amazon S3 IAM Role <https:/
 Amazon S3 Secret Access Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The secret access key associated with your Amazon S3 Access Key ID.
+
+.. note::
+  For MinIO, you can find this in your terminal window with the name ``SecretKey`` when you start a new MinIO server.
 
 +-------------------------+----------------------------------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3SecretAccessKey``                                                |
@@ -2238,6 +2254,9 @@ Enable Secure Amazon S3 Connections
 **True**: Enables only secure Amazon S3 Connections.
 
 **False**: Allows insecure connections to Amazon S3.
+
+.. note::
+  When using MinIO locally, set this option to ``false`` or use `OpenSSL <https://www.openssl.org/>`_ and install a new SSL Certificate or use a tunneling service like `ngrok <https://ngrok.com/>`_.
 
 +-------------------------+--------------------------------------------+
 | ``config.json`` setting | ``AmazonS3SSL``                            |
