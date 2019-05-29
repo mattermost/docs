@@ -25,7 +25,7 @@ The organization perspective might include:
 - How much effort the organization adds in implementing the solution
 - How many work hours are put on implementing the solution for the user
 - Listing team putting the solution for the user
-- Dependecies with ongoing installations
+- Dependencies with ongoing installations
 
 Pre-installation/pre-configuration notes
 ----------------------------------------
