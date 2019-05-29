@@ -109,6 +109,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /administration/hipchat-migration-guidelines*
    /administration/migration-announcement-email-template*
    /administration/user-provisioning*
+   /administration/product-recipes-template.rst*
    /deployment/sso-ldap*
    /deployment/auth*
    /deployment/ldap-group-sync.rst
