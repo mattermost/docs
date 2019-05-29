@@ -2,7 +2,7 @@ Product Recipes Information Architecture
 =========================================
 
 This document defines the product recipes information architecture. The product
-recipes might include information on
+recipes might include information on:
 
 - Getting user traction for a product
 - Product installation recipes
