@@ -1,0 +1,5 @@
+---
+title: Disable storage redirect of Registry when the internal Minio is used
+merge_request: 797
+author:
+type: fixed
