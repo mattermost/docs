@@ -30,7 +30,7 @@ The organization perspective might include:
 Pre-Installation/Pre-Configuration Notes
 ----------------------------------------
 
-Define the pre-installation information. Breifly describe the pre-installation
+Define the pre-installation information. Briefly describe the pre-installation
 or pre-configuration notes. Things you might include:
 
 - Environment information
