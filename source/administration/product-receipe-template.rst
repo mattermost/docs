@@ -13,7 +13,7 @@ an architecture setup or installations.
 The problem statement should be written from a user perspective and from an organization
 perspective.
 
-The user perspective might include
+The user perspective might include:
 
 - The requirements of the user
 - The environment of the user
