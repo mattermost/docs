@@ -22,7 +22,7 @@ The user perspective might include:
 
 The organization perspective might include:
 
-- How much effort the organisations adds in implementing the solution
+- How much effort the organization adds in implementing the solution
 - How many work hours are put on implementing the solution for the user
 - Listing team putting the solution for the user
 - Dependecies with ongoing installations
