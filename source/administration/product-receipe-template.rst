@@ -17,7 +17,7 @@ The user perspective might include:
 
 - The requirements of the user
 - The environment of the user
-- The dependecies the user is having
+- The dependencies the user has
 - The user case user would run the installation in
 
 The organization perspective might include:
