@@ -50,7 +50,7 @@ and include everything about setting up and configuring the solution. Things you
 might include:
 
 - Installation instructions
-- Trouble shooting instructions
+- Troubleshooting instructions
 - Testing the installation
 - Testing the installation in multiple environments
 
