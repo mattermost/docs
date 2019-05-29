@@ -8,7 +8,7 @@ Pre-Installation/Pre-Configuration Notes
 
 Write the pre-installation and pre-configuration notes.
 
-Instructions Setup and Configuring the Solution
+Instructions for Setting Up and Configuring the Solution
 -----------------------------------------------
 
 Write the instructions setup and implementation of the solution.
