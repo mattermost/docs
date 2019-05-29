@@ -45,7 +45,7 @@ Instructions for Setting Up and Configuring the Solution
 
 Define the setup instructions for the implementation that you are running.
 The instructions should be detailed and have everything about setting up and
-implementing the solution. Things you might include
+implementing the solution. Things you might include:
 
 - Installation instructions
 - Troubleshooting instructions
