@@ -2240,7 +2240,7 @@ Amazon S3 Secret Access Key
 The secret access key associated with your Amazon S3 Access Key ID.
 
 .. note::
-  For MinIO, you can find this in your terminal window with the name, ``SecretKey`` when you start a new MinIO server.
+  For MinIO, you can find this in your terminal window with the name ``SecretKey`` when you start a new MinIO server.
 
 +-------------------------+----------------------------------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3SecretAccessKey``                                                |
