@@ -40,7 +40,7 @@ or pre-configuration notes. Things you might include:
 - Rollback information
 - Line of Business information
 
-Instructions Setup and Configuring the Solution
+Instructions for Setting Up and Configuring the Solution
 -----------------------------------------------
 
 Define the setup instructions for the implementation that you are running.
