@@ -72,15 +72,17 @@ installations on OpenShift:
     oc login -u system:admin
     ```
 
-1. Add `anyuid` scc to the system user:
+1. Add `anyuid` scc your namespace's default user:
 
     ```bash
-    oc adm policy add-scc-to-group anyuid system:authenticated
+    oc project ${YOUR_NAMESPACE}
+    oc adm policy add-scc-to-group anyuid -z default
     ```
 
     CAUTION: **Warning**:
-    This setting will be applied across all namespaces and will result in Docker
-    images that does not explicitly specify USER running as `root` user.
+    This setting will be applied across the namespace in which it's applied 
+    and will result in Docker images that does not explicitly specify USER 
+    running as `root` user.
     [Issue #895](https://gitlab.com/charts/gitlab/issues/895) is open to
     document different service accounts required and to describe adding scc to
     those service accounts only, so the impact can be limited.
