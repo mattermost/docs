@@ -12,7 +12,7 @@ recipes might include information on:
 Organizing Product Recipes
 --------------------------
 
-Defined are the things you should be following for organising product recipes.
+Below are the things you should follow for organizing product recipes.
 
 - Write as per the document present in `administration/product-recipes-template.rst`.
 - You should write all the product recipes in the `product-recipes` directory.
