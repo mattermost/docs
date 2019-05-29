@@ -36,7 +36,7 @@ or pre-configuration notes. Things you might include
 - Environment information
 - Version information
 - Release information
-- Dependecy information
+- Dependency information
 - Rollback information
 - Line of Business information
 
@@ -48,11 +48,11 @@ The instructions should be detailed and have everything about setting up and
 implementing the solution. Things you might include
 
 - Installation instructions
-- Trouble shooting instructions
+- Troubleshooting instructions
 - Testing the installation
 - Testing the installation in multiple environments
 
-Defining Recipe Category For Search and Retrival
+Defining Recipe Category For Search and Retrieval
 ------------------------------------------------
 
 Define the categories and tag for the users. For enabling the users of product
