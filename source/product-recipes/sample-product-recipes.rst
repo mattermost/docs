@@ -6,7 +6,7 @@ Write the problem statement.
 Pre-Installation/Pre-Configuration Notes
 ----------------------------------------
 
-Write the pre installation and pre configuration notes.
+Write the pre-installation and pre-configuration notes.
 
 Instructions Setup and Configuring the Solution
 -----------------------------------------------
