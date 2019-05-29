@@ -54,7 +54,7 @@ might include:
 - Testing the installation
 - Testing the installation in multiple environments
 
-Defining Recipe Category For Search and Retrival
+Defining Recipe Category For Search and Retrieval
 ------------------------------------------------
 
 Define the categories and tag for the users. The users should be easily search
