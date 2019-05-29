@@ -17,6 +17,6 @@ Mattermost officially supports Okta, OneLogin and Microsoft ADFS as the identity
   OneLogin SAML Configuration <sso-saml-onelogin.rst>
   Microsoft ADFS SAML Configuration <sso-saml-adfs>
 
-If you'd like, you may also try configuring SAML for a custom IDP.  For instance, customers have successfully set up Duo and PingFederate as a custom IDP. We are happy to provide assistance when configuring your custom IDP by answering Mattermost technical configuration questions and working with your IDP provider in support of resolving issues. Please see more information on getting support `here <https://mattermost.com/support/>`_.  
+If you'd like, you may also try configuring SAML for a custom IDP.  For instance, customers have successfully set up Duo,  PingFederate, and SimpleSAMLphp as a custom IDPs. We are happy to provide assistance when configuring your custom IDP by answering Mattermost technical configuration questions and working with your IDP provider in support of resolving issues as they relate to Mattermost SAML configuration settings. Please see more information on getting support `here <https://mattermost.com/support/>`_.  
 
 Please note that we may not be able to guarantee that your connection will work with Mattermost, however we will consider improvements to our feature as we are able.  Please submit requests for official support of a particular provider on our `feature idea forum <https://mattermost.uservoice.com>`_. 
