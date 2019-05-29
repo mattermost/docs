@@ -46,7 +46,7 @@ Instructions Setup and Configuring the Solution
 -----------------------------------------------
 
 Define the instructions setup instructions. The instructions should be detailed
-and have everything about setting up and configuring the solution. Things you
+and include everything about setting up and configuring the solution. Things you
 might include
 
 - Installation instructions
