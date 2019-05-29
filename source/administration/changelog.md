@@ -10,7 +10,7 @@ Release Date 2019-06-16
 
 ### Breaking Changes since last release
 
- - Plugin **XXXXXXXX**
+ - If your plugin uses the ``DeleteEphemeralMessage`` plugin API, update it to accept a ``postId string`` parameter. See [documentation](https://developers.mattermost.com/extend/plugins/server/reference/#API.DeleteEphemeralPost) to learn more.
 
 **IMPORTANT:** If you upgrade from another release than 5.11, please read the [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
@@ -72,6 +72,8 @@ Release Date 2019-06-16
  - Fixed an issue where the channel switcher autocomplete didn't function properly when autocompleting the name of a person who was the first person named in a group message channel.
  - Fixed an issue where inline images in markdown preview didn't get expanded.
  - Fixed an issue where replies to the parent post were not left aligned.
+ - Fixed an issue where the time zone picker dropdown closed when trying to drag the scrollbar.
+ - Fixed an issue where the ``ExperimentalPrimaryTeam`` config.json setting no longer hid the "Leave Team" option.
 
 ### config.json
 
