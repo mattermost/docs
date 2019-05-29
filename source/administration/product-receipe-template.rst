@@ -1,4 +1,4 @@
-Product Recipe template
+Product Recipe Template
 ========================
 
 This template defined how a product recipe can be added for the depending
