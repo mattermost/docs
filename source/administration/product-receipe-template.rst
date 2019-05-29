@@ -27,7 +27,7 @@ The organization perspective might include:
 - Listing team putting the solution for the user
 - Dependencies with ongoing installations
 
-Pre-installation/pre-configuration notes
+Pre-Installation/Pre-Configuration Notes
 ----------------------------------------
 
 Define the pre-installation information. Projects installation has pre-installation
