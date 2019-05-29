@@ -11,7 +11,7 @@ Write the pre-installation and pre-configuration notes.
 Instructions for Setting Up and Configuring the Solution
 -----------------------------------------------
 
-Write the instructions setup and implementation of the solution.
+Write the instructions for the setup and implementation of the solution.
 
 Defining Recipe Category For Search and Retrieval
 --------------------------------------------------
