@@ -136,7 +136,8 @@ Learn how to maintain your Mattermost system.
    /administration/health-check*
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
- 
+   /adminstration/product-recipes-information-architecture.rst
+
 Upgrade Mattermost
 ----------------------------
 
