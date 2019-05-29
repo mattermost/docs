@@ -40,6 +40,7 @@ Learn how to get Mattermost running on your environment.
    /install/deploy-cloudron*
    Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
    /install/troubleshooting*
+   /install/trouble_mysql.rst
    /install/desktop*
    /install/desktop-msi-gpo*
    /install/smtp*
