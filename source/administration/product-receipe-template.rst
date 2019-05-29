@@ -38,7 +38,7 @@ might include:
 - Environment information
 - Version information
 - Release information
-- Dependecy information
+- Dependency information
 - Rollback information
 - Line of Business information
 
