@@ -30,8 +30,8 @@ The organization perspective might include:
 Pre-Installation/Pre-Configuration Notes
 ----------------------------------------
 
-Define the pre-installation information. Breifly describe the pre-installation
-or pre-configuration notes. Things you might include
+Define the pre-installation information. Briefly describe the pre-installation
+or pre-configuration notes. Things you might include:
 
 - Environment information
 - Version information
@@ -40,12 +40,12 @@ or pre-configuration notes. Things you might include
 - Rollback information
 - Line of Business information
 
-Instructions Setup and Configuring the Solution
+Instructions for Setting Up and Configuring the Solution
 -----------------------------------------------
 
 Define the setup instructions for the implementation that you are running.
 The instructions should be detailed and have everything about setting up and
-implementing the solution. Things you might include
+implementing the solution. Things you might include:
 
 - Installation instructions
 - Troubleshooting instructions
@@ -57,4 +57,4 @@ Defining Recipe Category For Search and Retrieval
 
 Define the categories and tag for the users; enabling the users of product
 recipes easily search and retrieve the recipe. Add tech, line of business,
-architecture, environement information.
+architecture and environment information.
