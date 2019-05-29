@@ -2227,7 +2227,7 @@ Amazon S3 Access Key ID
 This is required for access unless you are using an `Amazon S3 IAM Role <https://about.mattermost.com/default-iam-role-settings-documentation>`__ with Amazon S3. Your EC2 administrator can supply you with the access key ID.
 
 .. note::
-  For MinIO, you can find this in your terminal window with the name, ``AccessKey`` when you start a new MinIO server.
+  For MinIO, you can find this in your terminal window with the name ``AccessKey`` when you start a new MinIO server.
 
 +-------------------------+---------------------------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3AccessKeyId``                                             |
