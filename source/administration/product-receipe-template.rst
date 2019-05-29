@@ -1,7 +1,7 @@
 Product Recipe Template
 ========================
 
-This template defined how a product recipe can be added for the depending
+This template defines how a product recipe can be added for the depending
 people.
 
 Problem Statement
