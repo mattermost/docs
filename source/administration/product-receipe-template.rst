@@ -10,7 +10,7 @@ Problem Statement
 Define the problem statement. The problem statement could be anything from adding
 an architecture setup or installations.
 
-The problem statement should be written from user perspective and from organisation
+The problem statement should be written from a user perspective and from an organization
 perspective.
 
 The user perspective might include
