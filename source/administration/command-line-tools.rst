@@ -565,7 +565,7 @@ mattermost config migrate
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. 
+    Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. If using SAML, ensure the SAML certificates and keys are accessible to also migrate into the database.
 
   Format
     .. code-block:: none
