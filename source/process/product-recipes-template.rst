@@ -55,6 +55,6 @@ implementing the solution. Things you might include:
 Defining Recipe Category For Search and Retrieval
 ------------------------------------------------
 
-Define the categories and tag for the users; enabling the users of product
+Define the categories and tag for the users, enabling the users of product
 recipes easily search and retrieve the recipe. Add tech, line of business,
 architecture and environment information.
