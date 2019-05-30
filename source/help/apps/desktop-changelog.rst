@@ -1,6 +1,23 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.2.1
+----------------------------
+
+This release contains a bug fix for all platforms.
+
+- **Release date:** March 20, 2019
+- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.2.1/mattermost-setup-4.2.1-win32.exe>`__ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.2.1/mattermost-setup-4.2.1-win64.exe>`__ | `Mac <https://releases.mattermost.com/desktop/4.2.1/mattermost-desktop-4.2.1-mac.dmg>`__ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.2.1/mattermost-desktop-4.2.1-linux-x64.tar.gz>`__ 
+- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.2.1>`__
+
+Bug Fixes
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where some links opened in a smaller window in the Mattermost app. This issue only affected installations with a `Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`_ configured to use a subpath.
+
 Release v4.2.0
 ----------------------------
 

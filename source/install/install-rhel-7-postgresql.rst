@@ -50,7 +50,7 @@ Installing PostgreSQL Database
 
 11.  Create the Mattermost user 'mmuser'.
 
-  ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';``
+  ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``
 
   .. note::
     Use a password that is more secure than 'mmuser-password'.
@@ -61,13 +61,13 @@ Installing PostgreSQL Database
 
 13. Exit the PostgreSQL interactive terminal.
 
-  ``postgre=# \q``
+  ``postgres=# \q``
 
 14. Log out of the *postgres* account.
 
   ``exit``
 
-15. Allow PostgreSQL to listen on all assigned IP Addresses.
+15. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/etc/postgresql/9.5/main/postgresql.conf`` as root in a text editor. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
   a. Open ``/var/lib/pgsql/9.4/data/postgresql.conf`` as root in a text editor.
 

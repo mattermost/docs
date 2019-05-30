@@ -29,7 +29,7 @@ Notes:
 ### C. (T-minus 2 working days) Release Candidate Testing
 
 1. QA:
-    - If the dot release takes place during a regular release, update ``ci-linux-mysql-prev`` to dot-release RCs for the previous release and keep ``rctesting.reddogsofwar`` on the latest regular release version
+    - If the dot release takes place during a regular release, update ``prev.test.mattermost.com`` to dot-release RCs for the previous release and keep ``rc.test.mattermost.com`` on the latest regular release version
     - Test the new RC to verify fixes merged to the release branch work
     - Post in Release Discussion channel after testing
 
@@ -44,7 +44,7 @@ Once bug fix release is ready to cut:
 2. Release Manager:
     - Merge the Changelog PR with notes on patch releases (see [example entry](https://docs.mattermost.com/administration/changelog.html#release-v3-5.1))
     - Update the [version archive](https://docs.mattermost.com/administration/version-archive.html)
-    - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
+    - Update [Mattermost server download page](https://mattermost.com/download) with the links to the EE and TE bits
       - Test the download links before and after updating the page
     - Contact owners of [community installers](http://www.mattermost.org/installation/) or submit PRs to update install version number
       - For Puppet, Heroku and Ansible Playbook, post to Installers and Images channel announcing the new release. See [example](https://community.mattermost.com/core/pl/5eh8fw3jaiyzzqoc6nfwfaioya).

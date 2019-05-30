@@ -35,7 +35,7 @@ The commercial Mattermost Enterprise Edition extends the security and productivi
 
 #### Review 
 
-* To uphold security, quality and reliability standards, all potential changes submitted by open source contributors must pass an [accepting pull requests](https://docs.mattermost.com/process/accepting-pull-request.html) vetting process prior to submission. 
+* To uphold security, quality and reliability standards, all potential changes submitted by open source contributors must pass an [accepting pull requests](https://docs.mattermost.com/process/help-wanted.html) vetting process prior to submission. 
 * Clarity and readability of code is enforced through [Mattermost style guides](https://docs.mattermost.com/developer/style-guide.html).
 * After submission, all proposed changes require at least two code reviews for reliability, quality and system security. 
 * All open source contributions are available for public inspection and commentary before and after acceptance. 
@@ -49,7 +49,7 @@ The commercial Mattermost Enterprise Edition extends the security and productivi
 * Critical updates are released for urgent, high priority security issues or critical losses of functionality that should not wait for the next monthly release. 
 * Mattermost software has a mandatory upgrade policy and customers and users need to be on the latest release to receive critical updates. 
 * Critical updates are delivered as dot releases, for example a critical update to release `3.1.0` would be named `3.1.1`.
-* Customers and subscribers to the Security Bulletin [mailing list](http://eepurl.com/cAl5Rv) receive notifications about all critical updates. 
+* Customers and subscribers to the Security Bulletin [mailing list](https://mattermost.com/blog/category/security-updates/) receive notifications about all critical updates. 
 
 ### Security Review Checklist 
 In addition to checklists for quality and reliability, code changes receive multiple reviews for the following system security design principles: 
@@ -335,6 +335,8 @@ For more information on Business Resiliency, see the [Mattermost Business Contin
 1. Technical infrastructure, including network security, servers and access control protocols are regularly reviewed for potential threats and vulnerabilities.
 
 1. Business process, HR process and policies are regularly reviewed for potential threats and vulnerabilities.
+
+1. A penetration test on the software is performed regularly. A copy of penetration results may be requested by customers upon five (5) day written notice at any time, but no more than once per twelve (12) month period.
 
 ## Business Continuity Plan
 

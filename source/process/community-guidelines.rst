@@ -43,7 +43,7 @@ How to run a community design meeting?
 
 Objectives
 ^^^^^^^^^^^^^^^^^^^^^^^^
-1. Avoid blindspots in design by reviewing use cases with user communities.
+1. Avoid blindspots in design by shaping requirements and use cases with user communities.
 2. Confirm proposed approach for design aligns with solving the problem discussed.
 3. Brainstorm ideas for solving open design questions.
 
@@ -85,11 +85,18 @@ Holding the Meeting
 After the Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1. Share a summary in all respective channels, including the meeting recording.
+2. Send a survey asking how valuable the meeting was, feedback on additional use cases and feedback on improving the meeting in the future. `See example here <https://community.mattermost.com/core/pl/jfcmekbw738o3f3ykbbhofkg8r>`_.
 
 Tips
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1. Do not use your personal Zoom meeting link for the call.
 2. Note in all announcements that sharing video is optional.
+3. Use `Mattermost` in your name to identify staff from community members on the call.
+
+Future Improvements
+^^^^^^^^^^^^^^^^^^^^^^^^
+1. Consider sequencing design review meetings with design priorities.
+2. Encourage less vocal attendees to share feedback via written chat.
 
 GitHub Help Wanted Issues in Mattermost-Server Repository
 -----------------------------------------------------------
@@ -149,6 +156,21 @@ Once a pull request for an open GitHub Help Wanted issue is merged, please ensur
 
 - the corresponding GitHub Help Wanted issue is closed, thanking the contributor
 - the corresponding JIRA ticket is resolved
+
+Help Wanted Issue Links
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Below is a list of permanent redirects to Help Wanted issue queries:
+
+1. `mattermost/mattermost-server` - https://mattermost.com/pl/help-wanted-mattermost-server which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aopen+label%3A%22Help+Wanted%22+label%3A%22Tech%2FGo%22+is%3Aissue
+
+2. `mattermost/desktop` - https://mattermost.com/pl/help-wanted-desktop which redirects to https://github.com/mattermost/desktop/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22
+
+3. `mattermost/mattermost-mobile` - https://mattermost.com/pl/help-wanted-mattermost-mobile which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReact+Native%22+is%3Aopen+is%3Aissue
+
+4. `mattermost/mattermost/webapp` - https://mattermost.com/pl/help-wanted-mattermost-webapp which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=label%3A%22Tech%2FReactJS%22+label%3A%22Help+Wanted%22+is%3Aopen+is%3Aissue
+
+5. `mattermost/mattermost-redux` - https://mattermost.com/pl/help-wanted-mattermost-redux which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=label%3A%22Tech%2FRedux%22+label%3A%22Help+Wanted%22+is%3Aopen+is%3Aissue
 
 Mattermost Community Forums
 ---------------------------------------------------------

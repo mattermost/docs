@@ -1,11 +1,64 @@
-Video and Audio Calling (Beta)
-=====================================
+Voice, Video and Screensharing
+============================================
 
-The following open-source options are available:
+Our `Integrations Directory <https://integrations.mattermost.com>`_ has several integrations to connect by voice or video call, or to share your screen with team members in Mattermost.
 
-1. `BigBlueButton plugin <https://github.com/blindsidenetworks/mattermost-plugin-bigbluebutton>`__ for one-on-one video and audio calling, video conferencing and screenshare, created by Blindside Networks, available in Beta. A test install is provided to try out the feature on a Mattermost install. For production use, you can self-host a server running BigBlueButton, or reach out to Blindside Networks about hosting it for you.
-2. `Zoom plugin <https://docs.mattermost.com/integrations/zoom.html>`__ enables users to start and join voice, video and screensharing meetings using either Zoom’s self-hosted private cloud or on-prem solutions, or its vendor-hosted SaaS solution. The plugin is installed by default on all Mattermost servers.
+Here are some popular options below, including self-hosted on-prem or self-hosted private cloud solutions, and vendor-hosted SaaS solutions.
 
-Support for other 3rd party video, audio and screensharing solutions via plugins is planned. A plugin for WebEx is currently in development by the Mattermost community, with updates posted in the `WebEx Plugin community channel <https://community.mattermost.com/core/channels/webex-plugin>`__.
+.. tip :: You can also neatly link voice, video and screensharing solutions to channels by using Markdown formatting in the channel header. Example: ``[Click for video call](https://link_to_solution)``.
 
-Note that you can also neatly link video, audio and screensharing solutions, like Zoom and Skype for Business, to channels by using markdown formatting in the channel header. Example: ``[Click for video call](https://link_to_solution)``.
+Zoom
+~~~~~~~~~~~~~~~~~~~~
+
+- Start and join voice calls, video calls and use screen sharing with your team members, developed by Mattermost.
+- Clicking a video icon in a Mattermost channel invites team members to join a Zoom call, hosted using the credentials of the user who initiated the call.
+- Requires 1 paid `Zoom Pro, Business, Education, or API plan, <https://zoom.us/pricing>`_ to generate an API key and secret for $14.99/month.
+- Supports a self-hosted cloud solution, and a vendor-hosted cloud solution.
+- Docs: https://docs.mattermost.com/integrations/zoom.html
+- Source code: https://github.com/mattermost/mattermost-plugin-zoom
+
+Kopano WebMeetings
+~~~~~~~~~~~~~~~~~~~~
+
+- Start one-on-one voice and video calls, based on the WebRTC protocol, developed by Kopano.
+- Calls embedded into the Mattermost interface for seamless user experience.
+- Supports a self-hosted on-prem solution.
+- Source code + docs: https://stash.kopano.io/projects/KM/repos/mattermost-plugin-kopanowebmeetings/browse
+
+SIP PBX
+~~~~~~~~~~~~~~~~~~~~
+
+- Connect your company's individual desk extensions, external telephone lines and mobile networks with Mattermost, developed by bytemine GmbH.
+- Supports a self-hosted on-prem solution.
+- Source code + docs: https://github.com/bytemine/mattersip
+
+BigBlueButton
+~~~~~~~~~~~~~~~~~~~~
+
+- Start and join voice calls, video calls and use screen sharing with your team members, developed by Blindside Networks.
+- A test install is provided to try out the feature on a Mattermost install.
+- Supports a self-hosted on-prem solution, and a vendor-hosted cloud solution.
+- Source code + docs: https://github.com/blindsidenetworks/mattermost-plugin-bigbluebutton
+
+Jitsi
+~~~~~~~~~~~~~~~~~~~~
+
+- Start and join voice calls, video calls and use screen sharing with your team members, developed by Sean Sackowitz.
+- Clicking a video icon in a Mattermost channel invites team members to join a Jitsi call.
+- Supports a self-hosted on-prem solution.
+- Source code + docs: https://github.com/seansackowitz/mattermost-plugin-jitsi
+
+appear.in
+~~~~~~~~~~~~~~~~~~~~
+
+- Start and join voice calls, video calls and use screen sharing with your team members, developed by zarej.
+- Use a slash command `/appearin` to start a new appear.in call.
+- Supports a self-hosted on-prem solution.
+- Source code + docs: https://github.com/zarej/Mattermost-Integration-with-Appear.in
+
+Support for other 3rd party video, audio and screensharing solutions via plugins is planned. A plugin for Skype for Business and Cisco WebEx Meetings Server are currently in development by the Mattermost communities, and scheduled for internal development in Q3/2019 if not completed by our communities.
+
+Have a proposal for a voice and video call integration? `Let us know in the feature proposal forum <https://mattermost.uservoice.com/forums/306457-general?category_id=202591>`_.
+
+Have built an integration? `Let us know <https://integrations.mattermost.com/submit-an-integration/>`_ and we'll share in our `Integrations Directory <https://integrations.mattermost.com>`_.
+

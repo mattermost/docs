@@ -86,6 +86,43 @@ Recurring meetings with more than two people should have one or more regular slo
 
 For efficiency, when Mattermost works with advisors and consultants who engage with 2 or more internal team members, we aim to schedule meetings in regular slots (or a collection of regular slots) 2-4 weeks apart. 
 
+Meeting Etiquette
+---------------------------------------------------------
+
+Inspired by Corey Hulen's blog article of `6 Annoying Things People Do During Video Conferencing <http://hulen.com/video-conf-peevs/>`__.
+
+1. Avoid responding to messages in chat while on a meeting:
+
+  - It can be distracting when someone tries to covertly respond to a message. First, other people on call may hear your keyboard and notice you’re looking somewhere else. Second, if they are in the same channel as you, they can see the message ``[User] is typing...`` in Mattermost.
+  - **Tip**: If you feel the need to respond immediately and are easily distracted, set yourself to "Do Not Disturb" mode while in meetings.
+
+2. Avoid answering calls or checking text messages on your cell phone:
+
+  - **Tip**: Put your phone on silent and place it out of arm’s reach, face down, so you don’t feel compelled to act.
+
+3. Display your video on a monitor with your camera:
+
+  - If you have your video display on a second monitor, it may cause you to look away from the camera, not looking at the camera when talking. It almost feels like you’re talking to someone else in the room behind your computer monitor.
+  - **Tip**: Either move your camera, or move your video window so they are somewhat inline. Also remember to look towards the camera.
+
+4. Mute audio in large video conferences when not speaking:
+ 
+  - When not muted, others can hear random noises, like a fan running or a loud click-clack keyboard, which can be distracting.
+  - **Tip**: Set your Zoom meetings to be on mute by default via Zoom settings.
+
+5. Avoid fidgeting uncontrollably or spinning in your office chair:
+
+  - **Tip** If you’re in a group meeting and not doing much talking, feel free to stop your video.
+
+6. Avoid connecting with your computer but also dialing in via cell phone:
+ 
+  - If you connect with your computer and dial in, there are two of you in the meeting and the voice/video are not synced when you talk. In large groups, there will be a random cell phone number that no one will know who they are.
+  - **Tip**: If you're having a bad internet connection and have to dial in, exit the Zoom meeting on your computer.
+  
+7. When presenting, increase window zoom size or set Powerpoint slides to presenter mode:
+
+  - Otherwise, the text on screen may be too hard for others to see.
+
 Open Meetings
 ---------------------------------------------------------
 
@@ -109,11 +146,84 @@ Mattermost Staff Meetings
 ----------------------------------------------------
 
 For confidentiality of customers, internal process meetings are limited to Mattermost staff only.
- 
+
+Customer Obsession All-Hands Meeting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Attendees:
+
+- All Mattermost Staff
+- Chair: Jason Blais
+- Co-Chairs: Co-founders
+- Vice Chair: Camille Harris
+
+Objectives:
+
+- Reaffirm our obsession with making customers safer and more productive
+- Share how we're aligning resources to make customers successful
+
+Time:
+
+- Weekly meeting on Wednesdays from 8:00am to 8:25am Palo Alto time.
+
+Procedure:
+
+**Before meeting:**
+
+1. (Chair) Schedules items for the weekly agenda.
+2. (Team) Shares potential meeting agenda topics with Chair via direct message. Must be shared at least 24 hours prior to meeting start and be aligned with the meeting objectives above.
+
+**During meeting:**
+
+1. (Vice Chair) At 7:58am Palo Alto time on the day meeting is held, post a reminder in `Cust Obs Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_. 
+
+  .. code-block:: none
+
+    @channel Customer Obsession meeting starting now https://zoom.us/j/2244480297
+    
+    Meeting notes: https://docs.google.com/document/d/16F86k0I_ipjhHofm5pP6yA_dWTNvmA4ZBr_z53_087Q/edit
+
+2. (Team) Join the **Zoom** link in the header of the `Cust Obs Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_, and open the **Meeting Notes** link in the header to see the agenda.
+
+3. (Vice Chair) Start Zoom recording at 8:00am Palo Alto time.
+
+3. (Chair & Co-Chairs) Run through the agenda, which comprises one or more of the following items:
+
+  - **Introduction**: One of the founders does an introduction to the meeting.
+  - **Week 2 Welcomes of new team members**:
+     - New team members introduced on their second week by their manager, including name, role, what they're working on, timezone, additional info as appropriate (max 2 minutes) 
+     - If new hire or manager is away, postpone to next meeting 
+     - New hire can opt-in to introduce themselves if they choose (default is not to require public speaking) 
+  - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key updates, use cases or stories from customers. Links to publicly shared documents or slides may be included in meeting notes.
+  - **Feedback**: At end of meeting, concludes meeting with a reminder to share feedback via survey.
+
+**After meeting:**
+
+1. (Vice Chair) Share meeting recording and link to feedback survey.
+
+  .. code-block:: none
+
+    ### All Hands Meeting: February 20, 2019
+    
+    Meeting recording (and transcript) [here](https://zoom.us/recording/play/j7MHmiva3D7G4KqIcL6qV2Z46NMJZDpsdYo4B0GPDtmrRC0owvEJnC8Xpa9tAyxy?continueMode=true).
+    
+    Share your thoughts on this week's meeting [here](https://goo.gl/forms/AgCNmu3JxTDmSQvp2) @here.
+
+2. (Vice Chair) Post recording to Cust Obs Prep channel, with timecode of co-founder's introduction.
+
+3. (Chair & Co-Chairs) Review recording and decide if the introduction is converted to a YouTube video and included in onboarding documentation. Sample recordings include discussions of leadership principles, mission and core values.
+
+Frequently Asked Questions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Why don't new people introduce themselves?**
+
+Not everyone is comfortable with speaking in front of 60+ people. Not everyone speaks clear English. We don’t want the first company-wide meeting to be anxious for new team members, hence, managers intro them.
+
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff only** - Each team is responsible for its own sprint planning process. Sprints are currently one week long, and start on Tuesdays. Note that teams also share demos and short updates with the whole product team in the "Platform Meeting" (see below).
+**Mattermost staff only** - Each team is responsible for its own sprint planning process. Sprints are currently one week long, and start on Tuesdays. Note that teams also share demos and short updates with the whole product team in the "R&D Meeting" (see below).
 
 - Goal: Share demos, reflect on previous sprint, and lock on tickets for next sprint.
 - Attendees: Development team members (typically developers and product manager).
@@ -175,10 +285,10 @@ Procedure:
 
 2. (Leads): During meeting discuss agenda items in sequence. 
 
-Platform Meeting
+R&D Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Product Staff - 1 hour/week) Thursday's at 10:00 (`San Francisco Time <http://everytimezone.com/>`__).
+**Mattermost Inc-only** - (Product Staff - 45 min/week) Thursdays at 09:00 (`San Francisco Time <http://everytimezone.com/>`__).
 
 Regular team meeting for product staff team at Mattermost Inc.
 
@@ -190,38 +300,39 @@ The meeting includes presentations and demos, controlled agenda items (e.g. queu
 
 Procedure:
 
-1. (Vice Chair) the day before the meeting, post a reminder in `Platform Meeting private channel <https://community.mattermost.com/core/channels/platform-meeting>`__ (Mattermost Inc only)
+1. (Vice Chair) the day before the meeting, post a reminder in `R&D Meeting private channel <https://community.mattermost.com/core/channels/platform-meeting>`__ (Mattermost Inc only)
 
 ::
 
-   #### @channel A reminder to prepare your items for Platform meeting [DATE]:
-   1. @[name], @[name] & @[name] - you're up for ice-breaker [Question](https://docs.google.com/document/d/1A0D96O4t4GS33-  yaHvLQBdtgIScmwzVo15c2vSFeYis/edit#bookmark=id.q182tvgkdewa)
-   2. If you'll be giving a demo, please queue it [in the meeting notes](link) 
+   #### @channel A reminder to prepare your items for R&D meeting [DATE]:
+   1. @[name], @[name] & @[name] - you're up for ice-breaker
+   2. Reminder for team member responsible for this week's team update to include it [in the notes](LINK)
+   3. If you'll be giving a demo, please queue it [in the meeting notes](link) 
    ##### Everyone is encouraged to bring up items for discussion. If the discussion is `time-copped` during the meeting, please be sure to add a `next step` to the notes and post a link to where the conversation can be continued. ~platform channel is usually a good place to continue discussions.
 
 
 2. (Team) At time of meeting:
 
-   - Join the **Zoom** link in the header of the `Platform private channel <https://community.mattermost.com/core/channels/platform-discussion>`__.
+   - Join the **Zoom** link in the header of the `R&D Meeting private channel <https://community.mattermost.com/core/channels/platform-meeting>`__.
    - Open the **Notes** link in the header to see the agenda.
 
-3. (Vice-Chair) Post `meeting notes template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`__ into Platform Meeting Notes.
+3. (Vice-Chair) Post `meeting notes template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`__ into R&D meeting notes.
    
    - Add **Follow-ups** from previous meeting.
-   - Add **New items** queued in `Platform private channel <https://community.mattermost.com/core/channels/platform-discussion>`__ (Mattermost Inc only).
+   - Add **New items** queued in `R&D Meeting private channel <https://community.mattermost.com/core/channels/platform-meeting>`__ (Mattermost Inc only).
 
 Meeting Agenda:
 
-- **Ice-breaker** - Currently: "Questions"
+- **Ice-breaker** - see Meeting Elements > Ice-breaker below for examples
 - **Roadmap check-in** - Review of roadmap status in current and next release
-- **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
 - **Team updates** - Each development team gives a short update on their current top priorities
-- **New items** - New queued items are discussed
+- **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
 - **Blind spots, Inspiration, Knowledge Share** - Colleagues share areas of concern and ask questions
 
 Post Meeting:
 
-- If there are follow-up items, these are posted to the  `Platform private channel <https://community.mattermost.com/core/channels/platform-discussion>`__ (Mattermost Inc only).
+- If there are follow-up items, these are posted to the  `R&D Meeting private channel <https://community.mattermost.com/core/channels/platform-meeting>`__ (Mattermost Inc only).
+- Vice Chair posts a link to the meeting recording for those who could not attend.
 
 Meeting Elements
 -----------------------
@@ -231,8 +342,9 @@ Here we summarize meeting elements that can be re-used for meetings across teams
 Ice-breaker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- 2-3 minute exercises designed to learn more a colleagues at the start of a recurring meeting
-- Typically rotates alphabetically by first name, three colleagues per meeting
+- 2-3 minute exercises designed to learn more about colleagues at the start of a recurring meeting
+- Typically rotates in random order with names pulled from the `R&D Meeting Ice-breaker List <https://docs.google.com/spreadsheets/d/1dCgKFdYkaDYd7yzgbK2VcqscZ1Ni5uNnnkZZv63XtOg/edit#gid=0>`__, three colleagues per meeting (2 R&D staff, 1 'other' (e.g. Sales, Ops, etc)
+
 - Examples:
 
    - "Hobby talk" - sharing about an interesting hobby, past or present
@@ -532,7 +644,7 @@ Product managers are responsible for aligning teams to strategic priorities, lea
 Resources
 --------------------------
 
-The following is a list of recommended resources for developing skills "the Mattermost way" in different areas. For the ones that require purchase you can message @matterbot to request an order, whether as physical books, digital books, audiobooks or other formats.
+The following is a list of recommended resources for developing skills "the Mattermost way" in different areas. For the ones that require purchase, message your manager to request an order, whether as physical books, digital books, audiobooks or other formats.
 
 
 Developers

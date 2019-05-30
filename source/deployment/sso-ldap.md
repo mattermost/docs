@@ -122,6 +122,8 @@ There are two main ways to do this:
 
 For Active Directory, to filter out deactivated users you must set the user filter to `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`.  
 
+When a user is deactivated in Mattermost, all the user's current sessions are revoked and they will be unable to log in or access Mattermost.
+
 #### Can I connect to multiple Active Directory servers? 
 
 There is currently no built-in way to connect to multiple AD servers. You will need to connect the instances in a forest before connecting to Mattermost.

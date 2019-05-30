@@ -625,6 +625,9 @@ Logging
 Output logs to console
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. note::
+   Logs are rotated once the log file reaches a size of 100 MB or more.
+
 **True**: Output log messages to the console based on **ConsoleLevel** option. The server writes messages to the standard output stream (stdout).
 
 **False**: Output log messages are not written to the console.
@@ -920,7 +923,8 @@ Office 365
 *Available in Enterprise Edition E20*
 
 .. note::
-  If your Office365 instance uses Integrated Windows Authentication, `follow these instructions to configure IWA to fall back to forms-based authentication <https://docops.ca.com/ca-single-sign-on/12-7/en/configuring/policy-server-configuration/authentication-schemes/authentication-chaining/configure-iwa-fallback-to-forms-using-authentication-chain>`__.
+   In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
+
 
 Enable authentication with Office 365 by selecting ``Office 365 (Beta)`` from **OAuth 2.0 > Select OAuth 2.0 service provider**
 
@@ -977,9 +981,6 @@ ________
 AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E10 and higher*
-
-.. note::
-  If your AD/LDAP server uses Integrated Windows Authentication, `follow these instructions follow these instructions to configure IWA to fall back to forms-based authentication <https://docops.ca.com/ca-single-sign-on/12-7/en/configuring/policy-server-configuration/authentication-schemes/authentication-chaining/configure-iwa-fallback-to-forms-using-authentication-chain>`__.
 
 Enable sign-in with AD/LDAP
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1063,7 +1064,7 @@ The username used to perform the AD/LDAP search. This should be an account creat
 
 Bind Password
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Password of the user given in **Bind Username**. This field is required, and anonymous bind is not currently supported.
+Password of the user given in **Bind Username**. Anonymous bind is not currently supported.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BindPassword": ""`` with string input.                                                                                  |
@@ -1101,7 +1102,7 @@ This filter is defaulted to ```(|(objectClass=group)(objectClass=groupOfNames)(o
 
 Group Display Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(Optional) Enter an AD/LDAP Group Display name attribute used to populate Mattermost Group names. 
+(Required) Enter an AD/LDAP Group Display name attribute used to populate Mattermost Group names. 
 
 .. note::
   This attribute is used only when AD/LDAP Group Sync is enabled.  See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ for more information on enabling and configuring AD/LDAP Group Sync (*Available in Enterprise Edition E20 and higher*). 
@@ -1253,7 +1254,8 @@ SAML
 *Available in Enterprise Edition E20*
 
 .. note::
-  If your SAML server uses Integrated Windows Authentication, `follow these instructions to configure IWA to fall back to forms-based authentication <https://docops.ca.com/ca-single-sign-on/12-7/en/configuring/policy-server-configuration/authentication-schemes/authentication-chaining/configure-iwa-fallback-to-forms-using-authentication-chain>`__.
+   In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
+
 
 Enable Login With SAML
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1457,8 +1459,6 @@ The default recommendation for secure deployment is to host Mattermost within yo
 
 If you choose to run Mattermost outside your private network, bypassing your existing security protocols, it is recommended you set up a multi-factor authentication service specifically for accessing Mattermost.
 
-.. note::
-  If your MFA server uses Windows Integrated Authentication, `follow these instructions to configure IWA to fall back to forms-based authentication <https://docops.ca.com/ca-single-sign-on/12-7/en/configuring/policy-server-configuration/authentication-schemes/authentication-chaining/configure-iwa-fallback-to-forms-using-authentication-chain>`__.
 
 Enable Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1500,14 +1500,6 @@ Require Email Verification
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RequireEmailVerification": false`` with options ``true`` and ``false`` for above settings respectively.                 |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Email Invite Salt
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-32-character (to be randomly generated via System Console) salt added to signing of email invitation links. Email invitation links expire after 24 hours except if the salt is regenerated, then existing email invitation links invalidate immediately.  Click **Regenerate** to create new salt.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"InviteSalt": ""`` with string input.                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Open Server
@@ -1613,7 +1605,7 @@ Set the number of days from the last time a user entered their credentials to th
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthWebInDays" : 30`` with whole number input.                                                                 |
+| This feature's ``config.json`` setting is ``"SessionLengthWebInDays" : 180`` with whole number input.                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Session length for mobile apps (days)
@@ -1623,7 +1615,7 @@ Set the number of days from the last time a user entered their credentials to th
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthMobileInDays" : 30`` with whole number input.                                                              |
+| This feature's ``config.json`` setting is ``"SessionLengthMobileInDays" : 180`` with whole number input.                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Session length for GitLab SSO authentication (days)
@@ -1651,7 +1643,7 @@ The number of minutes from the last time a user was active on the system to the 
 Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionIdleTimeoutInMinutes" : 0`` with whole number input.                                                             |
+| This feature's ``config.json`` setting is ``"SessionIdleTimeoutInMinutes" : 43200`` with whole number input.                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
@@ -1783,6 +1775,14 @@ So you don't miss messages, please make sure to change this value to an email yo
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FeedbackEmail": ""`` with string input.                                                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Notification Reply-To Address
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Email address used in the Reply-To header when sending notification emails from Mattermost.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ReplyToAddress": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Notification Footer Mailing Address
@@ -2142,7 +2142,10 @@ ________
 
 Files
 --------------------------------
-Mattermost currently supports storing files on the local filesystem and to Amazon S3 and compatible containers like `Minio <https://www.minio.io/>`__. or Digital Ocean Spaces.
+Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3 compatible containers. 
+
+.. note::
+  We have tested Mattermost with `Minio <https://www.minio.io/>`__ and `Digital Ocean Spaces <https://www.digitalocean.com/docs/spaces/>`_ products but not all S3 compatible containers on the market. If you are looking to use other S3 compatible containers we advise completing your own testing.
 
 Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2156,11 +2159,13 @@ File Storage System
 |                         | ``amazons3``        |
 +-------------------------+---------------------+
 
-This selects which file storage system is used, Local File System or Amazon S3.
+This selects which file storage system is used, Local File System or Amazon S3 or MinIO (using the same DriverName as Amazon S3: ``amazons3``).
 
 **Local File System**: Files and images are stored in the specified local file directory.
 
 **Amazon S3**: Files and images are stored on Amazon S3 based on the provided access key, bucket and region fields. The ``amazons3`` driver is compatible with Minio (Beta) and Digital Ocean Spaces based on the provided access key, bucket and region fields.
+
+**MinIO**: MinIO is an open source, self-hosted alternative to Amazon S3 and thus finds common ground with our community, providing cloud-like functionality but in a secure, self-hosted environment and is fully compatible with our S3 driver. To get started with MinIO you can download and run it locally from this page: `Download MinIO <https://min.io/download>`_.
 
 Local Storage Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2177,6 +2182,9 @@ Amazon S3 Bucket
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The name of the bucket for your S3 compatible object storage instance.
 
+.. note::
+  For MinIO, you can find this name in the left side bar of your MinIO browser if you want use an existing MinIO bucket or you can create a new one with the desired name.
+
 +-------------------------+---------------------------------------------+
 | ``config.json`` setting | ``AmazonS3Bucket``                          |
 +-------------------------+---------------------------------------------+
@@ -2186,7 +2194,11 @@ The name of the bucket for your S3 compatible object storage instance.
 
 Amazon S3 Region
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-AWS region you selected when creating your S3 bucket. If no region is set, Mattermost attempts to get the appropriate region from AWS, or sets it to 'us-east-1' if none found. For Minio or Digital Ocean Spaces leave this setting empty
+AWS region you selected when creating your S3 bucket. If no region is set, Mattermost attempts to get the appropriate region from AWS, or sets it to 'us-east-1' if none found.
+
+.. note::
+  For Digital Ocean Spaces leave this setting empty.
+  For MinIO you can leave it empty or set it to ``None``.
 
 +-------------------------+---------------------------------------------+
 | ``config.json`` setting | ``AmazonS3Region``                          |
@@ -2201,6 +2213,7 @@ Hostname of your S3-compatible instance. Defaults to "s3.amazonaws.com".
 
 .. note::
   For Digital Ocean Spaces, the hostname should be set to ``<region>``.digitaloceanspaces.com, where ``<region>`` is the abbreviation for the region you chose when setting up the Space. It can be ``nyc3``, ``ams3``, or ``sgp1``.
+  For MinIO, the hostname is the URL at which you have hosted your MinIO instance or ``localhost:9000`` if you are hosting it locally.
 
 +-------------------------+------------------------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3Endpoint``                                             |
@@ -2213,6 +2226,9 @@ Amazon S3 Access Key ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This is required for access unless you are using an `Amazon S3 IAM Role <https://about.mattermost.com/default-iam-role-settings-documentation>`__ with Amazon S3. Your EC2 administrator can supply you with the access key ID.
 
+.. note::
+  For MinIO, you can find this in your terminal window with the name ``AccessKey`` when you start a new MinIO server.
+
 +-------------------------+---------------------------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3AccessKeyId``                                             |
 +-------------------------+---------------------------------------------------------------------+
@@ -2222,6 +2238,9 @@ This is required for access unless you are using an `Amazon S3 IAM Role <https:/
 Amazon S3 Secret Access Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The secret access key associated with your Amazon S3 Access Key ID.
+
+.. note::
+  For MinIO, you can find this in your terminal window with the name ``SecretKey`` when you start a new MinIO server.
 
 +-------------------------+----------------------------------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3SecretAccessKey``                                                |
@@ -2235,6 +2254,9 @@ Enable Secure Amazon S3 Connections
 **True**: Enables only secure Amazon S3 Connections.
 
 **False**: Allows insecure connections to Amazon S3.
+
+.. note::
+  When using MinIO locally, set this option to ``false`` or use `OpenSSL <https://www.openssl.org/>`_ and install a new SSL Certificate or use a tunneling service like `ngrok <https://ngrok.com/>`_.
 
 +-------------------------+--------------------------------------------+
 | ``config.json`` setting | ``AmazonS3SSL``                            |
@@ -3010,6 +3032,14 @@ Maximum lifetime for a connection to the database, in milliseconds. Use this set
 | This feature's ``config.json`` setting is ``"ConnMaxLifetimeMilliseconds": 3600000`` with whole number input.           |
 +-------------------------------------------------------------------------------------------------------------------------+
 
+Minimum Hashtag Length
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Minimum number of characters in a hashtag. This must be greater than or equal to 2. MySQL databases must be configured to support searching strings shorter than three characters, see `documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>`_.
+
++-------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MinimumHashtagLength": 3`` with whole number input.                        |
++-------------------------------------------------------------------------------------------------------------------------+
+
 At Rest Encrypt Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Advanced > Database** and click **Regenerate**, which displays the value until you click **Save**.
@@ -3101,6 +3131,7 @@ This button purges the entire Elasticsearch index. Typically only used if the in
 Enable Elasticsearch for search queries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Elasticsearch will be used for all search queries using the latest index. Search results may be incomplete until a bulk index of the existing post database is finished.
+
 **False**: Database search is used for search queries.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3135,13 +3166,24 @@ Enable Developer Mode
 
 Allow untrusted internal connections to
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This setting allows system administrators to limit the addresses that user-created webhooks and slash commands have access to. This will prevent them from potentially gaining access to network resources via Mattermost that they do not have access to themselves.
+This setting limits the ability for the Mattermost server to make untrusted requests within its local network. A request is considered "untrusted" when it's made on behalf of a client. The following features make untrusted requests and are affected by this setting:
 
-If a user needs to develop an integration locally on their development workstation, use this setting to specify the domain, IP address or CIDR notation for those machines. This will allow users to host the app they're developing on their workstation. **Not recommended for use in production**, since this can allow a user to extract confidential data from your server or internal network.
+- Integrations using webhooks, slash commands or message actions. This prevents them from requesting endpoints within the local network.
+- Link previews. When a link to a local network address is posted in a chat message, this prevents a link preview from being displayed.
+- The `local image proxy <https://docs.mattermost.com/administration/image-proxy.html#local-image-proxy>`_. If the local image proxy is enabled, images located on the local network cannot be used by integrations or posted in chat messages.
 
-By default, user-supplied URLs such as those used for Open Graph metadata, webhooks or slash commands will not be allowed to connect to reserved IP addresses including loopback or link-local addresses used for internal networks. Push notification and OAuth 2.0 and other URLs entered via the System Console are trusted and not affected by this setting.
+Requests that can only be configured by admins are considered trusted and will not be affected by this setting. Trusted URLs include ones used for OAuth login or for sending push notifications.
 
-Separate two or more domains with spaces instead of commas, for example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``.
+.. warning:: 
+   This setting is intended to prevent users located outside your local network from using the Mattermost server to request confidential data from inside your network. Care should be used when configuring this setting to prevent unintended access to your local network.
+
+Some examples of when you may want to modify this setting include:
+
+- When installing a plugin that includes its own images, such as `Matterpoll <https://github.com/matterpoll/matterpoll>`__, you will need to add the Mattermost server's domain name to this list.
+- When running a bot or webhook-based integration on your local network, you will need to add the hostname of the bot/integration to this list.
+- If your network is configured in such a way that publicly accessible webpages or images are accessed by the Mattermost server using their internal IP address, the hostnames for those servers must be added to this list.
+
+This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It is configured as a whitespace separated list of hostnames, IP addresses and CIDR ranges that can be accessed such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``. Since v5.9 the public IP of the Mattermost application server itself is also considered a reserved IP.
 
 IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution. For example, if the domain "webhooks.internal.example.com" resolves to the IP address 10.0.16.20, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
 
@@ -3182,7 +3224,7 @@ The cluster to join by name. Only nodes with the same cluster name will join tog
 
 Override Hostname
 ^^^^^^^^^^^^^^^^^
-If blank, Mattermost attempts to get the Hostname from the OS or use the IP Address. You can override the hostname of this server with this property. It is not recommended to override the Hostname unless needed. This property can also be set to a specific IP Address if needed.
+If blank, Mattermost attempts to get the Hostname from the OS or use the IP Address. You can override the hostname of this server with this property. It is not recommended to override the Hostname unless needed. This property can also be set to a specific IP Address if needed. Also see `cluster discovery <https://docs.mattermost.com/deployment/cluster.html#cluster-discovery>`_ for more details.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"OverrideHostname": ""`` with string input. |
@@ -3619,7 +3661,7 @@ Skip Server Certificate Verification
 
 Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
@@ -3627,7 +3669,7 @@ Specify the color of the email login button for white labeling purposes. Use a h
 
 Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
@@ -3635,7 +3677,7 @@ Specify the color of the email login button border for white labeling purposes. 
 
 Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
@@ -3684,7 +3726,7 @@ AD/LDAP Settings
 
 Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
@@ -3692,7 +3734,7 @@ Specify the color of the AD/LDAP login button for white labeling purposes. Use a
 
 Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
@@ -3700,7 +3742,7 @@ Specify the color of the AD/LDAP login button border for white labeling purposes
 
 Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
@@ -3713,7 +3755,7 @@ SAML Settings
 
 Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
@@ -3721,7 +3763,7 @@ Specify the color of the SAML login button for white labeling purposes. Use a he
 
 Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
@@ -3729,7 +3771,7 @@ Specify the color of the SAML login button border for white labeling purposes. U
 
 Login Button Text Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code.
+Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
@@ -3900,7 +3942,7 @@ Timeout in seconds for Elasticseaerch calls.
 
 Bulk Indexing Time Window
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting servers as a performance optimisation for installs with over ~10 millioin posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly.
+Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting servers as a performance optimisation for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with whole number input     |
@@ -3961,7 +4003,7 @@ The location of the plugin files. If blank, they are stored in the ./plugins dir
 
 ------
 
-Experimental settings in config.json
+Experimental settings
 -----------------------------------------
 
 There are a number of settings considered "experimental" and these may be replaced or removed in a future release.
@@ -4083,6 +4125,17 @@ For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync d
 | This feature’s ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false`` for above settings respectively.               |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Strict CSRF Token Enforcement (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header. When the user logs in, an additional cookie is created with the CSRF token contained.
+
+**False**: Disables CSRF protection tokens.  
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false`` for above settings respectively.       |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Limit Access to Config Settings Prior to Login
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Removed in December 16, 2018 release*
@@ -4095,11 +4148,33 @@ Supported for Mattermost server v5.1.0 and later, and Mattermost Mobile apps v1.
 | This feature’s ``config.json`` setting is ``"ExperimentalLimitClientConfig": "false"`` with options ``true`` and ``false`` for above settings respectively.       |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Disable Legacy MFA API Endpoint
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Disables the legacy ``checkMfa`` endpoint, which is only required for Mattermost Mobile Apps on version 1.16 or earlier when using multi-factor authentication (MFA). Recommended to set to ``true`` for additional security hardening.
+
+**False**: Keeps the legacy ``checkMfa`` endpoint enabled to support mobile versions 1.16 and earlier. Keeping the endpoint enabld creates an information disclosure about whether a user has set up MFA.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"DisableLegacyMFA": true,`` with options ``true`` and ``false`` for above settings respectively.                      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Restrict System Admin (Experimental)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Restricts the System Admin from viewing and modifying a subset of server configuration settings from the System Console. Not recommended for use in on-prem installations. This is intended to support Mattermost Private Cloud in giving the System Admin role to users but restricting certain actions only for Cloud Administrators.
+
+**False**: No restrictions are applied to the System Admin role. 
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"RestrictSystemAdmin": false,`` with options ``true`` and ``false`` for above settings respectively.                  |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Team Settings
 ~~~~~~~~~~~~~~
 
 Primary Team (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled.
 
 If the team URL of the primary team is https://example.mattermost.com/myteam/, then set the value to ``myteam`` in ``config.json``.
@@ -4134,7 +4209,7 @@ Town Square is Read-Only (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
 
-**True**: Only System Admins can post in Town Square. Other members are not able to post, reply, upload files, emoji react or pin messages to Town Square, nor are able to change the channel name, header or purpose.
+**True**: Only System Admins can post in Town Square. Other members are not able to post, reply, upload files, emoji react or pin messages to Town Square, nor are they able to change the channel name, header or purpose.
 
 **False**: Anyone can post in Town Square.
 

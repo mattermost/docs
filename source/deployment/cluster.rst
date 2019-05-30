@@ -96,10 +96,10 @@ Configuration Settings
 
   .. code-block:: none
 
-    soft nofile 65536
-    hard nofile 65536
-    soft nproc 8192
-    hard nproc 8192
+    * soft nofile 65536
+    * hard nofile 65536
+    * soft nproc 8192
+    * hard nproc 8192
 
 3. Increase the number of websocket connections
 
@@ -109,6 +109,21 @@ Configuration Settings
 
     net.ipv4.ip_local_port_range="1024 65000"
     net.ipv4.tcp_fin_timeout=30
+
+Cluster Discovery
+^^^^^^^^^^^^^^^^^
+
+If you have non-standard (i.e. not simple) network configurations, then you may need to use the `Override Hostname <https://docs.mattermost.com/administration/config-settings.html#override-hostname>`_ setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in High Availability mode. The `Override Hostname <https://docs.mattermost.com/administration/config-settings.html#override-hostname>`_ is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
+
+If ``UseIpAddress`` is set to ``true``, it tries to get the IP address by looking for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://golang.org/pkg/net/#InterfaceAddrs>`_. Otherwise it tries to get the hostname using the `os.Hostname() <https://golang.org/pkg/os/#Hostname>`_ built-in go function.
+
+You can also run ``SELECT * FROM ClusterDiscovery`` against your database to see how it has filled in the Hostname field. That field will be the hostname or IP address the server will use to attempt contact with other nodes in the cluster. We attempt to make a connection to the ``url Hostname:Port`` and ``Hostname:PortGossipPort``. You must also make sure you have all the correct ports open so the cluster can gossip correctly. These ports are under ``ClusterSettings`` in your configuration.
+
+In short, you should use:
+
+ 1. IpAddress discovery if the first non-local address can be seen from the other machines.
+ 2. Override Hostname on the operating system so that it's a proper discoverable name for the other nodes in the cluster.
+ 3. Override Hostname in ``config.json`` if the above steps do not work. You can put and IpAddress in this field if needed. The ``config.json`` will be different for each cluster node.
 
 Time Synchronization
 ^^^^^^^^^^^^^^^^^^^^

@@ -29,12 +29,12 @@ Release Process
    :maxdepth: 2
    :glob:
 
+   /process/release-faq*
    /process/feature-release*
    /process/bug-fix-release*
    /process/dot-release*
    /process/security-release*
    /process/mobile-release*
-   /process/release-faq*
    /process/release-tips*
 
 Community Process
@@ -55,8 +55,8 @@ Core Developer Handbook
    :maxdepth: 2
    :glob:
 
-   /developer/core-developer-handbook*
    /process/support*
+   /process/engineer-expectations*
 
 Documentation Style Guide
 -------------------------
@@ -77,6 +77,7 @@ Joining the Team
    /process/handbook*
    /process/working-at-mattermost*
    /process/security*
+   /process/security-release*
    /process/training*
    /process/people-ops*
    /process/developer*
@@ -93,6 +94,7 @@ Marketing
    /process/marketing-guidelines*
    /process/asset-guidelines*
    /process/end-user-documentation*
+   /process/integrations-directory*
 
    
 Partners

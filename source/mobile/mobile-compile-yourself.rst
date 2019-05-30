@@ -7,7 +7,7 @@ To deploy in production with privately-hosted mobile apps compiled by your organ
   - See the :doc:`mobile developer guide <../developer/mobile-developer-setup>` for help setting up your environment and building the apps
   - Note: If your server version is not supported by the Mattermost apps, you will need to use the Mattermost Classic app repositories for `iOS <https://github.com/mattermost/mattermost-ios-classic>`__ and `Android  <https://github.com/mattermost/mattermost-android-classic>`__
 
-2. Compile your own Mattermost Push Notification Service (MPNS) from the `open source repository <https://github.com/mattermost/push-proxy>`__
+2. Compile your own Mattermost Push Notification Service (MPNS) from the `open source repository <https://github.com/mattermost/mattermost-push-proxy>`__ or use the pre-compiled version from https://github.com/mattermost/mattermost-push-proxy/releases
   - To secure your push notifications, make sure to use encrypted TLS connections between:
 
     - MPNS and Apple Push Notification Service

@@ -28,31 +28,33 @@ Windows 10+, Windows 8.1+, Windows 7+
 
 1. Download latest version of the Mattermost desktop app:
 
-   - `64-bit version of Windows <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win64.exe>`__
-   - `32-bit version of Windows <https://releases.mattermost.com/desktop/4.2.0/mattermost-setup-4.2.0-win32.exe>`__
+   - `64-bit version of Windows <https://releases.mattermost.com/desktop/4.2.1/mattermost-setup-4.2.1-win64.exe>`__
+   - `32-bit version of Windows <https://releases.mattermost.com/desktop/4.2.1/mattermost-setup-4.2.1-win32.exe>`__
 
-2. From the ``\Downloads`` directory right-click on the file ``mattermost-setup-4.2.0...`` and select **Open**.
+2. From the ``\Downloads`` directory right-click on the file ``mattermost-setup-4.2.1...`` and select **Open**.
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
-Group Policies
-~~~~~~~~~~~~~~~~~~~~~
-Copy the ``mattermost.admx`` from ``%INSTALLDIR%\gpo_template`` to ``C:\Windows\PolicyDefinitions`` or if available ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions``
-and ``mattermost.adml`` from ``%INSTALLDIR%\gpo_template\en-US`` to ``C:\Windows\PolicyDefinitions\en-US`` or if available ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions\en-US``
-then open the Group Policy Management Console and you should see under "Computer Configuration" --> "Administrative Templates" --> "Mattermost" the policies.
+Group Policies (GPO) and MSI Installer support (Alpha)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`See here <desktop-msi-gpo.html>`__ for instructions on installing, configuring and verifying supported Group Policies as well as installing the Mattermost desktop app via an MSI installer that conforms to the defined Group Policies.
 
-Following Group Policies are available:
+The following Group Policies are available:
 
-+------------------------+-----------------------------------------------------+----------------------+
-| Group Policy           | Description                                         | Required Version     |
-+========================+=====================================================+======================+
-| Disable Auto Updater   | Controls the behavior of the internal Autoupdater   | 4.3 or later         |
-+------------------------+-----------------------------------------------------+----------------------+
++----------------------------+-----------------------------------------------------------------------------+----------------------+
+| Group Policy               | Description                                                                 | Required Version     |
++============================+=============================================================================+======================+
+| Enable Auto Updater        | If disabled, the app auto-updater is disabled.                              | 4.3 or later         |
++----------------------------+-----------------------------------------------------------------------------+----------------------+
+| Enable Server Management   | If disabled, management of servers in the app settings are disabled.        | 4.3 or later         |
++----------------------------+-----------------------------------------------------------------------------+----------------------+
+| Default Server List        | Define one or more default, permanent servers.                              | 4.3 or later         |
++----------------------------+-----------------------------------------------------------------------------+----------------------+
 
 macOS 10.9+
 --------------------------------------------------
 
-1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-mac.zip>`__.
+1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.2.1/mattermost-desktop-4.2.1-mac.zip>`__.
 
 2. Double-click the download to expand the archive.
 
@@ -69,9 +71,9 @@ Generic Linux package
 1. Download latest version of the Mattermost desktop app:
 
   64-bit systems:
-   `mattermost-desktop-4.2.0-linux-x64.tar.gz <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-linux-x64.tar.gz>`__
+   `mattermost-desktop-4.2.1-linux-x64.tar.gz <https://releases.mattermost.com/desktop/4.2.1/mattermost-desktop-4.2.1-linux-x64.tar.gz>`__
   32-bit systems:
-   `mattermost-desktop-4.2.0-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-linux-ia32.tar.gz>`__
+   `mattermost-desktop-4.2.1-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/4.2.1/mattermost-desktop-4.2.1-linux-ia32.tar.gz>`__
 
 2. Extract the archive to a convenient location. You can then execute ``mattermost-desktop``, which is located inside the extracted directory.
 
@@ -85,16 +87,16 @@ Unofficial, community-driven .deb packages are available.
 1. Download the latest version of the Mattermost desktop app:
 
   64-bit systems
-   `mattermost-desktop-4.2.0-linux-amd64.deb <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-linux-amd64.deb>`__
+   `mattermost-desktop-4.2.1-linux-amd64.deb <https://releases.mattermost.com/desktop/4.2.1/mattermost-desktop-4.2.1-linux-amd64.deb>`__
   32-bit systems
-   `mattermost-desktop-4.2.0-linux-i386.deb <https://releases.mattermost.com/desktop/4.2.0/mattermost-desktop-4.2.0-linux-i386.deb>`__
+   `mattermost-desktop-4.2.1-linux-i386.deb <https://releases.mattermost.com/desktop/4.2.1/mattermost-desktop-4.2.1-linux-i386.deb>`__
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
   64-bit systems
-    ``sudo dpkg -i mattermost-desktop-4.2.0-linux-amd64.deb``
+    ``sudo dpkg -i mattermost-desktop-4.2.1-linux-amd64.deb``
   32-bit systems
-    ``sudo dpkg -i mattermost-desktop-4.2.0-linux-i386.deb``
+    ``sudo dpkg -i mattermost-desktop-4.2.1-linux-i386.deb``
 
 3. To run Mattermost, open **Dash** (located at top left corner) and input ``mattermost``, then click the Mattermost icon.
 
@@ -118,6 +120,8 @@ Troubleshooting
 --------------------------------------------------
 
 "Installation has failed" dialog
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    
     The app data might be corrupted - remove all the files in ``%LOCALAPPDATA%\mattermost``, then try re-installing the app.
 
 Desktop App window is black and doesn't load the page
@@ -161,6 +165,14 @@ Desktop App constantly asks to log in to Mattermost server
     - Windows: Open Windows File Explorer, and navigate to the ``%APPDATA%\Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
     - Mac: Open Finder, and navigate to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
     - Linux: Open the file manager, and navigate to the ``~/.config/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
+
+Internal error: BrowserWindow 'unresponsive' event has been emitted
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Clicking "Show Details" on the dialog provides logs. Ways to resolve the issue:
+
+  1. Clear the cache via CTRL+SHIFT+R (or View > Clear Cache and Reload).
+  2. Go to App Settings (via CTRL+COMMA or File > Settings) and unselect hardware acceleration.
 
 
 For additional troubleshooting tips, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__.

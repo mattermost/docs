@@ -33,7 +33,8 @@ Production Docker Setup on Ubuntu
 3. **Deploy the Mattermost Production Docker** setup by running:
 
    .. code:: bash
-
+   
+       sudo apt-get install git
        git clone https://github.com/mattermost/mattermost-docker.git
        cd mattermost-docker
        docker-compose build
@@ -70,8 +71,9 @@ You can run a production deployment on macOS by `installing Docker Compose using
 Other options:
 --------------
 
-To install Mattermost Team Edition instead of Mattermost Enterprise Edition, open ``docker-compose.yaml`` and comment out the following line:
+To install Mattermost Team Edition instead of Mattermost Enterprise Edition, open ``docker-compose.yaml`` and uncomment the following lines:
 
   .. code-block:: text
 
-    dockerfile: Dockerfile-enterprise
+      # args:
+      #   - edition=team

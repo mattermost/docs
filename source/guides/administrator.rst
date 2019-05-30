@@ -28,9 +28,10 @@ Learn how to get Mattermost running on your environment.
    Installing on Ubuntu 16.04 LTS </install/install-ubuntu-1604.rst>
    Installing on Ubuntu 18.04 LTS </install/install-ubuntu-1804.rst>
    Installing on Debian Stretch </install/install-debian.rst>
-   Installing on RHEL 6.6 </install/install-rhel-66.rst>
-   Installing on RHEL 7.1 </install/install-rhel-71.rst>
+   Installing on RHEL 6 </install/install-rhel-6.rst>
+   Installing on RHEL 7 </install/install-rhel-7.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
+   Instructions On Setting Up a Socket-based Mattermost Database </install/sockets-db.rst>
    /install/ee-install*
    /install/deploy-bitnami*
    /install/docker-local*
@@ -40,6 +41,7 @@ Learn how to get Mattermost running on your environment.
    Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
    /install/troubleshooting*
    /install/desktop*
+   /install/desktop-msi-gpo*
    /install/smtp*
    /install/config-cloudfront*
    /install/outbound-proxy.rst
@@ -57,7 +59,7 @@ Learn how to host Mattermost to meet your networking requirements.
 
    /deployment/deployment.md 
    /deployment/desktop-app-deployment*
-   AppConfig for EMM Solutions </deployment/mobile-appconfig.rst>
+   /mobile/mobile-appconfig.rst
    /administration/image-proxy*
    /administration/encryption*  
    /deployment/client-side-data.rst
@@ -74,7 +76,8 @@ Learn how to configure settings to meet your unique requirements.
 
    /deployment/on-boarding.rst  
    /administration/config-settings.rst
-   /deployment/customize-mattermost.rst 
+   /deployment/customize-mattermost.rst
+   /deployment/customize-email.rst 
    /administration/branding.rst
 
 Mobile Apps
@@ -128,9 +131,9 @@ Learn how to maintain your Mattermost system.
    :glob:
 
    /administration/command*
-   /administration/team-settings.md
+   /administration/scripts*
    /administration/statistics.md
-   /administration/liveness-check*
+   /administration/health-check*
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
  
@@ -160,6 +163,8 @@ Learn how to extend Mattermost by integrating your workflows.
    :glob:
 
    /administration/plugins*
+   /developer/toolkit*
+   /deployment/video-and-audio-calling*
 
 Mattermost Compliance
 ----------------------------
@@ -201,5 +206,3 @@ Documentation on early previews and unofficial functionality.
    :glob:
 
    /install/prod-windows-2012*
-   /developer/toolkit*
-   /deployment/video-and-audio-calling*

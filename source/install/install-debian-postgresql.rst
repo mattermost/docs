@@ -29,7 +29,7 @@ Assume that the IP address of this server is 10.10.10.1
 
 5.  Create the Mattermost user 'mmuser'.
 
-  ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser_password';``
+  ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``
 
   .. note::
     Use a password that is more secure than 'mmuser-password'.
@@ -40,13 +40,13 @@ Assume that the IP address of this server is 10.10.10.1
 
 7. Exit the PostgreSQL interactive terminal.
 
-  ``postgre=# \q``
+  ``postgres=# \q``
 
 8. Log out of the *postgres* account.
 
   ``exit``
 
-9. Allow PostgreSQL to listen on all assigned IP Addresses. Open ``/etc/postgresql/9.4/main/postgresql.conf`` as root in a text editor.
+9. (Optional) If you use a different server for your database and the Mattermost app server, you may allow PostgreSQL to listen on all assigned IP Addresses. To do so, open ``/etc/postgresql/9.4/main/postgresql.conf`` as root in a text editor. As a best practice, ensure that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
   a. Find the following line:
 
