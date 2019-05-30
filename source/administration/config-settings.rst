@@ -1604,6 +1604,8 @@ Set the number of days from the last time a user entered their credentials to th
 
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
+This defines the SAML session length.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SessionLengthWebInDays" : 180`` with whole number input.                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1624,6 +1626,8 @@ Set the number of days from the last time a user entered their credentials to th
 
 After changing this setting, the setting will take effect after the next time the user enters their credentials.
 
+If the authentication method is SAML, this defines the SAML session length.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SessionLengthSSOInDays" : 30`` with whole number input.                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1641,6 +1645,8 @@ Session Idle Timeout (minutes)
 The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited.    
 
 Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
+
+This defines the SAML session length.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SessionIdleTimeoutInMinutes" : 43200`` with whole number input.                                                             |
@@ -3751,18 +3757,6 @@ Specify the color of the SAML login button for white labeling purposes. Use a he
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
 +-------------------------------------------------------------------------------------------------------------------------------+
-
-SAML session lengths
-^^^^^^^^^^^^^^^^^^^^^^
-
-SAML session length is defined per
-
-- ``url`` : ``environment/session_lengths``
-- ``title`` : ``admin.sidebar.sessionLengths``
-- ``type`` : ``TYPE_NUMBER``
-- ``label`` : ``mobileSessionDays``
-- ``help_text`` : ``admin.service.ssoSessionDaysDesc``
-- ``placeholder``: ``sessionIdleTimeout``
 
 Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
