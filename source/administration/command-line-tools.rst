@@ -492,7 +492,7 @@ mattermost command modify
           --autocomplete bool                Show command in autocomplete list
           --autocompleteDesc string          Short command description for autocomplete list
           --autocompleteHint string          Command arguments displayed as help in autocomplete list
-          --post bool                        Use POST method for callback URL      
+          --post bool                        Use POST method for callback URL, else use GET method
 
 mattermost command move
 ~~~~~~~~~~~~~~~~~~~~~~~
