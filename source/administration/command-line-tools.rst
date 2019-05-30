@@ -467,7 +467,7 @@ mattermost command modify
     Modify a slash command. Commands can be specified by command ID.  
     
     .. note::
-    When modifying the command's creator, the new creator specified must have the permission to create commands. 
+    Only fields that you want to modify need to be specified.  Also, when modifying the command's creator, the new creator specified must have the permission to create commands. 
 
   Format
     .. code-block:: none
@@ -535,7 +535,7 @@ mattermost config
 
   Child Command
     - `mattermost config get`_ - Retrieve the value of a config setting by its name in dot notation.
-    - `mattermost config migrate`_ - Migrate existing config between backends.
+    - `mattermost config migrate`_ - Migrate a file-based configuration to (or from) a database-based configuration.
     - `mattermost config set`_ - Set the value of a config setting by its name in dot notation.
     - `mattermost config show`_ - Print the current mattermost configuration in an easy to read format.
     - `mattermost config validate`_ - Validate the configuration file.
@@ -566,22 +566,25 @@ mattermost config migrate
 
   Description
     Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. If using SAML, ensure the SAML certificates and keys are accessible to also migrate into the database.
+    
+    .. note::    
+    If the --from flag is not specified, the command will fall back to what is specified in --config
 
   Format
     .. code-block:: none
 
-      mattermost config get {config.name}
+      mattermost config migrate --from {config to read} --to {config to write}
 
   Examples
     .. code-block:: none
 
-       ./mattermost config migrate --from=path/to/config.json --to="postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
+       ./mattermost config migrate --from path/to/config.json --to "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
 
  Options
     .. code-block:: none
 
 	  --from string             Current config from which to migrate.
-	  --to string  [REQUIRED]   New config which to migrate to.
+	  --to string  [REQUIRED]   New config to which to migrate.
     
 mattermost config set
 ~~~~~~~~~~~~~~~~~~~~~
