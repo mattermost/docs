@@ -112,6 +112,7 @@ mattermost
     -  `mattermost command`_ - Management of slash commands
     -  `mattermost config`_ - Work with the configuration file
     -  `mattermost export`_ - Compliance export commands
+    -  `mattermost group`_ - Management of Mattermost groups
     -  `mattermost help`_ - Generate full documentation for the CLI
     -  `mattermost import`_ - Import data
     -  `mattermost jobserver`_ - Start the Mattermost job server
@@ -458,6 +459,40 @@ mattermost command list
     .. code-block:: none
 
        ./mattermost command list myteam
+       
+mattermost command modify
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Modify a slash command. Commands can be specified by command ID.  
+    
+    .. note::
+    When modifying the command's creator, the new creator specified must have the permission to create commands. 
+
+  Format
+    .. code-block:: none
+
+      mattermost command modify {commandID}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost command modify commandID --title MyModifiedCommand --description "My Modified Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
+
+  Options
+    .. code-block:: none
+
+          --title string                     Command Title
+          --description string               Command Description
+          --trigger-word string              Command Trigger Word
+          --url  string                      Command Callback URL
+          --creator string                   Command Creator's Username
+          --response-username string         Command Response Username
+          --icon string                      Command icon URL
+          --autocomplete bool                Show command in autocomplete list
+          --autocompleteDesc string          Short command description for autocomplete list
+          --autocompleteHint string          Command arguments displayed as help in autocomplete list
+          --post bool                        Use POST method for callback URL      
 
 mattermost command move
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -500,6 +535,7 @@ mattermost config
 
   Child Command
     - `mattermost config get`_ - Retrieve the value of a config setting by its name in dot notation.
+    - `mattermost config migrate`_ - Migrate existing config between backends.
     - `mattermost config set`_ - Set the value of a config setting by its name in dot notation.
     - `mattermost config show`_ - Print the current mattermost configuration in an easy to read format.
     - `mattermost config validate`_ - Validate the configuration file.
@@ -524,6 +560,28 @@ mattermost config get
     .. code-block:: none
 
           --path string  Optional subpath; defaults to value in Site URL.
+	  
+mattermost config migrate
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. 
+
+  Format
+    .. code-block:: none
+
+      mattermost config get {config.name}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost config migrate --from=path/to/config.json --to="postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
+
+ Options
+    .. code-block:: none
+
+	  --from string             Current config which to migrate from.
+	  --to string  [REQUIRED]   New config which to migrate to.
     
 mattermost config set
 ~~~~~~~~~~~~~~~~~~~~~
@@ -680,6 +738,170 @@ mattermost export schedule
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
           --timeoutSeconds string Set how long the export should run for before timing out.
 
+mattermost group  
+------------------------
+
+  Description
+    Commands for managing Mattermost groups.  For more information on Mattermost groups please see `this documentation. <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_
+
+  Child Commands
+    -  `mattermost group channel`_ - Management of Mattermost groups linked to channels
+    -  `mattermost group team`_ - Management of Mattermost groups linked to teams
+    
+mattermost group channel 
+------------------------
+
+  Description
+    Commands for managing Mattermost groups linked to a channel.
+
+  Child Commands
+    -  `mattermost group channel enable`_ - Enables group constraint on the specified channel
+    -  `mattermost group channel disable`_ - Disables group constraint on the specified channel
+    -  `mattermost group channel list`_ - Lists the groups associated with a channel
+    -  `mattermost group channel status`_ - Shows the group constraint status of the specified channel
+
+mattermost group channel enable 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Enables group constraint on the specified channel.  When a channel is group constrained, channel membership is managed by linked groups instead of managed by manually adding and removing users.
+
+  Format
+    .. code-block:: none
+
+      mattermost group channel enable {team}:{channel}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group channel enable myteam:mychannel
+      
+mattermost group channel disable 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Disables group constraint on the specified channel.
+
+  Format
+    .. code-block:: none
+
+      mattermost group channel disable {team}:{channel}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group channel disable myteam:mychannel
+      
+mattermost group channel list 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Lists the groups associated with a channel.
+
+  Format
+    .. code-block:: none
+
+      mattermost group channel list {team}:{channel}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group channel list myteam:mychannel
+
+      
+mattermost group channel status 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Shows the group constraint status of the specified channel.  Returns "Enabled" when channel membership is managed by linked groups.  Returns "Disabled" when the channel membership is managed by manually adding and removing users. 
+
+  Format
+    .. code-block:: none
+
+      mattermost group channel status {team}:{channel}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group channel status myteam:mychannel
+      
+mattermost group team 
+------------------------
+
+  Description
+    Commands for managing Mattermost groups linked to a team.
+
+  Child Commands
+    -  `mattermost group team enable`_ - Enables group constraint on the specified team
+    -  `mattermost group team disable`_ - Disables group constraint on the specified team
+    -  `mattermost group team list`_ - Lists the groups associated with a team
+    -  `mattermost group team status`_ - Shows the group constraint status of the specified team
+
+mattermost group team enable 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Enables group constraint on the specified team.  When a team is group constrained, team membership is managed by linked groups instead of managed by manually inviting and removing users.
+
+  Format
+    .. code-block:: none
+
+      mattermost group team enable {team}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group team enable myteam
+      
+mattermost group team disable 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Disables group constraint on the specified team.
+
+  Format
+    .. code-block:: none
+
+      mattermost group team disable {team}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group team disable myteam
+      
+mattermost group team list 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Lists the groups associated with a team.
+
+  Format
+    .. code-block:: none
+
+      mattermost group team list {team}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group team list myteam
+
+      
+mattermost group team status 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Shows the group constraint status of the specified team.  Returns "Enabled" when team membership is managed by linked groups.  Returns "Disabled" when the team membership is managed by manually inviting and removing users. 
+
+  Format
+    .. code-block:: none
+
+      mattermost group team status {team}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group team status myteam    
+      
 mattermost help
 ---------------
 
