@@ -488,7 +488,7 @@ mattermost command modify
           --url  string                      Command Callback URL
           --creator string                   Command Creator's Username
           --response-username string         Command Response Username
-          --icon string                      Command icon URL
+          --icon string                      Command Icon URL
           --autocomplete bool                Show command in autocomplete list
           --autocompleteDesc string          Short command description for autocomplete list
           --autocompleteHint string          Command arguments displayed as help in autocomplete list
