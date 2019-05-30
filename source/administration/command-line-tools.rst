@@ -580,7 +580,7 @@ mattermost config migrate
  Options
     .. code-block:: none
 
-	  --from string             Current config which to migrate from.
+	  --from string             Current config from which to migrate.
 	  --to string  [REQUIRED]   New config which to migrate to.
     
 mattermost config set
