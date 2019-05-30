@@ -16,7 +16,9 @@ object_store:
   direct_upload: true
   background_upload: false
   proxy_download: {{ or (not (kindIs "bool" .config.proxy_download)) .config.proxy_download }}
-  {{- if .context.Values.global.minio.enabled }}
+  {{- if .config.connection }}
+  connection: <%= YAML.load_file("/etc/gitlab/objectstorage/{{ .name }}").to_json() %>
+  {{- else if .context.Values.global.minio.enabled }}
   connection:
     provider: AWS
     region: us-east-1
@@ -25,8 +27,6 @@ object_store:
     host: {{ template "gitlab.minio.hostname" .context }}
     endpoint: {{ template "gitlab.minio.endpoint" .context }}
     path_style: true
-  {{- else if .config.connection }}
-  connection: <%= YAML.load_file("/etc/gitlab/objectstorage/{{ .name }}").to_json() %>
   {{- end -}}
 {{- end -}}{{/* "gitlab.appConfig.objectStorage.configuration" */}}
 

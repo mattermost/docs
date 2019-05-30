@@ -1,0 +1,6 @@
+---
+title: Prioritize the external object storage connection settings before the global
+  minio configuration
+merge_request: 802
+author:
+type: changed
