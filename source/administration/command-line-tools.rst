@@ -568,7 +568,7 @@ mattermost config migrate
     Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. If using SAML, ensure the SAML certificates and keys are accessible to also migrate into the database.
     
     .. note::    
-    If the --from flag is not specified, the command will fall back to what is specified in --config
+    If the --from flag is not specified, the command will fall back to what is specified in --config.
 
   Format
     .. code-block:: none
