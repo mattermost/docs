@@ -164,6 +164,7 @@ Learn how to extend Mattermost by integrating your workflows.
 
    /administration/plugins*
    /developer/toolkit*
+   /deployment/atlassian-integrations*
    /deployment/video-and-audio-calling*
 
 Mattermost Compliance
