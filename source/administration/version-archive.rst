@@ -1,1 +1,1 @@
-`This page has been moved. <https://docs.mattermost.com/archive/archived_version>`
+`This page has been moved. <https://docs.mattermost.com/archive/archived_version>`_
