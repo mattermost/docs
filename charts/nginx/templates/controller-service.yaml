@@ -17,10 +17,9 @@ metadata:
     component: "{{ .Values.controller.name }}"
 {{ include "gitlab.standardLabels" . | indent 4 }}
 spec:
-  # 0.31.0 gates this on `if .Values.controller.service.clusterIP`,
-  # but that breaks upgrades due to immutability.
-  # See https://github.com/helm/charts/pull/7933
+{{- if not .Values.controller.service.omitClusterIP }}
   clusterIP: "{{ .Values.controller.service.clusterIP }}"
+{{- end }}
 {{- if .Values.controller.service.externalIPs }}
   externalIPs:
 {{ toYaml .Values.controller.service.externalIPs | indent 4 }}
