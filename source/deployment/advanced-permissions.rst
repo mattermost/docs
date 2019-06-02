@@ -126,6 +126,12 @@ Example: In Team C, restrict public channel creation to Admins. As the default f
   iii. In the **All Members** panel, uncheck the box for **Create Channels** in the **Manage Public Channels** section.
   iv. In the **Team Admin** and **Channel Admin** panels, check the box for **Create Channels** in the **Manage Public Channels** section.
 
+**Enable Guest Access**
+
+To allow members outside of your organization (ie: external contractors, consultants, their customers, etc) to be invited to Enterprise Edition instances with access only to specific channels assigned and only to the members of those channels,
+Background Details, under Security, select "Signup Enable Guest Access".
+
+
 Post Management
 ~~~~~~~~~~~~~~~~
 
