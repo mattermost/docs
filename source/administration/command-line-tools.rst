@@ -568,17 +568,17 @@ mattermost config migrate
     Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. If using SAML, ensure the SAML certificates and keys are accessible to also migrate into the database.
     
     .. note::    
-    If the --from flag is not specified, the command will fall back to what is specified in --config.
+    If a ``from`` parameter is not specified, the command will fall back to what is specified in --config.
 
   Format
     .. code-block:: none
 
-      mattermost config migrate --from {config to read} --to {config to write}
+      mattermost config migrate {config to read} {config to write}
 
   Examples
     .. code-block:: none
 
-       ./mattermost config migrate --from path/to/config.json --to "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
+       ./mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
 
  Options
     .. code-block:: none
@@ -767,7 +767,10 @@ mattermost group channel enable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Enables group constraint on the specified channel.  When a channel is group constrained, channel membership is managed by linked groups instead of managed by manually adding and removing users.
+    Enables group constraint on the specified channel. When a channel is group constrained, channel membership is managed by linked groups instead of managed by manually adding and removing users.
+    
+    .. note::
+    To enable a group constraint on a specific channel, you must already have at least one group assocaiated.  See `AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group> for more details on how to associate a group to a channel.    
 
   Format
     .. code-block:: none
@@ -816,7 +819,7 @@ mattermost group channel status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Shows the group constraint status of the specified channel.  Returns "Enabled" when channel membership is managed by linked groups.  Returns "Disabled" when the channel membership is managed by manually adding and removing users. 
+    Shows the group constraint status of the specified channel. Returns "Enabled" when channel membership is managed by linked groups.  Returns "Disabled" when the channel membership is managed by manually adding and removing users. 
 
   Format
     .. code-block:: none
@@ -844,7 +847,10 @@ mattermost group team enable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Enables group constraint on the specified team.  When a team is group constrained, team membership is managed by linked groups instead of managed by manually inviting and removing users.
+    Enables group constraint on the specified team. When a team is group constrained, team membership is managed by linked groups instead of managed by manually inviting and removing users.
+    
+    .. note::
+    To enable a group constraint on a specific team, you must already have at least one group assocaiated.  See `AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group> for more details on how to associate a group to a team.      
 
   Format
     .. code-block:: none
@@ -893,7 +899,7 @@ mattermost group team status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Shows the group constraint status of the specified team.  Returns "Enabled" when team membership is managed by linked groups.  Returns "Disabled" when the team membership is managed by manually inviting and removing users. 
+    Shows the group constraint status of the specified team. Returns "Enabled" when team membership is managed by linked groups.  Returns "Disabled" when the team membership is managed by manually inviting and removing users. 
 
   Format
     .. code-block:: none
