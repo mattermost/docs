@@ -2,6 +2,14 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.9.1 (2019-06-03)
+
+### Other (2 changes)
+
+- Update GitLab Runner Helm Chart to 0.5.1. !801
+- Update GitLab Version to 11.11.1.
+
+
 ## 1.9.0 (2019-05-22)
 
 ### Changed (4 changes)
