@@ -20,7 +20,7 @@ Release Date 2019-06-16
  - Read messages more easily. Older posts are loaded automatically as you scroll up instead of having to click the "Load more messages" button at the top of the screen. This feature is not supported on Internet Explorer (IE11).
  
 #### Bot Accounts
- - Users longer have to rely on creating fake user accounts to act as bots for integrations. Instead, users can create a real bot account and use the generate bot access token to interact with users and complete tasks.
+ - Users no longer have to rely on creating fake user accounts to act as bots for integrations. Instead, create a real bot account and use it to generate bot access tokens to interact with users and complete tasks.
  - Users can can also use these bots to post to any channel in the system, whether it’s a private team, private channel or a direct message channel.
  - Integrations tied to bot accounts (instead of user accounts) no longer break if a user leaves the company and their account gets deactivated.
  
