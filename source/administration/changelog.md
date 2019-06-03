@@ -56,7 +56,7 @@ Release Date 2019-06-16
  - Promoted Polish language to "official".
 
 #### Command Line Interface (CLI)
- - Added a ``command modify`` CLI command to be able to modify slash commands.
+ - Added a ``command modify`` CLI command to modify slash commands.
  - Added support for converting user accounts to bot accounts through the CLI.
  - Implemented a new command ``MigrateConfig`` for migrating configuration to and from the database.
  - For LDAP Groups, added the ability to switch a team or channel to be group-constrained via the CLI.
