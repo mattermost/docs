@@ -24,7 +24,7 @@ Release Date 2019-06-16
  - Users can can also use these bots to post to any channel in the system, whether it’s a private team, private channel or a direct message channel.
  - For Enterprise deployments, bot accounts no longer count as an active user towards licensing subscriptions.
  
-#### Jira V2.0
+#### Jira Plugin 2.0
  - Deep two-way integration between Jira and Mattermost.
  - Users can send issue creation, issue updates and comments to Mattermost channels. Users can also take quick actions in Mattermost, including creating Jira issues, attaching Mattermost messages to Jira issues and transitioning issues via slash commands.
  - For a full feature set for 2.0, see https://github.com/mattermost/mattermost-plugin-jira#jira-20-features.
