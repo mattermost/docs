@@ -33,13 +33,13 @@ Release Date 2019-06-16
  - Informational architecture restructure of the system console to make a more logical flow to the settings and to provide a more cohesive experience for hiding features on the Mattermost Private Cloud product, where the system admin should not have access to change configurations that affect the environment directly.
 
 #### Net Promoter Score (NPS)
- - We are gathering user feedback that we will use to improve the user experience and hear directly from our users. It can be disabled via **XXXXXX**.
+ - We are gathering user feedback that we will use to improve the user experience and hear directly from our users. The feature can be disabled via **XXXXXX**.
  
 #### LDAP Group Sync Removals
- - Users can manage the membership of private teams and channel with groups, eliminating the need to individually add and remove members. Users in the groups will be automatically removed from the team or channel when removed from an associated group.
+ - Users can manage the membership of private teams and channels with groups, eliminating the need to individually add and remove members. Users in the groups will be automatically removed from the team or channel when removed from an associated group.
  
 #### User/Channel Search & AutoComplete in ElasticSearch
- - Added a new flag in the System console > Elasticsearch to enable the usage of Elasticsearch for autocompletion queries. When that flag is enabled, Elasticsearch will use its indexed data for the autocompletions.
+ - Added a new flag in the **System console > Elasticsearch** to enable the usage of Elasticsearch for autocompletion queries. When this flag is enabled, Elasticsearch will use its indexed data for the autocompletions.
 
 ### Improvements
 
@@ -52,7 +52,7 @@ Release Date 2019-06-16
  - Added support for plugins to override ephemeral posts.
 
 #### Localization
- - Promoted Polish language to 'official'.
+ - Promoted Polish language to "official".
 
 #### Command Line Interface (CLI)
  - Added a ``command modify`` CLI command to be able to modify slash commands.
@@ -71,8 +71,8 @@ Release Date 2019-06-16
  - Fixed an issue where license expiration notice banner could not be dismissed prior to the license expiration date.
  - Fixed an issue where the channel switcher autocomplete didn't function properly when autocompleting the name of a person who was the first person named in a group message channel.
  - Fixed an issue where inline images in markdown preview didn't get expanded.
- - Fixed an issue where replies to the parent post were not left aligned.
- - Fixed an issue where the time zone picker dropdown closed when trying to drag the scrollbar.
+ - Fixed an issue where replies to the parent post were not left-aligned.
+ - Fixed an issue where the timezone picker dropdown closed when trying to drag the scrollbar.
  - Fixed an issue where the ``ExperimentalPrimaryTeam`` config.json setting no longer hid the "Leave Team" option.
 
 ### config.json
@@ -86,10 +86,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``"NotificationLogSettings":`` in ``config.json``:
    - Added ``"EnableConsole": true``, ``"ConsoleLevel": "DEBUG"``, ``"ConsoleJson": true``, ``"EnableFile": true``, ``"FileLevel": "INFO"``, ``"FileJson": true``, and ``"FileLocation": ""``, to implement a structured logger to keep track of push notifications.
  - Under ``"ServiceSettings":`` in ``config.json``:
-   - Added ``"EnableBotAccountCreation": false`` and ``"DisableBotsWhenOwnerIsDeactivated": true``, to enable bot accounts. 
+   - Added ``"EnableBotAccountCreation": false`` and ``"DisableBotsWhenOwnerIsDeactivated": true``, to add the ability to enable bot accounts.
    - Added ``"TrustedProxyIPHeader": []``, to explicitly define which IP headers are trusted.
 
 ### Database Changes
+ - 
 
 ### API Changes
  - Updated API to use gziphandler wrapper if server is configured to use gzip. This ensures that the Mattermost server can respond to REST API requests with compressed data (via gzip) to reduce the amount of bandwidth used.
@@ -100,6 +101,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``KVCompareAndSet(key string, old []byte, new []byte)`` to Plugin API to add support for transactional semantics with KV Store in plugin framework.
 
 ### Websocket Event Changes
+ - 
 
 ### Known Issues
  - Buttons inside ephemeral posts are not clickable / functional on the mobile app.
