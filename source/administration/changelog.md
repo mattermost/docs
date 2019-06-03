@@ -22,7 +22,7 @@ Release Date 2019-06-16
 #### Bot Accounts
  - Users no longer have to rely on creating fake user accounts to act as bots for integrations. Instead, create a real bot account and use it to generate bot access tokens to interact with users and complete tasks.
  - Users can can also use these bots to post to any channel in the system, whether it’s a private team, private channel or a direct message channel.
- - Integrations tied to bot accounts (instead of user accounts) no longer break if a user leaves the company and their account gets deactivated.
+ - For Enterprise deployments, bot accounts no longer count as an active user towards licensing subscriptions.
  
 #### Jira V2.0
  - Deep two-way integration between Jira and Mattermost.
