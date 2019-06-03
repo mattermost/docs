@@ -39,7 +39,7 @@ Release Date 2019-06-16
 #### AD/LDAP Group Sync Removals (Enterprise E20)
  - System Admins can manage the membership of private teams and channels with AD/LDAP groups, eliminating the need to individually add and remove members. Users in the groups are automatically removed from the team or channel when removed from an associated group.
  
-#### User/Channel Search & AutoComplete in ElasticSearch
+#### User/Channel Search & Autocomplete in Elasticsearch (Enterprise Edition E20)
  - Added a new flag in the **System console > Elasticsearch** to enable the usage of Elasticsearch for autocompletion queries. When this flag is enabled, Elasticsearch will use its indexed data for the autocompletions.
 
 ### Improvements
