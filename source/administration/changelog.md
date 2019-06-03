@@ -8,7 +8,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release Date 2019-06-16
 
-### Breaking Changes since last release
+### Breaking changes since last release
 
  - If your plugin uses the ``DeleteEphemeralMessage`` plugin API, update it to accept a ``postId string`` parameter. See [documentation](https://developers.mattermost.com/extend/plugins/server/reference/#API.DeleteEphemeralPost) to learn more.
 
