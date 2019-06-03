@@ -17,7 +17,7 @@ Release Date 2019-06-16
 ### Highlights
 
 #### Infinite Scroll
- - Makes reading messages easier. Older posts are loaded automatically as you scroll up rather than having to click the "Load more messages" button at the top of the screen. This feature is not supported on Internet Explorer (IE11).
+ - Read messages more easily. Older posts are loaded automatically as you scroll up instead of having to click the "Load more messages" button at the top of the screen. This feature is not supported on Internet Explorer (IE11).
  
 #### Bot Accounts
  - Users longer have to rely on creating fake user accounts to act as bots for integrations. Instead, users can create a real bot account and use the generate bot access token to interact with users and complete tasks.
