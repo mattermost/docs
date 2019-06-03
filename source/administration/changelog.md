@@ -106,7 +106,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
  - Buttons inside ephemeral messages are not clickable / functional on the mobile app.
- - On a server using a subpath, the URL opens a blank page if the system admin changes the Site URL in the System Console UI. The system admin should restart the server to fix it.
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
  - Jump link in search results does not always jump to display the expected post.
