@@ -45,7 +45,7 @@ Release Date 2019-06-16
 ### Improvements
 
 #### User Interface (UI)
- - Added an option to add a user to a channel from the profile pop-over.
+ - Added an option to add a user to a channel from the profile popover.
  - Removed ``@`` for full name display in push notifications.
  
 #### Plugins
