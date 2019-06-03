@@ -49,7 +49,7 @@ Release Date 2019-06-16
  - Removed ``@`` for full name display in push notifications.
  
 #### Plugins
- - Added support for markdown in plugin system console help text fields.
+ - Added support for Markdown in plugin System Console help text fields.
  - Added support for plugins to override ephemeral posts.
 
 #### Localization
