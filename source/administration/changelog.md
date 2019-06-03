@@ -58,8 +58,16 @@ Release Date 2019-06-16
 #### Command Line Interface (CLI)
  - Added a ``command modify`` CLI command to modify slash commands.
  - Added support for converting user accounts to bot accounts through the CLI.
- - Implemented a new command ``MigrateConfig`` for migrating configuration to and from the database.
- - For LDAP Groups, added the ability to switch a team or channel to be group-constrained via the CLI.
+ - Implemented a new command ``config migrate`` for migrating configuration to and from the database.
+ - For AD/LDAP Group Sync, added the following CLI commands:
+   - ``group team enable`` to add the ability to switch a team to be group-constrained.
+   - ``group team disable``to add the ability to disable group constraint on the specified team.
+   - ``group team list`` to list the groups associated with a team.
+   - ``group team status`` to show the group constraint status of the specified team.
+   - ``group channel enable`` to add the ability to switch a channel to be group-constrained.
+   - ``group channel disable`` to disable group constraint on the specified channel.
+   - ``group channel list`` to list the groups associated with a channel.
+   - ``group channel status`` to show the group constraint status of the specified channel.
  
 #### Administration
  - Added support for running two Mattermost instances on the same domain using subpaths.
