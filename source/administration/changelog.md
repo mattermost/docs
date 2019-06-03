@@ -34,7 +34,7 @@ Release Date 2019-06-16
  - Informational architecture restructure of the system console to make a more logical flow to the settings and to provide a more cohesive experience for hiding features on the Mattermost Private Cloud product, where the system admin should not have access to change configurations that affect the environment directly.
 
 #### Net Promoter Score (NPS)
- - We are gathering user feedback that we will use to improve the user experience and hear directly from our users. The feature can be disabled via **XXXXXX**.
+ - We are gathering user feedback to help improve user experience and hear directly from our users. The feature can be disabled via **System Console > Plugins > Net Promoter Score**.
  
 #### LDAP Group Sync Removals
  - Users can manage the membership of private teams and channels with groups, eliminating the need to individually add and remove members. Users in the groups will be automatically removed from the team or channel when removed from an associated group.
