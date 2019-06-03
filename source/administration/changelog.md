@@ -40,7 +40,7 @@ Release Date 2019-06-16
  - System Admins can manage the membership of private teams and channels with AD/LDAP groups, eliminating the need to individually add and remove members. Users in the groups are automatically removed from the team or channel when removed from an associated group.
  
 #### User/Channel Search & Autocomplete in Elasticsearch (Enterprise Edition E20)
- - Added a new flag in the **System console > Elasticsearch** to enable the usage of Elasticsearch for autocompletion queries. When this flag is enabled, Elasticsearch will use its indexed data for the autocompletions.
+ - Added new settings in **System Console > Elasticsearch** to enable [Elasticsearch](https://about.mattermost.com/default-elasticsearch-documentation/) for autocompletion queries. When enabled, Elasticsearch uses its indexed data for user/channel search queries and autocomplete queries.
 
 ### Improvements
 
