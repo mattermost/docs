@@ -81,11 +81,10 @@ for common configuration options, such as GitLab and Registry hostnames.
 
 ## Chart Settings
 
-The following values are used to configure the gitlab-monitor Pods.
+The following values are used to configure the gitlab-monitor pod.
 
 ### metrics.enabled
 
-By default, each pod exposes a metrics endpoint at `/metrics`. When
+By default, the pod exposes a metrics endpoint at `/metrics`. When
 metrics are enabled, annotations are added to each pod allowing a
 Prometheus server to discover and scrape the exposed metrics.
-
