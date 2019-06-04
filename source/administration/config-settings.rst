@@ -1604,8 +1604,6 @@ Set the number of days from the last time a user entered their credentials to th
 
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
-This defines the SAML session length.
-
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SessionLengthWebInDays" : 180`` with whole number input.                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1632,6 +1630,18 @@ If the authentication method is SAML, this defines the SAML session length.
 | This feature's ``config.json`` setting is ``"SessionLengthSSOInDays" : 30`` with whole number input.                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Session length for SSO authentication (days)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This setting defines the session length for SSO authentication, such as GitLab and SAML.
+
+Set the number of days from the last time a user entered their credentials to the expiry of the user's session. If the authentication method is SAML or GitLab, the user may automatically be logged back in to Mattermost if they are already logged in to SAML or GitLab.
+
+After changing this setting, the setting will take effect after the next time the user enters their credentials.
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthSSOInDays" : 30`` with whole number input.                                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Session Cache (minutes)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Set the number of minutes to cache a session in memory.
@@ -1645,8 +1655,6 @@ Session Idle Timeout (minutes)
 The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited.    
 
 Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
-
-This defines the SAML session length.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SessionIdleTimeoutInMinutes" : 43200`` with whole number input.                                                             |
