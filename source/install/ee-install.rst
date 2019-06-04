@@ -83,6 +83,10 @@ Use this command to upload a new license or to replace an existing license with 
 
   mattermost license upload {license}
 
+.. note::
+  If you upload the license via CLI you need to restart the mattermost server after uploading. Also if you're running a cluster setup the license file needs to be uploaded to every node.
+
+
 See `documentation for more information on the command line tools <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-license-upload>`__.
 
 **Through the System Console:**
