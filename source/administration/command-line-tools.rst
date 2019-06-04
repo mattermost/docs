@@ -394,6 +394,7 @@ mattermost command
     -  `mattermost command create`_ - Create a custom slash command for a specified team.
     -  `mattermost command delete`_ - Delete a slash command.
     -  `mattermost command list`_ - List all commands on specified teams or all teams by default.
+    -  `mattermost command modify`_ - Modify a slash command.
     -  `mattermost command move`_ - Move a slash command to a different team.
     -  `mattermost command show`_ - Show a custom slash command.
 
