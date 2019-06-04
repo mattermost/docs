@@ -12,6 +12,7 @@ icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.s
 sources:
 - https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/gitlab-monitor
 - https://gitlab.com/gitlab-org/build/CNG/tree/master/gitlab-monitor
+- https://gitlab.com/gitlab-org/gitlab-monitor
 maintainers:
 - name: GitLab Inc.
   email: support@gitlab.com
