@@ -844,7 +844,7 @@ mattermost group team enable
     Enables group constraint on the specified team. When a team is group constrained, team membership is managed by linked groups instead of managed by manually inviting and removing users.
     
     .. note::
-    To enable a group constraint on a specific team, you must already have at least one group assocaiated.  See `AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group> for more details on how to associate a group to a team.      
+    To enable a group constraint on a specific team, you must already have at least one group associated.  See _`AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_ for more details on how to associate a group to a team.      
 
   Format
     .. code-block:: none
