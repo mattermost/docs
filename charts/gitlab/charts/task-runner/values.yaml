@@ -98,6 +98,19 @@ global:
       bucket:
       connection: {}
 backups:
+  cron:
+    enabled: false
+    concurrencyPolicy: Replace
+    failedJobsHistoryLimit: 1
+    schedule: "0 1 * * *"
+    successfulJobsHistoryLimit: 3
+    resources:
+      # limits:
+      #  cpu: 1
+      #  memory: 2G
+      requests:
+        cpu: 50m
+        memory: 350M
   objectStorage:
     config: {}
 extra: {}
