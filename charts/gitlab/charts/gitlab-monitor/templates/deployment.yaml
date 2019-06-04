@@ -67,7 +67,7 @@ spec:
             readOnly: false
           resources:
 {{ toYaml .Values.init.resources | indent 12 }}
-{{- include "pullsecrets" .Values.image | indent 6}}
+{{ include "pullsecrets" .Values.image | indent 6}}
       containers:
 {{ include "gitlab.extraContainers" . | indent 8 }}
         - name: {{ .Chart.Name }}
