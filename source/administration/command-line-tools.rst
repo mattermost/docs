@@ -579,12 +579,6 @@ mattermost config migrate
     .. code-block:: none
 
        ./mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
-
- Options
-    .. code-block:: none
-
-	  --from string             Current config from which to migrate.
-	  --to string  [REQUIRED]   New config to which to migrate.
     
 mattermost config set
 ~~~~~~~~~~~~~~~~~~~~~
