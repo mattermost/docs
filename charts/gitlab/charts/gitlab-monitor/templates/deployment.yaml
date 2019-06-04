@@ -1,5 +1,5 @@
 {{- if .Values.enabled }}
-apiVersion: app/v1beta2
+apiVersion: apps/v1beta2
 kind: Deployment
 metadata:
   name: {{ template "fullname" . }}
