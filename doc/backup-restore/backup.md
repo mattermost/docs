@@ -1,6 +1,6 @@
 # Backing up a GitLab installation
 
-GitLab backups are taken by running the `backup-utility` command on the `task-runner` pod provided in the chart.
+GitLab backups are taken by running the `backup-utility` command on the `task-runner` pod provided in the chart. Backups can also be automated by enabling the [Cron based backup](#cron-based-backup) functionality of this chart.
 
 Before running the backup for the first time, you should ensure the [task-runner is properly configured](index.md) for
 access to [object storage](index.md#object-storage)
@@ -22,6 +22,14 @@ Follow these steps for backing up a GitLab Helm chart based installation
 1. Visit the `gitlab-backups` bucket in the object storage service and ensure a tarball has been added. It will be named in `<timestamp>_<version>_gitlab_backup.tar` format.
 
 1. This tarball is required for restoration.
+
+## Cron based backup
+
+Cron based backups can be enabled in this chart to happen at regular intervals as defined by the [Kubernetes schedule](https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/#schedule).
+
+You need to set the following parameters:
+* `gitlab.task-runner.backups.cron.enabled`: Set to true to enable cron based backups
+* `gitlab.task-runner.backups.cron.schedule`: Set as per the Kubernetes schedule docs
 
 ## Backup the secrets
 
