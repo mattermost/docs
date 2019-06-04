@@ -764,8 +764,8 @@ mattermost group channel enable
   Description
     Enables group constraint on the specified channel. When a channel is group constrained, channel membership is managed by linked groups instead of managed by manually adding and removing users.
     
-    .. note::
-    To enable a group constraint on a specific channel, you must already have at least one group associated.  See `AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group> for more details on how to associate a group to a channel.    
+.. note::
+  To enable a group constraint on a specific channel, you must already have at least one group associated. See `AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_ for more details on how to associate a group to a channel.
 
   Format
     .. code-block:: none
@@ -844,8 +844,8 @@ mattermost group team enable
   Description
     Enables group constraint on the specified team. When a team is group constrained, team membership is managed by linked groups instead of managed by manually inviting and removing users.
     
-    .. note::
-    To enable a group constraint on a specific team, you must already have at least one group associated.  See _`AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_ for more details on how to associate a group to a team.      
+.. note::
+  To enable a group constraint on a specific team, you must already have at least one group associated. See `AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_ for more details on how to associate a group to a team.
 
   Format
     .. code-block:: none
