@@ -22,26 +22,45 @@ _**NOTE**: The values below should be replaced_
 - `GITLAB_URL` should be replaced with the URL of the GitLab instance
 - `SHELL_TOKEN` should be replaced with the value in the [`gitlab-shell-secret` secret](../../installation/secrets.md#gitlab-shell-secret)
 
-```Ruby
-## Gitaly
-gitaly['auth_token'] = 'AUTH_TOKEN'
-gitaly['listen_addr'] = '0.0.0.0:8075'
+<!--
+updates to following example must also be made at
+https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/administration/gitaly/index.md#gitaly-server-configuration
+-->
 
-## Needed to get user made/managed
+```Ruby
+# Avoid running unnecessary services on the Gitaly server
+postgresql['enable'] = false
+redis['enable'] = false
+nginx['enable'] = false
+prometheus['enable'] = false
+unicorn['enable'] = false
+sidekiq['enable'] = false
+gitlab_workhorse['enable'] = false
+
+# Prevent database connections during 'gitlab-ctl reconfigure'
+gitlab_rails['rake_cache_clear'] = false
 gitlab_rails['auto_migrate'] = false
-## Needed to have GitLab Shell connect to GitLab API
+
+# Configure the gitlab-shell API callback URL. Without this, `git push` will
+# fail. This can be your 'front door' GitLab URL or an internal load
+# balancer.
 gitlab_rails['internal_api_url'] = 'GITLAB_URL'
 gitlab_shell['secret_token'] = 'SHELL_TOKEN'
 
-## Disable everything else
-sidekiq['enable'] = false
-unicorn['enable'] = false
-registry['enable'] = false
-gitlab_workhorse['enable'] = false
-nginx['enable'] = false
-prometheus_monitoring['enable'] = false
-postgresql['enable'] = false
-redis['enable'] = false
+# Make Gitaly accept connections on all network interfaces. You must use
+# firewalls to restrict access to this address/port.
+gitaly['listen_addr'] = "0.0.0.0:8075"
+gitaly['auth_token'] = 'AUTH_TOKEN'
+
+gitaly['storage'] = [
+  { 'name' => 'default', 'path' => '/mnt/gitlab/default/repositories' },
+  { 'name' => 'storage1', 'path' => '/mnt/gitlab/storage1/repositories' },
+]
+
+# To use TLS for Gitaly you need to add
+gitaly['tls_listen_addr'] = "0.0.0.0:9999"
+gitaly['certificate_path'] = "path/to/cert.pem"
+gitaly['key_path'] = "path/to/key.pem"
 ```
 
 After creating `gitlab.rb`, reconfigure the package with `gitlab-ctl reconfigure`. Once the task has completed, check the running processes with `gitlab-ctl status`. The output should appear as such:
