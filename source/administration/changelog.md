@@ -29,6 +29,14 @@ Release Date 2019-06-16
  - Send notifications for Jira issue creation, issue updates and comments to Mattermost channels.
  - Users can also take quick actions in Mattermost, including creating Jira issues, attaching Mattermost messages to Jira issues, and transitioning issues via slash commands.
  - For a full feature set for 2.0, see https://github.com/mattermost/mattermost-plugin-jira#jira-20-features.
+ 
+#### Pre-packaged Plugins
+ - New pre-packaged plugins bundled with this Mattermost release include:
+   - [GitHub plugin](https://github.com/mattermost/mattermost-plugin-github) for notifications, reminders and slash commands to stay up-to-date on issues and pull requests. Supports GitHub SaaS and Enterprise versions.
+   - [Autolink plugin](https://github.com/mattermost/mattermost-plugin-autolink) to automatically hyperlink text, such as adding links to your issue tracker when someone posts an issue key or number.
+   - [Custom Attributes plugin](https://github.com/mattermost/mattermost-plugin-custom-attributes) to add custom attributes in the user profile popover.
+   - [Welcome Bot plugin](https://github.com/mattermost/mattermost-plugin-welcomebot) to improve onboarding and HR processes by adding a Welcome Bot that helps add new team members to channels.
+   - [Amazon SNS CloudWatch plugin](https://github.com/mattermost/mattermost-plugin-aws-sns) to send alert notifications from [Amazon AWS CloudWatch](https://aws.amazon.com/cloudwatch/) to Mattermost channels via AWS SNS.
 
 #### System Console Reorganization
  - Informational architecture restructure of the system console to make a more logical flow to the settings and to provide a more cohesive experience for hiding features on the Mattermost Private Cloud product, where the system admin should not have access to change configurations that affect the environment directly.
@@ -104,7 +112,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### API Changes
  - Updated API to use gziphandler wrapper if server is configured to use gzip. This ensures that the Mattermost server can respond to REST API requests with compressed data (via gzip) to reduce the amount of bandwidth used.
- - Added an API command to create and delete a team and channel.
  - LDAP Group Sync:
     - Added API endpoints ``getGroupsByChannel`` and ``GetGroupsByTeam`` to retrieve groups by team and by channel.
     - Added ``group_constrained`` API to both ``/users`` and ``/users/search`` endpoints to be able to limit users listed to those allowed by group-constraints.
