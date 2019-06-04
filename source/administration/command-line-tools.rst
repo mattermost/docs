@@ -832,6 +832,9 @@ mattermost license upload
 
       ./mattermost license upload /path/to/license/mylicensefile.mattermost-license
 
+  .. note:
+    The Mattermost server needs to be restarted after uploading a license file for any changes to take effect. Also for cluster setups the license file needs to be uploaded to every node.
+
 mattermost logs
 ------------------
 
