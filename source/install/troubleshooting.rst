@@ -100,7 +100,7 @@ Mattermost can't connect to LDAP/AD server
 
 LDAP and Active Directory troubleshooting can be found on `this page. <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`__
 
-Hitting into error "Command with a trigger of failed" when configuring Giphy integration
+Hitting an error "Command with a trigger of failed" when configuring Giphy integration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
