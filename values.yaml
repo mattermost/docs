@@ -294,6 +294,9 @@ global:
       enabled: false
       # Valid values: primary, secondary
       role: primary
+      ## Geo Secondary only
+      # nodeName allows multiple instances behind a load balancer.
+      nodeName: # defaults to `gitlab.gitlab.host`
       # PostgreSQL connection details only needed for `secondary`
       psql:
         password: {}
