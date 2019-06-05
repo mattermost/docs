@@ -6,6 +6,7 @@ This document is intended for new hires to summarize norms for working at Matter
 
 - `Getting Started Checklist`_ - Getting ready to work here
 - `Meetings`_ - When we get together and why
+- `Channels`_ - Where we discuss work-related topics
 - `Mindsets`_ - Shared toolsets we have for solving problems
 - `Terminology`_- Shared vocabulary to convey ideas quickly
 - `Training`_ - Material available to help us ramp quickly in different areas
@@ -363,7 +364,11 @@ Blind spots, Inspiration, Knowledge Share
     - "Who owns X?" // reveals need for more clarity or communication
     - "Why do we do X?" // let's us verify if a process is needed, and if we're handling it the right way
 
+---------------------------------------------------------
+Channels
+---------------------------------------------------------
 
+List of channels
 
 -----------------------------
 Mindsets
