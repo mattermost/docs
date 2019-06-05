@@ -3349,7 +3349,7 @@ Trusted Proxy IP Header
 
 Specified headers that will be checked one by one for IP addresses (order is important). All other headers are ignored.
 
-New configs after v5.12 will have this set by default to [], meaning that no header will be trusted. Configs prior to v5.12 without the config entry will have it set to ``X-Forwarded-By``, ``X-Real-Ip``.
+New configs after v5.12 will have this set by default to ``[]``, meaning that no header will be trusted. Configs prior to v5.12 without the config entry will have it set to ``X-Forwarded-By``, ``X-Real-Ip``.
 
 +---------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``TrustedProxyIPHeader`` with string array input.       |
