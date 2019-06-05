@@ -13,8 +13,10 @@ Here is an example of what a dialog looks like for creating a JIRA issue within 
 
 .. image:: ../../source/images/interactive-dialog-example.png
 
-.. toctree::
-  :maxdepth: 2
+.. contents::
+  :backlinks: top
+  :depth: 1
+  :local:
 
 Opening a Dialog
 -----------------------
