@@ -193,3 +193,8 @@ Based on our interpretation of `article 49 of GDPR <https://eur-lex.europa.eu/le
 - You can control access to the logs via restricted access to the System Console and the server.
 - As a self-hosted software, you have full control and ownership of the logs, with the ability to set up a purge schedule to meet your needs.
 - You can use a reverse proxy to provide obfuscation to IP addresses.
+
+Do you have Fed or Department of Defense (DOD) Certification?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+We are in the process of acquiring Authority to Operate (ATO) and Certificate of Networthiness (CON) certifications.  
+
