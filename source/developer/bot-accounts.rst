@@ -3,50 +3,184 @@
 Bot Accounts
 ========================================
 
-Use Bot Accounts to integrate with Mattermost through plugins or the `Mattermost RESTful API <https://api.mattermost.com>`_.
+Use Bot Accounts to integrate with Mattermost through `plugins <https://developers.mattermost.com/extend/plugins/>`_ or the `Mattermost RESTful API <https://api.mattermost.com>`_. Bot accounts access the RESTful API on behalf of a bot through the use of the :doc:`personal access tokens feature <personal-access-tokens>`.
 
-Bot accounts are just like user accounts, except they
-  - Cannot be logged into
+// TODO screenshot. Waiting for bug fix where channel header is missing from bot DMs
+
+Bot accounts are just like user accounts, except they:
+
+  - Cannot be logged into, and bypass all restrictions related to authentication, such as multi-factor authentication (MFA), and custom terms of service.
   - Cannot be used to create other bot accounts
   - Do not count as a registered user and therefore do not count towards the total users for an Enterprise Edition license
 
+Given bot accounts cannot be used to log in, they enable developers to create integrations that don’t require an email/password login or any other authentication method for their bots. This removes unnecessary attack surface caused by creating and in some cases circumventing authentication methods to create a bot account.
 
-Use them instead of creating
+Additional benefits include:
 
-Bot accounts are available to everyone on your server.
+  - Bot accounts can post to any channel in the system, whether it’s a private team, private channel or a Direct Message channel. Access for bot accounts is controlled by System Administrators.
+  - Integrations created by a user and tied to a bot account no longer break if the user leaves the company.
+  - Once created, bot accounts are available to everyone on your server, and can be aded to teams and channels just like any regular user.
+
+Note that currently:
+
+  - Bot accounts can only be created or managed by plugins or System Administrators.
+  - Bot accounts cannot be assigned to webhooks or slash commands. These must still be created by a user account.
+  - Service accounts without an email address pulled from LDAP or SAML systems in Enterprise Edition is not yet supported.
+
+If you would like to see improvements to bot accounts, `let us know in the Feature Proposal Forum <https://mattermost.uservoice.com>`_.
 
 .. contents::
   :backlinks: top
   :depth: 1
   :local:
 
+Configuration Settings
+------------------------
 
+By default, plugins can create and manage bot accounts. To enable bot account creation through the user interface or the RESTful API:
 
-Overview with use cases
+1. Go to **System Console > Integrations > Integration Features**.
+2. Set **Enable Bot Account Creation** to true.
 
-Screenshot
+Once set, System Administrators can create bot accounts for integrations in **Integrations > Bot Accounts**.
 
---
+Bot Account Creation
+-----------------------
 
-How to create one
+Below are different ways to create bot accounts. After the bot account is created, make sure to:
 
----
+1. Copy the generated bot access token for your integration.
+2. Add the bot account to teams and channels you want it to interact in.
 
-Other miscellaneous
+User Interface (UI)
+^^^^^^^^^^^^^^^^^^^^^^^
 
--- 
+1. Go to **Main Menu > Integrations > Bot Accounts**.
+2. Click **Add Bot Account**.
+3. Set the **Username** of the bot. Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols ".", "-", and "_".
+4. (Optional) Upload an image for the **Bot Icon**. This will be used as the profile image of the bot throughout the Mattermost user interface.
+5. (Optional) Set a **Display Name** and **Description**.
+6. (Optional) Choose what role the bot should have. Defaults to **Member**. If you assign **System Admin**, the bot will have access to write and read any public channels, private channels and direct messages.
+7. (Optional) Select additional permissions for the account. Enable the bot to post to all Mattermost channels, or all Mattermost public channels.
 
-Unresolved tickets
-https://mattermost.atlassian.net/browse/MM-15336
-https://mattermost.atlassian.net/browse/MM-15545
-https://mattermost.atlassian.net/browse/MM-15478
-Next step on https://mattermost.atlassian.net/browse/MM-15037
-CURL command to do a bot post: curl -i -X POST -H 'Content-Type: application/json' -d '{"channel_id":"3wbu8ue9g3fj7eobezpsqnamih", "message":"This is a message from a bot", "props":{"attachments": [{"pretext": "Look some text","text": "This is text"}]}}' -H 'Authorization: Bearer 669dydgnytbb9qcsbhuqz3imhe' https://botaccounts.test.spinmint.com/api/v4/posts
-Plugins can take over a bot, or via the API
-  Add to bot account FAQ, helpful when plugin is disabled or uninstalled
-Do bot tokens expire?
-Uber note about migrating all their integrations to use bot accounts
+RESTful API
+^^^^^^^^^^^^^^^^^^^^^^^
 
-Reference to personal access token doc
+Use the RESTful API ``POST /bots`` to create a bot. Must have permissions to create bots.
 
+See our `API documentation <https://api.mattermost.com/#tag/bots>`_ to learn more about creating and managing bots through the API.
 
+Command Line Interface (CLI)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can use the following CLI command to convert an existing user account to a bot:
+
+.. code-block:: text
+
+  user convert user@example.com --bot
+
+In addition to email, you may identify the user by its username or user id.
+
+Bot accounts which were converted from user accounts will have their authentication data cleared if they were email/password accounts. Those synced from LDAP/SAML will not have their authentication data cleared so that LDAP/SAML sync performs correctly.
+
+Plugins
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Plugins can create bot accounts through an `EnsureBot` helper function. For an example, see `the Demo Plugin <https://github.com/mattermost/mattermost-plugin-demo/blob/master/server/configuration.go#L189>`_.
+
+Bots created by a plugin use the plugin's ID as the creator, unless otherwise specified by the plugin.
+
+Technical Notes
+-----------------------
+
+Data Model
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Each bot account has a row in the **Users** table. The entry is tied to a row in the **Bots** table by a `UserId` column.
+
+The Bots table schema is described as follows:
+
+.. csv-table::
+    :header: "Field", "Description", "Type", "Required"
+
+    "UserId", "User ID of the bot user", "string", "Y"
+    "Username", "Username of the bot account", "string", "Y"
+    "DisplayName", "Display name of the bot account", "string", "N"
+    "Description", "Description of the bot account", "string", "N"    
+    "OwnerId", "User ID of the owner of the bot", "string", "Y"
+    "CreateAt", "Unix timestamp of creation time", "int64", "Y"
+    "UpdateAt", "Unix timestamp of update time", "int64", "Y"
+    "DeleteAt", "Unix timestamp of deletion time", "int64", "Y"
+
+The row in the Users table is used to track the bot’s other data, such as username.
+
+Frequently Asked Questions
+-----------------------------
+
+Should I migrate all my integrations to use bot accounts?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For your integrations using RESTful API and plugins, yes. To do so, you can either convert an existing account to a bot, or create a new bot account using the steps outlined above.
+
+Once you create a bot account, use the generated token to access the RESTful API on behalf of a bot and interact in the Mattermost server.
+
+For your webhook and slash command integrations, you cannot migrate them to use bot accounts, as they require a user account at this time. However, an option is to migrate the webhooks or slash commands to a plugin, which in turn can use bot accounts.
+
+How do I convert an existing account to a bot account?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Use the following CLI command to convert an existing user account to a bot:
+
+.. code-block:: text
+
+  user convert user@example.com --bot
+
+In addition to email, you may identify the user by its username or user id.
+
+Bot accounts which were converted from user accounts will have their authentication data cleared if they were email/password accounts. Those synced from LDAP/SAML will not have their authentication data cleared so that LDAP/SAML sync performs correctly.
+
+How can I quickly test if my bot account is working?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Add the bot to a team and channel you belong to, then use the following curl command to post with the bot.
+
+.. code-block:: text
+  curl -i -X POST -H 'Content-Type: application/json' -d '{"channel_id":"<channel-id>", "message":"This is a message from a bot", "props":{"attachments": [{"pretext": "Look some text","text": "This is text"}]}}' -H 'Authorization: Bearer <bot-access-token>' <mattermost-url>/api/v4/posts
+
+replacing the following parameters:
+
+- ``<channel-id>`` with the channel you added the bot to
+- ``<bot-access-token>`` with the bot access token generated when you created the bot account
+- ``<mattermost-url>`` with your Mattermost domain, e.g. ``https://example.mattermost.com``
+
+Do bot access tokens expire?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+No, but you can automate your integration to cycle its token `through the REST API <https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`_.
+
+For more information about access tokens, see :doc:`the personal access tokens documentation <personal-access-tokens>`.
+
+Do bot accounts make it easier to personify someone else such as the CEO or an HR coordinator?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Possibly yes. Currently a System Admin can disable overriding the profile picture and the username from integrations to help prevent personification, but this is not the case for bot accounts.
+
+Mitigations:
+- ``BOT`` tag is used everywhere in the UI where bot accounts are referenced, including messages and user lists.
+- For Direct Message channels, the channel header distinguishes the bot from a regular user account with a ``BOT`` tag.
+
+What happens when a user who owns bot accounts is disabled?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By default, bot accounts managed by the deactivated user are disabled for enhanced security. Those with permissions to manage bot accounts can re-enable them in **Main Menu > Integrations > Bot Accounts**.
+
+We strongly recommend creating new tokens for the bot, to ensure the user who was deactivated no longer has access to read or write data in the system via the bot access token.
+
+If you prefer to have bot accounts remain enabled after user deactivation, set ``ServiceSettings.DisableBotsWhenOwnerIsDeactivated`` to ``false`` in your ``config.json`` file.
+
+How are bot accounts identified in compliance exports?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A new field ``UserType`` is added to Compliance Exports, including Global Relay, Actiance and CSV. The field identifies whether a message was posted by a user or by a bot account.
+
+This identifier is scheduled for Mattermost 5.14 release on August 16, 2019.
