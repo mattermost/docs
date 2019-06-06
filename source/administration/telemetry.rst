@@ -85,3 +85,51 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *Permissions Discovery Diagnostics (Enterprise Edition Only):* Provides all the permissions configured for each role for the System Scheme and each Team Override Scheme created in the system.  Scheme ID; Team Admin Permissions; Team User Permissions; Channel Admin Permissions; Channel User Permissions; Number of teams the scheme is associated with
 
 Error and diagnostic reporting is sent by the client to the endpoint `api.segment.io`. To opt out, disable the feature in **System Console > General > Logging > Enable Error and Diagnostics Reporting**.
+
+Android Mobile App Performance Monitoring
+-----------------------------------------
+
+To improve Android app performance, we are collecting trace events and device information, collectively known as metrics, to identify slow performing key areas.  Those metrics will be sent only from users using Android app beta build starting version 1.20 which are logged in into servers that allow sending [diagnostic information](https://docs.mattermost.com/administration/config-settings.html#enable-diagnostics-and-error-reporting).
+
+Trace events
+  It includes duration on how long the action took place like startup, team/channel switch, posts loading/update, channel drawer open/close, etc.  The naming convention is interpreted as `[start observation]:[end observation]`, e.g. `start:overall` as from app start until fully render or `post_list:thread` as on press of post at post list until thread is opened.
+  Complete list of trace events are the following:
+  - start:overall
+  - start:process_packages
+  - start:content_appeared
+  - start:select_server_screen
+  - start:channel_screen
+  - team:switch
+  - channel:loading
+  - channel:switch_loaded
+  - channel:switch_initial
+  - channel:close_drawer
+  - channel:open_drawer
+  - posts:loading
+  - post_list:thread
+  - post_list:permalink
+
+Device information
+  The information being collected are non-personally identifiable. Except for system_version, device information are based from [react-native-device-info](https://github.com/mattermost/react-native-device-info#react-native-device-info) library.  Refer to its documentation to learn more.
+  Complete list of trace events are the following:
+  - api_level
+  - build_number
+  - bundle_id
+  - brand
+  - country
+  - device_id
+  - device_locale
+  - device_type
+  - device_unique_id
+  - height
+  - is_emulator
+  - is_tablet
+  - manufacturer
+  - max_memory
+  - model
+  - server_version
+  - system_name
+  - system_version
+  - timezone
+  - version
+  - width
