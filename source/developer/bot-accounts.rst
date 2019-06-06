@@ -19,7 +19,7 @@ Additional benefits include:
 
   - Bot accounts can post to any channel in the system, whether it’s a private team, private channel or a Direct Message channel. Access for bot accounts is controlled by System Administrators.
   - Integrations created by a user and tied to a bot account no longer break if the user leaves the company.
-  - Once created, bot accounts are available to everyone on your server, and can be aded to teams and channels just like any regular user.
+  - Once created, bot accounts are available to everyone on your server, and can be added to teams and channels just like any regular user.
 
 Note that currently:
 
