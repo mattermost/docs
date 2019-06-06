@@ -3503,7 +3503,7 @@ Disable Bots When Owner Is Deactivated
 
 **True**: Bot accounts managed by a user are disabled by default upon user deactivation. Those with permissions to manage bot accounts can re-enable them in **Main Menu > Integrations > Bot Accounts**.
 
-**False**: Bot accounts managed by a user stay enabled upon user deactivation. We strongly recommend creating new tokens for the bot, to ensure the user who was deactivated no longer has access to read or write data in the system via the bot access token.
+**False**: Bot accounts managed by a user stay enabled upon user deactivation. We strongly recommend creating new tokens for the bot to ensure the user who was deactivated no longer has access to read or write data in the system via the bot access token.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"DisableBotsWhenOwnerIsDeactivated": true``  with options ``true`` and ``false`` for above settings respectively.        |
