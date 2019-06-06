@@ -112,7 +112,7 @@ Trace events
 
 Device information
   The information being collected is non-personally identifiable. Except for system_version, device information is based from `react-native-device-info <https://github.com/mattermost/react-native-device-info#react-native-device-info>`__ library.  Refer to the linked documentation to learn more.
-  Complete list of trace events are the following:
+  Complete list of device information are the following:
 
   - api_level
   - build_number
