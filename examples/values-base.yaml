@@ -7,10 +7,10 @@ global:
     enabled: true
     address: smtp.mailgun.org
     port: 2525
-    username: myuser
+    user_name: myuser
     password:
-      secret: my-smtp-secret # https://gitlab.com/charts/gitlab/blob/master/doc/installation/secrets.md#smtp-password
-      key: secret
+      secret: smtp-password # https://gitlab.com/charts/gitlab/blob/master/doc/installation/secrets.md#smtp-password
+      key: password
     email:
       from: mycompany@example.com
       display_name: MyCompany
