@@ -17,28 +17,41 @@ data:
       password: "<%= File.read("/etc/gitlab/postgres/psql-password") %>"
       host: {{ template "gitlab.psql.host" . }}
       port: {{ template "gitlab.psql.port" . }}
+  smtp_settings.rb: |
+{{ include "gitlab.smtp_settings" . | indent 4 }}
 {{- include "gitlab.psql.ssl.config" . | indent 6 }}
   resque.yml.erb: |
     production:
       # Redis (single instance)
       url: {{ template "gitlab.redis.url" . }}
+      id:
   gitlab.yml.erb: |
     production: &base
       gitlab:
         host: {{ template "gitlab.gitlab.hostname" . }}
         https: {{ hasPrefix "https://" (include "gitlab.gitlab.url" .) }}
+        {{- with .Values.global.hosts.ssh }}
+        ssh_host: {{ . | quote }}
+        {{- end }}
+        {{- with .Values.global.appConfig }}
+        impersonation_enabled: {{ .enableImpersonation }}
+        usage_ping_enabled: {{ eq .enableUsagePing true }}
+        default_can_create_group: {{ eq .defaultCanCreateGroup true }}
+        username_changing_enabled: {{ eq .usernameChangingEnabled true }}
+        issue_closing_pattern: {{ .issueClosingPattern | quote }}
+        default_theme: {{ .defaultTheme }}
+        {{- include "gitlab.appConfig.defaultProjectsFeatures.configuration" $ | nindent 8 }}
+        webhook_timeout: {{ .webhookTimeout }}
+        {{- end }}
         trusted_proxies:
         {{- if .Values.trusted_proxies }}
 {{ toYaml .Values.trusted_proxies | indent 10 }}
         {{- end }}
         time_zone: {{ .Values.global.time_zone | quote }}
-        email_from: example@example.com
-        email_display_name: GitLab
-        email_reply_to: noreply@example.com
-        email_subject_suffix: ''
-        {{- include "gitlab.appConfig.defaultProjectsFeatures.configuration" $ | nindent 8 }}
-      incoming_email:
-        enabled: false
+        email_from: {{ template "gitlab.email.from" . }}
+        email_display_name: {{ .Values.global.email.display_name | quote }}
+        email_reply_to: {{ template "gitlab.email.reply_to" . }}
+        email_subject_suffix: {{ .Values.global.email.subject_suffix | quote }}
       {{- with .Values.global.appConfig }}
       {{- include "gitlab.appConfig.cronJobs" . | nindent 6 }}
       {{- end }}
@@ -52,8 +65,16 @@ data:
       {{- include "gitlab.appConfig.pseudonymizer.configuration" $ | nindent 6 }}
       pages:
         enabled: false
+      mattermost:
+        enabled: false
+      ## Registry Integration
+      {{- include "gitlab.appConfig.registry.configuration" $ | nindent 6 }}
+      gitlab_ci:
       {{- include "gitlab.appConfig.ldap.configuration" $ | nindent 6 }}
       {{- include "gitlab.appConfig.omniauth.configuration" $ | nindent 6 }}
+      kerberos:
+        enabled: false
+      shared:
 {{ include "gitlab.appConfig.gitaly" . | indent 6 }}
 {{ include "gitlab.appConfig.repositories" . | indent 6 }}
       backup:
@@ -72,8 +93,6 @@ data:
         {{- if .Values.extra }}
 {{ toYaml .Values.extra | indent 8 }}
         {{- end }}
-      ## Registry Integration
-      {{- include "gitlab.appConfig.registry.configuration" $ | nindent 6 }}
   configure: |
     {{- include "gitlab.scripts.configure.secrets" (dict "required" "shell gitaly registry postgres rails-secrets") | nindent 4 -}}
     {{- include "gitlab.psql.ssl.initScript" . | nindent 4 }}
