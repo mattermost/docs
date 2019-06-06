@@ -89,11 +89,12 @@ Error and diagnostic reporting is sent by the client to the endpoint `api.segmen
 Android Mobile App Performance Monitoring
 -----------------------------------------
 
-To improve Android app performance, we are collecting trace events and device information, collectively known as metrics, to identify slow performing key areas. Those metrics will be sent only from users using Android app beta build starting in version v1.20, who are logged in to servers that allow sending _`diagnostic information <https://docs.mattermost.com/administration/config-settings.html#enable-diagnostics-and-error-reporting>`_.
+To improve Android app performance, we are collecting trace events and device information, collectively known as metrics, to identify slow performing key areas. Those metrics will be sent only from users using Android app beta build starting in version v1.20, who are logged in to servers that allow sending `diagnostic information <https://docs.mattermost.com/administration/config-settings.html#enable-diagnostics-and-error-reporting>`__.
 
 Trace events
   It includes duration on how long the action took place like startup, team/channel switch, posts loading/update, channel drawer open/close, etc.  The naming convention is interpreted as `[start observation]:[end observation]`, e.g. `start:overall` as from app start until fully render or `post_list:thread` as on press of post at post list until thread is opened.
   Complete list of trace events are the following:
+
   - start:overall
   - start:process_packages
   - start:content_appeared
@@ -110,8 +111,9 @@ Trace events
   - post_list:permalink
 
 Device information
-  The information being collected is non-personally identifiable. Except for system_version, device information is based from _`react-native-device-info <https://github.com/mattermost/react-native-device-info#react-native-device-info>`_ library.  Refer to the linked documentation to learn more.
+  The information being collected is non-personally identifiable. Except for system_version, device information is based from `react-native-device-info <https://github.com/mattermost/react-native-device-info#react-native-device-info>`__ library.  Refer to the linked documentation to learn more.
   Complete list of trace events are the following:
+
   - api_level
   - build_number
   - bundle_id
