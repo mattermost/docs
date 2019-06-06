@@ -39,7 +39,7 @@ to the `helm install` command using the `--set` flags.
 | `metrics.enabled`                | `true`                | Toggle Prometheus metrics exporter             |
 | `metrics.port`                   | `9168`                | Listen port for the Prometheus metrics exporter       |
 | `resources.requests.cpu`         | `50m`                 | gitlab-monitor minimum cpu                            |
-| `resources.requests.memory`      | `150M`                | gitlab-monitor minimum memory                         |
+| `resources.requests.memory`      | `100M`                | gitlab-monitor minimum memory                         |
 | `service.externalPort`           | `9168`                | gitlab-monitor exposed port                           |
 | `service.internalPort`           | `9168`                | gitlab-monitor internal port                          |
 | `service.name`                   | `gitlab-monitor`      | gitlab-monitor service name                           |
