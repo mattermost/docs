@@ -1,0 +1,5 @@
+---
+title: Add SMTP and other missing settings for task-runner
+merge_request: 809
+author:
+type: fixed
