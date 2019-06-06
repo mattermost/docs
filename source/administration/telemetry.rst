@@ -110,7 +110,7 @@ Trace events
   - post_list:permalink
 
 Device information
-  The information being collected are non-personally identifiable. Except for system_version, device information are based from [react-native-device-info](https://github.com/mattermost/react-native-device-info#react-native-device-info) library.  Refer to its documentation to learn more.
+  The information being collected is non-personally identifiable. Except for system_version, device information is based from _`react-native-device-info <https://github.com/mattermost/react-native-device-info#react-native-device-info>`_ library.  Refer to the linked documentation to learn more.
   Complete list of trace events are the following:
   - api_level
   - build_number
