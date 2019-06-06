@@ -85,6 +85,9 @@ spec:
 {{ include "gitlab.extraVolumeMounts" . | indent 12 }}
             - name: task-runner-config
               mountPath: '/var/opt/gitlab/templates'
+            - name: task-runner-config
+              mountPath: '/srv/gitlab/config/initializers/smtp_settings.rb'
+              subPath: smtp_settings.rb
             - name: task-runner-secrets
               mountPath: '/etc/gitlab'
               readOnly: true
