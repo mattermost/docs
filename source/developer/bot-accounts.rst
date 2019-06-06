@@ -96,7 +96,7 @@ Technical Notes
 Data Model
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Each bot account has a row in the **Users** table. The entry is tied to a row in the **Bots** table by a `UserId` column.
+Each bot account has a row in the **Users** table. The entry is tied to a row in the **Bots** table by a ``UserId`` column.
 
 The Bots table schema is described as follows:
 
