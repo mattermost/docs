@@ -1321,9 +1321,8 @@ mattermost user
 
   Child Commands
 
-mattermost user activate
-
     -  `mattermost user activate`_ - Activate a user
+    -  `mattermost user convert`_ - Convert a user to a bot
     -  `mattermost user create`_ - Create a user
     -  `mattermost user deactivate`_ - Deactivate a user
     -  `mattermost user delete`_ - Delete a user and all posts
@@ -1354,6 +1353,28 @@ mattermost user activate
 
       ./mattermost user activate user@example.com
       ./mattermost user activate username1 username2
+
+mattermost user convert
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Convert user to a bot account.
+
+  Format
+    .. code-block:: none
+
+      mattermost user convert {emails, usernames, userIds} --bot
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost user convert user@example.com --bot
+      ./mattermost user convert username1 username2 --bot
+
+  Options
+    .. code-block:: none
+
+          --bot string       Convert user to bot
 
 mattermost user create
 ~~~~~~~~~~~~~~~~~~~~~~
