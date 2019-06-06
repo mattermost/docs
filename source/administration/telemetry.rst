@@ -89,7 +89,7 @@ Error and diagnostic reporting is sent by the client to the endpoint `api.segmen
 Android Mobile App Performance Monitoring
 -----------------------------------------
 
-To improve Android app performance, we are collecting trace events and device information, collectively known as metrics, to identify slow performing key areas.  Those metrics will be sent only from users using Android app beta build starting version 1.20 which are logged in into servers that allow sending [diagnostic information](https://docs.mattermost.com/administration/config-settings.html#enable-diagnostics-and-error-reporting).
+To improve Android app performance, we are collecting trace events and device information, collectively known as metrics, to identify slow performing key areas. Those metrics will be sent only from users using Android app beta build starting in version v1.20, who are logged in to servers that allow sending _`diagnostic information <https://docs.mattermost.com/administration/config-settings.html#enable-diagnostics-and-error-reporting>`_.
 
 Trace events
   It includes duration on how long the action took place like startup, team/channel switch, posts loading/update, channel drawer open/close, etc.  The naming convention is interpreted as `[start observation]:[end observation]`, e.g. `start:overall` as from app start until fully render or `post_list:thread` as on press of post at post list until thread is opened.
