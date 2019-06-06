@@ -9,7 +9,7 @@ Use Bot Accounts to integrate with Mattermost through `plugins <https://develope
 
 Bot accounts are just like user accounts, except they:
 
-  - Cannot be logged into, and bypass all restrictions related to authentication, such as multi-factor authentication (MFA), and custom terms of service.
+  - Cannot be logged into, and bypass all restrictions related to authentication, such as multi-factor authentication (MFA) and custom terms of service.
   - Cannot be used to create other bot accounts
   - Do not count as a registered user and therefore do not count towards the total users for an Enterprise Edition license
 
