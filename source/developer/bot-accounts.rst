@@ -176,7 +176,7 @@ By default, bot accounts managed by the deactivated user are disabled for enhanc
 
 We strongly recommend creating new tokens for the bot, to ensure the user who was deactivated no longer has access to read or write data in the system via the bot access token.
 
-If you prefer to have bot accounts remain enabled after user deactivation, set ``ServiceSettings.DisableBotsWhenOwnerIsDeactivated`` to ``false`` in your ``config.json`` file.
+If you prefer to have bot accounts remain enabled after user deactivation, set ``DisableBotsWhenOwnerIsDeactivated`` to ``false`` in your ``config.json`` file.
 
 How are bot accounts identified in compliance exports?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
