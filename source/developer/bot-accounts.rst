@@ -60,7 +60,7 @@ User Interface (UI)
 3. Set the **Username** of the bot. Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols ".", "-", and "_".
 4. (Optional) Upload an image for the **Bot Icon**. This will be used as the profile image of the bot throughout the Mattermost user interface.
 5. (Optional) Set a **Display Name** and **Description**.
-6. (Optional) Choose what role the bot should have. Defaults to **Member**. If you assign **System Admin**, the bot will have access to write and read any public channels, private channels and direct messages.
+6. (Optional) Choose what role the bot should have. Defaults to **Member**. If you assign **System Admin**, the bot will have access to write in and read any public channels, private channels and direct messages.
 7. (Optional) Select additional permissions for the account. Enable the bot to post to all Mattermost channels, or all Mattermost public channels.
 
 RESTful API
