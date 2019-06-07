@@ -5,6 +5,7 @@ Onboarding
 This document is intended for new hires to summarize norms for working at Mattermost, Inc. including:
 
 - `Getting Started Checklist`_ - Getting ready to work here
+- `Channels`_ - Where we discuss work-related topics
 - `Meetings`_ - When we get together and why
 - `Mindsets`_ - Shared toolsets we have for solving problems
 - `Terminology`_- Shared vocabulary to convey ideas quickly
@@ -62,6 +63,28 @@ First Week
 ---------------------------------------------------------
 
 - (People Ops) US FTE - Email regarding 401K account set up.
+
+---------------------------------------------------------
+Channels
+---------------------------------------------------------
+
+Whenever possible, we share key updates and have discussions in Mattermost. Some of the channels used are:
+
+- [Announcements](https://community.mattermost.com/private-core/channels/announcements) - Mattermost-wide announcements
+- [Ask Anything](https://community.mattermost.com/core/channels/ask-anything) - General questions about Mattermost
+- [Ask R&D](https://community.mattermost.com/core/channels/ask-r-and-d) - Technical questions to the Mattermost R&D team
+- [Customer Feedback](https://community.mattermost.com/private-core/channels/customer-feedback) - Discussion of customer feedback
+- [Customer Success](https://community.mattermost.com/private-core/channels/customer-success) - Updates from and general discussion with the Mattermost customer success team
+- [Customer Support](https://community.mattermost.com/private-core/channels/community) - Discussion of customer support ticket escalations
+- [Developers](https://pre-release.mattermost.com/core/channels/developers) - General development help
+- [Marketing](https://community.mattermost.com/private-core/channels/marketing) - Campaign ideas and general marketing team discussions
+- [Marketing Website](https://community.mattermost.com/private-core/channels/marketing-website-priv) - Website bugs, release notes, and web discussions
+- [Product Management](https://pre-release.mattermost.com/core/channels/product-management) - Discussion with and questions for Mattermost product managers
+- [Roadmap](https://pre-release.mattermost.com/private-core/channels/roadmap) - Questions about and discussion of the product roadmap, or to view public roadmap in the header
+- [Spec Reviews](https://pre-release.mattermost.com/core/channels/spec-reviews) - In-progress plans for new features
+- [Sustained Engineering](https://pre-release.mattermost.com/core/channels/sustained-engineering) - Discussion with Mattermost's [Sustained Engineering Team (SET)](https://developers.mattermost.com/internal/sustained-engineering/)
+- [UX Design](https://pre-release.mattermost.com/core/channels/ux-design) - Questions and discussion about product design
+- [Welcome](https://community.mattermost.com/private-core/channels/welcome) - Where new staff members are introduced on their first day
 
 ---------------------------------------------------------
 Meetings
