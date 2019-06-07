@@ -53,7 +53,9 @@ function bootstrap(){
     gcloud compute addresses create $external_ip_name --region $REGION --project $PROJECT;
     address=$(gcloud compute addresses describe $external_ip_name --region $REGION --project $PROJECT --format='value(address)');
 
+    echo "\n#####"
     echo "Successfully provisioned external IP address $address , You need to add an A record to the DNS name to point to this address. See https://gitlab.com/charts/gitlab/blob/master/doc/installation/cloud/gke.md#dns-entry.";
+    echo "#####\n"
   fi
 
   mkdir -p demo/.kube;
