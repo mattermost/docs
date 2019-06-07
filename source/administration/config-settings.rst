@@ -3126,7 +3126,7 @@ Enable Elasticsearch for autocomplete queries
 **False**: Database autocomplete is used.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false`` for above settings respectively.                          |
+| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false`` for above settings respectively.                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ________
 
