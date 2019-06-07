@@ -41,9 +41,9 @@ Install and set up the database for use by the Mattermost server. You can instal
   ``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``
 
   .. note::
-  This query grants the MySQL user we just created all privileges on the database for convenience. If you need more security you can use this query to grant the user only the privileges necessary to run Mattermost.
+    This query grants the MySQL user we just created all privileges on the database for convenience. If you need more security you can use this query to grant the user only the privileges necessary to run Mattermost.
 
-  ``mysql> GRANT ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, UPDATE ON mattermost.* TO 'mmuser'@'%';``
+    ``mysql> GRANT ALTER, CREATE, DELETE, DROP, INDEX, INSERT, SELECT, UPDATE ON mattermost.* TO 'mmuser'@'%';``
 
 7. Log out of MySQL.
  

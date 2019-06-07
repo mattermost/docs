@@ -35,10 +35,10 @@ system. To share an attachment, click the thumbnail of an attachment, then click
 **Get Public Link**.
 
 .. Tip::
-If **Get Public Link** is not visible in the file previewer
-and you prefer that the feature is enabled, you can request your System 
-Admin to enable the feature from the System Console under 
-**Security > Public Links**.
+  If **Get Public Link** is not visible in the file previewer
+  and you prefer that the feature is enabled, you can request your System
+  Admin to enable the feature from the System Console under
+  **Security > Public Links**.
 
 Viewing Media:
 ~~~~~~~~~~~~~~~~~~~~~
