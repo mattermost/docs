@@ -29,7 +29,7 @@ After installing Mattermost:
 
 1. Create a System Administrator account using email authentication. On a new server create an account using email and password, which is automatically assigned the **System Administrator** role since it is the first account created. You may also assign the role to another account.    
 
-2. Configure AD/LDAP. Go to **System Console > AD/LDAP** and fill in AD/LDAP settings based on [configuration settings documentation](http://docs.mattermost.com/administration/config-settings.html#ad-ldap)    
+2. Configure AD/LDAP. Go to **System Console > AD/LDAP** in prior versions or **System Console** > **Authentication** > **AD/LDAP** in versions after 5.12 and fill in AD/LDAP settings based on [configuration settings documentation](http://docs.mattermost.com/administration/config-settings.html#ad-ldap)    
 
 3. Confirm AD/LDAP sign-on is enabled.  After AD/LDAP has been enabled, confirm that users can sign in using AD/LDAP credentials.
 
@@ -37,7 +37,7 @@ After installing Mattermost:
 
 5. (Optional) Restrict authentication to AD/LDAP. Go to **System Console** > **Authentication** > **Email** and set **Allow Sign Up With Email** to `false` and **Allow Sign In With Email** to `false`. This should leave Active Directory/LDAP as the only single sign-in option.
 
-6. (Optional) If you configured First Name Attribute and Last Name Attribute in the System Console, go to **System Console > General > Users and Teams** and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
+6. (Optional) If you configured First Name Attribute and Last Name Attribute in the System Console, go to **System Console > General > Users and Teams** in prior versions or **System Console** > **Site Configuration** > **Users and Teams** in versions after 5.12 and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
 
 If you've made a mistake and lock yourself out of the system somehow, you can [set an existing account to System Administrator using the commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#common-tasks).
 
