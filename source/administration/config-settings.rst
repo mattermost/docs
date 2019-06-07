@@ -3983,12 +3983,33 @@ Enable Plugin Uploads
 | This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false`` for above settings respectively.                            | 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Plugin Health Check
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables plugin health check to ensure all plugins are periodically monitored, and restarted or deactivated based on their health status.
+
+The health check runs every 30 seconds. If the plugin is detected to fail 3 times within an hour, the Mattermost server attempts to restart it. If the restart fails 3 successive times, it is automatically disabled.
+
+**False**: Disables plugin health check on your Mattermost server.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableHealthCheck": true`` with options ``true`` and ``false`` for above settings respectively.                         | 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Directory
 ^^^^^^^^^^
 The location of the plugin files. If blank, they are stored in the ./plugins directory. The path that you set must exist and Mattermost must have write permissions in it.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Directory": "./plugins"`` with string input.                       |
++-----------------------------------------------------------------------------------------------------------------+
+
+Client Directory
+^^^^^^^^^^^^^^^^^^
+The location of client plugin files. If blank, they are stored in the ./client/plugins directory. The path that you set must exist and Mattermost must have write permissions in it.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Directory": "./client/plugins"`` with string input.                |
 +-----------------------------------------------------------------------------------------------------------------+
 
 ------
