@@ -17,21 +17,6 @@ Zoom
 - Docs: https://docs.mattermost.com/integrations/zoom.html
 - Source code: https://github.com/mattermost/mattermost-plugin-zoom
 
-Kopano WebMeetings
-~~~~~~~~~~~~~~~~~~~~
-
-- Start one-on-one voice and video calls, based on the WebRTC protocol, developed by Kopano.
-- Calls embedded into the Mattermost interface for seamless user experience.
-- Supports a self-hosted on-prem solution.
-- Source code + docs: https://stash.kopano.io/projects/KM/repos/mattermost-plugin-kopanowebmeetings/browse
-
-SIP PBX
-~~~~~~~~~~~~~~~~~~~~
-
-- Connect your company's individual desk extensions, external telephone lines and mobile networks with Mattermost, developed by bytemine GmbH.
-- Supports a self-hosted on-prem solution.
-- Source code + docs: https://github.com/bytemine/mattersip
-
 BigBlueButton
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -39,6 +24,22 @@ BigBlueButton
 - A test install is provided to try out the feature on a Mattermost install.
 - Supports a self-hosted on-prem solution, and a vendor-hosted cloud solution.
 - Source code + docs: https://github.com/blindsidenetworks/mattermost-plugin-bigbluebutton
+
+Skype for Business
+~~~~~~~~~~~~~~~~~~~~
+
+- Start and join voice calls, video calls and use screen sharing with your team members, developed by kosgrz.
+- Clicking a video icon in a Mattermost channel invites team members to join a Skype for Business call, hosted using the credentials of the user who initiated the call.
+- Supports a vendor-hosted cloud solution.
+- Source code + docs: https://github.com/kosgrz/mattermost-plugin-skype4business
+
+Kopano WebMeetings
+~~~~~~~~~~~~~~~~~~~~
+
+- Start one-on-one voice and video calls, based on the WebRTC protocol, developed by Kopano.
+- Calls embedded into the Mattermost interface for seamless user experience.
+- Supports a self-hosted on-prem solution.
+- Source code + docs: https://stash.kopano.io/projects/KM/repos/mattermost-plugin-kopanowebmeetings/browse
 
 Jitsi
 ~~~~~~~~~~~~~~~~~~~~
@@ -48,6 +49,13 @@ Jitsi
 - Supports a self-hosted on-prem solution.
 - Source code + docs: https://github.com/seansackowitz/mattermost-plugin-jitsi
 
+SIP PBX
+~~~~~~~~~~~~~~~~~~~~
+
+- Connect your company's individual desk extensions, external telephone lines and mobile networks with Mattermost, developed by bytemine GmbH.
+- Supports a self-hosted on-prem solution.
+- Source code + docs: https://github.com/bytemine/mattersip
+
 appear.in
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -56,7 +64,7 @@ appear.in
 - Supports a self-hosted on-prem solution.
 - Source code + docs: https://github.com/zarej/Mattermost-Integration-with-Appear.in
 
-Support for other 3rd party video, audio and screensharing solutions via plugins is planned. A plugin for Skype for Business and Cisco WebEx Meetings Server are currently in development by the Mattermost communities, and scheduled for internal development in Q3/2019 if not completed by our communities.
+Support for other 3rd party video, audio and screensharing solutions via plugins is planned. A plugin for Cisco WebEx Meetings Server is currently in development by the Mattermost communities, and scheduled for internal development in Q3/2019 if not completed by our communities.
 
 Have a proposal for a voice and video call integration? `Let us know in the feature proposal forum <https://mattermost.uservoice.com/forums/306457-general?category_id=202591>`_.
 
