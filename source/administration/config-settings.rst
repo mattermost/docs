@@ -2,7 +2,7 @@ Configuration Settings
 ======================
 
 .. note::
-   The order of the configuration settings below are reflective of a reorganization of the System Console in v5.12 released on June 16th, 2019. To view the configuration settings based on the organization of the System Console in versions prior to v5.12, please see this `documentation <>`_.
+   The order of the configuration settings below are reflective of a reorganization of the System Console in v5.12 released on June 16th, 2019. To view the configuration settings based on the organization of the System Console in versions prior to v5.12, please see this `documentation <https://docs.mattermost.com/administration/prev-config-settings.rst>`_.
 
 Mattermost configuration settings are maintained in the configuration file ``config.json``, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
 
@@ -48,19 +48,19 @@ ________
 
 Reporting
 -------
-TODO.
+View statistics for your overall deployment and specific teams as well as access server logs. 
 
 Site Statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-TODO.  
+View statistics on active users, teams, channels, sessions, webhooks, and connections. 
 
 Team Statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-TODO.  
+View statistics per team on number of active users, as well as public and private channels.  
 
 Server Logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-TODO.
+View logging of server-side events.
 ________
 
 User Management
@@ -84,7 +84,7 @@ Groups
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
-Groups offers admins a way to manage default teams and channels by linking AD/LDAP groups to Mattermost groups.  See `Groups documentation <TODO>`__ for more details. 
+Groups offers admins a way to manage default teams and channels by linking AD/LDAP groups to Mattermost groups.  See `Groups documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`__ for more details. 
 
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
