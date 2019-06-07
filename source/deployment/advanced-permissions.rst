@@ -64,7 +64,6 @@ Interface for naming, assigning teams and editing permissions in a Team Override
 Channel Override Permissions (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
 *Available in a future release of Enterprise Edition E20*
 
 Allows Admins to restrict permissions within specific channels. Permissions under consideration for this phase include:
@@ -76,7 +75,6 @@ Allows Admins to restrict permissions within specific channels. Permissions unde
 Supplementary Roles (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
 *Available in a future release of Enterprise Edition E20*
 
 Allows Admins to grant additional permissions to specific users or to a group of users based on AD/LDAP group membership. Permissions can be granted within the scope of channels, teams or system level.

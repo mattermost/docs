@@ -332,7 +332,7 @@ Allow Team Administrators to edit others posts
 **False**:  Only System Administrators can edit other users' posts.
 
 .. note::
-This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.   
+  This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.
 
 
 Enable Team Directory
@@ -1091,7 +1091,7 @@ Group Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 (Optional) Enter an AD/LDAP Filter to use when searching for group objects (accepts `general syntax <http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__). Only the groups selected by the query will be able accessible to Mattermost. 
 
-This filter is defaulted to ```(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``` when blank.  
+This filter is defaulted to ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` when blank.
 
 .. note::
   This filter is used only when AD/LDAP Group Sync is enabled.  See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ for more information on enabling and configuring AD/LDAP Group Sync (*Available in Enterprise Edition E20 and higher*). 
@@ -2652,7 +2652,7 @@ Custom URL Schemes
 A list of URL schemes that are used for autolinking in message text. ``http``, ``https``, ``ftp``, ``tel`` and ``mailto`` always create links.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CustomUrlSchemes": []`` which takes an array of URL schemes such as ``["git", "smtp"]`.                                 |
+| This feature's ``config.json`` setting is ``"CustomUrlSchemes": []`` which takes an array of URL schemes such as ``["git", "smtp"]``.                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ________
