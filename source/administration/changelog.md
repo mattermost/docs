@@ -92,6 +92,8 @@ Release Date 2019-06-16
  - Fixed an issue where replies to the parent post were not left-aligned.
  - Fixed an issue where the timezone picker dropdown closed when trying to drag the scrollbar.
  - Fixed an issue where the ``ExperimentalPrimaryTeam`` config.json setting no longer hid the "Leave Team" option.
+ - Fixed an issue where the setting position field for AD/LDAP sync in System Console did not block user from changing it in Account Settings.
+ - Fixed an issue where scrolling was not working on iOS browser sign-up and sign-in pages.
 
 ### config.json
 
