@@ -82,7 +82,7 @@ Whenever possible, we share key updates and have discussions in Mattermost. Some
 - `Product Management <https://community.mattermost.com/core/channels/product-management>`_ - Discussion with and questions for Mattermost product managers
 - `Roadmap <https://community.mattermost.com/private-core/channels/roadmap>`_ - Questions about and discussion of the product roadmap, or to view public roadmap in the header
 - `Spec Reviews <https://community.mattermost.com/core/channels/spec-reviews>`_ - In-progress plans for new features
-- `Sustained Engineering <https://community.mattermost.com/core/channels/sustained-engineering>`_ - Discussion with Mattermost's _`Sustained Engineering Team (SET) <https://developers.mattermost.com/internal/sustained-engineering/>`_
+- `Sustained Engineering <https://community.mattermost.com/core/channels/sustained-engineering>`_ - Discussion with Mattermost's `Sustained Engineering Team (SET) <https://developers.mattermost.com/internal/sustained-engineering/>`_
 - `UX Design <https://community.mattermost.com/core/channels/ux-design>`_ - Questions and discussion about product design
 - `Welcome <https://community.mattermost.com/private-core/channels/welcome>`_ - Where new staff members are introduced on their first day
 
