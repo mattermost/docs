@@ -35,7 +35,7 @@ You can set up an internal server to proxy the connection out of their network t
 
 1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at https://www.digicert.com/help/.
 2. Setup a proxy to forward requests to ``https://push.mattermost.com``.
-3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** to "Manually enter Push Notification Service location"
+3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** in prior versions or **System Console > Environment > Push Notification Server > Enable Push Notifications** in versions after 5.12 to "Manually enter Push Notification Service location"
 4. Enter the URL of your proxy in the **Push Notification Server** field.
 
 .. Note:: Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``
