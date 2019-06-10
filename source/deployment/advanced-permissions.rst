@@ -34,7 +34,7 @@ To override the System Scheme default permissions in a specific team, you must s
 
 **System Scheme Interface** 
 
-Interface for editing permissions in the System Scheme, with panels for All members, Channel Admins, Team Admins and System Admins. Available in System Console > Advanced Permissions > System Scheme in prior versions or System Console > User Management > Permissions > System Scheme in versions after 5.12:
+Interface for editing permissions in the System Scheme, with panels for All members, Channel Admins, Team Admins and System Admins. Available in System Console > Advanced Permissions > System Scheme in prior versions or **System Console > User Management > Permissions > System Scheme** in versions after 5.12:
 
 .. image:: ../images/system-scheme.png
 
