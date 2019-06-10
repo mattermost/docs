@@ -8,6 +8,8 @@ Overview
 
 The groups feature is useful for organizations that have many new users to onboard or that onboard users frequently and want to ensure users are added to default teams and channels that are pertinent to them. The group feature currently supports creating groups by synchronization with your AD/LDAP system groups. AD/LDAP nested groups are also supported.  Please see `this forum post <https://forum.mattermost.org/t/ldap-group-sync-alpha-release/6351>`__ for more details.  
 
+Synchronized groups can also be used to manage the membership of teams and private channels. See `this documentation <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`_ for more information. 
+
 Pre-installation notes
 ----------------------
 
@@ -106,6 +108,8 @@ It may take a few seconds to load all team and channel memberships for a user de
    Users are not removed from the team or channel on subsequent synchronizations of the AD/LDAP groups. Users will need to be manually removed from the team or channel per the existing functionality. This is being considered for a future improvement. They will not be re-added if they were manually removed or removed themselves.
 
 .. image:: ../images/Team_Channel_Membership_Sync.png
+
+To manage a team or private channel with synchronized groups, please see `this documentation <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`_.
 
 Remove configured teams and channels from a group
 -------------------------------------------------
