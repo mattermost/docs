@@ -403,7 +403,7 @@ Finish Mattermost Server Setup
 
    - Set **Log to The Console** to ``false``
 
-9. Update **Advanced** > **Rate Limiting** in prior versions or  **Environment** > **Rate Limiting** in versions after 5.12 settings:
+9. Update **Advanced** > **Rate Limiting** settings in prior versions or  **Environment** > **Rate Limiting** settings in versions after 5.12:
 
    - Set **Vary By Remote Address** to false
    - Set **Vary By HTTP Header** to X-Real-IP
