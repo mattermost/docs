@@ -1535,7 +1535,7 @@ Minimum Password Length
 Minimum number of characters required for a valid password. Must be a whole number greater than or equal to 5 and less than or equal to 64.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MinimumLength": 5"`` with whole number input.                                                                           |
+| This feature's ``config.json`` setting is ``"MinimumLength": 10"`` with whole number input.                                                                           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Password Requirements
@@ -1555,10 +1555,10 @@ This feature's ``config.json`` settings are, respectively:
 .. list-table::
     :widths: 80
 
-    * - ``"Lowercase": false`` with options ``true`` and ``false``
-    * - ``"Number": false`` with options ``true`` and ``false``
-    * - ``"Uppercase": false`` with options ``true`` and ``false``
-    * - ``"Symbol": false`` with options ``true`` and ``false``
+    * - ``"Lowercase": true`` with options ``true`` and ``false``
+    * - ``"Number": true`` with options ``true`` and ``false``
+    * - ``"Uppercase": true`` with options ``true`` and ``false``
+    * - ``"Symbol": true`` with options ``true`` and ``false``
 
 Maximum Login Attempts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3352,6 +3352,19 @@ This setting only takes effect if you are using the built-in server binary direc
 +-------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TLSMinVer": "1.2"`` with string input. |
 +-------------------------------------------------------------------------------------+
+
+Trusted Proxy IP Header
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Specified headers that will be checked one by one for IP addresses (order is important). All other headers are ignored.
+
+New configs after v5.12 will have this set by default to ``[]``, meaning that no header will be trusted. Configs prior to v5.12 without the config entry will have it set to ``X-Forwarded-By``, ``X-Real-Ip`` to maintain backwards compatibility as an authority to what the client's IP address is. 
+
+We recommend keeping the default setting when Mattermost is running without a proxy, to avoid the client sending the headers and bypassing rate limiting and/or the audit log. For environments that use a reverse proxy this problem does not exist, if the headers are set by NGINX itself. In those environments only explicitly whitelist the header that is set by the reverse proxy and no additional values.
+
++---------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``TrustedProxyIPHeader`` with string array input.       |
++---------------------------------------------------------------------------------------------------+
 
 Enable Strict Transport Security (HSTS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
