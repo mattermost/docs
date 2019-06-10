@@ -51,7 +51,7 @@ Overrides the default System Scheme permissions in specific teams for Team Admin
 
 **Team Override Scheme Interface** 
 
-Interface for naming, assigning teams and editing permissions in a Team Override Scheme, with panels for All members, Channel Admins and Team Admins. Available in System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme in prior versions or System Console > User Management > Permissions >Team Override Schemes in versions after 5.12:
+Interface for naming, assigning teams and editing permissions in a Team Override Scheme, with panels for All members, Channel Admins and Team Admins. Available in System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme in prior versions or **System Console > User Management > Permissions > Team Override Schemes** in versions after 5.12:
 
 .. image:: ../images/team-scheme.png
 
