@@ -1,8 +1,8 @@
 .. _ldap-group-constrained-team-channel:
 
-Using AD/LDAP Synchronized Groups to Manage Team and Channel Memberships
+Using AD/LDAP Synchronized Groups to Manage Team and Private Channel Memberships
 ===============================================================
-Mattermost groups created with synchronized with AD/LDAP can be used to manage the membership of private teams and private channels. When a team or private channel is managed by synchronized groups, users will be added and removed based on their membership to the synchronized AD/LDAP group.  
+Mattermost groups created with synchronized AD/LDAP groups can be used to manage the membership of private teams and private channels. When a team or private channel is managed by synchronized groups, users will be added and removed based on their membership to the synchronized AD/LDAP group.  
 
 Users outside of the group are restricted from being invited through a team invite link or an email invite on teams that are managed by synchronized groups. Similarly, users outside of synchronized groups are restricted from being invited through a mention, the /invite slash command or directly with “add members” in channels.  Users, however, can remove themselves from teams and private channels managed by synchronized groups.  
 
@@ -10,23 +10,19 @@ Users outside of the group are restricted from being invited through a team invi
 Constraining membership on Teams and Private Channels to Groups 
 ----------
 
-To use AD/LDAP groups to manage the membership of a team or a private channel to groups, first you must ensure there is at least one group associated to the team or channel.  
-
-1. Through the System Console, you can view and add default teams and channels to the group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group to learn how>`_. 
-
-2. Additionally, you can use the CLI tool to view if there is already a group applied by running the `group team list CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-list>`_ for teams and `group channel list CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-channel-list>`_ for private channels .
-
-Once you have at least one group associated to the team or channel, you can convert the management to using synchronized groups.  
-
 To convert a private team: 
-1. Ensure **Team Settings > General > Allow any user with an account on this server to join this team** is set to ``No``. 
-2. Convert the team to have its membership managed by synchronized groups by running the `group team enable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-enable>`_ .
 
-To convert a channel: 
-1.Convert the team to have its membership managed by synchronized groups, the team must be converted to have its membership managed by synchronized groups by running the `group channel enable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-channel-enable>`_ .  
+1. Ensure there is at least one group already associated to the team. You can view and add default teams and channels to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_. Additionally, you can use the CLI tool to view if there is already a group applied by running the `group team list CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-list>`_. 
+3. Ensure **Team Settings > General > Allow any user with an account on this server to join this team** is set to ``No``. 
+4. Convert the team to have its membership managed by synchronized groups by running the `group team enable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-enable>`_ .
+
+To convert a private channel: 
+
+1. Ensure there is at least one group already associated to the channel. You can view and add default channels to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_. Additionally, you can use the CLI tool to view if there is already a group applied by running the `group team list CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-list>`_. 
+2. Convert the team to have its membership managed by synchronized groups, the channel must be converted to have its membership managed by synchronized groups by running the `group channel enable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-channel-enable>`_ .  
 
 .. note:: 
-   System console support is coming estimated in the 5.14 (August 2019) release. 
+   System console support to set teams and private channels to managing membership with group synchronization is coming estimated in the 5.14 (August 2019) release. 
 
 Add or remove groups from teams
 ----------
