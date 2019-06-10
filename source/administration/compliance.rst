@@ -32,7 +32,7 @@ Turn on Daily Compliance Reports
 
 After enabling compliance reporting: 
 
-1. Go to **System Console** > **General** > **Compliance** > **Enable Daily Report** in prior versions or **System Console > Compliance > Compliance Monitoring >Enable Daily Reports** in versions after 5.12 and set the value to ``true``.
+1. Go to **System Console** > **General** > **Compliance** > **Enable Daily Report** in prior versions or **System Console > Compliance > Compliance Monitoring > Enable Daily Reports** in versions after 5.12 and set the value to ``true``.
 2. Click **Save**. 
 
 Your system will now export all new messages posted within a 24-hour period as a .csv file to the location specified in **Compliance Directory Location**. This feature can be used in conjunction with centralized compliance reporting systems that move 
