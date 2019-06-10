@@ -350,7 +350,7 @@ Recycle Database Connections
 
 This button reconnects to the database listed in the configuration settings. All old connections are closed after 20s.
 
-The workflow for failover without downing the server is to change the database line in the config.json file, click **Reload Configuration from Disk** in the Environment > Database section then click **Recycle Database Connections**.
+The workflow for failover without downing the server is to change the database line in the config.json file, click **Reload Configuration from Disk** in the **Environment > Database** section, then click **Recycle Database Connections**.
 
 ________
 
