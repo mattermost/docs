@@ -263,7 +263,7 @@ Changing properties in this section will require a server restart before taking 
 
 Driver Name
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This setting can only be changed from config.json file, it cannot be changed from the System Console user interface.
+This setting can only be changed from ``config.json`` file, it cannot be changed from the System Console user interface.
 
 ``mysql``: enables driver to MySQL database.
 
