@@ -12,7 +12,7 @@ For advanced metrics for Enterprise deployments, `see performance monitoring doc
 Site Statistics
 -----------------
 
-System statistics are viewable under **System Console > Site Statistics**. The data shown here is a cumulative sum across all teams on the system.
+System statistics are viewable under **System Console > Site Statistics** in prior versions or **System Console > Reporting** in versions after 5.12. The data shown here is a cumulative sum across all teams on the system.
 
 Total Users
     The total number of active accounts created on your system. Excludes deactivated accounts.
