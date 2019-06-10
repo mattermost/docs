@@ -21,7 +21,7 @@ Enabling Compliance Reporting
 
 After purchasing and installing a license key for Enterprise Edition E20: 
 
-1. Go to **System Console** > **General** > **Compliance** > **Enable Compliance** in prior versions or **System Console > Compliance > Compliance Monitoring >Enable Compliance Reporting** in versions after 5.12 and set the value to ``true``.
+1. Go to **System Console** > **General** > **Compliance** > **Enable Compliance** in prior versions or **System Console > Compliance > Compliance Monitoring > Enable Compliance Reporting** in versions after 5.12 and set the value to ``true``.
 2. (Optional) In Compliance Directory Location specify the directory in which to place completed compliance reports. Defaults to ``./data/`` if left blank.
 3. Click **Save**. 
 
