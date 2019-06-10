@@ -36,7 +36,7 @@ Plugins have the ability to execute arbitrary code in client browsers. They have
 Set Up Guide
 --------------
 
-To enable plugins, follow these two simple steps.
+To enable plugins go to **System Console > Plugins > Plugin Management** in versions after 5.12 or in prior versions, follow these two steps:
 
 1) Go to **System Console > Plugins (Beta) > Configuration**. Here you can enable plugins.
 2) Go to **System Console > Plugins (Beta) > Management** to manage your plugins, including:
