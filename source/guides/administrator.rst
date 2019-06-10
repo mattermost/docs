@@ -75,6 +75,7 @@ Learn how to configure settings to meet your unique requirements.
 
    /deployment/on-boarding.rst  
    /administration/config-settings.rst
+   /administration/prev-config-settings.rst
    /deployment/customize-mattermost.rst
    /deployment/customize-email.rst 
    /administration/branding.rst
