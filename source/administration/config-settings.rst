@@ -69,7 +69,7 @@ Settings for managing users, user access, and permissions.
 
 Users
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-View and mange active and inactive users. 
+View and manage active and inactive users. 
 ________
 
 User Management
