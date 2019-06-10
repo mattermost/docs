@@ -181,7 +181,7 @@ For Mattermost servers running 3.3 and earlier, the first name and last name att
 
 6. Click **Save**.
 
-7. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > General > Users and Teams** in prior versions or **System Console** > **Site Configuration** > **Users and Teams** in versions after 5.12and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
+7. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > General > Users and Teams** in prior versions or **System Console** > **Site Configuration** > **Users and Teams** in versions after 5.12 and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
 
 
 You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
