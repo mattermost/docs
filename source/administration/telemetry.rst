@@ -21,7 +21,7 @@ New threats to system security constantly arise. To alert you of relevant, high 
 
 The following data is collected once every 24 hours: Mattermost server build number and version, type of build (Enterprise or Team), server operating system, the server diagnostic ID (same as the ID accessing the push notification proxy, and is used to prevent double-counting of telemetry data), database type, number of teams, number of users, number of active users, whether or not the unit tests have been run, date and time of the last check for security updates, and the location of the Amazon Cloudfront server used for telemetry data.
 
-To opt out, disable the feature in **System Console > Notifications > Email > Enable Security Alerts**. When the feature is disabled, you will not receive any security alerts.
+To opt out, disable the feature in **System Console > Notifications > Email > Enable Security Alerts** in prior versions or **System Console > Environment > SMTP** in versions after 5.12. When the feature is disabled, you will not receive any security alerts.
 
 Error and Diagnostics Reporting Feature
 ---------------------------------------
@@ -84,4 +84,4 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *Mobile Performance Diagnostics:* Load times for starting the app, switching channels, and switching teams 
   - *Permissions Discovery Diagnostics (Enterprise Edition Only):* Provides all the permissions configured for each role for the System Scheme and each Team Override Scheme created in the system.  Scheme ID; Team Admin Permissions; Team User Permissions; Channel Admin Permissions; Channel User Permissions; Number of teams the scheme is associated with
 
-Error and diagnostic reporting is sent by the client to the endpoint `api.segment.io`. To opt out, disable the feature in **System Console > General > Logging > Enable Error and Diagnostics Reporting**.
+Error and diagnostic reporting is sent by the client to the endpoint `api.segment.io`. To opt out, disable the feature in **System Console > General > Logging > Enable Error and Diagnostics Reporting** in prior versions or **System Console > Environment > Logging** in versions after 5.12.
