@@ -8,14 +8,14 @@ To deploy the apps hosted in the Apple App Store and Google Play, we recommend y
   - (Recommended) Depending on your security policies, consider deploying a mobile VPN client with multi-factor authentication (MFA), GitLab SSO with MFA, or run Mattermost Enterprise Edition with MFA
   
 2. Enable mobile push notifications
-  - Go to **System Console > Notifications > Mobile Push**
+  - Go to **System Console > Notifications > Mobile Push** in prior versions or **System Console > Environment > Push Notification Server** in versions after 5.12
   - If testing the apps, or using Team Edition: Select "Use TPNS connection to send notifications to iOS and Android apps"
   - If using the apps in production with Enterprise Edition: Select "Use HPNS connection with uptime SLA to send notifications to iOS and Android apps"
 
 .. image:: ../images/mobile_hpns.png
 
 3. (Optional) Customize mobile push notification contents
-  - Go to **System Console** > **Notifications** > **Mobile Push**
+  - Go to **System Console** > **Notifications** > **Mobile Push** in prior versions or **System Console > Site Configuration > Notifications** in versions after 5.12
   - Select what type of information to include in push notifications
   - Most deployments choose to include the full message snippet in push notifications unless they have policies against it to protect confidential information
 
