@@ -63,7 +63,7 @@ This process overrides SAML email address with AD/LDAP email address data or SAM
 To ensure existing user accounts do not get disabled in this process, ensure the SAML IDs match the LDAP IDs by exporting data from both systems and comparing the ID data. Mapping ID Attributes for both AD/LDAP and SAML within Mattermost to fields that hold the same data will ensure the IDs match as well.  
 
 1. Set the SAML ``Id Attribute`` on **System Console > SAML > Id Attribute** in prior versions or **System Console** > **Authentication** > **SAML 2.0** > **Id Attribute** in versions after 5.12.  
-2. Set **System Console > SAML > Override SAML bind data with AD/LDAP information** in prior versions or **System Console** > **Authentication** > **SAML 2.0** > **Override SAML bind data with AD/LDAP information**** in versions after 5.12. to ``true``. 
+2. Set **System Console > SAML > Override SAML bind data with AD/LDAP information** to ``true`` in prior versions or **System Console** > **Authentication** > **SAML 2.0** > **Override SAML bind data with AD/LDAP information** in versions after 5.12. 
 3. Set **System Console > SAML > Enable Synchronizing SAML Accounts With AD/LDAP** in prior versions or **System Console** > **Authentication** > **SAML 2.0** > **Enable Synchronizing SAML Accounts With AD/LDAP**** in versions after 5.12. to ``true``.
 4. Run AD/LDAP sync in **System Console > AD/LDAP > AD/LDAP Synchronize Now** in prior versions or **System Console** > **Authentication** > **AD/LDAP** > **AD/LDAP Synchronize Now** in versions after 5.12. 
 
