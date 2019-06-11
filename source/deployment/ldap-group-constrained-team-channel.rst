@@ -23,7 +23,7 @@ Users, however, can remove themselves from teams and private channels managed by
 Managing Membership of a Team or Channel with Synchronized Groups
 ----------
 
-To manage membership of a private team with syncrhonized groups: 
+To manage membership of a private team with synchronized groups: 
 
 1. Ensure there is at least one group already associated to the team. You can view and add default teams to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_. Additionally, you can use the CLI tool to view if there is already a group associated to the team by running the `group team list CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-list>`_. 
 2. Ensure **Team Settings > General > Allow any user with an account on this server to join this team** is set to ``No``. 
