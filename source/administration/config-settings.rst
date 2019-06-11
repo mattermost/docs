@@ -70,15 +70,6 @@ Settings for managing users, user access, and permissions.
 Users
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 View and manage active and inactive users. 
-________
-
-User Management
--------
-Settings for managing users, user access, and permissions.
-
-Users
-~~~~~~~~~~~~~~~~~~~~~~~~~
-View and manage active and inactive users. 
 
 Groups
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -91,7 +82,6 @@ Permissions
 *Available in Enterprise Edition E10 and higher*
 
 Advanced permissions offers Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ for more details.
-
 ________
 
 Environment
@@ -2639,55 +2629,12 @@ _________
 
 Github 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-TODO
+Configure this plugin directly in the config.json file.  Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-github/blob/master/README.md>`_.
 _________
 
 Jira
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-JIRA (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~
-Enable JIRA
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: You can configure JIRA webhooks to post message in Mattermost. To help combat phishing attacks, all posts are labelled by a BOT tag.
-
-**False**: JIRA webhook integration is not enabled.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Enabled": false`` with options ``true`` and ``false`` for above settings respectively.                                  |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-User
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Select the username that this integration is attached to.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserName": ""`` with string input                                                                                       |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Secret
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The secret used to authenticate to Mattermost. Regenerating the secret for the webhook URL endpoint invalidates your existing JIRA integrations.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"Secret": ""`` with string input                                                                                         |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Note that to set up a JIRA integration via ``config.json``, you can use the following format in ``"PluginSettings:``:
-
-  .. code-block:: text
-
-    "Plugins": {
-        "jira": {
-            "Enabled": true,
-            "Secret": "k-ZtjoTrmIdPs7eAGjalDEK_3Q8r3gXJ",
-            "UserName": "jira"
-        }
-    }
-
-where ``Enabled``, ``Secret`` and ``UserName`` are specified above.
+Configure this plugin directly in the config.json file.  Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-jira/blob/master/README.md>`_.
 ________
 
 Net Promoter Score
@@ -2702,7 +2649,7 @@ _________
 
 Zoom
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-TODO
+Configure this plugin directly in the config.json file.  Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md>`_.
 _________
 
 Integrations
@@ -4220,7 +4167,7 @@ When running Mattermost in High Availablity mode, this setting should always be 
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false`` for above settings respectively. |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 
-Deprecated configuration settings
+Deprecated Configuration Settings
 -------
 
 Policy
