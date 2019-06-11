@@ -8,7 +8,8 @@ For instance, you may have a AD/LDAP group that contains your development team t
 
 Similarily, you may have a AD/LDAP group that contains your leadership team that you want to synchronize to a private channel for coordination and updates.  This feature will help control the membership of the channel so that users outside of the synchronized group are prevented from being added the channel mistakenly. 
 
-On teams that are managed by synchronized groups, users outside of the group are restricted from:  
+On teams that are managed by synchronized groups, users outside of the group are restricted from:
+
  - invitation through a team invite link 
  - Invations through email invite 
  
