@@ -47,7 +47,7 @@ Upload or remove license files.  For more information on Mattermost Licensing, p
 ________
 
 Reporting
--------
+---------
 View statistics for your overall deployment and specific teams as well as access server logs. 
 
 Site Statistics
@@ -64,7 +64,7 @@ View logging of server-side events.
 ________
 
 User Management
--------
+---------------
 Settings for managing users, user access, and permissions.
 
 Users
@@ -85,7 +85,7 @@ Advanced permissions offers Admins a way to restrict actions in Mattermost to au
 ________
 
 Environment
--------
+-----------
 Settings for configuring the network environment in which Mattermost is deployed.
 
 Web Server
@@ -1186,7 +1186,7 @@ IP address and domain name rules are applied before host resolution. CIDR rules 
 ____
 
 Site Configuration
--------
+-------------------
 Settings for customizing your Mattermost deployment.
 
 Customization
@@ -1677,7 +1677,7 @@ Using a Google API Key allows Mattermost to detect when a video is no longer ava
 ________
 
 File Sharing and Downloads
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Allow File Sharing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1732,7 +1732,7 @@ Public Link Salt
 _________
 
 Authentication
--------
+---------------
 Authentication settings to enable account creation and sign in with email, GitLab, Google or Office 365 OAuth, AD/LDAP, or SAML. 
 
 Signup
@@ -3013,7 +3013,7 @@ ________
 
 
 Custom Terms of Service (Beta) 
-~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Custom Terms of Service
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3042,7 +3042,7 @@ Defaults to 365 days. 0 indicates the terms do not expire.
 _________
 
 Experimental 
--------
+-------------
 There are a number of settings considered "experimental" that are configurable from the System Console. These may be replaced or removed in a future release.
 
 Features
@@ -3446,7 +3446,7 @@ This setting defines the number of seconds after which the user's status indicat
 _________
  
 Settings configurable only in config.json 
------------------------------------------
+-------------------------------------------
 
 There are a number of settings customizable in ``config.json`` unavailable in the System Console and require updating from the file itself.
 
@@ -4168,7 +4168,7 @@ When running Mattermost in High Availablity mode, this setting should always be 
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 
 Deprecated Configuration Settings
--------
+-----------------------------------
 
 Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
