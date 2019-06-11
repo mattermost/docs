@@ -5,19 +5,17 @@ Bot Accounts
 
 Use Bot Accounts to integrate with Mattermost through `plugins <https://developers.mattermost.com/extend/plugins/>`_ or the `Mattermost RESTful API <https://api.mattermost.com>`_. Bot accounts access the RESTful API on behalf of a bot through the use of the :doc:`personal access tokens feature <personal-access-tokens>`.
 
-// TODO screenshot. Waiting for bug fix where channel header is missing from bot DMs
-
 Bot accounts are just like user accounts, except they:
 
-  - Cannot be logged into, and bypass all restrictions related to authentication, such as multi-factor authentication (MFA) and custom terms of service.
+  - Cannot be logged into.
   - Cannot be used to create other bot accounts.
   - Do not count as a registered user and therefore do not count towards the total users for an Enterprise Edition license.
 
-Given bot accounts cannot be used to log in, they enable developers to create integrations that don’t require an email/password login or any other authentication method for their bots. This removes unnecessary attack surface caused by creating and in some cases circumventing authentication methods to create a bot account.
+Bot accounts are a safer way to integrate with Mattermost through the RESTful API and Plugin API because they cannot be used to log in. They enable developers to create integrations that don’t require an email/password login, removing an attack surface caused by creating and in some cases circumventing authentication methods to create a bot account.
 
 Additional benefits include:
 
-  - Bot accounts can post to any channel in the system, whether it’s a private team, private channel or a Direct Message channel. Access for bot accounts is controlled by System Administrators.
+  - Bot accounts can be enabled to post to any channel in the system by System Administrators, including a private team, private channel or a Direct Message channel.
   - Integrations created by a user and tied to a bot account no longer break if the user leaves the company.
   - Once created, bot accounts are available to everyone on your server, and can be added to teams and channels just like any regular user.
 
@@ -96,7 +94,7 @@ Technical Notes
 Data Model
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Each bot account has a row in the **Users** table. The entry is tied to a row in the **Bots** table by a ``UserId`` column.
+Each bot account has a row in the **Users** table and the **Bots** table. The entries are tied together by ``User.Id = Bot.UserId``.
 
 The Bots table schema is described as follows:
 
@@ -111,8 +109,6 @@ The Bots table schema is described as follows:
     "CreateAt", "Unix timestamp of creation time", "int64", "Y"
     "UpdateAt", "Unix timestamp of update time", "int64", "Y"
     "DeleteAt", "Unix timestamp of deletion time", "int64", "Y"
-
-The row in the Users table is used to track the bot’s other data, such as username.
 
 Frequently Asked Questions
 -----------------------------
@@ -145,6 +141,7 @@ How can I quickly test if my bot account is working?
 Add the bot to a team and channel you belong to, then use the following curl command to post with the bot.
 
 .. code-block:: text
+
   curl -i -X POST -H 'Content-Type: application/json' -d '{"channel_id":"<channel-id>", "message":"This is a message from a bot", "props":{"attachments": [{"pretext": "Look some text","text": "This is text"}]}}' -H 'Authorization: Bearer <bot-access-token>' <mattermost-url>/api/v4/posts
 
 replacing the following parameters:
@@ -166,6 +163,7 @@ Do bot accounts make it easier to personify someone else such as the CEO or an H
 Possibly yes. Currently a System Admin can disable overriding the profile picture and the username from integrations to help prevent personification, but this is not the case for bot accounts.
 
 Mitigations:
+
 - ``BOT`` tag is used everywhere in the UI where bot accounts are referenced, including messages and user lists.
 - For Direct Message channels, the channel header distinguishes the bot from a regular user account with a ``BOT`` tag.
 
