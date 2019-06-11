@@ -92,7 +92,7 @@ The port on which to connect to the Redis server. Defaults to `6379`.
 
 #### password
 
-The `password` attribute for Redis has to sub keys:
+The `password` attribute for Redis has two sub keys:
 - `secret` defines the name of the kubernetes `Secret` to pull from
 - `key` defines the name of the key in the above secret that contains the password.
 
