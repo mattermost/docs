@@ -66,6 +66,6 @@ FAQs
 
 Public channels are available to all members to 
 
-**Does a team with its membership managed by groups have any affect on public channel access?**
+**Does a team with its membership managed by groups have any effect on public channel access?**
 
 Only users that are members of groups synchronized to team are able to discover and join public channels.  Private channels can also be managed by synchronized groups when a team is managed by synchronized groups. 
