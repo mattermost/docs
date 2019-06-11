@@ -11,7 +11,7 @@ Similarly, you may have a AD/LDAP group that contains your leadership team that 
 On teams that are managed by synchronized groups, users outside of the group are restricted from:
 
  - invitation through a team invite link 
- - Invations through email invite 
+ - invitations through an email invite 
  
 Similarily on private channels that are managed by synchronized groups, users outside of the group are restricted from:
 
