@@ -127,7 +127,7 @@ What happens if a plugin is using a bot account that already exists as a user ac
 
 For a concrete example, suppose you enable the `Mattermost GitHub plugin <https://github.com/mattermost/mattermost-plugin-github>`_, which uses a ``github`` bot account, while an existing ``github`` user account was created for webhook integrations.
 
-Once the plugin is enabled, the plugin posts as the ``github`` account, but without converting it to a bot account. An error message is logged to the server logs recommending the System Admin to convert the ``github`` user to a bot account by running ``mattermost user convert <username> --bot`` in the CLI.
+Once the plugin is enabled, the plugin posts as the ``github`` account but without a `BOT` tag. An error message is logged to the server logs recommending the System Admin to convert the ``github`` user to a bot account by running ``mattermost user convert <username> --bot`` in the CLI.
 
 If the user is an existing user account you want to preserve, change its username and restart the Mattermost server, after which the plugin will create a bot account with the name ``github``.
 
