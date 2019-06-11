@@ -6,7 +6,7 @@ Mattermost groups created with `synchronized AD/LDAP groups <https://docs.matter
 
 For instance, you may have a AD/LDAP group that contains your development team that you want to synchronize to a developer team.  By using this feature, new developers will get added to the team when they are added to the synchronized AD/LDAP group and they will be removed from the team when removed from the AD/LDAP group. 
 
-Similarly, you may have a AD/LDAP group that contains your leadership team that you want to synchronize to a private channel for coordination and updates.  This feature will help control the membership of the channel so that users outside of the synchronized group are prevented from being added the channel mistakenly. 
+Similarly, you may have a AD/LDAP group that contains your leadership team that you want to synchronize to a private channel for coordination and updates.  This feature will help control the membership of the channel so that users outside of the synchronized group are prevented from being added to the channel mistakenly. 
 
 On teams that are managed by synchronized groups, users outside of the group are restricted from:
 
