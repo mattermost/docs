@@ -49,7 +49,7 @@ Team administrators can also remove groups from a team from **Main Menu > Manage
 
 Managing Members
 ----------
-Users are automatically removed from the team or private channel when removed from a synchronized AD/LDAP group that is managing the membership of that team or channel.  Additionally users who are not in the synchronized groups are prevented from being added through the `/invite`` and mention flows within a channel.  
+Users are automatically removed from the team or private channel when removed from a synchronized AD/LDAP group that is managing the membership of that team or channel.  Additionally, users who are not in the synchronized groups are prevented from being added through the ``/invite`` and mention flows within a channel.  
 
 A user can remove themselves from the team or from the private channel when it is managed by synchronized groups.  They can be added back by users who have permission to manage members for a team or private channel by using the ``/invite`` slash command or by mentioning the user in a channel.  
 
