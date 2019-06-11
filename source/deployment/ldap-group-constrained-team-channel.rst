@@ -44,7 +44,7 @@ Add or Remove Groups from Private Channels
 
 Once the management of the channel is converted to be managed by synchronized groups, a team admin can add additional groups from **Channel Menu > Add Groups to Channel**.  This will add users on the next AD/LDAP synchronization and any new users to the group will be added to the channel on subsequent synchronizations. 
 
-Team administrators can also remove groups from a team from **Main Menu > Manage Groups.  This will disassociate the group from the team.  Users are removed on the next AD/LDAP synchronization. 
+Team administrators can also remove groups from a team from **Main Menu > Manage Groups**. This will disassociate the group from the team. Users are removed on the next AD/LDAP synchronization. 
 
 
 Managing Members
