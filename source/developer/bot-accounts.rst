@@ -176,6 +176,13 @@ We strongly recommend creating new tokens for the bot, to ensure the user who wa
 
 If you prefer to have bot accounts remain enabled after user deactivation, set ``DisableBotsWhenOwnerIsDeactivated`` to ``false`` in your ``config.json`` file.
 
+If AD/LDAP or SAML sync is enabled, do bot accounts need to have an associated email address in AD/LDAP or SAML?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When AD/LDAP or SAML sync is enabled, you can create bot accounts using the steps outlined above. These bot accounts won't require an email address.
+
+If you need to sync service accounts from AD/LDAP or SAML to Mattermost and use them as bot accounts, `please reach out to us <https://mattermost.com/contact-us>`_ to discuss in detail. You may not need to sync service accounts and use them as bot accounts to meet your use case.
+
 How are bot accounts identified in compliance exports?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
