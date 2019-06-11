@@ -3,7 +3,7 @@ Net Promoter Score Plugin
 
 Mattermost is introducing in-product feedback surveys beginning in v5.12. Feedback is collected in the form of a Net Promoter Score survey, and is used to measure user satisfaction and improve product quality by hearing directly from users. 
 
-The Net Promoter Score (NPS) plugin is enabled by default but can be removed in the **System Console > Plugins (Beta) > Plugin Management** section. 
+The Net Promoter Score (NPS) plugin is enabled by default but can be removed in the **System Console > Plugins (Beta) > Net Promoter Score** section. 
 
 Administration
 --------------
@@ -18,10 +18,15 @@ Users will begin to receive surveys 21 days after the server is upgraded to v5.1
 - User has not been sent a survey in the last 90 days
 - Current server version is greater than the server version of the last NPS survey, excluding dot releases
 
-The above conditions mean that at maximim frequency, a user will receive a survey every 90 days assuming the server is upgraded in that time period. 
+The above conditions mean that at maximim frequency a user will receive a survey every 90 days, assuming the server is upgraded within that time period. 
 
-How can I stop the survey?
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+How will I be notified a survey is scheduled?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Email and DM
+
+How can I stop the surveys?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Removing or disabling the **Net Promoter Score** plugin from **System Console > Plugins (Beta) > Plugin Management** will stop surveys. Alternatively, you can disable surveys from the plugin configuration in **System Console > Plugins (Beta) > Net Promoter Score**. 
 
 Survey Data
