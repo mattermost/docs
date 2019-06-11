@@ -22,7 +22,7 @@ To convert a private channel:
 2. Convert the team to have its membership managed by synchronized groups by running the `group channel enable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-channel-enable>`_ .  
 
 .. note:: 
-   System console support to set teams and private channels to managing membership with group synchronization is coming estimated in the 5.14 (August 2019) release. 
+   System console support to set teams and private channels to managing membership with group synchronization is planned in the 5.14 (August 2019) release. 
 
 Add or Remove Groups from Teams
 ----------
