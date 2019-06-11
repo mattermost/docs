@@ -11,13 +11,12 @@ Bot accounts are just like user accounts, except they:
   - Cannot be used to create other bot accounts.
   - Do not count as a registered user and therefore do not count towards the total users for an Enterprise Edition license.
 
-Bot accounts are a safer way to integrate with Mattermost through the RESTful API and Plugin API because they cannot be used to log in. They enable developers to create integrations that don’t require an email/password login, removing an attack surface caused by creating and in some cases circumventing authentication methods to create a bot account.
-
 Additional benefits include:
 
   - Bot accounts can be enabled to post to any channel in the system by System Administrators, including a private team, private channel or a Direct Message channel.
   - Integrations created by a user and tied to a bot account no longer break if the user leaves the company.
-  - Once created, bot accounts are available to everyone on your server, and can be added to teams and channels just like any regular user.
+  - Once created, bot accounts behave just like regular user accounts and can be added to teams and channels similar to users.
+  - Bot accounts are a safer way to integrate with Mattermost through the RESTful API and Plugin API because there is no need to manage shared logins with these accounts.
 
 Note that currently:
 
