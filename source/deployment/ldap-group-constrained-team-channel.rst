@@ -53,7 +53,7 @@ Users are automatically removed from the team or private channel when removed fr
 
 A user can remove themselves from the team or from the private channel when it is managed by synchronized groups.  They can be added back by users who have permission to manage members for a team or private channel by using the ``/invite`` slash command or by mentioning the user in a channel.  
 
-Disabling group synchronized management of teams and private channels
+Disabling Group Synchronized Management of Teams and Private Channels
 ----------
 To remove the management of members by synchronized groups in a team, run the `group team disable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-disable>`_.
 
