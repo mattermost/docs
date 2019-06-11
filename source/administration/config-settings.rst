@@ -88,7 +88,6 @@ Groups offers admins a way to manage default teams and channels by linking AD/LD
 
 Permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
 *Available in Enterprise Edition E10 and higher*
 
 Advanced permissions offers Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ for more details.
