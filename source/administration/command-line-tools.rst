@@ -1358,7 +1358,7 @@ mattermost user convert
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Convert user to a bot account.
+    Convert a user to a bot. If converting multiple users, use a space-separated list.
 
   Format
     .. code-block:: none
