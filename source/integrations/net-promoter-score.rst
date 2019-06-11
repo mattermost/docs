@@ -9,7 +9,7 @@ Administration
 --------------
 When is the survey scheduled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Users will begin to receive surveys 21 days after the server is upgraded to v5.12 or later, assuming the following conditions are true:
+Users will receive surveys 21 days after the server is upgraded to v5.12 or later, assuming the following conditions are true:
 
 - NPS plugin is enabled in **System Console > Plugins (Beta) > Plugin Management**
 - NPS survey is enabled in the plugin configuration in **System Console > Plugins (Beta) > Net Promoter Score**
@@ -34,6 +34,10 @@ Survey Data
 
 How is feedback collected?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Not triggered if offline
+
+
 
 What data is collected?
 -----------------------
