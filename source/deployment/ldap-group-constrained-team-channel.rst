@@ -2,24 +2,32 @@
 
 Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership
 ===============================================================
-Mattermost groups created with synchronized AD/LDAP groups can be used to manage the membership of private teams and private channels. When a team or private channel is managed by synchronized groups, users will be added and removed based on their membership to the synchronized AD/LDAP group.  
+Mattermost groups created with `synchronized AD/LDAP groups <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ can be used to manage the membership of private teams and private channels. When a team or private channel is managed by synchronized groups, users will be added and removed based on their membership to the synchronized AD/LDAP group.  
 
-Users outside of the group are restricted from being invited through a team invite link or an email invite on teams that are managed by synchronized groups. Similarly, users outside of synchronized groups are restricted from being invited through a mention, the /invite slash command or directly with “add members” in channels.  Users, however, can remove themselves from teams and private channels managed by synchronized groups.  
+On teams that are managed by synchronized groups, users outside of the group are restricted from:  
+ - invitation through a team invite link 
+ - Invations through email invite 
+ 
+Similarily on private channels that are managed by synchronized groups, users outside of the group are restricted from:  
+ - invitation through a mention
+ - invitation through the /invite slash command 
+ - directly added to the channel with “add members”
 
+Users, however, can remove themselves from teams and private channels managed by synchronized groups.  
 
-Converting a Team or Channel to use Groups to Manage Membership 
+Managing Membership of a Team or Channel with Synchronized Groups
 ----------
 
-To convert a private team: 
+To manage membership of a private team with syncrhonized groups: 
 
 1. Ensure there is at least one group already associated to the team. You can view and add default teams to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_. Additionally, you can use the CLI tool to view if there is already a group associated to the team by running the `group team list CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-list>`_. 
-3. Ensure **Team Settings > General > Allow any user with an account on this server to join this team** is set to ``No``. 
-4. Convert the team to have its membership managed by synchronized groups by running the `group team enable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-enable>`_ .
+2. Ensure **Team Settings > General > Allow any user with an account on this server to join this team** is set to ``No``. 
+3. Convert the team to have its membership managed by synchronized groups by running the `group team enable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-enable>`_ .
 
-To convert a private channel: 
+To manage membership of a private channel with synchronized groups: 
 
 1. Ensure there is at least one group already associated to the channel. You can view and add default channels to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_. Additionally, you can use the CLI tool to view if there is already a group associated to the channel by running the `group channel list CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-list>`_. 
-2. Convert the team to have its membership managed by synchronized groups by running the `group channel enable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-channel-enable>`_ .  
+2.Convert the team to have its membership managed by synchronized groups by running the `group channel enable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-channel-enable>`_ .  
 
 .. note:: 
    System console support to set teams and private channels to managing membership with group synchronization is planned in the 5.14 (August 2019) release. 
@@ -47,15 +55,17 @@ A user can remove themselves from the team or from the private channel when it i
 
 Disabling group synchronized management of teams and private channels
 ----------
-To remove the management of members by synchronized groups in a team, run the `group team disable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-disable>`_ .
+To remove the management of members by synchronized groups in a team, run the `group team disable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-disable>`_.
 
-To remove the management of members by synchronized groups in a team, run the `group channel disable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-channel-disable>`_ .
+To remove the management of members by synchronized groups in a team, run the `group channel disable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-channel-disable>`_.
 
 
 FAQs
 ----------
-**Why aren’t public channels supported with this feature? **
+**Why aren’t public channels supported with this feature?**
+
 Public channels are available to all members to 
 
 **Does a team with its membership managed by groups have any affect on public channel access?**
+
 Only users that are members of groups synchronized to team are able to discover and join public channels.  Private channels can also be managed by synchronized groups when a team is managed by synchronized groups. 
