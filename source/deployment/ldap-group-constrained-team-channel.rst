@@ -64,7 +64,7 @@ FAQs
 ----------
 **Why aren’t public channels supported with this feature?**
 
-Public channels are available to all members to 
+Public channels are available to all members to discover and join. Managing membership with synchronized Groups removes the ability for public channels to be accessible to users on the team. Private channels typically require a more controlled membership management, which is why this feature applies to private channels. Groups can be assigned to public teams and public channels as described in `this documentation<https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_. 
 
 **Does a team with its membership managed by groups have any effect on public channel access?**
 
