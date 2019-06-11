@@ -37,7 +37,7 @@ Add or Remove Groups from Teams
 
 Once the management of the team is converted to be managed by synchronized groups, a team admin can add additional groups from **Main Menu > Add Groups to Team**.  This will add users on the next AD/LDAP synchronization and any new users to the group will be added to the team on subsequent synchronizations. 
 
-Team administrators can also remove groups from a team from **Main Menu > Manage Groups.  This will disassociate the group from the team.  Users are removed on the next AD/LDAP synchronization. 
+Team administrators can also remove groups from a team from **Main Menu > Manage Groups**. This will disassociate the group from the team. Users are removed on the next AD/LDAP synchronization.
 
 Add or Remove Groups from Private Channels
 ----------
