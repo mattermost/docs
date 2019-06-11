@@ -13,7 +13,8 @@ On teams that are managed by synchronized groups, users outside of the group are
  - invitation through a team invite link 
  - Invations through email invite 
  
-Similarily on private channels that are managed by synchronized groups, users outside of the group are restricted from:  
+Similarily on private channels that are managed by synchronized groups, users outside of the group are restricted from:
+
  - invitation through a mention
  - invitation through the /invite slash command 
  - directly added to the channel with “add members”
