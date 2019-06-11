@@ -33,18 +33,20 @@ About
 -------
 Settings for managing the edition and license for Mattermost Enterprise Edition.
 
-Edition
+Edition and License
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Edition
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 View the edition of the Mattermost deployment.  
 
 License
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 View subscription details including the number of users and expiry date of your Mattermost License.  
 
 License Key
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Upload or remove license files.  For more information on Mattermost Licensing, please see our `frequently asked questions about licensing <https://mattermost.com/pricing/#faq>`_.
-________
 
 Reporting
 ---------
@@ -61,7 +63,6 @@ View statistics per team on number of active users, as well as public and privat
 Server Logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 View logging of server-side events.
-________
 
 User Management
 ---------------
@@ -82,7 +83,6 @@ Permissions
 *Available in Enterprise Edition E10 and higher*
 
 Advanced permissions offers Admins a way to restrict actions in Mattermost to authorized users only. See `permissions documentation <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ for more details.
-________
 
 Environment
 -----------
@@ -106,9 +106,9 @@ If Site URL is not set, the following features will operate incorrectly:
  - authentication via OAuth 2.0, including GitLab, Google and Office 365, will fail
  - plugins may not work as expected
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                                                     |
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                    |                                             
++-------------------------------------------------------------------------------------------------------------------+
 
 Listen Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -244,7 +244,6 @@ The workflow for failover without downing the server is to change the database l
 Purge All Caches
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This button purges all the in-memory caches for sessions, accounts and channels. Deployments using High Availability will attempt to purge all the servers in the cluster. Purging the caches may adversely impact performance.
-________
 
 Database
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -341,8 +340,6 @@ This button reconnects to the database listed in the configuration settings. All
 
 The workflow for failover without downing the server is to change the database line in the config.json file, click **Reload Configuration from Disk** in the **Environment > Database** section, then click **Recycle Database Connections**.
 
-________
-
 Elasticsearch
 ~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
@@ -418,9 +415,8 @@ Enable Elasticsearch for autocomplete queries
 **False**: Database autocomplete is used.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false`` for above settings respectively.                          |
+| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false`` for above settings respectively.                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 File Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -612,7 +608,6 @@ See the `documentation <https://docs.mattermost.com/administration/image-proxy.h
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RemoteImageProxyOptions": ""`` with string input.                      |
 +---------------------------------------------------------------------------------------------------------------------+
-________
 
 SMTP
 ~~~~~~~~~~~~~~
@@ -696,8 +691,6 @@ Enable Security Alerts
 | This feature's ``config.json`` setting is ``"EnableSecurityFixAlert": true`` with options ``true`` and ``false`` for above settings respectively.                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-________ 
-
 Push Notification Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable Push Notifications
@@ -756,8 +749,6 @@ If you did not receive an alert:
 2. Repeat the above steps.
 3. Go to **System Console > Logs** and copy the log output into a file.
 4. For Enterprise Edition customers, `submit a support request with the file attached <https://mattermost.zendesk.com/hc/en-us/requests/new>`__. For Team Edition users, please start a thread in the `Troubleshooting forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__ for peer-to-peer support.
-
-________ 
 
 .. _high-availability:
 
@@ -867,8 +858,6 @@ A list of all the machines in the cluster, separated by commas, for example, ``[
 | This feature’s ``config.json`` setting is ``"InterNodeUrls": []`` with string input. |
 +--------------------------------------------------------------------------------------+
 
-________________________________________________________________________________________________________________________________________________________________________
-
 Rate Limiting
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Changing properties in this section will require a server restart before taking effect.
@@ -938,7 +927,6 @@ Vary rate limiting by HTTP header field specified (e.g. when configuring Ngnix s
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"VaryByHeader": ""`` with string input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 Logging
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1056,8 +1044,6 @@ Enable Diagnostics and Error Reporting
 | This feature's ``config.json`` setting is ``"EnableDiagnostics": true`` with options ``true`` and ``false`` for above settings respectively.                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-________
-
 Session Lengths
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 User sessions are cleared when a user tries to log in. Additionally, a job runs every 24 hours to clear sessions from the sessions database table. 
@@ -1068,9 +1054,9 @@ Set the number of days from the last time a user entered their credentials to th
 
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthWebInDays" : 180`` with whole number input.                                                                 |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthWebInDays" : 180`` with whole number input.        |                                                             
++--------------------------------------------------------------------------------------------------------------+
 
 Session length for mobile apps (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1078,9 +1064,9 @@ Set the number of days from the last time a user entered their credentials to th
 
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthMobileInDays" : 180`` with whole number input.                                                              |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthMobileInDays" : 180`` with whole number input.    |                                                        
++-------------------------------------------------------------------------------------------------------------+
 
 Session length for SSO authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1106,10 +1092,9 @@ The number of minutes from the last time a user was active on the system to the 
 
 Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionIdleTimeoutInMinutes" : 43200`` with whole number input.                                                             |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionIdleTimeoutInMinutes" : 43200`` with whole number input.    |                                                       
++-----------------------------------------------------------------------------------------------------------------+
 
 Performance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1132,7 +1117,6 @@ The address the Mattermost server will listen on to expose performance metrics.
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"InterNodeListenAddress": ":8067"`` with string input.                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 Developer
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1183,7 +1167,6 @@ IP address and domain name rules are applied before host resolution. CIDR rules 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AllowedUntrustedInternalConnections": ""`` with string input.                                                           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-____
 
 Site Configuration
 -------------------
@@ -1312,7 +1295,6 @@ Configurable link to download the iOS app. When a link is present, users who acc
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IosAppDownloadLink": "https://about.mattermost.com/mattermost-ios-app/"`` with string input.                                                            |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 Localization
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1342,7 +1324,6 @@ Sets which languages are available for users in **Account Settings** > **Display
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AvailableLocales": ""`` with options ``""``, ``de``, ``en``, ``es``, ``fr``, ``it``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ro``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 Users and Teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1393,7 +1374,7 @@ Allow Team Administrators to edit others posts
 **False**:  Only System Administrators can edit other users' posts.
 
 .. note::
-This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.   
+   This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.   
 
 
 Enable Team Directory
@@ -1441,7 +1422,6 @@ Show Full Name
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ShowFullName": true`` with options ``true`` and ``false`` for above settings respectively.                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 Notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1549,7 +1529,6 @@ Push Notification Contents
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PushNotificationContents": "generic"`` with options ``generic_no_channel``, ``generic`` and ``full`` for above settings respectively.           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 Announcement Banner
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1604,7 +1583,6 @@ Allow Banner Dismissal
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``""AllowBannerDismissal": true`` with options ``true`` and ``false``.  |
 +-------------------------------------------------------------------------------------------------------------------+
-________
 
 Emoji
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1643,7 +1621,6 @@ Restrict Custom Emoji Creation
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictCustomEmojiCreation": "all"`` with options ``all``, ``admin`` and ``system_admin`` for above settings respectively. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 Posts
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1674,7 +1651,6 @@ Using a Google API Key allows Mattermost to detect when a video is no longer ava
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GoogleDeveloperKey": ""`` with string input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 File Sharing and Downloads
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1706,7 +1682,6 @@ When false, disables file downloads on mobile apps. Users can still download fil
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMobileDownload": true`` with options ``true`` and ``false``.     |
 +---------------------------------------------------------------------------------------------------------------------+
-________
 
 Public Links
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1729,7 +1704,6 @@ Public Link Salt
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PublicLinkSalt": ""``  with string input.                                                                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-_________
 
 Authentication
 ---------------
@@ -1794,7 +1768,6 @@ Enable Team Creation
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableTeamCreation": true`` with options ``true`` and ``false`` for above settings respectively.                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-_________
 
 Email
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1841,7 +1814,6 @@ Enable sign-in with username
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``EnableSignInWithUsername": true`` with options ``true`` and ``false`` for above settings respectively.                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-_________
 
 Password
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1852,9 +1824,9 @@ Minimum Password Length
 
 Minimum number of characters required for a valid password. Must be a whole number greater than or equal to 5 and less than or equal to 64.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MinimumLength": 10”`` with whole number input.                                                                           |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MinimumLength": 10”`` with whole number input.              |                                                            
++----------------------------------------------------------------------------------------------------------+
 
 Password Requirements
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1885,7 +1857,6 @@ Failed login attempts allowed before a user is locked out and required to reset 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaximumLoginAttempts": 10`` with whole number input.                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 MFA
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1918,7 +1889,6 @@ Enforce Multi-factor Authentication
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false`` for above settings respectively.         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2187,8 +2157,6 @@ You can monitor the status of the synchronization job in the table below this bu
 
 .. figure:: ../images/ldap-sync-table.png
 
-________
-
 .. _saml-enterprise:
 
 SAML
@@ -2389,7 +2357,7 @@ Adds the name associated with a user's Scoping Identity Provider ID.
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ScopingIDPName": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-_________
+
 OAuth 2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E10 and higher*
@@ -2463,8 +2431,6 @@ Enter ``https://<your-gitlab-url>/oauth/token`` (example: ``https://example.com:
 | This feature's ``config.json`` setting is ``"TokenEndpoint": ""`` with string input.                                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-________
-
 Google
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
@@ -2518,8 +2484,6 @@ It is recommended to use `https://www.googleapis.com/oauth2/v4/token` as the Tok
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TokenEndpoint": "https://www.googleapis.com/oauth2/v4/token"`` with string input.                                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-________
 
 Office 365
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2578,7 +2542,6 @@ It is recommended to use `https://login.microsoftonline.com/common/oauth2/v2.0/t
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token"`` with string input.                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 Plugins (Beta)
 --------------------------------
@@ -2615,42 +2578,34 @@ Lists installed plugins on your Mattermost server. Pre-packaged plugins are inst
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PluginStates": {}`` with string input.                                                                                  | 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 Autolink
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Configure this plugin directly in the config.json file.  Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-autolink/blob/master/README.md>`_.
-_________
 
 Custom User Attributes
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Configure this plugin directly in the config.json file.  Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-custom-attributes/blob/master/README.md>`_.
-_________
 
 Github 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Configure this plugin directly in the config.json file.  Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-github/blob/master/README.md>`_.
-_________
 
 Jira
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Configure this plugin directly in the config.json file.  Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-jira/blob/master/README.md>`_.
-________
 
 Net Promoter Score
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 TODO
-_________
 
 Welcome Bot
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Configure this plugin directly in the config.json file.  Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-welcomebot/blob/master/README.md>`_.
-_________
 
 Zoom
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Configure this plugin directly in the config.json file.  Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-zoom/blob/master/README.md>`_.
-_________
 
 Integrations
 --------------------------------
@@ -2765,8 +2720,6 @@ To manage who can create personal access tokens or to search users by token ID, 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUserAccessTokens": false`` with options ``true`` and ``false`` for above settings respectively.                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
-
 
 GIF (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2799,8 +2752,6 @@ The API secret generated by Gfycat for your API key. When blank, uses the defaul
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GfycatApiSecret": "3wLVZPiswc3DnaiaFoLkDvB4X0IV6CpMkj4tf2inJRsBY6-FnkT08zGmppWFgeof"`` with string input.  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-________
 
 CORS 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2843,7 +2794,6 @@ CORS Debug
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"CorsDebug": false`` with options ``true`` and ``false`` for above settings respectively.                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 Compliance
 --------------------------------
@@ -2974,8 +2924,6 @@ This button initiates a Compliance Export job immediately.
 
 You can monitor the status of the job in the compliance export job table below this button.
 
-_________
-
 Compliance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
@@ -3009,8 +2957,6 @@ Enable Daily Report
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableDaily": false`` with options ``true`` and ``false`` for above settings respectively.                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-________
-
 
 Custom Terms of Service (Beta) 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3039,7 +2985,6 @@ Re-Acceptance Period
 The number of days before Terms of Service acceptance expires, and the terms must be re-accepted.
 
 Defaults to 365 days. 0 indicates the terms do not expire.
-_________
 
 Experimental 
 -------------
@@ -3443,7 +3388,6 @@ This setting defines the number of seconds after which the user's status indicat
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with whole number input.                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-_________
  
 Settings configurable only in config.json 
 -------------------------------------------
@@ -3676,7 +3620,6 @@ Specifies the connection strings for the search replica databases. A search repl
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSourceSearchReplicas": []`` with a comma-separated list of database connection strings as input. |
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
-________
 
 File Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3734,7 +3677,6 @@ By default, Mattermost uses Signature V4 to sign API calls to AWS, but under som
 +------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3SignV2": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
-________
 
 GitLab Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3746,8 +3688,6 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 | This feature's ``config.json`` setting is ``"Scope": ""`` with string input.                                                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-________
-
 Google Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Scope
@@ -3758,8 +3698,6 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 | This feature's ``config.json`` setting is ``"Scope": "profile email"`` with string input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-________
-
 Office 365 Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Scope
@@ -3769,7 +3707,6 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input                                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Cluster Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -3797,8 +3734,6 @@ The number of milliseconds to leave an idle connection open between servers in t
 | This feature's ``config.json`` setting is ``"IdleConnTimeoutMilliseconds": 90000`` with whole number input.                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-________
-
 Metrics Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Block Profile Rate
@@ -3814,7 +3749,7 @@ To include every blocking event in the profile, set the rate to 1. To turn off p
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Experimental Settings only in config.json
------------------------
+-----------------------------------------
 
 Service Settings
 ~~~~~~~~~~~~~~~~~
@@ -4079,8 +4014,6 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with whole number input     |
 +-----------------------------------------------------------------------------------------------------------------+
 
-________
-
 Message Export Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -4131,8 +4064,6 @@ The location of the plugin files. If blank, they are stored in the ./plugins dir
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Directory": "./plugins"`` with string input.                       |
 +-----------------------------------------------------------------------------------------------------------------+
-
-------
 
 Jobs
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -4364,8 +4295,6 @@ When post editing is permitted, setting ``"PostEditTimeLimit": -1`` allows editi
 +--------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PostEditTimeLimit": -1`` with whole number input.   |
 +--------------------------------------------------------------------------------------------------+
-
-________
 
 Images
 ~~~~~~~~~~~~~~~~~~~~~~~~~
