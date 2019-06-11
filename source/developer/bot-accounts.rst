@@ -37,7 +37,7 @@ Configuration Settings
 By default, plugins can create and manage bot accounts. To enable bot account creation through the user interface or the RESTful API:
 
 1. Go to **System Console > Integrations > Integration Features**.
-2. Set **Enable Bot Account Creation** to true.
+2. Set **Enable Bot Account Creation** to True.
 
 Once set, System Administrators can create bot accounts for integrations in **Integrations > Bot Accounts**.
 
