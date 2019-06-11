@@ -64,7 +64,7 @@ Disabling Group Synchronized Management of Teams and Private Channels
 ----------
 To remove the management of members by synchronized groups in a team, run the `group team disable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-disable>`_.
 
-To remove the management of members by synchronized groups in a team, run the `group channel disable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-channel-disable>`_.
+To remove the management of members by synchronized groups in a channel, run the `group channel disable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-channel-disable>`_.
 
 
 FAQs
