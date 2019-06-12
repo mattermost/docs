@@ -2,7 +2,7 @@ Configuration Settings Prior to v5.12
 ============================
 
 .. note::
-   This page is a reference to the organization of the configuration settings prior to the reorganization of the System Console in the June 16th, 2019 release.  To view the configuration settings based on the organization of the System Console in versions v5.12 and later, please see this `documentation <>`_.
+   This page is a reference to the organization of the configuration settings prior to the reorganization of the System Console in the June 16th, 2019 release.  To view the configuration settings based on the organization of the System Console in versions v5.12 and later, please see this `documentation <https://docs.mattermost.com/administration/config-settings.html>`_.
 
 Mattermost configuration settings are maintained in the configuration file ``config.json``, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
 
