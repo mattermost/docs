@@ -21,7 +21,7 @@ Users will receive surveys 21 days after the server is upgraded to v5.12 or late
 
 - NPS plugin is enabled in **System Console > Plugins (Beta) > Plugin Management**
 - NPS survey is enabled in the plugin configuration in **System Console > Plugins (Beta) > Net Promoter Score**
-- User account is >= 21 days old
+- User account is greater than 21 days old
 - User has not completed a survey in the last 90 days
 - User has not been sent a survey in the last 90 days
 - Current server version is greater than the server version of the last NPS survey, excluding dot releases
@@ -53,38 +53,17 @@ Data is only collected when a user selects a score or provides written feedback 
 
 `score` or `feedback`: feedback in response to the survey
 
+- Survey information:
+  - `score`: 0-10 score submitted by the user
+  - `feedback`: Written feedback submitted by the user (if applicable)
+  - `timestamp`: Timestamp of the survey submission
 - Basic information about the server: 
   - `server_version`: Server/webapp version the survey was submitted on
   - `server_install_date`: Installation date of the server
   - `server_id`: Diagnostic ID used for error and diagnostics reporting
+  - `license_id`: License ID used for error and diagnostics reporting
   - `license_sku`: E10 or E20 (if applicable)
-  - `license_id`: 
 - Basic information about the user:
   - `user_role`: System Admin, Team Admin or member
   - `user_create_at`: Account creation timestamp
   - `user_id`: User ID of the surveyed user
-- Survey information:
-  - `score` - The score from 0-10 (inclusive) as a number
-  - `feedback` - The written feedback submitted by the user
-  - `timestamp`: Timestamp of the survey submission
-
-
-
-
-
-
-Who will be surveyed (all users)
-When the surveys are taking place with enough notice to disable them
-Schedule of surveys (ie every 3 months if admins are upgrading)
-Visibility of the admin alerts (ie that only Sys Admins can see them)
-Mechanism of the survey (ie bot)
-Summary of what is collected (and how it’s GDPR compliant?)
-How it will be used to improve the product/benefits to customers
-
-
-
-Data collected
-
-How to disable
-
-What we do with the 
