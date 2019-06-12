@@ -10,6 +10,7 @@ consider using our [Omnibus GitLab package](./external-omnibus-gitaly.md).
 Disable the `gitaly` chart and the Gitaly service it provides, and point the other services to the external service.
 
 You need to set the following parameters:
+
 * `gitlab.gitaly.enabled`: Set to `false` to disable the included Gitaly chart.
 * `global.gitaly.host`: Set to the hostname of the external Gitaly, can be a domain or an IP address.
 * `global.gitaly.authToken.secret`: The name of the [secret which contains the token for authentication][gitaly-secret].
@@ -19,6 +20,7 @@ You need to set the following parameters:
 
 
 Items below can be further customized if you are not using the defaults:
+
 * `global.gitaly.port`: The port the database is available on, defaults to `8075`
 
 For example, pass these values via helm's `--set` flag while deploying:
