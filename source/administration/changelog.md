@@ -111,7 +111,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added ``"TrustedProxyIPHeader": []``, to explicitly define which IP headers are trusted.
 
 ### Database Changes
- - 
+ - `SchemeGuest` column added to the `TeamMembers` table.
+ - `SchemeGuest` column added to the `ChannelMembers` table.
+ - `DefaultTeamGuestRole` column added to the `Schemes` table, and set to an empty string.
+ - `DefaultChannelGuestRole` column added to the `Schemes` table, and set to an empty string.
 
 ### API Changes
 
