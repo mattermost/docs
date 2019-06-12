@@ -9,8 +9,8 @@ Is the survey enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The Net Promoter Score (NPS) plugin and surveys are enabled by default on all servers that have `Error and Diagnostic Reporting <https://docs.mattermost.com/administration/telemetry.html>`_ enabled when upgrading to v5.12 or later. 
 
-How can I disable the surveys?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How can surveys be disabled?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Removing or disabling the **Net Promoter Score** plugin from **System Console > Plugins (Beta) > Plugin Management** will disable surveys. Alternatively, you can disable surveys from the plugin configuration in **System Console > Plugins (Beta) > Net Promoter Score**. 
 
 If the plugin or surveys are disabled, they will remain disabled for subsequent server upgrades.
@@ -38,8 +38,8 @@ XXXXXX Image
 Survey Data
 -----------
 
-How is survey received?
-~~~~~~~~~~~~~~~~~~~~~~~
+How is the survey received?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Once the survey window has opened, all users will receive an in-product Direct Messages from "Surveybot" on their next interactation with Mattermost. Surveys are not sent to users who are offline.
 
@@ -48,10 +48,8 @@ Users can optionally select a 0-10 score on how likely they are to recommend Mat
 XXXXXX Image
 
 What data is collected?
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 Data is only collected when a user selects a score or provides written feedback in response to survey questions. The following non-personally identifiable data is collected:
-
-`score` or `feedback`: feedback in response to the survey
 
 - Survey information:
   - `score`: 0-10 score submitted by the user
