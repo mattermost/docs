@@ -33,7 +33,7 @@ How will I be notified a survey is scheduled?
 
 System Administrators will receive an email notification and in-product Direct Message from "Surveybot" mentioning the scheduled date the survey will be triggered.
 
-XXXXXX Image
+.. image:: ../images/nps-admin.png
 
 Survey Data
 -----------
@@ -41,11 +41,11 @@ Survey Data
 How is the survey received?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once the survey window has opened, all users will receive an in-product Direct Messages from "Surveybot" on their next interactation with Mattermost. Surveys are not sent to users who are offline.
+Once the survey is triggered on the server, all users will receive an in-product Direct Messages from "Surveybot" on their next interactation with Mattermost. Surveys are not sent to users who are offline.
 
 Users can optionally select a 0-10 score on how likely they are to recommend Mattermost and then provide written feedback about their expereince. Selecting a score and providing feedback are optional, and the survey can be ignored without interupting usage of Mattermost.
 
-XXXXXX Image
+.. image:: ../images/nps-survey.png
 
 What data is collected?
 ~~~~~~~~~~~~~~~~~~~~~~~
