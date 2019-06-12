@@ -76,6 +76,7 @@ Tables below contain all the possible charts configurations that can be supplied
 | global.shell.hostKeys  | Secret containing SSH host keys          |         |
 
 ## RBAC Settings
+
 | Parameter                                    | Description                                                       | Default                      |
 | ---                                          | ---                                                               | ---                          |
 | certmanager.rbac.create                      | Create and use RBAC resources                                     | true                         |
@@ -268,7 +269,7 @@ See [nginx-ingress chart](../charts/nginx/index.md)
 | gitlab-runner.runners.image                         | default container image to use in builds       | ubuntu:16.04                                               |
 | gitlab-runner.runners.imagePullSecrets              | imagePullSecrets                               | []                                                         |
 | gitlab-runner.runners.privileged                    | run in privieleged mode,needed for `dind`      | false                                                      |
-| gitlab-runner.runners.namespace                     | numespace to run jobs in                       | default                                                    |
+| gitlab-runner.runners.namespace                     | namespace to run jobs in                       | default                                                    |
 | gitlab-runner.runners.cache.cacheType               | cache type                                     | s3                                                         |
 | gitlab-runner.runners.cache.s3BucketName.           | name of the bucket                             | runner-cache                                               |
 | gitlab-runner.runners.cache.cacheShared             | share the cache between runners                | true                                                       |
