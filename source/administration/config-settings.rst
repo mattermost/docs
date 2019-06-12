@@ -3432,7 +3432,7 @@ Specified headers that will be checked one by one for IP addresses (order is imp
 
 New configs after v5.12 will have this set by default to ``[]``, meaning that no header will be trusted. Configs prior to v5.12 without the config entry will have it set to ``X-Forwarded-By``, ``X-Real-Ip`` to maintain backwards compatibility as an authority to what the client's IP address is. 
 
-We recommend setting this to explicitly define the headers when Mattermost is running without a proxy, to avoid the client sending the headers and bypassing rate limiting and/or the audit log. For environments that use a reverse proxy this problem does not exist, if the headers are set by NGINX itself. However, if X-Real-Ip is used and X-Forwarded-By is not filtered by the proxy it will essentially be overwritten.
+We recommend keeping the default setting when Mattermost is running without a proxy, to avoid the client sending the headers and bypassing rate limiting and/or the audit log. For environments that use a reverse proxy this problem does not exist, if the headers are set by NGINX itself. In those environments only explicitly whitelist the header that is set by the reverse proxy and no additional values.
 
 +---------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``TrustedProxyIPHeader`` with string array input.       |

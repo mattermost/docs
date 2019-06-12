@@ -8,6 +8,8 @@ Overview
 
 The groups feature is useful for organizations that have many new users to onboard or that onboard users frequently and want to ensure users are added to default teams and channels that are pertinent to them. The group feature currently supports creating groups by synchronization with your AD/LDAP system groups. AD/LDAP nested groups are also supported.  Please see `this forum post <https://forum.mattermost.org/t/ldap-group-sync-alpha-release/6351>`__ for more details.  
 
+Synchronized groups can also be used to manage the membership of teams and private channels. See `this documentation <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`_ for more information. 
+
 Pre-installation notes
 ----------------------
 
@@ -107,6 +109,8 @@ It may take a few seconds to load all team and channel memberships for a user de
 
 .. image:: ../images/Team_Channel_Membership_Sync.png
 
+To manage a team or private channel with synchronized groups, please see `this documentation <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`_.
+
 Remove configured teams and channels from a group
 -------------------------------------------------
 To remove a team or channel configured for a group, click “Remove” to the right of the team or channel name. Users already part of the team and channel will not be removed from that channel by this action. 
@@ -162,3 +166,7 @@ How do nested groups work with AD/LDAP Group Sync?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Users within nested groups are included as members of parent groups. The group filter that you specify can include any type of AD/LDAP group on your system. The ``member`` AD/LDAP attribute is used to determine nested groups that belong to a parent group.
+
+How do I manage a team or private channel membership with synchronized groups?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can do so by setting the team or channel management to synced groups instead defaulting a group to a team or channel. See `this documentation <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`_ to learn more
