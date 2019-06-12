@@ -3,10 +3,18 @@ Net Promoter Score Plugin
 
 Mattermost is introducing in-product feedback surveys beginning in v5.12. Feedback is collected in the form of a Net Promoter Score survey, and is used to measure user satisfaction and improve product quality by hearing directly from users. 
 
-The Net Promoter Score (NPS) plugin is enabled by default but can be removed in the **System Console > Plugins (Beta) > Net Promoter Score** section. 
-
 Administration
 --------------
+Is the survey enabled by default?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Net Promoter Score (NPS) plugin and surveys are enabled by default on all servers that have `Error and Diagnostic Reporting <https://docs.mattermost.com/administration/telemetry.html>`_ enabled when upgrading to v5.12 or later. 
+
+How can I disable the surveys?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Removing or disabling the **Net Promoter Score** plugin from **System Console > Plugins (Beta) > Plugin Management** will disable surveys. Alternatively, you can disable surveys from the plugin configuration in **System Console > Plugins (Beta) > Net Promoter Score**. 
+
+If the plugin or surveys are disabled, they will remain disabled for subsequent server upgrades.
+
 When is the survey scheduled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Users will receive surveys 21 days after the server is upgraded to v5.12 or later, assuming the following conditions are true:
@@ -23,40 +31,48 @@ The above conditions mean that at maximim frequency a user will receive a survey
 How will I be notified a survey is scheduled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Email and DM
+System Administrators will receive an email notification and in-product Direct Message from "Surveybot" mentioning the scheduled date the survey will be triggered.
 
-How can I stop the surveys?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Removing or disabling the **Net Promoter Score** plugin from **System Console > Plugins (Beta) > Plugin Management** will stop surveys. Alternatively, you can disable surveys from the plugin configuration in **System Console > Plugins (Beta) > Net Promoter Score**. 
+XXXXXX Image
 
 Survey Data
 -----------
 
-How is feedback collected?
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+How is survey received?
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Not triggered if offline
+Once the survey window has opened, all users will receive an in-product Direct Messages from "Surveybot" on their next interactation with Mattermost. Surveys are not sent to users who are offline.
 
+Users can optionally select a 0-10 score on how likely they are to recommend Mattermost and then provide written feedback about their expereince. Selecting a score and providing feedback are optional, and the survey can be ignored without interupting usage of Mattermost.
 
+XXXXXX Image
 
 What data is collected?
 -----------------------
-Data is only collected when a user submits feedback by responding to the survey questions. 
+Data is only collected when a user selects a score or provides written feedback in response to survey questions. The following non-personally identifiable data is collected:
+
+`score` or `feedback`: feedback in response to the survey
+
+- Basic information about the server: 
+  - `server_version`: Server/webapp version the survey was submitted on
+  - `server_install_date`: Installation date of the server
+  - `server_id`: Diagnostic ID used for error and diagnostics reporting
+  - `license_sku`: E10 or E20 (if applicable)
+  - `license_id`: 
+- Basic information about the user:
+  - `user_role`: System Admin, Team Admin or member
+  - `user_create_at`: Account creation timestamp
+  - `user_id`: User ID of the surveyed user
+- Survey information:
+  - `score` - The score from 0-10 (inclusive) as a number
+  - `feedback` - The written feedback submitted by the user
+  - `timestamp`: Timestamp of the survey submission
 
 
 
 
 
-System Console > Plugins (Beta) > Plugin Management
 
-
-
-
-
-Disabled if Telemetry is disabled
-
-What is NPS
-It can be disabled and how to disable it
 Who will be surveyed (all users)
 When the surveys are taking place with enough notice to disable them
 Schedule of surveys (ie every 3 months if admins are upgrading)
