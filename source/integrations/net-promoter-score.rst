@@ -31,7 +31,7 @@ Users will receive surveys 21 days after the server is upgraded to v5.12 or late
 - User has not been sent a survey in the last 90 days
 - Current server version is greater than the server version of the last NPS survey, excluding dot releases
 
-The above conditions mean that at maximim frequency a user will receive a survey every 90 days, assuming the server is upgraded within that time period. 
+The above conditions mean that at maximum frequency a user will receive a survey every 90 days, assuming the server is upgraded within that time period. 
 
 How will I be notified a survey is scheduled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
