@@ -2597,7 +2597,7 @@ Configure this plugin directly in the config.json file.  Learn more `in our docu
 
 Net Promoter Score
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-TODO
+Configure this plugin directly in the config.json file. Learn more in our documentation <https://docs.mattermost.com/integrations/net-promoter-score.html>_.
 
 Welcome Bot
 ~~~~~~~~~~~~~~~~~~~~~~~~~
