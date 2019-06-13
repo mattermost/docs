@@ -57,16 +57,16 @@ What data is collected?
 Data is only collected when a user selects a score or provides written feedback in response to survey questions. The following non-personally identifiable data is collected:
 
 - Survey information:
-   - ``score``: 0-10 score submitted by the user
-   - ``feedback``: Written feedback submitted by the user (if applicable)
-   - ``timestamp``: Timestamp of the survey submission
+   - Score (0-10) submitted by the user
+   - Written feedback submitted by the user (if applicable)
+   - Timestamp of the survey submission
 - Server information: 
-   - ``server_version``: Server/webapp version the survey was submitted on
-   - ``server_install_date``: Installation date of the server
-   - ``server_id``: Diagnostic ID used for error and diagnostics reporting
-   - ``license_id``: License ID used for error and diagnostics reporting
-   - ``license_sku``: E10 or E20 (if applicable)
+   - Server/webapp version the survey was submitted on
+   - Installation date of the server
+   - Diagnostic ID used for error and diagnostics reporting
+   - License ID used for error and diagnostics reporting (if applicable)
+   - E10 or E20 (if applicable)
 - User information:
-   - ``user_role``: System Admin, Team Admin or member
-   - ``user_create_at``: Account creation timestamp
-   - ``user_id``: User ID of the surveyed user
+   - User role (System Admin, Team Admin or member)
+   - Account creation timestamp
+   - User ID of the surveyed user
