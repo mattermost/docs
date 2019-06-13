@@ -1,7 +1,7 @@
 Net Promoter Score Plugin
 =========================
 
-Mattermost is introducing in-product feedback surveys beginning in v5.12. Feedback is collected in the form of a Net Promoter Score survey, and is used to measure user satisfaction and improve product quality by hearing directly from users. 
+Mattermost is introducing in-product feedback surveys beginning in v5.12. Feedback is collected in the form of a Net Promoter Score survey and is used to measure user satisfaction and improve product quality by hearing directly from users. 
 
 .. contents::
   :depth: 2
