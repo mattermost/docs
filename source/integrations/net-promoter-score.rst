@@ -1,7 +1,7 @@
 Net Promoter Score Plugin
 =========================
 
-Mattermost is introducing in-product feedback surveys beginning in v5.12. Feedback is collected in the form of a Net Promoter Score survey and is used to measure user satisfaction and improve product quality by hearing directly from users. 
+Mattermost is introducing in-product feedback surveys beginning in v5.12. Feedback is collected in the form of a Net Promoter Score survey and is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://mattermost.com/privacy-policy/>`_ for more information on the collection and use of information received through our services.
 
 .. contents::
   :depth: 2
@@ -70,3 +70,8 @@ Data is only collected when a user selects a score or provides written feedback 
    - User role (System Admin, Team Admin or member)
    - Account creation timestamp
    - User ID of the surveyed user
+
+Will this data be sent through my firewall?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+XXXXXX Harrsion can you add some details here on how this works in a firewall? I imagine they would need to configure it to allow connections for this plugin otherwise it will be blocked?
