@@ -16,9 +16,9 @@ The Net Promoter Score (NPS) plugin and surveys are enabled by default on all se
 
 How can surveys be disabled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Removing or disabling the **Net Promoter Score** plugin from **System Console > Plugins (Beta) > Plugin Management** will disable surveys. Alternatively, you can disable surveys from the plugin configuration in **System Console > Plugins (Beta) > Net Promoter Score**. 
+Disabling the **Net Promoter Score** plugin from **System Console > Plugins (Beta) > Plugin Management** will disable surveys and all data collection by the plugin. If surveys have been disabled from the plugin configuration in **System Console > Plugins (Beta) > Net Promoter Score** but the plugin itself is still enabled, surveys will not be scheduled but users can still send written feedback by messaging Surveybot.
 
-If the plugin or surveys are disabled, they will remain disabled for subsequent server upgrades.
+If the plugin or surveys in the plugin configuration are disabled, they will remain disabled for subsequent server upgrades.
 
 When is the survey scheduled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
