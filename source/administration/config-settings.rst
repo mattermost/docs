@@ -1605,8 +1605,18 @@ Set the number of days from the last time a user entered their credentials to th
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthWebInDays" : 180`` with whole number input.                                                                 |
+| This feature's ``config.json`` setting is ``"SessionLengthWebInDays" : 180`` with whole number input.                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Session length for web (days)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Set the number of days from the last time a user entered their credentials to the expiry of the user's session on the web app.
+
+After changing this setting, the new session length will take effect after the next time the user enters their credentials.
+
++-------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthWebInDays" : 180`` with whole number input.       |                                                        
++-------------------------------------------------------------------------------------------------------------+
 
 Session length for mobile apps (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1615,7 +1625,7 @@ Set the number of days from the last time a user entered their credentials to th
 After changing this setting, the new session length will take effect after the next time the user enters their credentials.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SessionLengthMobileInDays" : 180`` with whole number input.                                                              |
+| This feature's ``config.json`` setting is ``"SessionLengthMobileInDays" : 180`` with whole number input.                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Session length for GitLab SSO authentication (days)
