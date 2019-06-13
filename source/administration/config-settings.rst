@@ -47,6 +47,8 @@ If Site URL is not set, the following features will operate incorrectly:
  - authentication via OAuth 2.0, including GitLab, Google and Office 365, will fail
  - plugins may not work as expected
 
+Changes to this setting require a server restart before taking effect.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -60,6 +62,8 @@ If you choose a port of a lower level (called "system ports" or "well-known port
 
 On Linux you can use: ``sudo setcap cap_net_bind_service=+ep ./bin/mattermost`` to allow Mattermost to bind to well-known ports.
 
+Changes to this setting require a server restart before taking effect.
+
 +-------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ListenAddress": ":8065"`` with string input  |
 +-------------------------------------------------------------------------------------------+
@@ -69,6 +73,8 @@ Forward port 80 to 443
 **True**: Forwards all insecure traffic from port 80 to secure port 443.
 
 **False**: When using a proxy such as NGINX in front of Mattermost this setting is unnecessary and should be set to `false`.
+
+Changes to this setting require a server restart before taking effect.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Forward80To443": false`` with options ``true`` and ``false`` for above settings respectively.                        |
@@ -81,6 +87,8 @@ Connection Security
 
 **TLS**: Encrypts the communication between Mattermost and your server. See `documentation <https://docs.mattermost.com/install/config-tls-mattermost.html>`__ for more details.
 
+Changes to this setting require a server restart before taking effect.
+
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""`` and ``TLS`` for the above settings respectively  |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -89,6 +97,8 @@ TLS Certificate File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The path to the certificate file to use for TLS connection security.
 
+Changes to this setting require a server restart before taking effect.
+
 +------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TLSCertFile": ""`` with string input  |
 +------------------------------------------------------------------------------------+
@@ -96,6 +106,8 @@ The path to the certificate file to use for TLS connection security.
 TLS Key File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The path to the TLS key file to use for TLS connection security.
+
+Changes to this setting require a server restart before taking effect.
 
 +-----------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TLSKeyFile": ""`` with string input  |
@@ -106,6 +118,8 @@ Use Let's Encrypt
 **True**: Enable the automatic retrieval of certificates from Let's Encrypt. The certificate will be retrieved when a client attempts to connect from a new domain. This will work with multiple domains. See :doc:`../install/config-tls-mattermost` for more details on setting up Let's Encrypt.
 
 **False**: Manual certificate specification based on the **TLS Certificate File** and **TLS Key File** specified above.
+
+Changes to this setting require a server restart before taking effect.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UseLetsEncrypt": false`` with options ``true`` and ``false`` for above settings respectively.                        |
@@ -118,6 +132,8 @@ Let's Encrypt Certificate Cache File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The path to the file where certificates and other data about the Let's Encrypt service will be stored.
 
+Changes to this setting require a server restart before taking effect.
+
 +-----------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LetsEncryptCertificateCacheFile": "./config/letsencrypt.cache"`` with string input.  |
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -126,6 +142,8 @@ Read Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Maximum time allowed from when the connection is accepted to when the request body is fully read.
 
+Changes to this setting require a server restart before taking effect.
+
 +-------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ReadTimeout": 300`` with string input  |
 +-------------------------------------------------------------------------------------+
@@ -133,6 +151,8 @@ Maximum time allowed from when the connection is accepted to when the request bo
 Write Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If using HTTP (insecure), this is the maximum time allowed from the end of reading the request headers until the response is written. If using HTTPS, it is the total time from when the connection is accepted until the response is written.
+
+Changes to this setting require a server restart before taking effect.
 
 +--------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"WriteTimeout": 300`` with string input  |
@@ -150,13 +170,15 @@ Set to false to disable all version 3 endpoints of the REST API. Integrations th
 
 Webserver Mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-gzip compression applies to the HTML, CSS, Javascript, and other static content files that make up the Mattermost web client. It is recommended to enable gzip to improve performance unless your environment has specific restrictions, such as a web proxy that distributes gzip files poorly. This setting requires a server restart to take effect.
+gzip compression applies to the HTML, CSS, Javascript, and other static content files that make up the Mattermost web client. It is recommended to enable gzip to improve performance unless your environment has specific restrictions, such as a web proxy that distributes gzip files poorly.
 
 **gzip**: The Mattermost server will serve static files compressed with gzip to improve performance.
 
 **Uncompressed**: The Mattermost server will serve static files uncompressed.
 
 **Disabled**: The Mattermost server will not serve static files.
+
+Changes to this setting require a server restart before taking effect.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"WebserverMode": "gzip"`` with options ``gzip``, ``uncompressed`` and ``disabled`` for above settings respectively.      |
@@ -180,7 +202,9 @@ Localization
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Default Server Language
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Default language for system messages and logs. Changing this will require a server restart before taking effect.
+Default language for system messages and logs.
+
+Changes to this setting require a server restart before taking effect.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``it``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ro``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
@@ -632,7 +656,7 @@ Output logs to console
 
 **False**: Output log messages are not written to the console.
 
-Changing this setting requires a server restart before taking effect.
+Changes to this setting require a server restart before taking effect.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableConsole": true`` with options ``true`` and ``false`` for above settings respectively.                             |
@@ -656,11 +680,11 @@ Output logs to file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Typically set to true in production. When true, logged events are written to the ``mattermost.log`` file in the directory specified by the **FileLocation** setting. The logs are archived to a file in the same directory, and given a name with a datestamp and serial number. For example, ``mattermost.2017-03-31.001``.
 
-Changing this setting requires a server restart before taking effect.
-
 **True**: Log files are written to files specified in **FileLocation**.
 
 **False**: Log files are not written.
+
+Changes to this setting require a server restart before taking effect.
 
 +----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableFile": true`` with options ``true`` and ``false`` for above settings respectively.  |
@@ -668,11 +692,13 @@ Changing this setting requires a server restart before taking effect.
 
 Output console logs as JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Typically set to true in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text. Changing this setting requires a server restart before taking effect.
+Typically set to true in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
 
 **True**:  Logged events are written in a machine readable JSON format.
 
 **False**: Logged events are written in plaint text.
+
+Changes to this setting require a server restart before taking effect.
 
 +----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConsoleJson": true`` with options ``true`` and ``false`` for above settings respectively. |
@@ -696,7 +722,7 @@ File Log Directory
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The location of the log files. If blank, they are stored in the ``./logs`` directory. The path that you set must exist and Mattermost must have write permissions in it.
 
-Changing this setting requires a server restart before taking effect.
+Changes to this setting require a server restart before taking effect.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileLocation": ""`` with string input.                                                                                  |
@@ -704,11 +730,13 @@ Changing this setting requires a server restart before taking effect.
 
 Output file logs as JSON
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Typically set to true in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text. Changing this setting requires a server restart before taking effect.
+Typically set to true in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
 
 **True**: Logged events are written in a machine readable JSON format.
 
 **False**: Logged events are written in plain text.
+
+Changes to this setting require a server restart before taking effect.
 
 +----------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FileJson": true`` with options ``true`` and ``false`` for above settings respectively.    |
@@ -2775,7 +2803,7 @@ Data Retention Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
-Changing properties in this section will require a server restart before taking effect.
+Changes to properties in this section require a server restart before taking effect.
 
 .. warning:: Once a message or a file is deleted, the action is irreversible. Please be careful when setting up a custom data retention policy.
 
@@ -2903,7 +2931,7 @@ Advanced settings to configure rate limiting, databases and developer options.
 
 Rate Limiting
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-Changing properties in this section will require a server restart before taking effect.
+Changes to properties in this section require a server restart before taking effect.
 
 Enable Rate Limiting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2975,7 +3003,7 @@ ________
 
 Database
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-Changing properties in this section will require a server restart before taking effect.
+Changes to properties in this section require a server restart before taking effect.
 
 Driver Name
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3074,7 +3102,7 @@ Elasticsearch
 ~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
-Changing properties in this section will require a server restart before taking effect.
+Changes to properties in this section require a server restart before taking effect.
 
 Enable Elasticsearch Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3150,6 +3178,8 @@ Enable Testing Commands
 
 **False**: `/test` slash command is disabled.
 
+Changes to this setting require a server restart before taking effect.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableTesting": false`` with options ``true`` and ``false`` for above settings respectively.                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3198,7 +3228,7 @@ High Availability
 ~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
-Changing properties in this section will require a server restart before taking effect.
+Changes to properties in this section require a server restart before taking effect.
 
 When High Availability mode is enabled, the System Console is set to read-only and settings can only be changed by editing the configuration file directly. However, for testing and validating a High Availability setup, you can set *ReadOnlyConfig* to ``false``, which allows changes made in the System Console to be saved back to the configuration file.
 
@@ -3305,6 +3335,8 @@ ________________________________________________________________________________
 Performance Monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
+
+Changes to properties in this section require a server restart before taking effect.
 
 Enable Performance Monitoring
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3483,6 +3515,8 @@ WebSocket Secure Port
 
 (Optional) This setting defines the port on which the secured WebSocket will listen using the `wss` protocol. Otherwise it defaults to `443`. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
 
+Changes to this setting require a server restart before taking effect.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is  ``"WebsocketSecurePort" : 443`` with whole number input.                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3491,6 +3525,8 @@ WebSocket Port
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 (Optional) This setting defines the port on which the unsecured WebSocket will listen using the `ws` protocol. Otherwise it defaults to `80`. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
+
+Changes to this setting require a server restart before taking effect.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``WebsocketPort": 80`` with whole number input.                                                                            |
@@ -3545,7 +3581,9 @@ The queries above rebuild the materialized `PublicChannels` table without modify
 
 Read Replicas (Enterprise Edition)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting. A server restart is required for changes to this setting to take effect.
+Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting.
+
+Changes to this setting require a server restart before taking effect.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSourceReplicas": []`` with a comma-separated list of database connection strings as input. |
@@ -3553,7 +3591,9 @@ Specifies the connection strings for the read replica databases. Each string mus
 
 Search Replicas (Enterprise Edition)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting. A server restart is required for changes to this setting to take effect.
+Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting.
+
+Changes to this setting require a server restart before taking effect.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DataSourceSearchReplicas": []`` with a comma-separated list of database connection strings as input. |
@@ -3816,6 +3856,8 @@ Value that controls the `fraction of goroutine blocking events reported in the b
 The profiler aims to sample an average of one blocking event per rate nanoseconds spent blocked.
 
 To include every blocking event in the profile, set the rate to 1. To turn off profiling entirely, set the rate to 0.
+
+Changes to this setting require a server restart before taking effect.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BlockProfileRate": "0"`` with decimal and whole number input between 0 and 1.                                           |
