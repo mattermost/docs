@@ -2437,7 +2437,7 @@ Google
 
 Enable authentication with Google by selecting ``Google Apps`` from **OAuth 2.0 > Select OAuth 2.0 service provider**
 
-**True**: Allow team creation and account signup using Google OAuth. To configure, input the **Client ID** and **Client Secret** credentials. See `Documentation <https://docs.mattermost.com/deployment/sso-google.html>`__ for more detail.
+**True**: Allow team creation and account signup using Google OAuth. To configure, input the **Client ID** and **Client Secret** credentials. See `documentation <https://docs.mattermost.com/deployment/sso-google.html>`__ for more detail.
 
 **False**: Google OAuth cannot be used for team creation or account signup.
 
