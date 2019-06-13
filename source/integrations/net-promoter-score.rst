@@ -74,4 +74,4 @@ Data is only collected when a user selects a score or provides written feedback 
 Will this data be sent through my firewall?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-XXXXXX Harrsion can you add some details here on how this works in a firewall? I imagine they would need to configure it to allow connections for this plugin otherwise it will be blocked? We should add something here to ease the minds of those servers running in a private network
+If Mattermost is hosted in a private network with firewall then data from the NPS plugin is not sent unless outbound connections are allowed or specifically configured for this plugin. 
