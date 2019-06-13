@@ -33,7 +33,7 @@ Configuring Elasticsearch in Mattermost
 
 Follow these steps to connect your Elasticsearch server to Mattermost and generate the post index.
 
-1. Open the **System Console** > **Advanced** > **Elasticsearch** section.
+1. Open **System Console** > **Advanced** > **Elasticsearch** in prior versions or **System Console** > **Environment** > **Elasticsearch** in versions after 5.12.
 2. Set **Enable Elasticsearch Indexing** to `true` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database will be automatically indexed on the Elasticsearch server.
 3. Set the Elasticsearch server connection details:
   a) Enter **Server Connection Address** for the Elasticsearch server you set up earlier.

@@ -26,7 +26,7 @@ Use the following guides to configure exports for CSV, Actiance XML or Global Re
 CSV
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Go to **System Console > Advanced > Compliance Export (Beta)**.
+1. Go to **System Console > Advanced > Compliance Export (Beta)** in prior versions or **System Console** > **Compliance** > **Compliance Export (Beta)** in versions after 5.12.
 2. Enable compliance exports, then set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
 3. Set the export file format to CSV.
 4. Save the settings. You’re now all set!
@@ -38,7 +38,7 @@ For a sample CSV output, `download a CSV export file here <https://github.com/ma
 Actiance XML
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Go to **System Console > Advanced > Compliance Export (Beta)**.
+1. Go to **System Console > Advanced > Compliance Export (Beta)** in prior versions or **System Console** > **Compliance** > **Compliance Export (Beta)** in versions after 5.12.
 2. Enable compliance exports, then set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
 3. Set the export file format to Actiance XML.
 4. Save the settings. You’re now all set!
@@ -53,7 +53,7 @@ For a sample Actiance output, `download an Actiance XML export file here <https:
 Global Relay EML
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Go to **System Console > Advanced > Compliance Export (Beta)**.
+1. Go to **System Console > Advanced > Compliance Export (Beta)** in prior versions or **System Console** > **Compliance** > **Compliance Export (Beta)** in versions after 5.12.
 2. Enable compliance exports, then set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
 3. Set the export file format to GlobalRelay EML.
 4. Set the Global Relay Customer Account, either `A9/Type 9` or `A10/Type 10`. This is the type of Global Relay customer account your organization has.

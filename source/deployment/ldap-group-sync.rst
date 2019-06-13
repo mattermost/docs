@@ -13,14 +13,14 @@ Synchronized groups can also be used to manage the membership of teams and priva
 Pre-installation notes
 ----------------------
 
-For customers that have enabled synchronization with AD/LDAP, all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` will be available to be linked in the groups list view at **Access Control > Groups**. The group filter is an optional configuration setting available under **System Console > AD/LDAP**, which will allow you to specify the groups you would like to be able to access in Mattermost.  The group filter is independent of the user filter, however it does leverage the Base DN attribute.  You may need to adjust your Base DN to ensure group objects can be searched in your AD/LDAP tree.  
+For customers that have enabled synchronization with AD/LDAP, all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` will be available to be linked in the groups list view at **System Console** > **Access Control > Groups** in prior versions or **System Console** > **User Management** > **Groups** in versions after 5.12. The group filter is an optional configuration setting available under **System Console > AD/LDAP**, which will allow you to specify the groups you would like to be able to access in Mattermost.  The group filter is independent of the user filter, however it does leverage the Base DN attribute.  You may need to adjust your Base DN to ensure group objects can be searched in your AD/LDAP tree.  
 
 The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/deployment/sso-ldap.html?highlight=ldap#configure-ad-ldap-synchronization>`__. for more information. The group feature has no effect on users' authentication to Mattermost.
 
 Enable AD/LDAP group synchronization
 ------------------------------------
 
-To enable this feature, go to **System Console > Advanced > Experimental > Enable AD/LDAP Group Sync**. You can also edit the ``config.json file`` setting ``ExperimentalLdapGroupSync``. Then restart the Mattermost server after changing.  
+To enable this feature, go to **System Console > Advanced > Experimental > Enable AD/LDAP Group Sync** in prior versions or **System Console** > **Experimental** > **Features** in versions after 5.12. You can also edit the ``config.json file`` setting ``ExperimentalLdapGroupSync``. Then restart the Mattermost server after changing.  
 
 AD/LDAP group synchronization
 -----------------------------
@@ -34,7 +34,7 @@ Additionally, you can specify the Group filter used to retrieve groups.  If the 
 
 Synchronization of groups occurs after user synchronization and results for group synchronization are available on the synchonization status table (located at the bottom of the AD/LDAP configuration page). 
 
-After the AD/LDAP groups have been synchronized, go to **System Console > Access Control > Groups** to link and configure Mattermost groups. 
+After the AD/LDAP groups have been synchronized, go to **System Console > Access Control > Groups** in prior versions or **System Console** > **User Management** > **Groups** in versions after 5.12 to link and configure Mattermost groups. 
  
 .. image:: ../images/Group_filter.png
 

@@ -28,7 +28,7 @@ Suppose you want to write an external application, which executes software tests
 
 You can follow these general guidelines to set up a Mattermost outgoing webhook for your application.
 
-1 - First, go to **Main Menu > Integrations > Outgoing Webhook**. If you don't have the **Integrations** option in your Main Menu, outgoing webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so.
+1 - First, go to **Main Menu > Integrations > Outgoing Webhook**. If you don't have the **Integrations** option in your Main Menu, outgoing webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator to do so.
 
 2 - Click **Add Outgoing Webhook** and add name and description for the webhook. The description can be up to 500 characters. 
 
@@ -105,9 +105,9 @@ which would render in Mattermost as:
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-messages>` in the JSON payload.
 
 .. note::
-  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the username is set to `webhook`.
+  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator. If not enabled, the username is set to `webhook`.
 
- Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+ Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Tips and Best Practices
 ------------------------
