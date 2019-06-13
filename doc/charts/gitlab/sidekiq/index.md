@@ -56,6 +56,7 @@ to the `helm install` command using the `--set` flags:
 | `resources.requests.cpu`    | `100m`            | Sidekiq minimum needed cpu               | 
 | `resources.requests.memory` | `600M`            | Sidekiq minimum needed memory            | 
 | `timeout`                   | `5`               | Sidekiq job timeout                      | 
+| `tolerations`               | `[]`              | Toleration labels for pod assignment     |
 | `memoryKiller.maxRss`       | `2000000`         | Maximum RSS before delayed shutdown triggered expressed in kilobytes |
 | `memoryKiller.graceTime`    | `900`             | Time to wait before a triggered shutdown expressed in seconds|
 | `memoryKiller.shutdownWait` | `30`              | Amount of time after triggered shutdown for existing jobs to finish expressed in seconds |
@@ -78,6 +79,22 @@ image:
   pullSecrets:
   - name: my-secret-name
   - name: my-secondary-secret-name
+```
+
+### tolerations
+`tolerations` allow you schedule pods on tainted worker nodes
+
+Below is an example use of `tolerations`:
+```YAML
+tolerations:
+- key: "node_label"
+  operator: "Equal"
+  value: "true"
+  effect: "NoSchedule"
+- key: "node_label"
+  operator: "Equal"
+  value: "true"
+  effect: "NoExecute"
 ```
 
 ### annotations

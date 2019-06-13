@@ -63,6 +63,7 @@ registry:
   compatibility:
     schema1:
       enabled: false
+  tolerations: []
   ingress:
     enabled: false
     tls:
@@ -97,6 +98,7 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 | `replicas`           | `1`                        | Number of replicas                  |
 | `tokenService`       | `container_registry`       | JWT token service                   |
 | `tokenIssuer`        | `gitlab-issuer`            | JWT token issuer                    |
+| `tolerations`        | `[]`                       | Toleration labels for pod assignment|
 
 ## Chart configuration examples
 
@@ -117,6 +119,22 @@ image:
   pullSecrets:
   - name: my-secret-name
   - name: my-secondary-secret-name
+```
+
+### tolerations
+`tolerations` allow you schedule pods on tainted worker nodes
+
+Below is an example use of `tolerations`:
+```YAML
+tolerations:
+- key: "node_label"
+  operator: "Equal"
+  value: "true"
+  effect: "NoSchedule"
+- key: "node_label"
+  operator: "Equal"
+  value: "true"
+  effect: "NoExecute"
 ```
 
 ### annotations

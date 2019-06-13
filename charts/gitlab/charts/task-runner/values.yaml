@@ -11,6 +11,9 @@ init:
     requests:
       cpu: 50m
 
+# Tolerations for pod scheduling
+tolerations: []
+
 enabled: true
 annotations: {}
 global:

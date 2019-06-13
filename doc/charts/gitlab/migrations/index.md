@@ -33,6 +33,7 @@ Table below contains all the possible charts configurations that can be supplied
 | init.image            | initContainer image                            | busybox                                        |
 | init.tag              | initContainer image tag                        | latest                                         |
 | enabled               | Migrations enable flag                         | true                                           |
+| tolerations           | Toleration labels for pod assignment           | []                                             |
 | redis.serviceName     | Redis service name                             | redis                                          |
 | psql.password.secret  | psql secret                                    | gitlab-postgres                                |
 | psql.password.key     | key to psql password in psql secret            | psql-password                                  |

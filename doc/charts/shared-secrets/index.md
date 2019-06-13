@@ -32,6 +32,25 @@ to the `helm install` command using the `--set` flag:
 | `selfsign.keyAlgorithm`    | `rsa`               | selfsign cert key algorithm         | 
 | `selfsign.keySize`         | `4096`              | selfsign cert key size              | 
 | `selfsign.tag`             |                     | selfsign image tag                  | 
+| `tolerations`              | `[]`                | Toleration labels for pod assignment|
+
+## Chart configuration examples
+
+### tolerations
+`tolerations` allow you schedule pods on tainted worker nodes
+
+Below is an example use of `tolerations`:
+```YAML
+tolerations:
+- key: "node_label"
+  operator: "Equal"
+  value: "true"
+  effect: "NoSchedule"
+- key: "node_label"
+  operator: "Equal"
+  value: "true"
+  effect: "NoExecute"
+```
 
 ## Disable functionality
 

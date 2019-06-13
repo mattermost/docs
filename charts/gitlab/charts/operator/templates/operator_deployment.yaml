@@ -21,6 +21,10 @@ spec:
         component: operator
 {{ include "gitlab.immutableLabels" . | indent 8 }}
     spec:
+      {{- if .Values.tolerations }}
+      tolerations:
+{{ toYaml .Values.tolerations | indent 8 }}
+      {{- end }}
       serviceAccountName: {{ template "fullname" . }}
       containers:
         - name: {{ .Chart.Name }}
