@@ -30,6 +30,9 @@ init:
     requests:
       cpu: 50m
 
+## Support for tolerations for pod scheduling
+tolerations: []
+
 global:
   # imagePullPolicy: IfNotPresent
   redis:

@@ -44,7 +44,9 @@ with `global.shell.port`, and defaults to `22`.
 | `service.internalPort`   | `22`           | Shell internal port                      | 
 | `service.name`           | `gitlab-shell` | Shell service name                       | 
 | `service.type`           | `ClusterIP`    | Shell service type                       | 
+| `tolerations`            | `[]`           | Toleration labels for pod assignment     |
 | `unicorn.serviceName`    | `unicorn`      | Unicorn service name                     | 
+
 
 ## Chart configuration examples
 
@@ -65,6 +67,22 @@ image:
   pullSecrets:
   - name: my-secret-name
   - name: my-secondary-secret-name
+```
+
+### tolerations
+`tolerations` allow you schedule pods on tainted worker nodes
+
+Below is an example use of `tolerations`:
+```YAML
+tolerations:
+- key: "node_label"
+  operator: "Equal"
+  value: "true"
+  effect: "NoSchedule"
+- key: "node_label"
+  operator: "Equal"
+  value: "true"
+  effect: "NoExecute"
 ```
 
 ### annotations

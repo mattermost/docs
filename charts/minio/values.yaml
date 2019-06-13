@@ -20,6 +20,9 @@ ingress:
     # enabled: true
   annotations: {}
 
+## Support for tolerations for pod scheduling
+tolerations: []
+
 global:
   ingress:
     enabled:

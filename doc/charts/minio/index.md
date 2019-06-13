@@ -35,6 +35,7 @@ minio:
     proxyReadTimeout:
     proxyBodySize:
     proxyBuffering:
+  tolerations:
   persistence: (upstream)
     volumeName:
     matchLabels:
@@ -78,6 +79,7 @@ to the `helm install` command using the `--set` flags:
 | `securityContext.runAsUser`    | `1000`                        | User ID to start the pod with           |
 | `servicePort`                  | `9000`                        | Minio service port                      |
 | `serviceType`                  | `ClusterIP`                   | Minio service type                      |
+| `tolerations`                  | `[]`                          | Toleration labels for pod assignment    |
 
 ## Chart configuration examples
 
@@ -97,6 +99,22 @@ imagePullPolicy: Always
 pullSecrets:
 - name: my-secret-name
 - name: my-secondary-secret-name
+```
+
+### tolerations
+`tolerations` allow you schedule pods on tainted worker nodes
+
+Below is an example use of `tolerations`:
+```YAML
+tolerations:
+- key: "node_label"
+  operator: "Equal"
+  value: "true"
+  effect: "NoSchedule"
+- key: "node_label"
+  operator: "Equal"
+  value: "true"
+  effect: "NoExecute"
 ```
 
 ## Enable the sub-chart

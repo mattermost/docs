@@ -25,6 +25,10 @@ spec:
         {{ $key }}: {{ $value | quote }}
       {{- end }}
     spec:
+      {{- if .Values.tolerations }}
+      tolerations:
+{{ toYaml .Values.tolerations | indent 8 }}
+      {{- end }}
       terminationGracePeriodSeconds: 30
       initContainers:
 {{ include "gitlab.extraInitContainers" . | indent 8 }}

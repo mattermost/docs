@@ -26,6 +26,10 @@ spec:
           {{- end }}
         spec:
           restartPolicy: "OnFailure"
+          {{- if .Values.tolerations }}
+          tolerations:
+{{ toYaml .Values.tolerations | indent 12 }}
+          {{- end }}
           securityContext:
             runAsUser: 1000
             fsGroup: 1000

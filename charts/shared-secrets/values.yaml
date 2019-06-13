@@ -12,6 +12,10 @@ selfsign:
   expiry: "365d"
   caSubject: "GitLab Helm Chart"
 resources: {}
+
+## Support for tolerations for pod scheduling
+tolerations: []
+
 env: production
 global: {}
 enabled: false

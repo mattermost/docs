@@ -24,6 +24,9 @@ install:
     pullSecrets: []
     #pullPolicy: IfNotPresent
 
+## Support for tolerations for pod scheduling
+tolerations: []
+
 resources:
   # limits:
   #  cpu: 1

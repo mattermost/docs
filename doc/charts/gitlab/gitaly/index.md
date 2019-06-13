@@ -48,6 +48,7 @@ the `helm install` command using the `--set` flags.
 | `service.name`                 | `gitaly`        | Gitaly service name                      |
 | `service.type`                 | `ClusterIP`     | Gitaly service type                      |
 | `serviceName`                  | `gitaly`        | Gitaly service name                      |
+| `tolerations`                  | `[]`            | Toleration labels for pod assignment     |
 | `persistence.accessMode`       | `ReadWriteOnce` | Gitaly persistence access mode           |
 | `persistence.enabled`          | `true`          | Gitaly enable persistence flag           |
 | `persistence.matchExpressions` |                 | Label-expression matches to bind         |
@@ -55,6 +56,7 @@ the `helm install` command using the `--set` flags.
 | `persistence.size`             | `50Gi`          | Gitaly persistence volume size           |
 | `persistence.storageClass`     |                 | storageClassName for provisioning        |
 | `persistence.subPath`          |                 | Gitaly persistence volume mount path     |
+
 
 ## Chart configuration examples
 
@@ -75,6 +77,22 @@ image:
   pullSecrets:
   - name: my-secret-name
   - name: my-secondary-secret-name
+```
+
+### tolerations
+`tolerations` allow you schedule pods on tainted worker nodes
+
+Below is an example use of `tolerations`:
+```YAML
+tolerations:
+- key: "node_label"
+  operator: "Equal"
+  value: "true"
+  effect: "NoSchedule"
+- key: "node_label"
+  operator: "Equal"
+  value: "true"
+  effect: "NoExecute"
 ```
 
 ### annotations

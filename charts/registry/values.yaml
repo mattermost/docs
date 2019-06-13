@@ -10,6 +10,9 @@ service:
   internalPort: 5000
   clusterIP: '0.0.0.0'
 
+## Support for tolerations for pod scheduling
+tolerations: []
+
 ## Enable/Disable Chart
 enabled: true
 

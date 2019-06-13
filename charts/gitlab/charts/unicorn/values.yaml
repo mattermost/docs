@@ -12,7 +12,12 @@ init:
   resources:
     requests:
       cpu: 50m
+
+# Tolerations for pod scheduling
+tolerations: []
+
 annotations: {}
+
 metrics:
   enabled: true
   annotations:
