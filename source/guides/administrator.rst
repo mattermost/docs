@@ -163,6 +163,7 @@ Learn how to extend Mattermost by integrating your workflows.
    :glob:
 
    /administration/plugins*
+   /integrations/net-promoter-score*
    /developer/toolkit*
    /deployment/atlassian-integrations*
    /deployment/video-and-audio-calling*
