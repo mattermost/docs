@@ -46,7 +46,7 @@ Survey Data
 How is the survey received?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once the survey is triggered on the server, all users will receive an in-product Direct Messages from "Surveybot" on their next interaction with Mattermost. Surveys are not sent to users who are offline.
+Once the survey is triggered on the server, all users will receive an in-product Direct Messages from "Surveybot" on their next login or page refresh in Mattermost.
 
 Users can optionally select a 0-10 score on how likely they are to recommend Mattermost and then provide written feedback about their experience. Selecting a score and providing feedback are optional, and the survey can be ignored without interrupting usage of Mattermost.
 
