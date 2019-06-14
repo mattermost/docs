@@ -1,0 +1,144 @@
+Version Check
+=====================================
+
+Goal Definition
+----------------------
+
+Desired Impact
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ - Drive more up-to-date instances and more frequent upgrades
+ - Provide better telemetry to the Sales and Marketing teams in the form of referrer host domains (domain of hosted server)
+
+What is success:
+ - We can provide host domains for a majority (over 50%) of installations
+ - Have the vast majority (90%+ of active servers) running the most recent versions
+  - Because security fixes are only available on the latest releases, older versions will have known security vulnerabilities.
+  - Currently (as of May 5 2019), ~40% of active servers are running a version over 6 months old, which include known security vulnerabilities.
+
+Functional Goal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Add a web-hosted version-check indicator to the webapp System Console and help-about views. It will inform the admin if their installation is out of date or has critical security vulnerabilities.
+This will make a standard https web request to a public API endpoint from the webapp client (and not via the server), which returns the image (SVG) to be rendered. Clicking on the badge (regardless of state) will open the security updates page.
+
+Background Details
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This feature request originated from the Marketing team.
+
+Customer Requests (Not applicable)
+--------------------
+ - `Customer Request Jira Ticket <ADD LINK HERE>`__
+ - `User Voice Request <ADD LINK HERE>`__
+ - `Link to other request documentation <ADD LINK HERE>`__
+
+Use Cases
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Specific use cases that should be addressed, ideally this should be based off of real use cases from customer research. If the use cases came from specific people or customers, please link confidential document for reference. 
+
+1. Provide in product indication to a System admin to easily know if there is an update to the version of their Mattermost deployement. 
+
+2. Allow Mattermost to view referrer data for sales and marketing efforts (when a customer has allowed telemetry data). 
+
+Prioritization and “Mana Budget”  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What’s the priority of this design compared to other efforts? How much mana can be spent before the prioritization (impact over cost compared to other features) changes? Get initial design/dev SWAGs if appropriate, and PM makes a “go” or “no go” decision on whether to proceed at this point in time. What is the T-shirt size (XL, L, M, S, XS) of the feature?   
+
+- Feature should be S to M (about 16 mana). This should be prioritized behind any major customer feature work we are currently working on. 
+
+Feature Requirements
+----------------------
+
+Competitive Research
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Links to competitive research from other products. Notes on what requirements competitor features are filling.
+
+1. `GitLab's Version Check Feature <https://about.gitlab.com/handbook/sales-process/version_check/>`__
+  - Requirement 1
+  - Requirement 2
+  - Requirement 3
+  
+2. `Competitor 3 <ADD LINK HERE>`__
+  - Requirement 1
+  - Requirement 2
+  - Requirement 3
+
+3. `Competitor 3 <ADD LINK HERE>`__
+  - Requirement 1
+  - Requirement 2
+  - Requirement 3
+
+Initial Proposed Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. A new public API endpoint which will:
+ - Compare the submitted version to the known latest release version
+ - If it is equal it will return an “up to date” (green) image (SVG)
+ - It the submitted version is older, it will return a “Update available” (yellow) image
+ - If the submitted version contains known security issues, it will return an “Update asap” (red) image.
+ - Record the http referrer (server domain), server ID, and timestamp in a database
+  - In a way that can be queried from chart.io
+2.  UI indicator of for version and version status
+   -  Clicking on the badge (regardless of state) will open the security updates page.
+3. A new webapp https request which will include:
+  - The current (installed) server version
+  - The server ID
+4. Abilty for System admin to disable the feature (e.g. via the server config file or System Console)
+5. A simple procedure for Mattermost staff to specify the current release version and mark installed versions before a specific version as containing security vulnerabilities as part of our release and security update process. The public API will use this to determine what image to return.
+
+This feature relies on the `http referrer feature <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer>`_ in browsers. Note that the scheme (http:// or https://) should match the client in order `for the referrer to work correctly <https://makandracards.com/makandra/15931-browsers-will-not-send-a-referrer-when-linking-from-https-to-http>`_, and for the image to appear.
+
+What areas in product does this touch 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Brainstorm on all the areas that should be considered in the design phase. For example, something that touches channels should consider Cmd+K, channel autocomplete, in: channel search, impact to bulk exporter/importer etc. 
+
+**Chat-Facing (Posts, LHS, RHS, Team Listing)**
+  - NA
+  
+**Mobile**
+  - NA - this applies to System Console
+  
+**Plugin**
+  - ?? 
+  
+**System Console & Config Settings**
+  - Enable/Disable the feature, disabled by default.  (Config setting for same)
+  - UI Indication of currently installed version & Version status added to System statistics (with link to Security updates docs page)
+  
+**Main Menu**
+  - NA
+  
+**Team Menu**
+  - NA
+  
+**Channel Menu**
+  - NA
+  
+**Permissions**
+  - NA (controlled by System Admin)
+  
+**Notification & Email Templates**
+  - NA
+  
+**Search (Quick Switcher/Cmd K, Autocomplete)**
+  - NA
+  
+**Commands**
+  - NA
+  
+**Compliance Exports**
+  - NA
+  
+**Bulk Import/Export**
+  - NA
+  
+**CLI**
+  - NA
+
+**Telemetry**
+  - Boolean for feature enabled
+  - Updates to our privacy policy, telemetry docs.  
+
+
+Out of Scope
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What will not be covered by this design.  Please indicate if there will be future phases to address, or if they are out of scope for the product.  
+ - A UI for end-users other than System admins will be not be included in this design (may be considered in the future)
+
