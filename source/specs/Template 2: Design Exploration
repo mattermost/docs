@@ -1,0 +1,86 @@
+Feature Name
+=====================================
+
+Exploratory Designs
+----------------------
+
+Design Options
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Set the context for the designs.  There may be multiple copies of this document based on the overall size of the feature. Present options on different designs. These can be sketches, wireframes, functional notes - the goal is for these to be a low mana way to communicate different potential paths, so a decision can be made on high level design direction.  Design decision to be filled in on bottom
+
+Design Option 1
+--------------------  
+`Quick Description of Design 1 <ADD LINK HERE>`__
+
+Questions to validate through feedback:
+ - Question 1
+ - Question 2
+ - Question 3
+
+Advantages (based on user feedback):
+ - Advantage 1
+ - Advantage 2
+ - Advantage 3
+ 
+Challenges (based on user feedback):
+ - Challenge 1
+ - Challenge 2
+ - Challenge 3
+ 
+Design Option 2
+--------------------  
+`Quick Description of Design 2 <ADD LINK HERE>`__
+
+Questions to validate through feedback:
+ - Question 1
+ - Question 2
+ - Question 3
+
+Advantages (based on user feedback):
+ - Advantage 1
+ - Advantage 2
+ - Advantage 3
+ 
+Challenges (based on user feedback):
+ - Challenge 1
+ - Challenge 2
+ - Challenge 3
+
+Design Option 3
+--------------------  
+`Quick Description of Design 3 <ADD LINK HERE>`__
+
+Questions to validate through feedback:
+ - Question 1
+ - Question 2
+ - Question 3
+
+Advantages (based on user feedback):
+ - Advantage 1
+ - Advantage 2
+ - Advantage 3
+ 
+Challenges (based on user feedback):
+ - Challenge 1
+ - Challenge 2
+ - Challenge 3
+
+Design Direction Decision 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`Chosen Design <ADD LINK HERE>`__
+
+Advantages over other designs:
+ - Advantage 1
+ - Advantage 2
+ - Advantage 3
+
+Notes on refining this design: 
+ - Note 1
+ - Note 2
+ - Note 3
+ 
+Feedback Sessions 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Please link any feedback notes here that were captured outside of this PR. 
+ - `Session 1 Notes <ADD LINK HERE>`__
+ - `Session 2 Notes <ADD LINK HERE>`__
