@@ -171,6 +171,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - PERMISSION_READ_OTHERS_BOTS
    - PERMISSION_MANAGE_BOTS
    - PERMISSION_MANAGE_OTHERS_BOTS
+ - `Bots` table was added.
 
 ### Known Issues
  - Attachments menu on mobile view is partly cut off on the right-hand side.
