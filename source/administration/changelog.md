@@ -8,6 +8,28 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release Date 2019-07-16
 
+### Breaking changes since last release
+
+
+### Bug Fixes
+
+
+### config.json
+
+
+#### Changes to Team Edition and Enterprise Edition:
+
+#### Database Changes
+
+#### API Changes
+
+#### Websocket Event Changes
+
+### Known Issues
+
+ 
+### Contributors
+
 
 ## Release v5.12 - Feature Release
 
