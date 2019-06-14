@@ -125,6 +125,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - LDAP Group Sync:
     - Added API endpoints ``getGroupsByChannel`` and ``GetGroupsByTeam`` to retrieve groups by team and by channel.
     - Added ``group_constrained`` API to both ``/users`` and ``/users/search`` endpoints to be able to limit users listed to those allowed by group-constraints.
+    - Added the ``GetGroups`` API endpoint to retrieve lists of groups with searching, pagination, and member counts.
+ - Disabled Team InviteID modification via Create/Update actions and moved it to a dedicated API endpoint.
     
 #### Plugin API v4 Changes
  - Added ``KVCompareAndSet(key string, old []byte, new []byte)`` to Plugin API to add support for transactional semantics with KV Store in plugin framework.
