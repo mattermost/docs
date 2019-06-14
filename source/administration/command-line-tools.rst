@@ -467,7 +467,7 @@ mattermost command modify
   Description
     Modify a slash command. Commands can be specified by command ID.  
     
-    .. note::
+.. note::
     Only fields that you want to modify need to be specified.  Also, when modifying the command's creator, the new creator specified must have the permission to create commands. 
 
   Format
@@ -568,7 +568,7 @@ mattermost config migrate
   Description
     Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. If using SAML, ensure the SAML certificates and keys are accessible to also migrate into the database.
     
-    .. note::    
+.. note::    
     If a ``from`` parameter is not specified, the command will fall back to what is specified in --config.
 
   Format
