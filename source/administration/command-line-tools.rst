@@ -470,6 +470,7 @@ mattermost command modify
 .. note::
     Only fields that you want to modify need to be specified.  Also, when modifying the command's creator, the new creator specified must have the permission to create commands. 
 
+
   Format
     .. code-block:: none
 
@@ -570,6 +571,7 @@ mattermost config migrate
     
 .. note::    
     If a ``from`` parameter is not specified, the command will fall back to what is specified in --config.
+
 
   Format
     .. code-block:: none
