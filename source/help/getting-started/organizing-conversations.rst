@@ -61,6 +61,10 @@ Click the channel name at the top of the center pane to access the drop-down men
 
     .. image:: ../../images/add_members.png
 
+You can also add users to channels within their profile pop-over by clicking "Add to a Channel" and selecting the channel to add them to.
+
+    .. image:: ../../images/add_members_pop.png
+
 Removing Members from a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
