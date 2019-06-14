@@ -1,0 +1,92 @@
+Feature Name
+=====================================
+
+Final Design
+----------------------
+
+High Level Summary of Feature
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Provide a short summary / introduction to set context for the design. Indicate the high level use-cases the feature covers and the problems it solves.  
+
+Design Assets
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+`High Fidelity UX Designs <ADD LINK HERE>`_ 
+`Functional Designs <ADD LINK HERE>`_ 
+`Technical Designs <ADD LINK HERE>`_ 
+
+Final Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Note: For small features, final designs may be represented in Jira tickets. If so, please link the tickets inline with the user story. 
+
+**Chat-Facing (Posts, LHS, RHS, Team Listing)**
+  - User Story 1 (define happy & sad paths)
+  
+**Mobile**
+  - User Story 1 (define happy & sad paths)
+  
+**Plugin**
+  - User Story 1 (define happy & sad paths)
+  
+**System Console & Config Settings**
+  - User Story 1 (define happy & sad paths)
+  
+**Main Menu**
+  - User Story 1 (define happy & sad paths)
+  
+**Team Menu**
+  - User Story 1 (define happy & sad paths)
+  
+**Channel Menu**
+  - User Story 1 (define happy & sad paths)
+  
+**Permissions**
+  - User Story 1 (define happy & sad paths)
+  
+**Notification & Email Templates**
+  - User Story 1 (define happy & sad paths)
+  
+**Search (Quick Switcher/Cmd K, Autocomplete)**
+  - User Story 1 (define happy & sad paths)
+  
+**Commands**
+  - User Story 1 (define happy & sad paths)
+  
+**Compliance Exports**
+  - User Story 1 (define happy & sad paths)
+  
+**Bulk Import/Export**
+  - User Story 1 (define happy & sad paths)
+  
+**CLI**
+  - User Story 1 (define happy & sad paths)
+
+**Telemetry**
+  - User Story 1 (define happy & sad paths)
+  
+**Documentation**
+  - Important details to document
+
+Release Stages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Initial Release
+--------------------
+ - Feature Quality: Experimental, Beta, Production
+ - Target Release Timeline (this is an estimate and subject to changes): vX.XX (Month, Year)
+   - Please follow `Jira tickets<>`_ for more up-to-date updates on feature timelines
+ - Expected Features: 
+   - Feature 1
+   - Feature 1
+   
+
+Future Releases
+--------------------
+ - Feature Quality: Experimental, Beta, Production
+ - Target Release Timeline (this is an estimate and subject to changes): vX.XX (Month, Year)
+ - Expected Features: 
+   - Feature 1
+   - Feature 1
+
+Feature Analysis Plan
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Plan for how the data will be analyzed to measure success.  
