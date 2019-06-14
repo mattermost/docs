@@ -1,0 +1,119 @@
+Feature Name
+=====================================
+
+Goal Definition
+----------------------
+
+Desired Impact
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+How does this tie into company objectives? Write a hypothesis in the form “Doing [X] will [affect Y metric], resulting in [improvement to high level KPI goal].” 
+
+Define success: What impact does this feature need to have to be considered a success?
+
+Functional Goal
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Initial description of what are we trying to build. 
+
+Background Details
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Where did the feature idea or request come from? Link to any relevant customer or user requests and notes - who is this feature for, and what do we know about them. If it’s an improvement to an existing feature, what is the current status of the feature? What does the telemetry data say? 
+
+Customer Requests
+--------------------
+ - `Customer Request Jira Ticket <ADD LINK HERE>`__
+ - `User Voice Request <ADD LINK HERE>`__
+ - `Link to other request documentation <ADD LINK HERE>`__
+
+Use Cases
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Specific use cases that should be addressed, ideally this should be based off of real use cases from customer research. If the use cases came from specific people or customers, please link confidential document for reference. 
+
+1. Use Case #1
+ - `Customer Example <ADD LINK HERE>`__
+
+2. Use Case #2
+ - `Customer Example <ADD LINK HERE>`__
+
+Prioritization and “Mana Budget”  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What’s the priority of this design compared to other efforts? How much mana can be spent before the prioritization (impact over cost compared to other features) changes? Get initial design/dev SWAGs if appropriate, and PM makes a “go” or “no go” decision on whether to proceed at this point in time. What is the T-shirt size (XL, L, M, S, XS) of the feature?   
+
+Feature Requirements
+----------------------
+
+Competitive Research
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Links to competitive research from other products. Notes on what requirements competitor features are filling.
+
+1. `Competitor 1 <ADD LINK HERE>`__
+  - Requirement 1
+  - Requirement 2
+  - Requirement 3
+  
+2. `Competitor 3 <ADD LINK HERE>`__
+  - Requirement 1
+  - Requirement 2
+  - Requirement 3
+
+3. `Competitor 3 <ADD LINK HERE>`__
+  - Requirement 1
+  - Requirement 2
+  - Requirement 3
+
+Initial Proposed Requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Based on research and use cases, the initial proposal for what requirements should be addressed in this design. 
+
+What areas in product does this touch 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Brainstorm on all the areas that should be considered in the design phase. For example, something that touches channels should consider Cmd+K, channel autocomplete, in: channel search, impact to bulk exporter/importer etc. 
+
+**Chat-Facing (Posts, LHS, RHS, Team Listing)**
+  - User Story 1 (define happy & sad paths)
+  
+**Mobile**
+  - User Story 1 (define happy & sad paths)
+  
+**Plugin**
+  - User Story 1 (define happy & sad paths)
+  
+**System Console & Config Settings**
+  - User Story 1 (define happy & sad paths)
+  
+**Main Menu**
+  - User Story 1 (define happy & sad paths)
+  
+**Team Menu**
+  - User Story 1 (define happy & sad paths)
+  
+**Channel Menu**
+  - User Story 1 (define happy & sad paths)
+  
+**Permissions**
+  - User Story 1 (define happy & sad paths)
+  
+**Notification & Email Templates**
+  - User Story 1 (define happy & sad paths)
+  
+**Search (Quick Switcher/Cmd K, Autocomplete)**
+  - User Story 1 (define happy & sad paths)
+  
+**Commands**
+  - User Story 1 (define happy & sad paths)
+  
+**Compliance Exports**
+  - User Story 1 (define happy & sad paths)
+  
+**Bulk Import/Export**
+  - User Story 1 (define happy & sad paths)
+  
+**CLI**
+  - User Story 1 (define happy & sad paths)
+
+**Telemetry**
+  - User Story 1 (define happy & sad paths)
+
+
+Out of Scope
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+What will not be covered by this design.  Please indicate if there will be future phases to address, or if they are out of scope for the product.  
