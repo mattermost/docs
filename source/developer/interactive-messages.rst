@@ -19,8 +19,10 @@ To try it out, you can use this `matterpoll plugin <https://github.com/matterpol
 
 .. image:: ../../source/images/poll.png
 
-.. toctree::
-  :maxdepth: 2
+.. contents::
+  :backlinks: top
+  :depth: 1
+  :local:
 
 Message Buttons
 ----------------

@@ -112,6 +112,7 @@ Principles
 - Contributors get a worthwhile benefit from their contributions, from the feature directly and/or from social recognition
 - Community members should have a low barrier to contribute
 - Community development workflow should be clear, efficient and effective
+- Help Wanted issues should avoid updates to the Enterprise repository due to complexity in code changes and unit tests.
 
 Creating Help Wanted Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

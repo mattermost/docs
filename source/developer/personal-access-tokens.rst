@@ -5,8 +5,10 @@ Personal Access Tokens
 
 Personal access tokens function similar to session tokens and can be used by integrations to `authenticate against the REST API <https://about.mattermost.com/default-api-authentication>`__. It is the most commonly used type of token for integrations.
 
-.. toctree::
-   :maxdepth: 2
+.. contents::
+  :backlinks: top
+  :depth: 1
+  :local:
 
 Creating a Personal Access Token
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -239,6 +239,8 @@ Changes to this setting require a server restart before taking effect.
 
 **Disabled**: The Mattermost server will not serve static files.
 
+Changes to this setting require a server restart before taking effect.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"WebserverMode": "gzip"`` with options ``gzip``, ``uncompressed`` and ``disabled`` for above settings respectively.      |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -269,7 +271,26 @@ This button purges all the in-memory caches for sessions, accounts and channels.
 
 Database
 ~~~~~~~~~~~~~~~~~~~~~~~~~
+
 Changes to properties in this section will require a server restart before taking effect.
+
+Default Server Language
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Default language for system messages and logs.
+
+Changes to this setting require a server restart before taking effect.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultServerLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``it``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ro``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Default Client Language
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Default language for newly created users and pages where the user hasn't logged in.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DefaultClientLocale": "en"`` with options ``de``, ``en``, ``es``, ``fr``, ``it``, ``ja``, ``ko``, ``nl``, ``pl``, ``pt-br``, ``ro``, ``ru``, ``tr``, ``zh_CN`` and ``zh_TW``   |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Driver Name
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -826,6 +847,8 @@ Use Experimental Gossip
 
 **False**: The server attempts to communicate over the streaming port.
 
+Changes to this setting require a server restart before taking effect.
+
 Note that the gossip port and gossip protocol are used to determine cluster health even when this setting is ``false``.
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -856,6 +879,8 @@ Streaming Port
 ^^^^^^^^^^^^^^
 The port used for streaming data between servers.
 
+**True**: Log files are written to files specified in **FileLocation**.
+
 +----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"StreamingPort": 8075`` with whole number input. |
 +----------------------------------------------------------------------------------------------+
@@ -866,6 +891,16 @@ Inter-Node Listen Address
 
 The address the Mattermost Server will listen on for inter-node communication. When setting up your network you should secure the listen address so that only machines in the cluster have access to that port. This can be done in different ways, for example, using IPsec, security groups, or routing tables.
 
+Changes to this setting require a server restart before taking effect.
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableFile": true`` with options ``true`` and ``false`` for above settings respectively.  |
++----------------------------------------------------------------------------------------------------------------------------------------+
+
+Output console logs as JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Typically set to true in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
+
 +-----------------------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"InterNodeListenAddress": ":8075"`` with string input.  |
 +-----------------------------------------------------------------------------------------------------+
@@ -875,6 +910,8 @@ Inter-Node URLs
 *Deprecated. Not used in version 4.0 and later*
 
 A list of all the machines in the cluster, separated by commas, for example, ``["http://10.10.10.2", "http://10.10.10.4"]``. It is recommended to use the internal IP addresses so all the traffic can be secured.
+
+Changes to this setting require a server restart before taking effect.
 
 +--------------------------------------------------------------------------------------+
 | This feature’s ``config.json`` setting is ``"InterNodeUrls": []`` with string input. |
@@ -898,12 +935,17 @@ Maximum Queries per Second
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Throttle API at this number of requests per second if rate limiting is enabled.
 
+The location of the log files. If blank, they are stored in the ``./logs`` directory. The path that you set must exist and Mattermost must have write permissions in it.
+
+Changes to this setting require a server restart before taking effect.
+
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PerSec": 10`` with whole number input.                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Maximum Burst Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Typically set to true in production. When true, logged events are written in a machine readable JSON format. Otherwise they are printed as plain text.
 
 Maximum number of requests allowed beyond the per second query limit.
 
@@ -4050,7 +4092,7 @@ Timeout in seconds for Elasticseaerch calls.
 
 Bulk Indexing Time Window
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting servers as a performance optimisation for installs with over ~10 millioin posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly.
+Determines the maximum time window for a batch of posts being indexed by the Bulk Indexer. This setting servers as a performance optimisation for installs with over ~10 million posts in the database. Approximate this value based on the average number of seconds for 2,000 posts to be added to the database on a typical day in production. Setting this value too low will cause Bulk Indexing jobs to run slowly.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with whole number input     |

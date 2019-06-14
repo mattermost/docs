@@ -5,6 +5,7 @@ Onboarding
 This document is intended for new hires to summarize norms for working at Mattermost, Inc. including:
 
 - `Getting Started Checklist`_ - Getting ready to work here
+- `Channels`_ - Where we discuss work-related topics
 - `Meetings`_ - When we get together and why
 - `Mindsets`_ - Shared toolsets we have for solving problems
 - `Terminology`_- Shared vocabulary to convey ideas quickly
@@ -62,6 +63,28 @@ First Week
 ---------------------------------------------------------
 
 - (People Ops) US FTE - Email regarding 401K account set up.
+
+---------------------------------------------------------
+Channels
+---------------------------------------------------------
+
+Whenever possible, we share key updates and have discussions in Mattermost. Some of the channels used are:
+
+- `Announcements <https://community.mattermost.com/private-core/channels/announcements>`_ - Mattermost-wide announcements
+- `Ask Anything <https://community.mattermost.com/core/channels/ask-anything>`_ - General questions about Mattermost
+- `Ask R&D <https://community.mattermost.com/core/channels/ask-r-and-d>`_ - Technical questions to the Mattermost R&D team
+- `Customer Feedback <https://community.mattermost.com/private-core/channels/customer-feedback>`_ - Discussion of customer feedback
+- `Customer Success <https://community.mattermost.com/private-core/channels/customer-success>`_ - Updates from and general discussion with the Mattermost customer success team
+- `Customer Support <https://community.mattermost.com/private-core/channels/community>`_ - Discussion of customer support ticket escalations
+- `Developers <https://community.mattermost.com/core/channels/developers>`_ - General development help
+- `Marketing <https://community.mattermost.com/private-core/channels/marketing>`_ - Campaign ideas and general marketing team discussions
+- `Marketing Website <https://community.mattermost.com/private-core/channels/marketing-website-priv>`_ - Website bugs, release notes, and web discussions
+- `Product Management <https://community.mattermost.com/core/channels/product-management>`_ - Discussion with and questions for Mattermost product managers
+- `Roadmap <https://community.mattermost.com/private-core/channels/roadmap>`_ - Questions about and discussion of the product roadmap, or to view public roadmap in the header
+- `Spec Reviews <https://community.mattermost.com/core/channels/spec-reviews>`_ - In-progress plans for new features
+- `Sustained Engineering <https://community.mattermost.com/core/channels/sustained-engineering>`_ - Discussion with Mattermost's `Sustained Engineering Team (SET) <https://developers.mattermost.com/internal/sustained-engineering/>`_
+- `UX Design <https://community.mattermost.com/core/channels/ux-design>`_ - Questions and discussion about product design
+- `Welcome <https://community.mattermost.com/private-core/channels/welcome>`_ - Where new staff members are introduced on their first day
 
 ---------------------------------------------------------
 Meetings
@@ -223,7 +246,7 @@ Not everyone is comfortable with speaking in front of 60+ people. Not everyone s
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff only** - Each team is responsible for its own sprint planning process. Sprints are currently one week long, and start on Tuesdays. Note that teams also share demos and short updates with the whole product team in the "Platform Meeting" (see below).
+**Mattermost staff only** - Each team is responsible for its own sprint planning process. Sprints are currently one week long, and start on Tuesdays. Note that teams also share demos and short updates with the whole product team in the "R&D Meeting" (see below).
 
 - Goal: Share demos, reflect on previous sprint, and lock on tickets for next sprint.
 - Attendees: Development team members (typically developers and product manager).
@@ -285,10 +308,10 @@ Procedure:
 
 2. (Leads): During meeting discuss agenda items in sequence. 
 
-Platform Meeting
+R&D Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost Inc-only** - (Product Staff - 1 hour/week) Thursday's at 10:00 (`San Francisco Time <http://everytimezone.com/>`__).
+**Mattermost Inc-only** - (Product Staff - 45 min/week) Thursdays at 09:00 (`San Francisco Time <http://everytimezone.com/>`__).
 
 Regular team meeting for product staff team at Mattermost Inc.
 
@@ -300,38 +323,39 @@ The meeting includes presentations and demos, controlled agenda items (e.g. queu
 
 Procedure:
 
-1. (Vice Chair) the day before the meeting, post a reminder in `Platform Meeting private channel <https://community.mattermost.com/core/channels/platform-meeting>`__ (Mattermost Inc only)
+1. (Vice Chair) the day before the meeting, post a reminder in `R&D Meeting private channel <https://community.mattermost.com/core/channels/platform-meeting>`__ (Mattermost Inc only)
 
 ::
 
-   #### @channel A reminder to prepare your items for Platform meeting [DATE]:
-   1. @[name], @[name] & @[name] - you're up for ice-breaker [Question](https://docs.google.com/document/d/1A0D96O4t4GS33-  yaHvLQBdtgIScmwzVo15c2vSFeYis/edit#bookmark=id.q182tvgkdewa)
-   2. If you'll be giving a demo, please queue it [in the meeting notes](link) 
+   #### @channel A reminder to prepare your items for R&D meeting [DATE]:
+   1. @[name], @[name] & @[name] - you're up for ice-breaker
+   2. Reminder for team member responsible for this week's team update to include it [in the notes](LINK)
+   3. If you'll be giving a demo, please queue it [in the meeting notes](link) 
    ##### Everyone is encouraged to bring up items for discussion. If the discussion is `time-copped` during the meeting, please be sure to add a `next step` to the notes and post a link to where the conversation can be continued. ~platform channel is usually a good place to continue discussions.
 
 
 2. (Team) At time of meeting:
 
-   - Join the **Zoom** link in the header of the `Platform private channel <https://community.mattermost.com/core/channels/platform-discussion>`__.
+   - Join the **Zoom** link in the header of the `R&D Meeting private channel <https://community.mattermost.com/core/channels/platform-meeting>`__.
    - Open the **Notes** link in the header to see the agenda.
 
-3. (Vice-Chair) Post `meeting notes template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`__ into Platform Meeting Notes.
+3. (Vice-Chair) Post `meeting notes template <https://docs.google.com/document/d/1ImSgkF7T03wbKwz_t4-Dr4n3I8LixVbFb2Db_u0FmdM>`__ into R&D meeting notes.
    
    - Add **Follow-ups** from previous meeting.
-   - Add **New items** queued in `Platform private channel <https://community.mattermost.com/core/channels/platform-discussion>`__ (Mattermost Inc only).
+   - Add **New items** queued in `R&D Meeting private channel <https://community.mattermost.com/core/channels/platform-meeting>`__ (Mattermost Inc only).
 
 Meeting Agenda:
 
-- **Ice-breaker** - Currently: "Questions"
+- **Ice-breaker** - see Meeting Elements > Ice-breaker below for examples
 - **Roadmap check-in** - Review of roadmap status in current and next release
-- **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
 - **Team updates** - Each development team gives a short update on their current top priorities
-- **New items** - New queued items are discussed
+- **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
 - **Blind spots, Inspiration, Knowledge Share** - Colleagues share areas of concern and ask questions
 
 Post Meeting:
 
-- If there are follow-up items, these are posted to the  `Platform private channel <https://community.mattermost.com/core/channels/platform-discussion>`__ (Mattermost Inc only).
+- If there are follow-up items, these are posted to the  `R&D Meeting private channel <https://community.mattermost.com/core/channels/platform-meeting>`__ (Mattermost Inc only).
+- Vice Chair posts a link to the meeting recording for those who could not attend.
 
 Meeting Elements
 -----------------------
@@ -341,8 +365,9 @@ Here we summarize meeting elements that can be re-used for meetings across teams
 Ice-breaker
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- 2-3 minute exercises designed to learn more a colleagues at the start of a recurring meeting
-- Typically rotates alphabetically by first name, three colleagues per meeting
+- 2-3 minute exercises designed to learn more about colleagues at the start of a recurring meeting
+- Typically rotates in random order with names pulled from the `R&D Meeting Ice-breaker List <https://docs.google.com/spreadsheets/d/1dCgKFdYkaDYd7yzgbK2VcqscZ1Ni5uNnnkZZv63XtOg/edit#gid=0>`__, three colleagues per meeting (2 R&D staff, 1 'other' (e.g. Sales, Ops, etc)
+
 - Examples:
 
    - "Hobby talk" - sharing about an interesting hobby, past or present

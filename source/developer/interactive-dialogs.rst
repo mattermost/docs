@@ -13,8 +13,10 @@ Here is an example of what a dialog looks like for creating a JIRA issue within 
 
 .. image:: ../../source/images/interactive-dialog-example.png
 
-.. toctree::
-  :maxdepth: 2
+.. contents::
+  :backlinks: top
+  :depth: 1
+  :local:
 
 Opening a Dialog
 -----------------------
@@ -37,7 +39,7 @@ Interactive dialogs support the following parameters:
     "icon_url", "String", "(Optional) The URL of the icon used for your dialog. If none specified, no icon is displayed."
     "submit_label", "String", "(Optional) Label of the button to complete the dialog. Default is ``Submit``."
     "notify_on_cancel", "String", "(Optional) When true, sends an event back to the integration whenever there's a user-induced dialog cancellation. No other data is sent back with the event. Default is ``false``."
-    "state", "String", "(Optional) String provided by the integration that will be echoed back with dialog submission. Default is `` ``."
+    "state", "String", "(Optional) String provided by the integration that will be echoed back with dialog submission. Default is the empty string."
 
 Sample JSON is given below. Form submissions are sent back to the URL defined by the integration. You must also include the trigger ID you received from the slash command or interactive message.
 
