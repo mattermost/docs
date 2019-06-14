@@ -10,11 +10,11 @@ Set the context for the designs.  There may be multiple copies of this document 
 
 Design Option 1
 --------------------  
-`Chen's initial Design <https://docs.google.com/document/d/1uWDFGRmm6EHs9hl846jGldo1NdIbtqWeY-RNguZ66uI/edit?usp=sharing>`__
+`Initial Design <https://docs.google.com/document/d/1uWDFGRmm6EHs9hl846jGldo1NdIbtqWeY-RNguZ66uI/edit?usp=sharing>`__
  - 
 
 Questions to validate through feedback:
- - Question 1
+ - Technical question: Can we show only the admin role the status indicator on **Main Menu > Help > About**? 
  - Question 2
  - Question 3
 
