@@ -11,6 +11,7 @@ See one of the sample integrations below or visit the `Mattermost Integrations D
    
    /integrations/jira*
    /integrations/zoom*
+   /integrations/net-promoter-score*
    /integrations/zapier*
 
 **Are you looking to develop an integration?**
