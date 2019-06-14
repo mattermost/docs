@@ -24,3 +24,5 @@ The first command will install only the `CRD` but will not actually attempt to d
 **NOTE:** Test new versions of the operator by setting `gitlab.operator.image.tag` to either the branch name of a gitlab-operator container build or a specific tagged release number.
 
 **NOTE:** The operator is transitioning from a ClusterRole to a regular Role that operates within a namespace. Operator containers after version 0.4 will have this new behavior by default.
+
+**NOTE:** The versions prior to 1.9.0 use the release name as a prefix for CRD name. This feature has been removed and the CRD does not have a prefix. This can cause Helm complain about missing `GitLab` type while upgrading from an older version. To solve this issue you can use `gitlab.operator.crdPrefix` value and pass the release name for upgrade.
