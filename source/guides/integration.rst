@@ -32,6 +32,7 @@ See our documentation below.
    /developer/message-attachments*
    /developer/interactive-messages*
    /developer/interactive-dialogs*
+   /developer/bot-accounts*
    /developer/personal-access-tokens*
    /developer/oauth*
    /developer/integration*

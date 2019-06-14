@@ -24,7 +24,7 @@ To learn more about OAuth 2.0 applications, including what permissions they have
 Enable OAuth 2.0
 ```````````````````````````
 1. Go to the **Main Menu** > **System Console**
-2. Under **Integrations** > **Custom Integrations**
+2. Under **Integrations** > **Custom Integrations** in prior versions or **Integrations** > **Integration Management** in versions after 5.12
   a. Set `Enable OAuth 2.0 Service Provider <https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider>`__ to **True**.
   b. If you’d like to allow Zapier integrations to post with customizable usernames and profile pictures, then set `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ and `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-iconss>`__ to **True**.
 

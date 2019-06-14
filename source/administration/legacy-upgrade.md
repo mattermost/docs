@@ -12,8 +12,8 @@ If you are upgrading a server that is already running a supported version, See [
 
 2. Security-related changes were made in 3.6.7, 3.7.5, and 3.8.0 that require you to verify settings in the System Console before upgrading.
 
-    1. In the GENERAL section of the System Console, click **Configuration** and make sure that the **Site URL** is specified. It must not be empty. For more information about SiteURL, see [Configuration Settings](../../administration/config-settings.html#site-url).
-    2. In the GENERAL section of the System Console, click **Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
+    1. In the GENERAL section of the System Console, click **Configuration** in prior versions or **System Console > Environment > Web Server** in versions after 5.12 and make sure that the **Site URL** is specified. It must not be empty. For more information about SiteURL, see [Configuration Settings](../../administration/config-settings.html#site-url).
+    2. In the GENERAL section of the System Console, click **Logging** in prior versions or **System Console > Environment > Logging** in versions after 5.12 and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
 
 3. Changes were made in 3.8.0 that require a change in the proxy configuration. If you're using NGINX:
     1. Open the NGINX configuration file as root. The file is usually ``/etc/nginx/sites-available/mattermost`` but might be different on your system.
@@ -61,8 +61,8 @@ After the server is upgraded, users might need to refresh their browsers to expe
 
 2. Security-related changes were made in 3.6.7, 3.7.5, and 3.8.0 that require you to verify settings in the System Console before upgrading from version 3.5.3 and earlier to any version greater than 3.6.7.
 
-    1. In the GENERAL section of the System Console, click **Configuration** and make sure that the **Site URL** is specified. It must not be empty. For more information about SiteURL, see [Configuration Settings](../../administration/config-settings.html#site-url).
-    2. In the GENERAL section of the System Console, click **Logging** and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
+    1. In the GENERAL section of the System Console, click **Configuration** in prior versions or **System Console > Environment > Web Server** in versions after 5.12 and make sure that the **Site URL** is specified. It must not be empty. For more information about SiteURL, see [Configuration Settings](../../administration/config-settings.html#site-url).
+    2. In the GENERAL section of the System Console, click **Logging** in prior versions or **System Console > Environment > Logging** in versions after 5.12 and make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.
 
 3. Changes were made in 3.8.0 that require a change in the proxy configuration. If you're using NGINX:
     1. Open the NGINX configuration file as root. The file is usually ``/etc/nginx/sites-available/mattermost`` but might be different on your system.

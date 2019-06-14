@@ -59,7 +59,7 @@ Suppose you want to write an external application that is able to check the weat
 
 You can follow these general guidelines to set up a custom Mattermost slash command for your application.
 
-1 - First, go to **Main Menu > Integrations > Slash Commands**. If you don't have the **Integrations** option in your Main Menu, slash commands may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator to do so.
+1 - First, go to **Main Menu > Integrations > Slash Commands**. If you don't have the **Integrations** option in your Main Menu, slash commands may not be enabled on your Mattermost server or may be disabled for non-admins. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator to do so.
 
 2 - Click **Add Slash Command** and add name and description for the command.
 
@@ -70,7 +70,7 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
 5 - (Optional) Set the response username and icon the command will post messages as in Mattermost. If not set, the command will use your username and profile picture.
 
   .. note::
-    `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to `true` in `config.json` to override usernames, and `similarly for profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator.
+    `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to `true` in `config.json` to override usernames, and `similarly for profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator.
 
 6 - (Optional) Include the slash command in the command autocomplete list, displayed when typing ``/`` in an empty input box. Use it to make your command easier to discover by your teammates. You can also provide a hint listing the arguments of your command and a short description displayed in the autocomplete list.
 
@@ -134,9 +134,9 @@ which would render in Mattermost as
 Messages with advanced formatting can be created by including an :doc:`attachment array <message-attachments>` and :doc:`interactive message buttons <interactive-messages>` in the JSON payload.
 
 .. note::
-  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the username is set to `webhook`.
+  `Enable integrations to override usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator. If not enabled, the username is set to `webhook`.
   
-  Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
+  Similarly, `Enable integrations to override profile picture icons <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-profile-picture-icons>`__ must be set to `true` in `config.json` to override usernames. Enable them from **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 or ask your System Administrator. If not enabled, the icon of the creator of the webhook URL is used to post messages.
 
 Tips and Best Practices
 ------------------------

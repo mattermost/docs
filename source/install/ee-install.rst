@@ -91,7 +91,7 @@ See `documentation for more information on the command line tools <https://docs.
 
 **Through the System Console:**
 
-1. In the OTHER section of the System Console, click **Edition and License**. The *Edition and License* page opens.
+1. In the OTHER section of the System Console, click **Edition and License** in prior versions or **System Console** > **About** > **Edition and License** in versions after 5.12.
 2. Click **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
 3. Upload the new license key file.
 
