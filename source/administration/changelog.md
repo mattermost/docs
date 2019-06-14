@@ -143,11 +143,26 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Under ``"ServiceSettings":`` in ``config.json``:
    - Added ``"MinimumHashtagLength": 3``, to add the ability to change the minimum length of hashtags.
 
-### API Changes
+### RESTful API Changes
  - Added ``GetUsers`` API method to add the ability to list users.
- - Added the ``SearchPostsInTeam`` method to the plugin API to add the ability to search posts in a team.
- - Added ``GetTeamMembersForUser`` and ``GetChannelMembersForUser`` to the plugin API to add the ability to get team and channel members for a specific user.
- - Added ``GetBundleInfo() string`` method to the plugin API to add the ability to store assets elsewhere.
+ - Added ``POST /bots`` to create a bot accounts.
+ - Added ``PUT /bots/{bot_user_id}`` to partially update a bot by providing only the fields you want to update.
+ - Added ``GET /bots/{bot_user_id}`` to get a bot specified by its bot id.
+ - Added ``GET /bots`` to get a page of a list of bots.
+ - Added ``POST /bots/{bot_user_id}/disable`` to disable a bot.
+ - Added ``POST /bots/{bot_user_id}/enable`` to enable a bot.
+ - Added ``POST /bots/{bot_user_id}/assign/{user_id}`` to assign a bot to the specified user.
+
+### Plugin API Changes
+ - Added the ``SearchPostsInTeam`` method to add the ability to search posts in a team.
+ - Added ``GetTeamMembersForUser`` and ``GetChannelMembersForUser`` to add the ability to get team and channel members for a specific user.
+ - Added ``GetBundleInfo() string`` method to add the ability to store assets elsewhere.
+ - Added ``CreateBot(bot *model.Bot) (*model.Bot, *model.AppError)`` to create the given bot and corresponding user.
+ - Added ``PatchBot(botUserId string, botPatch *model.BotPatch) (*model.Bot, *model.AppError)`` to apply the given patch to the bot and corresponding user.
+ - Added ``GetBot(botUserId string, includeDeleted bool) (*model.Bot, *model.AppError)`` to return the given bot.
+ - Added ``GetBots(options *model.BotGetOptions) ([]*model.Bot, *model.AppError)`` to return the requested page of bots.
+ - Added ``UpdateBotActive(botUserId string, active bool) (*model.Bot, *model.AppError)`` to mark a bot as active or inactive, along with its corresponding user.
+ - Added ``PermanentDeleteBot(botUserId string) *model.AppError`` to permanently delete a bot and its corresponding user.
 
 ### Database Changes
  - Granted the following permissions for the System Admin, in preparation for an upcoming bot accounts feature:
