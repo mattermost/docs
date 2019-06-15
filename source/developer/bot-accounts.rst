@@ -165,10 +165,10 @@ No, but you can automate your integration to cycle its token `through the REST A
 
 For more information about access tokens, see :doc:`the personal access tokens documentation <personal-access-tokens>`.
 
-Do bot accounts make it easier to personify someone else such as the CEO or an HR coordinator?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Do bot accounts make it easier to impersonate someone else such as the CEO or an HR coordinator?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Possibly yes. Currently a System Admin can disable overriding the profile picture and the username from integrations to help prevent personification, but this is not the case for bot accounts.
+Possibly yes. Currently a System Admin can disable overriding the profile picture and the username from integrations to help prevent impersonation, but this is not the case for bot accounts.
 
 Mitigations:
 
