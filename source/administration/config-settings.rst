@@ -361,6 +361,16 @@ A 32-character key for encrypting and decrypting sensitive fields in the databas
 
 When using High Availability, the salt must be identical in each instance of Mattermost.
 
+The following fields are encrypted using this key
+
+- ``SqlSettings.DriverName``
+- ``SqlSettings.DataSource``
+- ``SqlSettings.MaxIdleConns``
+- ``SqlSettings.MaxOpenConns``
+- ``SqlSettings.Trace``
+- ``SqlSettings.QueryTimeout``
+- ``SqlSettings.ConnMaxLifetimeMilliseconds``
+
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
 +------------------------------------------------------------------------------------------+
@@ -1142,6 +1152,18 @@ Set the number of days from the last time a user entered their credentials to th
 
 After changing this setting, the setting will take effect after the next time the user enters their credentials.
 
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SessionLengthSSOInDays" : 30`` with whole number input.                                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Session length for SSO authentication (days)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+ This setting defines the session length for SSO authentication, such as GitLab and SAML.
+
+ Set the number of days from the last time a user entered their credentials to the expiry of the user's session. If the authentication method is SAML or GitLab, the user may automatically be logged back in to Mattermost if they are already logged in to SAML or GitLab.
+
+ After changing this setting, the setting will take effect after the next time the user enters their credentials.
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SessionLengthSSOInDays" : 30`` with whole number input.                                                                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -3077,6 +3099,18 @@ Specify the color of the AD/LDAP login button for white labeling purposes. Use a
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
 +-------------------------------------------------------------------------------------------------------------------------------+
+
+SAML session lengths
+^^^^^^^^^^^^^^^^^^^^^^
+
+SAML session length is defined per
+
+ - ``url`` : ``environment/session_lengths``
+- ``title`` : ``admin.sidebar.sessionLengths``
+- ``type`` : ``TYPE_NUMBER``
+- ``label`` : ``mobileSessionDays``
+- ``help_text`` : ``admin.service.ssoSessionDaysDesc``
+- ``placeholder``: ``sessionIdleTimeout``
 
 AD/LDAP Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
