@@ -135,6 +135,21 @@ Marketing
 2. Post a tweet for all new integrations.
 
  - E.g. https://twitter.com/Mattermost/status/1102709312231596032.
+ 
+Announcement
+------------
+
+a) Once the integration entry has been added to the directory, please reply back in the Integrations channel with a screenshot of the entry that was added, a link to its install guide, and an at-mention for Integrations PM. Example:
+
+  .. code-block:: none
+  
+    [@-username] Standup Raven Plugin added to https://integrations.mattermost.com
+
+    https://github.com/standup-raven/standup-raven/blob/master/README.md
+
+    [Attached image]
+
+b) Once Integrations PM has acknowledged, please re-post to `Announcements channel <https://community.mattermost.com/private-core/channels/announcements>`_.
 
 Release Date T-0
 ------------------

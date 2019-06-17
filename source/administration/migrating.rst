@@ -135,9 +135,11 @@ The following key features can be imported from Slack:
 
 * Imported users added automatically to their channels
 
+* Messages and message threads
+
 Messages with file attachments are imported as a message containing a link to Slack's servers by default. The file attachments themselves can be imported to Mattermost by using the `Slack Advanced Exporter <https://github.com/grundleborg/slack-advanced-exporter>`__ tool to add them to your archive before importing it.
 
-Bot and Integration messages are imported by default, but if you would like them to display with the appropriate username when imported, you should ensure that `Enable Integrations to Override Usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ is set in **System Console > Integrations > Custom Integrations** *before* doing the import.
+Bot and Integration messages are imported by default, but if you would like them to display with the appropriate username when imported, you should ensure that `Enable Integrations to Override Usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ is set in **System Console > Integrations > Custom Integrations**  in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 *before* doing the import.
 
 When topic-change messages, purpose-change messages, and channel name-change messages are imported from Slack, they appear in Mattermost as posts from the System user.
 

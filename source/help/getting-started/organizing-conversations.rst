@@ -61,6 +61,10 @@ Click the channel name at the top of the center pane to access the drop-down men
 
     .. image:: ../../images/add_members.png
 
+You can also add users to channels within their profile pop-over by clicking "Add to a Channel" and selecting the channel to add them to.
+
+    .. image:: ../../images/add_members_pop.png
+
 Removing Members from a Channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -89,6 +93,11 @@ Archiving a Channel
 Click the channel name at the top of the center pane to access the drop-down menu, then click **Archive Channel**. Anyone can archive the Public Channels or Private Channels they belong to, unless the System Administrator has `restricted the permissions <https://docs.mattermost.com/administration/config-settings.html#id2>`__.
 
 When a channel is archived, it is removed from the user interface, but a copy exists on the server in case it is needed for audit reasons later. Because of this, the URL of a newly created channel cannot be the same URL name as an archived channel.
+
+Moreover, when a channel is archived, the contents cannot be searched by default. If you want to be able to search the channel later, either
+
+1. Ask your System Administrator to set ``ViewArchivedChannels`` to ``true`` in config.json to allow users to view permalinks and search for content of channels that have been archived; or
+2. Leave the channel open, but post a message in the channel saying it's considered archived, such as ``# This channel is archived.``
 
 Converting Public Channels to Private
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

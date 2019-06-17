@@ -6,6 +6,10 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
+Mattermost Enterprise Edition v5.12.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-12>`__ - `Download <https://releases.mattermost.com/5.12.0/mattermost-5.12.0-linux-amd64.tar.gz>`__
+  - ``https://releases.mattermost.com/5.12.0/mattermost-5.12.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``ce4b1b182e12ca499ba3e1a115f7635e0747430b741b3e10b4de54b8bcbfdfd7``
+  - GPG Signature: https://releases.mattermost.com/5.12.0/mattermost-5.12.0-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v5.11.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-11>`__ - `Download <https://releases.mattermost.com/5.11.0/mattermost-5.11.0-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.11.0/mattermost-5.11.0-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``ad2db1a68103fb3ce9383f857eddc817848d548334b510b2dd2491f13f59ea4d``
@@ -131,6 +135,10 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog <https://docs.mattermost.
 Mattermost Team Edition Server Archive
 ---------------------------------------
 
+Mattermost Team Edition v5.12.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-12>`__ - `Download <https://releases.mattermost.com/5.12.0/mattermost-team-5.12.0-linux-amd64.tar.gz>`__
+  - ``https://releases.mattermost.com/5.12.0/mattermost-team-5.12.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``57ddde04d19f399567bac4a35bcc09ea26ac34744e8b70ce77e75a83314695b5``
+  - GPG Signature: https://releases.mattermost.com/5.12.0/mattermost-team-5.12.0-linux-amd64.tar.gz.sig
 Mattermost Team Edition v5.11.0 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-11>`__ - `Download <https://releases.mattermost.com/5.11.0/mattermost-team-5.11.0-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.11.0/mattermost-team-5.11.0-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``b462170eb8e49829a2adecd5b283005e6ce538d8868fc08149ba711856689735``

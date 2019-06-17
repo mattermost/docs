@@ -6,19 +6,21 @@ AD/LDAP Groups (Experimental) (E20)
 Overview
 --------------------
 
-The groups feature is useful for organizations that have many new users to onboard or that onboard users frequently and want to ensure users are added to default teams and channels that are pertinent to them. The group feature currently supports creating groups by synchronization with your AD/LDAP system groups. AD/LDAP nested groups are also supported.  Please see `this forum post <https://forum.mattermost.org/t/ldap-group-sync-alpha-release/6351>`__ for more details.  
+The groups feature is useful for organizations that have many new users to onboard or that onboard users frequently and want to ensure users are added to default teams and channels that are pertinent to them. The group feature currently supports creating groups by synchronization with your AD/LDAP system groups. AD/LDAP nested groups are also supported.  Please see `this forum post <https://forum.mattermost.org/t/ldap-group-sync-alpha-release/6351>`__ for more details.  For a technical overview of the feature by Martin Kraft, who led the development of the feature, please see `this blog post <https://developers.mattermost.com/blog/2019-06-05-ldap-nested-groups-modelling-and-representation-in-code/>`_. 
+
+Synchronized groups can also be used to manage the membership of teams and private channels. See `this documentation <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`_ for more information. 
 
 Pre-installation notes
 ----------------------
 
-For customers that have enabled synchronization with AD/LDAP, all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` will be available to be linked in the groups list view at **Access Control > Groups**. The group filter is an optional configuration setting available under **System Console > AD/LDAP**, which will allow you to specify the groups you would like to be able to access in Mattermost.  The group filter is independent of the user filter, however it does leverage the Base DN attribute.  You may need to adjust your Base DN to ensure group objects can be searched in your AD/LDAP tree.  
+For customers that have enabled synchronization with AD/LDAP, all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` will be available to be linked in the groups list view at **System Console** > **Access Control > Groups** in prior versions or **System Console** > **User Management** > **Groups** in versions after 5.12. The group filter is an optional configuration setting available under **System Console > AD/LDAP**, which will allow you to specify the groups you would like to be able to access in Mattermost.  The group filter is independent of the user filter, however it does leverage the Base DN attribute.  You may need to adjust your Base DN to ensure group objects can be searched in your AD/LDAP tree.  
 
 The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/deployment/sso-ldap.html?highlight=ldap#configure-ad-ldap-synchronization>`__. for more information. The group feature has no effect on users' authentication to Mattermost.
 
 Enable AD/LDAP group synchronization
 ------------------------------------
 
-To enable this feature, go to **System Console > Advanced > Experimental > Enable AD/LDAP Group Sync**. You can also edit the ``config.json file`` setting ``ExperimentalLdapGroupSync``. Then restart the Mattermost server after changing.  
+To enable this feature, go to **System Console > Advanced > Experimental > Enable AD/LDAP Group Sync** in prior versions or **System Console** > **Experimental** > **Features** in versions after 5.12. You can also edit the ``config.json file`` setting ``ExperimentalLdapGroupSync``. Then restart the Mattermost server after changing.  
 
 AD/LDAP group synchronization
 -----------------------------
@@ -32,7 +34,7 @@ Additionally, you can specify the Group filter used to retrieve groups.  If the 
 
 Synchronization of groups occurs after user synchronization and results for group synchronization are available on the synchonization status table (located at the bottom of the AD/LDAP configuration page). 
 
-After the AD/LDAP groups have been synchronized, go to **System Console > Access Control > Groups** to link and configure Mattermost groups. 
+After the AD/LDAP groups have been synchronized, go to **System Console > Access Control > Groups** in prior versions or **System Console** > **User Management** > **Groups** in versions after 5.12 to link and configure Mattermost groups. 
  
 .. image:: ../images/Group_filter.png
 
@@ -107,6 +109,8 @@ It may take a few seconds to load all team and channel memberships for a user de
 
 .. image:: ../images/Team_Channel_Membership_Sync.png
 
+To manage a team or private channel with synchronized groups, please see `this documentation <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`_.
+
 Remove configured teams and channels from a group
 -------------------------------------------------
 To remove a team or channel configured for a group, click “Remove” to the right of the team or channel name. Users already part of the team and channel will not be removed from that channel by this action. 
@@ -162,3 +166,11 @@ How do nested groups work with AD/LDAP Group Sync?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Users within nested groups are included as members of parent groups. The group filter that you specify can include any type of AD/LDAP group on your system. The ``member`` AD/LDAP attribute is used to determine nested groups that belong to a parent group.
+
+How do I manage a team or private channel membership with synchronized groups?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can do so by setting the team or channel management to synced groups instead defaulting a group to a team or channel. See `this documentation <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`_ to learn more
+
+How do I use AD/LDAP Group Sync with SAML?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You can use AD/LDAP Group Sync with SAML by enabling `SAML Synchronization with AD/LDAP <https://docs.mattermost.com/deployment/sso-saml-okta.html#configure-saml-synchronization-with-ad-ldap>`_.  For the feature to work, it is critical that unique identifier (ID attribute) in both configurations are the same value so that the user is identified the same way in both systems. You do not need to enable sign-in with LDAP for this to work.
