@@ -12,10 +12,14 @@ Release Date 2019-07-16
 
 
 ### Bug Fixes
-
+ - Fixed an issue where changing the Timezone manually to "Set automatically" did not work on the mobile app.
+ - Fixed an issue where channel links did not work inside brackets.
+ - Fixed an issue where uploading a team icon image fired a JS console error and a blank image preview.
+ - Fixed an issue on Safari where a user jumped to the top of the Direct Messages selection list every few seconds.
+ - Fixed an issue where OAuth endpoints returned application/json content type for HTML redirects.
+ - Fixed an issue where json responses were not returned for errors on oauth API endpoints, and a 500 error was returned instead of 4xx errors.
 
 ### config.json
-
 
 #### Changes to Team Edition and Enterprise Edition:
 
