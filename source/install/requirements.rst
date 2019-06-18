@@ -1,6 +1,6 @@
 ..  _requirements:
 
-Software & Hardware Requirements
+Software and Hardware Requirements
 ================================
 
 This guide outlines minimum software and hardware requirements for deploying Mattermost. Requirements may vary based on utilization and observing performance of pilot projects is recommended prior to scale out. 
