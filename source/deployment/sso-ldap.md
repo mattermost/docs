@@ -58,16 +58,39 @@ Note: Make sure that at least 1 LDAP user is in Mattermost or the sync will not 
 
 To configure AD/LDAP synchronization with SAML sign-in, see the [SAML documentation](https://about.mattermost.com/default-saml-ldap-sync).
 
-#### Configure AD/LDAP deployments with multiple domains
+#### Configure Sync with Active Directory deployments of multiple domains and forests 
 
 Organizations using multiple domains can integrate with Mattermost using a "Forest" configuration to bring together multiple domains. Please see [Forests as Collections of Domain Controllers that Trust Each Other](https://technet.microsoft.com/en-us/library/cc759073%28v=ws.10%29.aspx?f=255&MSPPError=-2147217396) for more information.
 
+_Single forest with multiple domains_
+
+Description
+Configuration example
+
+_Single Forest with non-contiguous namespace (Forest and Tree root)_
+
+Description
 For forest configurations that contain multiple domains which do NOT share a common root, you can search across all of the domains using the Global Catalog. To do so, update your config.json as follows:
 
+Configuration example
 1. Set the LdapPort to 3268 (instead of 389)
 2. Set the BaseDN to " " (A single space character)
 
 See [Global Catalog and LDAP Searches](https://technet.microsoft.com/en-us/library/cc978012.aspx) for additional details.
+
+_Multi-forest with trusts_
+
+Description
+Configuration example
+
+_Multi-forest without trusts_
+
+We do not support this topology.
+
+_Considerations_
+Searching using GC as opposed to LDAP
+Ability to filter results etc...
+
 
 ### Troubleshooting / FAQ
 
