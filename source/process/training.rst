@@ -193,12 +193,15 @@ Procedure:
 
 **Before meeting:**
 
-1. (Chair) Schedules items for the weekly agenda.
+1. (Chair) Schedules items for the weekly agenda, and works 1-1 with presenters to prepare for them.
+2. (Vice Chair) Works with new hires and their managers to schedule week 2 welcomes. If new hire or manager is away, introduction is postponed to the following meeting.
+     - New team members are introduced on their second week by their manager, including name, role, what they're working on, timezone, additional info as appropriate (max 2 minutes).
+     - New hire can opt-in to introduce themselves if they choose (default is not to require public speaking).
 2. (Team) Shares potential meeting agenda topics with Chair via direct message. Must be shared at least 24 hours prior to meeting start and be aligned with the meeting objectives above.
 
 **During meeting:**
 
-1. (Vice Chair) At 7:58am Palo Alto time on the day meeting is held, post a reminder in `Cust Obs Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_. 
+1. (Vice Chair) At 7:58am Palo Alto time on the day meeting is held, post a reminder in `Customer Obsession Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_. 
 
   .. code-block:: none
 
@@ -206,17 +209,14 @@ Procedure:
     
     Meeting notes: https://docs.google.com/document/d/16F86k0I_ipjhHofm5pP6yA_dWTNvmA4ZBr_z53_087Q/edit
 
-2. (Team) Join the **Zoom** link in the header of the `Cust Obs Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_, and open the **Meeting Notes** link in the header to see the agenda.
+2. (Team) Join the **Zoom** link in the header of the `Customer Obsession Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_, and open the **Meeting Notes** link in the header to see the agenda.
 
 3. (Vice Chair) Start Zoom recording at 8:00am Palo Alto time.
 
 3. (Chair & Co-Chairs) Run through the agenda, which comprises one or more of the following items:
 
   - **Introduction**: One of the founders does an introduction to the meeting.
-  - **Week 2 Welcomes of new team members**:
-     - New team members introduced on their second week by their manager, including name, role, what they're working on, timezone, additional info as appropriate (max 2 minutes) 
-     - If new hire or manager is away, postpone to next meeting 
-     - New hire can opt-in to introduce themselves if they choose (default is not to require public speaking) 
+  - **Week 2 welcomes of new team members**: New team members introduced on their second week by their manager, or optionally by the new team member themselves.
   - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key updates, use cases or stories from customers. Links to publicly shared documents or slides may be included in meeting notes.
   - **Feedback**: At end of meeting, concludes meeting with a reminder to share feedback via survey.
 
@@ -234,7 +234,7 @@ Procedure:
 
 2. (Vice Chair) Post recording to Cust Obs Prep channel, with timecode of co-founder's introduction.
 
-3. (Chair & Co-Chairs) Review recording and decide if the introduction is converted to a YouTube video and included in onboarding documentation. Sample recordings include discussions of leadership principles, mission and core values.
+3. (Chair & Vice Chair) Review recording and decide if the introduction is converted to a YouTube video and included in onboarding documentation. Sample recordings include discussions of leadership principles, mission and core values.
 
 Frequently Asked Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
