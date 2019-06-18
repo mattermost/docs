@@ -17,7 +17,7 @@ This overview is a quick reference guide and does not replace the documentation 
 
 The Company pays 100% of premiums for medical, 100% of premiums for dental and 100% of premiums for vision coverage for employee. In addition, the Company funds 50% of premiums for medical, 50% of premiums for dental and 50% of premiums for vision coverage for spouse, dependent, and domestic partner. These contribution amounts are capped at:
 
-**Insurance & Company Contribution Cap**
+**Insurance and Company Contribution Cap**
 
 - Medical Employee Only: $593.00
 - Medical Employee + Spouse: $981.50

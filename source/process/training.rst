@@ -26,20 +26,20 @@ Important things to know
 Hiring
 ---------------------------------------------------------
 
-- (People Ops & New Hire) Offer letter accepted via click-sign
-- (Logistics) Mail track jacket & socks 
+- (People Ops and New Hire) Offer letter accepted via click-sign
+- (Logistics) Mail track jacket and socks 
 
 T-minus 1-3 weeks
 ---------------------------------------------------------
 
-- (People Ops & New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. Since these items are company property, you do not need to buy insurance or extended warranties for them, but you do need to report any loss or damage to People@mattermost.com as soon as it occurs.
+- (People Ops and New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. Since these items are company property, you do not need to buy insurance or extended warranties for them, but you do need to report any loss or damage to People@mattermost.com as soon as it occurs.
 - (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology and training materials.
 - (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on community.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME.LAST_NAME@mattermost.com` is the standard naming convention.
  
 T-minus 1 week
 ---------------------------------------------------------
 
-- (People Ops & New Hire) Set up payroll.
+- (People Ops and New Hire) Set up payroll.
  - US FTE, receive email to complete TriNet sign-up, payroll, benefits enrollment, I-9 form, banking information, personal information, tax forms.  
  - Non-US Employee/Non-Canada Employee, complete bank info form for monthly wire transfer.
  - Non-US Resident Contractor, complete W8-BEN form.
@@ -214,7 +214,7 @@ Procedure:
 
 3. (Vice Chair) Start Zoom recording at 8:00am Palo Alto time.
 
-3. (Chair & Co-Chairs) Run through the agenda, which comprises one or more of the following items:
+3. (Chair and Co-Chairs) Run through the agenda, which comprises one or more of the following items:
 
   - **Introduction**: One of the founders does an introduction to the meeting.
   - **Week 2 welcomes of new team members**: New team members introduced on their second week by their manager, or optionally by the new team member themselves.
@@ -329,7 +329,7 @@ Procedure:
 ::
 
    #### @channel A reminder to prepare your items for R&D meeting [DATE]:
-   1. @[name], @[name] & @[name] - you're up for ice-breaker
+   1. @[name], @[name] and @[name] - you're up for ice-breaker
    2. Reminder for team member responsible for this week's team update to include it [in the notes](LINK)
    3. If you'll be giving a demo, please queue it [in the meeting notes](link) 
    ##### Everyone is encouraged to bring up items for discussion. If the discussion is `time-copped` during the meeting, please be sure to add a `next step` to the notes and post a link to where the conversation can be continued. ~platform channel is usually a good place to continue discussions.
@@ -432,7 +432,7 @@ Consider when two rational people disagree, the cause often comes from one of th
 
 While the emotions, assumptions, priority mindset won't work for everyone in every case, it's helped resolve complex decisions in our company's history.
 
-Likes & Wishes
+Likes and Wishes
 ---------------------------------------------
 
 An easy way to check in with team members about how things are going.
@@ -699,7 +699,7 @@ Software Strategy
 System Security
 ^^^^^^^^^^^^^^^
 
-Papers & Course Materials
+Papers and Course Materials
 
 1. `Framework for Improving Critical Infrastructure Cybersecurity. National Institute of Standards and Technology <https://www.nist.gov/sites/default/files/documents/cyberframework/cybersecurity-framework-021214.pdf>`__ - Standards for internal Mattermost security processes and safeguards.
 2. `Computer Security in the Real World. Butler Lampson <http://research.microsoft.com/en-us/um/people/blampson/69-SecurityRealIEEE/69-SecurityRealIEEE.pdf>`__ - Fundamental challenges with system security.

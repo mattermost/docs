@@ -117,12 +117,12 @@ Please take off holidays relevant to your culture, resident country and preferen
 
 We're headquartered in the US and have a large Canadian contingent, so below are holidays we're expecting people from those countries to take off:
 
-US & Canadian Holidays for 2019:
+US and Canadian Holidays for 2019:
 
-- US & Canadian New Year's (1/1/2019)
+- US and Canadian New Year's (1/1/2019)
 - US MLK Jr. Day (1/21/2019)
-- Canadian Family Day & US Presidents' Day (2/18/2019)
-- US & Canadian Good Friday (4/19/2019)
+- Canadian Family Day and US Presidents' Day (2/18/2019)
+- US and Canadian Good Friday (4/19/2019)
 - Canadian Victoria Day (5/20/2019)
 - US Memorial Day (5/27/2019)
 - Canada Day (7/1/2019)
@@ -132,7 +132,7 @@ US & Canadian Holidays for 2019:
 - US Labor Day, Canadian Labour Day (9/2/2019)
 - Canadian Thanksgiving (10/14/2019)
 - US Thanksgiving (11/28/2019)
-- US & Canadian Christmas Day (12/25/2019)
+- US and Canadian Christmas Day (12/25/2019)
 - Canadian Boxing Day (12/26/2019)
 
 
