@@ -16,6 +16,12 @@ Release Date 2019-07-16
  - Fixed an issue where channel links did not work inside brackets.
  - Fixed an issue where uploading a team icon image fired a JS console error and a blank image preview.
  - Fixed an issue on Safari where a user jumped to the top of the Direct Messages selection list every few seconds.
+ - Fixed an issue where "Error populating syncables" was seen on login when LDAP groups tried to add a user to a team that was at its max users.
+ - Fixed an issue where slash command ``/rename`` was restricted to 22-character maximum channel name length.
+ - Fixed an issue where Manage Members was shown when user did not have Manage Member permissions when viewing the Main Menu.
+ - Fixed an issue where Set a Header button in the channel introduction did not work and was not styled.
+ - Fixed an issue where Group Message and private channel icons in the sidebar were misaligned.
+ - Fixed an issue where custom emojis overlapped when rendered in messages.
  - Fixed an issue where OAuth endpoints returned application/json content type for HTML redirects.
  - Fixed an issue where json responses were not returned for errors on oauth API endpoints, and a 500 error was returned instead of 4xx errors.
 
