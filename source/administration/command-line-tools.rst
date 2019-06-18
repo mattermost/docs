@@ -118,7 +118,7 @@ mattermost
     -  `mattermost jobserver`_ - Start the Mattermost job server
     -  `mattermost ldap`_ - AD/LDAP related utilities
     -  `mattermost license`_ - Licensing commands
-    -  `mattermost logs`_ - Display humand-readable logs
+    -  `mattermost logs`_ - Display human-readable logs
     -  `mattermost permissions`_ - Management of the permissions system
     -  `mattermost plugin`_ - Management of plugins
     -  `mattermost reset`_ - Reset the database to initial state
