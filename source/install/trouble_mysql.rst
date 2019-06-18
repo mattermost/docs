@@ -77,7 +77,7 @@ following:
     +--------------------+
     5 rows in set (0.03 sec)
 
-**No ``mattermost`` Database**
+**No mattermost Database**
 
 If the ``mattermost`` database doesn't exist, create a database named
 ``mattermost`` by opening MySQL as root and issuing the command:
@@ -90,7 +90,7 @@ After creating of the database, attempt to restart the Mattermost server
 by navigating to the ``/opt/mattermost/bin`` directory and entering the
 command ``sudo -u mattermost ./platform``.
 
-**The ``mattermost`` Database Exists**
+**The mattermost Database Exists**
 
 If the ``mattermost`` database does exist, confirm that you have defined
 the database driver correctly in the
@@ -138,7 +138,7 @@ will see an error such as:
     [2017/09/20 17:06:18 EDT] [EROR] Failed to ping DB retrying in 10 seconds
     err-Error 1045: Access denied for user 'mmuser'@'localhost' (using password: YES)
 
-**Checking that ``mmuser`` Exists**
+**Checking that mmuser Exists**
 
 To check that this user exists, log in to MySQL as root:
 ``mysql -u root -p``.
