@@ -195,6 +195,7 @@ Procedure:
 
 1. (Chair) Schedules items for the weekly agenda, and works 1-1 with presenters to prepare for them.
 2. (Vice Chair) Works with new hires and their managers to schedule week 2 welcomes. If new hire or manager is away, introduction is postponed to the following meeting.
+
      - New team members are introduced on their second week by their manager, including name, role, what they're working on, timezone, additional info as appropriate (max 2 minutes).
      - New hire can opt-in to introduce themselves if they choose (default is not to require public speaking).
 2. (Team) Shares potential meeting agenda topics with Chair via direct message. Must be shared at least 24 hours prior to meeting start and be aligned with the meeting objectives above.
