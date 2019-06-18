@@ -15,6 +15,10 @@ spec:
       targetPort: {{ .Values.service.internalPort }}
       protocol: TCP
       name: ssh
+{{- if .Values.service.externalIP }}
+  externalIPs:
+    - {{ .Values.service.externalIP }}
+{{- end }}
   selector:
     app: {{ template "name" . }}
     release: {{ .Release.Name }}
