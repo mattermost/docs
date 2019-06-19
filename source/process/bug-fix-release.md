@@ -15,6 +15,7 @@ Pre-work for the current release begins at the code complete date of the previou
 1. Release Manager:
     - Post this checklist in Release Checklist channel
     - Schedule a meeting with PMs and QAs to discuss upcoming features in the next feature release
+        - Before the meeting, review with PMs any Help Wanted campaigns QAs should be aware of
     - After release branches are cut, ask dev to cut an RN build
     - Draft Changelog in a WIP PR with updates for known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
       - Note the type of release and add a link to release doc that defines the type (https://docs.mattermost.com/process/release-faq.html#release-overview)
@@ -230,10 +231,11 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Post key dates for the next release in the Release Discussion channel and remove links to RC candidates and testing spreadsheet from the header
         - Make sure that statutory holidays for Canada and US are accounted for in the release dates
     - For the next release, create the following team meetings. If they conflict with existing meetings, check with meeting owner to reschedule or reschedule the release meeting
-      - Feature Complete Meeting on T-15 at 10:00am San Francisco time
-      - Judgment Day Meeting on T-13 at 10:00am San Francisco time
-      - Code Complete Meeting on T-12 at 10:00am San Francisco time
-      - Release Triage and Update Meeting each weekday starting at T-13 and ending at T-2 at 9:30am San Francisco time for PM, QA and release dev.
+      - Bug Bash Meeting on the week after Code Complete at 10:00am San Francisco time
+      - Feature Complete Meeting on T-20 at 10:00am San Francisco time
+      - Judgment Day Meeting on T-15 at 10:00am San Francisco time
+      - Code Complete Meeting on T-14 at 10:00am San Francisco time
+      - Release Triage and Update Meeting each weekday starting at T-15 and ending at T-2 at 9:30am San Francisco time for PM, QA and release dev.
     - Prepare tickets for the next release, with a corresponding vX.X prefix, and put the tickets in the appropriate sprints as follows:
         - The week RC is cut:
             - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
