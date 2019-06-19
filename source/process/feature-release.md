@@ -272,7 +272,6 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
       - Find the [release tweet](https://twitter.com/mattermosthq/status/854781715914555393) and insert a link to the tweet next to the feature that shipped with the release.
     - For the next release, create the following team meetings. If they conflict with existing meetings, check with meeting owner to reschedule or reschedule the release meeting
       - Bug Bash Meeting on the week after Code Complete at 10:00am San Francisco time
-      - Feature Complete Meeting on T-20 at 10:00am San Francisco time
       - Judgment Day Meeting on T-15 at 10:00am San Francisco time
       - Code Complete Meeting on T-14 at 10:00am San Francisco time
       - Release Triage and Update Meeting each weekday starting at T-15 and ending at T-2 at 9:30am San Francisco time for PM, QA and release dev.
