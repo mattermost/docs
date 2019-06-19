@@ -22,7 +22,7 @@ In order to run docker-in-docker, the runner container needs to be privileged to
 
 ### Security concerns
 
-Priveleged containers have extended capabilities, for example they can mount arbitrary files from the host they run on. Make sure to run the container in an isolated environment such that nothing important runs beside it.
+Privileged containers have extended capabilities, for example they can mount arbitrary files from the host they run on. Make sure to run the container in an isolated environment such that nothing important runs beside it.
 
 ## Installation command line options
 
@@ -33,7 +33,7 @@ Priveleged containers have extended capabilities, for example they can mount arb
 | gitlab-runner.imagePullPolicy                | image pull policy                          | IfNotPresent                        |
 | gitlab-runner.init.image                     | initContainer image                        | busybox                             |
 | gitlab-runner.init.tag                       | initContainer image tag                    | latest                              |
-| gitlab-runner.pullSecrets                    | Secrets for the image repository           |                                     |
+| gitlab-runner.pullSecrets                    | secrets for the image repository           |                                     |
 | gitlab-runner.unregisterRunners              | unregister all runners before termination  | true                                |
 | gitlab-runner.concurrent                     | number of concurrent jobs                  | 20                                  |
 | gitlab-runner.checkInterval                  | polling interval                           | 30s                                 |
@@ -42,36 +42,37 @@ Priveleged containers have extended capabilities, for example they can mount arb
 | gitlab-runner.rbac.serviceAccountName        | name of the rbac service account to create | default                             |
 | gitlab-runner.runners.image                  | default container image to use in builds   | ubuntu:16.04                        |
 | gitlab-runner.runners.imagePullSecrets       | imagePullSecrets                           | []                                  |
-| gitlab-runner.runners.privileged             | run in privileged mode,needed for `dind`   | false                               |
-| gitlab-runner.runners.namespace              | numespace to run jobs in                   | default                             |
+| gitlab-runner.runners.privileged             | run in privileged mode, needed for `dind`  | false                               |
+| gitlab-runner.runners.namespace              | namespace to run jobs in                   | default                             |
 | gitlab-runner.runners.cache.cacheType        | cache type                                 | s3                                  |
-| gitlab-runner.runners.cache.s3BucketName.    | name of the bucket                         | runner-cache                        |
+| gitlab-runner.runners.cache.s3BucketName     | name of the bucket                         | runner-cache                        |
 | gitlab-runner.runners.cache.cacheShared      | share the cache between runners            | true                                |
 | gitlab-runner.runners.cache.s3BucketLocation | bucket region                              | us-east-1                           |
 | gitlab-runner.runners.cache.secretName       | secret to accesskey and secretkey from     | gitlab-minio                        |
 | gitlab-runner.runners.cache.s3CachePath      | path in the bucket                         | gitlab-runner                       |
 | gitlab-runner.runners.cache.s3CacheInsecure  | use http                                   | false                               |
-| gitlab-runner.runners.builds.cpuLimit        | build container limit                      |                                     |
-| gitlab-runner.runners.build.memoryLimit      | build container limit                      |                                     |
-| gitlab-runner.runners.build.cpuRequests      | build container limit                      |                                     |
-| gitlab-runner.runners.build.memoryRequests   | build container limit                      |                                     |
-| gitlab-runner.runners.service.cpuLimit       | service container limit                    |                                     |
-| gitlab-runner.runners.service.memoryLimit    | service container limit                    |                                     |
-| gitlab-runner.runners.service.cpuRequests    | service container limit                    |                                     |
-| gitlab-runner.runners.service.memoryRequests | service container limit                    |                                     |
-| gitlab-runner.resources.limits.memory        | runner memory limit                        |                                     |
+| gitlab-runner.runners.builds.cpuLimit        | build container cpu limit                  |                                     |
+| gitlab-runner.runners.builds.memoryLimit     | build container memory limit               |                                     |
+| gitlab-runner.runners.builds.cpuRequests     | build container requested cpu              |                                     |
+| gitlab-runner.runners.builds.memoryRequests  | build container requested memory           |                                     |
+| gitlab-runner.runners.service.cpuLimit       | service container cpu limit                |                                     |
+| gitlab-runner.runners.service.memoryLimit    | service container memory limit             |                                     |
+| gitlab-runner.runners.service.cpuRequests    | service container requested cpu            |                                     |
+| gitlab-runner.runners.service.memoryRequests | service container requested memory         |                                     |
 | gitlab-runner.resources.limits.cpu           | runner cpu limit                           |                                     |
-| gitlab-runner.resources.requests.memory      | runner requested memory                    |                                     |
+| gitlab-runner.resources.limits.memory        | runner memory limit                        |                                     |
 | gitlab-runner.resources.requests.cpu         | runner requested cpu                       |                                     |
+| gitlab-runner.resources.requests.memory      | runner requested memory                    |                                     |
 
 ## Chart configuration examples
 ### gitlab-runner.pullSecrets
+
 `pullSecrets` allow you to authenticate to a private registry to pull images for a pod.
 
-Additional details about private registries and their authentication methods
-can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
+Additional details about private registries and their authentication methods can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
 
 Below is an example use of `pullSecrets`
+
 ```YAML
 image: my.runner.repository
 imagePullPolicy: Always
