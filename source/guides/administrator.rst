@@ -136,10 +136,10 @@ Learn how to maintain your Mattermost system.
    /administration/command*
    /administration/scripts*
    /administration/statistics.md
+   /integrations/net-promoter-score*
    /administration/health-check*
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
-   /integrations/net-promoter-score*
  
 Upgrade Mattermost
 ----------------------------
