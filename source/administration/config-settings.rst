@@ -2099,7 +2099,7 @@ Group Display Name Attribute
 
 Group Id Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(Required) Enter an AD/LDAP Group ID attribute to use as a unique identifier for Groups.  This should be an AD/LDAP value that does not change.
+(Required) Enter an AD/LDAP Group ID attribute to use as a unique identifier for Groups.  This should be an AD/LDAP value that does not change. This is usually ``entryUUID`` for LDAP and ``objectGUID`` for AD.
 
 .. note::
   This attribute is used only when AD/LDAP Group Sync is enabled.  See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ for more information on enabling and configuring AD/LDAP Group Sync (*Available in Enterprise Edition E20 and higher*). 
