@@ -1,0 +1,5 @@
+---
+title: Add chart-info configmap to allow an upgrade path to the GitLab 12.0
+merge_request: 829
+author:
+type: added
