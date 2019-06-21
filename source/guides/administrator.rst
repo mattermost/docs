@@ -165,7 +165,6 @@ Learn how to extend Mattermost by integrating your workflows.
    :maxdepth: 2
    :glob:
 
-   /administration/plugins*
    /integrations/net-promoter-score*
    /developer/toolkit*
    /deployment/atlassian-integrations*
