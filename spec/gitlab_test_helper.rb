@@ -61,6 +61,7 @@ module Gitlab
         sleep interval
         retries -= 1
         retry if retries > 0
+        raise
       end
     end
 
