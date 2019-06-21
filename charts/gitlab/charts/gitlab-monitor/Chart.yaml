@@ -1,7 +1,7 @@
 ---
 apiVersion: v1
 name: gitlab-monitor
-version: 4.0.0
+version: 1.9.4
 appVersion: master
 description: Exporter for GitLab Prometheus metrics (e.g. CI, pull mirrors)
 keywords:
