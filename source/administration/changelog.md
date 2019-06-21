@@ -22,6 +22,11 @@ Release Date 2019-07-16
  - Fixed an issue where Set a Header button in the channel introduction did not work and was not styled.
  - Fixed an issue where Group Message and private channel icons in the sidebar were misaligned.
  - Fixed an issue where custom emojis overlapped when rendered in messages.
+ - Fixed an issue where the output of "mattermost config show" was inconsistent on every run.
+ - Fixed an issue where the post menu divider had a gap in mobile view.
+ - Fixed an issue where Allow Mobile upload/download Files options in the System Console where not hidden on a non E-20 server.
+ - Fixed an issue where the channel dropdown menu user interface was broken in mobile view when Zoom plugin was enabled.
+ - Fixed an issue where users were not able to search for split parts of first/last names or for split characters such as `_` with elasticsearch autocomplete enabled.
  - Fixed an issue where OAuth endpoints returned application/json content type for HTML redirects.
  - Fixed an issue where json responses were not returned for errors on oauth API endpoints, and a 500 error was returned instead of 4xx errors.
 
