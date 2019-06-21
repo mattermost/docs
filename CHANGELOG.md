@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.9.4 (2019-06-21)
+
+### Added (1 change)
+
+- Add chart-info configmap to allow an upgrade path to the GitLab 12.0. !829
+
+### Other (1 change)
+
+- Update GitLab Version to 11.11.3.
+
+
 ## 1.9.3 (2019-06-10)
 
 ### Other (1 change)
