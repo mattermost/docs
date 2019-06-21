@@ -12,7 +12,7 @@
 # - external Redis
 # - external NGINX
 # - PersistentVolume configuration
-# - external Object Storage providers 
+# - external Object Storage providers
 
 ## The global properties are used to configure multiple charts at once.
 ## Extended documenation at doc/charts/globals.md
@@ -229,7 +229,7 @@ global:
     hostKeys: {}
       # secret:
 
-  ## Rails application secrets 
+  ## Rails application secrets
   ## Secret created according to doc/installation/secrets.md#gitlab-rails-secret
   ## If allowing shared-secrets generation, this is OPTIONAL.
   railsSecrets: {}
@@ -299,6 +299,16 @@ global:
     # - secret: custom-CA
     # - secret: more-custom-CAs
 ## End of global
+
+upgradeCheck:
+  enabled: true
+  image:
+    repository: busybox
+    tag: latest
+  tolerations: []
+  resources:
+    requests:
+      cpu: 50m
 
 ## Settings to for the Let's Encrypt ACME Issuer
 # certmanager-issuer:
@@ -445,13 +455,13 @@ gitlab-runner:
 ## doc/charts/gitlab/migrations
 #   migrations:
 #     enabled: false
-## doc/charts/gitlab/unicorn 
+## doc/charts/gitlab/unicorn
 #   unicorn:
 #     enabled: false
-## doc/charts/gitlab/sidekiq 
+## doc/charts/gitlab/sidekiq
 #   sidekiq:
 #     enabled: false
-## doc/charts/gitlab/gitaly 
+## doc/charts/gitlab/gitaly
 #   gitaly:
 #     enabled: false
 ## doc/charts/gitlab/gitlab-shell

@@ -6,6 +6,11 @@ corresponding to the specific release you want to upgrade to and look for any
 [release notes](../releases/index.md) that might pertain to the new GitLab chart
 version.
 
+Warning: **Warning:**
+If you are upgrading from the `1.x` version of the chart to the latest, you need
+to first update to the latest `1.9.x` patch release in order for the upgrade to work.
+The [2.0 release notes](../releases/2_0.md) describe the supported upgrade path.
+
 We also recommend that you take a [backup](../backup-restore/index.md) first.
 Also note that you need to provide all values using `helm upgrade --set key=value` syntax or `-f values.yml` instead of using `--reuse-values` because some of the current values might be deprecated.
 
