@@ -29,6 +29,7 @@ See our documentation below.
    /developer/api.rst
    /developer/webhooks*
    /developer/slash*
+   /administration/plugins*
    /developer/message-attachments*
    /developer/interactive-messages*
    /developer/interactive-dialogs*
