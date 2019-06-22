@@ -2,6 +2,37 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.0.0 (2019-06-22)
+
+### Fixed (6 changes)
+
+- Ensure unicorn.rb issues appropriate lifecycle hooks. !791
+- Add missing object storage settings in task-runner. !793
+- Disable storage redirect of Registry when the internal Minio is used. !797
+- Port over https://github.com/helm/charts/pull/13646. !804
+- Add SMTP and other missing settings for task-runner. !809
+- Fix example smtp settings. !810
+
+### Changed (2 changes)
+
+- Prioritize the external object storage connection settings before the global minio configuration. !802
+- Updated supported Kubernetes to 1.10 and Helm to 2.12. !808
+
+### Added (6 changes, 2 of them are from the community)
+
+- Cron based backup support using Kubernetes and task runner. !548 (Thomas Miller)
+- Add support for tolerations. !553 (Mike Rennie)
+- Add gitlab-monitor to Helm Chart. !787
+- Add ability to specify network to use when creating a GKE cluster. !799
+- Modified anyuid to reflect project level instead of cluster. !803
+- Prevent upgrades from old chart versions. !828
+
+### Other (2 changes, 1 of them is from the community)
+
+- Default Registry replicas to minReplicas. !794 (skarbek)
+- Update GitLab Version to 12.0.0.
+
+
 ## 1.9.3 (2019-06-10)
 
 ### Other (1 change)
