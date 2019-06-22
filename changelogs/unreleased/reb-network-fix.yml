@@ -1,5 +1,0 @@
----
-title: Add ability to specify network to use when creating a GKE cluster
-merge_request: 799
-author:
-type: added

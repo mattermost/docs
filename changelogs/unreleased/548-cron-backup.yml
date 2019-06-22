@@ -1,5 +1,0 @@
----
-title: Cron based backup support using Kubernetes and task runner.
-merge_request: 548
-author: Thomas Miller
-type: added

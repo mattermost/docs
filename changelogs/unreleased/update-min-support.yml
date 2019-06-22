@@ -1,5 +1,0 @@
----
-title: Updated supported Kubernetes to 1.10 and Helm to 2.12
-merge_request: 808
-author:
-type: changed
