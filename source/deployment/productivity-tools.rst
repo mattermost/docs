@@ -9,7 +9,7 @@ Matterpoll for polls
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
  - Create a poll by using a slash command, developed by Hanzei and Yusuke Nemoto.
- - Polls can be created in different supported languages, currently French, German and Japanese.
+ - Polls can be created in different languages, including English, French, German and Japanese.
  - Source code + docs: https://github.com/matterpoll/matterpoll
 
 Google Calendar
