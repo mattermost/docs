@@ -10,7 +10,7 @@ AWS CloudWatch SNS
 
  - Two-way integration between Mattermost and Amazon AWS SNS, developed by Carlos Tadeu Panato Junior, supported by Mattermost.
  - Receive SNS notifications from Alerts created by Amazon AWS CloudWatch and sent via AWS SNS.
- - Get operational data and actionable insights to monitor Mattermost in order to respond to observed performance changes system-wide.
+ - Get operational data and actionable insights to monitor Mattermost in order to observe and respond to system-wide changes in performance.
  - Source code + docs: https://github.com/mattermost/mattermost-plugin-aws-SNS
 
 PagerDuty
