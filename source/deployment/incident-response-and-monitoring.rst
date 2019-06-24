@@ -24,7 +24,7 @@ Splunk
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
  - Monitor a Mattermost environment.
- - Receive application performance insights in any Mattermost channel for better troubleshooting and monitoring and to increase uptime.
+ - Send application performance insights to any Mattermost channel for better troubleshooting and monitoring, and to increase system uptime.
  - Docs: http://datatomix.com/?p=433, written by Christian Johannsen.
 
 Opsgenie
