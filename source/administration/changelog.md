@@ -12,6 +12,7 @@ Mattermost v5.12.0 contains low to medium level security fixes. [Upgrading](http
   - Fixing an issue where messages may be missing after reconnecting the network. [MM-16423](https://mattermost.atlassian.net/browse/MM-16423)
   - Fixing an issue where the client may sometimes crash while viewing a direct message channel. [MM-16480](https://mattermost.atlassian.net/browse/MM-16480)
   - Fixing an issue where Net Promoter Score (NPS) prints an error message in server logs when Error and Diagnostics Reporting is disabled. [MM-16465](https://mattermost.atlassian.net/browse/MM-16465)
+  - Fixing an issue where Net Promoter Score (NPS) telemetry reporting surveys are disabled if the setting has not been modified. [MM-16554](https://mattermost.atlassian.net/browse/MM-16554)
 - **v5.12.0, released 2019-06-16**
   - Original 5.12.0 release
 
