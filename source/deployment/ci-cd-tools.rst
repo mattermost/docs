@@ -27,7 +27,7 @@ Jenkins
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
  - Connect your Jenkins account to Mattermost, developed by Jenkins.
- - Sends webhook notifications from Jenkins to Mattermost.
+ - Send webhook notifications from Jenkins to Mattermost channels.
  - Source code + docs: https://github.com/jenkinsci/mattermost-plugin
 
 Jenkins Plugin
