@@ -23,13 +23,6 @@ GitLab
  - Supports SaaS and On Premise versions of GitLab.
  - Source code + docs: https://github.com/mattermost/mattermost-plugin-gitlab
 
-Jenkins
-~~~~~~~~~~~~~~~~~~~~~~~~
-
- - Connect your Jenkins account to Mattermost, developed by Jenkins.
- - Send webhook notifications from Jenkins to Mattermost channels.
- - Source code + docs: https://github.com/jenkinsci/mattermost-plugin
-
 Jenkins Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -37,6 +30,13 @@ Jenkins Plugin
  - Enables interacting with jobs and builds via slash commands in Mattermost.
  - Abort builds, enable and disable jobs, get test results, and build logs.
  - Source code + docs: https://github.com/mattermost/mattermost-plugin-jenkins
+
+Jenkins
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+ - Connect your Jenkins account to Mattermost, developed by Jenkins.
+ - Send webhook notifications from Jenkins to Mattermost channels.
+ - Source code + docs: https://github.com/jenkinsci/mattermost-plugin
 
 Bitbucket
 ~~~~~~~~~~~~~~~~~~~~~~~~
