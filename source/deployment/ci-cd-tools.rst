@@ -20,7 +20,7 @@ GitLab
  - Two-way integration between Mattermost and GitLab, developed by Romain Maneschi, supported by Mattermost.
  - Get reminders on issues and merge requests that need your attention.
  - Get notifications in Mattermost about mentions, review requests and comments.
- - Supports GitLab On Premise, works with SaaS and On Premise versions of GitLab.
+ - Supports SaaS and On Premise versions of GitLab.
  - Source code + docs: https://github.com/mattermost/mattermost-plugin-gitlab
 
 Jenkins
