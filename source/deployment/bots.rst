@@ -39,8 +39,8 @@ Python Chatbot
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
  - A python based chat bot for Mattermost, developed by Alex Tzonkov.
- - Allows the creation of listeners, messages and replies to conversations in particular channels
- - Create and setup a bot to listen to a channel for particular prompts and respond appropriately
+ - Allows the creation of listeners, messages and replies to conversations in particular channels.
+ - Create and setup a bot to listen to a channel for particular prompts and respond appropriately.
  - Source code + docs: https://github.com/attzonko/mmpy_bot
 
 Have a proposal for a bot? `Let us know in the feature proposal forum <https://mattermost.uservoice.com/forums/306457-general?category_id=202591>`_.
