@@ -168,10 +168,10 @@ Learn how to extend Mattermost by integrating your workflows.
    /integrations/net-promoter-score*
    /developer/toolkit*
    /deployment/atlassian-integrations*
-   /deployment/video-and-audio-calling*
    /deployment/ci-cd-tools*
    /deployment/incident-response-and-monitoring*
    /deployment/bots*
+   /deployment/video-and-audio-calling*
    /deployment/productivity-tools*
 
 Mattermost Compliance
