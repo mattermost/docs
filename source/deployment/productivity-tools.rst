@@ -16,7 +16,7 @@ Google Calendar
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
  - Time management tool, developed by Wasim Thabraze.
- - Get reminders about appointments and meetings from configured Google Calendar to any Mattermost channel.
+ - Get reminders about appointments and meetings from a configured Google Calendar to any Mattermost channel.
  - Source code + docs: https://github.com/waseem18/mattermost-plugin-google-calendar
 
 CloudApp
