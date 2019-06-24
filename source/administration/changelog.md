@@ -13,6 +13,7 @@ Release Date 2019-07-16
 
 ### Bug Fixes
  - Fixed an issue where changing the Timezone manually to "Set automatically" did not work on the mobile app.
+ - Fixed an issue where the channel introduction content sometimes disappeared on opening a channel.
  - Fixed an issue where channel links did not work inside brackets.
  - Fixed an issue where uploading a team icon image fired a JS console error and a blank image preview.
  - Fixed an issue on Safari where a user jumped to the top of the Direct Messages selection list every few seconds.
