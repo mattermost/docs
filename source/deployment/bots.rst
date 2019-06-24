@@ -16,7 +16,7 @@ BotKube
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
  - Monitor and debug Kubernetes resources, developed by InfraCloud Technologies.
- - Helps you monitor your Kubernetes cluster, debug critical deployments and get recommendations for standard practices.
+ - Monitor your Kubernetes cluster, debug critical deployments and get recommendations for standard practices.
  - Source code + docs: https://github.com/infracloudio/botkube
 
 Sample Golang bot
