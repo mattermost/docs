@@ -36,7 +36,7 @@ Gyazo
 Autotranslation Plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
- - Two-way integration between Amazon AWS Translate and Mattermost, developed by Mattermost.
+ - Leverage the translation capabilities of Amazon AWS Translate and Mattermost, developed by Mattermost.
  - Instantly translate messages to other languages with supported translations available between English and French, German, and others.
  - Source code + docs: https://github.com/mattermost/mattermost-plugin-autotranslate
 
