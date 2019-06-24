@@ -15,7 +15,7 @@ Matterpoll for polls
 Google Calendar
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
- - Time management tool, developed by Wasim Thabraze.
+ - Time management tool for Google Calendar, developed by Wasim Thabraze.
  - Get reminders about appointments and meetings from a configured Google Calendar to any Mattermost channel.
  - Source code + docs: https://github.com/waseem18/mattermost-plugin-google-calendar
 
