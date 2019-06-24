@@ -23,7 +23,7 @@ To set up a redirect, you must have admin access to www.mattermost.com.  Marketi
 
 If you have access, follow these steps: 
 
-1. Login to the administration panel for www.mattermost.com.
+1. Log in to the administration panel for www.mattermost.com.
 2. From the LHS, go to **SEO > Redirects**.
 3. On the top of the screen, ensure you are on the **Redirects - Yoast SEO** page header on the **Redirects** tab.
 4. Under **Type**, choose ``301 Moved Permanently`` option (this is the default option).
