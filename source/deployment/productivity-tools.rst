@@ -29,7 +29,7 @@ CloudApp
 Gyazo
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
- - Screenshot app, developed by Sean Sackowitz.
+ - Screenshot application, developed by Sean Sackowitz.
  - Take screenshots, screen GIFs and full page captures, and share in Mattermost.
  - Source code: https://github.com/seansackowitz/mattermost-plugin-gyazo
 
