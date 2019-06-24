@@ -17,7 +17,7 @@ PagerDuty
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
  - Get automatic information regarding the state of an incident to Mattermost, developed by PagerDuty.
- - Receive all incident updates for any PagerDuty Service in any Mattermost channel to optimize incident resolution time and process.
+ - Send incident updates for any PagerDuty Service to any Mattermost channel to optimize incident resolution time and process.
  - Docs: https://www.pagerduty.com/docs/guides/mattermost-integration-guide/
 
 Splunk
