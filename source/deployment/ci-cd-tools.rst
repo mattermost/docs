@@ -35,7 +35,7 @@ Jenkins Plugin
 
  - Two-way integration between Mattermost and Jenkins, developed by Wasim Thabraze, supported by Mattermost.
  - Enables interacting with jobs and builds via slash commands in Mattermost.
- - Abort builds, enable and disable jobs, and get test results and build logs.
+ - Abort builds, enable and disable jobs, get test results, and build logs.
  - Source code + docs: https://github.com/mattermost/mattermost-plugin-jenkins
 
 Bitbucket
