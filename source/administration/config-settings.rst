@@ -105,8 +105,6 @@ If Site URL is not set, the following features will operate incorrectly:
  - email notifications will contain broken links, and email batching will not work
  - authentication via OAuth 2.0, including GitLab, Google and Office 365, will fail
  - plugins may not work as expected
- 
-Changes to this setting require a server restart before taking effect.
 
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                    |
@@ -121,8 +119,6 @@ If you choose a port of a lower level (called "system ports" or "well-known port
 
 On Linux you can use: ``sudo setcap cap_net_bind_service=+ep ./bin/mattermost`` to allow Mattermost to bind to well-known ports.
 
-Changes to this setting require a server restart before taking effect.
-
 +-------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ListenAddress": ":8065"`` with string input. |
 +-------------------------------------------------------------------------------------------+
@@ -132,8 +128,6 @@ Forward port 80 to 443
 **True**: Forwards all insecure traffic from port 80 to secure port 443.
 
 **False**: When using a proxy such as NGINX in front of Mattermost this setting is unnecessary and should be set to ``false``.
-
-Changes to this setting require a server restart before taking effect.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Forward80To443": false`` with options ``true`` and ``false``.                                                        |
@@ -146,8 +140,6 @@ Connection Security
 
 **TLS**: Encrypts the communication between Mattermost clients and your server. See `documentation <https://docs.mattermost.com/install/config-tls-mattermost.html>`__ for more details.
 
-Changes to this setting require a server restart before taking effect.
-
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionSecurity": ""`` with options ``""`` and ``"TLS"``.                                   |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -156,8 +148,6 @@ TLS Certificate File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The path to the certificate file to use for TLS connection security.
 
-Changes to this setting require a server restart before taking effect.
-
 +------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TLSCertFile": ""`` with string input. |
 +------------------------------------------------------------------------------------+
@@ -165,8 +155,6 @@ Changes to this setting require a server restart before taking effect.
 TLS Key File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The path to the TLS key file to use for TLS connection security.
-
-Changes to this setting require a server restart before taking effect.
 
 +-----------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"TLSKeyFile": ""`` with string input. |
@@ -177,8 +165,6 @@ Use Let's Encrypt
 **True**: Enable the automatic retrieval of certificates from Let's Encrypt. The certificate will be retrieved when a client attempts to connect from a new domain. This will work with multiple domains. See :doc:`../install/config-tls-mattermost` for more details on setting up Let's Encrypt.
 
 **False**: Manual certificate specification based on the **TLS Certificate File** and **TLS Key File** specified above.
-
-Changes to this setting require a server restart before taking effect.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UseLetsEncrypt": false`` with options ``true`` and ``false``.                                                        |
@@ -191,8 +177,6 @@ Let's Encrypt Certificate Cache File
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The path to the file where certificates and other data about the Let's Encrypt service will be stored.
 
-Changes to this setting require a server restart before taking effect.
-
 +-----------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LetsEncryptCertificateCacheFile": "./config/letsencrypt.cache"`` with string input.  |
 +-----------------------------------------------------------------------------------------------------------------------------------+
@@ -201,8 +185,6 @@ Read Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Maximum time allowed from when the connection is accepted to when the request body is fully read.
 
-Changes to this setting require a server restart before taking effect.
-
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ReadTimeout": 300`` with numerical input. |
 +----------------------------------------------------------------------------------------+
@@ -210,8 +192,6 @@ Changes to this setting require a server restart before taking effect.
 Write Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If using HTTP (insecure), this is the maximum time allowed from the end of reading the request headers until the response is written. If using HTTPS, it is the total time from when the connection is accepted until the response is written.
-
-Changes to this setting require a server restart before taking effect.
 
 +-----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"WriteTimeout": 300`` with numerical input. |
@@ -236,8 +216,6 @@ gzip compression applies to the HTML, CSS, Javascript, and other static content 
 **Uncompressed**: The Mattermost server will serve static files uncompressed.
 
 **Disabled**: The Mattermost server will not serve static files.
-
-Changes to this setting require a server restart before taking effect.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"WebserverMode": "gzip"`` with options ``"gzip"``, ``"uncompressed"``, and ``"disabled"``.                               |
@@ -827,8 +805,6 @@ Use Experimental Gossip
 
 **False**: The server attempts to communicate over the streaming port.
 
-Changes to this setting require a server restart before taking effect.
-
 Note that the gossip port and gossip protocol are used to determine cluster health even when this setting is ``false``.
 
 +-------------------------------------------------------------------------------------------------------------------+
@@ -869,8 +845,6 @@ Inter-Node Listen Address
 
 The address the Mattermost Server will listen on for inter-node communication. When setting up your network you should secure the listen address so that only machines in the cluster have access to that port. This can be done in different ways, for example, using IPsec, security groups, or routing tables.
 
-Changes to this setting require a server restart before taking effect.
-
 +-----------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"InterNodeListenAddress": ":8075"`` with string input.  |
 +-----------------------------------------------------------------------------------------------------+
@@ -880,8 +854,6 @@ Inter-Node URLs
 *Deprecated. Not used in version 4.0 and later*
 
 A list of all the machines in the cluster, such as ``["http://10.10.10.2", "http://10.10.10.4"]``. It is recommended to use the internal IP addresses so all the traffic can be secured.
-
-Changes to this setting require a server restart before taking effect.
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"InterNodeUrls": []`` with string array input consisting of the machines in the cluster. |
@@ -906,8 +878,6 @@ Maximum Queries per Second
 Throttle API at this number of requests per second if rate limiting is enabled.
 
 The location of the log files. If blank, they are stored in the ``./logs`` directory. The path that you set must exist and Mattermost must have write permissions in it.
-
-Changes to this setting require a server restart before taking effect.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PerSec": 10`` with numerical input.                                                                                     |
