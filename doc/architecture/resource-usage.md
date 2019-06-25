@@ -15,26 +15,26 @@ service, and make a call on what we think is the best default value.
 We will measure:
 
 - **Idle Load** - No default should be below these values, but an idle process
-isn't useful, so typically we will not set a default based on this value.
+  isn't useful, so typically we will not set a default based on this value.
 
 - **Minimal Load** - The values required to do the most basic useful amount of work.
-Typically, for cpu, this will be used as the default, but memory requests come with
-the risk of the Kernel reaping processes, so we will avoid using this as a memory default.
+  Typically, for cpu, this will be used as the default, but memory requests come with
+  the risk of the Kernel reaping processes, so we will avoid using this as a memory default.
 
 - **Average Loads** - What is considered *average* is highly dependant on the installation,
-for our defaults we will attempt to take a few measurements at a few of what we
-consider reasonable loads. (we will list the loads used). If the service has a pod
-autoscaler, we will typically try to set the scaling target value based on these.
-And also the default memory requests.
+  for our defaults we will attempt to take a few measurements at a few of what we
+  consider reasonable loads. (we will list the loads used). If the service has a pod
+  autoscaler, we will typically try to set the scaling target value based on these.
+  And also the default memory requests.
 
 - **Stressful Task** - Measure the usage of the most stressful task the service
-should perform. (Not necessary under load). When applying resource limits, try and
-set the limit above this and the average load values.
+  should perform. (Not necessary under load). When applying resource limits, try and
+  set the limit above this and the average load values.
 
 - **Heavy Load** - Try and come up with a stress test for the service, then measure
-the resource usage required to do it. We currently don't use these  values for any
-defaults, but users will likely want to set resource limits somewhere between the
-average loads/stress task and this value.
+  the resource usage required to do it. We currently don't use these  values for any
+  defaults, but users will likely want to set resource limits somewhere between the
+  average loads/stress task and this value.
 
 ### Unicorn
 

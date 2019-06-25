@@ -28,8 +28,9 @@ Follow these steps for backing up a GitLab Helm chart based installation
 Cron based backups can be enabled in this chart to happen at regular intervals as defined by the [Kubernetes schedule](https://kubernetes.io/docs/tasks/job/automated-tasks-with-cron-jobs/#schedule).
 
 You need to set the following parameters:
-* `gitlab.task-runner.backups.cron.enabled`: Set to true to enable cron based backups
-* `gitlab.task-runner.backups.cron.schedule`: Set as per the Kubernetes schedule docs
+
+- `gitlab.task-runner.backups.cron.enabled`: Set to true to enable cron based backups
+- `gitlab.task-runner.backups.cron.schedule`: Set as per the Kubernetes schedule docs
 
 ## Backup the secrets
 

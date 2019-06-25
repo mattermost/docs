@@ -37,6 +37,7 @@ Create the secret per [registry chart documentation on storage](../../charts/reg
 
 Examples for [S3][storage-s3](any s3 compatible), [Azure][storage-azure] and [GCS][storage-gcs] drivers can be found in
 [examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
+
 - [registry.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.s3.yaml)
 - [registry.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.gcs.yaml)
 - [registry.azure.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.azure.yaml)
@@ -98,6 +99,7 @@ Create the secret(s) per the [connection details documentation](../../charts/glo
 
 Examples for [AWS][fog-aws](any S3 compatible like [Azure using Minio][minio-azure] ) and [Google][fog-gcs] providers can be found in
 [examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
+
 - [rails.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.s3.yaml)
 - [rails.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.gcs.yaml)
 - [rails.azure.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.azure.yaml)
@@ -187,7 +189,7 @@ Create the secret using the [s3cmd config file format](https://s3tools.org/kb/it
 
     # Use S3 v4 signature APIs
     signature_v2 = False
-    ``` 
+    ```
 
 1. Create the secret
 
