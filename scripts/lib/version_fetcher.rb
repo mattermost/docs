@@ -40,6 +40,12 @@ class VersionFetcher
     new_version
   end
 
+  # GitLab Monitor Version
+  def gitlab_monitor
+    # Don't edit the appVersion, it get's set manually as monitor isn't released by release-tools
+    nil
+  end
+
   def fetch(chart_name)
     chart_name = chart_name.tr('-', '_').to_sym
     return @version unless respond_to?(chart_name)
