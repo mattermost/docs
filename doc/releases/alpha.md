@@ -5,11 +5,12 @@ The charts are now in beta. See the [beta documentation](beta.md) for more infor
 
 We have been working hard on the chart and it's underlying containers, and are excited to to reach alpha and share it with the GitLab community.
 
-This effort has required extensive changes across the  product:
-* Support for directly uploading to object storage
-* No dependency on shared storage
-* New containers for each component of GitLab
-* New Helm chart
+This effort has required extensive changes across the product:
+
+- Support for directly uploading to object storage
+- No dependency on shared storage
+- New containers for each component of GitLab
+- New Helm chart
 
 While much of the underlying work has been completed, there are a few changes that will be arriving after alpha has started. This means that there are a few features of GitLab [that may not work as expected](#known-issues-and-limitations).
 
@@ -50,41 +51,41 @@ The chart and containers are a work in progress, and not all features are fully 
 
 Helm Chart Issues/Limitations:
 
-* No in-cluster HA database https://gitlab.com/charts/gitlab/issues/48
-* No backup/restore procedure https://gitlab.com/charts/gitlab/issues/28
-* No update procedures, or support for no-downtime upgrades: https://gitlab.com/charts/gitlab/issues/238
-* No support for changing/migrating your storage capacity/options after installation https://gitlab.com/charts/gitlab/issues/233
-* No GitLab Pages support https://gitlab.com/charts/gitlab/issues/37
-* No Monitoring support https://gitlab.com/charts/gitlab/issues/29
-* No support for incoming email https://gitlab.com/charts/gitlab/issues/235
-* Limited support for customizing GitLab options https://gitlab.com/charts/gitlab/issues/236
-* CI traces are not persisted https://gitlab.com/charts/gitlab/issues/245
-* No support for scaling unicorn separate from workhorse https://gitlab.com/charts/gitlab/issues/61
-* GitLab maintenance rake tasks won't work in k8s environments
-* No guarantees on safe pod shutdown: https://gitlab.com/charts/gitlab/issues/239
+- No in-cluster HA database https://gitlab.com/charts/gitlab/issues/48
+- No backup/restore procedure https://gitlab.com/charts/gitlab/issues/28
+- No update procedures, or support for no-downtime upgrades: https://gitlab.com/charts/gitlab/issues/238
+- No support for changing/migrating your storage capacity/options after installation https://gitlab.com/charts/gitlab/issues/233
+- No GitLab Pages support https://gitlab.com/charts/gitlab/issues/37
+- No Monitoring support https://gitlab.com/charts/gitlab/issues/29
+- No support for incoming email https://gitlab.com/charts/gitlab/issues/235
+- Limited support for customizing GitLab options https://gitlab.com/charts/gitlab/issues/236
+- CI traces are not persisted https://gitlab.com/charts/gitlab/issues/245
+- No support for scaling unicorn separate from workhorse https://gitlab.com/charts/gitlab/issues/61
+- GitLab maintenance rake tasks won't work in k8s environments
+- No guarantees on safe pod shutdown: https://gitlab.com/charts/gitlab/issues/239
 
 Features that are currently out of scope:
 
-* Support for MySQL https://gitlab.com/charts/gitlab/issues/250
-* Mattermost https://gitlab.com/charts/gitlab/issues/251
-* Relative URL as the GitLab Endpoint https://gitlab.com/charts/gitlab/issues/406
+- Support for MySQL https://gitlab.com/charts/gitlab/issues/250
+- Mattermost https://gitlab.com/charts/gitlab/issues/251
+- Relative URL as the GitLab Endpoint https://gitlab.com/charts/gitlab/issues/406
 
 ## Path to beta and general availability
 
 The next phase in the chart lifecycle after alpha will be a beta phase. Our goals for entering beta are:
 
-* All features of GitLab are fully functional
-* Backup and restore are supported
-* Upgrades are supported
-* Object storage support for S3 compatible interfaces
-* No expected breaking changes
-* Releases are versioned
+- All features of GitLab are fully functional
+- Backup and restore are supported
+- Upgrades are supported
+- Object storage support for S3 compatible interfaces
+- No expected breaking changes
+- Releases are versioned
 
 Once beta is complete, the next phase will be general availability. Our goals for the charts to be generally available are:
 
-* High availability, with self-healing pods
-* Scalable to very large deployments
-* Down-time free upgrades
-* Production grade monitoring, logging
-* Mature support and documentation for common Kubernetes deployment targets, like: on-premise, EKS, AKS, PKS.
-* No breaking changes
+- High availability, with self-healing pods
+- Scalable to very large deployments
+- Down-time free upgrades
+- Production grade monitoring, logging
+- Mature support and documentation for common Kubernetes deployment targets, like: on-premise, EKS, AKS, PKS.
+- No breaking changes

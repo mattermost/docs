@@ -89,11 +89,10 @@ the maintenance impact of these forks.
 The benefits of this are straight-forward:
 
 - Increased DRY behavior, leading to easier maintenance. There should be no reason
-to have duplicates of the same function across multiple sub-charts when a single
-entry will suffice.
+  to have duplicates of the same function across multiple sub-charts when a single
+  entry will suffice.
 - Reduction of template naming conflicts. All [partials throughout a chart are compiled together][helm-dev-doc],
-and thus we can treat them like the global behavior they are.
-
+  and thus we can treat them like the global behavior they are.
 
 Related issue:
 
@@ -130,7 +129,7 @@ Our [minio chart][] was altered from upstream [minio][].
 - Make use of pre-existing Kubernetes secrets instead of creating new ones from properties.
 - Remove providing the sensitive keys via Environment.
 - Automate the creation of multiple buckets via `defaultBuckets` in place of
-`defaultBucket.*` properties.
+  `defaultBucket.*` properties.
 
 [minio chart]: ../charts/minio/index.md
 [minio]: https://github.com/kubernetes/charts/tree/master/stable/minio

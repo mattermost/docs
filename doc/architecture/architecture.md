@@ -20,23 +20,22 @@ scheduler software.
 
 We plan to offer a container for the following services:
 
-* Sidekiq
-* Unicorn
-* Gitaly
-* Workhorse
-* Postgres (perhaps upstream Postgres), along with Postgres Exporter
-* Redis
-* GitLab Monitor
+- Sidekiq
+- Unicorn
+- Gitaly
+- Workhorse
+- Postgres (perhaps upstream Postgres), along with Postgres Exporter
+- Redis
+- GitLab Monitor
 
 We likely plan to leverage the following existing official containers for
 underlying services:
 
-* Docker Distribution ([Docker Registry 2.0](https://github.com/docker/distribution))
-* Prometheus
-* Node Exporter
-* Nginx
-* cert-manager
-
+- Docker Distribution ([Docker Registry 2.0](https://github.com/docker/distribution))
+- Prometheus
+- Node Exporter
+- Nginx
+- cert-manager
 
 ## The GitLab Chart
 
@@ -46,10 +45,10 @@ Ingress, and certificate management charts.
 
 At this high level, a customer can make decisions like:
 
-* Whether they want to use the embedded Postgres chart, or to use an external
-database like Amazon RDS for Postgres.
-* To bring their own SSL certificates, or leverage Let's Encrypt.
-* To use a load balancer, or a dedicated ingress.
+- Whether they want to use the embedded Postgres chart, or to use an external
+  database like Amazon RDS for Postgres.
+- To bring their own SSL certificates, or leverage Let's Encrypt.
+- To use a load balancer, or a dedicated ingress.
 
 Customers who would like to get started quickly and easily should begin with this chart.
 
@@ -59,14 +58,14 @@ The gitlab chart is made of multiple subcharts. These charts provide individual 
 
 Subcharts included are :
 
-* [sidekiq](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/sidekiq)
-* [unicorn](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/unicorn)
-* [gitlab-shell](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/gitlab-shell)
-* [gitaly](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/gitaly)
-* [minio](https://gitlab.com/charts/gitlab/tree/master/charts/minio)
-* [redis](https://gitlab.com/charts/gitlab/tree/master/charts/redis)
-* [nginx](https://gitlab.com/charts/gitlab/tree/master/charts/nginx)
-* [registry](https://gitlab.com/charts/gitlab/tree/master/charts/registry)
+- [sidekiq](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/sidekiq)
+- [unicorn](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/unicorn)
+- [gitlab-shell](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/gitlab-shell)
+- [gitaly](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/gitaly)
+- [minio](https://gitlab.com/charts/gitlab/tree/master/charts/minio)
+- [redis](https://gitlab.com/charts/gitlab/tree/master/charts/redis)
+- [nginx](https://gitlab.com/charts/gitlab/tree/master/charts/nginx)
+- [registry](https://gitlab.com/charts/gitlab/tree/master/charts/registry)
 
 ## Design Decisions
 

@@ -3,16 +3,17 @@
 GitLab requires a variety of secrets to operate:
 
 Gitlab Components:
-* Registry authentication certificates
-* SSH Host Keys and Certificates for GitLab Shell
-* Passwords for individual Gitlab services
 
-Optional External Services
-* SMTP server
-* LDAP
-* Omniauth
-* IMAP for incoming emails (via mail_room service)
+- Registry authentication certificates
+- SSH Host Keys and Certificates for GitLab Shell
+- Passwords for individual Gitlab services
 
+Optional External Services:
+
+- SMTP server
+- LDAP
+- Omniauth
+- IMAP for incoming emails (via mail_room service)
 
 Any secret not provided manually will be automatically generated with a random value. Automatic generation of HTTPS certificates is provided by Let's Encrypt.
 
@@ -29,21 +30,21 @@ documentation.
 - [Registry authentication certificates](#registry-authentication-certificates)
 - [SSH Host Keys](#ssh-host-keys)
 - Passwords:
-  * [Initial root password](#initial-root-password)
-  * [Redis password](#redis-password)
-  * [GitLab Shell secret](#gitlab-shell-secret)
-  * [Gitaly secret](#gitaly-secret)
-  * [GitLab Rails secret](#gitlab-rails-secret)
-  * [GitLab workhorse secret](#gitlab-workhorse-secret)
-  * [GitLab runner secret](#gitlab-runner-secret)
-  * [Postgres password](#postgresql-password)
-  * [Minio secret](#minio-secret)
-  * [Registry HTTP secret](#registry-http-secret)
+  - [Initial root password](#initial-root-password)
+  - [Redis password](#redis-password)
+  - [GitLab Shell secret](#gitlab-shell-secret)
+  - [Gitaly secret](#gitaly-secret)
+  - [GitLab Rails secret](#gitlab-rails-secret)
+  - [GitLab workhorse secret](#gitlab-workhorse-secret)
+  - [GitLab runner secret](#gitlab-runner-secret)
+  - [Postgres password](#postgresql-password)
+  - [Minio secret](#minio-secret)
+  - [Registry HTTP secret](#registry-http-secret)
 - [External Services](#external-services)
-  * [Unicorn Omniauth](#unicorn-omniauth)
-  * [LDAP Password](#ldap-password)
-  * [SMTP Password](#smtp-password)
-  * [IMAP Password](#imap-password-for-incoming-emails)
+  - [Unicorn Omniauth](#unicorn-omniauth)
+  - [LDAP Password](#ldap-password)
+  - [SMTP Password](#smtp-password)
+  - [IMAP Password](#imap-password-for-incoming-emails)
 
 ### Registry authentication certificates
 
@@ -215,7 +216,7 @@ If you need password authentication to connect with your LDAP server, you must s
 kubectl create secret generic ldap-main-password --from-literal=password=yourpasswordhere
 ```
 
-Then use `--set global.appConfig.ldap.servers.main.password.secret=ldap-main-password` to 
+Then use `--set global.appConfig.ldap.servers.main.password.secret=ldap-main-password` to
 inject the password into your configuration.
 
 ### SMTP password

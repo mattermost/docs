@@ -43,13 +43,16 @@ Table below contains all the possible charts configurations that can be supplied
 | extraVolumeMounts     | List of extra volumes mountes to do            |                                                |
 
 ## Chart configuration examples
+
 ### image.pullSecrets
+
 `pullSecrets` allow you to authenticate to a private registry to pull images for a pod.
 
 Additional details about private registries and their authentication methods
 can be found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/containers/images/#specifying-imagepullsecrets-on-a-pod).
 
-Below is an example use of `pullSecrets`
+Below is an example use of `pullSecrets`:
+
 ```YAML
 image:
   repository: my.migrations.repository
@@ -94,6 +97,7 @@ The port on which to connect to the Redis server. Defaults to `6379`.
 #### password
 
 The `password` attribute for Redis has two sub keys:
+
 - `secret` defines the name of the kubernetes `Secret` to pull from
 - `key` defines the name of the key in the above secret that contains the password.
 
@@ -129,6 +133,7 @@ The username with which to authenticate to the database. This defaults to `gitla
 #### password
 
 The `password` attribute for PostgreSQL has to sub keys:
+
 - `secret` defines the name of the kubernetes `Secret` to pull from
 - `key` defines the name of the key in the above secret that contains the password.
 
