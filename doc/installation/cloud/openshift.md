@@ -110,12 +110,4 @@ installation procedure:
       --set nginx-ingress.enabled=false
       ```
 
-1. Since built-in Registry is known not to work with OpenShift using the Helm
-   charts, disable the registry service. Pass the following flag to the
-   `helm install` command:
-
-      ```sh
-      --set registry.enabled=false
-      ```
-
 1. [Use your own SSL certificates](../tls.md#option-2-use-your-own-wildcard-certificate)
