@@ -3,6 +3,8 @@ Formatting Text
 
 Markdown makes it easy to format messages. Type a message as you normally would and use these rules to render it with special formatting techniques.
 
+For a Layman's guide to Markdown on Mattermost, `see this blog post <https://mattermost.com/blog/laymans-guide-to-markdown-on-mattermost/>`_.
+
 Emojis
 ------
 
