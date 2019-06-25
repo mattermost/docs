@@ -1500,12 +1500,12 @@ mattermost team rename
   Format
     .. code-block:: none
 
-      mattermost channel rename {team} newteamname --display_name "New Display Name"
+      mattermost team rename {team} newteamname --display_name "New Display Name"
 
   Examples
     .. code-block:: none
 
-      ./mattermost channel rename myteam newteamname --display_name "New Display Name"
+      ./mattermost team rename myteam newteamname --display_name "New Display Name"
       
   Options
     .. code-block:: none
