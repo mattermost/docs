@@ -132,7 +132,7 @@ compatibility:
     enabled: false
 
 debug:
-  addr: ':5000'
+  addr: ':5001'
   prometheus:
     enabled: false
     path: '/metrics'
