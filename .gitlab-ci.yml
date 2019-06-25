@@ -323,7 +323,7 @@ danger-review:
     - git version
     - danger --fail-on-errors=true
 
-check_docs_internal_links:
+check_docs_lint:
   image: "registry.gitlab.com/gitlab-org/gitlab-build-images:gitlab-docs-lint"
   stage: prepare
   cache: {}
@@ -332,6 +332,10 @@ check_docs_internal_links:
   script:
     - mv doc/ /tmp/gitlab-docs/content/charts
     - cd /tmp/gitlab-docs
+    # Lint Markdown
+    # https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md
+    - bundle exec mdl content/charts/**/*.md --rules \
+        MD032
     # Build HTML from Markdown
     - bundle exec nanoc
     # Check the internal links
