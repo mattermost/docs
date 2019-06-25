@@ -92,3 +92,10 @@ This feature is labelled as beta for the following reasons:
 1. The job to carry out a compliance export has not been tested on a system with 10,000s of concurrent active users.
 2. Exports do not yet include messages with special types, namely system messages, webhook message attachments and custom plugin messages.
 3. There isn't yet a way to distinguish who edited or deleted a message, nor which message is a reply or an edit of another message.
+
+How do I know if a compliance export job fails?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost provides the status of each compliance export job in **System Console** > **Compliance** > **Compliance Export (Beta)** (or **System Console > Advanced > Compliance Export (Beta)** in versions 5.11 and earlier). Here, you can see if the job succeeded or failed, including the number of messages and files exported.
+
+Morever, any failures are returned in the server logs. The error log beings with the string ``Failed job`` and include a job_id key/value pair. Compliance export job failures are identified with worker name ``MessageExportWorker``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
