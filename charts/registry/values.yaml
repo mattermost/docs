@@ -130,3 +130,9 @@ minio:
 compatibility:
   schema1:
     enabled: false
+
+debug:
+  addr: ':5000'
+  prometheus:
+    enabled: false
+    path: '/metrics'

@@ -21,8 +21,13 @@ data:
     #     interval: 10s
     #     threshold: 3
     http:
+      {{- if .Values.debug }}
       debug:
-        addr: :5001
+        addr: {{ .Values.debug.prometheus.addr }}
+        prometheus:
+          enabled: {{ eq true .Values.debug.prometheus.enabled }}
+          path: {{ .Values.debug.prometheus.path }}
+      {{- end }}
       headers:
         X-Content-Type-Options: [nosniff]
     # Filled from chart
