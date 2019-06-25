@@ -14,6 +14,7 @@ Release Date 2019-07-16
 ### Bug Fixes
  - Fixed an issue where changing the Timezone manually to "Set automatically" did not work on the mobile app.
  - Fixed an issue where the channel introduction content sometimes disappeared on opening a channel.
+ - Fixed an issue where the SMTP Server Password was no longer masked in the System Console.
  - Fixed an issue where channel links did not work inside brackets.
  - Fixed an issue where uploading a team icon image fired a JS console error and a blank image preview.
  - Fixed an issue on Safari where a user jumped to the top of the Direct Messages selection list every few seconds.
@@ -24,7 +25,10 @@ Release Date 2019-07-16
  - Fixed an issue where Group Message and private channel icons in the sidebar were misaligned.
  - Fixed an issue where custom emojis overlapped when rendered in messages.
  - Fixed an issue where the output of "mattermost config show" was inconsistent on every run.
+ - Fixed an issue where a bot tag was misaligned for "in:" modifier in the search bar autocomplete.
  - Fixed an issue where the post menu divider had a gap in mobile view.
+ - Fixed an issue where the bottom of right-hand side was cut off in tablet view.
+ - Fixed an issue where custom emojis overlapped when rendered in messages.
  - Fixed an issue where Allow Mobile upload/download Files options in the System Console where not hidden on a non E-20 server.
  - Fixed an issue where the channel dropdown menu user interface was broken in mobile view when Zoom plugin was enabled.
  - Fixed an issue where users were not able to search for split parts of first/last names or for split characters such as `_` with elasticsearch autocomplete enabled.
