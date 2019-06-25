@@ -183,6 +183,6 @@ Yes it can, but make sure that:
 
 #### How do I know if an AD/LDAP sync job fails?
 
-Mattermost provides the status of each compliance export job in **System Console** > **Authentication** > **AD/LDAP**. Here, you can see if the job succeeded or failed, including the number of messages and files exported.
+Mattermost provides the status of each AD/LDAP sync job in **System Console** > **Authentication** > **AD/LDAP**. Here, you can see if the job succeeded or failed, including the number of users updated.
 
 Morever, any failures are returned in the server logs. The error log beings with the string ``Failed job`` and include a job_id key/value pair. AD/LDAP sync job failures are identified with worker name ``EnterpriseLdapSync``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
