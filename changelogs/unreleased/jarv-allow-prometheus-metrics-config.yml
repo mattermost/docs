@@ -1,5 +1,5 @@
 ---
-title: Fix debug addr so it is not in the prometheus namespace
+title: Add prometheus metrics debug configuration
 merge_request: 838
 author:
 type: changed
