@@ -98,4 +98,4 @@ How do I know if a compliance export job fails?
 
 Mattermost provides the status of each compliance export job in **System Console** > **Compliance** > **Compliance Export (Beta)** (or **System Console > Advanced > Compliance Export (Beta)** in versions 5.11 and earlier). Here, you can see if the job succeeded or failed, including the number of messages and files exported.
 
-Morever, any failures are returned in the server logs. The error log beings with the string ``Failed job`` and include a job_id key/value pair. Compliance export job failures are identified with worker name ``MessageExportWorker``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
+Morever, any failures are returned in the server logs. The error log begins with the string ``Failed job`` and include a job_id key/value pair. Compliance export job failures are identified with worker name ``MessageExportWorker``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
