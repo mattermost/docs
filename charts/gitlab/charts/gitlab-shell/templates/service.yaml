@@ -11,7 +11,7 @@ metadata:
 spec:
   type: {{ .Values.service.type }}
   ports:
-    - port: {{ .Values.service.externalPort }}
+    - port: {{ include "gitlab.shell.port" . | int }}
       targetPort: {{ .Values.service.internalPort }}
       protocol: TCP
       name: ssh
