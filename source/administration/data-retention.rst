@@ -78,3 +78,11 @@ In v1.5 and later of the iOS and Android apps, messages and files are deleted fr
 2. When the user puts the app into the background.
 
 In v1.4 and earlier of the mobile apps, messages and files are not cleared from local storage when the data retention policy is enabled.
+
+How do I know if a data retention job fails?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost provides the status of each data retention job in **System Console** > **Compliance** > **Data Retention Policy**. Here, you can see if the job succeeded or failed, including XXX.
+
+Morever, any failures are returned in the server logs. The error log begins with the string ``Failed job`` and include a job_id key/value pair. Data retention job failures are identified with worker name ``EnterpriseDataRetention``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
+
