@@ -23,7 +23,7 @@ data:
     http:
       {{- if .Values.debug }}
       debug:
-        addr: {{ .Values.debug.prometheus.addr }}
+        addr: {{ .Values.debug.addr }}
         prometheus:
           enabled: {{ eq true .Values.debug.prometheus.enabled }}
           path: {{ .Values.debug.prometheus.path }}

@@ -1,0 +1,5 @@
+---
+title: Fix debug addr so it is not in the prometheus namespace
+merge_request: 838
+author:
+type: changed
