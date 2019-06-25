@@ -86,6 +86,7 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 | `authEndpoint`       | `global.hosts.gitlab.name` | Auth endpoint (only host and port)  |
 | `certificate.secret` | `gitlab-registry`          | JWT certificate                     |
 | `compatiblity`       |                            | Configuration of compatility settings |
+| `debug`              |                            | Debug port and prometheus metrics   |
 | `enabled`            | `true`                     | Enable registry flag                |
 | `httpSecret`         |                            | Https secret                        |
 | `image.pullPolicy`   |                            | Pull policy for the registry image  |
@@ -326,3 +327,15 @@ NOTE: **Note:** The chart will populate `delete.enabled: true` into this configu
   the default use of Minio, as well as the Omnibus GitLab. Any user provided value
   will supersede this default.
 
+### debug
+
+Debug allows you set the prometheus debug port and enable
+prometheus metrics
+
+```
+debug:
+  addr: :5001
+  prometheus:
+    enabled: true
+    path: '/metrics'
+```

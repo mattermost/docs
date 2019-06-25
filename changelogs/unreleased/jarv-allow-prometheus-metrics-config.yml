@@ -1,0 +1,5 @@
+---
+title: Add prometheus metrics debug configuration
+merge_request: 838
+author:
+type: changed
