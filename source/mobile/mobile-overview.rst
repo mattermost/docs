@@ -32,3 +32,8 @@ To meet other security and compliance policies, you can :doc:`deploy the Matterm
 This option is recommended for:
 
 1. Organizations that typically use EMM solutions to deploy mobile apps to meet security and compliance policies
+
+EMM vs. App Wrapping
+--------------------
+
+Using an app wrapper, like the `Citrix MDX Toolkit <https://docs.citrix.com/en-us/mdx-toolkit/about-mdx-toolkit.html>`_ is *not supported by Mattermost* because it injects code into the app that we cannot control. Many app wrapping toolkits also provide EMM, so contact your provider for more information about how to deploy Mattermost with EMM.
