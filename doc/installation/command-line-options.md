@@ -218,6 +218,19 @@ See [nginx-ingress chart](../charts/nginx/index.md)
 | gitlab.sidekiq.timeout                              | Sidekiq job timeout                            | 5                                                          |
 | gitlab.sidekiq.resources.requests.cpu               | Sidekiq minimum needed cpu                     | 100m                                                       |
 | gitlab.sidekiq.resources.requests.memory            | Sidekiq minimum needed memory                  | 600M                                                       |
+| gitlab.task-runner.enabled                          | Task runner enabled flag                       | true                                                       |
+| gitlab.task-runner.image.repository                 | Task runner image repository                   | registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ee             |
+| gitlab.task-runner.image.tag                        | Task runner image tag                          | latest                                                     |
+| gitlab.task-runner.image.pullPolicy                 | Task runner image pull policy                  | IfNotPresent                                               |
+| gitlab.task-runner.init.image                       | Task runner init image repository              | busybox                                                    |
+| gitlab.task-runner.init.tag                         | Task runner init image tag                     | latest                                                     |
+| gitlab.task-runner.init.resources.requests.cpu      | Task runner init minimum needed cpu            | 50m                                                        |
+| gitlab.task-runner.annotations                      | Annotations to add to the task runner          | {}                                                         |
+| gitlab.task-runner.backups.objectStorage.backend           | Object storage provider to use (`s3` or `gcs`) | s3                                                         |
+| gitlab.task-runner.backups.objectStorage.config            | Authentication information for object storage  | {}                                                         |
+| gitlab.task-runner.backups.objectStorage.config.secret     | Object storage credentials secret              | ""                                                         |
+| gitlab.task-runner.backups.objectStorage.config.key        | key containing credentials in secret           | ""                                                         |
+| gitlab.task-runner.backups.objectStorage.config.gcpProject | GCP Project to use when backend is `gcs`       | ""                                                         |
 | gitlab.unicorn.replicaCount                         | Unicorn number of replicas                     | 1                                                          |
 | gitlab.unicorn.image.repository                     | Unicorn image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee |
 | gitlab.unicorn.image.tag                            | Unicorn image tag                              | latest                                                     |

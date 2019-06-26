@@ -12,7 +12,9 @@ Technical details for how the utility works can be found in the [architecture do
 
 ## Object storage
 
-We provide a minio instance out of the box when using this charts unless an [external object storage](../advanced/external-object-storage/index.md) is specified. The default behavior of the task-runner pod defaults to connect to our minio unless specific settings are given.
+We provide a minio instance out of the box when using this charts unless an [external object storage](../advanced/external-object-storage/index.md) is specified. The default behavior of the task-runner pod defaults to connect to our minio unless specific settings are given. The task-runner can also be configured to back up to Amazon S3 or Google Cloud Storage (GCS).
+
+### Backups to S3
 
 The task-runner uses `s3cmd` to connect to object storage. In order to configure connectivity to external object storage `gitlab.task-runner.backups.objectStorage.config.secret` should be specified which points to a kubernetes secret containing a `.s3cfg` file. `gitlab.task-runner.backups.objectStorage.config.key` should be specified if different from the default of `config`. This points to the key containing the contents of a .s3cfg file.
 
@@ -25,6 +27,39 @@ helm install gitlab \
 ```
 
 s3cmd `.s3cfg` file documentation can be found [here](https://s3tools.org/kb/item14.htm)
+
+In addition, two bucket locations need to be configured, one for storing the backups, and one temporary bucket that is used
+when restoring a backup.
+
+```
+--set global.appConfig.backups.bucket=gitlab-backup-storage
+--set global.appConfig.backups.tmpBucket=gitlab-tmp-storage
+```
+
+### Backups to Google Cloud Storage (GCS)
+
+To backup to GCS you must set `gitlab.task-runner.backups.objectStorage.backend` to `gcs`. This ensures that the task-runner uses the `gsutil` CLI when storing and retrieving
+objects. Additionally you must set `gitlab.task-runner.backups.objectStorage.config.gcpProject` to the project ID of the GCP project that contains your storage buckets.
+You must create a Kubernetes secret with the contents of an active service account JSON key where the service account has the `storage.admin` role for the buckets
+you will use for backup. Below is an example of using the `gcloud` and `kubectl` to create the secret.
+
+```shell
+export PROJECT_ID=$(gcloud config get-value project)
+gcloud iam service-accounts create gitlab-gcs --display-name "Gitlab Cloud Storage"
+gcloud projects add-iam-policy-binding --role roles/storage.admin ${PROJECT_ID} --member=serviceAccount:gitlab-gcs@${PROJECT_ID}.iam.gserviceaccount.com
+gcloud iam service-accounts keys create --iam-account gitlab-gcs@${PROJECT_ID}.iam.gserviceaccount.com storage.config
+kubectl create secret generic storage-config --from-file=config=storage.config
+```
+
+Configure your Helm chart as follows to use the service account key to authenticate to GCS for backups:
+
+```sh
+helm install gitlab . \
+  --set gitlab.task-runner.backups.objectStorage.config.secret=storage-config \
+  --set gitlab.task-runner.backups.objectStorage.config.key=config \
+  --set gitlab.task-runner.backups.objectStorage.config.gcpProject=my-gcp-project-id \
+  --set gitlab.task-runner.backups.objectStorage.backend=gcs
+```
 
 In addition, two bucket locations need to be configured, one for storing the backups, and one temporary bucket that is used
 when restoring a backup.

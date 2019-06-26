@@ -40,6 +40,13 @@ The sequence of execution is:
 The default name of the bucket that will be used to store backups is `gitlab-backups`. This is configurable
 using the `BACKUP_BUCKET_NAME` environment variable.
 
+#### Backing up to Google Cloud Storage
+
+By default, the backup utility uses `s3cmd` to upload and download artifacts from object storage. While this can work with Google Cloud Storage (GCS),
+it requires using the Interoperability API which makes undesireable compromises to authentication and authorization. When using Google Cloud Storage
+for backups you can configure the backup utility script to use the Cloud Storage native CLI, `gsutil`, to do the upload and download
+of your artifacts by setting the `BACKUP_BACKEND` environment variable to `gcs`.
+
 ### Restore
 
 The backup utility when given an argument `--restore` attempts to restore from an existing backup to the running instance. This
