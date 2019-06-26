@@ -1,5 +1,5 @@
 ---
 title: 'Registry: Add service port for Prometheus metrics'
-merge_request:
+merge_request: 842
 author:
 type: added
