@@ -334,7 +334,8 @@ prometheus metrics
 
 ```
 debug:
-  addr: :5001
+  addr:
+    port: 5001
   prometheus:
     enabled: true
     path: '/metrics'
