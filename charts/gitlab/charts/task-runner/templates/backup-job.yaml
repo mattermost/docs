@@ -60,7 +60,11 @@ spec:
               args:
                 - /bin/bash
                 - -c
-                - cp /etc/gitlab/.s3cfg $HOME/.s3cfg && backup-utility
+                {{- if eq .Values.backups.objectStorage.backend "s3" }}
+                - cp /etc/gitlab/.s3cfg $HOME/.s3cfg && backup-utility # alpine sleep has no infinity
+                {{- else if eq .Values.backups.objectStorage.backend "gcs" }}
+                - sh /var/opt/gitlab/templates/configure-gsutil && backup-utility
+                {{- end }}
               image: "{{ coalesce .Values.image.repository (include "image.repository" .) }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
               {{ template "gitlab.imagePullPolicy" . }}
               env:
@@ -76,6 +80,8 @@ spec:
                   value: {{ .Values.global.appConfig.packages.bucket }}
                 - name: BACKUP_BUCKET_NAME
                   value: {{ .Values.global.appConfig.backups.bucket }}
+                - name: BACKUP_BACKEND
+                  value: {{ .Values.backups.objectStorage.backend }}
                 - name: TMP_BUCKET_NAME
                   value: {{ .Values.global.appConfig.backups.tmpBucket }}
                 - name: GITALY_FEATURE_DEFAULT_ON
@@ -84,6 +90,10 @@ spec:
                   value: '/var/opt/gitlab/templates'
                 - name: CONFIG_DIRECTORY
                   value: '/srv/gitlab/config'
+                {{- if eq .Values.backups.objectStorage.backend "gcs" }}
+                - name: GOOGLE_APPLICATION_CREDENTIALS
+                  value: '/etc/gitlab/objectstorage/{{ default "config" .Values.backups.objectStorage.config.key }}'
+                {{- end }}
               volumeMounts:
 {{ include "gitlab.extraVolumeMounts" . | indent 16 }}
                 - name: task-runner-config
@@ -164,6 +174,13 @@ spec:
                     items:
                       - key: {{ default "config" .Values.backups.objectStorage.config.key }}
                         path: objectstorage/.s3cfg
+                {{- end }}
+                {{- if eq .Values.backups.objectStorage.backend "gcs" }}
+                - secret:
+                    name: {{ required "A valid backups.objectStorage.config.secret is needed!" .Values.backups.objectStorage.config.secret }}
+                    items:
+                      - key: {{ default "config" .Values.backups.objectStorage.config.key }}
+                        path: objectstorage/{{ default "config" .Values.backups.objectStorage.config.key }}
                 {{- end }}
                 {{- include "gitlab.minio.mountSecrets" $ | nindent 16 }}
                 {{- include "gitlab.appConfig.objectStorage.mountSecrets" (dict "name" "artifacts" "config" $.Values.global.appConfig.artifacts) | nindent 16 }}

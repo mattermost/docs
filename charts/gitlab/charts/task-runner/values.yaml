@@ -115,7 +115,11 @@ backups:
         cpu: 50m
         memory: 350M
   objectStorage:
+    backend: s3
     config: {}
+    #   secret: my-backup-secret
+    #   key: config
+    #   gcpProject: my-gcp-project-id
 extra: {}
 
 rack_attack:

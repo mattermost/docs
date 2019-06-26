@@ -85,7 +85,7 @@ diffs, and pseudonymizer is done via the `global.appConfig.lfs`,
 --set global.appConfig.pseudonymizer.bucket=gitlab-pseudonymizer-storage
 --set global.appConfig.pseudonymizer.connection.secret=object-storage
 --set global.appConfig.pseudonymizer.connection.key=connection
-````
+```
 
 > **Note**: Currently a different bucket is needed for each, otherwise performing a restore from backup will not properly function.
 
@@ -120,29 +120,41 @@ Examples for [AWS][fog-aws](any S3 compatible like [Azure using Minio][minio-azu
 
 Backups are also stored in object storage, and need to be configured to point
 externally rather than the included minio service. The backup/restore procedure makes
-use of two separate buckets. A bucket for storing backups (`global.appConfig.backups.bucket`),
+use of two separate buckets. A bucket for storing backups (`global.appConfig.backups.bucket`)
 and a tmp bucket for preserving existing data during the restore process (`global.appConfig.backups.tmpBucket`).
+Currently AWS S3-compatible object storage systems and Google Cloud Storage are supported backends
+The backend type is configurable by setting `global.appConfig.backups.objectStorage.backend` to `s3` and `gcs` respectively.
 A connection configuration through the `gitlab.task-runner.backups.objectStorage.config` key must also be provided.
+When using Google Cloud Storage, the GCP project must be set with the `global.appConfig.backups.objectStorage.config.gcpProject` value.
 
+For S3-compatible storage:
 ```
 --set global.appConfig.backups.bucket=gitlab-backup-storage
 --set global.appConfig.backups.tmpBucket=gitlab-tmp-storage
---set gitlab.task-runner.backups.objectStorage.config.secret=s3cmd-config
+--set gitlab.task-runner.backups.objectStorage.config.secret=storage-config
+--set gitlab.task-runner.backups.objectStorage.config.key=config
+```
+
+For Google Cloud Storage (GCS):
+```
+--set global.appConfig.backups.bucket=gitlab-backup-storage
+--set global.appConfig.backups.tmpBucket=gitlab-tmp-storage
+--set gitlab.task-runner.backups.objectStorage.backend=gcs
+--set gitlab.task-runner.backups.objectStorage.config.gcpProject=my-gcp-project-id
+--set gitlab.task-runner.backups.objectStorage.config.secret=storage-config
 --set gitlab.task-runner.backups.objectStorage.config.key=config
 ```
 
 See the [backup/restore object storage documentation](../../backup-restore/index.md#object-storage) for full details.
 
-Create the secret using the [s3cmd config file format](https://s3tools.org/kb/item14.htm) per the documentation.
-
-> **Note**: In order to backup/restore files from the other object storage locations, the s3cmd config file needs to be
+> **Note**: In order to backup/restore files from the other object storage locations, the config file needs to be
 > configured to authenticate as a user with sufficient access to read/write to all GitLab buckets.
 
 ### Backups storage example
 
-1. Create a file called `s3cmd.config` containing:
+1. Create the `storage.config` file:
 
-    * On Amazon S3
+    * On Amazon S3, the contents should be in the [s3cmd config file format](https://s3tools.org/kb/item14.htm)
 
     ```
     [default]
@@ -151,23 +163,16 @@ Create the secret using the [s3cmd config file format](https://s3tools.org/kb/it
     bucket_location = us-east-1
     ```
 
-    * On Google Cloud Storage
+    * On Google Cloud Storage, you can create the file by creating a service account 
+      with the storage.admin role and then 
+      [creating a service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys). 
+      Below is an example of using the `gcloud` CLI to create the file.
 
-    ```
-    [default]
-    host_base = storage.googleapis.com
-    host_bucket = storage.googleapis.com
-    use_https = True
-    signature_v2 = True
-
-    # Access and secret key can be generated in the interoperability
-    # https://console.cloud.google.com/storage/settings
-    # See Docs: https://cloud.google.com/storage/docs/interoperability
-    access_key = BOGUS_ACCESS_KEY
-    secret_key = BOGUS_SECRET_KEY
-
-    # Multipart needs to be disabled for GCS !
-    enable_multipart = False
+    ```shell
+    export PROJECT_ID=$(gcloud config get-value project)
+    gcloud iam service-accounts create gitlab-gcs --display-name "Gitlab Cloud Storage"
+    gcloud projects add-iam-policy-binding --role roles/storage.admin ${PROJECT_ID} --member=serviceAccount:gitlab-gcs@${PROJECT_ID}.iam.gserviceaccount.com
+    gcloud iam service-accounts keys create --iam-account gitlab-gcs@${PROJECT_ID}.iam.gserviceaccount.com storage.config
     ```
 
     * On Azure Storage
@@ -194,5 +199,5 @@ Create the secret using the [s3cmd config file format](https://s3tools.org/kb/it
 1. Create the secret
 
     ```bash
-    kubectl create secret generic s3cmd-config --from-file=config=s3cmd.config
+    kubectl create secret generic storage-config --from-file=config=storage.config
     ```
