@@ -6,6 +6,7 @@ Tables below contain all the possible charts configurations that can be supplied
 
 | Parameter                                       | Description                                                                  | Default                                    |
 | ---                                             | ---                                                                          | ---                                        |
+| global.edition                                  | The edition of GitLab to install. Enterprise Edition (ee) or Community Edition (ce) | ee                                         |
 | global.hosts.domain                             | Domain name that will be used for all publicly exposed services              | Required                                   |
 | global.hosts.externalIP | Static IP to assign to nginx ingress controller                              | Required                                   |
 | global.hosts.ssh                                | Domain name that will be used for git ssh access                             | gitlab.{global.hosts.domain}                                          |
