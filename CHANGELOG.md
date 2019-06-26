@@ -2,6 +2,21 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 1.8.5 (2019-06-26)
+
+### Performance (1 change)
+
+- Unicorn: increase worker memory defaults.
+
+### Added (1 change, 1 of them is from the community)
+
+- Persistent storage for task-runner tmp directory. !769 (jansmets)
+
+### Other (1 change)
+
+- Update GitLab Version to 11.10.7.
+
+
 ## 1.8.4 (2019-05-01)
 
 ### Other (1 change)
