@@ -10,6 +10,7 @@ Tables below contain all the possible charts configurations that can be supplied
 | global.hosts.domain                             | Domain name that will be used for all publicly exposed services              | Required                                   |
 | global.hosts.externalIP | Static IP to assign to nginx ingress controller                              | Required                                   |
 | global.hosts.ssh                                | Domain name that will be used for git ssh access                             | gitlab.{global.hosts.domain}                                          |
+| global.minio.enabled                            | Minio enable flag                                    | true                         |
 | gitlab.migrations.initialRootPassword.secret    | Global name of the secret containing the root account password               | {Release.Name}-gitlab-initial-root-password |
 | gitlab.migrations.initialRootPassword.key       | Key pointing to the root account password in the migrations secret           | password           |
 | global.psql.host                                | Global hostname of an external psql, overrides subcharts' psql configuration | _Uses in-cluster non-production postgress_ |
@@ -130,7 +131,6 @@ See [nginx-ingress chart](../charts/nginx/index.md)
 | registry.tokenService                        | JWT token service                   | container_registry   |
 | registry.tokenIssuer                         | JWT token issuer                    | gitlab-issuer        |
 | registry.replicas                            | Number of replicas                  | 1                    |
-| registry.minio.enabled                       | Enable minio flag                   | true                 |
 | registry.minio.bucket                        | Minio registry bucket name          | registry             |
 | registry.service.annotations                 | Annotations to add to the `Service` | {}                   |
 
@@ -141,7 +141,6 @@ See [nginx-ingress chart](../charts/nginx/index.md)
 | minio.image                                  | Minio image                         | minio/minio                  |
 | minio.imageTag                               | Minio image tag                     | RELEASE.2017-12-28T01-21-00Z |
 | minio.imagePullPolicy                        | Minio image pull policy             | Always                       |
-| minio.enabled                                | Minio enable flag                   | true                         |
 | minio.mountPath                              | Minio config file mount path        | /export                      |
 | minio.replicas                               | Minio number of replicas            | 4                            |
 | minio.persistence.enabled                    | Minio enable persistence flag       | true                         |
