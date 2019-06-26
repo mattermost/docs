@@ -15,6 +15,12 @@ spec:
     targetPort: {{ .Values.service.internalPort }}
     protocol: TCP
     name: {{ .Values.service.name }}
+  {{- if eq .Values.debug.prometheus.enabled true }}
+  - port: {{ .Values.debug.addr.port }}
+    targetPort: {{ .Values.debug.addr.port }}
+    protocol: TCP
+    name: {{ .Values.service.name }}-prometheus
+  {{- end }}
   selector:
     app: {{ template "name" . }}
     release: {{ .Release.Name }}
