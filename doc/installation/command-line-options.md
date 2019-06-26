@@ -6,20 +6,20 @@ Tables below contain all the possible charts configurations that can be supplied
 
 | Parameter                                       | Description                                                                  | Default                                    |
 | ---                                             | ---                                                                          | ---                                        |
-| global.edition                                  | The edition of GitLab to install. Enterprise Edition (ee) or Community Edition (ce) | ee                                         |
+| global.edition                                  | The edition of GitLab to install. Enterprise Edition (ee) or Community Edition (ce) | ee                                  |
 | global.hosts.domain                             | Domain name that will be used for all publicly exposed services              | Required                                   |
-| global.hosts.externalIP | Static IP to assign to nginx ingress controller                              | Required                                   |
-| global.hosts.ssh                                | Domain name that will be used for git ssh access                             | gitlab.{global.hosts.domain}                                          |
-| global.minio.enabled                            | Minio enable flag                                    | true                         |
+| global.hosts.externalIP                         | Static IP to assign to nginx ingress controller                              | Required                                   |
+| global.hosts.ssh                                | Domain name that will be used for git ssh access                             | gitlab.{global.hosts.domain}               |
+| global.minio.enabled                            | Minio enable flag                                                            | true                                       |
 | gitlab.migrations.initialRootPassword.secret    | Global name of the secret containing the root account password               | {Release.Name}-gitlab-initial-root-password |
-| gitlab.migrations.initialRootPassword.key       | Key pointing to the root account password in the migrations secret           | password           |
+| gitlab.migrations.initialRootPassword.key       | Key pointing to the root account password in the migrations secret           | password                                   |
 | global.psql.host                                | Global hostname of an external psql, overrides subcharts' psql configuration | _Uses in-cluster non-production postgress_ |
 | global.psql.password.secret                     | Global name of the secret containing the psql password                       | _Uses in-cluster non-production postgress_ |
 | global.psql.password.key                        | Key pointing to the psql password in the psql secret                         | _Uses in-cluster non-production postgress_ |
 | global.time_zone                                | Global time zone                                                             | UTC                                        |
-| global.service.annotations                      | Annotations to add to every `Service`                                        | {}                     |
-| global.registry.bucket                          | registry bucket name                    | registry             |
-| global.application.create                       | Create an [Application resource](https://github.com/kubernetes-sigs/application) for GitLab                                    | false
+| global.service.annotations                      | Annotations to add to every `Service`                                        | {}                                         |
+| global.registry.bucket                          | registry bucket name                                                         | registry                                   |
+| global.application.create                       | Create an [Application resource](https://github.com/kubernetes-sigs/application) for GitLab | false                       |
 
 ## TLS configuration
 
@@ -48,9 +48,9 @@ Tables below contain all the possible charts configurations that can be supplied
 | global.smtp.starttls_auto       | Use STARTTLS if enabled on the mail server                                              | false                 |
 | global.smtp.tls                 | Enables SMTP/TLS (SMTPS: SMTP over direct TLS connection)                               | _none_                |
 | global.smtp.openssl_verify_mode | TLS verification mode ("none", "peer", or "ssl/tls")                                    | peer                  |
-| global.email.from               | Email address that appears as the sender for emails from GitLab                         | gitlab@example.com  |
+| global.email.from               | Email address that appears as the sender for emails from GitLab                         | gitlab@example.com    |
 | global.email.display_name       | Name that appears as the sender for emails from GitLab                                  | GitLab                |
-| global.email.reply_to           | Reply-to email listed in emails from GitLab                                             | noreply@example.com |
+| global.email.reply_to           | Reply-to email listed in emails from GitLab                                             | noreply@example.com   |
 | global.email.subject_suffix     | Suffix on the subject of all outgoing email from GitLab                                 | ""                    |
 
 ## Incoming Email configuration
@@ -156,7 +156,7 @@ See [nginx-ingress chart](../charts/nginx/index.md)
 | minio.service.annotations                    | Annotations to add to the `Service` | {}                           |
 | minio.resources.requests.memory              | Minio minimum memory requested      | 256Mi                        |
 | minio.resources.requests.cpu                 | Minio minimum cpu requested         | 250m                         |
-| minio.defaultBuckets                         | Minio default buckets               | [{"name": "registry"}]       |
+| minio.defaultBuckets                         | Minio default buckets               | `[{"name": "registry"}]`     |
 | minio.minioConfig.region                     | Minio region                        | us-east-1                    |
 | minio.minioConfig.browser                    | Minio browser flag                  | on                           |
 | minio.minioConfig.domain                     | Minio domain                        |                              |
@@ -175,20 +175,20 @@ See [nginx-ingress chart](../charts/nginx/index.md)
 | gitlab.gitaly.service.annotations                   | Annotations to add to the `Service`            | {}                                                         |
 | gitlab.gitaly.enabled                               | Gitaly enable flag                             | true                                                       |
 | gitlab.gitaly.serviceName                           | Gitaly service name                            | gitaly                                                     |
-| gitlab.gitaly.authToken.secret                      | Gitaly secret name                             | {.Release.Name}-gitaly-secret                                              |
+| gitlab.gitaly.authToken.secret                      | Gitaly secret name                             | {.Release.Name}-gitaly-secret                              |
 | gitlab.gitaly.authToken.key                         | Key to gitaly token in the secret              | token                                                      |
-| gitlab.gitaly.shell.authToken.secret                | Shell secret                                   | {Release.Name}-gitlab-shell-secret                                        |
+| gitlab.gitaly.shell.authToken.secret                | Shell secret                                   | {Release.Name}-gitlab-shell-secret                         |
 | gitlab.gitaly.shell.authToken.key                   | Shell key                                      | secret                                                     |
 | gitlab.gitaly.persistence.enabled                   | Gitaly enable persistence flag                 | true                                                       |
 | gitlab.gitaly.persistence.accessMode                | Gitaly persistence access mode                 | ReadWriteOnce                                              |
 | gitlab.gitaly.persistence.size                      | Gitaly persistence volume size                 | 50Gi                                                       |
-| gitlab.gitaly.persistence.subPath                   | Gitaly persistence volume mount path           |                                                          |
-| gitlab.gitaly.persistence.storageClass              | storageClassName for provisioning              |                                                  |
-| gitlab.gitaly.persistence.volumeName                | Existing persistent volume name                |                                                  |
-| gitlab.gitaly.persistence.matchLabels               | Label-value matches to bind                    |                                                  |
-| gitlab.gitaly.persistence.matchExpressions          | Label-expression matches to bind               |                                                  |
-| gitlab.gitaly.securityContext.runAsUser             | User ID under which the pod should be started  | 1000                                             |
-| gitlab.gitaly.securityContext.fsGroup               | Group ID under which the pod should be started | 1000                                             |
+| gitlab.gitaly.persistence.subPath                   | Gitaly persistence volume mount path           |                                                            |
+| gitlab.gitaly.persistence.storageClass              | storageClassName for provisioning              |                                                            |
+| gitlab.gitaly.persistence.volumeName                | Existing persistent volume name                |                                                            |
+| gitlab.gitaly.persistence.matchLabels               | Label-value matches to bind                    |                                                            |
+| gitlab.gitaly.persistence.matchExpressions          | Label-expression matches to bind               |                                                            |
+| gitlab.gitaly.securityContext.runAsUser             | User ID under which the pod should be started  | 1000                                                       |
+| gitlab.gitaly.securityContext.fsGroup               | Group ID under which the pod should be started | 1000                                                       |
 | gitlab.gitlab-shell.replicaCount                    | Shell replicas                                 | 1                                                          |
 | gitlab.gitlab-shell.image.repository                | Shell image repository                         | registry.gitlab.com/gitlab-org/build/cng/gitlab-shell      |
 | gitlab.gitlab-shell.image.tag                       | Shell image tag                                | latest                                                     |
@@ -199,7 +199,7 @@ See [nginx-ingress chart](../charts/nginx/index.md)
 | gitlab.gitlab-shell.service.internalPort            | Shell internal port                            | 22                                                         |
 | gitlab.gitlab-shell.service.annotations             | Annotations to add to the `Service`            | {}                                                         |
 | gitlab.gitlab-shell.enabled                         | Shell enable flag                              | true                                                       |
-| gitlab.gitlab-shell.authToken.secret                | Shell auth secret                              | {Release.Name}-gitlab-shell-secret                                        |
+| gitlab.gitlab-shell.authToken.secret                | Shell auth secret                              | {Release.Name}-gitlab-shell-secret                         |
 | gitlab.gitlab-shell.authToken.key                   | Shell auth secret key                          | secret                                                     |
 | gitlab.gitlab-shell.unicorn.serviceName             | Unicorn service name                           | unicorn                                                    |
 | gitlab.gitlab-shell.redis.serviceName               | Redis service name                             | redis                                                      |
@@ -211,7 +211,7 @@ See [nginx-ingress chart](../charts/nginx/index.md)
 | gitlab.sidekiq.psql.password.secret                 | psql password secret                           | gitlab-postgres                                            |
 | gitlab.sidekiq.psql.password.key                    | key to psql password in psql secret            | psql-password                                              |
 | gitlab.sidekiq.gitaly.serviceName                   | gitaly service name                            | gitaly                                                     |
-| gitlab.sidekiq.gitaly.authToken.secret              | gitaly secret                                  | {.Release.Name}-gitaly-secret                                              |
+| gitlab.sidekiq.gitaly.authToken.secret              | gitaly secret                                  | {.Release.Name}-gitaly-secret                              |
 | gitlab.sidekiq.gitaly.authToken.key                 | key to gitaly token in gitaly secret           | token                                                      |
 | gitlab.sidekiq.replicas                             | Sidekiq replicas                               | 1                                                          |
 | gitlab.sidekiq.concurrency                          | Sidekiq default concurrency                    | 10                                                         |
@@ -235,10 +235,10 @@ See [nginx-ingress chart](../charts/nginx/index.md)
 | gitlab.unicorn.redis.serviceName                    | Redis service name                             | redis                                                      |
 | gitlab.unicorn.psql.password.secret                 | psql secret name                               | gitlab-postgres                                            |
 | gitlab.unicorn.psql.password.key                    | Key to psql password in psql secret            | psql-password                                              |
-| gitlab.unicorn.shell.authToken.secret               | Shell token secret                             | {Release.Name}-gitlab-shell-secret                                        |
+| gitlab.unicorn.shell.authToken.secret               | Shell token secret                             | {Release.Name}-gitlab-shell-secret                         |
 | gitlab.unicorn.shell.authToken.key                  | Key to shell token in shell secret             | secret                                                     |
 | gitlab.unicorn.gitaly.serviceName                   | Gitaly service name                            | gitaly                                                     |
-| gitlab.unicorn.gitaly.authToken.secret              | Gitaly secret name                             | {.Release.Name}-gitaly-secret                                              |
+| gitlab.unicorn.gitaly.authToken.secret              | Gitaly secret name                             | {.Release.Name}-gitaly-secret                              |
 | gitlab.unicorn.gitaly.authToken.key                 | Key to gitaly token in gitaly secret           | token                                                      |
 | gitlab.unicorn.registry.api.protocol                | Registry protocol                              | http                                                       |
 | gitlab.unicorn.registry.api.serviceName             | Registry service name                          | registry                                                   |
@@ -267,7 +267,7 @@ See [nginx-ingress chart](../charts/nginx/index.md)
 | gitlab-runner.rbac.clusterWideAccess                | deploy containers of jobs cluster-wide         | false                                                      |
 | gitlab-runner.rbac.serviceAccountName               | name of the rbac service account to create     | default                                                    |
 | gitlab-runner.runners.image                         | default container image to use in builds       | ubuntu:16.04                                               |
-| gitlab-runner.runners.imagePullSecrets              | imagePullSecrets                               | []                                                         |
+| gitlab-runner.runners.imagePullSecrets              | imagePullSecrets                               | `[]`                                                       |
 | gitlab-runner.runners.privileged                    | run in privieleged mode,needed for `dind`      | false                                                      |
 | gitlab-runner.runners.namespace                     | namespace to run jobs in                       | default                                                    |
 | gitlab-runner.runners.cache.cacheType               | cache type                                     | s3                                                         |
