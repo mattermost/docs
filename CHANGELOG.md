@@ -2,6 +2,18 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.0.2 (2019-06-26)
+
+### Changed (1 change)
+
+- Updated the gitlab-monitor tags to properly match its upstream release.
+
+### Other (2 changes)
+
+- Update gitlab-runner to 0.6.0/12.0.0. !832
+- Update GitLab Version to 12.0.2.
+
+
 ## 2.0.1 (2019-06-25)
 
 ### Other (1 change)
