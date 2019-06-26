@@ -49,7 +49,8 @@ class VersionFetcher
   def fetch(chart_name)
     chart_name = chart_name.tr('-', '_').to_sym
     return @version unless respond_to?(chart_name)
-    Version.new(send(chart_name)) if @version
+    chart_version = send(chart_name) if @version
+    Version.new(chart_version) if chart_version
   end
 
   private
