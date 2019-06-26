@@ -29,7 +29,10 @@ Release Date 2019-07-16
  - Fixed an issue where the post menu divider had a gap in mobile view.
  - Fixed an issue where the bottom of right-hand side was cut off in tablet view.
  - Fixed an issue where custom emojis overlapped when rendered in messages.
- - Fixed an issue where Allow Mobile upload/download Files options in the System Console where not hidden on a non E-20 server.
+ - Fixed an issue where the Save button was hidden in the System Console when a banner was displayed at the top of the page.
+ - Fixed an issue where "Notifications" items were missing in the System Console for restricted system administrators.
+ - Fixed an issue where "Enable AD/LDAP Group Sync" showed in experimental System Console settings section in Team Edition.
+ - Fixed an issue where "Allow Mobile upload/download Files" options in the System Console where not hidden on a non E-20 server.
  - Fixed an issue where the channel dropdown menu user interface was broken in mobile view when Zoom plugin was enabled.
  - Fixed an issue where users were not able to search for split parts of first/last names or for split characters such as `_` with elasticsearch autocomplete enabled.
  - Fixed an issue where OAuth endpoints returned application/json content type for HTML redirects.
