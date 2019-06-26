@@ -113,20 +113,25 @@ installation procedure:
    flag to the `helm install` command:
 
       ```bash
-      --set 
+      --set nginx-ingress.enabled=false
       ```
 
 1. [Use your own SSL certificates](../tls.md#option-2-use-your-own-wildcard-certificate)
 
-1. If you want to enable Git over SSH, you have to assign an external IP access directly to GitLab
-   Shell service. You can use the following to pass an array of external IPs:
+1. If you want to enable Git over SSH, you have to assign at least one external IP address to GitLab
+   Shell service (you can assign multiple external IPs if needs be). Use the following command argument
+   to pass one or more external IPs, as an array:
 
     ```bash
-    --set gitlab.gitlab-shell.service.externalIPs='{192.168.120.120,...}'
+    --set gitlab.gitlab-shell.service.externalIPs='{x.x.x.x}'
+    ```
+
+    ```bash
+    --set gitlab.gitlab-shell.service.externalIPs='{x.x.x.x,y.y.y.y}'
     ```
    
-   You may have to use an alternative port, in case SSH port is already in use on your node. You may have to use a different domain
-   name as well. You can use the following for this purpose:
+   You may have to use an alternative port, in case SSH port is already in use on your node. You may
+   have to use a different domain name as well. You can use the following for this purpose:
 
     ```bash
     --set global.shell.port=222
