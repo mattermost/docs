@@ -251,9 +251,7 @@ See the documentation of the [deprecations template][] for further information o
 
 Due to the complexity of these charts and their level of flexibility, there are some overlaps where it is possible to produce a configuration that would lead to an unpredictable, or entirely non-functional deployment. In an effort to prevent known problematic settings combinations, we have implemented template logic designed to detect and warn the user that their configuration will not work
 
-See the documentation of the [checkConfig template][] for further information on the design, functionality, and how to add new configuration checks.
-
-[checkConfig template][checkconfig.md]
+See the documentation of the [checkConfig template](checkconfig.md) for further information on the design, functionality, and how to add new configuration checks.
 
 ## Verifying registry
 

@@ -41,7 +41,7 @@ Privileged containers have extended capabilities, for example they can mount arb
 | gitlab-runner.rbac.clusterWideAccess         | deploy containers of jobs cluster-wide     | false                               |
 | gitlab-runner.rbac.serviceAccountName        | name of the rbac service account to create | default                             |
 | gitlab-runner.runners.image                  | default container image to use in builds   | ubuntu:16.04                        |
-| gitlab-runner.runners.imagePullSecrets       | imagePullSecrets                           | []                                  |
+| gitlab-runner.runners.imagePullSecrets       | imagePullSecrets                           | `[]`                                |
 | gitlab-runner.runners.privileged             | run in privileged mode, needed for `dind`  | false                               |
 | gitlab-runner.runners.namespace              | namespace to run jobs in                   | default                             |
 | gitlab-runner.runners.cache.cacheType        | cache type                                 | s3                                  |
