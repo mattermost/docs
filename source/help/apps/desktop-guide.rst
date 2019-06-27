@@ -67,7 +67,7 @@ The options appear in the Settings page, available from the **File > Settings** 
 Start app on login (Windows, Linux only)
     When enabled, Mattermost application starts when you log in to your machine.
 
-    This setting is disabled by default.
+    This setting is enabled by default.
 
 Check spelling
     Highlight misspelled words in your messages. Available for English, French, German, Spanish, and Dutch. To change the spelling language, right-click inside a message box and navigate to **Spelling Languages** in the context menu.
