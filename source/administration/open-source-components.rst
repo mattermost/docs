@@ -117,5 +117,3 @@ Webapp
  - Mattermost Enterprise Edition v4.7.0 - View Open Source Components: https://github.com/mattermost/mattermost-webapp/blob/release-4.7/NOTICE.txt.
  - Mattermost Enterprise Edition v4.6.0 - View Open Source Components: https://github.com/mattermost/mattermost-webapp/blob/release-4.6/NOTICE.txt.
  - Mattermost Enterprise Edition v4.5.0 - View Open Source Components: https://github.com/mattermost/mattermost-webapp/blob/release-4.5/NOTICE.txt.
- - Mattermost Enterprise Edition v4.4.0 - View Open Source Components: https://github.com/mattermost/mattermost-webapp/blob/release-4.4/NOTICE.txt.
- - Mattermost Enterprise Edition v4.3.0 - View Open Source Components: https://github.com/mattermost/mattermost-webapp/blob/release-4.3/NOTICE.txt.
