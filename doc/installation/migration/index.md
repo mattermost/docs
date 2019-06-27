@@ -35,7 +35,7 @@
         ```
 
     1. Migrate existing artifacts to object storage
-        
+
         ```
         $ sudo gitlab-rake gitlab:artifacts:migrate
         $ sudo gitlab-rake gitlab:traces:migrate
@@ -49,8 +49,8 @@
     1. Migrate existing uploads to object storage
         ```
         $ sudo gitlab-rake gitlab:uploads:migrate:all
-        ```        
-        Docs: https://docs.gitlab.com/ee/administration/raketasks/uploads/migrate.html#migrate-to-object-storage
+        ```
+        Docs: <https://docs.gitlab.com/ee/administration/raketasks/uploads/migrate.html#migrate-to-object-storage>
 
     1. Visit the omnibus-gitlab package based GitLab instance and make sure the
        uploads are available. For example check if user, group and project
