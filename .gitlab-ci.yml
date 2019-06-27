@@ -335,7 +335,7 @@ check_docs_lint:
     # Lint Markdown
     # https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md
     - bundle exec mdl content/charts/**/*.md --rules \
-        MD032
+        MD032,MD034
     # Build HTML from Markdown
     - bundle exec nanoc
     # Check the internal links

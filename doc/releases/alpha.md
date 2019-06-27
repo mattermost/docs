@@ -51,24 +51,24 @@ The chart and containers are a work in progress, and not all features are fully 
 
 Helm Chart Issues/Limitations:
 
-- No in-cluster HA database https://gitlab.com/charts/gitlab/issues/48
-- No backup/restore procedure https://gitlab.com/charts/gitlab/issues/28
-- No update procedures, or support for no-downtime upgrades: https://gitlab.com/charts/gitlab/issues/238
-- No support for changing/migrating your storage capacity/options after installation https://gitlab.com/charts/gitlab/issues/233
-- No GitLab Pages support https://gitlab.com/charts/gitlab/issues/37
-- No Monitoring support https://gitlab.com/charts/gitlab/issues/29
-- No support for incoming email https://gitlab.com/charts/gitlab/issues/235
-- Limited support for customizing GitLab options https://gitlab.com/charts/gitlab/issues/236
-- CI traces are not persisted https://gitlab.com/charts/gitlab/issues/245
-- No support for scaling unicorn separate from workhorse https://gitlab.com/charts/gitlab/issues/61
+- No in-cluster HA database: <https://gitlab.com/charts/gitlab/issues/48>
+- No backup/restore procedure: <https://gitlab.com/charts/gitlab/issues/28>
+- No update procedures, or support for no-downtime upgrades: <https://gitlab.com/charts/gitlab/issues/238>
+- No support for changing/migrating your storage capacity/options after installation: <https://gitlab.com/charts/gitlab/issues/233>
+- No GitLab Pages support: <https://gitlab.com/charts/gitlab/issues/37>
+- No Monitoring support: <https://gitlab.com/charts/gitlab/issues/29>
+- No support for incoming email: <https://gitlab.com/charts/gitlab/issues/235>
+- Limited support for customizing GitLab options: <https://gitlab.com/charts/gitlab/issues/236>
+- CI traces are not persisted: <https://gitlab.com/charts/gitlab/issues/245>
+- No support for scaling unicorn separate from workhorse: <https://gitlab.com/charts/gitlab/issues/61>
 - GitLab maintenance rake tasks won't work in k8s environments
-- No guarantees on safe pod shutdown: https://gitlab.com/charts/gitlab/issues/239
+- No guarantees on safe pod shutdown: <https://gitlab.com/charts/gitlab/issues/239>
 
 Features that are currently out of scope:
 
-- Support for MySQL https://gitlab.com/charts/gitlab/issues/250
-- Mattermost https://gitlab.com/charts/gitlab/issues/251
-- Relative URL as the GitLab Endpoint https://gitlab.com/charts/gitlab/issues/406
+- Support for MySQL: <https://gitlab.com/charts/gitlab/issues/250>
+- Mattermost: <https://gitlab.com/charts/gitlab/issues/251>
+- Relative URL as the GitLab Endpoint: <https://gitlab.com/charts/gitlab/issues/406>
 
 ## Path to beta and general availability
 

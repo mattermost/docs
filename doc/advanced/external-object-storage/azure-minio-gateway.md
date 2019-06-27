@@ -2,7 +2,7 @@
 
 [Minio](https://minio.io/) is an object storage server that exposes S3-compatible APIs and it has a gateway feature that allows proxying requests to Azure Blob Storage. To setup our gateway, we will make use of Azure's Web App on Linux.
 
-To get started, make sure you have installed Azure CLI and you are logged in (`az login`). Proceed to create a [Resource group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#resource-groups), if you don't have one already: 
+To get started, make sure you have installed Azure CLI and you are logged in (`az login`). Proceed to create a [Resource group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#resource-groups), if you don't have one already:
 
 ```
 az group create --name "gitlab-azure-minio" --location "WestUS"
@@ -23,7 +23,7 @@ Create a Storage account in your resource group, the name of the storage account
 ```
 
 Retrieve the account key for the storage account:
-    
+
 ```
     az storage account show-connection-string \
         --name "gitlab-azure-minio-storage" \
@@ -61,7 +61,7 @@ az webapp create \
     --resource-group "gitlab-azure-minio"
 ```
 
-The Web app should now be accessible at https://gitlab-minio-app.azurewebsites.net.
+The Web app should now be accessible at <https://gitlab-minio-app.azurewebsites.net>.
 
 Lastly, we need to setup the startup command and create environment variables that will store our storage account name and key for use by the web app, MINIO_ACCESS_KEY & MINIO_SECRET_KEY.
 
@@ -82,4 +82,4 @@ az webapp config set \
 You can proceed to use this gateway with any client with s3-compability. Your webapp url will be the `s3 endpoint`, storage account name will be your `accesskey` and storage account key will be your `secretkey`.
 
 ## Reference
-This guide was adapted for posterity from [Alessandro Segala's blog post on same topic.](https://withblue.ink/2017/10/29/how-to-use-s3cmd-and-any-other-amazon-s3-compatible-app-with-azure-blob-storage.html) 
+This guide was adapted for posterity from [Alessandro Segala's blog post on same topic.](https://withblue.ink/2017/10/29/how-to-use-s3cmd-and-any-other-amazon-s3-compatible-app-with-azure-blob-storage.html)

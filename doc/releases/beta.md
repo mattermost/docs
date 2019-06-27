@@ -41,24 +41,26 @@ The chart and containers are a work in progress, and not all features are fully 
 
 Helm Chart Issues/Limitations:
 
-- No in-cluster HA database https://gitlab.com/charts/gitlab/issues/48
-- No GitLab Pages support https://gitlab.com/charts/gitlab/issues/37
-- No GitLab Geo support https://gitlab.com/charts/gitlab/issues/8
-- No support for incoming email https://gitlab.com/charts/gitlab/issues/235
-- Does not support running multiple gitaly servers https://gitlab.com/charts/gitlab/issues/432
+- No in-cluster HA database: <https://gitlab.com/charts/gitlab/issues/48>
+- No GitLab Pages support: <https://gitlab.com/charts/gitlab/issues/37>
+- No GitLab Geo support: <https://gitlab.com/charts/gitlab/issues/8>
+- No support for incoming email: <https://gitlab.com/charts/gitlab/issues/235>
+- Does not support running multiple gitaly servers: <https://gitlab.com/charts/gitlab/issues/432>
 
 Limitations planned to be fixed during beta:
 
-- Cannot create a project from a template https://gitlab.com/charts/gitlab/issues/348
-- Cannot create a new branch from the UI https://gitlab.com/charts/gitlab/issues/572
-- GitLab project based import/~~export~~ https://gitlab.com/charts/gitlab/issues/428
-- ~~Backup procedure does not include repositories https://gitlab.com/charts/gitlab/issues/503~~ (fixed in `0.3.0`)
+- Cannot create a project from a template: <https://gitlab.com/charts/gitlab/issues/348>
+- Cannot create a new branch from the UI: <https://gitlab.com/charts/gitlab/issues/572>
+- GitLab project based import/~~export~~:
+  - <https://gitlab.com/charts/gitlab/issues/428>
+- ~~Backup procedure does not include repositories~~:
+  - <https://gitlab.com/charts/gitlab/issues/503> (fixed in `0.3.0`)
 
 Features that are currently out of scope:
 
-- Support for MySQL https://gitlab.com/charts/gitlab/issues/250
-- Mattermost https://gitlab.com/charts/gitlab/issues/251
-- Relative URL as the GitLab Endpoint https://gitlab.com/charts/gitlab/issues/406
+- Support for MySQL: <https://gitlab.com/charts/gitlab/issues/250>
+- Mattermost: <https://gitlab.com/charts/gitlab/issues/251>
+- Relative URL as the GitLab Endpoint: <https://gitlab.com/charts/gitlab/issues/406>
 
 ## Path to general availability
 
