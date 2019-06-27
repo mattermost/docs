@@ -14,6 +14,25 @@ Mobile
 
  - Mattermost Mobile v1.20.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.20/NOTICE.txt.
  - Mattermost Mobile v1.19.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.19/NOTICE.txt.
+ - Mattermost Mobile v1.18.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.18/NOTICE.txt.
+ - Mattermost Mobile v1.17.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.17/NOTICE.txt.
+ - Mattermost Mobile v1.16.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.16/NOTICE.txt.
+ - Mattermost Mobile v1.15.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.15/NOTICE.txt.
+ - Mattermost Mobile v1.14.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.14/NOTICE.txt.
+ - Mattermost Mobile v1.13.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.13/NOTICE.txt.
+ - Mattermost Mobile v1.12.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.12/NOTICE.txt.
+ - Mattermost Mobile v1.11.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.11/NOTICE.txt.
+ - Mattermost Mobile v1.10.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.10/NOTICE.txt.
+ - Mattermost Mobile v1.9.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.9/NOTICE.txt.
+ - Mattermost Mobile v1.8.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.8/NOTICE.txt.
+ - Mattermost Mobile v1.7.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.7/NOTICE.txt.
+ - Mattermost Mobile v1.6.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.6/NOTICE.txt.
+ - Mattermost Mobile v1.5.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.5/NOTICE.txt.
+ - Mattermost Mobile v1.4.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.4/NOTICE.txt.
+ - Mattermost Mobile v1.3.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.3/NOTICE.txt.
+ - Mattermost Mobile v1.2.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.2/NOTICE.txt.
+ - Mattermost Mobile v1.1.0 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.1/NOTICE.txt.
+ - Mattermost Mobile v1.0.1 - View Open Source Components: https://github.com/mattermost/mattermost-mobile/blob/release-1.0.1/NOTICE.txt.
 
 Redux
 ------------------------------
