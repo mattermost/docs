@@ -30,7 +30,7 @@ Keep the GitLab window open because you need the *Application Id* and *Secret* w
 Step 2: Configure Mattermost for GitLab SSO
 -------------------------------------------
 
-1. On your Mattermost server, add the *Application Id* and the *Secret* to the *GitLab* settings section in the ``config.json`` file:
+1. From **System Console > Authentication > OAuth 2.0** select ``Gitlab`` in the *Select OAuth 2.0 service provider* dropdown and add other required fields.  Alternativley, on your Mattermost server, add the *Application Id* and the *Secret* to the *GitLab* settings section in the ``config.json`` file:
 
   a. Open ``config.json`` as root in a text editor. It's usually in ``/opt/mattermost/config`` but might be elsewhere on your system.
   b. Locate the *GitLabSettings* section and add or update the following information:
@@ -51,7 +51,7 @@ Step 2: Configure Mattermost for GitLab SSO
     
     For ``UserApiEndpoint``, use ``https://{gitlab-site-name}/api/v3/user`` if you're running GitLab v8.17.8 or earlier.
 
-2. [Optional] To force all users to sign-up with SSO only, in the *EmailSettings* section of ``config.json`` set *EnableSignUpWithEmail* to ``false``.
+2. [Optional] To force all users to sign-up with SSO only, set **System Console > Authentication > Email > Enable sign-in with email** to ``false`` or in the *EmailSettings* section of ``config.json`` set *EnableSignUpWithEmail* to ``false``.  
 
 3. Restart your Mattermost server.
 
