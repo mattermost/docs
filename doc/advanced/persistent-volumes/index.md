@@ -22,8 +22,8 @@ if you have `allowVolumeExpansion` configured to true in your [Storage Class][].
 Automating theses changes is complicated due to:
 
 1. Kubernetes does not allow changes to most fields in an existing [PersistentVolumeClaim][pvc]
-2. Unless [manually configured][guide], the [PVC][pvc] is the only reference to dynamically provisioned [PersistentVolumes][pv]
-3. `Delete` is the default [reclaimPolicy][reclaim] for dynamically provisioned [PersistentVolumes][pv]
+1. Unless [manually configured][guide], the [PVC][pvc] is the only reference to dynamically provisioned [PersistentVolumes][pv]
+1. `Delete` is the default [reclaimPolicy][reclaim] for dynamically provisioned [PersistentVolumes][pv]
 
 This means in order to make changes, we need to delete the [PersistentVolumeClaim][pvc]
 and create a new one with our changes. But due to the default [reclaimPolicy][reclaim],
