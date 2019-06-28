@@ -10,9 +10,6 @@ Desktop
  - Mattermost Desktop v4.1.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-4.1/NOTICE.txt>`_.
  - Mattermost Desktop v4.0.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-4.0/NOTICE.txt>`_.
  - Mattermost Desktop v3.7.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-3.7/NOTICE.txt>`_.
- - Mattermost Desktop v3.6.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-3.6/NOTICE.txt>`_.
- - Mattermost Desktop v3.5.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-3.5/NOTICE.txt>`_.
- - Mattermost Desktop v3.4.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-3.4/NOTICE.txt>`_.
 
 Mobile
 ------------------------------
