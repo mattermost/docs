@@ -6,13 +6,13 @@ The following open source components are used to provide the full benefits of Ma
 Desktop
 ------------------------------
 
- - Mattermost Desktop v4.2.0 - View Open Source Components: hhttps://github.com/mattermost/desktop/blob/release-4.2/NOTICE.txt.
- - Mattermost Desktop v4.1.0 - View Open Source Components: hhttps://github.com/mattermost/desktop/blob/release-4.1/NOTICE.txt.
- - Mattermost Desktop v4.0.0 - View Open Source Components: hhttps://github.com/mattermost/desktop/blob/release-4.0/NOTICE.txt.
- - Mattermost Desktop v3.7.0 - View Open Source Components: hhttps://github.com/mattermost/desktop/blob/release-3.7/NOTICE.txt.
- - Mattermost Desktop v3.6.0 - View Open Source Components: hhttps://github.com/mattermost/desktop/blob/release-3.6/NOTICE.txt.
- - Mattermost Desktop v3.5.0 - View Open Source Components: hhttps://github.com/mattermost/desktop/blob/release-3.5/NOTICE.txt.
- - Mattermost Desktop v3.4.0 - View Open Source Components: hhttps://github.com/mattermost/desktop/blob/release-3.4/NOTICE.txt.
+ - Mattermost Desktop v4.2.0 - View Open Source Components: https://github.com/mattermost/desktop/blob/release-4.2/NOTICE.txt.
+ - Mattermost Desktop v4.1.0 - View Open Source Components: https://github.com/mattermost/desktop/blob/release-4.1/NOTICE.txt.
+ - Mattermost Desktop v4.0.0 - View Open Source Components: https://github.com/mattermost/desktop/blob/release-4.0/NOTICE.txt.
+ - Mattermost Desktop v3.7.0 - View Open Source Components: https://github.com/mattermost/desktop/blob/release-3.7/NOTICE.txt.
+ - Mattermost Desktop v3.6.0 - View Open Source Components: https://github.com/mattermost/desktop/blob/release-3.6/NOTICE.txt.
+ - Mattermost Desktop v3.5.0 - View Open Source Components: https://github.com/mattermost/desktop/blob/release-3.5/NOTICE.txt.
+ - Mattermost Desktop v3.4.0 - View Open Source Components: https://github.com/mattermost/desktop/blob/release-3.4/NOTICE.txt.
 
 Mobile
 ------------------------------
