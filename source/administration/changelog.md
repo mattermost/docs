@@ -8,39 +8,30 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release Date 2019-07-16
 
-### Breaking changes since last release
-
-
 ### Bug Fixes
- - Fixed an issue where changing the Timezone manually to "Set automatically" did not work on the mobile app.
+ - Fixed an issue where changing the timezone setting to "Set automatically" did not work on the mobile app.
  - Fixed an issue where the channel introduction content sometimes disappeared on opening a channel.
- - Fixed an issue where the SMTP Server Password was no longer masked in the System Console.
+ - Fixed an issue where the SMTP server password was no longer concealed in the System Console.
+ - Fixed an issue where Notifications and Plugins settings were missing in the System Console for restricted system administrators.
+ - Fixed an issue where "Enable AD/LDAP Group Sync" was visible in experimental System Console settings section in Team Edition servers.
+ - Fixed an issue where "Allow Mobile upload/download Files" options in the System Console where not hidden in Team Edition servers.
  - Fixed an issue where channel links did not work inside brackets.
  - Fixed an issue where uploading a team icon image fired a JS console error and a blank image preview.
  - Fixed an issue on Safari where a user jumped to the top of the Direct Messages selection list every few seconds.
- - Fixed an issue where "Error populating syncables" was seen on login when LDAP groups tried to add a user to a team that was at its max users.
- - Fixed an issue where slash command ``/rename`` was restricted to 22-character maximum channel name length.
- - Fixed an issue where Manage Members was shown when user did not have Manage Member permissions when viewing the Main Menu.
- - Fixed an issue where Set a Header button in the channel introduction did not work and was not styled.
+ - Fixed an issue where "Error populating syncables" was seen on login when LDAP groups tried to add a user to a team that was at its maximum number of users.
+ - Fixed an issue where the slash command ``/rename`` was restricted to 22-character maximum channel name length.
+ - Fixed an issue where Manage Members menu was visible even if a user did not have Manage Member permissions when viewing the Main Menu.
+ - Fixed an issue where the "Set a Header" button in the channel introduction was not clickable.
  - Fixed an issue where Group Message and private channel icons in the sidebar were misaligned.
- - Fixed an issue where custom emojis overlapped when rendered in messages.
- - Fixed an issue where the output of "mattermost config show" was inconsistent on every run.
+ - Fixed an issue where custom emojis sometimes overlapped in messages.
  - Fixed an issue where bot tags were misaligned in search results and in the "in:" modifier in the search bar autocomplete.
  - Fixed an issue where the post menu divider had a gap in mobile view.
  - Fixed an issue where the bottom of right-hand side was cut off in tablet view.
- - Fixed an issue where custom emojis overlapped when rendered in messages.
- - Fixed an issue where the Save button was hidden in the System Console when a banner was displayed at the top of the page.
- - Fixed an issue where Notifications and Plugins settings were missing in the System Console for restricted system administrators.
- - Fixed an issue where "Enable AD/LDAP Group Sync" showed in experimental System Console settings section in Team Edition.
- - Fixed an issue where "Allow Mobile upload/download Files" options in the System Console where not hidden on a non E-20 server.
  - Fixed an issue where the channel dropdown menu user interface was broken in mobile view when Zoom plugin was enabled.
- - Fixed an issue where users were not able to search for split parts of first/last names or for split characters such as `_` with elasticsearch autocomplete enabled.
+ - Fixed an issue where the Save button was hidden in the System Console when a banner was displayed at the top of the page.
+ - Fixed an issue where users were not able to search for split parts of first/last names or for split characters such as ``_`` with elasticsearch autocomplete enabled.
  - Fixed an issue where OAuth endpoints returned application/json content type for HTML redirects.
  - Fixed an issue where json responses were not returned for errors on oauth API endpoints, and a 500 error was returned instead of 4xx errors.
-
-### config.json
-
-#### Changes to Team Edition and Enterprise Edition:
 
 #### Database Changes
 
@@ -50,6 +41,18 @@ Release Date 2019-07-16
 
 ### Known Issues
 
+ - Buttons inside ephemeral messages are not clickable / functional on the mobile app.
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Jump link in search results does not always jump to display the expected post.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Channel scroll position flickers while images and link previews load.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
  
 ### Contributors
 
