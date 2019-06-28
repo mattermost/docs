@@ -102,11 +102,17 @@ class ChartFile
   end
 
   def update_versions(chart_version = nil, app_version = nil)
+    orig_version = Version.new(@metadata['version'])
+    orig_app_version = Version.new(@metadata['appVersion'])
+
     @metadata['version'] = chart_version.to_s if chart_version
     @metadata['appVersion'] = app_version.to_s if app_version
 
-    $stdout.puts "Updating #{@filepath}"
-    File.write(@filepath, YAML.dump(@metadata))
+    # Update the file only if either of the versions increased
+    if (chart_version && chart_version > orig_version) || ( app_version && app_version > orig_app_version)
+      $stdout.puts "Updating #{@filepath}"
+      File.write(@filepath, YAML.dump(@metadata))
+    end
   end
 end
 
