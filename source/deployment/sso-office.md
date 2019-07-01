@@ -1,33 +1,39 @@
 # Office 365 Single Sign-On (E20)
 ___
 
-Follow these steps to configure Mattermost to use Office 365 as a single sign-on (SSO) service for team creation, account creation and sign-in.
+Follow these steps to configure Mattermost to use your Office 365 logon credentials and Azure Active Directory account as a single sign-on (SSO) service for team creation, account creation and sign-in. 
 
-**The system must be using SSL for use with Office365 as Microsoft only allows OAuth redirect URIs that are SSL enabled.**
+**The system must be using SSL for use with Office365 as Microsoft only allows OAuth redirect URIs that are SSL enabled.** 
 
-1 - [Log in](https://login.microsoftonline.com/) to your Microsoft or Office 365 account. If you use Azure Active Directory, make sure it's the account on the [same tenant](https://docs.mattermost.com/deployment/sso-office.html#note-about-microsoft-active-directory-tenants) that you would like your users to log in with.
+1 - Login to your [Azure Portal](https://portal.azure.com/) with the account that relates to the Azure AD tenant you want to register the application in. (You can check the tenant in the top right corner of the portal).
 
-2 - Go to [Application Registration Portal](https://apps.dev.microsoft.com), click **Go to app list** > **Add an app** and use "Mattermost - your-company-name" as the **Application Name**.
+2 - In the left-hand navigation pane, select the **Azure Active Directory service**, and then select **App registrations > New registration**.
 
-![office_1_add_app](../../source/images/office_1_add_app.png)
+Screenshot - 1 - New Registration
 
-3 - Under **Application Secrets**, click **Generate New Password** and copy it, as it will be used to configure Office 365 SSO for Mattermost.
+3 - Give your new registration a **Name**, and then define what **Supported account types** can access the application. For example if this is to be only accessed from your enterprise's Azure AD accounts, then select _Accounts in this organizational directory only_. The **Redirect URI** should be defined as Public Client as this will be used by mobile, desktop and web clients. Also input the URL with the host name that will be specific to your Mattermost service followed by /signup/office365/complete an example below is: https://your.mattermost.com/signup/office365/complete
 
-![office_2_generate_password](../../source/images/office_2_generate_password.png)
+Screeshot 2 - New Reg form
 
-4 - Under **Platforms**, click **Add Platform**, choose **Web** and enter `your-mattermost-url/signup/office365/complete` (example: `http://localhost:8065/signup/office365/complete`) under **Redirect URIs**. Also uncheck **Allow Implicit Flow**.
+Now the App Registration has been created and you can configure it further. The standard Azure AD documentation is [here](https://docs.microsoft.com/en-gb/azure/active-directory/develop/quickstart-register-app) for reference.
 
-![office_3_platform](../../source/images/office_3_platform.png)
+4 - Select **Certificates and Secrets** from the menu, and click the button to generate a**New Client secret**. Provide a description and define the expiry for the token. 
 
-5 - Click **Save** and copy the **Application ID**.
+Screenshot 3 - Client Secret setup
 
-![office_4_application_id](../../source/images/office_4_application_id.png)
+Click _Add_ and you will be provided with the client secret _value_, copy this and save it for use in the Mattermost configuration as the **Application Secret Password**.
 
-6 - In **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Office 365 (Beta)** as the service provider and enter **Application ID** from step 5 and **Application Secret Password** from step 3 in their respective fields.
+Screenshot 4 - the secret value
+
+5 - Select **Overview** from the menu and copy the Application (client) ID, for use in the Mattermost configuration as the **Application ID**.
+
+Screenshot - the App ID
+
+6 - Login to Mattermost and the go to the **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Office 365 (Beta)** as the service provider and enter **Application ID** from step 5 and **Application Secret Password** from step 4 in their respective fields.
 
 7 - Restart your Mattermost server to see the changes take effect.
 
-You may also enter **Application ID** and **Application Secret Password** fields from steps 5 and 3 directly in `Office365Settings` section of `config/config.json`. Moreover, the following default values in `Office365Settings` section of `config/config.json` are recommended:
+You may also enter **Application ID** and **Application Secret Password** fields from steps 5 and 4 directly in `Office365Settings` section of `config/config.json`. Moreover, the following default values in `Office365Settings` section of `config/config.json` are recommended:
  - `Scope`: `User.Read`
  - `AuthEndpoint`: `https://login.microsoftonline.com/common/oauth2/v2.0/authorize` 
  - `TokenEndpoint`: `https://login.microsoftonline.com/common/oauth2/v2.0/token`  
