@@ -128,6 +128,7 @@ A connection configuration through the `gitlab.task-runner.backups.objectStorage
 When using Google Cloud Storage, the GCP project must be set with the `global.appConfig.backups.objectStorage.config.gcpProject` value.
 
 For S3-compatible storage:
+
 ```
 --set global.appConfig.backups.bucket=gitlab-backup-storage
 --set global.appConfig.backups.tmpBucket=gitlab-tmp-storage
@@ -136,6 +137,7 @@ For S3-compatible storage:
 ```
 
 For Google Cloud Storage (GCS):
+
 ```
 --set global.appConfig.backups.bucket=gitlab-backup-storage
 --set global.appConfig.backups.tmpBucket=gitlab-tmp-storage
@@ -154,7 +156,7 @@ See the [backup/restore object storage documentation](../../backup-restore/index
 
 1. Create the `storage.config` file:
 
-    * On Amazon S3, the contents should be in the [s3cmd config file format](https://s3tools.org/kb/item14.htm)
+    - On Amazon S3, the contents should be in the [s3cmd config file format](https://s3tools.org/kb/item14.htm)
 
     ```
     [default]
@@ -163,9 +165,9 @@ See the [backup/restore object storage documentation](../../backup-restore/index
     bucket_location = us-east-1
     ```
 
-    * On Google Cloud Storage, you can create the file by creating a service account 
-      with the storage.admin role and then 
-      [creating a service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys). 
+    - On Google Cloud Storage, you can create the file by creating a service account
+      with the storage.admin role and then
+      [creating a service account key](https://cloud.google.com/iam/docs/creating-managing-service-account-keys#creating_service_account_keys).
       Below is an example of using the `gcloud` CLI to create the file.
 
     ```shell
@@ -175,7 +177,7 @@ See the [backup/restore object storage documentation](../../backup-restore/index
     gcloud iam service-accounts keys create --iam-account gitlab-gcs@${PROJECT_ID}.iam.gserviceaccount.com storage.config
     ```
 
-    * On Azure Storage
+    - On Azure Storage
 
     ```
     [default]

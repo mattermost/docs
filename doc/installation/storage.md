@@ -4,10 +4,10 @@
 
 The following applications within the GitLab chart require persistent storage to maintain state.
 
- - [gitaly](../charts/gitlab/gitaly/index.md) (persists the git repositories)
- - [postgres](https://github.com/kubernetes/charts/tree/master/stable/postgresql) (persists the gitlab database data)
- - [redis](../charts/redis/index.md) (persists gitlab job data)
- - [minio](../charts/minio/index.md) (persists the object storage data)
+- [gitaly](../charts/gitlab/gitaly/index.md) (persists the git repositories)
+- [postgres](https://github.com/kubernetes/charts/tree/master/stable/postgresql) (persists the gitlab database data)
+- [redis](../charts/redis/index.md) (persists gitlab job data)
+- [minio](../charts/minio/index.md) (persists the object storage data)
 
 The administrator may choose to provision this storage using [dynamic][] or [static][] volume provisioning.
 
@@ -29,8 +29,8 @@ instead of [static volume provisioning][static] when it is available.
 
 The default storage class should:
 
-* Use fast SSD storage when available
-* Set `reclaimPolicy` to `Retain`
+- Use fast SSD storage when available
+- Set `reclaimPolicy` to `Retain`
 
 > Uninstalling GitLab without the `reclaimPolicy` set to `Retain` allows automated jobs to completely delete the volume, disk and data.
 > Some platforms set the default `reclaimPolicy` to `Delete`. The `gitaly` persistent volume claims do not follow this rule because
@@ -41,8 +41,8 @@ The default storage class should:
 The following `YAML` configurations provide the bare minimum required to create a custom storage class for GitLab. Replace
 `CUSTOM_STORAGE_CLASS_NAME` with a value appropriate for the target installation environment.
 
-* [Example Storage Class for GKE on Google Cloud](https://gitlab.com/charts/gitlab/blob/master/examples/storage/gke_storage_class.yml)
-* [Example Storage Class for EKS on Amazon Web Services](https://gitlab.com/charts/gitlab/blob/master/examples/storage/eks_storage_class.yml)
+- [Example Storage Class for GKE on Google Cloud](https://gitlab.com/charts/gitlab/blob/master/examples/storage/gke_storage_class.yml)
+- [Example Storage Class for EKS on Amazon Web Services](https://gitlab.com/charts/gitlab/blob/master/examples/storage/eks_storage_class.yml)
 
 > Some users report that Amazon EKS exhibits behavior where the creation of nodes are not always
 > in the same zone as the pods. Setting the ***zone*** parameter above will mitigate any risk.
@@ -140,14 +140,14 @@ Modify the [example YAML configuration](https://gitlab.com/charts/gitlab/blob/ma
 ## Making changes to storage after installation
 
 After the initial installation, storage changes like migrating to new volumes,
-or changing disk sizes, require editing the Kubernetes objects outside of the the
+or changing disk sizes, require editing the Kubernetes objects outside of the
 Helm upgrade command.
 
 See the [managing persistent volumes documentation](../advanced/persistent-volumes/index.md).
 
 ## Optional volumes
 
-* For larger installations, you may need to add persistent storage to the task-runner pod to get backups/restores working. See our [troubleshooting documentation](../backup-restore/#pod-eviction-issues) for a guide on how to do this.
+For larger installations, you may need to add persistent storage to the task-runner pod to get backups/restores working. See our [troubleshooting documentation](../backup-restore/#pod-eviction-issues) for a guide on how to do this.
 
 [pv]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistent-volumes
 [pvc]: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims
