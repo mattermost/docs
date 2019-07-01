@@ -11,6 +11,9 @@ service:
   type: ClusterIP
   externalPort: 22
   internalPort: 2222
+  #externalIPs: 
+  # - x.x.x.x
+  # - y.y.y.y
 
 init:
   image: busybox

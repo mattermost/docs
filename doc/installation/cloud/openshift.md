@@ -3,7 +3,7 @@
 This document describes a basic outline of how to get GitLab up and running on
 an OKD instance using the official Helm charts.
 
-NOTE: **Note:**:
+**Note:**:
 This guide has been tested only on Openshift Origin 3.11.0 and is not guaranteed
 to work on other versions, or SaaS offering of OpenShift, OpenShift Online.
 If you face any problems in installing or configuring GitLab by following this
@@ -138,4 +138,4 @@ installation procedure:
     --set global.hosts.ssh=ssh.gitlab.example.com
     ```
 
-   Please note that for this to work, you need to satisfy the set of prerequisites that is explained above.
+   Check out the [OpenShift examples](https://gitlab.com/charts/gitlab/tree/master/examples/openshift).
