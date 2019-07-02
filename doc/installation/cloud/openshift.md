@@ -3,7 +3,7 @@
 This document describes a basic outline of how to get GitLab up and running on
 an OKD instance using the official Helm charts.
 
-NOTE: **Note:**:
+**Note:**:
 This guide has been tested only on Openshift Origin 3.11.0 and is not guaranteed
 to work on other versions, or SaaS offering of OpenShift, OpenShift Online.
 If you face any problems in installing or configuring GitLab by following this
@@ -23,12 +23,6 @@ installations on OpenShift:
 
 1. If using `hostpath` volumes, the persistent volume directories in host need to
    be given `0777` permissions, for granting all users access to the volumes.
-1. Git operations over SSH are not supported by OpenShift's built-in router.
-   [Issue #892](https://gitlab.com/charts/gitlab/issues/892) is open to
-   investigate more on fixing this.
-1. GitLab Registry is known not to work with OpenShift's built-in router.
-   [Issue #893](https://gitlab.com/charts/gitlab/issues/893) is open to
-   investigate more on fixing this.
 1. Automatic issuing of SSL certificates from Let's Encrypt will not work with
    OpenShift router. We suggest [using your own certificates](../tls.md#option-2-use-your-own-wildcard-certificate).
    [Issue #894](https://gitlab.com/charts/gitlab/issues/894) is open to
@@ -94,6 +88,18 @@ installations on OpenShift:
     helm init --service-account tiller
     ```
 
+If you want to enable Git over SSH, you need to take further steps. Theses steps can be taken either before
+or after installation. The reason is that OpenShift [Routers](https://docs.okd.io/3.11/architecture/networking/routes.html#routers)
+only support HTTP and HTTPS protocols and accept traffic on limited number of ports. Hence, for SSH you have to
+bypass Routers and use OpenShift Service Network directly.
+
+One method to expose a service is to assign an external IP access directly to the service, in this case GitLab
+Shell. You can use [Service with External IP](https://docs.openshift.com/container-platform/3.11/dev_guide/expose_service/expose_internal_ip_service.html)
+to get SSH traffic into the cluster, but it requires more advanced configuration on both OpenShift and the nodes.
+For further details, see [OpenShift manual](https://docs.openshift.com/container-platform/3.11/dev_guide/expose_service/expose_internal_ip_service.html).
+
+
+
 ## Next Steps
 
 Continue with the [installation of the chart](../deployment.md) once you have
@@ -111,3 +117,25 @@ installation procedure:
       ```
 
 1. [Use your own SSL certificates](../tls.md#option-2-use-your-own-wildcard-certificate)
+
+1. If you want to enable Git over SSH, you have to assign at least one external IP address to GitLab
+   Shell service (you can assign multiple external IPs if needs be). Use the following command argument
+   to pass one or more external IPs, as an array:
+
+    ```bash
+    --set gitlab.gitlab-shell.service.externalIPs='{x.x.x.x}'
+    ```
+
+    ```bash
+    --set gitlab.gitlab-shell.service.externalIPs='{x.x.x.x,y.y.y.y}'
+    ```
+   
+   You may have to use an alternative port, in case SSH port is already in use on your node. You may
+   have to use a different domain name as well. You can use the following for this purpose:
+
+    ```bash
+    --set global.shell.port=222
+    --set global.hosts.ssh=ssh.gitlab.example.com
+    ```
+
+   Check out the [OpenShift examples](https://gitlab.com/charts/gitlab/tree/master/examples/openshift).
