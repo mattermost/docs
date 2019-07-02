@@ -53,11 +53,16 @@ module Gitlab
           fill_in 'Password', with: ENV['GITLAB_PASSWORD']
         end
         click_button 'Sign in'
-        # Check the login was a success (200, at `/`)
-        page.driver.status_code.should eql 200
-        expect(page).to have_current_path('/', ignore_query: true)
 
+        # Check the login was a success
+        wait(reload: false) do
+          has_current_path?('/', ignore_query: true) && has_css?('.qa-user-avatar')
+        end
+
+        expect(page).to have_current_path('/', ignore_query: true)
+        expect(page).to have_selector('.qa-user-avatar')
       rescue
+        puts "Login Failed. #{retries-1} retries left."
         sleep interval
         retries -= 1
         retry if retries > 0
