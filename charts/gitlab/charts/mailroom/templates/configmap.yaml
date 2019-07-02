@@ -23,7 +23,7 @@ data:
         :delivery_method: sidekiq
         {{- end }}
         :delivery_options:
-          :redis_url: {{ template "gitlab.redis.scheme" . }}://:<%= File.read("/etc/gitlab/redis/password") %>@{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
+          :redis_url: {{ template "gitlab.redis.url" . }}
           :namespace: resque:gitlab
           :queue: email_receiver
           :worker: EmailReceiverWorker
