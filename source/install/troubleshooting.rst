@@ -16,19 +16,55 @@ Important notes
 
 - Do not manipulate the database directly. Mattermost is designed to stop working if data integrity is compromised. 
 - Any manipulation of the database must be done using the built in command-line tools
+- Start simple with the step-by-step install guides for your operating system.
+
 
 Troubleshooting Basics
 ----------------------
 
-If you're new to Mattermost or troubleshooting consider the following steps:
+Depending on what type of error or problem you're experiencing, refer to the list below for troubleshooting guidance:
 
-- Start simple with the step-by-step install guides for your operating system.
+
+General issues: 
+---------------
+How long has the problem been occurring?
+- It can be helpful to put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem. 
+- Check the logs (``mattermost.log`` and NGINX logs) for errors.
+Did you recently install or begin using Mattermost for the first time?
+- Depending on the error/problem you're experiencing, it's a good idea to take a look at the logs (``mattermost.log`` and NGINX logs) for errors. 
+Did the feature work until some point and then start to fail?
+- 
+If the problem occurred subsequent to some period of normal operation, did anything change in the environment?
+- Depending on your organization's environment and the problems you're experiencing, contact your network administrator and share the error you're experiencing. 
+Was the client, host, or server upgraded?
+Was an operating system update applied?
+Did the network environment change? For example, was a server moved or a domain migrated?
+Did the system (client or server) recently fail or abnormally terminate?
+How many users are impacted?
+Is this problem affecting one, some, or all users?
+Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
+Do differences exist between the users who are affected and the users who are not affected?
+
+Configuration issues:
+---------------------
+In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost. 
+* See detailed client software requirements for PC, mobile and email
+* See detailed server software requirements for operating system and database
+Have you made any changes to the default settings in the System Console (or in config.json file)?
+Did you at any point deviate from the step-by-step Mattermost install guides?
+
+Certificate issues:
+-------------------
+* Was SSL/TLS certificate installed successfully (if applicable)? You can confirm it by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
+* Do you see any JavaScript errors in the Chrome developer console? Instructions here how to access it.
+* Do you see any errors in Mattermost server logs? These are printed in mattermost.log in the directory where Mattermost is installed.
+* Have any error messages been issued that may point to a specific issue?
 
 - Check the logs (``mattermost.log`` and NGINX logs) for errors.
-
 - Search error messages online (Google, Yahoo, Bing, or your favorite search engine), existing solutions can often work.
-
 - For more help, create a troubleshooting report at `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__.
+
+
 
 Common Issues
 -------------
