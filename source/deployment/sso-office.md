@@ -17,27 +17,30 @@ Screeshot 2 - New Reg form
 
 Now the App Registration has been created and you can configure it further. The standard Azure AD documentation is [here](https://docs.microsoft.com/en-gb/azure/active-directory/develop/quickstart-register-app) for reference.
 
-4 - Select **Certificates and Secrets** from the menu, and click the button to generate a**New Client secret**. Provide a description and define the expiry for the token. 
+4 - Select **Certificates and Secrets** from the menu, and click the button to generate a **New Client secret**. Provide a description and define the expiry for the token. 
 
 Screenshot 3 - Client Secret setup
 
-Click _Add_ and you will be provided with the client secret _value_, copy this and save it for use in the Mattermost configuration as the **Application Secret Password**.
+Click _Add_ and you will be provided with the _client secret value_, copy this and save it for use in the Mattermost configuration as the **Application Secret Password**.
 
 Screenshot 4 - the secret value
 
-5 - Select **Overview** from the menu and copy the Application (client) ID, for use in the Mattermost configuration as the **Application ID**.
+5 - Select **Overview** from the menu and copy the _Application (client) ID_ and the _Directory (tenant) ID_, for use in the Mattermost configuration as the **Application ID** and as part of the **Auth Endpoint** and **Token Endpoint** URL.
 
-Screenshot - the App ID
+Screenshot - the App ID / Tenant
 
-6 - Login to Mattermost and the go to the **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Office 365 (Beta)** as the service provider and enter **Application ID** from step 5 and **Application Secret Password** from step 4 in their respective fields.
+6 - Login to Mattermost and then go to the **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Office 365 (Beta)** as the service provider. Enter the client secret value you copied in Step 4 as the **Application Secret Password**. Paste the _Application (client) ID_ you saved in Step 5 into the **Application ID** field. 
 
-7 - Restart your Mattermost server to see the changes take effect.
-
-You may also enter **Application ID** and **Application Secret Password** fields from steps 5 and 4 directly in `Office365Settings` section of `config/config.json`. Moreover, the following default values in `Office365Settings` section of `config/config.json` are recommended:
- - `Scope`: `User.Read`
+7 - Open your config.json file and copy the _Directory (tenant) ID_ value from Step 5. In the `Office365Settings` section of `config/config.json` you will be updating the default values from 
  - `AuthEndpoint`: `https://login.microsoftonline.com/common/oauth2/v2.0/authorize` 
- - `TokenEndpoint`: `https://login.microsoftonline.com/common/oauth2/v2.0/token`  
- - `UserApiEndpoint`: `https://graph.microsoft.com/v1.0/me`  
+ - `TokenEndpoint`: `https://login.microsoftonline.com/common/oauth2/v2.0/token` 
+ 
+ to include _Directory (tenant) ID_ value, for example
+ 
+ - `AuthEndpoint`: `https://login.microsoftonline.com/8dfoco41-d160-478a-a6ff-e4e515b36bf1/oauth2/v2.0/authorize` 
+ - `TokenEndpoint`: `https://login.microsoftonline.com/8dfoco41-d160-478a-a6ff-e4e515b36bf1/oauth2/v2.0/token`
+
+8 - Restart your Mattermost server to see the changes take effect.
 
 ### Note about Microsoft Active Directory Tenants
 
