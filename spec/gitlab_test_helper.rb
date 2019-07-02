@@ -18,6 +18,7 @@ module Gitlab
         sleep interval
         retries -= 1
         retry if retries > 0
+        raise
       end
     end
 
@@ -36,7 +37,7 @@ module Gitlab
       false
     end
 
-    def sign_in(retries:6, interval: 5)
+    def sign_in(retries:12, interval: 5)
       begin
         visit '/users/sign_in'
 
