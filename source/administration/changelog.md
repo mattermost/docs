@@ -13,7 +13,7 @@ Release Date 2019-07-16
 #### Removed and Deprecated Features
 
  - We are removing support for Internet Explorer (IE11) in Mattermost v5.16.0, which releases on October 16, 2019. Learn more in our [forum post](https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575).
- - v4.10.0 as our current Extended Support Release (ESR) is coming to the end of its lifecycle. We will be implementing version 5.9.0 as a new ESR starting 2019-07-15. Learn more in our [forum post](https://forum.mattermost.org/t/extended-support-release-update/7099).
+ - v4.10.0 as our current Extended Support Release (ESR) is coming to the end of its lifecycle. We will be implementing version v5.9.0 as a new ESR starting July 16, 2019. Learn more in our [forum post](https://forum.mattermost.org/t/extended-support-release-update/7099).
 
 ### Bug Fixes
  - Fixed an issue where changing the timezone setting to "Set automatically" did not work on the mobile app.
