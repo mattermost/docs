@@ -70,7 +70,7 @@ Certificate Issues
 Mobile Troubleshooting
 ----------------------
 Troubleshooting Push Notifications
-==================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
 
@@ -94,10 +94,10 @@ If you did not receive a push notification when :doc:`testing push notifications
 7. **IMPORTANT:** After your issue is resolved, go to **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console > Environment > Logging > File Log Level** in versions after 5.12 and select **ERROR** to switch your logging detail level to Errors Only, instead of DEBUG, in order to conserve disk space.
 
 Troubleshooting Mobile Applications
-===================================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I keep getting a message "Cannot connect to the server. Please check your server URL and internet connection."
--------------------------------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 First, confirm that your server URL has no typos and that it includes ``http://`` or ``https://`` according to the server deployment configuration.
 
@@ -108,23 +108,23 @@ To check your SSL certificate set up, test it by visiting a site such as `SSL La
 Please note that the apps cannot connect to servers with self-signed certificates, consider using `Let's Encrypt <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__ instead.
 
 Login with ADFS/Office365 is not working
-----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
 
 I see a “Connecting…” bar that does not go away
------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If your app is working properly, you should see a grey “Connecting…” bar that clears or says “Connected” after the app reconnects.
 
 If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator if the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
 
 I’m not receiving push notifications on my device
--------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Please see our documentation on :doc:`troubleshooting push notifications <mobile-troubleshoot-notifications>`.
 
 All my outbound connections need to go through a proxy. How can I connect to the Mattermost Hosted Push Notification Service?
------------------------------------------------------------------------------------------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can set up an internal server to proxy the connection out of their network to the Mattermost Hosted Push Notification Service (HPNS) by following the steps below:
 
@@ -136,8 +136,7 @@ You can set up an internal server to proxy the connection out of their network t
 .. Note:: Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``
 
 Build gets stuck at ``bundleReleaseJsAndAssets``
---------------------------------------------------------------------------------
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 As a workaround, you can bundle the ``js`` manually first with
 
 .. code-block:: none
@@ -151,7 +150,7 @@ and then ignore the gradle task with
   ./gradlew assembleRelease -x bundleReleaseJsAndAssets
 
 No image previews available in the mobile app
----------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This can happen if the server running Mattermost has its mime types not set up correctly.
 A server running Linux has this file located in ``/etc/mime.types``. This might vary depending on your specific OS and distribution.
@@ -160,9 +159,7 @@ Some distributions also ship without ``mailcap`` which can result in missing or 
 
 
 None of these solve my problem!
--------------------------------
-
-For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you can also email subscribers@mattermost.com for support.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following things and include the results in your support request:
 
@@ -220,7 +217,7 @@ If email sign-in was turned off before the System Administrator switched sign-in
 4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 
 User statuses get stuck on away or offline status
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you notice more than one user being stuck at an Away or Offline status, try one of the following steps:
 
@@ -250,7 +247,7 @@ Mattermost can't connect to LDAP/AD server
 LDAP and Active Directory troubleshooting can be found on `this page. <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`__
 
 Hitting an error "Command with a trigger of failed" when configuring Giphy integration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
 
