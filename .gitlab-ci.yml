@@ -433,7 +433,7 @@ check_docs_lint:
     helm dep update .
 
     # If OPERATOR_BOOTSTRAP is set, we _do not_ want to use --wait / --timeout
-    WAIT="--wait --timeout 600"
+    WAIT="--wait --timeout 900"
     if [ -n "${OPERATOR_BOOTSTRAP}" ]; then
       WAIT=""
     fi
