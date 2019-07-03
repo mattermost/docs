@@ -156,6 +156,7 @@ Learn how to keep Mattermost current with fixes and new features.
    /administration/version-archive*
    /administration/extended-support-release*  
    /administration/downgrade.rst
+   /administration/open-source-components*
 
 Mattermost Integrations
 ----------------------------
