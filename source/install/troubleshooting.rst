@@ -22,31 +22,30 @@ Important Notes
 Troubleshooting Basics
 ----------------------
 
-Depending on what type of error or problem you're experiencing, refer to the list below for troubleshooting guidance:
+Depending on what type of error or problem you're experiencing, refer to the list below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Depending on the type of error you're seeing or issue you're encountering, the Troubleshooting forum might be helpful as someone may have experienced the same error in the past. For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you can also email subscribers@mattermost.com for support.
 
 
-General Issues 
---------------
-- Did you recently install or begin using Mattermost for the first time?
-    - If you're a new user, it might help to go over the installation steps again to confirm the process. Depending on the type of error you're seeing or issue you're encountering, the Troubleshooting forum might be a good option as someone may have experienced the same error in the past. 
-    
+General Troubleshooting
+-----------------------
+ 
 - Error logs
-    - Depending on the error/problem you're experiencing, it's a good idea to take a look at the logs (``mattermost.log`` and NGINX logs) for errors. If you can't find anything immediately, head on over to the Troubleshooting forum.
+    - Depending on the error/problem you're experiencing, take a look at the logs (``mattermost.log`` and NGINX logs) for errors. 
+    - Search error messages online (Google, Yahoo, Bing, or your favorite search engine), existing solutions can often work.
 
-- How long has the problem been occurring?
-    - It can be helpful to put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem. 
-- Did the feature work until some point and then start to fail?
-    - 
+- When did the problem start?
+    - It can be helpful to put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.  
+ 
 - If the problem occurred subsequent to some period of normal operation, did anything change in the environment?
-- Depending on your organization's environment and the problems you're experiencing, contact your network administrator and share the error you're experiencing. 
-- Was the client, host, or server upgraded?
-- Was an operating system update applied?
-- Did the network environment change? For example, was a server moved or a domain migrated?
-- Did the system (client or server) recently fail or abnormally terminate?
+    - Was the client, host, or server upgraded?
+    - Was an operating system update applied?
+    - Did the network environment change? For example, was a server moved or a domain migrated?
+    - Did the system (client or server) recently fail or abnormally terminate?
+    - Depending on your organization's environment and the problems you're experiencing, contact your network administrator and share the error you're experiencing. 
+
 - How many users are impacted?
-- Is this problem affecting one, some, or all users?
-- Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
-- Do differences exist between the users who are affected and the users who are not affected?
+    - Is this problem affecting one, some, or all users?
+    - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
+    - Do differences exist between the users who are affected and the users who are not affected?
 
 These questions are quite general but should help guide you to a point where the root cause of the problem can be found. If, after following these guidelines, you're still facing the issue, visit the `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__. 
 
@@ -61,14 +60,8 @@ Configuration Issues
 Certificate Issues
 -------------------
 - Was SSL/TLS certificate installed successfully (if applicable)? You can confirm it by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
-- Do you see any JavaScript errors in the Chrome developer console? Instructions here how to access it.
-- Do you see any errors in Mattermost server logs? These are printed in mattermost.log in the directory where Mattermost is installed.
-- Have any error messages been issued that may point to a specific issue?
-
-- Check the logs (``mattermost.log`` and NGINX logs) for errors.
-- Search error messages online (Google, Yahoo, Bing, or your favorite search engine), existing solutions can often work.
-- For more help, create a troubleshooting report at `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__.
-
+- Do you see any JavaScript errors in the Chrome developer console? 
+    - Open the Chrome menu in the top-right of the browser window and select More Tools > Developer Tools. 
 
 
 Common Issues
