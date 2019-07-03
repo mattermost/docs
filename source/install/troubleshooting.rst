@@ -32,16 +32,18 @@ General Troubleshooting
     - Depending on the error/problem you're experiencing, take a look at the logs (``mattermost.log`` and NGINX logs) for errors. 
     - Search error messages online (Google, Yahoo, Bing, or your favorite search engine), existing solutions can often work.
 
+To increase log level, you can do the following: Set the File Log Level to Debug: Go to System Console > General > Logging and set File Log Level to DEBUG. If you can’t access the System Console find this line in config.json
+
+- What Mattermost server version are you on?
+- What is the device (webapp, desktop app) and what is the browser (Windows, Mac, etc.)?
 - When did the problem start?
     - It can be helpful to put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.  
- 
 - If the problem occurred subsequent to some period of normal operation, did anything change in the environment?
     - Was the client, host, or server upgraded?
     - Was an operating system update applied?
     - Did the network environment change? For example, was a server moved or a domain migrated?
     - Did the system (client or server) recently fail or abnormally terminate?
     - Depending on your organization's environment and the problems you're experiencing, contact your network administrator and share the error you're experiencing. 
-
 - How many users are impacted?
     - Is this problem affecting one, some, or all users?
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
@@ -56,12 +58,125 @@ Configuration Issues
     - See detailed server software requirements for operating system and database
 - Have you made any changes to the default settings in the System Console (or in config.json file)?
 - Did you at any point deviate from the step-by-step Mattermost install guides?
+What happens if you try Ctrl+R or Command+R?
+
 
 Certificate Issues
 -------------------
 - Was SSL/TLS certificate installed successfully (if applicable)? You can confirm it by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
 - Do you see any JavaScript errors in the Chrome developer console? 
     - Open the Chrome menu in the top-right of the browser window and select More Tools > Developer Tools. 
+
+Mobile Troubleshooting
+----------------------
+Troubleshooting Push Notifications
+==================================
+
+If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
+
+1. Under **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console > Environment > Logging > File Log Level** in versions after 5.12 select **DEBUG** in order to watch for push notifications in the server log.
+
+2. Delete your mobile application, and install it again.
+
+3. Sign in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app.
+
+4. On desktop, go to **Account Settings** > **Security** > **View and Logout of Active Sessions** and check that there is a session for the native mobile app matching your login time.
+
+5. Repeat the procedure for :doc:`testing push notifications <mobile-testing-notifications>`.
+
+6. If no push notification appears go to **System Console** > **Logs** and click **Reload**. Look at the bottom of the logs for a message similar to:
+
+``[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 608xyz0... wi msg of '@accountb: Hello'``
+
+  - If the log message appears, it means a message was sent to the HPNS server and was not received by your mobile application. Please contact support@mattermost.com with the subject "HPNS issue on Step 8" for help from the commercial support team.
+  - If the log message does not appear, it means no mobile push notification was sent to “Account A”. Please repeat starting at step 2 and double check each step.
+
+7. **IMPORTANT:** After your issue is resolved, go to **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console > Environment > Logging > File Log Level** in versions after 5.12 and select **ERROR** to switch your logging detail level to Errors Only, instead of DEBUG, in order to conserve disk space.
+
+Troubleshooting Mobile Applications
+===================================
+
+I keep getting a message "Cannot connect to the server. Please check your server URL and internet connection."
+-------------------------------------------------------------------------------------------------------------------
+
+First, confirm that your server URL has no typos and that it includes ``http://`` or ``https://`` according to the server deployment configuration.
+
+If the server URL is correct, there could be an issue with the SSL certificate configuration.
+
+To check your SSL certificate set up, test it by visiting a site such as `SSL Labs <https://www.ssllabs.com/ssltest/index.html>`__. If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
+
+Please note that the apps cannot connect to servers with self-signed certificates, consider using `Let's Encrypt <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__ instead.
+
+Login with ADFS/Office365 is not working
+----------------------------------------
+In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
+
+I see a “Connecting…” bar that does not go away
+-----------------------------------------------
+
+If your app is working properly, you should see a grey “Connecting…” bar that clears or says “Connected” after the app reconnects.
+
+If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator if the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
+
+I’m not receiving push notifications on my device
+-------------------------------------------------
+
+Please see our documentation on :doc:`troubleshooting push notifications <mobile-troubleshoot-notifications>`.
+
+All my outbound connections need to go through a proxy. How can I connect to the Mattermost Hosted Push Notification Service?
+-----------------------------------------------------------------------------------------------------------------------------
+
+You can set up an internal server to proxy the connection out of their network to the Mattermost Hosted Push Notification Service (HPNS) by following the steps below:
+
+1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at https://www.digicert.com/help/.
+2. Setup a proxy to forward requests to ``https://push.mattermost.com``.
+3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** in prior versions or **System Console > Environment > Push Notification Server > Enable Push Notifications** in versions after 5.12 to "Manually enter Push Notification Service location"
+4. Enter the URL of your proxy in the **Push Notification Server** field.
+
+.. Note:: Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``
+
+Build gets stuck at ``bundleReleaseJsAndAssets``
+--------------------------------------------------------------------------------
+
+As a workaround, you can bundle the ``js`` manually first with
+
+.. code-block:: none
+
+  react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+
+and then ignore the gradle task with
+
+.. code-block:: none
+
+  ./gradlew assembleRelease -x bundleReleaseJsAndAssets
+
+No image previews available in the mobile app
+---------------------------------------------
+
+This can happen if the server running Mattermost has its mime types not set up correctly.
+A server running Linux has this file located in ``/etc/mime.types``. This might vary depending on your specific OS and distribution.
+
+Some distributions also ship without ``mailcap`` which can result in missing or incorrectly configured mime types.
+
+
+None of these solve my problem!
+-------------------------------
+
+For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you can also email subscribers@mattermost.com for support.
+
+To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following things and include the results in your support request:
+
+**Connect to another server**
+
+1. Create an account at https://demo.mattermost.com
+2. Erase your mobile application and reinstall it
+3. In your mobile app, enter the server URL https://demo.mattermost.com and then your login credentials to see if the connection is working
+
+**Connect with another device**
+
+If you have another mobile device available, try connecting with that to see if your issue still reproduces.
+
+If you don’t have another device available, check with other teammates to see if they are having the same issue.
 
 
 Common Issues
