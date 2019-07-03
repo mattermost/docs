@@ -49,7 +49,7 @@ metrics:
   enabled: true
   port: 9121
   image: oliver006/redis_exporter
-  imageTag: latest
+  imageTag: v0.34.1-alpine
   imagePullPolicy: IfNotPresent
   resources: {}
   annotations:
