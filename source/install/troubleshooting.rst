@@ -28,23 +28,19 @@ Depending on what type of error or problem you're experiencing, refer to the lis
 General Troubleshooting
 -----------------------
  
-- Error logs
-    - Depending on the error/problem you're experiencing, take a look at the logs (``mattermost.log`` and NGINX logs) for errors. 
-    - Search error messages online (Google, Yahoo, Bing, or your favorite search engine), existing solutions can often work.
+Error logs
+    - Depending on the error/problem you're experiencing, take a look at the logs (``mattermost.log`` and NGINX logs) for errors. You can also search the error messages online (Google, Yahoo, Bing, or your favorite search engine) - existing solutions can often work.
+    - To increase log level, you can do the following: Set the File Log Level to Debug: Go to System Console > General > Logging and set File Log Level to DEBUG. If you can’t access the System Console find this line in config.json
 
-To increase log level, you can do the following: Set the File Log Level to Debug: Go to System Console > General > Logging and set File Log Level to DEBUG. If you can’t access the System Console find this line in config.json
-
-- What Mattermost server version are you on?
-- What is the device (webapp, desktop app) and what is the browser (Windows, Mac, etc.)?
-- When did the problem start?
+When did the problem start?
     - It can be helpful to put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.  
-- If the problem occurred subsequent to some period of normal operation, did anything change in the environment?
+If the problem occurred subsequent to some period of normal operation, did anything change in the environment?
     - Was the client, host, or server upgraded?
     - Was an operating system update applied?
     - Did the network environment change? For example, was a server moved or a domain migrated?
     - Did the system (client or server) recently fail or abnormally terminate?
     - Depending on your organization's environment and the problems you're experiencing, contact your network administrator and share the error you're experiencing. 
-- How many users are impacted?
+How many users are impacted?
     - Is this problem affecting one, some, or all users?
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
     - Do differences exist between the users who are affected and the users who are not affected?
@@ -53,19 +49,18 @@ These questions are quite general but should help guide you to a point where the
 
 Configuration Issues
 ---------------------
-- In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost. 
+In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost. 
     - See detailed client software requirements for PC, mobile and email
     - See detailed server software requirements for operating system and database
+- What Mattermost server version are you on?
+- What is the device (webapp, desktop app) and what is the browser (Windows, Mac, etc.)?
 - Have you made any changes to the default settings in the System Console (or in config.json file)?
 - Did you at any point deviate from the step-by-step Mattermost install guides?
-What happens if you try Ctrl+R or Command+R?
-
 
 Certificate Issues
 -------------------
 - Was SSL/TLS certificate installed successfully (if applicable)? You can confirm it by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
-- Do you see any JavaScript errors in the Chrome developer console? 
-    - Open the Chrome menu in the top-right of the browser window and select More Tools > Developer Tools. 
+- Do you see any JavaScript errors in the Chrome developer console? Open the Chrome menu in the top-right of the browser window and select More Tools > Developer Tools. 
 
 Mobile Troubleshooting
 ----------------------
@@ -92,9 +87,6 @@ If you did not receive a push notification when :doc:`testing push notifications
   - If the log message does not appear, it means no mobile push notification was sent to “Account A”. Please repeat starting at step 2 and double check each step.
 
 7. **IMPORTANT:** After your issue is resolved, go to **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console > Environment > Logging > File Log Level** in versions after 5.12 and select **ERROR** to switch your logging detail level to Errors Only, instead of DEBUG, in order to conserve disk space.
-
-Troubleshooting Mobile Applications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 I keep getting a message "Cannot connect to the server. Please check your server URL and internet connection."
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
