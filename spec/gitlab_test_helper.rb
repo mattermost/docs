@@ -37,38 +37,30 @@ module Gitlab
       false
     end
 
-    def sign_in(retries:12, interval: 5)
-      begin
-        visit '/users/sign_in'
+    def sign_in
+      visit '/users/sign_in'
 
-        # Give time for the app to fully load
-        wait(max: 500) do
-          has_css?('.login-page') || has_css?('.qa-user-avatar')
-        end
-
-        # Return if already signed in
-        return if has_selector?('.qa-user-avatar')
-        # Operate specifically within the user login form, avoiding registation form
-        within('div#login-pane') do
-          fill_in 'Username or email', with: 'root'
-          fill_in 'Password', with: ENV['GITLAB_PASSWORD']
-        end
-        click_button 'Sign in'
-
-        # Check the login was a success
-        wait(reload: false) do
-          has_current_path?('/', ignore_query: true) && has_css?('.qa-user-avatar')
-        end
-
-        expect(page).to have_current_path('/', ignore_query: true)
-        expect(page).to have_selector('.qa-user-avatar')
-      rescue
-        puts "Login Failed. #{retries-1} retries left."
-        sleep interval
-        retries -= 1
-        retry if retries > 0
-        raise
+      # Give time for the app to fully load
+      wait(max: 600, time: 3) do
+        has_css?('.login-page') || has_css?('.qa-user-avatar')
       end
+
+      # Return if already signed in
+      return if has_selector?('.qa-user-avatar')
+      # Operate specifically within the user login form, avoiding registation form
+      within('div#login-pane') do
+        fill_in 'Username or email', with: 'root'
+        fill_in 'Password', with: ENV['GITLAB_PASSWORD']
+      end
+      click_button 'Sign in'
+
+      # Check the login was a success
+      wait(reload: false) do
+        has_current_path?('/', ignore_query: true) && has_css?('.qa-user-avatar')
+      end
+
+      expect(page).to have_current_path('/', ignore_query: true)
+      expect(page).to have_selector('.qa-user-avatar')
     end
 
     def enforce_root_password(password)
@@ -113,7 +105,7 @@ module Gitlab
 
     def set_runner_token
       rails_dir = ENV['RAILS_DIR'] || '/srv/gitlab'
-      cmd = full_command("#{rails_dir}/bin/rails runner \"settings = ApplicationSetting.current_without_cache; settings.set_runners_registration_token('#{runner_registration_token}'); settings.save!; ApplicationSetting.expire \"")
+      cmd = full_command("#{rails_dir}/bin/rails runner \"settings = ApplicationSetting.current_without_cache; settings.set_runners_registration_token('#{runner_registration_token}'); settings.save!\"")
 
       stdout, status = Open3.capture2e(cmd)
       return [stdout, status]
