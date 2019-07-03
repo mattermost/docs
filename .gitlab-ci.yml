@@ -440,6 +440,11 @@ check_docs_lint:
 
     helm upgrade --install \
       $WAIT \
+      --set ci.branch="$CI_COMMIT_REF_NAME" \
+      --set ci.commit.sha="$CI_COMMIT_SHORT_SHA" \
+      --set ci.commit.title="$CI_COMMIT_TITLE" \
+      --set ci.job.url="$CI_JOB_URL" \
+      --set ci.pipeline.url="$CI_PIPELINE_URL" \
       --set releaseOverride="$CI_ENVIRONMENT_SLUG" \
       --set global.hosts.hostSuffix="$HOST_SUFFIX" \
       --set global.hosts.domain="$KUBE_INGRESS_BASE_DOMAIN" \
