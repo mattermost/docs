@@ -5,6 +5,11 @@ notify() {
   echo -n "$1 " >> /dev/termination-log
 }
 
+greater_version()
+{
+  test "$(printf '%s\n' "$@" | sort -V | tail -n 1)" = "$1";
+}
+
 MIN_VERSION=11.11
 
 # Only run check for semver releases
@@ -36,7 +41,7 @@ OLD_MINOR_VERSION=$(echo $OLD_VERSION_STRING | awk -F "." '{print $1"."$2}')
 # (i) if it is a major version jump
 # (ii) if existing version is less than required minimum version
 if test ${OLD_MAJOR_VERSION} -lt ${NEW_MAJOR_VERSION}; then
-  if ! $(echo ${OLD_MINOR_VERSION} | awk -v MIN_VERSION="$MIN_VERSION" '$NF+0 < MIN_VERSION {exit 1}'); then
+  if ! greater_version $OLD_MINOR_VERSION $MIN_VERSION; then
     notify "It seems you are upgrading from ${OLD_MAJOR_VERSION}.x version series to ${NEW_MAJOR_VERSION}.x series."
     notify "It is recommended to upgrade to the last minor version in a major version series"
     notify "first before jumping to the next major version."
