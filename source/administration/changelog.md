@@ -21,6 +21,7 @@ Release Date 2019-07-16
  - Fixed an issue where the SMTP server password was no longer concealed in the System Console.
  - Fixed an issue where Notifications and Plugins settings were missing in the System Console for restricted system administrators.
  - Fixed an issue where "Enable AD/LDAP Group Sync" was visible in experimental System Console settings section in Team Edition servers.
+ - Fixed an issue where **System Console > SMTP > Connection Security** setting was missing in Team Edition servers.
  - Fixed an issue where "Allow Mobile upload/download Files" options in the System Console where not hidden in Team Edition servers.
  - Fixed an issue where channel links did not work inside brackets.
  - Fixed an issue where uploading a team icon image fired a JS console error and a blank image preview.
