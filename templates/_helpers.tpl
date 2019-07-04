@@ -303,3 +303,10 @@ Return true in any other case.
 {{-   true }}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Constructs kubectl image name.
+*/}}
+{{- define "gitlab.kubectl.image" -}}
+{{- printf "%s:%s" .Values.global.kubectl.image.repository .Values.global.kubectl.image.tag -}}
+{{- end -}}
