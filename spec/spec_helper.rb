@@ -4,6 +4,7 @@ require 'open3'
 require 'capybara/rspec'
 require 'capybara-screenshot/rspec'
 require 'selenium-webdriver'
+require 'rspec/retry'
 require 'gitlab_test_helper'
 
 include Gitlab::TestHelper
