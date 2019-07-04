@@ -11,10 +11,7 @@ This document summarizes common troubleshooting issues and techniques.
 Important Notes
 ---------------
 
-**DO NOT Manipulate the Mattermost Database**
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Do not manipulate the database directly. Mattermost is designed to stop working if data integrity is compromised. 
+- Do not manipulate the Mattermost database directly. Mattermost is designed to stop working if data integrity is compromised. 
 - Any manipulation of the database must be done using the built in command-line tools
 - Start simple with the step-by-step install guides for your operating system.
 
@@ -22,24 +19,27 @@ Important Notes
 Troubleshooting Basics
 ----------------------
 
-Depending on what type of error or problem you're experiencing, refer to the list below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Depending on the type of error you're seeing or issue you're encountering, the Troubleshooting forum might be helpful as someone may have experienced the same error in the past. For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you can also email subscribers@mattermost.com for support.
+Depending on what type of error or problem you're experiencing, refer to the list below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, the Troubleshooting forum might be helpful as someone may have experienced the same error in the past. 
+
+For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you can also email subscribers@mattermost.com for support.
 
 
 General Troubleshooting
 -----------------------
+Some of these suggestions can be done directly, and others may need consultation from your network administrator. 
  
 Error logs
-    - Depending on the error/problem you're experiencing, take a look at the logs (``mattermost.log`` and NGINX logs) for errors. You can also search the error messages online (Google, Yahoo, Bing, or your favorite search engine) - existing solutions can often work.
+    - Take a look at the logs (``mattermost.log`` and NGINX logs) for errors. 
+    - You can also search the error messages online - existing solutions can often be applied.
     - To increase log level, you can do the following: Set the File Log Level to Debug: Go to System Console > General > Logging and set File Log Level to DEBUG. If you can’t access the System Console find this line in config.json
 
 When did the problem start?
-    - It can be helpful to put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.  
+    - Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.  
 If the problem occurred subsequent to some period of normal operation, did anything change in the environment?
     - Was the client, host, or server upgraded?
     - Was an operating system update applied?
     - Did the network environment change? For example, was a server moved or a domain migrated?
     - Did the system (client or server) recently fail or abnormally terminate?
-    - Depending on your organization's environment and the problems you're experiencing, contact your network administrator and share the error you're experiencing. 
 How many users are impacted?
     - Is this problem affecting one, some, or all users?
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
@@ -53,7 +53,7 @@ In some cases, the configuration from the product’s website differs from the M
     - See detailed client software requirements for PC, mobile and email
     - See detailed server software requirements for operating system and database
 - What Mattermost server version are you on?
-- What is the device (webapp, desktop app) and what is the browser (Windows, Mac, etc.)?
+- What device (webapp, desktop app), browser, and operating system(Windows, Mac, etc.) are you using?
 - Have you made any changes to the default settings in the System Console (or in config.json file)?
 - Did you at any point deviate from the step-by-step Mattermost install guides?
 
@@ -64,29 +64,6 @@ Certificate Issues
 
 Mobile Troubleshooting
 ----------------------
-Troubleshooting Push Notifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
-
-1. Under **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console > Environment > Logging > File Log Level** in versions after 5.12 select **DEBUG** in order to watch for push notifications in the server log.
-
-2. Delete your mobile application, and install it again.
-
-3. Sign in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app.
-
-4. On desktop, go to **Account Settings** > **Security** > **View and Logout of Active Sessions** and check that there is a session for the native mobile app matching your login time.
-
-5. Repeat the procedure for :doc:`testing push notifications <mobile-testing-notifications>`.
-
-6. If no push notification appears go to **System Console** > **Logs** and click **Reload**. Look at the bottom of the logs for a message similar to:
-
-``[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 608xyz0... wi msg of '@accountb: Hello'``
-
-  - If the log message appears, it means a message was sent to the HPNS server and was not received by your mobile application. Please contact support@mattermost.com with the subject "HPNS issue on Step 8" for help from the commercial support team.
-  - If the log message does not appear, it means no mobile push notification was sent to “Account A”. Please repeat starting at step 2 and double check each step.
-
-7. **IMPORTANT:** After your issue is resolved, go to **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console > Environment > Logging > File Log Level** in versions after 5.12 and select **ERROR** to switch your logging detail level to Errors Only, instead of DEBUG, in order to conserve disk space.
 
 I keep getting a message "Cannot connect to the server. Please check your server URL and internet connection."
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -113,7 +90,26 @@ If you are seeing this message all the time, and your internet connection seems 
 I’m not receiving push notifications on my device
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Please see our documentation on :doc:`troubleshooting push notifications <mobile-troubleshoot-notifications>`.
+If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
+
+1. Under **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console > Environment > Logging > File Log Level** in versions after 5.12 select **DEBUG** in order to watch for push notifications in the server log.
+
+2. Delete your mobile application, and install it again.
+
+3. Sign in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app.
+
+4. On desktop, go to **Account Settings** > **Security** > **View and Logout of Active Sessions** and check that there is a session for the native mobile app matching your login time.
+
+5. Repeat the procedure for :doc:`testing push notifications <mobile-testing-notifications>`.
+
+6. If no push notification appears go to **System Console** > **Logs** and click **Reload**. Look at the bottom of the logs for a message similar to:
+
+``[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 608xyz0... wi msg of '@accountb: Hello'``
+
+  - If the log message appears, it means a message was sent to the HPNS server and was not received by your mobile application. Please contact support@mattermost.com with the subject "HPNS issue on Step 8" for help from the commercial support team.
+  - If the log message does not appear, it means no mobile push notification was sent to “Account A”. Please repeat the process, starting at step 2, and double check each step.
+
+7. **IMPORTANT:** After your issue is resolved, go to **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console** > **Environment** > **Logging** > **File Log Level** in versions after 5.12 and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
 
 All my outbound connections need to go through a proxy. How can I connect to the Mattermost Hosted Push Notification Service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -121,11 +117,11 @@ All my outbound connections need to go through a proxy. How can I connect to the
 You can set up an internal server to proxy the connection out of their network to the Mattermost Hosted Push Notification Service (HPNS) by following the steps below:
 
 1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at https://www.digicert.com/help/.
-2. Setup a proxy to forward requests to ``https://push.mattermost.com``.
-3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** in prior versions or **System Console > Environment > Push Notification Server > Enable Push Notifications** in versions after 5.12 to "Manually enter Push Notification Service location"
+2. Set up a proxy to forward requests to ``https://push.mattermost.com``.
+3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** in prior versions or **System Console > Environment > Push Notification Server > Enable Push Notifications** in versions after 5.12 to "Manually enter Push Notification Service location".
 4. Enter the URL of your proxy in the **Push Notification Server** field.
 
-.. Note:: Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``
+.. Note:: Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``.
 
 Build gets stuck at ``bundleReleaseJsAndAssets``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -157,9 +153,9 @@ To help us narrow down whether it’s a server configuration issue, device speci
 
 **Connect to another server**
 
-1. Create an account at https://demo.mattermost.com
-2. Erase your mobile application and reinstall it
-3. In your mobile app, enter the server URL https://demo.mattermost.com and then your login credentials to see if the connection is working
+1. Create an account at https://demo.mattermost.com.
+2. Erase your mobile application and reinstall it.
+3. In your mobile app, enter the server URL https://demo.mattermost.com and then your login credentials to see if the connection is working.
 
 **Connect with another device**
 
@@ -187,11 +183,11 @@ After setting up SSO authentication, it is common for the System Administrator t
 
 Before doing this, the System Administrator needs to change their sign-in method to SSO by doing the following:
 
-1. Sign in to Mattermost using email and password 
-2. Go to Account Settings > Security > Sign-in Method 
+1. Sign in to Mattermost using email and password.
+2. Go to **Account Settings** > **Security** > **Sign-in Method**. 
 3. Click the "Switch" button for the sign in method you would like to use, and complete the process for switching sign-in method.
 
-The System Administrator can now turn off email sign-in and still access their account. (To avoid locking other existing users out of their accounts, it is recommended the System Administrator ask them to switch authentication methods as well.)
+The System Administrator can now turn off email sign-in and still access their account. To avoid locking other existing users out of their accounts, it is recommended the System Administrator ask them to switch authentication methods as well.
 
 Locked out of System Administrator account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -307,8 +303,8 @@ Click the link at the bottom of the sign-in page that says “Don't have an acco
    - Check the sign-in page.
    - If the sign-in method the account was created with is available, use that to sign in.
 
-      -  *Note: You may then switch authentication methods from Account
-         Settings > Security > Sign-in Method.*
+      -  *Note: You may then switch authentication methods from **Account
+         Settings** > **Security** > **Sign-in Method**.*
 
    - If the sign-in method is not available, contact the System Administrator.
 
