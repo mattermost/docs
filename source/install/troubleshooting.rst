@@ -3,7 +3,11 @@
 Troubleshooting
 ===============
 
-This document summarizes common troubleshooting issues and techniques.
+This document summarizes common troubleshooting issues and techniques. 
+
+Depending on what type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, the Troubleshooting forum might be helpful as someone may have experienced the same error in the past. 
+
+For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you can also email subscribers@mattermost.com for support.
 
 .. contents::
     :backlinks: top
@@ -89,16 +93,6 @@ Hitting an error "Command with a trigger of failed" when configuring Giphy integ
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
-
-
-
-Troubleshooting Basics
-----------------------
-
-Depending on what type of error or problem you're experiencing, refer to the list below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, the Troubleshooting forum might be helpful as someone may have experienced the same error in the past. 
-
-For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you can also email subscribers@mattermost.com for support.
-
 
 General Troubleshooting
 -----------------------
