@@ -7,7 +7,7 @@ Follow these steps to configure Mattermost to use Google as a single sign-on (SS
 
 1 - Go to [Google API Manager](https://console.developers.google.com), click **Credentials** in the left hand sidebar, click **Create a project** and enter "Mattermost - your-company-name" as the **Project Name**, then click **Create**.
 
-![google_1_credentials](../../source/images/google_1_credentials.png)
+.. image:: ../../source/images/google_1_credentials.png
 
 2 - In the **Dashboard** click the option to **ENABLE APIS AND SERVICES**.
 
