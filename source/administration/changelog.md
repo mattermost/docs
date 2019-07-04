@@ -40,6 +40,10 @@ Release Date 2019-07-16
  - Fixed an issue where users were not able to search for split parts of first/last names or for split characters such as ``_`` with elasticsearch autocomplete enabled.
  - Fixed an issue where OAuth endpoints returned application/json content type for HTML redirects.
  - Fixed an issue where json responses were not returned for errors on oauth API endpoints, and a 500 error was returned instead of 4xx errors.
+ 
+#### Open Source Components
+
+ - Added ``moment-timezone`` in https://github.com/mattermost/mattermost-redux/.
 
 #### Database Changes
 
