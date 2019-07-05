@@ -28,6 +28,7 @@ helm repo add gitlab https://charts.gitlab.io/
 helm dependencies update
 helm upgrade --install gitlab . \
   --timeout 600 \
+  --set global.imagePullPolicy=Always \
   --set global.hosts.domain=example.com \
   --set global.hosts.externalIP=10.10.10.10 \
   --set certmanager-issuer.email=me@example.com
