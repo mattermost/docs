@@ -135,7 +135,7 @@ As a work around, in **System Console** > **Security** > **Connections** set ``E
 This will allow insecure TLS connections, but be careful in doing so as it also opens your Mattermost site to man-in-the-middle attacks.
 
 ``panic: runtime error: invalid memory address or nil pointer dereference``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This error can occur if you have manually manipulated the Mattermost database, typically with deletions. Mattermost is designed to serve as a searchable archive, and manual manipulation of the database elements compromises integrity and may prevent upgrade.
 
@@ -224,14 +224,14 @@ If you notice more than one user being stuck at an Away or Offline status, try o
 If neither of the above steps help resolve the issue, please open a new topic `in the Mattermost forums <https://forum.mattermost.org/>`__ for further troubleshooting.
 
 System Console settings revert to previous values after saving
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you try to save a System Console page and notice that the settings revert to previous values, your ``config.json`` file may have a permissions issue.
 
 Check that the ``config.json`` file is owned by the same user as the process that runs the Mattermost server. If not, change the owner to be the mattermost user and restart the server.
 
 Mattermost can't connect to LDAP/AD server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 LDAP and Active Directory troubleshooting can be found on `this page. <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`__
 
@@ -262,7 +262,7 @@ If your app is working properly, you should see a grey “Connecting…” bar t
 If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator if the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
 
 I’m not receiving push notifications on my device
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
 
@@ -298,7 +298,7 @@ You can set up an internal server to proxy the connection out of their network t
 .. Note:: Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``.
 
 Configuration Issues
----------------------------
+---------------------
 In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost. 
     - See detailed client software requirements for PC, mobile, and email
     - See detailed server software requirements for operating system and database
@@ -366,8 +366,3 @@ To help us narrow down whether it’s a server configuration issue, device speci
 If you have another mobile device available, try connecting with that to see if your issue still reproduces.
 
 If you don’t have another device available, check with other teammates to see if they are having the same issue.
- 
-
-
-
-
