@@ -138,7 +138,7 @@ type:
 | [`--type`](#--type-or--t)                   | `-t`      | The category of the change, valid options are: added, fixed, changed, deprecated, removed, security, other |
 | `--help`                                    | `-h`      | Print help message                            |
 
-##### `--amend`
+#### `--amend`
 
 You can pass the **`--amend`** argument to automatically stage the generated
 file and amend it to the previous commit.
@@ -160,7 +160,7 @@ author:
 type:
 ```
 
-##### `--force` or `-f`
+#### `--force` or `-f`
 
 Use **`--force`** or **`-f`** to overwrite an existing changelog entry if it
 already exists.
@@ -178,7 +178,7 @@ author:
 type:
 ```
 
-##### `--merge-request` or `-m`
+#### `--merge-request` or `-m`
 
 Use the **`--merge-request`** or **`-m`** argument to provide the
 `merge_request` value:
@@ -193,7 +193,7 @@ author:
 type:
 ```
 
-##### `--dry-run` or `-n`
+#### `--dry-run` or `-n`
 
 Use the **`--dry-run`** or **`-n`** argument to prevent actually writing or
 committing anything:
@@ -210,7 +210,7 @@ type:
 $ ls changelogs/unreleased/
 ```
 
-##### `--git-username` or `-u`
+#### `--git-username` or `-u`
 
 Use the **`--git-username`** or **`-u`** argument to automatically fill in the
 `author` value with your configured Git `user.name` value:
@@ -228,7 +228,7 @@ author: Jane Doe
 type:
 ```
 
-##### `--type` or `-t`
+#### `--type` or `-t`
 
 Use the **`--type`** or **`-t`** argument to provide the `type` value:
 
