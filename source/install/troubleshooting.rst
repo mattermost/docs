@@ -198,7 +198,6 @@ If you are using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, i
 If you are using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``. 
 
 
-
 ``context deadline exceeded``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
@@ -238,7 +237,7 @@ LDAP and Active Directory troubleshooting can be found on `this page. <https://d
 Mobile
 ~~~~~~
 
-"Cannot connect to the server. Please check your server URL and internet connection."
+``Cannot connect to the server. Please check your server URL and internet connection.``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 First, confirm that your server URL has no typos and that it includes ``http://`` or ``https://`` according to the server deployment configuration.
