@@ -11,7 +11,7 @@ Follow these steps to configure Mattermost to use your Office 365 logon credenti
 
    ![AzureApp_New_Registration.png](../../source/images/AzureApp_New_Registration.png)
 
-3 - Give your new registration a **Name**, and then define what **Supported account types** can access the application. For example, if this is to be only accessed from your enterprise's Azure AD accounts, then select _Accounts in this organizational directory only_. The **Redirect URI** should be defined as Web client. Also input the URL with the host name that will be specific to your Mattermost service followed by /signup/office365/complete. An example below is: https://your.mattermost.com/signup/office365/complete
+3 - Give your new registration a **Name**, and then define which **Supported account types** can access the application. For example, if this is to be only accessed from your enterprise's Azure AD accounts, then select _Accounts in this organizational directory only_. The **Redirect URI** should be defined as Web client. Also input the URL with the host name that will be specific to your Mattermost service followed by /signup/office365/complete. An example below is: https://your.mattermost.com/signup/office365/complete
 
    ![AzureApp_SetupMenuv2.png](../../source/images/AzureApp_SetupMenuv2.png)
 
