@@ -9,27 +9,25 @@ Follow these steps to configure Mattermost to use your Office 365 logon credenti
 
 2 - In the left-hand navigation pane, select the **Azure Active Directory service**, and then select **App registrations > New registration**.
 
-Screenshot - 1 - New Registration
+   ![AzureApp_New_Registration.png](../../source/images/AzureApp_New_Registration.png)
 
-3 - Give your new registration a **Name**, and then define what **Supported account types** can access the application. For example if this is to be only accessed from your enterprise's Azure AD accounts, then select _Accounts in this organizational directory only_. The **Redirect URI** should be defined as Public Client as this will be used by mobile, desktop and web clients. Also input the URL with the host name that will be specific to your Mattermost service followed by /signup/office365/complete an example below is: https://your.mattermost.com/signup/office365/complete
+3 - Give your new registration a **Name**, and then define which **Supported account types** can access the application. For example, if this is to be only accessed from your enterprise's Azure AD accounts, then select _Accounts in this organizational directory only_. The **Redirect URI** should be defined as Web client. Also input the URL with the host name that will be specific to your Mattermost service followed by /signup/office365/complete. An example below is: https://your.mattermost.com/signup/office365/complete
 
-Screeshot 2 - New Reg form
+   ![AzureApp_SetupMenuv2.png](../../source/images/AzureApp_SetupMenuv2.png)
 
 Now the App Registration has been created and you can configure it further. The standard Azure AD documentation is [here](https://docs.microsoft.com/en-gb/azure/active-directory/develop/quickstart-register-app) for reference.
 
 4 - Select **Certificates and Secrets** from the menu, and click the button to generate a **New Client secret**. Provide a description and define the expiry for the token. 
 
-Screenshot 3 - Client Secret setup
+   ![AzureApp_Client_Secret_Expiry.png](../../source/images/AzureApp_Client_Secret_Expiry.png)
 
 Click _Add_ and you will be provided with the _client secret value_, copy this and save it for use in the Mattermost configuration as the **Application Secret Password**.
 
-Screenshot 4 - the secret value
-
 5 - Select **Overview** from the menu and copy the _Application (client) ID_ and the _Directory (tenant) ID_, for use in the Mattermost configuration as the **Application ID** and as part of the **Auth Endpoint** and **Token Endpoint** URL.
 
-Screenshot - the App ID / Tenant
+   ![AzureApp_App_Directory_IDsv2.png](../../source/images/AzureApp_App_Directory_IDsv2.png)
 
-6 - Login to Mattermost and then go to the **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Office 365 (Beta)** as the service provider. Enter the client secret value you copied in Step 4 as the **Application Secret Password**. Paste the _Application (client) ID_ you saved in Step 5 into the **Application ID** field. 
+6 - Login to Mattermost and then go to the **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Office 365 (Beta)** as the service provider. Enter the _client secret value_ you copied in Step 4 as the **Application Secret Password**. Paste the _Application (client) ID_ you saved in Step 5 into the **Application ID** field. 
 
 7 - Open your config.json file and copy the _Directory (tenant) ID_ value from Step 5. In the `Office365Settings` section of `config/config.json` you will be updating the default values from 
  - `AuthEndpoint`: `https://login.microsoftonline.com/common/oauth2/v2.0/authorize` 
@@ -37,8 +35,8 @@ Screenshot - the App ID / Tenant
  
  to include _Directory (tenant) ID_ value, for example
  
- - `AuthEndpoint`: `https://login.microsoftonline.com/8dfoco41-d160-478a-a6ff-e4e515b36bf1/oauth2/v2.0/authorize` 
- - `TokenEndpoint`: `https://login.microsoftonline.com/8dfoco41-d160-478a-a6ff-e4e515b36bf1/oauth2/v2.0/token`
+ - `AuthEndpoint`: `https://login.microsoftonline.com/3dfccc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/authorize` 
+ - `TokenEndpoint`: `https://login.microsoftonline.com/3dfcc41-d360-488a-a6ff-e9e565b3xbf1/oauth2/v2.0/token`
 
 8 - Restart your Mattermost server to see the changes take effect.
 
