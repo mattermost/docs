@@ -19,8 +19,32 @@ Important Notes
 - Any manipulation of the database must be done using the built in command-line tools
 - Start simple with the step-by-step install guides for your operating system.
 
-Common Issues
--------------
+
+General Troubleshooting
+-----------------------
+Some of these suggestions can be done directly, and others may need consultation from your network administrator. 
+ 
+Error logs
+    - Take a look at the logs (``mattermost.log`` and NGINX logs) for errors. 
+    - You can also search the error messages online - existing solutions can often be applied.
+    - To increase log level, you can do the following: Set the File Log Level to Debug: Go to System Console > General > Logging and set File Log Level to DEBUG. If you can’t access the System Console find this line in config.json
+
+When did the problem start?
+    - Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.  
+If the problem occurred subsequent to some period of normal operation, did anything change in the environment?
+    - Was the client, host, or server upgraded?
+    - Was an operating system update applied?
+    - Did the network environment change? For example, was a server moved or a domain migrated?
+    - Did the system (client or server) recently fail or abnormally terminate?
+How many users are impacted?
+    - Is this problem affecting one, some, or all users?
+    - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
+    - Do differences exist between the users who are affected and the users who are not affected?
+
+These questions are quite general but should help guide you to a point where the root cause of the problem can be found. If, after following these guidelines, you're still facing the issue, visit the `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__. 
+
+Common Administration Issues 
+-----------------------------
 
 Lost System Administrator account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -59,6 +83,9 @@ If email sign-in was turned off before the System Administrator switched sign-in
 
 4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 
+
+Settings
+~~~~~~~~
 User statuses get stuck on away or offline status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -77,63 +104,13 @@ If you try to save a System Console page and notice that the settings revert to 
 
 Check that the ``config.json`` file is owned by the same user as the process that runs the Mattermost server. If not, change the owner to be the mattermost user and restart the server.
 
-YouTube videos show a "Video not found" preview
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. First, make sure the YouTube video exists by pasting a link to the video into your browser's address bar.
-2. If you are using the Mattermost Desktop App, please ensure you have installed version 3.5.0 or later.
-3. If you have specified `a Google API key <https://docs.mattermost.com/administration/config-settings.html#google-api-key>`__ to enable the display of titles for embedded YouTube video previews, regenerate the key.
-
 Mattermost can't connect to LDAP/AD server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 LDAP and Active Directory troubleshooting can be found on `this page. <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`__
 
-Hitting an error "Command with a trigger of failed" when configuring Giphy integration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
-
-General Troubleshooting
------------------------
-Some of these suggestions can be done directly, and others may need consultation from your network administrator. 
- 
-Error logs
-    - Take a look at the logs (``mattermost.log`` and NGINX logs) for errors. 
-    - You can also search the error messages online - existing solutions can often be applied.
-    - To increase log level, you can do the following: Set the File Log Level to Debug: Go to System Console > General > Logging and set File Log Level to DEBUG. If you can’t access the System Console find this line in config.json
-
-When did the problem start?
-    - Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.  
-If the problem occurred subsequent to some period of normal operation, did anything change in the environment?
-    - Was the client, host, or server upgraded?
-    - Was an operating system update applied?
-    - Did the network environment change? For example, was a server moved or a domain migrated?
-    - Did the system (client or server) recently fail or abnormally terminate?
-How many users are impacted?
-    - Is this problem affecting one, some, or all users?
-    - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
-    - Do differences exist between the users who are affected and the users who are not affected?
-
-These questions are quite general but should help guide you to a point where the root cause of the problem can be found. If, after following these guidelines, you're still facing the issue, visit the `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__. 
-
-Configuration Issues
----------------------
-In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost. 
-    - See detailed client software requirements for PC, mobile, and email
-    - See detailed server software requirements for operating system and database
-- What Mattermost server version are you on?
-- What device (webapp, desktop app), browser, and operating system(Windows, Mac, etc.) are you using?
-- Have you made any changes to the default settings in the System Console (or in config.json file)?
-- Did you at any point deviate from the step-by-step Mattermost install guides?
-
-Certificate Issues
--------------------
-- Was SSL/TLS certificate installed successfully (if applicable)? You can confirm it by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
-- Do you see any JavaScript errors in the Chrome developer console? Open the Chrome menu in the top-right of the browser window and select More Tools > Developer Tools. 
-
-Mobile Troubleshooting
-----------------------
+Mobile
+~~~~~~~
 
 "Cannot connect to the server. Please check your server URL and internet connection."
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -192,6 +169,36 @@ You can set up an internal server to proxy the connection out of their network t
 4. Enter the URL of your proxy in the **Push Notification Server** field.
 
 .. Note:: Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``.
+
+Common Configuration Issues
+---------------------------
+In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost. 
+    - See detailed client software requirements for PC, mobile, and email
+    - See detailed server software requirements for operating system and database
+- What Mattermost server version are you on?
+- What device (webapp, desktop app), browser, and operating system(Windows, Mac, etc.) are you using?
+- Have you made any changes to the default settings in the System Console (or in config.json file)?
+- Did you at any point deviate from the step-by-step Mattermost install guides?
+- Was SSL/TLS certificate installed successfully (if applicable)? You can confirm it by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
+- Do you see any JavaScript errors in the Chrome developer console? Open the Chrome menu in the top-right of the browser window and select More Tools > Developer Tools. 
+
+Integrations
+~~~~~~~~~~~~
+YouTube videos show a "Video not found" preview
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. First, make sure the YouTube video exists by pasting a link to the video into your browser's address bar.
+2. If you are using the Mattermost Desktop App, please ensure you have installed version 3.5.0 or later.
+3. If you have specified `a Google API key <https://docs.mattermost.com/administration/config-settings.html#google-api-key>`__ to enable the display of titles for embedded YouTube video previews, regenerate the key.
+
+Hitting an error "Command with a trigger of failed" when configuring Giphy integration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
+
+Mobile
+~~~~~
+
 
 Build gets stuck at ``bundleReleaseJsAndAssets``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
