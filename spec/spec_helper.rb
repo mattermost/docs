@@ -50,9 +50,7 @@ RSpec.configure do |config|
   end
 
   # show retry status in spec process
-  # show exception that triggers a retry if verbose_retry is set to true
   config.verbose_retry = true
-  config.display_try_failure_messages = true
 
   config.around do |example|
     example.run_with_retry retry: 2
