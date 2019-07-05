@@ -43,18 +43,20 @@ How many users are impacted?
 
 These questions are quite general but should help guide you to a point where the root cause of the problem can be found. If, after following these guidelines, you're still facing the issue, visit the `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__. 
 
-Common Administration Issues 
+Administration Issues 
 -----------------------------
 
+System Administration
+~~~~~~~~~~~~~~~~~~~~
 Lost System Administrator account
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  To reset the account, run from the command line:
    ``./mattermost -assign_role -team_name="yourteam" -email="you@example.com" -role="system_admin"``.
 -  Log out and back in for the change to apply.
 
 Switching System Administrator Account to SSO Sign-in
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When Mattermost is initially set up, the first account created becomes the System Administrator account. This account will typically use email authentication to sign-in, since it is usually created before other sign-in methods are configured.
 
@@ -69,7 +71,7 @@ Before doing this, the System Administrator needs to change their sign-in method
 The System Administrator can now turn off email sign-in and still access their account. To avoid locking other existing users out of their accounts, it is recommended the System Administrator ask them to switch authentication methods as well.
 
 Locked out of System Administrator account
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line: 
 
@@ -83,171 +85,10 @@ If email sign-in was turned off before the System Administrator switched sign-in
 
 4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 
-
-Settings
-~~~~~~~~
-User statuses get stuck on away or offline status
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you notice more than one user being stuck at an Away or Offline status, try one of the following steps:
-
-1. If you are using an NGINX proxy, configure IP Hash load balancing to determine what server should be selected for the next request (based on the client’s IP address) `as described here <http://nginx.org/en/docs/http/load_balancing.html>`__.
-
-2. If you are using an AWS Application Load Balancer (ALB), enable Sticky Sessions feature in Amazon EC2’s Elastic Load Balancing `as described here <https://aws.amazon.com/blogs/aws/new-elastic-load-balancing-feature-sticky-sessions/>`__.
-
-If neither of the above steps help resolve the issue, please open a new topic `in the Mattermost forums <https://forum.mattermost.org/>`__ for further troubleshooting.
-
-System Console settings revert to previous values after saving
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you try to save a System Console page and notice that the settings revert to previous values, your ``config.json`` file may have a permissions issue.
-
-Check that the ``config.json`` file is owned by the same user as the process that runs the Mattermost server. If not, change the owner to be the mattermost user and restart the server.
-
-Mattermost can't connect to LDAP/AD server
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-LDAP and Active Directory troubleshooting can be found on `this page. <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`__
-
-Mobile
-~~~~~~~
-
-"Cannot connect to the server. Please check your server URL and internet connection."
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-First, confirm that your server URL has no typos and that it includes ``http://`` or ``https://`` according to the server deployment configuration.
-
-If the server URL is correct, there could be an issue with the SSL certificate configuration.
-
-To check your SSL certificate set up, test it by visiting a site such as `SSL Labs <https://www.ssllabs.com/ssltest/index.html>`__. If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
-
-Please note that the apps cannot connect to servers with self-signed certificates, consider using `Let's Encrypt <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__ instead.
-
-Login with ADFS/Office365 is not working
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
-
-The “Connecting…” bar doesn't clear
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If your app is working properly, you should see a grey “Connecting…” bar that clears or says “Connected” after the app reconnects.
-
-If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator if the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
-
-I’m not receiving push notifications on my device
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
-
-1. Under **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console > Environment > Logging > File Log Level** in versions after 5.12 select **DEBUG** in order to watch for push notifications in the server log.
-
-2. Delete and reinstall your mobile application.
-
-3. Sign in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app.
-
-4. On desktop, go to **Account Settings** > **Security** > **View and Logout of Active Sessions** and check that there is a session for the native mobile app matching your login time.
-
-5. Repeat the procedure for :doc:`testing push notifications <mobile-testing-notifications>`.
-
-6. If no push notification appears go to **System Console** > **Logs** and click **Reload**. Look at the bottom of the logs for a message similar to:
-
-``[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 608xyz0... wi msg of '@accountb: Hello'``
-
-  - If the log message appears, it means a message was sent to the HPNS server and was not received by your mobile application. Please contact support@mattermost.com with the subject "HPNS issue on Step 8" for help from the commercial support team.
-  - If the log message does not appear, it means no mobile push notification was sent to “Account A”. Please repeat the process, starting at step 2, and double check each step.
-
-7. **IMPORTANT:** After your issue is resolved, go to **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console** > **Environment** > **Logging** > **File Log Level** in versions after 5.12 and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
-
-All outbound connections go through a proxy. How can I connect to the Mattermost Hosted Push Notification Service?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can set up an internal server to proxy the connection out of their network to the Mattermost Hosted Push Notification Service (HPNS) by following the steps below:
-
-1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at https://www.digicert.com/help/.
-2. Set up a proxy to forward requests to ``https://push.mattermost.com``.
-3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** in prior versions or **System Console > Environment > Push Notification Server > Enable Push Notifications** in versions after 5.12 to "Manually enter Push Notification Service location".
-4. Enter the URL of your proxy in the **Push Notification Server** field.
-
-.. Note:: Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``.
-
-Common Configuration Issues
----------------------------
-In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost. 
-    - See detailed client software requirements for PC, mobile, and email
-    - See detailed server software requirements for operating system and database
-- What Mattermost server version are you on?
-- What device (webapp, desktop app), browser, and operating system(Windows, Mac, etc.) are you using?
-- Have you made any changes to the default settings in the System Console (or in config.json file)?
-- Did you at any point deviate from the step-by-step Mattermost install guides?
-- Was SSL/TLS certificate installed successfully (if applicable)? You can confirm it by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
-- Do you see any JavaScript errors in the Chrome developer console? Open the Chrome menu in the top-right of the browser window and select More Tools > Developer Tools. 
-
-Integrations
-~~~~~~~~~~~~
-YouTube videos show a "Video not found" preview
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. First, make sure the YouTube video exists by pasting a link to the video into your browser's address bar.
-2. If you are using the Mattermost Desktop App, please ensure you have installed version 3.5.0 or later.
-3. If you have specified `a Google API key <https://docs.mattermost.com/administration/config-settings.html#google-api-key>`__ to enable the display of titles for embedded YouTube video previews, regenerate the key.
-
-Hitting an error "Command with a trigger of failed" when configuring Giphy integration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
-
-Mobile
-~~~~~
-
-
-Build gets stuck at ``bundleReleaseJsAndAssets``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-As a workaround, you can bundle the ``js`` manually first with
-
-.. code-block:: none
-
-  react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
-
-and then ignore the gradle task with
-
-.. code-block:: none
-
-  ./gradlew assembleRelease -x bundleReleaseJsAndAssets
-
-No image previews available in the mobile app
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This can happen if the server running Mattermost has its mime types not set up correctly.
-A server running Linux has this file located in ``/etc/mime.types``. This might vary depending on your specific OS and distribution.
-
-Some distributions also ship without ``mailcap`` which can result in missing or incorrectly configured mime types.
-
-
-None of these solve my problem!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following things and include the results in your support request:
-
-**Connect to another server**
-
-1. Create an account at https://demo.mattermost.com.
-2. Erase your mobile application and reinstall it.
-3. In your mobile app, enter the server URL https://demo.mattermost.com and then your login credentials to see if the connection is working.
-
-**Connect with another device**
-
-If you have another mobile device available, try connecting with that to see if your issue still reproduces.
-
-If you don’t have another device available, check with other teammates to see if they are having the same issue.
-
-
-Mattermost Error Messages
--------------------------
-
-The following is a list of common error messages and solutions:
-
+Server Administration
+~~~~~~~~~~~~~~~~~~~~~
 ``Please check connection, Mattermost unreachable. If issue persists, ask administrator to check WebSocket port.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Message appears in blue bar on team site.
 -  To check the websocket connection, open the developer console in your browser and view the Network panel. If the websocket is not connecting properly, you will see a pending websocket connection show up in the list. The screenshot below shows an example from Chrome. 
@@ -267,8 +108,23 @@ If this issue is reported rarely, in some cases the issue comes from *intermitte
 
 If only a small number of users have this issue, it could be from intermittent internet access, if almost every user has this issue, it's likely from a misconfiguration of the ``wss`` connection.
 
+``Cannot connect to the server. Please check your server URL and internet connection.``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+
+This error may appear on some devices when trying to connect to a server that is using an SSL curve that is not supported by the client device.
+
+**Solution:**
+
+If you are using NGINX as a proxy, set the ``ssl_ecdh_curve`` directive in your site configuration file (for example, in ``/etc/nginx/sites-available/mattermost``), to a value that is supported by both client and server. Suggested values for varying levels of compatibility can be found at `Mozilla's Security/Server Side TLS <https://wiki.mozilla.org/Security/Server_Side_TLS>`__ page.
+
+As security and encryption standards often change rapidly, it is best to check for up-to-date information. However, the suggested value as of January 2018, is to use the curves: prime256v1, secp384r1, secp521r1.
+
+For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521r1;``
+
+*Note: Setting multiple curves requires nginx 1.11.0, if you can only set one curve, the most compatible is prime256v1.*
+
 ``x509: certificate signed by unknown authority``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
 This error may appear in server logs when attempting to sign-up when using self-signed certificates to setup SSL, which is not yet supported by Mattermost.
 
@@ -286,7 +142,7 @@ This error can occur if you have manually manipulated the Mattermost database, t
 **Solution:** Restore from database backup created prior to manual database updates, or reinstall the system.
 
 ``We couldn't find an existing account matching your email address for this team. This team may require an invite from the team owner to join.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This error appears when a user tries to sign in, and Mattermost can't find an account matching the credentials they entered.
 
@@ -320,7 +176,7 @@ Click the link at the bottom of the sign-in page that says “Don't have an acco
             sign-in option back off.
 
 ``Failed to upgrade websocket connection``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This error can occur if you're using multiple URLs to reach Mattermost via proxy forwarding.
 
@@ -331,7 +187,7 @@ This error can occur if you're using multiple URLs to reach Mattermost via proxy
 3. If you're doing reverse proxy with IIS, upgrade to IIS 8.0 or later and enable WebSockets. For more information, see `IIS 8.0 WebSocket Protocol Support <https://www.iis.net/learn/get-started/whats-new-in-iis-8/iis-80-websocket-protocol-support>`__.
 
 ``Websocket closed`` or ``Websocket re-established connection``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
 This alert can appear every few seconds in the Desktop application or web browser connected to Mattermost.
 
@@ -341,23 +197,10 @@ If you are using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, i
 
 If you are using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``. 
 
-``Cannot connect to the server. Please check your server URL and internet connection.``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This error may appear on some devices when trying to connect to a server that is using an SSL curve that is not supported by the client device.
-
-**Solution:**
-
-If you are using NGINX as a proxy, set the ``ssl_ecdh_curve`` directive in your site configuration file (for example, in ``/etc/nginx/sites-available/mattermost``), to a value that is supported by both client and server. Suggested values for varying levels of compatibility can be found at `Mozilla's Security/Server Side TLS <https://wiki.mozilla.org/Security/Server_Side_TLS>`__ page.
-
-As security and encryption standards often change rapidly, it is best to check for up-to-date information. However, the suggested value as of January 2018, is to use the curves: prime256v1, secp384r1, secp521r1.
-
-For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521r1;``
-
-*Note: Setting multiple curves requires nginx 1.11.0, if you can only set one curve, the most compatible is prime256v1.*
 
 ``context deadline exceeded``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
 
 This error appears when a request from Mattermost to another system, such as an Elasticsearch server, experiences a connection timeout.
 
@@ -366,3 +209,165 @@ This error appears when a request from Mattermost to another system, such as an 
 1. Verify that the Mattermost server is able to connect to the system referenced in the error message.
 2. Increase the request timeout value for that integration in the Mattermost config file.
 3. Ensure the target system is behaving properly and has sufficient resources to handle current load.
+
+Settings
+~~~~~~~~
+User statuses get stuck on away or offline status
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you notice more than one user being stuck at an Away or Offline status, try one of the following steps:
+
+1. If you are using an NGINX proxy, configure IP Hash load balancing to determine what server should be selected for the next request (based on the client’s IP address) `as described here <http://nginx.org/en/docs/http/load_balancing.html>`__.
+
+2. If you are using an AWS Application Load Balancer (ALB), enable Sticky Sessions feature in Amazon EC2’s Elastic Load Balancing `as described here <https://aws.amazon.com/blogs/aws/new-elastic-load-balancing-feature-sticky-sessions/>`__.
+
+If neither of the above steps help resolve the issue, please open a new topic `in the Mattermost forums <https://forum.mattermost.org/>`__ for further troubleshooting.
+
+System Console settings revert to previous values after saving
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you try to save a System Console page and notice that the settings revert to previous values, your ``config.json`` file may have a permissions issue.
+
+Check that the ``config.json`` file is owned by the same user as the process that runs the Mattermost server. If not, change the owner to be the mattermost user and restart the server.
+
+Mattermost can't connect to LDAP/AD server
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+LDAP and Active Directory troubleshooting can be found on `this page. <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`__
+
+Mobile
+~~~~~~
+
+"Cannot connect to the server. Please check your server URL and internet connection."
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+First, confirm that your server URL has no typos and that it includes ``http://`` or ``https://`` according to the server deployment configuration.
+
+If the server URL is correct, there could be an issue with the SSL certificate configuration.
+
+To check your SSL certificate set up, test it by visiting a site such as `SSL Labs <https://www.ssllabs.com/ssltest/index.html>`__. If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
+
+Please note that the apps cannot connect to servers with self-signed certificates, consider using `Let's Encrypt <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__ instead.
+
+Login with ADFS/Office365 is not working
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
+
+The “Connecting…” bar doesn't clear
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If your app is working properly, you should see a grey “Connecting…” bar that clears or says “Connected” after the app reconnects.
+
+If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator if the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
+
+I’m not receiving push notifications on my device
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
+
+1. Under **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console > Environment > Logging > File Log Level** in versions after 5.12 select **DEBUG** in order to watch for push notifications in the server log.
+
+2. Delete and reinstall your mobile application.
+
+3. Sign in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app.
+
+4. On desktop, go to **Account Settings** > **Security** > **View and Logout of Active Sessions** and check that there is a session for the native mobile app matching your login time.
+
+5. Repeat the procedure for :doc:`testing push notifications <mobile-testing-notifications>`.
+
+6. If no push notification appears go to **System Console** > **Logs** and click **Reload**. Look at the bottom of the logs for a message similar to:
+
+``[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 608xyz0... wi msg of '@accountb: Hello'``
+
+  - If the log message appears, it means a message was sent to the HPNS server and was not received by your mobile application. Please contact support@mattermost.com with the subject "HPNS issue on Step 8" for help from the commercial support team.
+  - If the log message does not appear, it means no mobile push notification was sent to “Account A”. Please repeat the process, starting at step 2, and double check each step.
+
+7. **IMPORTANT:** After your issue is resolved, go to **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console** > **Environment** > **Logging** > **File Log Level** in versions after 5.12 and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
+
+All outbound connections go through a proxy. How can I connect to the Mattermost Hosted Push Notification Service?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can set up an internal server to proxy the connection out of their network to the Mattermost Hosted Push Notification Service (HPNS) by following the steps below:
+
+1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at https://www.digicert.com/help/.
+2. Set up a proxy to forward requests to ``https://push.mattermost.com``.
+3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** in prior versions or **System Console > Environment > Push Notification Server > Enable Push Notifications** in versions after 5.12 to "Manually enter Push Notification Service location".
+4. Enter the URL of your proxy in the **Push Notification Server** field.
+
+.. Note:: Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``.
+
+Configuration Issues
+---------------------------
+In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost. 
+    - See detailed client software requirements for PC, mobile, and email
+    - See detailed server software requirements for operating system and database
+- What Mattermost server version are you on?
+- What device (webapp, desktop app), browser, and operating system(Windows, Mac, etc.) are you using?
+- Have you made any changes to the default settings in the System Console (or in config.json file)?
+- Did you at any point deviate from the step-by-step Mattermost install guides?
+- Was SSL/TLS certificate installed successfully (if applicable)? You can confirm it by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
+- Do you see any JavaScript errors in the Chrome developer console? Open the Chrome menu in the top-right of the browser window and select More Tools > Developer Tools. 
+
+Integrations
+~~~~~~~~~~~~
+YouTube videos show a "Video not found" preview
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. First, make sure the YouTube video exists by pasting a link to the video into your browser's address bar.
+2. If you are using the Mattermost Desktop App, please ensure you have installed version 3.5.0 or later.
+3. If you have specified `a Google API key <https://docs.mattermost.com/administration/config-settings.html#google-api-key>`__ to enable the display of titles for embedded YouTube video previews, regenerate the key.
+
+Hitting an error "Command with a trigger of failed" when configuring Giphy integration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
+
+Mobile
+~~~~~
+
+Build gets stuck at ``bundleReleaseJsAndAssets``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As a workaround, you can bundle the ``js`` manually first with
+
+.. code-block:: none
+
+  react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+
+and then ignore the gradle task with
+
+.. code-block:: none
+
+  ./gradlew assembleRelease -x bundleReleaseJsAndAssets
+
+No image previews available in the mobile app
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This can happen if the server running Mattermost has its mime types not set up correctly.
+A server running Linux has this file located in ``/etc/mime.types``. This might vary depending on your specific OS and distribution.
+
+Some distributions also ship without ``mailcap`` which can result in missing or incorrectly configured mime types.
+
+
+None of these solve my problem!
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following things and include the results in your support request:
+
+**Connect to another server**
+
+1. Create an account at https://demo.mattermost.com.
+2. Erase your mobile application and reinstall it.
+3. In your mobile app, enter the server URL https://demo.mattermost.com and then your login credentials to see if the connection is working.
+
+**Connect with another device**
+
+If you have another mobile device available, try connecting with that to see if your issue still reproduces.
+
+If you don’t have another device available, check with other teammates to see if they are having the same issue.
+ 
+
+
+
+
