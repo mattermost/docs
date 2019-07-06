@@ -54,7 +54,7 @@ Users can optionally select a 0-10 score on how likely they are to recommend Mat
 
 What data is collected?
 ~~~~~~~~~~~~~~~~~~~~~~~
-Data is only collected when a user selects a score or provides written feedback in response to survey questions. The following non-personally identifiable data is collected:
+Data is only collected when a user selects a score or provides written feedback in response to survey questions. Please refer to our `privacy policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services. The following **non-personally identifiable information** is collected:
 
 - Survey information:
    - Score (0-10) submitted by the user
