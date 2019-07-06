@@ -46,16 +46,16 @@ These questions are quite general but should help guide you to a point where the
 Administration Issues 
 -----------------------------
 
-System Administration
-~~~~~~~~~~~~~~~~~~~~
-Lost System Administrator account
+Common System Administration Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Lost System Administrator Account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  To reset the account, run from the command line:
    ``./mattermost -assign_role -team_name="yourteam" -email="you@example.com" -role="system_admin"``.
 -  Log out and back in for the change to apply.
 
-Switching System Administrator Account to SSO Sign-in
+Switching System Administrator Account to Single Sign-on (SSO)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When Mattermost is initially set up, the first account created becomes the System Administrator account. This account will typically use email authentication to sign-in, since it is usually created before other sign-in methods are configured.
@@ -70,8 +70,10 @@ Before doing this, the System Administrator needs to change their sign-in method
 
 The System Administrator can now turn off email sign-in and still access their account. To avoid locking other existing users out of their accounts, it is recommended the System Administrator ask them to switch authentication methods as well.
 
-Locked out of System Administrator account
+Locked out of System Administrator Account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline>`__.
 
 If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line: 
 
@@ -85,13 +87,74 @@ If email sign-in was turned off before the System Administrator switched sign-in
 
 4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 
+Common SAML Issues 
+~~~~~~~~~~~~~~~~~~
+
+``An account with that username already exists. Please contact your Administrator.``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
+
+  This error message can also be received if the `Username Attribute` of their SAML credentials doesn't match the username of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
+  
+``An account with that email already exists. Please contact your Administrator.``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
+
+This error message can also be received if the `Email Attribute` of their SAML credentials doesn't match the email address of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
+
+``SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the Identity Provider configuration and in **System Console > SAML**.
+
+Unable to Switch to SAML Authentication Successfully
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+First, ensure you have installed the `XML Security Library <https://www.aleksey.com/xmlsec/download.html>`__ on your Mattermost instance and that **it is available in your** PATH.
+
+Second, ensure you have completed each step of the SAML configuration.
+
+Deployment and Clustering
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Red Server Status
+^^^^^^^^^^^^^^^^^
+
+When high availability is enabled, the System Console displays the server status as red or green, indicating if the servers are communicating correctly with the cluster. The servers use inter-node communication to ping the other machines in the cluster, and once a ping is established the servers exchange information, such as server version and configuration files.
+
+A server status of red can occur for the following reasons:
+
+- **Configuration file mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same configuration file to function properly.
+- **Server version mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
+- **Server is down**: If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping the down server in 15 second intervals. When the server comes back up, any new messages are sent to it.
+
+WebSocket Disconnect
+^^^^^^^^^^^^^^^^^^^^
+
+When a client WebSocket receives a disconnect it will automatically attempt to re-establish a connection every three seconds with a backoff. After the connection is established, the client attempts to receive any messages that were sent while it was disconnected.
+
+App Refreshes Continuously
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different `config.json` files in a high availability cluster.
+
+Modify configuration settings directly through ``config.json`` `following these steps <https://docs.mattermost.com/deployment/cluster.html#updating-configuration-changes-while-operating-continuously>`__.
+
+Messages Do Not Post Until After Reloading
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When running in high availability mode, make sure all Mattermost application servers are running the same version of Mattermost. If they are running different versions, it can lead to a state where the lower version app server cannot handle a request and the request will not be sent until the frontend application is refreshed and sent to a server with a valid Mattermost version. Symptoms to look for include requests failing seemingly at random or a single application server having a drastic rise in goroutines and API errors.
+
+
+
 Server Administration
 ~~~~~~~~~~~~~~~~~~~~~
 ``Please check connection, Mattermost unreachable. If issue persists, ask administrator to check WebSocket port.``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Message appears in blue bar on team site.
--  To check the websocket connection, open the developer console in your browser and view the Network panel. If the websocket is not connecting properly, you will see a pending websocket connection show up in the list. The screenshot below shows an example from Chrome. 
+-  To check the websocket connection, open the developer console in your browser and view the Network panel. If the websocket is not connecting properly, you will see a pending WebSocket connection show up in the list. The screenshot below shows an example from Chrome. 
 .. image:: ../images/websocket.png
 -  **If this issue is reported repeatedly**, the most likely cause is a proxy being misconfigured somewhere in your infrastructure, and possibly stripping headers off of WebSocket communications.
 
@@ -211,7 +274,7 @@ This error appears when a request from Mattermost to another system, such as an 
 
 Settings
 ~~~~~~~~
-User statuses get stuck on away or offline status
+User Statuses get Stuck on "Away" or "Offline" Status
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you notice more than one user being stuck at an Away or Offline status, try one of the following steps:
@@ -222,14 +285,14 @@ If you notice more than one user being stuck at an Away or Offline status, try o
 
 If neither of the above steps help resolve the issue, please open a new topic `in the Mattermost forums <https://forum.mattermost.org/>`__ for further troubleshooting.
 
-System Console settings revert to previous values after saving
+System Console Settings Revert to Previous Values after Saving
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you try to save a System Console page and notice that the settings revert to previous values, your ``config.json`` file may have a permissions issue.
 
-Check that the ``config.json`` file is owned by the same user as the process that runs the Mattermost server. If not, change the owner to be the mattermost user and restart the server.
+Check that the ``config.json`` file is owned by the same user as the process that runs the Mattermost server. If not, change the owner to be the Mattermost user and restart the server.
 
-Mattermost can't connect to LDAP/AD server
+Mattermost Can't Connect to LDAP/AD Server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 LDAP and Active Directory troubleshooting can be found on `this page. <https://docs.mattermost.com/deployment/sso-ldap.html#troubleshooting-faq>`__
@@ -248,19 +311,19 @@ To check your SSL certificate set up, test it by visiting a site such as `SSL La
 
 Please note that the apps cannot connect to servers with self-signed certificates, consider using `Let's Encrypt <https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__ instead.
 
-Login with ADFS/Office365 is not working
+Login with ADFS/Office365 is Not Working
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
 
-The “Connecting…” bar doesn't clear
+The “Connecting…” Bar Doesn't Clear
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If your app is working properly, you should see a grey “Connecting…” bar that clears or says “Connected” after the app reconnects.
 
-If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator if the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
+If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator whether the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for `supporting the websocket connection for APIv4 endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-as-a-proxy-for-mattermost-server>`__.
 
-I’m not receiving push notifications on my device
+I’m Not Receiving Push Notifications on my Device
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
@@ -284,7 +347,7 @@ If you did not receive a push notification when :doc:`testing push notifications
 
 7. **IMPORTANT:** After your issue is resolved, go to **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console** > **Environment** > **Logging** > **File Log Level** in versions after 5.12 and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
 
-All outbound connections go through a proxy. How can I connect to the Mattermost Hosted Push Notification Service?
+All Outbound Connections go Through a Proxy. How Can I Connect to the Mattermost Hosted Push Notification Service?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You can set up an internal server to proxy the connection out of their network to the Mattermost Hosted Push Notification Service (HPNS) by following the steps below:
@@ -310,14 +373,14 @@ In some cases, the configuration from the product’s website differs from the M
 
 Integrations
 ~~~~~~~~~~~~
-YouTube videos show a "Video not found" preview
+YouTube Videos Show a "Video not found" Preview
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. First, make sure the YouTube video exists by pasting a link to the video into your browser's address bar.
 2. If you are using the Mattermost Desktop App, please ensure you have installed version 3.5.0 or later.
 3. If you have specified `a Google API key <https://docs.mattermost.com/administration/config-settings.html#google-api-key>`__ to enable the display of titles for embedded YouTube video previews, regenerate the key.
 
-Hitting an error "Command with a trigger of failed" when configuring Giphy integration
+Hitting an Error "Command with a trigger of failed" When Configuring Giphy Integration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When trying to configure the Giphy integration in Mattermost, you may hit the error "Command with a trigger of <keyword> failed". To solve this, you need to edit your ``config.json`` and configure ``AllowedUntrustedInternalConnections`` to contain the hostname of the webhook.
@@ -325,7 +388,7 @@ When trying to configure the Giphy integration in Mattermost, you may hit the er
 Mobile
 ~~~~~
 
-Build gets stuck at ``bundleReleaseJsAndAssets``
+Build Gets Stuck at ``bundleReleaseJsAndAssets``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As a workaround, you can bundle the ``js`` manually first with
@@ -340,7 +403,7 @@ and then ignore the gradle task with
 
   ./gradlew assembleRelease -x bundleReleaseJsAndAssets
 
-No image previews available in the mobile app
+No Image Previews Available in The Mobile App
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This can happen if the server running Mattermost has its mime types not set up correctly.
@@ -349,7 +412,7 @@ A server running Linux has this file located in ``/etc/mime.types``. This might 
 Some distributions also ship without ``mailcap`` which can result in missing or incorrectly configured mime types.
 
 
-None of these solve my problem!
+None of These Solve my Problem!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following things and include the results in your support request:
