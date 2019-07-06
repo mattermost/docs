@@ -24,16 +24,14 @@ This option is recommended for:
 1. Organizations that want to customize the mobile apps
 2. Team Edition and Enterprise Edition servers that prefer to host their own push proxy server instead of using one of Mattermost's hosted versions
 
-Use an EMM provider
---------------------
+Use an EMM provider with Managed App Configuration
+---------------------------------------------------
 
 To meet other security and compliance policies, you can :doc:`deploy the Mattermost apps with any EMM provider <mobile-appconfig>` that supports `AppConfig <https://www.appconfig.org/members/>`_, such as MobileIron, Blackberry UEM, or Airwatch. You will still need to choose either the App Store/Google Play versions or apps compiled yourself to use in conjunction with the EMM provider.
 
-This option is recommended for:
+This option is recommended for organizations that typically use EMM solutions to deploy mobile apps to meet security and compliance policies.
 
-1. Organizations that typically use EMM solutions to deploy mobile apps to meet security and compliance policies
+.. note::
+    App wrapping via an EMM provider is not supported by Mattermost. The wrapping process requires changes to the underlying app that cannot be maintainedand and are untested. Instead, we recommend using an EMM provider that supports Managed App Configuration.  
 
-EMM vs. App Wrapping
---------------------
-
-Using an app wrapper, like the `Citrix MDX Toolkit <https://docs.citrix.com/en-us/mdx-toolkit/about-mdx-toolkit.html>`_ is *not supported by Mattermost* because it injects code into the app that we cannot control. Many app wrapping toolkits also provide EMM, so contact your provider for more information about how to deploy Mattermost with EMM.
+    Many app wrapping toolkits, for example `Citrix MDX <https://docs.citrix.com/en-us/mdx-toolkit/about-mdx-toolkit.html>`_, also provide `Managed App Configuration options <https://docs.citrix.com/en-us/xenmobile/server/policies/app-configuration-policy.html>`_. We recommend contacting your provider for more information on what deployment options are available.
