@@ -1,0 +1,10 @@
+# Installing Mattermost on a Raspberry Pi 4
+
+## Problem 
+
+How do I create a Mattermost instance on a Raspberry Pi and make it discoverable on my network.
+
+## Solution
+
+Before you start, make sure you have the following:
+1. A Raspberry Pi running Raspbian
