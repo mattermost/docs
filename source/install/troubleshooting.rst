@@ -15,7 +15,7 @@ For more troubleshooting help, `open a new topic in our forums <https://forum.ma
 Important Notes
 ---------------
 
-- Do not manipulate the Mattermost database directly. Mattermost is designed to stop working if data integrity is compromised. 
+- Do not manipulate the Mattermost database directly. Mattermost is designed to stop working if data integrity is compromised.
 - Any manipulation of the database must be done using the built in command-line tools.
 - Start simple with the step-by-step install guides for your operating system.
 
