@@ -5,7 +5,7 @@ Troubleshooting
 
 This document summarizes common troubleshooting issues and techniques. 
 
-Depending on what type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, the Troubleshooting forum might be helpful as someone may have experienced the same error in the past. 
+Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, the Troubleshooting forum might be helpful as someone may have experienced the same error in the past. 
 
 For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you can also email subscribers@mattermost.com for support.
 
@@ -16,27 +16,26 @@ Important Notes
 ---------------
 
 - Do not manipulate the Mattermost database directly. Mattermost is designed to stop working if data integrity is compromised. 
-- Any manipulation of the database must be done using the built in command-line tools
+- Any manipulation of the database must be done using the built in command-line tools.
 - Start simple with the step-by-step install guides for your operating system.
 
 
 General Troubleshooting
 -----------------------
 Some of these suggestions can be done directly, and others may need consultation from your network administrator. 
- 
-Error logs
-    - Take a look at the logs (``mattermost.log`` and NGINX logs) for errors. 
-    - You can also search the error messages online - existing solutions can often be applied.
-    - To increase log level, you can do the following: Set the File Log Level to Debug: Go to System Console > General > Logging and set File Log Level to DEBUG. If you can’t access the System Console find this line in config.json
 
-When did the problem start?
-    - Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.  
-If the problem occurred subsequent to some period of normal operation, did anything change in the environment?
+- Take a look at the logs (``mattermost.log`` and NGINX logs) for errors. 
+- You can also search the error messages online - existing solutions can often be applied.
+- To increase log level, you can do the following: Set the File Log Level to Debug: Go to System Console > General > Logging and set File Log Level to DEBUG. If you can’t access the System Console find this line in config.json
+
+Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.  
+    
+- If the problem occurred subsequent to some period of normal operation, did anything change in the environment?
     - Was the client, host, or server upgraded?
     - Was an operating system update applied?
     - Did the network environment change? For example, was a server moved or a domain migrated?
     - Did the system (client or server) recently fail or abnormally terminate?
-How many users are impacted?
+- How many users are impacted?
     - Is this problem affecting one, some, or all users?
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
     - Do differences exist between the users who are affected and the users who are not affected?
@@ -53,10 +52,10 @@ Lost System Administrator Account
 
 -  To reset the account, run from the command line:
    ``./mattermost -assign_role -team_name="yourteam" -email="you@example.com" -role="system_admin"``.
--  Log out and back in for the change to apply.
+-  Log out and back in to apply the change.
 
 Switching System Administrator Account to Single Sign-on (SSO)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When Mattermost is initially set up, the first account created becomes the System Administrator account. This account will typically use email authentication to sign-in, since it is usually created before other sign-in methods are configured.
 
@@ -64,13 +63,13 @@ After setting up SSO authentication, it is common for the System Administrator t
 
 Before doing this, the System Administrator needs to change their sign-in method to SSO by doing the following:
 
-1. Sign in to Mattermost using email and password.
+1. Sign in to Mattermost using an email and password.
 2. Go to **Account Settings** > **Security** > **Sign-in Method**. 
-3. Click the "Switch" button for the sign in method you would like to use, and complete the process for switching sign-in method.
+3. Click the "Switch" button to select a sign-in method and complete the process provided.
 
 The System Administrator can now turn off email sign-in and still access their account. To avoid locking other existing users out of their accounts, it is recommended the System Administrator ask them to switch authentication methods as well.
 
-Locked out of System Administrator Account
+Locked Out of System Administrator Account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline>`__.
@@ -93,14 +92,14 @@ Common SAML Issues
 ``An account with that username already exists. Please contact your Administrator.``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
+This usually means an existing account has another authentication method enabled. If so, the user should sign-in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
-  This error message can also be received if the `Username Attribute` of their SAML credentials doesn't match the username of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
+This error message can also be received if the `Username Attribute` of their SAML credentials doesn't match the username of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
   
 ``An account with that email already exists. Please contact your Administrator.``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
+This usually means an existing account has another authentication method enabled. If so, the user should sign-in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
 This error message can also be received if the `Email Attribute` of their SAML credentials doesn't match the email address of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
 
@@ -111,6 +110,7 @@ Confirm all attributes, including `Email Attribute` and `Username Attribute`, ar
 
 Unable to Switch to SAML Authentication Successfully
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 First, ensure you have installed the `XML Security Library <https://www.aleksey.com/xmlsec/download.html>`__ on your Mattermost instance and that **it is available in your** PATH.
 
 Second, ensure you have completed each step of the SAML configuration.
@@ -127,7 +127,7 @@ A server status of red can occur for the following reasons:
 
 - **Configuration file mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same configuration file to function properly.
 - **Server version mismatch**: Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://www.mattermost.org/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../administration/upgrade` for any server that needs to be upgraded.
-- **Server is down**: If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping the down server in 15 second intervals. When the server comes back up, any new messages are sent to it.
+- **Server is down**: If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping the down server in 15-second intervals. When the server comes back up, any new messages are sent to it.
 
 WebSocket Disconnect
 ^^^^^^^^^^^^^^^^^^^^
@@ -154,7 +154,7 @@ Server Administration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Message appears in blue bar on team site.
--  To check the websocket connection, open the developer console in your browser and view the Network panel. If the websocket is not connecting properly, you will see a pending WebSocket connection show up in the list. The screenshot below shows an example from Chrome. 
+-  To check the websocket connection, open the developer console in your browser and view the **Network** panel. If the WebSocket is not connecting properly, you will see a pending WebSocket connection show up in the list. The screenshot below shows an example from Chrome. 
 .. image:: ../images/websocket.png
 -  **If this issue is reported repeatedly**, the most likely cause is a proxy being misconfigured somewhere in your infrastructure, and possibly stripping headers off of WebSocket communications.
 
@@ -191,7 +191,9 @@ For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521
 
 This error may appear in server logs when attempting to sign-up when using self-signed certificates to setup SSL, which is not yet supported by Mattermost.
 
-**Solution:** Set up a load balancer like NGINX `per production install guide <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-with-ssl-and-http-2>`__. The core team is looking into allowing self-signed certificates in the future. 
+**Solution:** 
+
+Set up a load balancer like NGINX `per production install guide <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-with-ssl-and-http-2>`__. The core team is looking into allowing self-signed certificates in the future. 
 
 As a work around, in **System Console** > **Security** > **Connections** set ``Enable Insecure Outgoing Connections`` to ``true``.
    
@@ -202,7 +204,9 @@ This will allow insecure TLS connections, but be careful in doing so as it also 
 
 This error can occur if you have manually manipulated the Mattermost database, typically with deletions. Mattermost is designed to serve as a searchable archive, and manual manipulation of the database elements compromises integrity and may prevent upgrade.
 
-**Solution:** Restore from database backup created prior to manual database updates, or reinstall the system.
+**Solution:** 
+
+Restore from database backup created prior to manual database updates, or reinstall the system.
 
 ``We couldn't find an existing account matching your email address for this team. This team may require an invite from the team owner to join.``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -224,13 +228,13 @@ Click the link at the bottom of the sign-in page that says “Don't have an acco
    - Check the sign-in page.
    - If the sign-in method the account was created with is available, use that to sign in.
 
-      -  *Note: You may then switch authentication methods from **Account
-         Settings** > **Security** > **Sign-in Method**.*
+      -  *Note: You may then switch authentication methods from* **Account
+         Settings** > **Security** > **Sign-in Method**.
 
    - If the sign-in method is not available, contact the System Administrator.
 
       -  This can happen if the site was originally set up to allow an
-         account to be created using either GitLab or Email, but then the
+         account to be created using either GitLab or email, but then the
          System Administrator turned one of the options off.
       -  The System Administrator can fix this issue by:
 
@@ -362,14 +366,13 @@ You can set up an internal server to proxy the connection out of their network t
 Configuration Issues
 ---------------------
 In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost. 
-    - See detailed client software requirements for PC, mobile, and email
-    - See detailed server software requirements for operating system and database
-- What Mattermost server version are you on?
-- What device (webapp, desktop app), browser, and operating system(Windows, Mac, etc.) are you using?
-- Have you made any changes to the default settings in the System Console (or in config.json file)?
-- Did you at any point deviate from the step-by-step Mattermost install guides?
-- Was SSL/TLS certificate installed successfully (if applicable)? You can confirm it by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
-- Do you see any JavaScript errors in the Chrome developer console? Open the Chrome menu in the top-right of the browser window and select More Tools > Developer Tools. 
+    - See detailed client software requirements for PC, mobile, and email.
+    - See detailed server software requirements for operating system and database.
+- Check which Mattermost server version you're on, and confirm whether it's the latest version.
+- Have you made any changes to the default settings in the System Console (or in ``config.json`` file)?
+- What device (webapp, desktop app), browser, and operating system (Windows, Mac, etc.) are you using?
+- Confirm that the SSL/TLS certificate was installed successfully by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
+- Look for JavaScript errors in the Chrome developer console: Open the Chrome menu in the top-right of the browser window and select **More Tools** > **Developer Tools**. 
 
 Integrations
 ~~~~~~~~~~~~
