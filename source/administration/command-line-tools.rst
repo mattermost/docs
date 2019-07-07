@@ -671,7 +671,7 @@ mattermost export actiance
   Options
     .. code-block:: none
 
-          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+          --exportFrom string     Unix timestamp (milliseconds since epoch, UTC) to export data from.
 
 mattermost export bulk
 ~~~~~~~~~~~~~~~~~~~~~~
