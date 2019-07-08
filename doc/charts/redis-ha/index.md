@@ -1,6 +1,6 @@
 # Redis-ha subchart
 
-[Redis](http://redis.io/) is an advanced key-value cache and store. It is often referred
+[Redis](https://redis.io/) is an advanced key-value cache and store. It is often referred
 to as a data structure server since keys can contain strings, hashes, lists, sets,
 sorted sets, bitmaps and hyperloglogs.
 
@@ -26,7 +26,7 @@ default values.
 | `image.repository`      | `registry.gitlab.com/gitlab-org/build/cng/gitlab-redis-ha`| Redis image.              |
 | `image.tag`             | `latest`                     | Version of the Redis image to use.                     |
 | `init.image`            | `busybox`                    | initContainer image.                                   |
-| `init.tag  `            | `latest`                     | initContainer image tag.                               |
+| `init.tag`              | `latest`                     | initContainer image tag.                               |
 | `metrics.enabled`       | `true`                       | Toggle Prometheus Redis exporter sidecar container.    |
 | `nodeSelector`          | `{}`                         | Node labels for pod assignment.                        |
 | `rbac.create`           | `true`                       | Whether RBAC resources should be created.              |

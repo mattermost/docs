@@ -8,7 +8,7 @@ is composed of 3 primary parts: [Service](https://gitlab.com/charts/gitlab/blob/
 [Deployment](https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/deployment.yaml),
 and [ConfigMap](https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/configmap.yaml).
 
-All configuration is handled according to the official [Registry configuration documentation](https://docs.docker.com/registry/configuration)
+All configuration is handled according to the official [Registry configuration documentation](https://docs.docker.com/registry/configuration/)
 using `/etc/docker/registry/config.yml` variables provided to the `Deployment` populated
 from the `ConfigMap`. The `ConfigMap` overrides the upstream defaults, but is
 [based on them](https://github.com/docker/distribution-library-image/blob/master/config-example.yml).
@@ -21,7 +21,7 @@ See below for more details:
 
 A Kubernetes `Deployment` was chosen as the deployment method for this chart to allow
 for simple scaling of instances, while allowing for
-[rolling updates](https://kubernetes.io/docs/tutorials/kubernetes-basics/update-intro/).
+[rolling updates](https://kubernetes.io/docs/tutorials/kubernetes-basics/update/update-intro/).
 
 This chart makes use of only two secrets:
 
@@ -123,6 +123,7 @@ image:
 ```
 
 ### tolerations
+
 `tolerations` allow you schedule pods on tainted worker nodes
 
 Below is an example use of `tolerations`:

@@ -3,7 +3,7 @@
 To reduce configuration duplication when installing our wrapper Helm chart, several
 configuration settings are available to be set in the `global` section of `values.yml`.
 These global settings are used across several charts, while all other settings are scoped
-within their chart. See the [Helm documentation on globals](https://docs.helm.sh/developing_charts/#global-values)
+within their chart. See the [Helm documentation on globals](https://helm.sh/docs/developing_charts/#global-values)
 for more information on how the global variables work.
 
 - [Hosts](#configure-host-settings)
@@ -163,6 +163,7 @@ global:
       secret: gitlab-redis
       key: redis-password
 ```
+
 ## Configure Registry settings
 
 The global Registry settings are located under the `global.registry` key. For more
