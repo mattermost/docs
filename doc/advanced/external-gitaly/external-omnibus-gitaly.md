@@ -70,5 +70,5 @@ run: gitaly: (pid 30562) 77637s; run: log: (pid 30561) 77637s
 run: logrotate: (pid 4856) 1859s; run: log: (pid 31262) 77460s
 ```
 
-[Omnibus GitLab]: https://about.gitlab.com/installation/#ubuntu
+[Omnibus GitLab]: https://about.gitlab.com/install/#ubuntu
 [gitaly-secret]: ../../installation/secrets.md#gitaly-secret

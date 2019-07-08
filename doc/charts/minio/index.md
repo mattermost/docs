@@ -1,12 +1,12 @@
 # Using Minio for Object storage
 
 This chart is based on [`stable/minio`](https://github.com/kubernetes/charts/tree/master/stable/minio)
-version [`0.4.3`](https://github.com/kubernetes/charts/tree/aaaf98b5d25c26cc2d483925f7256f2ce06be080/stable/minio),
+version [`0.4.3`](https://github.com/helm/charts/tree/aaaf98b5d25c26cc2d483925f7256f2ce06be080/stable/minio),
 and inherits most settings from there.
 
 ## Design Choices
 
-Design choices related to the [upstream chart](https://github.com/kubernetes/charts/tree/master/stable/minio)
+Design choices related to the [upstream chart](https://github.com/helm/charts/tree/master/stable/minio)
 can be found in the project's README.
 
 GitLab chose to alter that chart in order to simplify configuration of the secrets,
@@ -102,6 +102,7 @@ pullSecrets:
 ```
 
 ### tolerations
+
 `tolerations` allow you schedule pods on tainted worker nodes
 
 Below is an example use of `tolerations`:

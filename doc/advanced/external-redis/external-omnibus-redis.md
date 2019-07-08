@@ -19,7 +19,6 @@ Create a minimal `gitlab.rb` file to be placed at `/etc/gitlab/gitlab.rb`. Be _v
 
 *Note*: This example is not intended to provide [Redis HA](https://docs.gitlab.com/ee/administration/high_availability/redis.html#configuring-redis-ha).
 
-
 * `REDIS_PASSWORD` should be replaced with the value in the [`gitlab-redis` secret](../../installation/secrets.md#redis-password).
 
 ```Ruby
@@ -50,4 +49,4 @@ run: logrotate: (pid 4856) 1859s; run: log: (pid 31262) 77460s
 run: redis: (pid 30562) 77637s; run: log: (pid 30561) 77637s
 ```
 
-[Omnibus GitLab]: https://about.gitlab.com/installation/#ubuntu
+[Omnibus GitLab]: https://about.gitlab.com/install/#ubuntu
