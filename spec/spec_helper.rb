@@ -4,6 +4,7 @@ require 'open3'
 require 'capybara/rspec'
 require 'capybara-screenshot/rspec'
 require 'selenium-webdriver'
+require 'rspec/retry'
 require 'gitlab_test_helper'
 
 include Gitlab::TestHelper
@@ -46,5 +47,12 @@ RSpec.configure do |config|
 
   config.define_derived_metadata(file_path: %r{/spec/features/}) do |metadata|
     metadata[:type] = :feature
+  end
+
+  # show retry status in spec process
+  config.verbose_retry = true
+
+  config.around do |example|
+    example.run_with_retry retry: 2
   end
 end
