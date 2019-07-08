@@ -1,6 +1,6 @@
 # Azure Minio Gateway
 
-[Minio](https://minio.io/) is an object storage server that exposes S3-compatible APIs and it has a gateway feature that allows proxying requests to Azure Blob Storage. To setup our gateway, we will make use of Azure's Web App on Linux.
+[Minio](https://min.io/) is an object storage server that exposes S3-compatible APIs and it has a gateway feature that allows proxying requests to Azure Blob Storage. To setup our gateway, we will make use of Azure's Web App on Linux.
 
 To get started, make sure you have installed Azure CLI and you are logged in (`az login`). Proceed to create a [Resource group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-group-overview#resource-groups), if you don't have one already:
 
@@ -79,7 +79,9 @@ az webapp config set \
 ```
 
 ## Conclusion
+
 You can proceed to use this gateway with any client with s3-compability. Your webapp url will be the `s3 endpoint`, storage account name will be your `accesskey` and storage account key will be your `secretkey`.
 
 ## Reference
+
 This guide was adapted for posterity from [Alessandro Segala's blog post on same topic.](https://withblue.ink/2017/10/29/how-to-use-s3cmd-and-any-other-amazon-s3-compatible-app-with-azure-blob-storage.html)

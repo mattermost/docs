@@ -5,7 +5,7 @@
 The following applications within the GitLab chart require persistent storage to maintain state.
 
 - [gitaly](../charts/gitlab/gitaly/index.md) (persists the git repositories)
-- [postgres](https://github.com/kubernetes/charts/tree/master/stable/postgresql) (persists the gitlab database data)
+- [postgres](https://github.com/helm/charts/tree/master/stable/postgresql) (persists the gitlab database data)
 - [redis](../charts/redis/index.md) (persists gitlab job data)
 - [minio](../charts/minio/index.md) (persists the object storage data)
 

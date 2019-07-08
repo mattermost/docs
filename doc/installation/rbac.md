@@ -1,6 +1,6 @@
 # Role Based Access Control
 
-Until Kubernetes 1.7, there were no permissions within a cluster. With the launch of 1.7, there is now a role based access control system ([RBAC](https://kubernetes.io/docs/admin/authorization/rbac/)) which determines what services can perform actions within a cluster.
+Until Kubernetes 1.7, there were no permissions within a cluster. With the launch of 1.7, there is now a role based access control system ([RBAC](https://kubernetes.io/docs/reference/access-authn-authz/rbac/)) which determines what services can perform actions within a cluster.
 
 RBAC affects a few different aspects of GitLab:
 
