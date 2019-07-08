@@ -107,6 +107,7 @@ backups:
     failedJobsHistoryLimit: 1
     schedule: "0 1 * * *"
     successfulJobsHistoryLimit: 3
+    extraArgs: ""
     resources:
       # limits:
       #  cpu: 1
