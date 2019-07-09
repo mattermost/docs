@@ -94,7 +94,7 @@ There's a few possible reasons why it might be slow:
 How do I know if an elasticsearch job fails?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost provides the status of each elasticsearch indexing job in **System Console** > **Environment** > **Elasticsearch** (or **System Console > Advanced > Elasticsearch** in versions 5.11 and earlier). Here, you can see if the job succeeded or failed, including the XXX.
+Mattermost provides the status of each elasticsearch indexing job in **System Console** > **Environment** > **Elasticsearch** (or **System Console > Advanced > Elasticsearch** in versions 5.11 and earlier). Here, you can see if the job succeeded or failed, including the details of the error.
 
 Morever, any failures are returned in the server logs. The error log begins with the string ``Failed job`` and include a job_id key/value pair. Elasticsearch job failures are identified with worker name ``EnterpriseElasticsearchAggregator`` and ``EnterpriseElasticsearchIndexer``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
 
