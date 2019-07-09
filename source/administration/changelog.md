@@ -8,8 +8,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Mattermost v5.12.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-- **v5.12.3, released TBD**
-  - Fixing an issue where setting the MM_SQLSETTINGS_DATASOURCEREPLICAS environment variable breaks the server startup. [MM-16719](https://mattermost.atlassian.net/browse/MM-16719)
+- **v5.12.3, released 2019-07-09**
+  - Fixed an issue where setting the MM_SQLSETTINGS_DATASOURCEREPLICAS environment variable broke the server startup. [MM-16719](https://mattermost.atlassian.net/browse/MM-16719)
 - **v5.12.2, released 2019-07-03**
   - Fixed an issue where Net Promoter Score (NPS) went into a loop when [Experimental Enable Automatic Replies feature](https://docs.mattermost.com/administration/config-settings.html#enable-automatic-replies-experimental) was turned on in Account Settings.
 - **v5.12.1, released 2019-06-28** 
