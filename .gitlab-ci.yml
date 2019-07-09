@@ -760,8 +760,8 @@ production_specs_eks:
   retry: 1
   allow_failure: true
 
-sync_images:
-  image: registry.gitlab.com/gitlab-org/gitlab-omnibus-builder:ruby_docker-0.0.7
+wait_for_images:
+  image: registry.gitlab.com/gitlab-org/gitlab-omnibus-builder/ruby_docker:0.0.41
   stage: prepare
   services:
   - docker:dind
@@ -770,11 +770,11 @@ sync_images:
     DOCKER_DRIVER: overlay2
     DOCKER_HOST: tcp://docker:2375
   script:
-    - bundle install
-    - bundle exec rake images:sync[ee]
-    - bundle exec rake images:sync[ce]
+    - bash scripts/wait_for_images.sh
   only:
     - tags@gitlab/charts/gitlab
+    - tags@charts/gitlab
+    - /.*-stable/
 
 release_package:
   stage: package
@@ -786,7 +786,7 @@ release_package:
   only:
     - tags@gitlab/charts/gitlab
   dependencies:
-    - sync_images
+    - wait_for_images
 
 .qa_branch:
   extends: .qa
