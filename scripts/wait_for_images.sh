@@ -1,10 +1,6 @@
 #!/bin/bash
 
-if [ "${CI_REGISTRY}" == "dev.gitlab.org:5005" ]; then
-  CNG_REGISTRY=${CNG_REGISTRY:-"dev.gitlab.org:5005/gitlab/charts/components/images"}
-else
-  CNG_REGISTRY=${CNG_REGISTRY:-"registry.gitlab.com/gitlab-org/build/cng"}
-fi
+CNG_REGISTRY=${CNG_REGISTRY:-"registry.gitlab.com/gitlab-org/build/cng"}
 
 GITLAB_VERSION=$(awk '/^appVersion:/ {print $2}' Chart.yaml)
 if [ "${GITLAB_VERSION}" == "master" ]; then
