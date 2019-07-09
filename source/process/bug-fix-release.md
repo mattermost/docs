@@ -69,7 +69,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
 2. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
-    - Review submitted NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch.
+    - Submit NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to quality release branch
     - If there are any breaking compatibility changes in the release, open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) to make sure GitLab is aware. Post a link to the issue in the Release Discussion channel
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
@@ -155,7 +155,9 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Verify all items in the last posted release checklist are complete
     - Verify that the final translations PR for the release is submitted
     - Confirm Changelog reflects any changes since it was merged (including known issues and contributors from all repositories)
-      - Verify that translators and new integration contributors were added 
+      - Verify that translators and new integration contributors were added
+      - Verify that Open Source Components changes were added
+    - Update https://docs.mattermost.com/administration/open-source-components.html
 3. Marketing:
     - Send blog post for mattermost.com and all related art work for marketing lead to review
     - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests?scope=all&utf8=%E2%9C%93&state=opened&label_name%5B%5D=blog%20post&label_name%5B%5D=release) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)). Post to Release Discussion channel with link to request.
