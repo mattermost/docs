@@ -18,11 +18,11 @@ function generate_secret_if_needed(){
   else
     echo "secret \"$secret_name\" already exists"
   fi;
-{{- if not .Values.global.application.create }}
+{{ if not .Values.global.application.create -}}
   # Remove application labels if they exist
   kubectl --namespace=$namespace label \
     secret $secret_name $(echo '{{ include "gitlab.application.labels" . | replace ": " "=" | replace "\n" " " }}' | sed -E 's/=[^ ]*/-/g')
-{{- end }}
+{{ end }}
   kubectl --namespace=$namespace label \
     --overwrite \
     secret $secret_name {{ include "gitlab.standardLabels" . | replace ": " "=" | replace "\n" " " }}
@@ -31,12 +31,12 @@ function generate_secret_if_needed(){
 # Initial root password
 generate_secret_if_needed {{ template "gitlab.migrations.initialRootPassword.secret" . }} --from-literal={{ template "gitlab.migrations.initialRootPassword.key" . }}=$(gen_random 'a-zA-Z0-9' 64)
 
+{{ if .Values.global.redis.password.enabled -}}
 # Redis password
-{{if .Values.global.redis.password.enabled -}}
 generate_secret_if_needed {{ template "gitlab.redis.password.secret" . }} --from-literal={{ template "gitlab.redis.password.key" . }}=$(gen_random 'a-zA-Z0-9' 64)
 {{ end }}
 
-{{if not .Values.global.psql.host -}}
+{{ if not .Values.global.psql.host -}}
 # Postgres password
 generate_secret_if_needed {{ template "gitlab.psql.password.secret" . }} --from-literal=postgres-password=$(gen_random 'a-zA-Z0-9' 64)
 {{ end }}
@@ -47,10 +47,10 @@ generate_secret_if_needed {{ template "gitlab.gitlab-shell.authToken.secret" . }
 # Gitaly secret
 generate_secret_if_needed {{ template "gitlab.gitaly.authToken.secret" . }} --from-literal={{ template "gitlab.gitaly.authToken.key" . }}=$(gen_random 'a-zA-Z0-9' 64)
 
-{{- if .Values.global.minio.enabled -}}
+{{ if .Values.global.minio.enabled -}}
 # Minio secret
 generate_secret_if_needed {{ template "gitlab.minio.credentials.secret" . }} --from-literal=accesskey=$(gen_random 'a-zA-Z0-9' 64) --from-literal=secretkey=$(gen_random 'a-zA-Z0-9' 64)
-{{- end -}}
+{{ end }}
 
 # Gitlab runner secret
 generate_secret_if_needed {{ template "gitlab.gitlab-runner.registrationToken.secret" . }} --from-literal=runner-registration-token=$(gen_random 'a-zA-Z0-9' 64) --from-literal=runner-token=""
