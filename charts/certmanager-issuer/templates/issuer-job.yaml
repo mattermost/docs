@@ -23,7 +23,7 @@ spec:
         - name: create-issuer
           image: {{ include "gitlab.kubectl.image" . | quote }}
           command: ['/bin/bash', '/scripts/create-issuer', '/scripts/issuer.yml']
-          {{ template "gitlab.imagePullPolicy" }}
+          {{ template "gitlab.imagePullPolicy" . }}
           volumeMounts:
             - name: scripts
               mountPath: /scripts

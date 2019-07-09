@@ -1,0 +1,5 @@
+---
+title: Use global values for kubectl image, deprecate chart-local settings
+merge_request: 864
+author:
+type: changed

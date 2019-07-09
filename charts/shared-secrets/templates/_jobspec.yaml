@@ -33,7 +33,7 @@ spec:
         - name: {{ .Chart.Name }}
           image: {{ include "gitlab.kubectl.image" . | quote }}
           command: ['/bin/bash', '/scripts/generate-secrets']
-          {{ template "gitlab.imagePullPolicy" }}
+          {{ template "gitlab.imagePullPolicy" . }}
           volumeMounts:
             - name: scripts
               mountPath: /scripts
