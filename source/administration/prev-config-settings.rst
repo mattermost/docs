@@ -3043,7 +3043,7 @@ Maximum Open Connections
 Maximum number of open connections held open to the database.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxOpenConns": 10`` with numerical input.                                                                                |
+| This feature's ``config.json`` setting is ``"MaxOpenConns": 300`` with numerical input.                                                                               |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 SQL Query Timeout
