@@ -72,5 +72,5 @@ spec:
       - name: pause-task
         image: {{ include "gitlab.kubectl.image" . | quote }}
         {{ template "gitlab.imagePullPolicy" }}
-        command: ["sh", "-c", "/usr/local/bin/kubectl -n {{ $.Release.Namespace }} rollout pause deployment {{ include "fullname" . }} || true"]
+        command: ["sh", "-c", "/usr/local/bin/kubectl -n {{ $.Release.Namespace }} rollout pause deployment {{ include "sidekiq.queueNames" . }} || true"]
 {{- end }}
