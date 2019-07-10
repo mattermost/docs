@@ -188,6 +188,11 @@ When reporting bugs found in the Mattermost Desktop app, it is helpful to includ
   4. Save the file and then send it along with a description of your issue.
   5. Go to ``View`` > ``Toggle Developer Tools`` to disable the Developer Tools.
 
+You can open an additional set of developer tools for each server you have added to the desktop app.
+The tools can be opened by pasting this command in the developer console you opened with the steps described above: ``document.getElementsByTagName("webview")[0].openDevTools();`` 
+
+Note that if you have more than one server added to the desktop client you need to change the ``0`` to the number corresponding to the server you want to open the developer tools for starting with ``0`` from the left.
+
 Windows
 ~~~~~~~
 
