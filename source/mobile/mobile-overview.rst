@@ -32,6 +32,6 @@ To meet other security and compliance policies, you can :doc:`deploy the Matterm
 This option is recommended for organizations that typically use EMM solutions to deploy mobile apps to meet security and compliance policies.
 
 .. note::
-    App wrapping via an EMM provider is not supported by Mattermost. The wrapping process requires changes to the underlying app that cannot be maintained and are untested. Instead, we recommend using an EMM provider that supports Managed App Configuration.  
+    App wrapping via an EMM provider is untested, and not supported by Mattermost. Instead, we recommend using an EMM provider that supports Managed App Configuration.  
 
     Many app wrapping toolkits, for example `Citrix MDX <https://docs.citrix.com/en-us/mdx-toolkit/about-mdx-toolkit.html>`_, also provide `Managed App Configuration options <https://docs.citrix.com/en-us/xenmobile/server/policies/app-configuration-policy.html>`_. We recommend contacting your provider for more information on what deployment options are available.
