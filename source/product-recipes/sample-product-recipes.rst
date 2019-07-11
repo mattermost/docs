@@ -18,7 +18,7 @@ Instructions for Setting Up and Configuring the Solution
 
 Write the instructions for the setup and implementation of the solution.
 
-Defining Recipe Category For Search and Retrieval
+Product Recipe Category
 --------------------------------------------------
 
 Properly tag the documents.
