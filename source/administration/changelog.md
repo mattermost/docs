@@ -47,9 +47,7 @@ Release Date 2019-07-16
 
 #### Database Changes
 
-#### API Changes
-
-#### Websocket Event Changes
+ - ``plugins`` type entries in the ``Jobs`` table will be purged on upgrade. This job was incorrectly configured to run every minute, spamming the table with mostly useless records. All old records will be removed on upgrade, and the job will run daily instead.
 
 ### Known Issues
 
