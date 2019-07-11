@@ -5,9 +5,9 @@ Troubleshooting
 
 This document summarizes common troubleshooting issues and techniques. 
 
-Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, the Troubleshooting forum might be helpful as someone may have experienced the same error in the past. 
+Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ might be helpful as someone may have experienced the same error in the past. 
 
-For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you can also email subscribers@mattermost.com for support.
+If you're an Enterprise Edition subscriber, visit `the Enterprise Edition support page <https://about.mattermost.com/support/>`__.
 
 .. contents::
     :backlinks: top
@@ -26,7 +26,7 @@ Some of these suggestions can be done directly, and others may need consultation
 
 - Take a look at the logs (``mattermost.log`` and NGINX logs) for errors. 
 - You can also search the error messages online - existing solutions can often be applied.
-- To increase log level, you can do the following: Set the File Log Level to Debug: Go to System Console > General > Logging and set File Log Level to DEBUG. If you can’t access the System Console find this line in config.json
+- Open **System Console** > **General** > **Logging** and set File Log Level to DEBUG. Make sure to revert to INFO after troubleshooting to save disk space.
 
 Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.  
     
@@ -99,14 +99,14 @@ This error message can also be received if the `Username Attribute` of their SAM
 ``An account with that email already exists. Please contact your Administrator.``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This usually means an existing account has another authentication method enabled. If so, the user should sign-in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
+This usually means an existing account has another authentication method enabled. If so, the user should sign-in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings** > **Security** > **Sign-in method**.
 
 This error message can also be received if the `Email Attribute` of their SAML credentials doesn't match the email address of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
 
 ``SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the Identity Provider configuration and in **System Console > SAML**.
+Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the Identity Provider configuration and in **System Console** > **SAML**.
 
 Unable to Switch to SAML Authentication Successfully
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -184,7 +184,7 @@ As security and encryption standards often change rapidly, it is best to check f
 
 For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521r1;``
 
-*Note: Setting multiple curves requires nginx 1.11.0, if you can only set one curve, the most compatible is prime256v1.*
+**Note:** Setting multiple curves requires nginx 1.11.0, if you can only set one curve, the most compatible is prime256v1.
 
 ``x509: certificate signed by unknown authority``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
@@ -228,7 +228,7 @@ Click the link at the bottom of the sign-in page that says “Don't have an acco
    - Check the sign-in page.
    - If the sign-in method the account was created with is available, use that to sign in.
 
-      -  *Note: You may then switch authentication methods from* **Account
+      -  **Note:** You may then switch authentication methods from* **Account
          Settings** > **Security** > **Sign-in Method**.
 
    - If the sign-in method is not available, contact the System Administrator.
@@ -361,7 +361,7 @@ You can set up an internal server to proxy the connection out of their network t
 3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** in prior versions or **System Console > Environment > Push Notification Server > Enable Push Notifications** in versions after 5.12 to "Manually enter Push Notification Service location".
 4. Enter the URL of your proxy in the **Push Notification Server** field.
 
-.. Note:: Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``.
+**Note:** Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``.
 
 Configuration Issues
 ---------------------
@@ -418,16 +418,15 @@ Some distributions also ship without ``mailcap`` which can result in missing or 
 None of These Solve my Problem!
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following things and include the results in your support request:
+To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following steps and include the results in your support request or `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ post.
 
 **Connect to another server**
 
 1. Create an account at https://demo.mattermost.com.
 2. Erase your mobile application and reinstall it.
-3. In your mobile app, enter the server URL https://demo.mattermost.com and then your login credentials to see if the connection is working.
+3. In your mobile app, enter the server URL https://demo.mattermost.com and then your login credentials to test whether the connection is working.
 
 **Connect with another device**
 
-If you have another mobile device available, try connecting with that to see if your issue still reproduces.
-
-If you don’t have another device available, check with other teammates to see if they are having the same issue.
+- If you have another mobile device available, try connecting with that to see if your issue still reproduces.
+- If you don’t have another device available, check with other teammates to see if they are having the same issue.
