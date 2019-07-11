@@ -1,4 +1,4 @@
-{{- if and .Values.enabled .Values.rollout.autoPause .Values.global.operator.enabled (not .Values.global.operator.bootstrap) }}
+{{- if and .Values.enabled .Values.global.operator.rollout.autoPause .Values.global.operator.enabled (not .Values.global.operator.bootstrap) }}
 apiVersion: v1
 kind: ServiceAccount
 metadata:
