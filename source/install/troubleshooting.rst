@@ -228,7 +228,7 @@ Click the link at the bottom of the sign-in page that says “Don't have an acco
    - Check the sign-in page.
    - If the sign-in method the account was created with is available, use that to sign in.
 
-      -  **Note:** You may then switch authentication methods from* **Account
+      -  **Note:** You may then switch authentication methods from **Account
          Settings** > **Security** > **Sign-in Method**.
 
    - If the sign-in method is not available, contact the System Administrator.
