@@ -182,7 +182,7 @@ If you are using NGINX as a proxy, set the ``ssl_ecdh_curve`` directive in your 
 
 As security and encryption standards often change rapidly, it is best to check for up-to-date information. However, the suggested value as of January 2018 is to use the curves: prime256v1, secp384r1, secp521r1.
 
-For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521r1;``
+For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521r1;``.
 
 **Note:** Setting multiple curves requires nginx 1.11.0, if you can only set one curve, the most compatible is prime256v1.
 
