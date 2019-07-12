@@ -368,7 +368,7 @@ Configuration Issues
 In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost. 
 
 - See detailed client software requirements for PC, mobile, and email.
-    - See detailed server software requirements for operating system and database.
+- See detailed server software requirements for operating system and database.
 - Check which Mattermost server version you're on, and confirm whether it's the latest version.
 - Have you made any changes to the default settings in the System Console (or in ``config.json`` file)?
 - What device (webapp, desktop app), browser, and operating system (Windows, Mac, etc.) are you using?
