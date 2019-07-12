@@ -7,7 +7,7 @@ This document summarizes common troubleshooting issues and techniques.
 
 Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ might be helpful as someone may have experienced the same error in the past. 
 
-If you're an Enterprise Edition subscriber, visit `the Enterprise Edition support page <https://about.mattermost.com/support/>`__.
+If you're an Enterprise Edition subscriber, visit `the Enterprise Edition support page <https://mattermost.com/support/>`__.
 
 .. contents::
     :backlinks: top
