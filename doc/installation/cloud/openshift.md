@@ -70,16 +70,13 @@ installations on OpenShift:
 
     ```bash
     oc project ${YOUR_NAMESPACE}
-    oc adm policy add-scc-to-group anyuid -z default
+    oc adm policy add-scc-to-user anyuid -z default -n ${YOUR_NAMESPACE}
+    oc adm policy add-scc-to-user anyuid -z gitlab-runner -n ${YOUR_NAMESPACE}
     ```
 
     CAUTION: **Warning**:
-    This setting will be applied across the namespace in which it's applied 
-    and will result in Docker images that does not explicitly specify USER 
-    running as `root` user.
-    [Issue #895](https://gitlab.com/charts/gitlab/issues/895) is open to
-    document different service accounts required and to describe adding scc to
-    those service accounts only, so the impact can be limited.
+    This setting will be applied across the specified namespace and will result
+    in Docker images that does not explicitly specify user running as `root`.
 
 1. Create the service account and `rolebinding` for RBAC and [install Tiller](../tools.md#helm):
 
