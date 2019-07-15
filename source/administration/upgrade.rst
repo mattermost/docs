@@ -155,8 +155,10 @@ Location of your local storage directory
     .. code-block:: sh
 
       cd {install-path}/mattermost
-      sudo mv plugins~/ plugins
-      sudo mv client/plugins~/ client/plugins
+      sudo rsync -au plugins~/ plugins
+      sudo rm -rf plugins~
+      sudo rsync -au client/plugins~/ client/plugins
+      sudo rm -rf client/plugins~
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 

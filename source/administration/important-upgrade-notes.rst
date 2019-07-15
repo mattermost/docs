@@ -2,7 +2,7 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   API version 3 is now removed. See `api.mattermost.com <https://api.mattermost.com/#tag/APIv3-Deprecation>`__ to learn more.
+   Support for Internet Explorer (IE11) will be removed in Mattermost v5.16.0. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |

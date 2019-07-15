@@ -180,3 +180,9 @@ You can find an explanation of each of the configuration settings [here](https:/
 Yes it can, but make sure that:
  - permissions are correctly configured on the service account you are using
  - each user object is a direct member of the security group
+
+#### How do I know if an AD/LDAP sync job fails?
+
+Mattermost provides the status of each AD/LDAP sync job in **System Console** > **Authentication** > **AD/LDAP**. Here you can see the number of users updated and if the job succeeded or failed.
+
+Morever, any failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. AD/LDAP sync job failures are identified with worker name ``EnterpriseLdapSync``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.

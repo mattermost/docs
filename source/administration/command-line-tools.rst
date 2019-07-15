@@ -118,7 +118,7 @@ mattermost
     -  `mattermost jobserver`_ - Start the Mattermost job server
     -  `mattermost ldap`_ - AD/LDAP related utilities
     -  `mattermost license`_ - Licensing commands
-    -  `mattermost logs`_ - Display humand-readable logs
+    -  `mattermost logs`_ - Display human-readable logs
     -  `mattermost permissions`_ - Management of the permissions system
     -  `mattermost plugin`_ - Management of plugins
     -  `mattermost reset`_ - Reset the database to initial state
@@ -465,10 +465,11 @@ mattermost command modify
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Modify a slash command. Commands can be specified by command ID.  
-    
-    .. note::
+    Modify a slash command. Commands can be specified by command ID.
+
+.. note::
     Only fields that you want to modify need to be specified.  Also, when modifying the command's creator, the new creator specified must have the permission to create commands. 
+
 
   Format
     .. code-block:: none
@@ -568,9 +569,9 @@ mattermost config migrate
   Description
     Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. If using SAML, ensure the SAML certificates and keys are accessible to also migrate into the database.
     
-    .. note::    
+.. note::   
     If a ``from`` parameter is not specified, the command will fall back to what is specified in --config.
-
+    
   Format
     .. code-block:: none
 
@@ -669,7 +670,7 @@ mattermost export actiance
   Options
     .. code-block:: none
 
-          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+          --exportFrom string     Unix timestamp (milliseconds since epoch, UTC) to export data from.
 
 mattermost export bulk
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1498,12 +1499,12 @@ mattermost team rename
   Format
     .. code-block:: none
 
-      mattermost channel rename {team} newteamname --display_name "New Display Name"
+      mattermost team rename {team} newteamname --display_name "New Display Name"
 
   Examples
     .. code-block:: none
 
-      ./mattermost channel rename myteam newteamname --display_name "New Display Name"
+      ./mattermost team rename myteam newteamname --display_name "New Display Name"
       
   Options
     .. code-block:: none

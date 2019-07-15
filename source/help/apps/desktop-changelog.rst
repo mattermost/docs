@@ -974,7 +974,7 @@ All platforms
 -  Should execute following command to take over ``config.json``.
 
    -  Windows:
-      ``mkdir %APPDATA%\Mattermost & copy %APPDATA%\electron-mattermost\config.json %APPDATA%\Mattermost\config.json``
+      ``mkdir %APPDATA%\Mattermost and copy %APPDATA%\electron-mattermost\config.json %APPDATA%\Mattermost\config.json``
    -  OS X:
       ``ditto ~/Library/Application\ Support/electron-mattermost/config.json ~/Library/Application\ Support/Mattermost/config.json``
    -  Linux:

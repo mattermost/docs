@@ -11,7 +11,6 @@ See one of the sample integrations below or visit the `Mattermost Integrations D
    
    /integrations/jira*
    /integrations/zoom*
-   /integrations/net-promoter-score*
    /integrations/zapier*
 
 **Are you looking to develop an integration?**
@@ -29,6 +28,7 @@ See our documentation below.
    /developer/api.rst
    /developer/webhooks*
    /developer/slash*
+   /administration/plugins*
    /developer/message-attachments*
    /developer/interactive-messages*
    /developer/interactive-dialogs*
