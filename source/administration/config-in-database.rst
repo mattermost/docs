@@ -9,7 +9,7 @@ To change your server from reading the config.json file to using the configurati
   a. The provider uri specifies the driver name and data source name used to resolve the database. For example: ``postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10``
   b. Alternatively, you can  use the ``--migrate config`` `command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-config-migrate>`_ for installs that are already using the ``config.json`` default file. 
   
-2. Set the ``--disableconfigwatch`` flag [link] to true to disable automatically watching this default config.json and effecting changes.
+2. Set the ``--disableconfigwatch`` `flag <https://docs.mattermost.com/administration/command-line-tools.html#mattermost>`_ to true to disable automatically watching this default config.json and effecting changes.
 
 Once you are using the configuration in the database, changes to configuration settings will create a new entry in the configuration database, storing a copy of the previous configuration as a json blob. 
 
