@@ -20,6 +20,8 @@ Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.ma
 ### Bug Fixes
  - Fixed an issue where changing the timezone setting to "Set automatically" did not work on the mobile app.
  - Fixed an issue where the channel introduction content sometimes disappeared on opening a channel.
+ - Fixed an issue with missing messages.
+ - Fixed an issue where disabling Join/Leave Messages and switching to a specific channel caused a white screen.
  - Fixed an issue where the SMTP server password was no longer concealed in the System Console.
  - Fixed an issue where Notifications and Plugins settings were missing in the System Console for restricted system administrators.
  - Fixed an issue where "Enable AD/LDAP Group Sync" was visible in experimental System Console settings section in Team Edition servers.
