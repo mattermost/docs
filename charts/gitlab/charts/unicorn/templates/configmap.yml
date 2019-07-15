@@ -16,7 +16,7 @@ data:
       database: {{ template "gitlab.psql.database" . }}
       pool: 10
       username: {{ template "gitlab.psql.username" . }}
-      password: "<%= File.read("/etc/gitlab/postgres/psql-password") %>"
+      password: "<%= File.read("/etc/gitlab/postgres/psql-password").strip.dump[1..-2] %>"
       host: {{ template "gitlab.psql.host" . }}
       port: {{ template "gitlab.psql.port" . }}
       # load_balancing:
@@ -190,7 +190,7 @@ data:
     [redis]
     URL = "{{ template "gitlab.redis.scheme" . }}://{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}"
     {{- if .Values.global.redis.password.enabled }}
-    Password = "<%= File.read("/etc/gitlab/redis/password") %>"
+    Password = "<%= File.read("/etc/gitlab/redis/password").strip.dump[1..-2] %>"
     {{- end }}
   configure: |
       set -e

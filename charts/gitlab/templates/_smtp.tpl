@@ -18,7 +18,7 @@ ActionMailer::Base.smtp_settings = {
   {{ if has .Values.global.smtp.authentication (list "login" "plain" "cram_md5") }}
   authentication: :{{.Values.global.smtp.authentication}},
   user_name: {{ .Values.global.smtp.user_name | quote }},
-  password: File.read("/etc/gitlab/smtp/smtp-password"),
+  password: File.read("/etc/gitlab/smtp/smtp-password").strip,
   {{- end }}
   {{- if .Values.global.smtp.starttls_auto }}
   enable_starttls_auto: true,

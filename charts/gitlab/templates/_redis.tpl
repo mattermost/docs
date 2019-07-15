@@ -40,5 +40,5 @@ Return the redis scheme, or redis. Allowing people to use rediss clusters
 Return the redis url.
 */}}
 {{- define "gitlab.redis.url" -}}
-{{ template "gitlab.redis.scheme" . }}://{{- if .Values.global.redis.password.enabled -}}:<%= File.read("/etc/gitlab/redis/password") %>@{{- end -}}{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
+{{ template "gitlab.redis.scheme" . }}://{{- if .Values.global.redis.password.enabled -}}:<%= URI.escape(File.read("/etc/gitlab/redis/password").strip) %>@{{- end -}}{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
 {{- end -}}

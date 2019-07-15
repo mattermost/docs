@@ -33,7 +33,7 @@ data:
     <% raise Exception, "Storage for node #{@index} is not present in the storageNames array. Did you use kubectl to scale up ? You need to solely use helm for this purpose" %>
     <% end %>
     [auth]
-    token = "<%= File.read('/etc/gitlab-secrets/gitaly/gitaly_token') %>"
+    token = "<%= File.read('/etc/gitlab-secrets/gitaly/gitaly_token').strip.dump[1..-2] %>"
 
     [gitaly-ruby]
     # The directory where gitaly-ruby is installed
@@ -63,7 +63,7 @@ data:
       host: {{ template "gitlab.redis.host" . }}
       port: {{ template "gitlab.redis.port" . }}
       {{- if .Values.global.redis.password.enabled }}
-      pass: "<%= File.read("/etc/gitlab-secrets/redis/redis_password") %>"
+      pass: "<%= File.read("/etc/gitlab-secrets/redis/redis_password").strip.dump[1..-2] %>"
       {{- end }}
       database: nil
       namespace: resque:gitlab

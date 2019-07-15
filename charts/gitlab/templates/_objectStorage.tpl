@@ -22,8 +22,8 @@ object_store:
   connection:
     provider: AWS
     region: us-east-1
-    aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey') %>"
-    aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey') %>"
+    aws_access_key_id: "<%= File.read('/etc/gitlab/minio/accesskey').strip.dump[1..-2] %>"
+    aws_secret_access_key: "<%= File.read('/etc/gitlab/minio/secretkey').strip.dump[1..-2] %>"
     host: {{ template "gitlab.minio.hostname" .context }}
     endpoint: {{ template "gitlab.minio.endpoint" .context }}
     path_style: true
