@@ -5,12 +5,6 @@ Feature Documentation Template
 This template defines how a feature should be documented improving presentation
 and retrieval of information of product features. The document is user focused.
 
-Enabling The Feature
---------------------
-
-Write how the user can enable the feature. The user should utilize the information
-present about the feature and run it.
-
 Defining Use Case
 -----------------
 
@@ -19,6 +13,12 @@ the user would implement or enable it for. The direct and indirect use case
 should be defined for what the user can gain from if feature is enabled. The
 documentation should write about the use case for retaining user traction or how
 the feature could enhance product's behavior.
+
+Enabling The Feature
+--------------------
+
+Write how the user can enable the feature. The user should utilize the information
+present about the feature and run it.
 
 Technical Explanation of How The Feature Works
 -----------------------------------------------
