@@ -70,6 +70,17 @@ Tables below contain all the possible charts configurations that can be supplied
 | global.appConfig.incomingEmail.mailbox             | Mailbox where incoming mail will end up.                                                                 | inbox                 |
 | global.appConfig.incomingEmail.idleTimeout         | The IDLE command timeout                                                                                 | 60                    |
 
+## Default Project Features configuration
+
+| Parameter                                                   | Description                                 | Default               |
+| ---                                                         | ---                                         | ---                   |
+| global.appConfig.defaultProjectsFeatures.issues             | Enable project issues                       | true                  |
+| global.appConfig.defaultProjectsFeatures.mergeRequests      | Enable project merge requests               | true                  |
+| global.appConfig.defaultProjectsFeatures.wiki               | Enable project wikis                        | true                  |
+| global.appConfig.defaultProjectsFeatures.snippets           | Enable project snippets                     | true                  |
+| global.appConfig.defaultProjectsFeatures.builds             | Enable project builds                       | true                  |
+| global.appConfig.defaultProjectsFeatures.containerRegistry  | Enable container registy project features   | true                  |
+
 ## GitLab Shell
 
 | Parameter              | Description                              | Default |

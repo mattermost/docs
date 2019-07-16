@@ -310,6 +310,7 @@ global:
       wiki: true
       snippets: true
       builds: true
+      containerRegistry: true
     webhookTimeout:
     gravatar:
       plainUrl:
@@ -394,6 +395,7 @@ defaultProjectsFeatures:
   wiki: true
   snippets: true
   builds: true
+  containerRegistry: true
 ```
 
 ### Gravatar/Libravatar settings
