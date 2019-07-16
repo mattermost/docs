@@ -1,0 +1,5 @@
+---
+title: 'Set pullPolicy for CI to Always #1460'
+merge_request: 873
+author:
+type: fixed

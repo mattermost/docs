@@ -446,6 +446,7 @@ check_docs_lint:
       --set ci.job.url="$CI_JOB_URL" \
       --set ci.pipeline.url="$CI_PIPELINE_URL" \
       --set releaseOverride="$CI_ENVIRONMENT_SLUG" \
+      --set global.imagePullPolicy="Always" \
       --set global.hosts.hostSuffix="$HOST_SUFFIX" \
       --set global.hosts.domain="$KUBE_INGRESS_BASE_DOMAIN" \
       --set global.ingress.annotations."external-dns\.alpha\.kubernetes\.io/ttl"="10" \
