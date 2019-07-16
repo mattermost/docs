@@ -6,9 +6,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.13 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-Release Date 2019-07-16
-
 Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+- **v5.13.1, released TBD** 
+  - Fixing performance issues with fetching posts since scrolling overhaul changed queries. [MM-16936] (https://mattermost.atlassian.net/browse/MM-16936)
+- **v5.13.0, released 2019-07-16**
+  - Original 5.13.0 release
 
 ### Compatibility
 
