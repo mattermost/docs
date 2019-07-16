@@ -14,6 +14,13 @@ should be defined for what the user can gain from if feature is enabled. The
 documentation should write about the use case for retaining user traction or how
 the feature could enhance product's behavior.
 
+Defining Prerequisites
+----------------------
+
+Write the prerequisites before enabling the feature required for the
+feature implementation. List any guidelines limiting the effort of the user for
+unecessary implementations affecting the behavior of the implementation.
+
 Enabling The Feature
 --------------------
 
