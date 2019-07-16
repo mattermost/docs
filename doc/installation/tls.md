@@ -104,4 +104,4 @@ accessible services. The secrets containing these will be `RELEASE-wildcard-tls`
 The `RELEASE-wildcard-tls-ca` contains the public CA certificate that can be distributed to users and systems that
 will access the deployed GitLab instance.
 
-[cm-annotations]: https://github.com/jetstack/cert-manager/blob/master/docs/reference/ingress-shim.rst#supported-annotations
+[cm-annotations]: https://github.com/jetstack/cert-manager/blob/master/docs/tasks/issuing-certificates/ingress-shim.rst#supported-annotations
