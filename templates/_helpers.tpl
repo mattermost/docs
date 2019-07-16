@@ -191,6 +191,15 @@ Uses `postgres-password` to match upstream postgresql chart when not using an
 {{- default "postgres-password" .Values.global.psql.password.key | quote -}}
 {{- end -}}
 
+{{/*
+Return if prepared statements should be used by postgres.
+Defaults to false
+*/}}
+{{- define "gitlab.psql.preparedStatements" -}}
+{{- default false .Values.global.psql.preparedStatements -}}
+{{- end -}}
+
+
 {{/* ######### ingress templates */}}
 
 {{/*

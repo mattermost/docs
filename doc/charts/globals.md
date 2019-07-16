@@ -127,6 +127,7 @@ global:
   psql:
     host: db.example.com
     port: 5432
+    preparedStatements: false
     password:
       secret: gitlab-postgres
       key: psql-password
