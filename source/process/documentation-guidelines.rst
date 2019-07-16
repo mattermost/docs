@@ -15,3 +15,4 @@ This is the Mattermost style guide for documentation. It acts as a reference for
 .. include:: sg_document-structure.rst
 .. include:: sg_grammar-spelling-mechanics.rst
 .. include:: sg_rest_markup.rst
+.. include:: feature-documentation-template.rst
