@@ -12,7 +12,10 @@ Release Date 2019-08-16
 
 ### Highlights
  - Guest Accounts (EE)?
- - 
+ - Synchronize LDAP Groups to Teams/Channels
+ - ADA screen reader accessibility improvements
+ - Added bidirectional scrolling to land on oldest unread post
+ - Removed beta label from Office365 SSO
 
 ### Improvements
  - Google SSO: Migrated user API endpoint from Google+ API to People API.
@@ -22,6 +25,12 @@ Release Date 2019-08-16
 #### User Interface (UI)
  - Added support for allowing + and . in **System Console > Customization > Posts > Custom URL Schemes**.
  - Add server support for Range on files needed by Safari to reproduce video content.
+ - Added support for adding info cards to the right-hand side section.
+ - Added support for rendering emojis in Message Attachment field titles.
+ - Changed "About" section references to use the site name when it is configured in **System Console -> Custom Branding -> Site Name**.
+ - Combined "Send messages on CTRL+ENTER" with Code block setting.
+ - Added ability to upload files on paste when File constructor is not supported (ie. in Edge or IE11).
+ - Desktop notification won't be sent and doesn't mark channel unread if the comment thread for that channel is open in right-hand sidebar, and Mattermost is in focus.
  
 #### Import
  - Added the ability to import Slack coporate export files (DMs, Group DMs, Private Channels).
@@ -34,11 +43,14 @@ Release Date 2019-08-16
 #### Integrations
  - Added support for interactive dialogs with no elements, which can be, e.g. used for confirmation dialogs.
  - Added support for relative links in interactive message buttons.
- - Added ability to download and install a plugin from a remote url. This way, a user does not need to download the plugin themselves and upload it from their computer.
+ - Added ability to download and install a plugin from a remote url, so that a user does not need to download the plugin themselves and upload it from their computer.
+ - Added support for plugins to override right-hand sidebar.
+ - Added support for plugins to trigger interactive dialogs even without clicking an interactive button/menu or using a slash command.
  
 #### Bot Accounts
  - Added the ability to override left-hand side icon for bot accounts.
  - Added an identifier for compliance exports when a message is posted by a bot account.
+ - Created a new System Console page for existing bot account config.json settings.
  
 #### Command Line Interface (CLI)
  - Added support for converting bot accounts to user accounts with email/password login through the CLI.
