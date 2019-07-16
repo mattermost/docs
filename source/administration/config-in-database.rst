@@ -1,10 +1,14 @@
 Configuration in the Mattermost Database
 =========================================
-A new configuration database was added in `5.10 <https://docs.mattermost.com/administration/changelog.html#configuration-in-database>`_ to allow using the database for the single source of truth of the active configuration of your Mattermost installation. This provides a convenient way to manage configuration changes from the system console and provides a failsafe in high availability deployments when a server in the node goes down.  Additionally, in high availability deployments, configuration changes are applied to all nodes instantaneously as possible removing the need to update individual configuration files on each server and the read-only state of the system console is removed.   
+A new configuration option was added in `5.10 <https://docs.mattermost.com/administration/changelog.html#configuration-in-database>`_ to use the database for the single source of truth of the active configuration of your Mattermost installation. This will change the Mattermost binary from reading the default config.json file to reading the configuration settings stored within a configuration table in the database. Benefits to using this option include: 
+
+  - Conviently manage configuration changes directly from the System Console.
+  - In high availability deployments, configuration changes are applied to all nodes instantaneously as possible removing the need to update individual configuration files on each server and ensures all servers have the correct configurations in the event  a server in the node goes down.
+  - Also in high availability deployments, the read-only state of the system console is removed.   
 
 To change your server from reading the config.json file to using the configuration in database: 
 
-1. Use the ``--config`` `command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost>`_ to change the binary from default config.json file and location  to the config database store by specifying a supported provider uri. Alternatively, the you may specify the ``MM_CONFIG`` variable to configure the same flag. 
+1. Use the ``--config`` `command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost>`_ to change the binary from reading from the default config.json file and location to the config database store by specifying a supported provider uri. Alternatively, the you may specify the ``MM_CONFIG`` variable to configure the same flag. 
   
   a. The provider uri specifies the driver name and data source name used to resolve the database. For example: ``postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10``
   b. Alternatively, you can  use the ``--migrate config`` `command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-config-migrate>`_ for installs that are already using the ``config.json`` default file. 
