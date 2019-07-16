@@ -63,6 +63,10 @@ Release Date 2019-08-16
 ### Bug Fixes
  - Fixed an issue where bulk import got stuck when importing lines were missing the "type" entry.
  - Fixed an issue where disabling email notifications also disabled email invites.
+ - Fixed an issue where Admins were shown a warning of a user's bot being deactivated even if they already were.
+ - Fixed an issue where a bot profile image disappeared when saving bot details.
+ - Fixed an issue where plus sign was not visible on mobile browser view for reacting with a new emoji next to existing reactions.
+ - Fixed an issue in the System Console where the UserID in User Activity Logs changed from email to UserID.
 
 ### config.json
 
