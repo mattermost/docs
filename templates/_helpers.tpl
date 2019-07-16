@@ -199,7 +199,6 @@ Defaults to false
 {{- default false .Values.global.psql.preparedStatements -}}
 {{- end -}}
 
-
 {{/* ######### ingress templates */}}
 
 {{/*

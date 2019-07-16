@@ -109,6 +109,7 @@ psql:
   port: 5432
   database: gitlabhq_production
   username: gitlab
+  preparedStatements: false
   password:
     secret: gitlab-postgres
     key: psql-password
@@ -125,6 +126,10 @@ The port on which to connect to the PostgreSQL server. Defaults to `5432`.
 #### database
 
 The name of the database to use on the PostgreSQL server. This defaults to `gitlabhq_production`.
+
+#### preparedStatements
+
+If prepared statements should be used when communicating with the PostgreSQL server. Defaults to `false`.
 
 #### username
 
