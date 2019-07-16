@@ -11,8 +11,34 @@ Release Date 2019-08-16
 ### Breaking changes since last release
 
 ### Highlights
+ - Guest Accounts (EE)?
+ - 
 
 ### Improvements
+ - Google SSO: Migrated user API endpoint from Google+ API to People API.
+ - Removed max length from LinkMetadata Value so that links can generate OpenGraph previews and be stored in the database.
+ - The config.json file is now generated build time using defaults in code and not in default.json.
+ - Added an identifier for compliance exports when a message is posted by a bot account.
+
+#### User Interface (UI)
+ - Added support for allowing + and . in **System Console > Customization > Posts > Custom URL Schemes**.
+ - Add server support for Range on files needed by Safari to reproduce video content.
+ 
+#### Import
+ - Added the ability to import Slack coporate export files (DMs, Group DMs, Private Channels).
+
+#### Webhooks
+ - Outgoing webhooks now contain and log request ID.
+ - Allow plugins to dismiss posts through the MessageWillBePosted hook.
+ 
+#### Integrations
+ - Added support for interactive dialogs with no elements, which can be, e.g. used for confirmation dialogs.
+ 
+#### Command Line Interface (CLI)
+ - Added support for converting bot accounts to user accounts with email/password login through the CLI.
+ 
+#### Enterprise Edition (EE)
+ - Added support for signing SAML requests to be able to get approved to Infosec.
 
 ### Bug Fixes
 
@@ -22,9 +48,15 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
+ - Changed ``"MinimumLength": 10``, etc. to implement stricter default password policy.
+ - Added ``"Trace": ""`` to output all Elasticsearch information to the log file or console logs as debug-level messages.
+
 ### Database Changes
 
 ### API Changes
+ - Added the promote/demote API endpoint.
+ - Added invite/remove/promote API endpoints.
+ - Added a ``/search_group`` API endpoint to return the group channels whose members' usernames match the search term.
 
 ### Websocket Event Changes
 
