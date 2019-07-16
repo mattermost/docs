@@ -18,7 +18,6 @@ Release Date 2019-08-16
  - Google SSO: Migrated user API endpoint from Google+ API to People API.
  - Removed max length from LinkMetadata Value so that links can generate OpenGraph previews and be stored in the database.
  - The config.json file is now generated build time using defaults in code and not in default.json.
- - Added an identifier for compliance exports when a message is posted by a bot account.
 
 #### User Interface (UI)
  - Added support for allowing + and . in **System Console > Customization > Posts > Custom URL Schemes**.
@@ -26,6 +25,7 @@ Release Date 2019-08-16
  
 #### Import
  - Added the ability to import Slack coporate export files (DMs, Group DMs, Private Channels).
+ - Added support for exporting Global Relay to zip file.
 
 #### Webhooks
  - Outgoing webhooks now contain and log request ID.
@@ -33,14 +33,24 @@ Release Date 2019-08-16
  
 #### Integrations
  - Added support for interactive dialogs with no elements, which can be, e.g. used for confirmation dialogs.
+ - Added support for relative links in interactive message buttons.
+ - Added ability to download and install a plugin from a remote url. This way, a user does not need to download the plugin themselves and upload it from their computer.
+ 
+#### Bot Accounts
+ - Added the ability to override left-hand side icon for bot accounts.
+ - Added an identifier for compliance exports when a message is posted by a bot account.
  
 #### Command Line Interface (CLI)
  - Added support for converting bot accounts to user accounts with email/password login through the CLI.
+ - Extended the config migrate command to handle SAML keys and certificates.
+ - Updated CLI channel list and search commands to show if a channel is private.
  
 #### Enterprise Edition (EE)
  - Added support for signing SAML requests to be able to get approved to Infosec.
 
 ### Bug Fixes
+ - Fixed an issue where bulk import got stuck when importing lines were missing the "type" entry.
+ - Fixed an issue where disabling email notifications also disabled email invites.
 
 ### config.json
 
@@ -57,6 +67,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added the promote/demote API endpoint.
  - Added invite/remove/promote API endpoints.
  - Added a ``/search_group`` API endpoint to return the group channels whose members' usernames match the search term.
+ - Added JSON versions of the KVStore plugin API.
+ - Added GET POST DELETE handlers for /api/v4/bots/<BOT_USER_ID>/icon endpoint.
+
+#### Plugin API
+ - Extended PluginAPI to include ``GetBotIconImage``, ``SetBotIconImage`` and ``DeleteBotIconImage``.
 
 ### Websocket Event Changes
 
