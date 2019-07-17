@@ -8,7 +8,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-- **v5.13.1, released TBD** 
+- **v5.13.1, release date TBD** 
   - Fixing performance issues with fetching posts since scrolling overhaul changed queries. [MM-16936](https://mattermost.atlassian.net/browse/MM-16936)
   - Fixing an issue with OAuth error on API calls to Jira Plugin. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
   - Fixing an issue related to downgrading errors from the OpenGraph API. [MM-17043](https://mattermost.atlassian.net/browse/MM-17043)
@@ -81,7 +81,7 @@ Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.ma
 
 Mattermost v5.12.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-- **v5.12.5, released TBD**
+- **v5.12.5, release date TBD**
   - Fixing an issue with OAuth error on API calls to Jira Plugin. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
 - **v5.12.4, released 2019-07-15**
   - Fixed an issue with missing messages. [MM-16921](https://mattermost.atlassian.net/browse/MM-16921)
@@ -436,6 +436,8 @@ Thank you to everyone who contributed to the Mattermost project in March 2019!
 
 Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
+- **v5.9.3, release date TBD** 
+  - Fixing an issue with unauthenticated LDAP bind.
 - **v5.9.2, released 2019-06-20** 
   - Mattermost v5.9.2 contains a medium level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.9.1, released 2019-04-24** 
