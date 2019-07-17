@@ -30,7 +30,6 @@ Release Date 2019-08-16
  - Changed "About" section references to use the site name when it is configured in **System Console -> Custom Branding -> Site Name**.
  - Combined "Send messages on CTRL+ENTER" with Code block setting.
  - Added ability to upload files on paste when File constructor is not supported (ie. in Edge or IE11).
- - Desktop notification won't be sent and doesn't mark channel unread if the comment thread for that channel is open in right-hand sidebar, and Mattermost is in focus.
  
 #### Import
  - Added the ability to import Slack coporate export files (DMs, Group DMs, Private Channels).
