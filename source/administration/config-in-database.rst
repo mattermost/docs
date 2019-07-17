@@ -1,8 +1,10 @@
 Configuration in the Mattermost Database
 =========================================
-A new configuration option was added in `5.10 <https://docs.mattermost.com/administration/changelog.html#configuration-in-database>`_ to use the database for the single source of truth of the active configuration of your Mattermost installation. This will change the Mattermost binary from reading the default config.json file to reading the configuration settings stored within a configuration table in the database. Benefits to using this option include: 
+A new configuration option was added in `5.10 <https://docs.mattermost.com/administration/changelog.html#configuration-in-database>`_ to use the database for the single source of truth of the active configuration of your Mattermost installation. This will change the Mattermost binary from reading the default config.json file to reading the configuration settings stored within a configuration table in the database. Mattermost has been running our high availability community server on this option since the feature was released.  
 
-  - Conviently manage configuration changes directly from the System Console.
+Benefits to using this option include: 
+
+  - Conveniently manage configuration changes directly from the System Console.
   - In high availability deployments, configuration changes are applied to all nodes instantaneously as possible removing the need to update individual configuration files on each server and ensures all servers have the correct configurations in the event  a server in the node goes down.
   - Also in high availability deployments, the read-only state of the System Console is removed.   
 
