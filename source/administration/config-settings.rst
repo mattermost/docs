@@ -3093,9 +3093,6 @@ Specify the color of the AD/LDAP login button for white labeling purposes. Use a
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-SAML session lengths
-^^^^^^^^^^^^^^^^^^^^^^
-
 AD/LDAP Login Button Border Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile apps.
