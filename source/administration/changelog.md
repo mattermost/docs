@@ -10,6 +10,7 @@ Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.ma
 
 - **v5.13.1, released TBD** 
   - Fixing performance issues with fetching posts since scrolling overhaul changed queries. [MM-16936](https://mattermost.atlassian.net/browse/MM-16936)
+  - Fixing an issue related to downgrading errors from the OpenGraph API. [MM-17043](https://mattermost.atlassian.net/browse/MM-17043)
   - Fixing an issue where "Push Notification Contents" setting is not available in the System Console without a license. [MM-17008](https://mattermost.atlassian.net/browse/MM-17008)
 - **v5.13.0, released 2019-07-16**
   - Original 5.13.0 release
