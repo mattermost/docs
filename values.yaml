@@ -298,6 +298,13 @@ global:
     customCAs: []
     # - secret: custom-CA
     # - secret: more-custom-CAs
+
+  ## kubectl image used by hooks to carry out specific jobs
+  kubectl:
+    image:
+      repository: registry.gitlab.com/gitlab-org/build/cng/kubectl
+      tag: v1.12.10
+      pullSecrets: []
 ## End of global
 
 upgradeCheck:

@@ -1,9 +1,3 @@
-image:
-  repository: registry.gitlab.com/gitlab-org/build/cng/kubectl
-  tag: 1f8690f03f7aeef27e727396927ab3cc96ac89e7
-  pullPolicy: Always
-  pullSecrets: []
-
 # Configure an ACME Issuer in cert-manager. Only used if configure==true
 server: https://acme-v02.api.letsencrypt.org/directory
 

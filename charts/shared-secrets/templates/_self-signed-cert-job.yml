@@ -23,7 +23,7 @@ spec:
         fsGroup: {{ .Values.securityContext.fsGroup }}
       serviceAccountName: {{ template "shared-secrets.serviceAccountName" . }}
       restartPolicy: Never
-{{- include "pullsecrets" .Values.image | indent 6}}
+{{- include "pullsecrets" .Values.selfsign.image | indent 6}}
       initContainers:
       - name: cfssl-self-sign
         image: "{{ .Values.selfsign.image.repository }}:{{ .Values.selfsign.image.tag }}"
@@ -51,7 +51,7 @@ spec:
 {{ toYaml .Values.resources | indent 10 }}
       containers:
       - name: kubectl
-        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        image: {{ include "gitlab.kubectl.image" . | quote }}
         command:
         - /bin/bash
         - -exc

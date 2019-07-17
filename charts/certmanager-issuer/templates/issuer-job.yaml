@@ -18,12 +18,12 @@ spec:
       serviceAccountName: {{ template "fullname" . }}
       {{- end }}
       restartPolicy: OnFailure
-{{- include "pullsecrets" .Values.image | indent 6}}
+{{- include "pullsecrets" .Values.global.kubectl.image | indent 6}}
       containers:
         - name: create-issuer
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: {{ include "gitlab.kubectl.image" . | quote }}
           command: ['/bin/bash', '/scripts/create-issuer', '/scripts/issuer.yml']
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{ template "gitlab.imagePullPolicy" . }}
           volumeMounts:
             - name: scripts
               mountPath: /scripts
