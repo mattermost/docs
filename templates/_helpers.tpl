@@ -196,7 +196,7 @@ Return if prepared statements should be used by postgres.
 Defaults to false
 */}}
 {{- define "gitlab.psql.preparedStatements" -}}
-{{- default false .Values.global.psql.preparedStatements -}}
+{{- eq true .Values.global.psql.preparedStatements -}}
 {{- end -}}
 
 {{/* ######### ingress templates */}}
