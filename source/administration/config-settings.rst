@@ -1640,9 +1640,9 @@ Posts
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable Link Previews
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Enables users to display a preview of website content below the message, if available. When true, website previews can be enabled from Account Settings > Display > Website Link Previews.
+**True**: Enables users to display a preview of website content, image links and YouTube links below the message when available. When true, website previews can be enabled from **Account Settings > Display > Website Link Previews**. Link previews are requested by the server, meaning the server must be connected to the internet and have access through the firewall (if applicable) to the websites from which previews are expected, such as https://gfycat.com/, https://www.youtube.com/, https://imgur.com/ and any other websites that users may share frequently. 
 
-**False**: Website link previews are disabled.
+**False**: Website link previews, image link previews and YouTube previews are disabled. The server does not request metadata for any links sent in messages. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableLinkPreviews": false`` with options ``true`` and ``false``.                                                       |
@@ -2739,7 +2739,7 @@ GIF (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable GIF Picker
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Allow users to select GIFs from the emoji picker via a Gfycat integration.
+**True**: Allow users to select GIFs from the emoji picker via a Gfycat integration.  
 
 **False**: GIFs cannot be selected in the emoji picker.
 
@@ -2748,8 +2748,7 @@ Enable GIF Picker
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-
-  Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work.
+   `Link previews <https://docs.mattermost.com/administration/config-settings.html#enable-link-previews>`_ must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work.
 
 Gfycat API Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^
