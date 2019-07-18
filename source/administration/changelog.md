@@ -4,23 +4,27 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v5.14 - Feature Release
+## Release v5.14 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 Release Date 2019-08-16
 
 ### Breaking changes since last release
 
+ - **Enable Plugin Health Check** removed from ``config.json``. Instead, all plugins are now automatically monitored and restarted if a plugin has crashed or is deemed unhealthy. If a plugin crashes three times within an hour, the server automatically deactivates the plugin.
+
+**IMPORTANT:** If you upgrade from a release earlier than 5.12, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
 ### Highlights
- - Guest Accounts (EE)?
- - Synchronize LDAP Groups to Teams/Channels
+ - Guest Accounts (EE)
+ - Synchronize LDAP Groups to Teams/Channels (EE)
  - ADA screen reader accessibility improvements
  - Added bidirectional scrolling to land on oldest unread post
+ - Jira V2.1
+ - Pre-packaged plugins (Jenkins, Walltime)
+ - Framework: HA - plugin uploads
  - Removed beta label from Office365 SSO
 
 ### Improvements
- - Google SSO: Migrated user API endpoint from Google+ API to People API.
- - Removed max length from LinkMetadata Value so that links can generate OpenGraph previews and be stored in the database.
- - The config.json file is now generated build time using defaults in code and not in default.json.
 
 #### User Interface (UI)
  - Added support for allowing + and . in **System Console > Customization > Posts > Custom URL Schemes**.
@@ -56,6 +60,10 @@ Release Date 2019-08-16
  - Extended the config migrate command to handle SAML keys and certificates.
  - Updated CLI channel list and search commands to show if a channel is private.
  
+#### Administration
+ - Removed max length from LinkMetadata Value so that links can generate OpenGraph previews and be stored in the database.
+ - The config.json file is now generated build time using defaults in code and not in default.json.
+ 
 #### Enterprise Edition (EE)
  - Added support for signing SAML requests to be able to get approved to Infosec.
 
@@ -79,6 +87,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Database Changes
 
 ### API Changes
+ - Google SSO: Migrated user API endpoint from Google+ API to People API.
  - Added the promote/demote API endpoint.
  - Added invite/remove/promote API endpoints.
  - Added a ``/search_group`` API endpoint to return the group channels whose members' usernames match the search term.
@@ -91,6 +100,16 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Websocket Event Changes
 
 ### Known Issues
+ - Buttons inside ephemeral messages are not clickable / functional on the mobile app.
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
 
 ### Contributors
 
