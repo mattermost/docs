@@ -1152,7 +1152,7 @@ After changing this setting, the setting will take effect after the next time th
 Session length for SSO authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This setting defines the session length for SSO authentication, such as GitLab and SAML.
+This setting defines the session length for SSO authentication, such as SAML, GitLab and OAuth 2.0.
 
 Set the number of days from the last time a user entered their credentials to the expiry of the user's session. If the authentication method is SAML, GitLab or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab or with OAuth 2.0.
 
