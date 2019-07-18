@@ -362,7 +362,7 @@ A 32-character key for encrypting and decrypting sensitive fields in the databas
 When using High Availability, the salt must be identical in each instance of Mattermost.
 
 No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to
-encrypt data being stored at rest in the database.
+encrypt data stored at rest in the database.
 
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
