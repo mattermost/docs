@@ -13,12 +13,12 @@ AWS CloudWatch SNS
  - Get operational data and actionable insights to monitor Mattermost in order to observe and respond to system-wide changes in performance.
  - Source code + docs: https://github.com/mattermost/mattermost-plugin-aws-SNS
 
-PagerDuty
+Nagios
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
- - Get automatic information regarding the state of an incident to Mattermost, developed by PagerDuty.
- - Send incident updates for any PagerDuty Service to any Mattermost channel to optimize incident resolution time and process.
- - Docs: https://www.pagerduty.com/docs/guides/mattermost-integration-guide/
+ - Send notifications from a Nagios monitoring instance to any Mattermost channel for troubleshooting, developed by NDrive.
+ - Can be used for other compatible software such as Icinga.
+ - Source code + docs: https://github.com/NDrive/nagios-mattermost
 
 Splunk
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -26,6 +26,13 @@ Splunk
  - Monitor a Mattermost environment.
  - Send application performance insights to any Mattermost channel for better troubleshooting and monitoring, and to increase system uptime.
  - Docs: http://datatomix.com/?p=433, written by Christian Johannsen.
+
+PagerDuty
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+ - Get automatic information regarding the state of an incident to Mattermost, developed by PagerDuty.
+ - Send incident updates for any PagerDuty Service to any Mattermost channel to optimize incident resolution time and process.
+ - Docs: https://www.pagerduty.com/docs/guides/mattermost-integration-guide/
 
 Opsgenie
 ~~~~~~~~~~~~~~~~~~~~~~~~
