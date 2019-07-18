@@ -1,7 +1,7 @@
-Net Promoter Score Survey
-=========================
+User Satisfaction Surveys
+==========================
 
-Mattermost is introducing in-product feedback surveys beginning in v5.12. Feedback is collected in the form of a Net Promoter Score survey and is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services.
+Mattermost is introducing in-product feedback surveys beginning in v5.12. Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://github.com/mattermost/mattermost-server/blob/master/build/PRIVACY_POLICY.md>`_ for more information on the collection and use of information received through our services.
 
 .. contents::
   :depth: 2
@@ -12,11 +12,11 @@ Administration
 --------------
 Is the survey enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The Net Promoter Score (NPS) survey is a prepackaged plugin, and surveys are enabled by default on all servers when upgrading to v5.12 or later. However, the plugin will not be activated on any servers that have `Error and Diagnostic Reporting <https://docs.mattermost.com/administration/telemetry.html>`_ disabled, meaning no surveys or data collection occurs.
+The user satisfaction survey is a prepackaged plugin, and surveys are enabled by default on all servers when upgrading to v5.12 or later. However, the plugin will not be activated on any servers that have `Error and Diagnostic Reporting <https://docs.mattermost.com/administration/telemetry.html>`_ disabled, meaning no surveys or data collection occurs.
 
 How can surveys be disabled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Disabling the **Net Promoter Score** plugin from **System Console > Plugins (Beta) > Plugin Management** will disable surveys and all data collection by the plugin. If surveys have been disabled from the plugin configuration in **System Console > Plugins (Beta) > Net Promoter Score** but the plugin itself is still enabled, surveys will not be scheduled but users can still send written feedback by messaging Surveybot.
+Disabling the **User Satisfaction Surveys** plugin from **System Console > Plugins (Beta) > Plugin Management** will disable surveys and all data collection by the plugin. If surveys have been disabled from the plugin configuration in **System Console > Plugins (Beta) > User Satisfaction Surveys** but the plugin itself is still enabled, surveys will not be scheduled but users can still send written feedback by messaging Surveybot.
 
 If the plugin or surveys in the plugin configuration are disabled, they will remain disabled for subsequent server upgrades.
 
@@ -24,12 +24,12 @@ When is the survey scheduled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Users will receive surveys 21 days after every server upgrade starting with v5.12, assuming the following conditions are true:
 
-- NPS plugin is enabled in **System Console > Plugins (Beta) > Plugin Management**
-- NPS survey is enabled in the plugin configuration in **System Console > Plugins (Beta) > Net Promoter Score**
+- User Satisfaction Surveys plugin is enabled in **System Console > Plugins (Beta) > Plugin Management**
+- Surveys are enabled in the plugin configuration in **System Console > Plugins (Beta) > User Satisfaction Surveys**
 - User account is greater than 21 days old
 - User has not completed a survey in the last 90 days
 - User has not been sent a survey in the last 90 days
-- Current server version is greater than the server version of the last NPS survey, excluding dot releases
+- Current server version is greater than the server version of the last survey, excluding dot releases
 
 The above conditions mean that at maximum frequency a user will receive a survey every 90 days, assuming the server is upgraded within that time period. 
 
@@ -74,4 +74,4 @@ Data is only collected when a user selects a score or provides written feedback 
 Will this data be sent through my firewall?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If Mattermost is hosted in a private network with firewall then data from the NPS plugin is not sent unless outbound connections are allowed or specifically configured for this plugin. 
+If Mattermost is hosted in a private network with firewall then data from the User Satisfaction Surveys plugin is not sent unless outbound connections are allowed or specifically configured for this plugin. 
