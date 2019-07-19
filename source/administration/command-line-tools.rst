@@ -106,7 +106,7 @@ mattermost
     .. code-block:: none
 
       -c, --config {string}   Configuration file to use. (default "config.json")
-      --disableconfigwatch {boolean}   When set config.json will not be loaded from disk when the file is changed (default "false")
+      --disableconfigwatch {boolean}  When true, the config.json file will not be reloaded automatically when another process changes it (default "false")
 
   Child Commands
     -  `mattermost channel`_ - Management of channels
