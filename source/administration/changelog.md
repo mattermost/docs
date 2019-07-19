@@ -84,8 +84,8 @@ Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.ma
 
 Mattermost v5.12.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-- **v5.12.5, release date TBD**
-  - Fixing an issue with Jira plugin where creating or attaching to Jira issues fails due to GDPR changes released by Atlassian. Affects Jira Cloud only, not Jira Server or Jira Data Center. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
+- **v5.12.5, released 2019-07-19**
+  - Fixed an issue with Jira plugin where creating or attaching to Jira issues failed due to GDPR changes released by Atlassian. Affected Jira Cloud only, not Jira Server or Jira Data Center. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
 - **v5.12.4, released 2019-07-15**
   - Fixed an issue with missing messages. [MM-16921](https://mattermost.atlassian.net/browse/MM-16921)
 - **v5.12.3, released 2019-07-09**
@@ -223,9 +223,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``KVCompareAndSet(key string, old []byte, new []byte)`` to Plugin API to add support for transactional semantics with KV Store in plugin framework.
 
 ### Known Issues
- - Creating or attaching to Jira issues fails for Jira Cloud.  This is scheduled to be resolved in v5.12.5.
- - Messages related to OpenGraph API are unnecessarily reported as errors in the server logs. This is scheduled to be resolved in v5.13.1.
- - **Push Notification Contents** setting is not available in the System Console in servers without an Enterprise Edition license. This is scheduled to be resolved in v5.13.1.
+ - Messages related to OpenGraph API are unnecessarily reported as errors in the server logs. This is resolved in v5.13.1.
+ - **Push Notification Contents** setting is not available in the System Console in servers without an Enterprise Edition license. This is resolved in v5.13.1.
  - Channels with large message history may have performance issues. This is scheduled to be resolved in v5.13.2.
  - **Site Configuration > Notifications > Email Notification Contents** is missing from E10 servers. This is scheduled to be resolved in v5.13.2.
  - Changing announcement banner overlaps content. This is scheduled to be resolved in v5.13.2.
