@@ -32,7 +32,7 @@ Set Up Guide
 
 To manage plugins, go to **System Console > Plugins > Plugin Management**. From here, you can:
 
- - Enable or disable prepackaged plugins.
+ - Enable or disable prepackaged plugins
  - Install and manage custom plugins
 
 .. note::
