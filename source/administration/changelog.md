@@ -49,6 +49,7 @@ Release Date 2019-08-16
 #### Webhooks
  - Outgoing webhooks now contain and log request ID.
  - Added support for plugins to dismiss posts through the ``MessageWillBePosted`` hook.
+ - Added an "emoji_icon" field to incoming webhooks.
  
 #### Integrations
  - Added support for interactive dialogs with no elements, which can be, e.g. used for confirmation dialogs.
