@@ -7,7 +7,6 @@ Benefits to using this option include:
   - Conveniently manage configuration changes directly from the System Console, even in High Availability deployments and read-only containerized environments.
   - Ensure all servers in a High Availability deployment have the same configuration, even when new servers are added to the cluster.
   - Automatically deploy SAML certificates and keys to all servers in the cluster.
-  - Also in high availability deployments, the read-only state of the System Console is removed.   
 
 To change your server from reading the config.json file to using the configuration in database: 
 
