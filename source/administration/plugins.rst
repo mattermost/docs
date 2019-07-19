@@ -49,7 +49,7 @@ As noted above, installing a custom plugin introduces some risk. As a result, pl
 
 To enable plugin uploads, manually set **PluginSettings > EnableUploads** to ``true`` in your configuration and restart your server. You can disable plugin uploads at any time without affecting previously uploaded plugins.
 
-With plugin uploads enabled, navigate to **System Console > Plugins > Management** and upload a plugin bundle. Plugin bundles are `*.tar.gz` files containing the server executables and webapp resources for the plugin. You may also specify a URL to install a plugin bundle from a remote source.
+With plugin uploads enabled, navigate to **System Console > Plugins > Management** and upload a plugin bundle. Plugin bundles are ``*.tar.gz`` files containing the server executables and webapp resources for the plugin. You may also specify a URL to install a plugin bundle from a remote source.
 
 Custom plugins may also be installed via the `command line interface <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-plugin>`__.
 
