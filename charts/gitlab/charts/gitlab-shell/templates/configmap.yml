@@ -32,7 +32,7 @@ data:
       host: {{ template "gitlab.redis.host" . }}
       port: {{ template "gitlab.redis.port" . }}
       {{- if .Values.global.redis.password.enabled }}
-      pass: "<%= File.read("/etc/gitlab-secrets/redis/password") %>"
+      pass: "<%= File.read("/etc/gitlab-secrets/redis/password").strip.dump[1..-2] %>"
       {{- end }}
       database: nil
       namespace: resque:gitlab
