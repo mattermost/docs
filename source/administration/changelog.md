@@ -8,52 +8,61 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Release Date 2019-08-16
 
-### Breaking changes since last release
+### Compatibility
 
+#### Removed and Deprecated Features
+
+ - We are removing support for Internet Explorer (IE11) in Mattermost v5.16.0, which releases on October 16, 2019. Learn more in our [forum post](https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575).
  - **Enable Plugin Health Check** removed from ``config.json``. Instead, all plugins are now automatically monitored and restarted if a plugin has crashed or is deemed unhealthy. If a plugin crashes three times within an hour, the server automatically deactivates the plugin.
+ 
+### Breaking Changes
+ - **Change related to viewing webhooks**
 
 **IMPORTANT:** If you upgrade from a release earlier than 5.12, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
- - Guest Accounts (EE)
- - Synchronize LDAP Groups to Teams/Channels (EE)
- - ADA screen reader accessibility improvements
- - Added bidirectional scrolling to land on oldest unread post
- - Jira V2.1
- - Pre-packaged plugins (Jenkins, Walltime)
- - Framework: HA - plugin uploads
- - Removed beta label from Office365 SSO
+
+#### Guest Accounts (EE)
+#### Synchronize LDAP Groups to Teams/Channels (EE)
+#### ADA screen reader accessibility improvements
+#### Added bidirectional scrolling to land on oldest unread post
+#### Jira V2.1
+#### Pre-packaged plugins (Jenkins, Walltime)
+#### Framework: HA - plugin uploads
+#### Removed beta label from Office365 SSO
 
 ### Improvements
 
 #### User Interface (UI)
- - Added support for allowing + and . in **System Console > Customization > Posts > Custom URL Schemes**.
- - Add server support for Range on files needed by Safari to reproduce video content.
- - Added support for adding info cards to the right-hand side section.
+ - Added support for allowing ``+`` and ``.`` in **System Console > Customization > Posts > Custom URL Schemes**.
+ - Added support for Range on files needed by Safari to view videos.
+ - Added ability to add info cards to the right-hand side section.
  - Added support for rendering emojis in Message Attachment field titles.
- - Changed "About" section references to use the site name when it is configured in **System Console -> Custom Branding -> Site Name**.
- - Combined "Send messages on CTRL+ENTER" with Code block setting.
- - Added ability to upload files on paste when File constructor is not supported (ie. in Edge or IE11).
+ - Changed "About" section references to use the site name when it is configured in **System Console > Custom Branding > Site Name**.
+ - Combined "Send messages on CTRL+ENTER" with code block setting.
+ - Added ability to upload files on paste when file constructor is not supported (ie. in Edge or IE11).
  
-#### Import
- - Added the ability to import Slack coporate export files (DMs, Group DMs, Private Channels).
+#### Import/Export
+ - Added the ability to import Slack corporate export files with direct messages, group messages and private channels.
  - Added support for exporting Global Relay to zip file.
 
 #### Webhooks
  - Outgoing webhooks now contain and log request ID.
- - Allow plugins to dismiss posts through the MessageWillBePosted hook.
+ - Added support for plugins to dismiss posts through the ``MessageWillBePosted`` hook.
  
 #### Integrations
  - Added support for interactive dialogs with no elements, which can be, e.g. used for confirmation dialogs.
  - Added support for relative links in interactive message buttons.
- - Added ability to download and install a plugin from a remote url, so that a user does not need to download the plugin themselves and upload it from their computer.
+ 
+#### Plugins
+ - Added ability to download and install a plugin from a remote url so that a user does not need to download the plugin themselves and upload it from their computer.
  - Added support for plugins to override right-hand sidebar.
  - Added support for plugins to trigger interactive dialogs even without clicking an interactive button/menu or using a slash command.
  
 #### Bot Accounts
  - Added the ability to override left-hand side icon for bot accounts.
  - Added an identifier for compliance exports when a message is posted by a bot account.
- - Created a new System Console page for existing bot account config.json settings.
+ - Created a new System Console page for existing bot account ``config.json`` settings.
  
 #### Command Line Interface (CLI)
  - Added support for converting bot accounts to user accounts with email/password login through the CLI.
@@ -61,20 +70,20 @@ Release Date 2019-08-16
  - Updated CLI channel list and search commands to show if a channel is private.
  
 #### Administration
- - Removed max length from LinkMetadata Value so that links can generate OpenGraph previews and be stored in the database.
- - The config.json file is now generated build time using defaults in code and not in default.json.
+ - Removed maximum length from ``LinkMetadata`` value so that links can generate OpenGraph previews and be stored in the database.
+ - The config.json file is now generated with build time using defaults in code and not in ``default.json``.
  
 #### Enterprise Edition (EE)
- - Added support for signing SAML requests to be able to get approved to Infosec.
+ - Added support for signing SAML requests to be able to be approved to Infosec.
 
 ### Bug Fixes
  - Fixed an issue where bulk import got stuck when importing lines were missing the "type" entry.
  - Fixed an issue where disabling email notifications also disabled email invites.
  - Fixed an issue where Admins were shown a warning of a user's bot being deactivated even if they already were.
  - Fixed an issue where a bot profile image disappeared when saving bot details.
- - Fixed an issue where plus sign was not visible on mobile browser view for reacting with a new emoji next to existing reactions.
+ - Fixed an issue where plus-sign was not visible on mobile browser view for reacting with a new emoji next to existing reactions.
  - Fixed an issue in the System Console where the UserID in User Activity Logs changed from email to UserID.
- - Fixed an issue where user got a notification to add a bot to a channel on mentioning it.
+ - Fixed an issue where user got a notification to add a bot to a channel when mentioning it.
 
 ### config.json
 
@@ -88,10 +97,16 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Database Changes
 
 ### API Changes
- - Google SSO: Migrated user API endpoint from Google+ API to People API.
- - Added the promote/demote API endpoint.
+ - Migrated user API endpoint from Google+ API to People API.
+ - Added promote/demote API endpoint.
  - Added invite/remove/promote API endpoints.
- - Added a ``/search_group`` API endpoint to return the group channels whose members' usernames match the search term.
+ - Added ``/search_group`` API endpoint to return the group channels whose members' usernames match the search term.
+ - Added "users who will be removed from team" API endpoint.
+ - Added "users who will be removed from channel" API endpoint.
+ - Added API to retrieve paginated list of teams, including total count.
+ - Added API to retrieve paginated list of channels, including total count.
+ - Added API to get users modified since a given time.
+ - Added "GET /posts/unread" API to support landing on the last unread post.
  - Added JSON versions of the KVStore plugin API.
  - Added GET POST DELETE handlers for /api/v4/bots/<BOT_USER_ID>/icon endpoint.
 
