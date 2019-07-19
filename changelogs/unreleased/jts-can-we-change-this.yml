@@ -1,0 +1,5 @@
+---
+title: 'Registry: add loadBalancerIP configuration, template clusterIP'
+merge_request: 874
+author:
+type: changed

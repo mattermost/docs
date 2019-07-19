@@ -176,8 +176,17 @@ These settings will be populated by [values.yaml](https://gitlab.com/charts/gitl
 
 By default, the Service is configured as:
 
-- `type: ClusterIP` on `0.0.0.0`, restricting access to the internal network of the Kubernetes cluster.
-- `name:` is set to `registry`.
+| Name              | Type    | Default | Description |
+|:----------------- |:-------:|:------- |:----------- |
+| `name`            | String  | `registry` | Configures the name of the service |
+| `type`            | String  | `ClusterIP`| Configures the type of the service |
+| `externalPort`    | Int     | `5000`     | Port exposed by the Service |
+| `internalPort`    | Int     | `5000`     | Port utilized by the Pod to accept
+request from the service |
+| `clusterIP`       | String  | `null`      | Allows one to configure a custom
+Cluster IP as necessary |
+| `loadBalancerIP`  | String  | `null`      | Allows one to configure a custom
+LoadBalancer IP address as necessary |
 
 ## Configuring the `ingress`
 
