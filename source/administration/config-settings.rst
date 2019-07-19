@@ -319,6 +319,9 @@ A 32-character key for encrypting and decrypting sensitive fields in the databas
 
 When using High Availability, the salt must be identical in each instance of Mattermost.
 
+No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to
+encrypt data stored at rest in the database.
+
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
 +------------------------------------------------------------------------------------------+
@@ -1078,7 +1081,10 @@ After changing this setting, the new session length will take effect after the n
 
 Session length for SSO authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session. If the authentication method is SAML or GitLab, the user may automatically be logged back in to Mattermost if they are already logged in to SAML or GitLab.
+
+This setting defines the session length for SSO authentication, such as SAML, GitLab and OAuth 2.0.
+
+Set the number of days from the last time a user entered their credentials to the expiry of the user's session. If the authentication method is SAML, GitLab or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab or with OAuth 2.0.
 
 After changing this setting, the setting will take effect after the next time the user enters their credentials.
 
