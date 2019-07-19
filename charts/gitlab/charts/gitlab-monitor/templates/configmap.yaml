@@ -17,7 +17,7 @@ data:
         methods:
           - probe_db
         opts:
-          connection_string: dbname={{ template "gitlab.psql.database" . }} user={{ template "gitlab.psql.username" . }} host={{ template "gitlab.psql.host" .  }} port={{ template "gitlab.psql.port" . }} password='<%= File.read("/etc/gitlab/postgres/psql-password") %>'
+          connection_string: dbname={{ template "gitlab.psql.database" . }} user={{ template "gitlab.psql.username" . }} host={{ template "gitlab.psql.host" .  }} port={{ template "gitlab.psql.port" . }} password='<%= File.read("/etc/gitlab/postgres/psql-password").strip.gsub(/[\'\\]/) { |esc| '\\' + esc } %>'
       database:
         multiple: true
         ci_builds:
