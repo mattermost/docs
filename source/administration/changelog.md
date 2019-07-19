@@ -223,6 +223,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``KVCompareAndSet(key string, old []byte, new []byte)`` to Plugin API to add support for transactional semantics with KV Store in plugin framework.
 
 ### Known Issues
+ - Creating or attaching to Jira issues fails for Jira Cloud. This is resolved in v5.12.5.
  - Messages related to OpenGraph API are unnecessarily reported as errors in the server logs. This is resolved in v5.13.1.
  - **Push Notification Contents** setting is not available in the System Console in servers without an Enterprise Edition license. This is resolved in v5.13.1.
  - Channels with large message history may have performance issues. This is scheduled to be resolved in v5.13.2.
