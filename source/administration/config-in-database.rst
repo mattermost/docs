@@ -4,7 +4,7 @@ A new configuration option was added in `5.10 <https://docs.mattermost.com/admin
 
 Benefits to using this option include: 
 
-  - Conveniently manage configuration changes directly from the System Console.
+  - Conveniently manage configuration changes directly from the System Console, even in High Availability deployments and read-only containerized environments.
   - In high availability deployments, configuration changes are applied to all nodes instantaneously as possible removing the need to update individual configuration files on each server and ensures all servers have the correct configurations in the event  a server in the node goes down.
   - Also in high availability deployments, the read-only state of the System Console is removed.   
 
