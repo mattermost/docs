@@ -8,11 +8,14 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-- **v5.13.1, release date TBD** 
-  - Fixing performance issues with fetching posts since scrolling overhaul changed queries. [MM-16936](https://mattermost.atlassian.net/browse/MM-16936)
-  - Fixing an issue with OAuth error on API calls to Jira Plugin. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
-  - Fixing an issue related to downgrading errors from the OpenGraph API. [MM-17043](https://mattermost.atlassian.net/browse/MM-17043)
-  - Fixing an issue where "Push Notification Contents" setting is not available in the System Console without a license. [MM-17008](https://mattermost.atlassian.net/browse/MM-17008)
+- **v5.13.2, release date TBD** 
+  - Fixing performance issues in channels with large message history due to a change made to posts query. [MM-16936](https://mattermost.atlassian.net/browse/MM-16936)
+  - Fixing an issue where **Site Configuration > Notifications > Email Notification Contents** is missing from E10 servers. [MM-17114](https://mattermost.atlassian.net/browse/MM-17114)
+  - Fixing an issue where announcement banner overlaps content.
+- **v5.13.1, release date TBD**
+  - Fixing an issue with Jira plugin where creating or attaching to Jira issues fails due to GDPR changes released by Atlassian. Affects Jira Cloud only, not Jira Server or Jira Data Center. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
+  - Fixing an issue in server logs where messages related to OpenGraph API are unnecessarily reported as errors. [MM-17043](https://mattermost.atlassian.net/browse/MM-17043)
+  - Fixing an issue in the System Console without an Enterprise Edition license where **Push Notification Contents** setting is not available. [MM-17008](https://mattermost.atlassian.net/browse/MM-17008)
 - **v5.13.0, released 2019-07-16**
   - Original 5.13.0 release
 
@@ -82,10 +85,7 @@ Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.ma
 Mattermost v5.12.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 - **v5.12.5, release date TBD**
-  - Fixing performance issues with fetching posts since scrolling overhaul changed queries. [MM-16936](https://mattermost.atlassian.net/browse/MM-16936)
-  - Fixing an issue with OAuth error on API calls to Jira Plugin. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
-  - Fixing an issue related to downgrading errors from the OpenGraph API. [MM-17043](https://mattermost.atlassian.net/browse/MM-17043)
-  - Fixing an issue where "Push Notification Contents" setting is not available in the System Console without a license. [MM-17008](https://mattermost.atlassian.net/browse/MM-17008)
+  - Fixing an issue with Jira plugin where creating or attaching to Jira issues fails due to GDPR changes released by Atlassian. Affects Jira Cloud only, not Jira Server or Jira Data Center. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
 - **v5.12.4, released 2019-07-15**
   - Fixed an issue with missing messages. [MM-16921](https://mattermost.atlassian.net/browse/MM-16921)
 - **v5.12.3, released 2019-07-09**
@@ -223,6 +223,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``KVCompareAndSet(key string, old []byte, new []byte)`` to Plugin API to add support for transactional semantics with KV Store in plugin framework.
 
 ### Known Issues
+ - Creating or attaching to Jira issues fails for Jira Cloud.  This is scheduled to be resolved in v5.12.5.
+ - Messages related to OpenGraph API are unnecessarily reported as errors in the server logs. This is scheduled to be resolved in v5.13.1.
+ - **Push Notification Contents** setting is not available in the System Console in servers without an Enterprise Edition license. This is scheduled to be resolved in v5.13.1.
+ - Channels with large message history may have performance issues. This is scheduled to be resolved in v5.13.2.
+ - **Site Configuration > Notifications > Email Notification Contents** is missing from E10 servers. This is scheduled to be resolved in v5.13.2.
+ - Changing announcement banner overlaps content. This is scheduled to be resolved in v5.13.2.
  - Buttons inside ephemeral messages are not clickable / functional on the mobile app.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
