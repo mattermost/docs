@@ -19,7 +19,7 @@ To change your server from reading the config.json file to using the configurati
 
 With configuration in the database enabled, any changes to the configuration will recorded the new, full configuration as a new row in the `Configurations` table. Note that `ClusterSettings.ReadOnlyConfig` is ignored when using configuration in the database, enabling full use of the system console.
 
-Any environment variable configurations will continue to override settings from config.json, triggering them to appear read-only in the system console. When reading the configuration in the database, ClusterSettings.ReadOnlyConfig setting is automatically disabled as the database configuration ignores the config read only flag. 
+Note that environment variable overrides remain fully supported, and will no longer be written back to the configuration when a different change is saved.
 
 .. note::
     If using SAML, ensure the SAML certificates and keys are accessible to also migrate into the database.
