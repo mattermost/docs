@@ -9,7 +9,7 @@ Mattermost configuration settings are maintained in the configuration file ``con
 The default location of ``config.json`` is in the ``mattermost/config`` directory. Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
 
 **Configuration in Database**
-Storing configuration in the database is supported as experimental in v5.10 and later.  Please see for more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_.  
+Storing configuration in the database is supported in v5.10 and later.  Please see for more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_.  
 
 **Environment Variables**
 Starting in Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
