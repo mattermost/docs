@@ -1,6 +1,8 @@
 Configuration in the Mattermost Database
 =========================================
-A new configuration option was added in `5.10 <https://docs.mattermost.com/administration/changelog.html#configuration-in-database>`_ to use the database for the single source of truth of the active configuration of your Mattermost installation. This will change the Mattermost binary from reading the default config.json file to reading the configuration settings stored within a configuration table in the database. Mattermost has been running our high availability community server on this option since the feature was released.  
+A new configuration option was added in `5.10 <https://docs.mattermost.com/administration/changelog.html#configuration-in-database>`_ to use the database for the single source of truth of the active configuration of your Mattermost installation. This will change the Mattermost binary from reading the default config.json file to reading the configuration settings stored within a configuration table in the database. 
+
+Mattermost has been running our community server on this option since the feature was released and recommends using it to those in High Availability deployments.  
 
 Benefits to using this option include: 
 
@@ -22,11 +24,11 @@ To migrate an existing config.json into the database, use the ``config migrate``
 
 Any existing SAML certificates and private keys will also be migrated to the database.
 
-Addtitionally, to disable automatically watching this default config.json and effecting changes, set the ``--disableconfigwatch`` `flag <https://docs.mattermost.com/administration/command-line-tools.html#mattermost>`_ to true.
+Addtitionally, to disable automatically watching the default config.json and effecting changes, set the ``--disableconfigwatch`` `flag <https://docs.mattermost.com/administration/command-line-tools.html#mattermost>`_ to true.
 
 With configuration in the database enabled, any changes to the configuration are recorded to the `Configurations` table. Furthermore, `ClusterSettings.ReadOnlyConfig` is ignored, enabling full use of the System Console.
 
-Note that environment variable overrides remain fully supported, and will no longer be written back to the configuration when a different change is saved.
+Note that environment variable overrides remain fully supported, and will no longer be written back to the configuration when a change is saved.
 
 
 Troubleshooting
