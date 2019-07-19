@@ -84,6 +84,7 @@ Release Date 2019-08-16
  - Fixed an issue where plus-sign was not visible on mobile browser view for reacting with a new emoji next to existing reactions.
  - Fixed an issue in the System Console where the UserID in User Activity Logs changed from email to UserID.
  - Fixed an issue where user got a notification to add a bot to a channel when mentioning it.
+ - Fixed an issue where permanenently deleting a bot user didn't remove it from the bots table.
 
 ### config.json
 
