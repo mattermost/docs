@@ -82,7 +82,10 @@ Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.ma
 Mattermost v5.12.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 - **v5.12.5, release date TBD**
+  - Fixing performance issues with fetching posts since scrolling overhaul changed queries. [MM-16936](https://mattermost.atlassian.net/browse/MM-16936)
   - Fixing an issue with OAuth error on API calls to Jira Plugin. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
+  - Fixing an issue related to downgrading errors from the OpenGraph API. [MM-17043](https://mattermost.atlassian.net/browse/MM-17043)
+  - Fixing an issue where "Push Notification Contents" setting is not available in the System Console without a license. [MM-17008](https://mattermost.atlassian.net/browse/MM-17008)
 - **v5.12.4, released 2019-07-15**
   - Fixed an issue with missing messages. [MM-16921](https://mattermost.atlassian.net/browse/MM-16921)
 - **v5.12.3, released 2019-07-09**
