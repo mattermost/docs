@@ -12,10 +12,10 @@ Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.ma
   - Fixing performance issues in channels with large message history due to a change made to posts query. [MM-16936](https://mattermost.atlassian.net/browse/MM-16936)
   - Fixing an issue where **Site Configuration > Notifications > Email Notification Contents** is missing from E10 servers. [MM-17114](https://mattermost.atlassian.net/browse/MM-17114)
   - Fixing an issue where announcement banner overlaps content.
-- **v5.13.1, release date TBD**
-  - Fixing an issue with Jira plugin where creating or attaching to Jira issues fails due to GDPR changes released by Atlassian. Affects Jira Cloud only, not Jira Server or Jira Data Center. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
-  - Fixing an issue in server logs where messages related to OpenGraph API are unnecessarily reported as errors. [MM-17043](https://mattermost.atlassian.net/browse/MM-17043)
-  - Fixing an issue in the System Console without an Enterprise Edition license where **Push Notification Contents** setting is not available. [MM-17008](https://mattermost.atlassian.net/browse/MM-17008)
+- **v5.13.1, released 2019-07-19**
+  - Fixed an issue with Jira plugin where creating or attaching to Jira issues failed due to GDPR changes released by Atlassian. Affected Jira Cloud only, not Jira Server or Jira Data Center. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
+  - Fixed an issue in server logs where messages related to OpenGraph API were unnecessarily reported as errors. [MM-17043](https://mattermost.atlassian.net/browse/MM-17043)
+  - Fixed an issue in the System Console without an Enterprise Edition license where **Push Notification Contents** setting was not available. [MM-17008](https://mattermost.atlassian.net/browse/MM-17008)
 - **v5.13.0, released 2019-07-16**
   - Original 5.13.0 release
 
