@@ -65,6 +65,7 @@ Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.ma
 ### Known Issues
 
  - Scroll position is not at the new message indicator on switching channels with unreads between 30-60.
+ - Titles for webhooks, commands and OAuth apps are no longer bolded in the System Console.
  - Buttons inside ephemeral messages are not clickable / functional on the mobile app.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
