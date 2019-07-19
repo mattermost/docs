@@ -15,7 +15,6 @@ After a release reaches its end-of-life, no further updates will be provided for
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <http://eepurl.com/dCKn2P>`__. 
 
- 
 What is included in an Extended Support Release dot release? 
 ------------------------------------------------------------
 Dot releases for ESR versions will contain high severity or high impact security fixes and bug fixes. They will not include changes to product functionality or new features. 
@@ -25,7 +24,6 @@ Who should use an Extended Support Release?
 ESRs are intended for organizations who value stability over having the newest features and improvements, or who have a long internal testing and certification process to undergo when upgrading.
 
 If your organization prefers to have the newest features and improvements, Extended Support Releases may not be the best fit for you.
-
 
 How do I install the Extended Support Release?
 ----------------------------------------------
@@ -37,7 +35,7 @@ What are the current supported ESR versions?
 +-------------+----------------+----------------+------------------------------------------------------------------------------------------+-------------------------------------------------+
 | Version     | Release Date   | End of Support | Latest Dot Release Download link                                                         | Upgrade Notes                                   |
 +=============+================+================+==========================================================================================+=================================================+
-| 5.9         |  2019-04-16    | T.B.D.         | `5.9.1 <https://releases.mattermost.com/5.9.1/mattermost-5.9.1-linux-amd64.tar.gz>`_     | Please upgrade to 5.0 prior to upgrading to 5.9 |
+| 5.9         |  2019-04-16    | T.B.D.         | `5.9.3 <https://releases.mattermost.com/5.9.3/mattermost-5.9.3-linux-amd64.tar.gz>`_     | Please upgrade to 5.0 prior to upgrading to 5.9 |
 +-------------+----------------+----------------+------------------------------------------------------------------------------------------+-------------------------------------------------+
 | 4.10        |  2018-05-16    | 2019-07-15     | `4.10.9 <https://releases.mattermost.com/4.10.9/mattermost-4.10.9-linux-amd64.tar.gz>`_  |                                                 |
 +-------------+----------------+----------------+------------------------------------------------------------------------------------------+-------------------------------------------------+
