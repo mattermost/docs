@@ -41,7 +41,7 @@ To manage plugins, go to **System Console > Plugins > Plugin Management**. From 
 
 Prepackaged Plugins
 ~~~~~~~~~~~~~~~~~~~
-Mattermost ships with a number of prepackaged plugins written and maintained by Mattermost. Instead of building these features directly into the product, you can selectively enable the functionality your installation requires. Prepackaged plugins cannot be removed via the System Console, but can be customized by modifying the `prepackaged_plugins` directory in your Mattermost installation.
+Mattermost ships with a number of prepackaged plugins written and maintained by Mattermost. Instead of building these features directly into the product, you can selectively enable the functionality your installation requires. Prepackaged plugins cannot be removed via the System Console, but can be customized by modifying the ``prepackaged_plugins`` directory in your Mattermost installation.
 
 Custom Plugins
 ~~~~~~~~~~~~~~
