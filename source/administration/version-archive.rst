@@ -143,7 +143,7 @@ Mattermost Team Edition v5.13.1 - `View Changelog <https://docs.mattermost.com/a
   - ``https://releases.mattermost.com/5.13.1/mattermost-team-5.13.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``13a8e5164eef1cce19b05b82ba404363db7a228ba1f5d62b11e129a00675d1fb``
   - GPG Signature: https://releases.mattermost.com/5.13.1/mattermost-team-5.13.1-linux-amd64.tar.gz.sig
-Mattermost Team Edition v5.12.5 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-12-feature-release>`__ - `Download <https://releases.mattermost.com/5.12.5/mattermost-team-5.12.4-linux-amd64.tar.gz>`__
+Mattermost Team Edition v5.12.5 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-12-feature-release>`__ - `Download <https://releases.mattermost.com/5.12.5/mattermost-team-5.12.5-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.12.5/mattermost-team-5.12.5-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``45e51c3ecfba8a40ed60eb067b9d3b9888ed3bfeacbfdefb6064b310a863b4d9``
   - GPG Signature: https://releases.mattermost.com/5.12.5/mattermost-team-5.12.5-linux-amd64.tar.gz.sig
