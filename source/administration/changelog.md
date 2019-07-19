@@ -91,8 +91,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
- - Changed ``"MinimumLength": 10``, etc. to implement stricter default password policy.
- - Added ``"Trace": ""`` to output all Elasticsearch information to the log file or console logs as debug-level messages.
+
 
 ### Database Changes
 
