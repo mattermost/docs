@@ -30,7 +30,7 @@ You should only install custom plugins from sources you trust to avoid compromis
 Set Up Guide
 ------------
 
-To manage plugins, go to **System Console > Plugins > Plugin Management**. Fom here, you can:
+To manage plugins, go to **System Console > Plugins > Plugin Management**. From here, you can:
 
  - Enable or disable prepackaged plugins.
  - Install and manage custom plugins
