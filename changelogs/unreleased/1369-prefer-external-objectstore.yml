@@ -1,5 +1,0 @@
----
-title: Add ability to specify extrernal objectStorage for task-runner backup
-merge_request: 821
-author: Matthew Cascio
-type: fixed

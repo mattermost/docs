@@ -1,5 +1,0 @@
----
-title: Support for optional extra arguments for the cron based backup on Kubernetes
-merge_request: 854
-author: Gerard Boor
-type: added
