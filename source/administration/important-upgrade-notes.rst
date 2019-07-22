@@ -13,6 +13,8 @@ Important Upgrade Notes
 |                                                    | Image link and YouTube previews do not display unless **System Console > Enable Link Previews** is enabled. Please ensure that your Mattermost server is         |
 |                                                    | connected to the internet and has network access to the websites from which previews are expected to appear.                                                     |
 |                                                    | `Learn more here <https://forum.mattermost.org/t/link-previews-managed-server-side-in-v5-12-and-later/7712>`_.                                                   | 
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | ``ExperimentalEnablePostMetadata`` setting was removed.                                                                                                          |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.11.0                                            | If your integration uses ``Update.Props == nil`` to clear ``Props``, this will no longer work in 5.11+. Instead, use ``Update.Props == {}`` to clear properties. |
 |                                                    |                                                                                                                                                                  |
