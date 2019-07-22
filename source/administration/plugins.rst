@@ -23,7 +23,7 @@ Security
 --------
 Plugins are intentionally powerful and not artificially sandboxed in any way. Server plugins can execute arbitrary code alongside your server. Webapp plugins can deploy arbitrary code in client browsers. Plugins effectively become part of the Mattermost server.
 
-While this power enables deep customization and integration, it can be abused in the wrong hands. Plugins have full access to your server configuration and thus your Mattermost database. Plugins can read any message in any channel, or perform any action on behalf of any user in the webapp.
+While this power enables deep customization and integration, it can be abused in the wrong hands. Plugins have full access to your server configuration and thus also to your Mattermost database. Plugins can read any message in any channel, or perform any action on behalf of any user in the webapp.
 
 You should only install custom plugins from sources you trust to avoid compromising the security of your installation.
 
