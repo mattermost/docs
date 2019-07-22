@@ -4,7 +4,7 @@ A new configuration option was added in `5.10 <https://docs.mattermost.com/admin
 
 Mattermost has been running our community server on this option since the feature was released and recommends using it to those in High Availability deployments.  
 
-Benefits to using this option include: 
+Benefits to using this option:
 
   - Conveniently manage configuration changes directly from the System Console, even in High Availability deployments and read-only containerized environments.
   - Ensure all servers in a High Availability deployment have the same configuration, even when new servers are added to the cluster.
