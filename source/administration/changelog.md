@@ -73,9 +73,11 @@ Release Date 2019-08-16
 #### Administration
  - Removed maximum length from ``LinkMetadata`` value so that links can generate OpenGraph previews and be stored in the database.
  - The config.json file is now generated with build time using defaults in code and not in ``default.json``.
+ - Added new settings to have more control over ``BindAddress`` and ``AdvertiseAddress`` in the cluster server to allow users to configure properly in situations where the servers are communicating through another server using NAT.
  
 #### Enterprise Edition (EE)
  - Added support for signing SAML requests to be able to be approved to Infosec.
+ - Added support for configuring the device to detect the IP in High Availability clusters.
 
 ### Bug Fixes
  - Fixed an issue where bulk import got stuck when importing lines were missing the "type" entry.
