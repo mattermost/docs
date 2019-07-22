@@ -10,7 +10,7 @@ Benefits to using this option:
   - Ensure all servers in a High Availability deployment have the same configuration, even when new servers are added to the cluster.
   - Automatically deploy SAML certificates and keys to all servers in the cluster.
 
-To start using configuration in database, pass the database connection string via the `--config` flag or `MM_CONFIG` environment variable. For example:
+To start using configuration in database, pass the database connection string via the ``--config`` flag or ``MM_CONFIG`` environment variable. For example:
 
     ```
     ./mattermost --config="postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
