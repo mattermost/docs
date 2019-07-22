@@ -105,7 +105,7 @@ Mattermost v5.12.0 contains low to medium level security fixes. [Upgrading](http
 
  - If your plugin uses the ``DeleteEphemeralMessage`` plugin API, update it to accept a ``postId string`` parameter. See [documentation](https://developers.mattermost.com/extend/plugins/server/reference/#API.DeleteEphemeralPost) to learn more.
  - Image link and YouTube previews do not display unless **System Console > Enable Link Previews** is enabled. Please ensure that your Mattermost server is connected to the internet and has network access to the websites from which previews are expected to appear. [Learn more here](https://docs.mattermost.com/administration/config-settings.html#enable-link-previews).
- - ``ExperimentalEnablePostMetadata`` setting was removed.
+ - ``ExperimentalEnablePostMetadata`` setting was removed. Post metadata, including post dimensions, is now stored in the database to correct scroll position and eliminate scroll jumps as content loads in a channel.
 
 **IMPORTANT:** If you upgrade from a release earlier than 5.11, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
