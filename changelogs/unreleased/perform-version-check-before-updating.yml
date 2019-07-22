@@ -1,5 +1,0 @@
----
-title: Make version changes to chart files only if incoming version is higher
-merge_request: 859
-author:
-type: changed

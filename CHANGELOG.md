@@ -2,6 +2,40 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.1.0
+
+### Fixed (8 changes, 2 of them are from the community)
+
+- Mailroom: fix redis without passsword. !816 (arthur13)
+- Add ability to specify extrernal objectStorage for task-runner backup. !821 (Matthew Cascio)
+- Fix ability to set internal port of gitlab-workhorse. !840
+- Use sort to compare versions in upgrade logic. !846
+- Freeze the version of redis exporter image. !850
+- Fixed shared secrets whitespace templating #1410. !861
+- Escape and quote all passwords in ERB templates. !869
+- Set pullPolicy for CI to Always #1460. !873
+
+### Changed (2 changes)
+
+- Add prometheus metrics debug configuration. !838
+- Make version changes to chart files only if incoming version is higher. !859
+
+### Added (5 changes, 3 of them are from the community)
+
+- Make the Task Runner backup backend configurable. !707 (Vic Iglesias)
+- Support Git over SSH on OpenShift. !824
+- Registry: Add service port for Prometheus metrics. !842
+- Support for optional extra arguments for the cron based backup on Kubernetes. !854 (Gerard Boor)
+- Document global.appConfig.defaultProjectsFeatures.containerRegistry #1456. !871 (Mike Rennie)
+
+### Other (4 changes)
+
+- CI: add CI vars to helm properties. !851
+- Run before_fork only once on boot for Unicorn. !852
+- Update gitlab-runner to 0.7.0/12.1.0. !878
+- Update GitLab Version to 12.1.0.
+
+
 ## 2.0.3 (2019-07-03)
 
 ### Other (1 change)

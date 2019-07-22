@@ -1,5 +1,0 @@
----
-title: Fix ability to set internal port of gitlab-workhorse
-merge_request: 840
-author:
-type: fixed
