@@ -14,7 +14,7 @@ Consider using a plugin in the following scenarios:
 
 Plugins are fully supported by both Team and Enterprise Editions. Plugins may have one or both of the following parts:
 
- - **Webapp plugins (Beta)**: Customize the Mattermost user interface by adding to the channel header, overriding the `RHS`_, or even rendering a custom post type. All this is possible without having to fork the source code and rebase on every Mattermost release. For a sample plugin, see `our Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`__.
+ - **Webapp plugins (Beta)**: Customize the Mattermost user interface by adding to the channel header, overriding the ``RHS``, or even rendering a custom post type. All this is possible without having to fork the source code and rebase on every Mattermost release. For a sample plugin, see `our Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`__.
  - **Server plugins (Release Candidate)**: Run a Go process alongside the server, filtering messages or integrating with third-party systems such as Jira, GitLab or Jenkins. For a sample plugin, see `our Jira plugin <https://github.com/mattermost/mattermost-plugin-jira>`__.
 
 Browse available plugins at `https://integrations.mattermost.com/ <https://integrations.mattermost.com/>`__.
