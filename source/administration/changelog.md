@@ -2262,7 +2262,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Integrations
 
 - Added an option for an outgoing webhook to reply to the posted message as a comment.
-- JIRA plugin is now bundled as a prepackaged plugin manageable from the System Console > Plugins > Management.
+- JIRA plugin is now bundled as a pre-packaged plugin manageable from the System Console > Plugins > Management.
 - Added support for mentions with <@userid>, <!channel>, <!all> and <!here> in webhook posts.
 - Personal access tokens can now be temporarily deactivated in the Account Settings.
 
