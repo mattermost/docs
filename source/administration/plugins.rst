@@ -90,7 +90,7 @@ It may also be the case that the working directory for the service running Matte
 
 This can be fixed on Ubuntu 16.04 and RHEL by opening the service configuration file and setting WorkingDirectory to the path to Mattermost, often ``/opt/mattermost``.
 
-A similar problen can occur on Windows:
+A similar problem can occur on Windows:
 
 .. code-block:: text
 
