@@ -192,7 +192,7 @@ Uses `postgres-password` to match upstream postgresql chart when not using an
 {{- end -}}
 
 {{/*
-Return if prepared statements should be used by postgres.
+Return if prepared statements should be used by PostgreSQL.
 Defaults to false
 */}}
 {{- define "gitlab.psql.preparedStatements" -}}
