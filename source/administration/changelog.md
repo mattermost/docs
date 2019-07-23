@@ -66,6 +66,8 @@ Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.ma
 ### Known Issues
 
  - Titles for webhooks, commands and OAuth apps are no longer bolded in the System Console.
+ - User can get logged out of server without a session expiry notification.
+ - Sometimes only the first message is showing in channel when switching to a channel.
  - Buttons inside ephemeral messages are not clickable / functional on the mobile app.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
@@ -232,6 +234,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - **Site Configuration > Notifications > Email Notification Contents** is missing from E10 servers. This is scheduled to be resolved in v5.13.2.
  - Changing announcement banner overlaps content. This is scheduled to be resolved in v5.13.2.
  - Scroll position is not at the new message indicator on switching channels with unreads between 30-60. This is scheduled to be resolved in v5.13.2.
+ - User can get logged out of server without a session expiry notification.
+ - Sometimes only the first message is showing in channel when switching to a channel.
  - Buttons inside ephemeral messages are not clickable / functional on the mobile app.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
