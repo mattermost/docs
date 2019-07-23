@@ -4,6 +4,7 @@
 {{- $fullname := printf "%s-%s" $releaseName $name | trunc 63 | trimSuffix "-" -}}
 {{- range .Values.pods -}}
 {{- $queueName := printf "%s-%s" $fullname .name | trunc 63}}
+---
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:

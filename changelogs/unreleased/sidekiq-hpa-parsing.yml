@@ -1,0 +1,5 @@
+---
+title: separate sidekiq hpa resource with dashes
+merge_request: 880
+author:
+type: fixed
