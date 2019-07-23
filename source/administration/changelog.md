@@ -16,7 +16,8 @@ Release Date 2019-08-16
  - **Enable Plugin Health Check** removed from ``config.json``. Instead, all plugins are now automatically monitored and restarted if a plugin has crashed or is deemed unhealthy. If a plugin crashes three times within an hour, the server automatically deactivates the plugin.
  
 ### Breaking Changes
- - **Change related to viewing webhooks**
+
+ - Webhooks are now only displayed if the user is the creator of the webhook or a system administrator.
 
 **IMPORTANT:** If you upgrade from a release earlier than 5.12, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
