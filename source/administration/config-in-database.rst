@@ -12,15 +12,15 @@ Benefits to using this option:
 
 To start using configuration in database, pass the database connection string via the ``--config`` flag or ``MM_CONFIG`` environment variable. For example:
 
-    ```
+  .. code-block:: 
+  
     ./mattermost --config="postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
-    ```
 
 To migrate an existing config.json into the database, use the ``config migrate`` `command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-config-migrate>`_. For example:
 
-    ```
+  .. code-block:: 
+
     ./mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
-    ```
 
 Any existing SAML certificates and private keys will also be migrated to the database.
 
