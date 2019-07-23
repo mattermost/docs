@@ -23,7 +23,6 @@ Release Date 2019-08-16
 
 ### Highlights
 
-#### Guest Accounts (EE)
 #### Synchronize LDAP Groups to Teams/Channels (EE)
 #### ADA screen reader accessibility improvements
 #### Added bidirectional scrolling to land on oldest unread post
