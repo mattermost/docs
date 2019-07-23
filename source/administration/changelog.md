@@ -50,7 +50,7 @@ Release Date 2019-08-16
 #### Webhooks
  - Outgoing webhooks now contain and log request ID.
  - Added support for plugins to dismiss posts through the ``MessageWillBePosted`` hook.
- - Added an "emoji_icon" field to incoming webhooks.
+ - Added an "emoji_icon" field to incoming webhooks to use and emoji in place of the display picture when the webhook posts into Mattermost.
  
 #### Integrations
  - Added support for interactive dialogs with no elements, which can be, e.g. used for confirmation dialogs.
@@ -82,6 +82,7 @@ Release Date 2019-08-16
 
 ### Bug Fixes
  - Fixed an issue where bulk import got stuck when importing lines were missing the "type" entry.
+ - Fixed an issue where titles for webhooks, commands and OAuth apps were no longer bolded in the System Console.
  - Fixed an issue where disabling email notifications also disabled email invites.
  - Fixed an issue where Admins were shown a warning of a user's bot being deactivated even if they already were.
  - Fixed an issue where a bot profile image disappeared when saving bot details.
