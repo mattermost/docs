@@ -10,7 +10,7 @@ Important Upgrade Notes
 | v5.14.0                                            | **Enable Plugin Health Check** removed from ``config.json``. Instead, all plugins are now automatically monitored and restarted if a plugin has crashed or is    |
 |                                                    | deemed unhealthy. If a plugin crashes three times within an hour, the server automatically deactivates the plugin.                                               |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Change related to viewing webhooks                                                                                                                               |
+|                                                    | Webhooks are now only displayed if the user is the creator of the webhook or a system administrator.                                                             |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.12.0                                            | If your plugin uses the ``DeleteEphemeralMessage`` plugin API, update it to accept a ``postId string`` parameter.                                                |
 |                                                    | See `documentation <https://developers.mattermost.com/extend/plugins/server/reference/#API.DeleteEphemeralPost>`_ to learn more.                                 |
