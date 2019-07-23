@@ -49,7 +49,7 @@ Release Date 2019-08-16
 #### Webhooks
  - Outgoing webhooks now contain and log request ID.
  - Added support for plugins to dismiss posts through the ``MessageWillBePosted`` hook.
- - Added an "emoji_icon" field to incoming webhooks to use and emoji in place of the display picture when the webhook posts into Mattermost.
+ - Added an optional "emoji_icon" field to incoming webhooks to use and emoji in place of the display picture when the webhook posts into Mattermost.
  
 #### Integrations
  - Added support for interactive dialogs with no elements, which can be, e.g. used for confirmation dialogs.
@@ -74,6 +74,7 @@ Release Date 2019-08-16
  - Removed maximum length from ``LinkMetadata`` value so that links can generate OpenGraph previews and be stored in the database.
  - The config.json file is now generated with build time using defaults in code and not in ``default.json``.
  - Added new settings to have more control over ``BindAddress`` and ``AdvertiseAddress`` in the cluster server to allow users to configure properly in situations where the servers are communicating through another server using NAT.
+ - implemented enhanced logging for CSRF warnings by adding the following information to each request: Remote Adddress, Path, User ID, Session ID.
  
 #### Enterprise Edition (EE)
  - Added support for signing SAML requests to be able to be approved to Infosec.
