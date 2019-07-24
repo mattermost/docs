@@ -236,7 +236,7 @@ The full list of supported fields are included below:
     "type", "String", "Set this value to ``bool`` for a checkbox element."
     "optional", "Boolean", "(Optional) Set to true if this form element is not required. Default is ``false``."
     "help_text", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
-    "default", "String", "(Optional) Set a default value for this form element. True or false"
+    "default", "String", "(Optional) Set a default value for this form element. True or false".
     "placeholder", "String", "(Optional) A string displayed to include a label besides the checkbox. Maximum 150 characters."
     
 
