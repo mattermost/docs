@@ -1,0 +1,5 @@
+---
+title: 'Provide option to disable using prepared statements for postgres #1444'
+merge_request: 872
+author: Mike Renie
+type: added

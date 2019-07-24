@@ -17,6 +17,7 @@ data:
       password: "<%= File.read("/etc/gitlab/postgres/psql-password").strip.dump[1..-2] %>"
       host: {{ template "gitlab.psql.host" . }}
       port: {{ template "gitlab.psql.port" . }}
+      prepared_statements: {{ template "gitlab.psql.preparedStatements" . }}
 {{- include "gitlab.psql.ssl.config" . | indent 6 }}
   smtp_settings.rb: |
 {{ include "gitlab.smtp_settings" . | indent 4 }}

@@ -64,6 +64,7 @@ global:
     # port: 123
     # username: gitlab
     # database: gitlabhq_production
+    # preparedStatements: false
 
   ## doc/charts/globals.md#configure-redis-settings
   redis:

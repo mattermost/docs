@@ -169,7 +169,7 @@ to 5432 default
 {{/*
 Return the secret name
 Defaults to a release-based name and falls back to .Values.global.psql.secretName
-  when using an external postegresql
+  when using an external PostgreSQL
 */}}
 {{- define "gitlab.psql.password.secret" -}}
 {{- default (printf "%s-%s" .Release.Name "postgresql-password") .Values.global.psql.password.secret | quote -}}
@@ -189,6 +189,14 @@ Uses `postgres-password` to match upstream postgresql chart when not using an
 */}}
 {{- define "gitlab.psql.password.key" -}}
 {{- default "postgres-password" .Values.global.psql.password.key | quote -}}
+{{- end -}}
+
+{{/*
+Return if prepared statements should be used by PostgreSQL.
+Defaults to false
+*/}}
+{{- define "gitlab.psql.preparedStatements" -}}
+{{- eq true (default false .Values.global.psql.preparedStatements) -}}
 {{- end -}}
 
 {{/* ######### ingress templates */}}

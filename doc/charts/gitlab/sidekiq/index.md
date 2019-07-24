@@ -150,6 +150,7 @@ psql:
   port: 5432
   database: gitlabhq_production
   username: gitlab
+  preparedStatements: false
   password:
     secret: gitlab-postgres
     key: psql-password
@@ -163,6 +164,7 @@ psql:
 | `password.secret` | String  |                       | The `password.secret` attribute for PostgreSQL defines the name of the kubernetes `Secret` to pull from. |
 | `port`            | Integer | `5432`                | The port on which to connect to the PostgreSQL server. |
 | `username`        | String  | `gitlab`              | The username with which to authenticate to the database. |
+| `preparedStatements`| Bool  | `false`               | If prepared statements should be used when communicating with the PostgreSQL server. |
 
 ### Gitaly
 
