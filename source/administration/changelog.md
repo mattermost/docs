@@ -9,7 +9,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 - **v5.13.3, release day TBD**
-  - We are investigating additional reports to determine if they are impacting 5.13.2 release. Updates coming soon.
+  - We are investigating additional reports to determine if they are impacting 5.13 release. Updates coming soon.
 - **v5.13.2, released 2019-07-24**
   - Fixed performance issues in channels with large message history due to a change made to posts query. [MM-16936](https://mattermost.atlassian.net/browse/MM-16936)
   - Fixed an issue where some settings were not visible in the System Console. [MM-17114](https://mattermost.atlassian.net/browse/MM-17114)
