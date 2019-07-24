@@ -9,12 +9,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 - **v5.13.3, release day TBD**
-  - List of bug fixes TBD.
+  - We are investigating additional reports to determine if they are impacting 5.13.2 release. Updates coming soon.
 - **v5.13.2, released 2019-07-24**
   - Fixed performance issues in channels with large message history due to a change made to posts query. [MM-16936](https://mattermost.atlassian.net/browse/MM-16936)
-  - Fixed an issue where **Site Configuration > Notifications > Email Notification Contents** was missing from E10 servers. [MM-17114](https://mattermost.atlassian.net/browse/MM-17114)
+  - Fixed an issue where some settings were not visible in the System Console. [MM-17114](https://mattermost.atlassian.net/browse/MM-17114)
   - Fixed an issue where announcement banner overlapped content. [MM-17115](https://mattermost.atlassian.net/browse/MM-17115)
-  - Fixed an issue where the scroll position was not at the new message indicator on switching channels with unreads between 30-60. [MM-17078](https://mattermost.atlassian.net/browse/MM-17078)
+  - Fixed an issue where the scroll position was not at the new message indicator on switching channels when there were 30-60 unread messages. [MM-17078](https://mattermost.atlassian.net/browse/MM-17078)
 - **v5.13.1, released 2019-07-19**
   - Fixed an issue with Jira plugin where creating or attaching to Jira issues failed due to GDPR changes released by Atlassian. Affected Jira Cloud only, not Jira Server or Jira Data Center. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
   - Fixed an issue in server logs where messages related to OpenGraph API were unnecessarily reported as errors. [MM-17043](https://mattermost.atlassian.net/browse/MM-17043)
