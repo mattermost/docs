@@ -57,6 +57,7 @@ No pull requests for major features should be **merged** to the current release 
         - Merge database upgrade before cutting the branch
         - Point translation server to release branch after cutting
         - Cut an RN build for the next release
+    - Ensure ``community-release`` is on the feature branch
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
       - After the cut-off, any PRs that include significant code changes, require approval of the release manager before merging
 4. Marketing:
@@ -305,6 +306,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Update https://prev.test.mattermost.com to the previous release version
 4. Dev:
     - Cut release branch for Bug Fix release
+        - Ensure ``community-release`` is on the quality release branch
     - Cut an RN build for the next release
     - Update existing tickets or create new ones for the next release
 5. Marketing:
