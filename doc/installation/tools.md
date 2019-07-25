@@ -109,7 +109,6 @@ cluster, use `kubectl config set-cluster minikube` to set the active cluster.
 
 ### Upload the RBAC config
 
-
 #### Upload the RBAC config in GKE
 
 For GKE, you need to grab the admin credentials:

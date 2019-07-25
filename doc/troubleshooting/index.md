@@ -61,7 +61,6 @@ the use of the application until resolved. Possible problems are:
 - Unreachable or failed authentication to the configured Redis services
 - Failure to reach a Gitaly instance
 
-
 ## Included GitLab Runner failing to register
 
 This can happen when the runner registration token has been changed in GitLab. (This often happens after you have restored a backup)
@@ -69,39 +68,44 @@ This can happen when the runner registration token has been changed in GitLab. (
 1. Find the new shared runner token located on the `admin/runners` webpage of your GitLab installation.
 1. Find the name of existing runner token Secret stored in Kubernetes
 
-  ```
-  kubectl get secrets | grep gitlab-runner-secret
-  ```
+   ```
+   kubectl get secrets | grep gitlab-runner-secret
+   ```
 
 1. Delete the existing secret
 
-  ```
-  kubectl delete secret <runner-secret-name>
-  ```
+   ```
+   kubectl delete secret <runner-secret-name>
+   ```
 
 1. Create the new secret with two keys, (`runner-regisration-token` with your shared token, and an empty `runner-token`)
 
-  ```
-  kubectl create secret generic <runner-secret-name> --from-literal=runner-registration-token=<new-shared-runner-token> --from-literal=runner-token=""
-  ```
+   ```
+   kubectl create secret generic <runner-secret-name> --from-literal=runner-registration-token=<new-shared-runner-token> --from-literal=runner-token=""
+   ```
 
 ## Too many redirects
 
 This can happen when you have TLS termination before the nginx ingress, and the tls-secrets are specified in the configuration.
 
-1. Update your values to set `global.ingress.annotations."nginx.ingress.kubernetes.io/ssl-redirect": "false"`  
+1. Update your values to set `global.ingress.annotations."nginx.ingress.kubernetes.io/ssl-redirect": "false"`
+
    Via a values file:
-    ```yml
-    # values.yml
-    global:
-      ingress:
-        annotations:
-          "nginx.ingress.kubernetes.io/ssl-redirect": "false"
-    ```
+
+   ```yml
+   # values.yml
+   global:
+     ingress:
+       annotations:
+         "nginx.ingress.kubernetes.io/ssl-redirect": "false"
+   ```
+
    Via the helm CLI:
-    ```sh
-    helm ... --set-string global.ingress.annotations."nginx.ingress.kubernetes.io/ssl-redirect"=false
-    ```
+
+   ```sh
+   helm ... --set-string global.ingress.annotations."nginx.ingress.kubernetes.io/ssl-redirect"=false
+   ```
+
 1. Apply the change
 
 >>>

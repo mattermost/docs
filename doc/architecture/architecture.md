@@ -1,4 +1,4 @@
-## Architecture
+# Architecture
 
 We plan to support three tiers of components:
 
