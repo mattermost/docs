@@ -63,6 +63,7 @@ kubectl create secret tls <tls-secret-name> --cert=<path/to-full-chain.crt> --ke
 ```
 
 Include the option to
+
 ```
 helm install ...
   --set certmanager.install=false \

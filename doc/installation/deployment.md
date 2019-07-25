@@ -21,6 +21,7 @@ objects. You'll need to specify a domain which will contain records to resolve
 `gitlab`, `registry`, and `minio` (if enabled) to the appropriate IP for your chart.
 
 *Include these options in your helm install command:*
+
 ```
 --set global.hosts.domain=example.com
 ```
@@ -45,6 +46,7 @@ for configuring static IPs and DNS. Consult your Cloud and/or DNS provider's
 documentation for more help on this process.
 
 *Include these options in your helm install command:*
+
 ```
 --set global.hosts.externalIP=10.10.10.10
 ```
@@ -67,6 +69,7 @@ have some other way of obtaining TLS certificates, [read about more TLS options 
 For the default configuration, you must specify an email address to register your TLS
 certificates.
 *Include these options in your helm install command:*
+
 ```
 --set certmanager-issuer.email=me@example.com
 ```
@@ -87,6 +90,7 @@ If you have an external postgres database ready, the chart can be configured to
 use it as shown below.
 
 *Include these options in your helm install command:*
+
 ```
 --set postgresql.install=false
 --set global.psql.host=production.postgress.hostname.local
@@ -99,6 +103,7 @@ use it as shown below.
 By default we use an single, non-replicated Redis instance. If desired, a highly available redis can be deployed instead. You can learn more about configuring: [Redis](../charts/redis) and [Redis-ha](../charts/redis-ha).
 
 *To deploy `redis-ha` instead of the default `redis`, include these options in your helm install command:*
+
 ```
 --set redis.enabled=false
 --set redis-ha.enabled=true
@@ -174,6 +179,7 @@ incoming email settings.
 By default, the Helm charts use the Enterprise Edition of GitLab. If desired, you can instead use the Community Edition. Learn more about the [difference between the two](https://about.gitlab.com/installation/ce-or-ee/).
 
 *To deploy the Community Edition, include this option in your helm install command:*
+
 ```
 --set global.edition=ce
 ```
@@ -181,6 +187,7 @@ By default, the Helm charts use the Enterprise Edition of GitLab. If desired, yo
 ### RBAC
 
 This chart defaults to creating and using RBAC. If your cluster does not have RBAC enabled, you will need to disable these settings:
+
 ```
 --set certmanager.rbac.create=false
 --set nginx-ingress.rbac.createRole=false

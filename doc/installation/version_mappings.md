@@ -74,7 +74,6 @@ The table below maps some of the key previous chart versions and GitLab versions
 | 0.2.1 | 11.0.1 |
 | 0.2.0 | 11.0.0 |
 
-
 To see the full list, you can issue the following command with helm:
 
 ```
