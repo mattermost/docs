@@ -9,7 +9,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 - **v5.13.3, release day TBD**
-  - We are investigating additional reports to determine if they are impacting 5.13 release. Updates coming soon.
+  - We are investigating potential additional reports to determine if they are impacting 5.13 release. Updates coming soon.
 - **v5.13.2, released 2019-07-24**
   - Fixed performance issues in channels with large message history due to a change made to posts query. [MM-16936](https://mattermost.atlassian.net/browse/MM-16936)
   - Fixed an issue where some settings were not visible in the System Console. [MM-17114](https://mattermost.atlassian.net/browse/MM-17114)
@@ -68,8 +68,12 @@ Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.ma
 ### Known Issues
 
  - Titles for webhooks, commands and OAuth apps are no longer bolded in the System Console.
- - User can get logged out of server without a session expiry notification.
- - Sometimes only the first message is showing in channel when switching to a channel.
+ - Users can get logged out of server without a session expiry notification.
+ - Desktop app hangs on opening emoji picker.
+ - When a primary team is set, the options to leave a team is disabled for all teams, not just the primary team.
+ - Plugin crashes the server when calling ``w.WriteHeader(0)``.
+ - Bot account profile image disappears when saving bot details.
+ - Custom emoji containing specified letters do not appear in emoji autocomplete, unless they start with the letters or have been returned in the autocomplete before.
  - Buttons inside ephemeral messages are not clickable / functional on the mobile app.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
@@ -236,8 +240,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - **Site Configuration > Notifications > Email Notification Contents** is missing from E10 servers. This is resolved in v5.13.2.
  - Changing announcement banner overlaps content. This is resolved in v5.13.2.
  - Scroll position is not at the new message indicator on switching channels with unreads between 30-60. This is resolved in v5.13.2.
- - User can get logged out of server without a session expiry notification.
- - Sometimes only the first message is showing in channel when switching to a channel.
+ - Titles for webhooks, commands and OAuth apps are no longer bolded in the System Console.
+ - Users can get logged out of server without a session expiry notification.
+ - Desktop app hangs on opening emoji picker.
+ - When a primary team is set, the options to leave a team is disabled for all teams, not just the primary team.
+ - Plugin crashes the server when calling ``w.WriteHeader(0)``.
+ - Bot account profile image disappears when saving bot details.
+ - Custom emoji containing specified letters do not appear in emoji autocomplete, unless they start with the letters or have been returned in the autocomplete before.
  - Buttons inside ephemeral messages are not clickable / functional on the mobile app.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
