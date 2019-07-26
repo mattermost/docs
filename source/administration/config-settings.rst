@@ -3512,7 +3512,6 @@ Read Only Config
 
 **False**: Changes made to settings in the System Console are written to ``config.json``.
 
-When running in production it is recommended to set this to true.
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ReadOnlyConfig": true`` with options ``true`` and ``false``. |
