@@ -8,6 +8,9 @@ Mattermost configuration settings are maintained in the configuration file ``con
 
 The default location of ``config.json`` is in the ``mattermost/config`` directory. Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
 
+**Configuration in Database**
+Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_.  
+
 **Environment Variables**
 Starting in Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
 
@@ -813,18 +816,6 @@ Note that the gossip port and gossip protocol are used to determine cluster heal
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UseExperimentalGossip": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
-
-Read Only Config
-^^^^^^^^^^^^^^^^
-**True**: Changes made to settings in the System Console are ignored.
-
-**False**: Changes made to settings in the System Console are written to ``config.json``.
-
-When running in production it is recommended to set this to true.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ReadOnlyConfig": true`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------+
 
 Gossip Port
 ^^^^^^^^^^^
@@ -3519,6 +3510,17 @@ This setting defines the frequency of cluster request time logging for :doc:`../
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ClusterLogTimeoutMilliseconds": 2000`` with numerical input.                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Read Only Config
+^^^^^^^^^^^^^^^^
+**True**: Changes made to settings in the System Console are ignored.
+
+**False**: Changes made to settings in the System Console are written to ``config.json``.
+
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ReadOnlyConfig": true`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------+
 
 Enable Searching of Posts
 ^^^^^^^^^^^^^^^^^^^^^^^^^
