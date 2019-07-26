@@ -26,7 +26,7 @@ Any existing SAML certificates and private keys will also be migrated to the dat
 
 Addtitionally, to disable automatically watching the default config.json and affecting changes, set the ``--disableconfigwatch`` `flag <https://docs.mattermost.com/administration/command-line-tools.html#mattermost>`_ to true.
 
-With configuration in the database enabled, any changes to the configuration are recorded to the ``Configurations`` table. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
+With configuration in the database enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
 
 Note that environment variable overrides remain fully supported using the configuration in the database. They will no longer be written back to the configuration when a change is saved, but will be written to the database instead.
 
