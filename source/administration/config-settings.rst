@@ -814,18 +814,6 @@ Note that the gossip port and gossip protocol are used to determine cluster heal
 | This feature's ``config.json`` setting is ``"UseExperimentalGossip": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-Read Only Config
-^^^^^^^^^^^^^^^^
-**True**: Changes made to settings in the System Console are ignored.
-
-**False**: Changes made to settings in the System Console are written to ``config.json``.
-
-When running in production it is recommended to set this to true.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ReadOnlyConfig": true`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------+
-
 Gossip Port
 ^^^^^^^^^^^
 The port used for the gossip protocol. Both UDP and TCP should be allowed on this port.
@@ -3517,6 +3505,18 @@ This setting defines the frequency of cluster request time logging for :doc:`../
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ClusterLogTimeoutMilliseconds": 2000`` with numerical input.                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Read Only Config
+^^^^^^^^^^^^^^^^
+**True**: Changes made to settings in the System Console are ignored.
+
+**False**: Changes made to settings in the System Console are written to ``config.json``.
+
+When running in production it is recommended to set this to true.
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ReadOnlyConfig": true`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------+
 
 Enable Searching of Posts
 ^^^^^^^^^^^^^^^^^^^^^^^^^
