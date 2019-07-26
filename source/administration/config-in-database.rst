@@ -28,7 +28,7 @@ Addtitionally, to disable automatically watching the default config.json and aff
 
 With configuration in the database enabled, any changes to the configuration are recorded to the ``Configurations`` table. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
 
-Note that environment variable overrides remain fully supported, and will no longer be written back to the configuration when a change is saved.
+Note that environment variable overrides remain fully supported using the configuration in the database, and will no longer be written back to the configuration when a change is saved, but will be written to the database instead.
 
 
 Troubleshooting
