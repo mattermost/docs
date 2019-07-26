@@ -27,7 +27,7 @@ Any existing SAML certificates and private keys will also be migrated to the dat
 
 With configuration in the database enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
 
-Note that environment variable overrides remain fully supported using the configuration in the database. They will no longer be written back to the configuration when a change is saved, but will be written to the database instead.
+Note that environment variable overrides remain fully supported using the configuration in the database, allowing per-server customization as required. A long standing bug has also been fixed, ensuring environment variables are no longer written back to the configuration when other changes are made.
 
 
 Troubleshooting
