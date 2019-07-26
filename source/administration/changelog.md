@@ -81,6 +81,7 @@ Release Date 2019-08-16
  - Added support for configuring the device to detect the IP in High Availability clusters.
 
 ### Bug Fixes
+ - Fixed an issue where pagination of group members was broken in LDAP Groups.
  - Fixed an issue where bulk import got stuck when importing lines were missing the "type" entry.
  - Fixed an issue where titles for webhooks, commands and OAuth apps were no longer bolded in the System Console.
  - Fixed an issue where disabling email notifications also disabled email invites.
