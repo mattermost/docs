@@ -24,7 +24,6 @@ To migrate an existing config.json into the database, use the ``config migrate``
 
 Any existing SAML certificates and private keys will also be migrated to the database.
 
-Addtitionally, to disable automatically watching the default config.json and affecting changes, set the ``--disableconfigwatch`` `flag <https://docs.mattermost.com/administration/command-line-tools.html#mattermost>`_ to true.
 
 With configuration in the database enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
 
