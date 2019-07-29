@@ -120,7 +120,7 @@ The following payload gives an example that uses message menus.
     ]
   }
 
-The integration can respond with an update to the original post, or with an ephemeral message:
+The integration can then perform a separate API call with an update to the original post, or with an ephemeral message:
 
 .. code-block:: text
 
