@@ -2,6 +2,20 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.0.4
+
+### Fixed (4 changes)
+
+- Use sort to compare versions in upgrade logic. !846
+- Freeze the version of redis exporter image. !850
+- Fixed shared secrets whitespace templating #1410. !861
+- Escape and quote all passwords in ERB templates. !869
+
+### Other (1 change)
+
+- Update GitLab Version to 12.0.4.
+
+
 ## 2.0.3 (2019-07-03)
 
 ### Other (1 change)

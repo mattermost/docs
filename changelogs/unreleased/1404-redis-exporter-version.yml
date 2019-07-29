@@ -1,5 +1,0 @@
----
-title: Freeze the version of redis exporter image
-merge_request: 850
-author:
-type: fixed
