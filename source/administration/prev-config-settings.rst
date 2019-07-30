@@ -4428,6 +4428,8 @@ Select the timezone used for timestamps in the user interface and email notifica
 
 Supported Timezones Path
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in April 16, 2019 release*
+
 Set the path of the JSON file that lists supported timezones when ``ExperimentalTimezone`` is set to true.
 
 The file must be in the same directory as your ``config.json`` file if you set a relative path. Defaults to ``timezones.json``.
