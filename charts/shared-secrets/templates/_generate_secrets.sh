@@ -108,7 +108,7 @@ stringData:
       openid_connect_signing_key: |
 $(echo "${openid_connect_signing_key}" | awk '{print "        " $0}')
 EOF
-  kubectl --namespace=$namespace apply -f rails-secrets.yml
+  kubectl --validate=false --namespace=$namespace apply -f rails-secrets.yml
   label_secret $rails_secret
 fi
 
