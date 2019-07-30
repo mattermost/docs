@@ -125,7 +125,7 @@ module Gitlab
         filters="#{filters},release=#{ENV['RELEASE_NAME']}"
       end
 
-      @pod ||= `kubectl get pod -l #{filters} -o jsonpath="{.items[0].metadata.name}"`
+      @pod ||= `kubectl get pod -l #{filters} --field-selector=status.phase=Running -o jsonpath="{.items[0].metadata.name}"`
     end
 
     def runner_registration_token
