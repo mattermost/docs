@@ -1,0 +1,5 @@
+---
+title: task-runner: Increase multipart chunk size when using in-chart Minio
+merge_request: 884
+author: Jan Smets
+type: fixed

@@ -107,6 +107,7 @@ data:
     default_mime_type = binary/octet-stream
     enable_multipart = True
     multipart_max_chunks = 10000
+    multipart_chunk_size_mb = 128
     recursive = True
     recv_chunk = 65536
     send_chunk = 65536
