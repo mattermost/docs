@@ -3855,7 +3855,7 @@ When not set, every user is added to ``off-topic`` and ``town-square`` channel b
 Note that even if ``town-square`` is not listed, every user is added to that channel after joining a new team.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": ""`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
+| This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Allow Users to View Archived Channels (Experimental)
@@ -3941,6 +3941,8 @@ Display Settings (Experimental)
 
 Supported Timezones Path
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in April 16, 2019 release*
+
 Set the path of the JSON file that lists supported timezones when ``ExperimentalTimezone`` is set to true.
 
 The file must be in the same directory as your ``config.json`` file if you set a relative path. Defaults to ``timezones.json``.
