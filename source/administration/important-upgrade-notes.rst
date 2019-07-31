@@ -21,6 +21,8 @@ Important Upgrade Notes
 |                                                    |                                                                                                                                                                  |
 |                                                    | This change was made because ``Update.Props == nil`` unintentionally cleared all ``Props``, such as the profile picture, instead of preserving them.             |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| v5.10.0                                            | ``SupportedTimezonesPath`` setting in config.json was removed. // What's the reason and or consequence?                                                          |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.9.0                                             | If **DisableLegacyMfa** setting in ``config.json`` is set to ``true`` and `multi-factor authentication <https://docs.mattermost.com/deployment/auth.html>`_ is   |
 |                                                    | enabled, ensure your users have upgraded to mobile app version 1.17 or later. Otherwise, users who have MFA enabled may not be able to log in successfully.      |
 |                                                    |                                                                                                                                                                  |
