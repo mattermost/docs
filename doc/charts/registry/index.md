@@ -63,6 +63,8 @@ registry:
   compatibility:
     schema1:
       enabled: false
+  validation:
+    disabled: true
   tolerations: []
   ingress:
     enabled: false
@@ -277,6 +279,16 @@ Docker clients earlier than `1.10`, after which schema v2 is used by default.
 
 If you _must_ support older verions of Docker clients, you can do so by setting
 `registry.compatbility.schema1.enabled: true`.
+
+### validation
+
+The `validation` field is a map that controls the docker image validation
+process in the registry. When image validation is enabled the registry rejects
+windows images with foreign layers.
+
+The image validation is turned off by default.
+
+To enable image validation you need to explicitly set `registry.validation.disabled: false`.
 
 ### replicas
 

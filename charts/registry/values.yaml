@@ -132,6 +132,11 @@ compatibility:
   schema1:
     enabled: false
 
+# Enable the registry to accept windows based docker images
+# See https://github.com/docker/distribution/issues/2795
+validation:
+  disabled: true
+
 debug:
   addr:
     port: 5001

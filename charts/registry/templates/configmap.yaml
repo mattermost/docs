@@ -49,6 +49,8 @@ data:
         enabled: {{ eq true .Values.compatibility.schema1.enabled }}
       {{- end }}
     {{- end }}
+    validation:
+      disabled: {{ eq true .Values.validation.disabled }}
     storage:
       {{- if .Values.storage }}
       {{- else if .Values.global.minio.enabled }}
