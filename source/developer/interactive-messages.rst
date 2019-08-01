@@ -299,12 +299,13 @@ Considerations
 
 When developing different types of integrations, one thing to keep in mind is whether the server will evaluate response bodies or not. 
 
-
-| Integration Type | Server will evaluate the response body |
-| --- | --- |
-| Slash Commands | Yes |
-| Incoming Webhooks| Yes |
-| POSTs from interactive controls | No - Response body is ignored |
+=====  =====  
+Integration Type | Will Server will evaluate the response body?
+=====  =====  
+Slash Commands | Yes 
+Incoming Webhooks | Yes 
+POSTs from interactive controls | No - Response body is ignored
+=====  =====  
   
 
 Tips and Best Practices
