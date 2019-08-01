@@ -20,6 +20,12 @@ global:
   ## GitLab operator is Alpha. Not for production use.
   operator:
     enabled: false
+    rollout:
+      # Enables automatic pause for deployment rollout. This must be set to `true` to fix
+      # Helm's issue with 3-way merge. See:
+      #   https://gitlab.com/charts/gitlab/issues/1262
+      #   https://github.com/helm/helm/issues/3805
+      autoPause: true
 
   ## doc/installation/deployment.md#deploy-the-community-edition
   # edition: ee
