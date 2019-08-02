@@ -20,6 +20,9 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
 
 3. Install the security certificate. You can use `Let's Encrypt <https://letsencrypt.org/>`__ to automatically install and setup the certificate, or you can specify your own certificate.
 
+.. note::
+   When using NGINX or Apache as a reverse proxy ensure ``TLS`` is set to **None** otherwise a message similar to `Client sent an HTTP request to an HTTPS server.` may be encountered. This is required when options `Forward port 80 to 443` and `Use Let’s Encrypt` are set to **false**.
+
   **To use a Let's Encrypt certificate**:
 
     The certificate is retrieved the first time that a client tries to connect to the Mattermost server. Certificates are retrieved for any hostname a client tries to reach the server at.
