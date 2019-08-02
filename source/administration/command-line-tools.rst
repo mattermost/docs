@@ -1340,6 +1340,11 @@ mattermost sampledata
           -b, --bulk string                    Optional. Path to write a JSONL bulk file instead of loading into the database.
           -w, --workers int                    How many workers to run during the import. (default 2)
 
+  User Passwords
+    After run the sampledata command it will generate the users you defined in the ``-u`` flags
+    One user will be created as system administrator and your username and password will be ``sysadmin`` / ``Sys@dmin-sample1``
+    Other users will follow the index. for example ``user-1`` / ``SampleUs@r-%1``
+
 mattermost server
 -----------------
 
