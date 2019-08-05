@@ -17,6 +17,7 @@ Additional benefits include:
   - Integrations created by a user and tied to a bot account no longer break if the user leaves the company.
   - Once created, bot accounts behave just like regular user accounts and can be added to teams and channels similar to users.
   - Bot accounts are a safer way to integrate with Mattermost through the RESTful API and Plugin API because there is no need to manage shared logins with these accounts.
+  - ``BOT`` tag is used everywhere in the UI where bot accounts are referenced, including messages and user lists.
 
 Note that currently:
 
