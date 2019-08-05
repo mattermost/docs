@@ -1340,10 +1340,9 @@ mattermost sampledata
           -b, --bulk string                    Optional. Path to write a JSONL bulk file instead of loading into the database.
           -w, --workers int                    How many workers to run during the import. (default 2)
 
-  User Passwords
-    After run the sampledata command it will generate the users you defined in the ``-u`` flags
-    One user will be created as system administrator and your username and password will be ``sysadmin`` / ``Sys@dmin-sample1``
-    Other users will follow the index. for example ``user-1`` / ``SampleUs@r-%1``
+  Generate sample data and populate the Mattermost database. Supported in Mattermost v4.7 and later.
+
+  The command generates one user as the System Administrator with a username ``sysadmin`` and password ``Sys@dmin-sample1``. Other users are generated following an index, e.g. with username ``user-1`` and password ``SampleUs@r-%1``.
 
 mattermost server
 -----------------
