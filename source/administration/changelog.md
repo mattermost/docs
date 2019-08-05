@@ -61,7 +61,6 @@ Release Date 2019-08-16
  - Added support for plugins to trigger interactive dialogs even without clicking an interactive button/menu or using a slash command.
  
 #### Bot Accounts
- - Added the ability to override left-hand side icon for bot accounts.
  - Added an identifier for compliance exports when a message is posted by a bot account.
  - Created a new System Console page for existing bot account ``config.json`` settings.
  
@@ -82,6 +81,7 @@ Release Date 2019-08-16
 
 ### Bug Fixes
  - Fixed an issue where pagination of group members was broken in LDAP Groups.
+ - Fixed an issue where the options to leave a team was disabled for all teams and not just the primary team when a primary team was set.
  - Fixed an issue where bulk import got stuck when importing lines were missing the "type" entry.
  - Fixed an issue where titles for webhooks, commands and OAuth apps were no longer bolded in the System Console.
  - Fixed an issue where disabling email notifications also disabled email invites.
