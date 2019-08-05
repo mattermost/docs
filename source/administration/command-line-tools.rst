@@ -1310,7 +1310,9 @@ mattermost sampledata
 
   Description
     .. versionadded:: 4.7
-      Generate sample data and populate the Mattermost database.
+      Generate sample data and populate the Mattermost database. Supported in Mattermost v4.7 and later.
+
+      The command generates one user as the System Administrator with a username ``sysadmin`` and password ``Sys@dmin-sample1``. Other users are generated following an index, e.g. with username ``user-1`` and password ``SampleUs@r-%1``.
 
   Format
     .. code-block:: none
@@ -1339,10 +1341,6 @@ mattermost sampledata
           -s, --seed int                       Seed used for generating the random data (Different seeds generate different data). (default 1)
           -b, --bulk string                    Optional. Path to write a JSONL bulk file instead of loading into the database.
           -w, --workers int                    How many workers to run during the import. (default 2)
-
-  Generate sample data and populate the Mattermost database. Supported in Mattermost v4.7 and later.
-
-  The command generates one user as the System Administrator with a username ``sysadmin`` and password ``Sys@dmin-sample1``. Other users are generated following an index, e.g. with username ``user-1`` and password ``SampleUs@r-%1``.
 
 mattermost server
 -----------------
