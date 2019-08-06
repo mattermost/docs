@@ -47,7 +47,7 @@ Release Date 2019-08-16
  - Added support for exporting Global Relay to zip file.
 
 #### Webhooks
- - Outgoing webhooks now contain and log request ID.
+- ``EnableWebhookDebugging`` now logs the request id for additional context when debugging.
  - Added support for plugins to dismiss posts through the ``MessageWillBePosted`` hook. Dismissed posts no longer show up as a client-side error.
  - Added an optional "emoji_icon" field to incoming webhooks to use and emoji in place of the display picture when the webhook posts into Mattermost.
  
