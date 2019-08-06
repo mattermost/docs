@@ -27,7 +27,7 @@ Click _Add_ and you will be provided with the _client secret value_, copy this a
 
    ![AzureApp_App_Directory_IDsv2.png](../../source/images/AzureApp_App_Directory_IDsv2.png)
 
-6 - Login to Mattermost and then go to the **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Office 365 (Beta)** as the service provider. Enter the _client secret value_ you copied in Step 4 as the **Application Secret Password**. Paste the _Application (client) ID_ you saved in Step 5 into the **Application ID** field. 
+6 - Login to Mattermost and then go to the **System Console > OAuth 2.0 > Select OAuth 2.0 service provider**, choose **Office 365** as the service provider. Enter the _client secret value_ you copied in Step 4 as the **Application Secret Password**. Paste the _Application (client) ID_ you saved in Step 5 into the **Application ID** field. 
 
 7 - Open your config.json file and copy the _Directory (tenant) ID_ value from Step 5. In the `Office365Settings` section of `config/config.json` you will be updating the default values from 
  - `AuthEndpoint`: `https://login.microsoftonline.com/common/oauth2/v2.0/authorize` 
