@@ -53,7 +53,7 @@ Release Date 2019-08-16
  
 #### Integrations
  - Added support for interactive dialogs with no elements, which can be, e.g. used for confirmation dialogs.
- - Added support for relative links in interactive message buttons.
+ - Added support for relative links in interactive message buttons, simplifying plugin development.
  
 #### Plugins
  - Added ability to download and install a plugin from a remote url so that a user does not need to download the plugin themselves and upload it from their computer.
