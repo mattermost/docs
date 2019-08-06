@@ -2382,7 +2382,7 @@ Choose whether OAuth can be used for account creation and login. Options include
     - **Do not allow sign-in via an OAuth 2.0 provider**
     - **GitLab** (see `GitLab Settings <http://docs.mattermost.com/administration/config-settings.html#id14>`__ for more detail)
     - **Google Apps** (see `Google Settings <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`__ for more detail)
-    - **Office 365 (Beta)** (see `Office 365 Settings <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`__ for more detail)
+    - **Office 365** (see `Office 365 Settings <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`__ for more detail)
 
 This feature's setting does not appear in ``config.json``.
 
@@ -2504,7 +2504,7 @@ Office 365
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
 
 
-Enable authentication with Office 365 by selecting ``Office 365 (Beta)`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
+Enable authentication with Office 365 by selecting ``Office 365`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
 
 **True**: Allow team creation and account signup using Office 365 OAuth. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation <https://docs.mattermost.com/deployment/sso-office.html>`__ for more detail.
 
