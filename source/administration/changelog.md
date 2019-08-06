@@ -77,7 +77,7 @@ Release Date 2019-08-16
  
 #### Enterprise Edition (EE)
  - Added support for signing SAML requests to be able to be approved to Infosec.
- - Added support for configuring the device to detect the IP in High Availability clusters.
+ - Added support for configuring the interface used for cluster peer discovery in High Availability clusters.
 
 ### Bug Fixes
  - Fixed an issue where pagination of group members was broken in LDAP Groups.
