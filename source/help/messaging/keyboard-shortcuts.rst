@@ -7,7 +7,7 @@ To display a list of available keyboard shortcuts, type CTRL+/ (CMD+/ on Mac), o
 
 .. note::
 
-    Thought Mattermost keyboard shortcuts support standard languages and keyboard layouts, they may not work if you use keymapping that overwrites default browser shortcuts.
+   Though Mattermost keyboard shortcuts support standard languages and keyboard layouts, they may not work if you use keymapping that overwrites default browser shortcuts.
 
 Navigation
 ==========
