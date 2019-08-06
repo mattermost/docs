@@ -52,7 +52,7 @@ Release Date 2019-08-16
  - Added an optional "emoji_icon" field to incoming webhooks to use and emoji in place of the display picture when the webhook posts into Mattermost.
  
 #### Integrations
- - Added support for interactive dialogs with no elements, which can be, e.g. used for confirmation dialogs.
+ - Added support for interactive dialogs without elements, e.g. for confirmation dialogs.
  - Added support for relative links in interactive message buttons, simplifying plugin development.
  
 #### Plugins
