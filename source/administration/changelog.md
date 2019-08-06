@@ -28,7 +28,10 @@ Release Date 2019-08-16
 #### Added bidirectional scrolling to land on oldest unread post
 #### Jira V2.1
 #### Pre-packaged plugins (Jenkins, Walltime)
-#### Framework: HA - plugin uploads
+#### High Availability Plugin Uploads
+Plugins uploaded via the System Console or the command line interface are now persisted to the configured file store and automatically installed on all servers that join the cluster.
+
+Manually installed plugins remain fully supported, but will not automatically install on other servers in the cluster.
 #### Removed beta label from Office365 SSO
 
 ### Improvements
