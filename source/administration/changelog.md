@@ -59,7 +59,7 @@ Manually installed plugins remain fully supported, but will not automatically in
  - Added support for relative links in interactive message buttons, simplifying plugin development.
  
 #### Plugins
- - Added ability to download and install a plugin from a remote url so that a user does not need to download the plugin themselves and upload it from their computer.
+ - Added ability to download and install a plugin from a remote url via the System Console.
  - Added support for plugins to override right-hand sidebar.
  - Added support for plugins to trigger interactive dialogs even without clicking an interactive button/menu or using a slash command.
  
