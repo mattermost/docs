@@ -61,7 +61,7 @@ Manually installed plugins remain fully supported, but will not automatically in
 #### Plugins
  - Added ability to download and install a plugin from a remote url via the System Console.
  - Added support for plugins to override right-hand sidebar.
- - Added support for plugins to trigger interactive dialogs even without clicking an interactive button/menu or using a slash command.
+ - Added support for plugins to trigger interactive dialogs programmatically, instead of only after a user action.
  
 #### Bot Accounts
  - Added an identifier for compliance exports when a message is posted by a bot account.
