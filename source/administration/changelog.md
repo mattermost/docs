@@ -62,7 +62,7 @@ Release Date 2019-08-16
  
 #### Bot Accounts
  - Added an identifier for compliance exports when a message is posted by a bot account.
- - Created a new System Console page for existing bot account ``config.json`` settings.
+ - Created a dedicated System Console page at /admin_console/integrations/bot_accounts to organize bot configuration options.
  
 #### Command Line Interface (CLI)
  - Added support for converting bot accounts to user accounts with email/password login through the CLI.
