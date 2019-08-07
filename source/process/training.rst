@@ -173,6 +173,8 @@ For confidentiality of customers, internal process meetings are limited to Matte
 Customer Obsession All-Hands Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+This is our "All Hands" meeting focused on how we're aligning the company to serve our customers. "Customer Obsession" is a key leadership principle and we emphasize its priority when we bring the company together. 
+
 Attendees:
 
 - All Mattermost Staff
@@ -243,7 +245,7 @@ Frequently Asked Questions
 
 **Why don't new people introduce themselves?**
 
-Not everyone is comfortable with speaking in front of 60+ people. Not everyone speaks clear English. We don’t want the first company-wide meeting to be anxious for new team members, hence, managers intro them.
+Not everyone is comfortable with speaking in front of 60+ people. Not everyone speaks clear English. We don’t want the first company-wide meeting to be anxious for new team members, hence by default managers intro them. New hires can opt-in to introducing themselves. 
 
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
