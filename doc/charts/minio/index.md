@@ -1,6 +1,6 @@
 # Using Minio for Object storage
 
-This chart is based on [`stable/minio`](https://github.com/kubernetes/charts/tree/master/stable/minio)
+This chart is based on [`stable/minio`](https://github.com/helm/charts/tree/master/stable/minio)
 version [`0.4.3`](https://github.com/helm/charts/tree/aaaf98b5d25c26cc2d483925f7256f2ce06be080/stable/minio),
 and inherits most settings from there.
 
@@ -106,6 +106,7 @@ pullSecrets:
 `tolerations` allow you schedule pods on tainted worker nodes
 
 Below is an example use of `tolerations`:
+
 ```YAML
 tolerations:
 - key: "node_label"
@@ -173,7 +174,7 @@ These settings control the minio ingress.
 ## Configuring the image
 
 The `image`, `imageTag` and `imagePullPolicy` defaults are
-[documented upstream](https://github.com/kubernetes/charts/tree/master/stable/minio#configuration).
+[documented upstream](https://github.com/helm/charts/tree/master/stable/minio#configuration).
 
 ## Persistence
 
@@ -182,8 +183,8 @@ volume to default location `/export`. You'll need physical storage available in 
 Kubernetes cluster for this to work. If you'd rather use `emptyDir`, disable `PersistentVolumeClaim`
 by: `persistence.enabled: false`.
 
-The behaviors for [`persistence`](https://github.com/kubernetes/charts/tree/master/stable/minio#persistence)
-are [documented upstream](https://github.com/kubernetes/charts/tree/master/stable/minio#configuration).
+The behaviors for [`persistence`](https://github.com/helm/charts/tree/master/stable/minio#persistence)
+are [documented upstream](https://github.com/helm/charts/tree/master/stable/minio#configuration).
 
 GitLab has added a few items:
 
@@ -231,7 +232,7 @@ For in-depth information about security context, please refer to the official
 
 ## Service Type and Port
 
-These are [documented upstream](https://github.com/kubernetes/charts/tree/master/stable/minio#configuration),
+These are [documented upstream](https://github.com/helm/charts/tree/master/stable/minio#configuration),
 and the key summary is:
 
 ```
@@ -247,7 +248,7 @@ The chart does not expect to be of the `type: NodePort`, so **do not** set it as
 
 ## Upstream items
 
-The [upstream documentation](https://github.com/kubernetes/charts/tree/master/stable/minio)
+The [upstream documentation](https://github.com/helm/charts/tree/master/stable/minio)
 for the following also applies completely to this chart:
 
 - `resources`
