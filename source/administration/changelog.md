@@ -435,6 +435,12 @@ Mattermost v5.10.0 contains medium to high level security fixes. [Upgrading](htt
 - **v5.10.0, released 2019-04-16**
   - Original 5.10.0 release
 
+### Breaking changes since last release
+
+ - ``SupportedTimezonesPath`` setting in config.json and changes to timezones in the UI based on the timezones.json file was removed. This was made to support [storing configurations in the database](https://docs.mattermost.com/administration/config-in-database.html#configuration-in-the-mattermost-database).
+
+**IMPORTANT:** If you upgrade from a release earlier than 5.9, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
 ### Highlights
  
 #### Interactive Ephemeral Messages
