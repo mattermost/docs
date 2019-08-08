@@ -130,5 +130,5 @@ data:
     # 2) Do not set permissions for key file
     # 3) GCP Project ID
     # 4) Decline anonymous usage statistics
-    printf "$GOOGLE_APPLICATION_CREDENTIALS\nN\n{{ .Values.backups.objectStorage.config.gcpProject }}\nN\n" | gsutil config -e && while sleep 3600; do :; done
+    printf "$GOOGLE_APPLICATION_CREDENTIALS\nN\n{{ .Values.backups.objectStorage.config.gcpProject }}\nN\n" | gsutil config -e
 {{- end }}
