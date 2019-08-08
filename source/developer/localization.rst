@@ -98,6 +98,7 @@ If you find a string that has not been translated, search for the string in the 
   - https://github.com/mattermost/mattermost-mobile/blob/master/i18n/en.json
 
 If it’s included in the file, then most likely it hasn't been translated yet, but is in https://translate.mattermost.com.
+
 If you want to confirm if it's translated, you can check for the respective .json file in ``/i18n`` folder. 
 
 Translation Maintenance
