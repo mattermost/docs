@@ -36,9 +36,6 @@ Release Date 2019-08-16
 #### System Console tools to manage LDAP Groups within Teams and Channels (EE)
  - New Team and Channel pages in the System Console allow administrators to easily manage teams and channels membership with LDAP Group Synchronization instead of using the CLI group commands released in v5.12.
 
-#### High Availability Plugin Uploads (EE)
- - Plugins uploaded via the System Console or the command line interface are now persisted to the configured file store and automatically installed on all servers that join the cluster. Manually installed plugins remain fully supported, but will not automatically install on other servers in the cluster.
-
 #### Office365 SSO out of beta
  - 
  
