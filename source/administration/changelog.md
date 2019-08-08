@@ -41,6 +41,9 @@ Release Date 2019-08-16
 
 #### Office365 SSO out of beta
  - 
+ 
+#### Pre-packaged Plugin: Jenkins
+ - [Jenkins plugin](https://github.com/mattermost/mattermost-plugin-jenkins) for interacting with jobs and builds via slash commands in Mattermost.
 
 ### Improvements
 
