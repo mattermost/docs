@@ -1,4 +1,4 @@
-### Deploy Development Branch
+# Deploy Development Branch
 
 Clone the repository, and checkout the branch you want to deploy:
 
@@ -16,7 +16,6 @@ git checkout <BRANCH_NAME>
 > relative path would be `file://../gitlab-runner/` and the absolute path would be
 > `file:///home/USER/charts/gitlab-runner/`. Pay close attention with absolute paths as it
 > is very easy to miss the leading slash on the filepath.
-
 
 Other steps from the [installation documentation](../installation/index.md) still apply. The difference is when deploying
 a development branch, you need to update the local dependencies, and pass the local git repo location to the helm command.

@@ -2,6 +2,27 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.1.4
+
+### Other (1 change)
+
+- Update GitLab Version to 12.1.4.
+
+
+## 2.1.3
+
+### Other (1 change)
+
+- Update GitLab Version to 12.1.3.
+
+
+## 2.1.2
+
+### Other (1 change)
+
+- Update GitLab Version to 12.1.2.
+
+
 ## 2.1.1
 
 ### Other (1 change)
@@ -41,6 +62,20 @@ entry.
 - Run before_fork only once on boot for Unicorn. !852
 - Update gitlab-runner to 0.7.0/12.1.0. !878
 - Update GitLab Version to 12.1.0.
+
+
+## 2.0.4
+
+### Fixed (4 changes)
+
+- Use sort to compare versions in upgrade logic. !846
+- Freeze the version of redis exporter image. !850
+- Fixed shared secrets whitespace templating #1410. !861
+- Escape and quote all passwords in ERB templates. !869
+
+### Other (1 change)
+
+- Update GitLab Version to 12.0.4.
 
 
 ## 2.0.3 (2019-07-03)
@@ -98,6 +133,18 @@ entry.
 
 - Default Registry replicas to minReplicas. !794 (skarbek)
 - Update GitLab Version to 12.0.0.
+
+
+## 1.9.7
+
+### Fixed (2 changes)
+
+- Freeze the version of redis exporter image. !850
+- Fixed shared secrets whitespace templating #1410. !861
+
+### Other (1 change)
+
+- Update GitLab Version to 11.11.7.
 
 
 ## 1.9.5 (2019-06-26)

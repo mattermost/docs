@@ -1,4 +1,4 @@
-## Architecture
+# Architecture
 
 We plan to support three tiers of components:
 
@@ -66,6 +66,11 @@ Subcharts included are :
 - [redis](https://gitlab.com/charts/gitlab/tree/master/charts/redis)
 - [nginx](https://gitlab.com/charts/gitlab/tree/master/charts/nginx)
 - [registry](https://gitlab.com/charts/gitlab/tree/master/charts/registry)
+
+### Components list
+
+A list of which components are deployed when using the chart, and configuration instructions if needed,
+is available on the [architecture components list](https://docs.gitlab.com/ee/development/architecture.html#component-list) page.
 
 ## Design Decisions
 

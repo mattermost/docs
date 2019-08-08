@@ -4,12 +4,17 @@ The table below maps some of the key previous chart versions and GitLab versions
 
 | Chart version | GitLab version |
 |---------------|----------------|
+| 2.1.4 | 12.1.4 |
+| 2.1.3 | 12.1.3 |
+| 2.1.2 | 12.1.2 |
 | 2.1.1 | 12.1.1 |
 | 2.1.0 | 12.1.0 |
+| 2.0.4 | 12.0.4 |
 | 2.0.3 | 12.0.3 |
 | 2.0.2 | 12.0.2 |
 | 2.0.1 | 12.0.1 |
 | 2.0.0 | 12.0.0 |
+| 1.9.7 | 11.11.7 |
 | 1.9.5 | 11.11.4 |
 | 1.9.4 | 11.11.3 |
 | 1.9.3 | 11.11.3 |
@@ -73,7 +78,6 @@ The table below maps some of the key previous chart versions and GitLab versions
 | 0.2.2 | 11.0.2 |
 | 0.2.1 | 11.0.1 |
 | 0.2.0 | 11.0.0 |
-
 
 To see the full list, you can issue the following command with helm:
 

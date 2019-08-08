@@ -5,7 +5,7 @@ must have installed locally.
 
 ## kubectl
 
-kubectl is the tool that talks to the Kubernetes API. kubectl 1.10 or higher is
+kubectl is the tool that talks to the Kubernetes API. kubectl 1.11 or higher is
 required and it needs to be compatible with your cluster
 ([+/- 1 minor release from your cluster](https://kubernetes.io/docs/tasks/tools/install-kubectl/#before-you-begin)).
 
@@ -108,7 +108,6 @@ local cluster. If `kubectl cluster-info` is not showing `minikube` as the curren
 cluster, use `kubectl config set-cluster minikube` to set the active cluster.
 
 ### Upload the RBAC config
-
 
 #### Upload the RBAC config in GKE
 
