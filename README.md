@@ -1,3 +1,4 @@
+test
 # Mattermost Documentation
 
 This repository generates the documentation available at https://docs.mattermost.com/
