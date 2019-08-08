@@ -19,6 +19,16 @@ enabled: true
 
 annotations: {}
 
+networkpolicy:
+  enabled: false
+  egress:
+    enabled: false
+    rules: []
+  ingress:
+    enabled: false
+    rules: []
+  annotations: {}
+
 ingress:
   enabled: true
   proxyReadTimeout: 900
