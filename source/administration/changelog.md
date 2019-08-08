@@ -110,6 +110,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
+ - Added ``ClusterSettings.NetworkInterface`` to 
+ - Added ``ClusterSettings.BindAddress`` to 
+ - Added ``ClusterSettings.AdvertiseAddress`` to 
+ - Added ``ComplianceSettings.SignRequest`` to 
+ - Added ``PluginSettings.AllowInsecureDownloadUrl`` to
 
 ### Open Source Components
 
@@ -122,26 +127,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Removed ``url-search-params-polyfill`` from https://github.com/mattermost/mattermost-webapp.
  - Removed ``whatwg-fetch`` from https://github.com/mattermost/mattermost-webapp.
 
-### Database Changes
-
 ### API Changes
  - Migrated user API endpoint from Google+ API to People API.
- - Added promote/demote API endpoint.
- - Added invite/remove/promote API endpoints.
- - Added ``/search_group`` API endpoint to return the group channels whose members' usernames match the search term.
- - Added "users who will be removed from team" API endpoint.
- - Added "users who will be removed from channel" API endpoint.
- - Added API to retrieve paginated list of teams, including total count.
- - Added API to retrieve paginated list of channels, including total count.
- - Added API to get users modified since a given time.
- - Added "GET /posts/unread" API to support landing on the last unread post.
- - Added JSON versions of the KVStore plugin API.
- - Added GET POST DELETE handlers for /api/v4/bots/<BOT_USER_ID>/icon endpoint.
+ - Added ``api/v4/channels/group/search`` API endpoint to return the group channels whose members' usernames match the search term.
+ - Added ``/api/v4/channels/:channel_id/members_minus_group_members`` API endpoint to
+ - Added ``api/v4/posts/unread`` API endpoint to
+ - Added ``api/v4/teams/:team_id/members_minux_group_members`` API endpoint to
+ - Added ``api/v4/users/group_channels`` API endpoint to
+ - Added ``api/v4/sessions/revoke/all`` API endpoint to
 
 #### Plugin API
- - Extended PluginAPI to include ``GetBotIconImage``, ``SetBotIconImage`` and ``DeleteBotIconImage``.
-
-### Websocket Event Changes
+ - Added ``GetBotIconImage``, ``SetBotIconImage`` and ``DeleteBotIconImage`` API endpoints to control bot icon images.
+ - Added ``api/v4/plugins/install_from_url`` API endpoint to
 
 ### Known Issues
  - Plugin translation files are not updated on web-client when plugins are upgraded.
