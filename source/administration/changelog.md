@@ -79,6 +79,7 @@ Release Date 2019-08-16
  - Added support for converting bot accounts to user accounts with email/password login through the CLI.
  - Extended the config migrate command to handle SAML keys and certificates.
  - Updated CLI channel list and search commands to show if a channel is private.
+ - Create CLI command "team modify" to modify team's privacy setting.
  
 #### Administration
  - Removed maximum length from ``LinkMetadata`` value so that links can generate OpenGraph previews and be stored in the database.
