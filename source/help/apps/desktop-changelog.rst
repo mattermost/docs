@@ -24,8 +24,6 @@ Release v4.2.2
 This release contains a bug fix for all platforms.
 
 - **Release date:** August 7, 2019
-- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.2.2/mattermost-setup-4.2.2-win32.exe>`__ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.2.2/mattermost-setup-4.2.2-win64.exe>`__ | `Mac <https://releases.mattermost.com/desktop/4.2.2/mattermost-desktop-4.2.2-mac.dmg>`__ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.2.2/mattermost-desktop-4.2.2-linux-x64.tar.gz>`__ 
-- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.2.2>`__
 
 Bug Fixes
 ~~~~~~~~~~~~~~~
