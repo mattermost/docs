@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.1.6
+
+### Fixed (1 change, 1 of them is from the community)
+
+- Disable client-side validation of kubectl apply to fix #1497. !885 (Semjon Bibow)
+
+### Other (1 change)
+
+- Update GitLab Version to 12.1.4.
+
+
 ## 2.1.5
 
 ### Fixed (1 change)

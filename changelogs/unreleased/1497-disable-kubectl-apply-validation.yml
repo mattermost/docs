@@ -1,5 +1,0 @@
----
-title: 'Disable client-side validation of kubectl apply to fix #1497'
-merge_request: 885
-author: Semjon Bibow
-type: fixed
