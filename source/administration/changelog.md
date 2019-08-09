@@ -132,15 +132,15 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### API Changes
  - Migrated user API endpoint from Google+ API to People API.
  - Added ``api/v4/channels/group/search`` API endpoint to return the group channels whose members' usernames match the search term.
- - Added ``/api/v4/channels/:channel_id/members_minus_group_members`` API endpoint to
- - Added ``api/v4/posts/unread`` API endpoint to
- - Added ``api/v4/teams/:team_id/members_minux_group_members`` API endpoint to
- - Added ``api/v4/users/group_channels`` API endpoint to
- - Added ``api/v4/sessions/revoke/all`` API endpoint to
+ - Added ``/api/v4/channels/:channel_id/members_minus_group_members`` API endpoint.
+ - Added ``api/v4/posts/unread`` API endpoint to support landing on the last unread post.
+ - Added ``api/v4/teams/:team_id/members_minux_group_members`` API endpoint.
+ - Added ``api/v4/users/group_channels`` API endpoint to get an object containing a key per group channel id in the query and its value as a list of users members of that group channel.
+ - Added ``api/v4/sessions/revoke/all`` API endpoint to add the ability to revoke sessions from all users.
 
 #### Plugin API
  - Added ``GetBotIconImage``, ``SetBotIconImage`` and ``DeleteBotIconImage`` API endpoints to control bot icon images.
- - Added ``api/v4/plugins/install_from_url`` API endpoint to
+ - Added ``api/v4/plugins/install_from_url`` API endpoint to allow server to download and install a plugin from a remote url.
 
 ### Known Issues 
 **XXX to be updated further in the coming days**
