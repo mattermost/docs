@@ -1,7 +1,7 @@
 ---
 apiVersion: v1
 name: task-runner
-version: 2.1.5
+version: 2.1.6
 appVersion: 12.1.4
 description: For manually running rake tasks through kubectl
 keywords:
