@@ -130,13 +130,15 @@ The list of supported fields is the same as for the ``textarea`` type element.
     "display_name", "String", "Display name of the field shown to the user in the dialog. Maximum 24 characters."
     "name", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same dialog."
     "type", "String", "Set this value to ``textarea`` for a textarea element."
-    "subtype", "String", "(Optional) One of ``text``, ``email``, ``number``, ``tel``, or ``url``. Default is ``text``. Use this to set which keypad is presented to users on mobile when entering the field."
+    "subtype", "String", "(Optional) One of ``text``, ``email``, ``number``, ``password``,``tel``, or ``url``. Default is ``text``. Use this to set which keypad is presented to users on mobile when entering the field."
     "min_length", "Integer", "(Optional) Minimum input length allowed for an element. Default is 0."
     "max_length", "Integer", "(Optional) Maximum input length allowed for an element. Default is 3,000."
     "optional", "Boolean", "(Optional) Set to true if this form element is not required. Default is ``false``."
     "help_text", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
     "default", "String", "(Optional) Set a default value for this form element. Maximum 3,000 characters."
     "placeholder", "String", "(Optional) A string displayed to help guide users in completing the element. Maximum 3,000 characters."
+    
+
 
 Select Elements
 ^^^^^^^^^^^^^^^^^^^^^^^
