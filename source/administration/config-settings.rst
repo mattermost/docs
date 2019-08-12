@@ -2,11 +2,13 @@ Configuration Settings
 ======================
 
 .. note::
-   The order of the configuration settings below are reflective of a reorganization of the System Console in v5.12 released on June 16th, 2019. To view the configuration settings based on the organization of the System Console in versions prior to v5.12, please see `this documentation <https://docs.mattermost.com/administration/prev-config-settings.html>`_ instead.
+   The order of the configuration settings below are reflective of a reorganization of the System Console in version 5.12 released on June 16th, 2019. To view the configuration settings based on the organization of the System Console in versions prior to version 5.12, please see `this documentation <https://docs.mattermost.com/administration/prev-config-settings.html>`_ instead.
 
 Mattermost configuration settings are maintained in the configuration file ``config.json``, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
 
 The default location of ``config.json`` is in the ``mattermost/config`` directory. Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
+
+On new installations starting in version 5.14, the default.json file used to create the initial config.json has been removed from the binary and replaced it with a build step that generates a fresh config.json.  This is to ensure the initial configuration file has all with correct defaults provided in the server code. 
 
 **Environment Variables**
 Starting in Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
@@ -1455,7 +1457,7 @@ Enable Email Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Enables sending of email notifications.
 
-**False**: Disables email notifications for developers who may want to skip email setup for faster development. To remove the **Preview Mode: Email notifications have not been configured** banner, also set **Enable Preview Mode Banner** to ``false``. 
+**False**: Disables email notifications for developers who may want to skip email setup for faster development. To remove the **Preview Mode: Email notifications have not been configured** banner, also set **Enable Preview Mode Banner** to ``false``. If this setting is set to ``false`` and the SMTP server is set up, account related emails will be sent for user account changes such as password, email, username, user token, MFA, and signin type changes.  Email invitations and account deactivation emails will also be sent. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SendEmailNotifications": false`` with options ``true`` and ``false``.                                                   |
@@ -3756,6 +3758,30 @@ The number of milliseconds to leave an idle connection open between servers in t
 | This feature's ``config.json`` setting is ``"IdleConnTimeoutMilliseconds": 90000`` with numerical input.                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Network Interface
+^^^^^^^^^^^^^^^^^
+An IP address used identify the device that does automatic IP detection in high availability clusters. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"NetworkInterface": ""`` with string input.                                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Bind Address
+^^^^^^^^^^^^^
+An IP address used to bind cluster traffic to a specific network device. This setting is used primarily for servers with multiple network devices or different Bind Address and Advertise Address like in deployments that involves NAT (Network Address Translation). 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BindAddress": ""`` with string input.                                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Advertise Address
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The IP address used to access to the server from other nodes. This settings is used primary when cluster nodes are not in the same network and involves NAT (Network Address Translation). 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AdvertiseAddress": ""`` with string input.                                                             |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Metrics Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Block Profile Rate
@@ -4039,6 +4065,14 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.       |
 +-----------------------------------------------------------------------------------------------------------------+
+
+Trace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or empty.  ``error`` will create the error trace when initialising the Elasticsearch client and will print any template creation or search query that returns an error as part of the error message. ``all`` will create the three traces (error, trace and info) for the driver and will not print the queries because they will be part of the trace log level of the driver.
+
++-------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Trace": ""`` with string input.                          |
++-------------------------------------------------------------------------------------------------------+
 
 Message Export Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
