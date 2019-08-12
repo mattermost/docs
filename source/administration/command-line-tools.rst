@@ -715,7 +715,7 @@ mattermost export csv
 
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
 	  
-mattermost export global-realy-zip
+mattermost export global-relay-zip
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
