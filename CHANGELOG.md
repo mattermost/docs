@@ -2,6 +2,35 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.1.7
+
+### Other (1 change)
+
+- Update GitLab Version to 12.1.6.
+
+
+## 2.1.6
+
+### Fixed (1 change, 1 of them is from the community)
+
+- Disable client-side validation of kubectl apply to fix #1497. !885 (Semjon Bibow)
+
+### Other (1 change)
+
+- Update GitLab Version to 12.1.4.
+
+
+## 2.1.5
+
+### Fixed (1 change)
+
+- Generated Random Secrets Should Not Wrap. !875
+
+### Other (1 change)
+
+- Update GitLab Version to 12.1.4.
+
+
 ## 2.1.4
 
 ### Other (1 change)
@@ -62,6 +91,13 @@ entry.
 - Run before_fork only once on boot for Unicorn. !852
 - Update gitlab-runner to 0.7.0/12.1.0. !878
 - Update GitLab Version to 12.1.0.
+
+
+## 2.0.5
+
+### Other (1 change)
+
+- Update GitLab Version to 12.0.6.
 
 
 ## 2.0.4
@@ -133,6 +169,13 @@ entry.
 
 - Default Registry replicas to minReplicas. !794 (skarbek)
 - Update GitLab Version to 12.0.0.
+
+
+## 1.9.8
+
+### Other (1 change)
+
+- Update GitLab Version to 11.11.8.
 
 
 ## 1.9.7
