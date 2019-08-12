@@ -38,7 +38,22 @@ Mattermost has eight regions that can be focused for navigation. Use **F6** (Des
 
 Message Navigation
 ------------------
-
-
+When the message list region is focused, use the **UP** or **DOWN** arrow keys to navigate through messages. Press **TAB** to navigate through message actions
 
 .. image:: ../../images/post_list_ada.gif
+
+
+Message Composition
+~~~~~~~~~~~~~~~~~~~
+A custom label is composed for each message making it easier to read. Each message is made up of elements (e.g. author, timestamp, message content, etc.) which are read together in full sentences. Here’s the order they are read in:
+
+Channel Sidebar Navigation
+--------------------------
+When the channel sidebar region is focused, use the **UP** or **DOWN** arrow keys to focus individual sidebar sections, such as Favorites, Public Channels, Private Channels and Direct Messages. Press **TAB** to navigate through channels or other buttons within a sidebar section.
+
+.. image:: ../../images/sidebar_nav.gif
+
+
+
+
+
