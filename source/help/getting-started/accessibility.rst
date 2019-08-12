@@ -45,7 +45,20 @@ When the message list region is focused, use the **UP** or **DOWN** arrow keys t
 
 Message Composition
 ~~~~~~~~~~~~~~~~~~~
-A custom label is composed for each message making it easier to read. Each message is made up of elements (e.g. author, timestamp, message content, etc.) which are read together in full sentences. Here’s the order they are read in:
+Mattermost is compatible with most popular screen readers. A custom readout is composed for each message by combining the message elements and reading them together in full sentences. Message elements will read in the following order:
+
+1. Header: Author, timestamp, message type (i.e. parent post or reply)
+2. Main Content: The message content typed by the author
+3. Attachments: The number of attachments (if applicable)
+4. Emoji Reactions: The number of unique emoji reactions (if applicable)
+5. Flags/Pins: If a message is pinned or flagged (if applicable)
+
+For example, a message read by a screen reader may sound like the following:
+
+```
+Eric Sethna at 12:57pm Thursday June 13th wrote a reply "Thanks for the review", 3 attachments, 2 reactions, message is flagged and pinned.
+```
+
 
 Channel Sidebar Navigation
 --------------------------
