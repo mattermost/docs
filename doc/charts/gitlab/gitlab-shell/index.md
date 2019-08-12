@@ -42,7 +42,10 @@ with `global.shell.port`, and defaults to `22`.
 | `replicaCount`           | `1`            | Shell replicas                           | 
 | `service.externalPort`   | `22`           | Shell exposed port                       | 
 | `service.internalPort`   | `22`           | Shell internal port                      | 
-| `service.name`           | `gitlab-shell` | Shell service name                       | 
+| `service.name`           | `gitlab-shell` | Shell service name                       |
+| `service.type`           | `ClusterIP`    | Shell service type                       |
+| `service.loadBalancerIP` |                | IP address to assign to LoadBalancer (if supported) |
+| `service.loadBalancerSourceRanges` |      | List of IP CIDRs allowed access to LoadBalancer (if supported)  |
 | `service.type`           | `ClusterIP`    | Shell service type                       | 
 | `tolerations`            | `[]`           | Toleration labels for pod assignment     |
 | `unicorn.serviceName`    | `unicorn`      | Unicorn service name                     | 
@@ -160,3 +163,23 @@ authToken:
 |:-----------------|:-------:|:--------|:------------|
 | authToken.key    | String  |         | The name of the key in the above secret that contains the authToken. |
 | authToken.secret | String  |         | The name of the kubernetes `Secret` to pull from. |
+
+### LoadBalancer Service
+
+If the `service.type` is set to `LoadBalancer`, you can optionally specify `service.loadBalancerIP` to create
+the `LoadBalancer` with a user-specified IP (if your cloud provider supports it).
+
+You can also optionally specify a list of `service.loadBalancerSourceRanges` to restrict
+the CIDR ranges that can access the `LoadBalancer` (if your cloud provider supports it).
+
+Additional information about the `LoadBalancer` service type can be found in
+[the Kubernetes documentation](https://kubernetes.io/docs/concepts/services-networking/#loadbalancer)
+
+```YAML
+service:
+  type: LoadBalancer
+  loadBalancerIP: 1.2.3.4
+  loadBalancerSourceRanges:
+  - 5.6.7.8/32
+  - 10.0.0.0/8
+```

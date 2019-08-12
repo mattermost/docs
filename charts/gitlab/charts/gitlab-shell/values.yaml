@@ -11,7 +11,10 @@ service:
   type: ClusterIP
   externalPort: 22
   internalPort: 2222
-  #externalIPs: 
+  # loadBalancerIP: x.x.x.x
+  # loadBalancerSourceRanges:
+  # - x.x.x.x/yy
+  # externalIPs:
   # - x.x.x.x
   # - y.y.y.y
 
