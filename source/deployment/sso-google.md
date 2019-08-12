@@ -5,7 +5,7 @@ Follow these steps to configure Mattermost to use Google as a single sign-on (SS
 
 **Note: Google SSO is not yet supported in the mobile app. If you want to use Google SSO on mobile, you'll have to [build your own app](https://developers.mattermost.com/contribute/mobile/build-your-own/).**
 
-**Note:  The Google People API has replaced the Google+ API, which was deprecated by Google as of March 7th, 2019 per their notice at https://developers.google.com/+/api-shutdown.  
+**Note: The Google People API has replaced the Google+ API, which was deprecated by Google as of March 7th, 2019 per their notice at https://developers.google.com/+/api-shutdown.**
 
 1 - Go to [Google API Manager](https://console.developers.google.com), click **Credentials** in the left hand sidebar, click **Create a project** and enter "Mattermost - your-company-name" as the **Project Name**, then click **Create**.
 
