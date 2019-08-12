@@ -65,8 +65,3 @@ Channel Sidebar Navigation
 When the channel sidebar region is focused, use the **UP** or **DOWN** arrow keys to focus individual sidebar sections, such as Favorites, Public Channels, Private Channels and Direct Messages. Press **TAB** to navigate through channels or other buttons within a sidebar section.
 
 .. image:: ../../images/sidebar_nav.gif
-
-
-
-
-
