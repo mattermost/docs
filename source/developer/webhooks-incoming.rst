@@ -147,7 +147,7 @@ Troubleshooting
 
 To debug incoming webhooks in **System Console > Logs**, set **System Console > Logging > Enable Webhook Debugging** to ``true`` and set **System Console > Logging > Console Log Level** to ``DEBUG``.
 
-When ``DEBUG`` Mode is ``TRUE``, enhanced logging is enabled and each webhook logged will have a ``request_id`` value in the log file to assist with matching issues with particular requests when troubleshooting. 
+As of v5.14, When ``DEBUG`` Mode is ``TRUE``, enhanced logging is enabled and each webhook logged will have a ``request_id`` value in the log file to assist with matching issues to particular requests. 
 
 Some common error messages include:
 
