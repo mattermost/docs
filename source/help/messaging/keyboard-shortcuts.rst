@@ -30,6 +30,8 @@ Navigation
 | CTRL+SHIFT+L                           | CMD+SHIFT+L                            | Set focus to center channel input field                                      |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
 
+Additional Navigational keyboard shortcuts for accessibility users can be found `here <https://docs.mattermost.com/help/getting-started/accessibility.html>`_.
+
 Files
 =====
 
