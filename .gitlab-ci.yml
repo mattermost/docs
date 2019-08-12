@@ -646,7 +646,7 @@ check_docs_lint:
   }
 
 .specs: &specs
-  image: registry.gitlab.com/gitlab-org/gitlab-build-images:ruby-2.5.3-git-2.18-chrome-71.0-node-8.x-yarn-1.12-graphicsmagick-1.3.29-docker-18.06.1
+  image: registry.gitlab.com/gitlab-org/gitlab-build-images:ruby-2.6.3-git-2.22-chrome-73.0-node-12.x-yarn-1.16-graphicsmagick-1.3.33-docker-18.06.1
   stage: specs
   services:
   - docker:dind
