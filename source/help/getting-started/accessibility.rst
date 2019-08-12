@@ -38,7 +38,7 @@ Mattermost has eight regions that can be focused for navigation. Use **F6** (Des
 
 Message Navigation
 ------------------
-When the message list region is focused, use the **UP** or **DOWN** arrow keys to navigate through messages. Press **TAB** to navigate through message actions
+When the message list region is focused, use the **UP** or **DOWN** arrow keys to navigate through messages. Press **TAB** to navigate through message actions.
 
 .. image:: ../../images/post_list_ada.gif
 
@@ -55,10 +55,9 @@ Mattermost is compatible with most popular screen readers. A custom readout is c
 
 For example, a message read by a screen reader may sound like the following:
 
-```
-Eric Sethna at 12:57pm Thursday June 13th wrote a reply "Thanks for the review", 3 attachments, 2 reactions, message is flagged and pinned.
-```
-
+  .. code-block:: none
+  
+    Eric Sethna at 12:57pm Thursday June 13th wrote a reply "Thanks for the review", 3 attachments, 2 reactions, message is flagged and pinned.
 
 Channel Sidebar Navigation
 --------------------------
