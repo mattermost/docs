@@ -242,7 +242,7 @@ mattermost channel list
 ~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    List all channels on a specified team. Archived channels are appended with ``(archived)``.
+    List all channels on a specified team. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``.
 
   Format
     .. code-block:: none
@@ -365,7 +365,7 @@ mattermost channel search
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Search for a channel by channel name. Returns channel display name, channel Id, and indicates if it is archived.
+    Search for a channel by channel name. Returns channel display name, channel Id, and indicates if it is private or archived. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``. 
     
   Format
     .. code-block:: none
@@ -649,6 +649,7 @@ mattermost export
     -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license
     -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`__
     -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license
+    -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a zip file containing emails to send to Global Relay for debug and testing purposes only. Requires an E20 license   
     -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance
@@ -708,6 +709,27 @@ mattermost export csv
     .. code-block:: none
 
       ./mattermost export csv --exportFrom=1513102632
+
+  Options
+    .. code-block:: none
+
+          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+	  
+mattermost export global-realy-zip
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Export data from Mattermost into a zip file containing emails to send to Global Relay for debug and testing purposes only. This does not archive any information in Global Relay.
+
+  Format
+    .. code-block:: none
+
+      mattermost export global-relay-zip
+
+  Example
+    .. code-block:: none
+
+      ./mattermost export global-relay-zip --exportFrom=1513102632
 
   Options
     .. code-block:: none
