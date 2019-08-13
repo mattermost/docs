@@ -1384,7 +1384,7 @@ mattermost team
     -  `mattermost team create`_ - Create a team.
     -  `mattermost team delete`_ - Delete a team.
     -  `mattermost team list`_ - List all teams.
-    -  `mattermost team modify`_ - Modify a teams's public/private type..
+    -  `mattermost team modify`_ - Modify a team's public/private type.
     -  `mattermost team remove`_ - Remove users from a team.
     -  `mattermost team rename`_ - Rename a team.
     -  `mattermost team restore`_ - Restore a previously archived team.    
@@ -1501,7 +1501,7 @@ mattermost team modify
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Modify a teams's public/private type. 
+    Modify a team's public/private type. 
 
   Format
     .. code-block:: none
