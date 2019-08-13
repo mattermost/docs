@@ -56,7 +56,7 @@ Plugin Configuration Information
   Basic information including number of active and inactive plugins, which are using webapp or backend portions, and which pre-packaged plugins are enabled.
 
 Aggregated Usage Statistics
-  Non-personally identifiable summations of basic usage statistics: Number of enabled and disabled accounts, number of user logins in the last 24 hours and the last 30 days, number of users active in the last day/month, whether APIv3 endpoints were used in the last 24 hours, number of posts, channels and teams
+  Non-personally identifiable summations of basic usage statistics: Number of enabled and disabled accounts, number of user logins in the last 24 hours and the last 30 days, number of users active in the last day/month, whether APIv3 endpoints were used in the last 24 hours, number of posts, channels, teams and bots.
 
 The following information is sent when the specified event occurs:
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
