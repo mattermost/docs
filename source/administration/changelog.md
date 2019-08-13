@@ -88,7 +88,7 @@ Release Date 2019-08-16
  - implemented enhanced logging for CSRF warnings by adding the following information to each request: Remote Adddress, Path, User ID, Session ID.
  
 #### Enterprise Edition (EE)
- - Added support for signing SAML requests to be able to be approved to Infosec.
+ - Added support for signing SAML requests, as required for Infosec approval.
  - Added support for configuring the interface used for cluster peer discovery in High Availability clusters.
 
 ### Bug Fixes
