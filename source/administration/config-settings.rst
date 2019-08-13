@@ -3776,7 +3776,7 @@ An IP address used to bind cluster traffic to a specific network device. This se
 
 Advertise Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The IP address used to access to the server from other nodes. This settings is used primary when cluster nodes are not in the same network and involves NAT (Network Address Translation). 
+The IP address used to access the server from other nodes. This settings is used primary when cluster nodes are not in the same network and involve NAT (Network Address Translation). 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AdvertiseAddress": ""`` with string input.                                                             |
