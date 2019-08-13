@@ -3760,7 +3760,7 @@ The number of milliseconds to leave an idle connection open between servers in t
 
 Network Interface
 ^^^^^^^^^^^^^^^^^
-An IP address used identify the device that does automatic IP detection in high availability clusters. 
+An IP address used to identify the device that does automatic IP detection in high availability clusters. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"NetworkInterface": ""`` with string input.                                                             |
