@@ -2282,6 +2282,14 @@ The certificate file used to generate the signature on a SAML request to the Ide
 | This feature's ``config.json`` setting is ``"PublicCertificateFile": ""`` with string input.                                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Sign Request
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When true, Mattermost signs the SAML request using your Service Provider Private Key. When false, Mattermost does not sign the SAML request.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SignRequest": ""`` with string input.                                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Email Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost.
