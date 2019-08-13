@@ -3768,7 +3768,7 @@ An IP address used to identify the device that does automatic IP detection in hi
 
 Bind Address
 ^^^^^^^^^^^^^
-An IP address used to bind cluster traffic to a specific network device. This setting is used primarily for servers with multiple network devices or different Bind Address and Advertise Address like in deployments that involves NAT (Network Address Translation). 
+An IP address used to bind cluster traffic to a specific network device. This setting is used primarily for servers with multiple network devices or different Bind Address and Advertise Address like in deployments that involve NAT (Network Address Translation). 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BindAddress": ""`` with string input.                                                             |
