@@ -30,7 +30,7 @@ To manage membership of a private team with synchronized groups:
 2. Under **Team Management**, enable **Sync Group Members**. If **Anyone can join this team** is enabled or if specific email domains are set, they will be disabled by the Sync Group Members feature. 
 3. Add one or more groups to the team. If there are groups already associated to default users into the team, they will already be present.  
 4. Review the notice in the footer of the screen for any users that are not part of groups who will be removed from the team on the next synchronization.
-5. Click save. Members will be updated on the next scheduled AD/LDAP synchronization. 
+5. Click **Save**. Members will be updated on the next scheduled AD/LDAP synchronization. 
 
 Alternatively you can use the CLI tool to set the team to be managed by groups:  
 
@@ -98,4 +98,5 @@ Public channels are available to all members to discover and join. Managing memb
 Only users that are members of groups synchronized to team are able to discover and join public channels.  Private channels can also be managed by synchronized groups when a team is managed by synchronized groups. 
 
 **Why don't users get readded to teams or channels once they have been removed from and then later re-added to the LDAP group?**
+
 The implementation of group removals does not currently differentiate between users who have removed themselves or have been removed by the LDAP synchronization process. Our design optimizes for users who have removed themselves from a team or channel.  In the future, we may add more tools to allow admins to re-add all users who have been removed and even prevent users from leaving a team or channel. Additionally, LDAP users who are not accessible to Mattermost based on filters will be removed from the groups and may be removed from teams and channels. If they were removed from teams and channels then they will not be re-added to those teams and channels upon becoming subsequently re-accessible to Mattermost.  
