@@ -18,7 +18,7 @@ More about settings available in **Customer Branding Tools**:
 
 Site Name
 `````````
-Choose the name of your Mattermost site to be shown in the UI. The site name appears in the header and footer of the site login page, team selection page, team creation page, account creation page, and email invitations. Note that the site name applies to the entire site and not just a specific team on the site. Site name is limited to 30 characters or less.
+Choose the name of your Mattermost site to be shown in the UI. The site name appears in the header and footer of the site login page, team selection page, team creation page, account creation page, email invitations and replaces "Mattermost" on the About page. Note that the site name applies to the entire site and not just a specific team on the site. Site name is limited to 30 characters or less.
 
 Custom Branding Image
 `````````````````````
