@@ -13,7 +13,6 @@ Release Date 2019-08-16
 #### Removed and Deprecated Features
 
  - We are removing support for Internet Explorer (IE11) in Mattermost v5.16.0, which releases on October 16, 2019. Learn more in our [forum post](https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575).
- - **Enable Plugin Health Check** removed from ``config.json``. Instead, all plugins are now automatically monitored and restarted if a plugin has crashed or is deemed unhealthy. If a plugin crashes three times within an hour, the server automatically deactivates the plugin.
  
 ### Breaking Changes
 
