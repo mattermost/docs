@@ -34,9 +34,6 @@ Release Date 2019-08-16
 
 #### System Console tools to manage LDAP Groups within Teams and Channels (EE)
  - New Team and Channel pages in the System Console allow administrators to easily manage teams and channels membership with LDAP Group Synchronization instead of using the CLI group commands released in v5.12.
-
-#### Office365 SSO out of beta
- - 
  
 #### Pre-packaged Plugin: Jenkins
  - [Jenkins plugin](https://github.com/mattermost/mattermost-plugin-jenkins) for interacting with jobs and builds via slash commands in Mattermost.
@@ -81,6 +78,7 @@ Release Date 2019-08-16
  - Create CLI command "team modify" to modify team's privacy setting.
  
 #### Administration
+ - Office365 SSO was promoted out of beta.
  - Removed maximum length from ``LinkMetadata`` value so that links can generate OpenGraph previews and be stored in the database.
  - The config.json file is now generated with build time using defaults in code and not in ``default.json``.
  - Added new settings to have more control over ``BindAddress`` and ``AdvertiseAddress`` in the cluster server to allow users to configure properly in situations where the servers are communicating through another server using NAT.
@@ -144,6 +142,15 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues 
 **XXX to be updated further in the coming days**
+
+ - Jira Plugin: Jira username shows as ``()`` when connecting with Cloud.
+ - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
+ - Post and comment boxes are expanding too early on Firefox.
+ - Modifying config files causes compliance exports to run twice.
+ - Desktop notification doesn't show up after force logging out of an active session.
+ - Using channel autocomplete while editing post causes current channel to be unread.
+ - Scroll pop may occur with embedded Youtube links.
+ - Clicking on a post will highlight it after returning to the tab/window.
  - Plugin translation files are not updated on web-client when plugins are upgraded.
  - Changes to Account Settings are being saved even when user does not clicks on Save button.
  - User count does not update if a user automatically joins a channel.
