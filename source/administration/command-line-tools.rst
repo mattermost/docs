@@ -1384,6 +1384,7 @@ mattermost team
     -  `mattermost team create`_ - Create a team.
     -  `mattermost team delete`_ - Delete a team.
     -  `mattermost team list`_ - List all teams.
+    -  `mattermost team modify`_ - Modify a team's privacy setting to public or private.
     -  `mattermost team remove`_ - Remove users from a team.
     -  `mattermost team rename`_ - Rename a team.
     -  `mattermost team restore`_ - Restore a previously archived team.    
@@ -1495,6 +1496,23 @@ mattermost team list
     .. code-block:: none
 
       ./mattermost team list
+      
+mattermost team modify
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Modify a team's privacy setting to public or private.  
+
+  Format
+    .. code-block:: none
+
+      mattermost team modify [team] [flag]
+
+  Example
+    .. code-block:: none
+
+      ./mattermost team myteam --private
+      ./mattermost team myteam --public
 
 mattermost team remove
 ~~~~~~~~~~~~~~~~~~~~~~
