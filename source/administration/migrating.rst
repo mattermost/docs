@@ -107,6 +107,7 @@ Migrating from Slack
 ~~~~~~~~~~~~~~~~~~~~
 
 Slack offers two ways to `export your data from their product <https://get.slack.help/hc/en-us/articles/201658943-Export-your-workspace-data>`_.
+
 1. A Slack "export" file can be generated from **Slack** > **Administration** > **Workspace settings** > **Import/Export Data** > **Export** > **Start Export**.  This export does not include private channels, direct or group messages.  
 
 2. You can request "Corporate Export" from Slack directly to get a larger export including private channels, direct and group messages. 
