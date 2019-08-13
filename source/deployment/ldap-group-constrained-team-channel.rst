@@ -19,7 +19,7 @@ Similarily on private channels that are managed by synchronized groups, users ou
  - invitation through the /invite slash command 
  - added to the channel with “add members”
 
-Users, however, can remove themselves from teams and private channels managed by synchronized groups. Once they remove themselves or if they are removed by the 
+Users, however, can remove themselves from teams and private channels managed by synchronized groups. 
 
 Managing Membership of a Team or Channel with Synchronized Groups
 ----------
