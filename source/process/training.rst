@@ -300,7 +300,7 @@ Procedure:
 - **Technical Training**
 
   - Audience: Primarily support, SAs and QA
-  - Technical understanding of how the feature works and how it was built (to help with better troubleshoot) 
+  - Technical understanding of how the feature works and how it was built (to help with better troubleshooting)
   - Technical flow for the feature, data structure, etc.
   - What to ask for when troubleshooting 
   - Q&A
