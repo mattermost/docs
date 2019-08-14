@@ -8,6 +8,8 @@ Important Upgrade Notes
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
 | v5.14.0                                            | Webhooks are now only displayed if the user is the creator of the webhook or a system administrator.                                                             |
+|                                                    |------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | With the update from Google+ to Google People, system admins need to adjust the ``UserAPIEndpoint`` and need to configure a new Scope configuration setting.     |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.12.0                                            | If your plugin uses the ``DeleteEphemeralMessage`` plugin API, update it to accept a ``postId string`` parameter.                                                |
 |                                                    | See `documentation <https://developers.mattermost.com/extend/plugins/server/reference/#API.DeleteEphemeralPost>`_ to learn more.                                 |
