@@ -144,20 +144,15 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``GetBotIconImage``, ``SetBotIconImage`` and ``DeleteBotIconImage`` API endpoints to control bot icon images.
  - Added ``api/v4/plugins/install_from_url`` API endpoint to allow server to download and install a plugin from a remote url.
 
-### Known Issues 
-**XXX to be updated further in the coming days**
-
- - 
- - 
- - 
- - 
- - 
- - 
- - 
- - 
- - 
- - 
- - Jira Plugin: Jira username shows as ``()`` when connecting with Cloud.
+### Known Issues
+ - Users are unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
+ - User count in a channel does not update until after refresh if a user automatically joins a channel.
+ - Long posts might overlap in compact view.
+ - Joining a new channel with few posts might not take the user to the bottom of the channel.
+ - Missing messages can be caused if network fails on API calls.
+ - Search help text popover may not display on narrow screen view.
+ - Expand/collapse in image icons are underlined.
+ - Messages may not load when opening a channel with multiple unread messages.
  - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
  - Post and comment boxes are expanding too early on Firefox.
  - Modifying config files causes compliance exports to run twice.
@@ -167,6 +162,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Clicking on a post will highlight it after returning to the tab/window.
  - Plugin translation files are not updated on web-client when plugins are upgraded.
  - Changes to Account Settings are being saved even when user does not clicks on Save button.
+ - SVG attachments bleed over into subsequent posts.
  - User count does not update if a user automatically joins a channel.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
