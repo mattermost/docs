@@ -1645,6 +1645,16 @@ Enable Link Previews
 | This feature's ``config.json`` setting is ``"EnableLinkPreviews": false`` with options ``true`` and ``false``.                                                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable SVGs
+^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Enables users to see previews of SVG file attachments and SVG image links.
+
+**False**: Previews of SVG file attachments and SVG image links are not displayed.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSVGs": false`` with options ``true`` and ``false``.                                                       |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Custom URL Schemes
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 A list of URL schemes that are used for autolinking in message text. ``http``, ``https``, ``ftp``, ``tel`` and ``mailto`` always create links.
