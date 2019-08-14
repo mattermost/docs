@@ -101,4 +101,4 @@ Only users that are members of groups synchronized to team are able to discover 
 
 The implementation of group removals does not currently differentiate between users who have removed themselves or have been removed by the LDAP synchronization process. Our design optimizes for users who have removed themselves from a team or channel.  In the future, we may add the ability for admins to re-add users who have been removed, and even prevent users from leaving, a team or channel. 
 
-Additionally, LDAP users who are not accessible to Mattermost based on filters will be removed from the groups and may be removed from teams and channels. If they were removed from teams and channels then they will not be re-added to those teams and channels upon becoming subsequently re-accessible to Mattermost.  
+Additionally, LDAP users who are not accessible to Mattermost based on filters will be removed from the groups and from group-synced teams and channels. If they were removed from teams and channels then they will not be re-added to those teams and channels upon becoming subsequently re-accessible to Mattermost.
