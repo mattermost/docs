@@ -250,7 +250,7 @@ Not everyone is comfortable with speaking in front of 60+ people. Not everyone s
 Product Training and Q&A Session
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-These are our product training sessions for the Sales and Customer Success teams, along with QA, focused on frequently asked product areas. They include a functional and technical training session targeted as specific audiences.
+These are our product training sessions for the Sales and Customer Success teams, along with QA, focused on frequently asked product areas. They include a functional and technical training session targeted for specific audiences.
 
 Attendees:
 
