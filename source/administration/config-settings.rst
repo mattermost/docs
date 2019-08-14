@@ -2485,10 +2485,10 @@ Obtain this value by registering Mattermost as an application in your Google acc
 
 User API Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-It is recommended to use ``"https://www.googleapis.com/plus/v1/people/me"`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
+It is recommended to use `https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata` as the User API Endpoint. Otherwise, enter a custom endpoint in `config.json` with HTTP or HTTPS depending on how your server is configured.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://www.googleapis.com/plus/v1/people/me"`` with string input.                                   |
+| This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata"``   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Auth Endpoint
