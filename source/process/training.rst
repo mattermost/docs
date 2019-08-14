@@ -268,13 +268,22 @@ Procedure:
 
 1. (Chair) Schedules a kick-off call with co-chairs two weeks prior to the training session. Purpose is to review expectations and plans for the session, as well as answer any questions.
 
-2. (Co-Chairs) Prepares slides and other reference material for the session. Must be shared with Chair at least 48 hours ahead of the session.
+2. (Co-Chairs) Prepare a pre-screening survey to assess team members' knowledge of the product area. This is optional but recommended as it can help guide focus areas of the training session.
 
-3. (Co-Chairs) Two days prior to the training session, practice a dry run for length and structure of the session. This is recommended but optional.
+3. (Co-Chairs) Prepares slides and other reference material for the session. Must be shared with Chair at least 48 hours ahead of the session.
 
-4. (Chair) Queues an item for that week's Customer Obsession meeting to remind everyone of the product training session taking place. Include a mention of the topic, along with who is leading the session.
+.. tip :: 
 
-5. (Chair & Co-Chairs) Signs into their Zoom account via OneLogin to access recording and screenshare capabilities during the meeting.
+  - When sharing code snippets, highlight the area of focus within the code snippet.
+  - Focus on visuals, diagrams and live demonstrations instead of slides where possible.
+  - Share at least one memorable customer story.
+  - See the Google Drive on `previous materials and training recordings for reference <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29_>`_.
+
+4. (Co-Chairs) Two days prior to the training session, practice a dry run for length and structure of the session. This is optional but recommended.
+
+5. (Chair) Queues an item for that week's Customer Obsession meeting to remind everyone of the product training session taking place. Include a mention of the topic, along with who is leading the session.
+
+6. (Chair & Co-Chairs) Signs into their Zoom account via OneLogin to access recording and screenshare capabilities during the meeting.
 
 **During meeting:**
 
@@ -319,7 +328,7 @@ Procedure:
 
 2. (Chair) Uploads meeting recording and slides to `Google Drive folder <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29_>`), then share in channel. `See example <https://community.mattermost.com/core/pl/dkeh34y5pt8ybrb5mmrfbyy1ee>`_.
 
-3. (Chair & Co-Chairs) Meets after the training session, review feedback, and discuss what could have been improved.
+3. (Chair & Co-Chairs) Holds a retrospective meeting two days after the training session to review feedback and discuss what could have been improved.
 
 4. (Chair) Makes adjustments to meeting process based on feedback and discussion with co-chairs. Schedules kick-off call for the next training session.
 
