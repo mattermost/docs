@@ -19,6 +19,7 @@ Mattermost v5.14.0 contains a medium level security fix. [Upgrading](http://docs
 ### Breaking Changes
 
  - Webhooks are now only displayed if the user is the creator of the webhook or a system administrator.
+ - With the update from Google+ to Google People, system admins need to ensure the ``GoogleSettings.Scope`` config.json setting is set to ``profile email`` and ``UserAPIEndpoint`` setting should be set to ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` per [updated documentation](https://docs.mattermost.com/deployment/sso-google.html).
 
 **IMPORTANT:** If you upgrade from a release earlier than 5.12, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
