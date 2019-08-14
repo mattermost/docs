@@ -1652,7 +1652,7 @@ Enable SVGs
 **False**: Previews of SVG file attachments and SVG image links are not displayed.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSVGs": false`` with options ``true`` and ``false``.                                                       |
+| This feature's ``config.json`` setting is ``"EnableSVGs": false`` with options ``true`` and ``false``.                                                               |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Custom URL Schemes
