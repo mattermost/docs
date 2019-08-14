@@ -325,13 +325,6 @@ Procedure:
 
 5. (Co-Chairs) Updates product documentation or other resources based on the training session.
 
-Frequently Asked Questions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-**Why don't new people introduce themselves?**
-
-Not everyone is comfortable with speaking in front of 60+ people. Not everyone speaks clear English. We don’t want the first company-wide meeting to be anxious for new team members, hence by default managers intro them. New hires can opt-in to introducing themselves. 
-
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
