@@ -278,7 +278,7 @@ Procedure:
 
 **During meeting:**
 
-1. (Chair) At 8:58am Palo Alto time on the day meeting is held, posts a reminder of the session along with a Zoom link to join the call. `See example <https://community.mattermost.com/core/pl/ward3bdkii895kw9g4sigbikwo>`_.
+1. (Chair) At 8:58am Palo Alto time on the day the meeting is held, posts a reminder of the session along with a Zoom link to join the call. `See example <https://community.mattermost.com/core/pl/ward3bdkii895kw9g4sigbikwo>`_.
 
 2. (Team) Joins the **Zoom** link in the header of the `Product Training and Q&A channel <https://community-release.mattermost.com/core/channels/product-training-and-qa>`_.
 
