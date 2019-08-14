@@ -266,7 +266,7 @@ Procedure:
 
 **Before meeting:**
 
-1. (Chair) Schedules a kick-off call with co-chairs, scheduled for two weeks prior to the training session. Purpose is to review expectations and plans for the session, as well as answer any questions.
+1. (Chair) Schedules a kick-off call with co-chairs two weeks prior to the training session. Purpose is to review expectations and plans for the session, as well as answer any questions.
 
 2. (Co-Chairs) Prepares slides and other reference material for the session. Must be shared with Chair at least 48 hours ahead of the session.
 
