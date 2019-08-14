@@ -33,7 +33,7 @@ Mattermost v5.14.0 contains a medium level security fix. [Upgrading](http://docs
  - No more scrolling required to get to the oldest unread post. Now when the channel opens when there are unreads it opens at the new messages line, regardless of how many unreads exist since the last time the user viewed the channel.
 
 #### Jira V2.1
- - Full list of features in 2.1: https://github.com/mattermost/mattermost-plugin-jira#jira-21-features.
+ - Full list of features in v2.1: https://github.com/mattermost/mattermost-plugin-jira#jira-21-features.
 
 #### System Console tools to manage LDAP Groups within Teams and Channels (EE)
  - New Team and Channel pages in the System Console allow administrators to easily manage teams and channels membership with LDAP Group Synchronization instead of using the CLI group commands released in v5.12.
@@ -68,7 +68,6 @@ Mattermost v5.14.0 contains a medium level security fix. [Upgrading](http://docs
  - Added support for relative links in interactive message buttons, simplifying plugin development.
  
 #### Plugins
- - Added ability to download and install a plugin from a remote url via the System Console.
  - Added support for plugins to override right-hand sidebar.
  - Added support for plugins to trigger interactive dialogs programmatically, instead of only after a user action.
  
@@ -148,6 +147,16 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Known Issues 
 **XXX to be updated further in the coming days**
 
+ - 
+ - 
+ - 
+ - 
+ - 
+ - 
+ - 
+ - 
+ - 
+ - 
  - Jira Plugin: Jira username shows as ``()`` when connecting with Cloud.
  - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
  - Post and comment boxes are expanding too early on Firefox.
@@ -213,6 +222,15 @@ Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.ma
  - Fixed an issue where users were not able to search for split parts of first/last names or for split characters such as ``_`` with elasticsearch autocomplete enabled.
  - Fixed an issue where OAuth endpoints returned application/json content type for HTML redirects.
  - Fixed an issue where json responses were not returned for errors on oauth API endpoints, and a 500 error was returned instead of 4xx errors.
+ 
+### config.json
+
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+ - Under ``ElasticsearchSettings`` in ``config.json``:
+    - Added ``SkipTLSVerification`` to ignore certificate verification for Elasticsearch.
  
 #### Open Source Components
 
