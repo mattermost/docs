@@ -38,8 +38,10 @@ Mattermost v5.14.0 contains a medium level security fix. [Upgrading](http://docs
 #### System Console tools to manage LDAP Groups within Teams and Channels (EE)
  - New Team and Channel pages in the System Console allow administrators to easily manage teams and channels membership with LDAP Group Synchronization instead of using the CLI group commands released in v5.12.
  
-#### Pre-packaged Plugin: Jenkins
+#### Pre-packaged Plugins
  - [Jenkins plugin](https://github.com/mattermost/mattermost-plugin-jenkins) for interacting with jobs and builds via slash commands in Mattermost.
+ - [Antivirus plugin](https://github.com/mattermost/mattermost-plugin-antivirus) for scanning files uploaded to Mattermost.
+ - [GitLab plugin](https://github.com/mattermost/mattermost-plugin-gitlab) for getting notifications in Mattermost about mentions, review requests and comments.
 
 ### Improvements
 
