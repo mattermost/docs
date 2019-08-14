@@ -155,7 +155,8 @@ Learn how to keep Mattermost current with fixes and new features.
    /administration/important-upgrade-notes*   
    /administration/changelog*
    /administration/version-archive*
-   /administration/extended-support-release*  
+   /administration/extended-support-release* 
+   /administration/release-lifecycle* 
    /administration/downgrade.rst
    /administration/open-source-components*
 
