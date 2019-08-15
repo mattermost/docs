@@ -55,7 +55,7 @@ Alternatively you can use the CLI tool to set a private channel to be managed by
 Add or Remove Groups from Teams
 ----------
 
-Once the management of the team is converted to be managed by synchronized groups, a team or system admininstrator can add additional groups from **Main Menu > Add Groups to Team**.  This will add users on the next AD/LDAP synchronization and any new users to the group will be added to the team on subsequent synchronizations. 
+Once the management of the team is converted to be managed by synchronized groups, a team or system admininstrator can add additional groups from **Main Menu > Add Groups to Team**.  This will add users on the next AD/LDAP synchronization and any new users to the group will be added to the team on subsequent synchronizations. Team Admins will be prevented from changing the team to public by enabling **Team Settings > Allow any user with an account on this server to join this team**.
 
 Team or system administrators can also remove groups from a team from **Main Menu > Manage Groups**. This will disassociate the group from the team. Users are removed on the next AD/LDAP synchronization.
 
