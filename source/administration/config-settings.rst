@@ -4074,6 +4074,14 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.       |
 +-----------------------------------------------------------------------------------------------------------------+
 
+Skip TLS Verification  
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When true, http connections with self-signed certificates will be ignored when connecting to Elasticsearch.  When false, certificates will be verified. 
+
++-------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SkipTLSVerification  ": "false"`` with boolean input.    |
++-------------------------------------------------------------------------------------------------------+
+
 Trace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or empty.  ``error`` will create the error trace when initialising the Elasticsearch client and will print any template creation or search query that returns an error as part of the error message. ``all`` will create the three traces (error, trace and info) for the driver and will not print the queries because they will be part of the trace log level of the driver.
