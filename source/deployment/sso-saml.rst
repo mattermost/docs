@@ -23,4 +23,4 @@ To assist with the process of getting a user file for your custom IDP, please se
 
 Please see more information on getting support `here <https://mattermost.com/support/>`_ and submit requests for official support of a particular provider on our `feature idea forum <https://mattermost.uservoice.com>`_.
 
-Please note that we may not be able to guarantee that your connection will work with Mattermost, however we will consider improvements to our feature as we are able.  Please submit requests for official support of a particular provider on our `feature idea forum <https://mattermost.uservoice.com>`_. 
+Please note that we may not be able to guarantee that your connection will work with Mattermost, however we will consider improvements to our feature as we are able.  Please submit requests for official support of a particular provider on our `feature idea forum <https://mattermost.uservoice.com>`_.
