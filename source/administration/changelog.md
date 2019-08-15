@@ -165,6 +165,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Plugin translation files are not updated on web-client when plugins are upgraded.
  - Changes to Account Settings are being saved even when user does not clicks on Save button.
  - SVG attachments bleed over into subsequent posts.
+ - Pagination breaks when adding users to a team.
  - User count does not update if a user automatically joins a channel.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
