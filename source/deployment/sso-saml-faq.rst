@@ -1,5 +1,8 @@
-Bind Authentication to ID Attribute instead of Email
-----------------------------------------------------
+Frequently Asked Questions
+--------------------------------
+
+How to Bind Authentication to Id Attribute instead of Email
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Alternatively, you can use an Id Attribute instead of email to bind the user.  We recommend choosing an ID that is unique and will not change over time.  
 
@@ -16,3 +19,26 @@ This process was designed with backwards compatibility to email binding. Here is
 
  Note:  Existing accounts will not update until they log in to the server. 
  
+Can SAML via Microsoft ADFS be configured with Integrated Windows Authentication (IWA)?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. IWA is supported on the browser, with support added to iOS and Android mobile apps in Q2/2019 (mobile apps v1.18 and later).
+
+Howver, IWA is not supported on the Mattermost Desktop Apps due to a limitation in Electron. As a workaround you may create a browser desktop shortcut for quick access to Mattermost, just like a Desktop App.
+
+How do I migrate users from one authentication method (e.g. email) to SAML?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use the `mattermost user migrate_auth CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-user-migrate-auth>`_.
+
+How is SAML different from OAuth 2.0 and OpenId Connect?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+OAuth 2.0 was primarily intended for delegated authorization, where an app is authorized to access resources, such as Google contact list. It doesn’t deal with authentication.
+
+OpenID Connect is built on top of OAuth 2.0, which supports authentication and thus direct SSO.
+
+SAML is like OpenID Connect, except typically used in enterprise settings. OpenID Connect is more common in consumer websites and web/mobile apps.
+
+Learn more at https://hackernoon.com/demystifying-oauth-2-0-and-openid-connect-and-saml-12aa4cf9fdba 
+
