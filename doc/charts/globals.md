@@ -80,13 +80,14 @@ global:
 
 The GitLab global host settings for Ingress are located under the `global.ingress` key:
 
-| Name                           | Type    | Default | Description |
-|:------------------------------ |:-------:|:------- |:----------- |
-| `annotations.*annotation-key*` | String  |         | Where `annotation-key` is a string that will be used with the value as an annotation on every ingress. For Example: `global.ingress.annotations."nginx\.ingress\.kubernetes\.io/enable-access-log"=true`. No global annotations are provided by default. |
-| `configureCertmanager`         | Boolean | `true`  | [See below](#globalingressconfigurecertmanager). |
-| `enabled`                      | Boolean | `true`  | Global setting that controls whether to create ingress objects for services that support them. |
-| `tls.enabled`                  | Boolean | `true`  | When set to `false`, this disables TLS in Gitlab. This is useful for cases in which you cannot use TLS termination of ingresses, such as when you have a TLS-terminating proxy before the ingress controller. If you want to disable https completely, this should be set to `false` together with [`global.hosts.https`](#configure-host-settings). |
-| `tls.secretName`               | String  |         | The name of the [Kubernetes TLS Secret](https://kubernetes.io/docs/concepts/services-networking/ingress/#tls) that contains a **wildcard** certificate and key for the domain used in `global.hosts.domain`. |
+| Name                           | Type    | Default        | Description |
+|:------------------------------ |:-------:|:-------        |:----------- |
+| `annotations.*annotation-key*` | String  |                | Where `annotation-key` is a string that will be used with the value as an annotation on every ingress. For Example: `global.ingress.annotations."nginx\.ingress\.kubernetes\.io/enable-access-log"=true`. No global annotations are provided by default. |
+| `configureCertmanager`         | Boolean | `true`         | [See below](#globalingressconfigurecertmanager). |
+| `class`                        | String  | `gitlab-nginx` | Global setting that controls `kubernetes.io/ingress.class` annotation in `Ingress` resources. |
+| `enabled`                      | Boolean | `true`         | Global setting that controls whether to create ingress objects for services that support them. |
+| `tls.enabled`                  | Boolean | `true`         | When set to `false`, this disables TLS in Gitlab. This is useful for cases in which you cannot use TLS termination of ingresses, such as when you have a TLS-terminating proxy before the ingress controller. If you want to disable https completely, this should be set to `false` together with [`global.hosts.https`](#configure-host-settings). |
+| `tls.secretName`               | String  |                | The name of the [Kubernetes TLS Secret](https://kubernetes.io/docs/concepts/services-networking/ingress/#tls) that contains a **wildcard** certificate and key for the domain used in `global.hosts.domain`. |
 
 ### global.ingress.configureCertmanager
 
