@@ -194,6 +194,4 @@ If you need to sync service accounts from AD/LDAP or SAML to Mattermost and use 
 How are bot accounts identified in compliance exports?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A new field ``UserType`` is added to Compliance Exports, including Global Relay, Actiance and CSV. The field identifies whether a message was posted by a user or by a bot account.
-
-This identifier is scheduled for Mattermost 5.14 release on August 16, 2019.
+As of v5.14, a field named ``UserType`` is added to Compliance Exports, including Global Relay, Actiance and CSV. The field identifies whether a message was posted by a ``user`` or by a ``bot`` account.  
