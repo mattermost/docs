@@ -4076,7 +4076,9 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 
 Skip TLS Verification  
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-When true, http connections with self-signed certificates will be ignored when connecting to Elasticsearch.  When false, certificates will be verified. 
+true: Skips the certificate verification step for TLS connections. Not recommended for production environments where TLS is required. For testing only.
+
+false: Mattermost does not skip certificate verification.
 
 +-------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SkipTLSVerification  ": "false"`` with boolean input.    |
