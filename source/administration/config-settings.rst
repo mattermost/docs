@@ -4076,12 +4076,12 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 
 Skip TLS Verification  
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-true: Skips the certificate verification step for TLS connections. Not recommended for production environments where TLS is required. For testing only.
+**True:** Skips the certificate verification step for TLS connections. Not recommended for production environments where TLS is required. For testing only.
 
-false: Mattermost does not skip certificate verification.
+**False:** Mattermost does not skip certificate verification.
 
 +-------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SkipTLSVerification  ": "false"`` with boolean input.    |
+| This feature's ``config.json`` setting is ``"SkipTLSVerification": false`` with boolean input.        |
 +-------------------------------------------------------------------------------------------------------+
 
 Trace
