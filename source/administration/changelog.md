@@ -148,6 +148,9 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
  - Users are unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
+ - Making a post in an empty channel sometimes causes the channel to display a loading spinner.
+ - Deleting the last post in a channel causes the channel to only display a loading spinner.
+ - Markdown helper text is missing on Edit Channel Header modal.
  - User count in a channel does not update until after refresh if a user automatically joins a channel.
  - Long posts might overlap in compact view.
  - Joining a new channel with few posts might not take the user to the bottom of the channel.
