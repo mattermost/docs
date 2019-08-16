@@ -1171,6 +1171,9 @@ Some examples of when you may want to modify this setting include:
 
 This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It is configured as a whitespace separated list of hostnames, IP addresses and CIDR ranges that can be accessed such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``. Since v5.9 the public IP of the Mattermost application server itself is also considered a reserved IP.
 
+.. note:: 
+   Use whitespaces instead of commas to list the hostnames, IP addresses or CIDR ranges. For example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``
+
 IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution. For example, if the domain "webhooks.internal.example.com" resolves to the IP address 10.0.16.20, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
