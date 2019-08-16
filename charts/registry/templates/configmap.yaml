@@ -12,9 +12,7 @@ data:
   config.yml: |
     version: 0.1
     log:
-      level: warn
-      fields:
-        service: registry
+      {{- toYaml .Values.log | nindent 6 -}}
     # health:
     #   storagedriver:
     #     enabled: true

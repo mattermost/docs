@@ -105,6 +105,7 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 | `image.tag`          | `2.7.1`                    | Version of the image to use         |
 | `init.image`         | `busybox`                  | initContainer image                 |
 | `init.tag`           | `latest`                   | initContainer image tag             |
+| `log`                | `{level: warn, fields: {service: registry}}` | Configure the logging options |
 | `minio.bucket`       | `global.registry.bucket`   | Legacy registry bucket name         |
 | `replicas`           | `1`                        | Number of replicas                  |
 | `tokenService`       | `container_registry`       | JWT token service                   |
