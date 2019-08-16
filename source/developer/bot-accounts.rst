@@ -17,6 +17,7 @@ Additional benefits include:
   - Integrations created by a user and tied to a bot account no longer break if the user leaves the company.
   - Once created, bot accounts behave just like regular user accounts and can be added to teams and channels similar to users.
   - Bot accounts are a safer way to integrate with Mattermost through the RESTful API and Plugin API because there is no need to manage shared logins with these accounts.
+  - ``BOT`` tag is used everywhere in the UI where bot accounts are referenced, including messages and user lists.
 
 Note that currently:
 
@@ -183,6 +184,17 @@ By default, bot accounts managed by the deactivated user are disabled for enhanc
 We strongly recommend creating new tokens for the bot, to ensure the user who was deactivated no longer has access to read or write data in the system via the bot access token.
 
 If you prefer to have bot accounts remain enabled after user deactivation, set ``DisableBotsWhenOwnerIsDeactivated`` to ``false`` in your ``config.json`` file.
+
+Can bot accounts edit messages through the RESTful API?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Yes. By default, bot accounts can update their own posts.
+
+If you find yourself unable to edit posts as a bot, check the following:
+1. Instead of using a slash command to respond directly, use an an API call for the initial interaction with a user to enable message edits.
+2. If your system is using `advanced permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_, then post edits could be disabled for users.
+
+If neither of the above help resolve your concern, you also have the option to choose what role the bot account has. If System Admin is chosen, then they can update any posts in the system, along with other System Admin permissions. Note that giving the System Admin role to a bot account enables them with other System Admin privileges so this should be done with care.
 
 If AD/LDAP or SAML sync is enabled, do bot accounts need to have an associated email address in AD/LDAP or SAML?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

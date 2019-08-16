@@ -106,6 +106,7 @@ mattermost
     .. code-block:: none
 
       -c, --config {string}   Configuration file to use. (default "config.json")
+      --disableconfigwatch {boolean}  When true, the config.json file will not be reloaded automatically when another process changes it (default "false")
 
   Child Commands
     -  `mattermost channel`_ - Management of channels
@@ -1331,7 +1332,9 @@ mattermost sampledata
 
   Description
     .. versionadded:: 4.7
-      Generate sample data and populate the Mattermost database.
+      Generate sample data and populate the Mattermost database. Supported in Mattermost v4.7 and later.
+
+      The command generates one user as the System Administrator with a username ``sysadmin`` and password ``Sys@dmin-sample1``. Other users are generated following an index, e.g. with username ``user-1`` and password ``SampleUs@r-%1``.
 
   Format
     .. code-block:: none

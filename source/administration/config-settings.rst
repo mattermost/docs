@@ -8,7 +8,10 @@ Mattermost configuration settings are maintained in the configuration file ``con
 
 The default location of ``config.json`` is in the ``mattermost/config`` directory. Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
 
-On new installations starting in version 5.14, the default.json file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``.  This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change. 
+On new installations starting in version 5.14, the default.json file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``.  This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
+
+**Configuration in Database**
+Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_.
 
 **Environment Variables**
 Starting in Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
@@ -320,6 +323,9 @@ At Rest Encrypt Key
 A 32-character key for encrypting and decrypting sensitive fields in the database. You can generate your own cryptographically random alphanumeric string, or you can go to **System Console > Environment > Database** and click **Regenerate**, which displays the value until you click **Save**.
 
 When using High Availability, the salt must be identical in each instance of Mattermost.
+
+No fields are encrypted using ``AtRestEncryptKey``. It's a legacy setting used to
+encrypt data stored at rest in the database.
 
 +------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
@@ -813,18 +819,6 @@ Note that the gossip port and gossip protocol are used to determine cluster heal
 | This feature's ``config.json`` setting is ``"UseExperimentalGossip": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-Read Only Config
-^^^^^^^^^^^^^^^^
-**True**: Changes made to settings in the System Console are ignored.
-
-**False**: Changes made to settings in the System Console are written to ``config.json``.
-
-When running in production it is recommended to set this to true.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ReadOnlyConfig": true`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------+
-
 Gossip Port
 ^^^^^^^^^^^
 The port used for the gossip protocol. Both UDP and TCP should be allowed on this port.
@@ -1080,7 +1074,10 @@ After changing this setting, the new session length will take effect after the n
 
 Session length for SSO authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Set the number of days from the last time a user entered their credentials to the expiry of the user's session. If the authentication method is SAML or GitLab, the user may automatically be logged back in to Mattermost if they are already logged in to SAML or GitLab.
+
+This setting defines the session length for SSO authentication, such as SAML, GitLab and OAuth 2.0.
+
+Set the number of days from the last time a user entered their credentials to the expiry of the user's session. If the authentication method is SAML, GitLab or OAuth 2.0, the user may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab or with OAuth 2.0.
 
 After changing this setting, the setting will take effect after the next time the user enters their credentials.
 
@@ -1175,6 +1172,9 @@ Some examples of when you may want to modify this setting include:
 - If your network is configured in such a way that publicly accessible webpages or images are accessed by the Mattermost server using their internal IP address, the hostnames for those servers must be added to this list.
 
 This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It is configured as a whitespace separated list of hostnames, IP addresses and CIDR ranges that can be accessed such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``. Since v5.9 the public IP of the Mattermost application server itself is also considered a reserved IP.
+
+.. note:: 
+   Use whitespaces instead of commas to list the hostnames, IP addresses or CIDR ranges. For example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``
 
 IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution. For example, if the domain "webhooks.internal.example.com" resolves to the IP address 10.0.16.20, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
 
@@ -1642,9 +1642,9 @@ Posts
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable Link Previews
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Enables users to display a preview of website content below the message, if available. When true, website previews can be enabled from Account Settings > Display > Website Link Previews.
+**True**: Enables users to display a preview of website content, image links and YouTube links below the message when available. When true, website previews can be enabled from **Account Settings > Display > Website Link Previews**. Link previews are requested by the server, meaning the server must be connected to the internet and have access through the firewall (if applicable) to the websites from which previews are expected, such as https://gfycat.com/, https://www.youtube.com/, https://imgur.com/ and any other websites that users may share frequently. 
 
-**False**: Website link previews are disabled.
+**False**: Website link previews, image link previews and YouTube previews are disabled. The server does not request metadata for any links sent in messages. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableLinkPreviews": false`` with options ``true`` and ``false``.                                                       |
@@ -2762,7 +2762,7 @@ GIF (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable GIF Picker
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Allow users to select GIFs from the emoji picker via a Gfycat integration.
+**True**: Allow users to select GIFs from the emoji picker via a Gfycat integration.  
 
 **False**: GIFs cannot be selected in the emoji picker.
 
@@ -2771,8 +2771,7 @@ Enable GIF Picker
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-
-  Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work.
+   `Link previews <https://docs.mattermost.com/administration/config-settings.html#enable-link-previews>`_ must be enabled in order to display GIF link previews. Mattermost deployments restricted to access behind a firewall must open port 443 to both https://api.gfycat.com/v1 and https://gfycat.com/<id> (for all request types) for this feature to work.
 
 Gfycat API Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3538,6 +3537,17 @@ This setting defines the frequency of cluster request time logging for :doc:`../
 | This feature's ``config.json`` setting is ``"ClusterLogTimeoutMilliseconds": 2000`` with numerical input.                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Read Only Config
+^^^^^^^^^^^^^^^^
+**True**: Changes made to settings in the System Console are ignored.
+
+**False**: Changes made to settings in the System Console are written to ``config.json``.
+
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ReadOnlyConfig": true`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------+
+
 Enable Searching of Posts
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -3895,7 +3905,7 @@ When not set, every user is added to ``off-topic`` and ``town-square`` channel b
 Note that even if ``town-square`` is not listed, every user is added to that channel after joining a new team.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": ""`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
+| This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Allow Users to View Archived Channels (Experimental)
@@ -3981,6 +3991,8 @@ Display Settings (Experimental)
 
 Supported Timezones Path
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Removed in April 16, 2019 release*
+
 Set the path of the JSON file that lists supported timezones when ``ExperimentalTimezone`` is set to true.
 
 The file must be in the same directory as your ``config.json`` file if you set a relative path. Defaults to ``timezones.json``.

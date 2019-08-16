@@ -83,7 +83,7 @@ Tips and Best Practices
 
 2. If the text is longer than the allowable character limit per post, the message is split into multiple consecutive posts, each within the character limit. Servers running Mattermost Server v5.0 or later `can support posts up to 16383 characters <https://docs.mattermost.com/administration/important-upgrade-notes.html>`__.
 
-3. You can restrict who can create incoming webhooks in `System Console > Integrations > Custom Integrations <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`__.
+3. You can restrict who can create incoming webhooks in `System Console > Integrations > Integration Management <https://docs.mattermost.com/administration/config-settings.html#restrict-managing-integrations-to-admins>`__.
 
 4. Mattermost incoming webhooks are Slack-compatible. You can copy-and-paste code used for a Slack incoming webhook to create Mattermost integrations. Mattermost `automatically translates the Slack's proprietary JSON payload format <https://docs.mattermost.com/developer/webhooks-incoming.html?highlight=translate%20slack%20data%20format%20mattermost#translate-slack-s-data-format-to-mattermost>`__.
 

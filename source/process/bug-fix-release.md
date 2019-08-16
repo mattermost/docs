@@ -46,6 +46,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
     - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel. [See example](https://community.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
+       - Que a discussion about MVP candidates for the next R&D meeting
     - Update Changelog PR based on what's in/out of the release
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/mattermost-server/issues/3702))
     - Confirm date of marketing announcement for the release date with Marketing, and update release channel header if needed
@@ -233,6 +234,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Add new release fix versions in Jira for the next few releases
     - Post key dates for the next release in the Release Discussion channel and remove links to RC candidates and testing spreadsheet from the header
         - Make sure that statutory holidays for Canada and US are accounted for in the release dates
+    - Close the release in Jira both for webapp and mobile ([releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased))
     - For the next release, create the following team meetings. If they conflict with existing meetings, check with meeting owner to reschedule or reschedule the release meeting
       - Bug Bash Meeting on the week after Code Complete at 10:00am San Francisco time
       - Feature Complete Meeting on T-20 at 10:00am San Francisco time
@@ -260,25 +262,21 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Create a new branch on docs for the next release - `vX.X-documentation`
         - Submit a PR for changelog against the `vX.X-documentation` branch and add a `Work in Progress` label for it
         - Submit a PR to change version number in `docs/source/conf.py` against the `vX.X-documentation` branch
-3. Logistics:
-    - Close the release in Jira both for server and mobile ([releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased))
-        - If there are many unresolved tickets in the current release, ask the release manager to review the ticket queue
-        - Otherwise, release the fix version (Actions > [...] > Release)
-4. Build:
+3. Build:
     - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
     - Update https://prev.test.mattermost.com to the previous release version
-5. Dev:
+4. Dev:
     - Merge changes made to release branch into `master`
     - Update existing tickets or create new ones for the next release
-6. Marketing:
+5. Marketing:
     - Turn on CrazyEgg for blog post page
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
     - Update @mattermosthq Twitter profile with the next release date
     - Prepare retweet of GitLab release tweet ([see example here](https://community.mattermost.com/core/pl/k7wchwj5mtrhucj6don96yx3sc))
-7. QA:
+6. QA:
     - Merge any updates made to Selenium tests during release testing
     - Update RN server URLs to Rainforest
-8. Leads:
+7. Leads:
     - Update [company roadmap at mattermost.com](https://about.mattermost.com/direction/)
 
 ### L. (T-plus 30 days) Update Mattermost Security Page

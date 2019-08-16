@@ -186,9 +186,19 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.13 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-Release Date 2019-07-16
-
 Mattermost v5.13.0 contains low level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+- **v5.13.2, released 2019-07-24**
+  - Fixed performance issues in channels with large message history due to a change made to posts query. [MM-16936](https://mattermost.atlassian.net/browse/MM-16936)
+  - Fixed an issue where some settings were not visible in the System Console. [MM-17114](https://mattermost.atlassian.net/browse/MM-17114)
+  - Fixed an issue where announcement banner overlapped content. [MM-17115](https://mattermost.atlassian.net/browse/MM-17115)
+  - Fixed an issue where the scroll position was not at the new message indicator on switching channels when there were 30-60 unread messages. [MM-17078](https://mattermost.atlassian.net/browse/MM-17078)
+- **v5.13.1, released 2019-07-19**
+  - Fixed an issue with Jira plugin where creating or attaching to Jira issues failed due to GDPR changes released by Atlassian. Affected Jira Cloud only, not Jira Server or Jira Data Center. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
+  - Fixed an issue in server logs where messages related to OpenGraph API were unnecessarily reported as errors. [MM-17043](https://mattermost.atlassian.net/browse/MM-17043)
+  - Fixed an issue in the System Console without an Enterprise Edition license where **Push Notification Contents** setting was not available. [MM-17008](https://mattermost.atlassian.net/browse/MM-17008)
+- **v5.13.0, released 2019-07-16**
+  - Original 5.13.0 release
 
 ### Compatibility
 
@@ -243,17 +253,22 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - ``plugins`` type entries in the ``Jobs`` table will be purged on upgrade. This job was incorrectly configured to run every minute, spamming the table with mostly useless records. All old records will be removed on upgrade, and the job will run daily instead.
 
 ### Known Issues
-
+ - Cannot leave any team when a default [primary team](https://docs.mattermost.com/administration/config-settings.html#primary-team-experimental) is set.
+ - Titles for webhooks, commands and OAuth apps are no longer bolded in the System Console.
+ - Users can get logged out of server without a session expiry notification.
+ - Desktop app hangs on opening emoji picker.
+ - When a primary team is set, the options to leave a team is disabled for all teams, not just the primary team.
+ - Plugin crashes the server when calling ``w.WriteHeader(0)``.
+ - Bot account profile image disappears when saving bot details.
+ - Custom emoji containing specified letters do not appear in emoji autocomplete, unless they start with the letters or have been returned in the autocomplete before.
  - Buttons inside ephemeral messages are not clickable / functional on the mobile app.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
- - Jump link in search results does not always jump to display the expected post.
  - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
  - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
  - Searching with Elasticsearch enabled may not always highlight the searched terms.
  - Team sidebar on desktop app does not update when channels have been read on mobile.
- - Channel scroll position flickers while images and link previews load.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
  
@@ -265,6 +280,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 Mattermost v5.12.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
+- **v5.12.5, released 2019-07-19**
+  - Fixed an issue with Jira plugin where creating or attaching to Jira issues failed due to GDPR changes released by Atlassian. Affected Jira Cloud only, not Jira Server or Jira Data Center. [MM-17060](https://mattermost.atlassian.net/browse/MM-17060)
 - **v5.12.4, released 2019-07-15**
   - Fixed an issue with missing messages. [MM-16921](https://mattermost.atlassian.net/browse/MM-16921)
 - **v5.12.3, released 2019-07-09**
@@ -282,6 +299,8 @@ Mattermost v5.12.0 contains low to medium level security fixes. [Upgrading](http
 ### Breaking changes since last release
 
  - If your plugin uses the ``DeleteEphemeralMessage`` plugin API, update it to accept a ``postId string`` parameter. See [documentation](https://developers.mattermost.com/extend/plugins/server/reference/#API.DeleteEphemeralPost) to learn more.
+ - Image link and YouTube previews do not display unless **System Console > Enable Link Previews** is enabled. Please ensure that your Mattermost server is connected to the internet and has network access to the websites from which previews are expected to appear. [Learn more here](https://docs.mattermost.com/administration/config-settings.html#enable-link-previews).
+ - ``ExperimentalEnablePostMetadata`` setting was removed. Post metadata, including post dimensions, is now stored in the database to correct scroll position and eliminate scroll jumps as content loads in a channel.
 
 **IMPORTANT:** If you upgrade from a release earlier than 5.11, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
@@ -401,6 +420,20 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``KVCompareAndSet(key string, old []byte, new []byte)`` to Plugin API to add support for transactional semantics with KV Store in plugin framework.
 
 ### Known Issues
+ - Creating or attaching to Jira issues fails for Jira Cloud. This is resolved in v5.12.5.
+ - Messages related to OpenGraph API are unnecessarily reported as errors in the server logs. This is resolved in v5.13.1.
+ - **Push Notification Contents** setting is not available in the System Console in servers without an Enterprise Edition license. This is resolved in v5.13.1.
+ - Channels with large message history may have performance issues. This is resolved in v5.13.2.
+ - **Site Configuration > Notifications > Email Notification Contents** is missing from E10 servers. This is resolved in v5.13.2.
+ - Changing announcement banner overlaps content. This is resolved in v5.13.2.
+ - Scroll position is not at the new message indicator on switching channels with unreads between 30-60. This is resolved in v5.13.2.
+ - Titles for webhooks, commands and OAuth apps are no longer bolded in the System Console.
+ - Users can get logged out of server without a session expiry notification.
+ - Desktop app hangs on opening emoji picker.
+ - When a primary team is set, the options to leave a team is disabled for all teams, not just the primary team.
+ - Plugin crashes the server when calling ``w.WriteHeader(0)``.
+ - Bot account profile image disappears when saving bot details.
+ - Custom emoji containing specified letters do not appear in emoji autocomplete, unless they start with the letters or have been returned in the autocomplete before.
  - Buttons inside ephemeral messages are not clickable / functional on the mobile app.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
@@ -624,6 +657,8 @@ Thank you to everyone who contributed to the Mattermost project in March 2019!
 
 Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
+- **v5.9.3, released 2019-07-19** 
+  - Fixed an issue with unauthenticated LDAP bind. [MM-17055](https://mattermost.atlassian.net/browse/MM-17055)
 - **v5.9.2, released 2019-06-20** 
   - Mattermost v5.9.2 contains a medium level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.9.1, released 2019-04-24** 
