@@ -2745,6 +2745,29 @@ To manage who can create personal access tokens or to search users by token ID, 
 | This feature's ``config.json`` setting is ``"EnableUserAccessTokens": false`` with options ``true`` and ``false``.                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+
+Bot Accounts
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable Bot Account Creation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: When true, users can create bot accounts for integrations in **Integrations > Bot Accounts**. Bot accounts are similar to user accounts except they cannot be used to log in. See `documentation <https://docs.mattermost.com/developer/bot-accounts.html>`_ to learn more.
+
+**False**: Bot accounts cannot be created through the user interface or the RESTful API. Plugins can still create and manage bot accounts.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableBotAccountCreation": false`` with options ``true`` and ``false``.                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Disable bot accounts when owner is deactivated
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: When a user is deactivated, disables all bot accounts managed by the user. To re-enable bot accounts, go to **Integrations > Bot Accounts**.
+
+**False**: When a user is deactivated, all bot accounts managed by the user remain active. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DisableBotsWhenOwnerIsDeactivated": false`` with options ``true`` and ``false``.                                |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 GIF (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable GIF Picker
