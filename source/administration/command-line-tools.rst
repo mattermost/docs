@@ -1628,23 +1628,28 @@ mattermost user convert
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Convert a user to a bot. If converting multiple users, use a space-separated list.
+    Convert a user to a bot, or convert a bot to a user account.
 
   Format
     .. code-block:: none
 
       mattermost user convert {emails, usernames, userIds} --bot
+      OR
+      mattermost user convert {bot_id} --user --email {email_address} --password {new_password}
 
   Examples
     .. code-block:: none
 
       ./mattermost user convert user@example.com --bot
       ./mattermost user convert username1 username2 --bot
+      ./mattermost user convert old_bot --user --email real_user@example.com --password Password1
+
 
   Options
     .. code-block:: none
 
-          --bot string       Convert user to bot
+          --bot string       Convert user to bot.  Supports converting multiple bots at once, use a space-separated list.
+          --user string      Convert bot to user.  Supports converting 1 account per command.
 
 mattermost user create
 ~~~~~~~~~~~~~~~~~~~~~~
