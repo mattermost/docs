@@ -32,7 +32,7 @@ Mattermost v5.14.0 contains a medium level security fix. [Upgrading](http://docs
 
  - New keyboard navigation improvements enable you to move between app regions—like the post list, channel sidebar, and header—using F6 on the Desktop App and CTRL-F6 on a web browser. You can also use TAB, arrow keys, and ENTER to interact with buttons, links, and other elements in Mattermost.
  - Screen readers are now much more compatible with Mattermost. Buttons, links, and app regions now have accurate readouts that enable visually impaired users to use Mattermost productively with screen readers.
- - [Learn more](https://www.google.com/url?q=https://docs.mattermost.com/help/getting-started/accessibility.html&sa=D&ust=1565910635884000&usg=AFQjCNEe8Y46SC8qTcuhknoFZn5pjyOTJQ)
+ - [Learn more](https://docs.mattermost.com/help/getting-started/accessibility.html)
 
 #### Bidirectional scrolling to land on oldest unread post
  - No more scrolling required to get to the oldest unread post. Now when the channel opens when there are unreads it opens at the new messages line, regardless of how many unreads exist since the last time the user viewed the channel.
