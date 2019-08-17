@@ -6,9 +6,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.14 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-Release Date 2019-08-16
-
 Mattermost v5.14.0 contains a medium level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+- **v5.14.1, release TBD**
+  - We are reviewing known issues for a potential dot release.
+- **v5.14.0, released 2019-08-16**
+  - Original 5.14.0 release
 
 ### Compatibility
 
@@ -169,6 +172,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Plugin translation files are not updated on web-client when plugins are upgraded.
  - Changes to Account Settings are being saved even when user does not clicks on Save button.
  - SVG attachments bleed over into subsequent posts.
+ - Custom-Attributes plugin might crash.
  - Pagination breaks when adding users to a team.
  - User count does not update if a user automatically joins a channel.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
