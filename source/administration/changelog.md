@@ -148,6 +148,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ### Known Issues
  - Users are unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
+ - Google User API Endpoint shows outdated helper text.
  - Making a post in an empty channel sometimes causes the channel to display a loading spinner.
  - Deleting the last post in a channel causes the channel to only display a loading spinner.
  - Markdown helper text is missing on Edit Channel Header modal.
