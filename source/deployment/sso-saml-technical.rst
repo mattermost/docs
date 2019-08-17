@@ -8,6 +8,10 @@ In simpler terms, it means you can use one set of credentials to log in to many 
 
 The main benefit is that it helps administrators centralize user management by controlling which sites users have access to with their OneLogin credentials.
 
+.. contents::
+  :backlinks: top
+  :local:
+
 SAML Providers
 --------------------------------------------
 
