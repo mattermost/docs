@@ -34,24 +34,7 @@ Once the synchronization with AD/LDAP is enabled, user attributes are synchroniz
     
     In particular, the user filter cannot be used to control who can log in to Mattermost, this should be controlled by your SAML service provider's group permissions.
 
-
-Technical description of SAML synchronization with AD/LDAP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When enabled, SAML synchronization with AD/LDAP occurs in phases:
-
-1. Get all the current LDAP users from the Mattermost database who have ``Users.AuthService`` set to ``ldap``. This is a SQL query issued against the Mattermost database: ``SELECT * FROM Users WHERE AuthService = 'ldap'``.
-2. Get all the current SAML users from the Mattermost database who have ``Users.AuthService`` set to ``saml``. This is a SQL query issued against the Mattermost database: ``SELECT * FROM Users WHERE AuthService = 'saml'``.
-3. Get all the current LDAP users from the LDAP server as defined by ``LdapSettings.UserFilter``. This is an `LDAP query <https://github.com/mattermost/mattermost-server/blob/master/scripts/ldap-check.sh>`__ issued against the LDAP server. Users are retrieved in batches as defined by ``LdapSettings.MaxPageSize``.
-4. Update LDAP attributes. For each existing Mattermost user retrieved in step 1, attempt to find a match against the list of LDAP users from step 3. To find matches, ``Users.AuthData`` field of the Mattermost user is compared against the ``LdapSettings.IdAttribute`` LDAP setting.
-
- - If any attribute of the user has changed, that attribute is copied from the LDAP server and the user is marked as updated.
- - If the corresponding ``LdapSettings.IdAttribute`` is not found, the user is assumed to be deleted from the LDAP server, and deactivated from Mattermost by setting the ``Users.DeleteAt`` field to a valid timestamp.
-
-5. Update SAML attributes. For each existing Mattermost user retrieved in step 2, attempt to find a match against the list of LDAP users from step 3. To find matches, ``SamlSettings.Email`` is compared against the ``LdapSettings.EmailAttribute`` LDAP setting.
-
- - If any attribute of the user has changed, that attribute is copied from the LDAP server and the user is marked as updated.
- - If the corresponding ``LdapSettings.EmailAttribute`` is not found, the user is assumed to be deleted from the LDAP server, and deactivated from Mattermost by setting the ``Users.DeleteAt`` field to a valid timestamp.
+See :doc:`technical description of SAML synchronization with AD/LDAP <sso-saml-technical <sso-saml-technical>`_ for more details.
  
 Override SAML Data with AD/LDAP Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
