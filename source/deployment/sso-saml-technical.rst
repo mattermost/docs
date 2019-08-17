@@ -40,3 +40,13 @@ When enabled, SAML synchronization with AD/LDAP occurs in phases:
 
  - If any attribute of the user has changed, that attribute is copied from the LDAP server and the user is marked as updated.
  - If the corresponding ``LdapSettings.EmailAttribute`` is not found, the user is assumed to be deleted from the LDAP server, and deactivated from Mattermost by setting the ``Users.DeleteAt`` field to a valid timestamp.
+
+Frequently Asked Questions
+------------------------------------------------------------
+
+How can I obtain a SAML metadata XML file consumed by Mattermost?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can obtain the XML file by calling the Mattermost RESTful API endpoint at ``/api/v4/saml/metadata``.
+
+For other useful SAML API calls, see the `API reference <https://api.mattermost.com/#tag/SAML>`_.
