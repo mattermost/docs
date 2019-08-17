@@ -2,14 +2,16 @@ Configuration Settings
 ======================
 
 .. note::
-   The order of the configuration settings below are reflective of a reorganization of the System Console in v5.12 released on June 16th, 2019. To view the configuration settings based on the organization of the System Console in versions prior to v5.12, please see `this documentation <https://docs.mattermost.com/administration/prev-config-settings.html>`_ instead.
+   The order of the configuration settings below are reflective of a reorganization of the System Console in version 5.12 released on June 16th, 2019. To view the configuration settings based on the organization of the System Console in versions prior to version 5.12, please see `this documentation <https://docs.mattermost.com/administration/prev-config-settings.html>`_ instead.
 
 Mattermost configuration settings are maintained in the configuration file ``config.json``, located in the ``mattermost/config`` directory. You can modify the configuration file using the System Console, or by using a text editor to modify it directly.
 
 The default location of ``config.json`` is in the ``mattermost/config`` directory. Mattermost must have write permissions to ``config.json``, otherwise changes made in the System Console will have no effect.
 
+On new installations starting in version 5.14, the default.json file used to create the initial ``config.json`` has been removed from the binary and replaced with a build step that generates a fresh ``config.json``.  This is to ensure the initial configuration file has all the correct defaults provided in the server code. Existing ``config.json`` files are not affected by this change.
+
 **Configuration in Database**
-Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_.  
+Storing configuration in the database is supported in v5.10 and later.  Please see more information on how to set this up `here <https://docs.mattermost.com/administration/config-in-database.html>`_.
 
 **Environment Variables**
 Starting in Mattermost version 3.8, you can use environment variables to manage the configuration. Environment variables override settings in ``config.json``. If a change to a setting in ``config.json`` requires a restart for it to take effect, then changes to the corresponding environment variable also require a server restart.
@@ -1455,7 +1457,7 @@ Enable Email Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Enables sending of email notifications.
 
-**False**: Disables email notifications for developers who may want to skip email setup for faster development. To remove the **Preview Mode: Email notifications have not been configured** banner, also set **Enable Preview Mode Banner** to ``false``. 
+**False**: Disables email notifications for developers who may want to skip email setup for faster development. To remove the **Preview Mode: Email notifications have not been configured** banner, also set **Enable Preview Mode Banner** to ``false``. If this setting is set to ``false`` and the SMTP server is set up, account related emails will be sent for user account changes such as password, email, username, user token, MFA, and signin type changes.  Email invitations and account deactivation emails will also be sent. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SendEmailNotifications": false`` with options ``true`` and ``false``.                                                   |
@@ -2282,6 +2284,14 @@ The certificate file used to generate the signature on a SAML request to the Ide
 | This feature's ``config.json`` setting is ``"PublicCertificateFile": ""`` with string input.                                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Sign Request
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+When true, Mattermost signs the SAML request using your Service Provider Private Key. When false, Mattermost does not sign the SAML request.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SignRequest": ""`` with string input.                                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Email Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The attribute in the SAML Assertion that will be used to populate the email addresses of users in Mattermost.
@@ -2385,7 +2395,7 @@ Choose whether OAuth can be used for account creation and login. Options include
     - **Do not allow sign-in via an OAuth 2.0 provider**
     - **GitLab** (see `GitLab Settings <http://docs.mattermost.com/administration/config-settings.html#id14>`__ for more detail)
     - **Google Apps** (see `Google Settings <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`__ for more detail)
-    - **Office 365 (Beta)** (see `Office 365 Settings <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`__ for more detail)
+    - **Office 365** (see `Office 365 Settings <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`__ for more detail)
 
 This feature's setting does not appear in ``config.json``.
 
@@ -2477,10 +2487,10 @@ Obtain this value by registering Mattermost as an application in your Google acc
 
 User API Endpoint
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-It is recommended to use ``"https://www.googleapis.com/plus/v1/people/me"`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP or HTTPS depending on how your server is configured.
+It is recommended to use `https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata` as the User API Endpoint. Otherwise, enter a custom endpoint in `config.json` with HTTP or HTTPS depending on how your server is configured.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://www.googleapis.com/plus/v1/people/me"`` with string input.                                   |
+| This feature's ``config.json`` setting is ``"UserApiEndpoint": "https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata"``   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Auth Endpoint
@@ -2507,7 +2517,7 @@ Office 365
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
 
 
-Enable authentication with Office 365 by selecting ``Office 365 (Beta)`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
+Enable authentication with Office 365 by selecting ``Office 365`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
 
 **True**: Allow team creation and account signup using Office 365 OAuth. To configure, input the **Application ID** and **Application Secret Password** credentials. See `the documentation <https://docs.mattermost.com/deployment/sso-office.html>`__ for more detail.
 
@@ -2713,16 +2723,6 @@ Enable integrations to override profile picture icons
 | This feature's ``config.json`` setting is ``"EnablePostIconOverride": false`` with options ``true`` and ``false``.                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable Bot Account Creation
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: When true, users can create bot accounts for integrations in **Integrations > Bot Accounts**. Bot accounts are similar to user accounts except they cannot be used to log in. See `documentation <https://docs.mattermost.com/developer/bot-accounts.html>`_ to learn more.
-
-**False**: Bot accounts cannot be created through the user interface or the RESTful API. Plugins can still create and manage bot accounts.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableBotAccountCreation": false`` with options ``true`` and ``false``.                                                 |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Enable Personal Access Tokens
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: When true, users can create `personal access tokens <https://about.mattermost.com/default-user-access-tokens>`__ for integrations in **Account Settings > Security**. They can be used to authenticate against the API and give full access to the account.
@@ -2733,6 +2733,29 @@ To manage who can create personal access tokens or to search users by token ID, 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUserAccessTokens": false`` with options ``true`` and ``false``.                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
+Bot Accounts
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable Bot Account Creation
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: When true, users can create bot accounts for integrations in **Integrations > Bot Accounts**. Bot accounts are similar to user accounts except they cannot be used to log in. See `documentation <https://docs.mattermost.com/developer/bot-accounts.html>`_ to learn more.
+
+**False**: Bot accounts cannot be created through the user interface or the RESTful API. Plugins can still create and manage bot accounts.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableBotAccountCreation": false`` with options ``true`` and ``false``.                                                 |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Disable bot accounts when owner is deactivated
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: When a user is deactivated, disables all bot accounts managed by the user. To re-enable bot accounts, go to **Integrations > Bot Accounts**.
+
+**False**: When a user is deactivated, all bot accounts managed by the user remain active. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DisableBotsWhenOwnerIsDeactivated": false`` with options ``true`` and ``false``.                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 GIF (Beta)
@@ -3766,6 +3789,30 @@ The number of milliseconds to leave an idle connection open between servers in t
 | This feature's ``config.json`` setting is ``"IdleConnTimeoutMilliseconds": 90000`` with numerical input.                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Network Interface
+^^^^^^^^^^^^^^^^^
+An IP address used to identify the device that does automatic IP detection in high availability clusters. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"NetworkInterface": ""`` with string input.                                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Bind Address
+^^^^^^^^^^^^^
+An IP address used to bind cluster traffic to a specific network device. This setting is used primarily for servers with multiple network devices or different Bind Address and Advertise Address like in deployments that involve NAT (Network Address Translation). 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BindAddress": ""`` with string input.                                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Advertise Address
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The IP address used to access the server from other nodes. This settings is used primary when cluster nodes are not in the same network and involve NAT (Network Address Translation). 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AdvertiseAddress": ""`` with string input.                                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Metrics Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Block Profile Rate
@@ -4051,6 +4098,24 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.       |
 +-----------------------------------------------------------------------------------------------------------------+
+
+Skip TLS Verification  
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True:** Skips the certificate verification step for TLS connections. Not recommended for production environments where TLS is required. For testing only.
+
+**False:** Mattermost does not skip certificate verification.
+
++-------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SkipTLSVerification": false`` with boolean input.        |
++-------------------------------------------------------------------------------------------------------+
+
+Trace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Options for printing Elasticsearch trace errors.  Accepts ``error``, ``all``, or empty.  ``error`` will create the error trace when initialising the Elasticsearch client and will print any template creation or search query that returns an error as part of the error message. ``all`` will create the three traces (error, trace and info) for the driver and will not print the queries because they will be part of the trace log level of the driver.
+
++-------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Trace": ""`` with string input.                          |
++-------------------------------------------------------------------------------------------------------+
 
 Message Export Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
