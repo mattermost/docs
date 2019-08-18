@@ -23,6 +23,328 @@ Examples: OneLogin, Okta, Microsoft Active Directory (ADFS) or Azure. This is th
 
 Examples: Mattermost, Zendesk, Zoom, Salesforce.
 
+SAML Request (AuthNRequest)
+--------------------------------------------
+
+When Mattermost initiates an SP-initiated SAML request flow, it generates a **HTTP-Redirect** binding request to the IdP that contains an XML payload as a base64 string
+
+.. code-block:: none
+
+ bM441nuRIzAjKeMM8RhegMFjZ4L4xPBHhAfHYqgnYDQnSxC++Qn5IocWuzuBGz7JQmT9C57nxjxgbFIatiqUCQN17aYrLn/mWE09C5mJMYlcV68ibEkbR/JKUQ+2u/N+mSD4/C/QvFvuB6BcJaXaz0h7NwGhHROUte6MoGJKMPE=
+
+The XML payload then contains the following:
+
+.. code-block:: XML
+
+  <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:samlsig="http://www.w3.org/2000/09/xmldsig#" ID="_u5mpjadp1fdozfih4cj8ap4brh" Version="2.0" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="http://localhost:8065/login/sso/saml" IssueInstant="2019-06-08T16:00:31Z">
+      <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">http://www.okta.com/exkoxukx1D8OIfY03356</saml:Issuer>
+  </samlp:AuthnRequest>
+
+// XXX To be updated
+
+AuthNRequests can also be signed by Mattermost in v5.14 and later, in which case the XML payload contains the following:
+
+.. code-block:: XML
+
+  <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:samlsig="http://www.w3.org/2000/09/xmldsig#" ID="_u5mpjadp1fdozfih4cj8ap4brh" Version="2.0" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="http://localhost:8065/login/sso/saml" IssueInstant="2019-06-08T16:00:31Z">
+      <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">http://www.okta.com/exkoxukx1D8OIfY03356</saml:Issuer>
+      <samlsig:Signature Id="Signature1">
+          <samlsig:SignedInfo>
+              <samlsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></samlsig:CanonicalizationMethod>
+              <samlsig:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></samlsig:SignatureMethod>
+              <samlsig:Reference URI="#_u5mpjadp1fdozfih4cj8ap4brh">
+                  <samlsig:Transforms>
+                      <samlsig:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></samlsig:Transform>
+                  </samlsig:Transforms>
+                  <samlsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></samlsig:DigestMethod>
+                  <samlsig:DigestValue></samlsig:DigestValue>
+              </samlsig:Reference>
+          </samlsig:SignedInfo>
+          <samlsig:SignatureValue></samlsig:SignatureValue>
+          <samlsig:KeyInfo>
+              <samlsig:X509Data>
+                  <samlsig:X509Certificate>MIIFmzCCA4OgAwIBAgIJAIusvV3gZIwiMA0GCSqGSIb3DQEBCwUAMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTAeFw0xOTA2MDcxMjQ0MTdaFw0yOTA2MDQxMjQ0MTdaMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBALAfDj+RyByszTOPRL4b+cilNF/3PB1I0CG3TNzgllgy5CwRGHLKn5/t8rPsJoWLKOUGenzVdXWuoVi3jyl5FZ1N60CBbXfmSWk20dSIkcYCcYEgs1BTBqKKYFw2dV4M0oppzNtlq7A0Glpg/gpaR/2TXEPAhOsUfORC2qAdJt9ev0AQjp5V0TkIKMZz8oo33Coi38TG5r/LG+ihRbpWzO7j9Rc2S5I6bczvG4wOg7nVKG+B5XBvuU9PjSqgxpd/F/fYf+ggAEru58E+VM4veCRV8vSPbBqDG4FMPV6DiA+tH/70n6zuPCS3soxX00kjKtP80QD6UgzvM2NN7PHiNlf0Zj6VCU3VdjEnypg7dzlHJuyyaAaTD5nSfkecamEoJpq7kaUB7uTmBHELRUhOOy24f54HnP72vnxicZL8cWsOkJwQAqIGzBxQ7J0uX4Os71WrV2YIur8QVk6KN6MBPxfiCh3xO/R+cycgx0aMrWZoyzOzP7NCTM5MNE41C48xeGviyCtUID4xiBow+xo6IDUaiCoUVJhz579ore8ic70a19DD0qHy4SpBvrUwCO54kvkgn6HjYlLC/k8nFM9F9W9wVAQD/QwIjd7EtLZLGgbU61Jv3q4kZxxq270hogCRY0lmI3RxkedGHhetF7kaizrikW5zJQEeido/ir37HhX5AgMBAAGjVDBSMBIGA1UdEwEB/wQIMAYBAf8CAQAwPAYDVR0RBDUwM4IQbG9ncy5leGFtcGxlLmNvbYITbWV0cmljcy5leGFtcGxlLmNvbYcEwKgAAYcEfwAAATANBgkqhkiG9w0BAQsFAAOCAgEAH1O91BABHXZjrU7v1OwG+GbU/4TYZqBXXNxax++OFSRCkEEoNKGg49R6J7lY4lrm12zBlw+oGSyjIOerzi39/dcxDkKpzyhGvEN4mExbDlybmdCVrHPeWgZl7uwqn4Bj1xiu97M6eMthgxJE7KVNDGDHthGL0/fTlONIh3qS7Far33hLHJJKy3+lC1MDB8cNltV3mf/ctHCx5Wa0bfZId0MJgd/seP0WU1HCf3kIxhnhsnOYs32xu7EGiM4/lgnquVd/q/f99ueSaDSHrep373/w2ce9iF3U0qcLd2iP8ayF/daGeW1dVPL9R10Oe4BpRjMkjlLwhZdjJeKSg9GBa2GXUEn1Ru9vpSw/C10no3Qx/6ZHweYbSmJ6hBg4T0nDBp6iVS1eQULNXxDuDWb26U0ESOO5jK8ATywuc45o0bqdvD1XOrGYGfGnofx7ofRWwKHWfltvxurnbsyo2vH6nM6K41K2DpVdyQOKAGvKe/oCWfdi+WyBQJGWcIp2OTC1XyWHv7JsY3lo04+islkHEcqJyd8Rf8GWmRHdXz0WzGiZbxWzAuvRRWnzM31VAws8kQBHTBwIJlJoGX4AXfEvPi+NTxkntf8cQdJucK9ZZbP4ycXHULO4LneyJoJ9Q7nxX11xWv7BDWxxclOXy6tyUkg9Fjb7pQ/HCVvGhRzilVU=</samlsig:X509Certificate>
+              </samlsig:X509Data>
+          </samlsig:KeyInfo>
+      </samlsig:Signature>
+  </samlp:AuthnRequest>
+
+// XXX To be updated
+
+SAML Responses
+------------------------------------------------------------
+
+There are different types of SAML responses sent by the IdP to the SP. The response contains the Assertion with the NameID and attributes of a user.
+
+Below is a table of the different types of responses, along with an example XML of each type of response:
+
+.. csv-table::
+    :header: "Response Type", "Signed SAML Response", "Signed SAML Assertion", "Encrypted SAML Assertion", "Supported by Mattermost"
+    "Type 1", "Yes", "Yes", "Yes", "Yes"
+    "Type 2", "Yes", "Yes", "No", "Yes"
+    "Type 3", "Yes", "No", "Yes", "Yes"
+    "Type 4", "Yes", "No", "No", "Yes"
+    "Type 5", "No", "Yes", "Yes", "Partially, validation of assertion signature not supported"
+    "Type 6", "No", "Yes", "No", "Partially, validation of assertion signature not supported"
+    "Type 7", "No", "No", "Yes", "Yes ??"
+    "Type 8", "No", "No", "No", "Yes"
+
+SAML Response Type 1 (supported)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Below is an example SAML response that is signed, with a signed and encrypted SAML assertion:
+
+.. code-block:: XML
+
+  <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:samlsig="http://www.w3.org/2000/09/xmldsig#" ID="_u5mpjadp1fdozfih4cj8ap4brh" Version="2.0" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="http://localhost:8065/login/sso/saml" IssueInstant="2019-06-08T16:00:31Z">
+      <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">http://www.okta.com/exkoxukx1D8OIfY03356</saml:Issuer>
+      <samlsig:Signature Id="Signature1">
+          <samlsig:SignedInfo>
+              <samlsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></samlsig:CanonicalizationMethod>
+              <samlsig:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></samlsig:SignatureMethod>
+              <samlsig:Reference URI="#_u5mpjadp1fdozfih4cj8ap4brh">
+                  <samlsig:Transforms>
+                      <samlsig:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></samlsig:Transform>
+                  </samlsig:Transforms>
+                  <samlsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></samlsig:DigestMethod>
+                  <samlsig:DigestValue></samlsig:DigestValue>
+              </samlsig:Reference>
+          </samlsig:SignedInfo>
+          <samlsig:SignatureValue></samlsig:SignatureValue>
+          <samlsig:KeyInfo>
+              <samlsig:X509Data>
+                  <samlsig:X509Certificate>MIIFmzCCA4OgAwIBAgIJAIusvV3gZIwiMA0GCSqGSIb3DQEBCwUAMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTAeFw0xOTA2MDcxMjQ0MTdaFw0yOTA2MDQxMjQ0MTdaMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBALAfDj+RyByszTOPRL4b+cilNF/3PB1I0CG3TNzgllgy5CwRGHLKn5/t8rPsJoWLKOUGenzVdXWuoVi3jyl5FZ1N60CBbXfmSWk20dSIkcYCcYEgs1BTBqKKYFw2dV4M0oppzNtlq7A0Glpg/gpaR/2TXEPAhOsUfORC2qAdJt9ev0AQjp5V0TkIKMZz8oo33Coi38TG5r/LG+ihRbpWzO7j9Rc2S5I6bczvG4wOg7nVKG+B5XBvuU9PjSqgxpd/F/fYf+ggAEru58E+VM4veCRV8vSPbBqDG4FMPV6DiA+tH/70n6zuPCS3soxX00kjKtP80QD6UgzvM2NN7PHiNlf0Zj6VCU3VdjEnypg7dzlHJuyyaAaTD5nSfkecamEoJpq7kaUB7uTmBHELRUhOOy24f54HnP72vnxicZL8cWsOkJwQAqIGzBxQ7J0uX4Os71WrV2YIur8QVk6KN6MBPxfiCh3xO/R+cycgx0aMrWZoyzOzP7NCTM5MNE41C48xeGviyCtUID4xiBow+xo6IDUaiCoUVJhz579ore8ic70a19DD0qHy4SpBvrUwCO54kvkgn6HjYlLC/k8nFM9F9W9wVAQD/QwIjd7EtLZLGgbU61Jv3q4kZxxq270hogCRY0lmI3RxkedGHhetF7kaizrikW5zJQEeido/ir37HhX5AgMBAAGjVDBSMBIGA1UdEwEB/wQIMAYBAf8CAQAwPAYDVR0RBDUwM4IQbG9ncy5leGFtcGxlLmNvbYITbWV0cmljcy5leGFtcGxlLmNvbYcEwKgAAYcEfwAAATANBgkqhkiG9w0BAQsFAAOCAgEAH1O91BABHXZjrU7v1OwG+GbU/4TYZqBXXNxax++OFSRCkEEoNKGg49R6J7lY4lrm12zBlw+oGSyjIOerzi39/dcxDkKpzyhGvEN4mExbDlybmdCVrHPeWgZl7uwqn4Bj1xiu97M6eMthgxJE7KVNDGDHthGL0/fTlONIh3qS7Far33hLHJJKy3+lC1MDB8cNltV3mf/ctHCx5Wa0bfZId0MJgd/seP0WU1HCf3kIxhnhsnOYs32xu7EGiM4/lgnquVd/q/f99ueSaDSHrep373/w2ce9iF3U0qcLd2iP8ayF/daGeW1dVPL9R10Oe4BpRjMkjlLwhZdjJeKSg9GBa2GXUEn1Ru9vpSw/C10no3Qx/6ZHweYbSmJ6hBg4T0nDBp6iVS1eQULNXxDuDWb26U0ESOO5jK8ATywuc45o0bqdvD1XOrGYGfGnofx7ofRWwKHWfltvxurnbsyo2vH6nM6K41K2DpVdyQOKAGvKe/oCWfdi+WyBQJGWcIp2OTC1XyWHv7JsY3lo04+islkHEcqJyd8Rf8GWmRHdXz0WzGiZbxWzAuvRRWnzM31VAws8kQBHTBwIJlJoGX4AXfEvPi+NTxkntf8cQdJucK9ZZbP4ycXHULO4LneyJoJ9Q7nxX11xWv7BDWxxclOXy6tyUkg9Fjb7pQ/HCVvGhRzilVU=</samlsig:X509Certificate>
+              </samlsig:X509Data>
+          </samlsig:KeyInfo>
+      </samlsig:Signature>
+  </samlp:AuthnRequest>
+
+// XXX To be updated
+
+SAML Response Type 2 (supported)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Below is an example SAML response that is signed, with a signed SAML assertion:
+
+.. code-block:: XML
+
+  <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:samlsig="http://www.w3.org/2000/09/xmldsig#" ID="_u5mpjadp1fdozfih4cj8ap4brh" Version="2.0" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="http://localhost:8065/login/sso/saml" IssueInstant="2019-06-08T16:00:31Z">
+      <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">http://www.okta.com/exkoxukx1D8OIfY03356</saml:Issuer>
+      <samlsig:Signature Id="Signature1">
+          <samlsig:SignedInfo>
+              <samlsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></samlsig:CanonicalizationMethod>
+              <samlsig:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></samlsig:SignatureMethod>
+              <samlsig:Reference URI="#_u5mpjadp1fdozfih4cj8ap4brh">
+                  <samlsig:Transforms>
+                      <samlsig:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></samlsig:Transform>
+                  </samlsig:Transforms>
+                  <samlsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></samlsig:DigestMethod>
+                  <samlsig:DigestValue></samlsig:DigestValue>
+              </samlsig:Reference>
+          </samlsig:SignedInfo>
+          <samlsig:SignatureValue></samlsig:SignatureValue>
+          <samlsig:KeyInfo>
+              <samlsig:X509Data>
+                  <samlsig:X509Certificate>MIIFmzCCA4OgAwIBAgIJAIusvV3gZIwiMA0GCSqGSIb3DQEBCwUAMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTAeFw0xOTA2MDcxMjQ0MTdaFw0yOTA2MDQxMjQ0MTdaMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBALAfDj+RyByszTOPRL4b+cilNF/3PB1I0CG3TNzgllgy5CwRGHLKn5/t8rPsJoWLKOUGenzVdXWuoVi3jyl5FZ1N60CBbXfmSWk20dSIkcYCcYEgs1BTBqKKYFw2dV4M0oppzNtlq7A0Glpg/gpaR/2TXEPAhOsUfORC2qAdJt9ev0AQjp5V0TkIKMZz8oo33Coi38TG5r/LG+ihRbpWzO7j9Rc2S5I6bczvG4wOg7nVKG+B5XBvuU9PjSqgxpd/F/fYf+ggAEru58E+VM4veCRV8vSPbBqDG4FMPV6DiA+tH/70n6zuPCS3soxX00kjKtP80QD6UgzvM2NN7PHiNlf0Zj6VCU3VdjEnypg7dzlHJuyyaAaTD5nSfkecamEoJpq7kaUB7uTmBHELRUhOOy24f54HnP72vnxicZL8cWsOkJwQAqIGzBxQ7J0uX4Os71WrV2YIur8QVk6KN6MBPxfiCh3xO/R+cycgx0aMrWZoyzOzP7NCTM5MNE41C48xeGviyCtUID4xiBow+xo6IDUaiCoUVJhz579ore8ic70a19DD0qHy4SpBvrUwCO54kvkgn6HjYlLC/k8nFM9F9W9wVAQD/QwIjd7EtLZLGgbU61Jv3q4kZxxq270hogCRY0lmI3RxkedGHhetF7kaizrikW5zJQEeido/ir37HhX5AgMBAAGjVDBSMBIGA1UdEwEB/wQIMAYBAf8CAQAwPAYDVR0RBDUwM4IQbG9ncy5leGFtcGxlLmNvbYITbWV0cmljcy5leGFtcGxlLmNvbYcEwKgAAYcEfwAAATANBgkqhkiG9w0BAQsFAAOCAgEAH1O91BABHXZjrU7v1OwG+GbU/4TYZqBXXNxax++OFSRCkEEoNKGg49R6J7lY4lrm12zBlw+oGSyjIOerzi39/dcxDkKpzyhGvEN4mExbDlybmdCVrHPeWgZl7uwqn4Bj1xiu97M6eMthgxJE7KVNDGDHthGL0/fTlONIh3qS7Far33hLHJJKy3+lC1MDB8cNltV3mf/ctHCx5Wa0bfZId0MJgd/seP0WU1HCf3kIxhnhsnOYs32xu7EGiM4/lgnquVd/q/f99ueSaDSHrep373/w2ce9iF3U0qcLd2iP8ayF/daGeW1dVPL9R10Oe4BpRjMkjlLwhZdjJeKSg9GBa2GXUEn1Ru9vpSw/C10no3Qx/6ZHweYbSmJ6hBg4T0nDBp6iVS1eQULNXxDuDWb26U0ESOO5jK8ATywuc45o0bqdvD1XOrGYGfGnofx7ofRWwKHWfltvxurnbsyo2vH6nM6K41K2DpVdyQOKAGvKe/oCWfdi+WyBQJGWcIp2OTC1XyWHv7JsY3lo04+islkHEcqJyd8Rf8GWmRHdXz0WzGiZbxWzAuvRRWnzM31VAws8kQBHTBwIJlJoGX4AXfEvPi+NTxkntf8cQdJucK9ZZbP4ycXHULO4LneyJoJ9Q7nxX11xWv7BDWxxclOXy6tyUkg9Fjb7pQ/HCVvGhRzilVU=</samlsig:X509Certificate>
+              </samlsig:X509Data>
+          </samlsig:KeyInfo>
+      </samlsig:Signature>
+  </samlp:AuthnRequest>
+
+// XXX To be updated
+
+SAML Response Type 3 (supported)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Below is an example SAML response that is signed, with an unsigned but encrypted SAML assertion:
+
+.. code-block:: XML
+
+  <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:samlsig="http://www.w3.org/2000/09/xmldsig#" ID="_u5mpjadp1fdozfih4cj8ap4brh" Version="2.0" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="http://localhost:8065/login/sso/saml" IssueInstant="2019-06-08T16:00:31Z">
+      <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">http://www.okta.com/exkoxukx1D8OIfY03356</saml:Issuer>
+      <samlsig:Signature Id="Signature1">
+          <samlsig:SignedInfo>
+              <samlsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></samlsig:CanonicalizationMethod>
+              <samlsig:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></samlsig:SignatureMethod>
+              <samlsig:Reference URI="#_u5mpjadp1fdozfih4cj8ap4brh">
+                  <samlsig:Transforms>
+                      <samlsig:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></samlsig:Transform>
+                  </samlsig:Transforms>
+                  <samlsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></samlsig:DigestMethod>
+                  <samlsig:DigestValue></samlsig:DigestValue>
+              </samlsig:Reference>
+          </samlsig:SignedInfo>
+          <samlsig:SignatureValue></samlsig:SignatureValue>
+          <samlsig:KeyInfo>
+              <samlsig:X509Data>
+                  <samlsig:X509Certificate>MIIFmzCCA4OgAwIBAgIJAIusvV3gZIwiMA0GCSqGSIb3DQEBCwUAMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTAeFw0xOTA2MDcxMjQ0MTdaFw0yOTA2MDQxMjQ0MTdaMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBALAfDj+RyByszTOPRL4b+cilNF/3PB1I0CG3TNzgllgy5CwRGHLKn5/t8rPsJoWLKOUGenzVdXWuoVi3jyl5FZ1N60CBbXfmSWk20dSIkcYCcYEgs1BTBqKKYFw2dV4M0oppzNtlq7A0Glpg/gpaR/2TXEPAhOsUfORC2qAdJt9ev0AQjp5V0TkIKMZz8oo33Coi38TG5r/LG+ihRbpWzO7j9Rc2S5I6bczvG4wOg7nVKG+B5XBvuU9PjSqgxpd/F/fYf+ggAEru58E+VM4veCRV8vSPbBqDG4FMPV6DiA+tH/70n6zuPCS3soxX00kjKtP80QD6UgzvM2NN7PHiNlf0Zj6VCU3VdjEnypg7dzlHJuyyaAaTD5nSfkecamEoJpq7kaUB7uTmBHELRUhOOy24f54HnP72vnxicZL8cWsOkJwQAqIGzBxQ7J0uX4Os71WrV2YIur8QVk6KN6MBPxfiCh3xO/R+cycgx0aMrWZoyzOzP7NCTM5MNE41C48xeGviyCtUID4xiBow+xo6IDUaiCoUVJhz579ore8ic70a19DD0qHy4SpBvrUwCO54kvkgn6HjYlLC/k8nFM9F9W9wVAQD/QwIjd7EtLZLGgbU61Jv3q4kZxxq270hogCRY0lmI3RxkedGHhetF7kaizrikW5zJQEeido/ir37HhX5AgMBAAGjVDBSMBIGA1UdEwEB/wQIMAYBAf8CAQAwPAYDVR0RBDUwM4IQbG9ncy5leGFtcGxlLmNvbYITbWV0cmljcy5leGFtcGxlLmNvbYcEwKgAAYcEfwAAATANBgkqhkiG9w0BAQsFAAOCAgEAH1O91BABHXZjrU7v1OwG+GbU/4TYZqBXXNxax++OFSRCkEEoNKGg49R6J7lY4lrm12zBlw+oGSyjIOerzi39/dcxDkKpzyhGvEN4mExbDlybmdCVrHPeWgZl7uwqn4Bj1xiu97M6eMthgxJE7KVNDGDHthGL0/fTlONIh3qS7Far33hLHJJKy3+lC1MDB8cNltV3mf/ctHCx5Wa0bfZId0MJgd/seP0WU1HCf3kIxhnhsnOYs32xu7EGiM4/lgnquVd/q/f99ueSaDSHrep373/w2ce9iF3U0qcLd2iP8ayF/daGeW1dVPL9R10Oe4BpRjMkjlLwhZdjJeKSg9GBa2GXUEn1Ru9vpSw/C10no3Qx/6ZHweYbSmJ6hBg4T0nDBp6iVS1eQULNXxDuDWb26U0ESOO5jK8ATywuc45o0bqdvD1XOrGYGfGnofx7ofRWwKHWfltvxurnbsyo2vH6nM6K41K2DpVdyQOKAGvKe/oCWfdi+WyBQJGWcIp2OTC1XyWHv7JsY3lo04+islkHEcqJyd8Rf8GWmRHdXz0WzGiZbxWzAuvRRWnzM31VAws8kQBHTBwIJlJoGX4AXfEvPi+NTxkntf8cQdJucK9ZZbP4ycXHULO4LneyJoJ9Q7nxX11xWv7BDWxxclOXy6tyUkg9Fjb7pQ/HCVvGhRzilVU=</samlsig:X509Certificate>
+              </samlsig:X509Data>
+          </samlsig:KeyInfo>
+      </samlsig:Signature>
+  </samlp:AuthnRequest>
+
+// XXX To be updated
+
+SAML Response Type 4 (supported)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Below is an example SAML response that is signed, with an unsigned SAML assertion:
+
+.. code-block:: XML
+
+  <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:samlsig="http://www.w3.org/2000/09/xmldsig#" ID="_u5mpjadp1fdozfih4cj8ap4brh" Version="2.0" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="http://localhost:8065/login/sso/saml" IssueInstant="2019-06-08T16:00:31Z">
+      <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">http://www.okta.com/exkoxukx1D8OIfY03356</saml:Issuer>
+      <samlsig:Signature Id="Signature1">
+          <samlsig:SignedInfo>
+              <samlsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></samlsig:CanonicalizationMethod>
+              <samlsig:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></samlsig:SignatureMethod>
+              <samlsig:Reference URI="#_u5mpjadp1fdozfih4cj8ap4brh">
+                  <samlsig:Transforms>
+                      <samlsig:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></samlsig:Transform>
+                  </samlsig:Transforms>
+                  <samlsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></samlsig:DigestMethod>
+                  <samlsig:DigestValue></samlsig:DigestValue>
+              </samlsig:Reference>
+          </samlsig:SignedInfo>
+          <samlsig:SignatureValue></samlsig:SignatureValue>
+          <samlsig:KeyInfo>
+              <samlsig:X509Data>
+                  <samlsig:X509Certificate>MIIFmzCCA4OgAwIBAgIJAIusvV3gZIwiMA0GCSqGSIb3DQEBCwUAMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTAeFw0xOTA2MDcxMjQ0MTdaFw0yOTA2MDQxMjQ0MTdaMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBALAfDj+RyByszTOPRL4b+cilNF/3PB1I0CG3TNzgllgy5CwRGHLKn5/t8rPsJoWLKOUGenzVdXWuoVi3jyl5FZ1N60CBbXfmSWk20dSIkcYCcYEgs1BTBqKKYFw2dV4M0oppzNtlq7A0Glpg/gpaR/2TXEPAhOsUfORC2qAdJt9ev0AQjp5V0TkIKMZz8oo33Coi38TG5r/LG+ihRbpWzO7j9Rc2S5I6bczvG4wOg7nVKG+B5XBvuU9PjSqgxpd/F/fYf+ggAEru58E+VM4veCRV8vSPbBqDG4FMPV6DiA+tH/70n6zuPCS3soxX00kjKtP80QD6UgzvM2NN7PHiNlf0Zj6VCU3VdjEnypg7dzlHJuyyaAaTD5nSfkecamEoJpq7kaUB7uTmBHELRUhOOy24f54HnP72vnxicZL8cWsOkJwQAqIGzBxQ7J0uX4Os71WrV2YIur8QVk6KN6MBPxfiCh3xO/R+cycgx0aMrWZoyzOzP7NCTM5MNE41C48xeGviyCtUID4xiBow+xo6IDUaiCoUVJhz579ore8ic70a19DD0qHy4SpBvrUwCO54kvkgn6HjYlLC/k8nFM9F9W9wVAQD/QwIjd7EtLZLGgbU61Jv3q4kZxxq270hogCRY0lmI3RxkedGHhetF7kaizrikW5zJQEeido/ir37HhX5AgMBAAGjVDBSMBIGA1UdEwEB/wQIMAYBAf8CAQAwPAYDVR0RBDUwM4IQbG9ncy5leGFtcGxlLmNvbYITbWV0cmljcy5leGFtcGxlLmNvbYcEwKgAAYcEfwAAATANBgkqhkiG9w0BAQsFAAOCAgEAH1O91BABHXZjrU7v1OwG+GbU/4TYZqBXXNxax++OFSRCkEEoNKGg49R6J7lY4lrm12zBlw+oGSyjIOerzi39/dcxDkKpzyhGvEN4mExbDlybmdCVrHPeWgZl7uwqn4Bj1xiu97M6eMthgxJE7KVNDGDHthGL0/fTlONIh3qS7Far33hLHJJKy3+lC1MDB8cNltV3mf/ctHCx5Wa0bfZId0MJgd/seP0WU1HCf3kIxhnhsnOYs32xu7EGiM4/lgnquVd/q/f99ueSaDSHrep373/w2ce9iF3U0qcLd2iP8ayF/daGeW1dVPL9R10Oe4BpRjMkjlLwhZdjJeKSg9GBa2GXUEn1Ru9vpSw/C10no3Qx/6ZHweYbSmJ6hBg4T0nDBp6iVS1eQULNXxDuDWb26U0ESOO5jK8ATywuc45o0bqdvD1XOrGYGfGnofx7ofRWwKHWfltvxurnbsyo2vH6nM6K41K2DpVdyQOKAGvKe/oCWfdi+WyBQJGWcIp2OTC1XyWHv7JsY3lo04+islkHEcqJyd8Rf8GWmRHdXz0WzGiZbxWzAuvRRWnzM31VAws8kQBHTBwIJlJoGX4AXfEvPi+NTxkntf8cQdJucK9ZZbP4ycXHULO4LneyJoJ9Q7nxX11xWv7BDWxxclOXy6tyUkg9Fjb7pQ/HCVvGhRzilVU=</samlsig:X509Certificate>
+              </samlsig:X509Data>
+          </samlsig:KeyInfo>
+      </samlsig:Signature>
+  </samlp:AuthnRequest>
+
+// XXX To be updated
+
+SAML Response Type 5 (partially supported)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Below is an example SAML response that is not signed, with a signed and encrypted SAML assertion:
+
+.. code-block:: XML
+
+  <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:samlsig="http://www.w3.org/2000/09/xmldsig#" ID="_u5mpjadp1fdozfih4cj8ap4brh" Version="2.0" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="http://localhost:8065/login/sso/saml" IssueInstant="2019-06-08T16:00:31Z">
+      <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">http://www.okta.com/exkoxukx1D8OIfY03356</saml:Issuer>
+      <samlsig:Signature Id="Signature1">
+          <samlsig:SignedInfo>
+              <samlsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></samlsig:CanonicalizationMethod>
+              <samlsig:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></samlsig:SignatureMethod>
+              <samlsig:Reference URI="#_u5mpjadp1fdozfih4cj8ap4brh">
+                  <samlsig:Transforms>
+                      <samlsig:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></samlsig:Transform>
+                  </samlsig:Transforms>
+                  <samlsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></samlsig:DigestMethod>
+                  <samlsig:DigestValue></samlsig:DigestValue>
+              </samlsig:Reference>
+          </samlsig:SignedInfo>
+          <samlsig:SignatureValue></samlsig:SignatureValue>
+          <samlsig:KeyInfo>
+              <samlsig:X509Data>
+                  <samlsig:X509Certificate>MIIFmzCCA4OgAwIBAgIJAIusvV3gZIwiMA0GCSqGSIb3DQEBCwUAMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTAeFw0xOTA2MDcxMjQ0MTdaFw0yOTA2MDQxMjQ0MTdaMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBALAfDj+RyByszTOPRL4b+cilNF/3PB1I0CG3TNzgllgy5CwRGHLKn5/t8rPsJoWLKOUGenzVdXWuoVi3jyl5FZ1N60CBbXfmSWk20dSIkcYCcYEgs1BTBqKKYFw2dV4M0oppzNtlq7A0Glpg/gpaR/2TXEPAhOsUfORC2qAdJt9ev0AQjp5V0TkIKMZz8oo33Coi38TG5r/LG+ihRbpWzO7j9Rc2S5I6bczvG4wOg7nVKG+B5XBvuU9PjSqgxpd/F/fYf+ggAEru58E+VM4veCRV8vSPbBqDG4FMPV6DiA+tH/70n6zuPCS3soxX00kjKtP80QD6UgzvM2NN7PHiNlf0Zj6VCU3VdjEnypg7dzlHJuyyaAaTD5nSfkecamEoJpq7kaUB7uTmBHELRUhOOy24f54HnP72vnxicZL8cWsOkJwQAqIGzBxQ7J0uX4Os71WrV2YIur8QVk6KN6MBPxfiCh3xO/R+cycgx0aMrWZoyzOzP7NCTM5MNE41C48xeGviyCtUID4xiBow+xo6IDUaiCoUVJhz579ore8ic70a19DD0qHy4SpBvrUwCO54kvkgn6HjYlLC/k8nFM9F9W9wVAQD/QwIjd7EtLZLGgbU61Jv3q4kZxxq270hogCRY0lmI3RxkedGHhetF7kaizrikW5zJQEeido/ir37HhX5AgMBAAGjVDBSMBIGA1UdEwEB/wQIMAYBAf8CAQAwPAYDVR0RBDUwM4IQbG9ncy5leGFtcGxlLmNvbYITbWV0cmljcy5leGFtcGxlLmNvbYcEwKgAAYcEfwAAATANBgkqhkiG9w0BAQsFAAOCAgEAH1O91BABHXZjrU7v1OwG+GbU/4TYZqBXXNxax++OFSRCkEEoNKGg49R6J7lY4lrm12zBlw+oGSyjIOerzi39/dcxDkKpzyhGvEN4mExbDlybmdCVrHPeWgZl7uwqn4Bj1xiu97M6eMthgxJE7KVNDGDHthGL0/fTlONIh3qS7Far33hLHJJKy3+lC1MDB8cNltV3mf/ctHCx5Wa0bfZId0MJgd/seP0WU1HCf3kIxhnhsnOYs32xu7EGiM4/lgnquVd/q/f99ueSaDSHrep373/w2ce9iF3U0qcLd2iP8ayF/daGeW1dVPL9R10Oe4BpRjMkjlLwhZdjJeKSg9GBa2GXUEn1Ru9vpSw/C10no3Qx/6ZHweYbSmJ6hBg4T0nDBp6iVS1eQULNXxDuDWb26U0ESOO5jK8ATywuc45o0bqdvD1XOrGYGfGnofx7ofRWwKHWfltvxurnbsyo2vH6nM6K41K2DpVdyQOKAGvKe/oCWfdi+WyBQJGWcIp2OTC1XyWHv7JsY3lo04+islkHEcqJyd8Rf8GWmRHdXz0WzGiZbxWzAuvRRWnzM31VAws8kQBHTBwIJlJoGX4AXfEvPi+NTxkntf8cQdJucK9ZZbP4ycXHULO4LneyJoJ9Q7nxX11xWv7BDWxxclOXy6tyUkg9Fjb7pQ/HCVvGhRzilVU=</samlsig:X509Certificate>
+              </samlsig:X509Data>
+          </samlsig:KeyInfo>
+      </samlsig:Signature>
+  </samlp:AuthnRequest>
+
+// XXX To be updated
+
+SAML Response Type 6 (partially supported)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Below is an example SAML response that is not signed, with a signed SAML assertion:
+
+.. code-block:: XML
+
+  <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:samlsig="http://www.w3.org/2000/09/xmldsig#" ID="_u5mpjadp1fdozfih4cj8ap4brh" Version="2.0" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="http://localhost:8065/login/sso/saml" IssueInstant="2019-06-08T16:00:31Z">
+      <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">http://www.okta.com/exkoxukx1D8OIfY03356</saml:Issuer>
+      <samlsig:Signature Id="Signature1">
+          <samlsig:SignedInfo>
+              <samlsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></samlsig:CanonicalizationMethod>
+              <samlsig:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></samlsig:SignatureMethod>
+              <samlsig:Reference URI="#_u5mpjadp1fdozfih4cj8ap4brh">
+                  <samlsig:Transforms>
+                      <samlsig:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></samlsig:Transform>
+                  </samlsig:Transforms>
+                  <samlsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></samlsig:DigestMethod>
+                  <samlsig:DigestValue></samlsig:DigestValue>
+              </samlsig:Reference>
+          </samlsig:SignedInfo>
+          <samlsig:SignatureValue></samlsig:SignatureValue>
+          <samlsig:KeyInfo>
+              <samlsig:X509Data>
+                  <samlsig:X509Certificate>MIIFmzCCA4OgAwIBAgIJAIusvV3gZIwiMA0GCSqGSIb3DQEBCwUAMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTAeFw0xOTA2MDcxMjQ0MTdaFw0yOTA2MDQxMjQ0MTdaMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBALAfDj+RyByszTOPRL4b+cilNF/3PB1I0CG3TNzgllgy5CwRGHLKn5/t8rPsJoWLKOUGenzVdXWuoVi3jyl5FZ1N60CBbXfmSWk20dSIkcYCcYEgs1BTBqKKYFw2dV4M0oppzNtlq7A0Glpg/gpaR/2TXEPAhOsUfORC2qAdJt9ev0AQjp5V0TkIKMZz8oo33Coi38TG5r/LG+ihRbpWzO7j9Rc2S5I6bczvG4wOg7nVKG+B5XBvuU9PjSqgxpd/F/fYf+ggAEru58E+VM4veCRV8vSPbBqDG4FMPV6DiA+tH/70n6zuPCS3soxX00kjKtP80QD6UgzvM2NN7PHiNlf0Zj6VCU3VdjEnypg7dzlHJuyyaAaTD5nSfkecamEoJpq7kaUB7uTmBHELRUhOOy24f54HnP72vnxicZL8cWsOkJwQAqIGzBxQ7J0uX4Os71WrV2YIur8QVk6KN6MBPxfiCh3xO/R+cycgx0aMrWZoyzOzP7NCTM5MNE41C48xeGviyCtUID4xiBow+xo6IDUaiCoUVJhz579ore8ic70a19DD0qHy4SpBvrUwCO54kvkgn6HjYlLC/k8nFM9F9W9wVAQD/QwIjd7EtLZLGgbU61Jv3q4kZxxq270hogCRY0lmI3RxkedGHhetF7kaizrikW5zJQEeido/ir37HhX5AgMBAAGjVDBSMBIGA1UdEwEB/wQIMAYBAf8CAQAwPAYDVR0RBDUwM4IQbG9ncy5leGFtcGxlLmNvbYITbWV0cmljcy5leGFtcGxlLmNvbYcEwKgAAYcEfwAAATANBgkqhkiG9w0BAQsFAAOCAgEAH1O91BABHXZjrU7v1OwG+GbU/4TYZqBXXNxax++OFSRCkEEoNKGg49R6J7lY4lrm12zBlw+oGSyjIOerzi39/dcxDkKpzyhGvEN4mExbDlybmdCVrHPeWgZl7uwqn4Bj1xiu97M6eMthgxJE7KVNDGDHthGL0/fTlONIh3qS7Far33hLHJJKy3+lC1MDB8cNltV3mf/ctHCx5Wa0bfZId0MJgd/seP0WU1HCf3kIxhnhsnOYs32xu7EGiM4/lgnquVd/q/f99ueSaDSHrep373/w2ce9iF3U0qcLd2iP8ayF/daGeW1dVPL9R10Oe4BpRjMkjlLwhZdjJeKSg9GBa2GXUEn1Ru9vpSw/C10no3Qx/6ZHweYbSmJ6hBg4T0nDBp6iVS1eQULNXxDuDWb26U0ESOO5jK8ATywuc45o0bqdvD1XOrGYGfGnofx7ofRWwKHWfltvxurnbsyo2vH6nM6K41K2DpVdyQOKAGvKe/oCWfdi+WyBQJGWcIp2OTC1XyWHv7JsY3lo04+islkHEcqJyd8Rf8GWmRHdXz0WzGiZbxWzAuvRRWnzM31VAws8kQBHTBwIJlJoGX4AXfEvPi+NTxkntf8cQdJucK9ZZbP4ycXHULO4LneyJoJ9Q7nxX11xWv7BDWxxclOXy6tyUkg9Fjb7pQ/HCVvGhRzilVU=</samlsig:X509Certificate>
+              </samlsig:X509Data>
+          </samlsig:KeyInfo>
+      </samlsig:Signature>
+  </samlp:AuthnRequest>
+
+// XXX To be updated
+
+SAML Response Type 7 (supported)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Below is an example SAML response that is not signed, with an unsigned but encrypted SAML assertion:
+
+.. code-block:: XML
+
+  <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:samlsig="http://www.w3.org/2000/09/xmldsig#" ID="_u5mpjadp1fdozfih4cj8ap4brh" Version="2.0" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="http://localhost:8065/login/sso/saml" IssueInstant="2019-06-08T16:00:31Z">
+      <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">http://www.okta.com/exkoxukx1D8OIfY03356</saml:Issuer>
+      <samlsig:Signature Id="Signature1">
+          <samlsig:SignedInfo>
+              <samlsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></samlsig:CanonicalizationMethod>
+              <samlsig:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></samlsig:SignatureMethod>
+              <samlsig:Reference URI="#_u5mpjadp1fdozfih4cj8ap4brh">
+                  <samlsig:Transforms>
+                      <samlsig:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></samlsig:Transform>
+                  </samlsig:Transforms>
+                  <samlsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></samlsig:DigestMethod>
+                  <samlsig:DigestValue></samlsig:DigestValue>
+              </samlsig:Reference>
+          </samlsig:SignedInfo>
+          <samlsig:SignatureValue></samlsig:SignatureValue>
+          <samlsig:KeyInfo>
+              <samlsig:X509Data>
+                  <samlsig:X509Certificate>MIIFmzCCA4OgAwIBAgIJAIusvV3gZIwiMA0GCSqGSIb3DQEBCwUAMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTAeFw0xOTA2MDcxMjQ0MTdaFw0yOTA2MDQxMjQ0MTdaMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBALAfDj+RyByszTOPRL4b+cilNF/3PB1I0CG3TNzgllgy5CwRGHLKn5/t8rPsJoWLKOUGenzVdXWuoVi3jyl5FZ1N60CBbXfmSWk20dSIkcYCcYEgs1BTBqKKYFw2dV4M0oppzNtlq7A0Glpg/gpaR/2TXEPAhOsUfORC2qAdJt9ev0AQjp5V0TkIKMZz8oo33Coi38TG5r/LG+ihRbpWzO7j9Rc2S5I6bczvG4wOg7nVKG+B5XBvuU9PjSqgxpd/F/fYf+ggAEru58E+VM4veCRV8vSPbBqDG4FMPV6DiA+tH/70n6zuPCS3soxX00kjKtP80QD6UgzvM2NN7PHiNlf0Zj6VCU3VdjEnypg7dzlHJuyyaAaTD5nSfkecamEoJpq7kaUB7uTmBHELRUhOOy24f54HnP72vnxicZL8cWsOkJwQAqIGzBxQ7J0uX4Os71WrV2YIur8QVk6KN6MBPxfiCh3xO/R+cycgx0aMrWZoyzOzP7NCTM5MNE41C48xeGviyCtUID4xiBow+xo6IDUaiCoUVJhz579ore8ic70a19DD0qHy4SpBvrUwCO54kvkgn6HjYlLC/k8nFM9F9W9wVAQD/QwIjd7EtLZLGgbU61Jv3q4kZxxq270hogCRY0lmI3RxkedGHhetF7kaizrikW5zJQEeido/ir37HhX5AgMBAAGjVDBSMBIGA1UdEwEB/wQIMAYBAf8CAQAwPAYDVR0RBDUwM4IQbG9ncy5leGFtcGxlLmNvbYITbWV0cmljcy5leGFtcGxlLmNvbYcEwKgAAYcEfwAAATANBgkqhkiG9w0BAQsFAAOCAgEAH1O91BABHXZjrU7v1OwG+GbU/4TYZqBXXNxax++OFSRCkEEoNKGg49R6J7lY4lrm12zBlw+oGSyjIOerzi39/dcxDkKpzyhGvEN4mExbDlybmdCVrHPeWgZl7uwqn4Bj1xiu97M6eMthgxJE7KVNDGDHthGL0/fTlONIh3qS7Far33hLHJJKy3+lC1MDB8cNltV3mf/ctHCx5Wa0bfZId0MJgd/seP0WU1HCf3kIxhnhsnOYs32xu7EGiM4/lgnquVd/q/f99ueSaDSHrep373/w2ce9iF3U0qcLd2iP8ayF/daGeW1dVPL9R10Oe4BpRjMkjlLwhZdjJeKSg9GBa2GXUEn1Ru9vpSw/C10no3Qx/6ZHweYbSmJ6hBg4T0nDBp6iVS1eQULNXxDuDWb26U0ESOO5jK8ATywuc45o0bqdvD1XOrGYGfGnofx7ofRWwKHWfltvxurnbsyo2vH6nM6K41K2DpVdyQOKAGvKe/oCWfdi+WyBQJGWcIp2OTC1XyWHv7JsY3lo04+islkHEcqJyd8Rf8GWmRHdXz0WzGiZbxWzAuvRRWnzM31VAws8kQBHTBwIJlJoGX4AXfEvPi+NTxkntf8cQdJucK9ZZbP4ycXHULO4LneyJoJ9Q7nxX11xWv7BDWxxclOXy6tyUkg9Fjb7pQ/HCVvGhRzilVU=</samlsig:X509Certificate>
+              </samlsig:X509Data>
+          </samlsig:KeyInfo>
+      </samlsig:Signature>
+  </samlp:AuthnRequest>
+
+// XXX To be updated
+
+SAML Response Type 8 (supported)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Below is an example SAML response that is not signed, with an unsigned SAML assertion:
+
+.. code-block:: XML
+
+  <samlp:AuthnRequest xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" xmlns:samlsig="http://www.w3.org/2000/09/xmldsig#" ID="_u5mpjadp1fdozfih4cj8ap4brh" Version="2.0" ProtocolBinding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" AssertionConsumerServiceURL="http://localhost:8065/login/sso/saml" IssueInstant="2019-06-08T16:00:31Z">
+      <saml:Issuer xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">http://www.okta.com/exkoxukx1D8OIfY03356</saml:Issuer>
+      <samlsig:Signature Id="Signature1">
+          <samlsig:SignedInfo>
+              <samlsig:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></samlsig:CanonicalizationMethod>
+              <samlsig:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></samlsig:SignatureMethod>
+              <samlsig:Reference URI="#_u5mpjadp1fdozfih4cj8ap4brh">
+                  <samlsig:Transforms>
+                      <samlsig:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></samlsig:Transform>
+                  </samlsig:Transforms>
+                  <samlsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></samlsig:DigestMethod>
+                  <samlsig:DigestValue></samlsig:DigestValue>
+              </samlsig:Reference>
+          </samlsig:SignedInfo>
+          <samlsig:SignatureValue></samlsig:SignatureValue>
+          <samlsig:KeyInfo>
+              <samlsig:X509Data>
+                  <samlsig:X509Certificate>MIIFmzCCA4OgAwIBAgIJAIusvV3gZIwiMA0GCSqGSIb3DQEBCwUAMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTAeFw0xOTA2MDcxMjQ0MTdaFw0yOTA2MDQxMjQ0MTdaMGIxCzAJBgNVBAYTAlVTMRIwEAYDVQQHDAlQYWxvIEFsdG8xEzARBgNVBAoMCk1hdHRlcm1vc3QxDzANBgNVBAsMBkRldk9wczEZMBcGA1UEAwwQYmFzZS5leGFtcGxlLmNvbTCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCCAgoCggIBALAfDj+RyByszTOPRL4b+cilNF/3PB1I0CG3TNzgllgy5CwRGHLKn5/t8rPsJoWLKOUGenzVdXWuoVi3jyl5FZ1N60CBbXfmSWk20dSIkcYCcYEgs1BTBqKKYFw2dV4M0oppzNtlq7A0Glpg/gpaR/2TXEPAhOsUfORC2qAdJt9ev0AQjp5V0TkIKMZz8oo33Coi38TG5r/LG+ihRbpWzO7j9Rc2S5I6bczvG4wOg7nVKG+B5XBvuU9PjSqgxpd/F/fYf+ggAEru58E+VM4veCRV8vSPbBqDG4FMPV6DiA+tH/70n6zuPCS3soxX00kjKtP80QD6UgzvM2NN7PHiNlf0Zj6VCU3VdjEnypg7dzlHJuyyaAaTD5nSfkecamEoJpq7kaUB7uTmBHELRUhOOy24f54HnP72vnxicZL8cWsOkJwQAqIGzBxQ7J0uX4Os71WrV2YIur8QVk6KN6MBPxfiCh3xO/R+cycgx0aMrWZoyzOzP7NCTM5MNE41C48xeGviyCtUID4xiBow+xo6IDUaiCoUVJhz579ore8ic70a19DD0qHy4SpBvrUwCO54kvkgn6HjYlLC/k8nFM9F9W9wVAQD/QwIjd7EtLZLGgbU61Jv3q4kZxxq270hogCRY0lmI3RxkedGHhetF7kaizrikW5zJQEeido/ir37HhX5AgMBAAGjVDBSMBIGA1UdEwEB/wQIMAYBAf8CAQAwPAYDVR0RBDUwM4IQbG9ncy5leGFtcGxlLmNvbYITbWV0cmljcy5leGFtcGxlLmNvbYcEwKgAAYcEfwAAATANBgkqhkiG9w0BAQsFAAOCAgEAH1O91BABHXZjrU7v1OwG+GbU/4TYZqBXXNxax++OFSRCkEEoNKGg49R6J7lY4lrm12zBlw+oGSyjIOerzi39/dcxDkKpzyhGvEN4mExbDlybmdCVrHPeWgZl7uwqn4Bj1xiu97M6eMthgxJE7KVNDGDHthGL0/fTlONIh3qS7Far33hLHJJKy3+lC1MDB8cNltV3mf/ctHCx5Wa0bfZId0MJgd/seP0WU1HCf3kIxhnhsnOYs32xu7EGiM4/lgnquVd/q/f99ueSaDSHrep373/w2ce9iF3U0qcLd2iP8ayF/daGeW1dVPL9R10Oe4BpRjMkjlLwhZdjJeKSg9GBa2GXUEn1Ru9vpSw/C10no3Qx/6ZHweYbSmJ6hBg4T0nDBp6iVS1eQULNXxDuDWb26U0ESOO5jK8ATywuc45o0bqdvD1XOrGYGfGnofx7ofRWwKHWfltvxurnbsyo2vH6nM6K41K2DpVdyQOKAGvKe/oCWfdi+WyBQJGWcIp2OTC1XyWHv7JsY3lo04+islkHEcqJyd8Rf8GWmRHdXz0WzGiZbxWzAuvRRWnzM31VAws8kQBHTBwIJlJoGX4AXfEvPi+NTxkntf8cQdJucK9ZZbP4ycXHULO4LneyJoJ9Q7nxX11xWv7BDWxxclOXy6tyUkg9Fjb7pQ/HCVvGhRzilVU=</samlsig:X509Certificate>
+              </samlsig:X509Data>
+          </samlsig:KeyInfo>
+      </samlsig:Signature>
+  </samlp:AuthnRequest>
+
+// XXX To be updated
+
 Technical description of SAML synchronization with AD/LDAP
 ------------------------------------------------------------
 
