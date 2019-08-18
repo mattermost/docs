@@ -80,6 +80,7 @@ Below is a table of the different types of responses, along with an example XML 
 
 .. csv-table::
     :header: "Response Type", "Signed SAML Response", "Signed SAML Assertion", "Encrypted SAML Assertion", "Supported by Mattermost"
+
     "Type 1", "Yes", "Yes", "Yes", "Yes"
     "Type 2", "Yes", "Yes", "No", "Yes"
     "Type 3", "Yes", "No", "Yes", "Yes"
