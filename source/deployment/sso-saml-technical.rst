@@ -76,7 +76,7 @@ SAML Responses
 
 There are different types of SAML responses sent by the IdP to the SP. The response contains the Assertion with the NameID and attributes of a user.
 
-Below is a table of the different types of responses, along with an example XML of each type of response:
+Below is a table of the different types of responses, along with an example XML of each type of response. Each response type is fully supported except when the SAML assertion is signed while the SAML response itself is not:
 
 .. csv-table::
     :header: "Response Type", "Signed SAML Response", "Signed SAML Assertion", "Encrypted SAML Assertion", "Supported by Mattermost"
