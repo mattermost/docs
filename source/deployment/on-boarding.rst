@@ -12,7 +12,10 @@ DO NOT manipulate the Mattermost database
 Updating the Support Email & Help Link
 ---------------------------------------
 
-Update the Support Email and Help Link in Mattermost under **System Console > Site Configuration > Customization** to provide your end users a resource for password resets or questions on their Mattermost account.  The Support Email is used on email notifications and during tutorial for end users to ask support questions.  The Help Link is on the Mattermost login page, sign-up pages, and Main Menu. Many organizations use this URL to link to their help desk ticketing system. 
+Update the Support Email and Help Link in Mattermost under **System Console > Site Configuration > Customization** to provide your users a resource for password resets or questions on their Mattermost account.
+
+ - The Support Email is used on email notifications and during tutorial for users to ask support questions.
+ - The Help Link is on the Mattermost login page, sign-up pages, and Main Menu. Many organizations use this URL to link to their help desk ticketing system. 
 
 Migrating to AD/LDAP or SAML from email-based authentication
 ------------------------------------------------------------
