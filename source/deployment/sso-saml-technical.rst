@@ -32,7 +32,7 @@ When Mattermost initiates an SP-initiated SAML request flow, it generates a **HT
 
  bM441nuRIzAjKeMM8RhegMFjZ4L4xPBHhAfHYqgnYDQnSxC++Qn5IocWuzuBGz7JQmT9C57nxjxgbFIatiqUCQN17aYrLn/mWE09C5mJMYlcV68ibEkbR/JKUQ+2u/N+mSD4/C/QvFvuB6BcJaXaz0h7NwGhHROUte6MoGJKMPE=
 
-AuthNRequests can also be signed by Mattermost in v5.14 and later, in which case the XML payload similar to:
+AuthNRequests can also be signed by Mattermost in v5.14 and later, in which case the XML payload is similar to:
 
 .. code-block:: XML
 
