@@ -104,8 +104,8 @@ Global gitlab imagePullPolicy
 
 {{- define "gitlab.imagePullPolicy" -}}
 {{- $imageObj := default (dict) .Values.image -}}
-{{- if or $imageObj.imagePullPolicy .Values.global.imagePullPolicy -}}
-imagePullPolicy: {{ coalesce $imageObj.imagePullPolicy .Values.global.imagePullPolicy | quote }}
+{{- if or $imageObj.pullPolicy .Values.global.imagePullPolicy -}}
+imagePullPolicy: {{ coalesce $imageObj.pullPolicy .Values.global.imagePullPolicy | quote }}
 {{- end -}}
 {{- end -}}
 
