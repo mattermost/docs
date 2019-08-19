@@ -40,5 +40,5 @@ OpenID Connect is built on top of OAuth 2.0, which supports authentication and t
 
 SAML is like OpenID Connect, except typically used in enterprise settings. OpenID Connect is more common in consumer websites and web/mobile apps.
 
-Learn more at https://hackernoon.com/demystifying-oauth-2-0-and-openid-connect-and-saml-12aa4cf9fdba 
+Learn more at https://hackernoon.com/demystifying-oauth-2-0-and-openid-connect-and-saml-12aa4cf9fdba.
 
