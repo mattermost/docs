@@ -28,7 +28,7 @@ Roadmap
 
 In Mattermost v5.14, you can optionally configure Mattermost to sign the SAML request using a private key to meet InfoSec requirements at your organization.
 
-In future roadmap, the main consideration is an integration with SCIM, via plugin. Such an integration allows System Admins to create SAML provisioned users before their first login, and sync them against Mattermost permissions.
+In future roadmap, the main consideration is an integration with SCIM, via plugin. Such an integration allows system administrators to create SAML provisioned users before their first login, and sync them against Mattermost permissions.
 
 Currently user provisioning and deprovisioning can be handled with SAML sync, but relies on AD/LDAP - SCIM enables admins to control user provisioning and deprovisioning within the IdP itself.
 
