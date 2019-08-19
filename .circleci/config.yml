@@ -34,7 +34,6 @@ jobs:
       - aws-s3/sync:
           from: build/html
           to: 's3://docs.mattermost.com/'
-          aws-region: AWS_DEFAULT_REGION
           arguments: '--acl public-read'
           overwrite: true
 
