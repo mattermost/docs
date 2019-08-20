@@ -6,7 +6,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.14 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-Release day: 2019-08-16
+**Release day: August 16, 2019**
 
 Mattermost v5.14.0 contains a medium level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
