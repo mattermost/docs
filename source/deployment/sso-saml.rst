@@ -39,7 +39,7 @@ Configuration Assistance
 
 We are open to providing assistance when configuring your custom IdP by answering Mattermost technical configuration questions and working with your IdP provider in support of resolving issues as they relate to Mattermost SAML configuration settings. However, we cannot guarantee your connection will work with Mattermost.
 
-For technical documentation on SAML, :doc:`see this page <sso-saml-technical>`.
+For technical documentation on SAML, :ref:`sso-saml-technical`.
 
 To assist with the process of getting a user file for your custom IDP, please see this `documentation <https://github.com/icelander/mattermost_generate_user_file>`_.
 
