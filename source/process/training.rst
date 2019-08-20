@@ -247,6 +247,93 @@ Frequently Asked Questions
 
 Not everyone is comfortable with speaking in front of 60+ people. Not everyone speaks clear English. We don’t want the first company-wide meeting to be anxious for new team members, hence by default managers intro them. New hires can opt-in to introducing themselves. 
 
+Product Training and Q&A Session
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+These are our product training sessions for the Sales and Customer Success teams, along with QA, focused on frequently asked product areas. They include a functional and technical training session targeted for specific audiences.
+
+Attendees:
+
+- All Sales, Customer Success and QA staff
+- Chair: Jason Blais
+- Co-Chairs: Product training session leads
+
+Time:
+
+- Every 3 weeks on Wednesdays from 9:00am to 10:00am Palo Alto time.
+
+Procedure:
+
+**Before meeting:**
+
+1. (Chair) Schedules a kick-off call with co-chairs two weeks prior to the training session. Purpose is to review expectations and plans for the session, as well as answer any questions.
+
+2. (Co-Chairs) Prepare a pre-screening survey to assess team members' knowledge of the product area. This is optional but recommended as it can help guide focus areas of the training session.
+
+3. (Co-Chairs) Prepares slides and other reference material for the session. Must be shared with Chair at least 48 hours ahead of the session.
+
+.. tip :: 
+
+  - When sharing code snippets, highlight the area of focus within the code snippet.
+  - Focus on visuals, diagrams and live demonstrations instead of slides where possible.
+  - Share at least one memorable customer story.
+  - See the Google Drive on `previous materials and training recordings for reference <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29_>`_.
+
+4. (Co-Chairs) Two days prior to the training session, practice a dry run for length and structure of the session. This is optional but recommended.
+
+5. (Chair) Queues an item for that week's Customer Obsession meeting to remind everyone of the product training session taking place. Include a mention of the topic, along with who is leading the session.
+
+6. (Chair & Co-Chairs) Signs into their Zoom account via OneLogin to access recording and screenshare capabilities during the meeting.
+
+**During meeting:**
+
+1. (Chair) At 8:58am Palo Alto time on the day the meeting is held, posts a reminder of the session along with a Zoom link to join the call. `See example <https://community.mattermost.com/core/pl/ward3bdkii895kw9g4sigbikwo>`_.
+
+2. (Team) Joins the **Zoom** link in the header of the `Product Training and Q&A channel <https://community-release.mattermost.com/core/channels/product-training-and-qa>`_.
+
+3. (Chair) Starts Zoom recording at 9:00am Palo Alto time.
+
+4. (Chair and Co-Chairs) Runs through the agenda, which comprises one or more of the following items:
+
+- **Introductions**
+
+- **Functionality / Benefits**
+
+  - Audience: Everyone
+  - What does it do, why do people use it, who uses it (customer segment) 
+  - Customer use case examples (success stories) 
+  - Known customer issues and workarounds
+  - Roadmap (status and committed timelines, if any) 
+  - Q&A 
+
+- **Technical Training**
+
+  - Audience: Primarily support, SAs and QA
+  - Technical understanding of how the feature works and how it was built (to help with better troubleshooting)
+  - Technical flow for the feature, data structure, etc.
+  - What to ask for when troubleshooting 
+  - Q&A
+
+- **Options for Testing**
+
+  - Audience: Primarily support and QA
+  - Testing environments
+  - Q&A
+
+- **Feedback**: At end of meeting, remind to share feedback via survey.
+
+**After meeting:**
+
+1. (Chair) Shares link to feedback survey. `See example <https://community.mattermost.com/core/pl/7w5w5aou4jfkxm95g6fwkcqxry>`_.
+
+2. (Chair) Uploads meeting recording and slides to `Google Drive folder <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29>`_, then share in channel. `See example <https://community.mattermost.com/core/pl/dkeh34y5pt8ybrb5mmrfbyy1ee>`_.
+
+3. (Chair & Co-Chairs) Holds a retrospective meeting two days after the training session to review feedback and discuss what could have been improved.
+
+4. (Chair) Makes adjustments to meeting process based on feedback and discussion with co-chairs. Schedules kick-off call for the next training session.
+
+5. (Co-Chairs) Updates product documentation or other resources based on the training session.
+
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

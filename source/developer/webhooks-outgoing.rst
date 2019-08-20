@@ -167,6 +167,8 @@ Troubleshooting
 
 To debug outgoing webhooks in **System Console > Logs**, set **System Console > Logging > Enable Webhook Debugging** to ``true`` and set **System Console > Logging > Console Log Level** to ``DEBUG``.
 
+When ``TRUE``, as of v5.14 all outgoing webhooks are logged and include a ``request_id`` value in the log file. 
+
 My integration prints the JSON data in a Mattermost channel
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

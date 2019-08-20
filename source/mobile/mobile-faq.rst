@@ -15,6 +15,11 @@ Is there a tablet version of the mobile apps?
 
 Our second generation mobile apps (“Mattermost”) have beta support for tablets.
 
+Can the permanent sidebar on tablet devices be disabled?
+--------------------------------------------------------
+
+The permanent sidebar is on by default for tablet sized devices, but it can be disabled from **Settings > Display > Sidebar > Permanent Sidebar**. When disabled, the sidebar behaves similarly to mobile devices where the user must open it using the button in the top-left of the screen.
+
 How is data handled on mobile devices after a user account is deactivated?
 --------------------------------------------------------------------------
 
