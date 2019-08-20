@@ -77,7 +77,7 @@ Below is a table of the different types of responses. Each response type is full
     "Yes", "No", "No", "Yes"
     "No", "Yes", "Yes", "Partially, validation of assertion signature not supported"
     "No", "Yes", "No", "Partially, validation of assertion signature not supported"
-    "No", "No", "Yes", "Yes ??"
+    "No", "No", "Yes", "Yes"
     "No", "No", "No", "Yes"
 
 For example XML responses for each type, see the `OneLogin SAML response examples <https://www.samltool.com/generic_sso_res.php>`_.
