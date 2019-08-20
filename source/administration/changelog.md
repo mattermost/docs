@@ -13,6 +13,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Breaking Changes 
 
 ### Bug Fixes
+ - Fixed an issue with an incorrect error message on Custom URL Schemes field.
+ - Improved the group linking failure error message and logging to make it clear that the group id attribute is probably misconfigured.
+ - Fixed an issue where SVG attachments bled over into subsequent posts.
+ - Fixed an issue where screen readers read "Press space to activate" on **Add** button of Add Members to channel when space didn't trigger the button.
+ - Fixed an issue where focus was not automatically set on text input box after selecting an emoji from the emoji picker.
  
 ### config.json
 
@@ -29,6 +34,35 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Websocket Event Changes
 
 ### Known Issues
+ - Users are unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
+ - Google User API Endpoint shows outdated helper text.
+ - Making a post in an empty channel sometimes causes the channel to display a loading spinner.
+ - Deleting the last post in a channel causes the channel to only display a loading spinner.
+ - Markdown helper text is missing on Edit Channel Header modal.
+ - User count in a channel does not update until after refresh if a user automatically joins a channel.
+ - Long posts might overlap in compact view.
+ - Joining a new channel with few posts might not take the user to the bottom of the channel.
+ - Missing messages can be caused if network fails on API calls.
+ - Expand/collapse in image icons are underlined.
+ - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
+ - Post and comment boxes are expanding too early on Firefox.
+ - Modifying config files causes compliance exports to run twice.
+ - Using channel autocomplete while editing post causes current channel to be unread.
+ - Scroll pop may occur with embedded Youtube links.
+ - Clicking on a post will highlight it after returning to the tab/window.
+ - Plugin translation files are not updated on web-client when plugins are upgraded.
+ - Changes to Account Settings are being saved even when user does not clicks on Save button.
+ - Custom-Attributes plugin might crash.
+ - Pagination breaks when adding users to a team.
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
  
 ### Contributors
 
