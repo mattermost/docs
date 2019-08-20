@@ -1737,6 +1737,8 @@ mattermost user invite
 mattermost user migrate_auth
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. _cli-user-migrate-auth:
+
   Description
     Migrates all existing Mattermost user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP, or from AD/LDAP to SAML. Output will display any accounts that are not migrated successfully. These accounts might be blocked because of filters in your AD/LDAP configuration in the System Console.
 
