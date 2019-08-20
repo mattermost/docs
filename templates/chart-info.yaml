@@ -7,3 +7,4 @@ metadata:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 data:
   gitlabVersion: "{{ coalesce .Values.global.gitlabVersion .Chart.AppVersion }}"
+  gitlabChartVersion: "{{ .Chart.Version }}"

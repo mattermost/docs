@@ -1,0 +1,5 @@
+---
+title: Adds the ability to finely configure logging options for the Container Registry
+merge_request: 899
+author:
+type: added
