@@ -18,6 +18,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where SVG attachments bled over into subsequent posts.
  - Fixed an issue where screen readers read "Press space to activate" on **Add** button of Add Members to channel when space didn't trigger the button.
  - Fixed an issue where focus was not automatically set on text input box after selecting an emoji from the emoji picker.
+ - Fixed an issue where rate limited posts failed to load threads.
  
 ### config.json
 
