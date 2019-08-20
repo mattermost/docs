@@ -67,16 +67,16 @@ There are different types of SAML responses sent by the IdP to the SP. The respo
 Below is a table of the different types of responses. Each response type is fully supported except when the SAML assertion is signed while the SAML response itself is not:
 
 .. csv-table::
-    :header: "Response Type", "Signed SAML Response", "Signed SAML Assertion", "Encrypted SAML Assertion", "Supported by Mattermost"
+    :header: "Signed SAML Response", "Signed SAML Assertion", "Encrypted SAML Assertion", "Supported by Mattermost"
 
-    "Type 1", "Yes", "Yes", "Yes", "Yes"
-    "Type 2", "Yes", "Yes", "No", "Yes"
-    "Type 3", "Yes", "No", "Yes", "Yes"
-    "Type 4", "Yes", "No", "No", "Yes"
-    "Type 5", "No", "Yes", "Yes", "Partially, validation of assertion signature not supported"
-    "Type 6", "No", "Yes", "No", "Partially, validation of assertion signature not supported"
-    "Type 7", "No", "No", "Yes", "Yes ??"
-    "Type 8", "No", "No", "No", "Yes"
+    "Yes", "Yes", "Yes", "Yes"
+    "Yes", "Yes", "No", "Yes"
+    "Yes", "No", "Yes", "Yes"
+    "Yes", "No", "No", "Yes"
+    "No", "Yes", "Yes", "Partially, validation of assertion signature not supported"
+    "No", "Yes", "No", "Partially, validation of assertion signature not supported"
+    "No", "No", "Yes", "Yes ??"
+    "No", "No", "No", "Yes"
 
 For example XML responses for each type, see the `OneLogin SAML response examples <https://www.samltool.com/generic_sso_res.php>`_.
 
