@@ -6,12 +6,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.14 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-Mattermost v5.14.0 contains a medium level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+**Release day: August 16, 2019**
 
-- **v5.14.1, release TBD**
-  - We are reviewing known issues for a potential dot release.
-- **v5.14.0, released 2019-08-16**
-  - Original 5.14.0 release
+Mattermost v5.14.0 contains a medium level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Compatibility
 
@@ -165,7 +162,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
  - Post and comment boxes are expanding too early on Firefox.
  - Modifying config files causes compliance exports to run twice.
- - Desktop notification doesn't show up after force logging out of an active session.
  - Using channel autocomplete while editing post causes current channel to be unread.
  - Scroll pop may occur with embedded Youtube links.
  - Clicking on a post will highlight it after returning to the tab/window.
@@ -174,7 +170,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - SVG attachments bleed over into subsequent posts.
  - Custom-Attributes plugin might crash.
  - Pagination breaks when adding users to a team.
- - User count does not update if a user automatically joins a channel.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
