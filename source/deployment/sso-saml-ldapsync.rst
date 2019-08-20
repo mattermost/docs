@@ -34,7 +34,7 @@ Once the synchronization with AD/LDAP is enabled, user attributes are synchroniz
     
     In particular, the user filter cannot be used to control who can log in to Mattermost, this should be controlled by your SAML service provider's group permissions.
 
-See :doc:`technical description of SAML synchronization with AD/LDAP <sso-saml-technical>` for more details.
+See :ref:`technical description of SAML synchronization with AD/LDAP <sso-saml-technical>` for more details.
  
 Override SAML Data with AD/LDAP Data
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
