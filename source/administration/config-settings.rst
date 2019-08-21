@@ -4170,6 +4170,17 @@ Enable Plugin Uploads
 | This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false``.                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Allow Insecure Download Url
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True:** Enables downloading and installing a plugin from a remote url.
+
+**False:** Disables downloading and installing a plugin from a remote url.
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AllowInsecureDownloadUrl": false`` with options ``true`` and ``false``.                    |
++-----------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable Plugin Health Check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
