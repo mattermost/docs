@@ -333,10 +333,7 @@ check_docs_lint:
     - mv doc/ /tmp/gitlab-docs/content/charts
     - cd /tmp/gitlab-docs
     # Lint Markdown
-    # https://github.com/markdownlint/markdownlint/blob/master/docs/RULES.md
-    - bundle exec mdl content/charts/**/*.md --rules \
-        MD001,MD002,MD003,MD005,MD006,MD007,MD009,MD010,MD011,MD012,MD018,MD019,MD022,\
-        MD023,MD025,MD027,MD028,MD029,MD030,MD031,MD032,MD034,MD037,MD038,MD039,MD046
+    - markdownlint --config $CI_PROJECT_DIR/.markdownlint.json content/charts/**/*.md
     # Build HTML from Markdown
     - bundle exec nanoc
     # Check the internal links

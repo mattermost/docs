@@ -42,3 +42,4 @@ spec/
 # dependencies.io
 dependencies.yml
 dependencies_io/
+.markdownlint.json
