@@ -83,22 +83,25 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
 
 .. code-block:: text
 
-   Content-Length: 244
-   User-Agent: Go 1.1 package http
-   Host: localhost:5000
-   Accept: application/json
-   Content-Type: application/x-www-form-urlencoded
+  POST /slash-command HTTP/1.1
+  Host: example.com
+  User-Agent: Go-http-client/1.1
+  Content-Length: 313
+  Accept: application/json
+  Authorization: Token okwexkjpe7ygb8eq1ww58t483w
+  Content-Type: application/x-www-form-urlencoded
+  Accept-Encoding: gzip
 
-   channel_id=cniah6qa73bjjjan6mzn11f4ie&
-   channel_name=town-square&
-   command=/somecommand&
-   response_url=not+supported+yet&
-   team_domain=someteam&
-   team_id=rdc9bgriktyx9p4kowh3dmgqyc&
-   text=hello+world&
-   token=xr3j5x3p4pfk7kk6ck7b4e6ghh&
-   user_id=c3a4cqe3dfy6dgopqt8ai3hydh&
-   user_name=somename
+  channel_id=jux16pkewjrkfj3ehep1psxyxc&
+  channel_name=town-square&
+  command=%2Ftest&
+  response_url=http%3A%2F%2Flocalhost%3A8065%2Fhooks%2Fcommands%2Fxbrkb8p393gjpq5cawei7npije&
+  team_domain=test&
+  team_id=carya1qs77bemjup96ff538snh&
+  text=asd&
+  token=okwexkjpe7ygb8eq1ww58t483w&
+  user_id=aoa1agao6t8fmx3ikt1j9w5ybw&
+  user_name=somename
 
 If your integration sends back a JSON response, make sure it returns the ``application/json`` content-type.
 
