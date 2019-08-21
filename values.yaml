@@ -406,6 +406,8 @@ prometheus:
     enabled: false
   pushgateway:
     enabled: false
+  server:
+    retention: 15d
 
 ## Configuration of Redis
 ## doc/architecture/decisions.md#redis

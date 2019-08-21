@@ -1,0 +1,5 @@
+---
+title: Set the default retention for Prometheus data to 15d
+merge_request: 905
+author: Gerard Hickey
+type: fixed
