@@ -3,7 +3,7 @@ Mattermost Integration Guide
 
 **Are you looking to install an integration?**
 
-See one of the sample integrations below or visit the `Mattermost Integrations Directory <https://about.mattermost.com/community-applications/>`__.
+See one of the sample integrations below or visit the `Mattermost Integrations Directory <https://integrations.mattermost.com/>`__.
 
 .. toctree::
    :maxdepth: 1
@@ -28,9 +28,11 @@ See our documentation below.
    /developer/api.rst
    /developer/webhooks*
    /developer/slash*
+   /administration/plugins*
    /developer/message-attachments*
    /developer/interactive-messages*
    /developer/interactive-dialogs*
+   /developer/bot-accounts*
    /developer/personal-access-tokens*
    /developer/oauth*
    /developer/integration*

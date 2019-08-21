@@ -41,7 +41,7 @@ Zoom Setup Guide
 .. important::
   To generate an **API Key** and **API Secret** requires a `Pro, Business, Education, or API Zoom plan <https://zoom.us/pricing>`__.
 
-  Only one paid account is required to generate an **API Key** and **API Secret**. The free Zoom plan can be used for other user accounts.
+  Only one paid account is required to generate an **API Key** and **API Secret**. Other team members can use a free Zoom plan to create and join Zoom meetings in Mattermost.
 
 .. image:: ../images/zoom_api_key.png
 

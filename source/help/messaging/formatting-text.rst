@@ -3,6 +3,8 @@ Formatting Text
 
 Markdown makes it easy to format messages. Type a message as you normally would and use these rules to render it with special formatting techniques.
 
+For a Layman's guide to Markdown on Mattermost, `see this blog post <https://mattermost.com/blog/laymans-guide-to-markdown-on-mattermost/>`_.
+
 Emojis
 ------
 
@@ -13,6 +15,7 @@ Open the emoji autocomplete by typing ``:`` followed by two characters of the wo
 Renders as:
 
 .. image:: ../../images/Emoji1.PNG
+   :alt: Sample Emoji
 
 Text Style
 ----------
@@ -26,8 +29,10 @@ You can use either ``_`` or ``*`` around a word to make it italic. Use two to ma
 
 .. |bold_italics| image:: ../../images/bold_italics.PNG
   :width: 100px
+  :alt: Bold Italics
 .. |strikethrough| image:: ../../images/strikethrough.PNG
   :width: 100px
+  :alt: Strike Through
 
 Links
 -----
@@ -52,6 +57,7 @@ Make a heading by typing # and a space before your title. For smaller headings, 
 Renders as:
 
 .. image:: ../../images/Headings1.PNG
+   :alt: Large Heading
 
 Alternatively, you can underline the text using ``===`` or ``---`` to create headings.
 
@@ -63,6 +69,7 @@ Alternatively, you can underline the text using ``===`` or ``---`` to create hea
 Renders as:
 
 .. image:: ../../images/Headings2.PNG
+   :alt: Smaller Heading
 
 Lists
 -----
@@ -122,6 +129,7 @@ Make a task list by including square brackets:
 Renders as:
 
 .. image:: ../../images/checklist.PNG
+   :alt: List
 
 Code Block
 ----------
@@ -158,7 +166,7 @@ This can be accomplished in one of two ways:
 To add syntax highlighting, type the language to be highlighted after the ``````` at the beginning of the code block. Mattermost also offers four different code themes (GitHub, Solarized Dark, Solarized Light, Monokai) that can be changed in **Account Settings** > **Display** > **Theme** > **Custom Theme** > **Center Channel Styles**
 
 Supported languages are:
-``actionscript``, ``applescript``, ``bash``, ``clojure``, ``coffeescript``, ``cpp``, ``cs``, ``css``, ``d``, ``dart``, ``delphi``, ``diff``, ``django``, ``dockerfile``, ``erlang``, ``fortran``, ``fsharp``, ``gcode``, ``go``, ``groovy``, ``handlebars``, ``haskell``, ``haxe``, ``java``, ``javascript``, ``json``, ``julia``, ``kotlin``, ``less``, ``lisp``, ``lua``, ``makefile``, ``markdown``, ``matlab``, ``objectivec``, ``ocaml``, ``perl``, ``php``, ``powershell``, ``puppet``, ``python``, ``r``, ``ruby``, ``rust``, ``scala``, ``scheme``, ``scss``, ``smalltalk``, ``sql``, ``stylus``, ``swift``, ``tex``, ``text``, ``vbnet``, ``vbscript``, ``verilog``, ``xml``, ``yaml``
+``actionscript``, ``applescript``, ``bash``, ``clojure``, ``coffeescript``, ``cpp``, ``cs``, ``css``, ``d``, ``dart``, ``delphi``, ``diff``, ``django``, ``dockerfile``, ``erlang``, ``fortran``, ``fsharp``, ``gcode``, ``go``, ``groovy``, ``handlebars``, ``haskell``, ``haxe``, ``java``, ``javascript``, ``json``, ``julia``, ``kotlin``, ``less``, ``lisp``, ``lua``, ``makefile``, ``markdown``, ``matlab``, ``objectivec``, ``ocaml``, ``perl``, ``php``, ``powershell``, ``puppet``, ``python``, ``r``, ``ruby``, ``rust``, ``scala``, ``scheme``, ``scss``, ``smalltalk``, ``sql``, ``stylus``, ``swift``, ``tex``, ``text``, ``vbnet``, ``vbscript``, ``verilog (supports SystemVerilog)``, ``vhdl``, ``xml``, ``yaml``
 
 Example:
 
@@ -178,19 +186,22 @@ Renders as:
 **GitHub Theme**
 
 .. image:: ../../images/syntax-highlighting-github.PNG
+   :alt: Syntax Highlighting in GitHub
 
 **Solarized Dark Theme**
 
 .. image:: ../../images/syntax-highlighting-sol-dark.PNG
+   :alt: Syntax Highlighting Dark
 
 **Solarized Light Theme**
 
 .. image:: ../../images/syntax-highlighting-sol-light.PNG
+   :alt: Syntax Highlighting Light
 
 **Monokai Theme**
 
 .. image:: ../../images/syntax-highlighting-monokai.PNG
-
+   :alt: Syntax Highlighting Monokai
 
 In-line Code
 ------------
@@ -242,6 +253,7 @@ Inline image with link
   Renders as:
 
   .. image:: ../../images/icon-76x76.png
+     :alt: MatterMost Icon 76X76
     :alt: Mattermost
     :target: https://github.com/mattermost/mattermost-server
 
@@ -304,6 +316,7 @@ Create a table by placing a dashed line under the header row and separating the 
 Renders as:
 
 .. image:: ../../images/markdownTable1.PNG
+   :alt: Markdown Table Sample
 
 
 Math Formulas
@@ -321,3 +334,4 @@ Create formulas by using LaTeX in a ``latex`` `Code Block`_
 Renders as:
 
 .. image:: ../../images/markdownMath.PNG
+   :alt: Markdown Math Sample

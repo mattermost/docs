@@ -1,6 +1,6 @@
 ..  _requirements:
 
-Software & Hardware Requirements
+Software and Hardware Requirements
 ================================
 
 This guide outlines minimum software and hardware requirements for deploying Mattermost. Requirements may vary based on utilization and observing performance of pilot projects is recommended prior to scale out. 
@@ -49,7 +49,7 @@ PC Web
     "Internet Explorer", "v11*"
     "Edge", "v44+"
 
-`*` IE 11 Compatibility View and mobile view are not supported. 
+`*` Support for Internet Explorer (IE11) will be removed in Mattermost v5.16.0. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`_ to learn more. IE 11 Compatibility View and mobile view are not supported. 
 
 Mobile Apps
 ^^^^^^^^^^^^^^^^^^^^^
@@ -84,7 +84,7 @@ Server Software
 Mattermost Server Operating System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Ubuntu 16.04, Ubuntu 18.04, Debian Stretch, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 6+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+
+- Ubuntu 16.04, Ubuntu 18.04, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 6+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+
 - Using Mattermost `Docker image <https://docs.mattermost.com/install/prod-docker.html>`__ on a Docker-compatible operating system (Linux-based OS is still recommended)
 
 While community support exists for Fedora, FreeBSD and Arch Linux, Mattermost does not currently include production support for these platforms.

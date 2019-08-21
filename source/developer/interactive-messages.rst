@@ -19,8 +19,10 @@ To try it out, you can use this `matterpoll plugin <https://github.com/matterpol
 
 .. image:: ../../source/images/poll.png
 
-.. toctree::
-  :maxdepth: 2
+.. contents::
+  :backlinks: top
+  :depth: 1
+  :local:
 
 Message Buttons
 ----------------
@@ -200,7 +202,7 @@ Name
   Give your action a descriptive name.
 
 URL
-  The actions are backed by an integration that handles HTTP POST requests when users click the message button. The URL parameter determines where this action is sent to. The request contains an ``application/json`` JSON string.
+  The actions are backed by an integration that handles HTTP POST requests when users click the message button. The URL parameter determines where this action is sent to. The request contains an ``application/json`` JSON string. As of 5.14, relative URLs are accepted, simplifying the workflow when a plugin handles the action.
 
 Context
   The requests sent to the specified URL contain the user id, post id, channel id, team id, and any context that was provided in the action definition. The post id can be used to, for example, delete or edit the post after clicking on a message button.
@@ -317,9 +319,9 @@ Frequently Asked Questions
 Are message buttons and menus supported in ephemeral messages?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Yes, they are supported in Mattermost 5.10 and later.
+Yes, message buttons and menus are supported in ephemeral messages in Mattermost 5.10 and later. This applies to integrations using plugins, the RESTful API and webhooks, across the browser and desktop app.
 
-With plugins, you can update the ephemeral message itself with message buttons or menus with the `UpdateEphemeralMessage plugin API <https://developers.mattermost.com/extend/plugins/server/reference/#API.UpdateEphemeralPost>`_. This is currently not supported with other integration types.
+As an advanced feature, you can also use plugins to update the contents of an ephemeral message with message buttons or menus with the `UpdateEphemeralMessage plugin API <https://developers.mattermost.com/extend/plugins/server/reference/#API.UpdateEphemeralPost>`_.
 
 Why does an interactive button or menu return a 400 error?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

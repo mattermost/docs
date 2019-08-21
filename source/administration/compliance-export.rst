@@ -26,7 +26,7 @@ Use the following guides to configure exports for CSV, Actiance XML or Global Re
 CSV
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Go to **System Console > Advanced > Compliance Export (Beta)**.
+1. Go to **System Console > Advanced > Compliance Export (Beta)** in prior versions or **System Console** > **Compliance** > **Compliance Export (Beta)** in versions after 5.12.
 2. Enable compliance exports, then set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
 3. Set the export file format to CSV.
 4. Save the settings. You’re now all set!
@@ -38,7 +38,7 @@ For a sample CSV output, `download a CSV export file here <https://github.com/ma
 Actiance XML
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Go to **System Console > Advanced > Compliance Export (Beta)**.
+1. Go to **System Console > Advanced > Compliance Export (Beta)** in prior versions or **System Console** > **Compliance** > **Compliance Export (Beta)** in versions after 5.12.
 2. Enable compliance exports, then set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
 3. Set the export file format to Actiance XML.
 4. Save the settings. You’re now all set!
@@ -53,7 +53,7 @@ For a sample Actiance output, `download an Actiance XML export file here <https:
 Global Relay EML
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Go to **System Console > Advanced > Compliance Export (Beta)**.
+1. Go to **System Console > Advanced > Compliance Export (Beta)** in prior versions or **System Console** > **Compliance** > **Compliance Export (Beta)** in versions after 5.12.
 2. Enable compliance exports, then set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
 3. Set the export file format to GlobalRelay EML.
 4. Set the Global Relay Customer Account, either `A9/Type 9` or `A10/Type 10`. This is the type of Global Relay customer account your organization has.
@@ -92,3 +92,10 @@ This feature is labelled as beta for the following reasons:
 1. The job to carry out a compliance export has not been tested on a system with 10,000s of concurrent active users.
 2. Exports do not yet include messages with special types, namely system messages, webhook message attachments and custom plugin messages.
 3. There isn't yet a way to distinguish who edited or deleted a message, nor which message is a reply or an edit of another message.
+
+How do I know if a compliance export job fails?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost provides the status of each compliance export job in **System Console** > **Compliance** > **Compliance Export (Beta)** (or **System Console > Advanced > Compliance Export (Beta)** in versions 5.11 and earlier). Here, you can see if the job succeeded or failed, including the number of messages and files exported.
+
+Morever, any failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. Compliance export job failures are identified with worker name ``MessageExportWorker``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.

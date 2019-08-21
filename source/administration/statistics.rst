@@ -12,7 +12,7 @@ For advanced metrics for Enterprise deployments, `see performance monitoring doc
 Site Statistics
 -----------------
 
-System statistics are viewable under **System Console > Site Statistics**. The data shown here is a cumulative sum across all teams on the system.
+System statistics are viewable under **System Console > Site Statistics** in prior versions or **System Console > Reporting** in versions after 5.12. The data shown here is a cumulative sum across all teams on the system.
 
 Total Users
     The total number of active accounts created on your system. Excludes deactivated accounts.
@@ -27,13 +27,16 @@ Total Posts
     The total number of posts made in all the teams on your system, including deleted posts and posts made using automation.
 
 Daily Active Users
-  The total number of users who viewed the Mattermost site in the last 24 hours.
+  The total number of users who viewed the Mattermost site in the last 24 hours. Excludes bot users as of v5.14.
 
 Monthly Active Users
-  The total number of users who viewed the Mattermost site in the last 30 days.
+  The total number of users who viewed the Mattermost site in the last 30 days. Excludes bot users as of v5.14.
 
 Total Posts (graph)
     The total number of posts made on a certain day in all the teams on your system, including deleted posts and posts made using automation.
+
+Total Posts from Bots (graph)
+    The total number of posts made by a `bot account <https://docs.mattermost.com/developer/bot-accounts.html>`_ on a certain day in all the teams on your system, including deleted posts and posts made using automation.
 
 Active Users with Posts (graph)
     Users who made a post on a certain day in all the teams on your system, including system messages posted from the user's account.

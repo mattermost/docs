@@ -46,7 +46,7 @@ To ensure your instance and configuration are compatible with high availability,
 3. Modify the ``config.json`` files on both servers to add the ``ClusterSettings`` as described in :ref:`high-availability`.
 4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
 5. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `Proxy Server Configuration`_.
-6. Open **System Console > Advanced > High Availability (Beta)** to verify all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+6. Open **System Console > Advanced > High Availability** in prior versions or **System Console** > **Environment** > **High Availability** in versions after 5.12 to verify all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Adding a Server to the Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -56,7 +56,7 @@ Adding a Server to the Cluster
 3. Modify the ``config.json`` files on all servers with the ``ClusterSettings`` as described in :ref:`high-availability`. Be sure to add the new server URL to ``InterNodeUrls``.
 4. Verify that the configuration files are identical on all servers, then restart each machine in the cluster in sequence with 10 or more seconds between each restart.
 5. Modify your NGINX setup to add the new server. For information about this, see `Proxy Server Configuration`_.
-6. Open the **System Console > Advanced > High Availability (Beta)** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+6. Open the **System Console > Advanced > High Availability** in prior versions or **System Console** > **Environment** > **High Availability** in versions after 5.12 to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Removing a Server from the Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -65,7 +65,7 @@ Removing a Server from the Cluster
 2. Modify your NGINX setup to remove the server. For information about this, see `Proxy Server Configuration`_.
 3. On all servers staying active in the cluster, modify the ``ClusterSettings`` in ``config.json`` to remove the server from ``InterNodeUrls``
 4. Verify that the configuration files are identical on all servers, then restart each machine in the cluster in sequence with 10 or more seconds between each restart.
-5. Open the **System Console > Advanced > High Availability (Beta)** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+5. Open the **System Console > Advanced > High Availability** in prior versions or **System Console** > **Environment** > **High Availability** in versions after 5.12 to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Configuration and Compatibility
 -------------------------------
@@ -208,8 +208,8 @@ If the need arises to switch from the current master database--for example, if i
 
 To apply the settings without shutting down the Mattermost server:
 
-1. Go to **System Console > Configuration** and click **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
-2. Go to **System Console > Database** and click **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
+1. Go to **System Console > Configuration** in prior versions or **System Console** > **Environment** > **Web Server** in versions after 5.12 and click **Reload Configuration from Disk** to reload configuration settings for the Mattermost server from ``config.json``.
+2. Go to **System Console > Database** in prior versions or **System Console** > **Environment** > **Database** in versions after 5.12 and click **Recycle Database Connections** to take down existing database connections and set up new connections in the multi-database configuration.
 
 While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening can have an experience similar to losing connection to the Mattermost server.
 
@@ -234,7 +234,7 @@ You can apply updates during a period of low load, but if your HA cluster is siz
 2. For one of the Mattermost servers, make the configuration changes to ``config.json`` and save the file. Do not reload the file yet.
 3. Copy the ``config.json`` file to the other servers.
 4. Shut down Mattermost on all but one server.
-5. Reload the configuration file on the server that is still running. Go to **System Console > Configuration** and click **Reload Configuration from Disk**
+5. Reload the configuration file on the server that is still running. Go to **System Console > Configuration** in prior versions or **System Console** > **Environment** > **Web Server** in versions after 5.12 and click **Reload Configuration from Disk**
 6. Start the other servers.
 
 Updating Server Version While Operating Continuously

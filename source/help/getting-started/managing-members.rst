@@ -11,7 +11,7 @@ If enabled by your System Admin, you can add people to your team in one of three
 Direct Invites
 ~~~~~~~~~~~~~~
 
-Direct invites are invitation emails sent from your team's server directly to the invited person's email address. A link within the invitation directs them to an account creation page. Invitation links sent by email expire after 48 hours and can be used only one time. A System Admin can invalidate all active invitation links via **System Console > Security > Sign Up > Invalidate pending email invites**.
+Direct invites are invitation emails sent from your team's server directly to the invited person's email address. A link within the invitation directs them to an account creation page. Invitation links sent by email expire after 48 hours and can be used only one time. A System Admin can invalidate all active invitation links via **System Console > Security > Sign Up > Invalidate pending email invites** in prior versions or **System Console** > **Authentication** > **Signup** > **Invalidate pending email invites** in versions after 5.12.
 
 **To send a direct invite**:
 
@@ -21,7 +21,7 @@ Direct invites are invitation emails sent from your team's server directly to th
 4. Click **Send Invitation**.
 
 .. note::
-  If you do not see the **Send Email Invite** option, confirm with your System Admin that **System Console > Security > Sign Up > Enable Email Invitations** is set to ``true``.
+  If you do not see the **Send Email Invite** option, confirm with your System Admin that **System Console > Security > Sign Up > Enable Email Invitations** is set to ``true`` in prior versions or **System Console** > **Authentication** > **Signup** > **Enable Email Invitations** in versions after 5.12.
 
 Team Invite Link
 ~~~~~~~~~~~~~~~~

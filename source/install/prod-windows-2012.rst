@@ -14,7 +14,7 @@ Install Windows Server 2012+
 ----------------------------
 
 1. Set up 3 machines with any edition of Windows Server 2012+ (except core) with 2GB of RAM or more. The
-   servers will be used for the Web Proxy & SSL Termination, Mattermost, and Database.  The screenshots 
+   servers will be used for the Web Proxy and SSL Termination, Mattermost, and Database.  The screenshots 
    used in this guide are from Microsoft Server 2012, but similar steps should work for other versions.
 
    -  **Optional:** You can also use a single machine for all 3
@@ -31,7 +31,7 @@ Set up Database Server
 1.  Login to the database server.  For the purposes of this guide we will assume this server has an IP
     address of 10.0.0.1.
 
-Install & Configure MySQL
+Install and Configure MySQL
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 2. `Download the MySQL 5.6+ <http://dev.mysql.com/downloads/windows/installer/>`__ installer, or (PostgreSQL 9.3+).
@@ -374,28 +374,27 @@ Finish Mattermost Server Setup
 3. From the ``town-square`` channel click the dropdown next to your team name and choose the
    ``System Console`` option
    
-4. Update **General** > **Configuration** settings to properly configure your reverse proxy by entering `https://mattermost.example.com` as the **Site URL**
+4. Update **General** > **Configuration** settomgs in prior versions or **Environment** > **Web Server** in versions after 5.12 to properly configure your reverse proxy by entering `https://mattermost.example.com` as the **Site URL**
 
    .. attention:: Failure to properly set the Site URL properly __will__ result in unexpected behavior.
 
-5. Update **Notification** > **Email** settings to setup an SMTP email service. The example below assumes AmazonSES.
+5. Update **Notification** > **Email** settings in prior versions or **Authentication** > **SMTP** in versions after 5.12 to setup an SMTP email service. The example below assumes AmazonSES.
 
-   a. Set **Send Email Notifications** to ``true``
-   b. Set **Require Email Verification** to ``true``
-   c. Set **Feedback Name** to ``No-Reply``
-   d. Set **Feedback Email** to ``mattermost@example.com``
-   e. Set **SMTP Username** to ``[YOUR_SMTP_USERNAME]``
-   f. Set **SMTP Password** to ``[YOUR_SMTP_PASSWORD]``
-   g. Set **SMTP Server** to ``email-smtp.us-east-1.amazonaws.com``
-   h. Set **SMTP Port** to ``465``
-   i. Set **Connection Security** to ``TLS``
-   j. Save the Settings
+   a. Set **SMTP Username** to ``[YOUR_SMTP_USERNAME]`` 
+   b. Set **SMTP Password** to ``[YOUR_SMTP_PASSWORD]``
+   c. Set **SMTP Server** to ``email-smtp.us-east-1.amazonaws.com``
+   d. Set **SMTP Port** to ``465``
+   e. Set **Connection Security** to ``TLS``
+   f. Set **Send Email Notifications** to ``true`` (located at **Site Configuration** > **Notifications** in versions after 5.12)
+   g. Set **Notification Display Name** to ``No-Reply`` (located at **Site Configuration** > **Notifications** in versions after 5.12)
+   h. Set **Notification From Address** to ``mattermost@example.com`` (located at **Site Configuration** > **Notifications** in versions after 5.12)
+   i. Set **Require Email Verification** to ``true`` (located at **Authentication** > **Email** in versions after 5.12)
 
-6. (Optional) Update **Security** > **Sign Up** settings:
+6. (Optional) Update **Security** > **Sign Up** settings in prior versions or **Authentication** > **Signup** in versions after 5.12:
 
    - Set **Enable Email Invitations** to ``true``
 
-7. Update **File** > **Storage** settings:
+7. Update **File** > **Storage** settings in prior versions or **Environment** > **File Storage** in versions after 5.12:
 
    - Change **Local Directory Location** from ``./data/`` to
      ``/mattermost/data``
@@ -404,7 +403,7 @@ Finish Mattermost Server Setup
 
    - Set **Log to The Console** to ``false``
 
-9. Update **Advanced** > **Rate Limiting** settings:
+9. Update **Advanced** > **Rate Limiting** settings in prior versions or  **Environment** > **Rate Limiting** settings in versions after 5.12:
 
    - Set **Vary By Remote Address** to false
    - Set **Vary By HTTP Header** to X-Real-IP

@@ -1,7 +1,7 @@
 Advanced Permissions (E10/E20)
 ===============================
 
-Advanced permissions offers Admins a way to restrict actions in Mattermost to authorized users only. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture and will be rolled out over a number of server releases, starting with Mattermost server v5.0. The permissions interface can be accessed in the **System Console** > **Advanced Permissions**.
+Advanced permissions offers Admins a way to restrict actions in Mattermost to authorized users only. The Mattermost permission system is based on a modified RBAC (role-based access control) architecture and will be rolled out over a number of server releases, starting with Mattermost server v5.0. The permissions interface can be accessed in the **System Console** > **Advanced Permissions** in prior versions or **System Console** > **User Management** > **Permissions** in versions after 5.12.
 
 .. note::
 
@@ -34,7 +34,7 @@ To override the System Scheme default permissions in a specific team, you must s
 
 **System Scheme Interface** 
 
-Interface for editing permissions in the System Scheme, with panels for All members, Channel Admins, Team Admins and System Admins. Available in System Console > Advanced Permissions > System Scheme:
+Interface for editing permissions in the System Scheme, with panels for All members, Channel Admins, Team Admins and System Admins. Available in System Console > Advanced Permissions > System Scheme in prior versions or **System Console > User Management > Permissions > System Scheme** in versions after 5.12:
 
 .. image:: ../images/system-scheme.png
 
@@ -49,22 +49,15 @@ Overrides the default System Scheme permissions in specific teams for Team Admin
 - The System Scheme does not apply to teams that are added to a Team Override Scheme.
 - Teams can only belong to one Team Override Scheme.
 
-**Scheme List Interface** 
-
-List of all Team Override Schemes in the system. Sorted alphabetically by scheme name. Also displayed is the scheme description and tags with all asociated teams. Available in System Console > Advanced Permissions > Permissions Schemes:
-
-.. image:: ../images/team-scheme-list.png
-
 **Team Override Scheme Interface** 
 
-Interface for naming, assigning teams and editing permissions in a Team Override Scheme, with panels for All members, Channel Admins and Team Admins. Available in System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme:
+Interface for naming, assigning teams and editing permissions in a Team Override Scheme, with panels for All members, Channel Admins and Team Admins. Available in System Console > Advanced Permissions > Permissions Schemes > Team Override Scheme in prior versions or **System Console > User Management > Permissions > Team Override Schemes** in versions after 5.12:
 
 .. image:: ../images/team-scheme.png
 
 Channel Override Permissions (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
 *Available in a future release of Enterprise Edition E20*
 
 Allows Admins to restrict permissions within specific channels. Permissions under consideration for this phase include:
@@ -76,7 +69,6 @@ Allows Admins to restrict permissions within specific channels. Permissions unde
 Supplementary Roles (E20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
 *Available in a future release of Enterprise Edition E20*
 
 Allows Admins to grant additional permissions to specific users or to a group of users based on AD/LDAP group membership. Permissions can be granted within the scope of channels, teams or system level.
@@ -91,9 +83,9 @@ Team Management
 **Restrict adding members to only Admins, in specific teams**
 Example: In Team A, only allow Team and System Admins to add new team members. As the default for all other teams, allow all users to add and invite new members.
 
-1. In **System Console** > **Advanced Permissions**, edit the **System Scheme**.
+1. In **System Console** > **Advanced Permissions** in prior versions or **System Console** > **User Management** > **Permissions** in versions after 5.12, edit the **System Scheme**.
 2. In the **All Members** panel, check the box for **Add Team Members**. This sets the system default for all teams.
-3. In **System Console** > **Advanced Permissions**, create a new **Team Override Scheme**.
+3. In **System Console** > **Advanced Permissions** in prior versions or **System Console** > **User Management** > **Permissions** in versions after 5.12, create a new **Team Override Scheme**.
   i. Name and describe the scheme. For example, ``Authorized Personel Only`` with description ``Restrict adding team members to Team and System Admins.``
   ii. Add Team B to the **Select teams to override permissions** list.
   iii. In the **All Members** panel, uncheck the box for **Add Team Members**.
@@ -106,7 +98,7 @@ Public and Private Channel Management
 **Restrict who can rename channels and edit channel header and purposes**
 Example: As the default for the entire system, restrict renaming channels and editing headers and purposes to Admins only.
 
-1. In **System Console** > **Advanced Permissions**, edit the **System Scheme**.
+1. In **System Console** > **Advanced Permissions** in prior versions or **System Console** > **User Management** > **Permissions** in versions after 5.12, edit the **System Scheme**.
 2. In the **All Members** panel, uncheck the box for **Manage Channel Settings**.
 3. In the **Team Admin** and **Channel Admin** panels, check the box for **Manage Channel Settings**.
 
@@ -118,9 +110,9 @@ Example: As the default for the entire system, restrict renaming channels and ed
 
 Example: In Team C, restrict public channel creation to Admins. As the default for all other teams, allow everyone to create public channels.
 
-1. In **System Console** > **Advanced Permissions**, edit the **System Scheme**.
+1. In **System Console** > **Advanced Permissions** in prior versions or **System Console** > **User Management** > **Permissions** in versions after 5.12, edit the **System Scheme**.
 2. In the **All Members** panel, check the box for **Create Channels** in the **Manage Public Channels** section. This sets the system default to allow creation of public channels on all teams.
-3. In **System Console** > **Advanced Permissions**, create a new **Team Override Scheme**.
+3. In **System Console** > **Advanced Permissions** in prior versions or **System Console** > **User Management** > **Permissions** in versions after 5.12, create a new **Team Override Scheme**.
   i. Name and describe the scheme. For example, ``Contractor Scheme`` with description ``Restrict public channel creation to Admins only``.
   ii. Add Team C to the **Select teams to override permissions** list.
   iii. In the **All Members** panel, uncheck the box for **Create Channels** in the **Manage Public Channels** section.
@@ -133,7 +125,7 @@ Post Management
 
 Example: As the default for the entire system, restrict deleting posts to only Team and System Admins.
 
-1. In **System Console** > **Advanced Permissions**, edit the **System Scheme**.
+1. In **System Console** > **Advanced Permissions** in prior versions or **System Console** > **User Management** > **Permissions** in versions after 5.12, edit the **System Scheme**.
 2. In the **All Members** and **Channel Admin** panels, uncheck the boxes for **Delete Own Posts** and **Delete Others Posts**.
 3. In the **Team Admin** and **Channel Admin** panels, check the box boxes for **Delete Own Posts** and **Delete Others Posts**.
 
@@ -141,7 +133,7 @@ Example: As the default for the entire system, restrict deleting posts to only T
 
 Example: As the default for the entire system, only allow users to edit their own posts for five minutes after posting.
 
-1. In **System Console** > **Advanced Permissions**, edit the **System Scheme**.
+1. In **System Console** > **Advanced Permissions** in prior versions or **System Console** > **User Management** > **Permissions** in versions after 5.12, edit the **System Scheme**.
 2. In the **All Members**, **Channel Admin** and **Team Admin** panels, check the box for **Edit Posts**.
 3. From any panel, click the gear button to set the global time limit to ``300`` seconds.
 
@@ -157,7 +149,7 @@ Integration Management
 
 Example: As the default for the entire system, only allow System Admins to create, edit and delete integrations.
 
-1. In **System Console** > **Advanced Permissions**, edit the **System Scheme**.
+1. In **System Console** > **Advanced Permissions** in prior versions or **System Console** > **User Management** > **Permissions** in versions after 5.12, edit the **System Scheme**.
 2. In the **All Members**, **Channel Admin** and **Team Admin** panels, uncheck the boxes for **Manage Webhooks** and **Manage Slash Commands**.
 
 .. note::

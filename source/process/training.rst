@@ -5,6 +5,7 @@ Onboarding
 This document is intended for new hires to summarize norms for working at Mattermost, Inc. including:
 
 - `Getting Started Checklist`_ - Getting ready to work here
+- `Channels`_ - Where we discuss work-related topics
 - `Meetings`_ - When we get together and why
 - `Mindsets`_ - Shared toolsets we have for solving problems
 - `Terminology`_- Shared vocabulary to convey ideas quickly
@@ -25,20 +26,20 @@ Important things to know
 Hiring
 ---------------------------------------------------------
 
-- (People Ops & New Hire) Offer letter accepted via click-sign
-- (Logistics) Mail track jacket & socks 
+- (People Ops and New Hire) Offer letter accepted via click-sign
+- (Logistics) Mail track jacket and socks 
 
 T-minus 1-3 weeks
 ---------------------------------------------------------
 
-- (People Ops & New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. Since these items are company property, you do not need to buy insurance or extended warranties for them, but you do need to report any loss or damage to People@mattermost.com as soon as it occurs.
+- (People Ops and New Hire) People Ops should find out new hire's preference for laptop, either to be purchased or taken from stock and shipped by People Ops or purchased locally by new hire and expensed. Windows laptops generally cost less than Macs so budget is based on Macs. For non-developers, budget is cost of a Macbook in your local area, for developers budget is cost of a Macbook Pro. Since these items are company property, you do not need to buy insurance or extended warranties for them, but you do need to report any loss or damage to People@mattermost.com as soon as it occurs.
 - (New Hire) Read the entirety of Onboarding page for info on meetings, mindsets, terminology and training materials.
 - (People Ops) Send email invite to New Hire to set up an @mattermost.com email address. New Hire should use this email address on community.mattermost.com (replace personal email with company email if already registered there). `FIRST_NAME.LAST_NAME@mattermost.com` is the standard naming convention.
  
 T-minus 1 week
 ---------------------------------------------------------
 
-- (People Ops & New Hire) Set up payroll.
+- (People Ops and New Hire) Set up payroll.
  - US FTE, receive email to complete TriNet sign-up, payroll, benefits enrollment, I-9 form, banking information, personal information, tax forms.  
  - Non-US Employee/Non-Canada Employee, complete bank info form for monthly wire transfer.
  - Non-US Resident Contractor, complete W8-BEN form.
@@ -62,6 +63,28 @@ First Week
 ---------------------------------------------------------
 
 - (People Ops) US FTE - Email regarding 401K account set up.
+
+---------------------------------------------------------
+Channels
+---------------------------------------------------------
+
+Whenever possible, we share key updates and have discussions in Mattermost. Some of the channels used are:
+
+- `Announcements <https://community.mattermost.com/private-core/channels/announcements>`_ - Mattermost-wide announcements
+- `Ask Anything <https://community.mattermost.com/core/channels/ask-anything>`_ - General questions about Mattermost
+- `Ask R&D <https://community.mattermost.com/core/channels/ask-r-and-d>`_ - Technical questions to the Mattermost R&D team
+- `Customer Feedback <https://community.mattermost.com/private-core/channels/customer-feedback>`_ - Discussion of customer feedback
+- `Customer Success <https://community.mattermost.com/private-core/channels/customer-success>`_ - Updates from and general discussion with the Mattermost customer success team
+- `Customer Support <https://community.mattermost.com/private-core/channels/community>`_ - Discussion of customer support ticket escalations
+- `Developers <https://community.mattermost.com/core/channels/developers>`_ - General development help
+- `Marketing <https://community.mattermost.com/private-core/channels/marketing>`_ - Campaign ideas and general marketing team discussions
+- `Marketing Website <https://community.mattermost.com/private-core/channels/marketing-website-priv>`_ - Website bugs, release notes, and web discussions
+- `Product Management <https://community.mattermost.com/core/channels/product-management>`_ - Discussion with and questions for Mattermost product managers
+- `Roadmap <https://community.mattermost.com/private-core/channels/roadmap>`_ - Questions about and discussion of the product roadmap, or to view public roadmap in the header
+- `Spec Reviews <https://community.mattermost.com/core/channels/spec-reviews>`_ - In-progress plans for new features
+- `Sustained Engineering <https://community.mattermost.com/core/channels/sustained-engineering>`_ - Discussion with Mattermost's `Sustained Engineering Team (SET) <https://developers.mattermost.com/internal/sustained-engineering/>`_
+- `UX Design <https://community.mattermost.com/core/channels/ux-design>`_ - Questions and discussion about product design
+- `Welcome <https://community.mattermost.com/private-core/channels/welcome>`_ - Where new staff members are introduced on their first day
 
 ---------------------------------------------------------
 Meetings
@@ -150,6 +173,8 @@ For confidentiality of customers, internal process meetings are limited to Matte
 Customer Obsession All-Hands Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+This is our "All Hands" meeting focused on how we're aligning the company to serve our customers. "Customer Obsession" is a key leadership principle and we emphasize its priority when we bring the company together. 
+
 Attendees:
 
 - All Mattermost Staff
@@ -170,12 +195,17 @@ Procedure:
 
 **Before meeting:**
 
-1. (Chair) Schedules items for the weekly agenda.
-2. (Team) Shares potential meeting agenda topics with Chair via direct message. Must be shared at least 24 hours prior to meeting start and be aligned with the meeting objectives above.
+1. (Chair) Schedules items for the weekly agenda, and works 1-1 with presenters to prepare for them.
+2. (Vice Chair) Works with new hires and their managers to schedule week 2 welcomes. If new hire or manager is away, introduction is postponed to the following meeting.
+
+     - New team members are introduced on their second week by their manager, including name, role, what they're working on, timezone, additional info as appropriate (max 2 minutes).
+     - New hire can opt-in to introduce themselves if they choose (default is not to require public speaking).
+3. (Team) Shares potential meeting agenda topics with Chair via direct message. Must be shared at least 24 hours prior to meeting start and be aligned with the meeting objectives above.
+4. (Chair & Vice Chair) Signs into their Zoom account to access recording and screenshare during the meeting.
 
 **During meeting:**
 
-1. (Vice Chair) At 7:58am Palo Alto time on the day meeting is held, post a reminder in `Cust Obs Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_. 
+1. (Vice Chair) At 7:58am Palo Alto time on the day meeting is held, post a reminder in `Customer Obsession Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_. 
 
   .. code-block:: none
 
@@ -183,17 +213,14 @@ Procedure:
     
     Meeting notes: https://docs.google.com/document/d/16F86k0I_ipjhHofm5pP6yA_dWTNvmA4ZBr_z53_087Q/edit
 
-2. (Team) Join the **Zoom** link in the header of the `Cust Obs Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_, and open the **Meeting Notes** link in the header to see the agenda.
+2. (Team) Join the **Zoom** link in the header of the `Customer Obsession Meeting channel <https://community.mattermost.com/private-core/channels/cust-obs-meeting>`_, and open the **Meeting Notes** link in the header to see the agenda.
 
 3. (Vice Chair) Start Zoom recording at 8:00am Palo Alto time.
 
-3. (Chair & Co-Chairs) Run through the agenda, which comprises one or more of the following items:
+3. (Chair and Co-Chairs) Run through the agenda, which comprises one or more of the following items:
 
   - **Introduction**: One of the founders does an introduction to the meeting.
-  - **Week 2 Welcomes of new team members**:
-     - New team members introduced on their second week by their manager, including name, role, what they're working on, timezone, additional info as appropriate (max 2 minutes) 
-     - If new hire or manager is away, postpone to next meeting 
-     - New hire can opt-in to introduce themselves if they choose (default is not to require public speaking) 
+  - **Week 2 welcomes of new team members**: New team members introduced on their second week by their manager, or optionally by the new team member themselves.
   - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key updates, use cases or stories from customers. Links to publicly shared documents or slides may be included in meeting notes.
   - **Feedback**: At end of meeting, concludes meeting with a reminder to share feedback via survey.
 
@@ -211,14 +238,101 @@ Procedure:
 
 2. (Vice Chair) Post recording to Cust Obs Prep channel, with timecode of co-founder's introduction.
 
-3. (Chair & Co-Chairs) Review recording and decide if the introduction is converted to a YouTube video and included in onboarding documentation. Sample recordings include discussions of leadership principles, mission and core values.
+3. (Chair & Vice Chair) Review recording and decide if the introduction is converted to a YouTube video and included in onboarding documentation. Sample recordings include discussions of leadership principles, mission and core values.
 
 Frequently Asked Questions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Why don't new people introduce themselves?**
 
-Not everyone is comfortable with speaking in front of 60+ people. Not everyone speaks clear English. We don’t want the first company-wide meeting to be anxious for new team members, hence, managers intro them.
+Not everyone is comfortable with speaking in front of 60+ people. Not everyone speaks clear English. We don’t want the first company-wide meeting to be anxious for new team members, hence by default managers intro them. New hires can opt-in to introducing themselves. 
+
+Product Training and Q&A Session
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+These are our product training sessions for the Sales and Customer Success teams, along with QA, focused on frequently asked product areas. They include a functional and technical training session targeted for specific audiences.
+
+Attendees:
+
+- All Sales, Customer Success and QA staff
+- Chair: Jason Blais
+- Co-Chairs: Product training session leads
+
+Time:
+
+- Every 3 weeks on Wednesdays from 9:00am to 10:00am Palo Alto time.
+
+Procedure:
+
+**Before meeting:**
+
+1. (Chair) Schedules a kick-off call with co-chairs two weeks prior to the training session. Purpose is to review expectations and plans for the session, as well as answer any questions.
+
+2. (Co-Chairs) Prepare a pre-screening survey to assess team members' knowledge of the product area. This is optional but recommended as it can help guide focus areas of the training session.
+
+3. (Co-Chairs) Prepares slides and other reference material for the session. Must be shared with Chair at least 48 hours ahead of the session.
+
+.. tip :: 
+
+  - When sharing code snippets, highlight the area of focus within the code snippet.
+  - Focus on visuals, diagrams and live demonstrations instead of slides where possible.
+  - Share at least one memorable customer story.
+  - See the Google Drive on `previous materials and training recordings for reference <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29_>`_.
+
+4. (Co-Chairs) Two days prior to the training session, practice a dry run for length and structure of the session. This is optional but recommended.
+
+5. (Chair) Queues an item for that week's Customer Obsession meeting to remind everyone of the product training session taking place. Include a mention of the topic, along with who is leading the session.
+
+6. (Chair & Co-Chairs) Signs into their Zoom account via OneLogin to access recording and screenshare capabilities during the meeting.
+
+**During meeting:**
+
+1. (Chair) At 8:58am Palo Alto time on the day the meeting is held, posts a reminder of the session along with a Zoom link to join the call. `See example <https://community.mattermost.com/core/pl/ward3bdkii895kw9g4sigbikwo>`_.
+
+2. (Team) Joins the **Zoom** link in the header of the `Product Training and Q&A channel <https://community-release.mattermost.com/core/channels/product-training-and-qa>`_.
+
+3. (Chair) Starts Zoom recording at 9:00am Palo Alto time.
+
+4. (Chair and Co-Chairs) Runs through the agenda, which comprises one or more of the following items:
+
+- **Introductions**
+
+- **Functionality / Benefits**
+
+  - Audience: Everyone
+  - What does it do, why do people use it, who uses it (customer segment) 
+  - Customer use case examples (success stories) 
+  - Known customer issues and workarounds
+  - Roadmap (status and committed timelines, if any) 
+  - Q&A 
+
+- **Technical Training**
+
+  - Audience: Primarily support, SAs and QA
+  - Technical understanding of how the feature works and how it was built (to help with better troubleshooting)
+  - Technical flow for the feature, data structure, etc.
+  - What to ask for when troubleshooting 
+  - Q&A
+
+- **Options for Testing**
+
+  - Audience: Primarily support and QA
+  - Testing environments
+  - Q&A
+
+- **Feedback**: At end of meeting, remind to share feedback via survey.
+
+**After meeting:**
+
+1. (Chair) Shares link to feedback survey. `See example <https://community.mattermost.com/core/pl/7w5w5aou4jfkxm95g6fwkcqxry>`_.
+
+2. (Chair) Uploads meeting recording and slides to `Google Drive folder <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29>`_, then share in channel. `See example <https://community.mattermost.com/core/pl/dkeh34y5pt8ybrb5mmrfbyy1ee>`_.
+
+3. (Chair & Co-Chairs) Holds a retrospective meeting two days after the training session to review feedback and discuss what could have been improved.
+
+4. (Chair) Makes adjustments to meeting process based on feedback and discussion with co-chairs. Schedules kick-off call for the next training session.
+
+5. (Co-Chairs) Updates product documentation or other resources based on the training session.
 
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -305,7 +419,7 @@ Procedure:
 ::
 
    #### @channel A reminder to prepare your items for R&D meeting [DATE]:
-   1. @[name], @[name] & @[name] - you're up for ice-breaker
+   1. @[name], @[name] and @[name] - you're up for ice-breaker
    2. Reminder for team member responsible for this week's team update to include it [in the notes](LINK)
    3. If you'll be giving a demo, please queue it [in the meeting notes](link) 
    ##### Everyone is encouraged to bring up items for discussion. If the discussion is `time-copped` during the meeting, please be sure to add a `next step` to the notes and post a link to where the conversation can be continued. ~platform channel is usually a good place to continue discussions.
@@ -408,7 +522,7 @@ Consider when two rational people disagree, the cause often comes from one of th
 
 While the emotions, assumptions, priority mindset won't work for everyone in every case, it's helped resolve complex decisions in our company's history.
 
-Likes & Wishes
+Likes and Wishes
 ---------------------------------------------
 
 An easy way to check in with team members about how things are going.
@@ -562,7 +676,7 @@ When documentation or on-screen text is written for someone with considerable kn
 
 If something is extremely difficult to understand, and yet still justified in the mind of the writer, we call it "Crimson Force Field". This term is intended to evoke the emotional response of coming across something that is difficult to understand, so writers of Crimson Force Field material can empathize with the readers. Crimson Force Field is drawn from an esoteric episode of Star Trek and it is unlikely anyone but the originator of the term understands its complete meaning. Crimson Force Field is itself Crimson Force Field.
 
-Help Wanted
+HW - Help Wanted
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 `Help Wanted tickets <http://docs.mattermost.com/process/help-wanted.html>`__, which are vetted changes to the source code open for community contributions.
@@ -675,7 +789,7 @@ Software Strategy
 System Security
 ^^^^^^^^^^^^^^^
 
-Papers & Course Materials
+Papers and Course Materials
 
 1. `Framework for Improving Critical Infrastructure Cybersecurity. National Institute of Standards and Technology <https://www.nist.gov/sites/default/files/documents/cyberframework/cybersecurity-framework-021214.pdf>`__ - Standards for internal Mattermost security processes and safeguards.
 2. `Computer Security in the Real World. Butler Lampson <http://research.microsoft.com/en-us/um/people/blampson/69-SecurityRealIEEE/69-SecurityRealIEEE.pdf>`__ - Fundamental challenges with system security.

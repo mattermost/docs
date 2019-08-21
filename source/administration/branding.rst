@@ -8,7 +8,7 @@ Use custom branding tools to present a Mattermost experience that is tailored to
 Enable Custom Branding
 ----------------------
 
-1. Go to **System Console** > **Customization** > **Custom Branding** and set the value to ``true``.
+1. Go to **System Console** > **Customization** > **Custom Branding** in prior versions or **System Console > Site Configuration > Customization > Enable Custom Branding** in versions after 5.12 and set the value to ``true``.
 2. Choose a **Site Name**, upload a **Custom Brand Image** and write **Custom Brand Text**.
 3. Click **Save**.
 
@@ -18,7 +18,7 @@ More about settings available in **Customer Branding Tools**:
 
 Site Name
 `````````
-Choose the name of your Mattermost site to be shown in the UI. The site name appears in the header and footer of the site login page, team selection page, team creation page, account creation page, and email invitations. Note that the site name applies to the entire site and not just a specific team on the site. Site name is limited to 30 characters or less.
+Choose the name of your Mattermost site to be shown in the UI. The site name appears in the header and footer of the site login page, team selection page, team creation page, account creation page, email invitations and replaces "Mattermost" on the About page. Note that the site name applies to the entire site and not just a specific team on the site. Site name is limited to 30 characters or less.
 
 Custom Branding Image
 `````````````````````

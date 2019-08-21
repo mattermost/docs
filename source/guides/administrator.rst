@@ -40,6 +40,7 @@ Learn how to get Mattermost running on your environment.
    /install/deploy-cloudron*
    Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
    /install/troubleshooting*
+   /install/trouble_mysql.rst
    /install/desktop*
    /install/desktop-msi-gpo*
    /install/smtp*
@@ -76,6 +77,8 @@ Learn how to configure settings to meet your unique requirements.
 
    /deployment/on-boarding.rst  
    /administration/config-settings.rst
+   /administration/config-in-database.rst 
+   /administration/prev-config-settings.rst
    /deployment/customize-mattermost.rst
    /deployment/customize-email.rst 
    /administration/branding.rst
@@ -112,6 +115,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /deployment/sso-ldap*
    /deployment/auth*
    /deployment/ldap-group-sync.rst
+   /deployment/ldap-group-constrained-team-channel.rst
    /deployment/sso-saml.rst
    /deployment/sso-gitlab*
    /deployment/sso-google*
@@ -133,6 +137,7 @@ Learn how to maintain your Mattermost system.
    /administration/command*
    /administration/scripts*
    /administration/statistics.md
+   /integrations/net-promoter-score*
    /administration/health-check*
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
@@ -150,8 +155,10 @@ Learn how to keep Mattermost current with fixes and new features.
    /administration/important-upgrade-notes*   
    /administration/changelog*
    /administration/version-archive*
-   /administration/extended-support-release*  
+   /administration/extended-support-release* 
+   /administration/release-lifecycle* 
    /administration/downgrade.rst
+   /administration/open-source-components*
 
 Mattermost Integrations
 ----------------------------
@@ -162,9 +169,13 @@ Learn how to extend Mattermost by integrating your workflows.
    :maxdepth: 2
    :glob:
 
-   /administration/plugins*
    /developer/toolkit*
+   /deployment/atlassian-integrations*
+   /deployment/ci-cd-tools*
+   /deployment/incident-response-and-monitoring*
+   /deployment/bots*
    /deployment/video-and-audio-calling*
+   /deployment/productivity-tools*
 
 Mattermost Compliance
 ----------------------------

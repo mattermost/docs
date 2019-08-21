@@ -45,6 +45,7 @@ No pull requests for major features should be **merged** to the current release 
     - Check that all features are behind a feature flag
     - Confirm all config settings and new features have diagnostics
     - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel. [See example](https://community.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
+      - Que a discussion about MVP candidates for the next R&D meeting
     - Draft Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
       - Note the type of release and add a link to release doc that defines the type (https://docs.mattermost.com/process/release-faq.html#release-overview)
     - Review [supported OS versions](https://docs.mattermost.com/install/requirements.html#server-software) and review that [software requirements](https://docs.mattermost.com/install/requirements.html#software-requirements) are up-to-date based on [these guidelines](https://docs.mattermost.com/process/software-requirements.html). If not, update documentation accordingly, and note changes in the Changelog
@@ -57,6 +58,7 @@ No pull requests for major features should be **merged** to the current release 
         - Merge database upgrade before cutting the branch
         - Point translation server to release branch after cutting
         - Cut an RN build for the next release
+    - Ensure ``community-release`` is on the feature branch
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
       - After the cut-off, any PRs that include significant code changes, require approval of the release manager before merging
 4. Marketing:
@@ -105,7 +107,7 @@ Day when Leads and PMs decide which major features are included in the release, 
 2. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
-    - Review submitted NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch.
+    - Submit NOTICE.txt PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch
     - If there are any breaking compatibility changes in the release, open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) to make sure GitLab is aware. Post a link to the issue in the Release Discussion channel
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
@@ -192,6 +194,8 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Verify that the final translations PR for the release is submitted
     - Confirm Changelog reflects any changes since it was merged (including known issues and contributors from all repositories)
       - Confirm translators and new integrations contributors have been added
+      - Confirm Open Source Components changes have been added
+    - Update https://docs.mattermost.com/administration/open-source-components.html
 3. Marketing:
     - Send blog post for mattermost.com and all related art work for marketing lead to review
     - Find [www-gitlab-com merge request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests?scope=all&utf8=%E2%9C%93&state=opened&label_name%5B%5D=blog%20post&label_name%5B%5D=release) for latest GitLab release blog post and make request for adding GitLab Mattermost update (see [example request](https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/2910#note_14096885), [example update](https://about.gitlab.com/2016/07/22/gitlab-8-10-released/#gitlab-mattermost-32)). Post to Release Discussion channel with link to request.
@@ -266,15 +270,17 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
     - Update Integrations Directory on the [Mattermost Apps and Integrations](https://integrations.mattermost.com/) page
     - Post the MVP winner announcement in the [Contributors channel](https://community.mattermost.com/core/channels/tickets)
+    - Add new release fix versions in Jira for the next few releases
     - Post key dates for the next release in the Release Discussion channel and remove links to RC candidates and testing spreadsheet from the header
         - Make sure that statutory holidays for Canada and US are accounted for in the release dates
     - Check for any [UserVoice](https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0) feature suggestions that were completed in the current release
       - Find the [release tweet](https://twitter.com/mattermosthq/status/854781715914555393) and insert a link to the tweet next to the feature that shipped with the release.
+    - Close the release in Jira both for webapp and mobile ([releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased))
     - For the next release, create the following team meetings. If they conflict with existing meetings, check with meeting owner to reschedule or reschedule the release meeting
-      - Feature Complete Meeting on T-15 at 10:00am San Francisco time
-      - Judgment Day Meeting on T-13 at 10:00am San Francisco time
-      - Code Complete Meeting on T-12 at 10:00am San Francisco time
-      - Release Triage and Update Meeting each weekday starting at T-13 and ending at T-2 at 9:30am San Francisco time for PM, QA and release dev.
+      - Bug Bash Meeting on the week after Code Complete at 10:00am San Francisco time
+      - Judgment Day Meeting on T-15 at 10:00am San Francisco time
+      - Code Complete Meeting on T-14 at 10:00am San Francisco time
+      - Release Triage and Update Meeting each weekday starting at T-15 and ending at T-2 at 9:30am San Francisco time for PM, QA and release dev.
     - Prepare tickets for the next release, with a corresponding vX.X prefix, and put the tickets in the appropriate sprints as follows:
        - The week RC is cut:
             - [RC Build Testing for core team](https://mattermost.atlassian.net/browse/PLT-2208)
@@ -296,26 +302,23 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Create a new branch on docs for the next release - `vX.X-documentation`
         - Submit a PR for changelog against the `vX.X-documentation` branch and add a `Work in Progress` label for it
         - Submit a PR to change version number in `docs/source/conf.py` against the `vX.X-documentation` branch
-3. Logistics:
-    - Close the release in Jira both for webapp and mobile ([releases page](https://mattermost.atlassian.net/projects/PLT?selectedItem=com.atlassian.jira.jira-projects-plugin%3Arelease-page&status=unreleased))
-        - If there are many unresolved tickets in the current release, ask the release manager to review the ticket queue
-        - Otherwise, release the fix version (Actions > [...] > Release)
-4. Build:
+3. Build:
     - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
     - Update https://prev.test.mattermost.com to the previous release version
-5. Dev:
+4. Dev:
     - Cut release branch for Bug Fix release
+        - Ensure ``community-release`` is on the quality release branch
     - Cut an RN build for the next release
     - Update existing tickets or create new ones for the next release
-6. Marketing:
+5. Marketing:
     - Turn on CrazyEgg for blog post page
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
     - Update @mattermosthq Twitter profile with the next release date
     - Prepare retweet of GitLab release tweet ([see example here](https://community.mattermost.com/core/pl/k7wchwj5mtrhucj6don96yx3sc))
-7. QA:
+6. QA:
     - Merge any updates made to Selenium tests during release testing
     - Update RN server URLs to Rainforest
-8. Leads:
+7. Leads:
     - Update [company roadmap at mattermost.com](https://about.mattermost.com/direction/)
 
 ### M. (T-plus 30 days) Update Mattermost Security Page

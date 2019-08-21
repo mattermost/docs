@@ -26,7 +26,7 @@ OAuth 2.0 applications are off by default and can be enabled by the System Admin
 
 1 - Login to your Mattermost server as the System Administrator.
 
-2 - Go to **Main Menu > System Console > Integrations > Custom Integrations**.
+2 - Go to **Main Menu > System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12.
 
 3 - Set `Enable OAuth 2.0 Service Provider <https://docs.mattermost.com/administration/config-settings.html#enable-oauth-2-0-service-provider>`__ to **True**.
 

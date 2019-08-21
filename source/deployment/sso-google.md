@@ -5,6 +5,8 @@ Follow these steps to configure Mattermost to use Google as a single sign-on (SS
 
 **Note: Google SSO is not yet supported in the mobile app. If you want to use Google SSO on mobile, you'll have to [build your own app](https://developers.mattermost.com/contribute/mobile/build-your-own/).**
 
+**Note: The Google People API has replaced the Google+ API, which was deprecated by Google as of March 7th, 2019 per their notice at https://developers.google.com/+/api-shutdown.**
+
 1 - Go to [Google API Manager](https://console.developers.google.com), click **Credentials** in the left hand sidebar, click **Create a project** and enter "Mattermost - your-company-name" as the **Project Name**, then click **Create**.
 
 ![google_1_credentials](../../source/images/google_1_credentials.png)
@@ -13,11 +15,11 @@ Follow these steps to configure Mattermost to use Google as a single sign-on (SS
 
 ![google_enable_api](../../source/images/google_enable_api.png)
 
-Once in the API Library, scroll down to [Google+ API](https://console.developers.google.com/apis/api/plus/overview) and click **Enable** in the header. This might take a few minutes to propagate through Google's systems.
+Once in the API Library, scroll down to [Google People API](https://console.developers.google.com/apis/api/plus/overview) and click **Enable** in the header. This might take a few minutes to propagate through Google's systems.
 
-3 - Leave the Google+ API menu to return to the **APIs & Services menu**. In the left hand sidebar select **Credentials**, click the **OAuth consent screen** header and enter "Mattermost" as the **Product name shown to users**, then click **Save**.
+3 - Leave the Google+ API menu to return to the **APIs & Services menu**. In the left hand sidebar select **Credentials**, click the **OAuth consent screen** header and enter "Mattermost" as the **Application Name**, then click **Save**.
 
-![google_2_oauth_consent_screen](../../source/images/google_2_oauth_consent_screen.png)
+![google_3_oauth_consent_screen](../../source/images/google_3_oauth_consent_screen.png)
 
 Scroll further down to add your Mattermost instance to a list of authorized domains that can access the API. For example, if it is hosted on `mattermost.yourdomain.com` add `yourdomain.com`.
 
@@ -47,4 +49,4 @@ Notes:
     - `Scope`: `profile email`
     - `AuthEndpoint`: `https://accounts.google.com/o/oauth2/v2/auth` 
     - `TokenEndpoint`: `https://www.googleapis.com/oauth2/v4/token`  
-    - `UserApiEndpoint`: `https://www.googleapis.com/plus/v1/people/me`  
+    - `UserApiEndpoint`: `https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`  

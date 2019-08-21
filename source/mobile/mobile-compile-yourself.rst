@@ -19,14 +19,14 @@ To deploy in production with privately-hosted mobile apps compiled by your organ
   - (Recommended) Depending on your security policies, consider deploying a mobile VPN client with multi-factor authentication (MFA), GitLab SSO with MFA, or run Mattermost Enterprise Edition with MFA
 
 4. Enable mobile push notifications
-  - Go to **System Console** > **Notifications** > **Mobile Push**
+  - Go to **System Console** > **Notifications** > **Mobile Push** in prior versions or **System Console > Environment > Push Notification Server** in versions after 5.12
   - Under **Send Push Notifications**, select **Manually enter Push Notification Service location**
   - Enter the location of your Mattermost Push Notification Service in the **Push Notification Server** field
 
 .. image:: ../images/mobile_manual_mpns.png
 
 5. (Optional) Customize mobile push notification contents
-  - Go to **System Console** > **Notifications** > **Mobile Push**
+  - Go to **System Console** > **Notifications** > **Mobile Push** in prior versions or **System Console > Site Configuration > Notifications** in versions after 5.12
   - Select an option for **Push Notification Contents** to specify what type of information to include in push notifications
   - Most deployments choose to include the full message snippet in push notifications unless they have policies against it to protect confidential information
 

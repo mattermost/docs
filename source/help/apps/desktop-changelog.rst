@@ -1,6 +1,38 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.2.3
+----------------------------
+
+This release contains a bug fix for all platforms.
+
+- **Release date:** August 9, 2019
+- **Download Binary:** `Windows 32-bit <https://releases.mattermost.com/desktop/4.2.3/mattermost-setup-4.2.3-win32.exe>`__ | `Windows 64-bit <https://releases.mattermost.com/desktop/4.2.3/mattermost-setup-4.2.3-win64.exe>`__ | `Mac <https://releases.mattermost.com/desktop/4.2.3/mattermost-desktop-4.2.3-mac.dmg>`__ | `Linux 64-bit <https://releases.mattermost.com/desktop/4.2.3/mattermost-desktop-4.2.3-linux-x64.tar.gz>`__ 
+- **View Source Code:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.2.3>`__
+
+Bug Fixes
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where the server URL entry prior to v4.2.2 could include malformed URLs that failed in v4.2.2 and later due to stricter validation. https://github.com/mattermost/desktop/pull/1015
+
+Release v4.2.2
+----------------------------
+
+This release contains a bug fix for all platforms.
+
+- **Release date:** August 7, 2019
+
+Bug Fixes
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Mattermost v4.2.2 contains high level security fixes. `Upgrading <https://mattermost.com/download/#mattermostApps>`_ is recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`_.
+
 Release v4.2.1
 ----------------------------
 
@@ -974,7 +1006,7 @@ All platforms
 -  Should execute following command to take over ``config.json``.
 
    -  Windows:
-      ``mkdir %APPDATA%\Mattermost & copy %APPDATA%\electron-mattermost\config.json %APPDATA%\Mattermost\config.json``
+      ``mkdir %APPDATA%\Mattermost and copy %APPDATA%\electron-mattermost\config.json %APPDATA%\Mattermost\config.json``
    -  OS X:
       ``ditto ~/Library/Application\ Support/electron-mattermost/config.json ~/Library/Application\ Support/Mattermost/config.json``
    -  Linux:

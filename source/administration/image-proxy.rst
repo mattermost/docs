@@ -31,7 +31,7 @@ The `atmos/camo <https://github.com/atmos/camo>`_ image proxy is a standalone im
 This guide gives an example of how to set up an image proxy using ``atmos/camo``:
 
 Deploy an ``atmos/camo`` (https://github.com/atmos/camo) instance to image-proxy.mattermost.com and update the 
-configuration in **System Console > Files > Storage**. For example:
+configuration in **System Console > Files > Storage** in prior versions or **System Console > Environment > Image Proxy** in versions after 5.12. For example:
  - **Image Proxy Type**: ``atmos/camo``
  - **Remote Image Proxy URL**: ``https://image-proxy.mattermost.com``
  - **Remote Image Proxy Options**: ``CAMO_KEY``, which is the secret string used for the sample ``atmos/camo`` deployment.

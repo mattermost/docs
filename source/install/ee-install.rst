@@ -4,7 +4,7 @@
 Enterprise Install and Upgrade
 ===========================================
 
-Mattermost Enterprise Edition is free to use in "team mode" without enterprise features enabled. Enable enterprise features using a `trial license <https://about.mattermost.com/trial/>`__ or by `purchasing a license key <https://about.mattermost.com/pricing/>`__. There are two variants of Enterprise Edition, E10 and E20, and you can `compare their features online <https://about.mattermost.com/features/>`__.
+Mattermost Enterprise Edition is free to use in "team mode" without enterprise features enabled. Enable enterprise features using a `trial license <https://about.mattermost.com/trial/>`__ or by `purchasing a license key <https://about.mattermost.com/pricing/>`__. There are two variants of Enterprise Edition, E10 and E20, and you can `compare their features online <https://mattermost.com/pricing-feature-comparison/>`__.
 
 Installing Enterprise Edition
 -----------------------------
@@ -83,11 +83,15 @@ Use this command to upload a new license or to replace an existing license with 
 
   mattermost license upload {license}
 
+.. note::
+  If you upload the license via `mattermost license upload` CLI, you need to restart the Mattermost server after uploading. Also, if you're running a cluster setup, the license file needs to be uploaded to every node.
+
+
 See `documentation for more information on the command line tools <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-license-upload>`__.
 
 **Through the System Console:**
 
-1. In the OTHER section of the System Console, click **Edition and License**. The *Edition and License* page opens.
+1. In the OTHER section of the System Console, click **Edition and License** in prior versions or **System Console** > **About** > **Edition and License** in versions after 5.12.
 2. Click **Remove Enterprise License and Downgrade Server**. This clears the license from the server and refreshes the System Console.
 3. Upload the new license key file.
 

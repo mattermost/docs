@@ -1,6 +1,6 @@
 #!/bin/bash
 
-umask 377
+umask 007
 
 certname="${CRT_FILENAME:-"mattermost-x509"}"
 openssl x509 \

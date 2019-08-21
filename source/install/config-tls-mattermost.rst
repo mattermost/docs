@@ -10,7 +10,7 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
 
 **Configure TLS on the Mattermost Server**:
 
-1. In the **System Console** > **General** > **Configuration**.
+1. In the **System Console** > **General** > **Configuration** in prior versions or **System Console** > **Environment** > **Web Server** in versions after 5.12.
   a. Change the **Listen Address** setting to ``:443``.
   b. Change the **Connection Security** setting to ``TLS``.
   c. Change the **Forward port 80 to 443** setting to ``true``.

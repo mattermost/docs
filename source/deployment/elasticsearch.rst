@@ -33,7 +33,7 @@ Configuring Elasticsearch in Mattermost
 
 Follow these steps to connect your Elasticsearch server to Mattermost and generate the post index.
 
-1. Open the **System Console** > **Advanced** > **Elasticsearch** section.
+1. Open **System Console** > **Advanced** > **Elasticsearch** in prior versions or **System Console** > **Environment** > **Elasticsearch** in versions after 5.12.
 2. Set **Enable Elasticsearch Indexing** to `true` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database will be automatically indexed on the Elasticsearch server.
 3. Set the Elasticsearch server connection details:
   a) Enter **Server Connection Address** for the Elasticsearch server you set up earlier.
@@ -90,3 +90,11 @@ There's a few possible reasons why it might be slow:
  - The Elasticsearch cluster is performance limited (i.e. the machines are not powerful enough).
 
  - The 25,000 messages are spread out over a long time window, and the ``BulkIndexingTimeWindowSeconds`` configuration value is too low for efficient indexing of such a "sparse" database. Optimally the value of that config should be set such that the median number of posts falling within any period of that time in the database is around 700 to 800. The default value is 1 hour, so if you are doing a lot less than 800 posts an hour on average, then the indexing will be much slower in terms of "posts per unit time". This can be sped up by increasing that time window.
+
+How do I know if an elasticsearch job fails?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost provides the status of each elasticsearch indexing job in **System Console** > **Environment** > **Elasticsearch** (or **System Console > Advanced > Elasticsearch** in versions 5.11 and earlier). Here, you can see if the job succeeded or failed, including the details of the error.
+
+Morever, any failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. Elasticsearch job failures are identified with worker name ``EnterpriseElasticsearchAggregator`` and ``EnterpriseElasticsearchIndexer``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
+

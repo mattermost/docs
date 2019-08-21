@@ -1,4 +1,4 @@
-Backup & Disaster Recovery 
+Backup and Disaster Recovery 
 ==========================
 
 Options to protect your Mattermost server from different types of failures range from simple backup to sophisticated disaster recovery deployments and automation. 

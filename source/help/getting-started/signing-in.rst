@@ -8,6 +8,11 @@ To sign in, navigate to the Mattermost sign-in page. You can get the URL of the 
 After signing in, the team that appears first on your team sidebar will open.  If you have not joined a team, the Team Selection
 page opens where you can view a list of teams that you can join.
 
+.. contents::
+  :depth: 2
+  :local:
+  :backlinks: entry
+
 Sign In Methods
 ---------------
 
@@ -49,7 +54,7 @@ account using a one-click sign in option.
   :width: 239px
   :height: 232px
 
-Office 365 Single Sign-On (Beta)
+Office 365 Single Sign-On
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
@@ -62,7 +67,7 @@ account using a one-click sign in option.
 
 AD/LDAP Sign In
 ~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E10 & E20*
+*Available in Enterprise Edition E10 and E20*
 
 When enabled by your System Admin, you can sign in with your AD/LDAP
 credentials. This lets you use the same username and password for

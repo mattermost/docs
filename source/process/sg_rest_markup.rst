@@ -161,7 +161,9 @@ Use the following construct to insert an image:
 
   .. image:: ../images/choices.png
 
-You can also add the following image options: `alt`, `height`, `width`, `scale`, `align`, and `target`. For example:
+You should use `alt` tag for all images.
+
+You can also add the following image options: `height`, `width`, `scale`, `align`, and `target`. For example:
 
 .. code-block:: none
 

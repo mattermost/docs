@@ -37,7 +37,7 @@ In order to achieve these goals, our writing must be:
  2. **Appealing to secondary audiences.** These include open source and in-house developers and end users at highly regulated companies.
  3. **Part of our brand.** Our style and message must be consistent over the long term. Therefore, all of our content, irrespective of purpose or subject-matter, must pull the reader in the same direction and reinforce our key messages. 
  4. **High quality.** Quality in writing reflects the professionalism of our organization. We pay attention to the rules of grammar and spelling.
- 5. **Clear & transparent.** We aim to communicate simply, using language that is familiar to our audiences. People don't buy what they don't understand!
+ 5. **Clear and transparent.** We aim to communicate simply, using language that is familiar to our audiences. People don't buy what they don't understand!
  6. **International.** Mattermost has customers around the world and in many cases English is their second language. Use standard American English but do not use metaphors or expressions that people outside of North America are unlikely to understand.
  7. **Avoiding unintentional controversy.** We might want to stir up a bit of controversy now and again – but only on relevant technological and business topics. Avoid subjects or analogies that might provoke an emotional or hostile response: religion, politics, warfare, personal relationships etc. 
  8. **Fit for purpose.** Is your content designed to persuade (e.g. an opinion piece), promote (e.g. a product description) or instruct (e.g. to guide a user through procedural steps)? Adjust your tone and your language accordingly.

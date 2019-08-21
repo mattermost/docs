@@ -4,7 +4,7 @@ How to Update Integrations Directory
 
 This document outlines the internal process for updating https://integrations.mattermost.com/.
 
-New integrations get submitted in the `Integrations & Apps channel <https://community-daily.mattermost.com/core/channels/integrations>`_
+New integrations get submitted in the `Integrations and Apps channel <https://community-daily.mattermost.com/core/channels/integrations>`_
 via `this form <https://spinpunch.wufoo.com/forms/mattermost-integrations-and-installers/>`_.
 
 Initial Steps

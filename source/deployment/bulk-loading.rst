@@ -10,7 +10,7 @@ Large quantities of data can be imported from a `JSONL
 You can import the following data types:
 
 - Teams
-- Channels (Public & Private)
+- Channels (Public and Private)
 - Users
 - Users' Team memberships
 - Users' Channel memberships

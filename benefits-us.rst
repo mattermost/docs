@@ -17,7 +17,7 @@ This overview is a quick reference guide and does not replace the documentation 
 
 The Company covers health insurance up the following contribution caps: 
 
-**Insurance & Company Contribution Cap**
+**Insurance and Company Contribution Cap**
 
 - Medical Employee Only: $362.00
 - Medical Employee + Spouse: $797.00

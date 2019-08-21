@@ -106,18 +106,20 @@ mattermost
     .. code-block:: none
 
       -c, --config {string}   Configuration file to use. (default "config.json")
+      --disableconfigwatch {boolean}  When true, the config.json file will not be reloaded automatically when another process changes it (default "false")
 
   Child Commands
     -  `mattermost channel`_ - Management of channels
     -  `mattermost command`_ - Management of slash commands
     -  `mattermost config`_ - Work with the configuration file
     -  `mattermost export`_ - Compliance export commands
+    -  `mattermost group`_ - Management of Mattermost groups
     -  `mattermost help`_ - Generate full documentation for the CLI
     -  `mattermost import`_ - Import data
     -  `mattermost jobserver`_ - Start the Mattermost job server
     -  `mattermost ldap`_ - AD/LDAP related utilities
     -  `mattermost license`_ - Licensing commands
-    -  `mattermost logs`_ - Display humand-readable logs
+    -  `mattermost logs`_ - Display human-readable logs
     -  `mattermost permissions`_ - Management of the permissions system
     -  `mattermost plugin`_ - Management of plugins
     -  `mattermost reset`_ - Reset the database to initial state
@@ -241,7 +243,7 @@ mattermost channel list
 ~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    List all channels on a specified team. Archived channels are appended with ``(archived)``.
+    List all channels on a specified team. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``.
 
   Format
     .. code-block:: none
@@ -364,7 +366,7 @@ mattermost channel search
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Search for a channel by channel name. Returns channel display name, channel Id, and indicates if it is archived.
+    Search for a channel by channel name. Returns channel display name, channel Id, and indicates if it is private or archived. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``. 
     
   Format
     .. code-block:: none
@@ -393,6 +395,7 @@ mattermost command
     -  `mattermost command create`_ - Create a custom slash command for a specified team.
     -  `mattermost command delete`_ - Delete a slash command.
     -  `mattermost command list`_ - List all commands on specified teams or all teams by default.
+    -  `mattermost command modify`_ - Modify a slash command.
     -  `mattermost command move`_ - Move a slash command to a different team.
     -  `mattermost command show`_ - Show a custom slash command.
 
@@ -458,6 +461,41 @@ mattermost command list
     .. code-block:: none
 
        ./mattermost command list myteam
+       
+mattermost command modify
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Modify a slash command. Commands can be specified by command ID.
+
+.. note::
+    Only fields that you want to modify need to be specified.  Also, when modifying the command's creator, the new creator specified must have the permission to create commands. 
+
+
+  Format
+    .. code-block:: none
+
+      mattermost command modify {commandID}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost command modify commandID --title MyModifiedCommand --description "My Modified Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
+
+  Options
+    .. code-block:: none
+
+          --title string                     Command Title
+          --description string               Command Description
+          --trigger-word string              Command Trigger Word
+          --url  string                      Command Callback URL
+          --creator string                   Command Creator's Username
+          --response-username string         Command Response Username
+          --icon string                      Command Icon URL
+          --autocomplete bool                Show command in autocomplete list
+          --autocompleteDesc string          Short command description for autocomplete list
+          --autocompleteHint string          Command arguments displayed as help in autocomplete list
+          --post bool                        Use POST method for callback URL, else use GET method
 
 mattermost command move
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -500,6 +538,7 @@ mattermost config
 
   Child Command
     - `mattermost config get`_ - Retrieve the value of a config setting by its name in dot notation.
+    - `mattermost config migrate`_ - Migrate a file-based configuration to (or from) a database-based configuration.
     - `mattermost config set`_ - Set the value of a config setting by its name in dot notation.
     - `mattermost config show`_ - Print the current mattermost configuration in an easy to read format.
     - `mattermost config validate`_ - Validate the configuration file.
@@ -524,6 +563,25 @@ mattermost config get
     .. code-block:: none
 
           --path string  Optional subpath; defaults to value in Site URL.
+	  
+mattermost config migrate
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. If using SAML, ensure the SAML certificates and keys are accessible to also migrate into the database.
+    
+.. note::   
+    If a ``from`` parameter is not specified, the command will fall back to what is specified in --config.
+    
+  Format
+    .. code-block:: none
+
+      mattermost config migrate {config to read} {config to write}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
     
 mattermost config set
 ~~~~~~~~~~~~~~~~~~~~~
@@ -592,6 +650,7 @@ mattermost export
     -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license
     -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`__
     -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license
+    -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a zip file containing emails to send to Global Relay for debug and testing purposes only. Requires an E20 license   
     -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance
@@ -613,7 +672,7 @@ mattermost export actiance
   Options
     .. code-block:: none
 
-          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+          --exportFrom string     Unix timestamp (milliseconds since epoch, UTC) to export data from.
 
 mattermost export bulk
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -657,6 +716,27 @@ mattermost export csv
 
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
 	  
+mattermost export global-relay-zip
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Export data from Mattermost into a zip file containing emails to send to Global Relay for debug and testing purposes only. This does not archive any information in Global Relay.
+
+  Format
+    .. code-block:: none
+
+      mattermost export global-relay-zip
+
+  Example
+    .. code-block:: none
+
+      ./mattermost export global-relay-zip --exportFrom=1513102632
+
+  Options
+    .. code-block:: none
+
+          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+	  
 mattermost export schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -680,6 +760,176 @@ mattermost export schedule
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
           --timeoutSeconds string Set how long the export should run for before timing out.
 
+mattermost group  
+------------------------
+
+  Description
+    Commands for managing Mattermost groups.  For more information on Mattermost groups please see `this documentation. <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_
+
+  Child Commands
+    -  `mattermost group channel`_ - Management of Mattermost groups linked to channels
+    -  `mattermost group team`_ - Management of Mattermost groups linked to teams
+    
+mattermost group channel 
+------------------------
+
+  Description
+    Commands for managing Mattermost groups linked to a channel.
+
+  Child Commands
+    -  `mattermost group channel enable`_ - Enables group constraint on the specified channel
+    -  `mattermost group channel disable`_ - Disables group constraint on the specified channel
+    -  `mattermost group channel list`_ - Lists the groups associated with a channel
+    -  `mattermost group channel status`_ - Shows the group constraint status of the specified channel
+
+mattermost group channel enable 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Enables group constraint on the specified channel. When a channel is group constrained, channel membership is managed by linked groups instead of managed by manually adding and removing users.
+    
+.. note::
+  To enable a group constraint on a specific channel, you must already have at least one group associated. See `AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_ for more details on how to associate a group to a channel.
+
+  Format
+    .. code-block:: none
+
+      mattermost group channel enable {team}:{channel}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group channel enable myteam:mychannel
+      
+mattermost group channel disable 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Disables group constraint on the specified channel.
+
+  Format
+    .. code-block:: none
+
+      mattermost group channel disable {team}:{channel}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group channel disable myteam:mychannel
+      
+mattermost group channel list 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Lists the groups associated with a channel.
+
+  Format
+    .. code-block:: none
+
+      mattermost group channel list {team}:{channel}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group channel list myteam:mychannel
+
+      
+mattermost group channel status 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Shows the group constraint status of the specified channel. Returns "Enabled" when channel membership is managed by linked groups.  Returns "Disabled" when the channel membership is managed by manually adding and removing users. 
+
+  Format
+    .. code-block:: none
+
+      mattermost group channel status {team}:{channel}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group channel status myteam:mychannel
+      
+mattermost group team 
+------------------------
+
+  Description
+    Commands for managing Mattermost groups linked to a team.
+
+  Child Commands
+    -  `mattermost group team enable`_ - Enables group constraint on the specified team
+    -  `mattermost group team disable`_ - Disables group constraint on the specified team
+    -  `mattermost group team list`_ - Lists the groups associated with a team
+    -  `mattermost group team status`_ - Shows the group constraint status of the specified team
+
+mattermost group team enable 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Enables group constraint on the specified team. When a team is group constrained, team membership is managed by linked groups instead of managed by manually inviting and removing users.
+    
+.. note::
+  To enable a group constraint on a specific team, you must already have at least one group associated. See `AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_ for more details on how to associate a group to a team.
+
+  Format
+    .. code-block:: none
+
+      mattermost group team enable {team}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group team enable myteam
+      
+mattermost group team disable 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Disables group constraint on the specified team.
+
+  Format
+    .. code-block:: none
+
+      mattermost group team disable {team}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group team disable myteam
+      
+mattermost group team list 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Lists the groups associated with a team.
+
+  Format
+    .. code-block:: none
+
+      mattermost group team list {team}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group team list myteam
+
+      
+mattermost group team status 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Shows the group constraint status of the specified team. Returns "Enabled" when team membership is managed by linked groups.  Returns "Disabled" when the team membership is managed by manually inviting and removing users. 
+
+  Format
+    .. code-block:: none
+
+      mattermost group team status {team}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost group team status myteam    
+      
 mattermost help
 ---------------
 
@@ -831,6 +1081,9 @@ mattermost license upload
     .. code-block:: none
 
       ./mattermost license upload /path/to/license/mylicensefile.mattermost-license
+
+.. note::
+  The Mattermost server needs to be restarted after uploading a license file for any changes to take effect. Also, for cluster setups the license file needs to be uploaded to every node.
 
 mattermost logs
 ------------------
@@ -1079,7 +1332,9 @@ mattermost sampledata
 
   Description
     .. versionadded:: 4.7
-      Generate sample data and populate the Mattermost database.
+      Generate sample data and populate the Mattermost database. Supported in Mattermost v4.7 and later.
+
+      The command generates one user as the System Administrator with a username ``sysadmin`` and password ``Sys@dmin-sample1``. Other users are generated following an index, e.g. with username ``user-1`` and password ``SampleUs@r-%1``.
 
   Format
     .. code-block:: none
@@ -1132,6 +1387,7 @@ mattermost team
     -  `mattermost team create`_ - Create a team.
     -  `mattermost team delete`_ - Delete a team.
     -  `mattermost team list`_ - List all teams.
+    -  `mattermost team modify`_ - Modify a team's public/private type.
     -  `mattermost team remove`_ - Remove users from a team.
     -  `mattermost team rename`_ - Rename a team.
     -  `mattermost team restore`_ - Restore a previously archived team.    
@@ -1243,6 +1499,23 @@ mattermost team list
     .. code-block:: none
 
       ./mattermost team list
+      
+mattermost team modify
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Modify a team's public/private type. 
+
+  Format
+    .. code-block:: none
+
+      mattermost team modify [team] [flag]
+
+  Example
+    .. code-block:: none
+
+      ./mattermost team myteam --private
+      ./mattermost team myteam --public
 
 mattermost team remove
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1269,12 +1542,12 @@ mattermost team rename
   Format
     .. code-block:: none
 
-      mattermost channel rename {team} newteamname --display_name "New Display Name"
+      mattermost team rename {team} newteamname --display_name "New Display Name"
 
   Examples
     .. code-block:: none
 
-      ./mattermost channel rename myteam newteamname --display_name "New Display Name"
+      ./mattermost team rename myteam newteamname --display_name "New Display Name"
       
   Options
     .. code-block:: none
@@ -1321,9 +1594,8 @@ mattermost user
 
   Child Commands
 
-mattermost user activate
-
     -  `mattermost user activate`_ - Activate a user
+    -  `mattermost user convert`_ - Convert a user to a bot, or a bot to a user
     -  `mattermost user create`_ - Create a user
     -  `mattermost user deactivate`_ - Deactivate a user
     -  `mattermost user delete`_ - Delete a user and all posts
@@ -1354,6 +1626,33 @@ mattermost user activate
 
       ./mattermost user activate user@example.com
       ./mattermost user activate username1 username2
+
+mattermost user convert
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Convert a user to a bot, or convert a bot to a user account.
+
+  Format
+    .. code-block:: none
+
+      mattermost user convert {emails, usernames, userIds} --bot
+      OR
+      mattermost user convert {bot_id} --user --email {email_address} --password {new_password}
+
+  Examples
+    .. code-block:: none
+
+      ./mattermost user convert user@example.com --bot
+      ./mattermost user convert username1 username2 --bot
+      ./mattermost user convert old_bot --user --email real_user@example.com --password Password1
+
+
+  Options
+    .. code-block:: none
+
+          --bot string       Convert user to bot.  Supports converting multiple bots at once, use a space-separated list.
+          --user string      Convert bot to user.  Supports converting 1 account per command.
 
 mattermost user create
 ~~~~~~~~~~~~~~~~~~~~~~

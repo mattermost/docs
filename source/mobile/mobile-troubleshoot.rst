@@ -35,7 +35,7 @@ You can set up an internal server to proxy the connection out of their network t
 
 1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at https://www.digicert.com/help/.
 2. Setup a proxy to forward requests to ``https://push.mattermost.com``.
-3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** to "Manually enter Push Notification Service location"
+3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** in prior versions or **System Console > Environment > Push Notification Server > Enable Push Notifications** in versions after 5.12 to "Manually enter Push Notification Service location"
 4. Enter the URL of your proxy in the **Push Notification Server** field.
 
 .. Note:: Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``
@@ -67,7 +67,7 @@ Some distributions also ship without ``mailcap`` which can result in missing or 
 None of these solve my problem!
 -------------------------------
 
-For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you can also email subscribers@mattermost.com for support.
+For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_.
 
 To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following things and include the results in your support request:
 

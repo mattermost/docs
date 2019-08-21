@@ -23,7 +23,7 @@ Existing install directory - *{install-path}*
   If you don't know where Mattermost Server is installed, use the ``whereis mattermost`` command. The output should be similar to */opt/mattermost/bin/mattermost*. The install directory is everything before the first occurrence of the string */mattermost*. In this example, the *{install-path}* is ``/opt``.
   If that command does not produce any results because your version is older, try ``whereis platform`` instead.
 Location of your local storage directory
-  The local storage directory contains all the files that users have attached to their messages. If you don't know its location, open the System Console and go to **Files > Storage** and read the value in **Local Storage Directory**. Relative paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
+  The local storage directory contains all the files that users have attached to their messages. If you don't know its location, open the System Console and go to **Files > Storage** in prior versions or **Environment> File Storage** in versions after 5.12 and read the value in **Local Storage Directory**. Relative paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
 
 **To upgrade Mattermost Server**:
 
@@ -155,8 +155,10 @@ Location of your local storage directory
     .. code-block:: sh
 
       cd {install-path}/mattermost
-      sudo mv plugins~/ plugins
-      sudo mv client/plugins~/ client/plugins
+      sudo rsync -au plugins~/ plugins
+      sudo rm -rf plugins~
+      sudo rsync -au client/plugins~/ client/plugins
+      sudo rm -rf client/plugins~
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 
@@ -165,4 +167,4 @@ Upgrading Team Edition to Enterprise Edition
 
 To upgrade from the Team Edition to the Enterprise Edition, follow the normal upgrade instructions above, but make sure that you download the Enterprise Edition in Step 3.
 
-After the Enterprise Edition is running, open the *System Console* and go to **OTHER > Edition and License > License Key** and upload your license key file.
+After the Enterprise Edition is running, open the *System Console* and go to **OTHER > Edition and License > License Key** in prior versions or **System Console > About > Editions and License** in versions after 5.12 and upload your license key file.

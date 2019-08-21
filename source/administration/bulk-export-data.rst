@@ -5,7 +5,7 @@ At this time, the export supports attributes of the objects listed below. All Ma
 You can export the following data types:
 
 - Teams
-- Channels (Public & Private)
+- Channels (Public and Private)
 - Users
 - Users' Team memberships
 - Users' Channel memberships

@@ -106,6 +106,14 @@ When IT adopts management of Mattermost often they will purchase the commercial 
 Migrating from Slack
 ~~~~~~~~~~~~~~~~~~~~
 
+Slack offers two ways to `export your data from their product <https://get.slack.help/hc/en-us/articles/201658943-Export-your-workspace-data>`_.
+
+1. A Slack "export" file can be generated from **Slack** > **Administration** > **Workspace settings** > **Import/Export Data** > **Export** > **Start Export**.  This export does not include private channels, direct or group messages.  
+
+2. You can request "Corporate Export" from Slack directly to get a larger export including private channels, direct and group messages. 
+
+Both exports from Slack use the same processes when importing into Mattermost. 
+
 .. note:: As a proprietary SaaS service, Slack is able to change its export format quickly and without notice. If you encounter issues not mentioned in the documentation below, please alert the product team by `filing an issue <https://www.mattermost.org/filing-issues/>`__.
 
 The Slack Import feature in Mattermost is in "Beta" and focused on supporting migration of teams of less than 100 registered users.
@@ -129,15 +137,19 @@ The following key features can be imported from Slack:
 
 * User accounts
 
-* Public channels and the text messages posted in them, with formatting
+* Public and private channels and the text messages posted in them, with formatting
 
 * Channel topic and purpose
 
 * Imported users added automatically to their channels
 
+* Messages and message threads
+
+* Direct and group messages
+
 Messages with file attachments are imported as a message containing a link to Slack's servers by default. The file attachments themselves can be imported to Mattermost by using the `Slack Advanced Exporter <https://github.com/grundleborg/slack-advanced-exporter>`__ tool to add them to your archive before importing it.
 
-Bot and Integration messages are imported by default, but if you would like them to display with the appropriate username when imported, you should ensure that `Enable Integrations to Override Usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ is set in **System Console > Integrations > Custom Integrations** *before* doing the import.
+Bot and Integration messages are imported by default, but if you would like them to display with the appropriate username when imported, you should ensure that `Enable Integrations to Override Usernames <https://docs.mattermost.com/administration/config-settings.html#enable-integrations-to-override-usernames>`__ is set in **System Console > Integrations > Custom Integrations**  in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12 *before* doing the import.
 
 When topic-change messages, purpose-change messages, and channel name-change messages are imported from Slack, they appear in Mattermost as posts from the System user.
 
@@ -150,16 +162,20 @@ The following limitations are present when importing from Slack:
 
 * The import is not idempotent, which means that duplicate posts are created if you import the same data more than once.
 
-* Direct Messages and Private Channels cannot be imported. Slack does not include these messages when generating the export archive.
+* Slack does not include direct or group messages and private channel messages when generating the export archive from their export tool. You will need to request a Corporate export from them to access this data.   
 
 * If the handle of an imported Slack channel is the same handle as a deleted Mattermost channel, then a random handle is generated for the imported Slack channel.
+
+* Pinned posts are not currently supported. 
+
+* Deleted users in Slack are currently not supported. They should be re-added to the file prior to import.  Mattermost will be providing a fix for this in the near future. 
 
 Migrating from Slack using the Mattermost Web App
 `````````````````````````````````````````````````
 
-.. note:: For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive, it is recommended to import the Slack data using the `CLI <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-cli>`__.
+.. note:: For larger imports, particularly those where you have used the `slack-advanced-exporter tool` to add Slack post attachments to the archive or the Corporate Export file, it is recommended to import the Slack data using the `CLI <https://docs.mattermost.com/administration/migrating.html#migrating-from-slack-using-the-mattermost-cli>`__.
 
-1. Generate a Slack "Export" file from **Slack** > **Administration** > **Workspace settings** > **Import/Export Data** > **Export** > **Start Export**.
+1. Generate a Slack "Export" file from **Slack** > **Administration** > **Workspace settings** > **Import/Export Data** > **Export** > **Start Export**. Alternatively, use the Slack Corporate Export file after receiving it from Slack.
 
 2. In Mattermost go to **Team Settings > Import > Import from Slack**. Team Admin or System Admin role is required to access this menu option.
 

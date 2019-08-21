@@ -17,14 +17,14 @@ Set Up Guide
 
 To set a custom data retention policy:
 
-1. Go to **System Console > Advanced > Data Retention Policy**
+1. Go to **System Console > Advanced > Data Retention Policy** in prior versions or **System Console > Compliance > Data Retention Policy** in versions after 5.12.
 2. Set your desired retention policy for messages. Messages, including file attachments, older than the duration you set will be deleted nightly. The minimum message retention time is one day.
-3. Similarly, set your desired retention policy for file uploads. File uploads older than the duration you set will be deleted nightly from your file storage system, either from your local disk or your Amazon S3 service as specified in **System Console > Files > Storage**. The minimum file retention time is one day.
+3. Similarly, set your desired retention policy for file uploads. File uploads older than the duration you set will be deleted nightly from your file storage system, either from your local disk or your Amazon S3 service as specified in **System Console > Files > Storage** in prior versions or **System Console > Environment > File Storage** in versions after 5.12. The minimum file retention time is one day.
 4. Set the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
 
 Save the settings and restart your server. You're now all set! Data older than the duration you set are now deleted daily at the specified server time.
 
-You may also run the deletion job manually anytime by clicking **Run Deletion Job Now** button in **System Console > Advanced > Data Retention Policy**.
+You may also run the deletion job manually anytime by clicking **Run Deletion Job Now** button in **System Console > Advanced > Data Retention Policy** in prior versions or **System Console > Compliance > Data Retention Policy** in versions after 5.12.
 
 Frequently Asked Questions (FAQ)
 ---------------------------------
@@ -39,12 +39,12 @@ Replies that did not exceed the message duration are still displayed in the user
 What happens when a file is deleted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The file attachment is removed from the Mattermost user interface, and deleted from the FileInfo table and from your local disk or Amazon S3 service as specified in **System Console > Files > Storage**.
+The file attachment is removed from the Mattermost user interface, and deleted from the FileInfo table and from your local disk or Amazon S3 service as specified in **System Console > Files > Storage** in prior versions or **System Console > Environment > File Storage** in versions after 5.12.
 
 Why didn't an old file get deleted after running the deletion job?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-First, check the data deletion was successful in the deletion job table in **System Console > Advanced > Data Retention Policy**.
+First, check the data deletion was successful in the deletion job table in **System Console > Advanced > Data Retention Policy** in prior versions or **System Console > Compliance > Data Retention Policy** in versions after 5.12.
 
 Second, if the files were uploaded prior to Mattermost v4.2, you will need to delete the files manually from your local file storage or Amazon S3 storage:
 
@@ -56,7 +56,7 @@ Note that these files will still be removed from the Mattermost user interface i
 Why do I see ``Pending`` in the deletion job table with no details?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This usually means another data retention job is in progress. You can verify this in the deletion job table in **System Console > Advanced > Data Retention Policy**.
+This usually means another data retention job is in progress. You can verify this in the deletion job table in **System Console > Advanced > Data Retention Policy** in prior versions or **System Console > Compliance > Data Retention Policy** in versions after 5.12.
 
 If no jobs are in progress and the job has stayed pending for more than 2 minutes, then you may not have restarted your server after enabling the data retention policy. Restart your server and try again.
 
@@ -78,3 +78,11 @@ In v1.5 and later of the iOS and Android apps, messages and files are deleted fr
 2. When the user puts the app into the background.
 
 In v1.4 and earlier of the mobile apps, messages and files are not cleared from local storage when the data retention policy is enabled.
+
+How do I know if a data retention job fails?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost provides the status of each data retention job in **System Console** > **Compliance** > **Data Retention Policy**. Here, you can see if the job succeeded or failed, including the details of the error.
+
+Morever, any failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. Data retention job failures are identified with worker name ``EnterpriseDataRetention``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
+
