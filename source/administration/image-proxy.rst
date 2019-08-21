@@ -11,6 +11,8 @@ third-party servers.
 Proxy servers also provide a layer of caching, and can be made faster and more reliable than third-party sites. This caching 
 also helps preserve posts by protecting them from dead images.
 
+When enabled, the image proxy needs to be publicly accessible to the Mattermost client, which requests the image directly from the image proxy.
+
 You may alternatively use `atmos/camo <https://github.com/atmos/camo>`_ http proxy to route images through SSL:
 
 Local Image Proxy
@@ -38,7 +40,11 @@ configuration in **System Console > Files > Storage** in prior versions or **Sys
 
 .. image:: ../images/image-proxy.png
 
-The URL will be replaced with something similar to the following: https://image-proxy.mattermost.com/d7b4022717e8d015440cd70183b81196298b9453/687474703a2f2f692e726564642e69742f36636f687964636b6b363530312e6a7067 (See `https://github.com/atmos/camo <https://github.com/atmos/camo>`__).
+The URL will be replaced with something similar to the following (ee `https://github.com/atmos/camo <https://github.com/atmos/camo>`__ for details):
+
+.. code-block:: text
+
+  https://image-proxy.mattermost.com/d7b4022717e8d015440cd70183b81196298b9453/687474703a2f2f692e726564642e69742f36636f687964636b6b363530312e6a7067
   
 Next, if you post a message with an image, you will get a proxied image in your post. This will ensure that every image
 is downloaded via HTTPS.
