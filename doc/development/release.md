@@ -12,7 +12,7 @@ We will bump it for:
 - breaking changes in GitLab or in the charts (requiring manual interaction to your existing install to upgrade)
 - Major updates in the GitLab image. (the release of 12.0.0)
 
-### Minor Releases:
+### Minor Releases
 
 Minor releases will iterate with GitLab image minor releases, and at our own discretion for changes here in the chart.
 
@@ -31,7 +31,7 @@ We will bump it for:
 - Patch releases of the GitLab image
 - Any collection of changes that doesn't cause us to bump the minor or major versions.
 
-### Example release scenarios:
+### Example release scenarios
 
 | Chart Version | GitLab Version | Release Scenario |
 | ------------- | -------------- | ---------------- |
