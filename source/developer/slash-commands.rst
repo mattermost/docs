@@ -93,7 +93,8 @@ You can follow these general guidelines to set up a custom Mattermost slash comm
   Accept-Encoding: gzip
 
   channel_id=jux16pkewjrkfj3ehep1psxyxc&
-  channel_name=town-square&command=%2Ftest&
+  channel_name=town-square&
+  command=%2Ftest&
   response_url=http%3A%2F%2Flocalhost%3A8065%2Fhooks%2Fcommands%2Fxbrkb8p393gjpq5cawei7npije&
   team_domain=test&
   team_id=carya1qs77bemjup96ff538snh&
