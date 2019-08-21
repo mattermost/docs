@@ -40,7 +40,7 @@ configuration in **System Console > Files > Storage** in prior versions or **Sys
 
 .. image:: ../images/image-proxy.png
 
-The URL will be replaced with something similar to the following (ee `https://github.com/atmos/camo <https://github.com/atmos/camo>`__ for details):
+The URL will be replaced with something similar to the following (see `https://github.com/atmos/camo <https://github.com/atmos/camo>`__ for details):
 
 .. code-block:: text
 
