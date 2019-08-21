@@ -19,6 +19,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where screen readers read "Press space to activate" on **Add** button of Add Members to channel when space didn't trigger the button.
  - Fixed an issue where focus was not automatically set on text input box after selecting an emoji from the emoji picker.
  - Fixed an issue where rate limited posts failed to load threads.
+ - Fixed an issue where the expand/collapse button in images were underlined.
+ - Fixed an issue where clicking on a post would highlight it after returning to the tab/window.
  
 ### config.json
 
@@ -44,7 +46,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Long posts might overlap in compact view.
  - Joining a new channel with few posts might not take the user to the bottom of the channel.
  - Missing messages can be caused if network fails on API calls.
- - Expand/collapse in image icons are underlined.
  - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
  - Post and comment boxes are expanding too early on Firefox.
  - Modifying config files causes compliance exports to run twice.
