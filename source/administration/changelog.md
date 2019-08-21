@@ -51,7 +51,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Modifying config files causes compliance exports to run twice.
  - Using channel autocomplete while editing post causes current channel to be unread.
  - Scroll pop may occur with embedded Youtube links.
- - Clicking on a post will highlight it after returning to the tab/window.
  - Plugin translation files are not updated on web-client when plugins are upgraded.
  - Changes to Account Settings are being saved even when user does not clicks on Save button.
  - Custom-Attributes plugin might crash.
