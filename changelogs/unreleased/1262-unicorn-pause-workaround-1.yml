@@ -1,5 +1,0 @@
----
-title: Workaround for pausing deployments during Helm upgrade
-merge_request: 783
-author:
-type: fixed

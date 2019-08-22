@@ -1,5 +1,0 @@
----
-title: Fix issue with GCS cron backup getting stuck
-merge_request:
-author: 894
-type: fixed
