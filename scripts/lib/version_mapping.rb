@@ -29,7 +29,12 @@ class VersionMapping
     def write
       update_version_table
       $stdout.puts "Updating #{@filepath}"
-      File.write(@filepath, @document.join("\n"))
+      content = @document.join("\n")
+
+      # Append a newline for docs linter to be happy
+      content += "\n" unless content.end_with?("\n")
+
+      File.write(@filepath, content)
     end
 
     private
