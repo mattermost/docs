@@ -46,6 +46,7 @@ Once security fix release is ready to cut:
 2. Release Manager:
      - Update the changelog
      - Update the [version archive](https://docs.mattermost.com/administration/version-archive.html)
+     - Update the [ESR documentation](https://docs.mattermost.com/administration/extended-support-release.html#what-are-the-current-supported-esr-versions)
      - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
       - Test the download links before and after updating the page
     - Confirm that [mattermost-docker](https://github.com/mattermost/mattermost-docker/releases) has been updated to the latest version (contact the maintainer via direct message on community server if necessary)
