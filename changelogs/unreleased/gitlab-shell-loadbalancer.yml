@@ -1,5 +1,0 @@
----
-title: Add loadBalancerIP and loadBalancerSourceRanges to gitlab-shell chart
-merge_request: 889
-author: Taylor Daugherty
-type: added

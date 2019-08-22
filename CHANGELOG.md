@@ -2,6 +2,35 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.2.0
+
+### Fixed (4 changes, 1 of them is from the community)
+
+- Workaround for pausing deployments during Helm upgrade. !783
+- separate sidekiq hpa resource with dashes. !880
+- Chart pull policies syntax restored to previous and documented names. !904
+- Fix issue with GCS cron backup getting stuck. (894)
+
+### Changed (2 changes)
+
+- Use global values for kubectl image, deprecate chart-local settings. !864
+- Registry: add loadBalancerIP configuration, template clusterIP. !874
+
+### Added (5 changes, 3 of them are from the community)
+
+- Provide option to disable using prepared statements for postgres #1444. !872 (Mike Renie)
+- Enable registry to accept windows images with foreign layers. !888 (Semjon Bibow)
+- Add loadBalancerIP and loadBalancerSourceRanges to gitlab-shell chart. !889 (Taylor Daugherty)
+- Registry: Adds optional networkpolicy configuration. !891
+- Adds the ability to finely configure logging options for the Container Registry. !899
+
+### Other (3 changes)
+
+- Update operator to v0.6 for newer k8s support. !895
+- Document global.ingress.class & sample Traefik. !898
+- Update GitLab Version to 12.2.0.
+
+
 ## 2.1.7
 
 ### Other (1 change)
