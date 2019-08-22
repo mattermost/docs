@@ -539,9 +539,9 @@ When a new owner takes over a process or a project from a previous owner, there 
 
 Using the analogy of changing lanes while driving a vehicle and learning to do a "shoulder check" for information that is not visible from standard controls, we have a process for the new owner and previous owner to jointly review processes until the transfer is complete. 
 
-This process is similar to `Mini-boss, End-boss <https://docs.mattermost.com/process/training.html#id7>`__, except that the mini-boss is also the new owner of a process, and not only a reviewer. Shoulder checks should be requested by new owners to avoid "crashing":
+This process is similar to `Mini-boss, End-boss <https://docs.mattermost.com/process/training.html#mini-boss-end-boss>`__, except that the mini-boss is also the new owner of a process, and not only a reviewer. Shoulder checks should be requested by new owners to avoid "crashing":
 
- - Making changes to systems that break existing processes and may lose data and hurt the productivity of others downstream without notice and without a replacement system in place (behavior known as `"Dead Tarzan" <https://docs.mattermost.com/process/training.html#id9>`__). 
+ - Making changes to systems that break existing processes and may lose data and hurt the productivity of others downstream without notice and without a replacement system in place (behavior known as `"Dead Tarzan" <https://docs.mattermost.com/process/training.html#dead-tarzan>`__). 
  - Repeatedly investing in mis-prioritized projects due to a misunderstanding of requirements from project stakeholders and insufficient confirmation of intended outcomes. 
 
 Even when not crashing, as part of our `Self Awareness value <https://docs.mattermost.com/process/handbook.html#values>`__, top team members will constantly be seeking feedback and review from people around the company. 
