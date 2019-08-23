@@ -21,6 +21,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where rate limited posts failed to load threads.
  - Fixed an issue where the expand/collapse button in images were underlined.
  - Fixed an issue where clicking on a post would highlight it after returning to the tab/window.
+ - Fixed an issue where at-sign was missing in front of usernames in push notifications.
+ - Fixed an issue where installing a plugin via URL failed if the download took longer then 30 seconds.
+ - Fixed an issue where plugins did not get disabled when removing them.
+ - Fixed an issue where the markdown helper text was missing on Edit Channel Header modal.
+ - Fixed an issue where channel changes were not updated for other users until refresh.
+ - Fixed an issue with stuttery dropdowns in Safari.
  
 ### config.json
 
@@ -41,7 +47,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Google User API Endpoint shows outdated helper text.
  - Making a post in an empty channel sometimes causes the channel to display a loading spinner.
  - Deleting the last post in a channel causes the channel to only display a loading spinner.
- - Markdown helper text is missing on Edit Channel Header modal.
  - User count in a channel does not update until after refresh if a user automatically joins a channel.
  - Long posts might overlap in compact view.
  - Joining a new channel with few posts might not take the user to the bottom of the channel.
