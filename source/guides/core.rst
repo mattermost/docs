@@ -55,8 +55,8 @@ Product Management Handbook
    :maxdepth: 2
    :glob:
 
-   /process/pm-faq*
    /process/product-manager-hiring*
+   /process/pm-faq*
 
 Core Developer Handbook
 -----------------------
