@@ -254,13 +254,13 @@ These are our product training sessions for the Sales and Customer Success teams
 
 Attendees:
 
-- All Sales, Customer Success and QA staff
+- All Sales (including AEs and SAs), Customer Success (including CSMs and Support), and QA staff
 - Chair: Jason Blais
 - Co-Chairs: Product training session leads
 
 Time:
 
-- Every 3 weeks on Wednesdays from 9:00am to 10:00am Palo Alto time.
+- Every 3 weeks on Wednesdays from 9:00am to 10:30am Palo Alto time.
 
 Procedure:
 
@@ -293,38 +293,45 @@ Procedure:
 
 3. (Chair) Starts Zoom recording at 9:00am Palo Alto time.
 
-4. (Chair and Co-Chairs) Runs through the agenda, which comprises one or more of the following items:
+4. (Chair and Co-Chairs) Runs through the agenda, which typically comprises of the following items:
 
 - **Introductions**
 
-- **Functionality / Benefits**
+- (15 minutes) **Business Use Case**
+
+  - Audience: Everyone, but primarily AEs, CSMs
+  - What does it do, why do people use it, who uses it
+  - Customer use case examples and success stories
+  - Roadmap (status and committed timelines, if any)
+  - Q&A
+
+- (30 minutes) **Live Product Demo**
 
   - Audience: Everyone
-  - What does it do, why do people use it, who uses it (customer segment) 
-  - Customer use case examples (success stories) 
+  - End user demo
+  - Admin configuration demo
   - Known customer issues and workarounds
-  - Roadmap (status and committed timelines, if any) 
-  - Q&A 
+  - Q&A
 
-- **Technical Training**
+- (15 minutes) **Technical Overview**
 
-  - Audience: Primarily support, SAs and QA
-  - Technical understanding of how the feature works and how it was built (to help with better troubleshooting)
+  - Audience: Primarily CSMs, SAs, Support, QA
   - Technical flow for the feature, data structure, etc.
   - What to ask for when troubleshooting 
   - Q&A
 
-- **Options for Testing**
+- (30 minutes) **Technical Deep Dive** 
 
-  - Audience: Primarily support and QA
-  - Testing environments
+  - Audience: Primarily SAs, Support, QA
+  - Deeper technical review of how the feature works and how it was built
+  - Working session on specific customer issues, retros on support tickets, etc.
   - Q&A
 
 - **Feedback**: At end of meeting, remind to share feedback via survey.
 
 **After meeting:**
 
-1. (Chair) Shares link to feedback survey. `See example <https://community.mattermost.com/core/pl/7w5w5aou4jfkxm95g6fwkcqxry>`_.
+1. (Chair) Shares link to feedback survey, tailored for each training session to measure its effectiveness. `See example <https://community.mattermost.com/core/pl/7w5w5aou4jfkxm95g6fwkcqxry>`_.
 
 2. (Chair) Uploads meeting recording and slides to `Google Drive folder <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29>`_, then share in channel. `See example <https://community.mattermost.com/core/pl/dkeh34y5pt8ybrb5mmrfbyy1ee>`_.
 
@@ -333,6 +340,8 @@ Procedure:
 4. (Chair) Makes adjustments to meeting process based on feedback and discussion with co-chairs. Schedules kick-off call for the next training session.
 
 5. (Co-Chairs) Updates product documentation or other resources based on the training session.
+
+6. (Chair & Co-Chairs) Shares slides and meeting recording with Marketing team for potential GTM collateral.
 
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
