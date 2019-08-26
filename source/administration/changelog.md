@@ -27,6 +27,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the markdown helper text was missing on Edit Channel Header modal.
  - Fixed an issue where channel changes were not updated for other users until refresh.
  - Fixed an issue with stuttery dropdowns in Safari.
+ - Fixed an issue where pagination broke when adding users to a team.
  
 ### config.json
 
@@ -59,7 +60,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Plugin translation files are not updated on web-client when plugins are upgraded.
  - Changes to Account Settings are being saved even when user does not clicks on Save button.
  - Custom-Attributes plugin might crash.
- - Pagination breaks when adding users to a team.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
