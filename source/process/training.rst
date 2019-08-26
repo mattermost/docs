@@ -324,7 +324,7 @@ Procedure:
 
   - Audience: Primarily SAs, Support, QA
   - Deeper technical review of how the feature works and how it was built
-  - Working session on specific customer issues, retros on support tickets, etc
+  - Working session on specific customer issues, retros on support tickets, etc.
   - Q&A
 
 - **Feedback**: At end of meeting, remind to share feedback via survey.
