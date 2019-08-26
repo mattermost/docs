@@ -67,6 +67,7 @@ Documentation Style Guide
    :glob:
    
    /process/documentation-guidelines*
+   /process/documentation-UItext-guidelines*
 
 Joining the Team 
 -------------------------
