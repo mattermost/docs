@@ -9,7 +9,7 @@ and `defaultbackend` from the [Google Container Registry](https://gcr.io/google_
 
 ## Configuring NGINX
 
-See [nginx chart documentation](https://gitlab.com/charts/gitlab/blob/master/charts/nginx/index.md)
+See [nginx chart documentation](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/nginx/index.md)
 for configuration details.
 
 ### Global Settings

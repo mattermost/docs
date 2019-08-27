@@ -4,9 +4,9 @@ The `registry` sub-chart provides the Registry component to a complete cloud-nat
 GitLab deployment on Kubernetes. This sub-chart makes use of the upstream
 [registry](https://hub.docker.com/_/registry/) [container](https://github.com/docker/distribution-library-image)
 containing [Docker Distribution](https://github.com/docker/distribution). This chart
-is composed of 3 primary parts: [Service](https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/service.yaml),
-[Deployment](https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/deployment.yaml),
-and [ConfigMap](https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/configmap.yaml).
+is composed of 3 primary parts: [Service](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/registry/templates/service.yaml),
+[Deployment](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/registry/templates/deployment.yaml),
+and [ConfigMap](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/registry/templates/configmap.yaml).
 
 All configuration is handled according to the official [Registry configuration documentation](https://docs.docker.com/registry/configuration/)
 using `/etc/docker/registry/config.yml` variables provided to the `Deployment` populated
@@ -178,7 +178,7 @@ By default, Registry is enabled out of the box. Should you wish to disable it, s
 ## Configuring the `image`
 
 This section details the settings for the container image used by this sub-chart's
-[Deployment](https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/deployment.yaml).
+[Deployment](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/registry/templates/deployment.yaml).
 You can change the included version of the Registry and `pullPolicy`.
 
 Default settings:
@@ -188,8 +188,8 @@ Default settings:
 
 ## Configuring the `service`
 
-This section controls the name and type of the [Service](https://gitlab.com/charts/gitlab/blob/master/charts/registry/templates/service.yaml).
-These settings will be populated by [values.yaml](https://gitlab.com/charts/gitlab/blob/master/charts/registry/values.yaml).
+This section controls the name and type of the [Service](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/registry/templates/service.yaml).
+These settings will be populated by [values.yaml](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/registry/values.yaml).
 
 By default, the Service is configured as:
 
@@ -377,10 +377,10 @@ Please refer to that documentation for more details.
 
 Examples for [AWS s3](https://docs.docker.com/registry/storage-drivers/s3) and
 [Google GCS](https://docs.docker.com/registry/storage-drivers/gcs) drivers can be
-found in [examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage):
+found in [examples/objectstorage](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage):
 
-- [registry.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.s3.yaml)
-- [registry.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/registry.gcs.yaml)
+- [registry.s3.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/registry.s3.yaml)
+- [registry.gcs.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/registry.gcs.yaml)
 
 Place the *contents* of the `storage` block into the secret, and provide the following
 as items to the `storage` map:

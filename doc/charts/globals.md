@@ -244,7 +244,7 @@ NOTE: **Note:** Manual scaling of this item is required, by adding or removing e
   will persist, and the data on them can be accessed when the set is scaled up again
   by re-adding a node to the `names` list.
 
-A sample [configuration of multiple internal nodes](https://gitlab.com/charts/gitlab/blob/master/examples/gitaly/values-multiple-internal.yaml)
+A sample [configuration of multiple internal nodes](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/gitaly/values-multiple-internal.yaml)
 can be found in the examples folder.
 
 #### External
@@ -258,7 +258,7 @@ Each item of this list has 3 keys:
 
 NOTE: **Note:** You must have an entry with `name: default`.
 
-A sample [configuration of multiple external nodes](https://gitlab.com/charts/gitlab/blob/master/examples/gitaly/values-multiple-external.yaml)
+A sample [configuration of multiple external nodes](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/gitaly/values-multiple-external.yaml)
 can be found in the examples folder.
 
 #### Mixed
@@ -268,7 +268,7 @@ It is possible to use both internal and external Gitaly nodes, but be aware that
 - There must always be a node named `default`, which Internal provides by default.
 - External nodes will be populated first, then Internal.
 
-A sample [configuration of mixed internal and external nodes](https://gitlab.com/charts/gitlab/blob/master/examples/gitaly/values-multiple-mixed.yaml)
+A sample [configuration of mixed internal and external nodes](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/gitaly/values-multiple-mixed.yaml)
 can be found in the examples folder.
 
 ### authToken
@@ -467,10 +467,10 @@ documentation. This matches to [Fog](https://github.com/fog), and is different b
 provider modules.
 
 Examples for [AWS](https://fog.io/storage/#using-amazon-s3-and-fog) and [Google](https://fog.io/storage/#google-cloud-storage)
-providers can be found in [examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage).
+providers can be found in [examples/objectstorage](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage).
 
-- [rails.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.s3.yaml)
-- [rails.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.gcs.yaml)
+- [rails.s3.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/rails.s3.yaml)
+- [rails.gcs.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/rails.gcs.yaml)
 
 Once a YAML file containing the contents of the `connection` has been created, use
 this file to create the secret in Kubernetes.
@@ -695,10 +695,10 @@ This property has two sub-keys: `secret` and `key`:
 - `key` is the name of the key in the secret which houses the YAML block. Defaults to `connection`.
 
 Examples for [AWS (s3)](https://fog.io/storage/#using-amazon-s3-and-fog) and [Google (GCS)](https://fog.io/storage/#google-cloud-storage)
-providers can be found in [examples/objectstorage](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage):
+providers can be found in [examples/objectstorage](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage):
 
-- [rails.s3.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.s3.yaml)
-- [rails.gcs.yaml](https://gitlab.com/charts/gitlab/tree/master/examples/objectstorage/rails.gcs.yaml)
+- [rails.s3.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/rails.s3.yaml)
+- [rails.gcs.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/rails.gcs.yaml)
 
 Once a YAML file containing the contents of the `connection` has been created, create
 the secret in Kubernetes:

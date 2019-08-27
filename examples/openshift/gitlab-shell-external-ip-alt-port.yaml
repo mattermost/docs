@@ -8,7 +8,7 @@
 # the external domain name.
 #
 # For more information see: 
-#   https://gitlab.com/charts/gitlab/blob/master/doc/installation/cloud/openshift.md#next-steps
+#   https://gitlab.com/gitlab-org/charts/gitlab/blob/master/doc/installation/cloud/openshift.md#next-steps
 
 gitlab:
   gitlab-shell:

@@ -7,7 +7,7 @@ keywords:
 home: https://about.gitlab.com/
 icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.svg
 sources:
-- https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/migrations
+- https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/migrations
 - https://gitlab.com/gitlab-org/build/CNG/tree/master/gitlab-rails
 maintainers:
 - name: GitLab Inc.

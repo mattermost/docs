@@ -9,7 +9,7 @@ global:
     port: 2525
     user_name: myuser
     password:
-      secret: smtp-password # https://gitlab.com/charts/gitlab/blob/master/doc/installation/secrets.md#smtp-password
+      secret: smtp-password # https://gitlab.com/gitlab-org/charts/gitlab/blob/master/doc/installation/secrets.md#smtp-password
       key: password
   email:
     from: mycompany@example.com

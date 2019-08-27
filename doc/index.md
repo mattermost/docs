@@ -17,21 +17,21 @@ The default deployment includes:
 - An auto-scaling, unprivileged [GitLab Runner](https://docs.gitlab.com/runner/) using the Kubernetes executor
 - Automatically provisioned SSL via [Let's Encrypt](https://letsencrypt.org/).
 
-There are also some [example values.yaml files](https://gitlab.com/charts/gitlab/tree/master/examples).
+There are also some [example values.yaml files](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples).
 
 ## Limitations
 
 Some features of GitLab are not currently available using the Helm chart:
 
-- [GitLab Pages](https://gitlab.com/charts/gitlab/issues/37)
-- [GitLab Geo](https://gitlab.com/charts/gitlab/issues/8)
-- [No in-cluster HA database](https://gitlab.com/charts/gitlab/issues/48)
-- [Smartcard authentication](https://gitlab.com/charts/gitlab/issues/988)
+- [GitLab Pages](https://gitlab.com/gitlab-org/charts/gitlab/issues/37)
+- [GitLab Geo](https://gitlab.com/gitlab-org/charts/gitlab/issues/8)
+- [No in-cluster HA database](https://gitlab.com/gitlab-org/charts/gitlab/issues/48)
+- [Smartcard authentication](https://gitlab.com/gitlab-org/charts/gitlab/issues/988)
 
 Database limitations:
 
 - MySQL will not be supported, as support is [deprecated within GitLab](https://docs.gitlab.com/omnibus/settings/database.html#using-a-mysql-database-management-server-enterprise-edition-only)
-- Support is only available for Postgres 9.6. Backup and restore [will not work with other versions](https://gitlab.com/charts/gitlab/issues/852).
+- Support is only available for Postgres 9.6. Backup and restore [will not work with other versions](https://gitlab.com/gitlab-org/charts/gitlab/issues/852).
 
 ## GitLab version mappings
 
@@ -54,7 +54,7 @@ For more information, visit the [version mappings docs](installation/version_map
 
 The main GitLab chart is based on a variety of other charts. Each sub-chart is
 documented individually, and laid in a structure that matches the
-[charts](https://gitlab.com/charts/gitlab/tree/master/charts) directory structure.
+[charts](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts) directory structure.
 
 Non-GitLab components are packaged and documented on the top level. GitLab
 component services are documented under the [GitLab](charts/gitlab/index.md) chart:

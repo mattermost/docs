@@ -1,7 +1,7 @@
 # Upgrade Guide
 
 Before upgrading your GitLab installation, you need to check the
-[changelog](https://gitlab.com/charts/gitlab/blob/master/CHANGELOG.md)
+[changelog](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/CHANGELOG.md)
 corresponding to the specific release you want to upgrade to and look for any
 [release notes](../releases/index.md) that might pertain to the new GitLab chart
 version.
@@ -27,7 +27,7 @@ Mappings between chart versioning and GitLab versioning can be found [here](../i
 
 The following are the steps to upgrade GitLab to a newer version:
 
-1. Check the [change log](https://gitlab.com/charts/gitlab/blob/master/CHANGELOG.md) for the specific version you would like to upgrade to
+1. Check the [change log](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/CHANGELOG.md) for the specific version you would like to upgrade to
 1. Go through [deployment documentation](./deployment.md) step by step
 1. Extract your previous `--set` arguments with
 

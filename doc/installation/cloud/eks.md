@@ -10,7 +10,7 @@ Alternatively, a cluster can be created manually as well.
 
 ### Scripted cluster creation
 
-A [bootstrap script](https://gitlab.com/charts/gitlab/blob/master/scripts/eks_bootstrap_script)
+A [bootstrap script](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/scripts/eks_bootstrap_script)
 has been created to automate much of the setup process for users on EKS.
 
 The script will:
@@ -96,7 +96,7 @@ and then mapping your desired DNS name to the created ELB using a CNAME record.
 NOTE: **Note:**
 For environments where internal load balancers are required,
 [Amazon's Elastic Load Balancers](https://docs.aws.amazon.com/eks/latest/userguide/load-balancing.html)
-require [special annotations](https://gitlab.com/charts/gitlab/blob/master/examples/eks_loadbalancer_annotations.yml).
+require [special annotations](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/eks_loadbalancer_annotations.yml).
 
 ## Next Steps
 

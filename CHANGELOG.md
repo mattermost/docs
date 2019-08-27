@@ -1103,4 +1103,4 @@ entry.
 
 ## 2018-03-22 Alpha
 
-- See [alpha documentation](https://gitlab.com/charts/helm.gitlab.io/blob/master/doc/architecture/alpha.md)
+- See [alpha documentation](https://docs.gitlab.com/charts/releases/alpha.html)

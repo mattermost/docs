@@ -9,7 +9,7 @@ keywords:
 home: https://about.gitlab.com/
 icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.svg
 sources:
-- https://gitlab.com/charts/gitlab
+- https://gitlab.com/gitlab-org/charts/gitlab
 maintainers:
 - name: GitLab Inc.
   email: support@gitlab.com

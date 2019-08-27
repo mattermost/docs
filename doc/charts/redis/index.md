@@ -2,20 +2,20 @@
 
 The `redis` sub-chart provides the Redis key-value store component to a complete cloud-native
 GitLab deployment on Kubernetes. This sub-chart makes use of the upstream [redis](https://hub.docker.com/_/redis/)
-container, and is composed of 3 primary parts: [Service](https://gitlab.com/charts/gitlab/blob/master/charts/redis/templates/service.yaml),
-[Deployment](https://gitlab.com/charts/gitlab/blob/master/charts/redis/templates/deployment.yaml),
-and [ConfigMap](https://gitlab.com/charts/gitlab/blob/master/charts/redis/templates/configmap.yaml).
+container, and is composed of 3 primary parts: [Service](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/redis/templates/service.yaml),
+[Deployment](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/redis/templates/deployment.yaml),
+and [ConfigMap](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/redis/templates/configmap.yaml).
 
 All configuration is handled according to the official [Redis configuration documentation](https://redis.io/topics/config),
 using `/etc/redis/redis.conf` provided to the Deployment, populated from the ConfigMap.
 The `ConfigMap` templates [redis.conf](http://download.redis.io/redis-stable/redis.conf)
-and [Secrets](https://gitlab.com/charts/gitlab/blob/master/doc/installation/secrets.md#redis-password)
+and [Secrets](../../installation/secrets.md#redis-password)
 are integrated using an `initContainer` that executes the `configure` script contained
 within the `ConfigMap`.
 
 ## Design Choices
 
-It [was decided](https://gitlab.com/charts/gitlab/issues/112) that this chart will
+It [was decided](https://gitlab.com/gitlab-org/charts/gitlab/issues/112) that this chart will
 have persistence based on [RDB](https://redis.io/topics/persistence) saved to a
 [PersistentVolume](https://kubernetes.io/docs/concepts/storage/persistent-volumes/),
 if provided with a [PersistentVolumeClaim](https://kubernetes.io/docs/concepts/storage/volumes/#persistentvolumeclaim).
@@ -126,7 +126,7 @@ By default, Redis is disabled out of the box. Should you wish to enable it, set 
 ## Configuring the `image`
 
 This section explains the settings for the container image used by this sub-chart's
-[Deployment](https://gitlab.com/charts/gitlab/blob/master/charts/redis/templates/deployment.yaml).
+[Deployment](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/redis/templates/deployment.yaml).
 You can change the included version of Redis and `pullPolicy`.
 
 Default settings:
@@ -136,8 +136,8 @@ Default settings:
 
 ## Configuring the `service`
 
-This section controls the name and type of the [Service](https://gitlab.com/charts/gitlab/blob/master/charts/redis/templates/service.yaml).
-These settings will be populated by the [values.yaml](https://gitlab.com/charts/gitlab/blob/master/charts/redis/values.yaml).
+This section controls the name and type of the [Service](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/redis/templates/service.yaml).
+These settings will be populated by the [values.yaml](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/redis/values.yaml).
 
 By default, the Service is configured as:
 

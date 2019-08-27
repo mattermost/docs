@@ -3,7 +3,7 @@ Forked from https://github.com/kubernetes/charts/tree/master/stable/nginx-ingres
 * Ability to use a templated tcp configmap name from another chart
   * tcp-configmap.yaml: `.metadata.name` is a template `nginx-ingress.tcp-configmap`
   * controller-deployment.yaml: `.spec.template.spec.containers[0].args` uses `nginx-ingress.tcp-configmap` template for configmap name
-  * gitlab chart overrides `nginx-ingress.tcp-configmap` so that gitlab/charts/gitlab-shell can configure its tcp service
+  * gitlab chart overrides `nginx-ingress.tcp-configmap` so that gitlab/gitlab-org/charts/gitlab-shell can configure its tcp service
 * Ability to use a templated ingress name based on the release name
   * controller-deployment.yaml: `.spec.template.spec.containers[0].args` uses `nginx-ingress.controller.ingress-class`
   * role.yaml: rule for editing leader configmap uses `nginx-ingress.controller.ingress-class`

@@ -1,5 +1,5 @@
 # This is an example values.yaml. It shows how to configure external object storage instead of the in-cluster minio provided by default
-# https://gitlab.com/charts/gitlab/tree/master/doc/advanced/external-object-storage
+# https://gitlab.com/gitlab-org/charts/gitlab/tree/master/doc/advanced/external-object-storage
 global:
   minio:
     enabled: false
@@ -8,7 +8,7 @@ global:
   appConfig:
     lfs:
       bucket: gitlab-lfs-storage
-      connection: # https://gitlab.com/charts/gitlab/blob/master/doc/charts/globals.md#connection
+      connection: # https://gitlab.com/gitlab-org/charts/gitlab/blob/master/doc/charts/globals.md#connection
         secret: objectstore-lfs
         key: connection
     artifacts:

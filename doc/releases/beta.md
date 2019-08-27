@@ -18,7 +18,7 @@ In order to maximize our testing opportunity in beta, there will be additional r
 
 More information on how we are versioning the chart can be found in the [release documentation](../development/release.md).
 
-Along with the issues and merge requests in this repo, a [changelog](https://gitlab.com/charts/gitlab/blob/master/CHANGELOG.md) is available to more easily follow along with updates.
+Along with the issues and merge requests in this repo, a [changelog](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/CHANGELOG.md) is available to more easily follow along with updates.
 
 ## Kubernetes deployment support
 
@@ -29,38 +29,38 @@ We are currently using Kubernetes version 1.8.12 in our automated tests, and 1.9
 
 ## Technical support during beta
 
-Before opening an issue please review the [known issues and limitations](#known-issues-and-limitations), and [search](https://gitlab.com/charts/gitlab/issues) to see if a similar issue already exists.
+Before opening an issue please review the [known issues and limitations](#known-issues-and-limitations), and [search](https://gitlab.com/gitlab-org/charts/gitlab/issues) to see if a similar issue already exists.
 
-We greatly appreciate the wider testing of the community during beta, and encourage [detailed issues to be reported](https://gitlab.com/charts/gitlab/issues/new) so we can address them.
+We greatly appreciate the wider testing of the community during beta, and encourage [detailed issues to be reported](https://gitlab.com/gitlab-org/charts/gitlab/issues/new) so we can address them.
 
-We welcome any improvements contributed in the form of [Merge Requests](https://gitlab.com/charts/gitlab/merge_requests).
+We welcome any improvements contributed in the form of [Merge Requests](https://gitlab.com/gitlab-org/charts/gitlab/merge_requests).
 
 ## Known issues and limitations
 
-The chart and containers are a work in progress, and not all features are fully functional. Below is a list of the known issues and limitations, although it may not be exhaustive. We recommend also reviewing the [open issues](https://gitlab.com/charts/gitlab/issues).
+The chart and containers are a work in progress, and not all features are fully functional. Below is a list of the known issues and limitations, although it may not be exhaustive. We recommend also reviewing the [open issues](https://gitlab.com/gitlab-org/charts/gitlab/issues).
 
 Helm Chart Issues/Limitations:
 
-- No in-cluster HA database: <https://gitlab.com/charts/gitlab/issues/48>
-- No GitLab Pages support: <https://gitlab.com/charts/gitlab/issues/37>
-- No GitLab Geo support: <https://gitlab.com/charts/gitlab/issues/8>
-- No support for incoming email: <https://gitlab.com/charts/gitlab/issues/235>
-- Does not support running multiple gitaly servers: <https://gitlab.com/charts/gitlab/issues/432>
+- No in-cluster HA database: <https://gitlab.com/gitlab-org/charts/gitlab/issues/48>
+- No GitLab Pages support: <https://gitlab.com/gitlab-org/charts/gitlab/issues/37>
+- No GitLab Geo support: <https://gitlab.com/gitlab-org/charts/gitlab/issues/8>
+- No support for incoming email: <https://gitlab.com/gitlab-org/charts/gitlab/issues/235>
+- Does not support running multiple gitaly servers: <https://gitlab.com/gitlab-org/charts/gitlab/issues/432>
 
 Limitations planned to be fixed during beta:
 
-- Cannot create a project from a template: <https://gitlab.com/charts/gitlab/issues/348>
-- Cannot create a new branch from the UI: <https://gitlab.com/charts/gitlab/issues/572>
+- Cannot create a project from a template: <https://gitlab.com/gitlab-org/charts/gitlab/issues/348>
+- Cannot create a new branch from the UI: <https://gitlab.com/gitlab-org/charts/gitlab/issues/572>
 - GitLab project based import/~~export~~:
-  - <https://gitlab.com/charts/gitlab/issues/428>
+  - <https://gitlab.com/gitlab-org/charts/gitlab/issues/428>
 - ~~Backup procedure does not include repositories~~:
-  - <https://gitlab.com/charts/gitlab/issues/503> (fixed in `0.3.0`)
+  - <https://gitlab.com/gitlab-org/charts/gitlab/issues/503> (fixed in `0.3.0`)
 
 Features that are currently out of scope:
 
-- Support for MySQL: <https://gitlab.com/charts/gitlab/issues/250>
-- Mattermost: <https://gitlab.com/charts/gitlab/issues/251>
-- Relative URL as the GitLab Endpoint: <https://gitlab.com/charts/gitlab/issues/406>
+- Support for MySQL: <https://gitlab.com/gitlab-org/charts/gitlab/issues/250>
+- Mattermost: <https://gitlab.com/gitlab-org/charts/gitlab/issues/251>
+- Relative URL as the GitLab Endpoint: <https://gitlab.com/gitlab-org/charts/gitlab/issues/406>
 
 ## Path to general availability
 

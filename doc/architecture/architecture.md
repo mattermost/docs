@@ -79,14 +79,14 @@ The gitlab chart is made of multiple subcharts. These charts provide individual 
 
 Subcharts included are :
 
-- [sidekiq](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/sidekiq)
-- [unicorn](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/unicorn)
-- [gitlab-shell](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/gitlab-shell)
-- [gitaly](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/gitaly)
-- [minio](https://gitlab.com/charts/gitlab/tree/master/charts/minio)
-- [redis](https://gitlab.com/charts/gitlab/tree/master/charts/redis)
-- [nginx](https://gitlab.com/charts/gitlab/tree/master/charts/nginx)
-- [registry](https://gitlab.com/charts/gitlab/tree/master/charts/registry)
+- [sidekiq](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/sidekiq)
+- [unicorn](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/unicorn)
+- [gitlab-shell](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/gitlab-shell)
+- [gitaly](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/gitaly)
+- [minio](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/minio)
+- [redis](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/redis)
+- [nginx](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/nginx)
+- [registry](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/registry)
 
 ### Components list
 

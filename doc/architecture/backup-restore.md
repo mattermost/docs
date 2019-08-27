@@ -4,7 +4,7 @@ This document explains the technical implementation of the backup and restore in
 
 ## Task runner pod
 
-The [task runner chart](https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/task-runner) deploys a pod into the cluster. This pod will act as an entry point for interaction with other containers in the cluster.
+The [task runner chart](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/task-runner) deploys a pod into the cluster. This pod will act as an entry point for interaction with other containers in the cluster.
 
 Using this pod user can run commands using `kubectl exec -it <pod name> -- <arbitrary command>`
 

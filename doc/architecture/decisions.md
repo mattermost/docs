@@ -13,7 +13,7 @@ designed to detect and warn the user that their configuration will not work.
 
 This replicates the behavior of deprecations, but is specific to ensuring functional configuration.
 
-Introduced in [!757 checkConfig: add methods to test for known errors](https://gitlab.com/charts/gitlab/merge_requests/757)
+Introduced in [!757 checkConfig: add methods to test for known errors](https://gitlab.com/gitlab-org/charts/gitlab/merge_requests/757)
 
 ## Breaking changes via deprecation
 
@@ -34,7 +34,7 @@ All deprecations must be addressed in order for a successful deployment to occur
 the user would prefer to be informed of a breaking change over experiencing unexpected
 behavior or complete failure that requires debugging.
 
-Introduced in [!396 Deprecations: implement buffered list of deprecations](https://gitlab.com/charts/gitlab/merge_requests/396)
+Introduced in [!396 Deprecations: implement buffered list of deprecations](https://gitlab.com/gitlab-org/charts/gitlab/merge_requests/396)
 
 ## Preference of Secrets in initContainer over Environment
 
@@ -60,8 +60,8 @@ via [initContainers][].
 
 Related issues:
 
-- [#90](https://gitlab.com/charts/gitlab/issues/90)
-- [#114](https://gitlab.com/charts/gitlab/issues/114)
+- [#90](https://gitlab.com/gitlab-org/charts/gitlab/issues/90)
+- [#114](https://gitlab.com/gitlab-org/charts/gitlab/issues/114)
 
 [dind]: https://hub.docker.com/r/gitlab/dind/
 [devops-post]: https://about.gitlab.com/2017/10/11/from-dev-to-devops/
@@ -77,7 +77,7 @@ This decision simplifies both the use and maintenance of the repository as a who
 
 Related issue:
 
-- [#352](https://gitlab.com/charts/gitlab/issues/352)
+- [#352](https://gitlab.com/gitlab-org/charts/gitlab/issues/352)
 
 ## Template partials for `gitlab/*` should be global whenever possible
 
@@ -96,7 +96,7 @@ The benefits of this are straight-forward:
 
 Related issue:
 
-- [#352](https://gitlab.com/charts/gitlab/issues/352)
+- [#352](https://gitlab.com/gitlab-org/charts/gitlab/issues/352)
 
 [helm-dev-doc]: https://docs.helm.sh/chart_template_guide/#declaring-and-using-templates-with-define-and-template
 

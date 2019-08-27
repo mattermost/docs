@@ -202,10 +202,10 @@ are set by default to be adequate for a small production deployment. This is int
 and 30gb of RAM. If you are trying to deploy a non-production instance, you can reduce the defaults in order to fit into
 a smaller cluster.
 
-The [minimal GKE example values file](https://gitlab.com/charts/gitlab/tree/master/examples/values-gke-minimum.yaml) provides an example of tuning the resources
+The [minimal GKE example values file](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/values-gke-minimum.yaml) provides an example of tuning the resources
 to fit within a 3vCPU 12gb cluster.
 
-The [minimal minikube example values file](https://gitlab.com/charts/gitlab/tree/master/examples/values-minikube-minimum.yaml) provides an example of tuning the
+The [minimal minikube example values file](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/values-minikube-minimum.yaml) provides an example of tuning the
 resources to fit within a 2vCPU, 4gb minikube instance.
 
 ## Deploy using helm

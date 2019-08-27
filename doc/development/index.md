@@ -1,6 +1,6 @@
 # Development styleguide
 
-Our contribution policies can be found in [CONTRIBUTING.md](https://gitlab.com/charts/gitlab/tree/master/CONTRIBUTING.md)
+Our contribution policies can be found in [CONTRIBUTING.md](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/CONTRIBUTING.md)
 
 ## Versioning and Release
 

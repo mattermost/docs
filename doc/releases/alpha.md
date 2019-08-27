@@ -18,7 +18,7 @@ While much of the underlying work has been completed, there are a few changes th
 
 In order to maximize our testing opportunity in alpha, the chart and containers will be rebuilt off `master` as changes are merged. This means that fixes and improvements will be available immediately, instead of waiting for a specific release.
 
-Along with the issues and merge requests in this repo, a [changelog](https://gitlab.com/charts/gitlab/issues/289) is being made available to more easily follow along with updates throughout the alpha period.
+Along with the issues and merge requests in this repo, a [changelog](https://gitlab.com/gitlab-org/charts/gitlab/issues/289) is being made available to more easily follow along with updates throughout the alpha period.
 
 ## Kubernetes deployment support
 
@@ -37,38 +37,38 @@ We will be adding support for GitLab Community Edition before making these chart
 
 Technical support is limited during this alpha phase. Due to the in-development nature, standard GitLab support will not be able to assist.
 
-Before opening an issue please review the [known issues and limitations](#known-issues-and-limitations), and [search](https://gitlab.com/charts/gitlab/issues) to see if a similar issue already exists.
+Before opening an issue please review the [known issues and limitations](#known-issues-and-limitations), and [search](https://gitlab.com/gitlab-org/charts/gitlab/issues) to see if a similar issue already exists.
 
-We greatly appreciate the wider testing of the community during alpha, and encourage [detailed issues to be reported](https://gitlab.com/charts/gitlab/issues/new) so we can address them. However we might not be able to provide support for every user request.
+We greatly appreciate the wider testing of the community during alpha, and encourage [detailed issues to be reported](https://gitlab.com/gitlab-org/charts/gitlab/issues/new) so we can address them. However we might not be able to provide support for every user request.
 
 We also reserve the right to close issues without providing a reason. Issues can accumulate quickly and we need to spend more time moving the charts forward than doing issue triage.
 
-We welcome any improvements contributed in the form of [Merge Requests](https://gitlab.com/charts/gitlab/merge_requests).
+We welcome any improvements contributed in the form of [Merge Requests](https://gitlab.com/gitlab-org/charts/gitlab/merge_requests).
 
 ## Known issues and limitations
 
-The chart and containers are a work in progress, and not all features are fully functional. Below is a list of the known issues and limitations, although it may not be exhaustive. We recommend also reviewing the [open issues](https://gitlab.com/charts/gitlab/issues).
+The chart and containers are a work in progress, and not all features are fully functional. Below is a list of the known issues and limitations, although it may not be exhaustive. We recommend also reviewing the [open issues](https://gitlab.com/gitlab-org/charts/gitlab/issues).
 
 Helm Chart Issues/Limitations:
 
-- No in-cluster HA database: <https://gitlab.com/charts/gitlab/issues/48>
-- No backup/restore procedure: <https://gitlab.com/charts/gitlab/issues/28>
-- No update procedures, or support for no-downtime upgrades: <https://gitlab.com/charts/gitlab/issues/238>
-- No support for changing/migrating your storage capacity/options after installation: <https://gitlab.com/charts/gitlab/issues/233>
-- No GitLab Pages support: <https://gitlab.com/charts/gitlab/issues/37>
-- No Monitoring support: <https://gitlab.com/charts/gitlab/issues/29>
-- No support for incoming email: <https://gitlab.com/charts/gitlab/issues/235>
-- Limited support for customizing GitLab options: <https://gitlab.com/charts/gitlab/issues/236>
-- CI traces are not persisted: <https://gitlab.com/charts/gitlab/issues/245>
-- No support for scaling unicorn separate from workhorse: <https://gitlab.com/charts/gitlab/issues/61>
+- No in-cluster HA database: <https://gitlab.com/gitlab-org/charts/gitlab/issues/48>
+- No backup/restore procedure: <https://gitlab.com/gitlab-org/charts/gitlab/issues/28>
+- No update procedures, or support for no-downtime upgrades: <https://gitlab.com/gitlab-org/charts/gitlab/issues/238>
+- No support for changing/migrating your storage capacity/options after installation: <https://gitlab.com/gitlab-org/charts/gitlab/issues/233>
+- No GitLab Pages support: <https://gitlab.com/gitlab-org/charts/gitlab/issues/37>
+- No Monitoring support: <https://gitlab.com/gitlab-org/charts/gitlab/issues/29>
+- No support for incoming email: <https://gitlab.com/gitlab-org/charts/gitlab/issues/235>
+- Limited support for customizing GitLab options: <https://gitlab.com/gitlab-org/charts/gitlab/issues/236>
+- CI traces are not persisted: <https://gitlab.com/gitlab-org/charts/gitlab/issues/245>
+- No support for scaling unicorn separate from workhorse: <https://gitlab.com/gitlab-org/charts/gitlab/issues/61>
 - GitLab maintenance rake tasks won't work in k8s environments
-- No guarantees on safe pod shutdown: <https://gitlab.com/charts/gitlab/issues/239>
+- No guarantees on safe pod shutdown: <https://gitlab.com/gitlab-org/charts/gitlab/issues/239>
 
 Features that are currently out of scope:
 
-- Support for MySQL: <https://gitlab.com/charts/gitlab/issues/250>
-- Mattermost: <https://gitlab.com/charts/gitlab/issues/251>
-- Relative URL as the GitLab Endpoint: <https://gitlab.com/charts/gitlab/issues/406>
+- Support for MySQL: <https://gitlab.com/gitlab-org/charts/gitlab/issues/250>
+- Mattermost: <https://gitlab.com/gitlab-org/charts/gitlab/issues/251>
+- Relative URL as the GitLab Endpoint: <https://gitlab.com/gitlab-org/charts/gitlab/issues/406>
 
 ## Path to beta and general availability
 

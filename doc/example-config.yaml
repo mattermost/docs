@@ -43,7 +43,7 @@ gitlab:
     unicorn:
       enabled: true
       psql:
-    # Sidekiq chart, with split queues (see charts/gitlab/charts/sidekiq/values.yaml)
+    # Sidekiq chart, with split queues (see gitlab-org/charts/gitlab/charts/sidekiq/values.yaml)
     sidekiq:
       enabled: true
       psql:

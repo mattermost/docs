@@ -7,7 +7,7 @@ an OKD instance using the official Helm charts.
 This guide has been tested only on Openshift Origin 3.11.0 and is not guaranteed
 to work on other versions, or SaaS offering of OpenShift, OpenShift Online.
 If you face any problems in installing or configuring GitLab by following this
-guide, open issues at our [issue tracker](https://gitlab.com/charts/gitlab/issues).
+guide, open issues at our [issue tracker](https://gitlab.com/gitlab-org/charts/gitlab/issues).
 Feedback and Merge Requests to improve this document are welcome.
 
 ## Known issues
@@ -19,13 +19,13 @@ installations on OpenShift:
 
    - Different components of GitLab, like Sidekiq, unicorn, etc., use UID 1000 to run services.
    - PostgreSQL chart runs the service as the `root` user.
-   - [Issue #752](https://gitlab.com/charts/gitlab/issues/752) is open to investigate more on fixing this.
+   - [Issue #752](https://gitlab.com/gitlab-org/charts/gitlab/issues/752) is open to investigate more on fixing this.
 
 1. If using `hostpath` volumes, the persistent volume directories in host need to
    be given `0777` permissions, for granting all users access to the volumes.
 1. Automatic issuing of SSL certificates from Let's Encrypt will not work with
    OpenShift router. We suggest [using your own certificates](../tls.md#option-2-use-your-own-wildcard-certificate).
-   [Issue #894](https://gitlab.com/charts/gitlab/issues/894) is open to
+   [Issue #894](https://gitlab.com/gitlab-org/charts/gitlab/issues/894) is open to
    investigate more on fixing this.
 
 ## Prerequisite steps
@@ -81,7 +81,7 @@ installations on OpenShift:
 1. Create the service account and `rolebinding` for RBAC and [install Tiller](../tools.md#helm):
 
    ```bash
-   kubectl create -f https://gitlab.com/charts/gitlab/raw/master/doc/installation/examples/rbac-config.yaml
+   kubectl create -f https://gitlab.com/gitlab-org/charts/gitlab/raw/master/doc/installation/examples/rbac-config.yaml
    helm init --service-account tiller
    ```
 
@@ -133,4 +133,4 @@ installation procedure:
    --set global.hosts.ssh=ssh.gitlab.example.com
    ```
 
-   Check out the [OpenShift examples](https://gitlab.com/charts/gitlab/tree/master/examples/openshift).
+   Check out the [OpenShift examples](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/openshift).

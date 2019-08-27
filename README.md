@@ -1,4 +1,4 @@
-[![pipeline status](https://gitlab.com/charts/gitlab/badges/master/pipeline.svg)](https://gitlab.com/charts/gitlab/pipelines)
+[![pipeline status](https://gitlab.com/gitlab-org/charts/gitlab/badges/master/pipeline.svg)](https://gitlab.com/gitlab-org/charts/gitlab/pipelines)
 
 # Cloud Native GitLab Helm Chart
 
