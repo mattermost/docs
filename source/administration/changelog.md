@@ -28,6 +28,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where channel changes were not updated for other users until refresh.
  - Fixed an issue with stuttery dropdowns in Safari.
  - Fixed an issue where pagination broke when adding users to a team.
+ - Fixed an issue on mobile view where Edit/Delete/More options were not displayed on the right-hand side after a post was submitted.
+ - Fixed an issue where the channel mute icon was displayed in the incorrect position when a channel was muted.
+ - Fixed an issue on Firefox where post and comment boxes were expanding too early.
+ - Fixed an issue where ome of the links in System Console opened the page on the same tab instead of opening it on a new browser/tab.
+ - Fixed an issue where list of users were not paginated on warning modal for LDAP group sync team / channel removal.
  
 ### config.json
 
@@ -53,7 +58,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Joining a new channel with few posts might not take the user to the bottom of the channel.
  - Missing messages can be caused if network fails on API calls.
  - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
- - Post and comment boxes are expanding too early on Firefox.
  - Modifying config files causes compliance exports to run twice.
  - Using channel autocomplete while editing post causes current channel to be unread.
  - Scroll pop may occur with embedded Youtube links.
