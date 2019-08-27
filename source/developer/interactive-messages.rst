@@ -67,7 +67,8 @@ The integration can respond with an update to the original post, or with an ephe
 
   {
     "update": {
-      "message": "Updated!"
+      "message": "Updated!",
+      "Props": {},
     },
     "ephemeral_text": "You updated the post!"
   }
