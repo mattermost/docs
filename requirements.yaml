@@ -13,6 +13,6 @@ dependencies:
   repository: https://kubernetes-charts.storage.googleapis.com/
   condition: postgresql.install
 - name: gitlab-runner
-  version: 0.7.0
+  version: 0.8.0
   repository: https://charts.gitlab.io/
   condition: gitlab-runner.install
