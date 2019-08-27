@@ -24,6 +24,8 @@ Important Upgrade Notes
 |                                                    | eliminate scroll jumps as content loads in a channel.                                                                                                            |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.11.0                                            | If your integration uses ``Update.Props == nil`` to clear ``Props``, this will no longer work in 5.11+. Instead, use ``Update.Props == {}`` to clear properties. |
+|                                                    | This is especially important for clearing out out Interactive Message Buttons. Prior to this change they would be cleared when `Update` was provided.            |
+|                                                    | Now you have to clear them explicitly.                                                                                                                           |
 |                                                    |                                                                                                                                                                  |
 |                                                    | This change was made because ``Update.Props == nil`` unintentionally cleared all ``Props``, such as the profile picture, instead of preserving them.             |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
