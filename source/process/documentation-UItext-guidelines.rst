@@ -1,5 +1,5 @@
 In-Code Text Guidelines
-============================
+========================
 This is the Mattermost style guide for in-code text. Use it as a reference to ensure that the text on the Mattermost user interface (UI) is consistent and clear.
 
 Note
@@ -14,7 +14,7 @@ These guidelines are not intended to slow down or otherwise impede contributions
 ....
 
 UI elements
------------------------------
+------------
 Use this table when writing the text for UI elements such as windows and dialog boxes.
 
 .. list-table::
@@ -151,6 +151,9 @@ An error message is for telling somebody that something went wrong. Errors preve
   - *This message is too long. Shorten it to 120 characters.*
   - *The passwords do not match.*
    
+Cheatsheet
+-----------
+|cheatsheet.png|
 
 .. |menu.png| image:: ./images/menu.png
   :alt: menu
@@ -168,3 +171,5 @@ An error message is for telling somebody that something went wrong. Errors preve
   :alt: help text
 .. |title.png| image:: ./images/title.png
   :alt: title
+.. |cheatsheet.png| image:: ./images/cheatsheet.png
+  :alt: cheatsheet for punctuation and capitalization
