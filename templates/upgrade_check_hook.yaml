@@ -37,6 +37,9 @@ spec:
       tolerations:
 {{ toYaml .Values.upgradeCheck.tolerations | indent 8 }}
       {{- end }}
+      securityContext:
+        runAsUser: {{ .Values.upgradeCheck.securityContext.runAsUser }}
+        fsGroup: {{ .Values.upgradeCheck.securityContext.fsGroup }}
       restartPolicy: Never
 {{- include "pullsecrets" .Values.upgradeCheck.image | indent 6}}
       containers:
