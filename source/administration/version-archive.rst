@@ -8,7 +8,7 @@ Mattermost Enterprise Edition
 
 Mattermost Enterprise Edition v5.14.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-14-feature-release>`__ - `Download <https://releases.mattermost.com/5.14.1/mattermost-5.14.1-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.14.1/mattermost-5.14.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: `` ``
+  - SHA-256 Checksum: ``c896f1737a9e598a3bf310eb0aa81cb1705c1d2e13ffcce03bf8caef3099ab75``
   - GPG Signature: https://releases.mattermost.com/5.14.1/mattermost-5.14.1-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v5.13.3 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-13-quality-release>`__ - `Download <https://releases.mattermost.com/5.13.3/mattermost-5.13.3-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.13.3/mattermost-5.13.3-linux-amd64.tar.gz``
@@ -145,7 +145,7 @@ Mattermost Team Edition Server Archive
 
 Mattermost Team Edition v5.14.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-14-feature-release>`__ - `Download <https://releases.mattermost.com/5.14.1/mattermost-team-5.14.1-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.14.1/mattermost-team-5.14.1-linux-amd64.tar.gz``
-  - SHA-256 Checksum: `` ``
+  - SHA-256 Checksum: ``2a492ec6bd0dfdb62d7a5a25f2a4e87fe9a9904f45cc9b69012ca8bd0ca97264``
   - GPG Signature: https://releases.mattermost.com/5.14.1/mattermost-team-5.14.1-linux-amd64.tar.gz.sig
 Mattermost Team Edition v5.13.3 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-13-quality-release>`__ - `Download <https://releases.mattermost.com/5.13.3/mattermost-team-5.13.3-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.13.3/mattermost-team-5.13.3-linux-amd64.tar.gz``
