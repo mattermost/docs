@@ -57,7 +57,7 @@
        avatars are rendered fine, image and other files added to issues load
        correctly, etc.
 
-    1. Delete or move the uploaded files from their current location so that
+    1. Move the uploaded files from their current location so that
        they won't end up in the tarball. The default locations are
         * uploads: `/var/opt/gitlab/gitlab-rails/uploads/`
         * lfs: `/var/opt/gitlab/gitlab-rails/shared/lfs-objects`
