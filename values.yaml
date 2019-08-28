@@ -319,6 +319,10 @@ upgradeCheck:
   image:
     repository: busybox
     tag: latest
+  securityContext:
+    # in alpine/debian/busybox based images, this is `nobody:nogroup`
+    runAsUser: 65534
+    fsGroup: 65534
   tolerations: []
   resources:
     requests:
