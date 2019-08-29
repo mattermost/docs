@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.1.8
+
+### Fixed (1 change)
+
+- Chart pull policies syntax restored to previous and documented names. !904
+
+### Other (1 change)
+
+- Update GitLab Version to 12.1.8.
+
+
 ## 2.1.7
 
 ### Other (1 change)
