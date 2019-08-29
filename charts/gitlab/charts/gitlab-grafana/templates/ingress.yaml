@@ -1,0 +1,39 @@
+{{- if .Values.global.grafana.enabled -}}
+{{- $gitlabHostname := include "gitlab.gitlab.hostname" . -}}
+{{- $tlsSecret := include "unicorn.tlsSecret" . -}}
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Release.Name }}-grafana
+  namespace: {{ $.Release.Namespace }}
+  labels:
+{{ include "gitlab.standardLabels" . | indent 4 }}
+  annotations:
+    kubernetes.io/ingress.class: "{{ template "gitlab.ingressclass" . }}"
+    kubernetes.io/ingress.provider: nginx
+    nginx.ingress.kubernetes.io/proxy-body-size: {{ .Values.ingress.proxyBodySize | quote }}
+    nginx.ingress.kubernetes.io/proxy-read-timeout: {{ .Values.ingress.proxyReadTimeout | quote }}
+    nginx.ingress.kubernetes.io/proxy-connect-timeout: {{ .Values.ingress.proxyConnectTimeout | quote }}
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    {{ include "gitlab.certmanager_annotations" . }}
+  {{- range $key, $value := merge .Values.ingress.annotations .Values.global.ingress.annotations }}
+    {{ $key }}: {{ $value | quote }}
+  {{- end }}
+spec:
+  rules:
+    - host: {{ $gitlabHostname }}
+      http:
+        paths:
+          - backend:
+              serviceName: {{ .Release.Name }}-grafana
+              servicePort: 80
+            path: /-/grafana
+  {{- if (and $tlsSecret (eq (include "gitlab.ingress.tls.enabled" $) "true" )) }}
+  tls:
+    - hosts:
+      - {{ $gitlabHostname }}
+      secretName: {{ $tlsSecret }}
+  {{- else }}
+  tls: []
+  {{- end }}
+{{- end -}}

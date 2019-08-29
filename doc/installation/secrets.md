@@ -40,6 +40,7 @@ documentation.
   - [Postgres password](#postgresql-password)
   - [Minio secret](#minio-secret)
   - [Registry HTTP secret](#registry-http-secret)
+  - [Grafana password](#grafana-password)
 - [External Services](#external-services)
   - [Unicorn Omniauth](#unicorn-omniauth)
   - [LDAP Password](#ldap-password)
@@ -189,6 +190,14 @@ the name of the release.
 
 ```
 kubectl create secret generic <name>-postgresql-password --from-literal=postgres-password=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
+```
+
+### Grafana password
+
+If configuring [Grafana integration](../charts/globals.md#configure-grafana-integration), generate a random 64 character alpha-numeric password.
+
+```
+generate_secret_if_needed "gitlab-grafana-initial-password" --from-literal=password=$(gen_random 'a-zA-Z0-9' 64)
 ```
 
 ### Registry HTTP secret
