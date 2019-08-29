@@ -94,22 +94,19 @@ class ChartFile
   end
 
   def version
-    Version.new(@metadata['version'])
+    Version.new(@metadata['version']) if @metadata['version']
   end
 
   def app_version
-    Version.new(@metadata['appVersion'])
+    Version.new(@metadata['appVersion']) if @metadata['appVersion']
   end
 
-  def update_versions(chart_version = nil, app_version = nil)
-    orig_version = Version.new(@metadata['version'])
-    orig_app_version = Version.new(@metadata['appVersion'])
+  def update_versions(new_chart_version = nil, new_app_version = nil)
+    orig_metadata = @metadata.dup
+    @metadata['version'] = new_chart_version.to_s if new_chart_version && (version.nil? || new_chart_version > version)
+    @metadata['appVersion'] = new_app_version.to_s if new_app_version && (app_version.nil? || new_app_version > app_version)
 
-    @metadata['version'] = chart_version.to_s if chart_version
-    @metadata['appVersion'] = app_version.to_s if app_version
-
-    # Update the file only if either of the versions increased
-    if (chart_version && chart_version > orig_version) || ( app_version && app_version > orig_app_version)
+    if orig_metadata != @metadata
       $stdout.puts "Updating #{@filepath}"
       File.write(@filepath, YAML.dump(@metadata))
     end
@@ -145,7 +142,7 @@ class VersionUpdater
 
     if @options.include_subcharts
       @subchart_versions.each do |sub_chart, update_app_version|
-        sub_chart.update_versions(@chart_version, branch == 'master' ? nil : update_app_version) 
+        sub_chart.update_versions(@chart_version, branch == 'master' ? nil : update_app_version)
       end
     end
   end
