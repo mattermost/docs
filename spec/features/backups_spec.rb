@@ -50,10 +50,15 @@ describe "Restoring a backup" do
       visit '/root/testproject1/issues/1'
 
       image_selector = 'div.md > p > a > img'
-
       expect(page).to have_selector(image_selector)
-      image_src = page.all("img.js-lazy-loaded")[1][:src]
 
+      # Image has additional classes added by JS async
+      image_selector << '.js-lazy-loaded'
+      wait(reload: false) do
+        has_selector?(image_selector)
+      end
+
+      image_src = page.all(image_selector)[0][:src]
       open(image_src) do |f|
         expect(f.status[0]).to eq '200'
       end
