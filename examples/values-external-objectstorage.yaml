@@ -3,6 +3,8 @@
 global:
   minio:
     enabled: false
+  registry:
+    bucket: gitlab-registry-storage
   appConfig:
     lfs:
       bucket: gitlab-lfs-storage
@@ -24,8 +26,6 @@ global:
       connection:
         secret: objectstore-packages
         key: connection
-    registry:
-      bucket: gitlab-registry-storage
     backups:
       bucket: gitlab-backup-storage
       tmpBucket: gitlab-tmp-storage
