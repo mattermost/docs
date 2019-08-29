@@ -360,7 +360,7 @@ instances to create as a part of the set. This defaults to `1`.
 ```
 storage:
   secret:
-  key: storage
+  key: config 
   extraKey:
 ```
 
@@ -379,7 +379,7 @@ Place the *contents* of the `storage` block into the secret, and provide the fol
 as items to the `storage` map:
 
 - `secret`: name of the Kubernetes Secret housing the YAML block.
-- `key`: name of the key in the secret to use. Defaults to `storage`.
+- `key`: name of the key in the secret to use. Defaults to `config`.
 - `extraKey`: *(optional)* name of an extra key in the secret, which will be mounted
   to `/etc/docker/registry/storage/${extraKey}` within the container. This can be
   used to provide the `keyfile` for the `gcs` driver.
