@@ -9,5 +9,5 @@ if [ -z "$CHANNEL" ] || [ -z "$ERROR_MSG" ] || [ -z "$CI_SLACK_WEBHOOK_URL" ]; t
     echo "Missing argument(s) - Use: $0 channel message"
     echo "and set CI_SLACK_WEBHOOK_URL environment variable."
 else
-    curl -X POST --data-urlencode 'payload={"channel": "'"$CHANNEL"'", "username": "Charts Builder", "text": "'"$ERROR_MSG"'", "icon_emoji": ":package:"}' "$CI_SLACK_WEBHOOK_URL"
+    curl -X POST --data-urlencode 'payload={"channel": "'"$CHANNEL"'", "username": "Charts Builder", "text": "'"$ERROR_MSG"'"}' "$CI_SLACK_WEBHOOK_URL"
 fi
