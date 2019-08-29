@@ -422,3 +422,16 @@ debug:
     enabled: true
     path: '/metrics'
 ```
+
+### health
+
+The health option is optional, and contains preferences for
+a periodic health check on the storage driver's backend storage.
+
+```
+health:
+  storagedriver:
+    enabled: false
+    interval: 10s
+    threshold: 3
+```
