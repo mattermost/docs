@@ -1,0 +1,16 @@
+## GitLab Grafana configuration
+## If enabled, we will deploy a secured Grafana
+
+# This chart is controlled by `global.grafana.enabled`
+global: {}
+
+# We supply an Ingress resource that locates Grafana under /-/grafana
+# NOTE: these values are placeholders for template functionality.
+ingress:
+  tls: {}
+  annotations: {}
+  proxyBodySize: "0"
+  # Setting longer read timeout in case there is a lot of data coming back
+  proxyReadTimeout: 180
+  proxyConnectTimeout: 15
+

@@ -96,6 +96,10 @@ global:
     credentials: {}
       # secret:
 
+  ## doc/charts/globals.md#configure-grafana-integration
+  grafana:
+    enabled: false
+
   ## doc/charts/globals.md#configure-appconfig-settings
   ## Rails based portions of this chart share many settings
   appConfig:
@@ -469,6 +473,49 @@ gitlab-runner:
       s3CachePath: gitlab-runner
       s3CacheInsecure: false
 
+
+## Installation & configuration of stable/grafana
+## See requirements.yaml for current version
+## Controlled by `global.grafana.enabled`
+grafana:
+  ## Override and provide "bogus" administation secrets
+  ## gitlab/gitlab-grafana provides overrides via shared-secrets
+  admin:
+    existingSecret: bogus
+  env:
+    GF_SECURITY_ADMIN_USER: bogus
+    GF_SECURITY_ADMIN_PASSWORD: bogus
+  ## This override allows gitlab/gitlab-grafana to completely override the secret
+  ##   handling behavior of the upstream chart in combination with the above.
+  command: [ "sh", "-x", "/tmp/scripts/import-secret.sh" ]
+  ## The following settings allow Grafana to dynamically create
+  ## dashboards and datasources from configmaps. See
+  ## https://github.com/helm/charts/tree/master/stable/grafana#sidecar-for-dashboards
+  sidecar:
+    dashboards:
+      enabled: true
+      label: gitlab_grafana_dashboard
+    datasources:
+      enabled: true
+      label: gitlab_grafana_datasource
+  ## We host Grafana as a sub-url of GitLab
+  grafana.ini:
+    server:
+      root_url: http://localhost/-/grafana/
+  ## We generate and provide random passwords
+  ## NOTE: the Secret & ConfigMap names are hard coded!
+  extraSecretMounts:
+    - name: initial-password
+      mountPath: /tmp/initial
+      readOnly: true
+      secretName: gitlab-grafana-initial-password
+      defaultMode: 400
+  extraConfigmapMounts:
+    - name: import-secret
+      mountPath: /tmp/scripts
+      configMap: gitlab-grafana-import-secret
+      readOnly: true
+
 ## Settings for individual sub-charts under GitLab
 ## Note: Many of these settings are configurable via globals
 # gitlab:
@@ -487,3 +534,5 @@ gitlab-runner:
 ## doc/charts/gitlab/gitlab-shell
 #   gitlab-shell:
 #     enabled: false
+## doc/charts/gitlab/gitlab-grafana
+#   gitlab-grafana:

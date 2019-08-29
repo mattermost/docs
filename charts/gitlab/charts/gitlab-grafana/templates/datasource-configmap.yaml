@@ -1,0 +1,24 @@
+{{- if .Values.global.grafana.enabled -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "fullname" . }}-datasource
+  namespace: {{ .Release.Namespace }}
+  labels:
+    gitlab_grafana_datasource: "true"
+{{ include "gitlab.standardLabels" . | indent 4 }}
+data:
+  gitlab.yaml: |
+    apiVersion: 1
+    deleteDatasources:
+      - name: GitLab installed Prometheus
+        orgId: 1
+    datasources:
+      - name: GitLab installed Prometheus
+        type: prometheus
+        orgId: 1
+        url: "http://{{ .Release.Name }}-prometheus-server"
+        access: proxy
+        isDefault: true
+        editable: false
+{{- end }}
