@@ -49,11 +49,15 @@ describe "Restoring a backup" do
     it 'Issue attachments should load correctly' do
       visit '/root/testproject1/issues/1'
 
-      image_selector = 'div.md > p > a > img'
+      image_selector = 'div.md > p > a > img.js-lazy-loaded'
 
+      # Image has additional classes added by JS async
+      wait(reload: false) do
+        has_selector?(image_selector)
+      end
+      
       expect(page).to have_selector(image_selector)
-      image_src = page.all("img.js-lazy-loaded")[1][:src]
-
+      image_src = page.all(image_selector)[0][:src]
       open(image_src) do |f|
         expect(f.status[0]).to eq '200'
       end
