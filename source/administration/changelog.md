@@ -6,8 +6,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.14 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.14.2, release date TBD**
-  - Fixing an issue where Mattermost crashes when date-related search terms `on:` `before:` and `after:` are used in search. [MM-18143](https://mattermost.atlassian.net/browse/MM-18143)
+- **v5.14.2, released 2019-08-30**
+  - Fixed an issue where Mattermost crashed when date-related search terms `on:` `before:` and `after:` were used in search. [MM-18143](https://mattermost.atlassian.net/browse/MM-18143)
 - **v5.14.1, released 2019-08-28**
   - Fixed issues with [keyboard accessibility](https://docs.mattermost.com/help/getting-started/accessibility.html) where post and search textboxes did not read characters when using the arrow keys to move back and forth through the text. [MM-17964](https://mattermost.atlassian.net/browse/MM-17964) and [MM-17974](https://mattermost.atlassian.net/browse/MM-17974)
 - **v5.14.0, released 2019-08-16**
