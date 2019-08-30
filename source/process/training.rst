@@ -95,7 +95,7 @@ This section summarizes norms for public and private meetings for the Mattermost
 Timezones 
 ---------------------------------------------------------
 
-When proposing meetings use famous cities as references for time (e.g. 9am New York time), since it's clear and `easy to web search <https://www.google.com/search?q=time+in+new+york&oq=time+in+new+&aqs=chrome.1.0l2j69i57j0l3.3135j0j7&sourceid=chrome&ie=UTF-8>`__. Avoid using "UTC", as it has been shown to cause confusion.
+When proposing meetings use famous cities as references for time (e.g. 9am Toronto time), since it's clear and `easy to web search <https://www.google.com/search?ei=8w9nXdn0HMH4-wTH1JrgCA&q=time+in+toronto&oq=time+in+toronto>`__. Avoid using "UTC", as it has been shown to cause confusion.
 
 When selecting a timezone city, use the most well-known city in a country where at least one team member is located. Exception: When possible, use a city where we have an official mailing address, e.g. In Western Americas use Palo Alto, instead of San Francisco. In Eastern Americas use Toronto, instead of New York. 
 
