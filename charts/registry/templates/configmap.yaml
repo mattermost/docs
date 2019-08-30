@@ -28,8 +28,6 @@ data:
       {{- end }}
       headers:
         X-Content-Type-Options: [nosniff]
-    # Filled from chart
-    http:
       addr: :{{ .Values.service.internalPort }}
       secret: "HTTP_SECRET"
     auth:

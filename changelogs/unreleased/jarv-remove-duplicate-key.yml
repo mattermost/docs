@@ -1,0 +1,5 @@
+---
+title: Removes duplicate http key
+merge_request: 923
+author: jarv
+type: fixed
