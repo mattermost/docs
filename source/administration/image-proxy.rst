@@ -11,7 +11,7 @@ third-party servers.
 Proxy servers also provide a layer of caching, and can be made faster and more reliable than third-party sites. This caching 
 also helps preserve posts by protecting them from dead images.
 
-When enabled, the image proxy needs to be publicly accessible to the Mattermost client, which requests the image directly from the image proxy.
+When enabled, the image proxy needs to be publicly accessible to both the Mattermost client and server.
 
 You may alternatively use `atmos/camo <https://github.com/atmos/camo>`_ http proxy to route images through SSL:
 
