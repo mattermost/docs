@@ -33,6 +33,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue on Firefox where post and comment boxes were expanding too early.
  - Fixed an issue where ome of the links in System Console opened the page on the same tab instead of opening it on a new browser/tab.
  - Fixed an issue where list of users were not paginated on warning modal for LDAP group sync team / channel removal.
+ - Fixed an issue with an absence of unread badges on private channels on mobile apps.
+ - Fixed an issue where there was an extra menu divider on Town Square channel menu.
+ - Fixed an issue where a markdown image with an SVG briefly displayed for sender with ``EnableSVGs`` set to false.
+ - Fixed an issue where the right-hand side did not fetch messages on socket reconnect when a different channel was in center.
+ - Fixed an issue where changes to Account Settings were being saved even when the user did not click the Save button.
+ - Fixed an issue where making a post in an empty channel sometimes caused the channel to display a loading spinner.
  
 ### config.json
 
@@ -51,7 +57,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Known Issues
  - Users are unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
  - Google User API Endpoint shows outdated helper text.
- - Making a post in an empty channel sometimes causes the channel to display a loading spinner.
  - Deleting the last post in a channel causes the channel to only display a loading spinner.
  - User count in a channel does not update until after refresh if a user automatically joins a channel.
  - Long posts might overlap in compact view.
@@ -62,7 +67,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Using channel autocomplete while editing post causes current channel to be unread.
  - Scroll pop may occur with embedded Youtube links.
  - Plugin translation files are not updated on web-client when plugins are upgraded.
- - Changes to Account Settings are being saved even when user does not clicks on Save button.
  - Custom-Attributes plugin might crash.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
