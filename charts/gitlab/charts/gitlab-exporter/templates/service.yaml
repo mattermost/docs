@@ -14,7 +14,7 @@ spec:
     - port: {{ .Values.service.externalPort }}
       targetPort: {{ .Values.service.internalPort }}
       protocol: TCP
-      name: gitlab-monitor
+      name: gitlab-exporter
   selector:
     app: {{ template "name" . }}
     release: {{ .Release.Name }}

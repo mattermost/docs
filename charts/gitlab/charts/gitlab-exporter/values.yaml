@@ -1,14 +1,14 @@
-# Default values for gitlab-monitor.
+# Default values for gitlab-exporter.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 image:
-  repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-monitor
+  repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-exporter
   pullSecrets: []
   # pullPolicy: IfNotPresent
   # tag: latest
 
 service:
-  name: gitlab-monitor
+  name: gitlab-exporter
   type: ClusterIP
   externalPort: 9168
   internalPort: 9168

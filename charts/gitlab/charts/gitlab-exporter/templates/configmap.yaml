@@ -7,7 +7,7 @@ metadata:
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 data:
-  gitlab-monitor.yml.erb: |
+  gitlab-exporter.yml.erb: |
     server:
       listen_address: 0.0.0.0
       listen_port: {{ .Values.service.internalPort }}
@@ -33,10 +33,9 @@ data:
       sidekiq: &sidekiq
         methods:
           - probe_queues
-          - probe_jobs
           - probe_workers
           - probe_retries
-          - probe_dead
+          - probe_stats
         opts:
           redis_url: {{ template "gitlab.redis.url" . }}
           redis_enable_client: false

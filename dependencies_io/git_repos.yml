@@ -22,7 +22,7 @@ repos:
       charts/minio/values.yaml: 'tag: "RELEASE.{version}"'
       doc/charts/minio/index.md: '`RELEASE.{version}`'
   # GitLab Monitor
-  - url: https://gitlab.com/gitlab-org/gitlab-monitor.git
-    installed: v4.0.0
+  - url: https://gitlab.com/gitlab-org/gitlab-exporter.git
+    installed: v5.0.0
     replace_in_files:
-      charts/gitlab/charts/gitlab-monitor/Chart.yaml: 'appVersion: {version_clean}'
+      charts/gitlab/charts/gitlab-exporter/Chart.yaml: 'appVersion: {version_clean}'

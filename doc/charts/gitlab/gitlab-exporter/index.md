@@ -1,6 +1,6 @@
-# Using the GitLab-Monitor Chart
+# Using the gitlab-exporter Chart
 
-The `gitlab-monitor` sub-chart provides Prometheus metrics for GitLab
+The `gitlab-exporter` sub-chart provides Prometheus metrics for GitLab
 application-specific data. It talks to PostgreSQL directly to perform
 queries to retrieve data for CI builds, pull mirrors, etc. In addition,
 it uses the Sidekiq API, which talks to Redis to gather different
@@ -14,7 +14,7 @@ from the Kubernetes cluster on which this chart is deployed.
 
 ## Configuration
 
-The `gitlab-monitor` chart is configured as follows: [Global
+The `gitlab-exporter` chart is configured as follows: [Global
 Settings](#global-settings) and [Chart Settings](#chart-settings).
 
 ## Installation command line options
@@ -25,25 +25,25 @@ to the `helm install` command using the `--set` flags.
 | Parameter                        | Default               | Description                                    |
 | -------------------------------- | --------------------- | ---------------------------------------------- |
 | `annotations`                    |                       | Pod annotations                                |
-| `enabled`                        | `true`                | gitlab-monitor enabled flag                    |
+| `enabled`                        | `true`                | gitlab-exporter enabled flag                    |
 | `extraContainers`                |                       | List of extra containers to include            |
 | `extraInitContainers`            |                       | List of extra init containers to include       |
 | `extraVolumeMounts`              |                       | List of extra volumes mountes to do            |
 | `extraVolumes`                   |                       | List of extra volumes to create                |
 | `image.pullPolicy`               | `IfNotPresent`        | GitLab image pull policy                       |
 | `image.pullSecrets`              |                       | Secrets for the image repository               |
-| `image.repository`               | `registry.gitlab.com/gitlab-org/build/cng/gitlab-monitor` | gitlab-monitor image repository |
+| `image.repository`               | `registry.gitlab.com/gitlab-org/build/cng/gitlab-exporter` | gitlab-exporter image repository |
 | `image.tag`                      |                       | Unicorn image tag                              |
 | `init.image`                     | `busybox`             | initContainer image                            |
 | `init.tag`                       | `latest`              | initContainer image tag                        |
 | `metrics.enabled`                | `true`                | Toggle Prometheus metrics exporter             |
 | `metrics.port`                   | `9168`                | Listen port for the Prometheus metrics exporter       |
-| `resources.requests.cpu`         | `50m`                 | gitlab-monitor minimum cpu                            |
-| `resources.requests.memory`      | `100M`                | gitlab-monitor minimum memory                         |
-| `service.externalPort`           | `9168`                | gitlab-monitor exposed port                           |
-| `service.internalPort`           | `9168`                | gitlab-monitor internal port                          |
-| `service.name`                   | `gitlab-monitor`      | gitlab-monitor service name                           |
-| `service.type`                   | `ClusterIP`           | gitlab-monitor service type                           |
+| `resources.requests.cpu`         | `50m`                 | gitlab-exporter minimum cpu                            |
+| `resources.requests.memory`      | `100M`                | gitlab-exporter minimum memory                         |
+| `service.externalPort`           | `9168`                | gitlab-exporter exposed port                           |
+| `service.internalPort`           | `9168`                | gitlab-exporter internal port                          |
+| `service.name`                   | `gitlab-exporter`      | gitlab-exporter service name                           |
+| `service.type`                   | `ClusterIP`           | gitlab-exporter service type                           |
 
 ## Chart configuration examples
 
@@ -67,7 +67,7 @@ image:
 
 ### annotations
 
-`annotations` allows you to add annotations to the gitlab-monitor pods. For example:
+`annotations` allows you to add annotations to the gitlab-exporter pods. For example:
 
 ```YAML
 annotations:
@@ -81,7 +81,7 @@ for common configuration options, such as GitLab and Registry hostnames.
 
 ## Chart Settings
 
-The following values are used to configure the gitlab-monitor pod.
+The following values are used to configure the gitlab-exporter pod.
 
 ### metrics.enabled
 
