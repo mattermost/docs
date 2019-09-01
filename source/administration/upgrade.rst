@@ -152,13 +152,13 @@ Location of your local storage directory
 
 #. Reinstate the ``plugins`` directories, then restart the mattermost service.
 
-    .. code-block:: sh
+   .. code-block:: sh
 
-      cd {install-path}/mattermost
-      sudo rsync -au plugins~/ plugins
-      sudo rm -rf plugins~
-      sudo rsync -au client/plugins~/ client/plugins
-      sudo rm -rf client/plugins~
+     cd {install-path}/mattermost
+     sudo rsync -au plugins~/ plugins
+     sudo rm -rf plugins~
+     sudo rsync -au client/plugins~/ client/plugins
+     sudo rm -rf client/plugins~
 
 After the server is upgraded, users might need to refresh their browsers to experience any new features.
 

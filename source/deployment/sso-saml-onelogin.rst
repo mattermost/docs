@@ -85,19 +85,20 @@ Create a OneLogin connection app for Mattermost SSO
 Configure SAML sign-in for Mattermost
 --------------------------------------
 
-1. Sign into Mattermost as a System Administrator.
-2. Go to **System Console > Authentication > SAML**.
+1. Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
   a. In the **SAML SSO URL** field, paste the value for the OneLogin *SAML 2.0 Endpoint (HTTP)* that you copied earlier.
   b. In the **Identity Provider Issuer URL** field, paste the value for the OneLogin *Issuer URL* that you copied earlier.
   c. In the **Identity Provider Public Certificate** field, upload the OneLogin X.509 PEM certificate file that you downloaded earlier.
 
   .. image:: ../../source/images/okta_10_mattermost_basics.PNG
 
-3. Configure Mattermost to verify the signature.
+2. Configure Mattermost to verify the signature.
   a. In the **Verify Signature** field, click **True**.
   b. In the **Service Provider Login URL**, enter ``https//<your-mattermost-url>/login/sso/saml``
 
   .. image:: ../../source/images/okta_11_mattermost_verification.PNG
+
+3. Configure Mattermost to sign SAML requests using the Service Provider Private Key.
 
 4. Enable encryption.
   a. In the **Enable Encryption** field, click **True**.

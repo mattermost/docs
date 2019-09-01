@@ -95,7 +95,7 @@ This section summarizes norms for public and private meetings for the Mattermost
 Timezones 
 ---------------------------------------------------------
 
-When proposing meetings use famous cities as references for time (e.g. 9am New York time), since it's clear and `easy to web search <https://www.google.com/search?q=time+in+new+york&oq=time+in+new+&aqs=chrome.1.0l2j69i57j0l3.3135j0j7&sourceid=chrome&ie=UTF-8>`__. Avoid using "UTC", as it has been shown to cause confusion.
+When proposing meetings use famous cities as references for time (e.g. 9am Toronto time), since it's clear and `easy to web search <https://www.google.com/search?ei=8w9nXdn0HMH4-wTH1JrgCA&q=time+in+toronto&oq=time+in+toronto>`__. Avoid using "UTC", as it has been shown to cause confusion.
 
 When selecting a timezone city, use the most well-known city in a country where at least one team member is located. Exception: When possible, use a city where we have an official mailing address, e.g. In Western Americas use Palo Alto, instead of San Francisco. In Eastern Americas use Toronto, instead of New York. 
 
@@ -254,13 +254,13 @@ These are our product training sessions for the Sales and Customer Success teams
 
 Attendees:
 
-- All Sales, Customer Success and QA staff
+- All Sales (including AEs and SAs), Customer Success (including CSMs and Support), and QA staff
 - Chair: Jason Blais
 - Co-Chairs: Product training session leads
 
 Time:
 
-- Every 3 weeks on Wednesdays from 9:00am to 10:00am Palo Alto time.
+- Every 3 weeks on Wednesdays from 9:00am to 10:30am Palo Alto time.
 
 Procedure:
 
@@ -293,46 +293,55 @@ Procedure:
 
 3. (Chair) Starts Zoom recording at 9:00am Palo Alto time.
 
-4. (Chair and Co-Chairs) Runs through the agenda, which comprises one or more of the following items:
+4. (Chair and Co-Chairs) Runs through the agenda, which typically comprises of the following items:
 
 - **Introductions**
 
-- **Functionality / Benefits**
+- (15 minutes) **Business Use Case**
+
+  - Audience: Everyone, but primarily AEs, CSMs
+  - What does it do, why do people use it, who uses it
+  - Customer use case examples and success stories
+  - Roadmap (status and committed timelines, if any)
+  - Q&A
+
+- (30 minutes) **Live Product Demo**
 
   - Audience: Everyone
-  - What does it do, why do people use it, who uses it (customer segment) 
-  - Customer use case examples (success stories) 
+  - End user demo
+  - Admin configuration demo
   - Known customer issues and workarounds
-  - Roadmap (status and committed timelines, if any) 
-  - Q&A 
+  - Q&A
 
-- **Technical Training**
+- (15 minutes) **Technical Overview**
 
-  - Audience: Primarily support, SAs and QA
-  - Technical understanding of how the feature works and how it was built (to help with better troubleshooting)
+  - Audience: Primarily CSMs, SAs, Support, QA
   - Technical flow for the feature, data structure, etc.
   - What to ask for when troubleshooting 
   - Q&A
 
-- **Options for Testing**
+- (30 minutes) **Technical Deep Dive** 
 
-  - Audience: Primarily support and QA
-  - Testing environments
+  - Audience: Primarily SAs, Support, QA
+  - Deeper technical review of how the feature works and how it was built
+  - Working session on specific customer issues, retros on support tickets, etc.
   - Q&A
 
 - **Feedback**: At end of meeting, remind to share feedback via survey.
 
 **After meeting:**
 
-1. (Chair) Shares link to feedback survey. `See example <https://community.mattermost.com/core/pl/7w5w5aou4jfkxm95g6fwkcqxry>`_.
+1. (Chair) Shares link to feedback survey, tailored for each training session to measure its effectiveness. `See example <https://community.mattermost.com/core/pl/7w5w5aou4jfkxm95g6fwkcqxry>`_.
 
-2. (Chair) Uploads meeting recording and slides to `Google Drive folder <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29_>`), then share in channel. `See example <https://community.mattermost.com/core/pl/dkeh34y5pt8ybrb5mmrfbyy1ee>`_.
+2. (Chair) Uploads meeting recording and slides to `Google Drive folder <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29>`_, then share in channel. `See example <https://community.mattermost.com/core/pl/dkeh34y5pt8ybrb5mmrfbyy1ee>`_.
 
 3. (Chair & Co-Chairs) Holds a retrospective meeting two days after the training session to review feedback and discuss what could have been improved.
 
 4. (Chair) Makes adjustments to meeting process based on feedback and discussion with co-chairs. Schedules kick-off call for the next training session.
 
 5. (Co-Chairs) Updates product documentation or other resources based on the training session.
+
+6. (Chair & Co-Chairs) Shares slides and meeting recording with Marketing team for potential GTM collateral.
 
 Sprint Planning
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -539,9 +548,9 @@ When a new owner takes over a process or a project from a previous owner, there 
 
 Using the analogy of changing lanes while driving a vehicle and learning to do a "shoulder check" for information that is not visible from standard controls, we have a process for the new owner and previous owner to jointly review processes until the transfer is complete. 
 
-This process is similar to `Mini-boss, End-boss <https://docs.mattermost.com/process/training.html#id7>`__, except that the mini-boss is also the new owner of a process, and not only a reviewer. Shoulder checks should be requested by new owners to avoid "crashing":
+This process is similar to `Mini-boss, End-boss <https://docs.mattermost.com/process/training.html#mini-boss-end-boss>`__, except that the mini-boss is also the new owner of a process, and not only a reviewer. Shoulder checks should be requested by new owners to avoid "crashing":
 
- - Making changes to systems that break existing processes and may lose data and hurt the productivity of others downstream without notice and without a replacement system in place (behavior known as `"Dead Tarzan" <https://docs.mattermost.com/process/training.html#id9>`__). 
+ - Making changes to systems that break existing processes and may lose data and hurt the productivity of others downstream without notice and without a replacement system in place (behavior known as `"Dead Tarzan" <https://docs.mattermost.com/process/training.html#dead-tarzan>`__). 
  - Repeatedly investing in mis-prioritized projects due to a misunderstanding of requirements from project stakeholders and insufficient confirmation of intended outcomes. 
 
 Even when not crashing, as part of our `Self Awareness value <https://docs.mattermost.com/process/handbook.html#values>`__, top team members will constantly be seeking feedback and review from people around the company. 
