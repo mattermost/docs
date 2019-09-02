@@ -72,8 +72,8 @@ Candidates for developer roles on the Mattermost staff can expect the hiring pro
 
 Both declined and accepted candidates will be invited to share feedback on their hiring experience so we can continually improve our process.
 
-- **Application/Email - Review of code samples** - In `your application <https://jobs.lever.co/mattermost/>`__ we welcome you to include links to any public open source work you've done, including GitHub, GitLab or BitBucket profiles. If you'd like to share privately we can send you our ID for GitHub, GitLab or BitBucket, or we can review code you send in via email. If you really want to impress us, `make a contribution to our open source project by completing a Help Wanted ticket. <../developer/contribution-guide.html>`__
-- **Email - Follow-up questions** - If your code samples look good, we'll email you some questions specific to the role.
+- **Application** - In `your application <https://jobs.lever.co/mattermost/>`__ we welcome you to include links to any public open source work you've done, including GitHub, GitLab or BitBucket profiles. If you'd like to share privately we can send you our ID for GitHub, GitLab or BitBucket, or we can review code you send in via email. If you really want to impress us, `make a contribution to our open source project by completing a Help Wanted ticket. <../developer/contribution-guide.html>`__
+- **Email - Follow-up questions** - If your application looks good, we'll email you some questions specific to the role.
 - **Video call - Screening interview** - Selected candidates will be invited for a 25-minute screening call with a recruiter.
 - **Video call - Technical discussion** - Candidates will be invited to schedule a 60-minute interview with a core committer to discuss their technical experience and suitability for the role.
 - **Video call - Soft-skills discussion** - Next, candidates will be invited to schedule a 60-minute interview with a core committer to assess soft skills, and for the candidate to learn more about the role.
