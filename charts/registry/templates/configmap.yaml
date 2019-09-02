@@ -28,7 +28,9 @@ data:
       addr: :{{ .Values.service.internalPort }}
       secret: "HTTP_SECRET"
     health:
+      {{- if kindIs "map" .Values.health }}
       {{ toYaml .Values.health | nindent 6 | trim }}
+      {{- end }}
     auth:
       token:
         realm: {{ template "registry.authEndpoint" . }}/jwt/auth
