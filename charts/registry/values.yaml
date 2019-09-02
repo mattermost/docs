@@ -161,7 +161,7 @@ debug:
     enabled: false
     path: '/metrics'
 
-# https://github.com/docker/distribution/blob/master/docs/configuration.md#health
+# https://docs.docker.com/registry/configuration/#health
 health:
   storagedriver:
     enabled: false
