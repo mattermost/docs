@@ -37,7 +37,7 @@ The table below describes all variables.
 | `CLUSTER_VERSION` | The version of your EKS cluster                  | `1.11`           |
 | `NUM_NODES`       | The number of nodes required                     | `2`              |
 | `MACHINE_TYPE`    | The type of nodes to deploy                      | `m5.xlarge`      |
-| `SERVICE_ACCOUNT` | The service account name to use for helm/tilller | `tiller`         |
+| `SERVICE_ACCOUNT` | The service account name to use for helm/tiller  | `tiller`         |
 
 Run the script, by passing in your desired parameters. It can work with the
 default parameters.
