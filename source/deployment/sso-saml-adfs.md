@@ -96,6 +96,8 @@ However, if you would like to set up encryption for your SAML connection, click 
 
 For Mattermost 3.4 and later, the `FirstName` and `LastName` attributes are optional.
 
+**Note:** It is recommended that you also set up an attribute that is associated with a unique, non-changing identifier to prevent username or email collisions. [Click here for more information](#how-to-bind-authentication-to-id-attribute-instead-of-email)
+
 Then, click **Finish** to add the rule.
 
 Note that the entries in the **Outgoing Claim Type** column can be chosen to be something else. They can contain dashes but no spaces. Note that they will be used to map the corresponding fields in Mattermost later.
