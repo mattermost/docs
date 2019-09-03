@@ -100,6 +100,7 @@ Kubectl is now configured to use the cluster.
 Stopping local Kubernetes cluster...
 Machine stopped.
 ```
+Take note of the result from running the `minikube ip` command, the output IP will need to be referenced later
 
 ## Using Minikube
 
@@ -190,6 +191,9 @@ helm upgrade --install gitlab gitlab/gitlab \
   --timeout 600 \
   -f https://gitlab.com/charts/gitlab/raw/master/examples/values-minikube-minimum.yaml
 ```
+
+Use these arguments to override the IP endpoints in the values-minikube yaml files
+`--set global.hosts.domain=minikube_ip --set global.hosts.externalIP=minkube_ip.nip.io`
 
 ### Handling DNS
 
