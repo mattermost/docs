@@ -714,6 +714,16 @@ RHS
 
 The "Right-Hand Sidebar" in the Mattermost team site, used for navigation.
 
+Spinmint
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Old test servers that could be spun up on pull requests to test changes. Name is a throwback to test servers from SpinPunch.
+
+SpinWick
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+New test servers that use the cloud infrastructure and can be spun up on pull requests to test changes. Name is a throwback to "Spinmint" mixed with "John Wick".
+
 Windows Vista approach
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
