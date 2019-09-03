@@ -1,0 +1,5 @@
+---
+title: Adds deployment annotations for the registry service
+merge_request: 893
+author: jarv
+type: added

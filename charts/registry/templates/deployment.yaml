@@ -6,6 +6,8 @@ metadata:
   namespace: {{ $.Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
+  annotations:
+    {{ include "gitlab.deploymentAnnotations" . | nindent 4 | trim }}
 spec:
   replicas: {{ .Values.minReplicas }}
   selector:

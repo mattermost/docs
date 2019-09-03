@@ -235,6 +235,16 @@ Handles merging a set of service annotations
 {{- end -}}
 
 {{/*
+Handles merging a set of deployment annotations
+*/}}
+{{- define "gitlab.deploymentAnnotations" -}}
+{{- $allAnnotations := merge (default (dict) (default (dict) .Values.deployment).annotations) .Values.global.deployment.annotations -}}
+{{- if $allAnnotations -}}
+{{- toYaml $allAnnotations -}}
+{{- end -}}
+{{- end -}}
+
+{{/*
 Returns gitlabUrl needed for gitlab-runner
 */}}
 {{- define "gitlab-runner.gitlabUrl" -}}
