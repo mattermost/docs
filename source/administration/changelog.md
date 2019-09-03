@@ -40,6 +40,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where plugin translation files were not updated on web-clients when plugins were upgraded.
  - Fixed an issue where deleting the last post in a channel caused the channel to only display a loading spinner.
  - Fixed an issue where scroll pop sometimes occured with embedded Youtube links.
+ - Fixed an issue where joining a new channel with few posts sometimes did not take the user to the bottom of the channel.
  
 ### config.json
 
@@ -57,7 +58,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Users are unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
  - Google User API Endpoint shows outdated helper text.
  - User count in a channel does not update until after refresh if a user automatically joins a channel.
- - Joining a new channel with few posts might not take the user to the bottom of the channel.
  - Missing messages can be caused if network fails on API calls.
  - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
  - Modifying config files causes compliance exports to run twice.
