@@ -289,6 +289,10 @@ global:
   service:
     annotations: {}
 
+  ## Global Deployment Annotations
+  deployment:
+    annotations: {}
+
   antiAffinity: soft
 
   ## doc/installation/secrets.md#gitlab-workhorse-secret
