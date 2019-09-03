@@ -77,6 +77,7 @@ Learn how to configure settings to meet your unique requirements.
 
    /deployment/on-boarding.rst  
    /administration/config-settings.rst
+   /administration/config-in-database.rst 
    /administration/prev-config-settings.rst
    /deployment/customize-mattermost.rst
    /deployment/customize-email.rst 
@@ -116,6 +117,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /deployment/ldap-group-sync.rst
    /deployment/ldap-group-constrained-team-channel.rst
    /deployment/sso-saml.rst
+   /deployment/sso-saml-technical*
    /deployment/sso-gitlab*
    /deployment/sso-google*
    /deployment/sso-office*
@@ -154,7 +156,8 @@ Learn how to keep Mattermost current with fixes and new features.
    /administration/important-upgrade-notes*   
    /administration/changelog*
    /administration/version-archive*
-   /administration/extended-support-release*  
+   /administration/extended-support-release* 
+   /administration/release-lifecycle* 
    /administration/downgrade.rst
    /administration/open-source-components*
 

@@ -5,6 +5,10 @@ Keyboard shortcuts perform operations in Mattermost to help you navigate through
 
 To display a list of available keyboard shortcuts, type CTRL+/ (CMD+/ on Mac), or ``/shortcuts``.
 
+.. note::
+
+   Though Mattermost keyboard shortcuts support standard languages and keyboard layouts, they may not work if you use keymapping that overwrites default browser shortcuts.
+
 Navigation
 ==========
 
@@ -29,6 +33,8 @@ Navigation
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
 | CTRL+SHIFT+L                           | CMD+SHIFT+L                            | Set focus to center channel input field                                      |
 +----------------------------------------+----------------------------------------+------------------------------------------------------------------------------+
+
+Additional navigation keyboard shortcuts for screen reader users can be found `here <https://docs.mattermost.com/help/getting-started/accessibility.html>`_.
 
 Files
 =====

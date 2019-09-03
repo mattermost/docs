@@ -106,6 +106,7 @@ mattermost
     .. code-block:: none
 
       -c, --config {string}   Configuration file to use. (default "config.json")
+      --disableconfigwatch {boolean}  When true, the config.json file will not be reloaded automatically when another process changes it (default "false")
 
   Child Commands
     -  `mattermost channel`_ - Management of channels
@@ -242,7 +243,7 @@ mattermost channel list
 ~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    List all channels on a specified team. Archived channels are appended with ``(archived)``.
+    List all channels on a specified team. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``.
 
   Format
     .. code-block:: none
@@ -365,7 +366,7 @@ mattermost channel search
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Search for a channel by channel name. Returns channel display name, channel Id, and indicates if it is archived.
+    Search for a channel by channel name. Returns channel display name, channel Id, and indicates if it is private or archived. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``. 
     
   Format
     .. code-block:: none
@@ -649,6 +650,7 @@ mattermost export
     -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license
     -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`__
     -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license
+    -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a zip file containing emails to send to Global Relay for debug and testing purposes only. Requires an E20 license   
     -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance
@@ -708,6 +710,27 @@ mattermost export csv
     .. code-block:: none
 
       ./mattermost export csv --exportFrom=1513102632
+
+  Options
+    .. code-block:: none
+
+          --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
+	  
+mattermost export global-relay-zip
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Export data from Mattermost into a zip file containing emails to send to Global Relay for debug and testing purposes only. This does not archive any information in Global Relay.
+
+  Format
+    .. code-block:: none
+
+      mattermost export global-relay-zip
+
+  Example
+    .. code-block:: none
+
+      ./mattermost export global-relay-zip --exportFrom=1513102632
 
   Options
     .. code-block:: none
@@ -1309,7 +1332,9 @@ mattermost sampledata
 
   Description
     .. versionadded:: 4.7
-      Generate sample data and populate the Mattermost database.
+      Generate sample data and populate the Mattermost database. Supported in Mattermost v4.7 and later.
+
+      The command generates one user as the System Administrator with a username ``sysadmin`` and password ``Sys@dmin-sample1``. Other users are generated following an index, e.g. with username ``user-1`` and password ``SampleUs@r-%1``.
 
   Format
     .. code-block:: none
@@ -1362,6 +1387,7 @@ mattermost team
     -  `mattermost team create`_ - Create a team.
     -  `mattermost team delete`_ - Delete a team.
     -  `mattermost team list`_ - List all teams.
+    -  `mattermost team modify`_ - Modify a team's public/private type.
     -  `mattermost team remove`_ - Remove users from a team.
     -  `mattermost team rename`_ - Rename a team.
     -  `mattermost team restore`_ - Restore a previously archived team.    
@@ -1473,6 +1499,23 @@ mattermost team list
     .. code-block:: none
 
       ./mattermost team list
+      
+mattermost team modify
+~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Modify a team's public/private type. 
+
+  Format
+    .. code-block:: none
+
+      mattermost team modify [team] [flag]
+
+  Example
+    .. code-block:: none
+
+      ./mattermost team myteam --private
+      ./mattermost team myteam --public
 
 mattermost team remove
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1552,7 +1595,7 @@ mattermost user
   Child Commands
 
     -  `mattermost user activate`_ - Activate a user
-    -  `mattermost user convert`_ - Convert a user to a bot
+    -  `mattermost user convert`_ - Convert a user to a bot, or a bot to a user
     -  `mattermost user create`_ - Create a user
     -  `mattermost user deactivate`_ - Deactivate a user
     -  `mattermost user delete`_ - Delete a user and all posts
@@ -1588,23 +1631,28 @@ mattermost user convert
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Convert a user to a bot. If converting multiple users, use a space-separated list.
+    Convert a user to a bot, or convert a bot to a user account.
 
   Format
     .. code-block:: none
 
       mattermost user convert {emails, usernames, userIds} --bot
+      OR
+      mattermost user convert {bot_id} --user --email {email_address} --password {new_password}
 
   Examples
     .. code-block:: none
 
       ./mattermost user convert user@example.com --bot
       ./mattermost user convert username1 username2 --bot
+      ./mattermost user convert old_bot --user --email real_user@example.com --password Password1
+
 
   Options
     .. code-block:: none
 
-          --bot string       Convert user to bot
+          --bot string       Convert user to bot.  Supports converting multiple bots at once, use a space-separated list.
+          --user string      Convert bot to user.  Supports converting 1 account per command.
 
 mattermost user create
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1733,6 +1781,8 @@ mattermost user invite
 
 mattermost user migrate_auth
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. _cli-user-migrate-auth:
 
   Description
     Migrates all existing Mattermost user accounts from one authentication provider to another. For example, you can upgrade your authentication provider from email to AD/LDAP, or from AD/LDAP to SAML. Output will display any accounts that are not migrated successfully. These accounts might be blocked because of filters in your AD/LDAP configuration in the System Console.

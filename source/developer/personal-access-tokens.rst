@@ -13,7 +13,7 @@ Personal access tokens function similar to session tokens and can be used by int
 Creating a Personal Access Token
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1 - Enable personal access tokens in **System Console > Integrations > Custom Integrations**.
+1 - Enable personal access tokens in **System Console > Integrations > Custom Integrations** in prior versions or **System Console > Integrations > Integration Management** in versions after 5.12.
 
 2 - Identify the account you want to create a personal access token with. You may optionally create a new user account for your integration, such as for a bot account. By default, only System Admins have permissions to create a personal access token. 
 

@@ -54,7 +54,7 @@ account using a one-click sign in option.
   :width: 239px
   :height: 232px
 
-Office 365 Single Sign-On (Beta)
+Office 365 Single Sign-On
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 

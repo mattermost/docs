@@ -11,7 +11,7 @@ You can attach files in the following ways:
 
 -  Use the attachment icon - click the paperclip icon inside the message input box
 -  Drag and Drop
--  Paste from the clipboard - this feature is supported in Chrome and Edge browsers
+-  Paste from the clipboard
 
 File Previewer
 --------------
