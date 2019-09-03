@@ -6,11 +6,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.15 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-### Compatibility
-
-#### Removed and Deprecated Features
-
-### Breaking Changes 
+**Release Day: 2019-09-16**
 
 ### Bug Fixes
  - Fixed an issue with an incorrect error message on Custom URL Schemes field.
@@ -39,14 +35,17 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the right-hand side did not fetch messages on socket reconnect when a different channel was in center.
  - Fixed an issue where changes to Account Settings were being saved even when the user did not click the Save button.
  - Fixed an issue where making a post in an empty channel sometimes caused the channel to display a loading spinner.
+ - Fixed an issue where long posts were overlapping in compact view.
+ - Fixed an issue where an invalid locale caused a white screen.
+ - Fixed an issue where plugin translation files were not updated on web-clients when plugins were upgraded.
+ - Fixed an issue where deleting the last post in a channel caused the channel to only display a loading spinner.
+ - Fixed an issue where scroll pop sometimes occured with embedded Youtube links.
  
 ### config.json
 
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- 
-#### Open Source Components
 
 #### Database Changes
 
@@ -57,16 +56,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Known Issues
  - Users are unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
  - Google User API Endpoint shows outdated helper text.
- - Deleting the last post in a channel causes the channel to only display a loading spinner.
  - User count in a channel does not update until after refresh if a user automatically joins a channel.
- - Long posts might overlap in compact view.
  - Joining a new channel with few posts might not take the user to the bottom of the channel.
  - Missing messages can be caused if network fails on API calls.
  - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
  - Modifying config files causes compliance exports to run twice.
  - Using channel autocomplete while editing post causes current channel to be unread.
- - Scroll pop may occur with embedded Youtube links.
- - Plugin translation files are not updated on web-client when plugins are upgraded.
  - Custom-Attributes plugin might crash.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
