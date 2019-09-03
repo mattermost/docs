@@ -192,7 +192,8 @@ helm upgrade --install gitlab gitlab/gitlab \
   -f https://gitlab.com/charts/gitlab/raw/master/examples/values-minikube-minimum.yaml
 ```
 
-Use these arguments to override the IP endpoints in the values-minikube yaml files
+If the output of `minikube ip` was not `192.168.99.100`, add these arguments to override the IP endpoints in the example configuration files:
+
     ```
     --set global.hosts.domain=$(minikube ip) \
     --set global.hosts.externalIP=$(minikube ip).nip.io
