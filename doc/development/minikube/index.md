@@ -193,7 +193,10 @@ helm upgrade --install gitlab gitlab/gitlab \
 ```
 
 Use these arguments to override the IP endpoints in the values-minikube yaml files
-`--set global.hosts.domain=minikube_ip --set global.hosts.externalIP=minkube_ip.nip.io`
+    ```
+    --set global.hosts.domain=$(minikube ip) \
+    --set global.hosts.externalIP=$(minikube ip).nip.io
+    ```
 
 ### Handling DNS
 
