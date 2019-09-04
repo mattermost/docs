@@ -30,7 +30,7 @@ The following GitLab components have images in the CNG repository.
 - Elasticsearch indexer
 - Mailroom
 - GitLab exporter
-- GitLab-shell
+- GitLab Shell
 - Sidekiq
 - Gitlab task-runner
 - Unicorn
