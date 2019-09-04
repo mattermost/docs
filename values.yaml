@@ -136,7 +136,7 @@ global:
       #   cron: "*/15 * * * *"
       # pseudonymizer_worker:
       #   cron: "0 * * * *"
-      # schedule_migrate_external_diffs_worker
+      # schedule_migrate_external_diffs_worker:
       #   cron: "15 * * * *"
 
     ## doc/charts/globals.md#gravatarlibravatar-settings
