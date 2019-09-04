@@ -2,6 +2,18 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.2.4
+
+### Added (2 changes, 2 of them are from the community)
+
+- Adds deployment annotations for the registry service. !893 (jarv)
+- Add support for the storagedriver health check. !922 (jarv)
+
+### Other (1 change)
+
+- Update GitLab Version to 12.2.4.
+
+
 ## 2.2.3
 
 ### Other (1 change)
