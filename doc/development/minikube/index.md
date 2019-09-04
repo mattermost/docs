@@ -101,7 +101,7 @@ Stopping local Kubernetes cluster...
 Machine stopped.
 ```
 
-Take note of the result from running the `minikube ip` command. If the output is not ``192.168.99.100`, the output IP will be needed later.
+Take note of the result from running the `minikube ip` command. If the output is not `192.168.99.100`, the output IP will be needed later.
 
 ## Using Minikube
 
