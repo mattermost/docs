@@ -160,3 +160,10 @@ debug:
   prometheus:
     enabled: false
     path: '/metrics'
+
+# https://docs.docker.com/registry/configuration/#health
+health:
+  storagedriver:
+    enabled: false
+    interval: 10s
+    threshold: 3
