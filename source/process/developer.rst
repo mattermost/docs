@@ -72,13 +72,14 @@ Candidates for developer roles on the Mattermost staff can expect the hiring pro
 
 Both declined and accepted candidates will be invited to share feedback on their hiring experience so we can continually improve our process.
 
-- **Application/Email - Review of code samples** - In `your application <https://jobs.lever.co/mattermost/>`__ we welcome you to include links to any public open source work you've done, including GitHub, GitLab or BitBucket profiles. If you'd like to share privately we can send you our ID for GitHub, GitLab or BitBucket, or we can review code you send in via email. If you really want to impress us, `make a contribution to our open source project by completing a Help Wanted ticket. <../developer/contribution-guide.html>`__
-- **Email - Follow-up questions** - If your code samples look good, we'll email you some questions specific to the role.
+- **Application** - In `your application <https://jobs.lever.co/mattermost/>`__ we welcome you to include links to any public open source work you've done, including GitHub, GitLab or BitBucket profiles. If you'd like to share privately we can send you our ID for GitHub, GitLab or BitBucket, or we can review code you send in via email. If you really want to impress us, `make a contribution to our open source project by completing a Help Wanted ticket. <../developer/contribution-guide.html>`__
+- **Email - Follow-up questions** - If your application looks good, we'll email you some questions specific to the role.
 - **Video call - Screening interview** - Selected candidates will be invited for a 25-minute screening call with a recruiter.
-- **Video call - Soft-skills discussion** - Next, candidates will be invited to schedule a 25-minute interview with a core committer to assess soft skills and for the candidate to learn more about the role.
+- **Video call - Technical discussion** - Candidates will be invited to schedule a 60-minute interview with a core committer to discuss their technical experience and suitability for the role.
+- **Video call - Soft-skills discussion** - Next, candidates will be invited to schedule a 60-minute interview with a core committer to assess soft skills, and for the candidate to learn more about the role.
 - **Audition** - Candidates who appear technically strong and culturally fit may be offered a real-world “try out” project with Mattermost team members to simulate what it would be like to work on a major open source project.
-- **Video call - CTO interview** - Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview may include technical questions along with a discussion of either past work or results of the simulation, the candidate's interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations.
-- **Video call - CEO interview** - Finally, candidates will have a 45-minute interview with our CEO.
+- **Video call - Discussion of Audition and Soft Skills** - On completion of the Audition, candidates will be invited to schedule a 60-minute interview with a core committer to discuss the experience and outcomes of participating in the audition and further assess soft skills.
+- **Video call - CTO interview** - Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview may include technical questions along with a discussion of either past work or results of the audition, the candidate's interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations.
 - **Email - Offer** - Successful candidates will receive an offer via email. Mattermost offers compensation competitive with a candidate's local market opportunities.
 
 Notes:
