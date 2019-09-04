@@ -9,38 +9,39 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **Release Day: 2019-09-16**
 
 ### Bug Fixes
- - Fixed an issue with an incorrect error message on Custom URL Schemes field.
- - Improved the group linking failure error message and logging to make it clear that the group id attribute is probably misconfigured.
- - Fixed an issue where SVG attachments bled over into subsequent posts.
- - Fixed an issue where screen readers read "Press space to activate" on **Add** button of Add Members to channel when space didn't trigger the button.
- - Fixed an issue where focus was not automatically set on text input box after selecting an emoji from the emoji picker.
+ - Fixed an issue where an invalid locale caused a white screen.
  - Fixed an issue where rate limited posts failed to load threads.
- - Fixed an issue where the expand/collapse button in images were underlined.
- - Fixed an issue where clicking on a post would highlight it after returning to the tab/window.
+ - Improved the group linking failure error message and logging to make it clear that the group id attribute is most likely misconfigured.
+ - Fixed an issue where the right-hand side did not fetch messages on socket reconnect when a different channel was in center.
+ - Fixed an issue where posting a message in an empty channel sometimes caused the channel to display a loading spinner.
+ - Fixed an issue where deleting the last post in a channel caused the channel to only display a loading spinner.
+ - Fixed an issue with an absence of unread badges on private channels on mobile apps.
  - Fixed an issue where at-sign was missing in front of usernames in push notifications.
+ - Fixed some bugs related to the new [keyboard accessibility](https://docs.mattermost.com/help/getting-started/accessibility.html) feature.
+ - Fixed an issue where joining a new channel with few posts sometimes did not take the user to the bottom of the channel.
+ - Fixed an issue where scroll pop sometimes occured with embedded Youtube links.
+ - Fixed an issue with stuttery dropdowns in Safari.
+ - Fixed an issue where clicking on a post would highlight it after returning to the tab/window.
+ - Fixed an issue where SVG attachments bled over into subsequent posts.
+ - Fixed an issue where long posts were overlapping in compact view.
+ - Fixed an issue where the expand/collapse button in images were underlined.
+ - Fixed an issue where incoming webhook URL was clickable and shown as a link on the desktop app.
+ - Fixed an issue where the markdown helper text was missing on Edit Channel Header modal.
+ - Fixed an issue on mobile view where Edit/Delete/More options were not displayed on the right-hand side after a message was posted.
+ - Fixed an issue where the channel mute icon was displayed in the incorrect position when a channel was muted.
+ - Fixed an issue where there was an extra menu divider on Town Square channel menu.
+ - Fixed an issue on Firefox where post and comment boxes were expanding too early.
+ - Fixed an issue where focus was not automatically set on text input box after selecting an emoji from the emoji picker.
+ - Fixed an issue where channel changes were not updated for other users until refresh.
+ - Fixed an issue where changes to Account Settings were being saved even when the user did not click the **Save** button.
+ - Fixed an issue where some of the links in System Console opened the page on the same tab instead of opening it on a new browser/tab.
  - Fixed an issue where installing a plugin via URL failed if the download took longer then 30 seconds.
  - Fixed an issue where plugins did not get disabled when removing them.
- - Fixed an issue where the markdown helper text was missing on Edit Channel Header modal.
- - Fixed an issue where channel changes were not updated for other users until refresh.
- - Fixed an issue with stuttery dropdowns in Safari.
- - Fixed an issue where pagination broke when adding users to a team.
- - Fixed an issue on mobile view where Edit/Delete/More options were not displayed on the right-hand side after a post was submitted.
- - Fixed an issue where the channel mute icon was displayed in the incorrect position when a channel was muted.
- - Fixed an issue on Firefox where post and comment boxes were expanding too early.
- - Fixed an issue where ome of the links in System Console opened the page on the same tab instead of opening it on a new browser/tab.
- - Fixed an issue where list of users were not paginated on warning modal for LDAP group sync team / channel removal.
- - Fixed an issue with an absence of unread badges on private channels on mobile apps.
- - Fixed an issue where there was an extra menu divider on Town Square channel menu.
- - Fixed an issue where a markdown image with an SVG briefly displayed for sender with ``EnableSVGs`` set to false.
- - Fixed an issue where the right-hand side did not fetch messages on socket reconnect when a different channel was in center.
- - Fixed an issue where changes to Account Settings were being saved even when the user did not click the Save button.
- - Fixed an issue where making a post in an empty channel sometimes caused the channel to display a loading spinner.
- - Fixed an issue where long posts were overlapping in compact view.
- - Fixed an issue where an invalid locale caused a white screen.
  - Fixed an issue where plugin translation files were not updated on web-clients when plugins were upgraded.
- - Fixed an issue where deleting the last post in a channel caused the channel to only display a loading spinner.
- - Fixed an issue where scroll pop sometimes occured with embedded Youtube links.
- - Fixed an issue where joining a new channel with few posts sometimes did not take the user to the bottom of the channel.
+ - Fixed an issue where pagination broke when adding users to a team.
+ - Fixed an issue where list of users were not paginated on warning modal for LDAP group sync team / channel removal.
+ - Fixed an issue where a markdown image with an SVG briefly displayed for sender with ``EnableSVGs`` set to false.
+ - Fixed an issue with an incorrect error message on Custom URL Schemes field.
  
 ### config.json
 
@@ -62,7 +63,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
  - Modifying config files causes compliance exports to run twice.
  - Using channel autocomplete while editing post causes current channel to be unread.
- - Custom-Attributes plugin might crash.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
