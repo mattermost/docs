@@ -53,7 +53,7 @@ underlying services:
 
 - Docker Distribution ([Docker Registry 2.0](https://github.com/docker/distribution))
 - Prometheus
-- nginx-ingress
+- NGINX Ingress
 - cert-manager
 - Redis
 - Grafana
