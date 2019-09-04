@@ -1,7 +1,7 @@
 # IAM roles for AWS
 
-The default configuration for external object storage in the charts is to use access and secret keys. 
-It is also possible to use IAM roles in combination with [kube2iam](https://github.com/jtblin/kube2iam) or [kiam](https://github.com/uswitch/kiam). 
+The default configuration for external object storage in the charts is to use access and secret keys.
+It is also possible to use IAM roles in combination with [kube2iam](https://github.com/jtblin/kube2iam) or [kiam](https://github.com/uswitch/kiam).
 
 ## IAM role
 
@@ -28,7 +28,7 @@ s3:
   region: us-east-1
 ```
 
-*Note*: If you provide the keypair, IAM role will be ignored. See [AWS documentation](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default) for more details. 
+*Note*: If you provide the keypair, IAM role will be ignored. See [AWS documentation](https://docs.aws.amazon.com/sdk-for-java/v1/developer-guide/credentials.html#credentials-default) for more details.
 
 ### LFS, Artifacts, Uploads, Packages, Pseudonymizer
 

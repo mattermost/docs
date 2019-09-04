@@ -8,14 +8,14 @@ this guide will help.
 
 ## TCP services in the external ingress controller
 
-The gitlab-shell component requires TCP traffic to pass through on
+The GitLab Shell component requires TCP traffic to pass through on
 port 22 (by default; this can be changed). Ingress does not directly support TCP services, so some additonal configuration is necessary. Your nginx ingress controller may have been [deployed directly](https://github.com/kubernetes/ingress-nginx/blob/master/docs/deploy/index.md) (i.e. with a Kubernetes spec file) or through the [official Helm chart](https://github.com/helm/charts/tree/master/stable/nginx-ingress). The configuration of the TCP pass through will differ depending on the deployment approach.
 
 ### Direct deployment
 
 In a direct deployment, the nginx ingress controller handles configuring TCP services with a
 `ConfigMap` (see docs [here](https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/exposing-tcp-udp-services.md)).
-Assuming your Gitlab chart is deployed to the namespace `gitlab` and your helm
+Assuming your GitLab chart is deployed to the namespace `gitlab` and your helm
 release is named `mygitlab`, your `ConfigMap` should be something like this:
 
 ```
@@ -57,9 +57,9 @@ tcp:
 
 The format for the value is the same as describe above in the "Direct Deployment" section.
 
-## Customize the gitlab ingress options
+## Customize the GitLab ingress options
 
-The nginx ingress controller uses an annotation to mark which ingress controller
+The Nginx Ingress controller uses an annotation to mark which ingress controller
 will service a particular `Ingress` (see [docs](https://github.com/kubernetes/ingress-nginx#annotation-ingressclass)).
 You can configure the ingress class to use with this chart using the
 `global.ingress.class` setting. Make sure to set this in your helm options.
@@ -76,12 +76,13 @@ disable the ingress controller that is deployed by default with this chart:
 ```
 
 ## Custom certifcate management
+
 The full scope of your TLS options are documented [elswhere](https://gitlab.com/charts/gitlab/blob/master/doc/installation/tls.md).
 
 If you are using an external ingress controller, you may also be using an external cert-manager instance
 or managing your certificates in some other custom manner. The full documentation around your TLS options is [here](https://gitlab.com/charts/gitlab/blob/master/doc/installation/tls.md),
-however for the purposes of this discussion, here are the two values that would need to be set to disable the cert-manager chart and tell 
-the gitlab component charts to NOT look for the built in certificate resources:
+however for the purposes of this discussion, here are the two values that would need to be set to disable the cert-manager chart and tell
+the GitLab component charts to NOT look for the built in certificate resources:
 
 ```bash
 --set certmanager.install=false

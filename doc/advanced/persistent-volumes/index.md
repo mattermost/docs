@@ -12,9 +12,9 @@ handled by the GitLab chart.
 Examples of changes not automatically managed after initial installation
 include:
 
- - Mounting different volumes to the Pods
- - Changing the effective accessModes or [Storage Class][]
- - Expanding the storage size of your volume*<sup>1</sup>
+- Mounting different volumes to the Pods
+- Changing the effective accessModes or [Storage Class][]
+- Expanding the storage size of your volume*<sup>1</sup>
 
 <sup>1</sup> In Kubernetes 1.11, [expanding the storage size of your volume is supported](https://kubernetes.io/blog/2018/07/12/resizing-persistent-volumes-using-kubernetes/)
 if you have `allowVolumeExpansion` configured to true in your [Storage Class][].
@@ -81,53 +81,49 @@ For example:
 $ kubectl --namespace helm-charts-win edit PersistentVolume pvc-6247502b-8c2d-11e8-8267-42010a9a0113
 ```
 
-<details>
-  <summary>
-    Editing Output:
-  </summary>
+Editing Output:
 
-  <br><pre><code>
-  # Please edit the object below. Lines beginning with a '#' will be ignored,
-  # and an empty file will abort the edit. If an error occurs while saving this file will be
-  # reopened with the relevant failures.
-  #
-  apiVersion: v1
-  kind: PersistentVolume
-  metadata:
-    annotations:
-      kubernetes.io/createdby: gce-pd-dynamic-provisioner
-      pv.kubernetes.io/bound-by-controller: "yes"
-      pv.kubernetes.io/provisioned-by: kubernetes.io/gce-pd
-    creationTimestamp: 2018-07-20T14:58:43Z
-    labels:
-      failure-domain.beta.kubernetes.io/region: europe-west2
-      failure-domain.beta.kubernetes.io/zone: europe-west2-b
-    name: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
-    resourceVersion: "48362431"
-    selfLink: /api/v1/persistentvolumes/pvc-6247502b-8c2d-11e8-8267-42010a9a0113
-    uid: 650bd649-8c2d-11e8-8267-42010a9a0113
-  spec:
-    accessModes:
-    - ReadWriteOnce
-    capacity:
-      storage: 50Gi
-    claimRef:
-      apiVersion: v1
-      kind: PersistentVolumeClaim
-      name: repo-data-review-update-app-h8qogp-gitaly-0
-      namespace: helm-charts-win
-      resourceVersion: "48362307"
-      uid: 6247502b-8c2d-11e8-8267-42010a9a0113
-    gcePersistentDisk:
-      fsType: ext4
-      pdName: gke-cloud-native-81a17-pvc-6247502b-8c2d-11e8-8267-42010a9a0113
-  # Changed the following line
-    persistentVolumeReclaimPolicy: Retain
-    storageClassName: standard
-  status:
-    phase: Bound
-  </code></pre><br>
-</details>
+```yaml
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  annotations:
+    kubernetes.io/createdby: gce-pd-dynamic-provisioner
+    pv.kubernetes.io/bound-by-controller: "yes"
+    pv.kubernetes.io/provisioned-by: kubernetes.io/gce-pd
+  creationTimestamp: 2018-07-20T14:58:43Z
+  labels:
+    failure-domain.beta.kubernetes.io/region: europe-west2
+    failure-domain.beta.kubernetes.io/zone: europe-west2-b
+  name: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+  resourceVersion: "48362431"
+  selfLink: /api/v1/persistentvolumes/pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+  uid: 650bd649-8c2d-11e8-8267-42010a9a0113
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 50Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: repo-data-review-update-app-h8qogp-gitaly-0
+    namespace: helm-charts-win
+    resourceVersion: "48362307"
+    uid: 6247502b-8c2d-11e8-8267-42010a9a0113
+  gcePersistentDisk:
+    fsType: ext4
+    pdName: gke-cloud-native-81a17-pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+# Changed the following line
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+status:
+  phase: Bound
+```
 
 ## Making storage changes
 
@@ -167,54 +163,49 @@ For example:
 $ kubectl --namespace helm-charts-win edit PersistentVolume pvc-6247502b-8c2d-11e8-8267-42010a9a0113
 ```
 
-<details>
-  <summary>
-    Editing Output:
-  </summary>
+Editing Output:
 
-  <br><pre><code>
-  # Please edit the object below. Lines beginning with a '#' will be ignored,
-  # and an empty file will abort the edit. If an error occurs while saving this file will be
-  # reopened with the relevant failures.
-  #
-  apiVersion: v1
-  kind: PersistentVolume
-  metadata:
-    annotations:
-      kubernetes.io/createdby: gce-pd-dynamic-provisioner
-      pv.kubernetes.io/bound-by-controller: "yes"
-      pv.kubernetes.io/provisioned-by: kubernetes.io/gce-pd
-    creationTimestamp: 2018-07-20T14:58:43Z
-    labels:
-      failure-domain.beta.kubernetes.io/region: europe-west2
-      failure-domain.beta.kubernetes.io/zone: europe-west2-b
-    name: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
-    resourceVersion: "48362431"
-    selfLink: /api/v1/persistentvolumes/pvc-6247502b-8c2d-11e8-8267-42010a9a0113
-    uid: 650bd649-8c2d-11e8-8267-42010a9a0113
-  spec:
-    accessModes:
-    - ReadWriteOnce
-    capacity:
-      # Updated the storage size
-      storage: 100Gi
-    claimRef:
-      apiVersion: v1
-      kind: PersistentVolumeClaim
-      name: repo-data-review-update-app-h8qogp-gitaly-0
-      namespace: helm-charts-win
-      resourceVersion: "48362307"
-      uid: 6247502b-8c2d-11e8-8267-42010a9a0113
-    gcePersistentDisk:
-      fsType: ext4
-      pdName: gke-cloud-native-81a17-pvc-6247502b-8c2d-11e8-8267-42010a9a0113
-    persistentVolumeReclaimPolicy: Retain
-    storageClassName: standard
-  status:
-    phase: Bound
-  </code></pre><br>
-</details>
-<br>
+```yaml
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  annotations:
+    kubernetes.io/createdby: gce-pd-dynamic-provisioner
+    pv.kubernetes.io/bound-by-controller: "yes"
+    pv.kubernetes.io/provisioned-by: kubernetes.io/gce-pd
+  creationTimestamp: 2018-07-20T14:58:43Z
+  labels:
+    failure-domain.beta.kubernetes.io/region: europe-west2
+    failure-domain.beta.kubernetes.io/zone: europe-west2-b
+  name: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+  resourceVersion: "48362431"
+  selfLink: /api/v1/persistentvolumes/pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+  uid: 650bd649-8c2d-11e8-8267-42010a9a0113
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    # Updated the storage size
+    storage: 100Gi
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: repo-data-review-update-app-h8qogp-gitaly-0
+    namespace: helm-charts-win
+    resourceVersion: "48362307"
+    uid: 6247502b-8c2d-11e8-8267-42010a9a0113
+  gcePersistentDisk:
+    fsType: ext4
+    pdName: gke-cloud-native-81a17-pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+status:
+  phase: Bound
+```
 
 Now that the changes have been reflected in the [volume][pv], we need to update
 the [claim][pvc].
@@ -236,46 +227,41 @@ Edit the volume to make it available to the new claim. Remove the `.spec.claimRe
 kubectl --namespace <namespace> edit PersistentVolume <volume name>
 ```
 
-<details>
-  <summary>
-    Editing Output:
-  </summary>
+Editing Output:
 
-  <br><pre><code>
-  # Please edit the object below. Lines beginning with a '#' will be ignored,
-  # and an empty file will abort the edit. If an error occurs while saving this file will be
-  # reopened with the relevant failures.
-  #
-  apiVersion: v1
-  kind: PersistentVolume
-  metadata:
-    annotations:
-      kubernetes.io/createdby: gce-pd-dynamic-provisioner
-      pv.kubernetes.io/bound-by-controller: "yes"
-      pv.kubernetes.io/provisioned-by: kubernetes.io/gce-pd
-    creationTimestamp: 2018-07-20T14:58:43Z
-    labels:
-      failure-domain.beta.kubernetes.io/region: europe-west2
-      failure-domain.beta.kubernetes.io/zone: europe-west2-b
-    name: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
-    resourceVersion: "48362431"
-    selfLink: /api/v1/persistentvolumes/pvc-6247502b-8c2d-11e8-8267-42010a9a0113
-    uid: 650bd649-8c2d-11e8-8267-42010a9a0113
-  spec:
-    accessModes:
-    - ReadWriteOnce
-    capacity:
-      storage: 100Gi
-    gcePersistentDisk:
-      fsType: ext4
-      pdName: gke-cloud-native-81a17-pvc-6247502b-8c2d-11e8-8267-42010a9a0113
-    persistentVolumeReclaimPolicy: Retain
-    storageClassName: standard
-  status:
-    phase: Released
-  </code></pre><br>
-</details>
-<br>
+```yaml
+# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  annotations:
+    kubernetes.io/createdby: gce-pd-dynamic-provisioner
+    pv.kubernetes.io/bound-by-controller: "yes"
+    pv.kubernetes.io/provisioned-by: kubernetes.io/gce-pd
+  creationTimestamp: 2018-07-20T14:58:43Z
+  labels:
+    failure-domain.beta.kubernetes.io/region: europe-west2
+    failure-domain.beta.kubernetes.io/zone: europe-west2-b
+  name: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+  resourceVersion: "48362431"
+  selfLink: /api/v1/persistentvolumes/pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+  uid: 650bd649-8c2d-11e8-8267-42010a9a0113
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 100Gi
+  gcePersistentDisk:
+    fsType: ext4
+    pdName: gke-cloud-native-81a17-pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: standard
+status:
+  phase: Released
+```
 
 Shortly after making the change to the [Volume][pv], the terminal watching the claim status should show `Bound`.
 
@@ -358,52 +344,46 @@ kubectl --namespace <namespace> get PersistentVolumeClaims -l release=<chart rel
 The command will print a list of the PersistentVolumeClaim names, followed by the name of the
 service they are for.
 
-
 Then save a copy of the [claim][pvc] to your local filesystem:
 
 ```bash
 kubectl --namespace <namespace> get PersistentVolumeClaim <claim name> -o yaml > <claim name>.bak.yaml
 ```
 
-<details>
-  <summary>
-    Example Output:
-  </summary>
+Example Output:
 
-  <br><pre><code>
-  apiVersion: v1
-  kind: PersistentVolumeClaim
-  metadata:
-    annotations:
-      pv.kubernetes.io/bind-completed: "yes"
-      pv.kubernetes.io/bound-by-controller: "yes"
-      volume.beta.kubernetes.io/storage-provisioner: kubernetes.io/gce-pd
-    creationTimestamp: 2018-07-20T14:58:38Z
-    labels:
-      app: gitaly
-      release: review-update-app-h8qogp
-    name: repo-data-review-update-app-h8qogp-gitaly-0
-    namespace: helm-charts-win
-    resourceVersion: "48362433"
-    selfLink: /api/v1/namespaces/helm-charts-win/persistentvolumeclaims/repo-data-review-update-app-h8qogp-gitaly-0
-    uid: 6247502b-8c2d-11e8-8267-42010a9a0113
-  spec:
-    accessModes:
-    - ReadWriteOnce
-    resources:
-      requests:
-        storage: 50Gi
-    storageClassName: standard
-    volumeName: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
-  status:
-    accessModes:
-    - ReadWriteOnce
-    capacity:
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  annotations:
+    pv.kubernetes.io/bind-completed: "yes"
+    pv.kubernetes.io/bound-by-controller: "yes"
+    volume.beta.kubernetes.io/storage-provisioner: kubernetes.io/gce-pd
+  creationTimestamp: 2018-07-20T14:58:38Z
+  labels:
+    app: gitaly
+    release: review-update-app-h8qogp
+  name: repo-data-review-update-app-h8qogp-gitaly-0
+  namespace: helm-charts-win
+  resourceVersion: "48362433"
+  selfLink: /api/v1/namespaces/helm-charts-win/persistentvolumeclaims/repo-data-review-update-app-h8qogp-gitaly-0
+  uid: 6247502b-8c2d-11e8-8267-42010a9a0113
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
       storage: 50Gi
-    phase: Bound
-  </code></pre><br>
-</details>
-<br>
+  storageClassName: standard
+  volumeName: pvc-6247502b-8c2d-11e8-8267-42010a9a0113
+status:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 50Gi
+  phase: Bound
+```
 
 Create a new yaml file for a new PVC object. Have it use the same `metadata.name`, `metadata.labels`, `metadata,namespace`, and `spec` fields. (With your updates applied). And drop the other settings:
 
