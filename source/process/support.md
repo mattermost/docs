@@ -193,3 +193,17 @@ File locations:
 - Log files are located in `/var/log/gitlab`. Mattermost's current logs in particular are in `/var/log/gitlab/mattermost`. The current log is named `current` with older ones being named `mattermost.log` or `mattermost.logmattermost.log`.
 - The default data directory is `/var/opt/gitlab/mattermost/data`.
 - Other Mattermost resources (i18n, email templates, webapp code, etc) are located in `/opt/gitlab/embedded/service/mattermost`.
+
+## Escalating Support Requests (E10/E20)
+
+Enterprise customers have access to support SLAs based on ticket priority. To indicate your ticket's urgency, respond with the business impact level in this format: `SLA Level: #` where `#` is from 1 to 4 based on the following criteria:
+
+**SLA Level: 1 - Critical Business Impact** – Critical issue on production system preventing business operations. A large number of users are prevented from working, and no procedural workaround is available. System hangs or crashes, critical functionality not available, data loss or data corruption, large number of end users blocked from work. Impact escalating quickly.
+
+**SLA Level: 2 - Major Business Impact –** Major issue on production system severely impacting business operationSignificant performance degradation, important functionality not available, small number of users blocked from work, impact is escalating
+
+**SLA Level: 3 - Moderate Business Impact -** Moderate issue causing a partial or non-critical loss of functionality on production system. A small number of users are affectedSome system functions not available, minor performance degradation, small number of users impacted, impact is not escalating
+
+**SLA Level: 4 - Minor Business Impact -** Minor issue on non-production system or question, comment, feature request, documentation issue or other non-impacting issue. Incorrect product behavior without impact, or product question or enhancement
+
+All support requests are set to SLA Level: 4 by default.
