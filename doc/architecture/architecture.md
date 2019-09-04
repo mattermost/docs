@@ -27,7 +27,7 @@ the [CNG repository](https://gitlab.com/gitlab-org/build/CNG).
 The following GitLab components have images in the CNG repository.
 
 - Gitaly
-- Elasticsearch indexer
+- GitLab Elasticsearch Indexer
 - Mailroom
 - GitLab exporter
 - GitLab Shell
