@@ -31,9 +31,9 @@ can do one of three things:
 
 - Install directly from the [Google Storage APIs](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-kubectl-binary-via-curl).
 - Install with the appropriate package management system:
-   - Linux: your package manager of choice, or Snap.
-   - [macOS](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-with-homebrew-on-macos)
-   - [Windows](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-with-chocolatey-on-windows)
+  - Linux: your package manager of choice, or Snap.
+  - [macOS](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-with-homebrew-on-macos)
+  - [Windows](https://kubernetes.io/docs/tasks/tools/install-kubectl/#install-with-chocolatey-on-windows)
 
 ### Installing Minikube
 
@@ -65,7 +65,7 @@ change according to the pieces being tested, and the requirements as listed:
   NOTE: **Note**:
   This is created in your home directory under `~/.minikube/machines/minikube/`.
 
-- `--kubernetes-version string`: The kubernetes version that the minikube VM will use (e.g., `v1.2.3`).
+- `--kubernetes-version string`: The Kubernetes version that the minikube VM will use (e.g., `v1.2.3`).
 - `--registry-mirror stringSlice`: Registry mirrors to pass to the Docker daemon.
 
 NOTE: **Note:**
@@ -167,7 +167,7 @@ self-signed certificates at this time, and as such, should be disabled by settin
 
 When using the recommended 3 CPU and 8 GB of RAM, use
 [`values-minikube.yaml`](https://gitlab.com/charts/gitlab/blob/master/examples/values-minikube.yaml)
-as a base. 
+as a base.
 
 ```shell
 helm repo add gitlab https://charts.gitlab.io/
@@ -220,7 +220,7 @@ covering most operating systems.
 
 ### Logging in
 
-You can access the GitLab instance by visiting the domain specified, [https://gitlab.192.168.99.100.nip.io](https://gitlab.192.168.99.100.nip.io) is used in these examples. If you manually created the secret for initial root password, you can use that to sign in as root user. If not, Gitlab automatically created a random password for the root user. This can be extracted by the following command (replace `<name>` by name of the release - which is gitlab if you used the command above).
+You can access the GitLab instance by visiting the domain specified, [https://gitlab.192.168.99.100.nip.io](https://gitlab.192.168.99.100.nip.io) is used in these examples. If you manually created the secret for initial root password, you can use that to sign in as root user. If not, GitLab automatically created a random password for the root user. This can be extracted by the following command (replace `<name>` by name of the release - which is `gitlab` if you used the command above).
 
 ```shell
 kubectl get secret <name>-gitlab-initial-root-password -ojsonpath='{.data.password}' | base64 --decode ; echo

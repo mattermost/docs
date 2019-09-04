@@ -30,14 +30,14 @@ The script reads various parameters from environment variables, or command line 
 
 The table below describes all variables.
 
-| Variable        | Description                                                                 | Default value                    |
-|-----------------|-----------------------------------------------------------------------------|----------------------------------|
-| REGION          | The region where your cluster lives                                         | us-east-2                        |
-| CLUSTER_NAME    | The name of the cluster                                                     | gitlab-cluster                   |
-| CLUSTER_VERSION | The version of your EKS cluster                                             | 1.11                             |
-| NUM_NODES       | The number of nodes required                                                | 2                                |
-| MACHINE_TYPE    | The type of nodes to deploy                                                 | m5.xlarge                        |
-| SERVICE_ACCOUNT | The service account name to use for helm/tilller                            | tiller                           |
+| Variable          | Description                                      | Default value    |
+|-------------------|--------------------------------------------------|------------------|
+| `REGION`          | The region where your cluster lives              | `us-east-2`      |
+| `CLUSTER_NAME`    | The name of the cluster                          | `gitlab-cluster` |
+| `CLUSTER_VERSION` | The version of your EKS cluster                  | `1.11`           |
+| `NUM_NODES`       | The number of nodes required                     | `2`              |
+| `MACHINE_TYPE`    | The type of nodes to deploy                      | `m5.xlarge`      |
+| `SERVICE_ACCOUNT` | The service account name to use for helm/tilller | `tiller`         |
 
 Run the script, by passing in your desired parameters. It can work with the
 default parameters.
@@ -53,6 +53,7 @@ The script can also be used to clean up the created EKS resources:
 ```
 
 ### Manual cluster creation
+
 For the most up to date instructions, follow Amazon's
 [EKS getting started guide](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html).
 

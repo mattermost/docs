@@ -1,6 +1,6 @@
 # External object storage
 
-Gitlab relies on object storage for highly-available persistent data in Kubernetes.
+GitLab relies on object storage for highly-available persistent data in Kubernetes.
 By default, an S3-compatible storage solution named `minio` is deployed with the
 chart, but for production quality deployments, we recommend using a hosted
 object storage solution like Google Cloud Storage or AWS S3.
@@ -87,11 +87,13 @@ diffs, and pseudonymizer is done via the `global.appConfig.lfs`,
 --set global.appConfig.pseudonymizer.connection.key=connection
 ```
 
-> **Note**: Currently a different bucket is needed for each, otherwise performing a restore from backup will not properly function.
+NOTE: **Note:**
+Currently a different bucket is needed for each, otherwise performing a restore from backup will not properly function.
 
-> **Note**: Storing MR diffs on external storage is not enabled by default. So,
-> for the object storage settings for `externalDiffs` to take effect,
-> `global.appConfig.externalDiffs.enabled` key should have a `true` value.
+NOTE: **Note:**
+Storing MR diffs on external storage is not enabled by default. So,
+for the object storage settings for `externalDiffs` to take effect,
+`global.appConfig.externalDiffs.enabled` key should have a `true` value.
 
 See the [charts/globals documentaion on appConfig](../../charts/globals.md#configure-appconfig-settings) for full details.
 

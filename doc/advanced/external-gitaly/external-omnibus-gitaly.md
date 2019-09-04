@@ -65,6 +65,7 @@ gitaly['key_path'] = "path/to/key.pem"
 ```
 
 After creating `gitlab.rb`, reconfigure the package with `gitlab-ctl reconfigure`. Once the task has completed, check the running processes with `gitlab-ctl status`. The output should appear as such:
+
 ```
 # gitlab-ctl status
 run: gitaly: (pid 30562) 77637s; run: log: (pid 30561) 77637s

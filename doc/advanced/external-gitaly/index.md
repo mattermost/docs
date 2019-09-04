@@ -11,17 +11,16 @@ Disable the `gitaly` chart and the Gitaly service it provides, and point the oth
 
 You need to set the following parameters:
 
-* `gitlab.gitaly.enabled`: Set to `false` to disable the included Gitaly chart.
-* `global.gitaly.host`: Set to the hostname of the external Gitaly, can be a domain or an IP address.
-* `global.gitaly.authToken.secret`: The name of the [secret which contains the token for authentication][gitaly-secret].
-* `global.gitaly.authToken.key`: The key within the secret, which contains the token content.
-* `gitlab.gitaly.shell.authToken.secret`: The name of the [secret which contains secret for gitlab-shell][gitlab-shell-secret].
-* `gitlab.gitaly.shell.authToken.key`: The key within the secret, which contains the secret content.
-
+- `gitlab.gitaly.enabled`: Set to `false` to disable the included Gitaly chart.
+- `global.gitaly.host`: Set to the hostname of the external Gitaly, can be a domain or an IP address.
+- `global.gitaly.authToken.secret`: The name of the [secret which contains the token for authentication][gitaly-secret].
+- `global.gitaly.authToken.key`: The key within the secret, which contains the token content.
+- `gitlab.gitaly.shell.authToken.secret`: The name of the [secret which contains secret for GitLab Shell][gitlab-shell-secret].
+- `gitlab.gitaly.shell.authToken.key`: The key within the secret, which contains the secret content.
 
 Items below can be further customized if you are not using the defaults:
 
-* `global.gitaly.port`: The port the database is available on, defaults to `8075`
+- `global.gitaly.port`: The port the database is available on, defaults to `8075`
 
 For example, pass these values via helm's `--set` flag while deploying:
 
