@@ -12,12 +12,7 @@ data:
   config.yml: |
     version: 0.1
     log:
-      {{- toYaml .Values.log | nindent 6 -}}
-    # health:
-    #   storagedriver:
-    #     enabled: true
-    #     interval: 10s
-    #     threshold: 3
+      {{ toYaml .Values.log | nindent 6 | trim }}
     http:
       {{- if .Values.debug }}
       debug:
@@ -32,6 +27,10 @@ data:
     http:
       addr: :{{ .Values.service.internalPort }}
       secret: "HTTP_SECRET"
+    health:
+      {{- if kindIs "map" .Values.health }}
+      {{ toYaml .Values.health | nindent 6 | trim }}
+      {{- end }}
     auth:
       token:
         realm: {{ template "registry.authEndpoint" . }}/jwt/auth
