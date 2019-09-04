@@ -56,6 +56,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Websocket Event Changes
 
 ### Known Issues
+ - Some pre-packaged plugins show as removable in the User Interface.
+ - If ``ExperimentalStrictCSRFEnforcement`` is set to True, attempts to use ``/jira subscribe`` fail.
  - Users are unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
  - Google User API Endpoint shows outdated helper text.
  - User count in a channel does not update until after refresh if a user automatically joins a channel.
