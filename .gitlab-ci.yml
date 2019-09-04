@@ -64,6 +64,7 @@ lint_package:
     - build
   except:
     - tags
+    - /(^docs[\/-].+|.+-docs$)/
 
 .review_template:
   stage: review
@@ -96,6 +97,7 @@ lint_package:
       - $KUBECONFIG
   except:
     - master
+    - /(^docs[\/-].+|.+-docs$)/
 
 review_gke:
   variables:
@@ -132,6 +134,7 @@ review_eks:
       - $KUBECONFIG
   except:
     - master
+    - /(^docs[\/-].+|.+-docs$)/
 
 stop_review_gke:
   extends: .stop_review_template
@@ -269,6 +272,7 @@ review_helm_test:
   except:
     refs:
       - master
+      - /(^docs[\/-].+|.+-docs$)/
 
 production_helm_test:
   stage: qa
@@ -308,6 +312,7 @@ debug_review:
       - $KUBECONFIG
   except:
     - master
+    - /(^docs[\/-].+|.+-docs$)/
 
 danger-review:
   image: registry.gitlab.com/gitlab-org/gitlab-build-images:danger
@@ -694,6 +699,7 @@ review_specs_gke:
   except:
     refs:
       - master
+      - /(^docs[\/-].+|.+-docs$)/
 
 review_specs_eks:
   extends: .specs
@@ -711,6 +717,7 @@ review_specs_eks:
   except:
     refs:
       - master
+      - /(^docs[\/-].+|.+-docs$)/
 
 .production_specs:
   extends: .specs
@@ -802,6 +809,7 @@ release_package:
   except:
     refs:
       - master
+      - /(^docs[\/-].+|.+-docs$)/
 
 .qa_production:
   extends: .qa
