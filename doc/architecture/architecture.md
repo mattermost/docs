@@ -41,7 +41,7 @@ The following are forked charts which also use GitLab specific Docker images.
 - Redis-ha
 - Postgresql
 
-Docker images that are used for init containers and migrations.
+Docker images that are used for `initContainers` and various `Job`s.
 
 - alpine-certificates
 - kubectl
