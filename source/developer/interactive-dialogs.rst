@@ -210,6 +210,36 @@ The list of supported fields for the ``select`` type element is included below:
     "default", "String", "(Optional) Set a default value for this form element. Maximum 3,000 characters."
     "placeholder", "String", "(Optional) A string displayed to help guide users in completing the element. Maximum 3,000 characters."
 
+Checkbox Element
+^^^^^^^^^^^^^^^^^^^^^^^
+
+In Mattermost version 5.16 and later, you can use checkbox elements. It looks like a plain text field with a checkbox to be selected. Below is an example of a checkbox element that asks for meeting feedback:
+
+.. image:: ../../source/images/interactive-dialog-bool.png
+
+.. code-block:: json
+
+  {
+    "display_name": "Can you please select below",
+    "placeholder": "The meeting was helpful.",
+    "name": "meeting_input",
+    "type": "bool",
+  }
+
+The full list of supported fields are included below:
+
+.. csv-table::
+    :header: "Field", "Type", "Description"
+
+    "display_name", "String", "Display name of the field shown to the user in the dialog. Maximum 24 characters."
+    "name", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same dialog."
+    "type", "String", "Set this value to ``bool`` for a checkbox element."
+    "optional", "Boolean", "(Optional) Set to true if this form element is not required. Default is ``false``."
+    "help_text", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
+    "default", "String", "(Optional) Set a default value for this form element. True or false."
+    "placeholder", "String", "(Optional) A string displayed to include a label besides the checkbox. Maximum 150 characters."
+    
+
 Dialog Submission
 -----------------------
 
