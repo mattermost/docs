@@ -25,8 +25,9 @@ if gitlab.branch_for_base != "master" && !has_pick_into_stable_label
 end
 
 has_qa_verified_label = gitlab.mr_labels.find { |label| label.start_with?('QA:verified') }
+is_docs_only_branch = gitlab.branch_for_head =~ /(^docs[\/-].*|.*-docs$)/
 
-unless has_qa_verified_label
+unless has_qa_verified_label || is_docs_only_branch
   warn "Please check the QA job and compare with builds on master. If no new failures are reported in QA job, add 'QA:verified' label."
 end
 
