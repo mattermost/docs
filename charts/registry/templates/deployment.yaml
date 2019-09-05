@@ -80,6 +80,7 @@ spec:
           - name: registry-server-config
             mountPath: /etc/docker/registry/
             readOnly: true
+      terminationGracePeriodSeconds: {{ .Values.deployment.terminationGracePeriodSeconds }}
 {{ include "gitlab.certificates.volumeMount" . | indent 10 }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
