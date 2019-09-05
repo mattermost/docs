@@ -1,0 +1,5 @@
+---
+title: Adds readiness and liveness configuration for Registry
+merge_request: 932
+author: jarv
+type: added

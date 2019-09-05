@@ -6,6 +6,24 @@ image:
 
 deployment:
   terminationGracePeriodSeconds: 30
+  readinessProbe:
+    enabled: true
+    path: '/'
+    port: 5000
+    initialDelaySeconds: 0
+    periodSeconds: 10
+    timeoutSeconds: 1
+    successThreshold: 1
+    failureThreshold: 3
+  livenessProbe:
+    enabled: true
+    path: '/'
+    port: 5000
+    initialDelaySeconds: 0
+    periodSeconds: 10
+    timeoutSeconds: 1
+    successThreshold: 1
+    failureThreshold: 3
 
 service:
   name: registry
