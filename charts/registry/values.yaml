@@ -5,7 +5,7 @@ image:
   pullSecrets: []
 
 deployment:
-  terminationGracePeriodSeconds: "30s"
+  terminationGracePeriodSeconds: 30
 
 service:
   name: registry
