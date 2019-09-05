@@ -1,0 +1,5 @@
+---
+title: Adds configurable terminationGracePeriodSeconds for registry
+merge_request: 935
+author:
+type: added

@@ -3,6 +3,10 @@ image:
   tag: '2.7.1'
   pullPolicy: 'IfNotPresent'
   pullSecrets: []
+
+deployment:
+  terminationGracePeriodSeconds: 30
+
 service:
   name: registry
   type: ClusterIP
