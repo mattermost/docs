@@ -42,18 +42,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where list of users were not paginated on warning modal for LDAP group sync team / channel removal.
  - Fixed an issue where a markdown image with an SVG briefly displayed for sender with ``EnableSVGs`` set to false.
  - Fixed an issue with an incorrect error message on Custom URL Schemes field.
- 
-### config.json
-
-Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
-
-#### Changes to Team Edition and Enterprise Edition:
-
-#### Database Changes
-
-#### API Changes
-
-#### Websocket Event Changes
 
 ### Known Issues
  - Some pre-packaged plugins show as removable in the User Interface.
