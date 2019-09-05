@@ -18,24 +18,45 @@ Configuration should be passed in a standard way for Docker, perhaps environment
 variables or a mounted file. This provides a clean common interface with the
 scheduler software.
 
-We plan to offer a container for the following services:
+### GitLab Docker Images
 
-- Sidekiq
-- Unicorn
+The GitLab application is built using Docker images that contain GitLab
+specific services. The build environments for these images can be found in
+the [CNG repository](https://gitlab.com/gitlab-org/build/CNG).
+
+The following GitLab components have images in the CNG repository.
+
 - Gitaly
+- GitLab Elasticsearch Indexer
+- mail_room (https://github.com/tpitale/mail_room)
+- GitLab exporter
+- GitLab Shell
+- Sidekiq
+- Gitlab task-runner
+- Unicorn
 - Workhorse
-- Postgres (perhaps upstream Postgres), along with Postgres Exporter
-- Redis
-- GitLab Monitor
 
-We likely plan to leverage the following existing official containers for
+The following are forked charts which also use GitLab specific Docker images.
+
+- Redis-ha
+
+Docker images that are used for `initContainers` and various `Job`s.
+
+- alpine-certificates
+- kubectl
+
+### Official Docker Images
+
+We leverage the following existing official containers for
 underlying services:
 
 - Docker Distribution ([Docker Registry 2.0](https://github.com/docker/distribution))
 - Prometheus
-- Node Exporter
-- Nginx
+- NGINX Ingress
 - cert-manager
+- Redis
+- PostgreSQL
+- Grafana
 
 ## The GitLab Chart
 
