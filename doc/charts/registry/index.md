@@ -55,6 +55,7 @@ registry:
   certificate:
     secret: gitlab-registry
     key: registry-auth.crt
+  drainTimeout: 60s
   replicas: 1
   storage:
     secret:
@@ -97,6 +98,7 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 | `certificate.secret` | `gitlab-registry`          | JWT certificate                     |
 | `compatiblity`       |                            | Configuration of compatility settings |
 | `debug`              |                            | Debug port and prometheus metrics   |
+| `drainTimeout`       | `60s`                      | Amount of time to wait for HTTP connections to drain after receiving a SIGTERM signal |
 | `enabled`            | `true`                     | Enable registry flag                |
 | `httpSecret`         |                            | Https secret                        |
 | `image.pullPolicy`   |                            | Pull policy for the registry image  |
