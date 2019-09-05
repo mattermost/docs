@@ -161,6 +161,10 @@ debug:
     enabled: false
     path: '/metrics'
 
+# Amount of time to wait for HTTP connections to drain after
+# receiving a SIGTERM signal
+draintimeout: '60s'
+
 # https://docs.docker.com/registry/configuration/#health
 health:
   storagedriver:

@@ -21,6 +21,7 @@ data:
           enabled: {{ eq true .Values.debug.prometheus.enabled }}
           path: {{ .Values.debug.prometheus.path }}
       {{- end }}
+      draintimeout: {{ .Values.draintimeout }}
       headers:
         X-Content-Type-Options: [nosniff]
       addr: :{{ .Values.service.internalPort }}

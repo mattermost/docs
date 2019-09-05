@@ -1,0 +1,5 @@
+---
+title: Allows draintimeout to be configured for registry
+merge_request: 934
+author: jarv
+type: added
