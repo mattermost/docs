@@ -37,7 +37,7 @@ This chart makes use of only two secrets:
 We will describe all the major sections of the configuration below. When configuring
 from the parent chart, these values will be:
 
-```
+```yaml
 registry:
   enabled:
   image:
@@ -123,7 +123,7 @@ found in the [Kubernetes documentation](https://kubernetes.io/docs/concepts/cont
 
 Below is an example use of `pullSecrets`:
 
-```YAML
+```yaml
 image:
   repository: my.registry.repository
   tag: latest
@@ -138,7 +138,8 @@ image:
 `tolerations` allow you schedule pods on tainted worker nodes
 
 Below is an example use of `tolerations`:
-```YAML
+
+```yaml
 tolerations:
 - key: "node_label"
   operator: "Equal"
@@ -156,7 +157,7 @@ tolerations:
 
 Below is an example use of `annotations`
 
-```YAML
+```yaml
 annotations:
   kubernetes.io/example-annotation: annotation-value
 ```
@@ -187,17 +188,14 @@ These settings will be populated by [values.yaml](https://gitlab.com/charts/gitl
 
 By default, the Service is configured as:
 
-| Name              | Type    | Default | Description |
-|:----------------- |:-------:|:------- |:----------- |
-| `name`            | String  | `registry` | Configures the name of the service |
-| `type`            | String  | `ClusterIP`| Configures the type of the service |
-| `externalPort`    | Int     | `5000`     | Port exposed by the Service |
-| `internalPort`    | Int     | `5000`     | Port utilized by the Pod to accept
-request from the service |
-| `clusterIP`       | String  | `null`      | Allows one to configure a custom
-Cluster IP as necessary |
-| `loadBalancerIP`  | String  | `null`      | Allows one to configure a custom
-LoadBalancer IP address as necessary |
+| Name             | Type    | Default    | Description |
+|:---------------- |:-------:|:---------- |:----------- |
+| `name`           | String  | `registry` | Configures the name of the service |
+| `type`           | String  | `ClusterIP`| Configures the type of the service |
+| `externalPort`   | Int     | `5000`     | Port exposed by the Service |
+| `internalPort`   | Int     | `5000`     | Port utilized by the Pod to accept request from the service |
+| `clusterIP`      | String  | `null`     | Allows one to configure a custom Cluster IP as necessary |
+| `loadBalancerIP` | String  | `null`     | Allows one to configure a custom LoadBalancer IP address as necessary |
 
 ## Configuring the `ingress`
 
@@ -217,14 +215,13 @@ This section controls the registry
 This configuration is optional and is used to limit egress and ingress of the registry to specific endpoints.
 and ingress to specific endpoints.
 
-
 | Name              | Type    | Default | Description |
 |:----------------- |:-------:|:------- |:----------- |
 | `enabled`         | Boolean | `false` | This setting enables the networkpolicy for registry |
 | `ingress.enabled` | Boolean | `false` | When set to `true`, the `Ingress` network policy will be activated. This will block all ingress connections unless rules are specified. |
-| `ingress.rules`   | Array   | `[]`    | Rules for the ingress policy, for details see https://kubernetes.io/docs/concepts/services-networking/network-policies/#the-networkpolicy-resource and the example below |
+| `ingress.rules`   | Array   | `[]`    | Rules for the ingress policy, for details see <https://kubernetes.io/docs/concepts/services-networking/network-policies/#the-networkpolicy-resource> and the example below |
 | `egress.enabled`  | Boolean | `false` | When set to `true`, the `Egress` network policy will be activated. This will block all egress connections unless rules are specified. |
-| `egress.rules`    | Array   | `[]`    | Rules for the egress policy, these for details see https://kubernetes.io/docs/concepts/services-networking/network-policies/#the-networkpolicy-resource and the example below |
+| `egress.rules`    | Array   | `[]`    | Rules for the egress policy, these for details see <https://kubernetes.io/docs/concepts/services-networking/network-policies/#the-networkpolicy-resource> and the example below |
 
 ### Example policy for preventing connections to all internal endpoints
 
@@ -232,33 +229,33 @@ The Registry service normally requires egress connections to object storage,
 ingress connections from docker clients, and kube-dns for DNS lookups. This
 adds the following network restrictions to the Registry service:
 
-* All egress requests to the local network on `10.0.0.0/8` port 53 are allowed (for kubeDNS)
-* Other egress requests to the local network on `10.0.0.0/8` are restricted
-* Egress requests outside of the `10.0.0.0/8` are allowed
+- All egress requests to the local network on `10.0.0.0/8` port 53 are allowed (for kubeDNS)
+- Other egress requests to the local network on `10.0.0.0/8` are restricted
+- Egress requests outside of the `10.0.0.0/8` are allowed
 
 _Note that the registry service requires outbound connectivity to the public
 internet for images on [external object storage](../../advanced/external-object-storage)_
 
-```
-  networkpolicy:
+```yaml
+networkpolicy:
+  enabled: true
+  egress:
     enabled: true
-    egress:
-      enabled: true
-      # The following rules enable traffic to all external
-      # endpoints, except the local
-      # network (except DNS requests)
-      rules:
-        - to:
-          - ipBlock:
-              cidr: 10.0.0.0/8
-          ports:
-          - port: 53
-            protocol: UDP
-        - to:
-          - ipBlock:
-              cidr: 0.0.0.0/0
-              except:
-              - 10.0.0.0/8
+    # The following rules enable traffic to all external
+    # endpoints, except the local
+    # network (except DNS requests)
+    rules:
+      - to:
+        - ipBlock:
+            cidr: 10.0.0.0/8
+        ports:
+        - port: 53
+          protocol: UDP
+      - to:
+        - ipBlock:
+            cidr: 0.0.0.0/0
+            except:
+            - 10.0.0.0/8
 ```
 
 ## Defining the Registry Configuration
@@ -282,7 +279,7 @@ filled with a securely generated 128 character alpha-numeric string that is base
 
 To create this secret manually:
 
-```
+```sh
 kubectl create secret generic gitlab-registry-httpsecret --from-literal=secret=strongrandomstring
 ```
 
@@ -295,7 +292,7 @@ The value should include the protocol and hostname only. The chart template will
 append the necessary request path. The resulting value will be populated to `auth.token.realm`
 inside the container. For example: `authEndpoint: "https://gitlab.example.com"`
 
-By default this field is populated with the gitlab hostname configuration set by the
+By default this field is populated with the GitLab hostname configuration set by the
 [Global Settings](../globals.md).
 
 ### certificate
@@ -311,7 +308,7 @@ container as `auth.token.rootcertbundle`.
 
 Default Example:
 
-```
+```yaml
 certificate:
   secret: gitlab-registry
   key: registry-auth.crt
@@ -325,7 +322,7 @@ section.
 
 Default contents:
 
-```
+```yaml
 compatibility:
   schema1:
     enabled: false
@@ -357,10 +354,10 @@ instances to create as a part of the set. This defaults to `1`.
 
 ### storage
 
-```
+```yaml
 storage:
   secret:
-  key: config 
+  key: config
   extraKey:
 ```
 
@@ -414,7 +411,7 @@ NOTE: **Note:** The chart will populate `delete.enabled: true` into this configu
 Debug allows you set the prometheus debug port and enable
 prometheus metrics
 
-```
+```yaml
 debug:
   addr:
     port: 5001

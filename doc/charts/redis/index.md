@@ -93,7 +93,7 @@ to the `helm install` command using the `--set` flags:
 | `service.type`                 | `ClusterIP`     | Redis service type                          |
 | `timeout`                      | `60`            | Timeout in seconds                          |
 | `tcpKeepalive`                 | `300`           | Keep alive in seconds                       |
- 
+
 ## Chart configuration examples
 
 ### image.pullSecrets
