@@ -1,44 +1,116 @@
-sidekiq:
-  pods:
-    - name: workflow
-      concurrency: 10
-      replicas: 2
-      queues:
-        - [post_receive, 5]
-        - [merge, 5]
-        - [new_note, 2]
-        - [new_issue, 2]
-        - [new_merge_request, 2]
-    - name: pipeline
-      replicas: 1
-      queues:
-        - [build, 2]
-        - [pipeline, 2]
-        - [pipeline_processing, 5]
-        - [pipeline_default, 3]
-        - [pipeline_cache, 3]
-        - [pipeline_hooks, 2]
-    - name: glob
-      replicas: 1
-      queues:
-        - [gitlab_shell, 2]
-        - [email_receiver, 2]
-        - [emails_on_push, 2]
-        - [gcp_cluster, 1]
-        - [project_migrate_hashed_storage, 1]
-        - [storage_migrator, 1]
-    - name: ee
-      replicas: 1
-      queues:
-        - [ldap_group_sync, 2]
-        - [geo, 1]
-        - [repository_update_mirror, 1]
-        - [repository_update_remote_mirror, 1]
-        - [project_update_repository_storage, 1]
-        - [admin_emails, 1]
-        - [geo_repository_update, 1]
-        - [elastic_batch_project_indexer, 1]
-        - [elastic_indexer, 1]
-        - [elastic_commit_indexer, 1]
-        - [export_csv, 1]
-        - [object_storage_upload, 1]
+gitlab:
+  sidekiq:
+    pods:
+      - name: workflow
+        concurrency: 15
+        replicas: 4
+        queues:
+          - [post_receive, 5]
+          - [merge, 5]
+          - [auto_merge, 3]
+          - [process_commit, 3]
+          - [update_merge_requests, 3]
+          - [create_gpg_signature, 2]
+          - [invalid_gpg_signature_update, 2]
+          - [new_note, 2]
+          - [new_issue, 2]
+          - [new_merge_request, 2]
+          - [rebase, 2]
+          - [remote_mirror_notification, 2]
+          - [create_note_diff_file, 1]
+          - [upload_checksum, 1]
+          - [web_hook, 1]
+      - name: glob
+        replicas: 2
+        queues:
+          - [gitlab_shell, 2]
+          - [email_receiver, 2]
+          - [emails_on_push, 2]
+          - [mailers, 2]
+          - [mail_scheduler, 2]
+          - [background_migration, 1]
+          - [cronjob, 1]
+          - [default, 1]
+          - [delete_diff_files, 1]
+          - [delete_merged_branches, 1]
+          - [delete_stored_files, 1]
+          - [delete_user, 1]
+          - [detect_repository_languages, 1]
+          - [gcp_cluster, 1]
+          - [github_importer, 1]
+          - [github_import_advance_stage, 1]
+          - [git_garbage_collect, 1]
+          - [group_destroy, 1]
+          - [hashed_storage, 1]
+          - [irker, 1]
+          - [migrate_external_diffs, 1]
+          - [namespaceless_project_destroy, 1]
+          - [object_pool, 1]
+          - [object_storage_upload, 1]
+          - [object_storage, 1]
+          - [phabricator_import_import_tasks, 1]
+          - [plugin, 1]
+          - [project_migrate_hashed_storage, 1]
+          - [project_cache, 1]
+          - [project_destroy, 1]
+          - [project_export, 1]
+          - [project_rollback_hashed_storage, 1]
+          - [project_service, 1]
+          - [reactive_caching, 1]
+          - [repository_check, 1]
+          - [repository_cleanup, 1]
+          - [repository_fork, 1]
+          - [repository_import, 1]
+          - [repository_remove_remote, 1]
+          - [storage_migrator, 1]
+          - [system_hook_push, 1]
+          - [todos_destroyer, 1]
+      - name: devops
+        replicas: 1
+        queues:
+          - [deployment, 3]
+          - [auto_devops, 2]
+          - [chat_notification, 2]
+          - [import_issues_csv, 2]
+          - [authorized_projects, 1]
+          - [pages, 1]
+          - [pages_domain_verification, 1]
+          - [pages_domain_ssl_renewal, 1]
+          - [project_daily_statistics, 1]
+          - [propagate_service_template, 1]
+          - [update_namespace_statistics, 1]
+          - [update_project_statistics, 1]
+      - name: pipeline
+        replicas: 1
+        queues:
+          - [pipeline_processing, 5]
+          - [pipeline_creation, 4]
+          - [pipeline_cache, 3]
+          - [pipeline_default, 3]
+          - [build, 2]
+          - [pipeline, 2]
+          - [pipeline_hooks, 2]
+          - [container_repository, 1]
+          - [expire_build_instance_artifacts, 1]
+          - [pipeline_background, 1]
+      - name: ee
+        replicas: 1
+        queues:
+          - [create_github_webhook, 2]
+          - [incident_management, 2]
+          - [ldap_group_sync, 2]
+          - [new_epic, 2]
+          - [geo, 1]
+          - [geo_repository_update, 1]
+          - [repository_update_mirror, 1]
+          - [repository_update_remote_mirror, 1]
+          - [project_import_schedule, 1]
+          - [project_update_repository_storage, 1]
+          - [admin_emails, 1]
+          - [elastic_batch_project_indexer, 1]
+          - [elastic_indexer, 1]
+          - [elastic_full_index, 1]
+          - [elastic_commit_indexer, 1]
+          - [elastic_namespace_indexer, 1]
+          - [export_csv, 1]
+          - [object_storage_upload, 1]

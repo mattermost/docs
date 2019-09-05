@@ -1,0 +1,5 @@
+---
+title: 'Update the sidekiq queues example with all of the queues #1429'
+merge_request: 909
+author: Mike Rennie
+type: changed
