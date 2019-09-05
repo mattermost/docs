@@ -101,7 +101,7 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 | `compatiblity`       |                            | Configuration of compatility settings |
 | `debug`              |                            | Debug port and prometheus metrics   |
 | `deployment.terminationGracePeriodSeconds` | `30` | Optional duration in seconds the pod needs to terminate gracefully. |
-| `drainTimeout`       | `0`                        | Amount of time to wait for HTTP connections to drain after receiving a SIGTERM signal |
+| `drainTimeout`       | `0`                        | Amount of time to wait for HTTP connections to drain after receiving a SIGTERM signal (e.g. `10s`) |
 | `enabled`            | `true`                     | Enable registry flag                |
 | `httpSecret`         |                            | Https secret                        |
 | `image.pullPolicy`   |                            | Pull policy for the registry image  |
