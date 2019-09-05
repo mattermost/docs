@@ -68,7 +68,7 @@ Mattermost v5.14.0 contains a medium level security fix. [Upgrading](http://docs
 #### Webhooks
 - ``EnableWebhookDebugging`` now logs the request id for additional context when debugging.
  - Added support for plugins to dismiss posts through the ``MessageWillBePosted`` hook. Dismissed posts no longer show up as a client-side error.
- - Added an optional "emoji_icon" field to incoming webhooks to use and emoji in place of the display picture when the webhook posts into Mattermost.
+ - Added an optional "icon_emoji" field to incoming webhooks to use an emoji in place of the display picture when the webhook posts into Mattermost.
  
 #### Integrations
  - Added support for interactive dialogs without elements, e.g. for confirmation dialogs.
