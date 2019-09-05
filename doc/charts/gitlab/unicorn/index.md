@@ -1,9 +1,9 @@
-# Using the GitLab-Unicorn Chart
+# Using the GitLab Unicorn Chart
 
-The `unicorn` sub-chart provides the gitlab rails web-server with two unicorn workers
+The `unicorn` sub-chart provides the GitLab rails web-server with two Unicorn workers
 per pod. (The minimum necessary for a single pod to be able to serve any web request in GitLab)
 
-Currently the container used in the chart also includes a copy of gitlab-workhorse,
+Currently the container used in the chart also includes a copy of GitLab Workhorse,
 which we haven't split out yet.
 
 ## Requirements
@@ -84,7 +84,7 @@ found in [the Kubernetes documentation](https://kubernetes.io/docs/concepts/cont
 
 Below is an example use of `pullSecrets`:
 
-```YAML
+```yaml
 image:
   repository: my.unicorn.repository
   pullPolicy: Always
@@ -94,10 +94,12 @@ image:
 ```
 
 ### tolerations
+
 `tolerations` allow you schedule pods on tainted worker nodes
 
 Below is an example use of `tolerations`:
-```YAML
+
+```yaml
 tolerations:
 - key: "node_label"
   operator: "Equal"
@@ -113,7 +115,7 @@ tolerations:
 
 `annotations` allows you to add annotations to the unicorn pods. For example:
 
-```YAML
+```yaml
 annotations:
   kubernetes.io/example-annotation: annotation-value
 ```
@@ -162,7 +164,7 @@ these values to fine-tune them for your environment or troubleshoot performance 
 
 ### Redis
 
-```YAML
+```yaml
 redis:
   host: redis.example.com
   serviceName: redis
@@ -179,7 +181,7 @@ redis:
 | `serviceName`     | String  | `redis` | The name of the `service` which is operating the Redis database. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Redis as a part of the overall GitLab chart. |
 | `port`            | Integer | `6379`  | The port on which to connect to the Redis server. |
 | `password.key`    | String  |         | The `password.key` attribute for Redis defines the name of the key in the secret (below) that contains the password. |
-| `password.secret` | String  |         | The `password.secret` attribute for Redis defines the name of the kubernetes `Secret` to pull from. |
+| `password.secret` | String  |         | The `password.secret` attribute for Redis defines the name of the Kubernetes `Secret` to pull from. |
 | `password.enabled`| Bool    | true    | The `password.enabled` provides a toggle for using a password with the Redis instance. |
 
 ### PostgreSQL
@@ -201,7 +203,7 @@ psql:
 | `host`            | String  |                       | The hostname of the PostgreSQL server with the database to use. This can be omitted if `postgresql.install=true` (default non-production). |
 | `database`        | String  | `gitlabhq_production` | The name of the database to use on the PostgreSQL server. |
 | `password.key`    | String  |                       | The `password.key` attribute for PostgreSQL defines the name of the key in the secret (below) that contains the password. |
-| `password.secret` | String  |                       | The `password.secret` attribute for PostgreSQL defines the name of the kubernetes `Secret` to pull from. |
+| `password.secret` | String  |                       | The `password.secret` attribute for PostgreSQL defines the name of the Kubernetes `Secret` to pull from. |
 | `port`            | Integer | `5432`                | The port on which to connect to the PostgreSQL server. |
 | `username`        | String  | `gitlab`              | The username with which to authenticate to the database. |
 | `preparedStatements`| Bool  | `false`               | If prepared statements should be used when communicating with the PostgreSQL server. |
@@ -213,7 +215,7 @@ Gitaly is configured by [global settings](../../globals.md). Please see the
 
 ### Minio
 
-```YAML
+```yaml
 minio:
   serviceName: 'minio-svc'
   port: 9000
@@ -226,7 +228,7 @@ minio:
 
 ### Registry
 
-```YAML
+```yaml
 registry:
   host: registry.example.com
   port: 443
@@ -275,7 +277,7 @@ each pod allowing a Prometheus server to discover and scrape the exposed metrics
 GitLab Shell uses an Auth Token in its communication with Unicorn. Share the token
 with GitLab Shell and Unicorn using a shared Secret.
 
-```YAML
+```yaml
 shell:
   authToken:
     secret: gitlab-shell-secret
@@ -286,5 +288,5 @@ shell:
 | Name               | Type    | Default | Description |
 |:------------------ |:-------:|:------- |:----------- |
 | `authToken.key`    | String  |         | Defines the name of the key in the secret (below) that contains the authToken. |
-| `authToken.secret` | String  |         | Defines the name of the kubernetes `Secret` to pull from. |
+| `authToken.secret` | String  |         | Defines the name of the Kubernetes `Secret` to pull from. |
 | `port`             | Integer | `22`    | The port number to use in the generation of SSH URLs within the GitLab UI. Controlled by `global.shell.port`. |

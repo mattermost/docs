@@ -1,6 +1,6 @@
 # Using the GitLab-Migrations Chart
 
-The `migrations` sub-chart provides a single migration [Job][] that handles seeding/migrating the GitLab database. The chart runs using the gitlab-rails codebase.
+The `migrations` sub-chart provides a single migration [Job][] that handles seeding/migrating the GitLab database. The chart runs using the GitLab Rails codebase.
 
 After migrating, this Job also edits the application settings in the database to turn off [writes to authorized keys file](https://docs.gitlab.com/ee/administration/operations/fast_ssh_key_lookup.html#setting-up-fast-lookup-via-gitlab-shell). In the charts we are only supporting use of the GitLab Authorized Keys API with the SSH `AuthorizedKeysCommand` instead of support for writing to an authorized keys file.
 
@@ -16,7 +16,7 @@ For now we also have the jobs remain as objects in the cluster after they comple
 
 The container used in this chart has some additional optimizations that we are not currently using in this Chart. Mainly the ability to quickly skip running migrations if they are already up to date, without needing to boot up the rails application to check. This optimization requires us to persist the migration status. Which we are not doing with this chart at the moment. In the future we will introduce storage support for the migrations status to this chart.
 
-# Configuration
+## Configuration
 
 The `migrations` chart is configured in two parts: external services, and chart settings.
 
@@ -24,23 +24,23 @@ The `migrations` chart is configured in two parts: external services, and chart 
 
 Table below contains all the possible charts configurations that can be supplied to `helm install` command using the `--set` flags
 
-| Parameter             | Description                                    | Default                                        |
-| ---                   | ---                                            | ---                                            |
-| image.repository      | Migrations image repository                    | registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee |
-| image.tag             | Migrations image tag                           |                                                |
-| image.pullPolicy      | Migrations pull policy                         | Always                                         |
-| image.pullSecrets     | Secrets for the image repository               |                                                |
-| init.image            | initContainer image                            | busybox                                        |
-| init.tag              | initContainer image tag                        | latest                                         |
-| enabled               | Migrations enable flag                         | true                                           |
-| tolerations           | Toleration labels for pod assignment           | `[]`                                           |
-| redis.serviceName     | Redis service name                             | redis                                          |
-| psql.password.secret  | psql secret                                    | gitlab-postgres                                |
-| psql.password.key     | key to psql password in psql secret            | psql-password                                  |
-| extraInitContainers   | List of extra init containers to include       |                                                |
-| extraContainers       | List of extra containers to include            |                                                |
-| extraVolumes          | List of extra volumes to create                |                                                |
-| extraVolumeMounts     | List of extra volumes mountes to do            |                                                |
+| Parameter               | Description                              | Default           |
+| ----------------------- | ---------------------------------------- | ----------------  |
+| `image.repository`      | Migrations image repository              | `registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee` |
+| `image.tag`             | Migrations image tag                     |                   |
+| `image.pullPolicy`      | Migrations pull policy                   | `Always`          |
+| `image.pullSecrets`     | Secrets for the image repository         |                   |
+| `init.image`            | initContainer image                      | `busybox`         |
+| `init.tag`              | initContainer image tag                  | `latest`          |
+| `enabled`               | Migrations enable flag                   | `true`            |
+| `tolerations`           | Toleration labels for pod assignment     | `[]`              |
+| `redis.serviceName`     | Redis service name                       | `redis`           |
+| `psql.password.secret`  | psql secret                              | `gitlab-postgres` |
+| `psql.password.key`     | key to psql password in psql secret      | `psql-password`   |
+| `extraInitContainers`   | List of extra init containers to include |                   |
+| `extraContainers`       | List of extra containers to include      |                   |
+| `extraVolumes`          | List of extra volumes to create          |                   |
+| `extraVolumeMounts`     | List of extra volumes mountes to do      |                   |
 
 ## Chart configuration examples
 
@@ -98,7 +98,7 @@ The port on which to connect to the Redis server. Defaults to `6379`.
 
 The `password` attribute for Redis has two sub keys:
 
-- `secret` defines the name of the kubernetes `Secret` to pull from
+- `secret` defines the name of the Kubernetes `Secret` to pull from
 - `key` defines the name of the key in the above secret that contains the password.
 
 ### PostgreSQL
@@ -139,7 +139,7 @@ The username with which to authenticate to the database. This defaults to `gitla
 
 The `password` attribute for PostgreSQL has to sub keys:
 
-- `secret` defines the name of the kubernetes `Secret` to pull from
+- `secret` defines the name of the Kubernetes `Secret` to pull from
 - `key` defines the name of the key in the above secret that contains the password.
 
 [Job]: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/

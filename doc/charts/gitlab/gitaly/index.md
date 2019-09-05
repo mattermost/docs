@@ -10,10 +10,10 @@ cluster this chart is deployed onto.
 
 ## Design Choices
 
-The Gitaly container used in this chart also contains the gitlab-shell code-base in
+The Gitaly container used in this chart also contains the GitLab Shell codebase in
 order to perform the actions on the Git repos that have not yet been ported into Gitaly.
-The Gitaly container includes a copy of the gitlab-shell container within it, and
-as a result we also need to configure gitlab-shell within this chart.
+The Gitaly container includes a copy of the GitLab Shell container within it, and
+as a result we also need to configure GitLab Shell within this chart.
 
 ## Configuration
 
@@ -57,7 +57,6 @@ the `helm install` command using the `--set` flags.
 | `persistence.storageClass`     |                 | storageClassName for provisioning        |
 | `persistence.subPath`          |                 | Gitaly persistence volume mount path     |
 
-
 ## Chart configuration examples
 
 ### image.pullSecrets
@@ -69,7 +68,7 @@ found in the [Kubernetes documentation](https://kubernetes.io/docs/concepts/cont
 
 Below is an example use of `pullSecrets`
 
-```YAML
+```yaml
 image:
   repository: my.gitaly.repository
   tag: latest
@@ -80,10 +79,12 @@ image:
 ```
 
 ### tolerations
+
 `tolerations` allow you schedule pods on tainted worker nodes
 
 Below is an example use of `tolerations`:
-```YAML
+
+```yaml
 tolerations:
 - key: "node_label"
   operator: "Equal"
@@ -101,10 +102,10 @@ tolerations:
 
 Below is an example use of `annotations`:
 
-```YAML
+```yaml
 annotations:
   kubernetes.io/example-annotation: annotation-value
-``` 
+```
 
 ## External Services
 
@@ -113,7 +114,7 @@ as the attached Unicorn service.
 
 ### Redis
 
-```YAML
+```yaml
 redis:
   host: redis.example.com
   serviceName: redis
@@ -130,7 +131,7 @@ NOTE: **Note:** Credentials will be sourced from `global.redis.password` values.
 
 ### Unicorn
 
-```YAML
+```yaml
 unicorn:
   host: unicorn.example.com
   serviceName: unicorn
@@ -165,7 +166,7 @@ NOTE: **Note:** The persistence settings for gitaly are used in a volumeClaimTem
   that are meant to reference a single specific volume (ie volumeName). If you want
   to reference a specific volume, you need to manually create the PersistentVolumeClaim.
 
-```
+```yaml
 persistence:
   enabled: true
   storageClass: standard
