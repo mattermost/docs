@@ -28,7 +28,7 @@ The following GitLab components have images in the CNG repository.
 
 - Gitaly
 - GitLab Elasticsearch Indexer
-- Mailroom
+- mail_room (https://github.com/tpitale/mail_room)
 - GitLab exporter
 - GitLab Shell
 - Sidekiq
@@ -39,7 +39,6 @@ The following GitLab components have images in the CNG repository.
 The following are forked charts which also use GitLab specific Docker images.
 
 - Redis-ha
-- Postgresql
 
 Docker images that are used for `initContainers` and various `Job`s.
 
