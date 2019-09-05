@@ -55,6 +55,7 @@ underlying services:
 - NGINX Ingress
 - cert-manager
 - Redis
+- PostgreSQL
 - Grafana
 
 ## The GitLab Chart
