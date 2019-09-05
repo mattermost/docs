@@ -43,7 +43,7 @@ describe "Restoring a backup" do
 
     it 'Should have runner registered' do
       visit '/admin/runners'
-      expect(page).to have_css('#content-body > div > div.runners-content .gl-responsive-table-row', minimum: 2)
+      expect(page).to have_css('#content-body div[id^=\'runner_\']', minimum: 1)
     end
 
     it 'Issue attachments should load correctly' do
@@ -55,7 +55,7 @@ describe "Restoring a backup" do
       wait(reload: false) do
         has_selector?(image_selector)
       end
-      
+
       expect(page).to have_selector(image_selector)
       image_src = page.all(image_selector)[0][:src]
       open(image_src) do |f|
