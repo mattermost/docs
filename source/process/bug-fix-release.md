@@ -46,7 +46,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
     - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel. [See example](https://community.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
-       - Que a discussion about MVP candidates for the next R&D meeting
+       - Queue a discussion about MVP candidates for the next R&D meeting
     - Update Changelog PR based on what's in/out of the release
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/mattermost-server/issues/3702))
     - Confirm date of marketing announcement for the release date with Marketing, and update release channel header if needed
@@ -282,6 +282,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Update [company roadmap at mattermost.com](https://about.mattermost.com/direction/)
 
 ### L. (T-plus 30 days) Update Mattermost Security Page
+
 1. Release Manager:
     - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) after reviewing with security lead
       - If a dot release is shipping with security fixes, do not post new details until T-plus 10 working days from the dot release ship date
