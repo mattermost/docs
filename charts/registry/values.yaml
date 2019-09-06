@@ -10,8 +10,8 @@ deployment:
     enabled: true
     path: '/debug/health'
     port: 5001
-    initialDelaySeconds: 0
-    periodSeconds: 10
+    initialDelaySeconds: 5
+    periodSeconds: 5
     timeoutSeconds: 1
     successThreshold: 1
     failureThreshold: 3
@@ -19,7 +19,7 @@ deployment:
     enabled: true
     path: '/debug/health'
     port: 5001
-    initialDelaySeconds: 0
+    initialDelaySeconds: 5
     periodSeconds: 10
     timeoutSeconds: 1
     successThreshold: 1
