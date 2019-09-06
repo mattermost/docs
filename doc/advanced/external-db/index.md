@@ -33,8 +33,8 @@ Items below can be further customized if you are not using the defaults:
 If you use a mutual TLS connection to the database:
 
 - `global.psql.ssl.secret`: A secret containing client certificate, key and certificate authority.
-- `global.psql.ssl.serverCA`: The key inside the secret refering the certificate authority (CA).
-- `global.psql.ssl.clientCertificate`: They key inside the secret refering the client certificate.
+- `global.psql.ssl.serverCA`: The key inside the secret referring the certificate authority (CA).
+- `global.psql.ssl.clientCertificate`: The key inside the secret referring the client certificate.
 - `global.psql.ssl.clientKey`: The client inside the secret.
 
 For example, pass these values via helm's `--set` flag while deploying:
