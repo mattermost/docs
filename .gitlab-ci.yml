@@ -662,7 +662,7 @@ check_docs_lint:
   script:
     - source "${VARIABLES_FILE}"
     - apt-get update && apt-get install -y --no-install-recommends curl ca-certificates
-    - curl -LsO https://storage.googleapis.com/kubernetes-release/release/v1.9.3/bin/linux/amd64/kubectl
+    - curl -LsO https://storage.googleapis.com/kubernetes-release/release/v1.12.10/bin/linux/amd64/kubectl
     - chmod +x kubectl
     - mv kubectl /usr/local/bin/kubectl
     - mkdir -p /etc/gitlab/minio
