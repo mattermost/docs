@@ -8,8 +8,8 @@ deployment:
   terminationGracePeriodSeconds: 30
   readinessProbe:
     enabled: true
-    path: '/'
-    port: 5000
+    path: '/debug/health'
+    port: 5001
     initialDelaySeconds: 0
     periodSeconds: 10
     timeoutSeconds: 1
@@ -17,8 +17,8 @@ deployment:
     failureThreshold: 3
   livenessProbe:
     enabled: true
-    path: '/'
-    port: 5000
+    path: '/debug/health'
+    port: 5001
     initialDelaySeconds: 0
     periodSeconds: 10
     timeoutSeconds: 1

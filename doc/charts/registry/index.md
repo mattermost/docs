@@ -419,8 +419,8 @@ NOTE: **Note:** The chart will populate `delete.enabled: true` into this configu
 
 ### debug
 
-Debug allows you set the prometheus debug port which enables the health
-endpoint and prometheus metrics
+The debug port is enabled by default and is used for the liveness/readiness
+probe. Additionally, prometheus metrics can be enabled.
 
 ```yaml
 debug:
