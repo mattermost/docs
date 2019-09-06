@@ -85,7 +85,7 @@ spec:
           livenessProbe:
             httpGet:
               path: {{ .Values.deployment.livenessProbe.path }}
-              port: {{ .Values.deployment.livenessProbe.port }}
+              port: {{ default .Values.debug.addr.port .Values.deployment.livenessProbe.port }}
               scheme: HTTP
             initialDelaySeconds: {{ .Values.deployment.livenessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.deployment.livenessProbe.periodSeconds }}
