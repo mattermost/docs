@@ -38,6 +38,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where installing a plugin via URL failed if the download took longer then 30 seconds.
  - Fixed an issue where plugins did not get disabled when removing them.
  - Fixed an issue where plugin translation files were not updated on web-clients when plugins were upgraded.
+ - Fixed an issue where bots could not be added to any team if server wide email domain restriction was enabled.
  - Fixed an issue where pagination broke when adding users to a team.
  - Fixed an issue where list of users were not paginated on warning modal for LDAP group sync team / channel removal.
  - Fixed an issue where a markdown image with an SVG briefly displayed for sender with ``EnableSVGs`` set to false.
