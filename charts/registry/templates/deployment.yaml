@@ -97,7 +97,7 @@ spec:
           readinessProbe:
             httpGet:
               path: {{ .Values.deployment.readinessProbe.path }}
-              port: {{ .Values.deployment.readinessProbe.port }}
+              port: {{ default .Values.debug.addr.port .Values.deployment.livenessProbe.port }}
               scheme: HTTP
             initialDelaySeconds: {{ .Values.deployment.readinessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.deployment.readinessProbe.periodSeconds }}
