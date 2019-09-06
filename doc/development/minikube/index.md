@@ -101,6 +101,8 @@ Stopping local Kubernetes cluster...
 Machine stopped.
 ```
 
+Take note of the result from running the `minikube ip` command. If the output is not `192.168.99.100`, the output IP will be needed later.
+
 ## Using Minikube
 
 Minikube can be used directly as a Kubernetes installation, and treated as a
@@ -189,6 +191,13 @@ helm repo update
 helm upgrade --install gitlab gitlab/gitlab \
   --timeout 600 \
   -f https://gitlab.com/charts/gitlab/raw/master/examples/values-minikube-minimum.yaml
+```
+
+If the output of `minikube ip` was not `192.168.99.100`, add these arguments to override the IP endpoints in the example configuration files:
+
+```sh
+  --set global.hosts.domain=$(minikube_ip) \
+  --set global.hosts.externalIP=$(minikuube_ip).nip.io
 ```
 
 ### Handling DNS
