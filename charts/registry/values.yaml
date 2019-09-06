@@ -3,6 +3,10 @@ image:
   tag: '2.7.1'
   pullPolicy: 'IfNotPresent'
   pullSecrets: []
+
+deployment:
+  terminationGracePeriodSeconds: 30
+
 service:
   name: registry
   type: ClusterIP
@@ -160,6 +164,10 @@ debug:
   prometheus:
     enabled: false
     path: '/metrics'
+
+# Amount of time to wait for HTTP connections to drain after
+# receiving a SIGTERM signal
+draintimeout: '0'
 
 # https://docs.docker.com/registry/configuration/#health
 health:
