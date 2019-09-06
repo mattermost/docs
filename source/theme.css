@@ -1,8 +1,34 @@
-@media screen and (min-width: 1400px) {
-	.wy-nav-content {
-		height: auto;
-		max-width: 100%;
-	}
+@media print {
+	.wy-nav-side, .wy-nav-side *, .header__container, .header__container * {
+        visibility: hidden;
+    }
+
+    div.wy-nav-content {
+    	height: auto;
+    }
+
+    html, body, .wy-nav-content-wrap, .wy-nav-content {
+    	width: 100%;
+    	height: auto !important;
+    	left: 0px;
+        top: 0px;
+        position:absolute;
+        overflow: visible !important; 
+        font-size: 75%;
+    }
+
+    img {
+    	max-width: 75% !important;
+    	height: auto !important;
+    }
+
+    blockquote {
+    	page-break-before: avoid;
+    }
+
+    h2 {
+    	page-break-after: avoid;
+    }
 }
 
 html, body {
