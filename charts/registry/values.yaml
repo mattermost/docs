@@ -3,6 +3,30 @@ image:
   tag: '2.7.1'
   pullPolicy: 'IfNotPresent'
   pullSecrets: []
+
+deployment:
+  terminationGracePeriodSeconds: 30
+  readinessProbe:
+    enabled: true
+    path: '/debug/health'
+    # defaults to the debug port
+    # port: 5001
+    initialDelaySeconds: 5
+    periodSeconds: 5
+    timeoutSeconds: 1
+    successThreshold: 1
+    failureThreshold: 3
+  livenessProbe:
+    enabled: true
+    path: '/debug/health'
+    # defaults to the debug port
+    # port: 5001
+    initialDelaySeconds: 5
+    periodSeconds: 10
+    timeoutSeconds: 1
+    successThreshold: 1
+    failureThreshold: 3
+
 service:
   name: registry
   type: ClusterIP

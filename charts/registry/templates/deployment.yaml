@@ -81,6 +81,30 @@ spec:
             mountPath: /etc/docker/registry/
             readOnly: true
 {{ include "gitlab.certificates.volumeMount" . | indent 10 }}
+{{- if .Values.deployment.livenessProbe.enabled }}
+          livenessProbe:
+            httpGet:
+              path: {{ .Values.deployment.livenessProbe.path }}
+              port: {{ default .Values.debug.addr.port .Values.deployment.livenessProbe.port }}
+              scheme: HTTP
+            initialDelaySeconds: {{ .Values.deployment.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.deployment.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.deployment.livenessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.deployment.livenessProbe.successThreshold }}
+            failureThreshold: {{ .Values.deployment.livenessProbe.failureThreshold }}
+{{- end }}
+{{- if .Values.deployment.readinessProbe.enabled }}
+          readinessProbe:
+            httpGet:
+              path: {{ .Values.deployment.readinessProbe.path }}
+              port: {{ default .Values.debug.addr.port .Values.deployment.livenessProbe.port }}
+              scheme: HTTP
+            initialDelaySeconds: {{ .Values.deployment.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.deployment.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.deployment.readinessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.deployment.readinessProbe.successThreshold }}
+            failureThreshold: {{ .Values.deployment.readinessProbe.failureThreshold }}
+{{- end }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
