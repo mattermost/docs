@@ -55,6 +55,9 @@ registry:
   certificate:
     secret: gitlab-registry
     key: registry-auth.crt
+  deployment:
+    terminationGracePeriodSeconds: 30
+  draintimeout: '0'
   replicas: 1
   storage:
     secret:
@@ -97,6 +100,8 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 | `certificate.secret` | `gitlab-registry`          | JWT certificate                     |
 | `compatiblity`       |                            | Configuration of compatility settings |
 | `debug`              |                            | Debug port and prometheus metrics   |
+| `deployment.terminationGracePeriodSeconds` | `30` | Optional duration in seconds the pod needs to terminate gracefully. |
+| `draintimeout`       | `'0'`                      | Amount of time to wait for HTTP connections to drain after receiving a SIGTERM signal (e.g. `'10s'`) |
 | `enabled`            | `true`                     | Enable registry flag                |
 | `httpSecret`         |                            | Https secret                        |
 | `image.pullPolicy`   |                            | Pull policy for the registry image  |

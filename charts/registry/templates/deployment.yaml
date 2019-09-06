@@ -107,6 +107,7 @@ spec:
 {{- end }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
+      terminationGracePeriodSeconds: {{ .Values.deployment.terminationGracePeriodSeconds }}
       volumes:
       - name: registry-server-config
         emptyDir:
