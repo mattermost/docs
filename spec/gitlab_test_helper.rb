@@ -103,7 +103,7 @@ module Gitlab
       return [stdout, status]
     end
 
-    def restart_app
+    def restart_unicorn
       filters = 'app=unicorn'
 
       if ENV['RELEASE_NAME']

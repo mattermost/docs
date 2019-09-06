@@ -27,6 +27,7 @@
 image: registry.gitlab.com/gitlab-org/gitlab-build-images:gitlab-charts-build-base
 
 variables:
+  KUBECTL_VERSION: "v1.12.10"
   GOOGLE_APPLICATION_CREDENTIALS: ${CI_PROJECT_DIR}/.google_keyfile.json
   # AUTO_DEVOPS_DOMAIN is the application deployment domain and should be set as a variable at the group or project level.
   # AUTO_DEVOPS_DOMAIN: domain.example.com
@@ -662,7 +663,7 @@ check_docs_lint:
   script:
     - source "${VARIABLES_FILE}"
     - apt-get update && apt-get install -y --no-install-recommends curl ca-certificates
-    - curl -LsO https://storage.googleapis.com/kubernetes-release/release/v1.12.10/bin/linux/amd64/kubectl
+    - curl -LsO https://storage.googleapis.com/kubernetes-release/release/${KUBECTL_VERSION}/bin/linux/amd64/kubectl
     - chmod +x kubectl
     - mv kubectl /usr/local/bin/kubectl
     - mkdir -p /etc/gitlab/minio

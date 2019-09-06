@@ -23,7 +23,7 @@ describe "Restoring a backup" do
     stdout, status = enforce_root_password(ENV['GITLAB_PASSWORD']) if ENV['GITLAB_PASSWORD']
     fail stdout unless status.success?
 
-    stdout, status = restart_app
+    stdout, status = restart_unicorn
     fail stdout unless status.success?
 
     # Wait for the site to come up after the restore/migrations
