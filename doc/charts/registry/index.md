@@ -336,8 +336,7 @@ compatibility:
 ### readiness and liveness probe
 
 By default there is a readiness and liveness probe configured to
-check `/` on port `5000`. The registry also has a health endpoint at
-`/debug/health` on the debug port, if it is enabled.
+check `/debug/health` on port `5001` which is the debug port.
 
 #### schema1
 
