@@ -9,7 +9,8 @@ deployment:
   readinessProbe:
     enabled: true
     path: '/debug/health'
-    port: 5001
+    # defaults to the debug port
+    # port: 5001
     initialDelaySeconds: 5
     periodSeconds: 5
     timeoutSeconds: 1
@@ -18,7 +19,8 @@ deployment:
   livenessProbe:
     enabled: true
     path: '/debug/health'
-    port: 5001
+    # defaults to the debug port
+    # port: 5001
     initialDelaySeconds: 5
     periodSeconds: 10
     timeoutSeconds: 1
