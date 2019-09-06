@@ -333,6 +333,11 @@ compatibility:
     enabled: false
 ```
 
+### readiness and liveness probe
+
+By default there is a readiness and liveness probe configured to
+check `/debug/health` on port `5001` which is the debug port.
+
 #### schema1
 
 The `schema1` section controls the compatibility of the service with version 1
@@ -413,8 +418,8 @@ NOTE: **Note:** The chart will populate `delete.enabled: true` into this configu
 
 ### debug
 
-Debug allows you set the prometheus debug port and enable
-prometheus metrics
+The debug port is enabled by default and is used for the liveness/readiness
+probe. Additionally, prometheus metrics can be enabled.
 
 ```yaml
 debug:
