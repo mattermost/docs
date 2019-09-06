@@ -28,7 +28,7 @@ The following GitLab components have images in the CNG repository.
 
 - Gitaly
 - GitLab Elasticsearch Indexer
-- mail_room (https://github.com/tpitale/mail_room)
+- [mail_room](https://github.com/tpitale/mail_room)
 - GitLab exporter
 - GitLab Shell
 - Sidekiq
