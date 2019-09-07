@@ -39,6 +39,13 @@ global:
     password: {}
   gitaly:
     authToken: {}
+    logging:
+      level:
+      format: "json"
+      sentryDsn:
+      rubySentryDsn:
+      sentryEnvironment:
+
 unicorn: {}
   # host: '0.0.0.0'
   # serviceName: 'unicorn'

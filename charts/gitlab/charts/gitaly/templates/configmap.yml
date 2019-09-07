@@ -32,6 +32,26 @@ data:
     <% else %>
     <% raise Exception, "Storage for node #{@index} is not present in the storageNames array. Did you use kubectl to scale up ? You need to solely use helm for this purpose" %>
     <% end %>
+
+    [logging]
+    {{- with .Values.global.gitaly.logging }}
+    {{- if .level }}
+    level = "{{ .level }}"
+    {{- end }}
+    {{- if .format }}
+    format = "{{ .format }}"
+    {{- end }}
+    {{- if .sentryDsn }}
+    sentry_dsn = "{{ .sentryDsn }}"
+    {{- end }}
+    {{- if .rubySentryDsn }}
+    ruby_sentry_dsn = "{{ .rubySentryDsn }}"
+    {{- end }}
+    {{- if .sentryEnvironment }}
+    sentry_environment = "{{ .sentryEnvironment }}"
+    {{- end }}
+    {{- end }}
+
     [auth]
     token = "<%= File.read('/etc/gitlab-secrets/gitaly/gitaly_token').strip.dump[1..-2] %>"
 
