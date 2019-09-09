@@ -2,7 +2,8 @@
 
 ## Using built-in Minio service for object storage
 
-**`Note:`** Users are advised to setup an [external object storage](../../advanced/external-object-storage/index.md)
+NOTE: **Note:**
+Users are advised to setup an [external object storage](../../advanced/external-object-storage/index.md)
 service for production use.
 
 The easiest way to figure out the access details to built-in minio cluster is to
