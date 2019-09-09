@@ -108,6 +108,8 @@ global:
         #   maxPerRepo:
         # - rpc:
         #   maxPerRepo:
+    prometheus:
+      grpcLatencyBuckets: []
 
   ## doc/charts/globals.md#configure-minio-settings
   minio:

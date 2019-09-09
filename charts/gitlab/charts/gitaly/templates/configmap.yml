@@ -57,6 +57,11 @@ data:
     {{- end }}
     {{- end }}
 
+    {{- if .Values.global.gitaly.prometheus.grpcLatencyBuckets }}
+    [ prometheus]
+    grpc_latency_buckets = {{ .Values.global.gitaly.prometheus.grpcLatencyBuckets }}
+    {{- end }}
+
     [auth]
     token = "<%= File.read('/etc/gitlab-secrets/gitaly/gitaly_token').strip.dump[1..-2] %>"
 

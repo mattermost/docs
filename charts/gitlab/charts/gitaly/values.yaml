@@ -54,6 +54,8 @@ global:
       numWorkers:
     shell:
       concurrency: []
+    prometheus:
+      grpcLatencyBuckets: []
 
 unicorn: {}
   # host: '0.0.0.0'
