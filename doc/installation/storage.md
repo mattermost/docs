@@ -41,8 +41,8 @@ The default storage class should:
 The following `YAML` configurations provide the bare minimum required to create a custom storage class for GitLab. Replace
 `CUSTOM_STORAGE_CLASS_NAME` with a value appropriate for the target installation environment.
 
-- [Example Storage Class for GKE on Google Cloud](https://gitlab.com/charts/gitlab/blob/master/examples/storage/gke_storage_class.yml)
-- [Example Storage Class for EKS on Amazon Web Services](https://gitlab.com/charts/gitlab/blob/master/examples/storage/eks_storage_class.yml)
+- [Example Storage Class for GKE on Google Cloud](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/storage/gke_storage_class.yml)
+- [Example Storage Class for EKS on Amazon Web Services](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/storage/eks_storage_class.yml)
 
 > Some users report that Amazon EKS exhibits behavior where the creation of nodes are not always
 > in the same zone as the pods. Setting the ***zone*** parameter above will mitigate any risk.
@@ -56,7 +56,7 @@ kubectl patch storageclass CUSTOM_STORAGE_CLASS_NAME -p '{"metadata": {"annotati
 ```
 
 Alternatively, the custom storage class and other options may be provided per service to helm during installation. View
-the provided [example configuration file](https://gitlab.com/charts/gitlab/blob/master/examples/storage/helm_options.yml) and modify for your environment.
+the provided [example configuration file](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/storage/helm_options.yml) and modify for your environment.
 
 ```sh
 $ helm install -upgrade gitlab gitlab/gitlab -f HELM_OPTIONS_YAML_FILE
@@ -85,7 +85,7 @@ will need to create the [Persistent Volume][pv] manually.
 $ gcloud compute disks create --size=50GB --zone=*GKE_ZONE* *DISK_VOLUME_NAME*
 ```
 
-1. Create the Persistent Volume after modifying the [example `YAML` configuration](https://gitlab.com/charts/gitlab/blob/master/examples/storage/gke_pv_example.yml).
+1. Create the Persistent Volume after modifying the [example `YAML` configuration](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/storage/gke_pv_example.yml).
 
 ```sh
 $ kubectl create -f *PV_YAML_FILE*
@@ -99,7 +99,7 @@ $ kubectl create -f *PV_YAML_FILE*
 $ aws ec2 create-volume --availability-zone=*AWS_ZONE* --size=10 --volume-type=gp2
 ```
 
-1. Create the Persistent Volume after modifying the [example `YAML` configuration](https://gitlab.com/charts/gitlab/blob/master/examples/storage/eks_pv_example.yml).
+1. Create the Persistent Volume after modifying the [example `YAML` configuration](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/storage/eks_pv_example.yml).
 
 ```sh
 $ kubectl create -f *PV_YAML_FILE*
@@ -128,13 +128,13 @@ The GitLab Cloud Native Chart determines the `statefulset-name` using:
 
 The correct name for the ***gitaly*** PersistentVolumeClaim is: ***repo-data-gitlab-gitaly-0***.
 
-Modify the [example YAML configuration](https://gitlab.com/charts/gitlab/blob/master/examples/storage/gitaly_persistent_volume_claim.yml) for your environment and reference it when invoking `helm`.
+Modify the [example YAML configuration](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/storage/gitaly_persistent_volume_claim.yml) for your environment and reference it when invoking `helm`.
 
 > The other services that do not use a [StatefulSet][] allow administrators to provide the `volumeName`
 > to the config. This chart will still take care of creating the [volume claim][pvc] and attempt to bind
 > to the manually created volume. Check the chart documentation for each included application.
 >
-> For most cases, just modify the [example yaml config](https://gitlab.com/charts/gitlab/blob/master/examples/storage/use_manual_volumes.yml) keeping only those services which
+> For most cases, just modify the [example yaml config](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/storage/use_manual_volumes.yml) keeping only those services which
 > will use the manually created disk volumes.
 
 ## Making changes to storage after installation

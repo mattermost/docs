@@ -1,7 +1,7 @@
 # Chart documentation
 
 Documentation on a per-chart basis is listed here. Each chart is documented individually,
-and organized in a structure that matches the [charts](https://gitlab.com/charts/gitlab/tree/master/charts)
+and organized in a structure that matches the [charts](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts)
 directory structure.
 
 Non-GitLab component charts documentation is on the top level. GitLab component

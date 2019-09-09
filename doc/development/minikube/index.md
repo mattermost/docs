@@ -168,7 +168,7 @@ self-signed certificates at this time, and as such, should be disabled by settin
 ### Deploying GitLab with recommended settings
 
 When using the recommended 3 CPU and 8 GB of RAM, use
-[`values-minikube.yaml`](https://gitlab.com/charts/gitlab/blob/master/examples/values-minikube.yaml)
+[`values-minikube.yaml`](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/values-minikube.yaml)
 as a base.
 
 ```shell
@@ -176,13 +176,13 @@ helm repo add gitlab https://charts.gitlab.io/
 helm repo update
 helm upgrade --install gitlab gitlab/gitlab \
   --timeout 600 \
-  -f https://gitlab.com/charts/gitlab/raw/master/examples/values-minikube.yaml
+  -f https://gitlab.com/gitlab-org/charts/gitlab/raw/master/examples/values-minikube.yaml
 ```
 
 ### Deploying GitLab with minimal settings
 
 If using _absolute minimum_ resources, 2 CPU and 4GB of RAM, you must reduce all replicas
-and disable unneeded services. See [`values-minikube-minimum.yaml`](https://gitlab.com/charts/gitlab/blob/master/examples/values-minikube-minimum.yaml)
+and disable unneeded services. See [`values-minikube-minimum.yaml`](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/values-minikube-minimum.yaml)
 as a reasonable base.
 
 ```shell
@@ -190,7 +190,7 @@ helm repo add gitlab https://charts.gitlab.io/
 helm repo update
 helm upgrade --install gitlab gitlab/gitlab \
   --timeout 600 \
-  -f https://gitlab.com/charts/gitlab/raw/master/examples/values-minikube-minimum.yaml
+  -f https://gitlab.com/gitlab-org/charts/gitlab/raw/master/examples/values-minikube-minimum.yaml
 ```
 
 If the output of `minikube ip` was not `192.168.99.100`, add these arguments to override the IP endpoints in the example configuration files:

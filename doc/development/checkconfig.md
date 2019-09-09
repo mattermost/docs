@@ -47,4 +47,4 @@ redis: both providers
 
 Once a template has been defined, and logic placed within it for the detection of affected properties, activating this new template is simple. Simple add a line beneath `add templates here` in the [`gitlab.checkConfig` template][checkConfig], according to the format presented.
 
-[checkConfig]: https://gitlab.com/charts/gitlab/blob/master/templates/_checkConfig.tpl
+[checkConfig]: https://gitlab.com/gitlab-org/charts/gitlab/blob/master/templates/_checkConfig.tpl

@@ -164,9 +164,9 @@ reported by emailing contact@gitlab.com.
 This Code of Conduct is adapted from the [Contributor Covenant][contributor-covenant], version 1.1.0,
 available at [http://contributor-covenant.org/version/1/1/0/](http://contributor-covenant.org/version/1/1/0/).
 
-[accepting-mrs]: https://gitlab.com/charts/gitlab/issues?label_name=Accepting+Merge+Requests
-[gitlab-mr-tracker]: https://gitlab.com/charts/gitlab/merge_requests
-[closed-merge-requests]: https://gitlab.com/charts/gitlab/merge_requests?assignee_id=&label_name=&milestone_id=&scope=&sort=&state=closed
+[accepting-mrs]: https://gitlab.com/gitlab-org/charts/gitlab/issues?label_name=Accepting+Merge+Requests
+[gitlab-mr-tracker]: https://gitlab.com/gitlab-org/charts/gitlab/merge_requests
+[closed-merge-requests]: https://gitlab.com/gitlab-org/charts/gitlab/merge_requests?assignee_id=&label_name=&milestone_id=&scope=&sort=&state=closed
 [contributor-covenant]: http://contributor-covenant.org
 [changelog]: doc/development/changelog.md "Generate a changelog entry"
 [git-squash]: https://git-scm.com/book/en/Git-Tools-Rewriting-History#Squashing-Commits

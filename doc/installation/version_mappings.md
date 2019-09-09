@@ -106,7 +106,7 @@ gitlab/gitlab           1.4.2           11.6.3
 gitlab/gitlab           1.4.1           11.6.2
 ```
 
-Read more about our charts versioning [here](https://gitlab.com/charts/gitlab/blob/master/doc/development/release.md#chart-versioning)
+Read more about our charts versioning [here](../development/release.md#chart-versioning)
 
 Check the [releases documentation](../releases/index.md) for information on important releases,
-and see the [changelog](https://gitlab.com/charts/gitlab/blob/master/CHANGELOG.md) for the full details on any release.
+and see the [changelog](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/CHANGELOG.md) for the full details on any release.

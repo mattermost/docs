@@ -4,7 +4,7 @@
 # This provides an example of:
 # - two external nodes
 # - disable internal
-# https://gitlab.com/charts/gitlab/tree/master/doc/
+# https://gitlab.com/gitlab-org/charts/gitlab/tree/master/doc/
 
 global:
   gitaly:

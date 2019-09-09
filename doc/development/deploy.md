@@ -3,7 +3,7 @@
 Clone the repository, and checkout the branch you want to deploy:
 
 ```sh
-git clone git@gitlab.com:charts/gitlab.git
+git clone git@gitlab.com:gitlab-org/charts/gitlab.git
 git checkout <BRANCH_NAME>
 ```
 

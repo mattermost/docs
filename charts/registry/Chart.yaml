@@ -14,7 +14,7 @@ home: https://hub.docker.com/_/registry/
 icon: https://hub.docker.com/public/images/logos/mini-logo.svg
 sources:
 - https://github.com/docker/distribution-library-image
-- https://gitlab.com/charts/gitlab/charts/registry
+- https://gitlab.com/gitlab-org/charts/gitlab/charts/registry
 maintainers:
 - name: GitLab Inc.
   email: support@gitlab.com

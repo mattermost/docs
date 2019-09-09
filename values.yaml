@@ -3,7 +3,7 @@
 ## NOTICE
 # Due to the scope and complexity of this chart, all possible values are
 # not documented in this file. Extensive documentation for these values
-# and more can be found at https://gitlab.com/charts/gitlab/
+# and more can be found at https://gitlab.com/gitlab-org/charts/gitlab/
 
 ## Advanced Configuration
 # Documentation for advanced configuration can be found under doc/advanced
@@ -23,7 +23,7 @@ global:
     rollout:
       # Enables automatic pause for deployment rollout. This must be set to `true` to fix
       # Helm's issue with 3-way merge. See:
-      #   https://gitlab.com/charts/gitlab/issues/1262
+      #   https://gitlab.com/gitlab-org/charts/gitlab/issues/1262
       #   https://github.com/helm/helm/issues/3805
       autoPause: true
 

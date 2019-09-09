@@ -10,8 +10,8 @@ keywords:
 home: https://about.gitlab.com/
 icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.svg
 sources:
-- https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/operator
-- https://gitlab.com/charts/components/gitlab-operator
+- https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/operator
+- https://gitlab.com/gitlab-org/charts/components/gitlab-operator
 maintainers:
 - name: GitLab Inc.
   email: support@gitlab.com

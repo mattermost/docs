@@ -20,7 +20,7 @@ Alternatively, a cluster can be created manually as well.
 
 ### Scripted cluster creation
 
-A [bootstrap script](https://gitlab.com/charts/gitlab/blob/master/scripts/gke_bootstrap_script.sh)
+A [bootstrap script](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/scripts/gke_bootstrap_script.sh)
 has been created to automate much of the setup process for users on GCP/GKE.
 
 The script will:

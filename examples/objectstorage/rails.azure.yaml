@@ -1,7 +1,7 @@
 # Example configuration of `connection` secret for Rails
 # Example for Azure Blob Storage
-#   See https://gitlab.com/charts/gitlab/blob/master/doc/charts/globals.md#connection
-#   See https://gitlab.com/charts/gitlab/blob/master/doc/advanced/external-object-storage
+#   See https://gitlab.com/gitlab-org/charts/gitlab/blob/master/doc/charts/globals.md#connection
+#   See https://gitlab.com/gitlab-org/charts/gitlab/blob/master/doc/advanced/external-object-storage
 
 # NB: GitLab uses Fog (https://github.com/fog/fog) to connect to GCS, S3 and S3 Compatible, but Azure support in Fog is on a separate project (https://github.com/fog/fog-azure-rm), which GitLab doesnt currently support, so we will use S3-Compatible for Azure.
 

@@ -54,7 +54,7 @@ function bootstrap(){
     address=$(gcloud compute addresses describe $external_ip_name --region $REGION --project $PROJECT --format='value(address)');
 
     echo "\n#####"
-    echo "Successfully provisioned external IP address $address , You need to add an A record to the DNS name to point to this address. See https://gitlab.com/charts/gitlab/blob/master/doc/installation/cloud/gke.md#dns-entry.";
+    echo "Successfully provisioned external IP address $address , You need to add an A record to the DNS name to point to this address. See https://gitlab.com/gitlab-org/charts/gitlab/blob/master/doc/installation/cloud/gke.md#dns-entry.";
     echo "#####\n"
   fi
 
@@ -66,7 +66,7 @@ function bootstrap(){
 
   # Create roles for RBAC Helm
   if $RBAC_ENABLED; then
-    status_code=$(curl -L -w '%{http_code}' -o rbac-config.yaml -s "https://gitlab.com/charts/gitlab/raw/master/doc/installation/examples/rbac-config.yaml");
+    status_code=$(curl -L -w '%{http_code}' -o rbac-config.yaml -s "https://gitlab.com/gitlab-org/charts/gitlab/raw/master/doc/installation/examples/rbac-config.yaml");
     if [ "$status_code" != 200 ]; then
       echo "Failed to download rbac-config.yaml, status code: $status_code";
       exit 1;

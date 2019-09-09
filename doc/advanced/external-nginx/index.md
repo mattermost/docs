@@ -77,10 +77,10 @@ disable the ingress controller that is deployed by default with this chart:
 
 ## Custom certifcate management
 
-The full scope of your TLS options are documented [elswhere](https://gitlab.com/charts/gitlab/blob/master/doc/installation/tls.md).
+The full scope of your TLS options are documented [elswhere](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/doc/installation/tls.md).
 
 If you are using an external ingress controller, you may also be using an external cert-manager instance
-or managing your certificates in some other custom manner. The full documentation around your TLS options is [here](https://gitlab.com/charts/gitlab/blob/master/doc/installation/tls.md),
+or managing your certificates in some other custom manner. The full documentation around your TLS options is [here](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/doc/installation/tls.md),
 however for the purposes of this discussion, here are the two values that would need to be set to disable the cert-manager chart and tell
 the GitLab component charts to NOT look for the built in certificate resources:
 

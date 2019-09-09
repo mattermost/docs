@@ -1,7 +1,7 @@
 # Example configuration of `connection` secret for Rails
 # Example for Google Cloud Storage
-#   See https://gitlab.com/charts/gitlab/blob/master/doc/charts/globals.md#connection
-#   See https://gitlab.com/charts/gitlab/blob/master/doc/advanced/external-object-storage
+#   See https://gitlab.com/gitlab-org/charts/gitlab/blob/master/doc/charts/globals.md#connection
+#   See https://gitlab.com/gitlab-org/charts/gitlab/blob/master/doc/advanced/external-object-storage
 provider: Google
 google_project: example-project-382839
 google_client_email: gcs-buckets@example-project-382839.iam.gserviceaccount.com

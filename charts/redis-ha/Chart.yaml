@@ -12,7 +12,7 @@ home: http://redis.io/
 icon: https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/1200px-Redis_Logo.svg.png
 sources:
 - https://gitlab.com/gitlab-org/build/CNG/tree/master/gitlab-redis-ha
-- https://gitlab.com/charts/gitlab/charts/redis-ha
+- https://gitlab.com/gitlab-org/charts/gitlab/charts/redis-ha
 maintainers:
 - name: GitLab Inc.
   email: support@gitlab.com

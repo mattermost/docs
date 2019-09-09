@@ -24,4 +24,4 @@ git push
 ## CI Automation
 
 This task will be integrated with CI in the future. It is currently blocked by
-[#344](https://gitlab.com/charts/gitlab/issues/344)
+[#344](https://gitlab.com/gitlab-org/charts/gitlab/issues/344)

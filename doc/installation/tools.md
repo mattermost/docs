@@ -19,7 +19,7 @@ cluster. Proceed with setting up Helm.
 Helm is the package manager for Kubernetes. The `gitlab` chart is only tested and
 supported with Helm `v2` and helm 2.12 or higher is required. Helm `v1` is
 explicitly not supported. Helm `v3` is not yet supported, and open issues can be
-found under our [Helm 3 issue label](https://gitlab.com/charts/gitlab/issues?label_name%5B%5D=Helm+3).
+found under our [Helm 3 issue label](https://gitlab.com/gitlab-org/charts/gitlab/issues?label_name%5B%5D=Helm+3).
 
 Helm consists of two parts, the `helm` (client) installed locally, and `tiller`
 (server) installed inside Kubernetes.
@@ -126,7 +126,7 @@ for this example we will include the cluster's name in it:
 ```sh
 CLUSTER_NAME=name-of-cluster
 kubectl config set-credentials $CLUSTER_NAME-admin-user --username=admin --password=xxxxxxxxxxxxxx
-kubectl --user=$CLUSTER_NAME-admin-user create -f https://gitlab.com/charts/gitlab/raw/master/doc/installation/examples/rbac-config.yaml
+kubectl --user=$CLUSTER_NAME-admin-user create -f https://gitlab.com/gitlab-org/charts/gitlab/raw/master/doc/installation/examples/rbac-config.yaml
 ```
 
 #### Upload the RBAC config in non-GKE clusters
@@ -134,7 +134,7 @@ kubectl --user=$CLUSTER_NAME-admin-user create -f https://gitlab.com/charts/gitl
 For other clusters like Amazon EKS, you can directly upload the RBAC configuration:
 
 ```sh
-kubectl create -f https://gitlab.com/charts/gitlab/raw/master/doc/installation/examples/rbac-config.yaml
+kubectl create -f https://gitlab.com/gitlab-org/charts/gitlab/raw/master/doc/installation/examples/rbac-config.yaml
 ```
 
 ### Initializing Helm
@@ -184,7 +184,7 @@ CAUTION: **Not recommended:**
 This method is not well supported, but should work.
 
 If you are not able to run tiller in your cluster,
-[a script](https://gitlab.com/charts/gitlab/blob/master/bin/localtiller-helm)
+[a script](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/bin/localtiller-helm)
 is included that should allow you to use helm with running tiller in your cluster.
 The script uses your personal Kubernetes credentials and configuration to apply
 the chart.

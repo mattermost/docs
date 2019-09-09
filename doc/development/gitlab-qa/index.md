@@ -3,7 +3,7 @@
 The following documentation is meant to provide instructions for running
 [GitLab QA](https://gitlab.com/gitlab-org/gitlab-qa) against a deployed cloud
 native GitLab installation. These steps are performed as a part of the
-[CI for this project](https://gitlab.com/charts/gitlab/tree/master/.gitlab-ci.yml)
+[CI for this project](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/.gitlab-ci.yml)
 but manual runs may be requested during development or a demo.
 
 ## Preparation
