@@ -41,6 +41,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where bots could not be added to any team if server wide email domain restriction was enabled.
  - Fixed an issue where pagination broke when adding users to a team.
  - Fixed an issue where list of users were not paginated on warning modal for LDAP group sync team / channel removal.
+ - Fixed an issue where Google User API Endpoint showed an outdated helper text.
  - Fixed an issue where a markdown image with an SVG briefly displayed for sender with ``EnableSVGs`` set to false.
  - Fixed an issue with an incorrect error message on Custom URL Schemes field.
 
@@ -48,7 +49,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Some pre-packaged plugins show as removable in the User Interface.
  - If ``ExperimentalStrictCSRFEnforcement`` is set to True, attempts to use ``/jira subscribe`` fail.
  - Users are unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
- - Google User API Endpoint shows outdated helper text.
  - User count in a channel does not update until after refresh if a user automatically joins a channel.
  - Missing messages can be caused if network fails on API calls.
  - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
