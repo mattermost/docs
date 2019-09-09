@@ -45,6 +45,8 @@ global:
       sentryDsn:
       rubySentryDsn:
       sentryEnvironment:
+    git:
+      catFileCacheSize:
     ruby:
       maxRss:
       gracefulRestartTimeout:

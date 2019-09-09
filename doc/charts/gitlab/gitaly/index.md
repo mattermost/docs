@@ -66,6 +66,7 @@ the `helm install` command using the `--set` flags.
 | `ruby.restartDelay `           |                                            | Time that Gitaly-Ruby memory must remain high before a restart (seconds      |
 | `ruby.numWorkers`              |                                            | Number of Gitaly-Ruby worker processes                                       |
 | `shell.concurrency[]`          |                                            | Concurrency of each RPC endpoint Specified using keys `rpc` and `maxPerRepo` |
+| `git.catFileCacheSize`         |                                            | Cache size used by git cat-file process                                      |
 
 ## Chart configuration examples
 

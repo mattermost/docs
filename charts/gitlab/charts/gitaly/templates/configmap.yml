@@ -55,6 +55,11 @@ data:
     [auth]
     token = "<%= File.read('/etc/gitlab-secrets/gitaly/gitaly_token').strip.dump[1..-2] %>"
 
+    [git]
+    {{- if .Values.global.gitaly.git.catFileCacheSize }}
+    catfile_cache_size = {{ .Values.global.gitaly.git.catFileCacheSize }}
+    {{- end }}
+
     [gitaly-ruby]
     # The directory where gitaly-ruby is installed
     dir = "/srv/gitaly-ruby"
