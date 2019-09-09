@@ -45,6 +45,11 @@ global:
       sentryDsn:
       rubySentryDsn:
       sentryEnvironment:
+    ruby:
+      maxRss:
+      gracefulRestartTimeout:
+      restartDelay:
+      numWorkers:
 
 unicorn: {}
   # host: '0.0.0.0'

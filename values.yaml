@@ -95,6 +95,11 @@ global:
       sentryDsn:
       rubySentryDsn:
       sentryEnvironment:
+    ruby:
+      maxRss:
+      gracefulRestartTimeout:
+      restartDelay:
+      numWorkers:
 
   ## doc/charts/globals.md#configure-minio-settings
   minio:
