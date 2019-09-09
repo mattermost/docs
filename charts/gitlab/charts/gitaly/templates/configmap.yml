@@ -23,6 +23,11 @@ data:
     # listen on a TCP socket. This is insecure (no authentication)
     listen_addr = "0.0.0.0:8075"
 
+    # If metrics collection is enabled, inform gitaly about that
+    {{- if .Values.metrics.enabled }}
+    prometheus_listen_addr = 'localhost:{{ .Values.metrics.metricsPort }}'
+    {{- end }}
+
     <% @storages = [ {{- range (coalesce .Values.internal.names .Values.global.gitaly.internal.names) }} {{ . | quote }}, {{- end }} ] %>
     <% @index=`echo ${HOSTNAME##*-}`.to_i %>
     <% if @storages.length > @index %>
