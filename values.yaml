@@ -100,6 +100,12 @@ global:
       gracefulRestartTimeout:
       restartDelay:
       numWorkers:
+    shell:
+      concurrency: []
+        # - rpc:
+        #   maxPerRepo:
+        # - rpc:
+        #   maxPerRepo:
 
   ## doc/charts/globals.md#configure-minio-settings
   minio:

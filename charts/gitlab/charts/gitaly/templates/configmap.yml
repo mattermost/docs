@@ -77,6 +77,14 @@ data:
     # The directory where gitlab-shell is installed
     dir = "/srv/gitlab-shell"
 
+    {{- if .Values.global.gitaly.shell.concurrency }}
+    {{- range .Values.global.gitaly.shell.concurrency }}
+    [[concurrency]]
+    rpc = '{{ .rpc }}'
+    max_per_repo = {{ .maxPerRepo }}
+    {{- end }}
+    {{- end }}
+
   shell-config.yml.erb: |
     # GitLab user. git by default
     user: git
