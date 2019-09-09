@@ -85,4 +85,10 @@ Backups require being stored temporarily on disk. By default, the task-runner po
 --set gitlab.task-runner.persistence.enabled=true
 ```
 
+If your backups are being run as part of the included backup cron job, then you will want to enable persistence for the cron job as well:
+
+```
+-- set gitlab.task-runner.backups.cron.persistence.enabled=true
+```
+
 For other providers, you may need to create a persistent volume. See our [Storage documentation](../installation/storage.md) for possible examples on how to do this.

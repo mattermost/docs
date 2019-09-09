@@ -238,6 +238,29 @@ See [nginx-ingress chart](../charts/nginx/index.md)
 | gitlab.task-runner.init.tag                         | Task runner init image tag                     | latest                                                     |
 | gitlab.task-runner.init.resources.requests.cpu      | Task runner init minimum needed cpu            | 50m                                                        |
 | gitlab.task-runner.annotations                      | Annotations to add to the task runner          | {}                                                         |
+| gitlab.task-runner.resources.requests.cpu           | Task runner minimum needed cpu                 | 50m                                                        |
+| gitlab.task-runner.resources.requests.memory        | Task runner minimum needed memory              | 350M                                                       |
+| gitlab.task-runner.persistence.enabled              | Task runner enable persistence flag            | false                                                      |
+| gitlab.task-runner.persistence.accessMode           | Task runner persistence access mode            | ReadWriteOnce                                              |
+| gitlab.task-runner.persistence.size                 | Task runner persistence volume size            | 10Gi                                                       |
+| gitlab.task-runner.persistence.subPath              | Task runner persistence volume mount path      |                                                            |
+| gitlab.task-runner.persistence.storageClass         | storageClassName for provisioning              |                                                            |
+| gitlab.task-runner.persistence.volumeName           | Existing persistent volume name                |                                                            |
+| gitlab.task-runner.persistence.matchLabels          | Label-value matches to bind                    |                                                            |
+| gitlab.task-runner.persistence.matchExpressions     | Label-expression matches to bind               |                                                            |
+| gitlab.task-runner.backups.cron.enabled             | Backup CronJob enabled flag                    | false                                                      |
+| gitlab.task-runner.backups.cron.schedule            | Cron style schedule string                     | 0 1 * * *                                                  |
+| gitlab.task-runner.backups.cron.extraArgs           | String of args to pass to the backup utility   |                                                            |
+| gitlab.task-runner.backups.cron.resources.requests.cpu        | Backup cron minimum needed cpu              | 50m                                                 |
+| gitlab.task-runner.backups.cron.resources.requests.memory     | Backup cron minimum needed memory           | 350M                                                |
+| gitlab.task-runner.backups.cron.persistence.enabled           | Backup cron enable persistence flag         | false                                               |
+| gitlab.task-runner.backups.cron.persistence.accessMode        | Backup cron persistence access mode         | ReadWriteOnce                                       |
+| gitlab.task-runner.backups.cron.persistence.size              | Backup cron persistence volume size         | 10Gi                                                |
+| gitlab.task-runner.backups.cron.persistence.subPath           | Backup cron persistence volume mount path   |                                                     |
+| gitlab.task-runner.backups.cron.persistence.storageClass      | storageClassName for provisioning           |                                                     |
+| gitlab.task-runner.backups.cron.persistence.volumeName        | Existing persistent volume name             |                                                     |
+| gitlab.task-runner.backups.cron.persistence.matchLabels       | Label-value matches to bind                 |                                                     |
+| gitlab.task-runner.backups.cron.persistence.matchExpressions  | Label-expression matches to bind            |                                                     |
 | gitlab.task-runner.backups.objectStorage.backend           | Object storage provider to use (`s3` or `gcs`) | s3                                                         |
 | gitlab.task-runner.backups.objectStorage.config            | Authentication information for object storage  | {}                                                         |
 | gitlab.task-runner.backups.objectStorage.config.secret     | Object storage credentials secret              | ""                                                         |

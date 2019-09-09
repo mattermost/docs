@@ -106,8 +106,8 @@ spec:
                   subPath: rails-secrets/secrets.yml
                 - name: task-runner-tmp
                   mountPath: '/srv/gitlab/tmp'
-                  {{- if and .Values.persistence.enabled .Values.persistence.subPath }}
-                  subPath: "{{ .Values.persistence.subPath }}"
+                  {{- if and .Values.backups.cron.persistence.enabled .Values.backups.cron.persistence.subPath }}
+                  subPath: "{{ .Values.backups.cron.persistence.subPath }}"
                   {{- end }}
                   readOnly: false
 {{ include "gitlab.certificates.volumeMount" . | indent 16 }}
@@ -126,9 +126,9 @@ spec:
                       name: {{ .Values.global.appConfig.pseudonymizer.configMap }}
                   {{- end }}
             - name: task-runner-tmp
-              {{- if .Values.persistence.enabled }}
+              {{- if .Values.backups.cron.persistence.enabled }}
               persistentVolumeClaim:
-                claimName: {{ template "fullname" . }}-tmp
+                claimName: {{ template "fullname" . }}-backup-tmp
               {{- else }}
               emptyDir: {}
               {{- end }}
