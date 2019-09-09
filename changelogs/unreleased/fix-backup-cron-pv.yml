@@ -1,5 +1,5 @@
 ---
 title: Configure the backup cron to use a different tmp volume than the task-runner
-merge_request: 941
+merge_request: 942
 author:
 type: fixed

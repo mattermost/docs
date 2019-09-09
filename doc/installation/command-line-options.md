@@ -249,7 +249,7 @@ See [nginx-ingress chart](../charts/nginx/index.md)
 | gitlab.task-runner.persistence.matchLabels          | Label-value matches to bind                    |                                                            |
 | gitlab.task-runner.persistence.matchExpressions     | Label-expression matches to bind               |                                                            |
 | gitlab.task-runner.backups.cron.enabled             | Backup CronJob enabled flag                    | false                                                      |
-| gitlab.task-runner.backups.cron.schedule            | Cron style schedule string                     | 0 1 * * *                                                  |
+| gitlab.task-runner.backups.cron.schedule            | Cron style schedule string                     | `0 1 * * *`                                                |
 | gitlab.task-runner.backups.cron.extraArgs           | String of args to pass to the backup utility   |                                                            |
 | gitlab.task-runner.backups.cron.resources.requests.cpu        | Backup cron minimum needed cpu              | 50m                                                 |
 | gitlab.task-runner.backups.cron.resources.requests.memory     | Backup cron minimum needed memory           | 350M                                                |
