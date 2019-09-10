@@ -1,6 +1,6 @@
 # Using the GitLab Unicorn Chart
 
-The `unicorn` sub-chart provides the GitLab rails web-server with two Unicorn workers
+The `unicorn` sub-chart provides the GitLab Rails webserver with two Unicorn workers
 per pod. (The minimum necessary for a single pod to be able to serve any web request in GitLab)
 
 Currently the container used in the chart also includes a copy of GitLab Workhorse,
