@@ -35,7 +35,7 @@ Depending on your desired configuration, edit the following fields in your manif
 .. csv-table::
     :header: "Field", "Description", "Must Edit"
 
-    "metadata.name", "The name of your Mattermost as it will be shown in Kubernetes. Shorter the better.", "Yes"
+    "metadata.name", "The name of your Mattermost as it will be shown in Kubernetes. The shorter the better.", "Yes"
     "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users'.", "Yes"
     "spec.ingressName", "The DNS for your Mattermost installation.", "Yes"
     "spec.version", "The Mattermost version.", "No"
