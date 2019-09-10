@@ -1,10 +1,10 @@
-In-Code Text Guidelines
+User Interface Text Guidelines
 ========================
-This is the Mattermost style guide for in-code text. Use it as a reference to ensure that the text on the Mattermost user interface (UI) is consistent and clear.
+This is the Mattermost style guide for text used in the Mattermost product. Use these guidelines to ensure the the text on the Mattermost user interface (UI) is consistent and clear.
 
-Note
+.. note::
 
-These guidelines are not intended to slow down or otherwise impede contributions, which are always welcome. No contribution will be rejected due to non-conforming style, although it might be edited.
+  These guidelines are not intended to slow down or otherwise impede contributions, which are always welcome. No contribution will be rejected due to non-conforming style, although it might be edited.
 
 ....
 
@@ -92,7 +92,15 @@ Use this table when writing the text for UI elements such as windows and dialog 
 Messages
 --------
 
-In general, do not blame the user. Inform, explain, and suggest.
+In general, do not blame the user. Inform, explain, and suggest. 
+
+Try to use the active voice, except in these cases:
+
+- You'll end up blaming the user. For example, don't say *You entered an incorrect password*. Instead, say *The password is incorrect*.
+- You're describing what just happened. For example, it's okay to say *Your incoming webhook has been set up*.
+- The subject (the doer of an action) is the Mattermost application itself. For example, it's okay to say *The image was deleted* instead of *The server deleted the image*.
+
+Use complete sentences. If you're asking the user to do something, use imperatives. Use the past tense to inform what's already happened, the present tense to describe a current state or condition, and the future tense to state something that will definitely happen. 
 
 If a message contains variables (tokens): 
 
