@@ -3,7 +3,7 @@
 Installing the Mattermost Operator
 ============================
 
-The Mattermost Kubernetes Operator allows you to easily deploy and manage Mattermost installations through a single Kubernetes manifest.
+The Mattermost Kubernetes Operator allows you to easily deploy and manage Mattermost installations through a single Kubernetes manifest. This operator is continuously being developed and will include additional features in the future. 
 
 **1. Install the MySQL operator**
 
