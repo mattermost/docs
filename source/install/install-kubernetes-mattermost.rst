@@ -30,7 +30,7 @@ Save the following into a file named ``mattermost-installation.yaml``:
 
 **2. Edit your installation manifest file**
 
-Depending on your desired configuration, edit the following fields in your manifest. There are a few fields that must be modified, they are marked accordingly in the table below.
+Depending on your desired configuration, edit the following fields in your manifest. There are a few fields that must be modified, which are marked accordingly in the table below.
 
 .. csv-table::
     :header: "Field", "Description", "Must Edit"
