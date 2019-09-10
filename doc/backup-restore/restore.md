@@ -22,20 +22,20 @@ The steps for restoring a GitLab installation are
 1. Make sure you have a running GitLab instance by deploying the charts. Ensure the `task-runner` pod is enabled and running by executing the following command
 
    ```bash
-   $ kubectl get pods -lrelease=RELEASE_NAME,app=task-runner
+   kubectl get pods -lrelease=RELEASE_NAME,app=task-runner
    ```
 
 1. Get the tarball ready in any of the above locations. Make sure it is named in the `<timestamp>_<version>_gitlab_backup.tar` format.
 1. Run the backup utility to restore the tarball
 
    ```bash
-   $ kubectl exec <task-runner pod name> -it -- backup-utility --restore -t <timestamp>_<version>
+   kubectl exec <task-runner pod name> -it -- backup-utility --restore -t <timestamp>_<version>
    ```
 
    Here, `<timestamp>_<version>` is from the name of the tarball stored in `gitlab-backups` bucket. In case you want to provide a public URL, use the following command
 
    ```bash
-   $ kubectl exec <task-runner pod name> -it -- backup-utility --restore -f <URL>
+   kubectl exec <task-runner pod name> -it -- backup-utility --restore -f <URL>
    ```
 
     You can provide a local path as a URL as long as it's in the format: `file://<path>`
@@ -66,19 +66,19 @@ Once you have the secrets created as a local yaml file:
 1. Find the object name for the rails secrets
 
    ```bash
-   $ kubectl get secrets | grep rails-secret
+   kubectl get secrets | grep rails-secret
    ```
 
 1. Delete the existing secret
 
    ```bash
-   $ kubectl delete secret <rails-secret-name>
+   kubectl delete secret <rails-secret-name>
    ```
 
 1. Create the new secret using the same name as the old, and passing in your local yaml file
 
    ```bash
-   $ kubectl create secret generic <rails-secret-name> --from-file=secrets.yml=<local-yaml-filepath>
+   kubectl create secret generic <rails-secret-name> --from-file=secrets.yml=<local-yaml-filepath>
    ```
 
 ### Restore the runner registration token
@@ -102,13 +102,13 @@ The restoration process does not update the `gitlab-initial-root-password` secre
 1. Attach to the unicorn pod by executing the command
 
    ```bash
-   $ kubectl exec <unicorn pod name> -it bash
+   kubectl exec <unicorn pod name> -it bash
    ```
 
 1. Run the following command to reset the password of `root` user. Replace `#{password}` with a password of your choice
 
    ```bash
-   $ /srv/gitlab/bin/rails runner "user = User.first; user.password='#{password}'; user.password_confirmation='#{password}'; user.save!"
+   /srv/gitlab/bin/rails runner "user = User.first; user.password='#{password}'; user.password_confirmation='#{password}'; user.save!"
    ```
 
 ## Additional Information

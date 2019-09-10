@@ -1,5 +1,0 @@
----
-title: Set/expose securityContext for upgrade check hook
-merge_request: 915
-author:
-type: fixed

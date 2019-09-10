@@ -91,5 +91,5 @@ the Sentinels will nominate a new master and change all the redis-role values ap
 To see the pod roles, run the following:
 
 ```bash
-$ kubectl get pods -L redis-role
+kubectl get pods -L redis-role
 ```

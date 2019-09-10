@@ -2,6 +2,23 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.2.5
+
+### Fixed (1 change)
+
+- Set/expose securityContext for upgrade check hook. !915
+
+### Added (2 changes, 1 of them is from the community)
+
+- Adds readiness and liveness configuration for Registry. !932
+- Allows draintimeout to be configured for registry. !934 (jarv)
+
+### Other (2 changes)
+
+- Update gitlab-runner to 0.8.0/12.2.0. !912
+- Update GitLab Version to 12.2.4.
+
+
 ## 2.2.4
 
 ### Added (2 changes, 2 of them are from the community)
