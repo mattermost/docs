@@ -12,13 +12,13 @@ task-runner pods. Follow the steps to grab it from the sidekiq pod
 1. Find out the name of the sidekiq pod
 
    ```bash
-   $ kubectl get pods -lapp=sidekiq
+   kubectl get pods -lapp=sidekiq
    ```
 
 1. Grab the `gitlab.yml` file from sidekiq pod
 
    ```bash
-   $ kubectl exec <sidekiq pod name> -- cat /srv/gitlab/config/gitlab.yml
+   kubectl exec <sidekiq pod name> -- cat /srv/gitlab/config/gitlab.yml
    ```
 
 1. In the `gitlab.yml` file, there will be a section for uploads with details of

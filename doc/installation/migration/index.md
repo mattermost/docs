@@ -20,6 +20,7 @@
 
 1. Migrate existing files (uploads, artifacts, lfs objects) from package based
    installation to object storage.
+
    1. Modify `/etc/gitlab/gitlab.rb` file and configure object storage for
       [uploads](https://docs.gitlab.com/ee/administration/uploads.html#s3-compatible-connection-settings),
       [artifacts](https://docs.gitlab.com/ee/administration/job_artifacts.html#s3-compatible-connection-settings)
@@ -31,26 +32,26 @@
    1. Run reconfigure to apply the changes
 
       ```sh
-      $ sudo gitlab-ctl reconfigure
+      sudo gitlab-ctl reconfigure
       ```
 
    1. Migrate existing artifacts to object storage
 
       ```sh
-      $ sudo gitlab-rake gitlab:artifacts:migrate
-      $ sudo gitlab-rake gitlab:traces:migrate
+      sudo gitlab-rake gitlab:artifacts:migrate
+      sudo gitlab-rake gitlab:traces:migrate
       ```
 
    1. Migrate existing LFS objects to object storage
 
       ```sh
-      $ sudo gitlab-rake gitlab:lfs:migrate
+      sudo gitlab-rake gitlab:lfs:migrate
       ```
 
    1. Migrate existing uploads to object storage
 
       ```sh
-      $ sudo gitlab-rake gitlab:uploads:migrate:all
+      sudo gitlab-rake gitlab:uploads:migrate:all
       ```
 
       Docs: <https://docs.gitlab.com/ee/administration/raketasks/uploads/migrate.html#migrate-to-object-storage>
@@ -68,22 +69,22 @@
       - artifacts: `/var/opt/gitlab/gitlab-rails/shared/artifacts`
 
       ```sh
-      $ sudo mv /var/opt/gitlab/gitlab-rails/uploads{,.bak}
-      $ sudo mv /var/opt/gitlab/gitlab-rails/shared/lfs-objects{,.bak}
-      $ sudo mv /var/opt/gitlab/gitlab-rails/shared/artifacts{,.bak}
+      sudo mv /var/opt/gitlab/gitlab-rails/uploads{,.bak}
+      sudo mv /var/opt/gitlab/gitlab-rails/shared/lfs-objects{,.bak}
+      sudo mv /var/opt/gitlab/gitlab-rails/shared/artifacts{,.bak}
       ```
 
    1. Run reconfigure to recreate empty directories in place, so backup task
       won't fail.
 
-      ```
-      $ sudo gitlab-ctl reconfigure
+      ```sh
+      sudo gitlab-ctl reconfigure
       ```
 
 1. [Create backup tarball](https://docs.gitlab.com/ee/raketasks/backup_restore.html#creating-a-backup-of-the-gitlab-system)
 
-   ```
-   $ sudo gitlab-rake gitlab:backup:create
+   ```sh
+   sudo gitlab-rake gitlab:backup:create
    ```
 
    The backup file will be stored in `/var/opt/gitlab/backups` directory, unless
@@ -97,7 +98,7 @@
 
 1. Restart all pods to make sure changes are applied
 
-   ```
+   ```sh
    kubectl delete pods -lrelease=<helm release name>
    ```
 

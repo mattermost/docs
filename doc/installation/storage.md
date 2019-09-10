@@ -59,7 +59,7 @@ Alternatively, the custom storage class and other options may be provided per se
 the provided [example configuration file](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/storage/helm_options.yml) and modify for your environment.
 
 ```sh
-$ helm install -upgrade gitlab gitlab/gitlab -f HELM_OPTIONS_YAML_FILE
+helm install -upgrade gitlab gitlab/gitlab -f HELM_OPTIONS_YAML_FILE
 ```
 
 Follow the links below for further reading and additional persistence options:
@@ -82,13 +82,13 @@ will need to create the [Persistent Volume][pv] manually.
 1. [Create a persistent disk in the cluster.](https://kubernetes.io/docs/concepts/storage/volumes/#creating-a-pd)
 
 ```sh
-$ gcloud compute disks create --size=50GB --zone=*GKE_ZONE* *DISK_VOLUME_NAME*
+gcloud compute disks create --size=50GB --zone=*GKE_ZONE* *DISK_VOLUME_NAME*
 ```
 
 1. Create the Persistent Volume after modifying the [example `YAML` configuration](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/storage/gke_pv_example.yml).
 
 ```sh
-$ kubectl create -f *PV_YAML_FILE*
+kubectl create -f *PV_YAML_FILE*
 ```
 
 ### Using Amazon EKS
@@ -96,13 +96,13 @@ $ kubectl create -f *PV_YAML_FILE*
 1. [Create a persistent disk in the cluster.](https://kubernetes.io/docs/concepts/storage/volumes/#creating-an-ebs-volume)
 
 ```sh
-$ aws ec2 create-volume --availability-zone=*AWS_ZONE* --size=10 --volume-type=gp2
+aws ec2 create-volume --availability-zone=*AWS_ZONE* --size=10 --volume-type=gp2
 ```
 
 1. Create the Persistent Volume after modifying the [example `YAML` configuration](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/storage/eks_pv_example.yml).
 
 ```sh
-$ kubectl create -f *PV_YAML_FILE*
+kubectl create -f *PV_YAML_FILE*
 ```
 
 ### Manually creating PersistentVolumeClaims
