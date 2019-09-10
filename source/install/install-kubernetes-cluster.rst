@@ -3,7 +3,7 @@
 Set Up a Kubernetes Cluster
 ============================
 
-If you do not already have a production-ready Kubernetes cluster you will need to set one up. If you already have a Kubernetes cluster you may start with step 2.
+If you do not already have a production-ready Kubernetes cluster you will need to set one up. If you already have a Kubernetes cluster you can skip to step 2.
 
 Your Kubernetes cluster must be version 1.12 or higher.
 
