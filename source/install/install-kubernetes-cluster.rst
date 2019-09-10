@@ -9,7 +9,7 @@ Your Kubernetes cluster must be version 1.12 or higher.
 
 **1. Set up a Kubernetes cluster**
 
-Kubernetes can be set up in practically any environment. See the `official Kubernetes set up documentation <https://kubernetes.io/docs/setup/>`__ to discover how to set up a cluster in your environment.
+Kubernetes can be set up in practically any environment. See the `official Kubernetes setup documentation <https://kubernetes.io/docs/setup/>`__ to discover how to set up a cluster in your environment.
 
 If you are unsure about what environment you want to run Kubernetes in, we suggest using a managed service such as `Amazon EKS <https://aws.amazon.com/eks/>`__, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/services/kubernetes-service/>`__, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`__, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`__.
 
