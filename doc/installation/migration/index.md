@@ -8,11 +8,11 @@
 - `/etc/gitlab/gitlab-secrets.json` file from package based installation.
 
 - A Helm charts based deployment running the same GitLab version as the
-  Omnibus GitLab package based installation.
+  Omnibus GitLab package-based installation.
 
 - Object storage service which the Helm chart based deployment is configured to
-  use. For production use, we recommend you use an [external object storage] and
-  have the login credentials to access it ready. If you are using the built-in
+  use. For production use, we recommend you use an [external object storage](../../advanced/external-object-storage/index.md)
+  and have the login credentials to access it ready. If you are using the built-in
   Minio service, [read the docs](minio.md) on how to grab the login credentials
   from it.
 
@@ -56,13 +56,13 @@
 
       Docs: <https://docs.gitlab.com/ee/administration/raketasks/uploads/migrate.html#migrate-to-object-storage>
 
-   1. Visit the Omnibus GitLab package based GitLab instance and make sure the
+   1. Visit the Omnibus GitLab package-based GitLab instance and make sure the
       uploads are available. For example check if user, group and project
       avatars are rendered fine, image and other files added to issues load
       correctly, etc.
 
    1. Move the uploaded files from their current location so that
-      they won't end up in the tarball. The default locations are
+      they won't end up in the tarball. The default locations are:
 
       - uploads: `/var/opt/gitlab/gitlab-rails/uploads/`
       - lfs: `/var/opt/gitlab/gitlab-rails/shared/lfs-objects`
@@ -103,8 +103,6 @@
    ```
 
 1. Visit the Helm based deployment and confirm projects, groups, users, issues
-   etc. that existed in Omnibus GitLab package based installation are restored.
+   etc. that existed in Omnibus GitLab package-based installation are restored.
    Also verify if the uploaded files (avatars, files uploaded to issues, etc.)
    are loaded fine.
-
-[external object storage]: ../../advanced/external-object-storage/index.md

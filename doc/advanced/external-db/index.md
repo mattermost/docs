@@ -21,7 +21,7 @@ You need to set the following parameters:
 
 - `postgresql.install`: Set to `false` to disable the embedded database.
 - `global.psql.host`: Set to the hostname of the external database, can be a domain or an IP address.
-- `global.psql.password.secret`: The name of the [secret which contains the database password for the `gitlab` user.](../../installation/secrets.md#postgresql-password).
+- `global.psql.password.secret`: The name of the [secret which contains the database password for the `gitlab` user](../../installation/secrets.md#postgresql-password).
 - `global.psql.password.key`: The key within the secret, which contains the password. The password should be *unencoded* value.
 
 Items below can be further customized if you are not using the defaults:
@@ -33,13 +33,13 @@ Items below can be further customized if you are not using the defaults:
 If you use a mutual TLS connection to the database:
 
 - `global.psql.ssl.secret`: A secret containing client certificate, key and certificate authority.
-- `global.psql.ssl.serverCA`: The key inside the secret refering the certificate authority (CA).
-- `global.psql.ssl.clientCertificate`: They key inside the secret refering the client certificate.
+- `global.psql.ssl.serverCA`: The key inside the secret referring the certificate authority (CA).
+- `global.psql.ssl.clientCertificate`: The key inside the secret referring the client certificate.
 - `global.psql.ssl.clientKey`: The client inside the secret.
 
 For example, pass these values via helm's `--set` flag while deploying:
 
-```
+```sh
 helm install
   --set postgresql.install=false
   --set global.psql.host=psql.example
