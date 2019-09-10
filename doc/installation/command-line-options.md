@@ -270,113 +270,74 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 | `gitlab.sidekiq.resources.requests.cpu`                      | Sidekiq minimum needed cpu                     | `100m`                                                           |
 | `gitlab.sidekiq.resources.requests.memory`                   | Sidekiq minimum needed memory                  | `600M`                                                           |
 | `gitlab.sidekiq.timeout`                                     | Sidekiq job timeout                            | `5`                                                              |
+| `gitlab.task-runner.annotations`                             | Annotations to add to the task runner          | {}                                                               |
+| `gitlab.task-runner.backups.cron.enabled`                    | Backup CronJob enabled flag                    | false                                                            |
+| `gitlab.task-runner.backups.cron.extraArgs`                  | String of args to pass to the backup utility   |                                                                  |
+| `gitlab.task-runner.backups.cron.persistence.accessMode`     | Backup cron persistence access mode            | `ReadWriteOnce`                                                  |
+| `gitlab.task-runner.backups.cron.persistence.enabled`        | Backup cron enable persistence flag            | false                                                            |
+| `gitlab.task-runner.backups.cron.persistence.matchExpressions`| Label-expression matches to bind              |                                                                  |
+| `gitlab.task-runner.backups.cron.persistence.matchLabels`    | Label-value matches to bind                    |                                                                  |
+| `gitlab.task-runner.backups.cron.persistence.size`           | Backup cron persistence volume size            | `10Gi`                                                           |
+| `gitlab.task-runner.backups.cron.persistence.storageClass`   | storageClassName for provisioning              |                                                                  |
+| `gitlab.task-runner.backups.cron.persistence.subPath`        | Backup cron persistence volume mount path      |                                                                  |
+| `gitlab.task-runner.backups.cron.persistence.volumeName`     | Existing persistent volume name                |                                                                  |
+| `gitlab.task-runner.backups.cron.resources.requests.cpu`     | Backup cron minimum needed cpu                 | `50m`                                                            |
+| `gitlab.task-runner.backups.cron.resources.requests.memory`  | Backup cron minimum needed memory              | `350M`                                                           |
+| `gitlab.task-runner.backups.cron.schedule`                   | Cron style schedule string                     | `0 1 * * *`                                                      |
+| `gitlab.task-runner.backups.objectStorage.backend`           | Object storage provider to use (`s3` or `gcs`) | `s3`                                                             |
+| `gitlab.task-runner.backups.objectStorage.config.gcpProject` | GCP Project to use when backend is `gcs`       | ""                                                               |
+| `gitlab.task-runner.backups.objectStorage.config.key`        | key containing credentials in secret           | ""                                                               |
+| `gitlab.task-runner.backups.objectStorage.config.secret`     | Object storage credentials secret              | ""                                                               |
+| `gitlab.task-runner.backups.objectStorage.config`            | Authentication information for object storage  | {}                                                               |
 | `gitlab.task-runner.enabled`                                 | Task runner enabled flag                       | true                                                             |
-| gitlab.task-runner.image.repository                 | Task runner image repository                   | registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ee             |
-| gitlab.task-runner.image.tag                        | Task runner image tag                          | latest                                                     |
-| gitlab.task-runner.image.pullPolicy                 | Task runner image pull policy                  | IfNotPresent                                               |
-| gitlab.task-runner.init.image                       | Task runner init image repository              | busybox                                                    |
-| gitlab.task-runner.init.tag                         | Task runner init image tag                     | latest                                                     |
-| gitlab.task-runner.init.resources.requests.cpu      | Task runner init minimum needed cpu            | 50m                                                        |
-| gitlab.task-runner.annotations                      | Annotations to add to the task runner          | {}                                                         |
-| gitlab.task-runner.resources.requests.cpu           | Task runner minimum needed cpu                 | 50m                                                        |
-| gitlab.task-runner.resources.requests.memory        | Task runner minimum needed memory              | 350M                                                       |
-| gitlab.task-runner.persistence.enabled              | Task runner enable persistence flag            | false                                                      |
-| gitlab.task-runner.persistence.accessMode           | Task runner persistence access mode            | ReadWriteOnce                                              |
-| gitlab.task-runner.persistence.size                 | Task runner persistence volume size            | 10Gi                                                       |
-| gitlab.task-runner.persistence.subPath              | Task runner persistence volume mount path      |                                                            |
-| gitlab.task-runner.persistence.storageClass         | storageClassName for provisioning              |                                                            |
-| gitlab.task-runner.persistence.volumeName           | Existing persistent volume name                |                                                            |
-| gitlab.task-runner.persistence.matchLabels          | Label-value matches to bind                    |                                                            |
-| gitlab.task-runner.persistence.matchExpressions     | Label-expression matches to bind               |                                                            |
-| gitlab.task-runner.backups.cron.enabled             | Backup CronJob enabled flag                    | false                                                      |
-| gitlab.task-runner.backups.cron.schedule            | Cron style schedule string                     | `0 1 * * *`                                                |
-| gitlab.task-runner.backups.cron.extraArgs           | String of args to pass to the backup utility   |                                                            |
-| gitlab.task-runner.backups.cron.resources.requests.cpu        | Backup cron minimum needed cpu              | 50m                                                 |
-| gitlab.task-runner.backups.cron.resources.requests.memory     | Backup cron minimum needed memory           | 350M                                                |
-| gitlab.task-runner.backups.cron.persistence.enabled           | Backup cron enable persistence flag         | false                                               |
-| gitlab.task-runner.backups.cron.persistence.accessMode        | Backup cron persistence access mode         | ReadWriteOnce                                       |
-| gitlab.task-runner.backups.cron.persistence.size              | Backup cron persistence volume size         | 10Gi                                                |
-| gitlab.task-runner.backups.cron.persistence.subPath           | Backup cron persistence volume mount path   |                                                     |
-| gitlab.task-runner.backups.cron.persistence.storageClass      | storageClassName for provisioning           |                                                     |
-| gitlab.task-runner.backups.cron.persistence.volumeName        | Existing persistent volume name             |                                                     |
-| gitlab.task-runner.backups.cron.persistence.matchLabels       | Label-value matches to bind                 |                                                     |
-| gitlab.task-runner.backups.cron.persistence.matchExpressions  | Label-expression matches to bind            |                                                     |
-| gitlab.task-runner.backups.objectStorage.backend           | Object storage provider to use (`s3` or `gcs`) | s3                                                         |
-| gitlab.task-runner.backups.objectStorage.config            | Authentication information for object storage  | {}                                                         |
-| gitlab.task-runner.backups.objectStorage.config.secret     | Object storage credentials secret              | ""                                                         |
-| gitlab.task-runner.backups.objectStorage.config.key        | key containing credentials in secret           | ""                                                         |
-| gitlab.task-runner.backups.objectStorage.config.gcpProject | GCP Project to use when backend is `gcs`       | ""                                                         |
-| gitlab.unicorn.replicaCount                         | Unicorn number of replicas                     | 1                                                          |
-| gitlab.unicorn.image.repository                     | Unicorn image repository                       | registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee |
-| gitlab.unicorn.image.tag                            | Unicorn image tag                              | latest                                                     |
-| gitlab.unicorn.image.pullPolicy                     | Unicorn image pull policy                      | Always                                                     |
-| gitlab.unicorn.service.name                         | Unicorn service name                           | unicorn                                                    |
-| gitlab.unicorn.service.type                         | Unicorn service type                           | ClusterIP                                                  |
-| gitlab.unicorn.service.externalPort                 | Unicorn exposed port                           | 8080                                                       |
-| gitlab.unicorn.service.internalPort                 | Unicorn internal port                          | 8080                                                       |
-| gitlab.unicorn.service.workhorseExternalPort        | Workhorse exposed port                         | 8181                                                       |
-| gitlab.unicorn.service.workhorseInternalPort        | Workhorse internal port                        | 8181                                                       |
-| gitlab.unicorn.service.annotations                  | Annotations to add to the `Service`            | {}                                                         |
-| gitlab.unicorn.enabled                              | Unicorn enabled flag                           | true                                                       |
-| gitlab.unicorn.workerProcesses                      | Unicorn number of workers                      | 2                                                          |
-| gitlab.unicorn.workerTimeout                        | Unicorn worker timeout                         | 60                                                         |
-| gitlab.unicorn.redis.serviceName                    | Redis service name                             | redis                                                      |
-| gitlab.unicorn.psql.password.secret                 | psql secret name                               | gitlab-postgres                                            |
-| gitlab.unicorn.psql.password.key                    | Key to psql password in psql secret            | psql-password                                              |
-| gitlab.unicorn.shell.authToken.secret               | Shell token secret                             | {Release.Name}-gitlab-shell-secret                         |
-| gitlab.unicorn.shell.authToken.key                  | Key to shell token in shell secret             | secret                                                     |
-| gitlab.unicorn.gitaly.serviceName                   | Gitaly service name                            | gitaly                                                     |
-| gitlab.unicorn.gitaly.authToken.secret              | Gitaly secret name                             | {.Release.Name}-gitaly-secret                              |
-| gitlab.unicorn.gitaly.authToken.key                 | Key to gitaly token in gitaly secret           | token                                                      |
-| gitlab.unicorn.registry.api.protocol                | Registry protocol                              | http                                                       |
-| gitlab.unicorn.registry.api.serviceName             | Registry service name                          | registry                                                   |
-| gitlab.unicorn.registry.api.port                    | Registry port                                  | 5000                                                       |
-| gitlab.unicorn.registry.tokenIssuer                 | Registry token issuer                          | gitlab-issuer                                              |
-| gitlab.unicorn.resources.requests.cpu               | Unicorn minimum cpu                            | 200m                                                       |
-| gitlab.unicorn.resources.requests.memory            | Unicorn minimum memory                         | 1.4G                                                       |
-| gitlab.unicorn.workhorse.image                      | Workhorse image repository                     | registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ee |
-| gitlab.unicorn.workhorse.tag                        | Workhorse image tag                            |                                                            |
-| gitlab.unicorn.workhorse.sentryDSN                  | DSN for Sentry instance for error reporting    | ""                                                         |
-| gitlab.unicorn.workhorse.extraArgs                  | String of extra parameters for workhorse       | ""                                                         |
-| gitlab.migrations.image.repository                  | Migrations image repository                    | registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee   |
-| gitlab.migrations.image.tag                         | Migrations image tag                           | latest                                                     |
-| gitlab.migrations.image.pullPolicy                  | Migrations pull policy                         | Always                                                     |
-| gitlab.migrations.enabled                           | Migrations enable flag                         | true                                                       |
-| gitlab.migrations.redis.serviceName                 | Redis service name                             | redis                                                      |
-| gitlab.migrations.psql.password.secret              | psql secret                                    | gitlab-postgres                                            |
-| gitlab.migrations.psql.password.key                 | key to psql password in psql secret            | psql-password                                              |
-| gitlab-runner.image                                 | runner image                                   | gitlab/gitlab-runner:alpine-v10.5.0                        |
-| gitlab-runner.enabled                               |                                                | redis                                                      |
-| gitlab-runner.imagePullPolicy                       | image pull policy                              | IfNotPresent                                               |
-| gitlab-runner.unregisterRunners                     | unregister all runners before termination      | true                                                       |
-| gitlab-runner.concurrent                            | number of concurrent jobs                      | 20                                                         |
-| gitlab-runner.checkInterval                         | polling interval                               | 30s                                                        |
-| gitlab-runner.rbac.create                           | whether to create rbac service account         | true                                                       |
-| gitlab-runner.rbac.clusterWideAccess                | deploy containers of jobs cluster-wide         | false                                                      |
-| gitlab-runner.rbac.serviceAccountName               | name of the rbac service account to create     | default                                                    |
-| gitlab-runner.runners.image                         | default container image to use in builds       | ubuntu:16.04                                               |
-| gitlab-runner.runners.imagePullSecrets              | imagePullSecrets                               | `[]`                                                       |
-| gitlab-runner.runners.privileged                    | run in privieleged mode,needed for `dind`      | false                                                      |
-| gitlab-runner.runners.namespace                     | namespace to run jobs in                       | default                                                    |
-| gitlab-runner.runners.cache.cacheType               | cache type                                     | s3                                                         |
-| gitlab-runner.runners.cache.s3BucketName.           | name of the bucket                             | runner-cache                                               |
-| gitlab-runner.runners.cache.cacheShared             | share the cache between runners                | true                                                       |
-| gitlab-runner.runners.cache.s3BucketLocation        | bucket region                                  | us-east-1                                                  |
-| gitlab-runner.runners.cache.secretName              | secret to accesskey and secretkey from         | gitlab-minio                                               |
-| gitlab-runner.runners.cache.s3CachePath             | path in the bucket                             | gitlab-runner                                              |
-| gitlab-runner.runners.cache.s3CacheInsecure         | use http                                       | false                                                      |
-| gitlab-runner.runners.builds.cpuLimit               | build container limit                          |                                                            |
-| gitlab-runner.runners.build.memoryLimit             | build container limit                          |                                                            |
-| gitlab-runner.runners.build.cpuRequests             | build container limit                          |                                                            |
-| gitlab-runner.runners.build.memoryRequests          | build container limit                          |                                                            |
-| gitlab-runner.runners.service.cpuLimit              | service container limit                        |                                                            |
-| gitlab-runner.runners.service.memoryLimit           | service container limit                        |                                                            |
-| gitlab-runner.runners.service.cpuRequests           | service container limit                        |                                                            |
-| gitlab-runner.runners.service.memoryRequests        | service container limit                        |                                                            |
-| gitlab-runner.resources.limits.memory               | runner resources                               |                                                            |
-| gitlab-runner.resources.limits.cpu                  | runner resources                               |                                                            |
-| gitlab-runner.resources.requests.memory             | runner resources                               |                                                            |
-| gitlab-runner.resources.requests.cpu                | runner resources                               |                                                            |
+| `gitlab.task-runner.image.pullPolicy`                        | Task runner image pull policy                  | `IfNotPresent`                                                   |
+| `gitlab.task-runner.image.repository`                        | Task runner image repository                   | `registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ee` |
+| `gitlab.task-runner.image.tag`                               | Task runner image tag                          | `latest`                                                         |
+| `gitlab.task-runner.init.image`                              | Task runner init image repository              | `busybox`                                                        |
+| `gitlab.task-runner.init.resources.requests.cpu`             | Task runner init minimum needed cpu            | `50m`                                                            |
+| `gitlab.task-runner.init.tag`                                | Task runner init image tag                     | `latest`                                                         |
+| `gitlab.task-runner.persistence.accessMode`                  | Task runner persistence access mode            | `ReadWriteOnce`                                                  |
+| `gitlab.task-runner.persistence.enabled`                     | Task runner enable persistence flag            | false                                                            |
+| `gitlab.task-runner.persistence.matchExpressions`            | Label-expression matches to bind               |                                                                  |
+| `gitlab.task-runner.persistence.matchLabels`                 | Label-value matches to bind                    |                                                                  |
+| `gitlab.task-runner.persistence.size`                        | Task runner persistence volume size            | `10Gi`                                                           |
+| `gitlab.task-runner.persistence.storageClass`                | storageClassName for provisioning              |                                                                  |
+| `gitlab.task-runner.persistence.subPath`                     | Task runner persistence volume mount path      |                                                                  |
+| `gitlab.task-runner.persistence.volumeName`                  | Existing persistent volume name                |                                                                  |
+| `gitlab.task-runner.resources.requests.cpu`                  | Task runner minimum needed cpu                 | `50m`                                                            |
+| `gitlab.task-runner.resources.requests.memory`               | Task runner minimum needed memory              | `350M`                                                           |
+| `gitlab.unicorn.enabled`                                     | Unicorn enabled flag                           | true                                                             |
+| `gitlab.unicorn.gitaly.authToken.key`                        | Key to Gitaly token in Gitaly secret           | `token`                                                          |
+| `gitlab.unicorn.gitaly.authToken.secret`                     | Gitaly secret name                             | `{.Release.Name}-gitaly-secret`                                  |
+| `gitlab.unicorn.gitaly.serviceName`                          | Gitaly service name                            | `gitaly`                                                         |
+| `gitlab.unicorn.image.pullPolicy`                            | Unicorn image pull policy                      | `Always`                                                         |
+| `gitlab.unicorn.image.repository`                            | Unicorn image repository                       | `registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee`     |
+| `gitlab.unicorn.image.tag`                                   | Unicorn image tag                              | `latest`                                                         |
+| `gitlab.unicorn.psql.password.key`                           | Key to psql password in psql secret            | `psql-password`                                                  |
+| `gitlab.unicorn.psql.password.secret`                        | psql secret name                               | `gitlab-postgres`                                                |
+| `gitlab.unicorn.redis.serviceName`                           | Redis service name                             | `redis`                                                          |
+| `gitlab.unicorn.registry.api.port`                           | Registry port                                  | `5000`                                                           |
+| `gitlab.unicorn.registry.api.protocol`                       | Registry protocol                              | `http`                                                           |
+| `gitlab.unicorn.registry.api.serviceName`                    | Registry service name                          | `registry`                                                       |
+| `gitlab.unicorn.registry.tokenIssuer`                        | Registry token issuer                          | `gitlab-issuer`                                                  |
+| `gitlab.unicorn.replicaCount`                                | Unicorn number of replicas                     | `1`                                                              |
+| `gitlab.unicorn.resources.requests.cpu`                      | Unicorn minimum cpu                            | `200m`                                                           |
+| `gitlab.unicorn.resources.requests.memory`                   | Unicorn minimum memory                         | `1.4G`                                                           |
+| `gitlab.unicorn.service.annotations`                         | Annotations to add to the `Service`            | {}                                                               |
+| `gitlab.unicorn.service.externalPort`                        | Unicorn exposed port                           | `8080`                                                           |
+| `gitlab.unicorn.service.internalPort`                        | Unicorn internal port                          | `8080`                                                           |
+| `gitlab.unicorn.service.name`                                | Unicorn service name                           | `unicorn`                                                        |
+| `gitlab.unicorn.service.type`                                | Unicorn service type                           | `ClusterIP`                                                      |
+| `gitlab.unicorn.service.workhorseExternalPort`               | Workhorse exposed port                         | `8181`                                                           |
+| `gitlab.unicorn.service.workhorseInternalPort`               | Workhorse internal port                        | `8181`                                                           |
+| `gitlab.unicorn.shell.authToken.key`                         | Key to shell token in shell secret             | `secret`                                                         |
+| `gitlab.unicorn.shell.authToken.secret`                      | Shell token secret                             | `{Release.Name}-gitlab-shell-secret`                             |
+| `gitlab.unicorn.workerProcesses`                             | Unicorn number of workers                      | `2`                                                              |
+| `gitlab.unicorn.workerTimeout`                               | Unicorn worker timeout                         | `60`                                                             |
+| `gitlab.unicorn.workhorse.extraArgs`                         | String of extra parameters for workhorse       | ""                                                               |
+| `gitlab.unicorn.workhorse.image`                             | Workhorse image repository                     | `registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ee`   |
+| `gitlab.unicorn.workhorse.sentryDSN`                         | DSN for Sentry instance for error reporting    | ""                                                               |
+| `gitlab.unicorn.workhorse.tag`                               | Workhorse image tag                            |                                                                  |
 
 ## External Charts
 
