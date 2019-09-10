@@ -29,7 +29,7 @@ with `global.shell.port`, and defaults to `22`.
 | `enabled`                | `true`         | Shell enable flag                        |
 | `extraContainers`        |                | List of extra containers to include      |
 | `extraInitContainers`    |                | List of extra init containers to include |
-| `extraVolumeMounts`      |                | List of extra volumes mountes to do      |
+| `extraVolumeMounts`      |                | List of extra volumes mounts to do       |
 | `extraVolumes`           |                | List of extra volumes to create          |
 | `hpa.targetAverageValue` | `100m`         | Set the autoscaling target value         |
 | `image.pullPolicy`       | `Always`       | Shell image pull policy                  |
