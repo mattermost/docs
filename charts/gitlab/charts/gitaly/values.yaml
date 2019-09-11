@@ -64,6 +64,10 @@ redis: {}
 shell:
   authToken: {}
   concurrency: []
+    # - rpc: "/gitaly.SmartHTTPService/PostUploadPack"
+    #   maxPerRepo: 20
+    # - rpc: "/gitaly.SSHService/SSHUploadPack"
+    #   maxPerRepo: 20
 
 ## Enable prometheus metrics and set the port to scrape the
 ## container on.
