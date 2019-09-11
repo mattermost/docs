@@ -39,7 +39,7 @@ data:
     <% end %>
 
     [logging]
-    {{- with .Values.global.gitaly.logging }}
+    {{- with .Values.logging }}
     {{- if .level }}
     level = "{{ .level }}"
     {{- end }}
@@ -57,23 +57,23 @@ data:
     {{- end }}
     {{- end }}
 
-    {{- if .Values.global.gitaly.prometheus.grpcLatencyBuckets }}
+    {{- if .Values.prometheus.grpcLatencyBuckets }}
     [ prometheus]
-    grpc_latency_buckets = {{ .Values.global.gitaly.prometheus.grpcLatencyBuckets }}
+    grpc_latency_buckets = {{ .Values.prometheus.grpcLatencyBuckets }}
     {{- end }}
 
     [auth]
     token = "<%= File.read('/etc/gitlab-secrets/gitaly/gitaly_token').strip.dump[1..-2] %>"
 
     [git]
-    {{- if .Values.global.gitaly.git.catFileCacheSize }}
-    catfile_cache_size = {{ .Values.global.gitaly.git.catFileCacheSize }}
+    {{- if .Values.git.catFileCacheSize }}
+    catfile_cache_size = {{ .Values.git.catFileCacheSize }}
     {{- end }}
 
     [gitaly-ruby]
     # The directory where gitaly-ruby is installed
     dir = "/srv/gitaly-ruby"
-    {{- with .Values.global.gitaly.ruby }}
+    {{- with .Values.ruby }}
     {{- if .maxRss }}
     max_rss = "{{ .maxRss }}"
     {{- end }}
@@ -92,8 +92,8 @@ data:
     # The directory where gitlab-shell is installed
     dir = "/srv/gitlab-shell"
 
-    {{- if .Values.global.gitaly.shell.concurrency }}
-    {{- range .Values.global.gitaly.shell.concurrency }}
+    {{- if .Values.shell.concurrency }}
+    {{- range .Values.shell.concurrency }}
     {{- if and .rpc .maxPerRepo }}
     [[concurrency]]
     rpc = '{{ .rpc }}'

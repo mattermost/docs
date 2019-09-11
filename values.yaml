@@ -89,27 +89,6 @@ global:
     internal:
       names: ['default']
     external: []
-    logging:
-      level:
-      format:
-      sentryDsn:
-      rubySentryDsn:
-      sentryEnvironment:
-    git:
-      catFileCacheSize:
-    ruby:
-      maxRss:
-      gracefulRestartTimeout:
-      restartDelay:
-      numWorkers:
-    shell:
-      concurrency: []
-        # - rpc:
-        #   maxPerRepo:
-        # - rpc:
-        #   maxPerRepo:
-    prometheus:
-      grpcLatencyBuckets: []
 
   ## doc/charts/globals.md#configure-minio-settings
   minio:

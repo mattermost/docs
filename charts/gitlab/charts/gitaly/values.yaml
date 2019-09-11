@@ -39,23 +39,22 @@ global:
     password: {}
   gitaly:
     authToken: {}
-    logging:
-      level:
-      format: "json"
-      sentryDsn:
-      rubySentryDsn:
-      sentryEnvironment:
-    git:
-      catFileCacheSize:
-    ruby:
-      maxRss:
-      gracefulRestartTimeout:
-      restartDelay:
-      numWorkers:
-    shell:
-      concurrency: []
-    prometheus:
-      grpcLatencyBuckets: []
+
+logging:
+  level:
+  format: "json"
+  sentryDsn:
+  rubySentryDsn:
+  sentryEnvironment:
+git:
+  catFileCacheSize:
+ruby:
+  maxRss:
+  gracefulRestartTimeout:
+  restartDelay:
+  numWorkers:
+prometheus:
+  grpcLatencyBuckets: []
 
 unicorn: {}
   # host: '0.0.0.0'
@@ -64,6 +63,7 @@ unicorn: {}
 redis: {}
 shell:
   authToken: {}
+  concurrency: []
 
 ## Enable prometheus metrics and set the port to scrape the
 ## container on.
