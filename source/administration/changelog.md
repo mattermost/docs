@@ -8,6 +8,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 **Release Day: 2019-09-16**
 
+Mattermost v5.15.0 contains medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
 ### Bug Fixes
  - Fixed an issue where an invalid locale caused a white screen.
  - Fixed an issue where rate limited posts failed to load threads.
@@ -46,11 +48,14 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue with an incorrect error message on Custom URL Schemes field.
 
 ### Known Issues
+ - JS console error may appear when uploading an image from the right-hand side.
+ - Scroll pop may occur in channels with markdown images.
+ - Trailing white space is not ignored when saving bot user name.
+ - Clicking "Edit" of another sub-section in Account Settings appears to save the setting that is currently being edited in an open sub-section in the same modal.
  - Some pre-packaged plugins show as removable in the User Interface.
  - If ``ExperimentalStrictCSRFEnforcement`` is set to True, attempts to use ``/jira subscribe`` fail.
  - Users are unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
  - User count in a channel does not update until after refresh if a user automatically joins a channel.
- - Missing messages can be caused if network fails on API calls.
  - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
  - Modifying config files causes compliance exports to run twice.
  - Using channel autocomplete while editing post causes current channel to be unread.
