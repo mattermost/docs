@@ -94,9 +94,11 @@ data:
 
     {{- if .Values.global.gitaly.shell.concurrency }}
     {{- range .Values.global.gitaly.shell.concurrency }}
+    {{- if and .rpc .maxPerRepo }}
     [[concurrency]]
     rpc = '{{ .rpc }}'
     max_per_repo = {{ .maxPerRepo }}
+    {{- end }}
     {{- end }}
     {{- end }}
 
