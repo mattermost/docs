@@ -4,7 +4,7 @@ This is the Mattermost style guide for text used in the Mattermost product. Use 
 
 .. note::
 
-  These guidelines are not intended to slow down or otherwise impede contributions, which are always welcome. No contribution will be rejected due to non-conforming style, although it might be edited.
+These guidelines are not intended to slow down or otherwise impede contributions, which are always welcome. No contribution will be rejected due to non-conforming style, although it might be edited.
 
 ....
 
@@ -96,17 +96,19 @@ In general, do not blame the user. Inform, explain, and suggest.
 
 Try to use the active voice, except in these cases:
 
-- You'll end up blaming the user. For example, don't say *You entered an incorrect password*. Instead, say *The password is incorrect*.
-- You're describing what just happened. For example, it's okay to say *Your incoming webhook has been set up*.
-- The subject (the doer of an action) is the Mattermost application itself. For example, it's okay to say *The image was deleted* instead of *The server deleted the image*.
+- If you'll end up blaming the user. For example, don't say *You entered an incorrect password*. Instead, say *The password is incorrect*.
+- If you're describing what just happened. For example, it's okay to say *Your incoming webhook has been set up*.
+- If the subject (the doer of an action) is the Mattermost application itself. For example, it's okay to say *The image was deleted* instead of *The server deleted the image*.
 
-Use complete sentences. If you're asking the user to do something, use imperatives. Use the past tense to inform what's already happened, the present tense to describe a current state or condition, and the future tense to state something that will definitely happen. 
+Try to use complete sentences. If you're asking the user to do or not do something, use imperatives (command phrases). For example, say *Do not change the Hostname* instead of saying *It is not recommended to change the Hostname*. 
+
+Use the past tense to inform what's already happened, the present tense to describe a current state or condition, and the future tense to state something that will definitely happen. 
 
 If a message contains variables (tokens): 
 
 - Do not use verbs or adjectives as variables.
 - Do not create plurals of variables by adding an *s*.
-- If the variable is a noun, use a qualifier after the variable. For example, say *The {channel_name} channel was created* instead of saying *The {channel_name} was created*
+- If the variable is a noun, use a qualifier after the variable. For example, say *The {channel_name} channel was created* instead of saying *The {channel_name} was created*.
 
 Notifications
 ~~~~~~~~~~~~~~
