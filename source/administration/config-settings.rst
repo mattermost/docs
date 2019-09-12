@@ -1407,7 +1407,7 @@ Enable Team Directory
 
 Teammate Name Display
 ^^^^^^^^^^^^^^^^^^^^^
-Specifies how names are displayed in the user interface by default. Please note that users can override this setting in **Account Settings > Display > Teammate Name Display**
+Specifies how names are displayed in the user interface by default. Please note that users can override this setting in **Account Settings > Display > Teammate Name Display**.
 
 **Show username**: Displays the user's username.
 
