@@ -8,7 +8,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 **Release Day: 2019-09-16**
 
-Mattermost v5.15.0 contains medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+Mattermost v5.15.0 contains low level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 ### Bug Fixes
  - Fixed an issue where an invalid locale caused a white screen.
