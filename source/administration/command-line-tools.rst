@@ -1203,7 +1203,7 @@ mattermost plugin add
   Example
     .. code-block:: none
 
-      ./mattermost plugin add demoplugin.tar.gz pluginstartertemplate.tar.gz
+      ./mattermost plugin add hovercardexample.tar.gz pluginexample.tar.gz
 
 mattermost plugin delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1219,7 +1219,7 @@ mattermost plugin delete
   Example
     .. code-block:: none
 
-      ./mattermost plugin delete com.mattermost.demo-plugin com.mattermost.plugin-starter-template
+      ./mattermost plugin delete hovercardexample pluginexample
 
 mattermost plugin disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1235,7 +1235,7 @@ mattermost plugin disable
   Example
     .. code-block:: none
 
-      ./mattermost plugin disable com.mattermost.demo-plugin com.mattermost.plugin-starter-template
+      ./mattermost plugin disable hovercardexample pluginexample
       
 mattermost plugin enable
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1251,7 +1251,7 @@ mattermost plugin enable
   Example
     .. code-block:: none
 
-      ./mattermost plugin enable com.mattermost.demo-plugin com.mattermost.plugin-starter-template
+      ./mattermost plugin enable hovercardexample pluginexample
 
 mattermost plugin list
 ~~~~~~~~~~~~~~~~~~~~~~
