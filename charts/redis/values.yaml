@@ -28,6 +28,11 @@ resources:
 # Chart operation controls
 enabled: true
 
+# custom scheduling options
+nodeSelector: {}
+tolerations: []
+affinity: {}
+
 # Configuration items
 timeout: 60
 tcpKeepalive: 300
