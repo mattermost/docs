@@ -20,6 +20,7 @@ Mattermost v5.15.0 contains low level security fixes. [Upgrading](http://docs.ma
  - Fixed an issue with an absence of unread badges on private channels on mobile apps.
  - Fixed an issue where at-sign was missing in front of usernames in push notifications.
  - Fixed some bugs related to the new [keyboard accessibility](https://docs.mattermost.com/help/getting-started/accessibility.html) feature.
+ - Fixed an issue where the "@" sign was replaced with keyboard accessibility feature on Italian keyboard.
  - Fixed an issue where joining a new channel with few posts sometimes did not take the user to the bottom of the channel.
  - Fixed an issue where scroll pop sometimes occured with embedded Youtube links.
  - Fixed an issue with stuttery dropdowns in Safari.
@@ -43,6 +44,7 @@ Mattermost v5.15.0 contains low level security fixes. [Upgrading](http://docs.ma
  - Fixed an issue where bots could not be added to any team if server wide email domain restriction was enabled.
  - Fixed an issue where pagination broke when adding users to a team.
  - Fixed an issue where list of users were not paginated on warning modal for LDAP group sync team / channel removal.
+ - Fixed an issue where enabling LDAP Trace prevented login.
  - Fixed an issue where Google User API Endpoint showed an outdated helper text.
  - Fixed an issue where a markdown image with an SVG briefly displayed for sender with ``EnableSVGs`` set to false.
  - Fixed an issue with an incorrect error message on Custom URL Schemes field.
