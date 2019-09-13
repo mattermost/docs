@@ -120,4 +120,4 @@ MySQL:
 
 .. _documentation: https://docs.mattermost.com/install/i18n.html
 .. _MySQL: http://dev.mysql.com/doc/refman/5.7/en/fulltext-stopwords.html
-.. _Postgres: https://www.apt-browse.org/browse/ubuntu/precise/main/amd64/postgresql-9.1/9.1.3-2/file/usr/share/postgresql/9.1/tsearch_data/english.stop
+.. _Postgres: https://www.apt-browse.org/browse/debian/jessie/main/amd64/postgresql-9.4/9.4.18-0+deb8u1/file/usr/share/postgresql/9.4/tsearch_data/english.stop
