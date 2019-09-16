@@ -67,4 +67,4 @@ After waiting 3-5 minutes for your deployment to complete, run the following to 
 
   $ kubectl -n mattermost get svc
 
-The ``EXTERNAL-IP` of the service with the name matching the ``metadata.name`` entered in your installation manifest file will be how you access Mattermost.
+The ``EXTERNAL-IP`` of the service with the name matching the ``metadata.name`` entered in your installation manifest file will be how you access Mattermost.
