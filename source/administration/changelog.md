@@ -8,6 +8,18 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 **Release Day: 2019-10-16**
 
+### Improvements
+ - Added support for including the Theme property on ``UserTeamMemberships`` in Bulk Export.
+ - Enabled account related emails when ``SendEmailNotifications`` is set to false.
+ - Added a CLI ``integrity`` command to verify database integrity.
+ - Added support for showing channel links as links in email notifications.
+ - 
+ 
+### Bug Fixes
+ - Fixed an issue where SQL connections closed prematurely for clusters.
+ 
+### API Changes
+ - Added function for setting Personal Access Token to NewAPIv4Client.
 
 
 ## Release v5.15 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
