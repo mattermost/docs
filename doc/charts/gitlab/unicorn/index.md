@@ -189,6 +189,7 @@ redis:
 ```YAML
 psql:
   host: psql.example.com
+  serviceName: pgbouncer
   port: 5432
   database: gitlabhq_production
   username: gitlab
@@ -201,6 +202,7 @@ psql:
 | Name              | Type    | Default               | Description |
 |:----------------- |:-------:|:--------------------- |:----------- |
 | `host`            | String  |                       | The hostname of the PostgreSQL server with the database to use. This can be omitted if `postgresql.install=true` (default non-production). |
+| `serviceName`     | String  |                       | The name of the `service` which is operating the PostgreSQL database. If this is present, and `host` is not, the chart will template the hostname of the service in place of the `host` value. |
 | `database`        | String  | `gitlabhq_production` | The name of the database to use on the PostgreSQL server. |
 | `password.key`    | String  |                       | The `password.key` attribute for PostgreSQL defines the name of the key in the secret (below) that contains the password. |
 | `password.secret` | String  |                       | The `password.secret` attribute for PostgreSQL defines the name of the Kubernetes `Secret` to pull from. |
