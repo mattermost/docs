@@ -293,6 +293,14 @@ Mattermost runs periodic tasks via the `job server <https://docs.mattermost.com/
 
 :ref:`Run all job servers <command-line-tools-mattermost-jobserver>` with ``--noschedule flag``, then set ``JobSettings.RunScheduler`` to ``true`` in config.json for all app servers in the cluster. The cluster leader will then be responsible for scheduling recurring jobs.
 
+Plugins and High Availability
+^^^^^^^^^^^^^^^^
+
+As of Mattermost 5.14, when you install or upgrade a plugin, it is propagated across the servers in the cluster automatically. 
+
+Note a slight behaviour change in 5.15:
+When you re-install a plugin in 5.14, it retained the last "Enabled" or "Disabled" state as it was before. As of 5.15, a plugin's initial state will now be DISABLED when you re-install it.
+
 Upgrade Guide
 -------------
 
