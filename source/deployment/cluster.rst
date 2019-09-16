@@ -298,7 +298,7 @@ Plugins and High Availability
 
 As of Mattermost 5.14, when you install or upgrade a plugin, it is propagated across the servers in the cluster automatically. 
 
-Note a slight behavior change in v5.15:
+Note a slight behaviour change in 5.15:
 When you install a plugin in 5.14 -> enable -> uninstall -> install the same plugin again, the plugin's initial state remained  enabled. As of v5.15, when you install a plugin -> enable -> uninstall -> install the same plugin again, the plugin's initial state will now be DISABLED.
 
 Upgrade Guide
