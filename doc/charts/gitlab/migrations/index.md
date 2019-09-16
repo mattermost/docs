@@ -35,6 +35,7 @@ Table below contains all the possible charts configurations that can be supplied
 | `enabled`               | Migrations enable flag                   | `true`            |
 | `tolerations`           | Toleration labels for pod assignment     | `[]`              |
 | `redis.serviceName`     | Redis service name                       | `redis`           |
+| `psql.serviceName`      | Name of Service providing PostgreSQL     | `release-postgresql` | 
 | `psql.password.secret`  | psql secret                              | `gitlab-postgres` |
 | `psql.password.key`     | key to psql password in psql secret      | `psql-password`   |
 | `extraInitContainers`   | List of extra init containers to include |                   |
@@ -106,6 +107,7 @@ The `password` attribute for Redis has two sub keys:
 ```YAML
 psql:
   host: psql.example.com
+  serviceName: pgbouncer
   port: 5432
   database: gitlabhq_production
   username: gitlab
@@ -118,6 +120,10 @@ psql:
 #### host
 
 The hostname of the PostgreSQL server with the database to use. This can be omitted if `postgresql.install=true` (default non-production).
+
+#### serviceName
+
+The name of the service which is operating the PostgreSQL database. If this is present, and `host` is not, the chart will template the hostname of the service in place of the `host` value.
 
 #### port
 
