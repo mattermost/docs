@@ -271,19 +271,19 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 | `gitlab.sidekiq.resources.requests.memory`                   | Sidekiq minimum needed memory                  | `600M`                                                           |
 | `gitlab.sidekiq.timeout`                                     | Sidekiq job timeout                            | `5`                                                              |
 | `gitlab.task-runner.annotations`                             | Annotations to add to the task runner          | {}                                                               |
-| `gitlab.task-runner.backups.cron.enabled`                    | Backup CronJob enabled flag                    | false                                                            |
-| `gitlab.task-runner.backups.cron.extraArgs`                  | String of args to pass to the backup utility   |                                                                  |
-| `gitlab.task-runner.backups.cron.persistence.accessMode`     | Backup cron persistence access mode            | `ReadWriteOnce`                                                  |
-| `gitlab.task-runner.backups.cron.persistence.enabled`        | Backup cron enable persistence flag            | false                                                            |
-| `gitlab.task-runner.backups.cron.persistence.matchExpressions`| Label-expression matches to bind              |                                                                  |
-| `gitlab.task-runner.backups.cron.persistence.matchLabels`    | Label-value matches to bind                    |                                                                  |
-| `gitlab.task-runner.backups.cron.persistence.size`           | Backup cron persistence volume size            | `10Gi`                                                           |
-| `gitlab.task-runner.backups.cron.persistence.storageClass`   | storageClassName for provisioning              |                                                                  |
-| `gitlab.task-runner.backups.cron.persistence.subPath`        | Backup cron persistence volume mount path      |                                                                  |
-| `gitlab.task-runner.backups.cron.persistence.volumeName`     | Existing persistent volume name                |                                                                  |
-| `gitlab.task-runner.backups.cron.resources.requests.cpu`     | Backup cron minimum needed cpu                 | `50m`                                                            |
-| `gitlab.task-runner.backups.cron.resources.requests.memory`  | Backup cron minimum needed memory              | `350M`                                                           |
-| `gitlab.task-runner.backups.cron.schedule`                   | Cron style schedule string                     | `0 1 * * *`                                                      |
+| `gitlab.task-runner.backups.cron.enabled`                      | Backup CronJob enabled flag                  | false                                                            |
+| `gitlab.task-runner.backups.cron.extraArgs`                    | String of args to pass to the backup utility |                                                                  |
+| `gitlab.task-runner.backups.cron.persistence.accessMode`       | Backup cron persistence access mode          | `ReadWriteOnce`                                                  |
+| `gitlab.task-runner.backups.cron.persistence.enabled`          | Backup cron enable persistence flag          | false                                                            |
+| `gitlab.task-runner.backups.cron.persistence.matchExpressions` | Label-expression matches to bind             |                                                                  |
+| `gitlab.task-runner.backups.cron.persistence.matchLabels`      | Label-value matches to bind                  |                                                                  |
+| `gitlab.task-runner.backups.cron.persistence.size`             | Backup cron persistence volume size          | `10Gi`                                                           |
+| `gitlab.task-runner.backups.cron.persistence.storageClass`     | storageClassName for provisioning            |                                                                  |
+| `gitlab.task-runner.backups.cron.persistence.subPath`          | Backup cron persistence volume mount path    |                                                                  |
+| `gitlab.task-runner.backups.cron.persistence.volumeName`       | Existing persistent volume name              |                                                                  |
+| `gitlab.task-runner.backups.cron.resources.requests.cpu`       | Backup cron minimum needed cpu               | `50m`                                                            |
+| `gitlab.task-runner.backups.cron.resources.requests.memory`    | Backup cron minimum needed memory            | `350M`                                                           |
+| `gitlab.task-runner.backups.cron.schedule`                     | Cron style schedule string                   | `0 1 * * *`                                                      |
 | `gitlab.task-runner.backups.objectStorage.backend`           | Object storage provider to use (`s3` or `gcs`) | `s3`                                                             |
 | `gitlab.task-runner.backups.objectStorage.config.gcpProject` | GCP Project to use when backend is `gcs`       | ""                                                               |
 | `gitlab.task-runner.backups.objectStorage.config.key`        | key containing credentials in secret           | ""                                                               |
