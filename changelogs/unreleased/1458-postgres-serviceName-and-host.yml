@@ -1,0 +1,5 @@
+---
+title: 'Allow postgres to use a serviceName as well as a host #1458'
+merge_request: 886
+author: Mike Rennie
+type: added

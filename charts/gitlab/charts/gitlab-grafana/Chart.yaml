@@ -1,7 +1,7 @@
 ---
 apiVersion: v1
 name: gitlab-grafana
-version: 2.2.5
+version: 2.2.6
 description: Adapt the Grafana chart to interface to the GitLab App
 keywords:
 - gitlab
@@ -9,7 +9,7 @@ keywords:
 home: https://about.gitlab.com/
 icon: https://gitlab.com/gitlab-com/gitlab-artwork/raw/master/logo/logo-square.svg
 sources:
-- https://gitlab.com/charts/gitlab/tree/master/charts/gitlab/charts/gitlab-grafana
+- https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/gitlab-grafana
 - https://gitlab.com/gitlab-org/build/CNG/tree/master/gitlab-grafana
 maintainers:
 - name: GitLab Inc.

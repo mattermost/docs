@@ -122,13 +122,16 @@ certmanager.k8s.io/issuer: "{{ .Release.Name }}-issuer"
 {{/*
 Return the db hostname
 If an external postgresl host is provided, it will use that, otherwise it will fallback
-to the service name
+to the service name. Failing a specified service name it will fall back to the default service name.
+
 This overrides the upstream postegresql chart so that we can deterministically
 use the name of the service the upstream chart creates
 */}}
 {{- define "gitlab.psql.host" -}}
 {{- if .Values.global.psql.host -}}
 {{- .Values.global.psql.host | quote -}}
+{{- else if .Values.global.psql.serviceName -}}
+{{- .Values.global.psql.serviceName | quote -}}
 {{- else -}}
 {{- printf "%s-%s" .Release.Name "postgresql" -}}
 {{- end -}}

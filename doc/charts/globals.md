@@ -128,6 +128,7 @@ more details, see the documentation within the [unicorn chart](gitlab/unicorn/in
 global:
   psql:
     host: db.example.com
+    # serviceName:
     port: 5432
     preparedStatements: false
     password:
@@ -160,6 +161,7 @@ details on these settings, see the documentation within the [unicorn chart](gitl
 global:
   redis:
     host: redis.example.com
+    # serviceName:
     port: 6379
     password:
       enabled: true

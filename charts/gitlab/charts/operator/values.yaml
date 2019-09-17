@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 image:
-  repository: registry.gitlab.com/charts/components/gitlab-operator
+  repository: registry.gitlab.com/gitlab-org/charts/components/gitlab-operator
   pullSecrets: []
   # pullPolicy: IfNotPresent
   # tag: latest

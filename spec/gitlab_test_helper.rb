@@ -90,7 +90,7 @@ module Gitlab
     end
 
     def backup_instance
-      cmd = full_command("backup-utility --backup -t test-backup")
+      cmd = full_command("backup-utility -t test-backup")
       stdout, status = Open3.capture2e(cmd)
 
       return [stdout, status]

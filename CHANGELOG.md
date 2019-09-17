@@ -2,6 +2,13 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.2.6
+
+### Other (1 change)
+
+- Update GitLab Version to 12.2.5.
+
+
 ## 2.2.5
 
 ### Fixed (1 change)
@@ -181,6 +188,13 @@ entry.
 - Run before_fork only once on boot for Unicorn. !852
 - Update gitlab-runner to 0.7.0/12.1.0. !878
 - Update GitLab Version to 12.1.0.
+
+
+## 2.0.7
+
+### Other (1 change)
+
+- Update GitLab Version to 12.0.9.
 
 
 ## 2.0.6
