@@ -8,18 +8,100 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 **Release Day: 2019-10-16**
 
+### Compatibility
+
+#### Removed and Deprecated Features
+ 
+### Breaking Changes
+
+
+### Highlights
+ - IE11 deprecation.
+ - Plugins Marketplace.
+ - Guest Accounts.
+ - Improved team/channel management.
+
 ### Improvements
- - Added support for including the Theme property on ``UserTeamMemberships`` in Bulk Export.
- - Enabled account related emails when ``SendEmailNotifications`` is set to false.
- - Added a CLI ``integrity`` command to verify database integrity.
+
+#### User Interface (UI)
+ - Added support for showing TIF image thumbnail previews.
+ - Added the ability to remove custom branding image.
  - Added support for showing channel links as links in email notifications.
- - 
+ - Added support for direct message permalink.
+ - Changed recent date separators to read Today/Yesterday.
+
+#### Import/Export
+ - Added support for including the Theme property on ``UserTeamMemberships`` in Bulk Export.
+ 
+#### Notifications
+ - Enabled account related emails when ``SendEmailNotifications`` is set to false.
+ 
+#### Command Line Interface (CLI)
+ - Added a CLI ``integrity`` command to verify database integrity.
+ 
+#### Plugins
+ - Added the ability for plugins to render custom embed views for posts.
+ - Added support for including custom System Console components for plugins.
+ - Added support for plugins to close the right-hand sidebar.
+ 
+#### Integrations
+ - Added support for introductory markdown paragraph in interactive dialogs.
+ - Added a password type for interactive dialogs.
+ - Added support for footer and footer_icon in attachments.
+ 
+#### Performance
+ - Improved quick switcher experience to make the autocomplete feel more like a modal rather than a dropdown.
+
+#### Administration
+ - Added the ability for system admins to revoke all sessions from all users.
+ - Added user Id information in the **System Console > Users** page.
+ - Updated System Console plugin settings page to expose enable/disable.
  
 ### Bug Fixes
  - Fixed an issue where SQL connections closed prematurely for clusters.
+ - Fixed an issue where user count did not update if user automatically joined a channel.
+ - Fixed an issue where users were unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
+ - Fixed an issue where some pre-packaged plugins showed as removable in the User Interface.
+ - Fixed an issue where clicking "Edit" of another sub-section in Account Settings appeared to save the setting that was currently being edited in an open sub-section in the same modal.
+ - Fixed an issue where a JS console error appeared when uploading an image from the right-hand side.
+
+### config.json
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+ - Added PluginSettings.EnableMarketplace and PluginSettings.MarketplaceURL settings.
+ 
+### Open Source Components
  
 ### API Changes
  - Added function for setting Personal Access Token to NewAPIv4Client.
+ - Added ``KVCompareAndDeleteJSON`` to the API so that plugins can more easily delete values automatically.
+ - Added ``GetUnsanitizedConfig`` API to expose unsanitized configuration to plugins.
+ - Added a v4/plugins/marketplace API to fetch marketplace plugins.
+ - Added a database write check to the ping API endpoint.
+ 
+### Database Changes
+
+### Websocket Event Changes
+ 
+### Known Issues
+ - Scroll pop may occur in channels with markdown images.
+ - Trailing white space is not ignored when saving bot user name.
+ - If ``ExperimentalStrictCSRFEnforcement`` is set to True, attempts to use ``/jira subscribe`` fail.
+ - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
+ - Modifying config files causes compliance exports to run twice.
+ - Using channel autocomplete while editing post causes current channel to be unread.
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
 
 
 ## Release v5.15 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
