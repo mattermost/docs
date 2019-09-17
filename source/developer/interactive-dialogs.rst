@@ -278,7 +278,7 @@ The integration may also return a generic error message to the user that is not 
 
 .. code-block:: json
 
-  {"error": "Some of your inputs are invalid.  Please check your inputs and try again."}
+  {"error": "Failed to fetch additional data. Please try again."}
 
 Support for generic error messages was added in Mattermost 5.16.
 
