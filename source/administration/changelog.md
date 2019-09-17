@@ -50,6 +50,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for footer and footer_icon in attachments.
  
 #### Performance
+ - Improved post list performance by making thread comments be loaded only when needed.
  - Improved quick switcher experience to make the autocomplete feel more like a modal rather than a dropdown.
 
 #### Administration
