@@ -28,10 +28,14 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added the ability to remove custom branding image.
  - Added support for showing channel links as links in email notifications.
  - Added support for direct message permalink.
+ - Added a count for pinned posts header icon.
  - Changed recent date separators to read Today/Yesterday.
 
 #### Import/Export
  - Added support for including the Theme property on ``UserTeamMemberships`` in Bulk Export.
+
+#### Search
+ - Added support for excluding results from search.
  
 #### Notifications
  - Enabled account related emails when ``SendEmailNotifications`` is set to false.
@@ -48,6 +52,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for introductory markdown paragraph in interactive dialogs.
  - Added a password type for interactive dialogs.
  - Added support for footer and footer_icon in attachments.
+ - Added support for boolean elements in interactive dialogs.
  
 #### Performance
  - Improved post list performance by making thread comments be loaded only when needed.
