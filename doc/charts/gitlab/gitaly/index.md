@@ -63,11 +63,11 @@ the `helm install` command using the `--set` flags.
 | `logging.sentryEnvironment`     |                                            | Sentry environment to be used for logging                                                  |
 | `ruby.maxRss`                   |                                            | Gitaly-Ruby resident set size (RSS) that triggers a memory restart (bytes)                 |
 | `ruby.gracefulRestartTimeout`   |                                            | Graceful period before a force restart after exceeding Max RSS                             |
-| `ruby.restartDelay `            |                                            | Time that Gitaly-Ruby memory must remain high before a restart (seconds                    |
+| `ruby.restartDelay`             |                                            | Time that Gitaly-Ruby memory must remain high before a restart (seconds)                   |
 | `ruby.numWorkers`               |                                            | Number of Gitaly-Ruby worker processes                                                     |
 | `shell.concurrency[]`           |                                            | Concurrency of each RPC endpoint Specified using keys `rpc` and `maxPerRepo`               |
 | `git.catFileCacheSize`          |                                            | Cache size used by git cat-file process                                                    |
-| `prometheus.grpcLatencyBuckets` |                                            | Buckets corresponding to histogram latencies on GRPC method calls to be recorded by Gitaly |
+| `prometheus.grpcLatencyBuckets` | `[]`                                       | Buckets corresponding to histogram latencies on GRPC method calls to be recorded by Gitaly |
 
 ## Chart configuration examples
 
