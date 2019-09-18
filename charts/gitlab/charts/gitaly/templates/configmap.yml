@@ -25,7 +25,7 @@ data:
 
     # If metrics collection is enabled, inform gitaly about that
     {{- if .Values.metrics.enabled }}
-    prometheus_listen_addr = 'localhost:{{ .Values.metrics.metricsPort }}'
+    prometheus_listen_addr = "localhost:{{ .Values.metrics.metricsPort }}"
     {{- end }}
 
     <% @storages = [ {{- range (coalesce .Values.internal.names .Values.global.gitaly.internal.names) }} {{ . | quote }}, {{- end }} ] %>
@@ -75,16 +75,16 @@ data:
     dir = "/srv/gitaly-ruby"
     {{- with .Values.ruby }}
     {{- if .maxRss }}
-    max_rss = "{{ .maxRss }}"
+    max_rss = {{ .maxRss }}
     {{- end }}
     {{- if .gracefulRestartTimeout }}
     graceful_restart_timeout = "{{ .gracefulRestartTimeout }}"
     {{- end }}
     {{- if .restartDelay }}
-    restart_delay = '"{{ .restartDelay }}"'
+    restart_delay = "{{ .restartDelay }}"
     {{- end }}
     {{- if .numWorkers }}
-    num_workers = "{{ .numWorkers }}"
+    num_workers = {{ .numWorkers }}
     {{- end }}
     {{- end }}
 
@@ -96,7 +96,7 @@ data:
     {{- range .Values.shell.concurrency }}
     {{- if and .rpc .maxPerRepo }}
     [[concurrency]]
-    rpc = '{{ .rpc }}'
+    rpc = "{{ .rpc }}"
     max_per_repo = {{ .maxPerRepo }}
     {{- end }}
     {{- end }}
