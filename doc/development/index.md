@@ -144,7 +144,7 @@ For example, where `gitaly` was the owning chart, and the other charts need to r
 
 ## Developing template helpers
 
-A charts template helpers are located in `templates/_helpers.tpl`. These contain the [named templates](https://docs.helm.sh/chart_template_guide/#declaring-and-using-templates-with-define-and-template)
+A charts template helpers are located in `templates/_helpers.tpl`. These contain the [named templates](https://helm.sh/docs/chart_template_guide/#declaring-and-using-templates-with-define-and-template)
 used within the chart.
 
 When using these templates, there a few things to keep in mind regarding the [golang templating syntax](https://golang.org/pkg/text/template/).

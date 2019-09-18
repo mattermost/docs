@@ -173,7 +173,7 @@ global:
 
 The GitLab global grafana settings are located under `global.grafana`. At this time, the only setting available is `global.grafana.enabled`.
 
-When set to `true`, the GitLab chart will deploy the [Grafana chart](https://github.com/helm/helm/tree/master/stable/grafana), expose it under `/-/grafana` of the GitLab Ingress, and pre-configure it with a secure random password. The generated password can be found in the Secret named `gitlab-grafana-initial-root-password`.
+When set to `true`, the GitLab chart will deploy the [Grafana chart](https://github.com/helm/charts/tree/master/stable/grafana), expose it under `/-/grafana` of the GitLab Ingress, and pre-configure it with a secure random password. The generated password can be found in the Secret named `gitlab-grafana-initial-root-password`.
 
 The GitLab chart connects to the deployed Prometheus instance.
 
@@ -531,7 +531,7 @@ Example `--set` configuration items, when using the global chart:
 --set global.appConfig.ldap.servers.main.password.key='the-key-containing-the-password'
 ```
 
-NOTE: **Note:** Commas are considered [special characters](https://github.com/kubernetes/helm/blob/master/docs/using_helm.md#the-format-and-limitations-of---set)
+NOTE: **Note:** Commas are considered [special characters](https://https://github.com/helm/helm/blob/master/docs/using_helm.md#the-format-and-limitations-of---set)
   within Helm `--set` items. Be sure to escape commas in values such as `bind_dn`: `--set global.appConfig.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'`.
 
 #### Using a custom CA or self signed LDAP certificates

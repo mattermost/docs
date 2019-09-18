@@ -158,7 +158,7 @@ The initContainer is passed the following items:
 The initContainer is expected to populate `/minio/config.json` with a completed configuration,
 using `/config/configure` script. When the `minio-config` container has completed
 that task, the `/minio` directory will be passed to the `minio` container, and used
-to provide the `config.json` to the [minio](https://minio.io) server.
+to provide the `config.json` to the [minio](https://min.io) server.
 
 ## Configuring the Ingress
 
@@ -166,7 +166,7 @@ These settings control the minio ingress.
 
 | Name             | Type    | Default | Description |
 |:---------------- |:-------:|:------- |:----------- |
-| `annotations`    | String  |         | This field is an exact match to the standard `annotations` for [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress). |
+| `annotations`    | String  |         | This field is an exact match to the standard `annotations` for [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/). |
 | `enabled`        | Boolean | `false` | Setting that controls whether to create ingress objects for services that support them. When `false` the `global.ingress.enabled` setting is used. |
 | `tls.enabled`    | Boolean | `true`  | When set to `false`, you disable TLS for Minio. This is mainly useful when you cannot use TLS termination at ingress-level, like when you have a TLS-terminating proxy before the ingress controller. |
 | `tls.secretName` | String  |         | The name of the Kubernetes TLS Secret that contains a valid certificate and key for the minio url. When not set, the `global.ingress.tls.secretName` is used instead. |
@@ -256,5 +256,5 @@ for the following also applies completely to this chart:
 - `minioConfig`
 
 Further explanation of the `minioConfig` settings can be found in the
-[minio notify documentation](https://docs.minio.io/docs/minio-bucket-notification-guide).
+[minio notify documentation](https://docs.min.io/docs/minio-bucket-notification-guide).
 This includes details on publishing notifications when Bucket Objects are accessed or changed.

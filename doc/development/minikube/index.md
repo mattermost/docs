@@ -2,13 +2,13 @@
 
 This guide is meant to serve as a cross-plaform resource for setting up a local
 Kubernetes development environment. In this guide, we'll be using
-[Minikube](https://kubernetes.io/docs/getting-started-guides/minikube/) as it is the defacto standard.
+[Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/) as it is the defacto standard.
 
 ## Getting Started with Minikube
 
 We'll extract and expound on the official documentation from the
 [Kubernetes project](https://kubernetes.io/),
-[Running Kubernetes Locally with Minikube](https://kubernetes.io/docs/getting-started-guides/minikube/).
+[Running Kubernetes Locally with Minikube](https://kubernetes.io/docs/setup/learning-environment/minikube/).
 
 ### Installing kubectl
 
@@ -125,7 +125,7 @@ of the `hostPath` type, which are mapped to directories inside the VM. As Miniku
 boots into a `tmpfs`, most directories will not persist across reboots via `minikube stop`.
 
 Further details and listings of directories that do persist, can be found
-in the [Minikube getting started guide](https://kubernetes.io/docs/getting-started-guides/minikube/#persistent-volumes).
+in the [Minikube getting started guide](https://kubernetes.io/docs/setup/learning-environment/minikube/#persistent-volumes).
 
 ### Enable Addons
 
@@ -205,7 +205,7 @@ If the output of `minikube ip` was not `192.168.99.100`, add these arguments to 
 The example configurations provided, configure the domain as `192.168.99.100.nip.io`
 in an attempt to reduce the overhead of handling alterations to host files, or
 other domain name resolution services. However, this relies on the network
-reachability of [nip.io](http://nip.io).
+reachability of [nip.io](https://nip.io).
 
 If this is not available to you, then you may need to make alterations to your
 `/etc/hosts` file, or provide another means of DNS resolution.
@@ -229,7 +229,7 @@ covering most operating systems.
 
 ### Logging in
 
-You can access the GitLab instance by visiting the domain specified, [https://gitlab.192.168.99.100.nip.io](https://gitlab.192.168.99.100.nip.io) is used in these examples. If you manually created the secret for initial root password, you can use that to sign in as root user. If not, GitLab automatically created a random password for the root user. This can be extracted by the following command (replace `<name>` by name of the release - which is `gitlab` if you used the command above).
+You can access the GitLab instance by visiting the domain specified, `https://gitlab.192.168.99.100.nip.io` is used in these examples. If you manually created the secret for initial root password, you can use that to sign in as root user. If not, GitLab automatically created a random password for the root user. This can be extracted by the following command (replace `<name>` by name of the release - which is `gitlab` if you used the command above).
 
 ```shell
 kubectl get secret <name>-gitlab-initial-root-password -ojsonpath='{.data.password}' | base64 --decode ; echo

@@ -208,7 +208,7 @@ This section controls the registry ingress.
 
 | Name              | Type    | Default | Description |
 |:----------------- |:-------:|:------- |:----------- |
-| `annotations`     | String  |         | This field is an exact match to the standard `annotations` for [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress). |
+| `annotations`     | String  |         | This field is an exact match to the standard `annotations` for [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/). |
 | `enabled`         | Boolean | `false` | Setting that controls whether to create ingress objects for services that support them. When `false` the `global.ingress.enabled` setting is used. |
 | `tls.enabled`     | Boolean | `true`  | When set to `false`, you disable TLS for the Registry subchart. This is mainly useful for cases in which you cannot use TLS termination at ingress-level, like when you have a TLS-terminating proxy before the ingress controller. |
 | `tls.serviceName` | String  | `redis` | The name of the Kubernetes TLS Secret that contains a valid certificate and key for the registry url. When not set, the `global.ingress.tls.secretName` is used instead. Defaults to not being set. |
@@ -375,8 +375,8 @@ The `storage` field is a reference to a Kubernetes Secret and associated key. Th
 of this secret is taken directly from [Registry Configuration: `storage`](https://docs.docker.com/registry/configuration/#storage).
 Please refer to that documentation for more details.
 
-Examples for [AWS s3](https://docs.docker.com/registry/storage-drivers/s3) and
-[Google GCS](https://docs.docker.com/registry/storage-drivers/gcs) drivers can be
+Examples for [AWS s3](https://docs.docker.com/registry/storage-drivers/s3/) and
+[Google GCS](https://docs.docker.com/registry/storage-drivers/gcs/) drivers can be
 found in [examples/objectstorage](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage):
 
 - [registry.s3.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/registry.s3.yaml)

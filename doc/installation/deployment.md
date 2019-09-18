@@ -176,7 +176,7 @@ incoming email settings.
 
 ### Deploy the Community Edition
 
-By default, the Helm charts use the Enterprise Edition of GitLab. If desired, you can instead use the Community Edition. Learn more about the [difference between the two](https://about.gitlab.com/installation/ce-or-ee/).
+By default, the Helm charts use the Enterprise Edition of GitLab. If desired, you can instead use the Community Edition. Learn more about the [difference between the two](https://about.gitlab.com/install/ce-or-ee/).
 
 *To deploy the Community Edition, include this option in your helm install command:*
 
