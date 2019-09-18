@@ -337,10 +337,10 @@ check_docs_lint:
   dependencies: []
   before_script: []
   script:
+    # Lint Markdown
+    - markdownlint --config .markdownlint.json 'doc/**/*.md'
     - mv doc/ /tmp/gitlab-docs/content/charts
     - cd /tmp/gitlab-docs
-    # Lint Markdown
-    - markdownlint --config $CI_PROJECT_DIR/.markdownlint.json content/charts/**/*.md
     # Build HTML from Markdown
     - bundle exec nanoc
     # Check the internal links

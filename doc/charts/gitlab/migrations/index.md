@@ -35,7 +35,7 @@ Table below contains all the possible charts configurations that can be supplied
 | `enabled`               | Migrations enable flag                   | `true`            |
 | `tolerations`           | Toleration labels for pod assignment     | `[]`              |
 | `redis.serviceName`     | Redis service name                       | `redis`           |
-| `psql.serviceName`      | Name of Service providing PostgreSQL     | `release-postgresql` | 
+| `psql.serviceName`      | Name of Service providing PostgreSQL     | `release-postgresql` |
 | `psql.password.secret`  | psql secret                              | `gitlab-postgres` |
 | `psql.password.key`     | key to psql password in psql secret      | `psql-password`   |
 | `extraInitContainers`   | List of extra init containers to include |                   |
