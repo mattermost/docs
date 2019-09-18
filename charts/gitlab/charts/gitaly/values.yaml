@@ -41,18 +41,18 @@ global:
     authToken: {}
 
 logging:
-  level:
   format: "json"
-  sentryDsn:
-  rubySentryDsn:
-  sentryEnvironment:
+  # level:
+  # sentryDsn:
+  # rubySentryDsn:
+  # sentryEnvironment:
 git:
-  catFileCacheSize:
+  # catFileCacheSize:
 ruby:
-  maxRss:
-  gracefulRestartTimeout:
-  restartDelay:
-  numWorkers:
+  # maxRss:
+  # gracefulRestartTimeout:
+  # restartDelay:
+  # numWorkers:
 prometheus:
   grpcLatencyBuckets: []
 
