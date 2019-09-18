@@ -35,16 +35,12 @@ the global is used by GitLab backups.
 
 Create the secret per [registry chart documentation on storage](../../charts/registry/index.md#storage), then configure the chart to make use of this secret.
 
-Examples for [S3][storage-s3](any s3 compatible), [Azure][storage-azure] and [GCS][storage-gcs] drivers can be found in
+Examples for [S3](https://docs.docker.com/registry/storage-drivers/s3/)(any s3 compatible), [Azure](https://docs.docker.com/registry/storage-drivers/azure/) and [GCS](https://docs.docker.com/registry/storage-drivers/gcs/) drivers can be found in
 [examples/objectstorage](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage).
 
 - [registry.s3.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/registry.s3.yaml)
 - [registry.gcs.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/registry.gcs.yaml)
 - [registry.azure.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/registry.azure.yaml)
-
-[storage-s3]: https://docs.docker.com/registry/storage-drivers/s3
-[storage-gcs]: https://docs.docker.com/registry/storage-drivers/gcs
-[storage-azure]: https://docs.docker.com/registry/storage-drivers/azure
 
 ### Registry configuration
 

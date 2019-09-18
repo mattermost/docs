@@ -1,6 +1,6 @@
-# Setup standalone Postgresql database
+# Set up standalone Postgresql database
 
-We'll make use of the [Omnibus GitLab][] package for Ubuntu. This package provides versions of the services that are guaranteed to be compatible with the charts' services.
+We'll make use of the [Omnibus GitLab](https://about.gitlab.com/install/#ubuntu) package for Ubuntu. This package provides versions of the services that are guaranteed to be compatible with the charts' services.
 
 ## Create VM with Omnibus GitLab
 
@@ -11,7 +11,7 @@ Install Ubuntu Server onto the VM that you have created. Ensure that `openssh-se
 Configure networking and a hostname. Make note of the hostname/IP, and ensure it is both resolvable and reachable from your Kubernetes cluster.
 Be sure firewall policies are in place to allow traffic.
 
-Follow the installation instructions for [Omnibus GitLab][]. When you perform the package installation, **_do not_** provide the `EXTERNAL_URL=` value. We do not want automatic configuration to occur, as we'll provide a very specific configuration in the next step.
+Follow the installation instructions for [Omnibus GitLab](https://about.gitlab.com/install/#ubuntu). When you perform the package installation, **_do not_** provide the `EXTERNAL_URL=` value. We do not want automatic configuration to occur, as we'll provide a very specific configuration in the next step.
 
 ## Configure Omnibus GitLab
 
@@ -63,5 +63,3 @@ After creating `gitlab.rb`, we'll reconfigure the package with `gitlab-ctl recon
 run: logrotate: (pid 4856) 1859s; run: log: (pid 31262) 77460s
 run: postgresql: (pid 30562) 77637s; run: log: (pid 30561) 77637s
 ```
-
-[Omnibus GitLab]: https://about.gitlab.com/installation/#ubuntu

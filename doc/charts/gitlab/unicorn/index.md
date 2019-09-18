@@ -124,7 +124,7 @@ annotations:
 
 By default, the Helm charts use the Enterprise Edition of GitLab. If desired, you
 can use the Community Edition instead. Learn more about the
-[differences between the two](https://about.gitlab.com/installation/ce-or-ee/).
+[differences between the two](https://about.gitlab.com/install/ce-or-ee/).
 
 In order to use the Community Edition, set `image.repository` to
 `registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ce` and `workhorse.image`

@@ -44,7 +44,7 @@ The table below describes all variables.
 | REGION          | The region where your cluster lives                                         | us-central1                      |
 | ZONE            | The zone where your cluster instances lives                                 | us-central1-a                    |
 | CLUSTER_NAME    | The name of the cluster                                                     | gitlab-cluster                   |
-| CLUSTER_VERSION | The version of your GKE cluster                                             | GKE default, check the [GKE release notes](https://cloud.google.com/kubernetes-engine/release-notes) |
+| CLUSTER_VERSION | The version of your GKE cluster                                             | GKE default, check the [GKE release notes](https://cloud.google.com/kubernetes-engine/docs/release-notes) |
 | MACHINE_TYPE    | The cluster instances' type                                                 | n1-standard-4                    |
 | NUM_NODES       | The number of nodes required.                                               | 2                                |
 | PROJECT         | the id of your GCP project                                                  | No defaults, required to be set. |
@@ -75,7 +75,7 @@ Two resources need to be created in GCP, a Kubernetes cluster and an external IP
 #### Creating the Kubernetes cluster
 
 To provision the Kubernetes cluster manually, follow the
-[GKE instructions](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-container-cluster).
+[GKE instructions](https://cloud.google.com/kubernetes-engine/docs/how-to/creating-a-cluster).
 
 - We recommend a cluster with 8vCPU and 30GB of RAM.
 - Make a note of the cluster's region, it will be needed in the following step.
@@ -101,7 +101,7 @@ We will use this IP to bind with a DNS name in the next section.
 If you created your cluster manually or used the `USE_STATIC_IP` option with the scripted creation,
 you'll need a public domain with an A record wild card DNS entry pointing to the IP we just created.
 
-Follow the [Google DNS quickstart guide](https://cloud.google.com/dns/quickstart)
+Follow the [Google DNS quickstart guide](https://cloud.google.com/dns/docs/quickstart)
 to create the DNS entry.
 
 ## Next Steps
