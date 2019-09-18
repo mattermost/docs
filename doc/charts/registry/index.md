@@ -447,3 +447,33 @@ health:
     interval: 10s
     threshold: 3
 ```
+
+## Garbage Collection
+
+The Docker Registry will build up extraneous data over time which can be freed using
+[garbage collection](https://docs.docker.com/registry/garbage-collection/).
+As of [now](https://gitlab.com/gitlab-org/charts/gitlab/issues/1586) there is no
+fully automated or scheduled way to run the garbage collection with this Chart.
+
+### Manual Garbage Collection
+
+Manual garbage collection requires the registry to be in read-only mode first. Let's assume that you've already
+installed the GitLab Chart using Helm, named it `mygitlab` and installed it in the namespace `gitlabns`.
+Replace these values in the commands below according to your actual configuration.
+
+```bash
+# Because of https://github.com/helm/helm/issues/2948 we can't rely on --reuse-values, so let's get our current config.
+helm get config mygitlab > mygitlab.yml
+# Upgrade Helm installation and configure the registry to be read-only.
+# The --wait parameter makes Helm wait until all ressources are in ready state, so we are safe to continue.
+helm upgrade mygitlab gitlab/gitlab -f mygitlab.yml --set registry.readOnly.enabled=true --wait
+# Our registry is in r/o mode now, so let's get the name of one of the registry Pods.
+# Note down the Pod name and replace the '<registry-pod>' placeholder below with that value.
+# Replace the single quotes to double quotes (' => ") if you are using this with Windows' cmd.exe.
+kubectl get pods -n gitlabns -l app=registry -o jsonpath='{.items[0].metadata.name}'
+# Run the actual garbage collection. Check the registry's manual if you really want the '-m' parameter.
+kubectl exec -n gitlabns <registry-pod> -- /bin/registry garbage-collect -m /etc/docker/registry/config.yml
+# Reset registry back to original state.
+helm upgrade mygitlab gitlab/gitlab -f mygitlab.yml --wait
+# All done :)
+```
