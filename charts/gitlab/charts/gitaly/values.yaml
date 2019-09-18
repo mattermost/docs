@@ -46,9 +46,9 @@ logging:
   # sentryDsn:
   # rubySentryDsn:
   # sentryEnvironment:
-git:
+git: {}
   # catFileCacheSize:
-ruby:
+ruby: {}
   # maxRss:
   # gracefulRestartTimeout:
   # restartDelay:
