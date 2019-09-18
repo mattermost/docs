@@ -41,6 +41,13 @@ tolerations: []
 ## Enable/Disable Chart
 enabled: true
 
+## Registry Maintenance Settings
+## See https://docs.docker.com/registry/configuration/#maintenance
+maintenance:
+  readOnly:
+    ## Enable read-only mode for Registry
+    enabled: false
+
 annotations: {}
 
 networkpolicy:

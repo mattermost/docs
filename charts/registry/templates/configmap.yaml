@@ -48,6 +48,9 @@ data:
     validation:
       disabled: {{ eq true .Values.validation.disabled }}
     storage:
+      maintenance:
+        readonly:
+          enabled: {{ .Values.maintenance.readOnly.enabled }}
       {{- if .Values.storage }}
       {{- else if .Values.global.minio.enabled }}
       s3:
