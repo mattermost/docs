@@ -66,8 +66,10 @@ data:
     token = "<%= File.read('/etc/gitlab-secrets/gitaly/gitaly_token').strip.dump[1..-2] %>"
 
     [git]
-    {{- if .Values.git.catFileCacheSize }}
+    {{- with .Values.git }}
+    {{- if .catFileCacheSize }}
     catfile_cache_size = {{ .Values.git.catFileCacheSize }}
+    {{- end }}
     {{- end }}
 
     [gitaly-ruby]
