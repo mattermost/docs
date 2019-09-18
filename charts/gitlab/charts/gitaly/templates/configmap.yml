@@ -58,7 +58,7 @@ data:
     {{- end }}
 
     {{- if .Values.prometheus.grpcLatencyBuckets }}
-    [ prometheus]
+    [prometheus]
     grpc_latency_buckets = {{ toJson .Values.prometheus.grpcLatencyBuckets }}
     {{- end }}
 
