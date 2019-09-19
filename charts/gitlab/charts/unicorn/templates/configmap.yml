@@ -33,7 +33,7 @@ data:
       id:
   unicorn.rb: |
     # This file should be equivalent to `unicorn.rb` from:
-    # * gitlab-ce: https://gitlab.com/gitlab-org/gitlab-ce/blob/master/config/unicorn.rb.example
+    # * gitlab-foss: https://gitlab.com/gitlab-org/gitlab-foss/blob/master/config/unicorn.rb.example
     # * omnibus: https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-cookbooks/gitlab/templates/default/unicorn.rb.erb
     worker_processes {{ .Values.workerProcesses }}
     working_directory "/srv/gitlab"

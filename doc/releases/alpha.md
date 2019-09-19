@@ -29,7 +29,7 @@ We are currently using Kubernetes version 1.8.7 for development. We plan to anno
 
 ## GitLab Enterprise Edition
 
-During alpha, GitLab Enterprise Edition is required while we [bring object storage support to Community Edition](https://gitlab.com/gitlab-org/gitlab-ce/issues/40781). GitLab EE offers same functionality as GitLab CE when no license is supplied.
+During alpha, GitLab Enterprise Edition is required while we [bring object storage support to Community Edition](https://gitlab.com/gitlab-org/gitlab-foss/issues/40781). GitLab EE offers same functionality as GitLab CE when no license is supplied.
 
 We will be adding support for GitLab Community Edition before making these charts generally available.
 

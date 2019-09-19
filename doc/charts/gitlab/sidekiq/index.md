@@ -239,14 +239,14 @@ NOTE: **Note**: The settings default to including a single pod that is set up to
 
 The `queues` value will be directly templated into the Sidekiq configuration file.
 As such, you may follow the documentation from Sidekiq for the value of `:queues:`.
-If this is not provided, the [upstream defaults](https://gitlab.com/gitlab-org/gitlab-ee/blob/master/config/sidekiq_queues.yml)
+If this is not provided, the [upstream defaults](https://gitlab.com/gitlab-org/gitlab/blob/master/config/sidekiq_queues.yml)
 will be used, resulting in the handling of *all* queues.
 
 In summary, provide a list of queue names to process. Each item in the list may be
 a queue name (`merge`) or an array of queue names with priorities (`[merge, 5]`).
 
 Any queue to which jobs are added but are not represented as a part of at least one
-pod item *will not be processed*. See [`config/sidekiq_queues.yml`](https://gitlab.com/gitlab-org/gitlab-ee/blob/master/config/sidekiq_queues.yml)
+pod item *will not be processed*. See [`config/sidekiq_queues.yml`](https://gitlab.com/gitlab-org/gitlab/blob/master/config/sidekiq_queues.yml)
 in the GitLab source for a complete list of all queues.
 
 ### Example `pod` entry
