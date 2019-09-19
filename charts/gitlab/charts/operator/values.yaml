@@ -8,7 +8,7 @@ image:
   # tag: latest
 
 # Which version of the operator to deploy
-version: 0.6
+version: 0.7
 
 init:
   resources:

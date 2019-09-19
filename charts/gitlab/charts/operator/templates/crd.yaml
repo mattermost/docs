@@ -11,12 +11,20 @@ spec:
     kind: GitLab
     plural: gitlabs
   scope: Namespaced
+  subresources:
+    status: {}
   validation:
     openAPIV3Schema:
       properties:
         apiVersion:
+          description: 'APIVersion defines the versioned schema of this representation
+            of an object. Servers should convert recognized schemas to the latest
+            internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#resources'
           type: string
         kind:
+          description: 'Kind is a string value representing the REST resource this
+            object represents. Servers may infer this from the endpoint the client
+            submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#types-kinds'
           type: string
         metadata:
           type: object
@@ -24,41 +32,37 @@ spec:
           properties:
             helmRelease:
               type: string
+            revision:
+              type: string
             templates:
-              type: object
               properties:
-                sharedSecretsTemplate:
-                  type: object
+                migrationsTemplate:
                   properties:
-                    configMapName:
-                      type: string
                     configMapKey:
                       type: string
-                    roleKey:
+                    configMapName:
                       type: string
+                  required:
+                  - configMapName
+                  - configMapKey
+                  type: object
+                sharedSecretsTemplate:
+                  properties:
                     roleBindingKey:
+                      type: string
+                    roleKey:
                       type: string
                     serviceAccountKey:
                       type: string
                   required:
-                    - configMapKey
-                    - configMapName
-                    - roleKey
-                    - roleKey
-                    - serviceAccountKey
-                migrationsTemplate:
+                  - serviceAccountKey
+                  - roleKey
+                  - roleBindingKey
                   type: object
-                  properties:
-                    configMapName:
-                      type: string
-                    configMapKey:
-                      type: string
-                  required:
-                    - configMapName
-                    - configMapKey
               required:
-                - migrationsTemplate
-                - sharedSecretsTemplate
+              - migrationsTemplate
+              - sharedSecretsTemplate
+              type: object
             version:
               type: string
           required:
@@ -67,6 +71,38 @@ spec:
           - helmRelease
           type: object
         status:
+          properties:
+            conditions:
+              items:
+                properties:
+                  lastTransitionTime:
+                    format: date-time
+                    type: string
+                  message:
+                    type: string
+                  reason:
+                    type: string
+                  status:
+                    type: string
+                  type:
+                    type: string
+                required:
+                - type
+                - status
+                - lastTransitionTime
+                type: object
+              type: array
+            deployedRevision:
+              type: string
+            observedGeneration:
+              format: int64
+              type: integer
           type: object
   version: v1beta1
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
 {{- end }}
