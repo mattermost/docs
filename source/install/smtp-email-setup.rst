@@ -35,7 +35,7 @@ To enable email, configure an SMTP email service as follows:
                Mail <https://en.wikipedia.org/wiki/DomainKeys_Identified_Mail>`__
                (DKIM) for your email domain.
 
-         4. Choose an sender address like ``mattermost@example.com`` and
+         4. Choose a sender address like ``mattermost@example.com`` and
             click ``Send a Test Email`` to verify setup is working
             correctly.
 
