@@ -280,7 +280,7 @@ The integration may also return a generic error message to the user that is not 
 
   {"error": "Failed to fetch additional data. Please try again."}
 
-Support for generic error messages was added in Mattermost 5.16.
+Support for generic error messages was added in Mattermost 5.18.
 
 Finally, once the request is submitted, we recommend the integration to respond with a system message or an ephemeral message confirming the submission. This should be a separate request back to Mattermost once the service has received and responded to a submission request from a dialog. This can be done either via `the REST API <https://api.mattermost.com/#tag/posts%2Fpaths%2F~1posts~1ephemeral%2Fpost>`_, or via the `Plugin API <https://developers.mattermost.com/extend/plugins/server/reference/#API.SendEphemeralPost>`_ if you are developing a plugin.
 
