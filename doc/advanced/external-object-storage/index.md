@@ -18,7 +18,7 @@ This documentation specifies usage of access and secret keys for AWS. It is also
 
 ## Azure Blob Storage
 
-GitLab uses [fog](https://github.com/fog/fog), but [doesn't currently support fog-azure](https://gitlab.com/gitlab-org/gitlab-ce/issues/55624). To make use Azure Blob Storage, you will have to setup a [azure-minio gateway](./azure-minio-gateway.md).
+GitLab uses [fog](https://github.com/fog/fog), but [doesn't currently support fog-azure](https://gitlab.com/gitlab-org/gitlab-foss/issues/55624). To make use Azure Blob Storage, you will have to setup a [azure-minio gateway](./azure-minio-gateway.md).
 
 ## Docker Registry images
 

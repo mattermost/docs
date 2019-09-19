@@ -25,7 +25,7 @@ _**NOTE**: The values below should be replaced_
 
 <!--
 updates to following example must also be made at
-https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/administration/gitaly/index.md#gitaly-server-configuration
+https://gitlab.com/gitlab-org/gitlab-foss/blob/master/doc/administration/gitaly/index.md#gitaly-server-configuration
 -->
 
 ```Ruby
