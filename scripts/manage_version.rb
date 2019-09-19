@@ -24,7 +24,7 @@ class VersionOptionsParser
       # defaults
       options.working_dir = Dir.pwd
       options.include_subcharts = false
-      options.gitlab_repo = "gitlab-org/gitlab-ee"
+      options.gitlab_repo = "gitlab-org/gitlab"
 
       OptionParser.new do |opts|
         opts.banner = "Usage: #{__FILE__} [options] \n\n"

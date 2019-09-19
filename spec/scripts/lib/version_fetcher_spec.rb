@@ -2,7 +2,7 @@ require 'spec_helper'
 require_relative '../../../scripts/lib/version_fetcher.rb'
 
 describe VersionFetcher do
-  let(:com_path) { 'gitlab-org%2Fgitlab-ce/repository/files/GITLAB_SHELL_VERSION/raw?ref=v11.8.0' }
+  let(:com_path) { 'gitlab-org%2Fgitlab-foss/repository/files/GITLAB_SHELL_VERSION/raw?ref=v11.8.0' }
   let(:dev_path) { 'gitlab%2Fgitlabhq/repository/files/GITLAB_SHELL_VERSION/raw?ref=v11.8.0' }
   let(:custom_path) { 'johndoe%2Fgitlab-ee/repository/files/GITLAB_SHELL_VERSION/raw?ref=v11.8.0' }
   before do
@@ -12,7 +12,7 @@ describe VersionFetcher do
 
   describe 'detecting API URL' do
     it 'works correctly gitlab.com registry' do
-      version_fetcher = VersionFetcher.new('v11.8.0', 'gitlab-org/gitlab-ce')
+      version_fetcher = VersionFetcher.new('v11.8.0', 'gitlab-org/gitlab-foss')
       allow(version_fetcher).to receive_message_chain(:open, :read).and_return("1.2.3\n")
 
       expect(version_fetcher).to receive(:open).with("https://gitlab.com/api/v4/projects/#{com_path}", { 'PRIVATE-TOKEN' => nil })
@@ -38,7 +38,7 @@ describe VersionFetcher do
   end
 
   describe 'instance methods' do
-    let(:version_fetcher) { VersionFetcher.new('v11.8.0', 'gitlab-org/gitlab-ce') }
+    let(:version_fetcher) { VersionFetcher.new('v11.8.0', 'gitlab-org/gitlab-foss') }
 
     before do
       allow(version_fetcher).to receive_message_chain(:open, :read).and_return("1.2.3\n")
