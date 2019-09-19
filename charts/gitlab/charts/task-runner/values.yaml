@@ -94,6 +94,7 @@ global:
       autoLinkLdapUser: false
       autoLinkSamlUser: false
       externalProviders: []
+      allowBypassTwoFactor: []
       providers: []
       # - secret: gitlab-google-oauth2
       #   key: provider
@@ -198,5 +199,3 @@ persistence:
   ## Only bind to a volume with the following exppression matched labels.
   ## ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector
   matchExpressions: []
-
-

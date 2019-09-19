@@ -12,6 +12,9 @@ omniauth:
   auto_link_ldap_user: {{ .omniauth.autoLinkLdapUser }}
   auto_link_saml_user: {{ .omniauth.autoLinkSamlUser }}
   external_providers: {{ .omniauth.externalProviders }}
+  {{- if .omniauth.allowBypassTwoFactor }}
+  allow_bypass_two_factor: {{ toJson .omniauth.allowBypassTwoFactor }}
+  {{- end -}}
   {{- if .omniauth.providers }}
   providers:
   {{-   range $index, $entry := .omniauth.providers }}
