@@ -80,6 +80,7 @@ rules:
   - {{ template "gitlab.operator.groupName" . }}
   resources:
   - gitlabs
+  - gitlabs/status
   verbs:
   - "*"
 ---

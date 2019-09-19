@@ -82,6 +82,7 @@ lint_package:
     - install_external_dns "${DNS_PROVIDER}" "${KUBE_INGRESS_BASE_DOMAIN}"
     - if ! crdExists || previousDeployFailed ; then OPERATOR_BOOTSTRAP=true deploy ; fi
     - deploy
+    - wait_for_deploy
     - add_license
     - echo "export QA_ENVIRONMENT_URL=gitlab-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN" >> "${VARIABLES_FILE}"
     - echo "export GITLAB_ROOT_DOMAIN=$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN"        >> "${VARIABLES_FILE}"
@@ -170,6 +171,7 @@ stop_review_eks:
     - install_tiller
     - create_secret
     - deploy
+    - wait_for_deploy
   environment:
     name: staging
     url: https://gitlab-staging.$KUBE_INGRESS_BASE_DOMAIN
@@ -224,7 +226,7 @@ stop_review_eks:
     - create_secret
     - if ! crdExists || previousDeployFailed ; then OPERATOR_BOOTSTRAP=true deploy ; fi
     - deploy
-    - delete canary
+    - wait_for_deploy
     - echo "export QA_ENVIRONMENT_URL=gitlab.$KUBE_INGRESS_BASE_DOMAIN" >> "${VARIABLES_FILE}"
     - echo "export GITLAB_ROOT_DOMAIN=$KUBE_INGRESS_BASE_DOMAIN"        >> "${VARIABLES_FILE}"
     - echo "export S3_ENDPOINT=https://minio.$KUBE_INGRESS_BASE_DOMAIN" >> "${VARIABLES_FILE}"
@@ -507,6 +509,27 @@ check_docs_lint:
 
      puts "License added";
      '
+  }
+
+  function wait_for_deploy {
+    revision=0
+    observedRevision=-1
+    iteration=0
+    while [ "$observedRevision" != "$revision" ]; do
+      IFS=$','
+      status=($(kubectl get gitlabs.${CI_ENVIRONMENT_SLUG}.gitlab.com "${CI_ENVIRONMENT_SLUG}-operator" -n ${KUBE_NAMESPACE} -o jsonpath='{.status.deployedRevision}{","}{.spec.revision}'))
+      unset IFS
+      observedRevision=${status[0]}
+      revision=${status[1]}
+      if [ $iteration -eq 0 ]; then
+        echo -n "Waiting for deploy revision ${revision} to complete.";
+      else
+        echo -n "."
+      fi
+      iteration=$((iteration+1))
+      sleep 5;
+    done
+    echo ""
   }
 
   function setup_test_db() {
