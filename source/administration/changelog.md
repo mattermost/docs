@@ -53,13 +53,16 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added a password type for interactive dialogs.
  - Added support for footer and footer_icon in attachments.
  - Added support for boolean elements in interactive dialogs.
+ - Added support for a ``radio`` type in interactive dialogs.
  
 #### Performance
+ - Improved perceived performance of the emoji picker.
  - Improved post list performance by making thread comments be loaded only when needed.
  - Improved quick switcher experience to make the autocomplete feel more like a modal rather than a dropdown.
 
 #### Administration
  - Added the ability for system admins to revoke all sessions from all users.
+ - Added support for System Administrators to make public channels private and private channels public within the **System Console > User Management > Channel Configuration** page.
  - Added user Id information in the **System Console > Users** page.
  - Updated System Console plugin settings page to expose enable/disable.
  
