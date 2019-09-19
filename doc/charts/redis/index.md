@@ -178,7 +178,7 @@ to `notice`. Valid values are:
 The redis chart provisions a PersistentVolumeClaim and mounts corresponding persistent
 volume for the Redis data. You'll need physical storage available in the Kubernetes
 cluster for this to work. If you'd rather use emptyDir, disable PersistentVolumeClaim
-with `persitence.enabled: false`.
+with `persistence.enabled: false`.
 
 | Name               | Type    | Default         | Description |
 |:------------------ |:-------:|:--------------- |:----------- |
