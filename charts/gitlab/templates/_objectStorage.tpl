@@ -11,7 +11,7 @@ Usage:
 */}}
 {{- define "gitlab.appConfig.objectStorage.configuration" -}}
 object_store:
-  enabled: true
+  enabled: {{ ne (default false .config.enabled) false }}
   remote_directory: {{ .config.bucket }}
   direct_upload: true
   background_upload: false
