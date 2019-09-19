@@ -68,7 +68,7 @@ data:
     [git]
     {{- with .Values.git }}
     {{- if .catFileCacheSize }}
-    catfile_cache_size = {{ .Values.git.catFileCacheSize }}
+    catfile_cache_size = {{ .catFileCacheSize }}
     {{- end }}
     {{- end }}
 
