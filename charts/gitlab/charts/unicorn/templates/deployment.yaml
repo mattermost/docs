@@ -221,6 +221,7 @@ spec:
             exec:
               command:
               - /scripts/healthcheck
+            timeoutSeconds: 2
           resources:
 {{ toYaml .Values.workhorse.resources | indent 12 }}
       volumes:
