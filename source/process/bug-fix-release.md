@@ -60,7 +60,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
     - Start drafting blog post, tweet, and email for the release announcement
     
-### E. (T-minus 14 working days) Code complete
+### E. (T-minus 12 working days) Code complete
 
 Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google.com/document/d/1QxB_A1qkEJBKAvQpRa7JiSQLZhwg6HAEajNRNa7ldGg/edit)
 
