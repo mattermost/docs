@@ -8,8 +8,11 @@ If you do not have one, consider a cloud provided solution like [AWS Aurora](htt
 
 To use an external database with the `gitlab` chart, there are a few prerequisites.
 
-1. GitLab requires PostgreSQL 9.6.
-1. The `pg_trgm` extension must be available.
+1. GitLab requires PostgreSQL 9.6.x or 10.x
+1. The `pg_trgm` extension must be available. GitLab will attempt to load
+   the `pg_trgm` extension if not present. If not providing an account with
+   Superuser flag to GitLab, please ensure this extension is loaded prior to
+   proceeding with the database installation.
 1. An empty database to use.
 1. A user with full access granted to the database above.
 1. A [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/) with the password for the user above.
