@@ -1,0 +1,5 @@
+---
+title: Disable object storage for disabled features
+merge_request: 962
+author:
+type: fixed
