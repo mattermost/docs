@@ -117,6 +117,23 @@ backups:
       requests:
         cpu: 50m
         memory: 350M
+    persistence:
+      enabled: false
+      ## task-runner temporarily Persistent Volume Storage Class
+      ## If defined, storageClassName: <storageClass>
+      ## If set to "-", storageClassName: "", which disables dynamic provisioning
+      ## If undefined (the default) or set to null, no storageClassName spec is
+      ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+      ##   GKE, AWS & OpenStack)
+      ##
+      # storageClass: "-"
+      accessMode: ReadWriteOnce
+      size: 10Gi
+      subPath: ""
+      ## if volumeName is set, use this existing PersistentVolume
+      # volumeName:
+      matchLabels: {}
+      matchExpressions: []
   objectStorage:
     backend: s3
     config: {}

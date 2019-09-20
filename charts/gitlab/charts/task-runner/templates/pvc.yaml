@@ -1,4 +1,5 @@
 {{- if and .Values.enabled .Values.persistence.enabled }}
+---
 kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
@@ -30,5 +31,40 @@ spec:
 {{- if .Values.persistence.matchExpressions }}
     matchExpressions:
 {{ toYaml .Values.persistence.matchExpressions | indent 6 }}
+{{- end -}}
+{{- end }}
+{{- if and .Values.enabled .Values.backups.cron.enabled .Values.backups.cron.persistence.enabled }}
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: {{ template "fullname" . }}-backup-tmp
+  namespace: {{ $.Release.Namespace }}
+  labels:
+{{ include "gitlab.standardLabels" . | indent 4 }}
+spec:
+  accessModes:
+    - {{ .Values.backups.cron.persistence.accessMode | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.backups.cron.persistence.size | quote }}
+{{- if .Values.backups.cron.persistence.volumeName }}
+  volumeName: {{ .Values.backups.cron.persistence.volumeName }}
+{{- end }}
+{{- if .Values.backups.cron.persistence.storageClass }}
+{{- if (eq "-" .Values.backups.cron.persistence.storageClass) }}
+  storageClassName: ""
+{{- else }}
+  storageClassName: "{{ .Values.backups.cron.persistence.storageClass }}"
+{{- end -}}
+{{- end }}
+  selector:
+{{- if .Values.backups.cron.persistence.matchLabels }}
+    matchLabels:
+{{ toYaml .Values.backups.cron.persistence.matchLabels | indent 6 }}
+{{- end -}}
+{{- if .Values.backups.cron.persistence.matchExpressions }}
+    matchExpressions:
+{{ toYaml .Values.backups.cron.persistence.matchExpressions | indent 6 }}
 {{- end -}}
 {{- end }}
