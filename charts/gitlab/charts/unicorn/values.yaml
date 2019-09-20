@@ -16,6 +16,10 @@ init:
 # Tolerations for pod scheduling
 tolerations: []
 
+# Monitoring IP whitelist
+monitoring:
+  ipWhitelist: []
+
 annotations: {}
 
 metrics:

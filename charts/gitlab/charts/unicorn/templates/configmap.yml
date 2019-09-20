@@ -168,7 +168,9 @@ data:
       webpack:
       monitoring:
         ip_whitelist:
-          - 0.0.0.0/0
+          {{- if kindIs "array" .Values.monitoring.ipWhitelist }}
+          {{ toYaml .Values.monitoring.ipWhitelist | nindent 10 | trim }}
+          {{- end }}
         sidekiq_exporter:
 {{ include "gitlab.appConfig.rackAttack" . | indent 6 }}
       ## Registry Integration
