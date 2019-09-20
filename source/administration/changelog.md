@@ -11,28 +11,32 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Compatibility
 
 #### Removed and Deprecated Features
+
+ - We removed support for Internet Explorer (IE11). Learn more in our [forum post](https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575).
  
 ### Breaking Changes
 
 
 ### Highlights
- - IE11 deprecation.
- - Plugins Marketplace.
- - Guest Accounts.
- - Improved team/channel management.
+
+#### Guest Accounts
+
+#### Plugins Marketplace
+
+#### Improved team/channel management
 
 ### Improvements
 
 #### User Interface (UI)
  - Added support for showing TIF image thumbnail previews.
- - Added the ability to remove custom branding image.
+ - Added the ability to remove the custom branding image.
  - Added support for showing channel links as links in email notifications.
  - Added support for direct message permalink.
  - Added a count for pinned posts header icon.
  - Changed recent date separators to read Today/Yesterday.
 
 #### Import/Export
- - Added support for including the Theme property on ``UserTeamMemberships`` in Bulk Export.
+ - Added support for including the Theme property on ``UserTeamMemberships`` in bulk exports.
 
 #### Search
  - Added support for excluding results from search.
@@ -41,7 +45,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Enabled account related emails when ``SendEmailNotifications`` is set to false.
  
 #### Command Line Interface (CLI)
- - Added a CLI ``integrity`` command to verify database integrity.
+ - Added a ``integrity`` CLI command to verify database integrity.
  
 #### Plugins
  - Added the ability for plugins to render custom embed views for posts.
@@ -64,13 +68,13 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added the ability for system admins to revoke all sessions from all users.
  - Added support for System Administrators to make public channels private and private channels public within the **System Console > User Management > Channel Configuration** page.
  - Added user Id information in the **System Console > Users** page.
- - Updated System Console plugin settings page to expose enable/disable.
+ - Updated System Console plugin settings page to expose enable/disable setting.
  
 ### Bug Fixes
  - Fixed an issue where SQL connections closed prematurely for clusters.
- - Fixed an issue where user count did not update if user automatically joined a channel.
+ - Fixed an issue where user count did not update if a user automatically joined a channel.
  - Fixed an issue where users were unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
- - Fixed an issue where some pre-packaged plugins showed as removable in the User Interface.
+ - Fixed an issue where some pre-packaged plugins showed as removable in the user interface.
  - Fixed an issue where clicking "Edit" of another sub-section in Account Settings appeared to save the setting that was currently being edited in an open sub-section in the same modal.
  - Fixed an issue where a JS console error appeared when uploading an image from the right-hand side.
  - Fixed some bugs related to the new [keyboard accessibility](https://docs.mattermost.com/help/getting-started/accessibility.html) feature.
