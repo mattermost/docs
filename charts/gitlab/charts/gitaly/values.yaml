@@ -53,8 +53,8 @@ ruby: {}
   # gracefulRestartTimeout:
   # restartDelay:
   # numWorkers:
-prometheus:
-  grpcLatencyBuckets: []
+prometheus: {}
+  # grpcLatencyBuckets: "[1.0, 1.5, 2.0, 2.5]"
 
 unicorn: {}
   # host: '0.0.0.0'
