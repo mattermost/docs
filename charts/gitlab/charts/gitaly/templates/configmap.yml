@@ -23,6 +23,11 @@ data:
     # listen on a TCP socket. This is insecure (no authentication)
     listen_addr = "0.0.0.0:8075"
 
+    # If metrics collection is enabled, inform gitaly about that
+    {{- if .Values.metrics.enabled }}
+    prometheus_listen_addr = "localhost:{{ .Values.metrics.metricsPort }}"
+    {{- end }}
+
     <% @storages = [ {{- range (coalesce .Values.internal.names .Values.global.gitaly.internal.names) }} {{ . | quote }}, {{- end }} ] %>
     <% @index=`echo ${HOSTNAME##*-}`.to_i %>
     <% if @storages.length > @index %>
@@ -32,16 +37,72 @@ data:
     <% else %>
     <% raise Exception, "Storage for node #{@index} is not present in the storageNames array. Did you use kubectl to scale up ? You need to solely use helm for this purpose" %>
     <% end %>
+
+    [logging]
+    {{- with .Values.logging }}
+    {{- if .level }}
+    level = "{{ .level }}"
+    {{- end }}
+    {{- if .format }}
+    format = "{{ .format }}"
+    {{- end }}
+    {{- if .sentryDsn }}
+    sentry_dsn = "{{ .sentryDsn }}"
+    {{- end }}
+    {{- if .rubySentryDsn }}
+    ruby_sentry_dsn = "{{ .rubySentryDsn }}"
+    {{- end }}
+    {{- if .sentryEnvironment }}
+    sentry_environment = "{{ .sentryEnvironment }}"
+    {{- end }}
+    {{- end }}
+
+    {{- if .Values.prometheus.grpcLatencyBuckets }}
+    [prometheus]
+    grpc_latency_buckets = {{ .Values.prometheus.grpcLatencyBuckets }}
+    {{- end }}
+
     [auth]
     token = "<%= File.read('/etc/gitlab-secrets/gitaly/gitaly_token').strip.dump[1..-2] %>"
+
+    [git]
+    {{- with .Values.git }}
+    {{- if .catFileCacheSize }}
+    catfile_cache_size = {{ .catFileCacheSize }}
+    {{- end }}
+    {{- end }}
 
     [gitaly-ruby]
     # The directory where gitaly-ruby is installed
     dir = "/srv/gitaly-ruby"
+    {{- with .Values.ruby }}
+    {{- if .maxRss }}
+    max_rss = {{ .maxRss }}
+    {{- end }}
+    {{- if .gracefulRestartTimeout }}
+    graceful_restart_timeout = "{{ .gracefulRestartTimeout }}"
+    {{- end }}
+    {{- if .restartDelay }}
+    restart_delay = "{{ .restartDelay }}"
+    {{- end }}
+    {{- if .numWorkers }}
+    num_workers = {{ .numWorkers }}
+    {{- end }}
+    {{- end }}
 
     [gitlab-shell]
     # The directory where gitlab-shell is installed
     dir = "/srv/gitlab-shell"
+
+    {{- if .Values.shell.concurrency }}
+    {{- range .Values.shell.concurrency }}
+    {{- if and .rpc .maxPerRepo }}
+    [[concurrency]]
+    rpc = "{{ .rpc }}"
+    max_per_repo = {{ .maxPerRepo }}
+    {{- end }}
+    {{- end }}
+    {{- end }}
 
   shell-config.yml.erb: |
     # GitLab user. git by default
