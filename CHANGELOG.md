@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.3.1
+
+### Fixed (1 change)
+
+- Pin gitlab-exporter version to the proper image.
+
+### Other (1 change)
+
+- Update GitLab Version to 12.3.0.
+
+
 ## 2.3.0
 
 ### Fixed (4 changes, 2 of them are from the community)
