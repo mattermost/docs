@@ -1,5 +1,0 @@
----
-title: Set a sane default of 2 seconds for Unicorn 'readinessProbe.timeoutSeconds'
-merge_request: 950
-author:
-type: changed

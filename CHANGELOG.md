@@ -2,6 +2,38 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.3.0
+
+### Fixed (4 changes, 2 of them are from the community)
+
+- Set the default retention for Prometheus data to 15d. !905 (Gerard Hickey)
+- Removes duplicate http key from registry config. !923 (jarv)
+- Configure the backup cron to use a different tmp volume than the task-runner. !942
+- Disable object storage for disabled features. !962
+
+### Changed (4 changes, 1 of them is from the community)
+
+- Update operator to v0.7, introduces status subresource, and gitaly waiting fixes. !906
+- Update the sidekiq queues example with all of the queues #1429. !909 (Mike Rennie)
+- Set a sane default of 2 seconds for Unicorn 'readinessProbe.timeoutSeconds'. !950
+- Set a sane default of 2 seconds for Workhorse 'readinessProbe.timeoutSeconds'. !964
+
+### Added (6 changes, 4 of them are from the community)
+
+- Added Grafana support into chart install. !789 (Gerard Hickey)
+- Allow postgres to use a serviceName as well as a host #1458. !886 (Mike Rennie)
+- Allow the monitoring IP whitelist to be specified for unicorn #1499. !887 (Mike Rennie)
+- Add missing gitaly config options. !939
+- Added scheduling options for redis Subchart. !949 (Willi Eggeling)
+- Option to bypass two-factor auth for certain omniauth providers. !961
+
+### Other (3 changes)
+
+- Rename gitlab-monitor to gitlab-exporter. !897
+- Update gitlab-runner to 0.9.0/12.3.0. !965
+- Update GitLab Version to 12.3.0.
+
+
 ## 2.2.6
 
 ### Other (1 change)

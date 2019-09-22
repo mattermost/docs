@@ -1,5 +1,0 @@
----
-title: Removes duplicate http key from registry config
-merge_request: 923
-author: jarv
-type: fixed
