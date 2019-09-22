@@ -1,0 +1,5 @@
+---
+title: Pin gitlab-exporter version to the proper image
+merge_request:
+author:
+type: fixed
