@@ -1,5 +1,0 @@
----
-title: Set a sane default of 2 seconds for Workhorse 'readinessProbe.timeoutSeconds'
-merge_request: 964
-author:
-type: changed

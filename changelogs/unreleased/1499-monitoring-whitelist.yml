@@ -1,5 +1,0 @@
----
-title: 'Allow the monitoring IP whitelist to be specified for unicorn #1499'
-merge_request: 887
-author: Mike Rennie
-type: added

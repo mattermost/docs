@@ -1,6 +1,0 @@
----
-title: Update operator to v0.7, introduces status subresource, and gitaly waiting
-  fixes
-merge_request: 906
-author:
-type: changed
