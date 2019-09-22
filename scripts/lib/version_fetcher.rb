@@ -40,8 +40,8 @@ class VersionFetcher
     Version.new(new_version)
   end
 
-  # GitLab Monitor Version
-  def gitlab_monitor
+  # GitLab Exporter Version
+  def gitlab_exporter
     # Don't edit the appVersion, it get's set manually as monitor isn't released by release-tools
     nil
   end
