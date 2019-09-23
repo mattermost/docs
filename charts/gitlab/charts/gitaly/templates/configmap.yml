@@ -21,7 +21,7 @@ data:
     bin_dir = "/usr/local/bin"
 
     # listen on a TCP socket. This is insecure (no authentication)
-    listen_addr = "0.0.0.0:8075"
+    listen_addr = "0.0.0.0:{{ .Values.service.internalPort }}"
 
     # If metrics collection is enabled, inform gitaly about that
     {{- if .Values.metrics.enabled }}
