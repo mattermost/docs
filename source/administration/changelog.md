@@ -71,7 +71,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Updated System Console plugin settings page to expose enable/disable setting.
  
 ### Bug Fixes
- - Fixed an issue where SQL connections closed prematurely for clusters.
  - Fixed an issue where user count did not update if a user automatically joined a channel.
  - Fixed an issue where users were unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
  - Fixed an issue where some pre-packaged plugins showed as removable in the user interface.
@@ -81,6 +80,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the ``/leave`` slash command was not working on direct message channels.
  - Fixed an issue where the quick channel switcher box opened behind the header attachment expansion.
  - Fixed an issue where the username was not shown in the left-hand side on mobile web view.
+ - Fixed an issue where SQL connections closed prematurely for clusters.
+ - Fixed an issue where absolute paths were not honoured in SAML certificates.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
