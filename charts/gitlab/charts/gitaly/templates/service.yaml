@@ -18,6 +18,7 @@ spec:
   ports:
     - port: {{ .Values.service.externalPort }}
       name: {{ .Values.service.name }}
+      targetPort: {{ .Values.service.internalPort }}
    {{- if .Values.metrics.enabled }}
     - port: {{ .Values.metrics.metricsPort }}
       name: {{ .Values.service.name }}-metrics
