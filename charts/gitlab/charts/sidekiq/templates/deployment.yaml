@@ -197,6 +197,11 @@ spec:
           - name: sidekiq-config
             mountPath: '/srv/gitlab/INSTALLATION_TYPE'
             subPath: installation_type
+{{- if $.Values.global.email.smime.enabled }}
+          - name: smime-creds
+            mountPath: /home/git/gitlab
+            readOnly: true
+{{- end }}
 {{ include "gitlab.certificates.volumeMount" $ | indent 10 }}
           livenessProbe:
             exec:
@@ -282,6 +287,19 @@ spec:
                 - key: {{ $.Values.global.smtp.password.key }}
                   path: smtp/smtp-password
           {{- end }}
+{{- if $.Values.global.email.smime.enabled }}
+      - name: smime-creds
+        projected:
+          defaultMode: 0400
+          sources:
+            - secret:
+                name: {{ $.Values.global.email.smime.secretName }}
+                items:
+                  - key: {{ $.Values.global.email.smime.keyName }}
+                    path: .gitlab_smime_key
+                  - key: {{ $.Values.global.email.smime.certName }}
+                    path: .gitlab_smime_cert
+{{- end }}
       - name: sidekiq-secrets
         emptyDir:
           medium: "Memory"

@@ -48,3 +48,17 @@ ActionMailer::Base.smtp_settings = {
 {{- define "gitlab.email.reply_to" -}}
 {{ .Values.global.email.reply_to | default (printf "noreply@%s" .Values.global.hosts.domain ) | quote -}}
 {{- end -}}
+
+{{/* Outgoing email settings */}}
+{{- define "gitlab.outgoing_email_settings" }}
+email_from: {{ template "gitlab.email.from" . }}
+email_display_name: {{ .Values.global.email.display_name | quote }}
+email_reply_to: {{ template "gitlab.email.reply_to" . }}
+email_subject_suffix: {{ .Values.global.email.subject_suffix | quote }}
+{{- if .Values.global.email.smime.enabled }}
+email_smime:
+  enabled: true
+  key_file: /home/git/gitlab/.gitlab_smime_key
+  cert_file: /home/git/gitlab/.gitlab_smime_cert
+{{- end }}
+{{- end }}

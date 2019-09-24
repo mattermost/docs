@@ -161,6 +161,11 @@ spec:
             - name: shared-artifact-directory
               mountPath: /srv/gitlab/shared
               readOnly: false
+{{- if .Values.global.email.smime.enabled }}
+            - name: smime-creds
+              mountPath: /home/git/gitlab
+              readOnly: true
+{{- end }}
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
 {{ include "gitlab.extraVolumeMounts" . | indent 12 }}
           livenessProbe:
@@ -294,6 +299,16 @@ spec:
                 - key: {{ .Values.global.smtp.password.key }}
                   path: smtp/smtp-password
           {{- end }}
+{{- if .Values.global.email.smime.enabled }}
+      - name: smime-creds
+        secret:
+          secretName: {{ .Values.global.email.smime.secretName }}
+          items:
+            - key: {{ .Values.global.email.smime.keyName }}
+              path: .gitlab_smime_key
+            - key: {{ .Values.global.email.smime.certName }}
+              path: .gitlab_smime_cert
+{{- end }}
       - name: unicorn-secrets
         emptyDir:
           medium: "Memory"
