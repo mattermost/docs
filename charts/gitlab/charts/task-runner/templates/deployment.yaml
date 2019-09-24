@@ -114,6 +114,11 @@ spec:
               subPath: "{{ .Values.persistence.subPath }}"
               {{- end }}
               readOnly: false
+{{- if .Values.global.email.smime.enabled }}
+            - name: smime-creds
+              mountPath: /home/git/gitlab
+              readOnly: true
+{{- end }}
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
@@ -202,6 +207,19 @@ spec:
                 - key: {{ $.Values.global.smtp.password.key }}
                   path: smtp/smtp-password
           {{- end }}
+{{- if .Values.global.email.smime.enabled }}
+      - name: smime-creds
+        projected:
+          defaultMode: 0400
+          sources:
+            - secret:
+                name: {{ .Values.global.email.smime.secretName }}
+                items:
+                  - key: {{ .Values.global.email.smime.keyName }}
+                    path: .gitlab_smime_key
+                  - key: {{ .Values.global.email.smime.certName }}
+                    path: .gitlab_smime_cert
+{{- end }}
       - name: task-runner-secrets
         emptyDir:
           medium: "Memory"

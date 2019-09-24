@@ -14,6 +14,7 @@ Optional External Services:
 - LDAP
 - Omniauth
 - IMAP for incoming emails (via mail_room service)
+- S/MIME certificate
 
 Any secret not provided manually will be automatically generated with a random value. Automatic generation of HTTPS certificates is provided by Let's Encrypt.
 
@@ -46,6 +47,7 @@ documentation.
   - [LDAP Password](#ldap-password)
   - [SMTP Password](#smtp-password)
   - [IMAP Password](#imap-password-for-incoming-emails)
+  - [S/MIME Certificate](#smime-certificate)
 
 ### Registry authentication certificates
 
@@ -250,6 +252,25 @@ kubectl create secret generic incoming-email-password --from-literal=password=yo
 
 Then use `--set global.appConfig.incomingEmail.password.secret=incoming-email-password`
 in your helm command along with other required settings as specified [in the docs](command-line-options.md#incoming-email-configuration).
+
+### S/MIME Certificate
+
+Outgoing email messages can be digitally signed using the [S/MIME](https://en.wikipedia.org/wiki/S/MIME) standard.
+The S/MIME certificate needs to be stored in a Kubernetes secret as a
+TLS type secret.
+
+```
+kubectl create secret tls smime-certificate --key=file.key --cert file.crt
+```
+
+If there is an existing secret as a opaque type, then the `global.email.smime.keyName`
+and `global.email.smime.certName` values will need to be adjusted for
+the specific secret.
+
+S/MIME settings can be set through the `values.yaml` file or on the command
+line. Use `--set global.email.smime.enabled=true` to enable S/MIME and
+`--set global.email.smime.secretName=smime-certificate` to specify the
+secret that contains the S/MIME certificate.
 
 ## Next steps
 

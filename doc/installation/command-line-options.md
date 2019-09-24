@@ -42,6 +42,10 @@ to the `helm install` command using the `--set` flags.
 | `global.email.display_name`       | Name that appears as the sender for emails from GitLab                                  | `GitLab`              |
 | `global.email.from`               | Email address that appears as the sender for emails from GitLab                         | `gitlab@example.com`  |
 | `global.email.reply_to`           | Reply-to email listed in emails from GitLab                                             | `noreply@example.com` |
+| `global.email.smime.certName`     | Secret object key value for locating the S/MIME certificate file                        | tls.crt               |
+| `global.email.smime.enabled`      | Add the S/MIME signatures to outgoing email                                             | false                 |
+| `global.email.smime.keyName`      | Secret object key value for locating the S/MIME key file                                | tls.key               |
+| `global.email.smime.secretName`   | Kubernetes Secret object to find the X.509 certificate ([S/MIME Cert][] for creation )  | ""                    |
 | `global.email.subject_suffix`     | Suffix on the subject of all outgoing email from GitLab                                 | ""                    |
 | `global.smtp.address`             | Hostname or IP of the remote mail server                                                | `smtp.mailgun.org`    |
 | `global.smtp.authentication`      | Type of SMTP authentication ("plain", "login", "cram_md5", or "" for no authentication) | `plain`               |
@@ -54,6 +58,8 @@ to the `helm install` command using the `--set` flags.
 | `global.smtp.starttls_auto`       | Use STARTTLS if enabled on the mail server                                              | false                 |
 | `global.smtp.tls`                 | Enables SMTP/TLS (SMTPS: SMTP over direct TLS connection)                               | _none_                |
 | `global.smtp.user_name`           | Username for SMTP authentication https                                                  | ""                    |
+
+[S/MIME Cert]: secrets.md#smime-certificate
 
 ## Incoming Email configuration
 

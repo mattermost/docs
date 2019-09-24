@@ -286,6 +286,11 @@ global:
     display_name: GitLab
     reply_to: ''
     subject_suffix: ''
+    smime:
+      enabled: false
+      secretName: ""
+      keyName: "tls.key"
+      certName: "tls.crt"
 
   ## Timezone for containers.
   time_zone: UTC
