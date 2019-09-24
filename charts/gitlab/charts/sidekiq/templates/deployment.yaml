@@ -22,7 +22,7 @@
 {{- $initImage := .Values.init.image }}
 {{- $initTag := .Values.init.tag }}
 {{- /* The below is an messy attempt to read in, and reflect on the configmap-queues.yaml template. */}}
-{{- $queueConfigList := include (print $.Template.BasePath "/configmap-queue.yaml") . | split "\n---" }}
+{{- $queueConfigList := include (print $.Template.BasePath "/configmap-queue.yaml") . | replace "\r\n" "\n" | split "\n---" }}
 {{- $queues := dict }}
 {{- range $k,$v := $queueConfigList }}
 {{-   $tmpConfig := $v | fromYaml }}
@@ -291,5 +291,5 @@ spec:
 {{ toYaml $podNodeSelector | indent 8 }}
     {{- end }}
 ---
-{{-   end -}}
-{{- end }}
+{{   end }}
+{{ end }}
