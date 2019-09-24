@@ -87,7 +87,7 @@ when defining their storage solution.
 
 By default, GitLab will deploy an ingress which will create an associated
 Elastic Load Balancer (ELB). Since the DNS names of the ELB cannot be known
-ahead of time, it's difficult to utilize [Let's Encrypt ](https://letsencrypt.org/) to automatically provision
+ahead of time, it's difficult to utilize [Let's Encrypt](https://letsencrypt.org/) to automatically provision
 HTTPS certificates.
 
 We recommend [using your own certificates](../tls.md#option-2-use-your-own-wildcard-certificate),
