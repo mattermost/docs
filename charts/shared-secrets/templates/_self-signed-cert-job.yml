@@ -62,19 +62,19 @@ spec:
             --cert=/output/wildcard.pem --key=/output/wildcard-key.pem || true
 {{- if not .Values.global.application.create }}
           kubectl --namespace=$namespace label \
-            secret $certname  $(echo '{{ include "gitlab.application.labels" . | replace ": " "=" | replace "\n" " " }}' | sed -E 's/=[^ ]*/-/g')
+            secret $certname  $(echo '{{ include "gitlab.application.labels" . | replace ": " "=" | replace "\r\n" " " | replace "\n" " " }}' | sed -E 's/=[^ ]*/-/g')
 {{- end }}
           kubectl --namespace=$namespace label --overwrite \
-            secret $certname {{ include "gitlab.standardLabels" . | replace ": " "=" | replace "\n" " " }}
+            secret $certname {{ include "gitlab.standardLabels" . | replace ": " "=" | replace "\r\n" " " | replace "\n" " " }}
           # create CA certificate secret
           kubectl create secret generic ${certname}-ca \
             --from-file=cfssl_ca=/output/ca.pem || true
 {{- if not .Values.global.application.create }}
           kubectl --namespace=$namespace label \
-            secret ${certname}-ca  $(echo '{{ include "gitlab.application.labels" . | replace ": " "=" | replace "\n" " " }}' | sed -E 's/=[^ ]*/-/g')
+            secret ${certname}-ca  $(echo '{{ include "gitlab.application.labels" . | replace ": " "=" | replace "\r\n" " " | replace "\n" " " }}' | sed -E 's/=[^ ]*/-/g')
 {{- end }}
           kubectl --namespace=$namespace label --overwrite \
-            secret ${certname}-ca {{ include "gitlab.standardLabels" . | replace ": " "=" | replace "\n" " " }}
+            secret ${certname}-ca {{ include "gitlab.standardLabels" . | replace ": " "=" | replace "\r\n" " " | replace "\n" " " }}
         volumeMounts:
         - name: certs-path
           mountPath: /output

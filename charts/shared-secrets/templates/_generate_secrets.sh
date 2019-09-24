@@ -22,11 +22,11 @@ function label_secret(){
 {{ if not .Values.global.application.create -}}
   # Remove application labels if they exist
   kubectl --namespace=$namespace label \
-    secret $secret_name $(echo '{{ include "gitlab.application.labels" . | replace ": " "=" | replace "\n" " " }}' | sed -E 's/=[^ ]*/-/g')
+    secret $secret_name $(echo '{{ include "gitlab.application.labels" . | replace ": " "=" | replace "\r\n" " " | replace "\n" " " }}' | sed -E 's/=[^ ]*/-/g')
 {{ end }}
   kubectl --namespace=$namespace label \
     --overwrite \
-    secret $secret_name {{ include "gitlab.standardLabels" . | replace ": " "=" | replace "\n" " " }}
+    secret $secret_name {{ include "gitlab.standardLabels" . | replace ": " "=" | replace "\r\n" " " | replace "\n" " " }}
 }
 
 # Args: secretname, args
