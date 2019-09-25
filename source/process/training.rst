@@ -221,7 +221,7 @@ Procedure:
 
   - **Introduction**: One of the founders does an introduction to the meeting.
   - **Week 2 welcomes of new team members**: New team members introduced on their second week by their manager, or optionally by the new team member themselves.
-  - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key updates, use cases or stories from customers. Links to publicly shared documents or slides may be included in meeting notes.
+  - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key use cases and stories from customers to understand how they use Mattermost. Links to publicly shared documents or slides may be included in meeting notes.
   - **Feedback**: At end of meeting, concludes meeting with a reminder to share feedback via survey.
 
 **After meeting:**
