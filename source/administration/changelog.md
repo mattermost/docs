@@ -80,6 +80,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the ``/leave`` slash command was not working on direct message channels.
  - Fixed an issue where the quick channel switcher box opened behind the header attachment expansion.
  - Fixed an issue where the username was not shown in the left-hand side on mobile web view.
+ - Fixed an issue where trailing white space was not ignored when saving a bot username.
  - Fixed an issue where SQL connections closed prematurely for clusters.
  - Fixed an issue where absolute paths were not honoured in SAML certificates.
 
@@ -104,7 +105,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
 ### Known Issues
  - Scroll pop may occur in channels with markdown images.
- - Trailing white space is not ignored when saving bot user name.
  - If ``ExperimentalStrictCSRFEnforcement`` is set to True, attempts to use ``/jira subscribe`` fail.
  - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
  - Modifying config files causes compliance exports to run twice.
