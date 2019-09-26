@@ -47,7 +47,6 @@ stages:
   - qa
   - package
   - cleanup
-  - notification_fail
 
 lint_package:
   stage: package
@@ -874,19 +873,3 @@ qa_eks_production:
 
 before_script:
   - *auto_devops
-
-notify:slack-fail:
-  before_script:
-    - apk update && apk add git curl bash
-  image: "alpine"
-  stage: notification_fail
-  script:
-    - ./scripts/notify_slack.sh "#g_distribution" "Build on \`$CI_COMMIT_REF_NAME\` failed! See <https://gitlab.com/gitlab-org/charts/gitlab/pipelines/"$CI_PIPELINE_ID">"
-  when: on_failure
-  only:
-    - master
-    - /.*-stable$/
-    - tags@charts/gitlab
-  except:
-    - triggers@charts/gitlab
-  dependencies: []
