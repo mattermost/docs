@@ -73,6 +73,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Bug Fixes
  - Fixed an issue where user count did not update if a user automatically joined a channel.
  - Fixed an issue where users were unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
+ - Fixed an issue where a user didn't see any unreads when rejoining a team if they were in a Direct Message channel when they left the last team.
  - Fixed an issue where some pre-packaged plugins showed as removable in the user interface.
  - Fixed an issue where clicking "Edit" of another sub-section in Account Settings appeared to save the setting that was currently being edited in an open sub-section in the same modal.
  - Fixed an issue where a JS console error appeared when uploading an image from the right-hand side.
