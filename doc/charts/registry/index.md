@@ -40,6 +40,9 @@ from the parent chart, these values will be:
 ```yaml
 registry:
   enabled:
+  maintenance:
+    readOnly:
+      enabled: false
   image:
     tag: '2.7.1'
     pullPolicy: IfoNtPresent
@@ -92,30 +95,31 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 
 ## Installation command line options
 
-| Parameter            | Default                    | Description                         |
-| -------------------- | -------------------------- | ----------------------------------- |
-| `annotations`        |                            | Pod annotations                     |
-| `authAutoRedirect`   | `true`                     | Auth auto-redirect (must be true for Windows clients to work) |
-| `authEndpoint`       | `global.hosts.gitlab.name` | Auth endpoint (only host and port)  |
-| `certificate.secret` | `gitlab-registry`          | JWT certificate                     |
-| `compatiblity`       |                            | Configuration of compatility settings |
-| `debug`              |                            | Debug port and prometheus metrics   |
-| `deployment.terminationGracePeriodSeconds` | `30` | Optional duration in seconds the pod needs to terminate gracefully. |
-| `draintimeout`       | `'0'`                      | Amount of time to wait for HTTP connections to drain after receiving a SIGTERM signal (e.g. `'10s'`) |
-| `enabled`            | `true`                     | Enable registry flag                |
-| `httpSecret`         |                            | Https secret                        |
-| `image.pullPolicy`   |                            | Pull policy for the registry image  |
-| `image.pullSecrets`  |                            | Secrets to use for image repository |
-| `image.repository`   | `registry`                 | Registry image                      |
-| `image.tag`          | `2.7.1`                    | Version of the image to use         |
-| `init.image`         | `busybox`                  | initContainer image                 |
-| `init.tag`           | `latest`                   | initContainer image tag             |
-| `log`                | `{level: warn, fields: {service: registry}}` | Configure the logging options |
-| `minio.bucket`       | `global.registry.bucket`   | Legacy registry bucket name         |
-| `replicas`           | `1`                        | Number of replicas                  |
-| `tokenService`       | `container_registry`       | JWT token service                   |
-| `tokenIssuer`        | `gitlab-issuer`            | JWT token issuer                    |
-| `tolerations`        | `[]`                       | Toleration labels for pod assignment|
+| Parameter                                  | Default                                      | Description                                                                                          |
+|--------------------------------------------|----------------------------------------------|------------------------------------------------------------------------------------------------------|
+| `annotations`                              |                                              | Pod annotations                                                                                      |
+| `authAutoRedirect`                         | `true`                                       | Auth auto-redirect (must be true for Windows clients to work)                                        |
+| `authEndpoint`                             | `global.hosts.gitlab.name`                   | Auth endpoint (only host and port)                                                                   |
+| `certificate.secret`                       | `gitlab-registry`                            | JWT certificate                                                                                      |
+| `compatiblity`                             |                                              | Configuration of compatibility settings                                                              |
+| `debug`                                    |                                              | Debug port and prometheus metrics                                                                    |
+| `deployment.terminationGracePeriodSeconds` | `30`                                         | Optional duration in seconds the pod needs to terminate gracefully.                                  |
+| `draintimeout`                             | `'0'`                                        | Amount of time to wait for HTTP connections to drain after receiving a SIGTERM signal (e.g. `'10s'`) |
+| `enabled`                                  | `true`                                       | Enable registry flag                                                                                 |
+| `httpSecret`                               |                                              | Https secret                                                                                         |
+| `image.pullPolicy`                         |                                              | Pull policy for the registry image                                                                   |
+| `image.pullSecrets`                        |                                              | Secrets to use for image repository                                                                  |
+| `image.repository`                         | `registry`                                   | Registry image                                                                                       |
+| `image.tag`                                | `2.7.1`                                      | Version of the image to use                                                                          |
+| `init.image`                               | `busybox`                                    | initContainer image                                                                                  |
+| `init.tag`                                 | `latest`                                     | initContainer image tag                                                                              |
+| `log`                                      | `{level: warn, fields: {service: registry}}` | Configure the logging options                                                                        |
+| `minio.bucket`                             | `global.registry.bucket`                     | Legacy registry bucket name                                                                          |
+| `maintenance.readOnly.enabled`             | `false`                                      | Enable registry's read-only mode                                                                     |
+| `replicas`                                 | `1`                                          | Number of replicas                                                                                   |
+| `tokenService`                             | `container_registry`                         | JWT token service                                                                                    |
+| `tokenIssuer`                              | `gitlab-issuer`                              | JWT token issuer                                                                                     |
+| `tolerations`                              | `[]`                                         | Toleration labels for pod assignment                                                                 |
 
 ## Chart configuration examples
 
@@ -442,4 +446,34 @@ health:
     enabled: false
     interval: 10s
     threshold: 3
+```
+
+## Garbage Collection
+
+The Docker Registry will build up extraneous data over time which can be freed using
+[garbage collection](https://docs.docker.com/registry/garbage-collection/).
+As of [now](https://gitlab.com/gitlab-org/charts/gitlab/issues/1586) there is no
+fully automated or scheduled way to run the garbage collection with this Chart.
+
+### Manual Garbage Collection
+
+Manual garbage collection requires the registry to be in read-only mode first. Let's assume that you've already
+installed the GitLab Chart using Helm, named it `mygitlab` and installed it in the namespace `gitlabns`.
+Replace these values in the commands below according to your actual configuration.
+
+```bash
+# Because of https://github.com/helm/helm/issues/2948 we can't rely on --reuse-values, so let's get our current config.
+helm get config mygitlab > mygitlab.yml
+# Upgrade Helm installation and configure the registry to be read-only.
+# The --wait parameter makes Helm wait until all ressources are in ready state, so we are safe to continue.
+helm upgrade mygitlab gitlab/gitlab -f mygitlab.yml --set registry.readOnly.enabled=true --wait
+# Our registry is in r/o mode now, so let's get the name of one of the registry Pods.
+# Note down the Pod name and replace the '<registry-pod>' placeholder below with that value.
+# Replace the single quotes to double quotes (' => ") if you are using this with Windows' cmd.exe.
+kubectl get pods -n gitlabns -l app=registry -o jsonpath='{.items[0].metadata.name}'
+# Run the actual garbage collection. Check the registry's manual if you really want the '-m' parameter.
+kubectl exec -n gitlabns <registry-pod> -- /bin/registry garbage-collect -m /etc/docker/registry/config.yml
+# Reset registry back to original state.
+helm upgrade mygitlab gitlab/gitlab -f mygitlab.yml --wait
+# All done :)
 ```
