@@ -31,7 +31,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for showing TIF image thumbnail previews.
  - Added the ability to remove the custom branding image.
  - Added support for showing channel links as links in email notifications.
- - Added support for direct message permalink.
+ - Added support for direct message permalinks.
  - Added a count for pinned posts header icon.
  - Changed recent date separators to read Today/Yesterday.
 
