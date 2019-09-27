@@ -88,7 +88,7 @@ The following diagrams show the suggested architecture configurations for E20 en
 
 There are two versions of each diagram. One is generalized while the other focuses on AWS.
 
-Each generalized diagram represents a full high availability deployment across all critical components. The proxy, database, file storage and Elasticsearch layers can be replaced by cloud services. Push proxy can be replaced by the Mattermost [HPNS](https://docs.mattermost.com/mobile/mobile-hpns.html).
+Each generalized diagram represents a full high availability deployment across all critical components. The proxy, database, file storage and Elasticsearch layers can be replaced by cloud services. Push proxy can be replaced by the Mattermost `HPNS <https://docs.mattermost.com/mobile/mobile-hpns.html>`__.
 
 Each AWS diagram represents a full high availability deployment on Amazon Web Services making full use of the available services. Push proxy can optionally be deployed manually in place of HPNS.
 
