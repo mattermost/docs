@@ -125,7 +125,7 @@ Each AWS diagram represents a full high availability deployment on Amazon Web Se
 Database with VIPs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following diagram is a suggested configuration for highly-available databases through virutal IPs.
+The following diagram is a suggested configuration for highly-available databases through virtual IPs.
 
 .. image:: ../images/DatabasewithVIPs.png
 
