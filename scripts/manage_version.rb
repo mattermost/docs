@@ -134,8 +134,8 @@ class VersionUpdater
 
     # Only insert into version_mapping when we have both versions, as releases
     unless @app_version.nil?
-      if chart.version.release? && @app_version.release?
-        version_mapping.insert_version(chart.version, @app_version)
+      if @chart_version.release? && @app_version.release?
+        version_mapping.insert_version(@chart_version, @app_version)
         version_mapping.finalize
       end
     end
