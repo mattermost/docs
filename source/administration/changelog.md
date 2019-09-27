@@ -6,9 +6,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.15 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.15.2, released 2019-10-16**
-  - Fixing an issue where desktop notifications are broken as the desktop app is no longer able to directly interact with the web app. This change is introduced in upcoming server v5.16 and desktop app v4.3 releases as part of a security improvement. [18819](https://mattermost.atlassian.net/browse/MM-18819)
 - **v5.15.1, release day TBD**
+  - Fixing an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [18819](https://mattermost.atlassian.net/browse/MM-18819)
   - Fixing an issue where a configuration in the database longer than 65535 bytes gets silently truncated by MySQL. [18636](https://mattermost.atlassian.net/browse/MM-18636)
   - Fixing an issue where server-side telemetry is not reporting back after 5.14 release. [18115](https://mattermost.atlassian.net/browse/MM-18115)
 - **v5.15.0, released 2019-09-16**
@@ -83,9 +82,8 @@ Mattermost v5.15.0 contains low level security fixes. [Upgrading](http://docs.ma
 
 ## Release v5.14 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.14.5, released 2019-10-16**
-  - Fixing an issue where desktop notifications are broken as the desktop app is no longer able to directly interact with the web app. This change is coming in server v5.16 and desktop app v4.3 releases as part of a security improvement. [18819](https://mattermost.atlassian.net/browse/MM-18819)
 - **v5.14.4, release day TBD**
+  - Fixing an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [18819](https://mattermost.atlassian.net/browse/MM-18819)
   - Fixing an issue where a configuration in the database longer than 65535 bytes gets silently truncated by MySQL. [18636](https://mattermost.atlassian.net/browse/MM-18636)
   - Fixing an issue where server-side telemetry is not reporting back after 5.14 release. [18115](https://mattermost.atlassian.net/browse/MM-18115)
 - **v5.14.3, released 2019-09-16**
@@ -750,8 +748,8 @@ Thank you to everyone who contributed to the Mattermost project in March 2019!
 
 Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-- **v5.9.5, released 2019-10-16**  
-  - Fixing an issue where desktop notifications are broken as the desktop app is no longer able to directly interact with the web app. This change is introduced in upcoming server v5.16 and desktop app v4.3 releases as part of a security improvement. [18819](https://mattermost.atlassian.net/browse/MM-18819)
+- **v5.9.5, release day TBD**  
+  - Fixing an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [18819](https://mattermost.atlassian.net/browse/MM-18819)
 - **v5.9.4, released 2019-08-22** 
   - Mattermost v5.9.4 contains a medium level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.9.3, released 2019-07-19** 
