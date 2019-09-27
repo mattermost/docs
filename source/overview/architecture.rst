@@ -81,8 +81,56 @@ Moreover, search replicas are also supported to handle search queries.
 
 .. image:: ../images/architecture_high_availability.png
 
-Reference Architecture
+Reference Architectures
 ----------------------------------
+
+The following diagrams show the suggested architecture configurations for E20 enterprise deployments of Mattermost at different scales. These diagrams are meant as guidelines for typical Mattermost deployments. Hardware and infrastructure requirements can vary significantly based on usage and policies.
+
+There are two versions of each diagram. One is generalized while the other focuses on AWS.
+
+Each generalized diagram represents a full high availability deployment across all critical components. The proxy, database, file storage and Elasticsearch layers can be replaced by cloud services. Push proxy can be replaced by the Mattermost [HPNS](https://docs.mattermost.com/mobile/mobile-hpns.html).
+
+Each AWS diagram represents a full high availability deployment on Amazon Web Services making full use of the available services. Push proxy can optionally be deployed manually in place of HPNS.
+
+5,000 Users on E20 - General
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/MattermostDeployment5kUsers.png
+
+5,000 Users on E20 - AWS 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/MattermostDeployment5kaws.png
+
+10,000 Users on E20 - General
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/MattermostDeployment10kUsers.png
+
+10,000 Users on E20 - AWS 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/MattermostDeployment10kaws.png
+
+25,000 Users on E20 - General
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/MattermostDeployment25kUsers.png
+
+25,000 Users on E20 - AWS 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/MattermostDeployment25kaws.png
+
+Database with VIPs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following diagram is a suggested configuration for highly-available databases through virutal IPs.
+
+.. image:: ../images/DatabasewithVIPs.png
+
+Load testing
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost Enterprise Edition was `load tested <https://github.com/mattermost/mattermost-load-test>`__ with 60,000 concurrent active users with:
 
