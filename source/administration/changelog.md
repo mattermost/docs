@@ -80,8 +80,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed some bugs related to the new [keyboard accessibility](https://docs.mattermost.com/help/getting-started/accessibility.html) feature.
  - Fixed an issue where the ``/leave`` slash command was not working on direct message channels.
  - Fixed an issue where the quick channel switcher box opened behind the header attachment expansion.
+ - Fixed an issue on mobile web view where emoji reaction modal was cut off when adding a second reaction via "+" icon.
  - Fixed an issue where the username was not shown in the left-hand side on mobile web view.
  - Fixed an issue where trailing white space was not ignored when saving a bot username.
+ - Fixed an issue where enabling channel group constraints turned the admin site blank.
  - Fixed an issue where SQL connections closed prematurely for clusters.
  - Fixed an issue where absolute paths were not honoured in SAML certificates.
 
