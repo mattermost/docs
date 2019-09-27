@@ -129,7 +129,7 @@ The following diagram is a suggested configuration for highly-available database
 
 .. image:: ../images/DatabasewithVIPs.png
 
-Load testing
+Load Testing
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Mattermost Enterprise Edition was `load tested <https://github.com/mattermost/mattermost-load-test>`__ with 60,000 concurrent active users with:
