@@ -22,6 +22,22 @@ of the GitLab chart, then you are encountering a bug. Please open an issue on ou
 [issue #630](https://gitlab.com/gitlab-org/charts/gitlab/issues/630) where we recovered our
 CI server from this problem.
 
+## Error: this command needs 2 arguments: release name, chart path
+
+An error like this could occur when you run `helm upgrade`
+and there are some spaces in the parameters. In the following
+example, `Test Username` is the culprit:
+
+```sh
+helm upgrade gitlab gitlab/gitlab --timeout 600 --set global.email.display_name=Test Username ...
+```
+
+To fix it, pass the parameters in single quotes:
+
+```sh
+helm upgrade gitlab gitlab/gitlab --timeout 600 --set global.email.display_name='Test Username' ...
+```
+
 ## Application containers constantly initializing
 
 If you experience Sidekiq, Unicorn, or other Rails based containers in a constant
