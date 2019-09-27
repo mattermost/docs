@@ -22,7 +22,7 @@ Return gitaly storage for external hosts
 {{- range $i, $storage := .Values.global.gitaly.external -}}
 {{- printf "%s:\n" $storage.name -}}
 {{- printf  "path: /var/opt/gitlab/repo\n" | indent 2 -}}
-{{- printf "gitaly_address: tcp://%s:%v\n" $storage.hostname (default 8075 $storage.port) -}}
+{{- printf "gitaly_address: tcp://%s:%d\n" $storage.hostname (default 8075 $storage.port | int64) -}}
 {{- end -}}
 {{- end -}}
 
