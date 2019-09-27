@@ -34,7 +34,7 @@ Return the gitaly storages list
 {{- if .Values.global.gitaly.host -}}
 default:
   path: /var/opt/gitlab/repo
-  gitaly_address: {{ printf "tcp://%s:%d" .Values.global.gitaly.host (default 8075 .Values.global.gitaly.port) }}
+  gitaly_address: {{ printf "tcp://%s:%d" .Values.global.gitaly.host (default 8075 .Values.global.gitaly.port | int64 ) }}
 {{- else -}}
 {{- if .Values.global.gitaly.external -}}
 {{ template "gitlab.gitaly.storage.external" . }}
