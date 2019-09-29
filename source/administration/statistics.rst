@@ -36,7 +36,7 @@ Total Posts (graph)
     The total number of posts made on a certain day in all the teams on your system, including deleted posts and posts made using automation.
 
 Total Posts from Bots (graph)
-    The total number of posts **made by a `bot account <https://docs.mattermost.com/developer/bot-accounts.html>`_** on a certain day in all the teams on your system, including deleted posts and posts made using automation.
+    The total number of posts made by a `bot account <https://docs.mattermost.com/developer/bot-accounts.html>`_ on a certain day in all the teams on your system, including deleted posts and posts made using automation.
 
 Active Users with Posts (graph)
     Users who made a post on a certain day in all the teams on your system, including system messages posted from the user's account.

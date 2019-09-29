@@ -46,7 +46,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
     - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel. [See example](https://community.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
-       - Que a discussion about MVP candidates for the next R&D meeting
+       - Queue a discussion about MVP candidates for the next R&D meeting
     - Update Changelog PR based on what's in/out of the release
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/mattermost-server/issues/3702))
     - Confirm date of marketing announcement for the release date with Marketing, and update release channel header if needed
@@ -60,7 +60,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
     - Start drafting blog post, tweet, and email for the release announcement
     
-### E. (T-minus 14 working days) Code complete
+### E. (T-minus 12 working days) Code complete
 
 Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google.com/document/d/1QxB_A1qkEJBKAvQpRa7JiSQLZhwg6HAEajNRNa7ldGg/edit)
 
@@ -87,11 +87,11 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
        - Post comments to the meta issue with approved fixes for the next RCs
        - Update download links and testing server links to the latest RCs
     - After build is cut, tweet announcement that RC1 is ready (see [example](https://community.mattermost.com/core/pl/tefx1ijyz7bs8mabuxmpq9f7pw))
-2. Logistics:
+    - Generate a list of contributors for Changelog
+2. Logistics @hanna.park:
     - Mail out contributor and security researcher mugs
       - Space out the ordering of mugs over the next 3 weeks to prevent mistakes being made by the supplier.  i.e. If there are 12 contributors to order mugs for, place an order every 2nd or 3rd day over the next 3 weeks.
     - Update [Team](https://www.mattermost.org/team/) page with new contributors
-    - Provide release manager with a list of contributors for Changelog draft
 3. QA:
     - Confirm up to date with testing merged PRs and resolved tickets
     - Confirm up to date with test updates and known issues in release testing spreadsheet
@@ -132,15 +132,17 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - DM reminders if needed to team members who are not QA or devs, or who are new to release testing
     - Post "Bug Hunter Coin" message to Reception channel ([see example](https://community.mattermost.com/core/pl/3o15eoq89fdq5m1ac5dyp4nc3e))
     - At end of day, post reminders about release testing in Release Discussion and Announcements channels, DM any team members who have zero test cells marked Done
-4. Dev:
+4. Logistics @hanna.park:
+    - Generate an E20 5000 seat test licence and email to Lindy for release testing
+5. Dev:
     - Make PRs for bug fixes to the release branch
     - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day
     - Run daily automated upgrade tests to avoid catching upgrade bugs late
-5. Build:
+6. Build:
     - Verify with Release Manager before cutting any new RCs (approved fixes should be merged)
     - Push next RC to acceptance and announce in Town Square with new RC link
     - Check CI servers running on release branch
-6. Marketing:
+7. Marketing:
     - Finish draft of blog post for mattermost.com and all art work (screenshots, GIFs and twitter banners) used for the blog post
         - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
     - Send blog post for release manager and PMs to review
@@ -209,7 +211,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Review any changes made to install guides, and test if necessary
     - Ensure [Security Policies](https://docs.mattermost.com/process/security.html) page has been updated
     - Update dependancies after release branch is cut in `mattermost-server`, `mattermost-webapp`, `desktop`, `mattermost-mobile` and `mattermost-redux`
-5. Logistics:
+5. Logistics @hanna.park:
     - Update [MVP page](https://www.mattermost.org/mvp/) with the most valued professional of the release and order the contributor's coaster
 6. Docs:
     - Finalize docs
@@ -280,6 +282,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Update [company roadmap at mattermost.com](https://about.mattermost.com/direction/)
 
 ### L. (T-plus 30 days) Update Mattermost Security Page
+
 1. Release Manager:
     - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) after reviewing with security lead
       - If a dot release is shipping with security fixes, do not post new details until T-plus 10 working days from the dot release ship date

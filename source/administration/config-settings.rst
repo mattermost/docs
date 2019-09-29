@@ -1407,7 +1407,7 @@ Enable Team Directory
 
 Teammate Name Display
 ^^^^^^^^^^^^^^^^^^^^^
-Specifies how names are displayed in the user interface.
+Specifies how names are displayed in the user interface by default. Please note that users can override this setting in **Account Settings > Display > Teammate Name Display**.
 
 **Show username**: Displays the user's username.
 
@@ -4169,6 +4169,17 @@ Enable Plugin Uploads
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false``.                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Allow Insecure Download Url
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True:** Enables downloading and installing a plugin from a remote url.
+
+**False:** Disables downloading and installing a plugin from a remote url.
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AllowInsecureDownloadUrl": false`` with options ``true`` and ``false``.                    |
++-----------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Plugin Health Check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

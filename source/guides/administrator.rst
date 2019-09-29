@@ -27,6 +27,7 @@ Learn how to get Mattermost running on your environment.
    /install/requirements.rst
    Installing on Ubuntu 16.04 LTS </install/install-ubuntu-1604.rst>
    Installing on Ubuntu 18.04 LTS </install/install-ubuntu-1804.rst>
+   Installing on Kubernetes </install/install-kubernetes.rst>
    Installing on Debian Stretch </install/install-debian.rst>
    Installing on RHEL 6 </install/install-rhel-6.rst>
    Installing on RHEL 7 </install/install-rhel-7.rst>
@@ -117,6 +118,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /deployment/ldap-group-sync.rst
    /deployment/ldap-group-constrained-team-channel.rst
    /deployment/sso-saml.rst
+   /deployment/sso-saml-technical*
    /deployment/sso-gitlab*
    /deployment/sso-google*
    /deployment/sso-office*
@@ -155,7 +157,8 @@ Learn how to keep Mattermost current with fixes and new features.
    /administration/important-upgrade-notes*   
    /administration/changelog*
    /administration/version-archive*
-   /administration/extended-support-release*  
+   /administration/extended-support-release* 
+   /administration/release-lifecycle* 
    /administration/downgrade.rst
    /administration/open-source-components*
 
