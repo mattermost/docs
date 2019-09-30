@@ -73,4 +73,4 @@ This will give you either a hostname or IP address under the ``ADDRESS`` column.
 
 Use your domain registration service to create a canonical name or IP address record for the ``ingressName`` in your manifest, pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
 
-Go to your ``ingressName`` URL in your browser and use Mattermost!
+Go to your ``ingressName`` URL in your browser and use Mattermost.
