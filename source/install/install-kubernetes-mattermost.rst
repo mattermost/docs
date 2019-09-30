@@ -18,6 +18,8 @@ Save the following into a file named ``mattermost-installation.yaml``:
   spec:
     size: 5000users
     ingressName: example.mattermost-example.com 
+    ingressAnnotations:
+      kubernetes.io/ingress.class: nginx
     version: 5.14.0
     database:
       storageSize: 50Gi
@@ -59,12 +61,16 @@ To deploy your installation, apply it with:
 
 Make sure to replace ``/path/to/mattermost-installation.yaml`` with the correct path.
 
-**4. Use Mattermost**
+**4. Configure DNS and Use Mattermost**
 
 After waiting 3-5 minutes for your deployment to complete, run the following to get the hostname or IP address to access Mattermost at:
 
 .. code-block:: sh
 
-  $ kubectl -n mattermost get svc
+  $ kubectl -n mattermost get ingress
 
-The ``EXTERNAL-IP`` of the service with the name matching the ``metadata.name`` entered in your installation manifest file will be how you access Mattermost.
+This will give you either a hostname or IP address under the ``ADDRESS`` column. Copy that address.
+
+Use your domain registration service to create a canonical name or IP address record for the ``ingressName`` in your manifest, pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
+
+Go to your ``ingressName`` URL in your browser and use Mattermost.
