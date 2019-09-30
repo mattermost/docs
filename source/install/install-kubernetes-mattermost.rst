@@ -61,7 +61,7 @@ To deploy your installation, apply it with:
 
 Make sure to replace ``/path/to/mattermost-installation.yaml`` with the correct path.
 
-**4. Configure DNS & Use Mattermost**
+**4. Configure DNS and Use Mattermost**
 
 After waiting 3-5 minutes for your deployment to complete, run the following to get the hostname or IP address to access Mattermost at:
 
