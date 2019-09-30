@@ -52,6 +52,17 @@ entry.
 - Update GitLab Version to 12.3.0.
 
 
+## 2.2.7
+
+### Fixed (1 change)
+
+- Disable object storage for disabled features. !962
+
+### Other (1 change)
+
+- Update GitLab Version to 12.2.6.
+
+
 ## 2.2.6
 
 ### Other (1 change)
