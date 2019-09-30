@@ -138,6 +138,13 @@ entry.
 - Update GitLab Version to 12.2.0.
 
 
+## 2.1.11
+
+### Other (1 change)
+
+- Update GitLab Version to 12.1.12.
+
+
 ## 2.1.10
 
 ### Other (1 change)
