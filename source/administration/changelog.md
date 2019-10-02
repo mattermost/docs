@@ -72,6 +72,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  
 ### Bug Fixes
  - Fixed an issue where user count did not update if a user automatically joined a channel.
+ - Fixed an issue where using the channel autocomplete while editing posts caused the current channel to be unread.
  - Fixed an issue where users were unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
  - Fixed an issue where a user didn't see any unreads when rejoining a team if they were in a Direct Message channel when they left the last team.
  - Fixed an issue where some pre-packaged plugins showed as removable in the user interface.
@@ -112,7 +113,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - If ``ExperimentalStrictCSRFEnforcement`` is set to True, attempts to use ``/jira subscribe`` fail.
  - Scrolling upwards while loading more posts sometimes causes you to jump upwards on Firefox.
  - Modifying config files causes compliance exports to run twice.
- - Using channel autocomplete while editing post causes current channel to be unread.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
