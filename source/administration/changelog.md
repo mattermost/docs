@@ -20,10 +20,13 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Highlights
 
 #### Guest Accounts
+ - 
 
 #### Plugins Marketplace
+ - 
 
 #### Improved team/channel management
+ - 
 
 ### Improvements
 
@@ -96,6 +99,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added PluginSettings.EnableMarketplace and PluginSettings.MarketplaceURL settings.
  
 ### Open Source Components
+ - Added ``react-native-android-open-settings`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``react-native-haptic-feedback`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``DefinitelyTyped`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``node-semver`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``regenerator`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``typescript`` in https://github.com/mattermost/mattermost-webapp.
  
 ### API Changes
  - Added function for setting Personal Access Token to NewAPIv4Client.
