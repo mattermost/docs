@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.3.5
+
+### Fixed (1 change, 1 of them is from the community)
+
+- Fix volumeMounts indentation in task-runner backup-job. !983 (Chris Boot)
+
+### Other (1 change)
+
+- Update GitLab Version to 12.3.4.
+
+
 ## 2.3.3
 
 ### Other (1 change)
