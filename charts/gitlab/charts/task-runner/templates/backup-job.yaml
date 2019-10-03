@@ -42,15 +42,15 @@ spec:
               volumeMounts:
 {{ include "gitlab.extraVolumeMounts" . | indent 16 }}
 {{ include "gitlab.psql.ssl.volumeMount" . | indent 16 }}
-              - name: task-runner-config
-                mountPath: /config
-                readOnly: true
-              - name: init-task-runner-secrets
-                mountPath: /init-config
-                readOnly: true
-              - name: task-runner-secrets
-                mountPath: /init-secrets
-                readOnly: false
+                - name: task-runner-config
+                  mountPath: /config
+                  readOnly: true
+                - name: init-task-runner-secrets
+                  mountPath: /init-config
+                  readOnly: true
+                - name: task-runner-secrets
+                  mountPath: /init-secrets
+                  readOnly: false
               resources:
 {{ toYaml .Values.init.resources | indent 16 }}
 {{- include "pullsecrets" .Values.image | indent 10}}
