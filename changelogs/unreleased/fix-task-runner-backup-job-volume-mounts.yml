@@ -1,5 +1,0 @@
----
-title: Fix volumeMounts indentation in task-runner backup-job
-merge_request: 983
-author: Chris Boot
-type: fixed
