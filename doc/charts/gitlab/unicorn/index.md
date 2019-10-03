@@ -26,6 +26,16 @@ to the `helm install` command using the `--set` flags.
 | Parameter                        | Default               | Description                                    |
 | -------------------------------- | --------------------- | ---------------------------------------------- |
 | `annotations`                    |                       | Pod annotations                                |
+| `deployment.livenessProbe.initialDelaySeconds` | 20      | Delay before liveness probe is initiated       |
+| `deployment.livenessProbe.periodSeconds` | 60            | How often to perform the liveness probe        |
+| `deployment.livenessProbe.timeoutSeconds` | 30           | When the liveness probe times out              |
+| `deployment.livenessProbe.successThreshold` | 1          | Minimum consecutive successes for the liveness probe to be considered successful after having failed |
+| `deployment.livenessProbe.failureThreshold` | 3          | Minimum consecutive failures for the liveness probe to be considered failed after having succeeded |
+| `deployment.readinessProbe.initialDelaySeconds` | 0      | Delay before readiness probe is initiated      |
+| `deployment.readinessProbe.periodSeconds` | 10           | How often to perform the readiness probe       |
+| `deployment.readinessProbe.timeoutSeconds` | 2           | When the readiness probe times out             |
+| `deployment.readinessProbe.successThreshold` | 1         | Minimum consecutive successes for the readiness probe to be considered successful after having failed |
+| `deployment.readinessProbe.failureThreshold` | 3         | Minimum consecutive failures for the readiness probe to be considered failed after having succeeded |
 | `enabled`                        | `true`                | Unicorn enabled flag                           |
 | `extraContainers`                |                       | List of extra containers to include            |
 | `extraInitContainers`            |                       | List of extra init containers to include       |
@@ -73,6 +83,16 @@ to the `helm install` command using the `--set` flags.
 | `trusted_proxies`                | `[]`                  | See [GitLab documentation](https://docs.gitlab.com/ee/install/installation.html#adding-your-trusted-proxies) for details |
 | `workerProcesses`                | `2`                   | Unicorn number of workers                      |
 | `workerTimeout`                  | `60`                  | Unicorn worker timeout                         |
+| `workhorse.livenessProbe.initialDelaySeconds` | 20       | Delay before liveness probe is initiated       |
+| `workhorse.livenessProbe.periodSeconds` | 60             | How often to perform the liveness probe        |
+| `workhorse.livenessProbe.timeoutSeconds` | 30            | When the liveness probe times out              |
+| `workhorse.livenessProbe.successThreshold` | 1           | Minimum consecutive successes for the liveness probe to be considered successful after having failed |
+| `workhorse.livenessProbe.failureThreshold` | 3           | Minimum consecutive failures for the liveness probe to be considered failed after having succeeded |
+| `workhorse.readinessProbe.initialDelaySeconds` | 0       | Delay before readiness probe is initiated      |
+| `workhorse.readinessProbe.periodSeconds` | 10            | How often to perform the readiness probe       |
+| `workhorse.readinessProbe.timeoutSeconds` | 2            | When the readiness probe times out             |
+| `workhorse.readinessProbe.successThreshold` | 1          | Minimum consecutive successes for the readiness probe to be considered successful after having failed |
+| `workhorse.readinessProbe.failureThreshold` | 3          | Minimum consecutive failures for the readiness probe to be considered failed after having succeeded |
 
 ## Chart configuration examples
 

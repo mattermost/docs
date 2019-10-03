@@ -172,14 +172,20 @@ spec:
             exec:
               command:
               - /scripts/healthcheck
-            initialDelaySeconds: 20
-            timeoutSeconds: 30
-            periodSeconds: 60
+            initialDelaySeconds: {{ .Values.deployment.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.deployment.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.deployment.livenessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.deployment.livenessProbe.successThreshold }}
+            failureThreshold: {{ .Values.deployment.livenessProbe.failureThreshold }}
           readinessProbe:
             exec:
               command:
               - /scripts/healthcheck
-            timeoutSeconds: 2
+            initialDelaySeconds: {{ .Values.deployment.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.deployment.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.deployment.readinessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.deployment.readinessProbe.successThreshold }}
+            failureThreshold: {{ .Values.deployment.readinessProbe.failureThreshold }}
           lifecycle:
             preStop:
               exec:
@@ -219,14 +225,20 @@ spec:
             exec:
               command:
               - /scripts/healthcheck
-            initialDelaySeconds: 20
-            timeoutSeconds: 30
-            periodSeconds: 60
+            initialDelaySeconds: {{ .Values.workhorse.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.workhorse.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.workhorse.livenessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.workhorse.livenessProbe.successThreshold }}
+            failureThreshold: {{ .Values.workhorse.livenessProbe.failureThreshold }}
           readinessProbe:
             exec:
               command:
               - /scripts/healthcheck
-            timeoutSeconds: 2
+            initialDelaySeconds: {{ .Values.workhorse.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.workhorse.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.workhorse.readinessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.workhorse.readinessProbe.successThreshold }}
+            failureThreshold: {{ .Values.workhorse.readinessProbe.failureThreshold }}
           resources:
 {{ toYaml .Values.workhorse.resources | indent 12 }}
       volumes:
