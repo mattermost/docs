@@ -1,6 +1,6 @@
 require 'yaml'
 
-NO_CHANGELOG_LABELS = %w[Documentation backstage].freeze
+NO_CHANGELOG_LABELS = %w[documentation backstage].freeze
 SEE_DOC = "See [the documentation](https://docs.gitlab.com/ce/development/changelog.html).".freeze
 MISSING_CHANGELOG_MESSAGE = <<~MSG.freeze
 **[CHANGELOG missing](https://docs.gitlab.com/ce/development/changelog.html).**
