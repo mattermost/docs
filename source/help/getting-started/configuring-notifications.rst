@@ -23,8 +23,7 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
 -  Configure desktop notifications in specific channels in **Channel
    Menu** > **Notification Preferences** > **Send Desktop
    Notifications**. 
-  - By default, all channels use the global setting
-   configured in *Account Settings*.
+  - By default, all channels use the global setting configured in *Account Settings*.
    
 **Not getting a desktop notification?** See our `FAQ to view the desktop notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-desktop-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.
 
