@@ -83,4 +83,4 @@ Muting a Channel
 
 Channels in the sidebar are **bold** when there are unread messages in the channel and show a badge count if you are mentioned specifically. To mute a channel so it does not appear unread and you do not recieve notifications, click the channel name at the top of the page to access the **Channel Menu** > **Notification Preferences > Mute channel**.
 
-.. tip :: Mentions are triggered by `selected keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_, learn more about `mentioning teammates <http://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__.
+.. tip :: Mentions are triggered by `selected keywords <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_. Learn more about `mentioning teammates <http://docs.mattermost.com/help/messaging/mentioning-teammates.html>`__.
