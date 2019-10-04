@@ -25,7 +25,7 @@ Apply it with:
 
 .. code-block:: sh
 
-  $ kubectl apply -n mattermost -f /path/to/mattermost-license-secret.yaml
+  $ kubectl apply -f /path/to/mattermost-license-secret.yaml
 
 **2. Create your installation manifest file**
 
