@@ -12,7 +12,7 @@ Getting Started Tasks
   - SMTP
   - Push Notification Server 
   
-These settings can also be set in the config.json file.  Please see our `configuration settings documenation <../administration/config-settings.rst>`__ for a full listing of all configuration settings. 
+These settings can also be set in the config.json file.  Please see our `configuration settings documentation <../administration/config-settings.rst>`__ for a full listing of all configuration settings. 
 
 2. Adjust settings under **System Console > Site Configuration** to brand and customize how users will interact with the site.  
 Be sure to update the Support Email and Help Link in Mattermost under **System Console > Site Configuration > Customization** to provide your users a resource for password resets or questions on their Mattermost account.
