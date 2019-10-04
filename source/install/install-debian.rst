@@ -1,7 +1,7 @@
 .. _install-debian:
 
 =========================================
-Installing Mattermost on Debian Stretch
+Installing Mattermost on Debian Buster
 =========================================
 
 Install a production-ready Mattermost system on 1 to 3 machines.
