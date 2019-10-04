@@ -26,7 +26,7 @@ These settings can also be set in the config.json file.  Please see our `configu
 
  - Users can be per-provisioned prior with migration and bulk loading data processes based on prior collaboration systems.  Please see our `migration guide <https://docs.mattermost.com/administration/migrating.html#migration-guide>`_ and `bulk loading documentation <https://docs.mattermost.com/deployment/bulk-loading.html>`_ for additional details.
  
- - `AD/LDAP authentication <https://docs.mattermost.com/deployment/sso-ldap.html#active-directory-ldap-setup-e10-e20>`_ and `SAML authentication <https://docs.mattermost.com/deployment/sso-saml.html>`_ is available for Enterprise Edition, providing identity management, single sign-on and automatic account provisioning.   
+ - `AD/LDAP authentication <https://docs.mattermost.com/deployment/sso-ldap.html#active-directory-ldap-setup-e10-e20>`_ and `SAML authentication <https://docs.mattermost.com/deployment/sso-saml.html>`_ are available for Enterprise Edition, providing identity management, single sign-on and automatic account provisioning.   
 
 4. Enable integrations and plugins to connect your team's workflows and toolsets into Mattermost. 
 
