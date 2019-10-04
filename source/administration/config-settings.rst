@@ -4095,7 +4095,7 @@ Determines how many new posts are batched together before they are added to the 
 
 Request Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Timeout in seconds for Elasticseaerch calls.
+Timeout in seconds for Elasticsearch calls.
 
 +-------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RequestTimeoutSeconds": 30`` with numerical input.       |
