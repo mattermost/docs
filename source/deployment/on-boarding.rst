@@ -69,5 +69,5 @@ Common Tasks
       [2017/05/19 16:51:40 UTC] [INFO] License key valid unlocking enterprise features.
       
 **Upgrading Mattermost**
- - Mattermost releases updates montly to `Mattermost Team Edition <http://www.mattermost.org/>`_ and `Mattermost Enterprise Edition <https://about.mattermost.com/pricing/>`_.  The `Mattermost Changelog <https://docs.mattermost.com/administration/changelog.html>`_ provides all information about changes in each version. We recommend servers be upgraded often to keep up with critical bug fixes and security fixes. 
+ - Mattermost releases updates montly to `Mattermost Team Edition <http://https://mattermost.com/>`_ and `Mattermost Enterprise Edition <https://about.mattermost.com/pricing/>`_.  The `Mattermost Changelog <https://docs.mattermost.com/administration/changelog.html>`_ provides all information about changes in each version. We recommend servers be upgraded often to keep up with critical bug fixes and security fixes. 
 - Follow the steps outlined in the `upgrade documentation <https://docs.mattermost.com/administration/upgrade.html>`_ to perform upgrades.   
