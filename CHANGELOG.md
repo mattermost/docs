@@ -2,6 +2,14 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.3.6
+
+### Other (2 changes)
+
+- Update gitlab-runner to v0.9.1. !987
+- Update GitLab Version to 12.3.4.
+
+
 ## 2.3.5
 
 ### Fixed (1 change, 1 of them is from the community)
