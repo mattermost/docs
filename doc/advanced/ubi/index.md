@@ -1,0 +1,38 @@
+# GitLab with UBI-based images
+
+GitLab offers [Red Hat UBI](https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image)
+version of its images. You can replace standard images with UBI-based images.
+These images use the same tag as standard images with `-ubi8` extension.
+
+GitLab Chart uses third-party images that are not based on UBI. These images
+are mostly offer external services to GitLab, such as Redis, PostgreSQL, etc.
+If you wish to deploy a GitLab instance that purely based on UBI you can
+disable the internal services and use an external deployment.
+
+The services that must be disabled and provided externally are:
+
+- PostgreSQL
+- Minio (Object Store)
+- Redis
+
+The services must be disabled are:
+
+- CertManager (Let's Encrypt integration)
+- Nginx Ingress
+- Prometheus
+- Grafana
+- GitLab Runner
+
+## Sample values
+
+We provide an example for GitLab Chart values in `examples/ubi/values.yaml` which
+can help you to build a pure UBI GitLab deployment.
+
+## Known Limitations
+
+- Currently there is no UBI version of GitLab Runner. Therefore we only disable
+  it. However, that does not prevent attaching your own runner to your UBI-based
+  GitLab deployment.
+- GitLab relies on the official image of Docker Registry which is based on `alpine`.
+  At the moment we do not maintain or release a UBI-based version of Registry. Since
+  this functionality is _crucial_, we do not disable this service.
