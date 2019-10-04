@@ -6,7 +6,7 @@ Desktop, email and mobile push notifications notify you of activity in Mattermos
 - Direct Messages you
 - Mentions your username or first name in a channel
 - Notifies a channel you're in using @channel or @all
-- Uses any `keywords you've configured<https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_ 
+- Uses any `keywords you've configured <https://docs.mattermost.com/help/settings/account-settings.html#words-that-trigger-mentions>`_ 
 
 Desktop Notifications
 -------------------------------------
