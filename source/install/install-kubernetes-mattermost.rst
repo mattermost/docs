@@ -5,7 +5,7 @@ Deploy a Mattermost Installation
 
 Deploying a Mattermost installation is very simple and just requires creating and applying a single manifest.
 
-**1. (Enterprise Only) Create your Mattermost license secret**
+**1. (Enterprise only) Create your Mattermost license secret**
 
 Save the following in a file named ``mattermost-license-secret.yaml``:
 
