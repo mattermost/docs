@@ -34,7 +34,7 @@ These settings can also be set in the config.json file.  Please see our `configu
  
  - To enable and manage plugins, go to **System Console > Plugins**.  Mattermost offers an `integration marketplace <https://integrations.mattermost.com/>`_ where you can see all available plugins available for upload. 
 
-If your organization  requires more structure and project management artifacts for the implementation of Mattermost, please see our `implemenatation plan <https://docs.mattermost.com/getting-started/implementation_plan.html>`__ 
+If your organization  requires more structure and project management artifacts for the implementation of Mattermost, please see our `implementation plan <https://docs.mattermost.com/getting-started/implementation_plan.html>`__ .
 
 Important Administration Notes 
 ------------------------------
