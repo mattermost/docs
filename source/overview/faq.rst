@@ -69,12 +69,33 @@ To add yourself to the `Mattermost page on LinkedIn <https://www.linkedin.com/co
   - Update my headline: Leave unchecked
   - Description: Leave blank or write a sentence about what you have contributed. 
 
-Mobile Applications
+Notifications
 -------------------
+
+What determines if a desktop notification should be triggered?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Desktop notifications are triggered under to following conditions. Click to expand the flow chart.
+
+image XXXXXX
+
+What determines if an email notification should be triggered?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Email notifications are triggered under to following conditions. Click to expand the flow chart.
+
+image XXXXXX
+
+What determines if a mobile push notification should be triggered?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mobile push notifications are triggered under to following conditions. Click to expand the flow chart.
+
+image XXXXXX
 
 .. _tpns:
 
-Are push notifications free?
+Are mobile push notifications free?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes, push notifications are free if you compile your own `push-proxy service <https://github.com/mattermost/mattermost-push-proxy>`__. Push notifications are also free if you use the hosted Test Push Notification Service (TPNS) provided by Mattermost, Inc.
