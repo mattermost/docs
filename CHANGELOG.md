@@ -78,6 +78,17 @@ entry.
 - Update GitLab Version to 12.3.0.
 
 
+## 2.2.9
+
+### Fixed (1 change, 1 of them is from the community)
+
+- Fix volumeMounts indentation in task-runner backup-job. !983 (Chris Boot)
+
+### Other (1 change)
+
+- Update GitLab Version to 12.2.8.
+
+
 ## 2.2.8
 
 ### Other (1 change)
