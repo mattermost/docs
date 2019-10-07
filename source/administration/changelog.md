@@ -15,14 +15,14 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - We removed support for Internet Explorer (IE11). Learn more in our [forum post](https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575).
  
 ### Breaking Changes
-
+ - 
 
 ### Highlights
 
 #### Guest Accounts
  - 
 
-#### Plugins Marketplace
+#### Plugin Marketplace
  - 
 
 #### Improved team/channel management
@@ -97,9 +97,10 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
- - Added ``PluginSettings.EnableMarketplace`` (default to true), to .
- - Added ``PluginSettings.MarketplaceUrl`` (default to "https://marketplace.integrations.mattermost.com"), to .
- - Added ``GuestAccountsSettings`` to .
+ - Under ``PluginSettings``:
+    - Added ``EnableMarketplace`` (default to true) and ``MarketplaceUrl`` (default to ``https://marketplace.integrations.mattermost.com``), to enable Plugin Marketplace feature.
+ - Under ``GuestAccountsSettings``:
+    - Added ``Enable``, ``AllowEmailAccounts``, ``EnforceMultifactorAuthentication``, and	``RestrictCreationToDomains``, to enable Guest Accounts feature.
  - Changed ``SqlSettings.DataSource``, ``ElasticsearchSettings.ConnectionUrl``, and ``EmailSettings.SMTPServer`` to default to using localhost (instead of dockerhost).
  - Changed ``NativeAppSettings.AppDownloadLink`` to default to ``https://mattermost.com/download/#mattermostApps`` (instead of ``https://about.mattermost.com/downloads/``).
  
