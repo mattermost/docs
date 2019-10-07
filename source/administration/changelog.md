@@ -7,9 +7,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v5.15 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 - **v5.15.1, release day TBD**
-  - Fixing an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [18819](https://mattermost.atlassian.net/browse/MM-18819)
-  - Fixing an issue where a configuration in the database longer than 65535 bytes gets silently truncated by MySQL. [18636](https://mattermost.atlassian.net/browse/MM-18636)
-  - Fixing an issue where server-side telemetry is not reporting back after 5.14 release. [18115](https://mattermost.atlassian.net/browse/MM-18115)
+  - Fixing an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
+  - Fixing an issue where a configuration in the database longer than 65535 bytes gets silently truncated by MySQL. [MM-18636](https://mattermost.atlassian.net/browse/MM-18636)
+  - Fixing an issue where server-side telemetry is not reporting back after 5.14 release. [MM-18115](https://mattermost.atlassian.net/browse/MM-18115)
 - **v5.15.0, released 2019-09-16**
   - Original 5.15.0 release
 
