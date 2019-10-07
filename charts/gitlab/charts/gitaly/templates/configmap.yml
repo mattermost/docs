@@ -89,6 +89,7 @@ data:
     num_workers = {{ .numWorkers }}
     {{- end }}
     {{- end }}
+    rugged_git_config_search_path = "/usr/local/etc"
 
     [gitlab-shell]
     # The directory where gitlab-shell is installed
