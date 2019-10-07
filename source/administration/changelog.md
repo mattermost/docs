@@ -96,7 +96,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - Added PluginSettings.EnableMarketplace and PluginSettings.MarketplaceURL settings.
+
+ - Added ``PluginSettings.EnableMarketplace`` (default to true), to .
+ - Added ``PluginSettings.MarketplaceUrl`` (default to "https://marketplace.integrations.mattermost.com"), to .
+ - Added ``GuestAccountsSettings`` to .
+ - Changed ``SqlSettings.DataSource``, ``ElasticsearchSettings.ConnectionUrl``, and ``EmailSettings.SMTPServer`` to default to using localhost (instead of dockerhost).
+ - Changed ``NativeAppSettings.AppDownloadLink`` to default to ``https://mattermost.com/download/#mattermostApps`` (instead of ``https://about.mattermost.com/downloads/``).
  
 ### Open Source Components
  - Added ``react-native-android-open-settings`` in https://github.com/mattermost/mattermost-mobile.
@@ -107,15 +112,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``typescript`` in https://github.com/mattermost/mattermost-webapp.
  
 ### API Changes
- - Added function for setting Personal Access Token to NewAPIv4Client.
- - Added ``KVCompareAndDeleteJSON`` to the API so that plugins can more easily delete values automatically.
- - Added ``GetUnsanitizedConfig`` API to expose unsanitized configuration to plugins.
- - Added a v4/plugins/marketplace API to fetch marketplace plugins.
- - Added a database write check to the ping API endpoint.
+ - Added a new ``GET /plugins/marketplace`` API endpoint added to list marketplace plugins.
+ - Added a new ``PUT /channels/:channel_id/privacy`` API endpoint to update the privacy of a channel.
+ - Added a new ``POST /site_url/test to test`` API endpoint to test the configured site URL.
+ - Added a new ``POST /teams/:team_id/invite-guests/email`` API endpoint to invite guest users by email.
+ - Added new ``POST /users/:user_id/promote`` and ``POST /users/:user_id/demote`` API endpoints to promote and demote users to guest accounts.
+ - Updated the ``PUT /channels/:channel_id/patch`` API endpoint to ensure that the requestor user has permission to see each channel member.
+ - Updated the ``GET /channels/:channel_id/stats`` API endpoint to include the pinned post and guest counts.
+ - ``PUT /roles/:role_id/patch`` API endpoint now ensures that guest account roles are not updatable without the required license and feature SKU.
+ - Several OAuth API endpoints were removed.
  
 ### Database Changes
-
-### Websocket Event Changes
+ - Added a change to the ``Tokens`` table ``Extra`` column's data type.
  
 ### Known Issues
  - Switching to an unread channel sometimes gets stuck at "Loading...".
