@@ -370,6 +370,16 @@ UserTeamMembership object
       <td valign="middle">string</td>
       <td>The roles the user has within this team. </td>
     </tr>
+    <tr class="row-odd">
+      <td valign="middle">theme</td>
+      <td valign="middle">string</td>
+      <td>The user’s theme for this team. Formatted as a Mattermost theme string.</td>
+    </tr>
+     <tr class="row-odd">
+      <td valign="middle">channels</td>
+      <td valign="middle">array</td>
+      <td>The channels within this team that the user is a member of. Listed as an array of UserChannelMembership objects.</td>
+    </tr>
   </table>
 
 UserChannelMembership object
