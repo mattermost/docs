@@ -6,3 +6,4 @@
 - Using an [external object storage](external-object-storage/index.md)
 - Using your own [Nginx ingress controller](external-nginx/index.md)
 - After install, [managing Persistent Volumes](persistent-volumes/index.md)
+- Using [Red Hat UBI-based images](ubi/index.md)
