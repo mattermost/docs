@@ -55,7 +55,7 @@ Software Design Engineer II
 
 Capabilities of SDE I plus: Designs, leads and delivers high impact features and changes across the product stack and test automation infrastructure. Sets thoughtful, technical vision for areas of ownership, balancing functional and technical trade-offs, while working effectively with PM and UX. Drops fluidly into different projects, ramps quickly and leads features to successful outcomes. Inspires, organizes and enables groups of open source community members to contribute to development campaigns in building significant new functionality.
 
-Senior Software Design Engineer
+Architect / Senior Software Design Engineer
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Capabilities of SDE II plus: Sets and delivers architectural vision for high impact features and changes across multiple products, working in sync with PM, UX, and customer teams. Highly respected by colleagues and community as technical authority, influencing discussions and behavior with input and suggestions. Drops fluidly into customer and community discussions, aligns efforts, and develops superior solutions through discussion and analysis. Attracts, motivates, and trains open source community members to lead the coordination and management of development campaigns to create new features and products. 
