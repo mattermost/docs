@@ -4,7 +4,7 @@ Help Wanted Tickets
 
 Thank you for your interest in contributing! `Join our "Contributors" community channel <https://community.mattermost.com/core/channels/tickets>`__ where you can discuss questions with community members and the Mattermost core team.
 
-Per the `Code Contribution Guidelines <http://docs.mattermost.com/developer/contribution-guide.html#choose-a-ticket>`__, other than small bug fixes and incremental improvements, only pull requests referencing `Help Wanted GitHub issues <https://mattermost.com/pl/help-wanted-mattermost-server>`__ should be submitted to Mattermost projects. This ensures:
+Per the `Code Contribution Guidelines <http://docs.mattermost.com/developer/contribution-guide.html#choose-a-ticket>`__, other than small bug fixes and incremental improvements, only pull requests referencing `Help Wanted GitHub issues <https://mattermost.com/pl/help-wanted>`__ should be submitted to Mattermost projects. This ensures:
 
 1. Proposed changes have been unambiguously specified 
 2. The change meets the `fast, obvious, forgiving <http://www.mattermost.org/design-principles/>`__ design principle for the project
@@ -22,5 +22,5 @@ Jira tickets nominating a feature for Help Wanted status should include:
 2. Description is unambiguous and includes UI description and help text so feature can be implemented and tested by any contributor
 3. If related to a community discussion, include link to ticket in discussion and link to discussion in ticket
 
-Tickets meeting HW criteria receive a `help-wanted` label by triage team and appear in `Help Wanted list <https://mattermost.com/pl/help-wanted-mattermost-server>`__. 
+Tickets meeting HW criteria receive a `help-wanted` label by triage team and appear in `Help Wanted list <https://mattermost.com/pl/help-wanted>`__. 
 
