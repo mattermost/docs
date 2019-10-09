@@ -716,7 +716,7 @@ kubectl create secret generic gitlab-rails-storage \
 
 Sidekiq includes maintenance jobs that can be configured to run on a periodic
 basis using cron style schedules. A few examples are included below. See the
-sample [gitlab.yml](https://gitlab.com/gitlab-org/gitlab/blob/master/config/gitlab.yml.example#L347-428)
+sample [gitlab.yml](https://gitlab.com/gitlab-org/gitlab/blob/master/config/gitlab.yml.example#L346-427)
 for more job examples.
 
 These settings are shared between Sidekiq, Unicorn (for showing tooltips in UI)
