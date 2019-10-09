@@ -97,9 +97,6 @@ persistence:
   ##
   subPath: ""
 
-  ## if volumeName is set, use this existing PersistentVolume
-  # volumeName:
-
   ## Only bind to a volume with the following exactly matched labels with values.
   ## ref: https://kubernetes.io/docs/concepts/storage/persistent-volumes/#selector
   matchLabels: {}
