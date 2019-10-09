@@ -2403,7 +2403,7 @@ Choose whether OAuth can be used for account creation and login. Options include
 
     - **Do not allow sign-in via an OAuth 2.0 provider**
     - **GitLab** (see `GitLab Settings <https://docs.mattermost.com/administration/config-settings.html#gitlab>`__ for more detail)
-    - **Google Apps** (available in Enterprise Edition E20, see `Google Settings <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`__ for more detail)
+    - **Google Apps** (available in Enterprise Edition E20, see `Google Settings <https://docs.mattermost.com/administration/config-settings.html#google>`__ for more detail)
     - **Office 365** (available in Enterprise Edition E20, see `Office 365 Settings <https://docs.mattermost.com/administration/config-settings.html#office-365>`__ for more detail)
 
 This feature's setting does not appear in ``config.json``.
