@@ -823,7 +823,6 @@ ________
 
 OAuth 2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E10 and higher*
 
 Settings to configure OAuth login for account creation and login.
 
@@ -832,9 +831,9 @@ Select OAuth 2.0 service provider:
 Choose whether OAuth can be used for account creation and login. Options include:
 
     - **Do not allow sign-in via an OAuth 2.0 provider**
-    - **GitLab** (see `GitLab Settings <http://docs.mattermost.com/administration/config-settings.html#id14>`__ for more detail)
-    - **Google Apps** (see `Google Settings <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`__ for more detail)
-    - **Office 365 (Beta)** (see `Office 365 Settings <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`__ for more detail)
+    - **GitLab** (see `GitLab Settings <https://docs.mattermost.com/administration/config-settings.html#id14>`__ for more detail)
+    - **Google Apps** (available in Enterprise Edition E20, see `Google Settings <https://docs.mattermost.com/administration/config-settings.html#google-enterprise>`__ for more detail)
+    - **Office 365 (Beta)** (available in Enterprise Edition E20, see `Office 365 Settings <https://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`__ for more detail)
 
 This feature's setting does not appear in ``config.json``.
 
