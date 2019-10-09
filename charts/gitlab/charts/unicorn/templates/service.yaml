@@ -19,6 +19,12 @@ spec:
       targetPort: {{ .Values.service.workhorseInternalPort }}
       protocol: TCP
       name: workhorse
+    {{- if eq .Values.monitoring.exporter.enabled true }}
+    - port: {{ .Values.monitoring.exporter.port }}
+      targetPort: {{ .Values.monitoring.exporter.port }}
+      protocol: TCP
+      name: {{ .Values.service.name }}-exporter
+    {{- end }}
   selector:
     app: {{ template "name" . }}
     release: {{ .Release.Name }}

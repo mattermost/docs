@@ -16,10 +16,14 @@ init:
 # Tolerations for pod scheduling
 tolerations: []
 
-# Monitoring IP whitelist
 monitoring:
+  # Monitoring IP whitelist
   ipWhitelist:
   - 0.0.0.0/0
+  exporter:
+    enabled: false
+    port: 8083
+
 
 annotations: {}
 
