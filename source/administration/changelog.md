@@ -20,13 +20,13 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Highlights
 
 #### Guest Accounts
- - 
+ - Provides a controlled and secure method for users outside of an organization to collaborate with their organization without allowing the guest to access proprietary or confidential information.
 
 #### Plugin Marketplace
- - 
+ - The integrations marketplace is built into the product and gives system administrators the ability to discover and install plugins from a custom dialog exposed via the main menu.
 
 #### Improved team/channel management
- - 
+ - Provides LDAP group sync within Mattermost which allows administrators a convenient way to assign end-users to channel and teams in initial onboarding.
 
 ### Improvements
 
