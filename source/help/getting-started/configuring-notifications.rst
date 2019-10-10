@@ -74,7 +74,7 @@ Notification Sounds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A notification sound plays for all activity that would cause a desktop
-notification. Notification sounds are available on IE11, Edge, Safari, Chrome and
+notification. Notification sounds are available on Edge, Safari, Chrome and
 `Mattermost Desktop Apps <https://about.mattermost.com/download/#mattermostApps>`__.
 
 -  Turn notification sounds On or Off in **Account Settings** >
