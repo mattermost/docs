@@ -147,9 +147,8 @@ gitlab:
   unicorn:
     image:
       tag: master-ubi8
-
-  workhorse:
-    tag: master-ubi8
+    workhorse:
+      tag: master-ubi8
 
 # See: https://gitlab.com/gitlab-org/charts/gitlab/tree/master/doc/advanced/external-object-storage
 registry:
