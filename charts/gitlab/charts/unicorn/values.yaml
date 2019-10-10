@@ -52,6 +52,21 @@ memory: # in MB units
   max: 1024
 hpa:
   targetAverageValue: 1
+
+deployment:
+  livenessProbe:
+    initialDelaySeconds: 20
+    periodSeconds: 60
+    timeoutSeconds: 30
+    successThreshold: 1
+    failureThreshold: 3
+  readinessProbe:
+    initialDelaySeconds: 0
+    periodSeconds: 10
+    timeoutSeconds: 2
+    successThreshold: 1
+    failureThreshold: 3
+
 workhorse:
   sentryDSN: ""
   extraArgs: ""
@@ -60,6 +75,18 @@ workhorse:
       cpu: 100m
       memory: 100M
   # image: registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ee
+  livenessProbe:
+    initialDelaySeconds: 20
+    periodSeconds: 60
+    timeoutSeconds: 30
+    successThreshold: 1
+    failureThreshold: 3
+  readinessProbe:
+    initialDelaySeconds: 0
+    periodSeconds: 10
+    timeoutSeconds: 2
+    successThreshold: 1
+    failureThreshold: 3
 global:
   # imagePullPolicy: IfNotPresent
   ingress:
