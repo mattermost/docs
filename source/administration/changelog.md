@@ -80,6 +80,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where a user didn't see any unreads when rejoining a team if they were in a Direct Message channel when they left the last team.
  - Fixed an issue where some pre-packaged plugins showed as removable in the user interface.
  - Fixed an issue where clicking "Edit" of another sub-section in Account Settings appeared to save the setting that was currently being edited in an open sub-section in the same modal.
+ - Fixed an issue where the System Console user menu did not show all inactive users.
  - Fixed an issue where a JS console error appeared when uploading an image from the right-hand side.
  - Fixed some bugs related to the new [keyboard accessibility](https://docs.mattermost.com/help/getting-started/accessibility.html) feature.
  - Fixed an issue where the ``/leave`` slash command was not working on direct message channels.
