@@ -378,7 +378,7 @@ UserTeamMembership object
      <tr class="row-odd">
       <td valign="middle">channels</td>
       <td valign="middle">array</td>
-      <td>The channels within this team that the user is a member of. Listed as an array of UserChannelMembership objects.</td>
+      <td>The channels within this team that the user is a member of. Listed as an array of **UserChannelMembership** objects.</td>
     </tr>
   </table>
 
