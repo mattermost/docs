@@ -31,7 +31,8 @@ Direct invites are invitation emails sent from your team's server directly to th
 6. [Optional] Add a custom message to be included in the invitation to the guest. 
 5. Click **Invite Guests**. 
 
-**Note:** You have to have permission to invite guests to see this option. 
+.. note:: 
+   You need the permission to invite guests to see the **Invite Guest** option.
 
 **To send a direct invite in versions prior to 5.16**:
 
@@ -80,7 +81,8 @@ If someone you want to add to your team already has an account on the server, yo
 5. Specify the channels the guest will have access to.
 5. Click **Invite Guests**. 
 
-**Note:** You have to have permission to invite guests to see this option. 
+.. note:: 
+   You need the permission to invite guests to see the **Invite Guest** option.
 
 **To add someone to your team in versions prior to 5.16**:
 
