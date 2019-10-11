@@ -34,7 +34,7 @@ Direct invites are invitation emails sent from your team's server directly to th
 .. note:: 
    If you aren't able to see the **Invite Guests** option, confirm with your System Admin that you have the correct permissions.
 
-**To send a direct invite in versions prior to 5.16**:
+**To send a direct invite in versions prior to 5.16**
 
 1. Click your username, at the top of the Navigation Panel.
 2. Click **Send Email Invite** and enter the person's email address along with their first and last name.
