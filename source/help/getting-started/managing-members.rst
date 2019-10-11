@@ -143,6 +143,7 @@ Guest
 Guests are a role with restricted permissions, which allow organizations to collaborate with users outside of their organization and control what channels they are in an who they can collaborate with. 
 
 Guests can: 
+
 - Pin messages to channels.
 - Use slash commands (with the exception of those used to invite members)
 - Favorite channels
@@ -150,6 +151,7 @@ Guests can:
 - Update their account settings
 
 Guests cannot: 
+
 - Discover public channels
 - Join open teams
 - Create direct messages or group messages with members who aren’t within the same channel
