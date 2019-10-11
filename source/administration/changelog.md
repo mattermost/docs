@@ -6,9 +6,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.15 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.15.1, release day TBD**
-  - Fixing an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
-  - Fixing an issue where server-side telemetry is not reporting back after 5.14 release. [MM-18115](https://mattermost.atlassian.net/browse/MM-18115)
+- **v5.15.1, released 2019-10-11**
+  - Fixed an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
+  - Fixed an issue where server-side telemetry was not reporting back after 5.14 release. [MM-18115](https://mattermost.atlassian.net/browse/MM-18115)
 - **v5.15.0, released 2019-09-16**
   - Original 5.15.0 release
 
@@ -81,9 +81,9 @@ Mattermost v5.15.0 contains low level security fixes. [Upgrading](http://docs.ma
 
 ## Release v5.14 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.14.4, release day TBD**
-  - Fixing an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
-  - Fixing an issue where server-side telemetry is not reporting back after 5.14 release. [MM-18115](https://mattermost.atlassian.net/browse/MM-18115)
+- **v5.14.4, released 2019-10-11**
+  - Fixed an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
+  - Fixed an issue where server-side telemetry was not reporting back after 5.14 release. [MM-18115](https://mattermost.atlassian.net/browse/MM-18115)
 - **v5.14.3, released 2019-09-16**
   - Fixed an issue where edited posts were not included in Compliance Export (Beta). [MM-18522](https://mattermost.atlassian.net/browse/MM-18522)
 - **v5.14.2, released 2019-08-30**
