@@ -45,7 +45,7 @@ Guests can be invited into one for more Mattermost channels within a team by Sys
 
 To invite guests into one or more Mattermost channels
 
-1. Navigate to **Main Menu > Invite People**.  This is a new invitation option that combines inviting guests and members and consolidates the previous “Send Email, “Get Team Invite Link” and “Add Members to the Team”. 
+1. Navigate to **Main Menu > Invite People**.  This is a new invitation option that combines inviting guests and members and consolidates **Send Email**, **Get Team Invite Link**, and **Add Members to the Team**. 
 2. Select **Invite Guests**.
 3. Enter the guest’s email address.
 4. Choose the channels the guest can join. 
