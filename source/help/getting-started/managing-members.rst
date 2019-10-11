@@ -6,7 +6,7 @@ Managing Members
 Inviting Team Members
 ---------------------
 
-If enabled by your System Admin, you can add people to your team in one of three ways: You can send a direct invite; you can share a public team invite link; or if they already have an account on the server, you can add them to the team yourself. 
+If you have the required permissions, you can add people to your team via a direct invite, a public team invite link, or if they already have an account on the server you can add them to the team yourself. 
 
 Additionally as of version 5.16, your System Admin can enable guest access to your server. If this is enabled, you can invite guests, or users external to the organization such as vendor or customers.  A guest is a special role that is restricted to only the channels they have been invited to. 
 
