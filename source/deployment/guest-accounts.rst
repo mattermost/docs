@@ -7,7 +7,7 @@ Available in `Enterprise Edition E10 and higher <https://about.mattermost.com/pr
 
 Guest Accounts are a new role within Mattermost Enterprise editions which allow organizations to collaborate with individuals (such as vendors and contractors) outside of their organization. The Guest Account feature controls access to channels and other members within the organization. 
 
-An organization may use guest accounts to work on a website project with resources from external design firm.  Or guest accounts could be used to collaborate with customers on a support issue.  
+An organization may use guest accounts to work on a website project with resources from external design firm.  Or Guest accounts could be used to collaborate with customers on a support issue.  
 
 Guests can: 
 1. Pin messages to channels
