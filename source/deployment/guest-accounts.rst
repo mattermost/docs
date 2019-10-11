@@ -10,7 +10,7 @@ Guest Accounts are a new role within Mattermost Enterprise editions which allow 
 An organization may use guest accounts to work on a website project with resources from external design firm.  Or guest accounts could be used to collaborate with customers on a support issue.  
 
 Guests can: 
-1. Pin messages to channels.
+1. Pin messages to channels
 2. Use slash commands (with the exception of those used to invite members)
 3. Favorite channels
 4. Mute channels
