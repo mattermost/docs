@@ -126,6 +126,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /deployment/certificate-based-authentication*
    /deployment/advanced*
    /deployment/permissions-backend*
+   /deployment/guest-accounts*
 
 Administration
 ----------------------------
