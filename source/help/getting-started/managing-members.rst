@@ -93,7 +93,7 @@ If someone you want to add to your team already has an account on the server, yo
 User Roles
 ----------
 
-There are six types of user roles with different permission levels in Mattermost: System Admins, Team Admins, Channel Admins, Members, and Inactive accounts. To view a list of users on the team and what their roles are, Team Admins can go to the three dot **Main Menu** and select **Manage Members**.
+There are six types of user roles with different permission levels in Mattermost: System Admins, Team Admins, Channel Admins, Members, Guests, and Inactive accounts. To view a list of users on the team and what their roles are, Team Admins can go to the three dot **Main Menu** and select **Manage Members**.
 
 Member
 ~~~~~~
