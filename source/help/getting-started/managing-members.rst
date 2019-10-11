@@ -152,7 +152,7 @@ Guests can:
 Guests cannot: 
 - Discover public channels
 - Join open teams
-- Create direct messages or group messages with members who aren’t within the same channel.
+- Create direct messages or group messages with members who aren’t within the same channel
 
 User With Personal Access Token Permission
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
