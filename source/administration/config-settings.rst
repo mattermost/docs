@@ -75,7 +75,7 @@ Settings for managing users, user access, and permissions.
 
 Users
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-View and manage active and inactive users. Also provides the ability the admin to revoke all user sessions. 
+View and manage active and inactive users, and revoke all user sessions. 
 
 Teams (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
