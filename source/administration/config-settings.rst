@@ -75,9 +75,21 @@ Settings for managing users, user access, and permissions.
 
 Users
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-View and manage active and inactive users. 
+View and manage active and inactive users. Also provides the ability the admin to revoke all user sessions. 
 
-Groups
+Teams (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E20*
+
+Manage group sychronization on teams. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
+
+Channels (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E20*
+
+Manage group sychronization on channels. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
+
+Groups (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
