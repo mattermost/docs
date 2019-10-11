@@ -25,12 +25,9 @@ Enabling Guest Accounts
 -----------------------------------
 To enable Guests Accounts: 
 1. Navigate to **System Console > Authentication > Guest Access**.
-
 2. Update **Enable Guest Access** to ”True”
-
 3. **Whitelist domains that are acceptable for Guest Access** (Optional).  
 - This allows the System Administrators to set a list of approved guest domains If you have team domain restrictions, you will also need to add your guest domain to **Team Settings > Allow only users with a specific email domain to join this team**.
-
 4. **Enforce Multi-Factor Authentication (MFA) for your Guests** (Optional)
 - If you are enforcing MFA for your users, you can optionally choose to enforce MFA for your guest users. 
 
@@ -54,6 +51,8 @@ To invite guests into one or more Mattermost channels
 4. Choose the channels the guest can join. 
 5. (Optional) Enter a custom message.
 
+.. image:: ../images/Guest_Invite_Screen.png
+
 Guest Permission Settings 
 ---------------------------------------
 
@@ -69,6 +68,8 @@ Guest Identification
 Guess are identified with a guest badge. This badge is visible in various places on the interface and mobile apps such as on a guest’s profile and next to their name on user lists, including at mentions and quick switcher lists. When guests are added to a channel, a system message informs other channel members that the added user is a guest. 
 
 Channels that contain guests will have their header automatically updated with a message stating: *This channel has guests*.
+
+.. image:: ../images/Guest_Badges.png
 
 Managing Guests
 -------------------------
