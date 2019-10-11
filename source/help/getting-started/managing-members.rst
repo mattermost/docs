@@ -26,7 +26,7 @@ Direct invites are invitation emails sent from your team's server directly to th
 1. Click your username, at the top of the Navigation Panel.
 2. Click **Invite People**. 
 3. If there is a option to invite members and guests, choose **Invite Guests**.  
-4. In the **Invite People** type an email for the guest you want to add. You can add multiple emails to invite more than one guest.
+4. In the **Invite People** field add the email address of guest you want to add. You can add multiple email addresses to invite more than one guest.
 5. Specify the channels the guest will have access to.
 6. [Optional] Add a custom message to be included in the invitation to the guest. 
 5. Click **Invite Guests**. 
