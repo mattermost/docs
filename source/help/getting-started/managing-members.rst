@@ -13,7 +13,7 @@ Additionally as of version 5.16, your System Admin can enable guest access to yo
 Direct Invites
 ~~~~~~~~~~~~~~
 
-Direct invites are invitation emails sent from your team's server directly to the invited person's email address. A link within the invitation directs them to an account creation page. Invitation links sent by email expire after 48 hours and can be used only one time. A System Admin can invalidate all active invitation links via **System Console > Security > Sign Up > Invalidate pending email invites** in prior versions or **System Console** > **Authentication** > **Signup** > **Invalidate pending email invites** in versions after 5.12.
+Direct invites are invitation emails sent from your team's server directly to the invited person's email address. A link within the invitation directs them to an account creation page. Invitation links sent by email expire after 48 hours and can be used only one time. A System Administrator can invalidate all active invitation links via **System Console > Authentication > Signup > Invalidate pending email invites** or, in versions prior to 5.12, **System Console > Security > Sign Up > Invalidate pending email invites**.
 
 **To send a direct invite**:
 1. Click your username, at the top of the Navigation Panel.
