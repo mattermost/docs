@@ -90,7 +90,7 @@ Promoting and Demoting User Roles
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 System Administrators can demote a *Member* to *Guest* by updating their role in **System Console > User Management > Users**. The demoted user will retain their existing channel and team memberships but will be restricted from discovering public channels and collaborating with users outside of the channels they are in.  This is useful if you are already collaborating with external contractors and want to restrict their abilities within your Mattermost instance. 
 
-System Administrators can also promote a *guest* to *member* by updating their role in **System Console > User Management > Users**.  
+System Administrators can also promote a *Guest* to *Member* by updating their role in **System Console > User Management > Users**.  
 
 Note: You can filter the list in **System Console >  User Management > Users** to view all guests on the system. 
 
