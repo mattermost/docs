@@ -19,7 +19,7 @@ Guests can:
 Guests cannot: 
 1.  Discover public channels
 2.  Join open teams
-3.  Create direct messages or group messages with members who aren’t within the same channel.
+3.  Create direct messages or group messages with members who aren’t within the same channel
 
 Enabling Guest Accounts
 -----------------------------------
