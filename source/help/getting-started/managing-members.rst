@@ -66,7 +66,7 @@ Adding Someone to Your Team
 
 If someone you want to add to your team already has an account on the server, you can add them to your team without sending an invitation.
 
-**To add someone to your team**:
+**To add someone to your team**
 1. Click your username, at the top of the Navigation Panel.
 2. Click **Invite People**. 
 3. If there is a option to invite members and guests, choose **Invite Members**.  
