@@ -61,7 +61,7 @@ In E10 and E20, you can also control which users can invite guests. By default, 
  - Edit posts
  - Delete posts
  - Post reactions
- - Create private channels with members they are allowed to collaborate with. 
+ - Create private channels with members they are allowed to collaborate with
 
 Guest Identification
 ---------------------------
