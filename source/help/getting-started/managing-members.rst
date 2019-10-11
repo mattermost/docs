@@ -87,7 +87,7 @@ If someone you want to add to your team already has an account on the server, yo
 5. Click **Invite Guests**. 
 
 .. note:: 
-   If you aren't able to see the **Invite Guests** option, confirm with your System Admin that you have the correct permissions.
+   If you aren't able to see the **Invite Guests** option, confirm with your System Administrator that you have the correct permissions.
 
 **To add someone to your team in versions prior to 5.16**
 
