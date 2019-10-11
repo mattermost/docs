@@ -25,8 +25,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Plugin Marketplace
  - The integrations marketplace is built into the product and gives system administrators the ability to discover and install Mattermost plugins that are compatible with the server version you are running.  
 
-#### Improved team/channel management
- - Provides LDAP group sync within Mattermost which allows administrators a convenient way to assign end-users to channel and teams in initial onboarding.
+#### Improved user management 
+ - System Administrators can view a user's team memberships and add a user to additional teams from the System Console without having to be a member of the team.
 
 ### Improvements
 
@@ -68,10 +68,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Improved quick switcher experience to make the autocomplete feel more like a modal rather than a dropdown.
 
 #### Administration
- - Added the ability for system admins to revoke all sessions from all users.
+ - Added the ability for System Administrators to revoke all sessions from all users.
  - Added support for System Administrators to make public channels private and private channels public within the **System Console > User Management > Channel Configuration** page.
  - Added user Id information in the **System Console > Users** page.
  - Updated System Console plugin settings page to expose enable/disable setting.
+ - Added ability for System Administrators to view a user's team memberships and add users to additional teams within **System Console > User Management > User Configuration**.
  
 ### Bug Fixes
  - Fixed an issue where user count did not update if a user automatically joined a channel.
