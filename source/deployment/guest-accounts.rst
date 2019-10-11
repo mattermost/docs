@@ -10,16 +10,18 @@ Guest Accounts are a new role within Mattermost Enterprise editions which allow 
 An organization may use guest accounts to work on a website project with resources from external design firm.  Guest accounts could also be used to collaborate with customers on a support issue.
 
 Guests can: 
-1. Pin messages to channels
-2. Use slash commands (with the exception of those used to invite members)
-3. Favorite channels
-4. Mute channels
-3. Update their account settings
+
+- Pin messages to channels
+- Use slash commands (with the exception of those used to invite members)
+- Favorite channels
+- Mute channels
+- Update their account settings
 
 Guests cannot: 
-1.  Discover public channels
-2.  Join open teams
-3.  Create direct messages or group messages with members who aren’t within the same channel
+
+- Discover public channels
+- Join open teams
+- Create direct messages or group messages with members who aren’t within the same channel
 
 Enabling Guest Accounts
 -----------------------------------
