@@ -41,7 +41,7 @@ Inviting Guests to the Mattermost Server
 ------------------------------------------------------
 Guests can be invited into one for more Mattermost channels within a team by System Administrators and roles that have the **Invite Guest** permission. 
 
-Note: Guest invitations will be revoked after 48 hours per the member email invitation process. If your guest has not accepted the invitation in the time window, please follow the steps below to resend an invitation to the guest again. 
+**Note:** Guest invitations will be revoked after 48 hours per the member email invitation process. If your guest has not accepted the invitation in the time window, please follow the steps below to resend an invitation to the guest again. 
 
 To invite guests into one or more Mattermost channels
 
