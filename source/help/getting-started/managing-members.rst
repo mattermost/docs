@@ -135,7 +135,7 @@ The System Admin is typically a member of the IT staff and has all the privilege
 - Ability to deactivate user accounts and to reactivate them
 - Access to private channels, but only if given the link to the private channel
 
-A System Admin can view and manage users in **System Console > Users**. They can search users by name, filter users by teams and filter to view other System Admins as well as inactive users.  
+A System Admin can view and manage users in **System Console > Users**. They can search users by name, filter users by teams, and filter to view other System Admins as well as inactive users.  
 
 Guest
 ~~~~~~~
