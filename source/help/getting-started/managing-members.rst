@@ -70,7 +70,7 @@ If someone you want to add to your team already has an account on the server, yo
 1. Click your username, at the top of the Navigation Panel.
 2. Click **Invite People**. 
 3. If there is an option to invite members and guests, choose **Invite Members**.  
-4. In the **Invite People** search for the person you want to add. If the people you want to add are not on the list, then they do not have an account on your server.  
+4. In the **Invite People** menu search for the person you want to add. If the people you want to add are not on the list, then they do not have an account on your server.  
 5. Click **Invite Members**. 
 
 **To add existing guests to your team**:
