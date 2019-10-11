@@ -109,7 +109,7 @@ Guests are charged as a user seat.
 
 Why doesn’t Mattermost Have Single-Channel Guests? 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-We wanted to support collaboration with external guests in the broadest use cases without limiting how many channels you could assign a guest to. In the future, we may consider adding single-channel guests. 
+We wanted to support collaboration with external guests for the broadest use cases without limiting guests' access to channels. In the future, we may consider adding single-channel guests. 
 
 
 Can I Set an Expiration Date for Guests? 
