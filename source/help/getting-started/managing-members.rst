@@ -77,7 +77,7 @@ If someone you want to add to your team already has an account on the server, yo
 1. Click your username, at the top of the Navigation Panel.
 2. Click **Invite People**. 
 3. If there is a option to invite members and guests, choose **Invite Guests**.  
-4. In the **Invite People** search for the guest you want to add. If the people you want to add are not on the list, then they do not have an account on your server.  
+4. In the **Invite People** menu search for the guest you want to add. If the people you want to add are not on the list, then they do not have an account on your server.  
 5. Specify the channels the guest will have access to.
 5. Click **Invite Guests**. 
 
