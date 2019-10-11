@@ -2589,6 +2589,19 @@ It is recommended to use ``"https://login.microsoftonline.com/common/oauth2/v2.0
 | This feature's ``config.json`` setting is ``"TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token"`` with string input.                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Guest Access (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable Guest Access
+^^^^^^^^^^^^^^^^^^^
+
+**True**: Allow guest invitations to channels within teams.  Please see Guest documenation for more information. 
+
+**False**: Email signup is disabled. This limits signup to single sign-on services like OAuth or AD/LDAP.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSignUpWithEmail": true`` with options ``true`` and ``false``.                                                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 Plugins (Beta)
 --------------------------------
 Settings to configure plugins.
