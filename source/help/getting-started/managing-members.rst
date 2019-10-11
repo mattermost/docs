@@ -19,7 +19,7 @@ Direct invites are invitation emails sent from your team's server directly to th
 1. Click your username, at the top of the Navigation Panel.
 2. Click **Invite People**. 
 3. If there is a option to invite members and guests, choose **Invite Members**.  
-4. In the **Invite People** type an email for the person you want to add. 
+4. In the **Invite People** field add the email address of the person you want to add. 
 5. Click **Invite Members**. 
 
 **To send a invite to a Guest**:
