@@ -32,7 +32,7 @@ Direct invites are invitation emails sent from your team's server directly to th
 5. Click **Invite Guests**. 
 
 .. note:: 
-   You need the permission to invite guests to see the **Invite Guest** option.
+   If you aren't able to see the **Invite Guests** option, confirm with your System Admin that you have the correct permissions.
 
 **To send a direct invite in versions prior to 5.16**:
 
