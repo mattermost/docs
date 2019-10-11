@@ -43,7 +43,7 @@ Guests can be invited into one for more Mattermost channels within a team by Sys
 
 **Note:** Guest invitations will be revoked after 48 hours per the member email invitation process. If your guest has not accepted the invitation in the time window, please follow the steps below to resend an invitation to the guest again. 
 
-To invite guests into one or more Mattermost channels
+To invite guests into one or more Mattermost channels:
 
 1. Navigate to **Main Menu > Invite People**.  This is a new invitation option that combines inviting guests and members and consolidates **Send Email**, **Get Team Invite Link**, and **Add Members to the Team**. 
 2. Select **Invite Guests**.
