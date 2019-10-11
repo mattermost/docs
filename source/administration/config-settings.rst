@@ -2595,13 +2595,35 @@ Guest Access (Beta)
 Enable Guest Access
 ^^^^^^^^^^^^^^^^^^^
 
-**True**: Allow guest invitations to channels within teams.  Please see Guest documenation for more information. 
+**True**: Allow guest invitations to channels within teams.  Please see `Guest Accounts documenation <>`_ for more information. 
 
 **False**: Email signup is disabled. This limits signup to single sign-on services like OAuth or AD/LDAP.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSignUpWithEmail": true`` with options ``true`` and ``false``.                                                     |
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``.                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Whitelisted Guest Domains
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When populated, guest accounts can only be created by a verified email from this list of comma-separated domains.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input.                                                                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enforce Multi-factor Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This setting defaults to false and is read-only if multi-factor authentication is not enforced for regular users.
+
+**True**: When true, multi-factor authentication (MFA) is required for login. New guest users will be required to configure MFA on sign-up. Logged in guest users without MFA configured are redirected to the MFA setup page until configuration is complete.  
+
+**False**: Multi-factor authentication for guests is optional.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false``.                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Plugins (Beta)
 --------------------------------
 Settings to configure plugins.
