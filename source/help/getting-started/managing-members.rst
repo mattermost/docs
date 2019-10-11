@@ -55,7 +55,7 @@ The team invite link is a unique URL that directs people to an account creation 
 3. If there is an option to invite members and guests, choose **Invite Members**. 
 4. Click  **Copy Link** button to save the URL to your clipboard and share it with those you want to invite to the team. 
 
-**To get a team invite link in versions prior to 5.16**:
+**To get a team invite link in versions prior to 5.16**
 
 1. Click your username, at the top of the Navigation Panel.
 2. Click **Get Team Invite Link**.
