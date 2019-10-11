@@ -1,13 +1,16 @@
 .. _desktop-msi-gpo:
 
-Desktop MSI Installer and Group Policy Installation Guides (Alpha)
+Desktop MSI Installer and Group Policy Installation Guides (Beta) 
 ==================================================================
-The Mattermost desktop app MSI installer and Group Policy (GPO) definitions are currently in Alpha testing, packaged in v4.3.0-rc0. This guide provides steps to test the installer and Group Policies using the test build available `here <https://github.com/mattermost/desktop/releases/tag/v4.3.0-rc0>`_.
+This guide provides steps to install the MSI and use Group Policies in Windows Pro or Enterprise. The MSI installer package can be downloaded `here <https://github.com/mattermost/desktop/releases/tag/v4.3.0>`_. 
+
+.. note::
+    The Mattermost MSI installer and Group Policy (GPO) definitions are in Beta with v4.3.0. If you are using this installer or GPOs and have feedback, please let us know in the `MSI Installer channel on our Community server <https://community-release.mattermost.com/core/channels/msi-installer>`_. 
 
 .. contents::
     :backlinks: top
 
-Guide for testing Desktop v4.3.0-rc0 locally
+Installation Guide
 --------------------------------------------
 
 Download Group Policy and MSI Installer files
@@ -21,16 +24,16 @@ Download Group Policy and MSI Installer files
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00002.png
 
-3. Navigate to the release page for `version v4.3.0-rc0 <https://github.com/mattermost/desktop/releases/tag/v4.3.0-rc0>`__ and download the appropriate installer for your version of Windows (32bit vs. 64bit).
+3. Navigate to the release page for `version v4.3.0 <https://github.com/mattermost/desktop/releases/tag/v4.3.0>`__ and download the appropriate installer for your version of Windows (32bit vs. 64bit).
 
-4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v4.3.0-rc0.zip>`__ file as well to extract group policy files.
+4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v4.3.0.zip>`__ file as well to extract group policy files.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00003.png
 
 Installing Group Policy files locally
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Browse to the folder the above files were downloaded to and unzip the ``desktop-4.3.0-rc0.zip`` file in place.
+1. Browse to the folder the above files were downloaded to and unzip the ``desktop-4.3.0.zip`` file in place.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00004.png
 
