@@ -31,7 +31,7 @@ To enable Guests Accounts:
 2. Update **Enable Guest Access** to ”True”.
 3. (Optional) **Whitelist domains that are acceptable for Guest Access**.  
  - This allows the System Administrators to set a list of approved guest domains. If you have team domain restrictions, you will also need to add your guest domain to **Team Settings > Allow only users with a specific email domain to join this team**.
-4. **Enforce Multi-Factor Authentication (MFA) for your Guests** (Optional)
+4. (Optional) **Enforce Multi-Factor Authentication (MFA) for your Guests**.
  - If you are enforcing MFA for your users, you can optionally choose to enforce MFA for your guest users. 
 
 Guest Authentication
