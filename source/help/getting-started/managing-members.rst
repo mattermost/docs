@@ -145,7 +145,7 @@ A System Admin can view and manage users in **System Console > Users**. They can
 Guest
 ~~~~~~~
 
-Guests are a role with restricted permissions, which allow organizations to collaborate with users outside of their organization and control what channels they are in an who they can collaborate with. 
+Guest is a role with restricted permissions, which allow organizations to collaborate with users outside of their organization, and control what channels they are in and who they can collaborate with. 
 
 Guests can: 
 
