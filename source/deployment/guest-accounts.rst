@@ -42,7 +42,7 @@ SAML 2.0 and AD/LDAP authentication will be provided in a future release.
 
 Inviting Guests to the Mattermost Server
 ------------------------------------------------------
-Guests can be invited into one for more Mattermost channels within a team by System Administrators and roles that have the **Invite Guest** permission. 
+Guests can be invited into one for more Mattermost channels within a team by System Administrators and roles that have the **Invite Guest** permission. A guest can also be invited into channels on multiple teams. 
 
 **Note:** Guest invitations will be revoked after 48 hours per the member email invitation process. If your guest has not accepted the invitation in the time window, please follow the steps below to resend an invitation to the guest again. 
 
