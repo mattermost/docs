@@ -149,7 +149,7 @@ Guest is a role with restricted permissions, which allow organizations to collab
 
 Guests can: 
 
-- Pin messages to channels.
+- Pin messages to channels
 - Use slash commands (with the exception of those used to invite members)
 - Favorite channels
 - Mute channels
