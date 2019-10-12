@@ -117,7 +117,7 @@ The following is a list of custom Mattermost metrics that can be used to monitor
 
 API Metrics:
 
-    - ``mattermost_api_total``: The total time in seconds to execute a given API handler.
+    - ``mattermost_api_time``: The total time in seconds to execute a given API handler.
 
 Caching Metrics:
 
