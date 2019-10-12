@@ -59,7 +59,7 @@ To invite guests into one or more Mattermost channels:
 Guest Permission Settings 
 ---------------------------------------
 
-In E10 and E20, you can also control which users can invite guests. By default, only the System Administrator can invite guests. There are additional permissions in E20 that can be adjusted under **System Console > Advanced Permissions > System Scheme** to control a guest’s ability to:  
+In E10 and E20, you can also control which users can invite guests. By default, only the System Administrator can invite guests. There are `additional permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`_ in E20 that can be adjusted under **System Console > Advanced Permissions > System Scheme** to control a guest’s ability to:  
 
  - Edit posts
  - Delete posts
