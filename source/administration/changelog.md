@@ -746,8 +746,8 @@ Thank you to everyone who contributed to the Mattermost project in March 2019!
 
 Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-- **v5.9.5, release day TBD**  
-  - Fixing an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
+- **v5.9.5, released 2019-10-12**  
+  - Fixed an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
 - **v5.9.4, released 2019-08-22** 
   - Mattermost v5.9.4 contains a medium level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.9.3, released 2019-07-19** 
