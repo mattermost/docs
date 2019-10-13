@@ -45,6 +45,8 @@ If someone you want to add to your team already has an account on the server, yo
 2. Click **Add Members to Team**. The *Add New Members* window opens.
 3. Click the username of the person or people to add to your team. You can type in the search box to filter the list. If the people you want to add are not on the list, then they are either already on your team or they do not have an account on your server.
 
+Note: System Administrators can view and add team membership to individual users on the user profile page (**System Console > Users > User Profile**) by clicking "Add Team"
+
 User Roles
 ----------
 
@@ -127,7 +129,7 @@ When a user is removed from a team, the team will no longer show up in their tea
 
 Removing a user from the team does not deactivate the account. The user will still be able to sign in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to `"Allow any user with an account on this server to join this team" <http://docs.mattermost.com/help/settings/team-settings.html#allow-anyone-to-join-this-team>`__. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
 
-A System Administrator can also remove users from teams by going to **System Console > Users**, and selecting the dropdown beside a user entry and clicking **Manage Teams**.
+A System Administrator can also remove users from teams by going to **System Console > Users**, and selecting the dropdown beside a user entry and clicking **Manage Teams**. The list of teams an individual user belongs to can be viewed on the user's profile page - **System Console > Users > User Profile**.
 
 Leaving a Team
 ~~~~~~~~~~~~~~
@@ -135,3 +137,8 @@ Leaving a Team
 Users can also choose to remove themselves from a team, by going to the three dot **Main Menu > Leave Team**. This will remove the user from the team, and from all public channels and private channels on the team.
 
 They will only be able to rejoin the team if it is set to `"Allow any user with an account on this server to join this team" <http://docs.mattermost.com/help/settings/team-settings.html#allow-anyone-to-join-this-team>`__ team, or if they receive a new invite. If they do rejoin, they will no longer be a part of their old channels.
+
+Obtaining User ID
+ ~~~~~~~~~~~~~~~~~
+
+A unique user ID is sometimes required for configuring certain plugins and other administrative tasks that require identifying specific users. This identifier can be found in both the user list (**System Console > Users**) as well as the individual profile page for each user (**System Console > Users > User Profile**). 
