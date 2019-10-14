@@ -212,9 +212,9 @@ spec:
           readinessProbe:
             exec:
               command:
-                - head
-                - -c1
-                - /dev/random
+                - pgrep
+                - -f
+                - sidekiq
           lifecycle:
             preStop:
               exec:
