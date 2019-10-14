@@ -1,0 +1,5 @@
+---
+title: "Unicorn: set ipWhitelist default to documented value"
+merge_request: 997
+author:
+type: fixed
