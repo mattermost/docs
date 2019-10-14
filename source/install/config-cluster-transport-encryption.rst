@@ -77,7 +77,7 @@ As a next step, allow SSH access from each of the other member nodes, e.g.:
 - mattermost2 allows from mattermost1 and mattermost3
 - mattermost3 allows from mattermost1 and mattermost2
 
-To do so, we add an exception in the firewall. The commands for mattermost1 look as
+To do so, we add an exception in the firewall. The commands for ``mattermost1`` look as
 follows:
 ```
 $ sudo ufw allow from 10.10.250.231/32 to any port ssh
