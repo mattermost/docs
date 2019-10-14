@@ -184,7 +184,7 @@ Afterwards, we set the executable bit on the shell script:
 $ chmod +x /opt/mattermost/bin/pre_start.sh
 ```
 
-Open the systemd unit file of Mattermost and search for `Type=Notify`, after it enter
+Open the systemd unit file of Mattermost and search for ``Type=Notify``, after it enter
 a ``ExecStartPre`` script that will be executed before Mattermost itself is started:
 ```
 [Service]
