@@ -185,7 +185,7 @@ $ chmod +x /opt/mattermost/bin/pre_start.sh
 ```
 
 Open the systemd unit file of Mattermost and search for `Type=Notify`, after it enter
-a `ExecStartPre` script that will be executed before Mattermost itself is started:
+a ``ExecStartPre`` script that will be executed before Mattermost itself is started:
 ```
 [Service]
 Type=notify
