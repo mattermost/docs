@@ -56,7 +56,7 @@ SHA256:redacted mattermost@transport-encryption-mattermost1
 The location of the SSH key itself is irrelevant if company policies require
 the usage of another storage location.
 
-Next, ensure that the SSH public key of each node is added to `authorized_keys`
+Next, ensure that the SSH public key of each node is added to ``authorized_keys``
 file of the other nodes of the cluster. To do so, copy the contents of ``/home/mattermost/.ssh/id_rsa.pub``
 of node 2 and 3, and add it to ``/home/mattermost/.ssh/authorized_keys`` of node 1.
 
