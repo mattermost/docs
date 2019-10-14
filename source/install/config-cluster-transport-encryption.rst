@@ -96,7 +96,7 @@ To                         Action      From
 ```
 
 Repeat the same steps on the other nodes, but replacing the IPs with the ones from the
-other member nodes. Do so for each membernode, excluding the node itself.
+other member nodes. Do so for each member node, excluding the node itself.
 
 As a next step, open ``/etc/ufw/after.rules`` and add the following block to the
 bottom of the file:
