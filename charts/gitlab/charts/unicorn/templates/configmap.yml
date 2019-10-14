@@ -168,7 +168,7 @@ data:
       webpack:
       monitoring:
         ip_whitelist:
-          {{- if kindIs "array" .Values.monitoring.ipWhitelist }}
+          {{- if kindIs "slice" .Values.monitoring.ipWhitelist }}
           {{ toYaml .Values.monitoring.ipWhitelist | nindent 10 | trim }}
           {{- end }}
         sidekiq_exporter:
