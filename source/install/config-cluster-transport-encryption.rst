@@ -165,7 +165,7 @@ SSH Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 As a next step, we will ensure that the SSH tunnels are created as part of the Mattermost service
-start. To do so, create a file called `pre_start.sh` in `/opt/mattermost/bin` on `mattermost1`:
+start. To do so, create a file called ``pre_start.sh`` in ``/opt/mattermost/bin`` on ``mattermost1``:
 ```
 #!/bin/bash
 ssh -N -f -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -L 18075:10.10.250.231:8075 10.10.250.231 || true
