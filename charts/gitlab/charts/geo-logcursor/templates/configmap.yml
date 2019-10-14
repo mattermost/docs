@@ -38,6 +38,7 @@ data:
       #   hosts:
       #     - host1.example.com
       #     - host2.example.com
+      fdw: true
   {{- include "gitlab.geo.psql.ssl.config" . | nindent 6 }}
   smtp_settings.rb: |
 {{ include "gitlab.smtp_settings" . | indent 4 }}
@@ -84,11 +85,13 @@ data:
         ssl_url: {{ .gravatar.sslUrl }}
 {{ include "gitlab.appConfig.extra" . | indent 6 }}
       {{- end }}
-      {{- include "gitlab.appConfig.artifacts.configuration" (dict "config" $.Values.global.appConfig.artifacts "context" $) | nindent 6 }}
-      {{- include "gitlab.appConfig.lfs.configuration" (dict "config" $.Values.global.appConfig.lfs "context" $) | nindent 6 }}
-      {{- include "gitlab.appConfig.uploads.configuration" (dict "config" $.Values.global.appConfig.uploads "context" $) | nindent 6 }}
-      {{- include "gitlab.appConfig.packages.configuration" (dict "config" $.Values.global.appConfig.packages "context" $) | nindent 6 }}
-      {{- include "gitlab.appConfig.external_diffs.configuration" (dict "config" $.Values.global.appConfig.externalDiffs "context" $) | nindent 6 }}
+      ## Object storage not needed by geo-logcursor
+      artifacts:
+      lfs:
+      uploads:
+      packages:
+      external_diffs:
+
       pages:
         enabled: false
       mattermost:
@@ -97,8 +100,13 @@ data:
       kerberos:
         enabled: false
       shared:
-{{ include "gitlab.appConfig.gitaly" . | indent 6 }}
-{{ include "gitlab.appConfig.repositories" . | indent 6 }}
+      ## Gitaly configuratin is _stubbed_, not used by geo-logcursor
+      gitaly:
+        client_path: /home/git/gitaly/bin
+        token:
+      repositories:
+        storages: # You must have at least a `default` storage path.
+          {"default":{"path":"/srv/gitlab/git-data/repositories","gitaly_address":"unix:/srv/gitlab/gitaly/gitaly.socket"}}
       backup:
         path: "tmp/backups"   # Relative paths are relative to Rails.root (default: tmp/backups/)
       monitoring:
@@ -106,7 +114,7 @@ data:
           - 0.0.0.0/0
         sidekiq_exporter:
   configure: |
-    {{- include "gitlab.scripts.configure.secrets" (dict) | nindent 4 -}}
+    {{- include "gitlab.scripts.configure.secrets" (dict "required" "redis postgres rails-secrets" "optional" "none") | nindent 4 -}}
     {{- include "gitlab.psql.ssl.initScript" . | nindent 4 }}
 # Leave this here - This line denotes end of block to the parser.
 {{- end -}}

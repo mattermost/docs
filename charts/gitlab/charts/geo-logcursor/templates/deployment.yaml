@@ -88,6 +88,8 @@ spec:
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
               value: '/srv/gitlab/config'
+            - name: DB_SCHEMA_TARGET
+              value: 'geo'
           volumeMounts:
 {{ include "gitlab.extraVolumeMounts" . | indent 12 }}
             - name: logcursor-config
