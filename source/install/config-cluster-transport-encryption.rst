@@ -127,7 +127,7 @@ Two lines always belong to a single node, so in a deployment with 4 nodes:
 ```
 
 Please be aware that the ports on the right side must be unique, so if having a cluster of
-6 nodes use 8075 and 8074 with 1 to 5 in front of it. If the cluster is of bigger size additional
+6 nodes, use 8075 and 8074 with 1 to 5 in front of it. If the cluster is of bigger size, additional
 ports must be used.
 
 Ensure that your operating system has IP forwarding enabled using the following command:
