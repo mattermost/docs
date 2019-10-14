@@ -1334,7 +1334,7 @@ mattermost sampledata
     .. versionadded:: 4.7
       Generate sample data and populate the Mattermost database. Supported in Mattermost v4.7 and later.
 
-      The command generates one user as the System Administrator with a username ``sysadmin`` and password ``Sys@dmin-sample1``. Other users are generated following an index, e.g. with username ``user-1`` and password ``SampleUs@r-%1``.
+      The command generates one user as the System Administrator with a username ``sysadmin`` and password ``Sys@dmin-sample1``. Other users are generated following an index, e.g. with username ``user-1`` and password ``SampleUs@r-1``.
 
   Format
     .. code-block:: none
