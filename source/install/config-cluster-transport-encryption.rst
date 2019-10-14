@@ -34,7 +34,7 @@ Preparations
 
 - Connect to each Mattermost server with a sudo or root user
 - Make a note of the IP from each cluster member used for the internal communication
-- Ensure `AllowTcpForwarding` is enabled in `/etc/ssh/sshd_config` of each cluster node
+- Ensure ``AllowTcpForwarding`` is enabled in ``/etc/ssh/sshd_config`` of each cluster node
 
 SSH Authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
