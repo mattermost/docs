@@ -126,7 +126,7 @@ Two lines always belong to a single node, so in a deployment with 4 nodes:
 -A OUTPUT -p tcp -d ip_node_4 --dport 8074 -j DNAT --to-destination 127.0.0.1:38074
 ```
 
-Please be aware that the ports on the right side must be unique, so if having a cluster of
+Please be aware that the ports on the right side must be unique, so if you have a cluster of
 6 nodes, use 8075 and 8074 with 1 to 5 in front of it. If the cluster is of bigger size, additional
 ports must be used.
 
