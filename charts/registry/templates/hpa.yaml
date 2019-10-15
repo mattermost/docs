@@ -11,11 +11,15 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: {{ template "fullname" . }}
-  minReplicas: {{ .Values.minReplicas }}
-  maxReplicas: {{ .Values.maxReplicas }}
+  minReplicas: {{ .Values.hpa.minReplicas }}
+  maxReplicas: {{ .Values.hpa.maxReplicas }}
   metrics:
-  - type: Resource
-    resource:
-      name: cpu
-      targetAverageUtilization: 75
+  {{- if not .Values.hpa.customMetrics }}
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: {{ .Values.hpa.cpu.targetAverageUtilization }}
+  {{- else -}}
+    {{- toYaml .Values.hpa.customMetrics | nindent 4 -}}
+  {{- end -}}
 {{- end -}}

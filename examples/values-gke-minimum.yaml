@@ -64,7 +64,8 @@ gitlab:
   task-runner:
     enabled: false
 registry:
-  minReplicas: 1
+  hpa:
+    minReplicas: 1
 certmanager:
   resources:
     requests:

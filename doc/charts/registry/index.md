@@ -61,7 +61,11 @@ registry:
   deployment:
     terminationGracePeriodSeconds: 30
   draintimeout: '0'
-  replicas: 1
+  hpa:
+    minReplicas: 2
+    maxReplicas: 10
+    cpu:
+      targetAverageUtilization: 75
   storage:
     secret:
     key: storage
@@ -106,6 +110,10 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 | `deployment.terminationGracePeriodSeconds` | `30`                                         | Optional duration in seconds the pod needs to terminate gracefully.                                  |
 | `draintimeout`                             | `'0'`                                        | Amount of time to wait for HTTP connections to drain after receiving a SIGTERM signal (e.g. `'10s'`) |
 | `enabled`                                  | `true`                                       | Enable registry flag                                                                                 |
+| `hpa.cpu.targetAverageUtilization`         | `75`                                         | Target value of the average of the resource metric across all relevant pods which governs the HPA    |
+| `hpa.customMetrics`                        | `[]`                                         | autoscaling/v2beta1 Metrics contains the specifications for which to use to calculate the desired replica count (overrides the default use of Average CPU Utilization configured in `targetCPUUtilization`) |
+| `hpa.minReplicas`                          | `2`                                          | Minimum number of replicas                                                                           |
+| `hpa.maxReplicas`                          | `10`                                         | Maximum number of replicas                                                                           |
 | `httpSecret`                               |                                              | Https secret                                                                                         |
 | `image.pullPolicy`                         |                                              | Pull policy for the registry image                                                                   |
 | `image.pullSecrets`                        |                                              | Secrets to use for image repository                                                                  |
@@ -116,7 +124,6 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 | `log`                                      | `{level: warn, fields: {service: registry}}` | Configure the logging options                                                                        |
 | `minio.bucket`                             | `global.registry.bucket`                     | Legacy registry bucket name                                                                          |
 | `maintenance.readOnly.enabled`             | `false`                                      | Enable registry's read-only mode                                                                     |
-| `replicas`                                 | `1`                                          | Number of replicas                                                                                   |
 | `tokenService`                             | `container_registry`                         | JWT token service                                                                                    |
 | `tokenIssuer`                              | `gitlab-issuer`                              | JWT token issuer                                                                                     |
 | `tolerations`                              | `[]`                                         | Toleration labels for pod assignment                                                                 |
@@ -323,7 +330,7 @@ certificate:
   key: registry-auth.crt
 ```
 
-### compatiblity
+### compatibility
 
 The `compatibility` field is a map relating directly to the configuration file's
 [compatiblity](https://github.com/docker/distribution/blob/master/docs/configuration.md#compatibility)
@@ -361,10 +368,12 @@ The image validation is turned off by default.
 
 To enable image validation you need to explicitly set `registry.validation.disabled: false`.
 
-### replicas
+### hpa
 
-The `replicas` field is an integer, controlling the number of [registry](https://hub.docker.com/_/registry/)
-instances to create as a part of the set. This defaults to `1`.
+The `hpa` field is an object, controlling the number of [registry](https://hub.docker.com/_/registry/)
+instances to create as a part of the set. This defaults to a `minReplicas` value
+of `2`, a `maxReplicas` value of 10, and configures the
+`cpu.targetAverageUtilization` to 75%.
 
 ### storage
 
@@ -410,7 +419,8 @@ kubectl create secret generic registry-storage \
 If you chose to use the `filesystem` driver:
 
 - You will need to provide persistent volumes for this data.
-- [replicas](#replicas) should be set to `1`
+- [hpa.minReplicas](#hpa) should be set to `1`
+- [hpa.maxReplicas](#hpa) should be set to `1`
 
 For the sake of resiliency and simplicity, it is recommended to make use of an
 external service, such as `s3`, `gcs`, `azure` or other compatible Object Storage.
