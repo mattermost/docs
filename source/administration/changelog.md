@@ -17,7 +17,7 @@ Mattermost v5.16.0 contains a low level security fix. [Upgrading](http://docs.ma
  - Support for Internet Explorer (IE11) was removed. Learn more in our [forum post](https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575).
  
 ### Breaking Changes
- - 
+ - The [Mattermost Desktop v4.3.0 release](https://github.com/mattermost/desktop/blob/master/CHANGELOG.md) includes several security-related enhancements, including a change to how desktop notifications are sent from non-secure URLs (http://). Organizations using non-secure Mattermost Servers (http://) will need to update to Mattermost Server versions 5.16.0+, 5.15.1, 5.14.4 or 5.9.5 (ESR) to continue receiving desktop notifications when using Mattermost Desktop v4.3.0 or later.  
 
 ### Highlights
 
