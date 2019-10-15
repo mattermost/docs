@@ -79,6 +79,9 @@ Known Issues
 
 - Users are unable to zoom in/out on the desktop app. This bug will be fixed after a major version upgrade of Electron to v6.0.0.
 - ``CMD+Z`` doesn't undo on the Mac desktop app.
+- Unable to exit full screen Youtube videos.
+- "RIght-click + Copy" does not work.
+- Notifications appear in sequence rather than stacking on Windows.
 
 Contributors
 ~~~~~~~~~~~~~~~
