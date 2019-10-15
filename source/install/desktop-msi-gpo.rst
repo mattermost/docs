@@ -5,7 +5,7 @@ Desktop MSI Installer and Group Policy Installation Guides (Beta)
 This guide provides steps to install the MSI and use Group Policies in Windows Pro or Enterprise. The MSI installer package can be downloaded `here <https://github.com/mattermost/desktop/releases/tag/v4.3.0>`_. 
 
 .. note::
-    The Mattermost MSI installer and Group Policy (GPO) definitions are in Beta with v4.3.0. If you are using this installer or GPOs and have feedback, please let us know in the `MSI Installer channel on our Community server <https://community-release.mattermost.com/core/channels/msi-installer>`_. 
+  The Mattermost MSI installer and Group Policy (GPO) definitions are in Beta with v4.3.0. If you are using this installer or GPOs and have feedback, please let us know in the `MSI Installer channel on our Community server <https://community.mattermost.com/core/channels/msi-installer>`_. 
 
 .. contents::
     :backlinks: top
