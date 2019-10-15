@@ -134,6 +134,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Saving an empty string on Plugin Marketplace URL resets the URL instead of showing an error.
  - Attempting to configure uninstalled plugins get stuck at "Loading..." without timeout.
  - Enabling/disabling guest access in System Console fails.
+ - Negative search filter hypens and occasional random terms are highlighted in search results.
  - Guest users are shown in the list when adding new members to a channel.
  - Switching to an unread channel sometimes gets stuck at "Loading...".
  - System messages may trigger mentions for name collisions.
