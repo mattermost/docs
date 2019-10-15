@@ -44,6 +44,7 @@ to the `helm install` command using the `--set` flags.
 | `service.internalPort`           | `9168`                | gitlab-exporter internal port                          |
 | `service.name`                   | `gitlab-exporter`      | gitlab-exporter service name                           |
 | `service.type`                   | `ClusterIP`           | gitlab-exporter service type                           |
+| `tolerations`                    | `[]`                  | Toleration labels for pod assignment                   |
 
 ## Chart configuration examples
 
