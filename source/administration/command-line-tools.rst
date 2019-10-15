@@ -33,6 +33,7 @@ These ``mattermost`` commands include:
 -  Creating sample data
 
 **Diagnostics**
+
 - Analyzing the database for relational consistency  
 
 .. contents::
