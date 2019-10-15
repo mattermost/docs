@@ -1,7 +1,9 @@
 Incident Response Application (EE, Closed Alpha)
 ------------------------------------------------------
 
-Available in closed Alpha, in `Enterprise Edition <https://mattermost.com/pricing/>`_. `Sign up to our closed Alpha program <https://docs.google.com/forms/d/e/1FAIpQLSf4Rr1YnofQQnKHJuL0Cgz_DaCUitt_Atik7K9KXsDefCyXlg/viewform>`_ and shape the direction of the incident response application.
+The incident response application is available in closed Alpha, in `Enterprise Edition <https://mattermost.com/pricing/>`_. 
+
+`Sign up to our Alpha program <https://docs.google.com/forms/d/e/1FAIpQLSf4Rr1YnofQQnKHJuL0Cgz_DaCUitt_Atik7K9KXsDefCyXlg/viewform>`_ and shape the direction of the incident response application!
 
 .. contents:: Contents
   :backlinks: top
@@ -12,12 +14,22 @@ Available in closed Alpha, in `Enterprise Edition <https://mattermost.com/pricin
 
 // TODO: Add a screenshot or a video
 
-2 - How to try it out?
- - sign up for the closed Alpha program (Add some clause that not everyone may be selected to join the program)
- - receive a plugin binary from us
- - install the plugin, then enable
- - use one of these sample workflows to try the plugin in your instance
- - post <trigger word> to start the workflow!
+How can I try the app?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. `Sign up for the closed Alpha program <https://docs.google.com/forms/d/e/1FAIpQLSf4Rr1YnofQQnKHJuL0Cgz_DaCUitt_Atik7K9KXsDefCyXlg/viewform>`_. If you're selected to join the Alpha program, you will receive an email from us with a plugin binary.
+3. Upload the plugin binary in **System Console > Plugins > Plugin Management** `following these steps <https://about.mattermost.com/default-plugin-uploads>`_.
+4. Enable the plugin from the **Installed Plugins** list.
+5. Use `one of these sample app workflows <// TODO Add a link>`_ to try the app. To upload these workflows to your instance:
+ 
+ - save the app workflow schema to a JSON file
+ - go to any Mattermost channel and post ``/workflow edit`` to open the workflow editor
+ - click **Choose .json file** and select the JSON file containing the app workflow schema
+ - click **Upload**
+
+6. Post the trigger word defined in the workflow schmea to start the workflow!
+
+See the documentation below to get help on how to configure and manage your app workflows, or open an issue at https://forum.mattermost.org and we'd be happy to help you.
 
 3 - Supported features
  - triggers
