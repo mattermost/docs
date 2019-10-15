@@ -237,6 +237,51 @@ use initContainers][initContainer-vs-env].
 There are some cases where it is needed to extend the functionality of a chart in
 such a way that an upstream may not accept.
 
+#### When to utilize `toYaml` in templates
+
+It is frowned upon to default to utilizing a `toYaml` in the template files as
+this will put undue burden on supporting all functionalities of both Kuberentes
+and desired community configurations.  We primary focus on providing a
+reasonable default using the bare minimum configuration.  Our secondary focus
+would be to provide the ability to override the defaults for more advanced users
+of Kubernetes.  This should be done on a case-by-case basis as there are
+certainly scenarios where either option may be too cumbersome to support, or
+provides an unnecessarily complex template to maintain.
+
+An good example of a reasonable default with the ability to override can be
+found in the Horizontal Pod Autoscaler configuration for the registry subchart.
+We default to providing the bare minimum that can easily be supported, by
+exposing a specific configuration of controlling the HPA via the CPU Utilization
+and exposing only one configuration option to the community, the
+`targetAverageUtilization`.  Being that an HPA can provide much more
+flexibility, more advanced users may want to target different metrics and as
+such, is a perfect example of where we can utilize and if statement allowing the
+end user to provide a more complex HPA configuration in place.
+
+```yaml
+  metrics:
+  {{- if not .Values.hpa.customMetrics }}
+    - type: Resource
+      resource:
+        name: cpu
+        target:
+          type: Utilization
+          targetAverageUtilization: {{ .Values.hpa.cpu.targetAverageUtilization }}
+  {{- else -}}
+    {{- toYaml .Values.hpa.customMetrics | nindent 4 -}}
+  {{- end -}}
+```
+
+In the above example, the minimum configuration will be a simple change in the
+`values.yaml` to update the `targetAverageUtilization`.
+
+Advanced users who have identified a better metric can override this overly
+simplistic HPA configuration by setting `.customMetrics` to an array containing
+precisely the Kubernetes API compatible configuration for the HPA metrics array.
+
+It is important that we maintain ease of use for the more advanced users to
+minimize their own configuration files without it being cumbersome.
+
 ## Handling configuration deprecations
 
 There are times in a development where changes in behavior require a functionally breaking change. We try to avoid such changes, but some items can not be handled without such a change.

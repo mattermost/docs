@@ -148,7 +148,6 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 | `registry.enabled`             | Enable docker registry              | true                 |
 | `registry.httpSecret`          | Https secret                        |                      |
 | `registry.minio.bucket`        | MinIO registry bucket name          | `registry`           |
-| `registry.replicas`            | Number of replicas                  | `1`                  |
 | `registry.service.annotations` | Annotations to add to the `Service` | {}                   |
 | `registry.tokenIssuer`         | JWT token issuer                    | `gitlab-issuer`      |
 | `registry.tokenService`        | JWT token service                   | `container_registry` |
