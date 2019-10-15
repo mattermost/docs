@@ -23,6 +23,9 @@ metrics:
 
 enabled: true
 
+# Tolerations for pod scheduling
+tolerations: []
+
 init:
   image: busybox
   tag: latest
