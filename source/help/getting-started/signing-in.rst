@@ -111,6 +111,16 @@ You can set your status as online, away, do not disturb, or offline by selecting
   :height: 232px
   :alt: Image of avatar showing the status selection menu with the options online, away, and offline
 
+How Mattermost determines your status
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. csv-table::
+    :header: "Client", "**Online**", "**Away**", "**Offline**"
+
+    "**Desktop App**", "You're interacting with your computer", "You're inactive on your computer for 5 minutes", "You close Mattermost, sleep or lock your computer"
+    "**Web Browser**", "You're interacting with Mattermost in a browser", "You're inactive in the Mattermost browser window for 5 minutes", "You close the Mattermost browser window"
+    "**Mobile App**", "Mattermost is open", "Mattermost is open with 5 minutes of inactivity", "You switch apps, close Mattermost, or lock your screen"
+
 Logging Out
 -----------
 
