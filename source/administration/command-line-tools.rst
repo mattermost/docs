@@ -998,7 +998,7 @@ mattermost integrity
 --------------------
 
   Description
-    Command to check database schema integrity as well as referential integrity of channels, command web hooks, posts, schemes, sessions, users, and teams. This process may temporarily affect live system performance, and should be used during off-peak periods. 
+    Check database schema integrity as well as referential integrity of channels, slash commands, webhooks, posts, schemes, sessions, users, and teams. This process may temporarily affect live system performance, and should be used during off-peak periods. 
     
   Format
     .. code-block:: none
