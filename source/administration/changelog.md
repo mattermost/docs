@@ -14,7 +14,7 @@ Mattermost v5.16.0 contains a low level security fix. [Upgrading](http://docs.ma
 
 #### Removed and Deprecated Features
 
- - We removed support for Internet Explorer (IE11). Learn more in our [forum post](https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575).
+ - Support for Internet Explorer (IE11) was removed. Learn more in our [forum post](https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575).
  
 ### Breaking Changes
  - 
@@ -132,11 +132,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
 ### Known Issues
  - Saving an empty string on Plugin Marketplace URL resets the URL instead of showing an error.
+ - Switching to an unread channel sometimes gets stuck at "Loading...".
  - Attempting to configure uninstalled plugins get stuck at "Loading..." without timeout.
  - Enabling/disabling guest access in System Console fails.
- - Negative search filter hypens and occasional random terms are highlighted in search results.
  - Guest users are shown in the list when adding new members to a channel.
- - Switching to an unread channel sometimes gets stuck at "Loading...".
+ - Negative search filter hypens and occasional random terms are highlighted in search results.
+ - ``@all`` notification is still sent to all users when using TAB to press Cancel on the notification prompt.
  - System messages may trigger mentions for name collisions.
  - Hitting escape to close autocomplete also closes channel header modal.
  - Pressing and holding on teams and channels in the left-hand side opens the context menu on desktop apps.
