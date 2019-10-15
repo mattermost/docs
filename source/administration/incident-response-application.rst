@@ -26,12 +26,12 @@ Available in closed Alpha, in `Enterprise Edition <https://mattermost.com/pricin
  - transitions
  - statistics
 
-Sample Workflow Schema
+Sample Schema
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Below is a full sample workflow schema with a text trigger, four steps and multiple actions including transitions.
+Below is a full sample schema with a text trigger, four steps and multiple actions including transitions.
 
-For other sample workflow schemas, `see here <// TODO Add other samples in https://github.com/mattermost/docs/tree/master/source/samples and link them here. See MM-18870>`_.
+For other sample schemas, `see here <// TODO Add other samples in https://github.com/mattermost/docs/tree/master/source/samples and link them here. See MM-18870>`_.
 
   .. code-block:: json
 
@@ -198,18 +198,50 @@ For other sample workflow schemas, `see here <// TODO Add other samples in https
       }
     ]
 
-Permissions and Management of Workflows
+Permissions and Management of the App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Only System Administrators can edit workflows by uploading a JSON file via the ``/workflow edit`` command. This allows System Administrators to have full control over what workflows are configured in a Mattermost server.
+Only System Administrators can edit the incident response app by uploading a JSON file via the ``/workflow edit`` command. This allows System Administrators to have full control over what app workflows are configured in a Mattermost server.
 
-Later, permissions to allow other users to edit workflows may be supported.
+Later, permissions to allow other users to edit app workflows may be supported.
 
 6 - Roadmap (focus on use cases we plan to support to help paint a vision, instead of features which are likely to change and give narrow idea of future)
 
 <Offer a link for sharing feedback>
 
-7 - Troubleshooting (use examples from this PR: https://github.com/mattermost/mattermost-plugin-workflow/pull/24)
+Troubleshooting
+~~~~~~~~~~~~~~~~~~
 
-<Offer a link to ask for help>
+Below are common error messages and how to resolve them. If you need any further help with configuring the app, let us know at https://forum.mattermost.org and we'd be happy to assist you.
 
+``Error parsing workflow: workflow name must not be blank``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The app workflow name is empty. Please specify a name for the app workflow and try again.
+
+``Error parsing workflow: unable to load triggers``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+One or more of the app workflow triggers are misconfigured. For each trigger, make sure to
+1. define the trigger type as ``text``;
+2. specify a ``match`` or ``match_regex`` for the trigger;
+3. if you specified a ``match_regex`` trigger, confirm the regex is valid.
+
+``Error parsing workflow: ... step name must not be blank``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+At least one of the step names is empty. Please specify a name for the step and try again.
+
+``Error parsing workflow: ... unable to load actions``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+One or more of the app workflow actions are misconfigured. For each action, make sure to
+
+1. define the action type as one of ``add_users_channel``, ``archive_channel``, ``create_channel``, or ``post``;
+2. use the correct JSON for each action type as defined earlier in this document;
+3. confirm the name in ``transition_to`` actions matches the name of another step in the app workflow.
+
+Validation errors
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The incident response app validates template variables used in the app workflow. The error message indicates which specific variable is leading to the error.
