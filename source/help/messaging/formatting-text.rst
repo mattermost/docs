@@ -166,25 +166,23 @@ This can be accomplished in one of two ways:
 To add syntax highlighting, type the language to be highlighted after the ``````` at the beginning of the code block. Mattermost also offers four different code themes (GitHub, Solarized Dark, Solarized Light, Monokai) that can be changed in **Account Settings** > **Display** > **Theme** > **Custom Theme** > **Center Channel Styles**
 
 Supported languages are:
-``as``, ``applescript``, ``osascript``, ``scpt``, ``bash``, ``sh``,
-``zsh``, ``clj``, ``boot``, ``cl2``, ``cljc``, ``cljs``, ``cljs.hl``,
-``cljscm``, ``cljx``, ``hic``, ``coffee``, ``_coffee``, ``cake``,
-``cjsx``, ``cson``, ``iced``, ``cpp``, ``c``, ``cc``, ``h``, ``c++``,
-``h++``, ``hpp``, ``cs``, ``csharp``, ``css``, ``d``, ``di``, ``dart``,
-``delphi``, ``dpr``, ``dfm``, ``pas``, ``pascal``, ``freepascal``,
-``lazarus``, ``lpr``, ``lfm``, ``diff``, ``django``, ``jinja``,
-``dockerfile``, ``docker``, ``erl``, ``fortran``, ``fsharp``, ``fs``,
-``gcode``, ``nc``, ``go``, ``groovy``, ``handlebars``, ``hbs``,
-``html.hbs``, ``html.handlebars``, ``hs``, ``hx``, ``java``, ``jsp``,
-``js``, ``jsx``, ``json``, ``jl``, ``kt``, ``ktm``, ``kts``, ``less``,
-``lisp``, ``lua``, ``mk``, ``mak``, ``md``, ``mkdown``, ``mkd``,
-``matlab``, ``m``, ``mm``, ``objc``, ``obj-c``, ``ml``, ``perl``,
-``pl``, ``php``, ``php3``, ``php4``, ``php5``, ``php6``, ``ps``,
-``ps1``, ``pp``, ``py``, ``gyp``, ``r``, ``ruby``, ``rb``, ``gemspec``,
-``podspec``, ``thor``, ``irb``, ``rs``, ``scala``, ``scm``, ``sld``,
-``scss``, ``st``, ``styl``, ``sql``, ``swift``, ``tex``, ``vbnet``,
-``vb``, ``bas``, ``vbs``, ``v``, ``veo``, ``xml``, ``html``, ``xhtml``,
-``rss``, ``atom``, ``xsl``, ``plist``, ``yaml``
+``applescript``, ``as``, ``atom``, ``bas``, ``bash``, ``boot``, ``_coffee``, ``c++``, 
+``c``, ``cake``, ``cc``, ``cl2``, ``clj``, ``cljc``, ``cljs``, ``cljs.hl``,
+``cljscm``, ``cljx``, ``cjsx``, ``cson``, ``coffee``, ``cpp``, ``cs``, ``csharp``, 
+``css``, ``d``, ``dart``, ``dfm``, ``di``, ``delphi``, ``diff``, ``django``, ``docker``, 
+``dockerfile``, ``dpr``, ``erl``, ``fortran``, ``freepascal``,  ``fs``, ``fsharp``, 
+``gcode``, ``gemspec``, ``go``, ``groovy``, ``gyp``, ``h++``, ``h``, 
+``handlebars``, ``hbs``, ``hic``,  ``hpp``, ``html``, ``html.handlebars``, 
+``html.hbs``, ``hs``, ``hx``, ``iced``, ``irb``,
+``java``, ``jinja``, ``jl``, ``js``, ``json``, ``jsp``, ``jsx``, ``kt``,
+``ktm``, ``kts``, ``lazarus``, ``less``, ``lfm``, ``lisp``, ``lpr``,
+``lua``, ``m``, ``mak``, ``matlab``, ``md``, ``mk``, ``mkd``, ``mkdown``,
+``ml``, ``mm``, ``nc``, ``objc``, ``obj-c``, ``osascript``, ``pas``, ``pascal``,
+``perl``, ``php``, ``php3``, ``php4``, ``php5``, ``php6``, ``pl``, ``plist``,
+``podspec``, ``ps``, ``ps1``, ``pp``, ``py``, ``r``, ``rb``,
+``rs``, ``rss``, ``ruby``, ``scala``, ``scm``, ``scpt``, ``scss``, ``sh``, ``sld``, ``st``, ``styl``,
+``sql``, ``swift``, ``tex``, ``thor``, ``v``, ``vb``, ``vbnet``, ``vbs``,
+``veo``, ``xhtml``, ``xml``, ``xsl``, ``yaml``, ``zsh``,
 
 Example:
 
