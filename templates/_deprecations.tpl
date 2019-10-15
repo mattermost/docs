@@ -28,6 +28,7 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.minio" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.registryStorage" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.registryHttpSecret" .) -}}
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.registry.replicas" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.omniauth" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.ldap" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.global.appConfig.ldap.password" .) -}}
@@ -121,6 +122,16 @@ registry:
     The `httpSecret` property has been moved into a secret. Please create a secret with these contents, and set `global.registry.httpSecret.secret` and `global.registry.httpSecret.key`.
 {{- end -}}
 {{- end -}}
+
+{{/* Migration of Registry `minReplicas` and `maxReplicas` to `hpa.*` */}}
+{{- define "gitlab.deprecate.registry.replicas" -}}
+{{- if (hasKey .Values.registry "minReplicas") or (hasKey .Values.registry "maxReplicas") -}}
+registry:
+    The `minReplicas` property has been moved under the hpa object. Please create a configuration with the new path: `registry.hpa.minReplicas`.
+    The `maxReplicas` property has been moved under the hpa object. Please create a configuration with the new path: `registry.hpa.maxReplicas`.
+{{- end -}}
+{{- end -}}
+{{/* END deprecate.registry.replicas */}}
 
 {{/* Deprecation behaviors for configuration of Omniauth */}}
 {{- define "gitlab.deprecate.unicorn.omniauth" -}}
