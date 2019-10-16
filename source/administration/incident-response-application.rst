@@ -176,7 +176,7 @@ The add users to channel action adds the specified users to the channel.
 .. csv-table::
     :header: "Field", "Description", "Type", "Required"
 
-    "channel", "A channel object supporting fields from model.Channel", "model.Channel", "Yes"
+    "channel_name", "The channel to create the post in. Can be name or ID.", "model.Channel", "Yes"
     "users", "Users to add to the channel after creation. Should also accept groups when available. Can be usernames or user IDs.", "[]string, "Yes"
 
 // TODO Verify JSON schema and add an example here.
@@ -189,7 +189,7 @@ Creates a post in the specified channel.
 .. csv-table::
     :header: "Field", "Description", "Type", "Required"
 
-    "channel", "The channel to create the post in. Can be name or ID.", "string", "Yes"
+    "channel_name", "The channel to create the post in. Can be name or ID.", "string", "Yes"
     "message", "The contents of the message.", "string", "Yes"
     "fields", "A list of fields to show in the message. ", "[]Field", "No"
     "transition_button", "A label and a step to transition to when pressed.", "[]Button", "No"
@@ -204,7 +204,7 @@ Archives the specified channel.
 .. csv-table::
     :header: "Field", "Description", "Type", "Required"
 
-    "channel", "The channel to archive. Can be name or ID.", "string", "Yes"
+    "channel_name", "The channel to archive. Can be name or ID.", "string", "Yes"
 
 // TODO Verify JSON schema and add an example here.
 
