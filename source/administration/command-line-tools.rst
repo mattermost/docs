@@ -32,6 +32,10 @@ These ``mattermost`` commands include:
 -  Resetting multi-factor authentication for a user
 -  Creating sample data
 
+**Diagnostics**
+
+- Analyzing the database for relational consistency  
+
 .. contents::
     :backlinks: top
     :local:
@@ -989,6 +993,29 @@ mattermost import slack
     .. code-block:: none
 
       ./mattermost import slack myteam slack_export.zip
+      
+mattermost integrity
+--------------------
+
+  Description
+    Check database schema integrity as well as referential integrity of channels, slash commands, webhooks, posts, schemes, sessions, users, and teams. This process may temporarily affect live system performance, and should be used during off-peak periods. 
+    
+  Format
+    .. code-block:: none
+
+      mattermost integrity
+            
+  Example
+    .. code-block:: none
+
+      ./mattermost integrity --confirm --verbose 
+      
+  Options
+    .. code-block:: none
+
+          --confirm   Optional. Skip the confirmation message which indicates that the complete integrity check may temporarily harm system performance. This is not recommended in production environments.
+	  --verbose   Outputs a detailed report of number and type of orphaned records including ids (if any).
+       
 
 .. _command-line-tools-mattermost-jobserver:
 
