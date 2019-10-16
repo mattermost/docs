@@ -177,7 +177,7 @@ The add users to channel action adds the specified users to the channel.
     :header: "Field", "Description", "Type", "Required"
 
     "channel_name", "The channel to create the post in. Can be name or ID.", "model.Channel", "Yes"
-    "users", "Users to add to the channel after creation. Should also accept groups when available. Can be usernames or user IDs.", "[]string, "Yes"
+    "users", "Users to add to the channel after creation. Can be usernames, user IDs or AD/LDAP group names.", "[]string, "Yes"
 
 // TODO Verify JSON schema and add an example here.
 
