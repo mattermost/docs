@@ -31,7 +31,7 @@ The Plugin Marketplace is a collection of plugins that can greatly increase the 
 Installing a Plugin
 ~~~~~~~~~~~~~~~~
 
-When a new plugin becomes available on the marketplace, a new listing with a button labeled **Install** will be displayed.  After clicking **Install**, the latest plugin binary is downloaded from it's respective source and installed on the server.    
+When a new plugin becomes available on the marketplace, a new listing with a button labeled **Install** will be displayed.  After clicking **Install**, the latest plugin binary is downloaded from its respective source and installed on the server.    
 
 Configuring and Enabling a Plugin
 ~~~~~~~~~~~~~~~
