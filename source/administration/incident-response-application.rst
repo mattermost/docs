@@ -32,7 +32,7 @@ How Can I Try The App?
 
 3. Enable the plugin from the **Installed Plugins** list.
 
-4. Use `one of these sample app workflows <// TODO Add a link>`_ to try the app. To upload these workflows to your instance:
+4. Use `one of these sample app workflows <// TODO Add a link>`_ to try the app. To upload these workflows to your Mattermost server:
 
  - save the app workflow schema to a JSON file
  - go to any Mattermost channel and post ``/workflow edit`` to open the workflow editor
@@ -166,7 +166,7 @@ The create channel action creates a channel with the given parameters. The users
 
     "channel", "A channel object supporting fields from model.Channel", "model.Channel", "Yes"
 
-// TODO Verify JSON schema and add an example here. Example should include the supported fields of the channel model, e.g. type, team, ...
+// TODO Verify JSON schema and add an example here, with a clear recommendation for using instance template variables to avoid non-unique channel names. Example should include the supported fields of the channel model, e.g. type, team, ...
 
 Add Users to Channel (type: ``add_users_channel``)
 **************************************************************
@@ -229,7 +229,7 @@ To pull a sample report, use ``/workflow stats`` in any Mattermost channel:
 
 // TODO Add a screenshot - e.g. either re-use this screenshot or produce a new one: https://user-images.githubusercontent.com/1490756/65821266-4ad79d80-e201-11e9-8930-7beaa3dd0ed9.png
 
-You may also reset statistics at any time via ``/workflow reset-stats.
+The statistics are based on an aggregated summary of all individual workflow instances. You may also reset statistics at any time via ``/workflow reset-stats``.
 
 Note that you must be a System Administrator to execute these commands.
 
