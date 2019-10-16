@@ -68,7 +68,7 @@ The `Mattermost Plugin Marketplace <https://github.com/mattermost/mattermost-mar
 Mattermost Integration Directory
 -----
 
-There are many ways to integrate Mattermost aside from plugins, and we have created a directory of integrations "recipes", some of which are scripts, plugins, or instructions on how to connect Mattermost with your Enterprise systems. Many are sourced from our community of customers.  You can browse the directory at `https://integrations.mattermost.com/ <https://integrations.mattermost.com/>`__.
+There are many ways to integrate Mattermost aside from plugins. We have created a directory of integrations "recipes", some of which are scripts, plugins, or instructions on how to connect Mattermost with your Enterprise systems. Many are sourced from our community or customers.  You can browse the directory at `https://integrations.mattermost.com/ <https://integrations.mattermost.com/>`__.
 
 Security
 --------
