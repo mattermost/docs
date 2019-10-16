@@ -56,7 +56,7 @@ There are two Marketplace settings in the **System Console > Plugin management**
 .. image:: https://user-images.githubusercontent.com/915956/66892854-94660d80-efa1-11e9-805c-a85223d43a07.png
 
 - **Enable Marketplace**: Turns the Marketplace User Interface on or off for System Administrators.
-- **Marketplace URL** The location of the Marketplace Server you want to query for new plugins. Mattermost hosts a Plugin Marketplace for the community and is the default value for this field. You can setup your own Marketplace server if you want to rely on your own infrastructure.
+- **Marketplace URL**: The location of the Marketplace Server you want to query for new plugins. Mattermost hosts a Plugin Marketplace for the community and is the default value for this field. You can setup your own Marketplace server if you want to rely on your own infrastructure.
 
 When you are first presented with the Marketplace, your Mattermost server will attempt to contact the Marketplace Server, run by Mattermost, and return a list of available plugins that are appropriate based on the server version that is currently running.  Only your server version is passed over to Mattermost Marketplace. We retain an anonymized record for product analytics whenever a new plugin is installed, unless you have opted out of `Telemetry <https://docs.mattermost.com/administration/telemetry.html>`__ previously. The `Plugin marketplace server code <https://github.com/mattermost/mattermost-marketplace>`__ is available as an open-source project and can be used to setup your own private Marketplace if desired.  
 
