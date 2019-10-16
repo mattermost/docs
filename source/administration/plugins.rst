@@ -40,7 +40,7 @@ Once a plugin has been installed (or pre-installed if it shipped with the Matter
 
 1. Click on the button and you will be navigated to the plugins "Settings" page.  
 2. Fill in Plugin settings as required.
-3. At the top of the page, set **Enable Plugin** setting to ``True``.  If this flag is not switched on, the plugin will never become active.
+3. At the top of the page, set **Enable Plugin** setting to ``True``. The plugin will remain inactive until this flag is switched on.
 4. Test out the plugin as needed.
 
 Upgrading Plugins
