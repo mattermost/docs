@@ -124,12 +124,20 @@ And here is how it renders in Mattermost:
 
 .. image:: ../images/attachments-example.png
 
+Footer
+~~~~~~~
+
+``footer``: An optional line of text that will be displayed at the bottom of the attachment. Footers with more than 300 characters will be truncated with an ellipsis (``…``).
+
+``footer_icon``: An optional URL to an image file (GIF, JPEG, PNG, BMP, or SVG) that is displayed as a 16x16 pixel thumbnail before the footer text.
+
+.. image:: ../images/attachments-footer.png
+
 Known Issues
 ------------
 
-1. ``color`` parameter does not support "good", "warning", and "danger" values
-2. Footer information fields are not yet supported (``footer``, ``footer_icon``, and timestamp ``ts``)
-3. Message Attachment contents do not show up in search
+1. The footer timestamp field (``ts``) is not yet supported
+2. Message Attachment contents do not show up in search
 
 Frequently Asked Questions
 ---------------------------
