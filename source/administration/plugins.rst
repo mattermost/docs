@@ -33,7 +33,7 @@ Installing a Plugin
 
 When a new plugin becomes available on the marketplace, a new listing with a button labeled **Install** will be displayed.  After clicking **Install**, the latest plugin binary is downloaded from it's respective source and installed on the server.    
 
-Configuring and enabling a plugin
+Configuring and Enabling a Plugin
 ~~~~~~~~~~~~~~~
 
 Once a plugin has been installed (or pre-installed if it shipped with Mattermost binary release) there will be a "Configure" button shown next to the plugin listing.  
