@@ -12,6 +12,7 @@ Use the following materials as a template to help you plan and document the impl
    :maxdepth: 2
    :glob:
 
+   /deployment/on-boarding.rst  
    /getting-started/implementation_plan.rst
    /getting-started/welcome_email.rst
 
@@ -28,7 +29,7 @@ Learn how to get Mattermost running on your environment.
    Installing on Ubuntu 16.04 LTS </install/install-ubuntu-1604.rst>
    Installing on Ubuntu 18.04 LTS </install/install-ubuntu-1804.rst>
    Installing on Kubernetes </install/install-kubernetes.rst>
-   Installing on Debian Stretch </install/install-debian.rst>
+   Installing on Debian Buster </install/install-debian.rst>
    Installing on RHEL 6 </install/install-rhel-6.rst>
    Installing on RHEL 7 </install/install-rhel-7.rst>
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
@@ -76,7 +77,6 @@ Learn how to configure settings to meet your unique requirements.
    :maxdepth: 2
    :glob:
 
-   /deployment/on-boarding.rst  
    /administration/config-settings.rst
    /administration/config-in-database.rst 
    /administration/prev-config-settings.rst

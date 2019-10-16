@@ -190,6 +190,11 @@ Migrating from Slack using the Mattermost CLI
 2. Run the following Mattermost CLI command, with the name of a team you have already created:
 
    ``$ mattermost import slack team_name /path/to/your-slack-export.zip``
+   
+.. note:: To run the CLI command, you must be in the directory that contains the Mattermost installation. On a default install of Mattermost, the directory is ``/opt/mattermost/``. Also, if you followed our `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the command as the user *mattermost*. The executable is in the ``bin`` subdirectory and is called ``mattermost``.
+
+
+
 
 Using the Imported Team
 ````````````````````````

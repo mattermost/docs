@@ -5,7 +5,29 @@ Deploy a Mattermost Installation
 
 Deploying a Mattermost installation is very simple and just requires creating and applying a single manifest.
 
-**1. Create your installation manifest file**
+**1. (Enterprise only) Create your Mattermost license secret**
+
+Save the following in a file named ``mattermost-license-secret.yaml``:
+
+.. code-block:: yaml
+
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: mattermost-license
+  type: Opqaue
+  stringData:
+    license: %LICENSE_FILE_CONTENTS%
+
+Replace ``%LICENSE_FILE_CONTENTS%`` with the contents of your Mattermost license file. 
+
+Apply it with:
+
+.. code-block:: sh
+
+  $ kubectl apply -f /path/to/mattermost-license-secret.yaml
+
+**2. Create your installation manifest file**
 
 Save the following into a file named ``mattermost-installation.yaml``:
 
@@ -18,7 +40,10 @@ Save the following into a file named ``mattermost-installation.yaml``:
   spec:
     size: 5000users
     ingressName: example.mattermost-example.com 
+    ingressAnnotations:
+      kubernetes.io/ingress.class: nginx
     version: 5.14.0
+    mattermostLicenseSecret: ""
     database:
       storageSize: 50Gi
     minio:
@@ -28,7 +53,7 @@ Save the following into a file named ``mattermost-installation.yaml``:
       username: ""
       password: ""
 
-**2. Edit your installation manifest file**
+**3. Edit your installation manifest file**
 
 Depending on your desired configuration, edit the following fields in your manifest. There are a few fields that must be modified, which are marked accordingly in the table below.
 
@@ -39,6 +64,7 @@ Depending on your desired configuration, edit the following fields in your manif
     "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users'.", "Yes"
     "spec.ingressName", "The DNS for your Mattermost installation.", "Yes"
     "spec.version", "The Mattermost version.", "No"
+    "spec.mattermostLicenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license). Required for enterprise deployments.", "Yes"
     "spec.database.storageSize", "The storage size for your database. Your Kubernetes cluster must have volumes this size or larger.", "No"
     "spec.minio.storageSize", "The storage size for your file storage. Your Kubernetes cluster must have volumes this size or larger.", "No"
     "spec.elasticSearch", "The section for Elasticsearch settings. Remove this section if you will not be using Elasticsearch.", "No"
@@ -48,7 +74,7 @@ Depending on your desired configuration, edit the following fields in your manif
 
 There are more advanced fields documented `here <https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/examples/full.yaml>`__.
 
-**3. Apply your installation manifest file**
+**4. Apply your installation manifest file**
 
 To deploy your installation, apply it with:
 
@@ -59,12 +85,16 @@ To deploy your installation, apply it with:
 
 Make sure to replace ``/path/to/mattermost-installation.yaml`` with the correct path.
 
-**4. Use Mattermost**
+**4. Configure DNS and Use Mattermost**
 
 After waiting 3-5 minutes for your deployment to complete, run the following to get the hostname or IP address to access Mattermost at:
 
 .. code-block:: sh
 
-  $ kubectl -n mattermost get svc
+  $ kubectl -n mattermost get ingress
 
-The ``EXTERNAL-IP`` of the service with the name matching the ``metadata.name`` entered in your installation manifest file will be how you access Mattermost.
+This will give you either a hostname or IP address under the ``ADDRESS`` column. Copy that address.
+
+Use your domain registration service to create a canonical name or IP address record for the ``ingressName`` in your manifest, pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
+
+Go to your ``ingressName`` URL in your browser and use Mattermost.

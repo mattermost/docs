@@ -60,7 +60,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Decide which sections of the release announcement will have an accompanying screenshot / photo
     - Start drafting blog post, tweet, and email for the release announcement
     
-### E. (T-minus 14 working days) Code complete
+### E. (T-minus 12 working days) Code complete
 
 Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google.com/document/d/1QxB_A1qkEJBKAvQpRa7JiSQLZhwg6HAEajNRNa7ldGg/edit)
 
@@ -130,7 +130,6 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Post release testing instructions to Release Discussion channel ([template](https://docs.google.com/document/d/1UvTsvwZXmEL9QPjxmjoIkR2AcwGtOjql8cYRfk2N8eA/edit#bookmark=id.u28aar2hx7hg))
     - Post reminders in Announcements channel ([template](https://docs.google.com/document/d/1UvTsvwZXmEL9QPjxmjoIkR2AcwGtOjql8cYRfk2N8eA/edit#bookmark=id.pirw51cwsja5)) and Customer Support channel ([template](https://docs.google.com/document/d/1UvTsvwZXmEL9QPjxmjoIkR2AcwGtOjql8cYRfk2N8eA/edit#bookmark=id.ke0fh13gidni))
     - DM reminders if needed to team members who are not QA or devs, or who are new to release testing
-    - Post "Bug Hunter Coin" message to Reception channel ([see example](https://community.mattermost.com/core/pl/3o15eoq89fdq5m1ac5dyp4nc3e))
     - At end of day, post reminders about release testing in Release Discussion and Announcements channels, DM any team members who have zero test cells marked Done
 4. Logistics @hanna.park:
     - Generate an E20 5000 seat test licence and email to Lindy for release testing

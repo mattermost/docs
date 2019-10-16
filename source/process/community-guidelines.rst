@@ -345,7 +345,7 @@ Sample Responses
 
   .. code-block:: text
 
-    Thank you for the suggestions @username. Would you be open to contributing them in the feature idea forum so they can discussed and upvoted by the community? You get 10 votes in the feature idea forum, and each one influences the future of the project.
+    Thank you for the suggestions @username. Would you be open to contributing them in the feature idea forum so they can be discussed and upvoted by the community? You get 10 votes in the feature idea forum, and each one influences the future of the project.
 
     https://mattermost.uservoice.com/
 
@@ -353,7 +353,7 @@ Sample Responses
 
   .. code-block:: text
 
-    Thank you for the suggestion @username. Would you be open to contributing it in the feature idea forum so it can discussed and upvoted by the community? You get 10 votes in the feature idea forum, and each one influences the future of the project.
+    Thank you for the suggestion @username. Would you be open to contributing it in the feature idea forum so it can be discussed and upvoted by the community? You get 10 votes in the feature idea forum, and each one influences the future of the project.
 
     https://mattermost.uservoice.com/
 

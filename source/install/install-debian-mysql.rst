@@ -5,13 +5,13 @@ Installing MySQL Database Server
 
 Install and set up the database for use by the Mattermost server. You can install either MySQL or PostgreSQL.
 
-**To install MySQL on Debian Stretch:**
+**To install MySQL on Debian Buster:**
 
 1. Log into the server that will host the database, and open a terminal window.
 
 2. Download the MySQL repository package.
 
-  ``wget https://dev.mysql.com/get/mysql-apt-config_0.8.6-1_all.deb``
+  ``wget https://dev.mysql.com/get/mysql-apt-config_0.8.13-1_all.deb``
 
 3. Install the repository
 

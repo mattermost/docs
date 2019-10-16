@@ -201,7 +201,8 @@ Procedure:
      - New team members are introduced on their second week by their manager, including name, role, what they're working on, timezone, additional info as appropriate (max 2 minutes).
      - New hire can opt-in to introduce themselves if they choose (default is not to require public speaking).
 3. (Team) Shares potential meeting agenda topics with Chair via direct message. Must be shared at least 24 hours prior to meeting start and be aligned with the meeting objectives above.
-4. (Chair & Vice Chair) Signs into their Zoom account to access recording and screenshare during the meeting.
+4. (Vice Chair) Posts a reminder message in the meeting channel about the meeting 24 hours prior to meeting start.
+5. (Chair & Vice Chair) Signs into their Zoom account to access recording and screenshare during the meeting.
 
 **During meeting:**
 
@@ -221,7 +222,7 @@ Procedure:
 
   - **Introduction**: One of the founders does an introduction to the meeting.
   - **Week 2 welcomes of new team members**: New team members introduced on their second week by their manager, or optionally by the new team member themselves.
-  - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key updates, use cases or stories from customers. Links to publicly shared documents or slides may be included in meeting notes.
+  - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key use cases and stories from customers to understand how they use Mattermost. Links to publicly shared documents or slides may be included in meeting notes.
   - **Feedback**: At end of meeting, concludes meeting with a reminder to share feedback via survey.
 
 **After meeting:**
