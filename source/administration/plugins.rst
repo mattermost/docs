@@ -17,7 +17,7 @@ Plugins are fully supported by both Team and Enterprise Editions.
 
 Plugin Marketplace
 -------
-The Plugin Marketplace is a collection of plugins that can greatly increase the value and capabilities of your Mattermost deployment.  End-users can see increased productivity through quick access to systems such as Jira, Zoom, Webex, and GitHub.  Mattermost Administrators can discover new plugins and quickly deploy them to their servers, including High availability clusters.  It is available in 5.16 and is accessed via **Main Menu > Plugin Marketplace**.  Our Marketplace listings will continue to expand as we add new features and plugins that our customers request.  
+The Plugin Marketplace is a collection of plugins that can greatly increase the value and capabilities of your Mattermost deployment.  End-users can see increased productivity through quick access to systems such as Jira, Zoom, Webex, and GitHub.  Mattermost Administrators can discover new plugins and quickly deploy them to their servers, including High availability clusters.  It is available in 5.16 and is accessed via **Main Menu > Plugin Marketplace**.  Our Marketplace listings will continue to expand as we add new features and plugins.  
 
 .. image:: https://user-images.githubusercontent.com/915956/66891467-1b18eb80-ef9e-11e9-9de3-37a3c5899bd8.png
 
