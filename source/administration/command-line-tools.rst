@@ -1013,7 +1013,7 @@ mattermost integrity
   Options
     .. code-block:: none
 
-          --confirm   Optional. Skip the confirmation message which indicates that the complete integrity check that may temporarily harm system performance. This is not recommended in production environments.
+          --confirm   Optional. Skip the confirmation message which indicates that the complete integrity check may temporarily harm system performance. This is not recommended in production environments.
 	  --verbose   Outputs a detailed report of number and type of orphaned records including ids (if any).
        
 
