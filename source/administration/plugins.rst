@@ -14,6 +14,13 @@ Consider using a plugin in the following scenarios:
 
 Plugins are fully supported by both Team and Enterprise Editions. 
 
+About Plugins
+------
+
+Plugins may have one or both of the following parts:
+
+ - **Webapp plugins**: Customize the Mattermost user interface by adding buttons to the channel header, overriding the ``RHS``, or even rendering a custom post type within the center channel. All this is possible without having to fork the source code and rebase on every Mattermost release. For a sample plugin, see `our Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`__.
+ - **Server plugins**: Run a Go process alongside the server, filtering messages or integrating with third-party systems such as Jira, GitLab or Jenkins. For a sample plugin, see `our Jira plugin <https://github.com/mattermost/mattermost-plugin-jira>`__.
 
 Plugin Marketplace
 -------
@@ -36,12 +43,10 @@ Once a plugin has been installed (or pre-installed if it shipped with Mattermost
 3. At the top of the page, set **Enable Plugin** setting to ``True``.  If this flag is not switched on, the plugin will never become active.
 4. Test out the plugin as needed
 
-
 Upgrading Plugins
 ~~~~~~~~~~~~~~~~~
 
 In v5.16, the Marketplace only supports the installation of new plugins.  To upgrade a plugin, you will need to manually update it by downloading the binary file from the GitHub repository and uploading it in the **System Console > Plugin management** section.  In v5.18 (Dec 2019), the Marketplace will allow you to upgrade a plugin on demand when a new version becomes available.
-
 
 Marketplace Server
 -----
@@ -55,8 +60,7 @@ There are two Marketplace settings in the **System Console > Plugin management**
 
 When you are first presented with the Marketplace, your Mattermost server will attempt to contect the Marketplace Server, run by Mattermost, and will be returned a list of available plugins that are appropriate based on the server version that is currently running.  Only your server version and search query is passed over to Mattermost Marketplace, we retain an anonymized record for product analytics whenever a new plugin is installed, unless you have opted out of `Telemetry <https://docs.mattermost.com/administration/telemetry.html>`__ previously. The `Plugin marketplace server code <https://github.com/mattermost/mattermost-marketplace>`__ is available as an open-source project and can be used to setup your own private Marketplace if desired.  
 
-
-Mattermost Marketplace
+Which plugins are listed in the Marketplace?
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 The `Mattermost Plugin Marketplace <https://github.com/mattermost/mattermost-marketplace>`__ is a service run by Mattermost that contains listings of plugins that we have reviewed and in many cases built. In the future, we plan to include community developed plugins that will be labeled differently than "mattermost developed" plugins.  We plan to include settings that would restrict which types of plugins you can install.  Comments in our forum are welcome as we develop this feature further. 
@@ -65,15 +69,6 @@ Mattermost Integration Directory
 -----
 
 There are many ways to integrate Mattermost aside from plugins, and we have created a directory of integrations "recipes", some of which are scripts, plugins, or instructions on how to connect Mattermost with your Enterprise systems. Many are sourced from our community of customers.  You can browse the directory at `https://integrations.mattermost.com/ <https://integrations.mattermost.com/>`__.
-
-
-About Plugins
-------
-Plugins may have one or both of the following parts:
-
- - **Webapp plugins**: Customize the Mattermost user interface by adding buttons to the channel header, overriding the ``RHS``, or even rendering a custom post type within the center channel. All this is possible without having to fork the source code and rebase on every Mattermost release. For a sample plugin, see `our Zoom plugin <https://github.com/mattermost/mattermost-plugin-zoom>`__.
- - **Server plugins**: Run a Go process alongside the server, filtering messages or integrating with third-party systems such as Jira, GitLab or Jenkins. For a sample plugin, see `our Jira plugin <https://github.com/mattermost/mattermost-plugin-jira>`__.
-
 
 Security
 --------
