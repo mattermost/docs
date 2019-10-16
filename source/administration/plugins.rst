@@ -46,7 +46,7 @@ Once a plugin has been installed (or pre-installed if it shipped with the Matter
 Upgrading Plugins
 ~~~~~~~~~~~~~~~~~
 
-In v5.16, the Marketplace only supports the installation of new plugins.  To upgrade a plugin, you will need to manually update it by downloading the binary file from the GitHub repository and uploading it in the **System Console > Plugin management** section.  In v5.18 (Dec 2019), the Marketplace will allow you to upgrade a plugin on demand when a new version becomes available.
+In v5.16, the Marketplace only supports the installation of new plugins.  To upgrade a plugin, you will need to manually update it by downloading the binary file from the GitHub repository and uploading it in the **System Console > Plugin management** section.  In an upcoming release, the Marketplace will allow you to upgrade a plugin on demand when a new version becomes available.
 
 Marketplace Server
 -----
