@@ -63,7 +63,7 @@ When you are first presented with the Marketplace, your Mattermost server will a
 Which plugins are listed in the Marketplace?
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The `Mattermost Plugin Marketplace <https://github.com/mattermost/mattermost-marketplace>`__ is a service run by Mattermost that contains listings of plugins that we have reviewed and in many cases built. In the future, we plan to include community developed plugins that will be labeled differently than "mattermost developed" plugins.  We plan to include settings that would restrict which types of plugins you can install.  Comments in our forum are welcome as we develop this feature further. 
+The `Mattermost Plugin Marketplace <https://github.com/mattermost/mattermost-marketplace>`__ is a service run by Mattermost that contains listings of plugins that we have reviewed and in many cases built. In the future, we plan to include community developed plugins that will be labeled differently than "mattermost developed" plugins.  We plan to include settings that would restrict which types of plugins you can install.  Comments in our `forum are welcome <http://forum.mattermost.com> `__ as we develop this feature further. 
 
 Mattermost Integration Directory
 -----
