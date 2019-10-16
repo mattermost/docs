@@ -37,7 +37,6 @@ Mattermost v5.16.0 contains a low level security fix. [Upgrading](http://docs.ma
  - Added the ability to remove the custom branding image.
  - Added support for showing channel links as links in email notifications.
  - Added support for direct message permalinks.
- - Added a count for pinned posts header icon.
  - Changed recent date separators to read Today/Yesterday.
 
 #### Import/Export
