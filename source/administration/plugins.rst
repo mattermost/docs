@@ -21,7 +21,7 @@ The Plugin Marketplace is a collection of plugins that can greatly increase the 
 
 .. image:: https://user-images.githubusercontent.com/915956/66891467-1b18eb80-ef9e-11e9-9de3-37a3c5899bd8.png
 
-Installation
+Installing a Plugin
 ~~~~~~~~~~~~~~~~
 
 When a new plugin becomes available on the marketplace, a new listing with a button labeled "Install" will be displayed.  After clicking "Install", the latest plugin binary is downloaded from it's respective github repository and installed on the server.  If there is a cluster present, the plugin will be automatically distributed to each server automatically.   
@@ -59,7 +59,7 @@ When you are first presented with the Marketplace, your Mattermost server will a
 Mattermost Marketplace
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The Mattermost Plugin Marketplace is a service run by Mattermost that contains listings of plugins that we have reviewed and in many cases built. In the future, we plan to include community developed plugins that will be labeled differently than "mattermost developed" plugins.  We plan to include settings that would restrict which types of plugins you can install.  Comments in our forum are welcome as we develop this feature further. 
+The `Mattermost Plugin Marketplace <https://github.com/mattermost/mattermost-marketplace>`__ is a service run by Mattermost that contains listings of plugins that we have reviewed and in many cases built. In the future, we plan to include community developed plugins that will be labeled differently than "mattermost developed" plugins.  We plan to include settings that would restrict which types of plugins you can install.  Comments in our forum are welcome as we develop this feature further. 
 
 Mattermost Integration Directory
 -----
