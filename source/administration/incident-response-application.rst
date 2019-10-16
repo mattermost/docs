@@ -3,7 +3,9 @@ Incident Response Application (EE, Closed Alpha)
 
 The incident response application is available in closed Alpha, in `Enterprise Edition <https://mattermost.com/pricing/>`_.
 
-Sample use cases you can accomplish with this app include
+// TODO: Add a screenshot or a video
+
+Sample use cases you can accomplish with this app include the following:
 
 1. Trigger automated incident response workflows based on keywords.
 2. Automatically mention your InfoSec or DevSecOps teams when an incident occurs, including via email, mobile push and desktop notifications.
@@ -12,29 +14,32 @@ Sample use cases you can accomplish with this app include
 5. Archive resolved incidents to declutter your channel sidebar without losing access to past information.
 6. Pull summary statistics of the incident response workflow, including mean-time-to-acknowledgment (MTTA) and mean-time-to-resolution (MTTR).
 
-`Sign up to our Alpha program <https://docs.google.com/forms/d/e/1FAIpQLSf4Rr1YnofQQnKHJuL0Cgz_DaCUitt_Atik7K9KXsDefCyXlg/viewform>`_ and shape the direction of the incident response application.
+To shape the direction of the incident response application, `sign up to our Alpha program here <https://docs.google.com/forms/d/e/1FAIpQLSf4Rr1YnofQQnKHJuL0Cgz_DaCUitt_Atik7K9KXsDefCyXlg/viewform>`_!
 
-// TODO: Add a screenshot or a video
+// TODO: Add another screenshot
 
 .. contents:: Contents
   :backlinks: top
   :local:
   :depth: 1
 
-How can I try the app?
+How Can I Try The App?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. `Sign up for the closed Alpha program <https://docs.google.com/forms/d/e/1FAIpQLSf4Rr1YnofQQnKHJuL0Cgz_DaCUitt_Atik7K9KXsDefCyXlg/viewform>`_. If you're selected to join the Alpha program, you will receive an email from us with a plugin binary.
-3. Upload the plugin binary in **System Console > Plugins > Plugin Management** `following these steps <https://about.mattermost.com/default-plugin-uploads>`_.
-4. Enable the plugin from the **Installed Plugins** list.
-5. Use `one of these sample app workflows <// TODO Add a link>`_ to try the app. To upload these workflows to your instance:
- 
+
+2. Upload the plugin binary in **System Console > Plugins > Plugin Management** `following these steps <https://about.mattermost.com/default-plugin-uploads>`_.
+
+3. Enable the plugin from the **Installed Plugins** list.
+
+4. Use `one of these sample app workflows <// TODO Add a link>`_ to try the app. To upload these workflows to your instance:
+
  - save the app workflow schema to a JSON file
  - go to any Mattermost channel and post ``/workflow edit`` to open the workflow editor
  - click **Choose .json file** and select the JSON file containing the app workflow schema
  - click **Upload**
 
-6. Post the trigger word defined in the workflow schmea to start the workflow!
+5. Post the trigger word defined in the workflow schmea to start the workflow!
 
 See the documentation below to get help on how to configure and manage your app workflows, or open an issue at https://forum.mattermost.org and we'd be happy to help you.
 
