@@ -19,12 +19,12 @@ Improvements
 All Platforms
 ^^^^^^^^^^^^^
 
-- Added support for maintaining a user's online status while the desktop app is in the background as well as automatically setting the user to away/online if the screensaver goes on/off, the user locks/unlocks their computer or shuts down their computer.
+- Added support for maintaining a user's online status while the desktop app is in the background but the user is interacting with their computer.
 - Updated spellchecker dictionaries for English.
 - Added support for exposing Webview Developer Tools via View Menu.
 - Improved the styling of the session expiry mention badge in the tab bar.
-- Improved the wording of the bad certificate dialog to make it harder to just allow.
-- Added support for Desktop menu bar accessibility improvements. This was fixed with the major version upgrade of Electron to v5.0.0.
+- Improved the wording of the invalid certificate dialog.
+- Improved accessibility support for the menu bar items. This was fixed with the major version upgrade of Electron to v5.0.0.
 
 Windows
 ^^^^^^^^^^^^^
@@ -41,8 +41,6 @@ Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Major version upgrade of Electron to v5.0.0. Electron is the underlying technology used to build the Desktop apps.
-- Major version upgrade of Electron to v4.2.4. Electron is the underlying technology used to build the Desktop apps.
-- Major version upgrade of Electron to v3.0.9. Electron is the underlying technology used to build the Desktop apps.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,18 +48,18 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^
 
-- Fixed various desktop app notification issues.
-- Fixed an issue where the dot and mention counts in server tab jewels were not centered.
-- Fixed an issue where the unread count changed after opening the quick switcher.
-- Fixed an issue where the dot in notification badges was off centre.
+- Fixed an issue where opening the emoji picker froze the desktop app. This bug was fixed with the major version upgrade of Electron to v5.0.0.
+- Fixed an issue where jumbo emoji didn't render for unsupported unicode emojis. This bug was fixed with the major version upgrade of Electron to v4.0.0.
 - Fixed an issue where username and password were not being passed for HTTP basic authentication.
+- Fixed an issue where switching server tabs on app load caused a visual size glitch. This bug was fixed with the major version upgrade of Electron to v4.0.0.
+- Fixed various desktop app notification issues.
+- Fixed an issue where the unread count changed after opening the quick switcher.
+- Fixed an issue where clicking on some links in System Console opened the links on the app itself.
 - Fixed an issue where the "Help" button opened in a new browser tab instead of below the textbox in the default system browser.
 - Fixed an issue where Mattermost opened both on fullscreen and on a smaller window when closing the app in fullscreen.
 - Fixed an issue to prevent the app from restarting in full-screen mode.
-- Fixed an issue where clicking on some links in System Console opened the links on the app itself.
-- Fixed an issue where opening the emoji picker froze the desktop app. This bug was fixed with the major version upgrade of Electron to v5.0.0.
-- Fixed an issue where switching server tabs on app load caused a visual size glitch. This bug was fixed with the major version upgrade of Electron to v4.0.0.
-- Fixed an issue where jumbo emoji didn't render for unsupported unicode emojis. This bug was fixed with the major version upgrade of Electron to v4.0.0.
+- Fixed an issue where the dot and mention counts in server tab jewels were not centered.
+- Fixed an issue where the dot in notification badges was off centre.
 
 Windows
 ^^^^^^^^^^^^^
