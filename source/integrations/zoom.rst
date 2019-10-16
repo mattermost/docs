@@ -41,7 +41,7 @@ Zoom Setup Guide
 .. important::
   To generate an **API Key** and **API Secret** requires a `Pro, Business, Education, or API Zoom plan <https://zoom.us/pricing>`__.
 
-  Only one paid account is required to generate an **API Key** and **API Secret**. Other team members can use a free Zoom plan to create and join Zoom meetings in Mattermost.
+ If your entire organization doesn't use Zoom, the plugin will allow team members to use a free Zoom account to create and join Zoom meetings in Mattermost with their regular limitations.
 
 .. image:: ../images/zoom_api_key.png
 
