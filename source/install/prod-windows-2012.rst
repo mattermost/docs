@@ -199,7 +199,7 @@ Verify Mattermost Connectivity
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To verify all steps executed thus far, we'll attempt to access Mattermost through standard HTTP traffic.  To perform 
-this step, you'll need access to a client machine with a compatible browser (e.g. Safari, Firefox, IE11, Chrome, etc).
+this step, you'll need access to a client machine with a compatible browser (e.g. Safari, Firefox, Edge, Chrome, etc).
 
 13. From a client workstation meeting the criteria above, launch your favorite web browser.
 
