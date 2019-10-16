@@ -408,9 +408,9 @@ For other sample schemas, `see here <// TODO Add other samples in https://github
 Permissions and Management of the App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Only System Administrators can edit the incident response app by uploading a JSON file via the ``/workflow edit`` command. This allows System Administrators to have full control over what app workflows are configured in a Mattermost server.
+By default, System Administrators can edit the incident response app by uploading a JSON file via the ``/workflow edit`` command. This allows System Administrators to have full control over what app workflows are configured in a Mattermost server.
 
-Later, permissions to allow other users to edit app workflows may be supported.
+You may optionally enable individual users to manage the app by adding a list of authorized usernames in **System Console > Plugins > Incident Response**.
 
 Roadmap
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
