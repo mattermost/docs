@@ -1003,7 +1003,7 @@ mattermost integrity
   Format
     .. code-block:: none
 
-      mattermost integrity {flag} {flag}
+      mattermost integrity
             
   Example
     .. code-block:: none
