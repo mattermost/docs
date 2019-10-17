@@ -20,9 +20,7 @@ You need to set the following parameters:
 
 Items below can be further customized if you are not using the defaults:
 
-- `global.gitaly.port`: The port the database is available on, defaults to `8075`
-
-For example, pass these values via helm's `--set` flag while deploying:
+- `global.gitaly.port`: The port the service is available on, defaults to `8075`
 
 ```
 helm install .  \
@@ -30,9 +28,19 @@ helm install .  \
   --set global.gitaly.host=gitaly.example \
   --set global.gitaly.authToken.secret=gitaly-secret \
   --set global.gitaly.authToken.key=token
-  --set gitlab.gitaly.shell.authToken.secret=gitlab-shell-secret \
-  --set gitlab.gitaly.shell.authToken.key=secret \
 ```
+
+## Multiple external Gitaly
+
+If your implementation uses multiple Gitaly nodes external to these charts,
+you can define multiple hosts as well. The syntax is slightly different, as
+to allow the complexity required.
+
+An [example values file][multiple-external] is provided, which shows the
+appropriate set of configuration. The content of this values file is not
+interpreted correctly via `--set` arguments, so should be passed to Helm
+with the `-f / --values` flag.
 
 [gitaly-secret]: ../../installation/secrets.md#gitaly-secret
 [gitlab-shell-secret]: ../../installation/secrets.md#gitlab-shell-secret
+[multiple-external]: https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/gitaly/values-multiple-external.yaml
