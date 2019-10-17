@@ -82,6 +82,7 @@ Known Issues
 - Unable to exit full screen Youtube videos.
 - "RIght-click + Copy" does not work.
 - Notifications appear in sequence rather than stacking on Windows.
+- Clicking on notifications when using the MSI installer(s) doesn't focus the app or the channel that triggered the notification.
 
 Contributors
 ~~~~~~~~~~~~~~~
