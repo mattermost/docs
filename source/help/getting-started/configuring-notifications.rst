@@ -15,7 +15,7 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
 
 .. image:: ../../images/desktop_notification.png
   :width: 239px
-  :height: 232px
+  :height: 239px
 
 -  Configure desktop notifications in **Account
    Settings** > **Notifications** > **Desktop Notifications** > **Send
