@@ -14,8 +14,6 @@ Desktop Notifications
 Desktop notifications are pop-ups that appear in the corner of your main monitor when using Chrome, Firefox, Edge, Safari or the `Mattermost Desktop app <https://mattermost.com/download/#mattermostApps>`_. You can change the default preference to trigger desktop notifications for all messages sent in channels you're a member of, or turn them off entirely.
 
 .. image:: ../../images/desktop_notification.png
-  :width: 239px
-  :height: 239px
 
 -  Configure desktop notifications in **Account
    Settings** > **Notifications** > **Desktop Notifications** > **Send
@@ -36,9 +34,6 @@ Email Notifications
 By default, you'll get email notifications if you're not actively using Mattermost. You can change the default preference for email notifications to turn them off entirely.
 
 .. image:: ../../images/email_notification.png
-  :width: 239px
-  :height: 232px
-
 
 -  Configure email notifications in **Account Settings** >
    **Notifications** > **Email Notifications**.
@@ -53,8 +48,6 @@ Mobile Push Notifications
 Mobile push notifications appear on the lock screen of your mobile device if the Mattermost Android or iOS app is installed. By default, these notifications are triggered when you're not actively using Mattermost, but this is configurable. You can also change the default preference to trigger push notifications for all messages sent in channels you're a member of, or turn them off entirely.
 
 .. image:: ../../images/push_notification.png
-  :width: 239px
-  :height: 232px
 
 -  Configure push notifications in **Account Settings**
    > **Notifications** > **Mobile Push Notifications** > **Send mobile
@@ -74,9 +67,6 @@ If Mattermost is open in a browser tab, the favicon updates to notify you of unr
 a count of mentions or Direct Messages. Browser tab notifications are available on Firefox and Chrome.
 
 .. image:: ../../images/browser_notification.png
-  :width: 239px
-  :height: 232px
-
 
 Muting a Channel
 ----------------------------------------
