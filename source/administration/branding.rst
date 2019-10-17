@@ -16,7 +16,7 @@ Users should see your new custom branding on the login page of your Mattermost s
 
 From version 5.16, you can remove the custom brand image by selecting the **X** in the top right corner of the image. To apply the change, choose **Save**. Note that the value must be set to ``true`` in order to perform this step. 
 
-More about settings available in **Customer Branding Tools**
+More about settings available in **Customer Branding Tools**:
 
 Site Name
 `````````

@@ -70,7 +70,7 @@ Mattermost v5.16.0 contains a low level security fix. [Upgrading](http://docs.ma
 
 #### Administration
  - Added the ability for System Administrators to revoke all sessions from all users.
- - Added support for System Administrators to make public channels private and private channels public within the **System Console > User Management > Channel Configuration** page.
+ - Added support for System Administrators to make public channels private and private channels public within the **System Console > User Management > Channel Configuration** page when [Experimental Groups feature](https://docs.mattermost.com/administration/config-settings.html#groups-experimental) is enabled.
  - Added user Id information in the **System Console > Users** page.
  - Updated System Console plugin settings page to expose enable/disable setting.
  - Added ability for System Administrators to view a user's team memberships and add users to additional teams within **System Console > User Management > User Configuration**.
