@@ -14,6 +14,11 @@ spec:
   serviceName: {{ template "fullname" . }}
   replicas: {{template "gitlab.gitaly.replicas" . }}
   podManagementPolicy: Parallel
+  {{- if .Values.global.operator.enabled }}
+  updateStrategy:
+    rollingUpdate:
+      partition: {{template "gitlab.gitaly.replicas" . }}
+  {{- end }}
   template:
     metadata:
       labels:
