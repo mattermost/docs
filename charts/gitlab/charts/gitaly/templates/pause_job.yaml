@@ -1,0 +1,76 @@
+{{- if and .Values.enabled .Values.global.operator.rollout.autoPause .Values.global.operator.enabled (not .Values.global.operator.bootstrap) }}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: {{ template "fullname" . }}-pause
+  namespace: {{ .Release.Namespace }}
+  labels:
+{{ include "gitlab.standardLabels" . | indent 4 }}
+  annotations:
+    "helm.sh/hook": pre-upgrade
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": hook-succeeded,before-hook-creation
+---
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: {{ template "fullname" . }}-pause
+  namespace: {{ .Release.Namespace }}
+  labels:
+{{ include "gitlab.standardLabels" . | indent 4 }}
+  annotations:
+    "helm.sh/hook": pre-upgrade
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": hook-succeeded,before-hook-creation
+rules:
+- apiGroups: ["apps"]
+  resources: ["statefulsets"]
+  verbs: ["get", "list", "create", "patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: {{ template "fullname" . }}-pause
+  namespace: {{ .Release.Namespace }}
+  labels:
+{{ include "gitlab.standardLabels" . | indent 4 }}
+  annotations:
+    "helm.sh/hook": pre-upgrade
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": hook-succeeded,before-hook-creation
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: {{ template "fullname" . }}-pause
+subjects:
+  - kind: ServiceAccount
+    name: {{ template "fullname" . }}-pause
+    namespace: {{ .Release.Namespace }}
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ template "fullname" . }}-pause
+  namespace: {{ $.Release.Namespace }}
+  labels:
+{{ include "gitlab.standardLabels" . | indent 4 }}
+  annotations:
+    "helm.sh/hook": pre-upgrade
+    "helm.sh/hook-weight": "-4"
+    "helm.sh/hook-delete-policy": hook-succeeded,hook-failed,before-hook-creation
+spec:
+  template:
+    metadata:
+      name: {{ template "fullname" . }}-pause-runner
+      labels:
+        release: {{ .Release.Name }}
+    spec:
+      restartPolicy: Never
+      serviceAccountName: {{ template "fullname" . }}-pause
+      {{- include "pullsecrets" .Values.global.kubectl.image | indent 6 }}
+      containers:
+      - name: pause-task
+        image: {{ include "gitlab.kubectl.image" . | quote }}
+        {{ template "gitlab.imagePullPolicy" }}
+        command: ["sh", "-c", "echo Number of Gitaly replicas is {{include "gitlab.gitaly.replicas" . }}; kubectl patch statefulset {{include "fullname" . }} -p '{\"spec\": {\"updateStrategy\": {\"rollingUpdate\": {\"partition\": {{include "gitlab.gitaly.replicas" . }}} } } }'"]
+{{- end }}

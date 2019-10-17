@@ -12,8 +12,13 @@ spec:
       app: {{ template "name" . }}
       release: {{ .Release.Name }}
   serviceName: {{ template "fullname" . }}
-  replicas: {{- if .Values.global.gitaly.host }} 0 {{- else }} {{ len .Values.global.gitaly.internal.names }} {{- end }}
+  replicas: {{template "gitlab.gitaly.replicas" . }}
   podManagementPolicy: Parallel
+  {{- if .Values.global.operator.enabled }}
+  updateStrategy:
+    rollingUpdate:
+      partition: {{template "gitlab.gitaly.replicas" . }}
+  {{- end }}
   template:
     metadata:
       labels:
