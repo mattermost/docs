@@ -2594,7 +2594,7 @@ Guest Access (Beta)
 Enable Guest Access
 ^^^^^^^^^^^^^^^^^^^
 
-**True**: Allow guest invitations to channels within teams. Please see :doc:`Guest Accounts documentation <guest-accounts>`_ for more information.
+**True**: Allow guest invitations to channels within teams. Please see `Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information.
 
 **False**: Email signup is disabled. This limits signup to single sign-on services like OAuth or AD/LDAP.
 
