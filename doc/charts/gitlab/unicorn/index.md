@@ -58,6 +58,9 @@ to the `helm install` command using the `--set` flags.
 | `minio.port`                     | `9000`                | Port for Minio service                         |
 | `minio.serviceName`              | `minio-svc`           | Name of Minio service                          |
 | `monitoring.ipWhitelist`         | `[0.0.0.0/0]`         | List of IPs to whitelist for the monitoring endpoints |
+| `monitoring.exporter.enabled`         | `false`               | Enable webserver to expose Prometheus metrics  |
+| `monitoring.exporter.port`            | `8083`                | Port number to use for the metrics exporter    |
+| `monitoring.exporter.blackoutSeconds` | `10`                  | Number of seconds to keep the exporter running after unicorn is shutdown |
 | `psql.password.key`              | `psql-password`       | Key to psql password in psql secret            |
 | `psql.password.secret`           | `gitlab-postgres`     | psql secret name                               |
 | `rack_attack.git_basic_auth`     | `{}`                  | See [GitLab documentation](https://docs.gitlab.com/ee/security/rack_attack.html) for details |

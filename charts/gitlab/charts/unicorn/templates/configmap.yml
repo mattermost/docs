@@ -172,6 +172,7 @@ data:
           enabled: {{ eq .Values.monitoring.exporter.enabled true }}
           address: 0.0.0.0
           port: {{ .Values.monitoring.exporter.port }}
+          blackout_seconds: {{ .Values.monitoring.exporter.blackoutSeconds }}
         sidekiq_exporter:
 {{ include "gitlab.appConfig.rackAttack" . | indent 6 }}
       ## Registry Integration

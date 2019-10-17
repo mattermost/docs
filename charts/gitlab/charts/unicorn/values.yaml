@@ -23,6 +23,7 @@ monitoring:
   exporter:
     enabled: false
     port: 8083
+    blackoutSeconds: 10
 
 
 annotations: {}
