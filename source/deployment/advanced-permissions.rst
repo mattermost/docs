@@ -29,6 +29,7 @@ Set the default permissions granted to System Admins, Team Admins, Channel Admin
 - Team Admins: permissions granted apply to all Team Admins, in all teams.
 - Channel Admins: permissions granted apply to all Channel Admins in all channels, in all teams.
 - All Members: permissions granted apply to all members, including Admins, in all channels, in all teams. 
+- Guests: permissions granted to users with the Guest role in all channels and teams. 
 
 To override the System Scheme default permissions in a specific team, you must set up a Team Override Scheme.
 

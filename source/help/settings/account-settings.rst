@@ -109,7 +109,7 @@ Choose what activity triggers a desktop notification. This setting applies globa
 Notification Sound
 ^^^^^^^^^^^^^^^^^^
 
-Notification sounds fire for any activity that would trigger a desktop notification. Notification sounds are available on IE11, Edge, Safari and Chrome.
+Notification sounds fire for any activity that would trigger a desktop notification. Notification sounds are available on Edge, Safari and Chrome.
 
 Notification Duration
 ^^^^^^^^^^^^^^^^^^^^^

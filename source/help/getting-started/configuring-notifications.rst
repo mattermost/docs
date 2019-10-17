@@ -22,7 +22,7 @@ Desktop notifications are pop-ups that appear in the corner of your main monitor
    Desktop Notifications**.
 -  Configure desktop notifications in specific channels in **Channel
    Menu** > **Notification Preferences** > **Send Desktop
-   Notifications**. 
+   Notifications**.
   - By default, all channels use the global setting configured in *Account Settings*.
    
 **Not getting a desktop notification?** See our `FAQ to view the desktop notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-desktop-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.
@@ -65,7 +65,7 @@ Mobile push notifications appear on the lock screen of your mobile device if the
    
 **Not getting a push notification?** See our `FAQ to view the email notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-a-mobile-push-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.   
 
-.. tip :: Your status switches from "online" to "away" when no activity is detected in Mattermost for five or more minutes. Your status switches to offline if you log out or close the mobile or desktop clients.
+.. tip :: Learn more about how Mattermost detects your status as **Online**, **Away** or **Offline** `here <https://docs.mattermost.com/help/getting-started/signing-in.html#setting-your-status>`_.
 
 Browser Tab Notifications
 ----------------------------------------

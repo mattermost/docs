@@ -35,17 +35,21 @@ Windows 10+, Windows 8.1+, Windows 7+
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
-Group Policies (GPO) and MSI Installer support (Alpha)
+MSI Installer and Group Policies (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-`See here <desktop-msi-gpo.html>`__ for instructions on installing, configuring and verifying supported Group Policies as well as installing the Mattermost desktop app via an MSI installer that conforms to the defined Group Policies.
+
+Download latest version of the Mattermost desktop app MSI installer (Beta):
+
+   - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/4.2.3/mattermost-setup-4.2.3-win64.msi>`__
+   - MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/4.2.3/mattermost-setup-4.2.3-win32.msi>`__
+
+`See here <desktop-msi-gpo.html>`__ for instructions on installing the Mattermost desktop app via an MSI installer and configuring supported Group Policies.
 
 The following Group Policies are available:
 
 +----------------------------+-----------------------------------------------------------------------------+----------------------+
 | Group Policy               | Description                                                                 | Required Version     |
 +============================+=============================================================================+======================+
-| Enable Auto Updater        | If disabled, the app auto-updater is disabled.                              | 4.3 or later         |
-+----------------------------+-----------------------------------------------------------------------------+----------------------+
 | Enable Server Management   | If disabled, management of servers in the app settings are disabled.        | 4.3 or later         |
 +----------------------------+-----------------------------------------------------------------------------+----------------------+
 | Default Server List        | Define one or more default, permanent servers.                              | 4.3 or later         |
