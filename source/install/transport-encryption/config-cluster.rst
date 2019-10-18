@@ -39,19 +39,20 @@ Preparations
 SSH Authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 On each node generate a SSH key-pair for the service account, in our scenario
-called `mattermost`:
+called ``mattermost``:
 
-```
+.. code-block:: none
+
 $ sudo -u mattermost ssh-keygen -t rsa
-Generating public/private rsa key pair.
-Enter file in which to save the key (/home/mattermost/.ssh/id_rsa):
-Enter passphrase (empty for no passphrase):
-Enter same passphrase again:
-Your identification has been saved in /home/mattermost/.ssh/id_rsa.
-Your public key has been saved in /home/mattermost/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:redacted mattermost@transport-encryption-mattermost1
-```
+  Generating public/private rsa key pair.
+  Enter file in which to save the key (/home/mattermost/.ssh/id_rsa):
+  Enter passphrase (empty for no passphrase):
+  Enter same passphrase again:
+  Your identification has been saved in /home/mattermost/.ssh/id_rsa.
+  Your public key has been saved in /home/mattermost/.ssh/id_rsa.pub.
+  The key fingerprint is:
+  SHA256:redacted mattermost@transport-encryption-mattermost1
+
 
 The location of the SSH key itself is irrelevant if company policies require
 the usage of another storage location.
@@ -79,21 +80,23 @@ As a next step, allow SSH access from each of the other member nodes, e.g.:
 
 To do so, we add an exception in the firewall. The commands for ``mattermost1`` look as
 follows:
-```
-$ sudo ufw allow from 10.10.250.231/32 to any port ssh
-Skipping adding existing rule
-$ sudo ufw allow from 10.10.250.165/32 to any port ssh
-Rule added
-$ sudo ufw status
-Status: active
 
-To                         Action      From
---                         ------      ----
-22/tcp                     ALLOW       10.10.250.10
-8065/tcp                   ALLOW       Anywhere
-22/tcp                     ALLOW       10.10.250.231
-22/tcp                     ALLOW       10.10.250.165
-```
+.. code-block:: none
+
+  $ sudo ufw allow from 10.10.250.231/32 to any port ssh
+  Rule added
+  $ sudo ufw allow from 10.10.250.165/32 to any port ssh
+  Rule added
+  $ sudo ufw status
+  Status: active
+
+  To                         Action      From
+  --                         ------      ----
+  22/tcp                     ALLOW       10.10.250.10
+  8065/tcp                   ALLOW       Anywhere
+  22/tcp                     ALLOW       10.10.250.231
+  22/tcp                     ALLOW       10.10.250.165
+
 
 Repeat the same steps on the other nodes, but replacing the IPs with the ones from the
 other member nodes. Do so for each member node, excluding the node itself.
@@ -101,57 +104,58 @@ other member nodes. Do so for each member node, excluding the node itself.
 As a next step, open ``/etc/ufw/after.rules`` and add the following block to the
 bottom of the file:
 
-```
+.. code-block:: none
 
-*nat
-:POSTROUTING ACCEPT [0:0]
-:PREROUTING ACCEPT [0:0]
+  *nat
+  :POSTROUTING ACCEPT [0:0]
+  :PREROUTING ACCEPT [0:0]
 
--A OUTPUT -p tcp -d 10.10.250.231 --dport 8075 -j DNAT --to-destination 127.0.0.1:18075
--A OUTPUT -p tcp -d 10.10.250.231 --dport 8074 -j DNAT --to-destination 127.0.0.1:18074
--A OUTPUT -p tcp -d 10.10.250.165 --dport 8075 -j DNAT --to-destination 127.0.0.1:28075
--A OUTPUT -p tcp -d 10.10.250.165 --dport 8074 -j DNAT --to-destination 127.0.0.1:28074
+  -A OUTPUT -p tcp -d 10.10.250.231 --dport 8075 -j DNAT --to-destination 127.0.0.1:18075
+  -A OUTPUT -p tcp -d 10.10.250.231 --dport 8074 -j DNAT --to-destination 127.0.0.1:18074
+  -A OUTPUT -p tcp -d 10.10.250.165 --dport 8075 -j DNAT --to-destination 127.0.0.1:28075
+  -A OUTPUT -p tcp -d 10.10.250.165 --dport 8074 -j DNAT --to-destination 127.0.0.1:28074
 
-COMMIT
-```
+  COMMIT
+
 
 Two lines always belong to a single node, so in a deployment with 4 nodes:
 
-```
--A OUTPUT -p tcp -d ip_node_2 --dport 8075 -j DNAT --to-destination 127.0.0.1:18075
--A OUTPUT -p tcp -d ip_node_2 --dport 8074 -j DNAT --to-destination 127.0.0.1:18074
--A OUTPUT -p tcp -d ip_node_3 --dport 8075 -j DNAT --to-destination 127.0.0.1:28075
--A OUTPUT -p tcp -d ip_node_3 --dport 8074 -j DNAT --to-destination 127.0.0.1:28074
--A OUTPUT -p tcp -d ip_node_4 --dport 8075 -j DNAT --to-destination 127.0.0.1:38075
--A OUTPUT -p tcp -d ip_node_4 --dport 8074 -j DNAT --to-destination 127.0.0.1:38074
-```
+.. code-block:: none
+
+  -A OUTPUT -p tcp -d ip_node_2 --dport 8075 -j DNAT --to-destination 127.0.0.1:18075
+  -A OUTPUT -p tcp -d ip_node_2 --dport 8074 -j DNAT --to-destination 127.0.0.1:18074
+  -A OUTPUT -p tcp -d ip_node_3 --dport 8075 -j DNAT --to-destination 127.0.0.1:28075
+  -A OUTPUT -p tcp -d ip_node_3 --dport 8074 -j DNAT --to-destination 127.0.0.1:28074
+  -A OUTPUT -p tcp -d ip_node_4 --dport 8075 -j DNAT --to-destination 127.0.0.1:38075
+  -A OUTPUT -p tcp -d ip_node_4 --dport 8074 -j DNAT --to-destination 127.0.0.1:38074
 
 Please be aware that the ports on the right side must be unique, so if you have a cluster of
 6 nodes, use 8075 and 8074 with 1 to 5 in front of it. If the cluster is of bigger size, additional
 ports must be used.
 
 Ensure that your operating system has IP forwarding enabled using the following command:
-```
-$ sysctl -w net.ipv4.ip_forward=1
-```
+.. code-block:: none
+
+  $ sysctl -w net.ipv4.ip_forward=1
+
 
 After that, reload the ufw rules and confirm that the iptable rules were successfully
 created:
 
-```$ iptables -t nat -L
-Chain PREROUTING (policy ACCEPT)
-target     prot opt source               destination
+.. code-block:: none
+  $ iptables -t nat -L
+  Chain PREROUTING (policy ACCEPT)
+  target     prot opt source               destination
 
-Chain INPUT (policy ACCEPT)
-target     prot opt source               destination
+  Chain INPUT (policy ACCEPT)
+  target     prot opt source               destination
 
-Chain OUTPUT (policy ACCEPT)
-target     prot opt source               destination
-DNAT       tcp  --  anywhere             10.10.250.231        tcp dpt:8075 to:127.0.0.1:18075
-DNAT       tcp  --  anywhere             10.10.250.231        tcp dpt:8074 to:127.0.0.1:18074
-DNAT       tcp  --  anywhere             10.10.250.165        tcp dpt:8075 to:127.0.0.1:28075
-DNAT       tcp  --  anywhere             10.10.250.165        tcp dpt:8074 to:127.0.0.1:28074
-```
+  Chain OUTPUT (policy ACCEPT)
+  target     prot opt source               destination
+  DNAT       tcp  --  anywhere             10.10.250.231        tcp dpt:8075 to:127.0.0.1:18075
+  DNAT       tcp  --  anywhere             10.10.250.231        tcp dpt:8074 to:127.0.0.1:18074
+  DNAT       tcp  --  anywhere             10.10.250.165        tcp dpt:8075 to:127.0.0.1:28075
+  DNAT       tcp  --  anywhere             10.10.250.165        tcp dpt:8074 to:127.0.0.1:28074
 
 Repeat those steps for every node on the cluster. At the end of this section
 the following should be configured:
@@ -166,13 +170,15 @@ SSH Configuration
 
 As a next step, we will ensure that the SSH tunnels are created as part of the Mattermost service
 start. To do so, create a file called ``pre_start.sh`` in ``/opt/mattermost/bin`` on ``mattermost1``:
-```
-#!/bin/bash
-ssh -N -f -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -L 18075:10.10.250.231:8075 10.10.250.231 || true
-ssh -N -f -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -L 18074:10.10.250.231:8074 10.10.250.231 || true
-ssh -N -f -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -L 28075:10.10.250.165:8075 10.10.250.165 || true
-ssh -N -f -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -L 28074:10.10.250.165:8074 10.10.250.165 || true
-```
+
+.. code-block:: none
+
+  #!/bin/bash
+  ssh -N -f -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -L 18075:10.10.250.231:8075 10.10.250.231 || true
+  ssh -N -f -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -L 18074:10.10.250.231:8074 10.10.250.231 || true
+  ssh -N -f -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -L 28075:10.10.250.165:8075 10.10.250.165 || true
+  ssh -N -f -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -L 28074:10.10.250.165:8074 10.10.250.165 || true
+
 
 **Note:** We are ignoring the error from the SSH connection itself in case a tunnel
 is already active. Otherwise the Mattermost server would refuse to start.
@@ -180,23 +186,27 @@ is already active. Otherwise the Mattermost server would refuse to start.
 **Note:** Please make sure to back up this script in case of a version upgrade.
 
 Afterwards, we set the executable bit on the shell script:
-```
-$ chmod +x /opt/mattermost/bin/pre_start.sh
-```
+
+.. code-block:: none
+
+  $ chmod +x /opt/mattermost/bin/pre_start.sh
+
 
 Open the systemd unit file of Mattermost and search for ``Type=Notify``, after it enter
 a ``ExecStartPre`` script that will be executed before Mattermost itself is started:
-```
-[Service]
-Type=notify
-ExecStartPre=/opt/mattermost/bin/pre_start.sh
-```
+
+.. code-block:: none
+
+  [Service]
+  Type=notify
+  ExecStartPre=/opt/mattermost/bin/pre_start.sh
 
 Reload the systemd daemon afterwards:
 
-```
-$ systemctl daemon-reload
-```
+.. code-block:: none
+
+  $ systemctl daemon-reload
+
 
 Repeat the same steps on each of the member nodes and adapt the node IPs and amount
 of entries for your environment.
@@ -207,14 +217,15 @@ Cluster Start
 After finishing the configuration on each node, start the service on each cluster again
 and confirm it's running:
 
-```
-root@transport-encryption-mattermost1:/opt/mattermost/bin# systemctl start mattermost
-root@transport-encryption-mattermost1:/opt/mattermost/bin# systemctl status mattermost.service
-● mattermost.service - Mattermost
-   Loaded: loaded (/lib/systemd/system/mattermost.service; static; vendor preset: enabled)
-   Active: active (running) since Fri 2019-10-04 19:44:20 UTC; 5min ago
-  Process: 16734 ExecStartPre=/opt/mattermost/bin/pre_start.sh (code=exited, status=0/SUCCESS)
-```
+.. code-block:: none
+
+  root@transport-encryption-mattermost1:/opt/mattermost/bin# systemctl start mattermost
+  root@transport-encryption-mattermost1:/opt/mattermost/bin# systemctl status mattermost.service
+  ● mattermost.service - Mattermost
+     Loaded: loaded (/lib/systemd/system/mattermost.service; static; vendor preset: enabled)
+     Active: active (running) since Fri 2019-10-04 19:44:20 UTC; 5min ago
+    Process: 16734 ExecStartPre=/opt/mattermost/bin/pre_start.sh (code=exited, status=0/SUCCESS)
+
 
 Afterwards open the Mattermost System Console and confirm that each node is reporting successfully
 in the High Availability section.
