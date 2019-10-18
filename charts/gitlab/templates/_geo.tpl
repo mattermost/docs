@@ -1,4 +1,14 @@
 {{/* ######## Geo related tempaltes */}}
+{{/*
+
+*/}}
+{{- define "gitlab.geo.config" -}}
+{{- if .Values.global.geo.enabled -}}
+geo:
+  node_name: {{ default "" .Values.global.geo.nodeName }}
+{{- end -}}
+{{- end -}}
+
 
 {{/*
 Returns the contents of the `database_geo.yml` blob
