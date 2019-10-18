@@ -16,30 +16,17 @@ data:
       database: {{ template "gitlab.psql.database" . }}
       pool: 10
       username: {{ template "gitlab.psql.username" . }}
-      password: "<%= File.read("/etc/gitlab/postgres/psql-password") %>"
+      password: "<%= File.read("/etc/gitlab/postgres/psql-password").strip.dump[1..-2] %>"
       host: {{ template "gitlab.psql.host" . }}
       port: {{ template "gitlab.psql.port" . }}
+      prepared_statements: {{ template "gitlab.psql.preparedStatements" . }}
       # load_balancing:
       #   hosts:
       #     - host1.example.com
       #     - host2.example.com
-{{- include "gitlab.psql.ssl.config" . | indent 6 }}
+      {{- include "gitlab.psql.ssl.config" . | nindent 6 }}
   database_geo.yml.erb: |
-    production:
-      adapter: postgresql
-      encoding: unicode
-      database: {{ template "gitlab.geo.psql.database" . }}
-      pool: 10
-      username: {{ template "gitlab.geo.psql.username" . }}
-      password: "<%= File.read("/etc/gitlab/postgres/geo-psql-password") %>"
-      host: {{ template "gitlab.geo.psql.host" . }}
-      port: {{ template "gitlab.geo.psql.port" . }}
-      # load_balancing:
-      #   hosts:
-      #     - host1.example.com
-      #     - host2.example.com
-      fdw: true
-  {{- include "gitlab.geo.psql.ssl.config" . | nindent 6 }}
+    {{- include "gitlab.geo.database.yml" . | nindent 4 }}
   smtp_settings.rb: |
 {{ include "gitlab.smtp_settings" . | indent 4 }}
   resque.yml.erb: |

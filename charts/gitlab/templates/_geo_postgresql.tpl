@@ -1,8 +1,33 @@
 {{/* ######## Geo related tempaltes */}}
 
 {{/*
+Returns the contents of the `database_geo.yml` blob
+*/}}
+{{- define "gitlab.geo.database.yml" -}}
+{{- if .Values.global.geo.enabled -}}
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: {{ template "gitlab.geo.psql.database" . }}
+  pool: 10
+  username: {{ template "gitlab.geo.psql.username" . }}
+  password: "<%= File.read("/etc/gitlab/postgres/geo-psql-password").strip.dump[1..-2] %>"
+  host: {{ template "gitlab.geo.psql.host" . }}
+  port: {{ template "gitlab.geo.psql.port" . }}
+  # load_balancing:
+  #   hosts:
+  #     - host1.example.com
+  #     - host2.example.com
+  fdw: true
+  {{- include "gitlab.geo.psql.ssl.config" . | nindent 2 }}
+{{- end -}}
+{{- end -}}
+
+{{/*
 Returns parts for a Gitlab configuration to setup a mutual TLS connection
 with the Geo PostgreSQL database.
+
+Consumed as part of "gitlab.geo.database.yml", no check of `global.geo.enabled`
 */}}
 {{- define "gitlab.geo.psql.ssl.config" -}}
 {{- if .Values.global.geo.psql.ssl }}
@@ -18,7 +43,7 @@ Returns volume definition of a secret containing information required for
 a mutual TLS connection.
 */}}
 {{- define "gitlab.geo.psql.ssl.volume" -}}
-{{- if .Values.global.geo.psql.ssl }}
+{{- if and .Values.global.geo.enabled .Values.global.geo.psql.ssl }}
 - name: geo-postgresql-ssl-secrets
   projected:
     defaultMode: 400
@@ -39,7 +64,7 @@ a mutual TLS connection.
 Returns mount definition for the volume mount definition above.
 */}}
 {{- define "gitlab.geo.psql.ssl.volumeMount" -}}
-{{- if .Values.global.geo.psql.ssl }}
+{{- if and .Values.global.geo.enabled .Values.global.geo.psql.ssl }}
 - name: geo-postgresql-ssl-secrets
   mountPath: '/etc/postgresql/geo/ssl/'
   readOnly: true
@@ -52,7 +77,7 @@ container to copy the mutual TLS files to the proper location. Further
 it sets the permissions correctly.
 */}}
 {{- define "gitlab.geo.psql.ssl.initScript" -}}
-{{- if .Values.global.geo.psql.ssl }}
+{{- if and .Values.global.geo.enabled .Values.global.geo.psql.ssl }}
 if [ -d /etc/postgresql/geo/ssl ]; then
   mkdir -p /${secret_dir}/postgres/ssl
   cp -v -r -L /etc/postgresql/geo/ssl/* /${secret_dir}/postgres/ssl/
