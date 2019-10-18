@@ -43,9 +43,9 @@ PC Web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "Chrome", "v61+"
+    "Chrome", "v77+"
     "Firefox", "v60+"
-    "Safari", "v12+"
+    "Safari", "v13+"
     "Edge", "v44+"
 
 `*` Support for Internet Explorer (IE11) has been removed in Mattermost v5.16.0. We recommend using the `Mattermost Desktop App <https://mattermost.com/download/#mattermostApps>`_ or another supported browser. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`_ to learn more.
@@ -56,7 +56,7 @@ Mobile Apps
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
 
-    "iOS", "iPhone 5s devices and later with iOS 11+"
+    "iOS", "iPhone 5s devices and later with iOS 12+"
     "Android", "Android devices with Android 7+"
 
 `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
@@ -67,8 +67,8 @@ Mobile Web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 11+ with Safari 12+ or Chrome 61+"
-    "Android", "Android 7+ with Chrome 61+"
+    "iOS", "iOS 12+ with Safari 13+ or Chrome 77+"
+    "Android", "Android 7+ with Chrome 77+"
 
 Email Client
 ^^^^^^^^^^^^
@@ -83,7 +83,7 @@ Server Software
 Mattermost Server Operating System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Ubuntu 16.04, Ubuntu 18.04, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 6+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+
+- Ubuntu 16.04+, Debian Buster, CentOS 6+, RedHat Enterprise Linux 6+, Oracle Linux 6+
 - Using Mattermost `Docker image <https://docs.mattermost.com/install/prod-docker.html>`__ on a Docker-compatible operating system (Linux-based OS is still recommended)
 
 While community support exists for Fedora, FreeBSD and Arch Linux, Mattermost does not currently include production support for these platforms.
