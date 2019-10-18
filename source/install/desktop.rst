@@ -28,10 +28,9 @@ Windows 10+, Windows 8.1+, Windows 7+
 
 1. Download latest version of the Mattermost desktop app:
 
-   - `64-bit version of Windows <https://releases.mattermost.com/desktop/4.3.0/mattermost-setup-4.3.0-win64.exe>`__
-   - `32-bit version of Windows <https://releases.mattermost.com/desktop/4.3.0/mattermost-setup-4.3.0-win32.exe>`__
+   - `32/64-bit version of Windows <https://releases.mattermost.com/desktop/4.3.0/mattermost-desktop-setup-4.3.0-win.exe>`__
 
-2. From the ``\Downloads`` directory right-click on the file ``mattermost-setup-4.3.0...`` and select **Open**.
+2. From the ``\Downloads`` directory right-click on the file ``mattermost-desktop-setup-4.3.0-win.exe`` and select **Open**.
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
@@ -44,8 +43,6 @@ The following Group Policies are available:
 +----------------------------+-----------------------------------------------------------------------------+----------------------+
 | Group Policy               | Description                                                                 | Required Version     |
 +============================+=============================================================================+======================+
-| Enable Auto Updater        | If disabled, the app auto-updater is disabled.                              | 4.3 or later         |
-+----------------------------+-----------------------------------------------------------------------------+----------------------+
 | Enable Server Management   | If disabled, management of servers in the app settings are disabled.        | 4.3 or later         |
 +----------------------------+-----------------------------------------------------------------------------+----------------------+
 | Default Server List        | Define one or more default, permanent servers.                              | 4.3 or later         |
@@ -54,11 +51,11 @@ The following Group Policies are available:
 macOS 10.9+
 --------------------------------------------------
 
-1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.3.0/mattermost-desktop-4.3.0-mac.zip>`__.
+1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.3.0/mattermost-desktop-4.3.0-mac.dmg>`__.
 
-2. Double-click the download to expand the archive.
+2. Double-click the download to open the disk image.
 
-3. Drag the extracted file to the ``Applications`` folder.
+3. Drag the Mattermost application to the ``Applications`` folder.
 
 `Homebrew <https://brew.sh>`__ users can install with ``brew cask install mattermost``.
 
