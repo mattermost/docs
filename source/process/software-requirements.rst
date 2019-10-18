@@ -14,7 +14,7 @@ Desktop Apps
 
     "Windows", "Supported versions by Microsoft - `reference <https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions>`__"
     "Mac", "Supported versions by Apple - `reference <https://en.wikipedia.org/wiki/MacOS_version_history>`__"
-    "Linux", "Fixed to Ubuntu LTS releases 14.04 or later"
+    "Linux", "Fixed to Ubuntu LTS releases 16.04 or later"
 
 PC Web
 ---------------------------------
