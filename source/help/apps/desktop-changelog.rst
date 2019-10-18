@@ -4,8 +4,17 @@ Desktop Application Changelog
 Release v4.3.0
 ----------------------------
 
-- **Release date:** October 16, 2019
-- **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.3.0>`__
+- **v4.3.1, release day TBD**
+ - `CMD+Z` doesn't undo on the Mac desktop app. `MM-19198 <https://mattermost.atlassian.net/browse/MM-19198>`_
+ - Users are unable to zoom in/out except on the first server tab. `MM-19032 <https://mattermost.atlassian.net/browse/MM-19032>`_
+ - Right-click + "Copy" does not work in some instances. `MM-19324 <https://mattermost.atlassian.net/browse/MM-19324>`_
+ - Unable to exit maximized Youtube videos using the close button if the app is running in full screen. `MM-19226 <https://mattermost.atlassian.net/browse/MM-19226>`_
+ - Desktop notifications appear in sequence rather than stacking on Windows. `MM-19363 <https://mattermost.atlassian.net/browse/MM-19363>`_
+ - Clicking on notifications when using the Windows MSI (Beta) doesn't focus the app or the channel that triggered the notification. `MM-19510 <https://mattermost.atlassian.net/browse/MM-19510>`_, `MM-19511 <https://mattermost.atlassian.net/browse/MM-19511>`_
+- **v4.3.0, released 2019-10-17**
+ - Original v4.3.0 release
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.3.0>`__
 
 **Note:** Mattermost v4.3.0 contains medium level security fixes. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
 
