@@ -10,6 +10,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
   - (Accessibility) Fixing an issue where "Click here to jump to recent messages" is not accessible via keyboard. [MM-19498](https://mattermost.atlassian.net/browse/MM-19498)
   - (Accessibility) Fixing an issue where post options are skipped when tabbing through a post in search results. [MM-19497](https://mattermost.atlassian.net/browse/MM-19497)
   - (Accessibility) Fixing an issue where F6 does not allow navigating to the right-hand side when a thread isn't open. [MM-18117](https://mattermost.atlassian.net/browse/MM-18117)
+  - Fixing an issue where switching to an unread channel sometimes gets stuck at "Loading...". [MM-19091](https://mattermost.atlassian.net/browse/MM-19091)
   - Fixing an issue where a change to the production Plugin Marketplace URL wasn't backported to v5.16.0. [MM-19516](https://mattermost.atlassian.net/browse/MM-19516)
 - **v5.16.0, released 2019-10-16**
   - Original 5.16.0 release
