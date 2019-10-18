@@ -78,7 +78,7 @@ data:
       uploads:
       packages:
       external_diffs:
-
+      {{- include "gitlab.geo.config" $ | nindent 6 }}
       pages:
         enabled: false
       mattermost:
