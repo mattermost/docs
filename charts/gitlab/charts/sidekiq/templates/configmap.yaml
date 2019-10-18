@@ -25,6 +25,7 @@ data:
       #     - host1.example.com
       #     - host2.example.com
       {{- include "gitlab.psql.ssl.config" . | nindent 6 }}
+  database_geo.yml.erb: |
     {{- include "gitlab.geo.database.yml" . | nindent 4 }}
   smtp_settings.rb: |
 {{ include "gitlab.smtp_settings" . | indent 4 }}
