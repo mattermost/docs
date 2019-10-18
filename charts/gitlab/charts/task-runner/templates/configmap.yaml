@@ -18,7 +18,8 @@ data:
       host: {{ template "gitlab.psql.host" . }}
       port: {{ template "gitlab.psql.port" . }}
       prepared_statements: {{ template "gitlab.psql.preparedStatements" . }}
-{{- include "gitlab.psql.ssl.config" . | indent 6 }}
+      {{- include "gitlab.psql.ssl.config" . | nindent 6 }}
+    {{- include "gitlab.geo.database.yml" . | nindent 4 }}
   smtp_settings.rb: |
 {{ include "gitlab.smtp_settings" . | indent 4 }}
   resque.yml.erb: |
@@ -95,6 +96,7 @@ data:
   configure: |
     {{- include "gitlab.scripts.configure.secrets" (dict "required" "shell gitaly registry postgres rails-secrets") | nindent 4 -}}
     {{- include "gitlab.psql.ssl.initScript" . | nindent 4 }}
+    {{- include "gitlab.geo.psql.ssl.initScript" . | nindent 4 }}
 
     {{- if eq .Values.backups.objectStorage.backend "s3" }}
     if [ ! -f "/${secret_dir}/objectstorage/.s3cfg" ]; then
