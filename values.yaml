@@ -39,6 +39,9 @@ global:
     https: true
     externalIP:
     ssh: ~
+    gitlab: {}
+    minio: {}
+    registry: {}
 
   ## doc/charts/globals.md#configure-ingress-settings
   ingress:
