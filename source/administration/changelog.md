@@ -11,7 +11,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Breaking Changes
 
 ### Bug Fixes
- - Fixed an issue where a leading and trailing whitespace on channel name did not get trimmed when a channel was created.
  - Fixed an issue where attempting to configure uninstalled plugins got stuck at "Loading..." without timeout.
  - Fixed an issue where saving an empty string on Marketplace URL reset the URL instead of showing error.
  - Fixed an issue where ``@all`` notification was still sent to all users when using TAB to press Cancel on the notification prompt.
