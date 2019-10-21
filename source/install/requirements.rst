@@ -43,7 +43,7 @@ PC Web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "Chrome", "v77+"
+    "Chrome", "v73+"
     "Firefox", "v60+"
     "Safari", "v13+"
     "Edge", "v44+"
@@ -67,8 +67,8 @@ Mobile Web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 12+ with Safari 13+ or Chrome 77+"
-    "Android", "Android 7+ with Chrome 77+"
+    "iOS", "iOS 12+ with Safari 13+ or Chrome 73+"
+    "Android", "Android 7+ with Chrome 73+"
 
 Email Client
 ^^^^^^^^^^^^
