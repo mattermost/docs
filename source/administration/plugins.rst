@@ -36,9 +36,9 @@ When a new plugin becomes available on the marketplace, a new listing with a but
 Configuring and Enabling a Plugin
 ~~~~~~~~~~~~~~~
 
-Once a plugin has been installed (or pre-installed if it shipped with the Mattermost binary release) there will be a "Configure" button shown next to the plugin listing.  
+Once a plugin has been installed (or pre-installed if it shipped with the Mattermost binary release) there will be a **"Configure"** button shown next to the plugin listing.  
 
-1. Click on the button and you will be navigated to the plugins "Settings" page.  
+1. Click on the button and you will be navigated to the plugins **"Settings"** page.  
 2. Fill in Plugin settings as required.
 3. At the top of the page, set **Enable Plugin** setting to ``True``. The plugin will remain inactive until this flag is switched on.
 4. Test out the plugin as needed.
