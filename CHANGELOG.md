@@ -104,6 +104,13 @@ entry.
 - Update GitLab Version to 12.3.0.
 
 
+## 2.2.10
+
+### Other (1 change)
+
+- Update GitLab Version to 12.2.7.
+
+
 ## 2.2.9
 
 ### Other (1 change)
