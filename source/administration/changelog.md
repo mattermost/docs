@@ -14,8 +14,13 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where attempting to configure uninstalled plugins got stuck at "Loading..." without timeout.
  - Fixed an issue where saving an empty string on Marketplace URL reset the URL instead of showing error.
  - Fixed an issue where ``@all`` notification was still sent to all users when using TAB to press Cancel on the notification prompt.
+ - Fixed an issue where system messages could trigger mentions for username collisions.
  - Fixed an issue with subpaths where in-app System Console links were missing in the ``/subpath`` and resulted in a 404 error.
  - Fixed an issue where pressing and holding on teams and channels in the left-hand side opened the context menu on desktop apps.
+ - Fixed an issue where Guest users were shown in the list when adding new members to a channel.
+ - Fixed an issue where **Main Menu > Integrations > OAuth2 Applications** page user interface broke when shrinking the window to a small size.
+ - Fixed an issue where there was no feedback on mobile view that the maximum post length was exceeded.
+ - Fixed an issue where interactive message buttons and menus were not vertically the same size.
  
 ### config.json
 
@@ -30,9 +35,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Known Issues
  - Switching to an unread channel sometimes gets stuck at "Loading...".
  - Enabling/disabling guest access in System Console fails.
- - Guest users are shown in the list when adding new members to a channel.
  - Negative search filter hypens and occasional random terms are highlighted in search results.
- - System messages may trigger mentions for name collisions.
  - Hitting escape to close autocomplete also closes channel header modal.
  - Modifying config files causes compliance exports to run twice.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
