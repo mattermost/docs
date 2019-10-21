@@ -8,7 +8,8 @@
 
 global:
   gitaly:
-    internal: []  # disable populating internal nodes
+    internal:
+      names: []  # disable populating internal nodes
     external:
       - name: default                   # required
         hostname: node1.git.example.com # required
