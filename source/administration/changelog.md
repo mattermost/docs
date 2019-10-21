@@ -21,6 +21,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where **Main Menu > Integrations > OAuth2 Applications** page user interface broke when shrinking the window to a small size.
  - Fixed an issue where there was no feedback on mobile view that the maximum post length was exceeded.
  - Fixed an issue where interactive message buttons and menus were not vertically the same size.
+ - Fixed an issue where the user popover bled off screen when browser or Desktop App was set to full-screen mode.
+ - Fixed an issue where dragging or dropping a folder should scroll the user to the right-hand side text box to make the error more visible.
+ - 
  
 ### config.json
 
