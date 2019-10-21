@@ -230,6 +230,13 @@ entry.
 - Update GitLab Version to 12.2.0.
 
 
+## 2.1.14
+
+### Other (1 change)
+
+- Update GitLab Version to 12.1.14.
+
+
 ## 2.1.13
 
 ### Fixed (1 change, 1 of them is from the community)
