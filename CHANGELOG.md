@@ -2,6 +2,25 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.3.8
+
+### Fixed (1 change)
+
+- 1499/Fix monitoring ip_whitelist : change kind comparison to slice. !993
+
+### Changed (1 change)
+
+- Provides ability to customize the Container Registry HPA. !991
+
+### Added (1 change, 1 of them is from the community)
+
+- Tolerations for gitlab-exporter. !996 (Taylor Daugherty)
+
+### Other (1 change)
+
+- Update GitLab Version to 12.3.5.
+
+
 ## 2.3.7
 
 ### Other (1 change)
