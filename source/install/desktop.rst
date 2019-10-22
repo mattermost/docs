@@ -74,9 +74,9 @@ Generic Linux package
 1. Download latest version of the Mattermost desktop app:
 
   64-bit systems:
-   `mattermost-desktop-4.3.0-linux-x64.tar.gz <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-4.3.1-linux-x64.tar.gz>`__
+   `mattermost-desktop-4.3.1-linux-x64.tar.gz <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-4.3.1-linux-x64.tar.gz>`__
   32-bit systems:
-   `mattermost-desktop-4.3.0-linux-ia32.tar.gz <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-4.3.1-linux-ia32.tar.gz>`__
+   `mattermost-desktop-4.3.1-linux-ia32.tar.gz <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-4.3.1-linux-ia32.tar.gz>`__
 
 2. Extract the archive to a convenient location. You can then execute ``mattermost-desktop``, which is located inside the extracted directory.
 
@@ -90,9 +90,9 @@ Unofficial, community-driven .deb packages are available.
 1. Download the latest version of the Mattermost desktop app:
 
   64-bit systems
-   `mattermost-desktop-4.3.0-linux-amd64.deb <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-4.3.1-linux-amd64.deb>`__
+   `mattermost-desktop-4.3.1-linux-amd64.deb <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-4.3.1-linux-amd64.deb>`__
   32-bit systems
-   `mattermost-desktop-4.3.0-linux-i386.deb <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-4.3.1-linux-i386.deb>`__
+   `mattermost-desktop-4.3.1-linux-i386.deb <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-4.3.1-linux-i386.deb>`__
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
