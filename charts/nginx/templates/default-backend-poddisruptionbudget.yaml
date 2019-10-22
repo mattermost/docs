@@ -1,4 +1,4 @@
-{{- if and .Values.enabled (gt (.Values.controller.replicaCount | int) 1 ) -}}
+{{- if and .Values.enabled (gt (.Values.defaultBackend.replicaCount | int) 1 ) -}}
 apiVersion: policy/v1beta1
 kind: PodDisruptionBudget
 metadata:
