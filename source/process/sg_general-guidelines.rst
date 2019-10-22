@@ -12,9 +12,9 @@ The style guide applies to all end-user, developer, and administrator documentat
 
 Apply the style guide in the following situations:
 
-- when you create a new document
-- when you convert a document from Markdown to reStructuredText
-- when you revise a document
+- When you create a new document.
+- When you convert a document from Markdown to reStructuredText.
+- When you revise a document.
 
 When you revise a document, apply the style guide rules to the part that you changed. If you have time to update the rest of the document, then do so. If the scope is significantly greater than you originally anticipated, then do what you can and what makes sense, and then create an `issue in GitHub <https://github.com/mattermost/docs/issues>`__. Give the issue an appropriate title, such as *File XXX converted to .rst, but needs updating for style guide*.
 
@@ -59,7 +59,7 @@ Also remember that English is not the primary language of many readers of the do
 Word Usage Guidelines
 ---------------------
 
-To promote consistency and clarity, follow the word usage and spelling guidelines in the following list.
+To promote consistency and clarity, follow the word usage and spelling guidelines below.
 
 can, might, may
   The word *may* can have several meanings. To avoid ambiguity, use *can* or *might* instead of *may*. Use *can* to mean *capable of* and *might* to mean that something is possible. Use *may* only to give permission to do something.
