@@ -1,5 +1,0 @@
----
-title: Use specified Gitaly port in listen_address
-merge_request: 970
-author:
-type: fixed

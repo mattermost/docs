@@ -1,5 +1,0 @@
----
-title: Convert Gitaly port to an Integer before rendering in config files
-merge_request: 979
-author:
-type: fixed

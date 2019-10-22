@@ -1,5 +1,0 @@
----
-title: Switch to using newer APIs for ones dropped in k8s 1.16
-merge_request: 975
-author:
-type: changed

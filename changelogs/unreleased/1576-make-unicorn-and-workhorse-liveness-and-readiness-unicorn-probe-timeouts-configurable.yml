@@ -1,5 +1,0 @@
----
-title: Allow to configure liveness and readiness probes for unicorn/workhorse
-merge_request: 985
-author:
-type: added

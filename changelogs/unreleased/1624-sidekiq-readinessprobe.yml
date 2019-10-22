@@ -1,5 +1,0 @@
----
-title: "Improve sidekiq readinessProbe to check for sidekiq process"
-merge_request: 994
-author:
-type: added
