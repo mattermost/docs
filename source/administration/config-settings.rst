@@ -1654,7 +1654,12 @@ Posts
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable Link Previews
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Enables users to display a preview of website content, image links and YouTube links below the message when available. When true, website previews can be enabled from **Account Settings > Display > Website Link Previews**. Link previews are requested by the server, meaning the server must be connected to the internet and have access through the firewall (if applicable) to the websites from which previews are expected, such as https://gfycat.com/, https://www.youtube.com/, https://imgur.com/ and any other websites that users may share frequently. 
+
+Link previews are previews of linked website content, image links, and YouTube videos that are displayed below posts when available. 
+
+Link previews are requested by the server, meaning the Mattermost server must be connected to the internet for previews to be displayed. This connection can be through a `firewall or outbound proxy <https://docs.mattermost.com/install/outbound-proxy.html>`__ in environments where applicable.
+
+**True**: Website link previews, image link previews and YouTube previews are enabled on the server. Users can enable or disable website previews for themselves from **Account Settings > Display > Website Link Previews**.
 
 **False**: Website link previews, image link previews and YouTube previews are disabled. The server does not request metadata for any links sent in messages. 
 
