@@ -28,7 +28,7 @@ Windows 10+, Windows 8.1+, Windows 7+
 
 1. Download latest version of the Mattermost desktop app:
 
-   - `32/64-bit version of Windows <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-setup-4.3.1-win.exe>`__
+   - `32/64-bit version of Windows <https://releases.mattermost.com/desktop/4.3.1/mattermost-desktop-setup-4.3.1-win.exe>`__
 
 2. From the ``\Downloads`` directory right-click on the file ``mattermost-desktop-setup-4.3.1-win.exe`` and select **Open**.
 
@@ -39,8 +39,8 @@ MSI Installer and Group Policies (Beta)
 
 Download latest version of the Mattermost desktop app MSI installer (Beta):
 
-   - MSI for `64-bit version of Windows <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-v4.3.1-x64.msi>`__
-   - MSI for `86-bit version of Windows <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-v4.3.1-x86.msi>`__
+   - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/4.3.1/mattermost-desktop-v4.3.1-x64.msi>`__
+   - MSI for `86-bit version of Windows <https://releases.mattermost.com/desktop/4.3.1/mattermost-desktop-v4.3.1-x86.msi>`__
 
 `See here <desktop-msi-gpo.html>`__ for instructions on installing the Mattermost desktop app via an MSI installer and configuring supported Group Policies.
 
@@ -57,7 +57,7 @@ The following Group Policies are available:
 macOS 10.9+
 --------------------------------------------------
 
-1. Download `latest version of the Mattermost desktop app <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-4.3.1-mac.dmg>`__.
+1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.3.1/mattermost-desktop-4.3.1-mac.dmg>`__.
 
 2. Double-click the download to open the disk image.
 
@@ -74,9 +74,9 @@ Generic Linux package
 1. Download latest version of the Mattermost desktop app:
 
   64-bit systems:
-   `mattermost-desktop-4.3.1-linux-x64.tar.gz <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-4.3.1-linux-x64.tar.gz>`__
+   `mattermost-desktop-4.3.1-linux-x64.tar.gz <https://releases.mattermost.com/desktop/4.3.1/mattermost-desktop-4.3.1-linux-x64.tar.gz>`__
   32-bit systems:
-   `mattermost-desktop-4.3.1-linux-ia32.tar.gz <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-4.3.1-linux-ia32.tar.gz>`__
+   `mattermost-desktop-4.3.1-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/4.3.1/mattermost-desktop-4.3.1-linux-ia32.tar.gz>`__
 
 2. Extract the archive to a convenient location. You can then execute ``mattermost-desktop``, which is located inside the extracted directory.
 
@@ -90,9 +90,9 @@ Unofficial, community-driven .deb packages are available.
 1. Download the latest version of the Mattermost desktop app:
 
   64-bit systems
-   `mattermost-desktop-4.3.1-linux-amd64.deb <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-4.3.1-linux-amd64.deb>`__
+   `mattermost-desktop-4.3.1-linux-amd64.deb <https://releases.mattermost.com/desktop/4.3.1/mattermost-desktop-4.3.1-linux-amd64.deb>`__
   32-bit systems
-   `mattermost-desktop-4.3.1-linux-i386.deb <https://github.com/mattermost/desktop/releases/download/v4.3.1/mattermost-desktop-4.3.1-linux-i386.deb>`__
+   `mattermost-desktop-4.3.1-linux-i386.deb <https://releases.mattermost.com/desktop/4.3.1/mattermost-desktop-4.3.1-linux-i386.deb>`__
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
