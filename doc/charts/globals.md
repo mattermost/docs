@@ -208,6 +208,9 @@ global:
     authToken:
       secret: gitaly-secret
       key: token
+    tls:
+      enabled: true
+      secretName: gitlab-gitaly-tls
 ```
 
 ### Gitaly hosts
@@ -289,6 +292,10 @@ NOTE: **Note:** All Gitaly nodes **must** share the same authentication token.
 | `host` *(deprecated)*        | String  |         | The hostname of the Gitaly server to use. This can be omitted in lieu of `serviceName`. If this setting is used, it will override any values of `internal` or `external`. |
 | `port` *(deprecated)*        | Integer | `8075`  | The port on which to connect to the Gitaly server. |
 | `serviceName` *(deprecated)* | String  |         | The name of the `service` which is operating the Gitaly server. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Gitaly as a part of the overall GitLab chart. |
+
+### TLS settings
+
+Configuring Gitaly over TLS is detailed [in the Gitaly chart's documentation](gitlab/gitaly#running-gitaly-over-tls).
 
 ## Configure Minio settings
 

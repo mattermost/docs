@@ -15,3 +15,10 @@ Preference is local, global, default (`token`)
 {{- define "gitlab.gitaly.authToken.key" -}}
 {{- coalesce .Values.global.gitaly.authToken.key "token" | quote -}}
 {{- end -}}
+
+{{/*
+Return the gitaly TLS secret name
+*/}}
+{{- define "gitlab.gitaly.tls.secret" -}}
+{{- default (printf "%s-gitaly-tls" .Release.Name) .Values.global.gitaly.tls.secretName | quote -}}
+{{- end -}}
