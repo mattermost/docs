@@ -1,0 +1,160 @@
+[
+    {
+        "name": "security_issue",
+        "triggers": [
+            {
+                "name": "IssueReported",
+                "type": "text",
+                "match": "#sec"
+            }
+        ],
+        "steps": [
+            {
+                "name": "Setup",
+                "start_actions": [
+                    {
+                        "name": "CreateWarroom",
+                        "type": "create_channel",
+                        "channel_name": "security-issue-{{.Instance.Number}}",
+                        "channel_displayname": "Security Issue {{.Instance.Number}}"
+                    },
+                    {
+                        "name": "AddUsers",
+                        "type": "add_users_channel",
+                        "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
+                        "users": [
+                            "tester",
+                            "tester2"
+                        ]
+                    },
+                    {
+                        "type": "post",
+                        "name": "attention_post",
+                        "channel_name": "Town Square",
+                        "message": "Security issue reported. War room created: ~{{.Action.CreateWarroom.ChannelName}}"
+                    },
+                    {
+                        "type": "transition_to",
+                        "name": "TransitionToTriage",
+                        "to": "Triage"
+                    }
+                ]
+            },
+            {
+                "name": "Triage",
+                "start_actions": [
+                    {
+                        "name": "TriagePost",
+                        "type": "post",
+                        "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
+                        "message": "New issue to triage:\n ```{{.Trigger.IssueReported.Message}}```",
+                        "fields_title": "Please add details to this issue",
+                        "fields": [
+                            {
+                                "name": "Alert",
+                                "type": "button",
+                                "description": "Alert the Sysadmin to take immediate action"
+                            },
+                            {
+                                "name": "Likelihood",
+                                "description": "How likely the security issue is to be exploited.",
+                                "type": "options",
+                                "options": [
+                                    "L1",
+                                    "L2",
+                                    "L3"
+                                ]
+                            },
+                            {
+                                "name": "Impact",
+                                "type": "options",
+                                "description": "The impact of the security issue if exploited",
+                                "options": [
+                                    "I1",
+                                    "I2",
+                                    "I3"
+                                ]
+                            },
+                            {
+                                "name": "Severity",
+                                "type": "options",
+                                "description": "Derived from Impact and Likelihood",
+                                "options": [
+                                    "S1",
+                                    "S2",
+                                    "S3"
+                                ]
+                            }
+                        ],
+                        "transitions_title": "Transition to step",
+                        "transitions": [
+                            {
+                                "label": "Triaged",
+                                "description": "Issue has been triaged",
+                                "to": "DevelopFix"
+                            },
+                            {
+                                "label": "Resolved",
+                                "description": "Issue has been resolved",
+                                "to": "Resolved"
+                            }
+                        ]
+                    }
+                ],
+                "finish_actions": [
+                    {
+                        "name": "TriageConfirmation",
+                        "type": "post",
+                        "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
+                        "message": "Finished Triage"
+                    }
+                ]
+            },
+            {
+                "name": "DevelopFix",
+                "start_actions": [
+                    {
+                        "name": "InfoPost",
+                        "type": "post",
+                        "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
+                        "message": "Developing a fix underway. Issue information:\n\nLikelihood: {{.Action.TriagePost.Likelihood}}\nImpact: {{.Action.TriagePost.Impact}}\nSeverity: {{.Action.TriagePost.Severity}}",
+                        "transitions": [
+                            {
+                                "label": "Triage",
+                                "description": "Return to triage.",
+                                "to": "Triage"
+                            },
+                            {
+                                "label": "Resolved",
+                                "description": "Close issue as resolved",
+                                "to": "Resolved"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Resolved",
+                "start_actions": [
+                    {
+                        "name": "ResolveWarroom",
+                        "type": "post",
+                        "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
+                        "message": "Resolved."
+                    },
+                    {
+                        "name": "PostResolved",
+                        "type": "post",
+                        "channel_name": "town-square",
+                        "message": "Resolved Security Issue {{.Instance.Number}}"
+                    },
+                    {
+                        "name": "ArchiveSecurityChannel",
+                        "type": "archive_channel",
+                        "channel_name": "security-issue-{{.Instance.Number}}"
+                    }
+                ]
+            }
+        ]
+    }
+]
