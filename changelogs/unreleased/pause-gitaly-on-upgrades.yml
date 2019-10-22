@@ -1,5 +1,0 @@
----
-title: Add pre-upgrade hook for pausing Gitaly while operator is in place
-merge_request: 998
-author:
-type: added

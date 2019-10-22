@@ -2,6 +2,36 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.4.0
+
+### Fixed (5 changes, 1 of them is from the community)
+
+- Handle CRLF line endings #1541. !938
+- Use specified Gitaly port in listen_address. !970
+- Convert Gitaly port to an Integer before rendering in config files. !979
+- Removed unused persistence.volumeName from gitaly's values.yaml. !990 (aurelien.balteaux)
+- Unicorn: set ipWhitelist default to documented value. !997
+
+### Changed (3 changes)
+
+- Switch to using newer APIs for ones dropped in k8s 1.16. !975
+- Update the grafana chart to 3.8.15. !976
+- Update unicorn.rb to match upstream changes. !988
+
+### Added (4 changes)
+
+- Added S/MIME support. !943
+- Allow to configure liveness and readiness probes for unicorn/workhorse. !985
+- Improve sidekiq readinessProbe to check for sidekiq process. !994
+- Add pre-upgrade hook for pausing Gitaly while operator is in place. !998
+
+### Other (3 changes)
+
+- Add example values for UBI-based deployment. !986
+- Update gitlab-runner to 0.10.0/12.4.0. !1003
+- Update GitLab Version to 12.4.0.
+
+
 ## 2.3.8
 
 ### Fixed (1 change)

@@ -1,5 +1,0 @@
----
-title: Removed unused persistence.volumeName from gitaly's values.yaml.
-merge_request: 990
-author: aurelien.balteaux
-type: fixed
