@@ -4,13 +4,15 @@ Desktop Application Changelog
 Release v4.3.0
 ----------------------------
 
-- **v4.3.1, release day TBD**
+- **v4.3.2, release day TBD**
  - `CMD+Z` doesn't undo on the Mac desktop app. `MM-19198 <https://mattermost.atlassian.net/browse/MM-19198>`_
  - Users are unable to zoom in/out except on the first server tab. `MM-19032 <https://mattermost.atlassian.net/browse/MM-19032>`_
  - Right-click + "Copy" does not work in some instances. `MM-19324 <https://mattermost.atlassian.net/browse/MM-19324>`_
  - Unable to exit maximized Youtube videos using the close button if the app is running in full screen. `MM-19226 <https://mattermost.atlassian.net/browse/MM-19226>`_
  - Desktop notifications appear in sequence rather than stacking on Windows. `MM-19363 <https://mattermost.atlassian.net/browse/MM-19363>`_
  - Clicking on notifications when using the Windows MSI (Beta) doesn't focus the app or the channel that triggered the notification. `MM-19510 <https://mattermost.atlassian.net/browse/MM-19510>`_, `MM-19511 <https://mattermost.atlassian.net/browse/MM-19511>`_
+- **v4.3.1, released 2019-10-22**
+ - Fixed an issue where Mac desktop app was not notarized correctly for installing on MacOS Catalina. `MM-19555 <https://mattermost.atlassian.net/browse/MM-19555>`_
 - **v4.3.0, released 2019-10-17**
  - Original v4.3.0 release
 
@@ -28,12 +30,12 @@ Improvements
 All Platforms
 ^^^^^^^^^^^^^
 
-- Added support for maintaining a user's online status while the desktop app is in the background but the user is interacting with their computer.
+- Added support for maintaining a user's online status while the desktop app is in the background but the user is interacting with their computer. Requires Mattermost Server v5.16.0, v5.15.1, v5.14.4 or later.
 - Updated spellchecker dictionaries for English.
 - Added support for exposing Webview Developer Tools via View Menu.
 - Improved the styling of the session expiry mention badge in the tab bar.
 - Improved the wording of the invalid certificate dialog.
-- Improved accessibility support for the menu bar items. This was fixed with the major version upgrade of Electron to v5.0.0.
+- Improved accessibility support for the menu bar items.
 
 Windows
 ^^^^^^^^^^^^^
@@ -57,10 +59,10 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^
 
-- Fixed an issue where opening the emoji picker froze the desktop app. This bug was fixed with the major version upgrade of Electron to v5.0.0.
-- Fixed an issue where jumbo emoji didn't render for unsupported unicode emojis. This bug was fixed with the major version upgrade of Electron to v4.0.0.
+- Fixed an issue where opening the emoji picker froze the desktop app.
+- Fixed an issue where jumbo emoji didn't render for unsupported unicode emojis.
 - Fixed an issue where username and password were not being passed for HTTP basic authentication.
-- Fixed an issue where switching server tabs on app load caused a visual size glitch. This bug was fixed with the major version upgrade of Electron to v4.0.0.
+- Fixed an issue where switching server tabs on app load caused a visual size glitch.
 - Fixed various desktop app notification issues.
 - Fixed an issue where the unread count changed after opening the quick switcher.
 - Fixed an issue where clicking on some links in System Console opened the links on the app itself.
@@ -80,8 +82,8 @@ Mac
 ^^^^^^^^^^^^^
 
 - Fixed an issue where using the red Close button to close the window caused a blank screen when the window was maximized.
-- Fixed an issue where ``Cmd + Option + Shift + v`` and ``Cmd + Shift + v`` didn't work on MacOS desktop app. This bug was fixed with the major version upgrade of Electron to v5.0.0.
-- Fixed an issue where the timezones were incorrect in OSX High Sierra. This bug was fixed with the major version upgrade of Electron to v4.0.0.
+- Fixed an issue where ``Cmd + Option + Shift + v`` and ``Cmd + Shift + v`` didn't work on MacOS desktop app.
+- Fixed an issue where the timezones were incorrect in OSX High Sierra.
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
