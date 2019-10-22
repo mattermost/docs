@@ -163,17 +163,17 @@ Help Wanted Issue Links
 
 Below is a list of permanent redirects to Help Wanted issue queries:
 
-1. `mattermost` - https://mattermost.com/pl/help-wanted which redirects to https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+archived%3Afalse+org%3Amattermost+label%3A%22Help+Wanted%22++label%3A%22Up+For+Grabs%22
+1. `mattermost` - https://mattermost.com/pl/help-wanted which redirects to `https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+archived%3Afalse+org%3Amattermost+label%3A%22Help+Wanted%22++label%3A%22Up+For+Grabs%22 <https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+archived%3Afalse+org%3Amattermost+label%3A%22Help+Wanted%22++label%3A%22Up+For+Grabs%22>`_
 
-2. `mattermost/mattermost-server` - https://mattermost.com/pl/help-wanted-mattermost-server which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=✓&q=is%3Aopen+label%3A"Help+Wanted"+label%3A"Tech%2FGo"+is%3Aissue+label%3A"Up+For+Grabs"
+2. `mattermost/mattermost-server` - https://mattermost.com/pl/help-wanted-mattermost-server which redirects to `https://github.com/mattermost/mattermost-server/issues?utf8=✓&q=is%3Aopen+label%3A"Help+Wanted"+label%3A"Tech%2FGo"+is%3Aissue+label%3A"Up+For+Grabs" <https://github.com/mattermost/mattermost-server/issues?utf8=✓&q=is%3Aopen+label%3A"Help+Wanted"+label%3A"Tech%2FGo"+is%3Aissue+label%3A"Up+For+Grabs">`_
 
-  3. `mattermost/desktop` - https://mattermost.com/pl/help-wanted-desktop which redirects to https://github.com/mattermost/desktop/issues?utf8=✓&q=is%3Aopen+is%3Aissue+label%3A"Help+Wanted"+label%3A"Up+For+Grabs"
+3. `mattermost/desktop` - https://mattermost.com/pl/help-wanted-desktop which redirects to `https://github.com/mattermost/desktop/issues?utf8=✓&q=is%3Aopen+is%3Aissue+label%3A"Help+Wanted"+label%3A"Up+For+Grabs" <https://github.com/mattermost/desktop/issues?utf8=✓&q=is%3Aopen+is%3Aissue+label%3A"Help+Wanted"+label%3A"Up+For+Grabs">`_
 
-4. `mattermost/mattermost-mobile` - https://mattermost.com/pl/help-wanted-mattermost-mobile which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=✓&q=label%3A"Help+Wanted"+label%3A"Tech%2FReact+Native"+is%3Aopen+is%3Aissue+label%3A"Up+For+Grabs"
+4. `mattermost/mattermost-mobile` - https://mattermost.com/pl/help-wanted-mattermost-mobile which redirects to `https://github.com/mattermost/mattermost-server/issues?utf8=✓&q=label%3A"Help+Wanted"+label%3A"Tech%2FReact+Native"+is%3Aopen+is%3Aissue+label%3A"Up+For+Grabs" <https://github.com/mattermost/mattermost-server/issues?utf8=✓&q=label%3A"Help+Wanted"+label%3A"Tech%2FReact+Native"+is%3Aopen+is%3Aissue+label%3A"Up+For+Grabs">`_
 
-5. `mattermost/mattermost/webapp` - https://mattermost.com/pl/help-wanted-mattermost-webapp which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=✓&q=label%3A"Tech%2FReactJS"+label%3A"Help+Wanted"+is%3Aopen+is%3Aissue+label%3A"Up+For+Grabs"
+5. `mattermost/mattermost/webapp` - https://mattermost.com/pl/help-wanted-mattermost-webapp which redirects to `https://github.com/mattermost/mattermost-server/issues?utf8=✓&q=label%3A"Tech%2FReactJS"+label%3A"Help+Wanted"+is%3Aopen+is%3Aissue+label%3A"Up+For+Grabs" <https://github.com/mattermost/mattermost-server/issues?utf8=✓&q=label%3A"Tech%2FReactJS"+label%3A"Help+Wanted"+is%3Aopen+is%3Aissue+label%3A"Up+For+Grabs">`_
 
-6. `mattermost/mattermost-redux` - https://mattermost.com/pl/help-wanted-mattermost-redux which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=✓&q=label%3A"Tech%2FRedux"+label%3A"Help+Wanted"+is%3Aopen+is%3Aissue+label%3A"Up+For+Grabs"
+6. `mattermost/mattermost-redux` - https://mattermost.com/pl/help-wanted-mattermost-redux which redirects to `https://github.com/mattermost/mattermost-server/issues?utf8=✓&q=is%3Aopen+is%3Aissue+label%3A"Help+Wanted"+label%3A"Up+For+Grabs"+label%3A"Tech%2FRedux" <https://github.com/mattermost/mattermost-server/issues?utf8=✓&q=is%3Aopen+is%3Aissue+label%3A"Help+Wanted"+label%3A"Up+For+Grabs"+label%3A"Tech%2FRedux">`_
 
 Mattermost Community Forums
 ---------------------------------------------------------
