@@ -30,7 +30,7 @@ Improvements
 All Platforms
 ^^^^^^^^^^^^^
 
-- Added support for maintaining a user's online status while the desktop app is in the background but the user is interacting with their computer. Requires Mattermost Server v5.16.0, v5.15.1, v5.14.4, v5.9.5 or later.
+- Added support for maintaining a user's online status while the desktop app is in the background but the user is interacting with their computer. Requires Mattermost Server v5.16.0, v5.15.1, v5.14.4 or later.
 - Updated spellchecker dictionaries for English.
 - Added support for exposing Webview Developer Tools via View Menu.
 - Improved the styling of the session expiry mention badge in the tab bar.
