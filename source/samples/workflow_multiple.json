@@ -6,7 +6,7 @@
                 "name": "ServiceDown",
                 "type": "text",
                 "match": "DOWN",
-                "team_name": "rrrr",
+                "team_name": "infosec",
                 "channel_name": "alerts"
             }
         ],
@@ -62,7 +62,7 @@
                 "name": "ServiceCritical",
                 "type": "text",
                 "match_regex": "(CRITICAL.*SERVICE|SERVICE.*CRITICAL)",
-                "team_name": "rrrr",
+                "team_name": "infosec",
                 "channel_name": "alerts"
             }
         ],
@@ -117,7 +117,7 @@
                 "name": "ServiceWarning",
                 "type": "text",
                 "match": "WARNING",
-                "team_name": "rrrr",
+                "team_name": "infosec",
                 "channel_name": "alerts"
             }
         ],
@@ -128,7 +128,7 @@
                     {
                         "name": "IntroPost",
                         "type": "post",
-                        "team_name": "rrrr",
+                        "team_name": "infosec",
                         "channel_name": "alerts",
                         "message": "@tester\nNew S3 issue reported:\n ```{{.Trigger.ServiceWarning.Message}}```"
                     }
