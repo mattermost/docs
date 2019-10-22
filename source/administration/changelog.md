@@ -23,7 +23,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where interactive message buttons and menus were not vertically the same size.
  - Fixed an issue where the user popover bled off screen when browser or Desktop App was set to full-screen mode.
  - Fixed an issue where dragging or dropping a folder should scroll the user to the right-hand side text box to make the error more visible.
- - 
+ - Fixed an issue where ``/code`` was rendering HTML incorrectly.
+ - Fixed an issue with not being able to attach a file from iPad using Safari.
  
 ### config.json
 
