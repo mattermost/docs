@@ -1657,7 +1657,7 @@ Enable Link Previews
 
 Link previews are previews of linked website content, image links, and YouTube videos that are displayed below posts when available. 
 
-Link previews are requested by the server, meaning the Mattermost server must be connected to the internet for previews to be displayed. This connection can be through a `firewall or outbound proxy <https://docs.mattermost.com/install/outbound-proxy.html>`__ in environments where applicable.
+Link previews are requested by the server, meaning the Mattermost server must be connected to the internet for previews to be displayed. This connection can made be through a `firewall or outbound proxy <https://docs.mattermost.com/install/outbound-proxy.html>`__ in environments where applicable.
 
 **True**: Website link previews, image link previews and YouTube previews are enabled on the server. Users can enable or disable website previews for themselves from **Account Settings > Display > Website Link Previews**.
 
