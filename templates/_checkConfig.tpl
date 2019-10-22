@@ -25,6 +25,7 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 {{- $messages := list -}}
 {{/* add templates here */}}
 {{- $messages := append $messages (include "gitlab.checkConfig.redis.both" .) -}}
+{{- $messages := append $messages (include "gitlab.checkConfig.gitaly.tls" .) -}}
 {{- /* prepare output */}}
 {{- $messages := without $messages "" -}}
 {{- $message := join "\n" $messages -}}
@@ -44,3 +45,15 @@ redis: both providers
 {{- end -}}
 {{- end -}}
 {{/* END gitlab.checkConfig.redis.both */}}
+
+{{/*
+Ensure a certificate is provided when Gitaly is enabled and is instructed to
+listen over TLS */}}
+{{- define "gitlab.checkConfig.gitaly.tls" }}
+{{- if and (and $.Values.gitlab.gitaly.enabled $.Values.global.gitaly.tls.enabled) (not $.Values.global.gitaly.tls.secretName) -}}
+gitaly: no tls certificate
+    It appears Gitaly is specified to listen over TLS, but no certificate
+    was specified.
+{{- end -}}
+{{- end -}}
+{{/* END gitlab.checkConfig.gitaly.tls */}}

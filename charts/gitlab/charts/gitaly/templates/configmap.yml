@@ -16,6 +16,10 @@ data:
     mkdir -p /init-secrets/redis
     cp -v -r -L /init-config/redis_password  /init-secrets/redis/redis_password
     {{- end }}
+    {{- if $.Values.global.gitaly.tls.enabled }}
+    cp -v -L /init-config/gitaly.crt /init-secrets/gitaly/gitaly.crt
+    cp -v -L /init-config/gitaly.key /init-secrets/gitaly/gitaly.key
+    {{- end }}
   config.toml.erb: |
     # The directory where Gitaly's executables are stored
     bin_dir = "/usr/local/bin"
@@ -23,9 +27,19 @@ data:
     # listen on a TCP socket. This is insecure (no authentication)
     listen_addr = "0.0.0.0:{{ .Values.service.internalPort }}"
 
+    {{- if $.Values.global.gitaly.tls.enabled }}
+    tls_listen_addr = "0.0.0.0:{{ .Values.service.tls.internalPort }}"
+    {{- end }}
+
     # If metrics collection is enabled, inform gitaly about that
     {{- if .Values.metrics.enabled }}
     prometheus_listen_addr = "localhost:{{ .Values.metrics.metricsPort }}"
+    {{- end }}
+
+    {{- if $.Values.global.gitaly.tls.enabled }}
+    [tls]
+    certificate_path = '/etc/gitlab-secrets/gitaly/gitaly.crt'
+    key_path = '/etc/gitlab-secrets/gitaly/gitaly.key'
     {{- end }}
 
     <% @storages = [ {{- range (coalesce .Values.internal.names .Values.global.gitaly.internal.names) }} {{ . | quote }}, {{- end }} ] %>

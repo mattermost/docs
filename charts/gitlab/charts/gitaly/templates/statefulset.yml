@@ -96,6 +96,8 @@ spec:
               value: '/etc/gitaly'
             - name: GITALY_CONFIG_FILE
               value: '/etc/gitaly/config.toml'
+            - name: SSL_CERT_DIR
+              value: '/etc/ssl/certs'
             {{- if .Values.metrics.enabled }}
             - name: GITALY_PROMETHEUS_LISTEN_ADDR
               value: ':{{ .Values.metrics.metricsPort }}'
@@ -165,6 +167,15 @@ spec:
               items:
                 - key: {{ template "gitlab.redis.password.key" . }}
                   path: redis_password
+          {{- end }}
+          {{- if .Values.global.gitaly.tls.enabled }}
+          - secret:
+              name: {{ template "gitlab.gitaly.tls.secret" . }}
+              items:
+                - key: "tls.crt"
+                  path: "gitaly.crt"
+                - key: "tls.key"
+                  path: "gitaly.key"
           {{- end }}
 {{ include "gitlab.certificates.volumes" . | indent 6 }}
     {{- if .Values.nodeSelector }}

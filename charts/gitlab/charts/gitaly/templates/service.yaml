@@ -23,6 +23,11 @@ spec:
     - port: {{ .Values.metrics.metricsPort }}
       name: {{ .Values.service.name }}-metrics
    {{- end }}
+   {{- if $.Values.global.gitaly.tls.enabled }}
+    - port: {{ .Values.service.tls.externalPort }}
+      name: {{ .Values.service.name }}-tls
+      targetPort: {{ .Values.service.tls.internalPort }}
+   {{- end }}
   selector:
     app: {{ template "name" . }}
     release: {{ .Release.Name }}

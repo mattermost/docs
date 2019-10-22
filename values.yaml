@@ -92,6 +92,9 @@ global:
     internal:
       names: ['default']
     external: []
+    tls:
+      enabled: false
+      # secretName:
 
   ## doc/charts/globals.md#configure-minio-settings
   minio:

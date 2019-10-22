@@ -198,3 +198,39 @@ persistence:
 | `size`             | String  | `50Gi`          | The minimum volume size to request for the data persistence. |
 | `storageClass`     | String  |                 | Sets the storageClassName on the Volume Claim for dynamic provisioning. When unset or null, the default provisioner will be used. If set to a hyphen, dynamic provisioning is disabled. |
 | `subPath`          | String  |                 | Sets the path within the volume to mount, rather than the volume root. The root is used if the subPath is empty. |
+
+### Running Gitaly over TLS
+
+NOTE: **Note:** This section refers to Gitaly being run inside the cluster using
+the helm charts.  If you are using an external Gitaly instance and want to use
+TLS for communicating with it, refer [the external Gitaly documentation](https://docs.gitlab.com/charts/advanced/external-gitaly#connecting-to-external-gitaly-over-tls)
+
+Gitaly supports communicating with other components over TLS. This is controlled
+by the settings `global.gitaly.tls.enabled` and `global.gitaly.tls.secretName`.
+Follow the steps to run Gitaly over TLS:
+
+1. The helm chart expects a certificate to be provided for communicating over
+   TLS with Gitaly. This certificate should apply to all the Gitaly nodes that
+   are present. Hence all hostnames of each of these Gitaly nodes should be
+   added as a Subject Alternate Name (SAN) to the certificate.
+
+   To know the hostnames to use, check the file `/srv/gitlab/config/gitlab.yml`
+   file in the task-runner pod and check the various
+   `gitaly_address` fields specified under `repositories.storages` key within it.
+
+   ```
+   kubectl exec -it <task-runner pod> -- grep gitaly_address /srv/gitlab/config/gitlab.yml
+   ```
+
+NOTE: **Note:** A basic script for generating custom signed certificates for
+internal Gitaly pods [can be found in this repo](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/scripts/gitaly_statefulset_certificates.sh).
+Users can use or refer that script to generate certificates with proper
+SAN attributes.
+
+1. Create a k8s TLS secret using the certificate created.
+
+    ```sh
+    kubectl create secret tls gitaly-server-tls --cert=gitaly.crt --key=gitaly.key
+    ```
+
+1. Redeploy the helm chart by passing the arguments `--set global.gitaly.tls.enabled=true --set global.gitaly.tls.secretName=<secret name>`
