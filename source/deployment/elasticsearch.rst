@@ -7,6 +7,9 @@ Elasticsearch (E20)
 
 .. toctree::
     :maxdepth: 2
+    
+Deployment Guide
+----------------
 
 Overview
 ~~~~~~~~
@@ -26,6 +29,7 @@ The set up process for the Elasticsearch server is documented in the `official E
 
 .. Note::
   You must install the `ICU Analyzer Plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`__ when setting up Elasticsearch for Mattermost.
+
 
 Configuring Elasticsearch in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
