@@ -2,6 +2,18 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.4.1
+
+### Fixed (2 changes)
+
+- Fix typo in nginx backend PDB. !1006
+- Unicorn add shared /tmp mount. !1009
+
+### Other (1 change)
+
+- Update GitLab Version to 12.4.0.
+
+
 ## 2.4.0
 
 ### Fixed (5 changes, 1 of them is from the community)
