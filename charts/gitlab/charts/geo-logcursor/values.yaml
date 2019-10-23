@@ -67,6 +67,19 @@ resources:
     cpu: 300m
     memory: 700M
 
+deployment:
+  livenessProbe:
+    initialDelaySeconds: 20
+    periodSeconds: 60
+    timeoutSeconds: 30
+    successThreshold: 1
+    failureThreshold: 3
+  readinessProbe:
+    initialDelaySeconds: 0
+    periodSeconds: 10
+    timeoutSeconds: 2
+    successThreshold: 1
+    failureThreshold: 3
 
 nodeSelector: {}
 tolerations: []
