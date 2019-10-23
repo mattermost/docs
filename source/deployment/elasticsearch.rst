@@ -8,13 +8,12 @@ Elasticsearch (E20)
 .. toctree::
     :maxdepth: 2
 
-Deployment Guide
-----------------
-
 Overview
 ~~~~~~~~
 
-Elasticsearch allows you to search large volumes of data quickly, and in near real time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and is updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated. 
+Elasticsearch allows you to search large volumes of data quickly, in near real time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an Elasticsearch server. The post index is stored on the Elasticsearch server and is updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated. 
+
+Elasticsearch v5.x and v6.x are supported.
 
 When to use Elasticsearch
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -23,9 +22,9 @@ The default Mattermost database search starts to show performance degradation at
 
 Setting up an Elasticsearch Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The setup process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`__. Elasticsearch v5.0 and later is supported.
+The set up process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`__. 
 
-.. note::
+.. Note::
   You must install the `ICU Analyzer Plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`__ when setting up Elasticsearch for Mattermost.
 
 Configuring Elasticsearch in Mattermost
@@ -33,8 +32,8 @@ Configuring Elasticsearch in Mattermost
 
 Follow these steps to connect your Elasticsearch server to Mattermost and generate the post index.
 
-1. Open **System Console** > **Advanced** > **Elasticsearch** in prior versions or **System Console** > **Environment** > **Elasticsearch** in versions after 5.12.
-2. Set **Enable Elasticsearch Indexing** to `true` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database will be automatically indexed on the Elasticsearch server.
+1. Open **System Console > Environment > Elasticsearch** (or **System Console > Advanced > Elasticsearch** in versions prior to 5.12).
+2. Set **Enable Elasticsearch Indexing** to ``true`` to enable the other the settings on the page. Once the configuration is saved, new posts made to the database will be automatically indexed on the Elasticsearch server.
 3. Set the Elasticsearch server connection details:
   a) Enter **Server Connection Address** for the Elasticsearch server you set up earlier.
   b) (Optional) Enter **Server Username** used to access the Elasticsearch server.
@@ -51,8 +50,8 @@ Follow these steps to connect your Elasticsearch server to Mattermost and genera
   - Note: It is recommended that bulk indexing be completed before enabling Elasticsearch, otherwise search results will be incomplete. When this setting is ``false``, database search is used for all search queries.
 7. Restart the Mattermost server.
 
- .. note::
-    Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the `config.json`. Please see `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#elasticsearch>`__.
+ .. Note::
+    Additional advanced Elasticsearch settings for large deployments can be configured outside the System Console in the ``config.json`` file. Please see `documentation to learn more <https://docs.mattermost.com/administration/config-settings.html#elasticsearch>`__.
 
 Limitations
 ------------
@@ -73,28 +72,27 @@ The Elasticsearch engine is designed for large Enterprise deployments wanting to
 
 Are there any new search features offered with Elasticsearch?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The current implementation of Elasticsearch matches the search features currently available with database search. The Mattermost team is working on extending the Elasticsearch feature set with file name and content search, date filters, and operators and modifiers.
+The current implementation of Elasticsearch matches the search features currently available with database search. The Mattermost team is working on extending the Elasticsearch feature set with file name and content search, date filters, and operators, and modifiers.
 
 How do I monitor system health of an Elasticsearch server?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 You can use this Prometheus exporter to monitor `various metrics <https://github.com/justwatchcom/elasticsearch_exporter#metrics>`__ about Elasticsearch: `justwatchcom/elasticsearch_exporter <https://github.com/justwatchcom/elasticsearch_exporter>`__
 
-You may also refer to this excellent `article about Elasticsearch performance monitoring <https://www.datadoghq.com/blog/monitor-elasticsearch-performance-metrics/#key-elasticsearch-performance-metrics-to-monitor>`__. It is not written specifically for Prometheus which `Mattermost's performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`__ system uses, but has several tips and best practices.
+You may also refer to this `article about Elasticsearch performance monitoring <https://www.datadoghq.com/blog/monitor-elasticsearch-performance-metrics/#key-elasticsearch-performance-metrics-to-monitor>`__. It is not written specifically for Prometheus, which `Mattermost's performance monitoring <https://docs.mattermost.com/deployment/metrics.html>`__ system uses, but has several tips and best practices.
 
 Why does a 25,000 post database take a long time to index in Elasticsearch?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-There's a few possible reasons why it might be slow:
+There are a few possible reasons:
 
- - Querying the posts out of the database is resource limited (i.e. the machine the database is on is not powerful enough).
+ - Querying the posts out of the database is resource limited (i.e., the machine the database is on is not powerful enough).
 
- - The Elasticsearch cluster is performance limited (i.e. the machines are not powerful enough).
+ - The Elasticsearch cluster is performance limited (i.e., the machines are not powerful enough).
 
- - The 25,000 messages are spread out over a long time window, and the ``BulkIndexingTimeWindowSeconds`` configuration value is too low for efficient indexing of such a "sparse" database. Optimally the value of that config should be set such that the median number of posts falling within any period of that time in the database is around 700 to 800. The default value is 1 hour, so if you are doing a lot less than 800 posts an hour on average, then the indexing will be much slower in terms of "posts per unit time". This can be sped up by increasing that time window.
+ - The 25,000 messages are spread out over a long time window, and the ``BulkIndexingTimeWindowSeconds`` configuration value is too low for efficient indexing of such a "sparse" database. The value of that config should ideally be set so that the median number of posts falling within any period of that time in the database is around 700 to 800. The default value is 1 hour, so if you are doing a lot less than 800 posts an hour on average, then the indexing will be much slower in terms of "posts per unit time". This can be sped up by increasing that time window.
 
-How do I know if an elasticsearch job fails?
+How do I know if an Elasticsearch job fails?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost provides the status of each elasticsearch indexing job in **System Console** > **Environment** > **Elasticsearch** (or **System Console > Advanced > Elasticsearch** in versions 5.11 and earlier). Here, you can see if the job succeeded or failed, including the details of the error.
+Mattermost provides the status of each Elasticsearch indexing job in **System Console > Environment > Elasticsearch** (or **System Console > Advanced > Elasticsearch** in versions prior to 5.12). Here you can see if the job succeeded or failed, including the details of the error.
 
-Morever, any failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. Elasticsearch job failures are identified with worker name ``EnterpriseElasticsearchAggregator`` and ``EnterpriseElasticsearchIndexer``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
-
+Failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. Elasticsearch job failures are identified with worker name ``EnterpriseElasticsearchAggregator`` and ``EnterpriseElasticsearchIndexer``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
