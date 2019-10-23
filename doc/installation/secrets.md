@@ -95,6 +95,21 @@ kubectl create secret generic <name>-gitlab-shell-host-keys --from-file hostKeys
 
 This secret is referenced by the `global.shell.hostKeys.secret` setting.
 
+## Initial Enterprise license
+
+Create a kubernetes secret for storing the Enterprise license for the GitLab instance.
+Replace `<name>` with the name of the release.
+
+```
+kubectl create secret generic <name>-gitlab-license --from-file=license=/tmp/license.gitlab
+```
+
+Then use `--set global.gitlab.license.secret=<name>-gitlab-license` to
+inject the license into your configuration.
+
+You can also use the `global.gitlab.license.key` option to change the default
+`license` key pointing to the license in the license secret.
+
 ### Initial root password
 
 Create a kubernetes secret for storing the initial root password. The password

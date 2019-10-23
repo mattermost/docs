@@ -82,7 +82,6 @@ lint_package:
     - if ! crdExists || previousDeployFailed ; then OPERATOR_BOOTSTRAP=true deploy ; fi
     - deploy
     - wait_for_deploy
-    - add_license
     - echo "export QA_ENVIRONMENT_URL=gitlab-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN" >> "${VARIABLES_FILE}"
     - echo "export GITLAB_ROOT_DOMAIN=$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN"        >> "${VARIABLES_FILE}"
     - echo "export GITLAB_URL=gitlab-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN"         >> "${VARIABLES_FILE}"
@@ -428,6 +427,9 @@ check_docs_lint:
     #echo "Generated root login: $ROOT_PASSWORD"
     kubectl create secret generic "${CI_ENVIRONMENT_SLUG}-gitlab-initial-root-password" --from-literal=password=$ROOT_PASSWORD -o yaml --dry-run | kubectl replace --force -f -
 
+    echo "${REVIEW_APPS_EE_LICENSE}" > /tmp/license.gitlab
+    kubectl create secret generic "${CI_ENVIRONMENT_SLUG}-gitlab-license" --from-file=license=/tmp/license.gitlab -o yaml --dry-run | kubectl replace --force -f -
+
     # YAML_FILE=""${KUBE_INGRESS_BASE_DOMAIN//\./-}.yaml"
     # Cleanup and previous installs, as FAILED and PENDING_UPGRADE will cause errors with `upgrade`
     if [ "$CI_ENVIRONMENT_SLUG" != "production" ] && previousDeployFailed ; then
@@ -477,46 +479,11 @@ check_docs_lint:
       --set global.operator.enabled=true \
       --set global.operator.bootstrap=${OPERATOR_BOOTSTRAP-false} \
       --set gitlab.operator.crdPrefix="$CI_ENVIRONMENT_SLUG" \
+      --set global.gitlab.license.secret="$CI_ENVIRONMENT_SLUG-gitlab-license" \
       --namespace="$KUBE_NAMESPACE" \
       --version="$CI_PIPELINE_ID-$CI_JOB_ID" \
       "$name" \
       .
-  }
-
-  function add_license() {
-    if [ -z "${REVIEW_APPS_EE_LICENSE}" ]; then echo "License not found" && return; fi
-
-    while [ -z "$(kubectl get pods -n ${KUBE_NAMESPACE} --field-selector=status.phase=Running -lapp=task-runner,release=${CI_ENVIRONMENT_SLUG} --no-headers -o=custom-columns=NAME:.metadata.name)" ]; do
-      echo "Waiting till task-runner pod is ready";
-      sleep 5;
-    done
-
-    task_runner_pod=$(kubectl get pods -n ${KUBE_NAMESPACE} --field-selector=status.phase=Running -lapp=task-runner,release=${CI_ENVIRONMENT_SLUG} --no-headers -o=custom-columns=NAME:.metadata.name)
-
-    if [ -z "${task_runner_pod}" ]; then echo "Task runner pod not found" && return; fi
-    echo "Task runner pod is ${task_runner_pod}"
-
-    echo "${REVIEW_APPS_EE_LICENSE}" > /tmp/license.gitlab
-    kubectl -n "$KUBE_NAMESPACE" cp /tmp/license.gitlab ${task_runner_pod}:/tmp/license.gitlab
-    rm /tmp/license.gitlab
-
-    kubectl -n "$KUBE_NAMESPACE" exec -it ${task_runner_pod} -- /srv/gitlab/bin/rails runner -e production \
-     '
-     content = File.read("/tmp/license.gitlab").strip;
-     FileUtils.rm_f("/tmp/license.gitlab");
-
-     unless License.where(data:content).empty?
-       puts "License already exists";
-       Kernel.exit 0;
-     end
-
-     unless License.new(data: content).save
-       puts "Could not add license";
-       Kernel.exit 0;
-     end
-
-     puts "License added";
-     '
   }
 
   function wait_for_deploy {
@@ -704,7 +671,6 @@ check_docs_lint:
     - bundle exec rspec -c -f d spec
   after_script:
     - *auto_devops
-    - add_license
   artifacts:
     when: on_failure
     expire_in: 7d

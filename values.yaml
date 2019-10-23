@@ -57,6 +57,14 @@ global:
     # tls:
     #   enabled: true
 
+  gitlab:
+    ## Enterprise license for this GitLab installation
+    ## Secret created according to doc/installation/secrets.md#initial-enterprise-license
+    ## If allowing shared-secrets generation, this is OPTIONAL.
+    license: {}
+      # secret: RELEASE-gitlab-license
+      # key: license
+
   ## Initial root password for this GitLab installation
   ## Secret created according to doc/installation/secrets.md#initial-root-password
   ## If allowing shared-secrets generation, this is OPTIONAL.
