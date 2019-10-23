@@ -78,6 +78,9 @@ redis:
   host: redis.example.com
   serviceName: redis
   port: 6379
+  sentinels:
+    - host: sentinel1.example.com
+      port: 26379
   password:
     secret: gitlab-redis
     key: redis-password
@@ -85,7 +88,7 @@ redis:
 
 #### host
 
-The hostname of the Redis server with the database to use. This can be omitted in lieu of `serviceName`
+The hostname of the Redis server with the database to use. This can be omitted in lieu of `serviceName`. If using Redis Sentinels, the `host` attribute needs to be set to the cluster name as specified in the `sentinel.conf`.
 
 #### serviceName
 
@@ -101,6 +104,20 @@ The `password` attribute for Redis has two sub keys:
 
 - `secret` defines the name of the Kubernetes `Secret` to pull from
 - `key` defines the name of the key in the above secret that contains the password.
+
+#### sentinels
+
+The `sentinels` attribute allows for a connection to a Redis HA cluster.
+The sub keys describe each Sentinel connection.
+
+- `host` defines the hostname for the Sentinel service
+- `port` defines the port number to reach the Sentinel service, defaults to `26379`
+
+_Note:_ The current Redis Sentinel support only supports Sentinels that have
+been deployed separately from the GitLab chart. As a result, the Redis
+deployment through the GitLab chart should be disabled with `redis.enabled=false`
+and `redis-ha.enabled=false`. The Secret containing the Redis password
+will need to be manually created before deploying the GitLab chart.
 
 ### PostgreSQL
 

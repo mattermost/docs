@@ -163,11 +163,22 @@ global:
     host: redis.example.com
     # serviceName:
     port: 6379
+    sentinels:
+      - host: sentinel1.example.com
+        port: 26379
+      - host: sentinel2.example.com
+        port: 26379
     password:
       enabled: true
       secret: gitlab-redis
       key: redis-password
 ```
+
+_Note:_ The current Redis Sentinel support only supports Sentinels that have
+been deployed separately from the GitLab chart. As a result, the Redis
+deployment through the GitLab chart should be disabled with `redis.enabled=false`
+and `redis-ha.enabled=false`. The Secret containing the Redis password
+will need to be manually created before deploying the GitLab chart.
 
 ## Configure Grafana integration
 
