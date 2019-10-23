@@ -83,6 +83,9 @@ global:
       # key:
     # host: redis.hostedsomewhere.else
     # port: 6379
+    # sentinels:
+    #   - host:
+    #     port:
 
   ## doc/charts/globals.md#configure-gitaly-settings
   gitaly:

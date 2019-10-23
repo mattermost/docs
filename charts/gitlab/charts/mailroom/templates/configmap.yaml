@@ -27,10 +27,27 @@ data:
           :namespace: resque:gitlab
           :queue: email_receiver
           :worker: EmailReceiverWorker
+          {{- if .Values.global.redis.sentinels }}
+          :sentinels:
+            {{- range $i, $entry := .Values.global.redis.sentinels }}
+            -
+              :host: {{ $entry.host }}
+              :port: {{ $entry.port}}
+            {{- end }}
+          {{- end }}
         :arbitration_method: redis
         :arbitration_options:
           :redis_url: {{ template "gitlab.redis.url" . }}
           :namespace: mail_room:gitlab
+          {{- if .Values.global.redis.sentinels }}
+          :sentinels:
+            {{- range $i, $entry := .Values.global.redis.sentinels }}
+            -
+              :host: {{ $entry.host }}
+              :port: {{ $entry.port}}
+            {{- end }}
+          {{- end }}
+
   configure: |
     {{- include "gitlab.scripts.configure.secrets" (dict "required" "mailroom" "optional" "redis") | nindent 4 }}
 # Leave this here - This line denotes end of block to the parser.
