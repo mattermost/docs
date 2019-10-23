@@ -58,16 +58,27 @@ redis:
   host: redis.example.com
   serviceName: redis
   port: 8080
+    sentinels:
+    - host: sentinel1.example.com
+      port: 26379
   password:
     secret: gitlab-redis
     key: redis-password
 ```
 
 - `redis` - the name for what the current chart needs to connect to
-- `host`  - overrides the use of serviceName, comment out by default use `0.0.0.0` as the example
+- `host`  - overrides the use of serviceName, comment out by default use `0.0.0.0` as the example. If using Redis Sentinels, the `host` attribute needs to be set to the cluster name as specified in the `sentinel.conf`.
 - `serviceName` - intended to be used by default instead of the host, connect using the Kubernetes Service name
 - `port` - the port to connect on. Comment out by default, and use the default port as the example.
 - `password`- defines settings for the Kubernetes Secret containing the password.
+- `sentinels.[].host` - defines the hostname of Redis Sentinel server for a Redis HA setup.
+- `sentinels.[].port` - defines the port on which to connect to the Redis Sentinel server. Defaults to `26379`.
+
+_Note:_ The current Redis Sentinel support only supports Sentinels that have
+been deployed separately from the GitLab chart. As a result, the Redis
+deployment through the GitLab chart should be disabled with `redis.enabled=false`
+and `redis-ha.enabled=false`. The Secret containing the Redis password
+will need to be manually created before deploying the GitLab chart.
 
 ### Sharing secrets
 

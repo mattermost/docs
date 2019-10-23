@@ -131,18 +131,29 @@ that is shared across all Sidekiq pods.
 redis:
   host: rank-racoon-redis
   port: 6379
+  sentinels:
+    - host: sentinel1.example.com
+      port: 26379
   password:
     secret: gitlab-redis
     key: redis-password
 ```
 
-| Name              | Type    | Default | Description |
-|:----------------- |:-------:|:------- |:----------- |
-| `host`            | String  |         | The hostname of the Redis server with the database to use. This can be omitted in lieu of `serviceName`. |
-| `password.key`    | String  |         | The `password.key` attribute for PostgreSQL defines the name of the key in the secret (below) that contains the password. |
-| `password.secret` | String  |         | The `password.secret` attribute for PostgreSQL defines the name of the Kubernetes `Secret` to pull from. |
-| `port`            | Integer | `6379`  | The port on which to connect to the Redis server. |
-| `serviceName`     | String  | `redis` | The name of the `service` which is operating the Redis database. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Redis as a part of the overall GitLab chart. |
+| Name               | Type    | Default | Description |
+|:------------------ |:-------:|:------- |:----------- |
+| `host`             | String  |         | The hostname of the Redis server with the database to use. This can be omitted in lieu of `serviceName`. If using Redis Sentinels, the `host` attribute needs to be set to the cluster name as specified in the `sentinel.conf`. |
+| `password.key`     | String  |         | The `password.key` attribute for Redis defines the name of the key in the secret (below) that contains the password. |
+| `password.secret`  | String  |         | The `password.secret` attribute for Redis defines the name of the Kubernetes `Secret` to pull from. |
+| `port`             | Integer | `6379`  | The port on which to connect to the Redis server. |
+| `serviceName`      | String  | `redis` | The name of the `service` which is operating the Redis database. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Redis as a part of the overall GitLab chart. |
+| `sentinels.[].host`| String  |         | The hostname of Redis Sentinel server for a Redis HA setup. |
+| `sentinels.[].port`| Integer | `26379` | The port on which to connect to the Redis Sentinel server. |
+
+_Note:_ The current Redis Sentinel support only supports Sentinels that have
+been deployed separately from the GitLab chart. As a result, the Redis
+deployment through the GitLab chart should be disabled with `redis.enabled=false`
+and `redis-ha.enabled=false`. The Secret containing the Redis password
+will need to be manually created before deploying the GitLab chart.
 
 ### PostgreSQL
 

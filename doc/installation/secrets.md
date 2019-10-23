@@ -114,6 +114,10 @@ Generate a random 64 character alpha-numeric password for Redis. Replace
 kubectl create secret generic <name>-redis-secret --from-literal=secret=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
+If deploying with an already existing Redis cluster, please use the password
+for accessing the Redis cluster that has been base64 encoded instead of a
+randomly generated one.
+
 ### GitLab Shell secret
 
 Generate a random 64 character alpha-numeric secret for GitLab Shell. Replace

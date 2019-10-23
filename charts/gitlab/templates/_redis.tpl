@@ -42,3 +42,14 @@ Return the redis url.
 {{- define "gitlab.redis.url" -}}
 {{ template "gitlab.redis.scheme" . }}://{{- if .Values.global.redis.password.enabled -}}:<%= URI.escape(File.read("/etc/gitlab/redis/password").strip) %>@{{- end -}}{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}
 {{- end -}}
+
+{{/*
+Build the structure describing sentinels
+*/}}
+{{- define "gitlab.redis.sentinels" -}}
+sentinels:
+{{- range $i, $entry := .Values.global.redis.sentinels }}
+  - host: {{ $entry.host }}
+    port: {{ default 26379 $entry.port }}
+{{- end }}
+{{- end -}}

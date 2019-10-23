@@ -31,6 +31,9 @@ data:
     production:
       # Redis (single instance)
       url: {{ template "gitlab.redis.url" . }}
+{{- if .Values.global.redis.sentinels }}
+{{ include "gitlab.redis.sentinels" . | indent 6 }}
+{{- end }}
       id:
   gitlab.yml.erb: |
     production: &base
