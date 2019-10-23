@@ -161,6 +161,9 @@ spec:
             - name: shared-artifact-directory
               mountPath: /srv/gitlab/shared
               readOnly: false
+            - name: shared-tmp
+              mountPath: '/tmp'
+              readOnly: false
 {{- if .Values.global.email.smime.enabled }}
             - name: smime-creds
               mountPath: /home/git/gitlab
@@ -219,6 +222,9 @@ spec:
             - name: shared-artifact-directory
               mountPath: /srv/gitlab/shared
               readOnly: false
+            - name: shared-tmp
+              mountPath: '/tmp'
+              readOnly: false
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
 {{ include "gitlab.extraVolumeMounts" . | indent 12 }}
           livenessProbe:
@@ -244,6 +250,8 @@ spec:
       volumes:
 {{ include "gitlab.extraVolumes" . | indent 6 }}
 {{ include "gitlab.psql.ssl.volume" . | indent 6 }}
+      - name: shared-tmp
+        emptyDir: {}
 {{- if .Values.metrics.enabled }}
       - name: unicorn-metrics
         emptyDir:
