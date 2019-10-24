@@ -26,6 +26,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where ``/code`` was rendering HTML incorrectly.
  - Fixed an issue with not being able to attach a file from iPad using Safari.
  - Fixed an issue where clicking "Pinned" icon removed text in the search box.
+ - Fixed an issue where post metadata was returned for deleted posts.
+ - Fixed an issue where clicking "Search" icon in narrow-width mode caused right-hand side to appear along with loading indicator "...".
+ - Fixed an issue where clicking locally installed plugins without a URL opened a new tab to the same page.
+ - Fixed an issue where search with quotation marks was not returning expected results.
  
 ### config.json
 
