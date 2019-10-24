@@ -17,7 +17,7 @@ Important Upgrade Notes
 |                                                    | When enabling `Guest Accounts <https://docs.mattermost.com/deployment/guest-accounts.html>`_, all users who have the ability to invite users will be able to     |
 |                                                    | invite guests by default.  System admins will need to remove this permission on each role via **System Console > Permissions Schemes**.  In Mattermost Server    |
 |                                                    | version 5.17, the System admin will be the only role to automatically get the invite guest permission, however the fix will not be applicable in 5.16 due to     |
-|                                                    | database migration processes.                                                                                                                             |
+|                                                    | database migration processes.                                                                                                                                    |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.14.0                                            | Webhooks are now only displayed if the user is the creator of the webhook or a system administrator.                                                             |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
