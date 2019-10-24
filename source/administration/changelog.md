@@ -6,12 +6,15 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.16 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.16.1, release day TBD**
-  - (Accessibility) Fixing an issue where "Click here to jump to recent messages" is not accessible via keyboard. [MM-19498](https://mattermost.atlassian.net/browse/MM-19498)
-  - (Accessibility) Fixing an issue where post options are skipped when tabbing through a post in search results. [MM-19497](https://mattermost.atlassian.net/browse/MM-19497)
-  - (Accessibility) Fixing an issue where F6 does not allow navigating to the right-hand side when a thread isn't open. [MM-18117](https://mattermost.atlassian.net/browse/MM-18117)
+- **v5.16.2, release day TBD**
+  - Fixing an issue where the Permission Schemes are not working properly on an E10 license. [MM-19556](https://mattermost.atlassian.net/browse/MM-19556)
   - Fixing an issue where switching to an unread channel sometimes gets stuck at "Loading...". [MM-19091](https://mattermost.atlassian.net/browse/MM-19091)
-  - Fixing an issue where a change to the production Plugin Marketplace URL wasn't backported to v5.16.0. [MM-19516](https://mattermost.atlassian.net/browse/MM-19516)
+- **v5.16.1, released 2019-10-24**
+  - Mattermost v5.16.1 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+  - (Accessibility) Fixed an issue where "Click here to jump to recent messages" was not accessible via keyboard. [MM-19498](https://mattermost.atlassian.net/browse/MM-19498)
+  - (Accessibility) Fixed an issue where post options were skipped when tabbing through a post in search results. [MM-19497](https://mattermost.atlassian.net/browse/MM-19497)
+  - (Accessibility) Fixed an issue where F6 did not allow navigating to the right-hand side when a thread wasn't open. [MM-18117](https://mattermost.atlassian.net/browse/MM-18117)
+  - Fixed an issue where a change to the production Plugin Marketplace URL wasn't backported to v5.16.0. [MM-19516](https://mattermost.atlassian.net/browse/MM-19516)
 - **v5.16.0, released 2019-10-16**
   - Original 5.16.0 release
 
@@ -24,7 +27,8 @@ Mattermost v5.16.0 contains a low level security fix. [Upgrading](http://docs.ma
  - Support for Internet Explorer (IE11) was removed. Learn more in our [forum post](https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575).
  
 ### Breaking Changes
- - The Mattermost Desktop v4.3.0 release includes a change to how desktop notifications are sent from non-secure URLs (http://). Organizations using non-secure Mattermost Servers (http://) will need to update to Mattermost Server versions 5.16.0+, 5.15.1, 5.14.4 or 5.9.5 (ESR) to continue receiving desktop notifications when using Mattermost Desktop v4.3.0 or later.  
+ - The Mattermost Desktop v4.3.0 release includes a change to how desktop notifications are sent from non-secure URLs (http://). Organizations using non-secure Mattermost Servers (http://) will need to update to Mattermost Server versions 5.16.0+, 5.15.1, 5.14.4 or 5.9.5 (ESR) to continue receiving desktop notifications when using Mattermost Desktop v4.3.0 or later.
+ - When enabling [Guest Accounts](https://docs.mattermost.com/deployment/guest-accounts.html), all users who have the ability to invite users will be able to invite guests by default.  System admins will need to remove this permission on each role via **System Console > Permissions Schemes**.  In Mattermost Server version 5.17, the System admin will be the only role to automatically get the invite guest permission, however the fix will not be applicable in 5.16 due to database migration processes.
 
 ### Highlights
 
@@ -163,10 +167,11 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.15 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.15.2, release day TBD**
-  - (Accessibility) Fixing an issue where "Click here to jump to recent messages" is not accessible via keyboard. [MM-19498](https://mattermost.atlassian.net/browse/MM-19498)
-  - (Accessibility) Fixing an issue where post options are skipped when tabbing through a post in search results. [MM-19497](https://mattermost.atlassian.net/browse/MM-19497)
-  - (Accessibility) Fixing an issue where F6 does not allow navigating to the right-hand side when a thread isn't open. [MM-18117](https://mattermost.atlassian.net/browse/MM-18117)
+- **v5.15.2, released 2019-10-24**
+  - Mattermost v5.15.2 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+  - (Accessibility) Fixed an issue where "Click here to jump to recent messages" was not accessible via keyboard. [MM-19498](https://mattermost.atlassian.net/browse/MM-19498)
+  - (Accessibility) Fixed an issue where post options were skipped when tabbing through a post in search results. [MM-19497](https://mattermost.atlassian.net/browse/MM-19497)
+  - (Accessibility) Fixed an issue where F6 did not allow navigating to the right-hand side when a thread wasn't open. [MM-18117](https://mattermost.atlassian.net/browse/MM-18117)
 - **v5.15.1, released 2019-10-11**
   - Fixed an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
   - Fixed an issue where server-side telemetry was not reporting back after 5.14 release. [MM-18115](https://mattermost.atlassian.net/browse/MM-18115)
@@ -242,6 +247,8 @@ Mattermost v5.15.0 contains low level security fixes. [Upgrading](http://docs.ma
 
 ## Release v5.14 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
+- **v5.14.5, released 2019-10-24**
+  - Mattermost v5.14.5 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.14.4, released 2019-10-11**
   - Fixed an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
   - Fixed an issue where server-side telemetry was not reporting back after 5.14 release. [MM-18115](https://mattermost.atlassian.net/browse/MM-18115)
@@ -907,6 +914,8 @@ Thank you to everyone who contributed to the Mattermost project in March 2019!
 
 Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
+- **v5.9.6, released 2019-10-24** 
+  - Mattermost v5.9.6 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.9.5, released 2019-10-12**  
   - Fixed an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
 - **v5.9.4, released 2019-08-22** 
