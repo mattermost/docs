@@ -63,7 +63,7 @@ spec:
 {{ include "gitlab.certificates.initContainer" . | indent 8 }}
         - name: configure
           command: ['sh']
-          args: [ '-c', 'sh -x /config-unicorn/configure ; sh -x /config-workhorse/configure']
+          args: [ '-c', 'sh -x /config-unicorn/configure ; sh -x /config-workhorse/configure ; mkdir -p -m 3770 /tmp/gitlab']
           image: {{ .Values.init.image }}:{{ .Values.init.tag }}
           volumeMounts:
 {{ include "gitlab.extraVolumeMounts" . | indent 10 }}
@@ -82,6 +82,9 @@ spec:
             readOnly: false
           - name: workhorse-secrets
             mountPath: /init-secrets-workhorse
+            readOnly: false
+          - name: shared-tmp
+            mountPath: /tmp
             readOnly: false
           resources:
 {{ toYaml .Values.init.resources | indent 12 }}
@@ -122,6 +125,8 @@ spec:
             - containerPort: {{ .Values.service.internalPort }}
               name: unicorn
           env:
+            - name: TMPDIR
+              value: "/tmp/gitlab"
             - name: GITALY_FEATURE_DEFAULT_ON
               value: "1"
             - name: CONFIG_TEMPLATE_DIRECTORY
@@ -202,6 +207,8 @@ spec:
             - containerPort: {{ .Values.service.workhorseInternalPort }}
               name: workhorse
           env:
+            - name: TMPDIR
+              value: "/tmp/gitlab"
             - name: GITLAB_WORKHORSE_EXTRA_ARGS
               value: {{ .Values.workhorse.extraArgs | quote }}
             - name: GITLAB_WORKHORSE_LISTEN_PORT
