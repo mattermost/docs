@@ -37,7 +37,7 @@ Mattermost Enterprise Edition v5.10.2 - `View Changelog <https://docs.mattermost
   - GPG Signature: https://releases.mattermost.com/5.10.2/mattermost-5.10.2-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v5.9.6 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-9-esr>`__ - `Download <https://releases.mattermost.com/5.9.6/mattermost-5.9.6-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.9.6/mattermost-5.9.6-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``0d07b07e6116e02af5ec211bf92fb98c23bb4a6d8cdf8ac218fddbc727456851``
+  - SHA-256 Checksum: ``996cdced081e9d59a9fb6010f49a3ca67d834b86d398af0b21bd2fb61ee0bb09``
   - GPG Signature: https://releases.mattermost.com/5.9.6/mattermost-5.9.6-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v5.8.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-8-feature-release>`__ - `Download <https://releases.mattermost.com/5.8.2/mattermost-5.8.2-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.8.2/mattermost-5.8.2-linux-amd64.tar.gz``
@@ -182,7 +182,7 @@ Mattermost Team Edition v5.10.2 - `View Changelog <https://docs.mattermost.com/a
   - GPG Signature: https://releases.mattermost.com/5.10.2/mattermost-team-5.10.2-linux-amd64.tar.gz.sig
 Mattermost Team Edition v5.9.6 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-9-esr>`__ - `Download <https://releases.mattermost.com/5.9.6/mattermost-team-5.9.6-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.9.6/mattermost-team-5.9.6-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``cb646329ef9ea2de78c61886241b9b3f21753737a628160db49c1e2f723edece``
+  - SHA-256 Checksum: ``8165e06e6b486e0f9abfbfc0576af01a6526cdbc0ea95e55410eb3bef9f398b4``
   - GPG Signature: https://releases.mattermost.com/5.9.6/mattermost-team-5.9.6-linux-amd64.tar.gz.sig
 Mattermost Team Edition v5.8.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-8-feature-release>`__ - `Download <https://releases.mattermost.com/5.8.2/mattermost-team-5.8.2-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.8.2/mattermost-team-5.8.2-linux-amd64.tar.gz``
