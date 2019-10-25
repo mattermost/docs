@@ -3,21 +3,23 @@
 Set Up a Kubernetes Cluster
 ============================
 
-If you do not already have a production-ready Kubernetes cluster you will need to set one up. If you already have a Kubernetes cluster you can skip to step 2.
+Prerequisites
+--------------
 
-Your Kubernetes cluster must be version 1.12 or higher.
+If you don’t have a production-ready Kubernetes cluster, version 1.12 or higher, you will need to set one up. If you already have a
+Kubernetes cluster you can skip to Confirm Resource Requirements. Note that `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ also needs to be installed and configured.
 
-**1. Set up a Kubernetes cluster**
+It’s recommended that you have an understanding of basic Kubernetes actions such as start, stop, redeploy, update and that you consult the
+`official Kubernetes setup documentation <https://kubernetes.io/docs/setup/>`__ on how to set up a cluster in your environment. If you’re unsure
+about which environment you want to use for your Kubernetes cluster, we
+suggest using a managed service such as as `Amazon EKS <https://aws.amazon.com/eks/>`__, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/services/kubernetes-service/>`__, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`__,
+or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`__.
 
-Kubernetes can be set up in practically any environment. See the `official Kubernetes setup documentation <https://kubernetes.io/docs/setup/>`__ to discover how to set up a cluster in your environment.
 
-If you are unsure about what environment you want to run Kubernetes in, we suggest using a managed service such as `Amazon EKS <https://aws.amazon.com/eks/>`__, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/services/kubernetes-service/>`__, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`__, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`__.
+Confirm Resource Requirements
+-----------------------------
 
-Make sure to also install and configure `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__.
-
-**2. Make sure your cluster has enough resources**
-
-Running Mattermost in Kubernetes will require different resources based on your total number of users. Here are some guidelines for the resources that Mattermost will require at different scales:
+Running Mattermost in Kubernetes requires different resources based on your total number of users. The table below details the minimum Kubernetes cluster resources that Mattermost requires at different scales:
 
 .. csv-table::
     :header: "User Count", "Node Count", "Memory per Node", "vCPU per Node"
