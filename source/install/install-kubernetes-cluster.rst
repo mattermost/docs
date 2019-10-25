@@ -1,6 +1,6 @@
 .. _install-kubernetes-cluster:
 
-Set Up a Kubernetes Cluster
+Setting Up a Kubernetes Cluster
 ============================
 
 Prerequisites
