@@ -66,6 +66,7 @@ data:
     {{- if .rubySentryDsn }}
     ruby_sentry_dsn = "{{ .rubySentryDsn }}"
     {{- end }}
+    dir = "/var/log/gitaly"
     {{- if .sentryEnvironment }}
     sentry_environment = "{{ .sentryEnvironment }}"
     {{- end }}
@@ -143,13 +144,6 @@ data:
       {{- end }}
       database: nil
       namespace: resque:gitlab
-
-    # Log file.
-    # Default is gitlab-shell.log in the root directory.
-    log_file: "/var/log/gitaly/gitlab-shell.log"
-
-    # Log level. INFO by default
-    log_level: INFO
 
     # Audit usernames.
     # Set to true to see real usernames in the logs instead of key ids, which is easier to follow, but
