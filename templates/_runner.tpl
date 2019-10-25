@@ -18,7 +18,7 @@ Override the runner charts cache secret name to match minio
 {{- define "gitlab-runner.cache.secret" -}}
 {{- if .Values.runners.cache.secretName -}}
 {{    .Values.runners.cache.secretName | quote }}
-{{- else -}}
+{{- else if .Values.global.minio.enabled -}}
 {{    include "gitlab.minio.credentials.secret" . }}
 {{- end -}}
 {{- end -}}
