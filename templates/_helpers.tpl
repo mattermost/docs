@@ -268,7 +268,7 @@ We're explicitly checking for an actual value being present, not the existance o
 */}}
 {{- define "gitlab.ingress.tls.configured" -}}
 {{/* Pull the value, if it exists */}}
-{{- $global   := pluck "secretName" $.Values.global.ingress.tls | first -}}
+{{- $global   := pluck "secretName" (default (dict)  $.Values.global.ingress.tls) | first -}}
 {{- $unicorn  := pluck "secretName" $.Values.gitlab.unicorn.ingress.tls | first -}}
 {{- $registry := pluck "secretName" $.Values.registry.ingress.tls | first -}}
 {{- $minio    := pluck "secretName" $.Values.minio.ingress.tls | first -}}
