@@ -440,13 +440,22 @@ check_docs_lint:
       WAIT=""
     fi
 
+    # helm's --set argument dislikes special characters, pass them as YAML
+    cat << CIYAML > ci.details.yaml
+    ci:
+      title: |
+        ${CI_COMMIT_TITLE}
+      sha: "${CI_COMMIT_SHA}"
+      branch: "${CI_COMMIT_REF_NAME}"
+      job:
+        url: "${CI_JOB_URL}"
+      pipeline:
+        url: "${CI_PIPELINE_URL}"
+  CIYAML
+
     helm upgrade --install \
       $WAIT \
-      --set ci.branch="$CI_COMMIT_REF_NAME" \
-      --set ci.commit.sha="$CI_COMMIT_SHORT_SHA" \
-      --set ci.commit.title=\""$CI_COMMIT_TITLE"\" \
-      --set ci.job.url="$CI_JOB_URL" \
-      --set ci.pipeline.url="$CI_PIPELINE_URL" \
+      -f ci.details.yaml \
       --set releaseOverride="$CI_ENVIRONMENT_SLUG" \
       --set global.imagePullPolicy="Always" \
       --set global.hosts.hostSuffix="$HOST_SUFFIX" \
