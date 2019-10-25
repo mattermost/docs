@@ -30,6 +30,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where clicking "Search" icon in narrow-width mode caused right-hand side to appear along with loading indicator "...".
  - Fixed an issue where clicking locally installed plugins without a URL opened a new tab to the same page.
  - Fixed an issue where search with quotation marks was not returning expected results.
+ - Fixed an issue where the default permission was such that all users were allowed to invite a guest instead of only System Admins.
  
 ### config.json
 
