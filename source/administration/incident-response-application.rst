@@ -25,7 +25,7 @@ To shape the direction of the incident response application, `sign up to our Alp
 .. contents:: Contents
   :backlinks: top
   :local:
-  :depth: 1
+  :depth: 2
 
 How Can I Try The App?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -422,20 +422,6 @@ Below is an example JSON for a step containing one ``archive_channel`` start act
   
   In this example, ``{{.Action.CreateWarroom.ChannelName}}`` pulls the channel name used in an ``CreateWarroom`` action, which is the example of the ``create_channel`` action above, and archives it.
 
-Statistics
-^^^^^^^^^^^^^^^
-
-The incident response application also enables you to pull summary statistics, including mean-time-to-acknowledgment (MTTA) and mean-time-to-resolution (MTTR).
-
-To pull a sample report, use ``/workflow stats`` in any Mattermost channel:
-
-.. image:: ../images/incident-response-app-statistics.png
-   :alt: Incident Response App: Statistics
-
-The statistics are based on an aggregated summary of all individual workflow instances. You may also reset statistics at any time via ``/workflow reset-stats``.
-
-You must be a System Administrator or an authorized user in **System Console > Plugins > Incident Response App** to execute these commands.
-
 Sample Schema
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -605,6 +591,20 @@ Note that you should edit the sample (such as team and channel names) for your s
             ]
         }
     ]
+
+Statistics
+~~~~~~~~~~~~~~~~~~
+
+The incident response application also enables you to pull summary statistics, including mean-time-to-acknowledgment (MTTA) and mean-time-to-resolution (MTTR).
+
+To pull a sample report, use ``/workflow stats`` in any Mattermost channel:
+
+.. image:: ../images/incident-response-app-statistics.png
+   :alt: Incident Response App: Statistics
+
+The statistics are based on an aggregated summary of all individual workflow instances. You may also reset statistics at any time via ``/workflow reset-stats``.
+
+You must be a System Administrator or an authorized user in **System Console > Plugins > Incident Response App** to execute these commands.
 
 Permissions and Management of the App
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
