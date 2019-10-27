@@ -272,12 +272,122 @@ Creates a post in the specified channel.
     "channel_name", "The channel to create the post in.", "string", "Yes"
     "message", "The contents of the message.", "string", "Yes"
     "team_name", "The team the channel belongs to. Use it if the same channel name exists in different teams.", "string", "No"
-    "fields_title", "A list of fields to show in the message. ", "string", "No"    //  
-    "fields", "A list of fields to show in the message. ", "[]Field", "No"// 
-    "transition_title", "A label and a step to transition to when pressed.", "string", "No"///
-    "transitions", "A label and a step to transition to when pressed.", "[]Button", "No"//
+    "fields", "A list of fields to include in the message. Usually dropdown menus or buttons that allow users to add more details to the incident.", "[]Field", "No"
+    "fields_title", "A title for the fields.", "string", "No"
+    "transitions", "A list of transitions to include in the message. When the user clicks on one of the transitions, the workflow transitions to the specified step.", "[]Button", "No"
+    "transition_title", "A title for the transitions.", "string", "No"
 
-// TODO Verify JSON schema and add an example here. Example should include fields and transition_button.
+Below is an example JSON for a step containing one ``post`` start action, which the message below to a channel created by the ``CreateWarroom`` action.
+
+.. image:: ../images/incident-response-app-post-action.png
+   :alt: Incident Response App: Post Action
+
+.. code-block:: json
+
+  "steps": [
+      {
+          "name": "Triage",
+          "start_actions": [
+              {
+                  "name": "TriagePost",
+                  "type": "post",
+                  "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
+                  "message": "New issue to triage:\n ```{{.Trigger.IssueReported.Message}}```",
+                  "fields_title": "Please add details to this issue",
+                  "fields": [
+                      {
+                          "name": "Escalate",
+                          "type": "button",
+                          "description": "Escalate to Team Lead for immediate action"
+                      },
+                      {
+                          "name": "Impact",
+                          "type": "options",
+                          "description": "The impact of the incident on an individual user",
+                          "options": [
+                              "I1",
+                              "I2",
+                              "I3"
+                          ]
+                      },
+                      {
+                          "name": "Reach",
+                          "type": "options",
+                          "description": "The number of users impacted",
+                          "options": [
+                              "10,000+",
+                              "1,000-10,000",
+                              "Less than 1,000"
+                          ]
+                      }
+                  ],
+                  "transitions_title": "Transition to step",
+                  "transitions": [
+                      {
+                          "label": "Triaged",
+                          "description": "Issue has been triaged",
+                          "to": "DevelopFix"
+                      },
+                      {
+                          "label": "Resolved",
+                          "description": "Issue has been resolved",
+                          "to": "Resolved"
+                      }
+                  ]
+              }
+          ]
+      }
+  ]
+
+.. tip::
+  Note that the above JSON uses ``{{.Action.CreateWarroom.ChannelName}}`` as the channel name. These are template variables which allow you to dynamically specify parameters based on other actions or steps within the app workflow schema.
+  
+  In this example, ``{{.Action.CreateWarroom.ChannelName}}`` pulls the channel name used in an ``CreateWarroom`` action, which is the example of the ``create_channel`` action above, and posts a message to that channel.
+
+**Fields and Transitions**
+
+Note that in the above JSON example, the post action type contained fields and transitions.
+
+Fields are usually dropdown menus or buttons that allow users to add more details to the incident, such as escalate an issue to the Team Lead, and specify the impact and reach of the incident.
+
+You can also optionally set a title for them - if none specified, ``Fields`` is used.
+
+.. image:: ../images/incident-response-app-fields.png
+   :alt: Incident Response App: Fields
+
+Transitions allow a user to move the app workflow to the next step in the process, such as **Triage** or **Resolved**. When a user clicks on one of the transitions, the workflow transitions to the specified step.
+
+You can also optionally set a title for them - if none specified, ``Transitions`` is used.
+
+.. image:: ../images/incident-response-app-transitions.png
+   :alt: Incident Response App: Transitions
+
+Transition to Another Step (type: ``transition_to``)
+******************************************************
+
+Specifies which step to transition the workflow to.
+
+.. csv-table::
+    :header: "Field", "Description", "Type", "Required"
+
+    "to", "The name of the target step to transition to", "string", "Yes"
+
+Below is an example JSON for a step containing one ``transition_to`` start action, which transitions the workflow to ``Triage`` step.
+
+.. code-block:: json
+
+  "steps": [
+      {
+          "name": "Setup",
+          "start_actions": [
+              {
+                  "name": "TransitionToTriage",
+                  "type": "transition_to",
+                  "to": "Triage"
+              },
+          ]
+      }
+  ]
 
 Archive Channel (type: ``archive_channel``)
 **********************************************
@@ -311,18 +421,6 @@ Below is an example JSON for a step containing one ``archive_channel`` start act
   Note that the above JSON uses ``{{.Action.CreateWarroom.ChannelName}}`` as the channel name. These are template variables which allow you to dynamically specify parameters based on other actions or steps within the app workflow schema.
   
   In this example, ``{{.Action.CreateWarroom.ChannelName}}`` pulls the channel name used in an ``CreateWarroom`` action, which is the example of the ``create_channel`` action above, and archives it.
-
-Transition to Another Step (type: ``transition_to``)
-******************************************************
-
-Specified which step to transition the workflow to. // TODO Add a more clear description
-
-.. csv-table::
-    :header: "Field", "Description", "Type", "Required"
-
-    "to", "The name of the target step to transition to", "string", "Yes"
-
-// TODO Verify JSON schema and add an example here.
 
 Statistics
 ^^^^^^^^^^^^^^^
