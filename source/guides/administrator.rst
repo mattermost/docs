@@ -172,6 +172,7 @@ Learn how to extend Mattermost by integrating your workflows.
    :glob:
 
    /developer/toolkit*
+   /administration/incident-response-application*
    /deployment/atlassian-integrations*
    /deployment/ci-cd-tools*
    /deployment/incident-response-and-monitoring*
