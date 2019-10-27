@@ -3,20 +3,19 @@ Incident Response Application (EE, Closed Alpha)
 
 The incident response application is available in closed Alpha, in `Enterprise Edition <https://mattermost.com/pricing/>`_. Supported in Mattermost 5.12 and later.
 
-// TODO: Add a screenshot or a video
-
-Sample use cases you can accomplish with this app include the following:
+Use the incident response application to connect all your workflows, automate repetitive tasks and collaborate on incidents within one secure messaging platform. Sample use cases you can accomplish with this app include the following:
 
 1. Trigger automated incident response workflows based on keywords.
 2. Automatically mention your InfoSec or DevSecOps teams when an incident occurs, including via email, mobile push and desktop notifications.
-3. Auto-create "war rooms" and inviting key team members to immediately collaborate on a critical incident.
+3. Auto-create "war rooms" and invite key team members to immediately collaborate on a critical incident.
 4. Take quick actions, review data and access relevant links all in one place.
 5. Archive resolved incidents to declutter your channel sidebar without losing access to past information.
 6. Pull summary statistics of the incident response workflow, including mean-time-to-acknowledgment (MTTA) and mean-time-to-resolution (MTTR).
 
-To shape the direction of the incident response application, `sign up to our Alpha program here <https://docs.google.com/forms/d/e/1FAIpQLSf4Rr1YnofQQnKHJuL0Cgz_DaCUitt_Atik7K9KXsDefCyXlg/viewform>`_!
+.. image:: ../images/incident-response-app-intro-image.png
+   :alt: Incident Response App: Intro Image
 
-// TODO: Add another screenshot
+To shape the direction of the incident response application, `sign up to our Alpha program here <https://docs.google.com/forms/d/e/1FAIpQLSf4Rr1YnofQQnKHJuL0Cgz_DaCUitt_Atik7K9KXsDefCyXlg/viewform>`_!
 
 .. contents:: Contents
   :backlinks: top
@@ -32,14 +31,14 @@ How Can I Try The App?
 
 3. Enable the plugin from the **Installed Plugins** list.
 
-4. Use `one of these sample app workflows <// TODO Add a link>`_ to try the app. To upload these workflows to your Mattermost server:
+4. Upload an incident response workflow to your Mattermost server:
 
- - save the app workflow schema to a JSON file
- - go to any Mattermost channel and post ``/workflow edit`` to open the workflow editor
- - click **Choose .json file** and select the JSON file containing the app workflow schema
- - click **Upload**
+ - Write an app workflow schema in a JSON file. You can use `one of these sample app workflows <https://github.com/mattermost/docs/tree/master/source/samples/incident-response-app>`_ to get started, and edit the sample (such as team and channel names) with the help of the configuration documentation below.
+ - Go to any Mattermost channel and post ``/workflow edit`` to open the workflow editor.
+ - Click **Choose .json file** and select the JSON file containing the app workflow schema.
+ - Click **Upload**.
 
-5. Post the trigger word defined in the workflow schmea to start the workflow!
+5. Post the trigger word defined in the app workflow schema to start the workflow!
 
 See the documentation below to get help on how to configure and manage your app workflows, or open an issue at https://forum.mattermost.org and we'd be happy to help you.
 
@@ -103,6 +102,11 @@ The JSON file looks something as follows.
 
 There are four components to an incident app workflow schema: triggers, steps, actions and transitions. Each one is explained in more detail below.
 
+.. note::
+  All field names must be a sequence of one or more letters, digits and underscores, and start with a letter.
+  
+  For instance, a trigger name can be ``sec_issue_workflow_3`` or ``SecIssueWorkflow3`` but not ``sec-issue-workflow-3``.
+
 Trigger
 ^^^^^^^^^^^^^^^
 
@@ -112,25 +116,39 @@ A trigger is a condition on which a workflow can be started.
     :header: "Field", "Description", "Type", "Required"
 
     "name", "The name of the trigger", "string", "Yes. This field must be unique."
-    "type", "The type of trigger. This refers to the internal name of the trigger being configured", "string, "Yes"
+    "type", "The type of trigger. This refers to the internal name of the trigger being configured", "string", "Yes"
     "*additional fields", "Additional fields based on the type of trigger. See below for more details.", "string", "Yes"
+
+Note that the trigger name must be a sequence of one or more letters, digits and underscores, and start with a letter, such as ``sec_issue_workflow_3``.
 
 Text Trigger (type: ``text``)
 *******************************
 
 An incident can be created when a text trigger is seen. The specified message then becomes the description of the incident.
 
-For example, you can specify "#s1critical" as the text trigger and any post that contains this keyword is treated as an incident and starts the workflow.
+For example, you can specify "#s1critical" as the text trigger and any message that contains this keyword is treated as an incident and starts the workflow.
 
 .. csv-table::
     :header: "Field", "Description", "Type", "Required"
 
-    "channel", "The channel(s) to look for the trigger. If none specified, all channels will be watched.", "[]string", "No"
-    "team", "The team(s) to watch for the trigger in. If none specified, all teams will be watched.", "[]string, "No"
+    "team_name", "The team(s) to watch for the trigger. If none specified, all teams will be watched.", "string", "No"
+    "channel_name", "The channel(s) to look for the trigger. If none specified, all channels will be watched.", "string", "No"
     "match", "The text string to match on", "string", "If ``match_regex`` not set, yes"
     "match_regex", "The regex to match on", "string", "If ``match`` not set, yes"
 
-// TODO Verify JSON schema and add an example here.
+Below is an example JSON for a text trigger where any message posted to Nagios channel in InfoSec team containing the word ``#s1critical`` triggers the workflow:
+
+.. code-block:: json
+
+  "triggers": [
+      {
+          "name": "IssueReported",
+          "type": "text",
+          "team_name": "infosec",
+          "channel_name": "nagios",
+          "match": "#s1critical",
+          "match_regex": ""
+      }
 
 Step
 ^^^^^^^^^^^^^^^
@@ -142,7 +160,9 @@ A step is the representation of a state the app workflow can be in. For now it c
 
     "name", "The name of the step", "string", "Yes. This field must be unique."
     "start_actions", "Actions to perform when the step is reached.", "[]Action", "If ``finished_actions`` not set, yes"
-    "finished_actions", "Actions to perform when the step is finished.", "[]Action", "If ``start_actions`` not set, yes"
+    "finish_actions", "Actions to perform when the step is finished.", "[]Action", "If ``start_actions`` not set, yes"
+
+Note that the step name must be a sequence of one or more letters, digits and underscores, and start with a letter.
 
 Action
 ^^^^^^^^^^^^^^^
@@ -156,30 +176,84 @@ Actions are performed when steps are started and finished.
     "type", "The type of action to perform", "string", "Yes"
     "*additional fields", "Additional fields based on the type of action. See below for more details.", "string", "Yes"
 
+Note that the action name must be a sequence of one or more letters, digits and underscores, and start with a letter.
+
 Create Channel (type: ``create_channel``)
 *******************************************
 
-The create channel action creates a channel with the given parameters. The users listed will be automatically invited.
+Creates a channel with the given parameters.
 
 .. csv-table::
     :header: "Field", "Description", "Type", "Required"
 
-    "channel", "A channel object supporting fields from model.Channel", "model.Channel", "Yes"
+    "channel_name", "The name of the channel. This is the channel handle used in the URL.", "string", "Yes"
+    "channel_displayname", "The display name of the channel.", "string", "Yes"
+    "team_name", "The team to create the channel in. If none specified, the channel is created in the same team as where the app workflow was triggered.", "string", "No"
+    "header", "The channel header.", "string", "No"
+    "purpose", "The channel purpose.", "string", "No"
+    "private", "``Yes`` if the channel is private, ``No`` if the channel is public.", "boolean", "No"
 
-// TODO Verify JSON schema and add an example here, with a clear recommendation for using instance template variables to avoid non-unique channel names. Example should include the supported fields of the channel model, e.g. type, team, ...
+Below is an example JSON for a step containing one ``create_channel`` start action.
+
+.. code-block:: json
+
+  "steps": [
+      {
+          "name": "Setup",
+          "start_actions": [
+              {
+                  "name": "CreateWarroom",
+                  "type": "create_channel",
+                  "channel_name": "system-incident-{{.Instance.Number}}",
+                  "channel_displayname": "System Incident {{.Instance.Number}}",
+                  "header": "[Nagios Monitoring Dashboard](http://18.188.56.242/nagios/)"
+              },
+          ]
+      }
+  ]
+
+.. tip::
+  If the ``create_channel`` action attempts to create a channel that already exists, the workflow fails to continue as it's unable to create that said channel.
+  
+  Therefore, it is highly recommended that you use instance template variables to define ``channel_name`` and ``channel_displayname`` parameters to avoid non-unique channel names. For instance, if you define the channel name to be ``system-incident-{{.Instance.Number}}`` such as in the app workflow JSON example above, channels are created with names ``system-incident-1``, ``system-incident-2``, and so forth, avoiding duplicate names.
 
 Add Users to Channel (type: ``add_users_channel``)
 **************************************************************
 
-The add users to channel action adds the specified users to the channel.
+Adds the specified users to a channel.
 
 .. csv-table::
     :header: "Field", "Description", "Type", "Required"
 
-    "channel_name", "The channel to create the post in. Can be name or ID.", "model.Channel", "Yes"
-    "users", "Users to add to the channel after creation. Can be usernames, user IDs or AD/LDAP group names.", "[]string, "Yes"
+    "channel_name", "The channel to create the post in.", "string", "Yes"
+    "users", "A list of users to add to a channel. Can be usernames, user IDs or AD/LDAP group names.", "[]string, "Yes"
+    "team_name", "The team the channel belongs to. Use it if the same channel name exists in different teams.", "string", "No"
 
-// TODO Verify JSON schema and add an example here.
+Below is an example JSON for a step containing one ``add_users_channel`` start action, which adds Kathy and Christopher to a System Incident channel.
+
+.. code-block:: json
+
+  "steps": [
+      {
+          "name": "Setup",
+          "start_actions": [
+              {
+                  "name": "AddUsers",
+                  "type": "add_users_channel",
+                  "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
+                  "users": [
+                      "kathy",
+                      "christopher"
+                  ]
+              },
+          ]
+      }
+  ]
+
+.. tip::
+  Note that the above JSON uses ``{{.Action.CreateWarroom.ChannelName}}`` as the channel name. These are template variables which allow you to dynamically specify parameters based on other actions or steps within the app workflow schema.
+  
+  In this example, ``{{.Action.CreateWarroom.ChannelName}}`` pulls the channel name used in an ``CreateWarroom`` action, which is the example of the ``create_channel`` action above, and adds Kathy and Christopher to that channel.
 
 Create Post (type: ``post``)
 *******************************
@@ -189,10 +263,13 @@ Creates a post in the specified channel.
 .. csv-table::
     :header: "Field", "Description", "Type", "Required"
 
-    "channel_name", "The channel to create the post in. Can be name or ID.", "string", "Yes"
+    "channel_name", "The channel to create the post in.", "string", "Yes"
     "message", "The contents of the message.", "string", "Yes"
-    "fields", "A list of fields to show in the message. ", "[]Field", "No"
-    "transition_button", "A label and a step to transition to when pressed.", "[]Button", "No"
+    "team_name", "The team the channel belongs to. Use it if the same channel name exists in different teams.", "string", "No"
+    "fields_title", "A list of fields to show in the message. ", "string", "No"    //  
+    "fields", "A list of fields to show in the message. ", "[]Field", "No"// 
+    "transition_title", "A label and a step to transition to when pressed.", "string", "No"///
+    "transitions", "A label and a step to transition to when pressed.", "[]Button", "No"//
 
 // TODO Verify JSON schema and add an example here. Example should include fields and transition_button.
 
@@ -204,9 +281,30 @@ Archives the specified channel.
 .. csv-table::
     :header: "Field", "Description", "Type", "Required"
 
-    "channel_name", "The channel to archive. Can be name or ID.", "string", "Yes"
+    "channel_name", "The channel to archive.", "string", "Yes"
+    "team_name", "The team the channel belongs to. Use it if the same channel name exists in different teams.", "string", "No"
 
-// TODO Verify JSON schema and add an example here.
+Below is an example JSON for a step containing one ``archive_channel`` start action, which archives a System Incident channel.
+
+.. code-block:: json
+
+  "steps": [
+      {
+          "name": "Resolved",
+          "start_actions": [
+              {
+                  "name": "ArchiveIncidentChannel",
+                  "type": "archive_channel",
+                  "channel_name": "{{.Action.CreateWarroom.ChannelName}}"
+              },
+          ]
+      }
+  ]
+
+.. tip::
+  Note that the above JSON uses ``{{.Action.CreateWarroom.ChannelName}}`` as the channel name. These are template variables which allow you to dynamically specify parameters based on other actions or steps within the app workflow schema.
+  
+  In this example, ``{{.Action.CreateWarroom.ChannelName}}`` pulls the channel name used in an ``CreateWarroom`` action, which is the example of the ``create_channel`` action above, and archives it.
 
 Transition to Another Step (type: ``transition_to``)
 ******************************************************
@@ -227,182 +325,181 @@ The incident response application also enables you to pull summary statistics, i
 
 To pull a sample report, use ``/workflow stats`` in any Mattermost channel:
 
-// TODO Add a screenshot - e.g. either re-use this screenshot or produce a new one: https://user-images.githubusercontent.com/1490756/65821266-4ad79d80-e201-11e9-8930-7beaa3dd0ed9.png
+.. image:: ../images/incident-response-app-statistics.png
+   :alt: Incident Response App: Statistics
 
 The statistics are based on an aggregated summary of all individual workflow instances. You may also reset statistics at any time via ``/workflow reset-stats``.
 
-Note that you must be a System Administrator to execute these commands.
+You must be a System Administrator or an authorized user in **System Console > Plugins > Incident Response App** to execute these commands.
 
 Sample Schema
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Below is a full sample schema with a text trigger, four steps and multiple actions including transitions.
+Below is a full sample schema with a text trigger, four steps and multiple actions including transitions. For other sample schemas, `see here <https://github.com/mattermost/docs/tree/master/source/samples/incident-response-app>`_.
 
-For other sample schemas, `see here <// TODO Add other samples in https://github.com/mattermost/docs/tree/master/source/samples and link them here. See MM-18870>`_.
+Note that you should edit the sample (such as team and channel names) for your server.
 
   .. code-block:: json
 
     [
-      {
-        "name": "security_issue",
-        "triggers": [
-          {
-            "name": "issuereported",
-            "type": "text",
-            "match": "#sec"
-          }
-        ],
-        "steps": [
-          {
-            "name": "Setup",
-            "start_actions": [
-              {
-                "name": "CreateWarroom",
-                "type": "create_channel",
-                "channel_name": "security-issue-{{.Instance.Number}}",
-                "channel_displayname": "Security Issue {{.Instance.Number}}"
-              },
-              {
-                "name": "AddUsers",
-                "type": "add_users_channel",
-                "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
-                "users": [
-                  "jon",
-                  "chris"
-                ]
-              },
-              {
-                "type": "post",
-                "name": "attention_post",
-                "channel_name": "Town Square",
-                "message": "Security issue reported. War room created: ~{{.Action.CreateWarroom.ChannelName}}"
-              },
-              {
-                "type": "transition_to",
-                "name": "TransitionToTriage",
-                "to": "Triage"
-              }
-            ]
-          },
-          {
-            "name": "Triage",
-            "start_actions": [
-              {
-                "name": "TriagePost",
-                "type": "post",
-                "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
-                "message": "New issue to triage:\n ```{{.Trigger.Message}}```",
-                "fields": [
-                  {
-                    "name": "Alert",
-                    "type": "button",
-                    "description": "Alert the Sysadmin to take immediate action"
-                  },
-                  {
-                    "name": "Likelihood",
-                    "description": "How likely the security issue is to be exploited.",
-                    "type": "options",
-                    "options": [
-                      "L1",
-                      "L2",
-                      "L3"
-                    ]
-                  },
-                  {
-                    "name": "Impact",
-                    "type": "options",
-                    "description": "The impact of the security issue if exploited",
-                    "options": [
-                      "I1",
-                      "I2",
-                      "I3"
-                    ]
-                  },
-                  {
-                    "name": "Severity",
-                    "type": "options",
-                    "description": "Derived from Impact and Likelihood",
-                    "options": [
-                      "S1",
-                      "S2",
-                      "S3"
-                    ]
-                  }
-                ],
-                "transition_button": [
-                  {
-                    "label": "Triaged",
-                    "description": "Move to developing a fix",
-                    "to": "DevelopFix"
-                  },
-                  {
-                    "label": "Resolved",
-                    "description": "Close issue as resolved",
-                    "to": "Resolved"
-                  }
-                ]
-              }
+        {
+            "name": "security_issue",
+            "triggers": [
+                {
+                    "name": "IssueReported",
+                    "type": "text",
+                    "match": "#sec"
+                }
             ],
-            "finish_actions": [
-              {
-                "name": "TriageConfirmation",
-                "type": "post",
-                "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
-                "message": "Finished Triage"
-              }
+            "steps": [
+                {
+                    "name": "Setup",
+                    "start_actions": [
+                        {
+                            "name": "CreateWarroom",
+                            "type": "create_channel",
+                            "channel_name": "security-issue-{{.Instance.Number}}",
+                            "channel_displayname": "Security Issue {{.Instance.Number}}"
+                        },
+                        {
+                            "name": "AddUsers",
+                            "type": "add_users_channel",
+                            "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
+                            "users": [
+                                "jon",
+                                "chris"
+                            ]
+                        },
+                        {
+                            "type": "post",
+                            "name": "attention_post",
+                            "channel_name": "Town Square",
+                            "message": "Security issue reported. War room created: ~{{.Action.CreateWarroom.ChannelName}}"
+                        },
+                        {
+                            "type": "transition_to",
+                            "name": "TransitionToTriage",
+                            "to": "Triage"
+                        }
+                    ]
+                },
+                {
+                    "name": "Triage",
+                    "start_actions": [
+                        {
+                            "name": "TriagePost",
+                            "type": "post",
+                            "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
+                            "message": "New issue to triage:\n ```{{.Trigger.IssueReported.Message}}```",
+                            "fields_title": "Please add details to this issue",
+                            "fields": [
+                                {
+                                    "name": "Alert",
+                                    "type": "button",
+                                    "description": "Alert the Sysadmin to take immediate action"
+                                },
+                                {
+                                    "name": "Likelihood",
+                                    "description": "How likely the security issue is to be exploited.",
+                                    "type": "options",
+                                    "options": [
+                                        "L1",
+                                        "L2",
+                                        "L3"
+                                    ]
+                                },
+                                {
+                                    "name": "Impact",
+                                    "type": "options",
+                                    "description": "The impact of the security issue if exploited",
+                                    "options": [
+                                        "I1",
+                                        "I2",
+                                        "I3"
+                                    ]
+                                },
+                                {
+                                    "name": "Severity",
+                                    "type": "options",
+                                    "description": "Derived from Impact and Likelihood",
+                                    "options": [
+                                        "S1",
+                                        "S2",
+                                        "S3"
+                                    ]
+                                }
+                            ],
+                            "transitions_title": "Transition to step",
+                            "transitions": [
+                                {
+                                    "label": "Triaged",
+                                    "description": "Issue has been triaged",
+                                    "to": "DevelopFix"
+                                },
+                                {
+                                    "label": "Resolved",
+                                    "description": "Issue has been resolved",
+                                    "to": "Resolved"
+                                }
+                            ]
+                        }
+                    ],
+                    "finish_actions": [
+                        {
+                            "name": "TriageConfirmation",
+                            "type": "post",
+                            "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
+                            "message": "Finished Triage"
+                        }
+                    ]
+                },
+                {
+                    "name": "DevelopFix",
+                    "start_actions": [
+                        {
+                            "name": "InfoPost",
+                            "type": "post",
+                            "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
+                            "message": "Developing a fix underway. Issue information:\n\nLikelihood: {{.Action.TriagePost.Likelihood}}\nImpact: {{.Action.TriagePost.Impact}}\nSeverity: {{.Action.TriagePost.Severity}}",
+                            "transitions": [
+                                {
+                                    "label": "Triage",
+                                    "description": "Return to triage.",
+                                    "to": "Triage"
+                                },
+                                {
+                                    "label": "Resolved",
+                                    "description": "Close issue as resolved",
+                                    "to": "Resolved"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Resolved",
+                    "start_actions": [
+                        {
+                            "name": "ResolveWarroom",
+                            "type": "post",
+                            "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
+                            "message": "Resolved."
+                        },
+                        {
+                            "name": "PostResolved",
+                            "type": "post",
+                            "channel_name": "town-square",
+                            "message": "Resolved Security Issue {{.Instance.Number}}"
+                        },
+                        {
+                            "name": "ArchiveSecurityChannel",
+                            "type": "archive_channel",
+                            "channel_name": "security-issue-{{.Instance.Number}}"
+                        }
+                    ]
+                }
             ]
-          },
-          {
-            "name": "DevelopFix",
-            "start_actions": [
-              {
-                "name": "InfoPost",
-                "type": "post",
-                "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
-                "message": "Developing a fix underway. Issue information:\n\nLikelihood: {{.Action.TriagePost.Likelihood}}\nImpact: {{.Action.TriagePost.Impact}}\nSeverity: {{.Action.TriagePost.Severity}}",
-                "transition_button": [
-                  {
-                    "label": "Triage",
-                    "description": "Return to triage.",
-                    "to": "Triage"
-                  },
-                  {
-                    "label": "Resolved",
-                    "description": "Close issue as resolved",
-                    "to": "Resolved"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "name": "Resolved",
-            "start_actions": [
-              {
-                "name": "ResolveWarroom",
-                "type": "post",
-                "channel_name": "{{.Action.CreateWarroom.ChannelName}}",
-                "message": "Resolved."
-              },
-              {
-                "name": "PostResolved",
-                "type": "post",
-                "channel_name": "town-square",
-                "message": "Resolved Security Issue {{.Instance.Number}}"
-              },
-              {
-                "name": "ArchiveSecurityChannel",
-                "type": "archive_channel",
-                "channel_name": "security-issue-{{.Instance.Number}}"
-              },
-              {
-                "name": "finished",
-                "type": "finished_workflow"
-              }
-            ]
-          }
-        ]
-      }
+        }
     ]
 
 Permissions and Management of the App
@@ -410,7 +507,7 @@ Permissions and Management of the App
 
 By default, System Administrators can edit the incident response app by uploading a JSON file via the ``/workflow edit`` command. This allows System Administrators to have full control over what app workflows are configured in a Mattermost server.
 
-You may optionally enable individual users to manage the app by adding a list of authorized usernames in **System Console > Plugins > Incident Response**.
+You may optionally enable individual users to manage the app by adding a list of authorized user IDs in **System Console > Plugins > Incident Response**. User IDs can be found by navigating to **System Console > User Management**. After clicking into a user's name, their ID is on the right-hand side of the blue header.
 
 Roadmap
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -418,13 +515,13 @@ Roadmap
 The following are some of the use cases we plan to support in a future Beta or stable release:
 
 1. Pulling remote data to, for instance, look up responders who are on duty from an external system or from AD/LDAP, and notifying them about a new incident.
-2. Creating and managing workflows through the user interface instead of a JSON schema file.
+2. Creating and managing workflows through an interface instead of a JSON schema file.
 3. Supporting branching and IF conditions for more complex incident management workflows.
 4. Exporting all actions and conversations into a PDF for post-mortem and root cause analysis.
 5. Richer analytics for measuring the effectiveness of incident response processes.
 6. Deeper integrations with existing monitoring and ticketing systems for streamlined incident response management.
 
-If you have any feedback on the incident response application, let us know at https://forum.mattermost.org.
+If you have any feedback on the incident response application, please let us know at https://forum.mattermost.org.
 
 Troubleshooting
 ~~~~~~~~~~~~~~~~~~
