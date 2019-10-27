@@ -12,8 +12,13 @@ Use the incident response application to connect all your workflows, automate re
 5. Archive resolved incidents to declutter your channel sidebar without losing access to past information.
 6. Pull summary statistics of the incident response workflow, including mean-time-to-acknowledgment (MTTA) and mean-time-to-resolution (MTTR).
 
+Below is an example of the incident response app automatically creating a channel from a Nagios alert, adding users to the channel and providing them quick actions to take on the incident.
+
 .. image:: ../images/incident-response-app-intro-image.png
    :alt: Incident Response App: Intro Image
+
+.. image:: ../images/incident-response-app-intro-image-fullpage.png
+   :alt: Incident Response App: Intro Image - Fullpage
 
 To shape the direction of the incident response application, `sign up to our Alpha program here <https://docs.google.com/forms/d/e/1FAIpQLSf4Rr1YnofQQnKHJuL0Cgz_DaCUitt_Atik7K9KXsDefCyXlg/viewform>`_!
 
@@ -149,6 +154,7 @@ Below is an example JSON for a text trigger where any message posted to Nagios c
           "match": "#s1critical",
           "match_regex": ""
       }
+  ]
 
 Step
 ^^^^^^^^^^^^^^^
@@ -226,7 +232,7 @@ Adds the specified users to a channel.
     :header: "Field", "Description", "Type", "Required"
 
     "channel_name", "The channel to create the post in.", "string", "Yes"
-    "users", "A list of users to add to a channel. Can be usernames, user IDs or AD/LDAP group names.", "[]string, "Yes"
+    "users", "A list of users to add to a channel. Can be usernames, user IDs or AD/LDAP group names.", "[]string", "Yes"
     "team_name", "The team the channel belongs to. Use it if the same channel name exists in different teams.", "string", "No"
 
 Below is an example JSON for a step containing one ``add_users_channel`` start action, which adds Kathy and Christopher to a System Incident channel.
