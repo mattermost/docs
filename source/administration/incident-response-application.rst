@@ -178,7 +178,7 @@ Actions are performed when steps are started and finished.
 .. csv-table::
     :header: "Field", "Description", "Type", "Required"
 
-    "name", "The name of the action", "string", "Yes. This field must be unique."
+    "name", "The name of the action.", "string", "Yes. This field must be unique."
     "type", "The type of action to perform", "string", "Yes"
     "*additional fields", "Additional fields based on the type of action. See below for more details.", "string", "Yes"
 
