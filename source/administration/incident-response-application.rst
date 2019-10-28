@@ -179,7 +179,7 @@ Actions are performed when steps are started and finished.
     :header: "Field", "Description", "Type", "Required"
 
     "name", "The name of the action.", "string", "Yes. This field must be unique."
-    "type", "The type of action to perform", "string", "Yes"
+    "type", "The type of action to perform.", "string", "Yes"
     "*additional fields", "Additional fields based on the type of action. See below for more details.", "string", "Yes"
 
 Note that the action name must be a sequence of one or more letters, digits and underscores, and start with a letter.
