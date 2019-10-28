@@ -164,7 +164,7 @@ A step is the representation of a state the app workflow can be in. For now it c
 .. csv-table::
     :header: "Field", "Description", "Type", "Required"
 
-    "name", "The name of the step", "string", "Yes. This field must be unique."
+    "name", "The name of the step.", "string", "Yes. This field must be unique."
     "start_actions", "Actions to perform when the step is reached.", "[]Action", "If ``finished_actions`` not set, yes"
     "finish_actions", "Actions to perform when the step is finished.", "[]Action", "If ``start_actions`` not set, yes"
 
