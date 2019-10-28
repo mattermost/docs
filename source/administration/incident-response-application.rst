@@ -370,7 +370,7 @@ Specifies which step to transition the workflow to.
 .. csv-table::
     :header: "Field", "Description", "Type", "Required"
 
-    "to", "The name of the target step to transition to", "string", "Yes"
+    "to", "The name of the target step to transition to.", "string", "Yes"
 
 Below is an example JSON for a step containing one ``transition_to`` start action, which transitions the workflow to ``Triage`` step.
 
