@@ -1,7 +1,7 @@
 Incident Response Application (EE, Closed Alpha)
 ------------------------------------------------------
 
-The incident response application is available in closed Alpha, in `Enterprise Edition <https://mattermost.com/pricing/>`_. Supported in Mattermost 5.12 and later.
+The incident response application is available in closed Alpha and is supported in Mattermost 5.12 and later.
 
 Use the incident response application to connect all your workflows, automate repetitive tasks and collaborate on incidents within one secure messaging platform. Sample use cases you can accomplish with this app include the following:
 
