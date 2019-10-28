@@ -4,7 +4,7 @@ How to install Mattermost Team Edition Helm Chart in GitLab Helm Chart deploymen
 =====================================================================================
 
 This document describes how to install Mattermost Team Edition Helm Chart in proximity with an existing GitLab Helm Chart deployment, utilizing shared configurations to streamline authentication, storage, encryption, and traffic routing.
- 
+
 
 Prerequisites
 ----------------------------
@@ -35,11 +35,11 @@ Here is a light way to install it:
     --set global.hosts.externalIP=``<external-ip>`` \
     --set certmanager-issuer.email=``<email>``
 
-- ``<your-domain>``: your desired domain, eg. ``gitlab.example.com``
-- ``<external-ip>``: the external IP pointing to your Kubernetes cluster
-- ``<email>``: email to register in Let's Encrypt to retrieve TLS certificates
+- ``<your-domain>``: your desired domain, eg. ``gitlab.example.com``.
+- ``<external-ip>``: the external IP pointing to your Kubernetes cluster.
+- ``<email>``: email to register in Let's Encrypt to retrieve TLS certificates.
 
-Once all pods are running, log in to GitLab.
+Once all pods are running, log in to GitLab. 
 
 Create an OAuth application with GitLab
 --------------------------------------------
