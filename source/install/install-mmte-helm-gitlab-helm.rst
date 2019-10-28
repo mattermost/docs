@@ -5,6 +5,8 @@ How to install Mattermost Team Edition Helm Chart in GitLab Helm Chart deploymen
 
 This document describes how to install Mattermost Team Edition Helm Chart in proximity with an existing GitLab Helm Chart deployment, utilizing shared configurations to streamline authentication, storage, encryption, and traffic routing.
 
+As the Mattermost Helm Chart is installed in a separate namespace, it is recommended that cert-manager and nginx-ingress be configured to manage cluster-wide ingress and certificate resources. 
+
 
 Prerequisites
 ----------------------------
