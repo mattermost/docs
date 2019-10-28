@@ -120,7 +120,7 @@ A trigger is a condition on which a workflow can be started.
 .. csv-table::
     :header: "Field", "Description", "Type", "Required"
 
-    "name", "The name of the trigger", "string", "Yes. This field must be unique."
+    "name", "The name of the trigger.", "string", "Yes. This field must be unique."
     "type", "The type of trigger. This refers to the internal name of the trigger being configured", "string", "Yes"
     "*additional fields", "Additional fields based on the type of trigger. See below for more details.", "string", "Yes"
 
