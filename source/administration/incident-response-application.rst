@@ -138,7 +138,7 @@ For example, you can specify "#s1critical" as the text trigger and any message t
 
     "team_name", "The team(s) to watch for the trigger. If none specified, all teams will be watched.", "string", "No"
     "channel_name", "The channel(s) to look for the trigger. If none specified, all channels will be watched.", "string", "No"
-    "match", "The text string to match on", "string", "If ``match_regex`` not set, yes"
+    "match", "The text string to match on.", "string", "If ``match_regex`` not set, yes"
     "match_regex", "The regex to match on", "string", "If ``match`` not set, yes"
 
 Below is an example JSON for a text trigger where any message posted to Nagios channel in InfoSec team containing the word ``#s1critical`` triggers the workflow:
