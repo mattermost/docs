@@ -398,7 +398,7 @@ Archives the specified channel.
     :header: "Field", "Description", "Type", "Required"
 
     "channel_name", "The channel to archive.", "string", "Yes"
-    "team_name", "The team the channel belongs to. Use it if the same channel name exists in different teams.", "string", "No"
+    "team_name", "The team the channel belongs to. Use it if the same channel name exists in different teams. By default, the team the workflow was triggered on is set.", "string", "No"
 
 Below is an example JSON for a step containing one ``archive_channel`` start action, which archives a System Incident channel.
 
