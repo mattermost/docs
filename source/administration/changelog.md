@@ -32,6 +32,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the first element was selected by default in radio elements in interactive buttons.
  - Fixed an issue where search with quotation marks was not returning expected results.
  - Fixed an issue where post metadata was returned for deleted posts.
+ - Fixed an issue where users were not able to use ``api/v4/websocket`` with a trailing slash.
  - Fixed an issue with subpaths where in-app System Console links were missing in the ``/subpath`` and resulted in a 404 error.
  
 ### config.json
@@ -49,7 +50,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Enabling/disabling guest access in System Console fails.
  - Negative search filter hypens and occasional random terms are highlighted in search results.
  - Hitting escape to close autocomplete also closes channel header modal.
- - Modifying config files causes compliance exports to run twice.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
