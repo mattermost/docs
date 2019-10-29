@@ -1,0 +1,5 @@
+---
+title: Fixed -k switch for eks_bootstrap_script and eksctl website reference
+merge_request: 1016
+author:
+type: fixed

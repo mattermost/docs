@@ -68,7 +68,7 @@ function do_list(){
   eksctl get cluster -r "${region}" "${cluster_name}"
 }
 
-while getopts c:n:kr:m:s: opt
+while getopts c:n:k:r:m:s: opt
 do
   case "${opt}" in
     c)

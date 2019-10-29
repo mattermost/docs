@@ -23,7 +23,7 @@ function need_helm(){
 }
 
 function need_eksctl(){
-  need_tool "eksctl" "https://exkctl.io"
+  need_tool "eksctl" "https://eksctl.io"
 }
 
 function validate_required_tools(){
