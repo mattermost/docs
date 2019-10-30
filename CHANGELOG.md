@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.3.9
+
+### Fixed (1 change)
+
+- Fix typo in nginx backend PDB. !1006
+
+### Other (1 change)
+
+- Update GitLab Version to 12.3.6.
+
+
 ## 2.3.8
 
 ### Fixed (1 change)
