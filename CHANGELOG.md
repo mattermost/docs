@@ -157,6 +157,17 @@ entry.
 - Update GitLab Version to 12.3.0.
 
 
+## 2.2.12
+
+### Fixed (1 change)
+
+- Fix typo in nginx backend PDB. !1006
+
+### Other (1 change)
+
+- Update GitLab Version to 12.2.9.
+
+
 ## 2.2.11
 
 ### Other (1 change)
