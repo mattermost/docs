@@ -6,9 +6,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.16 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.16.2, release day TBD**
-  - Fixing an issue where the Permission Schemes are not working properly on an E10 license. [MM-19556](https://mattermost.atlassian.net/browse/MM-19556)
-  - Fixing an issue where switching to an unread channel sometimes gets stuck at "Loading...". [MM-19091](https://mattermost.atlassian.net/browse/MM-19091)
+- **v5.16.2, released 2019-10-30**
+  - Fixed an issue where Permission Schemes was not working properly on an E10 license. [MM-19556](https://mattermost.atlassian.net/browse/MM-19556)
+  - Fixed an issue where switching to an unread channel sometimes got stuck at "Loading...". [MM-19091](https://mattermost.atlassian.net/browse/MM-19091)
 - **v5.16.1, released 2019-10-24**
   - Mattermost v5.16.1 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
   - (Accessibility) Fixed an issue where "Click here to jump to recent messages" was not accessible via keyboard. [MM-19498](https://mattermost.atlassian.net/browse/MM-19498)
