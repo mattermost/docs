@@ -221,7 +221,10 @@ Below is an example JSON for a step containing one ``create_channel`` start acti
 .. tip::
   If the ``create_channel`` action attempts to create a channel that already exists, the workflow fails as it is unable to create a channel duplicate of one that already exists.
   
-  It is highly recommended that you use instance template variables to define ``channel_name`` and ``channel_displayname``.  For instance, defining the channel name in your workflow as``system-incident-{{.Instance.Number}}`` will create channels with names ``system-incident-1``, ``system-incident-2``each time the workflow runs, thereby ensuring unique names and preventing duplicate names.
+  Therefore, it is highly recommended that you
+  
+  1. use instance template variables to define ``channel_name`` and ``channel_displayname``.  For instance, defining the channel name in your workflow as``system-incident-{{.Instance.Number}}`` will create channels with names ``system-incident-1``, ``system-incident-2``each time the workflow runs, thereby ensuring unique names and preventing duplicate names; and
+  2. use different channel names for separate workflows.
 
 Add Users to Channel (type: ``add_users_channel``)
 **************************************************************
