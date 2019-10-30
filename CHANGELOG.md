@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.4.3
+
+### Fixed (1 change)
+
+- Broken pluck expectation in gitlab.ingress.tls.configured #1653. !1013
+
+### Other (1 change)
+
+- Update GitLab Version to 12.4.1.
+
+
 ## 2.4.2
 
 ### Fixed (1 change)
