@@ -31,6 +31,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where interactive message buttons and menus were not vertically the same size.
  - Fixed an issue where the first element was selected by default in radio elements in interactive buttons.
  - Fixed an issue where search with quotation marks was not returning expected results.
+ - Fixed an issue where bulk importer generated invalid passwords for the user object with a missing password key.
  - Fixed an issue where post metadata was returned for deleted posts.
  - Fixed an issue where users were not able to use ``api/v4/websocket`` with a trailing slash.
  - Fixed an issue with subpaths where in-app System Console links were missing in the ``/subpath`` and resulted in a 404 error.
