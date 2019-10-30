@@ -3,13 +3,13 @@ Incident Response Application (EE, Closed Alpha)
 
 The incident response application is available in closed Alpha and is supported in Mattermost 5.12 and later.
 
-Use the incident response application to connect all your workflows, automate repetitive tasks and collaborate on incidents within one secure messaging platform. Sample use cases you can accomplish with this app include the following:
+Use the incident response application to connect all your workflows, automate repetitive tasks and collaborate on incidents within one secure messaging platform. This app allows you to accomplish the following sample use cases:
 
 1. Trigger automated incident response workflows based on keywords.
-2. Automatically mention your InfoSec or DevSecOps teams when an incident occurs, including via email, mobile push and desktop notifications.
-3. Auto-create "war rooms" and invite key team members to immediately collaborate on a critical incident.
-4. Take quick actions, review data and access relevant links all in one place.
-5. Archive resolved incidents to declutter your channel sidebar without losing access to past information.
+2. Auto-create "war rooms" and invite key team members to immediately collaborate on a critical incident.
+3. Automatically mention your InfoSec or DevSecOps teams when an incident occurs and notify them via email, mobile push or desktop.
+4. Take quick actions like triaging or assigning tasks, review data, and access relevant links all in one place.
+5. Archive resolved incidents to keep a record of the resolution and keep channel sidebar decluttered.
 6. Pull summary statistics of the incident response workflow, including mean-time-to-acknowledgment (MTTA) and mean-time-to-resolution (MTTR).
 
 Below is an example of the incident response app automatically creating a channel from a Nagios alert, adding users to the channel and providing them quick actions to take on the incident.
@@ -30,9 +30,9 @@ To shape the direction of the incident response application, `sign up to our Alp
 How Can I Try The App?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. `Sign up for the closed Alpha program <https://docs.google.com/forms/d/e/1FAIpQLSf4Rr1YnofQQnKHJuL0Cgz_DaCUitt_Atik7K9KXsDefCyXlg/viewform>`_. If you're selected to join the Alpha program, you will receive an email from us with a plugin binary.
+1. `Sign up for the closed Alpha program <https://docs.google.com/forms/d/e/1FAIpQLSf4Rr1YnofQQnKHJuL0Cgz_DaCUitt_Atik7K9KXsDefCyXlg/viewform>`_ and shape the direction of the application! You will work closely with the product team to provide feedback on design and functionality, and help test features.
 
-2. Upload the plugin binary in **System Console > Plugins > Plugin Management** `following these steps <https://about.mattermost.com/default-plugin-uploads>`_.
+2. If you're selected to join the Alpha program, you will receive an email from us with a plugin binary. Upload the plugin binary in **System Console > Plugins > Plugin Management** `following these steps <https://about.mattermost.com/default-plugin-uploads>`_.
 
 3. Enable the plugin from the **Installed Plugins** list.
 
@@ -45,7 +45,7 @@ How Can I Try The App?
 
 5. Post the trigger word defined in the app workflow schema to start the workflow!
 
-See the documentation below to get help on how to configure and manage your app workflows, or open an issue at https://forum.mattermost.org and we'd be happy to help you.
+See the documentation below to get help on how to configure and manage your app workflows, or `ask in our public Incident Response channel <https://community-release.mattermost.com/core/channels/incident-response-app>`_ and we'd be happy to help you.
 
 Incident Response App Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -108,7 +108,7 @@ The JSON file looks something as follows.
 There are four components to an incident app workflow schema: triggers, steps, actions and transitions. Each one is explained in more detail below.
 
 .. note::
-  All field names must be a sequence of one or more letters, digits and underscores, and start with a letter.
+  All field names must be a sequence of one or more letters and digits, and start with a letter. You may also use underscores, but not other characters like dashes or periods.
   
   For instance, a trigger name can be ``sec_issue_workflow_3`` or ``SecIssueWorkflow3`` but not ``sec-issue-workflow-3``.
 
@@ -219,9 +219,9 @@ Below is an example JSON for a step containing one ``create_channel`` start acti
   ]
 
 .. tip::
-  If the ``create_channel`` action attempts to create a channel that already exists, the workflow fails to continue as it's unable to create that said channel.
+  If the ``create_channel`` action attempts to create a channel that already exists, the workflow fails as it is unable to create a channel duplicate of one that already exists.
   
-  Therefore, it is highly recommended that you use instance template variables to define ``channel_name`` and ``channel_displayname`` parameters to avoid non-unique channel names. For instance, if you define the channel name to be ``system-incident-{{.Instance.Number}}`` such as in the app workflow JSON example above, channels are created with names ``system-incident-1``, ``system-incident-2``, and so forth, avoiding duplicate names.
+  It is highly recommended that you use instance template variables to define ``channel_name`` and ``channel_displayname``.  For instance, defining the channel name in your workflow as``system-incident-{{.Instance.Number}}`` will create channels with names ``system-incident-1``, ``system-incident-2``each time the workflow runs, thereby ensuring unique names and preventing duplicate names.
 
 Add Users to Channel (type: ``add_users_channel``)
 **************************************************************
@@ -618,21 +618,21 @@ Roadmap
 
 The following are some of the use cases we plan to support in a future Beta or stable release:
 
-1. Pulling remote data to, for instance, look up responders who are on duty from an external system or from AD/LDAP, and notifying them about a new incident.
+1. Integrating with data in other systems, for example, looking up users in an external system who may be "on-call" and need to be notified of a new event.
 2. Creating and managing workflows through an interface instead of a JSON schema file.
 3. Supporting branching and IF conditions for more complex incident management workflows.
 4. Exporting all actions and conversations into a PDF for post-mortem and root cause analysis.
 5. Richer analytics for measuring the effectiveness of incident response processes.
 6. Deeper integrations with existing monitoring and ticketing systems for streamlined incident response management.
 
-If you have any feedback on the incident response application, please let us know at https://forum.mattermost.org.
+If you have any feedback on the incident response application, please let us know at https://forum.mattermost.org, or `share in our public Incident Response channel <https://community-release.mattermost.com/core/channels/incident-response-app>`_.
 
 Troubleshooting
 ~~~~~~~~~~~~~~~~~~
 
 Below are common error messages and how to resolve them.
 
-Always review your Mattermost server logs in **System Console > Server Logs** for errors with the keyword ``workflow`` for more details. If you need any help with configuring the app, let us know at https://forum.mattermost.org and we'd be happy to assist you.
+Always review your Mattermost server logs in **System Console > Server Logs** for errors with the keyword ``workflow`` for more details. If you need any help with configuring the app, `let us know in our public Incident Response channel <https://community-release.mattermost.com/core/channels/incident-response-app>`_ and we'd be happy to help you.
 
 ``Error parsing workflow: workflow name must not be blank``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
