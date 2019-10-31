@@ -100,9 +100,11 @@ spec:
             exec:
               command:
               - /scripts/healthcheck
-            initialDelaySeconds: 10
-            timeoutSeconds: 3
-            periodSeconds: 10
+            initialDelaySeconds: {{ .Values.deployment.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ .Values.deployment.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ .Values.deployment.livenessProbe.timeoutSeconds }}
+            successThreshold: {{ .Values.deployment.livenessProbe.successThreshold }}
+            failureThreshold: {{ .Values.deployment.livenessProbe.failureThreshold }}
           # readinessProbe:
           #   httpGet:
           #     path: /
