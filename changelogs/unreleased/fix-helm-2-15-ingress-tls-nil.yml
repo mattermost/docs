@@ -1,0 +1,5 @@
+---
+title: global.ingress.tls default to empty map
+merge_request: 1022
+author:
+type: fixed
