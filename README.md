@@ -4,39 +4,53 @@ This repository generates the documentation available at https://docs.mattermost
 
 All documentation is available under the terms of a [Creative Commons License](https://creativecommons.org/licenses/by-nc-sa/3.0/).
 
-## Usage
-
-To generate the HTML files from markdown in the `/source` directory:
-
-1. Download repo onto a machine with Python installed
-2. Install [pipenv](https://docs.pipenv.org/): `pip install pipenv`
-3. `cd` into the cloned repository
-4. Install required packages: `pipenv install`
-5. Build: `make html` - generates files in `/build` directory
+If you have any questions, sign up to [community.mattermost.com](https://community.mattermost.com/signup_user_complete/?id=f1924a8db44ff3bb41c96424cdc20676) and join the [Documentation](https://community-daily.mattermost.com/core/channels/documentation) channel. 
 
 ## Contributing
 
-**How to create Pull Requests to edit or create Mattermost documentation (by community members):**
+**Getting Started**
 
-1. Sign the Contributor License Agreement (see instructions in the next section).
-3. On the Mattermost Documentation page that you want to edit, click the GitHub icon on the upper right corner that says "Edit".
-4. Click "Edit the file in your fork of this project" (pencil icon) on the upper right corner.
-5. After making changes, check the "Propose file change" button.
-6. Compare changes with the original document.
-7. Click "Create a Pull Request". Make sure that the Pull Request has a descriptive title and add comments to briefly tell others what you have worked on (optional).
+You can edit or create Mattermost documentation directly in GitHub or by downloading the repo onto your machine and using an editor such as Atom. Consult the [Mattermost Documentation Style Guide](https://docs.mattermost.com/guides/core.html#documentation-style-guide) and [reStructuredText Markup](https://docs.mattermost.com/process/documentation-guidelines.html#restructuredtext-markup) section for stylistic and technical guidance. 
 
-**Signing CLA:**
+If this is your first time contributing to Mattermost, first read and sign the [Mattermost Contributor Agreement](https://www.mattermost.org/mattermost-contributor-agreement/) and sign it (at the bottom of the page), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
 
-Please read the [Mattermost Contributor Agreement](https://www.mattermost.org/mattermost-contributor-agreement/) and sign it (at the bottom of the page), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
 
-**Additional process for Core Committers for Doc Repo:**
+**Editing** 
+
+The quickest way to begin is editing directly on GitHub, on your fork of the Mattermost docs repo. 
+
+Click the **Edit** icon on the top right corner of the page you want to edit in the Mattermost documentation.
+
+If this the first time you're contributing, click **Edit the file in your fork of this project** (pencil icon) on the top right corner to create a fork. 
+
+## Creating Pull Requests
+
+1. When you're ready to submit your changes, add a descriptive title and comments to summarize the changes made.
+2. Select **Create a new branch for this commit and start a pull request**.
+3. Check the **Propose file change** button.
+4. Scroll down to compare changes with the original document.
+5. Select **Create pull request**. 
+
+
+## Building and Validating
+
+If you're editing Mattermost documentation on a local machine, you can generate the HTML files from markdown in the `/source` directory to review them before you commit changes or create pull requests. 
+
+1. Download the Mattermost docs repo onto a machine with Python installed.
+2. Install [pipenv](https://docs.pipenv.org/): `pip install pipenv`. 
+3. `cd` into the cloned repository.
+4. Install the required packages: `pipenv install`.
+5. Build: `make html` - generates files in `/build` directory.
+
+
+**Additional Process for Core Committers**
 
 These steps are to be followed only in situations of urgency or in situations where it is necessary to check that there aren't any high confidentiality issues. Otherwise the standard approval process should be followed.
 
-1. “Needs Editor Review” label should be processed **after merge**.
-2. IMPORTANT: Person conducting editor review needs to have their suggestions **merged by author**. Do this by mentioning the community.mattermost.com user name in the GitHub Pull Request.
-3. Check weekly or bi-weekly that there are no “Needs Editor Review” labels on closed Pull Requests.
+1. The **Editor Review** label should be processed after merge.
+2. The person conducting editor review needs to have their suggestions **merged by author**. Do this by mentioning the *community.mattermost.com* user name in the GitHub Pull Request.
+3. Check weekly or bi-weekly that there are no **Editor Review** labels on closed Pull Requests.
 
-## Installation issues
+## Installation Issues
 
 If you can't install sphinx on MacOS try `sudo pip install sphinx sphinx-autobuild sphinx_rtd_theme --ignore-installed six`.
