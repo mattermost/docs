@@ -19,6 +19,7 @@ Mattermost Launch Button Example in HTML
 
 Save the below HTML code in a file called ``mattermost-button-example.html`` then open the file in a browser as an example. 
 
+.. code-block:: html
   <script>
 
       var myWindow = null;
@@ -37,7 +38,6 @@ Save the below HTML code in a file called ``mattermost-button-example.html`` the
 
   </script>
 
-
   <html>
       <br/>
       <br/>
@@ -49,22 +49,25 @@ Save the below HTML code in a file called ``mattermost-button-example.html`` the
       <br/>
   </html>
 
-
 Embedding Mattermost in web applications using an iframe  
 ----------------------------------------------------------
 
 .. warning:: Any web application embedded into another using an iframe is at risk of security exploits, since the outer application intercepts all user input into the embedded application, an exploit known as `Click-Jacking <https://en.wikipedia.org/wiki/Clickjacking>`__. By default, Mattermost disables embedding. If you choose to embed Mattermost using the following instructions we highly recommend it is done only on a private network that you control. 
 
-To embed Mattermost in an iframe by overriding Mattermost security features: 
+To embed Mattermost in an iframe update your `NGINX configuration<https://docs.mattermost.com/install/install-ubuntu-1804.html#configuring-nginx-as-a-proxy-for-mattermost-server>` to strip out the security policy settings in the HTTP header.
 
-1. On your Mattermost server, change the HTML template to remove the anti-Clickjacking security feature 
+    Replace all occurences of the following line in your proxy config:
 
-    a. Find the file ``/mattermost/mattermost/web/templates/head.html``
-    b. Comment out the security feature by changing ``<style id="antiClickjack">body{display:none !important;}</style>`` to ``<!-- <style id="antiClickjack">body{display:none !important;}</style> -->`` 
+.. code-block:: none
+        proxy_set_header X-Frame-Options SAMEORIGIN
 
-2. Update your NGINX configuration to strip out the security policy settings in the HTTP header.
 
-    - See `community example <https://forum.mattermost.org/t/how-can-we-load-mattermost-in-iframe/165/6>`__ for details.
+With the following two lines:
+
+.. code-block:: none
+        proxy_hide_header    Content-Security-Policy;
+        proxy_hide_header    X-Frame-Options;
+
 
 Embedding Mattermost in mobile applications 
 -------------------------------------------------------
