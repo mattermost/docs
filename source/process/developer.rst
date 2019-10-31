@@ -60,8 +60,8 @@ Senior Software Design Engineer
 
 Capabilities of SDE II plus: Sets and delivers architectural vision for high impact features and changes across multiple products, working in sync with PM, UX, and customer teams. Highly respected by colleagues and community as technical authority, influencing discussions and behavior with input and suggestions. Drops fluidly into customer and community discussions, aligns efforts, and develops superior solutions through discussion and analysis. Attracts, motivates, and trains open source community members to lead the coordination and management of development campaigns to create new features and products. 
 
-Architect
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Architect / Principal Software Design Engineer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Capabilities of Senior SDE plus: Sets and delivers architectural vision for entire products and systems spanning multiple products. Engages with peers in customer and partner organizations to shape joint development plans. Works fluidly with PM, UX, and sales leadership to set organizational objectives and direction. Sought out as a technical authority in industry in developing, disseminating, reviewing, evaluating key patterns and reference architectures. Influences, shapes and can redirect customer and community technical discussions, rapidly understanding disparate viewpoints and leading discussions that align thinking and efforts to influence the direction of large scale technical projects. 
 

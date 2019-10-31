@@ -4,11 +4,177 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.16 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
+
+- **v5.16.2, released 2019-10-30**
+  - Fixed an issue where Permission Schemes was not working properly on an E10 license. [MM-19556](https://mattermost.atlassian.net/browse/MM-19556)
+  - Fixed an issue where switching to an unread channel sometimes got stuck at "Loading...". [MM-19091](https://mattermost.atlassian.net/browse/MM-19091)
+- **v5.16.1, released 2019-10-24**
+  - Mattermost v5.16.1 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+  - (Accessibility) Fixed an issue where "Click here to jump to recent messages" was not accessible via keyboard. [MM-19498](https://mattermost.atlassian.net/browse/MM-19498)
+  - (Accessibility) Fixed an issue where post options were skipped when tabbing through a post in search results. [MM-19497](https://mattermost.atlassian.net/browse/MM-19497)
+  - (Accessibility) Fixed an issue where F6 did not allow navigating to the right-hand side when a thread wasn't open. [MM-18117](https://mattermost.atlassian.net/browse/MM-18117)
+  - Fixed an issue where a change to the production Plugin Marketplace URL wasn't backported to v5.16.0. [MM-19516](https://mattermost.atlassian.net/browse/MM-19516)
+- **v5.16.0, released 2019-10-16**
+  - Original 5.16.0 release
+
+Mattermost v5.16.0 contains a low level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+### Compatibility
+
+#### Removed and Deprecated Features
+
+ - Support for Internet Explorer (IE11) was removed. Learn more in our [forum post](https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575).
+ 
+### Breaking Changes
+ - The Mattermost Desktop v4.3.0 release includes a change to how desktop notifications are sent from non-secure URLs (http://). Organizations using non-secure Mattermost Servers (http://) will need to update to Mattermost Server versions 5.16.0+, 5.15.1, 5.14.4 or 5.9.5 (ESR) to continue receiving desktop notifications when using Mattermost Desktop v4.3.0 or later.
+ - When enabling [Guest Accounts](https://docs.mattermost.com/deployment/guest-accounts.html), all users who have the ability to invite users will be able to invite guests by default.  System admins will need to remove this permission on each role via **System Console > Permissions Schemes**.  In Mattermost Server version 5.17, the System admin will be the only role to automatically get the invite guest permission, however the fix will not be applicable in 5.16 due to database migration processes.
+
+### Highlights
+
+#### Guest Accounts
+ - Provides a controlled and secure method for users outside of an organization to collaborate with their organization without allowing the guest to access proprietary or confidential information.
+
+#### Plugin Marketplace
+ - The integrations marketplace is built into the product and gives system administrators the ability to discover and install Mattermost plugins that are compatible with the server version you are running.  
+
+#### Improved user management 
+ - System Administrators can view a user's team memberships and add a user to additional teams from the System Console without having to be a member of the team.
+
+### Improvements
+
+#### User Interface (UI)
+ - Added support for showing TIF image thumbnail previews.
+ - Added the ability to remove the custom branding image.
+ - Added support for showing channel links as links in email notifications.
+ - Added support for direct message permalinks.
+ - Changed recent date separators to read Today/Yesterday.
+
+#### Import/Export
+ - Added support for including the Theme property on ``UserTeamMemberships`` in bulk exports.
+
+#### Search
+ - Added support for excluding results from search.
+ 
+#### Notifications
+ - Enabled account related emails when ``SendEmailNotifications`` is set to false.
+ 
+#### Command Line Interface (CLI)
+ - Added a ``integrity`` CLI command to verify database integrity.
+ 
+#### Plugins
+ - Added the ability for plugins to render custom embed views for posts.
+ - Added support for including custom System Console components for plugins.
+ - Added support for plugins to close the right-hand sidebar.
+ 
+#### Integrations
+ - Added support for introductory markdown paragraph in interactive dialogs.
+ - Added a password type for interactive dialogs.
+ - Added support for footer and footer_icon in attachments.
+ - Added support for boolean elements in interactive dialogs.
+ - Added support for a ``radio`` type in interactive dialogs.
+ 
+#### Performance
+ - Improved perceived performance of the emoji picker.
+ - Improved post list performance by making thread comments be loaded only when needed.
+ - Improved quick switcher experience to make the autocomplete feel more like a modal rather than a dropdown.
+
+#### Administration
+ - Added the ability for System Administrators to revoke all sessions from all users.
+ - Added support for System Administrators to make public channels private and private channels public within the **System Console > User Management > Channel Configuration** page when [Experimental Groups feature](https://docs.mattermost.com/administration/config-settings.html#groups-experimental) is enabled.
+ - Added user Id information in the **System Console > Users** page.
+ - Updated System Console plugin settings page to expose enable/disable setting.
+ - Added ability for System Administrators to view a user's team memberships and add users to additional teams within **System Console > User Management > User Configuration**.
+ 
+### Bug Fixes
+ - Fixed an issue where user count did not update if a user automatically joined a channel.
+ - Fixed an issue where using the channel autocomplete while editing posts caused the current channel to be unread.
+ - Fixed an issue where users were unable to type in any other channel after leaving a draft post in preview mode in one channel and then switching to another channel.
+ - Fixed an issue where a user didn't see any unreads when rejoining a team if they were in a Direct Message channel when they left the last team.
+ - Fixed an issue where some pre-packaged plugins showed as removable in the user interface.
+ - Fixed an issue where clicking "Edit" of another sub-section in Account Settings appeared to save the setting that was currently being edited in an open sub-section in the same modal.
+ - Fixed an issue where the System Console user menu did not show all inactive users.
+ - Fixed an issue where a JS console error appeared when uploading an image from the right-hand side.
+ - Fixed some bugs related to the new [keyboard accessibility](https://docs.mattermost.com/help/getting-started/accessibility.html) feature.
+ - Fixed an issue where the ``/leave`` slash command was not working on direct message channels.
+ - Fixed an issue where the quick channel switcher box opened behind the header attachment expansion.
+ - Fixed an issue on mobile web view where emoji reaction modal was cut off when adding a second reaction via "+" icon.
+ - Fixed an issue where the username was not shown in the left-hand side on mobile web view.
+ - Fixed an issue where "Thumbs up" emoji did not get added to "Recently Used" section.
+ - Fixed an issue where trailing white space was not ignored when saving a bot username.
+ - Fixed an issue where enabling channel group constraints turned the admin site blank.
+ - Fixed an issue where SQL connections closed prematurely for clusters.
+ - Fixed an issue where absolute paths were not honoured in SAML certificates.
+
+### config.json
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+ - Under ``PluginSettings``:
+    - Added ``EnableMarketplace`` (default to true) and ``MarketplaceUrl`` (default to ``https://marketplace.integrations.mattermost.com``), to enable Plugin Marketplace feature.
+ - Under ``GuestAccountsSettings``:
+    - Added ``Enable``, ``AllowEmailAccounts``, ``EnforceMultifactorAuthentication``, and	``RestrictCreationToDomains``, to enable Guest Accounts feature.
+ - Changed ``SqlSettings.DataSource``, ``ElasticsearchSettings.ConnectionUrl``, and ``EmailSettings.SMTPServer`` to default to using localhost (instead of dockerhost).
+ - Changed ``NativeAppSettings.AppDownloadLink`` to default to ``https://mattermost.com/download/#mattermostApps`` (instead of ``https://about.mattermost.com/downloads/``).
+ 
+### Open Source Components
+ - Added ``react-native-android-open-settings`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``react-native-haptic-feedback`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``DefinitelyTyped`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``node-semver`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``regenerator`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``typescript`` in https://github.com/mattermost/mattermost-webapp.
+ 
+### API Changes
+ - Added a new ``GET /plugins/marketplace`` API endpoint added to list marketplace plugins.
+ - Added a new ``PUT /channels/:channel_id/privacy`` API endpoint to update the privacy of a channel.
+ - Added a new ``POST /site_url/test to test`` API endpoint to test the configured site URL.
+ - Added a new ``POST /teams/:team_id/invite-guests/email`` API endpoint to invite guest users by email.
+ - Added new ``POST /users/:user_id/promote`` and ``POST /users/:user_id/demote`` API endpoints to promote and demote users to guest accounts.
+ - Updated the ``PUT /channels/:channel_id/patch`` API endpoint to ensure that the requestor user has permission to see each channel member.
+ - Updated the ``GET /channels/:channel_id/stats`` API endpoint to include the pinned post and guest counts.
+ - ``PUT /roles/:role_id/patch`` API endpoint now ensures that guest account roles are not updatable without the required license and feature SKU.
+ - Several OAuth API endpoints were removed.
+ 
+### Database Changes
+ - Added a change to the ``Tokens`` table ``Extra`` column's data type.
+ 
+### Known Issues
+ - Saving an empty string on Plugin Marketplace URL resets the URL instead of showing an error.
+ - Switching to an unread channel sometimes gets stuck at "Loading...".
+ - Attempting to configure uninstalled plugins get stuck at "Loading..." without timeout.
+ - Enabling/disabling guest access in System Console fails.
+ - Guest users are shown in the list when adding new members to a channel.
+ - Negative search filter hypens and occasional random terms are highlighted in search results.
+ - ``@all`` notification is still sent to all users when using TAB to press Cancel on the notification prompt.
+ - System messages may trigger mentions for name collisions.
+ - Hitting escape to close autocomplete also closes channel header modal.
+ - Pressing and holding on teams and channels in the left-hand side opens the context menu on desktop apps.
+ - Modifying config files causes compliance exports to run twice.
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+
+### Contributors
+[a-arias](https://github.com/a-arias), [aaronrothschild](https://github.com/aaronrothschild), [abdusabri](https://github.com/abdusabri), [adarj](https://github.com/adarj), [aeomin](https://translate.mattermost.com/user/aeomin/), [AGMETEOR](https://github.com/AGMETEOR), [agusl88](https://github.com/agusl88), [ali-farooq0](https://github.com/ali-farooq0), [amyblais](https://github.com/amyblais), [aneeeshp](https://github.com/aneeeshp), [ankitrgadiya](https://github.com/ankitrgadiya), [anuragbhd](https://github.com/anuragbhd), [arjitc](https://github.com/arjitc), [arshchimni](https://github.com/arshchimni), [asaadmahmood](https://github.com/asaadmahmood), [avasconcelos114](https://github.com/avasconcelos114), [bradjcoughlin](https://github.com/bradjcoughlin), [cardoso](https://github.com/cardoso), [carlosasj](https://github.com/carlosasj), [chikei](https://github.com/chikei), [chuttam](https://github.com/chuttam), [comharris](https://github.com/comharris), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [DarrellRichards](https://github.com/DarrellRichards), [deanwhillier](https://github.com/deanwhillier), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [dhadiseputro](https://github.com/dhadiseputro), [DHaussermann](https://github.com/DHaussermann), [enahum](https://github.com/enahum), [esdrasbeleza](https://github.com/esdrasbeleza), [esethna](https://github.com/esethna), [freerider7777](https://github.com/freerider7777), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [grundleborg](https://github.com/grundleborg), [hanzei](https://github.com/hanzei), [hector2](https://github.com/hector2), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [hvhallmann](https://github.com/hvhallmann), [imisshtml](https://github.com/imisshtml), [iomodo](https://github.com/iomodo), [it33](https://github.com/it33), [janvt](https://github.com/janvt), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jkl5616](https://github.com/jkl5616), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kaya_Zeren](https://twitter.com/kaya_zeren), [Lena](https://translate.mattermost.com/user/Lena/), [levb](https://github.com/levb), [lfbrock](https://github.com/lfbrock), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lindy65](https://github.com/lindy65), [liusy182](https://github.com/liusy182), [Lumexralph](https://github.com/Lumexralph), [lurcio](https://github.com/lurcio), [manland](https://github.com/manland), [marianunez](https://github.com/marianunez), [MatthewDorner](https://github.com/MatthewDorner), [mcrwfrd](https://github.com/mcrwfrd), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mjthomp95](https://github.com/mjthomp95), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [nfriend](https://github.com/nfriend), [niklabh](https://github.com/niklabh), [OCram85](https://github.com/OCram85), [paddatrapper](https://github.com/paddatrapper), [patrickkang](https://github.com/patrickkang), [pbitty](https://github.com/pbitty), [phillipahereza](https://github.com/phillipahereza), [QamarFarooq](https://github.com/QamarFarooq), [RajatVaryani](https://github.com/RajatVaryani), [reflog](https://github.com/reflog), [renilJoseph](https://github.com/renilJoseph), [rodcorsi](https://github.com/rodcorsi), [rohanjulka19](https://github.com/rohanjulka19), [rvillablanca](https://github.com/rvillablanca), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [scottleedavis](https://github.com/scottleedavis), [Selimix](https://github.com/Selimix), [sij507](https://github.com/sij507), [sowmiyamuthuraman](https://github.com/sowmiyamuthuraman), [srkgupta](https://github.com/srkgupta), [stoerchl](https://github.com/stoerchl), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [tejashreecd](https://github.com/tejashreecd), [tekminewe](https://github.com/tekminewe), [tgkouras](https://github.com/tgkouras), [thekiiingbob](https://github.com/thekiiingbob), [thePanz](https://github.com/thePanz), [threepwood-mm](https://github.com/threepwood-mm), [tnir](https://github.com/tnir), [ulhosting](https://github.com/uhlhosting), [valentijnnieman](https://github.com/valentijnnieman), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [Willyfrog](https://github.com/Willyfrog), [yuya-oc](https://github.com/yuya-oc)
+
 ## Release v5.15 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.15.1, release day TBD**
-  - Fixing an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
-  - Fixing an issue where server-side telemetry is not reporting back after 5.14 release. [MM-18115](https://mattermost.atlassian.net/browse/MM-18115)
+- **v5.15.2, released 2019-10-24**
+  - Mattermost v5.15.2 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+  - (Accessibility) Fixed an issue where "Click here to jump to recent messages" was not accessible via keyboard. [MM-19498](https://mattermost.atlassian.net/browse/MM-19498)
+  - (Accessibility) Fixed an issue where post options were skipped when tabbing through a post in search results. [MM-19497](https://mattermost.atlassian.net/browse/MM-19497)
+  - (Accessibility) Fixed an issue where F6 did not allow navigating to the right-hand side when a thread wasn't open. [MM-18117](https://mattermost.atlassian.net/browse/MM-18117)
+- **v5.15.1, released 2019-10-11**
+  - Fixed an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
+  - Fixed an issue where server-side telemetry was not reporting back after 5.14 release. [MM-18115](https://mattermost.atlassian.net/browse/MM-18115)
 - **v5.15.0, released 2019-09-16**
   - Original 5.15.0 release
 
@@ -81,9 +247,11 @@ Mattermost v5.15.0 contains low level security fixes. [Upgrading](http://docs.ma
 
 ## Release v5.14 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.14.4, release day TBD**
-  - Fixing an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
-  - Fixing an issue where server-side telemetry is not reporting back after 5.14 release. [MM-18115](https://mattermost.atlassian.net/browse/MM-18115)
+- **v5.14.5, released 2019-10-24**
+  - Mattermost v5.14.5 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+- **v5.14.4, released 2019-10-11**
+  - Fixed an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
+  - Fixed an issue where server-side telemetry was not reporting back after 5.14 release. [MM-18115](https://mattermost.atlassian.net/browse/MM-18115)
 - **v5.14.3, released 2019-09-16**
   - Fixed an issue where edited posts were not included in Compliance Export (Beta). [MM-18522](https://mattermost.atlassian.net/browse/MM-18522)
 - **v5.14.2, released 2019-08-30**
@@ -746,8 +914,10 @@ Thank you to everyone who contributed to the Mattermost project in March 2019!
 
 Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-- **v5.9.5, release day TBD**  
-  - Fixing an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
+- **v5.9.6, released 2019-10-24** 
+  - Mattermost v5.9.6 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+- **v5.9.5, released 2019-10-12**  
+  - Fixed an issue that will be introduced with a change in upcoming server v5.16 and desktop app v4.3 releases where desktop notifications will be broken as the desktop app will no longer be able to directly interact with the web app. [MM-18819](https://mattermost.atlassian.net/browse/MM-18819)
 - **v5.9.4, released 2019-08-22** 
   - Mattermost v5.9.4 contains a medium level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.9.3, released 2019-07-19** 

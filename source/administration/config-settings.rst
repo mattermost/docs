@@ -75,9 +75,21 @@ Settings for managing users, user access, and permissions.
 
 Users
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-View and manage active and inactive users. 
+View and manage active and inactive users, and revoke all user sessions. 
 
-Groups
+Teams (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E20*
+
+Manage group sychronization on teams. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
+
+Channels (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E20*
+
+Manage group sychronization on channels. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
+
+Groups (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
@@ -2576,6 +2588,41 @@ It is recommended to use ``"https://login.microsoftonline.com/common/oauth2/v2.0
 | This feature's ``config.json`` setting is ``"TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token"`` with string input.                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Guest Access (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable Guest Access
+^^^^^^^^^^^^^^^^^^^
+
+**True**: Allow guest invitations to channels within teams. Please see `Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information.
+
+**False**: Email signup is disabled. This limits signup to single sign-on services like OAuth or AD/LDAP.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``.                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Whitelisted Guest Domains
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When populated, guest accounts can only be created by a verified email from this list of comma-separated domains.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input.                                                                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enforce Multi-factor Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This setting defaults to false and is read-only if multi-factor authentication is not enforced for regular users.
+
+**True**: When true, multi-factor authentication (MFA) is required for login. New guest users will be required to configure MFA on sign-up. Logged in guest users without MFA configured are redirected to the MFA setup page until configuration is complete.  
+
+**False**: Multi-factor authentication for guests is optional.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false``.                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Plugins (Beta)
 --------------------------------
 Settings to configure plugins.
@@ -2592,6 +2639,26 @@ Enable Plugins
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``.                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Marketplace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables Plugin Marketplace on your Mattermost server for all System Administrators. 
+
+**False**: Disables Plugin Marketplace on your Mattermost server for all System Administrators.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableMarketplace": true`` with options ``true`` and ``false``.                                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Marketplace URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If the marketplace is enabled, this setting specifies which URL should be used to query for new Marketplace plugins.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MarketplaceUrl": "https://api.integrations.mattermost.com"`` with string input.                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Plugin Settings

@@ -1,6 +1,107 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.3.0
+----------------------------
+
+- **v4.3.2, release day TBD**
+ - `CMD+Z` doesn't undo on the Mac desktop app. `MM-19198 <https://mattermost.atlassian.net/browse/MM-19198>`_
+ - Users are unable to zoom in/out except on the first server tab. `MM-19032 <https://mattermost.atlassian.net/browse/MM-19032>`_
+ - Right-click + "Copy" does not work in some instances. `MM-19324 <https://mattermost.atlassian.net/browse/MM-19324>`_
+ - Unable to exit maximized Youtube videos using the close button if the app is running in full screen. `MM-19226 <https://mattermost.atlassian.net/browse/MM-19226>`_
+ - Desktop notifications appear in sequence rather than stacking on Windows. `MM-19363 <https://mattermost.atlassian.net/browse/MM-19363>`_
+ - Clicking on notifications when using the Windows MSI (Beta) doesn't focus the app or the channel that triggered the notification. `MM-19510 <https://mattermost.atlassian.net/browse/MM-19510>`_, `MM-19511 <https://mattermost.atlassian.net/browse/MM-19511>`_
+- **v4.3.1, released 2019-10-22**
+ - Fixed an issue where Mac desktop app was not notarized correctly for installing on MacOS Catalina. `MM-19555 <https://mattermost.atlassian.net/browse/MM-19555>`_
+- **v4.3.0, released 2019-10-17**
+ - Original v4.3.0 release
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.3.0>`__
+
+**Note:** Mattermost v4.3.0 contains medium level security fixes. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
+
+**Breaking Change** 
+
+The Mattermost Desktop v4.3.0 release includes a change to how desktop notifications are sent from non-secure URLs (http://). Organizations using non-secure Mattermost Servers (http://) will need to update to Mattermost Server versions 5.16.0+, 5.15.1, 5.14.4 or 5.9.5 (ESR) to continue receiving desktop notifications when using Mattermost Desktop v4.3.0 or later.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added support for maintaining a user's online status while the desktop app is in the background but the user is interacting with their computer. Requires Mattermost Server v5.16.0, v5.15.1, v5.14.4 or later.
+- Updated spellchecker dictionaries for English.
+- Added support for exposing Webview Developer Tools via View Menu.
+- Improved the styling of the session expiry mention badge in the tab bar.
+- Improved the wording of the invalid certificate dialog.
+- Improved accessibility support for the menu bar items.
+
+Windows
+^^^^^^^^^^^^^
+
+- Added support for MSI installer (Beta) to allow deploying Mattermost desktop app to the computer program files (accessible by any user accounts rather than a specific user account on the machine).
+- Added support for Group Policies (GPO) to allow admins to set default servers and enable/disable the ability to add/remove servers.
+
+Mac
+^^^^^^^^^^^^^
+
+- Added a flag to enable MacOS dark mode title bar.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v5.0.0. Electron is the underlying technology used to build the Desktop apps.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where opening the emoji picker froze the desktop app.
+- Fixed an issue where jumbo emoji didn't render for unsupported unicode emojis.
+- Fixed an issue where username and password were not being passed for HTTP basic authentication.
+- Fixed an issue where switching server tabs on app load caused a visual size glitch.
+- Fixed various desktop app notification issues.
+- Fixed an issue where the unread count changed after opening the quick switcher.
+- Fixed an issue where clicking on some links in System Console opened the links on the app itself.
+- Fixed an issue where the "Help" button opened in a new browser tab instead of below the textbox in the default system browser.
+- Fixed an issue where Mattermost opened both on fullscreen and on a smaller window when closing the app in fullscreen.
+- Fixed an issue to prevent the app from restarting in full-screen mode.
+- Fixed an issue where the dot and mention counts in server tab jewels were not centered.
+- Fixed an issue where the dot in notification badges was off centre.
+
+Windows
+^^^^^^^^^^^^^
+
+- Fixed an issue where Ctrl+M shortcut minimized the Windows app and sent a message.
+- Fixed an issue where clicking the tooltip button dismissed the tooltip.
+
+Mac
+^^^^^^^^^^^^^
+
+- Fixed an issue where using the red Close button to close the window caused a blank screen when the window was maximized.
+- Fixed an issue where ``Cmd + Option + Shift + v`` and ``Cmd + Shift + v`` didn't work on MacOS desktop app.
+- Fixed an issue where the timezones were incorrect in OSX High Sierra.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Users are unable to zoom in/out on the desktop app. This bug will be fixed after a major version upgrade of Electron to v6.0.0.
+- ``CMD+Z`` doesn't undo on the Mac desktop app.
+- Unable to exit full screen Youtube videos.
+- "RIght-click + Copy" does not work.
+- Notifications appear in sequence rather than stacking on Windows.
+- Clicking on notifications when using the MSI installer(s) doesn't focus the app or the channel that triggered the notification.
+
+Contributors
+~~~~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+- `asaadmahmood <https://github.com/asaadmahmood>`_, `aswathkk <https://github.com/aswathkk>`_, `crspeller <https://github.com/crspeller>`_, `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `esethna <https://github.com/esethna>`_, `jespino <https://github.com/jespino>`_, `JtheBAB <https://github.com/JtheBAB>`_, `manland <https://github.com/manland>`_, `mickmister <https://github.com/mickmister>`_, `MikeNicholls <https://github.com/MikeNicholls>`_, `PeterDaveHello <https://github.com/PeterDaveHello>`_, `sethitow <https://github.com/sethitow>`_, `steevsachs <https://github.com/steevsachs>`_, `svelle <https://github.com/svelle>`_, `wget <https://github.com/wget>`_, `Willyfrog <https://github.com/Willyfrog>`_, `yuya-oc <https://github.com/yuya-oc>`_
+
 Release v4.2.3
 ----------------------------
 

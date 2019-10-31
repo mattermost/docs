@@ -126,6 +126,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /deployment/certificate-based-authentication*
    /deployment/advanced*
    /deployment/permissions-backend*
+   /deployment/guest-accounts*
 
 Administration
 ----------------------------
@@ -156,6 +157,7 @@ Learn how to keep Mattermost current with fixes and new features.
    /administration/upgrade.rst
    /administration/important-upgrade-notes*   
    /administration/changelog*
+   /help/apps/desktop-changelog*
    /administration/version-archive*
    /administration/extended-support-release* 
    /administration/release-lifecycle* 
