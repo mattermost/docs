@@ -7,8 +7,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v5.17 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 ### Compatibility
- 
-### Breaking Changes
 
 ### Bug Fixes
  - Fixed an issue where saving an empty string on Marketplace URL reset the URL instead of showing an error.
@@ -35,12 +33,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where post metadata was returned for deleted posts.
  - Fixed an issue where users were not able to use ``api/v4/websocket`` with a trailing slash.
  - Fixed an issue with subpaths where in-app System Console links were missing in the ``/subpath`` and resulted in a 404 error.
+ - Fixed an issue where **Terms of Service** and **Privacy Policy** in **Main Menu > About Mattermost** should permanently link to Mattermost's policies.
  
 ### config.json
 
 #### Changes to Team Edition and Enterprise Edition:
- 
-### Open Source Components
  
 ### API Changes
  
