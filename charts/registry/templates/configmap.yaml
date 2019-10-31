@@ -26,6 +26,7 @@ data:
         X-Content-Type-Options: [nosniff]
       addr: :{{ .Values.service.internalPort }}
       secret: "HTTP_SECRET"
+      relativeurls: {{ .Values.relativeurls }}
     health:
       {{- if kindIs "map" .Values.health }}
       {{ toYaml .Values.health | nindent 6 | trim }}
