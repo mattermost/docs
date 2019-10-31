@@ -54,8 +54,9 @@ global:
     configureCertmanager: true
     annotations: {}
     enabled: true
-    # tls:
+    tls: {}
     #   enabled: true
+    #   secretName:
 
   ## Initial root password for this GitLab installation
   ## Secret created according to doc/installation/secrets.md#initial-root-password
