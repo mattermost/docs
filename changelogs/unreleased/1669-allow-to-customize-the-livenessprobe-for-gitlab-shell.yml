@@ -1,0 +1,5 @@
+---
+title: Allow to configure the liveness probe for gitlab-shell
+merge_request: 1021
+author:
+type: added

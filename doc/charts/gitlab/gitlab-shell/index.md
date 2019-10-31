@@ -27,6 +27,11 @@ with `global.shell.port`, and defaults to `22`.
 | ------------------------ | -------------- | ---------------------------------------- |
 | `annotations`            |                | Pod annotations                          |
 | `enabled`                | `true`         | Shell enable flag                        |
+| `deployment.livenessProbe.initialDelaySeconds` | 10 | Delay before liveness probe is initiated |
+| `deployment.livenessProbe.periodSeconds`  | 10 | How often to perform the liveness probe |
+| `deployment.livenessProbe.timeoutSeconds` | 3 | When the liveness probe times out |
+| `deployment.livenessProbe.successThreshold` | 1 | Minimum consecutive successes for the liveness probe to be considered successful after having failed |
+| `deployment.livenessProbe.failureThreshold` | 3 | Minimum consecutive failures for the liveness probe to be considered failed after having succeeded |
 | `extraContainers`        |                | List of extra containers to include      |
 | `extraInitContainers`    |                | List of extra init containers to include |
 | `extraVolumeMounts`      |                | List of extra volumes mounts to do       |
