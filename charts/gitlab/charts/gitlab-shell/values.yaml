@@ -24,7 +24,7 @@ init:
   resources:
     requests:
       cpu: 50m
-      
+
 # Tolerations for pod scheduling
 tolerations: []
 
@@ -58,3 +58,11 @@ minReplicas: 2
 maxReplicas: 10
 hpa:
   targetAverageValue: 100m
+
+deployment:
+  livenessProbe:
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    timeoutSeconds: 3
+    successThreshold: 1
+    failureThreshold: 3
