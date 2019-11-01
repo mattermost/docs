@@ -27,6 +27,9 @@ data:
     # listen on a TCP socket. This is insecure (no authentication)
     listen_addr = "0.0.0.0:{{ .Values.service.internalPort }}"
 
+    # Directory where internal sockets reside
+    internal_socket_dir = "/home/git"
+
     {{- if $.Values.global.gitaly.tls.enabled }}
     tls_listen_addr = "0.0.0.0:{{ .Values.service.tls.internalPort }}"
     {{- end }}
