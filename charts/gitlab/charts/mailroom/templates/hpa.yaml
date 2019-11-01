@@ -1,0 +1,25 @@
+{{- if and .Values.enabled .Values.global.appConfig.incomingEmail.enabled }}
+apiVersion: autoscaling/v2beta1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: {{ template "fullname" . }}
+  namespace: {{ $.Release.Namespace }}
+  labels:
+{{ include "gitlab.standardLabels" . | indent 4 }}
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: {{ template "fullname" . }}
+  minReplicas: {{ .Values.hpa.minReplicas }}
+  maxReplicas: {{ .Values.hpa.maxReplicas }}
+  metrics:
+  {{- if not .Values.hpa.customMetrics }}
+    - type: Resource
+      resource:
+        name: cpu
+        targetAverageUtilization: {{ .Values.hpa.cpu.targetAverageUtilization }}
+  {{- else -}}
+    {{- toYaml .Values.hpa.customMetrics | nindent 4 -}}
+  {{- end -}}
+{{- end -}}
