@@ -17,7 +17,7 @@ If this is your first time contributing to Mattermost, first read the [Mattermos
 
 **Editing** 
 
-The quickest way to begin is editing directly on GitHub, on your fork of the Mattermost docs repo. 
+The quickest way to begin is editing directly on GitHub on your fork of the Mattermost docs repo. 
 
 Click the **Edit** icon on the top right corner of the page you want to edit in the Mattermost documentation.
 
