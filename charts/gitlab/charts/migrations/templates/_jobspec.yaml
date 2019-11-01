@@ -76,6 +76,11 @@ spec:
             - name: migrations-secrets
               mountPath: /srv/gitlab/config/initial_root_password
               subPath: migrations/initial_root_password
+            {{- if .Values.global.gitlab.license.secret }}
+            - name: migrations-secrets
+              mountPath: /srv/gitlab/config/Gitlab.gitlab-license
+              subPath: migrations/enterprise_license
+            {{- end }}
 {{ include "gitlab.extraVolumeMounts" . | indent 12 }}
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
           resources:
@@ -117,6 +122,13 @@ spec:
               items:
                 - key: {{ template "gitlab.migrations.initialRootPassword.key" . }}
                   path: migrations/initial_root_password
+          {{- if .Values.global.gitlab.license.secret }}
+          - secret:
+              name: {{ .Values.global.gitlab.license.secret }}
+              items:
+                - key: {{ template "gitlab.migrations.license.key" . }}
+                  path: migrations/enterprise_license
+          {{- end }}
       - name: migrations-secrets
         emptyDir:
           medium: "Memory"

@@ -9,6 +9,8 @@ to the `helm install` command using the `--set` flags.
 |------------------------------------------------|---------------------------------------------------------------------------------------------|-----------------------------------------------|
 | `gitlab.migrations.initialRootPassword.key`    | Key pointing to the root account password in the migrations secret                          | `password`                                    |
 | `gitlab.migrations.initialRootPassword.secret` | Global name of the secret containing the root account password                              | `{Release.Name}-gitlab-initial-root-password` |
+| `global.gitlab.license.key`                    | Key pointing to the Enterprise license in the license secret                                | `license`                                     |
+| `global.gitlab.license.secret`                 | Global name of the secret containing the Enterprise license                                 | _none_                                        |
 | `global.application.create`                    | Create an [Application resource](https://github.com/kubernetes-sigs/application) for GitLab | `false`                                       |
 | `global.edition`                               | The edition of GitLab to install. Enterprise Edition (ee) or Community Edition (ce)         | `ee`                                          |
 | `global.hosts.domain`                          | Domain name that will be used for all publicly exposed services                             | Required                                      |
