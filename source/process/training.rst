@@ -152,7 +152,7 @@ Open Meetings
 Developer Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 10:00 (`San Francisco Time <http://everytimezone.com/>`__)
+**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 8:30 AM (`San Francisco Time <http://everytimezone.com/>`__)
 
 - Goal: Discuss developer issues across Mattermost staff, key contributors and the contributor community.
 - Attendees: (required) Mattermost staff developers, (optional) key contributors, contributors and anyone who would like to join.
@@ -162,7 +162,7 @@ Procedure:
 1. (Team and Public): Post meeting agenda in `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__ (open to the public). Please see instructions on `how to queue an item <https://community.mattermost.com/core/pl/q4wcrcnxhtf1fr9grneb6fbrxy>`__.
 2. (Team and Public): At the time of the meeting:
 
-      - Join the **Hangouts** link posted in the meeting agenda in the `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__.
+      - Join the **Zoom** link found in the header of the `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__.
 
 
 Mattermost Staff Meetings
@@ -269,7 +269,7 @@ Procedure:
 
 1. (Chair) Schedules a kick-off call with co-chairs two weeks prior to the training session. Purpose is to review expectations and plans for the session, as well as answer any questions.
 
-2. (Co-Chairs) Prepare a pre-screening survey to assess team members' knowledge of the product area. This is optional but recommended as it can help guide focus areas of the training session.
+2. (Co-Chairs) Prepares a pre-screening survey to assess team members' knowledge of the product area. This is optional but recommended as it can help guide focus areas of the training session.
 
 3. (Co-Chairs) Prepares slides and other reference material for the session. Must be shared with Chair at least 48 hours ahead of the session.
 
@@ -278,9 +278,10 @@ Procedure:
   - When sharing code snippets, highlight the area of focus within the code snippet.
   - Focus on visuals, diagrams and live demonstrations instead of slides where possible.
   - Share at least one memorable customer story.
+  - Ensure enough time is given for Q&A.
   - See the Google Drive on `previous materials and training recordings for reference <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29_>`_.
 
-4. (Co-Chairs) Two days prior to the training session, practice a dry run for length and structure of the session. This is optional but recommended.
+4. (Co-Chairs) Two days prior to the training session, practices a dry run for length and structure of the session. This is optional but recommended.
 
 5. (Chair) Queues an item for that week's Customer Obsession meeting to remind everyone of the product training session taking place. Include a mention of the topic, along with who is leading the session.
 
@@ -294,7 +295,7 @@ Procedure:
 
 3. (Chair) Starts Zoom recording at 9:00am Palo Alto time.
 
-4. (Chair and Co-Chairs) Runs through the agenda, which typically comprises of the following items:
+4. (Chair and Co-Chairs) Runs through the agenda, which typically comprises of one or more of the following items:
 
 - **Introductions**
 
@@ -329,6 +330,8 @@ Procedure:
   - Q&A
 
 - **Feedback**: At end of meeting, remind to share feedback via survey.
+
+5. (Chair) Encourages questions in Mattermost or Zoom chat throughout the session.
 
 **After meeting:**
 

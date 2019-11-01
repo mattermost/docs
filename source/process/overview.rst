@@ -63,12 +63,12 @@ Key contributors might also pick up tickets, or through conversations with the c
 Community Contributions
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Community members following the `Contribution Guidelines <http://docs.mattermost.com/developer/contribution-guide.html#code-contribution-guidelines>`__ might also submit pull requests. Pull requests that significantly change the user experience are opened `via the feature ideas process <http://www.mattermost.org/feature-requests/>`__.
+Community members following the `Contribution Guidelines <https://developers.mattermost.com/contribute/getting-started/>`__ might also submit pull requests. Pull requests that significantly change the user experience are opened `via the feature ideas process <http://www.mattermost.org/feature-requests/>`__.
 
 Bug Fixes
 ^^^^^^^^^
 
-If you see an obvious bug and want to submit a fix, pull requests following the `contribution guidelines <http://docs.mattermost.com/developer/contribution-guide.html#code-contribution-guidelines>`__ are gladly accepted.
+If you see an obvious bug and want to submit a fix, pull requests following the `contribution guidelines <https://developers.mattermost.com/contribute/getting-started/>`__ are gladly accepted.
 
 Examples: 
 

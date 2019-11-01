@@ -120,6 +120,7 @@ Caching Metrics:
     - ``mattermost_cache_etag_hit_total``: The total number of ETag cache hits for a specific cache.
     - ``mattermost_cache_etag_miss_total``: The total number of ETag cache misses for an API call.
     - ``mattermost_cache_mem_hit_total``: The total number of memory cache hits for a specific cache.
+    - ``mattermost_cache_mem_invalidation_total``: The total number of memory cache invalidations for a specific cache.
     - ``mattermost_cache_mem_miss_total``: The total number of cache misses for a specific cache.
 
 The above metrics can be used to calculate ETag and memory cache hit rates over time.
@@ -137,6 +138,7 @@ Database Metrics:
     - ``mattermost_db_master_connections_total``: The total number of connections to the master database.
     - ``mattermost_db_read_replica_connections_total``: The total number of connections to all the read replica databases.
     - ``mattermost_db_search_replica_connections_total``: The total number of connections to all the search replica databases.
+    - ``mattermost_db_store_time``: The total time in seconds to execute a given database store method.
 
 HTTP Metrics:
 
