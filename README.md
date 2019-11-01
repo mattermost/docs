@@ -12,7 +12,7 @@ If you have any questions, sign up to [community.mattermost.com](https://communi
 
 You can edit or create Mattermost documentation directly in GitHub or by downloading the repo onto your machine and using an editor such as Atom. Consult the [Mattermost Documentation Style Guide](https://docs.mattermost.com/guides/core.html#documentation-style-guide) and [reStructuredText Markup](https://docs.mattermost.com/process/documentation-guidelines.html#restructuredtext-markup) section for stylistic and technical guidance. 
 
-If this is your first time contributing to Mattermost, first read and sign the [Mattermost Contributor Agreement](https://www.mattermost.org/mattermost-contributor-agreement/) and sign it (at the bottom of the page), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
+If this is your first time contributing to Mattermost, first read the [Mattermost Contributor Agreement](https://www.mattermost.org/mattermost-contributor-agreement/) and sign it (at the bottom of the page), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
 
 
 **Editing** 
