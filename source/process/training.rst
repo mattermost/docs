@@ -152,7 +152,7 @@ Open Meetings
 Developer Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 10:00 (`San Francisco Time <http://everytimezone.com/>`__)
+**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 8:30 AM (`San Francisco Time <http://everytimezone.com/>`__)
 
 - Goal: Discuss developer issues across Mattermost staff, key contributors and the contributor community.
 - Attendees: (required) Mattermost staff developers, (optional) key contributors, contributors and anyone who would like to join.
@@ -162,7 +162,7 @@ Procedure:
 1. (Team and Public): Post meeting agenda in `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__ (open to the public). Please see instructions on `how to queue an item <https://community.mattermost.com/core/pl/q4wcrcnxhtf1fr9grneb6fbrxy>`__.
 2. (Team and Public): At the time of the meeting:
 
-      - Join the **Hangouts** link posted in the meeting agenda in the `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__.
+      - Join the **Zoom** link found in the header of the `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__.
 
 
 Mattermost Staff Meetings
