@@ -7,6 +7,8 @@ This document describes how to install Mattermost Team Edition Helm Chart in pro
 
 As the Mattermost Helm Chart is installed in a separate namespace, it is recommended that cert-manager and nginx-ingress be configured to manage cluster-wide ingress and certificate resources. 
 
+The steps in this document presume in-chart Minio instance usage. For information about out-of-chart object storage configuration, review `this document <https://gitlab.com/gitlab-org/charts/gitlab/tree/master/doc/charts/registry#storage>`__ for GCS and S3 examples. Alternatively, visit your provider's Help documentation for configuration settings. 
+
 
 Prerequisites
 ----------------------------
