@@ -1,7 +1,7 @@
 Configure SAML with Microsoft ADFS
 ==================================
 
-The following process provides steps to configure SAML 2.0 with Microsoft ADFS for Mattermost and Microsoft Windows Servre 2016.
+The following process provides steps to configure SAML 2.0 with Microsoft ADFS for Mattermost and Microsoft Windows Server 2016.
 
 .. contents::
   :backlinks: top
@@ -20,74 +20,72 @@ On your ADFS installation, note down the value of the **SAML 2.0/W-Federation UR
 Add a Relying Party Trust
 -------------------------
 
-1. In ADFS management sidebar, go to **AD FS > Trust Relationships > Relying Party Trusts** and click **Add Relying Party Trust**
+1. In ADFS management snap-in, go to **AD FS > Relying Party Trusts** and click **Add Relying Party Trust** on the right sidebar. As an alternative right-click **Relying Party Trusts** and choose **Add Relying Party Trust** from the context menu.
 
-	.. image:: ../../source/images/adfs_1_add_new_relying_party_trust.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_000.png
 
-2. A configuration wizard for adding a new relying party trust opens. In the **Welcome** screen, click **Start**.
+2. A configuration wizard for adding a new relying party trust opens. In the **Welcome** screen, choose **Claims aware** and click **Start**.
 
-	.. image:: ../../source/images/adfs_2_start_wizard.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_001.png
 
 3. In the **Select Data Source** screen, select the option **Enter data about the relying party manually**.
 
-	.. image:: ../../source/images/adfs_3_select_data_source.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_002.png
 
 4. In the **Specify Display Name** screen, enter a **Display Name** to recognize the trust, such as ``Mattermost``, and add any notes you want to make.
 
-	.. image:: ../../source/images/adfs_4_specify_display_name.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_003.png
 
-5. In the **Choose Profile** screen, select the option **AD FS profile**.
+5. In the **Configure Certificate** screen, leave the certificate settings at their default values.
 
-	.. image:: ../../source/images/adfs_5_choose_profile.PNG
-
-6. In the **Configure Certificate** screen, leave the certificate settings at their default values.
-
-	.. image:: ../../source/images/adfs_6_configure_certificate_default.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_004.png
 
 However, if you would like to set up encryption for your SAML connection, click the **Browse** button and upload your Service Provider Public Certificate.
 
-	.. image:: ../../source/images/adfs_7_configure_certificate_encryption.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_005.png
 
-7. In the **Configure URL** screen, select the option **Enable Support for the SAML 2.0 WebSSO protocol** and enter the **SAML 2.0 SSO service URL**, which is of the form ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__.
+6. In the **Configure URL** screen, select the option **Enable Support for the SAML 2.0 WebSSO protocol** and enter the **SAML 2.0 SSO service URL**, which is of the form ``https://<your-mattermost-url>/login/sso/saml`` where ``https://<your-mattermost-url>`` should typically match the `Mattermost Site URL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__.
 
-	.. image:: ../../source/images/adfs_8_configure_url.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_006.png
 
-8. In the **Configure Identifiers** screen, enter the **Relying party trust identifier** (also known as the **Identity Provider Issuer URL**) of the form ``https://<your-idp-url>/adfs/services/trust`` and click **Add**.
+7. In the **Configure Identifiers** screen, enter the **Relying party trust identifier** (also known as the **Identity Provider Issuer URL**) of the form ``https://<your-idp-url>/adfs/services/trust`` and click **Add**.
 
-	.. image:: ../../source/images/adfs_9_configure_identifiers.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_007.png
 
-9. In the **Configure Multi-factor Authentication Now** screen, you may enable multi-factor authentication, but this is beyond the scope of this guide.
+	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_008.png
 
-	.. image:: ../../source/images/adfs_10_configure_mfa.PNG
+8. In the **Choose Access Control Policy** screen, you may enable multi-factor authentication, but this is beyond the scope of this guide. It assumes the default values **Permit everyone** and an unchecked box are kept.
 
-10. In the **Choose Issuance Authorization Rules** screen, select the option **Permit all users to access this relying party**.
+	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_009.png
 
-	.. image:: ../../source/images/adfs_11_authorization.PNG
+9. In the **Ready to Add Trust** screen, you can review your settings.
 
-11. In the **Ready to Add Trust** screen, you can review your settings.
+	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_010.png
 
-	.. image:: ../../source/images/adfs_12_ready_to_add_trust.PNG
+10. In the **Finish** screen, select the option **Configure claims issuance policy for this application**, and click **Close**. 
 
-12. In the **Finish** screen, select the option **Open the Edit Claim Rules dialog for this relying party trust when the wizard closes**, and click **Close**. You will now exit configuration wizard and a **Claim Rules** editor opens.
+	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_011.png
 
-	.. image:: ../../source/images/adfs_13_finish_trust.PNG
+	You will now exit the configuration wizard and a **Claim Rules** editor opens.
 
 Create Claim Rules
 ------------------
 
-1. In the **Issuance Transform Rules** of the **Claim Rules** editor, click the **Add Rule…** button. This action opens an **Add Transform Claim Rule Wizard**.
+1. In the **Issuance Transform Rules** tab of the **Claim Rules** editor, click the **Add Rule…** button.
 
-	.. image:: ../../source/images/adfs_14_claim_rules_editor.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_create-claim-rules_001.png
+
+	This action opens an **Add Transform Claim Rule Wizard**.
 
 2. In the **Choose Rule Type** screen, select **Send LDAP Attributes as Claims** from the drop-down menu, then click **Next**.
 
-	.. image:: ../../source/images/adfs_15_choose_rule_type.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_create-claim-rules_002.png
 
-3. In the **Configure Claim Rule** screen, enter a **Claim Rule Name** of your choice, select **Active Directory** as the **Attribute Store** and do the following:
-  - From the **LDAP Attribute column**, select ``E-Mail-Addresses``. From the **Outgoing Claim Type**, type ``Email``
-  - From the **LDAP Attribute column**, select ``Given-Name``. From the **Outgoing Claim Type**, type ``FirstName``
-  - From the **LDAP Attribute column**, select ``Surname``. From the **Outgoing Claim Type**, type ``LastName``
-  - From the **LDAP Attribute column**, select ``SAM-Account-Name``. From the **Outgoing Claim Type**, type ``Username``
+3. In the **Configure Claim Rule** screen, enter a **Claim Rule Name** of your choice, select **Active Directory** as the **Attribute Store** and add the following mapping:
+  - From the LDAP Attribute column, **select** ``E-Mail-Addresses``. From the Outgoing Claim Type, **type** ``Email``
+  - From the LDAP Attribute column, **select** ``Given-Name``. From the Outgoing Claim Type, **type** ``FirstName``
+  - From the LDAP Attribute column, **select** ``Surname``. From the Outgoing Claim Type, **type** ``LastName``
+  - From the LDAP Attribute column, **select** ``SAM-Account-Name``. From the Outgoing Claim Type, **type** ``Username``
 
 For Mattermost 3.4 and later, the *FirstName* and *LastName* attributes are optional.
 
@@ -95,13 +93,13 @@ Then, click **Finish** to add the rule.
 
 Note that the entries in the **Outgoing Claim Type** column can be chosen to be something else. They can contain dashes but no spaces. Note that they will be used to map the corresponding fields in Mattermost later.
 
-	.. image:: ../../source/images/adfs_16_configure_claim_rule.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_create-claim-rules_003.png
 
 4. Create another new rule by clicking the **Add Rule** button.
 
 5. In the **Choose Rule Type** screen, select **Transform an Incoming Claim** from the drop-down menu, then click **Next**.
 
-	.. image:: ../../source/images/adfs_17_transformation_of_incoming_claim.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_create-claim-rules_004.png
 
 6. In the **Configure Claim Rule** screen, enter a **Claim Rule Name** of your choice, then
   - Select *Name ID* for the **Incoming claim type**
@@ -110,15 +108,17 @@ Note that the entries in the **Outgoing Claim Type** column can be chosen to be 
 
 Moreover, select the **Pass through all claim values** option. Then click **Finish**.
 
-	.. image:: ../../source/images/adfs_18_configure_incoming_claim.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_create-claim-rules_005.png
 
 7. Click **Finish** to create the claim rule, then **OK** to finish creating rules.
+
+	.. image:: ../../source/images/SSO-SAML-ADFS_create-claim-rules_006.png
 
 8. Open Windows PowerShell as an administrator and run the following command:
 
   ``Set-ADFSRelyingPartyTrust -TargetName <display-name> -SamlResponseSignature "MessageAndAssertion"``
 
-where <display-name> is the name you specified in step 7. In our example it would be ``mattermost``.
+where <display-name> is the name you specified in step 6. In our example it would be ``mattermost``.
 
 This action will add the signature to SAML messages, making verification successful.
 
@@ -127,27 +127,33 @@ Export Identity Provider Certificate
 
 Next, we export the identity provider certificate, which will be later uploaded to Mattermost to finish SAML configuration.
 
-1. In ADFS management sidebar, go to **AD FS > Service > Certificates** and double click on the certificate under **Token-signing**. You may alternatively right-click the field, then click **View Certificate**
+1. In ADFS management snap-in, go to **AD FS > Service > Certificates** and double click on the certificate under **Token-signing**. You may alternatively right-click the field, then click **View Certificate** in the context menu.
 
-	.. image:: ../../source/images/adfs_19_export_idp_cert_start.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_export-id-provider-cert_001.png
 
-2. In the **Certificate** screen, go to the **Details** tab and click **Copy to File**, then **OK**. This opens a **Certificate Export Wizard**.
+2. In the **Certificate** screen, go to the **Details** tab and click **Copy to File**, then **OK**.
 
-	.. image:: ../../source/images/adfs_20_export_idp_cert_copy.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_export-id-provider-cert_003.png
 
-3. In the **Certificate Export Wizard** screen, click **Next**. Then, select the option **Base-64 encoded X.509 (.CER)** and click **Next** again.
+	This opens the **Certificate Export Wizard**.
 
-	.. image:: ../../source/images/adfs_21_export_idp_cert_wizard.PNG
+3. In the **Certificate Export Wizard** screen, click **Next**.
+
+	.. image:: ../../source/images/SSO-SAML-ADFS_export-id-provider-cert_004.png
+
+	Then, select the option **Base-64 encoded X.509 (.CER)** and click **Next** again.
+
+	.. image:: ../../source/images/SSO-SAML-ADFS_export-id-provider-cert_005.png
 
 4. In the **Certificate Export Wizard** screen, click **Browse** to specify the location you want the Identity Provider Certificate to be exported, and specify the file name.
 
-	.. image:: ../../source/images/adfs_21-2_export_idp_cert_wizard.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_export-id-provider-cert_006.png
 
 5. Click **Save**. In the **Certificate Export Wizard** screen, verify the file path is correct, and click **Next**.
 
 6. In the **Completing the Certificate Export Wizard**, click **Finish**, then **OK** to confirm the export was successful.
 
-	.. image:: ../../source/images/adfs_21-3_export_idp_cert_wizard.PNG
+	.. image:: ../../source/images/SSO-SAML-ADFS_export-id-provider-cert_007.png
 
 You’re now about to finish configuring SAML for Mattermost!
 
