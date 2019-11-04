@@ -29,8 +29,8 @@ How do I install the Extended Support Release?
 ----------------------------------------------
 Follow our normal `install <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__ or `upgrade <https://docs.mattermost.com/administration/upgrade.html>`__ guides. When downloading the Mattermost version, choose an Extended Support Release from the list below. 
 
-What are the current supported ESR versions? 
---------------------------------------------
+What are the current supported Extended Support Release versions? 
+-----------------------------------------------------------------
 
 +-------------+----------------+----------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
 | Version     | Release Date   | End of Support | Latest Dot Release Download link                                                           | Upgrade Notes                                   |
@@ -42,4 +42,13 @@ What are the current supported ESR versions?
 
 How do I restore a previous Extended Support Release?
 -----------------------------------------------------
-Before you perform an upgrade, please ensure you have done a full back up of your current version.  You can restore the database and previous version if you need to revert an upgrade.  Please note that previous ESR versions are subject to an end of support date. 
+Before you perform an upgrade, please ensure you have done a full back up of your current version.  You can restore the database and previous version if you need to revert an upgrade.  Please note that previous ESR versions are subject to an end of support date.
+
+Why is an Extended Support Release supported for 9 months and not longer?
+-------------------------------------------------------------------------
+We chose 9 months because the overhead for maintaining an ESR is high (and becomes higher the longer the support window is).
+If we increase the support window, it decreases how much we can develop the product. We specifically chose "ESR" instead of "LTS", since it is not intended to be a multi-year longterm support release.
+
+Can customers pay for extended support?
+---------------------------------------
+At this point, we are not planning on letting customers pay for extended support, but we are open to discuss options for this.
