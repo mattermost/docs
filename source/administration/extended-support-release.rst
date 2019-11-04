@@ -27,7 +27,9 @@ If your organization prefers to have the newest features and improvements, Exten
 
 How do I install the Extended Support Release?
 ----------------------------------------------
-Follow our normal `install <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__ or `upgrade <https://docs.mattermost.com/administration/upgrade.html>`__ guides. When downloading the Mattermost version, choose an Extended Support Release from the list below. 
+Follow our normal `install <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__ or `upgrade <https://docs.mattermost.com/administration/upgrade.html>`__ guides. Please follow the `important upgrade notes <https://docs.mattermost.com/administration/important-upgrade-notes.html>`_ for all the versions since the current ESR version you have currently installed.
+
+When downloading the Mattermost version, choose an Extended Support Release from the list below.
 
 What are the current supported Extended Support Release versions? 
 -----------------------------------------------------------------
