@@ -37,7 +37,9 @@ Once a pull request is submitted, multiple committers may comment on it and prov
 
 ### Reviewing Pull Requests
 
-Once a pull request has been submitted and the correct label assigned, the review process begins. Once the review process is complete and depending on the type of issue it is (e.g., a typo fix vs. a new feature), the change is either merged into master and pushed immediately or merged into the release branch and pushed in alignment with the release. 
+Once a pull request has been submitted and the correct label assigned, the review process begins. This includes aligning the content with the Style Guide, validating processes, and tagging any other relevant committers. 
+
+Once the review process is complete and depending on the type of issue it is (e.g., a typo fix vs. a new feature), the change is either merged into master and pushed immediately or merged into the release branch and pushed in alignment with the release. The branch is then deleted. 
 
 ## Building and Validating
 
