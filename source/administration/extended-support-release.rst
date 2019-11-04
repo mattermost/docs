@@ -11,7 +11,9 @@ Mattermost provides an ESR when a significant number of new features and improve
 
 When an ESR is at the end of its life cycle, there will be announcements ahead of time to provide time for people to test, certify, and deploy a newer ESR version before support ends. There will be a clear upgrade path provided between ESR versions. 
 
-After a release reaches its end-of-life, no further updates will be provided for that version. 
+After a release reaches its end-of-life, no further updates will be provided for that version.
+
+Please see `Release Lifecycle documentation <https://docs.mattermost.com/administration/release-lifecycle.html>`_ for full list of lifecycles for each Mattermost release.
 
 To receive updates about Extended Support Releases, sign up for our mailing list `here <http://eepurl.com/dCKn2P>`__. 
 
