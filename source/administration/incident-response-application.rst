@@ -122,7 +122,7 @@ A trigger is a condition on which a workflow can be started.
 
     "name", "The name of the trigger.", "string", "Yes. This field must be unique."
     "type", "The type of trigger. This refers to the internal name of the trigger being configured.", "string", "Yes"
-    "* additional fields", "Additional fields based on the type of trigger. See below for more details.", "string", "Yes"
+    "additional fields*", "Additional fields based on the type of trigger. See below for more details.", "string", "Yes"
 
 Note that the trigger name must be a sequence of one or more letters, digits and underscores, and start with a letter, such as ``sec_issue_workflow_3``.
 
@@ -180,7 +180,7 @@ Actions are performed when steps are started and finished.
 
     "name", "The name of the action.", "string", "Yes. This field must be unique."
     "type", "The type of action to perform.", "string", "Yes"
-    "* additional fields", "Additional fields based on the type of action. See below for more details.", "string", "Yes"
+    "additional fields*", "Additional fields based on the type of action. See below for more details.", "string", "Yes"
 
 Note that the action name must be a sequence of one or more letters, digits and underscores, and start with a letter.
 
