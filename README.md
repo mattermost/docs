@@ -6,20 +6,20 @@ If you have any questions, sign up to [community.mattermost.com](https://communi
 
 ## Contributing
 
-**Getting Started**
+### Getting Started
 
 You can edit or create Mattermost documentation directly in GitHub or by downloading the repo onto your machine and using an editor such as Atom. Consult the [Mattermost Documentation Style Guide](https://docs.mattermost.com/guides/core.html#documentation-style-guide) and [reStructuredText Markup](https://docs.mattermost.com/process/documentation-guidelines.html#restructuredtext-markup) section for stylistic and technical guidance. 
 
 If this is your first time contributing to Mattermost, first read the [Mattermost Contributor Agreement](https://www.mattermost.org/mattermost-contributor-agreement/) and sign it (at the bottom of the page), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
 
 
-**Editing** 
+### Editing
 
 The quickest way to begin is editing directly on GitHub on your fork of the Mattermost docs repo. Click the **Edit** icon on the top right corner of the page you want to edit in the Mattermost documentation.
 
 If this the first time you're contributing, click **Edit the file in your fork of this project** (pencil icon) on the top right corner to create a fork. 
 
-## Creating Pull Requests
+### Creating Pull Requests
 
 1. When you're ready to submit your changes, add a descriptive title and comments to summarize the changes made.
 2. Select **Create a new branch for this commit and start a pull request**.
@@ -27,9 +27,17 @@ If this the first time you're contributing, click **Edit the file in your fork o
 4. Scroll down to compare changes with the original document.
 5. Select **Create pull request**. 
 
-## Commenting on Pull Requests
+### Using Labels
 
-Once a pull request is submitted, multiple committers may comment on it and provide edits or suggestions which you can commit directly. You can also add line comments. Take a look at [Commenting on pull requests](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request) for more details. 
+Labels are used to track the lifecycle and status of a pull request. Using the correct labels helps with managing workflows and ensuring that content is edited, merged, released etc at the correct time. Take a look at the [Labels](https://developers.mattermost.com/contribute/getting-started/labels/) page for information about how and when to use which labels.
+
+### Commenting on Pull Requests
+
+Once a pull request is submitted, multiple committers may comment on it and provide edits or suggestions which you can commit directly. You can also add line comments. Take a look at [Commenting on pull requests](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request) for more details.
+
+### Reviewing Pull Requests
+
+Once a pull request has been submitted and the correct label assigned, the review process begins. Once the review process is complete and depending on the type of issue it is (e.g., a typo fix vs. a new feature), the change is either merged into master and pushed immediately or merged into the release branch and pushed in alignment with the release. 
 
 ## Building and Validating
 
