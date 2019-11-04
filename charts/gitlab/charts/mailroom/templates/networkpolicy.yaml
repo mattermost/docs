@@ -1,0 +1,33 @@
+{{- if .Values.enabled -}}
+{{- if .Values.networkpolicy.enabled -}}
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ template "fullname" . }}-v1
+  namespace: {{ $.Release.Namespace }}
+  labels:
+    {{ include "gitlab.standardLabels" . | nindent 4 }}
+  annotations:
+    {{ toYaml .Values.networkpolicy.annotations | nindent 4 }}
+spec:
+  podSelector:
+    matchLabels:
+      app: {{ template "name" . }}
+      release: {{ .Release.Name }}
+  policyTypes:
+    {{- if .Values.networkpolicy.egress.enabled }}
+    - Egress
+    {{- end }}
+    {{- if .Values.networkpolicy.ingress.enabled }}
+    - Ingress
+    {{- end }}
+  {{- if .Values.networkpolicy.ingress.enabled }}
+  ingress:
+    {{ toYaml .Values.networkpolicy.ingress.rules | nindent 4 }}
+  {{- end -}}
+  {{- if .Values.networkpolicy.egress.enabled }}
+  egress:
+    {{ toYaml .Values.networkpolicy.egress.rules | nindent 4 }}
+  {{- end -}}
+{{- end -}}
+{{- end -}}
