@@ -2,6 +2,21 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.4.6
+
+### Fixed (1 change)
+
+- global.ingress.tls default to empty map. !1022
+
+### Added (1 change)
+
+- Allow to configure the liveness probe for gitlab-shell. !1021
+
+### Other (1 change)
+
+- Update GitLab Version to 12.4.2.
+
+
 ## 2.4.5
 
 ### Other (2 changes)
