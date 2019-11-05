@@ -1,9 +1,9 @@
 User Interface Text Guidelines
 ===============================
-This is the Mattermost style guide for text used in the Mattermost product. Use these guidelines to ensure the the text on the Mattermost user interface (UI) is consistent and clear.  These guidelines cover two types of UI text:
+This is the Mattermost style guide for text used in the Mattermost product. Use these guidelines to ensure the text on the Mattermost user interface (UI) is consistent and clear.  These guidelines cover two types of UI text:
 
-- The messages that are triggered because something happened
-- The static text on the user interface
+- Messages triggered because something happened
+- Static text on the user interface
 
 .. note::
 
@@ -20,17 +20,20 @@ General principles for in-product text
 ---------------------------------------
 
 - Keep in mind that your users are from all over the world. Use words that are clear and easy to understand.
-- Don't blame the user. Inform them about what happened, explain why it happened, and suggest a way forward.
-- Try to be concise.
-- Try to use the active voice, except in these cases:
+- Be concise.
+- Use the active voice, except for these cases:
+
    - If you'll end up blaming the user. For example, don't say *You entered an incorrect password*. Instead, say *The password is incorrect*.
-   - If you're describing what just happened. For example, it's okay to say *Your incoming webhook has been set up*.
-   - If the subject (the doer of an action) is the Mattermost application itself. For example, it's okay to say *The image was deleted* instead of *The server deleted the image*.
+   - If you're describing what just happened. For example, it's okay to say *Your incoming webhook is been set up*.
+   - If the subject (the doer of an action) is the Mattermost application itself. For example, it's okay to say *The image is deleted* instead of *The server deleted the image*.
+   
 - Use the past tense to say what's already happened, the present tense to describe a current state or condition, and the future tense to state something that is very definitely going to happen.
 - If you're asking the user to do or not do something, use imperatives (command phrases). For example, say *Do not change the Hostname* instead of saying *It is not recommended to change the Hostname*. Better still, explain what could go wrong if they do or don't do something. For example, say *Do not change the Hostname because if you do so <this bad thing will happen>.*
 
 Guidelines for messages
 ------------------------
+
+Don't blame the user. Inform them about what happened, explain why it happened, and suggest a way forward.
 
 Try to use complete sentences in your messages. If a message contains variables (tokens):
 
