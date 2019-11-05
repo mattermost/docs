@@ -79,7 +79,7 @@ A warning message is for alerting somebody about something that might go wrong. 
 - Examples:
 
   - *The Enterprise license expires in 2 days. If you do not renew it, some features will be disabled on licence expiry.*
-  - *If you claim this AD/LDAP account, you will no longer be able to log in with your email. Do you want to continue?*
+  - *If you claim this AD/LDAP account, you will no longer be able to log in with your email.*
 
 Error messages
 ~~~~~~~~~~~~~~~
@@ -91,7 +91,7 @@ An error message is for telling somebody that something went wrong. Errors preve
 - If a solution or workaround isn't obvious, suggest one.
 - Examples:
 
-  - *This message is too long. Shorten it to 120 characters.*
+  - *Messages must have fewer than 120 characters.*
   - *The passwords do not match.*
 
 
