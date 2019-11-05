@@ -24,7 +24,7 @@ PC Web
 
     "Chrome", "Chromium version of latest Mattermost Desktop App"
     "Firefox", "Supported versions by Mozilla - `reference <https://www.mozilla.org/en-US/firefox/organizations/>`__"
-    "Safari", "Supported versions by Apple - `reference <https://en.wikipedia.org/wiki/Safari_version_history>`__"
+    "Safari", "Safari version available in the minimum supported iOS version - `reference <https://en.wikipedia.org/wiki/Safari_version_history>`__"
     "Edge", "Latest release"
     
 Mobile Apps
