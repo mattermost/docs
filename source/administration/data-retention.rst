@@ -86,3 +86,8 @@ Mattermost provides the status of each data retention job in **System Console** 
 
 Morever, any failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. Data retention job failures are identified with worker name ``EnterpriseDataRetention``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
 
+Does the system administrator get any notification when the data retention period is changed?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No, the new config is updated, but the sysadmin does *not* receive any feedback on what the effects will be (e.g. reporting of how many messages to be deleted).
+
