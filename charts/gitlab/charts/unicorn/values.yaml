@@ -23,7 +23,12 @@ monitoring:
   exporter:
     enabled: false
     port: 8083
-    blackoutSeconds: 10
+
+# Shutdown settings
+# Defines an interval to block healthcheck,
+# but continue accepting application requests.
+shutdown:
+  blackoutSeconds: 10
 
 
 annotations: {}
