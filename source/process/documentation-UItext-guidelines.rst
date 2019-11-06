@@ -1,6 +1,6 @@
 User Interface Text Guidelines
 ===============================
-This is the Mattermost style guide for text used in the Mattermost product. Use these guidelines to ensure the text on the Mattermost user interface (UI) is consistent and clear.  These guidelines cover two types of UI text:
+This is the Mattermost style guide for text used in the Mattermost product. Use these guidelines to ensure text on the Mattermost user interface (UI) is consistent and clear.  These guidelines cover two types of UI text:
 
 - Messages triggered because something happened
 - Static text on the user interface
