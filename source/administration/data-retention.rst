@@ -89,5 +89,5 @@ Morever, any failures are returned in the server logs. The error log begins with
 Does the System Administrator get any notification when the data retention period is changed?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No, the new config is updated, but the sysadmin does *not* receive any feedback on what the effects will be (e.g. reporting of how many messages to be deleted).
+No, the new config is updated, but the System Admin does not receive any feedback on what the effects will be (e.g. reporting of how many messages are to be deleted).
 
