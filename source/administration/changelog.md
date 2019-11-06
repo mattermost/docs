@@ -6,8 +6,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.16 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.16.3, released 2019-11-05**
-  - (Accessibility) Fixed an issue where keyboard navigation within the right-hand side did not navigated in expected order. [MM-19901](https://mattermost.atlassian.net/browse/MM-19901)
+- **v5.16.3, released 2019-11-06**
+  - (Accessibility) Fixed an issue where keyboard navigation within the right-hand side did not navigate in expected order. [MM-19901](https://mattermost.atlassian.net/browse/MM-19901)
 - **v5.16.2, released 2019-10-30**
   - Fixed an issue where Permission Schemes was not working properly on an E10 license. [MM-19556](https://mattermost.atlassian.net/browse/MM-19556)
   - Fixed an issue where switching to an unread channel sometimes got stuck at "Loading...". [MM-19091](https://mattermost.atlassian.net/browse/MM-19091)
@@ -169,8 +169,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.15 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.15.3, released 2019-11-05**
-  - (Accessibility) Fixed an issue where keyboard navigation within the right-hand side did not navigated in expected order. [MM-19901](https://mattermost.atlassian.net/browse/MM-19901)
+- **v5.15.3, released 2019-11-06**
+  - (Accessibility) Fixed an issue where keyboard navigation within the right-hand side did not navigate in expected order. [MM-19901](https://mattermost.atlassian.net/browse/MM-19901)
   - Fixed an issue where switching to an unread channel sometimes got stuck at "Loading...". [MM-19091](https://mattermost.atlassian.net/browse/MM-19091)
 - **v5.15.2, released 2019-10-24**
   - Mattermost v5.15.2 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
