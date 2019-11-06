@@ -204,6 +204,9 @@ debug:
 # receiving a SIGTERM signal
 draintimeout: '0'
 
+# Enable the registry to return relative URLs in Location headers
+relativeurls: false
+
 # https://docs.docker.com/registry/configuration/#health
 health:
   storagedriver:

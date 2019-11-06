@@ -109,6 +109,7 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 | `debug`                                    |                                              | Debug port and prometheus metrics                                                                    |
 | `deployment.terminationGracePeriodSeconds` | `30`                                         | Optional duration in seconds the pod needs to terminate gracefully.                                  |
 | `draintimeout`                             | `'0'`                                        | Amount of time to wait for HTTP connections to drain after receiving a SIGTERM signal (e.g. `'10s'`) |
+| `relativeurls`                             | `false`                                      | Enable the registry to return relative URLs in Location headers. |
 | `enabled`                                  | `true`                                       | Enable registry flag                                                                                 |
 | `hpa.cpu.targetAverageUtilization`         | `75`                                         | Target value of the average of the resource metric across all relevant pods which governs the HPA    |
 | `hpa.customMetrics`                        | `[]`                                         | autoscaling/v2beta1 Metrics contains the specifications for which to use to calculate the desired replica count (overrides the default use of Average CPU Utilization configured in `targetAverageUtilization`) |
