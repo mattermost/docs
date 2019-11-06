@@ -163,15 +163,17 @@ Help Wanted Issue Links
 
 Below is a list of permanent redirects to Help Wanted issue queries:
 
-1. `mattermost/mattermost-server` - https://mattermost.com/pl/help-wanted-mattermost-server which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aopen+label%3A%22Help+Wanted%22+label%3A%22Tech%2FGo%22+is%3Aissue
+1. `mattermost` - https://mattermost.com/pl/help-wanted which redirects to `https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+archived%3Afalse+org%3Amattermost+label%3A%22Help+Wanted%22++label%3A%22Up+For+Grabs%22 <https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+archived%3Afalse+org%3Amattermost+label%3A%22Help+Wanted%22++label%3A%22Up+For+Grabs%22>`_
 
-2. `mattermost/desktop` - https://mattermost.com/pl/help-wanted-desktop which redirects to https://github.com/mattermost/desktop/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22
+2. `mattermost/mattermost-server` - https://mattermost.com/pl/help-wanted-mattermost-server which redirects to `https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FGo%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FGo%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_
 
-3. `mattermost/mattermost-mobile` - https://mattermost.com/pl/help-wanted-mattermost-mobile which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReact+Native%22+is%3Aopen+is%3Aissue
+3. `mattermost/desktop` - https://mattermost.com/pl/help-wanted-desktop which redirects to `https://github.com/mattermost/desktop/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue <https://github.com/mattermost/desktop/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_
 
-4. `mattermost/mattermost/webapp` - https://mattermost.com/pl/help-wanted-mattermost-webapp which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=label%3A%22Tech%2FReactJS%22+label%3A%22Help+Wanted%22+is%3Aopen+is%3Aissue
+4. `mattermost/mattermost-mobile` - https://mattermost.com/pl/help-wanted-mattermost-mobile which redirects to `https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReact+Native%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReact+Native%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_
 
-5. `mattermost/mattermost-redux` - https://mattermost.com/pl/help-wanted-mattermost-redux which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=label%3A%22Tech%2FRedux%22+label%3A%22Help+Wanted%22+is%3Aopen+is%3Aissue
+5. `mattermost/mattermost/webapp` - https://mattermost.com/pl/help-wanted-mattermost-webapp which redirects to `https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReactJS%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReactJS%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_
+
+6. `mattermost/mattermost-redux` - https://mattermost.com/pl/help-wanted-mattermost-redux which redirects to `https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FRedux%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FRedux%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_
 
 Mattermost Community Forums
 ---------------------------------------------------------
