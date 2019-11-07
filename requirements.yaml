@@ -17,6 +17,6 @@ dependencies:
   repository: https://charts.gitlab.io/
   condition: gitlab-runner.install
 - name: grafana
-  version: 3.8.15
+  version: 4.0.1
   repository: https://kubernetes-charts.storage.googleapis.com/
   condition: global.grafana.enabled
