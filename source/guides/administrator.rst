@@ -159,6 +159,7 @@ Learn how to keep Mattermost current with fixes and new features.
    /administration/upgrade.rst
    /administration/important-upgrade-notes*
    /administration/changelog*
+   /help/apps/desktop-changelog*
    /administration/version-archive*
    /administration/extended-support-release*
    /administration/release-lifecycle*
@@ -206,7 +207,7 @@ Learn how to support growth within Mattermost.
 .. toctree::
    :maxdepth: 2
    :glob:
-   
+
    /deployment/scaling*
    /deployment/cluster*
    /deployment/elastic*
