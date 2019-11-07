@@ -48,8 +48,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Websocket Event Changes
  
 ### Known Issues
- - Switching to an unread channel sometimes gets stuck at "Loading...".
- - Enabling/disabling guest access in System Console fails.
  - Negative search filter hypens and occasional random terms are highlighted in search results.
  - Hitting escape to close autocomplete also closes channel header modal.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
