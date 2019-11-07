@@ -1,0 +1,22 @@
+=============================================
+Configuring Transport Encryption
+=============================================
+
+The components of the Mattermost setup can be shown in the following graphic,
+incl. the used transport encryption used. Aside from the encryption between the
+Mattermost Application Server, all transports rely on TLS encryption.
+
+**Note:** The transport between the Application servers is not used by default and
+requires additional setup steps. Enhancing the core product to include automatic
+encryption between cluster nodes is in progress and planned for the 5.18 release.
+
+.. figure:: ../../images/transport-encryption.png
+
+The configuration guides are split up in the following documents:
+
+.. toctree::
+  :titlesonly:
+
+  config-mattermost.rst
+  config-database.rst
+  config-cluster.rst
