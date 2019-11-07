@@ -3696,6 +3696,17 @@ Disable Bots When Owner Is Deactivated
 | This feature's ``config.json`` setting is ``"DisableBotsWhenOwnerIsDeactivated": true`` with options ``true`` and ``false``.                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Latex
+^^^^^^^^^^^^^
+
+**True**: Enables rendering of latex code.
+
+**False**: Disables rendering of latex code to prevent the app from crashing when sharing code that might outgrow assigned memory.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``.                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 SQL Settings
 ~~~~~~~~~~~~
 
