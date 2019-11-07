@@ -543,6 +543,8 @@ grafana:
       mountPath: /tmp/scripts
       configMap: gitlab-grafana-import-secret
       readOnly: true
+  testFramework:
+    enabled: false
 
 ## Settings for individual sub-charts under GitLab
 ## Note: Many of these settings are configurable via globals
