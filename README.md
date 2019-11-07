@@ -41,6 +41,8 @@ Once a pull request has been submitted and the correct label assigned, the revie
 
 Once the review process is complete and depending on the type of issue it is (e.g., a typo fix vs. a new feature), the change is either merged into master and pushed immediately or merged into the release branch and pushed in alignment with the release. The branch is then deleted. 
 
+Any merged PRs with an "Editor Review” or "Reviews Complete" label will be processed by the editor reviewer to ensure the documentation is correctly formatted at https://docs.mattermost.com/.
+
 ## Building and Validating
 
 If you've downloaded the repo and are editing Mattermost documentation on your local machine, you can generate the HTML files from markdown in the `/source` directory. You can review them before you commit changes or create pull requests. 
