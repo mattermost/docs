@@ -21,7 +21,7 @@ Installing Mattermost
 Learn how to get Mattermost running on your environment.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :glob:
 
    /install/requirements.rst
@@ -128,6 +128,7 @@ Learn how to get your users into and comfortable using Mattermost.
    /deployment/certificate-based-authentication*
    /deployment/advanced*
    /deployment/permissions-backend*
+   /deployment/guest-accounts*
 
 Administration
 ----------------------------
@@ -174,6 +175,7 @@ Learn how to extend Mattermost by integrating your workflows.
    :glob:
 
    /developer/toolkit*
+   /administration/incident-response-application*
    /deployment/atlassian-integrations*
    /deployment/ci-cd-tools*
    /deployment/incident-response-and-monitoring*
@@ -204,7 +206,7 @@ Learn how to support growth within Mattermost.
 .. toctree::
    :maxdepth: 2
    :glob:
-
+   
    /deployment/scaling*
    /deployment/cluster*
    /deployment/elastic*
