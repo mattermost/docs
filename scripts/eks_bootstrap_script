@@ -24,19 +24,29 @@ kubernetes_version=${CLUSTER_VERSION-1.11}
 region="${REGION-us-east-2}"
 node_type="${MACHINE_TYPE-m5.xlarge}"
 service_account="${SERVICE_ACCOUNT-tiller}"
+kubeconfig="${KUBECONFIG:-$HOME/.kube/config}"
+iam_role=
+auto_kubeconfig=0
 
 function print_help(){
   cat <<EOF
-Usage: ${0} ARGS (up|down)
+Usage: ${0} ARGS (up|down|list|creds)
 -c NAME - Name of the cluster to use. Defaults to gitlab-cluster
 -n NODES - number of nodes to use. Defaults to 2
 -k VERSION - Kubernetes version to use. Defaults to 1.11
 -r REGION - Region to install the cluster in. Defaults to us-east-2
 -m TYPE - Type of nodes to use. Default m5.xlarge
 -s SA - Service account to use for helm/tiller. Default tiller
+
+Arguments available when using the creds subcommand
+-K KUBECONFIG - Use an alternative file, supercedes $KUBECONFIG var
+-R IAM_ROLE - AWS IAM role to assume for authenticator
+-A - save kubeconfig file by cluster name, e.g. $HOME/.kube/eksctl/clusters/<name>
+
 up - create a cluster
 down - delete a cluster
 list - display information about running clusters
+creds - download credentials and install into kubeconfig file
 EOF
 }
 
@@ -68,7 +78,28 @@ function do_list(){
   eksctl get cluster -r "${region}" "${cluster_name}"
 }
 
-while getopts c:n:k:r:m:s: opt
+function do_creds() {
+  local cluster_name="${1}"
+  local region="${2}"
+  local kubeconfig="${3}"
+  local auto_kubeconfig="${4}"
+  local iam_role="${5}"
+
+  local options=()
+  if [[ -n "${kubeconfig}" ]]; then
+    options+=(--kubeconfig ${kubeconfig})
+  fi
+  if [[ -n "${iam_role}" ]]; then
+    options+=(--authenticator-role-arn ${iam_role})
+  fi
+  if [[ "$auto_kubeconfig" == 1 ]]; then
+    options+=(--auto-kubeconfig)
+  fi
+
+  eksctl utils write-kubeconfig -r "${region}" -n "${cluster_name}" ${options[*]}
+}
+
+while getopts c:n:k:r:m:s:K:R:A opt
 do
   case "${opt}" in
     c)
@@ -89,8 +120,18 @@ do
     s)
       service_account="${OPTARG}"
       ;;
+    K)
+      kubeconfig="${OPTARG}"
+      ;;
+    R)
+      iam_role="${OPTARG}"
+      ;;
+    A)
+      auto_kubeconfig=1
+      ;;
     [?])
       print_help
+      exit 1
       ;;
   esac
 done
@@ -114,6 +155,9 @@ case ${1} in
     ;;
   list)
     do_list "${2}" "${region}"
+    ;;
+  creds)
+    do_creds "${cluster_name}" "${region}" "${kubeconfig}" "${auto_kubeconfig}" "${iam_role}"
     ;;
   *)
     print_help
