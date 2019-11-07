@@ -43,15 +43,15 @@ called ``mattermost``:
 
 .. code-block:: none
 
-$ sudo -u mattermost ssh-keygen -t rsa
-  Generating public/private rsa key pair.
-  Enter file in which to save the key (/home/mattermost/.ssh/id_rsa):
-  Enter passphrase (empty for no passphrase):
-  Enter same passphrase again:
-  Your identification has been saved in /home/mattermost/.ssh/id_rsa.
-  Your public key has been saved in /home/mattermost/.ssh/id_rsa.pub.
-  The key fingerprint is:
-  SHA256:redacted mattermost@transport-encryption-mattermost1
+  $ sudo -u mattermost ssh-keygen -t rsa
+    Generating public/private rsa key pair.
+    Enter file in which to save the key (/home/mattermost/.ssh/id_rsa):
+    Enter passphrase (empty for no passphrase):
+    Enter same passphrase again:
+    Your identification has been saved in /home/mattermost/.ssh/id_rsa.
+    Your public key has been saved in /home/mattermost/.ssh/id_rsa.pub.
+    The key fingerprint is:
+    SHA256:redacted mattermost@transport-encryption-mattermost1
 
 
 The location of the SSH key itself is irrelevant if company policies require
