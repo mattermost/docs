@@ -6,6 +6,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.17 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
+**Release Day: 2019-11-16**
+
 ### Breaking Changes
 
 ### Compatibility
