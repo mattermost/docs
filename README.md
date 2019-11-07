@@ -29,7 +29,7 @@ If this the first time you're contributing, click **Edit the file in your fork o
 
 ### Using Labels
 
-Labels are used to track the lifecycle and status of a pull request. Using the correct labels helps with managing workflows and ensuring that content is edited, merged, released etc at the correct time. Take a look at the [Labels](https://developers.mattermost.com/contribute/getting-started/labels/) page for information about how and when to use which labels.
+Labels are used to track the lifecycle and status of a pull request. Using the correct labels helps with managing workflows and ensuring that content is edited, merged and released at the correct time. Take a look at the [Labels](https://developers.mattermost.com/contribute/getting-started/labels/) page for information about how and when to use which labels.
 
 ### Commenting on Pull Requests
 
