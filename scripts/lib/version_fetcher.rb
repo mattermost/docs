@@ -6,7 +6,7 @@ require 'cgi'
 
 class VersionFetcher
   def initialize(version, repo)
-    @version = Version.new(version)
+    @version = Version.new(version) if version
     @repo = repo
     @api_token = ENV['FETCH_DEV_ARTIFACTS_PAT']
     @api_url = if @repo.start_with?('gitlab/')
