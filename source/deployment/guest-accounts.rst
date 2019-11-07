@@ -100,7 +100,7 @@ System Administrators can also promote a *Guest* to *Member* by updating their r
 Disabling Guest Accounts
 ------------------------
 
-To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access > Enable Guest Access** and select `False`. Current Guest Accounts will remain active until guest users are manually marked `inactive` in **System Console > User Management > Users**. 
+To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access > Enable Guest Access** and select ``False``. Current Guest Accounts will remain active until guest users are manually marked ``inactive`` in **System Console > User Management > Users**. 
 
 You can disable individual guest accounts in **System Console > User Management**, via the **Manage Members** modal, or using the ``/kick`` or ``/remove``commands. 
 
