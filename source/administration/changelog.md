@@ -40,12 +40,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### config.json
 
 #### Changes to Team Edition and Enterprise Edition:
- 
-### API Changes
- 
-### Database Changes
-
-### Websocket Event Changes
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added ``EnableLatex`` to add an option to enable/disable rendering of latex code.
  
 ### Known Issues
  - Negative search filter hypens and occasional random terms are highlighted in search results.
@@ -61,7 +57,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
 
 ### Contributors
-
+ - **XX To be added XX**
+ 
 
 ## Release v5.16 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
