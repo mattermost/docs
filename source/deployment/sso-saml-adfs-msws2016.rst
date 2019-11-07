@@ -54,6 +54,8 @@ However, if you would like to set up encryption for your SAML connection, click 
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_008.png
 
+Add your **SAML 2.0 SSO service URL** from above the same way.
+
 8. In the **Choose Access Control Policy** screen select the access control policy suitable for your environment. This guide assumes the default values **Permit everyone** and an unchecked box are kept.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_009.png
