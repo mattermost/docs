@@ -102,7 +102,7 @@ Disabling Guest Accounts
 
 To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access > Enable Guest Access** and select ``False``. Current Guest Accounts will remain active until guest users are manually marked ``inactive`` in **System Console > User Management > Users**. 
 
-You can disable individual guest accounts in **System Console > User Management**, via the **Manage Members** modal, or using the ``/kick`` or ``/remove``commands. 
+You can disable individual guest accounts in **System Console > User Management**, via the **Manage Members** modal, or using the ``/kick`` or ``/remove`` commands. 
 
 In a future release when a Guest Account is disabled, the guests will be marked as `inactive`, be logged out of Mattermost, and all their sessions will be revoked. 
 
