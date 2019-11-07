@@ -12,6 +12,7 @@ Use the following materials as a template to help you plan and document the impl
    :maxdepth: 2
    :glob:
 
+   /deployment/on-boarding.rst
    /getting-started/implementation_plan.rst
    /getting-started/welcome_email.rst
 
@@ -78,7 +79,6 @@ Learn how to configure settings to meet your unique requirements.
    :glob:
 
 
-   /deployment/on-boarding.rst
    /administration/config-settings.rst
    /administration/config-in-database.rst
    /administration/prev-config-settings.rst
