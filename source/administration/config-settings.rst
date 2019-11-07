@@ -3701,7 +3701,7 @@ Enable Latex
 
 **True**: Enables rendering of latex code.
 
-**False**: Disables rendering of latex code to prevent the app from crashing when sharing code that might outgrow assigned memory.
+**False**: Disables rendering of latex code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, latex code will be highlighted.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``.                                                              |
