@@ -60,7 +60,7 @@ Afterwards open the file ``config.json`` and modify the values ``ConnectionSecur
 
 **Before:**
 
-.. codeblock:: json
+.. codeblock:: none
 
 {
     "ServiceSettings": {
@@ -74,7 +74,7 @@ Afterwards open the file ``config.json`` and modify the values ``ConnectionSecur
 
 **After:**
 
-.. codeblock:: json
+.. codeblock:: none
 
 {
     "ServiceSettings": {
