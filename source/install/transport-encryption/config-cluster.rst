@@ -9,7 +9,7 @@ Ubuntu 18.04, but it can be adapted for any Linux operating system.
 While this document only describes the configuration of a 3 node cluster, it is
 by no means limited to that amount.
 
-**Prerequisites:**
+## Prerequisites
 - SSH port whitelisted between each node of the deployment
 - ufw / iptables is active on each node
 - Access to the root / sudo user of each node for configuration
