@@ -5,7 +5,7 @@ Configuring Proxy to Mattermost Transport Encryption
 Mattermost is able to encrypt the traffic between the proxy and the application
 server using TLS.
 
-**Prerequisites:**
+## Prerequisites
 
 - Mattermost server or cluster operational
 - Authentication credentials for Mattermost user on application server
