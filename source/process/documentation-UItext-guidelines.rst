@@ -92,7 +92,7 @@ An error message is for telling somebody that something went wrong. Errors preve
 - Examples:
 
   - *Messages must have fewer than 120 characters.*
-  - *The enterprise license has expired. [Renew here.](!{link})]*
+  - *A connection to the marketplace server could not be established. Check your settings on the [System Console](<hyperlink>).*
 
 
 Guidelines for UI elements
