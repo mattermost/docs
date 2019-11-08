@@ -24,7 +24,7 @@ General principles for in-product text
 - Use the active voice, except for these cases:
 
    - If you'll end up blaming the user. For example, don't say *You entered an incorrect password*. Instead, say *The password is incorrect*.
-   - If you're describing what just happened. For example, it's okay to say *Your incoming webhook is been set up*.
+   - If you're describing what just happened. For example, it's okay to say *Your incoming webhook is set up*.
    - If the subject (the doer of an action) is the Mattermost application itself. For example, it's okay to say *The image is deleted* instead of *The server deleted the image*.
    
 - Use the past tense to say what's already happened, the present tense to describe a current state or condition, and the future tense to state something that is very definitely going to happen.
@@ -92,7 +92,7 @@ An error message is for telling somebody that something went wrong. Errors preve
 - Examples:
 
   - *Messages must have fewer than 120 characters.*
-  - *The passwords do not match.*
+  - *The enterprise license has expired. [Renew here.](!{link})]*
 
 
 Guidelines for UI elements
