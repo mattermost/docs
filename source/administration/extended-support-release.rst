@@ -7,7 +7,7 @@ During each monthly release, Mattermost backports security fixes to the previous
 
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
-Mattermost provides an ESR when a significant number of new features and improvements have been added to the product, and those new features have had sufficient time to stabilize. A new ESR is released twice a year every January and June release. An ESR is supported for 9 months to provide customers enough time to test and upgrade to the next ESR.
+Mattermost provides an ESR when a significant number of new features and improvements have been added to the product, and those new features have had sufficient time to stabilize. A new ESR is released twice a year every January and July release. An ESR is supported for 9 months to provide customers enough time to test and upgrade to the next ESR.
 
 When an ESR is at the end of its life cycle, there will be announcements ahead of time to provide time for people to test, certify, and deploy a newer ESR version before support ends. There will be a clear upgrade path provided between ESR versions. 
 
@@ -39,7 +39,7 @@ What are the current supported Extended Support Release versions?
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
 | Version     | Type           | Release Date     | End of Support   | Latest Dot Release Download link                                                           | Upgrade Notes                                   |
 +=============+================+==================+==================+============================================================================================+=================================================+
-| 5.24        | Quality        | June 16, 2020    | April 15, 2021   |                                                                                            |                                                 |
+| 5.25        | Quality        | July 16, 2020    | April 15, 2021   |                                                                                            |                                                 |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
 | 5.19        | Quality        | January 16, 2020 | October 15, 2020 |                                                                                            |                                                 |
 +-------------+----------------+------------------+------------------+--------------------------------------------------------------------------------------------+-------------------------------------------------+
