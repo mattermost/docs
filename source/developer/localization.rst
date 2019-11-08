@@ -120,7 +120,7 @@ If you're interested in contributing to the process, please join the `Mattermost
     "Nederlands - Dutch", "TBD (Open Role)", ""
     "Polski - Poland", "`Daniel Burzmiński (hectorskypl) <https://github.com/hectorskypl>`__, `Tomasz Gruca (gruceqq) <https://translate.mattermost.com/user/gruceqq/>`__",
     "Português do Brasil - Portuguese", "`Rodrigo Corsi (rodcorsi) <https://github.com/rodcorsi>`__", "`Carlos Tadeu Panato Junior (cpanato) <https://github.com/cpanato>`_"
-    "Română - Romanian", "`Viorel-Cosmin Miron <https://github.com/uhlhosting>`__", ""
+    "Română - Romanian", "`Viorel-Cosmin Miron (uhlhosting) <https://github.com/uhlhosting>`__", ""
     "Türkçe - Turkish", "`Kaya Zeren <https://twitter.com/kaya_zeren>`__", ""
     "Pусский - Russian", "TBD (Open Role)", ""
     "Yкраїнська - Ukrainian", "`Lena <https://translate.mattermost.com/user/Lena/>`__", ""

@@ -2,7 +2,7 @@
 Custom Emoji
 ------------------
 
-Settings for Custom Emoji are accessible from the **Main Menu** by clicking the three dots at the top of the channels sidebar. Clicking **Custom Emoji** opens a page where you can view existing Custom Emojis and create new ones.
+Settings for Custom Emoji are accessible from the **Main Menu** by clicking the hamburger menu at the top of the channels sidebar. Clicking **Custom Emoji** opens a page where you can view existing Custom Emojis and create new ones.
 
 To create a Custom Emoji:
 

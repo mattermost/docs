@@ -99,7 +99,7 @@ editor, and review the value of ``"DataSource"``. It should be:
 
  ::
 
-     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset-utf8mb4,utf8&readTimeout-30s&writeTimeout-30s"
+     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"
 
 You should also confirm that ``DriverName`` element (found immediately
 above the ``DataSource`` element) is set to ``mysql``.
@@ -180,7 +180,7 @@ file and search for ``DataSource``. Its value should be:
 
  ::
 
-     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset-utf8mb4,utf8&readTimeout-30s&writeTimeout-30s"
+     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"
 
 If you correct an error, restart the Mattermost server by navigating to
 the ``/opt/mattermost/bin`` directory and issuing the command:
@@ -206,7 +206,7 @@ file references the ``mmuser`` password. Open this file and search for
 
  ::
 
-     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset-utf8mb4,utf8&readTimeout-30s&writeTimeout-30s"
+     "mmuser:*mmuser-password*@tcp(*host-name-or-IP*:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"
 
 Check that the password is correct. If you correct an error, restart the
 Mattermost server by navigating to ``/opt/mattermost/bin`` and issuing
