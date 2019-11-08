@@ -247,6 +247,7 @@ NOTE: **Note**: The settings default to including a single pod that is set up to
 | `concurrency`  | Integer |         | The number of tasks to process simultaneously. If not provided, it will be pulled from the chart-wide default. |
 | `name`         | String  |         | Used to name the `Deployment` and `ConfigMap` for this pod. It should be kept short, and should not be duplicated between any two entries. |
 | `queues`       |         |         | [See below](#queues). |
+| `negateQueues` |         |         | [See below](#negateQueues). |
 | `replicas`     | Integer |         | The number of `replicas` to create for this `Deployment`. If not provided, it will be pulled from the chart-wide default. |
 | `timeout`      | Integer |         | The sidekiq shutdown timeout. The number of seconds after sidekiq gets the TERM signal before it forcefully shuts down its processes. If not provided, it will be pulled from the chart-wide default. |
 | `resources`    |         |         | Each pod can present it's own `resources` requirements, which will be added to the `Deployment` created for it, if present. These match the Kubernetes documentation. |
@@ -265,6 +266,16 @@ a queue name (`merge`) or an array of queue names with priorities (`[merge, 5]`)
 Any queue to which jobs are added but are not represented as a part of at least one
 pod item *will not be processed*. See [`config/sidekiq_queues.yml`](https://gitlab.com/gitlab-org/gitlab/blob/master/config/sidekiq_queues.yml)
 in the GitLab source for a complete list of all queues.
+
+### negateQueues
+
+`negateQueues` is a list of queue names (strings) which will be filtered from the
+default list of Sidekiq queues. Unlike [queues](#queues) above which will replace
+the default list, `negateQueues` will consume the defaults, remove those named
+here, and populate the rest for consumption.
+
+NOTE: **Note**: `negateQueues` _should not_ be provided alongside `queues`, as it will have no
+affect.
 
 ### Example `pod` entry
 

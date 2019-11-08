@@ -18,9 +18,17 @@ data:
   sidekiq_queues.yml.erb: |
     {{- if .queues }}
     :queues:
-{{ toYaml .queues | indent 6 }}
+      {{ toYaml .queues | nindent 6 }}
     {{- else }}
-    <%= YAML.load_file('/srv/gitlab/config/sidekiq_queues.yml').to_yaml %>
+    <%=
+       # this works because codebase default content has only `:
+       sq = YAML.load_file('/srv/gitlab/config/sidekiq_queues.yml')
+       {{ if .negateQueues }}
+       negate = {{ .negateQueues | toJson }}
+       sq[:queues] = sq[:queues].select{ |q| ! negate.include? q[0]}
+       {{ end }}
+       sq.to_yaml
+    %>
     {{- end }}
     {{- if .concurrency }}
     :concurrency: {{ .concurrency }}

@@ -26,6 +26,7 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 {{/* add templates here */}}
 {{- $messages := append $messages (include "gitlab.checkConfig.redis.both" .) -}}
 {{- $messages := append $messages (include "gitlab.checkConfig.gitaly.tls" .) -}}
+{{- $messages := append $messages (include "gitlab.checkConfig.sidekiq.queues.mixed" .) -}}
 {{- /* prepare output */}}
 {{- $messages := without $messages "" -}}
 {{- $message := join "\n" $messages -}}
@@ -57,3 +58,19 @@ gitaly: no tls certificate
 {{- end -}}
 {{- end -}}
 {{/* END gitlab.checkConfig.gitaly.tls */}}
+
+
+{{/* Check configuration of Sidekiq - don't supply queues and negateQueues */}}
+{{- define "gitlab.checkConfig.sidekiq.queues.mixed" -}}
+{{- if .Values.gitlab.sidekiq.pods -}}
+{{-   range $pod := .Values.gitlab.sidekiq.pods -}}
+{{-     if and (hasKey $pod "queues") (hasKey $pod "negateQueues") -}}
+sidekiq: mixed queues
+    It appears you've supplied both `queues` and `negateQueues` for the
+    pod definition of `{{ $pod.name }}`. `negateQueues` is not usable if
+    `queues` is provided. Please use only one.
+{{-     end -}}
+{{-   end -}}
+{{- end -}}
+{{- end -}}
+{{/* END gitlab.checkConfig.sidekiq.queues.mixed */}}
