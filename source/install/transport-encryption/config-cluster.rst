@@ -6,7 +6,7 @@ Mattermost is able to encrypt the messages sent within the cluster of a deployme
 using SSH tunneling. The guide walks through the deployment of this solution on
 Ubuntu 18.04, but it can be adapted for any Linux operating system.
 
-While this document only describes the configuration of a 3 node cluster, it is
+While this document only describes the configuration of a three-node cluster, it is
 by no means limited to that amount.
 
 ## Prerequisites
