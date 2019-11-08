@@ -6,7 +6,7 @@ Mattermost is able to encrypt the traffic between the database and the applicati
 using TLS. This guide will walk you through the set up steps for a single, separate MySQL
 server.
 
-**Prerequisites:**
+## Prerequisites
 
 - Mattermost server or cluster operational
 - MySQL server operational
