@@ -51,7 +51,7 @@ Before you perform an upgrade, please ensure you have done a full back up of you
 Why is an Extended Support Release supported for 9 months and not longer?
 -------------------------------------------------------------------------
 We chose 9 months because the overhead for maintaining an ESR is high (and becomes higher the longer the support window is).
-If we increase the support window, it decreases how much we can develop the product. We specifically chose "ESR" instead of "LTS", since it is not intended to be a multi-year longterm support release.
+If we increase the support window, it decreases how much we can develop the product. We specifically chose "ESR" instead of "LTS", since it is not intended to be a multi-year longterm support release. The 9 months support timeframe will not be extended in any case.
 
 Can customers pay for extended support?
 ---------------------------------------
