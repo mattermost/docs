@@ -524,6 +524,7 @@ An example configuration snippet:
 
 ```YAML
 ldap:
+  preventSignin: false
   servers:
     # 'main' is the GitLab 'provider ID' of this LDAP server
     main:
@@ -551,6 +552,14 @@ Example `--set` configuration items, when using the global chart:
 
 NOTE: **Note:** Commas are considered [special characters](https://https://github.com/helm/helm/blob/master/docs/using_helm.md#the-format-and-limitations-of---set)
   within Helm `--set` items. Be sure to escape commas in values such as `bind_dn`: `--set global.appConfig.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'`.
+
+#### Disable LDAP web sign in
+
+It can be be useful to prevent using LDAP credentials through the web UI when an alternative such as SAML is preferred. This allows LDAP to be used for group sync, while also allowing your SAML identity provider to handle additional checks like custom 2FA.
+
+When LDAP web sign in is disabled, users will not see a LDAP tab on the sign in page. This does not disable [using LDAP credentials for Git access.](https://docs.gitlab.com/ee/administration/auth/ldap.html#git-password-authentication)
+
+To disable the use of LDAP for web sign-in, set `global.appConfig.ldap.preventSignin: true`.
 
 #### Using a custom CA or self signed LDAP certificates
 
