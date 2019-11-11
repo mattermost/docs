@@ -17,8 +17,12 @@ Below is an example of the incident response app automatically creating a channe
 .. image:: ../images/incident-response-app-intro-image.png
    :alt: Incident Response App: Intro Image
 
+*Nagios integration to Mattermost posts an alert that localhost is down and triggers a workflow which automatically creates a system incident channel to discuss the issue.*
+
 .. image:: ../images/incident-response-app-intro-image-fullpage.png
    :alt: Incident Response App: Intro Image - Fullpage
+
+*Three members from the incident team are automatically added to the system incident channel, with quick actions to triage the incident. Links to the monitoring dashboard and escalation process are also included in the channel header.*
 
 To shape the direction of the incident response application, `sign up to our Alpha program here <https://docs.google.com/forms/d/e/1FAIpQLSf4Rr1YnofQQnKHJuL0Cgz_DaCUitt_Atik7K9KXsDefCyXlg/viewform>`_!
 
