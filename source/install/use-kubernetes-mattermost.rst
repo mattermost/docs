@@ -11,7 +11,7 @@ your Mattermost deployment with zero downtime. This process
 requires at least two replicas as a rolling upgrade cannot be performed if there is only one pod.
 Replicas are created when a user count is selected and exceeds 100.
 
-New Mattermost releases are announced via our community server, as well as social media.
+New Mattermost releases are announced via our community server, as well as social media and email.
 
 **Performing rolling upgrades**
 
@@ -43,7 +43,7 @@ To view the status of the pods and to confirm their state, use
 
   $ kubectl -n mattermost get pods
 
-The *STATUS* of the pods should be running/ready, with an *AGE* of a few seconds.
+The *STATUS* of the pods should be running/ready, with an *AGE* of 10-15 seconds.
 
 Blue-green Deployments
 ----------------------
@@ -55,7 +55,7 @@ live environment and one as an idle environment.
 An upgrade can be rolled out to the idle environment (“blue”) while the other (“green”) is the production environment.
 Once the upgrade has been successfully rolled out, all traffic can be switched from “green” to “blue”.
 
-**Note:** Blue/green can be run on a permanent basis but utilizes more resources in the Kubernetes cluster than normal deployments.
+**Note:** Blue-green can be run on a permanent basis but utilizes more resources in the Kubernetes cluster than normal deployments.
 
 **Configuring Blue-green Deployments**
 
