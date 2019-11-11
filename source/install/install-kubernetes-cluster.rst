@@ -8,7 +8,7 @@ Prerequisites
 
 If you don’t have a production-ready Kubernetes cluster, version 1.12 or higher, you will need to set one up. If you already have a
 Kubernetes cluster you can skip to Confirm Resource Requirements. Note that the
-Kubernetes-specific CLI, `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__, also needs to be installed and configured.
+Kubernetes-specific CLI tool, `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__, also needs to be installed and configured.
 
 It’s recommended that you have an understanding of basic Kubernetes concepts (such as pods) and
 actions (such as start, stop, redeploy, update). It's also advisable to consult the
