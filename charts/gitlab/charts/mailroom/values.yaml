@@ -35,6 +35,49 @@ global:
       mailbox: inbox
       idleTimeout: 60
 
+# Mailroom does not require inbound connections
+# This service only requires outgoing connections to the
+# IMAP service of choice, the provided or self hosted redis
+# service, and DNS.
+# An optimal configuration may look like the following:
+#
+#networkpolicy:
+#  enabled: true
+#  egress:
+#    enabled: true
+#    # The following rules enable traffic to all external
+#    # endpoints, except the local
+#    # network (except DNS requests)
+#    rules:
+#      - to:
+#        - ipBlock:
+#            cidr: 10.0.0.0/8
+#        ports:
+#        - port: 53
+#          protocol: UDP
+#      - to:
+#        - ipBlock:
+#            cidr: 10.0.0.0/8
+#        ports:
+#        - port: 6379
+#          protocol: TCP
+#      - to:
+#        - ipBlock:
+#            cidr: 10.0.0.0/8
+#        ports:
+#        - port: 993
+#          protocol: TCP
+
+networkpolicy:
+  enabled: false
+  egress:
+    enabled: false
+    rules: []
+  ingress:
+    enabled: false
+    rules: []
+  annotations: {}
+
 redis:
   password: {}
 
