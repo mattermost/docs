@@ -221,6 +221,8 @@ global:
 
     ## doc/charts/globals.md#ldap
     ldap:
+      # prevent the use of LDAP for sign-in via web.
+      preventSignin: false
       servers: {}
       ## 'main' is the GitLab 'provider ID' of this LDAP server
       # main:
