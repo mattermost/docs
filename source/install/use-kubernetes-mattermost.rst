@@ -11,7 +11,7 @@ your Mattermost deployment with zero downtime. This process
 requires at least two replicas as a rolling upgrade cannot be performed if there is only one pod.
 Replicas are created when a user count is selected and exceeds 100.
 
-New Mattermost releases are announced via our community server, as well as social media.
+New Mattermost releases are announced via our community server, as well as social media and email.
 
 **To perform a rolling upgrade:**
 
