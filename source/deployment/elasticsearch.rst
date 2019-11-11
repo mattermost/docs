@@ -109,8 +109,7 @@ What form of data is sent to Elasticsearch?
 Mattermost communicates with Elasticsearch through its REST API using JSON messages for indexing and querying entities.
 
 How much data is sent to Elasticsearch and when?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Every time a message is published, a channel is created, or a user changes, (either because their properties change e.g.: change of the first name or because they join/leave a channel), the data associated with that event is sent to Elasticsearch.
 
 If search via Elasticsearch is enabled, every search will generate a query. If autocompletion is enabled, every user or channel autocompletion associated with writing a message or user search will generate a query.
