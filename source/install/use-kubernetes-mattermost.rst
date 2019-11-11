@@ -27,7 +27,7 @@ Apply the changes with kubectl using
   $ kubectl apply -n mattermost -f /path/to/cluster-installation.yaml
 
 The operator initiates a job to perform the database migration (if applicable).
-The job is created in the Kubernetes cluster and once migration is complete the pods are restarted.
+The job is created in the Kubernetes cluster and once migration is complete the pods are rolling restarted with the new version.
 To view information about the running job, use
 
 .. code-block:: sh
