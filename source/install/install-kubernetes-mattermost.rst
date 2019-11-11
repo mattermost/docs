@@ -1,14 +1,14 @@
 .. _install-kubernetes-mattermost:
 
 Deploying a Mattermost Installation
-============================
+===================================
 
-Deploying a Mattermost installation requires creating and applying a single manifest.
+This guide describes deploying a complete Mattermost installation in Kubernetes including a database. In most
+cases you'll create and apply a single manifest. In the case of an Enterprise installation, two manifests will be applied.
 
 Manifest files contain the configurations needed for the
 operator to perform the tasks and communicate with Kubernetes. Create the manifest file locally,
 copy and paste the contents, and save the file with the relevant name.
-
 
 **1. (Enterprise only) Create a Mattermost License Secret**
 

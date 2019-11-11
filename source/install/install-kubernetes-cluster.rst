@@ -24,6 +24,8 @@ Confirm Resource Requirements
 Running Mattermost in Kubernetes requires different resources based on your total number of users.
 The table below details the minimum Kubernetes cluster resources that Mattermost requires at different scales.
 
+**Note:** These are minimum requirements and yours may differ significantly.  
+
 .. csv-table::
     :header: "User Count", "Node Count", "Memory per Node", "vCPU per Node"
 
