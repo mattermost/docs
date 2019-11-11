@@ -42,7 +42,7 @@ To view the status of the pods and to confirm their state, use
 
   $ kubectl -n mattermost get pods
 
-The *STATUS* of the pods should be running/ready, with an *AGE* of a few seconds.
+The *STATUS* of the pods should be running/ready, with an *AGE* of 10-15 seconds.
 
 Blue-green Deployments
 ----------------------
