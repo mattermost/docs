@@ -54,7 +54,7 @@ live environment and one as an idle environment.
 An upgrade can be rolled out to the idle environment (“blue”) while the other (“green”) is the production environment.
 Once the upgrade has been successfully rolled out, all traffic can be switched from “green” to “blue”.
 
-**Note:** Blue/green can be run on a permanent basis but utilizes more resources in the Kubernetes cluster than normal deployments.
+**Note:** Blue-green can be run on a permanent basis but utilizes more resources in the Kubernetes cluster than normal deployments.
 
 **Configuring Blue-green Deployments**
 
