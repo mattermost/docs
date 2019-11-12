@@ -196,8 +196,8 @@ helm upgrade --install gitlab gitlab/gitlab \
 If the output of `minikube ip` was not `192.168.99.100`, add these arguments to override the IP endpoints in the example configuration files:
 
 ```sh
-  --set global.hosts.domain=$(minikube ip) \
-  --set global.hosts.externalIP=$(minikube ip).nip.io
+  --set global.hosts.domain=$(minikube ip).nip.io \
+  --set global.hosts.externalIP=$(minikube ip)
 ```
 
 ### Handling DNS
