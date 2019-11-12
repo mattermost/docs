@@ -91,3 +91,27 @@ The schema is backwards and forwards compatible across minor versions and will n
 
 Canary Builds
 -------------
+
+A canary build is used to test an experimental or untested build. It's similar to a blue-green deployment in that multiple environments
+are run simultaneously. However, where blue-green deployments have different URLs, canary builds are segmented randomly and users
+are not explicitly aware that they're on the canary build environment.
+
+The Mattermost Operator currently allows segmenting by percentage (i.e., splitting the user pool between production and the canary build). In
+future releases segmentation options will include teams and individual users.
+
+Configuring canary builds requires an update to the ``clusterinstallation.manifest.yaml`` file and the addition of a plugin via System Console. Before
+proceeding, first download the plugin from `Mattermost Canary Plugin <https://github.com/mattermost/mattermost-plugin-canary>`__.
+
+**Configuring canary builds**
+
+Open the ``clusterinstallation manifest.yaml`` file and add ``canary`` under ``spec``.
+
+.. code-block:: yaml
+
+    canary:
+    enable: true
+    Deployment:
+      version: 5.15.0
+      image: mattermost/mattermost-enterprise-edition
+
+Next, navigate to **System Console > Plugin Management**, enable plugins, and upload the Mattermost Canary Plugin. 
