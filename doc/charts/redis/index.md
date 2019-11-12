@@ -1,14 +1,14 @@
 # Using the Redis chart
 
 The `redis` sub-chart provides the Redis key-value store component to a complete cloud-native
-GitLab deployment on Kubernetes. This sub-chart makes use of the upstream [redis](https://hub.docker.com/_/redis/)
+GitLab deployment on Kubernetes. This sub-chart makes use of the upstream [Redis](https://hub.docker.com/_/redis/)
 container, and is composed of 3 primary parts: [Service](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/redis/templates/service.yaml),
 [Deployment](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/redis/templates/deployment.yaml),
 and [ConfigMap](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/charts/redis/templates/configmap.yaml).
 
 All configuration is handled according to the official [Redis configuration documentation](https://redis.io/topics/config),
 using `/etc/redis/redis.conf` provided to the Deployment, populated from the ConfigMap.
-The `ConfigMap` templates [redis.conf](http://download.redis.io/redis-stable/redis.conf)
+The `ConfigMap` templates [`redis.conf`](http://download.redis.io/redis-stable/redis.conf)
 and [Secrets](../../installation/secrets.md#redis-password)
 are integrated using an `initContainer` that executes the `configure` script contained
 within the `ConfigMap`.
@@ -81,7 +81,7 @@ to the `helm install` command using the `--set` flags:
 | `persistence.enabled`          | `true`          | Enable persistence flag                     |
 | `persistence.matchExpressions` |                 | Label-expression matches to bind            |
 | `persistence.matchLabels`      |                 | Label-value matches to bind                 |
-| `persistence.size`             | `5Gi`           | Size of volume needed for redis persistence |
+| `persistence.size`             | `5Gi`           | Size of volume needed for Redis persistence |
 | `persistence.storageClass`     |                 | storageClassName for provisioning           |
 | `persistence.subPath`          |                 | Subpath to mount persistence volume at      |
 | `persistence.volumeName`       |                 | Existing persistent volume name             |
@@ -153,18 +153,18 @@ a Prometheus server to discover and scrape the exposed metrics.
 
 ## Configuring Redis
 
-More details about certain redis configuration options are explained below:
+More details about certain Redis configuration options are explained below:
 
 | Name           | Type    | Default  | Description |
 | :------------- | :-----: | :------- | :---------- |
 | `loglevel`     | String  | `notice` | [See below](#loglevel). |
-| `password`     |         |          | The redis chart sources credentials from the `global.redis.password` global value. |
-| `tcpKeepalive` | Integer | `300`    | Provides the number of seconds to wait for a client connection to be detected as 'dead' by the underlying TCP socket (`SO_KEEPALIVE`). See [redis tcpkeepalive documentation](https://redis.io/topics/clients#tcp-keepalive). |
-| `timeout`      | Integer | `60`     | Provides the number of seconds before an idle client connection will be terminated by the Redis service. See [redis timeouts documentation](https://redis.io/topics/clients#client-timeouts). |
+| `password`     |         |          | The Redis chart sources credentials from the `global.redis.password` global value. |
+| `tcpKeepalive` | Integer | `300`    | Provides the number of seconds to wait for a client connection to be detected as 'dead' by the underlying TCP socket (`SO_KEEPALIVE`). See [Redis tcpkeepalive documentation](https://redis.io/topics/clients#tcp-keepalive). |
+| `timeout`      | Integer | `60`     | Provides the number of seconds before an idle client connection will be terminated by the Redis service. See [Redis timeouts documentation](https://redis.io/topics/clients#client-timeouts). |
 
 ### loglevel
 
-The `loglevel` value provides the matching configuration item from [redis.conf](http://download.redis.io/redis-stable/redis.conf),
+The `loglevel` value provides the matching configuration item from [`redis.conf`](http://download.redis.io/redis-stable/redis.conf),
 allowing the Redis service to specify the verbosity level of logging. This defaults
 to `notice`. Valid values are:
 
@@ -175,7 +175,7 @@ to `notice`. Valid values are:
 
 ## persistence
 
-The redis chart provisions a PersistentVolumeClaim and mounts corresponding persistent
+The Redis chart provisions a PersistentVolumeClaim and mounts corresponding persistent
 volume for the Redis data. You'll need physical storage available in the Kubernetes
 cluster for this to work. If you'd rather use emptyDir, disable PersistentVolumeClaim
 with `persistence.enabled: false`.
@@ -197,11 +197,11 @@ with `persistence.enabled: false`.
 The `save` array provides for configuration of Redis data snapshotting, as described
 in the Redis [persistence](https://redis.io/topics/persistence) documentation. The
 items are formatted in a manner to ensure clarity, with the default values taken directly
-from the stable [redis.conf](http://download.redis.io/redis-stable/redis.conf).
+from the stable [`redis.conf`](http://download.redis.io/redis-stable/redis.conf).
 
 Each item consists of two parts: `time` and `writes`. Each line denotes a point at
 which Redis will save the DB if both the given number of seconds and the given number
 of write operations against the DB occurred.
 
 It is also possible to entirely disable snapshotting by providing an empty array,
-resulting in the value of `save ""` being populated into the [redis.conf](http://download.redis.io/redis-stable/redis.conf).
+resulting in the value of `save ""` being populated into the [`redis.conf`](http://download.redis.io/redis-stable/redis.conf).

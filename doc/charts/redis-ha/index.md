@@ -5,8 +5,8 @@ to as a data structure server since keys can contain strings, hashes, lists, set
 sorted sets, bitmaps and hyperloglogs.
 
 The chart deploys Redis on the Kubernetes cluster in the default configuration. By
-default this chart installs one master pod containing a redis master container, a
-sentinel container, 3 sentinels and 2 redis slaves. The [configuration](#configuration)
+default this chart installs one master pod containing a Redis master container, a
+sentinel container, 3 sentinels and 2 Redis slaves. The [configuration](#configuration)
 section lists the parameters that can be configured during installation.
 
 ## Prerequisites
@@ -31,7 +31,7 @@ default values.
 | `nodeSelector`          | `{}`                         | Node labels for pod assignment.                        |
 | `rbac.create`           | `true`                       | Whether RBAC resources should be created.              |
 | `replicas.sentinels`    | `3`                          | Number of sentinel pods.                               |
-| `replicas.servers`      | `3`                          | Number of redis master/slave pods.                     |
+| `replicas.servers`      | `3`                          | Number of Redis master/slave pods.                     |
 | `resources.master`      | Memory: `200Mi`, CPU: `100m` | CPU/Memory for master nodes resource requests/limits.  |
 | `resources.sentinel`    | Memory: `200Mi`, CPU: `100m` | CPU/Memory for sentinel node resource requests/limits. |
 | `resources.slave`       | Memory: `200Mi`, CPU: `100m` | CPU/Memory for slave nodes  resource requests/limits.  |
@@ -86,7 +86,7 @@ the Sentinels to ID the master. Running Pods also set the labels `podIP` and `ru
 Redis sever.
 
 During normal operation, there should be only one `redis-role=master` pod. If it fails,
-the Sentinels will nominate a new master and change all the redis-role values appropriately.
+the Sentinels will nominate a new master and change all the `redis-role` values appropriately.
 
 To see the pod roles, run the following:
 

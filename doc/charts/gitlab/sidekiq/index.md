@@ -40,7 +40,7 @@ to the `helm install` command using the `--set` flags:
 | `extraInitContainers`       |                   | List of extra init containers to include |
 | `extraVolumeMounts`         |                   | List of extra volumes mountes to do      |
 | `extraVolumes`              |                   | List of extra volumes to create          |
-| `gitaly.serviceName`        | `gitaly`          | gitaly service name                      |
+| `gitaly.serviceName`        | `gitaly`          | Gitaly service name                      |
 | `hpa.targetAverageValue`    | `400m`            | Set the autoscaling target value         |
 | `image.pullPolicy`          | `Always`          | Sidekiq image pull policy                |
 | `image.pullSecrets`         |                   | Secrets for the image repository         |
@@ -101,7 +101,7 @@ tolerations:
 
 ### annotations
 
-`annotations` allows you to add annotations to the sidekiq pods.
+`annotations` allows you to add annotations to the Sidekiq pods.
 
 Below is an example use of `annotations`:
 
@@ -221,14 +221,14 @@ on a per-pod basis.
 
 | Name          | Type    | Default | Description |
 |:------------- |:-------:|:------- |:----------- |
-| `concurrency` | Integer | `25`    | The number of tasks to process simultaneously. |
-| `replicas`    | Integer | `1`     | The number of `replicas` to use by default per pod definition. |
-| `timeout`     | Integer | `4`     | The sidekiq shutdown timeout. The number of seconds after sidekiq gets the TERM signal before it forcefully shuts down its processes. |
-| `memoryKiller.maxRss`       | Integer | `2000000`         | Maximum RSS before delayed shutdown triggered expressed in kilobytes |
-| `memoryKiller.graceTime`    | Integer | `900`             | Time to wait before a triggered shutdown expressed in seconds|
-| `memoryKiller.shutdownWait` | Integer | `30`              | Amount of time after triggered shutdown for existing jobs to finish expressed in seconds |
+| `concurrency`               | Integer | `25`      | The number of tasks to process simultaneously. |
+| `replicas`                  | Integer | `1`       | The number of `replicas` to use by default per pod definition. |
+| `timeout`                   | Integer | `4`       | The Sidekiq shutdown timeout. The number of seconds after Sidekiq gets the TERM signal before it forcefully shuts down its processes. |
+| `memoryKiller.maxRss`       | Integer | `2000000` | Maximum RSS before delayed shutdown triggered expressed in kilobytes |
+| `memoryKiller.graceTime`    | Integer | `900`     | Time to wait before a triggered shutdown expressed in seconds|
+| `memoryKiller.shutdownWait` | Integer | `30`      | Amount of time after triggered shutdown for existing jobs to finish expressed in seconds |
 
-NOTE: **Note**: [Detailed documentation of the sidekiq memory killer is
+NOTE: **Note**: [Detailed documentation of the Sidekiq memory killer is
   available](https://docs.gitlab.com/ee/administration/operations/sidekiq_memory_killer.html#sidekiq-memorykiller)
   in the Omnibus documentation.
 
@@ -249,7 +249,7 @@ NOTE: **Note**: The settings default to including a single pod that is set up to
 | `queues`       |         |         | [See below](#queues). |
 | `negateQueues` |         |         | [See below](#negateQueues). |
 | `replicas`     | Integer |         | The number of `replicas` to create for this `Deployment`. If not provided, it will be pulled from the chart-wide default. |
-| `timeout`      | Integer |         | The sidekiq shutdown timeout. The number of seconds after sidekiq gets the TERM signal before it forcefully shuts down its processes. If not provided, it will be pulled from the chart-wide default. |
+| `timeout`      | Integer |         | The Sidekiq shutdown timeout. The number of seconds after Sidekiq gets the TERM signal before it forcefully shuts down its processes. If not provided, it will be pulled from the chart-wide default. |
 | `resources`    |         |         | Each pod can present it's own `resources` requirements, which will be added to the `Deployment` created for it, if present. These match the Kubernetes documentation. |
 | `nodeSelector` |         |         | Each pod can be configured with a `nodeSelector` attribute, which will be added to the `Deployment` created for it, if present. These definitions match the Kubernetes documentation.|
 
@@ -298,6 +298,6 @@ pods:
 
 ## Production usage
 
-By default, all of sidekiq queues run in an all-in-one container which is not suitable
-for production use cases. Check the [example config](./example-queues.yaml) for a more production ready sidekiq
+By default, all of Sidekiq queues run in an all-in-one container which is not suitable
+for production use cases. Check the [example config](./example-queues.yaml) for a more production ready Sidekiq
 deployment. You can move queues around pods as part of your tuning.

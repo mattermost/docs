@@ -106,7 +106,7 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 | `authEndpoint`                             | `global.hosts.gitlab.name`                   | Auth endpoint (only host and port)                                                                   |
 | `certificate.secret`                       | `gitlab-registry`                            | JWT certificate                                                                                      |
 | `compatiblity`                             |                                              | Configuration of compatibility settings                                                              |
-| `debug`                                    |                                              | Debug port and prometheus metrics                                                                    |
+| `debug`                                    |                                              | Debug port and Prometheus metrics                                                                    |
 | `deployment.terminationGracePeriodSeconds` | `30`                                         | Optional duration in seconds the pod needs to terminate gracefully.                                  |
 | `draintimeout`                             | `'0'`                                        | Amount of time to wait for HTTP connections to drain after receiving a SIGTERM signal (e.g. `'10s'`) |
 | `relativeurls`                             | `false`                                      | Enable the registry to return relative URLs in Location headers. |
@@ -216,34 +216,34 @@ By default, the Service is configured as:
 
 ## Configuring the `ingress`
 
-This section controls the registry ingress.
+This section controls the registry Ingress.
 
 | Name              | Type    | Default | Description |
 |:----------------- |:-------:|:------- |:----------- |
 | `annotations`     | String  |         | This field is an exact match to the standard `annotations` for [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/). |
-| `enabled`         | Boolean | `false` | Setting that controls whether to create ingress objects for services that support them. When `false` the `global.ingress.enabled` setting is used. |
-| `tls.enabled`     | Boolean | `true`  | When set to `false`, you disable TLS for the Registry subchart. This is mainly useful for cases in which you cannot use TLS termination at ingress-level, like when you have a TLS-terminating proxy before the ingress controller. |
+| `enabled`         | Boolean | `false` | Setting that controls whether to create Ingress objects for services that support them. When `false` the `global.ingress.enabled` setting is used. |
+| `tls.enabled`     | Boolean | `true`  | When set to `false`, you disable TLS for the Registry subchart. This is mainly useful for cases in which you cannot use TLS termination at `ingress-level`, like when you have a TLS-terminating proxy before the Ingress Controller. |
 | `tls.serviceName` | String  | `redis` | The name of the Kubernetes TLS Secret that contains a valid certificate and key for the registry url. When not set, the `global.ingress.tls.secretName` is used instead. Defaults to not being set. |
 
 ## Configuring the `networkpolicy`
 
 This section controls the registry
 [NetworkPolicy](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
-This configuration is optional and is used to limit egress and ingress of the registry to specific endpoints.
-and ingress to specific endpoints.
+This configuration is optional and is used to limit egress and Ingress of the registry to specific endpoints.
+and Ingress to specific endpoints.
 
 | Name              | Type    | Default | Description |
 |:----------------- |:-------:|:------- |:----------- |
 | `enabled`         | Boolean | `false` | This setting enables the networkpolicy for registry |
-| `ingress.enabled` | Boolean | `false` | When set to `true`, the `Ingress` network policy will be activated. This will block all ingress connections unless rules are specified. |
-| `ingress.rules`   | Array   | `[]`    | Rules for the ingress policy, for details see <https://kubernetes.io/docs/concepts/services-networking/network-policies/#the-networkpolicy-resource> and the example below |
+| `ingress.enabled` | Boolean | `false` | When set to `true`, the `Ingress` network policy will be activated. This will block all Ingress connections unless rules are specified. |
+| `ingress.rules`   | Array   | `[]`    | Rules for the Ingress policy, for details see <https://kubernetes.io/docs/concepts/services-networking/network-policies/#the-networkpolicy-resource> and the example below |
 | `egress.enabled`  | Boolean | `false` | When set to `true`, the `Egress` network policy will be activated. This will block all egress connections unless rules are specified. |
 | `egress.rules`    | Array   | `[]`    | Rules for the egress policy, these for details see <https://kubernetes.io/docs/concepts/services-networking/network-policies/#the-networkpolicy-resource> and the example below |
 
 ### Example policy for preventing connections to all internal endpoints
 
 The Registry service normally requires egress connections to object storage,
-ingress connections from docker clients, and kube-dns for DNS lookups. This
+Ingress connections from docker clients, and kube-dns for DNS lookups. This
 adds the following network restrictions to the Registry service:
 
 - All egress requests to the local network on `10.0.0.0/8` port 53 are allowed (for kubeDNS)
@@ -428,13 +428,13 @@ external service, such as `s3`, `gcs`, `azure` or other compatible Object Storag
 
 NOTE: **Note:** The chart will populate `delete.enabled: true` into this configuration
   by default if not specified by the user. This keeps expected behavior in line with
-  the default use of Minio, as well as the Omnibus GitLab. Any user provided value
+  the default use of MinIO, as well as the Omnibus GitLab. Any user provided value
   will supersede this default.
 
 ### debug
 
 The debug port is enabled by default and is used for the liveness/readiness
-probe. Additionally, prometheus metrics can be enabled.
+probe. Additionally, Prometheus metrics can be enabled.
 
 ```yaml
 debug:

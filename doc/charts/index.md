@@ -14,14 +14,14 @@ There are some common global settings that apply to multiple charts. See the
 
 ## Charts
 
-- [Minio](minio/index.md)
+- [MinIO](minio/index.md)
 - [NGINX](nginx/index.md)
 - [Redis](redis/index.md)
 - [Redis-ha](redis-ha/index.md)
 - [Registry](registry/index.md)
-- GitLab/[gitaly](gitlab/gitaly/index.md)
-- GitLab/[gitlab-runner](gitlab/gitlab-runner/index.md)
-- GitLab/[gitlab-shell](gitlab/gitlab-shell/index.md)
+- GitLab/[Gitaly](gitlab/gitaly/index.md)
+- GitLab/[GitLab Runner](gitlab/gitlab-runner/index.md)
+- GitLab/[GitLab Shell](gitlab/gitlab-shell/index.md)
 - GitLab/[migrations](gitlab/migrations/index.md)
-- GitLab/[sidekiq](gitlab/sidekiq/index.md)
-- GitLab/[unicorn](gitlab/unicorn/index.md)
+- GitLab/[Sidekiq](gitlab/sidekiq/index.md)
+- GitLab/[Unicorn](gitlab/unicorn/index.md)

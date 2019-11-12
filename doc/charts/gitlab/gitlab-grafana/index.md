@@ -1,17 +1,15 @@
-# Using the gitlab-grafana chart
+# Using the GitLab-Grafana chart
 
-The `gitlab-grafana` subchart adapts the [stable/grafana][] chart to operate
-correctly with the same level of configuration as the Omnibus
+The `gitlab-grafana` subchart adapts the [`stable/grafana`](https://github.com/helm/charts/tree/master/stable/grafana)
+chart to operate correctly with the same level of configuration as the Omnibus
 GitLab install. In addition, the installation of Grafana allows additional
 dashboards to be installed by the end user and be incorporated with the
 GitLab supplied dashboards.
 
-[stable/grafana]: https://github.com/helm/charts/tree/master/stable/grafana
-
 ## Requirements
 
 This chart depends on the `stable/grafana` chart which is usually installed
-by the `GitLab` meta chart. In addition, Kubernetes ingress support is
+by the `GitLab` meta chart. In addition, Kubernetes Ingress support is
 needed to properly route the Grafana requests using the `/-/grafana` path.
 
 ## Design Choices
@@ -41,10 +39,10 @@ the `shared-secrets` chart and the administrator username is set to `root`.
 
 ## Installation command line options
 
-| Parameter           | Default | Description                                                          |
-|---------------------|---------|----------------------------------------------------------------------|
-| ingress.tls         |  `{}`   | Hash of Ingress TLS settings if GitLab cert manager is not installed |
-| ingress.annotations |  `{}`   | Additional annotations to add to Grafana Ingress resource            |
+| Parameter             | Default | Description                                                          |
+|-----------------------|---------|----------------------------------------------------------------------|
+| `ingress.tls`         | `{}`    | Hash of Ingress TLS settings if GitLab cert manager is not installed |
+| `ingress.annotations` | `{}`    | Additional annotations to add to Grafana Ingress resource            |
 
 ## Dashboard Support
 

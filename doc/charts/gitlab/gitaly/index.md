@@ -59,14 +59,14 @@ the `helm install` command using the `--set` flags.
 | `logging.level`                 |                                            | Log level                                                                                                                                                            |
 | `logging.format`                | `json`                                     | Log format                                                                                                                                                           |
 | `logging.sentryDsn`             |                                            | Sentry DSN URL - Exceptions from Go server                                                                                                                           |
-| `logging.rubySentryDsn`         |                                            | Sentry DSN URL - Exceptions from gitaly-ruby                                                                                                                         |
+| `logging.rubySentryDsn`         |                                            | Sentry DSN URL - Exceptions from `gitaly-ruby`                                                                                                                       |
 | `logging.sentryEnvironment`     |                                            | Sentry environment to be used for logging                                                                                                                            |
 | `ruby.maxRss`                   |                                            | Gitaly-Ruby resident set size (RSS) that triggers a memory restart (bytes)                                                                                           |
 | `ruby.gracefulRestartTimeout`   |                                            | Graceful period before a force restart after exceeding Max RSS                                                                                                       |
 | `ruby.restartDelay`             |                                            | Time that Gitaly-Ruby memory must remain high before a restart (seconds)                                                                                             |
 | `ruby.numWorkers`               |                                            | Number of Gitaly-Ruby worker processes                                                                                                                               |
 | `shell.concurrency[]`           |                                            | Concurrency of each RPC endpoint Specified using keys `rpc` and `maxPerRepo`                                                                                         |
-| `git.catFileCacheSize`          |                                            | Cache size used by git cat-file process                                                                                                                              |
+| `git.catFileCacheSize`          |                                            | Cache size used by Git cat-file process                                                                                                                              |
 | `prometheus.grpcLatencyBuckets` |                                            | Buckets corresponding to histogram latencies on GRPC method calls to be recorded by Gitaly. A string form of the array, like "[1.0, 1.5, 2.0]", is required as input |
 
 ## Chart configuration examples
@@ -110,7 +110,7 @@ tolerations:
 
 ### annotations
 
-`annotations` allows you to add annotations to the gitaly pods.
+`annotations` allows you to add annotations to the Gitaly pods.
 
 Below is an example use of `annotations`:
 
@@ -173,8 +173,8 @@ volume for the Git repository data. You'll need physical storage available in th
 Kubernetes cluster for this to work. If you'd rather use emptyDir, disable PersistentVolumeClaim
 with: `persistence.enabled: false`.
 
-NOTE: **Note:** The persistence settings for gitaly are used in a volumeClaimTemplate
-  that should be valid for all your gitaly pods. You should *not* include settings
+NOTE: **Note:** The persistence settings for Gitaly are used in a volumeClaimTemplate
+  that should be valid for all your Gitaly pods. You should *not* include settings
   that are meant to reference a single specific volume (ie volumeName). If you want
   to reference a specific volume, you need to manually create the PersistentVolumeClaim.
 
@@ -202,14 +202,14 @@ persistence:
 ### Running Gitaly over TLS
 
 NOTE: **Note:** This section refers to Gitaly being run inside the cluster using
-the helm charts.  If you are using an external Gitaly instance and want to use
+the Helm charts.  If you are using an external Gitaly instance and want to use
 TLS for communicating with it, refer [the external Gitaly documentation](https://docs.gitlab.com/charts/advanced/external-gitaly#connecting-to-external-gitaly-over-tls)
 
 Gitaly supports communicating with other components over TLS. This is controlled
 by the settings `global.gitaly.tls.enabled` and `global.gitaly.tls.secretName`.
 Follow the steps to run Gitaly over TLS:
 
-1. The helm chart expects a certificate to be provided for communicating over
+1. The Helm chart expects a certificate to be provided for communicating over
    TLS with Gitaly. This certificate should apply to all the Gitaly nodes that
    are present. Hence all hostnames of each of these Gitaly nodes should be
    added as a Subject Alternate Name (SAN) to the certificate.
@@ -233,4 +233,4 @@ SAN attributes.
     kubectl create secret tls gitaly-server-tls --cert=gitaly.crt --key=gitaly.key
     ```
 
-1. Redeploy the helm chart by passing the arguments `--set global.gitaly.tls.enabled=true --set global.gitaly.tls.secretName=<secret name>`
+1. Redeploy the Helm chart by passing the arguments `--set global.gitaly.tls.enabled=true --set global.gitaly.tls.secretName=<secret name>`

@@ -1,4 +1,4 @@
-# Using Minio for Object storage
+# Using MinIO for Object storage
 
 This chart is based on [`stable/minio`](https://github.com/helm/charts/tree/master/stable/minio)
 version [`0.4.3`](https://github.com/helm/charts/tree/aaaf98b5d25c26cc2d483925f7256f2ce06be080/stable/minio),
@@ -53,32 +53,32 @@ to the `helm install` command using the `--set` flags:
 
 | Parameter                      | Default                       | Description                             |
 | ------------------------------ | ----------------------------- | --------------------------------------- |
-| `defaultBuckets`               | `[{"name": "registry"}]`      | Minio default buckets                   |
-| `image`                        | `minio/minio`                 | Minio image                             |
-| `imagePullPolicy`              | `Always`                      | Minio image pull policy                 |
-| `imageTag`                     | `RELEASE.2017-12-28T01-2100Z` | Minio image tag                         |
-| `minioConfig.browser`          | `on`                          | Minio browser flag                      |
-| `minioConfig.domain`           |                               | Minio domain                            |
-| `minioConfig.region`           | `us-east-1`                   | Minio region                            |
-| `minioMc.image`                | `minio/mc`                    | Minio mc image                          |
-| `minioMc.tag`                  | `latest`                      | Minio mc image tag                      |
-| `mountPath`                    | `/export`                     | Minio config file mount path            |
-| `persistence.accessMode`       | `ReadWriteOnce`               | Minio persistence access mode           |
-| `persistence.enabled`          | `true`                        | Minio enable persistence flag           |
-| `persistence.matchExpressions` |                               | Minio label-expression matches to bind  |
-| `persistence.matchLabels`      |                               | Minio label-value matches to bind       |
-| `persistence.size`             | `10Gi`                        | Minio persistence volume size           |
-| `persistence.storageClass`     |                               | Minio storageClassName for provisioning |
-| `persistence.subPath`          |                               | Minio persistence volume mount path     |
-| `persistence.volumeName`       |                               | Minio existing persistent volume name   |
+| `defaultBuckets`               | `[{"name": "registry"}]`      | MinIO default buckets                   |
+| `image`                        | `minio/minio`                 | MinIO image                             |
+| `imagePullPolicy`              | `Always`                      | MinIO image pull policy                 |
+| `imageTag`                     | `RELEASE.2017-12-28T01-2100Z` | MinIO image tag                         |
+| `minioConfig.browser`          | `on`                          | MinIO browser flag                      |
+| `minioConfig.domain`           |                               | MinIO domain                            |
+| `minioConfig.region`           | `us-east-1`                   | MinIO region                            |
+| `minioMc.image`                | `minio/mc`                    | MinIO mc image                          |
+| `minioMc.tag`                  | `latest`                      | MinIO mc image tag                      |
+| `mountPath`                    | `/export`                     | MinIO config file mount path            |
+| `persistence.accessMode`       | `ReadWriteOnce`               | MinIO persistence access mode           |
+| `persistence.enabled`          | `true`                        | MinIO enable persistence flag           |
+| `persistence.matchExpressions` |                               | MinIO label-expression matches to bind  |
+| `persistence.matchLabels`      |                               | MinIO label-value matches to bind       |
+| `persistence.size`             | `10Gi`                        | MinIO persistence volume size           |
+| `persistence.storageClass`     |                               | MinIO storageClassName for provisioning |
+| `persistence.subPath`          |                               | MinIO persistence volume mount path     |
+| `persistence.volumeName`       |                               | MinIO existing persistent volume name   |
 | `pullSecrets`                  |                               | Secrets for the image repository        |
-| `replicas`                     | `4`                           | Minio number of replicas                |
-| `resources.requests.cpu`       | `250m`                        | Minio minimum cpu requested             |
-| `resources.requests.memory`    | `256Mi`                       | Minio minimum memory requested          |
+| `replicas`                     | `4`                           | MinIO number of replicas                |
+| `resources.requests.cpu`       | `250m`                        | MinIO minimum cpu requested             |
+| `resources.requests.memory`    | `256Mi`                       | MinIO minimum memory requested          |
 | `securityContext.fsGroup`      | `1000`                        | Group ID to start the pod with          |
 | `securityContext.runAsUser`    | `1000`                        | User ID to start the pod with           |
-| `servicePort`                  | `9000`                        | Minio service port                      |
-| `serviceType`                  | `ClusterIP`                   | Minio service type                      |
+| `servicePort`                  | `9000`                        | MinIO service port                      |
+| `serviceType`                  | `ClusterIP`                   | MinIO service type                      |
 | `tolerations`                  | `[]`                          | Toleration labels for pod assignment    |
 
 ## Chart configuration examples
@@ -125,7 +125,7 @@ They way we've chosen to implement compartmentalized sub-charts includes the abi
 to disable the components that you may not want in a given deployment. For this reason,
 the first setting you should decide on is `enabled:`.
 
-By default, Minio is enabled out of the box, but is not recommended for production use.
+By default, MinIO is enabled out of the box, but is not recommended for production use.
 When you are ready to disable it, run `--set global.minio.enabled: false`.
 
 ## Configure the initContainer
@@ -158,18 +158,18 @@ The initContainer is passed the following items:
 The initContainer is expected to populate `/minio/config.json` with a completed configuration,
 using `/config/configure` script. When the `minio-config` container has completed
 that task, the `/minio` directory will be passed to the `minio` container, and used
-to provide the `config.json` to the [minio](https://min.io) server.
+to provide the `config.json` to the [MinIO](https://min.io) server.
 
 ## Configuring the Ingress
 
-These settings control the minio ingress.
+These settings control the MinIO Ingress.
 
 | Name             | Type    | Default | Description |
 |:---------------- |:-------:|:------- |:----------- |
 | `annotations`    | String  |         | This field is an exact match to the standard `annotations` for [Kubernetes Ingress](https://kubernetes.io/docs/concepts/services-networking/ingress/). |
-| `enabled`        | Boolean | `false` | Setting that controls whether to create ingress objects for services that support them. When `false` the `global.ingress.enabled` setting is used. |
-| `tls.enabled`    | Boolean | `true`  | When set to `false`, you disable TLS for Minio. This is mainly useful when you cannot use TLS termination at ingress-level, like when you have a TLS-terminating proxy before the ingress controller. |
-| `tls.secretName` | String  |         | The name of the Kubernetes TLS Secret that contains a valid certificate and key for the minio url. When not set, the `global.ingress.tls.secretName` is used instead. |
+| `enabled`        | Boolean | `false` | Setting that controls whether to create Ingress objects for services that support them. When `false` the `global.ingress.enabled` setting is used. |
+| `tls.enabled`    | Boolean | `true`  | When set to `false`, you disable TLS for MinIO. This is mainly useful when you cannot use TLS termination at Ingress-level, like when you have a TLS-terminating proxy before the Ingress Controller. |
+| `tls.secretName` | String  |         | The name of the Kubernetes TLS Secret that contains a valid certificate and key for the MinIO url. When not set, the `global.ingress.tls.secretName` is used instead. |
 
 ## Configuring the image
 
@@ -203,7 +203,7 @@ persistence:
 
 ## defaultBuckets
 
-`defaultBuckets` provides a mechanism to automatically create buckets on the Minio
+`defaultBuckets` provides a mechanism to automatically create buckets on the MinIO
 pod at *installation*. This property contains an array of items, each with up to three
 properties: `name`, `policy`, and `purge`.
 
@@ -220,7 +220,7 @@ defaultBuckets:
 | Name     | Type    | Default | Description |
 |:-------- |:-------:|:--------|:------------|
 | `name`   | String  |         | The name of the bucket that is created. The provided value should conform to [AWS bucket naming rules](https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html), meaning that it should be compliant with DNS and contain only the characters a-z, 0-9, and – (hyphen) in strings between 3 and 63 characters in length. The `name` property is _required_ for all entries. |
-| `policy` |         | `none`  | The value of `policy` controls the access policy of the bucket on Minio. The `policy` property is not required, and the default value is `none`. In regards to **anonymous** access, possible values are: `none` (no anonymous access), `download` (anonymous read-only access), `upload` (anonymous write-only access) or `public` (anonymous read/write access). |
+| `policy` |         | `none`  | The value of `policy` controls the access policy of the bucket on MinIO. The `policy` property is not required, and the default value is `none`. In regards to **anonymous** access, possible values are: `none` (no anonymous access), `download` (anonymous read-only access), `upload` (anonymous write-only access) or `public` (anonymous read/write access). |
 | `purge`  | Boolean |         | The `purge` property is provided as a means to cause any existing bucket to be removed with force, at installation time. This only comes into play when using a pre-existing `PersistentVolume` for the volumeName property of [persistence](#persistence). If you make use of a dynamically created `PersistentVolume`, this will have no valuable effect as it only happens at chart installation and there will be no data in the `PersistentVolume` that was just created. This property is not required, but you may specify this property with a value of `true` in order to cause a bucket to purged with force `mc rm -r --force`. |
 
 ## Security Context
@@ -236,7 +236,7 @@ These are [documented upstream](https://github.com/helm/charts/tree/master/stabl
 and the key summary is:
 
 ```
-## Expose the Minio service to be accessed from outside the cluster (LoadBalancer service).
+## Expose the MinIO service to be accessed from outside the cluster (LoadBalancer service).
 ## or access it from within the cluster (ClusterIP service). Set the service type and the port to serve it.
 ## ref: http://kubernetes.io/docs/user-guide/services/
 ##
@@ -256,5 +256,5 @@ for the following also applies completely to this chart:
 - `minioConfig`
 
 Further explanation of the `minioConfig` settings can be found in the
-[minio notify documentation](https://docs.min.io/docs/minio-bucket-notification-guide).
+[MinIO notify documentation](https://docs.min.io/docs/minio-bucket-notification-guide).
 This includes details on publishing notifications when Bucket Objects are accessed or changed.
