@@ -104,19 +104,28 @@ stable branch for the version you will release.
 
 For example, if you want to release version `0.2.1` of the charts, the changes will need to be in `0-2-stable`
 
-To manually release the chart, checkout and setup the [release tools repo](https://gitlab.com/gitlab-org/release-tools).
+A chatops command exists to tag a release. Run the following command in the
+relevant release slack channel (eg: `#f_release_12_4`)
 
 ```
-git clone git@gitlab.com:gitlab-org/release-tools.git
-bundle install
+/chatops run helm tag <charts version> <GitLab version>
 ```
 
-Then run the appropriate helm release task:
+You can also do it manually, without using the chatops command as follows:
 
-- When you want to release without changing the gitlab app version, call the release task with the new chart version (eg `0.2.1`)
-  - `bundle exec rake helm:tag_chart[0.2.1]`
+1. checkout and setup the [release tools repo](https://gitlab.com/gitlab-org/release-tools).
 
-- When you want to release and change both the chart version and the app version (eg `0.2.1` with GitLab `11.0.1`)
-  - `bundle exec rake helm:tag_chart[0.2.1,11.0.1]`
+   ```
+   git clone git@gitlab.com:gitlab-org/release-tools.git
+   bundle install
+   ```
 
-> You can run the script in dry-run mode which prevents pushes by setting TEST=true in your environment
+1. Then run the appropriate helm release task:
+
+   - When you want to release without changing the gitlab app version, call the release task with the new chart version (eg `0.2.1`)
+     - `bundle exec rake helm:tag_chart[0.2.1]`
+
+   - When you want to release and change both the chart version and the app version (eg `0.2.1` with GitLab `11.0.1`)
+     - `bundle exec rake helm:tag_chart[0.2.1,11.0.1]`
+
+    > You can run the script in dry-run mode which prevents pushes by setting TEST=true in your environment
