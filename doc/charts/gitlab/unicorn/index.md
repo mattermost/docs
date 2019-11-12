@@ -26,16 +26,16 @@ to the `helm install` command using the `--set` flags.
 | Parameter                        | Default               | Description                                    |
 | -------------------------------- | --------------------- | ---------------------------------------------- |
 | `annotations`                    |                       | Pod annotations                                |
-| `deployment.livenessProbe.initialDelaySeconds` | 20      | Delay before liveness probe is initiated       |
-| `deployment.livenessProbe.periodSeconds` | 60            | How often to perform the liveness probe        |
-| `deployment.livenessProbe.timeoutSeconds` | 30           | When the liveness probe times out              |
-| `deployment.livenessProbe.successThreshold` | 1          | Minimum consecutive successes for the liveness probe to be considered successful after having failed |
-| `deployment.livenessProbe.failureThreshold` | 3          | Minimum consecutive failures for the liveness probe to be considered failed after having succeeded |
+| `deployment.livenessProbe.initialDelaySeconds`  | 20     | Delay before liveness probe is initiated       |
+| `deployment.livenessProbe.periodSeconds`        | 60     | How often to perform the liveness probe        |
+| `deployment.livenessProbe.timeoutSeconds`       | 30     | When the liveness probe times out              |
+| `deployment.livenessProbe.successThreshold`     | 1      | Minimum consecutive successes for the liveness probe to be considered successful after having failed |
+| `deployment.livenessProbe.failureThreshold`     | 3      | Minimum consecutive failures for the liveness probe to be considered failed after having succeeded |
 | `deployment.readinessProbe.initialDelaySeconds` | 0      | Delay before readiness probe is initiated      |
-| `deployment.readinessProbe.periodSeconds` | 10           | How often to perform the readiness probe       |
-| `deployment.readinessProbe.timeoutSeconds` | 2           | When the readiness probe times out             |
-| `deployment.readinessProbe.successThreshold` | 1         | Minimum consecutive successes for the readiness probe to be considered successful after having failed |
-| `deployment.readinessProbe.failureThreshold` | 3         | Minimum consecutive failures for the readiness probe to be considered failed after having succeeded |
+| `deployment.readinessProbe.periodSeconds`       | 10     | How often to perform the readiness probe       |
+| `deployment.readinessProbe.timeoutSeconds`      | 2      | When the readiness probe times out             |
+| `deployment.readinessProbe.successThreshold`    | 1      | Minimum consecutive successes for the readiness probe to be considered successful after having failed |
+| `deployment.readinessProbe.failureThreshold`    | 3      | Minimum consecutive failures for the readiness probe to be considered failed after having succeeded |
 | `enabled`                        | `true`                | Unicorn enabled flag                           |
 | `extraContainers`                |                       | List of extra containers to include            |
 | `extraInitContainers`            |                       | List of extra init containers to include       |
@@ -54,13 +54,13 @@ to the `helm install` command using the `--set` flags.
 | `memory.min`                     | `400`                 | The minimum memory threshold (in megabytes) for the Unicorn worker killer |
 | `memory.max`                     | `650`                 | The maximum memory threshold (in megabytes) for the Unicorn worker killer |
 | `metrics.enabled`                | `true`                | Toggle Prometheus metrics exporter             |
-| `minio.bucket`                   | `git-lfs`             | Name of storage bucket, when using Minio       |
-| `minio.port`                     | `9000`                | Port for Minio service                         |
-| `minio.serviceName`              | `minio-svc`           | Name of Minio service                          |
+| `minio.bucket`                   | `git-lfs`             | Name of storage bucket, when using MinIO       |
+| `minio.port`                     | `9000`                | Port for MinIO service                         |
+| `minio.serviceName`              | `minio-svc`           | Name of MinIO service                          |
 | `monitoring.ipWhitelist`         | `[0.0.0.0/0]`         | List of IPs to whitelist for the monitoring endpoints |
-| `monitoring.exporter.enabled`         | `false`               | Enable webserver to expose Prometheus metrics  |
-| `monitoring.exporter.port`            | `8083`                | Port number to use for the metrics exporter    |
-| `monitoring.exporter.blackoutSeconds` | `10`                  | Number of seconds to keep the exporter running after unicorn is shutdown |
+| `monitoring.exporter.enabled`         | `false`          | Enable webserver to expose Prometheus metrics  |
+| `monitoring.exporter.port`            | `8083`           | Port number to use for the metrics exporter    |
+| `monitoring.exporter.blackoutSeconds` | `10`             | Number of seconds to keep the exporter running after Unicorn is shutdown |
 | `psql.password.key`              | `psql-password`       | Key to psql password in psql secret            |
 | `psql.password.secret`           | `gitlab-postgres`     | psql secret name                               |
 | `rack_attack.git_basic_auth`     | `{}`                  | See [GitLab documentation](https://docs.gitlab.com/ee/security/rack_attack.html) for details |
@@ -86,16 +86,16 @@ to the `helm install` command using the `--set` flags.
 | `trusted_proxies`                | `[]`                  | See [GitLab documentation](https://docs.gitlab.com/ee/install/installation.html#adding-your-trusted-proxies) for details |
 | `workerProcesses`                | `2`                   | Unicorn number of workers                      |
 | `workerTimeout`                  | `60`                  | Unicorn worker timeout                         |
-| `workhorse.livenessProbe.initialDelaySeconds` | 20       | Delay before liveness probe is initiated       |
-| `workhorse.livenessProbe.periodSeconds` | 60             | How often to perform the liveness probe        |
-| `workhorse.livenessProbe.timeoutSeconds` | 30            | When the liveness probe times out              |
-| `workhorse.livenessProbe.successThreshold` | 1           | Minimum consecutive successes for the liveness probe to be considered successful after having failed |
-| `workhorse.livenessProbe.failureThreshold` | 3           | Minimum consecutive failures for the liveness probe to be considered failed after having succeeded |
+| `workhorse.livenessProbe.initialDelaySeconds`  | 20      | Delay before liveness probe is initiated       |
+| `workhorse.livenessProbe.periodSeconds`        | 60      | How often to perform the liveness probe        |
+| `workhorse.livenessProbe.timeoutSeconds`       | 30      | When the liveness probe times out              |
+| `workhorse.livenessProbe.successThreshold`     | 1       | Minimum consecutive successes for the liveness probe to be considered successful after having failed |
+| `workhorse.livenessProbe.failureThreshold`     | 3       | Minimum consecutive failures for the liveness probe to be considered failed after having succeeded |
 | `workhorse.readinessProbe.initialDelaySeconds` | 0       | Delay before readiness probe is initiated      |
-| `workhorse.readinessProbe.periodSeconds` | 10            | How often to perform the readiness probe       |
-| `workhorse.readinessProbe.timeoutSeconds` | 2            | When the readiness probe times out             |
-| `workhorse.readinessProbe.successThreshold` | 1          | Minimum consecutive successes for the readiness probe to be considered successful after having failed |
-| `workhorse.readinessProbe.failureThreshold` | 3          | Minimum consecutive failures for the readiness probe to be considered failed after having succeeded |
+| `workhorse.readinessProbe.periodSeconds`       | 10      | How often to perform the readiness probe       |
+| `workhorse.readinessProbe.timeoutSeconds`      | 2       | When the readiness probe times out             |
+| `workhorse.readinessProbe.successThreshold`    | 1       | Minimum consecutive successes for the readiness probe to be considered successful after having failed |
+| `workhorse.readinessProbe.failureThreshold`    | 3       | Minimum consecutive failures for the readiness probe to be considered failed after having succeeded |
 
 ## Chart configuration examples
 
@@ -137,7 +137,7 @@ tolerations:
 
 ### annotations
 
-`annotations` allows you to add annotations to the unicorn pods. For example:
+`annotations` allows you to add annotations to the Unicorn pods. For example:
 
 ```yaml
 annotations:
@@ -163,10 +163,10 @@ for common configuration options, such as GitLab and Registry hostnames.
 
 | Name                                   | Type    | Default | Description |
 |:-------------------------------------- |:-------:|:------- |:----------- |
-| `ingress.annotations.*annotation-key*` | String  | (empty) | `annotation-key` is a string that will be used with the value as an annotation on every ingress. For example: `ingress.annotations."nginx\.ingress\.kubernetes\.io/enable-access-log"=true`. |
-| `ingress.enabled`                      | Boolean | `false` | Setting that controls whether to create ingress objects for services that support them. When `false`, the `global.ingress.enabled` setting value is used. |
+| `ingress.annotations.*annotation-key*` | String  | (empty) | `annotation-key` is a string that will be used with the value as an annotation on every Ingress. For example: `ingress.annotations."nginx\.ingress\.kubernetes\.io/enable-access-log"=true`. |
+| `ingress.enabled`                      | Boolean | `false` | Setting that controls whether to create Ingress objects for services that support them. When `false`, the `global.ingress.enabled` setting value is used. |
 | `ingress.proxyBodySize`                | String  | `512m`  | [See Below](#proxyBodySize). |
-| `ingress.tls.enabled`                  | Boolean | `true`  | When set to `false`, you disable TLS for GitLab Unicorn. This is mainly useful for cases in which you cannot use TLS termination at ingress-level, like when you have a TLS-terminating proxy before the ingress controller. |
+| `ingress.tls.enabled`                  | Boolean | `true`  | When set to `false`, you disable TLS for GitLab Unicorn. This is mainly useful for cases in which you cannot use TLS termination at Ingress-level, like when you have a TLS-terminating proxy before the Ingress Controller. |
 | `ingress.tls.secretName`               | String  | (empty) | The name of the Kubernetes TLS Secret that contains a valid certificate and key for the GitLab url. When not set, the `global.ingress.tls.secretName` value is used instead. |
 
 ### proxyBodySize
@@ -250,7 +250,7 @@ psql:
 Gitaly is configured by [global settings](../../globals.md). Please see the
 [Gitaly configuration documentation](../../globals.md#configure-gitaly-settings).
 
-### Minio
+### MinIO
 
 ```yaml
 minio:
@@ -260,8 +260,8 @@ minio:
 
 | Name          | Type    | Default     | Description |
 |:------------- |:-------:|:----------- |:----------- |
-| `port`        | Integer | `9000`      | Port number to reach the Minio `Service` on. |
-| `serviceName` | String  | `minio-svc` | Name of the `Service` that is exposed by the Minio pod. |
+| `port`        | Integer | `9000`      | Port number to reach the MinIO `Service` on. |
+| `serviceName` | String  | `minio-svc` | Name of the `Service` that is exposed by the MinIO pod. |
 
 ### Registry
 
@@ -283,8 +283,8 @@ registry:
 | Name                 | Type    | Default         | Description |
 |:-------------------- |:-------:|:--------------- |:----------- |
 | `api.host`           | String  |                 | The hostname of the Registry server to use. This can be omitted in lieu of `api.serviceName`. |
-| `api.port`           | Integer | `5000`          | The port on which to connect to the Registry api. |
-| `api.protocol`       | String  |                 | The protocol Unicorn should use to reach the Registry api. |
+| `api.port`           | Integer | `5000`          | The port on which to connect to the Registry API. |
+| `api.protocol`       | String  |                 | The protocol Unicorn should use to reach the Registry API. |
 | `api.serviceName`    | String  | `registry`      | The name of the `service` which is operating the Registry server. If this is present, and `api.host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `api.host` value. This is convenient when using Registry as a part of the overall GitLab chart. |
 | `certificate.key`    | String  |                 | The name of the `key` in the `Secret` which houses the certificate bundle that will be provided to the [registry](https://hub.docker.com/_/registry/) container as `auth.token.rootcertbundle`. |
 | `certificate.secret` | String  |                 | The name of the [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/) that houses the certificate bundle to be used to verify the tokens created by the GitLab instance(s). |
