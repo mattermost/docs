@@ -2,17 +2,17 @@
 
 GitLab requires a variety of secrets to operate:
 
-Gitlab Components:
+GitLab Components:
 
 - Registry authentication certificates
 - SSH Host Keys and Certificates for GitLab Shell
-- Passwords for individual Gitlab services
+- Passwords for individual GitLab services
 
 Optional External Services:
 
 - SMTP server
 - LDAP
-- Omniauth
+- OmniAuth
 - IMAP for incoming emails (via mail_room service)
 - S/MIME certificate
 
@@ -36,14 +36,14 @@ documentation.
   - [GitLab Shell secret](#gitlab-shell-secret)
   - [Gitaly secret](#gitaly-secret)
   - [GitLab Rails secret](#gitlab-rails-secret)
-  - [GitLab workhorse secret](#gitlab-workhorse-secret)
-  - [GitLab runner secret](#gitlab-runner-secret)
+  - [GitLab Workhorse secret](#gitlab-workhorse-secret)
+  - [GitLab Runner secret](#gitlab-runner-secret)
   - [Postgres password](#postgresql-password)
-  - [Minio secret](#minio-secret)
+  - [MinIO secret](#minio-secret)
   - [Registry HTTP secret](#registry-http-secret)
   - [Grafana password](#grafana-password)
 - [External Services](#external-services)
-  - [Unicorn Omniauth](#unicorn-omniauth)
+  - [Unicorn OmniAuth](#unicorn-omniauth)
   - [LDAP Password](#ldap-password)
   - [SMTP Password](#smtp-password)
   - [IMAP Password](#imap-password-for-incoming-emails)
@@ -97,7 +97,7 @@ This secret is referenced by the `global.shell.hostKeys.secret` setting.
 
 ## Initial Enterprise license
 
-Create a kubernetes secret for storing the Enterprise license for the GitLab instance.
+Create a Kubernetes secret for storing the Enterprise license for the GitLab instance.
 Replace `<name>` with the name of the release.
 
 ```
@@ -112,7 +112,7 @@ You can also use the `global.gitlab.license.key` option to change the default
 
 ### Initial root password
 
-Create a kubernetes secret for storing the initial root password. The password
+Create a Kubernetes secret for storing the initial root password. The password
 should be at least 6 characters long. Replace `<name>` with the name of the
 release.
 
@@ -174,7 +174,7 @@ kubectl create secret generic <name>-rails-secret --from-file=secrets.yml
 
 This secret is referenced by the `global.railsSecrets.secret` setting.
 
-### GitLab workhorse secret
+### GitLab Workhorse secret
 
 Generate the workhorse secret. This must have a length of 32 characters and
 base64-encoded. Replace `<name>` with the name of the release.
@@ -185,7 +185,7 @@ kubectl create secret generic <name>-gitlab-workhorse-secret --from-literal=shar
 
 This secret is referenced by the `global.workhorse.key` setting.
 
-### GitLab runner secret
+### GitLab Runner secret
 
 Replace `<name>` with the name of the release.
 
@@ -193,9 +193,9 @@ Replace `<name>` with the name of the release.
 kubectl create secret generic <name>-gitlab-runner-secret --from-literal=runner-registration-token=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
-### Minio secret
+### MinIO secret
 
-Generate a set of random 20 & 64 character alpha-numeric keys for Minio.
+Generate a set of random 20 & 64 character alpha-numeric keys for MinIO.
 Replace `<name>` with the name of the release.
 
 ```
@@ -204,7 +204,7 @@ kubectl create secret generic <name>-minio-secret --from-literal=accesskey=$(hea
 
 This secret is referenced by the `global.minio.credentials.secret` setting.
 
-### Postgresql password
+### PostgreSQL password
 
 Generate a random 64 character alpha-numeric password. Replace `<name>` with
 the name of the release.
@@ -234,9 +234,9 @@ kubectl create secret generic <name>-registry-httpsecret --from-literal=secret=$
 
 Some charts have further secrets to enable functionality that can not be automatically generated.
 
-### Unicorn Omniauth
+### Unicorn OmniAuth
 
-In order to enable the use of [Omniauth Providers](https://docs.gitlab.com/ee/integration/omniauth.html) with the deployed GitLab, please follow the [instructions in the Globals chart](../charts/globals.md#omniauth)
+In order to enable the use of [OmniAuth Providers](https://docs.gitlab.com/ee/integration/omniauth.html) with the deployed GitLab, please follow the [instructions in the Globals chart](../charts/globals.md#omniauth)
 
 ### LDAP Password
 
@@ -258,7 +258,7 @@ in a Kubernetes secret.
 kubectl create secret generic smtp-password --from-literal=password=yourpasswordhere
 ```
 
-Then use `--set global.smtp.password.secret=smtp-password` in your helm command.
+Then use `--set global.smtp.password.secret=smtp-password` in your Helm command.
 
 ### IMAP password for incoming emails
 
@@ -270,7 +270,7 @@ kubectl create secret generic incoming-email-password --from-literal=password=yo
 ```
 
 Then use `--set global.appConfig.incomingEmail.password.secret=incoming-email-password`
-in your helm command along with other required settings as specified [in the docs](command-line-options.md#incoming-email-configuration).
+in your Helm command along with other required settings as specified [in the docs](command-line-options.md#incoming-email-configuration).
 
 ### S/MIME Certificate
 

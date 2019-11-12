@@ -1,6 +1,6 @@
 # TLS options
 
-This chart is capable of doing TLS termination using the nginx Ingress controller. You have the choice of how to
+This chart is capable of doing TLS termination using the NGINX Ingress Controller. You have the choice of how to
 acquire the TLS certificates for your deployment. Extensive details can be found in [global Ingress settings](../charts/globals.md#configure-ingress-settings).
 
 ## Option 1: cert-manager and Let's Encrypt
@@ -73,7 +73,7 @@ helm install ...
 
 ## Option 3: Use individual certificate per service
 
-Add your full chain certificates to the cluster as secrets, and then pass those secret names to each ingress.
+Add your full chain certificates to the cluster as secrets, and then pass those secret names to each Ingress.
 
 ```
 helm install ...

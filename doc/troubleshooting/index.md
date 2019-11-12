@@ -102,7 +102,7 @@ This can happen when the runner registration token has been changed in GitLab. (
 
 ## Too many redirects
 
-This can happen when you have TLS termination before the nginx ingress, and the tls-secrets are specified in the configuration.
+This can happen when you have TLS termination before the NGINX Ingress, and the tls-secrets are specified in the configuration.
 
 1. Update your values to set `global.ingress.annotations."nginx.ingress.kubernetes.io/ssl-redirect": "false"`
 
@@ -116,7 +116,7 @@ This can happen when you have TLS termination before the nginx ingress, and the 
          "nginx.ingress.kubernetes.io/ssl-redirect": "false"
    ```
 
-   Via the helm CLI:
+   Via the Helm CLI:
 
    ```sh
    helm ... --set-string global.ingress.annotations."nginx.ingress.kubernetes.io/ssl-redirect"=false

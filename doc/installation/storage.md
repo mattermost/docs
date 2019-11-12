@@ -4,10 +4,10 @@
 
 The following applications within the GitLab chart require persistent storage to maintain state.
 
-- [gitaly](../charts/gitlab/gitaly/index.md) (persists the git repositories)
-- [postgres](https://github.com/helm/charts/tree/master/stable/postgresql) (persists the gitlab database data)
-- [redis](../charts/redis/index.md) (persists gitlab job data)
-- [minio](../charts/minio/index.md) (persists the object storage data)
+- [Gitaly](../charts/gitlab/gitaly/index.md) (persists the Git repositories)
+- [postgres](https://github.com/helm/charts/tree/master/stable/postgresql) (persists the GitLab database data)
+- [Redis](../charts/redis/index.md) (persists GitLab job data)
+- [MinIO](../charts/minio/index.md) (persists the object storage data)
 
 The administrator may choose to provision this storage using [dynamic][] or [static][] volume provisioning.
 
@@ -55,7 +55,7 @@ Set the custom storage class to the cluster default and it will be used for all 
 kubectl patch storageclass CUSTOM_STORAGE_CLASS_NAME -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
 
-Alternatively, the custom storage class and other options may be provided per service to helm during installation. View
+Alternatively, the custom storage class and other options may be provided per service to Helm during installation. View
 the provided [example configuration file](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/storage/helm_options.yml) and modify for your environment.
 
 ```sh
@@ -65,7 +65,7 @@ helm install -upgrade gitlab gitlab/gitlab -f HELM_OPTIONS_YAML_FILE
 Follow the links below for further reading and additional persistence options:
 
 - [Gitaly persistence configuration](../charts/gitlab/gitaly/index.md#git-repository-persistence)
-- [Minio persistence configuration](../charts/minio/index.md#persistence)
+- [MinIO persistence configuration](../charts/minio/index.md#persistence)
 - [Redis persistence configuration](../charts/redis/index.md#persistence)
 - [Upstream PostgreSQL chart configuration](https://github.com/helm/charts/tree/master/stable/postgresql#configuration)
 
@@ -107,14 +107,14 @@ kubectl create -f *PV_YAML_FILE*
 
 ### Manually creating PersistentVolumeClaims
 
-The ***gitaly*** service deploys using a [StatefulSet][]. Create the [PersistentVolumeClaim][pvc]
+The Gitaly service deploys using a [StatefulSet][]. Create the [PersistentVolumeClaim][pvc]
 using the following naming convention for it to be properly recognized and used.
 
 ```
 <mount-name>-<statefulset-pod-name>
 ```
 
-The `mount-name` for ***gitaly*** is ***repo-data***. The StatefulSet pod names are created using:
+The `mount-name` for Gitaly is `repo-data`. The StatefulSet pod names are created using:
 
 ```
 <statefulset-name>-<pod-index>
@@ -126,7 +126,7 @@ The GitLab Cloud Native Chart determines the `statefulset-name` using:
 <chart-release-name>-<service-name>
 ```
 
-The correct name for the ***gitaly*** PersistentVolumeClaim is: ***repo-data-gitlab-gitaly-0***.
+The correct name for the Gitaly PersistentVolumeClaim is: `repo-data-gitlab-gitaly-0`.
 
 Modify the [example YAML configuration](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/examples/storage/gitaly_persistent_volume_claim.yml) for your environment and reference it when invoking `helm`.
 
