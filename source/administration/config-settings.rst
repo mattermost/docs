@@ -517,7 +517,7 @@ Amazon S3 Endpoint
 Hostname of your S3-compatible instance. Defaults to ``"s3.amazonaws.com"``.
 
 .. note::
-  For Digital Ocean Spaces, the hostname should be set to ``"<region>.digitaloceanspaces.com"``, where ``<region>`` is the abbreviation for the region you chose when setting up the Space. It can be ``nyc3``, ``ams3``, or ``sgp1``.
+  For Digital Ocean Spaces, the hostname should be set to ``"<region>.digitaloceanspaces.com"``, where ``<region>`` is the abbreviation for the region you chose when setting up the Space. It can be ``nyc3``, ``ams3``, or ``sgp1`` test.
 
 +-------------------------+-------------------------------------------------------------------+
 | ``config.json`` setting | ``AmazonS3Endpoint``                                              |
