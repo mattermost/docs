@@ -4,7 +4,7 @@ This document describes a basic outline of how to get GitLab up and running on
 an OKD instance using the official Helm charts.
 
 **Note:**:
-This guide has been tested only on Openshift Origin 3.11.0 and is not guaranteed
+This guide has been tested only on OpenShift Origin 3.11.0 and is not guaranteed
 to work on other versions, or SaaS offering of OpenShift, OpenShift Online.
 If you face any problems in installing or configuring GitLab by following this
 guide, open issues at our [issue tracker](https://gitlab.com/gitlab-org/charts/gitlab/issues).
@@ -17,7 +17,7 @@ installations on OpenShift:
 
 1. Requirement of `anyuid` scc:
 
-   - Different components of GitLab, like Sidekiq, unicorn, etc., use UID 1000 to run services.
+   - Different components of GitLab, like Sidekiq, Unicorn, etc., use UID 1000 to run services.
    - PostgreSQL chart runs the service as the `root` user.
    - [Issue #752](https://gitlab.com/gitlab-org/charts/gitlab/issues/752) is open to investigate more on fixing this.
 
@@ -104,7 +104,7 @@ Before doing so take note of the following changes from the normal chart
 installation procedure:
 
 1. We will be using OpenShift's built-in router, and hence need to disable
-   the nginx-ingress service that is included in the charts. Pass the following
+   the NGINX Ingress service that is included in the charts. Pass the following
    flag to the `helm install` command:
 
    ```bash

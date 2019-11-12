@@ -34,17 +34,17 @@ The service accounts are described in the following table. For each service acco
 
 | Name suffix | Description | Roles | Scope
 | ---         | ---         | ---   | ---
-| gitlab-runner | The GitLab runner is executed with this account. | Any resource (RW) | NS/C
-| nginx-ingress | Used by Nginx ingress to control service access points. | Secret, Pod, Endpoint, Ingress (R); Event (W); ConfigMap, Service (RW) | NS/C
-| shared-secrets | The job that creates shared secrets runs with this account. (in pre-install/upgrade hook) | Secret (RW) | NS
-| operator | Used by GitLab Operator to monitor and control GitLab resources, run migrations and shared secret jobs. Only used when Operator is enabled. | ConfigMap, Secret, Pod, Deployment, StatefulSet, DaemonSet, Job, ServiceAccount, \[Cluster\]Role, \[Cluster\]RoleBinding, GitLabs (RW) | NS/C
-| certmanager-issuer | The job that controls certificate manager runs with this account. | Issuer (RW)  | NS
+| `gitlab-runner` | The GitLab Runner is executed with this account. | Any resource (RW) | NS/C
+| `nginx-ingress` | Used by NGINX Ingress to control service access points. | Secret, Pod, Endpoint, Ingress (R); Event (W); ConfigMap, Service (RW) | NS/C
+| `shared-secrets` | The job that creates shared secrets runs with this account. (in pre-install/upgrade hook) | Secret (RW) | NS
+| `operator` | Used by GitLab Operator to monitor and control GitLab resources, run migrations and shared secret jobs. Only used when Operator is enabled. | ConfigMap, Secret, Pod, Deployment, StatefulSet, DaemonSet, Job, ServiceAccount, \[Cluster\]Role, \[Cluster\]RoleBinding, GitLabs (RW) | NS/C
+| `certmanager-issuer` | The job that controls certificate manager runs with this account. | Issuer (RW)  | NS
 
 GitLab chart depends on other charts that they also use RBAC and create their own service accounts and role binding. Here is an overview:
 
 - Prometheus monitoring creates multiple own service accounts by default. They are all associated to cluster level roles. For more information see [Prometheus chart documentation](https://github.com/helm/charts/tree/master/stable/prometheus#rbac-configuration).
 - Certificate manager creates a service account by default to manage its custom resources along with native resources at the cluster level. For more information see [cert-manager chart RBAC template](https://github.com/helm/charts/blob/master/stable/cert-manager/templates/rbac.yaml).
-- When you use in-cluster PostgreSQL database (this is the default) the service account is not enabled. You can enable it but it is only used to run PostgreSQL service and is not associated to any specific role. For more information see [Postgresql chart](https://github.com/helm/charts/tree/master/stable/postgresql).
+- When you use in-cluster PostgreSQL database (this is the default) the service account is not enabled. You can enable it but it is only used to run PostgreSQL service and is not associated to any specific role. For more information see [PostgreSQL chart](https://github.com/helm/charts/tree/master/stable/postgresql).
 
 NOTE: **Note:** Please keep in mind that for OpenShift deployment you need to assign `anyuid` SCC to `default` and `gitlab-runner`
 service account of your project. For more details see [OpenShift installation](./cloud/openshift.md).

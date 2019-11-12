@@ -1,6 +1,6 @@
 # GitLab Operator
 
-GitLab operator is an implementation of the [Operator pattern](https://coreos.com/blog/introducing-operators.html) for management of deployment lifecycle. This component provides a method of synchronizing and controlling various stages of cloud-native GitLab installation/upgrade procedures. Using the operator provides the ability to perform rolling upgrades without down time.
+GitLab Operator is an implementation of the [Operator pattern](https://coreos.com/blog/introducing-operators.html) for management of deployment lifecycle. This component provides a method of synchronizing and controlling various stages of cloud-native GitLab installation/upgrade procedures. Using the operator provides the ability to perform rolling upgrades without down time.
 
 ## Operator chart
 
@@ -21,7 +21,7 @@ The first command will install only the `CRD` but will not actually attempt to d
 
 **NOTE:** This needs done only the first time you install the operator, further upgrades will follow the normal [upgrade procedures](./upgrade.md)
 
-**NOTE:** Test new versions of the operator by setting `gitlab.operator.image.tag` to either the branch name of a gitlab-operator container build or a specific tagged release number.
+**NOTE:** Test new versions of the operator by setting `gitlab.operator.image.tag` to either the branch name of a GitLab Operator container build or a specific tagged release number.
 
 **NOTE:** The operator is transitioning from a ClusterRole to a regular Role that operates within a namespace. Operator containers after version 0.4 will have this new behavior by default.
 

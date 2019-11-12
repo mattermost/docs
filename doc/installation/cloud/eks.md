@@ -37,7 +37,7 @@ The table below describes all variables.
 | `CLUSTER_VERSION` | The version of your EKS cluster                  | `1.11`           |
 | `NUM_NODES`       | The number of nodes required                     | `2`              |
 | `MACHINE_TYPE`    | The type of nodes to deploy                      | `m5.xlarge`      |
-| `SERVICE_ACCOUNT` | The service account name to use for helm/tiller  | `tiller`         |
+| `SERVICE_ACCOUNT` | The service account name to use for Helm/Tiller  | `tiller`         |
 
 Run the script, by passing in your desired parameters. It can work with the
 default parameters.
@@ -85,7 +85,7 @@ when defining their storage solution.
 
 ## External Access to GitLab
 
-By default, GitLab will deploy an ingress which will create an associated
+By default, GitLab will deploy an Ingress which will create an associated
 Elastic Load Balancer (ELB). Since the DNS names of the ELB cannot be known
 ahead of time, it's difficult to utilize [Let's Encrypt](https://letsencrypt.org/) to automatically provision
 HTTPS certificates.

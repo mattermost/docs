@@ -45,7 +45,7 @@ Helm Chart Issues/Limitations:
 - No GitLab Pages support: <https://gitlab.com/gitlab-org/charts/gitlab/issues/37>
 - No GitLab Geo support: <https://gitlab.com/gitlab-org/charts/gitlab/issues/8>
 - No support for incoming email: <https://gitlab.com/gitlab-org/charts/gitlab/issues/235>
-- Does not support running multiple gitaly servers: <https://gitlab.com/gitlab-org/charts/gitlab/issues/432>
+- Does not support running multiple Gitaly servers: <https://gitlab.com/gitlab-org/charts/gitlab/issues/432>
 
 Limitations planned to be fixed during beta:
 

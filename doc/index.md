@@ -13,7 +13,7 @@ contains all the required components to get started, and can scale to large depl
 The default deployment includes:
 
 - Core GitLab components: Unicorn, Shell, Workhorse, Registry, Sidekiq, and Gitaly
-- Optional dependencies: Postgres, Redis, Minio
+- Optional dependencies: Postgres, Redis, MinIO
 - An auto-scaling, unprivileged [GitLab Runner](https://docs.gitlab.com/runner/) using the Kubernetes executor
 - Automatically provisioned SSL via [Let's Encrypt](https://letsencrypt.org/).
 
@@ -41,7 +41,7 @@ that would warrant a major version bump, and the requirement for these changes
 could completely block other development on these charts until completed.
 
 To quickly see the full list of the `gitlab` chart versions and the GitLab version
-they map to, issue the following command with [helm](installation/tools.md#helm):
+they map to, issue the following command with [Helm](installation/tools.md#helm):
 
 ```sh
 helm repo add gitlab https://charts.gitlab.io/
@@ -61,12 +61,12 @@ component services are documented under the [GitLab](charts/gitlab/index.md) cha
 
 - [NGINX](charts/nginx/index.md)
 - [Redis](charts/redis/index.md)
-- [Minio](charts/minio/index.md)
+- [MinIO](charts/minio/index.md)
 - [Registry](charts/registry/index.md)
-- GitLab/[sidekiq](charts/gitlab/sidekiq/index.md)
-- GitLab/[gitlab-shell](charts/gitlab/gitlab-shell/index.md)
-- GitLab/[gitaly](charts/gitlab/gitaly/index.md)
-- GitLab/[unicorn](charts/gitlab/unicorn/index.md)
+- GitLab/[Sidekiq](charts/gitlab/sidekiq/index.md)
+- GitLab/[GitLab Shell](charts/gitlab/gitlab-shell/index.md)
+- GitLab/[Gitaly](charts/gitlab/gitaly/index.md)
+- GitLab/[Unicorn](charts/gitlab/unicorn/index.md)
 - GitLab/[migrations](charts/gitlab/migrations/index.md)
 
 ## Global settings
