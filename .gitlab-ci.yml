@@ -82,6 +82,7 @@ lint_package:
     - if ! crdExists || previousDeployFailed ; then OPERATOR_BOOTSTRAP=true deploy ; fi
     - deploy
     - wait_for_deploy
+    - restart_task_runner
     - echo "export QA_ENVIRONMENT_URL=gitlab-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN" >> "${VARIABLES_FILE}"
     - echo "export GITLAB_ROOT_DOMAIN=$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN"        >> "${VARIABLES_FILE}"
     - echo "export GITLAB_URL=gitlab-$CI_ENVIRONMENT_SLUG.$KUBE_INGRESS_BASE_DOMAIN"         >> "${VARIABLES_FILE}"
@@ -225,6 +226,7 @@ stop_review_eks:
     - if ! crdExists || previousDeployFailed ; then OPERATOR_BOOTSTRAP=true deploy ; fi
     - deploy
     - wait_for_deploy
+    - restart_task_runner
     - echo "export QA_ENVIRONMENT_URL=gitlab.$KUBE_INGRESS_BASE_DOMAIN" >> "${VARIABLES_FILE}"
     - echo "export GITLAB_ROOT_DOMAIN=$KUBE_INGRESS_BASE_DOMAIN"        >> "${VARIABLES_FILE}"
     - echo "export S3_ENDPOINT=https://minio.$KUBE_INGRESS_BASE_DOMAIN" >> "${VARIABLES_FILE}"
@@ -505,6 +507,17 @@ check_docs_lint:
       sleep 5;
     done
     echo ""
+  }
+
+  function restart_task_runner() {
+    # restart the task-runner pods, by deleting them
+    # the ReplicaSet of the Deployment will re-create them
+    # this ensure we run up-to-date on tags like `master` when there
+    # have been no changes to the configuration to warrant a restart
+    # via metadata checksum annotations
+    kubectl -n ${KUBE_NAMESPACE} delete pods -lapp=task-runner,release=${CI_ENVIRONMENT_SLUG}
+    # always "succeed" so not to block.
+    return 0
   }
 
   function setup_test_db() {
