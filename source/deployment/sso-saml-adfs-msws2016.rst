@@ -162,7 +162,7 @@ Configure SAML sign-in for Mattermost
 
 1. Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
   - Set *Enable Login With SAML 2.0* to *true*.
-  - Set *Enable Synchronizing SAML Accounts With AD/LDAP* to suit your environment.
+  - Set **Enable Synchronizing SAML Accounts With AD/LDAP** to suit your environment.
   - Set **Override SAML bind data with AD/LDAP information** to suit your environment.
   - For **SAML SSO URL** use the ``SAML 2.0/W-Federation URL ADFS Endpoint`` you copied at the beginning of the process.
   - For **Identity Provider Issuer URL** use the ``Relying party trust identifier`` from ADFS.
