@@ -93,7 +93,7 @@ For Mattermost 3.4 and later, the *FirstName* and *LastName* attributes are opti
 
 Select **Finish** to add the rule.
 
-Note that the entries in the **Outgoing Claim Type** column can be chosen to be something else. They can contain dashes but no spaces. Note that they will be used to map the corresponding fields in Mattermost later.
+The entries in the **Outgoing Claim Type** column can be modified and the entries may contain dashes but no spaces. They are used to map the corresponding fields in Mattermost.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_create-claim-rules_003.png
 
