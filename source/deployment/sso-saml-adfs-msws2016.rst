@@ -73,7 +73,7 @@ Add your **SAML 2.0 SSO service URL** from above the same way.
 Create Claim Rules
 ------------------
 
-1. In the **Issuance Transform Rules** tab of the **Claim Rules** editor, click the **Add Rule…** button.
+1. In the **Issuance Transform Rules** tab of the **Claim Rules** editor, choose **Add Rule…**.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_create-claim-rules_001.png
 
