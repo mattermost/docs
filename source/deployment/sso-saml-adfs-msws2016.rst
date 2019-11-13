@@ -48,7 +48,7 @@ If you would like to set up encryption for your SAML connection, select **Browse
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_006.png
 
-7. In the **Configure Identifiers** screen, enter the **Relying party trust identifier** (also known as the **Identity Provider Issuer URL**) of the form ``https://<your-idp-url>/adfs/services/trust`` and click **Add**.
+7. In the **Configure Identifiers** screen, enter the **Relying party trust identifier** (also known as the **Identity Provider Issuer URL**) in the following format ``https://<your-idp-url>/adfs/services/trust`` and choose **Add**.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_007.png
 
