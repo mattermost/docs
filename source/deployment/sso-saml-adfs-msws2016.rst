@@ -28,7 +28,7 @@ Add a Relying Party Trust
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_001.png
 
-3. In the **Select Data Source** screen, select the option **Enter data about the relying party manually**.
+3. In the **Select Data Source** screen, choose **Enter data about the relying party manually**.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_002.png
 
