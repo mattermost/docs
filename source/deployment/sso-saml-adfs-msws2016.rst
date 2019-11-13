@@ -64,7 +64,7 @@ Add your **SAML 2.0 SSO service URL** from above the same way.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_010.png
 
-10. In the **Finish** screen, select the option **Configure claims issuance policy for this application**, and click **Close**. 
+10. In the **Finish** screen select **Configure claims issuance policy for this application** and then **Close**. 
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_011.png
 
