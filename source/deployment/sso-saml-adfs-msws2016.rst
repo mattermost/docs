@@ -165,7 +165,7 @@ Configure SAML sign-in for Mattermost
   - Set *Enable Synchronizing SAML Accounts With AD/LDAP* to suit your environment.
   - Set **Override SAML bind data with AD/LDAP information** to suit your environment.
   - For **SAML SSO URL** use the ``SAML 2.0/W-Federation URL ADFS Endpoint`` you copied at the beginning of the process.
-  - For Identity Provider Issuer URL* use ``Relying party trust identifier`` from ADFS you specified earlier.
+  - For **Identity Provider Issuer URL** use the ``Relying party trust identifier`` from ADFS.
   - For *Identity Provider Public Certificate* use ``X.509 Public Certificate`` you downloaded earlier.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_configure-saml_001.png
