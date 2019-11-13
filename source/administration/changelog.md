@@ -63,6 +63,51 @@ Mattermost v5.17.0 contains medium to high level security fixes. [Upgrading](htt
 ### Contributors
  - **XX To be added XX**
  
+[a-arias](https://github.com/a-arias), [A-Hilaly](https://github.com/A-Hilaly), [a8uhnf](https://github.com/a8uhnf), [abadojack](https://github.com/abadojack), [abdusabri](https://github.com/abdusabri), [abelharisov](https://github.com/abelharisov), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [akantsevoi](https://github.com/akantsevoi), [akpark](https://github.com/akpark), [akshaychhajed](https://github.com/akshaychhajed), [aladhims](https://github.com/aladhims), [ananichev](https://github.com/ananichev), [anchepiece](https://github.com/anchepiece), [anindha](https://github.com/anindha), [aqche](https://github.com/aqche), [arjitc](https://github.com/arjitc), [avasconcelos114](https://github.com/avasconcelos114), [bensooraj](https://github.com/bensooraj), [boonwj](https://github.com/boonwj), [brewsterbhg](https://github.com/brewsterbhg), [bryanculver](https://github.com/bryanculver), [cedrickring](https://github.com/cedrickring), [chahat-arora](https://github.com/chahat-arora), [ChrisDobby](https://github.com/ChrisDobby), [chuttam](https://github.com/chuttam), [cinlloc](https://github.com/cinlloc), [codevbus](https://github.com/codevbus), [CSBatchelor](https://github.com/CSBatchelor), [dedifferentiator](https://github.com/dedifferentiator), [dnguy078](https://github.com/dnguy078), [drekar](https://github.com/drekar), [DropNib](https://github.com/DropNib), [gfelixc](https://github.com/gfelixc), [goku321](https://github.com/goku321), [guigui64](https://github.com/guigui64), [gupsho](https://github.com/gupsho), [hector2](https://github.com/hector2), [HelioStrike](https://github.com/HelioStrike), [heowc](https://github.com/heowc), [hypnoglow](https://github.com/hypnoglow), [iDevoid](https://github.com/iDevoid), [imavroukakis](https://github.com/imavroukakis), [isacikgoz](https://github.com/isacikgoz), [italolelis](https://github.com/italolelis), [iwataka](https://github.com/iwataka), [jairojj](https://github.com/jairojj), [jasminexie](https://github.com/jasminexie), [jatinjtg](https://github.com/jatinjtg), [JeewhanR](https://github.com/JeewhanR), [jesperhansen17](https://github.com/jesperhansen17), [jkl5616](https://github.com/jkl5616), [jordeguevara](https://github.com/jordeguevara), [josephk96](https://github.com/josephk96), [JosephSamela](https://github.com/JosephSamela), [joshuabezaleel](https://github.com/joshuabezaleel), [jozuenoon](https://github.com/jozuenoon), [JtheBAB](https://github.com/JtheBAB), [kaakaa](https://github.com/kaakaa), [karanrn](https://github.com/karanrn), [karlmarxlopez](https://github.com/karlmarxlopez), [kashifsoofi](https://github.com/kashifsoofi), [kethinov](https://github.com/kethinov), [kgeorgiou](https://github.com/kgeorgiou), [larkox](https://github.com/larkox), [laurapareja](https://github.com/laurapareja), [LK4D4](https://github.com/LK4D4), [lucianomagrao](https://github.com/lucianomagrao), [Lumexralph](https://github.com/Lumexralph), [lurcio](https://github.com/lurcio), [malaDev](https://github.com/malaDev), [manland](https://github.com/manland), [mauricio](https://github.com/mauricio), [MayMeow](https://github.com/MayMeow), [mbluemer](https://github.com/mbluemer), [Menelion](https://github.com/Menelion), [mhartenbower](https://github.com/mhartenbower), [mistikel](https://github.com/mistikel), 
+- mjthomp95
+- Mrigank11
+- Muscaw
+- Mycobee
+- nicnicknicky
+- niklabh
+- njkevlani
+- oksmelnik
+- pbitty
+- Pensu
+- phillipahereza
+- Phizzard
+- pikami
+- Pomyk
+- pqzx
+- pradeepmurugesan
+- ptisserand
+- pushkyn
+- raghuiamsingh
+- RajatVaryani
+- rfoyard
+- rohanjulka19
+- rv404674
+- sahilsharma011
+- SamWolfs
+- sascha-andres
+- scottleedavis
+- sdesani
+- SezalAgrawal
+- Sheshagiri
+- simonfrey
+- simross
+- sourabkumarkeshri
+- sowmiyamuthuraman
+- steevsachs
+- ThiefMaster
+- tpaschalis
+- valentijnnieman
+- vdepatla
+- VictorAvelar
+- willdot
+- wyze
+- xrav3nz
+ 
 
 ## Release v5.16 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
