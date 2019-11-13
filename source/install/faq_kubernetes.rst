@@ -14,5 +14,20 @@ Helm is a tool used to deploy Kubernetes manifests to a cluster, but does not fa
 Does the Mattermost Operator replace the Helm Chart?
 ----------------------------------------------------
 
-No. Helm is a good mechanism to deploy operators and other applications but doesn't facilitate application management. But you can use Helm to deploy the
-Mattermost operator. 
+No. Helm is a good mechanism to deploy operators and other applications but doesn't facilitate application management. It also requires more technical
+
+Is minIO the only available storage option?
+-------------------------------------------
+
+No, other options and operators can be added.
+
+Do I have to install a separate SQL server to use the Mattermost Operator?
+--------------------------------------------------------------------------
+
+No, you can use the operator on top of your existing deployment without setting up another database. We will shortly
+be providing steps for this configuration.
+
+Can you use blue-green deployments with different database schemas?
+-------------------------------------------------------------------
+
+Currently this is not supported as it introduces the possiblilty of missing a data entry in the database.

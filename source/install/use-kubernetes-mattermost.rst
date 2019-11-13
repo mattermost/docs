@@ -16,7 +16,7 @@ New Mattermost releases are announced via our community server, as well as socia
 **Performing rolling upgrades**
 
 1. Log in to your Kubernetes instance.
-2. Open the ``clusterinstallation.yaml`` manifest (the one created during installation).
+2. Open the ``mattermost-installation.yaml`` manifest (the one created during installation).
 3. Update the ``spec.version`` value to the new version.
 4. Save the changes.
 
@@ -24,7 +24,7 @@ Apply the changes with kubectl using
 
 .. code-block:: sh
 
-  $ kubectl apply -n mattermost -f /path/to/cluster-installation.yaml
+  $ kubectl apply -n mattermost -f /path/to/mattermost-installation.yaml
 
 The operator initiates a job in the Kubernetes cluster and once migration is complete the pods are restarted. If necessary,
 a database migration is also performed.
@@ -59,7 +59,7 @@ Once the upgrade has been successfully rolled out, all traffic can be switched f
 
 **Configuring Blue-green Deployments**
 
-Open the ``clusterinstallation manifest.yaml`` file and add ``blueGreen`` under ``spec``.
+Open the ``mattermost-installation.yaml`` file and add ``blueGreen`` under ``spec``.
 
 .. code-block:: yaml
 
@@ -87,24 +87,28 @@ To access the new ingresses, create CNAME or IP address records in your DNS regi
 To update the version of blue or green, change the version in the manifest to
 match the current version or the version you’d like to deploy. This
 change (regardless of which is the ``productionDeployment``) initiates a database migration.
-The schema is backwards and forwards compatible across minor versions and will not disrupt the production deployment.
+The schema is backwards and forwards compatible across minor versions  (from 5.9 onwards) and will not disrupt the production deployment.
+However, it will auto-upgrade the database. 
+
 
 Canary Builds
 -------------
 
 A canary build is used to test an experimental or untested build. It's similar to a blue-green deployment in that multiple environments
-are run simultaneously. However, where blue-green deployments have different URLs, canary builds are segmented randomly and users
-are not explicitly aware that they're on the canary build environment.
+are run simultaneously. However, where blue-green deployments have different URLs, canary builds are set up to direct a random segment of users
+to the test environment. Users are not explicitly aware that they're on the canary build environment.
+
+The redirect is managed with a cookie, which is valid for 24 hours.
 
 The Mattermost Operator currently allows segmenting by percentage (i.e., splitting the user pool between production and the canary build). In
 future releases segmentation options will include teams and individual users.
 
-Configuring canary builds requires an update to the ``clusterinstallation.manifest.yaml`` file and the addition of a plugin via System Console. Before
-proceeding, first download the plugin from `Mattermost Canary Plugin <https://github.com/mattermost/mattermost-plugin-canary>`__.
+Configuring canary builds requires an update to the ``mattermost-installation.yaml`` file and the addition of a plugin via System Console. Before
+proceeding, first download the `Mattermost Plugin for Canary Deployments <https://github.com/mattermost/mattermost-plugin-canary>`__.
 
 **Configuring canary builds**
 
-Open the ``clusterinstallation manifest.yaml`` file and add ``canary`` under ``spec``.
+Open the ``mattermost-installation.yaml`` file and add ``canary`` under ``spec``.
 
 .. code-block:: yaml
 
@@ -114,4 +118,10 @@ Open the ``clusterinstallation manifest.yaml`` file and add ``canary`` under ``s
       version: 5.15.0
       image: mattermost/mattermost-enterprise-edition
 
-Next, navigate to **System Console > Plugin Management**, enable plugins, and upload the Mattermost Canary Plugin. 
+Next, navigate to **System Console > Plugin Management**, enable plugins, and upload the Mattermost Canary Plugin. Once uploaded, refresh
+your page and then select **Settings** from the Canary plugin modal. Enter the percentage of users you'd like to direct to the canary build.
+
+Once complete, navigate to your Mattermost instance and open the Developer Tools menu in your browser. The entry for the Mattermost instance
+will display *always* or *never* depending on the segment you've been allocated to.
+
+You can disable canary builds in the ``mattermost-installation.yaml`` file by chaning the ``enable`` field to ``false``.

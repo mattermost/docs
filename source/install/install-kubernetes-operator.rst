@@ -3,7 +3,9 @@
 Installing the Operators
 ============================
 
-To get started, first install the required operators using kubectl.
+The required operators are installed using kubectl and each operator is created in its own namespace. Shorter namespace names
+are recommended. You can install and run multiple Mattermost installations in the same cluster using different namespaces. 
+
 
 **1. Install the MySQL Operator**
 
