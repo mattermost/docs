@@ -20,7 +20,7 @@ On your ADFS installation, note down the value of the **SAML 2.0/W-Federation UR
 Add a Relying Party Trust
 -------------------------
 
-1. In ADFS management snap-in, go to **AD FS > Relying Party Trusts** and click **Add Relying Party Trust** on the right sidebar. As an alternative right-click **Relying Party Trusts** and choose **Add Relying Party Trust** from the context menu.
+1. Open the ADFS management snap-in and select **AD FS > Relying Party Trusts > Add Relying Party Trust** on the right sidebar. You can also right-click **Relying Party Trusts** and choose **Add Relying Party Trust** from the context menu.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_000.png
 
