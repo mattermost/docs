@@ -179,7 +179,7 @@ Configure SAML sign-in for Mattermost
 3. Enable encryption.
   - Set **Enable Encryption** to ``true``.
   - For **Service Provider Private Key** use the Service Provider Private Key generated at the start of this process.
-  - For *Service Provider Public Certificate* use the Service Provider Public Certificate you generated at the beginning.
+  - For **Service Provider Public Certificate** use the Service Provider Public Certificate you generated at the start of this process.
   - Set *Sign Request* to suit your environment.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_configure-saml_003.png
