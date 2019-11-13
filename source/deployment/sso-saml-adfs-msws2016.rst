@@ -32,7 +32,7 @@ Add a Relying Party Trust
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_002.png
 
-4. In the **Specify Display Name** screen, enter a **Display Name** to recognize the trust, such as ``Mattermost``, and add any notes you want to make.
+4. In the **Specify Display Name** screen enter a **Display Name** (e.g., ``Mattermost``). You can add optional notes.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_003.png
 
