@@ -24,7 +24,7 @@ Add a Relying Party Trust
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_000.png
 
-2. A configuration wizard for adding a new relying party trust opens. In the **Welcome** screen, choose **Claims aware** and click **Start**.
+2. In the **Welcome** screen of the configuration wizard choose **Claims aware** and select **Start**.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_001.png
 
