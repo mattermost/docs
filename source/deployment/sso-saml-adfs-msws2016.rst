@@ -127,7 +127,7 @@ Export Identity Provider Certificate
 
 Next, we export the identity provider certificate, which will be later uploaded to Mattermost to finish SAML configuration.
 
-1. In ADFS management snap-in, go to **AD FS > Service > Certificates** and double click on the certificate under **Token-signing**. You may alternatively right-click the field, then click **View Certificate** in the context menu.
+1. Open the ADFS management snap-in, select **AD FS > Service > Certificates** and double click on the certificate under **Token-signing**. You can also right-click the field, then click **View Certificate** in the context menu.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_export-id-provider-cert_001.png
 
