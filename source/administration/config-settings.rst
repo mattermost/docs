@@ -71,11 +71,11 @@ View logging of server-side events.
 
 User Management
 ---------------
-Settings for managing users, user access, and permissions.
+Settings for managing users, user access, groups, and permissions.
 
 Users
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-View and manage active and inactive users, and revoke all user sessions. 
+View and manage active and inactive users, and revoke all user sessions. Access individual users to view their User ID, and view the teams they are on and what their role is on a team. Additionally, add the user to other teams without direct access to the team. 
 
 Teams (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
