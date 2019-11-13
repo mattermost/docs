@@ -331,7 +331,7 @@ Procedure:
 
 - **Feedback**: At end of meeting, remind to share feedback via survey.
 
-5. (Chair) Encourages questions in Mattermost or Zoom chat throughout the session.
+5. (Chair) Encourages questions in Mattermost or Zoom chat throughout the session, but refrains audience from asking during presentation time. Asks back the questions during alloted Q&A time. By reserving questions during Q&A, the sessions stays on time and sets expectations for attendees on when to join the conversation with questions.
 
 **After meeting:**
 
