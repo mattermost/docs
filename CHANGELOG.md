@@ -2,6 +2,23 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.4.7
+
+### Fixed (1 change)
+
+- Support use of kube2iam for cache when minio is disabled. !1011
+
+### Added (2 changes)
+
+- enable many pods for mailroom. !1019
+- Creates NetworkPolicy object for Mailroom. !1023
+
+### Other (2 changes)
+
+- Adds the global gitlab annotations to mailroom.
+- Update GitLab Version to 12.4.2.
+
+
 ## 2.4.6
 
 ### Fixed (1 change)
