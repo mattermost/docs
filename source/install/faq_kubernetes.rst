@@ -14,7 +14,8 @@ Helm is a tool used to deploy Kubernetes manifests to a cluster, but does not fa
 Does the Mattermost Operator replace the Helm Chart?
 ----------------------------------------------------
 
-No. Helm is a good mechanism to deploy operators and other applications but doesn't facilitate application management. It also requires more technical
+No. Helm is a good mechanism to deploy operators and other applications but doesn't facilitate application management. 
+
 
 Is minIO the only available storage option?
 -------------------------------------------
