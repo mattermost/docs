@@ -1,18 +1,20 @@
 .. _install-kubernetes-operator:
 
-Installing the Mattermost Operator
+Installing the Operators
 ============================
 
-The Mattermost Kubernetes Operator allows you to easily deploy and manage Mattermost installations through a single Kubernetes manifest. This operator is continuously being developed and will include additional features in the future. 
+The required operators are installed using kubectl and each operator is created in its own namespace. Shorter namespace names
+are recommended. You can install and run multiple Mattermost installations in the same cluster using different namespaces. 
 
-**1. Install the MySQL operator**
+
+**1. Install the MySQL Operator**
 
 .. code-block:: sh
 
   $ kubectl create ns mysql-operator
   $ kubectl apply -n mysql-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mysql-operator/mysql-operator.yaml
 
-**2. Install the MinIO operator**
+**2. Install the MinIO Operator**
 
 .. code-block:: sh
 
@@ -23,9 +25,11 @@ The Mattermost Kubernetes Operator allows you to easily deploy and manage Matter
 
 Follow the instructions `here <https://kubernetes.github.io/ingress-nginx/deploy/>`__.
 
-**4. Install the Mattermost operator**
+**4. Install the Mattermost Operator**
 
 .. code-block:: sh
 
   $ kubectl create ns mattermost-operator
   $ kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mattermost-operator/mattermost-operator.yaml
+
+Once completed, the installed components are listed in the configuration of your cluster.
