@@ -40,7 +40,7 @@ Add a Relying Party Trust
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_004.png
 
-However, if you would like to set up encryption for your SAML connection, click the **Browse** button and upload your Service Provider Public Certificate.
+If you would like to set up encryption for your SAML connection, select **Browse** and upload your Service Provider Public Certificate.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_005.png
 
