@@ -101,7 +101,7 @@ Guidelines for UI elements
 Use this table when writing the text for UI elements such as windows, dialog boxes, labels, and prompts.
 
 .. list-table::
-   :widths: 10 30 10 15 35
+   :widths: 10 30 10 25 25
    :header-rows: 1
 
    * - Element
@@ -111,7 +111,7 @@ Use this table when writing the text for UI elements such as windows, dialog box
      - Examples     
    * - Menu
      - |menu.png|
-     - All words
+     - Headline style
      - - Noun, noun phrase, or verb
        - No punctuation
        - Not more than three words
@@ -121,7 +121,7 @@ Use this table when writing the text for UI elements such as windows, dialog box
        - *Log Out*
    * - Tooltip
      - |tooltip.png|
-     - First word
+     - Sentence style
      - - Sentence fragment or sentence
        - No punctuation
        - Include articles (*a*, *an*, *the*)
@@ -131,7 +131,7 @@ Use this table when writing the text for UI elements such as windows, dialog box
        - *Remove from this list*
    * - In-field text
      - |field.png|  
-     - First word
+     - Sentence style
      - - Sentence fragment, sentence, or word that's an example of a valid entry
        - No punctuation
        - Include articles (*a*, *an*, *the*)
@@ -139,7 +139,7 @@ Use this table when writing the text for UI elements such as windows, dialog box
        - *Search*
    * - Action button
      - |action.png|
-     - All words
+     - Headline style
      - - Verb or verb phrase
        - No longer than 3 words
        - No articles (*a*, *an*, *the*)
@@ -148,7 +148,7 @@ Use this table when writing the text for UI elements such as windows, dialog box
        - *Edit*
    * - Label before a UI element
      - |label_before.png|
-     - First word
+     - Sentence style
      - - Noun, verb, or sentence fragment that's the title of the UI element
        - End with a colon where it precedes another UI element such as a radio button or check box
        - Include articles (*a*, *an*, *the*)
@@ -156,7 +156,7 @@ Use this table when writing the text for UI elements such as windows, dialog box
        - *Other words, separated by commas:*
    * - Label after a UI element
      - |label_after.png|
-     - First word
+     - Sentence style
      - - Noun, verb, or sentence fragment
        - No punctuation
        - Brief (lengthier explanations belong to help text)
@@ -164,13 +164,13 @@ Use this table when writing the text for UI elements such as windows, dialog box
        - *Alphabetically*
    * - Help text
      - |help.png|
-     - First word
+     - Sentence style
      - Complete sentences, with punctuation
      - - *You can add 20 more people.*
        - *People are invited automatically to join the channel.*
    * - Title
      - |title.png|
-     - All words
+     - Headline style
      - - Sentence fragment or sentence
        - No punctuation
      - - *Notification Preferences for Channel*
