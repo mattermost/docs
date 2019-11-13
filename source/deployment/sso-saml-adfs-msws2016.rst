@@ -171,7 +171,7 @@ Configure SAML sign-in for Mattermost
 	.. image:: ../../source/images/SSO-SAML-ADFS_configure-saml_001.png
 
 2. Configure Mattermost to verify the signature. 
-  - Set *Verify Signature* to *true*.
+  - Set **Verify Signature** to ``true``.
   - For *Service Provider Login URL* use the ``SAML 2.0 SSO service URL`` you specified in ADFS earlier.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_configure-saml_002.png
