@@ -89,12 +89,12 @@ spec:
             exec:
               command:
                 - pgrep
-                - /usr/bin/mail_room
+                - mail_room
           readinessProbe:
             exec:
               command:
                 - pgrep
-                - /usr/bin/mail_room
+                - mail_room
           lifecycle:
             preStop:
               exec:
