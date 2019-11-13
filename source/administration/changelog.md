@@ -6,14 +6,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.17 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-- **v5.17.1, release day TBD**
-  - 
-- **v5.17.0, released 2019-11-16**
-  - Original 5.17.0 release
-
 Mattermost v5.17.0 contains medium to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
-**Release Day: 2019-11-16**
+- **v5.17.1, release day TBD**
+  - Fixing 
+- **v5.17.0, released 2019-11-16**
+  - Original 5.17.0 release
 
 ### Bug Fixes
  - Fixed an issue where saving an empty string on Marketplace URL reset the URL instead of showing an error.
