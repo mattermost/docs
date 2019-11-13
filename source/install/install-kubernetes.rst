@@ -20,3 +20,4 @@ Tasks such as zero-downtime upgrades, blue/green deployments, canary builds, and
 .. include:: install-kubernetes-mattermost.rst
 .. include:: use-kubernetes-mattermost.rst
 .. include:: faq_kubernetes.rst
+.. include:: manage_kubernetes.rst

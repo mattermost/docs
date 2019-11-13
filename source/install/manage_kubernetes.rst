@@ -8,7 +8,7 @@ CLI commands
 
 You can manage and monitor your Mattermost installation's installation and deployment process in the CLI, using the commands listed below.
 
-.... code-block:: sh
+.. code-block:: sh
 
     $ kubectl -n mattermost get jobs
 
