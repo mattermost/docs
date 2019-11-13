@@ -27,7 +27,7 @@ General principles for in-product text
    - If you're describing what just happened. For example, it's okay to say *Your incoming webhook is set up*.
    - If the subject (the doer of an action) is the Mattermost application itself. For example, it's okay to say *The image is deleted* instead of *The server deleted the image*.
    
-- Use the past tense to say what's already happened, the present tense to describe a current state or condition, and the future tense to state something that is very definitely going to happen.
+- Use the present tense to describe a current state or condition, and the future tense to state something that is very definitely going to happen.
 - If you're asking the user to do or not do something, use imperatives (command phrases). For example, say *Do not change the Hostname* instead of saying *It is not recommended to change the Hostname*. Better still, explain what could go wrong if they do or don't do something. For example, say *Do not change the Hostname because if you do so <this bad thing will happen>.*
 
 Guidelines for messages
@@ -35,7 +35,9 @@ Guidelines for messages
 
 Don't blame the user. Inform them about what happened, explain why it happened, and suggest a way forward.
 
-Try to use complete sentences in your messages. If a message contains variables (tokens):
+Try to use complete sentences in your messages. A sentence phrase (an incomplete sentence) might sound okay in English but could present internationalization challenges.
+
+If a message contains variables (tokens):
 
 - Do not use verbs or adjectives as variables.
 - Do not create plurals of variables by adding an *s*.
@@ -74,7 +76,6 @@ A warning message is for alerting somebody about something that might go wrong. 
 
 - Use complete sentences.
 - Explain what has happened or can happen, and what can go wrong as a consequence.
-- If the message contains a question, phrase it in such a manner so that it has a Yes/No answer (unless you have specific action buttons for the message).
 
 - Examples:
 
@@ -105,7 +106,7 @@ Use this table when writing the text for UI elements such as windows, dialog box
 
    * - Element
      - Image 
-     - Capitalization
+     - Capitalization [*]_
      - Phrasing
      - Examples     
    * - Menu
@@ -114,6 +115,7 @@ Use this table when writing the text for UI elements such as windows, dialog box
      - - Noun, noun phrase, or verb
        - No punctuation
        - Not more than three words
+       - Action after clicking is obvious, without needing someone to click to discover
      - - *Members*
        - *Account Preferences*
        - *Log Out*
@@ -123,13 +125,14 @@ Use this table when writing the text for UI elements such as windows, dialog box
      - - Sentence fragment or sentence
        - No punctuation
        - Include articles (*a*, *an*, *the*)
+       - Keep it short
      - - *Start a Zoom meeting*
        - *Flag for following up*
        - *Remove from this list*
    * - In-field text
      - |field.png|  
      - First word
-     - - Sentence fragment, sentence, or word
+     - - Sentence fragment, sentence, or word that's an example of a valid entry
        - No punctuation
        - Include articles (*a*, *an*, *the*)
      - - *Add a comment*
@@ -138,6 +141,7 @@ Use this table when writing the text for UI elements such as windows, dialog box
      - |action.png|
      - All words
      - - Verb or verb phrase
+       - No longer than 3 words
        - No articles (*a*, *an*, *the*)
        - Exceptions: *OK*, *Yes*, *No*
      - - *Add Comment*
@@ -145,8 +149,8 @@ Use this table when writing the text for UI elements such as windows, dialog box
    * - Label before a UI element
      - |label_before.png|
      - First word
-     - - Noun, verb, or sentence fragment
-       - End with a colon
+     - - Noun, verb, or sentence fragment that's the title of the UI element
+       - End with a colon where it precedes another UI element such as a radio button or check box
        - Include articles (*a*, *an*, *the*)
      - - *Sign in with:*
        - *Other words, separated by commas:*
@@ -155,6 +159,7 @@ Use this table when writing the text for UI elements such as windows, dialog box
      - First word
      - - Noun, verb, or sentence fragment
        - No punctuation
+       - Brief (lengthier explanations belong to help text)
      - - *Channels grouped by type*
        - *Alphabetically*
    * - Help text
@@ -170,7 +175,9 @@ Use this table when writing the text for UI elements such as windows, dialog box
        - No punctuation
      - - *Notification Preferences for Channel*
        - *Contributors*
-   
+
+.. [*] For headline style, capitalize all words except those with 3 letters or fewer, articles (*a*, *an*, *the*), prepositions (*on*, *to*, *in*, *from*, *of*), and coordinating conjunctions (*and*, *but*, *or*, *for*). Despite these exceptions, always capitalize the first and last word. For sentence style, capitalize only the first word.
+
 Cheatsheet: UI text
 -----------------------
 |cheatsheet.png|
