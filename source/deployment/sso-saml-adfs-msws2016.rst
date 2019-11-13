@@ -10,7 +10,7 @@ This document provides steps to configure SAML 2.0 with Microsoft ADFS for Matte
 .. include:: sso-saml-before-you-begin.rst
 
 ## Prerequisites
- - An Active Directory instance where all users have a specified email and username attributes. For Mattermost servers running 3.3 and earlier, users must also have their first name and last name attributes specified.
+ - An Active Directory instance where all users have specified email and username attributes. For Mattermost servers running 3.3 and earlier, users must also have their first name and last name attributes specified.
  - A running Microsoft Server. The screenshots used in this guide are from Microsoft Server 2012R2, but similar steps should work for other versions.
  - An SSL certificate to sign your ADFS login page.
  - ADFS installed on your Microsoft Server. You can find a detailed guide for deploying and configuring ADFS in `this article <https://msdn.microsoft.com/en-us/library/gg188612.aspx>`__.
