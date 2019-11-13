@@ -106,7 +106,7 @@ future releases segmentation options will include teams and individual users.
 Configuring canary builds requires an update to the ``mattermost-installation.yaml`` file and the addition of a plugin via System Console. Before
 proceeding, first download the `Mattermost Plugin for Canary Deployments <https://github.com/mattermost/mattermost-plugin-canary/releases>`__.
 
-**Configuring canary builds**
+**Configuring Canary Builds**
 
 Open the ``mattermost-installation.yaml`` file and add ``canary`` under ``spec``.
 
