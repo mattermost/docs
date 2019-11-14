@@ -34,6 +34,7 @@ The table below details the minimum Kubernetes cluster resources that Mattermost
     "25,000", "14", "16 GB", "4"
 
 **Note:**
+
 - These resources take into account all components required for Mattermost, including proxy, database and file storage.
 - Resource requirements may vary depending on user usage and bot activity.
 - For larger installations, it may be beneficial to use nodes for the databases that have more memory and/or are optimized for memory.

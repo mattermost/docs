@@ -13,6 +13,7 @@ copy and paste the contents, and save the file with the relevant name.
 **1. (Enterprise only) Create a Mattermost License Secret**
 
 Open a text editor and create a text file with the following details.
+
 **Note:** Replace ``%LICENSE_FILE_CONTENTS%`` with the contents of your Mattermost license file.
 
 
