@@ -5,7 +5,7 @@ dependencies:
   condition: certmanager.install
   alias: certmanager
 - name: prometheus
-  version: 5.5.3
+  version: 9.0.0
   repository: https://kubernetes-charts.storage.googleapis.com/
   condition: prometheus.install
 - name: postgresql

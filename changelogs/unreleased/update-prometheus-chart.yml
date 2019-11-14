@@ -1,0 +1,5 @@
+---
+title: Update prometheus chart to 9.0.0
+merge_request: 1039
+author:
+type: changed
