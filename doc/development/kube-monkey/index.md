@@ -1,7 +1,7 @@
 # Kube monkey
 
 [kube monkey](https://github.com/asobti/kube-monkey) is an implementation of
-Netflix's [chaos monkey](https://github.com/Netflix/chaosmonkey) for kubernetes
+Netflix's [chaos monkey](https://github.com/Netflix/chaosmonkey) for Kubernetes
 clusters. It schedules randomly killing of pods in order to test fault tolerance
 of a highly available system.
 
@@ -28,7 +28,7 @@ file. For more info read the official [kube monkey docs](https://github.com/asob
 
 ## Usage
 
-The [GKE bootstrap script](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/scripts/gke_bootstrap_script.sh)
+The [gke_bootstrap_script.sh](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/scripts/gke_bootstrap_script.sh)
 takes an argument `chaos` which installs and unleashes kube monkey by
 scheduling a run 60s after installing kube monkey by default. It also sets up
 the needed service account and role if RBAC is enabled.

@@ -51,7 +51,7 @@ If your external [Gitaly server listens over TLS port](https://docs.gitlab.com/e
 you can make your GitLab instance communicate with it over TLS. To do this, you
 have to
 
-1. Create a kubernetes secret containing the certificate of the Gitaly
+1. Create a Kubernetes secret containing the certificate of the Gitaly
    server
 
    ```

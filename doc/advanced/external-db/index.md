@@ -40,7 +40,7 @@ If you use a mutual TLS connection to the database:
 - `global.psql.ssl.clientCertificate`: The key inside the secret referring the client certificate.
 - `global.psql.ssl.clientKey`: The client inside the secret.
 
-For example, pass these values via helm's `--set` flag while deploying:
+For example, pass these values via Helm's `--set` flag while deploying:
 
 ```sh
 helm install

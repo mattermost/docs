@@ -1,6 +1,6 @@
 # Deprecations template
 
-The purpose of this template is to provide a means to prevent users from deploying the helm chart, or updates to it, in what would be a broken state due to changes in how the chart is configured.
+The purpose of this template is to provide a means to prevent users from deploying the Helm chart, or updates to it, in what would be a broken state due to changes in how the chart is configured.
 
 The design makes use of multiple templates, providing a modular method of declaring and managing deprecations. This is to aid in simplification of both development and maintenance.
 

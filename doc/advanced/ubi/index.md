@@ -12,13 +12,13 @@ disable the internal services, and use external deployments or services.
 The services that must be disabled and provided externally are:
 
 - PostgreSQL
-- Minio (Object Store)
+- MinIO (Object Store)
 - Redis
 
 The services must be disabled are:
 
 - CertManager (Let's Encrypt integration)
-- Nginx Ingress
+- NGINX Ingress
 - Prometheus
 - Grafana
 - GitLab Runner

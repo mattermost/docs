@@ -1,4 +1,4 @@
-# Set up standalone Postgresql database
+# Set up standalone PostgreSQL database
 
 We'll make use of the [Omnibus GitLab](https://about.gitlab.com/install/#ubuntu) package for Ubuntu. This package provides versions of the services that are guaranteed to be compatible with the charts' services.
 

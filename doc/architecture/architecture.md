@@ -29,10 +29,10 @@ The following GitLab components have images in the CNG repository.
 - Gitaly
 - GitLab Elasticsearch Indexer
 - [mail_room](https://github.com/tpitale/mail_room)
-- GitLab exporter
+- GitLab Exporter
 - GitLab Shell
 - Sidekiq
-- Gitlab task-runner
+- GitLab task-runner
 - Unicorn
 - Workhorse
 
@@ -69,23 +69,23 @@ At this high level, a customer can make decisions like:
 - Whether they want to use the embedded Postgres chart, or to use an external
   database like Amazon RDS for Postgres.
 - To bring their own SSL certificates, or leverage Let's Encrypt.
-- To use a load balancer, or a dedicated ingress.
+- To use a load balancer, or a dedicated Ingress.
 
 Customers who would like to get started quickly and easily should begin with this chart.
 
 ### Subcharts
 
-The gitlab chart is made of multiple subcharts. These charts provide individual components of the GitLab software.
+The GitLab chart is made of multiple subcharts. These charts provide individual components of the GitLab software.
 
 Subcharts included are :
 
-- [sidekiq](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/sidekiq)
-- [unicorn](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/unicorn)
-- [gitlab-shell](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/gitlab-shell)
-- [gitaly](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/gitaly)
-- [minio](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/minio)
-- [redis](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/redis)
-- [nginx](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/nginx)
+- [Sidekiq](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/sidekiq)
+- [Unicorn](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/unicorn)
+- [GitLab Shell](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/gitlab-shell)
+- [Gitaly](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/gitaly)
+- [MinIO](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/minio)
+- [Redis](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/redis)
+- [NGINX](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/nginx)
 - [registry](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/registry)
 
 ### Components list

@@ -139,7 +139,7 @@ objects. For example: with expanding the disk storage size, the storage size
 settings in the [PersistentVolumeClaim][pvc] will only be used when a new volume
 resource is requested. So you would only need to increase the values in the
 [PersistentVolumeClaim][pvc] if you intend to scale up more disks (for use in
-additional gitaly pods).
+additional Gitaly pods).
 
 If you do need to have the changes reflected in Kubernetes, be sure that you've
 updated your reclaim policy on the volumes as described in the [Before making storage changes](#before-making-storage-changes)
@@ -429,19 +429,19 @@ Otherwise, if you have bound the claim to a new volume, move onto [apply the cha
 ## Apply the changes to the GitLab chart
 
 After making changes to the [PersistentVolumes][pv] and [PersistentVolumeClaims][pvc],
-you will also want to issue a helm update with the changes applied to the chart
+you will also want to issue a Helm update with the changes applied to the chart
 settings as well.
 
 See the [installation storage guide](../../installation/storage.md#using-the-custom-storage-class)
 for the options.
 
 > **Note**: If you made changes to the Gitaly [volume claim][pvc], you will need to delete the
-> Gitaly [StatefulSet][statefulset] before you will be able to issue a helm update. This is
+> Gitaly [StatefulSet][statefulset] before you will be able to issue a Helm update. This is
 > because the StatefulSet's Volume Template is immutable, and cannot be changed.
 >
 > You can delete the statefulset without deleting the Gitaly Pods:
 > `kubectl --namespace <namespace> delete --cascade=false StatefulSet <release-name>-gitaly`
-> The helm update command will recreate the StatefulSet, which will adopt and
+> The Helm update command will recreate the StatefulSet, which will adopt and
 > update the Gitaly pods.
 
 Update the chart, and include the updated configuration:

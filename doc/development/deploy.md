@@ -18,9 +18,9 @@ git checkout <BRANCH_NAME>
 > is very easy to miss the leading slash on the filepath.
 
 Other steps from the [installation documentation](../installation/index.md) still apply. The difference is when deploying
-a development branch, you need to update the local dependencies, and pass the local git repo location to the helm command.
+a development branch, you need to update the local dependencies, and pass the local Git repo location to the Helm command.
 
-From within your git checkout of the repo, run the following helm commands to install:
+From within your Git checkout of the repo, run the following Helm commands to install:
 
 ```sh
 helm repo add gitlab https://charts.gitlab.io/
