@@ -134,7 +134,7 @@ The integration can respond with an update to the original post, or with an ephe
 Message Menus for Channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can provide a list of channels for message menus users to select. Users can only select from public channels in their teams.
+You can provide a list of channels for message menus for users to select from. Users can only select from public channels in their teams.
 
 Specify ``channels`` as your action's ``data_source`` as follows:
 
