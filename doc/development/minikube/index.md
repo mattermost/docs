@@ -155,7 +155,7 @@ For further details on Helm, see [Developing for Helm](../../installation/tools.
 
 When deploying this chart into minikube, some chart resources need to be reduced or disabled.
 It is not possible to use the `nginx-ingress` chart to provide ports `22`, `80`,
-`443`. It's best to disable it and set the ingress class by setting
+`443`. It's best to disable it and set the Ingress class by setting
 `nginx-ingress.enabled=false,global.ingress.class="nginx"`.
 
 The `certmanager` chart can not be used with minikube. You must disable this by

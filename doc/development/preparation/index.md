@@ -9,7 +9,7 @@ and should perform the setup the day prior to the demo itself:
 
 - [GKE setup](#gke-setup)
 - [External resources](#external-resources)
-- [Omniauth for Google OAuth2](#omniauth-for-google-oauth2)
+- [OmniAuth for Google OAuth2](#omniauth-for-google-oauth2)
 
 ## GKE setup
 
@@ -91,7 +91,7 @@ properties section of the global chart.
 ### Redis
 
 Preparation of chart-external Redis services (as a pet or SaaS), can
-be found in [advanced/external-redis](../../advanced/external-redis/index.md).
+be found in [`advanced/external-redis`](../../advanced/external-redis/index.md).
 This can be done as documented there. Once that is configured, the chart should
 be configured with the external service by making use of the `globals.redis`
 properties section of the global chart.
@@ -99,15 +99,15 @@ properties section of the global chart.
 ### Gitaly
 
 Preparation of chart-external Gitaly services can
-be found in [advanced/external-gitaly](../../advanced/external-gitaly/index.md).
+be found in [`advanced/external-gitaly`](../../advanced/external-gitaly/index.md).
 This can be done as documented there. Once that is configured, the chart should
 be configured with the external service by making use of the `globals.gitaly`
 properties section of the global chart.
 
-## Omniauth for Google OAuth2
+## OmniAuth for Google OAuth2
 
 Configuring a deployment with the capability to integrate with GKE requires
-the use of Omniauth. You will need to ensure that a set of
+the use of OmniAuth. You will need to ensure that a set of
 **OAuth Client ID** credentials have been created for the hostname of the GitLab
 endpoint in your cluster.
 

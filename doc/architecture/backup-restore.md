@@ -31,7 +31,7 @@ The sequence of execution is:
    1. If the object storage backend is marked for skipping, skip this storage backend.
    1. Tar the existing data in the corresponding object storage bucket naming it `<bucket-name>.tar`
    1. Move the tar to the backup location on disk
-1. Write a `backup_information.yml` file which contains some metadata identifying the version of gitlab, the time of the backup and the skipped items.
+1. Write a `backup_information.yml` file which contains some metadata identifying the version of GitLab, the time of the backup and the skipped items.
 1. Create a tar file containing individual tar files along with `backup_information.yml`
 1. Upload the resulting tar file to object storage `gitlab-backups` bucket.
 
@@ -50,8 +50,8 @@ of your artifacts by setting the `BACKUP_BACKEND` environment variable to `gcs`.
 ### Restore
 
 The backup utility when given an argument `--restore` attempts to restore from an existing backup to the running instance. This
-backup can be from either an omnibus-gitlab or a CNG Helm chart installation given that both the instance that was
-backed up and the running instance runs the same version of gitlab. The restore expects a file in backup bucket using `-t <backup-name>` or a remote url using `-f <url>`.
+backup can be from either an Omnibus GitLab or a CNG Helm chart installation given that both the instance that was
+backed up and the running instance runs the same version of GitLab. The restore expects a file in backup bucket using `-t <backup-name>` or a remote url using `-f <url>`.
 
 When given a `-t` parameter it looks into backup bucket in object storage for a backup tar with such name. When
 given a `-f` parameter it expects that the given url is a valid uri of a backup tar in a location accessible from the container.

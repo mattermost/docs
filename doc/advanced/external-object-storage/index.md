@@ -5,7 +5,7 @@ By default, an S3-compatible storage solution named `minio` is deployed with the
 chart, but for production quality deployments, we recommend using a hosted
 object storage solution like Google Cloud Storage or AWS S3.
 
-To disable minio, set this option and then follow the related documentation below:
+To disable MinIO, set this option and then follow the related documentation below:
 
 ```
 --set global.minio.enabled=false
@@ -18,7 +18,7 @@ This documentation specifies usage of access and secret keys for AWS. It is also
 
 ## Azure Blob Storage
 
-GitLab uses [fog](https://github.com/fog/fog), but [doesn't currently support fog-azure](https://gitlab.com/gitlab-org/gitlab-foss/issues/55624). To make use Azure Blob Storage, you will have to setup a [azure-minio gateway](./azure-minio-gateway.md).
+GitLab uses [fog](https://github.com/fog/fog), but [doesn't currently support Fog Azure](https://gitlab.com/gitlab-org/gitlab-foss/issues/55624). To make use Azure Blob Storage, you will have to set up an [Azure MinIO gateway](azure-minio-gateway.md).
 
 ## Docker Registry images
 
@@ -38,9 +38,9 @@ Create the secret per [registry chart documentation on storage](../../charts/reg
 Examples for [S3](https://docs.docker.com/registry/storage-drivers/s3/)(any s3 compatible), [Azure](https://docs.docker.com/registry/storage-drivers/azure/) and [GCS](https://docs.docker.com/registry/storage-drivers/gcs/) drivers can be found in
 [examples/objectstorage](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage).
 
-- [registry.s3.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/registry.s3.yaml)
-- [registry.gcs.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/registry.gcs.yaml)
-- [registry.azure.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/registry.azure.yaml)
+- [`registry.s3.yaml`](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/registry.s3.yaml)
+- [`registry.gcs.yaml`](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/registry.gcs.yaml)
+- [`registry.azure.yaml`](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/registry.azure.yaml)
 
 ### Registry configuration
 
@@ -95,12 +95,12 @@ See the [charts/globals documentaion on appConfig](../../charts/globals.md#confi
 
 Create the secret(s) per the [connection details documentation](../../charts/globals.md#connection), and then configure the chart to use the provided secrets. Note, the same secret can be used for all of them.
 
-Examples for [AWS][fog-aws](any S3 compatible like [Azure using Minio][minio-azure] ) and [Google][fog-gcs] providers can be found in
+Examples for [AWS][fog-aws](any S3 compatible like [Azure using MinIO][minio-azure] ) and [Google][fog-gcs] providers can be found in
 [examples/objectstorage](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage).
 
-- [rails.s3.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/rails.s3.yaml)
-- [rails.gcs.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/rails.gcs.yaml)
-- [rails.azure.yaml](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/rails.azure.yaml)
+- [`rails.s3.yaml`](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/rails.s3.yaml)
+- [`rails.gcs.yaml`](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/rails.gcs.yaml)
+- [`rails.azure.yaml`](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples/objectstorage/rails.azure.yaml)
 
 [fog-aws]: https://fog.io/storage/#using-amazon-s3-and-fog
 [fog-gcs]: https://fog.io/storage/#google-cloud-storage
@@ -117,7 +117,7 @@ Examples for [AWS][fog-aws](any S3 compatible like [Azure using Minio][minio-azu
 ## Backups
 
 Backups are also stored in object storage, and need to be configured to point
-externally rather than the included minio service. The backup/restore procedure makes
+externally rather than the included MinIO service. The backup/restore procedure makes
 use of two separate buckets. A bucket for storing backups (`global.appConfig.backups.bucket`)
 and a tmp bucket for preserving existing data during the restore process (`global.appConfig.backups.tmpBucket`).
 Currently AWS S3-compatible object storage systems and Google Cloud Storage are supported backends

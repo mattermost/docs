@@ -13,11 +13,11 @@ Technical details for how the utility works can be found in the [architecture do
 
 ## Object storage
 
-We provide a minio instance out of the box when using this charts unless an [external object storage](../advanced/external-object-storage/index.md) is specified. The default behavior of the task-runner pod defaults to connect to our minio unless specific settings are given. The task-runner can also be configured to back up to Amazon S3 or Google Cloud Storage (GCS).
+We provide a MinIO instance out of the box when using this charts unless an [external object storage](../advanced/external-object-storage/index.md) is specified. The default behavior of the task-runner pod defaults to connect to our MinIO unless specific settings are given. The task-runner can also be configured to back up to Amazon S3 or Google Cloud Storage (GCS).
 
 ### Backups to S3
 
-The task-runner uses `s3cmd` to connect to object storage. In order to configure connectivity to external object storage `gitlab.task-runner.backups.objectStorage.config.secret` should be specified which points to a kubernetes secret containing a `.s3cfg` file. `gitlab.task-runner.backups.objectStorage.config.key` should be specified if different from the default of `config`. This points to the key containing the contents of a .s3cfg file.
+The task-runner uses `s3cmd` to connect to object storage. In order to configure connectivity to external object storage `gitlab.task-runner.backups.objectStorage.config.secret` should be specified which points to a Kubernetes secret containing a `.s3cfg` file. `gitlab.task-runner.backups.objectStorage.config.key` should be specified if different from the default of `config`. This points to the key containing the contents of a .s3cfg file.
 
 It should look like this:
 
@@ -81,7 +81,7 @@ when restoring a backup.
 
 As the backups are assembled locally outside of the object storage target, temporary disk space is needed. The required space might exceed the size of the actual backup archive.
 The default configuration will use the task-runner pod's file system to store the temporary data. If you find pod being evicted due to low resources, you should attach a persistent volume to the pod to hold the temporary data.
-On GKE, add the following settings to your helm command:
+On GKE, add the following settings to your Helm command:
 
 ```
 --set gitlab.task-runner.persistence.enabled=true

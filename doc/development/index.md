@@ -12,7 +12,7 @@ All `CHANGELOG.md` entries should be created via the [changelog entries](changel
 
 ## Installation from Repo
 
-Details on installing from the git repo can be found in the [developer deployment](deploy.md) documentation.
+Details on installing from the Git repo can be found in the [developer deployment](deploy.md) documentation.
 
 ## Running GitLab QA
 
@@ -24,7 +24,7 @@ deployed cloud native GitLab installation.
 ## Kube monkey
 
 [kube monkey](https://github.com/asobti/kube-monkey) is an implementation of
-Netflix's [chaos monkey](https://github.com/Netflix/chaosmonkey) for kubernetes
+Netflix's [chaos monkey](https://github.com/Netflix/chaosmonkey) for Kubernetes
 clusters. It schedules randomly killing of pods in order to test fault tolerance
 of a highly available system.
 
@@ -45,11 +45,11 @@ Template functions are placed into namespaces according to the chart they are as
 Examples:
 
 - `gitlab.redis.host`: provides the host name of the Redis server, as a part of the `gitlab` chart.
-- `registry.minio.url`: provides the URL to the Minio host as part of the `registry` chart.
+- `registry.minio.url`: provides the URL to the MinIO host as part of the `registry` chart.
 
 ## Common structure for values.yaml
 
-Many charts need to be provided with the same information, for example we need to provide the redis and postgres connection settings to  multiple charts. Here we outline our standard naming and structure for those settings.
+Many charts need to be provided with the same information, for example we need to provide the Redis and postgres connection settings to multiple charts. Here we outline our standard naming and structure for those settings.
 
 ### Connecting to other services
 
@@ -87,7 +87,7 @@ We use secrets to store sensitive information like passwords and share them amon
 The common fields we use them in are:
 
 - **Certificates** - TLS certificates for the registry etc.
-- **Passwords** - Sharing the redis password.
+- **Passwords** - Sharing the Redis password.
 - **Auth Tokens** - Sharing the inter-service auth tokens
 
 ### Certificates
@@ -316,7 +316,7 @@ the registry. You can either [add the certificate](https://docs.docker.com/regis
 [expose the registry over HTTP](https://docs.docker.com/registry/insecure/#deploy-a-plain-http-registry) (see `global.hosts.registry.https`).
 Note that adding the certificate is more secure than the insecure registry solution.
 
-Please keep in mind that Registry uses the external domain name of Minio service (see `global.hosts.minio.name`). You may
+Please keep in mind that Registry uses the external domain name of MinIO service (see `global.hosts.minio.name`). You may
 encounter an error when using internal domain names, e.g. with custom TLDs for development environment. The common symptom
 is that you can login to the Registry but you can't push or pull images. This is generally because the Registry container(s)
-can not resolve the Minio domain name and find the correct endpoint (you can see the errors in container logs).
+can not resolve the MinIO domain name and find the correct endpoint (you can see the errors in container logs).

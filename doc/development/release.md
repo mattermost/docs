@@ -8,7 +8,7 @@ Major releases will be for breaking changes **and** significant milestones in th
 
 We will bump it for:
 
-- significant additions/changes (let's say we add pages by default, or we drop nginx completely)
+- significant additions/changes (let's say we add pages by default, or we drop NGINX completely)
 - breaking changes in GitLab or in the charts (requiring manual interaction to your existing install to upgrade)
 - Major updates in the GitLab image. (the release of 12.0.0)
 
@@ -53,7 +53,7 @@ We will bump it for:
 
 ### Future iteration
 
-While we considered just using the GitLab version as our own, we are not yet in lockstep with gitlab releases to the point where we would make a breaking change here in the chart, and require gitlab to bump the version number to 12 for instance. For now we will move forward with a chart specific version scheme, until we get to the point where we have the charts stable enough that we are comfortable with sharing the same version, and a chart update being a reasonable reason to bump GitLab's core version.
+While we considered just using the GitLab version as our own, we are not yet in lockstep with GitLab releases to the point where we would make a breaking change here in the chart, and require GitLab to bump the version number to 12 for instance. For now we will move forward with a chart specific version scheme, until we get to the point where we have the charts stable enough that we are comfortable with sharing the same version, and a chart update being a reasonable reason to bump GitLab's core version.
 
 ## Branches and Tags
 
@@ -91,7 +91,7 @@ Related to releasing using the proposed branching strategy
 
 ## Releasing the chart
 
-Releasing a new version of the chart is handled by the helm release tasks in the [release tools repo](https://gitlab.com/gitlab-org/release-tools)
+Releasing a new version of the chart is handled by the Helm release tasks in the [release tools repo](https://gitlab.com/gitlab-org/release-tools)
 
 By default, this task will be automatically run from CI when a new release image is tagged in the [CNG image repo](https://gitlab.com/gitlab-org/build/CNG)
 

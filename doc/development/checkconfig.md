@@ -1,6 +1,6 @@
 # checkConfig template
 
-The purpose of this template is to provide a means to prevent users from deploying the helm chart, or updates to it, in what would be a broken state due to known problematic configurations.
+The purpose of this template is to provide a means to prevent users from deploying the Helm chart, or updates to it, in what would be a broken state due to known problematic configurations.
 
 The design makes use of multiple templates, providing a modular method of declaring and managing checks. This is to aid in simplification of both development and maintenance.
 

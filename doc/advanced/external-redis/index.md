@@ -21,7 +21,7 @@ Items below can be further customized if you are not using the defaults:
 
 - `global.redis.port`: The port the database is available on, defaults to `6379`
 
-For example, pass these values via helm's `--set` flag while deploying:
+For example, pass these values via Helm's `--set` flag while deploying:
 
 ```
 helm install .  \

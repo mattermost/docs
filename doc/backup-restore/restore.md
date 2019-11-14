@@ -1,6 +1,6 @@
 # Restoring a GitLab installation
 
-> To obtain a backup tarball of an existing GitLab instance that used other installation methods like an omnibus-gitlab package or GitLab-Omnibus helm chart, follow the instructions [given in documentation](https://docs.gitlab.com/ee/raketasks/backup_restore.html#creating-a-backup-of-the-gitlab-system)
+> To obtain a backup tarball of an existing GitLab instance that used other installation methods like an Omnibus GitLab package or Omnibus GitLab Helm chart, follow the instructions [given in documentation](https://docs.gitlab.com/ee/raketasks/backup_restore.html#creating-a-backup-of-the-gitlab-system)
 >
 > **Note**: If you are restoring a backup taken from another instance, you must migrate your existing instance to using object storage before taking the backup. See [issue 646](https://gitlab.com/gitlab-org/charts/gitlab/issues/646)
 
@@ -99,7 +99,7 @@ kubectl delete pods -lapp=unicorn,release=<helm release name>
 
 The restoration process does not update the `gitlab-initial-root-password` secret with the value from backup. For logging in as `root`, use the original password included in the backup. In the case that the password is no longer accessible, follow the steps below to reset it.
 
-1. Attach to the unicorn pod by executing the command
+1. Attach to the Unicorn pod by executing the command
 
    ```bash
    kubectl exec <unicorn pod name> -it bash
