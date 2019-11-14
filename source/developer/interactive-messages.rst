@@ -165,7 +165,7 @@ Specify ``channels`` as your action's ``data_source`` as follows:
 Message Menus for Users
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Similar to channels, you can also provide a list of users for message menus. The user can choose user who is part of the Mattermost system.
+Similar to channels, you can also provide a list of users for message menus. The user can choose the user who is part of the Mattermost system.
 
 Specify ``users`` as your action's ``data_source`` as follows:
 
