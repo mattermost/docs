@@ -1,4 +1,4 @@
-{{/* ######## Geo related tempaltes */}}
+{{/* ######## Geo related templates */}}
 {{/*
 
 */}}
