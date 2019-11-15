@@ -15,7 +15,9 @@ After a release reaches its end-of-life, no further updates will be provided for
 
 Please see `Release Lifecycle documentation <https://docs.mattermost.com/administration/release-lifecycle.html>`_ for full list of lifecycles for each Mattermost release.
 
-To receive updates about Extended Support Releases, sign up for our mailing list `here <http://eepurl.com/dCKn2P>`__. 
+To receive updates about Extended Support Releases, sign up for our mailing list `here <http://eepurl.com/dCKn2P>`__.
+
+.. image:: ../images/ESR_graph.png
 
 What is included in an Extended Support Release dot release? 
 ------------------------------------------------------------
