@@ -197,7 +197,12 @@ data:
     gitlab-helm-chart
   workhorse-config.toml.erb: |
     [redis]
+    {{- if not .Values.global.redis.sentinels }}
     URL = "{{ template "gitlab.redis.scheme" . }}://{{ template "gitlab.redis.host" . }}:{{ template "gitlab.redis.port" . }}"
+    {{- else }}
+    SentinelMaster = "{{ template "gitlab.redis.host" . }}"
+    Sentinel = [ {{ template "gitlab.redis.workhorse.sentinel-list" . }} ]
+    {{- end }}
     {{- if .Values.global.redis.password.enabled }}
     Password = "<%= File.read("/etc/gitlab/redis/password").strip.dump[1..-2] %>"
     {{- end }}

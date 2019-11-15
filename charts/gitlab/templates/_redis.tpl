@@ -53,3 +53,11 @@ sentinels:
     port: {{ default 26379 $entry.port }}
 {{- end }}
 {{- end -}}
+
+{{- define "gitlab.redis.workhorse.sentinel-list" }}
+{{- $sentinelList := list }}
+{{- range $i, $entry := .Values.global.redis.sentinels }}
+  {{- $sentinelList = append $sentinelList (quote (print "tcp://" (trim $entry.host) ":" $entry.port)) }}
+{{- end }}
+{{- $sentinelList | join "," }}
+{{- end -}}

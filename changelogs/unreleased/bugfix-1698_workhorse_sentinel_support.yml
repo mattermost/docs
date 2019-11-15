@@ -1,0 +1,5 @@
+---
+title: Fixed Redis Sentinel support for gitlab-workhorse
+merge_request: 1043
+author:
+type: fixed
