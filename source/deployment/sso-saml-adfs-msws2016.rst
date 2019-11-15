@@ -97,7 +97,7 @@ The entries in the **Outgoing Claim Type** column can be modified and the entrie
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_create-claim-rules_003.png
 
-4. Create another new rule by clicking the **Add Rule** button.
+4. Select **Add Rule** to create another new rule.
 
 5. In the **Choose Rule Type** screen, select **Transform an Incoming Claim** from the drop-down menu, then click **Next**.
 
