@@ -40,7 +40,7 @@ Mattermost v5.17.0 contains medium to high level security fixes. [Upgrading](htt
  - Fixed an issue where post metadata was returned for deleted posts.
  - Fixed an issue where users were not able to use ``api/v4/websocket`` with a trailing slash.
  - Fixed an issue with subpaths where in-app System Console links were missing in the ``/subpath`` and resulted in a 404 error.
- - Fixed an issue where **Terms of Service** and **Privacy Policy** in **Main Menu > About Mattermost** should permanently link to Mattermost's policies.
+ - Fixed an issue where **Terms of Service** and **Privacy Policy** in **Main Menu > About Mattermost** did not permanently link to Mattermost's policies.
  
 ### config.json
 
