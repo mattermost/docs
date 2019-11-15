@@ -24,7 +24,7 @@ If the postgresql username is provided, it will use that, otherwise it will fall
 to "gitlab_replicator" default
 */}}
 {{- define "gitlab.geo.psql.username" -}}
-{{- coalesce .Values.global.geo.psql.username "gitlab_replicator" -}}
+{{- coalesce .Values.global.geo.psql.username "gitlab_geo" -}}
 {{- end -}}
 
 {{/*
