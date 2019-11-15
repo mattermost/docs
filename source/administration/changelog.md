@@ -28,7 +28,7 @@ Mattermost v5.17.0 contains medium to high level security fixes. [Upgrading](htt
  - Fixed an issue where clicking "Pinned" icon removed text in the search box.
  - Fixed an issue where **Main Menu > Integrations > OAuth 2.0 Applications** page user interface broke when shrinking the window to a small size.
  - Fixed an issue where no feedback was given on mobile view when the maximum post length had been exceeded.
- - Fixed an issue where dragging or dropping a folder should scroll the user to the right-hand side text box to make the error more visible.
+ - Fixed an issue where dragging or dropping a folder did not scroll the user to the right-hand side text box to make the error more visible.
  - Fixed an issue on mobile browser view where the post menu was split in 2 and users were not able to scroll up to see "Add Reaction" option.
  - Fixed an issue where pressing and holding on teams and channels in the left-hand side opened the context menu on the Desktop App.
  - Fixed an issue where the user popover bled off screen when browser or Desktop App was set to full-screen mode.
