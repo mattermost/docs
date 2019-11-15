@@ -44,6 +44,8 @@ Mattermost v5.17.0 contains medium to high level security fixes. [Upgrading](htt
  
 ### config.json
 
+A setting option was added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``ServiceSettings`` in ``config.json``:
     - Added ``EnableLatex`` to add an option to enable/disable rendering of latex code.
