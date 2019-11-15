@@ -3,7 +3,7 @@ Extended Support Release
 
 What is an Extended Support Release?
 ------------------------------------
-During each monthly release, Mattermost backports security fixes to the previous two monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.  
+During each monthly release, Mattermost backports security fixes to the previous three monthly releases. Extended Support Releases (ESRs) are releases that will receive backports for security fixes and major bug fixes for the length of their life cycle.  
 
 What is the life cycle of an Extended Support Release?
 ------------------------------------------------------
