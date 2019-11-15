@@ -3,7 +3,7 @@ Release Lifecycle
 
 What is a Release Lifecycle?
 ------------------------------------
-During each monthly release, Mattermost backports security and major bug fixes to the previous two monthly releases. Extended Support Releases receive backports for security fixes and major bug fixes for the length of their life cycle.  Once a release life cycle has ended, it will no longer receive the security or major bug backports.
+During each monthly release, Mattermost backports security and major bug fixes to the previous three monthly releases. Extended Support Releases receive backports for security fixes and major bug fixes for the length of their life cycle.  Once a release life cycle has ended, it will no longer receive the security or major bug backports.
 
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | Version     | Release Type          | Lifecyle Start Date      | Lifecycle End Date       | Extended Support Release |
@@ -72,13 +72,13 @@ During each monthly release, Mattermost backports security and major bug fixes t
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | 4.5         | Feature               |  2017-12-16              | 2018-02-15               |                          | 
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
-| 4.4         | Feature               |  2018-11-16              | 2018-01-15               |                          |
+| 4.4         | Feature               |  2017-11-16              | 2018-01-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
-| 4.3         | Feature               |  2018-10-16              | 2017-12-15               |                          |
+| 4.3         | Feature               |  2017-10-16              | 2017-12-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
-| 4.2         | Feature               |  2018-09-16              | 2017-11-15               |                          |
+| 4.2         | Feature               |  2017-09-16              | 2017-11-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
-| 4.1         | Feature               |  2018-08-16              | 2017-10-15               |                          |
+| 4.1         | Feature               |  2017-08-16              | 2017-10-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
-| 4.0         | Feature               |  2018-07-16              | 2017-09-15               |                          |
+| 4.0         | Feature               |  2017-07-16              | 2017-09-15               |                          |
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
