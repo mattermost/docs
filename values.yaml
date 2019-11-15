@@ -289,30 +289,30 @@ global:
       # - secret: gitlab-google-oauth2
       #   key: provider
 
-    ## doc/charts/geo.md
-    geo:
-      enabled: false
-      # Valid values: primary, secondary
-      role: primary
-      ## Geo Secondary only
-      # nodeName allows multiple instances behind a load balancer.
-      nodeName: # defaults to `gitlab.gitlab.host`
-      # PostgreSQL connection details only needed for `secondary`
-      psql:
-        password: {}
-          # secret:
-          # key:
-        # host: postgresql.hostedsomewhere.else
-        # port: 123
-        # username: gitlab_replicator
-        # database: gitlabhq_geo_production
-        # ssl:
-          # secret:
-          # clientKey:
-          # clientCertificate:
-          # serverCA:
-
   ## End of global.appConfig
+
+  ## doc/charts/geo.md
+  geo:
+    enabled: false
+    # Valid values: primary, secondary
+    role: primary
+    ## Geo Secondary only
+    # nodeName allows multiple instances behind a load balancer.
+    nodeName: # defaults to `gitlab.gitlab.host`
+    # PostgreSQL connection details only needed for `secondary`
+    psql:
+      password: {}
+        # secret:
+        # key:
+      # host: postgresql.hostedsomewhere.else
+      # port: 123
+      # username: gitlab_replicator
+      # database: gitlabhq_geo_production
+      # ssl:
+        # secret:
+        # clientKey:
+        # clientCertificate:
+        # serverCA:
 
   ## doc/charts/globals.md#configure-gitlab-shell-settings
   shell:
