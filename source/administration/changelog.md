@@ -9,7 +9,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Mattermost v5.17.0 contains medium to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 - **v5.17.1, release day TBD**
-  - Fixing 
+  - Fixing an issue where deactivating a user should increment the daily and monthly active users counts down (not up) in the System Console. [MM-19957](https://mattermost.atlassian.net/browse/MM-19957)
+  - Fixing an issue where guest users are not removed from a team if removed from all channels. [MM-20153](https://mattermost.atlassian.net/browse/MM-20153)
 - **v5.17.0, released 2019-11-16**
   - Original 5.17.0 release
 
