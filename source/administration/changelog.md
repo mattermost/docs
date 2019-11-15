@@ -26,7 +26,7 @@ Mattermost v5.17.0 contains medium to high level security fixes. [Upgrading](htt
  - Fixed an issue where users were not able to attach a file from iPad using Safari.
  - Fixed an issue where ``/code`` was rendering HTML incorrectly.
  - Fixed an issue where clicking "Pinned" icon removed text in the search box.
- - Fixed an issue where **Main Menu > Integrations > OAuth2 Applications** page user interface broke when shrinking the window to a small size.
+ - Fixed an issue where **Main Menu > Integrations > OAuth 2.0 Applications** page user interface broke when shrinking the window to a small size.
  - Fixed an issue where there was no feedback on mobile view that the maximum post length had been exceeded.
  - Fixed an issue where dragging or dropping a folder should scroll the user to the right-hand side text box to make the error more visible.
  - Fixed an issue on mobile browser view where the post menu was split in 2 and users were not able to scroll up to see "Add Reaction" option.
