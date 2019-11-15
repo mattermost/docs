@@ -61,4 +61,4 @@ If we increase the support window, it decreases how much we can develop the prod
 
 Can customers pay for extended support?
 ---------------------------------------
-At this point, we are not planning on letting customers pay for extended support, but we are open to discuss options for this.
+At this point, we are not planning on letting customers pay for extended support, but we are open to discuss options for this. Please speak to your Customer Success Manager if you have additional requirements for extended support.
