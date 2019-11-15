@@ -59,7 +59,6 @@ gitaly: no tls certificate
 {{- end -}}
 {{/* END gitlab.checkConfig.gitaly.tls */}}
 
-
 {{/* Check configuration of Sidekiq - don't supply queues and negateQueues */}}
 {{- define "gitlab.checkConfig.sidekiq.queues.mixed" -}}
 {{- if .Values.gitlab.sidekiq.pods -}}
@@ -74,3 +73,49 @@ sidekiq: mixed queues
 {{- end -}}
 {{- end -}}
 {{/* END gitlab.checkConfig.sidekiq.queues.mixed */}}
+
+{{/*
+Ensure a database is configured when using Geo
+listen over TLS */}}
+{{- define "gitlab.geo.database" -}}
+{{- with $.Values.global -}}
+{{- if eq true .geo.enabled -}}
+{{-   if not .psql.host -}}
+geo: no database provided
+    It appears Geo was configured but no database was provided.
+    Geo behaviors require external databases.
+    Ensure `global.psql.host` is set.
+{{-   end -}}
+{{-   if not .psql.password.secret -}}
+geo: no database password provided
+    It appears Geo was configured, but no database password was provided.
+    Geo behaviors require external databases.
+    Ensure `global.psql.password.secret` is set.
+{{-  end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{/* END gitlab.geo.database */}}
+
+{{/*
+Ensure a database is configured when using Geo secondary
+listen over TLS */}}
+{{- define "gitlab.geo.secondary.database" -}}
+{{- with $.Values.global.geo -}}
+{{- if and (eq true .enabled) (eq .role "secondary") -}}
+{{-   if not .psql.host -}}
+geo: no secondary database provided
+    It appears Geo was configured with `role: secondary`, but no database
+    was provided. Geo behaviors require external databases.
+    Ensure `global.geo.psql.host` is set.
+{{-   end -}}
+{{-   if not .psql.password.secret -}}
+geo: no secondary database password provided
+    It appears Geo was configured with `role: secondary`, but no database
+    password was provided. Geo behaviors require external databases.
+    Ensure `global.geo.psql.password.secret` is set.
+{{-   end -}}
+{{- end -}}
+{{- end -}}
+{{- end -}}
+{{/* END gitlab.geo.secondary.database */}}
