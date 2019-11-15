@@ -25,7 +25,7 @@ data:
       #     - host1.example.com
       #     - host2.example.com
       {{- include "gitlab.psql.ssl.config" . | nindent 6 }}
-  {{- if and .Values.global.geo.enabled (eq .Values.global.geo.role "secondary") }}
+  {{- if include "gitlab.geo.secondary" . }}
   database_geo.yml.erb: |
     {{- include "gitlab.geo.database.yml" . | nindent 4 }}
   {{- end }}

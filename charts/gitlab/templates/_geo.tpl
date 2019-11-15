@@ -1,14 +1,21 @@
 {{/* ######## Geo related templates */}}
 {{/*
-
+Returns "secondary" if geo.enabled & geo.role: secondary
 */}}
+{{- define "gitlab.geo.secondary" -}}
+{{- with .Values.global.geo -}}
+{{- if and (eq true (default false .enabled)) ( eq "secondary" (default "primary" (lower .role))) -}}
+secondary
+{{- end -}}
+{{- end -}}
+{{- end -}}
+
 {{- define "gitlab.geo.config" -}}
 {{- if .Values.global.geo.enabled -}}
 geo:
   node_name: {{ default "" .Values.global.geo.nodeName }}
 {{- end -}}
 {{- end -}}
-
 
 {{/*
 Returns the contents of the `database_geo.yml` blob

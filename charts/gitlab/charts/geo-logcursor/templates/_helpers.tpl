@@ -35,8 +35,8 @@ Create chart name and version as used by the chart label.
 Shorthand check for is this chart is enabled
 */}}
 {{- define "geo-logcursor.enabled" -}}
-{{- if and .Values.enabled .Values.global.geo.enabled -}}
-{{-   if eq (lower .Values.global.geo.role) "secondary" -}}
+{{- if eq true .Values.enabled -}}
+{{-   if include "gitlab.geo.secondary" $ -}}
 true
 {{-   end -}}
 {{- end -}}

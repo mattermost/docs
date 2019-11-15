@@ -102,7 +102,7 @@ Ensure a database is configured when using Geo secondary
 listen over TLS */}}
 {{- define "gitlab.geo.secondary.database" -}}
 {{- with $.Values.global.geo -}}
-{{- if and (eq true .enabled) (eq .role "secondary") -}}
+{{- if include "gitlab.geo.secondary" $ }}
 {{-   if not .psql.host -}}
 geo: no secondary database provided
     It appears Geo was configured with `role: secondary`, but no database
