@@ -14,7 +14,6 @@ geo:
 Returns the contents of the `database_geo.yml` blob
 */}}
 {{- define "gitlab.geo.database.yml" -}}
-{{- if .Values.global.geo.enabled -}}
 production:
   adapter: postgresql
   encoding: unicode
@@ -30,7 +29,6 @@ production:
   #     - host2.example.com
   fdw: true
   {{- include "gitlab.geo.psql.ssl.config" . | nindent 2 }}
-{{- end -}}
 {{- end -}}
 
 {{/*

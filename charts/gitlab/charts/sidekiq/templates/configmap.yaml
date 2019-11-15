@@ -25,8 +25,10 @@ data:
       #     - host1.example.com
       #     - host2.example.com
       {{- include "gitlab.psql.ssl.config" . | nindent 6 }}
+  {{- if and .Values.global.geo.enabled (eq .Values.global.geo.role "secondary") }}
   database_geo.yml.erb: |
     {{- include "gitlab.geo.database.yml" . | nindent 4 }}
+  {{- end }}
   smtp_settings.rb: |
 {{ include "gitlab.smtp_settings" . | indent 4 }}
   resque.yml.erb: |
