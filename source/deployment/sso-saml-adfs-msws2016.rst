@@ -68,16 +68,12 @@ Add your **SAML 2.0 SSO service URL** from above the same way.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_011.png
 
-	You will now exit the configuration wizard and a **Claim Rules** editor opens.
-
 Create Claim Rules
 ------------------
 
 1. In the **Issuance Transform Rules** tab of the **Claim Rules** editor, choose **Add Rule…**.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_create-claim-rules_001.png
-
-	This action opens an **Add Transform Claim Rule Wizard**.
 
 2. In the **Choose Rule Type** screen, select **Send LDAP Attributes as Claims** from the drop-down menu, then click **Next**.
 
@@ -118,7 +114,7 @@ Select the **Pass through all claim values** option and click **Finish**.
 
   ``Set-ADFSRelyingPartyTrust -TargetName <display-name> -SamlResponseSignature "MessageAndAssertion"``
 
-where <display-name> is the name you specified in step 6. In our example it would be ``mattermost``.
+where *<display-name>* is the name you specified in step 4 of *Add a Relying Party Trust*. In our example it would be ``mattermost``.
 
 This action will add the signature to SAML messages, making verification successful.
 
@@ -134,8 +130,6 @@ Next, we export the identity provider certificate, which will be later uploaded 
 2. In the **Certificate** screen open the the **Details** tab, select **Copy to File** and then **OK**.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_export-id-provider-cert_003.png
-
-	This opens the **Certificate Export Wizard**.
 
 3. In the **Certificate Export Wizard** screen, click **Next**.
 
