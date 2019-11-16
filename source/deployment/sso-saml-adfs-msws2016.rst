@@ -108,7 +108,7 @@ The entries in the **Outgoing Claim Type** column can be modified and the entrie
   - Select *Unspecified* for the **Incoming name ID format**
   - Select *E-Mail Address* for the **Outgoing claim type**
 
-Moreover, select the **Pass through all claim values** option. Then click **Finish**.
+Select the **Pass through all claim values** option and click **Finish**.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_create-claim-rules_005.png
 
@@ -131,7 +131,7 @@ Next, we export the identity provider certificate, which will be later uploaded 
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_export-id-provider-cert_001.png
 
-2. In the **Certificate** screen, go to the **Details** tab and click **Copy to File**, then **OK**.
+2. In the **Certificate** screen open the the **Details** tab, select **Copy to File** and then **OK**.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_export-id-provider-cert_003.png
 
@@ -157,11 +157,11 @@ Next, we export the identity provider certificate, which will be later uploaded 
 
 You’re now about to finish configuring SAML for Mattermost!
 
-Configure SAML sign-in for Mattermost
+Configure SAML Sign-in for Mattermost
 --------------------------------------
 
 1. Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
-  - Set *Enable Login With SAML 2.0* to *true*.
+  - Set **Enable Login With SAML 2.0** to ``true``.
   - Set **Enable Synchronizing SAML Accounts With AD/LDAP** to suit your environment.
   - Set **Override SAML bind data with AD/LDAP information** to suit your environment.
   - For **SAML SSO URL** use the ``SAML 2.0/W-Federation URL ADFS Endpoint`` you copied at the beginning of the process.
