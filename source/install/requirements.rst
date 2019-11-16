@@ -43,7 +43,7 @@ PC Web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "Chrome", "v61+"
+    "Chrome", "v77+"
     "Firefox", "v60+"
     "Safari", "v12+"
     "Edge", "v44+"
@@ -56,7 +56,7 @@ Mobile Apps
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
 
-    "iOS", "iPhone 5s devices and later with iOS 11+"
+    "iOS", "iPhone 5s devices and later with iOS 12+"
     "Android", "Android devices with Android 7+"
 
 `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
@@ -67,8 +67,8 @@ Mobile Web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 11+ with Safari 12+ or Chrome 61+"
-    "Android", "Android 7+ with Chrome 61+"
+    "iOS", "iOS 12+ with Safari 12+ or Chrome 77+"
+    "Android", "Android 7+ with Chrome 77+"
 
 Email Client
 ^^^^^^^^^^^^
