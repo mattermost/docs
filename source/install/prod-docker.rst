@@ -3,11 +3,11 @@
 Production Docker Deployment
 ==============================
 
-Deploy Mattermost using a multi-node production configuration using `Docker Compose <https://docs.docker.com/compose/>`__. Docker Compose experience recommended.
+Deploy Mattermost using a multi-node production configuration with `Docker Compose <https://docs.docker.com/compose/>`__. Docker Compose experience recommended.
 
 For a single-node preview of Mattermost (without email) see `Local Machine Setup using Docker <http://docs.mattermost.com/install/docker-local-machine.html>`__.
 
-If you have any problems installing, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__. To submit an improvement or correction, click Edit at the top of this page.
+If you have any problems installing, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__. To submit an improvement or correction, click **Edit** at the top of this page.
 
 Production Docker Setup on Ubuntu
 ----------------------------------------------------
@@ -23,7 +23,7 @@ Production Docker Setup on Ubuntu
        sudo service docker start
        newgrp docker
 
-2. **Install Docker Compose** using `the online guide <https://docs.docker.com/compose/install/>`__. You have to download the latest release from `Docker Compose Github's page <https://github.com/docker/compose/releases/>`__ and put the binary on your :code:`/usr/local/bin` folder. Usually, you can use the following command, replacing :code:`$dockerComposeVersion` by the Docker Compose version to install :
+2. **Install Docker Compose** using `the online guide <https://docs.docker.com/compose/install/>`__. You have to download the latest release from `Docker Compose Github's page <https://github.com/docker/compose/releases/>`__ and put the binary on your :code:`/usr/local/bin` folder. Usually, you can use the following command, replacing :code:`$dockerComposeVersion` with the Docker Compose version to install :
 
    .. code:: bash
    
@@ -52,7 +52,7 @@ Production Docker Setup on Ubuntu
 
 Additional Guides:
 
-- **Start, stop and remove containers** using `management instructions. <https://github.com/mattermost/mattermost-docker/#startingstopping-docker>`__
+- **Start, Stop, and Remove Containers** using `management instructions. <https://github.com/mattermost/mattermost-docker/#startingstopping-docker>`__
 
 - **Setup Database Backup** following the `database backup instructions. <https://github.com/mattermost/mattermost-docker#aws>`__
 
@@ -68,7 +68,7 @@ Production Docker Setup on macOS
 
 You can run a production deployment on macOS by `installing Docker Compose using the online guide <https://docs.docker.com/docker-for-mac/>`__ then following the above instructions.
 
-Other options:
+Other Options
 --------------
 
 To install Mattermost Team Edition instead of Mattermost Enterprise Edition, open ``docker-compose.yaml`` and uncomment the following lines:
