@@ -3,7 +3,7 @@
 Production Docker Deployment
 ==============================
 
-Deploy Mattermost using a multi-node production configuration with `Docker Compose <https://docs.docker.com/compose/>`__. Docker Compose experience is recommended.
+Deploy Mattermost using a multi-node production configuration with `Docker Compose <https://docs.docker.com/compose/>`__. Experience with Docker Compose is recommended.
 
 For a single-node preview of Mattermost (without email) see `Local Machine Setup using Docker <http://docs.mattermost.com/install/docker-local-machine.html>`__.
 
