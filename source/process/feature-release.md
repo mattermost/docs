@@ -50,6 +50,7 @@ No pull requests for major features should be **merged** to the current release 
       - Note the type of release and add a link to release doc that defines the type (https://docs.mattermost.com/process/release-faq.html#release-overview)
     - Start drafting a release summary for Support/Sales highlighting key things (e.g. new features, breaking changes, things we want feedback on, and potential support issues)
     - Review [supported OS versions](https://docs.mattermost.com/install/requirements.html#server-software) and review that [software requirements](https://docs.mattermost.com/install/requirements.html#software-requirements) are up-to-date based on [these guidelines](https://docs.mattermost.com/process/software-requirements.html). If not, update documentation accordingly, and note changes in the Changelog
+      - Check with Chen [in the Analytics channel](https://community.mattermost.com/private-core/channels/analytics-2) to see what % of users and what % of posts are made by the versions we're considering to drop support for, to review potential impact to users
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version
     - Ask PMs if there are any notable breaking changes or deprecated features in the release
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)

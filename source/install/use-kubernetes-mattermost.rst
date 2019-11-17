@@ -104,9 +104,9 @@ The Mattermost Operator currently allows segmenting by percentage (i.e., splitti
 future releases segmentation options will include teams and individual users.
 
 Configuring canary builds requires an update to the ``mattermost-installation.yaml`` file and the addition of a plugin via System Console. Before
-proceeding, first download the `Mattermost Plugin for Canary Deployments <https://github.com/mattermost/mattermost-plugin-canary>`__.
+proceeding, first download the `Mattermost Plugin for Canary Deployments <https://github.com/mattermost/mattermost-plugin-canary/releases>`__.
 
-**Configuring canary builds**
+**Configuring Canary Builds**
 
 Open the ``mattermost-installation.yaml`` file and add ``canary`` under ``spec``.
 
@@ -124,4 +124,4 @@ your page and then select **Settings** from the Canary plugin modal. Enter the p
 Once complete, navigate to your Mattermost instance and open the Developer Tools menu in your browser. The entry for the Mattermost instance
 will display *always* or *never* depending on the segment you've been allocated to.
 
-You can disable canary builds in the ``mattermost-installation.yaml`` file by chaning the ``enable`` field to ``false``.
+You can disable canary builds in the ``mattermost-installation.yaml`` file by changing the ``enable`` field to ``false``.
