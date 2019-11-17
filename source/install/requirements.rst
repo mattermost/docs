@@ -24,7 +24,7 @@ Client Software
 ~~~~~~~~~~~~~~~
 
 Desktop Apps
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
@@ -48,7 +48,7 @@ PC Web
     "Safari", "v12+"
     "Edge", "v44+"
 
-`*` Support for Internet Explorer (IE11) has been removed in Mattermost v5.16.0. We recommend using the `Mattermost Desktop App <https://mattermost.com/download/#mattermostApps>`_ or another supported browser. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`_ to learn more.
+`*` Support for Internet Explorer (IE11) has been removed in Mattermost 5.16. We recommend using the `Mattermost Desktop App <https://mattermost.com/download/#mattermostApps>`_ or another supported browser. See `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`_ to learn more.
 
 Mobile Apps
 ^^^^^^^^^^^^^^^^^^^^^
@@ -84,18 +84,18 @@ Mattermost Server Operating System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Ubuntu 16.04, Ubuntu 18.04, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 6+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+
-- Using Mattermost `Docker image <https://docs.mattermost.com/install/prod-docker.html>`__ on a Docker-compatible operating system (Linux-based OS is still recommended)
+- Using the Mattermost `Docker image <https://docs.mattermost.com/install/prod-docker.html>`__ on a Docker-compatible operating system (Linux-based OS) is still recommended
 
 While community support exists for Fedora, FreeBSD and Arch Linux, Mattermost does not currently include production support for these platforms.
 
 Database Software
 ^^^^^^^^^^^^^^^^^
 
--  MySQL 5.6, 5.7, 8 (Please see note below on MySQL 8 support)
+-  MySQL 5.6, 5.7, 8 (see note below on MySQL 8 support)
 -  PostgreSQL 9.4+
 -  Amazon Aurora MySQL 5.6+
 
-Deployments requiring searching in Chinese, Japanese and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost-server/issues/2033#issuecomment-183872616>`__ for details.
+Deployments requiring searching in Chinese, Japanese, and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost-server/issues/2033#issuecomment-183872616>`__ for details.
 
 Search limitations on PostgreSQL:
 
@@ -108,7 +108,7 @@ Search limitations on MySQL:
 
 - Hashtags or recent mentions of usernames containing a dot do not return search results.
 
-**MySql 8 Support**:
+**MySQL 8 Support**:
 
 In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password`` (https://mysqlserverteam.com/mysql-8-0-4-new-default-authentication-plugin-caching_sha2_password/). If you are using MySQL 8.0.4+, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
 
@@ -120,7 +120,7 @@ In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_nativ
 Hardware Requirements
 ---------------------
 
-Usage of CPU, RAM and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
+Usage of CPU, RAM, and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
 
 Moreover, memory requirements can be driven by peak file sharing activity. Recommendation is based on default 50 MB maximum file size, which can be `adjusted from the System Console <https://docs.mattermost.com/administration/config-settings.html#maximum-file-size>`__. Changing this number may change memory requirements.
 
@@ -156,7 +156,7 @@ For Enterprise Edition deployments with a multi-server setup, we highly recommen
    - Prometheus to track system health of your Mattermost deployment, through  `performance monitoring feature <https://docs.mattermost.com/deployment/metrics.html>`__ available in Enterprise Edition E20.
    - Grafana to visualize the system health metrics collected by Prometheus with the  `performance monitoring feature <https://docs.mattermost.com/deployment/metrics.html>`__. Grafana 5.0.0 and later is recommended.
    - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 5.0 and later is supported. `Learn more here <https://docs.mattermost.com/deployment/elasticsearch.html>`__.
-   - Minio to support a cloud storage system compatible with Amazon S3. Learn more about file storage configuration options `in our documentation <https://docs.mattermost.com/administration/config-settings.html#files>`__.
+   - MinIO to support a cloud storage system compatible with Amazon S3. Learn more about file storage configuration options `in our documentation <https://docs.mattermost.com/administration/config-settings.html#files>`__.
 
 Alternate Storage Calculations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
