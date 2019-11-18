@@ -21,16 +21,26 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added the ability to view archived channels.
  - Added ability to disable attachment buttons and fields.
  - Updated CLI command "deleter user" to delete the given user's group memberships.
+ - Created CLI command "config reset" to allow resetting the value of a config setting to its default value.
  - Added support for SAML login to the Audits Table.
  - Added support for interplugin communication.
  - Added user_name, team_domain and channel_name metadata when clicking an interactive button.
  - Added support for Guest Authentication via AD/LDAP and SAML.
  - Added support for server version and minimum server version checks in helper methods for plugins.
  - Extended EnsureBot helper function to include bot images.
+ - Moved LDAP Group Sync from Experimental to Beta.
+ - Trim leading/trailing whitespace on channel name when channel is created.
+ - Added support for configuration of SAML crypto hashing algorithms.
+ - Disabled email notifications in Do Not Disturb mode.
+ - Added support to prepackaged plugins to allow upgrade of prepackaged plugins via the marketplace.
+ - Added ability to add users as another user to the plugin API.
 
 ### Bug Fixes
  - Fixed an issue where modifying config files caused compliance exports to run twice.
  - Fixed an issue where admins were not able to create LDAP user via /api/v4/users.
+ - Fixed an issue where the option to make guest users as team admins was provided in Manage Teams dialog on System Console > Users.
+ - Fixed an issue where "Your message is too long" warning on the right-hand side reply thread overlapped Preview button.
+ - 
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
@@ -38,10 +48,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
  - Added ID_LOADED_NOTIFICATION.
  - Removed Digest setting, set based on Signature Algorithm bit.
+ - Removed ExperimentalLdapGroupSync config so that the feature is always enabled.
 
 ### Open Source Components
  
 ### API Changes
+ - Added ability to add users as another user to the plugin API.
  
 ### Database Changes
 
