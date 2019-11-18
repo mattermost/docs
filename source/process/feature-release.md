@@ -90,7 +90,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Verify all items in the last posted release checklist are complete
     - Update Changelog PR based on what's in/out of the release
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/mattermost-server/issues/3702))
-    - Confirm date of marketing announcement for the release date with Marketing, and update release channel header if needed
+    - Confirm date of marketing announcement for the release date with Marketing, and update Release Channel header if needed
       - If release day falls on a Friday, the blog post goes out on the Friday and the emailed newsletter goes out the following Tuesday
     - Post a reminder to devs in the Release Discussion channel of the the code complete date with the ZBB count [see example](https://community.mattermost.com/core/pl/coggyys9atg7fqyam81q3gkmoo)
     - Ask release PM to review the Jira tickets remaining in the current release fix version and push those that won't make it to the next fix version
