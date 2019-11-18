@@ -142,7 +142,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Confirm all PRs in [`/enterprise`](https://github.com/mattermost/enterprise/pulls) repo have been merged
     - Update Redux before each RC and Final build
     - Master is tagged and branched and `Release Candidate 1` is cut (e.g. 3.5.0-RC1) according to the Release Candidate Checklist in `mattermost/process`
-    - After branching, the database version in sql_upgrade.go on master is set to the next scheduled release version (e.g., 3.6.0)
+    - After branching, the database version in `sql_upgrade.go` on master is set to the next scheduled release version (e.g., 3.6.0)
     - CI servers are updated to the release branch
     - Translation server is locked to the release branch
     - Run daily automated upgrade tests to avoid catching upgrade bugs late
