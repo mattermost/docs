@@ -204,17 +204,13 @@ spec:
 {{- end }}
 {{ include "gitlab.certificates.volumeMount" $ | indent 10 }}
           livenessProbe:
-            exec:
-              command:
-                - pgrep
-                - -f
-                - sidekiq
+            httpGet:
+              path: /liveness
+              port: {{ $.Values.metrics.port }}
           readinessProbe:
-            exec:
-              command:
-                - pgrep
-                - -f
-                - sidekiq
+            httpGet:
+              path: /readiness
+              port: {{ $.Values.metrics.port }}
           lifecycle:
             preStop:
               exec:
