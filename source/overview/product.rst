@@ -22,7 +22,7 @@ Core committers, including both community contributors and paid staff at Matterm
 Mattermost Editions
 -----------------------
 
-Mattermost is offered in three editions:
+Mattermost is offered in three editions, in multiple languages including U.S. English, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, and Ukrainian.
 
 Mattermost Team Edition
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -33,12 +33,12 @@ A free-to-use, open source, self-hosted alternative to proprietary SaaS messagin
 - Native apps for iOS, Android, Windows, Mac, Linux
 - Threaded messaging, emoji, and custom emoji
 - Tools for custom branding
-- Continuous archiving and unlimited search
+- Continuous archiving
+- Multi-factor authentication
 - Highly customizable `third party bots, integrations <https://about.mattermost.com/community-applications/#publicApps>`__, and `command line tools <https://docs.mattermost.com/administration/command-line-tools.html>`__
 - Extensive integration support via `webhooks, APIs, drivers <https://docs.mattermost.com/guides/integration.html>`__ and `third party extensions <https://about.mattermost.com/default-app-directory/>`__
 - Easily scalable from dozens to hundreds of users
-- New improvements released every two months
- - Languages include U.S. English, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, and Ukrainian.
+- New features and improvements released every two months
 
 To get started, `download the open source Mattermost Team Edition server <https://about.mattermost.com/download>`__ under an MIT license.
 
@@ -49,7 +49,6 @@ A commercial enterprise messaging solution for teams, groups and departments wor
 
 - Active Directory/LDAP single-sign-on
 - Encrypted push notifications with service level agreements (SLAs) via HPNS
-- Multi-factor authentication
 - Advanced access control policy
 - Next business day support via online ticketing system
 - Scale to handle thousands of users
@@ -60,10 +59,13 @@ Mattermost Enterprise Edition E20
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 A commercial enterprise-grade messaging system that scales from hundreds to tens of thousands of users. E20 is your "virtual city", with cluster-based horizontal scaling, high availability deployment, performance monitoring systems and compliance reporting plus advanced corporate directory integration. Building on the features in E10, it offers the following advanced features:
 
-- Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services 
+- Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services
+- Active Directory/LDAP group sync
 - Compliance exports of message histories with oversight protection 
+- Custom retention policies for messages and files
 - High availability support with multi-node database deployment
 - Horizontal scaling through cluster-based deployment
+- Elasticsearch support for highly efficient database searches in a cluster environment
 - Advanced performance monitoring
 - Eligibility for Premier Support add-on
 
