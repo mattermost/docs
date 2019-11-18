@@ -150,7 +150,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Submit Changelog PR for team review
     - Submit any remaining documentation PRs for product updates in the release
     - Check that a redirect page has been set up in mattermost.com for any links added to the System Console
-    - Submit documentation for [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go) and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13) to  API documentation
+    - Submit documentation for [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go) and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13) to API documentation
     - Confirm changes to `config.json` in compatibility section of Changelog are written back to [settings documentation](http://docs.mattermost.com/administration/config-settings.html#configuration-settings)
     - Confirm all new diagnostics are documented in the telemetry docs (https://docs.mattermost.com/administration/telemetry.html)
 
