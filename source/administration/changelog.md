@@ -16,31 +16,46 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added File Deletion Events to CSV Compliance Export
 
 ### Improvements
- - Allow System Admins to control Teammate Name Display at the system level.
- - Revoke Guest User Sessions when Guest feature is disabled.
+
+#### User Interface (UI)
+ - Trim leading/trailing whitespace on channel name when channel is created.
  - Added the ability to view archived channels.
- - Added ability to disable attachment buttons and fields.
+ - Disabled email notifications in Do Not Disturb mode.
+ - Changed at-mention autocomplete to prioritize entries where the username starts with the search string.
+ - Added support for showing a tooltip on public or private channel names that get truncated.
+
+#### Command Line Interface (CLI)
  - Updated CLI command "deleter user" to delete the given user's group memberships.
  - Created CLI command "config reset" to allow resetting the value of a config setting to its default value.
- - Added support for SAML login to the Audits Table.
- - Added support for interplugin communication.
+ 
+#### Integrations
+ - Added ability to disable attachment buttons and fields.
  - Added user_name, team_domain and channel_name metadata when clicking an interactive button.
- - Added support for Guest Authentication via AD/LDAP and SAML.
- - Added support for server version and minimum server version checks in helper methods for plugins.
  - Extended EnsureBot helper function to include bot images.
- - Moved LDAP Group Sync from Experimental to Beta.
- - Trim leading/trailing whitespace on channel name when channel is created.
- - Added support for configuration of SAML crypto hashing algorithms.
- - Disabled email notifications in Do Not Disturb mode.
+ 
+#### Plugins
+ - Added support for interplugin communication.
+ - Added support for server version and minimum server version checks in helper methods for plugins.
  - Added support to prepackaged plugins to allow upgrade of prepackaged plugins via the marketplace.
+
+#### Administration
+ - Allow System Admins to control Teammate Name Display at the system level.
+ - Revoke Guest User Sessions when Guest feature is disabled.
  - Added ability to add users as another user to the plugin API.
+
+#### Enterprise Edition
+ - Added support for SAML login to the Audits Table.
+ - Moved LDAP Group Sync from Experimental to Beta.
+ - Added support for configuration of SAML crypto hashing algorithms.
+ - Added support for Guest Authentication via AD/LDAP and SAML.
 
 ### Bug Fixes
  - Fixed an issue where modifying config files caused compliance exports to run twice.
  - Fixed an issue where admins were not able to create LDAP user via /api/v4/users.
  - Fixed an issue where the option to make guest users as team admins was provided in Manage Teams dialog on System Console > Users.
  - Fixed an issue where "Your message is too long" warning on the right-hand side reply thread overlapped Preview button.
- - 
+ - Accessibility fixes.
+ - Fixed issues with Guest Accounts, such as an issue where enable/disable guest access in System Console failed.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
