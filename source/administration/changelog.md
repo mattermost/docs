@@ -12,21 +12,22 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
  - Signed Plugins
- - Mark channel as unread
+ - Mark channels as unread
  - Added File Deletion Events to CSV Compliance Export
  - Plugin marketplace phase 2 - Added ability to upgrade plugins and prepackaged plugins via the marketplace.
 
 ### Improvements
 
 #### User Interface (UI)
- - Trim leading/trailing whitespace on channel name when channel is created.
  - Added the ability to view archived channels.
  - Disabled email notifications in Do Not Disturb mode.
- - Changed at-mention autocomplete to prioritize entries where the username starts with the search string.
- - Added support for showing a tooltip on public or private channel names that get truncated.
+ - Added support for showing a tooltip on public and private channel names that get truncated.
+ - Added support for allowing in-line markdown images to open a preview window.
+ - Added line numbers to code blocks that have syntax highlighting.
+ - Added support for trimming leading/trailing whitespace on channel name when channel is created.
 
 #### Command Line Interface (CLI)
- - Updated CLI command "deleter user" to delete the given user's group memberships.
+ - Updated CLI command "deleter user" to add ability to delete the given user's group memberships.
  - Created CLI command "config reset" to allow resetting the value of a config setting to its default value.
  
 #### Integrations
@@ -38,6 +39,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Plugins
  - Added support for interplugin communication.
  - Added support for server version and minimum server version checks in helper methods for plugins.
+ - System Console > Search now returns results for individual plugins.
 
 #### Administration
  - Allow System Admins to control Teammate Name Display at the system level.
@@ -45,12 +47,14 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added ability to add users as another user to the plugin API.
  - Restricted user access to /logs API endpoint.
  - Added 'Remove team' and 'Change role' menu in Team Membership panel.
+ - Disable channel settings public/private toggle for default channel.
 
-#### Enterprise Edition
+#### Enterprise Edition (EE)
  - Added support for SAML login to the Audits Table.
  - Moved LDAP Group Sync from Experimental to Beta.
  - Added support for configuration of SAML crypto hashing algorithms.
  - Added support for Guest Authentication via AD/LDAP and SAML.
+ - Do not allow Guest invitations to teams that are managed by LDAP Group Sync.
 
 ### Bug Fixes
  - Fixed an issue where modifying config files caused compliance exports to run twice.
