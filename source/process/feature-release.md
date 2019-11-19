@@ -44,7 +44,7 @@ No pull requests for major features should be **merged** to the current release 
     - After release branches are cut, ask dev to cut an RN build
     - Check that all features are behind a feature flag
     - Confirm all config settings and new features have diagnostics
-    - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel. [See example](https://community.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
+    - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel [See example](https://community.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
       - Queue a discussion about MVP candidates for the next R&D meeting
     - Draft Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
       - Note the type of release and add a link to release doc that defines the type (https://docs.mattermost.com/process/release-faq.html#release-overview)
@@ -54,7 +54,7 @@ No pull requests for major features should be **merged** to the current release 
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version
     - Ask PMs if there are any notable breaking changes or deprecated features in the release
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
-    - Post a reminder in the French Localization channel about the due date for translations - [Example](https://community.mattermost.com/core/pl/7wqx4zehotgu7efhmbz51mxfqa). Follow that translations are prioritized at https://translate.mattermost.com/projects/mattermost/
+    - Post a reminder in the French Localization channel about the due date for translations, similar to this [example](https://community.mattermost.com/core/pl/7wqx4zehotgu7efhmbz51mxfqa). Follow that translations are prioritized at https://translate.mattermost.com/projects/mattermost/
 3. Dev:
     - Cut release branch both for server and mobile
         - Merge database upgrade before cutting the branch
@@ -178,8 +178,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Run daily automated upgrade tests to avoid catching upgrade bugs late
 6. Build:
     - Verify with Release Manager before cutting any new RCs (approved fixes should be merged)
-    - Push next RC to acceptance and announce in Town Square with new RC link
-    - Check CI servers running on release branch
+    - Cut next Release Candidate and check CI servers running on release branch
 7. Marketing:
     - Finish draft of blog post for mattermost.com and all art work (screenshots, GIFs, and Twitter banners) used for the blog post
         - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
@@ -267,7 +266,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
-    - Verify all items in the last posted release checklist are complete, if not alert the Release Manager
+    - Verify all items in the last posted release checklist are complete
     - Schedule a release retrospective meeting, to be held within five days from the release
     - Prepare and post [release metrics](https://docs.google.com/spreadsheets/d/1Aoj4OTaWoyrKIcQNiHH1MVoRG51T20Y_0w2tg5oVw-M/edit#gid=825551144)
     - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
