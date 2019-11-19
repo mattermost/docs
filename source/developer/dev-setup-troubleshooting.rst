@@ -3,7 +3,7 @@
 Troubleshooting Setup and Build
 ===============================
 
-Build errors
+Build Errors
 ------------
 
 macOS: I get the following error when running ``make run``: "Cannot connect to the Docker daemon"
@@ -47,13 +47,13 @@ macOS: I get the following error or something similar when running ``make run``:
   Reload the privileges, so that the changes can be reflected: 
   ``FLUSH PRIVILEGES;``
 
-Testing errors
+Testing Errors
 --------------
 
 I get the following error when running ``make test``: t.Run undefined (type *testing.T has no field or method Run)
   You need to upgrade to Go 1.9. We don't support earlier versions than that.
 
-Other errors
+Other Errors
 ------------
 
 I don't see any error messages, but I can't access http://localhost:8065
