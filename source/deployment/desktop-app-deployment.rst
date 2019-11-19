@@ -45,7 +45,7 @@ You can customize and distribute your own Mattermost Desktop application by conf
 ~~~~~~~~~~~~~~~~
 
   Description
-    The URL of the help documentation in Help > Learn More menu bar item. If none specified, the menu option is hidden.
+    The URL of the help documentation in Help > Learn More menu bar item. If none is specified, the menu option is hidden.
     
     Expects a string.
 
@@ -59,7 +59,7 @@ You can customize and distribute your own Mattermost Desktop application by conf
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Controls whether users can add, edit or remove servers on the app settings page. If set to false, at least one server must be specified for ``defaultTeams`` or else users cannot interact with any servers.
+    Controls whether users can add, edit, or remove servers on the app settings page. If set to false, at least one server must be specified for ``defaultTeams`` or else users cannot interact with any servers.
     
     Expects a boolean, true or false.
 
@@ -88,7 +88,7 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
 
 
       rem "Step 1: Install Mattermost Desktop App silently into user's local disk"
-      start /wait \\SERVER\shared_folder\mattermost-setup-3.7.0-win64.exe --silent
+      start /wait \\SERVER\shared_folder\mattermost-setup-4.3.1-win64.exe --silent
 
       rem "Step 2: Generate initial config.json into user's config directory"
       (
@@ -100,18 +100,26 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
         echo       "url": "https://community.mattermost.com/core"
         echo     }
         echo   ],
+        echo   "showTrayIcon": false,
+        echo   "trayIconTheme": 'light',
+        echo   "minimizeToTray": false,
         echo   "notifications": {
-        echo     "flashWindow": 1
+        echo     "flashWindow": 0,
+                 "bounceIcon": false,
+                 "bounceIconType": 'informational',
         echo   },
+        echo   "showUnreadBadge": true,
         echo   "useSpellChecker": true,
-        echo   "showUnreadBadge": true
+        echo   "enableHardwareAcceleration": true,
+        echo   "autostart": true,
+        echo   "spellCheckerLocale": 'en-US',
         echo }
       ) > %APPDATA%\Mattermost\config.json
 
     .. note::
       Instead of using this command to install the Desktop App into a shared folder, you can also copy the executable to the folder before running it. This allows the shared folder to only require read-only permissions.
 
-  3. Save the text file with extension .bat. For instance, mattermost-app-install.bat.
+  3. Save the text file with the extension .bat. For instance, mattermost-app-install.bat.
   4. Use standard software asset management tools to distribute and deploy the batch file to each user.
 
 Once run, the desktop app is added to the user’s local directory, along with the pre-configured config.json file. The installer creates a shortcut for the Desktop App in the user's start menu; if a zip version is used, you need to create the shortcut manually.
