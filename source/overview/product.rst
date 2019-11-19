@@ -22,7 +22,7 @@ Core committers, including both community contributors and paid staff at Matterm
 Mattermost Editions
 -----------------------
 
-Mattermost is offered in three editions, in multiple languages including U.S. English, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, and Ukrainian.
+Mattermost is offered in three editions, in multiple languages including U.S. English, Chinese (Simplified and Traditional), Dutch, French, German, Italian, Japanese, Korean, Polish, Brazilian Portuguese, Romanian, Russian, Turkish, Spanish, and Ukrainian. 
 
 Mattermost Team Edition
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -69,6 +69,6 @@ A commercial enterprise-grade messaging system that scales from hundreds to tens
 - Advanced performance monitoring
 - Eligibility for Premier Support add-on
 
-Get started with a `free trial license <https://about.mattermost.com/trial/>`__. You can later purchase online with a `credit card <https://about.mattermost.com/pricing/>`__ or by `bank transfer <https://about.mattermost.com/quotation/>`__.
+For a complete list of features across editions, visit the `detailed comparison chart <https://mattermost.com/pricing-feature-comparison/>`_. Get started with a `free trial license <https://about.mattermost.com/trial/>`__. You can later purchase online with a `credit card <https://about.mattermost.com/pricing/>`__ or by `bank transfer <https://about.mattermost.com/quotation/>`__.
 
 For purchases above 3,000 seats, please contact our `enterprise sales team <https://about.mattermost.com/contact/>`__.
