@@ -14,6 +14,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Signed Plugins
  - Mark channel as unread
  - Added File Deletion Events to CSV Compliance Export
+ - Plugin marketplace phase 2 - Added ability to upgrade plugins and prepackaged plugins via the marketplace.
 
 ### Improvements
 
@@ -32,16 +33,18 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added ability to disable attachment buttons and fields.
  - Added user_name, team_domain and channel_name metadata when clicking an interactive button.
  - Extended EnsureBot helper function to include bot images.
+ - Added support for a generic error message in interactive dialog responses.
  
 #### Plugins
  - Added support for interplugin communication.
  - Added support for server version and minimum server version checks in helper methods for plugins.
- - Added support to prepackaged plugins to allow upgrade of prepackaged plugins via the marketplace.
 
 #### Administration
  - Allow System Admins to control Teammate Name Display at the system level.
  - Revoke Guest User Sessions when Guest feature is disabled.
  - Added ability to add users as another user to the plugin API.
+ - Restricted user access to /logs API endpoint.
+ - Added 'Remove team' and 'Change role' menu in Team Membership panel.
 
 #### Enterprise Edition
  - Added support for SAML login to the Audits Table.
@@ -56,6 +59,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where "Your message is too long" warning on the right-hand side reply thread overlapped Preview button.
  - Accessibility fixes.
  - Fixed issues with Guest Accounts, such as an issue where enable/disable guest access in System Console failed.
+ - Fixed an issue where emoji picker floated when it was open while the user scrolled in the channel.
+ - Fixed an issue where hitting escape to close autocomplete also closed channel header modal.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
@@ -64,11 +69,15 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ID_LOADED_NOTIFICATION.
  - Removed Digest setting, set based on Signature Algorithm bit.
  - Removed ExperimentalLdapGroupSync config so that the feature is always enabled.
+ - Added RequirePluginSignature.
 
 ### Open Source Components
  
 ### API Changes
  - Added ability to add users as another user to the plugin API.
+ - Added POST handler for /plugins/marketplace to install marketplace plugins.
+ - Added some group plugin APIs (GetGroup, GetGroupByName, GetGroupsForUser).
+ - Added KVSetWithOptions to the plugins API so that callers can choose if they want atomicity or not and expiration or not.
  
 ### Database Changes
 
