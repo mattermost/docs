@@ -82,6 +82,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added POST handler for /plugins/marketplace to install marketplace plugins.
  - Added some group plugin APIs (GetGroup, GetGroupByName, GetGroupsForUser).
  - Added KVSetWithOptions to the plugins API so that callers can choose if they want atomicity or not and expiration or not.
+ - Added a new endpoint to verify that SiteURL works before allowing it to be saved.
  
 ### Database Changes
 
