@@ -239,7 +239,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
 3. Build:
     - Update Redux before each RC and Final build
     - Tags a new release (e.g. 1.1.0) and runs an official build which should be essentially identical to the last RC
-    - Posts SHA key, md5 sum, and GPG signatures of the final build to Release Channel
+    - Posts SHA key, md5 sum, and GPG signatures of the final build to Release Discussion channel
     - Post in Release Discussion with links to the Enterprise Edition and Team Edition sections
 4. Dev:
     - Verify the hashes (SHA-1, SHA-256, and md5) and GPG signatures are correct for both Enterprise Edition and Team Edition
