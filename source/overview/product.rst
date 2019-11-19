@@ -45,7 +45,7 @@ To get started, `download the open source Mattermost Team Edition server <https:
 Mattermost Enterprise Edition E10
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-A commercial enterprise messaging solution for teams, groups and departments working on multiple projects scaling from hundreds to thousands of users. E10 is your "virtual campus", offering security, configuration and access control options for larger organizations, including:
+A commercial enterprise messaging solution for teams, groups and departments working on multiple projects scaling from hundreds to thousands of users. E10 is your "virtual campus", offering security, configuration and access control options for larger organizations. Building on the features in Team Edition, it also offers:
 
 - Active Directory/LDAP single-sign-on
 - Encrypted push notifications with service level agreements (SLAs) via HPNS
@@ -57,7 +57,7 @@ Get started with a `free trial license <https://about.mattermost.com/trial/>`__.
 
 Mattermost Enterprise Edition E20
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-A commercial enterprise-grade messaging system that scales from hundreds to tens of thousands of users. E20 is your "virtual city", with cluster-based horizontal scaling, high availability deployment, performance monitoring systems and compliance reporting plus advanced corporate directory integration. Building on the features in E10, it offers the following advanced features:
+A commercial enterprise-grade messaging system that scales from hundreds to tens of thousands of users. E20 is your "virtual city", with cluster-based horizontal scaling, high availability deployment, performance monitoring systems and compliance reporting plus advanced corporate directory integration. Building on the features in E10, it also offers:
 
 - Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services
 - Active Directory/LDAP group sync
