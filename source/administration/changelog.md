@@ -9,9 +9,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Mattermost v5.17.0 contains medium to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
 - **v5.17.1, release day TBD**
-  - Fixing an issue where deactivating a user should increment the daily and monthly active users counts down (not up) in the System Console. [MM-19957](https://mattermost.atlassian.net/browse/MM-19957)
-  - Fixing an issue where guest users are not removed from a team if removed from all channels. [MM-20153](https://mattermost.atlassian.net/browse/MM-20153)
-  - Fixing an issue where leaving a channel does not work in some cases if the channel is open in another webapp client. [MM-20206](https://mattermost.atlassian.net/browse/MM-20206)
+  - Fixing an issue where leaving a channel does not work in some cases if the channel is open in another webapp or desktop client. [MM-20206](https://mattermost.atlassian.net/browse/MM-20206)
 - **v5.17.0, released 2019-11-16**
   - Original 5.17.0 release
 
@@ -52,6 +50,7 @@ A setting option was added to `config.json`. Below is a list of the additions an
     - Added ``EnableLatex`` to add an option to enable/disable rendering of latex code.
  
 ### Known Issues
+ - Deactivating a user increases Monthly Active Users and Daily Active Users count by 1 in **System Console > Site Statistics**.
  - Negative search filter hypens and occasional random terms are highlighted in search results.
  - Hitting escape to close autocomplete also closes channel header modal.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
