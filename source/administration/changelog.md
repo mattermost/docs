@@ -40,6 +40,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for interplugin communication.
  - Added support for server version and minimum server version checks in helper methods for plugins.
  - System Console > Search now returns results for individual plugins.
+ - Added ability to add submenus in post dropdown for plugins.
 
 #### Administration
  - Allow System Admins to control Teammate Name Display at the system level.
