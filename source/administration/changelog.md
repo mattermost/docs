@@ -50,7 +50,7 @@ A setting option was added to `config.json`. Below is a list of the additions an
     - Added ``EnableLatex`` to add an option to enable/disable rendering of latex code.
  
 ### Known Issues
- - Deactivating a user updates the Last Activity and increments Monthly Active Users and Daily Active Users up (this does not affect Total Active Users).
+ - Deactivating a user increases Monthly Active Users and Daily Active Users count by 1 in **System Console > Site Statistics**.
  - Negative search filter hypens and occasional random terms are highlighted in search results.
  - Hitting escape to close autocomplete also closes channel header modal.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
