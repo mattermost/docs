@@ -215,30 +215,6 @@ restore
 search
 ------
 
-
-**Advanced Administration**
-
--  Permanently deleting users (use cautiously - database backup
-   recommended before use)
--  Permanently deleting teams (use cautiously - database backup
-   recommended before use)
-
-**Advanced Automation**
-
--  Creating channels
--  Inviting users to channels
--  Removing users from channels
--  Listing all channels for a team
--  Restoring previously deleted channels
--  Modifying a channel's public/private type
--  Migrating sign-in options
--  Resetting multi-factor authentication for a user
--  Creating sample data
-
-**Diagnostics**
-
-- Analyzing the database for relational consistency
-
 .. contents::
     :backlinks: top
     :local:
