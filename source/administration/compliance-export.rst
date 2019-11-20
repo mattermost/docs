@@ -26,10 +26,11 @@ Use the following guides to configure exports for CSV, Actiance XML, or Global R
 CSV
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Go to **System Console > Compliance > Compliance Export (Beta)** (or **System Console > Advanced > Compliance Export (Beta)** in versions prior to 5.12).
-2. Enable Compliance Exports, then set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
-3. Set the export file format to CSV.
-4. Save the settings. You’re now all set!
+ Go to **System Console > Compliance > Compliance Export (Beta)** (or **System Console > Advanced > Compliance Export (Beta)** in versions prior to 5.12).
+2. Set **Enable Compliance Exports** to ``true``.  
+3. Set the **Compliance Export time**. This is the start time of the daily scheduled compliance export job and must be a 24-hour time stamp in the form HH:MM. Choose a time when fewer people are using your system.
+4. Set the export file format to **CSV**.
+5. Choose **Save**.
 
 You can use the CSV format to easily transform exports in a desired format for your third-party archive system.
 
