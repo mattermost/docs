@@ -352,7 +352,7 @@ Use Cases
 Does Mattermost support external guests?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Not yet. Guest accounts are a feature planned for Enterprise Edition. A pricing model proportional to a fraction of the value this new feature provides is expected. 
+Yes, the Guest Account feature allows organizations to collaborate with external users within a controlled environment. See the _`Guest Accounts (Beta) documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information. 
 
 Can I use Mattermost for customer service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
