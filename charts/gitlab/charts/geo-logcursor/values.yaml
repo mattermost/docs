@@ -1,0 +1,86 @@
+# Default values for geo-logcursor.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+image:
+  pullSecrets: []
+  # pullPolicy: IfNotPresent
+  # repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-geo-logcursor
+  # tag: latest
+init:
+  image: busybox
+  tag: latest
+  resources:
+    requests:
+      cpu: 50m
+enabled: true
+replicaCount: 1
+global:
+  geo:
+    role: primary
+    nodeName:
+    psql:
+      # host: '0.0.0.0'
+      # port: '5432'
+      # database: 'gitlabhq_geo_production'
+      # username: 'gitlab_replicator'
+      password: {}
+      #   secret: gitlab-geo-postgres
+      #   key: postgresql-password
+      # ssl:
+      #   secret: gitlab-ssl-secret
+      #   clientKey: client-key.pem
+      #   clientCertificate: client-cert.pem
+      #   serverCA: server-ca.pem
+  redis:
+    password: {}
+  hosts:
+    domain: example.com
+    hostSuffix:
+    https: true
+    gitlab: {}
+      #name: gitlab.example.com
+      #https: false
+    registry: {}
+      #name: registry.example.com
+      #https: false
+    minio: {}
+      #name: minio.example.com
+      #https: false
+
+redis:
+  password: {}
+gitaly:
+  # host: '0.0.0.0'
+  # port: 8075
+  # serviceName: 'gitaly'
+  authToken: {}
+  #   secret: gitaly-secret
+  #   key: token
+minio:
+  serviceName: 'minio-svc'
+  port: 9000
+resources:
+  # limits:
+  #  cpu: 1
+  #  memory: 1.5G
+  requests:
+    cpu: 300m
+    memory: 700M
+
+deployment:
+  livenessProbe:
+    initialDelaySeconds: 20
+    periodSeconds: 60
+    timeoutSeconds: 30
+    successThreshold: 1
+    failureThreshold: 3
+  readinessProbe:
+    initialDelaySeconds: 0
+    periodSeconds: 10
+    timeoutSeconds: 2
+    successThreshold: 1
+    failureThreshold: 3
+
+nodeSelector: {}
+tolerations: []
+affinity: {}

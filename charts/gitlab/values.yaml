@@ -19,6 +19,8 @@ global:
       repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee
       workhorse:
         repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ee
+    geo-logcursor:
+      repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-geo-logcursor
   communityImages:
     # Default repositories used to pull Gitlab Community Edition images.
     # See the image.repository and workhorse.repository template helpers.

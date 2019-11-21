@@ -24,7 +24,11 @@ data:
       #   hosts:
       #     - host1.example.com
       #     - host2.example.com
-{{- include "gitlab.psql.ssl.config" . | indent 6 }}
+      {{- include "gitlab.psql.ssl.config" . | nindent 6 }}
+  {{- if include "gitlab.geo.secondary" . }}
+  database_geo.yml.erb: |
+    {{- include "gitlab.geo.database.yml" . | nindent 4 }}
+  {{- end }}
   smtp_settings.rb: |
 {{ include "gitlab.smtp_settings" . | indent 4 }}
   resque.yml.erb: |
@@ -144,6 +148,7 @@ data:
       {{- include "gitlab.appConfig.uploads.configuration" (dict "config" $.Values.global.appConfig.uploads "context" $) | nindent 6 }}
       {{- include "gitlab.appConfig.packages.configuration" (dict "config" $.Values.global.appConfig.packages "context" $) | nindent 6 }}
       {{- include "gitlab.appConfig.external_diffs.configuration" (dict "config" $.Values.global.appConfig.externalDiffs "context" $) | nindent 6 }}
+      {{- include "gitlab.geo.config" $ | nindent 6 }}
       pages:
         enabled: false
       mattermost:
@@ -184,6 +189,7 @@ data:
   configure: |
     {{- include "gitlab.scripts.configure.secrets" (dict) | nindent 4 -}}
     {{- include "gitlab.psql.ssl.initScript" . | nindent 4 }}
+    {{- include "gitlab.geo.psql.ssl.initScript" . | nindent 4 }}
 ---
 apiVersion: v1
 kind: ConfigMap
