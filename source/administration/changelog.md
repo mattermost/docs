@@ -26,7 +26,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Allows push notifications to be delivered showing the full message contents that are fetched from the server once the notification is delivered to the device. This means that Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) cannot read the message contents since only a unique message ID is sent in the notification payload.
  
 #### mmctl tool
- -Allows a system admin to run commands when conventional access to the server via SSH, etc. isn't possible.
+ - Allows a system admin to run commands when conventional access to the server via SSH, etc. isn't possible.
  
 #### Guest Account SAML & LDAP Support (EE)
  - Provision Guests directly from AD/LDAP or SAML upon login. Guests will have no access to any teams or channels until they are assigned. 
