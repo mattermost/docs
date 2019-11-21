@@ -102,7 +102,7 @@ Postgres:
 이 문제에 대한 논의는 이 `이슈 <https://github.com/mattermost/mattermost-server/issues/2033>`_ 에서 시작되었습니다.
 
 
-한국어 버전 이용 시 문제점을 발견하면 `Localization 채널 <https://community-release.mattermost.com/core/channels/localization>`__ 또는 `한국어 채널 <https://community-release.mattermost.com/core/channels/i18n-korean>`__ 에서 의견을 제시할 수 있습니다.
+한국어 버전 이용 시 문제점을 발견하면 `Localization 채널 <https://community.mattermost.com/core/channels/localization>`__ 또는 `한국어 채널 <https://community.mattermost.com/core/channels/i18n-korean>`__ 에서 의견을 제시할 수 있습니다.
 
 
 검색을 위한 데이터베이스 설정
