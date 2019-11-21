@@ -1,0 +1,5 @@
+---
+title: "Added support of memory killer daemon mode"
+merge_request: 1040
+author: Dmitry Chepurovskiy
+type: added

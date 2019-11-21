@@ -166,8 +166,16 @@ spec:
               value: {{ default $concurrency .concurrency | quote }}
             - name: SIDEKIQ_TIMEOUT
               value: {{ default $timeout .timeout | quote }}
+            - name: SIDEKIQ_DAEMON_MEMORY_KILLER
+              value: {{ int $.Values.memoryKiller.daemonMode | quote }}
+            - name: SIDEKIQ_MEMORY_KILLER_CHECK_INTERVAL
+              value: {{ int $.Values.memoryKiller.checkInterval | quote }}
             - name: SIDEKIQ_MEMORY_KILLER_MAX_RSS
               value: {{ int $.Values.memoryKiller.maxRss | quote }}
+            {{- if $.Values.memoryKiller.hardLimitRss }}
+            - name: SIDEKIQ_MEMORY_KILLER_HARD_LIMIT_RSS
+              value: {{ int $.Values.memoryKiller.hardLimitRss | quote }}
+            {{- end }}
             - name: SIDEKIQ_MEMORY_KILLER_GRACE_TIME
               value: {{ int $.Values.memoryKiller.graceTime | quote }}
             - name: SIDEKIQ_MEMORY_KILLER_SHUTDOWN_WAIT
