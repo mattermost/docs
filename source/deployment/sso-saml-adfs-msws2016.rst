@@ -15,7 +15,7 @@ This document provides steps to configure SAML 2.0 with Microsoft ADFS for Matte
  - An SSL certificate to sign your ADFS login page.
  - ADFS installed on your Microsoft Server. You can find a detailed guide for deploying and configuring ADFS in `this article <https://msdn.microsoft.com/en-us/library/gg188612.aspx>`__.
 
-On your ADFS installation, note down the value of the **SAML 2.0/W-Federation URL** in ADFS Endpoints section, also known as the **SAML SSO URL Endpoint** in this guide. If you chose the defaults for the installation, this will be ``/adfs/ls/``.
+On your ADFS installation, open the ADFS console. Select **Service** and then **Endpoints**. In the **Type** column search for ``SAML 2.0/WS-Federation`` and note down the value of **URL Path** column. This is also known as the **SAML SSO URL Endpoint** in this guide. If you chose the defaults for the installation, this will be ``/adfs/ls``.
 
 Add a Relying Party Trust
 -------------------------
