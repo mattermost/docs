@@ -9,22 +9,42 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Compatibility
  
 ### Breaking Changes
+ - Breaking change for mark posts as unread
 
 ### Highlights
- - Signed Plugins
- - Mark channels as unread
- - Added File Deletion Events to CSV Compliance Export
- - Plugin marketplace phase 2 - Added ability to upgrade plugins and prepackaged plugins via the marketplace.
+
+#### Mark posts as unread
+ - The ability to mark a post as unread is useful in cases where a user wants to easily return to or follow up on messages in channels. The user will land on the marked post when opening the unread channel again.
+ 
+#### View Archived Channels (Beta)
+ - View, share and search for content of archived channels.
+ 
+#### Allow plugin upgrades + Signed plugins
+ - Added ability to upgrade plugins and prepackaged plugins via the marketplace.
+ 
+#### ID Loaded push notifications (E20)
+ - Allows push notifications to be delivered showing the full message contents that are fetched from the server once the notification is delivered to the device. This means that Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) cannot read the message contents since only a unique message ID is sent in the notification payload.
+ 
+#### mmctl tool
+ -Allows a system admin to run commands when conventional access to the server via SSH, etc. isn't possible.
+ 
+#### Guest Account SAML & LDAP Support (EE)
+ - Provision Guests directly from AD/LDAP or SAML upon login. Guests will have no access to any teams or channels until they are assigned. 
+
+#### Actiance Improvements (EE)
+ - Added events (such as post/file deletion and edit events) to Actiance Export to improve tracking within the Vantage report interface.
+
+#### LDAP Group Sync upgraded to Beta phase (EE)
+ - Previously in “Experimental” phase, the linking of AD/LDAP groups to Mattermost groups is now officially in “Beta” phase.
 
 ### Improvements
 
 #### User Interface (UI)
- - Added the ability to view archived channels.
  - Disabled email notifications in Do Not Disturb mode.
  - Added support for showing a tooltip on public and private channel names that get truncated.
  - Added support for allowing in-line markdown images to open a preview window.
  - Added line numbers to code blocks that have syntax highlighting.
- - Added support for trimming leading/trailing whitespace on channel name when channel is created.
+ - Added support for trimming leading/trailing whitespace on a channel name when a channel is created.
 
 #### Command Line Interface (CLI)
  - Updated CLI command "deleter user" to add ability to delete the given user's group memberships.
@@ -39,33 +59,31 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Plugins
  - Added support for interplugin communication.
  - Added support for server version and minimum server version checks in helper methods for plugins.
- - System Console > Search now returns results for individual plugins.
- - Added ability to add submenus in post dropdown for plugins.
+ - Added support for returning results for individual plugins in **System Console > Search**.
+ - Added the ability to add submenus in post dropdowns for plugins.
 
 #### Administration
- - Allow System Admins to control Teammate Name Display at the system level.
- - Revoke Guest User Sessions when Guest feature is disabled.
- - Added ability to add users as another user to the plugin API.
- - Restricted user access to /logs API endpoint.
- - Added 'Remove team' and 'Change role' menu in Team Membership panel.
- - Disable channel settings public/private toggle for default channel.
+ - Added support for System Administrators to control Teammate Name Display at the system level.
+ - Added support for revoking Guest User Sessions when the Guest Accounts feature is disabled.
+ - Added the ability to add users as another user to the plugin API.
+ - Restricted user access to ``/logs`` API endpoint.
+ - Added "Remove team" and "Change role" options in Team Membership panel.
+ - Added support for disabling channel settings for public and private toggle for default channels.
 
 #### Enterprise Edition (EE)
  - Added support for SAML login to the Audits Table.
- - Moved LDAP Group Sync from Experimental to Beta.
  - Added support for configuration of SAML crypto hashing algorithms.
- - Added support for Guest Authentication via AD/LDAP and SAML.
- - Do not allow Guest invitations to teams that are managed by LDAP Group Sync.
+ - Added support for not allowing Guest invitations to teams that are managed by LDAP Group Sync.
 
 ### Bug Fixes
  - Fixed an issue where modifying config files caused compliance exports to run twice.
  - Fixed an issue where admins were not able to create LDAP user via /api/v4/users.
- - Fixed an issue where the option to make guest users as team admins was provided in Manage Teams dialog on System Console > Users.
- - Fixed an issue where "Your message is too long" warning on the right-hand side reply thread overlapped Preview button.
- - Accessibility fixes.
- - Fixed issues with Guest Accounts, such as an issue where enable/disable guest access in System Console failed.
- - Fixed an issue where emoji picker floated when it was open while the user scrolled in the channel.
+ - Fixed some bugs related to the [keyboard accessibility](https://docs.mattermost.com/help/getting-started/accessibility.html) feature.
+ - Fixed issues with Guest Accounts feature, such as an issue where the option to make guest users as team admins was erroneously provided in Manage Teams dialog on **System Console > Users**.
+ - Fixed an issue where an opened emoji picker floated while the user scrolled in the channel.
+ - Fixed an issue where "Your message is too long" warning on the right-hand side reply thread overlapped the Preview button.
  - Fixed an issue where hitting escape to close autocomplete also closed channel header modal.
+ - Fixed an issue where **Reporting > Statistics** showed 'Loading...' when the value for any of the statistics was zero.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
@@ -82,7 +100,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ability to add users as another user to the plugin API.
  - Added POST handler for /plugins/marketplace to install marketplace plugins.
  - Added some group plugin APIs (GetGroup, GetGroupByName, GetGroupsForUser).
- - Added KVSetWithOptions to the plugins API so that callers can choose if they want atomicity or not and expiration or not.
  - Added a new endpoint to verify that SiteURL works before allowing it to be saved.
  
 ### Database Changes
@@ -90,6 +107,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Websocket Event Changes
  
 ### Known Issues
+ - Negative search filter hypens and occasional random terms are highlighted in search results.
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ 
+### Contributors
 
 
 ## Release v5.17 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
