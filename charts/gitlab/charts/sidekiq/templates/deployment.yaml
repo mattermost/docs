@@ -213,17 +213,23 @@ spec:
 {{- end }}
 {{ include "gitlab.certificates.volumeMount" $ | indent 10 }}
           livenessProbe:
-            exec:
-              command:
-                - pgrep
-                - -f
-                - sidekiq
+            httpGet:
+              path: /liveness
+              port: {{ $.Values.metrics.port }}
+            initialDelaySeconds: {{ $.Values.livenessProbe.initialDelaySeconds }}
+            periodSeconds: {{ $.Values.livenessProbe.periodSeconds }}
+            timeoutSeconds: {{ $.Values.livenessProbe.timeoutSeconds }}
+            successThreshold: {{ $.Values.livenessProbe.successThreshold }}
+            failureThreshold: {{ $.Values.livenessProbe.failureThreshold }}
           readinessProbe:
-            exec:
-              command:
-                - pgrep
-                - -f
-                - sidekiq
+            httpGet:
+              path: /readiness
+              port: {{ $.Values.metrics.port }}
+            initialDelaySeconds: {{ $.Values.readinessProbe.initialDelaySeconds }}
+            periodSeconds: {{ $.Values.readinessProbe.periodSeconds }}
+            timeoutSeconds: {{ $.Values.readinessProbe.timeoutSeconds }}
+            successThreshold: {{ $.Values.readinessProbe.successThreshold }}
+            failureThreshold: {{ $.Values.readinessProbe.failureThreshold }}
           lifecycle:
             preStop:
               exec:
