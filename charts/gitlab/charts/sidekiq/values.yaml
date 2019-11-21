@@ -33,9 +33,12 @@ redis:
 
 # https://docs.gitlab.com/ee/administration/operations/sidekiq_memory_killer.html#sidekiq-memorykiller
 memoryKiller:
+  daemonMode: false
   maxRss: 2000000
   graceTime: 900
   shutdownWait: 30
+  checkInterval: 3
+  #hardLimitRss: 3000000
 
 global:
   # imagePullPolicy: IfNotPresent
