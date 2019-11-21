@@ -103,6 +103,7 @@ spec:
           volumeMounts:
 {{ include "gitlab.extraVolumeMounts" $ | indent 10 }}
 {{ include "gitlab.psql.ssl.volumeMount" $ | indent 10 }}
+{{ include "gitlab.geo.psql.ssl.volumeMount" $ | indent 10 }}
           - name: sidekiq-config
             mountPath: /config
             readOnly: true
@@ -224,6 +225,7 @@ spec:
       volumes:
 {{ include "gitlab.extraVolumes" $ | indent 6 }}
 {{ include "gitlab.psql.ssl.volume" $ | indent 6 }}
+{{ include "gitlab.geo.psql.ssl.volume" $ | indent 6 }}
 {{- if $metricsEnabled }}
       - name: sidekiq-metrics
         emptyDir:
@@ -266,6 +268,13 @@ spec:
               items:
                 - key: {{ template "gitlab.psql.password.key" $ }}
                   path: postgres/psql-password
+          {{- if $.Values.global.geo.enabled }}
+          - secret:
+              name: {{ template "gitlab.geo.psql.password.secret" $ }}
+              items:
+                - key: {{ template "gitlab.geo.psql.password.key" $ }}
+                  path: postgres/geo-psql-password
+          {{- end }}
           - secret:
               name: {{ template "gitlab.registry.certificate.secret" $ }}
               items:
