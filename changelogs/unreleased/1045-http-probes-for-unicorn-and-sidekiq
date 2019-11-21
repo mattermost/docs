@@ -1,0 +1,5 @@
+---
+title: "Added http probes for sidekiq and unicorn"
+merge_request: 1045
+author: Dmitry Chepurovskiy
+type: added

@@ -31,38 +31,48 @@ The `sidekiq` chart is configured in three parts: chart-wide [external services]
 The table below contains all the possible charts configurations that can be supplied
 to the `helm install` command using the `--set` flags:
 
-| Parameter                    | Default           | Description                              |
-| ---------------------------- | ----------------- | ---------------------------------------- |
-| `annotations`                |                   | Pod annotations                          |
-| `concurrency`                | `10`              | Sidekiq default concurrency              |
-| `enabled`                    | `true`            | Sidekiq enabled flag                     |
-| `extraContainers`            |                   | List of extra containers to include      |
-| `extraInitContainers`        |                   | List of extra init containers to include |
-| `extraVolumeMounts`          |                   | List of extra volumes mountes to do      |
-| `extraVolumes`               |                   | List of extra volumes to create          |
-| `gitaly.serviceName`         | `gitaly`          | Gitaly service name                      |
-| `hpa.targetAverageValue`     | `400m`            | Set the autoscaling target value         |
-| `image.pullPolicy`           | `Always`          | Sidekiq image pull policy                |
-| `image.pullSecrets`          |                   | Secrets for the image repository         |
-| `image.repository`           | `registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee` | Sidekiq image repository |
-| `image.tag`                  |                   | Sidekiq image tag                        |
-| `init.image`                 | `busybox`         | initContainer image                      |
-| `init.tag`                   | `latest`          | initContainer image tag                  |
-| `metrics.enabled`            | `true`            | Toggle Prometheus metrics exporter       |
-| `psql.password.key`          | `psql-password`   | key to psql password in psql secret      |
-| `psql.password.secret`       | `gitlab-postgres` | psql password secret                     |
-| `redis.serviceName`          | `redis`           | Redis service name                       |
-| `replicas`                   | `1`               | Sidekiq replicas                         |
-| `resources.requests.cpu`     | `100m`            | Sidekiq minimum needed cpu               |
-| `resources.requests.memory`  | `600M`            | Sidekiq minimum needed memory            |
-| `timeout`                    | `5`               | Sidekiq job timeout                      |
-| `tolerations`                | `[]`              | Toleration labels for pod assignment     |
-| `memoryKiller.daemonMode`    | `false`           | If `true` enables daemon memory killer mode |
-| `memoryKiller.maxRss`        | `2000000`         | Maximum RSS before delayed shutdown triggered expressed in kilobytes |
-| `memoryKiller.graceTime`     | `900`             | Time to wait before a triggered shutdown expressed in seconds|
-| `memoryKiller.shutdownWait`  | `30`              | Amount of time after triggered shutdown for existing jobs to finish expressed in seconds |
-| `memoryKiller.hardLimitRss`  |                   | Maximum RSS before imediate shutdown triggered expressed in kilobyte in daemon mode |
-| `memoryKiller.checkInterval` | `3`               | Amount of time between memory checks in daemon mode |
+| Parameter                            | Default           | Description                              |
+| ------------------------------------ | ----------------- | ---------------------------------------- |
+| `annotations`                        |                   | Pod annotations                          |
+| `concurrency`                        | `10`              | Sidekiq default concurrency              |
+| `enabled`                            | `true`            | Sidekiq enabled flag                     |
+| `extraContainers`                    |                   | List of extra containers to include      |
+| `extraInitContainers`                |                   | List of extra init containers to include |
+| `extraVolumeMounts`                  |                   | List of extra volumes mountes to do      |
+| `extraVolumes`                       |                   | List of extra volumes to create          |
+| `gitaly.serviceName`                 | `gitaly`          | Gitaly service name                      |
+| `hpa.targetAverageValue`             | `400m`            | Set the autoscaling target value         |
+| `image.pullPolicy`                   | `Always`          | Sidekiq image pull policy                |
+| `image.pullSecrets`                  |                   | Secrets for the image repository         |
+| `image.repository`                   | `registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee` | Sidekiq image repository |
+| `image.tag`                          |                   | Sidekiq image tag                        |
+| `init.image`                         | `busybox`         | initContainer image                      |
+| `init.tag`                           | `latest`          | initContainer image tag                  |
+| `metrics.enabled`                    | `true`            | Toggle Prometheus metrics exporter       |
+| `psql.password.key`                  | `psql-password`   | key to psql password in psql secret      |
+| `psql.password.secret`               | `gitlab-postgres` | psql password secret                     |
+| `redis.serviceName`                  | `redis`           | Redis service name                       |
+| `replicas`                           | `1`               | Sidekiq replicas                         |
+| `resources.requests.cpu`             | `100m`            | Sidekiq minimum needed cpu               |
+| `resources.requests.memory`          | `600M`            | Sidekiq minimum needed memory            |
+| `timeout`                            | `5`               | Sidekiq job timeout                      |
+| `tolerations`                        | `[]`              | Toleration labels for pod assignment     |
+| `memoryKiller.daemonMode`            | `false`           | If `true` enables daemon memory killer mode |
+| `memoryKiller.maxRss`                | `2000000`         | Maximum RSS before delayed shutdown triggered expressed in kilobytes |
+| `memoryKiller.graceTime`             | `900`             | Time to wait before a triggered shutdown expressed in seconds|
+| `memoryKiller.shutdownWait`          | `30`              | Amount of time after triggered shutdown for existing jobs to finish expressed in seconds |
+| `memoryKiller.hardLimitRss`          |                   | Maximum RSS before imediate shutdown triggered expressed in kilobyte in daemon mode |
+| `memoryKiller.checkInterval`         | `3`               | Amount of time between memory checks in daemon mode |
+| `livenessProbe.initialDelaySeconds`  | 20                | Delay before liveness probe is initiated                                                              |
+| `livenessProbe.periodSeconds`        | 60                | How often to perform the liveness probe                                                               |
+| `livenessProbe.timeoutSeconds`       | 30                | When the liveness probe times out                                                                     |
+| `livenessProbe.successThreshold`     | 1                 | Minimum consecutive successes for the liveness probe to be considered successful after having failed  |
+| `livenessProbe.failureThreshold`     | 3                 | Minimum consecutive failures for the liveness probe to be considered failed after having succeeded    |
+| `readinessProbe.initialDelaySeconds` | 0                 | Delay before readiness probe is initiated                                                             |
+| `readinessProbe.periodSeconds`       | 10                | How often to perform the readiness probe                                                              |
+| `readinessProbe.timeoutSeconds`      | 2                 | When the readiness probe times out                                                                    |
+| `readinessProbe.successThreshold`    | 1                 | Minimum consecutive successes for the readiness probe to be considered successful after having failed |
+| `readinessProbe.failureThreshold`    | 3                 | Minimum consecutive failures for the readiness probe to be considered failed after having succeeded   |
 
 ## Chart configuration examples
 

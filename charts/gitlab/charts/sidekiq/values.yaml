@@ -40,6 +40,19 @@ memoryKiller:
   checkInterval: 3
   #hardLimitRss: 3000000
 
+livenessProbe:
+  initialDelaySeconds: 20
+  periodSeconds: 60
+  timeoutSeconds: 30
+  successThreshold: 1
+  failureThreshold: 3
+readinessProbe:
+  initialDelaySeconds: 0
+  periodSeconds: 10
+  timeoutSeconds: 2
+  successThreshold: 1
+  failureThreshold: 3
+
 global:
   # imagePullPolicy: IfNotPresent
   hosts:

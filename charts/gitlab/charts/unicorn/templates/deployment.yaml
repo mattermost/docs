@@ -178,18 +178,18 @@ spec:
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
 {{ include "gitlab.extraVolumeMounts" . | indent 12 }}
           livenessProbe:
-            exec:
-              command:
-              - /scripts/healthcheck
+            httpGet:
+              path: /-/liveness
+              port: {{ .Values.service.internalPort }}
             initialDelaySeconds: {{ .Values.deployment.livenessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.deployment.livenessProbe.periodSeconds }}
             timeoutSeconds: {{ .Values.deployment.livenessProbe.timeoutSeconds }}
             successThreshold: {{ .Values.deployment.livenessProbe.successThreshold }}
             failureThreshold: {{ .Values.deployment.livenessProbe.failureThreshold }}
           readinessProbe:
-            exec:
-              command:
-              - /scripts/healthcheck
+            httpGet:
+              path: /-/readiness
+              port: {{ .Values.service.internalPort }}
             initialDelaySeconds: {{ .Values.deployment.readinessProbe.initialDelaySeconds }}
             periodSeconds: {{ .Values.deployment.readinessProbe.periodSeconds }}
             timeoutSeconds: {{ .Values.deployment.readinessProbe.timeoutSeconds }}
