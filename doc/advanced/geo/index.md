@@ -447,7 +447,7 @@ of your Primary database instance.
    ```
 
 1. After replication has finished, we must reconfigure the Omnibus Gitlab one last time
-   to ensure the `pg_hba.conf` correct for the secondary.
+   to ensure `pg_hba.conf` is correct for the secondary.
 
    ```sh
    gitlab-ctl reconfigure
