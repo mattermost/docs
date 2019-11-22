@@ -2,6 +2,37 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.5.0
+
+### Fixed (2 changes)
+
+- Fixed -k switch for eks_bootstrap_script and eksctl website reference. !1016
+- Fixed Redis Sentinel support for gitlab-workhorse. !1043
+
+### Changed (5 changes)
+
+- Update shell logging inside gitaly to use gitaly config file. !1004
+- Add internal_socket_dir to gitaly config. !1017
+- Update grafana chart to 4.0.1. !1026
+- Mailroom: update probes to direct binary. !1036
+- Update prometheus chart to 9.0.0. !1039
+
+### Added (7 changes, 1 of them is from the community)
+
+- Support running Gitaly over TLS. !969
+- Registry: Add support for setting relativeurls config. !1007 (thom8)
+- Allow to specify an initial Enterprise license. !1008
+- Added creds subcommand to eks_bootstrap_script. !1020
+- Add shutdown blackout for unicorn. !1028
+- Sidekiq: add negateQueues functionality. !1029
+- Add LDAP preventSignin. !1031
+
+### Other (2 changes)
+
+- Update gitlab-runner to 0.11.0/12.5.0. !1046
+- Update GitLab Version to 12.5.0.
+
+
 ## 2.4.8
 
 ### Other (1 change)

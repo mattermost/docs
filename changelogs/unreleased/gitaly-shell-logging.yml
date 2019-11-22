@@ -1,5 +1,0 @@
----
-title: Update shell logging inside gitaly to use gitaly config file
-merge_request: 1004
-author:
-type: changed
