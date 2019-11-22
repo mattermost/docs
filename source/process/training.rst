@@ -358,26 +358,20 @@ Sprint Planning
 Triage Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Mattermost staff-only** - (Triage team - 1-3 hours/week) Tuesdays and Thursdays at 09:30 (`San Francisco Time <http://everytimezone.com/>`__), or daily when a release is upcoming.
+**Mattermost staff-only** - (Triage team - 2-2.5 hours/week) daily at 09:30 or 10:00 (`San Francisco Time <http://everytimezone.com/>`__).
 
 - Goal: To provide consistent review, prioritization and ownership assignment of all tickets.
-- Attendees: One dev representative from each team (ABC, XYZ, ICU), one PM, QA team, Release Manager during release, and optionally leads and other Mattermost staff.
+- Attendees: One dev representative from each development team, at least one PM, QA team, Release Manager, and optionally leads, customer support and other Mattermost staff.
 
 Note:
 
- - ONLY TRIAGE TEAM should set or change the **Fix Version** of a ticket.
-
  - When tickets are first created, they go to triage to be reviewed for clarity and priority and assigned a Fix Version, Mattermost Team and Sprint. Unclear tickets may be assigned to their creator for more information.
      - The **Fix Version** determines the sequence in which tickets are addressed and triage team is accountable for that sequence. It is the responsibility of the triage team to make sure tickets are clear before they're assigned a Fix Version.
-     - When assigning a ticket to a **Mattermost Team**, it gets assigned to a dev and put into current sprint if the ticket is time-sensitive for release. Otherwise the ticket is assigned to a team (e.g. ABC) and is later prioritized and assigned to the appropriate people within that team.
+     - When assigning a ticket to a **Mattermost Team**, it gets assigned to a dev and put into the current release's Fix Version and the current sprint if the ticket is time-sensitive for release. Otherwise the ticket is assigned to a team with a "Triage" Fix Version and is later prioritized and assigned to the appropriate people within that team.
      - The **Sprint** determines the time frame in which a dev is responsible for fixing the ticket.
 
- - If you're ever unsure about a ticket (if it's not clear, or doesn't seem appropriate) add a comment and add triage to the Fix Version field, which will trigger a review by the triage team in 1-2 working days.
-     - Note: if the ticket is already assigned to a team and/or sprint, it will not appear in the triage query - easiest is to let the triage team know about the ticket so that it won't be missed.
-
- - ONLY TRIAGE TEAM can close a ticket resolved as **Won't Fix** or **Won't do**.
-     - These tickets resolved in such a way are reviewed by triage team.
-     - Only resolve a ticket as **Won't Fix** or **Won't Do** if you're highly confident it's the correct decision, otherwise, add "triage" to Fix Version for review. In either case, include a comment with your reason.
+ - If you're ever unsure about a ticket (if it's not clear, or doesn't seem appropriate) add a comment and add triage to the Fix Version field, which will trigger a review by the triage team in 1-6 working days.
+     - Note: if the ticket is already assigned to a team, it will not appear in the triage query - easiest is to let the triage team know about the ticket so that it won't be missed.
 
 Procedure:
 
