@@ -1,5 +1,5 @@
-Configure SAML with Microsoft ADFS
-==================================
+Configure SAML with Microsoft ADFS for Windows Server 2012
+==========================================================
 
 The following process provides steps to configure SAML 2.0 with Microsoft ADFS for Mattermost.
 
@@ -20,7 +20,7 @@ On your ADFS installation, note down the value of the **SAML 2.0/W-Federation UR
 Add a Relying Party Trust
 -------------------------
 
-1. In ADFS management sidebar, go to **AD FS > Trust Relationships > Relying Party Trusts** and click **Add Relying Party Trust**
+1. In ADFS management sidebar, go to **AD FS > Trust Relationships > Relying Party Trusts** and click **Add Relying Party Trust**.
 
 	.. image:: ../../source/images/adfs_1_add_new_relying_party_trust.PNG
 
@@ -183,7 +183,7 @@ For Mattermost servers running 3.3 and earlier, the first name and last name att
 
 7. Click **Save**.
 
-8. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > General > Users and Teams** in prior versions or **System Console** > **Site Configuration** > **Users and Teams** in versions after 5.12 and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
+8. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > Site Configuration > Users and Teams** (or **System Console > General > Users and Teams** in versions prior to 5.12) and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
 
 You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
 
