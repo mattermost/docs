@@ -39,7 +39,12 @@ If someone feels an existing ticket should be re-examined, they can add "global-
 Release Planning
 ~~~~~~~~~~~~~~~~
 
-Release planning sets the "Fix Version" of tickets to one of the upcoming monthly releases. The Fix Version is an estimate of when a feature might ship, which may change as the planning process continues, until the ticket is scheduled for a Sprint. Developers, Product Managers, Release and Quality Assurance teams use the Fix Version field for the following pruposes:
+Release planning sets the "Fix Version" of tickets to one of the upcoming monthly releases. The Fix Version is an estimate of when a feature might ship, which may change as the planning process continues, until the ticket is scheduled for a Sprint. 
+
+Jira Fix Version
+~~~~~~~~~~~~~~~~
+
+Developers, Product Managers, Release and Quality Assurance teams use the Fix Version field for the following pruposes:
 
  Developers: 
   - Fix Version field is the one that shows up on individual tickets in the backlog view.
