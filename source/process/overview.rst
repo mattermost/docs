@@ -25,7 +25,7 @@ Mattermost priorities are managed in Jira tickets, which are created by the core
 Triage
 ~~~~~~
 
-On non-holiday weekdays new tickets are reviewed in a process called "triage", and assigned a Fix Version of "unscheduled", indicating the ticket has enough specificity that it can be assigned to a developer to be completed. If the ticket is a bug, it is assigned the Fix Version for the current release.
+On non-holiday weekdays new tickets are reviewed in a process called "triage", and assigned either a numerical Fix Version for the current release or a "Triage" Fix Version indicating the ticket has enough specificity that it can be assigned to a developer team to be completed but is not necessarily urgent for the current release.
 
 By default, all tickets are created as public unless they contain sensitive information. The triage process reviews them for sufficient
 specificity. If the ticket is unclear, triage may reassign the ticket back to the original reporter to add more details.
@@ -35,7 +35,7 @@ View `current issues scheduled for the next triage meeting <https://mattermost.a
 Re-triage
 ^^^^^^^^^
 
-If someone feels an existing ticket should be re-examined, they can add "triage" to the Fix Version and it will be routed to the triage team for review at the next meeting.
+If someone feels an existing ticket should be re-examined, they can add "global-triage" to the Fix Version and it will be routed to the triage team for review at the next meeting.
 
 Release Planning
 ~~~~~~~~~~~~~~~~
