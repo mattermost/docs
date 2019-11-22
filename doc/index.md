@@ -24,7 +24,6 @@ There are also some [example values.yaml files](https://gitlab.com/gitlab-org/ch
 Some features of GitLab are not currently available using the Helm chart:
 
 - [GitLab Pages](https://gitlab.com/gitlab-org/charts/gitlab/issues/37)
-- [GitLab Geo](https://gitlab.com/gitlab-org/charts/gitlab/issues/8)
 - [No in-cluster HA database](https://gitlab.com/gitlab-org/charts/gitlab/issues/48)
 - [Smartcard authentication](https://gitlab.com/gitlab-org/charts/gitlab/issues/988)
 
@@ -32,6 +31,7 @@ Database limitations:
 
 - MySQL will not be supported, as support is [deprecated within GitLab](https://docs.gitlab.com/omnibus/settings/database.html#using-a-mysql-database-management-server-enterprise-edition-only)
 - Support is only available for Postgres 9.6. Backup and restore [will not work with other versions](https://gitlab.com/gitlab-org/charts/gitlab/issues/852).
+- GitLab Geo functionality [requires the use of external database service(s)](installation/deployment.md#postgresql).
 
 ## GitLab version mappings
 
@@ -111,6 +111,15 @@ To migrate your existing Omnibus GitLab instance to your Kubernetes cluster,
 follow the [migration documentation](installation/migration/index.md).
 
 ## Advanced configuration
+
+Advanced and large scale deployments have the ability to make use of external
+services, extended functionality, and alternate providers.
+
+Examples of advanced configurations:
+
+- GitLab Geo
+- External object storage providers
+- External PostgreSQL, Redis, Gitaly
 
 See [Advanced Configuration](advanced/index.md).
 
