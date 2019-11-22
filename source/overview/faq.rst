@@ -441,7 +441,7 @@ High Trust Questions
 What are the trust benefits of Mattermost compared to third-party SaaS systems that let customers manage their own encryption keys?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  
-**Encryption doesn't mean a third-party SaaS vendor can't read your data**. A third party vendor who provides encryption keys to the database that stores a customer's data at rest may still be able to read a customer's data while its in transit.
+**Encryption doesn't mean a third-party SaaS vendor can't read your data**. A third-party vendor who provides encryption keys to the database that stores a customer's data at rest may still be able to read a customer's data while its in transit.
  
 For example, performing a search on message histories requires access to unencrypted messages in order to match the search term to words in your unencrypted message history.
  
