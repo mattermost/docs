@@ -21,12 +21,12 @@ Every month, the Mattermost community plans, builds, tests, documents, releases 
 
     1. If the change is not complex, a [Help Wanted Ticket](https://docs.mattermost.com/process/help-wanted.html) label may be added to the Jira ticket for any developer to contribute the change to the Mattermost Team Edition code base via the [contribution process](http://docs.mattermost.com/developer/contribution-guide.html). [A list of tickets accepting pull requests](https://mattermost.atlassian.net/browse/PLT-2667?filter=10101) is offered to all contributors who read the contributor's guide, and these provide a steady stream of improvements to Team Edition month after month. 
     2. If change is considered high priority without pre-requisites, a Fix Version may be applied to the Jira ticket for the Mattermost core team or key contributors to add for an upcoming monthly release. Priority decisions are influenced by discussion and voting in the feature idea forum and community systems as well as feedback from key contributors. 
-    3. If change is not seen as high priority or has pre-requisites, it is assigned a Fix Version of `backlog` and will be considered monthly for inclusion in a future release.
+    3. If change is not seen as high priority or has pre-requisites, it is assigned a Fix Version of `triage` or `unscheduled` and will be considered monthly for inclusion in a future release.
 
 2. When a feature idea does not fit the scope of Team Edition, as [defined in the Mattermost Manifesto](http://www.mattermost.org/manifesto/#mattermost-teams), but benefits Enterprise Edition subscribers, a similar process as above is undertaken by the Enterprise Team.
 
     1. If change is considered high priority without pre-requisites, a Fix Version may be applied to the Jira ticket for the Mattermost Enterprise Team to add for an upcoming monthly release. Priority decisions are influenced by discussion with Enterprise Edition subscribers, with special attention paid to members of the [Core Access](https://about.mattermost.com/core-access/) program. 
-    2. If change is not seen as high priority or has pre-requisites, it is assigned a Fix Version of `backlog` until this situation changes.  
+    2. If change is not seen as high priority or has pre-requisites, it is assigned a Fix Version of `triage` or `unscheduled` until this situation changes.  
     3. If an existing or potential Enterprise Edition subscriber needs a specific change that has not yet been assigned a Fix Version, they can contact the Mattermost Enterprise Team to discuss sponsoring the feature with Non-Recurring Engineering (NRE) funding to have it delivered before it would otherwise be added. Feature sponsorship can only be applied to features where Jira tickets exist.
     
 3. If a feature idea is not within the scope of either Team Edition or Enterprise Edition, you might consider: 
