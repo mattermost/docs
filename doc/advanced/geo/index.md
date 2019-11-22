@@ -446,7 +446,7 @@ of your Primary database instance.
    gitlab-ctl replicate-geo-database --slot-name=geo_2 --host=PRIMARY_DATABASE_HOST
    ```
 
-1. After replication has finished, we must reconfigure the Omnibus Gitlab one last time
+1. After replication has finished, we must reconfigure the Omnibus GitLab one last time
    to ensure `pg_hba.conf` is correct for the secondary.
 
    ```sh
