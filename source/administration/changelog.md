@@ -65,6 +65,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Administration
  - Added support for System Administrators to control Teammate Name Display at the system level.
  - Added support for revoking Guest User Sessions when the Guest Accounts feature is disabled.
+ - Added the ability to search in **System Console > Channels**.
  - Added the ability to add users as another user to the plugin API.
  - Restricted user access to ``/logs`` API endpoint.
  - Added "Remove team" and "Change role" options in Team Membership panel.
