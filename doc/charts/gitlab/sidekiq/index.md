@@ -311,6 +311,8 @@ pods:
 
 ## Production usage
 
-By default, all of Sidekiq queues run in an all-in-one container which is not suitable
-for production use cases. Check the [example config](./example-queues.yaml) for a more production ready Sidekiq
-deployment. You can move queues around pods as part of your tuning.
+By default, all of Sidekiq queues run in an all-in-one container which is not
+suitable for production use cases. Check the [example
+config](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/doc/charts/gitlab/sidekiq/example-queues.yaml)
+for a more production ready Sidekiq deployment. You can move queues around pods
+as part of your tuning.
