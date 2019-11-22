@@ -41,10 +41,16 @@ Release Planning
 
 Release planning sets the "Fix Version" of tickets to one of the upcoming monthly releases. The Fix Version is an estimate of when a feature might ship, which may change as the planning process continues, until the ticket is scheduled for a Sprint. Developers, Product Managers, Release and Quality Assurance teams use the Fix Version field for the following pruposes:
 
- Developers: Fix Version field is the one that shows up on individual tickets in the backlog view.
+ Developers: 
+  - Fix Version field is the one that shows up on individual tickets in the backlog view.
  Product Managers:
- Release: 
+  - 
+ Release Manager:
+  - Follow status of resolved, open and submitted tickets for current release.
+  - Compose various release metrics.
  Quality Assurance: 
+  - Prioritizing testing for tickets marked for the current release's Fix Version.
+  - Following when a change actually went in (for bug investigation and also potentially reporting over time).
 
 Sprint Planning
 ~~~~~~~~~~~~~~~
