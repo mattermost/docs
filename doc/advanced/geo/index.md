@@ -568,7 +568,6 @@ We now need to configure the Geo database, via the `task-runner` Pod.
    gitlab-rake geo:db:refresh_foreign_tables
    ```
 
-
 ## Add Secondary Geo instance via Primary
 
 Now that both databases are configured and applications are deployed, we must tell
@@ -590,7 +589,6 @@ that the **secondary** instance can act on those notifications immediately.
 
 ## Confirm Operational Status
 
-
 The final step is to verify the Geo replication status on the secondary instance once fully
 configured, via the `task-runner` Pod.
 
@@ -605,6 +603,7 @@ configured, via the `task-runner` Pod.
    ```sh
    kubectl exec -ti gitlab-geo-task-runner-XXX -- bash -l
    ```
+
 1. Check the status of Geo configuration
 
    ```sh
