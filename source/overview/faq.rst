@@ -453,7 +453,7 @@ If it’s unclear from the vendor’s documentation whether or not your data can
 
 **Moreover, high trust enterprises need more than encryption - they need privacy, total data ownership, auditability, and control of their infrastructure.**
  
-*Privacy* means a third party service cannot monitor the identity, IP address, location, or access patterns of your employees, nor their activity on your system, nor provide that information either intentionally through a court order (which you may never be informed about) or unintentionally through a data breach.
+*Privacy* means a third-party service cannot monitor the identity, IP address, location, or access patterns of your employees, nor their activity on your system, nor provide that information either intentionally through a court order (which you may never be informed about) or unintentionally through a data breach.
  
 *Total data ownership* means a third party cannot prevent you from accessing your data at any time. It means no third party can read your data, analyze it or monetize it. It means should you end your commercial relationship you maintain your records with any and all backups. It also means you can delete your data at any time and verify that no additional copies remain.
 
