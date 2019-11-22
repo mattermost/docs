@@ -43,6 +43,8 @@ Release Planning
 Release planning sets the "Fix Version" of tickets to one of the upcoming monthly releases. The Fix Version is an estimate of when a
 feature might ship, which may change as the planning process continues, until the ticket is scheduled for a Sprint.
 
+Fix Version field is the one that shows up on individual tickets in the backlog view.
+
 Sprint Planning
 ~~~~~~~~~~~~~~~
 
