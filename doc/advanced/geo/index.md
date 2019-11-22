@@ -44,6 +44,7 @@ The outline below should be followed in order:
 1. [Copy secrets from primary cluster to secondary cluster](#copy-secrets-from-the-primary-cluster-to-the-secondary-cluster)
 1. [Deploy chart as Geo Secondary](#deploy-chart-as-geo-secondary)
 1. [Add Secondary Geo instance via Primary](#add-secondary-geo-instance-via-primary)
+1. [Confirm Operational Status](#confirm-operational-status)
 
 ## Setup Omnibus instances
 
@@ -111,9 +112,9 @@ the rest of this documentation.
 - Secondary cluster:
   - IP addresses of nodes
 - Database Passwords (_must  pre-decide the password(s)_)
-  - gitlab (used in `postgresql['sql_user_password']`, `global.psql.password`)
-  - gitlab_geo (used in `geo_postgresql['sql_user_password']`, `global.geo.psql.password`)
-  - gitlab_replicator (needed for replication)
+  - `gitlab` (used in `postgresql['sql_user_password']`, `global.psql.password`)
+  - `gitlab_geo` (used in `geo_postgresql['sql_user_password']`, `global.geo.psql.password`)
+  - `gitlab_replicator` (needed for replication)
 - Your GitLab license file
 
 The `gitlab` and `gitlab_geo` database user passwords will need to exist in two
@@ -374,7 +375,14 @@ Once the configuration above is prepared:
 1. Check TCP connectivity to the **primary** node's PostgreSQL server:
 
    ```sh
-   gitlab-rake gitlab:tcp_check[<primary_node_ip>,5432]
+   openssl s_client -connect <primary_node_ip>:5432 </dev/null
+   ```
+
+   The output should show the following:
+
+   ```
+   CONNECTED(00000003)
+   write:errno=0
    ```
 
    NOTE: **Note:**
@@ -436,6 +444,13 @@ of your Primary database instance.
 
    ```sh
    gitlab-ctl replicate-geo-database --slot-name=geo_2 --host=PRIMARY_DATABASE_HOST
+   ```
+
+1. After replication has finished, we must reconfigure the Omnibus GitLab one last time
+   to ensure `pg_hba.conf` is correct for the secondary.
+
+   ```sh
+   gitlab-ctl reconfigure
    ```
 
 ## Copy secrets from the primary cluster to the secondary cluster
@@ -553,6 +568,42 @@ We now need to configure the Geo database, via the `task-runner` Pod.
    gitlab-rake geo:db:refresh_foreign_tables
    ```
 
+## Add Secondary Geo instance via Primary
+
+Now that both databases are configured and applications are deployed, we must tell
+the Primary that the Secondary exists:
+
+1. Visit the **primary** instance's **Admin Area > Geo**
+   (`/admin/geo/nodes`) in your browser.
+1. Click the **New node** button.
+1. Add the **secondary** instance. Use the full URL for the name and URL.
+   **Do NOT** check the **This is a primary node** checkbox.
+1. Optionally, choose which groups or storage shards should be replicated by the
+   **secondary** instance. Leave blank to replicate all.
+1. Click the **Add node** button.
+
+Once added to the admin panel, the **secondary** instance will automatically start
+replicating missing data from the **primary** instance in a process known as **backfill**.
+Meanwhile, the **primary** instance will start to notify each **secondary** instance of any changes, so
+that the **secondary** instance can act on those notifications immediately.
+
+## Confirm Operational Status
+
+The final step is to verify the Geo replication status on the secondary instance once fully
+configured, via the `task-runner` Pod.
+
+1. Find the `task-runner` Pod
+
+   ```sh
+   kubectl get pods -lapp=task-runner --namespace gitlab
+   ```
+
+1. Attach to the Pod with `kubectl exec`
+
+   ```sh
+   kubectl exec -ti gitlab-geo-task-runner-XXX -- bash -l
+   ```
+
 1. Check the status of Geo configuration
 
    ```sh
@@ -597,22 +648,3 @@ We now need to configure the Geo database, via the `task-runner` Pod.
    - `OpenSSH configured to use AuthorizedKeysCommand ... no` _is expected_. This
    Rake task is checking for a local SSH server, which is actually present in the
    `gitlab-shell` chart, deployed elsewhere, and already configured appropriately.
-
-## Add Secondary Geo instance via Primary
-
-Now that both databases are configured and applications are deployed, we must tell
-the Primary that the Secondary exists:
-
-1. Visit the **primary** instance's **Admin Area > Geo**
-   (`/admin/geo/nodes`) in your browser.
-1. Click the **New node** button.
-1. Add the **secondary** instance. Use the full URL for the name and URL.
-   **Do NOT** check the **This is a primary node** checkbox.
-1. Optionally, choose which groups or storage shards should be replicated by the
-   **secondary** instance. Leave blank to replicate all.
-1. Click the **Add node** button.
-
-Once added to the admin panel, the **secondary** instance will automatically start
-replicating missing data from the **primary** instance in a process known as **backfill**.
-Meanwhile, the **primary** instance will start to notify each **secondary** instance of any changes, so
-that the **secondary** instance can act on those notifications immediately.
