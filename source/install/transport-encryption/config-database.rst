@@ -3,19 +3,19 @@ Configuring Database Transport Encryption
 =============================================
 
 Mattermost is able to encrypt the traffic between the database and the application
-using TLS. This guide will walk you through the set up steps for a single, separate MySQL
+using TLS. This guide describes the set up steps for a single, separate MySQL
 server.
 
 ## Prerequisites
 
-- Mattermost server or cluster operational
-- MySQL server operational
-- Connectivity between Mattermost and MySQL server confirmed
+- Operational Mattermost server or cluster
+- Operational MySQL server 
+- Confirmed connectivity between Mattermost and MySQL server
 - Authentication credentials for Mattermost user on MySQL server
 
 Example Environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this scenario there is 1 Mattermost application server and one MySQL server,
+In this scenario there is one Mattermost application server and one MySQL server,
 both running Ubuntu 18.04, with the following IPs:
 
 - **transport-encryption-mattermost1:** 10.10.250.146
@@ -26,24 +26,24 @@ Preparations
 
 - Connect to both servers with a sudo or root user
 
-MySQL Configuration
+Configuring MySQL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On the MySQL server, execute the following command to prepare the server for
+Execute the following command to prepare the server for
 SSL connections:
 
 ``sudo mysql_ssl_rsa_setup --uid=mysql``
 
-This will generate self-signed certificates in ``/var/lib/mysql/`` that the MySQL
-server will use to encrypt the connection. If you would like to use certificates
+This generates self-signed certificates in ``/var/lib/mysql/`` that the MySQL
+server uses to encrypt the connection. If you would like to use certificates
 from your company CA, please follow the MySQL documentation for configuration steps.
 
 **Optionally**, it can be enforced that all connections must be made via a local
-socket connection or TLS, to do so, open ``/etc/mysql/mysql.conf.d/mysqld.cnf``
+socket connection or TLS. To do this, open ``/etc/mysql/mysql.conf.d/mysqld.cnf``
 and append the following line to the file:
 
 ``require_secure_transport = ON``
 
-Any connection to the MySQL server now must be made with secure transport enabled.
+Any connection to the MySQL server must now be made with secure transport enabled.
 
 Last but not least, restart the server and confirm it is up and running:
 
@@ -66,7 +66,7 @@ Last but not least, restart the server and confirm it is up and running:
     Oct 18 16:41:25 transport-encryption-mysql1 systemd[1]: Started MySQL Community Server.
 
 
-Mattermost Configuration
+Configuring Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 On the Mattermost server, open the file ``config.json`` and look for the ``DataSource``
 value in the ``SqlSettings`` section. It should look similar to this:
@@ -88,9 +88,9 @@ the configuration setting will now look like this:
 
 If you are running Mattermost in a cluster, be sure to update the value on each node
 of the cluster. If you are using configuration in the database, be sure to update the
-systemd unit file as well to enable TLS for the configuration store.
+``systemd`` unit file and enable TLS for the configuration store.
 
-Afterwards, restart the Mattermost server and ensure the system is operational:
+Once complete, restart the Mattermost server and ensure the system is operational:
 
 .. code-block:: none
 

@@ -11,19 +11,19 @@ by no means limited to that amount.
 
 ## Prerequisites
 - SSH port whitelisted between each node of the deployment
-- ufw / iptables is active on each node
-- Access to the root / sudo user of each node for configuration
+- Active ufw/iptables on each node
+- Access to the root/sudo user of each node for configuration
 - A configured Mattermost cluster
 - Mattermost running with a dedicated service user
 - Mattermost service is stopped on each cluster node
 
-**Note:** A support on the application level is currently in development and will
+**Note:** Support on the application level is currently in development and will
 deprecate this document.
 
 Example Environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In this scenario there are 3 application nodes in our environment with the following
-hostname / IP mapping:
+In this scenario there are three application nodes in our environment with the following
+hostname/IP mapping:
 
 - **transport-encryption-mattermost1:** 10.10.250.146
 - **transport-encryption-mattermost2:** 10.10.250.231
@@ -57,15 +57,15 @@ called ``mattermost``:
 The location of the SSH key itself is irrelevant if company policies require
 the usage of another storage location.
 
-Next, ensure that the SSH public key of each node is added to ``authorized_keys``
+Next, ensure that the SSH public key of each node is added to the ``authorized_keys``
 file of the other nodes of the cluster. To do so, copy the contents of ``/home/mattermost/.ssh/id_rsa.pub``
-of node 2 and 3, and add it to ``/home/mattermost/.ssh/authorized_keys`` of node 1.
+of nodes 2 and 3, and add it to ``/home/mattermost/.ssh/authorized_keys`` of node 1.
 
 Repeat this step for each node of the cluster. As a result, each node should be
 able to establish an SSH connection to the other nodes of the cluster.
 
 **Note:** This service account can be separate from the service account already used
-for the Mattermost systemd service itself. It is only important that it is allowed
+for the Mattermost ``systemd`` service itself. It is only important that it is allowed
 to create a SSH tunnel with port forwarding and does not require any additional
 permissions.
 
@@ -98,10 +98,10 @@ follows:
   22/tcp                     ALLOW       10.10.250.165
 
 
-Repeat the same steps on the other nodes, but replacing the IPs with the ones from the
+Repeat the same steps on the other nodes, replacing the IPs with the ones from the
 other member nodes. Do so for each member node, excluding the node itself.
 
-As a next step, open ``/etc/ufw/after.rules`` and add the following block to the
+Next, open ``/etc/ufw/after.rules`` and add the following block to the
 bottom of the file:
 
 .. code-block:: none
@@ -118,7 +118,7 @@ bottom of the file:
   COMMIT
 
 
-Two lines always belong to a single node, so in a deployment with 4 nodes:
+Two lines always belong to a single node, so in a deployment with four nodes:
 
 .. code-block:: none
 
@@ -130,7 +130,7 @@ Two lines always belong to a single node, so in a deployment with 4 nodes:
   -A OUTPUT -p tcp -d ip_node_4 --dport 8074 -j DNAT --to-destination 127.0.0.1:38074
 
 Please be aware that the ports on the right side must be unique, so if you have a cluster of
-6 nodes, use 8075 and 8074 with 1 to 5 in front of it. If the cluster is of bigger size, additional
+six nodes, use 8075 and 8074 with 1 to 5 in front of it. If the cluster is of bigger size, additional
 ports must be used.
 
 Ensure that your operating system has IP forwarding enabled using the following command:
@@ -162,7 +162,7 @@ the following should be configured:
 
 - SSH access enabled in firewall from each cluster node to another
 - Per node 2 iptables rules for port 8074 and 8075
-- IP Forwarding enabled
+- IP forwarding enabled
 
 
 SSH Configuration
@@ -214,8 +214,8 @@ of entries for your environment.
 Cluster Start
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-After finishing the configuration on each node, start the service on each cluster again
-and confirm it's running:
+Once each node is configured, restart the service on each cluster.
+and confirm it's running using the command below.
 
 .. code-block:: none
 
@@ -227,5 +227,5 @@ and confirm it's running:
     Process: 16734 ExecStartPre=/opt/mattermost/bin/pre_start.sh (code=exited, status=0/SUCCESS)
 
 
-Afterwards open the Mattermost System Console and confirm that each node is reporting successfully
+Next, open the Mattermost System Console and confirm that each node is reporting successfully
 in the High Availability section.

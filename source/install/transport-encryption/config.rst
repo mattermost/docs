@@ -2,8 +2,8 @@
 Configuring Transport Encryption
 =============================================
 
-The components of the Mattermost setup can be shown in the following graphic,
-incl. the used transport encryption used. Aside from the encryption between the
+The components of the Mattermost setup are shown in the following diagram,
+including the transport encryption used. Aside from the encryption between the
 Mattermost Application Server, all transports rely on TLS encryption.
 
 **Note:** The transport between the Application servers is not used by default and
