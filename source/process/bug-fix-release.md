@@ -78,7 +78,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
 4. QA:
     - Identify any new teammates who will be joining release testing, DM them an intro to the testing process and timeframe, send them the [hardware/software survey](https://drive.google.com/open?id=1IUiNO2S5fgWVn-Y_cyouxheukqKyGQC0_2UX64Ejwk8)
 
-### F. (T-minus 9 working days) Release Candidate Cut
+### F. (T-minus 11 working days) Release Candidate Cut
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
@@ -116,7 +116,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Confirm changes to `config.json` in compatibility section of Changelog are written back to [settings documentation](https://docs.mattermost.com/administration/config-settings.html#configuration-settings)
     - Confirm all new diagnostics are documented in the telemetry docs (https://docs.mattermost.com/administration/telemetry.html)
 
-### G. (T-minus 8 working days) Release Candidate Testing
+### G. (T-minus 10 working days) Release Candidate Testing
 
 1. **(Team) Daily Release Update Meeting**
     - Triage Jira tickets
@@ -146,7 +146,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
         - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
     - Send blog post for Release Manager and PMs to review
 
-### H. (T-minus 7 working days) Release Candidate Testing Finished
+### H. (T-minus 9 working days) Release Candidate Testing Finished
 
 1. **(Team) Daily Release Update Meeting**
     - Confirm testing assigned in the Release Testing spreadsheet is complete 
