@@ -18,14 +18,9 @@ both running Ubuntu 18.04, with the following IPs:
 - **transport-encryption-mattermost1:** 10.10.250.146
 - **transport-encryption-nginx:** 10.10.250.107
 
-Preparations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Connect to both servers with a sudo or root user
-
 Configuring NGINX
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On the NGINX server, open the Mattermost proxy configuration (Refer to - `Configuring NGINX with SSL and HTTP/2 (End-User - Proxy) </install/install-rhel-6.html#configuring-nginx-with-ssl-and-http-2>`__ for additional information)
+On the NGINX server, connect to both servers with a sudo or root user. Open the Mattermost proxy configuration (Refer to - `Configuring NGINX with SSL and HTTP/2 (End-User - Proxy) </install/install-rhel-6.html#configuring-nginx-with-ssl-and-http-2>`__ for additional information)
 and search for the following line twice:
 
 .. code-block:: none
@@ -100,8 +95,7 @@ Restart the Mattermost server and ensure it's up and running:
      Active: active (running) since Mon 2019-10-28 16:45:29 UTC; 1h 15min ago
      [...]
 
-Finally, on the **NGINX server**, reload the configuration that requests are being
-made on HTTPS:
+Finally, on the **NGINX server**, reload the configuration to ensure that requests are sent on HTTPS:
 
 .. code-block:: none
 

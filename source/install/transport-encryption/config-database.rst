@@ -9,7 +9,7 @@ server.
 ## Prerequisites
 
 - Operational Mattermost server or cluster
-- Operational MySQL server 
+- Operational MySQL server
 - Confirmed connectivity between Mattermost and MySQL server
 - Authentication credentials for Mattermost user on MySQL server
 
@@ -21,15 +21,12 @@ both running Ubuntu 18.04, with the following IPs:
 - **transport-encryption-mattermost1:** 10.10.250.146
 - **transport-encryption-mysql1:** 10.10.250.148
 
-Preparations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- Connect to both servers with a sudo or root user
-
 Configuring MySQL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Execute the following command to prepare the server for
-SSL connections:
+
+As a first step, connect to both servers with a sudo or root user.
+
+Execute the following command to prepare the server for SSL connections:
 
 ``sudo mysql_ssl_rsa_setup --uid=mysql``
 
