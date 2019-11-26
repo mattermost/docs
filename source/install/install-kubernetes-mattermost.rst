@@ -107,3 +107,26 @@ Use your domain registration service to create a canonical name or IP address re
 pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
 
 Navigate to the ``ingressName`` URL in your browser and use Mattermost.
+
+Restoring an Existing Mattermost MySQL Database
+-----------------------------------------------
+
+You can use an existing Mattermost MySQL database with a new Mattermost installation using the Mattermost Kubernetes Operator. In order to do this,
+you'll need to have created a backup of your MySQL database which is stored somewhere accessible (e.g., in AWS S3). The steps you follow to
+create and upload your backup depends on the provider you're using and your use case. It's recommended that you consult their documentation or,
+if your deployment is managed in a different way, consult your Administrator.
+
+Creating a Mattermost Cluster
+Creating a Restore secret
+manifest
+
+example of manifests and the fields 
+
+
+This guide describes the structure of the ``restore.yaml`` manifest so you can deploy your database.
+
+
+sing a MySQL DB backup, by first creating a new ``mattermost-installation.yaml`` file and then
+creating a restore manifest.
+
+You create a new manifest
