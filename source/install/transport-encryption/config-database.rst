@@ -3,7 +3,7 @@ Configuring Database Transport Encryption
 =============================================
 
 Mattermost is able to encrypt the traffic between the database and the application
-using TLS. This guide describes the set up steps for a single, separate MySQL
+using TLS. This guide describes the setup steps for a single, separate MySQL
 server.
 
 ## Prerequisites
@@ -34,7 +34,7 @@ This generates self-signed certificates in ``/var/lib/mysql/`` that the MySQL
 server uses to encrypt the connection. If you would like to use certificates
 from your company CA, please follow the MySQL documentation for configuration steps.
 
-**Optionally**, it can be enforced that all connections must be made via a local
+**Note:** Optionally, it can be enforced that all connections must be made via a local
 socket connection or TLS. To do this, open ``/etc/mysql/mysql.conf.d/mysqld.cnf``
 and append the following line to the file:
 
@@ -78,8 +78,8 @@ which supports the following values:
 - skip-verify (Require TLS + accept self-signed)
 - preferred (Try TLS, fallback to unencrypted)
 
-In our case we need to use ``skip-verify`` since we use a self-signed certificate,
-the configuration setting will now look like this:
+In our case we need to use ``skip-verify`` since we use a self-signed certificate.
+The configuration setting will now look like this:
 
 ``"DataSource": "mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s&tls=skip-verify",``
 

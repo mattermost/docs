@@ -27,7 +27,7 @@ and search for the following line twice:
 
   proxy_pass http://backend;
 
-And change the protocol from ``http`` to ``https``:
+Also, change the protocol from ``http`` to ``https``:
 
 .. code-block:: none
 

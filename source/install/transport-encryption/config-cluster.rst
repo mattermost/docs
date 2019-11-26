@@ -38,7 +38,7 @@ Preparations
 
 SSH Authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-On each node generate a SSH key-pair for the service account, in our scenario
+On each node, generate a SSH key-pair for the service account. In our scenario this is
 called ``mattermost``:
 
 .. code-block:: none
@@ -65,8 +65,8 @@ Repeat this step for each node of the cluster. As a result, each node should be
 able to establish an SSH connection to the other nodes of the cluster.
 
 **Note:** This service account can be separate from the service account already used
-for the Mattermost ``systemd`` service itself. It is only important that it is allowed
-to create a SSH tunnel with port forwarding and does not require any additional
+for the Mattermost ``systemd`` service itself. It is important that it is allowed
+to create a SSH tunnel with port forwarding, but it does not require any additional
 permissions.
 
 ufw Configuration
@@ -134,6 +134,7 @@ six nodes, use 8075 and 8074 with 1 to 5 in front of it. If the cluster is of bi
 ports must be used.
 
 Ensure that your operating system has IP forwarding enabled using the following command:
+
 .. code-block:: none
 
   $ sysctl -w net.ipv4.ip_forward=1
@@ -181,7 +182,7 @@ start. To do so, create a file called ``pre_start.sh`` in ``/opt/mattermost/bin`
 
 
 **Note:** We are ignoring the error from the SSH connection itself in case a tunnel
-is already active. Otherwise the Mattermost server would refuse to start.
+is already active. Otherwise the Mattermost server would fail to start.
 
 **Note:** Please make sure to back up this script in case of a version upgrade.
 
@@ -192,7 +193,7 @@ Afterwards, we set the executable bit on the shell script:
   $ chmod +x /opt/mattermost/bin/pre_start.sh
 
 
-Open the systemd unit file of Mattermost and search for ``Type=Notify``, after it enter
+Open the systemd unit file of Mattermost and search for ``Type=Notify``. After this, enter
 a ``ExecStartPre`` script that will be executed before Mattermost itself is started:
 
 .. code-block:: none
@@ -214,8 +215,8 @@ of entries for your environment.
 Cluster Start
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once each node is configured, restart the service on each cluster.
-and confirm it's running using the command below.
+Once each node is configured, restart the service on each cluster
+and confirm that it's running using the command below:
 
 .. code-block:: none
 
