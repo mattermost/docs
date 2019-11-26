@@ -9,7 +9,9 @@ Ubuntu 18.04, but it can be adapted for any Linux operating system.
 While this document only describes the configuration of a three-node cluster, it is
 by no means limited to that amount.
 
-## Prerequisites
+Prerequisites
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 - SSH port whitelisted between each node of the deployment
 - Active ufw/iptables on each node
 - Access to the root/sudo user of each node for configuration
@@ -144,6 +146,7 @@ After that, reload the ufw rules and confirm that the iptable rules were success
 created:
 
 .. code-block:: none
+
   $ iptables -t nat -L
   Chain PREROUTING (policy ACCEPT)
   target     prot opt source               destination
