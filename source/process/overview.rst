@@ -48,11 +48,11 @@ Developers, Product Managers, Release and Quality Assurance teams use the Fix Ve
 
  Developers: 
   - Fix Version field is the one that shows up on individual tickets in the backlog view.
-  - For Story ticket, the Fix Version is used for soft guidelines for what is targeted for what release. 
+  - For Story tickets, the Fix Version is used for soft guidelines for what is targeted for what release. 
   - For Bug tickets, the Fix Version is used to know which bugs are priority based on where we are in the release cycle.
  Product Managers:
   - To prioritize backlog.
-  - To estimate/plan what stories ship in what release.
+  - To estimate/plan what Story tickets ship in what release.
  Release Manager:
   - Follow status of resolved, open and submitted tickets for current release.
   - Compose various release metrics.
