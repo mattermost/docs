@@ -180,6 +180,13 @@ entry.
 - Update GitLab Version to 12.4.0.
 
 
+## 2.3.10
+
+### Other (1 change)
+
+- Update GitLab Version to 12.3.7.
+
+
 ## 2.3.9
 
 ### Fixed (1 change)
