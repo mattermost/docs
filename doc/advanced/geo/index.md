@@ -517,11 +517,6 @@ global:
       password:
         secret: geo
         key: geo-postgresql-password
-# Disable Rails migrations on Secondary
-# The DB is read-only
-gitlab:
-  migrations:
-    enabled: false
 # External DB, disable
 postgresql:
   install: false
