@@ -174,7 +174,7 @@ spec:
               items:
                 - key: {{ template "gitlab.psql.password.key" . }}
                   path: postgres/psql-password
-          {{- if .Values.global.geo.enabled }}
+          {{- if include "gitlab.geo.secondary" $ }}
           - secret:
               name: {{ template "gitlab.geo.psql.password.secret" . }}
               items:
