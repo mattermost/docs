@@ -23,6 +23,10 @@ data:
       #     - host1.example.com
       #     - host2.example.com
 {{- include "gitlab.psql.ssl.config" . | indent 6 }}
+  {{- if include "gitlab.geo.secondary" $ }}
+  database_geo.yml.erb: |
+    {{- include "gitlab.geo.database.yml" $ | nindent 4 }}
+  {{- end }}
   resque.yml.erb: |
     production:
       # Redis (single instance)
@@ -40,6 +44,7 @@ data:
   configure: |
     {{- include "gitlab.scripts.configure.secrets" (dict "required" "postgres rails-secrets migrations gitaly") | nindent 4 -}}
     {{- include "gitlab.psql.ssl.initScript" . | nindent 4 }}
+    {{- include "gitlab.geo.psql.ssl.initScript" . | nindent 4 }}
 {{- if .Values.global.operator.enabled }}
 ---
 apiVersion: v1
