@@ -116,17 +116,32 @@ you'll need to have created a backup of your MySQL database which is stored some
 create and upload your backup depends on the provider you're using and your use case. It's recommended that you consult their documentation or,
 if your deployment is managed in a different way, consult your Administrator.
 
-Creating a Mattermost Cluster
-Creating a Restore secret
-manifest
+In a production deployment the basic flow is to create a backup (mysqldump) > create a new instance > install MySQL > restore the
+dump to this instance > install a backup program > perform the backup of the dump > upload it to your cloud storage provider > create
+a Mattermost cluster(is this yaml?) > create a restore/backup secret (yaml?) > create the restore manifest and deploy it.
 
-example of manifests and the fields 
+Your Mattermost cluster will look like the same file as above. You may also need a restore/backup secret that you'd add to the file. Then,
+in the Mattermost cluster file you add the following section to "spec" (leaving in the previous section as well)
 
+.. code-block:: yaml
 
-This guide describes the structure of the ``restore.yaml`` manifest so you can deploy your database.
+  apiVersion: mattermost.com/v1alpha1
+  kind: MattermostRestoreDB
+  metadata:
+    name: example-mattermostrestoredb
+    spec:
+    initBucketURL: s3://my-sample/my-backup.gz
+    mattermostClusterName: example-clusterinstallation
+    mattermostDBName: mattermostdb
+    mattermostDBPassword: supersecure
+    mattermostDBUser: mmuser
+    restoreSecret: myawscreds
 
+To initiate deployment, apply the file, specifying the correct path, using:
 
-sing a MySQL DB backup, by first creating a new ``mattermost-installation.yaml`` file and then
-creating a restore manifest.
+.. code-block:: sh
 
-You create a new manifest
+      $ kubectl create ns mattermost
+      $ kubectl apply -n mattermost -f /path/to/mattermost-installation.yaml
+
+The deployment process can be monitored in the Kubernetes user interface.
