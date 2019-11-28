@@ -48,11 +48,13 @@ stages:
   - package
   - cleanup
 
+.deps_pipeline: &deps_pipeline
+  variables:
+    - $DEPS_PIPELINE
 
 .except_deps_update: &except_deps_update
   except:
-    variables:
-      - $DEPS_PIPELINE
+    <<: *deps_pipeline
 
 dependency_update:
   image: registry.gitlab.com/gitlab-org/gitlab-omnibus-builder/ruby_docker:0.0.41
@@ -61,8 +63,7 @@ dependency_update:
     - curl https://deps.app/install.sh | bash -s -- -b $HOME/bin
     - $HOME/bin/deps ci
   only:
-    variables:
-      - $DEPS_PIPELINE
+    <<: *deps_pipeline
 
 lint_package:
   stage: package
@@ -74,14 +75,15 @@ lint_package:
     - helm lint --set certmanager-issuer.email=support@gitlab.com
     - mkdir -p build
     - helm package -d build .
-  <<: *except_deps_update
   artifacts:
     expire_in: 3d
     paths:
     - build
   except:
-    - tags
-    - /(^docs[\/-].+|.+-docs$)/
+    <<: *deps_pipeline
+    refs:
+      - tags
+      - /(^docs[\/-].+|.+-docs$)/
 
 .review_template:
   stage: review
@@ -114,8 +116,10 @@ lint_package:
     variables:
       - $KUBECONFIG
   except:
-    - master
-    - /(^docs[\/-].+|.+-docs$)/
+    <<: *deps_pipeline
+    refs:
+      - master
+      - /(^docs[\/-].+|.+-docs$)/
 
 review_gke:
   variables:
@@ -151,8 +155,10 @@ review_eks:
     variables:
       - $KUBECONFIG
   except:
-    - master
-    - /(^docs[\/-].+|.+-docs$)/
+    <<: *deps_pipeline
+    refs:
+      - master
+      - /(^docs[\/-].+|.+-docs$)/
 
 stop_review_gke:
   extends: .stop_review_template
@@ -293,6 +299,7 @@ review_helm_test:
     variables:
       - $KUBECONFIG
   except:
+    <<: *deps_pipeline
     refs:
       - master
       - /(^docs[\/-].+|.+-docs$)/
@@ -335,8 +342,10 @@ debug_review:
     variables:
       - $KUBECONFIG
   except:
-    - master
-    - /(^docs[\/-].+|.+-docs$)/
+    <<: *deps_pipeline
+    refs:
+      - master
+      - /(^docs[\/-].+|.+-docs$)/
 
 danger-review:
   image: registry.gitlab.com/gitlab-org/gitlab-build-images:danger
@@ -345,8 +354,8 @@ danger-review:
   only:
     variables:
       - $DANGER_GITLAB_API_TOKEN
-  <<: *except_deps_update
   except:
+    <<: *deps_pipeline
     refs:
       - master
       - tags
@@ -756,6 +765,7 @@ review_specs_eks:
 
 .production_specs:
   extends: .specs
+  <<: *except_deps_update
   only:
     refs:
       - master
