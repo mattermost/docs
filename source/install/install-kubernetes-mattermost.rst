@@ -111,17 +111,60 @@ Navigate to the ``ingressName`` URL in your browser and use Mattermost.
 Restoring an Existing Mattermost MySQL Database
 -----------------------------------------------
 
-You can use an existing Mattermost MySQL database with a new Mattermost installation using the Mattermost Kubernetes Operator. In order to do this,
-you'll need to have created a backup of your MySQL database which is stored somewhere accessible (e.g., in AWS S3). The steps you follow to
-create and upload your backup depends on the provider you're using and your use case. It's recommended that you consult their documentation or,
-if your deployment is managed in a different way, consult your Administrator.
+You can use the Mattermost Kubernetes Operator and utilize an existing Mattermost MySQL database with a new Mattermost installation.
+The steps you follow to create and upload your backup depends on the provider you're using and your use case. It's
+recommended that you consult their documentation or, if your deployment is managed in a different way, consult your Administrator.
 
-In a production deployment the basic flow is to create a backup (mysqldump) > create a new instance > install MySQL > restore the
-dump to this instance > install a backup program > perform the backup of the dump > upload it to your cloud storage provider > create
-a Mattermost cluster(is this yaml?) > create a restore/backup secret (yaml?) > create the restore manifest and deploy it.
 
-Your Mattermost cluster will look like the same file as above. You may also need a restore/backup secret that you'd add to the file. Then,
-in the Mattermost cluster file you add the following section to "spec" (leaving in the previous section as well)
+1. Create a backup of your database (e.g., using *mysqldump*).
+2. Deploy a new server (e.g., an AWS instance).
+3. Install a backup program and back up the databse.
+4. Upload the backed up database to your cloud storage provider.
+5. Next, create a Mattermost cluster.
+
+Open a text editor and create a text file with the following details.
+
+Save the file as ``mattermost-installation.yaml``:
+
+.. code-block:: yaml
+
+  apiVersion: mattermost.com/v1alpha1
+  kind: ClusterInstallation
+  metadata:
+    name: mm-example-full
+  spec:
+    size: 5000users
+    ingressName: example.mattermost-example.com
+    ingressAnnotations:
+      kubernetes.io/ingress.class: nginx
+    version: 5.14.0
+    mattermostLicenseSecret: ""
+    database:
+      storageSize: 50Gi
+    minio:
+      storageSize: 50Gi
+    elasticSearch:
+      host: ""
+      username: ""
+      password: ""
+
+6. Depending on your storage provider, create a restore/backup secret yaml file (the example below is for AWS/S3)
+
+.. code-block:: yaml
+
+   code content
+   apiVersion: v1
+   kind: Secret
+   metadata:
+    name: test-restore
+   type: Opaque
+   stringData:
+    AWS_ACCESS_KEY_ID: XXXXXXXXXXXX
+    AWS_SECRET_ACCESS_KEY: XXXXXXXXXXXX/XXXXXXXXXXXX
+    AWS_REGION: us-east-1
+    S3_PROVIDER: AWS
+
+7. Create a restore manifest.
 
 .. code-block:: yaml
 
@@ -129,7 +172,7 @@ in the Mattermost cluster file you add the following section to "spec" (leaving 
   kind: MattermostRestoreDB
   metadata:
     name: example-mattermostrestoredb
-    spec:
+  spec:
     initBucketURL: s3://my-sample/my-backup.gz
     mattermostClusterName: example-clusterinstallation
     mattermostDBName: mattermostdb
@@ -137,11 +180,12 @@ in the Mattermost cluster file you add the following section to "spec" (leaving 
     mattermostDBUser: mmuser
     restoreSecret: myawscreds
 
-To initiate deployment, apply the file, specifying the correct path, using:
+8. To initiate deployment, apply the file, specifying the correct path, using:
 
 .. code-block:: sh
 
       $ kubectl create ns mattermost
       $ kubectl apply -n mattermost -f /path/to/mattermost-installation.yaml
 
-The deployment process can be monitored in the Kubernetes user interface.
+The deployment process can be monitored in the Kubernetes user interface. Once complete, access your Mattermost
+instance and confirm that the database has been restored. 
