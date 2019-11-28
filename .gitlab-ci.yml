@@ -48,6 +48,22 @@ stages:
   - package
   - cleanup
 
+
+.except_deps_update: &except_deps_update
+  except:
+    variables:
+      - $DEPS_PIPELINE
+
+dependency_update:
+  image: registry.gitlab.com/gitlab-org/gitlab-omnibus-builder/ruby_docker:0.0.41
+  stage: prepare
+  script:
+    - curl https://deps.app/install.sh | bash -s -- -b $HOME/bin
+    - $HOME/bin/deps ci
+  only:
+    variables:
+      - $DEPS_PIPELINE
+
 lint_package:
   stage: package
   when: always
@@ -58,6 +74,7 @@ lint_package:
     - helm lint --set certmanager-issuer.email=support@gitlab.com
     - mkdir -p build
     - helm package -d build .
+  <<: *except_deps_update
   artifacts:
     expire_in: 3d
     paths:
@@ -176,6 +193,7 @@ stop_review_eks:
     url: https://gitlab-staging.$KUBE_INGRESS_BASE_DOMAIN
   variables:
     DOMAIN: -staging.$KUBE_INGRESS_BASE_DOMAIN
+  <<: *except_deps_update
   only:
     refs:
       - master
@@ -202,6 +220,7 @@ stop_review_eks:
   variables:
     DOMAIN: ".$KUBE_INGRESS_BASE_DOMAIN"
   when: manual
+  <<: *except_deps_update
   only:
     refs:
       - master
@@ -236,6 +255,7 @@ stop_review_eks:
   variables:
     DOMAIN: ".$KUBE_INGRESS_BASE_DOMAIN"
 #  when: manual
+  <<: *except_deps_update
   only:
     refs:
       - master
@@ -285,6 +305,7 @@ production_helm_test:
   script:
     - export TILLER_NAMESPACE=$KUBE_NAMESPACE
     - helm test --cleanup "$CI_ENVIRONMENT_SLUG"
+  <<: *except_deps_update
   only:
     refs:
       - master@charts/gitlab
@@ -324,6 +345,7 @@ danger-review:
   only:
     variables:
       - $DANGER_GITLAB_API_TOKEN
+  <<: *except_deps_update
   except:
     refs:
       - master
@@ -349,6 +371,7 @@ check_docs_lint:
     - bundle exec nanoc check internal_links
     # Check the internal anchor links
     - bundle exec nanoc check internal_anchors
+  <<: *except_deps_update
 
 # ---------------------------------------------------------------------------
 
@@ -693,6 +716,7 @@ check_docs_lint:
     key: "${CI_JOB_NAME}"
     paths:
     - gems
+  <<: *except_deps_update
 
 review_specs_gke:
   extends: .specs
@@ -779,6 +803,7 @@ production_specs_eks:
     expire_in: 7d
     paths:
     - ./gitlab-qa-run-*
+  <<: *except_deps_update
   only:
     refs:
       - branches
