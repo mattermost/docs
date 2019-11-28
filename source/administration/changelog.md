@@ -65,7 +65,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Administration
  - Added support for System Administrators to control Teammate Name Display at the system level.
  - Added support for revoking Guest User Sessions when the Guest Accounts feature is disabled.
- - Added the ability to search in **System Console > Channels**.
+ - Added the ability to search in **System Console > Channels** and **System Console > Teams**.
  - Added the ability to add users as another user to the plugin API.
  - Restricted user access to ``/logs`` API endpoint.
  - Added "Remove team" and "Change role" options in Team Membership panel.
@@ -75,6 +75,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for SAML login to the Audits Table.
  - Added support for configuration of SAML crypto hashing algorithms.
  - Added support for not allowing Guest invitations to teams that are managed by LDAP Group Sync.
+ - Added support for custom post types to Compliance exports.
 
 ### Bug Fixes
  - Fixed an issue where modifying config files caused compliance exports to run twice.
@@ -85,6 +86,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where "Your message is too long" warning on the right-hand side reply thread overlapped the Preview button.
  - Fixed an issue where hitting escape to close autocomplete also closed channel header modal.
  - Fixed an issue where **Reporting > Statistics** showed 'Loading...' when the value for any of the statistics was zero.
+ - Fixed an issue where converting a user to a bot via the command line tool (CLI) did not create an access token and could not be deleted.
+ - Fixed an issue where archived channels displayed in **System Console -> Channels** page.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
