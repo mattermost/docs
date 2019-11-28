@@ -2,6 +2,20 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.5.3
+
+### Other (1 change)
+
+- Update GitLab Version to 12.5.2.
+
+
+## 2.5.2
+
+### Other (1 change)
+
+- Update GitLab Version to 12.5.1.
+
+
 ## 2.5.1
 
 ### Added (1 change)
@@ -42,6 +56,20 @@ entry.
 
 - Update gitlab-runner to 0.11.0/12.5.0. !1046
 - Update GitLab Version to 12.5.0.
+
+
+## 2.4.10
+
+### Other (1 change)
+
+- Update GitLab Version to 12.4.5.
+
+
+## 2.4.9
+
+### Other (1 change)
+
+- Update GitLab Version to 12.4.4.
 
 
 ## 2.4.8
@@ -164,6 +192,20 @@ entry.
 - Add example values for UBI-based deployment. !986
 - Update gitlab-runner to 0.10.0/12.4.0. !1003
 - Update GitLab Version to 12.4.0.
+
+
+## 2.3.11
+
+### Other (1 change)
+
+- Update GitLab Version to 12.3.8.
+
+
+## 2.3.10
+
+### Other (1 change)
+
+- Update GitLab Version to 12.3.7.
 
 
 ## 2.3.9

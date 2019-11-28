@@ -1,0 +1,5 @@
+---
+title: Upgrade nginx ingress controller to 0.21 to Enable TLSv1.3, and TLSv1.1 is disabled by default.
+merge_request: 1014
+author: Xiangxuan Liu
+type: changed
