@@ -3757,6 +3757,7 @@ Changes to this setting require a server restart before taking effect.
 
 Search Replicas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
 
 Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting.
 
