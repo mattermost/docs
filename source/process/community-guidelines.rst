@@ -19,7 +19,7 @@ Examples include React Native Apps, Redux and APIv4 campaigns.
 On-boarding
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Create a blog post for the ` Developer Blog <https://developers.mattermost.com/blog/>`_ letting developers know about the campaign and ways to contribute.  
+1. Create a blog post for the `Developer Blog <https://developers.mattermost.com/blog/>`_ letting developers know about the campaign and ways to contribute.  
 2. Create a contribution guide. This can be part of the blog post.
 3. Create help wanted tickets that a community member could work on.
  
@@ -92,11 +92,8 @@ Tips
 1. Do not use your personal Zoom meeting link for the call.
 2. Note in all announcements that sharing video is optional.
 3. Use `Mattermost` in your name to identify staff from community members on the call.
-
-Future Improvements
-^^^^^^^^^^^^^^^^^^^^^^^^
-1. Consider sequencing design review meetings with design priorities.
-2. Encourage less vocal attendees to share feedback via written chat.
+4. Consider sequencing design review meetings with design priorities.
+5. Encourage less vocal attendees to share feedback via written chat.
 
 GitHub Help Wanted Issues in Mattermost-Server Repository
 -----------------------------------------------------------
