@@ -129,9 +129,9 @@ use the name of the service the upstream chart creates
 */}}
 {{- define "gitlab.psql.host" -}}
 {{- if .Values.global.psql.host -}}
-{{- .Values.global.psql.host | quote -}}
+{{- .Values.global.psql.host -}}
 {{- else if .Values.global.psql.serviceName -}}
-{{- .Values.global.psql.serviceName | quote -}}
+{{- .Values.global.psql.serviceName -}}
 {{- else -}}
 {{- printf "%s-%s" .Release.Name "postgresql" -}}
 {{- end -}}
