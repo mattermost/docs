@@ -92,11 +92,8 @@ Tips
 1. Do not use your personal Zoom meeting link for the call.
 2. Note in all announcements that sharing video is optional.
 3. Use `Mattermost` in your name to identify staff from community members on the call.
-
-Future Improvements
-^^^^^^^^^^^^^^^^^^^^^^^^
-1. Consider sequencing design review meetings with design priorities.
-2. Encourage less vocal attendees to share feedback via written chat.
+4. Consider sequencing design review meetings with design priorities.
+5. Encourage less vocal attendees to share feedback via written chat.
 
 GitHub Help Wanted Issues in Mattermost-Server Repository
 -----------------------------------------------------------
