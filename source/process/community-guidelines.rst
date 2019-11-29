@@ -19,7 +19,7 @@ Examples include React Native Apps, Redux and APIv4 campaigns.
 On-boarding
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Create a blog post for the ` Developer Blog <https://developers.mattermost.com/blog/>`_ letting developers know about the campaign and ways to contribute.  
+1. Create a blog post for the `Developer Blog <https://developers.mattermost.com/blog/>`_ letting developers know about the campaign and ways to contribute.  
 2. Create a contribution guide. This can be part of the blog post.
 3. Create help wanted tickets that a community member could work on.
  
