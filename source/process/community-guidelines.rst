@@ -95,6 +95,11 @@ Tips
 4. Consider sequencing design review meetings with design priorities.
 5. Encourage less vocal attendees to share feedback via written chat.
 
+How to run a hackathon?
+---------------------------------------------------------
+
+See :doc:`How to Run a Hackathon page <how-to-run-a-hackathon>`.
+
 GitHub Help Wanted Issues in Mattermost-Server Repository
 -----------------------------------------------------------
 
