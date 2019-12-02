@@ -44,7 +44,7 @@ to the `helm install` command using the `--set` flags.
 | `extraVolumes`                   |                       | List of extra volumes to create                |
 | `gitlab.unicorn.workhorse.image` | `registry.gitlab.com/gitlab-org/build/cng/gitlab-workhorse-ee` | Workhorse image repository |
 | `gitlab.unicorn.workhorse.tag`   |                       | Workhorse image tag                            |
-| `hpa.targetAverageValue`         | `400m`                | Set the autoscaling target value               |
+| `hpa.targetAverageValue`         | `1`                   | Set the autoscaling target value               |
 | `image.pullPolicy`               | `Always`              | Unicorn image pull policy                      |
 | `image.pullSecrets`              |                       | Secrets for the image repository               |
 | `image.repository`               | `registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee` | Unicorn image repository |

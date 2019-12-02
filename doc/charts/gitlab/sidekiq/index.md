@@ -41,7 +41,7 @@ to the `helm install` command using the `--set` flags:
 | `extraVolumeMounts`                  |                   | List of extra volumes mountes to do      |
 | `extraVolumes`                       |                   | List of extra volumes to create          |
 | `gitaly.serviceName`                 | `gitaly`          | Gitaly service name                      |
-| `hpa.targetAverageValue`             | `400m`            | Set the autoscaling target value         |
+| `hpa.targetAverageValue`             | `350m`            | Set the autoscaling target value         |
 | `image.pullPolicy`                   | `Always`          | Sidekiq image pull policy                |
 | `image.pullSecrets`                  |                   | Secrets for the image repository         |
 | `image.repository`                   | `registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee` | Sidekiq image repository |
