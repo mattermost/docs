@@ -102,7 +102,7 @@ Moreover, when a channel is archived, the contents cannot be searched by default
 Converting Public Channels to Private (and vice versa)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Click the channel name at the top of the center pane to access the drop-down menu, then click **Convert to Private Channel**. Team and System Admins have the ability to convert public channels to private channels. 
+Click the channel name at the top of the center pane to access the drop-down menu, then click **Convert to Private Channel**. Team and System Admins have the ability to convert public channels to private channels.  Please note that default channels such as Town Square and Off-Topic cannot be converted to private channels.
 
 System Admins can also access this setting in **System Console > Channels > Edit (Channel Configuration)**.  Due to security concerns of sharing private channel history, only System Admins can convert private channels to public. 
 
