@@ -34,8 +34,8 @@ to the `helm install` command using the `--set` flags.
 | `image.pullSecrets`              |                       | Secrets for the image repository               |
 | `image.repository`               | `registry.gitlab.com/gitlab-org/build/cng/gitlab-exporter` | GitLab Exporter image repository |
 | `image.tag`                      |                       | Unicorn image tag                              |
-| `init.image`                     | `busybox`             | initContainer image                            |
-| `init.tag`                       | `latest`              | initContainer image tag                        |
+| `init.image`                     |                       | initContainer image                            |
+| `init.tag`                       |                       | initContainer image tag                        |
 | `metrics.enabled`                | `true`                | Toggle Prometheus metrics exporter             |
 | `metrics.port`                   | `9168`                | Listen port for the Prometheus metrics exporter |
 | `resources.requests.cpu`         | `50m`                 | GitLab Exporter minimum cpu                    |

@@ -134,16 +134,19 @@ While rarely altered, the `initContainer` behaviors can be changed via the follo
 
 ```
 init:
-  image: busybox
-  tag: latest
+  image:
+  tag:
   pullPolicy: IfNotPresent
   script:
 ```
 
 ### initContainer image
 
-The initContainer image settings are just as with a normal image configuration, the
-defaults are listed above.
+The initContainer image settings are just as with a normal image configuration.
+By default, chart-local values are left empty, and the global settings
+`global.busybox.image.repository` and `global.busybox.image.tag` will be used to
+populate initContainer image. If chart-local values are specified, they get
+used instead of the global setting's values.
 
 ### initContainer script
 

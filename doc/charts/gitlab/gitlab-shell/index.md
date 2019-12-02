@@ -41,8 +41,8 @@ with `global.shell.port`, and defaults to `22`.
 | `image.pullSecrets`      |                | Secrets for the image repository         |
 | `image.repository`       | `registry.com/gitlab-org/build/cng/gitlab-shell` | Shell image repository |
 | `image.tag`              | `latest`       | Shell image tag                          |
-| `init.image`             | `busybox`      | initContainer image                      |
-| `init.tag`               | `latest`       | initContainer image tag                  |
+| `init.image`             |                | initContainer image                      |
+| `init.tag`               |                | initContainer image tag                  |
 | `redis.serviceName`      | `redis`        | Redis service name                       |
 | `replicaCount`           | `1`            | Shell replicas                           |
 | `service.externalPort`   | `22`           | Shell exposed port                       |

@@ -73,8 +73,8 @@ to the `helm install` command using the `--set` flags:
 | `image.pullSecrets`            |                 | Secrets for the image repository            |
 | `image.repository`             | `redis`         | Redis image repository                      |
 | `image.tag`                    | `3.2.5`         | Redis image tag                             |
-| `init.image`                   | `busybox`       | initContainer image                         |
-| `init.tag`                     | `latest`        | initContainer image tag                     |
+| `init.image`                   |                 | initContainer image                         |
+| `init.tag`                     |                 | initContainer image tag                     |
 | `loglevel`                     | `notice`        | Log verbosity                               |
 | `metrics.enabled`              | `true`          | Toggle Prometheus exporter sidecar          |
 | `persistence.accessMode`       | `ReadWriteOnce` | Redis access mode                           |
