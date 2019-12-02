@@ -4,8 +4,8 @@ image:
   pullPolicy: 'IfNotPresent'
   pullSecrets: []
 init:
-  image: busybox
-  tag: latest
+  image:
+  tag:
   resources:
     requests:
       cpu: 50m

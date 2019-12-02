@@ -331,3 +331,14 @@ Constructs kubectl image name.
 {{- define "gitlab.kubectl.image" -}}
 {{- printf "%s:%s" .Values.global.kubectl.image.repository .Values.global.kubectl.image.tag -}}
 {{- end -}}
+
+{{/*
+Constructs busybox image name.
+*/}}
+{{- define "gitlab.busybox.image" -}}
+{{- if and .initImageRepo .initImageTag }}
+{{- printf "%s:%s" .initImageRepo .initImageTag -}}
+{{- else -}}
+{{- printf "%s:%s" .context.Values.global.busybox.image.repository .context.Values.global.busybox.image.tag -}}
+{{- end -}}
+{{- end -}}

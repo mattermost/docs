@@ -7,8 +7,8 @@ image:
   # repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-geo-logcursor
   # tag: latest
 init:
-  image: busybox
-  tag: latest
+  image:
+  tag:
   resources:
     requests:
       cpu: 50m

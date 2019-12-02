@@ -63,7 +63,7 @@ spec:
             medium: "Memory"
       initContainers:
         - name: configure
-          image: {{ .Values.init.image }}:{{ .Values.init.tag}}
+          image: {{ include "gitlab.busybox.image" (dict "initImageRepo" .Values.init.image "initImageTag" .Values.init.tag "context" .) | quote }}
           imagePullPolicy: {{ .Values.init.pullPolicy }}
           command: ["sh", "/config/configure"]
           volumeMounts:

@@ -19,8 +19,6 @@
 {{- $metricsEnabled := .Values.metrics.enabled -}}
 {{- $metricsPort := .Values.metrics.port -}}
 {{- $metricsAnnotations := .Values.metrics.annotations -}}
-{{- $initImage := .Values.init.image }}
-{{- $initTag := .Values.init.tag }}
 {{- /* The below is an messy attempt to read in, and reflect on the configmap-queues.yaml template. */}}
 {{- $queueConfigList := include (print $.Template.BasePath "/configmap-queue.yaml") . | replace "\r\n" "\n" | split "\n---" }}
 {{- $queues := dict }}
@@ -99,7 +97,7 @@ spec:
 {{ include "gitlab.certificates.initContainer" $ | indent 8 }}
         - name: configure
           command: ['sh', '/config/configure']
-          image: {{ $initImage }}:{{ $initTag }}
+          image: {{ include "gitlab.busybox.image" (dict "initImageRepo" $.Values.init.image "initImageTag" $.Values.init.tag "context" $) | quote }}
           volumeMounts:
 {{ include "gitlab.extraVolumeMounts" $ | indent 10 }}
 {{ include "gitlab.psql.ssl.volumeMount" $ | indent 10 }}

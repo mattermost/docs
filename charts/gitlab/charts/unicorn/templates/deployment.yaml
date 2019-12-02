@@ -64,7 +64,7 @@ spec:
         - name: configure
           command: ['sh']
           args: [ '-c', 'sh -x /config-unicorn/configure ; sh -x /config-workhorse/configure ; mkdir -p -m 3770 /tmp/gitlab']
-          image: {{ .Values.init.image }}:{{ .Values.init.tag }}
+          image: {{ include "gitlab.busybox.image" (dict "initImageRepo" .Values.init.image "initImageTag" .Values.init.tag "context" .) | quote }}
           volumeMounts:
 {{ include "gitlab.extraVolumeMounts" . | indent 10 }}
 {{ include "gitlab.psql.ssl.volumeMount" . | indent 10 }}
