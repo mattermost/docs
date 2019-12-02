@@ -15,7 +15,7 @@ data:
       pool: 10
       username: {{ template "gitlab.psql.username" . }}
       password: "<%= File.read("/etc/gitlab/postgres/psql-password").strip.dump[1..-2] %>"
-      host: {{ template "gitlab.psql.host" . }}
+      host: {{ include "gitlab.psql.host" . | quote }}
       port: {{ template "gitlab.psql.port" . }}
       prepared_statements: {{ template "gitlab.psql.preparedStatements" . }}
       {{- include "gitlab.psql.ssl.config" . | nindent 6 }}
