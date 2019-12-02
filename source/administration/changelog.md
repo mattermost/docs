@@ -85,6 +85,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where an opened emoji picker floated while the user scrolled in the channel.
  - Fixed an issue where "Your message is too long" warning on the right-hand side reply thread overlapped the Preview button.
  - Fixed an issue where hitting escape to close autocomplete also closed channel header modal.
+ - Fixed an issue where negative search filter hypens and occasional random terms were highlighted in search results.
+ - Fixed an issue where deactivating a user increased Monthly Active Users and Daily Active Users count by 1 in **System Console > Site Statistics**.
  - Fixed an issue where **Reporting > Statistics** showed 'Loading...' when the value for any of the statistics was zero.
  - Fixed an issue where converting a user to a bot via the command line tool (CLI) did not create an access token and could not be deleted.
  - Fixed an issue where archived channels displayed in **System Console -> Channels** page.
@@ -111,7 +113,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Websocket Event Changes
  
 ### Known Issues
- - Negative search filter hypens and occasional random terms are highlighted in search results.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
