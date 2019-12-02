@@ -107,5 +107,8 @@ Note that the list below contains suggestions or questions that are not yet inco
 7. Nominate mentors from within staff or contributors who can provide additional guidance, talk through ideas and help get members going during the Hackathon. Mentors would ideally be contacts from different areas, e.g. mobile, plugins, webapp. Publish the list from which new members (either core or staff) can then sign up to work with.
 8. Provide more opportunities to plan projects, such as setting up meeting invites with interested people.
 9. Make it easier to get community involved in specific projects, and work with staff.
-10. Improve social aspects. For instance, incorporate physical meetups timed with Hackathon, or virtual hangouts in Discord. Have people talk about their projects (e.g. share screenshots or daily updates) during the Hackathon.
-11. Promote physical hackathons at universities and have staff or community help run them and get people involved.
+10. Improve social aspects. For instance, incorporate physical meetups timed with Hackathon, or virtual hangouts in Discord.
+11. Activity feed. Have people talk about their projects (e.g. share screenshots or daily updates) during the Hackathon. Consider promoting in progress work in social media or other public facing sites to increase awareness of the Hackathon.
+12. Promote physical hackathons at universities and have staff or community help run them and get people involved.
+13. Clearly track next steps both for community and staff. One possibility is a shepherding program to encourage submissions to "cross the finish line" as a core feature or certified plugin where appropriate.
+
