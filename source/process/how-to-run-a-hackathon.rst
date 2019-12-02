@@ -1,7 +1,7 @@
 How to run a Hackathon
 =========================
 
-This page helps outline best practices and recommended steps for running a Hackathon.
+This page outlines best practices and recommended steps for running a Hackathon.
 
 Previously, Hackathons have run twice a year with one coinciding with MatterCon. In future, Hackathons may be run 3 or 4 times a year.
 
@@ -111,4 +111,3 @@ Note that the list below contains suggestions or questions that are not yet inco
 11. Activity feed. Have people talk about their projects (e.g. share screenshots or daily updates) during the Hackathon. Consider promoting in progress work in social media or other public facing sites to increase awareness of the Hackathon.
 12. Promote physical hackathons at universities and have staff or community help run them and get people involved.
 13. Clearly track next steps both for community and staff. One possibility is a shepherding program to encourage submissions to "cross the finish line" as a core feature or certified plugin where appropriate.
-
