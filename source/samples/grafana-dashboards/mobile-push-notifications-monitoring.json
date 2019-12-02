@@ -42,7 +42,7 @@
       },
       "gridPos": {
         "h": 6,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 0
       },
@@ -131,7 +131,7 @@
       "gridPos": {
         "h": 6,
         "w": 4,
-        "x": 5,
+        "x": 4,
         "y": 0
       },
       "id": 14,
@@ -213,7 +213,7 @@
       "gridPos": {
         "h": 6,
         "w": 4,
-        "x": 9,
+        "x": 8,
         "y": 0
       },
       "id": 16,
@@ -298,10 +298,10 @@
       "gridPos": {
         "h": 6,
         "w": 4,
-        "x": 9,
+        "x": 12,
         "y": 0
       },
-      "id": 16,
+      "id": 56,
       "interval": null,
       "links": [],
       "mappingType": 1,
@@ -348,7 +348,7 @@
       "thresholds": "0.5,0.7",
       "timeFrom": null,
       "timeShift": null,
-      "title": "Push Badge Update Notification",
+      "title": "Push Badge Update Notifications",
       "type": "singlestat",
       "valueFontSize": "70%",
       "valueMaps": [
@@ -383,7 +383,7 @@
       "gridPos": {
         "h": 6,
         "w": 4,
-        "x": 13,
+        "x": 16,
         "y": 0
       },
       "id": 44,
@@ -468,7 +468,7 @@
       "gridPos": {
         "h": 6,
         "w": 4,
-        "x": 17,
+        "x": 20,
         "y": 0
       },
       "id": 54,
