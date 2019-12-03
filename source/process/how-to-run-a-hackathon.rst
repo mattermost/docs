@@ -7,7 +7,7 @@ Previously, Hackathons have run twice a year with one coinciding with MatterCon.
 
 T-minus counts measure "working days" (weekdays other than major holidays concurrent in US and Canada) prior to the Hackathon day. All times are based on 8:00am (`Palo Alto Time <http://everytimezone.com/>`_) unless otherwise stated.
 
-A. (T-minus 60 working days)
+A. (T-minus 40 working days)
 ----------------------------------------------------------------
 
 1. Decide dates for the Hackathon. Some things to take into consideration:
@@ -21,14 +21,14 @@ A. (T-minus 60 working days)
 
 2. Identify at least 1 or 2 developers to partner with during the Hackathon. Start by reaching out to either VP Engineering or Dev Leads to hear their recommendations.
 
-B. (T-minus 40 working days)
+B. (T-minus 30 working days)
 ----------------------------------------------------------------
 
 1. Put together a project plan, including task description, start date, due date, owner and any additional notes. `See an example <https://docs.google.com/spreadsheets/d/15iiLPzJjlajHQVgQa9HulW9WfBauIlnkCOJ07oKz7_U>`_.
 2. Identify 1 or 2 members in marketing to partner with, who can help with tweets, blog posts and other marketing content to generate awareness of the Hackathon.
 3. Identify 1 or 2 members in ops to partner with, who can help with meeting scheduling, SWAG and other operational tasks.
 
-C. (T-minus 30 working days)
+C. (T-minus 25 working days)
 ----------------------------------------------------------------
 
 1. Work with ops to decide on what SWAG to send for participation - both for contributors and staff.
