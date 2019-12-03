@@ -11,7 +11,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Compatibility
  
 ### Breaking Changes
- - Breaking change for mark posts as unread
+ - Breaking change for mark posts as unread **XXX**
 
 ### Highlights
 
@@ -123,6 +123,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Websocket Event Changes
  
 ### Known Issues
+ - **XXXX** More to be added
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
