@@ -10,9 +10,9 @@ server (e.g., via SSH).
 This tool is in beta and can be used alongside the Mattermost CLI tool. In the future, the Mattermost CLI tool will be
 deprecated. The following list describes the commands that have been migrated.
 
-     auth        Manages the credentials of the remote Mattermost instances
-     channel     Management of channels
-     completion  Generates autocompletion scripts for bash and zsh
+     - auth        Manages the credentials of the remote Mattermost instances
+     - channel     Management of channels
+     - completion  Generates autocompletion scripts for bash and zsh
      group       Management of groups
      help        Help about any command
      license     Licensing commands
@@ -156,18 +156,45 @@ For zsh, add the following line to your `~/.zshrc` file:
      source <(mmctl completion zsh)
 
 
-**Channel Administration**
+mmctl
+-----
+
+Remote client for the Open Source, self-hosted Slack-alternative
+
+Options
+  .. code-block:: sh
+
+      --format string    the format of the command output [plain, json] (default "plain")
+      -h, --help         help for mmctl
+
+
+  - `mmctl channel`_ - Channel Management
+  - `mmctl command`_ - Command Management
+  - `mmctl config`_ -
+  - `mmctl export`_ -
+  - `mmctl group`_ -
+  - `mattermost ldap`_ -
+  - `mmctl license`_ -
+  - `mmctl logs`_ -
+  - `mmctl permissions`_ -
+  - `mmctl plugin`_ -
+  - `mmctl roles`_ -
+  - `mmctl team`_ -
+  - `mmctl user`_ -
+  - `mmctl version`_ -
+  - `mmctl webhook`_ -
+
 
 mmctl channel
-------------------
+--------------
 
   Description
     Commands for channel management.
 
   Child Commands
-    -  `mmctl channel create`_ - Create a channel
-    -  `mmctl channel add`_ - Delete a channel
+    -  `mmctl channel add`_ - Add a channel
     -  `mmctl channel archive`_ - Archive a channel
+    -  `mmctl channel create`_ - Create a channel
     -  `mmctl channel list`_ - List all channels on specified teams
     -  `mmctl channel move`_ - Move a channel to another team
     -  `mmctl channel remove`_ - Remove users from a channel
@@ -176,274 +203,5 @@ mmctl channel
     -  `mmctl make_private`_ - Set a channel's type to "private"
     -  `mattermost channel search`_ -  Search a channel by name
 
-.. _channel create:
-
-
 mmctl channel add
-~~~~~~~~~~~~~~~~~~~~~~
-
-  Description
-    Add users to a channel. If adding multiple users, use a space-separated list.
-
-Format
-       .. code-block:: none
-
-         mmctl channel add [channel] [users][flags]
-
-Examples
-       .. code-block:: none
-
-       channel add myteam:mychannel user@example.com username
-
-Options Inherited from Parent Commands
-
-   .. code-block:: none
-
-      --format string   the format of the command output [plain, json] (default "plain")
-
-
-mmctl channel archive
-----------------------
-
-Description
-  Archive some channels. Archive a channel along with all related information including posts from the database. Channels can be
-  specified by [team]:[channel]. (i.e., myteam:mychannel or by channel ID).
-
-Format
-     .. code-block:: none
-
-       mmctl channel archive [channel][flags]
-
-Examples
-     .. code-block:: none
-
-     channel archive myteam:mychannel
-
-Options
-.. code-block:: none
-
-    -h, --help   help for archive
-
-Options Inherited from Parent Commands
-
- .. code-block:: none
-
-    --format string   the format of the command output [plain, json] (default "plain")
-
-mmctl channel create
-~~~~~~~~~~~~~~~~~~~~~~
-
-Description
-        Create a channel.
-
-Format
-        .. code-block:: none
-
-          mmctl channel create [flags]
-
-Examples
-        .. code-block:: none
-
-        channel create --team myteam --name mynewchannel --display_name "My New Channel"
-        channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
-
-Options
-
-    .. code-block:: none
-
-         --display_name string   Channel Display Name
-         --header string         Channel header
-     -h, --help                  help for create
-         --name string           Channel Name
-         --private               Create a private channel.
-         --purpose string        Channel purpose
-         --team string           Team name or ID
-
-Options Inherited from Parent Commands
-
-    .. code-block:: none
-
-     --format string   the format of the command output [plain, json] (default "plain")
-
-
-mmctl channel list
--------------------
-
-Description
-  List all channels on specified teams. Archived channels are appended with '(archived)'.
-
-Format
-     .. code-block:: none
-
-       mmctl channel list [teams] [flags]
-
-Examples
-     .. code-block:: none
-
-     channel list myteam
-
-Options
-.. code-block:: none
-
-    -h, --help   help for list
-
-Options Inherited from Parent Commands
-
- .. code-block:: none
-
-    --format string   the format of the command output [plain, json] (default "plain")
-
-
-mmctl make private
-------------------
-
-Description
-  Set the type of a channel from public to private. Channel can be specified by [team]:[channel] (e.g., myteam:mychannel or by channel ID).
-
-Format
-     .. code-block:: none
-
-     mmctl channel make_private [channel] [flags]
-
-Examples
-     .. code-block:: none
-
-    channel make_private myteam:mychannel
-
-Options
-.. code-block:: none
-
-    -h, --help   help for make_private
-
-Options Inherited from Parent Commands
-
- .. code-block:: none
-
-    --format string   the format of the command output [plain, json] (default "plain")
-
-mmctl channel move
-------------------
-
-<comnfirm where this is>
-
-mmctl channel remove
---------------------
-
-Description
-  Remove specified users from a channel.
-
-Format
-     .. code-block:: none
-
-     mmctl channel remove [channel] [users] [flags]
-
-Examples
-     .. code-block:: none
-
-   channel remove myteam:mychannel user@example.com username
-   channel remove myteam:mychannel --all-users
-
-Options
-.. code-block:: none
-
-  --all-users   Remove all users from the indicated channel.
-  -h, --help    help for remove
-
-Options Inherited from Parent Commands
-
- .. code-block:: none
-
-    --format string   the format of the command output [plain, json] (default "plain")
-
-mmctl channel rename
---------------------
-
-Description
-  Remove specified users from a channel.
-
-Format
-     .. code-block:: none
-
-    mmctl channel rename [flags]
-
-Examples
-     .. code-block:: none
-
-   channel rename myteam:mychannel newchannelname --display_name "New Display Name"
-
-
-Options
-.. code-block:: none
-
-  --display_name string   Channel Display Name
-  -h, --help              help for rename
-
-Options Inherited from Parent Commands
-
- .. code-block:: none
-
-    --format string   the format of the command output [plain, json] (default "plain")
-
-mmctl channel restore
----------------------
-
-Description
-  Restore a previously deleted channel Channels can be specified by [team]:[channel] (e.g., myteam:mychannel or by channel ID).
-
-Format
-     .. code-block:: none
-
-    mmctl channel restore [channels] [flags]
-
-Examples
-     .. code-block:: none
-
-   channel restore myteam:mychannel
-
-
-Options
-.. code-block:: none
-
-   -h, --help   help for restore
-
-Options Inherited from Parent Commands
-
- .. code-block:: none
-
-  --format string   the format of the command output [plain, json] (default "plain")
-
-
-mmctl channel search
---------------------
-
-Description
-  Search a channel by channel name. Channel can be specified by team (e.g., --team myTeam myChannel) or by team ID.
-
-Format
-     .. code-block:: none
-
-   mmctl channel search [channel]
-   mmctl search --team [team] [channel] [flags]
-
-Examples
-     .. code-block:: none
-
-  channel search myChannel
-  channel search --team myTeam myChannel
-
-
-Options
-.. code-block:: none
-
-  -h, --help          help for search
-  --team string   Team name or ID
-
-Options Inherited from Parent Commands
-
- .. code-block:: none
-
-  --format string   the format of the command output [plain, json] (default "plain")
-
-
-
-m
+~~~~~~~~~~~~~~~~~~
