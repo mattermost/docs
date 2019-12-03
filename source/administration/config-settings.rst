@@ -3748,8 +3748,10 @@ The queries above rebuild the materialized ``PublicChannels`` table without modi
 | This feature's ``config.json`` setting is ``"EnablePublicChannelsMaterialization": true`` with options ``true`` and ``false``.                    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Read Replicas (Enterprise Edition)
+Read Replicas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
 Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting.
 
 Changes to this setting require a server restart before taking effect.
@@ -3758,8 +3760,10 @@ Changes to this setting require a server restart before taking effect.
 | This feature's ``config.json`` setting is ``"DataSourceReplicas": []`` with string array input consisting of database connection strings.   |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 
-Search Replicas (Enterprise Edition)
+Search Replicas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
 Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting.
 
 Changes to this setting require a server restart before taking effect.

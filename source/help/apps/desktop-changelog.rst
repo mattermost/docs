@@ -4,19 +4,19 @@ Desktop Application Changelog
 Release v4.3.0
 ----------------------------
 
-- **v4.3.2, release day TBD**
- - `CMD+Z` doesn't undo on the Mac desktop app. `MM-19198 <https://mattermost.atlassian.net/browse/MM-19198>`_
- - Users are unable to zoom in/out except on the first server tab. `MM-19032 <https://mattermost.atlassian.net/browse/MM-19032>`_
- - Right-click + "Copy" does not work in some instances. `MM-19324 <https://mattermost.atlassian.net/browse/MM-19324>`_
- - Unable to exit maximized Youtube videos using the close button if the app is running in full screen. `MM-19226 <https://mattermost.atlassian.net/browse/MM-19226>`_
- - Desktop notifications appear in sequence rather than stacking on Windows. `MM-19363 <https://mattermost.atlassian.net/browse/MM-19363>`_
- - Clicking on notifications when using the Windows MSI (Beta) doesn't focus the app or the channel that triggered the notification. `MM-19510 <https://mattermost.atlassian.net/browse/MM-19510>`_, `MM-19511 <https://mattermost.atlassian.net/browse/MM-19511>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/4.3.2>`__
+
+- **v4.3.2, released 2019-11-29**
+ - Mattermost v4.3.0 contains a low level security fix. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`_.
+ - Fixed an issue where the app started into white screen after a system reboot on Windows. `MM-19649 <https://mattermost.atlassian.net/browse/MM-19649>`_
+ - Fixed an issue where `CMD+Z` didn't undo on the Mac desktop app. `MM-19198 <https://mattermost.atlassian.net/browse/MM-19198>`_
+ - Fixed an issue where users were unable to zoom in/out except on the first server tab. `MM-19032 <https://mattermost.atlassian.net/browse/MM-19032>`_
+ - Fixed an issue where right-click + "Copy" did not work in some instances. `MM-19324 <https://mattermost.atlassian.net/browse/MM-19324>`_
+ - Fixed an issue where email links in profile popovers didn't work. `MM-19596 <https://mattermost.atlassian.net/browse/MM-19596>`_
 - **v4.3.1, released 2019-10-22**
  - Fixed an issue where Mac desktop app was not notarized correctly for installing on MacOS Catalina. `MM-19555 <https://mattermost.atlassian.net/browse/MM-19555>`_
 - **v4.3.0, released 2019-10-17**
  - Original v4.3.0 release
-
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.3.0>`__
 
 **Note:** Mattermost v4.3.0 contains medium level security fixes. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
 
