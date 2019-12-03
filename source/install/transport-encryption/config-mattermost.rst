@@ -59,14 +59,14 @@ Once complete, open the file ``config.json`` and modify the values ``ConnectionS
 .. codeblock:: none
 
   {
-      "ServiceSettings": {
-          "SiteURL": "https://transport-encryption.dev.example.com",
-          "WebsocketURL": "",
-          "LicenseFileLocation": "",
-          "ListenAddress": ":8065",
-          "ConnectionSecurity": "",
-          "TLSCertFile": "",
-          "TLSKeyFile": "",
+  "ServiceSettings": {
+  "SiteURL": "https://transport-encryption.dev.example.com",
+  "WebsocketURL": "",
+  "LicenseFileLocation": "",
+  "ListenAddress": ":8065",
+  "ConnectionSecurity": "",
+  "TLSCertFile": "",
+  "TLSKeyFile": "",
 
 **After**
 
