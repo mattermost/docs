@@ -5,7 +5,7 @@ This page outlines best practices and recommended steps for running a Hackathon.
 
 Previously, Hackathons have run twice a year with one coinciding with MatterCon. In future, Hackathons may be run 3 or 4 times a year.
 
-T-minus counts measure "working days" (weekdays other than major holidays concurrent in US and Canada) prior to the Hackathon day. All times are based on 8:00am ([Palo Alto Time](http://everytimezone.com/)) unless otherwise stated.
+T-minus counts measure "working days" (weekdays other than major holidays concurrent in US and Canada) prior to the Hackathon day. All times are based on 8:00am (`Palo Alto Time <http://everytimezone.com/>`_) unless otherwise stated.
 
 A. (T-minus 60 working days)
 ----------------------------------------------------------------
@@ -13,7 +13,7 @@ A. (T-minus 60 working days)
 1. Decide dates for the Hackathon. Some things to take into consideration:
 
   - Avoid overlap with major holidays in US, Canada, Europe or Asia (including Australia and Japan).
-  - Avoid overlap with significant release dates, such as release testing or feature complete. Recommended time is starting a Hackathon within a week after major feature complete.
+  - Avoid overlap with significant release dates, such as release testing or feature complete. Recommended time is starting a Hackathon within a week after feature complete.
   - Avoid overlap with significant company dates that take significant amount of developers' time, such as performance evaluations. 
   - Avoid overlap with significant community dates, such as major developer conferences/events.
   - Avoid starting on a Friday - this results in a kick-off call on a late evening for Europe/Asia, effectively meaning the Hackathon starts on a weekend in those areas.
@@ -32,7 +32,7 @@ C. (T-minus 30 working days)
 ----------------------------------------------------------------
 
 1. Work with ops to decide on what SWAG to send for participation - both for contributors and staff.
-2. Create a landing page for the Hackathon, which contains all information and to which other communication links to.
+2. Create a landing page for the Hackathon, which contains all information and to which other communication items are linked to.
 
   - This can be a webpage such as `one for Feb/2019 Hackfest <https://mattermost.com/hackfest2019/>`_ or a GitHub repository such as `one for Nov/2019 Hackathon <https://github.com/mattermost/mattermost-hackathon-nov2019>`_.
   - All processes and documentations should be clearly included on this landing page. This should include process for finding and assigning teams, and submission guidelines. FAQs can be incorporated as needed.
@@ -44,14 +44,14 @@ D. (T-minus 20 working days)
 
 1. Announce the Hackathon internally by posting in `Private Staff Discussion channel <https://community.mattermost.com/private-core/channels/platform>`_ and sharing on R&D weekly meeting.
 2. Schedule a kick-off call with all Hackathon stakeholders, including the developer, marketing and ops members identified previously.
-3. Define and set up metrics to measure impact of the Hackathon. Examples include: number of participants (staff + community separately), number of submissions, number of submissions shipped as a core feature, or as a plugin in the marketplace.
+3. Define and set up metrics to measure impact of the Hackathon. Examples include: number of participants (staff + community separately), number of submissions, number of submissions shipped as a core feature or as a plugin in the marketplace.
 
 E. (T-minus 15 working days)
 ----------------------------------------------------------------
 
 1. Create Meetup links for Hackathon idea presentation, kick-off and demos. For examples, see `Mattermost Meetup page <https://www.meetup.com/mattermost/>`_.
 2. Share the Hackathon externally via Reddit, GitHub, Discourse and the `community server <https://community.mattermost.com>`_. For examples, see previous `Reddit post <https://www.reddit.com/r/Mattermost/comments/dvvsm4/mattermost_hackathon_nov_22_26/>`_, and `GitHub issue <https://github.com/mattermost/mattermost-server/issues/13087>`_.
-3. Publish a blog post announcing the Hackathon to the Mattermost community, with links back to landing page for details on how to participate.
+3. Publish a blog post announcing the Hackathon to the Mattermost community, which links back to the landing page for details on how to participate.
 
 F. (T-minus 10 working days)
 ----------------------------------------------------------------
@@ -62,7 +62,7 @@ F. (T-minus 10 working days)
 G. (T-minus 5 working days)
 ----------------------------------------------------------------
 
-1. Hold a Hackathon idea presentation call, scheduled for 60 minutes, with an additional 30 minutes for extra time. This time is used to gather feedback about ideas and attract others to work as a team. To see previous slides and meeting recording, see `Hackathon Nov/2019 Google Drive <https://drive.google.com/drive/folders/1iBVGDzdwZ72oEY6mshzjcgJQ4NdhXRfW>`_.
+1. Hold a Hackathon idea presentation call, scheduled for 60 minutes, with an additional 30 minutes for extra time. This time is used to gather feedback about ideas and to attract others to work as a team. To see previous slides and meeting recording, see `Hackathon Nov/2019 Google Drive <https://drive.google.com/drive/folders/1iBVGDzdwZ72oEY6mshzjcgJQ4NdhXRfW>`_.
 
 H. (T-minus 0 working days)
 ----------------------------------------------------------------
@@ -76,7 +76,7 @@ I. (T-plus 3 working days)
 
   - Provide guidelines and best practices for creating presentations (both for staff and community).
   - Three minutes allowed per Hackathon participant. For multiple submissions, five minutes total is allowed to present.
-  - Ask participants who can't attend submit a demo video, which are shared during the call.
+  - Ask participants who can't attend to submit a demo video, which are shared during the call.
 
 J. (T-plus 5 working days)
 ----------------------------------------------------------------
@@ -96,7 +96,7 @@ Tips and Best Practices
 ----------------------------------------------------------------
 
 1. Do not use your own Zoom link for Hackathon calls. Recommend using a company Zoom link, or one created specifically for Hackathon.
-2. In Zoom, go to **Settings > Recording** and set **Recording consent** to true. This prompts participants for consent to be recorded when recording starts.
+2. In Zoom, go to **Settings > Recording** and set **Recording consent** to true. This prompts participants to consent to be recorded when recording starts.
 
 Note that the list below contains suggestions or questions that are not yet incorporated into the above process. For developer feedback from November/2019 Hackathon, see `this retrospective <https://community.mattermost.com/core/pl/xuirmrmob38oznx75j8cj3bkme>`_.
 
