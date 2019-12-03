@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.5.4
+
+### Fixed (1 change)
+
+- Fix bug that broke gitlab-exporter from connecting to external pg hosts. !1060
+
+### Other (1 change)
+
+- Update GitLab Version to 12.5.3.
+
+
 ## 2.5.3
 
 ### Other (1 change)
