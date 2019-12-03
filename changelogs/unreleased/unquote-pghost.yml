@@ -1,5 +1,0 @@
----
-title: Fix bug that broke gitlab-exporter from connecting to external pg hosts
-merge_request: 1060
-author:
-type: fixed
