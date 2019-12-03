@@ -6,6 +6,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.18 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
+**Release day: 2019-12-16**
+
 ### Compatibility
  
 ### Breaking Changes
@@ -13,28 +15,28 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
 
-#### Mark posts as unread
- - The ability to mark a post as unread is useful in cases where a user wants to easily return to or follow up on messages in channels. The user will land on the marked post when opening the unread channel again.
- 
+#### Mark Posts as Unread
+ - When marking a post as unread, the user will land on the unread post the next time they click on the relevant channel or message.
+
 #### View Archived Channels (Beta)
- - View, share and search for content of archived channels.
- 
-#### Allow plugin upgrades + Signed plugins
- - Added ability to upgrade plugins and prepackaged plugins via the marketplace.
+ - View, share and search for content of archived channels. See more details [here](https://docs.mattermost.com/administration/config-settings.html#allow-users-to-view-archived-channels-experimental).
  
 #### ID Loaded push notifications (E20)
- - Allows push notifications to be delivered showing the full message contents that are fetched from the server once the notification is delivered to the device. This means that Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) cannot read the message contents since only a unique message ID is sent in the notification payload.
+ - Allows push notifications to be delivered showing the full message contents that are fetched from the server once the notification is delivered to the device. This means that Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) cannot read the message contents since only a unique message ID is sent in the notification payload. 
  
-#### mmctl tool
- - Allows a system admin to run commands when conventional access to the server via SSH, etc. isn't possible.
+#### Allow Plugin Upgrades
+ - Added ability to upgrade plugins and prepackaged plugins via the marketplace.
+ 
+#### mmctl remote CLI tool
+ - Allows a system admin to run commands when conventional access to the server via SSH isn't possible.
  
 #### Guest Account SAML & LDAP Support (EE)
- - Provision Guests directly from AD/LDAP or SAML upon login. Guests will have no access to any teams or channels until they are assigned. 
+ - Provision Guests directly from AD/LDAP or SAML upon login. Guests will have no access to any teams or channels until they are assigned.
 
-#### Actiance Improvements (EE)
+#### Actiance Improvements (E20)
  - Added events (such as post/file deletion and edit events) to Actiance Export to improve tracking within the Vantage report interface.
 
-#### LDAP Group Sync upgraded to Beta phase (EE)
+#### LDAP Group Sync upgraded to Beta phase (E20)
  - Previously in “Experimental” phase, the linking of AD/LDAP groups to Mattermost groups is now officially in “Beta” phase.
 
 ### Improvements
@@ -101,6 +103,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added RequirePluginSignature.
 
 ### Open Source Components
+ - Added ``@types/highlight`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``@typescript-eslint/parser`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``@react-native-community/cameraroll`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``@sentry/react-native`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``form-data`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``react-native-fast-image`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``react-navigation-stack`` in https://github.com/mattermost/mattermost-mobile.
+ - Added ``redux-offline`` in https://github.com/mattermost/mattermost-mobile.
  
 ### API Changes
  - Added ability to add users as another user to the plugin API.
