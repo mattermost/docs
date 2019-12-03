@@ -592,7 +592,7 @@ mattermost config reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Resets the value of a config setting by its name in dot notation or a setting section to the default value. Accepts multiple values for array settings. When no paramters are given, it will reset all config settings. 
+    Resets the value of a config setting by its name in dot notation or a setting section to the default value. Accepts multiple values for array settings. When no parameters are given, it will reset all config settings. 
     
   Format
     .. code-block:: none
