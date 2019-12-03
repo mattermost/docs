@@ -6,13 +6,13 @@ In-depth documentation on installation, deployment and administration of Matterm
 Getting Started
 ---------------------
 
-Use the following materials as a template to help you plan and document the implementation of Mattermost at your organization. 
+Use the following materials as a template to help you plan and document the implementation of Mattermost at your organization.
 
 .. toctree::
    :maxdepth: 2
    :glob:
 
-   /deployment/on-boarding.rst  
+   /deployment/on-boarding.rst
    /getting-started/implementation_plan.rst
    /getting-started/welcome_email.rst
 
@@ -35,6 +35,7 @@ Learn how to get Mattermost running on your environment.
    Installing on CentOS, Oracle Linux, and Scientific Linux </install/install-centos-oracle-scientific.rst>
    Instructions On Setting Up a Socket-based Mattermost Database </install/sockets-db.rst>
    /install/ee-install*
+   /install/transport-encryption/config.rst
    /install/deploy-bitnami*
    /install/docker-local*
    /install/prod-docker*
@@ -60,11 +61,11 @@ Learn how to host Mattermost to meet your networking requirements.
    :maxdepth: 2
    :glob:
 
-   /deployment/deployment.md 
+   /deployment/deployment.md
    /deployment/desktop-app-deployment*
    /mobile/mobile-appconfig.rst
    /administration/image-proxy*
-   /administration/encryption*  
+   /administration/encryption*
    /deployment/client-side-data.rst
    /administration/backup*
 
@@ -77,11 +78,12 @@ Learn how to configure settings to meet your unique requirements.
    :maxdepth: 2
    :glob:
 
+
    /administration/config-settings.rst
-   /administration/config-in-database.rst 
+   /administration/config-in-database.rst
    /administration/prev-config-settings.rst
    /deployment/customize-mattermost.rst
-   /deployment/customize-email.rst 
+   /deployment/customize-email.rst
    /administration/branding.rst
 
 Mobile Apps
@@ -144,7 +146,7 @@ Learn how to maintain your Mattermost system.
    /administration/health-check*
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
- 
+
 Upgrade Mattermost
 ----------------------------
 
@@ -153,14 +155,14 @@ Learn how to keep Mattermost current with fixes and new features.
 .. toctree::
    :maxdepth: 2
    :glob:
-   
+
    /administration/upgrade.rst
-   /administration/important-upgrade-notes*   
+   /administration/important-upgrade-notes*
    /administration/changelog*
    /help/apps/desktop-changelog*
    /administration/version-archive*
-   /administration/extended-support-release* 
-   /administration/release-lifecycle* 
+   /administration/extended-support-release*
+   /administration/release-lifecycle*
    /administration/downgrade.rst
    /administration/open-source-components*
 
@@ -205,7 +207,7 @@ Learn how to support growth within Mattermost.
 .. toctree::
    :maxdepth: 2
    :glob:
-   
+
    /deployment/scaling*
    /deployment/cluster*
    /deployment/elastic*
