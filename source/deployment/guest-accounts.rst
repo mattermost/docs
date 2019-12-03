@@ -100,11 +100,11 @@ System Administrators can also promote a *Guest* to *Member* by updating their r
 Disabling Guest Accounts
 ------------------------
 
-To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access > Enable Guest Access** and select ``False``. Current Guest Accounts will remain active until guest users are manually marked ``inactive`` in **System Console > User Management > Users**. 
+To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access > Enable Guest Access** and select ``False``. In versions prior to 5.18, current Guest Accounts will remain active until guest users are manually marked ``inactive`` in **System Console > User Management > Users**. 
 
 You can disable individual guest accounts in **System Console > User Management**, via the **Manage Members** modal, or using the ``/kick`` or ``/remove`` commands. 
 
-In version 5.18, when a Guest Account is disabled, the guests will be marked as `inactive`, be logged out of Mattermost, and all their sessions will be revoked. 
+In version 5.18, when a single Guest Account is disabled or the feature is disabled, the guests will be marked as `inactive`, be logged out of Mattermost, and all their sessions will be revoked. 
 
 
 Frequently Asked Questions
