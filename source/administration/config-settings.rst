@@ -127,6 +127,10 @@ If Site URL is not set, the following features will operate incorrectly:
 | This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                    |
 +-------------------------------------------------------------------------------------------------------------------+
 
+Test Live URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Ensures that site URL is valid and live.
+
 Listen Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
