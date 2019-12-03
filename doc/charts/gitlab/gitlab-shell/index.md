@@ -55,7 +55,7 @@ with `global.shell.port`, and defaults to `22`.
 | `tolerations`            | `[]`           | Toleration labels for pod assignment     |
 | `unicorn.serviceName`    | `unicorn`      | Unicorn service name                     |
 | `config.maxStartups.start` | `10`      | SSHd will refuse connection attempts with some probability if there are currently more than the specified number of unauthenticated connections |
-| `config.maxStartups.rate`  | `30`      | SSHd will refuse connections with specified probability when there would be too much unauthenticated connections |
+| `config.maxStartups.rate`  | `30`      | SSHd will refuse connections with specified probability when there would be too many unauthenticated connections |
 | `config.maxStartups.full`  | `100`     | SSHd refuse probability will increase linearly and all unauthenticated connection attempts would be refused when unauthenticated connections number will rich specified number |
 
 ## Chart configuration examples
