@@ -107,7 +107,7 @@ Onboard Users
 Learn how to get your users into and comfortable using Mattermost.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :glob:
 
    /deployment/bulk-loading.rst
@@ -118,7 +118,6 @@ Learn how to get your users into and comfortable using Mattermost.
    /deployment/sso-ldap*
    /deployment/auth*
    /deployment/ldap-group-sync.rst
-   /deployment/ldap-group-constrained-team-channel.rst
    /deployment/sso-saml.rst
    /deployment/sso-saml-technical*
    /deployment/sso-gitlab*
