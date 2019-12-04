@@ -88,7 +88,7 @@ To invite guests into one or more Mattermost channels:
 2. Navigate to **Main Menu > Invite People**.  This is a new invitation option that combines inviting guests and members and consolidates **Send Email**, **Get Team Invite Link**, and **Add Members to the Team**.
 3. Select **Invite Guests**.
 4. Enter the guest’s email address.
-5. Choose the channels the guest can join.
+5. Choose the channels the guest can join (excluding managed teams).
 6. (Optional) Enter a custom message.
 
 .. image:: ../images/Guest_Invite_Screen.png
