@@ -142,18 +142,25 @@ Mattermost groups can be deleted by adjusting your AD/LDAP group filter to remov
 Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership
 -------------------------------------------------------------------------------
 
-Mattermost groups created with synchronized AD/LDAP groups can be used to manage the membership of private teams and private channels. When a team or private channel is managed by synchronized groups, users will be added and removed based on their membership to the synchronized AD/LDAP group.
+Mattermost groups created with synchronized AD/LDAP groups can be used to manage the membership of private teams and private channels. When a team
+or private channel is managed by synchronized groups, member users will be added and removed based on their membership to the synchronized AD/LDAP group.
 
-For instance, you may have an AD/LDAP group that contains your development team that you want to synchronize to a developer team.  By using this feature, new developers will get added to the team when they are added to the synchronized AD/LDAP group and they will be removed from the team when removed from the AD/LDAP group.
+.. note::
 
-Similarly, you may have an AD/LDAP group that contains your leadership team that you want to synchronize to a private channel for coordination and updates.  This feature will help control the membership of the channel so that users outside of the synchronized group are prevented from being added to the channel mistakenly.
+   It is not possible to add guests to teams and channels that are managed using groups.
 
-On teams that are managed by synchronized groups, users outside of the group are restricted from:
+For instance, you may have an AD/LDAP group that contains your development team that you want to synchronize to a developer team.
+By using this feature, new developers will get added to the team when they are added to the synchronized AD/LDAP group and they will be removed from the team when removed from the AD/LDAP group.
+
+Similarly, you may have an AD/LDAP group that contains your leadership team that you want to synchronize to a private channel for coordination and updates.
+This feature will help control the membership of the channel so that guests and member users outside of the synchronized group are prevented from being added to the channel mistakenly.
+
+On teams that are managed by synchronized groups, guests and member users outside of the group are restricted from:
 
  - invitation through a team invite link
  - invitations through an email invite
 
-Similarily on private channels that are managed by synchronized groups, users outside of the group are restricted from:
+Similarily on private channels that are managed by synchronized groups, guests and member users outside of the group are restricted from:
 
  - invitation through a mention
  - invitation through the /invite slash command
