@@ -43,11 +43,11 @@ Edition and License
 
 Edition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-View the edition of the Mattermost deployment.  
+View the edition of the Mattermost deployment.
 
 License
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-View subscription details including the number of users and expiry date of your Mattermost License.  
+View subscription details including the number of users and expiry date of your Mattermost License.
 
 License Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -55,15 +55,15 @@ Upload or remove license files. For more information on Mattermost Licensing, pl
 
 Reporting
 ---------
-View statistics for your overall deployment and specific teams as well as access server logs. 
+View statistics for your overall deployment and specific teams as well as access server logs.
 
 Site Statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-View statistics on active users, teams, channels, sessions, webhooks, and connections. 
+View statistics on active users, teams, channels, sessions, webhooks, and connections.
 
 Team Statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-View statistics per team on number of active users, as well as public and private channels.  
+View statistics per team on number of active users, as well as public and private channels.
 
 Server Logs
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,7 +75,7 @@ Settings for managing users, user access, groups, and permissions.
 
 Users
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-View and manage active and inactive users, and revoke all user sessions. Access individual users to view their User ID, and view the teams they are on and what their role is on a team. Additionally, add the user to other teams without direct access to the team. 
+View and manage active and inactive users, and revoke all user sessions. Access individual users to view their User ID, and view the teams they are on and what their role is on a team. Additionally, add the user to other teams without direct access to the team.
 
 Teams (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -413,7 +413,7 @@ Enable Cluster Sniffing
 
 Bulk Indexing
 ^^^^^^^^^^^^^^^^^^^^^^^^
-This button starts a bulk index of all existing posts in the database. If the indexing process is cancelled the index and search results will be incomplete. 
+This button starts a bulk index of all existing posts in the database. If the indexing process is cancelled the index and search results will be incomplete.
 
 Purge Indexes
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -441,12 +441,12 @@ Enable Elasticsearch for autocomplete queries
 
 File Storage
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3 compatible containers. 
+Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3 compatible containers.
 
 .. note::
   We have tested Mattermost with `Minio <https://www.minio.io/>`__ and `Digital Ocean Spaces <https://www.digitalocean.com/docs/spaces/>`_ products but not all S3 compatible containers on the market. If you are looking to use other S3 compatible containers we advise completing your own testing.
 
-File Storage System 
+File Storage System
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------+-----------------------+
@@ -730,7 +730,7 @@ Location of Mattermost Push Notification Service (MPNS), which re-sends push not
 
 To confirm push notifications are working, connect to the `Mattermost iOS App on iTunes <https://about.mattermost.com/mattermost-ios-app>`__ or the `Mattermost Android App on Google Play <https://about.mattermost.com/mattermost-android-app>`__:
 
-- For Enterprise Edition, enter ``https://push.mattermost.com`` for the push notification server hosted in the United States. If you prefer to use a push notification server hosted in Germany, enter ``https://hpns-de.mattermost.com/`` 
+- For Enterprise Edition, enter ``https://push.mattermost.com`` for the push notification server hosted in the United States. If you prefer to use a push notification server hosted in Germany, enter ``https://hpns-de.mattermost.com/``
 - For Team Edition, enter ``https://push-test.mattermost.com``
 
 Please review full documentation on `push notifications and mobile applications <http://docs.mattermost.com/deployment/push.html>`__ including guidance on compiling your own mobile apps and MPNS before deploying to production.
@@ -1062,7 +1062,7 @@ Enable Diagnostics and Error Reporting
 
 Session Lengths
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-User sessions are cleared when a user tries to log in. Additionally, a job runs every 24 hours to clear sessions from the sessions database table. 
+User sessions are cleared when a user tries to log in. Additionally, a job runs every 24 hours to clear sessions from the sessions database table.
 
 Session length for email and AD/LDAP authentication (days)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1107,7 +1107,7 @@ Set the number of minutes to cache a session in memory.
 
 Session Idle Timeout (minutes)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited.    
+The number of minutes from the last time a user was active on the system to the expiry of the user's session. Once expired, the user will need to log in to continue. Minimum is 5 minutes, and 0 is unlimited.
 
 Applies to the desktop app and browsers. For mobile apps, use an EMM provider to lock the app when not in use. In High Availability mode, enable IP hash load balancing for reliable timeout measurement.
 
@@ -1174,7 +1174,7 @@ This setting limits the ability for the Mattermost server to make untrusted requ
 
 Requests that can only be configured by admins are considered trusted and will not be affected by this setting. Trusted URLs include ones used for OAuth login or for sending push notifications.
 
-.. warning:: 
+.. warning::
    This setting is intended to prevent users located outside your local network from using the Mattermost server to request confidential data from inside your network. Care should be used when configuring this setting to prevent unintended access to your local network.
 
 Some examples of when you may want to modify this setting include:
@@ -1185,7 +1185,7 @@ Some examples of when you may want to modify this setting include:
 
 This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It is configured as a whitespace separated list of hostnames, IP addresses and CIDR ranges that can be accessed such as ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``. Since v5.9 the public IP of the Mattermost application server itself is also considered a reserved IP.
 
-.. note:: 
+.. note::
    Use whitespaces instead of commas to list the hostnames, IP addresses or CIDR ranges. For example: ``webhooks.internal.example.com 127.0.0.1 10.0.16.0/28``
 
 IP address and domain name rules are applied before host resolution. CIDR rules are applied after host resolution. For example, if the domain "webhooks.internal.example.com" resolves to the IP address 10.0.16.20, a webhook with the URL "https://webhooks.internal.example.com/webhook" can be whitelisted using ``webhooks.internal.example.com`` or ``10.0.16.16/28``, but not ``10.0.16.20``.
@@ -1397,12 +1397,12 @@ Allow Team Administrators to edit others posts
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *This permission is stored in the database and can be modified using the System Console user interface.*
 
-**True**: Team Administrators and System Administrators can edit other users' posts.  
+**True**: Team Administrators and System Administrators can edit other users' posts.
 
 **False**: Only System Administrators can edit other users' posts.
 
 .. note::
-   This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.   
+   This setting is only available for Team Edition servers. Enterprise Edition servers can use `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ to configure this permission.
 
 
 Enable Team Directory
@@ -1469,7 +1469,7 @@ Enable Email Notifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Enables sending of email notifications.
 
-**False**: Disables email notifications for developers who may want to skip email setup for faster development. To remove the **Preview Mode: Email notifications have not been configured** banner, also set **Enable Preview Mode Banner** to ``false``. If this setting is set to ``false`` and the SMTP server is set up, account related emails will be sent for user account changes such as password, email, username, user token, MFA, and signin type changes.  Email invitations and account deactivation emails will also be sent. 
+**False**: Disables email notifications for developers who may want to skip email setup for faster development. To remove the **Preview Mode: Email notifications have not been configured** banner, also set **Enable Preview Mode Banner** to ``false``. If this setting is set to ``false`` and the SMTP server is set up, account related emails will be sent for user account changes such as password, email, username, user token, MFA, and signin type changes.  Email invitations and account deactivation emails will also be sent.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SendEmailNotifications": false`` with options ``true`` and ``false``.                                                   |
@@ -1489,7 +1489,7 @@ Enable Preview Mode Banner
 
 Enable Email Batching
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Users can select how often to receive email notifications, and multiple notifications within that timeframe will be combined into a single email. Batching will occur at a default interval of 15 minutes, configurable in **Account Settings** > **Notifications**. 
+**True**: Users can select how often to receive email notifications, and multiple notifications within that timeframe will be combined into a single email. Batching will occur at a default interval of 15 minutes, configurable in **Account Settings** > **Notifications**.
 
 .. note::
   Email batching cannot be enabled unless the `SiteURL <https://docs.mattermost.com/administration/config-settings.html#site-url>`__ is configured. Email batching in `High Availability mode <https://docs.mattermost.com/administration/config-settings.html#enable-high-availability-mode>`__ is planned but not yet supported.
@@ -1504,7 +1504,7 @@ Email Notification Contents
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20*
 
-**Send full message contents**: Sender name and channel are included in email notifications. 
+**Send full message contents**: Sender name and channel are included in email notifications.
 
 **Send generic description with only sender name**: The team name and name of the person who sent the message, with no information about channel name or message contents, is included in email notifications. Typically used for compliance reasons if Mattermost contains confidential information and policy dictates it cannot be stored in email.
 
@@ -1532,7 +1532,7 @@ So you don't miss messages, please make sure to change this value to an email yo
 
 Notification Reply-To Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Email address used in the Reply-To header when sending notification emails from Mattermost. 
+Email address used in the Reply-To header when sending notification emails from Mattermost.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ReplyToAddress": ""`` with string input.                                                                                |
@@ -1655,13 +1655,13 @@ Posts
 Enable Link Previews
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Link previews are previews of linked website content, image links, and YouTube videos that are displayed below posts when available. 
+Link previews are previews of linked website content, image links, and YouTube videos that are displayed below posts when available.
 
 Link previews are requested by the server, meaning the Mattermost server must be connected to the internet for previews to be displayed. This connection can be established through a `firewall or outbound proxy <https://docs.mattermost.com/install/outbound-proxy.html>`__ in environments where direct internet connectivity is not given or security policies make this necessary.
 
 **True**: Website link previews, image link previews and YouTube previews are enabled on the server. Users can enable or disable website previews for themselves from **Account Settings > Display > Website Link Previews**.
 
-**False**: Website link previews, image link previews and YouTube previews are disabled. The server does not request metadata for any links sent in messages. 
+**False**: Website link previews, image link previews and YouTube previews are disabled. The server does not request metadata for any links sent in messages.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableLinkPreviews": false`` with options ``true`` and ``false``.                                                       |
@@ -1750,7 +1750,7 @@ Public Link Salt
 
 Authentication
 ---------------
-Authentication settings to enable account creation and sign in with email, GitLab, Google or Office 365 OAuth, AD/LDAP, or SAML. 
+Authentication settings to enable account creation and sign in with email, GitLab, Google or Office 365 OAuth, AD/LDAP, or SAML.
 
 Signup
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2027,7 +2027,7 @@ Password of the user given in **Bind Username**. Anonymous bind is not currently
 
 User Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(Optional) Enter an AD/LDAP Filter to use when searching for user objects (accepts `general syntax <http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__). Only the users selected by the query will be able to access Mattermost. 
+(Optional) Enter an AD/LDAP Filter to use when searching for user objects (accepts `general syntax <http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__). Only the users selected by the query will be able to access Mattermost.
 
 Sample filters for Active Directory:
 
@@ -2042,9 +2042,18 @@ This filter uses the permissions of the **Bind Username** account to execute the
 | This feature's ``config.json`` setting is ``"UserFilter": ""`` with string input.                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Guest Filter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+(Optional) Enter an AD/LDAP Filter to use when searching for external users who have Guest Access to Mattermost. Only the objects selected by the query will be accessible to Mattermost.
+This filter is used only when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`__ for more information
+(available in Enterprise Edition E20 and higher).
+
+This filter is defaulted to ``(objectClass=guests)``.
+
+
 Group Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(Optional) Enter an AD/LDAP Filter to use when searching for group objects (accepts `general syntax <http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__). Only the groups selected by the query will be able accessible to Mattermost. 
+(Optional) Enter an AD/LDAP Filter to use when searching for group objects (accepts `general syntax <http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__). Only the groups selected by the query will be able accessible to Mattermost.
 
 This filter is defaulted to ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` when blank.
 
@@ -2057,7 +2066,7 @@ This filter is defaulted to ``(|(objectClass=group)(objectClass=groupOfNames)(ob
 
 Group Display Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-(Required) Enter an AD/LDAP Group Display name attribute used to populate Mattermost Group names. 
+(Required) Enter an AD/LDAP Group Display name attribute used to populate Mattermost Group names.
 
 .. note::
   This attribute is used only when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_ for more information on enabling and configuring AD/LDAP Group Sync (*Available in Enterprise Edition E20 and higher*).
@@ -2207,7 +2216,7 @@ SAML
 *Available in Enterprise Edition E20*
 
 .. note::
-   In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
+   In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
 
 Enable Login With SAML
@@ -2234,7 +2243,7 @@ Override SAML Bind Data with AD/LDAP Information
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute if configured or overrides the SAML Email attribute with the AD/LDAP Email attribute if SAML ID attribute is not present. See `documentation <https://about.mattermost.com/default-saml-ldap-sync>`__ to learn more.
 
-**False**: Mattermost uses the email attribute to bind users to SAML. 
+**False**: Mattermost uses the email attribute to bind users to SAML.
 
 .. note::
   Moving from true to false will prevent the override from happening. To prevent the disabling of user accounts, SAML IDs must match the LDAP IDs when this feature is enabled. This setting should be set to false unless LDAP sync is enabled.
@@ -2344,6 +2353,11 @@ Id Attribute
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdAttribute": ""`` with string input.                                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Guest Attribute
+^^^^^^^^^^^^^^^^^
+(Optional) The attribute in the SAML Assertion used to apply a guest role to users in Mattermost.
+
 
 First Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2540,7 +2554,7 @@ Office 365
 *Available in Enterprise Edition E20*
 
 .. note::
-   In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
+   In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
 
 Enable authentication with Office 365 by selecting ``Office 365`` from **OAuth 2.0 > Select OAuth 2.0 service provider**.
@@ -2620,7 +2634,7 @@ Enforce Multi-factor Authentication
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This setting defaults to false and is read-only if multi-factor authentication is not enforced for regular users.
 
-**True**: When true, multi-factor authentication (MFA) is required for login. New guest users will be required to configure MFA on sign-up. Logged in guest users without MFA configured are redirected to the MFA setup page until configuration is complete.  
+**True**: When true, multi-factor authentication (MFA) is required for login. New guest users will be required to configure MFA on sign-up. Logged in guest users without MFA configured are redirected to the MFA setup page until configuration is complete.
 
 **False**: Multi-factor authentication for guests is optional.
 
@@ -2649,7 +2663,7 @@ Enable Plugins
 Enable Marketplace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables Plugin Marketplace on your Mattermost server for all System Administrators. 
+**True**: Enables Plugin Marketplace on your Mattermost server for all System Administrators.
 
 **False**: Disables Plugin Marketplace on your Mattermost server for all System Administrators.
 
@@ -2692,7 +2706,7 @@ Custom User Attributes
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Configure this plugin directly in the ``config.json`` file. Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-custom-attributes/blob/master/README.md>`_.
 
-Github 
+Github
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Configure this plugin directly in the ``config.json`` file. Learn more `in our documentation <https://github.com/mattermost/mattermost-plugin-github/blob/master/README.md>`_.
 
@@ -2833,7 +2847,7 @@ Disable bot accounts when owner is deactivated
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: When a user is deactivated, disables all bot accounts managed by the user. To re-enable bot accounts, go to **Integrations > Bot Accounts**.
 
-**False**: When a user is deactivated, all bot accounts managed by the user remain active. 
+**False**: When a user is deactivated, all bot accounts managed by the user remain active.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"DisableBotsWhenOwnerIsDeactivated": false`` with options ``true`` and ``false``.                                        |
@@ -2843,7 +2857,7 @@ GIF (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable GIF Picker
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Allow users to select GIFs from the emoji picker via a Gfycat integration.  
+**True**: Allow users to select GIFs from the emoji picker via a Gfycat integration.
 
 **False**: GIFs cannot be selected in the emoji picker.
 
@@ -2856,7 +2870,7 @@ Enable GIF Picker
 
 Gfycat API Key
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-When blank, uses the default API key provided by Gfycat. Alternatively, a unique API key can be requested at https://developers.gfycat.com/signup/#/. Enter the client ID you receive via email to this field. 
+When blank, uses the default API key provided by Gfycat. Alternatively, a unique API key can be requested at https://developers.gfycat.com/signup/#/. Enter the client ID you receive via email to this field.
 
 +-----------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GfycatApiKey": "2_KtH_W5"`` with string input.   |
@@ -2870,7 +2884,7 @@ The API secret generated by Gfycat for your API key. When blank, uses the defaul
 | This feature's ``config.json`` setting is ``"GfycatApiSecret": "3wLVZPiswc3DnaiaFoLkDvB4X0IV6CpMkj4tf2inJRsBY6-FnkT08zGmppWFgeof"`` with string input.  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-CORS 
+CORS
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable cross-origin requests from
@@ -3075,7 +3089,7 @@ Enable Daily Report
 | This feature's ``config.json`` setting is ``"EnableDaily": false`` with options ``true`` and ``false``.                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Custom Terms of Service (Beta) 
+Custom Terms of Service (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Custom Terms of Service
@@ -3103,7 +3117,7 @@ The number of days before Terms of Service acceptance expires, and the terms mus
 
 Defaults to 365 days. 0 indicates the terms do not expire.
 
-Experimental 
+Experimental
 -------------
 There are a number of settings considered "experimental" that are configurable from the System Console. These may be replaced or removed in a future release.
 
@@ -3253,7 +3267,7 @@ This setting determines whether channel_viewed WebSocket events are sent, which 
 
 Enable Client-Side Certification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E20* 
+*Available in Enterprise Edition E20*
 
 **True**: Enables client-side certification for your Mattermost server. See `the documentation <https://docs.mattermost.com/deployment/certificate-based-authentication.html>`__ to learn more.
 
@@ -3265,7 +3279,7 @@ Enable Client-Side Certification
 
 Client-Side Certification Login Method
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E20* 
+*Available in Enterprise Edition E20*
 
 Used in combination with the ``ClientSideCertEnable`` setting.
 
@@ -3313,7 +3327,7 @@ Enable AD/LDAP Group Sync (Experimental)
 
 **True**: Enables AD/LDAP Group Sync configurable under **Access Controls > Groups**.
 
-**False**: Disables AD/LDAP Group Sync and removes the **Access Controls > Groups** from the System Console.  
+**False**: Disables AD/LDAP Group Sync and removes the **Access Controls > Groups** from the System Console.
 
 For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_.
 
@@ -3443,7 +3457,7 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 Sidebar Organization (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Enables channel sidebar organization options in **Account Settings** > **Sidebar** > **Channel grouping and sorting** including options for grouping unread channels, sorting channels by most recent post and combining all channel types into a single list. 
+**True**: Enables channel sidebar organization options in **Account Settings** > **Sidebar** > **Channel grouping and sorting** including options for grouping unread channels, sorting channels by most recent post and combining all channel types into a single list.
 
 **False**: Hides the channel sidebar organization options in **Account Settings** > **Sidebar** > **Channel grouping and sorting**.
 
@@ -3505,8 +3519,8 @@ This setting defines the number of seconds after which the user's status indicat
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with numerical input.                                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
- 
-Settings configurable only in config.json 
+
+Settings configurable only in config.json
 -------------------------------------------
 
 There are a number of settings customizable in ``config.json`` unavailable in the System Console and require updating from the file itself.
@@ -3722,7 +3736,7 @@ Enable Public Channels Materialization
 
 **True**: Enables materialization of public channels to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI. Notably, this allows the database to exclude direct messages for many queries, resulting in better query plans and more efficient indexes.
 
-**False**: Disables materialization for public channels. 
+**False**: Disables materialization for public channels.
 
 If this feature is disabled and then later re-enabled, an offline migration is necessary to synchronize the materialized table. Use the following steps:
 
@@ -3887,7 +3901,7 @@ The number of milliseconds to leave an idle connection open between servers in t
 
 Network Interface
 ^^^^^^^^^^^^^^^^^
-An IP address used to identify the device that does automatic IP detection in high availability clusters. 
+An IP address used to identify the device that does automatic IP detection in high availability clusters.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"NetworkInterface": ""`` with string input.                                                                              |
@@ -3895,7 +3909,7 @@ An IP address used to identify the device that does automatic IP detection in hi
 
 Bind Address
 ^^^^^^^^^^^^^
-An IP address used to bind cluster traffic to a specific network device. This setting is used primarily for servers with multiple network devices or different Bind Address and Advertise Address like in deployments that involve NAT (Network Address Translation). 
+An IP address used to bind cluster traffic to a specific network device. This setting is used primarily for servers with multiple network devices or different Bind Address and Advertise Address like in deployments that involve NAT (Network Address Translation).
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BindAddress": ""`` with string input.                                                                                   |
@@ -3903,7 +3917,7 @@ An IP address used to bind cluster traffic to a specific network device. This se
 
 Advertise Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The IP address used to access the server from other nodes. This settings is used primary when cluster nodes are not in the same network and involve NAT (Network Address Translation). 
+The IP address used to access the server from other nodes. This settings is used primary when cluster nodes are not in the same network and involve NAT (Network Address Translation).
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AdvertiseAddress": ""`` with string input.                                                                              |
@@ -3949,7 +3963,7 @@ Strict CSRF Token Enforcement (Experimental)
 
 **True**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header. When the user logs in, an additional cookie is created with the CSRF token contained.
 
-**False**: Disables CSRF protection tokens.  
+**False**: Disables CSRF protection tokens.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false``.                                       |
@@ -3983,7 +3997,7 @@ Restrict System Admin (Experimental)
 
 **True**: Restricts the System Admin from viewing and modifying a subset of server configuration settings from the System Console. Not recommended for use in on-prem installations. This is intended to support Mattermost Private Cloud in giving the System Admin role to users but restricting certain actions only for Cloud Administrators.
 
-**False**: No restrictions are applied to the System Admin role. 
+**False**: No restrictions are applied to the System Admin role.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictSystemAdmin": false,`` with options ``true`` and ``false``.                                                  |
@@ -4097,14 +4111,14 @@ The file must be in the same directory as your ``config.json`` file if you set a
 | This feature's ``config.json`` setting is ``"SupportedTimezonesPath": "timezones.json"`` with string input.     |
 +-----------------------------------------------------------------------------------------------------------------+
 
-Experimental Settings 
+Experimental Settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E20* 
+*Available in Enterprise Edition E20*
 
-Disable Post Metadata 
+Disable Post Metadata
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Disabling post metadata is only recommended if you are experiencing a significant decrease in performance around channel and post load times. 
+**True**: Disabling post metadata is only recommended if you are experiencing a significant decrease in performance around channel and post load times.
 
 **False**: Load channels with more accurate scroll positioning by loading post metadata.
 
@@ -4195,7 +4209,7 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.       |
 +-----------------------------------------------------------------------------------------------------------------+
 
-Skip TLS Verification  
+Skip TLS Verification
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True:** Skips the certificate verification step for TLS connections. Not recommended for production environments where TLS is required. For testing only.
 
@@ -4336,7 +4350,7 @@ Policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Removed in June 16, 2018 release*
 
-Permission policy settings are available in Enterprise Edition E10 and E20. In v5.0 and later, these settings are found in the `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ page instead of configuration settings. 
+Permission policy settings are available in Enterprise Edition E10 and E20. In v5.0 and later, these settings are found in the `Advanced Permissions <https://docs.mattermost.com/deployment/advanced-permissions.html>`__ page instead of configuration settings.
 
 Enable sending team invites from
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -4588,4 +4602,3 @@ The height to which profile pictures are resized after being uploaded via Accoun
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ProfileHeight": 128`` with numerical input.                                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
