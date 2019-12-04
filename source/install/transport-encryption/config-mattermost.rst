@@ -73,16 +73,16 @@ Once complete, open the file ``config.json`` and modify the values ``ConnectionS
 .. codeblock:: none
 
   {
-      "ServiceSettings": {
-          "SiteURL": "https://transport-encryption.dev.example.com",
-          "WebsocketURL": "",
-          "LicenseFileLocation": "",
-          "ListenAddress": ":8065",
-          "ConnectionSecurity": "TLS",
-          "TLSCertFile": "/opt/mattermost/config/cert.pem",
-          "TLSKeyFile": "/opt/mattermost/config/key.pem",
-          "...":"..."
-      },
+  "ServiceSettings": {
+  "SiteURL": "https://transport-encryption.dev.example.com",
+  "WebsocketURL": "",
+  "LicenseFileLocation": "",
+  "ListenAddress": ":8065",
+  "ConnectionSecurity": "TLS",
+  "TLSCertFile": "/opt/mattermost/config/cert.pem",
+  "TLSKeyFile": "/opt/mattermost/config/key.pem",
+  "...":"..."
+  },
 
 
 Restart the Mattermost server and ensure it's up and running:
