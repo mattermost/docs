@@ -173,7 +173,7 @@ Options
   - `mmctl config`_ -
   - `mmctl export`_ -
   - `mmctl group`_ -
-  - `mattermost ldap`_ -
+  - `mmctl ldap`_ -
   - `mmctl license`_ -
   - `mmctl logs`_ -
   - `mmctl permissions`_ -
@@ -200,8 +200,77 @@ mmctl channel
     -  `mmctl channel remove`_ - Remove users from a channel
     -  `mmctl channel rename`_ - Rename a channel
     -  `mmctl channel restore`_ - Restore a channel from the archive
-    -  `mmctl make_private`_ - Set a channel's type to "private"
-    -  `mattermost channel search`_ -  Search a channel by name
+    -  `mmctl channel make_private`_ - Set a channel's type to "private"
+    -  `mmctl channel search`_ -  Search a channel by name
 
 mmctl channel add
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^
+
+mmctl channel archive
+^^^^^^^^^^^^^^^^^
+
+mmctl channel create
+^^^^^^^^^^^^^^^^^
+
+mmctl channel list
+^^^^^^^^^^^^^^^^^
+
+mmctl channel move
+^^^^^^^^^^^^^^^^^
+
+mmctl channel remove
+^^^^^^^^^^^^^^^^^
+
+mmctl channel rename
+^^^^^^^^^^^^^^^^^^^
+
+mmctl channel restore
+^^^^^^^^^^^^^^^^^^^^^
+
+mmctl channel make_private
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+mmctl channel search
+^^^^^^^^^^^^^^^^^^^^^
+
+mmctl command
+-------------
+
+mmctl config
+------------
+
+mmctl export
+------------
+
+mmctl group
+-----------
+
+mmctl ldap
+----------
+
+mmctl license
+-------------
+
+mmctl logs
+----------
+
+mmctl permissions
+-----------------
+
+mmctl plugin
+-------------
+
+mmctl roles
+------------
+
+mmctl team
+----------
+
+mmctl user
+---------
+
+mmctl version
+-------------
+
+mmctl webhook
+-------------
