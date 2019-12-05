@@ -88,7 +88,7 @@ Signing Plugins
 
 The Plugin Marketplace allows system administrators to download and install plugins from a central repository. Plugins installed via the Plugin Marketplace must be signed by a public key certificate trusted by the local Mattermost server.
 
-While the server ships with a default certificate used to verify plugins from the default Mattermost plugin marketplace, the server can be configured to trust different certificates and point at a different plugin marketplace. This document outlines the steps for generating a public key certificate and signing plugins for use with a custom plugin marketplace. It assumes access to the [GNU Privacy Guard (GPG)](https://gnupg.org) tool.
+While the server ships with a default certificate used to verify plugins from the default Mattermost plugin marketplace, the server can be configured to trust different certificates and point at a different plugin marketplace. This document outlines the steps for generating a public key certificate and signing plugins for use with a custom plugin marketplace. It assumes access to the _`GNU Privacy Guard (GPG)]<https://gnupg.org>`_ tool.
 
 Configuration
 ~~~~~~~~~~~~~~~
@@ -104,8 +104,7 @@ is used to enforce plugin signature verification. With flag on, only marketplace
 Key Generation
 ~~~~~~~~~~~~~~~
 
-Public and private key pairs are needed to sign and verify plugins. Private key is used for signing and should be kept in a secure location.
-Public key is used for verification and can be distributed freely. To generate a key pair, run the following command:
+  Public and private key pairs are needed to sign and verify plugins. The private key is used for signing and should be kept in a secure location. The public key is used for verification and can be distributed freely. To generate a key pair, run the following command:
 
 .. code-block:: sh
 
@@ -232,8 +231,7 @@ To delete public key(s) from your Mattermost server, use:
 Implementation
 ~~~~~~~~~~~~~~~~~
 
-See this [document](https://docs.google.com/document/d/1qABE7VEx4k_ZAeh6Ydn4pGbu6BQfZt65x68i2s65MOQ/) for the implementation details.
-
+See the _`implementation document <https://docs.google.com/document/d/1qABE7VEx4k_ZAeh6Ydn4pGbu6BQfZt65x68i2s65MOQ/>`_for more information.
 
 
 Set Up Guide
