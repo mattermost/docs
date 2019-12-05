@@ -416,8 +416,8 @@ global:
 upgradeCheck:
   enabled: true
   image:
-    repository:
-    tag:
+    repository: busybox
+    tag: latest
   securityContext:
     # in alpine/debian/busybox based images, this is `nobody:nogroup`
     runAsUser: 65534
