@@ -2045,7 +2045,8 @@ This filter uses the permissions of the **Bind Username** account to execute the
 Guest Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 (Optional) Enter an AD/LDAP Filter to use when searching for external users who have Guest Access to Mattermost. Only the objects selected by the query will be accessible to Mattermost.
-This filter is used only when AD/LDAP Group Sync is enabled. See `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`__ for more information
+
+See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`__ for more information
 (available in Enterprise Edition E20 and higher).
 
 This filter is defaulted to ``(objectClass=guests)``.
@@ -2361,6 +2362,9 @@ Id Attribute
 Guest Attribute
 ^^^^^^^^^^^^^^^^^
 (Optional) The attribute in the SAML Assertion used to apply a guest role to users in Mattermost.
+
+See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`__ for more information
+(available in Enterprise Edition E20 and higher).
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GuestAttribute": ""`` with string input.                                                                            |
