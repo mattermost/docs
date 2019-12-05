@@ -435,8 +435,7 @@ The following chart highlights the end user features of Mattermost and their sup
 * X - Full Support
 * O - Partial support
 
-.. _pre-post-proxy:
-
+..  _pre-post-proxy:
 What are pre-proxy and post-proxy relays?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
