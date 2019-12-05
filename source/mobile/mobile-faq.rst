@@ -131,7 +131,7 @@ First, you can use the :doc:`Mattermost Hosted Push Notification Service (HPNS) 
 How do I receive mobile push notification if my IT policy requires the use of a corporate proxy server?
 --------------------------------------------------------------------------------------------------------------------
 
-When your IT policy requires a corporate proxy to scan and document all outbound traffic the following options are available:
+When your IT policy requires a corporate proxy to scan and audit all outbound traffic the following options are available:
 
 1 - Deploy Mattermost in a proxy-aware configuration with a pre-proxy relay
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
