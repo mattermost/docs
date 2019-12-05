@@ -83,7 +83,7 @@ While this power enables deep customization and integration, it can be abused in
 
 You should only install custom plugins from sources you trust to avoid compromising the security of your installation.
 
-Signing Plugins
+Plugin Signing
 ---------------
 
 The Plugin Marketplace allows system administrators to download and install plugins from a central repository. Plugins installed via the Plugin Marketplace must be signed by a public key certificate trusted by the local Mattermost server.
@@ -189,8 +189,8 @@ If you already have a public and private key pair, you can import them to the GP
 
  gpg --import ./my-pub-gpg-key
 
-Plugin Signing
-^^^^^^^^^^^^^^
+Running Plugin Signing
+^^^^^^^^^^^^^^^^^^^^^^
 
 For plugin signing, you have to know the hexadecimal ID of the private key. Let's assume you want to sign `com.mattermost.demo-plugin-0.1.0.tar.gz` file, run:
 
