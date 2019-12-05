@@ -405,7 +405,7 @@ global:
   kubectl:
     image:
       repository: registry.gitlab.com/gitlab-org/build/cng/kubectl
-      tag: v1.13.12
+      tag: 1.13.12
       pullSecrets: []
 ## End of global
 
