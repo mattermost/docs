@@ -144,11 +144,11 @@ See a sample architectural overview below:
 
 .. image:: ../images/mobile-pre-proxy-relay.png
 
-This enables the **pre-proxy relay** to act as the `APNS <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ and to forward the request to its final destination via your corporate proxy, not requiring the APNS traffic to be proxy-aware. The APNS traffic is redirected to the pre-proxy relay via ``/etc/hosts`` entry. The entry uses a trusted CA that signs a certificate for the Mattermost Push Proxy to trust the pre-proxy relay.
+This enables the **pre-proxy relay** to act as the `APNS <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ This enables the **pre-proxy relay** to act as the `APNS <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ and to forward the request to its final destination via your corporate proxy, not requiring the APNS traffic to be proxy-aware. The APNS traffic is redirected to the pre-proxy relay via ``/etc/hosts`` entry. The entry uses a trusted CA that signs a certificate for the Mattermost Push Proxy to trust the pre-proxy relay.
 
 Google's `FCM traffic <https://firebase.google.com/docs/cloud-messaging>`_ is proxy-aware via environment variables, so no actions are required for it. 
 
-Moreover, APNS traffic requires HTTP/2, so your corporate proxy server should support HTTP/2 requests in order to send the push notifications to Apple devices. HTTP/2 support for the pre-proxy relay is also required.
+Moreover, APNS traffic requires HTTP/2, so your corporate proxy server must support HTTP/2 requests in order to send the push notifications to Apple devices. HTTP/2 support for the pre-proxy relay is also required.
 
 2 - Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
