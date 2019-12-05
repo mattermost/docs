@@ -124,9 +124,9 @@ How do I host the Mattermost push notification service?
 
 First, you can use the :doc:`Mattermost Hosted Push Notification Service (HPNS) <mobile-hpns>`. Organizations can also `host their own push proxy server instead <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`_. This is applicable when you want to
 
-1. customize the `Mattermost mobile apps <https://github.com/mattermost/mattermost-mobile>`_,
+1. customize the `Mattermost mobile apps <https://developers.mattermost.com/contribute/mobile/build-your-own/>`_,
 2. deploy your own push notification service, or
-3. repackage the mobile apps with BlueCedar or AppDome, which requires re-signing the apps.
+3. repackage the mobile apps with BlueCedar or AppDome, which some organizations have successfully deployed with but is not officially supported.
 
 How do I receive mobile push notification if my IT policy requires the use of a corporate proxy server?
 --------------------------------------------------------------------------------------------------------------------
