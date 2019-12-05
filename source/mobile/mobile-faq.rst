@@ -128,7 +128,7 @@ First, you can use the :doc:`Mattermost Hosted Push Notification Service (HPNS) 
 2. deploy your own push notification service, or
 3. repackage the mobile apps with BlueCedar or AppDome, which requires re-signing the apps.
 
-ow do I receive mobile push notification if my IT policy requires the use of a corporate proxy server?
+How do I receive mobile push notification if my IT policy requires the use of a corporate proxy server?
 --------------------------------------------------------------------------------------------------------------------
 
 When your IT policy requires a corporate proxy to scan and document all outbound traffic the following options are available:
@@ -144,11 +144,11 @@ See a sample architectural overview below:
 
 .. image:: ../images/mobile-pre-proxy-relay.png
 
-This enables the push proxy relay to act as the `APNS <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ and to forward the request to its final destination via your corporate proxy, not requiring the APNS traffic to be proxy-aware. The APNS traffic is redirected to the **pre-proxy relay** via ``/etc/hosts`` entry. The entry uses a trusted CA that signs a certificate for the Mattermost Push Proxy to trust the push proxy relay.
+This enables the **pre-proxy relay** to act as the `APNS <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ and to forward the request to its final destination via your corporate proxy, not requiring the APNS traffic to be proxy-aware. The APNS traffic is redirected to the pre-proxy relay via ``/etc/hosts`` entry. The entry uses a trusted CA that signs a certificate for the Mattermost Push Proxy to trust the pre-proxy relay.
 
-`FCM traffic <https://firebase.google.com/docs/cloud-messaging>`_ is proxy-aware via environment variables, so no actions are required for it. 
+Google's `FCM traffic <https://firebase.google.com/docs/cloud-messaging>`_ is proxy-aware via environment variables, so no actions are required for it. 
 
-Moreover, APNS traffic requires HTTP/2, so your corporate proxy server should support HTTP/2 requests in order to send the push notifications to Apple devices. HTTP/2 support for the push proxy relay is also required.
+Moreover, APNS traffic requires HTTP/2, so your corporate proxy server should support HTTP/2 requests in order to send the push notifications to Apple devices. HTTP/2 support for the pre-proxy relay is also required.
 
 2 - Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -163,22 +163,20 @@ In place of a DMZ you can also host in a trusted cloud environment such as AWS o
 
 .. image:: ../images/mobile-post-proxy-relay.png
 
-// XXX Insert architecture diagram for post-proxy relay
-
 3 - Whitelist Mattermost push notification proxy to bypass your corporate proxy server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Depending on your internal IT policy and approved waivers/exceptions, you may choose to deploy the Mattermost Push Proxy to connect directly to `Apple Push Notification Service (APNS) <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ without the corporate proxy.
+Depending on your internal IT policy and approved waivers/exceptions, you may choose to deploy the `Mattermost Push Proxy <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`_ to connect directly to `Apple Push Notification Service (APNS) <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ without your corporate proxy.
 
 You will need to `whitelist one subdomain and one port from Apple <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CommunicatingwithAPNs.html#//apple_ref/doc/uid/TP40008194-CH11-SW1>`_ for this option:
 
- - Development server: api.development.push.apple.com:443
- - Production server: api.push.apple.com:443
+ - Development server: ``api.development.push.apple.com:443``
+ - Production server: ``api.push.apple.com:443``
 
 4 - Run App Store versions of the Mattermost mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the mobile applications hosted by Mattermost in the `Apple App Store <https://apps.apple.com/ca/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ and connect with `Mattermost Hosted Push Notification Service (HPNS) <mobile-hpns>` through your corporate proxy.
+You can use the mobile applications hosted by Mattermost in the `Apple App Store <https://apps.apple.com/ca/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ and connect with :doc:`Mattermost Hosted Push Notification Service (HPNS) <mobile-hpns>` through your corporate proxy.
 
 The use of the hosted applications my Mattermost does not support wrapping in Enterprise Mobility Management solutions since you are not compiling applications from source.
 
