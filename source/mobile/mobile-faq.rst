@@ -122,7 +122,7 @@ Mattermost enables customers with high privacy and custom security requirements 
 How do I host the Mattermost push notification service?
 ----------------------------------------------------------
 
-First, you can use the :doc:`Mattermost Hosted Push Notification Service (HPNS) <mobile-hpns>`. Organizations can also `host their own push proxy server instead <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`_. This is applicable when you want to
+First, you can use the :doc:`Mattermost Hosted Push Notification Service (HPNS) <mobile-hpns>`. Organizations can also `host their own push proxy server instead <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`_. This is applicable when you want to:
 
 1. customize the `Mattermost mobile apps <https://developers.mattermost.com/contribute/mobile/build-your-own/>`_,
 2. deploy your own push notification service, or
