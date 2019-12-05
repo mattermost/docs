@@ -1,0 +1,6 @@
+---
+title: Specify Kubernetes 1.12 as minimum required version and use v1.13 tools and
+  libraries
+merge_request: 1053
+author:
+type: changed

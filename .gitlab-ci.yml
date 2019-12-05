@@ -27,7 +27,7 @@
 image: registry.gitlab.com/gitlab-org/gitlab-build-images:gitlab-charts-build-base
 
 variables:
-  KUBECTL_VERSION: "v1.12.10"
+  KUBECTL_VERSION: "v1.13.12"
   GOOGLE_APPLICATION_CREDENTIALS: ${CI_PROJECT_DIR}/.google_keyfile.json
   # AUTO_DEVOPS_DOMAIN is the application deployment domain and should be set as a variable at the group or project level.
   # AUTO_DEVOPS_DOMAIN: domain.example.com
