@@ -22,8 +22,6 @@ Enabling AD/LDAP Group Synchronization
 
 To enable this feature, go to **System Console > Groups** in versions after 5.12 (or **System Console > Advanced > Experimental > Enable AD/LDAP Group Sync** in prior versions).
 
-You can also edit the ``config.json file`` setting ``ExperimentalLdapGroupSync``ensuring that you restart the Mattermost server after making the change.
-
 
 Using AD/LDAP Group Synchronization
 ------------------------------------
