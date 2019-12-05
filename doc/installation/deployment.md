@@ -135,16 +135,16 @@ prometheus:
     enabled: false
     persistentVolume:
       enabled: false
-      size: 2GiB
+      size: 2Gi
   pushgateway:
     enabled: false
     persistentVolume:
       enabled: false
-      size: 2GiB
+      size: 2Gi
   server:
     persistentVolume:
       enabled: true
-      size: 8GiB
+      size: 8Gi
 ```
 
 [prometheus-configuration]: https://github.com/helm/charts/tree/master/stable/prometheus#configuration
