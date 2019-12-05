@@ -38,7 +38,7 @@ spec:
 {{ include "gitlab.certificates.initContainer" . | indent 12 }}
             - name: configure
               command: ['sh', '/config/configure']
-              image: {{ include "gitlab.busybox.image" (dict "initImageRepo" .Values.init.image "initImageTag" .Values.init.tag "context" .) | quote }}
+              image: {{ include "gitlab.busybox.image" . | quote }}
               volumeMounts:
 {{ include "gitlab.extraVolumeMounts" . | indent 16 }}
 {{ include "gitlab.psql.ssl.volumeMount" . | indent 16 }}

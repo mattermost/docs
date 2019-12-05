@@ -336,9 +336,7 @@ Constructs kubectl image name.
 Constructs busybox image name.
 */}}
 {{- define "gitlab.busybox.image" -}}
-{{- if and .initImageRepo .initImageTag }}
-{{- printf "%s:%s" .initImageRepo .initImageTag -}}
-{{- else -}}
-{{- printf "%s:%s" .context.Values.global.busybox.image.repository .context.Values.global.busybox.image.tag -}}
-{{- end -}}
+{{- $image := default .Values.global.busybox.image.repository .Values.init.image }}
+{{- $tag := default .Values.global.busybox.image.tag .Values.init.tag }}
+{{- printf "%s:%s" $image $tag -}}
 {{- end -}}
