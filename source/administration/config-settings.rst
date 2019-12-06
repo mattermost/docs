@@ -129,7 +129,7 @@ If Site URL is not set, the following features will operate incorrectly:
 
 Test Live URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Ensures that the value entered into the Site URL is valid and live.
+This button confirms that the value entered into the Site URL is valid and live.
 
 Listen Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
