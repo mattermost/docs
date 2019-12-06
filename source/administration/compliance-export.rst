@@ -3,7 +3,7 @@ Compliance Export Beta (E20)
 
 Available in `Enterprise Edition E20 <https://about.mattermost.com/pricing/>`__.
 
-This feature enables compliance exports to be produced from the System Console, containing all messages including those made in direct message channels, as well as file uploads. The exports also include information on channel member history at the time of the message was posted.
+This feature enables compliance exports to be produced from the System Console, containing all messages including those made in direct message channels, as well as file uploads. The exports also include information on channel member history at the time of the message was posted. From Mattermost 5.18, entries related to deleted messages and files are also listed. The deleted content is included in the compliance export.
 
 By default, Mattermost stores all message history providing an unlimited search history to admins and end users. In Enterprise Edition E20, you may set a `custom data retention policy <https://docs.mattermost.com/administration/data-retention.html>`__ for how long messages and file uploads are kept in Mattermost channels and direct messages.
 
