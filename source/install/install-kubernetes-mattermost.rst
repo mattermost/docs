@@ -109,6 +109,9 @@ Navigate to the ``ingressName`` URL in your browser and use Mattermost.
 Restoring an Existing Mattermost MySQL Database
 -----------------------------------------------
 
+>> I wonder whether this wouldn't be better off in the Install Cluster section of the guide because it covers installation/deployment
+and has a bit more complexity to it? 
+
 You can use the Mattermost Kubernetes Operator and utilize an existing Mattermost MySQL database with a new Mattermost installation.
 The steps you follow to create and upload your backup depends on the provider you're using and your use case. It's
 recommended that you consult their documentation or, if your deployment is managed in a different way, consult your Administrator.
@@ -126,7 +129,6 @@ Save the file as ``secret.yaml``. The example below is for AWS/S3.
 
 .. code-block:: yaml
 
-   code content
    apiVersion: v1
    kind: Secret
    metadata:
@@ -138,7 +140,11 @@ Save the file as ``secret.yaml``. The example below is for AWS/S3.
     AWS_REGION: us-east-1
     S3_PROVIDER: AWS
 
-6. Create a Mattermost cluster installation manifest:
+Where
+
+
+6. Create a Mattermost cluster installation manifest. (should we link to the install documentation which will also shortly include
+the custom settings and mention that this is a separate installation of Mattermost and should be sized appropriately?)
 
 Open a text editor and create a text file with the following details. Save the file as ``mattermost-installation.yaml``:
 
@@ -164,6 +170,8 @@ Open a text editor and create a text file with the following details. Save the f
       username: ""
       password: ""
 
+Where:
+
 
 7. Create a restore manifest:
 
@@ -183,6 +191,13 @@ Open a text editor and create a text file with the following details. Save the f
     mattermostDBUser: mmuser
     restoreSecret: myawscreds
 
+Where:
+- mattermostClusterName defines the ClusterInstallation name (is this the mattermost installation yaml file created in previous step?)
+- RestoreSecret defines where the backup file is located (is this the secret.yaml file and, if so, why is it called myawscreds?)
+- mattermostDBPassword defines the password used to access the database (which database? the one uploaded to AWS?)
+- mattermostDBUser defines the username required to access the database (the MM database? Or the uploaded one?)
+- initBucketURL defines the URL of the storage instance/server where the backed up DB is stored (yes?)
+
 8. To initiate deployment, apply the file and specify the path where the newly-created files have been saved:
 
 .. code-block:: sh
@@ -190,6 +205,12 @@ Open a text editor and create a text file with the following details. Save the f
       $ kubectl create ns mattermost
       $ kubectl apply -n mattermost -f /path/to/mattermost-installation.yaml
 
+Where
+ns defines the new mattermost installation where the backed up database will be restored. (is this a separate namespace to
+the initial one and, if so, should we specify this?)
+
 The deployment process can be monitored in the Kubernetes user interface.
 
 Once complete, access your Mattermost instance and confirm that the database has been restored.
+
+Issues experienced: check MM log or MySQL log for guidance.
