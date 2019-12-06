@@ -88,7 +88,7 @@ Plugin Signing
 
 The Plugin Marketplace allows system administrators to download and install plugins from a central repository. Plugins installed via the Plugin Marketplace must be signed by a public key certificate trusted by the local Mattermost server.
 
-While the server ships with a default certificate used to verify plugins from the default Mattermost plugin marketplace, the server can be configured to trust different certificates and point at a different plugin marketplace. This document outlines the steps for generating a public key certificate and signing plugins for use with a custom plugin marketplace. It assumes access to the _`GNU Privacy Guard (GPG)]<https://gnupg.org>`_ tool.
+While the server ships with a default certificate used to verify plugins from the default Mattermost plugin marketplace, the server can be configured to trust different certificates and point at a different plugin marketplace. This document outlines the steps for generating a public key certificate and signing plugins for use with a custom plugin marketplace. It assumes access to the _`GNU Privacy Guard (GPG)<https://gnupg.org>`_ tool.
 
 Configuration
 ~~~~~~~~~~~~~~~
