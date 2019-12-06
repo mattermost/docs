@@ -538,35 +538,7 @@ postgresql:
    helm upgrade --install gitlab-geo gitlab/gitlab --namespace gitlab -f secondary.yaml
    ```
 
-1. Wait for the deployment to complete. Watch for the `task-runner` Pod to become `Ready`.
-   **Note:** The `geo-logcursor` Pod _will not start properly_ until further configuration
-   steps are completed, as these configure the database it uses.
-
-We now need to configure the Geo database, via the `task-runner` Pod.
-
-1. Find the `task-runner` Pod
-
-   ```sh
-   kubectl get pods -lapp=task-runner --namespace gitlab
-   ```
-
-1. Attach to the Pod with `kubectl exec`
-
-   ```sh
-   kubectl exec -ti gitlab-geo-task-runner-XXX -- bash -l
-   ```
-
-1. Populate the Geo database
-
-   ```sh
-   gitlab-rake geo:db:setup
-   ```
-
-1. Refresh the foreign tables
-
-   ```sh
-   gitlab-rake geo:db:refresh_foreign_tables
-   ```
+1. Wait for the deployment to complete, and the application to come online.
 
 ## Add Secondary Geo instance via Primary
 
