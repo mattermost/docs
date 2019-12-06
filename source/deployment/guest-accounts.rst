@@ -145,10 +145,27 @@ Disabling Guest Accounts
 To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access > Enable Guest Access** and select ``False``. In versions
 prior to 5.18, current Guest Accounts will remain active until guest users are manually marked ``inactive`` in **System Console > User Management > Users**.
 
+From 5.18, if you are using AD/LDAP and the Guest Access setting is disabled, the Guest Filter and existing guest users in System Console are deactivated.
+Additionally, no new guests can be invited and added using the filter as an authentication method. If a previous guest's
+credentials match the user filter (the only filter which is active when Guest Access is disabled), they will be reactivated and promoted to a member user
+upon their next login.
+
+Similarly, for SAML, when the Guest Access setting is disabled, the Guest Attribute and existing guest users in System Console are deactivated.
+Additionally, no new guests can be invited and added using the attribute as an authentication method. If a previous guest's
+credentials match the user attribute (the only attribute which is active when Guest Access is disabled), they will be reactivated and promoted
+to a member user upon their next login.
 
 You can disable individual guest accounts in **System Console > User Management**, via the **Manage Members** modal, or using the ``/kick`` or ``/remove`` commands. In version 5.18,
 when a single Guest Account is disabled or the feature is disabled, the guests will be marked as `inactive`, be logged out of Mattermost, and all their sessions will be revoked.
 
+Reinstating Guest Accounts
+--------------------------
+
+When Guest Access is re-enabled for AD/LDAP the Guest Filter is reinstated. New users matching the Guest Filter will be authenticated as new guest users on login.
+Previous guest users will be activated with the next synchronization. If their credentials still match the Guest filter, they will retain their guest status. If they no longer match the Guest Filter but do match the User Filter, they will be not be promoted to member user automatically on login - this must be done manually. If a previous guest was reactivated as a member user when Guest Access was disabled, and now are identified by the Guest Filter once again, they will automatically be demoted to Guest upon their login.
+
+Similarly, for SAML, when Guest Access is re-enabled, the SAML Guest Attribute is reinstated. New users matching the Guest Attribute will be authenticated as new guest users on login.
+Previous guest users will be activated with the next synchronization.  If their credentials still match the Guest Attribute, they will retain their guest status. If they no longer match the Guest Attribute but do match the User Filter, they will be not be promoted to member user automatically on login - this must be done manually. If a previous guest was reactivated as a member user when Guest Access was disabled, and now are identified by the Guest Attribute once again, they will automatically be demoted to Guest upon their login.
 
 Frequently Asked Questions
 ---------------------------
