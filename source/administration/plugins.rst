@@ -104,7 +104,7 @@ is used to enforce plugin signature verification. With flag on, only marketplace
 Key Generation
 ~~~~~~~~~~~~~~~
 
-  Public and private key pairs are needed to sign and verify plugins. The private key is used for signing and should be kept in a secure location. The public key is used for verification and can be distributed freely. To generate a key pair, run the following command:
+Public and private key pairs are needed to sign and verify plugins. The private key is used for signing and should be kept in a secure location. The public key is used for verification and can be distributed freely. To generate a key pair, run the following command:
 
 .. code-block:: sh
 
