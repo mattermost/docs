@@ -178,7 +178,7 @@ You will need to `whitelist one subdomain and one port from Apple <https://devel
 
 You can use the mobile applications hosted by Mattermost in the `Apple App Store <https://apps.apple.com/ca/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ and connect with :doc:`Mattermost Hosted Push Notification Service (HPNS) <mobile-hpns>` through your corporate proxy.
 
-The use of hosted applications by Mattermost does not support wrapping in Enterprise Mobility Management solutions.
+The use of hosted applications by Mattermost :doc:`can be deployed with Enterprise Mobility Management solutions via AppConfig <mobile-appconfig>` but do not support wrapping.
 
 How do I white label the app and customize build settings?
 ----------------------------------------------------------
