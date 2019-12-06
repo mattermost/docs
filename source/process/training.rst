@@ -718,6 +718,11 @@ A one-line change to code can cost more mana than a 100-line change due to risk 
 
 Every feature added has an initial and on-going mana cost, which is taken into account in feature decisions.
 
+MLT
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The "Mattermost Leadership Team".
+
 RHS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
