@@ -231,7 +231,7 @@ To delete public key(s) from your Mattermost server, use:
 Implementation
 ~~~~~~~~~~~~~~~~~
 
-See the _`implementation document <https://docs.google.com/document/d/1qABE7VEx4k_ZAeh6Ydn4pGbu6BQfZt65x68i2s65MOQ/>`_for more information.
+See the _`implementation document <https://docs.google.com/document/d/1qABE7VEx4k_ZAeh6Ydn4pGbu6BQfZt65x68i2s65MOQ/>`_ for more information.
 
 
 Set Up Guide
