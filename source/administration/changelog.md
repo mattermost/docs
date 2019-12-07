@@ -17,9 +17,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 #### Mark Posts as Unread
  - When marking a post as unread, the user will land on the unread post the next time they click on the relevant channel or message.
-
-#### View Archived Channels (Beta)
- - View, share and search for content of archived channels. See more details [here](https://docs.mattermost.com/administration/config-settings.html#allow-users-to-view-archived-channels-experimental).
  
 #### ID Loaded push notifications (E20)
  - Allows push notifications to be delivered showing the full message contents that are fetched from the server once the notification is delivered to the device. This means that Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) cannot read the message contents since only a unique message ID is sent in the notification payload. 
@@ -29,7 +26,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  
 #### mmctl remote CLI tool
  - Allows a system admin to run commands when conventional access to the server via SSH isn't possible.
- 
+
+#### View Archived Channels (Beta)
+ - View, share and search for content of archived channels. See more details [here](https://docs.mattermost.com/administration/config-settings.html#allow-users-to-view-archived-channels-experimental).
+
 #### Guest Account SAML & LDAP Support (EE)
  - Provision Guests directly from AD/LDAP or SAML upon login. Guests will have no access to any teams or channels until they are assigned.
 
