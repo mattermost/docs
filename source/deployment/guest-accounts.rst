@@ -40,18 +40,10 @@ Enabling Guest Accounts
 Guest Authentication
 ---------------------
 
-Guests can access the Mattermost server via email invitation, and be authenticated using AD/LDAP or SAML 2.0 with the **Guest Attribute** setting in the
-System Console. Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost.
+Guests can access the Mattermost server via email invitation, and be authenticated using AD/LDAP or SAML 2.0.
+Before you proceed, ensure that the authentication method you wish to use is correctly configured on your server and enabled in Mattermost.
 For configuration steps and technical documentation, see `Active Directory/LDAP Setup <https://docs.mattermost.com/deployment/sso-ldap.html>`_
 and `SAML Single-Sign-On <https://docs.mattermost.com/deployment/sso-saml.html>`_.
-
-The **Guest Attribute** is a filter specific to guest access controlled by your organization's AD/LDAP or SAML system. Guests
-who are assigned this attribute will have the Guest role applied immediately upon first sign-in instead of the default member user role.
-This eliminates having to manually assign the role in the System Console.
-
-If a Guest user has the **Guest Attribute** removed in the SAML system, the synchronization processes will not automatically promote them to a member user role.
-This is done manually via **System Console > User Management**. If a member user has the **Guest Attribute** added, the synchronization processes
-will automatically demote the member user to the guest role.
 
 Converting a member user to guest will not change the channels they are in; however they will be restricted from discovering additional
 channel and unable to DM/GM users outside of the channels they are in. They can be added to channels by Team and System Admins.
@@ -60,18 +52,33 @@ channel and unable to DM/GM users outside of the channels they are in. They can 
 Configuring AD/LDAP Authentication
 ----------------------------------
 
+When enabled, the **Guest Filter** in Mattermost identifies external users whose AD/LDAP role is guest and who are invited to join 
+your Mattermost server. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role.
+This eliminates having to manually assign the role in the System Console.
+
 1. Enable Guest Access via **System Console > Guest Access (Beta)**.
 2. Navigate to **System Console > Authentication > AD/LDAP**.
-3. Enter the guest filter in the **Guest Filter** field.
+3. Complete the **Guest Filter** field.
 4. Choose **Save**.
 
+If a Mattermost Guest user has the guest role removed in the AD/LDAP system, the synchronization process
+will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a
+member user has the **Guest Attribute** added, the synchronization processes will automatically demote the member user to the guest role.
 
-Configuring SAML 2.0 authentication
+Configuring SAML 2.0 Authentication
 ------------------------------------
+
+When enabled, the **Guest Attribute** in Mattermost identifies external users whose SAML assertion is guest and who are invited to join
+your Mattermost server. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role.
+This eliminates having to manually assign the role in the System Console.
+
+If a Mattermost Guest user has the guest role removed in the SAML system, the synchronization processes will not automatically
+promote them to a member user role. This is done manually via **System Console > User Management**.
+If a member user has the **Guest Attribute** added, the synchronization processes will automatically demote the member user to the guest role.
 
 1. Enable Guest Access via **System Console > Guest Access (Beta)**.
 2. Navigate to **System Console > Authentication > SAML 2.0**.
-3. Enter the guest filter in the **Guest Attribute** field.
+3. Complete the **Guest Attribute** field.
 4. Choose **Save**.
 
 
