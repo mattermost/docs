@@ -88,6 +88,10 @@ spec:
               value: {{ .Values.global.appConfig.backups.tmpBucket }}
             - name: GITALY_FEATURE_DEFAULT_ON
               value: "1"
+            {{- if .Values.bootsnap.enabled }}
+            - name: ENABLE_BOOTSNAP
+              value: "1"
+            {{- end }}
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY

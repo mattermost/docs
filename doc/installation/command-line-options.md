@@ -296,6 +296,7 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 | `gitlab.task-runner.backups.objectStorage.config.key`        | key containing credentials in secret           | ""                                                               |
 | `gitlab.task-runner.backups.objectStorage.config.secret`     | Object storage credentials secret              | ""                                                               |
 | `gitlab.task-runner.backups.objectStorage.config`            | Authentication information for object storage  | {}                                                               |
+| `gitlab.task-runner.bootsnap.enabled`                        | Enable Bootsnap cache in Task runner           | true                                                             |
 | `gitlab.task-runner.enabled`                                 | Task runner enabled flag                       | true                                                             |
 | `gitlab.task-runner.image.pullPolicy`                        | Task runner image pull policy                  | `IfNotPresent`                                                   |
 | `gitlab.task-runner.image.repository`                        | Task runner image repository                   | `registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ee` |
