@@ -12,9 +12,9 @@ deprecated. The following list describes the commands that have been migrated.
 
 .. code-block:: sh
 
-     - auth        Manages the credentials of the remote Mattermost instances
-     - channel     Management of channels
-     - completion  Generates autocompletion scripts for bash and zsh
+     auth        Manages the credentials of the remote Mattermost instances
+     channel     Management of channels
+     completion  Generates autocompletion scripts for bash and zsh
      group       Management of groups
      help        Help about any command
      license     Licensing commands
@@ -27,14 +27,13 @@ deprecated. The following list describes the commands that have been migrated.
      websocket   Display websocket in a human-readable format
 
 
-
-Notes:
+**Notes**
 
  -  Parameters in CLI commands are order-specific.
  -  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded
  by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
  -  Team name and channel name refer to the handles, not the display names. So in the url ``https://community.mattermost.com/core/channels/town-square`` team
- name would be ``core`` and channel name would be ``town-square``
+ name would be ``core`` and channel name would be ``town-square``.
 
 
 Installing mmctl
@@ -51,8 +50,8 @@ To install the project in your `$GOPATH` run:
 Compiling
 ^^^^^^^^^
 
-First we have to install the dependencies of the project. `mmctl` uses `go` modules to manage the dependencies, so you need to have installed
-`go` 1.11 or greater. We can compile the binary with:
+First we have to install the dependencies of the project. ```mmctl`` uses ``go`` modules to manage the dependencies, so you need to have installed
+``go`` 1.11 or greater. We can compile the binary with:
 
 .. code-block:: sh
 
@@ -74,6 +73,7 @@ We can check the currently stored credentials with:
   .. code-block:: sh
 
     $ mmctl auth list
+
     | Active |        Name | Username |                     InstanceUrl |
     |--------|-------------|----------|---------------------------------|
     |      * | my-instance | john.doe | https://my-instance.example.com |
@@ -93,7 +93,7 @@ And now we can run commands normally:
    email: john.doe@example.com
    auth_service:
 
-Login methods
+Login Methods
 ^^^^^^^^^^^^^
 
 Password
@@ -102,7 +102,7 @@ Password
 
      $ mmctl auth login https://community.mattermost.com --name community --username my-username --password mysupersecret
 
-The `login` command can also work interactively, so if you leave anyneeded flag empty, `mmctl` will ask you for it interactively:
+The ``login`` command can also work interactively, so if you leave any required flag empty, ``mmctl`` will ask you for it interactively:
 
   .. code-block:: sh
 
@@ -114,48 +114,40 @@ The `login` command can also work interactively, so if you leave anyneeded flag 
 MFA
 ^^^^
 
-If you want to log in with MFA, you just need to use the `--mfa-token` flag:
+To log in with MFA, use the ``--mfa-token`` flag:
 
 .. code-block:: sh
 
    $ mmctl auth login https://community.mattermost.com --name community --username my-username --password mysupersecret --mfa-token 123456
 
-Access tokens
+Access Tokens
 ^^^^^^^^^^^^^
 
-Instead of using username and password to log in, you can generate and use a personal access token to authenticate with a server:
+You can generate and use a personal access token to authenticate with a server, instead of using username and password to log in:
 
 .. code-block:: sh
 
    $ mmctl auth login https://community.mattermost.com --name community --access-token MY_ACCESS_TOKEN
 
-Using mmctl
------------
-
-For the usage of all the commands, use the `--help` flag or check [the tool's documentation](./docs/mmctl.md).
-
-.. code-block:: sh
-
-   Mattermost offers workplace messaging across web, PC and phones with archiving, search and integration with your existing systems. Documentation available at https://docs.mattermost.com
 
 Installing Shell Completions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To install the shell completions for bash, add the following line to your `~/.bashrc` or `~/.profile` file:
+To install the shell completions for bash, add the following line to your ``~/.bashrc`` or ``~/.profile`` file:
 
 .. code-block:: sh
 
-      source <(mmctl completion bash)
+  source <(mmctl completion bash)
 
-For zsh, add the following line to your `~/.zshrc` file:
+For zsh, add the following line to your ``~/.zshrc`` file:
 
 .. code-block:: sh
 
-     source <(mmctl completion zsh)
+  source <(mmctl completion zsh)
 
 
 mmctl
------
+=====
 
 Remote client for the Open Source, self-hosted Slack-alternative
 
@@ -227,8 +219,8 @@ Options Inherited from Parent Commands
 mmctl channel archive
 ^^^^^^^^^^^^^^^^^^^^
 
-Archive some channels. Archive a channel along with all related information including posts from the database. Channels can be
-specified by ``[team]:[channel]. (i.e., myteam:mychannel or by channel ID)``.
+Archive one/some channel/s along with all related information including posts from the database. Channels can be
+specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID).
 
 Format
 
@@ -390,7 +382,7 @@ Options Inherited from Parent Commands
 mmctl channel restore
 ^^^^^^^^^^^^^^^^^^^^^
 
-Restore a previously deleted channel Channels can be specified by ``[team]:[channel] (e.g., myteam:mychannel or by channel ID)``.
+Restore a previously deleted channel Channels can be specified by ``[team]:[channel]`` (e.g., myteam:mychannel or by channel ID.
 
 Format
 
@@ -419,7 +411,7 @@ Options Inherited from Parent Commands
 mmctl channel make_private
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Set the type of a channel from public to private. Channel can be specified by ``[team]:[channel]``. ie. myteam:mychannel or by channel ID.
+Set the type of a channel from public to private. Channel can be specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID.
 
 Format
 
@@ -448,7 +440,7 @@ Options Inherited from Parent Commands
 mmctl channel search
 ^^^^^^^^^^^^^^^^^^^^^
 
-Search a channel by channel name. Channel can be specified by team (e.g., --team myTeam myChannel) or by team ID.
+Search a channel by channel name. Channel can be specified by team (e.g., ``--team myTeam myChannel```) or by team ID.
 
 Format
 
@@ -667,11 +659,13 @@ mmctl group
 Management of groups.
 
 Child Commands
-  -  `mmctl group channel`_ - Add a channel
-  -  `mmctl group channel disable`_ - Disable groups
-  -  `mmctl group channel enable`_ - Enable groups
-  -  `mmctl group channel list`_ - List groups
+  -  `mmctl group channel`_ - Manage channel groups
+  -  `mmctl group channel disable`_ - Disable group constrains
+  -  `mmctl group channel enable`_ - Enable group constrains
+  -  `mmctl group channel list`_ - List channel groups
   -  `mmctl group channel status`_ - Check group status
+  -  `mmctl group list-ldap`_ - List LDAP groups
+  -  `mmctl group team`_ -
 
 mmctl group channel
 ^^^^^^^^^^^^^^^^^^^^
@@ -729,7 +723,7 @@ Options Inherited from Parent Commands
 
 .. code-block:: sh
 
-    --format string   the format of the command output [plain, json] (default "p
+    --format string   the format of the command output [plain, json] (default "plain")
 
 mmctl group channel enable
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -752,13 +746,13 @@ Options
 
 .. code-block:: sh
 
-    -h, --help   help for emable
+    -h, --help   help for enable
 
 Options Inherited from Parent Commands
 
 .. code-block:: sh
 
-    --format string   the format of the command output [plain, json] (default "p
+    --format string   the format of the command output [plain, json] (default "plain")
 
 mmctl group channel list
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -787,7 +781,7 @@ Options Inherited from Parent Commands
 
 .. code-block:: sh
 
-  --format string   the format of the command output [plain, json] (def
+  --format string   the format of the command output [plain, json] (default "plain")
 
 mmctl group channel status
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -816,34 +810,955 @@ Options Inherited from Parent Commands
 
 .. code-block:: sh
 
-    --format string   the format of the command output [plain, json] (def
+    --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl group list-ldap
+^^^^^^^^^^^^^^^^^^^^
+
+List LDAP groups.
+
+Format
+
+.. code-block:: sh
+
+   mmctl group list-ldap [flags]
+
+Examples
+
+.. code-block:: sh
+
+    group list-ldap
+
+Options
+
+.. code-block:: sh
+
+    -h, --help   help for list-ldap
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
 
 mmctl ldap
 ----------
 
+LDAP related utilities
+
+mmctl ldap sync
+^^^^^^^^^^^^^^^
+
+Synchronize all LDAP users and groups now.
+
+Format
+
+.. code-block:: sh
+
+   mmctl ldap sync [flags]
+
+Examples
+
+.. code-block:: sh
+
+    ldap sync
+
+Options
+
+.. code-block:: sh
+
+    -h, --help   help for sync
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
+
 mmctl license
 -------------
+
+Management of groups.
+
+Child Commands
+  -  `mmctl license remove`_ - Remove current license
+  -  `mmctl license upload`_ -  Upload a new license
+
+mmctl license remove
+^^^^^^^^^^^^^^^^^^^^
+
+Remove the current license and use Mattermost in Team Edition.
+
+Format
+
+.. code-block:: sh
+
+     mmctl license remove [flags]
+
+Examples
+
+.. code-block:: sh
+
+    license remove
+
+Options
+
+.. code-block:: sh
+
+    -h, --help   help for remove
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+   --format string   the format of the command output [plain, json] (default "plain")
+
+
+mmctl license remove
+^^^^^^^^^^^^^^^^^^^^
+
+Upload a license. Replaces current license.
+
+Format
+
+.. code-block:: sh
+
+    mmctl license upload [license] [flags]
+
+Examples
+
+.. code-block:: sh
+
+   license upload /path/to/license/mylicensefile.mattermost-license
+
+Options
+
+.. code-block:: sh
+
+    -h, --help   help for upload
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
 
 mmctl logs
 ----------
 
+Display logs in a human-readable format
+
+Format
+
+.. code-block:: sh
+
+    mmctl logs [flags]
+
+Options
+
+.. code-block:: sh
+
+    -h, --help         help for logs
+    -l, --logrus       Use logrus for formatting.
+    -n, --number int   Number of log lines to retrieve. (default 200)
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
 mmctl permissions
 -----------------
+
+Management of permissions and roles.
+
+Child Commands
+  -  `mmctl permissions add`_ - Add permissions
+  -  `mmctl permissions remove`_ -  Remove permissions
+  -  `mmctl permissions show`_ -  Show permissions
+
+mmctl permissions add (EE only)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Add one or more permissions to an existing role (Only works in Enterprise Edition).
+
+Format
+
+.. code-block:: sh
+
+    mmctl permissions add [role] [permission...] [flags]
+
+Examples
+
+.. code-block:: sh
+
+    permissions add system_user list_open_teams
+
+Options
+
+.. code-block:: sh
+
+   -h, --help   help for add
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl permissions remove (EE only)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove one or more permissions from an existing role (Only works in Enterprise Edition).
+
+Format
+
+.. code-block:: sh
+
+      mmctl permissions remove [role] [permission...] [flags]
+
+Examples
+
+.. code-block:: sh
+
+      permissions remove system_user list_open_teams
+
+Options
+
+.. code-block:: sh
+
+     -h, --help   help for remove
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
+
+mmctl permissions show
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Show all the information about a role.
+
+Format
+
+.. code-block:: sh
+
+   mmctl permissions show [role_name] [flags]
+
+Examples
+
+.. code-block:: sh
+
+   permissions show system_user
+
+Options
+
+.. code-block:: sh
+
+   -h, --help   help for show
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+  --format string   the format of the command output [plain, json] (default "plain")
 
 mmctl plugin
 -------------
 
-mmctl roles
+Management of plugins.
+
+Child Commands
+  -  `mmctl plugin add`_ - Add plugins
+  -  `mmctl plugin delete`_ -  Remove plugins
+  -  `mmctl plugin disable`_ -  Disable plugins
+  -  `mmctl plugin enable`_ -  Enable plugins
+  -  `mmctl plugin list`_ -  List plugins
+
+mmctl plugin add
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Add plugins to your Mattermost server.
+
+Format
+
+.. code-block:: sh
+
+    mmctl plugin add [plugins] [flags]
+
+Examples
+
+.. code-block:: sh
+
+    plugin add hovercardexample.tar.gz pluginexample.tar.gz
+
+Options
+
+.. code-block:: sh
+
+   -h, --help   help for add
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
+
+mmctl plugin delete
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Delete previously uploaded plugins from your Mattermost server.
+
+Format
+
+.. code-block:: sh
+
+  mmctl plugin delete [plugins] [flags]
+
+Examples
+
+.. code-block:: sh
+
+  plugin delete hovercardexample pluginexample
+
+Options
+
+.. code-block:: sh
+
+   -h, --help   help for delete
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+  --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl plugin disable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Disable plugins. Disabled plugins are immediately removed from the user interface and logged out of all sessions.
+
+Format
+
+.. code-block:: sh
+
+    mmctl plugin disable [plugins] [flags]
+
+Examples
+
+.. code-block:: sh
+
+    plugin disable hovercardexample pluginexample
+
+Options
+
+.. code-block:: sh
+
+    -h, --help   help for disable
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
+
+mmctl plugin enable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enable plugins for use on your Mattermost server.
+
+Format
+
+.. code-block:: sh
+
+    mmctl plugin enable [plugins] [flags]
+
+Examples
+
+.. code-block:: sh
+
+    plugin enable hovercardexample pluginexample
+
+Options
+
+.. code-block:: sh
+
+    -h, --help   help for enable
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+  --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl plugin list
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+List all active and inactive plugins installed on your Mattermost server.
+
+Format
+
+.. code-block:: sh
+
+    mmctl plugin list [flags]
+
+Examples
+
+.. code-block:: sh
+
+    plugin list
+
+Options
+
+.. code-block:: sh
+
+   -h, --help   help for list
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+  --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl post
 ------------
+
+Management of plugins.
+
+Child Commands
+  -  `mmctl post create`_ - Add plugins
+  -  `mmctl post list`_ -  Remove plugins
+  -  `mmctl plugin disable`_ -  Disable plugins
+  -  `mmctl plugin enable`_ -  Enable plugins
+  -  `mmctl plugin list`_ -  List plugins
+
+mmctl post create
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Create a post
+
+Format
+
+.. code-block:: sh
+
+    mmctl post create [flags]
+
+Examples
+
+.. code-block:: sh
+
+    post create myteam:mychannel --message "some text for the post"
+
+Options
+
+.. code-block:: sh
+
+   -h, --help   help for post
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl post list
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+List posts for a channel
+
+Format
+
+.. code-block:: sh
+
+   mmctl post list [flags]
+
+Examples
+
+.. code-block:: sh
+
+    post list myteam:mychannel
+    post list myteam:mychannel --number 20
+
+Options
+
+.. code-block:: sh
+
+     -h, --help   help for post
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
 
 mmctl team
 ----------
 
+Management of plugins.
+
+Child Commands
+  -  `mmctl team add`_ - Add teams
+  -  `mmctl team create`_ -  Create teams
+  -  `mmctl team delete`_ -  Delete teams
+  -  `mmctl team list`_ -  List teams
+  -  `mmctl team remove`_ -  Remove teams
+  -  `mmctl team search`_ -  Search teams
+
+mmctl team add
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Add some users to team
+
+Format
+
+.. code-block:: sh
+
+    mmctl team add [team] [users] [flags]
+
+Examples
+
+.. code-block:: sh
+
+    team add myteam user@example.com username
+
+Options
+
+.. code-block:: sh
+
+   -h, --help   help for add
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
+
+mmctl team create
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Create a team.
+
+Format
+
+.. code-block:: sh
+
+   mmctl team create [flags]
+
+Examples
+
+.. code-block:: sh
+
+  team create --name mynewteam --display_name "My New Team"
+  team create --name private --display_name "My New Private Team" --private
+
+Options
+
+.. code-block:: sh
+
+    --display_name string   Team Display Name
+    --email string          Administrator Email (anyone with this email is automatically a team admin)
+    -h, --help              help for create
+    --name string           Team Name
+    --private               Create a private team.
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl team delete
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Permanently delete some teams. Permanently deletes a team along with all related information including posts from the database.
+
+Format
+
+.. code-block:: sh
+
+   mmctl team delete [teams] [flags]
+
+Examples
+
+.. code-block:: sh
+
+      team delete myteam
+
+Options
+
+.. code-block:: sh
+
+    --confirm   Confirm you really want to delete the team and a DB backup has been performed.
+    -h, --help  help for delete
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+  --format string   the format of the command output [plain, json] (default "plain")
+
+
+mmctl team list
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+List all teams on the server.
+
+Format
+
+.. code-block:: sh
+
+    mmctl team list [flags]
+
+Examples
+
+.. code-block:: sh
+
+    team list
+
+Options
+
+.. code-block:: sh
+
+    -h, --help  help for list
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl team remove
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Remove some users from team.
+
+Format
+
+.. code-block:: sh
+
+    mmctl team remove [team] [users] [flags]
+
+Examples
+
+.. code-block:: sh
+
+   team remove myteam user@example.com username
+
+Options
+
+.. code-block:: sh
+
+    -h, --help  help for remove
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+   --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl team search
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Search for teams based on name.
+
+Format
+
+.. code-block:: sh
+
+   mmmctl team search [teams] [flags]
+
+Examples
+
+.. code-block:: sh
+
+   team search team1
+
+Options
+
+.. code-block:: sh
+
+   -h, --help  help for search
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+   --format string   the format of the command output [plain, json] (default "plain")
+
 mmctl user
 ---------
+
+Management of users.
+
+Child Commands
+  -  `mmctl user create`_ - Create user
+  -  `mmctl user deactivate`_ - Deactivate user
+  -  `mmctl user email`_ -  Set user email
+  -  `mmctl user invite`_ -  Invite user
+  -  `mmctl user reset_password`_ -  Reset user password
+  -  `mmctl user resetmfa`_ -  Reset user's MFA token
+  -  `mmctl user search`_ -  Search for a user
+
+mmctl user create
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Create a user.
+
+Format
+
+.. code-block:: sh
+
+    mmctl user create [flags]
+
+Examples
+
+.. code-block:: sh
+
+    user create --email user@example.com --username userexample --password Password1
+
+Options
+
+.. code-block:: sh
+
+   --email string       Required. The email address for the new user account.
+   --firstname string   Optional. The first name for the new user account.
+   -h, --help           help for create
+   --lastname string    Optional. The last name for the new user account.
+   --locale string      Optional. The locale (ex: en, fr) for the new user account.
+   --nickname string    Optional. The nickname for the new user account.
+   --password string    Required. The password for the new user account.
+   --system_admin       Optional. If supplied, the new user will be a system administrator. Defaults to false.
+   --username string    Required. Username for the new user account.
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl user deactivate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Deactivate users. Deactivated users are immediately logged out of all sessions and are unable to log back in.
+
+Format
+
+.. code-block:: sh
+
+    mmctl user deactivate [emails, usernames, userIds] [flags]
+
+Examples
+
+.. code-block:: sh
+
+  user deactivate user@example.com
+  user deactivate username
+
+Options
+
+.. code-block:: sh
+
+    -h, --help       help for deactivate
+
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+  --format string   the format of the command output [plain, json] (default "plain")
+
+
+mmctl user email
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Change email of the user.
+
+Format
+
+.. code-block:: sh
+
+    mmctl user email [user] [new email] [flags]
+
+Examples
+
+.. code-block:: sh
+
+  user email test user@example.com
+  user activate username
+
+Options
+
+.. code-block:: sh
+
+    -h, --help       help for email
+
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+  --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl user invite
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Send user an email invite to a team. You can invite a user to multiple teams by listing them. You can specify teams by name or ID.
+
+Format
+
+.. code-block:: sh
+
+    mmctl user invite [email] [teams] [flags]
+
+Examples
+
+.. code-block:: sh
+
+  user invite user@example.com myteam
+  user invite user@example.com myteam1 myteam2
+
+Options
+
+.. code-block:: sh
+
+    -h, --help       help for invite
+
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+  --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl user reset_password
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Send users an email to reset their password.
+
+Format
+
+.. code-block:: sh
+
+    mmctl user reset_password [users] [flags]
+
+Examples
+
+.. code-block:: sh
+
+  user reset_password user@example.com
+
+Options
+
+.. code-block:: sh
+
+    -h, --help       help for reset_password
+
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+  --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl user resetmfa
+^^^^^^^^^^^^^^^^^^^^
+
+Turn off multi-factor authentication for a user. If MFA enforcement is enabled, the user will be forced to re-enable MFA as soon as they login.
+
+Format
+
+.. code-block:: sh
+
+    mmctl user resetmfa [users] [flags]
+
+Examples
+
+.. code-block:: sh
+
+    user resetmfa user@example.com
+
+Options
+
+.. code-block:: sh
+
+    -h, --help       help for resetmfa
+
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+  --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl user search
+^^^^^^^^^^^^^^^^^^
+
+Search for users based on username, email, or user ID.
+
+Format
+
+.. code-block:: sh
+
+    mmctl user search [users] [flags]
+
+Examples
+
+.. code-block:: sh
+
+    user search user1@mail.com user2@mail.com
+
+Options
+
+.. code-block:: sh
+
+    -h, --help       help for search
+
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+  --format string   the format of the command output [plain, json] (default "plain")
 
 mmctl version
 -------------
 
 mmctl webhook
 -------------
+
+mmctl websocket
+-------------
+
+Display websocket in a human-readable format.
+
+Format
+
+.. code-block:: sh
+
+    mmctl websocket [flags]
+
+Examples
+
+.. code-block:: sh
+
+
+Options
+
+.. code-block:: sh
+
+    -h, --help       help for websocket
+
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+  --format string   the format of the command output [plain, json] (default "plain")
