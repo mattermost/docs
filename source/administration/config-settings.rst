@@ -3987,6 +3987,19 @@ Restrict System Admin (Experimental)
 Team Settings
 ~~~~~~~~~~~~~~
 
+Teammate Name Display
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Control Teammate Name Display at the system level.
+
+**True**: Allows System Admins to control Teammate Name Display at the system level.
+
+**False**: System Admins cannot control Teammate Name Display at the system level.
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LockTeammateNameDisplay": []`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------+
+
 Default Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Default channels every user is added to automatically after joining a new team. Only applies to public channels, but affects all teams on the server.
