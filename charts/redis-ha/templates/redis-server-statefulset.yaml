@@ -55,7 +55,7 @@ spec:
         fsGroup: 2000
       initContainers:
         - name: configure
-          image: {{ include "gitlab.busybox.image" . | quote }}
+          image: {{ include "gitlab.busybox.image" (dict "imageContext" .Values.init "context" .) | quote }}
           command: ['sh', '/config/configure']
           volumeMounts:
           - name: {{ .Release.Name }}
