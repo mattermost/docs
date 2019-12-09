@@ -98,16 +98,14 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``TeamSettings``:
-   - Added ``LockTeammateNameDisplay`` to 
+   - Added ``LockTeammateNameDisplay`` to add support for System Administrators to control Teammate Name Display at the system level.
  - Under ``LdapSettings``:
-   - Added ``GuestFilter`` to
+   - Added ``GuestFilter`` to 
  - Under ``SamlSettings``:
-   - Added ``SignatureAlgorithm`` to 
-   - Added ``CanonicalAlgorithm`` to 
+   - Added ``SignatureAlgorithm`` and ``CanonicalAlgorithm`` to 
    - Added ``GuestAttribute`` to 
  - Under ``PluginSettings``:
-   - Added ``RequirePluginSignature`` to 
-   - Added ``SignaturePublicKeyFiles`` to 
+   - Added ``RequirePluginSignature`` and ``SignaturePublicKeyFiles`` to 
  - Under ``ServiceSettings``:
    - Removed ``ExperimentalLdapGroupSync`` setting.
 
@@ -127,8 +125,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added an API endpoint to be able to set posts as unread.
 
 ### Websocket Event Changes
- - Added Marked post as unread.
- - Added Guests deactivated.
+ - Added Marked post as unread Websocket Event.
+ - Added Guests deactivated Websocket Event.
  
 ### Known Issues
  - **XXXX** More to be added
