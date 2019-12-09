@@ -2054,6 +2054,14 @@ This filter is defaulted to ``(|(objectClass=group)(objectClass=groupOfNames)(ob
 | This feature's ``config.json`` setting is ``"GroupFilter": ""`` with string input.                                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Guest Filter
+^^^^^^^^^^^^^^
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"GuestFilter": ""`` with string input.                                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Group Display Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 (Required) Enter an AD/LDAP Group Display name attribute used to populate Mattermost Group names. 
@@ -3135,6 +3143,8 @@ Specify the color of the AD/LDAP login button text for white labeling purposes. 
 +-------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
+
+
 
 Allow Authentication Transfer (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
