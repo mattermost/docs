@@ -8,8 +8,7 @@ Available in `Enterprise Edition E10 and higher <https://about.mattermost.com/pr
 Guest Accounts are a new role within Mattermost Enterprise editions which allow organizations to collaborate with individuals (such as vendors and contractors) outside of their organization.
 The Guest Account feature controls access to channels and other members within the organization.
 
-For example, an organization may use Guest Accounts to work on a website project with resources from an external design firm. Guest Accounts
-could also be used to collaborate with customers on a support issue.
+For example, an organization may use Guest Accounts to work on a website project with resources from an external design firm. Guest Accounts could also be used to collaborate with customers on a support issue.
 
 Guests can:
 
@@ -45,9 +44,26 @@ Before you proceed, ensure that the authentication method you wish to use is cor
 For configuration steps and technical documentation, see `Active Directory/LDAP Setup <https://docs.mattermost.com/deployment/sso-ldap.html>`_
 and `SAML Single-Sign-On <https://docs.mattermost.com/deployment/sso-saml.html>`_.
 
-Converting a member user to guest will not change the channels they are in; however they will be restricted from discovering additional
-channel and unable to DM/GM users outside of the channels they are in. They can be added to channels by Team and System Admins.
+Converting a member user to guest will not change the channels they are in; however they will be restricted from discovering additional channel and unable to DM/GM users outside of the channels they are in. They can be added to channels by Team and System Admins.
 
+
+Inviting Guests to the Mattermost Server via Email
+------------------------------------------------------
+
+Guests can be invited into one for more Mattermost channels within a team by System Administrators and roles that have the **Invite Guest** permission. A guest can also be invited into channels on multiple teams.
+
+**Note:** Guest invitations will be revoked after 48 hours per the member email invitation process. If your guest has not accepted the invitation within that period, please follow the steps below to resend an invitation to the guest.
+
+To invite guests into one or more Mattermost channels:
+
+1. Enable email invites from **System Console > Signup > Enable Email Invitations**.
+2. Navigate to **Main Menu > Invite People**.  This is a new invitation option that combines inviting guests and members and consolidates **Send Email**, **Get Team Invite Link**, and **Add Members to the Team**.
+3. Select **Invite Guests**.
+4. Enter the guest’s email address.
+5. Choose the channels the guest can join (excluding managed teams).
+6. (Optional) Enter a custom message.
+
+.. image:: ../images/Guest_Invite_Screen.png
 
 Configuring AD/LDAP Authentication
 ----------------------------------
@@ -80,25 +96,6 @@ If a member user has the **Guest Attribute** added, the synchronization processe
 2. Navigate to **System Console > Authentication > SAML 2.0**.
 3. Complete the **Guest Attribute** field.
 4. Choose **Save**.
-
-
-Inviting Guests to the Mattermost Server via Email
-------------------------------------------------------
-
-Guests can be invited into one for more Mattermost channels within a team by System Administrators and roles that have the **Invite Guest** permission. A guest can also be invited into channels on multiple teams.
-
-**Note:** Guest invitations will be revoked after 48 hours per the member email invitation process. If your guest has not accepted the invitation within that period, please follow the steps below to resend an invitation to the guest.
-
-To invite guests into one or more Mattermost channels:
-
-1. Enable email invites from **System Console > Signup > Enable Email Invitations**.
-2. Navigate to **Main Menu > Invite People**.  This is a new invitation option that combines inviting guests and members and consolidates **Send Email**, **Get Team Invite Link**, and **Add Members to the Team**.
-3. Select **Invite Guests**.
-4. Enter the guest’s email address.
-5. Choose the channels the guest can join (excluding managed teams).
-6. (Optional) Enter a custom message.
-
-.. image:: ../images/Guest_Invite_Screen.png
 
 
 Guest Permission Settings
