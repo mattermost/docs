@@ -97,10 +97,19 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - Added ID_LOADED_NOTIFICATION.
- - Removed Digest setting, set based on Signature Algorithm bit.
- - Removed ExperimentalLdapGroupSync config so that the feature is always enabled.
- - Added RequirePluginSignature.
+ - Under ``TeamSettings``:
+   - Added ``LockTeammateNameDisplay`` to 
+ - Under ``LdapSettings``:
+   - Added ``GuestFilter`` to
+ - Under ``SamlSettings``:
+   - Added ``SignatureAlgorithm`` to 
+   - Added ``CanonicalAlgorithm`` to 
+   - Added ``GuestAttribute`` to 
+ - Under ``PluginSettings``:
+   - Added ``RequirePluginSignature`` to 
+   - Added ``SignaturePublicKeyFiles`` to 
+ - Under ``ServiceSettings``:
+   - Removed ``ExperimentalLdapGroupSync`` setting.
 
 ### Open Source Components
  - Added ``@types/highlight`` in https://github.com/mattermost/mattermost-webapp.
@@ -113,14 +122,13 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``redux-offline`` in https://github.com/mattermost/mattermost-mobile.
  
 ### API Changes
- - Added ability to add users as another user to the plugin API.
  - Added POST handler for /plugins/marketplace to install marketplace plugins.
- - Added some group plugin APIs (GetGroup, GetGroupByName, GetGroupsForUser).
- - Added a new endpoint to verify that SiteURL works before allowing it to be saved.
- 
-### Database Changes
+ - Added an API endpoint to be able to search archived channels.
+ - Added an API endpoint to be able to set posts as unread.
 
 ### Websocket Event Changes
+ - Added Marked post as unread.
+ - Added Guests deactivated.
  
 ### Known Issues
  - **XXXX** More to be added
