@@ -16,7 +16,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Highlights
 
 #### Mark Posts as Unread
- - When marking a post as unread, the user will land on the unread post the next time they click on the relevant channel or message.
+ - When marking a post as unread, the user will land on the unread post the next time they click on the relevant channel.
  
 #### ID Loaded push notifications (E20)
  - Allows push notifications to be delivered showing the full message contents that are fetched from the server once the notification is delivered to the device. This means that Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) cannot read the message contents since only a unique message ID is sent in the notification payload. 
