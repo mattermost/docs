@@ -111,7 +111,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Verify all items in the last posted release checklist are complete
     - Submit `NOTICE.txt` PRs for any new libraries added from dev, and ensure they are cherry-picked to feature release branch
     - If there are any breaking compatibility changes in the release, open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) to make sure GitLab is aware. Post a link to the issue in the Release Discussion channel
-    - Ask PMs to create a "Hero" screenshot for the release blog post
+    - Ask PMs to [create a "Hero" screenshot as the splash image for the release blog post](https://handbook.mattermost.com/operations/messaging-and-math/how-to-guides-for-m-and-m/how-to-create-release-announcements#one-great-screenshot-a-month)
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
 4. QA:
