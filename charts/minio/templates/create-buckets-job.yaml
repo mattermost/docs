@@ -28,6 +28,7 @@ spec:
                 name: {{ template "minio.fullname" . }}-config-cm
             - secret:
                 name: {{ template "gitlab.minio.credentials.secret" . }}
+{{- include "pullsecrets" .Values | indent 6}}
       containers:
       - name: minio-mc
         image: {{ .Values.minioMc.image }}:{{ .Values.minioMc.tag }}
