@@ -14,15 +14,15 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Breaking change for mark posts as unread **XXX**
 
 ### Highlights
-
-#### Mark Posts as Unread
- - When marking a post as unread, the user will land on the unread post the next time they click on the relevant channel.
  
 #### ID Loaded push notifications (E20)
  - Allows push notifications to be delivered showing the full message contents that are fetched from the server once the notification is delivered to the device. This means that Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) cannot read the message contents since only a unique message ID is sent in the notification payload. 
  
 #### Allow Plugin Upgrades
  - Added ability to upgrade plugins and prepackaged plugins via the marketplace.
+ 
+#### Mark Posts as Unread
+ - When marking a post as unread, the user will land on the unread post the next time they click on the relevant channel.
  
 #### mmctl remote CLI tool
  - Allows a system admin to run commands when conventional access to the server via SSH isn't possible.
@@ -100,7 +100,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``TeamSettings``:
    - Added ``LockTeammateNameDisplay`` to add support for System Administrators to control Teammate Name Display at the system level.
  - Under ``LdapSettings``:
-   - Added ``GuestFilter`` to 
+   - Added ``GuestFilter`` to be able to enter an AD/LDAP Filter to use when searching for external users who have Guest Access to Mattermost.
  - Under ``SamlSettings``:
    - Added ``SignatureAlgorithm`` and ``CanonicalAlgorithm`` to 
    - Added ``GuestAttribute`` to 
@@ -121,12 +121,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  
 ### API Changes
  - Added POST handler for /plugins/marketplace to install marketplace plugins.
- - Added an API endpoint to be able to search archived channels.
+ - Added a ``search_archived`` API endpoint to be able to search archived channels.
  - Added an API endpoint to be able to set posts as unread.
 
 ### Websocket Event Changes
- - Added Marked post as unread Websocket Event.
- - Added Guests deactivated Websocket Event.
+ - Added marked post as unread Websocket Event.
+ - Added guests deactivated Websocket Event.
  
 ### Known Issues
  - **XXXX** More to be added
