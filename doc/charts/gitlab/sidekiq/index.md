@@ -46,8 +46,8 @@ to the `helm install` command using the `--set` flags:
 | `image.pullSecrets`                  |                   | Secrets for the image repository         |
 | `image.repository`                   | `registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee` | Sidekiq image repository |
 | `image.tag`                          |                   | Sidekiq image tag                        |
-| `init.image`                         |                   | initContainer image                      |
-| `init.tag`                           |                   | initContainer image tag                  |
+| `init.image.repository`              |                   | initContainer image                      |
+| `init.image.tag`                     |                   | initContainer image tag                  |
 | `metrics.enabled`                    | `true`            | Toggle Prometheus metrics exporter       |
 | `psql.password.key`                  | `psql-password`   | key to psql password in psql secret      |
 | `psql.password.secret`               | `gitlab-postgres` | psql password secret                     |

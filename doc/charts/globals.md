@@ -868,5 +868,6 @@ global:
       tag: latest
 ```
 
-Many charts also provide `init.image` and `init.tag` settings locally that can
-be used to override this global setting for that specific chart.
+Many charts also provide `init.image.repository` and `init.image.tag` settings
+locally that can be used to override this global setting for that specific
+chart.

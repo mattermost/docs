@@ -302,9 +302,9 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 | `gitlab.task-runner.image.pullPolicy`                        | Task runner image pull policy                  | `IfNotPresent`                                                   |
 | `gitlab.task-runner.image.repository`                        | Task runner image repository                   | `registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ee` |
 | `gitlab.task-runner.image.tag`                               | Task runner image tag                          | `latest`                                                         |
-| `gitlab.task-runner.init.image`                              | Task runner init image repository              |                                                                  |
+| `gitlab.task-runner.init.image.repository`                   | Task runner init image repository              |                                                                  |
+| `gitlab.task-runner.init.image.tag`                          | Task runner init image tag                     |                                                                  |
 | `gitlab.task-runner.init.resources.requests.cpu`             | Task runner init minimum needed cpu            | `50m`                                                            |
-| `gitlab.task-runner.init.tag`                                | Task runner init image tag                     |                                                                  |
 | `gitlab.task-runner.persistence.accessMode`                  | Task runner persistence access mode            | `ReadWriteOnce`                                                  |
 | `gitlab.task-runner.persistence.enabled`                     | Task runner enable persistence flag            | false                                                            |
 | `gitlab.task-runner.persistence.matchExpressions`            | Label-expression matches to bind               |                                                                  |

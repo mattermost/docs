@@ -135,8 +135,9 @@ While rarely altered, the `initContainer` behaviors can be changed via the follo
 ```
 init:
   image:
-  tag:
-  pullPolicy: IfNotPresent
+    repository:
+    tag:
+    pullPolicy: IfNotPresent
   script:
 ```
 

@@ -30,8 +30,8 @@ Table below contains all the possible charts configurations that can be supplied
 | `image.tag`             | Migrations image tag                     |                   |
 | `image.pullPolicy`      | Migrations pull policy                   | `Always`          |
 | `image.pullSecrets`     | Secrets for the image repository         |                   |
-| `init.image`            | initContainer image                      |                   |
-| `init.tag`              | initContainer image tag                  |                   |
+| `init.image.repository` | initContainer image                      |                   |
+| `init.image.tag`        | initContainer image tag                  |                   |
 | `enabled`               | Migrations enable flag                   | `true`            |
 | `tolerations`           | Toleration labels for pod assignment     | `[]`              |
 | `redis.serviceName`     | Redis service name                       | `redis`           |

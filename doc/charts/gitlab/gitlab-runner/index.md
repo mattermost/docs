@@ -31,8 +31,8 @@ Privileged containers have extended capabilities, for example they can mount arb
 | `gitlab-runner.image`                          | Runner image                               | `gitlab/gitlab-runner:alpine-v10.5.0` |
 | `gitlab-runner.enabled`                        |                                            | `true`                                |
 | `gitlab-runner.imagePullPolicy`                | Image pull policy                          | `IfNotPresent`                        |
-| `gitlab-runner.init.image`                     | `initContainer` image                      |                                       |
-| `gitlab-runner.init.tag`                       | `initContainer` image tag                  |                                       |
+| `gitlab-runner.init.image.repository`          | `initContainer` image                      |                                       |
+| `gitlab-runner.init.image.tag`                 | `initContainer` image tag                  |                                       |
 | `gitlab-runner.pullSecrets`                    | Secrets for the image repository           |                                       |
 | `gitlab-runner.unregisterRunners`              | Unregister all runners before termination  | `true`                                |
 | `gitlab-runner.concurrent`                     | Number of concurrent jobs                  | `20`                                  |

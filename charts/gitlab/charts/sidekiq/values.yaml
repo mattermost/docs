@@ -8,8 +8,9 @@ image:
   # tag: latest
 
 init:
-  image:
-  tag:
+  image: {}
+    # repository:
+    # tag:
   resources:
     requests:
       cpu: 50m

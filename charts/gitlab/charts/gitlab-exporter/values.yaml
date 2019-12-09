@@ -27,8 +27,9 @@ enabled: true
 tolerations: []
 
 init:
-  image:
-  tag:
+  image: {}
+    # repository:
+    # tag:
   resources:
     requests:
       cpu: 50m

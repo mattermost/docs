@@ -19,8 +19,9 @@ service:
   # - y.y.y.y
 
 init:
-  image:
-  tag:
+  image: {}
+    # repository:
+    # tag:
   resources:
     requests:
       cpu: 50m

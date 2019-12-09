@@ -64,7 +64,7 @@ spec:
       initContainers:
         - name: configure
           image: {{ include "gitlab.busybox.image" . | quote }}
-          imagePullPolicy: {{ .Values.init.pullPolicy }}
+          imagePullPolicy: {{ .Values.init.image.pullPolicy }}
           command: ["sh", "/config/configure"]
           volumeMounts:
             - name: minio-configuration

@@ -101,9 +101,10 @@ global:
 
 ## Control the InitContainer behaviors.
 init:
-  image: "busybox"
-  tag: "latest"
-  pullPolicy: "IfNotPresent"
+  image:
+    # repository:
+    # tag:
+    pullPolicy: "IfNotPresent"
   resources:
     requests:
       cpu: 50m
