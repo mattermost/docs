@@ -103,7 +103,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
    - Added ``GuestFilter`` to be able to enter an AD/LDAP Filter to use when searching for external users who have Guest Access to Mattermost.
  - Under ``SamlSettings``:
    - Added ``SignatureAlgorithm`` and ``CanonicalAlgorithm`` to 
-   - Added ``GuestAttribute`` to 
+   - Added ``GuestAttribute`` to be able to enter the attribute in the SAML Assertion used to apply a guest role to users.
  - Under ``PluginSettings``:
    - Added ``RequirePluginSignature`` and ``SignaturePublicKeyFiles`` to 
  - Under ``ServiceSettings``:
