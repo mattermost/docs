@@ -2706,19 +2706,17 @@ Require Plugin Signature
 
 **False**: Do not require valid plugin signatures before starting managed or unmanaged plugins. Pre-packaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RequirePluginSignature": true`` with options ``true`` and ``false``.  |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RequirePluginSignature": true`` with options ``true`` and ``false``.   |
++---------------------------------------------------------------------------------------------------------------------+
 
 Signature Public Key Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**:
-
-**False**:
+In addition to the Mattermost plugin signing key built-into the server, each public key specified here is trusted to validate plugin signatures.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with object input mapping plugin IDs as keys to objects, each of which contains a key ``"Enable": false`` with options ``true`` or ``false``. |
+| This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with with string array input consisting of contents that are relative or absolute paths to signature files.                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Autolink
