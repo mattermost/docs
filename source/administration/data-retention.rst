@@ -26,6 +26,9 @@ Save the settings and restart your server. You're now all set! Data older than t
 
 You may also run the deletion job manually anytime by clicking **Run Deletion Job Now** button in **System Console > Advanced > Data Retention Policy** in prior versions or **System Console > Compliance > Data Retention Policy** in versions after 5.12.
 
+.. note::
+  If using data retention and `ElasticSearch <https://docs.mattermost.com/deployment/elasticsearch.html>`_, ensure the `ElasticSearch aggregate search indexes <https://docs.mattermost.com/administration/config-settings.html#aggregate-search-indexes>`_ setting is set to a value that is greater than your data retention policy in days. 
+
 Frequently Asked Questions (FAQ)
 ---------------------------------
 
