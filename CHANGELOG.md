@@ -2,6 +2,18 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.3.12
+
+### Fixed (2 changes)
+
+- Broken pluck expectation in gitlab.ingress.tls.configured #1653. !1013
+- global.ingress.tls default to empty map. !1022
+
+### Other (1 change)
+
+- Update GitLab Version to 12.3.9.
+
+
 ## 2.3.11
 
 ### Other (1 change)

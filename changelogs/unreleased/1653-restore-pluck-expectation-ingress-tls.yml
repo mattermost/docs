@@ -1,5 +1,0 @@
----
-title: 'Broken pluck expectation in gitlab.ingress.tls.configured #1653'
-merge_request: 1013
-author:
-type: fixed
