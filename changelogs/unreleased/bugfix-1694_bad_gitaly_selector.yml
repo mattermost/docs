@@ -1,0 +1,5 @@
+---
+title: Corrected indentation issue with Gitaly volumeClaimTemplate selector
+merge_request: 1070
+author:
+type: fixed
