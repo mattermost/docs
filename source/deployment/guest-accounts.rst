@@ -44,7 +44,7 @@ Before you proceed, ensure that the authentication method you wish to use is cor
 For configuration steps and technical documentation, see `Active Directory/LDAP Setup <https://docs.mattermost.com/deployment/sso-ldap.html>`_
 and `SAML Single-Sign-On <https://docs.mattermost.com/deployment/sso-saml.html>`_.
 
-Converting a member user to guest will not change the channels they are in; however they will be restricted from discovering additional channel and unable to DM/GM users outside of the channels they are in. They can be added to channels by Team and System Admins.
+Converting a member user to a guest will not change the channels they are in; however they will be restricted from discovering additional channels and unable to direct message / group message users outside of the channels they are in. They can be added to channels by Team and System Admins.
 
 
 Inviting Guests to the Mattermost Server via Email
