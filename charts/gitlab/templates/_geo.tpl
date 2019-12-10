@@ -19,6 +19,10 @@ geo:
 
 {{/*
 Returns the contents of the `database_geo.yml` blob
+
+As the Rails application checks for the existance of `database_geo.yml`,
+this should not be included _at all_ unless `gitlab.geo.secondary`. As
+such, we don't check that state here.
 */}}
 {{- define "gitlab.geo.database.yml" -}}
 production:
@@ -42,7 +46,7 @@ production:
 Returns parts for a Gitlab configuration to setup a mutual TLS connection
 with the Geo PostgreSQL database.
 
-Consumed as part of "gitlab.geo.database.yml", no check of `global.geo.enabled`
+Consumed as part of "gitlab.geo.database.yml", no check of `global.geo.secondary`
 */}}
 {{- define "gitlab.geo.psql.ssl.config" -}}
 {{- if .Values.global.geo.psql.ssl }}
@@ -55,10 +59,10 @@ sslkey: '/etc/gitlab/postgres/ssl/geo-client-key.pem'
 
 {{/*
 Returns volume definition of a secret containing information required for
-a mutual TLS connection.
+a mutual TLS connection to the Geo Secondary DB.
 */}}
 {{- define "gitlab.geo.psql.ssl.volume" -}}
-{{- if and .Values.global.geo.enabled .Values.global.geo.psql.ssl }}
+{{- if and ( include "gitlab.geo.secondary" $ ) .Values.global.geo.psql.ssl }}
 - name: geo-postgresql-ssl-secrets
   projected:
     defaultMode: 400
@@ -79,7 +83,7 @@ a mutual TLS connection.
 Returns mount definition for the volume mount definition above.
 */}}
 {{- define "gitlab.geo.psql.ssl.volumeMount" -}}
-{{- if and .Values.global.geo.enabled .Values.global.geo.psql.ssl }}
+{{- if and ( include "gitlab.geo.secondary" $ ) .Values.global.geo.psql.ssl }}
 - name: geo-postgresql-ssl-secrets
   mountPath: '/etc/postgresql/geo/ssl/'
   readOnly: true
@@ -92,7 +96,7 @@ container to copy the mutual TLS files to the proper location. Further
 it sets the permissions correctly.
 */}}
 {{- define "gitlab.geo.psql.ssl.initScript" -}}
-{{- if and .Values.global.geo.enabled .Values.global.geo.psql.ssl }}
+{{- if and ( include "gitlab.geo.secondary" $ ) .Values.global.geo.psql.ssl }}
 if [ -d /etc/postgresql/geo/ssl ]; then
   mkdir -p /${secret_dir}/postgres/ssl
   cp -v -r -L /etc/postgresql/geo/ssl/* /${secret_dir}/postgres/ssl/
