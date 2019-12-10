@@ -2,6 +2,13 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.5.5
+
+### Other (1 change)
+
+- Update GitLab Version to 12.5.4.
+
+
 ## 2.5.4
 
 ### Fixed (1 change)
