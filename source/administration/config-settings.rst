@@ -2289,7 +2289,7 @@ SignatureAlgorithm
 The signature algorithm used to sign the request.  Supported options are `RSAwithSHA1 <http://www.w3.org/2000/09/xmldsig#rsa-sha1>`_, `RSAwithSHA256 <http://www.w3.org/2000/09/xmldsig#rsa-sha1>`_, and `RSAwithSHA512 <http://www.w3.org/2001/04/xmldsig-more#rsa-sha512>`_. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SignatureAlgorithm": ""`` with string input.                                                                   |
+| This feature's ``config.json`` setting is ``"SignatureAlgorithm": ""`` with string input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 CanonicalAlgorithm
@@ -2297,14 +2297,7 @@ CanonicalAlgorithm
 The canonicalization algorithm. Supported options are `Exclusive XML Canonicalization 1.0 <http://www.w3.org/2001/10/xml-exc-c14n#>`_ and `Canonical XML 1.1 <http://www.w3.org/2006/12/xml-c14n11>`_.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"CanonicalAlgorithm": ""`` with string input.                                                                   |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-GuestAttribute
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GuestAttribute": ""`` with string input.                                                                   |
+| This feature's ``config.json`` setting is ``"CanonicalAlgorithm": ""`` with string input.                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Encryption
