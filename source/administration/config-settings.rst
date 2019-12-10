@@ -2368,7 +2368,7 @@ See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/gu
 (available in Enterprise Edition E20 and higher).
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"GuestAttribute": ""`` with string input.                                                                            |
+| This feature's ``config.json`` setting is ``"GuestAttribute": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
