@@ -165,7 +165,7 @@ when a single Guest Account is disabled or the feature is disabled, the guests w
 Reinstating Guest Accounts
 --------------------------
 
-When Guest Access is re-enabled for AD/LDAP the Guest Filter is reinstated. New users matching the Guest Filter will be authenticated as new guest users on login.
+When Guest Access is re-enabled for AD/LDAP, the Guest Filter is reinstated. New users matching the Guest Filter will be authenticated as new guest users on login.
 Previous guest users will be activated with the next synchronization. If their credentials still match the Guest filter, they will retain their guest status. If they no longer match the Guest Filter but do match the User Filter, they will be not be promoted to member user automatically on login - this must be done manually. If a previous guest was reactivated as a member user when Guest Access was disabled, and now are identified by the Guest Filter once again, they will automatically be demoted to Guest upon their login.
 
 Similarly, for SAML, when Guest Access is re-enabled, the SAML Guest Attribute is reinstated. New users matching the Guest Attribute will be authenticated as new guest users on login.
