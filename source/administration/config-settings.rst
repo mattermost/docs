@@ -2707,7 +2707,7 @@ Require Plugin Signature
 **False**:
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RequirePluginSignature": {}`` with object input mapping plugin IDs as keys to objects, each of which contains a key ``"Enable": false`` with options ``true`` or ``false``. |
+| This feature's ``config.json`` setting is ``"RequirePluginSignature": true`` with options ``true`` and ``false``.  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Signature Public Key Files
@@ -4622,4 +4622,3 @@ The height to which profile pictures are resized after being uploaded via Accoun
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ProfileHeight": 128`` with numerical input.                                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
