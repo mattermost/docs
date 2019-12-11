@@ -74,7 +74,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for disabling channel settings for public and private toggle for default channels.
 
 #### Enterprise Edition (EE)
- - Added support for SAML login to the Audits Table.
+ - Added SAML login events to the Audits Table.
  - Added support for configuration of SAML crypto hashing algorithms.
  - Added support for not allowing Guest invitations to teams that are managed by LDAP Group Sync.
  - Added support for custom post types to Compliance exports.
