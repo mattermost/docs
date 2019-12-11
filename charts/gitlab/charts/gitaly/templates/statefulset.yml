@@ -205,11 +205,11 @@ spec:
         selector:
       {{- if .Values.persistence.matchLabels }}
           matchLabels:
-      {{ toYaml .Values.persistence.matchLabels | indent 6 }}
+      {{- toYaml .Values.persistence.matchLabels | nindent 12 }}
       {{- end -}}
       {{- if .Values.persistence.matchExpressions }}
           matchExpressions:
-      {{ toYaml .Values.persistence.matchExpressions | indent 6 }}
+      {{- toYaml .Values.persistence.matchExpressions | nindent 12 }}
       {{- end -}}
   {{- end }}
 {{ end }}
