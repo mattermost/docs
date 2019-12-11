@@ -45,12 +45,13 @@ To install the project in your `$GOPATH` run:
 
    go get -u github.com/mattermost/mmctl
 
+
 <what happens next? Are there any steps required to access mmctl? E.g., opening terminal, logging in, setting up authentication? Where is authentication done?
 
 Compiling
 ^^^^^^^^^
 
-First we have to install the dependencies of the project. ```mmctl`` uses ``go`` modules to manage the dependencies, so you need to have installed
+First we have to install the dependencies of the project. ``mmctl`` uses ``go`` modules to manage the dependencies, so you need to have installed
 ``go`` 1.11 or greater. We can compile the binary with:
 
 .. code-block:: sh
@@ -112,7 +113,7 @@ The ``login`` command can also work interactively, so if you leave any required 
     Password:
 
 MFA
-^^^^
+
 
 To log in with MFA, use the ``--mfa-token`` flag:
 
@@ -149,7 +150,7 @@ For zsh, add the following line to your ``~/.zshrc`` file:
 mmctl
 =====
 
-Remote client for the Open Source, self-hosted Slack-alternative
+Remote client for the Open Source, self-hosted Slack-alternative.
 
 Options
   .. code-block:: sh
@@ -196,6 +197,7 @@ Commands for channel management.
 mmctl channel add
 ^^^^^^^^^^^^^^^^^
 
+Description
 Add users to a channel. If adding multiple users, use a space-separated list.
 
 Format
@@ -219,6 +221,7 @@ Options Inherited from Parent Commands
 mmctl channel archive
 ^^^^^^^^^^^^^^^^^^^^
 
+Description
 Archive one/some channel/s along with all related information including posts from the database. Channels can be
 specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID).
 
@@ -249,6 +252,7 @@ Options Inherited from Parent Commands
 mmctl channel create
 ^^^^^^^^^^^^^^^^^
 
+Description
 Create a channel.
 
 Format
@@ -286,6 +290,7 @@ Options Inherited from Parent Commands
 mmctl channel list
 ^^^^^^^^^^^^^^^^^
 
+Description
 List all channels on specified teams. Archived channels are appended with '(archived)'.
 
 Format

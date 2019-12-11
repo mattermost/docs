@@ -34,7 +34,7 @@ These ``mattermost`` commands include:
 
 **Diagnostics**
 
-- Analyzing the database for relational consistency  
+- Analyzing the database for relational consistency
 
 .. contents::
     :backlinks: top
@@ -66,7 +66,7 @@ On GitLab Omnibus, you must be in the following directory when you run CLI comma
 
 .. note::
   The example commands in the documentation are for a default installation of Mattermost. You must modify the commands so that they work on GitLab Omnibus.
-  
+
 Using the CLI on Docker Install
 -------------------------------
 
@@ -77,7 +77,7 @@ On Docker install, the ``/mattermost/bin`` directory was added to ``PATH``, so y
   .. code-block:: bash
 
     docker exec -it <your-mattermost-container-name> mattermost version
-    
+
 Using the CLI on Docker Preview
 -------------------------------
 
@@ -135,7 +135,7 @@ mattermost
     -  `mattermost version`_ - Display version information
     -  `mattermost webhook`_ - Management of webhooks
 
-mattermost channel 
+mattermost channel
 ------------------
 
   Description
@@ -162,13 +162,18 @@ mattermost channel
     For the *add*, *archive*, *delete*, *remove* and *restore* commands, you can specfiy the *{channels}* value by {team}:{channel} using the team and channel URLs, or by using channel IDs. For example, in the following URL the *{channels}* value is *myteam:mychannel*:
 
     ``https://example.com/myteam/channels/mychannel``
-    
+
     Also, the team and channel names in the URL should be written in lowercase.
 
-mattermost channel add 
+mattermost channel add
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl channel add].
+
+
+Description
     Add users to a channel. If adding multiple users, use a space-separated list.
 
   Format
@@ -182,10 +187,15 @@ mattermost channel add
       ./mattermost channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
       ./mattermost channel add myteam:mychannel user@example.com username
 
-mattermost channel archive 
+mattermost channel archive
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl channel archive].
+
+
+Description
     Archive a channel. Archived channels are not accessible to users, but remain in the database. To restore a channel from the archive, see `mattermost channel restore`_. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
 
   Format
@@ -199,10 +209,14 @@ mattermost channel archive
       ./mattermost channel archive 8soyabwthjnf9qibfztje5a36h
       ./mattermost channel archive myteam:mychannel
 
-mattermost channel create 
+mattermost channel create
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl channel create].
+
+Description
     Create a channel.
 
   Format
@@ -226,7 +240,7 @@ mattermost channel create
           --purpose string        Channel purpose
           --team string           Team name or ID
 
-mattermost channel delete 
+mattermost channel delete
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -243,10 +257,15 @@ mattermost channel delete
       ./mattermost channel delete 8soyabwthjnf9qibfztje5a36h
       ./mattermost channel delete myteam:mychannel
 
-mattermost channel list 
+mattermost channel list
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl channel list].
+
+
+Description
     List all channels on a specified team. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``.
 
   Format
@@ -262,7 +281,11 @@ mattermost channel list
 mattermost channel modify
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl channel make_private].
+
+Description
     Modify a channel's public/private type.
 
   Format
@@ -285,7 +308,11 @@ mattermost channel modify
 mattermost channel move
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl channel move].
+
+Description
     Move channels to another team. The command validates that all users in the channel belong to the target team. Incoming/Outgoing webhooks are moved along with the channel. Channels can be specified by ``[team]:[channel]`` or by using channel IDs.
 
   Format
@@ -307,7 +334,11 @@ mattermost channel move
 mattermost channel remove
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl channel remove].
+
+Description
     Remove users from a channel.
 
   Format
@@ -321,16 +352,20 @@ mattermost channel remove
       ./mattermost channel remove 8soyabwthjnf9qibfztje5a36h user@example.com username
       ./mattermost channel remove myteam:mychannel user@example.com username
       ./mattermost channel remove myteam:mychannel --all-users
-      
+
   Options
     .. code-block:: none
 
           --all-users string     Remove all users from the channel.
-      
+
 mattermost channel rename
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl channel rename].
+
+Description
     Rename a channel. Channels can be specified by *{team}:{channel}* using the team and channel names, or by using channel IDs.
 
   Format
@@ -343,7 +378,7 @@ mattermost channel rename
 
       ./mattermost channel rename 8soyabwthjnf9qibfztje5a36h newchannelname --display_name "New Display Name"
       ./mattermost channel rename myteam:mychannel newchannelname --display_name "New Display Name"
-      
+
   Options
     .. code-block:: none
 
@@ -352,7 +387,11 @@ mattermost channel rename
 mattermost channel restore
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl channel restore].
+
+Description
     Restore a channel from the archive. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
 
   Format
@@ -365,13 +404,17 @@ mattermost channel restore
 
       ./mattermost channel restore 8soyabwthjnf9qibfztje5a36h
       ./mattermost channel restore myteam:mychannel
-      
+
 mattermost channel search
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
-    Search for a channel by channel name. Returns channel display name, channel Id, and indicates if it is private or archived. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``. 
-    
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl channel search].
+
+Description
+    Search for a channel by channel name. Returns channel display name, channel Id, and indicates if it is private or archived. Private channels are appended with ``(private)`` and archived channels are appended with ``(archived)``.
+
   Format
     .. code-block:: none
 
@@ -383,7 +426,7 @@ mattermost channel search
       ./mattermost channel search mychannel
       ./mattermost channel search --team myteam mychannel
       ./mattermost channel search --team f1924a8db44ff3bb41c96424cdc20676 mychannel
-      
+
   Options
     .. code-block:: none
 
@@ -403,16 +446,16 @@ mattermost command
     -  `mattermost command move`_ - Move a slash command to a different team.
     -  `mattermost command show`_ - Show a custom slash command.
 
-mattermost command create 
+mattermost command create
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Create a custom slash command for a specified team. 
+    Create a custom slash command for a specified team.
 
   Format
     .. code-block:: none
 
-      mattermost command create 
+      mattermost command create
 
   Examples
     .. code-block:: none
@@ -465,7 +508,7 @@ mattermost command list
     .. code-block:: none
 
        ./mattermost command list myteam
-       
+
 mattermost command modify
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -473,7 +516,7 @@ mattermost command modify
     Modify a slash command. Commands can be specified by command ID.
 
 .. note::
-    Only fields that you want to modify need to be specified.  Also, when modifying the command's creator, the new creator specified must have the permission to create commands. 
+    Only fields that you want to modify need to be specified.  Also, when modifying the command's creator, the new creator specified must have the permission to create commands.
 
 
   Format
@@ -517,7 +560,7 @@ mattermost command move
 
       ./mattermost command move newteam oldteam:command-trigger-word
       ./mattermost command move newteam o8soyabwthjnf9qibfztje5a36h
-      
+
 mattermost command show
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -551,7 +594,7 @@ mattermost config get
 ~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Retrieve the value of a config setting by its name in dot notation. 
+    Retrieve the value of a config setting by its name in dot notation.
 
   Format
     .. code-block:: none
@@ -567,16 +610,16 @@ mattermost config get
     .. code-block:: none
 
           --path string  Optional subpath; defaults to value in Site URL.
-	  
+
 mattermost config migrate
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Migrate a file-based configuration to (or from) a database-based configuration. Point the Mattermost server at the target configuration to start using it. If using SAML, ensure the SAML certificates and keys are accessible to also migrate into the database.
-    
-.. note::   
+
+.. note::
     If a ``from`` parameter is not specified, the command will fall back to what is specified in --config.
-    
+
   Format
     .. code-block:: none
 
@@ -586,12 +629,12 @@ mattermost config migrate
     .. code-block:: none
 
        ./mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
-    
+
 mattermost config set
 ~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Set the value of a config setting by its name in dot notation. Accepts multiple values for array settings. 
+    Set the value of a config setting by its name in dot notation. Accepts multiple values for array settings.
 
   Format
     .. code-block:: none
@@ -606,18 +649,18 @@ mattermost config set
  Options
     .. code-block:: none
 
-          --path string  Optional subpath; defaults to value in Site URL.   
-    
+          --path string  Optional subpath; defaults to value in Site URL.
+
 mattermost config show
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Print the current mattermost configuration in an easy to read format. 
+    Print the current mattermost configuration in an easy to read format.
 
   Format
     .. code-block:: none
 
-      mattermost config show 
+      mattermost config show
 
   Examples
     .. code-block:: none
@@ -654,7 +697,7 @@ mattermost export
     -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format.  Requires an E20 license
     -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost `Bulk Import format <https://docs.mattermost.com/deployment/bulk-loading.html>`__
     -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires an E20 license
-    -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a zip file containing emails to send to Global Relay for debug and testing purposes only. Requires an E20 license   
+    -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a zip file containing emails to send to Global Relay for debug and testing purposes only. Requires an E20 license
     -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance
@@ -687,7 +730,7 @@ mattermost export bulk
   Format
     .. code-block:: none
 
-      mattermost export bulk 
+      mattermost export bulk
 
   Example
     .. code-block:: none
@@ -696,9 +739,9 @@ mattermost export bulk
 
   Options
     .. code-block:: none
- 
+
 	  --all-teams bool [REQUIRED]  Export all teams from the server.
-	  
+
 mattermost export csv
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -719,7 +762,7 @@ mattermost export csv
     .. code-block:: none
 
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
-	  
+
 mattermost export global-relay-zip
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -740,7 +783,7 @@ mattermost export global-relay-zip
     .. code-block:: none
 
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
-	  
+
 mattermost export schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -764,7 +807,7 @@ mattermost export schedule
           --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
           --timeoutSeconds string Set how long the export should run for before timing out.
 
-mattermost group  
+mattermost group
 ------------------------
 
   Description
@@ -773,8 +816,8 @@ mattermost group
   Child Commands
     -  `mattermost group channel`_ - Management of Mattermost groups linked to channels
     -  `mattermost group team`_ - Management of Mattermost groups linked to teams
-    
-mattermost group channel 
+
+mattermost group channel
 ------------------------
 
   Description
@@ -786,12 +829,12 @@ mattermost group channel
     -  `mattermost group channel list`_ - Lists the groups associated with a channel
     -  `mattermost group channel status`_ - Shows the group constraint status of the specified channel
 
-mattermost group channel enable 
+mattermost group channel enable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Enables group constraint on the specified channel. When a channel is group constrained, channel membership is managed by linked groups instead of managed by manually adding and removing users.
-    
+
 .. note::
   To enable a group constraint on a specific channel, you must already have at least one group associated. See `AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_ for more details on how to associate a group to a channel.
 
@@ -804,8 +847,8 @@ mattermost group channel enable
     .. code-block:: none
 
       ./mattermost group channel enable myteam:mychannel
-      
-mattermost group channel disable 
+
+mattermost group channel disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -820,8 +863,8 @@ mattermost group channel disable
     .. code-block:: none
 
       ./mattermost group channel disable myteam:mychannel
-      
-mattermost group channel list 
+
+mattermost group channel list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -837,12 +880,12 @@ mattermost group channel list
 
       ./mattermost group channel list myteam:mychannel
 
-      
-mattermost group channel status 
+
+mattermost group channel status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Shows the group constraint status of the specified channel. Returns "Enabled" when channel membership is managed by linked groups.  Returns "Disabled" when the channel membership is managed by manually adding and removing users. 
+    Shows the group constraint status of the specified channel. Returns "Enabled" when channel membership is managed by linked groups.  Returns "Disabled" when the channel membership is managed by manually adding and removing users.
 
   Format
     .. code-block:: none
@@ -853,8 +896,8 @@ mattermost group channel status
     .. code-block:: none
 
       ./mattermost group channel status myteam:mychannel
-      
-mattermost group team 
+
+mattermost group team
 ------------------------
 
   Description
@@ -866,12 +909,12 @@ mattermost group team
     -  `mattermost group team list`_ - Lists the groups associated with a team
     -  `mattermost group team status`_ - Shows the group constraint status of the specified team
 
-mattermost group team enable 
+mattermost group team enable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
     Enables group constraint on the specified team. When a team is group constrained, team membership is managed by linked groups instead of managed by manually inviting and removing users.
-    
+
 .. note::
   To enable a group constraint on a specific team, you must already have at least one group associated. See `AD/LDAP Group documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_ for more details on how to associate a group to a team.
 
@@ -884,8 +927,8 @@ mattermost group team enable
     .. code-block:: none
 
       ./mattermost group team enable myteam
-      
-mattermost group team disable 
+
+mattermost group team disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -900,8 +943,8 @@ mattermost group team disable
     .. code-block:: none
 
       ./mattermost group team disable myteam
-      
-mattermost group team list 
+
+mattermost group team list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
@@ -917,12 +960,12 @@ mattermost group team list
 
       ./mattermost group team list myteam
 
-      
-mattermost group team status 
+
+mattermost group team status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Shows the group constraint status of the specified team. Returns "Enabled" when team membership is managed by linked groups.  Returns "Disabled" when the team membership is managed by manually inviting and removing users. 
+    Shows the group constraint status of the specified team. Returns "Enabled" when team membership is managed by linked groups.  Returns "Disabled" when the team membership is managed by manually inviting and removing users.
 
   Format
     .. code-block:: none
@@ -932,8 +975,8 @@ mattermost group team status
   Examples
     .. code-block:: none
 
-      ./mattermost group team status myteam    
-      
+      ./mattermost group team status myteam
+
 mattermost help
 ---------------
 
@@ -993,29 +1036,29 @@ mattermost import slack
     .. code-block:: none
 
       ./mattermost import slack myteam slack_export.zip
-      
+
 mattermost integrity
 --------------------
 
   Description
-    Check database schema integrity as well as referential integrity of channels, slash commands, webhooks, posts, schemes, sessions, users, and teams. This process may temporarily affect live system performance, and should be used during off-peak periods. 
-    
+    Check database schema integrity as well as referential integrity of channels, slash commands, webhooks, posts, schemes, sessions, users, and teams. This process may temporarily affect live system performance, and should be used during off-peak periods.
+
   Format
     .. code-block:: none
 
       mattermost integrity
-            
+
   Example
     .. code-block:: none
 
-      ./mattermost integrity --confirm --verbose 
-      
+      ./mattermost integrity --confirm --verbose
+
   Options
     .. code-block:: none
 
           --confirm   Optional. Skip the confirmation message which indicates that the complete integrity check may temporarily harm system performance. This is not recommended in production environments.
 	  --verbose   Outputs a detailed report of number and type of orphaned records including ids (if any).
-       
+
 
 .. _command-line-tools-mattermost-jobserver:
 
@@ -1024,12 +1067,12 @@ mattermost jobserver
 
   Description
     Start the Mattermost job server.
-    
+
   Format
     .. code-block:: none
 
       mattermost jobserver
-      
+
   Example
     .. code-block:: none
 
@@ -1050,7 +1093,7 @@ mattermost ldap idmigrate
 
   Description
     Migrate LDAP Id Attribute to new value.
-    
+
     Run this utility to change the value of your ID Attribute without your users losing their accounts. After running the command you can change the ID Attribute to the new value in your ``config.json``. For example, if your current ID Attribute was ``sAMAccountName`` and you wanted to change it to ``objectGUID``, you would:
 
     1. Wait for an off-peak time when your users won't be impacted by a server restart.
@@ -1144,14 +1187,14 @@ mattermost permissions
     -  `mattermost permissions export`_ - Export Schemes and Roles.
     -  `mattermost permissions import`_ - Import Schemes and Roles from a permissions export.
     -  `mattermost permissions reset`_ - Reset the permissions system to its default state on new installs.
-    
+
 mattermost permissions export
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Prints to stdout a jsonl representation of Schemes and Roles from a Mattermost instance. Used to export 
-    Roles and Schemes from one Mattermost instance to another. The output is a jsonl representation with 
-    each line containing a json representation of a Scheme and its associated Roles. The output is intended 
+    Prints to stdout a jsonl representation of Schemes and Roles from a Mattermost instance. Used to export
+    Roles and Schemes from one Mattermost instance to another. The output is a jsonl representation with
+    each line containing a json representation of a Scheme and its associated Roles. The output is intended
     to be used as the input of `mattermost permissions import`.
 
   Format
@@ -1185,7 +1228,7 @@ mattermost permissions reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Reset permissions for all users, including Admins, to their default state on new installs. Note: **this will delete 
+    Reset permissions for all users, including Admins, to their default state on new installs. Note: **this will delete
     all custom schemes**.
 
   Format
@@ -1215,7 +1258,7 @@ mattermost plugin
     -  `mattermost plugin disable`_ - Enable plugins for use.
     -  `mattermost plugin enable`_ - Disable plugins.
     -  `mattermost plugin list`_ - List plugins installed on your Mattermost server.
-    
+
 mattermost plugin add
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -1263,7 +1306,7 @@ mattermost plugin disable
     .. code-block:: none
 
       ./mattermost plugin disable hovercardexample pluginexample
-      
+
 mattermost plugin enable
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1417,7 +1460,7 @@ mattermost team
     -  `mattermost team modify`_ - Modify a team's public/private type.
     -  `mattermost team remove`_ - Remove users from a team.
     -  `mattermost team rename`_ - Rename a team.
-    -  `mattermost team restore`_ - Restore a previously archived team.    
+    -  `mattermost team restore`_ - Restore a previously archived team.
     -  `mattermost team search`_ - Search for teams based on name.
 
 .. _team-value-note:
@@ -1428,7 +1471,7 @@ mattermost team
     For the *add*, *delete*, and *remove* commands, you can determine the *{team-name}* value from the URLs that you use to access your instance of Mattermost. For example, in the following URL the *{team-name}* value is *myteam*:
 
     ``https://example.com/myteam/channels/mychannel``
-    
+
     Also, the team and channel names in the URL should be written in lowercase.
 
 mattermost team add
@@ -1526,12 +1569,12 @@ mattermost team list
     .. code-block:: none
 
       ./mattermost team list
-      
+
 mattermost team modify
 ~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Modify a team's public/private type. 
+    Modify a team's public/private type.
 
   Format
     .. code-block:: none
@@ -1559,7 +1602,7 @@ mattermost team remove
     .. code-block:: none
 
       ./mattermost team remove myteam user@example.com username
-      
+
 mattermost team rename
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1575,12 +1618,12 @@ mattermost team rename
     .. code-block:: none
 
       ./mattermost team rename myteam newteamname --display_name "New Display Name"
-      
+
   Options
     .. code-block:: none
 
       --display_name string   Team Display Name
-      
+
 mattermost team restore
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1595,7 +1638,7 @@ mattermost team restore
   Example
     .. code-block:: none
 
-      ./mattermost team restore myteam       
+      ./mattermost team restore myteam
 
 mattermost team search
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1611,7 +1654,7 @@ mattermost team search
   Examples
     .. code-block:: none
 
-       ./mattermost team search team1 
+       ./mattermost team search team1
 
 mattermost user
 ---------------
@@ -1732,7 +1775,7 @@ mattermost user delete
 
   Description
     Permanently delete a user and all related information, including posts from the database.
-    
+
     Does not delete content from the file storage. You can manually delete all file uploads for a given user as uploads contain the ``CreatorId`` field. User avatars are stored in ``data/users/<userid>/profile.png``.
 
   Format
@@ -1755,7 +1798,7 @@ mattermost user deleteall
 
   Description
     Permanently delete all users and all related information, including posts.
-    
+
     Does not delete content from the file storage. You can manually delete all file uploads and avatars. All uploads contain the ``CreatorId`` field and user avatars are stored in ``data/users/<userid>/profile.png``.
 
   Format
@@ -1772,21 +1815,21 @@ mattermost user deleteall
     .. code-block:: none
 
           --confirm   Confirm you really want to delete the user and a DB backup has been performed.
-          
-mattermost user email	
+
+mattermost user email
 ~~~~~~~~~~~~~~~~~~~~~
-	
-  Description	
-    Set a user's email.	
-	
-  Format	
-    .. code-block:: none	
-	
-       mattermost user email {user} {new email}	
-	
-  Example	
-    .. code-block:: none	
-	
+
+  Description
+    Set a user's email.
+
+  Format
+    .. code-block:: none
+
+       mattermost user email {user} {new email}
+
+  Example
+    .. code-block:: none
+
       ./mattermost user email user@example.com newuser@example.com
 
 mattermost user invite
@@ -1859,7 +1902,7 @@ mattermost user migrate_auth
 
   Users file generation
     Generating the ``users_file`` depends on how the system is configured and which SAML service provider is used. Below are two sample scripts for OneLogin and Okta service providers. For ADFS, you can use the AD/LDAP protocol to directly extract the users information and export it to a JSON file.
-    
+
     After generating the ``users_file``, you can manually update the file to obtain a list of Mattermost user accounts you want to migrate to SAML. Note that users listed in ``users_file`` that do not yet exist in Mattermost are ignored during the migration process.
 
     OneLogin:
@@ -1933,7 +1976,7 @@ mattermost user migrate_auth
         mapping = {}
         while True:
             rtype, rdata, rmsgid, serverctrls = l.result3(r)
-        
+
             for dn, entry in rdata:
                 if mail_field in entry and len(entry[mail_field]) >= 1 and username_field in entry and len(entry[username_field]) >= 1:
                     mapping[entry[mail_field][0].decode('utf-8')] = entry[username_field][0].decode('utf-8')
@@ -2048,14 +2091,14 @@ mattermost webhook
     Commands to manage webhooks.
 
   Child Commands
-    -  `mattermost webhook create-incoming`_ - Create an incoming webhook within specific channel. 
+    -  `mattermost webhook create-incoming`_ - Create an incoming webhook within specific channel.
     -  `mattermost webhook create-outgoing`_ - Create an outgoing webhook within specific channel.
     -  `mattermost webhook delete`_ - Delete incoming and outgoing webhooks.
     -  `mattermost webhook list`_ - List all webhooks.
     -  `mattermost webhook modify-incoming`_ - Modify an existing incoming webhook by changing its title, description, channel or icon url.
     -  `mattermost webhook modify-outgoing`_ - Modify an existing outgoing webhook by changing its title, description, channel, icon, url, content-type, and triggers.
     -  `mattermost webhook show`_ - Show information about a webhook by providing the webhook ID.
-    
+
 mattermost webhook create-incoming
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2065,7 +2108,7 @@ mattermost webhook create-incoming
   Format
     .. code-block:: none
 
-      mattermost webhook create-incoming 
+      mattermost webhook create-incoming
 
   Examples
     .. code-block:: none
@@ -2102,16 +2145,16 @@ mattermost webhook create-outgoing
 
   Options
     .. code-block:: none
-    
+
           --team string [REQUIRED]                Team name or ID
           --channel string                        Channel name or ID
-          --user string [REQUIRED]                User username, email, or ID 
+          --user string [REQUIRED]                User username, email, or ID
           --display-name string [REQUIRED]        Outgoing webhook display name
           --description string                    Outgoing webhook description
-          --trigger-words stringArray [REQUIRED]  Words to trigger webhook 
+          --trigger-words stringArray [REQUIRED]  Words to trigger webhook
           --trigger-when string [REQUIRED]        When to trigger webhook (exact: for first word matches a trigger word exactly, start: for first word starts with a trigger word) (default "exact")
           --icon [iconURL]                        Icon URL
-          --url stringArray [REQUIRED]            Callback URLs 
+          --url stringArray [REQUIRED]            Callback URLs
           --content-type string                   Content-type
           --h, --help         Help for create-outgoing
 
@@ -2119,7 +2162,7 @@ mattermost webhook delete
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Description
-    Delete incoming and outgoing webhooks. If deleting multiple webhooks, use a space-separated list. 
+    Delete incoming and outgoing webhooks. If deleting multiple webhooks, use a space-separated list.
 
    Format
      .. code-block:: none
@@ -2135,7 +2178,7 @@ mattermost webhook list
 ~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    List all webhooks. 
+    List all webhooks.
 
   Format
     .. code-block:: none
@@ -2146,7 +2189,7 @@ mattermost webhook list
     .. code-block:: none
 
        ./mattermost webhook list team1
-       ./mattermost webhook list 
+       ./mattermost webhook list
 
   Options
     .. code-block:: none
@@ -2176,8 +2219,8 @@ mattermost webhook modify-incoming
           --display-name string         Incoming webhook display name
           --description string          Incoming webhook description
           --lock-to-channel boolean     (True/False) Lock incoming webhook to channel
-          --icon [iconURL]              Icon URL    
-	  
+          --icon [iconURL]              Icon URL
+
 mattermost webhook modify-outgoing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -2202,9 +2245,9 @@ mattermost webhook modify-outgoing
           --description string          Incoming webhook description
 	  --trigger-word string array	Word(s) to trigger webhook
 	  --trigger-when string		When to trigger webhook (exact: for first word matches a trigger word exactly, start: for first word starts with a trigger word)")
-          --icon [iconURL]              Icon URL 
-	  --url [callbackURL]           Callback URL 
-	  --content-type string         Content type 
+          --icon [iconURL]              Icon URL
+	  --url [callbackURL]           Callback URL
+	  --content-type string         Content type
 
 mattermost webhook show
 ~~~~~~~~~~~~~~~~~~~~~~~
