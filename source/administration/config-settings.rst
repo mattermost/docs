@@ -2284,6 +2284,22 @@ Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://examp
 | This feature's ``config.json`` setting is ``"AssertionConsumerServiceURL": ""`` with string input.                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+SignatureAlgorithm
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The signature algorithm used to sign the request.  Supported options are `RSAwithSHA1 <http://www.w3.org/2000/09/xmldsig#rsa-sha1>`_, `RSAwithSHA256 <http://www.w3.org/2000/09/xmldsig#rsa-sha1>`_, and `RSAwithSHA512 <http://www.w3.org/2001/04/xmldsig-more#rsa-sha512>`_. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SignatureAlgorithm": ""`` with string input.                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+CanonicalAlgorithm
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The canonicalization algorithm. Supported options are `Exclusive XML Canonicalization 1.0 <http://www.w3.org/2001/10/xml-exc-c14n#>`_ and `Canonical XML 1.1 <http://www.w3.org/2006/12/xml-c14n11>`_.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CanonicalAlgorithm": ""`` with string input.                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable Encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
@@ -2681,6 +2697,26 @@ Lists installed plugins on your Mattermost server and whether they are enabled. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PluginStates": {}`` with object input mapping plugin IDs as keys to objects, each of which contains a key ``"Enable": false`` with options ``true`` or ``false``. |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Require Plugin Signature
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Require valid plugin signatures before starting managed or unmanaged plugins. Prepackaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
+
+**False**: Do not require valid plugin signatures before starting managed or unmanaged plugins. Pre-packaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RequirePluginSignature": true`` with options ``true`` and ``false``.   |
++---------------------------------------------------------------------------------------------------------------------+
+
+Signature Public Key Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In addition to the Mattermost plugin signing key built-into the server, each public key specified here is trusted to validate plugin signatures.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with with string array input consisting of contents that are relative or absolute paths to signature files.                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Autolink
@@ -3136,6 +3172,8 @@ Specify the color of the AD/LDAP login button text for white labeling purposes. 
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
+
+
 Allow Authentication Transfer (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
@@ -3304,20 +3342,6 @@ Changes made when hardened mode is enabled:
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false``.                                          |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Enable AD/LDAP Group Sync (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E20 and higher*
-
-**True**: Enables AD/LDAP Group Sync configurable under **Access Controls > Groups**.
-
-**False**: Disables AD/LDAP Group Sync and removes the **Access Controls > Groups** from the System Console.  
-
-For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_.
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false``.                                               |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Preview Features (Experimental)
@@ -3987,6 +4011,19 @@ Restrict System Admin (Experimental)
 Team Settings
 ~~~~~~~~~~~~~~
 
+Teammate Name Display
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Control Teammate Name Display at the system level.
+
+**True**: Allows System Admins to control Teammate Name Display at the system level.
+
+**False**: System Admins cannot control Teammate Name Display at the system level.
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LockTeammateNameDisplay": []`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------+
+
 Default Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Default channels every user is added to automatically after joining a new team. Only applies to public channels, but affects all teams on the server.
@@ -4583,4 +4620,3 @@ The height to which profile pictures are resized after being uploaded via Accoun
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ProfileHeight": 128`` with numerical input.                                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
