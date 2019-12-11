@@ -105,7 +105,7 @@ stable branch for the version you will release.
 For example, if you want to release version `0.2.1` of the charts, the changes will need to be in `0-2-stable`
 
 A chatops command exists to tag a release. Run the following command in the
-relevant release slack channel (eg: `#f_release_12_4`)
+relevant release Slack channel (eg: `#f_release_12_4`)
 
 ```
 /chatops run helm tag <charts version> <GitLab version>
@@ -120,9 +120,9 @@ You can also do it manually, without using the chatops command as follows:
    bundle install
    ```
 
-1. Then run the appropriate helm release task:
+1. Then run the appropriate Helm release task:
 
-   - When you want to release without changing the gitlab app version, call the release task with the new chart version (eg `0.2.1`)
+   - When you want to release without changing the GitLab app version, call the release task with the new chart version (eg `0.2.1`)
      - `bundle exec rake helm:tag_chart[0.2.1]`
 
    - When you want to release and change both the chart version and the app version (eg `0.2.1` with GitLab `11.0.1`)

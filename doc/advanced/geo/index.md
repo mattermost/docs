@@ -87,7 +87,7 @@ Each cluster that is provisioned should have:
 
 - Enough resources to support a base-line installation of these charts.
 - Access to persistent storage:
-  - Minio not required if using [external object storage][ext-object]
+  - MinIO not required if using [external object storage][ext-object]
   - Gitaly not required if using [external Gitaly][ext-gitaly]
   - Redis not required if using [external Redis][ext-redis]
 
@@ -360,7 +360,7 @@ explicit IP addresses, or address blocks in CIDR notation.
 `gitlab_geo` password.
 - `geo_postgresql['md5_auth_cidr_addresses']` should be updated to be a list of
 explicit IP addresses, or address blocks in CIDR notation.
-- `gitlab_user_password` must be updated, and is used here to allow Omnibus Gitlab
+- `gitlab_user_password` must be updated, and is used here to allow Omnibus GitLab
 to automate the configuration of Foreign Data Wrappers in PostgreSQL.
 
 The `md5_auth_cidr_addresses` should be in the form of
@@ -458,8 +458,8 @@ of your Primary database instance.
 We now need to copy a few secrets from the Primary Kubernetes deployment to the
 Secondary Kubernetes deployment.
 
-- gitlab-geo-gitlab-shell-host-keys
-- gitlab-geo-rails-secret
+- `gitlab-geo-gitlab-shell-host-keys`
+- `gitlab-geo-rails-secret`
 
 1. Change your `kubectl` context to that of your Primary.
 1. Collect these secrets from the Primary deployment

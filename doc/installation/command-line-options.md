@@ -14,7 +14,7 @@ to the `helm install` command using the `--set` flags.
 | `global.application.create`                    | Create an [Application resource](https://github.com/kubernetes-sigs/application) for GitLab | `false`                                       |
 | `global.edition`                               | The edition of GitLab to install. Enterprise Edition (ee) or Community Edition (ce)         | `ee`                                          |
 | `global.hosts.domain`                          | Domain name that will be used for all publicly exposed services                             | Required                                      |
-| `global.hosts.externalIP`                      | Static IP to assign to NGINX Ingress controller                                             | Required                                      |
+| `global.hosts.externalIP`                      | Static IP to assign to NGINX Ingress Controller                                             | Required                                      |
 | `global.hosts.ssh`                             | Domain name that will be used for Git SSH access                                            | `gitlab.{global.hosts.domain}`                |
 | `global.imagePullPolicy`                       | Set a default imagePullPolicy for all charts                                                | `IfNotPresent`                                |
 | `global.minio.enabled`                         | MinIO enable flag                                                                           | `true`                                        |
