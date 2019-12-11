@@ -2045,12 +2045,11 @@ This filter uses the permissions of the **Bind Username** account to execute the
 Guest Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 (Optional) Enter an AD/LDAP Filter to use when searching for external users who have Guest Access to Mattermost.
-Only the users selected by the query will be able to log in to and use Mattermost as Guests.
+Only the users selected by the query will be able to log in to and use Mattermost as Guests. This filter default is blank.
 
-See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`__ for more information
-(available in Enterprise Edition E20 and higher).
+See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`__ for more information.
 
-This filter default is blank.
+*Available in Enterprise Edition E20*  
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GuestFilter": ""`` with string input.                                                                                   |
