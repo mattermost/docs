@@ -44,13 +44,13 @@ Before you proceed, ensure that the authentication method you wish to use is cor
 For configuration steps and technical documentation, see `Active Directory/LDAP Setup <https://docs.mattermost.com/deployment/sso-ldap.html>`_
 and `SAML Single-Sign-On <https://docs.mattermost.com/deployment/sso-saml.html>`_.
 
-Converting a member user to a guest will not change the channels they are in; however they will be restricted from discovering additional channels and unable to direct message / group message users outside of the channels they are in. They can be added to channels by Team and System Admins.
+Converting a member user to a guest will not change the channels they are in; however they will be restricted from discovering additional channels and unable to direct message / group message users outside of the channels they are in. They can be added to channels by System Admins and other roles that have the correct permissions to invite guests.
 
 
 Inviting Guests to the Mattermost Server via Email
 ------------------------------------------------------
 
-Guests can be invited into one for more Mattermost channels within a team by System Administrators and roles that have the **Invite Guest** permission. A guest can also be invited into channels on multiple teams.
+Guests can be invited into one for more Mattermost channels within a team by System Admins and roles that have the correct permission to invite guests. A guest can also be invited into channels on multiple teams.
 
 **Note:** Guest invitations will be revoked after 48 hours per the member email invitation process. If your guest has not accepted the invitation within that period, please follow the steps below to resend an invitation to the guest.
 
@@ -68,7 +68,7 @@ To invite guests into one or more Mattermost channels:
 Configuring AD/LDAP Authentication
 ----------------------------------
 
-When enabled, the **Guest Filter** in Mattermost identifies external users whose AD/LDAP role is guest and who are invited to join 
+When enabled, the **Guest Filter** in Mattermost identifies external users whose AD/LDAP role is guest and who are invited to join
 your Mattermost server. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role.
 This eliminates having to manually assign the role in the System Console.
 
@@ -76,6 +76,9 @@ This eliminates having to manually assign the role in the System Console.
 2. Navigate to **System Console > Authentication > AD/LDAP**.
 3. Complete the **Guest Filter** field.
 4. Choose **Save**.
+
+When a guest logs in for the first time they are presented with a default landing page until
+they are added to channels.
 
 If a Mattermost Guest user has the guest role removed in the AD/LDAP system, the synchronization process
 will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a
@@ -96,6 +99,9 @@ If a member user has the **Guest Attribute** added, the synchronization processe
 2. Navigate to **System Console > Authentication > SAML 2.0**.
 3. Complete the **Guest Attribute** field.
 4. Choose **Save**.
+
+When a guest logs in for the first time they are presented with a default landing page until
+they are added to channels.
 
 
 Guest Permission Settings
@@ -160,7 +166,7 @@ credentials match the user attribute (the only attribute which is active when Gu
 to a member user upon their next login.
 
 You can disable individual guest accounts in **System Console > User Management**, via the **Manage Members** modal, or using the ``/kick`` or ``/remove`` commands. In version 5.18,
-when a single Guest Account is disabled or the feature is disabled, the guests will be marked as `inactive`, be logged out of Mattermost, and all their sessions will be revoked.
+when a single Guest Account is disabled or the feature is disabled, the guests will be marked as ``inactive``, be logged out of Mattermost, and all their sessions will be revoked.
 
 Reinstating Guest Accounts
 --------------------------
