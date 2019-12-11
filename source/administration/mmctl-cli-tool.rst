@@ -1441,14 +1441,16 @@ Options Inherited from Parent Commands
 mmctl team
 ----------
 
-Management of plugins.
+Management of teams.
 
 Child Commands
   -  `mmctl team add`_ - Add teams
+  -  `mmctl team archive`_ - Archive teams
   -  `mmctl team create`_ -  Create teams
   -  `mmctl team delete`_ -  Delete teams
   -  `mmctl team list`_ -  List teams
   -  `mmctl team remove`_ -  Remove teams
+  -  `mmctl team rename`_ - Rename teams
   -  `mmctl team search`_ -  Search teams
 
 mmctl team add
@@ -1639,6 +1641,7 @@ mmctl user
 Management of users.
 
 Child Commands
+  -  `mmctl user activate`_ - Activate user
   -  `mmctl user create`_ - Create user
   -  `mmctl user deactivate`_ - Deactivate user
   -  `mmctl user email`_ -  Set user email
@@ -1646,6 +1649,29 @@ Child Commands
   -  `mmctl user reset_password`_ -  Reset user password
   -  `mmctl user resetmfa`_ -  Reset user's MFA token
   -  `mmctl user search`_ -  Search for a user
+
+
+mmctl user activate
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Activate a user.
+
+Format
+
+.. code-block:: sh
+
+      mmctl user activate [flags]
+
+Examples
+.. code-block:: sh
+
+Options
+.. code-block:: sh
+
+Options Inherited from Parent Commands
+.. code-block:: sh
+
+
 
 mmctl user create
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

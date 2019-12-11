@@ -1176,7 +1176,11 @@ mattermost ldap idmigrate
 mattermost ldap sync
 ~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl ldap sync].
+
+Description
     Synchronize all AD/LDAP users now.
 
   Format
@@ -1201,7 +1205,11 @@ mattermost license
 mattermost license upload
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl license upload].
+
+Description
     Upload a license. This command replaces the current license if one is already uploaded.
 
   Format
@@ -1220,7 +1228,11 @@ mattermost license upload
 mattermost logs
 ------------------
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl logs].
+
+Description
     Displays Mattermost logs in a human-readable format.
 
   Format
@@ -1324,7 +1336,11 @@ mattermost plugin
 mattermost plugin add
 ~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl plugin add].
+
+Description
     Add plugins to your Mattermost server. If adding multiple plugins, use a space-separated list.
 
   Format
@@ -1340,7 +1356,11 @@ mattermost plugin add
 mattermost plugin delete
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl plugin delete].
+
+Description
     Delete previously uploaded plugins from your Mattermost server. If deleting multiple plugins, use a space-separated list.
 
   Format
@@ -1356,7 +1376,11 @@ mattermost plugin delete
 mattermost plugin disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl plugin disable].
+
+Description
     Disable plugins. Disabled plugins are immediately removed from the user interface and logged out of all sessions. If disabling multiple plugins, use a space-separated list.
 
   Format
@@ -1372,7 +1396,11 @@ mattermost plugin disable
 mattermost plugin enable
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl plugin enable].
+
+Description
     Enable plugins for use on your Mattermost server. If enabling multiple plugins, use a space-separated list.
 
   Format
@@ -1388,7 +1416,11 @@ mattermost plugin enable
 mattermost plugin list
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl plugin list].
+
+Description
     List all active and inactive plugins installed on your Mattermost server.
 
   Format
@@ -1539,7 +1571,11 @@ mattermost team
 mattermost team add
 ~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl team add].
+
+Description
     Add users to a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
@@ -1571,7 +1607,11 @@ mattermost team archive
 mattermost team create
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl team create].
+
+Description
     Create a team.
 
   Format
@@ -1596,7 +1636,11 @@ mattermost team create
 mattermost team delete
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl team delete].
+
+Description
     Permanently delete a team along with all related information, including posts from the database. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
@@ -1616,6 +1660,10 @@ mattermost team delete
 
 mattermost team list
 ~~~~~~~~~~~~~~~~~~~~
+
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl team list].
 
 *Supported in Mattermost v4.10 and later*
 
@@ -1652,7 +1700,11 @@ mattermost team modify
 mattermost team remove
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl team remove].
+
+Description
     Remove users from a team. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
@@ -1668,7 +1720,11 @@ mattermost team remove
 mattermost team rename
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl team rename].
+
+Description
     Rename a team.
 
   Format
@@ -1705,7 +1761,11 @@ mattermost team restore
 mattermost team search
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl team search].
+
+Description
     Search for teams based on name. Before running this command, see the :ref:`note about {team-name} <team-value-note>`.
 
   Format
@@ -1745,7 +1805,11 @@ mattermost user
 mattermost user activate
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl user activate].
+
+Description
     Activate users that have been deactivated. If activating multiple users, use a space-separated list.
 
   Format
@@ -1789,7 +1853,12 @@ mattermost user convert
 mattermost user create
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl user create].
+
+
+Description
     Create a user.
 
   Format
@@ -1818,7 +1887,11 @@ mattermost user create
 mattermost user deactivate
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl user deactivate].
+
+Description
     Deactivate a user. Deactivated users are immediately logged out of all sessions and are unable to log back in.
 
   Format
@@ -1881,7 +1954,12 @@ mattermost user deleteall
 mattermost user email
 ~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl user email].
+
+
+Description
     Set a user's email.
 
   Format
@@ -1897,7 +1975,12 @@ mattermost user email
 mattermost user invite
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl user invite].
+
+
+Description
     Send a user an email invite to a team. You can invite a user to multiple teams by listing the team names or team IDs.
 
   Format
@@ -2074,7 +2157,12 @@ mattermost user migrate_auth
 mattermost user password
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl user reset_password].
+
+
+Description
     Set a user's password.
 
   Format
@@ -2090,7 +2178,12 @@ mattermost user password
 mattermost user resetmfa
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl user resetmfa].
+
+
+Description
     Turns off multi-factor authentication for a user. If MFA enforcement is enabled, the user will be forced to re-enable MFA with a new device as soon as they log in.
 
   Format
@@ -2106,7 +2199,12 @@ mattermost user resetmfa
 mattermost user search
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl user search].
+
+
+Description
     Search for users based on username, email, or user ID.
 
   Format
@@ -2138,7 +2236,12 @@ mattermost user verify
 mattermost version
 ------------------
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl version].
+
+
+Description
     Displays Mattermost version information.
 
   Format
