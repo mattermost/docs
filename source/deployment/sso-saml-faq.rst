@@ -7,10 +7,10 @@ How to Bind Authentication to Id Attribute instead of Email
 Alternatively, you can use an Id Attribute instead of email to bind the user.  We recommend choosing an ID that is unique and will not change over time. To do this:
 
 1. Create an LDAP mapping where the LDAP attribute is set to ``IdAttribute`` and the ``Outgoing Claim Type`` is set to a unique identifier, such as a GUID. Ask your ADFS administrator for a good field to use for this unique identifier.
-2. Enter ``IdAttribute`` into the **ID Attribute** field in the Mattermost SAML settings
+2. Enter ``IdAttribute`` into the **ID Attribute** field in the Mattermost SAML settings:
    
    .. image:: ../../source/images/adfs_27_id_attribute_field.PNG
-3. Click "Save"
+3. Click **Save**.
 
 
 Configuring with an Id Attribute allows you to reuse an email address for a new user without the old user's information being exposed. For instance, if a user with an email address joe.smith@mattermost.com was once an employee, a new employee named Joe Smith can use the same email. This configuration is also useful when a user's name changes and their email needs to be updated. 
