@@ -53,3 +53,8 @@ dependencies:
         replace_in_files:
         - filename: charts/gitlab/charts/gitlab-exporter/Chart.yaml
           pattern: 'appVersion: (\S+)'
+      # GitLab Runner Chart
+      https://gitlab.com/gitlab-org/charts/gitlab-runner.git:
+        replace_in_files:
+        - filename: requirements.yaml
+          pattern: 'name: gitlab-runner\n  version: (\S+)'
