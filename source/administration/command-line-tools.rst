@@ -32,6 +32,10 @@ These ``mattermost`` commands include:
 -  Resetting multi-factor authentication for a user
 -  Creating sample data
 
+**Diagnostics**
+
+- Analyzing the database for relational consistency  
+
 .. contents::
     :backlinks: top
     :local:
@@ -989,6 +993,29 @@ mattermost import slack
     .. code-block:: none
 
       ./mattermost import slack myteam slack_export.zip
+      
+mattermost integrity
+--------------------
+
+  Description
+    Check database schema integrity as well as referential integrity of channels, slash commands, webhooks, posts, schemes, sessions, users, and teams. This process may temporarily affect live system performance, and should be used during off-peak periods. 
+    
+  Format
+    .. code-block:: none
+
+      mattermost integrity
+            
+  Example
+    .. code-block:: none
+
+      ./mattermost integrity --confirm --verbose 
+      
+  Options
+    .. code-block:: none
+
+          --confirm   Optional. Skip the confirmation message which indicates that the complete integrity check may temporarily harm system performance. This is not recommended in production environments.
+	  --verbose   Outputs a detailed report of number and type of orphaned records including ids (if any).
+       
 
 .. _command-line-tools-mattermost-jobserver:
 
@@ -1198,7 +1225,7 @@ mattermost plugin add
   Format
     .. code-block:: none
 
-      mattermost plugins add {plugin tar file}
+      mattermost plugin add {plugin tar file}
 
   Example
     .. code-block:: none
@@ -1214,12 +1241,12 @@ mattermost plugin delete
   Format
     .. code-block:: none
 
-      mattermost plugins delete {plugin_id}
+      mattermost plugin delete {plugin_id}
 
   Example
     .. code-block:: none
 
-      ./mattermost plugin delete hovercardexample.tar.gz pluginexample.tar.gz
+      ./mattermost plugin delete hovercardexample pluginexample
 
 mattermost plugin disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1230,12 +1257,12 @@ mattermost plugin disable
   Format
     .. code-block:: none
 
-      mattermost plugins disable {plugin_id}
+      mattermost plugin disable {plugin_id}
 
   Example
     .. code-block:: none
 
-      ./mattermost plugin disable hovercardexample.tar.gz pluginexample.tar.gz
+      ./mattermost plugin disable hovercardexample pluginexample
       
 mattermost plugin enable
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1246,12 +1273,12 @@ mattermost plugin enable
   Format
     .. code-block:: none
 
-      mattermost plugins enable {plugin_id}
+      mattermost plugin enable {plugin_id}
 
   Example
     .. code-block:: none
 
-      ./mattermost plugin enable hovercardexample.tar.gz pluginexample.tar.gz
+      ./mattermost plugin enable hovercardexample pluginexample
 
 mattermost plugin list
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1262,7 +1289,7 @@ mattermost plugin list
   Format
     .. code-block:: none
 
-      mattermost plugins list
+      mattermost plugin list
 
   Example
     .. code-block:: none
@@ -1334,7 +1361,7 @@ mattermost sampledata
     .. versionadded:: 4.7
       Generate sample data and populate the Mattermost database. Supported in Mattermost v4.7 and later.
 
-      The command generates one user as the System Administrator with a username ``sysadmin`` and password ``Sys@dmin-sample1``. Other users are generated following an index, e.g. with username ``user-1`` and password ``SampleUs@r-%1``.
+      The command generates one user as the System Administrator with a username ``sysadmin`` and password ``Sys@dmin-sample1``. Other users are generated following an index, e.g. with username ``user-1`` and password ``SampleUs@r-1``.
 
   Format
     .. code-block:: none
@@ -1652,7 +1679,7 @@ mattermost user convert
     .. code-block:: none
 
           --bot string       Convert user to bot.  Supports converting multiple bots at once, use a space-separated list.
-          --user string      Convert bot to user.  Supports converting 1 account per command.
+          --user string      Convert bot to user.  Supports converting 1 account per command. The converted user will have the role of `system_user` set.
 
 mattermost user create
 ~~~~~~~~~~~~~~~~~~~~~~

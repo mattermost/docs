@@ -14,7 +14,7 @@ Desktop Apps
 
     "Windows", "Supported versions by Microsoft - `reference <https://en.wikipedia.org/wiki/List_of_Microsoft_Windows_versions>`__"
     "Mac", "Supported versions by Apple - `reference <https://en.wikipedia.org/wiki/MacOS_version_history>`__"
-    "Linux", "Fixed to Ubuntu LTS releases 14.04 or later"
+    "Linux", "Fixed to Ubuntu LTS releases 16.04 or later"
 
 PC Web
 ---------------------------------
@@ -24,8 +24,7 @@ PC Web
 
     "Chrome", "Chromium version of latest Mattermost Desktop App"
     "Firefox", "Supported versions by Mozilla - `reference <https://www.mozilla.org/en-US/firefox/organizations/>`__"
-    "Safari", "Supported versions by Apple - `reference <https://en.wikipedia.org/wiki/Safari_version_history>`__"
-    "Internet Explorer", "Latest release"
+    "Safari", "Safari version available in the minimum supported iOS version - `reference <https://en.wikipedia.org/wiki/Safari_version_history>`__"
     "Edge", "Latest release"
     
 Mobile Apps

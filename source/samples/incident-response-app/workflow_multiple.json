@@ -1,0 +1,139 @@
+[
+    {
+        "name": "HighSeverity",
+        "triggers": [
+            {
+                "name": "ServiceDown",
+                "type": "text",
+                "match": "DOWN",
+                "team_name": "infosec",
+                "channel_name": "alerts"
+            }
+        ],
+        "steps": [
+            {
+                "name": "Open",
+                "start_actions": [
+                    {
+                        "name": "CreateIncidentChannel",
+                        "type": "create_channel",
+                        "channel_name": "incident-s1-{{.Instance.Number}}",
+                        "channel_displayname": "Incident S1 {{.Instance.Number}}"
+                    },
+                    {
+                        "name": "AddIncidentAndServicesTeam",
+                        "type": "add_users_channel",
+                        "channel_name": "{{.Action.CreateIncidentChannel.ChannelName}}",
+                        "users": [
+                            "tester",
+                            "tester2"
+                        ]
+                    },
+                    {
+                        "name": "IntroPost",
+                        "type": "post",
+                        "channel_name": "{{.Action.CreateIncidentChannel.ChannelName}}",
+                        "message": "New S1 issue reported:\n ```{{.Trigger.ServiceDown.Message}}```",
+                        "transitions": [
+                            {
+                                "label": "Resolved",
+                                "to": "Resolved"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Resolved",
+                "start_actions": [
+                    {
+                        "name": "ArchiveChannel",
+                        "type": "archive_channel",
+                        "channel_name": "{{.Action.CreateIncidentChannel.ChannelName}}"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "MediumSevertiy",
+        "triggers": [
+            {
+                "name": "ServiceCritical",
+                "type": "text",
+                "match_regex": "(CRITICAL.*SERVICE|SERVICE.*CRITICAL)",
+                "team_name": "infosec",
+                "channel_name": "alerts"
+            }
+        ],
+        "steps": [
+            {
+                "name": "Open",
+                "start_actions": [
+                    {
+                        "name": "CreateIncidentChannel",
+                        "type": "create_channel",
+                        "channel_name": "incident-s2-{{.Instance.Number}}",
+                        "channel_displayname": "Incident S2 {{.Instance.Number}}"
+                    },
+                    {
+                        "name": "AddServicesTeam",
+                        "type": "add_users_channel",
+                        "channel_name": "{{.Action.CreateIncidentChannel.ChannelName}}",
+                        "users": [
+                            "tester"
+                        ]
+                    },
+                    {
+                        "name": "IntroPost",
+                        "type": "post",
+                        "channel_name": "{{.Action.CreateIncidentChannel.ChannelName}}",
+                        "message": "New S2 issue reported:\n ```{{.Trigger.ServiceCritical.Message}}```",
+                        "transitions": [
+                            {
+                                "label": "Resolved",
+                                "to": "Resolved"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Resolved",
+                "start_actions": [
+                    {
+                        "name": "ArchiveChannel",
+                        "type": "archive_channel",
+                        "channel_name": "{{.Action.CreateIncidentChannel.ChannelName}}"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Warning",
+        "triggers": [
+            {
+                "name": "ServiceWarning",
+                "type": "text",
+                "match": "WARNING",
+                "team_name": "infosec",
+                "channel_name": "alerts"
+            }
+        ],
+        "steps": [
+            {
+                "name": "SendAlert",
+                "start_actions": [
+                    {
+                        "name": "IntroPost",
+                        "type": "post",
+                        "team_name": "infosec",
+                        "channel_name": "alerts",
+                        "message": "@tester\nNew S3 issue reported:\n ```{{.Trigger.ServiceWarning.Message}}```"
+                    }
+                ]
+            }
+        ]
+    }
+]

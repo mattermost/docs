@@ -152,7 +152,7 @@ Open Meetings
 Developer Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 10:00 (`San Francisco Time <http://everytimezone.com/>`__)
+**Open to the public** - (Developers - 1-2 hours/week) Wednesdays 8:30 AM (`San Francisco Time <http://everytimezone.com/>`__)
 
 - Goal: Discuss developer issues across Mattermost staff, key contributors and the contributor community.
 - Attendees: (required) Mattermost staff developers, (optional) key contributors, contributors and anyone who would like to join.
@@ -162,7 +162,7 @@ Procedure:
 1. (Team and Public): Post meeting agenda in `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__ (open to the public). Please see instructions on `how to queue an item <https://community.mattermost.com/core/pl/q4wcrcnxhtf1fr9grneb6fbrxy>`__.
 2. (Team and Public): At the time of the meeting:
 
-      - Join the **Hangouts** link posted in the meeting agenda in the `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__.
+      - Join the **Zoom** link found in the header of the `Developers Meeting channel <https://community.mattermost.com/core/channels/developers-meeting>`__.
 
 
 Mattermost Staff Meetings
@@ -201,7 +201,8 @@ Procedure:
      - New team members are introduced on their second week by their manager, including name, role, what they're working on, timezone, additional info as appropriate (max 2 minutes).
      - New hire can opt-in to introduce themselves if they choose (default is not to require public speaking).
 3. (Team) Shares potential meeting agenda topics with Chair via direct message. Must be shared at least 24 hours prior to meeting start and be aligned with the meeting objectives above.
-4. (Chair & Vice Chair) Signs into their Zoom account to access recording and screenshare during the meeting.
+4. (Vice Chair) Posts a reminder message in the meeting channel about the meeting 24 hours prior to meeting start.
+5. (Chair & Vice Chair) Signs into their Zoom account to access recording and screenshare during the meeting.
 
 **During meeting:**
 
@@ -221,7 +222,7 @@ Procedure:
 
   - **Introduction**: One of the founders does an introduction to the meeting.
   - **Week 2 welcomes of new team members**: New team members introduced on their second week by their manager, or optionally by the new team member themselves.
-  - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key updates, use cases or stories from customers. Links to publicly shared documents or slides may be included in meeting notes.
+  - **Main topics**: Examples include: Series A marketing announce; FOSDEM event; key use cases and stories from customers to understand how they use Mattermost. Links to publicly shared documents or slides may be included in meeting notes.
   - **Feedback**: At end of meeting, concludes meeting with a reminder to share feedback via survey.
 
 **After meeting:**
@@ -268,7 +269,7 @@ Procedure:
 
 1. (Chair) Schedules a kick-off call with co-chairs two weeks prior to the training session. Purpose is to review expectations and plans for the session, as well as answer any questions.
 
-2. (Co-Chairs) Prepare a pre-screening survey to assess team members' knowledge of the product area. This is optional but recommended as it can help guide focus areas of the training session.
+2. (Co-Chairs) Prepares a pre-screening survey to assess team members' knowledge of the product area. This is optional but recommended as it can help guide focus areas of the training session.
 
 3. (Co-Chairs) Prepares slides and other reference material for the session. Must be shared with Chair at least 48 hours ahead of the session.
 
@@ -277,9 +278,10 @@ Procedure:
   - When sharing code snippets, highlight the area of focus within the code snippet.
   - Focus on visuals, diagrams and live demonstrations instead of slides where possible.
   - Share at least one memorable customer story.
+  - Ensure enough time is given for Q&A.
   - See the Google Drive on `previous materials and training recordings for reference <https://drive.google.com/drive/u/0/folders/10Ijgspfz-hsibZMApN2GdDgWr3QfU29_>`_.
 
-4. (Co-Chairs) Two days prior to the training session, practice a dry run for length and structure of the session. This is optional but recommended.
+4. (Co-Chairs) Two days prior to the training session, practices a dry run for length and structure of the session. This is optional but recommended.
 
 5. (Chair) Queues an item for that week's Customer Obsession meeting to remind everyone of the product training session taking place. Include a mention of the topic, along with who is leading the session.
 
@@ -293,7 +295,7 @@ Procedure:
 
 3. (Chair) Starts Zoom recording at 9:00am Palo Alto time.
 
-4. (Chair and Co-Chairs) Runs through the agenda, which typically comprises of the following items:
+4. (Chair and Co-Chairs) Runs through the agenda, which typically comprises of one or more of the following items:
 
 - **Introductions**
 
@@ -328,6 +330,8 @@ Procedure:
   - Q&A
 
 - **Feedback**: At end of meeting, remind to share feedback via survey.
+
+5. (Chair) Encourages questions in Mattermost or Zoom chat throughout the session, but refrains audience from asking during presentation time. Asks back the questions during alloted Q&A time. By reserving questions during Q&A, the sessions stays on time and sets expectations for attendees on when to join the conversation with questions.
 
 **After meeting:**
 
@@ -658,6 +662,11 @@ Bug
 
 An obvious error in Mattermost software. Changes required to accommodate unsupported 3rd party software (such as browsers or operating systems) are not considered bugs, they are considered improvements.
 
+COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+COM is short for `Customer Obsession Meeting <https://docs.mattermost.com/process/training.html?#customer-obsession-all-hands-meeting>`_, which  is our “All Hands” meeting focused on how we’re aligning the company to serve our customers.
+
 Dead Tarzan
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -709,10 +718,37 @@ A one-line change to code can cost more mana than a 100-line change due to risk 
 
 Every feature added has an initial and on-going mana cost, which is taken into account in feature decisions.
 
+MLT
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The "Mattermost Leadership Team".
+
 RHS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The "Right-Hand Sidebar" in the Mattermost team site, used for navigation.
+
+Spinmint
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Old test servers that could be spun up on pull requests to test changes. Name is a throwback to test servers from SpinPunch.
+
+SpinWick
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+New test servers that use the cloud infrastructure and can be spun up on pull requests to test changes. Name is a throwback to "Spinmint" mixed with "John Wick".
+
+YouTweetInFace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A reference to the major social media platforms: 
+
+- YouTube ("You")
+- Twitter ("Tweet")
+- LinkedIn ("In")
+- Facebook ("Face")
+
+The `YouTweetInFace channel <https://community.mattermost.com/private-core/channels/pre-tweet>`_ is used to discuss social media posts before asking contributors and community to engage with the content.
 
 Windows Vista approach
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

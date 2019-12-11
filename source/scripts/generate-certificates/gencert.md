@@ -51,5 +51,4 @@ openssl pkcs8 -in mattermost-x509.secure.key -topk8 -nocrypt -out mattermost-x50
 ## Additional Reading
 
 Below are additional guides and documentation for optional reading:
- - [OpenSSL's Subject Alternative Name documentation](https://www.openssl.org/docs/apps/x509v3_config.html#Subject-Alternative-Name)
  - [SubjectAltName page on wikipedia](https://en.wikipedia.org/wiki/SubjectAltName)

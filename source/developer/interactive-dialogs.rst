@@ -210,6 +210,36 @@ The list of supported fields for the ``select`` type element is included below:
     "default", "String", "(Optional) Set a default value for this form element. Maximum 3,000 characters."
     "placeholder", "String", "(Optional) A string displayed to help guide users in completing the element. Maximum 3,000 characters."
 
+Checkbox Element
+^^^^^^^^^^^^^^^^^^^^^^^
+
+In Mattermost version 5.16 and later, you can use checkbox elements. It looks like a plain text field with a checkbox to be selected. Below is an example of a checkbox element that asks for meeting feedback:
+
+.. image:: ../../source/images/interactive-dialog-bool.png
+
+.. code-block:: json
+
+  {
+    "display_name": "Can you please select below",
+    "placeholder": "The meeting was helpful.",
+    "name": "meeting_input",
+    "type": "bool",
+  }
+
+The full list of supported fields are included below:
+
+.. csv-table::
+    :header: "Field", "Type", "Description"
+
+    "display_name", "String", "Display name of the field shown to the user in the dialog. Maximum 24 characters."
+    "name", "String", "Name of the field element used by the integration. Maximum 300 characters. You should use unique “name” fields in the same dialog."
+    "type", "String", "Set this value to ``bool`` for a checkbox element."
+    "optional", "Boolean", "(Optional) Set to true if this form element is not required. Default is ``false``."
+    "help_text", "String", "(Optional) Set help text for this form element. Maximum 150 characters."
+    "default", "String", "(Optional) Set a default value for this form element. True or false."
+    "placeholder", "String", "(Optional) A string displayed to include a label besides the checkbox. Maximum 150 characters."
+    
+
 Dialog Submission
 -----------------------
 
@@ -243,6 +273,14 @@ Moreover, Mattermost also allows the integration itself to perform input validat
 .. code-block:: json
 
   {"errors": {"num_between_0_and_10": "Enter a number between 0 and 10."}}
+
+The integration may also return a generic error message to the user that is not attached to a specific field. This can be done by responding to the dialog submission request with a JSON body containing an `error` field. The `error` field should contain a string with the error message to display to the user. For example, if a server-side error occurs, you can return a message explaining it:
+
+.. code-block:: json
+
+  {"error": "Failed to fetch additional data. Please try again."}
+
+Support for generic error messages was added in Mattermost 5.18.
 
 Finally, once the request is submitted, we recommend the integration to respond with a system message or an ephemeral message confirming the submission. This should be a separate request back to Mattermost once the service has received and responded to a submission request from a dialog. This can be done either via `the REST API <https://api.mattermost.com/#tag/posts%2Fpaths%2F~1posts~1ephemeral%2Fpost>`_, or via the `Plugin API <https://developers.mattermost.com/extend/plugins/server/reference/#API.SendEphemeralPost>`_ if you are developing a plugin.
 

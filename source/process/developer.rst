@@ -35,7 +35,7 @@ Requirements
 - You share our values, and work in accordance with those values.
 - You're proficient in Golang, React and/or React Native, or are able to ramp quickly into those languages.
 - You've either made substantial contributions to the Mattermost open source project or are open to completing an `Audition`_ to assess your comfort in working in open source.
-- Ideal, but not required: Experience working in online communities, having made at least one `Help Wanted <https://mattermost.com/pl/help-wanted-mattermost-server>`__ pull request to a Mattermost repository, working on other Golang, React or React Native apps.
+- Ideal, but not required: Experience working in online communities, having made at least one `Help Wanted <https://mattermost.com/pl/help-wanted>`__ pull request to a Mattermost repository, working on other Golang, React or React Native apps.
 
 Levels
 -------------------------
@@ -60,8 +60,8 @@ Senior Software Design Engineer
 
 Capabilities of SDE II plus: Sets and delivers architectural vision for high impact features and changes across multiple products, working in sync with PM, UX, and customer teams. Highly respected by colleagues and community as technical authority, influencing discussions and behavior with input and suggestions. Drops fluidly into customer and community discussions, aligns efforts, and develops superior solutions through discussion and analysis. Attracts, motivates, and trains open source community members to lead the coordination and management of development campaigns to create new features and products. 
 
-Architect
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Architect / Principal Software Design Engineer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Capabilities of Senior SDE plus: Sets and delivers architectural vision for entire products and systems spanning multiple products. Engages with peers in customer and partner organizations to shape joint development plans. Works fluidly with PM, UX, and sales leadership to set organizational objectives and direction. Sought out as a technical authority in industry in developing, disseminating, reviewing, evaluating key patterns and reference architectures. Influences, shapes and can redirect customer and community technical discussions, rapidly understanding disparate viewpoints and leading discussions that align thinking and efforts to influence the direction of large scale technical projects. 
 
@@ -72,13 +72,14 @@ Candidates for developer roles on the Mattermost staff can expect the hiring pro
 
 Both declined and accepted candidates will be invited to share feedback on their hiring experience so we can continually improve our process.
 
-- **Application/Email - Review of code samples** - In `your application <https://jobs.lever.co/mattermost/>`__ we welcome you to include links to any public open source work you've done, including GitHub, GitLab or BitBucket profiles. If you'd like to share privately we can send you our ID for GitHub, GitLab or BitBucket, or we can review code you send in via email. If you really want to impress us, `make a contribution to our open source project by completing a Help Wanted ticket. <../developer/contribution-guide.html>`__
-- **Email - Follow-up questions** - If your code samples look good, we'll email you some questions specific to the role.
+- **Application** - In `your application <https://jobs.lever.co/mattermost/>`__ we welcome you to include links to any public open source work you've done, including GitHub, GitLab or BitBucket profiles. If you'd like to share privately we can send you our ID for GitHub, GitLab or BitBucket, or we can review code you send in via email. If you really want to impress us, `make a contribution to our open source project by completing a Help Wanted ticket. <../developer/contribution-guide.html>`__
+- **Email - Follow-up questions** - If your application looks good, we'll email you some questions specific to the role.
 - **Video call - Screening interview** - Selected candidates will be invited for a 25-minute screening call with a recruiter.
-- **Video call - Soft-skills discussion** - Next, candidates will be invited to schedule a 25-minute interview with a core committer to assess soft skills and for the candidate to learn more about the role.
+- **Video call - Technical discussion** - Candidates will be invited to schedule a 60-minute interview with a core committer to discuss their technical experience and suitability for the role.
+- **Video call - Soft-skills discussion** - Next, candidates will be invited to schedule a 60-minute interview with a core committer to assess soft skills, and for the candidate to learn more about the role.
 - **Audition** - Candidates who appear technically strong and culturally fit may be offered a real-world “try out” project with Mattermost team members to simulate what it would be like to work on a major open source project.
-- **Video call - CTO interview** - Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview may include technical questions along with a discussion of either past work or results of the simulation, the candidate's interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations.
-- **Video call - CEO interview** - Finally, candidates will have a 45-minute interview with our CEO.
+- **Video call - Discussion of Audition and Soft Skills** - On completion of the Audition, candidates will be invited to schedule a 60-minute interview with a core committer to discuss the experience and outcomes of participating in the audition and further assess soft skills.
+- **Video call - CTO interview** - Candidates are invited to a 45-minute interview with our CTO and co-creator of the Mattermost open source project. The interview may include technical questions along with a discussion of either past work or results of the audition, the candidate's interests, their career aspirations, and how being a core committer at Mattermost could align with those interests and aspirations.
 - **Email - Offer** - Successful candidates will receive an offer via email. Mattermost offers compensation competitive with a candidate's local market opportunities.
 
 Notes:
@@ -92,7 +93,7 @@ Audition
 
 For the benefit of candidates and the company, Mattermost offers real-world “try out” projects with Mattermost team members to simulate what it would be like to work at the company prior to hiring. The practice of auditions in open source companies was pioneered by Automattic (creators of WordPress) and detailed by `Harvard Business Review in 2014 <https://hbr.org/2014/04/the-ceo-of-automattic-on-holding-auditions-to-build-a-strong-team>`__. This practice has been a vital part of Mattermost culture.
 
-Candidates who show strong potential for technical and cultural fit are invited to work on tasks that are part of their desired position, complete a project designed by their potential manager, or select from open `Help Wanted tickets <https://mattermost.com/pl/help-wanted-mattermost-server>`__ to be completed per the `Mattermost contribution guidelines <https://developers.mattermost.com/contribute/getting-started/>`__. Your work will become a permanent part of the open source project that you can reference for the rest of your career. You’re also eligible to receive a `Mattermost Mug <https://twitter.com/search?q=%23mattermug&src=typd>`__ in appreciation of your first contribution. Here’s an example of `a successful project completed during a tryout <https://www.movetoiceland.com/mattermost-recipe-1-preview-videos/#.Wz2kb9hKjUK>`__.
+Candidates who show strong potential for technical and cultural fit are invited to work on tasks that are part of their desired position, complete a project designed by their potential manager, or select from open `Help Wanted tickets <https://mattermost.com/pl/help-wanted>`__ to be completed per the `Mattermost contribution guidelines <https://developers.mattermost.com/contribute/getting-started/>`__. Your work will become a permanent part of the open source project that you can reference for the rest of your career. You’re also eligible to receive a `Mattermost Mug <https://twitter.com/search?q=%23mattermug&src=typd>`__ in appreciation of your first contribution. Here’s an example of `a successful project completed during a tryout <https://www.movetoiceland.com/mattermost-recipe-1-preview-videos/#.Wz2kb9hKjUK>`__.
 
 While you’re working with us, you can join the Mattermost community site `here <https://community.mattermost.com/core/>`__.
 
@@ -114,4 +115,4 @@ Frequently Asked Questions
 Do you have internships?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-While we no longer offer internships for developers, if you get a couple of `Help Wanted <https://mattermost.com/pl/help-wanted-mattermost-server>`__ pull requests accepted, we'll interview you for one. This will be a remote internship without supervision; you'll only get feedback on your merge requests. If you want to work on open source and qualify, `please submit an application <https://jobs.lever.co/mattermost/>`__. In the cover letter field, please note that you want an internship and link to the accepted pull requests. The pull requests should be of significant value and difficulty, which is at the discretion of the hiring manager. For example, fixing 10 typos isn't as valuable as shipping 2 new features.
+While we no longer offer internships for developers, if you get a couple of `Help Wanted <https://mattermost.com/pl/help-wanted>`__ pull requests accepted, we'll interview you for one. This will be a remote internship without supervision; you'll only get feedback on your merge requests. If you want to work on open source and qualify, `please submit an application <https://jobs.lever.co/mattermost/>`__. In the cover letter field, please note that you want an internship and link to the accepted pull requests. The pull requests should be of significant value and difficulty, which is at the discretion of the hiring manager. For example, fixing 10 typos isn't as valuable as shipping 2 new features.

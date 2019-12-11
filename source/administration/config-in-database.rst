@@ -12,13 +12,13 @@ Benefits to using this option:
 
 To start using configuration in database, pass the database connection string via the ``--config`` flag or ``MM_CONFIG`` environment variable. For example:
 
-  .. code-block:: 
+  .. code-block:: text
   
     ./mattermost --config="postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
 
 To migrate an existing config.json into the database, use the ``config migrate`` `command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-config-migrate>`_. For example:
 
-  .. code-block:: 
+  .. code-block:: text
 
     ./mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
 
@@ -27,7 +27,7 @@ Any existing SAML certificates and private keys will also be migrated to the dat
 
 With configuration in the database enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
 
-Note that environment variable overrides remain fully supported using the configuration in the database, allowing per-server customization as required. A long standing bug has also been fixed, ensuring environment variables are no longer written back to the configuration when other changes are made.
+Note that environment variable overrides remain fully supported using the configuration in the database, allowing per-server customization as required. A long-standing bug has also been fixed, ensuring environment variables are no longer written back to the configuration when other changes are made.
 
 
 Troubleshooting
@@ -35,4 +35,4 @@ Troubleshooting
 
 Server fails to start 
 ~~~~~~~~~~~~~~~~~~~~~
-Providing the --disableconfigwatch flag while not actually pointing at a file will fail to start the server with an appropriate error message.
+Providing the ``--disableconfigwatch`` flag while not actually pointing at a file will fail to start the server with an appropriate error message.

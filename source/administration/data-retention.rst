@@ -26,6 +26,9 @@ Save the settings and restart your server. You're now all set! Data older than t
 
 You may also run the deletion job manually anytime by clicking **Run Deletion Job Now** button in **System Console > Advanced > Data Retention Policy** in prior versions or **System Console > Compliance > Data Retention Policy** in versions after 5.12.
 
+.. note::
+  If using data retention and `ElasticSearch <https://docs.mattermost.com/deployment/elasticsearch.html>`_, ensure the `ElasticSearch aggregate search indexes <https://docs.mattermost.com/administration/config-settings.html#aggregate-search-indexes>`_ setting is set to a value that is greater than your data retention policy in days. 
+
 Frequently Asked Questions (FAQ)
 ---------------------------------
 
@@ -85,4 +88,9 @@ How do I know if a data retention job fails?
 Mattermost provides the status of each data retention job in **System Console** > **Compliance** > **Data Retention Policy**. Here, you can see if the job succeeded or failed, including the details of the error.
 
 Morever, any failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. Data retention job failures are identified with worker name ``EnterpriseDataRetention``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
+
+Does the System Administrator get any notification when the data retention period is changed?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No, the new config is updated, but the System Admin does not receive any feedback on what the effects will be (e.g. reporting of how many messages are to be deleted).
 

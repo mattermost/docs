@@ -46,7 +46,7 @@ To ensure your instance and configuration are compatible with high availability,
 3. Modify the ``config.json`` files on both servers to add *ClusterSettings* as described in :ref:`high-availability`.
 4. Verify the configuration files are identical on both servers then restart each machine in the cluster.
 5. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `Proxy Server Configuration`_.
-6. Open **System Console > Advanced > High Availability** in prior versions or **System Console** > **Environment** > **High Availability** in versions after 5.12 to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+6. Open **System Console > Advanced > High Availability** in prior versions or **System Console > Environment > High Availability** in versions after 5.12 to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Adding a Server to the Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,14 +54,14 @@ Adding a Server to the Cluster
 1. Backup your Mattermost database and the file storage location. For more information about backing up, see :doc:`../administration/backup`.
 2. Set up a new Mattermost server. This server must use an identical copy of the configuration file, ``config.json``. Verify the server is functioning by hitting the private IP address.
 3. Modify your NGINX setup to add the new server. For information about this, see `Proxy Server Configuration`_.
-4. Open **System Console > Advanced > High Availability** in prior versions or **System Console** > **Environment** > **High Availability** in versions after 5.12 to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+4. Open **System Console > Advanced > High Availability** in prior versions or **System Console > Environment > High Availability** in versions after 5.12 to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Removing a Server from the Cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Backup your Mattermost database and the file storage location. For more information about backing up, see :doc:`../administration/backup`.
 2. Modify your NGINX setup to remove the server. For information about this, see `Proxy Server Configuration`_.
-3. Open **System Console > Advanced > High Availability** in prior versions or **System Console** > **Environment** > **High Availability** in versions after 5.12 to verify that all the machines remaining in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
+3. Open **System Console > Advanced > High Availability** in prior versions or **System Console > Environment > High Availability** in versions after 5.12 to verify that all the machines remaining in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Configuration and Compatibility
 -------------------------------
@@ -115,7 +115,7 @@ Cluster Discovery
 
 If you have non-standard (i.e. not simple) network configurations, then you may need to use the `Override Hostname <https://docs.mattermost.com/administration/config-settings.html#override-hostname>`_ setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in High Availability mode. The `Override Hostname <https://docs.mattermost.com/administration/config-settings.html#override-hostname>`_ is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
 
-If ``UseIpAddress`` is set to ``true``, it tries to get the IP address by looking for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://golang.org/pkg/net/#InterfaceAddrs>`_. Otherwise it tries to get the hostname using the `os.Hostname() <https://golang.org/pkg/os/#Hostname>`_ built-in go function.
+If ``UseIpAddress`` is set to ``true``, it attempts to obtain the IP address by searching for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://golang.org/pkg/net/#InterfaceAddrs>`_. Otherwise it tries to get the hostname using the `os.Hostname() <https://golang.org/pkg/os/#Hostname>`_ built-in go function.
 
 You can also run ``SELECT * FROM ClusterDiscovery`` against your database to see how it has filled in the Hostname field. That field will be the hostname or IP address the server will use to attempt contact with other nodes in the cluster. We attempt to make a connection to the ``url Hostname:Port`` and ``Hostname:PortGossipPort``. You must also make sure you have all the correct ports open so the cluster can gossip correctly. These ports are under ``ClusterSettings`` in your configuration.
 
@@ -123,7 +123,7 @@ In short, you should use:
 
  1. IpAddress discovery if the first non-local address can be seen from the other machines.
  2. Override Hostname on the operating system so that it's a proper discoverable name for the other nodes in the cluster.
- 3. Override Hostname in ``config.json`` if the above steps do not work. You can put and IpAddress in this field if needed. The ``config.json`` will be different for each cluster node.
+ 3. Override Hostname in ``config.json`` if the above steps do not work. You can put an IpAddress in this field if needed. The ``config.json`` will be different for each cluster node.
 
 Time Synchronization
 ^^^^^^^^^^^^^^^^^^^^
@@ -135,10 +135,10 @@ State
 
 The Mattermost Server is designed to have very little state to allow for horizontal scaling. The items in state considered for scaling Mattermost are listed below:
 
-- In memory session cache for quick validation and channel access,
-- In memory online/offline cache for quick response,
-- System configuration file that is loaded and stored in memory,
-- WebSocket connections from clients used to send messages.
+- In memory session cache for quick validation and channel access
+- In memory online/offline cache for quick response
+- System configuration file that is loaded and stored in memory
+- WebSocket connections from clients used to send messages
 
 When the Mattermost Server is configured for high availability, the servers  use an inter-node communication protocol on a different listening address to keep the state in sync. When a state changes it is written back to the database and an inter-node message is sent to notify the other servers of the state change. The true state of the items can always be read from the database. Mattermost also uses inter-node communication to forward WebSocket messages to the other servers in the cluster for real-time messages such as  “[User X] is typing.”
 
@@ -200,7 +200,7 @@ File Storage Configuration
   2. If ``"DriverName": "local"`` is used then the directory at ``"FileSettings":`` ``"Directory": "./data/"`` is expected to be a NAS location mapped as a local directory, otherwise high availability will not function correctly and may corrupt your file storage.
   3. If you’re using Amazon S3 or Minio for file storage then no other configuration is required.
 
-If you’re using the Compliance Reports feature in Enterprise Edition E20, you need to configure the  ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
+If you’re using the Compliance Reports feature in Enterprise Edition E20, you need to configure the ``"ComplianceSettings":`` ``"Directory": "./data/",`` to share between all machines or the reports will only be available from the System Console on the local Mattermost server.
 
 Migrating to NAS or S3 from local storage is beyond the scope of this document.
 
@@ -252,8 +252,8 @@ Loading a Multi-database Configuration onto an Active Server
 
 After a multi-database configuration has been defined in ``config.json``, the following procedure can be used to apply the settings without shutting down the Mattermost server:
 
-1. Go to **System Console > Configuration** in prior versions or **System Console** > **Environment** > **Web Server**  and click **Reload Configuration from Disk** in versions after 5.12 to reload configuration settings for the Mattermost server from ``config.json``.
-2. Go to **System Console > Database** in prior versions or **System Console** > **Environment** > **Database** and click **Recycle Database Connections** in versions after 5.12 to take down existing database connections and set up new connections in the multi-database configuration.
+1. Go to **System Console > Configuration** in prior versions or **System Console > Environment > Web Server**  and click **Reload Configuration from Disk** in versions after 5.12 to reload configuration settings for the Mattermost server from ``config.json``.
+2. Go to **System Console > Database** in prior versions or **System Console > Environment > Database** and click **Recycle Database Connections** in versions after 5.12 to take down existing database connections and set up new connections in the multi-database configuration.
 
 While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening will have an experience similar to losing connection to the Mattermost server.
 
@@ -264,8 +264,8 @@ If the need arises to switch from the current master database--for example, if i
 
 To apply the settings without shutting down the Mattermost server:
 
-1. Go to **System Console > Configuration** in prior versions or **System Console** > **Environment** > **Web Server** and click **Reload Configuration from Disk** in versions after 5.12 to reload configuration settings for the Mattermost server from ``config.json``.
-2. Go to **System Console > Database** in prior versions or **System Console** > **Environment** > **Database** and click **Recycle Database Connections** in versions after 5.12 to take down existing database connections and set up new connections in the multi-database configuration.
+1. Go to **System Console > Configuration** in prior versions or **System Console > Environment > Web Server** and click **Reload Configuration from Disk** in versions after 5.12 to reload configuration settings for the Mattermost server from ``config.json``.
+2. Go to **System Console > Database** in prior versions or **System Console > Environment > Database** and click **Recycle Database Connections** in versions after 5.12 to take down existing database connections and set up new connections in the multi-database configuration.
 
 While the connection settings are changing, there might be a brief moment when writes to the master database are unsuccessful. The process waits for all existing connections to finish and starts serving new requests with the new connections. End users attempting to send messages while the switch is happening can have an experience similar to losing connection to the Mattermost server.
 
@@ -291,7 +291,15 @@ Mattermost runs periodic tasks via the `job server <https://docs.mattermost.com/
  - Compliance exports
  - Elasticsearch indexing
 
-:ref:`Run all job servers <command-line-tools-mattermost-jobserver>` with ``--noschedule flag``, then set ``JobSettings.RunScheduler`` to ``true`` in config.json for all app servers in the cluster. The cluster leader will then be responsible for scheduling recurring jobs.
+Make sure you have set ``JobSettings.RunScheduler`` to ``true`` in config.json for all app and job servers in the cluster. The cluster leader will then be responsible for scheduling recurring jobs.
+
+Plugins and High Availability
+^^^^^^^^^^^^^^^^
+
+As of Mattermost 5.14, when you install or upgrade a plugin, it is propagated across the servers in the cluster automatically. 
+
+Note a slight behaviour change in 5.15:
+When you re-install a plugin in 5.14, the previous **Enabled** or **Disabled** state is retained. As of 5.15, a reinstalled plugin's initial state is **Disabled**.
 
 Upgrade Guide
 -------------
@@ -313,7 +321,7 @@ You can apply updates during a period of low load, but if your HA cluster is siz
 2. For one of the Mattermost servers, make the configuration changes to ``config.json`` and save the file. Do not reload the file yet.
 3. Copy the ``config.json`` file to the other servers.
 4. Shut down Mattermost on all but one server.
-5. Reload the configuration file on the server that is still running. Go to **System Console > Configuration** in prior versions or **System Console** > **Environment** > **Web Server** in versions after 5.12 and click **Reload Configuration from Disk**
+5. Reload the configuration file on the server that is still running. Go to **System Console > Configuration** in prior versions or **System Console > Environment > Web Server** in versions after 5.12 and click **Reload Configuration from Disk**
 6. Start the other servers.
 
 Updating Server Version While Operating Continuously

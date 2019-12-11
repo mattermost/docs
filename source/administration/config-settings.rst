@@ -71,13 +71,25 @@ View logging of server-side events.
 
 User Management
 ---------------
-Settings for managing users, user access, and permissions.
+Settings for managing users, user access, groups, and permissions.
 
 Users
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-View and manage active and inactive users. 
+View and manage active and inactive users, and revoke all user sessions. Access individual users to view their User ID, and view the teams they are on and what their role is on a team. Additionally, add the user to other teams without direct access to the team. 
 
-Groups
+Teams (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E20*
+
+Manage group sychronization on teams. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
+
+Channels (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+*Available in Enterprise Edition E20*
+
+Manage group sychronization on channels. See `Using AD/LDAP Synchronized Groups to Manage Team or Private Channel Membership <https://docs.mattermost.com/deployment/ldap-group-constrained-team-channel.html>`__ for more details.
+
+Groups (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 *Available in Enterprise Edition E20*
 
@@ -1407,7 +1419,7 @@ Enable Team Directory
 
 Teammate Name Display
 ^^^^^^^^^^^^^^^^^^^^^
-Specifies how names are displayed in the user interface.
+Specifies how names are displayed in the user interface by default. Please note that users can override this setting in **Account Settings > Display > Teammate Name Display**.
 
 **Show username**: Displays the user's username.
 
@@ -1642,7 +1654,12 @@ Posts
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable Link Previews
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Enables users to display a preview of website content, image links and YouTube links below the message when available. When true, website previews can be enabled from **Account Settings > Display > Website Link Previews**. Link previews are requested by the server, meaning the server must be connected to the internet and have access through the firewall (if applicable) to the websites from which previews are expected, such as https://gfycat.com/, https://www.youtube.com/, https://imgur.com/ and any other websites that users may share frequently. 
+
+Link previews are previews of linked website content, image links, and YouTube videos that are displayed below posts when available. 
+
+Link previews are requested by the server, meaning the Mattermost server must be connected to the internet for previews to be displayed. This connection can be established through a `firewall or outbound proxy <https://docs.mattermost.com/install/outbound-proxy.html>`__ in environments where direct internet connectivity is not given or security policies make this necessary.
+
+**True**: Website link previews, image link previews and YouTube previews are enabled on the server. Users can enable or disable website previews for themselves from **Account Settings > Display > Website Link Previews**.
 
 **False**: Website link previews, image link previews and YouTube previews are disabled. The server does not request metadata for any links sent in messages. 
 
@@ -2394,7 +2411,6 @@ Adds the name associated with a user's Scoping Identity Provider ID.
 
 OAuth 2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-*Available in Enterprise Edition E10 and higher*
 
 Settings to configure OAuth login for account creation and login.
 
@@ -2403,9 +2419,9 @@ Select OAuth 2.0 service provider:
 Choose whether OAuth can be used for account creation and login. Options include:
 
     - **Do not allow sign-in via an OAuth 2.0 provider**
-    - **GitLab** (see `GitLab Settings <http://docs.mattermost.com/administration/config-settings.html#id14>`__ for more detail)
-    - **Google Apps** (see `Google Settings <http://docs.mattermost.com/administration/config-settings.html#google-enterprise>`__ for more detail)
-    - **Office 365** (see `Office 365 Settings <http://docs.mattermost.com/administration/config-settings.html#office-365-enterprise>`__ for more detail)
+    - **GitLab** (see `GitLab Settings <https://docs.mattermost.com/administration/config-settings.html#gitlab>`__ for more detail)
+    - **Google Apps** (available in Enterprise Edition E20, see `Google Settings <https://docs.mattermost.com/administration/config-settings.html#google>`__ for more detail)
+    - **Office 365** (available in Enterprise Edition E20, see `Office 365 Settings <https://docs.mattermost.com/administration/config-settings.html#office-365>`__ for more detail)
 
 This feature's setting does not appear in ``config.json``.
 
@@ -2577,6 +2593,41 @@ It is recommended to use ``"https://login.microsoftonline.com/common/oauth2/v2.0
 | This feature's ``config.json`` setting is ``"TokenEndpoint": "https://login.microsoftonline.com/common/oauth2/v2.0/token"`` with string input.                       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Guest Access (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable Guest Access
+^^^^^^^^^^^^^^^^^^^
+
+**True**: Allow guest invitations to channels within teams. Please see `Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information.
+
+**False**: Email signup is disabled. This limits signup to single sign-on services like OAuth or AD/LDAP.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``.                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Whitelisted Guest Domains
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When populated, guest accounts can only be created by a verified email from this list of comma-separated domains.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RestrictCreationToDomains": ""`` with string input.                                                                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enforce Multi-factor Authentication
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This setting defaults to false and is read-only if multi-factor authentication is not enforced for regular users.
+
+**True**: When true, multi-factor authentication (MFA) is required for login. New guest users will be required to configure MFA on sign-up. Logged in guest users without MFA configured are redirected to the MFA setup page until configuration is complete.  
+
+**False**: Multi-factor authentication for guests is optional.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnforceMultifactorAuthentication": false`` with options ``true`` and ``false``.                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Plugins (Beta)
 --------------------------------
 Settings to configure plugins.
@@ -2593,6 +2644,26 @@ Enable Plugins
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``.                                                                    |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Marketplace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables Plugin Marketplace on your Mattermost server for all System Administrators. 
+
+**False**: Disables Plugin Marketplace on your Mattermost server for all System Administrators.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableMarketplace": true`` with options ``true`` and ``false``.                                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Marketplace URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+If the marketplace is enabled, this setting specifies which URL should be used to query for new Marketplace plugins.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MarketplaceUrl": "https://api.integrations.mattermost.com"`` with string input.                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Plugin Settings
@@ -3630,6 +3701,17 @@ Disable Bots When Owner Is Deactivated
 | This feature's ``config.json`` setting is ``"DisableBotsWhenOwnerIsDeactivated": true`` with options ``true`` and ``false``.                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Latex
+^^^^^^^^^^^^^
+
+**True**: Enables rendering of latex code.
+
+**False**: Disables rendering of latex code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, latex code will be highlighted.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``.                                                              |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 SQL Settings
 ~~~~~~~~~~~~
 
@@ -3666,8 +3748,10 @@ The queries above rebuild the materialized ``PublicChannels`` table without modi
 | This feature's ``config.json`` setting is ``"EnablePublicChannelsMaterialization": true`` with options ``true`` and ``false``.                    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Read Replicas (Enterprise Edition)
+Read Replicas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
 Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting.
 
 Changes to this setting require a server restart before taking effect.
@@ -3676,8 +3760,10 @@ Changes to this setting require a server restart before taking effect.
 | This feature's ``config.json`` setting is ``"DataSourceReplicas": []`` with string array input consisting of database connection strings.   |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 
-Search Replicas (Enterprise Edition)
+Search Replicas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
 Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting.
 
 Changes to this setting require a server restart before taking effect.
@@ -4063,6 +4149,9 @@ Aggregate Search Indexes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Elasticsearch indexes over the age specified by this setting will be aggregated during the daily scheduled job.
 
+.. note::
+  If using `data retention <https://docs.mattermost.com/administration/data-retention.html>`_ and `ElasticSearch <https://docs.mattermost.com/deployment/elasticsearch.html>`_, ensure the `ElasticSearch aggregate search indexes <https://docs.mattermost.com/administration/config-settings.html#aggregate-search-indexes>`_ setting is set to a value that is greater than your data retention policy in days. 
+
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AggregatePostsAfterDays": 365`` with numerical input.        |
 +-----------------------------------------------------------------------------------------------------------+
@@ -4095,7 +4184,7 @@ Determines how many new posts are batched together before they are added to the 
 
 Request Timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Timeout in seconds for Elasticseaerch calls.
+Timeout in seconds for Elasticsearch calls.
 
 +-------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RequestTimeoutSeconds": 30`` with numerical input.       |
@@ -4169,6 +4258,17 @@ Enable Plugin Uploads
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false``.                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Allow Insecure Download Url
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True:** Enables downloading and installing a plugin from a remote url.
+
+**False:** Disables downloading and installing a plugin from a remote url.
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AllowInsecureDownloadUrl": false`` with options ``true`` and ``false``.                    |
++-----------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Plugin Health Check
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

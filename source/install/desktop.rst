@@ -28,24 +28,27 @@ Windows 10+, Windows 8.1+, Windows 7+
 
 1. Download latest version of the Mattermost desktop app:
 
-   - `64-bit version of Windows <https://releases.mattermost.com/desktop/4.2.3/mattermost-setup-4.2.3-win64.exe>`__
-   - `32-bit version of Windows <https://releases.mattermost.com/desktop/4.2.3/mattermost-setup-4.2.3-win32.exe>`__
+   - `32/64-bit version of Windows <https://releases.mattermost.com/desktop/4.3.2/mattermost-desktop-setup-4.3.2-win.exe>`__
 
-2. From the ``\Downloads`` directory right-click on the file ``mattermost-setup-4.2.3...`` and select **Open**.
+2. From the ``\Downloads`` directory right-click on the file ``mattermost-desktop-setup-4.3.2-win.exe`` and select **Open**.
 
 This will start an installer for the app. Once finished, the Mattermost desktop app will open automatically.
 
-Group Policies (GPO) and MSI Installer support (Alpha)
+MSI Installer and Group Policies (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-`See here <desktop-msi-gpo.html>`__ for instructions on installing, configuring and verifying supported Group Policies as well as installing the Mattermost desktop app via an MSI installer that conforms to the defined Group Policies.
+
+Download latest version of the Mattermost desktop app MSI installer (Beta):
+
+   - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/4.3.2/mattermost-desktop-v4.3.2-x64.msi>`__
+   - MSI for `86-bit version of Windows <https://releases.mattermost.com/desktop/4.3.2/mattermost-desktop-v4.3.2-x86.msi>`__
+
+`See here <desktop-msi-gpo.html>`__ for instructions on installing the Mattermost desktop app via an MSI installer and configuring supported Group Policies.
 
 The following Group Policies are available:
 
 +----------------------------+-----------------------------------------------------------------------------+----------------------+
 | Group Policy               | Description                                                                 | Required Version     |
 +============================+=============================================================================+======================+
-| Enable Auto Updater        | If disabled, the app auto-updater is disabled.                              | 4.3 or later         |
-+----------------------------+-----------------------------------------------------------------------------+----------------------+
 | Enable Server Management   | If disabled, management of servers in the app settings are disabled.        | 4.3 or later         |
 +----------------------------+-----------------------------------------------------------------------------+----------------------+
 | Default Server List        | Define one or more default, permanent servers.                              | 4.3 or later         |
@@ -54,11 +57,11 @@ The following Group Policies are available:
 macOS 10.9+
 --------------------------------------------------
 
-1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.2.3/mattermost-desktop-4.2.3-mac.zip>`__.
+1. Download `latest version of the Mattermost desktop app <https://releases.mattermost.com/desktop/4.3.2/mattermost-desktop-4.3.2-mac.dmg>`__.
 
-2. Double-click the download to expand the archive.
+2. Double-click the download to open the disk image.
 
-3. Drag the extracted file to the ``Applications`` folder.
+3. Drag the Mattermost application to the ``Applications`` folder.
 
 `Homebrew <https://brew.sh>`__ users can install with ``brew cask install mattermost``.
 
@@ -71,9 +74,9 @@ Generic Linux package
 1. Download latest version of the Mattermost desktop app:
 
   64-bit systems:
-   `mattermost-desktop-4.2.3-linux-x64.tar.gz <https://releases.mattermost.com/desktop/4.2.3/mattermost-desktop-4.2.3-linux-x64.tar.gz>`__
+   `mattermost-desktop-4.3.2-linux-x64.tar.gz <https://releases.mattermost.com/desktop/4.3.2/mattermost-desktop-4.3.2-linux-x64.tar.gz>`__
   32-bit systems:
-   `mattermost-desktop-4.2.3-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/4.2.3/mattermost-desktop-4.2.3-linux-ia32.tar.gz>`__
+   `mattermost-desktop-4.3.2-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/4.3.2/mattermost-desktop-4.3.2-linux-ia32.tar.gz>`__
 
 2. Extract the archive to a convenient location. You can then execute ``mattermost-desktop``, which is located inside the extracted directory.
 
@@ -87,16 +90,16 @@ Unofficial, community-driven .deb packages are available.
 1. Download the latest version of the Mattermost desktop app:
 
   64-bit systems
-   `mattermost-desktop-4.2.3-linux-amd64.deb <https://releases.mattermost.com/desktop/4.2.3/mattermost-desktop-4.2.3-linux-amd64.deb>`__
+   `mattermost-desktop-4.3.2-linux-amd64.deb <https://releases.mattermost.com/desktop/4.3.2/mattermost-desktop-4.3.2-linux-amd64.deb>`__
   32-bit systems
-   `mattermost-desktop-4.2.3-linux-i386.deb <https://releases.mattermost.com/desktop/4.2.3/mattermost-desktop-4.2.3-linux-i386.deb>`__
+   `mattermost-desktop-4.3.2-linux-i386.deb <https://releases.mattermost.com/desktop/4.3.2/mattermost-desktop-4.3.2-linux-i386.deb>`__
 
 2. At the command line, execute one of the following commands depending on the package that you downloaded:
 
   64-bit systems
-    ``sudo dpkg -i mattermost-desktop-4.2.3-linux-amd64.deb``
+    ``sudo dpkg -i mattermost-desktop-4.3.2-linux-amd64.deb``
   32-bit systems
-    ``sudo dpkg -i mattermost-desktop-4.2.3-linux-i386.deb``
+    ``sudo dpkg -i mattermost-desktop-4.3.2-linux-i386.deb``
 
 3. To run Mattermost, open **Dash** (located at top left corner) and input ``mattermost``, then click the Mattermost icon.
 

@@ -19,9 +19,9 @@ Examples include React Native Apps, Redux and APIv4 campaigns.
 On-boarding
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Create a forum post letting developers know about the campaign and ways to contribute
-2. Create a contribution guide including developer machine set up
-3. Create help wanted tickets that a community member could work on
+1. Create a blog post for the `Developer Blog <https://developers.mattermost.com/blog/>`_ letting developers know about the campaign and ways to contribute.  
+2. Create a contribution guide. This can be part of the blog post.
+3. Create help wanted tickets that a community member could work on.
  
  - For a high priority Help Wanted ticket, reach out to contributors directly in the GitHub repository for best engagement
 
@@ -92,11 +92,13 @@ Tips
 1. Do not use your personal Zoom meeting link for the call.
 2. Note in all announcements that sharing video is optional.
 3. Use `Mattermost` in your name to identify staff from community members on the call.
+4. Consider sequencing design review meetings with design priorities.
+5. Encourage less vocal attendees to share feedback via written chat.
 
-Future Improvements
-^^^^^^^^^^^^^^^^^^^^^^^^
-1. Consider sequencing design review meetings with design priorities.
-2. Encourage less vocal attendees to share feedback via written chat.
+How to run a Hackathon?
+---------------------------------------------------------
+
+See :doc:`How to Run a Hackathon page <how-to-run-a-hackathon>`.
 
 GitHub Help Wanted Issues in Mattermost-Server Repository
 -----------------------------------------------------------
@@ -163,15 +165,17 @@ Help Wanted Issue Links
 
 Below is a list of permanent redirects to Help Wanted issue queries:
 
-1. `mattermost/mattermost-server` - https://mattermost.com/pl/help-wanted-mattermost-server which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aopen+label%3A%22Help+Wanted%22+label%3A%22Tech%2FGo%22+is%3Aissue
+1. `mattermost` - https://mattermost.com/pl/help-wanted which redirects to `https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+archived%3Afalse+org%3Amattermost+label%3A%22Help+Wanted%22++label%3A%22Up+For+Grabs%22 <https://github.com/search?utf8=%E2%9C%93&q=is%3Aopen+archived%3Afalse+org%3Amattermost+label%3A%22Help+Wanted%22++label%3A%22Up+For+Grabs%22>`_
 
-2. `mattermost/desktop` - https://mattermost.com/pl/help-wanted-desktop which redirects to https://github.com/mattermost/desktop/issues?q=is%3Aopen+is%3Aissue+label%3A%22Help+Wanted%22
+2. `mattermost/mattermost-server` - https://mattermost.com/pl/help-wanted-mattermost-server which redirects to `https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FGo%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FGo%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_
 
-3. `mattermost/mattermost-mobile` - https://mattermost.com/pl/help-wanted-mattermost-mobile which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReact+Native%22+is%3Aopen+is%3Aissue
+3. `mattermost/desktop` - https://mattermost.com/pl/help-wanted-desktop which redirects to `https://github.com/mattermost/desktop/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue <https://github.com/mattermost/desktop/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_
 
-4. `mattermost/mattermost/webapp` - https://mattermost.com/pl/help-wanted-mattermost-webapp which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=label%3A%22Tech%2FReactJS%22+label%3A%22Help+Wanted%22+is%3Aopen+is%3Aissue
+4. `mattermost/mattermost-mobile` - https://mattermost.com/pl/help-wanted-mattermost-mobile which redirects to `https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReact+Native%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReact+Native%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_
 
-5. `mattermost/mattermost-redux` - https://mattermost.com/pl/help-wanted-mattermost-redux which redirects to https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=label%3A%22Tech%2FRedux%22+label%3A%22Help+Wanted%22+is%3Aopen+is%3Aissue
+5. `mattermost/mattermost/webapp` - https://mattermost.com/pl/help-wanted-mattermost-webapp which redirects to `https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReactJS%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FReactJS%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_
+
+6. `mattermost/mattermost-redux` - https://mattermost.com/pl/help-wanted-mattermost-redux which redirects to `https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FRedux%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q&q=label%3A%22Help+Wanted%22+label%3A%22Tech%2FRedux%22+label%3A%22Up+For+Grabs%22+is%3Aopen+is%3Aissue>`_
 
 Mattermost Community Forums
 ---------------------------------------------------------
@@ -345,7 +349,7 @@ Sample Responses
 
   .. code-block:: text
 
-    Thank you for the suggestions @username. Would you be open to contributing them in the feature idea forum so they can discussed and upvoted by the community? You get 10 votes in the feature idea forum, and each one influences the future of the project.
+    Thank you for the suggestions @username. Would you be open to contributing them in the feature idea forum so they can be discussed and upvoted by the community? You get 10 votes in the feature idea forum, and each one influences the future of the project.
 
     https://mattermost.uservoice.com/
 
@@ -353,7 +357,7 @@ Sample Responses
 
   .. code-block:: text
 
-    Thank you for the suggestion @username. Would you be open to contributing it in the feature idea forum so it can discussed and upvoted by the community? You get 10 votes in the feature idea forum, and each one influences the future of the project.
+    Thank you for the suggestion @username. Would you be open to contributing it in the feature idea forum so it can be discussed and upvoted by the community? You get 10 votes in the feature idea forum, and each one influences the future of the project.
 
     https://mattermost.uservoice.com/
 

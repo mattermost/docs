@@ -20,7 +20,6 @@ Development Process
    /developer/fx*
    /developer/localization*
    /process/definitions*
-   /process/pm-faq*
    /process/new-bug-tickets*
    
 Release Process
@@ -49,6 +48,15 @@ Community Process
    /process/community-systems*
    /process/help-wanted*
    /process/community-guidelines*
+
+Product Management Handbook
+------------------------------
+.. toctree::
+   :maxdepth: 2
+   :glob:
+
+   /process/product-manager-hiring*
+   /process/pm-faq*
 
 Core Developer Handbook
 -----------------------
