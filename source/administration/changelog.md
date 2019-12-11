@@ -102,10 +102,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``LdapSettings``:
    - Added ``GuestFilter`` to be able to enter an AD/LDAP Filter to use when searching for external users who have Guest Access to Mattermost.
  - Under ``SamlSettings``:
-   - Added ``SignatureAlgorithm`` and ``CanonicalAlgorithm`` to 
-   - Added ``GuestAttribute`` to be able to enter the attribute in the SAML Assertion used to apply a guest role to users.
+   - Added ``SignatureAlgorithm`` to be able to choose a signature algorithm used to sign the request.
+   - Added ``CanonicalAlgorithm`` to be able to choose the canonicalization algorithm.
+   - Added ``GuestAttribute`` to add support for entering the attribute in the SAML Assertion used to apply a guest role to users.
  - Under ``PluginSettings``:
-   - Added ``RequirePluginSignature`` and ``SignaturePublicKeyFiles`` to 
+   - Added ``RequirePluginSignature`` to add support for requiring valid plugin signatures before starting managed or unmanaged plugins.
+   - ``SignaturePublicKeyFiles`` to add support for specifying public keys to be trusted to validate plugin signatures in addition to the Mattermost plugin signing key built-into the server.
  - Under ``ServiceSettings``:
    - Removed ``ExperimentalLdapGroupSync`` setting.
 
