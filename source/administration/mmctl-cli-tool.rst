@@ -665,29 +665,20 @@ Management of groups.
 
 Child Commands
   -  `mmctl group channel`_ - Manage channel groups
+  -  `mmctl group team`_ - Manage channel teams
+  -  `mmctl group list-ldap`_ -
+
+
+mmctl group channel
+--------------------
+
+Management of channel groups
+
+Child Commands
   -  `mmctl group channel disable`_ - Disable group constrains
   -  `mmctl group channel enable`_ - Enable group constrains
   -  `mmctl group channel list`_ - List channel groups
   -  `mmctl group channel status`_ - Check group status
-  -  `mmctl group list-ldap`_ - List LDAP groups
-  -  `mmctl group team`_ -
-
-mmctl group channel
-^^^^^^^^^^^^^^^^^^^^
-
-Management of channel groups
-
-Format
-
-.. code-block:: sh
-
-
-
-Examples
-
-.. code-block:: sh
-
-
 
 Options
 
@@ -816,6 +807,150 @@ Options Inherited from Parent Commands
 .. code-block:: sh
 
     --format string   the format of the command output [plain, json] (default "plain")
+
+
+mmctl group team
+--------------------
+
+Management of channel teams
+
+Child Commands
+  -  `mmctl group team disable`_ - Disable group constrains
+  -  `mmctl group team enable`_ - Enable group constrains
+  -  `mmctl group team list`_ - List channel groups
+  -  `mmctl group team status`_ - Check group status
+
+Options
+
+.. code-block:: sh
+
+      -h, --help   help for group
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+      --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl group team disable
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Description
+ Disables group constrains in the specified team.
+
+Format
+
+.. code-block:: sh
+
+    mmctl group team disable [team] [flags]
+
+Examples
+
+.. code-block:: sh
+
+    group team disable myteam
+
+Options
+
+.. code-block:: sh
+
+    -h, --help   help for disable
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl group team enable
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Enables group constrains in the specified team.
+
+Format
+
+.. code-block:: sh
+
+   mmctl group team enable [team] [flags]
+
+Examples
+
+.. code-block:: sh
+
+    group team enable myteam
+
+Options
+
+.. code-block:: sh
+
+    -h, --help   help for enable
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl group team list
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Description
+ List the groups associated with a team.
+
+Format
+
+.. code-block:: sh
+
+   mmctl group team list [team] [flags]
+
+Examples
+
+.. code-block:: sh
+
+  group team list myteam
+
+Options
+
+.. code-block:: sh
+
+    -h, --help   help for list
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+  --format string   the format of the command output [plain, json] (default "plain")
+
+mmctl group team status
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Description
+ Shows the group constrain status for the specified team.
+
+Format
+
+.. code-block:: sh
+
+     mmctl group team status [team] [flags]
+
+Examples
+
+.. code-block:: sh
+
+     group channel status myteam
+
+Options
+
+.. code-block:: sh
+
+    -h, --help   help for status
+
+Options Inherited from Parent Commands
+
+.. code-block:: sh
+
+    --format string   the format of the command output [plain, json] (default "plain")
+
 
 mmctl group list-ldap
 ^^^^^^^^^^^^^^^^^^^^

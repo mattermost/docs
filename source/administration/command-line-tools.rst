@@ -449,7 +449,11 @@ mattermost command
 mattermost command create
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl command create].
+
+Description
     Create a custom slash command for a specified team.
 
   Format
@@ -480,7 +484,11 @@ mattermost command create
 mattermost command delete
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl command delete].
+
+Description
     Delete a slash command. Commands can be specified by command ID.
 
   Format
@@ -496,7 +504,12 @@ mattermost command delete
 mattermost command list
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl command list].
+
+
+Description
     List all commands on specified teams or all teams by default.
 
   Format
@@ -593,7 +606,11 @@ mattermost config
 mattermost config get
 ~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl config get].
+
+Description
     Retrieve the value of a config setting by its name in dot notation.
 
   Format
@@ -654,7 +671,11 @@ mattermost config set
 mattermost config show
 ~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl config show].
+
+Description
     Print the current mattermost configuration in an easy to read format.
 
   Format
@@ -820,7 +841,12 @@ mattermost group
 mattermost group channel
 ------------------------
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl group channel].
+
+
+Description
     Commands for managing Mattermost groups linked to a channel.
 
   Child Commands
@@ -832,7 +858,11 @@ mattermost group channel
 mattermost group channel enable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl group channel enable].
+
+Description
     Enables group constraint on the specified channel. When a channel is group constrained, channel membership is managed by linked groups instead of managed by manually adding and removing users.
 
 .. note::
@@ -851,7 +881,11 @@ mattermost group channel enable
 mattermost group channel disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl group channel disable].
+
+Description
     Disables group constraint on the specified channel.
 
   Format
@@ -867,7 +901,11 @@ mattermost group channel disable
 mattermost group channel list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl group channel list].
+
+Description
     Lists the groups associated with a channel.
 
   Format
@@ -884,7 +922,11 @@ mattermost group channel list
 mattermost group channel status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl group channel status].
+
+Description
     Shows the group constraint status of the specified channel. Returns "Enabled" when channel membership is managed by linked groups.  Returns "Disabled" when the channel membership is managed by manually adding and removing users.
 
   Format
@@ -900,7 +942,11 @@ mattermost group channel status
 mattermost group team
 ------------------------
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl group team].
+
+Description
     Commands for managing Mattermost groups linked to a team.
 
   Child Commands
@@ -912,7 +958,11 @@ mattermost group team
 mattermost group team enable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl group team enable].
+
+Description
     Enables group constraint on the specified team. When a team is group constrained, team membership is managed by linked groups instead of managed by manually inviting and removing users.
 
 .. note::
@@ -931,7 +981,11 @@ mattermost group team enable
 mattermost group team disable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl group team disable].
+
+Description
     Disables group constraint on the specified team.
 
   Format
@@ -947,7 +1001,11 @@ mattermost group team disable
 mattermost group team list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl group team list].
+
+Description
     Lists the groups associated with a team.
 
   Format
@@ -964,7 +1022,11 @@ mattermost group team list
 mattermost group team status
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+.. note::
+
+   This command will be replaced in a future release with the mmctl command [mmctl group team status].
+
+Description
     Shows the group constraint status of the specified team. Returns "Enabled" when team membership is managed by linked groups.  Returns "Disabled" when the team membership is managed by manually inviting and removing users.
 
   Format
