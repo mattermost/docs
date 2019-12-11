@@ -96,7 +96,8 @@ However, if you would like to set up encryption for your SAML connection, click 
 
 For Mattermost 3.4 and later, the `FirstName` and `LastName` attributes are optional.
 
-.. note:: It is recommended that you also set up an attribute that is associated with a unique, non-changing identifier to prevent username or email collisions.
+.. note::
+It is recommended that you also set up an attribute that is associated with a unique, non-changing identifier to prevent username or email collisions.
 
 Then, click **Finish** to add the rule.
 
