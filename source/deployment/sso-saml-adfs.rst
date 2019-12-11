@@ -92,7 +92,7 @@ Create Claim Rules
 For Mattermost 3.4 and later, the *FirstName* and *LastName* attributes are optional.
 
 .. note::
-It is recommended that you configure a claim rule that associates a unique, unchanging identifier with the **Outgoing Claim Type** of ``IdAttribute``. Please check with your ADFS admin to determine which LDAP Attribute you should use. `More information is available here. <#how-to-bind-authentication-to-id-attribute-instead-of-email>`__
+  It is recommended that you configure a claim rule that associates a unique, unchanging identifier with the **Outgoing Claim Type** of ``IdAttribute``. Please check with your ADFS admin to determine which LDAP Attribute you should use. `More information is available here. <#how-to-bind-authentication-to-id-attribute-instead-of-email>`__
 
 Then, click **Finish** to add the rule.
 
