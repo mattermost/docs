@@ -4,7 +4,7 @@ This document describes a basic outline of how to get GitLab up and running on
 an OKD instance using the official Helm charts.
 
 **Note:**: OpenShift is currently not an officially supported platform, and the
-status of GitLab helm chart on OpenShift is thus experimental. This guide is
+status of GitLab Helm chart on OpenShift is thus experimental. This guide is
 provided as a starting point for users to try getting GitLab deployed on
 OpenShift and we welcome feedback and contributions to improve it. If you face
 any problems in installing or configuring GitLab by following this guide, open
