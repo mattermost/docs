@@ -16,8 +16,8 @@ To deploy the apps hosted in the Apple App Store and Google Play, we recommend y
 
 3. (Optional) Customize mobile push notification contents
   - Go to **System Console** > **Notifications** > **Mobile Push** in prior versions or **System Console > Site Configuration > Notifications** in versions after 5.12
-  - Select what type of information to include in push notifications
-  - Most deployments choose to include the full message snippet in push notifications unless they have policies against it to protect confidential information
+  - Select an option for **Push Notification Contents** to specify what type of information to include in push notifications
+  - Most deployments choose to include the **full message content sent in the notification payload**. If your organization has policies or compliance requirements regarding data security, you may opt for sending **full message content fetched from the server on receipt** (Enterprise Edition 20) so messages are not sent to Apple's Push Notification Service or Google's Firebase Cloud Messaging notification service.
 
 .. image:: ../images/mobile_push_contents.png
 
