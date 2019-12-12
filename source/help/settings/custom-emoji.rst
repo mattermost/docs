@@ -6,7 +6,7 @@ Settings for Custom Emoji are accessible from the **Main Menu** by clicking the 
 
 To create a Custom Emoji:
 
-1. Click on the three dots at the top of the channels sidebar to open the **Main Menu**.
+1. Click on the hamburger menu at the top of the channels sidebar to open the **Main Menu**.
 2. Select **Custom Emoji**.
 3. Click **Add Custom Emoji**.
 4. Enter a name for your Custom Emoji. (This is the name that will show up in the emoji autocomplete).
