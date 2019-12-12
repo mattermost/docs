@@ -18,11 +18,11 @@ Configuring a Data Retention Policy
 To set a custom data retention policy:
 
 1. Go to **System Console > Compliance > Data Retention Policy** (or **System Console > Advanced > Data Retention Policy** in versions prior to 5.12).
-2. Select a **Message Retention** option. Messages, including file attachments, older than the duration you set will be deleted nightly. The minimum message retention time is one day.
-3. Select a **File Retention** option. File uploads older than the duration you set will be deleted nightly from your file storage system, either from your local disk or your Amazon S3 service as specified in **System Console > Environment > File Storage** (or **System Console > Files > Storage** in versions prior to 5.12). The minimum file retention time is one day.
+2. Select a **Message Retention** option. When a time is specified, messages, including file attachments, older than the duration you set will be deleted at the specified time. The minimum retention period is one day.
+3. Select a **File Retention** option. When a time is specified uploaded files which are older than the duration you set will be deleted from your file storage system (either from your local disk or your Amazon S3 service as specified in **System Console > Environment > File Storage** (or **System Console > Files > Storage** in versions prior to 5.12)) at the specified time. The minimum retention period is one day.
 4. Set the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form HH:MM.
 
-Save the settings and restart your server. Messages and files older than the duration you set will be deleted daily at the specified server time.
+Save the settings and restart your server. Messages and files older than the duration you set will be deleted at the specified server time, if applicable.
 
 You can also run the deletion job manually at any time by clicking **Run Deletion Job Now** in **System Console > Compliance > Data Retention Policy** (or **System Console > Advanced > Data Retention Policy** in versions prior to 5.12).
 
