@@ -44,6 +44,7 @@ Compliance Reports are exports of all messages in Mattermost that match the repo
 
 1. Go to **System Console** > **Compliance Monitoring** (or **System Console > Compliance > Compliance Monitoring** in versions prior to 5.12).
 2. Fill in the following criteria:  
+
      - **Job Name:** Name the compliance report you are about to run (e.g., "HR Audit 455").
      - **From:** Start Date for search in YYYY-MM-DD format (e.g., "2016-03-11").
      - **To:** End Date of search in YYYY-MM-DD format (e.g., "2016-05-11").
