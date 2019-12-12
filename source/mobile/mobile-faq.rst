@@ -74,8 +74,9 @@ The following post metadata is sent in all push notifications:
 
 Additional metadata may be sent depending on the System Console setting for `Push Notification Contents <https://docs.mattermost.com/administration/config-settings.html#push-notification-contents>`__:
 
-- **Send generic description with sender and channel names**: ``Channel name`` metadata will be included
-- **Send full message snippet**: ``Post content`` and ``Channel name`` metadata will be included
+- **Generic description with sender and channel names**: ``Channel name`` metadata will be included
+- **Full message content sent in the notification payload**: ``Post content`` and ``Channel name`` metadata will be included
+- **Full message content fetched from the server on receipt** (*available in Enterprise Edition E20*): ``Post content`` and ``Channel name`` are not included in the notification payload, instead the ``Post ID`` is used to fetch ``Post content`` and ``Channel name`` from the server after the push notification is received on the device.
 
 
 What are my options for securing the mobile apps?
