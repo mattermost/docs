@@ -254,7 +254,6 @@ Reload Configuration from Disk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20*
 
-This button resets the configuration settings by reloading the settings from the disk. The server will still need to be restarted if a setting requiring server restart was changed.
 
 The workflow for failover without downing the server is to change the database line in the ``config.json`` file, click **Reload Configuration from Disk** then click **Recycle Database Connections** in the **Advanced > Database section**.
 
@@ -1548,15 +1547,17 @@ Organization name and mailing address displayed in the footer of email notificat
 
 Push Notification Contents
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Send generic description with only sender name**: Push notifications include only the name of the person who sent the message but no information about channel name or message text.
+**Generic description with only sender name**: Push notifications include only the name of the person who sent the message but no information about channel name or message text.
 
-**Send generic description with user and channel names**: Push notifications include names of users and channels but no specific details from the message text.
+**Generic description with sender and channel names**: Push notifications include names of users and channels but no specific details from the message text.
 
-**Send full message snippet**: Selecting "Send full message snippet" sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages. If your Push Notification Service is outside your firewall, it is HIGHLY RECOMMENDED this option only be used with an "https" protocol to encrypt the connection.
+**Full message content sent in the notification payload**: Selecting "Send full message snippet" sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages. If your Push Notification Service is outside your firewall, it is HIGHLY RECOMMENDED this option only be used with an "https" protocol to encrypt the connection.
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PushNotificationContents": "generic"`` with options ``"generic_no_channel"``, ``"generic"``, and ``"full"`` for the above settings, respectively. |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+**Full message content fetched from the server on receipt** (*Available in Enterprise Edition E20*): The notification payload relayed through APNS or FCM contains no message content, instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device. If the server cannot be reached, a generic notification will be displayed.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PushNotificationContents": "generic"`` with options ``"generic_no_channel"``, ``"generic"``, ``"full"``, and ``"id_loaded"`` for the above settings, respectively. |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Announcement Banner
 ~~~~~~~~~~~~~~~~~~~~~~~~~
