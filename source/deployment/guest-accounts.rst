@@ -136,7 +136,7 @@ A system message will be posted in the channels to let other members know a gues
 Removing Guests from Channels and Teams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Guests can be removed from a channel through the normal **Manage members** modals, or using the ``/kick`` or ``/remove`` commands. 
+Guests can be removed from a channel through the normal **Manage members** modals, by or using the ``/kick`` or ``/remove`` commands. 
 
 When a guest has been removed from all channels within a team and they belong to other teams, they will default into the last channel on the last team they have accessed. If they are removed from all channels on all teams, they will be taken to a screen letting them know they have no channels assigned.
 
