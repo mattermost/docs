@@ -32,14 +32,14 @@ Frequently Asked Questions (FAQs)
 What happens when a message is deleted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The message is removed from the Mattermost user interface and deleted from the Posts table. The message is no longer searchable and cannot be retrieved in pinned posts or flagged posts lists.
+The message is removed from the Mattermost user interface and deleted from the ``Posts`` table. The message is no longer searchable and cannot be retrieved in pinned posts or flagged posts lists.
 
-Replies that did not exceed the message duration are still displayed in the user interface. However, further replies to thread are no longer permitted.
+Replies that did not exceed the message duration are still displayed in the user interface. However, further replies are no longer possible.
 
 What happens when a file is deleted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The file attachment is removed from the Mattermost user interface, and deleted from the FileInfo table and from your local disk or Amazon S3 service as specified in **System Console > Environment > File Storage** (or **System Console > Files > Storage** in versions prior to 5.12).
+The file attachment is removed from the Mattermost user interface, deleted from the ``FileInfo`` table, and from your local disk or Amazon S3 service as specified in **System Console > Environment > File Storage** (or **System Console > Files > Storage** in versions prior to 5.12).
 
 Why didn't an old file get deleted after running the deletion job?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -84,4 +84,4 @@ How do I know if a data retention job fails?
 
 Mattermost provides the status of each data retention job in **System Console** > **Compliance** > **Data Retention Policy** (or **System Console > Advanced > Data Retention Policy** in versions prior to 5.12). Here, you can see if the job succeeded or failed, including the details of the error.
 
-Morever, any failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. Data retention job failures are identified with worker name ``EnterpriseDataRetention``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
+Additionally, any failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. Data retention job failures are identified with worker name ``EnterpriseDataRetention``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
