@@ -5,73 +5,84 @@ The mmctl tool is a remote CLI tool for Mattermost which is installed locally an
 is done with either login credentials or an authentication token. <elaborate more on this, provide links to other docs>.
 
 Being installed locally allows a System Admin to run CLI commands even in instances where there is no access to the
-server (e.g., via SSH).
-
-This tool is in beta and can be used alongside the Mattermost CLI tool. In the future, the Mattermost CLI tool will be
-deprecated. The following list describes the commands that have been migrated.
-
-.. code-block:: sh
-
-     auth        Manages the credentials of the remote Mattermost instances
-     channel     Management of channels
-     completion  Generates autocompletion scripts for bash and zsh
-     group       Management of groups
-     help        Help about any command
-     license     Licensing commands
-     logs        Display logs in a human-readable format
-     permissions Management of permissions and roles
-     plugin      Management of plugins
-     post        Management of posts
-     team        Management of teams
-     user        Management of users
-     websocket   Display websocket in a human-readable format
-
+server (e.g., via SSH). This tool is currently in beta and can be used alongside the Mattermost CLI tool.
+In the future, the Mattermost CLI tool will be deprecated.
 
 **Notes**
 
  -  Parameters in CLI commands are order-specific.
  -  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded
  by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
- -  Team name and channel name refer to the handles, not the display names. So in the url ``https://community.mattermost.com/core/channels/town-square`` team
+ -  Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team
  name would be ``core`` and channel name would be ``town-square``.
 
 
 Installing mmctl
 ----------------
 
-To install the project in your `$GOPATH` run:
+To install the project in your `$GOPATH` run the following command as admin user:
 
 .. code-block:: sh
 
    go get -u github.com/mattermost/mmctl
 
-
-<what happens next? Are there any steps required to access mmctl? E.g., opening terminal, logging in, setting up authentication? Where is authentication done?
-
-Compiling
-^^^^^^^^^
-
-First we have to install the dependencies of the project. ``mmctl`` uses ``go`` modules to manage the dependencies, so you need to have installed
-``go`` 1.11 or greater. We can compile the binary with:
+The``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to have installed
+``go`` 1.11 or greater and compile the binary using:
 
 .. code-block:: sh
 
   make build
 
 
-Logging In
-----------
+Authenticating and Logging In
+-----------------------------
 
-First we have to log into a Mattermost instance:
+Authenticate to a server (e.g. >mmctl auth login https://test.mattermost.com). Then username and password
+(and MFA token if MFA is enabled on the account).
 
-  .. code-block:: sh
+Password
+
+.. code-block:: sh
+
+     $ mmctl auth login https://community.mattermost.com --name community --username my-username --password mysupersecret
+
+The ``login`` command can also work interactively, so if you leave any required flag empty, ``mmctl`` will ask you for it interactively:
+
+.. code-block:: sh
+
+    $ mmctl auth login https://community.mattermost.com
+    Connection name: community
+    Username: my-username
+    Password:
+
+MFA
+
+To log in with MFA, use the ``--mfa-token`` flag:
+
+.. code-block:: sh
+
+   $ mmctl auth login https://community.mattermost.com --name community --username my-username --password mysupersecret --mfa-token 123456
+
+Access Tokens
+^^^^^^^^^^^^^
+
+You can generate and use a personal access token to authenticate with a server, instead of using username and password to log in:
+
+.. code-block:: sh
+
+   $ mmctl auth login https://community.mattermost.com --name community --access-token MY_ACCESS_TOKEN
+
+
+into a Mattermost instance:
+
+.. code-block:: sh
 
      $ mmctl auth login https://my-instance.example.com --name my-instance --username john.doe --password mysupersecret
      credentials for my-instance: john.doe@https://my-instance.example.com stored
 
 We can check the currently stored credentials with:
 
-  .. code-block:: sh
+.. code-block:: sh
 
     $ mmctl auth list
 
@@ -93,42 +104,6 @@ And now we can run commands normally:
    last_name: Doe
    email: john.doe@example.com
    auth_service:
-
-Login Methods
-^^^^^^^^^^^^^
-
-Password
-
-  .. code-block:: sh
-
-     $ mmctl auth login https://community.mattermost.com --name community --username my-username --password mysupersecret
-
-The ``login`` command can also work interactively, so if you leave any required flag empty, ``mmctl`` will ask you for it interactively:
-
-  .. code-block:: sh
-
-    $ mmctl auth login https://community.mattermost.com
-    Connection name: community
-    Username: my-username
-    Password:
-
-MFA
-
-
-To log in with MFA, use the ``--mfa-token`` flag:
-
-.. code-block:: sh
-
-   $ mmctl auth login https://community.mattermost.com --name community --username my-username --password mysupersecret --mfa-token 123456
-
-Access Tokens
-^^^^^^^^^^^^^
-
-You can generate and use a personal access token to authenticate with a server, instead of using username and password to log in:
-
-.. code-block:: sh
-
-   $ mmctl auth login https://community.mattermost.com --name community --access-token MY_ACCESS_TOKEN
 
 
 Installing Shell Completions
@@ -197,22 +172,23 @@ Commands for channel management.
 mmctl channel add
 ^^^^^^^^^^^^^^^^^
 
-Description
-Add users to a channel. If adding multiple users, use a space-separated list.
+**Description**
 
-Format
+  Add users to a channel. If adding multiple users, use a space-separated list.
+
+*Format*
 
 .. code-block:: sh
 
    mmctl channel add [channel][users][flags]
 
-Examples
+*Examples*
 
 .. code-block:: sh
 
    channel add myteam:mychannel user@example.com username
 
-Options Inherited from Parent Commands
+*Options Inherited from Parent Commands*
 
 .. code-block:: sh
 
@@ -221,29 +197,30 @@ Options Inherited from Parent Commands
 mmctl channel archive
 ^^^^^^^^^^^^^^^^^^^^
 
-Description
-Archive one/some channel/s along with all related information including posts from the database. Channels can be
-specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID).
+**Description**
 
-Format
+  Archive one or multiple channels along with all related information including posts from the database. Channels can be
+  specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID).
+
+*Format*
 
 .. code-block:: sh
 
    mmctl channel archive [channels] [flags]
 
-Examples
+*Examples*
 
 .. code-block:: sh
 
    channel archive myteam:mychannel
 
-Options
+*Options*
 
 .. code-block:: sh
 
    -h, --help   help for archive
 
-Options Inherited from Parent Commands
+*Options Inherited from Parent Commands*
 
 .. code-block:: sh
 
@@ -252,23 +229,24 @@ Options Inherited from Parent Commands
 mmctl channel create
 ^^^^^^^^^^^^^^^^^
 
-Description
-Create a channel.
+**Description**
 
-Format
+  Create a channel.
+
+*Format*
 
 .. code-block:: sh
 
    mmctl channel create [flags]
 
-Examples
+*Examples*
 
 .. code-block:: sh
 
   channel create --team myteam --name mynewchannel --display_name "My New Channel"
   channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
 
-Options
+*Options*
 
 .. code-block:: sh
 
@@ -280,7 +258,6 @@ Options
     --purpose string        Channel purpose
     --team string           Team name or ID
 
-
 Options Inherited from Parent Commands
 
 .. code-block:: sh
@@ -290,29 +267,30 @@ Options Inherited from Parent Commands
 mmctl channel list
 ^^^^^^^^^^^^^^^^^
 
-Description
-List all channels on specified teams. Archived channels are appended with '(archived)'.
+**Description**
 
-Format
+  List all channels on specified teams. Archived channels are appended with '(archived)'.
+
+*Format*
 
 .. code-block:: sh
 
    mmctl channel list [teams] [flags]
 
-Examples
+*Examples*
 
 .. code-block:: sh
 
   channel list myteam
 
-Options
+*Options*
 
 .. code-block:: sh
 
   -h, --help   help for list
 
 
-Options Inherited from Parent Commands
+*Options Inherited from Parent Commands*
 
 .. code-block:: sh
 

@@ -176,13 +176,13 @@ mattermost channel add
 Description
     Add users to a channel. If adding multiple users, use a space-separated list.
 
-  Format
-    .. code-block:: none
+ Format
+   .. code-block:: none
 
       mattermost channel add {channel} {users}
 
-  Examples
-    .. code-block:: none
+ Examples
+   .. code-block:: none
 
       ./mattermost channel add 8soyabwthjnf9qibfztje5a36h user@example.com username
       ./mattermost channel add myteam:mychannel user@example.com username
@@ -216,34 +216,35 @@ mattermost channel create
 
    This command will be replaced in a future release with the mmctl command [mmctl channel create].
 
+
 Description
     Create a channel.
 
-  Format
-    .. code-block:: none
+ Format
+   .. code-block:: none
 
      mattermost channel create
 
-  Examples
-    .. code-block:: none
+ Examples
+   .. code-block:: none
 
       ./mattermost channel create --team myteam --name mynewchannel --display_name "My New Channel"
       ./mattermost channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
 
-  Options
-    .. code-block:: none
+ Options
+   .. code-block:: none
 
-          --display_name string   Channel Display Name
-          --header string         Channel header
-          --name string           Channel Name
-          --private               Create a private channel.
-          --purpose string        Channel purpose
-          --team string           Team name or ID
+      --display_name string   Channel Display Name
+      --header string         Channel header
+      --name string           Channel Name
+      --private               Create a private channel.
+      --purpose string        Channel purpose
+      --team string           Team name or ID
 
 mattermost channel delete
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Description
+Description
     Permanently delete a channel along with all related information, including posts from the database. Channels can be specified by {team}:{channel} using the team and channel names, or by using channel IDs.
 
   Format
