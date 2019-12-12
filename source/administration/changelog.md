@@ -12,8 +12,10 @@ Mattermost v5.18.0 contains low to high level security fixes. [Upgrading](http:/
 
 ### Compatibility
  
-### Breaking Changes
- - Breaking change for mark posts as unread **XXX**
+### Important Upgrade Notes
+ - Marking a post unread from the mobile app requires v1.26 or later. If using v5.18, but mobile is on v1.25 or earlier, marking a post unread from webapp/desktop will only be reflected on mobile the next time the app launches or is brought to the foreground.
+ 
+**IMPORTANT:** If you upgrade from a release earlier than 5.17, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Highlights
  
@@ -110,6 +112,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``PluginSettings``:
    - Added ``RequirePluginSignature`` to add support for requiring valid plugin signatures before starting managed or unmanaged plugins.
    - Added ``SignaturePublicKeyFiles`` to add support for specifying public keys to be trusted to validate plugin signatures in addition to the Mattermost plugin signing key built-into the server.
+ - Under Push Notification Contents:
+   - Added ``id_loaded`` to add an option for full message content being fetched from the server on receipt (*Available in Enterprise Edition E20*).
  - Under ``ServiceSettings``:
    - Removed ``ExperimentalLdapGroupSync`` setting.
 
