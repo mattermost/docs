@@ -165,7 +165,7 @@ Additionally, no new guests can be invited or added using the attribute as an au
 credentials match the user attribute (the only attribute which is active when Guest Access is disabled), they will be reactivated and promoted
 to a member user upon their next login.
 
-You can disable individual guest accounts in **System Console > User Management**, via the **Manage Members** modal. In version 5.18,
+You can disable individual guest accounts in **System Console > User Management** via the **Manage Members** modal. In version 5.18,
 when a single Guest Account is disabled or the feature is disabled, the guests will be marked as ``inactive``, be logged out of Mattermost, and all their sessions will be revoked.
 
 Reinstating Guest Accounts
