@@ -130,7 +130,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### API Changes
  - Added POST handler for /plugins/marketplace to install marketplace plugins.
  - Added a ``search_archived`` API endpoint to be able to search archived channels.
- - Added an API endpoint to be able to set posts as unread.
+ - Added a ``post_unread`` API endpoint to be able to set posts as unread.
 
 ### Websocket Event Changes
  - Added marked post as unread Websocket Event.
