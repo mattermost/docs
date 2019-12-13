@@ -4037,12 +4037,12 @@ Note that even if ``town-square`` is not listed, every user is added to that cha
 | This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Allow Users to View Archived Channels (Experimental)
+Allow Users to View Archived Channels (Beta)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Allows users to view permalinks and search for content of channels that have been archived. Users can only view the content in channels of which they were a member before the channel was archived.
+**True**: Allows users to view, share and search for content of channels that have been archived. Users can only view the content in channels of which they were a member before the channel was archived.
 
-**False**: Users are unable to view permalinks and search for content of channels that have been archived.
+**False**: Users are unable to view, share or search for content of channels that have been archived.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ViewArchivedChannels": false`` with options ``true`` and ``false``.                                      |
