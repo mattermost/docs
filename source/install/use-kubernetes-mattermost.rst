@@ -89,7 +89,7 @@ Use the required ``ingressName`` URL in your browser to directly access blue or 
 To update the version of blue or green, change the version in the manifest to
 match the current version or the version you’d like to deploy. This
 change (regardless of which is the ``productionDeployment``) initiates a database migration.
-The schema is backwards and forwards compatible across minor versions  (from 5.9 onwards) and will not disrupt the production deployment.
+The schema is backwards and forwards compatible across minor versions (from 5.9 onwards) and will not disrupt the production deployment.
 However, it will auto-upgrade the database.
 
 
