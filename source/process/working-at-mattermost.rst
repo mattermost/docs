@@ -39,6 +39,7 @@ This gives us tremendous advantages:
 
 Also, we have Meetups around the world to deepen and broaden our relationships and build the future of our products together:
 
+* Take a look at the  `MatterCon 2019 (held in Punta Cana, Dominican Republic) video <https://youtu.be/pMySvCfy7Bw>`_. 
 * Check out `MatterCon 2018 in Lisbon, Portugal <https://www.youtube.com/watch?v=CZXaYttz3NA&feature=youtu.be>`__.
 * Watch highlights of `our Community Meetup in Toronto, Canada <https://www.youtube.com/watch?v=5c9oJdbXrMU>`__.
 * See `our Core Commiter Summit in Las Vegas, Nevada, USA <https://www.youtube.com/watch?v=_RpmrM-5UFY>`__.
@@ -113,7 +114,7 @@ There is no limit to how much time-off you can take when your work is meeting or
 2) Holidays
 ~~~~~~~~~~~
 
-Please take off holidays relevant to your culture, resident country and preferences. When doing so, please follow the time-off process in 1) above.
+Please take off holidays relevant to your culture, region/country and preferences. When doing so, please follow the time-off process in 1) above.
 
 We're headquartered in the US and have a large Canadian contingent, so below are holidays we're expecting people from those countries to take off:
 

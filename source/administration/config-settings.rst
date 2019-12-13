@@ -1659,7 +1659,12 @@ Posts
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Enable Link Previews
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-**True**: Enables users to display a preview of website content, image links and YouTube links below the message when available. When true, website previews can be enabled from **Account Settings > Display > Website Link Previews**. Link previews are requested by the server, meaning the server must be connected to the internet and have access through the firewall (if applicable) to the websites from which previews are expected, such as https://gfycat.com/, https://www.youtube.com/, https://imgur.com/ and any other websites that users may share frequently. 
+
+Link previews are previews of linked website content, image links, and YouTube videos that are displayed below posts when available. 
+
+Link previews are requested by the server, meaning the Mattermost server must be connected to the internet for previews to be displayed. This connection can be established through a `firewall or outbound proxy <https://docs.mattermost.com/install/outbound-proxy.html>`__ in environments where direct internet connectivity is not given or security policies make this necessary.
+
+**True**: Website link previews, image link previews and YouTube previews are enabled on the server. Users can enable or disable website previews for themselves from **Account Settings > Display > Website Link Previews**.
 
 **False**: Website link previews, image link previews and YouTube previews are disabled. The server does not request metadata for any links sent in messages. 
 
@@ -3772,8 +3777,10 @@ The queries above rebuild the materialized ``PublicChannels`` table without modi
 | This feature's ``config.json`` setting is ``"EnablePublicChannelsMaterialization": true`` with options ``true`` and ``false``.                    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Read Replicas (Enterprise Edition)
+Read Replicas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
 Specifies the connection strings for the read replica databases. Each string must be in the same form as used for the `Data Source`_ setting.
 
 Changes to this setting require a server restart before taking effect.
@@ -3782,8 +3789,10 @@ Changes to this setting require a server restart before taking effect.
 | This feature's ``config.json`` setting is ``"DataSourceReplicas": []`` with string array input consisting of database connection strings.   |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 
-Search Replicas (Enterprise Edition)
+Search Replicas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E10 and higher*
+
 Specifies the connection strings for the search replica databases. A search replica is similar to a read replica, but is used only for handling search queries. Each string must be in the same form as used for the `Data Source`_ setting.
 
 Changes to this setting require a server restart before taking effect.
@@ -4181,6 +4190,9 @@ The number of shards to use for each post index. If this setting is changed, it 
 Aggregate Search Indexes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Elasticsearch indexes over the age specified by this setting will be aggregated during the daily scheduled job.
+
+.. note::
+  If using `data retention <https://docs.mattermost.com/administration/data-retention.html>`_ and `ElasticSearch <https://docs.mattermost.com/deployment/elasticsearch.html>`_, ensure the `ElasticSearch aggregate search indexes <https://docs.mattermost.com/administration/config-settings.html#aggregate-search-indexes>`_ setting is set to a value that is greater than your data retention policy in days. 
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AggregatePostsAfterDays": 365`` with numerical input.        |

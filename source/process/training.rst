@@ -662,6 +662,11 @@ Bug
 
 An obvious error in Mattermost software. Changes required to accommodate unsupported 3rd party software (such as browsers or operating systems) are not considered bugs, they are considered improvements.
 
+COM
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+COM is short for `Customer Obsession Meeting <https://docs.mattermost.com/process/training.html?#customer-obsession-all-hands-meeting>`_, which  is our “All Hands” meeting focused on how we’re aligning the company to serve our customers.
+
 Dead Tarzan
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -713,6 +718,11 @@ A one-line change to code can cost more mana than a 100-line change due to risk 
 
 Every feature added has an initial and on-going mana cost, which is taken into account in feature decisions.
 
+MLT
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The "Mattermost Leadership Team".
+
 RHS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -727,6 +737,18 @@ SpinWick
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 New test servers that use the cloud infrastructure and can be spun up on pull requests to test changes. Name is a throwback to "Spinmint" mixed with "John Wick".
+
+YouTweetInFace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A reference to the major social media platforms: 
+
+- YouTube ("You")
+- Twitter ("Tweet")
+- LinkedIn ("In")
+- Facebook ("Face")
+
+The `YouTweetInFace channel <https://community.mattermost.com/private-core/channels/pre-tweet>`_ is used to discuss social media posts before asking contributors and community to engage with the content.
 
 Windows Vista approach
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
