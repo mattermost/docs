@@ -67,7 +67,7 @@ the `helm install` command using the `--set` flags.
 | `ruby.numWorkers`               |                                            | Number of Gitaly-Ruby worker processes                                                                                                                               |
 | `shell.concurrency[]`           |                                            | Concurrency of each RPC endpoint Specified using keys `rpc` and `maxPerRepo`                                                                                         |
 | `git.catFileCacheSize`          |                                            | Cache size used by Git cat-file process                                                                                                                              |
-| `prometheus.grpcLatencyBuckets` |                                            | Buckets corresponding to histogram latencies on GRPC method calls to be recorded by Gitaly. A string form of the array, like "[1.0, 1.5, 2.0]", is required as input |
+| `prometheus.grpcLatencyBuckets` |                                            | Buckets corresponding to histogram latencies on GRPC method calls to be recorded by Gitaly. A string form of the array (for example, `"[1.0, 1.5, 2.0]"`) is required as input |
 
 ## Chart configuration examples
 

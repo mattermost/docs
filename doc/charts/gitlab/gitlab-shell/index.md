@@ -125,15 +125,15 @@ redis:
     key: redis-password
 ```
 
-| Name             | Type    | Default | Description |
-|:-----------------|:-------:|:--------|:------------|
-| host             | String  |         | The hostname of the Redis server with the database to use. This can be omitted in lieu of `serviceName`. If using Redis Sentinels, the `host` attribute needs to be set to the cluster name as specified in the `sentinel.conf`.|
-| password.key     | String  |         | The name of the key in the secret below that contains the password. |
-| password.secret  | String  |         | The name of the Kubernetes `Secret` to pull from. |
-| port             | Integer | `6379`  | The port on which to connect to the Redis server. |
-| serviceName      | String  | `redis` | The name of the `service` which is operating the Redis database. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Redis as a part of the overall GitLab chart. |
-| sentinels.[].host| String  |         | The hostname of Redis Sentinel server for a Redis HA setup. |
-| sentinels.[].port| Integer | `26379` | The port on which to connect to the Redis Sentinel server. |
+| Name                | Type    | Default | Description |
+|:--------------------|:-------:|:--------|:------------|
+| `host`              | String  |         | The hostname of the Redis server with the database to use. This can be omitted in lieu of `serviceName`. If using Redis Sentinels, the `host` attribute needs to be set to the cluster name as specified in the `sentinel.conf`.|
+| `password.key`      | String  |         | The name of the key in the secret below that contains the password. |
+| `password.secret`   | String  |         | The name of the Kubernetes `Secret` to pull from. |
+| `port`              | Integer | `6379`  | The port on which to connect to the Redis server. |
+| `serviceName`       | String  | `redis` | The name of the `service` which is operating the Redis database. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Redis as a part of the overall GitLab chart. |
+| `sentinels.[].host` | String  |         | The hostname of Redis Sentinel server for a Redis HA setup. |
+| `sentinels.[].port` | Integer | `26379` | The port on which to connect to the Redis Sentinel server. |
 
 _Note:_ The current Redis Sentinel support only supports Sentinels that have
 been deployed separately from the GitLab chart. As a result, the Redis
@@ -150,11 +150,11 @@ unicorn:
   port: 8080
 ```
 
-| Name        | Type    | Default   | Description |
-|:------------|:-------:|:----------|:------------|
-| host        | String  |           | The hostname of the Unicorn server. This can be omitted in lieu of `serviceName`. |
-| port        | Integer | `8080`    | The port on which to connect to the Unicorn server.|
-| serviceName | String  | `unicorn` | The name of the `service` which is operating the Unicorn server. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Unicorn as a part of the overall GitLab chart. |
+| Name          | Type    | Default   | Description |
+|:--------------|:-------:|:----------|:------------|
+| `host`        | String  |           | The hostname of the Unicorn server. This can be omitted in lieu of `serviceName`. |
+| `port`        | Integer | `8080`    | The port on which to connect to the Unicorn server.|
+| `serviceName` | String  | `unicorn` | The name of the `service` which is operating the Unicorn server. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Unicorn as a part of the overall GitLab chart. |
 
 ## Chart Settings
 
@@ -176,10 +176,10 @@ authToken:
  key: secret
 ```
 
-| Name             | Type    | Default | Description |
-|:-----------------|:-------:|:--------|:------------|
-| authToken.key    | String  |         | The name of the key in the above secret that contains the authToken. |
-| authToken.secret | String  |         | The name of the Kubernetes `Secret` to pull from. |
+| Name               | Type    | Default | Description |
+|:-------------------|:-------:|:--------|:------------|
+| `authToken.key`    | String  |         | The name of the key in the above secret that contains the auth token. |
+| `authToken.secret` | String  |         | The name of the Kubernetes `Secret` to pull from. |
 
 ### LoadBalancer Service
 
