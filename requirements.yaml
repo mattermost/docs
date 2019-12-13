@@ -1,6 +1,6 @@
 dependencies:
 - name: cert-manager
-  version: 0.10.0
+  version: 0.10.1
   repository: https://charts.jetstack.io/
   condition: certmanager.install
   alias: certmanager
