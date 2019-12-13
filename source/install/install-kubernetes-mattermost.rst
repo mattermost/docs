@@ -109,14 +109,14 @@ Navigate to the ``ingressName`` URL in your browser and use Mattermost.
 Restoring an Existing Mattermost MySQL Database
 -----------------------------------------------
 
->> I wonder whether this wouldn't be better off in the Install Cluster section of the guide because it covers installation/deployment
-and has a bit more complexity to it? 
-
-You can use the Mattermost Kubernetes Operator and utilize an existing Mattermost MySQL database with a new Mattermost installation.
+You can leverage the Mattermost Operator to utilize an existing Mattermost MySQL database with a new Mattermost installation, in its own namespace.
 The steps you follow to create and upload your backup depends on the provider you're using and your use case. It's
-recommended that you consult their documentation or, if your deployment is managed in a different way, consult your Administrator.
+recommended that you consult the relevant documentation or, if your deployment is managed in a different way, consult your Administrator.
 
-The following steps provide an overview of the process.
+It is important to note that this process requires the creation of a new Mattermost
+installation - editing the existing ``.yaml`` files is not recommended and can result in data loss.
+
+The process described below needs to be completed prior to proceeding with the Mattermost deployment.
 
 1. Create a backup of your database (e.g., using *mysqldump*).
 2. Deploy a new server (e.g., an AWS instance).
@@ -125,6 +125,7 @@ The following steps provide an overview of the process.
 5. Create a ``secret.yaml``` file:
 
 Open a text editor and create a text file containing your credentials which will be used to access the uploaded database.
+
 Save the file as ``secret.yaml``. The example below is for AWS/S3.
 
 .. code-block:: yaml
@@ -140,11 +141,11 @@ Save the file as ``secret.yaml``. The example below is for AWS/S3.
     AWS_REGION: us-east-1
     S3_PROVIDER: AWS
 
-Where
+**Parameters**
+- ``name``. The name of this manifest which is referenced in the installation manifest.
 
 
-6. Create a Mattermost cluster installation manifest. (should we link to the install documentation which will also shortly include
-the custom settings and mention that this is a separate installation of Mattermost and should be sized appropriately?)
+6. Create a Mattermost cluster installation manifest.
 
 Open a text editor and create a text file with the following details. Save the file as ``mattermost-installation.yaml``:
 
@@ -170,8 +171,22 @@ Open a text editor and create a text file with the following details. Save the f
       username: ""
       password: ""
 
-Where:
+The Mattermost installation manifest contains fields which must be edited in line with your configuration and environment requirements.
 
+.. csv-table::
+    :header: "Field", "Description", "Must Edit"
+
+    "metadata.name", "The name of your Mattermost as it will be shown in Kubernetes. The shorter the better.", "Yes"
+    "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users'.", "Yes"
+    "spec.ingressName", "The DNS for your Mattermost installation.", "Yes"
+    "spec.version", "The Mattermost version.", "No"
+    "spec.mattermostLicenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license). Required for enterprise deployments.", "Yes"
+    "spec.database.storageSize", "The storage size for your database. Your Kubernetes cluster must have volumes this size or larger.", "No"
+    "spec.minio.storageSize", "The storage size for your file storage. Your Kubernetes cluster must have volumes this size or larger.", "No"
+    "spec.elasticSearch", "The section for Elasticsearch settings. Remove this section if you will not be using Elasticsearch.", "No"
+    "spec.elasticSearch.host", "The hostname for your Elasticsearch instance.", "No"
+    "spec.elasticSearch.username", "The username for your Elasticsearch instance.", "No"
+    "spec.elasticSearch.password", "The password for your Elasticsearch instance.", "No"
 
 7. Create a restore manifest:
 
@@ -191,12 +206,12 @@ Open a text editor and create a text file with the following details. Save the f
     mattermostDBUser: mmuser
     restoreSecret: myawscreds
 
-Where:
-- mattermostClusterName defines the ClusterInstallation name (is this the mattermost installation yaml file created in previous step?)
-- RestoreSecret defines where the backup file is located (is this the secret.yaml file and, if so, why is it called myawscreds?)
-- mattermostDBPassword defines the password used to access the database (which database? the one uploaded to AWS?)
-- mattermostDBUser defines the username required to access the database (the MM database? Or the uploaded one?)
-- initBucketURL defines the URL of the storage instance/server where the backed up DB is stored (yes?)
+**Parameters**
+- ``mattermostClusterName``. The ClusterInstallation file name.
+- ``RestoreSecret``. The location of the backup file.
+- ``mattermostDBPassword``. The password used to access the database.
+- ``mattermostDBUser``. The username required to access the database.
+- ``initBucketURL``. The URL of the storage instance/server where the backed up DB is stored.
 
 8. To initiate deployment, apply the file and specify the path where the newly-created files have been saved:
 
@@ -205,12 +220,8 @@ Where:
       $ kubectl create ns mattermost
       $ kubectl apply -n mattermost -f /path/to/mattermost-installation.yaml
 
-Where
-ns defines the new mattermost installation where the backed up database will be restored. (is this a separate namespace to
-the initial one and, if so, should we specify this?)
-
-The deployment process can be monitored in the Kubernetes user interface.
+The deployment process can be monitored in the Kubernetes user interface. If errors or issues are experienced,
+review the Mattermost log files or MySQL logs for guidance including error messages. If remediation is not successful, contact
+Mattermost customer support for assistance. 
 
 Once complete, access your Mattermost instance and confirm that the database has been restored.
-
-Issues experienced: check MM log or MySQL log for guidance.
