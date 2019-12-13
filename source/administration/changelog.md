@@ -139,7 +139,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Known Issues
  - System Console left-hand side scrollbar may be too dark to see.
  - Option to invite users by email is displayed even if email invitations are disabled.
- - Unable to use `Jump` in search results for archived channels in some cases.
  - Option to mark posts as unread is unexpectedly available when viewing archived channels.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
