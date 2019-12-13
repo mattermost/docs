@@ -176,19 +176,19 @@ mmctl channel add
 
   Add users to a channel. If adding multiple users, use a space-separated list.
 
-*Format*
+Format
 
 .. code-block:: sh
 
    mmctl channel add [channel][users][flags]
 
-*Examples*
+Examples
 
 .. code-block:: sh
 
    channel add myteam:mychannel user@example.com username
 
-*Options Inherited from Parent Commands*
+Options Inherited from Parent Commands
 
 .. code-block:: sh
 
@@ -202,25 +202,25 @@ mmctl channel archive
   Archive one or multiple channels along with all related information including posts from the database. Channels can be
   specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID).
 
-*Format*
+Format
 
 .. code-block:: sh
 
    mmctl channel archive [channels] [flags]
 
-*Examples*
+Examples
 
 .. code-block:: sh
 
    channel archive myteam:mychannel
 
-*Options*
+Options
 
 .. code-block:: sh
 
    -h, --help   help for archive
 
-*Options Inherited from Parent Commands*
+Options Inherited from Parent Commands
 
 .. code-block:: sh
 
@@ -233,20 +233,20 @@ mmctl channel create
 
   Create a channel.
 
-*Format*
+Format
 
 .. code-block:: sh
 
    mmctl channel create [flags]
 
-*Examples*
+Examples
 
 .. code-block:: sh
 
   channel create --team myteam --name mynewchannel --display_name "My New Channel"
   channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
 
-*Options*
+Options
 
 .. code-block:: sh
 
@@ -271,26 +271,26 @@ mmctl channel list
 
   List all channels on specified teams. Archived channels are appended with '(archived)'.
 
-*Format*
+Format
 
 .. code-block:: sh
 
    mmctl channel list [teams] [flags]
 
-*Examples*
+Examples
 
 .. code-block:: sh
 
   channel list myteam
 
-*Options*
+Options
 
 .. code-block:: sh
 
   -h, --help   help for list
 
 
-*Options Inherited from Parent Commands*
+Options Inherited from Parent Commands
 
 .. code-block:: sh
 
@@ -304,7 +304,9 @@ mmctl channel move
 mmctl channel remove
 ^^^^^^^^^^^^^^^^^
 
-Remove specified users from a channel.
+**Description**
+
+  Remove specified users from a channel.
 
 Format
 
@@ -335,7 +337,9 @@ Options Inherited from Parent Commands
 mmctl channel rename
 ^^^^^^^^^^^^^^^^^^^
 
-Rename a channel.
+**Description**
+
+  Rename a channel.
 
 Format
 
@@ -365,7 +369,9 @@ Options Inherited from Parent Commands
 mmctl channel restore
 ^^^^^^^^^^^^^^^^^^^^^
 
-Restore a previously deleted channel Channels can be specified by ``[team]:[channel]`` (e.g., myteam:mychannel or by channel ID.
+**Description**
+
+  Restore a previously deleted channel Channels can be specified by ``[team]:[channel]`` (e.g., myteam:mychannel or by channel ID.
 
 Format
 
@@ -394,7 +400,9 @@ Options Inherited from Parent Commands
 mmctl channel make_private
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Set the type of a channel from public to private. Channel can be specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID.
+**Description**
+
+  Set the type of a channel from public to private. Channel can be specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID.
 
 Format
 
@@ -423,7 +431,9 @@ Options Inherited from Parent Commands
 mmctl channel search
 ^^^^^^^^^^^^^^^^^^^^^
 
-Search a channel by channel name. Channel can be specified by team (e.g., ``--team myTeam myChannel```) or by team ID.
+**Description**
+
+  Search a channel by channel name. Channel can be specified by team (e.g., ``--team myTeam myChannel```) or by team ID.
 
 Format
 
@@ -466,7 +476,9 @@ Management of slash commands.
 mmctl command create
 ^^^^^^^^^^^^^^^^^^^^
 
-Add users to a channel. If adding multiple users, use a space-separated list.
+**Description**
+
+  Add users to a channel. If adding multiple users, use a space-separated list.
 
 Format
 
@@ -506,7 +518,9 @@ Options Inherited from Parent Commands
 mmctl command delete
 ^^^^^^^^^^^^^^^^^^^^
 
-Delete a slash command. Commands can be specified by command ID.
+**Dscription**
+
+  Delete a slash command. Commands can be specified by command ID.
 
 Format
 
@@ -536,7 +550,9 @@ Options Inherited from Parent Commands
 mmctl command list
 ^^^^^^^^^^^^^^^^^^^^
 
-List all commands on specified teams.
+**Description**
+
+  List all commands on specified teams.
 
 Format
 
@@ -574,7 +590,9 @@ Configuration settings.
 mmctl config get
 ^^^^^^^^^^^^^^^^^
 
-Gets the value of a config setting by its name in dot notation.
+**Description**
+
+  Gets the value of a config setting by its name in dot notation.
 
 Format
 
@@ -603,7 +621,9 @@ Options Inherited from Parent Commands
 mmctl config show
 ^^^^^^^^^^^^^^^^^
 
-Prints the server configuration and writes to STDOUT in JSON format.
+**Description**
+
+  Prints the server configuration and writes to STDOUT in JSON format.
 
 Format
 
@@ -673,7 +693,9 @@ Options Inherited from Parent Commands
 mmctl group channel disable
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Disables group constrains in the specified channel
+**Description**
+
+  Disables group constrains in the specified channel
 
 Format
 
@@ -702,7 +724,9 @@ Options Inherited from Parent Commands
 mmctl group channel enable
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Enables group constrains in the specified channel
+**Description**
+
+  Enables group constrains in the specified channel
 
 Format
 
@@ -731,7 +755,9 @@ Options Inherited from Parent Commands
 mmctl group channel list
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-List the groups associated with a channel.
+**Description**
+
+  List the groups associated with a channel.
 
 Format
 
@@ -760,7 +786,9 @@ Options Inherited from Parent Commands
 mmctl group channel status
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Shows the group constrain status for the specified channel
+**Description**
+
+  Shows the group constrain status for the specified channel
 
 Format
 
@@ -813,7 +841,8 @@ Options Inherited from Parent Commands
 mmctl group team disable
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Description
+**Description**
+
  Disables group constrains in the specified team.
 
 Format
@@ -843,7 +872,9 @@ Options Inherited from Parent Commands
 mmctl group team enable
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Enables group constrains in the specified team.
+**Description**
+
+  Enables group constrains in the specified team.
 
 Format
 
@@ -872,7 +903,8 @@ Options Inherited from Parent Commands
 mmctl group team list
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Description
+**Description**
+
  List the groups associated with a team.
 
 Format
@@ -902,7 +934,8 @@ Options Inherited from Parent Commands
 mmctl group team status
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Description
+**Description**
+
  Shows the group constrain status for the specified team.
 
 Format
@@ -933,7 +966,9 @@ Options Inherited from Parent Commands
 mmctl group list-ldap
 ^^^^^^^^^^^^^^^^^^^^
 
-List LDAP groups.
+**Description**
+
+  List LDAP groups.
 
 Format
 
@@ -967,7 +1002,9 @@ LDAP related utilities
 mmctl ldap sync
 ^^^^^^^^^^^^^^^
 
-Synchronize all LDAP users and groups now.
+**Description**
+
+  Synchronize all LDAP users and groups now.
 
 Format
 
@@ -1006,7 +1043,9 @@ Child Commands
 mmctl license remove
 ^^^^^^^^^^^^^^^^^^^^
 
-Remove the current license and use Mattermost in Team Edition.
+**Description**
+
+  Remove the current license and use Mattermost in Team Edition.
 
 Format
 
@@ -1036,7 +1075,9 @@ Options Inherited from Parent Commands
 mmctl license remove
 ^^^^^^^^^^^^^^^^^^^^
 
-Upload a license. Replaces current license.
+**Description**
+
+  Upload a license. Replaces current license.
 
 Format
 
@@ -1065,7 +1106,9 @@ Options Inherited from Parent Commands
 mmctl logs
 ----------
 
-Display logs in a human-readable format
+**Description**
+
+  Display logs in a human-readable format
 
 Format
 
@@ -1100,7 +1143,9 @@ Child Commands
 mmctl permissions add (EE only)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Add one or more permissions to an existing role (Only works in Enterprise Edition).
+**Description**
+
+  Add one or more permissions to an existing role (Only works in Enterprise Edition).
 
 Format
 
@@ -1129,7 +1174,9 @@ Options Inherited from Parent Commands
 mmctl permissions remove (EE only)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Remove one or more permissions from an existing role (Only works in Enterprise Edition).
+**Description**
+
+  Remove one or more permissions from an existing role (Only works in Enterprise Edition).
 
 Format
 
@@ -1159,7 +1206,9 @@ Options Inherited from Parent Commands
 mmctl permissions show
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Show all the information about a role.
+**Description**
+
+  Show all the information about a role.
 
 Format
 
@@ -1200,7 +1249,9 @@ Child Commands
 mmctl plugin add
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Add plugins to your Mattermost server.
+**Description**
+
+  Add plugins to your Mattermost server.
 
 Format
 
@@ -1230,7 +1281,9 @@ Options Inherited from Parent Commands
 mmctl plugin delete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Delete previously uploaded plugins from your Mattermost server.
+**Description**
+
+  Delete previously uploaded plugins from your Mattermost server.
 
 Format
 
@@ -1259,7 +1312,9 @@ Options Inherited from Parent Commands
 mmctl plugin disable
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Disable plugins. Disabled plugins are immediately removed from the user interface and logged out of all sessions.
+**Description**
+
+  Disable plugins. Disabled plugins are immediately removed from the user interface and logged out of all sessions.
 
 Format
 
@@ -1289,7 +1344,9 @@ Options Inherited from Parent Commands
 mmctl plugin enable
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Enable plugins for use on your Mattermost server.
+**Description**
+
+  Enable plugins for use on your Mattermost server.
 
 Format
 
@@ -1318,7 +1375,9 @@ Options Inherited from Parent Commands
 mmctl plugin list
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-List all active and inactive plugins installed on your Mattermost server.
+**Description**
+
+  List all active and inactive plugins installed on your Mattermost server.
 
 Format
 
@@ -1359,7 +1418,9 @@ Child Commands
 mmctl post create
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create a post
+**Description**
+
+  Create a post
 
 Format
 
@@ -1388,7 +1449,9 @@ Options Inherited from Parent Commands
 mmctl post list
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-List posts for a channel
+**Description**
+
+  List posts for a channel
 
 Format
 
@@ -1434,7 +1497,9 @@ Child Commands
 mmctl team add
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Add some users to team
+**Description**
+
+  Add some users to team
 
 Format
 
@@ -1464,7 +1529,9 @@ Options Inherited from Parent Commands
 mmctl team create
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create a team.
+**Description**
+
+  Create a team.
 
 Format
 
@@ -1498,7 +1565,9 @@ Options Inherited from Parent Commands
 mmctl team delete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Permanently delete some teams. Permanently deletes a team along with all related information including posts from the database.
+**Description**
+
+  Permanently delete some teams. Permanently deletes a team along with all related information including posts from the database.
 
 Format
 
@@ -1529,7 +1598,9 @@ Options Inherited from Parent Commands
 mmctl team list
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-List all teams on the server.
+**Description**
+
+  List all teams on the server.
 
 Format
 
@@ -1558,7 +1629,9 @@ Options Inherited from Parent Commands
 mmctl team remove
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Remove some users from team.
+**Description**
+
+  Remove some users from team.
 
 Format
 
@@ -1587,7 +1660,9 @@ Options Inherited from Parent Commands
 mmctl team search
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Search for teams based on name.
+**Description**
+
+  Search for teams based on name.
 
 Format
 
@@ -1632,7 +1707,9 @@ Child Commands
 mmctl user activate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Activate a user.
+**Description**
+
+  Activate a user.
 
 Format
 
@@ -1654,7 +1731,9 @@ Options Inherited from Parent Commands
 mmctl user create
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Create a user.
+**Description**
+
+  Create a user.
 
 Format
 
@@ -1691,7 +1770,9 @@ Options Inherited from Parent Commands
 mmctl user deactivate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Deactivate users. Deactivated users are immediately logged out of all sessions and are unable to log back in.
+**Description**
+
+  Deactivate users. Deactivated users are immediately logged out of all sessions and are unable to log back in.
 
 Format
 
@@ -1723,7 +1804,9 @@ Options Inherited from Parent Commands
 mmctl user email
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Change email of the user.
+**Description**
+
+  Change email of the user.
 
 Format
 
@@ -1754,7 +1837,9 @@ Options Inherited from Parent Commands
 mmctl user invite
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Send user an email invite to a team. You can invite a user to multiple teams by listing them. You can specify teams by name or ID.
+**Description**
+
+  Send user an email invite to a team. You can invite a user to multiple teams by listing them. You can specify teams by name or ID.
 
 Format
 
@@ -1775,7 +1860,6 @@ Options
 
     -h, --help       help for invite
 
-
 Options Inherited from Parent Commands
 
 .. code-block:: sh
@@ -1785,7 +1869,9 @@ Options Inherited from Parent Commands
 mmctl user reset_password
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Send users an email to reset their password.
+**Description**
+
+  Send users an email to reset their password.
 
 Format
 
@@ -1815,7 +1901,9 @@ Options Inherited from Parent Commands
 mmctl user resetmfa
 ^^^^^^^^^^^^^^^^^^^^
 
-Turn off multi-factor authentication for a user. If MFA enforcement is enabled, the user will be forced to re-enable MFA as soon as they login.
+**Description**
+
+  Turn off multi-factor authentication for a user. If MFA enforcement is enabled, the user will be forced to re-enable MFA as soon as they login.
 
 Format
 
@@ -1845,7 +1933,9 @@ Options Inherited from Parent Commands
 mmctl user search
 ^^^^^^^^^^^^^^^^^^
 
-Search for users based on username, email, or user ID.
+**Description**
+
+  Search for users based on username, email, or user ID.
 
 Format
 
@@ -1881,7 +1971,9 @@ mmctl webhook
 mmctl websocket
 -------------
 
-Display websocket in a human-readable format.
+**Description**
+
+  Display websocket in a human-readable format.
 
 Format
 
