@@ -42,14 +42,17 @@ We will bump it for:
 | `0.3.0`       | `11.1.0`       | GitLab minor release, along with new chart changes |
 | `0.4.0`       | `11.1.0`       | Chart change that we feel makes sense to include as a minor version bump |
 | `0.2.4`       | `11.0.3`       | Security release |
-| ~~`0.3.1`~~   | ~~`11.1.1`~~   | ~~Security release~~ <sup>*1</sup> |
-| `0.4.1`       | `11.1.1`       | Security release <sup>*1</sup> |
+| ~~`0.3.1`~~   | ~~`11.1.1`~~   | ~~Security release~~ (*1*) |
+| `0.4.1`       | `11.1.1`       | Security release (*1*) |
 | ...           | ...            | ... |
 | `1.0.0`       | `11.x.0`       | GitLab minor release, along with Chart GA |
 | `2.0.0`       | `11.x.x`       | Introduced some breaking change to the chart |
 | `3.0.0`       | `12.0.0`       | GitLab 12 release |
 
-<sup>1</sup> If we have two chart versions that both would need to be upgraded to the same image version for a security release, we will just update the newer one. Otherwise automating release logic will be overly complicated. Users can workaround if needed by manually specifying the image version, or upgrading their chart.
+- (*1*): If we have two chart versions that both would need to be upgraded to the same image version
+  for a security release, we will just update the newer one. Otherwise automating release logic will
+  be overly complicated. Users can workaround if needed by manually specifying the image version, or
+  upgrading their chart.
 
 ### Future iteration
 
