@@ -1,4 +1,4 @@
-
+{{ if .Values.certmanager.install }}
 ---
 apiVersion: apiextensions.k8s.io/v1beta1
 kind: CustomResourceDefinition
@@ -7500,3 +7500,4 @@ status:
   conditions: []
   storedVersions: []
 ---
+{{ end }}
