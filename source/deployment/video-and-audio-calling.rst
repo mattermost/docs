@@ -17,6 +17,15 @@ Zoom
 - Docs: https://docs.mattermost.com/integrations/zoom.html
 - Source code: https://github.com/mattermost/mattermost-plugin-zoom
 
+Cisco Webex Cloud
+~~~~~~~~~~~~~~~~~~~~
+
+- Start and join voice calls, video calls and use screen sharing with your team members, developed by Mattermost.
+- Using a ``/webex`` command or clicking a video icon in a Mattermost channel invites team members to join a Webex call, hosted using the credentials of the user who initiated the call.
+- // ?? Requires 1 paid `Zoom Pro, Business, Education, or API plan, <https://zoom.us/pricing>`_ to generate an API key and secret for $14.99/month.
+- Supports a self-hosted cloud solution, and a vendor-hosted cloud solution.
+- Source code + docs: https://github.com/mattermost/mattermost-plugin-webex
+
 BigBlueButton
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -32,6 +41,14 @@ Skype for Business
 - Clicking a video icon in a Mattermost channel invites team members to join a Skype for Business call, hosted using the credentials of the user who initiated the call.
 - Supports a vendor-hosted cloud solution.
 - Source code + docs: https://github.com/kosgrz/mattermost-plugin-skype4business
+
+WebRTC
+~~~~~~~~~~~~~~~~~~~~
+
+- Start one-on-one voice and video calls, based on the WebRTC protocol, developed by Nikhil Rajan.
+- Calls embedded into the Mattermost interface for seamless user experience.
+- No third-party dependancy, uses a browser-to-browser and serverless approach to initiate calls.
+- Source code + docs: https://github.com/niklabh/mattermost-plugin-webrtc-video
 
 Kopano WebMeetings
 ~~~~~~~~~~~~~~~~~~~~
