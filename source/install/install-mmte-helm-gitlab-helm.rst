@@ -57,7 +57,7 @@ Deploy Mattermost Team Edition Helm Chart
 
 Requirements:
 
-  - Mattermost Team Edition Helm Chart Version: 1.4.0
+  - Mattermost Team Edition Helm Chart Version: 3.8.2
 
 To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``MySql`` chart and configure InitContainer and Environment variables in ``values.yaml``. The list below indicates the values that should be changed. Note that we assume the GitLab chart name is ``gitlab``.
 
@@ -87,10 +87,10 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
       enabled: false
 
   # Mattermost configuration:
-  config:
-    siteUrl: "https://<your-mattermost-domain>"
-    siteName: "Mattermost"
-    enableSignUpWithEmail: false
+  configJSON:
+    SiteUrl: "https://<your-mattermost-domain>"
+    SiteName: "Mattermost"
+    EnableSignUpWithEmail: false
 
   ingress:
     enabled: true
@@ -235,7 +235,7 @@ After these changes, deploy the Mattermost Team Edition Helm Chart with followin
 
 .. code-block:: bash
 
-  $ helm upgrade --install mattermost -f values.yaml stable/mattermost-team-edition
+  $ helm upgrade --install mattermost -f values.yaml mattermost/mattermost-team-edition
 
 Wait for the pods to run. Then access your Mattermost server, and log in with your GitLab credentials.
 
