@@ -11,6 +11,8 @@ Important Upgrade Notes
 |                                                    | will only be reflected on mobile the next time the app launches or is brought to the foreground.                                                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | ``mattermost-server`` import path of all Go files in the repository as well as the module lines were changed to comply with the module version specification.    |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Removed ``Team.InviteId`` from the related Websocket event and sanitized it on all team API endpoints for users without invite permissions.                      |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.16.0                                            | Support for Internet Explorer (IE11) is removed. See                                                                                                             |
 |                                                    | `this forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.                      |
