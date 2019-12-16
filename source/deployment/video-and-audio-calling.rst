@@ -20,7 +20,7 @@ Zoom
 Cisco Webex Cloud
 ~~~~~~~~~~~~~~~~~~~~
 
-- Start and join voice calls, video calls and use screen sharing with your team members, developed by Mattermost.
+- Start and join voice and video calls, and share your screen with members of your team (developed by Mattermost). 
 - Using a ``/webex`` command or clicking a video icon in a Mattermost channel invites team members to join a Webex call, hosted using the credentials of the user who initiated the call.
 - // ?? Requires 1 paid `Zoom Pro, Business, Education, or API plan, <https://zoom.us/pricing>`_ to generate an API key and secret for $14.99/month.
 - Supports a self-hosted cloud solution, and a vendor-hosted cloud solution.
@@ -86,4 +86,3 @@ Support for other 3rd party video, audio and screensharing solutions via plugins
 Have a proposal for a voice and video call integration? `Let us know in the feature proposal forum <https://mattermost.uservoice.com/forums/306457-general?category_id=202591>`_.
 
 Have built an integration? `Let us know <https://integrations.mattermost.com/submit-an-integration/>`_ and we'll share in our `Integrations Directory <https://integrations.mattermost.com>`_.
-
