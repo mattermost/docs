@@ -143,6 +143,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Inviting multiple users with valid/allowed and invalid emails causes the invites for the valid users not to be sent.
  - Option to invite users by email is displayed even if email invitations are disabled.
  - Option to mark posts as unread is unexpectedly available when viewing archived channels.
+ - Users may need to reinstall and delete cache on Classic apps if launching and logging into the app get stuck.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
