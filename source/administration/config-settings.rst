@@ -346,7 +346,7 @@ encrypt data stored at rest in the database.
 | This feature's ``config.json`` setting is ``"AtRestEncryptKey": ""`` with string input.  |
 +------------------------------------------------------------------------------------------+
 
-Trace
+SQL Statement Logging (Trace)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Executing SQL statements are written to the log for development.
 
@@ -387,6 +387,16 @@ The address of the Elasticsearch server. `Learn more about Elasticsearch in our 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ConnectionUrl": ""`` with string input.                                   |
 +------------------------------------------------------------------------------------------------------------------------+
+
+Skip TLS Verification
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True:** Skips the certificate verification step for TLS connections. Not recommended for production environments where TLS is required. For testing only.
+
+**False:** Mattermost does not skip certificate verification.
+
++-------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SkipTLSVerification": false`` with boolean input.        |
++-------------------------------------------------------------------------------------------------------+
 
 Server Username
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1434,6 +1444,18 @@ Specifies how names are displayed in the user interface by default. Please note 
 | This feature's ``config.json`` setting is ``"TeammateNameDisplay": "username"`` with options ``"username"``, ``"nickname_full_name"``, and ``"full_name"`` for the above settings, respectively. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+
+Allow Users to View Archived Channels (Beta)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Allows users to view, share and search for content of channels that have been archived. Users can only view the content in channels of which they were a member before the channel was archived.
+
+**False**: Users are unable to view, share or search for content of channels that have been archived.
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ViewArchivedChannels": false`` with options ``true`` and ``false``.                                      |
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Show Email Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Show email address of all users.
@@ -1594,7 +1616,7 @@ Banner Color
 The background color of the announcement banner.
 
 +---------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``""BannerColor": "#f2a93b"`` with string input.  |
+| This feature's ``config.json`` setting is ``"BannerColor": "#f2a93b"`` with string input.   |
 +---------------------------------------------------------------------------------------------+
 
 Banner Text Color
@@ -1603,7 +1625,7 @@ Banner Text Color
 The color of the text in the announcement banner.
 
 +-------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``""BannerTextColor": "#333333"`` with string input.  |
+| This feature's ``config.json`` setting is ``"BannerTextColor": "#333333"`` with string input.   |
 +-------------------------------------------------------------------------------------------------+
 
 Allow Banner Dismissal
@@ -1614,7 +1636,7 @@ Allow Banner Dismissal
 **False**: The banner is permanently visible until it is turned off by the System Admin.
 
 +-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``""AllowBannerDismissal": true`` with options ``true`` and ``false``.  |
+| This feature's ``config.json`` setting is ``"AllowBannerDismissal": true`` with options ``true`` and ``false``.   |
 +-------------------------------------------------------------------------------------------------------------------+
 
 Emoji
@@ -1680,6 +1702,17 @@ Enable SVGs
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSVGs": false`` with options ``true`` and ``false``.                                                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Latex Rendering
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Enables rendering of latex code.
+
+**False**: Disables rendering of latex code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, latex code will be highlighted.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``.                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Custom URL Schemes
@@ -1873,7 +1906,7 @@ Minimum Password Length
 Minimum number of characters required for a valid password. Must be a whole number greater than or equal to 5 and less than or equal to 64.
 
 +----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MinimumLength": 10”`` with numerical input.                 |
+| This feature's ``config.json`` setting is ``"MinimumLength": 10`` with numerical input.                  |
 +----------------------------------------------------------------------------------------------------------+
 
 Password Requirements
@@ -3207,8 +3240,6 @@ Specify the color of the AD/LDAP login button text for white labeling purposes. 
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-
-
 Allow Authentication Transfer (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
@@ -3258,17 +3289,6 @@ Specify the maximum frequency, in seconds, which the batching job checks for new
 +-----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``EmailBatchingInterval": 30`` with numerical input.                        |
 +-----------------------------------------------------------------------------------------------------------------------+
-
-Skip Server Certificate Verification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: Do not validate SMTP servers when connecting to them.
-
-**False**: Validate SMTP servers when connecting to them.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SkipServerCertificateVerification": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------+
 
 Email Login Button Color
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -3762,28 +3782,6 @@ Enable API Team Deletion
 | This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``.                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Disable Bots When Owner Is Deactivated
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: Bot accounts managed by a user are disabled by default upon user deactivation. Those with permissions to manage bot accounts can re-enable them in **Main Menu > Integrations > Bot Accounts**.
-
-**False**: Bot accounts managed by a user stay enabled upon user deactivation. We strongly recommend creating new tokens for the bot to ensure the user who was deactivated no longer has access to read or write data in the system via the bot access token.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DisableBotsWhenOwnerIsDeactivated": true`` with options ``true`` and ``false``.                                         |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Enable Latex
-^^^^^^^^^^^^^
-
-**True**: Enables rendering of latex code.
-
-**False**: Disables rendering of latex code to prevent the app from crashing when sharing code that might outgrow assigned memory. When disabled, latex code will be highlighted.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableLatex": false`` with options ``true`` and ``false``.                                                              |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 SQL Settings
 ~~~~~~~~~~~~
 
@@ -4089,17 +4087,6 @@ Note that even if ``town-square`` is not listed, every user is added to that cha
 | This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Allow Users to View Archived Channels (Beta)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**True**: Allows users to view, share and search for content of channels that have been archived. Users can only view the content in channels of which they were a member before the channel was archived.
-
-**False**: Users are unable to view, share or search for content of channels that have been archived.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ViewArchivedChannels": false`` with options ``true`` and ``false``.                                      |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Email Settings
 ~~~~~~~~~~~~~~
 
@@ -4282,16 +4269,6 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.       |
 +-----------------------------------------------------------------------------------------------------------------+
-
-Skip TLS Verification
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**True:** Skips the certificate verification step for TLS connections. Not recommended for production environments where TLS is required. For testing only.
-
-**False:** Mattermost does not skip certificate verification.
-
-+-------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"SkipTLSVerification": false`` with boolean input.        |
-+-------------------------------------------------------------------------------------------------------+
 
 Trace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
