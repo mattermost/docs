@@ -1429,7 +1429,7 @@ Options
   -h, --help   help for permissions
 
 
-mmctl permissions add (EE only)
+mmctl permissions add
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
@@ -1460,7 +1460,7 @@ Options Inherited from Parent Commands
 
     --format string   the format of the command output [plain, json] (default "plain")
 
-mmctl permissions remove (EE only)
+mmctl permissions remove
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Description**
@@ -1838,6 +1838,10 @@ Options Inherited from Parent Commands
 
     --format string   the format of the command output [plain, json] (default "plain")
 
+mmctl team archive
+^^^^^^^^^^^^^^^^
+
+*In progress*
 
 mmctl team create
 ^^^^^^^^^^^^^^^^^^
