@@ -42,6 +42,7 @@ Table below contains all the possible charts configurations that can be supplied
 | `extraContainers`       | List of extra containers to include      |                   |
 | `extraVolumes`          | List of extra volumes to create          |                   |
 | `extraVolumeMounts`     | List of extra volumes mountes to do      |                   |
+| `bootsnap.enabled`      | Enable the Bootsnap cache for Rails      | `true`            |
 
 ## Chart configuration examples
 

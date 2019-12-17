@@ -1,0 +1,5 @@
+---
+title: Enable Bootsnap cache in migrations
+merge_request: 1069
+author:
+type: added
