@@ -2386,7 +2386,7 @@ Guest Attribute
 ^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion used to apply a guest role to users in Mattermost.
+(Optional) The attribute in the SAML Assertion used to apply a Guest role to users in Mattermost.
 
 See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`__ for more information.
 
