@@ -127,6 +127,10 @@ If Site URL is not set, the following features will operate incorrectly:
 | This feature's ``config.json`` setting is ``"SiteURL": ""`` with string input.                                    |
 +-------------------------------------------------------------------------------------------------------------------+
 
+Test Live URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This button confirms that the value entered into the Site URL is valid and live.
+
 Listen Address
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -254,7 +258,6 @@ Reload Configuration from Disk
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20*
 
-This button resets the configuration settings by reloading the settings from the disk. The server will still need to be restarted if a setting requiring server restart was changed.
 
 The workflow for failover without downing the server is to change the database line in the ``config.json`` file, click **Reload Configuration from Disk** then click **Recycle Database Connections** in the **Advanced > Database section**.
 
@@ -1548,15 +1551,17 @@ Organization name and mailing address displayed in the footer of email notificat
 
 Push Notification Contents
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Send generic description with only sender name**: Push notifications include only the name of the person who sent the message but no information about channel name or message text.
+**Generic description with only sender name**: Push notifications include only the name of the person who sent the message but no information about channel name or message text.
 
-**Send generic description with user and channel names**: Push notifications include names of users and channels but no specific details from the message text.
+**Generic description with sender and channel names**: Push notifications include names of users and channels but no specific details from the message text.
 
-**Send full message snippet**: Selecting "Send full message snippet" sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages. If your Push Notification Service is outside your firewall, it is HIGHLY RECOMMENDED this option only be used with an "https" protocol to encrypt the connection.
+**Full message content sent in the notification payload**: Selecting "Send full message snippet" sends excerpts from messages triggering notifications with specifics and may include confidential information sent in messages. If your Push Notification Service is outside your firewall, it is HIGHLY RECOMMENDED this option only be used with an "https" protocol to encrypt the connection.
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"PushNotificationContents": "generic"`` with options ``"generic_no_channel"``, ``"generic"``, and ``"full"`` for the above settings, respectively. |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+**Full message content fetched from the server on receipt** (*Available in Enterprise Edition E20*): The notification payload relayed through APNS or FCM contains no message content. Instead it contains a unique message ID used to fetch message content from the server when a push notification is received by a device. If the server cannot be reached, a generic notification will be displayed.
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PushNotificationContents": "generic"`` with options ``"generic_no_channel"``, ``"generic"``, ``"full"``, and ``"id_loaded"`` for the above settings, respectively. |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Announcement Banner
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -2285,6 +2290,22 @@ Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://examp
 | This feature's ``config.json`` setting is ``"AssertionConsumerServiceURL": ""`` with string input.                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+SignatureAlgorithm
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The signature algorithm used to sign the request.  Supported options are `RSAwithSHA1 <http://www.w3.org/2000/09/xmldsig#rsa-sha1>`_, `RSAwithSHA256 <http://www.w3.org/2000/09/xmldsig#rsa-sha1>`_, and `RSAwithSHA512 <http://www.w3.org/2001/04/xmldsig-more#rsa-sha512>`_. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SignatureAlgorithm": ""`` with string input.                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+CanonicalAlgorithm
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The canonicalization algorithm. Supported options are `Exclusive XML Canonicalization 1.0 <http://www.w3.org/2001/10/xml-exc-c14n#>`_ and `Canonical XML 1.1 <http://www.w3.org/2006/12/xml-c14n11>`_.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"CanonicalAlgorithm": ""`` with string input.                                                                            |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable Encryption
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 **True**: Mattermost will decrypt SAML Assertions encrypted with your Service Provider Public Certificate.
@@ -2682,6 +2703,26 @@ Lists installed plugins on your Mattermost server and whether they are enabled. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"PluginStates": {}`` with object input mapping plugin IDs as keys to objects, each of which contains a key ``"Enable": false`` with options ``true`` or ``false``. |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Require Plugin Signature
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Require valid plugin signatures before starting managed or unmanaged plugins. Prepackaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
+
+**False**: Do not require valid plugin signatures before starting managed or unmanaged plugins. Pre-packaged plugins are not subject to plugin signature verification. Plugins installed through the Plugin Marketplace are always subject to plugin signature verification at the time of download.
+
++---------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RequirePluginSignature": true`` with options ``true`` and ``false``.   |
++---------------------------------------------------------------------------------------------------------------------+
+
+Signature Public Key Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In addition to the Mattermost plugin signing key built-into the server, each public key specified here is trusted to validate plugin signatures.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with with string array input consisting of contents that are relative or absolute paths to signature files.                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Autolink
@@ -3137,6 +3178,8 @@ Specify the color of the AD/LDAP login button text for white labeling purposes. 
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
+
+
 Allow Authentication Transfer (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
@@ -3305,20 +3348,6 @@ Changes made when hardened mode is enabled:
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false``.                                          |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Enable AD/LDAP Group Sync (Experimental)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E20 and higher*
-
-**True**: Enables AD/LDAP Group Sync configurable under **Access Controls > Groups**.
-
-**False**: Disables AD/LDAP Group Sync and removes the **Access Controls > Groups** from the System Console.  
-
-For more information on AD/LDAP Group Sync, please see the `AD/LDAP Group Sync documentation <https://docs.mattermost.com/deployment/ldap-group-sync.html>`_.
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalLdapGroupSync": false`` with options ``true`` and ``false``.                                               |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Preview Features (Experimental)
@@ -3992,6 +4021,19 @@ Restrict System Admin (Experimental)
 Team Settings
 ~~~~~~~~~~~~~~
 
+Teammate Name Display
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Control Teammate Name Display at the system level.
+
+**True**: Allows System Admins to control Teammate Name Display at the system level.
+
+**False**: System Admins cannot control Teammate Name Display at the system level.
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"LockTeammateNameDisplay": []`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------+
+
 Default Channels (Experimental)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Default channels every user is added to automatically after joining a new team. Only applies to public channels, but affects all teams on the server.
@@ -4004,12 +4046,12 @@ Note that even if ``town-square`` is not listed, every user is added to that cha
 | This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Allow Users to View Archived Channels (Experimental)
+Allow Users to View Archived Channels (Beta)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Allows users to view permalinks and search for content of channels that have been archived. Users can only view the content in channels of which they were a member before the channel was archived.
+**True**: Allows users to view, share and search for content of channels that have been archived. Users can only view the content in channels of which they were a member before the channel was archived.
 
-**False**: Users are unable to view permalinks and search for content of channels that have been archived.
+**False**: Users are unable to view, share or search for content of channels that have been archived.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ViewArchivedChannels": false`` with options ``true`` and ``false``.                                      |
@@ -4591,4 +4633,3 @@ The height to which profile pictures are resized after being uploaded via Accoun
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ProfileHeight": 128`` with numerical input.                                                                             |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
