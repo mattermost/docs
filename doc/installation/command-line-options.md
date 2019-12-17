@@ -255,6 +255,7 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 | `gitlab.gitlab-shell.service.name`                           | Shell service name                             | `gitlab-shell`                                                   |
 | `gitlab.gitlab-shell.service.type`                           | Shell service type                             | `ClusterIP`                                                      |
 | `gitlab.gitlab-shell.unicorn.serviceName`                    | Unicorn service name                           | `unicorn`                                                        |
+| `gitlab.migrations.bootsnap.enabled`                         | Migrations Bootsnap enable flag                | true                                                             |
 | `gitlab.migrations.enabled`                                  | Migrations enable flag                         | true                                                             |
 | `gitlab.migrations.image.pullPolicy`                         | Migrations pull policy                         | `Always`                                                         |
 | `gitlab.migrations.image.repository`                         | Migrations image repository                    | `registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee`       |

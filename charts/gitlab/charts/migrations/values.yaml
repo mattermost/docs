@@ -57,3 +57,5 @@ resources:
     memory: 200Mi
 activeDeadlineSeconds: 3600
 backoffLimit: 6
+bootsnap:
+  enabled: true
