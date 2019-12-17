@@ -432,6 +432,7 @@ upgradeCheck:
 ## Installation & configuration of stable/cert-manager
 ## See requirements.yaml for current version
 certmanager:
+  nameOverride: cert-manager
   # Install cert-manager chart. Set to false if you already have cert-manager
   # installed or if you are not using cert-manager.
   install: true
