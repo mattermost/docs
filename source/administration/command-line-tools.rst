@@ -170,7 +170,7 @@ mattermost channel add
 
 .. note::
 
-   This command will be replaced in a future release with the mmctl command [mmctl channel add].
+   This command will be replaced in a future release with the mmctl command :doc:`mmctl channel add <mmctl-channel-add>`.
 
 
 Description
