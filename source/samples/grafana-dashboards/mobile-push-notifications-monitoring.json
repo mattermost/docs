@@ -31,7 +31,7 @@
         "rgba(245, 54, 54, 0.9)"
       ],
       "datasource": "Prometheus",
-      "description": "The amount of notifications sent through the proxy",
+      "description": "The number of push notifications sent through the proxy",
       "format": "none",
       "gauge": {
         "maxValue": 100,
@@ -42,7 +42,7 @@
       },
       "gridPos": {
         "h": 6,
-        "w": 5,
+        "w": 4,
         "x": 0,
         "y": 0
       },
@@ -119,7 +119,7 @@
       ],
       "datasource": "Prometheus",
       "decimals": 1,
-      "description": "The percentage of messages sent through the proxy",
+      "description": "The percentage of push notifications sent that contained new messages",
       "format": "percentunit",
       "gauge": {
         "maxValue": 1,
@@ -131,7 +131,7 @@
       "gridPos": {
         "h": 6,
         "w": 4,
-        "x": 5,
+        "x": 4,
         "y": 0
       },
       "id": 14,
@@ -178,7 +178,7 @@
       "thresholds": "0.1,0.5",
       "timeFrom": null,
       "timeShift": null,
-      "title": "Push Notification Messages",
+      "title": "Message Notifications",
       "type": "singlestat",
       "valueFontSize": "70%",
       "valueMaps": [
@@ -201,7 +201,7 @@
       ],
       "datasource": "Prometheus",
       "decimals": 1,
-      "description": "Total percentage of clear notifications sent through the push proxy",
+      "description": "The percentage of push notifications sent to clear a previous notification",
       "format": "percentunit",
       "gauge": {
         "maxValue": 1,
@@ -213,7 +213,7 @@
       "gridPos": {
         "h": 6,
         "w": 4,
-        "x": 9,
+        "x": 8,
         "y": 0
       },
       "id": 16,
@@ -263,7 +263,92 @@
       "thresholds": "0.5,0.7",
       "timeFrom": null,
       "timeShift": null,
-      "title": "Push Clear Notification",
+      "title": "Clear Notifications",
+      "type": "singlestat",
+      "valueFontSize": "70%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": true,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "Prometheus",
+      "decimals": 1,
+      "description": "The percentage of push notifications sent to update the notification count on the app icon",
+      "format": "percentunit",
+      "gauge": {
+        "maxValue": 1,
+        "minValue": 0,
+        "show": true,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 6,
+        "w": 4,
+        "x": 12,
+        "y": 0
+      },
+      "id": 56,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "sum(service_notifications_total{platform=\"$Platform\", type=\"update_badge\"}) /  sum(service_notifications_total{platform=\"$Platform\"})",
+          "format": "time_series",
+          "instant": false,
+          "intervalFactor": 2,
+          "refId": "A"
+        }
+      ],
+      "thresholds": "0.5,0.7",
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Update Badge Notifications",
       "type": "singlestat",
       "valueFontSize": "70%",
       "valueMaps": [
@@ -298,7 +383,7 @@
       "gridPos": {
         "h": 6,
         "w": 4,
-        "x": 13,
+        "x": 16,
         "y": 0
       },
       "id": 44,
@@ -383,7 +468,7 @@
       "gridPos": {
         "h": 6,
         "w": 4,
-        "x": 17,
+        "x": 20,
         "y": 0
       },
       "id": 54,

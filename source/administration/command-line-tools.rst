@@ -543,6 +543,7 @@ mattermost config
   Child Command
     - `mattermost config get`_ - Retrieve the value of a config setting by its name in dot notation.
     - `mattermost config migrate`_ - Migrate a file-based configuration to (or from) a database-based configuration.
+    - `mattermost config reset`_ - Resets the value of a config setting by its name in dot notation or a setting section.
     - `mattermost config set`_ - Set the value of a config setting by its name in dot notation.
     - `mattermost config show`_ - Print the current mattermost configuration in an easy to read format.
     - `mattermost config validate`_ - Validate the configuration file.
@@ -586,6 +587,27 @@ mattermost config migrate
     .. code-block:: none
 
        ./mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
+       
+mattermost config reset
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Resets the value of a config setting by its name in dot notation or a setting section to the default value. Accepts multiple values for array settings. When no parameters are given, it will reset all config settings. 
+    
+  Format
+    .. code-block:: none
+
+      mattermost config reset {config.name} {setting section}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost config reset SqlSettings.DriverName LogSettings
+       
+   Options
+    .. code-block:: none
+
+          --confirm   Confirm you really want to reset the config setting and a backup has been performed.     
     
 mattermost config set
 ~~~~~~~~~~~~~~~~~~~~~
