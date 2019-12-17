@@ -600,6 +600,7 @@ mattermost config
   Child Command
     - `mattermost config get`_ - Retrieve the value of a config setting by its name in dot notation.
     - `mattermost config migrate`_ - Migrate a file-based configuration to (or from) a database-based configuration.
+    - `mattermost config reset`_ - Resets the value of a config setting by its name in dot notation or a setting section.
     - `mattermost config set`_ - Set the value of a config setting by its name in dot notation.
     - `mattermost config show`_ - Print the current mattermost configuration in an easy to read format.
     - `mattermost config validate`_ - Validate the configuration file.

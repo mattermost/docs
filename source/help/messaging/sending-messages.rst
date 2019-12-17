@@ -43,3 +43,11 @@ If the link is to a message in a Public Channel, any member of the team can see 
 
 .. tip::
   The timestamp that appears beside the username of any message is also a permalink.
+
+Marking Messages as Unread
+--------------------------
+
+Marking a message as unread will bold the channel in your sidebar and add the new messages line above the marked message. This can be a useful reminder to follow-up on the message later if you don't have time to address it when the message was read.
+
+Click the **[...]** menu next to a message, then click **Mark as Unread**.
+
