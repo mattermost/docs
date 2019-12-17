@@ -107,6 +107,8 @@ To enable plugin uploads, manually set **PluginSettings > EnableUploads** to ``t
 
 With plugin uploads enabled, navigate to **System Console > Plugins > Management** and upload a plugin bundle. Plugin bundles are ``*.tar.gz`` files containing the server executables and webapp resources for the plugin. You can also specify a URL to install a plugin bundle from a remote source.
 
+Note: When **RequirePluginSignature** is `true` - plugin uploads cannot be enabled, and may only be installed via the Marketplace (which verifies Plugin Code Signatures).  
+
 Custom plugins may also be installed via the `command line interface <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-plugin>`__.
 
 While no longer recommended, plugins may also be installed manually by unpacking the plugin bundle inside the `plugins` directory of a Mattermost installation.

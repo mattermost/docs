@@ -48,6 +48,7 @@ Community Process
    /process/community-systems*
    /process/help-wanted*
    /process/community-guidelines*
+   /process/how-to-run-a-hackathon*
 
 Product Management Handbook
 ------------------------------

@@ -160,6 +160,8 @@ Additionally, no new guests can be invited or added using the filter as an authe
 credentials match the user filter (the only filter which is active when Guest Access is disabled), they will be reactivated and promoted to a member user
 upon their next login.
 
+To disable the Guest Accounts feature, go to **System Console > Authentication > Guest Access > Enable Guest Access** and select ``False``. In versions prior to 5.18, current Guest Accounts will remain active until guest users are manually marked ``inactive`` in **System Console > User Management > Users**. 
+
 Similarly, for SAML, when the Guest Access setting is disabled, the Guest Attribute and existing guest users in System Console are deactivated.
 Additionally, no new guests can be invited or added using the attribute as an authentication method. If a previous guest's
 credentials match the user attribute (the only attribute which is active when Guest Access is disabled), they will be reactivated and promoted
