@@ -1,4 +1,4 @@
-.. _install-kubernetes-cluster:
+.. _install-kubernetes-custom:
 
 Using a Custom Configuration
 =================================

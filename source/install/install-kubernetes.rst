@@ -17,7 +17,6 @@ Tasks such as zero-downtime upgrades, database restore, blue/green deployments, 
 
 .. include:: install-kubernetes-cluster.rst
 .. include:: install-kubernetes-operator.rst
-.. include:: install-kubernetes-custom.rst
 .. include:: install-kubernetes-mattermost.rst
 .. include:: use-kubernetes-mattermost.rst
 .. include:: faq_kubernetes.rst
