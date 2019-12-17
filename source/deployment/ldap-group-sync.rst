@@ -1,6 +1,6 @@
 .. _ldap-group-sync:
 
-AD/LDAP Groups (Experimental) (E20)
+AD/LDAP Groups (Beta) (E20)
 ===================================
 
 Overview
@@ -13,16 +13,15 @@ Synchronized groups can also be used to manage the membership of teams and priva
 Pre-installation Notes
 ----------------------
 
-For customers that have enabled synchronization with AD/LDAP, all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` will be available to be linked in the groups list view at **System Console > User Management> Groups** in versions after 5.12 (or **System Console > Access Control > Groups** in prior versions). The group filter is an optional configuration setting available under **System Console > AD/LDAP**, and allows you to specify the groups that should have access in Mattermost. The **Group** filter is independent of the **User** filter, however it does leverage the Base DN attribute. You may need to adjust your Base DN to ensure group objects can be searched in your AD/LDAP tree.
+For customers that have enabled synchronization with AD/LDAP, all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` will be available to be linked in the groups list view at **System Console > User Management> Groups (Beta)** in versions after 5.12 (or **System Console > Access Control > Groups** in prior versions). The group filter is an optional configuration setting available under **System Console > AD/LDAP**, and allows you to specify the groups that should have access in Mattermost. The **Group** filter is independent of the **User** filter, however it does leverage the Base DN attribute. You may need to adjust your Base DN to ensure group objects can be searched in your AD/LDAP tree.
 
 The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/deployment/sso-ldap.html?highlight=ldap#configure-ad-ldap-synchronization>`__. for more information. The group feature has no effect on users' authentication to Mattermost.
 
 Enabling AD/LDAP Group Synchronization
 ------------------------------------
 
-To enable this feature, go to **System Console > Experimental > Features** in versions after 5.12 (or **System Console > Advanced > Experimental > Enable AD/LDAP Group Sync** in prior versions).
+To enable this feature, go to **System Console > Groups (Beta)** in versions after 5.12 (or **System Console > Advanced > Experimental > Enable AD/LDAP Group Sync** in prior versions).
 
-You can also edit the ``config.json file`` setting ``ExperimentalLdapGroupSync``ensuring that you restart the Mattermost server after making the change.
 
 Using AD/LDAP Group Synchronization
 ------------------------------------
@@ -36,7 +35,7 @@ Additionally, you can specify the **Group** filter used to retrieve groups. If t
 
 Group synchronization occurs after user synchronization and results for group synchronization are available on the synchonization status table (located at the bottom of the **AD/LDAP** configuration page).
 
-After the AD/LDAP groups have been synchronized, go to **System Console > User Management > Groups** in versions after 5.12 (or **System Console > Access Control > Groups** in prior versions) to link and configure Mattermost groups.
+After the AD/LDAP groups have been synchronized, go to **System Console > User Management > Groups (Beta)** in versions after 5.12 (or **System Console > Access Control > Groups** in prior versions) to link and configure Mattermost groups.
 
 .. image:: ../images/Group_filter.png
 
@@ -157,14 +156,14 @@ This feature will help control the membership of the channel so that guests and 
 
 On teams that are managed by synchronized groups, guests and member users outside of the group are restricted from:
 
- - invitation through a team invite link
+ - Invitation through a team invite link
  - invitations through an email invite
 
 Similarily on private channels that are managed by synchronized groups, guests and member users outside of the group are restricted from:
 
- - invitation through a mention
- - invitation through the /invite slash command
- - added to the channel with “add members”
+ - Invitation through a mention
+ - Invitation through the /invite slash command
+ - Added to the channel with “add members”
 
 Users can remove themselves from teams and private channels managed by synchronized groups.
 
@@ -181,7 +180,7 @@ To manage membership of a private team with synchronized groups:
 
 Alternatively you can use the CLI tool to set the team to be managed by groups:
 
-1. Ensure there is at least one group already associated to the team. You can view and add default teams to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_. Additionally, you can use the CLI tool to view if there is already a group associated to the team by running the `group team list CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-list>`_.
+1. Ensure there is at least one group already associated to the team. You can view and add default teams to a group via **System Console > User Management > Groups (Beta) > Group Configuration**. Please see more information on adding default teams and channels `here <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_. Additionally, you can use the CLI tool to view if there is already a group associated to the team by running the `group team list CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-list>`_.
 2. Ensure **Team Settings > General > Allow any user with an account on this server to join this team** is set to ``No``.
 3. Convert the team to have its membership managed by synchronized groups by running the `group team enable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-enable>`_.
 
@@ -238,21 +237,6 @@ To remove the management of members by synchronized groups in a channel, disable
 
 Frequently Asked Questions
 ----------------------------
-
-Why is AD/LDAP Group Sync experimental?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-We want to make sure we have tested this feature in environments that have different AD/LDAP system and group structures to ensure the feature works well in the different varieties of environments our customers have, as well as collect feedback on the functionality. Our testing has included Active Directory and Open LDAP systems.
-
-When will AD/LDAP Group Sync be in beta?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-We expect AD/LDAP Group Sync to be in beta early in 2019.
-
-LDAP group sync will be in beta for a period of time until:
-
-1. Searching and support for managing large volumes of groups and users is released.
-2. This feature has been tested on a system with tens of thousands of concurrent active users.
 
 Why can't my existing users see the teams and channels they have been synced to?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
