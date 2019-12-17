@@ -13,10 +13,11 @@ activities, such as installation, configuration changes, software updates, failu
 Deploying the Mattermost Operator on Kubernetes is the recommended installation process. It provides a single common installation and management method
 that can be implemented in practically any environment with less IT overhead and more automation.
 
-Tasks such as zero-downtime upgrades, blue/green deployments, canary builds, and failure recovery are all managed by the Mattermost operator.
+Tasks such as zero-downtime upgrades, database restore, blue/green deployments, canary builds, and failure recovery are all managed by the Mattermost operator.
 
 .. include:: install-kubernetes-cluster.rst
 .. include:: install-kubernetes-operator.rst
+.. include:: install-kubernetes-custom.rst
 .. include:: install-kubernetes-mattermost.rst
 .. include:: use-kubernetes-mattermost.rst
 .. include:: faq_kubernetes.rst
