@@ -44,7 +44,7 @@ PC Web
     :header: "Browser", "Technical Requirement"
 
     "Chrome", "v77+"
-    "Firefox", "v60+"
+    "Firefox", "v68.3", "v71.0+"
     "Safari", "v12+"
     "Edge", "v44+"
 
