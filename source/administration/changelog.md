@@ -6,6 +6,34 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.19 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
+**Release day: 2020-01-16**
+
+### Compatibility
+
+### Bug Fixes
+ - Fixed an issue where email notifications were still sent in some cases while disabled in the user interface.
+ - Fixed an issue where editing a post and hitting ``<enter>`` in code block saved the post automatically instead of adding a newline.
+ - Fixed an issue where opening the channel picker using CTRL+K and then focusing on the message box using CTRL+SHIFT+L did not close the channel picker.
+ - Fixed an issue where the at-mention suggestions still highlighted the previous search but not the first suggestion in the list.
+ - 
+ 
+### config.json
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+### Open Source Components
+
+### Database Changes
+
+### API Changes
+
+### Websocket Event Changes
+ 
+### Known Issues
+ 
+### Contributors
+
 
 ## Release v5.18 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
