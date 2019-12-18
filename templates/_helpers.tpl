@@ -341,19 +341,16 @@ Constructs busybox image name.
     # image details. We deprecated them in favor of init.image.repository and
     # init.image.tag. However, deprecation checking happens after template
     # rendering is done. So, we have to handle the case of `init.image` being a
-    # string to avoid the process being broken at rendering stage itself. The
-    # `if` block in the following conditional does that.
-    # This is harmless because once rendering is done deprecation check will
-    # kick-in and abort the process. This value will not be used. On a
-    # successful deploy, only the `else` block will be executed.
+    # string to avoid the process being broken at rendering stage itself. It
+    # doesn't matter what we print there because once rendering is done
+    # deprecation check will kick-in and abort the process. That value will not
+    # be used.
 */}}
-{{- if or (kindIs "string" .imageContext.image) (kindIs "string" .imageContext.tag) }}
-{{- $image := default .context.Values.global.busybox.image.repository .imageContext.image }}
-{{- $tag := default .context.Values.global.busybox.image.tag .imageContext.image }}
-{{- printf "%s:%s" $image $tag -}}
-{{- else }}
+{{- if kindIs "map" .imageContext.image }}
 {{- $image := default .context.Values.global.busybox.image.repository .imageContext.image.repository }}
 {{- $tag := default .context.Values.global.busybox.image.tag .imageContext.image.tag }}
 {{- printf "%s:%s" $image $tag -}}
+{{- else }}
+{{- printf "DEPRECATED:DEPRECATED" -}}
 {{- end -}}
 {{- end -}}
