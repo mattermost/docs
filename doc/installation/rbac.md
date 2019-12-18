@@ -38,7 +38,7 @@ The service accounts are described in the following table. For each service acco
 | `nginx-ingress` | Used by NGINX Ingress to control service access points. | Secret, Pod, Endpoint, Ingress (R); Event (W); ConfigMap, Service (RW) | NS/C
 | `shared-secrets` | The job that creates shared secrets runs with this account. (in pre-install/upgrade hook) | Secret (RW) | NS
 | `operator` | Used by GitLab Operator to monitor and control GitLab resources, run migrations and shared secret jobs. Only used when Operator is enabled. | ConfigMap, Secret, Pod, Deployment, StatefulSet, DaemonSet, Job, ServiceAccount, \[Cluster\]Role, \[Cluster\]RoleBinding, GitLabs (RW) | NS/C
-| `certmanager-issuer` | The job that controls certificate manager runs with this account. | Issuer (RW)  | NS
+| `cert-manager` | The job that controls certificate manager runs with this account. | Issuer, Certificate, CertificateRequest, Order (RW)  | NS/C
 
 GitLab chart depends on other charts that they also use RBAC and create their own service accounts and role binding. Here is an overview:
 
