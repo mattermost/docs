@@ -57,7 +57,7 @@ spec:
         - name: configure
           command: ['sh']
           args: [ '-c', 'sh -x /config-logcursor/configure']
-          image: {{ include "gitlab.busybox.image" (dict "imageContext" .Values.init "context" .) | quote }}
+          image: {{ include "gitlab.busybox.image" (dict "local" .Values.init "global" $.Values.global.busybox) | quote }}
           volumeMounts:
 {{ include "gitlab.extraVolumeMounts" . | indent 10 }}
 {{ include "gitlab.psql.ssl.volumeMount" . | indent 10 }}

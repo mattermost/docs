@@ -40,7 +40,7 @@ spec:
 {{ include "gitlab.certificates.initContainer" . | indent 8 }}
         - name: configure
           command: ['sh', '/config/configure']
-          image: {{ include "gitlab.busybox.image" (dict "imageContext" .Values.init "context" .) | quote }}
+          image: {{ include "gitlab.busybox.image" (dict "local" .Values.init "global" $.Values.global.busybox) | quote }}
           volumeMounts:
 {{ include "gitlab.extraVolumeMounts" . | indent 10 }}
           - name: gitaly-config

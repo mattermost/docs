@@ -346,9 +346,9 @@ Constructs busybox image name.
     # deprecation check will kick-in and abort the process. That value will not
     # be used.
 */}}
-{{- if kindIs "map" .imageContext.image }}
-{{- $image := default .context.Values.global.busybox.image.repository .imageContext.image.repository }}
-{{- $tag := default .context.Values.global.busybox.image.tag .imageContext.image.tag }}
+{{- if kindIs "map" .local.image }}
+{{- $image := default .global.image.repository .local.image.repository }}
+{{- $tag := default .global.image.tag .local.image.tag }}
 {{- printf "%s:%s" $image $tag -}}
 {{- else }}
 {{- printf "DEPRECATED:DEPRECATED" -}}

@@ -29,7 +29,7 @@ spec:
         fsGroup: {{ .Values.securityContext.fsGroup }}
       initContainers:
         - name: configure
-          image: {{ include "gitlab.busybox.image" (dict "imageContext" .Values.init "context" .) | quote }}
+          image: {{ include "gitlab.busybox.image" (dict "local" .Values.init "global" $.Values.global.busybox) | quote }}
           command: ['sh', '/config/configure']
           securityContext:
             allowPrivilegeEscalation: {{ .Values.securityContext.allowPrivilegeEscalation }}
