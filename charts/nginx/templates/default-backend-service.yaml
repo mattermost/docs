@@ -16,7 +16,7 @@ metadata:
     component: "{{ .Values.defaultBackend.name }}"
 spec:
 {{- if not .Values.defaultBackend.service.omitClusterIP }}
-  clusterIP: "{{ .Values.defaultBackend.service.clusterIP }}"
+  {{ with .Values.controller.metrics.service.clusterIP }}clusterIP: {{ . }}{{ end }}
 {{- end }}
 {{- if .Values.defaultBackend.service.externalIPs }}
   externalIPs:
