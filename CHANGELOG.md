@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.5.6
+
+### Added (1 change, 1 of them is from the community)
+
+- Redis-HA added storageClass Value. !1077 (conblem)
+
+### Other (1 change)
+
+- Update GitLab Version to 12.5.5.
+
+
 ## 2.5.5
 
 ### Other (1 change)
