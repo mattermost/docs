@@ -35,7 +35,7 @@ Mattermost v5.18.0 contains low to high level security fixes. [Upgrading](http:/
  - Allows a system admin to run commands when conventional access to the server via SSH isn't possible.
 
 #### View Archived Channels (Beta)
- - View, share and search for content of archived channels. See more details [here](https://docs.mattermost.com/administration/config-settings.html#allow-users-to-view-archived-channels-experimental).
+ - View, share and search for content of archived channels. See more details [here](https://docs.mattermost.com/administration/config-settings.html#allow-users-to-view-archived-channels-beta).
 
 #### Guest Account SAML & LDAP Support (EE)
  - Provision Guests directly from AD/LDAP or SAML upon login. Guests will have no access to any teams or channels until they are assigned.
