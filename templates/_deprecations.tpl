@@ -198,8 +198,8 @@ sidekiq:
 {{-     if hasKey (index $.Values.gitlab $chart) "init" -}}
 {{-         with $config := index $.Values.gitlab $chart "init" -}}
 {{-             if or (and (hasKey $config "image") (kindIs "string" $config.image)) (hasKey $config "tag") }}
-gitlab.{{ $chart }}: Configuring image for initContainers using gitlab.{{ $chart }}.init.image and gitlab.{{ $chart }}.init.tag has been deprecated. Please use gitlab.{{ $chart }}.init.image.repository and gitlab.{{ $chart }}.init.image.tag for that.
-
+gitlab.{{ $chart }}:
+    Configuring image for initContainers using gitlab.{{ $chart }}.init.image and gitlab.{{ $chart }}.init.tag has been deprecated. Please use gitlab.{{ $chart }}.init.image.repository and gitlab.{{ $chart }}.init.image.tag for that.
 {{-             end -}}
 {{-         end -}}
 {{-     end -}}
@@ -213,8 +213,8 @@ gitlab.{{ $chart }}: Configuring image for initContainers using gitlab.{{ $chart
 {{-     if hasKey (index $.Values $chart) "init" -}}
 {{-         with $config := index $.Values $chart "init" -}}
 {{-             if or (and (hasKey $config "image") (kindIs "string" $config.image)) (hasKey $config "tag") }}
-{{ $chart }}: Configuring image for initContainers using {{ $chart }}.init.image and {{ $chart }}.init.tag has been deprecated. Please use {{ $chart }}.init.image.repository and {{ $chart }}.init.image.tag for that.
-
+{{ $chart }}:
+    Configuring image for initContainers using {{ $chart }}.init.image and {{ $chart }}.init.tag has been deprecated. Please use {{ $chart }}.init.image.repository and {{ $chart }}.init.image.tag for that.
 {{-             end -}}
 {{-         end -}}
 {{-     end -}}
@@ -228,8 +228,8 @@ gitlab.{{ $chart }}: Configuring image for initContainers using gitlab.{{ $chart
 {{-     if hasKey (index $.Values $chart) "init" -}}
 {{-         with $config := index $.Values $chart "init" -}}
 {{-             if hasKey $config "pullPolicy" }}
-{{ $chart }}: Configuring pullPolicy for initContainer images using {{ $chart }}.init.pullPolicy has been deprecated. Please use {{ $chart }}.init.image.pullPolicy for that.
-
+{{ $chart }}:
+    Configuring pullPolicy for initContainer images using {{ $chart }}.init.pullPolicy has been deprecated. Please use {{ $chart }}.init.image.pullPolicy for that.
 {{-             end -}}
 {{-         end -}}
 {{-     end -}}
