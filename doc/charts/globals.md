@@ -92,7 +92,7 @@ The GitLab global host settings for Ingress are located under the `global.ingres
 
 ### `global.ingress.configureCertmanager`
 
-Global setting that controls the automatic configuration of [cert-manager](https://github.com/helm/charts/tree/master/stable/cert-manager)
+Global setting that controls the automatic configuration of [cert-manager](https://hub.helm.sh/charts/jetstack/cert-manager)
 for Ingress objects. If `true`, relies on `certmanager-issuer.email` being set.
 
 If `false` and `global.ingress.tls.secretName` is not set, this will activate automatic

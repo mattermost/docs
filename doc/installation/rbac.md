@@ -43,7 +43,7 @@ The service accounts are described in the following table. For each service acco
 GitLab chart depends on other charts that they also use RBAC and create their own service accounts and role binding. Here is an overview:
 
 - Prometheus monitoring creates multiple own service accounts by default. They are all associated to cluster level roles. For more information see [Prometheus chart documentation](https://github.com/helm/charts/tree/master/stable/prometheus#rbac-configuration).
-- Certificate manager creates a service account by default to manage its custom resources along with native resources at the cluster level. For more information see [cert-manager chart RBAC template](https://github.com/helm/charts/blob/master/stable/cert-manager/templates/rbac.yaml).
+- Certificate manager creates a service account by default to manage its custom resources along with native resources at the cluster level. For more information see [cert-manager chart RBAC template](https://github.com/jetstack/cert-manager/blob/master/deploy/charts/cert-manager/templates/rbac.yaml).
 - When you use in-cluster PostgreSQL database (this is the default) the service account is not enabled. You can enable it but it is only used to run PostgreSQL service and is not associated to any specific role. For more information see [PostgreSQL chart](https://github.com/helm/charts/tree/master/stable/postgresql).
 
 NOTE: **Note:** Please keep in mind that for OpenShift deployment you need to assign `anyuid` SCC to `default` and `gitlab-runner`
