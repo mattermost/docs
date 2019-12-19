@@ -7,8 +7,9 @@ image:
 enabled: true
 
 init:
-  image: busybox
-  tag: latest
+  image: {}
+    # repository:
+    # tag:
   resources:
     requests:
       cpu: 50m

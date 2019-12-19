@@ -407,13 +407,17 @@ global:
       repository: registry.gitlab.com/gitlab-org/build/cng/kubectl
       tag: 1.13.12
       pullSecrets: []
+  busybox:
+    image:
+      repository: busybox
+      tag: latest
 ## End of global
 
 upgradeCheck:
   enabled: true
-  image:
-    repository: busybox
-    tag: latest
+  image: {}
+    # repository:
+    # tag:
   securityContext:
     # in alpine/debian/busybox based images, this is `nobody:nogroup`
     runAsUser: 65534

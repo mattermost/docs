@@ -19,6 +19,7 @@ for more information on how the global variables work.
 - [GitLab Shell](#configure-gitlab-shell)
 - [Custom Certificate Authorities](#custom-certificate-authorities)
 - [Application Resource](#application-resource)
+- [Busybox image](#busybox-image)
 
 ## Configure Host settings
 
@@ -853,3 +854,20 @@ gitlab-runner:
 certmanager:
   install: false
 ```
+
+## Busybox image
+
+By default, GitLab Helm charts use `busybox:latest` for booting up various
+initContainers. This is controlled by the following settings
+
+```yaml
+global:
+  busybox:
+    image:
+      repository: busybox
+      tag: latest
+```
+
+Many charts also provide `init.image.repository` and `init.image.tag` settings
+locally that can be used to override this global setting for that specific
+chart.
