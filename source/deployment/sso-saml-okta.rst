@@ -9,7 +9,7 @@ The following process provides steps to configure SAML 2.0 with Okta for Matterm
 
 .. include:: sso-saml-before-you-begin.rst
 
-Set up a connection app for Mattermost SSO
+Set Up a Connection App for Mattermost SSO
 ------------------------------------------
 
 1. Sign into Okta as an administrator.
@@ -20,9 +20,9 @@ Set up a connection app for Mattermost SSO
 
 	.. image:: ../../source/images/okta_1_new_app.PNG
 
-4. Enter **General Settings** for the application, including ``App name`` and ``App logo`` (optional). It is recommended to display the application icon to users, including in the Okta Mobile app.
+4. Enter **General Settings** for the application, including ``App name`` and ``App logo`` (optional). It's recommended to display the application icon to users, including in the Okta Mobile app.
 
-  If you’d like to use a Mattermost logo for the application, you are free to download one `from our page <http://www.mattermost.org/brand-guidelines/>`__.
+  If you’d like to use a Mattermost logo for the application, you can download one `from our page <http://www.mattermost.org/brand-guidelines/>`__.
 
 	.. image:: ../../source/images/okta_2_general_settings.PNG
 
@@ -94,11 +94,11 @@ For Mattermost servers running 3.3 and earlier, the first name and last name att
 
 7. Click **Save**.
 
-8. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > General > Users and Teams** in prior versions or **System Console** > **Site Configuration** > **Users and Teams** in versions after 5.12 and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
+8. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console** > **Site Configuration** > **Users and Teams** (or **System Console > General > Users and Teams** in versions prior to 5.12) and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
 
-You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
+Once complete, and to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
 
-It is also recommended to post an announcement about how the migration will work to users.
+It's also recommended to post an announcement for your users to explain how the migration will work.
 
 You may also configure SAML for Okta by editing ``config.json`` to enable SAML based on :ref:`SAML configuration settings <saml-enterprise>`. You must restart the Mattermost server for the changes to take effect.
 
