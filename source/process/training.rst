@@ -81,6 +81,7 @@ Whenever possible, we share key updates and have discussions in Mattermost. Some
 - `Marketing Website <https://community.mattermost.com/private-core/channels/marketing-website-priv>`_ - Website bugs, release notes, and web discussions
 - `Product Management <https://community.mattermost.com/core/channels/product-management>`_ - Discussion with and questions for Mattermost product managers
 - `Roadmap <https://community.mattermost.com/private-core/channels/roadmap>`_ - Questions about and discussion of the product roadmap, or to view public roadmap in the header
+- `Sales: General Questions <https://community.mattermost.com/private-core/channels/sales-general-questions>`_ - Discussion of all types of sales inquiries/questions
 - `Spec Reviews <https://community.mattermost.com/core/channels/spec-reviews>`_ - In-progress plans for new features
 - `Sustained Engineering <https://community.mattermost.com/core/channels/sustained-engineering>`_ - Discussion with Mattermost's `Sustained Engineering Team (SET) <https://developers.mattermost.com/internal/sustained-engineering/>`_
 - `UX Design <https://community.mattermost.com/core/channels/ux-design>`_ - Questions and discussion about product design
