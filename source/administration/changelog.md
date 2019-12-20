@@ -12,10 +12,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Bug Fixes
  - Fixed an issue where email notifications were still sent in some cases while disabled in the user interface.
+ - Fixed an issue where clicking a line separator in the Main Menu closed the menu.
  - Fixed an issue where editing a post and hitting ``<enter>`` in code block saved the post automatically instead of adding a newline.
  - Fixed an issue where opening the channel picker using CTRL+K and then focusing on the message box using CTRL+SHIFT+L did not close the channel picker.
  - Fixed an issue where the at-mention suggestions still highlighted the previous search but not the first suggestion in the list.
- - 
+ - Fixed an issue where the client license API generated a different ETag for every response.
  
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
