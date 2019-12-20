@@ -9,7 +9,7 @@ The Mattermost Mobile Apps team works on a monthly release process, with a new v
 Notes:
 
 - All cut-off dates are based on 10am ([San Francisco Time](https://everytimezone.com/)) on the day stated.
-- T-minus counts are measured in "working days" (weekdays, Monday through Friday, excluding [statutory holidays](https://docs.mattermost.com/process/working-at-mattermost.html#holidays)) prior to release day.
+- T-minus counts are measured in "working days" (weekdays, Monday through Friday, excluding [the listed statutory holidays](https://docs.mattermost.com/process/working-at-mattermost.html#holidays)) prior to release day.
 
 ### A. (T-minus 15 working days) Cut-off for merging major features
 
