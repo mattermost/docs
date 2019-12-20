@@ -3,6 +3,18 @@
 Using a Custom Configuration
 =================================
 
+Custom Configuration
+--------------------
+
+You can opt to install the Mattermost operator on top of your existing infrastructure in which case you only need to install the Mattermost operator:
+
+.. code-block:: sh
+
+   $ kubectl create ns mattermost-operator
+   $ kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mattermost-operator/mattermost-operator.yaml
+
+The manifest that you create 
+
 Custom Resource Requirements
 -----------------------------
 
@@ -24,13 +36,3 @@ The table below details the minimum Kubernetes cluster resources that Mattermost
     - Resource requirements may vary depending on user usage and bot activity.
     - For larger installations, it may be beneficial to use nodes for the databases that have more memory and/or are optimized for memory.
     - For installations of more than 25,000 users please `contact us <https://mattermost.com/contact-us/>`__ for sizing guidelines.
-
-Custom Configuration
---------------------
-
-You can opt to install the Mattermost operator on top of your existing infrastructure in which case you only need to install the Mattermost operator:
-
-.. code-block:: sh
-
-   $ kubectl create ns mattermost-operator
-   $ kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mattermost-operator/mattermost-operator.yaml
