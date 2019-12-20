@@ -1,6 +1,6 @@
 # Mobile App Release Process
 
-The Mattermost Mobile Apps team works on a monthly release process, with a new version submitted to the iOS App Store and Google Play Store on the 5th of each month. 
+The Mattermost Mobile Apps team works on a monthly release process, with a new version submitted to the iOS App Store and Google Play Store on the 16th of each month. 
 
 **Note: iOS App Store approval may take a few days after the 5th.**
 
