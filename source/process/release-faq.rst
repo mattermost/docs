@@ -105,7 +105,7 @@ Frequently Asked Questions
 
 **Q: What changes were made to the team release process to account for the rotating feature and quality releases? https://docs.mattermost.com/process/release-process.html**
 
-- A: Separate checklists for `Bug fix release <https://docs.mattermost.com/process/bug-fix-release.html>`__ and `Feature release <https://docs.mattermost.com/process/feature-release.html>`__ were created.
+- A: Separate checklists for `Quality release <https://docs.mattermost.com/process/bug-fix-release.html>`__ and `Feature release <https://docs.mattermost.com/process/feature-release.html>`__ were created.
 
 **Q: How does Redux branching work?**
 
