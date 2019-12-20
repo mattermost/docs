@@ -71,6 +71,7 @@ lint_package:
   script:
     - helm init --client-only
     - helm repo add gitlab https://charts.gitlab.io
+    - helm repo add jetstack https://charts.jetstack.io
     - helm dependencies update
     - helm lint --set certmanager-issuer.email=support@gitlab.com
     - mkdir -p build
@@ -472,6 +473,7 @@ check_docs_lint:
       cleanup
     fi
     helm repo add gitlab https://charts.gitlab.io/
+    helm repo add jetstack https://charts.jetstack.io
     helm dep update .
 
     # If OPERATOR_BOOTSTRAP is set, we _do not_ want to use --wait / --timeout
@@ -573,6 +575,7 @@ check_docs_lint:
 
     helm init --client-only
     helm repo add gitlab https://charts.gitlab.io
+    helm repo add jetstack https://charts.jetstack.io
     if [[ ! -d "$auto_chart" ]]; then
       helm fetch ${auto_chart} --untar
     fi
