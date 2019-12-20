@@ -24,25 +24,27 @@ The `migrations` chart is configured in two parts: external services, and chart 
 
 Table below contains all the possible charts configurations that can be supplied to `helm install` command using the `--set` flags
 
-| Parameter               | Description                              | Default           |
-| ----------------------- | ---------------------------------------- | ----------------  |
-| `image.repository`      | Migrations image repository              | `registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee` |
-| `image.tag`             | Migrations image tag                     |                   |
-| `image.pullPolicy`      | Migrations pull policy                   | `Always`          |
-| `image.pullSecrets`     | Secrets for the image repository         |                   |
-| `init.image.repository` | initContainer image                      |                   |
-| `init.image.tag`        | initContainer image tag                  |                   |
-| `enabled`               | Migrations enable flag                   | `true`            |
-| `tolerations`           | Toleration labels for pod assignment     | `[]`              |
-| `redis.serviceName`     | Redis service name                       | `redis`           |
-| `psql.serviceName`      | Name of Service providing PostgreSQL     | `release-postgresql` |
-| `psql.password.secret`  | psql secret                              | `gitlab-postgres` |
-| `psql.password.key`     | key to psql password in psql secret      | `psql-password`   |
-| `extraInitContainers`   | List of extra init containers to include |                   |
-| `extraContainers`       | List of extra containers to include      |                   |
-| `extraVolumes`          | List of extra volumes to create          |                   |
-| `extraVolumeMounts`     | List of extra volumes mountes to do      |                   |
-| `bootsnap.enabled`      | Enable the Bootsnap cache for Rails      | `true`            |
+| Parameter                   | Description                              | Default           |
+| --------------------------- | ---------------------------------------- | ----------------  |
+| `image.repository`          | Migrations image repository              | `registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee` |
+| `image.tag`                 | Migrations image tag                     |                   |
+| `image.pullPolicy`          | Migrations pull policy                   | `Always`          |
+| `image.pullSecrets`         | Secrets for the image repository         |                   |
+| `init.image`                | initContainer image                      | `busybox`         |
+| `init.tag`                  | initContainer image tag                  | `latest`          |
+| `enabled`                   | Migrations enable flag                   | `true`            |
+| `tolerations`               | Toleration labels for pod assignment     | `[]`              |
+| `redis.serviceName`         | Redis service name                       | `redis`           |
+| `psql.serviceName`          | Name of Service providing PostgreSQL     | `release-postgresql` |
+| `psql.password.secret`      | psql secret                              | `gitlab-postgres` |
+| `psql.password.key`         | key to psql password in psql secret      | `psql-password`   |
+| `resources.requests.cpu`    | `250m`                                   | GitLab Migrations minimum cpu |
+| `resources.requests.memory` | `200Mi`                                  | GitLab Migrations minimum memory |
+| `extraInitContainers`       | List of extra init containers to include |                   |
+| `extraContainers`           | List of extra containers to include      |                   |
+| `extraVolumes`              | List of extra volumes to create          |                   |
+| `extraVolumeMounts`         | List of extra volumes mountes to do      |                   |
+| `bootsnap.enabled`          | Enable the Bootsnap cache for Rails      | `true`            |
 
 ## Chart configuration examples
 

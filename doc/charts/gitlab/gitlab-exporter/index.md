@@ -38,7 +38,7 @@ to the `helm install` command using the `--set` flags.
 | `init.image.tag`                 |                       | initContainer image tag                        |
 | `metrics.enabled`                | `true`                | Toggle Prometheus metrics exporter             |
 | `metrics.port`                   | `9168`                | Listen port for the Prometheus metrics exporter |
-| `resources.requests.cpu`         | `50m`                 | GitLab Exporter minimum cpu                    |
+| `resources.requests.cpu`         | `75m`                 | GitLab Exporter minimum cpu                    |
 | `resources.requests.memory`      | `100M`                | GitLab Exporter minimum memory                 |
 | `service.externalPort`           | `9168`                | GitLab Exporter exposed port                   |
 | `service.internalPort`           | `9168`                | GitLab Exporter internal port                  |
