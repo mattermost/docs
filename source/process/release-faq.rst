@@ -73,7 +73,7 @@ Frequently Asked Questions
  
 **Q: How is cherry-picking done?**
 
-- A: TBD
+- A: See the `cherry pick process documentation <https://developers.mattermost.com/contribute/getting-started/branching/#cherry-pick-process-developer/>`_ for details. 
 
 **Q: What is community.mattermost kept on?**
  
@@ -106,10 +106,6 @@ Frequently Asked Questions
 **Q: What changes were made to the team release process to account for the rotating feature and quality releases? https://docs.mattermost.com/process/release-process.html**
 
 - A: Separate checklists for `Quality release <https://docs.mattermost.com/process/bug-fix-release.html>`__ and `Feature release <https://docs.mattermost.com/process/feature-release.html>`__ were created.
-
-**Q: How does Redux branching work?**
-
-- A: TBD.
 
 **Q: How does translations branching work?**
 
