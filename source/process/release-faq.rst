@@ -3,7 +3,7 @@ Release Overview
 
 Mattermost adopts a monthly tick-tock release cycle, with a new version shipping on the 16th of each month in `binary form <http://docs.mattermost.com/administration/upgrade.html#mattermost-team-edition>`_. 
 
-Tick-tock refers to even-numbered releases (e.g. v5.6) containing new features, and odd-numbered releases (e.g. v5.7) containing only bug fixes and performance improvements.
+Tick-tock refers to even-numbered releases (e.g., v5.6) containing new features, and odd-numbered releases (e.g., v5.7) containing only bug fixes and performance improvements.
 
 The primary goal of our release cycle is to improve quality and build trust with our users in every release. A tick-tock release cycle allows new features to soak in our test environments for longer, allowing us to identify and fix bugs before releasing the features. 
 
@@ -18,7 +18,7 @@ Mattermost numbers stable releases in the following format:
 **Version Number:**
 
 - Purpose: Major system releases introduce significantly new functionality or change existing product behaviour 
-- Release frequency: Unscheduled. Major system releases are infrequent.
+- Release frequency: Unscheduled. Major system releases are infrequent
 - Example: v1.x.x, v2.x.x
 
 **Major Build Number:**
@@ -33,7 +33,7 @@ Mattermost numbers stable releases in the following format:
 **Minor Build Number:** 
 
 - Purpose: Patch existing releases when severe bug fixes or security patches are required
-- Release frequency: As required.
+- Release frequency: As required
 - Example: v1.2.5, v1.2.6
 
 Frequently Asked Questions
@@ -41,7 +41,7 @@ Frequently Asked Questions
 
 **Q: Will tick-tock releases delay features?**
 
-- A: You can view current, near term and future priorities on `our website here <https://mattermost.com/roadmap/>`_. While tick-tock releases will mean only shipping new features every other release, it will improve the quality of features shipped. We want to avoid rushing to ship new features and then fixing bugs over a number of releases, and instead we will ship high-quality features out the gate.
+- A: You can view current, near term, and future priorities on `our website here <https://mattermost.com/roadmap/>`_. While tick-tock releases mean only shipping new features every other release, it improves the quality of features shipped. We want to avoid rushing to ship new features and then fixing bugs over a number of releases, and instead we focus on shipping high-quality features out the gate.
 
 **Q: What is the release cycle for the React Native mobile apps?**
 
@@ -73,11 +73,11 @@ Frequently Asked Questions
  
 **Q: How is cherry-picking done?**
 
-- A: 
+- A: See the `cherry pick process documentation <https://developers.mattermost.com/contribute/getting-started/branching/#cherry-pick-process-developer/>`_ for details. 
 
 **Q: What is community.mattermost kept on?**
  
-- A: For Feature releases community.mattermost is kept on the RCs. For Bug Fix releases keep it on master.
+- A: For Feature releases community.mattermost is kept on the RCs. For Quality releases keep it on master.
  
 **Q: What is community-daily.mattermost kept on?**
  
@@ -93,11 +93,11 @@ Frequently Asked Questions
 
 **Q: Is an improvement a feature or a bug?**
 
-- A: Usually features / Story tickets.
+- A: Usually features/story tickets.
  
 **Q: How does release team monitor what changes went into a release?**
 
-- A: Monitor the commit history of the respective release branch, e.g. https://github.com/mattermost/mattermost-server/commits/release-5.4 contains commits that shipped with mattermost-server v5.4. Jira ticket is resolved after cherry picking is done.
+- A: Monitor the commit history of the respective release branch, e.g., https://github.com/mattermost/mattermost-server/commits/release-5.4 contains commits that shipped with mattermost-server v5.4. Jira ticket is resolved after cherry picking is done.
 
 **Q: What changes were made to the dev release process to account for the rotating feature and quality releases? https://developers.mattermost.com/internal/release-process/**
 
@@ -105,11 +105,7 @@ Frequently Asked Questions
 
 **Q: What changes were made to the team release process to account for the rotating feature and quality releases? https://docs.mattermost.com/process/release-process.html**
 
-- A: Separate checklists for `Bug Fix release <https://docs.mattermost.com/process/bug-fix-release.html>`__ and `Feature release <https://docs.mattermost.com/process/feature-release.html>`__ were created.
-
-**Q: How does Redux branching work?**
-
-- A: TBD.
+- A: Separate checklists for `Quality release <https://docs.mattermost.com/process/bug-fix-release.html>`__ and `Feature release <https://docs.mattermost.com/process/feature-release.html>`__ were created.
 
 **Q: How does translations branching work?**
 
@@ -125,4 +121,4 @@ Frequently Asked Questions
 
 **Q: What is the process for community PRs?**
 
-- A: Review, merge and cherry-pick.
+- A: Review, merge, and cherry-pick.

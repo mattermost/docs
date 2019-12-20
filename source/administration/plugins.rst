@@ -16,7 +16,7 @@ Plugins are fully supported in both Team and Enterprise Editions.
 
 Plugin Marketplace
 ------------------
-The Plugin Marketplace is a collection of plugins that can greatly increase the value and capabilities of your Mattermost deployment. End users can see increased productivity through quick access to systems such as Jira, Zoom, Webex, and GitHub.  Mattermost Admins can discover new plugins and quickly deploy them to their servers, including High Availability clusters. The Marketplace is available in 5.16 and accessed via **Main Menu > Plugin Marketplace**. The Marketplace listings will continue to expand as we add new features and plugins that our customers request.
+The Plugin Marketplace is a collection of plugins that can greatly increase the value and capabilities of your Mattermost deployment. End users can see increased productivity through quick access to systems such as Jira, Zoom, Webex, and GitHub.  Mattermost Admins can discover new plugins and quickly deploy them to their servers, including High Availability clusters. The Marketplace is available in 5.16+ and accessed via **Main Menu > Plugin Marketplace**. The Marketplace listings will continue to expand as we add new features and plugins that our customers request.
 
 .. image:: https://user-images.githubusercontent.com/915956/66891467-1b18eb80-ef9e-11e9-9de3-37a3c5899bd8.png
 
@@ -35,12 +35,15 @@ Once a plugin is installed (or pre-installed if shipped with Mattermost binary r
 3. Set **Enable Plugin** setting to ``True``. If this flag is not enabled, the plugin will not become active.
 4. Test out the plugin as needed.
 
-
 Upgrading Plugins
 ~~~~~~~~~~~~~~~~~
 
-In v5.16, the Marketplace only supports the installation of new plugins. To upgrade a plugin, you need to manually update it by downloading the binary file from the GitHub repository and upload it in **System Console > Plugin management**. In v5.18 (Dec 2019), you'll be able to upgrade a plugin on demand when a new version becomes available.
+Upgrade a plugin on demand when a new version becomes available.
 
+Upgrading Plugins (prior to v5.18)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In v5.16 and v5.17 the Marketplace only supports the installation of new plugins. To upgrade a plugin, you need to manually update it by downloading the binary file from the GitHub repository and then upload it in **System Console > Plugin Management**.
 
 Marketplace Server
 ------------------
