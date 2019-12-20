@@ -15,8 +15,8 @@ Notes:
     - Notify community about upcoming security release through a Twitter announcement and in changelog with links to approved fixes and a date tagged as "TBD"
     - Email GitLab release team about upcoming security release
     - Work with a developer to submit GitLab MR [following this process](https://docs.mattermost.com/process/gitlab-process.html#merge-requests) and [test the upgrade](https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg) once the GitLab MR is merged and included in their RC.
-     - Open a ticket to [submit Gitlab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/MM-10365)
-    - Make a post in Announcements channel announcing the security release to the rest of the team with links to approved tickets and include a link to the ticket to submit the GitLab MR
+     - Open a ticket to [submit GitLab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/MM-10365)
+    -  Make a post in Announcements channel announcing the security release to the rest of the team with links to approved tickets and include a link to the ticket to submit the GitLab MR
 2. Dev:
     - PRs for hotfixes are made to release branch
     - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day
@@ -44,7 +44,7 @@ Once security fix release is ready to cut:
     - Verify hashes and GPG signatures are correct, once build is cut
     - Delete RCs after final version is shipped
 2. Release Manager:
-     - Update the changelog
+     - Update the Changelog
      - Update the [version archive](https://docs.mattermost.com/administration/version-archive.html)
      - Update the [ESR documentation](https://docs.mattermost.com/administration/extended-support-release.html#what-are-the-current-supported-esr-versions)
      - Update [Mattermost server download page](https://mattermost.org/download) with the links to the EE and TE bits
