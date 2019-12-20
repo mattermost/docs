@@ -13,7 +13,7 @@ Recommended pre-reading:
 
 Notes:
 - All cut-off dates are based on 10am ([San Francisco Time](http://everytimezone.com/)) on the day stated.
-- T-minus counts are measured in business days (weekdays, Monday through Friday, excluding [statutory holidays](https://docs.mattermost.com/process/working-at-mattermost.html#holidays)) prior to release day.
+- T-minus counts are measured in "working days" (weekdays, Monday through Friday, excluding [statutory holidays](https://docs.mattermost.com/process/working-at-mattermost.html#holidays)) prior to release day.
 
 ### A. (Code complete date of previous release) Beginning of Release
 
