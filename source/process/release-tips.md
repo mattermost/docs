@@ -31,7 +31,7 @@
 
 **Ways That [Features/Bugs Guidelines](https://docs.google.com/document/d/1QxB_A1qkEJBKAvQpRa7JiSQLZhwg6HAEajNRNa7ldGg/edit) are Currently Enforced**
 
- - Features guidelines: S
+ - Features guidelines:
     - Sometimes features are merged after T-12.
     - Start to ping people already at T-15 or earlier for feature PRs that are still open.
  - Bugs guidelines:
