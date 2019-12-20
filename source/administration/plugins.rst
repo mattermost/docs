@@ -35,16 +35,15 @@ Once a plugin is installed (or pre-installed if shipped with Mattermost binary r
 3. Set **Enable Plugin** setting to ``True``. If this flag is not enabled, the plugin will not become active.
 4. Test out the plugin as needed.
 
-Upgrading Plugins
-~~~~~~~~~~~~~~~~~
-
-In v5.16 and v5.17 the Marketplace only supports the installation of new plugins. To upgrade a plugin, you need to manually update it by downloading the binary file from the GitHub repository and upload it in **System Console > Plugin management**.
-
 Upgrading Plugins with the Marketplace (5.18+)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Upgrade a plugin on demand when a new version becomes available.
 
+Upgrading Plugins
+~~~~~~~~~~~~~~~~~
+
+In v5.16 and v5.17 the Marketplace only supports the installation of new plugins. To upgrade a plugin, you need to manually update it by downloading the binary file from the GitHub repository and upload it in **System Console > Plugin management**.
 
 Marketplace Server
 ------------------
