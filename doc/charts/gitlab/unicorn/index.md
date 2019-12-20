@@ -49,8 +49,8 @@ to the `helm install` command using the `--set` flags.
 | `image.pullSecrets`              |                       | Secrets for the image repository               |
 | `image.repository`               | `registry.gitlab.com/gitlab-org/build/cng/gitlab-unicorn-ee` | Unicorn image repository |
 | `image.tag`                      |                       | Unicorn image tag                              |
-| `init.image`                     | `busybox`             | initContainer image                            |
-| `init.tag`                       | `latest`              | initContainer image tag                        |
+| `init.image.repository`          |                       | initContainer image                            |
+| `init.image.tag`                 |                       | initContainer image tag                        |
 | `memory.min`                     | `400`                 | The minimum memory threshold (in megabytes) for the Unicorn worker killer |
 | `memory.max`                     | `650`                 | The maximum memory threshold (in megabytes) for the Unicorn worker killer |
 | `metrics.enabled`                | `true`                | Toggle Prometheus metrics exporter             |

@@ -38,10 +38,10 @@ extra:
   {{ if .extra.googleAnalyticsId }}
   google_analytics_id: {{ .extra.googleAnalyticsId | quote }}
   {{- end }}
-  {{ if .extra.piwik_url }}
+  {{ if .extra.piwikUrl }}
   piwik_url: {{ .extra.piwikUrl | quote }}
   {{- end }}
-  {{ if .extra.piwik_site_id }}
+  {{ if .extra.piwikSiteId }}
   piwik_site_id: {{ .extra.piwikSiteId | quote }}
   {{- end }}
 {{- end -}}

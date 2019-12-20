@@ -44,9 +44,10 @@ global:
 
 ## Control the InitContainer behaviors.
 init:
-  image: "busybox"
-  tag: "latest"
-  pullPolicy: "IfNotPresent"
+  image:
+    # repository:
+    # tag:
+    pullPolicy: "IfNotPresent"
   script: |-
     sed -e 's@ACCESS_KEY@'"$(cat /config/accesskey)"'@' -e 's@SECRET_KEY@'"$(cat /config/secretkey)"'@' /config/config.json > /minio/config.json
   resources:

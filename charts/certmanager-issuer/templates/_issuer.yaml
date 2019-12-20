@@ -16,5 +16,9 @@ spec:
     privateKeySecretRef:
       name: {{ .Release.Name }}-acme-key
     # Enable the HTTP-01 challenge provider
-    http01: {}
+    solvers:
+    - selector: {}
+      http01:
+        ingress:
+          class: {{ template "gitlab.ingressclass" . }}
 {{ end }}

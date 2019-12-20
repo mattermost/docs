@@ -120,8 +120,8 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 | `image.pullSecrets`                        |                                              | Secrets to use for image repository                                                                  |
 | `image.repository`                         | `registry`                                   | Registry image                                                                                       |
 | `image.tag`                                | `2.7.1`                                      | Version of the image to use                                                                          |
-| `init.image`                               | `busybox`                                    | initContainer image                                                                                  |
-| `init.tag`                                 | `latest`                                     | initContainer image tag                                                                              |
+| `init.image.repository`                    |                                              | initContainer image                                                                                  |
+| `init.image.tag`                           |                                              | initContainer image tag                                                                              |
 | `log`                                      | `{level: warn, fields: {service: registry}}` | Configure the logging options                                                                        |
 | `minio.bucket`                             | `global.registry.bucket`                     | Legacy registry bucket name                                                                          |
 | `maintenance.readOnly.enabled`             | `false`                                      | Enable registry's read-only mode                                                                     |

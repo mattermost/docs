@@ -331,3 +331,26 @@ Constructs kubectl image name.
 {{- define "gitlab.kubectl.image" -}}
 {{- printf "%s:%s" .Values.global.kubectl.image.repository .Values.global.kubectl.image.tag -}}
 {{- end -}}
+
+{{/*
+Constructs busybox image name.
+*/}}
+{{- define "gitlab.busybox.image" -}}
+{{/*
+    # Earlier, init.image and init.tag were used to configure initContainer
+    # image details. We deprecated them in favor of init.image.repository and
+    # init.image.tag. However, deprecation checking happens after template
+    # rendering is done. So, we have to handle the case of `init.image` being a
+    # string to avoid the process being broken at rendering stage itself. It
+    # doesn't matter what we print there because once rendering is done
+    # deprecation check will kick-in and abort the process. That value will not
+    # be used.
+*/}}
+{{- if kindIs "map" .local.image }}
+{{- $image := default .global.image.repository .local.image.repository }}
+{{- $tag := default .global.image.tag .local.image.tag }}
+{{- printf "%s:%s" $image $tag -}}
+{{- else }}
+{{- printf "DEPRECATED:DEPRECATED" -}}
+{{- end -}}
+{{- end -}}
