@@ -12,14 +12,15 @@ SAML Single-Sign-On itself does not support periodic updates of user attributes 
 
 For more information about SAML, see `this article from Varonis <https://www.varonis.com/blog/what-is-saml/>`_, and `this conceptual example from DUO <https://duo.com/blog/the-beer-drinkers-guide-to-saml>`_.
 
-Mattermost officially supports Okta, OneLogin and Microsoft ADFS as the identity providers (IDPs), please see links below for more details on how to configure SAML with these providers. 
+Mattermost officially supports Okta, OneLogin and Microsoft ADFS as the identity providers (IDPs), please see links below for more details on how to configure SAML with these providers.
 
 .. toctree::
   :titlesonly:
 
   Okta SAML Configuration <sso-saml-okta>
   OneLogin SAML Configuration <sso-saml-onelogin.rst>
-  Microsoft ADFS SAML Configuration <sso-saml-adfs>
+  Microsoft ADFS SAML Configuration for Windows Server 2012 <sso-saml-adfs>
+  Microsoft ADFS SAML Configuration for Windows Server 2016 <sso-saml-adfs-msws2016> 
 
 In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up Azure AD, DUO, PingFederate and SimpleSAMLphp as a custom IdPs. You can also set up MFA on top of your SAML provider for additional security.
 
