@@ -77,7 +77,7 @@ Frequently Asked Questions
 
 **Q: What is community.mattermost kept on?**
  
-- A: For Feature releases community.mattermost is kept on the RCs. For Bug fix releases keep it on master.
+- A: For Feature releases community.mattermost is kept on the RCs. For Quality releases keep it on master.
  
 **Q: What is community-daily.mattermost kept on?**
  
