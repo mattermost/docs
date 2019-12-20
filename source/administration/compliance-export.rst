@@ -27,7 +27,7 @@ Enterprise deployments with a requirement to archive history beyond the data ret
 Set Up Guide
 ----------------------------
 
-Use the following guides to configure exports for CSV, Actiance XML, or Global Relay EML. Compliance exports are written to the ``exports`` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/administration/config-settings.html#storage>`__ in the chosen format. If you have Mattermost configured to use S3 storage exports are written to the ``exports`` directory in the bucket Mattermost uses.
+Use the following guides to configure exports for CSV, Actiance XML, or Global Relay EML. Compliance exports are written to the ``exports`` subdirectory of the configured `Local Storage directory <https://docs.mattermost.com/administration/config-settings.html#storage>`__ in the chosen format. If you have configured Mattermost to use S3 storage, the exports are written to the ``exports`` directory in the Mattermost bucket.
 
 .. note::
   The compliance exports do not contain posts sent before the feature was enabled, but you can export past history via the ``export`` :doc:`command line tool <command-line-tools>`. Posts made prior to upgrading to Mattermost v4.5 will have less accurate channel member history information.
