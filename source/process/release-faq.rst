@@ -73,7 +73,7 @@ Frequently Asked Questions
  
 **Q: How is cherry-picking done?**
 
-- A: 
+- A: TBD
 
 **Q: What is community.mattermost kept on?**
  
