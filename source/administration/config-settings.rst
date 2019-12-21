@@ -1453,7 +1453,7 @@ Allow Users to View Archived Channels (Beta)
 **False**: Users are unable to view, share or search for content of channels that have been archived.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ViewArchivedChannels": false`` with options ``true`` and ``false``.                                      |
+| This feature's ``config.json`` setting is ``"ExperimentalViewArchivedChannels": false`` with options ``true`` and ``false``.                                      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Show Email Address
