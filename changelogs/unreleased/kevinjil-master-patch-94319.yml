@@ -1,5 +1,0 @@
----
-title: Fix reference to piwik url and site ID in GitLab chart template.
-merge_request: 1061
-author: Kevinjil
-type: fixed

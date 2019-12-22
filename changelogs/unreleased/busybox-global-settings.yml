@@ -1,5 +1,0 @@
----
-title: Add global setting to configure busybox image for initContainers
-merge_request: 1062
-author:
-type: added

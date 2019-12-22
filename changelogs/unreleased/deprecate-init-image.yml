@@ -1,5 +1,0 @@
----
-title: "Deprecate init.image and init.tag settings in favor of init.image.repository and init.image.tag"
-merge_request: 1062
-author:
-type: deprecated
