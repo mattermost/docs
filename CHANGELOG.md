@@ -2,6 +2,40 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.6.0
+
+### Fixed (3 changes, 1 of them is from the community)
+
+- Geo: automate secondary migrations behaviors. !1055
+- Fix reference to piwik url and site ID in GitLab chart template. !1061 (Kevinjil)
+- Corrected indentation issue with Gitaly volumeClaimTemplate selector. !1070
+
+### Deprecated (1 change)
+
+- Deprecate init.image and init.tag settings in favor of init.image.repository and init.image.tag. !1062
+
+### Changed (4 changes, 1 of them is from the community)
+
+- Upgrade nginx ingress controller to 0.21 to Enable TLSv1.3, and TLSv1.1 is disabled by default. !1014 (Xiangxuan Liu)
+- Specify Kubernetes 1.12 as minimum required version and use v1.13 tools and libraries. !1053
+- Updated gitlab-exporter to 5.1.0. !1075
+- Update certmanager to 0.10.1. !1079
+
+### Added (6 changes, 3 of them are from the community)
+
+- Added support of memory killer daemon mode. !1040 (Dmitry Chepurovskiy)
+- Added http probes for sidekiq and unicorn. !1045 (Dmitry Chepurovskiy)
+- Enable Bootsnap cache in Task runner. !1056
+- Add global setting to configure busybox image for initContainers. !1062
+- Adding capability to use pullsecrets in order to download minio mc image. !1066 (Mustafa Bhabhrawala)
+- Enable Bootsnap cache in migrations. !1069
+
+### Other (2 changes)
+
+- Document the use of external Minio for object storage. !1005
+- Update GitLab Version to 12.6.0.
+
+
 ## 2.5.6
 
 ### Added (1 change, 1 of them is from the community)
