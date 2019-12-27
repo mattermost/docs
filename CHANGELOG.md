@@ -2,6 +2,14 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.6.1
+
+### Other (2 changes)
+
+- Update gitlab-org/charts/gitlab-runner from 0.11.0 to 0.12.0. !1085
+- Update GitLab Version to 12.6.1.
+
+
 ## 2.6.0
 
 ### Fixed (3 changes, 1 of them is from the community)
