@@ -1,0 +1,60 @@
+version: 3
+dependencies:
+- type: git
+  manifest_updates:
+    filters:
+    - name: ".*minio.*" # minio/mc
+      group: true
+      enabled: true
+    - name: .* # everything else
+      enabled: true
+  settings:
+    # Assign to WarheadsSE (jplum) and twk3 (dmountney) by default
+    gitlab_assignee_ids:
+      - 597578
+      - 42196
+    gitlab_labels:
+      - maintenance
+      - dependencies.io
+    gitlab_remove_source_branch: true
+    remotes:
+      # Registry chart / container
+      https://github.com/docker/distribution.git:
+        replace_in_files:
+        - filename: doc/charts/registry/index.md
+          pattern: "tag: '(\\S+)'"
+          range: '>= 2.x.x'
+        - filename: doc/charts/registry/index.md
+          pattern: '`(\d+\.\d+\.\d+)`'
+          range: '>= 2.x.x'
+        - filename: charts/registry/values.yaml
+          pattern: "tag: '(\\S+)'"
+          range: '>= 2.x.x'
+      # Minio chart / minio container
+      https://github.com/minio/minio.git:
+        replace_in_files:
+        - filename: charts/minio/values.yaml
+          tag_prefix: 'RELEASE.20'
+          pattern: 'imageTag: "RELEASE.20(\d\d-\d\d-\d\dT\d\d-\d\d-\d\dZ)"'
+          semver: false
+        - filename: doc/charts/minio/index.md
+          tag_prefix: 'RELEASE.20'
+          pattern: '`RELEASE.20(\d\d-\d\d-\d\dT\d\d-\d\d-\d\dZ)`'
+          semver: false
+      # Minio chart / mc container
+      https://github.com/minio/mc.git:
+        replace_in_files:
+        - filename: charts/minio/values.yaml
+          tag_prefix: 'RELEASE.20'
+          pattern: 'tag: "RELEASE.20(\d\d-\d\d-\d\dT\d\d-\d\d-\d\dZ)"'
+          semver: false
+      # GitLab Exporter
+      https://gitlab.com/gitlab-org/gitlab-exporter.git:
+        replace_in_files:
+        - filename: charts/gitlab/charts/gitlab-exporter/Chart.yaml
+          pattern: 'appVersion: (\S+)'
+      # GitLab Runner Chart
+      https://gitlab.com/gitlab-org/charts/gitlab-runner.git:
+        replace_in_files:
+        - filename: requirements.yaml
+          pattern: 'name: gitlab-runner\n  version: (\S+)'

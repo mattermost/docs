@@ -44,7 +44,7 @@ spec:
 {{- include "pullsecrets" .Values.upgradeCheck.image | indent 6}}
       containers:
         - name: run-check
-          image: "{{ .Values.upgradeCheck.image.repository }}:{{ .Values.upgradeCheck.image.tag }}"
+          image: {{ include "gitlab.busybox.image" (dict "local" .Values.upgradeCheck "global" $.Values.global.busybox) | quote }}
           command: ['/bin/sh', '/scripts/runcheck']
           {{ template "gitlab.imagePullPolicy" . }}
           env:

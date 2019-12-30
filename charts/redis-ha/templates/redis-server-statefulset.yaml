@@ -55,7 +55,7 @@ spec:
         fsGroup: 2000
       initContainers:
         - name: configure
-          image: {{ .Values.init.image }}:{{ .Values.init.tag }}
+          image: {{ include "gitlab.busybox.image" (dict "local" .Values.init "global" $.Values.global.busybox) | quote }}
           command: ['sh', '/config/configure']
           volumeMounts:
           - name: {{ .Release.Name }}
@@ -145,6 +145,13 @@ spec:
         name: data
       spec:
         accessModes: {{.Values.persistentVolume.accessModes}}
+        {{- if .Values.persistentVolume.storageClass }}
+        {{- if (eq "-" .Values.persistentVolume.storageClass) }}
+        storageClassName: ""
+        {{- else }}
+        storageClassName: "{{ .Values.persistentVolume.storageClass }}"
+        {{- end }}
+        {{- end }}
         resources:
           requests:
             storage: {{ .Values.persistentVolume.size | quote }}

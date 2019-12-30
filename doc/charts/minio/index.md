@@ -56,7 +56,7 @@ to the `helm install` command using the `--set` flags:
 | `defaultBuckets`               | `[{"name": "registry"}]`      | MinIO default buckets                   |
 | `image`                        | `minio/minio`                 | MinIO image                             |
 | `imagePullPolicy`              | `Always`                      | MinIO image pull policy                 |
-| `imageTag`                     | `RELEASE.2017-12-28T01-2100Z` | MinIO image tag                         |
+| `imageTag`                     | `RELEASE.2017-12-28T01-21-00Z` | MinIO image tag                         |
 | `minioConfig.browser`          | `on`                          | MinIO browser flag                      |
 | `minioConfig.domain`           |                               | MinIO domain                            |
 | `minioConfig.region`           | `us-east-1`                   | MinIO region                            |
@@ -134,16 +134,20 @@ While rarely altered, the `initContainer` behaviors can be changed via the follo
 
 ```
 init:
-  image: busybox
-  tag: latest
-  pullPolicy: IfNotPresent
+  image:
+    repository:
+    tag:
+    pullPolicy: IfNotPresent
   script:
 ```
 
 ### initContainer image
 
-The initContainer image settings are just as with a normal image configuration, the
-defaults are listed above.
+The initContainer image settings are just as with a normal image configuration.
+By default, chart-local values are left empty, and the global settings
+`global.busybox.image.repository` and `global.busybox.image.tag` will be used to
+populate initContainer image. If chart-local values are specified, they get
+used instead of the global setting's values.
 
 ### initContainer script
 

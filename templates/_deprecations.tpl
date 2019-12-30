@@ -34,6 +34,9 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.global.appConfig.ldap.password" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.sidekiq.cronJobs" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.local.kubectl" .) -}}
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.initContainerImage" .) -}}
+{{- $deprecated := append $deprecated (include "external.deprecate.initContainerImage" .) -}}
+{{- $deprecated := append $deprecated (include "external.deprecate.initContainerPullPolicy" .) -}}
 
 {{- /* prepare output */}}
 {{- $deprecated := without $deprecated "" -}}
@@ -188,3 +191,48 @@ sidekiq:
 {{- end -}}
 {{- end -}}
 {{/* END gitlab.deprecate.local.kubectl */}}
+
+{{/* Deprecation behavious for configuration of initContainer images of gitlab sub-charts */}}
+{{- define "gitlab.deprecate.initContainerImage" -}}
+{{- range $chart:= list "geo-logcursor" "gitaly" "gitlab-exporter" "gitlab-shell" "mailroom" "migrations" "sidekiq" "task-runner" "unicorn" }}
+{{-     if hasKey (index $.Values.gitlab $chart) "init" -}}
+{{-         with $config := index $.Values.gitlab $chart "init" -}}
+{{-             if or (and (hasKey $config "image") (kindIs "string" $config.image)) (hasKey $config "tag") }}
+gitlab.{{ $chart }}:
+    Configuring image for initContainers using gitlab.{{ $chart }}.init.image and gitlab.{{ $chart }}.init.tag has been deprecated. Please use gitlab.{{ $chart }}.init.image.repository and gitlab.{{ $chart }}.init.image.tag for that.
+{{-             end -}}
+{{-         end -}}
+{{-     end -}}
+{{- end -}}
+{{- end -}}
+{{/* END gitlab.deprecate.initContainerImage */}}
+
+{{/* Deprecation behavious for configuration of initContainer images of external charts */}}
+{{- define "external.deprecate.initContainerImage" -}}
+{{- range $chart:= list "minio" "registry" "redis" "redis-ha" }}
+{{-     if hasKey (index $.Values $chart) "init" -}}
+{{-         with $config := index $.Values $chart "init" -}}
+{{-             if or (and (hasKey $config "image") (kindIs "string" $config.image)) (hasKey $config "tag") }}
+{{ $chart }}:
+    Configuring image for initContainers using {{ $chart }}.init.image and {{ $chart }}.init.tag has been deprecated. Please use {{ $chart }}.init.image.repository and {{ $chart }}.init.image.tag for that.
+{{-             end -}}
+{{-         end -}}
+{{-     end -}}
+{{- end -}}
+{{- end -}}
+{{/* END external.deprecate.initContainerImage */}}
+
+{{/* Deprecation behavious for configuration of initContainer image pull policy of external charts */}}
+{{- define "external.deprecate.initContainerPullPolicy" -}}
+{{- range $chart:= list "minio" "registry" }}
+{{-     if hasKey (index $.Values $chart) "init" -}}
+{{-         with $config := index $.Values $chart "init" -}}
+{{-             if hasKey $config "pullPolicy" }}
+{{ $chart }}:
+    Configuring pullPolicy for initContainer images using {{ $chart }}.init.pullPolicy has been deprecated. Please use {{ $chart }}.init.image.pullPolicy for that.
+{{-             end -}}
+{{-         end -}}
+{{-     end -}}
+{{- end -}}
+{{- end -}}
+{{/* END external.deprecate.initContainerPullPolicy*/}}

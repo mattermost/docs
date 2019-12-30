@@ -36,7 +36,7 @@ The following are the steps to upgrade GitLab to a newer version:
    ```
 
 1. Decide on all the values you need to set
-1. If you would like to use the GitLab operator go through the steps outlined in [Operator installation](./operator.md)
+1. If you would like to use the GitLab Operator go through the steps outlined in [Operator installation](./operator.md)
 1. Perform the upgrade, with all `--set` arguments extracted in step 4
 
    ```

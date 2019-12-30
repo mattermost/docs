@@ -19,6 +19,7 @@ for more information on how the global variables work.
 - [GitLab Shell](#configure-gitlab-shell)
 - [Custom Certificate Authorities](#custom-certificate-authorities)
 - [Application Resource](#application-resource)
+- [Busybox image](#busybox-image)
 
 ## Configure Host settings
 
@@ -92,7 +93,7 @@ The GitLab global host settings for Ingress are located under the `global.ingres
 
 ### `global.ingress.configureCertmanager`
 
-Global setting that controls the automatic configuration of [cert-manager](https://github.com/helm/charts/tree/master/stable/cert-manager)
+Global setting that controls the automatic configuration of [cert-manager](https://hub.helm.sh/charts/jetstack/cert-manager)
 for Ingress objects. If `true`, relies on `certmanager-issuer.email` being set.
 
 If `false` and `global.ingress.tls.secretName` is not set, this will activate automatic
@@ -610,7 +611,7 @@ omniauth:
 | `autoLinkLdapUser`        | Boolean | `false`     | Can be used if you have LDAP / ActiveDirectory integration enabled. When enabled, users automatically created through OmniAuth will be linked to their LDAP entry as well. |
 | `autoLinkSamlUser`        | Boolean | `false`     | Can be used if you have SAML integration enabled. When enabled, users automatically created through OmniAuth will be linked to their SAML entry as well. |
 | `autoSignInWithProvider`  |         | `nil`       | Single provider name allowed to automatically sign in. This should match the name of the provider, such as `saml` or `google_oauth2`. |
-| `blockAUtoCreatedUsers`   | Boolean | `true`      | If `true` auto created users will be blocked by default and will have to be unblocked by an administrator before they are able to sign in. |
+| `blockAutoCreatedUsers`   | Boolean | `true`      | If `true` auto created users will be blocked by default and will have to be unblocked by an administrator before they are able to sign in. |
 | `enabled`                 | Boolean | `false`     | Enable / disable the use of OmniAuth with GitLab. |
 | `externalProviders`       |         | `[]`        | You can define which OmniAuth providers you want to be `external`, so that all users **creating accounts, or logging in via these providers** will be unable to access internal projects. You will need to use the full name of the provider, like `google_oauth2` for Google. See [Configure OmniAuth Providers as External](https://docs.gitlab.com/ee/integration/omniauth.html#configure-omniauth-providers-as-external). |
 | `providers`               |         | `[]`        | [See below](#providers). |
@@ -853,3 +854,20 @@ gitlab-runner:
 certmanager:
   install: false
 ```
+
+## Busybox image
+
+By default, GitLab Helm charts use `busybox:latest` for booting up various
+initContainers. This is controlled by the following settings
+
+```yaml
+global:
+  busybox:
+    image:
+      repository: busybox
+      tag: latest
+```
+
+Many charts also provide `init.image.repository` and `init.image.tag` settings
+locally that can be used to override this global setting for that specific
+chart.

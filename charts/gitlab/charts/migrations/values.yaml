@@ -8,8 +8,9 @@ image:
   # tag: latest
 
 init:
-  image: busybox
-  tag: latest
+  image: {}
+    # repository:
+    # tag:
   resources:
     requests:
       cpu: 50m
@@ -53,7 +54,9 @@ global:
     authToken: {}
 resources:
   requests:
-    cpu: 50m
+    cpu: 250m
     memory: 200Mi
 activeDeadlineSeconds: 3600
 backoffLimit: 6
+bootsnap:
+  enabled: true

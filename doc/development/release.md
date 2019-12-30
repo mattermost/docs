@@ -42,14 +42,17 @@ We will bump it for:
 | `0.3.0`       | `11.1.0`       | GitLab minor release, along with new chart changes |
 | `0.4.0`       | `11.1.0`       | Chart change that we feel makes sense to include as a minor version bump |
 | `0.2.4`       | `11.0.3`       | Security release |
-| ~~`0.3.1`~~   | ~~`11.1.1`~~   | ~~Security release~~ <sup>*1</sup> |
-| `0.4.1`       | `11.1.1`       | Security release <sup>*1</sup> |
+| ~~`0.3.1`~~   | ~~`11.1.1`~~   | ~~Security release~~ (*1*) |
+| `0.4.1`       | `11.1.1`       | Security release (*1*) |
 | ...           | ...            | ... |
 | `1.0.0`       | `11.x.0`       | GitLab minor release, along with Chart GA |
 | `2.0.0`       | `11.x.x`       | Introduced some breaking change to the chart |
 | `3.0.0`       | `12.0.0`       | GitLab 12 release |
 
-<sup>1</sup> If we have two chart versions that both would need to be upgraded to the same image version for a security release, we will just update the newer one. Otherwise automating release logic will be overly complicated. Users can workaround if needed by manually specifying the image version, or upgrading their chart.
+- (*1*): If we have two chart versions that both would need to be upgraded to the same image version
+  for a security release, we will just update the newer one. Otherwise automating release logic will
+  be overly complicated. Users can workaround if needed by manually specifying the image version, or
+  upgrading their chart.
 
 ### Future iteration
 
@@ -105,7 +108,7 @@ stable branch for the version you will release.
 For example, if you want to release version `0.2.1` of the charts, the changes will need to be in `0-2-stable`
 
 A chatops command exists to tag a release. Run the following command in the
-relevant release slack channel (eg: `#f_release_12_4`)
+relevant release Slack channel (eg: `#f_release_12_4`)
 
 ```
 /chatops run helm tag <charts version> <GitLab version>
@@ -120,9 +123,9 @@ You can also do it manually, without using the chatops command as follows:
    bundle install
    ```
 
-1. Then run the appropriate helm release task:
+1. Then run the appropriate Helm release task:
 
-   - When you want to release without changing the gitlab app version, call the release task with the new chart version (eg `0.2.1`)
+   - When you want to release without changing the GitLab app version, call the release task with the new chart version (eg `0.2.1`)
      - `bundle exec rake helm:tag_chart[0.2.1]`
 
    - When you want to release and change both the chart version and the app version (eg `0.2.1` with GitLab `11.0.1`)

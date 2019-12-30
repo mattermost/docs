@@ -39,7 +39,7 @@ spec:
 {{ include "gitlab.certificates.initContainer" . | indent 8 }}
         - name: configure
           command: ['sh', '/config/configure']
-          image: {{ .Values.init.image }}:{{ .Values.init.tag }}
+          image: {{ include "gitlab.busybox.image" (dict "local" .Values.init "global" $.Values.global.busybox) | quote }}
           volumeMounts:
 {{ include "gitlab.extraVolumeMounts" . | indent 10 }}
 {{ include "gitlab.psql.ssl.volumeMount" . | indent 10 }}
@@ -88,6 +88,10 @@ spec:
               value: {{ .Values.global.appConfig.backups.tmpBucket }}
             - name: GITALY_FEATURE_DEFAULT_ON
               value: "1"
+            {{- if .Values.bootsnap.enabled }}
+            - name: ENABLE_BOOTSNAP
+              value: "1"
+            {{- end }}
             - name: CONFIG_TEMPLATE_DIRECTORY
               value: '/var/opt/gitlab/templates'
             - name: CONFIG_DIRECTORY
@@ -174,7 +178,7 @@ spec:
               items:
                 - key: {{ template "gitlab.psql.password.key" . }}
                   path: postgres/psql-password
-          {{- if .Values.global.geo.enabled }}
+          {{- if include "gitlab.geo.secondary" $ }}
           - secret:
               name: {{ template "gitlab.geo.psql.password.secret" . }}
               items:

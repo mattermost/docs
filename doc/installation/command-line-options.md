@@ -14,7 +14,7 @@ to the `helm install` command using the `--set` flags.
 | `global.application.create`                    | Create an [Application resource](https://github.com/kubernetes-sigs/application) for GitLab | `false`                                       |
 | `global.edition`                               | The edition of GitLab to install. Enterprise Edition (ee) or Community Edition (ce)         | `ee`                                          |
 | `global.hosts.domain`                          | Domain name that will be used for all publicly exposed services                             | Required                                      |
-| `global.hosts.externalIP`                      | Static IP to assign to NGINX Ingress controller                                             | Required                                      |
+| `global.hosts.externalIP`                      | Static IP to assign to NGINX Ingress Controller                                             | Required                                      |
 | `global.hosts.ssh`                             | Domain name that will be used for Git SSH access                                            | `gitlab.{global.hosts.domain}`                |
 | `global.imagePullPolicy`                       | Set a default imagePullPolicy for all charts                                                | `IfNotPresent`                                |
 | `global.minio.enabled`                         | MinIO enable flag                                                                           | `true`                                        |
@@ -255,6 +255,7 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 | `gitlab.gitlab-shell.service.name`                           | Shell service name                             | `gitlab-shell`                                                   |
 | `gitlab.gitlab-shell.service.type`                           | Shell service type                             | `ClusterIP`                                                      |
 | `gitlab.gitlab-shell.unicorn.serviceName`                    | Unicorn service name                           | `unicorn`                                                        |
+| `gitlab.migrations.bootsnap.enabled`                         | Migrations Bootsnap enable flag                | true                                                             |
 | `gitlab.migrations.enabled`                                  | Migrations enable flag                         | true                                                             |
 | `gitlab.migrations.image.pullPolicy`                         | Migrations pull policy                         | `Always`                                                         |
 | `gitlab.migrations.image.repository`                         | Migrations image repository                    | `registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee`       |
@@ -296,13 +297,14 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 | `gitlab.task-runner.backups.objectStorage.config.key`        | key containing credentials in secret           | ""                                                               |
 | `gitlab.task-runner.backups.objectStorage.config.secret`     | Object storage credentials secret              | ""                                                               |
 | `gitlab.task-runner.backups.objectStorage.config`            | Authentication information for object storage  | {}                                                               |
+| `gitlab.task-runner.bootsnap.enabled`                        | Enable Bootsnap cache in Task runner           | true                                                             |
 | `gitlab.task-runner.enabled`                                 | Task runner enabled flag                       | true                                                             |
 | `gitlab.task-runner.image.pullPolicy`                        | Task runner image pull policy                  | `IfNotPresent`                                                   |
 | `gitlab.task-runner.image.repository`                        | Task runner image repository                   | `registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ee` |
 | `gitlab.task-runner.image.tag`                               | Task runner image tag                          | `latest`                                                         |
-| `gitlab.task-runner.init.image`                              | Task runner init image repository              | `busybox`                                                        |
+| `gitlab.task-runner.init.image.repository`                   | Task runner init image repository              |                                                                  |
+| `gitlab.task-runner.init.image.tag`                          | Task runner init image tag                     |                                                                  |
 | `gitlab.task-runner.init.resources.requests.cpu`             | Task runner init minimum needed cpu            | `50m`                                                            |
-| `gitlab.task-runner.init.tag`                                | Task runner init image tag                     | `latest`                                                         |
 | `gitlab.task-runner.persistence.accessMode`                  | Task runner persistence access mode            | `ReadWriteOnce`                                                  |
 | `gitlab.task-runner.persistence.enabled`                     | Task runner enable persistence flag            | false                                                            |
 | `gitlab.task-runner.persistence.matchExpressions`            | Label-expression matches to bind               |                                                                  |

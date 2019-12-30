@@ -25,8 +25,8 @@ default values.
 | `image.pullSecrets`     |                              | Secrets to use for image repository.                   |
 | `image.repository`      | `registry.gitlab.com/gitlab-org/build/cng/gitlab-redis-ha`| Redis image.              |
 | `image.tag`             | `latest`                     | Version of the Redis image to use.                     |
-| `init.image`            | `busybox`                    | initContainer image.                                   |
-| `init.tag`              | `latest`                     | initContainer image tag.                               |
+| `init.image.repository` |                              | initContainer image.                                   |
+| `init.image.tag`        |                              | initContainer image tag.                               |
 | `metrics.enabled`       | `true`                       | Toggle Prometheus Redis exporter sidecar container.    |
 | `nodeSelector`          | `{}`                         | Node labels for pod assignment.                        |
 | `rbac.create`           | `true`                       | Whether RBAC resources should be created.              |

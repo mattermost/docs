@@ -5,8 +5,9 @@ image:
   # tag: latest
 
 init:
-  image: busybox
-  tag: latest
+  image: {}
+    # repository:
+    # tag:
   resources:
     requests:
       cpu: 50m
@@ -16,6 +17,11 @@ tolerations: []
 
 enabled: true
 annotations: {}
+
+# Enable or disable the Bootsnap cache for faster Rails startup times
+bootsnap:
+  enabled: true
+
 global:
   # imagePullPolicy: IfNotPresent
   hosts:

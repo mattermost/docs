@@ -135,16 +135,16 @@ prometheus:
     enabled: false
     persistentVolume:
       enabled: false
-      size: 2GiB
+      size: 2Gi
   pushgateway:
     enabled: false
     persistentVolume:
       enabled: false
-      size: 2GiB
+      size: 2Gi
   server:
     persistentVolume:
       enabled: true
-      size: 8GiB
+      size: 8Gi
 ```
 
 [prometheus-configuration]: https://github.com/helm/charts/tree/master/stable/prometheus#configuration
@@ -229,9 +229,9 @@ Mappings between chart versions and GitLab versions can be found [here](../index
 
 Instructions for installing a development branch rather than a tagged release can be found in the [developer deploy documentation](../development/deploy.md).
 
-### GitLab operator (experimental)
+### GitLab Operator (experimental)
 
-If you would like to use GitLab operator to achieve zero downtime upgrades, please follow the [documentation for using the operator](./operator.md)
+If you would like to use GitLab Operator to achieve zero downtime upgrades, please follow the [documentation for using the operator](./operator.md)
 
 ## Monitoring the Deployment
 

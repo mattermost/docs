@@ -40,8 +40,8 @@ the `helm install` command using the `--set` flags.
 | `image.pullSecrets`             |                                            | Secrets for the image repository                                                                                                                                     |
 | `image.repository`              | `registry.com/gitlab-org/build/cng/gitaly` | Gitaly image repository                                                                                                                                              |
 | `image.tag`                     | `latest`                                   | Gitaly image tag                                                                                                                                                     |
-| `init.image`                    | `busybox`                                  | initContainer image                                                                                                                                                  |
-| `init.tag`                      | `latest`                                   | initContainer image tag                                                                                                                                              |
+| `init.image.repository`         |                                            | initContainer image                                                                                                                                                  |
+| `init.image.tag`                |                                            | initContainer image tag                                                                                                                                              |
 | `internal.names[]`              | `- default`                                | Ordered names of statfulset storages                                                                                                                                 |
 | `service.externalPort`          | `8075`                                     | Gitaly service exposed port                                                                                                                                          |
 | `service.internalPort`          | `8075`                                     | Gitaly internal port                                                                                                                                                 |
@@ -67,7 +67,7 @@ the `helm install` command using the `--set` flags.
 | `ruby.numWorkers`               |                                            | Number of Gitaly-Ruby worker processes                                                                                                                               |
 | `shell.concurrency[]`           |                                            | Concurrency of each RPC endpoint Specified using keys `rpc` and `maxPerRepo`                                                                                         |
 | `git.catFileCacheSize`          |                                            | Cache size used by Git cat-file process                                                                                                                              |
-| `prometheus.grpcLatencyBuckets` |                                            | Buckets corresponding to histogram latencies on GRPC method calls to be recorded by Gitaly. A string form of the array, like "[1.0, 1.5, 2.0]", is required as input |
+| `prometheus.grpcLatencyBuckets` |                                            | Buckets corresponding to histogram latencies on GRPC method calls to be recorded by Gitaly. A string form of the array (for example, `"[1.0, 1.5, 2.0]"`) is required as input |
 
 ## Chart configuration examples
 

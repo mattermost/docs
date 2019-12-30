@@ -61,8 +61,8 @@ spec:
       initContainers:
 {{ include "gitlab.certificates.initContainer" . | indent 8 }}
         - name: configure
-          image: {{ .Values.init.image }}:{{ .Values.init.tag}}
-          imagePullPolicy: {{ .Values.init.pullPolicy }}
+          image: {{ include "gitlab.busybox.image" (dict "local" .Values.init "global" $.Values.global.busybox) | quote }}
+          imagePullPolicy: {{ .Values.init.image.pullPolicy }}
           command: ["sh", "/config/configure"]
           volumeMounts:
             - name: registry-secrets
