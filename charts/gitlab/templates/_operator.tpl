@@ -39,18 +39,8 @@ true
 {{- end -}}
 
 {{/*
-Returns the operator crd name which should be in the format of spec.names.plural + '.' + groupname
-*/}}
-
-{{- define "gitlab.operator.crdName" -}}
-{{- $groupName := include "gitlab.operator.groupName" . -}}
-{{ printf "gitlabs.%s" $groupName}}
-{{- end -}}
-
-{{/*
 Returns the operator group name. A subgroup with the release name is chosen
 */}}
-
 {{- define "gitlab.operator.groupName" -}}
 {{- if .Values.crdPrefix -}}
 {{ printf "%s.gitlab.com" .Values.crdPrefix }}

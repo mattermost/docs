@@ -1,0 +1,5 @@
+---
+title: Split the operator bootstrap out of the chart
+merge_request: 1090
+author:
+type: changed
