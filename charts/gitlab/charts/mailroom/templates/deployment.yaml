@@ -74,7 +74,7 @@ spec:
       containers:
 {{ include "gitlab.extraContainers" . | indent 8 }}
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.versionTag" . ) }}"
+          image: "{{ .Values.image.repository }}:{{ coalesce .Values.image.tag (include "gitlab.parseAppVersion" .Chart.AppVersion) }}"
           {{ template "gitlab.imagePullPolicy" . }}
           volumeMounts:
             - name: mailroom-config
