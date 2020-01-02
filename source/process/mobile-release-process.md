@@ -1,13 +1,15 @@
 # Mobile App Release Process
 
-The Mattermost Mobile Apps team works on a monthly release process, with a new version submitted to the iOS App Store and Google Play Store on the 5th of each month. Note: iOS App Store approval may take a few days after the 5th. 
+The Mattermost Mobile Apps team works on a monthly release process, with a new version submitted to the iOS App Store and Google Play Store on the 16th of each month. 
+
+**Note: iOS App Store approval may take a few days after the 16th.**
 
 ## Release Timeline
 
 Notes:
 
-- All cut-off dates are based on 10am (San Francisco Time) on the day stated.
-- T-minus counts are measured in "working days" (weekdays other than major holidays in the US and Canada) prior to release day.
+- All cut-off dates are based on 10am ([San Francisco Time](https://everytimezone.com/)) on the day stated.
+- T-minus counts are measured in "working days" (weekdays, Monday through Friday, excluding [the listed statutory holidays](https://docs.mattermost.com/process/working-at-mattermost.html#holidays)) prior to release day.
 
 ### A. (T-minus 15 working days) Cut-off for merging major features
 
@@ -21,13 +23,13 @@ No pull requests for major features should be **merged** to the current release 
     - Prioritize reviewing major features, ensuring any bugs and UX issues get fixed
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the pull request queue marked for the current release
-      - After the cut-off, any PRs that include significant code changes, require approval of the release manager and React Native PM before merging
+      - After the cut-off, any PRs that include significant code changes, require approval of the Release Manager and React Native PM before merging
 4. Build:
     - Cut a beta build
 5. Marketing:
     - Prepare a list of highlights to be included in the next Mattermost release announcement
 
-### B. (T-minus 14 working days) Major feature testing
+### B. (T-minus 14 working days) Major Feature Testing
 
 1. QA:
     - Prioritize testing merged PRs and resolved tickets
@@ -45,7 +47,7 @@ Day when PM decides which major features are included in the release, and which 
     - Update Changelog PR based on what's in/out of the release
     - Post a link to Native Mobile Apps channel for query of remaining bugs in this release
 3. PM:
-    - Review the JIRA tickets remaining in the current release fix version and push those that won't make it to the next fix version
+    - Review the Jira tickets remaining in the current release fix version and push those that won't make it to the next fix version
 
 ### D. (T-minus 9 working days) Code Complete and Release Candidate Cut 
 
@@ -93,29 +95,29 @@ Day when PM decides which major features are included in the release, and which 
 
 ### F. (T-minus 2 working days) Release Build Cut
 
-The final release is cut. If an urgent and important issue needs to be addressed between major releases, a bug fix release (e.g. 1.1.1) may be created.
+The final release is cut. If an urgent and important issue needs to be addressed between major releases, a bug fix release (e.g., 1.1.1) may be created.
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
-    - Submit changelog PR for review
-        - Merge changelog PR after review is complete
+    - Submit Changelog PR for review
+        - Merge Changelog PR after review is complete
 2. Build: 
     - Tags the release and cuts the final build
-    - Upload the .ipa and .apk files to GitHub
+    - Upload the ``.ipa`` and ``.apk`` files to GitHub
 3. Marketing:
     - Finish draft of marketing images and send to marketing lead for review
 4. Docs:
     - Finalize docs
-      - If reviews are not complete, hold a 30 minute doc review meeting with PMs and anyone else who has changed or reviewed docs this release and wants to join
+      - If reviews are not complete, hold a 30-minute doc review meeting with PMs and anyone else who has changed or reviewed docs this release and wants to join
       - Submit a correction PR for any incorrect formatting or other errors missed during the initial review
     
 ### G. (T-minus 0 working days) Release Day and Build Submitted to App Stores 
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
-    - Verify all items in the last posted release checklist are complete, if not alert the release manager
-    - Schedule a release retrospective meeting, to be held within 5 days from the release 
+    - Verify all items in the last posted release checklist are complete
+    - Schedule a release retrospective meeting, to be held within five days from the release 
     - Post key dates for the next release in the header of the Native Mobile Apps channel and remove links to RC candidates and testing spreadsheet
         - Make sure that statutory holidays for Canada and US are accounted for in the release dates
     - Check for any [UserVoice](https://docs.google.com/spreadsheets/d/1nljd4cFh-9MXF4DxlUnC8b6bdqijkvi8KHquOmK8M6E/edit#gid=0) feature suggestions that were completed in the current release
