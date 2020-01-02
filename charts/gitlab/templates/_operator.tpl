@@ -4,7 +4,7 @@ Defaults to using the information from the chart appVersion field, but can be
 overridden using the global.gitlabVersion field in values.
 */}}
 {{- define "gitlab.operator.gitlabVersion" -}}
-{{- template "gitlab.parseAppVersion" (coalesce .Values.global.gitlabVersion .Chart.AppVersion) -}}
+{{- template "gitlab.parseAppVersion" (dict "appVersion" (coalesce .Values.global.gitlabVersion .Chart.AppVersion) "prepend" "true") -}}
 {{- end -}}
 
 {{/*
