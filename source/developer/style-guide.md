@@ -8,7 +8,7 @@ Come join our [Contributors community channel](https://community.mattermost.com/
 
 ## Go
 
-All go code must follow the golang official [Style Guide](https://golang.org/doc/effective_go.html). In addition all code must be run though the official go formatter tool [gofmt](https://golang.org/cmd/gofmt/).
+All go code must follow the golang official [Style Guide](https://golang.org/doc/effective_go.html). In addition, all code must be run though the official go formatter tool [gofmt](https://golang.org/cmd/gofmt/).
 
 
 ## Javascript
