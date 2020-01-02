@@ -121,7 +121,7 @@ Location of your local storage directory
      sudo cp -an /tmp/mattermost-upgrade/. mattermost/
      sudo rm -r /tmp/mattermost-upgrade/
 
-#. If you have TLS set up on your Mattermost server, you must activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
+#. If you want to use port 80 to serve your server, or if you have TLS set up on your Mattermost server, you *must* activate the CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to bind to low ports.
 
    .. code-block:: sh
 
