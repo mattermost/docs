@@ -13,6 +13,7 @@ The table below maps some of the key previous chart versions and GitLab versions
 | 2.5.2 | 12.5.1 |
 | 2.5.1 | 12.5.0 |
 | 2.5.0 | 12.5.0 |
+| 2.4.12 | 12.4.7 |
 | 2.4.10 | 12.4.5 |
 | 2.4.9 | 12.4.4 |
 | 2.4.8 | 12.4.3 |
