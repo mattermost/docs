@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.6.3
+
+### Fixed (1 change)
+
+- Correctly set the proper gitaly release version. !1092
+
+### Other (1 change)
+
+- Update GitLab Version to 12.6.2.
+
+
 ## 2.6.2
 
 ### Other (1 change)
