@@ -4,6 +4,7 @@ The table below maps some of the key previous chart versions and GitLab versions
 
 | Chart version | GitLab version |
 |---------------|----------------|
+| 2.5.7 | 12.5.6 |
 | 2.5.6 | 12.5.5 |
 | 2.5.5 | 12.5.4 |
 | 2.5.4 | 12.5.3 |
