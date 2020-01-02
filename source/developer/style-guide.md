@@ -1,6 +1,6 @@
 # Mattermost Style Guide
 
-Come [join our "Contributors" community channel](https://community.mattermost.com/core/channels/tickets) on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our ["Developers" channel](https://community.mattermost.com/core/channels/developers) for technical discussions and our ["Integrations" channel](https://community.mattermost.com/core/channels/integrations) for all integrations and plugins discussions.
+Come join our [Contributors community channel](https://community.mattermost.com/core/channels/tickets) on our daily build server, where you can discuss questions with community members and the Mattermost core team. Join our [Developers channel](https://community.mattermost.com/core/channels/developers) for technical discussions and our [Integrations channel](https://community.mattermost.com/core/channels/integrations) for all integrations and plugins discussions.
 
 1. [Go](#go)
 2. [Javascript](#javascript)
@@ -8,9 +8,7 @@ Come [join our "Contributors" community channel](https://community.mattermost.co
 
 ## Go
 
-All go code must follow the golang official [Style Guide](https://golang.org/doc/effective_go.html)
-
-In addition all code must be run though the official go formatter tool [gofmt](https://golang.org/cmd/gofmt/)
+All go code must follow the golang official [Style Guide](https://golang.org/doc/effective_go.html). In addition all code must be run though the official go formatter tool [gofmt](https://golang.org/cmd/gofmt/).
 
 
 ## Javascript
@@ -62,8 +60,8 @@ let x = 1
 
 ### Variables
 
-- Declarations must always use var, let or const.
-- Prefer let or const over var.
+- Declarations must always use `var`, `let`, or `const`.
+- Prefer `let` or `const` over `var`.
 - camelCase for all variable names.
 
 ```javascript
@@ -82,7 +80,7 @@ var my_variable = 4;
 
 - Braces must be used on all blocks.
 - Braces must start on the same line as the statement starting the block.
-- Else and else if must be on the same line as the if block closing brace.
+- `Else` and `else if` must be on the same line as the `if` block closing brace.
 
 ```javascript
 // Correct
@@ -127,18 +125,18 @@ function wrongGetStr(stuff) {
 
 ## React-JSX
 
-Part of the build process is running ESLint. ESLint is the final authority on all style issues. PRs will not be accepted unless there are no errors running ESLint. The ESLint configuration file can be found in: [webapp/.eslintrc](https://github.com/mattermost/mattermost-webapp/blob/master/.eslintrc.json)
+Part of the build process is running ESLint. ESLint is the final authority on all style issues. PRs will not be accepted unless there are no errors running ESLint. The ESLint configuration file can be found in: [webapp/.eslintrc](https://github.com/mattermost/mattermost-webapp/blob/master/.eslintrc.json).
 
-Instructions on how to use ESLint with your favourite editor can be found here: [http://eslint.org/docs/user-guide/integrations](http://eslint.org/docs/user-guide/integrations)
+Instructions on how to use ESLint with your favourite editor can be found here: [http://eslint.org/docs/user-guide/integrations](http://eslint.org/docs/user-guide/integrations).
 
-You can run eslint using the makefile by using `make check-style`
+You can run ESlint using the makefile by using `make check-style`.
 
 The following is a subset of what ESLint checks for. ESLint is always the authority. 
 
 ### General
 
 - Include only one React component per file.
-- Use class \<name\> extends React.Component over React.createClass unless you need mixins
+- Use class \<name\> extends React.Component over React.createClass unless you need mixins.
 - Filenames should be the component name.
 
 ### Alignment
@@ -161,7 +159,7 @@ The following is a subset of what ESLint checks for. ESLint is always the author
 
 - Property names use camelCase.
 - React component names use CapitalCamelCase.
-- Do not use an underscore for internal methods in a react component. 
+- Do not use an underscore for internal methods in a React component. 
 
 ```xml
 // Correct
