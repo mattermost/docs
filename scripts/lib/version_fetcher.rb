@@ -3,6 +3,7 @@ require_relative 'version'
 require 'open-uri'
 require 'uri'
 require 'cgi'
+require 'bundler'
 
 class VersionFetcher
   def initialize(version, repo)
@@ -44,6 +45,21 @@ class VersionFetcher
   def gitlab_exporter
     # Don't edit the appVersion, it get's set manually as monitor isn't released by release-tools
     nil
+  end
+
+  def mailroom
+    return @version if @version.nil?
+
+    url = "#{@api_url}/projects/#{CGI.escape(@repo)}/repository/files/Gemfile.lock/raw?ref=#{ref(@version)}"
+    $stdout.puts "Getting GitLab Gemfile.lock from #{url} to find the mailroom gem version"
+    gemfile_object = Bundler::LockfileParser.new(open(url, 'PRIVATE-TOKEN' => @api_token).read)
+    mailroom_spec = gemfile_object.specs.find { |x| x.name == 'mail_room' }
+
+    return nil unless mailroom_spec
+
+    new_version = mailroom_spec.version.to_s
+    $stdout.puts "# Mailroom appVersion: #{new_version}"
+    Version.new(new_version)
   end
 
   def fetch(chart_name)
