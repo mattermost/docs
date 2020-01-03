@@ -118,26 +118,29 @@ Please take off holidays relevant to your culture, region/country and preference
 
 We're headquartered in the US and have a large Canadian contingent, so below are holidays we're expecting people from those countries to take off:
 
-US and Canadian Holidays for 2019:
+US and Canadian Holidays for 2020:
 
-- US and Canadian New Year's (1/1/2019)
-- US MLK Jr. Day (1/21/2019)
-- Canadian Family Day and US Presidents' Day (2/18/2019)
-- US and Canadian Good Friday (4/19/2019)
-- Canadian Victoria Day (5/20/2019)
-- US Memorial Day (5/27/2019)
-- Canada Day (7/1/2019)
-- Canada Day additional statutory holiday (7/2/2019)
-- US Independence Day (7/4/2019)
-- Canadian Civic / Provincial Day (8/5/2019)
-- US Labor Day, Canadian Labour Day (9/2/2019)
-- Canadian Thanksgiving (10/14/2019)
-- US Thanksgiving (11/28/2019)
-- US and Canadian Christmas Day (12/25/2019)
-- Canadian Boxing Day (12/26/2019)
-
+- New Year's Day (1/1/2020)
+- US MLK Jr. Day (1/20/2020)
+- Canadian Family Day and US Presidents' Day (2/17/2020)
+- US and Canadian Good Friday (4/10/2020)
+- Canadian Victoria Day (5/18/2020)
+- US Memorial Day (5/25/2020)
+- Canada Day (7/1/2020)
+- Canada Day additional statutory holiday (7/2/2020)
+- US Independence Day (7/4/2020+)
+- Canadian Civic / Provincial Day (8/3/2020)
+- US Labor Day, Canadian Labour Day (9/7/2020)
+- Canadian Thanksgiving (10/12/2020)
+- US Thanksgiving (11/26/2020)
+- US and Canadian Christmas Day (12/25/2020)
+- Canadian Boxing Day (12/26/2020++)
 
 It's up to meeting chairs to decide whether to reschedule if few people can attend (e.g. if there are a lot of US or Canadians in the meeting).
+
++July 4, 2020 (the legal public holiday for US Independence Day), falls on a Saturday. For staff, Friday, July 3, may be treated as a holiday.
+
+++December 26, 2020 falls on a Saturday.
 
 3) On-call Rotations
 ~~~~~~~~~~~~~~~~~~~~
