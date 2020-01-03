@@ -46,17 +46,17 @@ Also, we have Meetups around the world to deepen and broaden our relationships a
 
 We run as a distributed, high performance team using a few principles:
 
-1) Work anywhere with good Internet
+1) Work Anywhere with Good Internet
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Working from anywhere means more time with loved ones, no commute and controlling everything about your workspace. 
 
 The one requirement is having the ability to occassionally `join video calls using Zoom <https://support.zoom.us/hc/en-us/articles/201362023-System-Requirements-for-PC-Mac-and-Linux>`__ between 8am and 1pm California time, which requires a good enough internet connection.
 
-Recommended download/upload speeds should be 8 Mbps/512 kbps for smooth group calling and screensharing, with a bare minimum of 4 Mbps / 128 kbps. The `CRS Video Conference Bandwidth Speed Tool <http://speed.conferenceroomsystems.com/>`__ can be used to check your internet speed.
+Recommended download/upload speeds should be 8 Mbps/512 kbps for smooth group calling and screensharing, with a bare minimum of 4 Mbps/128 kbps. The `CRS Video Conference Bandwidth Speed Tool <http://speed.conferenceroomsystems.com/>`__ can be used to check your internet speed.
 
-There are exceptions to this requirement, for example: part time roles that don't need to take meetings, or roles providing support outside core meeting hours.
+There are exceptions to this requirement, for example: part-time roles that don't need to take meetings, or roles providing support outside core meeting hours.
 
-2) Be explicit
+2) Be Explicit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Working in a distributed organization means it may take time before a person reads your message and responds, so make sure you are clear. 
@@ -71,11 +71,11 @@ Write unambiguously:
 
 Likewise, we emphasize written communication. Reading is faster than listening and it reaches more people, which means more happens in less time.
 
-3) Follow through
+3) Follow Through
 ~~~~~~~~~~~~~~~~~
 When working on problems, make sure to be clear about next steps, and either follow through or create a ticket to track the work.
 
-4) Hang out
+4) Hang Out
 ~~~~~~~~~~~
 We have `warm-ups <https://docs.mattermost.com/process/training.html#warm-ups>`__ in some meetings to learn more about each other. It's part of a culture where we get to know each other.
 
@@ -83,7 +83,7 @@ Find time after meetings and video conferences to get to know your teammates. As
 
 When you meet in person at off-sites and events, build on those relationships.
 
-5) Be the change you want to see
+5) Be the Change You Want to See
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 When something's not clearly documented, take the initiative to figure out what's going on and update the documentation for the people who come after you.
 
@@ -94,12 +94,12 @@ When something's not clearly documented, take the initiative to figure out what'
 Paid Time Off
 -------------
 
-1) Time-off
+1) Time Off
 ~~~~~~~~~~~
 
 Our culture is high trust and results-focused. We want people to take time away to relax, think and come back energized. 
 
-When you take time-off, please remember:
+When you take time off, please remember:
 
 a) Discuss with your manager the dates you plan to take off, and decide who will be your backup.
 
@@ -114,7 +114,7 @@ There is no limit to how much time-off you can take when your work is meeting or
 2) Holidays
 ~~~~~~~~~~~
 
-Please take off holidays relevant to your culture, region/country and preferences. When doing so, please follow the time-off process in 1) above.
+Please take off holidays relevant to your culture, region/country and preferences. When doing so, please follow the time off process in 1) above.
 
 We're headquartered in the US and have a large Canadian contingent, so below are holidays we're expecting people from those countries to take off:
 
@@ -139,10 +139,10 @@ US and Canadian Holidays for 2019:
 
 It's up to meeting chairs to decide whether to reschedule if few people can attend (e.g. if there are a lot of US or Canadians in the meeting).
 
-3) On-call rotations
+3) On-call Rotations
 ~~~~~~~~~~~~~~~~~~~~
 
-We have an "On-call" schedule for key staff to support customer escalations and for sales. Should your on-call schedule fall on a holiday or during time-off, you can trade with teammates of similar qualification, or if you are called in because you are on-call during a holiday, you're encouraged to take time-off on a non-holiday in exchange.
+We have an "on-call" schedule for key staff to support customer escalations and for sales. Should your on-call schedule fall on a holiday or during time off, you can trade with teammates of similar qualification, or if you are called in because you are on-call during a holiday, you're encouraged to take time off on a non-holiday in exchange.
 
 --------
 Benefits
@@ -153,18 +153,19 @@ General Benefits
 
 **1. Flexible hours**
 
-Results matter more far more than hours in an office. Your time at Mattermost is flexible. Go see the dentist, visit a friend, walk your dog--no need to ask permission.
+Results matter more far more than hours in an office. Your time at Mattermost is flexible. Go see the dentist, visit a friend, walk your dog -- no need to ask permission.
 
 If there's something urgent going on at work, just let teammates know your status.
+
 For most roles, we require the ability to join meetings between 8am and 1pm California time. The exception is people who are dedicated to support in other timezones, or team members that don't need to be in real-time discussions. 
 
 **2. Work from anywhere (with good internet)** 
 
 The comfort of home, freedom to travel, no commute--learn more about our `work anywhere policies <https://docs.mattermost.com/process/working-at-mattermost.html#work-anywhere>`__.
 
-**3. Paid time-off**
+**3. Paid time off**
 
-Just as flexible as our working hours, learn more about our `paid time-off policies <https://docs.mattermost.com/process/working-at-mattermost.html#paid-time-off>`__.
+Just as flexible as our working hours, learn more about our `paid time off policies <https://docs.mattermost.com/process/working-at-mattermost.html#paid-time-off>`__.
 
 **4. Additional US and Canadian employee benefits**
 
