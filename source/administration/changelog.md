@@ -26,8 +26,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
-### Open Source Components
-
 ### Database Changes
 
 ### API Changes
