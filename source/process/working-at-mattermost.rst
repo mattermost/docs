@@ -128,7 +128,7 @@ US and Canadian Holidays for 2020:
 - US Memorial Day (5/25/2020)
 - Canada Day (7/1/2020)
 - Canada Day additional statutory holiday (7/2/2020)
-- US Independence Day (7/4/2020*)
+- US Independence Day (7/4/2020+)
 - Canadian Civic / Provincial Day (8/3/2020)
 - US Labor Day, Canadian Labour Day (9/7/2020)
 - Canadian Thanksgiving (10/12/2020)
