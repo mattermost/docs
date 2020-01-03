@@ -19,6 +19,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where opening the channel picker using CTRL+K and then focusing on the message box using CTRL+SHIFT+L did not close the channel picker.
  - Fixed an issue where the at-mention suggestions still highlighted the previous search but not the first suggestion in the list.
  - Fixed an issue with a notification badge count inconsistency when push notification setting was set to **All Activity**.
+ - Fixed an issue with an incorrect error message when attempting to add a bot to a channel if the bot was previously on the team.
  - Fixed an issue where the client license API generated a different ETag for every response.
  
 ### config.json
