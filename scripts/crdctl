@@ -1,0 +1,88 @@
+#!/bin/bash
+
+#
+# This script manages the lifecycle of GitLab CRD.
+#
+# USAGE:
+#
+#   crdctl ACTION [PREFIX]
+#
+#     ACTION        `create` or `delete` the CRD.
+#
+#     PREFIX        An optional prefix for CRD group name. It can be used to
+#                   distinguish different CRDs in a cluster.
+# NOTE:
+#
+#   This script requires kubectl. For versions prior to v1.14 you also need
+#   kustomize. To use an external kustomize set `KUSTOMIZE_CMD` environment
+#   variable, e.g. `KUSTOMIZE_CMD="kustomize build"`.
+#
+
+set -eo pipefail
+
+SCRIPT_HOME="$( cd "${BASH_SOURCE[0]%/*}" > /dev/null 2>&1 && pwd )"
+KUSTOMIZE_CMD="${KUSTOMIZE_CMD:-kubectl kustomize}"
+
+patchPrefix() {
+  local PREFIX="${1}"
+  cat <<EOF > "${SCRIPT_HOME}/../support/prefix.yaml"
+- op: replace
+  path: /metadata/name
+  value: gitlabs.${PREFIX}.gitlab.com
+- op: replace
+  path: /spec/group
+  value: ${PREFIX}.gitlab.com
+EOF
+  cat <<EOF > "${SCRIPT_HOME}/../support/kustomization.yaml"
+resources:
+  - crd.yaml
+patchesJson6902:
+  - target:
+      group: apiextensions.k8s.io
+      version: v1beta1
+      kind: CustomResourceDefinition
+      name: gitlabs.gitlab.com
+    path: prefix.yaml
+EOF
+}
+
+cleanupPrefixPatch() {
+  rm "${SCRIPT_HOME}/../support"/{kustomization,prefix}.yaml
+}
+
+createGitLabCRD() {
+  local PREFIX="${1}"
+  local STATUS='0'
+  if [ -n "${PREFIX}" ]; then
+    patchPrefix "${PREFIX}"
+    {
+      ${KUSTOMIZE_CMD} "${SCRIPT_HOME}/../support" | kubectl apply -f -
+    } || {
+      STATUS=$(echo $?)
+    }
+    cleanupPrefixPatch
+    return ${STATUS}
+  else
+    kubectl apply -f "${SCRIPT_HOME}/../support/crd.yaml"
+  fi
+}
+
+deleteGitLabCRD() {
+  local AFFIX=''
+  local PREFIX="${1}"
+  [ -n "${PREFIX}" ] && AFFIX=".${PREFIX}"
+  kubectl delete crd gitlabs${AFFIX}.gitlab.com
+}
+
+case ${1} in
+  create)
+    createGitLabCRD "${2}";
+    ;;
+  delete)
+    deleteGitLabCRD "${2}";
+    ;;
+  *)
+    echo "Usage: crdctl.sh create|delete [PREFIX]";
+    exit 1;
+  ;;
+esac
