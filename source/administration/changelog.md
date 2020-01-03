@@ -6,9 +6,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.18 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-**Release day: 2019-12-16**
-
 Mattermost v5.18.0 contains low to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+- **v5.18.1, release day TBD**
+  - Fixing an issue where migrating accounts from email to SAML fails. [MM-21472](https://mattermost.atlassian.net/browse/MM-21472)
+- **v5.18.0, released 2019-12-16**
+  - Original 5.18.0 release
 
 ### Compatibility
  
@@ -163,6 +166,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 Mattermost v5.17.0 contains medium to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
+- **v5.17.3, release day TBD**
+  - Fixing an issue where migrating accounts from email to SAML fails. [MM-21472](https://mattermost.atlassian.net/browse/MM-21472)
 - **v5.17.2, released 2019-12-18**
   - Mattermost v5.17.2 contains high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.17.1, released 2019-11-25**
@@ -225,6 +230,8 @@ A setting option was added to `config.json`. Below is a list of the additions an
 
 ## Release v5.16 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
+- **v5.16.5, release day TBD**
+  - Fixing an issue where migrating accounts from email to SAML fails. [MM-21472](https://mattermost.atlassian.net/browse/MM-21472)
 - **v5.16.4, released 2019-12-18**
   - Mattermost v5.16.4 contains high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.16.3, released 2019-11-06**
@@ -390,6 +397,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ## Release v5.15 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
+- **v5.15.5, release day TBD**
+  - Fixing an issue where migrating accounts from email to SAML fails. [MM-21472](https://mattermost.atlassian.net/browse/MM-21472)
 - **v5.15.4, released 2019-12-18**
   - Mattermost v5.15.4 contains high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.15.3, released 2019-11-06**
@@ -1142,6 +1151,8 @@ Thank you to everyone who contributed to the Mattermost project in March 2019!
 
 Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
+- **v5.9.8, release day TBD**
+  - Fixing an issue where migrating accounts from email to SAML fails. [MM-21472](https://mattermost.atlassian.net/browse/MM-21472)
 - **v5.9.7, released 2019-12-18** 
   - Mattermost v5.9.7 contains high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 - **v5.9.6, released 2019-10-24** 
