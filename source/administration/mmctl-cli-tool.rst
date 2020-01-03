@@ -78,7 +78,7 @@ mmctl auth
   -  `mmctl auth renew`_ - Renew login credentials
   -  `mmctl auth set`_ - Set login credentials
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -91,25 +91,25 @@ mmctl auth clean
 
   Clean the credentials associated with a Mattermost instance.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl auth clean [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    auth clean
 
-Options
+**Options**
 
 .. code-block:: sh
 
   -h, --help   help for clean
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -123,25 +123,25 @@ mmctl auth current
 
   Show the currently stored user credentials.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl auth current [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    auth current
 
-Options
+**Options**
 
 .. code-block:: sh
 
      -h, --help   help for current
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -155,25 +155,25 @@ mmctl auth delete
 
   Delete a named credential.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl auth delete [server name] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    auth delete local-server
 
-Options
+**Options**
 
 .. code-block:: sh
 
      -h, --help   help for delete
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -186,25 +186,25 @@ mmctl auth list
 
   Print a list of registered credentials.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl auth list [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    auth list
 
-Options
+**Options**
 
 .. code-block:: sh
 
      -h, --help   help for list
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -217,13 +217,13 @@ mmctl auth login
 
   Log in to an instance and store credentials.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl auth login [instance url] --name [server name] --username [username] --password [password] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
@@ -232,7 +232,7 @@ Examples
   auth login https://mattermost.example.com --name local-server --username sysadmin --password mysupersecret --mfa-token 123456
   auth login https://mattermost.example.com --name local-server --access-token myaccesstoken
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -244,7 +244,7 @@ Options
   -p, --password string       Password for the credentials
   -u, --username string       Username for the credentials
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -257,19 +257,19 @@ mmctl auth renew
 
   Renew the credentials for a given server.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl auth renew [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    auth renew local-server
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -291,25 +291,25 @@ mmctl auth set
 
   Set credentials to use in the following commands.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl auth set [server name] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    auth set local-server
 
-Options
+**Options**
 
 .. code-block:: sh
 
    -h, --help   help for set
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -420,7 +420,7 @@ Commands for channel management.
     -  `mmctl channel restore`_ - Restore a channel from the archive
     -  `mmctl channel search`_ - Search a channel by name
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -433,25 +433,25 @@ mmctl channel add
 
   Add users to a channel. If adding multiple users, use a space-separated list.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl channel add [channel] [users] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    channel add myteam:mychannel user@example.com username
 
-Options
+**Options**
 
  .. code-block:: sh
 
   -h, --help   help for add
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -465,25 +465,25 @@ mmctl channel archive
   Archive one or multiple channels along with all related information including posts from the database. Channels can be
   specified by ``[team]:[channel]`` (i.e., myteam:mychannel) or by channel ID).
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl channel archive [channels] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    channel archive myteam:mychannel
 
-Options
+**Options**
 
 .. code-block:: sh
 
    -h, --help   help for archive
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -496,20 +496,20 @@ mmctl channel create
 
   Create a channel.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl channel create [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
   channel create --team myteam --name mynewchannel --display_name "My New Channel"
   channel create --team myteam --name mynewprivatechannel --display_name "My New Private Channel" --private
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -521,7 +521,7 @@ Options
     --purpose string        Channel purpose
     --team string           Team name or ID
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -534,26 +534,26 @@ mmctl channel list
 
   List all channels on specified teams. Archived channels are appended with '(archived)'.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl channel list [teams] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
   channel list myteam
 
-Options
+**Options**
 
 .. code-block:: sh
 
   -h, --help   help for list
 
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -567,25 +567,25 @@ mmctl channel make_private
    Set the type of a channel from public to private. Channel can be specified by ``[team]:[channel]`` (i.e., myteam:mychannel)
    or by channel ID.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl channel make_private [channel] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     channel make_private myteam:mychannel
 
-Options
+**Options**
 
 .. code-block:: sh
 
   -h, --help   help for make_private
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -614,27 +614,27 @@ mmctl channel remove
 
   Remove specified users from a channel.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl channel remove [channel] [users] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
   channel remove myteam:mychannel user@example.com username
   channel remove myteam:mychannel --all-users
 
-Options
+**Options**
 
 .. code-block:: sh
 
   --all-users   Remove all users from the indicated channel
   -h, --help    help for remove
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -647,26 +647,26 @@ mmctl channel rename
 
   Rename a channel.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl channel rename [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    channel rename myteam:mychannel newchannelname --display_name "New Display Name"
 
-Options
+**Options**
 
 .. code-block:: sh
 
   --display_name string   Channel Display Name
   -h, --help              help for rename
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -679,25 +679,25 @@ mmctl channel restore
 
   Restore a previously deleted channel. Channels can be specified by ``[team]:[channel]`` (e.g., myteam:mychannel) or by channel ID.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl channel restore [channels] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    channel restore myteam:mychannel
 
-Options
+**Options**
 
 .. code-block:: sh
 
    -h, --help   help for restore
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -711,28 +711,28 @@ mmctl channel search
 
   Search a channel by channel name. Channel can be specified by team (e.g., ``--team myTeam myChannel```) or by team ID.
 
-Format
+**Format**
 
 .. code-block:: sh
 
   mmctl channel search [channel]
   mmctl search --team [team] [channel] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
   channel search myChannel
   channel search --team myTeam myChannel
 
-Options
+**Options**
 
 .. code-block:: sh
 
   -h, --help      help for search
   --team string   Team name or ID
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -749,7 +749,7 @@ Management of slash commands.
     -  `mmctl command delete`_ - Delete a specified slash command
     -  `mmctl command list`_ - List slash commands on specified teams
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -762,19 +762,19 @@ mmctl command create
 
   Create a custom slash command for the specified team.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl command create [team] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    command create myteam --title MyCommand --description "My Command Description" --trigger-word mycommand --url http://localhost:8000/my-slash-handler --creator myusername --response-username my-bot-username --icon http://localhost:8000/my-slash-handler-bot-icon.png --autocomplete --post
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -791,7 +791,7 @@ Options
    --trigger-word string        Command Trigger Word (required)
    --url string                 Command Callback URL (required)
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -804,25 +804,25 @@ mmctl command delete
 
   Delete a slash command. Commands can be specified by command ID.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl command delete [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
   command delete commandID
 
-Options
+**Options**
 
 .. code-block:: sh
 
    -h, --help   help for delete
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -836,25 +836,25 @@ mmctl command list
 
   List all commands on specified teams.
 
-Format
+**Format**
 
 .. code-block:: sh
 
   mmctl command list [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
  command list myteam
 
-Options
+**Options**
 
 .. code-block:: sh
 
    -h, --help   help for list
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -869,7 +869,7 @@ Configuration settings.
     -  `mmctl config get`_ - Get the value of a configuration setting
     -  `mmctl config show`_ - Writes the server configuration to STDOUT
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -882,25 +882,25 @@ mmctl config get
 
   Gets the value of a config setting by its name in dot notation.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl config get [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
   config get SqlSettings.DriverName
 
-Options
+**Options**
 
 .. code-block:: sh
 
    -h, --help   help for get
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -913,25 +913,25 @@ mmctl config show
 
   Prints the server configuration and writes to STDOUT in JSON format.
 
-Format
+**Format**
 
 .. code-block:: sh
 
       mmctl config show [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
      config show
 
-Options
+**Options**
 
 .. code-block:: sh
 
       -h, --help   help for show
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -960,7 +960,7 @@ Child Commands
   -  `mmctl group channel list`_ - List channel groups
   -  `mmctl group channel status`_ - Check group status
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -973,25 +973,25 @@ mmctl group channel disable
 
   Disables group constrains in the specified channel.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl group channel disable [team]:[channel] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     group channel disable myteam:mychannel
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help   help for disable
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1004,25 +1004,25 @@ mmctl group channel enable
 
   Enables group constrains in the specified channel.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl group channel enable [team]:[channel] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     group channel enable myteam:mychannel
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help   help for enable
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1035,25 +1035,25 @@ mmctl group channel list
 
   List the groups associated with a channel.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl group channel list [team]:[channel] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
   group channel list myteam:mychannel
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help   help for list
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1066,25 +1066,25 @@ mmctl group channel status
 
   Shows the group constrain status for the specified channel.
 
-Format
+**Format**
 
 .. code-block:: sh
 
      mmctl group channel status [team]:[channel] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
      group channel status myteam:mychannel
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help   help for status
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1102,7 +1102,7 @@ Child Commands
   -  `mmctl group team list`_ - List team groups
   -  `mmctl group team status`_ - Check group constrain status
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -1115,25 +1115,25 @@ mmctl group team disable
 
  Disables group constrains in the specified team.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl group team disable [team] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     group team disable myteam
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help   help for disable
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1146,25 +1146,25 @@ mmctl group team enable
 
   Enables group constrains in the specified team.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl group team enable [team] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     group team enable myteam
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help   help for enable
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1177,25 +1177,25 @@ mmctl group team list
 
  List the groups associated with a team.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl group team list [team] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
   group team list myteam
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help   help for list
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1208,25 +1208,25 @@ mmctl group team status
 
  Shows the group constrain status for the specified team.
 
-Format
+**Format**
 
 .. code-block:: sh
 
      mmctl group team status [team] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
      group channel status myteam
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help   help for status
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1240,25 +1240,25 @@ mmctl group list-ldap
 
   List LDAP groups.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl group list-ldap [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     group list-ldap
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help   help for list-ldap
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1269,7 +1269,7 @@ mmctl ldap
 
 LDAP related utilities.
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -1282,25 +1282,25 @@ mmctl ldap sync
 
   Synchronize all LDAP users and groups now.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl ldap sync [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     ldap sync
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help   help for sync
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1316,7 +1316,7 @@ Child Commands
   -  `mmctl license remove`_ - Remove current license
   -  `mmctl license upload`_ - Upload a new license
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -1329,25 +1329,25 @@ mmctl license remove
 
   Remove the current license and use Mattermost in Team Edition.
 
-Format
+**Format**
 
 .. code-block:: sh
 
      mmctl license remove [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     license remove
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help   help for remove
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1361,25 +1361,25 @@ mmctl license upload
 
   Upload a license. Replaces current license.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl license upload [license] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    license upload /path/to/license/mylicensefile.mattermost-license
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help   help for upload
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1392,13 +1392,13 @@ mmctl logs
 
   Display logs in a human-readable format
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl logs [flags]
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -1406,7 +1406,7 @@ Options
     -l, --logrus       Use logrus for formatting
     -n, --number int   Number of log lines to retrieve (default 200)
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1422,7 +1422,7 @@ Child Commands
   -  `mmctl permissions remove`_ - Remove permissions
   -  `mmctl permissions show`_ - Show permissions
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -1436,25 +1436,25 @@ mmctl permissions add
 
   Add one or more permissions to an existing role (only available in E10 and E20).
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl permissions add [role] [permission...] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     permissions add system_user list_open_teams
 
-Options
+**Options**
 
 .. code-block:: sh
 
    -h, --help   help for add
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1467,25 +1467,25 @@ mmctl permissions remove
 
   Remove one or more permissions from an existing role (only available in E10 and E20).
 
-Format
+**Format**
 
 .. code-block:: sh
 
       mmctl permissions remove [role] [permission...] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
       permissions remove system_user list_open_teams
 
-Options
+**Options**
 
 .. code-block:: sh
 
      -h, --help   help for remove
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1499,25 +1499,25 @@ mmctl permissions show
 
   Show all the information about a role.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl permissions show [role_name] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    permissions show system_user
 
-Options
+**Options**
 
 .. code-block:: sh
 
    -h, --help   help for show
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1535,7 +1535,7 @@ Child Commands
   -  `mmctl plugin enable`_ - Enable plugins
   -  `mmctl plugin list`_ - List plugins
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -1549,25 +1549,25 @@ mmctl plugin add
 
   Add plugins to your Mattermost server.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl plugin add [plugins] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     plugin add hovercardexample.tar.gz pluginexample.tar.gz
 
-Options
+**Options**
 
 .. code-block:: sh
 
    -h, --help   help for add
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1581,25 +1581,25 @@ mmctl plugin delete
 
   Delete previously uploaded plugins from your Mattermost server.
 
-Format
+**Format**
 
 .. code-block:: sh
 
   mmctl plugin delete [plugins] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
   plugin delete hovercardexample pluginexample
 
-Options
+**Options**
 
 .. code-block:: sh
 
    -h, --help   help for delete
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1612,25 +1612,25 @@ mmctl plugin disable
 
   Disable plugins. Disabled plugins are immediately removed from the user interface and logged out of all sessions.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl plugin disable [plugins] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     plugin disable hovercardexample pluginexample
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help   help for disable
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1644,25 +1644,25 @@ mmctl plugin enable
 
   Enable plugins for use on your Mattermost server.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl plugin enable [plugins] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     plugin enable hovercardexample pluginexample
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help   help for enable
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1675,25 +1675,25 @@ mmctl plugin list
 
   List all active and inactive plugins installed on your Mattermost server.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl plugin list [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     plugin list
 
-Options
+**Options**
 
 .. code-block:: sh
 
    -h, --help   help for list
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1709,7 +1709,7 @@ Child Commands
   -  `mmctl post create`_ - Create a post
   -  `mmctl post list`_ - List posts
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -1722,19 +1722,19 @@ mmctl post create
 
   Create a post.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl post create [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     post create myteam:mychannel --message "some text for the post"
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -1742,7 +1742,7 @@ Options
   -m, --message string    Message for the post
   -r, --reply-to string   Post id to reply to
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1755,20 +1755,20 @@ mmctl post list
 
   List posts for a channel.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl post list [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     post list myteam:mychannel
     post list myteam:mychannel --number 20
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -1777,7 +1777,7 @@ Options
   -n, --number int   Number of messages to list (default 20)
   -i, --show-ids     Show posts ids
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1801,7 +1801,7 @@ Child Commands
   -  `mmctl team rename`_ - Rename teams
   -  `mmctl team search`_ - Search teams
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -1814,25 +1814,25 @@ mmctl team add
 
   Add specified users to a team.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl team add [team] [users] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     team add myteam user@example.com username
 
-Options
+**Options**
 
 .. code-block:: sh
 
    -h, --help   help for add
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1850,20 +1850,20 @@ mmctl team create
 
   Create a team.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl team create [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
   team create --name mynewteam --display_name "My New Team"
   team create --name private --display_name "My New Private Team" --private
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -1873,7 +1873,7 @@ Options
     --name string           Team Name
     --private               Create a private team
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1886,26 +1886,26 @@ mmctl team delete
 
   Permanently deletes a team along with all related information including posts from the database.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmctl team delete [teams] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
       team delete myteam
 
-Options
+**Options**
 
 .. code-block:: sh
 
     --confirm   Confirm you really want to delete the team and a DB backup has been performed
     -h, --help  help for delete
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1919,25 +1919,25 @@ mmctl team list
 
   List all teams on the server.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl team list [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     team list
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help  help for list
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1950,25 +1950,25 @@ mmctl team remove
 
   Remove specified users from a team.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl team remove [team] [users] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    team remove myteam user@example.com username
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help  help for remove
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -1981,25 +1981,25 @@ mmctl team search
 
   Search for teams based on name.
 
-Format
+**Format**
 
 .. code-block:: sh
 
    mmmctl team search [teams] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
    team search team1
 
-Options
+**Options**
 
 .. code-block:: sh
 
    -h, --help  help for search
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -2020,7 +2020,7 @@ Child Commands
   -  `mmctl user resetmfa`_ - Reset user's MFA token
   -  `mmctl user search`_ - Search for a user
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -2034,19 +2034,19 @@ mmctl user activate
 
   Activate a user.
 
-Format
+**Format**
 
 .. code-block:: sh
 
       mmctl user activate [flags]
 
-Examples
+**Examples**
 .. code-block:: sh
 
-Options
+**Options**
 .. code-block:: sh
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 .. code-block:: sh
 
 
@@ -2057,19 +2057,19 @@ mmctl user create
 
   Create a user.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl user create [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     user create --email user@example.com --username userexample --password Password1
 
-Options
+**Options**
 
 .. code-block:: sh
 
@@ -2083,7 +2083,7 @@ Options
    --system_admin       Optional. If supplied, the new user will be a system administrator. Defaults to false
    --username string    Required. Username for the new user account
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -2096,27 +2096,27 @@ mmctl user deactivate
 
   Deactivate users. Deactivated users are immediately logged out of all sessions and are unable to log back in.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl user deactivate [emails, usernames, userIds] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
   user deactivate user@example.com
   user deactivate username
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help       help for deactivate
 
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -2130,27 +2130,27 @@ mmctl user email
 
   Change the email address associated with a user.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl user email [user] [new email] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
   user email test user@example.com
   user activate username
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help       help for email
 
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -2164,26 +2164,26 @@ mmctl user invite
   Send an email invite to a user, to join a team. You can invite a user to multiple teams by listing
   them. You can specify teams by name or ID.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl user invite [email] [teams] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
   user invite user@example.com myteam
   user invite user@example.com myteam1 myteam2
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help       help for invite
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -2196,26 +2196,26 @@ mmctl user reset_password
 
   Send users an email to reset their password.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl user reset_password [users] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
   user reset_password user@example.com
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help       help for reset_password
 
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -2229,26 +2229,26 @@ mmctl user resetmfa
   Turn off multi-factor authentication for a user. If MFA enforcement is enabled, the
   user will be forced to re-enable MFA as soon as they login.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl user resetmfa [users] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     user resetmfa user@example.com
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help       help for resetmfa
 
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -2261,26 +2261,26 @@ mmctl user search
 
   Search for users based on username, email, or user ID.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl user search [users] [flags]
 
-Examples
+**Examples**
 
 .. code-block:: sh
 
     user search user1@mail.com user2@mail.com
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help       help for search
 
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
@@ -2299,21 +2299,21 @@ mmctl websocket
 
   Display websocket in a human-readable format.
 
-Format
+**Format**
 
 .. code-block:: sh
 
     mmctl websocket [flags]
 
 
-Options
+**Options**
 
 .. code-block:: sh
 
     -h, --help       help for websocket
 
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
