@@ -134,7 +134,7 @@ US and Canadian Holidays for 2020:
 - Canadian Thanksgiving (10/12/2020)
 - US Thanksgiving (11/26/2020)
 - US and Canadian Christmas Day (12/25/2020)
-- Canadian Boxing Day (12/26/2020+)
+- Canadian Boxing Day (12/26/2020++)
 
 It's up to meeting chairs to decide whether to reschedule if few people can attend (e.g. if there are a lot of US or Canadians in the meeting).
 
