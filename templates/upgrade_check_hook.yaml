@@ -50,6 +50,8 @@ spec:
           env:
             - name: GITLAB_VERSION
               value: '{{ coalesce .Values.global.gitlabVersion .Chart.AppVersion }}'
+            - name: CHART_VERSION
+              value: '{{ .Chart.Version }}'
           volumeMounts:
             - name: chart-info
               mountPath: /chart-info
