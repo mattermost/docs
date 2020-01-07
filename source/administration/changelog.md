@@ -10,6 +10,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Compatibility
 
+#### Breaking Changes
+ - ``LockTeammateNameDisplay`` setting was moved to Enterprise Edition E20 as it was errouneously available in Team Edition and Enterprise Edition E10.
+ 
+**IMPORTANT:** If you upgrade from a release earlier than 5.18, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
 ### Bug Fixes
  - Fixed an issue where email notifications were still sent in some cases while disabled in the user interface.
  - Fixed an issue where **System Console > Site Configuration > Users & Teams > Lock Teammate Name Display** should only have been available on Enterprise Edition E20 but was erroneously available also on Team Edition and Enterprise Edition E10.
