@@ -7,6 +7,8 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v5.19.0                                            | ``LockTeammateNameDisplay`` config.json was moved to Enterprise Edition E20 as it was errouneously available in Team Edition and Enterprise Edition 10.          |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.18.0                                            | Marking a post unread from the mobile app requires v1.26 or later. If using v5.18, but mobile is on v1.25 or earlier, marking a post unread from webapp/desktop  |
 |                                                    | will only be reflected on mobile the next time the app launches or is brought to the foreground.                                                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
