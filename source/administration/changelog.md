@@ -15,6 +15,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where **System Console > Site Configuration > Users & Teams > Lock Teammate Name Display** should only have been available on Enterprise Edition E20 but was erroneously available also on Team Edition and Enterprise Edition E10.
  - Fixed an issue where clicking a line separator in the Main Menu closed the menu.
  - Fixed an issue where date separator showed long-format timestamps.
+ - Fixed an issue where the height and width parameters in inline images didn't work.
+ - Fixed an issue where the day picker in after/before search didn't honor the user's timezone override.
  - Fixed an issue where editing a post and hitting ``<enter>`` in code block saved the post automatically instead of adding a newline.
  - Fixed an issue where opening the channel picker using CTRL+K and then focusing on the message box using CTRL+SHIFT+L did not close the channel picker.
  - Fixed an issue where the at-mention suggestions still highlighted the previous search but not the first suggestion in the list.
