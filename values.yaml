@@ -28,7 +28,7 @@ global:
       autoPause: true
 
   ## doc/installation/deployment.md#deploy-the-community-edition
-  # edition: ee
+  edition: ee
 
   ## doc/charts/globals.md#gitlab-version
   # gitlabVersion: master
@@ -41,13 +41,14 @@ global:
   ## doc/charts/globals.md#configure-host-settings
   hosts:
     domain: example.com
-    # hostSuffix:
+    hostSuffix:
     https: true
     externalIP:
     ssh: ~
     gitlab: {}
     minio: {}
     registry: {}
+    tls: {}
 
   ## doc/charts/globals.md#configure-ingress-settings
   ingress:
@@ -207,25 +208,34 @@ global:
 
     ## doc/charts/globals.md#lfs-artifacts-uploads-packages-external-mr-diffs
     lfs:
+      enabled: true
+      proxy_download: true
       bucket: git-lfs
       connection: {}
         # secret:
         # key:
     artifacts:
+      enabled: true
+      proxy_download: true
       bucket: gitlab-artifacts
       connection: {}
         # secret:
         # key:
     uploads:
+      enabled: true
+      proxy_download: true
       bucket: gitlab-uploads
       connection: {}
         # secret:
         # key:
     packages:
+      enabled: true
+      proxy_download: true
       bucket: gitlab-packages
       connection: {}
     externalDiffs:
       when:
+      proxy_download: true
       bucket: gitlab-mr-diffs
       connection: {}
 
