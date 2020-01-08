@@ -241,7 +241,7 @@ gitlab.{{ $chart }}:
 {{- define "gitlab.deprecate.redis-ha.enabled" -}}
 {{-   if hasKey (index .Values "redis-ha") "enabled" -}}
 redis-ha:
-    The `redis-ha.enabled` has been deprecated. Please now use `redis-ha.install` to enable the redis-ha chart.
+    The `redis-ha.enabled` has been deprecated. Redis HA is now implemented by the Redis chart.
 {{-   end -}}
 {{- end -}}
 {{/* END gitlab.deprecate.redis-ha.enabled */}}
