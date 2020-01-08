@@ -21,10 +21,6 @@ dependencies:
   repository: https://kubernetes-charts.storage.googleapis.com/
   condition: global.grafana.enabled
 - name: redis
-  version: 9.2.0
+  version: 10.3.1
   repository: https://kubernetes-charts.storage.googleapis.com/
   condition: redis.install
-- name: redis-ha
-  version: 3.7.12
-  repository: https://kubernetes-charts.storage.googleapis.com/
-  condition: redis-ha.install
