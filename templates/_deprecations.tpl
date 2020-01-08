@@ -37,7 +37,7 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.initContainerImage" .) -}}
 {{- $deprecated := append $deprecated (include "external.deprecate.initContainerImage" .) -}}
 {{- $deprecated := append $deprecated (include "external.deprecate.initContainerPullPolicy" .) -}}
-
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.redis-ha.enabled" .) -}}
 {{- /* prepare output */}}
 {{- $deprecated := without $deprecated "" -}}
 {{- $message := join "\n" $deprecated -}}
@@ -236,3 +236,12 @@ gitlab.{{ $chart }}:
 {{- end -}}
 {{- end -}}
 {{/* END external.deprecate.initContainerPullPolicy*/}}
+
+{{/* Deprecation behaviors for redis-ha.enabled */}}
+{{- define "gitlab.deprecate.redis-ha.enabled" -}}
+{{-   if hasKey (index .Values "redis-ha") "enabled" -}}
+redis-ha:
+    The `redis-ha.enabled` has been deprecated. Please now use `redis-ha.install` to enable the redis-ha chart.
+{{-   end -}}
+{{- end -}}
+{{/* END gitlab.deprecate.redis-ha.enabled */}}

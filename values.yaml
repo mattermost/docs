@@ -531,8 +531,11 @@ prometheus:
 #   enabled: true
 ## doc/architecture/decisions.md#redis-ha
 ## doc/charts/redis-ha
+redis:
+  install: true
+  
 redis-ha:
-  enabled: false
+  install: false
   nameOverride: redis
 
 ## Instllation & configuration of stable/prostgresql

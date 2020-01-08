@@ -39,11 +39,12 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 
 {{/* Check configuration of Redis - can't have both redis & redis-ha */}}
 {{- define "gitlab.checkConfig.redis.both" -}}
-{{- if and .Values.redis.enabled (index .Values "redis-ha" "enabled") -}}
-redis: both providers
-    It appears that `redis.enabled` and `redis-ha.enabled` are both true.
-    this will lead to undefined behavior. Please enable only one.
-{{- end -}}
+{{-   if and .Values.redis.install (index .Values "redis-ha" "install") -}}
+redis: only one redis service can be installed
+    It appears that both `redis.install` and `redis-ha.install` are both true.
+    Ensure that only one of `global.redis.install` or
+    `global.redis-ha.install` have been enabled.
+{{-   end -}}
 {{- end -}}
 {{/* END gitlab.checkConfig.redis.both */}}
 
