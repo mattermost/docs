@@ -36,7 +36,7 @@ A proxy server is a server (a computer system or an application) that acts as an
 - **Performance**: In a high availability configuration, the proxy server balances the network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also be used to increase performance.
 - **Monitoring**: A proxy server can monitor connection traffic and record traffic in standard audit logs that common monitoring tools like Kibana and Splunk can consume and report on. Some of the events that can be captured include file uploads and downloads, which are not tracked by the Mattermost Server logging process.
 
-Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For informaton on how to install and configure NGINX for your environment, see `our guide <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__. Mattermost also unofficially supports other proxies including `Apache 2 <https://docs.mattermost.com/install/config-apache2.html>`__. 
+Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For information on how to install and configure NGINX for your environment, see `our guide <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__. Mattermost also unofficially supports other proxies including `Apache 2 <https://docs.mattermost.com/install/config-apache2.html>`__. 
 
 .. image:: ../images/architecture_with_proxy.png
 
