@@ -55,7 +55,7 @@ HTTPS is a secure, encrypted protocol and is highly recommended for production. 
 
 Secure WebSocket (WSS) connections to the Mattermost Server enable real-time updates and notifications between clients and the server.
 
-If a WSS connection is not available and HTTPS is substituted, the system will appear to work but real time updates and notifications will not. In this mode of operation, updates will only appear on a page refresh. WSS has a persistent connection to the Mattermost Server when a client is connected, while HTTPS has an intermittent connection and only connects to the server when a page or file is requested. 
+If a WSS connection is not available and HTTPS is substituted, the system will appear to work but real-time updates and notifications will not. In this mode of operation, updates will only appear on a page refresh. WSS has a persistent connection to the Mattermost Server when a client is connected, while HTTPS has an intermittent connection and only connects to the server when a page or file is requested. 
 
 .. image:: ../images/architecture_with_protocol.png
 
