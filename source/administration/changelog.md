@@ -18,6 +18,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Bug Fixes
  - Fixed an issue where email notifications were still sent in some cases while disabled in the user interface.
  - Fixed an issue where **System Console > Site Configuration > Users & Teams > Lock Teammate Name Display** should only have been available on Enterprise Edition E20 but was erroneously available also on Team Edition and Enterprise Edition E10.
+ - Fixed an issue where the System Console left-hand side scrollbar was too dark to see.
  - Fixed an issue where clicking a line separator in the Main Menu closed the menu.
  - Fixed an issue where date separator showed long-format timestamps.
  - Fixed an issue where the height and width parameters in inline images didn't work.
@@ -42,7 +43,6 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Websocket Event Changes
  
 ### Known Issues
- - System Console left-hand side scrollbar may be too dark to see.
  - Menu help text for Do Not Disturb is truncated in English.
  - Inviting multiple users with valid/allowed and invalid emails causes the invites for the valid users not to be sent.
  - Option to invite users by email is displayed even if email invitations are disabled.
