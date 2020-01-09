@@ -29,6 +29,7 @@ Some features of GitLab are not currently available using the Helm chart:
 Database limitations:
 
 - MySQL will not be supported, as support is [deprecated within GitLab](https://docs.gitlab.com/omnibus/settings/database.html#using-a-mysql-database-management-server-enterprise-edition-only)
+- GitLab Geo functionality [requires the use of external database service(s)](installation/deployment.md#postgresql).
 
 ## GitLab version mappings
 
