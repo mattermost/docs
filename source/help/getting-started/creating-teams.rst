@@ -46,7 +46,8 @@ the system domain, ``https://domain.com/teamurl/``.
 -  It must start with a letter and cannot end in a dash.
 -  It must be 2–15 characters in length.
 -  It cannot start with the following restricted words: ``signup``,
-   ``login``, ``admin``, ``channel``, ``post``, ``api``, ``oauth``
+   ``login``, ``admin``, ``channel``, ``post``, ``api``, ``oauth``,
+   ``error``, ``help``, ``plugins``
    
 Best Practices for Using a Single Team vs. Multiple Teams
 -----------------------------------------------------------------
