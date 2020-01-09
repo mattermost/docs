@@ -282,10 +282,6 @@ Description
 mattermost channel modify
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-
-   This command will be replaced in a future release with the mmctl command `mmctl channel make_private <https://docs.mattermost.com/administration/mmctl-cli-tool.html#mmctl-channel-make-private>`__.
-
 Description
     Modify a channel's public/private type.
 
