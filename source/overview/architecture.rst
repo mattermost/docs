@@ -36,7 +36,7 @@ A proxy server is a server (a computer system or an application) that acts as an
 - **Performance**: In a high availability configuration, the proxy server balances the network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also be used to increase performance.
 - **Monitoring**: A proxy server can monitor connection traffic and record traffic in standard audit logs that common monitoring tools like Kibana and Splunk can consume and report on. Some of the events that can be captured include file uploads and downloads, which are not tracked by the Mattermost Server logging process.
 
-Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For informaton on how to install and configure NGINX for your environment, see `our guide <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__. Mattermost also unofficially supports other proxies including `Apache 2 <https://docs.mattermost.com/install/config-apache2.html>`__. 
+Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For information on how to install and configure NGINX for your environment, see `our guide <https://docs.mattermost.com/guides/administrator.html#installing-mattermost>`__. Mattermost also unofficially supports other proxies including `Apache 2 <https://docs.mattermost.com/install/config-apache2.html>`__. 
 
 .. image:: ../images/architecture_with_proxy.png
 
@@ -55,7 +55,7 @@ HTTPS is a secure, encrypted protocol and is highly recommended for production. 
 
 Secure WebSocket (WSS) connections to the Mattermost Server enable real-time updates and notifications between clients and the server.
 
-If a WSS connection is not available and HTTPS is substituted, the system will appear to work but real time updates and notifications will not. In this mode of operation, updates will only appear on a page refresh. WSS has a persistent connection to the Mattermost Server when a client is connected, while HTTPS has an intermittent connection and only connects to the server when a page or file is requested. 
+If a WSS connection is not available and HTTPS is substituted, the system will appear to work but real-time updates and notifications will not. In this mode of operation, updates will only appear on a page refresh. WSS has a persistent connection to the Mattermost Server when a client is connected, while HTTPS has an intermittent connection and only connects to the server when a page or file is requested. 
 
 .. image:: ../images/architecture_with_protocol.png
 
