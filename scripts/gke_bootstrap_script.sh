@@ -76,6 +76,10 @@ function bootstrap(){
     kubectl --user=${CLUSTER_NAME}-admin-user create -f rbac-config.yaml;
   fi
 
+  echo "Wait for metrics API service"
+  # Helm 2.15 and 3.0 bug https://github.com/helm/helm/issues/6361#issuecomment-550503455
+  kubectl --namespace=kube-system wait --for=condition=Available --timeout=5m apiservices/v1beta1.metrics.k8s.io
+
   echo "Installing helm..."
   helm init --wait --service-account tiller
   helm repo update

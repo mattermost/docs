@@ -1,4 +1,4 @@
-{{- if and .Values.global.operator.enabled (not .Values.global.operator.bootstrap) }}
+{{- if .Values.global.operator.enabled }}
 apiVersion: {{ printf "%s/v1beta1" (include "gitlab.operator.groupName" .) }}
 kind: GitLab
 metadata:

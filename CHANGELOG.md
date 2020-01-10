@@ -2,6 +2,31 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.6.4
+
+### Other (1 change)
+
+- Update GitLab Version to 12.6.3.
+
+
+## 2.6.3
+
+### Fixed (1 change)
+
+- Correctly set the proper gitaly release version. !1092
+
+### Other (1 change)
+
+- Update GitLab Version to 12.6.2.
+
+
+## 2.6.2
+
+### Other (1 change)
+
+- Update GitLab Version to 12.6.2.
+
+
 ## 2.6.1
 
 ### Other (2 changes)
@@ -42,6 +67,13 @@ entry.
 
 - Document the use of external Minio for object storage. !1005
 - Update GitLab Version to 12.6.0.
+
+
+## 2.5.7
+
+### Other (1 change)
+
+- Update GitLab Version to 12.5.6.
 
 
 ## 2.5.6
@@ -127,6 +159,13 @@ entry.
 
 - Update gitlab-runner to 0.11.0/12.5.0. !1046
 - Update GitLab Version to 12.5.0.
+
+
+## 2.4.12
+
+### Other (1 change)
+
+- Update GitLab Version to 12.4.7.
 
 
 ## 2.4.10

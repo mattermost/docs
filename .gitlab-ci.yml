@@ -99,7 +99,7 @@ lint_package:
     - install_tiller
     - create_secret
     - install_external_dns "${DNS_PROVIDER}" "${KUBE_INGRESS_BASE_DOMAIN}"
-    - if ! crdExists || previousDeployFailed ; then OPERATOR_BOOTSTRAP=true deploy ; fi
+    - if ! crdExists || previousDeployFailed ; then scripts/crdctl create "${CI_ENVIRONMENT_SLUG}" ; fi
     - deploy
     - wait_for_deploy
     - restart_task_runner
@@ -249,7 +249,7 @@ stop_review_eks:
     - ensure_namespace
     - install_tiller
     - create_secret
-    - if ! crdExists || previousDeployFailed ; then OPERATOR_BOOTSTRAP=true deploy ; fi
+    - if ! crdExists || previousDeployFailed ; then scripts/crdctl create "${CI_ENVIRONMENT_SLUG}" ; fi
     - deploy
     - wait_for_deploy
     - restart_task_runner
@@ -476,11 +476,7 @@ check_docs_lint:
     helm repo add jetstack https://charts.jetstack.io
     helm dep update .
 
-    # If OPERATOR_BOOTSTRAP is set, we _do not_ want to use --wait / --timeout
     WAIT="--wait --timeout 900"
-    if [ -n "${OPERATOR_BOOTSTRAP}" ]; then
-      WAIT=""
-    fi
 
     # helm's --set argument dislikes special characters, pass them as YAML
     cat << CIYAML > ci.details.yaml
@@ -513,7 +509,6 @@ check_docs_lint:
       --set redis.resources.requests.cpu=100m \
       --set minio.resources.requests.cpu=100m \
       --set global.operator.enabled=true \
-      --set global.operator.bootstrap=${OPERATOR_BOOTSTRAP-false} \
       --set gitlab.operator.crdPrefix="$CI_ENVIRONMENT_SLUG" \
       --set global.gitlab.license.secret="$CI_ENVIRONMENT_SLUG-gitlab-license" \
       --namespace="$KUBE_NAMESPACE" \

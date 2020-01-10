@@ -6,22 +6,33 @@ Defaults to using the information from the chart appVersion field, but can be
 overridden using the global.gitlabVersion field in values.
 */}}
 {{- define "gitlab.versionTag" -}}
-{{- template "gitlab.parseAppVersion" (coalesce .Values.global.gitlabVersion .Chart.AppVersion) -}}
+{{- template "gitlab.parseAppVersion" (dict "appVersion" (coalesce .Values.global.gitlabVersion .Chart.AppVersion) "prepend" "true") -}}
 {{- end -}}
 
 {{/*
 Returns a image tag from the passed in app version or branchname
-
-If the version is 'master' we use the 'latest' image tag.
-Else if the version is a semver version, we use the 'vx.x.x' image tag
-Else we just use the version passed as the image tag
+Usage:
+{{ include "gitlab.parseAppVersion" (    \
+     dict                                \
+         "appVersion" .Chart.AppVersion  \
+         "prepend" "false"               \
+     ) }}
+1. If the version is 'master' we use the 'latest' image tag.
+2. Else if the version is a semver version, we check the prepend flag.
+   1. If it is true, we prepend a `v` and return `vx.y.z` image tag.
+   2. If it is false, we do not prepend a `v` and just use the input version
+3. Else we just use the version passed as the image tag
 */}}
 {{- define "gitlab.parseAppVersion" -}}
-{{- $appVersion := coalesce . "master" -}}
+{{- $appVersion := coalesce .appVersion "master" -}}
 {{- if eq $appVersion "master" -}}
 latest
 {{- else if regexMatch "^\\d+\\.\\d+\\.\\d+(-rc\\d+)?(-pre)?$" $appVersion -}}
-{{- printf "v%s" $appVersion -}}
+{{-   if eq .prepend "true" -}}
+{{-      printf "v%s" $appVersion -}}
+{{-   else -}}
+{{-      $appVersion -}}
+{{-   end -}}
 {{- else -}}
 {{- $appVersion -}}
 {{- end -}}

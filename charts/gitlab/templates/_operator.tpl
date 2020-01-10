@@ -4,7 +4,7 @@ Defaults to using the information from the chart appVersion field, but can be
 overridden using the global.gitlabVersion field in values.
 */}}
 {{- define "gitlab.operator.gitlabVersion" -}}
-{{- template "gitlab.parseAppVersion" (coalesce .Values.global.gitlabVersion .Chart.AppVersion) -}}
+{{- template "gitlab.parseAppVersion" (dict "appVersion" (coalesce .Values.global.gitlabVersion .Chart.AppVersion) "prepend" "true") -}}
 {{- end -}}
 
 {{/*
@@ -39,18 +39,8 @@ true
 {{- end -}}
 
 {{/*
-Returns the operator crd name which should be in the format of spec.names.plural + '.' + groupname
-*/}}
-
-{{- define "gitlab.operator.crdName" -}}
-{{- $groupName := include "gitlab.operator.groupName" . -}}
-{{ printf "gitlabs.%s" $groupName}}
-{{- end -}}
-
-{{/*
 Returns the operator group name. A subgroup with the release name is chosen
 */}}
-
 {{- define "gitlab.operator.groupName" -}}
 {{- if .Values.crdPrefix -}}
 {{ printf "%s.gitlab.com" .Values.crdPrefix }}

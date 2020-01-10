@@ -104,7 +104,7 @@ class ChartFile
   def update_versions(new_chart_version = nil, new_app_version = nil)
     orig_metadata = @metadata.dup
     @metadata['version'] = new_chart_version.to_s if new_chart_version && (version.nil? || new_chart_version > version)
-    @metadata['appVersion'] = new_app_version.to_s if new_app_version && (app_version.nil? || new_app_version > app_version)
+    @metadata['appVersion'] = new_app_version.to_s if new_app_version
 
     if orig_metadata != @metadata
       $stdout.puts "Updating #{@filepath}"
