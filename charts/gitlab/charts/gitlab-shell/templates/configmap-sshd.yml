@@ -101,7 +101,6 @@ data:
     #UseDNS no
     UsePrivilegeSeparation no
     PidFile /srv/sshd/sshd.pid
-    #MaxStartups 10:30:100
     #PermitTunnel no
     #ChrootDirectory none
     #VersionAddendum none
@@ -143,6 +142,11 @@ data:
 
     # Enable the use of Git protcol v2
     AcceptEnv GIT_PROTOCOL
+    
+    {{ if and .Values.config.maxStartups.rate .Values.config.maxStartups.full }}
     MaxStartups {{ .Values.config.maxStartups.start }}:{{ .Values.config.maxStartups.rate }}:{{ .Values.config.maxStartups.full }}
+    {{ else }}
+    MaxStartups {{ .Values.config.maxStartups.start }}
+    {{ end }}
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}
