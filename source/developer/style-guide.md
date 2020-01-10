@@ -80,7 +80,7 @@ var my_variable = 4;
 
 - Braces must be used on all blocks.
 - Braces must start on the same line as the statement starting the block.
-- `Else` and `else if` must be on the same line as the `if` block closing brace.
+- `else` and `else if` must be on the same line as the `if` block closing brace.
 
 ```javascript
 // Correct
