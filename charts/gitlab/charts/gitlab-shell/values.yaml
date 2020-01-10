@@ -69,6 +69,7 @@ deployment:
     failureThreshold: 3
 
 config:
+  loginGraceTime: 120
   maxStartups:
     start: 10
     rate: 30

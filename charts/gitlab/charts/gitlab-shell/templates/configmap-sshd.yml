@@ -143,12 +143,15 @@ data:
     # Enable the use of Git protcol v2
     AcceptEnv GIT_PROTOCOL
     
-   # Specifies the maximum number of concurrent unauthenticated connections to the SSH daemon.
-   # See `man sshd_config(5)`
+    # Specifies the maximum number of concurrent unauthenticated connections to the SSH daemon.
+    # See `man sshd_config(5)`
     {{ if and .Values.config.maxStartups.start .Values.config.maxStartups.rate }}
     MaxStartups {{ .Values.config.maxStartups.start }}:{{ .Values.config.maxStartups.rate }}:{{ .Values.config.maxStartups.full }}
     {{ else }}
     MaxStartups {{ .Values.config.maxStartups.full }}
     {{ end }}
+
+    # Specifies amount of time athat the server will disconnect after if the user has not successfully logged in
+    LoginGraceTime {{ .Values.config.loginGraceTime }}
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}
