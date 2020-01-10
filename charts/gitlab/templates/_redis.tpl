@@ -6,12 +6,12 @@ If the postgresql host is provided, it will use that, otherwise it will fallback
 to the service name
 */}}
 {{- define "gitlab.redis.host" -}}
-{{- if or .Values.redis.host .Values.global.redis.host -}}
-{{- coalesce .Values.redis.host .Values.global.redis.host -}}
-{{- else -}}
-{{- $name := default "redis" .Values.redis.serviceName -}}
-{{- printf "%s-%s" .Release.Name $name -}}
-{{- end -}}
+{{-   if or .Values.redis.host .Values.global.redis.host -}}
+{{-     coalesce .Values.redis.host .Values.global.redis.host -}}
+{{-   else -}}
+{{-     $name := default "redis" .Values.redis.serviceName -}}
+{{-     printf "%s-%s-master" .Release.Name $name -}}
+{{-   end -}}
 {{- end -}}
 
 {{/*
