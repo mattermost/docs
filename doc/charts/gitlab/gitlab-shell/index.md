@@ -26,7 +26,7 @@ with `global.shell.port`, and defaults to `22`.
 | Parameter                | Default        | Description                              |
 | ------------------------ | -------------- | ---------------------------------------- |
 | `annotations`            |                | Pod annotations                          |
-| `config.loginGraceTime   | `120`          | Specifies amount of time athat the server will disconnect after if the user has not successfully logged in |
+| `config.loginGraceTime`  | `120`          | Specifies amount of time athat the server will disconnect after if the user has not successfully logged in |
 | `config.maxStartups.full`  | `100`     | SSHd refuse probability will increase linearly and all unauthenticated connection attempts would be refused when unauthenticated connections number will reach specified number (optional) |
 | `config.maxStartups.rate`  | `30`      | SSHd will refuse connections with specified probability when there would be too many unauthenticated connections (optional) |
 | `config.maxStartups.start` | `10`      | SSHd will refuse connection attempts with some probability if there are currently more than the specified number of unauthenticated connections |
