@@ -20,6 +20,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where **System Console > Site Configuration > Users & Teams > Lock Teammate Name Display** should only have been available on Enterprise Edition E20 but was erroneously available also on Team Edition and Enterprise Edition E10.
  - Fixed an issue where the System Console left-hand side scrollbar was too dark to see.
  - Fixed an issue where inline markdown image links did not open with preview modal.
+ - Fixed an issue on Edge where the "+" buttons in channel list were black on Mattermost default theme.
+ - Fixed an issue where users were unable to scroll through message textbox autocomplete results using arrow keys.
  - Fixed an issue where clicking a line separator in the Main Menu closed the menu.
  - Fixed an issue where date separator showed long-format timestamps.
  - Fixed an issue where the height and width parameters in inline images didn't work.
