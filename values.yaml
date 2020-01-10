@@ -89,8 +89,8 @@ global:
   redis:
     password:
       enabled: true
-      # secret:
-      # key:
+      secret: gitlab-redis-secret
+      key: redis-password
     # host: redis.hostedsomewhere.else
     # port: 6379
     # sentinels:
@@ -533,10 +533,8 @@ prometheus:
 ## doc/charts/redis-ha
 redis:
   install: true
-  
-redis-ha:
-  install: false
-  nameOverride: redis
+  existingSecret: gitlab-redis-secret
+  existingSecretKey: redis-password
 
 ## Instllation & configuration of stable/prostgresql
 ## See requirements.yaml for current version
