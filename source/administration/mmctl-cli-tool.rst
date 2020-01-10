@@ -2,7 +2,7 @@ mmctl Command Line Tool (Beta)
 ==============================
 
 The mmctl tool is a remote CLI tool for Mattermost which is installed locally and uses the Mattermost API. Authentication
-is done with either login credentials or an authentication token. <elaborate more on this, provide links to other docs>.
+is done with either login credentials or an authentication token.
 
 Being installed locally allows a System Admin to run CLI commands even in instances where there is no access to the
 server (e.g., via SSH). This tool is currently in beta and can be used alongside the Mattermost CLI tool.
