@@ -143,10 +143,10 @@ data:
     # Enable the use of Git protcol v2
     AcceptEnv GIT_PROTOCOL
     
-    {{ if and .Values.config.maxStartups.rate .Values.config.maxStartups.full }}
+    {{ if and .Values.config.maxStartups.start .Values.config.maxStartups.rate }}
     MaxStartups {{ .Values.config.maxStartups.start }}:{{ .Values.config.maxStartups.rate }}:{{ .Values.config.maxStartups.full }}
     {{ else }}
-    MaxStartups {{ .Values.config.maxStartups.start }}
+    MaxStartups {{ .Values.config.maxStartups.full }}
     {{ end }}
 # Leave this here - This line denotes end of block to the parser.
 {{- end }}
