@@ -314,7 +314,7 @@ mmctl auth set
    --format string the format of the command output [plain, json] (default "plain")
 
 
-Authenticate to a server (e.g. >mmctl auth login https://test.mattermost.com). Then username and password
+Authenticate to a server (e.g. >mmctl auth login https://test.mattermost.com), then username and password
 (and MFA token if MFA is enabled on the account).
 
 Password
