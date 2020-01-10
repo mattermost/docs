@@ -129,7 +129,7 @@ Part of the build process is running ESLint. ESLint is the final authority on al
 
 Instructions on how to use ESLint with your favourite editor can be found here: [http://eslint.org/docs/user-guide/integrations](http://eslint.org/docs/user-guide/integrations).
 
-You can run ESlint using the makefile by using `make check-style`.
+You can run ESLint using the makefile by using `make check-style`.
 
 The following is a subset of what ESLint checks for. ESLint is always the authority. 
 
