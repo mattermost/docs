@@ -136,7 +136,7 @@ The following is a subset of what ESLint checks for. ESLint is always the author
 ### General
 
 - Include only one React component per file.
-- Use class \<name\> extends React.Component over React.createClass unless you need mixins.
+- Use `class <Name> extends React.Component` over `React.createClass` unless you need mixins.
 - Filenames should be the component name.
 
 ### Alignment
