@@ -10,21 +10,19 @@ In the future, the Mattermost CLI tool will be deprecated.
 
 **Notes**
 
- -  Parameters in CLI commands are order-specific.
- -  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded
- by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``-password mypassword\!``).
- -  Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team
- name would be ``core`` and channel name would be ``town-square``.
+-  Parameters in CLI commands are order-specific.
+-  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. `` password mypassword\!``).
+- Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
 
 
-Options
+**Options**
+
 .. code-block:: sh
 
        --format string    the format of the command output [plain, json] (default "plain")
        -h, --help         help for mmctl
 
-
-Commands
+**Commands**
 
    - `mmctl channel`_ - Channel Management
    - `mmctl command`_ - Command Management
