@@ -276,7 +276,7 @@ mmctl auth renew
   -m, --mfa-token string      MFA token for the credentials
   -p, --password string       Password for the credentials
 
-Options Inherited from Parent Commands
+**Options Inherited from Parent Commands**
 
 .. code-block:: sh
 
