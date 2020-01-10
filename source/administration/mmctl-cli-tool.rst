@@ -314,7 +314,7 @@ mmctl auth set
    --format string the format of the command output [plain, json] (default "plain")
 
 
-Authenticate to a server (e.g. >mmctl auth login https://test.mattermost.com), then username and password
+Authenticate to a server (e.g. >mmctl auth login https://test.mattermost.com), then enter your username and password
 (and MFA token if MFA is enabled on the account).
 
 Password
@@ -350,7 +350,7 @@ You can generate and use a personal access token to authenticate with a server, 
    $ mmctl auth login https://community.mattermost.com --name community --access-token MY_ACCESS_TOKEN
 
 
-into a Mattermost instance:
+Alternatively, you can log in to your Mattermost server with a username and password:
 
 .. code-block:: sh
 
@@ -589,21 +589,6 @@ mmctl channel make_private
 
  --format string   the format of the command output [plain, json] (default "plain")
 
-
-mmctl channel make
-^^^^^^^^^^^^^^^^^
-
- *In progress*
-
-mmctl channel modify
-^^^^^^^^^^^^^^^^^
-
-*In progress*
-
-mmctl channel move
-^^^^^^^^^^^^^^^^^
-
-*In progress*
 
 mmctl channel remove
 ^^^^^^^^^^^^^^^^^
@@ -1836,10 +1821,6 @@ mmctl team add
 
     --format string   the format of the command output [plain, json] (default "plain")
 
-mmctl team archive
-^^^^^^^^^^^^^^^^
-
-*In progress*
 
 mmctl team create
 ^^^^^^^^^^^^^^^^^^
@@ -2023,29 +2004,6 @@ Child Commands
 .. code-block:: sh
 
    -h, --help       help for user
-
-
-mmctl user activate
-^^^^^^^^^^^^^^^^^^^^^
-
-**Description**
-
-  Activate a user.
-
-**Format**
-
-.. code-block:: sh
-
-      mmctl user activate [flags]
-
-**Examples**
-.. code-block:: sh
-
-**Options**
-.. code-block:: sh
-
-**Options Inherited from Parent Commands**
-.. code-block:: sh
 
 
 mmctl user create
@@ -2284,11 +2242,6 @@ mmctl user search
 
   --format string   the format of the command output [plain, json] (default "plain")
 
-mmctl version
--------------
-
-mmctl webhook
--------------
 
 mmctl websocket
 -------------
