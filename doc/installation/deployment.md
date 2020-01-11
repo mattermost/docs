@@ -100,14 +100,10 @@ use it as shown below.
 
 ### Redis
 
-By default we use an single, non-replicated Redis instance. If desired, a highly available Redis can be deployed instead. You can learn more about configuring: [Redis](../charts/redis) and [Redis-ha](../charts/redis-ha).
+By default we use an single, non-replicated Redis instance. If desired, a highly available Redis can be deployed instead. You can learn more about configuring: [Redis](../charts/redis).
 
-*To deploy `redis-ha` instead of the default `redis`, include these options in your Helm install command:*
+// TODO update after default Redis config question answered.
 
-```
---set redis.enabled=false
---set redis-ha.enabled=true
-```
 
 ### MinIO
 

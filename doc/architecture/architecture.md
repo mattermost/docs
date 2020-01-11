@@ -38,8 +38,6 @@ The following GitLab components have images in the CNG repository.
 
 The following are forked charts which also use GitLab specific Docker images.
 
-- Redis-ha
-
 Docker images that are used for `initContainers` and various `Job`s.
 
 - alpine-certificates

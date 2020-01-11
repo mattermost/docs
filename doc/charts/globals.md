@@ -171,7 +171,7 @@ global:
         port: 26379
     password:
       enabled: true
-      secret: gitlab-redis
+      secret: gitlab-redis-secret
       key: redis-password
 ```
 
