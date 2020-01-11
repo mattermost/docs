@@ -91,52 +91,8 @@ The root admin account for them has username `root` and password `Password1`.
  - Create an account and log in.
  - Confirm the correct version number in **Main Menu** > **About Mattermost**.
 
-Useful Commands
-~~~~~~~~~~~~~~~~~~
 
-1. View config.json directly (arrow keys to scroll, press Q to exit):
-
-  .. code-block:: text
-
-    sudo less /var/opt/gitlab/mattermost/config.json
-
-2. Stop/start Mattermost manually:
-
-  .. code-block:: text
-
-	sudo /opt/gitlab/bin/gitlab-ctl stop mattermost
-	sudo /opt/gitlab/bin/gitlab-ctl start mattermost
-
-3. Access the GitLab admin console (press CTRL+D to exit):
-
-  .. code-block:: text
-
-	sudo gitlab-rails console production
-
-  You can then carry out commands such as updating a user's password:
-
-    .. code-block:: text
-
-	  user = User.find_by(email: 'admin@local.host')
-	  user.password = 'secret_pass'
-	  user.password_confirmation = 'secret_pass'
-	  user.save!
-
-4. Edit NGINX configuration directly:
-
-  .. code-block:: text
-
-	sudo vim /var/opt/gitlab/nginx/conf/gitlab-mattermost-http.conf
-	sudo vim /var/opt/gitlab/nginx/conf/gitlab-http.conf
-	sudo vim /var/opt/gitlab/nginx/conf/nginx.conf
-	sudo vim /var/opt/gitlab/nginx/conf/nginx-status.conf
-
-5. Stop/start NGINX manually:
-
-  .. code-block:: text
-
-	sudo /opt/gitlab/bin/gitlab-ctl stop nginx
-	sudo /opt/gitlab/bin/gitlab-ctl start nginx
+To help with debugging, including a list of useful commands, see the `support handbook <https://docs.mattermost.com/process/support.html#gitlab-issues>`_.
 
 Service-Level Agreement (SLA)
 -------------------------------
