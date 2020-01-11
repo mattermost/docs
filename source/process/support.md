@@ -180,13 +180,23 @@ echo | openssl s_client -showcerts -connect <URL>:443 -CApath /etc/ssl/ && echo 
 
 #### Other debugging information
 
-Useful commands (may need to be run with sudo):
-- `gitlab-ctl reconfigure` - Update config.json and other configuration files, then restart all services (including Mattermost).
-- `gitlab-ctl <stop/start/restart> mattermost` - Stop/start/restart Mattermost.
-- `gitlab-ctl status mattermost` - Check if Mattermost is running. The message printed will start with `run` if it's running or `down` if it's not.
-- `gitlab-ctl tail mattermost` - Watch all Mattermost log files. Press Ctrl+C to exit.
-- `gitlab-ctl <stop/start/restart/status/tail> <nginx/postgresql/redis/etc>` - Control, view status, or view logs of a different service.
-- `sudo gitlab-psql -d mattermost_production` - Access the embedded Mattermost database
+Useful commands:
+- `sudo /opt/gitlab/bin/gitlab-ctl reconfigure` - Update config.json and other configuration files, then restart all services (including Mattermost).
+- `sudo /opt/gitlab/bin/gitlab-ctl <stop/start/restart> mattermost` - Stop/start/restart Mattermost.
+- `sudo /opt/gitlab/bin/gitlab-ctl status mattermost` - Check if Mattermost is running. The message printed will start with `run` if it's running or `down` if it's not.
+- `sudo /opt/gitlab/bin/gitlab-ctl tail mattermost` - Watch all Mattermost log files. Press CTRL+C to exit.
+- `sudo /opt/gitlab/bin/gitlab-ctl <stop/start/restart/status/tail> <nginx/postgresql/redis/etc>` - Control, view status, or view logs of a different service.
+- `sudo less /var/opt/gitlab/mattermost/config.json` - View the Mattermost config.json directly (arrow keys to scroll, press Q to exit).
+- `sudo gitlab-psql -d mattermost_production` - Access the embedded Mattermost database.
+- `sudo gitlab-rails console production` - Access the GitLab admin console (press CTRL+D to exit).
+   - You can then carry out commands such as updating a user’s password:
+
+     ```
+     user = User.find_by(email: 'admin@local.host')
+     user.password = 'secret_pass'
+     user.password_confirmation = 'secret_pass'
+     user.save!
+     ```
 
 File locations:
 - Configuration files are located at `/etc/gitlab/gitlab.rb` and `/var/opt/gitlab/mattermost/config.json`.
