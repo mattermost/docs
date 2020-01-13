@@ -12,7 +12,7 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | The Go module path of ``mattermost-server`` was changed to comply with the Go module version specification. Developers using Go modules with                     |
 |                                                    | ``mattermost-server`` as a dependency must change the module and import paths to ``github.com/mattermost/mattermost-server/v5`` when upgrade this dependency     |
-|                                                    | to `v5.18`. See `<https://blog.golang.org/v2-go-modules>`__ for further information.                                                                                   |
+|                                                    | to `v5.18`. See `<https://blog.golang.org/v2-go-modules>`__ for further information.                                                                             |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Removed ``Team.InviteId`` from the related Websocket event and sanitized it on all team API endpoints for users without invite permissions.                      |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
