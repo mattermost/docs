@@ -15,6 +15,9 @@ spec:
       targetPort: {{ .Values.service.internalPort }}
       protocol: TCP
       name: ssh
+      {{- if and (eq .Values.service.type "NodePort") .Values.service.nodePort }}
+      nodePort: {{ .Values.service.nodePort | int64 }}
+      {{- end }}
   externalTrafficPolicy: {{ .Values.service.externalTrafficPolicy }}
 {{- if .Values.service.loadBalancerIP }}
   loadBalancerIP: {{ .Values.service.loadBalancerIP }}

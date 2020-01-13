@@ -48,6 +48,7 @@ with `global.shell.port`, and defaults to `22`.
 | `service.externalTrafficPolicy` | `Clster` | Shell service external traffic policy   |
 | `service.externalPort`   | `22`           | Shell exposed port                       |
 | `service.internalPort`   | `22`           | Shell internal port                      |
+| `service.nodePort`       |                | Sets shell nodePort if set               |
 | `service.name`           | `gitlab-shell` | Shell service name                       |
 | `service.type`           | `ClusterIP`    | Shell service type                       |
 | `service.loadBalancerIP` |                | IP address to assign to LoadBalancer (if supported) |
