@@ -11,6 +11,7 @@ service:
   type: ClusterIP
   externalPort: 22
   internalPort: 2222
+  externalTrafficPolicy: Cluster
   # loadBalancerIP: x.x.x.x
   # loadBalancerSourceRanges:
   # - x.x.x.x/yy
