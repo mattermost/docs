@@ -181,12 +181,12 @@ echo | openssl s_client -showcerts -connect <URL>:443 -CApath /etc/ssl/ && echo 
 #### Other debugging information
 
 Useful commands:
-- `sudo /opt/gitlab/bin/gitlab-ctl reconfigure` - Update config.json and other configuration files, then restart all services (including Mattermost).
+- `sudo /opt/gitlab/bin/gitlab-ctl reconfigure` - Update `config.json` and other configuration files, then restart all services (including Mattermost).
 - `sudo /opt/gitlab/bin/gitlab-ctl <stop/start/restart> mattermost` - Stop/start/restart Mattermost.
-- `sudo /opt/gitlab/bin/gitlab-ctl status mattermost` - Check if Mattermost is running. The message printed will start with `run` if it's running or `down` if it's not.
+- `sudo /opt/gitlab/bin/gitlab-ctl status mattermost` - Check if Mattermost is running. The printed output will start with `run` if it's running or `down` if it's not.
 - `sudo /opt/gitlab/bin/gitlab-ctl tail mattermost` - Watch all Mattermost log files. Press CTRL+C to exit.
 - `sudo /opt/gitlab/bin/gitlab-ctl <stop/start/restart/status/tail> <nginx/postgresql/redis/etc>` - Control, view status, or view logs of a different service.
-- `sudo less /var/opt/gitlab/mattermost/config.json` - View the Mattermost config.json directly (arrow keys to scroll, press Q to exit).
+- `sudo less /var/opt/gitlab/mattermost/config.json` - View the Mattermost `config.json` directly (use the arrow keys to scroll, press Q to exit).
 - `sudo gitlab-psql -d mattermost_production` - Access the embedded Mattermost database.
 - `sudo gitlab-rails console production` - Access the GitLab admin console (press CTRL+D to exit).
    - You can then carry out commands such as updating a user’s password:
