@@ -82,6 +82,7 @@ Team Management
 ~~~~~~~~~~~~~~~~
 
 **Only allow Admins, in specific team, to add members**
+
 Example: In Team A, only allow Team and System Admins to add new team members. As the default for all other teams, allow all users to add and invite new members.
 
 1. Navigate to **System Console** > **User Management** > **Permissions** (or **System Console** > **Advanced Permissions** in versions prior to 5.12)
@@ -103,6 +104,7 @@ Public and Private Channel Management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Restrict who can rename channels and edit channel header and purposes**
+
 Example: As the default for the entire system, restrict renaming channels and editing headers and purposes to Admins only.
 
 1. Navigate to **System Console** > **User Management** > **Permissions** (or **System Console** > **Advanced Permissions** in versions prior to 5.12).
@@ -115,6 +117,7 @@ Example: As the default for the entire system, restrict renaming channels and ed
   Permissions for channel renaming, editing header, and editing purpose are currently grouped in a single permission. These will be split into separate permissions in a future release.
 
 **Restrict who can create channels, in specific teams**
+
 Example: In Team C, restrict public channel creation to Admins. As the default for all other teams, allow everyone to create public channels.
 
 1. Navigate to **System Console** > **User Management** > **Permissions** (or **System Console** > **Advanced Permissions** in versions prior to 5.12).
@@ -130,6 +133,7 @@ Post Management
 ~~~~~~~~~~~~~~~~
 
 **Restrict who can delete posts**
+
 Example: As the default for the entire system, restrict deleting posts to only Team and System Admins.
 
 1. Navigate to **System Console** > **User Management** > **Permissions** (or **System Console** > **Advanced Permissions** in versions prior to 5.12).
