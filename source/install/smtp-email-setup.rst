@@ -163,7 +163,7 @@ Checking your SMTP server is reachable
 -  You must run the following commands from the same machine or virtual
    instance where ``mattermost/bin/mattermost`` is located. So if you're
    running Mattermost from Docker you need to
-   ``docker exec -ti mattermost-dev /bin/sh``
+   ``docker exec -ti mattermost_app_1 /bin/sh``
 -  Ping the smtp server to see if a connection can be established.
 
 .. note::
