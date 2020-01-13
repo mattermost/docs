@@ -953,7 +953,7 @@ Mattermost v5.11.0 contains low level security fixes. [Upgrading](http://docs.ma
 
 - **v5.11.1, released 2019-06-20** 
   - Mattermost v5.11.1 contains a medium level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
-- **v5.11.0, released 2019-06-16**
+- **v5.11.0, released 2019-05-16**
   - Original 5.11.0 release
 
 ### Breaking changes since last release

@@ -29,15 +29,15 @@ Deploy GitLab Helm Chart
 
 To deploy Gitlab Helm Chart, follow the instructions described `here <https://docs.gitlab.com/ee/install/kubernetes/gitlab_chart.html>`__.
 
-Here is a light way to install it:
+Here's a light way to install it:
 
 .. code-block:: bash
 
   $ helm upgrade --install gitlab gitlab/gitlab \
     --timeout 600 \
-    --set global.hosts.domain=``<your-domain>`` \
-    --set global.hosts.externalIP=``<external-ip>`` \
-    --set certmanager-issuer.email=``<email>``
+    --set global.hosts.domain=<your-domain> \
+    --set global.hosts.externalIP=<external-ip> \
+    --set certmanager-issuer.email=<email>
 
 - ``<your-domain>``: your desired domain, eg. ``gitlab.example.com``.
 - ``<external-ip>``: the external IP pointing to your Kubernetes cluster.
@@ -88,9 +88,12 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
 
   # Mattermost configuration:
   configJSON:
-    SiteUrl: "https://<your-mattermost-domain>"
-    SiteName: "Mattermost"
-    EnableSignUpWithEmail: false
+    ServiceSettings:
+      SiteUrl: "https://<your-mattermost-domain>"
+    TeamSettings:
+      SiteName: "Mattermost"
+    EmailSettings:
+      EnableSignUpWithEmail: false
 
   ingress:
     enabled: true
@@ -173,7 +176,7 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
         - name: POSTGRES_PASSWORD_GITLAB
           valueFrom:
             secretKeyRef:
-              name: gitlab-postgresql-password
+              name: <gitlab-postgres.-passwd-secret>
               key: postgres-password
         - name: POSTGRES_USER_GITLAB
           value: <gitlab-postgres-username>
@@ -235,6 +238,8 @@ After these changes, deploy the Mattermost Team Edition Helm Chart with followin
 
 .. code-block:: bash
 
+  $ helm repo add mattermost https://helm.mattermost.com
+  $ helm repo update
   $ helm upgrade --install mattermost -f values.yaml mattermost/mattermost-team-edition
 
 Wait for the pods to run. Then access your Mattermost server, and log in with your GitLab credentials.
