@@ -163,25 +163,8 @@ Checking your SMTP server is reachable
 -  You must run the following commands from the same machine or virtual
    instance where ``mattermost/bin/mattermost`` is located. So if you're
    running Mattermost from Docker you need to
-   ``docker exec -ti mattermost-dev /bin/bash``
--  Telnet to the email server with ``telnet mail.example.com 25``. If
-   the command works you should see something like
-
-   ::
-
-       Trying 24.121.12.143...
-       Connected to mail.example.com.
-       220 mail.example.com NO UCE ESMTP
-
--  Then type something like ``HELO <your mail server domain>``. If the
-   command works you should see something like
-
-   ::
-
-       250-mail.example.com NO UCE
-       250-STARTTLS
-       250-PIPELINING
-       250 8BITMIME
+   ``docker exec -ti mattermost-dev /bin/sh``
+-  Ping the smtp server to see if a connection can be established.
 
 .. note::
   For additional troubleshooting tips, see
