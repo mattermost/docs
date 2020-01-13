@@ -222,6 +222,124 @@ Open a text editor and create a text file with the following details. Save the f
 
 The deployment process can be monitored in the Kubernetes user interface. If errors or issues are experienced,
 review the Mattermost log files or MySQL logs for guidance including error messages. If remediation is not successful, contact
-Mattermost customer support for assistance. 
+Mattermost customer support for assistance.
+
+Once complete, access your Mattermost instance and confirm that the database has been restored.
+
+Using an External Database with the Mattermost Operator
+------------------------------------------------
+
+You can leverage the Mattermost Operator to utilize an existing database with a new Mattermost installation, in its own namespace.
+
+It is important to note that this process requires the creation of a new Mattermost
+installation - editing the existing ``.yaml`` files is not recommended and can result in data loss.
+
+The process described below needs to be completed prior to proceeding with the Mattermost deployment.
+
+1. Create a backup of your database.
+2. Deploy a new server (e.g., an AWS instance).
+3. Install a backup program and back up the database on the new server/instance.
+4. Upload the backed up database to your cloud storage provider (e.g., Amazon S3).
+5. Create a ``secret.yaml``` file:
+
+Open a text editor and create a text file containing your credentials which will be used to access the uploaded database.
+
+Save the file as ``secret.yaml``. The example below is for AWS/S3.
+
+.. code-block:: yaml
+
+   apiVersion: v1
+   kind: Secret
+   metadata:
+    name: new_database
+   type: Opaque
+   stringData:
+    AWS_ACCESS_KEY_ID: XXXXXXXXXXXX
+    AWS_SECRET_ACCESS_KEY: XXXXXXXXXXXX/XXXXXXXXXXXX
+    AWS_REGION: us-east-1
+    S3_PROVIDER: AWS
+
+**Parameters**
+- ``name``. The name of this manifest which is referenced in the installation manifest.
+
+
+6. Create a Mattermost cluster installation manifest.
+
+Open a text editor and create a text file with the following details. Save the file as ``mattermost-installation.yaml``:
+
+.. code-block:: yaml
+
+  apiVersion: mattermost.com/v1alpha1
+  kind: ClusterInstallation
+  metadata:
+    name: mm-example-full
+  spec:
+    size: 5000users
+    ingressName: example.mattermost-example.com
+    ingressAnnotations:
+      kubernetes.io/ingress.class: nginx
+    version: 5.14.0
+    mattermostLicenseSecret: ""
+    database:
+      storageSize: 50Gi
+    minio:
+      storageSize: 50Gi
+    elasticSearch:
+      host: ""
+      username: ""
+      password: ""
+
+The Mattermost installation manifest contains fields which must be edited in line with your configuration and environment requirements.
+
+.. csv-table::
+    :header: "Field", "Description", "Must Edit"
+
+    "metadata.name", "The name of your Mattermost as it will be shown in Kubernetes. The shorter the better.", "Yes"
+    "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users'.", "Yes"
+    "spec.ingressName", "The DNS for your Mattermost installation.", "Yes"
+    "spec.version", "The Mattermost version.", "No"
+    "spec.mattermostLicenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license). Required for enterprise deployments.", "Yes"
+    "spec.database.storageSize", "The storage size for your database. Your Kubernetes cluster must have volumes this size or larger.", "No"
+    "spec.minio.storageSize", "The storage size for your file storage. Your Kubernetes cluster must have volumes this size or larger.", "No"
+    "spec.elasticSearch", "The section for Elasticsearch settings. Remove this section if you will not be using Elasticsearch.", "No"
+    "spec.elasticSearch.host", "The hostname for your Elasticsearch instance.", "No"
+    "spec.elasticSearch.username", "The username for your Elasticsearch instance.", "No"
+    "spec.elasticSearch.password", "The password for your Elasticsearch instance.", "No"
+
+7. Create a restore manifest:
+
+Open a text editor and create a text file with the following details. Save the file as ``newdatabase.yaml``:
+
+.. code-block:: yaml
+
+  apiVersion: mattermost.com/v1alpha1
+  kind: MattermostNewDB
+  metadata:
+    name: example-mattermostrestoredb
+  spec:
+    initBucketURL: s3://my-sample/my-backup.gz
+    mattermostClusterName: example-clusterinstallation
+    mattermostDBName: mattermostdb
+    mattermostDBPassword: supersecure
+    mattermostDBUser: mmuser
+    restoreSecret: myawscreds
+
+**Parameters**
+- ``mattermostClusterName``. The ClusterInstallation file name.
+- ``RestoreSecret``. The location of the backup file.
+- ``mattermostDBPassword``. The password used to access the database.
+- ``mattermostDBUser``. The username required to access the database.
+- ``initBucketURL``. The URL of the storage instance/server where the backed up DB is stored.
+
+8. To initiate deployment, apply the file and specify the path where the newly-created files have been saved:
+
+.. code-block:: sh
+
+      $ kubectl create ns mattermost
+      $ kubectl apply -n mattermost -f /path/to/mattermost-installation.yaml
+
+The deployment process can be monitored in the Kubernetes user interface. If errors or issues are experienced,
+review the Mattermost log files or MySQL logs for guidance including error messages. If remediation is not successful, contact
+Mattermost customer support for assistance.
 
 Once complete, access your Mattermost instance and confirm that the database has been restored.

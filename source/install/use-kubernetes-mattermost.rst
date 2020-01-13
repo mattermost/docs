@@ -83,8 +83,9 @@ Open the ``mattermost-installation.yaml`` file and add ``blueGreen`` under ``spe
 When the manifest is updated, two new ingresses (proxies) are created at ``blue.yourmattermosturl.com`` and ``green.yourmattermosturl.com``.
 
 To access the new ingresses, create CNAME or IP address records in your DNS registration service for the ``ingressName`` in your
-manifest, pointing to the address you just copied. For example, on AWS you would do this within a hosted zone in Route53.
-Use the required ``ingressName`` URL in your browser to directly access blue or green at any time.
+manifest, pointing to the address you just copied.
+
+For example, on AWS you would do this within a hosted zone in Route 53. Use the required ``ingressName`` URL in your browser to directly access blue or green at any time.
 
 To update the version of blue or green, change the version in the manifest to
 match the current version or the version you’d like to deploy. This
