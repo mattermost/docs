@@ -16,6 +16,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 **IMPORTANT:** If you upgrade from a release earlier than 5.18, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Bug Fixes
+ - Fixed client-side performance issues seen while typing.
  - Fixed an issue where email notifications were still sent in some cases while disabled in the user interface.
  - Fixed an issue where **System Console > Site Configuration > Users & Teams > Lock Teammate Name Display** should only have been available on Enterprise Edition E20 but was erroneously available also on Team Edition and Enterprise Edition E10.
  - Fixed an issue where the System Console left-hand side scrollbar was too dark to see.
