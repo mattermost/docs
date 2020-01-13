@@ -25,6 +25,8 @@ Guests cannot:
 - Create direct messages or group messages with members who aren’t within the same channel
 - Invite people
 
+Additionally, guests are not automatically added to the default ``Town-square`` and ``Off-topic`` channels upon logging in.  To access these channels, they will need to be invited or added to them. 
+
 
 Enabling Guest Accounts
 ------------------------

@@ -1749,6 +1749,13 @@ mattermost user deactivate
       ./mattermost user deactivate user@example.com
       ./mattermost user deactivate username
 
+  .. note::
+    Users deactivated via this CLI command can continue to use Mattermost, if they are already logged in, until the user cache is manually purged or automatically after 30 minutes. Users who are deactivated when they're not logged in will not be able to log in to Mattermost again.
+
+    If you want to immediately terminate a deactivated user's session, purge all caches in **System Console > Web Server > Purge All Caches** after running this command.
+
+    You can also use the `API command <https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D%2Fdelete>`_ to deactivate a user account and immediately terminate the session.
+
 mattermost user delete
 ~~~~~~~~~~~~~~~~~~~~~~
 

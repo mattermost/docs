@@ -96,7 +96,7 @@ When a channel is archived, it is removed from the user interface, but a copy ex
 
 Moreover, when a channel is archived, the contents cannot be viewed, shared or searched by default. If you want to be able to view or search the channel later, either
 
-1. Ask your System Administrator to set ``ViewArchivedChannels`` to ``true`` in config.json to allow users to view, share and search for content of channels that have been archived; or
+1. Ask your System Administrator to set ``ExperimentalViewArchivedChannels`` to ``true`` in config.json to allow users to view, share and search for content of channels that have been archived; or
 2. Leave the channel open, but post a message in the channel saying it's considered archived, such as ``# This channel is archived.``
 
 Converting Public Channels to Private (and vice versa)
