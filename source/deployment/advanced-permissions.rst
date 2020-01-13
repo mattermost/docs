@@ -90,7 +90,7 @@ Example: In Team A, only allow Team and System Admins to add new team members. A
 4. Choose **Save**. 
 5. Select the back arrow to return to the **Permission Schemes** menu. 
 
-1. Seect **New Team Override Scheme**.
+1. Select **New Team Override Scheme**.
   i. Name and describe the scheme. For example, ``Authorized Personnel Only`` with description ``Restrict adding team members to Team and System Admins.``
   ii. Add Team B to the **Select teams to override permissions** list.
   iii. In the **All Members** panel, uncheck the box for **Add Team Members**.
