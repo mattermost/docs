@@ -26,9 +26,9 @@ System Scheme (E10)
 
 You can set the default permissions granted to System Admins, Team Admins, Channel Admins, and all other members. The permissions granted in the System Scheme apply system-wide, meaning:
 
-- **Team Admins:** Permissions apply to all Team Admins, in all teams.
-- **Channel Admins:** Permissions apply to all Channel Admins in all channels, in all teams.
 - **All Members:** Permissions apply to all members, including Admins, in all channels, in all teams. 
+- **Channel Administrators:** Permissions apply to all Channel Admins in all channels, in all teams.
+- **Team Administrators:** Permissions apply to all Team Admins, in all teams.
 - **Guests:** Permissions granted to users with the Guest role, in all channels and teams. 
 
 To override the System Scheme default permissions in a specific team, you must set up a Team Override Scheme.
