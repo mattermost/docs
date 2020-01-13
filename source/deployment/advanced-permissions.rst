@@ -81,7 +81,7 @@ This section provides some examples of common permissions use cases and how to a
 Team Management
 ~~~~~~~~~~~~~~~~
 
-**Only allow Admins, in specific team, to add memberss**
+**Only allow Admins, in specific team, to add members**
 Example: In Team A, only allow Team and System Admins to add new team members. As the default for all other teams, allow all users to add and invite new members.
 
 1. Navigate to **System Console** > **User Management** > **Permissions** (or **System Console** > **Advanced Permissions** in versions prior to 5.12)
