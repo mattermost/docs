@@ -16,7 +16,7 @@ Mattermost v5.18.0 contains low to high level security fixes. [Upgrading](http:/
 - Marking a post unread from the mobile app requires v1.26 or later. If using v5.18, but mobile is on v1.25 or earlier, marking a post unread from webapp/desktop will only be reflected on mobile the next time the app launches or is brought to the foreground.
 
 ### Breaking Changes
- - The Go module path of ``mattermost-server`` was changed to comply with the Go module version specification. Developers using Go modules to manage there dependencies and have ``mattermost-server`` as a dependency, have to change the module path to ``github.com/mattermost/mattermost-server/v5`` when they want to upgrade this dependency to `v5.18`. See https://blog.golang.org/v2-go-modules for further information.
+ - The Go module path of ``mattermost-server`` was changed to comply with the Go module version specification. Developers using Go modules with ``mattermost-server`` as a dependency must change the module and import paths to ``github.com/mattermost/mattermost-server/v5`` when upgrade this dependency to `v5.18`. See https://blog.golang.org/v2-go-modules for further information.
  - Removed ``Team.InviteId`` from the related Websocket event and sanitized it on all team API endpoints for users without invite permissions.
  
 **IMPORTANT:** If you upgrade from a release earlier than 5.17, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
