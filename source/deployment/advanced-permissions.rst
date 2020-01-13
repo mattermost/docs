@@ -76,7 +76,7 @@ Allows Admins to grant additional permissions to specific users or to a group of
 
 Recipes
 --------
-This section provides some examples of common permissions use cases and how to accomplish them using the **Advanced Permissions System Console interface.
+This section provides some examples of common permissions use cases and how to accomplish them using the **Advanced Permissions System Console interface**.
 
 Team Management
 ~~~~~~~~~~~~~~~~
