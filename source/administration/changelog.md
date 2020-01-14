@@ -45,9 +45,10 @@ Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http:/
  - Oath ``IsTrusted`` configuration can only be changed if the user has the ``manage_system`` permission.
  
 ### Known Issues
+ - On a server with a subpath, channel drop-down **Leave Channel** fails to leave the channel.
+ - Importing theme colours from Slack gives an error.
  - Inviting multiple users with valid/allowed and invalid emails causes the invites for the valid users not to be sent.
  - Option to invite users by email is displayed even if email invitations are disabled.
- - Option to mark posts as unread is unexpectedly available when viewing archived channels.
  - Users may need to reinstall and delete cache on Classic apps if launching and logging into the app get stuck.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
