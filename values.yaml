@@ -535,6 +535,8 @@ redis:
   install: true
   existingSecret: gitlab-redis-secret
   existingSecretKey: redis-password
+  cluster:
+    enabled: false
 
 ## Instllation & configuration of stable/prostgresql
 ## See requirements.yaml for current version
