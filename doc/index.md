@@ -60,7 +60,6 @@ Non-GitLab components are packaged and documented on the top level. GitLab
 component services are documented under the [GitLab](charts/gitlab/index.md) chart:
 
 - [NGINX](charts/nginx/index.md)
-- [Redis](charts/redis/index.md)
 - [MinIO](charts/minio/index.md)
 - [Registry](charts/registry/index.md)
 - GitLab/[Sidekiq](charts/gitlab/sidekiq/index.md)

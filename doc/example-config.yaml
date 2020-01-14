@@ -23,13 +23,10 @@ registry:
   enabled: true
   minio:
     enabled: true
+
 # Redis chart provides Redis services to multiple charts
 redis:
-  enabled: true
-
-# If stateful, highly available Redis is required enable redis-ha and disable redis above
-redis-ha:
-  enabled: false
+  install: true
 
 # Minio chart provides Minio servics for Object Storage
 minio:

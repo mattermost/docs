@@ -82,7 +82,6 @@ Subcharts included are :
 - [GitLab Shell](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/gitlab-shell)
 - [Gitaly](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/gitaly)
 - [MinIO](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/minio)
-- [Redis](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/redis)
 - [NGINX](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/nginx)
 - [registry](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/registry)
 

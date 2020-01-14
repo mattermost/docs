@@ -100,10 +100,16 @@ use it as shown below.
 
 ### Redis
 
-By default we use an single, non-replicated Redis instance. If desired, a highly available Redis can be deployed instead. You can learn more about configuring: [Redis](../charts/redis).
+By default we use an single, non-replicated Redis instance. If desired, a
+highly available Redis can be deployed instead. To install an HA Redis
+cluster one needs to set `redis.cluster.enabled=true` when the GitLab
+chart is installed.
 
-// TODO update after default Redis config question answered.
-
+The installation of an HA Redis cluster from the GitLab chart does not
+support using Sentinels. If Sentinel support is desired, a Redis cluster
+needs to be created separately from the GitLab chart install. This can be
+done inside or outside the Kubernetes cluster. Sentinel settings can be
+found in the [Unicorn chart](gitlab/unicorn/index.md#redis).
 
 ### MinIO
 

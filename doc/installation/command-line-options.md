@@ -124,7 +124,7 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 | `redis.existingSecretKey`            | Secret key where password is stored         | `redis-password`      |
 
 Any additional configuration of the Redis service should use the configuration
-settings from the [stable/redis chart](https://github.com/helm/charts/tree/master/stable/redis).
+settings from the [Redis chart](https://github.com/helm/charts/tree/master/stable/redis).
 
 ## Advanced registry configuration
 
