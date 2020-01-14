@@ -36,17 +36,10 @@ Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http:/
  - Fixed an issue with a notification badge count inconsistency when push notification setting was set to **All Activity**.
  - Fixed an issue with an incorrect error message when attempting to add a bot to a channel if the bot was previously on the team.
  - Fixed an issue where the client license API generated a different ETag for every response.
- 
-### config.json
-Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
-
-#### Changes to Team Edition and Enterprise Edition:
-
-### Database Changes
 
 ### API Changes
-
-### Websocket Event Changes
+ - Etag header was added to the API endpoint to get the client license.
+ - Oath ``IsTrusted`` configuration can only be changed if the user has the ``manage_system`` permission.
  
 ### Known Issues
  - Menu help text for Do Not Disturb is truncated in English.
