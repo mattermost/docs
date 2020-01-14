@@ -24,6 +24,15 @@ The table below details the minimum Kubernetes cluster resources that Mattermost
 
 The resource requirements, as well as the ingress name are added to the relevant field in the Mattermost manifest file, which is then deployed in your cluster.
 
+Understanding Replication
+-------------------------
+
+Understanding Storage Requirements
+----------------------------------
+
+Deploying the Mattermost Operator
+----------------------------------
+
 Open a text editor and create a text file with the following details.
 
 .. code-block:: yaml
