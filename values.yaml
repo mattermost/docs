@@ -537,6 +537,8 @@ redis:
   existingSecretKey: redis-password
   cluster:
     enabled: false
+  metrics:
+    enabled: true
 
 ## Instllation & configuration of stable/prostgresql
 ## See requirements.yaml for current version
