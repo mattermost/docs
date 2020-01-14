@@ -27,13 +27,16 @@ Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http:/
  - Fixed an issue where users were unable to scroll through message textbox autocomplete results using arrow keys.
  - Fixed an issue where clicking a line separator in the Main Menu closed the menu.
  - Fixed an issue where date separator showed long-format timestamps.
+ - Fixed an issue where the Menu help text was truncated in English for Do Not Disturb status.
  - Fixed an issue where the height and width parameters in inline images didn't work.
  - Fixed an issue where the day picker in after/before search didn't honor the user's timezone override.
  - Fixed an issue where editing a post and hitting ``<enter>`` in code block saved the post automatically instead of adding a newline.
+ - Fixed an issue where users were unable to close the Edit Channel Header modal when opened from the Intro Message.
  - Fixed an issue where opening the channel picker using CTRL+K and then focusing on the message box using CTRL+SHIFT+L did not close the channel picker.
  - Fixed an issue where the at-mention suggestions still highlighted the previous search but not the first suggestion in the list.
  - Fixed an issue where the at-mention autocomplete always opened up in the right-hand side reply thread, sometimes cutting off users in the list.
  - Fixed an issue with a notification badge count inconsistency when push notification setting was set to **All Activity**.
+ - Fixed an issue where timestamps on 12-hour format had a leading zero.
  - Fixed an issue with an incorrect error message when attempting to add a bot to a channel if the bot was previously on the team.
  - Fixed an issue where the client license API generated a different ETag for every response.
 
@@ -42,7 +45,6 @@ Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http:/
  - Oath ``IsTrusted`` configuration can only be changed if the user has the ``manage_system`` permission.
  
 ### Known Issues
- - Menu help text for Do Not Disturb is truncated in English.
  - Inviting multiple users with valid/allowed and invalid emails causes the invites for the valid users not to be sent.
  - Option to invite users by email is displayed even if email invitations are disabled.
  - Option to mark posts as unread is unexpectedly available when viewing archived channels.
