@@ -1,3 +1,4 @@
+{{- if .Values.postgresql.install -}}
 apiVersion: v1
 kind: ConfigMap
 metadata:
@@ -6,7 +7,7 @@ metadata:
   labels:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 data:
-  enable_extensions.sql: |
-    \connect {{ template "gitlab.psql.database" .}}
-    CREATE EXTENSION pg_trgm;
+  enable_extensions.sh: |
+    PGPASS=$(cat ${POSTGRES_POSTGRES_PASSWORD_FILE}) psql -d {{ template "gitlab.psql.database" .}} -U postgres -c 'CREATE EXTENSION pg_trgm;'
 # Leave this here - This line denotes end of block to the parser.
+{{- end -}}

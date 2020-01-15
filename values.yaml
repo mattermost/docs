@@ -538,14 +538,16 @@ redis-ha:
 ## Instllation & configuration of stable/prostgresql
 ## See requirements.yaml for current version
 postgresql:
-  install: true
   postgresqlUsername: gitlab
+  # This just needs to be set. It will use a second entry in existingSecret for postgresql-postgres-password
+  postgresqlPostgresPassword: bogus
+  install: true
   postgresqlDatabase: gitlabhq_production
   image:
-    tag: 9.6.11-r53
+    tag: 10.9.0
   usePasswordFile: true
-  existingSecret: 'secret'
-  initdbScriptsConfigMap: 'configmap'
+  existingSecret: 'bogus'
+  initdbScriptsConfigMap: 'bogus'
   metrics:
     enabled: true
     ## Optionally define additional custom metrics

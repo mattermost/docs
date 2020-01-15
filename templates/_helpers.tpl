@@ -138,7 +138,7 @@ use the name of the service the upstream chart creates
 {{- end -}}
 
 {{/*
-Return the configmap for initializing the PostgreSQL database. This is used to enable the 
+Return the configmap for initializing the PostgreSQL database. This is used to enable the
 necessary postgres extensions for Gitlab to work
 This overrides the upstream postegresql chart so that we can deterministically
 use the name of the initdb scripts ConfigMap the upstream chart creates

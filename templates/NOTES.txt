@@ -32,6 +32,9 @@ WARNING: Automatic TLS certificate generation with cert-manager is disabled and 
 {{- end -}}
 {{- end -}}
 {{- end -}}
+{{- if $.Values.postgresql.install -}}
+WARNING: If you are upgrading from a previous version of the GitLab Helm Chart, there is a major upgrade to the included PostgreSQL chart, which requires manual steps be performed. Please see our upgrade documentation for more information: https://docs.gitlab.com/charts/installation/upgrade.html
+{{- end -}}
 {{/* run deprecations */}}
 {{ include "gitlab.deprecations" . }}
 {{/* run checkConfig */}}

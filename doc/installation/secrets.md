@@ -207,10 +207,12 @@ This secret is referenced by the `global.minio.credentials.secret` setting.
 ### PostgreSQL password
 
 Generate a random 64 character alpha-numeric password. Replace `<name>` with
-the name of the release.
+the name of the release. Replace <secret> with `postgresql-password`.
 
 ```
-kubectl create secret generic <name>-postgresql-password --from-literal=postgresql-password=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
+kubectl create secret generic <name>-postgresql-password \
+    --from-literal=postgresql-password -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64) \
+    --from-literal=postgresql-postgres-password -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
 ### Grafana password
