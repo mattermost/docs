@@ -136,6 +136,7 @@ global:
       snippets: true
       builds: true
     webhookTimeout:
+    maxRequestDurationSeconds:
 
     ## doc/charts/globals.md#cron-jobs-related-settings
     cron_jobs: {}
