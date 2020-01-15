@@ -18,7 +18,6 @@ Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http:/
 **IMPORTANT:** If you upgrade from a release earlier than 5.18, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
 ### Bug Fixes
- - Fixed client-side performance issues seen while typing.
  - Fixed an issue where email notifications were still sent in some cases while disabled in the user interface.
  - Fixed an issue where **System Console > Site Configuration > Users & Teams > Lock Teammate Name Display** should only have been available on Enterprise Edition E20 but was erroneously available also on Team Edition and Enterprise Edition E10.
  - Fixed an issue where the System Console left-hand side scrollbar was too dark to see.
@@ -45,6 +44,7 @@ Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http:/
  - Oath ``IsTrusted`` configuration can only be changed if the user has the ``manage_system`` permission.
  
 ### Known Issues
+ - Client-side performance issues seen while typing.
  - On a server with a subpath, channel drop-down **Leave Channel** fails to leave the channel.
  - Importing theme colours from Slack gives an error.
  - Inviting multiple users with valid/allowed and invalid emails causes the invites for the valid users not to be sent.
@@ -198,6 +198,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added guests deactivated Websocket Event.
  
 ### Known Issues
+ - Client-side performance issues seen while typing.
  - System Console left-hand side scrollbar may be too dark to see.
  - Menu help text for Do Not Disturb is truncated in English.
  - Inviting multiple users with valid/allowed and invalid emails causes the invites for the valid users not to be sent.
