@@ -18,6 +18,7 @@ spec:
         release: {{ .Release.Name }}
       annotations:
         checksum/config: {{ include (print $.Template.BasePath "/configmap.yml") . | sha256sum }}
+        checksum/config-sshd: {{ include (print $.Template.BasePath "/configmap-sshd.yml") . | sha256sum }}
         cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
       {{- range $key, $value := .Values.annotations }}
         {{ $key }}: {{ $value | quote }}
@@ -94,6 +95,10 @@ spec:
             - name: shell-secrets
               mountPath: '/etc/gitlab-secrets'
               readOnly: true
+            - name: sshd-config
+              mountPath: /etc/ssh/sshd_config
+              subPath: sshd_config
+              readOnly: true
 {{ include "gitlab.extraVolumeMounts" . | indent 12 }}
 {{ include "gitlab.certificates.volumeMount" . | indent 12 }}
           livenessProbe:
@@ -116,6 +121,9 @@ spec:
       - name: shell-config
         configMap:
           name: {{ template "fullname" . }}
+      - name: sshd-config
+        configMap:
+          name: {{ template "fullname" . }}-sshd
       - name: shell-init-secrets
         projected:
           defaultMode: 0440

@@ -26,12 +26,16 @@ with `global.shell.port`, and defaults to `22`.
 | Parameter                | Default        | Description                              |
 | ------------------------ | -------------- | ---------------------------------------- |
 | `annotations`            |                | Pod annotations                          |
-| `enabled`                | `true`         | Shell enable flag                        |
+| `config.loginGraceTime`  | `120`          | Specifies amount of time athat the server will disconnect after if the user has not successfully logged in |
+| `config.maxStartups.full`  | `100`     | SSHd refuse probability will increase linearly and all unauthenticated connection attempts would be refused when unauthenticated connections number will reach specified number |
+| `config.maxStartups.rate`  | `30`      | SSHd will refuse connections with specified probability when there would be too many unauthenticated connections (optional) |
+| `config.maxStartups.start` | `10`      | SSHd will refuse connection attempts with some probability if there are currently more than the specified number of unauthenticated connections (optional) |
 | `deployment.livenessProbe.initialDelaySeconds` | 10 | Delay before liveness probe is initiated |
 | `deployment.livenessProbe.periodSeconds`  | 10 | How often to perform the liveness probe |
 | `deployment.livenessProbe.timeoutSeconds` | 3 | When the liveness probe times out |
 | `deployment.livenessProbe.successThreshold` | 1 | Minimum consecutive successes for the liveness probe to be considered successful after having failed |
 | `deployment.livenessProbe.failureThreshold` | 3 | Minimum consecutive failures for the liveness probe to be considered failed after having succeeded |
+| `enabled`                | `true`         | Shell enable flag                        |
 | `extraContainers`        |                | List of extra containers to include      |
 | `extraInitContainers`    |                | List of extra init containers to include |
 | `extraVolumeMounts`      |                | List of extra volumes mounts to do       |

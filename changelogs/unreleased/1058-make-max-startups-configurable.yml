@@ -1,0 +1,5 @@
+---
+title: "Added ability to configure sshd MaxStartups for gitlab-shell"
+merge_request: 1058
+author: Dmitry Chepurovskiy
+type: added
