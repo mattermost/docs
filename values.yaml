@@ -401,6 +401,10 @@ global:
     # secret:
     # key:
 
+  ## doc/charts/globals.md#configure-unicorn
+  unicorn:
+    workerTimeout: 60
+
   ## doc/charts/globals.md#custom-certificate-authorities
   # configuration of certificates container & custom CA injection
   certificates:

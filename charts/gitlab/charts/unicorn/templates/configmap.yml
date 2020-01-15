@@ -46,7 +46,7 @@ data:
     worker_processes {{ .Values.workerProcesses }}
     working_directory "/srv/gitlab"
     listen "0.0.0.0:{{ .Values.service.internalPort }}", :tcp_nopush => true
-    timeout {{ .Values.workerTimeout }}
+    timeout {{ .Values.global.unicorn.workerTimeout }}
     pid "/home/git/unicorn.pid"
     preload_app true
 
