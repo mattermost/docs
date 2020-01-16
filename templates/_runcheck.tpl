@@ -17,14 +17,16 @@ greater_version()
 # If the secrets aren't in either of these states, we assume you are upgrading from an older version
 # This is running ahead of version checks to ensure this always runs. This is to account for
 # installations outside of the official helm repo.
-# NOTE: directory exists ONLY if postgresql.install=true and secret exists
-if [ -d "/etc/secrets/postgresql" ]; then
- if [ ! -f "/etc/secrets/postgresql/postgresql-postgres-password" ] || [ ! -f "/etc/secrets/postgresql/{{ include "gitlab.psql.password.key" . | trimAll "\"" }}" ] ; then
-    notify "You seem to be upgrading from a previous version of GitLab using the bundled PostgreSQL chart"
-    notify "There are some manual steps which need to be performed in order to upgrade the database"
-    notify "Please see the upgrade documentation for instructions on how to proceed:"
-    notify "https://docs.gitlab.com/charts/installation/upgrade.html"
-    exit 1
+secrets_dir="/etc/secrets/postgresql"
+if [ -d "${secrets_dir}" ]; then
+  if [ ! "$(ls -A ${secrets_dir})" = "" ]; then
+    if [ ! -f "${secrets_dir}/postgresql-postgres-password" ] || [ ! -f "${secrets_dir}/{{ include "gitlab.psql.password.key" . | trimAll "\"" }}" ]; then
+      notify "You seem to be upgrading from a previous version of GitLab using the bundled PostgreSQL chart"
+      notify "There are some manual steps which need to be performed in order to upgrade the database"
+      notify "Please see the upgrade documentation for instructions on how to proceed:"
+      notify "https://docs.gitlab.com/charts/installation/upgrade.html"
+      exit 1
+    fi
   fi
 fi
 MIN_VERSION=12.6
