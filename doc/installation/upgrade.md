@@ -50,7 +50,7 @@ The following are the steps to upgrade GitLab to a newer version:
 
 As part of the `3.0.0` release of this chart, we upgraded the bundled [PostgreSQL chart](https://github.com/helm/charts/tree/master/stable/postgresql) from 0.11.0 to 7.7.0. This is not a drop in replacement. Manual steps need to be performed to upgrade the database.
 
-NOTE: **Note:** If you are not using the bundled PostgreSQL chart (`postgresql.enabled` is false), you do not need to perform these steps.
+NOTE: **Note:** If you are not using the bundled PostgreSQL chart (`postgresql.install` is false), you do not need to perform these steps.
 
 ### Steps
 
