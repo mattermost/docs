@@ -6,7 +6,7 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
-Mattermost Enterprise Edition v5.19.0 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-19-quality-release>`__ - `Download <https://releases.mattermost.com/5.19.0/mattermost-5.19.0-linux-amd64.tar.gz>`__
+Mattermost Enterprise Edition v5.19.0 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-19-esr>`__ - `Download <https://releases.mattermost.com/5.19.0/mattermost-5.19.0-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.19.0/mattermost-5.19.0-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``bbcf8495804be2e2b91de5da4281b0d7d794cde0555f8183ea12297a989db576``
   - GPG Signature: https://releases.mattermost.com/5.19.0/mattermost-5.19.0-linux-amd64.tar.gz.sig
@@ -163,7 +163,7 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog <https://docs.mattermost.
 Mattermost Team Edition Server Archive
 ---------------------------------------
 
-Mattermost Team Edition v5.19.0 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-19-quality-release>`__ - `Download <https://releases.mattermost.com/5.19.0/mattermost-team-5.19.0-linux-amd64.tar.gz>`__
+Mattermost Team Edition v5.19.0 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-19-esr>`__ - `Download <https://releases.mattermost.com/5.19.0/mattermost-team-5.19.0-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.19.0/mattermost-team-5.19.0-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``a6174852a5ac33af07979ab6560580ff8f36586f6364eeb7a130bacd62b6cec5``
   - GPG Signature: https://releases.mattermost.com/5.19.0/mattermost-team-5.19.0-linux-amd64.tar.gz.sig
