@@ -37,7 +37,7 @@ After installing Mattermost:
 
 5. **(Optional) Restrict authentication to AD/LDAP.** Go to **System Console > Authentication > Email** and set **Enable sign-in with email** to `false` and **Enable sign-in with username** to `false`. Then choose **Save** to save the changes. This should leave Active Directory/LDAP as the only sign in option.
 
-6. **(Optional) If you configured `First Name Attribute` and `Last Name Attribute` in the System Console.** Navigate to **System Console > Site Configuration > Users and Teams** (or **System Console > General > Users and Teams** in versions prior to 5.12) and set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
+6. **(Optional) If you configured `First Name Attribute` and `Last Name Attribute` in the System Console**, navigate to **System Console > Site Configuration > Users and Teams** (or **System Console > General > Users and Teams** in versions prior to 5.12) and set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
 If you've made a mistake and lock yourself out of the system somehow, you can [set an existing account to System Administrator using the command line tool](http://docs.mattermost.com/deployment/on-boarding.html#common-tasks).
 
