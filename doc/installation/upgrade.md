@@ -101,6 +101,6 @@ NOTE: **Note:** If you have multiple charts installed in the same namespace. It 
        1. Unpause the deployments from the first step
 
    ```shell
-   # RELEASE should be the version of the chart you are installing
+   # GITLAB_RELEASE should be the version of the chart you are installing
    curl -s https://gitlab.com/gitlab-org/charts/gitlab/raw/${GITLAB_RELEASE}/scripts/database-upgrade | bash -s post
    ```
