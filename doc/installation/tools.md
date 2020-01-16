@@ -17,7 +17,7 @@ cluster. Proceed with setting up Helm.
 ## Helm
 
 Helm is the package manager for Kubernetes. The `gitlab` chart is only tested and
-supported with Helm `v2` and Helm 2.12 or higher is required. Helm `v1` is
+supported with Helm `v2` and Helm 2.12 or higher is required, excluding 2.15. Helm `v1` is
 explicitly not supported. Helm `v3` is not yet supported, and open issues can be
 found under our [Helm 3 issue label](https://gitlab.com/gitlab-org/charts/gitlab/issues?label_name%5B%5D=Helm+3).
 
@@ -28,6 +28,10 @@ NOTE: **Note**:
 If you are not able to run Tiller in your cluster, for example on OpenShift,
 it's possible to use [Tiller locally](#local-tiller) and avoid deploying it
 into the cluster. This should only be used when Tiller cannot be normally deployed.
+
+NOTE: **Note**:
+Helm v2.15.x series contained multiple severe bugs that affect the use of this chart.
+*Do not use these versions!*
 
 ### Getting Helm
 
