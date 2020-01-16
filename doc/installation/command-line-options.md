@@ -119,7 +119,7 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 
 | Parameter                            | Description                                 | Default               |
 |--------------------------------------|---------------------------------------------|-----------------------|
-| `redis.install`                      | Install the stable/redis chart              | true                  |
+| `redis.install`                      | Install the `stable/redis` chart            | true                  |
 | `redis.existingSecret`               | Specify the Secret for Redis servers to use | `gitlab-redis-secret` |
 | `redis.existingSecretKey`            | Secret key where password is stored         | `redis-password`      |
 
