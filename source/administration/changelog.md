@@ -6,9 +6,12 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.19 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html) & [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
-**Release day: 2020-01-16**
-
 Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+- **v5.19.1, release day TBD**
+  - Fixing client-side performance issues seen while typing. [MM-20349](https://mattermost.atlassian.net/browse/MM-20349)
+- **v5.19.0, released 2020-01-16**
+  - Original 5.19.0 release
 
 ### Compatibility
 
