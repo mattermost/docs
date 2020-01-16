@@ -102,5 +102,5 @@ NOTE: **Note:** If you have multiple charts installed in the same namespace. It 
 
    ```shell
    # RELEASE should be the version of the chart you are installing
-   curl -s https://gitlab.com/gitlab-org/charts/gitlab/raw/${RELEASE}/scripts/database-upgrade | bash -s post
+   curl -s https://gitlab.com/gitlab-org/charts/gitlab/raw/${GITLAB_RELEASE}/scripts/database-upgrade | bash -s post
    ```
