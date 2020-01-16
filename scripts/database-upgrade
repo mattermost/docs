@@ -46,12 +46,26 @@ post() {
     # This will store the original number of replicas, so we can restore the deployments when we're done
     declare -A replicas
 
+    # Create a configmap to store the replicas count for each deployment
+    if ! kubectl create configmap "${script_name}"
+    then
+        existing=true
+    fi
+
     # Find the number of replicas for each deployment and shutdown database accessing deployments
     for app in ${database_connectors}
     do
         info=$(kubectl get deployment -l "$(selector ${app})" -o template --template='{{ range .items }}{{.metadata.name}},{{.spec.replicas}}{{ end }}')
         deployment=$(echo "${info}" | cut -d, -f1)
-        replicas[${deployment}]=$(echo "${info}" | cut -d, -f2)
+
+        if [ -n "${existing}" ]
+        then
+            replicas[${deployment}]=$(kubectl get configmap "${script_name}" -o template --template={{.data.${app}}})
+        else
+            count=$(echo "${info}" | cut -d, -f2)
+            replicas[${deployment}]=${count}
+            kubectl patch configmap "${script_name}" -p "{\"data\": { \"${deployment}\": \"${count}\" }}"
+        fi
         echo "Stopping: ${deployment}"
         patch_replicas "${deployment}" 0
     done
@@ -67,6 +81,9 @@ post() {
         echo "Starting: ${dep}"
         patch_replicas "${dep}" "${replicas[$dep]}"
     done
+
+    # If we made it here, restore was successful, remove the configmap
+    kubectl delete configmap "${script_name}"
 }
 
 while getopts :r: opt
