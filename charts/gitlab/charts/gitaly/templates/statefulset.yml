@@ -1,4 +1,4 @@
-{{- if .Values.enabled -}}
+{{- if .Values.global.gitaly.enabled -}}
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -212,4 +212,4 @@ spec:
       {{- toYaml .Values.persistence.matchExpressions | nindent 12 }}
       {{- end -}}
   {{- end }}
-{{ end }}
+{{- end }}

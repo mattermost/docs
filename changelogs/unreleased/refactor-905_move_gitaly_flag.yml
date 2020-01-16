@@ -1,0 +1,5 @@
+---
+title: Moved Gitaly enabled flag to global namespace
+merge_request: 1081
+author:
+type: changed
