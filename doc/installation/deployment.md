@@ -113,7 +113,7 @@ found in the [Unicorn chart]().
 
 There has been an issue created to track this [sentinel issue]().
 
-[Unicorn chart]: gitlab/unicorn/index.md#redis
+[Unicorn chart]: ../charts/gitlab/unicorn/index.md#redis
 [sentinel issue]: https://gitlab.com/gitlab-org/charts/gitlab/issues/1810
 
 ### MinIO
