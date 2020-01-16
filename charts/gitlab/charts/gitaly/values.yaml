@@ -4,9 +4,15 @@
 
 global:
   gitaly:
+    enabled: true
     internal:
       names: ["default"]
     external: []
+  # imagePullPolicy: IfNotPresent
+  redis:
+    password: {}
+  gitaly:
+    authToken: {}
 
 internal: {}
 image:
@@ -22,7 +28,6 @@ service:
   tls:
     externalPort: 8076
     internalPort: 8076
-enabled: true
 serviceName: gitaly
 annotations: {}
 
@@ -36,13 +41,6 @@ init:
 
 ## Support for tolerations for pod scheduling
 tolerations: []
-
-global:
-  # imagePullPolicy: IfNotPresent
-  redis:
-    password: {}
-  gitaly:
-    authToken: {}
 
 logging:
   format: "json"
