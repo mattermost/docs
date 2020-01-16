@@ -16,7 +16,7 @@ Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http:/
 ### Compatibility
 
 #### Breaking Changes
- - ``LockTeammateNameDisplay`` setting was moved to Enterprise Edition E20 as it was errouneously available in Team Edition and Enterprise Edition E10.
+ - ``LockTeammateNameDisplay`` setting was moved to Enterprise Edition E20 as it was erroneously available in Team Edition and Enterprise Edition E10.
  
 **IMPORTANT:** If you upgrade from a release earlier than 5.18, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
