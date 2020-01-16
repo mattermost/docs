@@ -309,6 +309,78 @@ pods:
         memory: 2Gi
 ```
 
+## Configuring the `networkpolicy`
+
+This section controls the
+[NetworkPolicy](https://kubernetes.io/docs/concepts/services-networking/network-policies/).
+This configuration is optional and is used to limit Egress and Ingress of the
+Pods to specific endpoints.
+
+| Name              | Type    | Default | Description |
+|:----------------- |:-------:|:------- |:----------- |
+| `enabled`         | Boolean | `false` | This setting enables the networkpolicy |
+| `ingress.enabled` | Boolean | `false` | When set to `true`, the `Ingress` network policy will be activated. This will block all Ingress connections unless rules are specified. |
+| `ingress.rules`   | Array   | `[]`    | Rules for the Ingress policy, for details see <https://kubernetes.io/docs/concepts/services-networking/network-policies/#the-networkpolicy-resource> and the example below |
+| `egress.enabled`  | Boolean | `false` | When set to `true`, the `Egress` network policy will be activated. This will block all egress connections unless rules are specified. |
+| `egress.rules`    | Array   | `[]`    | Rules for the egress policy, these for details see <https://kubernetes.io/docs/concepts/services-networking/network-policies/#the-networkpolicy-resource> and the example below |
+
+### Example Network Policy
+
+The Sidekiq service requires Ingress connections for only the Prometheus
+exporter if enabled.  And normally requires Egress connections to various
+places. This examples adds the following network policy:
+
+- All Ingress requests from the network on TCP `10.0.0.0/8` port 3807 are allowed for metrics exporting
+- All Egress requests to the network on UDP `10.0.0.0/8` port 53 are allowed for DNS
+- All Egress requests to the network on TCP `10.0.0.0/8` port 5432 are allowed for PostgreSQL
+- All Egress requests to the network on TCP `10.0.0.0/8` port 6379 are allowed for Redis
+- Other Egress requests to the local network on `10.0.0.0/8` are restricted
+- Egress requests outside of the `10.0.0.0/8` are allowed
+
+_Note the example provided is only an example and may not be complete_
+
+_Note that the Sidekiq service requires outbound connectivity to the public
+internet for images on [external object storage](../../../advanced/external-object-storage)_
+
+```yaml
+networkpolicy:
+  enabled: true
+  ingress:
+    enabled: true
+    rules:
+      - from:
+        - ipBlock:
+            cidr: 10.0.0.0/8
+        ports:
+        - port: 3807
+  egress:
+    enabled: true
+    rules:
+      - to:
+        - ipBlock:
+            cidr: 10.0.0.0/8
+        ports:
+        - port: 53
+          protocol: UDP
+      - to:
+        - ipBlock:
+            cidr: 10.0.0.0/8
+        ports:
+        - port: 5432
+          protocol: TCP
+      - to:
+        - ipBlock:
+            cidr: 10.0.0.0/8
+        ports:
+        - port: 6379
+          protocol: TCP
+      - to:
+        - ipBlock:
+            cidr: 0.0.0.0/0
+            except:
+            - 10.0.0.0/8
+```
+
 ## Production usage
 
 By default, all of Sidekiq queues run in an all-in-one container which is not
