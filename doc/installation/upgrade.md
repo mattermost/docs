@@ -73,7 +73,7 @@ NOTE: **Note:** If you have multiple charts installed in the same namespace. It 
 
    The secret key for the application database key is changing from `postgres-password`, to `postgresql-password`.
 
-   1. If you'd to use an auto-generated PostgreSQL password, delete the existing secret to allow the upgrade to generate a new password for you. RELEASE-NAME should be the name of the GitLab release from `helm list`
+   1. If you'd like to use an auto-generated PostgreSQL password, delete the existing secret to allow the upgrade to generate a new password for you. RELEASE-NAME should be the name of the GitLab release from `helm list`
 
       ```shell
       kubectl delete secret RELEASE-NAME-postgresql-password
