@@ -11,7 +11,7 @@ Disable the `gitaly` chart and the Gitaly service it provides, and point the oth
 
 You need to set the following parameters:
 
-- `gitlab.gitaly.enabled`: Set to `false` to disable the included Gitaly chart.
+- `global.gitaly.enabled`: Set to `false` to disable the included Gitaly chart.
 - `global.gitaly.host`: Set to the hostname of the external Gitaly, can be a domain or an IP address.
 - `global.gitaly.authToken.secret`: The name of the [secret which contains the token for authentication][gitaly-secret].
 - `global.gitaly.authToken.key`: The key within the secret, which contains the token content.
@@ -24,7 +24,7 @@ Items below can be further customized if you are not using the defaults:
 
 ```
 helm install .  \
-  --set gitlab.gitaly.enabled=false \
+  --set global.gitaly.enabled=false \
   --set global.gitaly.host=gitaly.example \
   --set global.gitaly.authToken.secret=gitaly-secret \
   --set global.gitaly.authToken.key=token

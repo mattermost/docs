@@ -99,6 +99,7 @@ global:
 
   ## doc/charts/globals.md#configure-gitaly-settings
   gitaly:
+    enabled: true
     authToken: {}
       # secret:
       # key:
@@ -639,7 +640,6 @@ grafana:
 #     enabled: false
 ## doc/charts/gitlab/gitaly
 #   gitaly:
-#     enabled: false
 ## doc/charts/gitlab/gitlab-shell
 #   gitlab-shell:
 #     enabled: false
