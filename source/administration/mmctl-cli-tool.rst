@@ -23,7 +23,7 @@ In the future, the Mattermost CLI tool will be deprecated.
        -h, --help         help for mmctl
 
 **Commands**
-
+   - `mmctl auth`_ - Authentication Management   
    - `mmctl channel`_ - Channel Management
    - `mmctl command`_ - Command Management
    - `mmctl config`_ - Configuration Management
@@ -37,8 +37,6 @@ In the future, the Mattermost CLI tool will be deprecated.
    - `mmctl roles`_ - Roles Management
    - `mmctl team`_ - Team Management
    - `mmctl user`_ - User Management
-   - `mmctl version`_ - Version Management
-   - `mmctl webhook`_ - Webhook Management
 
 
 Installing mmctl
@@ -410,9 +408,6 @@ Commands for channel management.
     -  `mmctl channel create`_ - Create a channel
     -  `mmctl channel list`_ - List all channels on specified teams
     -  `mmctl channel make_private`_ - Set a channel's type to "private"
-    -  `mmctl channel make`_ - Make a channel
-    -  `mmctl channel modify`_ - Modify all channels
-    -  `mmctl channel move`_ - Move a channel to another team
     -  `mmctl channel remove`_ - Remove users from a channel
     -  `mmctl channel rename`_ - Rename a channel
     -  `mmctl channel restore`_ - Restore a channel from the archive
@@ -1776,12 +1771,10 @@ Management of teams.
 
 Child Commands
   -  `mmctl team add`_ - Add teams
-  -  `mmctl team archive`_ - Archive teams
   -  `mmctl team create`_ - Create teams
   -  `mmctl team delete`_ - Delete teams
   -  `mmctl team list`_ - List teams
   -  `mmctl team remove`_ - Remove teams
-  -  `mmctl team rename`_ - Rename teams
   -  `mmctl team search`_ - Search teams
 
 **Options**
@@ -1990,7 +1983,6 @@ mmctl user
 Management of users.
 
 Child Commands
-  -  `mmctl user activate`_ - Activate user
   -  `mmctl user create`_ - Create user
   -  `mmctl user deactivate`_ - Deactivate user
   -  `mmctl user email`_ - Set user email
