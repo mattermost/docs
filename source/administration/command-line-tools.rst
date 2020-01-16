@@ -644,6 +644,27 @@ mattermost config migrate
     .. code-block:: none
 
        ./mattermost config migrate  path/to/config.json "postgres://mmuser:mostest@dockerhost:5432/mattermost_test?sslmode=disable&connect_timeout=10"
+       
+mattermost config reset
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Resets the value of a config setting by its name in dot notation or a setting section to the default value. Accepts multiple values for array settings. When no parameters are given, it will reset all config settings.
+
+  Format
+    .. code-block:: none
+
+      mattermost config reset {config.name} {setting section}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost config reset SqlSettings.DriverName LogSettings
+       
+   Options
+    .. code-block:: none
+
+        --confirm  Confirm you really want to reset the config setting and a backup has been performed.  
 
 mattermost config set
 ~~~~~~~~~~~~~~~~~~~~~
