@@ -212,7 +212,7 @@ the name of the release. Replace <secret> with `postgresql-password`.
 ```
 kubectl create secret generic <name>-postgresql-password \
     --from-literal=postgresql-password=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64) \
-    --from-literal=postgresql-postgres-password -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
+    --from-literal=postgresql-postgres-password=$(head -c 512 /dev/urandom | LC_CTYPE=C tr -cd 'a-zA-Z0-9' | head -c 64)
 ```
 
 ### Grafana password
