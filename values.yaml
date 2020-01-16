@@ -89,8 +89,8 @@ global:
   redis:
     password:
       enabled: true
-      secret: gitlab-redis-secret
-      key: redis-password
+      # secret:
+      # key:
     # host: redis.hostedsomewhere.else
     # port: 6379
     # sentinels:
