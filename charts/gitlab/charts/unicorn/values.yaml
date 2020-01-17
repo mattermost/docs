@@ -58,7 +58,6 @@ ingress:
     # enabled: true
   annotations: {}
 workerProcesses: 2
-workerTimeout: 60
 memory: # in MB units
   min: 700
   max: 1024
@@ -145,6 +144,8 @@ global:
   minio:
     enabled:
     credentials: {}
+  unicorn: {}
+    # workerTimeout: 60
   appConfig:
     incomingEmail:
       enabled: false

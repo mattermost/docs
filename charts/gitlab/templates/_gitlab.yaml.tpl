@@ -60,3 +60,43 @@ cron_jobs:
 {{ toYaml .cron_jobs | indent 2 }}
 {{- end }}
 {{- end }}
+
+{{- define "gitlab.appConfig.maxRequestDurationSeconds" -}}
+{{/*
+    Unless explicitly provided, we need to set maxRequestDurationSeconds to 95% of the
+    workerTimeout value specified for unicorn (and use its ceiling value).
+    However, sprig's `mul` function does not work with floats, so a
+    multiplication with `0.95` is not possible. To workaround this, we do the
+    following
+    1. Scale up the value to the order of 10000 by multiplying it
+    with (95 * 100).
+    2. Divide the scaled up value by 10000, and the result will be an integer.
+    3. If a reminder was present during the division (this is checked using
+       modular division), we increment the result by 1. This does the function
+       of `ceil` in Ruby.
+    4. For example, if unicorn's timeout is the default value of 60, the result
+       we need is 57. The various values in this workaround will be
+       (i)   $workerTimeout = 60
+       (ii)  $scaledResult = 570000
+       (iii) $reminder = 0
+       (iv)  $result = 57
+    5. Another example, if unicorn's timeout is 61, the result we need is
+       58 (ceiling of 0.95 * 61 = 57.95). The various values in this workaround
+       will be
+       (i)   $workerTimeout = 61
+       (ii)  $scaledResult = 579500
+       (iii) $reminder = 9500
+       (iv)  $result = 57
+       (v)   $result = 58 (because there was a remainder, result got incremented)
+*/}}
+{{- $workerTimeout := $.Values.global.unicorn.workerTimeout }}
+{{- $scaledResult := mul $workerTimeout 100 95 }}
+{{- $remainder := mod $scaledResult 10000 }}
+{{- $doCeil := gt $remainder 0 }}
+{{- $result := div $scaledResult 10000 }}
+{{- if $doCeil }}
+{{-   $result = add1 $result }}
+{{- end }}
+{{- $result }}
+{{- end }}
+{{/* END gitlab.appConfig.maxRequestDurationSeconds */}}

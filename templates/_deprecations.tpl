@@ -39,6 +39,7 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.initContainerImage" .) -}}
 {{- $deprecated := append $deprecated (include "external.deprecate.initContainerImage" .) -}}
 {{- $deprecated := append $deprecated (include "external.deprecate.initContainerPullPolicy" .) -}}
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.workerTimeout" .) -}}
 
 {{- /* prepare output */}}
 {{- $deprecated := without $deprecated "" -}}
@@ -247,3 +248,12 @@ gitlab.{{ $chart }}:
 {{- end -}}
 {{- end -}}
 {{/* END external.deprecate.initContainerPullPolicy*/}}
+
+{{/* Deprecation behaviors for configuration of unicorn worker timeout*/}}
+{{- define "gitlab.deprecate.unicorn.workerTimeout" -}}
+{{- if hasKey .Values.gitlab.unicorn "workerTimeout" -}}
+unicorn:
+    Chart-local configuration of Unicorn's worker timeout has been moved to global. Please remove `unicorn.workerTimeout` setting from your properties, and set `global.appConfig.unicorn.workerTimeout` instead.
+{{- end -}}
+{{- end -}}
+{{/* END deprecate.unicorn.workerTimeout */}}
