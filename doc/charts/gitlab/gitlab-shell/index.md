@@ -49,10 +49,8 @@ with `global.shell.port`, and defaults to `22`.
 | `init.image.tag`         |                | initContainer image tag                  |
 | `redis.serviceName`      | `redis`        | Redis service name                       |
 | `replicaCount`           | `1`            | Shell replicas                           |
-| `service.externalTrafficPolicy` | `Cluster` | Shell service external traffic policy (Cluster or Local)  |
 | `service.externalPort`   | `22`           | Shell exposed port                       |
 | `service.internalPort`   | `22`           | Shell internal port                      |
-| `service.nodePort`       |                | Sets shell nodePort if set               |
 | `service.name`           | `gitlab-shell` | Shell service name                       |
 | `service.type`           | `ClusterIP`    | Shell service type                       |
 | `service.loadBalancerIP` |                | IP address to assign to LoadBalancer (if supported) |
