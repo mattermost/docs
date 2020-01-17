@@ -66,6 +66,7 @@ Follow the links below for further reading and additional persistence options:
 
 - [Gitaly persistence configuration](../charts/gitlab/gitaly/index.md#git-repository-persistence)
 - [MinIO persistence configuration](../charts/minio/index.md#persistence)
+- [Redis persistence configuration](https://github.com/helm/charts/tree/master/stable/redis#persistence)
 - [Upstream PostgreSQL chart configuration](https://github.com/helm/charts/tree/master/stable/postgresql#configuration)
 
 > **Note**: Some of the advanced persistence options differ between PostgreSQL and the others, so it's important to check
