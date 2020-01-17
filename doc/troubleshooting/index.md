@@ -148,4 +148,4 @@ This can be solved by simply [removing all of the affected services](#resolve-by
 1. Perform an upgrade via Helm.
 1. Future upgrades will not face this error.
 
-NOTE: **Note:** This will change any dynamic value for the `LoadBalancer` for NGINX Ingress from this chart, if in use. See [global Ingress settings documentation](charts/globals.md#configure-ingress-settings) for more details regarding `externalIP`. You may be required to update DNS records!
+NOTE: **Note:** This will change any dynamic value for the `LoadBalancer` for NGINX Ingress from this chart, if in use. See [global Ingress settings documentation](../charts/globals.md#configure-ingress-settings) for more details regarding `externalIP`. You may be required to update DNS records!
