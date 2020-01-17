@@ -60,7 +60,7 @@ post() {
 
         if [ -n "${existing}" ]
         then
-            replicas[${deployment}]=$(kubectl ${namespace} get configmap "${script_name}" -o template --template={{.data.${app}}})
+            replicas[${deployment}]=$(kubectl ${namespace} get configmap "${script_name}" -o template --template="{{ index .data \"${deployment}\" }}")
         else
             count=$(echo "${info}" | cut -d, -f2)
             replicas[${deployment}]=${count}

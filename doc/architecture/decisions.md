@@ -105,17 +105,6 @@ Related issue:
 The following charts have been forked or re-created in this repository following
 our [guidelines for forking](../development/index.md#guidelines-for-forking)
 
-### Redis
-
-Our [Redis chart](../charts/redis/index.md) was altered from the upstream [Redis](https://github.com/helm/charts/tree/master/stable/redis).
-
-- Populate the password directly into the `redis.conf` instead of via Environment
-- Make use of pre-existing Kubernetes secrets instead of creating new ones from properties.
-
-### Redis HA
-
-Our [Redis HA chart](../charts/redis-ha/index.md) was altered from the upstream [Redis HA](https://github.com/helm/charts/tree/master/stable/redis-ha).
-
 ### MinIO
 
 Our [MinIO chart](../charts/minio/index.md) was altered from the upstream [MinIO](https://github.com/helm/charts/tree/master/stable/minio).

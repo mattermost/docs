@@ -137,6 +137,7 @@ global:
       snippets: true
       builds: true
     webhookTimeout:
+    maxRequestDurationSeconds:
 
     ## doc/charts/globals.md#cron-jobs-related-settings
     cron_jobs: {}
@@ -402,6 +403,10 @@ global:
     # secret:
     # key:
 
+  ## doc/charts/globals.md#configure-unicorn
+  unicorn:
+    workerTimeout: 60
+
   ## doc/charts/globals.md#custom-certificate-authorities
   # configuration of certificates container & custom CA injection
   certificates:
@@ -532,9 +537,15 @@ prometheus:
 #   enabled: true
 ## doc/architecture/decisions.md#redis-ha
 ## doc/charts/redis-ha
-redis-ha:
-  enabled: false
-  nameOverride: redis
+redis:
+  install: true
+  existingSecret: gitlab-redis-secret
+  existingSecretKey: redis-password
+  usePasswordFile: true
+  cluster:
+    enabled: false
+  metrics:
+    enabled: true
 
 ## Instllation & configuration of stable/prostgresql
 ## See requirements.yaml for current version

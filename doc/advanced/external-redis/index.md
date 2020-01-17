@@ -11,7 +11,7 @@ Disable the `redis` chart and the Redis service it provides, and point the other
 
 You need to set the following parameters:
 
-- `redis.enabled`: Set to `false` to disable the included Redis chart.
+- `redis.install`: Set to `false` to disable including the Redis chart.
 - `global.redis.host`: Set to the hostname of the external Redis, can be a domain or an IP address.
 - `global.redis.password.enabled`: Set to `false` if the external Redis does not require a password.
 - `global.redis.password.secret`: The name of the [secret which contains the token for authentication](../../installation/secrets.md#redis-password).

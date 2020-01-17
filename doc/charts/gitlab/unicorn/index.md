@@ -85,7 +85,6 @@ to the `helm install` command using the `--set` flags.
 | `tolerations`                    | `[]`                  | Toleration labels for pod assignment           |
 | `trusted_proxies`                | `[]`                  | See [GitLab documentation](https://docs.gitlab.com/ee/install/installation.html#adding-your-trusted-proxies) for details |
 | `workerProcesses`                | `2`                   | Unicorn number of workers                      |
-| `workerTimeout`                  | `60`                  | Unicorn worker timeout                         |
 | `workhorse.livenessProbe.initialDelaySeconds`  | 20      | Delay before liveness probe is initiated       |
 | `workhorse.livenessProbe.periodSeconds`        | 60      | How often to perform the liveness probe        |
 | `workhorse.livenessProbe.timeoutSeconds`       | 30      | When the liveness probe times out              |
@@ -215,9 +214,9 @@ redis:
 
 _Note:_ The current Redis Sentinel support only supports Sentinels that have
 been deployed separately from the GitLab chart. As a result, the Redis
-deployment through the GitLab chart should be disabled with `redis.enabled=false`
-and `redis-ha.enabled=false`. The Secret containing the Redis password
-will need to be manually created before deploying the GitLab chart.
+deployment through the GitLab chart should be disabled with `redis.install=false`.
+The Secret containing the Redis password will need to be manually created
+before deploying the GitLab chart.
 
 ### PostgreSQL
 
@@ -300,7 +299,6 @@ The following values are used to configure the Unicorn Pods.
 |:----------------- |:-------:|:------- |:----------- |
 | `replicaCount`    | Integer | `1`     | The number of Unicorn instances to create in the deployment. |
 | `workerProcesses` | Integer | `2`     | The number of Unicorn workers to run per pod. You must have at least `2` workers available in your cluster in order for GitLab to function properly. Note that increasing the `workerProcesses` will increase the memory required by approximately `400MB` per worker, so you should update the pod `resources` accordingly. |
-| `workerTimeout`   | Integer | `60`    | The number of seconds a request can be pending before it times out. |
 
 ### metrics.enabled
 
