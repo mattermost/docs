@@ -371,3 +371,17 @@ Constructs busybox image name.
 {{- printf "DEPRECATED:DEPRECATED" -}}
 {{- end -}}
 {{- end -}}
+
+{{/*
+Override upstream redis chart naming
+*/}}
+{{- define "redis.secretName" -}}
+{{ template "gitlab.redis.password.secret" . }}
+{{- end -}}
+
+{{/*
+Override upstream redis secret key name
+*/}}
+{{- define "redis.secretPasswordKey" -}}
+{{ template "gitlab.redis.password.key" . }}
+{{- end -}}

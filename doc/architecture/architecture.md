@@ -38,8 +38,6 @@ The following GitLab components have images in the CNG repository.
 
 The following are forked charts which also use GitLab specific Docker images.
 
-- Redis-ha
-
 Docker images that are used for `initContainers` and various `Job`s.
 
 - alpine-certificates
@@ -84,7 +82,6 @@ Subcharts included are :
 - [GitLab Shell](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/gitlab-shell)
 - [Gitaly](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/gitaly)
 - [MinIO](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/minio)
-- [Redis](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/redis)
 - [NGINX](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/nginx)
 - [registry](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/registry)
 

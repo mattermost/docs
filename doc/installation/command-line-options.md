@@ -118,30 +118,14 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 
 ## Advanced in-cluster Redis configuration
 
-| Parameter                            | Description                                 | Default         |
-|--------------------------------------|---------------------------------------------|-----------------|
-| `redis.enabled`                      | Enable flag for the chart                   | true            |
-| `redis.image.pullPolicy`             | Redis image pull policy                     | `IfNotPresent`  |
-| `redis.image.repository`             | Redis image repository                      | `redis`         |
-| `redis.image.tag`                    | Redis image tag                             | `3.2.5`         |
-| `redis.loglevel`                     | Log verbosity                               | `notice`        |
-| `redis.persistence.accessMode`       | Redis access mode                           | `ReadWriteOnce` |
-| `redis.persistence.enabled`          | Enable persistence flag                     | true            |
-| `redis.persistence.matchExpressions` | Label-expression matches to bind            |                 |
-| `redis.persistence.matchLabels`      | Label-value matches to bind                 |                 |
-| `redis.persistence.size`             | Size of volume needed for Redis persistence | `5Gi`           |
-| `redis.persistence.storageClass`     | storageClassName for provisioning           |                 |
-| `redis.persistence.subPath`          | Subpath to mount persistence volume at      |                 |
-| `redis.persistence.volumeName`       | Existing persistent volume name             |                 |
-| `redis.replicas`                     | Number of replicas                          | `1`             |
-| `redis.service.annotations`          | Annotations to add to the `Service`         | {}              |
-| `redis.service.clusterIP`            | Cluster IP                                  | `0.0.0.0`       |
-| `redis.service.externalPort`         | Redis internal port                         | `6379`          |
-| `redis.service.internalPort`         | Redis exposed port                          | `6379`          |
-| `redis.service.name`                 | Redis service name                          | `redis`         |
-| `redis.service.type`                 | Redis service type                          | `ClusterIP`     |
-| `redis.tcpKeepalive`                 | Keep alive in seconds                       | `300`           |
-| `redis.timeout`                      | Timeout in seconds                          | `60`            |
+| Parameter                            | Description                                 | Default               |
+|--------------------------------------|---------------------------------------------|-----------------------|
+| `redis.install`                      | Install the `stable/redis` chart            | true                  |
+| `redis.existingSecret`               | Specify the Secret for Redis servers to use | `gitlab-redis-secret` |
+| `redis.existingSecretKey`            | Secret key where password is stored         | `redis-password`      |
+
+Any additional configuration of the Redis service should use the configuration
+settings from the [Redis chart](https://github.com/helm/charts/tree/master/stable/redis).
 
 ## Advanced registry configuration
 
@@ -188,7 +172,7 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 |--------------------------------------------------------------|------------------------------------------------|------------------------------------------------------------------|
 | `gitlab-runner.checkInterval`                                | polling interval                               | `30s`                                                            |
 | `gitlab-runner.concurrent`                                   | number of concurrent jobs                      | `20`                                                             |
-| `gitlab-runner.enabled`                                      |                                                | `redis`                                                          |
+| `gitlab-runner.enabled`                                      |                                                | true                                                          |
 | `gitlab-runner.image`                                        | runner image                                   | `gitlab/gitlab-runner:alpine-v10.5.0`                            |
 | `gitlab-runner.imagePullPolicy`                              | image pull policy                              | `IfNotPresent`                                                   |
 | `gitlab-runner.rbac.clusterWideAccess`                       | deploy containers of jobs cluster-wide         | false                                                            |
@@ -247,7 +231,6 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 | `gitlab.gitlab-shell.image.pullPolicy`                       | Shell image pull policy                        | `Always`                                                         |
 | `gitlab.gitlab-shell.image.repository`                       | Shell image repository                         | `registry.gitlab.com/gitlab-org/build/cng/gitlab-shell`          |
 | `gitlab.gitlab-shell.image.tag`                              | Shell image tag                                | `latest`                                                         |
-| `gitlab.gitlab-shell.redis.serviceName`                      | Redis service name                             | `redis`                                                          |
 | `gitlab.gitlab-shell.replicaCount`                           | Shell replicas                                 | `1`                                                              |
 | `gitlab.gitlab-shell.service.annotations`                    | Annotations to add to the `Service`            | {}                                                               |
 | `gitlab.gitlab-shell.service.externalPort`                   | Shell exposed port                             | `22`                                                             |
@@ -262,7 +245,6 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 | `gitlab.migrations.image.tag`                                | Migrations image tag                           | `latest`                                                         |
 | `gitlab.migrations.psql.password.key`                        | key to psql password in psql secret            | `psql-password`                                                  |
 | `gitlab.migrations.psql.password.secret`                     | psql secret                                    | `gitlab-postgres`                                                |
-| `gitlab.migrations.redis.serviceName`                        | Redis service name                             | `redis`                                                          |
 | `gitlab.sidekiq.concurrency`                                 | Sidekiq default concurrency                    | `10`                                                             |
 | `gitlab.sidekiq.enabled`                                     | Sidekiq enabled flag                           | true                                                             |
 | `gitlab.sidekiq.gitaly.authToken.key`                        | key to Gitaly token in Gitaly secret           | `token`                                                          |
@@ -273,7 +255,6 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 | `gitlab.sidekiq.image.tag`                                   | Sidekiq image tag                              | `latest`                                                         |
 | `gitlab.sidekiq.psql.password.key`                           | key to psql password in psql secret            | `psql-password`                                                  |
 | `gitlab.sidekiq.psql.password.secret`                        | psql password secret                           | `gitlab-postgres`                                                |
-| `gitlab.sidekiq.redis.serviceName`                           | Redis service name                             | `redis`                                                          |
 | `gitlab.sidekiq.replicas`                                    | Sidekiq replicas                               | `1`                                                              |
 | `gitlab.sidekiq.resources.requests.cpu`                      | Sidekiq minimum needed cpu                     | `100m`                                                           |
 | `gitlab.sidekiq.resources.requests.memory`                   | Sidekiq minimum needed memory                  | `600M`                                                           |
@@ -324,7 +305,6 @@ See [`nginx-ingress` chart](../charts/nginx/index.md).
 | `gitlab.unicorn.image.tag`                                   | Unicorn image tag                              | `latest`                                                         |
 | `gitlab.unicorn.psql.password.key`                           | Key to psql password in psql secret            | `psql-password`                                                  |
 | `gitlab.unicorn.psql.password.secret`                        | psql secret name                               | `gitlab-postgres`                                                |
-| `gitlab.unicorn.redis.serviceName`                           | Redis service name                             | `redis`                                                          |
 | `gitlab.unicorn.registry.api.port`                           | Registry port                                  | `5000`                                                           |
 | `gitlab.unicorn.registry.api.protocol`                       | Registry protocol                              | `http`                                                           |
 | `gitlab.unicorn.registry.api.serviceName`                    | Registry service name                          | `registry`                                                       |

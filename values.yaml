@@ -537,9 +537,15 @@ prometheus:
 #   enabled: true
 ## doc/architecture/decisions.md#redis-ha
 ## doc/charts/redis-ha
-redis-ha:
-  enabled: false
-  nameOverride: redis
+redis:
+  install: true
+  existingSecret: gitlab-redis-secret
+  existingSecretKey: redis-password
+  usePasswordFile: true
+  cluster:
+    enabled: false
+  metrics:
+    enabled: true
 
 ## Instllation & configuration of stable/prostgresql
 ## See requirements.yaml for current version

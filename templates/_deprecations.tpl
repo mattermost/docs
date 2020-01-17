@@ -40,7 +40,8 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 {{- $deprecated := append $deprecated (include "external.deprecate.initContainerImage" .) -}}
 {{- $deprecated := append $deprecated (include "external.deprecate.initContainerPullPolicy" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.workerTimeout" .) -}}
-
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.redis-ha.enabled" .) -}}
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.redis.enabled" .) -}}
 {{- /* prepare output */}}
 {{- $deprecated := without $deprecated "" -}}
 {{- $message := join "\n" $deprecated -}}
@@ -257,3 +258,21 @@ unicorn:
 {{- end -}}
 {{- end -}}
 {{/* END deprecate.unicorn.workerTimeout */}}
+
+{{/* Deprecation behaviors for redis-ha.enabled */}}
+{{- define "gitlab.deprecate.redis-ha.enabled" -}}
+{{-   if hasKey (index .Values "redis-ha") "enabled" -}}
+redis-ha:
+    The `redis-ha.enabled` has been deprecated. Redis HA is now implemented by the Redis chart.
+{{-   end -}}
+{{- end -}}
+{{/* END gitlab.deprecate.redis-ha.enabled */}}
+
+{{/* Deprecation behaviors for redis.enabled */}}
+{{- define "gitlab.deprecate.redis.enabled" -}}
+{{-   if hasKey .Values.redis "enabled" -}}
+redis:
+    The `redis.enabled` has been deprecated. Please use `redis.install` to install the Redis service.
+{{-   end -}}
+{{- end -}}
+{{/* END gitlab.deprecate.redis.enabled */}}

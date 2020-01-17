@@ -6,7 +6,7 @@ The following applications within the GitLab chart require persistent storage to
 
 - [Gitaly](../charts/gitlab/gitaly/index.md) (persists the Git repositories)
 - [postgres](https://github.com/helm/charts/tree/master/stable/postgresql) (persists the GitLab database data)
-- [Redis](../charts/redis/index.md) (persists GitLab job data)
+- [Redis](https://github.com/helm/charts/tree/master/stable/redis) (persists GitLab job data)
 - [MinIO](../charts/minio/index.md) (persists the object storage data)
 
 The administrator may choose to provision this storage using [dynamic][] or [static][] volume provisioning.
@@ -66,7 +66,7 @@ Follow the links below for further reading and additional persistence options:
 
 - [Gitaly persistence configuration](../charts/gitlab/gitaly/index.md#git-repository-persistence)
 - [MinIO persistence configuration](../charts/minio/index.md#persistence)
-- [Redis persistence configuration](../charts/redis/index.md#persistence)
+- [Redis persistence configuration](https://github.com/helm/charts/tree/master/stable/redis#persistence)
 - [Upstream PostgreSQL chart configuration](https://github.com/helm/charts/tree/master/stable/postgresql#configuration)
 
 > **Note**: Some of the advanced persistence options differ between PostgreSQL and the others, so it's important to check

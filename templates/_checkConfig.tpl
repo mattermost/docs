@@ -24,7 +24,6 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 {{- define "gitlab.checkConfig" -}}
 {{- $messages := list -}}
 {{/* add templates here */}}
-{{- $messages := append $messages (include "gitlab.checkConfig.redis.both" .) -}}
 {{- $messages := append $messages (include "gitlab.checkConfig.gitaly.tls" .) -}}
 {{- $messages := append $messages (include "gitlab.checkConfig.sidekiq.queues.mixed" .) -}}
 {{- $messages := append $messages (include "gitlab.checkConfig.appConfig.maxRequestDurationSeconds" .) -}}
@@ -38,16 +37,6 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 {{-   printf "\nCONFIGURATION CHECKS:\n%s" $message | fail -}}
 {{- end -}}
 {{- end -}}
-
-{{/* Check configuration of Redis - can't have both redis & redis-ha */}}
-{{- define "gitlab.checkConfig.redis.both" -}}
-{{- if and .Values.redis.enabled (index .Values "redis-ha" "enabled") -}}
-redis: both providers
-    It appears that `redis.enabled` and `redis-ha.enabled` are both true.
-    this will lead to undefined behavior. Please enable only one.
-{{- end -}}
-{{- end -}}
-{{/* END gitlab.checkConfig.redis.both */}}
 
 {{/*
 Ensure a certificate is provided when Gitaly is enabled and is instructed to
