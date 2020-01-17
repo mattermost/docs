@@ -17,6 +17,7 @@ for more information on how the global variables work.
 - [MinIO](#configure-minio-settings)
 - [appConfig](#configure-appconfig-settings)
 - [GitLab Shell](#configure-gitlab-shell)
+- [Unicorn](#configure-unicorn)
 - [Custom Certificate Authorities](#custom-certificate-authorities)
 - [Application Resource](#application-resource)
 - [Busybox image](#busybox-image)
@@ -780,6 +781,22 @@ global:
 | `port`      | Integer | `22`    | You can control the port used by the Ingress to pass SSH traffic, as well as the port used in SSH URLs provided from GitLab via `global.shell.port`. |
 | `authToken` |         |         | See [authToken](gitlab/gitlab-shell/index.md#authtoken) in the GitLab Shell chart specific documentation. |
 | `hostKeys`  |         |         | See [hostKeys](gitlab/gitlab-shell/index.md#hostkeyssecret) in the GitLab Shell chart specific documentation. |
+
+## Configure Unicorn
+
+The global Unicorn settings (that are used by other charts also) are located
+under the `global.unicorn` key.
+
+```yaml
+global:
+  unicorn:
+    workerTimeout: 60
+```
+
+### workerTimeout
+
+Configure the request timeout (in seconds) after which a Unicorn worker process
+is killed by the Unicorn master process. The default value is 60 seconds.
 
 ## Custom Certificate Authorities
 

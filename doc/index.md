@@ -24,13 +24,11 @@ There are also some [example values.yaml files](https://gitlab.com/gitlab-org/ch
 Some features of GitLab are not currently available using the Helm chart:
 
 - [GitLab Pages](https://gitlab.com/gitlab-org/charts/gitlab/issues/37)
-- [No in-cluster HA database](https://gitlab.com/gitlab-org/charts/gitlab/issues/48)
 - [Smartcard authentication](https://gitlab.com/gitlab-org/charts/gitlab/issues/988)
 
 Database limitations:
 
 - MySQL will not be supported, as support is [deprecated within GitLab](https://docs.gitlab.com/omnibus/settings/database.html#using-a-mysql-database-management-server-enterprise-edition-only)
-- Support is only available for Postgres 9.6. Backup and restore [will not work with other versions](https://gitlab.com/gitlab-org/charts/gitlab/issues/852).
 - GitLab Geo functionality [requires the use of external database service(s)](installation/deployment.md#postgresql).
 
 ## GitLab version mappings

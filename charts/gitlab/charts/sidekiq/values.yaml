@@ -22,6 +22,16 @@ enabled: true
 
 annotations: {}
 
+networkpolicy:
+  enabled: false
+  egress:
+    enabled: false
+    rules: []
+  ingress:
+    enabled: false
+    rules: []
+  annotations: {}
+
 metrics:
   enabled: true
   port: 3807
@@ -90,6 +100,7 @@ global:
       names: ["default"]
     external: []
     authToken: {}
+  unicorn: {}
   minio:
     enabled:
     credentials: {}

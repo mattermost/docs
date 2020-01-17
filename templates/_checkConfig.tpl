@@ -26,6 +26,8 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 {{/* add templates here */}}
 {{- $messages := append $messages (include "gitlab.checkConfig.gitaly.tls" .) -}}
 {{- $messages := append $messages (include "gitlab.checkConfig.sidekiq.queues.mixed" .) -}}
+{{- $messages := append $messages (include "gitlab.checkConfig.appConfig.maxRequestDurationSeconds" .) -}}
+{{- $messages := append $messages (include "gitlab.checkConfig.gitaly.extern.repos" .) -}}
 {{- /* prepare output */}}
 {{- $messages := without $messages "" -}}
 {{- $message := join "\n" $messages -}}
@@ -108,3 +110,29 @@ geo: no secondary database password provided
 {{- end -}}
 {{- end -}}
 {{/* END gitlab.geo.secondary.database */}}
+
+{{/*
+Ensure the provided global.appConfig.maxRequestDurationSeconds value is smaller than
+unicorn's worker timeout */}}
+{{- define "gitlab.checkConfig.appConfig.maxRequestDurationSeconds" -}}
+{{- $maxDuration := $.Values.global.appConfig.maxRequestDurationSeconds }}
+{{- if $maxDuration }}
+{{- $workerTimeout := $.Values.global.unicorn.workerTimeout }}
+{{- if not (lt $maxDuration $workerTimeout) }}
+gitlab: maxRequestDurationSeconds should be smaller than Unicorn's worker timeout
+        The current value of global.appConfig.maxRequestDurationSeconds ({{ $maxDuration }})
+        is greater than or equal to global.unicorn.workerTimeout ({{ $workerTimeout }})
+        while it should be a lesser value.
+{{- end }}
+{{- end }}
+{{- end }}
+{{/* END gitlab.checkConfig.appConfig.maxRequestDurationSeconds */}}
+
+{{/* Check configuration of Gitaly external repos*/}}
+{{- define "gitlab.checkConfig.gitaly.extern.repos" -}}
+{{-   if (and (not .Values.global.gitaly.enabled) (not .Values.global.gitaly.external) ) -}}
+gitaly:
+    external Gitaly repos needs to be specified if global.gitaly.enabled is not set
+{{-   end -}}
+{{- end -}}
+{{/* END gitlab.checkConfig.gitaly.extern.repos */}}

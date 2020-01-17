@@ -5,11 +5,11 @@ dependencies:
   condition: certmanager.install
   alias: certmanager
 - name: prometheus
-  version: 9.0.0
+  version: 10.0.0
   repository: https://kubernetes-charts.storage.googleapis.com/
   condition: prometheus.install
 - name: postgresql
-  version: 0.12.0
+  version: 7.7.3
   repository: https://kubernetes-charts.storage.googleapis.com/
   condition: postgresql.install
 - name: gitlab-runner

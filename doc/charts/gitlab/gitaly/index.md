@@ -20,6 +20,11 @@ as a result we also need to configure GitLab Shell within this chart.
 The `gitaly` chart is configured in two parts: [external services](#external-services),
 and [chart settings](#chart-settings).
 
+Gitaly is by default deployed as a component when deploying the GitLab
+chart. If deploying Gitaly separately, `global.gitaly.enabled` needs to
+be set to `false` and additional configuration will need to be performed
+as described in the [external Gitaly documenation](../../../advanced/external-gitaly/).
+
 ### Installation command line options
 
 The table below contains all the possible charts configurations that can be supplied to
@@ -28,7 +33,6 @@ the `helm install` command using the `--set` flags.
 | Parameter                       | Default                                    | Description                                                                                                                                                          |
 | ------------------------------  | ------------------------------------------ | ----------------------------------------                                                                                                                             |
 | `annotations`                   |                                            | Pod annotations                                                                                                                                                      |
-| `enabled`                       | `true`                                     | Gitaly enable flag                                                                                                                                                   |
 | `external[].hostname`           | `- ""`                                     | hostname of external node                                                                                                                                            |
 | `external[].name`               | `- ""`                                     | name of external node storage                                                                                                                                        |
 | `external[].port`               | `- ""`                                     | port of external node                                                                                                                                                |

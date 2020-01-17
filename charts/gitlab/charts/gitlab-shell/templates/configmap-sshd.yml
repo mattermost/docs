@@ -1,0 +1,156 @@
+{{- if .Values.enabled -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "fullname" . }}-sshd
+  namespace: {{ $.Release.Namespace }}
+  labels:
+{{ include "gitlab.standardLabels" . | indent 4 }}
+data:
+  sshd_config: |
+    #	$OpenBSD: sshd_config,v 1.101 2017/03/14 07:19:07 djm Exp $
+
+    # This is the sshd server system-wide configuration file.  See
+    # sshd_config(5) for more information.
+
+    # This sshd was compiled with PATH=/bin:/usr/bin:/sbin:/usr/sbin
+
+    # The strategy used for options in the default sshd_config shipped with
+    # OpenSSH is to specify options with their default value where
+    # possible, but leave them commented.  Uncommented options override the
+    # default value.
+
+    Port 2222
+    #AddressFamily any
+    #ListenAddress 0.0.0.0
+    #ListenAddress ::
+
+    #HostKey /etc/ssh/ssh_host_rsa_key
+    #HostKey /etc/ssh/ssh_host_dsa_key
+    #HostKey /etc/ssh/ssh_host_ecdsa_key
+    #HostKey /etc/ssh/ssh_host_ed25519_key
+
+    # Ciphers and keying
+    #RekeyLimit default none
+
+    # Logging
+    #SyslogFacility AUTH
+    #LogLevel INFO
+
+    # Authentication:
+
+    PermitRootLogin no
+    #StrictModes yes
+    #MaxAuthTries 6
+    #MaxSessions 10
+
+    #PubkeyAuthentication yes
+
+    #AuthorizedPrincipalsFile none
+
+    # For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
+    #HostbasedAuthentication no
+    # Change to yes if you don't trust ~/.ssh/known_hosts for
+    # HostbasedAuthentication
+    #IgnoreUserKnownHosts no
+    # Don't read the user's ~/.rhosts and ~/.shosts files
+    #IgnoreRhosts yes
+
+    #PermitEmptyPasswords no
+
+    # Change to no to disable s/key passwords
+    #ChallengeResponseAuthentication yes
+
+    # Kerberos options
+    #KerberosAuthentication no
+    #KerberosOrLocalPasswd yes
+    #KerberosTicketCleanup yes
+    #KerberosGetAFSToken no
+
+    # GSSAPI options
+    #GSSAPIAuthentication no
+    #GSSAPICleanupCredentials yes
+
+    # Set this to 'yes' to enable PAM authentication, account processing,
+    # and session processing. If this is enabled, PAM authentication will
+    # be allowed through the ChallengeResponseAuthentication and
+    # PasswordAuthentication.  Depending on your PAM configuration,
+    # PAM authentication via ChallengeResponseAuthentication may bypass
+    # the setting of "PermitRootLogin without-password".
+    # If you just want the PAM account and session checks to run without
+    # PAM authentication, then enable this but set PasswordAuthentication
+    # and ChallengeResponseAuthentication to 'no'.
+    #UsePAM no
+
+    #AllowAgentForwarding yes
+    #AllowTcpForwarding yes
+    #GatewayPorts no
+    #X11Forwarding no
+    #X11DisplayOffset 10
+    #X11UseLocalhost yes
+    #PermitTTY yes
+    #PrintMotd yes
+    #PrintLastLog yes
+    #TCPKeepAlive yes
+    #UseLogin no
+    #PermitUserEnvironment no
+    #Compression delayed
+    #ClientAliveInterval 0
+    #ClientAliveCountMax 3
+    #UseDNS no
+    UsePrivilegeSeparation no
+    PidFile /srv/sshd/sshd.pid
+    #PermitTunnel no
+    #ChrootDirectory none
+    #VersionAddendum none
+
+    # no default banner path
+    #Banner none
+
+    # override default of no subsystems
+    # Subsystem	sftp	/usr/lib/ssh/sftp-server
+
+    # the following are HPN related configuration options
+    # tcp receive buffer polling. disable in non autotuning kernels
+    #TcpRcvBufPoll yes
+
+    # disable hpn performance boosts
+    #HPNDisabled no
+
+    # buffer size for hpn to non-hpn connections
+    #HPNBufferSize 2048
+
+
+    # Example of overriding settings on a per-user basis
+    #Match User anoncvs
+    #	X11Forwarding no
+    #	AllowTcpForwarding no
+    #	PermitTTY no
+    #	ForceCommand cvs server
+
+    # The default is to check both .ssh/authorized_keys and .ssh/authorized_keys2
+    # but this is overridden so installations will only check .ssh/authorized_keys
+    AuthorizedKeysFile	.ssh/authorized_keys
+
+    AuthorizedKeysCommand /authorized_keys %u %k
+    AuthorizedKeysCommandUser git
+
+    PasswordAuthentication no
+
+    AllowUsers git
+
+    # Enable the use of Git protcol v2
+    AcceptEnv GIT_PROTOCOL
+    
+    # Specifies the maximum number of concurrent unauthenticated connections to the SSH daemon.
+    # See `man sshd_config(5)`
+    {{ if and .Values.config.maxStartups.start .Values.config.maxStartups.rate }}
+    MaxStartups {{ .Values.config.maxStartups.start }}:{{ .Values.config.maxStartups.rate }}:{{ .Values.config.maxStartups.full }}
+    {{ else }}
+    MaxStartups {{ .Values.config.maxStartups.full }}
+    {{ end }}
+
+    # Specifies amount of time athat the server will disconnect after if the user has not successfully logged in
+    LoginGraceTime {{ .Values.config.loginGraceTime }}
+# Leave this here - This line denotes end of block to the parser.
+{{- end }}

@@ -99,6 +99,7 @@ global:
 
   ## doc/charts/globals.md#configure-gitaly-settings
   gitaly:
+    enabled: true
     authToken: {}
       # secret:
       # key:
@@ -136,6 +137,7 @@ global:
       snippets: true
       builds: true
     webhookTimeout:
+    maxRequestDurationSeconds:
 
     ## doc/charts/globals.md#cron-jobs-related-settings
     cron_jobs: {}
@@ -401,6 +403,10 @@ global:
     # secret:
     # key:
 
+  ## doc/charts/globals.md#configure-unicorn
+  unicorn:
+    workerTimeout: 60
+
   ## doc/charts/globals.md#custom-certificate-authorities
   # configuration of certificates container & custom CA injection
   certificates:
@@ -544,12 +550,16 @@ redis:
 ## Instllation & configuration of stable/prostgresql
 ## See requirements.yaml for current version
 postgresql:
+  postgresqlUsername: gitlab
+  # This just needs to be set. It will use a second entry in existingSecret for postgresql-postgres-password
+  postgresqlPostgresPassword: bogus
   install: true
-  postgresUser: gitlab
-  postgresDatabase: gitlabhq_production
-  imageTag: 9.6.8
+  postgresqlDatabase: gitlabhq_production
+  image:
+    tag: 10.9.0
   usePasswordFile: true
-  existingSecret: 'secret'
+  existingSecret: 'bogus'
+  initdbScriptsConfigMap: 'bogus'
   metrics:
     enabled: true
     ## Optionally define additional custom metrics
@@ -645,7 +655,6 @@ grafana:
 #     enabled: false
 ## doc/charts/gitlab/gitaly
 #   gitaly:
-#     enabled: false
 ## doc/charts/gitlab/gitlab-shell
 #   gitlab-shell:
 #     enabled: false

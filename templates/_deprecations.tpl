@@ -34,9 +34,12 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.global.appConfig.ldap.password" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.sidekiq.cronJobs" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.local.kubectl" .) -}}
+
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.gitlab.gitaly.enabled" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.initContainerImage" .) -}}
 {{- $deprecated := append $deprecated (include "external.deprecate.initContainerImage" .) -}}
 {{- $deprecated := append $deprecated (include "external.deprecate.initContainerPullPolicy" .) -}}
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.workerTimeout" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.redis-ha.enabled" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.redis.enabled" .) -}}
 {{- /* prepare output */}}
@@ -193,6 +196,15 @@ sidekiq:
 {{- end -}}
 {{/* END gitlab.deprecate.local.kubectl */}}
 
+{{/* Deprecation behaviors for configuration of Gitaly */}}
+{{- define "gitlab.deprecate.gitlab.gitaly.enabled" -}}
+{{-   if hasKey .Values.gitlab.gitaly "enabled" -}}
+gitlab:
+    Chart-local configuration of Gitaly features has been moved to global. Please remove `gitlab.gitaly.enabled` from your properties, and set `global.gitaly.enabled` instead.
+{{-   end -}}
+{{- end -}}
+{{/* END gitlab.deprecate.gitaly.enabled */}}
+
 {{/* Deprecation behavious for configuration of initContainer images of gitlab sub-charts */}}
 {{- define "gitlab.deprecate.initContainerImage" -}}
 {{- range $chart:= list "geo-logcursor" "gitaly" "gitlab-exporter" "gitlab-shell" "mailroom" "migrations" "sidekiq" "task-runner" "unicorn" }}
@@ -237,6 +249,15 @@ gitlab.{{ $chart }}:
 {{- end -}}
 {{- end -}}
 {{/* END external.deprecate.initContainerPullPolicy*/}}
+
+{{/* Deprecation behaviors for configuration of unicorn worker timeout*/}}
+{{- define "gitlab.deprecate.unicorn.workerTimeout" -}}
+{{- if hasKey .Values.gitlab.unicorn "workerTimeout" -}}
+unicorn:
+    Chart-local configuration of Unicorn's worker timeout has been moved to global. Please remove `unicorn.workerTimeout` setting from your properties, and set `global.appConfig.unicorn.workerTimeout` instead.
+{{- end -}}
+{{- end -}}
+{{/* END deprecate.unicorn.workerTimeout */}}
 
 {{/* Deprecation behaviors for redis-ha.enabled */}}
 {{- define "gitlab.deprecate.redis-ha.enabled" -}}

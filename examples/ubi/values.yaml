@@ -76,6 +76,7 @@ global:
   # See: https://gitlab.com/gitlab-org/charts/gitlab/tree/master/doc/advanced/external-object-storage
   registry:
     bucket: my-registry-storage  # Registry storage bucket.
+
   appConfig:
     lfs:
       bucket: my-lfs-storage  # LFS storage bucket.

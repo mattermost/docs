@@ -141,6 +141,10 @@ spec:
           - name: sidekiq-secrets
             mountPath: '/etc/gitlab'
             readOnly: true
+          - name: sidekiq-secrets
+            mountPath: /srv/gitlab/config/secrets.yml
+            subPath: rails-secrets/secrets.yml
+            readOnly: true
           resources:
 {{ toYaml $.Values.init.resources | indent 12 }}
 {{- include "pullsecrets" $.Values.image | indent 6}}

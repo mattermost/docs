@@ -13,6 +13,7 @@ to the `helm install` command using the `--set` flags.
 | `global.gitlab.license.secret`                 | Global name of the secret containing the Enterprise license                                 | _none_                                        |
 | `global.application.create`                    | Create an [Application resource](https://github.com/kubernetes-sigs/application) for GitLab | `false`                                       |
 | `global.edition`                               | The edition of GitLab to install. Enterprise Edition (ee) or Community Edition (ce)         | `ee`                                          |
+| `global.gitaly.enabled`                        | Gitaly enable flag                                                                          | true                                          |
 | `global.hosts.domain`                          | Domain name that will be used for all publicly exposed services                             | Required                                      |
 | `global.hosts.externalIP`                      | Static IP to assign to NGINX Ingress Controller                                             | Required                                      |
 | `global.hosts.ssh`                             | Domain name that will be used for Git SSH access                                            | `gitlab.{global.hosts.domain}`                |
@@ -203,7 +204,6 @@ settings from the [Redis chart](https://github.com/helm/charts/tree/master/stabl
 | `gitlab-runner.unregisterRunners`                            | unregister all runners before termination      | true                                                             |
 | `gitlab.gitaly.authToken.key`                                | Key to Gitaly token in the secret              | `token`                                                          |
 | `gitlab.gitaly.authToken.secret`                             | Gitaly secret name                             | `{.Release.Name}-gitaly-secret`                                  |
-| `gitlab.gitaly.enabled`                                      | Gitaly enable flag                             | true                                                             |
 | `gitlab.gitaly.image.pullPolicy`                             | Gitaly image pull policy                       | `Always`                                                         |
 | `gitlab.gitaly.image.repository`                             | Gitaly image repository                        | `registry.gitlab.com/gitlab-org/build/cng/gitaly`                |
 | `gitlab.gitaly.image.tag`                                    | Gitaly image tag                               | `latest`                                                         |

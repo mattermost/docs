@@ -53,6 +53,7 @@ global:
   minio:
     enabled:
     credentials: {}
+  unicorn: {}
   appConfig:
     lfs:
       enabled: true

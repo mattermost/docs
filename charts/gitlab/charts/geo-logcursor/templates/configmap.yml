@@ -46,6 +46,7 @@ data:
         ssh_host: {{ . | quote }}
         {{- end }}
         {{- with .Values.global.appConfig }}
+        max_request_duration_seconds: {{ default (include "gitlab.appConfig.maxRequestDurationSeconds" $) .maxRequestDurationSeconds }}
         impersonation_enabled: {{ .enableImpersonation }}
         usage_ping_enabled: {{ eq .enableUsagePing true }}
         default_can_create_group: {{ eq .defaultCanCreateGroup true }}
