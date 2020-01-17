@@ -6,6 +6,47 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.20
 
+**Release day: 2020-02-16**
+
+### Compatibility
+
+### Highlights
+
+#### Deep Linking support for desktop
+
+#### Reworked pre-packaged plugins
+ - Prepackaged plugins will continue to be included in the prepackaged_plugins folder but they will not be installed automatically and now they can be upgraded and uninstalled.
+  
+#### Group Sync to Roles LDAP/SAML
+
+#### GoSAML2 Implementation
+
+#### SAML Metadata support
+
+### Improvements
+ - Added support for Elasticsearch 7.
+ - Contents of View\Manage Members modal now refresh when role has changed.
+ - Added a way to show that a plugin requires a certain Mattermost config setting.
+
+### Bug Fixes
+ - Fixed an issue where **Customization > Site Name** help text didn't match text field behavior.
+
+### config.json
+Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
+
+#### Changes to Team Edition and Enterprise Edition:
+
+### Open Source Components
+
+### Database Changes
+ 
+### API Changes
+
+### Websocket Event Changes
+ 
+### Known Issues
+ 
+### Contributors
 
 
 ## Release v5.19 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
