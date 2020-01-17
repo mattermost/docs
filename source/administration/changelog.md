@@ -14,29 +14,59 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 #### Deep Linking support for desktop
 
+#### Unread Toasts
+ - Unread toasts which appears when entering a channel with unreads.
+ - New messages toasts which appears when new posts arrive and user is not at the bottom of the channel.
+ - When users marks a posts as unread.
+
 #### Reworked pre-packaged plugins
  - Prepackaged plugins will continue to be included in the prepackaged_plugins folder but they will not be installed automatically and now they can be upgraded and uninstalled.
   
 #### Group Sync to Roles LDAP/SAML
+ - On the Group Profile/Group Configuration screen Create a “Team and Channel Membership” area that allows System Admins to sync all members of a group to specified teams and channels.
+
+#### System Admin filter to both LDAP and SAML
 
 #### GoSAML2 Implementation
 
 #### SAML Metadata support
 
 ### Improvements
+
+#### User Interface (UI)
+ - Added support for displaying a left-hand side bot icon in the webapp.
+ - Added support for autocomplete to display self user suffixed with '(you)'.
+ - Do not let users type account input fields longer than the max length for first name, last name and email fields.
+ - Added support for mute option in Direct Message channel menus.
+ - Add a red dot to browser favicon when there are unread mentions.
+ - Allowed user autocomplete to match on terms with spaces.
+ - Added support for showing single image thumbnails in compact view.
+ - Improved autocomplete highlighting when using mouse and keyboard together.
+ 
+#### Plugins
+ - Added a way to show that a plugin requires a certain Mattermost config setting.
+ - Added support for plugins to add menu items to a "Channel Menu".
+ 
+#### Command Line Interface (CLI)
+ - Added a CLI command ``webhook move`` for moving outgoing webhooks.
+ 
+#### Bulk Import
+ - When bulk import finds an already existing post, it should delete existing files before importing new ones.
+ - Bulk export omits direct messages from a user to themselves.
+
+#### Administration
  - Added support for Elasticsearch 7.
  - Contents of View\Manage Members modal now refresh when role has changed.
- - Added a way to show that a plugin requires a certain Mattermost config setting.
  - Added ability to inform System Admins when a user who managed bot accounts is deactivated, and enable them to take ownership of the bot.
- - Added support for displaying a left-hand side bot icon in the webapp.
- - Added a CLI command ``webhook move`` for moving outgoing webhooks.
- - When bulk import finds an already existing post, it should delete existing files before importing new ones.
  - LDAP/Elasticsearch/SQL Trace should be put in server logs.
- - Bulk export omits direct messages from a user to themselves.
+ - Added ``plugins`` to the list of words that a team URL cannot start with.
  - Dropped 26 character requirement from post action IDs.
 
 ### Bug Fixes
  - Fixed an issue where **Customization > Site Name** help text didn't match text field behavior.
+ - Fixed an issue where the channel drop-down **Leave Channel** failed to leave the channel on a server with a subpath.
+ - Fixed an issue where emoji reactions shifted down a few pixels after clicking.
+ - Fixed an issue where pasting code from GitHub resulted in broken markup and loss of text.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
