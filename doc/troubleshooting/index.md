@@ -137,7 +137,7 @@ Prior to the 3.0.0 release of these charts, the `spec.clusterIP` property [had b
 
 The [3.0.0 release of this chart corrected this error](https://gitlab.com/gitlab-org/charts/gitlab/issues/1710), but it requires manual correction.
 
-This can be solved by simply [removing all of the affected services](#resolve-by-removing-affected-services).
+This can be solved by simply removing all of the affected services.
 
 1. Remove all affected services:
 
