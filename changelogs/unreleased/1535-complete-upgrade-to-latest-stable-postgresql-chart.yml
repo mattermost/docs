@@ -1,0 +1,5 @@
+---
+title: Upgrade bundled PostgreSQL chart to stable/postgresql 7.7.0
+merge_request: 955
+author:
+type: changed
