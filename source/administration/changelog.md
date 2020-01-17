@@ -67,6 +67,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the channel drop-down **Leave Channel** failed to leave the channel on a server with a subpath.
  - Fixed an issue where emoji reactions shifted down a few pixels after clicking.
  - Fixed an issue where pasting code from GitHub resulted in broken markup and loss of text.
+ - Fixed an issue where navigating to a plugin config page in System Console for a deleted plugin returned a `Not Found` error.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
