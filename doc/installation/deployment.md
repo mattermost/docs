@@ -109,9 +109,10 @@ The installation of an HA Redis cluster from the GitLab chart does not
 support using sentinels. If sentinel support is desired, a Redis cluster
 needs to be created separately from the GitLab chart install. This can be
 done inside or outside the Kubernetes cluster. Sentinel settings can be
-found in the [Unicorn chart]().
+found in the [Unicorn chart][].
 
-There has been an issue created to track this [sentinel issue]().
+An issue to track the [supporting of sentinels in a GitLab deployed
+Redis cluster][sentinel issue] has been created for tracking purposes.
 
 [Unicorn chart]: ../charts/gitlab/unicorn/index.md#redis
 [sentinel issue]: https://gitlab.com/gitlab-org/charts/gitlab/issues/1810
