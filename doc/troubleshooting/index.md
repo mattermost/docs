@@ -131,13 +131,13 @@ When using an external service for SSL termination, that service is responsible 
 
 ## Upgrades fail with Immutable Field Error
 
+### spec.clusterIP
+
 Prior to the 3.0.0 release of these charts, the `spec.clusterIP` property [had been populated into several Services](https://gitlab.com/gitlab-org/charts/gitlab/issues/1710) despite having no actual value (`""`). This was a bug, and causes problems with Helm 3's three-way merge of properties. Once the chart was deployed with Helm 3, there would be _no possible upgrade path_ unless one collected the the `clusterIP` properties from the various Services and populated those into the values provided to Helm, or the affected services are removed from Kubernetes.
 
 The [3.0.0 release of this chart corrected this error](https://gitlab.com/gitlab-org/charts/gitlab/issues/1710), but it requires manual correction.
 
 This can be solved by simply [removing all of the affected services](#resolve-by-removing-affected-services).
-
-### Resolve by removing affected services
 
 1. Remove all affected services:
 
