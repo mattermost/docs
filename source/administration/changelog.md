@@ -4,7 +4,7 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v5.20
+## Release v5.20 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 **Release day: 2020-02-16**
 
@@ -27,6 +27,13 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Added support for Elasticsearch 7.
  - Contents of View\Manage Members modal now refresh when role has changed.
  - Added a way to show that a plugin requires a certain Mattermost config setting.
+ - Added ability to inform System Admins when a user who managed bot accounts is deactivated, and enable them to take ownership of the bot.
+ - Added support for displaying a left-hand side bot icon in the webapp.
+ - Added a CLI command ``webhook move`` for moving outgoing webhooks.
+ - When bulk import finds an already existing post, it should delete existing files before importing new ones.
+ - LDAP/Elasticsearch/SQL Trace should be put in server logs.
+ - Bulk export omits direct messages from a user to themselves.
+ - Dropped 26 character requirement from post action IDs.
 
 ### Bug Fixes
  - Fixed an issue where **Customization > Site Name** help text didn't match text field behavior.
@@ -41,6 +48,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Database Changes
  
 ### API Changes
+ - Created a new REST API endpoint ``PUT /config/patch`` that uses patch semantics to only update the fields of the config that are provided, while leaving the other fields unchanged.
 
 ### Websocket Event Changes
  
