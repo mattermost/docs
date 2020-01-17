@@ -456,6 +456,13 @@ check_docs_lint:
       replicas="$new_replicas"
     fi
 
+    # Cleanup and previous installs, as FAILED and PENDING_UPGRADE will cause errors with `upgrade`
+    if [ "$CI_ENVIRONMENT_SLUG" != "production" ] && previousDeployFailed ; then
+      echo "Deployment in bad state, cleaning up $CI_ENVIRONMENT_SLUG"
+      delete
+      cleanup
+    fi
+
     #ROOT_PASSWORD=$(cat /dev/urandom | LC_TYPE=C tr -dc "[:alpha:]" | head -c 16)
     #echo "Generated root login: $ROOT_PASSWORD"
     kubectl create secret generic "${CI_ENVIRONMENT_SLUG}-gitlab-initial-root-password" --from-literal=password=$ROOT_PASSWORD -o yaml --dry-run | kubectl replace --force -f -
@@ -464,12 +471,6 @@ check_docs_lint:
     kubectl create secret generic "${CI_ENVIRONMENT_SLUG}-gitlab-license" --from-file=license=/tmp/license.gitlab -o yaml --dry-run | kubectl replace --force -f -
 
     # YAML_FILE=""${KUBE_INGRESS_BASE_DOMAIN//\./-}.yaml"
-    # Cleanup and previous installs, as FAILED and PENDING_UPGRADE will cause errors with `upgrade`
-    if [ "$CI_ENVIRONMENT_SLUG" != "production" ] && previousDeployFailed ; then
-      echo "Deployment in bad state, cleaning up $CI_ENVIRONMENT_SLUG"
-      delete
-      cleanup
-    fi
 
     if ! crdExists ; then scripts/crdctl create "${CI_ENVIRONMENT_SLUG}" ; fi
 
