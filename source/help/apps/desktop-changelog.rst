@@ -1,6 +1,64 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.4.0
+----------------------------
+
+**Download Binaries:** 
+
+- **v4.4.0, release day 2020-02-16**
+
+
+**Breaking Change** 
+
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+
+Windows
+^^^^^^^^^^^^^
+
+
+Mac
+^^^^^^^^^^^^^
+
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+
+Windows
+^^^^^^^^^^^^^
+
+
+Mac
+^^^^^^^^^^^^^
+
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Contributors
+~~~~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+
+
+
 Release v4.3.0
 ----------------------------
 
