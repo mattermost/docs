@@ -535,6 +535,7 @@ redis:
   install: true
   existingSecret: gitlab-redis-secret
   existingSecretKey: redis-password
+  usePasswordFile: true
   cluster:
     enabled: false
   metrics:
