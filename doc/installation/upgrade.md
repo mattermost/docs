@@ -60,6 +60,8 @@ NOTE: **Note:** Failure to perform these steps as documented **may** result in t
 
 NOTE: **Note:** If you have multiple charts installed in the same namespace. It may be necessary to pass the Helm release name to the database-upgrade script as well. Replace `bash -s STAGE` with `bash -s -- -r RELEASE STAGE` in the example commands provided later.
 
+NOTE: **Note:** If you installed a chart with a non-default namespace you need to pass the namespace to the database-upgrade script. Replace `bash -s STAGE` with `bash -s -- -n NAMESPACE STAGE` in the example commands provided later. This option can be used along with `-r RELEASE`.
+
 1. Prepare the existing database
 
    The pre stage will create a backup of your database using the backup-utility script in the task-runner pod, which gets saved to the configured s3 bucket (MinIO by default).
