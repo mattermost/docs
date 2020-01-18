@@ -18,19 +18,15 @@ Improvements
 All Platforms
 ^^^^^^^^^^^^^
 
-
-Windows
-^^^^^^^^^^^^^
-
-
-Mac
-^^^^^^^^^^^^^
-
+- Added support for PIV Card Certificate Authentication.
+- Added support for Desktop App Window/Tab UI Updates.
+- Added a spell checker for Italian language.
+- Added auto focus on Server Display Name input field.
 
 Architectural Changes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
+- Major version upgrade of Electron to v6.0.0. Electron is the underlying technology used to build the Desktop apps.
 
 Bug Fixes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -38,14 +34,24 @@ Bug Fixes
 All Platforms
 ^^^^^^^^^^^^^
 
+- Fixed an issue where downgrading the app caused login issues.
+- Fixed an issue where Ctrl + C or Ctrl + V didn't work on Electron modals or developer tools.
+- Fixed an issue where navigation with Ctrl (or Cmd) + Tab stopped on disconnected server.
+- Fixed an issue where changing the spellchecker on the app did not suggest words in that language.
+- Fixed an issue where the app window didn't save "floating" app position.
 
 Windows
 ^^^^^^^^^^^^^
 
+- Fixed an issue where installing v4.3.1 MSI installer did not remove the previous desktop app version.
+- Fixed an issue where an attachment name would lose its extension if it was edited during download.
+- Fixed an issue where the unread mention badge broke with more than 100 mentions.
 
 Mac
 ^^^^^^^^^^^^^
 
+- Fixed an issue where the DMG install window user interface was missing styling.
+- Updated the look of Add New Server icon on the Settings page.
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
