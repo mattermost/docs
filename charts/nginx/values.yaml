@@ -165,7 +165,7 @@ controller:
     annotations: {}
     labels: {}
     omitClusterIP: false
-    clusterIP: ""
+    # clusterIP: ""
 
     ## List of IP addresses at which the controller services are available
     ## Ref: https://kubernetes.io/docs/user-guide/services/#external-ips
@@ -245,7 +245,7 @@ controller:
     service:
       annotations: {}
       omitClusterIP: false
-      clusterIP: ""
+      # clusterIP: ""
 
       ## List of IP addresses at which the stats service is available
       ## Ref: https://kubernetes.io/docs/user-guide/services/#external-ips
@@ -268,7 +268,7 @@ controller:
       # prometheus.io/port: "10254"
 
       omitClusterIP: false
-      clusterIP: ""
+      # clusterIP: ""
 
       ## List of IP addresses at which the stats-exporter service is available
       ## Ref: https://kubernetes.io/docs/user-guide/services/#external-ips
@@ -345,7 +345,7 @@ defaultBackend:
   service:
     annotations: {}
     omitClusterIP: false
-    clusterIP: ""
+    # clusterIP: ""
 
     ## List of IP addresses at which the default backend service is available
     ## Ref: https://kubernetes.io/docs/user-guide/services/#external-ips

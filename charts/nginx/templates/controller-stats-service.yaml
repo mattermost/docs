@@ -16,7 +16,7 @@ metadata:
     component: "{{ .Values.controller.name }}"
 spec:
 {{- if not .Values.controller.stats.service.omitClusterIP }}
-  clusterIP: "{{ .Values.controller.stats.service.clusterIP }}"
+  {{ with .Values.controller.metrics.service.clusterIP }}clusterIP: {{ . }}{{ end }}
 {{- end }}
 {{- if .Values.controller.stats.service.externalIPs }}
   externalIPs:
