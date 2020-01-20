@@ -28,7 +28,7 @@ updates to following example must also be made at
 https://gitlab.com/gitlab-org/gitlab-foss/blob/master/doc/administration/gitaly/index.md#gitaly-server-configuration
 -->
 
-```Ruby
+```ruby
 # Avoid running unnecessary services on the Gitaly server
 postgresql['enable'] = false
 redis['enable'] = false
@@ -59,10 +59,10 @@ gitaly['listen_addr'] = "0.0.0.0:8075"
 
 git_data_dirs({
   'default' => {
-    'path' => '/mnt/gitlab/default'
+    'path' => '/var/opt/gitlab/git-data'
   },
   'storage1' => {
-    'path' => '/mnt/gitlab/storage1'
+    'path' => '/mnt/gitlab/git-data'
   },
 })
 
