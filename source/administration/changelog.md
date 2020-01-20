@@ -70,6 +70,8 @@ Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http:/
 
 Mattermost v5.18.0 contains low to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
 
+- **v5.18.2, released 2020-01-16**
+  - Fixed an issue where server crashed when a user updated their Account Settings in a high availability cluster environment, and the corresponding ``user_updated`` event did not reach a guest user. [MM-21481](https://mattermost.atlassian.net/browse/MM-21481)
 - **v5.18.1, released 2020-01-08**
   - Mattermost v5.18.1 contains a high level security fix. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
   - Fixed an issue where migrating accounts from email to SAML failed. [MM-21472](https://mattermost.atlassian.net/browse/MM-21472)
