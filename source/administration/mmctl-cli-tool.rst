@@ -8,6 +8,18 @@ Being installed locally allows a System Admin to run CLI commands even in instan
 server (e.g., via SSH). This tool is currently in beta and can be used alongside the Mattermost CLI tool.
 In the future, the Mattermost CLI tool will be deprecated.
 
+This feature relies solely on community contributions and we'd like to extend our gratitude to the contributors who have
+worked on this project. We are currently accepting PRs for the following outstanding commands:
+
+- mmctl channel: list-ldap
+- mmctl license: remove
+- mmctl permissions: add, remove, show
+- mmctl user: list
+- mmctl version
+- mmctl websocket
+
+You can view the Help Wanted issues in the _`mattermost-server <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mmctl>`_ repo.
+
 **Notes**
 
 -  Parameters in CLI commands are order-specific.
@@ -23,7 +35,7 @@ In the future, the Mattermost CLI tool will be deprecated.
        -h, --help         help for mmctl
 
 **Commands**
-   - `mmctl auth`_ - Authentication Management   
+   - `mmctl auth`_ - Authentication Management
    - `mmctl channel`_ - Channel Management
    - `mmctl command`_ - Command Management
    - `mmctl config`_ - Configuration Management
@@ -37,6 +49,8 @@ In the future, the Mattermost CLI tool will be deprecated.
    - `mmctl roles`_ - Roles Management
    - `mmctl team`_ - Team Management
    - `mmctl user`_ - User Management
+   - `mmctl version`_ - Version Management
+   - `mmctl webhook`_ - Webhook Management
 
 
 Installing mmctl
@@ -726,6 +740,10 @@ Management of slash commands.
     -  `mmctl command create`_ - Create a custom command
     -  `mmctl command delete`_ - Delete a specified slash command
     -  `mmctl command list`_ - List slash commands on specified teams
+    -  `mmctl command modify`_ -
+    -  `mmctl command move`_ -
+    -  `mmctl command show`_ -
+
 
 **Options**
 
@@ -837,6 +855,22 @@ mmctl command list
 .. code-block:: sh
 
  --format string the format of the command output [plain, json] (default "plain")
+
+mmctl command modify
+^^^^^^^^^^^^^^^^^^^^
+
+This command will be available in a future release.
+
+mmctl command move
+^^^^^^^^^^^^^^^^^^^^
+
+This command will be available in a future release.
+
+mmctl command show
+^^^^^^^^^^^^^^^^^^^^
+
+This command will be available in a future release.
+
 
 mmctl config
 ------------
@@ -1764,6 +1798,8 @@ mmctl post list
 mmctl roles
 -----------
 
+This command will be available in a future release.
+
 mmctl team
 ----------
 
@@ -1776,6 +1812,7 @@ Child Commands
   -  `mmctl team list`_ - List teams
   -  `mmctl team remove`_ - Remove teams
   -  `mmctl team search`_ - Search teams
+  -  `mmctl team users`_ - Manage team users
 
 **Options**
 
@@ -1957,7 +1994,7 @@ mmctl team search
 
 .. code-block:: sh
 
-   mmmctl team search [teams] [flags]
+   mmctl team search [teams] [flags]
 
 **Examples**
 
@@ -1976,6 +2013,78 @@ mmctl team search
 .. code-block:: sh
 
    --format string   the format of the command output [plain, json] (default "plain")
+
+
+mmctl team users
+^^^^^^^^^^^^^^^^^^
+
+Child Commands
+  -  `mmctl team users add`_ - Add users to a team
+  -  `mmctl team users remove`_ - Remove users from a team
+
+mmctl team users add
+~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+  Add specified users to a team.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl team users add [team] [users] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+  team add myteam user@example.com username
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help  help for add
+
+**Options Inherited from Parent Commands**
+
+.. code-block:: sh
+
+ --format string   the format of the command output [plain, json] (default "plain")
+
+
+mmctl team users remove
+~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Remove some users from a team.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl team users remove [team] [users] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+ team remove myteam user@example.com username
+
+**Options**
+
+.. code-block:: sh
+
+  -h, --help  help for remove
+
+**Options Inherited from Parent Commands**
+
+.. code-block:: sh
+
+ --format string   the format of the command output [plain, json] (default "plain")
+
 
 mmctl user
 ---------
@@ -2234,30 +2343,12 @@ mmctl user search
 
   --format string   the format of the command output [plain, json] (default "plain")
 
+mmctl version
+-------------
+
+This command will be available in a future release.
 
 mmctl websocket
 -------------
 
-**Description**
-
-  Display websocket in a human-readable format.
-
-**Format**
-
-.. code-block:: sh
-
-    mmctl websocket [flags]
-
-
-**Options**
-
-.. code-block:: sh
-
-    -h, --help       help for websocket
-
-
-**Options Inherited from Parent Commands**
-
-.. code-block:: sh
-
-  --format string   the format of the command output [plain, json] (default "plain")
+This command will be available in a future release.
