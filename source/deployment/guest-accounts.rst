@@ -1,6 +1,6 @@
 .. _guest-accounts:
 
-Guest Accounts (Beta) (E10 and E20)
+Guest Accounts (Beta) (E10/E20)
 ===================================
 
 Available in `Enterprise Edition E10 and higher <https://about.mattermost.com/pricing/>`__.

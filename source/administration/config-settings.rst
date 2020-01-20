@@ -4065,6 +4065,8 @@ Team Settings
 Teammate Name Display
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+*Available in Enterprise Edition E20*
+
 Control Teammate Name Display at the system level.
 
 **True**: Allows System Admins to control Teammate Name Display at the system level.

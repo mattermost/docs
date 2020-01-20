@@ -4,6 +4,68 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.19 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
+
+Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
+- **v5.19.1, release day TBD**
+  - Fixing a regression affecting v5.18 and v5.19 where some users are experiencing client-side performance issues. This is mainly affecting users with more than 100 channels listed in the left-hand side and with channels sorted alphabetically. [MM-20349](https://mattermost.atlassian.net/browse/MM-20349)
+- **v5.19.0, released 2020-01-16**
+  - Original 5.19.0 release
+
+### Compatibility
+
+#### Breaking Changes
+ - ``LockTeammateNameDisplay`` setting was moved to Enterprise Edition E20 as it was erroneously available in Team Edition and Enterprise Edition E10.
+ 
+**IMPORTANT:** If you upgrade from a release earlier than 5.18, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
+### Bug Fixes
+ - Fixed an issue where email notifications were still sent in some cases while disabled in the user interface.
+ - Fixed an issue where **System Console > Site Configuration > Users & Teams > Lock Teammate Name Display** should only have been available on Enterprise Edition E20 but was erroneously available also on Team Edition and Enterprise Edition E10.
+ - Fixed an issue where the System Console left-hand side scrollbar was too dark to see.
+ - Fixed an issue where inline markdown image links did not open with preview modal.
+ - Fixed an issue on Edge where the "+" buttons in channel list were black on Mattermost default theme.
+ - Fixed an issue where users were unable to scroll through message textbox autocomplete results using arrow keys.
+ - Fixed an issue where clicking a line separator in the Main Menu closed the menu.
+ - Fixed an issue where date separator showed long-format timestamps.
+ - Fixed an issue where the Menu help text was truncated in English for Do Not Disturb status.
+ - Fixed an issue where the height and width parameters in inline images didn't work.
+ - Fixed an issue where the day picker in after/before search didn't honor the user's timezone override.
+ - Fixed an issue where editing a post and hitting ``<enter>`` in code block saved the post automatically instead of adding a newline.
+ - Fixed an issue where users were unable to close the Edit Channel Header modal when opened from the Intro Message.
+ - Fixed an issue where opening the channel picker using CTRL+K and then focusing on the message box using CTRL+SHIFT+L did not close the channel picker.
+ - Fixed an issue where the at-mention suggestions still highlighted the previous search but not the first suggestion in the list.
+ - Fixed an issue where the at-mention autocomplete always opened up in the right-hand side reply thread, sometimes cutting off users in the list.
+ - Fixed an issue with a notification badge count inconsistency when push notification setting was set to **All Activity**.
+ - Fixed an issue where timestamps on 12-hour format had a leading zero.
+ - Fixed an issue with an incorrect error message when attempting to add a bot to a channel if the bot was previously on the team.
+ - Fixed an issue where the client license API generated a different ETag for every response.
+
+### API Changes
+ - Etag header was added to the API endpoint to get the client license.
+ - Oath ``IsTrusted`` configuration can only be changed if the user has the ``manage_system`` permission.
+ 
+### Known Issues
+ - Client-side performance issues seen while typing.
+ - On a server with a subpath, channel drop-down **Leave Channel** fails to leave the channel.
+ - Importing theme colours from Slack gives an error.
+ - Inviting multiple users with valid/allowed and invalid emails causes the invites for the valid users not to be sent.
+ - Option to invite users by email is displayed even if email invitations are disabled.
+ - Users may need to reinstall and delete cache on Classic apps if launching and logging into the app get stuck.
+ - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
+ - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
+ - Google login fails on the Classic mobile apps.
+ - Status may sometimes get stuck as away or offline in High Availability mode with IP Hash turned off.
+ - Searching stop words in quotes with Elasticsearch enabled returns more than just the searched terms.
+ - Searching with Elasticsearch enabled may not always highlight the searched terms.
+ - Team sidebar on desktop app does not update when channels have been read on mobile.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ 
+### Contributors
+[aaronrothschild](https://github.com/aaronrothschild), [abdusabri](https://github.com/abdusabri), [abhisek](https://github.com/abhisek), [aeomin](https://translate.mattermost.com/user/aeomin/), [AGMETEOR](https://github.com/AGMETEOR), [agnivade](https://github.com/agnivade), [ali-farooq0](https://github.com/ali-farooq0), [allenlai18](https://github.com/allenlai18), [alxsah](https://github.com/alxsah), [amyblais](https://github.com/amyblais), [anidok](https://github.com/anidok), [AninditaBasu](https://github.com/AninditaBasu), [asaadmahmood](https://github.com/asaadmahmood), [ashishbhate](https://github.com/ashishbhate), [avegrv](https://github.com/avegrv), [benbhall](https://github.com/benbhall), [bpietraga](https://github.com/bpietraga), [bradjcoughlin](https://github.com/bradjcoughlin), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [chikei](https://github.com/chikei), [ChrisDobby](https://github.com/ChrisDobby), [comharris](https://github.com/comharris), [cpanato](https://github.com/cpanato), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [darkestofdans](https://github.com/darkestofdans), [der-test](https://github.com/der-test), [devinbinnie](https://github.com/devinbinnie), [DSchalla](https://github.com/DSchalla), [enahum](https://github.com/enahum), [ethervoid](https://github.com/ethervoid), [faase](https://github.com/faase), [fm2munsh](https://github.com/fm2munsh), [gabrieljackson](https://github.com/gabrieljackson), [gigawhitlocks](https://github.com/gigawhitlocks), [gopheros](https://github.com/gopheros), [gruceqq](https://translate.mattermost.com/user/gruceqq/), [gsagula](https://github.com/gsagula), [gupsho](https://github.com/gupsho), [hahmadia](https://github.com/hahmadia), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [hectorskypl](https://github.com/hectorskypl), [hmhealey](https://github.com/hmhealey), [icelander](https://github.com/icelander), [igomonov88](https://github.com/igomonov88), [ilgooz](https://github.com/ilgooz), [imisshtml](https://github.com/imisshtml), [iomodo](https://github.com/iomodo), [isacikgoz](https://github.com/isacikgoz), [jasonblais](https://github.com/jasonblais), [jaydeland](https://github.com/jaydeland), [jespino](https://github.com/jespino), [jfrerich](https://github.com/jfrerich), [jimiolaniyan](https://github.com/jimiolaniyan), [JtheBAB](https://github.com/JtheBAB), [justinegeffen](https://github.com/justinegeffen), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [Kaya_Zeren](https://twitter.com/kaya_zeren), [kop](https://github.com/kop), [kosgrz](https://github.com/kosgrz), [larkox](https://github.com/larkox), [Lena](https://translate.mattermost.com/user/Lena/), [lenucksi](https://github.com/lenucksi), [levb](https://github.com/levb), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lurcio](https://github.com/lurcio), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [MariadeAnton](https://github.com/MariadeAnton), [marianunez](https://github.com/marianunez), [mavegaf](https://github.com/mavegaf), [meilon](https://github.com/meilon), [metanerd](https://github.com/metanerd), [mgdelacroix](https://github.com/mgdelacroix), [michaelschiffmm](https://github.com/michaelschiffmm), [mickmister](https://github.com/mickmister), [migbot](https://github.com/migbot), [mkraft](https://github.com/mkraft), [mlongo4290](https://github.com/mlongo4290), [Mycobee](https://github.com/Mycobee), [nadalfederer](https://github.com/nadalfederer), [natalie-hub](https://github.com/natalie-hub), [nevyangelova](https://github.com/nevyangelova), [nick-brady](https://github.com/nick-brady), [phillipahereza](https://github.com/phillipahereza), [Pomyk](https://github.com/Pomyk), [RajatVaryani](https://github.com/RajatVaryani), [ramkumarvenkat](https://github.com/ramkumarvenkat), [reflog](https://github.com/reflog), [renilJoseph](https://github.com/renilJoseph), [rodcorsi](https://github.com/rodcorsi), [saneletm](https://github.com/saneletm), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [sij507](https://github.com/sij507), [smacgregor](https://github.com/smacgregor), [src-r-r](https://github.com/src-r-r), [srkgupta](https://github.com/srkgupta), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [sudheerDev](https://github.com/sudheerDev), [sunsingerus](https://github.com/sunsingerus), [svelle](https://github.com/svelle), [themaverikk](https://github.com/themaverikk), [thePanz](https://github.com/thePanz), [tomasmik](https://github.com/tomasmik), [TQuock](https://github.com/TQuock), [uhlhosting](https://github.com/uhlhosting), [valentijnnieman](https://github.com/valentijnnieman), [wget](https://github.com/wget), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [zujko](https://github.com/zujko)
+
 ## Release v5.18 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 Mattermost v5.18.0 contains low to high level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
@@ -17,8 +79,10 @@ Mattermost v5.18.0 contains low to high level security fixes. [Upgrading](http:/
 ### Compatibility
  
 ### Important Upgrade Notes
- - Marking a post unread from the mobile app requires v1.26 or later. If using v5.18, but mobile is on v1.25 or earlier, marking a post unread from webapp/desktop will only be reflected on mobile the next time the app launches or is brought to the foreground.
- - The ``mattermost-server`` import path of all the Go files in the repository as well as the module lines were changed to comply with the module version specification.
+- Marking a post unread from the mobile app requires v1.26 or later. If using v5.18, but mobile is on v1.25 or earlier, marking a post unread from webapp/desktop will only be reflected on mobile the next time the app launches or is brought to the foreground.
+
+### Breaking Changes
+ - The Go module path of ``mattermost-server`` was changed to comply with the Go module version specification. Developers using Go modules with ``mattermost-server`` as a dependency must change the module and import paths to ``github.com/mattermost/mattermost-server/v5`` when upgrade this dependency to `v5.18`. See https://blog.golang.org/v2-go-modules for further information.
  - Removed ``Team.InviteId`` from the related Websocket event and sanitized it on all team API endpoints for users without invite permissions.
  - Removed the ability to change the type of a channel using the ``PUT /channels/{channel_id}`` API endpoint. The new ``PUT /channels/{channel_id}/privacy`` endpoint should be used for that purpose.
  
@@ -144,6 +208,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added guests deactivated Websocket Event.
  
 ### Known Issues
+ - Client-side performance issues seen while typing.
  - System Console left-hand side scrollbar may be too dark to see.
  - Menu help text for Do Not Disturb is truncated in English.
  - Inviting multiple users with valid/allowed and invalid emails causes the invites for the valid users not to be sent.
