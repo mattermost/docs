@@ -1,7 +1,7 @@
 ---
 apiVersion: v1
 name: unicorn
-version: 2.5.8
+version: 2.5.9
 appVersion: 12.5.7
 description: HTTP server for Gitlab
 keywords:
