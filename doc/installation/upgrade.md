@@ -26,7 +26,7 @@ Mappings between chart versioning and GitLab versioning can be found [here](../i
 ## Steps
 
 NOTE: **Note:**
-If you are upgrading to the `3.0`, please follow the [manual upgrade steps for 3.0](#upgrade-steps-for-30-release).
+If you are upgrading to the `3.0` version of the chart, please follow the [manual upgrade steps for 3.0](#upgrade-steps-for-30-release).
 
 The following are the steps to upgrade GitLab to a newer version:
 
