@@ -105,17 +105,19 @@ highly available Redis can be deployed instead. To install an HA Redis
 cluster one needs to set `redis.cluster.enabled=true` when the GitLab
 chart is installed.
 
+You can bring an external Redis instance by setting `redis.install=false`, and
+following our [advanced documentation](../advanced/external-redis/index.md) for
+configuration.
+
 The installation of an HA Redis cluster from the GitLab chart does not
 support using sentinels. If sentinel support is desired, a Redis cluster
 needs to be created separately from the GitLab chart install. This can be
 done inside or outside the Kubernetes cluster. Sentinel settings can be
-found in the [Unicorn chart][].
+found in the [Unicorn chart](../charts/gitlab/unicorn/index.md#redis).
 
 An issue to track the [supporting of sentinels in a GitLab deployed
-Redis cluster][sentinel issue] has been created for tracking purposes.
-
-[Unicorn chart]: ../charts/gitlab/unicorn/index.md#redis
-[sentinel issue]: https://gitlab.com/gitlab-org/charts/gitlab/issues/1810
+Redis cluster](https://gitlab.com/gitlab-org/charts/gitlab/issues/1810) has
+been created for tracking purposes.
 
 ### MinIO
 
