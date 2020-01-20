@@ -18,12 +18,13 @@ worked on this project. We are currently accepting PRs for the following outstan
 - mmctl version
 - mmctl websocket
 
-You can view the Help Wanted issues in the _`mattermost-server <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mmctl>`_ repo.
+You can view the Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mmctl>`__ repo.
+
 
 **Notes**
 
 -  Parameters in CLI commands are order-specific.
--  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. `` password mypassword\!``).
+-  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, and ``"``) are used, the entire argument needs to be surrounded by single quotes (e.g. ``-password 'mypassword!'``, or the individual characters need to be escaped out (e.g. ``password mypassword\!``).
 - Team name and channel name refer to the handles, not the display names. So in the URL ``https://community.mattermost.com/core/channels/town-square`` team name would be ``core`` and channel name would be ``town-square``.
 
 
@@ -2348,7 +2349,7 @@ mmctl version
 
 This command will be available in a future release.
 
-mmctl websocket
+mmctl webhook
 -------------
 
 This command will be available in a future release.
