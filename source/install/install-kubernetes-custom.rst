@@ -24,11 +24,13 @@ The table below details the minimum Kubernetes cluster resources that Mattermost
 
 The resource requirements, as well as the ingress name are added to the relevant field in the Mattermost manifest file, which is then deployed in your cluster.
 
-Understanding Replication
--------------------------
+Customizing Resource Requirements
+--------------------------------------
 
-Understanding Storage Requirements
-----------------------------------
+The ClusterInstallationSize field of the
+Mattermost Operator manifest file is a sizing configuration used to convert user count to replica and resource requirements. The default values are provided in the ``.yaml``
+file and in most cases it's unlikely you will need to adjust them. In a custom installation, you may want to granulate the configurations such as CPUs, number of instances,
+number of users and so on in which case the allocated resources need to be entered manually.
 
 Deploying the Mattermost Operator
 ----------------------------------
