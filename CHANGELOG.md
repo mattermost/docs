@@ -87,6 +87,17 @@ entry.
 - Update GitLab Version to 12.6.0.
 
 
+## 2.5.9
+
+### Fixed (1 change)
+
+- Mount secrets.yml to dependencies initContainer. !1108
+
+### Other (1 change)
+
+- Update GitLab Version to 12.5.7.
+
+
 ## 2.5.8
 
 ### Other (1 change)
