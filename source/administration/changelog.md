@@ -42,6 +42,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Allowed user autocomplete to match on terms with spaces.
  - Added support for showing single image thumbnails in compact view.
  - Improved autocomplete highlighting when using mouse and keyboard together.
+ - Filtering search by channel now also shows the channel name and not only its ID.
  
 #### Plugins
  - Added a way to show that a plugin requires a certain Mattermost config setting.
@@ -68,6 +69,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where emoji reactions shifted down a few pixels after clicking.
  - Fixed an issue where pasting code from GitHub resulted in broken markup and loss of text.
  - Fixed an issue where navigating to a plugin config page in System Console for a deleted plugin returned a `Not Found` error.
+ - Fixed an issue where scroll bar was missing on the welcome tutorial screen in web mobile view.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
