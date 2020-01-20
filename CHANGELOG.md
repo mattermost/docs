@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.6.6
+
+### Fixed (1 change)
+
+- Mount secrets.yml to dependencies initContainer. !1108
+
+### Other (1 change)
+
+- Update GitLab Version to 12.6.4.
+
+
 ## 2.6.5
 
 ### Other (1 change)
