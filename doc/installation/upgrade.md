@@ -25,6 +25,9 @@ Mappings between chart versioning and GitLab versioning can be found [here](../i
 
 ## Steps
 
+NOTE: **Note:**
+If you are upgrading to the `3.0`, please follow the [manual upgrade steps for 3.0](#upgrade-steps-for-30-release).
+
 The following are the steps to upgrade GitLab to a newer version:
 
 1. Check the [change log](https://gitlab.com/gitlab-org/charts/gitlab/blob/master/CHANGELOG.md) for the specific version you would like to upgrade to
@@ -49,50 +52,81 @@ The following are the steps to upgrade GitLab to a newer version:
 ## Upgrade the bundled PostgreSQL chart
 
 As part of the `3.0.0` release of this chart, we upgraded the bundled [PostgreSQL chart](https://github.com/helm/charts/tree/master/stable/postgresql) from 0.11.0 to 7.7.0. This is not a drop in replacement. Manual steps need to be performed to upgrade the database.
+The steps have been documented in the [3.0 upgrade steps](#upgrade-steps-for-30-release).
 
-NOTE: **Note:** If you are not using the bundled PostgreSQL chart (`postgresql.install` is false), you do not need to perform these steps.
+## Upgrade steps for 3.0 release
 
-### Steps
+The `3.0.0` release requires manual steps in order to perform the upgrade.
+
+NOTE: **Note:**
+Remember to take a [backup](../backup-restore/index.md) before proceeding with
+the upgrade.
 
 If you are using the bundled PostgreSQL, the best way to perform this upgrade is to backup your old database, and restore into a new database instance. We've automated some of the steps, as an alternative, you can perform the steps manually.
 
-NOTE: **Note:** Failure to perform these steps as documented **may** result in the loss of your database.
+NOTE: **Note:**
+Failure to perform these steps as documented **may** result in the loss of your database. Ensure you have a separate
+backup.
+
+### Prepare the existing database
+
+NOTE: **Note:** If you are not using the bundled PostgreSQL chart (`postgresql.install` is false), you do not need to perform this step.
 
 NOTE: **Note:** If you have multiple charts installed in the same namespace. It may be necessary to pass the Helm release name to the database-upgrade script as well. Replace `bash -s STAGE` with `bash -s -- -r RELEASE STAGE` in the example commands provided later.
 
 NOTE: **Note:** If you installed a chart to a namespace other than your `kubectl` context's default, you must pass the namespace to the database-upgrade script. Replace `bash -s STAGE` with `bash -s -- -n NAMESPACE STAGE` in the example commands provided later. This option can be used along with `-r RELEASE`. You can set the context's default namespace by running `kubectl config set-context --current --namespace=NAMESPACE`, or using [`kubens` from kubectx](https://github.com/ahmetb/kubectx)
 
-1. Prepare the existing database
+ The pre stage will create a backup of your database using the backup-utility script in the task-runner pod, which gets saved to the configured s3 bucket (MinIO by default).
 
-   The pre stage will create a backup of your database using the backup-utility script in the task-runner pod, which gets saved to the configured s3 bucket (MinIO by default).
+ ```shell
+ # GITLAB_RELEASE should be the version of the chart you are installing, starting with 'v': v3.0.0
+ curl -s https://gitlab.com/gitlab-org/charts/gitlab/raw/${GITLAB_RELEASE}/scripts/database-upgrade | bash -s pre
+ ```
 
-   ```shell
-   # GITLAB_RELEASE should be the version of the chart you are installing
-   curl -s https://gitlab.com/gitlab-org/charts/gitlab/raw/${GITLAB_RELEASE}/scripts/database-upgrade | bash -s pre
-   ```
+### Prepare the cluster database secrets
 
-1. Prepare the cluster database secrets
+ The secret key for the application database key is changing from `postgres-password`, to `postgresql-password`. Use one
+ of the two steps described below to update your database password secret.
 
-   The secret key for the application database key is changing from `postgres-password`, to `postgresql-password`.
+ 1. If you'd like to use an auto-generated PostgreSQL password, delete the existing secret to allow the upgrade to generate a new password for you. RELEASE-NAME should be the name of the GitLab release from `helm list`
 
-   1. If you'd like to use an auto-generated PostgreSQL password, delete the existing secret to allow the upgrade to generate a new password for you. RELEASE-NAME should be the name of the GitLab release from `helm list`
+    ```shell
+    kubectl delete secret RELEASE-NAME-postgresql-password
+    ```
 
-      ```shell
-      kubectl delete secret RELEASE-NAME-postgresql-password
-      ```
+ 1. If you want to use the same password, edit the secret, and change the key from `postgres-password` to `postgresql-password`. Additionally, we need a secret for the superuser account. Add a key for that user `postgresql-postgres-password`
 
-   1. If you want to use the same password, edit the secret, and change the key from `postgres-password` to `postgresql-password`. Additionally, we need a secret for the superuser account. Add a key for that user `postgresql-postgres-password`
+    ```shell
+    # Encode the superuser password into base64
+    echo SUPERUSER_PASSWORD | base64
+    kubectl edit RELEASE-NAME-postgresql-password
+    # Make the appropriate changes in your EDITOR window
+    ```
 
-      ```shell
-      # Encode the superuser password into base64
-      echo SUPERUSER_PASSWORD | base64
-      kubectl edit RELEASE-NAME-postgresql-password
-      # Make the appropriate changes in your EDITOR window
-      ```
+### Delete existing services
 
-1. Upgrade GitLab following our [standard procedure](#upgrade-guide), with the addition of:
+The `3.0` release updates an immutable field in the NGINX Ingress, this requires us to first delete all the services
+before upgrading. You can see more details in our troubleshooting documentation, under [Immutable Field Error, spec.clusterIP](../troubleshooting/index.md#specclusterip).
 
-   1. `gitlab.migrations.enabled` should be set to false
+1. Remove all affected services. RELEASE_NAME should be the name of the GitLab release from `helm list`
+
+    ```shell
+    kubectl delete services -lrelease=RELEASE_NAME
+    ```
+
+### Upgrade GitLab
+
+Upgrade GitLab following our [standard procedure](#upgrade-guide), with the following additions of:
+
+If you are using the bundled PostgreSQL, disable migrations using the following flag on your upgrade command:
+
+1. `--set gitlab.migrations.enabled=false`
+
+We will perform the migrations for the Database in a later step.
+
+### Restore the Database
+
+NOTE: **Note:** If you are not using the bundled PostgreSQL chart (`postgresql.install` is false), you do not need to perform this step.
 
 1. After the upgrade is complete, run the post steps
 
@@ -103,6 +137,6 @@ NOTE: **Note:** If you installed a chart to a namespace other than your `kubectl
        1. Unpause the deployments from the first step
 
    ```shell
-   # GITLAB_RELEASE should be the version of the chart you are installing
+   # GITLAB_RELEASE should be the version of the chart you are installing, starting with 'v': v3.0.0
    curl -s https://gitlab.com/gitlab-org/charts/gitlab/raw/${GITLAB_RELEASE}/scripts/database-upgrade | bash -s post
    ```
