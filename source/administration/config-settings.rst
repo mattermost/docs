@@ -2225,7 +2225,10 @@ Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minute
 
 Maximum Page Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once. 0 is unlimited.
+The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once. 
+
+- A value of 0 is unlimited and does not paginate the results. 
+- A value of 1500 is recommended to align with the default AD/LDAP ``MaxPageSize`` setting. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxPageSize": 0`` with numerical input.                                                                                 |
