@@ -113,7 +113,7 @@ NOTE: **Note:** If you installed a chart to a namespace other than your `kubectl
 The `3.0` release updates an immutable field in the NGINX Ingress, this requires us to first delete all the services
 before upgrading. You can see more details in our troubleshooting documentation, under [Immutable Field Error, spec.clusterIP](../troubleshooting/index.md#specclusterip).
 
-1. Remove all affected services. RELEASE_NAME should be the name of the GitLab release from `helm list`
+1. Remove all affected services. RELEASE_NAME should be the name of the GitLab release from `helm list`:
 
     ```shell
     kubectl delete services -lrelease=RELEASE_NAME
