@@ -3,7 +3,7 @@ set -e
 
 # Set the timestamp to something predictable so we can use it between backup and restore
 fake_timestamp="database_upgrade"
-script_name=$(basename ${0})
+script_name="database-upgrade"
 
 usage() {
     echo "USAGE: ${script_name} [-r RELEASE] [-n NAMESPACE] pre|post"
