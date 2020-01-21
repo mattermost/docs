@@ -64,6 +64,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Dropped 26 character requirement from post action IDs.
 
 ### Bug Fixes
+ - Fixed an issue where verification emails were still being sent when`Enable Email Notifications` and `Require Email Verification` were disabled in the System Console on servers with SMTP configured.
+ - Fixed an issue where opening the right-hand side placed focus in the Search box instead of the Text box.
  - Fixed an issue where **Customization > Site Name** help text didn't match text field behavior.
  - Fixed an issue where the channel drop-down **Leave Channel** failed to leave the channel on a server with a subpath.
  - Fixed an issue where emoji reactions shifted down a few pixels after clicking.
