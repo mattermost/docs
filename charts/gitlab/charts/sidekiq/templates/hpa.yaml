@@ -8,7 +8,7 @@
 apiVersion: autoscaling/v2beta1
 kind: HorizontalPodAutoscaler
 metadata:
-  name: {{ $queueName }}
+  name: {{ printf "%s-v1" ($queueName | trunc 60) }}
   namespace: {{ $.Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" $ | indent 4 }}
@@ -16,7 +16,7 @@ spec:
   scaleTargetRef:
     apiVersion: apps/v1
     kind: Deployment
-    name: {{ $queueName }}
+    name: {{ printf "%s-v1" ($queueName | trunc 60) }}
   minReplicas: {{ default $.Values.minReplicas .minReplicas }}
   maxReplicas: {{ default $.Values.maxReplicas .maxReplicas }}
   metrics:
