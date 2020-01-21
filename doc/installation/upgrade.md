@@ -119,7 +119,7 @@ before upgrading. You can see more details in our troubleshooting documentation,
     kubectl delete services -lrelease=RELEASE_NAME
     ```
 
-WARNING: **Warning:**
+CAUTION: **Caution:**
 This will change any dynamic value for the `LoadBalancer` for NGINX Ingress from this chart, if in use. See
 [global Ingress settings documentation](../charts/globals.md#configure-ingress-settings) for more details regarding
 `externalIP`. You may be required to update DNS records!
