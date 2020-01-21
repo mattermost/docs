@@ -46,8 +46,13 @@ The following are the steps to upgrade GitLab to a newer version:
    helm upgrade gitlab gitlab/gitlab \
      --version <new version> \
      -f gitlab.yaml \
+     --set gitlab.migrations.enabled=true \
      --set ...
    ```
+
+NOTE: **Note:**
+During a major database upgrade, we ask you to set `gitlab.migrations.enabled` set to `false`. You will want to
+ensure that you explicitly set it back to `true` for future updates.
 
 ## Upgrade the bundled PostgreSQL chart
 
@@ -122,19 +127,26 @@ If you are using the bundled PostgreSQL, disable migrations using the following 
 
 1. `--set gitlab.migrations.enabled=false`
 
-We will perform the migrations for the Database in a later step.
+We will perform the migrations for the Database in a later step for the bundled PostgreSQL.
 
 ### Restore the Database
 
 NOTE: **Note:** If you are not using the bundled PostgreSQL chart (`postgresql.install` is false), you do not need to perform this step.
 
-1. After the upgrade is complete, run the post steps
+1. Wait for the upgrade to complete for the task-runner pod. RELEASE_NAME should be the name of the GitLab release from `helm list`
+
+   ```shell
+   kubectl rollout status -w deployment/RELEASE_NAME-task-runner
+   ```
+
+1. After the task-runner pod is deployed successfully, run the post steps
 
    This step will do the following:
-       1. Set replicas to 0 for the `unicorn`, `sidekiq`, and `gitlab-exporter` deployments. This will prevent any other application from altering the database while the backup is being restored.
-       1. Restore the database from the backup created in the pre stage.
-       1. Run database migrations for the new version
-       1. Unpause the deployments from the first step
+
+   1. Set replicas to 0 for the `unicorn`, `sidekiq`, and `gitlab-exporter` deployments. This will prevent any other application from altering the database while the backup is being restored.
+   1. Restore the database from the backup created in the pre stage.
+   1. Run database migrations for the new version
+   1. Unpause the deployments from the first step
 
    ```shell
    # GITLAB_RELEASE should be the version of the chart you are installing, starting with 'v': v3.0.0
