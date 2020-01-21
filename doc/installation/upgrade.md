@@ -145,7 +145,7 @@ NOTE: **Note:** If you are not using the bundled PostgreSQL chart (`postgresql.i
 
    1. Set replicas to 0 for the `unicorn`, `sidekiq`, and `gitlab-exporter` deployments. This will prevent any other application from altering the database while the backup is being restored.
    1. Restore the database from the backup created in the pre stage.
-   1. Run database migrations for the new version
+   1. Run database migrations for the new version.
    1. Unpause the deployments from the first step.
 
    ```shell
