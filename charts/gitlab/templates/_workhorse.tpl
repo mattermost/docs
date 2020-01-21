@@ -18,7 +18,7 @@ to the service name
 {{- if .Values.workhorse.host -}}
 {{- .Values.workhorse.host -}}
 {{- else -}}
-{{- $port:= default "8081" .Values.workhorse.port -}}
+{{- $port:= default "8181" .Values.workhorse.port -}}
 {{- $port -}}
 {{- end -}}
 {{- end -}}

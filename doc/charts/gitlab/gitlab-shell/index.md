@@ -150,14 +150,14 @@ before deploying the GitLab chart.
 ```yaml
 workhorse:
   host: workhorse.example.com
-  serviceName: workhorse
-  port: 8081
+  serviceName: unicorn
+  port: 8181
 ```
 
 | Name          | Type    | Default   | Description |
 |:--------------|:-------:|:----------|:------------|
 | `host`        | String  |           | The hostname of the Workhorse server. This can be omitted in lieu of `serviceName`. |
-| `port`        | Integer | `8081`    | The port on which to connect to the Workhorse server.|
+| `port`        | Integer | `8181`    | The port on which to connect to the Workhorse server.|
 | `serviceName` | String  | `unicorn` | The name of the `service` which is operating the Workhorse server. By default, Workhorse is a part of the Unicorn Pods / Service. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Workhorse as a part of the overall GitLab chart. |
 
 ## Chart Settings

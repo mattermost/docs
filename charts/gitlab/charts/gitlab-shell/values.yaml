@@ -41,7 +41,7 @@ workhorse:
   serviceName: unicorn
   # host: '0.0.0.0'
   # serviceName: 'unicorn'
-  # port: 8081
+  # port: 8181
 redis:
   password: {}
 resources:
