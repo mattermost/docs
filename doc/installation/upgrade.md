@@ -139,7 +139,7 @@ NOTE: **Note:** If you are not using the bundled PostgreSQL chart (`postgresql.i
    kubectl rollout status -w deployment/RELEASE_NAME-task-runner
    ```
 
-1. After the task-runner pod is deployed successfully, run the post steps
+1. After the task-runner pod is deployed successfully, run the post steps:
 
    This step will do the following:
 
