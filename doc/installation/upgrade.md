@@ -91,7 +91,7 @@ NOTE: **Note:** If you installed a chart to a namespace other than your `kubectl
 ### Prepare the cluster database secrets
 
  The secret key for the application database key is changing from `postgres-password`, to `postgresql-password`. Use one
- of the two steps described below to update your database password secret.
+ of the two steps described below to update your database password secret:
 
  1. If you'd like to use an auto-generated PostgreSQL password, delete the existing secret to allow the upgrade to generate a new password for you. RELEASE-NAME should be the name of the GitLab release from `helm list`
 
