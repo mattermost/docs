@@ -15,8 +15,8 @@ to the service name
 {{- end -}}
 
 {{- define "gitlab.workhorse.port" -}}
-{{- if .Values.workhorse.host -}}
-{{- .Values.workhorse.host -}}
+{{- if .Values.workhorse.port -}}
+{{- .Values.workhorse.port -}}
 {{- else -}}
 {{- $port:= default "8181" .Values.workhorse.port -}}
 {{- $port -}}
