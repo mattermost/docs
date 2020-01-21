@@ -18,7 +18,7 @@ metadata:
 {{ include "gitlab.standardLabels" . | indent 4 }}
 spec:
 {{- if not .Values.controller.service.omitClusterIP }}
-  clusterIP: "{{ .Values.controller.service.clusterIP }}"
+  {{ with .Values.controller.metrics.service.clusterIP }}clusterIP: {{ . }}{{ end }}
 {{- end }}
 {{- if .Values.controller.service.externalIPs }}
   externalIPs:

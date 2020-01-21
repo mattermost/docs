@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 2.6.6
+
+### Fixed (1 change)
+
+- Mount secrets.yml to dependencies initContainer. !1108
+
+### Other (1 change)
+
+- Update GitLab Version to 12.6.4.
+
+
 ## 2.6.5
 
 ### Other (1 change)
@@ -74,6 +85,17 @@ entry.
 
 - Document the use of external Minio for object storage. !1005
 - Update GitLab Version to 12.6.0.
+
+
+## 2.5.9
+
+### Fixed (1 change)
+
+- Mount secrets.yml to dependencies initContainer. !1108
+
+### Other (1 change)
+
+- Update GitLab Version to 12.5.7.
 
 
 ## 2.5.8
