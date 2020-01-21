@@ -35,7 +35,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ $queueName }}
+  name: {{ printf "%s-v1" ($queueName | trunc 60) }}
   namespace: {{ $.Release.Namespace }}
   labels:
 {{ include "gitlab.standardLabels" $ | indent 4 }}
@@ -48,11 +48,13 @@ spec:
     matchLabels:
       app: {{ $name }}
       release: {{ $releaseName }}
+      queue-pod-name: {{ .name }}
   template:
     metadata:
       labels:
         app: {{ $name }}
         release: {{ $releaseName }}
+        queue-pod-name: {{ .name }}
       annotations:
         checksum/configmap: {{ $configMapChecksum }}
         cluster-autoscaler.kubernetes.io/safe-to-evict: "true"
