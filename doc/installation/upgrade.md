@@ -81,7 +81,7 @@ NOTE: **Note:** If you have multiple charts installed in the same namespace. It 
 
 NOTE: **Note:** If you installed a chart to a namespace other than your `kubectl` context's default, you must pass the namespace to the database-upgrade script. Replace `bash -s STAGE` with `bash -s -- -n NAMESPACE STAGE` in the example commands provided later. This option can be used along with `-r RELEASE`. You can set the context's default namespace by running `kubectl config set-context --current --namespace=NAMESPACE`, or using [`kubens` from kubectx](https://github.com/ahmetb/kubectx)
 
- The pre stage will create a backup of your database using the backup-utility script in the task-runner pod, which gets saved to the configured s3 bucket (MinIO by default):
+ The `pre` stage will create a backup of your database using the backup-utility script in the task-runner pod, which gets saved to the configured s3 bucket (MinIO by default):
 
  ```shell
  # GITLAB_RELEASE should be the version of the chart you are installing, starting with 'v': v3.0.0
@@ -119,6 +119,11 @@ before upgrading. You can see more details in our troubleshooting documentation,
     kubectl delete services -lrelease=RELEASE_NAME
     ```
 
+WARNING: **Warning:**
+This will change any dynamic value for the `LoadBalancer` for NGINX Ingress from this chart, if in use. See
+[global Ingress settings documentation](../charts/globals.md#configure-ingress-settings) for more details regarding
+`externalIP`. You may be required to update DNS records!
+
 ### Upgrade GitLab
 
 Upgrade GitLab following our [standard procedure](#upgrade-guide), with the following additions of:
@@ -139,7 +144,7 @@ NOTE: **Note:** If you are not using the bundled PostgreSQL chart (`postgresql.i
    kubectl rollout status -w deployment/RELEASE_NAME-task-runner
    ```
 
-1. After the task-runner pod is deployed successfully, run the post steps:
+1. After the task-runner pod is deployed successfully, run the `post` steps:
 
    This step will do the following:
 
