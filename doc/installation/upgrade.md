@@ -99,7 +99,7 @@ NOTE: **Note:** If you installed a chart to a namespace other than your `kubectl
     kubectl delete secret RELEASE-NAME-postgresql-password
     ```
 
- 1. If you want to use the same password, edit the secret, and change the key from `postgres-password` to `postgresql-password`. Additionally, we need a secret for the superuser account. Add a key for that user `postgresql-postgres-password`
+ 1. If you want to use the same password, edit the secret, and change the key from `postgres-password` to `postgresql-password`. Additionally, we need a secret for the superuser account. Add a key for that user `postgresql-postgres-password`:
 
     ```shell
     # Encode the superuser password into base64
