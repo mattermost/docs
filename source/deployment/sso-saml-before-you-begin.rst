@@ -5,7 +5,7 @@ Starting with Mattermost version 5.20, a new SAML library implementation is avai
 
 To use the new implementation, navigate to **System Console > Experimental Features > Use Improved SAML Library**. Activate the feature and choose **Save** and then restart the server. The configuration change will not take effect until the server is restarted.
 
-To change the configuration file directly, edit the “UseNewSamlLibrary” setting under “ExperimentalSettings”. 
+To change the configuration file directly, edit the ``UseNewSamlLibrary`` setting under ``ExperimentalSettings``. 
 
 To use the existing implementation in versions prior to 5.20:
 
