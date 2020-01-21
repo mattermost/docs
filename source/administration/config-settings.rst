@@ -2082,7 +2082,7 @@ This filter uses the permissions of the **Bind Username** account to execute the
 
 Guest Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E20*  
+*Available in Enterprise Edition E20*
 
 (Optional) Enter an AD/LDAP Filter to use when searching for external users who have Guest Access to Mattermost.
 Only the users selected by the query will be able to log in to and use Mattermost as Guests. This filter default is blank.
@@ -2096,7 +2096,7 @@ See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/gu
 
 Group Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E20*  
+*Available in Enterprise Edition E20*
 
 (Optional) Enter an AD/LDAP Filter to use when searching for group objects (accepts `general syntax <http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__). Only the groups selected by the query will be able to access Mattermost.
 
@@ -2263,6 +2263,21 @@ SAML
 .. note::
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
+Use New SAML Library
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Enable an updated SAML Library, which does not require the XML Security Library (xmlsec1) to be installed.
+
+**False**: Continue using the existing implementation which uses the XML Security Library (xmlsec1).
+
+.. code-block:: sh
+
+  "ExperimentalSettings": {
+  "ClientSideCertEnable": false,
+  "ClientSideCertCheck": "secondary",
+  "EnableClickToReply": false,
+  "LinkMetadataTimeoutMilliseconds": 5000,
+  "RestrictSystemAdmin": false,
+  "UseNewSAMLLibrary": true
 
 Enable Login With SAML
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2341,7 +2356,7 @@ Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://examp
 
 SignatureAlgorithm
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The signature algorithm used to sign the request.  Supported options are `RSAwithSHA1 <http://www.w3.org/2000/09/xmldsig#rsa-sha1>`_, `RSAwithSHA256 <http://www.w3.org/2000/09/xmldsig#rsa-sha1>`_, and `RSAwithSHA512 <http://www.w3.org/2001/04/xmldsig-more#rsa-sha512>`_. 
+The signature algorithm used to sign the request.  Supported options are `RSAwithSHA1 <http://www.w3.org/2000/09/xmldsig#rsa-sha1>`_, `RSAwithSHA256 <http://www.w3.org/2000/09/xmldsig#rsa-sha1>`_, and `RSAwithSHA512 <http://www.w3.org/2001/04/xmldsig-more#rsa-sha512>`_.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SignatureAlgorithm": ""`` with string input.                                                                            |
@@ -3785,39 +3800,6 @@ Enable API Team Deletion
 SQL Settings
 ~~~~~~~~~~~~
 
-Enable Public Channels Materialization
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-*Removed in December 16, 2018 release. The public channel materialization feature has become a permanent feature after thoroughly tested for performance.*
-
-**True**: Enables materialization of public channels to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI. Notably, this allows the database to exclude direct messages for many queries, resulting in better query plans and more efficient indexes.
-
-**False**: Disables materialization for public channels.
-
-If this feature is disabled and then later re-enabled, an offline migration is necessary to synchronize the materialized table. Use the following steps:
-
-1. Shut down your application servers.
-2. Connect to your Mattermost database.
-3. Execute the following queries:
-
-.. code:: sql
-
-  DELETE FROM PublicChannels;
-  INSERT INTO PublicChannels
-      (Id, DeleteAt, TeamId, DisplayName, Name, Header, Purpose)
-  SELECT
-      c.Id, c.DeleteAt, c.TeamId, c.DisplayName, c.Name, c.Header, c.Purpose
-  FROM
-      Channels c
-  WHERE
-      c.Type = 'O';
-
-The queries above rebuild the materialized ``PublicChannels`` table without modifying the authoritative ``Channels`` table.
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnablePublicChannelsMaterialization": true`` with options ``true`` and ``false``.                    |
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Read Replicas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
@@ -4224,7 +4206,7 @@ Aggregate Search Indexes
 Elasticsearch indexes over the age specified by this setting will be aggregated during the daily scheduled job.
 
 .. note::
-  If using `data retention <https://docs.mattermost.com/administration/data-retention.html>`_ and `ElasticSearch <https://docs.mattermost.com/deployment/elasticsearch.html>`_, ensure the `ElasticSearch aggregate search indexes <https://docs.mattermost.com/administration/config-settings.html#aggregate-search-indexes>`_ setting is set to a value that is greater than your data retention policy in days. 
+  If using `data retention <https://docs.mattermost.com/administration/data-retention.html>`_ and `ElasticSearch <https://docs.mattermost.com/deployment/elasticsearch.html>`_, ensure the `ElasticSearch aggregate search indexes <https://docs.mattermost.com/administration/config-settings.html#aggregate-search-indexes>`_ setting is set to a value that is greater than your data retention policy in days.
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AggregatePostsAfterDays": 365`` with numerical input.        |

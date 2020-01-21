@@ -3,9 +3,10 @@ Before You Begin
 
 Starting with Mattermost version 5.20, a new SAML library implementation is available. This implementation does not require the installation of the XML Security Library. It is recommended that you use this new implementation as the old implementation will eventually be deprecated.
 
-To use the new implementation, navigate to **System Console > Experimental Features > Use Improved SAML Library**. Activate the feature and choose **Save** and then restart the server. The configuration change will not take effect until the server is restarted.
+To use the new implementation, navigate to **System Console > Experimental > Features > Use Improved SAML Library (Beta)**. Select ``true``, choose **Save**, and restart the server. The configuration change will not take effect until the server is restarted.
 
-To change the configuration file directly, edit the ``UseNewSamlLibrary`` setting under ``ExperimentalSettings``. 
+To change the configuration file directly, edit ``UseNewSAMLLibrary`` using the configuration provided
+in the `Configuration Settings documentation <https://docs.mattermost.com/administration/config-settings.html#saml>`__.
 
 To use the existing implementation in versions prior to 5.20:
 
