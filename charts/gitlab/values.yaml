@@ -10,7 +10,7 @@ global:
     # Default repositories used to pull Gitlab Enterprise Edition images.
     # See the image.repository and workhorse.repository template helpers.
     migrations:
-      repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ee
+      repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ee
     sidekiq:
       repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee
     task-runner:
@@ -25,7 +25,7 @@ global:
     # Default repositories used to pull Gitlab Community Edition images.
     # See the image.repository and workhorse.repository template helpers.
     migrations:
-      repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-rails-ce
+      repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-task-runner-ce
     sidekiq:
       repository: registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ce
     task-runner:

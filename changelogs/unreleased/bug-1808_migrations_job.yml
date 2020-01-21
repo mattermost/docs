@@ -1,0 +1,5 @@
+---
+title: Changed migrations job to use task-runner image
+merge_request: 1126
+author:
+type: changed
