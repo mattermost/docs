@@ -1,0 +1,53 @@
+<style type="text/css">
+	/* For Customer Thermometer Ratings */
+	span#red_rating {
+		color: red;
+		font-size: 120%;
+	}
+	span#yellow_rating {
+		color: gold;
+		font-size: 120%;
+	}
+	span#green_rating {
+		color: green;
+		font-size: 120%;
+	}
+	span#gold_rating {
+		color: goldenrod;
+		font-size: 90%;
+	}
+
+	span.cr_link {
+		cursor: pointer !important;
+		margin-left: 5px;
+	}
+</style>
+<script type="text/javascript">
+	function txt(t) {
+		document.getElementById('rating').innerHTML = t
+	}
+
+	function w(url) {
+		window.open(url, 'newwindow', 'width=920,height=960')
+	}
+</script>
+<hr/>
+<div id="page-rating">
+	<p>How would you rate this documentation?
+		<span class="cr_link" onclick="w('https://app.customerthermometer.com/?template=log_feedback&hash=6844eddf&embed_data=dGVtcGVyYXR1cmVfaWQ9MSZ0aGVybW9tZXRlcl9pZD01NDA1NA==&e=&f=&l=&c=&c1={{ pagename|urlencode }}&c2=&c3=&c4=&c5=&c6=&c7=&c8=&c9=&c10=')" id="gold_rating" onmouseover="txt('Great!')" onmouseout="txt('');">
+			&#9733;
+		</span>
+		<span class="cr_link" onclick="w('https://app.customerthermometer.com/?template=log_feedback&hash=8dbdea68&embed_data=dGVtcGVyYXR1cmVfaWQ9MiZ0aGVybW9tZXRlcl9pZD01NDA1NA==&e=&f=&l=&c=&c1={{ pagename|urlencode }}&c2=&c3=&c4=&c5=&c6=&c7=&c8=&c9=&c10=')" id="green_rating" onmouseover="txt('Pretty good')" onmouseout="txt('');">
+			&#9679;
+		</span>
+		<span class="cr_link" onclick="w('https://app.customerthermometer.com/?template=log_feedback&hash=0f4000b9&embed_data=dGVtcGVyYXR1cmVfaWQ9MyZ0aGVybW9tZXRlcl9pZD01NDA1NA==&e=&f=&l=&c=&c1={{ pagename|urlencode }}&c2=&c3=&c4=&c5=&c6=&c7=&c8=&c9=&c10=')" id="yellow_rating" onmouseover="txt('Could be better')" onmouseout="txt('');">
+			&#9679;
+		</span>
+		<span class="cr_link" onclick="w('https://app.customerthermometer.com/?template=log_feedback&hash=2e5db47b&embed_data=dGVtcGVyYXR1cmVfaWQ9NCZ0aGVybW9tZXRlcl9pZD01NDA1NA==&e=&f=&l=&c=&c1={{ pagename|urlencode }}&c2=&c3=&c4=&c5=&c6=&c7=&c8=&c9=&c10=')" id="red_rating" onmouseover="txt('Needs work')" onmouseout="txt('');">
+			&#9679;
+		</span>
+		<span id="rating">
+
+		</span>
+	</p>
+</div>
