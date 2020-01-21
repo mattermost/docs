@@ -208,7 +208,7 @@ Open a text editor and create a text file with the following details. Save the f
 
 **Parameters**
 - ``mattermostClusterName``. The ClusterInstallation file name.
-- ``RestoreSecret``. The location of the backup file.
+- ``restoreSecret``. The location of the backup file.
 - ``mattermostDBPassword``. The password used to access the database.
 - ``mattermostDBUser``. The username required to access the database.
 - ``initBucketURL``. The URL of the storage instance/server where the backed up DB is stored.
