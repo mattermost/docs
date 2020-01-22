@@ -32,12 +32,21 @@ Testing
 The following steps are taken to test the Mattermost package before each merge request to GitLab Omnibus:
 
 1. Pull the latest master build of GitLab Omnibus, using the `nightly Omnibus packages <https://packages.gitlab.com/gitlab/nightly-builds>`_.
-2. Update the Mattermost version in `config/softwater/mattermost.rb`.
+2. Update ``default_version`` and ``md5`` variables for the new Mattermost version in `config/softwater/mattermost.rb`.
+
+.. code-block:: none
+
+  name 'mattermost'
+  default_version '5.19.0-rc2'
+
+  source url: "https://releases.mattermost.com/#{version}/mattermost-team-#{version}-linux-amd64.tar.gz",
+  md5: 'fe49d764324334480b296fc6c500b706'
+
 3. Update the list of Mattermost versions associated with each GitLab release `in the GitLab documentation <https://docs.gitlab.com/omnibus/gitlab-mattermost/#upgrading-gitlab-mattermost>`_, and add a changelog entry.
-4. Build GitLab Omnibus.
+4. Build GitLab Omnibus `using these instructions <https://gist.github.com/hmhealey/b6d3e42a88563ca43f03152e8b86592b#gitlab-omnibus>`_.
 5. Install the generated ``.deb`` file on a local test server.
 
-The Mattermost team then test the upgrade process, and validate the packaging code and OAuth setup which have historically been the main source of issues. Other test areas include:
+The Mattermost team then tests the upgrade process and validates the packaging code and OAuth setup which have historically been the main source of issues. Other test areas include:
 
 - Pre-provisioning OAuth configuration automatically on the Omnibus package.
 - Mattermost ChatOps slash command integration.
