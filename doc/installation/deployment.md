@@ -28,10 +28,10 @@ objects. You'll need to specify a domain which will contain records to resolve
 
 #### Dynamic IPs with external-dns
 
-If you plan to use an automatic DNS registration service like [external-dns](https://github.com/kubernetes-incubator/external-dns),
+If you plan to use an automatic DNS registration service like [external-dns](https://github.com/kubernetes-sigs/external-dns),
 you won't need any additional configuration.
 
-If you provisioned a GKE cluster using the scripts in this repo, [external-dns](https://github.com/kubernetes-incubator/external-dns)
+If you provisioned a GKE cluster using the scripts in this repo, [external-dns](https://github.com/kubernetes-sigs/external-dns)
 is already installed in your cluster.
 
 #### Static IP

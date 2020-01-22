@@ -330,7 +330,7 @@ settings from the [Redis chart](https://github.com/helm/charts/tree/master/stabl
 
 ## External Charts
 
-GitLab makes use of several other charts. These are [treated as parent-child relationships](https://helm.sh/docs/developing_charts/#chart-dependencies).
+GitLab makes use of several other charts. These are [treated as parent-child relationships](https://helm.sh/docs/topics/charts/#chart-dependencies).
 Ensure that any properties you wish to configure are provided as `chart-name.property`.
 
 ## Prometheus

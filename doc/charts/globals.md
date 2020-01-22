@@ -3,7 +3,7 @@
 To reduce configuration duplication when installing our wrapper Helm chart, several
 configuration settings are available to be set in the `global` section of `values.yml`.
 These global settings are used across several charts, while all other settings are scoped
-within their chart. See the [Helm documentation on globals](https://helm.sh/docs/developing_charts/#global-values)
+within their chart. See the [Helm documentation on globals](https://helm.sh/docs/chart_template_guide/subcharts_and_globals/#global-chart-values)
 for more information on how the global variables work.
 
 - [Hosts](#configure-host-settings)
@@ -552,7 +552,7 @@ Example `--set` configuration items, when using the global chart:
 --set global.appConfig.ldap.servers.main.password.key='the-key-containing-the-password'
 ```
 
-NOTE: **Note:** Commas are considered [special characters](https://https://github.com/helm/helm/blob/master/docs/using_helm.md#the-format-and-limitations-of---set)
+NOTE: **Note:** Commas are considered [special characters](https://helm.sh/docs/intro/using_helm/#the-format-and-limitations-of-set)
   within Helm `--set` items. Be sure to escape commas in values such as `bind_dn`: `--set global.appConfig.ldap.servers.main.bind_dn='cn=administrator\,cn=Users\,dc=domain\,dc=net'`.
 
 #### Disable LDAP web sign in
