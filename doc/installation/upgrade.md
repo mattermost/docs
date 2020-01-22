@@ -96,6 +96,9 @@ NOTE: **Note:** If you installed a chart to a namespace other than your `kubectl
  1. If you'd like to use an auto-generated PostgreSQL password, delete the existing secret to allow the upgrade to generate a new password for you. RELEASE-NAME should be the name of the GitLab release from `helm list`:
 
     ```shell
+    # Create a local copy of the old secret in case we need to restore the old database
+    kubectl get secret RELEASE-NAME-postgresql-password -o yaml > postgresql-password.backup.yaml
+    # Delete the secret so a new one can be created
     kubectl delete secret RELEASE-NAME-postgresql-password
     ```
 
@@ -104,7 +107,7 @@ NOTE: **Note:** If you installed a chart to a namespace other than your `kubectl
     ```shell
     # Encode the superuser password into base64
     echo SUPERUSER_PASSWORD | base64
-    kubectl edit RELEASE-NAME-postgresql-password
+    kubectl edit secret RELEASE-NAME-postgresql-password
     # Make the appropriate changes in your EDITOR window
     ```
 
