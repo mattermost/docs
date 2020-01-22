@@ -1,5 +1,0 @@
----
-title: Set globals at top level for newer Helm versions
-merge_request: 1083
-author:
-type: fixed

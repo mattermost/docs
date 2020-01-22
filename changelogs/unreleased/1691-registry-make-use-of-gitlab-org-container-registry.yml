@@ -1,5 +1,0 @@
----
-title: Registy now defaults to GitLab's container registry fork version v2.7.6-gitlab
-merge_request: 1105
-author:
-type: changed

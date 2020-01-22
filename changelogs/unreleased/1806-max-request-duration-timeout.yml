@@ -1,5 +1,0 @@
----
-title: Add the maxRequestDurationSeconds configuration and move unicorn workersTimeout to global
-merge_request: 1103
-author:
-type: added
