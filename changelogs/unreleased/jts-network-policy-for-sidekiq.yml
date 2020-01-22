@@ -1,5 +1,0 @@
----
-title: Adds Network Policy object for Sidekiq Deployments
-merge_request: 1102
-author: skarbek
-type: added

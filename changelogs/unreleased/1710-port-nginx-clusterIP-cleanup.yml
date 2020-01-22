@@ -1,5 +1,0 @@
----
-title: 'NGINX: port spec.clusterIP fixup, unblock upgrades in Helm v3'
-merge_request: 1082
-author:
-type: fixed

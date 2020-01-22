@@ -2,6 +2,36 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 3.0.0
+
+### Fixed (2 changes)
+
+- NGINX: port spec.clusterIP fixup, unblock upgrades in Helm v3. !1082
+- Set globals at top level for newer Helm versions. !1083
+
+### Changed (7 changes)
+
+- Upgrade bundled PostgreSQL chart to stable/postgresql 7.7.0. !955
+- Bump the requests for exporter and migrations. !967
+- Moved Gitaly enabled flag to global namespace. !1081
+- Changed from forked Redis chart to upstream chart. !1086
+- Update Prometheus chart to v10.0.0. !1089
+- Split the operator bootstrap out of the chart. !1090
+- Registy now defaults to GitLab's container registry fork version v2.7.6-gitlab. !1105
+
+### Added (4 changes, 2 of them are from the community)
+
+- Add Selectors to SideKiq Deployments. !876
+- Added ability to configure sshd MaxStartups for gitlab-shell. !1058 (Dmitry Chepurovskiy)
+- Adds Network Policy object for Sidekiq Deployments. !1102 (skarbek)
+- Add the maxRequestDurationSeconds configuration and move unicorn workersTimeout to global. !1103
+
+### Other (2 changes)
+
+- Use mail_room gem version from Gemfile.lock as appVersion in the chart. !1088
+- Update GitLab Version to 12.7.0.
+
+
 ## 2.6.6
 
 ### Fixed (1 change)

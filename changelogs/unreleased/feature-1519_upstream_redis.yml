@@ -1,5 +1,0 @@
----
-title: Changed from forked Redis chart to upstream chart
-merge_request: 1086
-author:
-type: changed
