@@ -54,6 +54,8 @@ The script can also be used to clean up the created EKS resources:
 
 ### Manual cluster creation
 
+- We recommend a cluster with 8vCPU and 30GB of RAM.
+
 For the most up to date instructions, follow Amazon's
 [EKS getting started guide](https://docs.aws.amazon.com/eks/latest/userguide/getting-started.html).
 
