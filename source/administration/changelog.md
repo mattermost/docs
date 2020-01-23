@@ -10,32 +10,41 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Compatibility
 
+### Breaking Changes
+ - XXX Plugin Marketplace XXXX
+ 
+**IMPORTANT:** If you upgrade from a release earlier than 5.19, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
+
 ### Highlights
 
-#### Deep Linking support for desktop
-
 #### Unread Toasts
- - Unread toasts which appears when entering a channel with unreads.
- - New messages toasts which appears when new posts arrive and user is not at the bottom of the channel.
- - When users marks a posts as unread.
+ - Unreads banner appears when entering a channel with many unread messages and allows the user to jump to the most recent messages in the channel. Users don’t have to scroll all the way down to reach the bottom of the channel if there are many unreads.
+ 
+#### Deep Linking UX Improvements
+ - Links to posts in email notifications now launch to a browser landing page with option to open in the Desktop App or Mobile app.
 
 #### Reworked pre-packaged plugins
  - Prepackaged plugins will continue to be included in the prepackaged_plugins folder but they will not be installed automatically and now they can be upgraded and uninstalled.
+ 
+#### Ship MMCTL with Mattermost 
   
 #### Group Sync to Roles LDAP/SAML
- - On the Group Profile/Group Configuration screen Create a “Team and Channel Membership” area that allows System Admins to sync all members of a group to specified teams and channels.
+ - Provides a way for admins to assign Groups to the built in roles - System Admin, Team Admin, Channel Admin, Members - within Mattermost using the LDAP Group Sync feature.
 
 #### System Admin filter to both LDAP and SAML
-
-#### GoSAML2 Implementation
+ - This filter adds the capability to specify roles via LDAP (most importantly, the System Admin role). This empowers Mattermost customers to use LDAP as the single source of truth for users with System Admin access - which is very important for compliance monitoring.
 
 #### SAML Metadata support
+ - Enables automatic configuration for SAML. This is accomplished by pulling the configuration metadata directly from the Identity Provider using an account specific URL.
+ 
+#### GoSAML2 Implementation
+ - Replaces the previous and outdated XML Security Library (xmlsec1) with a better XML library (GoSAML2). The XML Security Library provides the encryption/decryption and digital signing functionality required for SAML, which is used to support single sign-on (SSO).  GoSAML2 performs better because the encryption happens in memory as opposed to xmlsec1 that uses the file system.
 
 ### Improvements
 
 #### User Interface (UI)
  - Added support for displaying a left-hand side bot icon in the webapp.
- - Added support for autocomplete to display self user suffixed with '(you)'.
+ - User's own username with a suffix 'you' is now shown in the username autocomplete.
  - Do not let users type account input fields longer than the max length for first name, last name and email fields.
  - Added support for mute option in Direct Message channel menus.
  - Add a red dot to browser favicon when there are unread mentions.
