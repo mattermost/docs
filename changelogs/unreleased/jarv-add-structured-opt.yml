@@ -1,0 +1,5 @@
+---
+title: Adds log_format option to enable structured json logging
+merge_request: 1132
+author:
+type: added

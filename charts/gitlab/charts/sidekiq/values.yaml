@@ -22,6 +22,10 @@ enabled: true
 
 annotations: {}
 
+# set to "json" for json
+# structured logs
+logFormat: "default"
+
 networkpolicy:
   enabled: false
   egress:
