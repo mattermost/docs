@@ -37,7 +37,7 @@ Helm v2.15.x series contained multiple severe bugs that affect the use of this c
 
 You can get Helm from the project's [releases page](https://github.com/helm/helm/releases),
 or follow other options under the official documentation of
-[installing Helm](https://docs.helm.sh/using_helm/#installing-helm).
+[installing Helm](https://helm.sh/docs/intro/install/).
 
 Tiller is deployed into the cluster and interacts with the Kubernetes API to
 deploy your applications. If role based access control (RBAC) is enabled, Tiller
@@ -172,13 +172,13 @@ and [sprig](https://godoc.org/github.com/Masterminds/sprig).
 
 Some information on how all the inner workings behave:
 
-- [Functions and Pipelines](https://github.com/helm/helm/blob/master/docs/chart_template_guide/functions_and_pipelines.md)
-- [Subcharts and Globals](https://github.com/helm/helm/blob/master/docs/chart_template_guide/subcharts_and_globals.md)
+- [Functions and Pipelines](https://helm.sh/docs/chart_template_guide/functions_and_pipelines/)
+- [Subcharts and Globals](https://helm.sh/docs/chart_template_guide/subcharts_and_globals/)
 
 ### Tips and tricks
 
 Helm repository has some additional information on developing with Helm in it's
-[tips and tricks section](https://github.com/helm/helm/blob/master/docs/charts_tips_and_tricks.md).
+[tips and tricks section](https://helm.sh/docs/howto/charts_tips_and_tricks/).
 
 ### Local Tiller
 

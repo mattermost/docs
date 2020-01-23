@@ -4,7 +4,7 @@ GitLab Geo provides the ability to have read-only, geographically distributed
 application deployments.
 
 While external database services can be used, these documents currently focus on
-the use of the [Omnibus GitLab](https://docs.gitlab.com/omnibus) for PostgreSQL in order to provide the
+the use of the [Omnibus GitLab](https://docs.gitlab.com/omnibus/) for PostgreSQL in order to provide the
 most platform agnostic guide, and make use of the automation included within `gitlab-ctl`.
 
 ## Requirements

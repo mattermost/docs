@@ -9,7 +9,7 @@ rolling upgrades without down time.
 
 We provide an [Operator Chart](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/charts/gitlab/charts/operator)
 for installing the Operator. When enabled, the Operator will assume control of the upgrade process that was previously
-managed via [Helm hooks](https://helm.sh/docs/developing_charts/#hooks).
+managed via [Helm hooks](https://helm.sh/docs/topics/charts_hooks/).
 
 ### Installing the CRD
 
