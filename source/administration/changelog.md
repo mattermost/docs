@@ -43,45 +43,45 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Improvements
 
 #### User Interface (UI)
+ - Added support for mute option in Direct Message channel menus.
+ - Added a red dot to browser favicon when there are unread mentions.
  - Added support for displaying a left-hand side bot icon in the webapp.
  - User's own username with a suffix 'you' is now shown in the username autocomplete.
- - Do not let users type account input fields longer than the max length for first name, last name and email fields.
- - Added support for mute option in Direct Message channel menus.
- - Add a red dot to browser favicon when there are unread mentions.
  - Allowed user autocomplete to match on terms with spaces.
- - Added support for showing single image thumbnails in compact view.
  - Improved autocomplete highlighting when using mouse and keyboard together.
+ - Added support for showing single image thumbnails in compact view.
+ - Contents of View Members and Manage Members modals now refresh when a user's role has changed.
  - Filtering search by channel now also shows the channel name and not only its ID.
+ - Users now cannot type account input fields longer than the maximum length for first name, last name and email fields.
  
 #### Plugins
- - Added a way to show that a plugin requires a certain Mattermost config setting.
- - Added support for plugins to add menu items to a "Channel Menu".
+ - Added a way to show that a plugin requires a certain Mattermost configuration setting.
+ - Added support for plugins to add menu items to the Channel Menu.
  
 #### Command Line Interface (CLI)
  - Added a CLI command ``webhook move`` for moving outgoing webhooks.
  
 #### Bulk Import
- - When bulk import finds an already existing post, it should delete existing files before importing new ones.
- - Bulk export omits direct messages from a user to themselves.
+ - When bulk import finds an already existing post, it now deletes existing files before importing new ones.
+ - Bulk export now includes direct messages from a user to themselves.
 
 #### Administration
  - Added support for Elasticsearch 7.
- - Contents of View\Manage Members modal now refresh when role has changed.
  - Added ability to inform System Admins when a user who managed bot accounts is deactivated, and enable them to take ownership of the bot.
- - LDAP/Elasticsearch/SQL Trace should be put in server logs.
+ - Added LDAP/Elasticsearch/SQL Trace to server logs to make it easier for admins to diagnose problems.
  - Added ``plugins`` to the list of words that a team URL cannot start with.
- - Dropped 26 character requirement from post action IDs.
+ - Removed 26 character requirement from post action IDs.
 
 ### Bug Fixes
- - Fixed an issue where verification emails were still being sent when`Enable Email Notifications` and `Require Email Verification` were disabled in the System Console on servers with SMTP configured.
- - Fixed an issue where opening the right-hand side placed focus in the Search box instead of the Text box.
- - Fixed an issue where **Customization > Site Name** help text didn't match text field behavior.
+ - Fixed an issue where verification emails were still being sent on servers with SMTP configured when`Enable Email Notifications` and `Require Email Verification` were disabled in the System Console.
  - Fixed an issue where the channel drop-down **Leave Channel** failed to leave the channel on a server with a subpath.
+ - Fixed an issue where opening the right-hand sidebar placed focus in the Search box instead of the Text box.
+ - Fixed an issue where **Customization > Site Name** help text didn't match text field behavior.
+ - Fixed an issue where the option to mark posts as unread was unexpectedly available when viewing archived channels.
  - Fixed an issue where emoji reactions shifted down a few pixels after clicking.
  - Fixed an issue where pasting code from GitHub resulted in broken markup and loss of text.
- - Fixed an issue where navigating to a plugin config page in System Console for a deleted plugin returned a `Not Found` error.
+ - Fixed an issue where navigating to a plugin configuration page in the System Console for a deleted plugin returned a `Not Found` error.
  - Fixed an issue where scroll bar was missing on the welcome tutorial screen in web mobile view.
- - Fixed an issue where the option to mark posts as unread was unexpectedly available when viewing archived channels.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
