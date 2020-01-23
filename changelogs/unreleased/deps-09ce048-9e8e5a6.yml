@@ -1,0 +1,5 @@
+---
+title: Update gitlab-runner chart to 0.13.0
+merge_request: 1131
+author:
+type: changed
