@@ -149,3 +149,22 @@ This can be solved by simply removing all of the affected services.
 1. Future upgrades will not face this error.
 
 NOTE: **Note:** This will change any dynamic value for the `LoadBalancer` for NGINX Ingress from this chart, if in use. See [global Ingress settings documentation](../charts/globals.md#configure-ingress-settings) for more details regarding `externalIP`. You may be required to update DNS records!
+
+### spec.selector
+
+Sidekiq pods did not receive a unique selector prior to chart release
+`3.0.0`. [The problems with this were documented in](https://gitlab.com/gitlab-org/charts/gitlab/issues/663).
+
+Upgrades to `3.0.0` using Helm will automatically delete the old Sidekiq deployments and create new ones by appending `-v1` to the
+name of the the Sidekiq `Deployments`,`HPAs`, and `Pods`.
+
+If you continue to run into this error on the Sidekiq deployment when installing `3.0.0`, resolve these with the following
+steps:
+
+1. Remove Sidekiq services
+
+   ```sh
+   kubectl delete deployment --cascade -lrelease=RELEASE_NAME,app=sidekiq
+   ```
+
+1. Perform an upgrade via Helm.
