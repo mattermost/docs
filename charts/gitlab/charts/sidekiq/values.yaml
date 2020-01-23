@@ -22,9 +22,10 @@ enabled: true
 
 annotations: {}
 
-# set to "json" for json
-# structured logs
-logFormat: "default"
+logging:
+  # set to "json" for json
+  # structured logs
+  format: "default"
 
 networkpolicy:
   enabled: false

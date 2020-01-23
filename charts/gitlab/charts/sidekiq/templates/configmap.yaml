@@ -112,7 +112,7 @@ data:
           port: {{ .Values.metrics.port }}
 {{- end }}
       sidekiq:
-        log_format: {{ .Values.logFormat }}
+        log_format: {{ .Values.logging.format }}
   configure: |
     {{- include "gitlab.scripts.configure.secrets" (dict "required" "gitaly registry postgres rails-secrets") | nindent 4 -}}
     {{- include "gitlab.psql.ssl.initScript" . | nindent 4 }}
