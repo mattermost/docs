@@ -19,17 +19,20 @@ dependencies:
     gitlab_remove_source_branch: true
     remotes:
       # Registry chart / container
-      https://github.com/docker/distribution.git:
+      https://gitlab.com/gitlab-org/container-registry.git:
         replace_in_files:
         - filename: doc/charts/registry/index.md
-          pattern: "tag: '(\\S+)'"
+          pattern: "tag: 'v(\\S+)'"
           range: '>= 2.x.x'
+          prereleases: true
         - filename: doc/charts/registry/index.md
-          pattern: '`(\d+\.\d+\.\d+)`'
+          pattern: '`v(\d+\.\d+\.\d+-gitlab)`'
           range: '>= 2.x.x'
+          prereleases: true
         - filename: charts/registry/values.yaml
-          pattern: "tag: '(\\S+)'"
+          pattern: "tag: 'v(\\S+)'"
           range: '>= 2.x.x'
+          prereleases: true
       # Minio chart / minio container
       https://github.com/minio/minio.git:
         replace_in_files:
