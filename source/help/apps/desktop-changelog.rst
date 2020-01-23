@@ -35,8 +35,9 @@ All Platforms
 ^^^^^^^^^^^^^
 
 - Fixed an issue where downgrading the app caused login issues.
-- Fixed an issue where Ctrl + C or Ctrl + V didn't work on Electron modals or developer tools.
-- Fixed an issue where navigation with Ctrl (or Cmd) + Tab stopped on disconnected server.
+- Fixed an issue where Ctrl+C or Ctrl+V didn't work on Electron modals or developer tools.
+- Fixed an issue where navigation with Ctrl/Cmd+Tab stopped on disconnected server.
+- Fixed an issue where a new desktop window was created after clicking on a permalink to a channel on a different server.
 - Fixed an issue where changing the spellchecker on the app did not suggest words in that language.
 - Fixed an issue where the app window didn't save "floating" app position.
 
