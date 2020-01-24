@@ -28,6 +28,8 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 {{- $messages := append $messages (include "gitlab.checkConfig.sidekiq.queues.mixed" .) -}}
 {{- $messages := append $messages (include "gitlab.checkConfig.appConfig.maxRequestDurationSeconds" .) -}}
 {{- $messages := append $messages (include "gitlab.checkConfig.gitaly.extern.repos" .) -}}
+{{- $messages := append $messages (include "gitlab.checkConfig.geo.database" .) -}}
+{{- $messages := append $messages (include "gitlab.checkConfig.geo.secondary.database" .) -}}
 {{- /* prepare output */}}
 {{- $messages := without $messages "" -}}
 {{- $message := join "\n" $messages -}}
@@ -68,7 +70,7 @@ sidekiq: mixed queues
 {{/*
 Ensure a database is configured when using Geo
 listen over TLS */}}
-{{- define "gitlab.geo.database" -}}
+{{- define "gitlab.checkConfig.geo.database" -}}
 {{- with $.Values.global -}}
 {{- if eq true .geo.enabled -}}
 {{-   if not .psql.host -}}
@@ -76,13 +78,13 @@ geo: no database provided
     It appears Geo was configured but no database was provided.
     Geo behaviors require external databases.
     Ensure `global.psql.host` is set.
-{{-   end -}}
+{{    end -}}
 {{-   if not .psql.password.secret -}}
 geo: no database password provided
     It appears Geo was configured, but no database password was provided.
     Geo behaviors require external databases.
     Ensure `global.psql.password.secret` is set.
-{{-  end -}}
+{{   end -}}
 {{- end -}}
 {{- end -}}
 {{- end -}}
@@ -91,7 +93,7 @@ geo: no database password provided
 {{/*
 Ensure a database is configured when using Geo secondary
 listen over TLS */}}
-{{- define "gitlab.geo.secondary.database" -}}
+{{- define "gitlab.checkConfig.geo.secondary.database" -}}
 {{- with $.Values.global.geo -}}
 {{- if include "gitlab.geo.secondary" $ }}
 {{-   if not .psql.host -}}
@@ -99,13 +101,13 @@ geo: no secondary database provided
     It appears Geo was configured with `role: secondary`, but no database
     was provided. Geo behaviors require external databases.
     Ensure `global.geo.psql.host` is set.
-{{-   end -}}
+{{    end -}}
 {{-   if not .psql.password.secret -}}
 geo: no secondary database password provided
     It appears Geo was configured with `role: secondary`, but no database
     password was provided. Geo behaviors require external databases.
     Ensure `global.geo.psql.password.secret` is set.
-{{-   end -}}
+{{    end -}}
 {{- end -}}
 {{- end -}}
 {{- end -}}
