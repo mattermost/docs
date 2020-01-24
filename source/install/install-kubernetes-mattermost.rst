@@ -156,7 +156,7 @@ Open a text editor and create a text file with the following details. Save the f
   metadata:
     name: mm-example-full
   spec:
-    size: 5000users
+    size: ""
     ingressName: example.mattermost-example.com
     ingressAnnotations:
       kubernetes.io/ingress.class: nginx
@@ -177,7 +177,7 @@ The Mattermost installation manifest contains fields which must be edited in lin
     :header: "Field", "Description", "Must Edit"
 
     "metadata.name", "The name of your Mattermost as it will be shown in Kubernetes. The shorter the better.", "Yes"
-    "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users'.", "Yes"
+    "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users' Custom values are accepted provided the replication formula is correct.", "Yes"
     "spec.ingressName", "The DNS for your Mattermost installation. This is the same name as the existing deployment, but the underlying resource is the restored database.", "Yes"
     "spec.version", "The Mattermost version.", "No"
     "spec.mattermostLicenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license). Required for Enterprise deployments.", "Yes"
@@ -203,8 +203,8 @@ Open a text editor and create a text file with the following details. Save the f
     mattermostClusterName: example-clusterinstallation
     mattermostDBName: mattermostdb
     mattermostDBPassword: supersecure
-    mattermostDBUser: mmuser
-    restoreSecret: myawscreds
+    mattermostDBUser: ""
+    restoreSecret: ""
 
 **Parameters**
 - ``mattermostClusterName``. The ClusterInstallation file name.
