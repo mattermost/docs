@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 3.0.1
+
+### Changed (1 change)
+
+- Update gitlab-runner chart to 0.13.0. !1131
+
+### Other (1 change)
+
+- Update GitLab Version to 12.7.2.
+
+
 ## 3.0.0
 
 ### Fixed (2 changes)
