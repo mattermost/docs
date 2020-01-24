@@ -65,7 +65,8 @@ Release Heartbeat
 +-----------------------------------------+------------------------------------------------------------------------------+
 | Total valid bugs in fix version         | After closing current release:                                               |
 |                                         |                                                                              |
-|                                         | project = Mattermost AND issuetype = Bug AND resolution not in (Duplicate,   |   |                                         | "Cannot Reproduce", "Won't Fix") AND fixVersion = latestReleasedVersion()    |
+|                                         | project = Mattermost AND issuetype = Bug AND resolution not in (Duplicate,   |                                         
+|                                         | "Cannot Reproduce", "Won't Fix") AND fixVersion = latestReleasedVersion()    |
 +-----------------------------------------+------------------------------------------------------------------------------+
 | Total valid bugs in fix version found   | Check "Se", "Selenium-found, "Rainforest-found" Jira labels                  |
 | by test automation                      |                                                                              |
@@ -74,19 +75,25 @@ Release Heartbeat
 |                                         | 2. Replace START with date (yyyy-MM-dd HH:mm) RC1 was cut                    |
 |                                         | 3. Replace END with date (yyyy-MM-dd HH:mm) test servers returned to master  |
 |                                         |                                                                              |
-|                                         | project = Mattermost AND issuetype = Bug AND resolution not in (Duplicate,   |  |                                         | "Cannot Reproduce", "Won't fix") AND created > "START" AND created < "END"   |
+|                                         | project = Mattermost AND issuetype = Bug AND resolution not in (Duplicate,   |
+|                                         | "Cannot Reproduce", "Won't fix") AND created > "START" AND created < "END"   |
 +-----------------------------------------+------------------------------------------------------------------------------+
 | Valid bugs found after RC1 fixed in     | After closing current release, & adjust dates as per above:                  |
 | release                                 |                                                                              |
-|                                         | project = Mattermost AND issuetype = Bug AND resolution not in (Duplicate,   |  |                                         | "Cannot Reproduce", "Won't Fix")  AND created > "START" AND created < "END"  |
+|                                         | project = Mattermost AND issuetype = Bug AND resolution not in (Duplicate,   |
+|                                         | "Cannot Reproduce", "Won't Fix")  AND created > "START" AND created < "END"  |
 |                                         | AND fixVersion = latestReleasedVersion()                                     |
 +-----------------------------------------+------------------------------------------------------------------------------+
 | Valid bugs found after RC1 pushed to    | After closing current release, & adjust dates as per above:                  |
 | next release                            |                                                                              |
-|                                         | project = Mattermost AND issuetype = Bug AND resolution not in (Duplicate,   |  |                                         | "Cannot Reproduce", "Won't Fix") AND created > "START" AND created < "END"   |
+|                                         | project = Mattermost AND issuetype = Bug AND resolution not in (Duplicate,   |                                      
+|                                         | "Cannot Reproduce", "Won't Fix") AND created > "START" AND created < "END"   |
 |                                         | AND fixVersion = earliestUnreleasedVersion()                                 |
 +-----------------------------------------+------------------------------------------------------------------------------+
-| Valid bugs found after RC1 fix version  | project = Mattermost AND issuetype = Bug AND created > "START" AND created < |  |  = other (eg unscheduled, not set)      | "END" AND resolution not in (Duplicate, "Cannot Reproduce", "Won't Fix") AND |  |                                         | (fixVersion not in (latestReleasedVersion(), earliestUnreleasedVersion()) OR |  |                                         | fixVersion is EMPTY)                                                         |
+| Valid bugs found after RC1 fix version  | project = Mattermost AND issuetype = Bug AND created > "START" AND created < |  
+| = other (eg unscheduled, not set)       | "END" AND resolution not in (Duplicate, "Cannot Reproduce", "Won't Fix") AND |
+|                                         | (fixVersion not in (latestReleasedVersion(), earliestUnreleasedVersion()) OR |
+|                                         | fixVersion is EMPTY)                                                         |
 +-----------------------------------------+------------------------------------------------------------------------------+
 | (Non-security) Bugs requiring patch     | After any patch release goes out (after the normal release date):            |
 | release                                 | Check each patch release for non-security related issues, and count total.   |
@@ -95,11 +102,13 @@ Release Heartbeat
 | version                                 |                                                                              |
 +-----------------------------------------+------------------------------------------------------------------------------+
 | Critical security issues found during   | Check Jira security board for issues where:                                  |
-| release timeframe                       | 1. Date reported is between the 16th of last month and the 16th of the       |  |                                         | release month.                                                               |
+| release timeframe                       | 1. Date reported is between the 16th of last month and the 16th of the       |
+|                                         | release month.                                                               |
 |                                         | 2. Impact = High                                                             |
 +-----------------------------------------+------------------------------------------------------------------------------+
 | Moderate security issues found during   | Check Jira security board for issues where:                                  |
-| release timeframe                       | 1. Date reported is between the 16th of last month, and the 16th of the      |  |                                         | release month.                                                               |
+| release timeframe                       | 1. Date reported is between the 16th of last month, and the 16th of the      |
+|                                         | release month.                                                               |
 |                                         | 2. Impact = Medium                                                           |
 +-----------------------------------------+------------------------------------------------------------------------------+
 | Minor security issues found during      | Check Jira security board for issues where:                                  |
