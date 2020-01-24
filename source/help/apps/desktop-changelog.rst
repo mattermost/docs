@@ -40,6 +40,7 @@ All Platforms
 - Fixed an issue where a new desktop window was created after clicking on a permalink to a channel on a different server.
 - Fixed an issue where changing the spellchecker on the app did not suggest words in that language.
 - Fixed an issue where the app window didn't save "floating" app position.
+- Fixed an issue where copying and pasting into Atlassian login fields pasted text in the wrong place.
 
 Windows
 ^^^^^^^^^^^^^
