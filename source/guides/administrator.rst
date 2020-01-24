@@ -63,6 +63,7 @@ Learn how to host Mattermost to meet your networking requirements.
 
    /deployment/deployment.md
    /deployment/desktop-app-deployment*
+   /deployment/mobile-app-deployment*
    /mobile/mobile-appconfig.rst
    /administration/image-proxy*
    /administration/encryption*
