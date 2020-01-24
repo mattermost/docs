@@ -29,14 +29,28 @@ If the release contains a security update, PM owner emails @marin and @briann in
 Testing
 ----------------
 
-The following steps are taken to test the Mattermost package in GitLab Omnibus:
+The following steps are taken to test the Mattermost package before each merge request to GitLab Omnibus:
 
-1. Each Mattermost version is tested on a GitLab Omnibus build at `http://ci-linux-gitlab-omnibus.mattermost.com/ <http://ci-linux-gitlab-omnibus.mattermost.com/>`__. Testing covers all core Mattermost features, including notifications and GitLab SSO.
-2. Before each merge request to GitLab Omnibus, upgrade is tested `following the steps below <https://docs.mattermost.com/process/gitlab-process.html#testing-upgrade-process>`__, using the `nightly Omnibus packages <https://packages.gitlab.com/gitlab/nightly-builds>`__ to validate the integration. This is so the packaging code and OAuth setup can be tested as well, which has historically been the main source of issues. Other test areas include:
+1. Pull the latest master build of GitLab Omnibus, using the `nightly Omnibus packages <https://packages.gitlab.com/gitlab/nightly-builds>`_.
+2. Update ``default_version`` and ``md5`` variables for the new Mattermost version in `config/softwater/mattermost.rb`.
 
- - Pre-provisioning OAuth configuration automatically on the Omnibus package
- - Mattermost ChatOps slash command integration
- - OAuth team creation option in GitLab Omnibus
+.. code-block:: none
+
+  name 'mattermost'
+  default_version '5.19.0-rc2'
+
+  source url: "https://releases.mattermost.com/#{version}/mattermost-team-#{version}-linux-amd64.tar.gz",
+  md5: 'fe49d764324334480b296fc6c500b706'
+
+3. Update the list of Mattermost versions associated with each GitLab release `in the GitLab documentation <https://docs.gitlab.com/omnibus/gitlab-mattermost/#upgrading-gitlab-mattermost>`_, and add a changelog entry.
+4. Build GitLab Omnibus `using these instructions <https://gist.github.com/hmhealey/b6d3e42a88563ca43f03152e8b86592b#gitlab-omnibus>`_.
+5. Install the generated ``.deb`` file on a local test server.
+
+The Mattermost team then tests the upgrade process and validates the packaging code and OAuth setup which have historically been the main source of issues. Other test areas include:
+
+- Pre-provisioning OAuth configuration automatically on the Omnibus package.
+- Mattermost ChatOps slash command integration.
+- OAuth team creation option in GitLab Omnibus.
 
 Upgrade Process
 ~~~~~~~~~~~~~~~~~~
@@ -91,52 +105,7 @@ The root admin account for them has username `root` and password `Password1`.
  - Create an account and log in.
  - Confirm the correct version number in **Main Menu** > **About Mattermost**.
 
-Useful Commands
-~~~~~~~~~~~~~~~~~~
-
-1. View config.json directly (arrow keys to scroll, press Q to exit):
-
-  .. code-block:: text
-
-    sudo less /var/opt/gitlab/mattermost/config.json
-
-2. Stop/start Mattermost manually:
-
-  .. code-block:: text
-
-	sudo /opt/gitlab/bin/gitlab-ctl stop mattermost
-	sudo /opt/gitlab/bin/gitlab-ctl start mattermost
-
-3. Access the GitLab admin console (press CTRL+D to exit):
-
-  .. code-block:: text
-
-	sudo gitlab-rails console production
-
-  You can then carry out commands such as updating a user's password:
-
-    .. code-block:: text
-
-	  user = User.find_by(email: 'admin@local.host')
-	  user.password = 'secret_pass'
-	  user.password_confirmation = 'secret_pass'
-	  user.save!
-
-4. Edit NGINX configuration directly:
-
-  .. code-block:: text
-
-	sudo vim /var/opt/gitlab/nginx/conf/gitlab-mattermost-http.conf
-	sudo vim /var/opt/gitlab/nginx/conf/gitlab-http.conf
-	sudo vim /var/opt/gitlab/nginx/conf/nginx.conf
-	sudo vim /var/opt/gitlab/nginx/conf/nginx-status.conf
-
-5. Stop/start NGINX manually:
-
-  .. code-block:: text
-
-	sudo /opt/gitlab/bin/gitlab-ctl stop nginx
-	sudo /opt/gitlab/bin/gitlab-ctl start nginx
+To help with debugging, including a list of useful commands, see the `support handbook <https://docs.mattermost.com/process/support.html#gitlab-issues>`_.
 
 Service-Level Agreement (SLA)
 -------------------------------
