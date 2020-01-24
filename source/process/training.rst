@@ -452,10 +452,11 @@ Procedure:
 Meeting Agenda:
 
 - **Ice-breaker** - see Meeting Elements > Ice-breaker below for examples
-- **Roadmap check-in** - Review of roadmap status in current and next release
-- **Team updates** - Each development team gives a short update on their current top priorities
+- **Release updates** - Overview of current release status
+- **Announcements** - Short announcements that the entire team needs to know about
+- **Team updates** - Each team lists a short update of their current top priorities which can be read by meeting attendees (not actually reviewed during the meeting)
 - **Demos** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
-- **Blind spots, Inspiration, Knowledge Share** - Colleagues share areas of concern and ask questions. Items for discussion can be queued here.
+- **Blind spots, Inspiration, Knowledge Share** - Colleagues share areas of concern and ask questions. Proposals for items that have already been discussed outside of the meeting can also be queued here.
 
 Post Meeting:
 
