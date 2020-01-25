@@ -44,7 +44,7 @@ registry:
     readOnly:
       enabled: false
   image:
-    tag: 'v2.7.6-gitlab'
+    tag: 'v2.7.7-gitlab'
     pullPolicy: IfoNtPresent
   annotations:
   service:
@@ -119,7 +119,7 @@ If you chose to deploy this chart as a standalone, remove the `registry` at the 
 | `image.pullPolicy`                         |                                              | Pull policy for the registry image                                                                   |
 | `image.pullSecrets`                        |                                              | Secrets to use for image repository                                                                  |
 | `image.repository`                         | `registry`                                   | Registry image                                                                                       |
-| `image.tag`                                | `v2.7.6-gitlab`                              | Version of the image to use                                                                          |
+| `image.tag`                                | `v2.7.7-gitlab`                              | Version of the image to use                                                                          |
 | `init.image.repository`                    |                                              | initContainer image                                                                                  |
 | `init.image.tag`                           |                                              | initContainer image tag                                                                              |
 | `log`                                      | `{level: warn, fields: {service: registry}}` | Configure the logging options                                                                        |
@@ -195,7 +195,7 @@ You can change the included version of the Registry and `pullPolicy`.
 
 Default settings:
 
-- `tag: 'v2.7.6-gitlab'`
+- `tag: 'v2.7.7-gitlab'`
 - `pullPolicy: 'IfNotPresent'`
 
 ## Configuring the `service`
