@@ -271,6 +271,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Schedule a release retrospective meeting, to be held within five days from the release
     - Prepare and post [release metrics](https://docs.google.com/spreadsheets/d/1Aoj4OTaWoyrKIcQNiHH1MVoRG51T20Y_0w2tg5oVw-M/edit#gid=825551144)
     - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
+        - Review with Head of Product prior to updating
     - Update Integrations Directory on the [Mattermost Apps and Integrations](https://integrations.mattermost.com/) page
     - Post the MVP winner announcement in the [Contributors channel](https://community.mattermost.com/core/channels/tickets)
     - Add new release fix versions in Jira for the next few releases
