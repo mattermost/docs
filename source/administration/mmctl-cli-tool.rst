@@ -8,17 +8,11 @@ Being installed locally allows a System Admin to run CLI commands even in instan
 server (e.g., via SSH). This tool is currently in beta and can be used alongside the Mattermost CLI tool.
 In the future, the Mattermost CLI tool will be deprecated.
 
-This feature relies solely on community contributions and we'd like to extend our gratitude to the contributors who have
-worked on this project. We are currently accepting PRs for the following outstanding commands:
+This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have
+worked on this project. We are currently accepting PRs for Help Wanted issues
+in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mmctl>`__ repo. You can learn more about
+the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
 
-- mmctl channel: list-ldap
-- mmctl license: remove
-- mmctl permissions: add, remove, show
-- mmctl user: list
-- mmctl version
-- mmctl websocket
-
-You can view the Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mmctl>`__ repo.
 
 
 **Notes**
@@ -741,9 +735,6 @@ Management of slash commands.
     -  `mmctl command create`_ - Create a custom command
     -  `mmctl command delete`_ - Delete a specified slash command
     -  `mmctl command list`_ - List slash commands on specified teams
-    -  `mmctl command modify`_ -
-    -  `mmctl command move`_ -
-    -  `mmctl command show`_ -
 
 
 **Options**
