@@ -453,7 +453,7 @@ As part of configuring your EMM solution, you should consider:
 - What is the mobile policy, is it company-owned or BYOD?
 - Do you know what devices will be used if customer-owned?
 - What OS do you want to start with in testing?
-- Creating a sample configuration then run validation tests against each config item.
+- Creating a sample configuration then run validation tests against each config item
 
 *****************************************
 Configuring the MPNS for Your Custom Apps
