@@ -81,7 +81,7 @@ HPNS does not connect to your mobile apps directly. It sends messages over an en
 
 ### Proxy
 
-The proxy manages Secure Socket Layer (SSL) encryption and sets the policy on how network traffic will be routed to the Mattermost server.
+The proxy manages Transport Layer Security (TLS) encryption and sets the policy on how network traffic will be routed to the Mattermost server.
 
 Mattermost install guides include setup instructions for the NGNIX software proxy by default. For large scale deployments, a hardware proxy with dedicated devices for processing SSL encryption and decryption could potentially increase efficiencies.
 
