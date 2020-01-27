@@ -9,7 +9,7 @@ server (e.g., via SSH). This tool is currently in beta and can be used alongside
 In the future, the Mattermost CLI tool will be deprecated.
 
 This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have
-worked on this project. We are currently accepting pull requests for Help Wanted issues
+worked on this project. We are currently accepting PRs for Help Wanted issues
 in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mmctl>`__ repo. You can learn more about
 the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
 
@@ -51,11 +51,36 @@ the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <h
 Installing mmctl
 ----------------
 
-To install the project in your `$GOPATH` run the following command as admin user:
+There are different methods available to install mmctl.
+
+**Via brew (Linux, macOS)**
+
+Use this option on Linux and macOS if you have Homebrew installed.
+
+.. code-block:: sh
+
+   brew install mmctl
+
+**Via go get (Linux, macOS, Windows)**
+
+Use this option on Linux, macOS, and Windows if you have a go environment configured.
 
 .. code-block:: sh
 
    go get -u github.com/mattermost/mmctl
+
+**Via release package (Linux, macOS, Windows)**
+
+Vist the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
+
+To add the project in your `$GOPATH` from the package manager run the following command as admin user:
+
+.. code-block:: sh
+
+   go get -u github.com/mattermost/mmctl
+
+Building mmctl
+----------------
 
 The ``mmctl`` tool uses ``go`` modules to manage dependencies, so you need to have installed
 ``go`` 1.11 or greater and compile the binary using:
