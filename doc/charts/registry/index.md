@@ -477,7 +477,7 @@ Replace these values in the commands below according to your actual configuratio
 helm get config mygitlab > mygitlab.yml
 # Upgrade Helm installation and configure the registry to be read-only.
 # The --wait parameter makes Helm wait until all ressources are in ready state, so we are safe to continue.
-helm upgrade mygitlab gitlab/gitlab -f mygitlab.yml --set registry.readOnly.enabled=true --wait
+helm upgrade mygitlab gitlab/gitlab -f mygitlab.yml --set registry.maintenance.readOnly.enabled=true --wait
 # Our registry is in r/o mode now, so let's get the name of one of the registry Pods.
 # Note down the Pod name and replace the '<registry-pod>' placeholder below with that value.
 # Replace the single quotes to double quotes (' => ") if you are using this with Windows' cmd.exe.
