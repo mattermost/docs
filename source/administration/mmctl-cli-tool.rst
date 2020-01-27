@@ -53,7 +53,7 @@ Installing mmctl
 
 There are different methods available to install mmctl.
 
-**Via brew (Linux, macOS)**
+**Using brew (Linux, macOS)**
 
 Use this option on Linux and macOS if you have Homebrew installed.
 
@@ -61,23 +61,20 @@ Use this option on Linux and macOS if you have Homebrew installed.
 
    brew install mmctl
 
-**Via go get (Linux, macOS, Windows)**
+**Using go get (Linux, macOS, Windows)**
 
 Use this option on Linux, macOS, and Windows if you have a go environment configured.
 
+To add the project in your `$GOPATH` run the following command as admin user:
+
 .. code-block:: sh
 
    go get -u github.com/mattermost/mmctl
 
-**Via release package (Linux, macOS, Windows)**
+**Using release package (Linux, macOS, Windows)**
 
 Vist the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
 
-To add the project in your `$GOPATH` from the package manager run the following command as admin user:
-
-.. code-block:: sh
-
-   go get -u github.com/mattermost/mmctl
 
 Building mmctl
 ----------------
