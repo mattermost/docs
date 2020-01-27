@@ -65,7 +65,7 @@ Use this option on Linux and macOS if you have Homebrew installed.
 
 Use this option on Linux, macOS, and Windows if you have a go environment configured.
 
-To add the project in your `$GOPATH` run the following command as admin user:
+To add the project in your `$GOPATH` run the following command:
 
 .. code-block:: sh
 
