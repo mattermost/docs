@@ -5,6 +5,8 @@
 - Deployment using Omnibus GitLab package needs to be running. Run `gitlab-ctl status`
   and confirm no services report a `down` state.
 
+- It is good practice to verify the integrity of the repositories prior to migration.  See the [integrity check rake task](https://docs.gitlab.com/ee/administration/raketasks/check.html).
+
 - `/etc/gitlab/gitlab-secrets.json` file from package based installation.
 
 - A Helm charts based deployment running the same GitLab version as the
