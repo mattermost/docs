@@ -169,6 +169,8 @@ certmanager:
   # See https://github.com/kubernetes/charts/tree/master/stable/cert-manager#configuration
   rbac:
     create: true
+  webhook:
+    enabled: false
 
 nginx-ingress:
   enabled: true
