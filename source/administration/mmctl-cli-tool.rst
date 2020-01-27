@@ -9,7 +9,7 @@ server (e.g., via SSH). This tool is currently in beta and can be used alongside
 In the future, the Mattermost CLI tool will be deprecated.
 
 This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have
-worked on this project. We are currently accepting PRs for Help Wanted issues
+worked on this project. We are currently accepting pull requests for Help Wanted issues
 in the `mattermost-server <https://github.com/mattermost/mattermost-server/issues?utf8=%E2%9C%93&q=is%3Aissue+is%3Aopen+mmctl>`__ repo. You can learn more about
 the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
 
