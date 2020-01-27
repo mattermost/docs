@@ -1,5 +1,5 @@
 ---
-title: Route gitlab-shell and gitaly requests throw workhorse
+title: Route gitlab-shell and gitaly requests through workhorse
 merge_request: 1114
 author: Dmitry Chepurovskiy
 type: fixed
