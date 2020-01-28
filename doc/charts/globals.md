@@ -137,6 +137,7 @@ global:
     # serviceName:
     port: 5432
     preparedStatements: false
+    pool: 10
     password:
       secret: gitlab-postgres
       key: psql-password

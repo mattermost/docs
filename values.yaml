@@ -83,6 +83,7 @@ global:
     # port: 123
     # username: gitlab
     # database: gitlabhq_production
+    # pool: 10
     # preparedStatements: false
 
   ## doc/charts/globals.md#configure-redis-settings

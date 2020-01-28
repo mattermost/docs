@@ -1,0 +1,5 @@
+---
+title: Allows the database `pool` to be configurable
+merge_request: 1111
+author: skarbek
+type: added
