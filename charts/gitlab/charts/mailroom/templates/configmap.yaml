@@ -21,9 +21,11 @@ data:
         :name: {{ .mailbox }}
         :delete_after_delivery: true
         :delivery_method: sidekiq
-        :expunge_deleted: true
+        :expunge_deleted: {{ .expunge_deleted }}
+        {{- if ne .logger.log_path "" }}
         :logger:
-          :log_path: "/dev/stdout"
+          :log_path: "{{ .logger.log_path }}"
+        {{- end }}
         {{- end }}
         :delivery_options:
           :redis_url: {{ template "gitlab.redis.url" . }}
