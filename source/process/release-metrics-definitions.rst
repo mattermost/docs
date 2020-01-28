@@ -5,7 +5,7 @@ Release Output
 ==============
 
 +------------------------------------------+----------------------------------------+
-| Metric                                   | Definition                             |
+| Metric                                   | How to Measure                         |
 +==========================================+========================================+
 | Ratio of story-to-bug tickets            |                                        |
 +------------------------------------------+----------------------------------------+
@@ -26,13 +26,14 @@ Release Management
 =================
 
 +----------------------------------------+-----------------------------------------+
-| Metric                                 | Definition                              |
+| Metric                                 | How to Measure                          |
 +========================================+=========================================+
 | Number of misses in each release cycle | E.g. dot releases from customer reports,|
 |                                        | undocumented breaking changes           |
 +----------------------------------------+-----------------------------------------+
-| Number of setbacks to users/staff      | E.g. features that got pushed,          |
-| resulting in a negative reaction       |                                         |
+| Number of setbacks to users/staff      | Manual count of negative reactions      |
+| resulting in a negative reaction       | reported by CSMs, Support or Product.   |
+|                                        | E.g. features that got pushed.          |
 +----------------------------------------+-----------------------------------------+
 | Number of measurable actions from each | Action items driven from root causes.   |
 | release retrospective completed        |                                         |
@@ -46,7 +47,7 @@ Release Heartbeat
 =================
 
 +-----------------------------------------+------------------------------------------------------------------------------+
-| Metric                                  | Definition                                                                   |
+| Metric                                  | How to Measure                                                               |
 +=========================================+==============================================================================+
 | Time updated to RC1 (PST)               | Check Release Discussion channel history                                     |
 |                                         | for date/time RC1 was cut.                                                   |
@@ -96,7 +97,7 @@ Release Heartbeat
 |                                         | fixVersion is EMPTY)                                                         |
 +-----------------------------------------+------------------------------------------------------------------------------+
 | (Non-security) Bugs requiring patch     | After any patch release goes out (after the normal release date):            |
-| release                                 | Check each patch release for non-security related issues, and count total.   |
+| release                                 | Check Changelog for total number of non-security patch releases.             |
 +-----------------------------------------+------------------------------------------------------------------------------+
 | Total features/improvements in fix      | Check number of Story tickets completed for the release.                     |
 | version                                 |                                                                              |
