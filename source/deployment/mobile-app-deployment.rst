@@ -184,7 +184,7 @@ Our Hosted Push Notification Service offers:
 
 \* *When using our publicly-available app store applications and the AppConfig standard.*
 
-Of course, if you would like to host your own version of the MPNS, that is always an option. The `Choosing the Right Deployment Model <https://docs.google.com/document/d/1BhHla4medUGVSWuBPNuoz_h5f85MdlIQWcRn5N2WUos/edit#heading=h.6zz62c4mus3l>`_ section of this guide, as well as our `Mobile App Admin Documentation <https://docs.mattermost.com/mobile/mobile-hpns.html>`_ are the best places to start.
+Of course, if you would like to host your own version of the MPNS, that is always an option but requires a custom built app. The `Choosing the Right Deployment Model <https://docs.google.com/document/d/1BhHla4medUGVSWuBPNuoz_h5f85MdlIQWcRn5N2WUos/edit#heading=h.6zz62c4mus3l>`_ section of this guide, as well as our `Mobile App Admin Documentation <https://docs.mattermost.com/mobile/mobile-hpns.html>`_ are the best places to start.
 
 ********************************************
 Enterprise Mobile Management (EMM) Providers
@@ -195,8 +195,6 @@ EMM Providers develop software that helps enterprise teams manage secure mobile 
 Most large enterprise teams are familiar with `Enterprise Mobile Management <https://en.wikipedia.org/wiki/Enterprise_mobility_management>`_ providers, or EMMs. If this is a new term for you, review `Appendix B <https://docs.google.com/document/d/1BhHla4medUGVSWuBPNuoz_h5f85MdlIQWcRn5N2WUos/edit#heading=h.pn9oiqr3rebj>`_ for a list of providers and relevant information.
 
 For those taking on larger deployments, we assume you are already using an EMM provider.
-
-The AppConfig standard is the critical element when deploying Mattermost via an EMM.
 
 AppConfig is newer, more modern approach when compared to App Wrapping.
 
@@ -422,12 +420,12 @@ Distribution Through an App Store
 
 Once you have built your own apps you will need to distribute them. There are two options:
 
-Option 1 - Enterprise App Store via EMM Provider (most common): 
+Option 1 - Enterprise App Store via EMM Provider (most common and recommended): 
 
 - This is the most common way for customers to distribute their apps
 - Once added to your own "Enterprise App Store", user can download
 
-Option 2 - Apple App Store & Google Play (not recommended):
+Option 2 - Apple App Store & Google Play (less common):
 
 - To submit an app to the official app stores, you need to submit the app to Apple/Google for review
 - This is the same process Mattermost uses make the apps available for everyone.
