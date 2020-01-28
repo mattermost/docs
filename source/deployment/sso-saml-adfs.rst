@@ -155,11 +155,15 @@ Configure SAML sign-in for Mattermost
 --------------------------------------
 
 1. Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
-  - *SAML SSO URL*: **SAML 2.0/W-Federation URL** ADFS Endpoint you copied earlier.
-  - *Identity Provider Issuer URL*: ``Relying party trust identifier`` from ADFS you specified earlier.
-  - *Identity Provider Public Certificate*: ``X.509 Public Certificate`` you downloaded earlier.
+  - **SAML SSO URL:** **SAML 2.0/W-Federation URL** ADFS Endpoint you copied earlier.
+  - **Identity Provider Issuer URL:** ``Relying party trust identifier`` from ADFS you specified earlier.
+  - **Identity Provider Public Certificate:** ``X.509 Public Certificate`` you downloaded earlier.
 
 	.. image:: ../../source/images/adfs_22_mattermost_basics.PNG
+
+Alternatively, you can create a metadata URL by appending "FederationMetadata/2007-06/FederationMetadata.xml" to the root URL of the ADFS server, for example: ``https://<adfs.domain.com>/federationmetadata/2007-06/FederationMetadata.xml>``. 
+
+Then paste this URL in the **Identity Provider Metadata URL** field, then select **Get SAML Metadata from IdP**.
 
 2. Configure Mattermost to verify the signature. The *Service Provider Login URL* is the *SAML 2.0 SSO service URL* you specified in ADFS earlier.
 
