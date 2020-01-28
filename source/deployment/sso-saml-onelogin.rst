@@ -123,7 +123,7 @@ Configure SAML sign-in for Mattermost
 
 To confirm that SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
 
-It is also recommended to post an announcement to usrs detailing how the migration will work.
+It is also recommended to post an announcement to users detailing how the migration will work.
 
 You can also configure SAML for OneLogin by editing ``config.json`` to enable SAML based on :ref:`SAML configuration settings <saml-enterprise>`. You must restart the Mattermost server for the changes to take effect.
 
