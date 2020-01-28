@@ -163,7 +163,7 @@ Configure SAML sign-in for Mattermost
 
 Alternatively, you can create a metadata URL by appending "FederationMetadata/2007-06/FederationMetadata.xml" to the root URL of the ADFS server, for example: ``https://<adfs.domain.com>/federationmetadata/2007-06/FederationMetadata.xml>``. 
 
-Then paste this URL in the **Identity Provider Metadata URL** field, then select **Get SAML Metadata from IdP**.
+Then paste this URL in the **Identity Provider Metadata URL** field, and then select **Get SAML Metadata from IdP**.
 
 2. Configure Mattermost to verify the signature. The *Service Provider Login URL* is the *SAML 2.0 SSO service URL* you specified in ADFS earlier.
 
