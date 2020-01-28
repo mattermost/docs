@@ -86,6 +86,31 @@ lint_package:
       - tags
       - /(^docs[\/-].+|.+-docs$)/
 
+.kubeval:
+  stage: package
+  when: always
+  script:
+    - helm init --client-only
+    - helm repo add gitlab https://charts.gitlab.io
+    - helm repo add jetstack https://charts.jetstack.io
+    - helm dependencies update
+    - helm kubeval . --force-color --strict --set certmanager-issuer.email=support@gitlab.com --skip-kinds "CustomResourceDefinition" -v $KUBE_VERSION
+  except:
+    <<: *deps_pipeline
+    refs:
+      - tags
+      - /(^docs[\/-].+|.+-docs$)/
+
+"Validate 1.12.9":
+  extends: .kubeval
+  variables:
+    KUBE_VERSION: "1.12.9"
+
+"Validate 1.16.0":
+  extends: .kubeval
+  variables:
+    KUBE_VERSION: "1.16.0"
+
 .review_template:
   stage: review
   variables:
