@@ -38,11 +38,12 @@ global:
 
 enabled: true
 annotations: {}
-unicorn:
+workhorse:
+  # by default, Workhorse is a part of the Unicorn Pods / Service
   serviceName: unicorn
   # host: '0.0.0.0'
   # serviceName: 'unicorn'
-  # port: 8080
+  # port: 8181
 redis:
   password: {}
 resources:

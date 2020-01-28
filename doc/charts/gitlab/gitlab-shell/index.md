@@ -4,7 +4,7 @@ The `gitlab-shell` sub-chart provides an SSH server configured for Git SSH acces
 
 ## Requirements
 
-This chart depends on access to Redis and Unicorn services, either as part of the
+This chart depends on access to Redis and Workhorse services, either as part of the
 complete GitLab chart or provided as external services reachable from the Kubernetes
 cluster this chart is deployed onto.
 
@@ -59,7 +59,7 @@ with `global.shell.port`, and defaults to `22`.
 | `service.loadBalancerSourceRanges` |      | List of IP CIDRs allowed access to LoadBalancer (if supported)  |
 | `service.type`           | `ClusterIP`    | Shell service type                       |
 | `tolerations`            | `[]`           | Toleration labels for pod assignment     |
-| `unicorn.serviceName`    | `unicorn`      | Unicorn service name                     |
+| `workhorse.serviceName`    | `unicorn`      | Workhorse service name  (by default, Workhorse is a part of the Unicorn Pods / Service)                   |
 
 ## Chart configuration examples
 
@@ -113,8 +113,8 @@ annotations:
 
 ## External Services
 
-This chart should be attached the Unicorn service, and should also use the same Redis
-as the attached Unicorn service.
+This chart should be attached the Workhorse service, and should also use the same Redis
+as the attached Workhorse service.
 
 ### Redis
 
@@ -147,20 +147,20 @@ deployment through the GitLab chart should be disabled with `redis.install=false
 The Secret containing the Redis password will need to be manually created
 before deploying the GitLab chart.
 
-### Unicorn
+### Workhorse
 
 ```yaml
-unicorn:
-  host: unicorn.example.com
+workhorse:
+  host: workhorse.example.com
   serviceName: unicorn
-  port: 8080
+  port: 8181
 ```
 
 | Name          | Type    | Default   | Description |
 |:--------------|:-------:|:----------|:------------|
-| `host`        | String  |           | The hostname of the Unicorn server. This can be omitted in lieu of `serviceName`. |
-| `port`        | Integer | `8080`    | The port on which to connect to the Unicorn server.|
-| `serviceName` | String  | `unicorn` | The name of the `service` which is operating the Unicorn server. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Unicorn as a part of the overall GitLab chart. |
+| `host`        | String  |           | The hostname of the Workhorse server. This can be omitted in lieu of `serviceName`. |
+| `port`        | Integer | `8181`    | The port on which to connect to the Workhorse server.|
+| `serviceName` | String  | `unicorn` | The name of the `service` which is operating the Workhorse server. By default, Workhorse is a part of the Unicorn Pods / Service. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Workhorse as a part of the overall GitLab chart. |
 
 ## Chart Settings
 
@@ -173,8 +173,8 @@ secret must start with the key names `ssh_host_` in order to be used by GitLab S
 
 ### authToken
 
-GitLab Shell uses an Auth Token in its communication with Unicorn. Share the token
-with GitLab Shell and Unicorn using a shared Secret.
+GitLab Shell uses an Auth Token in its communication with Workhorse. Share the token
+with GitLab Shell and Workhorse using a shared Secret.
 
 ```yaml
 authToken:

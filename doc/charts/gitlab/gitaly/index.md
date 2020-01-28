@@ -4,7 +4,7 @@ The `gitaly` sub-chart provides a configurable deployment of Gitaly Servers.
 
 ## Requirements
 
-This chart depends on access to Redis and Unicorn services, either as part of the
+This chart depends on access to Redis and Workhorse services, either as part of the
 complete GitLab chart or provided as external services reachable from the Kubernetes
 cluster this chart is deployed onto.
 
@@ -125,8 +125,8 @@ annotations:
 
 ## External Services
 
-This chart should be attached the Unicorn service, and should also use the same Redis
-as the attached Unicorn service.
+This chart should be attached the Workhorse service, and should also use the same Redis
+as the attached Workhorse service.
 
 ### Redis
 
@@ -145,26 +145,26 @@ redis:
 
 NOTE: **Note:** Credentials will be sourced from `global.redis.password` values.
 
-### Unicorn
+### Workhorse
 
 ```yaml
-unicorn:
-  host: unicorn.example.com
+workhorse:
+  host: workhorse.example.com
   serviceName: unicorn
-  port: 8080
+  port: 8181
 ```
 
 | Name          | Type    | Default   | Description |
 |:------------- |:-------:|:--------- |:----------- |
-| `host`        | String  |           | The hostname of the Unicorn server. This can be omitted in lieu of `serviceName`. |
-| `port`        | Integer | `8080`    | The port on which to connect to the Unicorn server.|
-| `serviceName` | String  | `unicorn` | The name of the `service` which is operating the Unicorn server. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Unicorn as a part of the overall GitLab chart. |
+| `host`        | String  |           | The hostname of the Workhorse server. This can be omitted in lieu of `serviceName`. |
+| `port`        | Integer | `8181`    | The port on which to connect to the Workhorse server.|
+| `serviceName` | String  | `unicorn` | The name of the `service` which is operating the Workhorse server. If this is present, and `host` is not, the chart will template the hostname of the service (and current `.Release.Name`) in place of the `host` value. This is convenient when using Workhorse as a part of the overall GitLab chart. |
 
 ## Chart Settings
 
 The following values are used to configure the Gitaly Pods.
 
-NOTE: **Note:** Gitaly uses an Auth Token to authenticate with the Unicorn and Sidekiq
+NOTE: **Note:** Gitaly uses an Auth Token to authenticate with the Workhorse and Sidekiq
   services. The Auth Token secret and key are sourced from the `global.gitaly.authToken`
   value. Additionally, the Gitaly container has a copy of GitLab Shell, which has some configuration
   that can be set. The Shell authToken is sourced from the `global.shell.authToken`

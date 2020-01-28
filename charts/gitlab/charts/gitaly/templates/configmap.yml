@@ -128,7 +128,7 @@ data:
     user: git
 
     # Url to gitlab instance. Used for api calls. Should end with a slash.
-    gitlab_url: "http://{{ template "gitlab.unicorn.host" . }}:{{ default 8080 .Values.unicorn.port }}/"
+    gitlab_url: "http://{{ template "gitlab.workhorse.host" . }}:{{ template "gitlab.workhorse.port" . }}/"
 
     secret_file: /etc/gitlab-secrets/shell/.gitlab_shell_secret
 
