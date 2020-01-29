@@ -21,7 +21,7 @@ data:
         :name: {{ .mailbox }}
         :delete_after_delivery: true
         :delivery_method: sidekiq
-        :expunge_deleted: {{ .expunge_deleted }}
+        :expunge_deleted: {{ .expungeDeleted }}
         {{- if ne .logger.logPath "" }}
         :logger:
           :log_path: "{{ .logger.logPath }}"
