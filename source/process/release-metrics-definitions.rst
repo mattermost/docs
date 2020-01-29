@@ -9,7 +9,8 @@ Release Output
 +------------------------------------------+----------------------------------------+
 | Metric                                   | How to Measure                         |
 +==========================================+========================================+
-| Ratio of story-to-bug tickets            |                                        |
+| Ratio of story-to-bug tickets            | Total of feature tickets over total of |
+|                                          | bug tickets.                           |
 +------------------------------------------+----------------------------------------+
 | Mean time from P1 bug report to delivery |                                        |
 +------------------------------------------+----------------------------------------+
@@ -44,8 +45,8 @@ Release Management
 | release retrospective driven from root | from Release Retrospective document.    |
 | causes & completed and reported to R&D |                                         |
 +----------------------------------------+-----------------------------------------+
-| Number of deadlines missed in release  |                                         |
-| checklist                              |                                         |
+| Number of deadlines missed in release  | Manual count of deadlines not met from  |
+| checklist                              | items posted to Release Checklist.      |
 +----------------------------------------+-----------------------------------------+
 
 Release Heartbeat
