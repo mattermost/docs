@@ -66,13 +66,15 @@ Furthermore, you **must download the X.509 Certificate file** and save it. You w
 Configure SAML Sign-in for Mattermost
 --------------------------------------
 
-1. Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**, and enter the following fields:
+Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**, and paste the copied Identity Provider Metadata URL in the **Identity Provider Metadata URL** field, then select **Get SAML Metadata from IdP**.
+
+This populates the **SAML SSO URL** and the **Identity Provider Issuer URL** fields automatically and the Identity Provider Public Certificate is also downloaded from the server and set locally. 
+
+Alternatively you can enter the following fields manually:
  - **SAML SSO URL:** ``Identity Provider Single Sign-On URL`` from Okta, specified earlier.
  - **Identity Provider Issuer URL:** ``Identity Provider Issuer`` from Okta, specified earlier.
  - **Identity Provider Public Certificate:** X.509 Public Certificate file you downloaded from Okta earlier.
  
- Alternatively, you can paste the copied Identity Provider Metadata URL in the **Identity Provider Metadata URL** and **Identity Provider Issuer URL** fields, then select **Get SAML Metadata from IdP**.
-
 	.. image:: ../../source/images/okta_10_mattermost_basics.PNG
 
 2. Configure Mattermost to verify the signature. The **Service Provider Login URL** is the ``Single sign on URL`` you specified in Okta earlier.
