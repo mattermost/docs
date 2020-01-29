@@ -33,7 +33,7 @@ global:
       password:
         secret: ""
         key: password
-      expunge_deleted: true
+      expungeDeleted: true
       logger:
         logPath: "/dev/stdout"
       mailbox: inbox
