@@ -123,9 +123,11 @@ Technical Requirements
 `Supported Devices/Mobile Device Requirements <https://docs.mattermost.com/install/requirements.html#mobile-apps>`_
     Basic mobile device requirements are provided in the link above.
 
-********************************
-Public App Store vs. Custom Apps
-********************************
+*******************************************
+Public App Store vs. Custom Mattermost Apps
+*******************************************
+
+    **Note:** This guide uses `Public App Store` as generic for the two most used application stores `Apple App Store` and `Google Play Store`.
 
 The most critical decision you will make in your mobile deployment will be whether to use the apps provided by Mattermost via Google Play and Apple App Store, or to build and distribute custom versions of the Mattermost apps. Below we provide a very general overview of these options.
 
@@ -140,12 +142,12 @@ Utilizing the app distributed by Mattermost in Google play and the Apple App Sto
 
 Again, this is the recommended route which is as simple as downloading the Mattermost mobile application from the corresponding store, entering a URL to point towards your Mattermost server, and logging in.
 
-Custom Apps
-===========
+Custom Mattermost Apps
+======================
 
 If you desire to customize the applications, or do not want your users downloading the application from the public app stores, you will need to build the apps yourself. 
 
-As the apps are an open source project, it will require a fork, and your team will be responsible for maintaining the fork, as well as keeping the fork up to date with any changes made by Mattermost.
+As the apps are an open source project, customization will require a fork, and your team will be responsible for maintaining the fork, as well as keeping the fork up to date with any changes made by Mattermost.
 
 This process can be complicated. It will also greatly increase deployment time, not only initially, but whenever the apps need to be updated. 
 
@@ -184,7 +186,7 @@ Our Hosted Push Notification Service offers:
 
 \* *When using our publicly-available app store applications and the AppConfig standard.*
 
-Of course, if you would like to host your own version of the MPNS, that is always an option but requires a custom built app. The `Choosing the Right Deployment Model <https://docs.google.com/document/d/1BhHla4medUGVSWuBPNuoz_h5f85MdlIQWcRn5N2WUos/edit#heading=h.6zz62c4mus3l>`_ section of this guide, as well as our `Mobile App Admin Documentation <https://docs.mattermost.com/mobile/mobile-hpns.html>`_ are the best places to start.
+Of course, if you would like to host your own version of the MPNS, that is always an option but requires you to built the app. The `Choosing the Right Deployment Model <https://docs.google.com/document/d/1BhHla4medUGVSWuBPNuoz_h5f85MdlIQWcRn5N2WUos/edit#heading=h.6zz62c4mus3l>`_ section of this guide, as well as our `Mobile App Admin Documentation <https://docs.mattermost.com/mobile/mobile-hpns.html>`_ are the best places to start.
 
 ********************************************
 Enterprise Mobile Management (EMM) Providers
@@ -205,7 +207,7 @@ While app wrapping has been widely supported, **it is not recommended**. Further
 AppConfig (Supported) vs. App Wrapping (Not Supported)
 ======================================================
 
-Mattermost only supports the AppConfig standard. It does not support app wrapping. If you proceed with app wrapping, it will lead to an inability to use the mobile app.
+    **Note:** Mattermost only supports the AppConfig standard. It does not support app wrapping. Use app wrapping at your own risks.
 
 So app wrapping isn’t supported, and the AppConfig standard is, but what is the difference between the two?
 
@@ -242,7 +244,7 @@ There is also functionality and compatibility risk. This is a known issue for th
 
 This incompatibility is not an issue with the Mattermost application. It results from the proprietary nature of the provider's tools. To make matters worse, there is no course of action to address compatibility issues.
 
-In the end, this sets app wrapping in a negative light. This is the reason VMWare and other EMM providers came together to create a standard. AppConfig is a modern, efficient, and scalable approach to enterprise mobile management. In that regard, the Mattermost application benefits from being built around this standard.
+In the end, this sets app wrapping in a negative light. This is the reason the [AppConfig Community](https://www.appconfig.org) came together to create a standard. AppConfig is a modern, efficient, and scalable approach to enterprise mobile management. In that regard, the Mattermost application benefits from being built around this standard.
 
 ******************
 Mobile VPN Options
@@ -301,12 +303,11 @@ The mobile applications provided by Mattermost work with our hosted version of t
 - Users enter URL to your hosted Mattermost Server.
 
 **Advantages:** Very easy, mobile deployment can be done by each individual user 
-**Disadvantages:** Less control over user security, no app customization
+**Disadvantages:** No additional EMM security features
 
 **Option 2** - Public App Store Installation with EMM Provider (Easy)
 
-- Users download application via public app stores (e.g. iOS App Store or Google Play)
-- Users enter URL to your hosted Mattermost server
+- The EMM provider pushes the Mattermost app to the EMM enrolled devices
 - Extend your organization’s security best practices/requirements via your EMM provider
 
 **Advantages:** Easy, mobile deployment can be done by each individual user, app security and configuration can be maintained via your EMM provider 
@@ -320,7 +321,7 @@ Distributing Custom Builds of the Mobile Apps
 
 - Maintain full control over the distribution of applications
 - Change the look, feel, and capabilities of the Mattermost mobile application
-- Limit message traffic from passing through the HPNS
+- Use your own MPNS
 
 This model is more difficult, and is recommended for organizations that can't (or don't desire) to use the HPNS. Often security and access requirements determine this, not the size of your organization.
 
@@ -332,7 +333,7 @@ Building the apps can be an involved process. This requires that you have the sk
 - Signing your custom applications
 - Distributing your applications via public or private app stores
 
-Your custom built apps are a fork of the Mattermost project. This means you will be responsible for adding in any feature or security updates.  
+Keeping your custom built apps up to date with features and security updates will be your responsibility.
 
 To understand what’s involved, have your development team `read through our documentation <https://developers.mattermost.com/contribute/mobile/build-your-own/>`_.
 
@@ -371,8 +372,8 @@ EMM providers help extend security parameters to the Mattermost mobile applicati
 
 When going this route, you should consider:
 
-- What is the mobile policy, is it company-owned or BYOD?
-- Do you know what devices will be used if customer-owned?
+- What is the mobile policy, is it company-owned, BYOD or both?
+- Do you know what devices will be used if BYOD?
 - What OS do you want to start with in testing?
 - Creating a sample configuration then run validation tests against each config item
 
@@ -390,7 +391,9 @@ Updating via the Public Store Apps
 
 While not part of your initial mobile deployment, you should consider a strategy for updating when new versions of the Mattermost mobile applications are available. Simultaneously, you should check any compatibility requirements for the mobile apps and the Mattermost server. 
 
-It is often easier to upgrade the mobile apps. However, not all provided updates are compatible with all previous versions of the Mattermost server. 
+It is often easier to upgrade the mobile apps. However, not all provided updates are compatible with all previous versions of the Mattermost server.
+
+Consult the `Mattermost mobile app changelog <https://github.com/mattermost/mattermost-mobile/blob/master/CHANGELOG.md>`_ and `Mattermsot server changelog <https://docs.mattermost.com/administration/changelog.html>`_ for more information.
 
     **Note:** Only updating the mobile apps, or updating the mobile apps before the Mattermost server, can result in incompatibility.
 
@@ -453,9 +456,9 @@ As part of configuring your EMM solution, you should consider:
 - What OS do you want to start with in testing?
 - Creating a sample configuration then run validation tests against each config item
 
-*****************************************
-Configuring the MPNS for Your Custom Apps
-*****************************************
+****************************************************
+Configuring the MPNS for Your Custom Mattermost Apps
+****************************************************
 
 Building and distributing the Mattermost mobile apps requires you to deploy an instance of the MPNS.
 
@@ -473,7 +476,7 @@ The documentation topics listed below guide installation and configuration for y
 Updating Your Custom Mattermost Apps
 ************************************
 
-While not part of your initial mobile deployment, you should consider a strategy for updating when new versions of the Mattermost Mobile applications are available. We highly recommend you update your custom apps for any security or service releases. At the same time, if you have updated the apps, prior to distribution, check any compatibility requirements for the mobile apps and the Mattermost server. 
+While not part of your initial mobile deployment, you should consider a strategy for updating when new versions of the Mattermost Mobile applications are available. We highly recommend you update your custom Mattermost apps for any security or service releases. At the same time, if you have updated the apps, prior to distribution, check any compatibility requirements for the mobile apps and the Mattermost server. 
 
     **Note:** Only updating the mobile apps, or updating the mobile apps before the Mattermost server, can result in incompatibility.
 
