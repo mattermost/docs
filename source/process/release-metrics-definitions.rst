@@ -6,24 +6,33 @@ For https://docs.google.com/spreadsheets/d/1Aoj4OTaWoyrKIcQNiHH1MVoRG51T20Y_0w2t
 Release Output
 ==============
 
-+------------------------------------------+----------------------------------------+
-| Metric                                   | How to Measure                         |
-+==========================================+========================================+
-| Ratio of story-to-bug tickets            | Total of feature tickets over total of |
-|                                          | bug tickets.                           |
-+------------------------------------------+----------------------------------------+
-| Mean time from P1 bug report to delivery |                                        |
-+------------------------------------------+----------------------------------------+
-| Mean time from P2 bug report to delivery |                                        |
-+------------------------------------------+----------------------------------------+
-| Mean time from P3 bug report to delivery |                                        |
-+------------------------------------------+----------------------------------------+
-| Number of P1 bugs reported in production |                                        |
-+------------------------------------------+----------------------------------------+
-| Number of P2 bugs reported in production |                                        |
-+------------------------------------------+----------------------------------------+
-| Number of P3 bugs reported in production |                                        |
-+------------------------------------------+----------------------------------------+
++------------------------------------------+-------------------------------------------+
+| Metric                                   | How to Measure                            |
++==========================================+===========================================+
+| Ratio of story-to-bug tickets            | Total of feature tickets over total of    |
+|                                          | bug tickets.                              |
++------------------------------------------+-------------------------------------------+
+| Mean time from P1 bug report to delivery | Get list of created date and release      |
+|                                          | date for tickets with P1 label resolved   |
+|                                          | for a release and calculate the average.  |
+|                                          | Use formula “=Release Day-Created”.       |
++------------------------------------------+-------------------------------------------+
+| Mean time from P2 bug report to delivery | Get list of created date and release      |
+|                                          | date for tickets with P2 label resolved   |
+|                                          | for a release and calculate the average.  |
+|                                          | Use formula “=Release Day-Created”.       |
++------------------------------------------+-------------------------------------------+
+| Mean time from P3 bug report to delivery | Get list of created date and release      |
+|                                          | date for tickets with P3 label resolved   |
+|                                          | for a release and calculate the average.  |
+|                                          | Use formula “=Release Day-Created”.       |
++------------------------------------------+-------------------------------------------+
+| Number of P1 bugs reported in production | Check "P1" Jira labels.                   |
++------------------------------------------+-------------------------------------------+
+| Number of P2 bugs reported in production | Check "P2" Jira labels.                   |
++------------------------------------------+-------------------------------------------+
+| Number of P3 bugs reported in production | Check "P3" Jira labels.                   |
++------------------------------------------+-------------------------------------------+
 
 Release Management
 =================
@@ -75,7 +84,7 @@ Release Heartbeat
 |                                         | project = Mattermost AND issuetype = Bug AND resolution not in (Duplicate,   |                                         
 |                                         | "Cannot Reproduce", "Won't Fix") AND fixVersion = latestReleasedVersion()    |
 +-----------------------------------------+------------------------------------------------------------------------------+
-| Total valid bugs in fix version found   | Check "Se", "Selenium-found, "Rainforest-found" Jira labels                  |
+| Total valid bugs in fix version found   | Check "Se", "Selenium-found, "Rainforest-found" Jira labels.                 |
 | by test automation                      |                                                                              |
 +-----------------------------------------+------------------------------------------------------------------------------+
 | Total valid bugs found after RC1 is cut | 1. Check Jira timezone + Pre-release timezone and make sure times match      |
