@@ -6,6 +6,13 @@ This document provides easy-to-follow guidelines for determining which software 
 
 Current software requirements are `documented here <https://docs.mattermost.com/install/requirements.html#software-requirements>`__.
 
+Before software requirements are updated in the documentation, the following has to be taken into consideration:
+
+1. Check with Chen in the Analytics channel to see what % of users and what % of posts are made by the versions we’re considering to drop support for, to review potential impact to users.
+2. Ask customer support team if there are known customers on the versions that we're considering dropping.
+3. Ask developers what the impact is for us if we drop or continue support for something.
+4. If we decide to drop support for something, work with PMs and devs to check if the requirements need to be updated elsewhere, including but not limited to, in the product itself (such as the mobile app), Changelogs and README GitHub pages.
+
 Desktop Apps
 ---------------------------------
 
