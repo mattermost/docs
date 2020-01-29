@@ -2269,15 +2269,10 @@ Use New SAML Library
 
 **False**: Continue using the existing implementation which uses the XML Security Library (xmlsec1).
 
-.. code-block:: sh
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseNewSAMLLibrary": false`` with options ``true`` and ``false``.                                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-  "ExperimentalSettings": {
-  "ClientSideCertEnable": false,
-  "ClientSideCertCheck": "secondary",
-  "EnableClickToReply": false,
-  "LinkMetadataTimeoutMilliseconds": 5000,
-  "RestrictSystemAdmin": false,
-  "UseNewSAMLLibrary": true
 
 Enable Login With SAML
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
