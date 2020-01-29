@@ -1,6 +1,8 @@
 Release Metrics Definitions
 ------------------
 
+For https://docs.google.com/spreadsheets/d/1Aoj4OTaWoyrKIcQNiHH1MVoRG51T20Y_0w2tg5oVw-M/edit#gid=825551144
+
 Release Output
 ==============
 
@@ -35,9 +37,9 @@ Release Management
 | resulting in a negative reaction       | reported by CSMs, Support or Product.   |
 |                                        | E.g. features that got pushed.          |
 +----------------------------------------+-----------------------------------------+
-| Number of measurable actions from each | Action items driven from root causes.   |
-| release retrospective completed        |                                         |
-| and reported to R&D                    |                                         |
+| Number of measurable actions from each | Count of completed and reported items   |
+| release retrospective driven from root | from Release Retrospective document.    |
+| causes & completed and reported to R&D |                                         |
 +----------------------------------------+-----------------------------------------+
 | Number of deadlines missed in release  |                                         |
 | checklist                              |                                         |
