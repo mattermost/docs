@@ -31,8 +31,8 @@ Release Management
 | Metric                                 | How to Measure                          |
 +========================================+=========================================+
 | Number of misses in each release cycle | Same as number of bugs reported in      |
-|                                        | production, plus any issues reported in |
-|                                        | documentation or marketing.             |
+|                                        | production, + count of issues reported  |
+|                                        | in documentation or marketing.          |
 |                                        | E.g. dot releases from customer reports,|
 |                                        | undocumented breaking changes.          |
 +----------------------------------------+-----------------------------------------+
