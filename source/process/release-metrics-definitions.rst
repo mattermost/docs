@@ -30,8 +30,11 @@ Release Management
 +----------------------------------------+-----------------------------------------+
 | Metric                                 | How to Measure                          |
 +========================================+=========================================+
-| Number of misses in each release cycle | E.g. dot releases from customer reports,|
-|                                        | undocumented breaking changes           |
+| Number of misses in each release cycle | Same as number of bugs reported in      |
+|                                        | production, plus any issues reported in |
+|                                        | documentation or marketing.             |
+|                                        | E.g. dot releases from customer reports,|
+|                                        | undocumented breaking changes.          |
 +----------------------------------------+-----------------------------------------+
 | Number of setbacks to users/staff      | Manual count of negative reactions      |
 | resulting in a negative reaction       | reported by CSMs, Support or Product.   |
