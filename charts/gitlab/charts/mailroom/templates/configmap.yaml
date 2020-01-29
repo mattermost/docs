@@ -22,9 +22,9 @@ data:
         :delete_after_delivery: true
         :delivery_method: sidekiq
         :expunge_deleted: {{ .expunge_deleted }}
-        {{- if ne .logger.log_path "" }}
+        {{- if ne .logger.logPath "" }}
         :logger:
-          :log_path: "{{ .logger.log_path }}"
+          :log_path: "{{ .logger.logPath }}"
         {{- end }}
         {{- end }}
         :delivery_options:

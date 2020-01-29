@@ -35,7 +35,7 @@ global:
         key: password
       expunge_deleted: true
       logger:
-        log_path: "/dev/stdout"
+        logPath: "/dev/stdout"
       mailbox: inbox
       idleTimeout: 60
 
