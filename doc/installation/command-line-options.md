@@ -66,19 +66,22 @@ to the `helm install` command using the `--set` flags.
 
 ## Incoming Email configuration
 
-| Parameter                                        | Description                                                                                            | Default    |
-|--------------------------------------------------|--------------------------------------------------------------------------------------------------------|------------|
-| `global.appConfig.incomingEmail.address`         | The email address to reference the item being replied to (example: `gitlab-incoming+%{key}@gmail.com`) | empty      |
-| `global.appConfig.incomingEmail.enabled`         | Enable incoming email                                                                                  | false      |
-| `global.appConfig.incomingEmail.host`            | Host for IMAP                                                                                          | empty      |
-| `global.appConfig.incomingEmail.idleTimeout`     | The IDLE command timeout                                                                               | `60`       |
-| `global.appConfig.incomingEmail.mailbox`         | Mailbox where incoming mail will end up.                                                               | `inbox`    |
-| `global.appConfig.incomingEmail.password.key`    | Key in `global.appConfig.incomingEmail.password.secret` that contains the IMAP password                | `password` |
-| `global.appConfig.incomingEmail.password.secret` | Name of a `Secret` containing the IMAP password                                                        | empty      |
-| `global.appConfig.incomingEmail.port`            | Port for IMAP                                                                                          | `993`      |
-| `global.appConfig.incomingEmail.ssl`             | Whether IMAP server uses SSL                                                                           | true       |
-| `global.appConfig.incomingEmail.startTls`        | Whether IMAP server uses StartTLS                                                                      | false      |
-| `global.appConfig.incomingEmail.user`            | Username for IMAP authentication                                                                       | empty      |
+| Parameter                                        | Description                                                                                            | Default     |
+|--------------------------------------------------|--------------------------------------------------------------------------------------------------------|-------------|
+| `global.appConfig.incomingEmail.address`         | The email address to reference the item being replied to (example: `gitlab-incoming+%{key}@gmail.com`) | empty       |
+| `global.appConfig.incomingEmail.enabled`         | Enable incoming email                                                                                  | false       |
+| `global.appConfig.incomingEmail.host`            | Host for IMAP                                                                                          | empty       |
+| `global.appConfig.incomingEmail.idleTimeout`     | The IDLE command timeout                                                                               | `60`        |
+| `global.appConfig.incomingEmail.mailbox`         | Mailbox where incoming mail will end up.                                                               | `inbox`     |
+| `global.appConfig.incomingEmail.password.key`    | Key in `global.appConfig.incomingEmail.password.secret` that contains the IMAP password                | `password`  |
+| `global.appConfig.incomingEmail.password.secret` | Name of a `Secret` containing the IMAP password                                                        | empty       |
+| `global.appConfig.incomingEmail.port`            | Port for IMAP                                                                                          | `993`       |
+| `global.appConfig.incomingEmail.ssl`             | Whether IMAP server uses SSL                                                                           | true        |
+| `global.appConfig.incomingEmail.startTls`        | Whether IMAP server uses StartTLS                                                                      | false       |
+| `global.appConfig.incomingEmail.user`            | Username for IMAP authentication                                                                       | empty       |
+| `global.appConfig.incomingEmail.user`            | Username for IMAP authentication                                                                       | empty       |
+| `global.appConfig.incomingEmail.expungeDeleted`  | Whether to expunge (permanently remove) messages from the mailbox when they are deleted after delivery | false       |
+| `global.appConfig.incomingEmail.logger.logPath`  | Path to write JSON structured logs to; set to "" to disable this logging                               | /dev/stdout |
 
 ## Default Project Features configuration
 
