@@ -474,7 +474,7 @@ Replace these values in the commands below according to your actual configuratio
 
 ```bash
 # Because of https://github.com/helm/helm/issues/2948 we can't rely on --reuse-values, so let's get our current config.
-helm get config mygitlab > mygitlab.yml
+helm get values mygitlab > mygitlab.yml
 # Upgrade Helm installation and configure the registry to be read-only.
 # The --wait parameter makes Helm wait until all ressources are in ready state, so we are safe to continue.
 helm upgrade mygitlab gitlab/gitlab -f mygitlab.yml --set registry.maintenance.readOnly.enabled=true --wait
