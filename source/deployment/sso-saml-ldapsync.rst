@@ -22,7 +22,7 @@ Once the synchronization with AD/LDAP is enabled, user attributes are synchroniz
 1. Add the user to your AD/LDAP server.
 2. Purge all caches in Mattermost in **System Console > Web Server > Purge All Caches** (or **System Console > Configuration > Purge All Caches** in versions prior to 5.12).
 3. Run AD/LDAP sync in **System Console > Authentication > AD/LDAP > AD/LDAP Synchronize Now** (or **System Console > AD/LDAP > AD/LDAP Synchronize Now** in versions prior to 5.12).
-4. Purge all caches again in Mattermost in **System Console > Web Server > Purge All Caches** (or**System Console > Configuration > Purge All Caches** in versions prior to 5.12), which re-activates the account in Mattermost.
+4. Purge all caches again in Mattermost in **System Console > Web Server > Purge All Caches** (or **System Console > Configuration > Purge All Caches** in versions prior to 5.12), which re-activates the account in Mattermost.
 
   .. note::
     If a user is deactivated from AD/LDAP, they will be deactivated in Mattermost on the next sync. They will be shown as "Inactive" in the System Console users list, all of their sessions will expire and they won't be able to log back in to Mattermost.
