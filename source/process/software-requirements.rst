@@ -11,7 +11,7 @@ Before submitting software requirement updates to the documentation, the followi
 1. Check with Chen in `the Analytics channel <https://community.mattermost.com/private-core/pl/qy675c87zbfn7dmzkh919ppmor>`_ to see what % of users and what % of posts are made by the versions we’re considering to drop support for, to review potential impact to users.
 2. For versions we are considering dropping support for, ask the customer support team what the impact is for customers (e.g. if there are known customers on those versions and if we get customer support tickets specific to those versions).
 3. Ask developers what the impact is for us internally if we consider dropping or continuing support for a version.
-4. If we decide to drop support for a version, work with product managers and developers to find out if the requirements need to be updated elsewhere, including but not limited to: in the product itself (such as the mobile app), Changelogs and README GitHub pages.
+4. If we decide to drop support for a version, work with product managers and developers to plan for updating the version information in all relevant place, including but not limited to: in the product itself (such as the mobile app), Changelogs and README GitHub pages.
 
 Desktop Apps
 ---------------------------------
