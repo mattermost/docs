@@ -10,7 +10,8 @@ Release Output
 | Metric                                   | How to Measure                            |
 +==========================================+===========================================+
 | Ratio of story-to-bug tickets            | Total of feature tickets over total of    |
-|                                          | bug tickets.                              |
+|                                          | bug tickets. Include current Quality      |
+|                                          | release and previous feature release.     |
 +------------------------------------------+-------------------------------------------+
 | Mean time from P1 bug report to delivery | Get list of created date and release      |
 |                                          | date for tickets with P1 label resolved   |
