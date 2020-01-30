@@ -54,6 +54,13 @@ entry.
 - Update GitLab Version to 12.7.0.
 
 
+## 2.6.7
+
+### Other (1 change)
+
+- Update GitLab Version to 12.6.6.
+
+
 ## 2.6.6
 
 ### Fixed (1 change)
