@@ -3,9 +3,9 @@
 Troubleshooting
 ===============
 
-This document summarizes common troubleshooting issues and techniques. 
+This document summarizes common troubleshooting issues and techniques.
 
-Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ might be helpful as someone may have experienced the same error in the past. 
+Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ might be helpful as someone may have experienced the same error in the past.
 
 If you're an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_.
 
@@ -22,14 +22,14 @@ Important Notes
 
 General Troubleshooting
 -----------------------
-Some of these suggestions can be done directly, and others may need consultation from your network administrator. 
+Some of these suggestions can be done directly, and others may need consultation from your network administrator.
 
-- Take a look at the logs (``mattermost.log`` and NGINX logs) for errors. 
+- Take a look at the logs (``mattermost.log`` and NGINX logs) for errors.
 - You can also search the error messages online - existing solutions can often be applied.
 - Open **System Console** > **General** > **Logging** and set File Log Level to DEBUG. Make sure to revert to INFO after troubleshooting to save disk space.
 
-Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.  
-    
+Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.
+
 - If the problem occurred subsequent to some period of normal operation, did anything change in the environment?
     - Was the client, host, or server upgraded?
     - Was an operating system update applied?
@@ -40,9 +40,9 @@ Put together a timeline to eliminate events prior to the error/problem occurring
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
     - Do differences exist between the users who are affected and the users who are not affected?
 
-These questions are quite general but should help guide you to a point where the root cause of the problem can be found. If, after following these guidelines, you're still facing the issue, visit the `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__. 
+These questions are quite general but should help guide you to a point where the root cause of the problem can be found. If, after following these guidelines, you're still facing the issue, visit the `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__.
 
-Administration Issues 
+Administration Issues
 -----------------------------
 
 Common System Administration Issues
@@ -64,7 +64,7 @@ After setting up SSO authentication, it is common for the System Administrator t
 Before doing this, the System Administrator needs to change their sign-in method to SSO by doing the following:
 
 1. Sign in to Mattermost using an email and password.
-2. Go to **Account Settings** > **Security** > **Sign-in Method**. 
+2. Go to **Account Settings** > **Security** > **Sign-in Method**.
 3. Click the "Switch" button to select a sign-in method and complete the process provided.
 
 The System Administrator can now turn off email sign-in and still access their account. To avoid locking other existing users out of their accounts, it is recommended the System Administrator ask them to switch authentication methods as well.
@@ -74,7 +74,7 @@ Locked Out of System Administrator Account
 
 If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline>`__.
 
-If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line: 
+If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line:
 
 1. Sign in to the server Mattermost is running on via ``ssh``.
 2. Go to the directory of the Mattermost application. If you've followed our setup process this is ``/opt/mattermost``.
@@ -86,8 +86,15 @@ If email sign-in was turned off before the System Administrator switched sign-in
 
 4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 
-Common SAML Issues 
-~~~~~~~~~~~~~~~~~~
+SAML Issues
+-------------------
+
+Unable to Switch to SAML Authentication Successfully
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+First, ensure you have installed the `XML Security Library <https://www.aleksey.com/xmlsec/download.html>`__ on your Mattermost instance and that **it is available in your** PATH.
+
+Second, ensure you have completed each step of the SAML configuration.
 
 ``An account with that username already exists. Please contact your Administrator.``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -95,7 +102,7 @@ Common SAML Issues
 This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
 This error message can also be received if the `Username Attribute` of their SAML credentials doesn't match the username of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
-  
+
 ``An account with that email already exists. Please contact your Administrator.``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -108,12 +115,145 @@ This error message can also be received if the `Email Attribute` of their SAML c
 
 Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the Identity Provider configuration and in **System Console** > **SAML**.
 
-Unable to Switch to SAML Authentication Successfully
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+System Administrator locks themselves out of the system
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, ensure you have installed the `XML Security Library <https://www.aleksey.com/xmlsec/download.html>`__ on your Mattermost instance and that **it is available in your** PATH.
+If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline>`__.
 
-Second, ensure you have completed each step of the SAML configuration.
+SAML Configuration Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``An error occurred while building Service Provider Metadata.``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This error indicates that the installation does not have an Enterprise license. The error message you receive will look similar to this:
+
+.. code-block:: sh
+     ERRO[2019-12-23T10:04:33.5074-07:00] An error occurred while building Service Provider Metadata.  caller="mlog/log.go:175" err_details="err=Your license does not support SAML authentication." err_where=GetSamlMetadata http_code=501 ip_addr="::1" method=GET path=/api/v4/saml/metadata request_id=fbtsbxzb33f67gn6yuy73asxjw user_id=
+
+To resolve the issue, install an Enterprise License and restart the process.
+
+
+``SAML 2.0 is not configured or supported on this server.``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The error indicates that the installation is using the Mattermost Team Edition. The error message you receive will look similar to this:
+
+.. code-block:: sh
+
+   ERRO[2019-12-23T10:12:56.5884001-07:00] An error occurred while building Service Provider Metadata.  caller="mlog/log.go:175" err_details="err=SAML 2.0 is not configured or supported on this server." err_where=GetSamlMetadata http_code=501 ip_addr="::1" method=GET path=/api/v4/saml/metadata request_id=1c7jrw3fzbggpe9rs83r5ge5fw user_id=
+
+To resolve the issue, install Enterprise Edition and restart the process.
+
+``An error occurred while initiating the request to the Identity Provider. Please contact your System Administrator``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This error message can have multiple causes. The log messages provide more information about the root cause and are provided below, along with a suggested fix.
+
+**Issue: Missing a Certificate File. **
+
+.. code-block:: sh
+
+   ERRO[2019-12-20T17:20:24.3999581-07:00] Identity Provider Public Certificate File was not found. Please contact your System Administrator.  caller="mlog/log.go:175" err_details= err_where=SamlInterfaceImpl.BuildRequest http_code=500 ip_addr="::1" method=GET path=/login/sso/saml request_id=tm9ywzxcbj88dypkhjgg8hideo user_id=
+
+Install the Identity Provider Certificate and restart the process.
+
+**Issue: Missing Service Provider Private Key**
+
+.. code-block:: sh
+
+   ERRO[2019-12-23T08:51:28.423397-07:00] An error occurred while configuring SAML Service Provider  caller="app/enterprise.go:154" error="saml-public.crt: cannot read: failed to get config file saml-private.key: failed to read file from /Users/sbishel/go/src/github.com/mattermost/mattermost-server/config/saml-private.key: open /Users/sbishel/go/src/github.com/mattermost/mattermost-server/config/saml-private.key: no such file or directory"
+
+Install the Service Provider Private Key and restart the process.
+
+**Issue: Missing Service Provider Public Certificate**
+
+.. code-block:: sh
+
+   ERRO[2019-12-23T09:06:27.654774-07:00] An error occurred while configuring SAML Service Provider  caller="app/enterprise.go:154" error="saml-public.crt: cannot read: failed to get config file saml-public.crt: failed to read file from /Users/sbishel/go/src/github.com/mattermost/mattermost-server/config/saml-public.crt: open /Users/sbishel/go/src/github.com/mattermost/mattermost-server/config/saml-public.crt: no such file or directory"
+
+Install the Service Provider Public Certificate and restart the process.
+
+.. note::
+
+   If making adjustments for these errors within System Console, not restart is required. However, if making configuration changes outside System Console, such as moving certificate files to the corrrect path.  A server restart is required.
+
+``SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.``
+
+This error indicates that a required attribute was missing from the assertion received from the Idp provider, check log file for which attribute is missing.
+
+.. code-block:: sh
+
+   ERRO[2019-12-09T21:23:24.506631-07:00] SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.  caller="mlog/log.go:174" err_details="id attribute is missing" err_where=SamlInterfaceLibImpl.DoLogin http_code=302 ip_addr="::1" method=POST path=/login/sso/saml request_id=5bb6uchhm38kxys6rqm8i5p4ow user_id=
+
+To address the issue, update settings on Idp to include the required attribute.
+
+.. note::
+
+   Turning on debug logging will allow the assertion to be logged.
+
+
+``SAML login was unsuccessful because encryption is not enabled. Please contact your System Administrator.``
+
+This error indicates a mismatch between SP Provider (Mattermost) configuration and Idp Provider configuration. The SP
+Provider SAML is configured to expect an unencrypted SAML Assertion but the assertion received was encrypted.
+
+.. code-block:: sh
+
+   ERRO[2019-12-23T10:53:42.332484-07:00] SAML login was unsuccessful because encryption is not enabled. Please contact your System Administrator.  caller="mlog/log.go:175" err_details= err_where=SamlInterfaceImpl.DoLogin http_code=302 ip_addr="::1" method=POST path=/login/sso/saml request_id=63s9b8i7u38nzfeuqyzdbank7h user_id=
+
+To address this issue, turn on encryption and restart the process.
+
+
+``SAML login was unsuccessful as the Identity Provider response is not encrypted. Please contact your System Administrator.``
+
+This error indicates a mismatch between SP Provider (Mattermost) configuration and Idp Provider configuration. The SP
+Provider SAML is configured to expect an unencrypted SAML Assertion but the assertion received was encrypted.
+
+.. code-block:: sh
+
+   ERRO[2019-12-23T10:59:13.486763-07:00] SAML login was unsuccessful as the Identity Provider response is not encrypted. Please contact your System Administrator.  caller="mlog/log.go:175" err_details= err_where=SamlInterfaceImpl.DoLogin http_code=302 ip_addr="::1" method=POST path=/login/sso/saml request_id=j61b8mqpc3n97pgqqeuxupx93y user_id=
+
+``An error occurred while parsing the response from the Identity Provider. Please contact your System Administrator.``
+
+This error is caused by a malformed response or certificate issue, see log file for more information.
+
+.. code-block:: sh
+
+   ERRO[2019-12-23T11:22:16.733242-07:00] An error occurred while parsing the response from the Identity Provider. Please contact your System Administrator.  caller="mlog/log.go:175" err_details="err=illegal base64 data at input byte 15012" err_where=SamlInterfaceImpl.DoLogin http_code=302 ip_addr="::1" method=POST path=/login/sso/saml request_id=uhnbq1objfyqpyqct3sy3fch9y user_id=
+
+``An error occurred while encoding the request for the Identity Provider. Please contact your System Administrator.``
+
+This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not installed or the version of ``xmlsec1`` in use does not accept self-signed certificate.
+
+.. code-block:: sh
+
+   ERRO[2019-12-23T12:42:04.389431-07:00] An error occurred while encoding the request for the Identity Provider. Please contact your System Administrator.  caller="mlog/log.go:175" err_details= err_where=SamlInterfaceImpl.BuildRequest http_code=500 ip_addr="::1" method=GET path=/login/sso/saml request_id=mg4mdc78q3r798y5ierdz5qqdc user_id=
+
+``SAML login was unsuccessful because an error occurred while decrypting the response from the Identity Provider. Please contact your System Administrator``
+
+This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not installed or the version of ``xmlsec1`` in use does not accept self-signed certificate.
+
+.. code-block:: sh
+
+   ERRO[2019-12-23T12:45:45.041627-07:00] SAML login was unsuccessful because an error occurred while decrypting the response from the Identity Provider. Please contact your System Administrator.  caller="mlog/log.go:175" err_details="err=failed to decrypt xml: error invoking xmlsec1: : exec: \"xmlsec1\": executable file not found in $PATH" err_where=SamlInterfaceImpl.DoLogin http_code=302 ip_addr="::1" method=POST path=/login/sso/saml request_id=i7d7kc4hk3ymzneetdbuafz9ca user_id=
+
+``An error occurred while validating the response from the Identity Provider. Please contact your System Administrator.``
+
+Various validation issues. See log message for details
+
+.. code-block:: sh
+
+   ERRO[2019-12-23T13:09:49.171975-07:00] An error occurred while validating the response from the Identity Provider. Please contact your System Administrator.  caller="mlog/log.go:175" err_details="err=unsupported SAML Version" err_where=SamlInterfaceImpl.DoLogin http_code=302 ip_addr="::1" method=POST path=/login/sso/saml request_id=5omhhgei8jr68jba3j4tiwo48c user_id=
+
+**Parameters**
+``unsupported SAML Version``: The assertion xml contains the wrong SAML version, 2.0 supported.
+``missing ID attribute on SAML Response``: The assertion did not contain an ID attribute. Invalid XML received.
+``no signature``: No signature, but signature validation required.
+``invalid signature reference uri``: Invalid signature tag. Invalid XML received.
+``destination mismatch expected: x not y``: ``AssertionConsumerServiceURL`` did not match expected.
+``too soon`` or ``too late``: Assertion ``NotOnOrAfter`` or ``NotBefore`` attribute outside current time.
+
 
 Deployment and Clustering
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -154,7 +294,7 @@ Server Administration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Message appears in blue bar on team site.
--  To check the websocket connection, open the developer console in your browser and view the **Network** panel. If the WebSocket is not connecting properly, you will see a pending WebSocket connection show up in the list. The screenshot below shows an example from Chrome. 
+-  To check the websocket connection, open the developer console in your browser and view the **Network** panel. If the WebSocket is not connecting properly, you will see a pending WebSocket connection show up in the list. The screenshot below shows an example from Chrome.
 .. image:: ../images/websocket.png
 -  **If this issue is reported repeatedly**, the most likely cause is a proxy being misconfigured somewhere in your infrastructure, and possibly stripping headers off of WebSocket communications.
 
@@ -172,7 +312,7 @@ If this issue is reported rarely, in some cases the issue comes from *intermitte
 If only a small number of users have this issue, it could be from intermittent internet access, if almost every user has this issue, it's likely from a misconfiguration of the ``wss`` connection.
 
 ``Cannot connect to the server. Please check your server URL and internet connection.``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This error may appear on some devices when trying to connect to a server that is using an SSL curve that is not supported by the client device.
 
@@ -187,16 +327,16 @@ For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521
 **Note:** Setting multiple curves requires nginx 1.11.0, if you can only set one curve, the most compatible is prime256v1.
 
 ``x509: certificate signed by unknown authority``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This error may appear in server logs when attempting to sign-up when using self-signed certificates to setup SSL, which is not yet supported by Mattermost.
 
-**Solution:** 
+**Solution:**
 
-Set up a load balancer like NGINX `per production install guide <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-with-ssl-and-http-2>`__. The core team is looking into allowing self-signed certificates in the future. 
+Set up a load balancer like NGINX `per production install guide <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-with-ssl-and-http-2>`__. The core team is looking into allowing self-signed certificates in the future.
 
 As a work around, in **System Console** > **Security** > **Connections** set ``Enable Insecure Outgoing Connections`` to ``true``.
-   
+
 This will allow insecure TLS connections, but be careful in doing so as it also opens your Mattermost site to man-in-the-middle attacks.
 
 ``panic: runtime error: invalid memory address or nil pointer dereference``
@@ -204,7 +344,7 @@ This will allow insecure TLS connections, but be careful in doing so as it also 
 
 This error can occur if you have manually manipulated the Mattermost database, typically with deletions. Mattermost is designed to serve as a searchable archive, and manual manipulation of the database elements compromises integrity and may prevent upgrade.
 
-**Solution:** 
+**Solution:**
 
 Restore from database backup created prior to manual database updates, or reinstall the system.
 
@@ -254,19 +394,19 @@ This error can occur if you're using multiple URLs to reach Mattermost via proxy
 3. If you're doing reverse proxy with IIS, upgrade to IIS 8.0 or later and enable WebSockets. For more information, see `IIS 8.0 WebSocket Protocol Support <https://www.iis.net/learn/get-started/whats-new-in-iis-8/iis-80-websocket-protocol-support>`__.
 
 ``Websocket closed`` or ``Websocket re-established connection``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This alert can appear every few seconds in the Desktop application or web browser connected to Mattermost.
 
 **Solution:**
 
-If you are using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, if it's significantly lower it will cause an undesireable websocket disconnections. 
+If you are using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, if it's significantly lower it will cause an undesireable websocket disconnections.
 
-If you are using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``. 
+If you are using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``.
 
 
 ``context deadline exceeded``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This error appears when a request from Mattermost to another system, such as an Elasticsearch server, experiences a connection timeout.
 
@@ -318,7 +458,7 @@ Please note that the apps cannot connect to servers with self-signed certificate
 Login with ADFS/Office365 is Not Working
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
+In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
 The “Connecting…” Bar Doesn't Clear
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -365,7 +505,7 @@ You can set up an internal server to proxy the connection out of their network t
 
 Configuration Issues
 ---------------------
-In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost. 
+In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost.
 
 - See detailed client software requirements for PC, mobile, and email.
 - See detailed server software requirements for operating system and database.
@@ -373,7 +513,7 @@ In some cases, the configuration from the product’s website differs from the M
 - Have you made any changes to the default settings in the System Console (or in ``config.json`` file)?
 - What device (webapp, desktop app), browser, and operating system (Windows, Mac, etc.) are you using?
 - Confirm that the SSL/TLS certificate was installed successfully by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
-- Look for JavaScript errors in the Chrome developer console: Open the Chrome menu in the top-right of the browser window and select **More Tools** > **Developer Tools**. 
+- Look for JavaScript errors in the Chrome developer console: Open the Chrome menu in the top-right of the browser window and select **More Tools** > **Developer Tools**.
 
 Integrations
 ~~~~~~~~~~~~
