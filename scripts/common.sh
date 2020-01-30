@@ -19,7 +19,7 @@ function need_kubectl(){
 }
 
 function need_helm(){
-  need_tool "helm" "https://github.com/kubernetes/helm/blob/master/docs/install.md"
+  need_tool "helm" "https://github.com/helm/helm/#install"
 }
 
 function need_eksctl(){
