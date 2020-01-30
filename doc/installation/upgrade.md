@@ -141,6 +141,8 @@ We will perform the migrations for the Database in a later step for the bundled 
 
 NOTE: **Note:** If you are not using the bundled PostgreSQL chart (`postgresql.install` is false), you do not need to perform this step.
 
+NOTE: **Note:** You'll need to be using Bash 4.0 or above to run the script successfully as it requires the use of bash associative arrays.
+
 1. Wait for the upgrade to complete for the task-runner pod. RELEASE_NAME should be the name of the GitLab release from `helm list`
 
    ```shell
