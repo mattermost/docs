@@ -70,7 +70,7 @@ The System Administrator can now turn off email sign-in and still access their a
 Locked Out of System Administrator Account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline>`__.
+If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <https://docs.mattermost.com/deployment/on-boarding.html#common-tasks>`__.
 
 If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line:
 
@@ -97,7 +97,7 @@ Second, ensure you have completed each step of the SAML configuration.
 System Administrator locks themselves out of the system
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline>`__.
+If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <https://docs.mattermost.com/deployment/on-boarding.html#common-tasks>`__.
 
 ``An account with that username already exists. Please contact your Administrator.``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -125,6 +125,7 @@ Confirm all attributes, including `Email Attribute` and `Username Attribute`, ar
 This error indicates that the installation does not have an Enterprise license. The error message you receive will look similar to this:
 
 .. code-block:: sh
+
      ERRO[2019-12-23T10:04:33.5074-07:00] An error occurred while building Service Provider Metadata.  caller="mlog/log.go:175" err_details="err=Your license does not support SAML authentication." err_where=GetSamlMetadata http_code=501 ip_addr="::1" method=GET path=/api/v4/saml/metadata request_id=fbtsbxzb33f67gn6yuy73asxjw user_id=
 
 To resolve the issue, install an Enterprise License and restart the process.
@@ -158,7 +159,7 @@ Install the Identity Provider Certificate and restart the process.
 
 .. code-block:: sh
 
-   ERRO[2019-12-23T08:51:28.423397-07:00] An error occurred while configuring SAML Service Provider  caller="app/enterprise.go:154" error="saml-public.crt: cannot read: failed to get config file saml-private.key: failed to read file from /Users/sbishel/go/src/github.com/mattermost/mattermost-server/config/saml-private.key: open /Users/sbishel/go/src/github.com/mattermost/mattermost-server/config/saml-private.key: no such file or directory"
+   ERRO[2019-12-23T08:51:28.423397-07:00] An error occurred while configuring SAML Service Provider  caller="app/enterprise.go:154" error="saml-public.crt: cannot read: failed to get config file saml-private.key: failed to read file from .../mattermost-server/config/saml-private.key: open .../mattermost-server/config/saml-private.key: no such file or directory"
 
 Install the Service Provider Private Key and restart the process.
 
@@ -166,13 +167,13 @@ Install the Service Provider Private Key and restart the process.
 
 .. code-block:: sh
 
-   ERRO[2019-12-23T09:06:27.654774-07:00] An error occurred while configuring SAML Service Provider  caller="app/enterprise.go:154" error="saml-public.crt: cannot read: failed to get config file saml-public.crt: failed to read file from /Users/sbishel/go/src/github.com/mattermost/mattermost-server/config/saml-public.crt: open /Users/sbishel/go/src/github.com/mattermost/mattermost-server/config/saml-public.crt: no such file or directory"
+   ERRO[2019-12-23T09:06:27.654774-07:00] An error occurred while configuring SAML Service Provider  caller="app/enterprise.go:154" error="saml-public.crt: cannot read: failed to get config file saml-public.crt: failed to read file from .../mattermost-server/config/saml-public.crt: open .../mattermost-server/config/saml-public.crt: no such file or directory"
 
 Install the Service Provider Public Certificate and restart the process.
 
 .. note::
 
-   If making adjustments for these errors within System Console, not restart is required. However, if making configuration changes outside System Console, such as moving certificate files to the corrrect path.  A server restart is required.
+   If making adjustments for these errors within System Console, no restart is required. However, if making configuration changes outside System Console, such as moving certificate files to the corrrect path, a server restart is required.
 
 ``SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
