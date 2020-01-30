@@ -76,6 +76,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where verification emails were still being sent on servers with SMTP configured when`Enable Email Notifications` and `Require Email Verification` were disabled in the System Console.
  - Fixed an issue where guest account creation erroneously considered the global list of whitelisted domains.
  - Fixed an issue where inviting multiple users with valid and invalid emails caused the invites for the valid users not to be sent.
+ - Fixed an issue where option to invite users by email was displayed even if email invitations were disabled.
  - Fixed an issue where the channel drop-down **Leave Channel** failed to leave the channel on a server with a subpath.
  - Fixed an issue where opening the right-hand sidebar placed focus in the Search box instead of the Text box.
  - Fixed an issue where **Customization > Site Name** help text didn't match text field behavior.
