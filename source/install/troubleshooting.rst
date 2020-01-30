@@ -236,7 +236,7 @@ This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not instal
 ``SAML login was unsuccessful because an error occurred while decrypting the response from the Identity Provider. Please contact your System Administrator``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not installed or the version of ``xmlsec1`` in use does not accept self-signed certificate.
+This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not installed or the version of ``xmlsec1`` in use does not accept self-signed certificates.
 
 .. code-block:: sh
 
@@ -252,12 +252,18 @@ This error message applies to various validation issues. The log message provide
    ERRO[2019-12-23T13:09:49.171975-07:00] An error occurred while validating the response from the Identity Provider. Please contact your System Administrator.  caller="mlog/log.go:175" err_details="err=unsupported SAML Version" err_where=SamlInterfaceImpl.DoLogin http_code=302 ip_addr="::1" method=POST path=/login/sso/saml request_id=5omhhgei8jr68jba3j4tiwo48c user_id=
 
 **Parameters**
-``unsupported SAML Version``: The assertion xml contains the wrong SAML version, 2.0 supported.
-``missing ID attribute on SAML Response``: The assertion did not contain an ID attribute. Invalid XML received.
-``no signature``: No signature, but signature validation required.
-``invalid signature reference uri``: Invalid signature tag. Invalid XML received.
-``destination mismatch expected: x not y``: ``AssertionConsumerServiceURL`` did not match expected.
-``too soon`` or ``too late``: Assertion ``NotOnOrAfter`` or ``NotBefore`` attribute outside current time.
+
+- ``unsupported SAML Version``: The assertion xml contains the wrong SAML version, 2.0 supported.
+
+- ``missing ID attribute on SAML Response``: The assertion did not contain an ID attribute. Invalid XML received.
+
+- ``no signature``: No signature, but signature validation required.
+
+- ``invalid signature reference uri``: Invalid signature tag. Invalid XML received.
+
+- ``destination mismatch expected: x not y``: ``AssertionConsumerServiceURL`` did not match expected.
+
+- ``too soon`` or ``too late``: Assertion ``NotOnOrAfter`` or ``NotBefore`` attribute outside current time.
 
 
 Deployment and Clustering
