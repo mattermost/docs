@@ -120,7 +120,7 @@ Confirm all attributes, including `Email Attribute` and `Username Attribute`, ar
 
 
 ``An error occurred while building Service Provider Metadata.``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error indicates that the installation does not have an Enterprise license. The error message you receive will look similar to this:
 
@@ -131,7 +131,7 @@ To resolve the issue, install an Enterprise License and restart the process.
 
 
 ``SAML 2.0 is not configured or supported on this server.``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The error indicates that the installation is using the Mattermost Team Edition. The error message you receive will look similar to this:
 
@@ -142,7 +142,7 @@ The error indicates that the installation is using the Mattermost Team Edition. 
 To resolve the issue, install Enterprise Edition and restart the process.
 
 ``An error occurred while initiating the request to the Identity Provider. Please contact your System Administrator``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error message can have multiple causes. The log messages provide more information about the root cause and are provided below, along with a suggested fix.
 
@@ -175,7 +175,7 @@ Install the Service Provider Public Certificate and restart the process.
    If making adjustments for these errors within System Console, not restart is required. However, if making configuration changes outside System Console, such as moving certificate files to the corrrect path.  A server restart is required.
 
 ``SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error indicates that a required attribute was missing from the assertion received from the Idp provider, check log file for which attribute is missing.
 
@@ -191,7 +191,7 @@ To address the issue, update settings on Idp to include the required attribute.
 
 
 ``SAML login was unsuccessful because encryption is not enabled. Please contact your System Administrator.``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error indicates a mismatch between SP Provider (Mattermost) configuration and Idp Provider configuration. The SP
 Provider SAML is configured to expect an unencrypted SAML assertion but the assertion received was encrypted.
@@ -204,7 +204,7 @@ To address this issue, turn on encryption and restart the process.
 
 
 ``SAML login was unsuccessful as the Identity Provider response is not encrypted. Please contact your System Administrator.``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error indicates a mismatch between SP Provider (Mattermost) configuration and Idp Provider configuration. The SP
 Provider SAML is configured to expect an unencrypted SAML Assertion but the assertion received was encrypted.
@@ -216,7 +216,7 @@ Provider SAML is configured to expect an unencrypted SAML Assertion but the asse
 To address this issue, turn on encryption and restart the process.
 
 ``An error occurred while parsing the response from the Identity Provider. Please contact your System Administrator.``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error is caused by a malformed response or certificate issue, see log file for more information.
 
@@ -225,7 +225,7 @@ This error is caused by a malformed response or certificate issue, see log file 
    ERRO[2019-12-23T11:22:16.733242-07:00] An error occurred while parsing the response from the Identity Provider. Please contact your System Administrator.  caller="mlog/log.go:175" err_details="err=illegal base64 data at input byte 15012" err_where=SamlInterfaceImpl.DoLogin http_code=302 ip_addr="::1" method=POST path=/login/sso/saml request_id=uhnbq1objfyqpyqct3sy3fch9y user_id=
 
 ``An error occurred while encoding the request for the Identity Provider. Please contact your System Administrator.``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not installed or the version of ``xmlsec1`` in use does not accept self-signed certificate.
 
@@ -234,7 +234,7 @@ This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not instal
    ERRO[2019-12-23T12:42:04.389431-07:00] An error occurred while encoding the request for the Identity Provider. Please contact your System Administrator.  caller="mlog/log.go:175" err_details= err_where=SamlInterfaceImpl.BuildRequest http_code=500 ip_addr="::1" method=GET path=/login/sso/saml request_id=mg4mdc78q3r798y5ierdz5qqdc user_id=
 
 ``SAML login was unsuccessful because an error occurred while decrypting the response from the Identity Provider. Please contact your System Administrator``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not installed or the version of ``xmlsec1`` in use does not accept self-signed certificate.
 
@@ -243,7 +243,7 @@ This error indicates an issue with ``xmlsec1``; either ``xmlsec1`` is not instal
    ERRO[2019-12-23T12:45:45.041627-07:00] SAML login was unsuccessful because an error occurred while decrypting the response from the Identity Provider. Please contact your System Administrator.  caller="mlog/log.go:175" err_details="err=failed to decrypt xml: error invoking xmlsec1: : exec: \"xmlsec1\": executable file not found in $PATH" err_where=SamlInterfaceImpl.DoLogin http_code=302 ip_addr="::1" method=POST path=/login/sso/saml request_id=i7d7kc4hk3ymzneetdbuafz9ca user_id=
 
 ``An error occurred while validating the response from the Identity Provider. Please contact your System Administrator.``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error message applies to various validation issues. The log message provides more information about the cause of the issue.
 
