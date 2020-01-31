@@ -139,6 +139,7 @@ Learn how to maintain your Mattermost system.
    :glob:
 
    /administration/command*
+   /administration/mmctl-cli-tool.rst
    /administration/scripts*
    /administration/statistics.md
    /integrations/net-promoter-score*
