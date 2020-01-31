@@ -2,6 +2,17 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 3.0.3
+
+### Fixed (1 change)
+
+- Workhorse - set sentinel port default. !1135
+
+### Other (1 change)
+
+- Update GitLab Version to 12.7.5.
+
+
 ## 3.0.2
 
 ### Changed (1 change)
