@@ -155,10 +155,18 @@ You’re now about to finish configuring SAML for Mattermost!
 Configure SAML Sign-in for Mattermost
 --------------------------------------
 
-1. Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
+Create a metadata URL by appending "FederationMetadata/2007-06/FederationMetadata.xml" to the root URL of the ADFS server, for example: ``https://<adfs.domain.com>/federationmetadata/2007-06/FederationMetadata.xml>``. 
+
+Next, start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**, paste metadata URL in the **Identity Provider Metadata URL** field, and then select **Get SAML Metadata from IdP**.
+
+This populates the **SAML SSO URL** and the **Identity Provider Issuer URL** fields automatically and the Identity Provider Public Certificate is also downloaded from the server and set locally.
+
+The following fields can be selected: 
   - Set **Enable Login With SAML 2.0** to ``true``.
   - Set **Enable Synchronizing SAML Accounts With AD/LDAP** to suit your environment.
   - Set **Override SAML bind data with AD/LDAP information** to suit your environment.
+
+If you don't plan to use a metadata URL you can manually enter the following fields:
   - For **SAML SSO URL** use the ``SAML 2.0/W-Federation URL ADFS Endpoint`` you copied at the beginning of the process.
   - For **Identity Provider Issuer URL** use the ``Relying party trust identifier`` from ADFS.
   - For **Identity Provider Public Certificate** use  the``X.509 Public Certificate``. 
@@ -188,7 +196,6 @@ For Mattermost servers running 3.3 and earlier, the first name and last name att
 5. Click **Save**.
 
 6. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > Site Configuration > Users and Teams** (or **System Console > General > Users and Teams** in versions prior to 5.12) and set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
-
 
 You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
 
