@@ -266,6 +266,9 @@ global:
       password:
         secret: ""
         key: password
+      expungeDeleted: false
+      logger:
+        logPath: "/dev/stdout"
       mailbox: inbox
       idleTimeout: 60
 

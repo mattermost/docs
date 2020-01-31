@@ -1,0 +1,5 @@
+---
+title: "Enable structured logging from mail_room, to stdout for standard capture"
+merge_request: 1123
+author:
+type: added
