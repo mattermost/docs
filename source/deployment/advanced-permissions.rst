@@ -30,7 +30,6 @@ You can set the default permissions granted to System Admins, Team Admins, Chann
 - **All Members:** Permissions apply to all members, including Admins, in all channels, in all teams. 
 - **Channel Administrators:** Permissions apply to all Channel Admins in all channels, in all teams.
 - **Team Administrators:** Permissions apply to all Team Admins, in all teams.
-- **Guests:** Permissions granted to users with the Guest role, in all channels and teams. 
 
 To override the System Scheme default permissions in a specific team, you must set up a Team Override Scheme.
 
@@ -91,14 +90,13 @@ Example: In Team A, only allow Team and System Admins to add new team members. A
 3. In the **All Members > Teams** panel, check the box for **Add Team Members**. This sets the system default for all teams.
 4. Choose **Save**. 
 5. Select the back arrow to return to the **Permission Schemes** menu. 
-
-1. Select **New Team Override Scheme**.
+6. Select **New Team Override Scheme**.
   i. Name and describe the scheme. For example, ``Authorized Personnel Only`` with description ``Restrict adding team members to Team and System Admins.``
   ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, and choose **Add**.
   iii. In the **All Members** panel, uncheck the box for **Add Team Members**.
   iv. In the **Team Administrators** panel, check the box for **Add Team Members**. 
-2. Choose **Save**. 
-3. Select the back arrow to return to the **Permission Schemes** menu. 
+7. Choose **Save**. 
+8. Select the back arrow to return to the **Permission Schemes** menu. 
 
 
 Public and Private Channel Management
