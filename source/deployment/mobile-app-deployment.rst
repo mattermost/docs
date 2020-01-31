@@ -20,7 +20,7 @@ It will not include technical implementation guidance. Links to relevant documen
 
 By the end of this guide you should have an understanding of the high-level requirements for a successful Mattermost mobile deployment. 
 
-Including but not limited to:
+This includes:
 
 - Choosing how to obtain and distribute the Mattermost mobile applications
 - Determining the ideal mobile deployment model for your organization
@@ -33,9 +33,9 @@ Support
 If at any point you need additional help, we’re ready to assist, just reach out using the methods below.
 
 **Community**
-    Our entire team is active within our `public instance of Mattermost <https://community.mattermost.com>`_, plus you’ll have the support of one of the best open source communities around.
+    Our entire team is active within the `public instance of Mattermost <https://community.mattermost.com>`_, plus you’ll have the support of one of the best open source communities around.
 **Documentation**
-    We link to a lot of `mobile-specific documentation <https://docs.mattermost.com/mobile/mobile-overview.html>`_ within this guide, but we encourage  you to check `all of our documentation <https://docs.mattermost.com/>`_.
+    We link to a lot of `mobile-specific documentation <https://docs.mattermost.com/mobile/mobile-overview.html>`_ within this guide, but we encourage you to check `all of our documentation <https://docs.mattermost.com/>`_.
 **Forums**
     For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`_ with steps to reproduce your issue.
 **GitHub**
@@ -84,7 +84,7 @@ Below, we’ve added some key questions to ask yourself, your team, and any othe
 
 We recommend setting at least one, achievable and time-based outcome.
 
-At the same time, you should begin thinking about technical and security requirements. A great place to start is with an implementation plan. So, feel free to `use our template available <https://docs.mattermost.com/getting-started/implementation_plan.html>`_ in the Mattermost documentation. Also, begin by engaging with your technical and security questions like those below.
+At the same time, you should begin thinking about technical and security requirements. A great place to start is with an implementation plan. So, feel free to `use our template available <https://docs.mattermost.com/getting-started/implementation_plan.html>`_ in the Mattermost documentation. Also, begin by engaging with your technical and security teams with questions like those below.
 
 - Are there any known security or access requirements?
 - Is a VPN connection required?
@@ -106,7 +106,7 @@ This primer serves as an introduction to Mattermost mobile technologies. It is a
 
 - Technical Requirements
 - Basic Features and Technologies
-- Trouble Spots
+- Troubleshooting
 
 Regardless of your expertise, we recommend reading this section before starting your deployment.
 
@@ -115,10 +115,10 @@ Technical Requirements
 **********************
 
 `Supported Mattermost Server Versions <https://github.com/mattermost/mattermost-mobile/blob/master/CHANGELOG.md>`_ 
-    Minimum requirements for the Mattermost Server is maintained in our documentation (link above). 
+    Minimum requirements for the Mattermost Server are maintained in our documentation (link above). 
     **However, we do recommend running the latest version** of the Mattermost Server as it contains the most recent features and any applicable security updates.
 
-    If this is not possible, we encourage you to be on at least version 5.12 of the Mattermost Server. This release has a number of critical feature updates that will ensure compatibility in a number of areas, including the Mattermost push notification service (MPNS).
+    If this is not possible, we encourage you to be on the most recent `Extended Service Release version <https://docs.mattermost.com/administration/extended-support-release.html>`_ of the Mattermost Server. This release has a number of critical feature updates that will ensure compatibility in a number of areas, including the Mattermost push notification service (MPNS).
 
 `Supported Devices/Mobile Device Requirements <https://docs.mattermost.com/install/requirements.html#mobile-apps>`_
     Basic mobile device requirements are provided in the link above.
@@ -134,10 +134,10 @@ The most critical decision you will make in your mobile deployment will be wheth
 Public App Store
 ================
 
-Utilizing the app distributed by Mattermost in Google play and the Apple App Store greatly reduces the deployment time and is our recommended approach. Key benefits include:
+Utilizing the app distributed by Mattermost in Google Play and the Apple App Store greatly reduces the deployment time and is our recommended approach. Key benefits include:
 
 - Easier deployment, driven by user needs.
-- Ability to use the Mattermost Push Notification Service, or MPNS.
+- Ability to use the Hosted Push Notification Service, or HPNS.
 - Apps automatically updated with the latest features, enhancements and security updates.
 
 Again, this is the recommended route which is as simple as downloading the Mattermost mobile application from the corresponding store, entering a URL to point towards your Mattermost server, and logging in.
@@ -153,8 +153,8 @@ This process can be complicated. It will also greatly increase deployment time, 
 
 We recommend having your development team take a look at the documentation to ensure they understand the scale and requirements of this path. In general, this route will present some challenges, including:
 
-- Obtaining/providing certificates for your custom application
-- Signing your custom applications
+- Obtaining/providing certificates for your custom Mattermost application
+- Signing your custom Mattermost applications
 - Distributing your applications via public or private app stores
 
 *******************************************
@@ -167,7 +167,7 @@ It also represents a return on your deployment investment through better-connect
 
 A push proxy is a key technology behind notification transmission. It enables notifications between the server and the mobile application.
 
-Mattermost provides a self-hosted Push Proxy you can deploy, the Mattermost Push Notification Service (MPNS). This is also available via a hosted-by-Mattermost option, or Hosted Push Notification Service (HPNS)*.
+Mattermost provides a self-hosted Push Proxy you can deploy, the Mattermost Push Notification Service (MPNS). This is also available via a hosted-by-Mattermost option, or Hosted Push Notification Service (HPNS).
 
     **Note:** `Only Mattermost Enterprise Edition E10 <https://about.mattermost.com/pricing/>`_ or higher to receive access to our Hosted Push Notification Service (HPNS)
 
@@ -175,7 +175,7 @@ If you will be using the Mattermost applications via Google Play and Apple App S
 
 Our Hosted Push Notification Service offers:
 
-- Access to a publicly-hosted Mattermost Push Notification Service (MPNS).
+- Access to a publicly-hosted Hosted Push Notification Service (HPNS).
 - An explicit `privacy policy <https://about.mattermost.com/hpns-privacy/>`_ for the contents of unencrypted messages.
 - Encrypted TLS connections:
     - between HPNS and Apple Push Notification Services
@@ -186,7 +186,7 @@ Our Hosted Push Notification Service offers:
 
 \* *When using our publicly-available app store applications and the AppConfig standard.*
 
-Of course, if you would like to host your own version of the MPNS, that is always an option but requires you to built the app. The `Choosing the Right Deployment Model <https://docs.google.com/document/d/1BhHla4medUGVSWuBPNuoz_h5f85MdlIQWcRn5N2WUos/edit#heading=h.6zz62c4mus3l>`_ section of this guide, as well as our `Mobile App Admin Documentation <https://docs.mattermost.com/mobile/mobile-hpns.html>`_ are the best places to start.
+Of course, if you would like to host your own version of the MPNS, that is always an option but requires you to build the mattermost app yourself. The `Choosing the Right Deployment Model <https://docs.google.com/document/d/1BhHla4medUGVSWuBPNuoz_h5f85MdlIQWcRn5N2WUos/edit#heading=h.6zz62c4mus3l>`_ section of this guide, as well as our `Mobile App Admin Documentation <https://docs.mattermost.com/mobile/mobile-hpns.html>`_ are the best places to start.
 
 ********************************************
 Enterprise Mobile Management (EMM) Providers
@@ -198,7 +198,7 @@ Most large enterprise teams are familiar with `Enterprise Mobile Management <htt
 
 For those taking on larger deployments, we assume you are already using an EMM provider.
 
-AppConfig is newer, more modern approach when compared to App Wrapping.
+AppConfig is newer, more modern approach when compared to the previous standard, App Wrapping.
 
 We’ll say it several times throughout this guide, and in the next section. If you are using an EMM provider, the only supported path is via AppConfig.
 
@@ -310,7 +310,7 @@ The mobile applications provided by Mattermost work with our hosted version of t
 - The EMM provider pushes the Mattermost app to the EMM enrolled devices
 - Extend your organization’s security best practices/requirements via your EMM provider
 
-**Advantages:** Easy, mobile deployment can be done by each individual user, app security and configuration can be maintained via your EMM provider 
+**Advantages:** Easy, mobile deployment happens automatically to enrolled devices, app security and configuration can be maintained via your EMM provider 
 **Disadvantages:** No app customization
 
 *********************************************
@@ -321,7 +321,7 @@ Distributing Custom Builds of the Mobile Apps
 
 - Maintain full control over the distribution of applications
 - Change the look, feel, and capabilities of the Mattermost mobile application
-- Use your own MPNS
+- Deploy your own MPNS to meet specific organizational requirements
 
 This model is more difficult, and is recommended for organizations that can't (or don't desire) to use the HPNS. Often security and access requirements determine this, not the size of your organization.
 
@@ -329,8 +329,8 @@ Both Google and Apple require signatures of the application and push proxy to ma
 
 Building the apps can be an involved process. This requires that you have the skillset to maintain and deploy packaged apps. Part of this process includes, but is not limited to:
 
-- Obtaining/providing certificates for your custom application
-- Signing your custom applications
+- Obtaining/providing certificates for your custom Mattermost application
+- Signing your custom Mattermost applications
 - Distributing your applications via public or private app stores
 
 Keeping your custom built apps up to date with features and security updates will be your responsibility.
@@ -391,6 +391,12 @@ Updating via the Public Store Apps
 
 While not part of your initial mobile deployment, you should consider a strategy for updating when new versions of the Mattermost mobile applications are available. Simultaneously, you should check any compatibility requirements for the mobile apps and the Mattermost server. 
 
+For example we recommend you:
+- Check the compatibility requirements
+- Validate versions connecting to server
+- Update server
+- Update apps
+
 It is often easier to upgrade the mobile apps. However, not all provided updates are compatible with all previous versions of the Mattermost server.
 
 Consult the `Mattermost mobile app changelog <https://github.com/mattermost/mattermost-mobile/blob/master/CHANGELOG.md>`_ and `Mattermsot server changelog <https://docs.mattermost.com/administration/changelog.html>`_ for more information.
@@ -433,7 +439,6 @@ Option 2 - Apple App Store & Google Play (less common):
 - To submit an app to the official app stores, you need to submit the app to Apple/Google for review
 - This is the same process Mattermost uses make the apps available for everyone.
 - This process is more common if you are looking to white label the app to remove Mattermost branding
-- This is not the typical approach
 
 ******************************************************
 Using an EMM Provider with Your Custom Mattermost Apps
@@ -441,7 +446,7 @@ Using an EMM Provider with Your Custom Mattermost Apps
 
 If you will be using an EMM provider, note that Mattermost does not support App Wrapping. Instead we use the AppConfig standard.
 
-In some instances, there is an incompatibility with App Wrapping and React Native Applications. React Native is the technology used to develop the Mattermost mobile applications. The Mattermost mobile app will not function properly when using app wrapping.
+In some instances, there is an incompatibility with App Wrapping and React Native Applications. React Native is the technology used to develop the Mattermost mobile applications. The Mattermost mobile app will not function properly when using app wrapping. In fact, a majority of the app wrappers EMMs provide do not support WebSocket connections.
 
 Though app wrapping was common practice, the AppConfig standard is replacing this approach. App wrapping is still often an option during the EMM configuration. Again, AppConfig is the modern standard used by Mattermost. It is the only supported method for securing Mattermost mobile applications via an EMM provider.
 
@@ -451,8 +456,8 @@ AppConfig options will vary by EMM Provider and the associated device. You can r
 
 As part of configuring your EMM solution, you should consider:
 
-- What is the mobile policy, is it company-owned or BYOD?
-- Do you know what devices will be used if customer-owned?
+- What is the mobile policy, is it company-owned, BYOD or both?
+- Do you know what devices will be used if BYOD?
 - What OS do you want to start with in testing?
 - Creating a sample configuration then run validation tests against each config item
 
@@ -503,7 +508,6 @@ Corporate Proxy Servers
 
 `How do I receive mobile push notification if my IT policy requires the use of a corporate proxy server? <https://docs.mattermost.com/mobile/mobile-faq.html#how-do-i-receive-mobile-push-notification-if-my-it-policy-requires-the-use-of-a-corporate-proxy-server>`_
 
-- `Deploy Mattermost in a proxy-aware configuration with a pre-proxy relay <https://docs.mattermost.com/mobile/mobile-faq.html#deploy-mattermost-in-a-proxy-aware-configuration-with-a-pre-proxy-relay>`_
 - `Deploy Mattermost with connection restricted post-proxy relay in DMZ or a trusted cloud environment <https://docs.mattermost.com/mobile/mobile-faq.html#deploy-mattermost-with-connection-restricted-post-proxy-relay-in-dmz-or-a-trusted-cloud-environment>`_
 - `Whitelist Mattermost push notification proxy to bypass your corporate proxy server <https://docs.mattermost.com/mobile/mobile-faq.html#whitelist-mattermost-push-notification-proxy-to-bypass-your-corporate-proxy-server>`_
 - `Run App Store versions of the Mattermost mobile apps <https://docs.mattermost.com/mobile/mobile-faq.html#run-app-store-versions-of-the-mattermost-mobile-apps>`_
