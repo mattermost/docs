@@ -84,6 +84,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where the option to mark posts as unread was unexpectedly available when viewing archived channels.
  - Fixed an issue where emoji reactions shifted down a few pixels after clicking.
  - Fixed an issue where pasting code from GitHub resulted in broken markup and loss of text.
+ - Fixed an issue where importing theme colours from Slack gave an error.
  - Fixed an issue where navigating to a plugin configuration page in the System Console for a deleted plugin returned a `Not Found` error.
  - Fixed an issue where scroll bar was missing on the welcome tutorial screen in web mobile view.
 
