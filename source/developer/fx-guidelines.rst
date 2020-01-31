@@ -276,7 +276,7 @@ Display: Instructions
 
 Instructions, such as “A password reset link has been sent to ``you@email.com`` for your account. Please check your inbox.”, should be displayed as sentences ending in periods. One-line links, such as “Find it here”, should not end in periods or commas, but question marks are okay.
 
-Instructions containing a link to an external resource (ie: a blog article or docs.mattermost.com), should not be hard-coded. A redirect page from mattermost.com should be used in product instructions. Redirect pages should be formatted as ``https://mattermost.com/default-[SUBJECT]``. An mattermost.com page can be requested from the Product team at Mattermost.
+Instructions that contain a link to an external resource (e.g.: a blog article or docs.mattermost.com), should link to a redirect page and not be hard-coded. Redirect pages should be formatted as ``https://mattermost.com/default-[SUBJECT]``. A mattermost.com page can be requested from the Product team at Mattermost.
 
     **Example:**
 
