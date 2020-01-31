@@ -16,7 +16,7 @@ Advanced permissions offer Admins a way to restrict actions in Mattermost to aut
 Permissions Structure
 ----------------------
 
-The Mattermost System Console user interface provides a number of elements for Admins to control the permissions in their system.
+The Mattermost System Console provides a number of elements for Admins to control the permissions in their system.
   
 
 System Scheme (E10)
@@ -24,9 +24,9 @@ System Scheme (E10)
 
 *Available in Enterprise Edition E10 and higher*
 
-You can set the default permissions granted to System Admins, Team Admins, Channel Admins, Guests, and All Members. The permissions granted in the System Scheme apply system-wide, meaning:
+You can set the default permissions granted to System Admins, Team Admins, Channel Admins, Guests (if enabled), and All Members. The permissions granted in the System Scheme apply system-wide, meaning:
 
-- **Guests:** Permissions apply to guest users in all channels, in all teams.
+- **Guests:** If Guest Accounts are enabled, permissions apply to guest users in all channels, in all teams.
 - **All Members:** Permissions apply to all members, including Admins, in all channels, in all teams. 
 - **Channel Administrators:** Permissions apply to all Channel Admins in all channels, in all teams.
 - **Team Administrators:** Permissions apply to all Team Admins, in all teams.
@@ -36,7 +36,7 @@ To override the System Scheme default permissions in a specific team, you must s
 
 **System Scheme Interface** 
 
-The interface for editing permissions in the System Scheme, with panels for Guests, All Members, Channel Administrators, Team Administrators, and System Administrators is available in **System Console > User Management > Permissions > System Scheme** (or **System Console > Advanced Permissions > System Scheme** in versions prior to 5.12).
+The interface for editing permissions in the System Scheme, with panels for Guests (if enabled), All Members, Channel Administrators, Team Administrators, and System Administrators is available in **System Console > User Management > Permissions > System Scheme** (or **System Console > Advanced Permissions > System Scheme** in versions prior to 5.12).
 
 .. image:: ../images/system-scheme.png
 
@@ -94,9 +94,9 @@ Example: In Team A, only allow Team and System Admins to add new team members. A
 
 1. Select **New Team Override Scheme**.
   i. Name and describe the scheme. For example, ``Authorized Personnel Only`` with description ``Restrict adding team members to Team and System Admins.``
-  ii. Add Team B to the **Select teams to override permissions** list.
+  ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, and choose **Add**.
   iii. In the **All Members** panel, uncheck the box for **Add Team Members**.
-  iv. In the **Channel Administrator** and **Team Administrator** panels, check the box for **Add Team Members**. 
+  iv. In the **Team Administrators** panel, check the box for **Add Team Members**. 
 2. Choose **Save**. 
 3. Select the back arrow to return to the **Permission Schemes** menu. 
 
@@ -111,7 +111,8 @@ Example: As the default for the entire system, restrict renaming channels and ed
 1. Navigate to **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
 2. Select **Edit Scheme**.
 3. In the **All Members** panel, uncheck the box for **Manage Public Channels > Manage Channel Settings**.
-4. In the **Channel Administrator** and **Team Administrator** panels, check the box for **Manage Public Channels > Manage Channel Settings**.
+
+The **Manage Channel Settings** option is now only available to **Channel Administrators**, **Team Administrators**, and **System Administrators**.
 
 .. note::
 
@@ -123,14 +124,14 @@ Example: In Team C, restrict public channel creation to Admins. As the default f
 
 1. Navigate to **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
 2. Select **Edit Scheme**.
-3. In the **All Members** panel, check the box for **Create Channels** in the **Manage Public Channels** section. This sets the system default to allow creation of public channels on all teams.
+3. In the **All Members** panel, in the **Manage Public Channels** menu, check the box for **Create Channels**. This sets the system default to allow creation of public channels on all teams.
 4. Choose **Save**.
 5. Select the arrow to return to the **Permission Schemes** interface.
 6. Select **New Team Override Scheme**.
   i. Name and describe the scheme. For example, ``Contractor Scheme`` with description ``Restrict public channel creation to Admins only``.
-  ii. Select **Add Teams** and add Team C to the **Select teams to override permissions** list.
-  iii. In the **All Members** panel, uncheck the box for **Create Channels** in the **Manage Public Channels** section.
-  iv. In the **Team Administrator** panel, check the box for **Create Channels** in the **Manage Public Channels** section.
+  ii. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, and choose **Add**.   
+  iii. In the **All Members** panel, in the **Manage Public Channels** section, uncheck the box for **Create Channels**.
+  iv. In the **Team Administrators** panel, in the **Manage Public Channels** section, check the box for **Create Channels**.
 
 Post Management
 ~~~~~~~~~~~~~~~~
@@ -141,16 +142,17 @@ Example: As the default for the entire system, restrict deleting posts to only T
 
 1. Navigate to **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
 2. Select **Edit Scheme**.
-3. In the **All Members** and **Channel Admin** panels, uncheck the boxes for **Delete Own Posts** and **Delete Others Posts**.
-4. In the **Channel Administrator** and **Team Administrator** panels, check the box boxes for **Delete Own Posts** and **Delete Others' Posts**.
+3. In the **All Members** and **Channel Admininistrators** panels, in the **Delete Posts** section, uncheck the boxes for **Delete Own Posts** and **Delete Others' Posts**.
+4. In the **Channel Administrators** and **Team Administrators** panels, in the **Delete Posts** section, check the boxes for **Delete Own Posts** and **Delete Others' Posts**.
 
 **Restrict who can edit posts**
+
 Example: As the default for the entire system, only allow users to edit their own posts for five minutes after posting.
 
 1. Navigate to **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
 2. Select **Edit Scheme**.
-3. In the **All Members**, **Channel Administrator**, and **Team Administrator** panels, check the box for **Edit Posts**.
-4. From any panel, click the gear button to set the global time limit to ``300`` seconds.
+3. In the **All Members**, **Channel Administrators**, and **Team Administrators** panels, in the **Manage Posts** section, check the box for **Edit Posts**.
+4. From any panel, select the gear button to set the global time limit to ``300`` seconds.
 
 .. note::
 
@@ -166,7 +168,7 @@ Example: As the default for the entire system, only allow System Admins to creat
 
 1. Navigate to **System Console > User Management > Permissions** (or **System Console > Advanced Permissions** in versions prior to 5.12).
 2. Select **Edit Scheme**.
-3. In the **All Members**, **Channel Administrator**, and **Team Administrator** panels uncheck the boxes for **Manage Webhooks** and **Manage Slash Commands**.
+3. In the **All Members** and **Team Administrators** panels, in the **Integrations & Customizations** section, uncheck the boxes for **Manage Incoming Webhooks**, **Manage Outgoing Webhooks**, and **Manage Slash Commands**.
 
 .. note::
 
@@ -184,7 +186,7 @@ There are a number of CLI tools available for Admins to help in configuring and 
 Backend Infrastructure
 -----------------------
 
-Technical Admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions-backend` technical documentation.
+Technical admins or developers looking for a deeper understanding of the permissions backend can refer to our :doc:`permissions-backend` technical documentation.
 
 Glossary
 ----------
@@ -192,7 +194,7 @@ Glossary
 - **Permission:** The ability to execute certain actions. Permissions are granted to roles.
 - **Roles:** A set of permissions. Users or groups are assigned to roles.
 - **Group:** A set of users, usually synced from AD/LDAP. Groups are assigned to roles in the context of teams, channels, or system-wide.
-- **Default Roles:** All Members, Guests, Channel Administrators, Team Administrators, System Administrators.
+- **Default Roles:** All Members, Guests (if enabled), Channel Administrators, Team Administrators, System Administrators.
 - **System Scheme:** A set of default roles that apply system-wide.
 - **Team Override Scheme:** A set of default roles that apply only in the team specified. Permissions granted to roles in a team scheme override roles in the system scheme.
 - **System-wide:** Applies across the entire system, including all teams of which the user is a member.
