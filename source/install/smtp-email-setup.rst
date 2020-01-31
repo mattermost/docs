@@ -183,7 +183,7 @@ Checking your SMTP server is reachable
        
 
 .. note:: 
-  We're not installing telnet by default on the official docker images, so you either need to use ``ping`` on those or install telnet yourself either directly in the machine or by modifying the dockerfile.
+  As we're not installing telnet by default on the official docker images you either need to use ``ping`` on those or install telnet yourself either directly or by modifying the Dockerfile.
 
 .. note::
   For additional troubleshooting tips, see
