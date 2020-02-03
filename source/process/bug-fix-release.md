@@ -267,7 +267,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
         - Submit a PR to change version number in `docs/source/conf.py` against the `vX.X-documentation` branch
 3. Build:
     - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
-    - Update https://prev.test.mattermost.com to the previous release version
+    - Update https://community.mattermost.com and https://prev.test.mattermost.com to the previous release version
 4. Dev:
     - Merge changes made to release branch into master
     - Update existing tickets or create new ones for the next release
