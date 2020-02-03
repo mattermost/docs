@@ -175,7 +175,7 @@ settings from the [Redis chart](https://github.com/helm/charts/tree/master/stabl
 |--------------------------------------------------------------|------------------------------------------------|------------------------------------------------------------------|
 | `gitlab-runner.checkInterval`                                | polling interval                               | `30s`                                                            |
 | `gitlab-runner.concurrent`                                   | number of concurrent jobs                      | `20`                                                             |
-| `gitlab-runner.enabled`                                      |                                                | true                                                          |
+| `gitlab-runner.install`                                      | install the `gitlab-runner` chart              | true                                                          |
 | `gitlab-runner.image`                                        | runner image                                   | `gitlab/gitlab-runner:alpine-v10.5.0`                            |
 | `gitlab-runner.imagePullPolicy`                              | image pull policy                              | `IfNotPresent`                                                   |
 | `gitlab-runner.rbac.clusterWideAccess`                       | deploy containers of jobs cluster-wide         | false                                                            |
