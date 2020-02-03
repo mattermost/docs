@@ -9,7 +9,8 @@ Release v4.4.0
 - **v4.4.0, release day 2020-02-16**
 
 
-**Breaking Change** 
+**Breaking Changes** 
+XXX Can be removed if there are none XXX
 
 
 Improvements
@@ -64,8 +65,7 @@ Contributors
 
 Many thanks to all our contributors. In alphabetical order:
 
-
-
+- `allenlai18 <https://github.com/allenlai18>`_, `cpanato <https://github.com/cpanato>`_,  `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `hunterlester <https://github.com/hunterlester>`_, `JtheBAB <https://github.com/JtheBAB>`_, `jupenur <https://github.com/jupenur>`_, `kethinov <https://github.com/kethinov>`_, `rascasoft <https://github.com/rascasoft>`_, `Willyfrog <https://github.com/Willyfrog>`_, `xalkan <https://github.com/xalkan>`_.
 
 Release v4.3.0
 ----------------------------
