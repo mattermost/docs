@@ -221,7 +221,7 @@ Open a text editor and create a text file with the following details. Save the f
       $ kubectl apply -n mattermost -f /path/to/restore.yaml
 
 The deployment process can be monitored in the Kubernetes user interface. If errors or issues are experienced,
-review the Mattermost log files or MySQL logs for guidance including error messages. If remediation is not successful, contact
+review the Mattermost, Operator, and MySQL logs for guidance including error messages. If remediation is not successful, contact
 Mattermost customer support for assistance.
 
 Once complete, access your Mattermost instance and confirm that the database has been restored.
