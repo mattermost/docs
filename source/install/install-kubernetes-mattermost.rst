@@ -122,7 +122,7 @@ The process described below needs to be completed prior to proceeding with the M
 2. Deploy a new server (e.g. an AWS instance).
 3. Install a backup program and back up the database on the new server/instance.
 4. Upload the backed up database to your cloud storage provider (e.g. Amazon S3).
-5. Create a ``secret.yaml``` file:
+5. Create a ``secret.yaml`` file:
 
 Open a text editor and create a text file containing your credentials which will be used to access the uploaded database.
 
