@@ -197,6 +197,44 @@ Alternatively you can use the CLI tool to set a private channel to be managed by
 1. Ensure there is at least one group already associated to the channel. You can view and add default channels to a group via **System Console > User Management > Groups > Group Configuration**. Please see more information on adding default teams and channels `here <https://docs.mattermost.com/deployment/ldap-group-sync.html#add-default-teams-or-channels-for-the-group>`_. Additionally, you can use the CLI tool to view if there is already a group associated to the channel by running the `group channel list CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-team-list>`_.
 2. Convert the team to have its membership managed by synchronized groups by running the `group channel enable CLI command <https://docs.mattermost.com/administration/command-line-tools.html#mattermost-group-channel-enable>`_.
 
+Assigning Roles to Group Members
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Group members can be assigned predefined roles by System Admins, which are applied across the group during the scheduled sychronization. The roles are:
+
+- Member (default)
+- Team Admin (in Teams)
+- Channel Admin (in Channels)
+
+The permissions for each role can be viewed and modified in **System Console > Permissions**.
+
+**To set the Team Admin role in a synced group**
+
+1. Navigate to **System Console > User Management > Teams**.
+2. Select **Edit** next to the team you want to configure.
+3. Ensure that **Sync Group Members** is enabled.
+4. Choose **Add Group** to add one or more groups to the team. If there are groups already associated to default users into the team, they will already be present.
+5. Select the arrow next to the current role in the **Roles** column to display and select the **Team Admin** option.
+6. Repeat as needed for any other synced groups you have added.
+7. Choose **Save**.
+
+Roles are updated on the next scheduled AD/LDAP synchronization.
+
+**To set the Channel Admin role in a synced group**
+
+1. Navigate to **System Console > User Management > Channels**.
+2. Select **Edit** next to the team you want to configure.
+3. Ensure that **Sync Group Members** is enabled.
+4. Choose **Add Group** to add one or more groups to the team. If there are groups already associated to default users into the team, they will already be present.
+5. Select the arrow next to the current role in the **Roles** column to display and select the **Channel Admin** option.
+6. Repeat as needed for any other synced groups you have added.
+7. Choose **Save**.
+
+Roles are updated on the next scheduled AD/LDAP synchronization.
+
+**Note:**
+Members who have been synced as part of a group cannot have their role changed via **View Members** in Mattermost.
+
 
 Add or Remove Groups from Teams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
