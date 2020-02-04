@@ -17,6 +17,7 @@ You may retrieve the CA root for these certificates from the `{{ template "gitla
 If you do not wish to use self-signed certificates, please set the following properties:
   - global.ingress.tls.secretName
   OR
+  - global.ingress.tls.enabled (set to `true`)
 {{- if $.Values.gitlab.unicorn.enabled }}
   - gitlab.unicorn.ingress.tls.secretName
 {{- end -}}
