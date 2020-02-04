@@ -6,34 +6,61 @@ For https://docs.google.com/spreadsheets/d/1Aoj4OTaWoyrKIcQNiHH1MVoRG51T20Y_0w2t
 Release Output
 ==============
 
-+------------------------------------------+-------------------------------------------+
-| Metric                                   | How to Measure                            |
-+==========================================+===========================================+
-| Ratio of story-to-bug tickets            | Total of feature tickets over total of    |
-|                                          | bug tickets. Include current Quality      |
-|                                          | release and previous feature release.     |
-+------------------------------------------+-------------------------------------------+
-| Mean time from P1 bug report to delivery | Get list of created date and release      |
-|                                          | date for tickets with P1 label resolved   |
-|                                          | for a release and calculate the average.  |
-|                                          | Use formula “=Release Day-Created”.       |
-+------------------------------------------+-------------------------------------------+
-| Mean time from P2 bug report to delivery | Get list of created date and release      |
-|                                          | date for tickets with P2 label resolved   |
-|                                          | for a release and calculate the average.  |
-|                                          | Use formula “=Release Day-Created”.       |
-+------------------------------------------+-------------------------------------------+
-| Mean time from P3 bug report to delivery | Get list of created date and release      |
-|                                          | date for tickets with P3 label resolved   |
-|                                          | for a release and calculate the average.  |
-|                                          | Use formula “=Release Day-Created”.       |
-+------------------------------------------+-------------------------------------------+
-| Number of P1 bugs reported in production | Check "P1" Jira labels.                   |
-+------------------------------------------+-------------------------------------------+
-| Number of P2 bugs reported in production | Check "P2" Jira labels.                   |
-+------------------------------------------+-------------------------------------------+
-| Number of P3 bugs reported in production | Check "P3" Jira labels.                   |
-+------------------------------------------+-------------------------------------------+
++------------------------------------------+------------------------------------------------+
+| Metric                                   | How to Measure                                 |
++==========================================+================================================+
+| Ratio of story-to-bug tickets            | Total of feature tickets over total of         |
+|                                          | bug tickets. Include current quality           |
+|                                          | release and previous feature release.          |
++------------------------------------------+------------------------------------------------+
+| Mean time from P1 bug report to delivery | With a new or existing Jira filter, with:      |
+|                                          |                                                |
+|                                          | 1. Project = Mattermost                        |
+|                                          | 2. Fix Versions = Latest released version      |
+|                                          | 3. Issue Type = Bug                            |
+|                                          | 4. Label = P1                                  |
+|                                          | 5. Created Date = 17th of the previous month   |
+|                                          | 6. Release Date = 16th of the current month    |
+|                                          |                                                |
+|                                          | Copy a list of Jira tickets with the above     |
+|                                          | information and paste them into a spreadsheet. | 
+|                                          | Calculate the average by using a formula       |
+|                                          | “=Release Day-Created”.                        |   
++------------------------------------------+------------------------------------------------+
+| Mean time from P2 bug report to delivery | With a new or existing Jira filter, with:      |
+|                                          |                                                |
+|                                          | 1. Project = Mattermost                        |
+|                                          | 2. Fix Versions = Latest released version      |
+|                                          | 3. Issue Type = Bug                            |
+|                                          | 4. Label = P2                                  |
+|                                          | 5. Created Date = 17th of the previous month   |
+|                                          | 6. Release Date = 16th of the current month    |
+|                                          |                                                |
+|                                          | Copy a list of Jira tickets with the above     |
+|                                          | information and paste them into a spreadsheet. | 
+|                                          | Calculate the average by using a formula       |
+|                                          | “=Release Day-Created”.                        |
++------------------------------------------+------------------------------------------------+
+| Mean time from P3 bug report to delivery | With a new or existing Jira filter, with:      |
+|                                          |                                                |
+|                                          | 1. Project = Mattermost                        |
+|                                          | 2. Fix Versions = Latest released version      |
+|                                          | 3. Issue Type = Bug                            |
+|                                          | 4. Label = P3                                  |
+|                                          | 5. Created Date = 17th of the previous month   |
+|                                          | 6. Release Date = 16th of the current month    |
+|                                          |                                                |
+|                                          | Copy a list of Jira tickets with the above     |
+|                                          | information and paste them into a spreadsheet. | 
+|                                          | Calculate the average by using a formula       |
+|                                          | “=Release Day-Created”.                        |
++------------------------------------------+------------------------------------------------+
+| Number of P1 bugs reported in production |                                                |
++------------------------------------------+------------------------------------------------+
+| Number of P2 bugs reported in production | Check "P2" Jira labels.                        |
++------------------------------------------+------------------------------------------------+
+| Number of P3 bugs reported in production | Check "P3" Jira labels.                        |
++------------------------------------------+------------------------------------------------+
 
 Release Management
 =================
@@ -43,7 +70,8 @@ Release Management
 +========================================+=========================================+
 | Number of misses in each release cycle | Same as number of bugs reported in      |
 |                                        | production, + count of issues reported  |
-|                                        | in documentation or marketing.          |
+|                                        | in documentation or marketing by        |
+|                                        | customers, CSMs, Support or Product.    |
 |                                        | E.g. dot releases from customer reports,|
 |                                        | undocumented breaking changes.          |
 +----------------------------------------+-----------------------------------------+
