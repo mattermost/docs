@@ -59,3 +59,4 @@ To set these environment variables while running the Mattermost server via ``sys
     [Install]
     WantedBy=postgresql.service
     
+For GitLab Mattermost follow the details at https://docs.gitlab.com/omnibus/gitlab-mattermost/#setting-custom-environment-variables instead.
