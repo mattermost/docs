@@ -10,7 +10,7 @@ This guide provides steps to install the MSI and use Group Policies in Windows P
     - `Clicking a desktop notification does not bring the app into focus <https://mattermost.atlassian.net/browse/MM-19511>`_
     - `Clicking a desktop notification does not switch to the channel the notification came from <https://mattermost.atlassian.net/browse/MM-19510>`_ 
 
-    If you are using this installer or GPOs and have feedback, particularly organizations executing remote deployments, please contact us in the `MSI Installer channel on our Community server <https://community.mattermost.com/core/channels/msi-installer>`_. We hope to promote this installer out of Beta when the known issues are addressed and we are confident that the various deployment scenarios expected in production environments are tested sufficiently with the help of organizations using this Beta. Feedback is highly appreciated.
+    If you are using this installer or GPOs and have feedback, particularly organizations executing remote deployments, please contact us in the `MSI Installer channel on our Community server <https://community.mattermost.com/core/channels/msi-installer>`_ or on our `community forum <https://forum.mattermost.org/>`_. We hope to promote this installer out of Beta when the known issues are addressed and we are confident that the various deployment scenarios expected in production environments are tested sufficiently with the help of organizations using this Beta. Feedback is highly appreciated.
 
 .. contents::
     :backlinks: top
