@@ -42,6 +42,8 @@ to the `helm install` command using the `--set` flags:
 | `extraVolumes`                       |                   | List of extra volumes to create          |
 | `gitaly.serviceName`                 | `gitaly`          | Gitaly service name                      |
 | `hpa.targetAverageValue`             | `350m`            | Set the autoscaling target value         |
+| `minReplicas`                        | `2`               | Minimum number of replicas               |
+| `maxReplicas`                        | `10`              | Maximum number of replicas               |
 | `image.pullPolicy`                   | `Always`          | Sidekiq image pull policy                |
 | `image.pullSecrets`                  |                   | Secrets for the image repository         |
 | `image.repository`                   | `registry.gitlab.com/gitlab-org/build/cng/gitlab-sidekiq-ee` | Sidekiq image repository |
@@ -53,7 +55,6 @@ to the `helm install` command using the `--set` flags:
 | `psql.password.key`                  | `psql-password`   | key to psql password in psql secret      |
 | `psql.password.secret`               | `gitlab-postgres` | psql password secret                     |
 | `redis.serviceName`                  | `redis`           | Redis service name                       |
-| `replicas`                           | `1`               | Sidekiq replicas                         |
 | `resources.requests.cpu`             | `100m`            | Sidekiq minimum needed cpu               |
 | `resources.requests.memory`          | `600M`            | Sidekiq minimum needed memory            |
 | `timeout`                            | `5`               | Sidekiq job timeout                      |
@@ -236,11 +237,12 @@ on a per-pod basis.
 | Name          | Type    | Default | Description |
 |:------------- |:-------:|:------- |:----------- |
 | `concurrency`               | Integer | `25`      | The number of tasks to process simultaneously. |
-| `replicas`                  | Integer | `1`       | The number of `replicas` to use by default per pod definition. |
 | `timeout`                   | Integer | `4`       | The Sidekiq shutdown timeout. The number of seconds after Sidekiq gets the TERM signal before it forcefully shuts down its processes. |
 | `memoryKiller.maxRss`       | Integer | `2000000` | Maximum RSS before delayed shutdown triggered expressed in kilobytes |
 | `memoryKiller.graceTime`    | Integer | `900`     | Time to wait before a triggered shutdown expressed in seconds|
 | `memoryKiller.shutdownWait` | Integer | `30`      | Amount of time after triggered shutdown for existing jobs to finish expressed in seconds |
+| `minReplicas`               | Integer | `2`       | Minimum number of replicas |
+| `maxReplicas`               | Integer | `10`      | Maximum number of replicas |
 
 NOTE: **Note**: [Detailed documentation of the Sidekiq memory killer is
   available](https://docs.gitlab.com/ee/administration/operations/sidekiq_memory_killer.html#sidekiq-memorykiller)
@@ -262,10 +264,11 @@ NOTE: **Note**: The settings default to including a single pod that is set up to
 | `name`         | String  |         | Used to name the `Deployment` and `ConfigMap` for this pod. It should be kept short, and should not be duplicated between any two entries. |
 | `queues`       |         |         | [See below](#queues). |
 | `negateQueues` |         |         | [See below](#negateQueues). |
-| `replicas`     | Integer |         | The number of `replicas` to create for this `Deployment`. If not provided, it will be pulled from the chart-wide default. |
 | `timeout`      | Integer |         | The Sidekiq shutdown timeout. The number of seconds after Sidekiq gets the TERM signal before it forcefully shuts down its processes. If not provided, it will be pulled from the chart-wide default. |
 | `resources`    |         |         | Each pod can present it's own `resources` requirements, which will be added to the `Deployment` created for it, if present. These match the Kubernetes documentation. |
 | `nodeSelector` |         |         | Each pod can be configured with a `nodeSelector` attribute, which will be added to the `Deployment` created for it, if present. These definitions match the Kubernetes documentation.|
+| `minReplicas`  | Integer | `2`     | Minimum number of replicas |
+| `maxReplicas`  | Integer | `10`    | Maximum number of replicas |
 
 ### queues
 
@@ -297,7 +300,8 @@ affect.
 pods:
   - name: immediate
     concurrency: 10
-    replicas: 3
+    minReplicas: 2  # defaults to inherited value
+    maxReplicas: 10 # defaults to inherited value
     - [post_receive, 5]
     - [merge, 5]
     - [update_merge_requests, 3]
