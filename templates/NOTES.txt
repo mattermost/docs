@@ -32,7 +32,13 @@ WARNING: Automatic TLS certificate generation with cert-manager is disabled and 
 {{- end -}}
 {{- end -}}
 {{- end -}}
-{{- if $.Values.postgresql.install -}}
+{{/* Runner notice if .install && ! .runners.privileged */}}
+{{ if and (index .Values "gitlab-runner").install (not (index .Values "gitlab-runner").runners.privileged) }}
+NOTICE: You've installed GitLab Runner without the ability to use 'docker in docker'.
+The GitLab Runner chart (gitlab/gitlab-runner) is deployed without the `privileged` flag by default for security purposes. This can be changed by setting `gitlab-runner.runners.privileged` to `true`. Before doing so, please the GitLab Runner chart's documenation on why we
+chose not to enable this by default. See https://docs.gitlab.com/runner/install/kubernetes.html#running-docker-in-docker-containers-with-gitlab-runners
+{{- end }}
+{{ if $.Values.postgresql.install }}
 WARNING: If you are upgrading from a previous version of the GitLab Helm Chart, there is a major upgrade to the included PostgreSQL chart, which requires manual steps be performed. Please see our upgrade documentation for more information: https://docs.gitlab.com/charts/installation/upgrade.html
 {{- end -}}
 {{/* run deprecations */}}
