@@ -9,8 +9,10 @@ Active Directory/LDAP integration offers the following benefits:
 - **Single sign-on.** Users can sign-in to Mattermost with their AD/LDAP credentials.
 - **Centralized identity management.** Mattermost accounts can display user information from AD/LDAP, such as first and last name, email and username.
 - **Automatic account provisioning.** New Mattermost user accounts are automatically created the first time a user signs in with their AD/LDAP credentials on the Mattermost server.
+- **Sync groups to predefined roles in Mattermost.** Assign team and channel roles to groups via LDAP Group Sync.  
+- **Compliance alignment with administrator management.** Manage Administrator access to Mattermost in the System Console using LDAP attributes.
 
-### Pre-installation notes
+### Prerequisites
 
 - If you're using Active Directory with **nested security groups** you need to write a PowerShell script, or similar, to flatten and aggregate the tree into a single security group to map into Mattermost.   
 
@@ -33,11 +35,11 @@ After installing Mattermost:
 
 3. Confirm AD/LDAP sign-on is enabled.  After AD/LDAP has been enabled, confirm that users can sign in using AD/LDAP credentials.
 
-4. Switch your System Administrator account from email to AD/LDAP authentication. Go to **Account Settings** > **Security** > **Sign-in Method** > **Switch to AD/LDAP** and sign-in with your AD/LDAP credentials to complete the switch.
+4. Switch your System Administrator account from email to AD/LDAP authentication. Go to **Account Settings > Security > Sign-in Method > Switch to AD/LDAP** and sign-in with your AD/LDAP credentials to complete the switch.
 
-5. (Optional) Restrict authentication to AD/LDAP. Go to **System Console** > **Authentication** > **Email** and set **Allow Sign Up With Email** to `false` and **Allow Sign In With Email** to `false`. This should leave Active Directory/LDAP as the only single sign-in option.
+5. (Optional) Restrict authentication to AD/LDAP. Go to **System Console > Authentication > Email** and set **Allow Sign Up With Email** to `false` and **Allow Sign In With Email** to `false`. This should leave Active Directory/LDAP as the only single sign-in option.
 
-6. (Optional) If you configured First Name Attribute and Last Name Attribute in the System Console, go to **System Console > General > Users and Teams** in prior versions or **System Console** > **Site Configuration** > **Users and Teams** in versions after 5.12 and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
+6. (Optional) If you configured First Name Attribute and Last Name Attribute in the System Console, go to **System Console > Site Configuration > Users and Teams** (or **System Console > General > Users and Teams** in versions prior to 5.12) and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
 
 If you've made a mistake and lock yourself out of the system somehow, you can [set an existing account to System Administrator using the commandline tool](http://docs.mattermost.com/deployment/on-boarding.html#common-tasks).
 
@@ -50,11 +52,11 @@ Note that the AD/LDAP sync depends on email. Make sure all users on your AD/LDAP
 To configure AD/LDAP synchronization with AD/LDAP sign-in:
 
 1. Go to **System Console > AD/LDAP** and set **Enable Synchronization with AD/LDAP** to `true`.
-2. Set **Syncronization Interval** to specify how often Mattermost accounts synchronize attributes with AD/LDAP. The default setting is 60 minutes.
+2. Set **Synchronization Interval** to specify how often Mattermost accounts synchronize attributes with AD/LDAP. The default setting is 60 minutes.
 
-If you want to synchronize immediately after disabling an account, use the "AD/LDAP Synchronize Now" button in **System Console > AD/LDAP**.
+If you want to synchronize immediately after disabling an account, use the **AD/LDAP Synchronize Now** button in **System Console > AD/LDAP**.
 
-Note: Make sure that at least 1 LDAP user is in Mattermost or the sync will not complete.
+Note: Make sure that at least one LDAP user is in Mattermost or the sync will not complete.
 
 To configure AD/LDAP synchronization with SAML sign-in, see the [SAML documentation](https://about.mattermost.com/default-saml-ldap-sync).
 
@@ -69,11 +71,11 @@ For forest configurations that contain multiple domains which do NOT share a com
 
 See [Global Catalog and LDAP Searches](https://technet.microsoft.com/en-us/library/cc978012.aspx) for additional details.
 
-### Troubleshooting / FAQ
+### Troubleshooting/FAQ
 
-The following are frequently asked questions and troubleshooting suggestions on common error messages and issues. It is recommendeded that you check your logs for errors as they can provide an idea of what the issue is.
+The following are frequently asked questions and troubleshooting suggestions on common error messages and issues. It is recommended that you check your logs for errors as they can provide an idea of what the issue is.
 
-#### If "AD/LDAP Test" button fails, how can I troubleshoot the connection? 
+#### If the **AD/LDAP Test** button fails, how can I troubleshoot the connection? 
 
 1. Check that your AD/LDAP connection settings are correct by running an AD/LDAP user query in an external system. See [LDAP Connection Test Example](http://ldaptool.sourceforge.net).  
 
@@ -91,15 +93,15 @@ If these options don't work, please contact Mattermost support via the email add
 
 No, each user is created on their first login. 
 
-#### When I try to synchronize AD/LDAP, why does the Status show as ``Pending`` and not complete? 
+#### When I try to synchronize AD/LDAP, why does the Status show as `Pending` and not complete? 
 
-Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronization with AD/LDAP** setting is set to ``true``.
+Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronization with AD/LDAP** setting is set to `true`.
 
 If the issue persists, try performing a sync with the **User Filter** field blank. If the sync completes in this scenario, then the general syntax was formatted incorrectly. Refer to this [document](https://docs.mattermost.com/administration/config-settings.html#user-filter) for guidance on setting a correct syntax format.
 
-Make sure that you also have at least 1 LDAP user in Mattermost or the sync will not complete.
+Make sure that you also have at least one LDAP user in Mattermost or the sync will not complete.
 
-#### What is the difference between the Username Attribute, ID Attribute and Login ID Attribute?
+#### What is the difference between the Username Attribute, ID Attribute, and Login ID Attribute?
 
 There are three AD/LDAP attributes that apear to be similar but serve a different purpose:
 
@@ -107,18 +109,18 @@ There are three AD/LDAP attributes that apear to be similar but serve a differen
 2. **ID Attribute**: Used as the unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change, such as `ObjectGUID`. If a user's ID Attribute changes, it will create a new Mattermost account unassociated with their old one. If you need to change this field after users have already logged in, use the [mattermost ldap idmigrate CLI tool](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-ldap-idmigrate).
 3. **Login ID Attribute**: The attribute in the AD/LDAP server used to log in to Mattermost. Normally this attribute is the same as the "Username Attribute" field above, or another field that users can easily remember.
 
-#### If I want to add people to channels, can I pre-create users somehow? 
+#### If I want to add people to channels, can I pre-create users? 
 
 Yes, using the [bulk import tool](https://docs.mattermost.com/deployment/bulk-loading.html#bulk-loading-data).
 
-#### How does deactivating users work? 
+#### How do I deactivate users? 
 
 When AD/LDAP authentication is used in Mattermost, user deactivation must be done via the AD/LDAP server. 
 
 There are two main ways to do this: 
 
-1. User Deletion: If the user is completely removed from the AD/LDAP server, they will be deactivated in Mattermost on the next synchronization. 
-2. User Filter: Set the [user filter](https://docs.mattermost.com/administration/config-settings.html#user-filter) to only select the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they will be deactivated in Mattermost on the next synchronization. 
+1. User deletion: If the user is completely removed from the AD/LDAP server, they will be deactivated in Mattermost on the next synchronization. 
+2. User filter: Set the [user filter](https://docs.mattermost.com/administration/config-settings.html#user-filter) to only select the subset of AD/LDAP users you want to have access to Mattermost. When someone is removed from the selected group, they will be deactivated in Mattermost on the next synchronization. 
 
 For Active Directory, to filter out deactivated users you must set the user filter to `(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`.  
 
@@ -130,27 +132,27 @@ There is currently no built-in way to connect to multiple AD servers. You will n
 
 Consider upvoting the [feature request](https://mattermost.uservoice.com/forums/306457-general/suggestions/13589904-add-the-abilitiry) on our forum.
 
-#### When trying to sign in, I see the error `AD/LDAP not available on this server`
+#### When trying to sign in, I see the error `AD/LDAP not available on this server`.
 
 This indicates that there is a problem somewhere with your configuration. We recommend that you: 
-1. Confirm Enterprise Edition is installed
-2. Check your license to confirm it's uploaded and not expired 
-3. Check your Mattermost configuration settings to ensure that AD/LDAP is enabled, and the settings are correct
+1. Confirm Enterprise Edition is installed.
+2. Check your license to confirm it's uploaded and not expired. 
+3. Check your Mattermost configuration settings to ensure that AD/LDAP is enabled, and the settings are correct.
 
 If you are still having issues, you can [contact support](https://about.mattermost.com/support/) for additional troubleshooting. 
 
-#### I see the error `User not registered on AD/LDAP server`
+#### I see the error `User not registered on AD/LDAP server`.
 
-This means the query sent back to the Active Directory/LDAP server returned no results. We recommend that you: 
-1. Check that the user credentials were entered properly - you should login with the field set as the [`ID Attribute`](https://docs.mattermost.com/administration/config-settings.html#id-attribute)
-2. Check that the user account exists in the Active Directory/LDAP server
-3. Check the Active Directory/LDAP configuration settings are correct 
+This means the query sent back to the AD/LDAP server returned no results. We recommend that you: 
+1. Check that the user credentials were entered properly - you should login with the field set as the [`ID Attribute`](https://docs.mattermost.com/administration/config-settings.html#id-attribute).
+2. Check that the user account exists in the AD/LDAP server.
+3. Check the AD/LDAP configuration settings are correct.
 
 If you are still having issues, you can [contact support](https://about.mattermost.com/support/) for additional troubleshooting. 
 
-#### I updated a user account in AD/LDAP, and they can no longer log in to Mattermost
+#### I updated a user account in AD/LDAP, and they can no longer log in to Mattermost.
 
-If the user can no longer log in to Mattermost with their AD/LDAP credentials - for example, they get an error message `An account with that email already exists`, or a new Mattermost account is created when they try to log in - this means the **ID attribute** for their account has changed.
+If the user can no longer log in to Mattermost with their AD/LDAP credentials - for example, they get an error message `An account with that email already exists`, or a new Mattermost account is created when they try to log in - this means the **ID Attribute** for their account has changed.
 
 The issue can be fixed by changing the value of the field used for the **ID Attribute** back to the old value.
 
@@ -158,31 +160,31 @@ If you are currently using a field that sometimes changes for an **ID Attribute*
 
 To do this, you can: 
 
-1. Use the [CLI to migrate the **ID Attribute**](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-ldap-idmigrate) to a non-changing field
-2. Set the [**Login ID Attribute**](https://docs.mattermost.com/administration/config-settings.html#login-id-attribute) to whatever you would like users to log in with (e.g. username or email)
+1. Use the [CLI to migrate the **ID Attribute**](https://docs.mattermost.com/administration/command-line-tools.html#mattermost-ldap-idmigrate) to a non-changing field.
+2. Set the [**Login ID Attribute**](https://docs.mattermost.com/administration/config-settings.html#login-id-attribute) to whatever you would like users to log in with (e.g. username or email).
 
-Note: Currently the value is case sensitive. If the **ID attribute** is set to the username and the username changes from `John.Smith` to `john.smith`, the user would have problems logging in.   
+Note: Currently the value is case sensitive. If the **ID Attribute** is set to the username and the username changes from `John.Smith` to `john.smith`, the user will experience problems logging in.   
 
-#### I see the log error `LDAP Result Code 4 "Size Limit Exceeded"`
+#### I see the log error `LDAP Result Code 4 "Size Limit Exceeded"`.
 
 This indicates your AD/LDAP server configuration has a maximum page size set and the query coming from Mattermost is returning a result set in excess of that limit.
 
 To address this issue you can set the [max page size](https://docs.mattermost.com/administration/config-settings.html#maximum-page-size) in your Mattermost configuration to match the limit on your AD/LDAP server. This will return a sequence of result sets that do not exceed the max page size, rather than returning all results in a single query.
 
-If the error is still occurring, it is likely that no AD/LDAP users have logged into Mattermost yet. Ensure that at least 1 AD/LDAP user has logged into Mattermost and re-run the sync. The error should disappear at that point.
+If the error is still occurring, it is likely that no AD/LDAP users have logged into Mattermost yet. Ensure that at least one AD/LDAP user has logged into Mattermost and re-run the sync. The error should disappear at that point.
 
-#### Where can I find help on AD/LDAP configuration settings in config.json?
+#### Where can I find help on AD/LDAP configuration settings in `config.json`?
 
 You can find an explanation of each of the configuration settings [here](https://docs.mattermost.com/administration/config-settings.html#ad-ldap).
 
-#### Can the AD/LDAP User Filter read Security groups?
+#### Can the AD/LDAP User Filter read security groups?
 
 Yes it can, but make sure that:
- - permissions are correctly configured on the service account you are using
- - each user object is a direct member of the security group
+ - Permissions are correctly configured on the service account you are using.
+ - Each user object is a direct member of the security group.
 
 #### How do I know if an AD/LDAP sync job fails?
 
-Mattermost provides the status of each AD/LDAP sync job in **System Console** > **Authentication** > **AD/LDAP**. Here you can see the number of users updated and if the job succeeded or failed.
+Mattermost provides the status of each AD/LDAP sync job in **System Console > Authentication > AD/LDAP**. Here you can see the number of users updated and if the job succeeded or failed.
 
-Morever, any failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. AD/LDAP sync job failures are identified with worker name ``EnterpriseLdapSync``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
+Moreover, any failures are returned in the server logs. The error log begins with the string `Failed job` and includes a `job_id key/value` pair. AD/LDAP sync job failures are identified with worker name `EnterpriseLdapSync`. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
