@@ -74,11 +74,22 @@ Release Heartbeat
 | Number of days between when final RC    | Check Release Discussion channel for post with official release build.         |
 | is cut and the release date             | Oxygen = 16th - Day Final RC is cut                                            |
 +-----------------------------------------+--------------------------------------------------------------------------------+
-| Community + customer bugs reported      | Use "Customer-bug" and "Community-bug" label for release month, from           |
-| during release timeframe (17th to 16th) | 17th to 16th (from previous release day to current release day).               |
+| Community + customer bugs reported      | With a new or existing Jira filter, with:                                      |
+| during release timeframe (17th to 16th) |                                                                                |
+|                                         | 1. Project = Mattermost                                                        |
+|                                         | 2. Fix Versions = Latest released version                                      |
+|                                         | 3. Issue Type = Bug                                                            |
+|                                         | 4. Label = Customer-bug and Community-bug                                      |
+|                                         | 5. Created Date = 17th of the previous month                                   |
+|                                         | 6. Release Date = 16th of the current month                                    |
 +-----------------------------------------+--------------------------------------------------------------------------------+
-| Number of customer bugs fixed           | "Customer-bug" tickets closed and marked for current release.                  |
+| Number of customer bugs fixed           | With a new or existing Jira filter, with:                                      |
 | during release                          |                                                                                |
+|                                         | 1. Project = Mattermost                                                        |
+|                                         | 2. Fix Versions = Latest released version                                      |
+|                                         | 3. Issue Type = Bug                                                            |
+|                                         | 4. Status = Closed and Resolved                                                |
+|                                         | 5. Label = Customer-bug                                                        |
 +-----------------------------------------+--------------------------------------------------------------------------------+
 | Total valid bugs in fix version         | After closing current release:                                                 |
 |                                         |                                                                                |
@@ -88,7 +99,10 @@ Release Heartbeat
 | Total valid bugs in fix version found   | Check "Se", "Selenium-found, "Rainforest-found" Jira labels.                   |
 | by test automation                      |                                                                                |
 +-----------------------------------------+--------------------------------------------------------------------------------+
-| Total valid bugs found after RC1 is cut | 1. Check Jira timezone + Pre-release timezone and make sure times match        |
+| Total valid bugs found after RC1 is cut | After closing current release, adjust dates as per above, and use this Jira    |
+|                                         | query:                                                                         |
+|                                         |                                                                                |
+|                                         | 1. Check Jira timezone + Pre-release timezone and make sure times match        |
 |                                         | 2. Replace START with date (yyyy-MM-dd HH:mm) RC1 was cut                      |
 |                                         | 3. Replace END with date (yyyy-MM-dd HH:mm) test servers returned to master    |
 |                                         |                                                                                |
@@ -121,23 +135,27 @@ Release Heartbeat
 | release                                 | Check Changelog for total number of non-security patch releases.               |
 +-----------------------------------------+--------------------------------------------------------------------------------+
 | Total features/improvements in fix      | With a new or existing Jira filter, with:                                      |
-| version                                 | 1. Project is set to Mattermost                                                |
-|                                         | 2. Fix Versions is set to Latest released version                              |
-|                                         | 3. Issue Type is set to Story                                                  |
-|                                         | 4. Status is set to Closed or Resolved                                         |
+| version                                 |                                                                                |
+|                                         | 1. Project = Mattermost                                                        |
+|                                         | 2. Fix Versions = Latest released version                                      |
+|                                         | 3. Issue Type = Story                                                          |
+|                                         | 4. Status = Closed and Resolved                                                |
 +-----------------------------------------+--------------------------------------------------------------------------------+
 | Critical security issues found during   | With a new or existing Jira filter, check for Security Vulnerability tickets:  |
-| release timeframe                       | 1. Project is set to Mattermost                                                |
+| release timeframe                       |                                                                                |
+|                                         | 1. Project = Mattermost                                                        |
 |                                         | 2. Fix Versions = Latest released version                                      |
 |                                         | 3. Impact = High                                                               |
 +-----------------------------------------+--------------------------------------------------------------------------------+
 | Moderate security issues found during   | With a new or existing Jira filter, check for Security Vulnerability tickets:  |
-| release timeframe                       | 1. Project is set to Mattermost                                                |
+| release timeframe                       |                                                                                |
+|                                         | 1. Project = Mattermost                                                        |
 |                                         | 2. Fix Versions = Latest released version                                      |
 |                                         | 3. Impact = Medium                                                             |
 +-----------------------------------------+--------------------------------------------------------------------------------+
 | Minor security issues found during      | With a new or existing Jira filter, check for Security Vulnerability tickets:  |
-| release timeframe                       | 1. Project is set to Mattermost                                                |
+| release timeframe                       |                                                                                |
+|                                         | 1. Project = Mattermost                                                        |
 |                                         | 2. Fix Versions = Latest released version                                      |
 |                                         | 3. Impact = Low                                                                |
 +-----------------------------------------+--------------------------------------------------------------------------------+
