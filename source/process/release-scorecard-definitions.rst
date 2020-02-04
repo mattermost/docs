@@ -1,5 +1,5 @@
-Release Metrics Definitions
-------------------
+Release Scorecard Definitions
+-----------------------------
 
 For https://docs.google.com/spreadsheets/d/1Aoj4OTaWoyrKIcQNiHH1MVoRG51T20Y_0w2tg5oVw-M/edit#gid=825551144
 
