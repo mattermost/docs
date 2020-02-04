@@ -44,7 +44,7 @@ The Mattermost installation manifest contains fields which must be edited in lin
     "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users'.", "Yes"
     "spec.ingressName", "The DNS for your Mattermost installation.", "Yes"
     "spec.version", "The Mattermost version.", "No"
-    "spec.mattermostLicenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license-secret). Required for Enterprise deployments.", "Yes"
+    "spec.mattermostLicenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license-secret). Required for Enterprise deployments.", "No"
     "spec.database.storageSize", "The storage size for your database. Your Kubernetes cluster must have persistent volumes this size or larger.", "No"
     "spec.minio.storageSize", "The storage size for your file storage. Your Kubernetes cluster must have persistent volumes this size or larger.", "No"
     "spec.elasticSearch", "The section for Elasticsearch settings. Remove this section if you will not be using Elasticsearch.", "No"
