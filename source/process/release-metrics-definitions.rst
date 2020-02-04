@@ -95,44 +95,49 @@ Release Heartbeat
 |                                         | project = Mattermost AND issuetype = Bug AND resolution not in (Duplicate,     |
 |                                         | "Cannot Reproduce", "Won't fix") AND created > "START" AND created < "END"     |
 +-----------------------------------------+--------------------------------------------------------------------------------+
-| Valid bugs found after RC1 fixed in     | After closing current release, & adjust dates as per above:                    |
-| release                                 |                                                                                |
+| Valid bugs found after RC1 fixed in     | After closing current release, adjust dates as per above, and use this Jira    |
+| release                                 | query:                                                                         |
+|                                         |                                                                                |
 |                                         | project = Mattermost AND issuetype = Bug AND resolution not in (Duplicate,     |
 |                                         | "Cannot Reproduce", "Won't Fix")  AND created > "START" AND created < "END"    |
 |                                         | AND fixVersion = latestReleasedVersion()                                       |
 +-----------------------------------------+--------------------------------------------------------------------------------+
-| Valid bugs found after RC1 pushed to    | After closing current release, & adjust dates as per above:                    |
-| next release                            |                                                                                |
+| Valid bugs found after RC1 pushed to    | After closing current release, adjust dates as per above, and use this Jira    |
+| next release                            | query:                                                                         |
+|                                         |                                                                                |
 |                                         | project = Mattermost AND issuetype = Bug AND resolution not in (Duplicate,     |                                      
 |                                         | "Cannot Reproduce", "Won't Fix") AND created > "START" AND created < "END"     |
 |                                         | AND fixVersion = earliestUnreleasedVersion()                                   |
 +-----------------------------------------+--------------------------------------------------------------------------------+
-| Valid bugs found after RC1 fix version  | project = Mattermost AND issuetype = Bug AND created > "START" AND created <   |  
-| = other (eg unscheduled, not set)       | "END" AND resolution not in (Duplicate, "Cannot Reproduce", "Won't Fix") AND   |
+| Valid bugs found after RC1 fix version  | After closing current release, adjust dates as per above, and use this Jira    |
+| = other (eg unscheduled, not set)       | query:                                                                         |
+|                                         |                                                                                |
+|                                         | project = Mattermost AND issuetype = Bug AND created > "START" AND created <   |  
+|                                         | "END" AND resolution not in (Duplicate, "Cannot Reproduce", "Won't Fix") AND   |
 |                                         | (fixVersion not in (latestReleasedVersion(), earliestUnreleasedVersion()) OR   |
 |                                         | fixVersion is EMPTY)                                                           |
 +-----------------------------------------+--------------------------------------------------------------------------------+
 | (Non-security) Bugs requiring patch     | After any patch release goes out (after the normal release date):              |
 | release                                 | Check Changelog for total number of non-security patch releases.               |
 +-----------------------------------------+--------------------------------------------------------------------------------+
-| Total features/improvements in fix      | With a new or existing filter, with:                                           |
-| version                                 | 2. Fix Versions is set to Latest released version                              |
+| Total features/improvements in fix      | With a new or existing Jira filter, with:                                      |
+| version                                 | 1. Project is set to Mattermost                                                |
+|                                         | 2. Fix Versions is set to Latest released version                              |
 |                                         | 3. Issue Type is set to Story                                                  |
 |                                         | 4. Status is set to Closed or Resolved                                         |
 +-----------------------------------------+--------------------------------------------------------------------------------+
-| Critical security issues found during   | With a new or existing filter, check for Security Vulnerability tickets where: |
-|                                         | 1. Project is set to Mattermost                                                |
-| release timeframe                       | 2. Fix Versions = Latest released version                                      |
+| Critical security issues found during   | With a new or existing Jira filter, check for Security Vulnerability tickets:  |
+| release timeframe                       | 1. Project is set to Mattermost                                                |
+|                                         | 2. Fix Versions = Latest released version                                      |
 |                                         | 3. Impact = High                                                               |
 +-----------------------------------------+--------------------------------------------------------------------------------+
-| Moderate security issues found during   | With a new or existing filter, check for Security Vulnerability tickets where: |
-|                                         | 1. Project is set to Mattermost                                                |
-| release timeframe                       | 2. Fix Versions = Latest released version                                      |
+| Moderate security issues found during   | With a new or existing Jira filter, check for Security Vulnerability tickets:  |
+| release timeframe                       | 1. Project is set to Mattermost                                                |
+|                                         | 2. Fix Versions = Latest released version                                      |
 |                                         | 3. Impact = Medium                                                             |
 +-----------------------------------------+--------------------------------------------------------------------------------+
-| Minor security issues found during      | With a new or existing filter, check for Security Vulnerability tickets where: |
-|                                         | 1. Project is set to Mattermost                                                |    
-| release timeframe                       | 2. Fix Versions = Latest released version                                      |
+| Minor security issues found during      | With a new or existing Jira filter, check for Security Vulnerability tickets:  |
+| release timeframe                       | 1. Project is set to Mattermost                                                |
+|                                         | 2. Fix Versions = Latest released version                                      |
 |                                         | 3. Impact = Low                                                                |
 +-----------------------------------------+--------------------------------------------------------------------------------+
-
