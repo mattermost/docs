@@ -60,6 +60,44 @@ Note: Make sure that at least one LDAP user is in Mattermost or the sync will no
 
 To configure AD/LDAP synchronization with SAML sign-in, see the [SAML documentation](https://about.mattermost.com/default-saml-ldap-sync).
 
+#### Configure AD/LDAP sign-in Using Filters
+
+Using filters assigns roles to specified users on login. To access AD/LDAP filter settings navigate to **System Console > AD/LDAP**. 
+
+##### User Filter
+(Optional) Enter an AD/LDAP filter to use when searching for user objects. Only the users selected by the query will be able to access Mattermost. For Active Directory, the query to filter out disabled users is (&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2))).
+
+1. Navigate to **System Console > Authentication > AD/LDAP**.
+2. Complete the **User Filter** field.
+3. Choose **Save**.
+
+When the user accesses the Mattermost URL, they log in with same username and password that they use for organizational logins.  
+
+##### Guest Filter 
+(Optional) When enabled, the Guest Filter in Mattermost identifies external users whose AD/LDAP role is guest and who are invited to join your Mattermost server. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
+
+If this filter is removed/changed, active guests will not be promoted to a member and will retain their Guest role. Guests can be promoted in System Console > User Management.
+
+1. Enable Guest Access via **System Console > Guest Access (Beta)**.
+2. Navigate to **System Console > Authentication > AD/LDAP**.
+3. Complete the **Guest Filter** field.
+4. Choose **Save**.
+
+When a guest logs in for the first time they are presented with a default landing page until they are added to channels.
+
+See the [Guest Accounts documentation](https://docs.mattermost.com/deployment/guest-accounts.html) for more information about this feature. 
+
+##### Admin Filter
+(Optional) Enter an AD/LDAP filter to use for designating System Admins. The users selected by the query will have access to your Mattermost server as System Admins. By default, System Admins have complete access to the Mattermost System Console. Existing members that are identified by this attribute will be promoted from member to System Admin upon next login. 
+
+The next login is based upon Session lengths set in **System Console > Session Lengths**. It is highly recommend to manually demote users to members in **System Console > User Management** to ensure access is restricted immediately.
+
+1. Navigate to **System Console > Authentication > AD/LDAP**.
+2. Complete the **Admin Filter** field.
+3. Choose **Save**.
+
+**Note:** If this filter is removed/changed, System Admins that were promoted via this filter will be demoted to members and will not retain access to the System Console. When this filter is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
+
 #### Configure AD/LDAP deployments with multiple domains
 
 Organizations using multiple domains can integrate with Mattermost using a "Forest" configuration to bring together multiple domains. Please see [Forests as Collections of Domain Controllers that Trust Each Other](https://technet.microsoft.com/en-us/library/cc759073%28v=ws.10%29.aspx?f=255&MSPPError=-2147217396) for more information.
