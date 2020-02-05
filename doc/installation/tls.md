@@ -79,6 +79,7 @@ Add your full chain certificates to the cluster as secrets, and then pass those 
 helm install ...
   --set certmanager.install=false \
   --set global.ingress.configureCertmanager=false \
+  --set global.ingress.tls.enabled=true \
   --set gitlab.unicorn.ingress.tls.secretName=RELEASE-gitlab-tls \
   --set registry.ingress.tls.secretName=RELEASE-registry-tls \
   --set minio.ingress.tls.secretName=RELEASE-minio-tls
