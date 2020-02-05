@@ -44,7 +44,7 @@ When the user accesses the Mattermost URL, they log in with same username and pa
 ##### Guest Attribute 
 When enabled, the Guest Attribute in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost server. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
-If a Mattermost Guest user has the guest role removed in the SAML system, the synchronization processes will not automatically promote them to a member user role. This is done manually via System Console > User Management. If a member user has the Guest Attribute added, the synchronization processes will automatically demote the member user to the guest role.
+If a Mattermost Guest user has the guest role removed in the SAML system, the synchronization processes will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a member user has the Guest Attribute added, the synchronization processes will automatically demote the member user to the guest role.
 
 1. Enable Guest Access via **System Console > SAML 2.0**.
 2. Navigate to **System Console > Authentication > SAML 2.0**.
