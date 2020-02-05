@@ -32,6 +32,7 @@ Using SAML Attributes to Apply Roles
 You can use attributes to assign roles to specified users on login. To access the SAML attribute settings navigate to **System Console > SAML 2.0**. 
 
 ##### Username Attribute
+
 (Optional) Enter a SAML assertion filter to use when searching for users. 
 
 1. Navigate to **System Console > Authentication > SAML**.
