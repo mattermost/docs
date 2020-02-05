@@ -97,4 +97,4 @@ No, the new config is updated, but the System Admin does not receive any feedbac
 Does the data retention job affect the audits table? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Prior to version 5.20, data retention would delete user activity corresponding to the data retention time configuration.  In 5.20 and later, the audit table will not delete user activity corresponding to the data retention time configuration. 
+Prior to v5.20, data retention would delete all user activity corresponding to the data retention time configuration. From v5.20, the audit table will retain the user activity corresponding to the data retention time configuration. 
