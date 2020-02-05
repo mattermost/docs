@@ -56,7 +56,7 @@ If a Mattermost Guest user has the guest role removed in the SAML system, the sy
 
 When a guest logs in for the first time they are presented with a default landing page until they are added to channels.
 
-See the [Guest Accounts documentation](https://docs.mattermost.com/deployment/guest-accounts.html) for more information about this feature. 
+See the _`Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`__ for more information about this feature. 
 
 Admin Attribute
 ~~~~~~~~~~~~~~~~
@@ -70,7 +70,7 @@ Existing members that are identified by this attribute will be promoted from mem
 2. Complete the **Admin Attribute** field.
 3. Choose **Save**.
 
-**Note:**If this filter is removed/changed, System Admins that were promoted via this filter will be demoted to members and will not retain access to the System Console. When this filter is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
+**Note:** If this filter is removed/changed, System Admins that were promoted via this filter will be demoted to members and will not retain access to the System Console. When this filter is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
 
 Roadmap
 ----------
