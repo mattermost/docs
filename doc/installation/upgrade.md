@@ -162,3 +162,26 @@ NOTE: **Note:** You'll need to be using Bash 4.0 or above to run the script succ
    # GITLAB_RELEASE should be the version of the chart you are installing, starting with 'v': v3.0.0
    curl -s https://gitlab.com/gitlab-org/charts/gitlab/raw/${GITLAB_RELEASE}/scripts/database-upgrade | bash -s post
    ```
+  
+### Troubleshooting 3.0 release upgrade process
+
+- Make sure that you are using Helm 2.14.3 or >= 2.16.1 [due to the bug in 2.15.x](../releases/3_0.md#problematic-helm-215).
+- If you see any failure during the upgrade, it may be useful to check the description of `gitlab-upgrade-check` pod for details:
+
+   ```shell
+   kubectl get pods -lrelease=RELEASE,app=gitlab
+   kubectl describe pod <gitlab-upgrade-check-pod-full-name>
+   ```
+
+- You may face the error below when running `helm upgrade`:
+
+   ```
+   Error: kind ConfigMap with the name "gitlab-gitlab-shell-sshd" already exists in the cluster and wasn't defined in the previous release.
+   Before upgrading, please either delete the resource from the cluster or remove it from the chart
+   Error: UPGRADE FAILED: kind ConfigMap with the name "gitlab-gitlab-shell-sshd" already exists in the cluster and wasn't defined in the previous release.
+   Before upgrading, please either delete the resource from the cluster or remove it from the chart
+   ```
+
+   The error message can also mention other configmaps like `gitlab-redis-health`, `gitlab-redis-headless`, etc.
+   To fix it, make sure that the services were removed as mentioned in the [upgrade steps for 3.0 release](#delete-existing-services).
+   After that, also delete the configmaps shown in the error message with: `kubectl delete configmap <configmap-name>`.
