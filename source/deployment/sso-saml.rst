@@ -56,7 +56,7 @@ If a Mattermost Guest user has the guest role removed in the SAML system, the sy
 
 When a guest logs in for the first time they are presented with a default landing page until they are added to channels.
 
-See the _`Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`__ for more information about this feature. 
+See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/guest-accounts.html>`_ for more information about this feature. 
 
 Admin Attribute
 ~~~~~~~~~~~~~~~~
