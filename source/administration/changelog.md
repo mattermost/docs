@@ -26,7 +26,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 #### Reworked pre-packaged plugins
  - Prepackaged plugins will continue to be included in the prepackaged_plugins folder but they will not be installed automatically and now they can be upgraded and uninstalled.
  
-#### Ship MMCTL with Mattermost 
+#### Ship MMCTL with Mattermost
+ - Manage servers remotely with `mmctl`, a CLI tool that mimics the Mattermost CLI tool and ships inside Mattermost.
   
 #### Group Sync to Roles LDAP/SAML
  - Provides a way for admins to assign Groups to the built in roles - System Admin, Team Admin, Channel Admin, Members - within Mattermost using the LDAP Group Sync feature.
@@ -38,7 +39,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Enables automatic configuration for SAML. This is accomplished by pulling the configuration metadata directly from the Identity Provider using an account specific URL.
  
 #### GoSAML2 Implementation
- - Replaces the previous and outdated XML Security Library (xmlsec1) with a better XML library (GoSAML2). The XML Security Library provides the encryption/decryption and digital signing functionality required for SAML, which is used to support single sign-on (SSO).  GoSAML2 performs better because the encryption happens in memory as opposed to xmlsec1 that uses the file system.
+ - Replaces the previous and outdated XML Security Library (xmlsec1) with a better XML library (GoSAML2). The XML Security Library provides the encryption/decryption and digital signing functionality required for SAML, which is used to support single sign-on (SSO). GoSAML2 performs better because the encryption happens in memory as opposed to xmlsec1 that uses the file system.
 
 ### Improvements
 
@@ -73,7 +74,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Removed 26 character requirement from post action IDs.
 
 ### Bug Fixes
- - Fixed an issue where verification emails were still being sent on servers with SMTP configured when`Enable Email Notifications` and `Require Email Verification` were disabled in the System Console.
  - Fixed an issue where guest account creation erroneously considered the global list of whitelisted domains.
  - Fixed an issue where inviting multiple users with valid and invalid emails caused the invites for the valid users not to be sent.
  - Fixed an issue where option to invite users by email was displayed even if email invitations were disabled.
@@ -93,7 +93,12 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 #### Changes to Team Edition and Enterprise Edition:
 
+
 ### Open Source Components
+ - Added ``@formatjs/intl-pluralrules`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``@formatjs/intl-relativetimeformat`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``custom-protocol-detection`` in https://github.com/mattermost/mattermost-webapp.
+ - Added ``react-inlinesvg`` in https://github.com/mattermost/mattermost-webapp.
 
 ### Database Changes
  
@@ -103,7 +108,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Websocket Event Changes
  
 ### Known Issues
- - 
+ - Verification emails are still sent on servers with SMTP configured when`Enable Email Notifications` and `Require Email Verification` are disabled in the System Console.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
  - Google login fails on the Classic mobile apps.
