@@ -1,3 +1,5 @@
+
+
 ################
 About this Guide
 ################
@@ -244,7 +246,7 @@ There is also functionality and compatibility risk. This is a known issue for th
 
 This incompatibility is not an issue with the Mattermost application. It results from the proprietary nature of the provider's tools. To make matters worse, there is no course of action to address compatibility issues.
 
-In the end, this sets app wrapping in a negative light. This is the reason the [AppConfig Community](https://www.appconfig.org) came together to create a standard. AppConfig is a modern, efficient, and scalable approach to enterprise mobile management. In that regard, the Mattermost application benefits from being built around this standard.
+In the end, this sets app wrapping in a negative light. This is the reason the `AppConfig Community <https://www.appconfig.org>`_ came together to create a standard. AppConfig is a modern, efficient, and scalable approach to enterprise mobile management. In that regard, the Mattermost application benefits from being built around this standard.
 
 ******************
 Mobile VPN Options
