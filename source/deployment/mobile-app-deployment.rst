@@ -8,7 +8,7 @@ Audience
 
 Leaders, Administrators, and/or Champions
 
-    **Note:** Some features described in this guide are only available to E10 and/or E20 (Enterprise Edition).
+    **Note:** Some features described in this guide are only available in Enterprise Edition E10 and/or E20.
 
 *******************
 Learning Objectives
@@ -16,7 +16,7 @@ Learning Objectives
 
 This guide provides foundational information necessary when developing a plan for a proof of concept and/or enterprise mobile deployment. 
 
-It will not include technical implementation guidance. Links to relevant documentation are included however.
+It does not include technical implementation guidance. Links to relevant documentation are included however.
 
 By the end of this guide you should have an understanding of the high-level requirements for a successful Mattermost mobile deployment. 
 
@@ -39,7 +39,7 @@ If at any point you need additional help, we’re ready to assist, just reach ou
 **Forums**
     For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.org/c/trouble-shoot>`_ with steps to reproduce your issue.
 **GitHub**
-    Visit us on `GitHub <https://github.com/mattermost/>`_ to create issues with any of our repositories.
+    Visit us on `GitHub <https://github.com/mattermost/>`_ to create issues in any of our repositories.
 **Enterprise Support**
     If you’re an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://mattermost.com/support/>`_.
 
@@ -118,7 +118,7 @@ Technical Requirements
     Minimum requirements for the Mattermost Server are maintained in our documentation (link above). 
     **However, we do recommend running the latest version** of the Mattermost Server as it contains the most recent features and any applicable security updates.
 
-    If this is not possible, we encourage you to be on the most recent `Extended Service Release version <https://docs.mattermost.com/administration/extended-support-release.html>`_ of the Mattermost Server. This release has a number of critical feature updates that will ensure compatibility in a number of areas, including the Mattermost push notification service (MPNS).
+    If this is not possible, we encourage you to be on the most recent `Extended Support Release version <https://docs.mattermost.com/administration/extended-support-release.html>`_ of the Mattermost Server. This release has a number of critical feature updates that will ensure compatibility in a number of areas, including the Mattermost push notification service (MPNS).
 
 `Supported Devices/Mobile Device Requirements <https://docs.mattermost.com/install/requirements.html#mobile-apps>`_
     Basic mobile device requirements are provided in the link above.
@@ -129,7 +129,7 @@ Public App Store vs. Custom Mattermost Apps
 
     **Note:** This guide uses `Public App Store` as generic for the two most used application stores `Apple App Store` and `Google Play Store`.
 
-The most critical decision you will make in your mobile deployment will be whether to use the apps provided by Mattermost via Google Play and Apple App Store, or to build and distribute custom versions of the Mattermost apps. Below we provide a very general overview of these options.
+The most critical decision you will make in your mobile deployment is whether to use the apps provided by Mattermost via Google Play and Apple App Store, or to build and distribute custom versions of the Mattermost apps. Below we provide a very general overview of these options.
 
 Public App Store
 ================
@@ -169,7 +169,7 @@ A push proxy is a key technology behind notification transmission. It enables no
 
 Mattermost provides a self-hosted Push Proxy you can deploy, the Mattermost Push Notification Service (MPNS). This is also available via a hosted-by-Mattermost option, or Hosted Push Notification Service (HPNS).
 
-    **Note:** `Only Mattermost Enterprise Edition E10 <https://about.mattermost.com/pricing/>`_ or higher to receive access to our Hosted Push Notification Service (HPNS)
+    **Note:** `Only Mattermost Enterprise Edition E10 <https://about.mattermost.com/pricing/>`_ or higher can be used to receive access to our Hosted Push Notification Service (HPNS)
 
 If you will be using the Mattermost applications via Google Play and Apple App Store, the HPNS is all you need.
 
@@ -186,7 +186,7 @@ Our Hosted Push Notification Service offers:
 
 \* *When using our publicly-available app store applications and the AppConfig standard.*
 
-Of course, if you would like to host your own version of the MPNS, that is always an option but requires you to build the mattermost app yourself. The `Choosing the Right Deployment Model <https://docs.google.com/document/d/1BhHla4medUGVSWuBPNuoz_h5f85MdlIQWcRn5N2WUos/edit#heading=h.6zz62c4mus3l>`_ section of this guide, as well as our `Mobile App Admin Documentation <https://docs.mattermost.com/mobile/mobile-hpns.html>`_ are the best places to start.
+Hosting your own version of the MPNS is an option, but requires you to build the Mattermost app yourself. The `Choosing the Right Deployment Model <https://docs.google.com/document/d/1BhHla4medUGVSWuBPNuoz_h5f85MdlIQWcRn5N2WUos/edit#heading=h.6zz62c4mus3l>`_ section of this guide, as well as our `Mobile App Admin Documentation <https://docs.mattermost.com/mobile/mobile-hpns.html>`_ are the best places to start.
 
 ********************************************
 Enterprise Mobile Management (EMM) Providers
@@ -300,7 +300,7 @@ The mobile applications provided by Mattermost work with our hosted version of t
 **Option 1** - Public App Store Installation (Easiest)
 
 - Users download application via Apple App Store or Google Play
-- Users enter URL to your hosted Mattermost Server.
+- Users enter URL to your hosted Mattermost Server
 
 **Advantages:** Very easy, mobile deployment can be done by each individual user 
 **Disadvantages:** No additional EMM security features
@@ -392,6 +392,7 @@ Updating via the Public Store Apps
 While not part of your initial mobile deployment, you should consider a strategy for updating when new versions of the Mattermost mobile applications are available. Simultaneously, you should check any compatibility requirements for the mobile apps and the Mattermost server. 
 
 For example we recommend you:
+
 - Check the compatibility requirements
 - Validate versions connecting to server
 - Update server
@@ -437,7 +438,7 @@ Option 1 - Enterprise App Store via EMM Provider (most common and recommended):
 Option 2 - Apple App Store & Google Play (less common):
 
 - To submit an app to the official app stores, you need to submit the app to Apple/Google for review
-- This is the same process Mattermost uses make the apps available for everyone.
+- This is the same process Mattermost uses make the apps available for everyone
 - This process is more common if you are looking to white label the app to remove Mattermost branding
 
 ******************************************************
