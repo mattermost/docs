@@ -769,7 +769,7 @@ global:
         cron: "50 * * * *"
 ```
 
-## Configure Rail settings
+## Configure Rails settings
 
 A large portion of the GitLab suite is based upon Rails. As such, many containers within this project operate with this stack. These settings apply to all of those containers, and provide an easy access method to setting them globally versus individually.
 
@@ -789,7 +789,6 @@ Our Rails codebase makes use of [Shopify's Bootsnap](https://github.com/Shopify/
 Testing showed that enabling Bootsnap resulted in overall application performance boost. When a pre-compiled cache is available, some application containers see gains in excess of 33%. At this time, GitLab does not ship this pre-compiled cache with their containers, resulting in a gain of "only" 14%. There is a cost to this gain without the pre-compiled cache present, resulting in an intense spike of small IO at initial startup of each Pod. Due to this, we've exposed a method of disabling the use of Bootsnap in environments where this would be an issue.
 
 When possible, we recommend leaving this enabled.
-
 
 ## Configure GitLab Shell
 
