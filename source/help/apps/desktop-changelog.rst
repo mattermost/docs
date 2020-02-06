@@ -20,7 +20,7 @@ All Platforms
 ^^^^^^^^^^^^^
 
 - Added support for PIV Card Certificate Authentication.
-- Added support for Desktop App Window/Tab UI Updates.
+- Improved server tab organization and visuals with the ability to reorder server tabs via drag-and-drop, notification updates that make it easier to tell when new messages or mentions come in, and a new dark theme.
 - Added a spell checker for Italian language.
 - Added auto focus on Server Display Name input field.
 
