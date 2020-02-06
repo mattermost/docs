@@ -43,14 +43,17 @@ These ``mattermost`` commands include:
 Using the CLI
 ^^^^^^^^^^^^^
 
-To run the CLI commands, you must be in the directory that contains the Mattermost executable. On a default install of Mattermost, the directory is ``/opt/mattermost/bin``. Also, if you followed our `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user *mattermost*. The name of the executable is ``mattermost``.
+To run the CLI commands, you must be in the Mattermost root directory. On a default install of Mattermost, the directory is ``/opt/mattermost``. Also, if you followed our `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user *mattermost*. The name of the executable is ``mattermost``.
 
 **For example, to get the Mattermost version on a default installation of Mattermost:**
 
   .. code-block:: bash
 
-    cd /opt/mattermost/bin
-    ./mattermost version
+    cd /opt/mattermost/
+    sudo -u mattermost bin/mattermost version
+
+.. note::
+  If you don't run the Mattermost binary as the ``mattermost`` user this can lead to complications with permissions as the Mattermost binary starts up plugins and accesses different files when running CLI commands. Running the server as ``root`` for example can cause the ownership of the plugins and files to be overwritten and other issues to appear.
 
 Using the CLI on GitLab Omnibus
 -------------------------------
