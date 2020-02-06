@@ -55,6 +55,7 @@ Mac
 
 - Fixed an issue where the DMG install window user interface was missing styling.
 - Updated the look of Add New Server icon on the Settings page.
+- Fixed an issue where the app could not recover from a connection error after leaving a computer to sleep for a few days.
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
