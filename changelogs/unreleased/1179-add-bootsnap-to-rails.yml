@@ -1,5 +1,5 @@
 ---
-title: 'Perfmance: add Bootsnap enable to all uses of Rails-derived containers'
+title: 'Performance: enable Bootsnap for all Rails-derived containers'
 merge_request: 1157
 author:
 type: added

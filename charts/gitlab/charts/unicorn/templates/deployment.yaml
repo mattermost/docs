@@ -107,7 +107,7 @@ spec:
               value: '/srv/gitlab/config'
             - name: WORKHORSE_ARCHIVE_CACHE_DISABLED
               value: "1"
-            {{- if .Values.bootsnap.enabled }}
+            {{- if .Values.global.rails.bootsnap.enabled }}
             - name: ENABLE_BOOTSNAP
               value: "1"
             {{- end }}
@@ -150,7 +150,7 @@ spec:
             - name: GITLAB_WORKHORSE_SENTRY_DSN
               value: {{ .Values.workhorse.sentryDSN }}
 {{- end }}
-            {{- if .Values.bootsnap.enabled }}
+            {{- if .Values.global.rails.bootsnap.enabled }}
             - name: ENABLE_BOOTSNAP
               value: "1"
             {{- end }}

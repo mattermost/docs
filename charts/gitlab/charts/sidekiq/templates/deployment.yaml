@@ -135,7 +135,7 @@ spec:
             - name: BYPASS_SCHEMA_VERSION
               value: 'true'
 {{- end }}
-            {{- if $.Values.bootsnap.enabled }}
+            {{- if $.Values.global.rails.bootsnap.enabled }}
             - name: ENABLE_BOOTSNAP
               value: "1"
             {{- end }}
@@ -188,7 +188,7 @@ spec:
               value: {{ int $.Values.memoryKiller.graceTime | quote }}
             - name: SIDEKIQ_MEMORY_KILLER_SHUTDOWN_WAIT
               value: {{ int $.Values.memoryKiller.shutdownWait | quote }}
-            {{- if $.Values.bootsnap.enabled }}
+            {{- if $.Values.global.rails.bootsnap.enabled }}
             - name: ENABLE_BOOTSNAP
               value: "1"
             {{- end }}

@@ -16,6 +16,7 @@ for more information on how the global variables work.
 - [Gitaly](#configure-gitaly-settings)
 - [MinIO](#configure-minio-settings)
 - [appConfig](#configure-appconfig-settings)
+- [Rails](#configure-rails-settings)
 - [GitLab Shell](#configure-gitlab-shell)
 - [Unicorn](#configure-unicorn)
 - [Custom Certificate Authorities](#custom-certificate-authorities)
@@ -767,6 +768,28 @@ global:
       expire_build_artifacts_worker:
         cron: "50 * * * *"
 ```
+
+## Configure Rail settings
+
+A large portion of the GitLab suite is based upon Rails. As such, many containers within this project operate with this stack. These settings apply to all of those containers, and provide an easy access method to setting them globally versus individually.
+
+```
+global:
+  rails:
+    bootsnap:
+      enabled: true
+```
+
+### Bootsnap Cache
+
+Our Rails codebase makes use of [Shopify's Bootsnap](https://github.com/Shopify/bootsnap) Gem. Settings here are used to configure that behavior.
+
+`bootsnap.enabled` controls the activation of this feature. It defaults to `true`.
+
+Testing showed that enabling Bootsnap resulted in overall application performance boost. When a pre-compiled cache is available, some application containers see gains in excess of 33%. At this time, GitLab does not ship this pre-compiled cache with their containers, resulting in a gain of "only" 14%. There is a cost to this gain without the pre-compiled cache present, resulting in an intense spike of small IO at initial startup of each Pod. Due to this, we've exposed a method of disabling the use of Bootsnap in environments where this would be an issue.
+
+When possible, we recommend leaving this enabled.
+
 
 ## Configure GitLab Shell
 

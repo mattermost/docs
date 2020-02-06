@@ -34,10 +34,6 @@ shutdown:
 
 annotations: {}
 
-# Enable or disable the Bootsnap cache for faster Rails startup times
-bootsnap:
-  enabled: true
-
 metrics:
   enabled: true
   annotations:

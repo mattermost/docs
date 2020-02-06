@@ -73,7 +73,7 @@ spec:
             - name: DB_SCHEMA_TARGET
               value: 'geo'
             {{- end }}
-            {{- if .Values.bootsnap.enabled }}
+            {{- if .Values.global.rails.bootsnap.enabled }}
             - name: ENABLE_BOOTSNAP
               value: '1'
             {{- end }}

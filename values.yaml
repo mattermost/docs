@@ -344,6 +344,11 @@ global:
   railsSecrets: {}
     # secret:
 
+  ## Rails generic setting, applicable to all Rails-based containers
+  rails:
+    bootsnap: # Enable / disable Shopify/Bootsnap cache
+      enabled: true
+
   ## doc/charts/globals.md#configure-registry-settings
   registry:
     bucket: registry
