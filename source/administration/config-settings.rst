@@ -1879,7 +1879,7 @@ Enable sign-in with email
 
 **True**: Mattermost allows account creation using email and password.
 
-**False**: Sign in with email is disabled and does not appear on the login screen. Use this value when you want to limit sign up to a single sign-on service like AD/LDAP, SAML or GitLab.
+**False**: Sign in with email is disabled and does not appear on the login screen. Use this value when you want to limit sign up to a single sign-on service like AD/LDAP, SAML, or GitLab.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSignInWithEmail": true`` with options ``true`` and ``false``.                                                     |
@@ -2093,6 +2093,15 @@ See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/gu
 | This feature's ``config.json`` setting is ``"GuestFilter": ""`` with string input.                                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Admin Filter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20*
+
+(Optional) Enter a filter to use for designating the System Admin role to users. The user is promoted to this role on their next login or at the next scheduled AD/LDAP sync.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AdminFilter": false`` with options ``true`` and ``false``.                                                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Group Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2437,6 +2446,15 @@ See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/gu
 | This feature's ``config.json`` setting is ``"GuestAttribute": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Admin Attribute
+^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20*
+
+(Optional) The attribute in the SAML Assertion for designating System Admins. The user is promoted to this role on their next login.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AdminAttribute": false`` with options ``true`` and ``false``.                                                           |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 First Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
