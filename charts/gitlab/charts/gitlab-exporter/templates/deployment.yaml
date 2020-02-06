@@ -110,6 +110,7 @@ spec:
 {{ toYaml .Values.resources | indent 12 }}
       volumes:
 {{ include "gitlab.extraVolumes" . | indent 6 }}
+{{ include "gitlab.psql.ssl.volume" . | indent 6 }}
       - name: gitlab-exporter-config
         configMap:
           name: {{ template "fullname" . }}
