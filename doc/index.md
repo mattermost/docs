@@ -60,11 +60,13 @@ component services are documented under the [GitLab](charts/gitlab/index.md) cha
 - [NGINX](charts/nginx/index.md)
 - [MinIO](charts/minio/index.md)
 - [Registry](charts/registry/index.md)
-- GitLab/[Sidekiq](charts/gitlab/sidekiq/index.md)
-- GitLab/[GitLab Shell](charts/gitlab/gitlab-shell/index.md)
 - GitLab/[Gitaly](charts/gitlab/gitaly/index.md)
+- GitLab/[GitLab Exporter](charts/gitlab/gitlab-exporter/index.md)
+- GitLab/[GitLab Grafana](charts/gitlab/gitlab-grafana/index.md)
+- GitLab/[GitLab Shell](charts/gitlab/gitlab-shell/index.md)
+- GitLab/[Migrations](charts/gitlab/migrations/index.md)
+- GitLab/[Sidekiq](charts/gitlab/sidekiq/index.md)
 - GitLab/[Unicorn](charts/gitlab/unicorn/index.md)
-- GitLab/[migrations](charts/gitlab/migrations/index.md)
 
 ## Global settings
 
