@@ -2100,7 +2100,7 @@ Admin Filter
 (Optional) Enter a filter to use for designating the System Admin role to users. The user is promoted to this role on their next login or at the next scheduled AD/LDAP sync.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AdminFilter": false`` with options ``true`` and ``false``.                                                               |
+| This feature's ``config.json`` setting is ``"AdminFilter": false`` with options ``true`` and ``false``.                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Group Filter
@@ -2281,7 +2281,6 @@ Use New SAML Library
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UseNewSAMLLibrary": false`` with options ``true`` and ``false``.                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 
 Enable Login With SAML
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
