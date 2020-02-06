@@ -3,7 +3,7 @@ Release Lifecycle
 
 What is a Release Lifecycle?
 ------------------------------------
-During each monthly release, Mattermost backports security and major bug fixes to the previous three monthly releases. Extended Support Releases receive backports for security fixes and major bug fixes for the length of their life cycle.  Once a release life cycle has ended, it will no longer receive the security or major bug backports.
+During each monthly release, Mattermost backports security and major bug fixes to the previous three monthly releases. `Extended Support Releases <https://docs.mattermost.com/administration/extended-support-release.html>`_ receive backports for security fixes and major bug fixes for the length of their life cycle.  Once a release life cycle has ended, it will no longer receive the security or major bug backports.
 
 +-------------+-----------------------+--------------------------+--------------------------+--------------------------+
 | Version     | Release Type          | Lifecyle Start Date      | Lifecycle End Date       | Extended Support Release |
