@@ -14,7 +14,7 @@ The default deployment includes:
 
 - Core GitLab components: Unicorn, Shell, Workhorse, Registry, Sidekiq, and Gitaly
 - Optional dependencies: Postgres, Redis, MinIO
-- An auto-scaling, unprivileged [GitLab Runner](https://docs.gitlab.com/runner/) using the Kubernetes executor
+- An auto-scaling, [_unprivileged_](https://docs.gitlab.com/runner/install/kubernetes.html#running-docker-in-docker-containers-with-gitlab-runners) [GitLab Runner](https://docs.gitlab.com/runner/) using the Kubernetes executor
 - Automatically provisioned SSL via [Let's Encrypt](https://letsencrypt.org/).
 
 There are also some [example values.yaml files](https://gitlab.com/gitlab-org/charts/gitlab/tree/master/examples).
