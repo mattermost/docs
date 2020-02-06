@@ -13,7 +13,7 @@ designed to detect and warn the user that their configuration will not work.
 
 This replicates the behavior of deprecations, but is specific to ensuring functional configuration.
 
-Introduced in [!757 checkConfig: add methods to test for known errors](https://gitlab.com/gitlab-org/charts/gitlab/merge_requests/757)
+Introduced in [!757 checkConfig: add methods to test for known errors](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/757)
 
 ## Breaking changes via deprecation
 
@@ -34,7 +34,7 @@ All deprecations must be addressed in order for a successful deployment to occur
 the user would prefer to be informed of a breaking change over experiencing unexpected
 behavior or complete failure that requires debugging.
 
-Introduced in [!396 Deprecations: implement buffered list of deprecations](https://gitlab.com/gitlab-org/charts/gitlab/merge_requests/396)
+Introduced in [!396 Deprecations: implement buffered list of deprecations](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests/396)
 
 ## Preference of Secrets in initContainer over Environment
 
