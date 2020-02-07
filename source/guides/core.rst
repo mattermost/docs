@@ -36,6 +36,7 @@ Release Process
    /process/security-release*
    /process/mobile-release*
    /process/release-tips*
+   /process/release-scorecard-definitions*
 
 Community Process
 -------------------
