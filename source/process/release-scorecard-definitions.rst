@@ -55,11 +55,14 @@ Release Output
 |                                          | Calculate the average by using a formula       |
 |                                          | “=Release Day-Created”.                        |
 +------------------------------------------+------------------------------------------------+
-| Number of P1 bugs reported in production |                                                |
+| Number of P1 bugs reported in production | *Bug severity guidelines are in progress,*     |
+|                                          | *after which a Jira query will be built*       |
 +------------------------------------------+------------------------------------------------+
-| Number of P2 bugs reported in production | Check "P2" Jira labels.                        |
+| Number of P2 bugs reported in production | *Bug severity guidelines are in progress,*     |
+|                                          | *after which a Jira query will be built*       |
 +------------------------------------------+------------------------------------------------+
-| Number of P3 bugs reported in production | Check "P3" Jira labels.                        |
+| Number of P3 bugs reported in production | *Bug severity guidelines are in progress,*     |
+|                                          | *after which a Jira query will be built*       |
 +------------------------------------------+------------------------------------------------+
 
 Release Management
