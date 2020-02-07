@@ -218,6 +218,8 @@ Open a text editor and create a text file with the following details. Save the f
 .. code-block:: sh
 
       $ kubectl create ns mattermost
+      $ kubectl apply -n mattermost -f /path/to/secret.yaml
+      $ kubectl apply -n mattermost -f /path/to/mattermost-installation.yaml
       $ kubectl apply -n mattermost -f /path/to/restore.yaml
 
 The deployment process can be monitored in the Kubernetes user interface. If errors or issues are experienced,
