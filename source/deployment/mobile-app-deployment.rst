@@ -304,16 +304,18 @@ The mobile applications provided by Mattermost work with our hosted version of t
 - Users download application via Apple App Store or Google Play
 - Users enter URL to your hosted Mattermost Server
 
-**Advantages:** Very easy, mobile deployment can be done by each individual user 
-**Disadvantages:** No additional EMM security features
+*Advantages:* Very easy, mobile deployment can be done by each individual user
+
+*Disadvantages:* No additional EMM security features
 
 **Option 2** - Public App Store Installation with EMM Provider (Easy)
 
 - The EMM provider pushes the Mattermost app to the EMM enrolled devices
 - Extend your organization’s security best practices/requirements via your EMM provider
 
-**Advantages:** Easy, mobile deployment happens automatically to enrolled devices, app security and configuration can be maintained via your EMM provider 
-**Disadvantages:** No app customization
+*Advantages:* Easy, mobile deployment happens automatically to enrolled devices, app security and configuration can be maintained via your EMM provider
+
+*Disadvantages:* No app customization
 
 *********************************************
 Distributing Custom Builds of the Mobile Apps
@@ -339,7 +341,7 @@ Keeping your custom built apps up to date with features and security updates wil
 
 To understand what’s involved, have your development team `read through our documentation <https://developers.mattermost.com/contribute/mobile/build-your-own/>`_.
 
-    **Note:** As of Mattermost 5.18, E20 customers can limit data sent to the HPNS. With this option a message containing only an ID. Once the mobile client receives this ID, the message contents are loaded from the server. Thus, the message contents are never transmitted through APNS/FCM.
+    **Note:** As of Mattermost 5.18, E20 customers can limit data sent to the HPNS. With this option a message containing only an ID is transmitted. Once the mobile client receives this ID, the message contents are loaded from the server. Thus, the message contents are never transmitted through APNS/FCM.
 
 ----
 
@@ -435,7 +437,7 @@ Once you have built your own apps you will need to distribute them. There are tw
 Option 1 - Enterprise App Store via EMM Provider (most common and recommended): 
 
 - This is the most common way for customers to distribute their apps
-- Once added to your own "Enterprise App Store", user can download
+- Once added to your own "Enterprise App Store", users can download from the EMM catalog, or you can use the EMM provider to push the application to the user's device.
 
 Option 2 - Apple App Store & Google Play (less common):
 
