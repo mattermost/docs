@@ -21,6 +21,7 @@ You can import the following data types:
 - Posts' File Attachments
 - Direct Message and Group Message channels
 - Direct Messages and Group Messages
+- Direct Messages from a user to themselves
 - Permissions Schemes
 - Custom Emoji
 
