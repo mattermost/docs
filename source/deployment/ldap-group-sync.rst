@@ -79,7 +79,7 @@ Adding Default Teams or Channels For The Group
 --------------------------------------------
 To add the teams and channels that you want the group members to default in, select either **Add Team** or **Add Channel** from the **Add Team or Channel** button.
 
-.. image:: ../images/Add_Team_Or_Channel.png
+.. image:: ../images/Add_Team_Channel_Role.png
 
 Channels are nested below the Team they belong to in the team and channel list.
 
