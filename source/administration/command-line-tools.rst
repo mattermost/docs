@@ -2250,7 +2250,7 @@ mattermost webhook move-outgoing
   Examples
     .. code-block:: none
 
-       ./mattermost webhook move-outgoing newteam oldteam:webhook-id --channel new-default-channel
+       ./mattermost webhook move-outgoing newteam oldteam:[webhookId] --channel [channelId or channelName]
        
   Options
     .. code-block:: none
