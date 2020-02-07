@@ -39,7 +39,6 @@
 
       ```sh
       sudo gitlab-rake gitlab:artifacts:migrate
-      sudo gitlab-rake gitlab:traces:migrate
       ```
 
    1. Migrate existing LFS objects to object storage
