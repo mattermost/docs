@@ -1,0 +1,6 @@
+---
+title: Use the volume with Postgres client SSL certificate in the gitlab-exporter
+  deployment.
+merge_request: 1162
+author: Franciszek Walkowiak
+type: fixed
