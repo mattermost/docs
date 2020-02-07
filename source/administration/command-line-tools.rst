@@ -2232,7 +2232,7 @@ mattermost webhook modify-outgoing
           --description string          Incoming webhook description
 	  --trigger-word string array	Word(s) to trigger webhook
 	  --trigger-when string		When to trigger webhook (exact: for first word matches a trigger word exactly, start: for first word starts with a trigger word)")
-          --icon [iconURL]              Icon URL 
+         --icon [iconURL]              Icon URL 
 	  --url [callbackURL]           Callback URL 
 	  --content-type string         Content type 
 	  
