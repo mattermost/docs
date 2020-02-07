@@ -188,7 +188,7 @@ Our Hosted Push Notification Service offers:
 
 \* *When using our publicly-available app store applications and the AppConfig standard.*
 
-Hosting your own version of the MPNS is an option, but requires you to build the Mattermost app yourself. The `Choosing the Right Deployment Model <https://docs.google.com/document/d/1BhHla4medUGVSWuBPNuoz_h5f85MdlIQWcRn5N2WUos/edit#heading=h.6zz62c4mus3l>`_ section of this guide, as well as our `Mobile App Admin Documentation <https://docs.mattermost.com/mobile/mobile-hpns.html>`_ are the best places to start.
+Hosting your own version of the MPNS is an option, but requires you to build the Mattermost app yourself. The `Choosing the Right Mobile Deployment Model`_ section of this guide, as well as our `Mobile App Admin Documentation <https://docs.mattermost.com/mobile/mobile-hpns.html>`_ are the best places to start.
 
 ********************************************
 Enterprise Mobile Management (EMM) Providers
@@ -196,7 +196,7 @@ Enterprise Mobile Management (EMM) Providers
 
 EMM Providers develop software that helps enterprise teams manage secure mobile technology deployments. This includes the use of mobile devices and usage-ready applications.
 
-Most large enterprise teams are familiar with `Enterprise Mobile Management <https://en.wikipedia.org/wiki/Enterprise_mobility_management>`_ providers, or EMMs. If this is a new term for you, review `Appendix B <https://docs.google.com/document/d/1BhHla4medUGVSWuBPNuoz_h5f85MdlIQWcRn5N2WUos/edit#heading=h.pn9oiqr3rebj>`_ for a list of providers and relevant information.
+Most large enterprise teams are familiar with `Enterprise Mobile Management <https://en.wikipedia.org/wiki/Enterprise_mobility_management>`_ providers, or EMMs. If this is a new term for you, review `Appendix B: EMM Provider List`_ for a list of providers and relevant information.
 
 For those taking on larger deployments, we assume you are already using an EMM provider.
 
