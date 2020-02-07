@@ -437,7 +437,7 @@ Once you have built your own apps you will need to distribute them. There are tw
 Option 1 - Enterprise App Store via EMM Provider (most common and recommended): 
 
 - This is the most common way for customers to distribute their apps
-- Once added to your own "Enterprise App Store", users can download from the EMM catalog, or you can use the EMM provider to push the application to the user's device.
+- Once added to your own "Enterprise App Store", users can download from the EMM catalog, or you can use the EMM provider to push the application to the user's device
 
 Option 2 - Apple App Store & Google Play (less common):
 
