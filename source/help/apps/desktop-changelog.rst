@@ -59,7 +59,7 @@ Mac
 
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+- On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installs, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
 
 Contributors
 ~~~~~~~~~~~~~~~
