@@ -2240,7 +2240,7 @@ mattermost webhook move-outgoing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   Description
-    Move an existing outgoing webhook to another team and channel by by specifying its id. If the webhook to be moved has a channel id, it must have a new one specified when moving to a new team. 
+    Move an existing outgoing webhook to another team by specifying its id. If the outgoing webhook is triggered by a keyword then assiging a channel is optional.  If the outgoing webhook is associated to a specific channel prior to moving, a channel must be specified within the new team. 
 
   Format
     .. code-block:: none
