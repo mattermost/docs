@@ -107,6 +107,10 @@ spec:
               value: '/srv/gitlab/config'
             - name: WORKHORSE_ARCHIVE_CACHE_DISABLED
               value: "1"
+            {{- if .Values.global.rails.bootsnap.enabled }}
+            - name: ENABLE_BOOTSNAP
+              value: "1"
+            {{- end }}
           volumeMounts:
 {{ include "gitlab.extraVolumeMounts" . | indent 12 }}
             - name: unicorn-config
@@ -146,6 +150,10 @@ spec:
             - name: GITLAB_WORKHORSE_SENTRY_DSN
               value: {{ .Values.workhorse.sentryDSN }}
 {{- end }}
+            {{- if .Values.global.rails.bootsnap.enabled }}
+            - name: ENABLE_BOOTSNAP
+              value: "1"
+            {{- end }}
           volumeMounts:
 {{- if .Values.metrics.enabled }}
             - name: unicorn-metrics

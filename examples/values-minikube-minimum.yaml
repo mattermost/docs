@@ -13,6 +13,10 @@ global:
   hosts:
     domain: 192.168.99.100.nip.io
     externalIP: 192.168.99.100
+  # Disable Rails bootsnap cache (temporary)
+  rails:
+    bootsnap:
+      enabled: false
 # Don't use certmanager, we'll self-sign
 certmanager:
   install: false

@@ -88,7 +88,7 @@ spec:
               value: {{ .Values.global.appConfig.backups.tmpBucket }}
             - name: GITALY_FEATURE_DEFAULT_ON
               value: "1"
-            {{- if .Values.bootsnap.enabled }}
+            {{- if .Values.global.rails.bootsnap.enabled }}
             - name: ENABLE_BOOTSNAP
               value: "1"
             {{- end }}

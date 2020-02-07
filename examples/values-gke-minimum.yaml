@@ -34,6 +34,11 @@ minio:
     requests:
       memory: 64Mi
       cpu: 10m
+# Disable Rails bootsnap cache (temporary)
+global:
+  rails:
+    bootsnap:
+      enabled: false
 # Reduce replica counts, reducing CPU & memory requirements
 gitlab:
   unicorn:
