@@ -33,7 +33,7 @@ Before opening an issue please review the [known issues and limitations](#known-
 
 We greatly appreciate the wider testing of the community during beta, and encourage [detailed issues to be reported](https://gitlab.com/gitlab-org/charts/gitlab/issues/new) so we can address them.
 
-We welcome any improvements contributed in the form of [Merge Requests](https://gitlab.com/gitlab-org/charts/gitlab/merge_requests).
+We welcome any improvements contributed in the form of [Merge Requests](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests).
 
 ## Known issues and limitations
 

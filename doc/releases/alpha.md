@@ -43,7 +43,7 @@ We greatly appreciate the wider testing of the community during alpha, and encou
 
 We also reserve the right to close issues without providing a reason. Issues can accumulate quickly and we need to spend more time moving the charts forward than doing issue triage.
 
-We welcome any improvements contributed in the form of [Merge Requests](https://gitlab.com/gitlab-org/charts/gitlab/merge_requests).
+We welcome any improvements contributed in the form of [Merge Requests](https://gitlab.com/gitlab-org/charts/gitlab/-/merge_requests).
 
 ## Known issues and limitations
 
