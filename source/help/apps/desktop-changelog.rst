@@ -19,7 +19,7 @@ Improvements
 All Platforms
 ^^^^^^^^^^^^^
 
-- Added support for PIV Card Certificate Authentication.
+- Added support for Certificate Authentication, including PIV Card authentication.
 - Improved server tab organization and visuals with the ability to reorder server tabs via drag-and-drop, notification updates that make it easier to tell when new messages or mentions come in, and a new dark theme.
 - Added a spell checker for Italian language.
 - Added auto focus on Server Display Name input field.
@@ -60,6 +60,7 @@ Mac
 Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installs, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
+- Pressing Enter multiple times during Basic Authentication causes a crash.
 
 Contributors
 ~~~~~~~~~~~~~~~
