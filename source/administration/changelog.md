@@ -109,6 +109,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Websocket Event Changes
  
 ### Known Issues
+ - Code block line numbers are copied when pasting into certain applications.
+ - Deactivated users with whom you never interacted in a private message before appear in New Direct Message menu.
  - Verification emails are still sent on servers with SMTP configured when`Enable Email Notifications` and `Require Email Verification` are disabled in the System Console.
  - On a server using a subpath, the URL opens a blank page if the System Admin changes the Site URL in the System Console UI. To fix, the System Admin should restart the server.
  - Login does not work when Custom Terms of Service is enabled and MFA is enforced.
