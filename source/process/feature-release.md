@@ -42,8 +42,6 @@ No pull requests for major features should be **merged** to the current release 
     - Post this checklist in the [Release Checklist](https://community.mattermost.com/core/channels/release-checklist) channel
     - Verify all items in the last posted release checklist are complete
     - After release branches are cut, ask dev to cut an RN build
-    - Check that all features are behind a feature flag
-    - Confirm all config settings and new features have diagnostics
     - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel [See example](https://community.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
       - Queue a discussion about MVP candidates for the next R&D meeting
     - Draft Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
@@ -193,6 +191,8 @@ Day when Leads and PMs decide which major features are included in the release, 
 2. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
+    - Check that all features are behind a feature flag
+    - Confirm all config settings and new features have diagnostics
     - Verify that the final translations PR for the release is submitted
     - Confirm Changelog reflects any changes since it was merged (including known issues and contributors from all repositories)
       - Confirm translators and new integrations contributors have been added
