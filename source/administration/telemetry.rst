@@ -96,20 +96,20 @@ Trace events
   Includes duration on how long the action took place like startup, team/channel switch, posts loading/update and channel drawer open/close. The naming convention is interpreted as ``[start observation]:[end observation]``, e.g. ``start:overall`` as from app start until fully rendered or ``post_list:thread`` as on press of post at post list until thread is opened.
   Complete list of trace events are the following:
 
-  - start:overall
-  - start:process_packages
-  - start:content_appeared
-  - start:select_server_screen
-  - start:channel_screen
-  - team:switch
-  - channel:loading
-  - channel:switch_loaded
-  - channel:switch_initial
-  - channel:close_drawer
-  - channel:open_drawer
-  - posts:loading
-  - post_list:thread
-  - post_list:permalink
+  - *start:overall*: Initial start (cold or reload) until the last post of a channel is loaded.
+  - *start:process_packages*: Initial start (cold or reload) until internal process packages are completed.
+  - *start:content_appeared*: Initial start (cold or reload) until content appeared.
+  - *start:select_server_screen*: Initial start (cold or reload) until the select server screen is loaded.
+  - *start:channel_screen*: Initial start (cold or reload) until the channel screen is loaded.
+  - *team:switch*: Time it takes to switch from current to new team. It starts from tapping a new team until last post of its channel is loaded.
+  - *channel:loading*: Period of time showing channel loading indicator. This is a newly visited channel showing empty screen and loading indicator.
+  - *channel:switch_loaded*: Time it takes to load a channel which has been visited recently.
+  - *channel:switch_initial*: Time it takes to load a channel for the first time.
+  - *channel:close_drawer*: Time it takes to close a channel drawer.
+  - *channel:open_drawer*: Time it takes to open a channel drawer.
+  - *posts:loading*: Wait time to load more posts like when a user is scrolling down until it hits the last message to request for more messages.
+  - *post_list:thread*: Wait time to open a thread of a post. From tapping a post until the last post on thread is loaded.
+  - *post_list:permalink*: Time it takes to open a permalink.
 
 Device information
   The information being collected is non-personally identifiable. Except for system_version, device information is based from `react-native-device-info <https://github.com/mattermost/react-native-device-info#react-native-device-info>`__ library.  Refer to the linked documentation to learn more.
