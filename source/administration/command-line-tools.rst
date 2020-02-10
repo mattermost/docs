@@ -53,7 +53,7 @@ To run the CLI commands, you must be in the Mattermost root directory. On a defa
     sudo -u mattermost bin/mattermost version
 
 .. note::
-  If you don't run the Mattermost binary as the ``mattermost`` user this can lead to complications with permissions as the Mattermost binary starts up plugins and accesses different files when running CLI commands. Running the server as ``root`` for example can cause the ownership of the plugins and files to be overwritten and other issues to appear.
+  Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors. 
 
 Using the CLI on GitLab Omnibus
 -------------------------------
