@@ -2097,7 +2097,7 @@ Admin Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20*
 
-(Optional) Enter a filter to use for designating the System Admin role to users. The user is promoted to this role on their next login or at the next scheduled AD/LDAP sync.
+(Optional) Enter a filter to use for designating the System Admin role to users. The user is promoted to this role on their next login or at the next scheduled AD/LDAP sync. If the Admin Filter is removed, users who are currently logged in retain their Admin role. When they log out this is revoked and on their next login they will no longer have Admin privileges.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AdminFilter": false`` with options ``true`` and ``false``.                                                              |
@@ -2449,7 +2449,7 @@ Admin Attribute
 ^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E20*
 
-(Optional) The attribute in the SAML Assertion for designating System Admins. The user is promoted to this role on their next login.
+(Optional) The attribute in the SAML Assertion for designating System Admins. The user is promoted to this role on their next login. If the Admin Attribute is removed, users who are currently logged in retain their Admin role. When they log out this is revoked and on their next login they will no longer have Admin privileges.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AdminAttribute": false`` with options ``true`` and ``false``.                                                           |
