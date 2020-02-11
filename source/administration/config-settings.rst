@@ -2325,7 +2325,7 @@ The issuer URL for the Identity Provider you use for SAML requests.
 
 Identity Provider Metadata URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The metadata URL for the Identity Provider you use for SAML requests.
+The URL where Mattermost sends a request to obtain setup metadata from the provider.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"IdpMetadataUrl": ""`` with string input.                                                                              |
