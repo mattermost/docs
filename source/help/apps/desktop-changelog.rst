@@ -8,6 +8,9 @@ Release v4.4.0
 
 - **v4.4.0, release day 2020-02-16**
 
+**Security Note**
+-
+
 **Breaking Changes** 
 - Due to moving to a new configuration version to support the new tabbar for the ability to rearrange the server tab order, it is recommended to do a backup of previous config if you want to downgrade your Desktop App version afterwards.
 
