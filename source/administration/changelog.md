@@ -90,11 +90,13 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
- - SamlSettings.IdpMetadataUrl
- - SamlSettings.EnableAdminAttribute
- - SamlSettings.AdminAttribute
- - PluginSettings.EnableRemoteMarketplace
- - PluginSettings.AutomaticPrepackagedPlugins
+ - Under ``SamlSettings`` in ``config.json``:
+    - Added ``IdpMetadataUrl`, to 
+    - Added ``EnableAdminAttribute``, to 
+    - Added ``AdminAttribute``, to
+ - Under ``PluginSettings`` in ``config.json``:
+    - Added ``EnableRemoteMarketplace``, to 
+    - Added ``AutomaticPrepackagedPlugins``, to
 
 ### Open Source Components
  - Added ``@formatjs/intl-pluralrules`` in https://github.com/mattermost/mattermost-webapp.
