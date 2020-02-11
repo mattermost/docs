@@ -1,16 +1,11 @@
 ..  _troubleshooting:
 
-Troubleshooting
-===============
+This document summarizes common troubleshooting issues and techniques.
 
-This document summarizes common troubleshooting issues and techniques. 
-
-Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ might be helpful as someone may have experienced the same error in the past. 
+Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ might be helpful as someone may have experienced the same error in the past.
 
 If you're an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_.
 
-.. contents::
-    :backlinks: top
 
 Important Notes
 ---------------
@@ -22,14 +17,14 @@ Important Notes
 
 General Troubleshooting
 -----------------------
-Some of these suggestions can be done directly, and others may need consultation from your network administrator. 
+Some of these suggestions can be done directly, and others may need consultation from your network administrator.
 
-- Take a look at the logs (``mattermost.log`` and NGINX logs) for errors. 
+- Take a look at the logs (``mattermost.log`` and NGINX logs) for errors.
 - You can also search the error messages online - existing solutions can often be applied.
-- Open **System Console** > **General** > **Logging** and set File Log Level to DEBUG. Make sure to revert to INFO after troubleshooting to save disk space.
+- Open **System Console > General > Logging** and set File Log Level to DEBUG. Make sure to revert to INFO after troubleshooting to save disk space.
 
-Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.  
-    
+Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.
+
 - If the problem occurred subsequent to some period of normal operation, did anything change in the environment?
     - Was the client, host, or server upgraded?
     - Was an operating system update applied?
@@ -40,9 +35,9 @@ Put together a timeline to eliminate events prior to the error/problem occurring
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
     - Do differences exist between the users who are affected and the users who are not affected?
 
-These questions are quite general but should help guide you to a point where the root cause of the problem can be found. If, after following these guidelines, you're still facing the issue, visit the `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__. 
+These questions are quite general but should help guide you to a point where the root cause of the problem can be found. If, after following these guidelines, you're still facing the issue, visit the `Troubleshooting Forum <https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150>`__.
 
-Administration Issues 
+Administration Issues
 -----------------------------
 
 Common System Administration Issues
@@ -63,9 +58,9 @@ After setting up SSO authentication, it is common for the System Administrator t
 
 Before doing this, the System Administrator needs to change their sign-in method to SSO by doing the following:
 
-1. Sign in to Mattermost using an email and password.
-2. Go to **Account Settings** > **Security** > **Sign-in Method**. 
-3. Click the "Switch" button to select a sign-in method and complete the process provided.
+1. Sign in to Mattermost using an email address and password.
+2. Go to **Account Settings > Security > Sign-in Method**.
+3. Click the **Switch** button to select a sign-in method and complete the process provided.
 
 The System Administrator can now turn off email sign-in and still access their account. To avoid locking other existing users out of their accounts, it is recommended the System Administrator ask them to switch authentication methods as well.
 
@@ -74,7 +69,7 @@ Locked Out of System Administrator Account
 
 If the System Administrator is locked out of the system during SAML configuration process, they can set an existing account to System Administrator using `a command line tool <http://docs.mattermost.com/deployment/on-boarding.html#creating-system-administrator-account-from-commandline>`__.
 
-If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line: 
+If email sign-in was turned off before the System Administrator switched sign-in methods, sign up for a new account and promote it to System Administrator from the command line:
 
 1. Sign in to the server Mattermost is running on via ``ssh``.
 2. Go to the directory of the Mattermost application. If you've followed our setup process this is ``/opt/mattermost``.
@@ -86,7 +81,7 @@ If email sign-in was turned off before the System Administrator switched sign-in
 
 4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 
-Common SAML Issues 
+Common SAML Issues
 ~~~~~~~~~~~~~~~~~~
 
 ``An account with that username already exists. Please contact your Administrator.``
@@ -94,24 +89,24 @@ Common SAML Issues
 
 This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
-This error message can also be received if the `Username Attribute` of their SAML credentials doesn't match the username of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
-  
+This error message can also be received if the ``Username Attribute`` of their SAML credentials doesn't match the username of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
+
 ``An account with that email already exists. Please contact your Administrator.``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings** > **Security** > **Sign-in method**.
+This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
-This error message can also be received if the `Email Attribute` of their SAML credentials doesn't match the email address of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
+This error message can also be received if the ``Email Attribute`` of their SAML credentials doesn't match the email address of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
 
 ``SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Confirm all attributes, including `Email Attribute` and `Username Attribute`, are correct in both the Identity Provider configuration and in **System Console** > **SAML**.
+Confirm all attributes, including ``Email Attribute`` and ``Username Attribute``, are correct in both the Identity Provider configuration and in **System Console > SAML**.
 
 Unable to Switch to SAML Authentication Successfully
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-First, ensure you have installed the `XML Security Library <https://www.aleksey.com/xmlsec/download.html>`__ on your Mattermost instance and that **it is available in your** PATH.
+First, ensure you have installed the `XML Security Library <https://www.aleksey.com/xmlsec/download.html>`__ on your Mattermost instance and that it is available in your ``PATH``.
 
 Second, ensure you have completed each step of the SAML configuration.
 
@@ -137,7 +132,7 @@ When a client WebSocket receives a disconnect it will automatically attempt to r
 App Refreshes Continuously
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different `config.json` files in a high availability cluster.
+When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different ``config.json`` files in a high availability cluster.
 
 Modify configuration settings directly through ``config.json`` `following these steps <https://docs.mattermost.com/deployment/cluster.html#updating-configuration-changes-while-operating-continuously>`__.
 
@@ -154,7 +149,7 @@ Server Administration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 -  Message appears in blue bar on team site.
--  To check the websocket connection, open the developer console in your browser and view the **Network** panel. If the WebSocket is not connecting properly, you will see a pending WebSocket connection show up in the list. The screenshot below shows an example from Chrome. 
+-  To check the websocket connection, open the developer console in your browser and view the **Network** panel. If the WebSocket is not connecting properly, you will see a pending WebSocket connection show up in the list. The screenshot below shows an example from Chrome.
 .. image:: ../images/websocket.png
 -  **If this issue is reported repeatedly**, the most likely cause is a proxy being misconfigured somewhere in your infrastructure, and possibly stripping headers off of WebSocket communications.
 
@@ -172,7 +167,7 @@ If this issue is reported rarely, in some cases the issue comes from *intermitte
 If only a small number of users have this issue, it could be from intermittent internet access, if almost every user has this issue, it's likely from a misconfiguration of the ``wss`` connection.
 
 ``Cannot connect to the server. Please check your server URL and internet connection.``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This error may appear on some devices when trying to connect to a server that is using an SSL curve that is not supported by the client device.
 
@@ -187,16 +182,16 @@ For NGINX, this would translate to ``ssl_ecdh_curve prime256v1:secp384r1:secp521
 **Note:** Setting multiple curves requires nginx 1.11.0, if you can only set one curve, the most compatible is prime256v1.
 
 ``x509: certificate signed by unknown authority``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This error may appear in server logs when attempting to sign-up when using self-signed certificates to setup SSL, which is not yet supported by Mattermost.
 
-**Solution:** 
+**Solution:**
 
-Set up a load balancer like NGINX `per production install guide <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-with-ssl-and-http-2>`__. The core team is looking into allowing self-signed certificates in the future. 
+Set up a load balancer like NGINX `per production install guide <https://docs.mattermost.com/install/install-ubuntu-1604.html#configuring-nginx-with-ssl-and-http-2>`__. The core team is looking into allowing self-signed certificates in the future.
 
-As a work around, in **System Console** > **Security** > **Connections** set ``Enable Insecure Outgoing Connections`` to ``true``.
-   
+As a work around, in **System Console > Security > Connections** set **Enable Insecure Outgoing Connections** to ``true``.
+
 This will allow insecure TLS connections, but be careful in doing so as it also opens your Mattermost site to man-in-the-middle attacks.
 
 ``panic: runtime error: invalid memory address or nil pointer dereference``
@@ -204,7 +199,7 @@ This will allow insecure TLS connections, but be careful in doing so as it also 
 
 This error can occur if you have manually manipulated the Mattermost database, typically with deletions. Mattermost is designed to serve as a searchable archive, and manual manipulation of the database elements compromises integrity and may prevent upgrade.
 
-**Solution:** 
+**Solution:**
 
 Restore from database backup created prior to manual database updates, or reinstall the system.
 
@@ -228,8 +223,7 @@ Click the link at the bottom of the sign-in page that says “Don't have an acco
    - Check the sign-in page.
    - If the sign-in method the account was created with is available, use that to sign in.
 
-      -  **Note:** You may then switch authentication methods from **Account
-         Settings** > **Security** > **Sign-in Method**.
+      -  **Note:** You may then switch authentication methods from **Account Settings > Security > Sign-in Method**.
 
    - If the sign-in method is not available, contact the System Administrator.
 
@@ -240,7 +234,7 @@ Click the link at the bottom of the sign-in page that says “Don't have an acco
 
          1. Turning the sign-in option back on.
          2. Asking the user to switch sign-in methods before turning the
-            sign-in option back off.
+            sign-in option off.
 
 ``Failed to upgrade websocket connection``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -254,26 +248,26 @@ This error can occur if you're using multiple URLs to reach Mattermost via proxy
 3. If you're doing reverse proxy with IIS, upgrade to IIS 8.0 or later and enable WebSockets. For more information, see `IIS 8.0 WebSocket Protocol Support <https://www.iis.net/learn/get-started/whats-new-in-iis-8/iis-80-websocket-protocol-support>`__.
 
 ``Websocket closed`` or ``Websocket re-established connection``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-This alert can appear every few seconds in the Desktop application or web browser connected to Mattermost.
+This alert can appear every few seconds in the desktop application or web browser connected to Mattermost.
 
 **Solution:**
 
-If you are using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, if it's significantly lower it will cause an undesireable websocket disconnections. 
+If you are using an Amazon ELB check that ``Idle Timeout`` is set to ``120s``, if it's significantly lower it will cause an undesireable websocket disconnections.
 
-If you are using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``. 
+If you are using NGINX, make sure you follow the `Mattermost configuration instructions <https://docs.mattermost.com/install/config-proxy-nginx.html>`__ for setting the  ``proxy_read_timeout``.
 
 
 ``context deadline exceeded``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This error appears when a request from Mattermost to another system, such as an Elasticsearch server, experiences a connection timeout.
 
 **Solution:**
 
 1. Verify that the Mattermost server is able to connect to the system referenced in the error message.
-2. Increase the request timeout value for that integration in the Mattermost config file.
+2. Increase the request timeout value for that integration in the Mattermost ``config.json`` file.
 3. Ensure the target system is behaving properly and has sufficient resources to handle current load.
 
 Settings
@@ -318,7 +312,7 @@ Please note that the apps cannot connect to servers with self-signed certificate
 Login with ADFS/Office365 is Not Working
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
+In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
 The “Connecting…” Bar Doesn't Clear
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -332,24 +326,24 @@ I’m Not Receiving Push Notifications on my Device
 
 If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
 
-1. Under **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console > Environment > Logging > File Log Level** in versions after 5.12 select **DEBUG** in order to watch for push notifications in the server log.
+1. Under **System Console > Environment > Logging > File Log Level** (or **System Console > General > Logging > File Log Level** in versions prior to 5.12) select **DEBUG** in order to watch for push notifications in the server log.
 
 2. Delete and reinstall your mobile application.
 
 3. Sign in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app.
 
-4. On desktop, go to **Account Settings** > **Security** > **View and Logout of Active Sessions** and check that there is a session for the native mobile app matching your login time.
+4. On desktop, go to **Account Settings > Security > View and Logout of Active Sessions** and check that there is a session for the native mobile app matching your login time.
 
 5. Repeat the procedure for :doc:`testing push notifications <mobile-testing-notifications>`.
 
-6. If no push notification appears go to **System Console** > **Logs** and click **Reload**. Look at the bottom of the logs for a message similar to:
+6. If no push notification appears go to **System Console > Logs** and click **Reload**. Look at the bottom of the logs for a message similar to:
 
 ``[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 608xyz0... wi msg of '@accountb: Hello'``
 
   - If the log message appears, it means a message was sent to the HPNS server and was not received by your mobile application. Please contact support@mattermost.com with the subject "HPNS issue on Step 8" for help from the commercial support team.
   - If the log message does not appear, it means no mobile push notification was sent to “Account A”. Please repeat the process, starting at step 2, and double check each step.
 
-7. **IMPORTANT:** After your issue is resolved, go to **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console** > **Environment** > **Logging** > **File Log Level** in versions after 5.12 and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
+7. **IMPORTANT:** After your issue is resolved, go to **System Console > Environment > Logging > File Log Level** (or **System Console > General > Logging > File Log Level** in versions prior to 5.12) and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
 
 All Outbound Connections go Through a Proxy. How Can I Connect to the Mattermost Hosted Push Notification Service?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -358,14 +352,29 @@ You can set up an internal server to proxy the connection out of their network t
 
 1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at https://www.digicert.com/help/.
 2. Set up a proxy to forward requests to ``https://push.mattermost.com``.
-3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** in prior versions or **System Console > Environment > Push Notification Server > Enable Push Notifications** in versions after 5.12 to "Manually enter Push Notification Service location".
+3. In Mattermost set **System Console > Environment > Push Notification Server > Enable Push Notifications** (or **System Console > Notification Settings > Mobile Push > Enable Push Notifications** in versions prior to 5.12) to **Manually enter Push Notification Service location**.
 4. Enter the URL of your proxy in the **Push Notification Server** field.
 
 **Note:** Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``.
 
+To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following steps and
+include the results in your support request or `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ post.
+
+**Connect to another server**
+
+1. Create an account at https://demo.mattermost.com.
+2. Erase your mobile application and reinstall it.
+3. In your mobile app, enter the server URL https://demo.mattermost.com and then your login credentials to test whether the connection is working.
+
+**Connect with another device**
+
+- If you have another mobile device available, try connecting with that to see if your issue still reproduces.
+- If you don’t have another device available, check with other teammates to see if they are having the same issue.
+
+
 Configuration Issues
 ---------------------
-In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost. 
+In some cases, the configuration from the product’s website differs from the Mattermost configuration. Review the configuration to ensure it’s aligned with Mattermost.
 
 - See detailed client software requirements for PC, mobile, and email.
 - See detailed server software requirements for operating system and database.
@@ -373,7 +382,7 @@ In some cases, the configuration from the product’s website differs from the M
 - Have you made any changes to the default settings in the System Console (or in ``config.json`` file)?
 - What device (webapp, desktop app), browser, and operating system (Windows, Mac, etc.) are you using?
 - Confirm that the SSL/TLS certificate was installed successfully by entering your Mattermost server URL to Symantec’s online SSL/TLS certificate checker.
-- Look for JavaScript errors in the Chrome developer console: Open the Chrome menu in the top-right of the browser window and select **More Tools** > **Developer Tools**. 
+- Look for JavaScript errors in the Chrome developer console: Open the Chrome menu in the top-right of the browser window and select **More Tools > Developer Tools**.
 
 Integrations
 ~~~~~~~~~~~~
@@ -416,10 +425,8 @@ A server running Linux has this file located in ``/etc/mime.types``. This might 
 Some distributions also ship without ``mailcap`` which can result in missing or incorrectly configured mime types.
 
 
-None of These Solve my Problem!
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following steps and include the results in your support request or `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ post.
+To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following steps and
+include the results in your support request or `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ post.
 
 **Connect to another server**
 

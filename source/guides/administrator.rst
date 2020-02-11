@@ -146,14 +146,18 @@ Learn how to maintain your Mattermost system.
    /administration/health-check*
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
-   
-   
+
+
 Troubleshooting
 ----------------
 
-Understand potential issues and how to address them. 
+Understand potential issues and how to address them.
 
-   /install/troubleshooting*
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   /install/troubleshooting.rst
 
 Upgrade Mattermost
 ----------------------------
