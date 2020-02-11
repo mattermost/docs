@@ -76,9 +76,9 @@ When the user accesses the Mattermost URL, they log in with same username and pa
 ##### Guest Filter 
 (Optional) When enabled, the Guest Filter in Mattermost identifies external users whose AD/LDAP role is guest and who are invited to join your Mattermost server. These users will have the Guest role applied immediately upon first sign-in instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
-If this filter is removed/changed, active guests will not be promoted to a member and will retain their Guest role. Guests can be promoted in System Console > User Management.
+If this filter is removed/changed, active guests will not be promoted to a member and will retain their Guest role. Guests can be promoted in **System Console > User Management**.
 
-1. Enable Guest Access via **System Console > Guest Access (Beta)**.
+1. Navigate to **System Console > Authentication > Guest Access (Beta)** and set Guest Access to ``true``. 
 2. Navigate to **System Console > Authentication > AD/LDAP**.
 3. Complete the **Guest Filter** field.
 4. Choose **Save**.
@@ -93,10 +93,13 @@ See the [Guest Accounts documentation](https://docs.mattermost.com/deployment/gu
 The next login is based upon Session lengths set in **System Console > Session Lengths**. It is highly recommend to manually demote users to members in **System Console > User Management** to ensure access is restricted immediately.
 
 1. Navigate to **System Console > Authentication > AD/LDAP**.
-2. Complete the **Admin Filter** field.
-3. Choose **Save**.
+2. Set **Admin Filter** to ``true``. 
+3. Complete the **Admin Filter** field.
+4. Choose **Save**.
 
-**Note:** If this filter is removed/changed, System Admins that were promoted via this filter will be demoted to members and will not retain access to the System Console. When this filter is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
+**Note:** If the Admin Filter is set to ``false`` the member's role as System Admin is retained. However if this filter is removed/changed, System Admins that were promoted via this filter will be demoted to members and will not retain access to the System Console. 
+
+When this filter is not in use, members can be manually promoted/demoted via **System Console > User Management**.
 
 #### Configure AD/LDAP deployments with multiple domains
 
