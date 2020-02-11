@@ -92,7 +92,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 #### Changes to Team Edition and Enterprise Edition:
  - Under ``SamlSettings`` in ``config.json``:
     - Added ``IdpMetadataUrl`, to 
-    - Added ``EnableAdminAttribute``, to 
+    - Added ``EnableAdminAttribute``, to add the attribute in the SAML Assertion for designating System Admins.
     - Added ``AdminAttribute``, to
  - Under ``PluginSettings`` in ``config.json``:
     - Added ``EnableRemoteMarketplace``, to 
