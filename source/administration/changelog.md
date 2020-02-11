@@ -93,7 +93,11 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
 
 #### Changes to Team Edition and Enterprise Edition:
-
+ - SamlSettings.IdpMetadataUrl
+ - SamlSettings.EnableAdminAttribute
+ - SamlSettings.AdminAttribute
+ - PluginSettings.EnableRemoteMarketplace
+ - PluginSettings.AutomaticPrepackagedPlugins
 
 ### Open Source Components
  - Added ``@formatjs/intl-pluralrules`` in https://github.com/mattermost/mattermost-webapp.
@@ -102,11 +106,18 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``react-inlinesvg`` in https://github.com/mattermost/mattermost-webapp.
 
 ### Database Changes
- 
+ - Bots.LastIconUpdate
+ - GroupTeams.SchemeAdmin
+ - GroupChannels.SchemeAdmin
+
 ### API Changes
  - Created a new REST API endpoint ``PUT /config/patch`` that uses patch semantics to only update the fields of the config that are provided, while leaving the other fields unchanged.
+ - POST /server_busy
+ - GET /server_busy
+ - DELETE /server_busy
 
 ### Websocket Event Changes
+ - channel_restored
  
 ### Known Issues
  - Code block line numbers are copied when pasting into certain applications.
