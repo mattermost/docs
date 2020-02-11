@@ -72,7 +72,6 @@ Existing members that are identified by this attribute will be promoted from mem
 
 **Note:** If the Admin Attribute is set to ``false`` the member's role as System Admin is retained. However if the attribute is removed/changed, System Admins that were promoted via the attribute will be demoted to members and will not retain access to the System Console. When this attribute is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
 
-**Note:** 
 
 Roadmap
 ----------
