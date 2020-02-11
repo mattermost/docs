@@ -38,4 +38,4 @@ The easiest option is to set up TLS on the Mattermost Server, but if you expect 
     d. Restart the Mattermost server for these changes to take effect.
 
 .. note::
-   Mattermost does not support the usage of password protected certificates.
+   Password-protected certificates are not supported.
