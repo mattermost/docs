@@ -90,7 +90,7 @@ See the [Guest Accounts documentation](https://docs.mattermost.com/deployment/gu
 ##### Admin Filter
 (Optional) Enter an AD/LDAP filter to use for designating System Admins. The users selected by the query will have access to your Mattermost server as System Admins. By default, System Admins have complete access to the Mattermost System Console. Existing members that are identified by this attribute will be promoted from member to System Admin upon next login. 
 
-The next login is based upon Session lengths set in **System Console > Session Lengths**. It is highly recommend to manually demote users to members in **System Console > User Management** to ensure access is restricted immediately.
+The next login is based upon Session lengths set in **System Console > Session Lengths**. It is recommended that users are demoted to members manually in **System Console > User Management** to ensure access is restricted immediately.
 
 1. Navigate to **System Console > Authentication > AD/LDAP**.
 2. Set **Admin Filter** to ``true``. 
