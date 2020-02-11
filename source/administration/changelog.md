@@ -17,29 +17,26 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Highlights
 
-#### Unread Toasts
- - Unreads banner appears when entering a channel with many unread messages and allows the user to jump to the most recent messages in the channel. Users don’t have to scroll all the way down to reach the bottom of the channel if there are many unreads.
+#### A Banner to Jump to the Most Recent Posts
+ - Ability to jump to the most recent posts in a channel by clicking a banner that automatically appears in busy channels with unread messages.
  
-#### Deep Linking UX Improvements
- - Links to posts in email notifications now launch to a browser landing page with option to open in the Desktop App or Mobile app.
-
-#### Reworked pre-packaged plugins
- - Prepackaged plugins will continue to be included in the prepackaged_plugins folder but they will not be installed automatically and now they can be upgraded and uninstalled.
+#### Open Email Notifications in the Desktop or Mobile App
+ - Ability to open messages from email notifications in the Mattermost desktop or mobile apps instead of being directed to open them in the browser.
  
 #### Ship MMCTL with Mattermost
  - Manage servers remotely with `mmctl`, a CLI tool that mimics the Mattermost CLI tool and ships inside Mattermost.
-  
-#### Group Sync to Roles LDAP/SAML
- - Provides a way for admins to assign Groups to the built in roles - System Admin, Team Admin, Channel Admin, Members - within Mattermost using the LDAP Group Sync feature.
 
-#### System Admin filter to both LDAP and SAML
- - This filter adds the capability to specify roles via LDAP (most importantly, the System Admin role). This empowers Mattermost customers to use LDAP as the single source of truth for users with System Admin access - which is very important for compliance monitoring.
-
-#### SAML Metadata support
- - Enables automatic configuration for SAML. This is accomplished by pulling the configuration metadata directly from the Identity Provider using an account specific URL.
+#### Reworked pre-packaged plugins
+ - Pre-packaged plugins are now “pre-downloaded” plugins that are available within the Plugin Marketplace, even if your server doesn’t have direct access to the internet.
  
-#### GoSAML2 Implementation
- - Replaces the previous and outdated XML Security Library (xmlsec1) with a better XML library (GoSAML2). The XML Security Library provides the encryption/decryption and digital signing functionality required for SAML, which is used to support single sign-on (SSO). GoSAML2 performs better because the encryption happens in memory as opposed to xmlsec1 that uses the file system.
+#### Plugin Marketplace Labels
+ - Plugins supported by Mattermost and community supported plugins will be visible, making it easier to select an appropriate plugin based on your organization’s security policies.
+  
+#### Role mapping from LDAP and SAML 
+ - Ability to assign and restrict users to roles within Mattermost from your single sign-on (SSO) system.
+ 
+#### Faster SAML install and configuration
+ - Ability to use SAML without installing a separate binary and pull configuration metadata directly from the Identity Provider using an account-specific URL.
 
 ### Improvements
 
@@ -106,18 +103,16 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Added ``react-inlinesvg`` in https://github.com/mattermost/mattermost-webapp.
 
 ### Database Changes
- - Bots.LastIconUpdate
- - GroupTeams.SchemeAdmin
- - GroupChannels.SchemeAdmin
+ - Added ``Bots.LastIconUpdate`` column.
+ - Added ``GroupTeams.SchemeAdmin`` column.
+ - Added ``GroupChannels.SchemeAdmin`` column.
 
 ### API Changes
- - Created a new REST API endpoint ``PUT /config/patch`` that uses patch semantics to only update the fields of the config that are provided, while leaving the other fields unchanged.
- - POST /server_busy
- - GET /server_busy
- - DELETE /server_busy
+ - Added ``PUT /config/patch`` REST API endpoint that uses patch semantics to only update the fields of the config that are provided, while leaving the other fields unchanged.
+ - Added ``POST /server_busy``, ``GET /server_busy`` and ``DELETE /server_busy`` REST API endpoints to add the ability to turn off non-critical services when under load.
 
 ### Websocket Event Changes
- - channel_restored
+ - Added ``channel_restored`` Websocket Event.
  
 ### Known Issues
  - Code block line numbers are copied when pasting into certain applications.
