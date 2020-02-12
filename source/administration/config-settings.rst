@@ -2102,7 +2102,7 @@ Admin Filter
 This filter default is ``false`` and must be set to ``true`` in order for the Admin Filter to be used.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAdminFilter": false`` with options ``true`` and ``false``.                                                         |
+| This feature's ``config.json`` setting is ``"EnableAdminFilter": false`` with options ``true`` and ``false``.                                                        |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Group Filter
