@@ -40,7 +40,13 @@ By default, you'll get email notifications if you're not actively using Mattermo
 -  Configure the email address where notifications are sent in **Account
    Settings** > **General** > **Email**.
 
+Messages in email notifications can be opened in the Mattermost Desktop App, Mobile App or in your browser:
+
+.. image:: ../../images/deep_linking.png
+
 **Not getting an email notification?** See our `FAQ to view the email notification flow chart <https://docs.mattermost.com/overview/faq.html?#what-determines-if-an-email-notification-should-be-triggered>`_ and see what other factors influence if a notification should be triggered.
+
+
 
 Mobile Push Notifications
 --------------------------------------------
