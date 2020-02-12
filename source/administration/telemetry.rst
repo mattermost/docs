@@ -84,6 +84,7 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *Commercial License Diagnostics (Enterprise Edition Only):* Uploaded an Enterprise license key to the server
   - *Mobile Performance Diagnostics:* Load times for starting the app, switching channels, and switching teams 
   - *Permissions Discovery Diagnostics (Enterprise Edition Only):* Provides all the permissions configured for each role for the System Scheme and each Team Override Scheme created in the system.  Scheme ID; Team Admin Permissions; Team User Permissions; Channel Admin Permissions; Channel User Permissions; Number of teams the scheme is associated with
+  - *Group Discovery Diagnostics (Enterprise Edition Only):* Provides information related to AD/LDAP groups, including number of groups synced to Mattermost, ...
 
 Error and diagnostic reporting is sent by the client to the endpoint `api.segment.io`. To opt out, disable the feature in **System Console > General > Logging > Enable Error and Diagnostics Reporting** in prior versions or **System Console > Environment > Logging** in versions after 5.12.
 
