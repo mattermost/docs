@@ -109,9 +109,9 @@ Navigate to the ``ingressName`` URL in your browser and use Mattermost.
 Restoring an Existing Mattermost MySQL Database
 -----------------------------------------------
 
-You can leverage the Mattermost Operator to utilize an existing Mattermost MySQL database with a new Mattermost installation, in its own namespace.
-The steps you follow to create and upload your backup depends on the provider you're using and your use case. It's
-recommended that you consult the relevant documentation or, if your deployment is managed in a different way, consult your Administrator.
+The Mattermost Operator can be used in a backup and restore scenario to apply an existing Mattermost MySQL database to a new Mattermost installation, in its own namespace. This can also be helpful in the event that you need to revert your Mattermost instance's database to the most recent backup point, on your existing installation. In both cases, you will need a backup of your database. 
+
+The steps you follow to create and upload your backup depends on the provider you're using and your use case. It's recommended that you consult the relevant documentation or, if your deployment is managed in a different way, consult your Administrator.
 
 It is important to note that this process requires the creation of a new Mattermost
 installation - editing the existing ``.yaml`` files is not recommended and can result in data loss.
@@ -173,21 +173,6 @@ Open a text editor and create a text file with the following details. Save the f
 
 The Mattermost installation manifest contains fields which must be edited in line with your configuration and environment requirements.
 
-.. csv-table::
-    :header: "Field", "Description", "Must Edit"
-
-    "metadata.name", "The name of your Mattermost as it will be shown in Kubernetes. The shorter the better.", "Yes"
-    "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users' Custom values are accepted provided the replication formula is correct.", "Yes"
-    "spec.ingressName", "The DNS for your Mattermost installation. This is the same name as the existing deployment, but the underlying resource is the restored database.", "Yes"
-    "spec.version", "The Mattermost version.", "No"
-    "spec.mattermostLicenseSecret", "The name of the Kubernetes secret containing your license (e.g. mattermost-license). Required for Enterprise deployments.", "Yes"
-    "spec.database.storageSize", "The storage size for your database. Your Kubernetes cluster must have volumes this size or larger.", "No"
-    "spec.minio.storageSize", "The storage size for your file storage. Your Kubernetes cluster must have volumes this size or larger.", "No"
-    "spec.elasticSearch", "The section for Elasticsearch settings. Remove this section if you will not be using Elasticsearch.", "No"
-    "spec.elasticSearch.host", "The hostname for your Elasticsearch instance. Remove this section if you will not be using Elasticsearch.", "No"
-    "spec.elasticSearch.username", "The username for your Elasticsearch instance. Remove this section if you will not be using Elasticsearch.", "No"
-    "spec.elasticSearch.password", "The password for your Elasticsearch instance. Remove this section if you will not be using Elasticsearch.", "No"
-
 7. Create a restore manifest:
 
 Open a text editor and create a text file with the following details. Save the file as ``restore.yaml``:
@@ -223,7 +208,6 @@ Open a text editor and create a text file with the following details. Save the f
       $ kubectl apply -n mattermost -f /path/to/restore.yaml
 
 The deployment process can be monitored in the Kubernetes user interface. If errors or issues are experienced,
-review the Mattermost, Operator, and MySQL logs for guidance including error messages. If remediation is not successful, contact
-Mattermost customer support for assistance.
+review the Mattermost, Operator, and MySQL logs for guidance including error messages. If remediation is not successful, contact Mattermost customer support for assistance.
 
 Once complete, access your Mattermost instance and confirm that the database has been restored.
