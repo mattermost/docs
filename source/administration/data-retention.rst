@@ -32,6 +32,11 @@ You can also run the deletion job manually at any time by clicking **Run Deletio
 Frequently Asked Questions (FAQs)
 ---------------------------------
 
+What happens when the data retention period is changed?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Data retention runs once a day at the time specified in the ``config.json`` file. Changing the retention period does not automatically schedule any additional run of the data retention job. It just updates the configured period, which is honored when the next scheduled data retention job is run.
+
 What happens when a message is deleted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
