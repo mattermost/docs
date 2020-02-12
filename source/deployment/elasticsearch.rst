@@ -18,12 +18,12 @@ Elasticsearch allows you to search large volumes of data quickly, in near real t
 
 Elasticsearch v5.x and v6.x are supported.
 
-When to use Elasticsearch
+When to Use Elasticsearch
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The default Mattermost database search starts to show performance degradation at around 2.5 million posts, depending on the specifications for the database server. If you expect your Mattermost server to have more than 2.5 million posts, we recommend using Elasticsearch for optimum search performance.
 
-Setting up an Elasticsearch Server
+Setting Up an Elasticsearch Server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 The set up process for the Elasticsearch server is documented in the `official Elasticsearch documentation <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup.html>`__. 
 
@@ -49,7 +49,7 @@ Follow these steps to connect your Elasticsearch server to Mattermost and genera
 4. Click **Test Connection** and **Save** the configuration.
   - If the server connection is unsuccessful you will not be able to save the configuration or enable searching with Elasticsearch.
 5. Build the post index of existing posts by clicking **Build Index**.
-  - This process can take up to a few hours depending on the size of the post database and number of messages. The progress percentage can be seen as the index is created. Indexing does not require downtime as database search is available during the indexing process if **Enable Elasticsearch for search queries** is set to ``false``.
+  - This process can take up to a few hours depending on the size of the post database and number of messages. The progress percentage can be seen as the index is created. To avoid downtime set **Enable Elasticsearch for search queries** to ``false`` so that database search is available during the indexing process.
 6. Enable Elasticsearch by setting **Enable Elasticsearch for search queries** to ``true``.
   - Note: It is recommended that bulk indexing be completed before enabling Elasticsearch, otherwise search results will be incomplete. When this setting is ``false``, database search is used for all search queries.
 7. Restart the Mattermost server.
@@ -64,9 +64,11 @@ Limitations
 
   - "a", "an", "and", "are", "as", "at", "be", "but", "by", "for", "if", "in", "into", "is", "it", "no", "not", "of", "on", "or", "such", "that", "the", "their", "then", "there", "these", "they", "this", "to", "was", "will", "with"  
 
-2. Searching stop words in quotes returns more results than just the searched terms (`ticket <https://mattermost.atlassian.net/browse/PLT-7314>`__).
+2. Searching stop words in quotes returns more results than just the searched terms (`ticket <https://mattermost.atlassian.net/browse/MM-7216>`__).
 
 3. AWS Elasticsearch implementations have a limit of 1000 days of post history that is searchable.
+
+4. Search results are limited to a user's team and channel membership. This is enforced by the Mattermost server. The entities are indexed in Elasticsearch in a way that allows Mattermost to filter them when querying, so the Mattermost server narrows down the results on every Elasticsearch request applying those filters.
 
 
 Frequently Asked Questions (FAQ)
@@ -79,6 +81,10 @@ The Elasticsearch engine is designed for large Enterprise deployments wanting to
 What types of indexes are created? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Mattermost creates three types of indexes: users, channels, and posts. Users and channels have one index each. Posts are aggregated by date, into multiple indexes. 
+
+Can an index rollover policy be defined? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The _`AggregatePostsAfterDays <https://docs.mattermost.com/administration/config-settings.html#aggregate-search-indexes>`_ configuration setting defines a cutoff value. All posts preceding this value are reindexed and aggregated into new and bigger indexes. The default setting is 365 days. 
 
 Are there any new search features offered with Elasticsearch?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
