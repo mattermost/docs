@@ -2190,7 +2190,7 @@ ID Attribute
 The attribute in the AD/LDAP server used as a unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change.
 
 If a user's ID Attribute changes, it will create a new Mattermost account unassociated with their old one. Therefore we recommend setting this to a unique attribute like ``objectGUID`` in Active Directory and ``entryUUID`` in LDAP. 
-Please check with your LDAP provider first to see if these attributes are available in your environment.
+Before making any changes confirm with your LDAP provider whether these attributes are available in your environment.
 
 If you need to change this field after users have already logged in, use the `mattermost ldap idmigrate <https://about.mattermost.com/default-platform-ldap-idmigrate>`__ CLI tool.
 
