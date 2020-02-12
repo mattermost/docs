@@ -32,11 +32,6 @@ You can also run the deletion job manually at any time by clicking **Run Deletio
 Frequently Asked Questions (FAQs)
 ---------------------------------
 
-What happens when the data retention period is changed?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Data retention runs once a day at the time specified in the ``config.json`` file. Changing the retention period does not automatically schedule any additional run of the data retention job - it only updates how long data is kept in Mattermost.
-
 What happens when a message is deleted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -93,6 +88,11 @@ How do I know if a data retention job fails?
 Mattermost provides the status of each data retention job in **System Console** > **Compliance** > **Data Retention Policy** (or **System Console > Advanced > Data Retention Policy** in versions prior to 5.12). Here, you can see if the job succeeded or failed, including the details of the error.
 
 Additionally, any failures are returned in the server logs. The error log begins with the string ``Failed job`` and includes a job_id key/value pair. Data retention job failures are identified with worker name ``EnterpriseDataRetention``. You can optionally create a script that programmatically queries for such failures and notifies the appropriate system.
+
+What happens when the data retention period is changed?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Data retention runs once a day at the time specified in the ``config.json`` file. Changing the retention period does not automatically schedule any additional run of the data retention job - it only updates how long data is kept in Mattermost.
 
 Does the System Administrator get any notification when the data retention period is changed?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
