@@ -96,7 +96,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
     - Added ``IdpMetadataUrl``, to add the URL where Mattermost sends a request to obtain setup metadata from the provider.
     - Added ``EnableAdminAttribute`` and ``AdminAttribute``, to add the attribute in the SAML Assertion for designating System Admins.
  - Under ``LdapSettings`` in ``config.json``:
-    - Added ``EnableAdminFilter`` and ``AdminFilter``, to 
+    - Added ``EnableAdminFilter`` and ``AdminFilter``, to enter a filter to use for designating the System Admin role to users.
  - Under ``PluginSettings`` in ``config.json``:
     - Added ``EnableRemoteMarketplace``, to 
     - Added ``AutomaticPrepackagedPlugins``, to
