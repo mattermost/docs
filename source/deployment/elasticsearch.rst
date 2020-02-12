@@ -84,7 +84,7 @@ Mattermost creates three types of indexes: users, channels, and posts. Users and
 
 Can an index rollover policy be defined? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The _`AggregatePostsAfterDays <https://docs.mattermost.com/administration/config-settings.html#aggregate-search-indexes>`_ configuration setting defines a cutoff value. All posts preceding this value are reindexed and aggregated into new and bigger indexes. The default setting is 365 days. 
+The `AggregatePostsAfterDays <https://docs.mattermost.com/administration/config-settings.html#aggregate-search-indexes>`__ configuration setting defines a cutoff value. All posts preceding this value are reindexed and aggregated into new and bigger indexes. The default setting is 365 days. 
 
 Are there any new search features offered with Elasticsearch?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
