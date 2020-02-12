@@ -2769,7 +2769,7 @@ If the marketplace is enabled, this setting specifies which URL should be used t
 Enable Remote Marketplace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
+When false, this setting will allow disabling fetching plugins from the marketplace server.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableRemoteMarketplace": .                                |
@@ -2778,7 +2778,7 @@ Enable Remote Marketplace
 Automatic Prepackaged Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
+This setting will allow to automatically install and upgrade (if available) at startup time any prepackaged plugin that has was previously enabled. If false or is an older version, it will ignore the bundle in the prepackaged folder.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AutomaticPrepackagedPlugins":                                          |
