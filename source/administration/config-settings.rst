@@ -2328,7 +2328,7 @@ Identity Provider Metadata URL
 The URL where Mattermost sends a request to obtain setup metadata from the provider.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IdpMetadataUrl": ""`` with string input.                                                                              |
+| This feature's ``config.json`` setting is ``"IdpMetadataUrl": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Identity Provider Public Certificate
