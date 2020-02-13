@@ -76,6 +76,17 @@ entry.
 - Update GitLab Version to 12.7.0.
 
 
+## 2.6.8
+
+### Fixed (1 change, 1 of them is from the community)
+
+- Use the volume with Postgres client SSL certificate in the gitlab-exporter deployment. !1162 (Franciszek Walkowiak)
+
+### Other (1 change)
+
+- Update GitLab Version to 12.6.7.
+
+
 ## 2.6.7
 
 ### Other (1 change)
