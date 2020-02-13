@@ -34,10 +34,10 @@ Mattermost v5.20.0 contains low to high level security fixes. [Upgrading](http:/
 #### Plugin Marketplace Labels
  - Plugins supported by Mattermost and community supported plugins will be visible, making it easier to select an appropriate plugin based on your organization’s security policies.
   
-#### Role mapping from LDAP and SAML 
+#### Role mapping from LDAP and SAML (E20)
  - Ability to assign and restrict users to roles within Mattermost from your single sign-on (SSO) system.
  
-#### Faster SAML install and configuration
+#### Faster SAML install and configuration (E20)
  - Ability to use SAML without installing a separate binary and pull configuration metadata directly from the Identity Provider using an account-specific URL.
 
 ### Improvements
