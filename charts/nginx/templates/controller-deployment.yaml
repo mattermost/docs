@@ -184,6 +184,7 @@ spec:
               labelSelector:
                 matchLabels:
                   app: {{ template "name" . }}
+                  component: {{ .Values.controller.name }}
                   release: {{ .Release.Name }}
       {{- else if eq (default .Values.global.antiAffinity .Values.antiAffinity) "soft" }}
       affinity:
@@ -195,6 +196,7 @@ spec:
               labelSelector:
                 matchLabels:
                   app: {{ template "name" . }}
+                  component: {{ .Values.controller.name }}
                   release: {{ .Release.Name }}
       {{- end }}
     {{- end }}
