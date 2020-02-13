@@ -2746,6 +2746,17 @@ Enable Plugins
 | This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``.                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Automatic Prepackaged Plugins
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: The server will detect previously enabled plugins on the server and will automatically install them.
+
+**False**: The server will not detect previously enabled plugins on the server.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AutomaticPrepackagedPlugins": true`` with options ``true`` and ``false``.                                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable Marketplace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2757,6 +2768,17 @@ Enable Marketplace
 | This feature's ``config.json`` setting is ``"EnableMarketplace": true`` with options ``true`` and ``false``.                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Enable Remote Marketplace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Marketplace fetches latest plugins from the configured Marketplace URL.
+
+**False**: Marketplace does not fetch latest plugins from the configured Marketplace URL.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableRemoteMarketplace": true`` with options ``true`` and ``false``.                                                   |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Marketplace URL
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2764,24 +2786,6 @@ If the marketplace is enabled, this setting specifies which URL should be used t
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MarketplaceUrl": "https://api.integrations.mattermost.com"`` with string input.                                         |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Enable Remote Marketplace
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-When false, this setting will allow disabling fetching plugins from the marketplace server.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableRemoteMarketplace": .                                |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-Automatic Prepackaged Plugins
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-This setting will allow to automatically install and upgrade (if available) at startup time any prepackaged plugin that has was previously enabled. If false or is an older version, it will ignore the bundle in the prepackaged folder.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AutomaticPrepackagedPlugins":                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Plugin Settings
