@@ -95,6 +95,12 @@ HTTPS certificates.
 We recommend [using your own certificates](../tls.md#option-2-use-your-own-wildcard-certificate),
 and then mapping your desired DNS name to the created ELB using a CNAME record.
 
+You can fetch your ELB's hostname to place in the CNAME record with the following:
+
+```shell
+kubectl get ingress/RELEASE-unicorn -ojsonpath='{.status.loadBalancer.ingress[0].hostname}'
+```
+
 NOTE: **Note:**
 For environments where internal load balancers are required,
 [Amazon's Elastic Load Balancers](https://docs.aws.amazon.com/eks/latest/userguide/load-balancing.html)
