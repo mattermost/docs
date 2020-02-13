@@ -102,3 +102,9 @@ Use GPU hardware acceleration
     If enabled, Mattermost UI is rendered more efficiently but can lead to decreased stability for some systems. Setting takes effect after restarting the app.
 
     This setting is disabled by default.
+
+Dark Theme
+~~~~~~~~~~~~~~~~
+On macOS, the Mattermost desktop app respects the System Preferences appearance setting of the operating system to set the theme of the title bar. On Windows, you can toggle the theme of the Mattermost desktop app title bar in **... > View > Toggle Dark Mode**.  
+
+.. image:: ../../images/dark_theme.png
