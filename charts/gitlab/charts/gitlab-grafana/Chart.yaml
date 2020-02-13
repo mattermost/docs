@@ -1,7 +1,7 @@
 ---
 apiVersion: v1
 name: gitlab-grafana
-version: 3.0.3
+version: 3.0.4
 description: Adapt the Grafana chart to interface to the GitLab App
 keywords:
 - gitlab
