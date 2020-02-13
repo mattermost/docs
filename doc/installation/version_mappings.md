@@ -9,6 +9,7 @@ The table below maps some of the key previous chart versions and GitLab versions
 | 3.0.2 | 12.7.4 |
 | 3.0.1 | 12.7.2 |
 | 3.0.0 | 12.7.0 |
+| 2.6.8 | 12.6.7 |
 | 2.6.7 | 12.6.6 |
 | 2.6.6 | 12.6.4 |
 | 2.6.5 | 12.6.4 |
