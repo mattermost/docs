@@ -2773,7 +2773,7 @@ Enable Remote Marketplace
 
 **True**: The server will attempt to connect to the configured Plugin Marketplace to show the latest plugins. If the connection fails, the Plugin Marketplace shows only pre-packaged and already installed plugins alongside a connection error.
 
-**False**: Marketplace does not fetch latest plugins from the configured Marketplace URL.
+**False**: The server will not attempt to connect to a remote marketplace, instead showing only pre-packaged and already installed plugins. Use this setting if your server cannot connect to the internet.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableRemoteMarketplace": true`` with options ``true`` and ``false``.                                                   |
