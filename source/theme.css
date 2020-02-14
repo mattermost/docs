@@ -90,6 +90,8 @@ footer {
 }
 
 .wy-nav-content {
+	height: auto;
+	min-height: 100%;
 	padding-top: 26px;
 }
 
