@@ -2749,7 +2749,7 @@ Enable Plugins
 Automatic Prepackaged Plugins
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: The server will detect previously enabled plugins on the server and will automatically install them.
+**True**: Any pre-packaged plugins enabled in the configuration will be installed or upgraded automatically. If a newer version is already installed, no changes are made.
 
 **False**: The server will not detect previously enabled plugins on the server.
 
