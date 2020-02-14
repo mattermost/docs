@@ -1,0 +1,5 @@
+---
+title: Updated EKS bootstrap script to default to Kubernetes 1.14
+merge_request: 1175
+author:
+type: changed
