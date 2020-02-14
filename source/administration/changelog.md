@@ -98,8 +98,8 @@ Multiple setting options were added to `config.json`. Below is a list of the add
  - Under ``LdapSettings`` in ``config.json``:
     - Added ``EnableAdminFilter`` and ``AdminFilter``, to enter a filter to use for designating the System Admin role to users.
  - Under ``PluginSettings`` in ``config.json``:
-    - Added ``EnableRemoteMarketplace``, to have the Marketplace fetch latest plugins from the configured Marketplace URL.
-    - Added ``AutomaticPrepackagedPlugins``, to add the ability for the server to detect previously enabled plugins on the server and to automatically install them.
+    - Added ``EnableRemoteMarketplace``, to have the server attempt to connect to the configured Plugin Marketplace to show the latest plugins.
+    - Added ``AutomaticPrepackagedPlugins``, so that any pre-packaged plugins enabled in the configuration will be installed or upgraded automatically.
 
 ### Open Source Components
  - Added ``@formatjs/intl-pluralrules`` in https://github.com/mattermost/mattermost-webapp.
