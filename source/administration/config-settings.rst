@@ -2771,7 +2771,7 @@ Enable Marketplace
 Enable Remote Marketplace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-**True**: Marketplace fetches latest plugins from the configured Marketplace URL.
+**True**: The server will attempt to connect to the configured Plugin Marketplace to show the latest plugins. If the connection fails, the Plugin Marketplace shows only pre-packaged and already installed plugins alongside a connection error.
 
 **False**: Marketplace does not fetch latest plugins from the configured Marketplace URL.
 
