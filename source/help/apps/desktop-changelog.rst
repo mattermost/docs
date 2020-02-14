@@ -61,6 +61,7 @@ Known Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installs, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
 - Pressing Enter multiple times during Basic Authentication causes a crash.
+- The confirmation dialog from UAC names MSI installers with random numbers.
 - On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
 
 Contributors
