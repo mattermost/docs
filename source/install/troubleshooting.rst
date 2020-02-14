@@ -1,16 +1,11 @@
 ..  _troubleshooting:
 
-Troubleshooting
-===============
-
 This document summarizes common troubleshooting issues and techniques.
 
 Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process. Alternatively, the `Troubleshooting forum <https://forum.mattermost.org/c/trouble-shoot>`__ might be helpful as someone may have experienced the same error in the past.
 
 If you're an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_.
 
-.. contents::
-    :backlinks: top
 
 Important Notes
 ---------------
@@ -109,9 +104,9 @@ This error message can also be received if the `Username Attribute` of their SAM
 ``An account with that email already exists. Please contact your Administrator.``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings** > **Security** > **Sign-in method**.
+This usually means an existing account has another authentication method enabled. If so, the user should sign in using that method (such as email and password), then change their sign-in method to SAML via **Account Settings > Security > Sign-in method**.
 
-This error message can also be received if the `Email Attribute` of their SAML credentials doesn't match the email address of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
+This error message can also be received if the ``Email Attribute`` of their SAML credentials doesn't match the email address of their Mattermost account. If so, the user can update the attribute at their identity provider (for instance, back to the old value if it had been previously updated).
 
 ``SAML login was unsuccessful because one of the attributes is incorrect. Please contact your System Administrator.``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -289,7 +284,7 @@ When a client WebSocket receives a disconnect it will automatically attempt to r
 App Refreshes Continuously
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different `config.json` files in a high availability cluster.
+When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different ``config.json`` files in a high availability cluster.
 
 Modify configuration settings directly through ``config.json`` `following these steps <https://docs.mattermost.com/deployment/cluster.html#updating-configuration-changes-while-operating-continuously>`__.
 
@@ -381,8 +376,7 @@ Click the link at the bottom of the sign-in page that says “Don't have an acco
    - Check the sign-in page.
    - If the sign-in method the account was created with is available, use that to sign in.
 
-      -  **Note:** You may then switch authentication methods from **Account
-         Settings** > **Security** > **Sign-in Method**.
+      -  **Note:** You may then switch authentication methods from **Account Settings > Security > Sign-in Method**.
 
    - If the sign-in method is not available, contact the System Administrator.
 
@@ -393,7 +387,7 @@ Click the link at the bottom of the sign-in page that says “Don't have an acco
 
          1. Turning the sign-in option back on.
          2. Asking the user to switch sign-in methods before turning the
-            sign-in option back off.
+            sign-in option off.
 
 ``Failed to upgrade websocket connection``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -409,7 +403,7 @@ This error can occur if you're using multiple URLs to reach Mattermost via proxy
 ``Websocket closed`` or ``Websocket re-established connection``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This alert can appear every few seconds in the Desktop application or web browser connected to Mattermost.
+This alert can appear every few seconds in the desktop application or web browser connected to Mattermost.
 
 **Solution:**
 
@@ -426,7 +420,7 @@ This error appears when a request from Mattermost to another system, such as an 
 **Solution:**
 
 1. Verify that the Mattermost server is able to connect to the system referenced in the error message.
-2. Increase the request timeout value for that integration in the Mattermost config file.
+2. Increase the request timeout value for that integration in the Mattermost ``config.json`` file.
 3. Ensure the target system is behaving properly and has sufficient resources to handle current load.
 
 Settings
@@ -475,24 +469,24 @@ I’m Not Receiving Push Notifications on my Device
 
 If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
 
-1. Under **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console > Environment > Logging > File Log Level** in versions after 5.12 select **DEBUG** in order to watch for push notifications in the server log.
+1. Under **System Console > Environment > Logging > File Log Level** (or **System Console > General > Logging > File Log Level** in versions prior to 5.12) select **DEBUG** in order to watch for push notifications in the server log.
 
 2. Delete and reinstall your mobile application.
 
 3. Sign in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app.
 
-4. On desktop, go to **Account Settings** > **Security** > **View and Logout of Active Sessions** and check that there is a session for the native mobile app matching your login time.
+4. On desktop, go to **Account Settings > Security > View and Logout of Active Sessions** and check that there is a session for the native mobile app matching your login time.
 
 5. Repeat the procedure for :doc:`testing push notifications <mobile-testing-notifications>`.
 
-6. If no push notification appears go to **System Console** > **Logs** and click **Reload**. Look at the bottom of the logs for a message similar to:
+6. If no push notification appears go to **System Console > Logs** and click **Reload**. Look at the bottom of the logs for a message similar to:
 
 ``[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 608xyz0... wi msg of '@accountb: Hello'``
 
   - If the log message appears, it means a message was sent to the HPNS server and was not received by your mobile application. Please contact support@mattermost.com with the subject "HPNS issue on Step 8" for help from the commercial support team.
   - If the log message does not appear, it means no mobile push notification was sent to “Account A”. Please repeat the process, starting at step 2, and double check each step.
 
-7. **IMPORTANT:** After your issue is resolved, go to **System Console** > **General** > **Logging** > **File Log Level** in prior versions or **System Console** > **Environment** > **Logging** > **File Log Level** in versions after 5.12 and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
+7. **IMPORTANT:** After your issue is resolved, go to **System Console > Environment > Logging > File Log Level** (or **System Console > General > Logging > File Log Level** in versions prior to 5.12) and select **ERROR** to switch your logging detail level to Errors Only, instead of **DEBUG**, in order to conserve disk space.
 
 All Outbound Connections go Through a Proxy. How Can I Connect to the Mattermost Hosted Push Notification Service?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -501,7 +495,7 @@ You can set up an internal server to proxy the connection out of their network t
 
 1. Make sure your proxy server is properly configured to support SSL. Confirm it works by checking the URL at https://www.digicert.com/help/.
 2. Set up a proxy to forward requests to ``https://push.mattermost.com``.
-3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** in prior versions or **System Console > Environment > Push Notification Server > Enable Push Notifications** in versions after 5.12 to "Manually enter Push Notification Service location".
+3. In Mattermost set **System Console > Environment > Push Notification Server > Enable Push Notifications** (or **System Console > Notification Settings > Mobile Push > Enable Push Notifications** in versions prior to 5.12) to **Manually enter Push Notification Service location**.
 4. Enter the URL of your proxy in the **Push Notification Server** field.
 
 **Note:** Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``.

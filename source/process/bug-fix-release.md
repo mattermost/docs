@@ -77,6 +77,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
 4. QA:
     - Identify any new teammates who will be joining release testing, DM them an intro to the testing process and timeframe, send them the [hardware/software survey](https://drive.google.com/open?id=1IUiNO2S5fgWVn-Y_cyouxheukqKyGQC0_2UX64Ejwk8)
+    - Set up DM/GM channels in preparation for testing auto-closing after 7 days
 
 ### F. (T-minus 11 working days) Release Candidate Cut
 
@@ -253,8 +254,6 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
             - Upgrade dependancies for webapp, server, and Redux
         - Week after release (for GitLab dev owner)
             - [Submit GitLab Omnibus RC install of Mattermost](https://mattermost.atlassian.net/browse/MM-9872)
-        - Week after release (for GitLab dev owner)
-            - [Confirm the relevant GitLab RC has the correct Mattermost version post-merge](https://mattermost.atlassian.net/browse/MM-22061)
     - Confirm that [mattermost-docker](https://github.com/mattermost/mattermost-docker/releases) has been updated to the latest version (contact the maintainer via direct message on community server if necessary)
     - Contact owners of [community installers](https://www.mattermost.org/installation/) or submit PRs to update install version number
       - For Puppet, Heroku, and Ansible Playbook, post to Installers and Images channel announcing the new release. See [example](https://community.mattermost.com/core/pl/fgjqthmn67nujjtx4fcrn1hd9a).
