@@ -42,7 +42,6 @@ Learn how to get Mattermost running on your environment.
    /install/docker-ebs*
    /install/deploy-cloudron*
    Installing Mattermost Team Edition in GitLab Helm Chart </install/install-mmte-helm-gitlab-helm.rst>
-   /install/troubleshooting*
    /install/trouble_mysql.rst
    /install/desktop*
    /install/desktop-msi-gpo*
@@ -63,6 +62,7 @@ Learn how to host Mattermost to meet your networking requirements.
 
    /deployment/deployment.md
    /deployment/desktop-app-deployment*
+   /deployment/mobile-app-deployment*
    /mobile/mobile-appconfig.rst
    /administration/image-proxy*
    /administration/encryption*
@@ -139,12 +139,25 @@ Learn how to maintain your Mattermost system.
    :glob:
 
    /administration/command*
+   /administration/mmctl-cli-tool.rst
    /administration/scripts*
    /administration/statistics.md
    /integrations/net-promoter-score*
    /administration/health-check*
    /administration/announcement-banner.rst
    /administration/bulk-export.rst
+
+
+Troubleshooting
+----------------
+
+Understand potential issues and how to address them.
+
+.. toctree::
+   :maxdepth: 1
+   :glob:
+
+   /install/troubleshooting.rst
 
 Upgrade Mattermost
 ----------------------------

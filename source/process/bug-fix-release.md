@@ -19,8 +19,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - After release branches are cut, ask dev to cut an RN build
     - Draft Changelog in a WIP PR with updates for known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
       - Note the type of release and add a link to release doc that defines the type (https://docs.mattermost.com/process/release-faq.html#release-overview)
-    - Review [supported OS versions](https://docs.mattermost.com/install/requirements.html#server-software) and review that [software requirements](https://docs.mattermost.com/install/requirements.html#software-requirements) are up-to-date based on [these guidelines](https://docs.mattermost.com/process/software-requirements.html). If not, update documentation accordingly, and note changes in the Changelog
-      - Check with Chen [in the Analytics channel](https://community.mattermost.com/private-core/channels/analytics-2) to see what % of users and what % of posts are made by the versions we're considering to drop support for, to review potential impact to users
+    - Review [supported OS versions](https://docs.mattermost.com/install/requirements.html#server-software) and review that [software requirements](https://docs.mattermost.com/install/requirements.html#software-requirements) are up-to-date based on [these step-by-step guidelines](https://docs.mattermost.com/process/software-requirements.html)
     - Update [Upgrade Guide](https://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version
     - Ask PMs if there are any notable breaking changes or deprecated features in the release
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
@@ -78,6 +77,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
 4. QA:
     - Identify any new teammates who will be joining release testing, DM them an intro to the testing process and timeframe, send them the [hardware/software survey](https://drive.google.com/open?id=1IUiNO2S5fgWVn-Y_cyouxheukqKyGQC0_2UX64Ejwk8)
+    - Set up DM/GM channels in preparation for testing auto-closing after 7 days
 
 ### F. (T-minus 11 working days) Release Candidate Cut
 

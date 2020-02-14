@@ -12,7 +12,7 @@ Attachment Options
 
 When sending an attachment, you can use any of the following to format how you want the posted message to look.
 
-``fallback``: A required plain-text summary of the post. This is used in notifications, and in clients that don’t support formatted text (eg IRC).
+``fallback``: A required plain-text summary of the attachment. This is used in notifications, and in clients that don’t support formatted text (e.g. IRC).
 
 ``color``: A hex color code that will be used as the left border color for the attachment. If not specified, it will default to match the left hand sidebar header background color.
 

@@ -433,7 +433,7 @@ Procedure:
 ::
 
    #### @channel A reminder to prepare your items for R&D meeting [DATE]:
-   1. @[name], @[name] and @[name] - you're up for ice-breaker
+   1. @[name], @[name] and @[name] - you're up for `ice-breaker <https://docs.mattermost.com/process/training.html#ice-breaker>`__
    2. Reminder for team member responsible for this week's team update to include it [in the notes](LINK)
    3. If you'll be giving a demo, please queue it [in the meeting notes](link) 
    ##### Everyone is encouraged to bring up items for discussion. If the discussion is `time-copped` during the meeting, please be sure to add a `next step` to the notes and post a link to where the conversation can be continued. ~platform channel is usually a good place to continue discussions.
@@ -452,10 +452,11 @@ Procedure:
 Meeting Agenda:
 
 - **Ice-breaker** - see Meeting Elements > Ice-breaker below for examples
-- **Roadmap check-in** - Review of roadmap status in current and next release
-- **Team updates** - Each development team gives a short update on their current top priorities
-- **Demos (optional)** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
-- **Blind spots, Inspiration, Knowledge Share** - Colleagues share areas of concern and ask questions
+- **Release updates** - Overview of current release status
+- **Announcements** - Short announcements that the entire team needs to know about
+- **Team updates** - Each team lists a short update of their current top priorities which can be read by meeting attendees (not actually reviewed during the meeting)
+- **Demos** - Team members show highlights of what's been completed this week. Relevant follow-ups noted
+- **Blind spots, Inspiration, Knowledge Share** - Colleagues share areas of concern and ask questions. Proposals for items that have already been discussed outside of the meeting can also be queued here
 
 Post Meeting:
 
@@ -484,6 +485,7 @@ Blind spots, Inspiration, Knowledge Share
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - Exercise to find blindspots in team thinking at the end of a meeting
+- Items for team discussion can also be queued in this section
 - Colleagues share areas of concern and ask questions which invariably disclose blind-spots or are an opportunity to improve communication.
 - Examples of questions:
 

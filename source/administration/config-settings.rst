@@ -28,6 +28,9 @@ For any setting that is not set in ``config.json`` or in environment variables, 
 
 .. note::
    If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
+   
+.. warning::
+   Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
 
 .. contents::
   :depth: 2
@@ -2236,7 +2239,10 @@ Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minute
 
 Maximum Page Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once. 0 is unlimited.
+The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once. 
+
+- A value of 0 is unlimited and does not paginate the results. 
+- A value of 1500 is recommended to align with the default AD/LDAP ``MaxPageSize`` setting. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxPageSize": 0`` with numerical input.                                                                                 |
