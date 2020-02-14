@@ -2333,6 +2333,14 @@ The issuer URL for the Identity Provider you use for SAML requests.
 | This feature's ``config.json`` setting is ``"IdpDescriptorUrl": ""`` with string input.                                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Identity Provider Metadata URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The URL where Mattermost sends a request to obtain setup metadata from the provider.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IdpMetadataUrl": ""`` with string input.                                                                                |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Identity Provider Public Certificate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The public authentication certificate issued by your Identity Provider.
@@ -2760,6 +2768,17 @@ Enable Plugins
 | This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``.                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Automatic Prepackaged Plugins
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Any pre-packaged plugins enabled in the configuration will be installed or upgraded automatically. If a newer version is already installed, no changes are made.
+
+**False**: Pre-packaged plugins are not installed or upgraded automatically but may be installed manually from the Plugin Marketplace, even when offline.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AutomaticPrepackagedPlugins": true`` with options ``true`` and ``false``.                                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable Marketplace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2769,6 +2788,17 @@ Enable Marketplace
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMarketplace": true`` with options ``true`` and ``false``.                                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Remote Marketplace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: The server will attempt to connect to the configured Plugin Marketplace to show the latest plugins. If the connection fails, the Plugin Marketplace shows only pre-packaged and already installed plugins alongside a connection error.
+
+**False**: The server will not attempt to connect to a remote marketplace, instead showing only pre-packaged and already installed plugins. Use this setting if your server cannot connect to the internet.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableRemoteMarketplace": true`` with options ``true`` and ``false``.                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Marketplace URL
