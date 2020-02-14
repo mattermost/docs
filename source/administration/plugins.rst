@@ -20,20 +20,6 @@ The Plugin Marketplace is a collection of plugins that can greatly increase the 
 
 .. image:: https://user-images.githubusercontent.com/915956/66891467-1b18eb80-ef9e-11e9-9de3-37a3c5899bd8.png
 
-Plugin Labels
-~~~~~~~~~~~~~~~~
-
-Plugins in the Marketplace are labeled to make it easier for administrators to choose plugins that fit their company's security and risk policies if they do not allow for community plugins to be used. 
-
-**Mattermost Official Plugins**
-Plugins identified as "Official" are owned and managed by the Mattermost development team and are available in an open-source licencing repository for review.  These plugins are supported by our customer assistance team in production environments. 
-
-**Community Plugins**
-Plugins produced by the open-source community or partners and the features/roadmap are not controlled directly by Mattermost.  Prior to being listed on the Plugin Marketplace, they are reviewed by the Mattermost development team and code-signed to ensure the code Mattermost reviewed, is delivered.  Mattermost does not directly support these plugins in production environments.
-
-**Beta Plugins**
-Plugins may be labeled as "Beta" if they are released to the Plugin Marketplace early for customer previews.  We do not recommend running Beta plugins on production servers.
-
 Installing a Plugin
 ~~~~~~~~~~~~~~~~
 
@@ -52,7 +38,7 @@ Once a plugin is installed (or pre-installed if shipped with Mattermost binary r
 Upgrading Plugins
 ~~~~~~~~~~~~~~~~~
 
-Upgrade a plugin on demand when a new version becomes available.  New versions of plugins you have already installed will be shown and can be installed with a single click. 
+Upgrade a plugin on demand when a new version becomes available.  New versions of plugins you have already installed will display a link to easily install the upgraded plugin.  Some plugin versions may have breaking changes, check the release notes if performing a major version change.
 
 Upgrading Plugins (prior to v5.18)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -266,11 +252,11 @@ To manage plugins, go to **System Console > Plugins > Plugin Management**. From 
 
 Pre-packaged Plugins
 ~~~~~~~~~~~~~~~~~~~
-Mattermost ships with a number of pre-packaged plugins written and maintained by Mattermost. Instead of building these features directly into the product, you can selectively enable the functionality your installation requires. Pre-packaged plugins can be removed after 5.20 via the System Console, or by modifying the ``prepackaged_plugins`` directory in your Mattermost installation.
+Mattermost ships with a number of pre-packaged plugins written and maintained by Mattermost. Instead of building these features directly into the product, you can selectively enable the functionality your installation requires. Pre-packaged plugins can be removed as of 5.20 via the System Console, or by modifying the ``prepackaged_plugins`` directory in your Mattermost installation.
 
-As of 5.20 Mattermost now ships pre-downloaded plugins that will be visible in the PLugin marketplace even if your Mattermost server does not have external internat acess as in some secure settings.  Only Mattermost "official" plugins are shipped with the Mattermost package as a result, community plugins are not available in the Plugin Marketplace on servers without internet access.
+As of v5.20, pre-packaged plugins are no longer installed by default, but are available from the plugin marketplace. Installing such plugins from the plugin marketplace works even when your server cannot access the internet by instead installing the version shipped with the server.
 
-If you previously had some plugins that were pre-packaged on your server, but were not enabled at time of upgrading to 5.20+, they will no longer be installed your server.  As mentioned, those previously pre-packaged plugins will still be available to be installed on your server via the Plugin Marketplace. 
+Previously enabled, pre-packaged plugins will remain installed on upgrading to v5.20. Any disabled, pre-packaged plugins will not show up in the system console but may be installed from the plugin marketplace.
 
 Custom Plugins
 ~~~~~~~~~~~~~~
