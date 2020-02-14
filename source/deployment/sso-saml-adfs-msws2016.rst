@@ -65,7 +65,7 @@ Add your **SAML 2.0 SSO service URL** from above the same way.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_010.png
 
-10. In the **Finish** screen select **Configure claims issuance policy for this application** and then **Close**. 
+10. In the **Finish** screen select **Configure claims issuance policy for this application** and then **Close**.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_011.png
 
@@ -161,11 +161,11 @@ Configure SAML Sign-in for Mattermost
   - Set **Override SAML bind data with AD/LDAP information** to suit your environment.
   - For **SAML SSO URL** use the ``SAML 2.0/W-Federation URL ADFS Endpoint`` you copied at the beginning of the process.
   - For **Identity Provider Issuer URL** use the ``Relying party trust identifier`` from ADFS.
-  - For **Identity Provider Public Certificate** use  the``X.509 Public Certificate``. 
+  - For **Identity Provider Public Certificate** use  the``X.509 Public Certificate``.
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_configure-saml_001.png
 
-2. Configure Mattermost to verify the signature. 
+2. Configure Mattermost to verify the signature.
   - Set **Verify Signature** to ``true``.
   - For **Service Provider Login URL** use the ``SAML 2.0 SSO service URL`` you specified in ADFS.
 
@@ -199,5 +199,3 @@ You may also configure SAML for ADFS by editing ``config.json`` to enable SAML b
 .. include:: sso-saml-faq.rst
 
 .. include:: sso-saml-ldapsync.rst
-
-.. include:: sso-saml-troubleshooting.rst

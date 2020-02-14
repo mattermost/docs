@@ -194,5 +194,3 @@ You may also configure SAML for ADFS by editing ``config.json`` to enable SAML b
 .. include:: sso-saml-ldapsync.rst
 
 .. include:: sso-saml-faq.rst
-
-.. include:: sso-saml-troubleshooting.rst
