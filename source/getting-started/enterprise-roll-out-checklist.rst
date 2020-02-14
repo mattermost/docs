@@ -146,7 +146,7 @@ Define Your Team and Channel Strategy
 Enable Key Integrations
 ```````````````````````
 - Build list of key integrations and tools used by your teams. 
- - Resource: https://docs.mattermost.com/guides/integration.html
+ - Resource: https://docs.mattermost.com/guides/administrator.html#mattermost-integrations
 
 - Define use cases and requirements for plugins, bots, webhooks, plugins, slash commands 
  - Resource: https://docs.mattermost.com/guides/integration.html
