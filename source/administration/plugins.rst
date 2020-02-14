@@ -270,7 +270,7 @@ Mattermost ships with a number of pre-packaged plugins written and maintained by
 
 As of 5.20 Mattermost now ships pre-downloaded plugins that will be visible in the PLugin marketplace even if your Mattermost server does not have external internat acess as in some secure settings.  Only Mattermost "official" plugins are shipped with the Mattermost package as a result, community plugins are not available in the Plugin Marketplace on servers without internet access.
 
-If you previously had some plugins that were pre-packaged on your server, but were not enabled at time of upgrading to 5.20+, they will no longer be installed your server.  As mentioned - those previously pre-packaged plugins will still be available to be installed on your server via the Plugin Marketplace. 
+If you previously had some plugins that were pre-packaged on your server, but were not enabled at time of upgrading to 5.20+, they will no longer be installed your server.  As mentioned, those previously pre-packaged plugins will still be available to be installed on your server via the Plugin Marketplace. 
 
 Custom Plugins
 ~~~~~~~~~~~~~~
