@@ -2751,7 +2751,7 @@ Automatic Prepackaged Plugins
 
 **True**: Any pre-packaged plugins enabled in the configuration will be installed or upgraded automatically. If a newer version is already installed, no changes are made.
 
-**False**: The server will not detect previously enabled plugins on the server.
+**False**: Pre-packaged plugins are not installed or upgraded automatically but may be installed manually from the Plugin Marketplace, even when offline.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AutomaticPrepackagedPlugins": true`` with options ``true`` and ``false``.                                               |
