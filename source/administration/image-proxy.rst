@@ -3,7 +3,7 @@
 Image Proxy
 ================================
 
-Using image proxies means that users make only secure requests. By allowing image requests to go straight to third-party
+Using image proxies means that users make only secure requests for Markdown embedded images. By allowing image requests to go straight to third-party
 servers, tracking pixels is allowed. Users can put invisible images in posts that logs time and location data
 for every user that views the post. An image proxy protects user privacy by eliminating this direct interaction with 
 third-party servers.
@@ -12,6 +12,8 @@ Proxy servers also provide a layer of caching, and can be made faster and more r
 also helps preserve posts by protecting them from dead images.
 
 When enabled, the image proxy needs to be publicly accessible to both the Mattermost client and server.
+
+Currently the image proxy only works for Markdown embedded images and not `image preview of plaintext URLs <https://github.com/mattermost/mattermost-server/issues/11857>`_.
 
 You may alternatively use `atmos/camo <https://github.com/atmos/camo>`_ http proxy to route images through SSL:
 
