@@ -7,7 +7,6 @@ This document describes how to use Mattermost Team Edition Helm Chart in proximi
 
 As the Mattermost Helm Chart is installed in a separate namespace, it is recommended that cert-manager and nginx-ingress be configured to manage cluster-wide ingress and certificate resources. 
 
-The steps in this document presume in-chart Minio instance usage. For information about out-of-chart object storage configuration, review `this document <https://gitlab.com/gitlab-org/charts/gitlab/tree/master/doc/charts/registry#storage>`__ for GCS and S3 examples. Alternatively, visit your provider's Help documentation for configuration settings. 
 
 Prerequisites
 ----------------------------
@@ -22,127 +21,13 @@ For the Team Edition you can have just one replica running.
 Install Mattermost Team Edition Helm Chart
 ------------------------------------------
 
-This chart creates a Mattermost Team Edition deployment on a Kubernetes cluster using the Helm package manager.
+This chart creates a Mattermost Team Edition deployment on a Kubernetes cluster using the Helm package manager. For detailed instructions, refer to the `Mattermost Team Edition documentation <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-team-edition>`_. 
 
-Installing the Chart
-~~~~~~~~~~~~~~~~~~~~~~
-
-To install the chart with the release name ``my-release``:
-
-.. code-block:: sh
-
-  $ helm install --name my-release stable/mattermost-team-edition
-
-The command deploys Mattermost on the Kubernetes cluster in the default configuration.
-
-**Note:**
-Breaking Helm chart changes were introduced with version 3.0.0. The easiest method of resolving them is to simply upgrade the chart and let it fail with and provide you with a custom message on what you need to change in your configuration. Note that this failure will occur before any changes have been made to the Kubernetes cluster.
-
-Configuration
-~~~~~~~~~~~~~~~
-
-The following table lists the configurable parameters of the Mattermost Team Edition chart and their default values.
-
-.. csv-table::
-    :header: "Parameter", "Description", "Default "
-
-    "``configJSON``", "The ``config.json`` configuration to be used by the Mattermost server. The values you provide will by using Helm's merging behavior override individual default values only. See the `example configuration <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-team-edition#example-configuration>`__ and the `Mattermost documentation <https://docs.mattermost.com/administration/config-settings.html>`_ for details.", "See ``configJSON`` in `values.yaml <https://github.com/helm/charts/blob/master/stable/mattermost-team-edition/values.yaml>`__."
-    "``image.repository``", "Container image repository", "``mattermost/mattermost-team-edition``"
-    "``image.tag``", "Container image tag", "5.13.2"
-    "``image.imagePullPolicy``", "Container image pull policy", "``IfNotPresent``"
-    "``initContainerImage.repository``", "Init container image repository", "``appropriate/curl``"
-    "``initContainerImage.tag``", "Init container image tag", "``latest``"
-    "``initContainerImage.imagePullPolicy``", "Container image pull policy", "``IfNotPresent``"
-    "``revisionHistoryLimit``", "How many old ReplicaSets for Mattermost deployment you want to retain", "``1``"
-    "``ingress.enabled``", "If ``true``, an ingress is created", "``false``"
-    "``ingress.hosts``", "A list of ingress hosts", "``[mattermost.example.com]``"
-    "``ingress.tls``", "A list of `ingress TLS <https://kubernetes.io/docs/concepts/services-networking/ingress/#tls>`__ items", "``[]``"
-    "``mysql.enabled``", "Enables deployment of a MySQL server", "``true``"
-    "``mysql.mysqlRootPassword``", "Root password for MySQL (Optional)", """"
-    "``mysql.mysqlUser``", "Username for MySQL (Required)", "``mysql.mysqlPassword``"
-    "``mysql.mysqlDatabase`", "Database name (Required)", ""mattermost""
-    "``externalDB.enabled``", "Enables use of an preconfigured external database server", "``false``"
-    "``externalDB.externalDriverType``", "``postgres`` or ``mysql``", """"
-    "``externalDB.externalConnectionString``", "See the section about `external databases<https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-team-edition#External-Databases>`__", """"
-    "``extraPodAnnotations``", "Extra pod annotations to be used in the deployments", "``[]``"
-    "``extraEnvVars``", "Extra environments variables to be used in the deployments", "``[]``"
-    "``extraInitContainers``", "Additional init containers", "``[]``"
-    "``service.annotations``",  "Service annotations", "``{}``"
-    "``service.loadBalancerSourceRanges``", "A list of IP CIDRs allowed access to load balancer (if supported)", "``[]``"     
-
-Specify each parameter using the ``--set key=value[,key=value]`` argument to ``helm install``. For example,
-
-.. code-block:: sh
-
- helm install --name my-release \
-  --set image.tag=5.12.4 \
-  --set mysql.mysqlUser=sampleUser \
-  --set mysql.mysqlPassword=samplePassword \
-  mattermost/mattermost-team-edition
-
-Alternatively, a ``.yaml`` file that specifies the values for the parameters can be provided while installing the chart. For example,
-
-.. code-block:: sh
-
- $ helm install --name my-release -f values.yaml mattermost/mattermost-team-edition
-
-
-Example Configuration
-^^^^^^^^^^^^^^^^^^^^^
-
-A basic example of a ``.yaml`` file with values that could be passed to the ``helm`` command with the ``-f`` or ``--values`` flag to get started.
-
-.. code-block:: sh
-
-ingress:
-  enabled: true
-  hosts:
-    - mattermost.example.com
-configJSON:
-  ServiceSettings:
-    SiteURL: "https://mattermost.example.com"
-  TeamSettings:
-    SiteName: "Mattermost on Example.com"
-
-
-External Databases
-~~~~~~~~~~~~~~~~~~~
-There is an option to use external database services (PostgreSQL or MySQL) for your Mattermost installation.
-If you use an external database you will need to disable the MySQL chart in the ``values.yaml`` section.
-
-.. code-block:: sh
-
- mysql:
-  enabled: false
-
-
-PostgreSQL
-^^^^^^^^^^^
-To use an external PostgreSQL database, you need to set the Mattermost ``externalDB`` config. Ensure that the database is already created before deploying Mattermost services.
-
-.. code-block:: sh
-  
-  externalDB:
-    enabled: true
-    externalDriverType: "postgres"
-    externalConnectionString: "postgres://<USERNAME>:<PASSWORD>@<HOST>:5432/<DATABASE_NAME>?sslmode=disable&connect_timeout=10"
-
-
-MySQL
-^^^^^
-To use an external MySQL database, you need to set the Mattermost ``externalDB`` config. Ensure that the database is already created before deploying Mattermost services.
-
-.. code-block:: sh
-
-  externalDB:
-   enabled: true
-   externalDriverType: "mysql"
-   externalConnectionString: "<USERNAME>:<PASSWORD>@tcp(<HOST>:3306)/<DATABASE_NAME>?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s"
 
 Deploy the Mattermost Team Edition Helm Chart
 ----------------------------------------------
 
-Deploy the Mattermost Team Edition Helm Chart with following command:
+Once you have installed the Mattermost Team Edition Helm Chart, you can deploy it using the following command:
 
 .. code-block:: sh
 
@@ -150,7 +35,7 @@ Deploy the Mattermost Team Edition Helm Chart with following command:
   $ helm repo update
   $ helm upgrade --install mattermost -f values.yaml mattermost/mattermost-team-edition
 
-Wait for the pods to run. Then access your Mattermost server. 
+Wait for the pods to run. Then, using the ingress host you specified in the configuration, access your Mattermost server. 
 
 
 Create an OAuth application with GitLab
@@ -158,9 +43,11 @@ Create an OAuth application with GitLab
 
 The next part of the process is setting up the GitLab SSO integration. 
 
-To create the OAuth application to allow Mattermost to use GitLab as the authentication provider, please follow the instructions `here <https://docs.mattermost.com/deployment/sso-gitlab.html>`__.
+To create the OAuth application to allow Mattermost to use GitLab as the authentication provider, please follow the instructions `here <https://docs.mattermost.com/deployment/sso-gitlab.html>`__. 
 
 Please take note of the ``Application ID``, ``Application Secret Key``, ``User API Endpoint``, ``Auth Endpoint`` and ``Token Endpoint`` settings, as these values will be used later.
+
+If you are following a process other than the one provided and experience authentication and/or deployment issues, let us know in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`__ and we'll be happy to help.  
 
 Deploy GitLab Helm Chart
 ----------------------------
@@ -186,14 +73,16 @@ When you are able to successfully authenticate the next step is to integrate the
 Deploy Mattermost Team Edition Helm Chart with GitLab Helm Chart 
 ----------------------------------------------------------------
 
+The steps in this document presume in-chart Minio instance usage. For information about out-of-chart object storage configuration, review `this document <https://gitlab.com/gitlab-org/charts/gitlab/tree/master/doc/charts/registry#storage>`__ for GCS and S3 examples. Alternatively, visit your provider's Help documentation for configuration settings. 
+
 Requirements:
 
   - Mattermost Team Edition Helm Chart Version: 3.8.2
   - A running GitLab Helm Chart release.
   - The name of the secret that holds your PostgreSQL password ``<gitlab>-postgresql-password``.
-  - The name of the secret that holds your Minio keys ``<gitlab>-minio-secret``.
+  - (Optional) The name of the secret that holds your Minio keys ``<gitlab>-minio-secret``.
   - The service name for your PostgreSQL, ``<gitlab>-postgresql``, and the port. If you installed the GitLab helm chart in ``default`` namespace, then the port is ``5432``.
-  - The service name for Minio and the port, ``<gitlab>-minio-svc``, and the port. If you installed the GitLab helm chart in ``default`` namespace, then the port is ``9000``.
+  - (Optional) The service name for Minio and the port, ``<gitlab>-minio-svc``, and the port. If you installed the GitLab helm chart in ``default`` namespace, then the port is ``9000``.
   - The names of ``kubernetes.io/ingress.class``, ``kubernetes.io/ingress.provider`` and ``certmanager.k8s.io/issuer``.
   
 To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``MySql`` chart and configure InitContainer and Environment variables in ``values.yaml``. The list below indicates the values that should be changed. Note that we assume the GitLab chart name is ``gitlab``.
