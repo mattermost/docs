@@ -73,7 +73,7 @@ Create Development, Staging, and Production Environments
  - Install and configure Database
   - Install the number of read and search replicas based on your high availability requirements outlined in your production environment design
    - Resources: https://docs.mattermost.com/overview/architecture.html#database-with-vips 
-  - (Optional)Set up configuration management via the database instead of a config file for high available environments
+  - (Optional) Set up configuration management via the database instead of a config file for high available environments
    - Resource: https://docs.mattermost.com/administration/config-in-database.html
  - Install and configure File Storage
   - Resource: https://docs.mattermost.com/deployment/deployment.html#file-store
@@ -276,4 +276,3 @@ Perform Maintenance Requests
  - Resource: https://docs.mattermost.com/administration/release-lifecycle.html
 
 - Run System checks and either address or set address-by date	
-
