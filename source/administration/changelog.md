@@ -14,6 +14,7 @@ Mattermost v5.20.0 contains low to high level security fixes. [Upgrading](http:/
 
 ### Breaking Changes
  - Any [pre-packaged plugin](https://docs.mattermost.com/administration/plugins.html#pre-packaged-plugins) that is not enabled in the ``config.json`` will no longer install automatically, but can continue to be installed via the [plugin marketplace](https://docs.mattermost.com/administration/plugins.html#plugin-marketplace).
+ - An unavoidable breaking change was introduced where bool fields on interactive dialogs are now passed as Booleans rather than Strings.
  
 **IMPORTANT:** If you upgrade from a release earlier than 5.19, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration/important-upgrade-notes.html).
 
