@@ -10,6 +10,8 @@ Important Upgrade Notes
 | v5.20.0                                            | Any `pre-packaged plugin <https://docs.mattermost.com/administration/plugins.html#pre-packaged-plugins>`_ that is not enabled in the ``config.json`` will no     |
 |                                                    | longer install automatically, but can continue to be installed via the                                                                                           |
 |                                                    | `plugin marketplace <https://docs.mattermost.com/administration/plugins.html#plugin-marketplace>`_.                                                              | 
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | An unavoidable breaking change was introduced where bool fields on interactive dialogs are now passed as Booleans rather than Strings.                           |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.19.0                                            | ``LockTeammateNameDisplay`` setting was moved to Enterprise Edition E20 as it was erroneously available in Team Edition and Enterprise Edition E10.              |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
