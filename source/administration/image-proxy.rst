@@ -13,7 +13,7 @@ also helps preserve posts by protecting them from dead images.
 
 When enabled, the image proxy needs to be publicly accessible to both the Mattermost client and server.
 
-Currently the image proxy only works for Markdown embedded images and not `image preview of plaintext URLs <https://github.com/mattermost/mattermost-server/issues/11857>`_.
+Currently the image proxy only works for Markdown embedded images and not for `image preview of plaintext URLs <https://github.com/mattermost/mattermost-server/issues/11857>`_.
 
 You may alternatively use `atmos/camo <https://github.com/atmos/camo>`_ http proxy to route images through SSL:
 
