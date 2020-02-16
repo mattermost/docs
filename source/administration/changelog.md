@@ -7,7 +7,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ## Release v5.20 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 - **v5.20.1, released 2020-02-16**
-  - Fixed an issue where upgrading to v5.20 failed on servers running with ``PluginSettings.Enable = false``, and ``LogSettings.EnableDiagnostics = true``. Workaround is to set ``PluginSettings.Enable = true`` in config.json.
+  - Fixed an issue where upgrading to v5.20 failed on servers running with ``PluginSettings.Enable = false``, and ``LogSettings.EnableDiagnostics = true``.
 - **v5.20.0, released 2020-02-14**
   - Original 5.20.0 release
 
