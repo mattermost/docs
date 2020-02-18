@@ -1,7 +1,7 @@
 Enterprise Roll Out Checklist
 ==============================
 
-This checklist is intended to serve as a guide to Enterprises who are rolling out Mattermost to thousands of users.  It includes preparing for the roll out, rolling out to users and reviewing the roll out.  
+This checklist is intended to serve as a guide to Enterprises who are rolling out Mattermost to thousands of users.  It includes preparing for the roll out, rolling out to users, and reviewing the roll out.  
 
 Prepare for the Roll Out
 -----------------------
