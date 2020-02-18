@@ -14,6 +14,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - 
 
 ### Bug Fixes
+ - Fixed an issue where bots could not be added to group-synced channels or teams.
+ - Fixed an issue where enabling and disabling the demo plugin generated a "connection is shutdown" error.
+ - Fixed an issue where user's role was not reflected correctly in the Team Members Modal when it was updated after the modal was opened.
+ - Fixed an issue where clicking on an image in external image preview opened the image within the desktop app.
 
 
 ### config.json
