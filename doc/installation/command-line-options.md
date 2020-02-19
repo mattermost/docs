@@ -318,7 +318,6 @@ settings from the [Redis chart](https://github.com/helm/charts/tree/master/stabl
 | `gitlab.unicorn.service.annotations`                         | Annotations to add to the `Service`            | {}                                                               |
 | `gitlab.unicorn.service.externalPort`                        | Unicorn exposed port                           | `8080`                                                           |
 | `gitlab.unicorn.service.internalPort`                        | Unicorn internal port                          | `8080`                                                           |
-| `gitlab.unicorn.service.name`                                | Unicorn service name                           | `unicorn`                                                        |
 | `gitlab.unicorn.service.type`                                | Unicorn service type                           | `ClusterIP`                                                      |
 | `gitlab.unicorn.service.workhorseExternalPort`               | Workhorse exposed port                         | `8181`                                                           |
 | `gitlab.unicorn.service.workhorseInternalPort`               | Workhorse internal port                        | `8181`                                                           |
