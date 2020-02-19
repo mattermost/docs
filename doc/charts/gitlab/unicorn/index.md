@@ -74,7 +74,6 @@ to the `helm install` command using the `--set` flags.
 | `resources.requests.memory`      | `1.4G`                | Unicorn minimum memory                         |
 | `service.externalPort`           | `8080`                | Unicorn exposed port                           |
 | `service.internalPort`           | `8080`                | Unicorn internal port                          |
-| `service.name`                   | `unicorn`             | Unicorn service name                           |
 | `service.type`                   | `ClusterIP`           | Unicorn service type                           |
 | `service.workhorseExternalPort`  | `8181`                | Workhorse exposed port                         |
 | `service.workhorseInternalPort`  | `8181`                | Workhorse internal port                        |

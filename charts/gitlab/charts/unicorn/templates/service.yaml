@@ -14,16 +14,16 @@ spec:
     - port: {{ .Values.service.externalPort }}
       targetPort: {{ .Values.service.internalPort }}
       protocol: TCP
-      name: {{ .Values.service.name }}
+      name: http-unicorn
     - port: {{ .Values.service.workhorseExternalPort }}
       targetPort: {{ .Values.service.workhorseInternalPort }}
       protocol: TCP
-      name: workhorse
+      name: http-workhorse
     {{- if eq .Values.monitoring.exporter.enabled true }}
     - port: {{ .Values.monitoring.exporter.port }}
       targetPort: {{ .Values.monitoring.exporter.port }}
       protocol: TCP
-      name: {{ .Values.service.name }}-exporter
+      name: http-exporter
     {{- end }}
   selector:
     app: {{ template "name" . }}
