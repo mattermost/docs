@@ -4,7 +4,7 @@ Desktop Application Changelog
 Release v4.4.0
 ----------------------------
 
-**Download Binaries:** 
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.0>`_
 
 - **v4.4.0, release day 2020-02-16**
 
