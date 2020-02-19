@@ -105,8 +105,8 @@ You can distribute the official Windows Desktop App silently to end users, pre-c
         echo   "minimizeToTray": false,
         echo   "notifications": {
         echo     "flashWindow": 0,
-                 "bounceIcon": false,
-                 "bounceIconType": 'informational',
+        echo     "bounceIcon": false,
+        echo     "bounceIconType": 'informational',
         echo   },
         echo   "showUnreadBadge": true,
         echo   "useSpellChecker": true,

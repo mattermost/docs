@@ -49,8 +49,7 @@ No pull requests for major features should be **merged** to the current release 
     - Draft Changelog in a WIP PR with updates for highlights, feature additions, known issues, compatibility updates for deprecated features, config.json, [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13); [see example](http://docs.mattermost.com/administration/changelog.html#compatibility)
       - Note the type of release and add a link to release doc that defines the type (https://docs.mattermost.com/process/release-faq.html#release-overview)
     - Start drafting a release summary for Support/Sales highlighting key things (e.g., new features, breaking changes, things we want feedback on, and potential support issues)
-    - Review [supported OS versions](https://docs.mattermost.com/install/requirements.html#server-software) and review that [software requirements](https://docs.mattermost.com/install/requirements.html#software-requirements) are up-to-date based on [these guidelines](https://docs.mattermost.com/process/software-requirements.html). If not, update documentation accordingly, and note changes in the Changelog
-      - Check with Chen [in the Analytics channel](https://community.mattermost.com/private-core/channels/analytics-2) to see what % of users and what % of posts are made by the versions we're considering to drop support for, to review potential impact to users
+    - Review [supported OS versions](https://docs.mattermost.com/install/requirements.html#server-software) and review that [software requirements](https://docs.mattermost.com/install/requirements.html#software-requirements) are up-to-date based on [these step-by-step guidelines](https://docs.mattermost.com/process/software-requirements.html)
     - Update [Upgrade Guide](http://docs.mattermost.com/administration/upgrade.html#upgrade-guide) with any special notes for upgrading to the new version
     - Ask PMs if there are any notable breaking changes or deprecated features in the release
     - Start posting a daily Zero Bug Balance query (posted until zero bugs or day of release)
@@ -116,6 +115,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
 4. QA:
     - Identify any new teammates who will be joining release testing, DM them an intro to the testing process and timeframe, send them the [hardware/software survey](https://drive.google.com/open?id=1IUiNO2S5fgWVn-Y_cyouxheukqKyGQC0_2UX64Ejwk8)
+    - Set up DM/GM channels in preparation for testing auto-closing after 7 days
 
 ### G. (T-minus 9 working days) Release Candidate Cut
 
@@ -271,6 +271,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Schedule a release retrospective meeting, to be held within five days from the release
     - Prepare and post [release metrics](https://docs.google.com/spreadsheets/d/1Aoj4OTaWoyrKIcQNiHH1MVoRG51T20Y_0w2tg5oVw-M/edit#gid=825551144)
     - Review and update [company roadmap](https://about.mattermost.com/direction/) with which major features made it into the release
+        - Review with Head of Product prior to updating
     - Update Integrations Directory on the [Mattermost Apps and Integrations](https://integrations.mattermost.com/) page
     - Post the MVP winner announcement in the [Contributors channel](https://community.mattermost.com/core/channels/tickets)
     - Add new release fix versions in Jira for the next few releases

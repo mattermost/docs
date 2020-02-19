@@ -28,6 +28,9 @@ For any setting that is not set in ``config.json`` or in environment variables, 
 
 .. note::
    If a setting is set through an environment variable and any other changes are made in the System Console, the value stored of the environment variable will be written back to the ``config.json`` as that setting's value.
+   
+.. warning::
+   Database connection strings for the database read and search replicas need to be formatted using `URL encoding <https://www.w3schools.com/tags/ref_urlencode.asp>`__. Incorrectly formatted strings may cause some characters to terminate the string early, resulting in issues when the connection string is parsed.
 
 .. contents::
   :depth: 2
@@ -1879,7 +1882,7 @@ Enable sign-in with email
 
 **True**: Mattermost allows account creation using email and password.
 
-**False**: Sign in with email is disabled and does not appear on the login screen. Use this value when you want to limit sign up to a single sign-on service like AD/LDAP, SAML or GitLab.
+**False**: Sign in with email is disabled and does not appear on the login screen. Use this value when you want to limit sign up to a single sign-on service like AD/LDAP, SAML, or GitLab.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableSignInWithEmail": true`` with options ``true`` and ``false``.                                                     |
@@ -2082,7 +2085,7 @@ This filter uses the permissions of the **Bind Username** account to execute the
 
 Guest Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E20*  
+*Available in Enterprise Edition E20*
 
 (Optional) Enter an AD/LDAP Filter to use when searching for external users who have Guest Access to Mattermost.
 Only the users selected by the query will be able to log in to and use Mattermost as Guests. This filter default is blank.
@@ -2093,10 +2096,21 @@ See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/gu
 | This feature's ``config.json`` setting is ``"GuestFilter": ""`` with string input.                                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Admin Filter
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20*
+
+(Optional) Enter a filter to use for designating the System Admin role to users. When enabled the user is promoted to this role on their next login or at the next scheduled AD/LDAP sync. If the Admin Filter is removed, users who are currently logged in retain their Admin role. When they log out this is revoked and on their next login they will no longer have Admin privileges.
+
+This filter default is ``false`` and must be set to ``true`` in order for the Admin Filter to be used.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAdminFilter": false`` with options ``true`` and ``false``.                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Group Filter
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-*Available in Enterprise Edition E20*  
+*Available in Enterprise Edition E20*
 
 (Optional) Enter an AD/LDAP Filter to use when searching for group objects (accepts `general syntax <http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__). Only the groups selected by the query will be able to access Mattermost.
 
@@ -2189,7 +2203,8 @@ ID Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The attribute in the AD/LDAP server used as a unique identifier in Mattermost. It should be an AD/LDAP attribute with a value that does not change.
 
-If a user's ID Attribute changes, it will create a new Mattermost account unassociated with their old one.
+If a user's ID Attribute changes, a new Mattermost account (unassociated with the previous one) is created. To prevent this, it's recommended that a unique attribute such as ``objectGUID`` in Active Directory and ``entryUUID`` in LDAP be used instead. 
+Before making any changes confirm with your LDAP provider whether these attributes are available in your environment.
 
 If you need to change this field after users have already logged in, use the `mattermost ldap idmigrate <https://about.mattermost.com/default-platform-ldap-idmigrate>`__ CLI tool.
 
@@ -2225,7 +2240,10 @@ Set how often Mattermost accounts synchronize attributes with AD/LDAP, in minute
 
 Maximum Page Size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once. 0 is unlimited.
+The maximum number of users the Mattermost server will request from the AD/LDAP server at one time. Use this setting if your AD/LDAP server limits the number of users that can be requested at once. 
+
+- A value of 0 is unlimited and does not paginate the results. 
+- A value of 1500 is recommended to align with the default AD/LDAP ``MaxPageSize`` setting. 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxPageSize": 0`` with numerical input.                                                                                 |
@@ -2263,6 +2281,15 @@ SAML
 .. note::
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
+Use New SAML Library
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**True**: Enable an updated SAML Library, which does not require the XML Security Library (xmlsec1) to be installed.
+
+**False**: Continue using the existing implementation which uses the XML Security Library (xmlsec1).
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"UseNewSAMLLibrary": false`` with options ``true`` and ``false``.                                                        |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable Login With SAML
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2313,6 +2340,14 @@ The issuer URL for the Identity Provider you use for SAML requests.
 | This feature's ``config.json`` setting is ``"IdpDescriptorUrl": ""`` with string input.                                                                              |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Identity Provider Metadata URL
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The URL where Mattermost sends a request to obtain setup metadata from the provider.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IdpMetadataUrl": ""`` with string input.                                                                                |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Identity Provider Public Certificate
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The public authentication certificate issued by your Identity Provider.
@@ -2341,7 +2376,7 @@ Enter ``https://<your-mattermost-url>/login/sso/saml`` (example: ``https://examp
 
 SignatureAlgorithm
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The signature algorithm used to sign the request.  Supported options are `RSAwithSHA1 <http://www.w3.org/2000/09/xmldsig#rsa-sha1>`_, `RSAwithSHA256 <http://www.w3.org/2000/09/xmldsig#rsa-sha1>`_, and `RSAwithSHA512 <http://www.w3.org/2001/04/xmldsig-more#rsa-sha512>`_. 
+The signature algorithm used to sign the request.  Supported options are `RSAwithSHA1 <http://www.w3.org/2000/09/xmldsig#rsa-sha1>`_, `RSAwithSHA256 <http://www.w3.org/2000/09/xmldsig#rsa-sha1>`_, and `RSAwithSHA512 <http://www.w3.org/2001/04/xmldsig-more#rsa-sha512>`_.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SignatureAlgorithm": ""`` with string input.                                                                            |
@@ -2427,6 +2462,17 @@ See the `Guest Accounts documentation <https://docs.mattermost.com/deployment/gu
 | This feature's ``config.json`` setting is ``"GuestAttribute": ""`` with string input.                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Admin Attribute
+^^^^^^^^^^^^^^^^^
+*Available in Enterprise Edition E20*
+
+(Optional) The attribute in the SAML Assertion for designating System Admins. The user is automatically promoted to this role on their next login. If the Admin Attribute is removed, users who are currently logged in retain their Admin role. When they log out this is revoked and on their next login they will no longer have Admin privileges.
+
+This attribute's default is ``false`` and must be set to ``true`` in order for the Admin Attribute to be used. 
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAdminAttribute": false`` with options ``true`` and ``false``.                                                     |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 First Name Attribute
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2729,6 +2775,17 @@ Enable Plugins
 | This feature's ``config.json`` setting is ``"Enable": true`` with options ``true`` and ``false``.                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Automatic Prepackaged Plugins
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: Any pre-packaged plugins enabled in the configuration will be installed or upgraded automatically. If a newer version is already installed, no changes are made.
+
+**False**: Pre-packaged plugins are not installed or upgraded automatically but may be installed manually from the Plugin Marketplace, even when offline.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"AutomaticPrepackagedPlugins": true`` with options ``true`` and ``false``.                                               |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 Enable Marketplace
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2738,6 +2795,17 @@ Enable Marketplace
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableMarketplace": true`` with options ``true`` and ``false``.                                                         |
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable Remote Marketplace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**True**: The server will attempt to connect to the configured Plugin Marketplace to show the latest plugins. If the connection fails, the Plugin Marketplace shows only pre-packaged and already installed plugins alongside a connection error.
+
+**False**: The server will not attempt to connect to a remote marketplace, instead showing only pre-packaged and already installed plugins. Use this setting if your server cannot connect to the internet.
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableRemoteMarketplace": true`` with options ``true`` and ``false``.                                                   |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Marketplace URL
@@ -3785,39 +3853,6 @@ Enable API Team Deletion
 SQL Settings
 ~~~~~~~~~~~~
 
-Enable Public Channels Materialization
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-*Removed in December 16, 2018 release. The public channel materialization feature has become a permanent feature after thoroughly tested for performance.*
-
-**True**: Enables materialization of public channels to increase channel search performance in the channel switcher (CTRL/CMD+K), channel autocomplete (~) and elsewhere in the UI. Notably, this allows the database to exclude direct messages for many queries, resulting in better query plans and more efficient indexes.
-
-**False**: Disables materialization for public channels.
-
-If this feature is disabled and then later re-enabled, an offline migration is necessary to synchronize the materialized table. Use the following steps:
-
-1. Shut down your application servers.
-2. Connect to your Mattermost database.
-3. Execute the following queries:
-
-.. code:: sql
-
-  DELETE FROM PublicChannels;
-  INSERT INTO PublicChannels
-      (Id, DeleteAt, TeamId, DisplayName, Name, Header, Purpose)
-  SELECT
-      c.Id, c.DeleteAt, c.TeamId, c.DisplayName, c.Name, c.Header, c.Purpose
-  FROM
-      Channels c
-  WHERE
-      c.Type = 'O';
-
-The queries above rebuild the materialized ``PublicChannels`` table without modifying the authoritative ``Channels`` table.
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnablePublicChannelsMaterialization": true`` with options ``true`` and ``false``.                    |
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-
 Read Replicas
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 *Available in Enterprise Edition E10 and higher*
@@ -4224,7 +4259,7 @@ Aggregate Search Indexes
 Elasticsearch indexes over the age specified by this setting will be aggregated during the daily scheduled job.
 
 .. note::
-  If using `data retention <https://docs.mattermost.com/administration/data-retention.html>`_ and `ElasticSearch <https://docs.mattermost.com/deployment/elasticsearch.html>`_, ensure the `ElasticSearch aggregate search indexes <https://docs.mattermost.com/administration/config-settings.html#aggregate-search-indexes>`_ setting is set to a value that is greater than your data retention policy in days. 
+  If using `data retention <https://docs.mattermost.com/administration/data-retention.html>`_ and `ElasticSearch <https://docs.mattermost.com/deployment/elasticsearch.html>`_, ensure the `ElasticSearch aggregate search indexes <https://docs.mattermost.com/administration/config-settings.html#aggregate-search-indexes>`_ setting is set to a value that is greater than your data retention policy in days.
 
 +-----------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AggregatePostsAfterDays": 365`` with numerical input.        |
