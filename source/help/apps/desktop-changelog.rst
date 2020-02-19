@@ -22,7 +22,7 @@ All Platforms
 
 - Added support for Certificate Authentication, including PIV Card authentication.
 - Improved server tab organization and visuals with the ability to reorder server tabs via drag-and-drop, notification updates that make it easier to tell when new messages or mentions come in, and a new dark theme.
-- Added a spell checker for Italian language.
+- Added a spell checker for Italian and Polish language.
 - Added auto focus on Server Display Name input field.
 
 Architectural Changes
