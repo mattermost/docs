@@ -724,7 +724,7 @@ Every feature added has an initial and on-going mana cost, which is taken into a
 MLT
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The "Mattermost Leadership Team".
+The "Mattermost Leadership Team". See new handbook: https://handbook.mattermost.com/company/about-mattermost/list-of-terms#mlt
 
 RHS
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
