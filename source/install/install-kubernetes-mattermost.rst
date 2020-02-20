@@ -142,6 +142,7 @@ Save the file as ``secret.yaml``. The example below is for AWS/S3.
     S3_PROVIDER: AWS
 
 **Parameters**
+
 - ``name``. The name of this manifest which is referenced in the installation manifest.
 
 
@@ -192,10 +193,15 @@ Open a text editor and create a text file with the following details. Save the f
     restoreSecret: ""
 
 **Parameters**
+
 - ``mattermostClusterName``. The ClusterInstallation file name.
+
 - ``restoreSecret``. The location of the backup file.
+
 - ``mattermostDBPassword``. The password used to access the database.
+
 - ``mattermostDBUser``. The username required to access the database.
+
 - ``initBucketURL``. The URL of the storage instance/server where the backed up DB is stored.
 
 8. To initiate deployment, apply the file and specify the path where the newly-created files have been saved:
