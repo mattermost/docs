@@ -42,7 +42,7 @@ Validate Essential Security and Compliance Requirements
 
 - Define and configure authentication policies
  - Resource: https://docs.mattermost.com/overview/auth.html 
- - Determine requirements for multi-factor authentication
+- Determine requirements for multi-factor authentication
  - Resource: https://docs.mattermost.com/deployment/auth.html
 
 - Configure and test SSO or Corporate Directory integration (SAML or AD/LDAP)
