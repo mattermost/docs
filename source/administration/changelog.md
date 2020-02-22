@@ -15,10 +15,13 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Bug Fixes
  - Fixed an issue where bots could not be added to group-synced channels or teams.
+ - Fixed an issue where code block line numbers were copied when pasting into certain applications.
+ - Fixed an issue where the right-hand side reply thread scrolled down after receiving a new message.
  - Fixed an issue where enabling and disabling the demo plugin generated a "connection is shutdown" error.
+ - Fixed an issue where deactivated users with whom a user had never interacted in a private message before appeared in the New Direct Message menu.
  - Fixed an issue where user's role was not reflected correctly in the Team Members Modal when it was updated after the modal was opened.
  - Fixed an issue where clicking on an image in external image preview opened the image within the desktop app.
-
+ - Fixed an issue where users were unable to open email links using View in Browsers option in incognito mode.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
