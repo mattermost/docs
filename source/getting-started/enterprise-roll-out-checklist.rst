@@ -167,7 +167,7 @@ Prepare for User Onboarding
  - Resource: End User Guide: https://docs.mattermost.com/guides/user.html  
 
 - Define user escalation and support processes
- - Ensure you have set the site’s support url to your own support team under System Console > Site Configuration > Customization
+ - Ensure you have set the site’s support URL to your own support team under **System Console > Site Configuration > Customization**
 
 - Notify users in advance of rollout
  - Sample Email: https://docs.mattermost.com/getting-started/welcome_email.html
