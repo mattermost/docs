@@ -247,7 +247,7 @@ Analyze System Performance
 ````````````````````````````
 - Monitor trends in CPU/memory usage
 
-- Review trends in Database connections
+- Review trends in database connections
 
 - Review trends in Go routines 
 
