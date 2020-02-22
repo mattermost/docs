@@ -62,7 +62,7 @@ Create Development, Staging, and Production Environments
  - Resource: https://docs.mattermost.com/deployment/cluster.html
 
 - Create development and staging environments 
- - Recommend using to test early configurations for database, authentication, file storage, Elasticsearch, prior to setting up high availability and load balancing.  
+ - Recommend using to test early configurations for database, authentication, file storage, Elasticsearch, prior to setting up high availability and load balancing 
  - Recommend configuring staging to be an identical replication of your production environment.
 
 - Create production environment
