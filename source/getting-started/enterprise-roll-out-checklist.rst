@@ -68,7 +68,7 @@ Create Development, Staging, and Production Environments
 - Create production environment
  - Install Mattermost
   - Install the number of nodes based on your high availability requirements outlined in your production environment design
-  - Recommendation: Use Kubernetes and the Mattermost Operator, with external supported external database and file storage solutions.  This will also provide blue/green deployment, rolling upgrades and canary builds
+  - Recommendation: Use Kubernetes and the Mattermost Operator, with external supported external database and file storage solutions. This will also provide blue/green deployment, rolling upgrades, and canary builds
    - Resource: https://docs.mattermost.com/install/install-kubernetes.html 
  - Install and configure Database
   - Install the number of read and search replicas based on your high availability requirements outlined in your production environment design
