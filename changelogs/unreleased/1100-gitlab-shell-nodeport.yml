@@ -1,5 +1,0 @@
----
-title: Added ability to set NodePort and ExternalTrafficPolicy for gitlab-shell service
-merge_request: 1112
-author: Dmitry Chepurovskiy
-type: added

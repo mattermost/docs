@@ -1,5 +1,0 @@
----
-title: Add `component` field to the nginx ingress podAntiAffinity
-merge_request: 1169
-author: Ivan Kurnosov (@zerkms)
-type: added

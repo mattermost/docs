@@ -2,6 +2,44 @@
 documentation](doc/development/changelog.md) for instructions on adding your own
 entry.
 
+## 3.1.0
+
+### Fixed (4 changes, 2 of them are from the community)
+
+- Route gitlab-shell and gitaly requests through workhorse. !1114 (Dmitry Chepurovskiy)
+- Enabled Geo configuration checks. !1121
+- Disable cert-manager's webook that validates its CRDs. !1139 (Erik Sundell (@consideRatio))
+- Corrected references to gitlab-runner.install. !1149
+
+### Changed (8 changes)
+
+- Update gitlab-exporter to 5.2.2. !1087
+- Changed migrations job to use task-runner image. !1126
+- Bump registry to v2.7.7-gitlab. !1133
+- Update registry chart versions to reflect recent changes. !1144
+- Update gitlab-exporter to 6.0.0. !1151
+- Align gitlab/unicorn chart service names for Istio environments. !1153
+- Bump Container Registry to v2.8.0-gitlab. !1172
+- Updated EKS bootstrap script to default to Kubernetes 1.14. !1175
+
+### Added (6 changes, 3 of them are from the community)
+
+- Allows the database `pool` to be configurable. !1111 (skarbek)
+- Added ability to set NodePort and ExternalTrafficPolicy for gitlab-shell service. !1112 (Dmitry Chepurovskiy)
+- Adds logging.format option to enable structured json logging for sidekiq. !1132
+- Performance: enable Bootsnap for all Rails-derived containers. !1157
+- NOTES: add notice of runner default to unprivilieged. !1158
+- Add `component` field to the nginx ingress podAntiAffinity. !1169 (Ivan Kurnosov (@zerkms))
+
+### Other (5 changes)
+
+- Document command for easily fetching ELB hostname. !1159
+- Doc: link upstream docs for why GitLab Runner is not privileged by default. !1160
+- Include GitLab Exporter & GitLab Grafana to sub-chart lists. !1161
+- Bump Container Registry to v2.8.1-gitlab. !1173
+- Update GitLab Version to 12.8.0.
+
+
 ## 3.0.4
 
 ### Fixed (1 change, 1 of them is from the community)
