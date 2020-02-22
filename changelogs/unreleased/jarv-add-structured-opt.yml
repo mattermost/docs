@@ -1,5 +1,0 @@
----
-title: Adds logging.format option to enable structured json logging for sidekiq
-merge_request: 1132
-author:
-type: added
