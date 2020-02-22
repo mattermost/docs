@@ -133,7 +133,7 @@ Now that you have the an environment in place, we recommend working through the 
 
 Define Your Team and Channel Strategy
 `````````````````````````````````````
-- Determine and create team structure for your instance
+- Determine and create team structure for your environment
  - Recommendation: Start with fewer teams in your early roll-out. 
  - Resource: https://docs.mattermost.com/help/getting-started/organizing.html 
 
