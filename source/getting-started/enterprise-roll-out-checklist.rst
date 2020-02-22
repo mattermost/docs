@@ -137,7 +137,7 @@ Define Your Team and Channel Strategy
  - Recommendation: Start with fewer teams in your early roll-out. 
  - Resource: https://docs.mattermost.com/help/getting-started/organizing.html 
 
-- Determine and create key channels to support your users. Town Square and Off-Topic are built in channels in every team. 
+- Determine and create key channels to support your users. Town Square and Off-Topic are built in channels in every team
  - Recommendation: Add a “Support” channel for your users to escalate questions. 
 
 - (Optional) Migrate messages and channels from legacy systems 
