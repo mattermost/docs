@@ -20,7 +20,7 @@ source "${SCRIPT_PATH}/common.sh"
 # Set default values
 cluster_name=${CLUSTER_NAME-gitlab-cluster}
 nodes=${NUM_NODES-2}
-kubernetes_version=${CLUSTER_VERSION-1.11}
+kubernetes_version=${CLUSTER_VERSION-1.14}
 region="${REGION-us-east-2}"
 node_type="${MACHINE_TYPE-m5.xlarge}"
 service_account="${SERVICE_ACCOUNT-tiller}"

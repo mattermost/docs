@@ -42,6 +42,8 @@ Due to gotpl scoping, we can't make use of `range`, so we have to add action lin
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.workerTimeout" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.redis-ha.enabled" .) -}}
 {{- $deprecated := append $deprecated (include "gitlab.deprecate.redis.enabled" .) -}}
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.unicorn.service.name" .) -}}
+{{- $deprecated := append $deprecated (include "gitlab.deprecate.gitlab.unicorn.service.configuration" .) -}}
 {{- /* prepare output */}}
 {{- $deprecated := without $deprecated "" -}}
 {{- $message := join "\n" $deprecated -}}
@@ -276,3 +278,25 @@ redis:
 {{-   end -}}
 {{- end -}}
 {{/* END gitlab.deprecate.redis.enabled */}}
+
+{{/* Deprecation behaviors for unicorn.service.name */}}
+{{- define "gitlab.deprecate.unicorn.service.name" -}}
+{{-   if hasKey .Values.gitlab.unicorn.service "name" -}}
+unicorn:
+    Chart-local configuration of Unicorn's service name has been deprecated.
+{{-   end -}}
+{{- end -}}
+{{/* END gitlab.deprecate.redis.enabled */}}
+
+{{- define "gitlab.deprecate.gitlab.unicorn.service.configuration" -}}
+{{-   range $chart := list "gitaly" "gitlab-shell" -}}
+{{-     if index $.Values.gitlab $chart -}}
+{{-       if hasKey (index $.Values.gitlab $chart) "unicorn" }}
+gitlab.{{ $chart }}:
+    unicorn:
+      The configuration of 'gitlab.{{ $chart }}.unicorn' has been moved to 'gitlab.{{ $chart }}.workhorse' to better reflect the underlying architecture. Please relocate this property.
+{{-       end -}}
+{{-     end -}}
+{{-   end -}}
+{{- end -}}
+{{/* END gitlab.deprecate.gitlab.unicorn.service.configuration */}}

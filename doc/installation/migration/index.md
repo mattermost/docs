@@ -20,6 +20,11 @@
 
 ## Migration Steps
 
+CAUTION: **CAUTION:**
+JUnit test report artifact (`junit.xml.gz`) migration
+[is not supported](https://gitlab.com/gitlab-org/gitlab/issues/27698)
+by the `gitlab:artifacts:migrate` script below.
+
 1. Migrate existing files (uploads, artifacts, lfs objects) from package based
    installation to object storage.
 

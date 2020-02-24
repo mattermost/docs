@@ -1,5 +1,0 @@
----
-title: Disable cert-manager's webook that validates its CRDs
-merge_request: 1139
-author: Erik Sundell (@consideRatio)
-type: fixed
