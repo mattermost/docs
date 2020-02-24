@@ -89,6 +89,10 @@ footer {
 	padding-top: 70px;
 }
 
+.rst-versions {
+	width: 350px;
+}
+
 .wy-nav-content {
 	height: auto;
 	width: 100%;
