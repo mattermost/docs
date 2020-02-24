@@ -288,7 +288,6 @@ unicorn:
 {{- end -}}
 {{/* END gitlab.deprecate.redis.enabled */}}
 
-
 {{- define "gitlab.deprecate.gitlab.unicorn.service.configuration" -}}
 {{-   range $chart := list "gitaly" "gitlab-shell" -}}
 {{-     if index $.Values.gitlab $chart -}}
