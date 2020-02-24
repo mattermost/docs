@@ -294,7 +294,7 @@ unicorn:
 {{-       if hasKey (index $.Values.gitlab $chart) "unicorn" }}
 gitlab.{{ $chart }}:
     unicorn:
-      The configuration of 'gitlab.{{ $chart }}.unicorn' has been moved to 'gitlab.{{ $chart }}.workhorse' to better reflect the underlying architecture. Please rename your configuration.
+      The configuration of 'gitlab.{{ $chart }}.unicorn' has been moved to 'gitlab.{{ $chart }}.workhorse' to better reflect the underlying architecture. Please relocate this property.
 {{-       end -}}
 {{-     end -}}
 {{-   end -}}
