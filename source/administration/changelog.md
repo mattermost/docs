@@ -22,6 +22,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where user's role was not reflected correctly in the Team Members Modal when it was updated after the modal was opened.
  - Fixed an issue where clicking on an image in external image preview opened the image within the desktop app.
  - Fixed an issue where users were unable to open email links using View in Browsers option in incognito mode.
+ - Fixed an issue where **Invite Guests > Emails** containing upper case letters were rejected.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
