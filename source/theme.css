@@ -89,8 +89,20 @@ footer {
 	padding-top: 70px;
 }
 
+.rst-versions {
+	width: 350px;
+}
+
 .wy-nav-content {
+	height: auto;
+	width: 100%;
+    max-width: 100%;
 	padding-top: 26px;
+}
+
+.wy-menu-vertical li.toctree-l3.current li.toctree-l4>a {
+	padding-left: 4rem;
+	border: none;
 }
 
 .wy-table td, .rst-content table.docutils td, .rst-content table.field-list td {
@@ -182,6 +194,7 @@ footer {
 }
 
 .wy-nav-content-wrap {
+	margin-left: 350px;
 	height: 100%;
 	overflow: auto;
 }
@@ -192,6 +205,24 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 
 .wy-menu-vertical a {
 	color: #888;
+	font-size: 15px;
+}
+
+.wy-menu-vertical li.current a {
+	font-size: 14.5px;
+	padding-left: 2em;
+}
+
+.wy-menu-vertical li.toctree-l2.current>a {
+	padding-left: 2.4em;
+}
+
+.wy-menu-vertical li.toctree-l2 a {
+	padding-left: 2.4em;
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3>a {
+	padding-left: 3.3em;
 }
 
 .wy-menu-vertical li.current {
@@ -202,17 +233,24 @@ h1, h2, .rst-content .toctree-wrapper p.caption, h3, h4, h5, h6, legend {
 	background-color: #E7EFF5;
 }
 
+.wy-side-scroll {
+	width: 100%;
+}
+
 .wy-menu-vertical {
+	width: 100%;
 	top: 130px;
 	position: relative;
 }
 
 .wy-nav-side {
+	width: 350px;
 	border-right: 1px solid #ddd;
 	background: #f9f9f9;
 }
 
 .wy-side-nav-search {
+	width: 350px;
 	margin-top: 70px;
 	border-right: 1px solid #ddd;
 }
@@ -333,6 +371,10 @@ header .header__searchbar {
 }
 
 @media (max-width: 768px){
+	.wy-nav-side {
+		left: -350px;
+	}
+
 	header .links__icon {
 		display: block;
 	}
@@ -346,6 +388,7 @@ header .header__searchbar {
 		top: 0;
 	}
 	.wy-nav-content-wrap {
+		margin-left: 0;
 		overflow-y: scroll;
 		-webkit-overflow-scrolling: touch;
 	}
