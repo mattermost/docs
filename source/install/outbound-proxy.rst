@@ -22,9 +22,9 @@ Note that when proxying HTTPS resources, you will need to configure your Matterm
 ``NO_PROXY``
 ~~~~~~~~~~~~
 
-The ``NO_PROXY`` environment variable can be set to prevent certain requests from going through the proxy, such as to an SSO provider (such as GitLab or SAML) or to intranet sites that should be accessible in link previews. It can be configured as a set of comma-separted IP addresses (e.g. 1.2.3.4), IP address ranges specified in CIDR notation (e.g. 1.2.3.4/8), or domain names. An IP address or domain name can also include a port number.
+The ``NO_PROXY`` environment variable can be set to prevent certain requests from going through the proxy, such as to an SSO provider (e.g. GitLab or SAML) or intranet sites that should be accessible in link previews. It can be configured as a set of comma-separated IP addresses (e.g. ``1.2.3.4``), IP address ranges specified in CIDR notation (e.g. ``1.2.3.4/8``), or domain names. An IP address or domain name can also include a port number.
 
-When specifying a domain name, that domain name also matches its sub domains as well. A domain name with a leading ``.`` matches only sub domains. For example, ``example.com`` matches both ``example.com`` as well as ``sub.example.com`` while ``.example.com`` only matches the latter.
+When a domain name is specified, the domain and all of its subdomains are matched, however a domain name with a leading ``.`` only matches the subdomains. For example, ``example.com`` matches both ``example.com`` and ``sub.example.com`` while ``.example.com`` only matches the latter.
 
 Sample Configuration
 --------------------
@@ -32,7 +32,7 @@ Sample Configuration
 To set these environment variables while running the Mattermost server via ``systemd``, modify the ``mattermost.service`` like this:
 
   .. note::
-    Be sure to replace `127.0.0.1:3128` with the correct values for your proxy servers.
+    Be sure to replace ``127.0.0.1:3128`` with the correct values for your proxy servers.
 
   .. code-block:: none
 
