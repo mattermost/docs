@@ -118,6 +118,8 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Verify all items in the last posted release checklist are complete
     - Post list of tickets to be fixed to the Release Discussion channel ([see example](https://community.mattermost.com/core/pl/65k77x3bnigw5f9ffohfxonnfy))
     - Update Changelog **Known Issues** section with any significant issues that were found and not fixed for the final release
+    - Cut next Release Candidate and check CI servers running on release branch
+    - Ask Platform team to provide list of [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13) for Changelog
 3. QA:
     - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://docs.google.com/document/d/1UvTsvwZXmEL9QPjxmjoIkR2AcwGtOjql8cYRfk2N8eA/edit#bookmark=id.ghe4vz9zd1v))
     - Post release testing instructions to Release Discussion channel ([template](https://docs.google.com/document/d/1UvTsvwZXmEL9QPjxmjoIkR2AcwGtOjql8cYRfk2N8eA/edit#bookmark=id.u28aar2hx7hg))
@@ -130,10 +132,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Make PRs for bug fixes to the release branch
     - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day
     - Run daily automated upgrade tests to avoid catching upgrade bugs late
-6. Build:
-    - Verify with Release Manager before cutting any new RCs (approved fixes should be merged)
-    - Cut next Release Candidate and check CI servers running on release branch
-7. Marketing:
+6. Marketing:
     - Finish draft of blog post for mattermost.com and all art work (screenshots, GIFs, and Twitter banners) used for the blog post
         - Upgrade should be recommended if there are security fixes in this version, with a note thanking the security researcher
     - Send blog post for Release Manager and PMs to review
