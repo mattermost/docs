@@ -25,7 +25,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where **Invite Guests > Emails** containing upper case letters were rejected.
  - Fixed an issue where clicking on "Terms of Service" and "Privacy Policy" on account creation on the desktop app didn't do anything.
  - Fixed an issue where the post menu opened up in the right-hand side made the menu options float off page if the parent post was short with no replies.
- - Fixed an issue where a user's authentication method in the System Console was shown as email if it was actually LDAP. 
+ - Fixed an issue where a user's authentication method in the System Console was shown as email if it was actually LDAP.
+ - Fixed an issue where gendered emojis were rendered with the wrong gender.
 
 ### config.json
 Multiple setting options were added to `config.json`. Below is a list of the additions and their default values on install. The settings can be modified in `config.json`, or the System Console when available.
