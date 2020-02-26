@@ -221,7 +221,7 @@ Day after which only **S1 regressions** should be fixed (crashes, security vulne
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
 
-### J. (T-minus 2 working days) Release Build Cut
+### K. (T-minus 2 working days) Release Build Cut
 
 The final release is cut - RC cuts and bug fixes should be completed by this date. Only urgent and critical issues are considered for fixing.
 
@@ -273,7 +273,7 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
     - Update feature lists on https://mattermost.com/pricing/ and https://mattermost.com/product/ with relevant new features
     - Add links to [Admin guide](https://docs.mattermost.com/guides/administrator.html) in the release blog post where needed
 
-### K. (T-minus 0 working days) Release Day
+### L. (T-minus 0 working days) Release Day
 
 1. Release Manager:
     - Post this checklist in Release Checklist channel
