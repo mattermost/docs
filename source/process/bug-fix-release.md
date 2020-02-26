@@ -46,12 +46,11 @@ Pre-work for the current release begins at the code complete date of the previou
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
     - Queue a list of MVP candidates in alphabetical order to the Platform Meeting channel [See example](https://community.mattermost.com/private-core/pl/q9jdbzw7c7ribjsp78857xbomh)
-       - Queue a discussion about MVP candidates for the next R&D meeting
     - Update Changelog PR based on what's in/out of the release
     - Create meta issue for release in GitHub (see [example](https://github.com/mattermost/mattermost-server/issues/3702))
     - Confirm date of marketing announcement for the release date with Marketing, and update release channel header if needed
       - If release day falls on a Friday, the blog post goes out on the Friday and the emailed newsletter goes out the following Tuesday.
-    - Post a reminder to devs in the Release Discussion channel of the the code complete date with the ZBB count [see example](https://community.mattermost.com/core/pl/coggyys9atg7fqyam81q3gkmoo)
+    - Post a reminder to devs in the Release Discussion channel of the the code complete date with a list of open bugs and PRs [see example](https://community.mattermost.com/core/pl/coggyys9atg7fqyam81q3gkmoo)
     - Ask release PM to review the Jira tickets remaining in the current release fix version and push those that won't make it to the next fix version
 3. Leads:
     - Finalize roadmap for next release, and identify planned marketing bullet points
@@ -72,7 +71,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Verify all items in the last posted release checklist are complete
     - Submit `NOTICE.txt` PRs for any new libraries added from dev, and ensure they are cherry-picked to quality release branch
     - If there are any breaking compatibility changes in the release, open an issue in the [GitLab Omnibus](https://gitlab.com/gitlab-org/omnibus-gitlab) to make sure GitLab is aware. Post a link to the issue in the Release Discussion channel
-    - Ask PMs to [create a "Hero" screenshot as the splash image for the release blog post](https://handbook.mattermost.com/operations/messaging-and-math/how-to-guides-for-m-and-m/how-to-create-release-announcements#one-great-screenshot-a-month)
+    - Ask UX to [create a "Hero" screenshot as the splash image for the release blog post](https://handbook.mattermost.com/operations/messaging-and-math/how-to-guides-for-m-and-m/how-to-create-release-announcements#one-great-screenshot-a-month)
 3. Dev:
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
 4. QA:
@@ -108,13 +107,6 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - CI servers are updated to the release branch
     - Translation server is locked to the release branch
     - Run daily automated upgrade tests to avoid catching upgrade bugs late
-5. Docs:
-    - Submit Changelog PR for team review
-    - Submit any remaining documentation PRs for product updates in the release
-    - Check that a redirect page has been set up in mattermost.com for any links added to the System Console
-    - Submit documentation for [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go) and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13) to  API documentation
-    - Confirm changes to `config.json` in compatibility section of Changelog are written back to [settings documentation](https://docs.mattermost.com/administration/config-settings.html#configuration-settings)
-    - Confirm all new diagnostics are documented in the telemetry docs (https://docs.mattermost.com/administration/telemetry.html)
 
 ### G. (T-minus 10 working days) Release Candidate Testing
 
@@ -171,6 +163,13 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Verify all Jira tickets other than newly-filed bugs have been tested, verified, and closed
     - As bug fixes are merged and RCs are cut, verify fixes on new RCs, and post in Release Channel after testing
     - As RCs are cut, update `selenium.test.mattermost.com` to latest RC
+5. Docs:
+    - Submit Changelog PR for team review
+    - Submit any remaining documentation PRs for product updates in the release
+    - Check that a redirect page has been set up in mattermost.com for any links added to the System Console
+    - Submit documentation for [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go) and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13) to  API documentation
+    - Confirm changes to `config.json` in compatibility section of Changelog are written back to [settings documentation](https://docs.mattermost.com/administration/config-settings.html#configuration-settings)
+    - Confirm all new diagnostics are documented in the telemetry docs (https://docs.mattermost.com/administration/telemetry.html)
 
 ### I. (T-minus 2 working days) Release Build Cut
 
