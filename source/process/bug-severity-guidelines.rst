@@ -16,3 +16,5 @@ Assigning Severity Levels:
 ---------------------------------------------------------
 
 Normally assigned by Release Manager and team during triage, but can also be modified afterwards by devs upon further investigation. Mattermost Jira includes an issue field called "Severity" that can be filled in with either ``S1``, ``S2``, or ``S3`` levels.
+
+Bug tickets are sometimes assessed in case-by-case basis and further considerations may be applied, such as how risky a bug is to fix or whether it’s more beneficial to revert code that initially caused the bug.
