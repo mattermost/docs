@@ -210,6 +210,16 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Verify all Jira tickets other than newly-filed bugs have been tested, verified, and closed
     - As bug fixes are merged and RCs are cut, verify fixes on new RCs, and post in Release Channel after testing
     - As RCs are cut, update `selenium.test.mattermost.com` to latest RC
+    
+### J. (T-minus 5 working days) Code Freeze
+No code changes should be comitted. During this period, only **Severity 1 bugs** can be committed to the release branch. Exceptions can be made by the Release Manager during triage on case-by-case basis. Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google.com/document/d/1QxB_A1qkEJBKAvQpRa7JiSQLZhwg6HAEajNRNa7ldGg/edit)
+
+1. **(Team) Daily Release Update Meeting**
+    - Continue to triage Jira tickets
+    - If no blocking issues are found, PM, Dev, and QA sign off on the release and plan to cut final
+2. Release Manager:
+    - Post this checklist in Release Checklist channel
+    - Verify all items in the last posted release checklist are complete
 
 ### J. (T-minus 2 working days) Release Build Cut
 
