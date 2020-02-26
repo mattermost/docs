@@ -212,7 +212,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - As RCs are cut, update `selenium.test.mattermost.com` to latest RC
     
 ### J. (T-minus 5 working days) Code Freeze
-No code changes should be comitted. During this period, only **Severity 1 bugs** can be committed to the release branch. Exceptions can be made by the Release Manager during triage on case-by-case basis. Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google.com/document/d/1QxB_A1qkEJBKAvQpRa7JiSQLZhwg6HAEajNRNa7ldGg/edit)
+Day after which only **S1 regressions** should be fixed (crashes, security vulnerabilities) and no other code changes should be comitted. Exceptions can be made by the Release Manager during triage on a case-by-case basis. Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google.com/document/d/1QxB_A1qkEJBKAvQpRa7JiSQLZhwg6HAEajNRNa7ldGg/edit)
 
 1. **(Team) Daily Release Update Meeting**
     - Continue to triage Jira tickets
