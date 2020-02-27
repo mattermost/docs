@@ -68,7 +68,7 @@ Here's a light way to install it:
 - ``<external-ip>``: the external IP pointing to your Kubernetes cluster.
 - ``<email>``: email to register in Let's Encrypt to retrieve TLS certificates.
 
-Once you've deployed the GitLab instance, follow the instructions for the _`initial login <. https://docs.gitlab.com/charts/installation/deployment.html#initial-login>`__. 
+Once you've deployed the GitLab instance, follow the instructions for the `initial login <https://docs.gitlab.com/charts/installation/deployment.html#initial-login>`__. 
 
 If you are following a process other than the one provided and experience authentication and/or deployment issues, let us know in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`__ and we'll be happy to help.  
 
@@ -261,9 +261,3 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
             echo "Bucket '$MATTERMOST_BUCKET_NAME' already exists."
             exit 0
           fi
-
-
-Troubleshooting
----------------------
-
-If you have any trouble installing Mattermost Team Edition in GitLab Helm Chart deployment, let us know in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`__ and we'll be happy to help.
