@@ -15,8 +15,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Bug Fixes
  - Fixed an issue where bots could not be added to group-synced channels or teams.
+ - Fixed an issue where a user's authentication method in the System Console was shown as email if it was actually LDAP.
  - Fixed an issue where code block line numbers were copied when pasting into certain applications.
  - Fixed an issue where the right-hand side reply thread scrolled down after receiving a new message.
+ - Fixed an issue where the post menu opened up in the right-hand side made the menu options float off page if the parent post was short with no replies.
  - Fixed an issue where enabling and disabling the demo plugin generated a "connection is shutdown" error.
  - Fixed an issue where deactivated users with whom a user had never interacted in a private message before appeared in the New Direct Message menu.
  - Fixed an issue where user's role was not reflected correctly in the Team Members Modal when it was updated after the modal was opened.
@@ -24,8 +26,6 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed an issue where users were unable to open email links using View in Browsers option in incognito mode.
  - Fixed an issue where **Invite Guests > Emails** containing upper case letters were rejected.
  - Fixed an issue where clicking on "Terms of Service" and "Privacy Policy" on account creation on the desktop app didn't do anything.
- - Fixed an issue where the post menu opened up in the right-hand side made the menu options float off page if the parent post was short with no replies.
- - Fixed an issue where a user's authentication method in the System Console was shown as email if it was actually LDAP.
  - Fixed an issue where gendered emojis were rendered with the wrong gender.
 
 ### config.json
