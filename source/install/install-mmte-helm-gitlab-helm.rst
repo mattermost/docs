@@ -47,6 +47,10 @@ To create the OAuth application to allow Mattermost to use GitLab as the authent
 
 Please take note of the ``Application ID``, ``Application Secret Key``, ``User API Endpoint``, ``Auth Endpoint`` and ``Token Endpoint`` settings, as these values will be used later.
 
+.. note:: 
+
+Only the default GitLab SSO is officially supported. “Double SSO”, where GitLab SSO is chained to other SSO solutions, is not supported. It may be possible to connect GitLab SSO with AD, LDAP, SAML, or MFA add-ons in some cases, but because of the special logic required they’re not officially supported and are known not to work on some experiences.
+
 Deploy GitLab Helm Chart
 ----------------------------
 
