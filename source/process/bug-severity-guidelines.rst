@@ -6,15 +6,17 @@ Criteria for Bugs:
 ---------------------------------------------------------
 
 1. % of customers affected
-2. “scale” of impact
-   - S1 - Prevents app use (e.g. Mattermost crash when posting a message) OR functional regressions. Only bugs that can be committed after Code Freeze deadline
-   - S2 - 50%-100% of users’ functionality affected (e.g. Cannot favorite a channel) OR cosmetic/UI regressions. In addition to S1, only bugs that can be committed after Code Complete.
-   - S3 - 20%-50% of users’ functionality affected (e.g. Cannot create custom emoji if System Admin)
-   - S4 - Other minor (e.g. channel ID is too small in View Info modal)
+2. “Scale” of impact
+   - S1 - Prevents app use (e.g. Mattermost crash when posting a message) OR functional regressions. Only bugs that can be committed after the Code Freeze deadline
+   - S2 - 50%-100% of users’ functionality affected (e.g. Cannot favorite a channel) OR cosmetic/UI regressions. In addition to S1 bugs, only bugs that can be committed after Code Complete deadline.
+   - S3 - 20%-50% of users’ functionality affected (e.g. Cannot create custom emoji if System Admin). Can be fixed anytime until Code Complete deadline.
+   - S4 - Other minor (e.g. channel ID is too small in View Info modal). Can be fixed anytime until Code Complete deadline.
 
 Assigning Severity Levels:
 ---------------------------------------------------------
 
-Normally assigned by Release Manager and team during triage, but can also be modified afterwards by devs upon further investigation. Mattermost Jira includes an issue field called "Severity" that can be filled in with either ``S1``, ``S2``, or ``S3`` levels.
+Severity levels on bug tickets are normally assigned by Release Manager and triage team during triage meetings, but can also be modified afterwards by devs upon further investigation. 
 
-Bug tickets are sometimes assessed in case-by-case basis and further considerations may be applied, such as how risky a bug is to fix or whether it’s more beneficial to revert code that initially caused the bug.
+Mattermost Jira project includes an issue field called "Severity" that can be filled in with either ``S1``, ``S2``, or ``S3`` levels.
+
+Bug tickets are sometimes assessed on a case-by-case basis and further considerations may be applied, such as how risky a bug is to fix or whether it’s more effective to revert code that initially caused the bug.
