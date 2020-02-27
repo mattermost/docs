@@ -12,8 +12,8 @@ Prerequisites
 ----------------------------
 
   - A running Kubernetes cluster.
-  - Helm v2
-  - `Tiller <https://rancher.com/docs/rancher/v2.x/en/installation/ha/helm-init/>`_ (the Helm server-side component)     installed on the cluster
+  - Helm v2.
+  - `Tiller <https://rancher.com/docs/rancher/v2.x/en/installation/ha/helm-init/>`_ (the Helm server-side component)     installed on the cluster.
 
 **Note:**
 For the Team Edition you can have just one replica running.
@@ -47,17 +47,17 @@ To create the OAuth application to allow Mattermost to use GitLab as the authent
 
 Please take note of the ``Application ID``, ``Application Secret Key``, ``User API Endpoint``, ``Auth Endpoint`` and ``Token Endpoint`` settings, as these values will be used later.
 
-If you are following a process other than the one provided and experience authentication and/or deployment issues, let us know in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`__ and we'll be happy to help.  
-
 Deploy GitLab Helm Chart
 ----------------------------
 
-To deploy Gitlab Helm Chart, follow the instructions described `here <https://docs.gitlab.com/ee/install/kubernetes/gitlab_chart.html>`__.
+To deploy the GitLab Helm Chart, follow the instructions described `here <https://docs.gitlab.com/ee/install/kubernetes/gitlab_chart.html>`__.
 
 Here's a light way to install it:
 
 .. code-block:: sh
 
+  $ helm repo add gitlab https://charts.gitlab.io/
+  $ helm repo update
   $ helm upgrade --install gitlab gitlab/gitlab \
     --timeout 600 \
     --set global.hosts.domain=<your-domain> \
@@ -68,22 +68,24 @@ Here's a light way to install it:
 - ``<external-ip>``: the external IP pointing to your Kubernetes cluster.
 - ``<email>``: email to register in Let's Encrypt to retrieve TLS certificates.
 
-When you are able to successfully authenticate the next step is to integrate the two charts. 
+Once you've deployed the GitLab instance, follow the instructions for the _`initial login <. https://docs.gitlab.com/charts/installation/deployment.html#initial-login>`__. 
+
+If you are following a process other than the one provided and experience authentication and/or deployment issues, let us know in our `Troubleshooting forum <http://www.mattermost.org/troubleshoot/>`__ and we'll be happy to help.  
 
 Deploy Mattermost Team Edition Helm Chart with GitLab Helm Chart 
 ----------------------------------------------------------------
 
-The steps in this document presume in-chart Minio instance usage. For information about out-of-chart object storage configuration, review `this document <https://gitlab.com/gitlab-org/charts/gitlab/tree/master/doc/charts/registry#storage>`__ for GCS and S3 examples. Alternatively, visit your provider's Help documentation for configuration settings. 
+When you have successfully authenticated and connected to your GitLab instance, the next step is to integrate the two charts. The steps in this document presume in-chart Minio instance usage. For information about out-of-chart object storage configuration, review `this document <https://gitlab.com/gitlab-org/charts/gitlab/tree/master/doc/charts/registry#storage>`__ for GCS and S3 examples. Alternatively, visit your provider's Help documentation for configuration settings. 
 
-Requirements:
+Prerequisites:
 
-  - Mattermost Team Edition Helm Chart Version: 3.8.2
+  - Mattermost Team Edition Helm Chart Version: 3.8.2.
   - A running GitLab Helm Chart release.
   - The name of the secret that holds your PostgreSQL password ``<gitlab>-postgresql-password``.
   - (Optional) The name of the secret that holds your Minio keys ``<gitlab>-minio-secret``.
-  - The service name for your PostgreSQL, ``<gitlab>-postgresql``, and the port. If you installed the GitLab helm chart in ``default`` namespace, then the port is ``5432``.
-  - (Optional) The service name for Minio and the port, ``<gitlab>-minio-svc``, and the port. If you installed the GitLab helm chart in ``default`` namespace, then the port is ``9000``.
-  - The names of ``kubernetes.io/ingress.class``, ``kubernetes.io/ingress.provider`` and ``certmanager.k8s.io/issuer``.
+  - The service name for your PostgreSQL, ``<gitlab>-postgresql``, and the port. If you installed the GitLab Helm Chart in ``default`` namespace, then the port is ``5432``.
+  - (Optional) The service name for Minio and the port, ``<gitlab>-minio-svc``, and the port. If you installed the GitLab Helm Chart in ``default`` namespace, then the port is ``9000``.
+  - The names of ``kubernetes.io/ingress.class``, ``kubernetes.io/ingress.provider``, and ``certmanager.k8s.io/issuer``.
   
 To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``MySql`` chart and configure InitContainer and Environment variables in ``values.yaml``. The list below indicates the values that should be changed. Note that we assume the GitLab chart name is ``gitlab``.
 
