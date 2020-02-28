@@ -1,12 +1,14 @@
 Creating Teams
 ==============
 
+A team is a digital workspace where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams.
+
 New teams can be created if the System Admin has **Enable Team Creation** set to true in the System Console.
 
 Methods to Create a Team
 ------------------------
 
-If team creation is enabled by the System Admin, teams can be created from the team sidebar or Main Menu. The person who creates a team will automatically be given the Team Admin role for that team.
+If team creation is enabled by the System Admin, teams can be created from the team sidebar or Main Menu. The person who creates a team will automatically be assigned the Team Admin role for that team.
 
 Team Sidebar
 ~~~~~~~~~~~~~~~~~~~~
