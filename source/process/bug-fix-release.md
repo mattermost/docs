@@ -39,7 +39,7 @@ Pre-work for the current release begins at the code complete date of the previou
 ### D. (T-minus 15 working days) Judgment Day
 
 1. **(Team) Judgment Day Meeting (10:00am San Francisco time)**: 
-    - Discuss worst bug on master
+    - Discuss worst bug on the release branch
     - Begin daily triage of tickets
         - Also start to triage tickets in the backlog
 2. Release Manager:
@@ -107,7 +107,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
 
 1. **(Team) Daily Release Update Meeting**
     - Triage Jira tickets
-    - Decide when to cut next RC or final
+    - Decide when to cut next RC
 2. Release Manager:
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
@@ -124,7 +124,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Generate an E20 5000 seat test licence and email to Lindy for release testing
 5. Dev:
     - Make PRs for bug fixes to the release branch
-    - Review PRs made from release branch and merge changes into the release branch as required and merge the release branch back into master once per day
+    - Review PRs made from release branch and merge changes into the release branch as required
     - Run daily automated upgrade tests to avoid catching upgrade bugs late
 6. Marketing:
     - Finish draft of blog post for mattermost.com and all art work (screenshots, GIFs, and Twitter banners) used for the blog post
