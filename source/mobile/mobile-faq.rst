@@ -113,6 +113,20 @@ The following options are available for securing your push notification service:
 
 .. Note:: For configuration details, see guides for :doc:`deploying the Mattermost App Store and Google Play apps <mobile-appstore-install>` and :doc:`deploying your own version of the apps <mobile-compile-yourself>`.
 
+Why do I sometimes see a delay in receiving a push notification?
+--------------------------------------------------------------------------
+
+`Apple Push Notification Service (APNS) <https://developer.apple.com/library/archive/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1>`_ and `Google Fire Cloud Messaging (FCM) <https://firebase.google.com/docs/cloud-messaging>`_ determine when your device receives a push notification from Mattermost. Thus, a delay is usually as a result of those services.
+
+The technical flow for the device to receive a push notification is as follows:
+
+1. User posts a message in Mattermost.
+2. Mattermost server identifies if notifications needs to be sent.
+3. If yes, Mattermost server sends a paylod containing the push notification to the push proxy.
+4. Push proxy parses the notification and relays it to APNS and FCM.
+5. APNS and FCM informs the relevant devices that there is a push notification for Mattermost. This usually happens almost immediately, but may be delayed by a couple of minutes.
+6. Mattermost processes the notification and displays it on the user's device.
+
 How do I deploy Mattermost with Enterprise Mobility Management providers?
 --------------------------------------------------------------------------
 

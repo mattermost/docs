@@ -63,10 +63,11 @@ User Interface (UI)
 
 RESTful API
 ^^^^^^^^^^^^^^^^^^^^^^^
-
 Use the RESTful API ``POST /bots`` to create a bot. Must have permissions to create bots.
 
 See our `API documentation <https://api.mattermost.com/#tag/bots>`_ to learn more about creating and managing bots through the API.
+
+To authorize your bot via RESTful API use ``curl -i -H 'authorization: Bearer <Access Token>' http://localhost:8065/api/v4/users/me``. **Access Token** is not the ``Token ID`` and won't be visible again once created.
 
 Command Line Interface (CLI)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

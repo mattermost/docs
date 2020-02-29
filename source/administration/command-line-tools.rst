@@ -43,7 +43,7 @@ These ``mattermost`` commands include:
 Using the CLI
 ^^^^^^^^^^^^^
 
-To run the CLI commands, you must be in the Mattermost root directory. On a default installation of Mattermost, the root directory is ``/opt/mattermost``. If you followed our standard `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user ``mattermost``. The name of the executable is ``mattermost``.
+To run the CLI commands, you must be in the Mattermost root directory. On a default installation of Mattermost, the root directory is ``/opt/mattermost``. If you followed our standard `installation process <../guides/administrator.html#installing-mattermost>`__, you must run the commands as the user ``mattermost``. The name of the executable is ``mattermost``, and it can be found in the ``/opt/mattermost/bin`` directory.
 
 **For example, to get the Mattermost version on a default installation of Mattermost:**
 
@@ -53,7 +53,7 @@ To run the CLI commands, you must be in the Mattermost root directory. On a defa
     sudo -u mattermost bin/mattermost version
 
 .. note::
-  Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors. 
+  Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
 
 Using the CLI on GitLab Omnibus
 -------------------------------
@@ -667,7 +667,7 @@ mattermost config reset
    Options
     .. code-block:: none
 
-        --confirm  Confirm you really want to reset the config setting and a backup has been performed.  
+        --confirm  Confirm you really want to reset the config setting and a backup has been performed.
 
 mattermost config set
 ~~~~~~~~~~~~~~~~~~~~~
@@ -2294,8 +2294,9 @@ mattermost webhook
     -  `mattermost webhook create-outgoing`_ - Create an outgoing webhook within specific channel.
     -  `mattermost webhook delete`_ - Delete incoming and outgoing webhooks.
     -  `mattermost webhook list`_ - List all webhooks.
-    -  `mattermost webhook modify-incoming`_ - Modify an existing incoming webhook by changing its title, description, channel or icon url.
-    -  `mattermost webhook modify-outgoing`_ - Modify an existing outgoing webhook by changing its title, description, channel, icon, url, content-type, and triggers.
+    -  `mattermost webhook modify-incoming`_ - Modify an existing incoming webhook by changing its title, description, channel, or icon URL.
+    -  `mattermost webhook modify-outgoing`_ - Modify an existing outgoing webhook by changing its title, description, channel, icon, URL, content-type, and triggers.
+    -  `mattermost webhook move-outgoing`_ - Move an existing outgoing webhook with an ID.
     -  `mattermost webhook show`_ - Show information about a webhook by providing the webhook ID.
 
 mattermost webhook create-incoming
@@ -2444,9 +2445,31 @@ mattermost webhook modify-outgoing
           --description string          Incoming webhook description
 	  --trigger-word string array	Word(s) to trigger webhook
 	  --trigger-when string		When to trigger webhook (exact: for first word matches a trigger word exactly, start: for first word starts with a trigger word)")
-          --icon [iconURL]              Icon URL
+         --icon [iconURL]              Icon URL
 	  --url [callbackURL]           Callback URL
 	  --content-type string         Content type
+
+mattermost webhook move-outgoing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+  Description
+    Move an existing outgoing webhook to another team by specifying its id. If the outgoing webhook is triggered by a keyword then assiging a channel is optional.  If the outgoing webhook is associated to a specific channel prior to moving, a channel must be specified within the new team.
+
+  Format
+    .. code-block:: none
+
+      mattermost webhook move-outgoing {webhookId}
+
+  Examples
+    .. code-block:: none
+
+       ./mattermost webhook move-outgoing newteam oldteam:[webhookId] --channel [channelId or channelName]
+
+  Options
+    .. code-block:: none
+
+          --channel string              Channel ID or Channel Name
+
 
 mattermost webhook show
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -2457,7 +2480,7 @@ mattermost webhook show
   Format
     .. code-block:: none
 
-      mattermost webhook show [webhookId]
+      mattermost webhook show {webhookId}
 
   Examples
     .. code-block:: none

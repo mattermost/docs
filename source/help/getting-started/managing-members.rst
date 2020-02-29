@@ -8,12 +8,12 @@ Inviting Team Members
 
 If you have the required permissions, you can add people to your team via a direct invite, a public team invite link, or if they already have an account on the server you can add them to the team yourself. 
 
-From version 5.16, your System Administrator can `enable guest access to your server <https://docs.mattermost.com/deployment/guest-accounts.html>`_. A guest is a special role that is restricted to only the channels they have been invited to. When this is enabled, you can invite guests or users external to the organization such as vendors or customers. 
+From version 5.16, your System Admin can `enable guest access to your server <https://docs.mattermost.com/deployment/guest-accounts.html>`_. A guest is a special role that is restricted to only the channels they have been invited to. When this is enabled, you can invite guests or users external to the organization such as vendors or customers. 
 
 Direct Invites
 ~~~~~~~~~~~~~~
 
-Direct invites are invitation emails sent from your team's server directly to the invited person's email address. A link within the invitation directs them to an account creation page. Invitation links sent by email expire after 48 hours and can be used only one time. A System Administrator can invalidate all active invitation links via **System Console > Authentication > Signup > Invalidate pending email invites** or, in versions prior to 5.12, **System Console > Security > Sign Up > Invalidate pending email invites**.
+Direct invites are invitation emails sent from your team's server directly to the invited person's email address. A link within the invitation directs them to an account creation page. Invitation links sent by email expire after 48 hours and can only be used once. A System Admin can invalidate all active invitation links via **System Console > Authentication > Signup > Invalidate pending email invites** (or **System Console > Security > Sign Up > Invalidate pending email invites** in versions prior to 5.12).
 
 **To send a direct invite**
 
@@ -29,12 +29,12 @@ Direct invites are invitation emails sent from your team's server directly to th
 2. Click **Invite People**. 
 3. If there is a option to invite members and guests, choose **Invite Guests**.  
 4. In the **Invite People** field enter the email address of guest you want to add. You can add multiple email addresses to invite more than one guest.
-5. Specify the channels the guest will have access to.
+5. Specify the channels the guest will be able to access.
 6. [Optional] Add a custom message to be included in the invitation to the guest. 
 7. Click **Invite Guests**.
 
 .. note:: 
-   If you aren't able to see the **Invite Guests** option, confirm with your System Administrator that you have the correct permissions.
+   If you aren't able to see the **Invite Guests** option, confirm with your System Admin that you have the correct permissions.
 
 **To send a direct invite in versions prior to 5.16**
 
@@ -44,7 +44,7 @@ Direct invites are invitation emails sent from your team's server directly to th
 4. Click **Send Invitation**.
 
 .. note::
-  If you do not see the **Send Email Invite** option, confirm with your System Admin that **System Console > Security > Sign Up > Enable Email Invitations** is set to ``true`` in prior versions or **System Console** > **Authentication** > **Signup** > **Enable Email Invitations** in versions after 5.12.
+  If you do not see the **Send Email Invite** option, confirm with your System Admin that **System Console > Authentication > Signup > Enable Email Invitations** (or **System Console > Security > Sign Up > Enable Email Invitations** in versions prior to 5.12) is set to ``true``.
 
 Team Invite Link
 ~~~~~~~~~~~~~~~~
@@ -93,10 +93,10 @@ If someone you want to add to your team already has an account on the server, yo
 
 1. Click your username, at the top of the Navigation Panel.
 2. Click **Add Members to Team**. 
-3. In the *Add New Members* window, click the username of the person or people to add to your team. You can type in the search box to filter the list. If the people you want to add are not on the list, then they are either already on your team or they do not have an account on your server.
+3. In the **Add New Members*** window, click the username of the person or people to add to your team. You can type in the search box to filter the list. If the people you want to add are not on the list, then they are either already on your team or they do not have an account on your server.
 
 .. note::
-  System Administrators can view and add team membership to individual users on the user profile page (**System Console > Users > User Profile**) by clicking **Add Team**.
+  System Admins can view and add team membership to individual users on the user profile page (**System Console > Users > User Profile**) by clicking **Add Team**.
 
 User Roles
 ----------
@@ -124,11 +124,11 @@ Depending on your system configuration, Channel Admins can be granted special pe
 Team Admin
 ~~~~~~~~~~
 
-When a team is first created, the person who set it up is made a Team Administrator. It is a team specific role, meaning that someone can be a Team Admin for one team but only a Member on another team. Team Administrators have the following privileges:
+When a team is first created, the person who set it up is made a Team Admin. It is a team-specific role, meaning that someone can be a Team Admin for one team but only a Member on another team. Team Admins have the following privileges:
 
 - Access to the **Team Settings** menu from the team site main menu.
 - Ability to change the team name and import data from Slack export files.
-- Access to the **Manage Members** menu, where they can control whether team members are "Members" or "Team Administrators".
+- Access to the **Manage Members** menu, where they can control whether team members are a **Member** or a **Team Admin**.
 
 System Admin
 ~~~~~~~~~~~~
@@ -137,12 +137,12 @@ The first user added to a newly-installed Mattermost system is assigned the Syst
 
 The System Admin is typically a member of the IT staff and has all the privileges of a Team Admin, along with the following additional privileges:
 
-- Access to the System Console from the main menu in any team site
-- Ability to change any setting on the Mattermost server available in the System Console
-- Ability to promote and demote other users from member role to System Admin role (and vice versa)
-- Ability to promote and demote other users to and from Guest role
-- Ability to deactivate user accounts and to reactivate them
-- Access to private channels, but only if given the link to the private channel
+- Access to the System Console from the main menu in any team site.
+- Ability to change any setting on the Mattermost server available in the System Console.
+- Ability to promote and demote other users from member role to System Admin role (and vice versa).
+- Ability to promote and demote other users to and from Guest role.
+- Ability to deactivate user accounts and to reactivate them.
+- Access to private channels, but only if given the link to the private channel.
 
 A System Admin can view and manage users in **System Console > Users**. They can search users by name, filter users by teams, and filter to view other System Admins as well as inactive users.  
 
@@ -153,17 +153,17 @@ Guest is a role with restricted permissions, which allow organizations to collab
 
 Guests can: 
 
-- Pin messages to channels
-- Use slash commands (with the exception of those used to invite members)
-- Favorite channels
-- Mute channels
-- Update their account settings
+- Pin messages to channels.
+- Use slash commands (with the exception of those used to invite members).
+- Favorite channels.
+- Mute channels.
+- Update their account settings.
 
 Guests cannot: 
 
-- Discover public channels
-- Join open teams
-- Create direct messages or group messages with members who aren’t within the same channel
+- Discover public channels.
+- Join open teams.
+- Create direct messages or group messages with members who aren’t within the same channel.
 
 User With Personal Access Token Permission
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -194,13 +194,13 @@ Removing a User from a Team or Leaving a Team
 Remove from Team
 ~~~~~~~~~~~~~~~~
 
-Any Team Administrator has the ability to remove a user from a team by going to the three dot **Main Menu > Manage Members**, and selecting **Remove From Team** in the dropdown menu beside a user entry.
+A Team Admin can remove a user from a team by going to the three dot **Main Menu > Manage Members**, and selecting **Remove From Team** in the dropdown menu beside a user entry.
 
 When a user is removed from a team, the team will no longer show up in their team sidebar. If they currently have the team open, they are redirected to the first team that appears on their team sidebar. If they didn't belong to any other teams, the user is sent to the team selection page.
 
 Removing a user from the team does not deactivate the account. The user will still be able to sign in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to `"Allow any user with an account on this server to join this team" <http://docs.mattermost.com/help/settings/team-settings.html#allow-anyone-to-join-this-team>`__. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
 
-A System Administrator can also remove users from teams by going to **System Console > Users**, and selecting the dropdown beside a user entry and clicking **Manage Teams**. The list of teams an individual user belongs to can be viewed on the user's profile page via **System Console > Users** and selecting the member's name from the list provided in the **User Configuration** screen.
+A System Admin can also remove users from teams by going to **System Console > Users**, and selecting the dropdown beside a user entry and clicking **Manage Teams**. The list of teams an individual user belongs to can be viewed on the user's profile page via **System Console > Users** and selecting the member's name from the list provided in the **User Configuration** screen.
 
 Leaving a Team
 ~~~~~~~~~~~~~~
