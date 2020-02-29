@@ -261,8 +261,10 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
         - Submit a PR for changelog against the `vX.X-documentation` branch and add a `Work in Progress` label for it
         - Submit a PR to change version number in `docs/source/conf.py` against the `vX.X-documentation` branch
 3. Build:
-    - Put CI servers and translation server back onto master, and post in Release Discussion channel once done
-    - Update https://prev.test.mattermost.com to the previous release version
+    - Cut release branches for the next feature release
+        - Ensure `community-release` server is on the feature release branch
+    - Put CI servers and translation server back onto master, and post in Private Developers channel once done
+    - Ensure community.mattermost.com is on the most recently released version and that https://prev.test.mattermost.com is on the most recently released bug fix release
 4. Marketing:
     - Turn on CrazyEgg for blog post page
     - Confirm marketing has been posted (animated GIFs, screenshots, mail announcement, tweets, blog posts)
