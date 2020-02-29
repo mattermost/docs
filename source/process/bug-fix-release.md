@@ -277,4 +277,3 @@ The final release is cut - RC cuts and bug fixes should be completed by this dat
 1. Release Manager:
     - Post [Mattermost Security Updates](https://about.mattermost.com/security-updates/) after reviewing with security lead
       - If a dot release is shipping with security fixes, do not post new details until T-plus 10 working days from the dot release ship date
-    - Update Security Issues spreadsheet with issue number from posted update (e.g. v3.2.0.1)
