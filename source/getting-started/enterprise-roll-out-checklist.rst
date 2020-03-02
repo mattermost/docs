@@ -78,7 +78,7 @@ c. Create Development, Staging, and Production Environments
  - Install and configure File Storage
   - Resource: https://docs.mattermost.com/deployment/deployment.html#file-store
  - Install and configure proxy or load balancers
-  - Note: If running Kubernetes and the Mattermost Operator, proxies will be automatically created for you. 
+  - Note: If running Kubernetes and the Mattermost Operator, proxies will be created automatically. 
   - Add SSL Cert
    - Resources: https://docs.mattermost.com/deployment/ssl-client-certificate.html
    - Resource: https://docs.mattermost.com/deployment/cluster.html#proxy-server-configuration 
