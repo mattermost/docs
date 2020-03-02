@@ -72,7 +72,7 @@ c. Create Development, Staging, and Production Environments
    - Resource: https://docs.mattermost.com/install/install-kubernetes.html 
  - Install and configure database
   - Install the number of read and search replicas based on your high availability requirements outlined in your production environment design
-   - Resources: https://docs.mattermost.com/overview/architecture.html#database-with-vips 
+   - Resource: https://docs.mattermost.com/overview/architecture.html#database-with-vips 
   - (Optional) Set up configuration management via the database instead of a config file for high available environments
    - Resource: https://docs.mattermost.com/administration/config-in-database.html
  - Install and configure File Storage
