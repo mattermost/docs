@@ -16,7 +16,7 @@ a. Define the Roll Out Project
  - Resource: https://mattermost.com/blog/27-things-enterprises-can-learn-startups-increase-productivity/
  
 - Define success criteria, goals and metrics to measure success
- - Resource:https://docs.mattermost.com/getting-started/implementation_plan.html
+ - Resource: https://docs.mattermost.com/getting-started/implementation_plan.html
   
 - Create a Project Charter to document goals, tasks, deliverables, and decisions 
  - Get buy-in from project team members and key stakeholders on the project charter 
