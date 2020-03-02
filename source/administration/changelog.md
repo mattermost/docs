@@ -10,8 +10,10 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ### Compatibility
 
-### Breaking Changes
- - 
+#### Important Upgrade Notes
+ - Honour key value expiry in KVCompareAndSet, KVCompareAndDelete and KVList. We also improved handling of plugin key value race conditions and deleted keys in Postgres.
+ 
+#### Breaking Changes
 
 ### Bug Fixes
  - Fixed an issue where bots could not be added to group-synced channels or teams.
