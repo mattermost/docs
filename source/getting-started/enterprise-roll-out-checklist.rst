@@ -27,7 +27,7 @@ b. Validate Essential Security and Compliance Requirements
  - Resource: https://docs.mattermost.com/overview/security.html#security-features
  
 - Determine monitoring requirements
- - Database, network, storage, log integrity, etc. 
+ - Database, network, storage, log integrity
  - Identify fields for log management tools (e.g. Splunk Enterprise event data)
 
 - Determine environment access policies
