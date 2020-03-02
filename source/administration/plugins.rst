@@ -38,7 +38,7 @@ Once a plugin is installed (or pre-installed if shipped with Mattermost binary r
 Upgrading Plugins
 ~~~~~~~~~~~~~~~~~
 
-Upgrade a plugin on demand when a new version becomes available.  New versions of plugins you have already installed will display a link to easily install the upgraded plugin.  Some plugin versions may have breaking changes, check the release notes if performing a major version change.
+Upgrade a plugin on demand when a new version becomes available. New versions of plugins that you have already installed will display a link to easily install the upgraded plugins. Some plugin versions may have breaking changes; please check the release notes if you are performing a major version change.
 
 Upgrading Plugins (prior to v5.18)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
