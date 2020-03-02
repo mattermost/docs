@@ -102,7 +102,7 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - After RC1 is cut: Lock Selenium server to RC1 and begin running all Selenium IDE tests
 4. Build:
     - Review all `TODO` notes, including one for uncommenting upgrade code
-    - Confirm all PRs in [`/enterprise`](https://github.com/mattermost/enterprise/pulls) repo have been merged.
+    - Confirm all PRs in [`/enterprise`](https://github.com/mattermost/enterprise/pulls) repo have been merged
     - Update Redux before each RC and Final build
     - Update package version in [Mattermost DockerFile](https://github.com/mattermost/mattermost-server/blob/master/build/Dockerfile#L7)
     - Master is tagged and branched and `Release Candidate 1` is cut (e.g., 3.5.0-RC1) according to the Release Candidate Checklist in ``mattermost/process``
