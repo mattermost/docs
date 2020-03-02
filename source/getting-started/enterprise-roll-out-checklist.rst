@@ -266,7 +266,7 @@ d. Harden Security
 
 e. Perform Maintenance Requests
 ````````````````````````````
-- Monitor for security updates (or sign up for email updates): 
+- Monitor for security updates (or sign up for email updates)
  - Resource: https://mattermost.com/security-updates/
 
 - Perform first upgrade
