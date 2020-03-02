@@ -164,7 +164,7 @@ c. Prepare for User Onboarding
 - Onboard trainers and support team
 - Create a training plan
  - Resource: https://academy.mattermost.com/
- - Resource: End User Guide: https://docs.mattermost.com/guides/user.html  
+ - Resource: End User Guide https://docs.mattermost.com/guides/user.html  
 
 - Define user escalation and support processes
  - Ensure you have set the site’s support URL to your own support team under **System Console > Site Configuration > Customization**
