@@ -41,7 +41,7 @@ Production Docker Setup on Ubuntu
        cd mattermost-docker
        docker-compose build
        mkdir -pv ./volumes/app/mattermost/{data,logs,config,plugins,client-plugins}
-       chown -R 2000:2000 ./volumes/app/mattermost/
+       sudo chown -R 2000:2000 ./volumes/app/mattermost/
        docker-compose up -d
 
 4. **Configure TLS** by following `the instructions <https://github.com/mattermost/mattermost-docker#install-with-ssl-certificate>`__.
