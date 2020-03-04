@@ -80,7 +80,7 @@ c. Create Development, Staging, and Production Environments
  - Install and configure proxy or load balancers
   - Note: If running Kubernetes and the Mattermost Operator, proxies will be created automatically. 
   - Add SSL Cert
-   - Resources: https://docs.mattermost.com/deployment/ssl-client-certificate.html
+   - Resource: https://docs.mattermost.com/deployment/ssl-client-certificate.html
    - Resource: https://docs.mattermost.com/deployment/cluster.html#proxy-server-configuration 
   - (Optional) Set up certificate-based authentication (CBA) for user or device-based authentication with a digital certificate
    - Resource: https://docs.mattermost.com/deployment/certificate-based-authentication.html
