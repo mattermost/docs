@@ -224,7 +224,7 @@ We recommend that you review your roll out on a cadence that matches your iterat
 a. Review Project Charter Success Metrics
 ``````````````````````````````
 - Perform end-user surveys and measure satisfaction
- - Optional Resource within Mattermost: https://integrations.mattermost.com/matterpoll/
+ - Optional resource within Mattermost: https://integrations.mattermost.com/matterpoll/
 
 - Verify use case fulfillment from original requirements gathering
 
