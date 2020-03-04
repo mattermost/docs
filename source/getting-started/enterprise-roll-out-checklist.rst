@@ -197,7 +197,7 @@ e. Roll Out to Groups of Users
  - Recommendation: Use LDAP Group Sync to automate this process
   - Resource: https://docs.mattermost.com/deployment/ldap-group-sync.html
 
-- Implement your training plan to end-users on how to use Mattermost 
+- Implement your training plan to end users on how to use Mattermost 
  - Train on using Mattermost
  - Train on how to use Integrations
 
