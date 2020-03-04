@@ -28,7 +28,8 @@ Error and Diagnostics Reporting Feature
 
 Mattermost error and diagnostic data is collected for the following purposes: to add improvements that are specific to your usage and deployment patterns, including identifying security and reliability issues; to analyze and fix software problems; to help improve the quality of Mattermost software and related services; and to make design decisions for future releases.
 
-.. note:: Error and diagnostic reporting is sent by the client to the endpoint **api.segment.io**. To opt out, disable the feature in System Console > General > Logging > Enable Error and Diagnostics Reporting in prior versions or System Console > Environment > Logging in versions after 5.12.
+.. note:: 
+Error and diagnostic reporting is sent by the client to the endpoint ``api.segment.io``. To opt out, you can disable the feature in **System Console > Environment > Logging** (or **System Console > General > Logging > Enable Error and Diagnostics Reporting** in versions prior to 5.12).
 
 
 The following data is sent once every 24 hours:
