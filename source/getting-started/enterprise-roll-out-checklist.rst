@@ -129,7 +129,7 @@ e. Test Production Performance and Redundancy
 
 2. Roll Out Mattermost
 -----------------------
-Now that you have the an environment in place, we recommend working through the following items in an iterative process.  You may need to cycle through each of these topics multiple times to make adjustments to suit your organization as you on-board groups of users. 
+Now that you have an environment in place, we recommend working through the following items in an iterative process. You may need to cycle through each of these topics multiple times to make adjustments to suit your organization as you onboard groups of users. 
 
 a. Define Your Team and Channel Strategy
 `````````````````````````````````````
