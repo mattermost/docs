@@ -238,7 +238,7 @@ b. Review and Analyze Usage
 
 - Monitor site and team statistics 
  - Resource: https://docs.mattermost.com/administration/statistics.html 
- - Review: Total Posts, total teams, total channels, total group chats, total direct chats, top channels, top teams
+ - Review: Total posts, total teams, total channels, total group chats, total direct chats, top channels, top teams
 
 - Analyze usage by lines of business and peak usage times
  - Resources: https://docs.mattermost.com/administration/scripts.html
