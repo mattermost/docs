@@ -221,7 +221,7 @@ f. Drive Adoption
 -----------------------
 We recommend that you review your roll out on a cadence that matches your iterative approach to rolling out to users.  Below are some areas to consider.  
 
-a. Review Project Charter success metrics
+a. Review Project Charter Success Metrics
 ``````````````````````````````
 - Perform end-user surveys and measure satisfaction
  - Optional Resource within Mattermost: https://integrations.mattermost.com/matterpoll/
