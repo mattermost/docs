@@ -206,7 +206,7 @@ f. Drive Adoption
 - Incrementally roll out to additional user groups
  - See “Roll out to groups of users”
 
-- Manage support requests and product requests from your end-users
+- Manage support requests and product requests from your end users
  - Resource: https://mattermost.com/support/ 
  - See process below for escalating to Mattermost
 
