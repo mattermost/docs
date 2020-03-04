@@ -101,7 +101,7 @@ d. Configure and Customize Your Mattermost Site
  - Add your database configuration to **System Console > Environment > Database**
  - Add your Elasticsearch configuration to **System Console > Environment > Elasticsearch**
  - Add your file storage system configuration to **System Console > Environment > File Storage** 
- - Add your proxy configuration to Environment > Image Proxy 
+ - Add your proxy configuration to **System Console > Environment > Image Proxy** 
  - Add your SMTP configuration to Environment > SMTP
  - Enable Push notifications on Environment > Push Notification Server 
  - Add your cluster configuration to Environment > High Availability
