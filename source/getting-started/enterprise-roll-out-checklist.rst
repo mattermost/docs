@@ -170,7 +170,7 @@ c. Prepare for User Onboarding
  - Ensure you have set the site’s support URL to your own support team under **System Console > Site Configuration > Customization**
 
 - Notify users in advance of roll out
- - Sample Email: https://docs.mattermost.com/getting-started/welcome_email.html
+ - Sample email: https://docs.mattermost.com/getting-started/welcome_email.html
 
 d. Deploy Client Apps
 ```````````````````
