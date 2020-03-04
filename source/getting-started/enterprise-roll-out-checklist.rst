@@ -199,7 +199,7 @@ e. Roll Out to Groups of Users
 
 - Implement your training plan to end users on how to use Mattermost 
  - Train on using Mattermost
- - Train on how to use Integrations
+ - Train on how to use integrations
 
 f. Drive Adoption
 ```````````````
