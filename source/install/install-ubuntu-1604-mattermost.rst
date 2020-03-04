@@ -73,7 +73,7 @@ Assume that the IP address of this server is 10.10.10.2.
     Description=Mattermost
     After=network.target
     After=postgresql.service
-    Requires=postgresql.service
+    BindsTo=postgresql.service
 
     [Service]
     Type=notify
@@ -95,7 +95,7 @@ Assume that the IP address of this server is 10.10.10.2.
   .. note::
     If you have installed MySQL or PostgreSQL on a dedicated server, then you need to
 
-      - remove ``After=postgresql.service`` and ``Requires=postgresql.service`` or ``After=mysql.service`` and ``Requires=mysql.service`` lines in the ``[Unit]`` section, and
+      - remove ``After=postgresql.service`` and ``BindsTo=postgresql.service`` or ``After=mysql.service`` and ``BindsTo=mysql.service`` lines in the ``[Unit]`` section, and
       - replace the ``WantedBy=postgresql.service`` or ``WantedBy=mysql.service`` line in the ``[Install]`` section with ``WantedBy=multi-user.target``
 
     or the Mattermost service will not start.
