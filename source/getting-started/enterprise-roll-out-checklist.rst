@@ -226,7 +226,7 @@ a. Review Project Charter Success Metrics
 - Perform end-user surveys and measure satisfaction
  - Optional Resource within Mattermost: https://integrations.mattermost.com/matterpoll/
 
-- Verify use-case fulfillment from original requirements gathering
+- Verify use case fulfillment from original requirements gathering
 
 - Measure your response time and resolution rate for user support issues
 
