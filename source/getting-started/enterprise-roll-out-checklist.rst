@@ -272,7 +272,7 @@ e. Perform Maintenance Requests
 - Perform first upgrade
  - Resource: https://docs.mattermost.com/administration/upgrade.html
 
-- Determine upgrade schedule based on Mattermost release schedules and life cycle
+- Determine upgrade schedule based on Mattermost release schedules and lifecycle
  - Resource: https://docs.mattermost.com/administration/release-lifecycle.html
 
 - Run System checks and either address or set address-by date	
