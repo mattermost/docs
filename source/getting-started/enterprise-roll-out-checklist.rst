@@ -100,7 +100,7 @@ d. Configure and Customize Your Mattermost Site
  - Ensure site URL is set appropriately for your production, dev and staging environments
  - Add your database configuration to **System Console > Environment > Database**
  - Add your Elasticsearch configuration to **System Console > Environment > Elasticsearch**
- - Add your files storage configuration to Environment > File Storage 
+ - Add your file storage system configuration to **System Console > Environment > File Storage** 
  - Add your proxy configuration to Environment > Image Proxy 
  - Add your SMTP configuration to Environment > SMTP
  - Enable Push notifications on Environment > Push Notification Server 
