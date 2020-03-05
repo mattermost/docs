@@ -23,7 +23,7 @@ Checklist Overview
    - `2. Review and Analyze Usage`_ 
    - `3. Analyze System Performance`_ 
    - `4. Harden Security`_  
-   - `5. Perform Maintenance Requests`_ 
+   - `5. Perform Maintenance Tasks`_ 
    
 Checklist Details
 -------------------
