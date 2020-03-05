@@ -72,7 +72,7 @@ Mattermost is optimized to be deployed in a highly secure environment. However, 
 
 When Mattermost is deployed outside a firewall, Admins must be aware that their system is exposed to issues inherent in public cloud deployments. In this case, we generally follow the standards of leading online services. For example, Gmail offers APIs that not only confirm whether an email account exists, but also displays user's profile picture by default. 
 
-Mattermost has gone through extensive penetration testing and security reviews and there's a long list of [security updates](http://about.mattermost.com/security-updates/) we've made thanks to our community and customers. You can find further details and previous discussion [in our GitHub thread](https://github.com/mattermost/platform/issues/4321#issuecomment-258832013). In addition, the following policies are provided: 
+Mattermost undergoes extensive penetration testing, security reviews, and `security updates <http://about.mattermost.com/security-updates>`__. You can find further details and previous discussion `in our GitHub thread <https://github.com/mattermost/platform/issues/4321#issuecomment-258832013>`__. In addition, the following policies are provided: 
 
    - Limit communications to specific users, private channels, or team-wide public channels
    - Increase system security `by restricting email-based account creation to email addresses from a list of specific domains, <https://docs.mattermost.com/administration/config-settings.html#restrict-account-creation-to-specified-email-domains>`__ e.g. "corp.mattermost.com", "mattermost.org", etc."
