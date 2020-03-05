@@ -204,7 +204,7 @@ e. Roll Out to Groups of Users
 f. Drive Adoption
 ```````````````
 - Incrementally roll out to additional user groups
- - See “Roll out to groups of users”
+ - See “Roll Out to Groups of Users”
 
 - Manage support requests and product requests from your end users
  - Resource: https://mattermost.com/support/ 
