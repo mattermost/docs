@@ -3,11 +3,12 @@ Enterprise Roll Out Checklist
 
 This checklist is intended to serve as a guide to Enterprises who are rolling out Mattermost to thousands of users.  It includes preparing for the roll out, rolling out to users, and reviewing the roll out.  
 
-1. Prepare for the Roll Out
+
+Prepare for the Roll Out
 -----------------------
 Much of the preparation work is focused on ensuring the environment is deployed and secured prior to onboarding users. 
 
-a. Define the Roll Out Project
+1. Define the Roll Out Project
 ````````````````````````````
 - Define key stakeholders and project team members
  - Example project team members: Project Manager, Network Administrator, Database Administrator, Corporate Directory Administrator, Security & Compliance Administrator(s), User Support, User Champions, User Trainers
@@ -21,7 +22,7 @@ a. Define the Roll Out Project
 - Create a Project Charter to document goals, tasks, deliverables, and decisions 
  - Get buy-in from project team members and key stakeholders on the project charter 
 
-b. Validate Essential Security and Compliance Requirements
+2. Validate Essential Security and Compliance Requirements
 ````````````````````````````````````````````````````````
 - Review Mattermost security features
  - Resource: https://docs.mattermost.com/overview/security.html#security-features
@@ -53,7 +54,7 @@ b. Validate Essential Security and Compliance Requirements
  - Resource: https://docs.mattermost.com/mobile/mobile-overview.html 
  - Resource: https://docs.mattermost.com/deployment/mobile-app-deployment.html
 
-c. Create Development, Staging, and Production Environments
+3. Create Development, Staging, and Production Environments
 ````````````````````````````````````````````````````````
 - Finalize production environment design basing hardware on expected usage and requirements for high availability
  - Resource: https://docs.mattermost.com/overview/architecture.html
@@ -92,7 +93,7 @@ c. Create Development, Staging, and Production Environments
 - Document network configuration
  - Example: https://docs.mattermost.com/overview/architecture.html#reference-architectures  
 
-d. Configure and Customize Your Mattermost Site
+4. Configure and Customize Your Mattermost Site
 ````````````````````````````````````````````
 - Login to Mattermost and access the System Console to connect your environment to Mattermost
  - Resource: https://docs.mattermost.com/administration/config-settings.html#environment
@@ -113,7 +114,7 @@ d. Configure and Customize Your Mattermost Site
  - Permissions Resource: https://docs.mattermost.com/deployment/advanced-permissions.html
  - Guest Access Resource: https://docs.mattermost.com/deployment/guest-accounts.html
 
-e. Test Production Performance and Redundancy
+5. Test Production Performance and Redundancy
 ``````````````````````````````````````````
 - Define and test disaster recovery policy and processes
  - Resource: https://docs.mattermost.com/install/install-kubernetes.html#using-mattermost-operator-functionality
@@ -127,11 +128,11 @@ e. Test Production Performance and Redundancy
  - Set up alerts in Grafana
   - Resource: https://docs.mattermost.com/administration/performance-alerting-guide.html 
 
-2. Roll Out Mattermost
+Roll Out Mattermost
 -----------------------
 Now that you have an environment in place, we recommend working through the following items in an iterative process. You may need to cycle through each of these topics multiple times to make adjustments to suit your organization as you onboard groups of users. 
 
-a. Define Your Team and Channel Strategy
+1. Define Your Team and Channel Strategy
 `````````````````````````````````````
 - Determine and create team structure for your environment
  - Recommendation: Start with fewer teams in your early roll out
@@ -143,7 +144,7 @@ a. Define Your Team and Channel Strategy
 - (Optional) Migrate messages and channels from legacy systems 
  - Resource: https://docs.mattermost.com/administration/migrating.html
 
-b. Enable Key Integrations
+2. Enable Key Integrations
 ```````````````````````
 - Build list of key integrations and tools used by your teams
  - Resource: https://docs.mattermost.com/guides/administrator.html#mattermost-integrations
@@ -157,7 +158,7 @@ b. Enable Key Integrations
 - Understand Mattermost API capabilities
  - Resource: https://api.mattermost.com/
 
-c. Prepare for User Onboarding
+3. Prepare for User Onboarding
 ````````````````````````````
 - Onboard champion users 
 
@@ -172,7 +173,7 @@ c. Prepare for User Onboarding
 - Notify users in advance of roll out
  - Sample email: https://docs.mattermost.com/getting-started/welcome_email.html
 
-d. Deploy Client Apps
+4. Deploy Client Apps
 ```````````````````
 - Roll out Desktop App 
  - Resource: https://docs.mattermost.com/install/desktop.html
@@ -185,7 +186,7 @@ d. Deploy Client Apps
  - (Optional) Use an EMM provider
   - Resource: https://docs.mattermost.com/mobile/mobile-overview.html#use-an-emm-provider-with-managed-app-configuration 
 
-e. Roll Out to Groups of Users
+5. Roll Out to Groups of Users
 ````````````````````````````
 - Provision user accounts
  - Resource: https://docs.mattermost.com/administration/user-provisioning.html 
@@ -201,7 +202,7 @@ e. Roll Out to Groups of Users
  - Train on using Mattermost
  - Train on how to use integrations
 
-f. Drive Adoption
+6. Drive Adoption
 ```````````````
 - Incrementally roll out to additional user groups
  - See “Roll Out to Groups of Users”
@@ -217,11 +218,11 @@ f. Drive Adoption
  - Command Line Tools Resource: https://docs.mattermost.com/administration/command-line-tools.html
  - Database Scripts Resource: https://docs.mattermost.com/administration/scripts.html 
 
-3. Review the Roll Out 
+Review the Roll Out 
 -----------------------
 We recommend that you review your roll out on a cadence that matches your iterative approach to rolling out to users.  Below are some areas to consider.  
 
-a. Review Project Charter Success Metrics
+1. Review Project Charter Success Metrics
 ``````````````````````````````
 - Perform end-user surveys and measure satisfaction
  - Optional resource within Mattermost: https://integrations.mattermost.com/matterpoll/
@@ -232,7 +233,7 @@ a. Review Project Charter Success Metrics
 
 - Identify usage gaps and address or create a plan for addressing
 
-b. Review and Analyze Usage
+2. Review and Analyze Usage
 `````````````````````````
 - Review Project Charter success metrics - identify usage gaps and address or create a plan for addressing
 
@@ -243,7 +244,7 @@ b. Review and Analyze Usage
 - Analyze usage by lines of business and peak usage times
  - Resources: https://docs.mattermost.com/administration/scripts.html
 
-c. Analyze System Performance
+3. Analyze System Performance
 ````````````````````````````
 - Monitor trends in CPU/memory usage
 
@@ -253,7 +254,7 @@ c. Analyze System Performance
 
 - Review trends in concurrent sessions 
 
-d. Harden Security
+4. Harden Security
 ```````````````````
 - Harden security controls around web, desktop and mobile security
 
@@ -264,7 +265,7 @@ d. Harden Security
  - (Optional) Enable Compliance Reporting
   - Resource: https://docs.mattermost.com/administration/compliance-export.html
 
-e. Perform Maintenance Requests
+6. Perform Maintenance Requests
 ````````````````````````````
 - Monitor for security updates (or sign up for email updates)
  - Resource: https://mattermost.com/security-updates/
