@@ -66,7 +66,7 @@ Access Control Policy
 
 If a user logs in and enters the correct email address but wrong password, a "your password is incorrect" response is presented. This can allow account enumeration. This is a deliberate design decision we've made for the product in the context of overall system security. 
 
-Security is a top concern for organizations who deploy Mattermost in a private network. While running under existing policies and auth protocols of the private network, we prioritize a better user experience (telling a user what went wrong on login) ahead of preventing users on the private network from enumerating user accounts. 
+Security is a top concern for organizations who deploy Mattermost in a private network. While running under existing policies and auth protocols of the private network, we prioritize a better user experience (telling a user what went wrong on login) ahead of preventing users on the private network from enumerating accounts. 
 
 Mattermost is optimized to be deployed in a highly secure environment. However, admins are given a choice as to the deployment environment. 
 
