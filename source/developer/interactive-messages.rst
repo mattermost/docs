@@ -313,7 +313,7 @@ Like Slack, actions are specified in an **Actions** list within the message atta
 
 However, the schema for these objects is slightly different given Slack requires a Slack App and action URL to be pre-configured beforehand. Mattermost instead allows an integration to create an interactive message without pre-configuration.
 
-If your `ephemeral_text` gets incorrectly handled by the Slack-compatibility logic, send ``"skip_slack_parsing":true` along your `ephemeral_text` to bypass said logic.
+If your `ephemeral_text` gets incorrectly handled by the Slack-compatibility logic, send ``"skip_slack_parsing":true`` along your `ephemeral_text` to bypass it.
 
 .. code-block:: text
 
