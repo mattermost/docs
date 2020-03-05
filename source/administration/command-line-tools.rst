@@ -1351,8 +1351,8 @@ mattermost plugin
   Child Commands
     -  `mattermost plugin add`_ - Add plugins to your Mattermost server.
     -  `mattermost plugin delete`_ - Delete previously uploaded plugins.
-    -  `mattermost plugin enable`_ - Enable plugins for use.
     -  `mattermost plugin disable`_ - Disable plugins.
+    -  `mattermost plugin enable`_ - Enable plugins for use.
     -  `mattermost plugin list`_ - List plugins installed on your Mattermost server.
 
 mattermost plugin add
