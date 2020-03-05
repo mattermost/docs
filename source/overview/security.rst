@@ -70,7 +70,7 @@ Security is a top concern for organizations who deploy Mattermost in a private n
 
 Mattermost is optimized to be deployed in a highly secure environment. However, admins are given a choice as to the deployment environment. 
 
-When Mattermost is deployed outside a firewall, the expectation is that IT Admins are aware that their system is exposed to issues inherent in public cloud deployments. In this case, we generally follow the standards of leading online services. For example, Gmail offers APIs that not only confirm whether an email account exists, but also displays user's profile picture by default. 
+When Mattermost is deployed outside a firewall, Admins must be aware that their system is exposed to issues inherent in public cloud deployments. In this case, we generally follow the standards of leading online services. For example, Gmail offers APIs that not only confirm whether an email account exists, but also displays user's profile picture by default. 
 
 Mattermost has gone through extensive penetration testing and security reviews and there's a long list of [security updates](http://about.mattermost.com/security-updates/) we've made thanks to our community and customers. You can find further details and previous discussion [in our GitHub thread](https://github.com/mattermost/platform/issues/4321#issuecomment-258832013). In addition, the following policies are provided: 
 
