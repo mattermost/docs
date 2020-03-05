@@ -39,7 +39,9 @@ If someone feels an existing ticket should be re-examined, they can add "global-
 Release Planning
 ~~~~~~~~~~~~~~~~
 
-Release planning sets the "Fix Version" of tickets to one of the upcoming monthly releases. The Fix Version is an estimate of when a feature might ship, which may change as the planning process continues, until the ticket is scheduled for a Sprint. 
+Release planning sets the "Fix Version" of tickets to one of the upcoming monthly releases. The Fix Version is an estimate of when a feature might ship, which may change as the planning process continues, until the ticket is scheduled for a Sprint.
+
+The Fix Version can be set to "Queued" if a feature is planned and prioritized but not necessarily committed to a specific release.
 
 Jira Fix Version
 ~~~~~~~~~~~~~~~~
