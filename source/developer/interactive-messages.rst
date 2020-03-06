@@ -322,7 +322,7 @@ If your `ephemeral_text` gets incorrectly handled by the Slack-compatibility log
       "message": "Updated!"
     },
     "ephemeral_text": "You updated the post!",
-    "skip_slack_parsing":true
+    "skip_slack_parsing": true
   }
 
 
