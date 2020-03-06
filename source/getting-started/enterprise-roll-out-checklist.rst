@@ -134,7 +134,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
  - Add your proxy configuration to **System Console > Environment > Image Proxy** 
  - Add your SMTP configuration to **System Console > Environment > SMTP**
  - Enable Push Notifications by adding your server to **System Console > Environment > Push Notification Server**
- - Add your cluster configuration to Environment > High Availability
+ - Add your cluster configuration to **System Console > Environment > High Availability**
 
 - Configure your site within the System Console
  - Resource: https://docs.mattermost.com/administration/config-settings.html#site-configuration
