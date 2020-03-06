@@ -12,7 +12,7 @@ When enabled, the image proxy needs to be publicly accessible to both the Matter
 
 Mattermost clients will use the image proxy to load all external images. The Mattermost server will use the image proxy when possible, but it will not use it when requesting content that may not be an image, such as for `image previews of plaintext URLs <https://github.com/mattermost/mattermost-server/issues/11857>`_.
 
-An image proxy may be configured from the **Environment > Image Proxy** section of the System Console or the **Files > Storage** in versions of Mattermost prior to 5.12.
+An image proxy may be configured from the **Environment > Image Proxy** section of the System Console in recent version of Mattermost or the **Files > Storage** section in versions prior to 5.12.
 
 Local Image Proxy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -29,7 +29,7 @@ atmos/camo Image Proxy
 
 The `atmos/camo <https://github.com/atmos/camo>`_ image proxy is a standalone image proxy that can be deployed separately from the Mattermost server. It provides additional configuration options over the built-in image proxy, and it can also be used if isolation between the Mattermost server and image proxy is desired.
 
-Once you've deployed an ``atmos/camo`` (https://github.com/atmos/camo) instance, you must specify the **Remote Image Proxy URL** and **Remote Image Proxy Options** settings. The **Remote Image Proxy Options** should be set to the to image-proxy.mattermost.com and update the image proxy's shared key which is specified with the ``CAMO_KEY`` environment variable used when setting up the image proxy.
+Once you've deployed an ``atmos/camo`` (https://github.com/atmos/camo) instance, you must specify the **Remote Image Proxy URL** and **Remote Image Proxy Options** settings. The **Remote Image Proxy Options** should be set to the image proxy's shared key which would have been specified with the ``CAMO_KEY`` environment variable used when setting up the image proxy.
 
 For example, if the image proxy was located at ``https://image-proxy.mattermost.com``, you would configure it as below:
 
