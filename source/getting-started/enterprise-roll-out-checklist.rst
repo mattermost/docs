@@ -133,7 +133,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
  - Add your file storage system configuration to **System Console > Environment > File Storage** 
  - Add your proxy configuration to **System Console > Environment > Image Proxy** 
  - Add your SMTP configuration to **System Console > Environment > SMTP**
- - Enable Push notifications on Environment > Push Notification Server 
+ - Enable Push Notifications by adding your server to **System Console > Environment > Push Notification Server**
  - Add your cluster configuration to Environment > High Availability
 
 - Configure your site within the System Console
