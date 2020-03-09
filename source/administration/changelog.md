@@ -17,6 +17,7 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 ### Bug Fixes
  - Fixed an issue where bots could not be added to group-synced channels or teams.
  - Fixed an issue where a user's authentication method in the System Console was shown as email if it was actually LDAP.
+ - Fixed an issue where lines in over 65536 characters caused bulk import to fail.
  - Fixed an issue where code block line numbers were copied when pasting into certain applications.
  - Fixed an issue where the right-hand side reply thread scrolled down after receiving a new message.
  - Fixed an issue where the post menu opened up in the right-hand side made the menu options float off page if the parent post was short with no replies.
