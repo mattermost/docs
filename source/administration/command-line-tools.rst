@@ -54,6 +54,11 @@ To run the CLI commands, you must be in the Mattermost root directory. On a defa
 
 .. note::
   Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
+  
+.. note::
+When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as follows: 
+``bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"`` 
+
 
 Using the CLI on GitLab Omnibus
 -------------------------------
