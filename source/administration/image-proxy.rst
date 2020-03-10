@@ -5,8 +5,7 @@ Image Proxy
 
 Using an image proxy means that all requests for images made by Mattermost clients will go through the proxy instead of contacting third-party servers directly. This helps protect user privacy by preventing third-party servers from tracking who views an image. This also prevents the use of tracking pixels (invisible images that do the same thing without the user even seeing an image).
 
-Certain proxy servers also provide a layer of caching which can make loading images faster and more reliable. This caching 
-also helps preserve posts by protecting them from dead images.
+Certain proxy servers also provide a layer of caching which can make loading images faster and more reliable. This caching also helps preserve posts by protecting them from dead images.
 
 When enabled, the image proxy needs to be publicly accessible to both the Mattermost client and server.
 
@@ -17,7 +16,7 @@ An image proxy can be configured in **System Console > Environment > Image Proxy
 Local Image Proxy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The local image proxy is available as part of the Mattermost server deployment. When using the local image proxy, images are served to clients through the server which helps anonymize users. If SSL is enabled on the server it provides a secure connection. This method does not offer any caching behavior.
+The local image proxy is available as part of the Mattermost server deployment. When using the local image proxy, images are served to clients through the server which helps anonymize users. If SSL is enabled on the server, it provides a secure connection. This method does not offer any caching behavior.
 
 .. note:: 
    With the local image proxy enabled, requests for images hosted on the local network are now affected by the ``AllowUntrustedInternalConnections`` setting. See `documentation <https://docs.mattermost.com/administration/config-settings.html#allow-untrusted-internal-connections-to>`_ for more information or if you are seeing unintentionally blocked images.
