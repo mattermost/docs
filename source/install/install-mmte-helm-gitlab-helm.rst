@@ -106,10 +106,10 @@ To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``
 - ``<gitlab-postgres-host>``: Postgres host of your Kubernetes service. Default is ``gitlab-postgresql``.
 - ``<gitlab-postgres-port>``: Postgres port of your Kubernetes service. Default is ``5432``.
 - ``<mattermost-database-name>``: Mattermost database, e.g., ``mattermost-db``.
-- ``<gitlab-minio-host>``: Minio host of your Kubernetes service. Default is ``gitlab-minio-svc``.
-- ``<gitlab-minio-port>``: Minio port of your Kubernetes service. Default is ``9000``.
-- ``<gitlab-minio-secret>``: Secret that holds your Minio keys. Default is ``gitlab-minio-secret``.
-- ``<mattermost-minio-bucket-name>``: Mattermost Minio bucket name, e.g., ``mattermost-data``.
+- ``<gitlab-minio-host>``: MinIO host of your Kubernetes service. Default is ``gitlab-minio-svc``.
+- ``<gitlab-minio-port>``: MinIO port of your Kubernetes service. Default is ``9000``.
+- ``<gitlab-minio-secret>``: Secret that holds your MinIO keys. Default is ``gitlab-minio-secret``.
+- ``<mattermost-minio-bucket-name>``: Mattermost MinIO bucket name, e.g., ``mattermost-data``.
 
 
 .. code-block:: sh
