@@ -32,7 +32,7 @@ These settings can also be set in the ``config.json`` file.  Please see our `con
  - To enable integrations such as webhooks, slash commands, OAuth2.0, and bots, to go **System Console > Integrations**. More information on these integrations can be found `here <https://docs.mattermost.com/guides/integration.html>`_. 
  - To enable and manage plugins, go to **System Console > Plugins**.  Mattermost offers an `integration marketplace <https://integrations.mattermost.com/>`_ where you can see all available plugins available for upload. 
 
-If your organization requires more structure and project management artifacts for the implementation of Mattermost, please see our `implementation plan <https://docs.mattermost.com/getting-started/implementation_plan.html>`__.
+If your organization requires more structure and project management artifacts for the implementation of Mattermost, please see our `Enterprise roll out checklist <https://docs.mattermost.com/getting-started/enterprise-roll-out-checklist.html>`__.
 
 Important Administration Notes 
 ------------------------------
