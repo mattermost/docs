@@ -86,9 +86,9 @@ Prerequisites:
   - Mattermost Team Edition Helm Chart Version: 3.8.2.
   - A running GitLab Helm Chart release.
   - The name of the secret that holds your PostgreSQL password ``<gitlab>-postgresql-password``.
-  - (Optional) The name of the secret that holds your Minio keys ``<gitlab>-minio-secret``.
+  - (Optional) The name of the secret that holds your MinIO keys ``<gitlab>-minio-secret``.
   - The service name for your PostgreSQL, ``<gitlab>-postgresql``, and the port. If you installed the GitLab Helm Chart in ``default`` namespace, then the port is ``5432``.
-  - (Optional) The service name for Minio and the port, ``<gitlab>-minio-svc``, and the port. If you installed the GitLab Helm Chart in ``default`` namespace, then the port is ``9000``.
+  - (Optional) The service name for MinIO, ``<gitlab>-minio-svc``, and the port. If you installed the GitLab Helm Chart in ``default`` namespace, then the port is ``9000``.
   - The names of ``kubernetes.io/ingress.class``, ``kubernetes.io/ingress.provider``, and ``certmanager.k8s.io/issuer``.
   
 To deploy Mattermost Team Edition with GitLab Helm Chart, disable the running ``MySql`` chart and configure InitContainer and Environment variables in ``values.yaml``. The list below indicates the values that should be changed. Note that we assume the GitLab chart name is ``gitlab``.
