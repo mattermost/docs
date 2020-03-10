@@ -12,27 +12,27 @@ Getting Started Tasks
  - SMTP
  - Push Notification Server 
   
-These settings can also be set in the config.json file.  Please see our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html>`__ for a full listing of all configuration settings. 
+These settings can also be set in the ``config.json`` file.  Please see our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html>`__ for a full listing of all configuration settings. 
 
 2. Adjust settings under **System Console > Site Configuration** to brand and customize how users will interact with the site.  
 Be sure to update the Support Email and Help Link in Mattermost under **System Console > Site Configuration > Customization** to provide your users a resource for password resets or questions on their Mattermost account.
 
  - The Support Email is used on email notifications and during tutorial for users to ask support questions.
- - The Help Link is on the Mattermost login page, sign-up pages, and Main Menu. Many organizations use this URL to link to their help desk ticketing system.  
+ - The Help Link is on the Mattermost login page, sign-up pages, and Main Menu and can be used to to link to your help desk ticketing system.  
  
-These settings can also be set in the config.json file.  Please see our `configuration settings documenation <https://docs.mattermost.com/administration/config-settings.html>`__ for a full listing of all configuration settings.  
+These settings can also be set in the ``config.json`` file.  Please see our `configuration settings documenation <https://docs.mattermost.com/administration/config-settings.html>`__ for a full listing of all configuration settings.  
 
 3. Begin to onboard users by enabling account creation or by connecting an authentication service to assist with user provisioning.  
 
- - Users can be per-provisioned prior with migration and bulk loading data processes based on prior collaboration systems.  Please see our `migration guide <https://docs.mattermost.com/administration/migrating.html#migration-guide>`_ and `bulk loading documentation <https://docs.mattermost.com/deployment/bulk-loading.html>`_ for additional details.
- - `AD/LDAP authentication <https://docs.mattermost.com/deployment/sso-ldap.html#active-directory-ldap-setup-e10-e20>`_ and `SAML authentication <https://docs.mattermost.com/deployment/sso-saml.html>`_ are available for Enterprise Edition, providing identity management, single sign-on and automatic account provisioning.   
+ - Users can be pre-provisioned with migration and bulk loading data processes based on prior collaboration systems. Please see our `migration guide <https://docs.mattermost.com/administration/migrating.html#migration-guide>`_ and `bulk loading documentation <https://docs.mattermost.com/deployment/bulk-loading.html>`_ for additional details.
+ - `AD/LDAP authentication <https://docs.mattermost.com/deployment/sso-ldap.html#active-directory-ldap-setup-e10-e20>`_ and `SAML authentication <https://docs.mattermost.com/deployment/sso-saml.html>`_ are available for Enterprise Edition, providing identity management, single sign-on, and automatic account provisioning.   
 
 4. Enable integrations and plugins to connect your team's workflows and toolsets into Mattermost. 
 
  - To enable integrations such as webhooks, slash commands, OAuth2.0, and bots, to go **System Console > Integrations**. More information on these integrations can be found `here <https://docs.mattermost.com/guides/integration.html>`_. 
  - To enable and manage plugins, go to **System Console > Plugins**.  Mattermost offers an `integration marketplace <https://integrations.mattermost.com/>`_ where you can see all available plugins available for upload. 
 
-If your organization  requires more structure and project management artifacts for the implementation of Mattermost, please see our `implementation plan <https://docs.mattermost.com/getting-started/implementation_plan.html>`__.
+If your organization requires more structure and project management artifacts for the implementation of Mattermost, please see our `implementation plan <https://docs.mattermost.com/getting-started/implementation_plan.html>`__.
 
 Important Administration Notes 
 ------------------------------
@@ -65,5 +65,5 @@ Common Tasks
       [2017/05/19 16:51:40 UTC] [INFO] License key valid unlocking enterprise features.
       
 **Upgrading Mattermost**
- - Mattermost releases updates montly to `Mattermost Team Edition <https://mattermost.com/>`_ and `Mattermost Enterprise Edition <https://about.mattermost.com/pricing/>`_.  The `Mattermost Changelog <https://docs.mattermost.com/administration/changelog.html>`_ provides all information about changes in each version. We recommend servers be upgraded often to keep up with critical bug fixes and security fixes. 
+ - Mattermost releases updates monthly to `Mattermost Team Edition <https://mattermost.com/>`_ and `Mattermost Enterprise Edition <https://about.mattermost.com/pricing/>`_.  The `Mattermost Changelog <https://docs.mattermost.com/administration/changelog.html>`_ provides all information about changes in each version. We recommend servers be upgraded often to keep up with critical bug fixes and security fixes. 
  - Follow the steps outlined in the `upgrade documentation <https://docs.mattermost.com/administration/upgrade.html>`_ to perform upgrades.   
