@@ -910,7 +910,7 @@ mmctl config edit
 
 **Description**
 
-  Opens the editor defined in the EDITOR environment variable to modify the server's configuration and then uploads it
+  Opens the editor defined in the EDITOR environment variable to modify the server's configuration and then uploads it.
 
 **Format**
 
