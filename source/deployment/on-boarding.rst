@@ -12,7 +12,7 @@ Getting Started Tasks
  - SMTP
  - Push Notification Server 
   
-These settings can also be set in the ``config.json`` file.  Please see our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html>`__ for a full listing of all configuration settings. 
+These settings can also be set in the ``config.json`` file. Please see our `configuration settings documentation <https://docs.mattermost.com/administration/config-settings.html>`__ for a full listing of all configuration settings. 
 
 2. Adjust settings under **System Console > Site Configuration** to brand and customize how users will interact with the site.  
 Be sure to update the Support Email and Help Link in Mattermost under **System Console > Site Configuration > Customization** to provide your users a resource for password resets or questions on their Mattermost account.
@@ -65,5 +65,5 @@ Common Tasks
       [2017/05/19 16:51:40 UTC] [INFO] License key valid unlocking enterprise features.
       
 **Upgrading Mattermost**
- - Mattermost releases updates monthly to `Mattermost Team Edition <https://mattermost.com/>`_ and `Mattermost Enterprise Edition <https://about.mattermost.com/pricing/>`_.  The `Mattermost Changelog <https://docs.mattermost.com/administration/changelog.html>`_ provides all information about changes in each version. We recommend servers be upgraded often to keep up with critical bug fixes and security fixes. 
+ - Mattermost releases updates monthly to `Mattermost Team Edition <https://mattermost.com/>`_ and `Mattermost Enterprise Edition <https://about.mattermost.com/pricing/>`_. The `Mattermost Changelog <https://docs.mattermost.com/administration/changelog.html>`_ provides all information about changes in each version. We recommend servers be upgraded often to keep up with critical bug fixes and security fixes. 
  - Follow the steps outlined in the `upgrade documentation <https://docs.mattermost.com/administration/upgrade.html>`_ to perform upgrades.   
