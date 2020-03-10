@@ -1008,7 +1008,7 @@ mmctl config set
 
 **Description**
 
-  Sets the value of a config setting by its name in dot notation. Accepts multiple values for array settings
+  Sets the value of a config setting by its name in dot notation. Accepts multiple values for array settings.
 
 **Format**
 
