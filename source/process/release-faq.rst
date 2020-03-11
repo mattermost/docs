@@ -115,9 +115,9 @@ Frequently Asked Questions
 
 - A: See instructions here: https://developers.mattermost.com/internal/mobile-build-process/.
 
-**Q: How does updating dependancies work?**
+**Q: How does updating dependencies work?**
  
-- A: Dependancy updates will only occur in feature releases, unless they contain security fixes.
+- A: Dependency updates will only occur in feature releases, unless they contain security fixes.
 
 **Q: What is the process for community PRs?**
 

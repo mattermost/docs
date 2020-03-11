@@ -176,7 +176,11 @@ Internal error: BrowserWindow 'unresponsive' event has been emitted
 
   1. Clear the cache via CTRL+SHIFT+R (or View > Clear Cache and Reload).
   2. Go to App Settings (via CTRL+COMMA or File > Settings) and unselect hardware acceleration.
+  
+Desktop App not responsive within Citrix Virtual Apps or Desktop Environment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Append ``Mattermost.exe;`` to the Registry Key ``HKLM\SYSTEM\CurrentControlSet\Services\CtxUvi\UviProcessExcludes`` and reboot the system.
 
 For additional troubleshooting tips, see the `troubleshooting guide <https://www.mattermost.org/troubleshoot/>`__.
 

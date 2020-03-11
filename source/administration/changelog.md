@@ -6,6 +6,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 ## Release v5.20 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
+- **v5.20.2, release day TBD**
+  - Investigating an issue where switching to an unread channel sometimes gets stuck at "Loading...". [MM-22698](https://mattermost.atlassian.net/browse/MM-22698)
 - **v5.20.1, released 2020-02-16**
   - Fixed an issue where upgrading to v5.20 failed on servers running with ``PluginSettings.Enable = false``, and ``LogSettings.EnableDiagnostics = true``.
 - **v5.20.0, released 2020-02-16**
