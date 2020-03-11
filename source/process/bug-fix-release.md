@@ -170,7 +170,6 @@ Review the [Release Features & Bugs Quality Gate Guidelines](https://docs.google
     - Go through all tabs of testing spreadsheet and verify all comments and questions have been filed in Jira as needed
     - Verify all Jira tickets other than newly-filed bugs have been tested, verified, and closed
     - As bug fixes are merged and RCs are cut, verify fixes on new RCs, and post in Release Channel after testing
-    - As RCs are cut, update `selenium.test.mattermost.com` to latest RC
     - After all tickets are verified and closed, run smoke tests on webapp/server, desktop app, and RN apps as appropriate
 
 ### I. (T-minus 2 working days) Release Build Cut
