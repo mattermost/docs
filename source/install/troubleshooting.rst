@@ -79,6 +79,24 @@ If email sign-in was turned off before the System Administrator switched sign-in
 
 4. Replace ``{username}`` with the name of the user you'd like to promote to an admin.
 
+Password Resets
+~~~~~~~~~~~~~~~
+
+Scenario #1: Internal users
+
+- Password reset request and emails are ONLY applicable to internal users (i.e users who are invited through invite link / email invite) based on documentation - https://docs.mattermost.com/help/getting-started/signing-in.html#email-address-or-username-sign-in.
+- Since Mattermost Support do not have direct access to the server / instance the user has signed up to, we recommend users to get in touch directly to the System Administrator of the system
+- If you are not sure who the System Administrator is, we suggest users to get in touch with the internal IT team for further help.
+
+Scenario #2 : AD / LDAP users
+
+- Password reset process should be done on the directory level instead of Mattermost UI since Mattermost pulls the information of the credentials from the LDAP directory.
+- If the LDAP user has issues with the password, they should get in touch with the LDAP administrator for further help.
+
+Scenario #3: SSO Users (OneLogin / Okta / etc)
+
+- Password reset is to be done on the IdP provider side instead of Mattermost.
+
 SAML Issues
 -------------------
 
