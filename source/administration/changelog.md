@@ -8,6 +8,8 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
 **Release day: 2020-03-16**
 
+Mattermost v5.21.0 contains low level security fixes. [Upgrading](http://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://about.mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://www.mattermost.org/responsible-disclosure-policy/).
+
 ### Compatibility
  - Honour key value expiry in KVCompareAndSet, KVCompareAndDelete and KVList. We also improved handling of plugin key value race conditions and deleted keys in Postgres.
  
