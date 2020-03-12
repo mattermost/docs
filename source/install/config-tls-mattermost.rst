@@ -9,7 +9,7 @@ You have two options if you want users to connect with HTTPS:
 The easiest option is to set up TLS on the Mattermost Server, but if you expect to have more than 200 users, use a proxy for better performance. A proxy server also provides standard HTTP request logs.
 
 .. note::
-   Your Mattermost server must be accessible from the Let's Encrypt in order to verify your domain name and issue the certificate. Be sure to open your firewall and configure any reverse proxies to forward traffic to port 80 and 443. More information can be found `at Let's Encrypt <https://letsencrypt.org/how-it-works/>`__
+   Your Mattermost server must be accessible from the Let's Encrypt in order to verify your domain name and issue the certificate. Be sure to open your firewall and configure any reverse proxies to forward traffic to ports 80 and 443. More information can be found _`at Let's Encrypt <https://letsencrypt.org/how-it-works/>`__.
 
 **Configure TLS on the Mattermost Server**:
 
