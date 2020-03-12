@@ -25,7 +25,6 @@ Mattermost v5.21.0 contains low level security fixes. [Upgrading](http://docs.ma
  - Fixed an issue where the post menu opened up in the right-hand side made the menu options float off page if the parent post was short with no replies.
  - Fixed an issue where enabling and disabling the demo plugin generated a "connection is shutdown" error.
  - Fixed an issue where deactivated users with whom a user had never interacted in a private message before appeared in the New Direct Message menu.
- - Fixed an issue where user's role was not reflected correctly in the Team Members Modal when it was updated after the modal was opened.
  - Fixed an issue where clicking on an image in external image preview opened the image within the desktop app.
  - Fixed an issue where users were unable to open email links using View in Browsers option in incognito mode.
  - Fixed an issue where **Invite Guests > Emails** containing upper case letters were rejected.
