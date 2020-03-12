@@ -60,8 +60,7 @@ No pull requests for major features should be **merged** to the current release 
     - Prioritize reviewing, updating, and merging of pull requests for current release until there are no more tickets in the [pull request queue](https://github.com/mattermost/mattermost-server/pulls) marked for the current release
       - After the cut-off, any PRs that include significant code changes require approval of the Release Manager before merging
 4. Marketing:
-    - Prepare bullet points and release headline for release announcement. Release Manager to review the outline (benefits and order of major features) with PMs before sending to Justin to work on
-    - Decide which sections of the release announcement will have an accompanying screenshot/photo
+    - Prepare bullet points and release headline for release announcement. Release Manager to review the outline (benefits and order of major features) with PMs before sending to Justin to work on. [Refer to the process here](https://handbook.mattermost.com/operations/messaging-and-math/how-to-guides-for-m-and-m/how-to-create-release-announcements)
     
 ### D. (T-minus 19 working days) Feature Testing
 
@@ -148,7 +147,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
     - Post list of tickets to be fixed to the Release Discussion channel ([see example](https://community.mattermost.com/core/pl/65k77x3bnigw5f9ffohfxonnfy))
-    - Cut next Release Candidate and check CI servers running on release branch
+    - Cut next Release Candidate [using this process](https://github.com/mattermost/internal-docs/blob/63dcb6d0ff5d20ab9310466065dc15799b12708c/site/content/infra/release-tasks.md) and check CI servers running on release branch
     - Ask martin.kraft to provide a list of Database changes, API changes, WebSocket event changes, and config.json setting changes for Changelog. [See example request](https://github.com/mattermost/docs/pull/3398#issuecomment-593411501)
 3. QA:
     - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://docs.google.com/document/d/1UvTsvwZXmEL9QPjxmjoIkR2AcwGtOjql8cYRfk2N8eA/edit#bookmark=id.ghe4vz9zd1v))
