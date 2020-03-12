@@ -55,6 +55,7 @@ Pre-work for the current release begins at the code complete date of the previou
     - Ask PMs and dev leads if there are any notable breaking changes or deprecated features in the release
     - Update [Upgrade Guide](https://docs.mattermost.com/administration/important-upgrade-notes.html) with any special notes for upgrading to the new version
     - Ask PMs to review the Jira tickets remaining in the current release fix version and push those that won't make it to the next fix version
+    - Ask PMs and Tech writer to complete release documentation by T-2 deadline. [Example request](https://community.mattermost.com/core/pl/w4oobh4zpigsfbqskx5ix5jgxo)
 3. Leads:
     - Finalize roadmap for next release, and identify planned marketing bullet points
 4. Marketing:
@@ -86,7 +87,7 @@ Review the [Release Features & Bug Guidelines](https://docs.google.com/document/
     - Post this checklist in Release Checklist channel
     - Verify all items in the last posted release checklist are complete
     - Generate a list of contributors for Changelog
-    - Ask Platform team to provide list of [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13) for Changelog
+    - Ask martin.kraft to provide a list of Database changes, API changes, WebSocket event changes, and config.json setting changes for Changelog. [See example request](https://github.com/mattermost/docs/pull/3398#issuecomment-593411501)
 2. Logistics @hanna.park:
     - Mail out contributor and security researcher mugs
       - Space out the ordering of mugs over the next three weeks to prevent mistakes being made by the supplier (e.g., If there are 12 contributors to order mugs for, place an order every 2nd or 3rd day over the next three weeks)
