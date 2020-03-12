@@ -12,9 +12,6 @@ Mattermost v5.21.0 contains low level security fixes. [Upgrading](http://docs.ma
 
 ### Compatibility
  - Honour key value expiry in KVCompareAndSet, KVCompareAndDelete and KVList. We also improved handling of plugin key value race conditions and deleted keys in Postgres.
- 
-### Breaking Changes
-
 
 ### Bug Fixes
  - Fixed an issue where bots could not be added to group-synced channels or teams.
