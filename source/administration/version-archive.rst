@@ -6,7 +6,7 @@ If you want to check that the version of Mattermost you are installing is the of
 Mattermost Enterprise Edition
 ------------------------------
 
-Mattermost Enterprise Edition v5.20.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-20-feature-release>`__ - `Download <https://releases.mattermost.com/5.20.1/mattermost-5.20.1-linux-amd64.tar.gz>`__
+Mattermost Enterprise Edition v5.20.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-20-feature-release>`__ - `Download <https://releases.mattermost.com/5.20.1/mattermost-5.20.1-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.20.1/mattermost-5.20.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``b9d07c6de14175e2a29625c8c9f0d394ba652e97878cc0e84838ac2138bc2d10``
   - GPG Signature: https://releases.mattermost.com/5.20.1/mattermost-5.20.1-linux-amd64.tar.gz.sig
@@ -167,7 +167,7 @@ Mattermost Enterprise Edition v2.1.0 - `View Changelog <https://docs.mattermost.
 Mattermost Team Edition Server Archive
 ---------------------------------------
 
-Mattermost Team Edition v5.20.1 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-20-feature-release>`__ - `Download <https://releases.mattermost.com/5.20.1/mattermost-team-5.20.1-linux-amd64.tar.gz>`__
+Mattermost Team Edition v5.20.2 - `View Changelog <https://docs.mattermost.com/administration/changelog.html#release-v5-20-feature-release>`__ - `Download <https://releases.mattermost.com/5.20.1/mattermost-team-5.20.1-linux-amd64.tar.gz>`__
   - ``https://releases.mattermost.com/5.20.1/mattermost-team-5.20.1-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``bd1c92ce6037c6c0ae5acd712223a57a7fcbd920d3c5c11d439a1ef4433eb028``
   - GPG Signature: https://releases.mattermost.com/5.20.1/mattermost-team-5.20.1-linux-amd64.tar.gz.sig
