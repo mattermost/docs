@@ -48,7 +48,7 @@ WebRTC
 - Start one-on-one voice and video calls, based on the WebRTC protocol, developed by Nikhil Rajan.
 - Calls embedded into the Mattermost interface for seamless user experience.
 - No third-party dependency, uses a browser-to-browser and serverless approach to initiate calls.
-- Source code and docs available at: https://github.com/niklabh/mattermost-plugin-webrtc-video
+- Source code and docs available at: https://github.com/niklabh/mattermost-plugin-webrtc-video.
 
 Kopano WebMeetings
 ~~~~~~~~~~~~~~~~~~~~
