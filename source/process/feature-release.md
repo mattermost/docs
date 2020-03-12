@@ -88,6 +88,7 @@ Day when Leads and PMs decide which major features are included in the release, 
       - If release day falls on a Friday, the blog post goes out on the Friday and the emailed newsletter goes out the following Tuesday
     - Post a reminder to devs in the Release Discussion channel of the the code complete date with the list of open and submitted bugs and PRs [see example](https://community.mattermost.com/core/pl/coggyys9atg7fqyam81q3gkmoo)
     - Ask PMs to review the Jira tickets remaining in the current release fix version and push those that won't make it to the next fix version
+    - Ask PMs and Tech writer to complete release documentation by T-2 deadline. [Example request](https://community.mattermost.com/core/pl/w4oobh4zpigsfbqskx5ix5jgxo)
 3. Leads:
     - Finalize roadmap for next release, and identify planned marketing bullet points
 4. Marketing:
@@ -148,7 +149,7 @@ Day when Leads and PMs decide which major features are included in the release, 
     - Verify all items in the last posted release checklist are complete
     - Post list of tickets to be fixed to the Release Discussion channel ([see example](https://community.mattermost.com/core/pl/65k77x3bnigw5f9ffohfxonnfy))
     - Cut next Release Candidate and check CI servers running on release branch
-    - Ask Platform team to provide list of [database changes](https://github.com/mattermost/mattermost-server/blob/master/store/sqlstore/upgrade.go), [API changes](https://github.com/mattermost/mattermost-server/commits/master/model/client.go), and [WebSocket event changes](https://github.com/mattermost/mattermost-server/blob/master/model/websocket_message.go#L13) for Changelog
+    - Ask martin.kraft to provide a list of Database changes, API changes, WebSocket event changes, and config.json setting changes for Changelog. [See example request](https://github.com/mattermost/docs/pull/3398#issuecomment-593411501)
 3. QA:
     - Update Release Discussion header with links to RC instances and testing spreadsheet ([template](https://docs.google.com/document/d/1UvTsvwZXmEL9QPjxmjoIkR2AcwGtOjql8cYRfk2N8eA/edit#bookmark=id.ghe4vz9zd1v))
     - Post release testing instructions to Release Discussion channel ([template](https://docs.google.com/document/d/1UvTsvwZXmEL9QPjxmjoIkR2AcwGtOjql8cYRfk2N8eA/edit#bookmark=id.u28aar2hx7hg))
