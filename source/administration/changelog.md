@@ -4,6 +4,39 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
+## Release v5.22 - 
+
+**Release day: 2020-04-16**
+
+### Highlights
+ - Version 2 of the server Audit/Logging System
+ - Channel Moderation Settings
+ - Bulk Actions in Mattermost Server
+ - Search engine backend
+
+### Improvements
+ - Allow searching for files through plugin API.
+ - Added support for setting Office365Settings Directory (tenant) Id in config.json.
+ - Extended the payload of slash commands to include a map of the users and channels mentioned in the message to their corresponding identifiers.
+ - Allowed prepackaged and local plugins to set ReleaseNotesURL.
+
+### Bug Fixes
+ - Fixed data race conditions happening when accessing ``Post.Props``.
+ - Fixed an issue where Mattermost was unable to start if a configured mail server was listening but not responding.
+ - Fixed an issue where LDAP sync did not finish if read database replica was enabled.
+ - Fixed a SIGSEGV when exporting to CSV.
+ - Fixed an issue where Elasticsearch error was output when running unrelated commands.
+ - Fixed an issue where the autoresponder responded to every bot post.
+
+### Config.json
+ - EnableOpenTracing
+ 
+### API Changes
+ - Added an endpoint to move a command to another team.
+ - Added an endpoint to retrieve a command by id.
+ - Added a new busy api ``Client.GetServerBusy`` endpoint support for mmctl.
+
+
 ## Release v5.21 - [Quality Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 **Release day: 2020-03-16**
