@@ -15,6 +15,14 @@ The groups feature is useful for organizations that have many new users to onboa
 
 Please see `this forum post <https://forum.mattermost.org/t/ldap-group-sync-alpha-release/6351>`__ for more details. For a technical overview of the feature by Martin Kraft, who led the development of the feature, please see `this blog post <https://developers.mattermost.com/blog/2019-06-05-ldap-nested-groups-modelling-and-representation-in-code/>`_.
 
+Watch our video on adding users to Mattermost with AD/LDAP on `YouTube <https://www.youtube.com/watch?v=zyku2ibsG0M>`_:
+
+.. raw:: html
+
+   <div style="position: relative; padding-bottom: 50%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
+      <iframe src="https://www.youtube.com/embed/zyku2ibsG0M" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 95%;"></iframe>
+   </div>
+
 Pre-installation Notes
 ----------------------
 
@@ -25,7 +33,7 @@ The group filter is an optional configuration setting available under **System C
 The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the `Active Directory/LDAP Set up documentation <https://docs.mattermost.com/deployment/sso-ldap.html?highlight=ldap#configure-ad-ldap-synchronization>`__. for more information. The group feature has no effect on users' authentication to Mattermost.
 
 Enabling AD/LDAP Group Synchronization
-------------------------------------
+--------------------------------------
 
 To enable this feature, go to **System Console > Groups (Beta)** (or **System Console > Advanced > Experimental > Enable AD/LDAP Group Sync** in versions prior to 5.12).
 
