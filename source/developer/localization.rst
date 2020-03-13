@@ -117,7 +117,7 @@ If you're interested in contributing to the process, please join the `Mattermost
     "Español - Spanish", "`Elias Nahum (enahum) <https://github.com/enahum>`__", "`Jesús Espino <http://github.com/jespino>`_"
     "Français - French", "`William Gathoye (wget) <https://github.com/wget>`__", ""
     "Italiano - Italian", "`Michael Longo (mlongo4290) <https://github.com/mlongo4290>`__, `Ema Panz (thepanz) <https://github.com/thepanz>`__", ""
-    "Nederlands - Dutch", "TBD (Open Role)", ""
+    "Nederlands - Dutch", "`Tom De Moor <https://github.com/ctlaltdieliet>`_", ""
     "Polski - Poland", "`Daniel Burzmiński (hectorskypl) <https://github.com/hectorskypl>`__, `Tomasz Gruca (gruceqq) <https://translate.mattermost.com/user/gruceqq/>`__",
     "Português do Brasil - Portuguese", "`Rodrigo Corsi (rodcorsi) <https://github.com/rodcorsi>`__", "`Carlos Tadeu Panato Junior (cpanato) <https://github.com/cpanato>`_"
     "Română - Romanian", "`Viorel-Cosmin Miron (uhlhosting) <https://github.com/uhlhosting>`__", ""
