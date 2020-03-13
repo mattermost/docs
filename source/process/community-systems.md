@@ -2,40 +2,40 @@
 
 Here's how to engage with the Mattermost community: 
 
-- **Bugs** - [Search for existing bugs and file a GitHub issue if your bug is new](http://www.mattermost.org/filing-issues/). 
-- **Feature Ideas** - [Add a feature idea to be discussed or upvoted](https://www.mattermost.org/feature-ideas/).
-- **Troubleshoot** - [Search articles and add topic if issue is new](https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150).
-- **General discussion** - [Join the Mattermost Forum](https://forum.mattermost.org/t/welcome-to-the-mattermost-general-forum/8). 
-- **Contribute code** - Select tickets marked [Accepting Pull Requests](https://mattermost.atlassian.net/browse/PLT-2244?filter=10101) (APR) and follow [guidelines to contribute](http://docs.mattermost.com/developer/contribution-guide.html). Join the [APR channel](https://community.mattermost.com/core/channels/tickets) to ask questions and discuss your work. 
-- **Contributor and tester discussion** - Contributors and testers can use [nightly builds server](https://community.mattermost.com/core) to work on next release.
-- **Integrations** - [Let us know about your work so we can promote it!](https://www.mattermost.org/share-your-mattermost-projects/) Join the [Integrations and Apps channel](https://community.mattermost.com/core/channels/integrations) to discuss your project. 
-- **Localization** - Join the [translation server](http://translate.mattermost.com/projects/mattermost/) to start translating right away. If your language isn't yet started, join our [Localization channel](https://community.mattermost.com/core/channels/localization) to request a new language, or to ask general questions and meet others in the community. Join language-specific channels to discuss translation work. 
-- **Approved changes** - See [Jira database](https://mattermost.atlassian.net/secure/Dashboard.jspa) to view open, in-progress, resolved and closed tickets. 
-- **Commercial support** - [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/) customers can access [commercial support](https://about.mattermost.com/support/) based on their subscription option.
+- **Bugs:** [Search for existing bugs and file a GitHub issue if your bug is new](http://www.mattermost.org/filing-issues/). 
+- **Feature Ideas:** [Add a feature idea to be discussed or upvoted](https://www.mattermost.org/feature-ideas/).
+- **Troubleshoot:** [Search articles and add topic if issue is new](https://forum.mattermost.org/t/how-to-use-the-troubleshooting-forum/150).
+- **General discussion:** [Join the Mattermost Forum](https://forum.mattermost.org/t/welcome-to-the-mattermost-general-forum/8). 
+- **Contribute code:** Select tickets marked [Accepting Pull Requests](https://mattermost.atlassian.net/browse/PLT-2244?filter=10101) (APR) and follow [guidelines to contribute](http://docs.mattermost.com/developer/contribution-guide.html). Join the [APR channel](https://community.mattermost.com/core/channels/tickets) to ask questions and discuss your work. 
+- **Contributor and tester discussion:** Contributors and testers can use [nightly builds server](https://community.mattermost.com/core) to work on next release.
+- **Integrations:** [Let us know about your work so we can promote it!](https://www.mattermost.org/share-your-mattermost-projects/) Join the [Integrations and Apps channel](https://community.mattermost.com/core/channels/integrations) to discuss your project. 
+- **Localization:** Join the [translation server](http://translate.mattermost.com/projects/mattermost/) to start translating right away. If your language isn't yet started, join our [Localization channel](https://community.mattermost.com/core/channels/localization) to request a new language, or to ask general questions and meet others in the community. Join language-specific channels to discuss translation work. 
+- **Approved changes:** See [Jira database](https://mattermost.atlassian.net/secure/Dashboard.jspa) to view open, in-progress, resolved and closed tickets. 
+- **Commercial support:** [Mattermost Enterprise Edition](https://about.mattermost.com/pricing/) customers can access [commercial support](https://about.mattermost.com/support/) based on their subscription option.
 
-## How improvements are made to Mattermost
+## How Improvements Are Made to Mattermost
 
-Every month, the Mattermost community plans, builds, tests, documents, releases and supports new product improvements for Team Edition to benefit the user community, and the Mattermost Enterprise Team does the same for Enterprise Edition to benefit the subscriber community. 
+Every month, the Mattermost community plans, builds, tests, documents, releases, and supports new product improvements for Team Edition to benefit the user community, and the Mattermost Enterprise Team does the same for Enterprise Edition to benefit the subscriber community. 
 
 1. When a feature idea is within the scope of Team Edition, as [defined in the Mattermost Manifesto](http://www.mattermost.org/manifesto/#mattermost-teams) and considered a priority, a Jira ticket is created to define its implementation: 
 
     1. If the change is not complex, a [Help Wanted Ticket](https://docs.mattermost.com/process/help-wanted.html) label may be added to the Jira ticket for any developer to contribute the change to the Mattermost Team Edition code base via the [contribution process](http://docs.mattermost.com/developer/contribution-guide.html). [A list of tickets accepting pull requests](https://mattermost.atlassian.net/browse/PLT-2667?filter=10101) is offered to all contributors who read the contributor's guide, and these provide a steady stream of improvements to Team Edition month after month. 
-    2. If change is considered high priority without pre-requisites, a Fix Version may be applied to the Jira ticket for the Mattermost core team or key contributors to add for an upcoming monthly release. Priority decisions are influenced by discussion and voting in the feature idea forum and community systems as well as feedback from key contributors. 
-    3. If change is not seen as high priority or has pre-requisites, it is assigned a Fix Version of `triage` or `unscheduled` and will be considered monthly for inclusion in a future release.
+    2. If change is considered high priority without prerequisites, a Fix Version may be applied to the Jira ticket for the Mattermost core team or key contributors to add for an upcoming monthly release. Priority decisions are influenced by discussion and voting in the feature idea forum and community systems as well as feedback from key contributors. 
+    3. If change is not seen as high priority or has prerequisites, it is assigned a Fix Version of `triage` or `unscheduled` and will be considered monthly for inclusion in a future release.
 
 2. When a feature idea does not fit the scope of Team Edition, as [defined in the Mattermost Manifesto](http://www.mattermost.org/manifesto/#mattermost-teams), but benefits Enterprise Edition subscribers, a similar process as above is undertaken by the Enterprise Team.
 
-    1. If change is considered high priority without pre-requisites, a Fix Version may be applied to the Jira ticket for the Mattermost Enterprise Team to add for an upcoming monthly release. Priority decisions are influenced by discussion with Enterprise Edition subscribers, with special attention paid to members of the [Core Access](https://about.mattermost.com/core-access/) program. 
-    2. If change is not seen as high priority or has pre-requisites, it is assigned a Fix Version of `triage` or `unscheduled` until this situation changes.  
+    1. If change is considered high priority without prerequisites, a Fix Version may be applied to the Jira ticket for the Mattermost Enterprise Team to add for an upcoming monthly release. Priority decisions are influenced by discussion with Enterprise Edition subscribers.
+    2. If change is not seen as high priority or has prerequisites, it is assigned a Fix Version of `triage` or `unscheduled` until this situation changes.
     3. If an existing or potential Enterprise Edition subscriber needs a specific change that has not yet been assigned a Fix Version, they can contact the Mattermost Enterprise Team to discuss sponsoring the feature with Non-Recurring Engineering (NRE) funding to have it delivered before it would otherwise be added. Feature sponsorship can only be applied to features where Jira tickets exist.
     
 3. If a feature idea is not within the scope of either Team Edition or Enterprise Edition, you might consider: 
 
-    1. Building an integration using Mattermost webhooks or Slash commands. There are [dozens of open source examples](https://about.mattermost.com/default-app-directory/) to help you start. Example: Suppose you want a link preview for an esoteric file type that Mattermost isn't able to support, you can create an outgoing webhook to reply with an image that offers a preview. 
+    1. Building an integration using Mattermost webhooks or slash commands. There are [dozens of open source examples](https://about.mattermost.com/default-app-directory/) to help you start. For example: Suppose you want a link preview for an esoteric file type that Mattermost isn't able to support, you can create an outgoing webhook to reply with an image that offers a preview. 
     
-    2. Building a client application using the Mattermost Web Service API. This is useful if you want to customize the user experience to your specific needs. Example: You can re-create the Mattermost web interface using Windows controls to define front end logic, similar to the [MattermostWPF project](https://github.com/limey98/MattermostWPF). 
+    2. Building a client application using the Mattermost Web Service API. This is useful if you want to customize the user experience to your specific needs. For example: You can recreate the Mattermost web interface using Windows controls to define front-end logic, similar to the [MattermostWPF project](https://github.com/limey98/MattermostWPF). 
     
-    3. Creating an open source variation of Mattermost using the Team Edition source code. Example: The Mozilla Foundation created their own [open source Mattermost variation](https://github.com/mozilla/chat.mozillafoundation.org), which includes changes specific to their needs.
+    3. Creating an open source variation of Mattermost using the Team Edition source code. For example: The Mozilla Foundation created their own [open source Mattermost variation](https://github.com/mozilla/chat.mozillafoundation.org), which includes changes specific to their needs.
     
 ## Drafting a Ticket for New Features
 
@@ -49,17 +49,17 @@ When drafting a ticket for a new feature, please include:
 When writing the description, the following checklist should be addressed:  
 
 1. Does this feature require an Account Setting, Team Setting, or System Console Setting?
-    1. If yes, please include the proposed: Location, Title, Setting Options, Default Setting, and Help Text (see [example](https://mattermost.atlassian.net/browse/PLT-1577)).
+    1. If "yes", please include the proposed: Location, Title, Setting Options, Default Setting, and Help Text (see [example](https://mattermost.atlassian.net/browse/PLT-1577)).
 2. Is there any ambiguity in the ticket?  
-    1. If yes, please update description to remove ambiguity.  
-    2. The ticket should not include multiple potential solutions. (The exception to this is if a second solution is suggested as an alternative if the first is too much work).  
-    3. The ticket should include specific numbers where necessary. (For example, it should not say to “increase” or “decrease” the length of something without specifying what number to increase/decrease it to).  
+    1. If "yes", please update description to remove ambiguity.  
+    2. The ticket should not include multiple potential solutions. The exception to this is if a second solution is suggested as an alternative if the first is too much work.  
+    3. The ticket should include specific numbers where necessary. For example, it should not say to “increase” or “decrease” the length of something without specifying what number to increase/decrease it to.  
 
 ## GitHub Issues Workflow
 
 To minimize response times, templates and automation are used across community systems for common requests. When misfiled requests are posted in GitHub close them soon so the community does not confuse them as being appropriate. 
 
-### Category: Issue Submitter needs to do something
+### Category: Issue Submitter Needs to do Something
 
 Start with "Please..."
 
@@ -164,5 +164,3 @@ A PR that requires careful review due to size.
 ##### Label: DO NOT MERGE 
 
 A PR submitted for discussion that SHOULD NOT be merged.
-
-

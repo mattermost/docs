@@ -14,22 +14,22 @@ This document provides easy-to-follow community guidelines for:
 How to get community involved in a campaign?
 ---------------------------------------------------------
 
-Examples include React Native Apps, Redux and APIv4 campaigns.
+Examples include React Native Apps, Redux, and APIv4 campaigns.
 
-On-boarding
+Onboarding
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Create a forum post letting developers know about the campaign and ways to contribute
-2. Create a contribution guide including developer machine set up
-3. Create help wanted tickets that a community member could work on
+1. Create a blog post for the `Developer Blog <https://developers.mattermost.com/blog/>`_ letting developers know about the campaign and ways to contribute.  
+2. Create a contribution guide. This can be part of the blog post.
+3. Create Help Wanted tickets that a community member could work on.
  
- - For a high priority Help Wanted ticket, reach out to contributors directly in the GitHub repository for best engagement
+For a high priority Help Wanted ticket, reach out to contributors directly in the GitHub repository for best engagement
 
 Retention
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Identify active contributors and thank them personally for their work
-2. For work in progress tickets or submitted pull requests, follow up with contributor once a week for status updates and questions to make sure contributors aren't blocked and feel more comfortable to ask questions. If there hasn't been activity in more than two weeks, ask if you can help them in some way.
+1. Identify active contributors and thank them personally for their work.
+2. For Work in Progress tickets or submitted pull requests, follow up with contributor once a week for status updates and questions to make sure contributors aren't blocked and feel comfortable asking questions. If there hasn't been activity in more than two weeks, ask if you can help them in some way.
 3. Recognize everyone’s contributions (either intrinsic rewards like having their name listed on a contributor’s page or tangible like swag or gift cards)
 4. If applicable, assign roles to top contributors (such as team lead, code reviewer, tester) to give a sense of ownership to the contributor
 
@@ -39,7 +39,7 @@ Off-boarding
 1. When a campaign is finished, offer suggestions for other campaigns or projects they might be interested in.
 
 How to run a community design meeting?
----------------------------------------------------------
+---------------------------------------
 
 Objectives
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -85,18 +85,20 @@ Holding the Meeting
 After the Meeting
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1. Share a summary in all respective channels, including the meeting recording.
-2. Send a survey asking how valuable the meeting was, feedback on additional use cases and feedback on improving the meeting in the future. `See example here <https://community.mattermost.com/core/pl/jfcmekbw738o3f3ykbbhofkg8r>`_.
+2. Send a survey asking how valuable the meeting was, feedback on additional use cases, and feedback on improving the meeting in the future. `See example here <https://community.mattermost.com/core/pl/jfcmekbw738o3f3ykbbhofkg8r>`_.
 
 Tips
 ^^^^^^^^^^^^^^^^^^^^^^^^
 1. Do not use your personal Zoom meeting link for the call.
 2. Note in all announcements that sharing video is optional.
 3. Use `Mattermost` in your name to identify staff from community members on the call.
+4. Consider sequencing design review meetings with design priorities.
+5. Encourage less vocal attendees to share feedback via written chat.
 
-Future Improvements
-^^^^^^^^^^^^^^^^^^^^^^^^
-1. Consider sequencing design review meetings with design priorities.
-2. Encourage less vocal attendees to share feedback via written chat.
+How to run a Hackathon?
+---------------------------------------------------------
+
+See :doc:`How to Run a Hackathon page <how-to-run-a-hackathon>`.
 
 GitHub Help Wanted Issues in Mattermost-Server Repository
 -----------------------------------------------------------
@@ -119,26 +121,29 @@ Creating Help Wanted Issues
 
 To create a Help Wanted issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`__, follow these steps:
 
-1 - Create a ticket in Jira that is well-defined and unambiguous.
+1. Create a ticket in Jira that is well-defined and unambiguous.
 
 The issue should be written with the mindset that the contributor might have no or limited experience with the Mattermost code base and limited exposure to the Mattermost product.
 
   .. note::
     Below are a few reasons why Jira tickets for Help Wanted issues are recommended:
+    
+     - Jira tickets can be used to prioritize Help Wanted issues internally and are easily searchable by Mattermost staff, community, and customers.
+    
+     - Each Jira ticket goes through the `triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`__ for dev and PM approval.
+    
+     - Zapier integration automatically creates GitHub Help Wanted issues from labelled Jira tickets, requiring no additional mana.
+    
+     - Resolved Jira tickets are automatically assigned to a QA, who tests them against the ``master`` branch.
 
-      1. Jira tickets can be used to prioritize Help Wanted issues internally and are easily searchable by Mattermost staff, community, and customers
-      2. Each Jira ticket goes through the  `triage meeting <https://docs.mattermost.com/process/training.html#triage-meeting>`__ for dev and PM approval
-      3. Zapier integration automatically creates GitHub Help Wanted issues from labelled Jira tickets, requiring no additional mana
-      4. Resolved Jira tickets are automatically assigned to a QA, who tests them against the ``master`` branch.
+2. After creating the ticket, add "(Proposed APR)" to its title, so the triage team knows to consider it for a ``help-wanted`` label.
 
-2 - After creating the ticket, add "(Proposed APR)" to its title, so the triage team knows to consider it for a ``help-wanted`` label.
+3. If the Jira ticket is accepted as a Help Wanted issue during `triage <https://docs.mattermost.com/process/training.html#triage-meeting>`__, a ``help-wanted`` label is added. This action automatically triggers a zap that creates a new issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`__.
 
-3 - If the Jira ticket is accepted as a Help Wanted issue during `triage <https://docs.mattermost.com/process/training.html#triage-meeting>`__, a ``help-wanted`` label is added. This action automatically triggers a zap that creates a new issue in the `mattermost-server repository <https://github.com/mattermost/mattermost-server>`__.
+    - To accept a ticket as a Help Wanted issue, the description should be unambiguous, and include UI description and help text so the change can be implemented and tested by any contributor.
+    - The Triage team also adds the appropriate difficulty level (one of ``Introductory``, ``Intermediate`` and ``Advanced``) and programming language (``Go`` and ``ReactJS``) to the description of the Jira ticket.
 
-    - To accept a ticket as a Help Wanted issue, the description should be unambiguous, and include UI description and help text so the change can be implemented and tested by any contributor
-    - The triage team also adds the appropriate difficulty level (one of ``Introductory``, ``Intermediate`` and ``Advanced``) and programming language (``Go`` and ``ReactJS``) to the description of the Jira ticket
-
-4 - After triage, PM on community rotation reviews formatting of the GitHub issue and adds appropriate labels for difficulty level and programming language as defined by the triage team.
+4. After triage, the PM on community rotation reviews formatting of the GitHub issue and adds appropriate labels for difficulty level and programming language as defined by the Triage team.
 
 `See an example Help Wanted issue here <https://github.com/mattermost/mattermost-server/issues/4755>`__.
 
@@ -147,16 +152,16 @@ Managing Help Wanted Issues
 
 Once a Help Wanted issue is added, the PM on community rotation is responsible for:
 
-- answering questions from community members, which get automatically posted in the `Community Heartbeat channel <https://community.mattermost.com/core/channels/community-heartbeat>`__
-- following up with a community member if there hasn't been a response for more than two weeks
+- Answering questions from community members, which get automatically posted in the `Community Heartbeat channel <https://community.mattermost.com/core/channels/community-heartbeat>`__.
+- Following up with a community member if there hasn't been a response for more than two weeks.
 
 Closing Help Wanted Issues
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once a pull request for an open GitHub Help Wanted issue is merged, please ensure:
 
-- the corresponding GitHub Help Wanted issue is closed, thanking the contributor
-- the corresponding JIRA ticket is resolved
+- The corresponding GitHub Help Wanted issue is closed, thanking the contributor.
+- The corresponding Jira ticket is resolved.
 
 Help Wanted Issue Links
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -193,20 +198,20 @@ Response Writing Tips
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 - **Don't answer if unsure**
-  - Ask someone who knows for sure instead of replying with an assumption or incomplete understanding
-  - Don't be afraid to re-route if you don't have the answer and are having trouble figuring it out
+  - Ask someone who knows for sure instead of replying with an assumption or incomplete understanding.
+  - Don't be afraid to re-route if you don't have the answer and are having trouble figuring it out.
 - **Don't make promises**
-  - Don’t say “we’ll work on it” or something similar that sets expectations that aren’t met later (e.g. after presenting to core team it turns out you can’t do it)
-  - Be careful saying “that’s a good idea”, don’t just say it to be polite. Instead say something akin to “thanks for the idea”
+  - Don’t say “we’ll work on it” or something similar that sets expectations that aren’t met later (e.g. after presenting to core team it turns out you can’t do it).
+  - Be careful saying “that’s a good idea”, don’t just say it to be polite. Instead say something akin to “thanks for the idea”.
 - **Choose positivity over negativity**
-  - Avoid excuses like “we’re busy”, or “our team is small” and turn a missing feature into an invitation to share a feature idea to be upvoted
+  - Avoid excuses like “we’re busy”, or “our team is small” and turn a missing feature into an invitation to share a feature idea to be upvoted.
 - **Do your best to link documentation as answers**
-  - Allows answers to be easily updated dynamically as documentation is updated
-  - Any questions that should be answered in docs that aren’t should turn into tickets to create that documentation (and post ticket in response)
+  - Allows answers to be easily updated dynamically as documentation is updated.
+  - Any questions that should be answered in docs that aren’t should turn into tickets to create that documentation (and post ticket in response).
 - **Keep community end-user information secure**
   - If you come across a post that includes the person's IP address, domain name, or other information you think should not be disclosed publicly, edit the post to remove this information. Then click the **hide revision** button so that your edits won't be visible to others on the forum.
 - **Be thankful**
-  - Communities really respond well to being praised and thanked for their work
+  - Communities really respond well to being praised and thanked for their work.
   
 Sample Responses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -214,7 +219,7 @@ Sample Responses
 General Issues
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. If an issue has a PR submitted by community, but no associated Jira ticket, leave it open until the PR is merged
+1. If an issue has a PR submitted by community, but no associated Jira ticket, leave it open until the PR is merged.
 
 2. If an issue has a Jira ticket with a ``help-wanted`` label, there is a Help Wanted ticket in GitHub. It can be closed with the following note:
 
@@ -253,7 +258,7 @@ Respond to the issue with the following note:
 
   Thanks, appreciate your feedback @{username}.  
 
-  Would you like to [contribute this in the feature idea forum](https://mattermost.uservoice.com/forums/306457-general/) so it can be discussed, upvoted and considered for a [help wanted ticket](https://docs.mattermost.com/process/help-wanted.html)?
+  Would you like to [contribute this in the feature idea forum](https://mattermost.uservoice.com/forums/306457-general/) so it can be discussed, upvoted, and considered for a [help wanted ticket](https://docs.mattermost.com/process/help-wanted.html)?
 
   Please include a link back to this GitHub issue. If you're interested in implementing, please say so and we'll prioritize the review. 
 
@@ -270,7 +275,7 @@ To ask someone to add a license to a GitHub repo, open an issue with the followi
 
   Would you consider adding a license, such as an MIT or an Apache 2.0 license? 
 
-  To do so, in GitHub you can hit "Create new file" and name a file `LICENSE.txt`
+  To do so, in GitHub you can hit "Create new file" and name a file `LICENSE.txt`.
 
   ![image](https://cloud.githubusercontent.com/assets/177788/19657017/36238482-99d7-11e6-9fd0-f507970891c7.png)
 
@@ -363,19 +368,19 @@ Sample Responses
 
   .. code-block:: text
 
-    Thank you for your feedback.  We are excited to share that [feature] will be available in our [edition] Edition soon.  Please see our forum post for more information: [link to forum post]
+    Thank you for your feedback. We are excited to share that [feature] will be available in our [edition] Edition soon.  Please see our forum post for more information: [link to forum post].
 
  - Shipped Feature Request: 
 
   .. code-block:: text
 
-    Thank you for your feedback.  Mattermost already supports [feature].  You can learn more about it in our documentation:  [link to docs]
+    Thank you for your feedback. Mattermost already supports [feature]. You can learn more about it in our documentation:  [link to docs].
 
 3. Feedback about their experience, not specific to a feature or a product.
 
   .. code-block:: text
 
-    Appreciate the feedback. If your team has suggestions on how to improve Mattermost, we would love to hear more in our feature proposal forum. You get 10 votes there, and each one influences the future of the project: https://mattermost.uservoice.com/
+    Appreciate the feedback. If your team has suggestions on how to improve Mattermost, we would love to hear more in our feature proposal forum. You get 10 votes there, and each one influences the future of the project: https://mattermost.uservoice.com/.
 
   .. code-block:: text
 

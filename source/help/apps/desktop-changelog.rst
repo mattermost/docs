@@ -1,22 +1,93 @@
 Desktop Application Changelog
 ========================================
 
+Release v4.4.0
+----------------------------
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.4.0>`_
+
+- **v4.4.0, release day 2020-02-16**
+
+**Note:** Mattermost v4.4.0 contains low to medium level security fixes. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
+
+**Breaking Changes** 
+
+- Due to moving to a new configuration version to support the new tabbar for the ability to rearrange the server tab order, it is recommended to do a backup of previous config if you want to downgrade your Desktop App version afterwards.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Added support for Certificate Authentication, including PIV Card authentication.
+- Improved server tab organization and visuals with the ability to reorder server tabs via drag-and-drop, notification updates that make it easier to tell when new messages or mentions come in, and a new dark theme.
+- Added a spell checker for Italian language.
+- Added auto focus on Server Display Name input field.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Major version upgrade of Electron to v6.0.0. Electron is the underlying technology used to build the Desktop apps.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where downgrading the app caused login issues.
+- Fixed an issue where Ctrl+C or Ctrl+V didn't work on Electron modals or developer tools.
+- Fixed an issue where navigation with Ctrl/Cmd+Tab stopped on disconnected server.
+- Fixed an issue where a new desktop window was created after clicking on a permalink to a channel on a different server.
+- Fixed an issue where changing the spellchecker on the app did not suggest words in that language.
+- Fixed an issue where the app window didn't save "floating" app position.
+- Fixed an issue where copying and pasting into Atlassian login fields pasted text in the wrong place.
+
+Windows
+^^^^^^^^^^^^^
+
+- Fixed an issue where installing v4.3.1 MSI installer did not remove the previous desktop app version.
+- Fixed an issue where an attachment name would lose its extension if it was edited during download.
+- Fixed an issue where the unread mention badge broke with more than 100 mentions.
+
+Mac
+^^^^^^^^^^^^^
+
+- Fixed an issue where the DMG install window user interface was missing styling.
+- Updated the look of Add New Server icon on the Settings page.
+- Fixed an issue where the app could not recover from a connection error after leaving a computer to sleep for a few days.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- On some Linux distros, a sandbox setting is preventing apps from opening links in the browser (see https://github.com/electron/electron/issues/17972#issuecomment-486927073). While this is fixed for most installers, it is not on the tgz. In this case manual intervention is required via ``$ chmod 4755 <installpath>/chrome-sandbox``.
+- Pressing Enter multiple times during Basic Authentication causes a crash.
+- The confirmation dialog from UAC names MSI installers with random numbers.
+- On apps using GPO configurations, when adding a second server tab, it is possible to drag and drop tabs but they will jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~~
+
+Many thanks to all our contributors. In alphabetical order:
+
+- `allenlai18 <https://github.com/allenlai18>`_, `cpanato <https://github.com/cpanato>`_,  `deanwhillier <https://github.com/deanwhillier>`_, `devinbinnie <https://github.com/devinbinnie>`_, `hunterlester <https://github.com/hunterlester>`_, `JtheBAB <https://github.com/JtheBAB>`_, `jupenur <https://github.com/jupenur>`_, `kethinov <https://github.com/kethinov>`_, `rascasoft <https://github.com/rascasoft>`_, `Willyfrog <https://github.com/Willyfrog>`_, `xalkan <https://github.com/xalkan>`_.
+
 Release v4.3.0
 ----------------------------
 
-- **v4.3.2, release day TBD**
- - `CMD+Z` doesn't undo on the Mac desktop app. `MM-19198 <https://mattermost.atlassian.net/browse/MM-19198>`_
- - Users are unable to zoom in/out except on the first server tab. `MM-19032 <https://mattermost.atlassian.net/browse/MM-19032>`_
- - Right-click + "Copy" does not work in some instances. `MM-19324 <https://mattermost.atlassian.net/browse/MM-19324>`_
- - Unable to exit maximized Youtube videos using the close button if the app is running in full screen. `MM-19226 <https://mattermost.atlassian.net/browse/MM-19226>`_
- - Desktop notifications appear in sequence rather than stacking on Windows. `MM-19363 <https://mattermost.atlassian.net/browse/MM-19363>`_
- - Clicking on notifications when using the Windows MSI (Beta) doesn't focus the app or the channel that triggered the notification. `MM-19510 <https://mattermost.atlassian.net/browse/MM-19510>`_, `MM-19511 <https://mattermost.atlassian.net/browse/MM-19511>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/4.3.2>`__
+
+- **v4.3.2, released 2019-11-29**
+ - Mattermost v4.3.0 contains a low level security fix. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`_.
+ - Fixed an issue where the app started into white screen after a system reboot on Windows. `MM-19649 <https://mattermost.atlassian.net/browse/MM-19649>`_
+ - Fixed an issue where `CMD+Z` didn't undo on the Mac desktop app. `MM-19198 <https://mattermost.atlassian.net/browse/MM-19198>`_
+ - Fixed an issue where users were unable to zoom in/out except on the first server tab. `MM-19032 <https://mattermost.atlassian.net/browse/MM-19032>`_
+ - Fixed an issue where right-click + "Copy" did not work in some instances. `MM-19324 <https://mattermost.atlassian.net/browse/MM-19324>`_
+ - Fixed an issue where email links in profile popovers didn't work. `MM-19596 <https://mattermost.atlassian.net/browse/MM-19596>`_
 - **v4.3.1, released 2019-10-22**
  - Fixed an issue where Mac desktop app was not notarized correctly for installing on MacOS Catalina. `MM-19555 <https://mattermost.atlassian.net/browse/MM-19555>`_
 - **v4.3.0, released 2019-10-17**
  - Original v4.3.0 release
-
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v4.3.0>`__
 
 **Note:** Mattermost v4.3.0 contains medium level security fixes. `Upgrading <http://docs.mattermost.com/administration/upgrade.html>`__ is highly recommended. Details will be posted on our `security updates page <https://about.mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://www.mattermost.org/responsible-disclosure-policy/>`__.
 

@@ -44,7 +44,7 @@ PC Web
     :header: "Browser", "Technical Requirement"
 
     "Chrome", "v77+"
-    "Firefox", "v60+"
+    "Firefox", "v68+"
     "Safari", "v12+"
     "Edge", "v44+"
 
@@ -56,7 +56,7 @@ Mobile Apps
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
 
-    "iOS", "iPhone 5s devices and later with iOS 12+"
+    "iOS", "iPhone 5s devices and later with iOS 11+"
     "Android", "Android devices with Android 7+"
 
 `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
@@ -67,7 +67,7 @@ Mobile Web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 12+ with Safari 12+ or Chrome 77+"
+    "iOS", "iOS 11+ with Safari 12+ or Chrome 77+"
     "Android", "Android 7+ with Chrome 77+"
 
 Email Client
@@ -180,6 +180,6 @@ File usage per user varies significantly across industries. The below benchmarks
 -  **High usage teams** - (25-100 MB/user/month) 
 	- Heaviest utlization comes from teams uploading a high number of large files into Mattermost on a regular basis. Examples include creative teams who share and store artwork and media with tags and commentary in a pipeline production process.
 
-*Example:* A 30-person team with medium usage (5-25 MB/user/month) with a safety factor of 2x would require between 300 MB (30 users \* 5 MB \* 2x safety factor) and 1500 MB (30 users \* 25 MB \* 2x safety factor) of free space in the next year.
+*Example:* A 30-person team with medium usage (5-25 MB/user/month) with a safety factor of 2x would require between 3.5 GB (30 users \* 5 MB \* 12 months \* 2x safety factor) and 17.6 GB (30 users \* 25 MB \* 12 months \* 2x safety factor) of free space in the next year.
 
 It's recommended to review storage utilization at least quarterly to ensure adequate free space is available.

@@ -37,10 +37,10 @@ Configuration Settings
 
 By default, plugins can create and manage bot accounts. To enable bot account creation through the user interface or the RESTful API:
 
-1. Go to **System Console > Integrations > Integration Features**.
-2. Set **Enable Bot Account Creation** to True.
+1. Go to **System Console > Integrations > Bot Accounts**.
+2. Set **Enable Bot Account Creation** to ``true``.
 
-Once set, System Administrators can create bot accounts for integrations in **Integrations > Bot Accounts**.
+Once set, System Administrators can create bot accounts for integrations using the **Integrations > Bot Accounts** link in the description provided.
 
 Bot Account Creation
 -----------------------
@@ -55,7 +55,7 @@ User Interface (UI)
 
 1. Go to **Main Menu > Integrations > Bot Accounts**.
 2. Click **Add Bot Account**.
-3. Set the **Username** of the bot. Username must begin with a letter, and contain between 3 to 22 lowercase characters made up of numbers, letters, and the symbols ".", "-", and "_".
+3. Set the **Username** of the bot. The username must begin with a letter, and contain between 3 and 22 lowercase characters made up of numbers, letters, and the symbols ".", "-", and "_".
 4. (Optional) Upload an image for the **Bot Icon**. This will be used as the profile image of the bot throughout the Mattermost user interface.
 5. (Optional) Set a **Display Name** and **Description**.
 6. (Optional) Choose what role the bot should have. Defaults to **Member**. If you assign **System Admin**, the bot will have access to write in and read any public channels, private channels and direct messages.
@@ -63,10 +63,11 @@ User Interface (UI)
 
 RESTful API
 ^^^^^^^^^^^^^^^^^^^^^^^
-
 Use the RESTful API ``POST /bots`` to create a bot. Must have permissions to create bots.
 
 See our `API documentation <https://api.mattermost.com/#tag/bots>`_ to learn more about creating and managing bots through the API.
+
+To authorize your bot via RESTful API use ``curl -i -H 'authorization: Bearer <Access Token>' http://localhost:8065/api/v4/users/me``. **Access Token** is not the ``Token ID`` and won't be visible again once created.
 
 Command Line Interface (CLI)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -77,7 +78,7 @@ You can use the following CLI command to convert an existing user account to a b
 
   user convert user@example.com --bot
 
-In addition to email, you may identify the user by its username or user id.
+In addition to email, you may identify the user by its username or user ID.
 
 Bot accounts which were converted from user accounts will have their authentication data cleared if they were email/password accounts. Those synced from LDAP/SAML will not have their authentication data cleared so that LDAP/SAML sync performs correctly.
 
@@ -92,7 +93,7 @@ Technical Notes
 -----------------------
 
 Data Model
-^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^
 
 Each bot account has a row in the **Users** table and the **Bots** table. The entries are tied together by ``User.Id = Bot.UserId``.
 
@@ -114,7 +115,7 @@ Frequently Asked Questions
 -----------------------------
 
 Should I migrate all my integrations to use bot accounts?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 For your integrations using RESTful API and plugins, yes. To do so, you can either convert an existing account to a bot, or create a new bot account using the steps outlined above.
 
@@ -132,7 +133,7 @@ Once the plugin is enabled, the plugin posts as the ``github`` account but witho
 If the user is an existing user account you want to preserve, change its username and restart the Mattermost server, after which the plugin will create a bot account with the name ``github``.
 
 How do I convert an existing account to a bot account?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Use the following CLI command to convert an existing user account to a bot:
 
@@ -140,14 +141,14 @@ Use the following CLI command to convert an existing user account to a bot:
 
   user convert user@example.com --bot
 
-In addition to email, you may identify the user by its username or user id.
+In addition to email, you may identify the user by its username or user ID.
 
 Bot accounts which were converted from user accounts will have their authentication data cleared if they were email/password accounts. Those synced from LDAP/SAML will not have their authentication data cleared so that LDAP/SAML sync performs correctly.
 
 How can I quickly test if my bot account is working?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Add the bot to a team and channel you belong to, then use the following curl command to post with the bot.
+Add the bot to a team and channel you belong to, then use the following curl command to post with the bot:
 
 .. code-block:: text
 
@@ -160,7 +161,7 @@ replacing the following parameters:
 - ``<mattermost-url>`` with your Mattermost domain, e.g. ``https://example.mattermost.com``
 
 Do bot access tokens expire?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 No, but you can automate your integration to cycle its token `through the REST API <https://api.mattermost.com/#tag/users%2Fpaths%2F~1users~1%7Buser_id%7D~1tokens%2Fpost>`_.
 
@@ -177,7 +178,7 @@ Mitigations:
 - For Direct Message channels, the channel header distinguishes the bot from a regular user account with a ``BOT`` tag.
 
 What happens when a user who owns bot accounts is disabled?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By default, bot accounts managed by the deactivated user are disabled for enhanced security. Those with permissions to manage bot accounts can re-enable them in **Main Menu > Integrations > Bot Accounts**.
 
@@ -186,7 +187,7 @@ We strongly recommend creating new tokens for the bot, to ensure the user who wa
 If you prefer to have bot accounts remain enabled after user deactivation, set ``DisableBotsWhenOwnerIsDeactivated`` to ``false`` in your ``config.json`` file.
 
 Can bot accounts edit messages through the RESTful API?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Yes. By default, bot accounts can update their own posts.
 
@@ -204,6 +205,6 @@ When AD/LDAP or SAML sync is enabled, you can create bot accounts using the step
 If you need to sync service accounts from AD/LDAP or SAML to Mattermost and use them as bot accounts, `please reach out to us <https://mattermost.com/contact-us>`_ to discuss in detail. You may not need to sync service accounts and use them as bot accounts to meet your use case.
 
 How are bot accounts identified in compliance exports?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-As of v5.14, a field named ``UserType`` is added to Compliance Exports, including Global Relay, Actiance and CSV. The field identifies whether a message was posted by a ``user`` or by a ``bot`` account.  
+As of v5.14, a field named ``UserType`` is added to Compliance Exports, including Global Relay, Actiance, and CSV. The field identifies whether a message was posted by a ``user`` or by a ``bot`` account.  

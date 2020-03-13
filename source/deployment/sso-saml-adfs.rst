@@ -1,5 +1,5 @@
-Configure SAML with Microsoft ADFS
-==================================
+Configure SAML with Microsoft ADFS for Windows Server 2012
+==========================================================
 
 The following process provides steps to configure SAML 2.0 with Microsoft ADFS for Mattermost.
 
@@ -20,7 +20,7 @@ On your ADFS installation, note down the value of the **SAML 2.0/W-Federation UR
 Add a Relying Party Trust
 -------------------------
 
-1. In ADFS management sidebar, go to **AD FS > Trust Relationships > Relying Party Trusts** and click **Add Relying Party Trust**
+1. In ADFS management sidebar, go to **AD FS > Trust Relationships > Relying Party Trusts** and click **Add Relying Party Trust**.
 
 	.. image:: ../../source/images/adfs_1_add_new_relying_party_trust.PNG
 
@@ -151,13 +151,19 @@ Next, we export the identity provider certificate, which will be later uploaded 
 
 You’re now about to finish configuring SAML for Mattermost!
 
-Configure SAML sign-in for Mattermost
+Configure SAML Sign-in for Mattermost
 --------------------------------------
 
-1. Start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
-  - *SAML SSO URL*: **SAML 2.0/W-Federation URL** ADFS Endpoint you copied earlier.
-  - *Identity Provider Issuer URL*: ``Relying party trust identifier`` from ADFS you specified earlier.
-  - *Identity Provider Public Certificate*: ``X.509 Public Certificate`` you downloaded earlier.
+Create a metadata URL by appending "FederationMetadata/2007-06/FederationMetadata.xml" to the root URL of the ADFS server, for example: ``https://<adfs.domain.com>/federationmetadata/2007-06/FederationMetadata.xml>``. 
+
+Next, start Mattermost server and sign into Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**, paste metadata URL in the **Identity Provider Metadata URL** field, and then select **Get SAML Metadata from IdP**.
+
+This populates the **SAML SSO URL** and the **Identity Provider Issuer URL** fields automatically and the Identity Provider Public Certificate is also downloaded from the server and set locally.
+
+Alternatively you can enter the following fields manually:
+  - **SAML SSO URL:** **SAML 2.0/W-Federation URL** ADFS Endpoint you copied earlier.
+  - **Identity Provider Issuer URL:** ``Relying party trust identifier`` from ADFS you specified earlier.
+  - **Identity Provider Public Certificate:** ``X.509 Public Certificate`` you downloaded earlier.
 
 	.. image:: ../../source/images/adfs_22_mattermost_basics.PNG
 
@@ -183,7 +189,7 @@ For Mattermost servers running 3.3 and earlier, the first name and last name att
 
 7. Click **Save**.
 
-8. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > General > Users and Teams** in prior versions or **System Console** > **Site Configuration** > **Users and Teams** in versions after 5.12 and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
+8. (Optional) If you configured First Name Attribute and Last Name Attribute, go to **System Console > Site Configuration > Users and Teams** (or **System Console > General > Users and Teams** in versions prior to 5.12) and set **Teammate Name Display** to *Show first and last name*. This is recommended for a better user experience.
 
 You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Account Settings > General > Sign-in Method > Switch to SAML SSO** and sign in with your SAML credentials to complete the switch.
 
@@ -194,5 +200,3 @@ You may also configure SAML for ADFS by editing ``config.json`` to enable SAML b
 .. include:: sso-saml-ldapsync.rst
 
 .. include:: sso-saml-faq.rst
-
-.. include:: sso-saml-troubleshooting.rst

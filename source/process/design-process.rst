@@ -15,7 +15,7 @@ Principles
 Process
 -------
 
-1. **Define the "Why".**
+1. **Define the "Why"**
 
     - Research customer/user requirements
     - Write the user stories (potentially for different personas) based on the requirements
@@ -35,7 +35,7 @@ Process
       - Why are we building it? 
       - Should we build this, or should we not? 
       
-2. **Brainstorm.**
+2. **Brainstorm**
     
     - Research a variety of existing solutions
     - Brainstorm different design concepts
@@ -47,13 +47,13 @@ Process
     
       - What are the design options for the given scenarios?
      
-3. **Evaluate options.**
+3. **Evaluate options**
 
     - Identify the most promising design concepts
     
-      - Wireframe / develop concepts as needed
+      - Wireframe/develop concepts as needed
       
-    - List pros / cons for each option
+    - List pros/cons for each option
     - Evaluate each option based on:
     
       - How well each design addresses user stories
@@ -72,11 +72,11 @@ Process
         - What are the constraints we need to consider? 
         - How does this design compare to existing solutions? 
     
-4. **Develop prototype.**
+4. **Develop prototype**
 
     - Summarize context for the design (preferably in Google Slides), including: 
     
-      - Goal / “Why"
+      - Goal/“Why"
       - User Stories
       - Success Metrics
       
@@ -90,14 +90,14 @@ Process
       
         - List things that are purposefully left out, to be addressed at another time
         
-    - Work on prototype / mockups for the selected design
+    - Work on prototype/mockups for the selected design
     
       - Consider pair design
       - Use mockups (preferably in slideshow or prototyping software), with text that supports the design
       - Include flow of screens, so transitions are clear
       - Make sure to think about: 
       
-        - Mobile apps (mobile view + tablet view)
+        - Mobile apps (mobile view and tablet view)
         - Notifications (desktop, email, and push)
         - Both single and multiple team cases
         - Potential performance issues
@@ -113,7 +113,7 @@ Process
       - What does the text say? 
       - What does the UI look like? 
       
-5. **Review, test, and iterate.**
+5. **Review, test, and iterate**
 
     - Pair review with someone
     - Share with team
@@ -122,18 +122,19 @@ Process
       - Set the context for what stage the design is at, and what they should be reviewing
       
     - Share with interested customers and users
-    - Test the prototype / mockups
+    - Test the prototype/mockups
     
       - If possible, find someone to test the design on
       - Give tasks based on the already defined user stories
       - Observe and have them think aloud
       
     - Iterate based on feedback
-    - *Questions this stage should answer:*
+   
+   - *Questions this stage should answer:*
     
       - Are there any potential issues with the design? 
       
-6. **Final review.**
+6. **Final review**
 
     - Identify people who should sign off on the design before implementation (include UX Design, PM, Dev, and Test)
     - Hold a meeting to review the design
@@ -151,16 +152,17 @@ Process
         - How could this design be used in the future?
         - Are all corner cases addressed? Check for: 
         
-          - Mobile apps (mobile view + tablet view)
+          - Mobile apps (mobile view and tablet view)
           - Notifications (desktop, email, and push)
           - Both single and multiple team cases
           - Potential performance issues
           
     - Update design based on feedback until everyone signs off
+    
     - *Questions this stage should answer:*
     
       - Is this design ready to be implemented? 
     
-7. **Break into tickets.**
+7. **Break into tickets**
 
     - Dev breaks the spec into tickets, and reviews with PM so everyone is on the same page about the plan

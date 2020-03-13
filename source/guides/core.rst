@@ -36,6 +36,7 @@ Release Process
    /process/security-release*
    /process/mobile-release*
    /process/release-tips*
+   /process/release-scorecard-definitions*
 
 Community Process
 -------------------
@@ -48,6 +49,7 @@ Community Process
    /process/community-systems*
    /process/help-wanted*
    /process/community-guidelines*
+   /process/how-to-run-a-hackathon*
 
 Product Management Handbook
 ------------------------------
@@ -75,6 +77,7 @@ Documentation Style Guide
    :glob:
    
    /process/documentation-guidelines*
+   /process/documentation-UItext-guidelines*
 
 Joining the Team 
 -------------------------
