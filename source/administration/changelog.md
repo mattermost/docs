@@ -4,21 +4,33 @@ This changelog summarizes updates to [Mattermost Team Edition](http://www.matter
 
 Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
 
-## Release v5.22 - 
+## Release v5.22 - [Feature Release](https://docs.mattermost.com/process/release-faq.html#release-overview)
 
 **Release day: 2020-04-16**
 
 ### Highlights
  - Version 2 of the server Audit/Logging System
- - Channel Moderation Settings
+ - Channel Moderation Settings (Beta)
  - Bulk Actions in Mattermost Server
  - Search engine backend
+ - Read Only channels
+ - "Unarchive Channel" option to archived channels menu
 
 ### Improvements
+ - Promoted Dutch and Russian to Beta.
+ - Enabled notification sounds in Firefox.
+ - Updated the permalink view.
+ - Added a "Close Channel" option to DM menu
+ - UI / UX quickwins, such as added a "Close Group Message" option to Group Message menu.
  - Allow searching for files through plugin API.
  - Added support for setting Office365Settings Directory (tenant) Id in config.json.
  - Extended the payload of slash commands to include a map of the users and channels mentioned in the message to their corresponding identifiers.
  - Allowed prepackaged and local plugins to set ReleaseNotesURL.
+ - In interactive dialogs, render autocomplete lists below the input field by default.
+ - Keyboard shortcut to open/close the right-hand sidebar.
+ - Keyboard shortcut for adding reactions to last message in channel or thread.
+ - Ability to switch teams via keyboard.
+ - Add infinite scroll to Select Teams screen.
 
 ### Bug Fixes
  - Fixed data race conditions happening when accessing ``Post.Props``.
@@ -27,6 +39,9 @@ Also see [changelog in progress](http://bit.ly/2nK3cVf) for the next release.
  - Fixed a SIGSEGV when exporting to CSV.
  - Fixed an issue where Elasticsearch error was output when running unrelated commands.
  - Fixed an issue where the autoresponder responded to every bot post.
+ - Fixed an issue where a user's role was not reflected correctly in the Channel Members Modal when it was updated after the modal was opened.
+ - Fixed an issue where a link to Integrations page was not shown if a custom slash command and webhooks were disabled and bot accounts were enabled.
+ - Fixed an issue where verification emails were still sent on servers with SMTP configured when`Enable Email Notifications` and `Require Email Verification` were disabled in the System Console.
 
 ### Config.json
  - EnableOpenTracing
