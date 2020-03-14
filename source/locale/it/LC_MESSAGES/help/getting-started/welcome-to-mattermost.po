@@ -46,7 +46,7 @@ msgstr ""
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:13
 msgid "Some of the major benefits of using Mattermost include:"
-msgstr "Alcuni del maggioni benefici dell'uso di Mattermost sono:"
+msgstr "Alcuni dei maggiori benefici dell'uso di Mattermost sono:"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:15
 msgid "Direct 1:1 and group messaging with your colleagues"
