@@ -1,0 +1,396 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/gitlab-process.rst:2
+msgid "GitLab Process"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:4
+msgid ""
+"This document outlines the processes for supporting the Mattermost "
+"package in GitLab Omnibus."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:7
+msgid "Contents"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:10
+msgid "Merge Requests"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:12
+msgid ""
+"To submit a merge request (MR) to GitLab for taking the next Mattermost "
+"version, follow these steps. The MR must be merged by the 7th of the "
+"month to be included in a GitLab release."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:14
+msgid ""
+"Check out the latest version of GitLab Omnibus and make a branch with the"
+" following changes:"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:16
+msgid ""
+"Changes to Mattermost version number (`default_version "
+"<https://gitlab.com/gitlab-org/omnibus-"
+"gitlab/blob/master/config/software/mattermost.rb#L20>`__) and md5 sum of "
+"the final TE build (`source md5 <https://gitlab.com/jasonblais/omnibus-"
+"gitlab/blob/master/config/software/mattermost.rb#L23>`__) in  "
+"`config/software/mattermost.rb <https://gitlab.com/gitlab-org/omnibus-"
+"gitlab/blob/master/config/software/mattermost.rb>`__"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:17
+msgid ""
+"Update to the `GitLab changelog <https://gitlab.com/gitlab-org/omnibus-"
+"gitlab/blob/master/CHANGELOG.md>`__ by using ``/scripts/changelog`` "
+"script to create a changelog entry"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:18
+msgid ""
+"Config.json updates to `gitlab.rb <https://gitlab.com/gitlab-org/omnibus-"
+"gitlab/blob/master/files/gitlab-config-template/gitlab.rb.template>`__, "
+"`attributes default.rb <https://gitlab.com/gitlab-org/omnibus-"
+"gitlab/blob/master/files/gitlab-"
+"cookbooks/mattermost/attributes/default.rb>`__ and `config.json.erb "
+"<https://gitlab.com/gitlab-org/omnibus-gitlab/blob/master/files/gitlab-"
+"cookbooks/mattermost/templates/default/config.json.erb>`__ with new TE "
+"config settings (`see example <https://gitlab.com/gitlab-org/omnibus-"
+"gitlab/merge_requests/1855>`__)"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:19
+msgid ""
+"Update to `GitLab Mattermost documentation "
+"<https://docs.gitlab.com/omnibus/gitlab-mattermost/README.html>`__"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:21
+msgid ""
+"Build GitLab and test it locally `following these steps "
+"<https://docs.mattermost.com/developer/developer-flow.html#testing-with-"
+"gitlab-omnibus>`__."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:22
+msgid ""
+"Submit a MR to the `master branch of Gitlab <https://gitlab.com/gitlab-"
+"org/omnibus-gitlab>`__, including a summary of updates in Team Edition "
+"that are relevant to GitLab"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:23
+msgid "Post a link to the MR in the Release Discussion channel."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:24
+msgid ""
+"Check daily for updates until the MR is merged, ensuring it gets merged "
+"by the 7th of the month."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:25
+msgid ""
+"Once the MR is merged and included in an RC, `test upgrade following "
+"these steps "
+"<https://docs.google.com/document/d/1mbeu2XXwCpbz3qz7y_6yDIYBToyY2nW0NFZq9Gdei1E/edit#heading=h.ncq9ltn04isg>`__."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:27
+msgid ""
+"If the release contains a security update, PM owner emails @marin and "
+"@briann in GitLab with a link to the MR, and all subsequent backports."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:30
+msgid "Testing"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:32
+msgid ""
+"The following steps are taken to test the Mattermost package before each "
+"merge request to GitLab Omnibus:"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:34
+msgid ""
+"Pull the latest master build of GitLab Omnibus, using the `nightly "
+"Omnibus packages <https://packages.gitlab.com/gitlab/nightly-builds>`_."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:35
+msgid ""
+"Update ``default_version`` and ``md5`` variables for the new Mattermost "
+"version in `config/softwater/mattermost.rb`."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:45
+msgid ""
+"Update the list of Mattermost versions associated with each GitLab "
+"release `in the GitLab documentation <https://docs.gitlab.com/omnibus"
+"/gitlab-mattermost/#upgrading-gitlab-mattermost>`_, and add a changelog "
+"entry."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:46
+msgid ""
+"Build GitLab Omnibus `using these instructions "
+"<https://gist.github.com/hmhealey/b6d3e42a88563ca43f03152e8b86592b"
+"#gitlab-omnibus>`_."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:47
+msgid "Install the generated ``.deb`` file on a local test server."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:49
+msgid ""
+"The Mattermost team then tests the upgrade process and validates the "
+"packaging code and OAuth setup which have historically been the main "
+"source of issues. Other test areas include:"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:51
+msgid "Pre-provisioning OAuth configuration automatically on the Omnibus package."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:52
+msgid "Mattermost ChatOps slash command integration."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:53
+msgid "OAuth team creation option in GitLab Omnibus."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:56
+msgid "Upgrade Process"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:58
+msgid ""
+"Follow these steps to test the upgrade process for Mattermost in GitLab "
+"Omnibus."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:60
+msgid "The current test servers are located at:"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:62
+msgid ""
+"`http://gitlab-rc-testing.spinmint.com <http://gitlab-rc-"
+"testing.spinmint.com>`__ - The GitLab instance itself"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:63
+msgid ""
+"`http://gitlab-rc-testing2.spinmint.com <http://gitlab-rc-"
+"testing2.spinmint.com>`__ - GitLab Mattermost"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:65
+msgid ""
+"The root admin account for them has username `root` and password "
+"`Password1`."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:67
+msgid ""
+"Connect to the previously configured instance using the key you used to "
+"set it up. The host name is ``ubuntu@gitlab-rc-testing.spinmint.com``."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:68
+msgid "Make sure your package manager is configured to allow for Gitlab RCs:"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:70
+msgid ""
+"Go to `https://packages.gitlab.com/gitlab/unstable "
+"<https://packages.gitlab.com/gitlab/unstable>`__."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:71
+msgid ""
+"Click on the newest release candidate that’s marked CE and is for "
+"Ubuntu/Trusty."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:72
+msgid ""
+"Run the first command listed on that page on your server. It looks "
+"something like:"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:78
+msgid "Update the package manager"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:84
+msgid ""
+"Update GitLab by running the second command listed on the page you opened"
+" on step 2. It looks something like:"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:90
+msgid "Reconfigure GitLab:"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:96
+msgid "Restart GitLab:"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:102
+msgid "To confirm the upgrade was successful:"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:104
+msgid ""
+"Go to `http://gitlab-rc-testing2.spinmint.com  <http://gitlab-rc-"
+"testing2.spinmint.com >`__."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:105
+msgid "Create an account and log in."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:106
+msgid ""
+"Confirm the correct version number in **Main Menu** > **About "
+"Mattermost**."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:108
+msgid ""
+"To help with debugging, including a list of useful commands, see the "
+"`support handbook <https://docs.mattermost.com/process/support.html"
+"#gitlab-issues>`_."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:111
+msgid "Service-Level Agreement (SLA)"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:113
+msgid ""
+"Mattermost has created a ``mattermost-support`` account in GitLab for "
+"support issues, and has subscribed to the ``mattermost`` label in the "
+"following projects:"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:115
+msgid "`omnibus-gitlab <https://gitlab.com/gitlab-org/omnibus-gitlab>`__"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:116
+msgid "`gitlab-ce <https://gitlab.com/gitlab-org/gitlab-ce>`__"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:117
+msgid "`gitlab-ee <https://gitlab.com/gitlab-org/gitlab-ee>`__"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:119
+msgid ""
+"When a `mattermost` label is applied, an email notification is sent to "
+"the technical support team who answers the question within two business "
+"days using the ``mattermost-support`` account."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:122
+msgid "GitLab Premier Support Issues"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:124
+msgid ""
+"GitLab has a `4-hour support window for their premier support customers "
+"<https://about.gitlab.com/features/premium-support/>`__ and Mattermost "
+"has set up a process to support this window."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:126
+msgid ""
+"When a premier support issue requires escalation to the Mattermost "
+"support team, GitLab assigns the issue to the ``mattermost-support`` "
+"account. This assignment sends an email notification, which is "
+"automatically escalated to the critical level technical support who "
+"answers the question within 4 hours using the ``mattermost-support`` "
+"account."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:129
+msgid "Monthly Meetings"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:131
+msgid ""
+"Changes and features affecting GitLab Omnibus are communicated via "
+"`GitLab issues <https://gitlab.com/gitlab-org/gitlab-ce/issues>`__ and "
+"`GitLab Slack channel <https://gitlab.slack.com>`__."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:133
+msgid ""
+"Moreover, a recurring monthly meeting between a product manager at GitLab"
+" and Mattermost is organized to cover"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:135
+msgid "concerns/issues from GitLab Omnibus team,"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:136
+msgid ""
+"new upcoming changes or features in Mattermost affecting GitLab Omnibus, "
+"and"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:137
+msgid "other miscellaneous queued items."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:139
+msgid ""
+"Optionally, an engineer from both GitLab and Mattermost teams also joins "
+"the meeting."
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:142
+msgid "Templates"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:145
+msgid "GitLab announcement proposal"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:158
+msgid "GitLab forum responses"
+msgstr ""
+
+#: ../../source/process/gitlab-process.rst:160
+msgid ""
+"See `sample forum responses listed here "
+"<https://docs.mattermost.com/process/community-guidelines.html#sample-"
+"responses>`__."
+msgstr ""
+

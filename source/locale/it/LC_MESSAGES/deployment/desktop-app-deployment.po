@@ -1,0 +1,205 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/desktop-app-deployment.rst:2
+msgid "Desktop App Deployment Guide"
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:4
+msgid ""
+"Mattermost desktop applications are available for Windows, Mac and Linux "
+"operating systems."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:6
+msgid ""
+"You can `download the apps directly from our download page "
+"<https://about.mattermost.com/downloads/>`__ and visit our `installation "
+"guides <https://docs.mattermost.com/install/desktop.html>`__ for help "
+"during setup and for troubleshooting tips."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:8
+msgid ""
+"This page provides a guide on how to customize and distribute your own "
+"Mattermost Desktop App, and how to distribute the official Windows "
+"Desktop App silently to end users, pre-configured with the server URL and"
+" other app settings."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:16
+msgid "Custom Build Configuration"
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:18
+msgid ""
+"You can customize and distribute your own Mattermost Desktop application "
+"by configuring `src/common/config/buildConfig.js "
+"<https://github.com/mattermost/desktop/blob/master/src/common/config/buildConfig.js>`__."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:20
+msgid ""
+"Configure the Desktop App's `buildConfig.js` file. There are multiple "
+"parameters you can configure to customize the user experience:"
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:23
+msgid "`defaultTeams`"
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:28
+#: ../../source/deployment/desktop-app-deployment.rst:50
+#: ../../source/deployment/desktop-app-deployment.rst:64
+msgid "Description"
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:26
+msgid ""
+"List of server URLs and their display names added to the desktop app by "
+"default, which the user cannot modify. Users can still add servers "
+"`through the Server Management page "
+"<https://docs.mattermost.com/help/apps/desktop-guide.html#server-"
+"management>`__ unless ``enableServerManagement`` is set to false."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:28
+msgid "Expects an array of key-value pairs."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:42
+msgid "Example"
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:45
+msgid "`helpLink`"
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:48
+msgid ""
+"The URL of the help documentation in Help > Learn More menu bar item. If "
+"none is specified, the menu option is hidden."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:50
+msgid "Expects a string."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:56
+#: ../../source/deployment/desktop-app-deployment.rst:69
+msgid "Examples"
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:59
+msgid "`enableServerManagement`"
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:62
+msgid ""
+"Controls whether users can add, edit, or remove servers on the app "
+"settings page. If set to false, at least one server must be specified for"
+" ``defaultTeams`` or else users cannot interact with any servers."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:64
+msgid "Expects a boolean, true or false."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:71
+msgid ""
+"To build the application, follow the `Mattermost Desktop Development "
+"Guide <https://github.com/yuya-"
+"oc/desktop/blob/master/docs/development.md>`__."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:74
+msgid "Windows App: Pre-Configuration and Silent Deployment"
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:76
+msgid ""
+"You can distribute the official Windows Desktop App silently to end "
+"users, pre-configured with the server URL. You can also set all the `app "
+"settings <https://docs.mattermost.com/help/apps/desktop-guide.html#app-"
+"options>`__ except for the **Start app on login** option."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:78
+msgid ""
+"Download the latest Windows installer from the `Mattermost download page "
+"<https://about.mattermost.com/download/#mattermostApps>`__."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:80
+msgid "Move the executable file into a shared place such as a file server."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:82
+msgid "To create a batch file in Windows:"
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:84
+msgid "Open a text editor of your choice, such as Notepad or Notepad++."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:85
+msgid "Copy and paste the following commands in the text file:"
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:120
+msgid ""
+"Instead of using this command to install the Desktop App into a shared "
+"folder, you can also copy the executable to the folder before running it."
+" This allows the shared folder to only require read-only permissions."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:122
+msgid ""
+"Save the text file with the extension .bat. For instance, mattermost-app-"
+"install.bat."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:123
+msgid ""
+"Use standard software asset management tools to distribute and deploy the"
+" batch file to each user."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:125
+msgid ""
+"Once run, the desktop app is added to the user’s local directory, along "
+"with the pre-configured config.json file. The installer creates a "
+"shortcut for the Desktop App in the user's start menu; if a zip version "
+"is used, you need to create the shortcut manually."
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:128
+msgid "Windows App: Silently Removing the app"
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:130
+msgid ""
+"To remove the app silently from the computer of a user, you can run the "
+"following command :"
+msgstr ""
+
+#: ../../source/deployment/desktop-app-deployment.rst:137
+msgid "The exe needs to be closed when this command is run"
+msgstr ""
+

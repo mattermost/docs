@@ -1,0 +1,1571 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/install-rhel-7.rst:5
+msgid "Installing Mattermost on RHEL 7"
+msgstr ""
+
+#: ../../source/install/install-rhel-7.rst:7
+msgid ""
+"You can also use these instructions to install Mattermost on CentOS 7, "
+"Oracle Linux 7, or Scientific Linux 7. With the exception of the "
+"operating system that you install, the process is identical."
+msgstr ""
+
+#: ../../source/install/install-common-intro.rst:1
+msgid ""
+"A complete Mattermost installation consists of three major components: a "
+"proxy server, a database server, and the Mattermost server. You can "
+"install all components on one machine, or you can install each component "
+"on its own machine. If you have only two machines, then install the proxy"
+" and the Mattermost server on one machine, and install the database on "
+"the other machine."
+msgstr ""
+
+#: ../../source/install/install-common-intro.rst:3
+msgid ""
+"For the database, you can install either MySQL or PostgreSQL. The proxy "
+"is NGINX."
+msgstr ""
+
+#: ../../source/install/install-common-intro.rst:6
+msgid ""
+"If you have any problems installing Mattermost, see the `troubleshooting "
+"guide <https://docs.mattermost.com/install/troubleshooting.html>`__. For "
+"help with inviting users to your system, see `inviting team members "
+"<https://docs.mattermost.com/help/getting-started/managing-members.html"
+"#inviting-team-members>`__ and other `getting started information "
+"<https://docs.mattermost.com/guides/user.html#getting-started>`__. To "
+"submit an improvement or correction, click  **Edit** at the top of this "
+"page."
+msgstr ""
+
+#: ../../source/install/install-rhel-7.rst:13
+msgid ""
+"Install and configure the components in the following order. Note that "
+"you need only one database, either MySQL or PostgreSQL."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-server.rst:4
+msgid "Installing Red Hat Enterprise Linux 7"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-server.rst:6
+msgid ""
+"Install the 64-bit version of RHEL 7 on each machine that hosts one or "
+"more of the components."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-server.rst:8
+msgid "**To install RHEL 7 Server:**"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-server.rst:10
+msgid ""
+"To install RHEL 7, see the `RedHat Installation Instructions "
+"<https://access.redhat.com/documentation/en-"
+"US/Red_Hat_Enterprise_Linux/7/html/Installation_Guide/>`__."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-server.rst:12
+msgid ""
+"After the system is installed, make sure that it's up to date with the "
+"most recent security patches. Open a terminal window and issue the "
+"following commands:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-server.rst:14
+msgid "``sudo yum update``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-server.rst:16
+msgid "``sudo yum upgrade``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-server.rst:18
+msgid ""
+"Now that the system is up to date, you can start installing the "
+"components that make up a Mattermost system."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:4
+msgid "Installing MySQL Database Server"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:6
+msgid ""
+"Install and set up the database for use by the Mattermost server. You can"
+" install either MySQL or PostgreSQL."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:8
+msgid "**To install MySQL 5.7 on RHEL 7:**"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:10
+#: ../../source/install/install-rhel-7-postgresql.rst:6
+msgid ""
+"Log in to the server that will host the database, and open a terminal "
+"window."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:12
+msgid "Download the MySQL Yum repository from dev.mysql.com."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:14
+msgid ""
+"``wget http://dev.mysql.com/get/mysql57-community-release-"
+"el7-9.noarch.rpm``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:16
+#: ../../source/install/install-rhel-7-postgresql.rst:19
+msgid "Install the Yum repository from the file that you downloaded."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:18
+msgid "``sudo yum localinstall mysql57-community-release-el7-9.noarch.rpm``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:20
+msgid "Install MySQL."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:22
+msgid "``sudo yum install mysql-community-server``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:24
+msgid "Start the MySQL server."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:26
+msgid "``sudo systemctl start mysqld.service``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:29
+msgid ""
+"The first time that you start MySQL, the superuser account "
+"``'root'@'localhost'`` is created and a temporary password is generated "
+"for it."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:30
+msgid ""
+"Also the first time that you start MySQL, the ``validate_password`` "
+"plugin is installed. The plugin forces passwords to contain at least one "
+"upper case letter, one lower case letter, one digit, and one special "
+"character, and that the total password length is at least 8 characters."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:32
+msgid ""
+"Obtain the root password that was generated when you started MySQL for "
+"the first time."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:34
+msgid "``sudo grep 'temporary password' /var/log/mysqld.log``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:36
+msgid ""
+"Change the root password. Login with the password that you obtained from "
+"the previous step."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:38
+msgid "``mysql -u root -p``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:40
+msgid ""
+"Change the password. At the mysql prompt, type the following command. Be "
+"sure to replace ``Password42!`` with the password that you want to use."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:42
+msgid "``mysql> ALTER USER 'root'@'localhost' IDENTIFIED BY 'Password42!';``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:44
+msgid "Set MySQL to start automatically when the machine starts."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:46
+msgid "``sudo systemctl enable mysqld``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:48
+#: ../../source/install/install-rhel-7-postgresql.rst:51
+msgid "Create the Mattermost user 'mmuser'."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:50
+msgid "``mysql> create user 'mmuser'@'%' identified by 'mmuser-password';``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:53
+#: ../../source/install/install-rhel-7-postgresql.rst:56
+msgid "Use a password that is more secure than 'mmuser-password'."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:54
+msgid ""
+"The '%' means that mmuser can connect from any machine on the network. "
+"However, it's more secure to use the IP address of the machine that hosts"
+" Mattermost. For example, if you install Mattermost on the machine with "
+"IP address 10.10.10.2, then use the following command:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:56
+msgid ""
+"``mysql> create user 'mmuser'@'10.10.10.2' identified by 'mmuser-"
+"password';``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:58
+#: ../../source/install/install-rhel-7-postgresql.rst:47
+msgid "Create the Mattermost database."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:60
+msgid "``mysql> create database mattermost;``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:62
+msgid "Grant access privileges to the user 'mmuser'."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:64
+msgid "``mysql> grant all privileges on mattermost.* to 'mmuser'@'%';``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mysql.rst:66
+#: ../../source/install/install-rhel-7-postgresql.rst:127
+msgid ""
+"With the database installed and the initial setup complete, you can now "
+"install the Mattermost server."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:4
+msgid "Installing PostgreSQL Database"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:8
+msgid "Download the PostgreSQL 9.4 Yum repository."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:10
+msgid "For RHEL 7"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:11
+msgid ""
+"``curl -O "
+"https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64"
+"/pgdg-redhat94-9.4-3.noarch.rpm``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:12
+msgid "For CentOS 7"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:13
+msgid ""
+"``curl -O "
+"https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64"
+"/pgdg-centos94-9.4-3.noarch.rpm``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:14
+msgid "For Scientific Linux"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:15
+msgid ""
+"``curl -O "
+"https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64"
+"/pgdg-sl94-9.4-3.noarch.rpm``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:17
+msgid "For Oracle"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:17
+msgid ""
+"``curl -O "
+"https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64"
+"/pgdg-oraclelinux-9.4-3.noarch.rpm``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:21
+msgid "``sudo yum localinstall pgdg-*-9.4-3.noarch.rpm``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:23
+msgid "Install PostgreSQL."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:25
+msgid "``sudo yum install postgresql94-server postgresql94-contrib``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:27
+msgid "Initialize the database."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:29
+msgid "``sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:31
+msgid "Set PostgreSQL to start on boot."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:33
+msgid "``sudo systemctl enable postgresql-9.4``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:35
+msgid "Start the PostgreSQL server."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:37
+msgid "``sudo systemctl start postgresql-9.4``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:39
+msgid ""
+"Switch to the *postgres* Linux user account that was created during the "
+"installation."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:41
+msgid "``sudo -iu postgres``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:43
+msgid "Start the PostgreSQL interactive terminal."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:45
+msgid "``psql``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:49
+msgid "``postgres=# CREATE DATABASE mattermost;``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:53
+msgid "``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:58
+msgid "Grant the user access to the Mattermost database."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:60
+msgid "``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:62
+msgid "Exit the PostgreSQL interactive terminal."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:64
+msgid "``postgres=# \\q``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:66
+msgid "Log out of the *postgres* account."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:68
+msgid "``exit``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:70
+msgid ""
+"(Optional) If you use a different server for your database and the "
+"Mattermost app server, you may allow PostgreSQL to listen on all assigned"
+" IP Addresses. To do so, open "
+"``/etc/postgresql/9.5/main/postgresql.conf`` as root in a text editor. As"
+" a best practice, ensure that only the Mattermost server is able to "
+"connect to the PostgreSQL port using a firewall."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:72
+msgid "Open ``/var/lib/pgsql/9.4/data/postgresql.conf`` as root in a text editor."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:74
+#: ../../source/install/install-rhel-7-postgresql.rst:92
+msgid "Find the following line:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:76
+msgid "``#listen_addresses = 'localhost'``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:78
+msgid "Uncomment the line and change ``localhost`` to ``*``:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:80
+msgid "``listen_addresses = '*'``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:82
+msgid "Restart PostgreSQL for the change to take effect:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:84
+msgid "``sudo systemctl restart postgresql-9.4``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:86
+msgid ""
+"Modify the file ``pg_hba.conf`` to allow the Mattermost server to "
+"communicate with the database."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:88
+msgid "**If the Mattermost server and the database are on the same machine**:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:90
+#: ../../source/install/install-rhel-7-postgresql.rst:102
+msgid "Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as root in a text editor."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:94
+msgid "``local   all             all                        peer``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:96
+msgid "Change ``peer`` to ``trust``:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:98
+msgid "``local   all             all                        trust``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:100
+msgid "**If the Mattermost server and the database are on different machines**:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:104
+msgid ""
+"Add the following line to the end of the file, where *{mattermost-server-"
+"IP}* is the IP address of the machine that contains the Mattermost "
+"server."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:106
+msgid "``host all all {mattermost-server-IP}/32 md5``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:108
+msgid "Reload PostgreSQL:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:110
+msgid "``sudo systemctl reload postgresql-9.4``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:112
+msgid "Verify that you can connect with the user *mmuser*."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:114
+msgid ""
+"If the Mattermost server and the database are on the same machine, use "
+"the following command:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:116
+msgid "``psql --dbname=mattermost --username=mmuser --password``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:118
+msgid ""
+"If the Mattermost server is on a different machine, log into that machine"
+" and use the following command:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:120
+msgid ""
+"``psql --host={postgres-server-IP} --dbname=mattermost --username=mmuser "
+"--password``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:123
+msgid ""
+"You might have to install the PostgreSQL client software to use the "
+"command."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:125
+msgid ""
+"The PostgreSQL interactive terminal starts. To exit the PostgreSQL "
+"interactive terminal, type ``\\q`` and press **Enter**."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:4
+msgid "Installing Mattermost Server"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:6
+msgid "Install Mattermost Server on a 64-bit machine."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:8
+msgid "Assume that the IP address of this server is 10.10.10.2"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:10
+msgid "**To install Mattermost Server on RHEL 7**"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:12
+msgid ""
+"Log in to the server that will host Mattermost Server and open a terminal"
+" window."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:14
+msgid ""
+"Download `the latest version of the Mattermost Server "
+"<https://about.mattermost.com/download/>`__. In the following command, "
+"replace ``X.X.X`` with the version that you want to download:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:16
+msgid ""
+"``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:18
+msgid "Extract the Mattermost Server files."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:20
+msgid "``tar -xvzf *.gz``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:22
+msgid "Move the extracted file to the ``/opt`` directory."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:24
+msgid "``sudo mv mattermost /opt``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:26
+msgid "Create the storage directory for files."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:28
+msgid "``sudo mkdir /opt/mattermost/data``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:31
+msgid ""
+"The storage directory will contain all the files and images that your "
+"users post to Mattermost, so you need to make sure that the drive is "
+"large enough to hold the anticipated number of uploaded files and images."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:33
+msgid ""
+"Set up a system user and group called ``mattermost`` that will run this "
+"service, and set the ownership and permissions."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:35
+msgid "``sudo useradd --system --user-group mattermost``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:36
+msgid "``sudo chown -R mattermost:mattermost /opt/mattermost``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:37
+msgid "``sudo chmod -R g+w /opt/mattermost``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:39
+msgid ""
+"Set up the database driver in the file "
+"``/opt/mattermost/config/config.json``. Open the file as root in a text "
+"editor and make the following changes:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:41
+msgid "If you are using PostgreSQL:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:42
+msgid "Set ``\"DriverName\"`` to ``\"postgres\"``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:43
+msgid ""
+"Set ``\"DataSource\"`` to the following value, replacing ``<mmuser-"
+"password>`` and ``<host-name-or-IP>`` with the appropriate values:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:44
+msgid ""
+"``\"postgres://mmuser:<mmuser-password>@<host-name-or-"
+"IP>:5432/mattermost?sslmode=disable&connect_timeout=10\"``."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:45
+msgid "If you are using MySQL:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:46
+msgid "Set ``\"DriverName\"`` to ``\"mysql\"``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:47
+msgid ""
+"Set ``\"DataSource\"`` to the following value, replacing ``<mmuser-"
+"password>`` and ``<host-name-or-IP>`` with the appropriate values. Also "
+"make sure that the database name is ``mattermost`` instead of "
+"``mattermost_test``:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:48
+msgid ""
+"``\"mmuser:<mmuser-password>@tcp(<host-name-or-"
+"IP>:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s\"``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:50
+msgid ""
+"Also set ``\"SiteURL\"`` to the full base URL of the site (e.g. "
+"``\"https://mattermost.example.com\"``)."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:52
+msgid "Test the Mattermost server to make sure everything works."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:54
+msgid "Change to the ``mattermost`` directory:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:55
+msgid "``cd /opt/mattermost``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:56
+msgid "Start the Mattermost server as the user mattermost:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:58
+msgid "``sudo -u mattermost ./bin/mattermost``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:60
+msgid ""
+"When the server starts, it shows some log information and the text "
+"``Server is listening on :8065``. You can stop the server by pressing "
+"CTRL+C in the terminal window."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:62
+msgid "Set up Mattermost to use the systemd init daemon which handles"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:63
+msgid "supervision of the Mattermost process."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:65
+msgid "Create the Mattermost configuration file:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:67
+msgid "``sudo touch /etc/systemd/system/mattermost.service``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:69
+msgid ""
+"Open the configuration file in your favorite text editor, and copy the "
+"following lines into the file:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:90
+msgid ""
+"If you are using MySQL, replace ``postgresql-9.4.service`` by "
+"``mysqld.service`` in the ``[unit]`` section."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:92
+msgid "Make the service executable."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:94
+msgid "``sudo chmod 664 /etc/systemd/system/mattermost.service``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:96
+msgid "Reload the systemd services."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:98
+msgid "``sudo systemctl daemon-reload``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:100
+msgid "Set Mattermost to start on boot."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:102
+msgid "``sudo systemctl enable mattermost``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:104
+msgid "Start the Mattermost server."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:106
+msgid "``sudo systemctl start mattermost``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:108
+msgid "Verify that Mattermost is running."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:110
+msgid "``curl http://localhost:8065``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:112
+msgid "You should see the HTML that's returned by the Mattermost server."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-mattermost.rst:114
+msgid ""
+"Now that Mattermost is installed and running, it's time to create the "
+"admin user and configure Mattermost for use."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:2
+msgid "Configuring Mattermost Server"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:4
+msgid "Create the System Admin user and set up Mattermost for general use."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:6
+msgid ""
+"Open a browser and navigate to your Mattermost instance. For example, if "
+"the IP address of the Mattermost server is ``10.10.10.2`` then go to "
+"http://10.10.10.2:8065."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:8
+msgid ""
+"Create the first team and user. The first user in the system has the "
+"``system_admin`` role, which gives you access to the System Console."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:10
+msgid ""
+"Open the System Console. To open the System Console, click your username "
+"at the top of the navigation panel, and in the menu that opens, click "
+"**System Console**."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:12
+msgid "Set the Site URL:"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:13
+msgid ""
+"In the GENERAL section of the System Console, click **Configuration** in "
+"prior versions or **System Console** > **Environment** > **Web Server** "
+"in versions after 5.12."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:14
+msgid ""
+"In the **Site URL** field, set the URL that users point their browsers "
+"at. For example, *https://mattermost.example.com*. If you are using "
+"HTTPS, make sure that you set up TLS, either on Mattermost Server or on a"
+" proxy."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:16
+msgid "Set up email notifications."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:18
+msgid ""
+"In the NOTIFICATIONS section of the System Console, make the following "
+"changes:"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:20
+msgid "Set **Enable Email Notifications** to *true*"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:21
+msgid "Set **Notification Display Name** to *No-Reply*"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:22
+msgid ""
+"Set **Notification From Address** to *{your-domain-name}* For example, "
+"*example.com*"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:24
+msgid ""
+"In the NOTIFICATIONS section of the System Console in prior versions or "
+"**System Console** > **Environment** > **SMTP** in versions after 5.12, "
+"also make the following changes:"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:26
+msgid ""
+"Set **SMTP Server Username** to *{SMTP-username}* For example, "
+"*admin@example.com*"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:27
+msgid "Set **SMTP Server Password** to *{SMTP-password}*"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:28
+msgid "Set **SMTP Server** to *{SMTP-server}* For example, *mail.example.com*"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:29
+msgid "Set **SMTP Server Port** to *465*"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:30
+msgid ""
+"Set **Connection Security** to *TLS* or *STARTTLS*, depending on what the"
+" SMTP server accepts."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:32
+msgid "Click **Test Connection**."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:34
+msgid "After your connection is working, click **Save**."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:36
+msgid "Set up the file and image storage location."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:39
+msgid ""
+"Files and images that users attach to their messages are not stored in "
+"the database. Instead, they are stored in a location that you specify. "
+"You can store the files on the local file system or in Amazon S3."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:40
+msgid ""
+"Make sure that the location has enough free space. The amount of storage "
+"that's required depends on the number of users and on the number and size"
+" of files that users attach to messages."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:42
+msgid ""
+"In the FILES section of the System Console, click **Storage** in prior "
+"versions or **System Console** > **Environment** > **File Storage** in "
+"versions after 5.12."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:43
+msgid ""
+"If you store the files locally, set **File Storage System** to *Local "
+"File System*, and then either accept the default for the **Local Storage "
+"Directory** or enter a location. The location must be a directory that "
+"exists and has write permissions for the Mattermost server. It can be an "
+"absolute path or a relative path. Relative paths are relative to the "
+"``mattermost`` directory."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:44
+msgid ""
+"If you store the files on Amazon S3, set **File Storage System** to "
+"*Amazon S3* and enter the appropriate values for your Amazon account."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:45
+msgid "Click **Save**."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:47
+msgid ""
+"Review the other settings in the System Console to make sure everything "
+"is as you want it."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:49
+msgid "Restart the Mattermost Service."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:51
+#: ../../source/install/config-ssl-http2-nginx.rst:38
+#: ../../source/install/config-ssl-http2-nginx.rst:107
+msgid "On Ubuntu 14.04 and RHEL 6:"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:53
+msgid "``sudo restart mattermost``"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:55
+msgid "On Ubuntu 16.04, 18.04, Debian Stretch, and RHEL 7:"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:57
+msgid "``sudo systemctl restart mattermost``"
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:2
+msgid "Configuring TLS on Mattermost Server"
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:4
+msgid "You have two options if you want users to connect with HTTPS:"
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:6
+msgid "Set up TLS on Mattermost Server."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:7
+msgid "Install a proxy such as NGINX and set up TLS on the proxy."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:9
+msgid ""
+"The easiest option is to set up TLS on the Mattermost Server, but if you "
+"expect to have more than 200 users, use a proxy for better performance. A"
+" proxy server also provides standard HTTP request logs."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:11
+msgid "**Configure TLS on the Mattermost Server**:"
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:13
+msgid ""
+"In the **System Console** > **General** > **Configuration** in prior "
+"versions or **System Console** > **Environment** > **Web Server** in "
+"versions after 5.12."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:14
+msgid "Change the **Listen Address** setting to ``:443``."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:15
+msgid "Change the **Connection Security** setting to ``TLS``."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:16
+msgid "Change the **Forward port 80 to 443** setting to ``true``."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:17
+msgid ""
+"Activate the ``CAP_NET_BIND_SERVICE`` capability to allow Mattermost to "
+"bind to low ports."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:19
+msgid "``sudo setcap cap_net_bind_service=+ep /opt/mattermost/bin/mattermost``"
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:21
+msgid ""
+"Install the security certificate. You can use `Let's Encrypt "
+"<https://letsencrypt.org/>`__ to automatically install and setup the "
+"certificate, or you can specify your own certificate."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:23
+msgid "**To use a Let's Encrypt certificate**:"
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:25
+msgid ""
+"The certificate is retrieved the first time that a client tries to "
+"connect to the Mattermost server. Certificates are retrieved for any "
+"hostname a client tries to reach the server at."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:27
+msgid "Change the **Use Let's Encrypt** setting to ``true``."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:28
+#: ../../source/install/config-tls-mattermost.rst:38
+msgid "Restart the Mattermost server for these changes to take effect."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:31
+msgid ""
+"If Let's Encrypt is enabled, forward port 80 through a firewall, with "
+"`Forward80To443 <https://docs.mattermost.com/administration/config-"
+"settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to "
+"``true`` to complete the Let's Encrypt certification."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:33
+msgid "**To use your own certificate**:"
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:35
+msgid "Change the **Use Let's Encrypt** setting to ``false``."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:36
+msgid ""
+"Change the **TLS Certificate File** setting to the location of the "
+"certificate file."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:37
+msgid ""
+"Change the **TLS Key File** setting to the location of the private key "
+"file."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:41
+msgid "Password-protected certificates are not supported."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:4
+msgid "Installing NGINX Server"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:6
+msgid ""
+"In a production setting, use a proxy server for greater security and "
+"performance of Mattermost."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:8
+msgid "The main benefits of using a proxy are as follows:"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:10
+msgid "SSL termination"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:11
+msgid "HTTP to HTTPS redirect"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:12
+msgid "Port mapping ``:80`` to ``:8065``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:13
+msgid "Standard request logs"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:15
+msgid "**To install NGINX on RHEL 6 or 7:**"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:17
+msgid "Log in to the server that will host the proxy, and open a terminal window."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:19
+msgid "Create the file /etc/yum.repos.d/nginx.repo."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:20
+msgid "``sudo touch /etc/yum.repos.d/nginx.repo``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:22
+msgid ""
+"Open the file as root in a text editor and add the following contents, "
+"where *{version}* is **6** for RHEL 6, and **7** for RHEL 7:"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:32
+msgid "Install NGINX."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:34
+msgid "``sudo yum install nginx.x86_64``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:43
+msgid "After the installation is complete, start NGINX."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:37
+#: ../../source/install/install-rhel-nginx.rst:47
+msgid "On RHEL 6:"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:109
+#: ../../source/install/install-rhel-nginx.rst:39
+msgid "``sudo service nginx start``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:41
+#: ../../source/install/install-rhel-nginx.rst:51
+msgid "On RHEL 7:"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:113
+#: ../../source/install/install-rhel-nginx.rst:43
+msgid "``sudo systemctl start nginx``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:45
+msgid "**Optional** Set NGINX to start at system boot."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:49
+msgid "``sudo chkconfig nginx on``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:53
+msgid "``sudo systemctl enable nginx``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:55
+msgid "Verify that NGINX is running."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:94
+#: ../../source/install/install-rhel-nginx.rst:57
+msgid "``curl http://localhost``"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:59
+msgid "If NGINX is running, you see the following output:"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:75
+msgid "**What to do next**"
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:77
+msgid ""
+"Map a fully qualified domain name (FQDN) such as "
+"``mattermost.example.com`` to point to the NGINX server."
+msgstr ""
+
+#: ../../source/install/install-rhel-nginx.rst:78
+msgid ""
+"Configure NGINX to proxy connections from the Internet to the Mattermost "
+"Server."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:4
+msgid "Configuring NGINX as a proxy for Mattermost Server"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:6
+msgid ""
+"NGINX is configured using a file in the ``/etc/nginx/sites-available`` "
+"directory. You need to create the file and then enable it. When creating "
+"the file, you need the IP address of your Mattermost server and the fully"
+" qualified domain name (FQDN) of your Mattermost website."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:8
+msgid "**To configure NGINX as a proxy**"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:10
+#: ../../source/install/config-ssl-http2-nginx.rst:17
+msgid "Log in to the server that hosts NGINX and open a terminal window."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:11
+msgid "Create a configuration file for Mattermost."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:13
+msgid "``sudo touch /etc/nginx/sites-available/mattermost``"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:15
+msgid "On RHEL 7: ``sudo touch /etc/nginx/conf.d/mattermost``"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:17
+msgid ""
+"3. Open the file ``/etc/nginx/sites-available/mattermost`` as root in a "
+"text editor and replace its contents, if any, with the following lines. "
+"Make sure that you use your own values for the Mattermost server IP "
+"address and FQDN for *server_name*. On RHEL 7, open the file "
+"``/etc/nginx/conf.d/mattermost``."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:74
+msgid "Remove the existing default sites-enabled file."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:76
+msgid "``sudo rm /etc/nginx/sites-enabled/default``"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:78
+msgid "On RHEL 7: ``sudo rm /etc/nginx/conf.d/default``"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:80
+msgid "Enable the mattermost configuration."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:82
+msgid ""
+"``sudo ln -s /etc/nginx/sites-available/mattermost /etc/nginx/sites-"
+"enabled/mattermost``"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:84
+msgid ""
+"On RHEL 7: ``sudo ln -s /etc/nginx/conf.d/mattermost "
+"/etc/nginx/conf.d/default.conf``"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:86
+#: ../../source/install/config-ssl-http2-nginx.rst:105
+msgid "Restart NGINX."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:88
+msgid "On Ubuntu 14.04 and RHEL 6: ``sudo service nginx restart``"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:90
+msgid ""
+"On Ubuntu 16.04, Ubuntu 18.04, Debian Stretch, and RHEL 7: ``sudo "
+"systemctl restart nginx``"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:92
+msgid "Verify that you can see Mattermost through the proxy."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:96
+msgid ""
+"If everything is working, you will see the HTML for the Mattermost signup"
+" page."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:98
+msgid "Restrict access to port 8065."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:99
+msgid ""
+"By default, the Mattermost server accepts connections on port 8065 from "
+"every machine on the network. Use your firewall to deny connections on "
+"port 8065 to all machines except the machine that hosts NGINX and the "
+"machine that you use to administer Mattermost server. If you're "
+"installing on Amazon Web Services, you can use security groups to "
+"restrict access."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:101
+msgid ""
+"Now that NGINX is installed and running, you can configure it to use SSL,"
+" which allows you to use HTTPS connections and the HTTP/2 protocol."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:104
+msgid "**NGINX Configuration FAQ**"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:106
+msgid "**Why are Websocket connections returning a 403 error?**"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:108
+msgid ""
+"This is likely due to a failing cross-origin check. A check is applied "
+"for WebSocket code to see if the ``Origin`` header is the same as the "
+"host header. If it's not, a 403 error is returned.  Open the file "
+"``/etc/nginx/sites-available/mattermost`` as root in a text editor and "
+"make sure that the host header being set in the proxy is dynamic:"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:121
+msgid ""
+"Then in ``config.json`` set the ``AllowCorsFrom`` setting to match the "
+"domain being used by clients. You may need to add variations of the host "
+"name that clients may send. Your NGINX log will be helpful in diagnosing "
+"the problem."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:130
+msgid ""
+"For other troubleshooting tips for WebSocket errors, see `potential "
+"solutions here <https://docs.mattermost.com/install/troubleshooting.html"
+"#please-check-connection-mattermost-unreachable-if-issue-persists-ask-"
+"administrator-to-check-websocket-port>`__."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:132
+msgid "**How do I setup an NGINX proxy with the Mattermost Docker installation?**"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:134
+msgid "Find the name of the Mattermost network and connect it to the NGINX proxy:"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:142
+msgid "Restart the Mattermost Docker containers"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:149
+msgid ""
+"There is no need to run the 'web' container, since NGINX proxy accepts "
+"incoming requests."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:151
+msgid ""
+"Update your docker-compose.yml file to include a new environment variable"
+" ``VIRTUAL_HOST`` and an ``expose`` directive."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:164
+msgid "If you are using SSL, you may also need to expose port 443."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:166
+msgid ""
+"**Why does NGINX fail when installing Gitlab CE with Mattermost on "
+"Azure?**"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:168
+msgid ""
+"You may need to update the Callback URLs for the Application entry of "
+"Mattermost inside your Gitlab instance."
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:170
+msgid "Log into your GitLab instance as the admin"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:171
+msgid "Go to **Admin > Applications**"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:172
+msgid "Click **Edit** on GitLab-Mattermost"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:173
+msgid "Update the Callback URLs to your new domain/URL"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:174
+msgid "Save the changes"
+msgstr ""
+
+#: ../../source/install/config-proxy-nginx.rst:175
+msgid ""
+"Update the external URL for Gitlab and Mattermost in the "
+"``/etc/gitlab/gitlab.rb`` configuration file."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:4
+msgid "Configuring NGINX with SSL and HTTP/2"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:6
+msgid ""
+"Using SSL gives greater security by ensuring that communications between "
+"Mattermost clients and the Mattermost server are encrypted. It also "
+"allows you to configure NGINX to use the HTTP/2 protocol."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:8
+msgid ""
+"Although you can configure HTTP/2 without SSL, both Firefox and Chrome "
+"browsers support HTTP/2 on secure connections only."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:10
+msgid ""
+"You can use any certificate that you want, but these instructions show "
+"you how to download and install certificates from `Let's Encrypt "
+"<https://letsencrypt.org/>`__, a free certificate authority."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:13
+msgid ""
+"If Let’s Encrypt is enabled, forward port 80 through a firewall, with "
+"`Forward80To443 <https://docs.mattermost.com/administration/config-"
+"settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to "
+"``true`` to complete the Let’s Encrypt certification."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:15
+msgid "**To configure SSL and HTTP/2:**"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:18
+msgid "Install git."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:20
+msgid "If you are using Ubuntu or Debian:"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:22
+msgid "``sudo apt-get install git``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:24
+msgid "If you are using RHEL:"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:26
+msgid "``sudo yum install git``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:28
+msgid "Clone the Let's Encrypt repository on GitHub."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:30
+msgid "``git clone https://github.com/letsencrypt/letsencrypt``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:32
+msgid "Change to the ``letsencrypt`` directory."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:34
+msgid "``cd letsencrypt``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:36
+msgid "Stop NGINX."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:40
+msgid "``sudo service nginx stop``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:42
+#: ../../source/install/config-ssl-http2-nginx.rst:111
+msgid "On Ubuntu 16.04, Ubuntu 18.04 and RHEL 7:"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:44
+msgid "``sudo systemctl stop nginx``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:46
+msgid "Run ``netstat`` to make sure that nothing is listening on port 80."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:48
+msgid "``netstat -na | grep ':80.*LISTEN'``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:50
+msgid "Run the Let's Encrypt installer."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:52
+msgid "``./letsencrypt-auto certonly --standalone``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:54
+msgid ""
+"When prompted, enter your domain name. After the installation is "
+"complete, you can find the certificate in the   ``/etc/letsencrypt/live``"
+" directory."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:56
+msgid ""
+"Open the file ``/etc/nginx/sites-available/mattermost`` as root in a text"
+" editor and update the *server* section to incorporate the highlighted "
+"lines in the following sample. Make sure to replace *{domain-name}* with "
+"your own domain name, in 3 places."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:115
+msgid "Check that your SSL certificate is set up correctly."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:117
+msgid ""
+"Test the SSL certificate by visiting a site such as "
+"https://www.ssllabs.com/ssltest/index.html"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:118
+msgid ""
+"If there’s an error about the missing chain or certificate path, there is"
+" likely an intermediate certificate missing that needs to be included."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:120
+msgid ""
+"Configure ``cron`` so that the certificate will automatically renew every"
+" month."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:122
+msgid "``crontab -e``"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:124
+msgid ""
+"In the following line, use your own domain name in place of *{domain-"
+"name}*"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-nginx.rst:126
+msgid ""
+"``@monthly /home/ubuntu/letsencrypt/letsencrypt-auto certonly --reinstall"
+" --nginx -d {domain-name} && sudo service nginx reload``"
+msgstr ""
+

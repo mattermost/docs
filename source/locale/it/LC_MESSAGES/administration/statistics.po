@@ -1,0 +1,340 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/administration/statistics.rst:2
+msgid "Statistics"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:4
+msgid ""
+"Statistics on users, posts and channels are tracked for each system and "
+"team. Enterprise Editions have access to advanced system statistics."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:8
+msgid ""
+"To maximize performance for large Enterprise deployments, statistics for "
+"total posts, total hashtag posts, total file posts, posts per day, and "
+"active users with posts per day are disabled. You can re-enable them by "
+"changing the ``MaxUsersForStatistics`` value `in config.json "
+"<https://docs.mattermost.com/administration/config-settings.html#maximum-"
+"users-for-statistics>`__."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:10
+msgid ""
+"For advanced metrics for Enterprise deployments, `see performance "
+"monitoring documentation to learn more "
+"<http://docs.mattermost.com/deployment/metrics.html>`__."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:13
+msgid "Site Statistics"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:15
+msgid ""
+"System statistics are viewable under **System Console > Site Statistics**"
+" in prior versions or **System Console > Reporting** in versions after "
+"5.12. The data shown here is a cumulative sum across all teams on the "
+"system."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:18
+#: ../../source/administration/statistics.rst:82
+msgid "Total Users"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:18
+msgid ""
+"The total number of active accounts created on your system. Excludes "
+"deactivated accounts."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:21
+msgid "Total Teams"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:21
+msgid "The total number of teams created on your system."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:24
+msgid "Total Channels"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:24
+msgid ""
+"The total number of public channels and private channels created in all "
+"the teams on your system, including deleted channels. Doesn't include "
+"direct message channels."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:27
+#: ../../source/administration/statistics.rst:91
+msgid "Total Posts"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:27
+msgid ""
+"The total number of posts made in all the teams on your system, including"
+" deleted posts and posts made using automation."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:30
+msgid "Daily Active Users"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:30
+msgid ""
+"The total number of users who viewed the Mattermost site in the last 24 "
+"hours. Excludes bot users as of v5.14."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:33
+msgid "Monthly Active Users"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:33
+msgid ""
+"The total number of users who viewed the Mattermost site in the last 30 "
+"days. Excludes bot users as of v5.14."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:36
+#: ../../source/administration/statistics.rst:94
+msgid "Total Posts (graph)"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:36
+msgid ""
+"The total number of posts made on a certain day in all the teams on your "
+"system, including deleted posts and posts made using automation."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:39
+msgid "Total Posts from Bots (graph)"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:39
+msgid ""
+"The total number of posts made by a `bot account "
+"<https://docs.mattermost.com/developer/bot-accounts.html>`_ on a certain "
+"day in all the teams on your system, including deleted posts and posts "
+"made using automation."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:42
+#: ../../source/administration/statistics.rst:97
+msgid "Active Users with Posts (graph)"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:42
+msgid ""
+"Users who made a post on a certain day in all the teams on your system, "
+"including system messages posted from the user's account."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:45
+msgid "Advanced system statistics (Enterprise)"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:47
+msgid "Enterprise Edition includes additional system statistics."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:50
+msgid "Total Sessions"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:50
+msgid ""
+"The number of active user sessions connected to your system. Expired "
+"sessions are not counted."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:53
+msgid "Total Commands"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:53
+msgid ""
+"The number of active slash commands currently setup on your system. Slash"
+" commands that are created and then removed in the Integrations menu are "
+"not counted."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:56
+msgid "Incoming Webhooks"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:56
+msgid ""
+"The number of active Incoming Webhooks currently setup on your system. "
+"Incoming webhooks that are created and then removed in the Integrations "
+"menu are not counted."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:59
+msgid "Outgoing Webhooks"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:59
+msgid ""
+"The number of active Outgoing Webhooks currently setup on your system. "
+"Outgoing webhooks that are created and then removed in the Integrations "
+"menu are not counted."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:62
+msgid "WebSocket Conns"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:62
+msgid "The number of active WebSocket connections currently on your server."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:65
+msgid "Master DB Conns"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:65
+msgid "The number of active connections currently on your master database."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:68
+msgid "Replica DB Conns"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:68
+msgid ""
+"The number of active connections currently on one or more of `your read "
+"replica databases <https://docs.mattermost.com/deployment/cluster.html"
+"#database-configuration>`__."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:71
+msgid "Channel Types"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:71
+msgid ""
+"This chart displays the number of public channels and private channels in"
+" a visual format, including channels that might have been deleted."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:74
+msgid "Posts, Files and Hashtags"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:74
+msgid ""
+"This chart displays the number of posts containing files, hashtags or "
+"only text. Posts containing both files and hashtags are counted in both "
+"categories, and deleted posts are included."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:77
+msgid "Team Statistics"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:79
+msgid ""
+"Team Statistics are viewable under **System Console > Team Statistics**. "
+"The data shown here is a cumulative sum across this team only, and "
+"excludes posts made in direct message channels, which are not tied to a "
+"team."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:82
+msgid ""
+"The total number of active accounts on this team. Excludes deactivated "
+"accounts."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:85
+msgid "Public Channels"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:85
+msgid ""
+"The number of public channels created in this team. Excludes deleted "
+"channels."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:88
+msgid "Private Channels"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:88
+msgid ""
+"The number of private channels created in this team. Excludes deleted "
+"channels."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:91
+msgid ""
+"The total number of posts made in this team, including deleted posts and "
+"posts made using automation. Excludes posts made in direct message "
+"channels, which are not tied to a team."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:94
+msgid ""
+"The total number of posts made on a certain day in this team, including "
+"deleted posts and posts made using automation."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:97
+msgid ""
+"Users who made a post on a certain day in this team, including system "
+"messages posted from the user's account."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:100
+msgid "Recent Active Users"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:100
+msgid ""
+"Twenty most recent users who have logged in and had recent browser "
+"activity in Mattermost."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:103
+msgid "Newly Created Users"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:103
+msgid "Most recent users who have joined the team."
+msgstr ""
+
+#: ../../source/administration/statistics.rst:106
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../source/administration/statistics.rst:108
+msgid ""
+"If the statistics page is loading endlessly and you get an error message "
+"saying \"Not enough data for a meaningful representation\", check whether"
+" you are using an ad blocker. An ad blocker can prevent this page from "
+"loading data. To test this, temporarily disable your ad blocker, or view "
+"the page in a browser without an ad blocker installed."
+msgstr ""
+

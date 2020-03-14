@@ -1,0 +1,554 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/asset-guidelines.rst:3
+msgid "Mattermost Asset Guidelines"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:5
+msgid ""
+"The following guidelines are intended to help queue and prepare marketing"
+" assets for community projects by the Mattermost core committers and the "
+"Mattermost community."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:8
+msgid "Contents"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:11
+msgid "Queuing Assets for New Community Projects"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:13
+msgid "Follow these steps to queue an asset for a new community project:"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:16
+msgid "Integrations and Installers"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:18
+#, python-format
+msgid ""
+"If you find a new integration or installer in the `Mattermost Facebook "
+"page <https://www.facebook.com/Mattermost-2300985916642531/>`__, "
+"`Mattermost Twitter page <https://twitter.com/mattermost>`__, `GitHub "
+"<https://github.com/search?utf8=%E2%9C%93&q=mattermost>`__ or elsewhere "
+"you feel Mattermost should promote:"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:20
+msgid ""
+"Post a request to the `Contributors team \"Integrations and Apps\" "
+"channel <https://community.mattermost.com/core/channels/integrations>`__ "
+"with:"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:22
+msgid "mention to @jason"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:23
+msgid "link to suggested integration"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:24
+msgid "link to creator's GitHub profile, if applicable"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:26
+msgid "Example:"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:34
+msgid ""
+"If the proposal is accepted, Ops reaches out to the integration creator "
+"by opening a GitHub issue with the following text:"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:58
+msgid ""
+"When a contributor submits an integration via the `Wufoo form "
+"<https://spinpunch.wufoo.com/forms/mattermost-integrations-and-"
+"installers/>`__, a Zapier webhook posts relevant information into the "
+"`Integrations and Apps channel "
+"<https://community.mattermost.com/core/channels/integrations>`__."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:60
+msgid ""
+"Ops replies to each new Wufoo post with a numbered project title and "
+"project status. Example:"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:67
+msgid "Media Articles"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:69
+msgid ""
+"When a relevant article on Mattermost is found in the news, add a new "
+"entry into `this Google document "
+"<https://docs.google.com/document/d/1kwCmn6JYeORdLV0noIk4iaxZx0iqR6OWUuzw5cZl6rA/edit>`__"
+" and follow the process specified there."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:72
+msgid "Step-by-Step Asset Creation Guide for Artists"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:74
+msgid ""
+"Follow these steps to create an asset for integration or feature "
+"promotion or for guest blog posts."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:76
+msgid ""
+"You can find sample templates `in this Google drive "
+"<https://drive.google.com/open?id=0Bx-9w8QDFlfcbUh2bGdkRElJaWs>`__."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:79
+msgid "Integration or Feature Promotion"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:81
+msgid ""
+"Use this `template (dark background) "
+"<https://www.dropbox.com/s/a8tbqxiik1m9i8u/20170717_template_dark.tif?dl=0>`__"
+" or this `template (light background) "
+"<https://www.dropbox.com/s/codoct7np20fx3l/20170717_template_light.tif?dl=0>`__"
+" as a starting point."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:82
+#: ../../source/process/asset-guidelines.rst:93
+msgid "Update the title following the guidelines in `Feature Title`_."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:83
+msgid ""
+"Update the footer and the creator name following the guidelines in "
+"`Feature Footer`_ and in `Feature Creator`_."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:84
+msgid ""
+"Update representative art following the guidelines in `Feature "
+"Representative Art`_."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:85
+msgid ""
+"Update representative logo(s) following the guidelines in `Mattermost and"
+" Representative Logos`_."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:86
+#: ../../source/process/asset-guidelines.rst:96
+msgid ""
+"Add a 1 pixel grey stroke border around the rectangular boundary of the "
+"banner."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:87
+#: ../../source/process/asset-guidelines.rst:97
+msgid ""
+"Save the finished asset draft in both .TIF and .PNG format, and upload to"
+" your \"Dropbox Share\" folder."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:90
+msgid "Guest Blog Posts"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:92
+msgid ""
+"Use this `template <https://drive.google.com/file/d/0Bx-"
+"9w8QDFlfcQURoRnF1YllZWWc/view?usp=sharing>`__ as a starting point."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:94
+msgid ""
+"Update representative logo following the guidelines in `Mattermost and "
+"Representative Logos`_."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:95
+msgid ""
+"Obtain a photo of the guest company member and apply a gray-scale effect."
+" You can also consider applying a `Puppet Module effect "
+"<https://www.mattermost.org/puppet-module-for-mattermost/>`__."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:100
+msgid "Asset Elements"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:102
+msgid "The following include guidelines for specific elements of an asset."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:105
+msgid "Feature Title"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:107
+msgid "Appears in the top left corner of the asset."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:108
+msgid ""
+"Title should \"communicate the benefit\" of the work, while referencing "
+"its name."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:110
+msgid ""
+"Sometimes the title is a straightforward description of an app that can "
+"now connect to Mattermost, e.g. \"New Update for Desktop App\"."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:111
+msgid ""
+"Sometimes the title needs to be non-standard, e.g. \"Gitter integration "
+"for Mattermost via Matterbridge\"."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:113
+msgid ""
+"Aim to fit title on two lines. If title is too long, move Feature "
+"Representative Art more to the right of the banner to ensure that there "
+"is still at least 64px of width between Feature Title and Feature "
+"Representative Art."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:114
+msgid "Title should always be in title case."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:115
+msgid "Short titles are better than longer titles."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:118
+msgid "Feature Footer"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:120
+msgid ""
+"When the background of the banner is blue, the footer should be black. "
+"When the background is white, the footer should be blue."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:121
+msgid ""
+"Displays who created the integration (Twitter or GitHub account of the "
+"creator). See the next section for further instructions."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:122
+msgid ""
+"If the text doesn’t blend well with left pane representative art, adjust "
+"the outer glow effect."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:125
+msgid "Feature Creator"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:127
+msgid "Appears in the bottom right corner of the asset footer."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:128
+msgid ""
+"Text in footer should use GitHub username in lowercase, or company/person"
+" name in capital case i.e. ``by matterhorn-chat`` or ``by Galois, Inc.``."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:131
+msgid "Feature Representative Art"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:133
+msgid "Representative art appears in the right side of the asset."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:134
+msgid ""
+"Screenshot of a feature in action is most preferred (see guidelines for "
+"`Feature Screenshot`_ and `Screenshot Development of Mattermost User "
+"Interface`_."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:135
+msgid ""
+"If no feature screenshot is available, take a screenshot of a well-"
+"formatted \"README\" file or of feature code with the word "
+"\"Mattermost\". If using a \"README\" file, ensure the screenshot doesn't"
+" highlight spelling or capitalization errors."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:136
+msgid ""
+"Change the color of the background based on the color of the screenshot. "
+"If the screenshot is light, use a dark background. If the screenshot is "
+"dark, use a light background."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:137
+#, python-format
+msgid "Screenshot should not take up more than 40% of the banner width."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:138
+msgid "Follow these guidelines on spacing:"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:140
+msgid ""
+"Ensure there is around 31px of “white space” between the contents of the "
+"screenshot and the edge of the screengrab. (This can be adjusted by "
+"resizing the rectangle layer below the screengrab in Photoshop)."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:141
+msgid ""
+"Ensure there is at least 64px of width between the copy title and the "
+"edge of the screengrab."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:142
+msgid ""
+"There should be around 60px of space between the top edge of the "
+"screengrab and top edge of the banner. (Give or take 10px considering the"
+" diagonal of the screengrab)."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:144
+msgid "Leave equal whitespace between all like objects."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:145
+msgid ""
+"Avoid wavy lines when rotating an image. To avoid them, increase the size"
+" of the original layer, rotate it, then reduce the size of the image."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:146
+msgid ""
+"Adjacent areas of light and dark should always have a separator, or have "
+"a shading so that the areas don't bleed into the background."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:147
+msgid "Add a 1px grey border and a drop shadow around the screenshot."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:150
+msgid "Mattermost and Representative Logos"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:152
+msgid "Mattermost logo appears in the bottom left corner of the asset."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:153
+msgid ""
+"Use white Mattermost logo on dark backgrounds and black Mattermost logo "
+"on light backgrounds."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:154
+msgid ""
+"Representative logo appears on the left side of the asset below the "
+"feature title."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:155
+msgid ""
+"For representative logos, always confirm you are using the official "
+"version of the company’s logo. If you’re unsure, ask."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:156
+msgid ""
+"The space between the feature title and the representative logo should be"
+" 35px."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:157
+msgid ""
+"When the background color is dark, use the white/inverted version of "
+"representative logo. When the background color is light, use the "
+"dark/primary version of representative logo."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:158
+msgid ""
+"If the color of the representative logo is the same as the color of the "
+"title, make sure to make them distinctive from each other by slightly "
+"reducing the size of the logo."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:161
+msgid "Feature Screenshot Development"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:163
+msgid ""
+"When taking a screenshot of a feature, use this checklist to guide your "
+"work:"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:165
+msgid ""
+"**Profiles**: Profile pictures and real people’s names should be filled "
+"out throughout the screenshot. For the profile picture, use either "
+"normal-looking Avatars or stock photography."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:166
+msgid ""
+"**Content**: Show the feature in action. If you are highlighting a "
+"specific feature, try to have that screenshot focused on it rather than "
+"displaying the whole app. For example, if you are highlighting 1-1 direct"
+" message conversations, only include that conversation in your "
+"screenshot. Finally, ensure that the contents of the screenshot shows the"
+" Mattermost product in the best light - give whoever is viewing it a "
+"positive emotion."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:167
+msgid ""
+"**Use Cases**: Model a real world interaction. When possible, highlight "
+"DevOps use cases since they are familiar to the majority of our users."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:168
+msgid ""
+"**Clarity**: Avoid truncating the channel header text, or cutting off "
+"messages due to the scroll position in the center pane. All text should "
+"be fully visible."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:169
+msgid ""
+"**Size**: Provide screenshots that are double in size than needed - this "
+"ensures the screenshot does not rasterize on retina displays. The "
+"definite size per screenshot can vary - however, a standard will be "
+"established per type/category of the screenshot. For example, screenshots"
+" of the center pane should be 750px in size (with the shadows)."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:170
+msgid ""
+"**Spacing**: Add additional spacing to a screenshot if necessary to "
+"highlight a feature."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:171
+msgid ""
+"**Calibration**: Make sure that the zoom level is at default level, and "
+"that the screenshot is not pixelated. Add a box shadow with the "
+"screenshot (0 2px 50 0 rgba(black, 0.1)), as well as a grey outline so "
+"that it looks good on both dark and light backgrounds."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:174
+msgid "Screenshot Development of Mattermost User Interface"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:176
+msgid ""
+"Screenshot development guidelines have been moved to the `Mattermost "
+"Handbook <https://handbook.mattermost.com/operations/messaging-and-math"
+"/how-to-guides-for-m-and-m/how-to-create-screenshots-and-gifs>`_."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:179
+msgid "Animated GIFs"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:181
+msgid ""
+"Animated GIFs with two images that look very similar should not be "
+"created since visually it looks like a mistake."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:184
+msgid "Step-by-Step Asset Review Guide for Ops"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:186
+msgid ""
+"Upload the artists \"work in progress\" files to the `Archive Dropbox "
+"sub-folder <https://www.dropbox.com/home/marketing/Twitter/archive>`__ in"
+" `Twitter Marketing "
+"<https://www.dropbox.com/sh/13h55hakbvm7iva/AAARooC0rV8JCKBI_8VUj_tga?dl=0>`__"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:187
+msgid ""
+"In the `Contributors team "
+"<https://community.mattermost.com/core/channels/integrations>`__, find "
+"the appropriate conversation thread for the queued project, and add a "
+"comment mentioning @jason with the following:"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:189
+msgid "Link to the image in Dropbox"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:190
+msgid ""
+"Proposed tweet text with a note to specify whether or not the mention in "
+"the text is the Twitter handle of the user."
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:192
+msgid ""
+"`@username is the Twitter account of the GitHub user` if the text uses a "
+"Twitter username, or"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:193
+msgid ""
+"`@username is NOT the Twitter account of GitHub user` if the text doesn't"
+" use a Twitter username"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:195
+msgid "Proposed scheduled tweet date"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:197
+msgid ""
+"Never schedule a tweet for the 16th or 22nd of any given month as these "
+"days are reserved for Mattermost and GitLab release announcements, "
+"respectively"
+msgstr ""
+
+#: ../../source/process/asset-guidelines.rst:199
+msgid ".png version of the file for a quick preview"
+msgstr ""
+

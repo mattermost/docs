@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/benefits-canada.rst:4
+msgid "Benefits specific to Canada-based employees"
+msgstr ""
+
+#: ../../source/process/benefits-canada.rst:6
+msgid ""
+"Canada-based employees are employed through a Canadian co-employer, who "
+"offers payroll with direct deposit to Canadian accounts, T4 tax forms, "
+"and for full time employees, additional benefits through Sun Life "
+"Financial, including:"
+msgstr ""
+
+#: ../../source/process/benefits-canada.rst:8
+msgid "Extended Health Care"
+msgstr ""
+
+#: ../../source/process/benefits-canada.rst:9
+msgid "Dental Care"
+msgstr ""
+
+#: ../../source/process/benefits-canada.rst:10
+msgid "Vision Care"
+msgstr ""
+
+#: ../../source/process/benefits-canada.rst:11
+msgid "Life Insurance"
+msgstr ""
+
+#: ../../source/process/benefits-canada.rst:12
+msgid "Long Term Disability"
+msgstr ""
+
+#: ../../source/process/benefits-canada.rst:13
+msgid "Accidental Death and Dismemberment"
+msgstr ""
+
+#: ../../source/process/benefits-canada.rst:14
+msgid "Emergency Travel Assistance"
+msgstr ""
+
+#: ../../source/process/benefits-canada.rst:16
+msgid ""
+"For full benefits information, please see `mysunlife.ca portal "
+"<https://www.sunnet.sunlife.com/signin/mysunlife/home.wca?>`__ and "
+"contact forms and numbers listed there."
+msgstr ""
+

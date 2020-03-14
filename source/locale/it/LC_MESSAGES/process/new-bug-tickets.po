@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/new-bug-tickets.rst:3
+msgid "Creating New Jira Bug Tickets"
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:5
+msgid ""
+"Bugs are any “obvious errors” on how the product or a feature is "
+"functioning as well as any UI issues. If you’re not reporting an obvious "
+"error, please file a Story ticket instead. Errors on `unsupported "
+"platforms <https://docs.mattermost.com/install/requirements.html>`_ are "
+"not considered bugs."
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:8
+msgid "1. Initial steps to access the \"Mattermost\" Jira project"
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:10
+msgid ""
+"Create a Jira account with your mattermost email address at "
+"https://mattermost.atlassian.net."
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:11
+msgid ""
+"Ask to give your account permission to create Jira tickets in our `Jira "
+"Configuration channel <https://community.mattermost.com/core/channels"
+"/jira-configuration>`_."
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:12
+msgid ""
+"Create a ticket in Jira's \"Mattermost\" project following the next steps"
+" below with a note on its priority level."
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:15
+msgid "2. Confirm you’re filing a new issue"
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:17
+msgid ""
+"Search existing tickets in Jira's \"Mattermost\" project to confirm your "
+"issue isn’t already filed by someone else."
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:20
+msgid "3. Confirm the bug is not a confidential issue"
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:22
+msgid ""
+"If your issue involves security or if it involves confidential "
+"information or customer information, please mark the bug ticket as "
+"internal."
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:25
+msgid "4. Information needed on Mattermost bug tickets"
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:27
+msgid ""
+"**Labels:** Add a ``customer-bug`` label if the ticket is based on a "
+"customer bug report. Add a ``community-bug`` label if the ticket is based"
+" on a community bug report."
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:28
+msgid ""
+"**Environment:** Mattermost server and version, OS and version, "
+"Mattermost mobile app version, Mattermost desktop app version, any "
+"notable Mattermost configurations (such as HA, Elasticsearch, image "
+"proxy, SSO)."
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:29
+msgid "**Steps to reproduce:** How can we reproduce the issue."
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:30
+msgid "**Expected behavior:** Describe what you’re expecting to see."
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:31
+msgid ""
+"**Observed behavior:** Describe your issue in detail. What did you see "
+"happen? Please include relevant error messages and/or screenshots."
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:32
+msgid ""
+"**Regression:** Please re-test your issue (if possible) on the previous "
+"Mattermost version at https://prev.test.mattermost.com to see if the bug "
+"is a recent regression."
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:35
+msgid "5. Additional helpful information"
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:37
+msgid ""
+"**Summary:** Add a summary and any additional relevant details of the "
+"issue if it helps make the bug more clear."
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:38
+msgid ""
+"**Attachments:** Please include screenshots and/or videos of any helpful "
+"error messages and snippets of what you are seeing."
+msgstr ""
+
+#: ../../source/process/new-bug-tickets.rst:39
+msgid ""
+"**Possible fixes:** If you can, link to the line of code that might be "
+"responsible for the problem."
+msgstr ""
+

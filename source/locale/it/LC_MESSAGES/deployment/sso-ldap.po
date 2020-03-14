@@ -1,0 +1,753 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/sso-ldap.md:1
+msgid "Active Directory/LDAP Setup (E10/E20)"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:3
+msgid "Available in Enterprise Edition E10 and E20"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:5
+msgid "Overview"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:7
+msgid "Active Directory/LDAP integration offers the following benefits:"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:9
+msgid ""
+"Single sign-on. Users can sign in to Mattermost with their AD/LDAP "
+"credentials."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:10
+msgid ""
+"Centralized identity management. Mattermost accounts can display user "
+"information from AD/LDAP, such as first and last name, email, and "
+"username."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:11
+msgid ""
+"Automatic account provisioning. New Mattermost user accounts are "
+"automatically created the first time a user signs in with their AD/LDAP "
+"credentials on the Mattermost server."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:12
+msgid ""
+"Sync groups to predefined roles in Mattermost. Assign team and channel "
+"roles to groups via LDAP Group Sync."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:13
+msgid ""
+"Compliance alignment with administrator management. Manage Administrator "
+"access to Mattermost in the System Console using LDAP filters."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:15
+msgid "Pre-installation Notes"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:17
+msgid ""
+"If you're using Active Directory with nested security groups you need to "
+"write a PowerShell script, or similar, to flatten and aggregate the tree "
+"into a single security group to map into Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:19
+msgid "Getting Started"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:21
+msgid "There are two ways to set up AD/LDAP:"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:23
+msgid "Configure AD/LDAP using the System Console user interface"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:24
+msgid ""
+"Start the Mattermost server and create a new account using email and "
+"password. This is assigned the System Administrator role as the first "
+"user created. Next, configure AD/LDAP and then convert your System "
+"Administrator account to use the AD/LDAP sign in method."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:25
+msgid "Configure AD/LDAP by editing config.json"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:26
+msgid ""
+"Before starting the Mattermost server, edit config.json to enable AD/LDAP"
+" based on the AD/LDAP settings documentation. When you start the "
+"Mattermost server the first user to log in with valid AD/LDAP credentials"
+" will be assigned the System Administrator role."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:28
+msgid "Configure AD/LDAP Sign In"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:30
+msgid "After installing Mattermost:"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:32
+msgid ""
+"Create a System Administrator account using email authentication. On a "
+"new server create an account using email and password, which is "
+"automatically assigned the System Administrator role since it is the "
+"first account created. You may also assign the role to another account."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:34
+msgid ""
+"Configure AD/LDAP. Go to System Console > Authentication > AD/LDAP and "
+"fill in AD/LDAP settings based on the configuration settings "
+"documentation."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:36
+msgid ""
+"Confirm that AD/LDAP sign-on is enabled. After AD/LDAP has been enabled, "
+"confirm that users can sign in using AD/LDAP credentials."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:38
+msgid ""
+"Switch your System Administrator account from email to AD/LDAP "
+"authentication. Navigate to Account Settings > Security > Sign-in Method "
+"> Switch to AD/LDAP and sign in with your AD/LDAP credentials to complete"
+" the switch."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:40
+msgid ""
+"(Optional) Restrict authentication to AD/LDAP. Go to System Console > "
+"Authentication > Email and set Enable sign-in with email to false and "
+"Enable sign-in with username to false. Then choose Save to save the "
+"changes. This should leave Active Directory/LDAP as the only sign in "
+"option."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:42
+msgid ""
+"(Optional) If you configured First Name Attribute and Last Name Attribute"
+" in the System Console, navigate to System Console > Site Configuration >"
+" Users and Teams (or System Console > General > Users and Teams in "
+"versions prior to 5.12) and set Teammate Name Display to Show first and "
+"last name. This is recommended for a better user experience."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:44
+msgid ""
+"If you've made a mistake and lock yourself out of the system somehow, you"
+" can set an existing account to System Administrator using the command "
+"line tool."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:46
+msgid "Configure AD/LDAP Synchronization"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:48
+msgid ""
+"In addition to configuring AD/LDAP sign-in, you can also configure "
+"AD/LDAP synchronization. When synchronizing, Mattermost queries AD/LDAP "
+"for relevant account information and updates Mattermost accounts based on"
+" changes to attributes (first name, last name, and nickname). When "
+"accounts are disabled in AD/LDAP users are made inactive in Mattermost, "
+"and their active sessions are revoked once Mattermost synchronizes the "
+"updated attributes."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:50
+msgid ""
+"Note that the AD/LDAP sync depends on email. Make sure all users on your "
+"AD/LDAP server have an email address or that their account is deactivated"
+" in Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:52
+msgid "To configure AD/LDAP synchronization with AD/LDAP sign-in:"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:54
+msgid ""
+"Go to System Console > Authentication > AD/LDAP and set Enable "
+"Synchronization with AD/LDAP to true."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:56
+msgid ""
+"Scroll down to Syncronization Interval (minutes) to specify how often "
+"Mattermost accounts synchronize attributes with AD/LDAP. The default "
+"setting is 60 minutes."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:58
+msgid ""
+"If you want to synchronize immediately after disabling an account, use "
+"the AD/LDAP Synchronize Now button in System Console > AD/LDAP."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:60
+msgid ""
+"Note: Make sure that at least one LDAP user is in Mattermost or the sync "
+"will not complete."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:62
+msgid ""
+"To configure AD/LDAP synchronization with SAML sign-in, see the SAML "
+"documentation."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:64
+msgid "Configure AD/LDAP sign-in Using Filters"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:66
+msgid ""
+"Using filters assigns roles to specified users on login. To access "
+"AD/LDAP filter settings navigate to System Console > AD/LDAP."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:68
+msgid "User Filter"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:69
+msgid ""
+"(Optional) Enter an AD/LDAP filter to use when searching for user "
+"objects. Only the users selected by the query will be able to access "
+"Mattermost. For Active Directory, the query to filter out disabled users "
+"is "
+"(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:71
+#: ../../source/deployment/sso-ldap.md:83
+#: ../../source/deployment/sso-ldap.md:96
+msgid "Navigate to System Console > Authentication > AD/LDAP."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:72
+msgid "Complete the User Filter field."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:73
+#: ../../source/deployment/sso-ldap.md:85
+#: ../../source/deployment/sso-ldap.md:99
+msgid "Choose Save."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:75
+msgid ""
+"When the user accesses the Mattermost URL, they log in with same username"
+" and password that they use for organizational logins."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:77
+msgid "Guest Filter"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:78
+msgid ""
+"(Optional) When enabled, the Guest Filter in Mattermost identifies "
+"external users whose AD/LDAP role is guest and who are invited to join "
+"your Mattermost server. These users will have the Guest role applied "
+"immediately upon first sign-in instead of the default member user role. "
+"This eliminates having to manually assign the role in the System Console."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:80
+msgid ""
+"If this filter is removed/changed, active guests will not be promoted to "
+"a member and will retain their Guest role. Guests can be promoted in "
+"System Console > User Management."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:82
+msgid ""
+"Navigate to System Console > Authentication > Guest Access (Beta) and set"
+" Guest Access to true."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:84
+msgid "Complete the Guest Filter field."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:87
+msgid ""
+"When a guest logs in for the first time they are presented with a default"
+" landing page until they are added to channels."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:89
+msgid ""
+"See the Guest Accounts documentation for more information about this "
+"feature."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:91
+msgid "Admin Filter"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:92
+msgid ""
+"(Optional) Enter an AD/LDAP filter to use for designating System Admins. "
+"The users selected by the query will have access to your Mattermost "
+"server as System Admins. By default, System Admins have complete access "
+"to the Mattermost System Console. Existing members that are identified by"
+" this attribute will be promoted from member to System Admin upon next "
+"login."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:94
+msgid ""
+"The next login is based upon Session lengths set in System Console > "
+"Session Lengths. It is recommended that users are demoted to members "
+"manually in System Console > User Management to ensure access is "
+"restricted immediately."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:97
+msgid "Set Admin Filter to true."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:98
+msgid "Complete the Admin Filter field."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:101
+msgid ""
+"Note: If the Admin Filter is set to false the member's role as System "
+"Admin is retained. However if this filter is removed/changed, System "
+"Admins that were promoted via this filter will be demoted to members and "
+"will not retain access to the System Console."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:103
+msgid ""
+"When this filter is not in use, members can be manually promoted/demoted "
+"via System Console > User Management."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:105
+msgid "Configure AD/LDAP Deployments with Multiple Domains"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:107
+msgid ""
+"Organizations using multiple domains can integrate with Mattermost using "
+"a \"Forest\" configuration to bring together multiple domains. Please see"
+" Forests as Collections of Domain Controllers that Trust Each Other for "
+"more information."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:109
+msgid ""
+"For forest configurations that contain multiple domains which do NOT "
+"share a common root, you can search across all of the domains using the "
+"Global Catalog. To do so, update your config.json as follows:"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:111
+msgid "Set the LdapPort to 3268 (instead of 389)"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:112
+msgid "Set the BaseDN to \" \" (A single space character)"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:114
+msgid "See Global Catalog and LDAP Searches for additional details."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:116
+msgid "Troubleshooting/FAQ"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:118
+msgid ""
+"The following are frequently asked questions and troubleshooting "
+"suggestions on common error messages and issues. It is recommended that "
+"you check your logs for errors as they can provide an idea of what the "
+"issue is."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:120
+msgid "If the AD/LDAP Test button fails, how can I troubleshoot the connection?"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:122
+msgid ""
+"Check that your AD/LDAP connection settings are correct by running an "
+"AD/LDAP user query in an external system. See LDAP Connection Test "
+"Example. If the AD/LDAP connection is verified to be working out side of "
+"Mattermost, try the following:"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:124
+msgid "Check your AD/LDAP system to verify your Bind Username format."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:125
+msgid ""
+"Check your AD/LDAP Port and Connection Security settings in the System "
+"Console. (AD/LDAP Port set to 389 typically uses Connection Security set "
+"to None. AD/LDAP Port set to 636 typically ties to Connection Security "
+"set to TLS)."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:126
+msgid ""
+"If you're seeing x509: certificate signed by unknown authority in your "
+"logs, try installing an intermediate SSL certificate on the Mattermost "
+"servers or have your LDAP server send the complete certificate chain."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:128
+msgid ""
+"If these options don't work, please contact Mattermost support via the "
+"email address that came with your license key."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:130
+msgid ""
+"When I first set up and synchronize AD/LDAP, are the users automatically "
+"created in Mattermost?"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:132
+msgid "No, each user is created on their first login."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:134
+msgid ""
+"When I try to synchronize AD/LDAP, why does the Status show as Pending "
+"and not complete?"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:136
+msgid ""
+"Go to System Console > AD/LDAP and make sure that the Enable "
+"Synchronization with AD/LDAP setting is set to true."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:138
+msgid ""
+"If the issue persists, try performing a sync with the User Filter field "
+"blank. If the sync completes in this scenario, then the general syntax "
+"was formatted incorrectly. Refer to this document for guidance on setting"
+" a correct syntax format."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:140
+msgid ""
+"Make sure that you also have at least one LDAP user in Mattermost or the "
+"sync will not complete."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:142
+msgid ""
+"What is the difference between the Username Attribute, ID Attribute, and "
+"Login ID Attribute?"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:144
+msgid ""
+"There are three AD/LDAP attributes that apear to be similar but serve a "
+"different purpose:"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:146
+msgid ""
+"Username Attribute. Used within the Mattermost user interface to identify"
+" and mention users. For example, if Username Attribute is set to "
+"john.smith, a user typing @john will see @john.smith in their "
+"autocomplete options and posting a message with @john.smith will send a "
+"notification to that user that they’ve been mentioned."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:147
+msgid ""
+"ID Attribute. Used as the unique identifier in Mattermost. It should be "
+"an AD/LDAP attribute with a value that does not change, such as "
+"ObjectGUID. If a user's ID attribute changes, it will create a new "
+"Mattermost account unassociated with their old one. If you need to change"
+" this field after users have already logged in, use the mattermost ldap "
+"idmigrate CLI tool."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:148
+msgid ""
+"Login ID Attribute. The attribute in the AD/LDAP server used to log in to"
+" Mattermost. Normally this attribute is the same as the Username "
+"Attribute field above, or another field that users can easily remember."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:150
+msgid "If I want to add people to channels, can I pre-create users?"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:152
+msgid "Yes, using the bulk import tool."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:154
+msgid "How do I deactivate users?"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:156
+msgid ""
+"When AD/LDAP authentication is used in Mattermost, user deactivation must"
+" be done via the AD/LDAP server."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:158
+msgid "There are two main ways to do this:"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:160
+msgid ""
+"User deletion: If the user is completely removed from the AD/LDAP server,"
+" they will be deactivated in Mattermost on the next synchronization."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:161
+msgid ""
+"User filter: Set the user filter to only select the subset of AD/LDAP "
+"users you want to have access to Mattermost. When someone is removed from"
+" the selected group, they will be deactivated in Mattermost on the next "
+"synchronization."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:163
+msgid ""
+"For Active Directory, to filter out deactivated users you must set the "
+"user filter to "
+"(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:165
+msgid ""
+"When a user is deactivated in Mattermost, all the user's current sessions"
+" are revoked and they will be unable to log in or access Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:167
+msgid "Can I connect to multiple Active Directory servers?"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:169
+msgid ""
+"There is currently no built-in way to connect to multiple AD servers. You"
+" will need to connect the instances in a forest before connecting to "
+"Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:171
+msgid "Consider upvoting the feature request on our forum."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:173
+msgid ""
+"When trying to sign in, I see the error AD/LDAP not available on this "
+"server."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:175
+msgid ""
+"This indicates that there is a problem somewhere with your configuration."
+" We recommend that you:"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:176
+msgid "Confirm Enterprise Edition is installed."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:177
+msgid "Check your license to confirm it's uploaded and not expired."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:178
+msgid ""
+"Check your Mattermost configuration settings to ensure that AD/LDAP is "
+"enabled, and the settings are correct."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:180
+#: ../../source/deployment/sso-ldap.md:189
+msgid ""
+"If you're still having issues, you can contact support for additional "
+"troubleshooting."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:182
+msgid "I see the error User not registered on AD/LDAP server."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:184
+msgid ""
+"This means the query sent back to the AD/LDAP server returned no results."
+" We recommend that you:"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:185
+msgid ""
+"Check that the user credentials were entered properly - you should log in"
+" with the field set as the ID Attribute."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:186
+msgid "Check that the user account exists in the AD/LDAP server."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:187
+msgid "Check the AD/LDAP configuration settings are correct."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:191
+msgid ""
+"I updated a user account in AD/LDAP, and they can no longer log in to "
+"Mattermost."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:193
+msgid ""
+"If the user can no longer log in to Mattermost with their AD/LDAP "
+"credentials - for example, they get an error message An account with that"
+" email already exists, or a new Mattermost account is created when they "
+"try to log in - this means the ID Attribute for their account has "
+"changed."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:195
+msgid ""
+"The issue can be fixed by changing the value of the field used for the ID"
+" Attribute back to the old value. If you're currently using a field that "
+"sometimes changes for an ID Attribute (e.g. username, email that changes "
+"when someone gets married), we recommend you switch to using a non-"
+"changing field such as a GUID."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:197
+msgid "To do this, you can:"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:199
+msgid "Use the CLI to migrate the ID Attribute to a non-changing field."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:200
+msgid ""
+"Set the Login ID Attribute to whatever you would like users to log in "
+"with (e.g. username or email)."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:202
+msgid ""
+"Note: Currently the value is case sensitive. If the ID Attribute is set "
+"to the username and the username changes from John.Smith to john.smith, "
+"the user will experience problems logging in."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:204
+msgid "I see the log error LDAP Result Code 4 \"Size Limit Exceeded\"."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:206
+msgid ""
+"This indicates your AD/LDAP server configuration has a maximum page size "
+"set and the query coming from Mattermost is returning a result set in "
+"excess of that limit."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:208
+msgid ""
+"To address this issue you can set the max page size in your Mattermost "
+"configuration to match the limit on your AD/LDAP server. This will return"
+" a sequence of result sets that do not exceed the max page size, rather "
+"than returning all results in a single query. A max page size setting of "
+"1500 is recommended."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:210
+msgid ""
+"If the error is still occurring, it is likely that no AD/LDAP users have "
+"logged into Mattermost yet. Ensure that at least one AD/LDAP user has "
+"logged into Mattermost and re-run the sync. The error should disappear at"
+" that point."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:212
+msgid "Where can I find help on AD/LDAP configuration settings in config.json?"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:214
+msgid "You can find an explanation of each of the configuration settings here."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:216
+msgid "Can the AD/LDAP User Filter read security groups?"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:218
+msgid "Yes it can, but make sure that:"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:219
+msgid "Permissions are correctly configured on the service account you are using."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:220
+msgid "Each user object is a direct member of the security group."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:222
+msgid "How do I know if an AD/LDAP sync job fails?"
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:224
+msgid ""
+"Mattermost provides the status of each AD/LDAP sync job in System Console"
+" > Authentication > AD/LDAP. Here you can see the number of users updated"
+" and if the job succeeded or failed."
+msgstr ""
+
+#: ../../source/deployment/sso-ldap.md:226
+msgid ""
+"Moreover, any failures are returned in the server logs. The error log "
+"begins with the string Failed job and includes a job_id key/value pair. "
+"AD/LDAP sync job failures are identified with worker name "
+"EnterpriseLdapSync. You can optionally create a script that "
+"programmatically queries for such failures and notifies the appropriate "
+"system."
+msgstr ""
+

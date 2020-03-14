@@ -1,0 +1,925 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/administration/open-source-components.rst:2
+msgid "Open Source Components"
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:4
+msgid ""
+"The following open source components are used to provide the full "
+"benefits of Mattermost Enterprise Edition."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:7
+msgid "Desktop"
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:9
+msgid ""
+"Mattermost Desktop v4.4.0 - `View Open Source Components "
+"<https://github.com/mattermost/desktop/blob/release-4.4/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:10
+msgid ""
+"Mattermost Desktop v4.3.0 - `View Open Source Components "
+"<https://github.com/mattermost/desktop/blob/release-4.3/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:11
+msgid ""
+"Mattermost Desktop v4.2.0 - `View Open Source Components "
+"<https://github.com/mattermost/desktop/blob/release-4.2/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:12
+msgid ""
+"Mattermost Desktop v4.1.0 - `View Open Source Components "
+"<https://github.com/mattermost/desktop/blob/release-4.1/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:13
+msgid ""
+"Mattermost Desktop v4.0.0 - `View Open Source Components "
+"<https://github.com/mattermost/desktop/blob/release-4.0/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:14
+msgid ""
+"Mattermost Desktop v3.7.0 - `View Open Source Components "
+"<https://github.com/mattermost/desktop/blob/release-3.7/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:17
+msgid "Mobile"
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:19
+msgid ""
+"Mattermost Mobile v1.28.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.28/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:20
+msgid ""
+"Mattermost Mobile v1.27.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.27/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:21
+msgid ""
+"Mattermost Mobile v1.26.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.26/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:22
+msgid ""
+"Mattermost Mobile v1.25.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.25/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:23
+msgid ""
+"Mattermost Mobile v1.24.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.24/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:24
+msgid ""
+"Mattermost Mobile v1.23.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.23/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:25
+msgid ""
+"Mattermost Mobile v1.22.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.22/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:26
+msgid ""
+"Mattermost Mobile v1.21.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.21/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:27
+msgid ""
+"Mattermost Mobile v1.20.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.20/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:28
+msgid ""
+"Mattermost Mobile v1.19.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.19/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:29
+msgid ""
+"Mattermost Mobile v1.18.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.18/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:30
+msgid ""
+"Mattermost Mobile v1.17.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.17/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:31
+msgid ""
+"Mattermost Mobile v1.16.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.16/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:32
+msgid ""
+"Mattermost Mobile v1.15.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.15/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:33
+msgid ""
+"Mattermost Mobile v1.14.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.14/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:34
+msgid ""
+"Mattermost Mobile v1.13.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.13/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:35
+msgid ""
+"Mattermost Mobile v1.12.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.12/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:36
+msgid ""
+"Mattermost Mobile v1.11.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.11/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:37
+msgid ""
+"Mattermost Mobile v1.10.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.10/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:38
+msgid ""
+"Mattermost Mobile v1.9.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.9/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:39
+msgid ""
+"Mattermost Mobile v1.8.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.8/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:40
+msgid ""
+"Mattermost Mobile v1.7.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.7/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:41
+msgid ""
+"Mattermost Mobile v1.6.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.6/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:42
+msgid ""
+"Mattermost Mobile v1.5.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.5/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:43
+msgid ""
+"Mattermost Mobile v1.4.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.4/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:44
+msgid ""
+"Mattermost Mobile v1.3.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.3/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:45
+msgid ""
+"Mattermost Mobile v1.2.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.2/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:46
+msgid ""
+"Mattermost Mobile v1.1.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.1/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:47
+msgid ""
+"Mattermost Mobile v1.0.1 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"mobile/blob/release-1.0.1/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:50
+msgid "Redux"
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:52
+msgid ""
+"Mattermost Enterprise Edition v5.20.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.20/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:53
+msgid ""
+"Mattermost Enterprise Edition v5.19.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.19/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:54
+msgid ""
+"Mattermost Enterprise Edition v5.18.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.18/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:55
+msgid ""
+"Mattermost Enterprise Edition v5.17.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.17/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:56
+msgid ""
+"Mattermost Enterprise Edition v5.16.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.16/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:57
+msgid ""
+"Mattermost Enterprise Edition v5.15.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.15/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:58
+msgid ""
+"Mattermost Enterprise Edition v5.14.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.14/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:59
+msgid ""
+"Mattermost Enterprise Edition v5.13.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.13/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:60
+msgid ""
+"Mattermost Enterprise Edition v5.12.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.12/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:61
+msgid ""
+"Mattermost Enterprise Edition v5.11.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.11/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:62
+msgid ""
+"Mattermost Enterprise Edition v5.10.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.10/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:63
+msgid ""
+"Mattermost Enterprise Edition v5.9.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.9/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:64
+msgid ""
+"Mattermost Enterprise Edition v5.8.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.8/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:65
+msgid ""
+"Mattermost Enterprise Edition v5.7.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.7/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:66
+msgid ""
+"Mattermost Enterprise Edition v5.6.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.6/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:67
+msgid ""
+"Mattermost Enterprise Edition v5.5.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.5/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:68
+msgid ""
+"Mattermost Enterprise Edition v5.4.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.4/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:69
+msgid ""
+"Mattermost Enterprise Edition v5.3.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.3/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:70
+msgid ""
+"Mattermost Enterprise Edition v5.2.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.2/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:71
+msgid ""
+"Mattermost Enterprise Edition v5.1.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.1/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:72
+msgid ""
+"Mattermost Enterprise Edition v5.0.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-5.0/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:73
+msgid ""
+"Mattermost Enterprise Edition v4.10.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"redux/blob/release-4.10/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:76
+msgid "Server"
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:78
+msgid ""
+"Mattermost Enterprise Edition v5.20.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.20/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:79
+msgid ""
+"Mattermost Enterprise Edition v5.19.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.19/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:80
+msgid ""
+"Mattermost Enterprise Edition v5.18.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.18/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:81
+msgid ""
+"Mattermost Enterprise Edition v5.17.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.17/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:82
+msgid ""
+"Mattermost Enterprise Edition v5.16.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.16/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:83
+msgid ""
+"Mattermost Enterprise Edition v5.15.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.15/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:84
+msgid ""
+"Mattermost Enterprise Edition v5.14.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.14/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:85
+msgid ""
+"Mattermost Enterprise Edition v5.13.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.13/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:86
+msgid ""
+"Mattermost Enterprise Edition v5.12.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.12/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:87
+msgid ""
+"Mattermost Enterprise Edition v5.11.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.11/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:88
+msgid ""
+"Mattermost Enterprise Edition v5.10.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.10/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:89
+msgid ""
+"Mattermost Enterprise Edition v5.9.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.9/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:90
+msgid ""
+"Mattermost Enterprise Edition v5.8.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.8/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:91
+msgid ""
+"Mattermost Enterprise Edition v5.7.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.7/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:92
+msgid ""
+"Mattermost Enterprise Edition v5.6.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.6/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:93
+msgid ""
+"Mattermost Enterprise Edition v5.5.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.5/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:94
+msgid ""
+"Mattermost Enterprise Edition v5.4.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.4/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:95
+msgid ""
+"Mattermost Enterprise Edition v5.3.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.3/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:96
+msgid ""
+"Mattermost Enterprise Edition v5.2.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.2/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:97
+msgid ""
+"Mattermost Enterprise Edition v5.1.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.1/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:98
+msgid ""
+"Mattermost Enterprise Edition v5.0.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-5.0/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:99
+msgid ""
+"Mattermost Enterprise Edition v4.10.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-4.10/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:100
+msgid ""
+"Mattermost Enterprise Edition v4.9.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-4.9/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:101
+msgid ""
+"Mattermost Enterprise Edition v4.8.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-4.8/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:102
+msgid ""
+"Mattermost Enterprise Edition v4.7.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-4.7/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:103
+msgid ""
+"Mattermost Enterprise Edition v4.6.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-4.6/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:104
+msgid ""
+"Mattermost Enterprise Edition v4.5.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-4.5/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:105
+msgid ""
+"Mattermost Enterprise Edition v4.4.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-4.4/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:106
+msgid ""
+"Mattermost Enterprise Edition v4.3.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-4.3/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:107
+msgid ""
+"Mattermost Enterprise Edition v4.2.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-4.2/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:108
+msgid ""
+"Mattermost Enterprise Edition v4.1.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-4.1/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:109
+msgid ""
+"Mattermost Enterprise Edition v4.0.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-4.0/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:110
+msgid ""
+"Mattermost Enterprise Edition v3.10.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-3.10/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:111
+msgid ""
+"Mattermost Enterprise Edition v3.9.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-3.9/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:112
+msgid ""
+"Mattermost Enterprise Edition v3.8.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-3.8/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:113
+msgid ""
+"Mattermost Enterprise Edition v3.7.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-3.7/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:114
+msgid ""
+"Mattermost Enterprise Edition v3.6.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-3.6/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:115
+msgid ""
+"Mattermost Enterprise Edition v3.5.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-3.5/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:116
+msgid ""
+"Mattermost Enterprise Edition v3.4.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-3.4/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:117
+msgid ""
+"Mattermost Enterprise Edition v3.3.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-3.3/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:118
+msgid ""
+"Mattermost Enterprise Edition v3.2.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-3.2/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:119
+msgid ""
+"Mattermost Enterprise Edition v3.1.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"server/blob/release-3.1/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:122
+msgid "Webapp"
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:124
+msgid ""
+"Mattermost Enterprise Edition v5.20.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.20/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:125
+msgid ""
+"Mattermost Enterprise Edition v5.19.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.19/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:126
+msgid ""
+"Mattermost Enterprise Edition v5.18.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.18/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:127
+msgid ""
+"Mattermost Enterprise Edition v5.17.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.17/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:128
+msgid ""
+"Mattermost Enterprise Edition v5.16.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.16/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:129
+msgid ""
+"Mattermost Enterprise Edition v5.15.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.15/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:130
+msgid ""
+"Mattermost Enterprise Edition v5.14.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.14/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:131
+msgid ""
+"Mattermost Enterprise Edition v5.13.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.13/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:132
+msgid ""
+"Mattermost Enterprise Edition v5.12.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.12/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:133
+msgid ""
+"Mattermost Enterprise Edition v5.11.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.11/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:134
+msgid ""
+"Mattermost Enterprise Edition v5.10.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.10/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:135
+msgid ""
+"Mattermost Enterprise Edition v5.9.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.9/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:136
+msgid ""
+"Mattermost Enterprise Edition v5.8.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.8/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:137
+msgid ""
+"Mattermost Enterprise Edition v5.7.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.7/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:138
+msgid ""
+"Mattermost Enterprise Edition v5.6.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.6/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:139
+msgid ""
+"Mattermost Enterprise Edition v5.5.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.5/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:140
+msgid ""
+"Mattermost Enterprise Edition v5.4.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.4/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:141
+msgid ""
+"Mattermost Enterprise Edition v5.3.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.3/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:142
+msgid ""
+"Mattermost Enterprise Edition v5.2.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.2/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:143
+msgid ""
+"Mattermost Enterprise Edition v5.1.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.1/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:144
+msgid ""
+"Mattermost Enterprise Edition v5.0.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-5.0/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:145
+msgid ""
+"Mattermost Enterprise Edition v4.10.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-4.10/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:146
+msgid ""
+"Mattermost Enterprise Edition v4.9.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-4.9/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:147
+msgid ""
+"Mattermost Enterprise Edition v4.8.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-4.8/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:148
+msgid ""
+"Mattermost Enterprise Edition v4.7.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-4.7/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:149
+msgid ""
+"Mattermost Enterprise Edition v4.6.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-4.6/NOTICE.txt>`_."
+msgstr ""
+
+#: ../../source/administration/open-source-components.rst:150
+msgid ""
+"Mattermost Enterprise Edition v4.5.0 - `View Open Source Components "
+"<https://github.com/mattermost/mattermost-"
+"webapp/blob/release-4.5/NOTICE.txt>`_."
+msgstr ""
+

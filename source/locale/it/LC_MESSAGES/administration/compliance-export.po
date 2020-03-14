@@ -1,0 +1,327 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/administration/compliance-export.rst:2
+msgid "Compliance Export Beta (E20)"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:4
+msgid ""
+"Available in `Enterprise Edition E20 "
+"<https://about.mattermost.com/pricing/>`__."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:6
+msgid ""
+"This feature enables compliance exports to be produced from the System "
+"Console, containing all messages including:"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:8
+msgid "Those made in direct message channels"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:9
+msgid "File uploads"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:10
+msgid "Posts from plugins"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:11
+msgid "Posts from bots/webhooks"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:13
+msgid ""
+"The exports include information on channel member history at the time of "
+"the message was posted."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:15
+msgid ""
+"From Mattermost 5.18, entries for deleted messages and files are included"
+" in CSV and Actiance reports. The deleted content is included in the "
+"compliance export. Global Relay reports include file deletion entries but"
+" message deletion entries are excluded."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:17
+msgid ""
+"By default, Mattermost stores all message history providing an unlimited "
+"search history to admins and end users. In Enterprise Edition E20, you "
+"may set a `custom data retention policy "
+"<https://docs.mattermost.com/administration/data-retention.html>`__ for "
+"how long messages and file uploads are kept in Mattermost channels and "
+"direct messages."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:19
+msgid ""
+"Enterprise deployments with a requirement to archive history beyond the "
+"data retention period can enable this add-on to export compliance reports"
+" to third-party systems. Integration with Actiance Vantage and Global "
+"Relay are currently supported, with integrations with other systems in "
+"the roadmap."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:22
+msgid ""
+"This feature will replace the existing :doc:`Compliance feature "
+"<compliance>` in a future release. Compliance exports to CSV will "
+"continue to be available in Enterprise Edition E20."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:28
+msgid "Set Up Guide"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:30
+msgid ""
+"Use the following guides to configure exports for CSV, Actiance XML, or "
+"Global Relay EML. Compliance exports are written to the ``exports`` "
+"subdirectory of the configured `Local Storage directory "
+"<https://docs.mattermost.com/administration/config-"
+"settings.html#storage>`__ in the chosen format. If you have configured "
+"Mattermost to use S3 storage, the exports are written to the ``exports`` "
+"directory in the Mattermost bucket."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:33
+msgid ""
+"The compliance exports do not contain posts sent before the feature was "
+"enabled, but you can export past history via the ``export`` :doc:`command"
+" line tool <command-line-tools>`. Posts made prior to upgrading to "
+"Mattermost v4.5 will have less accurate channel member history "
+"information."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:36
+msgid "CSV"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:38
+#: ../../source/administration/compliance-export.rst:51
+#: ../../source/administration/compliance-export.rst:65
+msgid ""
+"Go to **System Console > Compliance > Compliance Export (Beta)** (or "
+"**System Console > Advanced > Compliance Export (Beta)** in versions "
+"prior to 5.12)."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:39
+#: ../../source/administration/compliance-export.rst:52
+#: ../../source/administration/compliance-export.rst:66
+msgid "Set **Enable Compliance Exports** to ``true``."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:40
+#: ../../source/administration/compliance-export.rst:53
+#: ../../source/administration/compliance-export.rst:67
+msgid ""
+"Set the **Compliance Export time**. This is the start time of the daily "
+"scheduled compliance export job and must be a 24-hour time stamp in the "
+"form HH:MM. Choose a time when fewer people are using your system."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:41
+msgid "Set the export file format to **CSV**."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:42
+#: ../../source/administration/compliance-export.rst:55
+#: ../../source/administration/compliance-export.rst:71
+msgid "Choose **Save**."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:44
+msgid ""
+"You can use the CSV format to easily transform exports in a desired "
+"format for your third-party archive system."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:46
+msgid ""
+"For a sample CSV output, `download a CSV export file here "
+"<https://github.com/mattermost/docs/blob/master/source/samples/csv_export.zip>`__."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:49
+msgid "Actiance XML"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:54
+msgid "Set the export file format to **Actiance XML**."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:57
+msgid ""
+"Once you have selected Actiance XML as your file format, you can set up "
+"an integration with Actiance Vantage archive system. For more "
+"information, see `their homepage "
+"<https://www.actiance.com/products/vantage/>`__. For a sample Actiance "
+"output, `download an Actiance XML export file here "
+"<https://github.com/mattermost/docs/blob/master/source/samples/actiance_export.xml>`__."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:60
+msgid "In Actiance XML exports, channel type is prepended to the channel names."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:63
+msgid "Global Relay EML"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:68
+msgid "Set the export file format to **GlobalRelay EML**."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:69
+msgid ""
+"Select `A9/Type 9` or `A10/Type 10` for the **Global Relay Customer "
+"Account**. This is the type of Global Relay customer account your "
+"organization has."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:70
+msgid ""
+"Set the **Global Relay SMTP username**, **Global Relay SMTP password**, "
+"and **Global Relay SMTP email address**, as provided by Global Relay."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:73
+msgid ""
+"Once you have selected Global Relay EML as your file format, you can set "
+"up an integration with Global Relay archive system. For more information,"
+" see `Global Relay Archive <https://www.globalrelay.com/gr-"
+"services/archive>`__."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:76
+msgid ""
+"Messages larger than 250 MB will have their attachments removed because "
+"they are too large to send to Global Relay. An error is added to the "
+"server logs with id ``global_relay_attachments_removed``. It includes the"
+" post ID the attachments were removed from, as well as the attachment "
+"IDs. A `ticket is queued to better handle large messages "
+"<https://mattermost.atlassian.net/browse/MM-10038>`__."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:78
+msgid ""
+"For more information on Global Relay archive system, see `their homepage "
+"<https://www.globalrelay.com/>`__."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:81
+msgid "Frequently Asked Questions (FAQ)"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:84
+msgid "How do I export past history?"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:86
+msgid ""
+"Run the ``export`` :doc:`command line tool <command-line-tools>`. You can"
+" specify an `exportFrom` option to export data from a specified "
+"timestamp. All posts that were made after this timestamp will be "
+"exported."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:89
+msgid "What happens if I export data manually?"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:91
+msgid ""
+"If the compliance export job is run automatically, manually via the "
+"System Console, or manually via the CLI (without the ``--exportFrom`` "
+"option), it exports all posts that were made since the last post that the"
+" previous execution of the job exported. If this is the first time that "
+"the job has ever run, all posts that were made since the feature was "
+"enabled will be exported. If the ``--exportFrom`` option is specified "
+"with the CLI command, all posts that have been made since the supplied "
+"timestamp will be exported."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:94
+msgid ""
+"When run manually via the System Console, CSV and Actiance XML files are "
+"written to the `exports` subdirectory of the configured `Local Storage "
+"Directory <https://docs.mattermost.com/administration/config-"
+"settings.html?#local-storage-directory>`__.  Files will be written to a "
+"folder with names based on an epoch time range. Global Relay EML export "
+"format will be mailed to the configured email address when run manually."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:97
+msgid "Why are compliance exports beta?"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:99
+msgid "This feature is labelled as beta for the following reasons:"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:101
+msgid ""
+"The job to carry out a compliance export has not been tested on a system "
+"with 10,000s of concurrent active users."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:102
+msgid ""
+"Exports do not yet include messages with special types, namely system "
+"messages, webhook message attachments, and custom plugin messages."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:103
+msgid ""
+"There isn't yet a way to distinguish who edited or deleted a message, nor"
+" which message is a reply or an edit of another message."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:104
+msgid "The QA process is still in progress."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:107
+msgid "How do I know if a compliance export job fails?"
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:109
+msgid ""
+"Mattermost provides the status of each compliance export job in **System "
+"Console > Compliance > Compliance Export (Beta)** (or **System Console > "
+"Advanced > Compliance Export (Beta)** in versions prior to 5.12). Here, "
+"you can see if the job succeeded or failed, including the number of "
+"messages and files exported."
+msgstr ""
+
+#: ../../source/administration/compliance-export.rst:111
+msgid ""
+"In addition, any failures are returned in the server logs. The error log "
+"begins with the string ``Failed job`` and includes a job_id key/value "
+"pair. Compliance export job failures are identified with worker name "
+"``MessageExportWorker``. You can optionally create a script that "
+"programmatically queries for such failures and notifies the appropriate "
+"system."
+msgstr ""
+

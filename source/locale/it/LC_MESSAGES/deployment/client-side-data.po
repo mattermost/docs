@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/client-side-data.rst:2
+msgid "Client-side Data Storage FAQ"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:5
+msgid "Mobile Web Experience"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:7
+msgid "**1. What data is stored?**"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:8
+msgid ""
+"Similar to a desktop web browser, data may be stored in the mobile web "
+"browser cache which resides on the storage system of the device operating"
+" system which is protected by security measures in the physical device "
+"and its operating system."
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:9
+msgid "**2. How is the data protected?**"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:10
+msgid ""
+"Security for mobile web experience is similar to the security for a "
+"desktop web experience."
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:13
+msgid "**3. When is the data deleted?**"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:12
+msgid ""
+"If you log out or your account is deactivated, the data in the browser "
+"cache may reside until the cache expires or the temporary file system "
+"store on the operating system is cleared, depending on your operating "
+"system."
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:16
+msgid "Mobile App Experience"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:18
+msgid ""
+"To speed up initial loading time, Mattermost mobile apps cache data "
+"locally on the device for v1.1 and later. Below are common questions on "
+"cached data:"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:20
+msgid ""
+"**1. What data is stored locally with the new mobile apps on a mobile "
+"device?**"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:22
+msgid ""
+"The data that can be found on the device depends solely on whether or not"
+" the user is logged in to the Mattermost server, and is independent of "
+"the state of the device's connection or the state of the app. While "
+"logged in, anything that the user is normally allowed to see is eligible "
+"for storage on the device, which includes the following content:"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:24
+msgid "messages"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:25
+msgid "files and images that are attached to messages"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:26
+msgid ""
+"avatars, usernames, and email addresses of people in the currently open "
+"channel"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:28
+msgid ""
+"In addition, metadata that the app uses for keeping track of its "
+"operations is also cached. The metadata includes user IDs, channel IDs, "
+"team IDs, and message IDs."
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:30
+msgid "Currently, cache cannot be reset remotely on connected mobile devices."
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:33
+msgid "**2. What about push notifications?**"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:33
+msgid ""
+"Push notification storage is managed by the operating system on the "
+"device. Mattermost can be configured to send limited amounts of "
+"information that does not include the message text or channel name, and "
+"it can also be configured to not send push notifications at all."
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:36
+msgid "**3. Where is the data stored and how is that data protected?**"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:36
+msgid ""
+"The data is stored in the app's local storage. It is protected by the "
+"security measures that a device normally provides to the apps that are "
+"installed on it."
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:39
+msgid "**4. How long is the data stored?**"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:39
+msgid ""
+"Data is stored until the user logs out, or until it is purged during "
+"normal cache management. Deactivating a user account forces a logout and "
+"subsequent purging of data from the device."
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:42
+msgid "**5. Are messages pre-loaded?**"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:42
+msgid ""
+"No. Messages are sent to the device on demand. They are not pre-loaded in"
+" anticipation of users scrolling up or switching channels."
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:45
+msgid ""
+"**6. What happens to messages that are deleted on the server after a user"
+" has seen them?**"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:45
+msgid "The messages are deleted from the client."
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:55
+msgid ""
+"**7. What data is stored on a mobile device after an account is "
+"deactivated in the following cases:**"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:48
+msgid "*The mobile device is connected with app running.*"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:49
+msgid ""
+"All the data listed in Questions 1 and 2, but within 60 seconds after an "
+"account is deactivated on the server, all app data is deleted from the "
+"cache."
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:50
+msgid "*The mobile device is disconnected with app running.*"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:51
+msgid ""
+"All the data listed in Questions 1 and 2, but within 60 seconds after the"
+" device reconnects, all app data is deleted from the cache."
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:52
+msgid "*The mobile device is connected with the app not running.*"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:53
+msgid ""
+"All the data listed in Questions 1 and 2, but within 60 seconds after the"
+" app is started, all app data is deleted from the cache."
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:54
+msgid "*The mobile device is disconnected and app is not running.*"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:55
+msgid ""
+"All the data listed in Questions 1 and 2, but within 60 seconds after the"
+" device reconnects and the app is started, all app data is deleted from "
+"the cache."
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:57
+msgid ""
+"**8. What data might be on the device after a user account is deactivated"
+" and all data is deleted from the cache?**"
+msgstr ""
+
+#: ../../source/deployment/client-side-data.rst:58
+msgid ""
+"If file attachments are enabled on the server, users can download files "
+"that are attached to messages and store them on their local file system. "
+"After they are downloaded, the files are outside the control of the app "
+"and can remain on the device indefinitely."
+msgstr ""
+

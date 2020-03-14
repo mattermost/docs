@@ -1,0 +1,357 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/help/getting-started/organizing.rst:3
+msgid "Organizing Mattermost"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:5
+msgid ""
+"The importance of organizing channels increases as Mattermost spreads to "
+"thousands of users."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:7
+msgid ""
+"This document shares best practices from various Mattermost deployments "
+"including:"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:9
+msgid "`The importance of channel names`_"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:10
+msgid "`How to navigate and organize channels`_"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:11
+msgid "`Channel naming examples`_"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:15
+msgid "The importance of channel names"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:17
+msgid "Channels organize communication in Mattermost."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:19
+msgid "When naming or renaming channels, consider the following:"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:22
+msgid "Basic Structure"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:24
+msgid ""
+"Channel names appear in menus where users select which conversations to "
+"join."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:25
+msgid "Channel names are unique."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:26
+msgid ""
+"Channel names have a 64 character limit to ensure readability on both "
+"desktop and mobile devices."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:27
+msgid ""
+"An additional 128 characters are available to add a \"Channel Purpose\" "
+"visible when users are selecting channels."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:28
+msgid ""
+"An additional 1024 characters are available for describing the channel in"
+" detail in the \"Channel Header\"."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:31
+msgid "Scoping Names"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:33
+msgid ""
+"It's natural to start with broadly defined channels and let them divide "
+"into narrower topics as discussions progress."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:35
+msgid ""
+"For example, you might begin with a general \"Marketing\" channel. As "
+"conversations progress, you might divide that channel into: \"Marketing: "
+"Website\", \"Marketing: Social Media\", \"Marketing: General\"."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:37
+msgid ""
+"Use colons to separate sections of channel names, rather than `` - `` or "
+"`` > `` which require more spaces to display."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:39
+msgid ""
+"As the organization grows, disciplines might split across business units,"
+" products and geographies, with channel names like \"US: Marketing\" and "
+"\"UK: Marketing\"."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:41
+msgid ""
+"If you need to shorten country names, use standard `2-letter country "
+"codes <http://www.nationsonline.org/oneworld/country_code_list.htm>`__."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:43
+msgid ""
+"You can combine the hierarchies, with formats like ``[SUB-TEAM]: [TOPIC]:"
+" [SUB-TOPIC]``. For example: ``US: Mrkt: Website`` and ``UK: Mrkt: Social"
+" Media``."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:45
+msgid ""
+"Shorten words, particularly categories, by removing vowels, endings and "
+"redundant letter sounds. Example: Turn \"Marketing\" into \"Mrkt\", and "
+"\"Project\" into \"Prjt\"."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:47
+msgid ""
+"Good naming can take a team up to several thousand channels without "
+"significant confusion. Eventually every organization hits a limit and an "
+"additional team might need to be created on the server to accommodate the"
+" large number of channels."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:51
+msgid "How to navigate and organize channels"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:53
+msgid ""
+"With guidance on how to set channel names, here are different navigation "
+"options and types of channels to consider:"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:56
+msgid "Navigating channels using the keyboard"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:58
+msgid "Keyboard shortcuts allow users to jump between channels."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:60
+msgid ""
+"Entering CTRL+K brings up a dialog where users can type in the first few "
+"letters of a channel, triggering auto-complete. Pressing ENTER jumps to "
+"the channel directly."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:62
+msgid ""
+"Keeping names clear and short lets users navigate large collections of "
+"channels quickly."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:64
+msgid ""
+"Use ALT+SHIFT+UP and ALT+SHIFT+DOWN to move up and down to the next "
+"channel with an unread message."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:67
+msgid "Topic Channels"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:69
+msgid ""
+"Topics are broad categories for organizing discussions. Topics are "
+"similar to how a user might create a folder for organizing emails or "
+"documents::"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:73
+msgid ""
+"Users can join and leave topic-based channels, as well as add colleagues "
+"to have topic-based discussions."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:75
+msgid ""
+"As teams get larger and the number of channels increase, you may start "
+"naming topics in a hierarchy to make them easier to find::"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:80
+msgid "Meeting Channels"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:82
+msgid ""
+"Meeting channels are often used to organize regular meetings. Members can"
+" add topics as messages to be discussed during the regular meeting time::"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:86
+msgid "There are three built-in features to make meetings in Mattermost easier:"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:88
+msgid "Numbered agenda items in title text"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:90
+msgid ""
+"You can number and format messages as agenda items to discuss for the "
+"next meeting."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:92
+msgid ""
+"Try pasting the following as an example in a channel designated for "
+"meetings::"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:97
+msgid "Threaded messaging"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:99
+msgid ""
+"On an agenda item message, you can select ``[...] > Reply`` to leave "
+"comments about an agenda item before or after a meeting to extended "
+"discussion."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:101
+msgid "Header links"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:103
+msgid ""
+"When meeting remotely, add persistent links to your video or audio "
+"conferencing solution, like Zoom, Google Hangouts or BlueJeans in the "
+"`channel header <https://docs.mattermost.com/help/settings/channel-"
+"settings.html#channel-header>`__."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:105
+msgid ""
+"When it's time to meet, your team can click the conference link to "
+"connect."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:108
+msgid "Sub-Team Channels"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:110
+msgid ""
+"Sub-teams can include people from the same discipline, project teams, "
+"people with the same manager or other groups brought together for a "
+"shared purpose::"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:114
+msgid ""
+"As sub-teams grow beyond a manageable size for one channel, they can sub-"
+"divide::"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:119
+msgid "Project Channels"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:121
+msgid ""
+"Project channels discuss how groups of people come together to achieve "
+"specific outcomes::"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:125
+msgid ""
+"Projects are often private channels rather than public channels and are "
+"used to organize a small team around a project brought up in a larger "
+"channel. The Project Channel is used to do detailed work, and updates are"
+" typically communicated back to larger channels."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:128
+msgid "Location Channels"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:130
+msgid ""
+"If your teams are in different buildings, cities or regions, you can "
+"create Location channels to help people coordinate meetings and get-"
+"togethers::"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:134
+msgid ""
+"This helps share announcements and discussions relevant to only those "
+"locations."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:137
+msgid "Data Channels"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:139
+msgid ""
+"Data channels allow automatic integration. Information like new or "
+"updated support tickets or bug reports, Twitter updates or mentions of "
+"your company name in the news can all be made available in channels your "
+"team chooses to monitor. There is a wide array of options::"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:144
+msgid ""
+"People might use these channels like a daily newspaper, reading about "
+"everything that's happened in the last day, while other configurations "
+"allow notifications to alert only when their username or certain key "
+"words are mentioned."
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:148
+msgid "Channel naming examples"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:150
+msgid ""
+"Here is an example of what a marketer's channels might look like in a "
+"small team::"
+msgstr ""
+
+#: ../../source/help/getting-started/organizing.rst:172
+msgid ""
+"Here is an example of what a marketer's channels might look like if she "
+"was working in the Palo Alto, California, office of a large enterprise, "
+"working on a product called \"Pontoon\"::"
+msgstr ""
+

@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/mobile/mobile-troubleshoot.rst:2
+msgid "Troubleshooting Mobile Applications"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:5
+msgid ""
+"I keep getting a message \"Cannot connect to the server. Please check "
+"your server URL and internet connection.\""
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:7
+msgid ""
+"First, confirm that your server URL has no typos and that it includes "
+"``http://`` or ``https://`` according to the server deployment "
+"configuration."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:9
+msgid ""
+"If the server URL is correct, there could be an issue with the SSL "
+"certificate configuration."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:11
+msgid ""
+"To check your SSL certificate set up, test it by visiting a site such as "
+"`SSL Labs <https://www.ssllabs.com/ssltest/index.html>`__. If there’s an "
+"error about the missing chain or certificate path, there is likely an "
+"intermediate certificate missing that needs to be included."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:13
+msgid ""
+"Please note that the apps cannot connect to servers with self-signed "
+"certificates, consider using `Let's Encrypt "
+"<https://docs.mattermost.com/install/config-ssl-http2-nginx.html>`__ "
+"instead."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:16
+msgid "Login with ADFS/Office365 is not working"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:17
+msgid ""
+"In line with Microsoft guidance we recommend `configuring intranet forms-"
+"based authentication for devices that do not support WIA "
+"<https://docs.microsoft.com/en-us/windows-server/identity/ad-"
+"fs/operations/configure-intranet-forms-based-authentication-for-devices-"
+"that-do-not-support-wia>`_."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:20
+msgid "I see a “Connecting…” bar that does not go away"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:22
+msgid ""
+"If your app is working properly, you should see a grey “Connecting…” bar "
+"that clears or says “Connected” after the app reconnects."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:24
+msgid ""
+"If you are seeing this message all the time, and your internet connection"
+" seems fine, ask your server administrator if the server uses NGINX or "
+"another webserver as a reverse proxy. If so, they should check that it is"
+" configured correctly for `supporting the websocket connection for APIv4 "
+"endpoints <https://docs.mattermost.com/install/install-ubuntu-1604.html"
+"#configuring-nginx-as-a-proxy-for-mattermost-server>`__."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:27
+msgid "I’m not receiving push notifications on my device"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:29
+msgid ""
+"Please see our documentation on :doc:`troubleshooting push notifications "
+"<mobile-troubleshoot-notifications>`."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:32
+msgid ""
+"All my outbound connections need to go through a proxy. How can I connect"
+" to the Mattermost Hosted Push Notification Service?"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:34
+msgid ""
+"You can set up an internal server to proxy the connection out of their "
+"network to the Mattermost Hosted Push Notification Service (HPNS) by "
+"following the steps below:"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:36
+msgid ""
+"Make sure your proxy server is properly configured to support SSL. "
+"Confirm it works by checking the URL at https://www.digicert.com/help/."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:37
+msgid "Setup a proxy to forward requests to ``https://push.mattermost.com``."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:38
+msgid ""
+"In Mattermost set **System Console** > **Notification Settings** > "
+"**Mobile Push** > **Enable Push Notifications** in prior versions or "
+"**System Console > Environment > Push Notification Server > Enable Push "
+"Notifications** in versions after 5.12 to \"Manually enter Push "
+"Notification Service location\""
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:39
+msgid "Enter the URL of your proxy in the **Push Notification Server** field."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:41
+msgid ""
+"Depending on how your proxy is configured you may need to add a port "
+"number and create a URL like ``https://push.internalproxy.com:8000`` "
+"mapped to ``https://push.mattermost.com``"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:44
+msgid "Build gets stuck at ``bundleReleaseJsAndAssets``"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:46
+msgid "As a workaround, you can bundle the ``js`` manually first with"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:52
+msgid "and then ignore the gradle task with"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:59
+msgid "No image previews available in the mobile app"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:61
+msgid ""
+"This can happen if the server running Mattermost has its mime types not "
+"set up correctly. A server running Linux has this file located in "
+"``/etc/mime.types``. This might vary depending on your specific OS and "
+"distribution."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:64
+msgid ""
+"Some distributions also ship without ``mailcap`` which can result in "
+"missing or incorrectly configured mime types."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:68
+msgid "None of these solve my problem!"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:70
+msgid ""
+"For more troubleshooting help, `open a new topic in our forums "
+"<https://forum.mattermost.org/c/trouble-shoot>`__ with steps to reproduce"
+" your issue. If you're an Enterprise Edition subscriber, you may open a "
+"support ticket in the `Enterprise Edition Support portal "
+"<https://mattermost.zendesk.com/hc/en-us/requests/new>`_."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:72
+msgid ""
+"To help us narrow down whether it’s a server configuration issue, device "
+"specific issue, or an issue with the app, please try the following things"
+" and include the results in your support request:"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:74
+msgid "**Connect to another server**"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:76
+msgid "Create an account at https://demo.mattermost.com"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:77
+msgid "Erase your mobile application and reinstall it"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:78
+msgid ""
+"In your mobile app, enter the server URL https://demo.mattermost.com and "
+"then your login credentials to see if the connection is working"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:80
+msgid "**Connect with another device**"
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:82
+msgid ""
+"If you have another mobile device available, try connecting with that to "
+"see if your issue still reproduces."
+msgstr ""
+
+#: ../../source/mobile/mobile-troubleshoot.rst:84
+msgid ""
+"If you don’t have another device available, check with other teammates to"
+" see if they are having the same issue."
+msgstr ""
+

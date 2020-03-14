@@ -1,0 +1,281 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/install-debian-mattermost.rst:4
+msgid "Installing Mattermost Server"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:6
+msgid "Install Mattermost Server on a 64-bit machine."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:8
+msgid "Assume that the IP address of this server is 10.10.10.2."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:10
+msgid "**To install Mattermost Server on Debian Buster**"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:12
+msgid ""
+"Log in to the server that will host Mattermost Server and open a terminal"
+" window."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:14
+msgid ""
+"Download `the latest version of the Mattermost Server "
+"<https://about.mattermost.com/download/>`__. In the following command, "
+"replace ``X.X.X`` with the version that you want to download:"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:16
+msgid ""
+"``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-"
+"amd64.tar.gz``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:18
+msgid "Extract the Mattermost Server files."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:20
+msgid "``tar -xvzf mattermost*.gz``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:22
+msgid "Move the extracted file to the ``/opt`` directory."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:24
+msgid "``sudo mv mattermost /opt``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:26
+msgid "Create the storage directory for files."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:28
+msgid "``sudo mkdir /opt/mattermost/data``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:31
+msgid ""
+"The storage directory will contain all the files and images that your "
+"users post to Mattermost, so you need to make sure that the drive is "
+"large enough to hold the anticipated number of uploaded files and images."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:33
+msgid ""
+"Set up a system user and group called ``mattermost`` that will run this "
+"service, and set the ownership and permissions."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:35
+msgid "Create the Mattermost user and group:"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:36
+msgid "``sudo useradd --system --user-group mattermost``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:37
+msgid "Set the user and group *mattermost* as the owner of the Mattermost files:"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:38
+msgid "``sudo chown -R mattermost:mattermost /opt/mattermost``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:39
+msgid "Give write permissions to the *mattermost* group:"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:40
+msgid "``sudo chmod -R g+w /opt/mattermost``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:42
+msgid ""
+"Set up the database driver in the file "
+"``/opt/mattermost/config/config.json``. Open the file in a text editor "
+"and make the following changes:"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:44
+msgid "If you are using PostgreSQL:"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:45
+msgid "Set ``\"DriverName\"`` to ``\"postgres\"``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:46
+msgid ""
+"Set ``\"DataSource\"`` to the following value, replacing ``<mmuser-"
+"password>``  and ``<host-name-or-IP>`` with the appropriate values:"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:47
+msgid ""
+"``\"postgres://mmuser:<mmuser-password>@<host-name-or-"
+"IP>:5432/mattermost?sslmode=disable&connect_timeout=10\",``."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:48
+msgid "If you are using MySQL:"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:49
+msgid "Set ``\"DriverName\"`` to ``\"mysql\"``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:50
+msgid ""
+"Set ``\"DataSource\"`` to the following value, replacing ``<mmuser-"
+"password>``  and ``<host-name-or-IP>`` with the appropriate values. Also "
+"make sure that the database name is ``mattermost`` instead of "
+"``mattermost_test``:"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:51
+msgid ""
+"``\"mmuser:<mmuser-password>@tcp(<host-name-or-"
+"IP>:3306)/mattermost?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s\"``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:53
+msgid "Test the Mattermost server to make sure everything works."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:55
+msgid "Change to the ``bin`` directory:"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:56
+msgid "``cd /opt/mattermost``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:57
+msgid "Start the Mattermost server as the user mattermost:"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:58
+msgid "``sudo -u mattermost ./bin/mattermost``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:60
+msgid ""
+"When the server starts, it shows some log information and the text "
+"``Server is listening on :8065``. You can stop the server by pressing "
+"CTRL+C in the terminal window."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:62
+msgid "Setup Mattermost to use *systemd* for starting and stopping."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:64
+msgid "Create a *systemd* unit file:"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:65
+msgid "``sudo touch /lib/systemd/system/mattermost.service``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:66
+msgid ""
+"Open the unit file as root in a text editor, and copy the following lines"
+" into the file:"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:91
+msgid ""
+"If you are using MySQL, replace ``postgresql.service`` with "
+"``mysql.service`` in 2 places in the ``[Unit]`` section."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:94
+msgid ""
+"If you have installed MySQL or PostgreSQL on a dedicated server then you "
+"need to remove the ``After=postgresql.service`` and "
+"``Requires=postgresql.service`` or ``After=mysql.service`` and "
+"``Requires=mysql.service`` lines in the ``[Unit]`` section or the "
+"Mattermost service will not start."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:96
+msgid "Make systemd load the new unit."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:98
+msgid "``sudo systemctl daemon-reload``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:100
+msgid "Check to make sure that the unit was loaded."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:102
+msgid "``sudo systemctl status mattermost.service``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:104
+msgid "You should see an output similar to the following:"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:112
+msgid "Start the service."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:114
+msgid "``sudo systemctl start mattermost.service``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:116
+msgid "Verify that Mattermost is running."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:118
+msgid "``curl http://localhost:8065``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:120
+msgid ""
+"You should see the HTML that's returned by the Mattermost server. Note: "
+"in case firewall is used, external requests to port 8065 may be blocked. "
+"Use ``sudo ufw allow 8065`` to open port 8065."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:122
+msgid "Set Mattermost to start on machine start up."
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:124
+msgid "``sudo systemctl enable mattermost.service``"
+msgstr ""
+
+#: ../../source/install/install-debian-mattermost.rst:126
+msgid ""
+"Now that the Mattermost server is up and running, you can do some initial"
+" configuration and setup."
+msgstr ""
+

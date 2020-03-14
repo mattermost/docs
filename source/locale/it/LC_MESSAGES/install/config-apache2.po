@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/config-apache2.rst:3
+msgid "Configuring Apache2 (Unofficial)"
+msgstr ""
+
+#: ../../source/install/config-apache2.rst:5
+msgid ""
+"Unofficial, community-maintained guides for configuring Apache as a proxy"
+" instead of NGINX."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:4
+msgid "Configuring Apache2 as a proxy for Mattermost Server (Unofficial)"
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:6
+msgid ""
+"This unofficial guide is maintained by the Mattermost community and this "
+"deployment configuration is not yet officially supported by Mattermost, "
+"Inc. `Community testing, feedback and improvements are welcome and "
+"greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. "
+"You can `edit this page on GitHub "
+"<https://github.com/mattermost/docs/blob/master/source/install/config-"
+"proxy-apache2.rst>`__."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:8
+#: ../../source/install/config-ssl-http2-apache2.rst:8
+msgid ""
+"In order to use Apache as a reverse proxy for the mattermost server, you "
+"need to install and enable the following apache modules: ``mod_rewrite`` "
+", ``mod_proxy``, ``mod_proxy_http`` and ``mod_proxy_wstunnel``. Follow "
+"the instructions from your linux distribution to do so."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:10
+msgid ""
+"The Apache2 proxy configuration is done through the ``/etc/apache2/sites-"
+"available`` directory. If you're setting up Mattermost on a subdomain "
+"you'll want to create a new configuration along the lines of "
+"``mysubdomain.mydomain.com.conf``."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:12
+msgid "Copy the `default` configuration file found in the same directory."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:14
+msgid "**To configure Apache2 as a proxy**"
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:16
+msgid "SSH into your server."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:17
+msgid ""
+"Make sure the apache modules ``mod_rewrite`` , ``mod_proxy``, "
+"``mod_proxy_http`` and ``mod_proxy_wstunnel`` are installed and enabled. "
+"If not, follow the instructions from your linux distribution to do so."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:18
+msgid ""
+"Create/open the above mentioned file (000-default or a new subdomain "
+"configuration)."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:19
+msgid "Edit your configuration using the guide below:"
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:21
+msgid ""
+"If you're not setting up a subdomain your ``ServerName`` will simply be "
+"set to ``mydomain.com``."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:22
+msgid ""
+"``ServerAlias`` can been added too if you want to capture "
+"``www.mydomain.com``."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:23
+msgid "Remember to change the values to match your server's name, etc."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:24
+msgid ""
+"If you have enabled TLS in the Mattermost settings, you must use the "
+"protocol ``wss://`` instead of ``ws://`` in the ``RewriteRule``."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:25
+msgid "Save once finished."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:52
+msgid ""
+"Because you'll likely have not set up the subdomain before now on "
+"Apache2, run ``a2ensite mysubdomain.mydomain.com`` to enable the site (do"
+" not run ``a2ensite mysubdomain.mydomain.com.conf``)."
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:54
+#: ../../source/install/config-ssl-http2-apache2.rst:47
+msgid "Restart Apache2"
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:56
+#: ../../source/install/config-ssl-http2-apache2.rst:49
+msgid "On Ubuntu 14.04 and RHEL 6: ``sudo service apache2 restart``"
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:57
+#: ../../source/install/config-ssl-http2-apache2.rst:50
+msgid "On Ubuntu 16.04 and RHEL 7: ``sudo systemctl restart apache2``"
+msgstr ""
+
+#: ../../source/install/config-proxy-apache2.rst:59
+msgid ""
+"You should be all set! Ensure that your Mattermost config file is "
+"pointing to the correct URL and then ensure that once deployed your "
+"socket connection is not dropping."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-apache2.rst:4
+msgid "Configuring Apache2 with SSL and HTTP/2 (Unofficial)"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-apache2.rst:6
+msgid ""
+"This unofficial guide is maintained by the Mattermost community and this "
+"deployment configuration is not yet officially supported by Mattermost, "
+"Inc. `Community testing, feedback and improvements are welcome and "
+"greatly appreciated <https://github.com/mattermost/docs/issues/1295>`__. "
+"You can `edit this page on GitHub "
+"<https://github.com/mattermost/docs/blob/master/source/install/config-"
+"ssl-http2-apache2.rst>`__."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-apache2.rst:10
+msgid ""
+"Once you've configured Apache2 as a proxy for your Mattermost Server, the"
+" easiest way to enable SSL on Apache2 is via Let's Encrypt and `Certbot "
+"<https://certbot.eff.org/#ubuntuxenial-apache>`__."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-apache2.rst:13
+msgid ""
+"If Let’s Encrypt is enabled, forward port 80 through a firewall, with "
+"`Forward80To443 <https://docs.mattermost.com/administration/config-"
+"settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to "
+"``true`` to complete the Let’s Encrypt certification."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-apache2.rst:15
+msgid ""
+"Once installed, run ``$ certbot --apache`` and follow the guide. "
+"Afterwards you should find a new configuration file in ``/etc/apache2"
+"/sites-available`` which should follow the format ``mysubdomain.mydomain"
+".com-le-ssl.conf``."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-apache2.rst:17
+msgid "When opened, edit it to look something like the following:"
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-apache2.rst:52
+msgid ""
+"Test that the site is working, that WebSockets are working, and if you "
+"enabled HTTP redirect to HTTPS during Certbot installation that the "
+"redirect is working."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-apache2.rst:53
+msgid ""
+"Lastly, test your SSL configuration with "
+"https://www.ssllabs.com/ssltest/index.html."
+msgstr ""
+
+#: ../../source/install/config-ssl-http2-apache2.rst:55
+msgid ""
+"Using Certbot means that you shouldn't have to do anything in the "
+"configuration of Mattermost."
+msgstr ""
+

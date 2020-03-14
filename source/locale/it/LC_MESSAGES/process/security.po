@@ -1,0 +1,1144 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/security.md:1
+msgid "Security Policies"
+msgstr ""
+
+#: ../../source/process/security.md:3
+msgid ""
+"This document summarizes the internal security policies at Mattermost, "
+"Inc."
+msgstr ""
+
+#: ../../source/process/security.md:5
+msgid "Security benefits of the Mattermost open source platform"
+msgstr ""
+
+#: ../../source/process/security.md:6 ../../source/process/security.md:28
+msgid "Mattermost Development Guidelines"
+msgstr ""
+
+#: ../../source/process/security.md:7 ../../source/process/security.md:54
+msgid "Security Review Checklist"
+msgstr ""
+
+#: ../../source/process/security.md:8 ../../source/process/security.md:80
+msgid "Common Security Related Questions for Enterprises"
+msgstr ""
+
+#: ../../source/process/security.md:9 ../../source/process/security.md:82
+msgid "Governance"
+msgstr ""
+
+#: ../../source/process/security.md:10 ../../source/process/security.md:129
+msgid "Access Control"
+msgstr ""
+
+#: ../../source/process/security.md:11 ../../source/process/security.md:155
+msgid "Operational Security"
+msgstr ""
+
+#: ../../source/process/security.md:12 ../../source/process/security.md:256
+msgid "Software Development Life Cycle (SDLC)"
+msgstr ""
+
+#: ../../source/process/security.md:13 ../../source/process/security.md:288
+msgid "Training"
+msgstr ""
+
+#: ../../source/process/security.md:14 ../../source/process/security.md:302
+msgid "Validation"
+msgstr ""
+
+#: ../../source/process/security.md:15 ../../source/process/security.md:316
+msgid "Security Response"
+msgstr ""
+
+#: ../../source/process/security.md:16 ../../source/process/security.md:199
+msgid "Business Resiliency"
+msgstr ""
+
+#: ../../source/process/security.md:17 ../../source/process/security.md:233
+msgid "Compliance"
+msgstr ""
+
+#: ../../source/process/security.md:18 ../../source/process/security.md:341
+msgid "Business Continuity Plan"
+msgstr ""
+
+#: ../../source/process/security.md:20
+msgid "Security benefits of an open source platform"
+msgstr ""
+
+#: ../../source/process/security.md:22
+msgid ""
+"The open source Mattermost Team Edition is used by thousands of teams "
+"around the world. Development is aided by hundreds of open source "
+"contributors, with full access to the product source code, who have a "
+"vested interest in keeping the software secure and vetted."
+msgstr ""
+
+#: ../../source/process/security.md:24
+msgid ""
+"As new threats emerge, a responsible disclosure policy is in place for "
+"the community to confidentially report security issues so they can be "
+"addressed by Mattermost, Inc. prior to documenting security updates "
+"publicly."
+msgstr ""
+
+#: ../../source/process/security.md:26
+msgid ""
+"The commercial Mattermost Enterprise Edition extends the security and "
+"productivity benefits of the open source solution with support for "
+"advanced security, management, scale and policy compliance features for "
+"complex organizations."
+msgstr ""
+
+#: ../../source/process/security.md:30
+msgid "Tracking"
+msgstr ""
+
+#: ../../source/process/security.md:32
+msgid ""
+"Prior to implementation, potential code changes are discussed and "
+"documented in Mattermost's issue tracking system."
+msgstr ""
+
+#: ../../source/process/security.md:33
+msgid ""
+"Security tickets are confidential to Mattermost, Inc. staff, who are "
+"under NDA, and specially tagged to avoid disclosure."
+msgstr ""
+
+#: ../../source/process/security.md:34
+msgid ""
+"All potential code changes are mapped to tickets prior to acceptance, "
+"with the exception of trivial changes and bug fixes."
+msgstr ""
+
+#: ../../source/process/security.md:36
+msgid "Review"
+msgstr ""
+
+#: ../../source/process/security.md:38
+msgid ""
+"To uphold security, quality and reliability standards, all potential "
+"changes submitted by open source contributors must pass an accepting pull"
+" requests vetting process prior to submission."
+msgstr ""
+
+#: ../../source/process/security.md:39
+msgid ""
+"Clarity and readability of code is enforced through Mattermost style "
+"guides."
+msgstr ""
+
+#: ../../source/process/security.md:40
+msgid ""
+"After submission, all proposed changes require at least two code reviews "
+"for reliability, quality and system security."
+msgstr ""
+
+#: ../../source/process/security.md:41
+msgid ""
+"All open source contributions are available for public inspection and "
+"commentary before and after acceptance."
+msgstr ""
+
+#: ../../source/process/security.md:43
+msgid "Reporting"
+msgstr ""
+
+#: ../../source/process/security.md:45
+msgid ""
+"Mattermost uses a responsible disclosure policy to accept confidential "
+"reports of new threats, so they can be addressed either immediately "
+"through a dot release, or by the next monthly release depending on "
+"potential impact."
+msgstr ""
+
+#: ../../source/process/security.md:46
+msgid ""
+"When Mattermost software undergoes security and penetration testing at "
+"customer sites security updates are added to the core software and "
+"publicly documented by release."
+msgstr ""
+
+#: ../../source/process/security.md:48
+msgid "Patch Management"
+msgstr ""
+
+#: ../../source/process/security.md:49
+msgid ""
+"Critical updates are released for urgent, high priority security issues "
+"or critical losses of functionality that should not wait for the next "
+"monthly release."
+msgstr ""
+
+#: ../../source/process/security.md:50
+msgid ""
+"Mattermost software has a mandatory upgrade policy and customers and "
+"users need to be on the latest release to receive critical updates."
+msgstr ""
+
+#: ../../source/process/security.md:51
+msgid ""
+"Critical updates are delivered as dot releases, for example a critical "
+"update to release 3.1.0 would be named 3.1.1."
+msgstr ""
+
+#: ../../source/process/security.md:52
+msgid ""
+"Customers and subscribers to the Security Bulletin mailing list receive "
+"notifications about all critical updates."
+msgstr ""
+
+#: ../../source/process/security.md:55
+msgid ""
+"In addition to checklists for quality and reliability, code changes "
+"receive multiple reviews for the following system security design "
+"principles:"
+msgstr ""
+
+#: ../../source/process/security.md:57
+msgid "Reducing information disclosure"
+msgstr ""
+
+#: ../../source/process/security.md:58
+msgid "Reducing attack surface"
+msgstr ""
+
+#: ../../source/process/security.md:59
+msgid "Protecting against denial of service vulnerabilities"
+msgstr ""
+
+#: ../../source/process/security.md:60
+msgid "Preventing message spoofing"
+msgstr ""
+
+#: ../../source/process/security.md:61
+msgid "Preventing cross-site scripting"
+msgstr ""
+
+#: ../../source/process/security.md:62
+msgid "Preventing cross-site forgery"
+msgstr ""
+
+#: ../../source/process/security.md:63
+msgid "Preventing remote code execution"
+msgstr ""
+
+#: ../../source/process/security.md:65
+msgid "Security Update Monitoring"
+msgstr ""
+
+#: ../../source/process/security.md:67
+msgid ""
+"The following resources are monitored for information about new security "
+"threats and attack vectors."
+msgstr ""
+
+#: ../../source/process/security.md:69
+msgid "https://www.iacr.org/"
+msgstr ""
+
+#: ../../source/process/security.md:70
+msgid "http://www.acm.org/"
+msgstr ""
+
+#: ../../source/process/security.md:71
+msgid "https://www.usenix.org/"
+msgstr ""
+
+#: ../../source/process/security.md:72
+msgid "https://www.exploit-db.com/"
+msgstr ""
+
+#: ../../source/process/security.md:73
+msgid "https://security.googleblog.com/"
+msgstr ""
+
+#: ../../source/process/security.md:74
+msgid "https://groups.google.com/forum/#!forum/golang-announce"
+msgstr ""
+
+#: ../../source/process/security.md:75
+msgid "http://www.cert.org/"
+msgstr ""
+
+#: ../../source/process/security.md:76
+msgid "https://www.reddit.com/r/netsec/"
+msgstr ""
+
+#: ../../source/process/security.md:78
+msgid ""
+"All dependencies are updated on a regular basis to ensure Mattermost uses"
+" the latest security updates."
+msgstr ""
+
+#: ../../source/process/security.md:84
+msgid ""
+"Do you maintain a quality management system (QMS) approved by management?"
+" Does your quality management system (QMS) include coverage for software "
+"application security principles?"
+msgstr ""
+
+#: ../../source/process/security.md:85 ../../source/process/security.md:88
+#: ../../source/process/security.md:91 ../../source/process/security.md:94
+#: ../../source/process/security.md:97 ../../source/process/security.md:100
+#: ../../source/process/security.md:112 ../../source/process/security.md:115
+#: ../../source/process/security.md:118 ../../source/process/security.md:121
+#: ../../source/process/security.md:127 ../../source/process/security.md:132
+#: ../../source/process/security.md:135 ../../source/process/security.md:138
+#: ../../source/process/security.md:141 ../../source/process/security.md:144
+#: ../../source/process/security.md:147 ../../source/process/security.md:150
+#: ../../source/process/security.md:158 ../../source/process/security.md:161
+#: ../../source/process/security.md:164 ../../source/process/security.md:167
+#: ../../source/process/security.md:170 ../../source/process/security.md:173
+#: ../../source/process/security.md:176 ../../source/process/security.md:179
+#: ../../source/process/security.md:182 ../../source/process/security.md:185
+#: ../../source/process/security.md:188 ../../source/process/security.md:191
+#: ../../source/process/security.md:194 ../../source/process/security.md:197
+#: ../../source/process/security.md:204 ../../source/process/security.md:207
+#: ../../source/process/security.md:210 ../../source/process/security.md:213
+#: ../../source/process/security.md:216 ../../source/process/security.md:219
+#: ../../source/process/security.md:222 ../../source/process/security.md:228
+#: ../../source/process/security.md:231 ../../source/process/security.md:236
+#: ../../source/process/security.md:239 ../../source/process/security.md:245
+#: ../../source/process/security.md:248 ../../source/process/security.md:251
+#: ../../source/process/security.md:254 ../../source/process/security.md:259
+#: ../../source/process/security.md:262 ../../source/process/security.md:265
+#: ../../source/process/security.md:268 ../../source/process/security.md:271
+#: ../../source/process/security.md:274 ../../source/process/security.md:277
+#: ../../source/process/security.md:280 ../../source/process/security.md:286
+#: ../../source/process/security.md:291 ../../source/process/security.md:294
+#: ../../source/process/security.md:297 ../../source/process/security.md:300
+#: ../../source/process/security.md:305 ../../source/process/security.md:308
+#: ../../source/process/security.md:319 ../../source/process/security.md:322
+msgid "Yes."
+msgstr ""
+
+#: ../../source/process/security.md:87
+msgid ""
+"Is quality management system (QMS) content published and communicated to "
+"all relevant employees?"
+msgstr ""
+
+#: ../../source/process/security.md:90
+msgid ""
+"Is quality management system (QMS) content reviewed and updated (if "
+"appropriate) at least once per year?"
+msgstr ""
+
+#: ../../source/process/security.md:93
+msgid ""
+"Is there defined management oversight who is responsible for application "
+"quality and security reporting & signoff?"
+msgstr ""
+
+#: ../../source/process/security.md:96
+msgid ""
+"For all IT systems including but not limited to servers, routers, "
+"switches, firewalls, databases, and external social spaces, is management"
+" approval required prior to creating all user and privileged accounts "
+"(e.g., system or security administrator)?"
+msgstr ""
+
+#: ../../source/process/security.md:99
+msgid ""
+"For all IT systems including but not limited to servers, routers, "
+"switches, firewalls and databases, are privileged accounts (e.g., system "
+"or security administrator) logged at all times and reviewed on at least a"
+" quarterly basis?"
+msgstr ""
+
+#: ../../source/process/security.md:102
+msgid ""
+"Are all system, application and device password files encrypted using an "
+"industry standard encryption algorithm where technically feasible?"
+msgstr ""
+
+#: ../../source/process/security.md:103 ../../source/process/security.md:106
+#: ../../source/process/security.md:109 ../../source/process/security.md:153
+msgid "Yes"
+msgstr ""
+
+#: ../../source/process/security.md:105
+msgid ""
+"For all IT systems including but not limited to servers, routers, "
+"switches, firewalls and databases, do privileged accounts (e.g., system "
+"or security administrator) that communicate directly with the Internet, "
+"contain any personally identifiable information (PII) such as: social "
+"security numbers, credit card numbers, patient health record information,"
+" or other confidential records?"
+msgstr ""
+
+#: ../../source/process/security.md:108
+msgid ""
+"Is all sensitive, protected health information (PHI) and personally "
+"identifiable information (PII) protected using an industry standard "
+"encryption algorithm where technically feasible?"
+msgstr ""
+
+#: ../../source/process/security.md:111
+msgid "Are information assets classified?"
+msgstr ""
+
+#: ../../source/process/security.md:114
+msgid ""
+"Are security roles and responsibilities of personnel defined and "
+"documented in accordance with the organization’s information security "
+"policy?"
+msgstr ""
+
+#: ../../source/process/security.md:117
+msgid ""
+"Is a background screening performed prior to allowing personnel access to"
+" Scoped Systems and Data?"
+msgstr ""
+
+#: ../../source/process/security.md:120
+msgid "Are new hires required to sign any agreements upon hire?"
+msgstr ""
+
+#: ../../source/process/security.md:123
+msgid ""
+"Is there a disciplinary process for non-compliance with information "
+"security policies?"
+msgstr ""
+
+#: ../../source/process/security.md:124
+msgid ""
+"Yes, disclosure of confidential information or egregious disregard for "
+"documented security policies is grounds for termination."
+msgstr ""
+
+#: ../../source/process/security.md:126
+msgid "Is there a personnel termination or change of status process?"
+msgstr ""
+
+#: ../../source/process/security.md:131
+msgid ""
+"Is access to and maintenance of applications, systems, network components"
+" (including routers, databases, firewalls, voice communications servers, "
+"voice recording servers, voice response units (VRU) etc), operating "
+"systems, virtualization components, hypervisors, or other information "
+"objects restricted to authorized personnel only?"
+msgstr ""
+
+#: ../../source/process/security.md:134
+msgid ""
+"Is access to and maintenance of applications, systems, network components"
+" (including routers, databases, firewalls, voice communications servers, "
+"voice recording servers, voice response units (VRU) etc), operating "
+"systems, virtualization components, hypervisors, or other information "
+"objects granted based upon need-to-know job function?"
+msgstr ""
+
+#: ../../source/process/security.md:137
+msgid ""
+"Are unique user IDs required for all user and privileged accounts (e.g., "
+"system or security administrator) to access all IT systems including but "
+"not limited to servers, routers, switches, firewalls and databases?"
+msgstr ""
+
+#: ../../source/process/security.md:140
+msgid ""
+"Are passwords required for all user and privileged accounts (e.g., system"
+" or security administrator) to access all IT systems including but not "
+"limited to servers, routers, switches, firewalls and databases?"
+msgstr ""
+
+#: ../../source/process/security.md:143
+msgid "Are there written network password policies and/or procedures?"
+msgstr ""
+
+#: ../../source/process/security.md:146
+msgid "Is password administration employed for critical systems?"
+msgstr ""
+
+#: ../../source/process/security.md:149
+msgid ""
+"Are passwords prevented from being displayed in clear text during user "
+"authentication or in electronic/printed reports?"
+msgstr ""
+
+#: ../../source/process/security.md:152
+msgid ""
+"If user accounts are assigned to non-permanent personnel (e.g., "
+"contractors, consultants)  for troubleshooting purposes, are the accounts"
+" disabled or removed after each use?"
+msgstr ""
+
+#: ../../source/process/security.md:157
+msgid ""
+"Is there a risk assessment program that has been approved by management, "
+"communicated to appropriate personnel and has an owner to maintain and "
+"review the program?"
+msgstr ""
+
+#: ../../source/process/security.md:160
+msgid ""
+"Is there an information security policy that has been approved by "
+"management, communicated to appropriate personnel and has an owner to "
+"maintain and review the policy?"
+msgstr ""
+
+#: ../../source/process/security.md:163
+msgid "Is there a vendor management program?"
+msgstr ""
+
+#: ../../source/process/security.md:166
+msgid ""
+"Is there a respondent information security function responsible for "
+"security initiatives?"
+msgstr ""
+
+#: ../../source/process/security.md:169
+msgid ""
+"Is there an asset management policy or program that has been approved by "
+"management, communicated to appropriate personnel and has an owner to "
+"maintain and review the policy?"
+msgstr ""
+
+#: ../../source/process/security.md:172
+msgid "Are management approved operating procedures utilized?"
+msgstr ""
+
+#: ../../source/process/security.md:175
+msgid ""
+"Is there an operational change management / change control policy or "
+"program that has been approved by management, communicated to appropriate"
+" personnel and has an owner to maintain and review the policy?"
+msgstr ""
+
+#: ../../source/process/security.md:178
+msgid "Are system backups performed?"
+msgstr ""
+
+#: ../../source/process/security.md:181
+msgid "Are firewalls in use for both internal and external connections?"
+msgstr ""
+
+#: ../../source/process/security.md:184
+msgid ""
+"Are firewalls or IPS(s) secured against unauthorized access from the "
+"Internet, Extranet and Intranet users?"
+msgstr ""
+
+#: ../../source/process/security.md:187
+msgid ""
+"Are vulnerability assessments, scans or penetration tests performed on "
+"internal or external networks?"
+msgstr ""
+
+#: ../../source/process/security.md:190
+msgid "Are incoming e-mails scanned for questionable file attachments?"
+msgstr ""
+
+#: ../../source/process/security.md:193
+msgid ""
+"Does the company use spam filtering software to reduce the number of "
+"unsolicited e-mails?"
+msgstr ""
+
+#: ../../source/process/security.md:196
+msgid "Are e-mail attachments scanned by anti-virus software?"
+msgstr ""
+
+#: ../../source/process/security.md:201
+msgid ""
+"For more information on Business Resiliency, see the Mattermost Business "
+"Continuity Plan."
+msgstr ""
+
+#: ../../source/process/security.md:203 ../../source/process/security.md:212
+msgid ""
+"Is there an established Business Resiliency program that has been "
+"approved by management and communicated to appropriate personnel?"
+msgstr ""
+
+#: ../../source/process/security.md:206
+msgid "Has a Business Impact Analysis been conducted?"
+msgstr ""
+
+#: ../../source/process/security.md:209
+msgid ""
+"Is there a formal process focused on identifying and addressing risks of "
+"disruptive incidents to the organization?"
+msgstr ""
+
+#: ../../source/process/security.md:215
+msgid ""
+"Are specific response and recovery strategies defined for addressing "
+"risks of disruptive incidents to the organization?"
+msgstr ""
+
+#: ../../source/process/security.md:218
+msgid "Are formal business continuity procedures developed and documented?"
+msgstr ""
+
+#: ../../source/process/security.md:221
+msgid ""
+"Has senior management assigned the responsibility for the overall "
+"management of the response and recovery efforts?"
+msgstr ""
+
+#: ../../source/process/security.md:224
+msgid "Is there a periodic review of your Business Resiliency Program?"
+msgstr ""
+
+#: ../../source/process/security.md:225
+msgid "Yes, annually."
+msgstr ""
+
+#: ../../source/process/security.md:227
+msgid "Is there an Influenza Pandemic/Infectious Disease Outbreak Plan?"
+msgstr ""
+
+#: ../../source/process/security.md:230
+msgid ""
+"Is there insurance coverage for business interruptions or general "
+"services interruption?"
+msgstr ""
+
+#: ../../source/process/security.md:235
+msgid ""
+"Is there an internal audit, risk management or compliance department with"
+" responsibility for identifying and tracking resolution of outstanding "
+"regulatory issues?"
+msgstr ""
+
+#: ../../source/process/security.md:238
+msgid ""
+"Are there policies and procedures to ensure compliance with applicable "
+"legislative, regulatory and contractual requirements to address "
+"intellectual property rights on business processes or information "
+"technology software products?"
+msgstr ""
+
+#: ../../source/process/security.md:241
+msgid ""
+"Is there a records retention policy covering paper and electronic "
+"records, including email in support of applicable regulations, standards "
+"and contractual requirements?"
+msgstr ""
+
+#: ../../source/process/security.md:242
+msgid ""
+"Yes. For example, records of customers with NDAs are retained in the "
+"event an NDA is terminated and requires destruction of records."
+msgstr ""
+
+#: ../../source/process/security.md:244
+msgid ""
+"Is licensing maintained in all jurisdictions where the business operates "
+"or where licensing is required?"
+msgstr ""
+
+#: ../../source/process/security.md:247
+msgid ""
+"Is there an internal compliance and ethics program to ensure professional"
+" ethics and business practices are implemented?"
+msgstr ""
+
+#: ../../source/process/security.md:250
+msgid ""
+"Are policies and procedures maintained for enabling compliance with "
+"applicable legal, regulatory, statutory, or contractual obligations "
+"related to any information security requirements?"
+msgstr ""
+
+#: ../../source/process/security.md:253
+msgid ""
+"Is there a formalized governance process to identify and assess changes "
+"that could significantly affect the system of internal controls for "
+"security, confidentiality and availability?"
+msgstr ""
+
+#: ../../source/process/security.md:258
+msgid ""
+"Are there documented processes, procedures, standards and templates used "
+"in your SDLC process?"
+msgstr ""
+
+#: ../../source/process/security.md:261
+msgid ""
+"Do the materials above include references to application security best-"
+"practices and principles being followed?"
+msgstr ""
+
+#: ../../source/process/security.md:264
+msgid "Are design and code reviews performed as part of your SDLC processes?"
+msgstr ""
+
+#: ../../source/process/security.md:267
+msgid ""
+"Are security considerations (checklists, standards and policies) "
+"referenced in the design and code review?"
+msgstr ""
+
+#: ../../source/process/security.md:270
+msgid ""
+"Is application code managed in a secure configuration management system "
+"with access controls?"
+msgstr ""
+
+#: ../../source/process/security.md:273
+msgid ""
+"Is there a configuration management plan and are release artifacts "
+"maintained in a configuration management system?"
+msgstr ""
+
+#: ../../source/process/security.md:276
+msgid ""
+"Are test plans and records kept that reflects the tests performed and "
+"results observed for each release?"
+msgstr ""
+
+#: ../../source/process/security.md:279
+msgid ""
+"Is a release criteria defined, measured and reported on to confirm "
+"targeted release quality is achieved?"
+msgstr ""
+
+#: ../../source/process/security.md:282
+msgid ""
+"Do you work with third parties that may have access to your IP and "
+"sensitive data?"
+msgstr ""
+
+#: ../../source/process/security.md:283
+msgid ""
+"Yes, we may employ vendors and consultants, including 3rd party security "
+"analysts."
+msgstr ""
+
+#: ../../source/process/security.md:285
+msgid "If so, is access to data controlled by terms of Non-Disclosure Agreements?"
+msgstr ""
+
+#: ../../source/process/security.md:290
+msgid ""
+"Is Internal company training available & performed commensurate with "
+"personnel roles and responsibilities?"
+msgstr ""
+
+#: ../../source/process/security.md:293
+msgid "Does training include security awareness?"
+msgstr ""
+
+#: ../../source/process/security.md:296
+msgid ""
+"Does training include education on policies, standards, procedures and "
+"updates when needed?"
+msgstr ""
+
+#: ../../source/process/security.md:299
+msgid ""
+"Are personnel training plans and records kept for internal company "
+"compliance purposes?"
+msgstr ""
+
+#: ../../source/process/security.md:304
+msgid ""
+"Are results from the execution of test plans reported and used to track "
+"and justify release readiness?"
+msgstr ""
+
+#: ../../source/process/security.md:307
+msgid ""
+"Does the quality assurance organization have authority to delay shipment "
+"of releases due to non-conformance reasons?"
+msgstr ""
+
+#: ../../source/process/security.md:310
+msgid ""
+"Is some form of static code scanning performed as part of the release "
+"acceptance? What tools are used?"
+msgstr ""
+
+#: ../../source/process/security.md:311
+msgid "Yes, static analysis tools include ESLint and gofmt"
+msgstr ""
+
+#: ../../source/process/security.md:313
+msgid ""
+"Is some form of dynamic code scanning performed as part of the release "
+"acceptance? What tools are used?"
+msgstr ""
+
+#: ../../source/process/security.md:314
+msgid ""
+"Yes, Jenkins is used for dynamic code scanning as part of the release "
+"process."
+msgstr ""
+
+#: ../../source/process/security.md:318
+msgid "Do you have a documented company security incident response process?"
+msgstr ""
+
+#: ../../source/process/security.md:321
+msgid ""
+"Do your maintenance releases include fixes for both quality and security "
+"related issues?"
+msgstr ""
+
+#: ../../source/process/security.md:324
+msgid ""
+"Do you provide dedicated security patches for software versions that are "
+"released and supported in the field? How?"
+msgstr ""
+
+#: ../../source/process/security.md:325
+msgid ""
+"Yes. Security patches may be provided on the latest release when "
+"applicable."
+msgstr ""
+
+#: ../../source/process/security.md:327
+msgid ""
+"Is there proactive notification provided to customers and software "
+"partners (PTC)?  How?"
+msgstr ""
+
+#: ../../source/process/security.md:328
+msgid ""
+"Yes. Security updates are announced via email to customers as well as "
+"mailing list subscribers."
+msgstr ""
+
+#: ../../source/process/security.md:330
+msgid ""
+"Is there a specified response policy that includes the timeframe issues "
+"are to be addressed?"
+msgstr ""
+
+#: ../../source/process/security.md:331
+msgid "Yes, please see: https://about.mattermost.com/support/"
+msgstr ""
+
+#: ../../source/process/security.md:333
+msgid "Infrastructure Security Policies"
+msgstr ""
+
+#: ../../source/process/security.md:335
+msgid ""
+"Technical infrastructure, including network security, servers and access "
+"control protocols are regularly reviewed for potential threats and "
+"vulnerabilities."
+msgstr ""
+
+#: ../../source/process/security.md:337
+msgid ""
+"Business process, HR process and policies are regularly reviewed for "
+"potential threats and vulnerabilities."
+msgstr ""
+
+#: ../../source/process/security.md:339
+msgid ""
+"A penetration test on the software is performed regularly. A copy of "
+"penetration results may be requested by customers upon five (5) day "
+"written notice at any time, but no more than once per twelve (12) month "
+"period."
+msgstr ""
+
+#: ../../source/process/security.md:343
+msgid ""
+"This document outlines Mattermost, Inc.'s Disaster Recovery and Business "
+"Continuity Plan (DRBCP) informed by the Federal Financial Institutions "
+"Examination Council guidelines on Business Continuity Planning in the "
+"context of Mattermost, Inc. being a vendor providing self-hosted software"
+" and consulting services to financial institutions."
+msgstr ""
+
+#: ../../source/process/security.md:345
+msgid ""
+"Because Mattermost software runs within a customer's data center, behind "
+"a customer's firewall and existing layers of security, without dependency"
+" to services hosted by Mattermost, the disruption of the business "
+"continuity of Mattermost, Inc. does not immediately impact the operating "
+"continuity of its customers. It does affect Mattermost's ability to "
+"answer support requests, provide consulting services and provide new "
+"improvements or patches to Mattermost software."
+msgstr ""
+
+#: ../../source/process/security.md:347
+msgid "At a high level, precautions include:"
+msgstr ""
+
+#: ../../source/process/security.md:349
+msgid ""
+"DRBCP is tested, evaluated and refined annually to ensure our processes "
+"are working and up-to-date"
+msgstr ""
+
+#: ../../source/process/security.md:350
+msgid ""
+"As support is the most critical service offered, multiple channels for "
+"support engagement are available and monitored, including email, a "
+"Mattermost community server available on web, desktop and mobile, online "
+"forums, online forms, social media channels (Twitter and Facebook), and "
+"for Premier Support customers, we offer a telephone-based call center."
+msgstr ""
+
+#: ../../source/process/security.md:351
+msgid ""
+"Subject Matter Experts for escalations are available in at least three "
+"centers in different timezones to provide redundant coverage should "
+"communication with one or multiple centers be disrupted. Mattermost staff"
+" use a diverse set of operating systems, including Mac, Windows and "
+"different distributions of Linux, and a diverse set of global internet "
+"service providers, to reduce the potential damage of a single strain of "
+"malware, single desktop computing exploit or single telecommunications "
+"outage."
+msgstr ""
+
+#: ../../source/process/security.md:352
+msgid ""
+"As further redundancy, we have a network of partners around the world "
+"skilled in Mattermost technologies to be contacted for assistance for "
+"critical customer issues."
+msgstr ""
+
+#: ../../source/process/security.md:353
+msgid ""
+"As further redundancy, we have a community of several hundred engineers "
+"around the world and over a thousands contributors to our online forums, "
+"who have sufficient access and expertise in Mattermost's open source "
+"technologies that could be contact in the highly unlikely event both "
+"Mattermost, Inc. and our partner networks are unable to service our "
+"customers."
+msgstr ""
+
+#: ../../source/process/security.md:354
+msgid ""
+"As further redundancy, Mattermost provides open source code for its core "
+"server technology, mobile applications, desktop applications and a wide "
+"array of extensions which allows customers to have transparency into the "
+"functionality of the software and solve the issue with their internal "
+"technical teams should a massive worldwide failure of Mattermost, Inc., "
+"its partners and its community arise."
+msgstr ""
+
+#: ../../source/process/security.md:356
+msgid ""
+"Mattermost, Inc. is headquartered in Palo Alto, California with a "
+"distributed organization across three timezones, and is therefore not "
+"easily affected by typical causes of business disruption, such as local "
+"failures of equipment, power, telecommunications, social unrest, fire, or"
+" natural disasters. Even so, threats considered in the context of "
+"business continuity are categorized by impact of the disruption."
+msgstr ""
+
+#: ../../source/process/security.md:358
+msgid ""
+"Priority 1: Outages that would have immediate impact on a Mattermost "
+"customer"
+msgstr ""
+
+#: ../../source/process/security.md:360
+msgid "Key support staff unavailable in case of customer emergency."
+msgstr ""
+
+#: ../../source/process/security.md:362 ../../source/process/security.md:374
+#: ../../source/process/security.md:385 ../../source/process/security.md:395
+#: ../../source/process/security.md:403 ../../source/process/security.md:412
+#: ../../source/process/security.md:422 ../../source/process/security.md:432
+msgid "Effect:"
+msgstr ""
+
+#: ../../source/process/security.md:363
+msgid "Emergency response times exceed expectations"
+msgstr ""
+
+#: ../../source/process/security.md:365 ../../source/process/security.md:377
+#: ../../source/process/security.md:388 ../../source/process/security.md:398
+#: ../../source/process/security.md:406 ../../source/process/security.md:415
+#: ../../source/process/security.md:425 ../../source/process/security.md:435
+msgid "Solution(s):"
+msgstr ""
+
+#: ../../source/process/security.md:366
+msgid ""
+"Level 1 (Critical Business Impact) and Level 2 (Major Business Impact) "
+"support requests are received by on-call support staff, as well as three "
+"supervisory staff who can monitor and escalate issues should the assigned"
+" staff member appear to be unavailable or unable to respond to the "
+"request within the SLA time allotted."
+msgstr ""
+
+#: ../../source/process/security.md:367
+msgid ""
+"As an additional safeguard, when an L1 or L2 escalation is reported, a "
+"notification is sent via the company's internal Mattermost instance to "
+"all qualified support staff to be aware of the issue, and any member can "
+"step in if it seems follow-up may not be achieved within SLA "
+"expectations."
+msgstr ""
+
+#: ../../source/process/security.md:369 ../../source/process/security.md:380
+msgid "Mitigation(s):"
+msgstr ""
+
+#: ../../source/process/security.md:370
+msgid ""
+"Mattermost, Inc. employs support staff and engineers in multiple "
+"timezones to increase availability, reduce response times and to reduce "
+"the risk that key support staff would be unavailable to service emergency"
+" requests."
+msgstr ""
+
+#: ../../source/process/security.md:372
+msgid "Downtime for Mattermost Hosted Push Notification Service (HPNS)"
+msgstr ""
+
+#: ../../source/process/security.md:375
+msgid ""
+"End users at customer sites deploying on HPNS do not receive mobile push "
+"notifications."
+msgstr ""
+
+#: ../../source/process/security.md:378
+msgid ""
+"Mattermost, Inc. can re-deploy the service from backup to new "
+"infrastructure, should its existing infrastructure suffer an outage."
+msgstr ""
+
+#: ../../source/process/security.md:381
+msgid ""
+"HPNS is available as open source software hosted on GitHub.com, allowing "
+"enterprises an option to compile and self-host the service, should they "
+"choose not to use HPNS hosted by Mattermost, Inc."
+msgstr ""
+
+#: ../../source/process/security.md:383
+msgid ""
+"Disruption of infrastructure providing support over email, online tickets"
+" or Mattermost messaging during customer emergency"
+msgstr ""
+
+#: ../../source/process/security.md:386
+msgid "Unable to communicate with Mattermost, Inc. support team during emergency"
+msgstr ""
+
+#: ../../source/process/security.md:389
+msgid ""
+"Should a support channel be out-of-service, Mattermost, Inc. provides "
+"redundant support options through email, online ticketing and (for "
+"customers who have purchased core access premium support) online message "
+"via Mattermost."
+msgstr ""
+
+#: ../../source/process/security.md:391
+msgid "Priority 2: Outages having immediate impact on business continuity"
+msgstr ""
+
+#: ../../source/process/security.md:393
+msgid "Outage due to malicious software (viruses, works, trojans and similar)"
+msgstr ""
+
+#: ../../source/process/security.md:396 ../../source/process/security.md:404
+msgid "Reduced capacity to continue business operations, depending on attack."
+msgstr ""
+
+#: ../../source/process/security.md:399
+msgid ""
+"Mattermost, Inc. staff uses multiple anti-virus solutions for detecting "
+"and removing malicious software and regularly backs up key systems to "
+"delete infected systems and re-deploy its infrastructure. Moreover, the "
+"company uses a range of Windows, Mac and Linux-based workstations, "
+"reducing the probability of a company-wide disruption from a single "
+"strain of malicious software."
+msgstr ""
+
+#: ../../source/process/security.md:401
+msgid "Outage due to online attacks"
+msgstr ""
+
+#: ../../source/process/security.md:407
+msgid ""
+"Mattermost, Inc. runs multiple monitoring and alerting services to detect"
+" and isolate suspicious traffic and requests in order to minimize "
+"downtime from potential online threats."
+msgstr ""
+
+#: ../../source/process/security.md:408
+msgid ""
+"Should our self-hosted Mattermost instance be disrupted we can, if "
+"needed, quickly re-deploy the solution within our VPN."
+msgstr ""
+
+#: ../../source/process/security.md:410
+msgid "Disruption due to influenza pandemic or infectious disease outbreak"
+msgstr ""
+
+#: ../../source/process/security.md:413
+msgid "Reduced capacity to continue business operations"
+msgstr ""
+
+#: ../../source/process/security.md:416
+msgid ""
+"Mattermost, Inc. employs staff and engineers in multiple timezones and "
+"geographic areas, reducing the risk of significant disruption that an "
+"influenza pandemic or infectious disease outbreak would cause to business"
+" operations."
+msgstr ""
+
+#: ../../source/process/security.md:418
+msgid "Priority 3: Outages greater than 72 hours impacting business continuity"
+msgstr ""
+
+#: ../../source/process/security.md:420
+msgid "Outage of online CRM system"
+msgstr ""
+
+#: ../../source/process/security.md:423
+msgid "Reduced ability to continue sales operations"
+msgstr ""
+
+#: ../../source/process/security.md:426
+msgid ""
+"While there is no current failover plan should our online CRM system "
+"become disrupted, we have SLAs with our CRM vendor--which is used by "
+"thousands of other organizations--and believe the probability of "
+"sustained outage is low."
+msgstr ""
+
+#: ../../source/process/security.md:428
+msgid "Priority 4: Outages greater than 10 days impacting business continuity"
+msgstr ""
+
+#: ../../source/process/security.md:430
+msgid "Outage of online HR and intranet systems"
+msgstr ""
+
+#: ../../source/process/security.md:433
+msgid "Reduced ability to continue HR and internal operations"
+msgstr ""
+
+#: ../../source/process/security.md:436
+msgid ""
+"While there is no current failover plan should our online HR or intranet "
+"system become disrupted, we have SLAs with our  vendors--which is used by"
+" thousands of other organizations--and believe the probability of "
+"sustained outage is low."
+msgstr ""
+

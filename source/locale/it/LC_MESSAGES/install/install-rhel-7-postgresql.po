@@ -1,0 +1,312 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/install-rhel-7-postgresql.rst:4
+msgid "Installing PostgreSQL Database"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:6
+msgid ""
+"Log in to the server that will host the database, and open a terminal "
+"window."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:8
+msgid "Download the PostgreSQL 9.4 Yum repository."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:10
+msgid "For RHEL 7"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:11
+msgid ""
+"``curl -O "
+"https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64"
+"/pgdg-redhat94-9.4-3.noarch.rpm``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:12
+msgid "For CentOS 7"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:13
+msgid ""
+"``curl -O "
+"https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64"
+"/pgdg-centos94-9.4-3.noarch.rpm``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:14
+msgid "For Scientific Linux"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:15
+msgid ""
+"``curl -O "
+"https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64"
+"/pgdg-sl94-9.4-3.noarch.rpm``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:17
+msgid "For Oracle"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:17
+msgid ""
+"``curl -O "
+"https://download.postgresql.org/pub/repos/yum/9.4/redhat/rhel-7-x86_64"
+"/pgdg-oraclelinux-9.4-3.noarch.rpm``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:19
+msgid "Install the Yum repository from the file that you downloaded."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:21
+msgid "``sudo yum localinstall pgdg-*-9.4-3.noarch.rpm``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:23
+msgid "Install PostgreSQL."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:25
+msgid "``sudo yum install postgresql94-server postgresql94-contrib``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:27
+msgid "Initialize the database."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:29
+msgid "``sudo /usr/pgsql-9.4/bin/postgresql94-setup initdb``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:31
+msgid "Set PostgreSQL to start on boot."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:33
+msgid "``sudo systemctl enable postgresql-9.4``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:35
+msgid "Start the PostgreSQL server."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:37
+msgid "``sudo systemctl start postgresql-9.4``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:39
+msgid ""
+"Switch to the *postgres* Linux user account that was created during the "
+"installation."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:41
+msgid "``sudo -iu postgres``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:43
+msgid "Start the PostgreSQL interactive terminal."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:45
+msgid "``psql``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:47
+msgid "Create the Mattermost database."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:49
+msgid "``postgres=# CREATE DATABASE mattermost;``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:51
+msgid "Create the Mattermost user 'mmuser'."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:53
+msgid "``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:56
+msgid "Use a password that is more secure than 'mmuser-password'."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:58
+msgid "Grant the user access to the Mattermost database."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:60
+msgid "``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:62
+msgid "Exit the PostgreSQL interactive terminal."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:64
+msgid "``postgres=# \\q``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:66
+msgid "Log out of the *postgres* account."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:68
+msgid "``exit``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:70
+msgid ""
+"(Optional) If you use a different server for your database and the "
+"Mattermost app server, you may allow PostgreSQL to listen on all assigned"
+" IP Addresses. To do so, open "
+"``/etc/postgresql/9.5/main/postgresql.conf`` as root in a text editor. As"
+" a best practice, ensure that only the Mattermost server is able to "
+"connect to the PostgreSQL port using a firewall."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:72
+msgid "Open ``/var/lib/pgsql/9.4/data/postgresql.conf`` as root in a text editor."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:74
+#: ../../source/install/install-rhel-7-postgresql.rst:92
+msgid "Find the following line:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:76
+msgid "``#listen_addresses = 'localhost'``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:78
+msgid "Uncomment the line and change ``localhost`` to ``*``:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:80
+msgid "``listen_addresses = '*'``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:82
+msgid "Restart PostgreSQL for the change to take effect:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:84
+msgid "``sudo systemctl restart postgresql-9.4``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:86
+msgid ""
+"Modify the file ``pg_hba.conf`` to allow the Mattermost server to "
+"communicate with the database."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:88
+msgid "**If the Mattermost server and the database are on the same machine**:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:90
+#: ../../source/install/install-rhel-7-postgresql.rst:102
+msgid "Open ``/var/lib/pgsql/9.4/data/pg_hba.conf`` as root in a text editor."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:94
+msgid "``local   all             all                        peer``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:96
+msgid "Change ``peer`` to ``trust``:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:98
+msgid "``local   all             all                        trust``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:100
+msgid "**If the Mattermost server and the database are on different machines**:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:104
+msgid ""
+"Add the following line to the end of the file, where *{mattermost-server-"
+"IP}* is the IP address of the machine that contains the Mattermost "
+"server."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:106
+msgid "``host all all {mattermost-server-IP}/32 md5``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:108
+msgid "Reload PostgreSQL:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:110
+msgid "``sudo systemctl reload postgresql-9.4``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:112
+msgid "Verify that you can connect with the user *mmuser*."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:114
+msgid ""
+"If the Mattermost server and the database are on the same machine, use "
+"the following command:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:116
+msgid "``psql --dbname=mattermost --username=mmuser --password``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:118
+msgid ""
+"If the Mattermost server is on a different machine, log into that machine"
+" and use the following command:"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:120
+msgid ""
+"``psql --host={postgres-server-IP} --dbname=mattermost --username=mmuser "
+"--password``"
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:123
+msgid ""
+"You might have to install the PostgreSQL client software to use the "
+"command."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:125
+msgid ""
+"The PostgreSQL interactive terminal starts. To exit the PostgreSQL "
+"interactive terminal, type ``\\q`` and press **Enter**."
+msgstr ""
+
+#: ../../source/install/install-rhel-7-postgresql.rst:127
+msgid ""
+"With the database installed and the initial setup complete, you can now "
+"install the Mattermost server."
+msgstr ""
+

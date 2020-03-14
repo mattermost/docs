@@ -1,0 +1,544 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/advanced-permissions.rst:2
+msgid "Advanced Permissions (E10/E20)"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:4
+msgid ""
+"Advanced permissions offer Admins a way to restrict actions in Mattermost"
+" to authorized users only. The Mattermost permission system is based on a"
+" modified RBAC (role-based access control) architecture and will be "
+"rolled out over a number of server releases, starting with Mattermost "
+"server v5.0. The permissions interface can be accessed in **System "
+"Console > User Management > Permissions** (or **System Console > Advanced"
+" Permissions** in versions prior to 5.12)."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:8
+msgid ""
+"This document applies to Mattermost Server version 5.0 and later. For "
+"previous versions, see `permission settings available in the System "
+"Console > Policy page <https://docs.mattermost.com/administration/config-"
+"settings.html#policy>`__."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:17
+msgid "Permissions Structure"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:19
+msgid ""
+"The Mattermost System Console provides a number of elements for Admins to"
+" control the permissions in their system."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:23
+msgid "System Scheme (E10)"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:25
+msgid "*Available in Enterprise Edition E10 and higher*"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:27
+msgid ""
+"You can set the default permissions granted to System Admins, Team "
+"Admins, Channel Admins, Guests (if enabled), and All Members. The "
+"permissions granted in the System Scheme apply system-wide, meaning:"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:29
+msgid ""
+"**Guests:** If Guest Accounts are enabled, permissions apply to guest "
+"users in all channels, in all teams."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:30
+msgid ""
+"**All Members:** Permissions apply to all members, including Admins, in "
+"all channels, in all teams."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:31
+msgid ""
+"**Channel Administrators:** Permissions apply to all Channel Admins in "
+"all channels, in all teams."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:32
+msgid ""
+"**Team Administrators:** Permissions apply to all Team Admins, in all "
+"teams."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:34
+msgid ""
+"To override the System Scheme default permissions in a specific team, you"
+" must set up a Team Override Scheme."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:36
+msgid "**System Scheme Interface**"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:38
+msgid ""
+"The interface for editing permissions in the System Scheme, with panels "
+"for Guests (if enabled), All Members, Channel Administrators, Team "
+"Administrators, and System Administrators is available in **System "
+"Console > User Management > Permissions > System Scheme** (or **System "
+"Console > Advanced Permissions > System Scheme** in versions prior to "
+"5.12)."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:43
+msgid "Team Override Schemes (E20)"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:45
+msgid "*Available in Enterprise Edition E20*"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:47
+msgid ""
+"Using these permissions overrides the default System Scheme permissions "
+"in specific teams for All Members, Channel Adminstrators, and Team "
+"Administrators."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:49
+msgid ""
+"The permissions granted in a Team Override Scheme apply only in the teams"
+" which are assigned to the scheme."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:50
+msgid ""
+"The System Scheme does not apply to teams that are added to a Team "
+"Override Scheme."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:51
+msgid "Teams can only belong to one Team Override Scheme."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:53
+msgid "**Team Override Schemes Interface**"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:55
+msgid ""
+"The interface for naming, assigning teams, and editing permissions in a "
+"Team Override Scheme, with panels for All Members, Channel "
+"Administrators, and Team Administrators is available in **System Console "
+"> User Management > Permissions > Team Override Schemes** (or **System "
+"Console > Advanced Permissions > Permissions Schemes > Team Override "
+"Scheme** in versions prior to 5.12)."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:60
+msgid "Channel Override Permissions (E20)"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:62
+#: ../../source/deployment/advanced-permissions.rst:73
+msgid "*Available in a future release of Enterprise Edition E20*"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:64
+msgid ""
+"Allows Admins to restrict permissions within specific channels. "
+"Permissions under consideration for this phase include:"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:66
+msgid ""
+"**Read-only Channels:** The ability for Admins to turn off posting in "
+"specified channels."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:67
+msgid ""
+"**Restrict Channel Mentions:** Turn off the ability for users to post "
+"channel wide mentions (@-all/channel/here) in specified channels."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:68
+msgid ""
+"**Channel member management:** Restricting adding and removing channel "
+"members to Admins only in specified channels."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:71
+msgid "Supplementary Roles (E20)"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:75
+msgid ""
+"Allows Admins to grant additional permissions to specific users or to a "
+"group of users based on AD/LDAP group membership. Permissions can be "
+"granted within the scope of channels, teams, or system level."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:78
+msgid "Recipes"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:79
+msgid ""
+"This section provides some examples of common permissions use cases and "
+"how to accomplish them using the **Advanced Permissions System Console "
+"interface**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:82
+msgid "Team Management"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:84
+msgid "**Only allow Admins, in specific team, to add members**"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:86
+msgid ""
+"Example: In Team A, only allow Team and System Admins to add new team "
+"members. As the default for all other teams, allow all users to add and "
+"invite new members."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:88
+#: ../../source/deployment/advanced-permissions.rst:109
+#: ../../source/deployment/advanced-permissions.rst:123
+#: ../../source/deployment/advanced-permissions.rst:141
+#: ../../source/deployment/advanced-permissions.rst:150
+#: ../../source/deployment/advanced-permissions.rst:167
+msgid ""
+"Navigate to **System Console > User Management > Permissions** (or "
+"**System Console > Advanced Permissions** in versions prior to 5.12)."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:89
+#: ../../source/deployment/advanced-permissions.rst:110
+#: ../../source/deployment/advanced-permissions.rst:124
+#: ../../source/deployment/advanced-permissions.rst:142
+#: ../../source/deployment/advanced-permissions.rst:151
+#: ../../source/deployment/advanced-permissions.rst:168
+msgid "Select **Edit Scheme**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:90
+msgid ""
+"In the **All Members > Teams** panel, check the box for **Add Team "
+"Members**. This sets the system default for all teams."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:91
+#: ../../source/deployment/advanced-permissions.rst:98
+#: ../../source/deployment/advanced-permissions.rst:126
+msgid "Choose **Save**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:92
+#: ../../source/deployment/advanced-permissions.rst:99
+msgid "Select the back arrow to return to the **Permission Schemes** menu."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:93
+#: ../../source/deployment/advanced-permissions.rst:128
+msgid "Select **New Team Override Scheme**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:94
+msgid ""
+"Name and describe the scheme. For example, ``Authorized Personnel Only`` "
+"with description ``Restrict adding team members to Team and System "
+"Admins.``"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:95
+#: ../../source/deployment/advanced-permissions.rst:130
+msgid ""
+"Select **Add Teams** to add Team B to the **Select teams to override "
+"permissions** list, locate Team B, and choose **Add**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:96
+msgid "In the **All Members** panel, uncheck the box for **Add Team Members**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:97
+msgid ""
+"In the **Team Administrators** panel, check the box for **Add Team "
+"Members**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:103
+msgid "Public and Private Channel Management"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:105
+msgid "**Restrict who can rename channels and edit channel header and purposes**"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:107
+msgid ""
+"Example: As the default for the entire system, restrict renaming channels"
+" and editing headers and purposes to Admins only."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:111
+msgid ""
+"In the **All Members** panel, uncheck the box for **Manage Public "
+"Channels > Manage Channel Settings**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:113
+msgid ""
+"The **Manage Channel Settings** option is now only available to **Channel"
+" Administrators**, **Team Administrators**, and **System "
+"Administrators**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:117
+msgid ""
+"Permissions for channel renaming, editing header, and editing purpose are"
+" currently grouped in a single permission. These will be split into "
+"separate permissions in a future release."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:119
+msgid "**Restrict who can create channels, in specific teams**"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:121
+msgid ""
+"Example: In Team C, restrict public channel creation to Admins. As the "
+"default for all other teams, allow everyone to create public channels."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:125
+msgid ""
+"In the **All Members** panel, in the **Manage Public Channels** menu, "
+"check the box for **Create Channels**. This sets the system default to "
+"allow creation of public channels on all teams."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:127
+msgid "Select the arrow to return to the **Permission Schemes** interface."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:129
+msgid ""
+"Name and describe the scheme. For example, ``Contractor Scheme`` with "
+"description ``Restrict public channel creation to Admins only``."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:131
+msgid ""
+"In the **All Members** panel, in the **Manage Public Channels** section, "
+"uncheck the box for **Create Channels**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:132
+msgid ""
+"In the **Team Administrators** panel, in the **Manage Public Channels** "
+"section, check the box for **Create Channels**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:135
+msgid "Post Management"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:137
+msgid "**Restrict who can delete posts**"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:139
+msgid ""
+"Example: As the default for the entire system, restrict deleting posts to"
+" only Team and System Admins."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:143
+msgid ""
+"In the **All Members** and **Channel Admininistrators** panels, in the "
+"**Delete Posts** section, uncheck the boxes for **Delete Own Posts** and "
+"**Delete Others' Posts**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:144
+msgid ""
+"In the **Channel Administrators** and **Team Administrators** panels, in "
+"the **Delete Posts** section, check the boxes for **Delete Own Posts** "
+"and **Delete Others' Posts**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:146
+msgid "**Restrict who can edit posts**"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:148
+msgid ""
+"Example: As the default for the entire system, only allow users to edit "
+"their own posts for five minutes after posting."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:152
+msgid ""
+"In the **All Members**, **Channel Administrators**, and **Team "
+"Administrators** panels, in the **Manage Posts** section, check the box "
+"for **Edit Posts**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:153
+msgid ""
+"From any panel, select the gear button to set the global time limit to "
+"``300`` seconds."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:157
+msgid ""
+"The post edit time limit is a `global config variable "
+"<https://docs.mattermost.com/administration/config-settings.html#post-"
+"edit-time-limit>`__ ``PostEditTimeLimit``, so setting a post edit time "
+"limit applies system-wide to all teams and roles."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:161
+msgid "Integration Management"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:163
+msgid "**Restrict managing webhooks and slash commands**"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:165
+msgid ""
+"Example: As the default for the entire system, only allow System Admins "
+"to create, edit and delete integrations."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:169
+msgid ""
+"In the **All Members** and **Team Administrators** panels, in the "
+"**Integrations & Customizations** section, uncheck the boxes for **Manage"
+" Incoming Webhooks**, **Manage Outgoing Webhooks**, and **Manage Slash "
+"Commands**."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:173
+msgid ""
+"Permissions for creating, editing, and deleting integrations are "
+"currently grouped for each integration type. These will be split into "
+"separate permissions in a future release."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:176
+msgid "Administration Tools"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:178
+msgid ""
+"There are a number of CLI tools available for Admins to help in "
+"configuring and troubleshooting the permissions system:"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:180
+msgid ""
+"`Reset to default permissions <https://docs.mattermost.com/administration"
+"/command-line-tools.html#mattermost-permissions-reset>`__: Resets all "
+"permissions to the default on new installs."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:181
+msgid ""
+"`Export permission schemes <https://docs.mattermost.com/administration"
+"/command-line-tools.html#mattermost-permissions-export>`__: Exports the "
+"System Scheme and any Team Override Schemes to a jsonl file."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:182
+msgid ""
+"`Import permission schemes <https://docs.mattermost.com/administration"
+"/command-line-tools.html#mattermost-permissions-import>`__: Imports the "
+"System Scheme and any Team Override Schemes to your Mattermost instance "
+"from a jsonl input file in the format outputted by ``mattermost "
+"permissions export``."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:185
+msgid "Backend Infrastructure"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:187
+msgid ""
+"Technical admins or developers looking for a deeper understanding of the "
+"permissions backend can refer to our :doc:`permissions-backend` technical"
+" documentation."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:190
+msgid "Glossary"
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:192
+msgid ""
+"**Permission:** The ability to execute certain actions. Permissions are "
+"granted to roles."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:193
+msgid "**Roles:** A set of permissions. Users or groups are assigned to roles."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:194
+msgid ""
+"**Group:** A set of users, usually synced from AD/LDAP. Groups are "
+"assigned to roles in the context of teams, channels, or system-wide."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:195
+msgid ""
+"**Default Roles:** All Members, Guests (if enabled), Channel "
+"Administrators, Team Administrators, System Administrators."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:196
+msgid "**System Scheme:** A set of default roles that apply system-wide."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:197
+msgid ""
+"**Team Override Scheme:** A set of default roles that apply only in the "
+"team specified. Permissions granted to roles in a team scheme override "
+"roles in the system scheme."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:198
+msgid ""
+"**System-wide:** Applies across the entire system, including all teams of"
+" which the user is a member."
+msgstr ""
+
+#: ../../source/deployment/advanced-permissions.rst:199
+msgid "**Team-wide:** Applies in a specific team only."
+msgstr ""
+

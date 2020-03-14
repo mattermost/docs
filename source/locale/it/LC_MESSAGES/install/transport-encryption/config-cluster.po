@@ -1,0 +1,297 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/transport-encryption/config-cluster.rst:3
+msgid "Configuring Cluster Transport Encryption (E20)"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:5
+msgid ""
+"Mattermost is able to encrypt the messages sent within the cluster of a "
+"deployment using SSH tunneling. The guide walks through the deployment of"
+" this solution on Ubuntu 18.04, but it can be adapted for any Linux "
+"operating system."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:9
+msgid ""
+"While this document only describes the configuration of a three-node "
+"cluster, it is by no means limited to that amount."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:13
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:15
+msgid "SSH port whitelisted between each node of the deployment"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:16
+msgid "Active ufw/iptables on each node"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:17
+msgid "Access to the root/sudo user of each node for configuration"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:18
+msgid "A configured Mattermost cluster"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:19
+msgid "Mattermost running with a dedicated service user"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:20
+msgid "Mattermost service is stopped on each cluster node"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:22
+msgid ""
+"**Note:** Support on the application level is currently in development "
+"and will deprecate this document."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:26
+msgid "Example Environment"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:27
+msgid ""
+"In this scenario there are three application nodes in our environment "
+"with the following hostname/IP mapping:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:30
+msgid "**transport-encryption-mattermost1:** 10.10.250.146"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:31
+msgid "**transport-encryption-mattermost2:** 10.10.250.231"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:32
+msgid "**transport-encryption-mattermost3:** 10.10.250.165"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:35
+msgid "Preparations"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:37
+msgid "Connect to each Mattermost server with a sudo or root user"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:38
+msgid ""
+"Make a note of the IP from each cluster member used for the internal "
+"communication"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:39
+msgid ""
+"Ensure ``AllowTcpForwarding`` is enabled in ``/etc/ssh/sshd_config`` of "
+"each cluster node"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:42
+msgid "SSH Authentication"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:43
+msgid ""
+"On each node, generate a SSH key-pair for the service account. In our "
+"scenario this is called ``mattermost``:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:59
+msgid ""
+"The location of the SSH key itself is irrelevant if company policies "
+"require the usage of another storage location."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:62
+msgid ""
+"Next, ensure that the SSH public key of each node is added to the "
+"``authorized_keys`` file of the other nodes of the cluster. To do so, "
+"copy the contents of ``/home/mattermost/.ssh/id_rsa.pub`` of nodes 2 and "
+"3, and add it to ``/home/mattermost/.ssh/authorized_keys`` of node 1."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:66
+msgid ""
+"Repeat this step for each node of the cluster. As a result, each node "
+"should be able to establish an SSH connection to the other nodes of the "
+"cluster."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:69
+msgid ""
+"**Note:** This service account can be separate from the service account "
+"already used for the Mattermost ``systemd`` service itself. It is "
+"important that it is allowed to create a SSH tunnel with port forwarding,"
+" but it does not require any additional permissions."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:75
+msgid "ufw Configuration"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:77
+msgid ""
+"As a next step, allow SSH access from each of the other member nodes, "
+"e.g.:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:79
+msgid "mattermost1 allows from mattermost2 and mattermost3"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:80
+msgid "mattermost2 allows from mattermost1 and mattermost3"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:81
+msgid "mattermost3 allows from mattermost1 and mattermost2"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:83
+msgid ""
+"To do so, we add an exception in the firewall. The commands for "
+"``mattermost1`` look as follows:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:103
+msgid ""
+"Repeat the same steps on the other nodes, replacing the IPs with the ones"
+" from the other member nodes. Do so for each member node, excluding the "
+"node itself."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:106
+msgid ""
+"Next, open ``/etc/ufw/after.rules`` and add the following block to the "
+"bottom of the file:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:123
+msgid ""
+"Two lines always belong to a single node, so in a deployment with four "
+"nodes:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:134
+msgid ""
+"Please be aware that the ports on the right side must be unique, so if "
+"you have a cluster of six nodes, use 8075 and 8074 with 1 to 5 in front "
+"of it. If the cluster is of bigger size, additional ports must be used."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:138
+msgid ""
+"Ensure that your operating system has IP forwarding enabled using the "
+"following command:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:145
+msgid ""
+"After that, reload the ufw rules and confirm that the iptable rules were "
+"successfully created:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:164
+msgid ""
+"Repeat those steps for every node on the cluster. At the end of this "
+"section the following should be configured:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:167
+msgid "SSH access enabled in firewall from each cluster node to another"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:168
+msgid "Per node 2 iptables rules for port 8074 and 8075"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:169
+msgid "IP forwarding enabled"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:173
+msgid "SSH Configuration"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:175
+msgid ""
+"As a next step, we will ensure that the SSH tunnels are created as part "
+"of the Mattermost service start. To do so, create a file called "
+"``pre_start.sh`` in ``/opt/mattermost/bin`` on ``mattermost1``:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:187
+msgid ""
+"**Note:** We are ignoring the error from the SSH connection itself in "
+"case a tunnel is already active. Otherwise the Mattermost server would "
+"fail to start."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:190
+msgid ""
+"**Note:** Please make sure to back up this script in case of a version "
+"upgrade."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:192
+msgid "Afterwards, we set the executable bit on the shell script:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:199
+msgid ""
+"Open the systemd unit file of Mattermost and search for ``Type=Notify``. "
+"After this, enter a ``ExecStartPre`` script that will be executed before "
+"Mattermost itself is started:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:208
+msgid "Reload the systemd daemon afterwards:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:215
+msgid ""
+"Repeat the same steps on each of the member nodes and adapt the node IPs "
+"and amount of entries for your environment."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:219
+msgid "Cluster Start"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:221
+msgid ""
+"Once each node is configured, restart the service on each cluster and "
+"confirm that it's running using the command below:"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config-cluster.rst:234
+msgid ""
+"Next, open the Mattermost System Console and confirm that each node is "
+"reporting successfully in the High Availability section."
+msgstr ""
+

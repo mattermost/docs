@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/prod-docker.rst:4
+msgid "Deploy Mattermost on Docker"
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:6
+msgid ""
+"This unofficial guide is maintained by the Mattermost community and this "
+"deployment configuration is not yet officially supported by Mattermost, "
+"Inc. Community testing, feedback and improvements are welcome and greatly"
+" appreciated. You can `edit this page on GitHub "
+"<https://github.com/mattermost/docs/blob/master/source/install/prod-"
+"docker.rst>`__."
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:8
+msgid ""
+"Deploy Mattermost using a multi-node production configuration with "
+"`Docker Compose <https://docs.docker.com/compose/>`__. Experience with "
+"Docker Compose is recommended."
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:10
+msgid ""
+"For a single-node preview of Mattermost (without email) see `Local "
+"Machine Setup using Docker <http://docs.mattermost.com/install/docker-"
+"local-machine.html>`__."
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:12
+msgid ""
+"If you have any problems installing, see the `troubleshooting guide "
+"<https://www.mattermost.org/troubleshoot/>`__. To submit an improvement "
+"or correction, click **Edit** at the top of this page."
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:15
+msgid "Production Docker Setup on Ubuntu"
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:17
+msgid ""
+"**Install Docker** using `the Ubuntu online guide "
+"<https://docs.docker.com/installation/ubuntulinux/>`__ or these "
+"instructions:"
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:28
+msgid ""
+"**Install Docker Compose** using `the online guide "
+"<https://docs.docker.com/compose/install/>`__. You have to download the "
+"latest release from the `Docker Compose Github page "
+"<https://github.com/docker/compose/releases/>`__ and put the binary on "
+"your :code:`/usr/local/bin` folder. Usually, you can use the following "
+"command, replacing :code:`$dockerComposeVersion` with the Docker Compose "
+"version to install:"
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:35
+msgid "**Deploy the Mattermost Production Docker** setup by running:"
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:47
+msgid ""
+"**Configure TLS** by following `the instructions "
+"<https://github.com/mattermost/mattermost-docker#install-with-ssl-"
+"certificate>`__."
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:49
+msgid ""
+"**Configure Email** by following the `SMTP email setup guide "
+"<http://docs.mattermost.com/install/smtp-email-setup.html>`__."
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:51
+msgid ""
+"(Optional) To enable enterprise features under **System Console** > "
+"**Edition and License** upload your `trial license "
+"<https://about.mattermost.com/trial/>`__ or `subscription license file "
+"<https://about.mattermost.com/pricing/>`__ received via email."
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:53
+msgid ""
+"**Configure your Server** based on the `configuration settings "
+"documentation <http://docs.mattermost.com/administration/config-"
+"settings.html>`__."
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:55
+msgid "Additional Guides:"
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:57
+msgid ""
+"**Start, Stop, and Remove Containers** using `management instructions. "
+"<https://github.com/mattermost/mattermost-docker/#startingstopping-"
+"docker>`__"
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:59
+msgid ""
+"**Setup Database Backup** following the `database backup instructions. "
+"<https://github.com/mattermost/mattermost-docker#aws>`__"
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:63
+msgid "Production Docker Setup on Arch Linux"
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:65
+msgid ""
+"To install on Arch Linux, see the `installation guide "
+"<https://wiki.archlinux.org/index.php/Mattermost>`__ on the Arch Linux "
+"wiki."
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:69
+msgid "Production Docker Setup on macOS"
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:71
+msgid ""
+"You can run a production deployment on macOS by `installing Docker "
+"Compose using the online guide <https://docs.docker.com/docker-for-"
+"mac/>`__ then following the above instructions."
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:74
+msgid "Other Options"
+msgstr ""
+
+#: ../../source/install/prod-docker.rst:76
+msgid ""
+"To install Mattermost Team Edition instead of Mattermost Enterprise "
+"Edition, open ``docker-compose.yaml`` and uncomment the following lines:"
+msgstr ""
+

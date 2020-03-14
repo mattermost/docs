@@ -1,0 +1,825 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/administration/important-upgrade-notes.rst:2
+msgid "Important Upgrade Notes"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:5
+msgid ""
+"Support for Internet Explorer (IE11) is removed in Mattermost v5.16.0. "
+"See `this forum post <https://forum.mattermost.org/t/mattermost-is-"
+"dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn "
+"more."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:8
+msgid "If you’re upgrading from a version earlier than..."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:8
+msgid "Then..."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:10
+msgid "v5.21.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:10
+msgid ""
+"Honour key value expiry in KVCompareAndSet, KVCompareAndDelete and "
+"KVList. We also improved handling of plugin key value race conditions and"
+" deleted keys in Postgres."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:13
+msgid "v5.20.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:13
+msgid ""
+"Any `pre-packaged plugin "
+"<https://docs.mattermost.com/administration/plugins.html#pre-packaged-"
+"plugins>`_ that is not enabled in the ``config.json`` will no longer "
+"install automatically, but can continue to be installed via the `plugin "
+"marketplace <https://docs.mattermost.com/administration/plugins.html"
+"#plugin-marketplace>`_."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:17
+msgid ""
+"Boolean elements from interactive dialogs are no longer serialized as "
+"strings. While we try to avoid breaking changes, this change was "
+"necessary to allow both the web and mobile apps to work with the boolean "
+"elements introduced with v5.16."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:20
+msgid "v5.19.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:20
+msgid ""
+"``LockTeammateNameDisplay`` setting was moved to Enterprise Edition E20 "
+"as it was erroneously available in Team Edition and Enterprise Edition "
+"E10."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:22
+msgid "v5.18.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:22
+msgid ""
+"Marking a post unread from the mobile app requires v1.26 or later. If "
+"using v5.18, but mobile is on v1.25 or earlier, marking a post unread "
+"from webapp/desktop will only be reflected on mobile the next time the "
+"app launches or is brought to the foreground."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:25
+msgid ""
+"The Go module path of ``mattermost-server`` was changed to comply with "
+"the Go module version specification. Developers using Go modules with "
+"``mattermost-server`` as a dependency must change the module and import "
+"paths to ``github.com/mattermost/mattermost-server/v5`` when upgrade this"
+" dependency to `v5.18`. See `<https://blog.golang.org/v2-go-modules>`__ "
+"for further information."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:29
+msgid ""
+"Removed ``Team.InviteId`` from the related Websocket event and sanitized "
+"it on all team API endpoints for users without invite permissions."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:31
+msgid ""
+"Removed the ability to change the type of a channel using the ``PUT "
+"/channels/{channel_id}`` API endpoint. The new ``PUT "
+"/channels/{channel_id}/privacy`` endpoint should be used for that "
+"purpose."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:34
+msgid "v5.16.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:34
+msgid ""
+"Support for Internet Explorer (IE11) is removed. See `this forum post "
+"<https://forum.mattermost.org/t/mattermost-is-dropping-support-for-"
+"internet-explorer-ie11-in-v5-16/7575>`__ to learn more."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:37
+msgid ""
+"The `Mattermost Desktop v4.3.0 "
+"<https://github.com/mattermost/desktop/blob/master/CHANGELOG.md>`_ "
+"release includes a change to how desktop notifications are sent from non-"
+"secure URLs (http://). Organizations using non-secure Mattermost Servers "
+"(http://) will need to update to Mattermost Server versions 5.16.0+, "
+"5.15.1, 5.14.4 or 5.9.5 (ESR) to continue receiving desktop notifications"
+" when using Mattermost Desktop v4.3.0 or later."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:41
+msgid ""
+"When enabling `Guest Accounts <https://docs.mattermost.com/deployment"
+"/guest-accounts.html>`_, all users who have the ability to invite users "
+"will be able to invite guests by default.  System admins will need to "
+"remove this permission on each role via **System Console > Permissions "
+"Schemes**.  In Mattermost Server version 5.17, the System admin will be "
+"the only role to automatically get the invite guest permission, however "
+"the fix will not be applicable in 5.16 due to database migration "
+"processes."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:46
+msgid "v5.14.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:46
+msgid ""
+"Webhooks are now only displayed if the user is the creator of the webhook"
+" or a system administrator."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:48
+msgid ""
+"With the update from Google+ to Google People, system admins need to "
+"ensure the ``GoogleSettings.Scope`` config.json setting is set to "
+"``profile email`` and ``UserAPIEndpoint`` setting should be set to "
+"``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata``"
+" per `updated documentation <https://docs.mattermost.com/deployment/sso-"
+"google.html>`_."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:52
+msgid "v5.12.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:52
+msgid ""
+"If your plugin uses the ``DeleteEphemeralMessage`` plugin API, update it "
+"to accept a ``postId string`` parameter. See `documentation "
+"<https://developers.mattermost.com/extend/plugins/server/reference/#API.DeleteEphemeralPost>`_"
+" to learn more."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:55
+msgid ""
+"Image link and YouTube previews do not display unless **System Console > "
+"Enable Link Previews** is enabled. Please ensure that your Mattermost "
+"server is connected to the internet and has network access to the "
+"websites from which previews are expected to appear. `Learn more here "
+"<https://forum.mattermost.org/t/link-previews-managed-server-side-"
+"in-v5-12-and-later/7712>`_."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:59
+msgid ""
+"``ExperimentalEnablePostMetadata`` setting was removed. Post metadata, "
+"including post dimensions, is now stored in the database to correct "
+"scroll position and eliminate scroll jumps as content loads in a channel."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:62
+msgid "v5.11.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:62
+msgid ""
+"If your integration uses ``Update.Props == nil`` to clear ``Props``, this"
+" will no longer work in 5.11+. Instead, use ``Update.Props == {}`` to "
+"clear properties."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:64
+msgid ""
+"This change was made because ``Update.Props == nil`` unintentionally "
+"cleared all ``Props``, such as the profile picture, instead of preserving"
+" them."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:66
+msgid "v5.10.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:66
+msgid ""
+"``SupportedTimezonesPath`` setting in config.json and changes to "
+"timezones in the UI based on the timezones.json file was removed. This "
+"was made to support `storing configurations in the database "
+"<https://docs.mattermost.com/administration/config-in-database.html"
+"#configuration-in-the-mattermost-database>`_."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:69
+msgid "v5.9.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:69
+msgid ""
+"If **DisableLegacyMfa** setting in ``config.json`` is set to ``true`` and"
+" `multi-factor authentication "
+"<https://docs.mattermost.com/deployment/auth.html>`_ is enabled, ensure "
+"your users have upgraded to mobile app version 1.17 or later. Otherwise, "
+"users who have MFA enabled may not be able to log in successfully."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:72
+msgid ""
+"If the setting is not defined in the ``config.json`` file, the "
+"**DisableLegacyMfa** setting is set to ``false`` by default to ensure no "
+"breaking changes."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:74
+msgid ""
+"We recommend setting **DisableLegacyMfa** to ``true`` for additional "
+"security hardening."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:76
+msgid ""
+"The public IP of the Mattermost application server is considered a "
+"reserved IP for additional security hardening in the context of untrusted"
+" external requests such as Open Graph metadata, webhooks or slash "
+"commands. `See documentation <https://docs.mattermost.com/administration"
+"/config-settings.html#allow-untrusted-internal-connections-to>`_ for "
+"additional information."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:80
+msgid "v5.8.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:80
+msgid ""
+"The local image proxy has been added, and images displayed within the "
+"client are now affected by the ``AllowUntrustedInternalConnections`` "
+"setting. `See documentation <https://docs.mattermost.com/administration"
+"/image-proxy.html#local-image-proxy>`_ for more details if you have "
+"trouble loading images."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:83
+msgid "v5.6.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:83
+msgid ""
+"Built-in WebRTC is removed. See `here for more details "
+"<https://forum.mattermost.org/t/built-in-webrtc-video-and-audio-calls-"
+"removed-in-v5-6- in-favor-of-open-source-plugins/5998>`__."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:86
+msgid ""
+"If **EnablePublicChannelsMaterialization** setting in ``config.json`` is "
+"set to ``false``, an offline migration prior to upgrade may be required "
+"to synchronize the materialized table for public channels to increase "
+"channel search performance in the channel switcher (CTRL/CMD+K), channel "
+"autocomplete (~) and elsewhere in the UI. Use the following steps:"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:90
+msgid "Shut down your application servers."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:91
+msgid "Connect to your Mattermost database."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:92
+msgid "Execute the following queries:"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:106
+msgid ""
+"The queries above rebuild the materialized ``PublicChannels`` table "
+"without modifying the authoritative ``Channels`` table."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:108
+msgid ""
+"Note that this migration is not required if the experimental "
+"``PublicChannels`` feature was never disabled. This feature launched in "
+"Mattermost v5.4 with a temporary flag to disable should an issue arise, "
+"but nothing prompted doing so. If you did not modify this setting, there "
+"is no need to perform this migration."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:111
+msgid "v5.4.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:111
+msgid ""
+"Mattermost mobile app version 1.13+ is required. File uploads will fail "
+"on earlier mobile app versions."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:113
+msgid ""
+"In certain upgrade scenarios the new **Allow Team Administrators to edit "
+"others posts** setting under **General** then **Users and Teams** may be "
+"set to **True** while the Mattermost default in 5.1 and earlier and with "
+"new 5.4+ installations is **False**."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:116
+msgid "v5.3.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:116
+msgid ""
+"Those servers with Elasticsearch enabled will notice that hashtag search "
+"is case-sensitive."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:118
+msgid "v5.2.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:118
+msgid ""
+"Those servers upgrading from v4.1 - v4.4 directly to v5.2 or later and "
+"have JIRA enabled will need to re-enable the JIRA plugin after an "
+"upgrade."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:120
+msgid "v5.1.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:120
+msgid ""
+"``mattermost export`` CLI command is renamed to ``mattermost export "
+"schedule``. Make sure to update your scripts if you use this command."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:122
+msgid "v5.0.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:122
+msgid ""
+"All API v3 endpoints are removed. `See documentation "
+"<https://api.mattermost.com/#tag/APIv3-Deprecation>`__ to learn how to "
+"migrate your integrations to API v4."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:124
+msgid ""
+"``platform`` binary is renamed to ``mattermost`` for a clearer install "
+"and upgrade experience. You should point your ``systemd`` service file at"
+" the new ``mattermost`` binary. All command line tools, including the "
+"bulk loading tool and developer tools, are also be renamed from "
+"``platform`` to ``mattermost``."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:127
+msgid ""
+"A Mattermost user setting to configure desktop notification duration in "
+"**Account Settings** > **Notifications** > **Desktop Notifications** is "
+"removed."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:129
+msgid ""
+"Slash commands configured to receive a GET request will have the payload "
+"being encoded in the query string instead of receiving it in the body of "
+"the request, consistent with standard HTTP requests. Although unlikely, "
+"this could break custom slash commands that use GET requests incorrectly."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:132
+msgid ""
+"A new ``config.json`` setting to whitelist types of protocols for auto-"
+"linking will be added. If you rely on custom protocols auto-linking in "
+"Mattermost, whitelist them in ``config.json`` before upgrading."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:135
+#, python-format
+msgid ""
+"A new ``config.json`` setting to disable the `permanent APIv4 delete team"
+" parameter "
+"<https://api.mattermost.com/#tag/teams%2Fpaths%2F~1teams~1%7Bteam_id%7D%2Fput>`__"
+" is added. The setting will be off by default for all new and existing "
+"installs, except those deployed on GitLab Omnibus. If you reply on the "
+"APIv4 parameter, enable the setting in `config.json` before upgrading."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:139
+msgid "An unused ``ExtraUpdateAt`` field will be removed from the channel model."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:141
+msgid ""
+"This release includes support for post messages longer than the default "
+"of 4000 characters, but may require a manual database migration. This "
+"migration is entirely optional, and need only be done if you want to "
+"enable post messages up to 16383 characters. For many installations, no "
+"migration will be required, or the old limit remains sufficient."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:145
+msgid ""
+"To check your current post limit after upgrading to 5.0.0, look for a log"
+" message on startup:"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:147
+msgid ""
+"[2018/03/27 09:08:00 EDT] [INFO] Post.Message supports at most 16383 "
+"characters (65535 bytes)"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:149
+msgid ""
+"As of 5.0.0, the maximum post message size is 16383 (multi-byte) "
+"characters. If your logs show a number less than this limit and you want "
+"to enable longer post messages, you will need to manually migrate your "
+"database as described below. This migration can be slow for larger "
+"`Posts` tables, so it's best to schedule this upgrade during off-peak "
+"hours."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:153
+msgid ""
+"To migrate a MySQL database, connect to your database and run the "
+"following:"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:155
+msgid "ALTER TABLE Posts MODIFY COLUMN Message TEXT;"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:157
+msgid ""
+"To migrate a PostgreSQL database, connect to your database and run the "
+"following:"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:159
+msgid "ALTER TABLE Posts ALTER COLUMN Message TYPE VARCHAR(65535);"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:161
+msgid "Restart your Mattermost instances."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:163
+msgid ""
+"Deployments on Enterprise E20 will need to enable ``RunJobs`` in the "
+"``config.json`` and allow the permissions migration to complete before "
+"using `Team Override Schemes <https://docs.mattermost.com/deployment"
+"/advanced-permissions.html>`__."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:166
+msgid "v4.10.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:166
+msgid ""
+"Old email invitation links will no longer work due to a bug fix where "
+"teams could be re-joined via the link. Team invite links copied from the "
+"Team Invite Link dialog, password reset links and email verification "
+"links are not affected and are still valid."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:169
+msgid ""
+"Server logs written to **System Console > Logs** and to the "
+"mattermost.log file specified in **System Console > Logging > File Log "
+"Directory** now use JSON formatting. If you have built a tool that parses"
+" the server logs and sends them to an external system, make sure it "
+"supports the JSON format."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:172
+msgid ""
+"Team icons with transparency will be filled with a white background in "
+"the Team Sidebar."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:174
+msgid ""
+"Those servers with SAML authentication enabled should upgrade during non-"
+"peak hours. SAML email addresses are migrated to lowercase to prevent "
+"login issues, which could result in longer than usual upgrade time."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:177
+msgid ""
+"If you use PostgreSQL database and the password contains special "
+"characters (e.g. ``[]``), escape them in your password, e.g., xxx[]xxx "
+"will be xxx%5B%5Dxxx."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:179
+msgid "v4.9.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:179
+msgid ""
+"To improve the production use of Mattermost with Docker, the docker image"
+" is now running a as non-root user and listening on port 8000. Please "
+"read the `upgrade instructions <https://github.com/mattermost/mattermost-"
+"docker#upgrading-mattermost-to-49>`__ for important changes to existing "
+"installations."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:182
+msgid ""
+"Several configuration settings have been migrated to roles in the "
+"database and changing their config.json values no longer takes effect. "
+"These permissions can still be modified by their respective System "
+"Console settings as before. The affected config.json settings are:"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:185
+msgid ""
+"``RestrictPublicChannelManagement``, "
+"``RestrictPrivateChannelManagement``, ``RestrictPublicChannelCreation``, "
+"``RestrictPrivateChannelCreation``, ``RestrictPublicChannelDeletion``, "
+"``RestrictPrivateChannelDeletion``, "
+"``RestrictPrivateChannelManageMembers``, ``EnableTeamCreation``, "
+"``EnableOnlyAdminIntegrations``, ``RestrictPostDelete``, "
+"``AllowEditPost``, ``RestrictTeamInvite``, "
+"``RestrictCustomEmojiCreation``."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:199
+msgid ""
+"The behavior of the config.json setting ``PostEditTimeLimit`` has been "
+"updated to accomodate the migration to a roles based permission system. "
+"When post editing is permitted, set ``\"PostEditTimeLimit\": -1`` to "
+"allow editing anytime, or set ``\"PostEditTimeLimit\"`` to a positive "
+"integer to restrict editing time in seconds. If post editing is disabled,"
+" this setting does not apply."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:203
+msgid ""
+"If using Let's Encrypt without a proxy server, the server will fail to "
+"start with an error message unless the `Forward80To443 "
+"<https://docs.mattermost.com/administration/config-settings.html#forward-"
+"port-80-to-443>`__ ``config.json`` setting is set to ``true``."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:206
+msgid ""
+"If forwarding port 80 to 443, the server will fail to start with an error"
+" message unless the `ListenAddress "
+"<https://docs.mattermost.com/administration/config-settings.html#listen-"
+"address>`__ ``config.json`` setting is set to listen on port 443."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:209
+msgid "v4.6.2"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:209
+msgid ""
+"If using Let's Encrypt without a proxy server, forward port 80 through a "
+"firewall, with the `Forward80To443 "
+"<https://docs.mattermost.com/administration/config-settings.html#forward-"
+"port-80-to-443>`__ ``config.json`` setting set to ``true`` to complete "
+"the Let's Encrypt certification."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:213
+msgid "v4.4.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:213
+msgid ""
+"Composite database indexes were added to the ``Posts`` table. This may "
+"lead to longer ugprade times for servers with more than 1 million "
+"messages."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:215
+msgid ""
+"LDAP sync now depends on email. Make sure all users on your AD/LDAP "
+"server have an email address or that their account is deactivated in "
+"Mattermost."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:217
+msgid "v4.2.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:217
+msgid ""
+"Mattermost now handles multiple content types for integrations, including"
+" plaintext content type. If your integration suddenly prints the JSON "
+"payload data instead of rendering the generated message, make sure your "
+"integration is returning the ``application/json`` content-type to retain "
+"previous behavior."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:220
+msgid ""
+"By default, user-supplied URLs such as those used for Open Graph "
+"metadata, webhooks, or slash commands will no longer be allowed to "
+"connect to reserved IP addresses including loopback or link-local "
+"addresses used for internal networks."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:223
+msgid ""
+"This change may cause private integrations to break in testing "
+"environments, which may point to a URL such as http://127.0.0.1:1021/my-"
+"command."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:225
+msgid ""
+"If you point private integrations to such URLs, you may whitelist such "
+"domains, IP addresses, or CIDR notations via the "
+"`AllowedUntrustedInternalConnections config setting "
+"<https://docs.mattermost.com/administration/config-settings.html#allow-"
+"untrusted-internal-connections-to>`__ in your local environment. Although"
+" not recommended, you may also whitelist the addresses in your production"
+" environments. See `documentation to learn more "
+"<https://docs.mattermost.com/administration/config-settings.html#allow-"
+"untrusted-internal-connections-to>`__."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:230
+msgid ""
+"Push notification, OAuth 2.0 and WebRTC server URLs are trusted and not "
+"affected by this setting."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:232
+msgid ""
+"Uploaded file attachments are now grouped by day and stored in ``/data"
+"/<date-of-upload-as-YYYYMMDD>/teams/...`` of your file storage system."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:234
+msgid ""
+"Mattermost `/platform` repo has been separated to `/mattermost-webapp` "
+"and `/mattermost-server`. This may affect you if you have a private fork "
+"of the `/platform` repo. `More details here "
+"<https://forum.mattermost.org/t/mattermost-separating-platform-into-two-"
+"repositories-on-september-6th/3708>`__."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:237
+msgid "v4.0.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:237
+msgid "(High Availability Only)"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:239
+msgid ""
+"You must manually add new items to the *ClusterSettings* section of your "
+"existing ``config.json``. See the *Upgrading to Version 4.0 and Later* "
+"section of :doc:`../deployment/cluster` for details."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:242
+msgid "v3.9.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:242
+msgid ""
+"Old email invitation links, password reset links, and email verification "
+"links will no longer work due to a security change. Team invite links "
+"copied from the Team Invite Link dialog are not affected and are still "
+"valid."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:245
+msgid "v3.8.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:245
+msgid "A change is required in the proxy configuration. If you’re using NGINX:"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:247
+msgid ""
+"Open the NGINX configuration file as root. The file is usually "
+"``/etc/nginx/sites-available/mattermost`` but might be different on your "
+"system."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:248
+msgid "Locate the line: ``location /api/v3/users/websocket {``"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:249
+msgid "Replace the line with ``location ~ /api/v[0-9]+/(users/)?websocket$ {``"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:250
+msgid ""
+"If you are using a proxy other than NGINX, make the equivalent change to "
+"that proxy's configuration."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:252
+msgid ""
+"You need to verify settings in the System Console due to a security-"
+"related change."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:254
+msgid "Go to the the GENERAL section of the System Console"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:255
+msgid "Click **Logging**"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:256
+msgid ""
+"Make sure that the **File Log Directory** field is either empty or has a "
+"directory path only.It must not have a filename as part of the path."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:258
+msgid ""
+"Backwards compatibility with the old CLI tool was removed. If you have "
+"any scripts that rely on the old CLI, they must be revised to use the "
+"`new CLI  <../administration/command-line-tools.html>`__."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:261
+msgid "v3.6.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:261
+msgid "Update the maximum number of files that can be open."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:263
+msgid "On RHEL6 and Ubuntu 14.04:"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:264
+msgid ""
+"Verify that the line ``limit nofile 50000 50000`` is included in the "
+"``/etc/init/mattermost.conf`` file."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:265
+msgid "On RHEL7 and Ubuntu 16.04:"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:266
+msgid ""
+"Verify that the line ``LimitNOFILE=49152`` is included in the "
+"``/etc/systemd/system/mattermost.service`` file."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:268
+msgid "(Enterprise Only)"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:270
+msgid ""
+"Previous ``config.json`` values for restricting public and private "
+"channel management will be used as the default values for new settings "
+"for restricting private and public channel creation and deletion."
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:273
+msgid "v3.4.0"
+msgstr ""
+
+#: ../../source/administration/important-upgrade-notes.rst:273
+msgid ""
+"If public links are enabled, existing public links will no longer be "
+"valid. This is because in earlier versions, existing public links were "
+"not invalidated when the Public Link Salt was regenerated. You must "
+"update any place where you have published these links."
+msgstr ""
+

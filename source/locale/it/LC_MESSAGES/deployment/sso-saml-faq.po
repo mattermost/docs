@@ -1,0 +1,153 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/sso-saml-faq.rst:2
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:5
+msgid "How to Bind Authentication to Id Attribute instead of Email"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:7
+msgid ""
+"Alternatively, you can use an Id Attribute instead of email to bind the "
+"user.  We recommend choosing an ID that is unique and will not change "
+"over time."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:9
+msgid ""
+"Configuring with an Id Attribute allows you to reuse an email address for"
+" a new user without the old user's information being exposed. For "
+"instance, if a user with an email address joe.smith@mattermost.com was "
+"once an employee, a new employee named Joe Smith can use the same email. "
+"This configuration is also useful when a user's name changes and their "
+"email needs to be updated."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:11
+msgid ""
+"This process was designed with backwards compatibility to email binding. "
+"Here is the process applied to new account creations and to accounts "
+"logging in after the configuration:"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:13
+msgid ""
+"A user authenticated with SAML is bound to the SAML service user using "
+"the Id Attribute (as long as it has been configured) or bound by email "
+"using the email received from SAML."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:14
+msgid ""
+"When the user tries to login and the SAML server responds with a valid "
+"authentication, then the server uses the \"Id\" field of the SAML "
+"authentication to search the user."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:15
+msgid "If a user bound to that ID already exists, it logs in as that user."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:16
+msgid ""
+"If a user bound to that ID does not exist, it will search base on the "
+"email."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:17
+msgid ""
+"If a user bound to the email exists, it logs in with email and updates "
+"the autentication data to the ID, instead of the email."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:18
+msgid ""
+"If a user bound to the ID or email does not exist, it will create a new "
+"Mattermost account bound to the SAML account by ID and will allow the "
+"user to log in."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:20
+msgid "Note:  Existing accounts will not update until they log in to the server."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:23
+msgid ""
+"Can SAML via Microsoft ADFS be configured with Integrated Windows "
+"Authentication (IWA)?"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:25
+msgid ""
+"Yes. IWA is supported on the browser, with support added to iOS and "
+"Android mobile apps in Q2/2019 (mobile apps v1.18 and later)."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:27
+msgid ""
+"However, IWA is not supported on the Mattermost Desktop Apps due to a "
+"limitation in Electron. As a workaround you may create a browser desktop "
+"shortcut for quick access to Mattermost, just like a Desktop App."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:30
+msgid ""
+"How do I migrate users from one authentication method (e.g. email) to "
+"SAML?"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:32
+msgid ""
+"Use the :doc:`mattermost user migrate_auth CLI command <cli-user-migrate-"
+"auth>`."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:35
+msgid "How is SAML different from OAuth 2.0 and OpenId Connect?"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:37
+msgid ""
+"OAuth 2.0 was primarily intended for delegated authorization, where an "
+"app is authorized to access resources, such as Google contact list. It "
+"doesn’t deal with authentication."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:39
+msgid ""
+"OpenID Connect is built on top of OAuth 2.0, which supports "
+"authentication and thus direct SSO."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:41
+msgid ""
+"SAML is like OpenID Connect, except typically used in enterprise "
+"settings. OpenID Connect is more common in consumer websites and "
+"web/mobile apps."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-faq.rst:43
+msgid ""
+"Learn more at https://hackernoon.com/demystifying-oauth-2-0-and-openid-"
+"connect-and-saml-12aa4cf9fdba."
+msgstr ""
+

@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/administration/image-proxy.rst:4
+msgid "Image Proxy"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:6
+msgid ""
+"Using an image proxy means that all requests for images made by "
+"Mattermost clients will go through the proxy instead of contacting third-"
+"party servers directly. This helps protect user privacy by preventing "
+"third-party servers from tracking who views an image. This also prevents "
+"the use of tracking pixels (invisible images that do the same thing "
+"without the user even seeing an image)."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:8
+msgid ""
+"Certain proxy servers also provide a layer of caching which can make "
+"loading images faster and more reliable. This caching also helps preserve"
+" posts by protecting them from dead images."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:10
+msgid ""
+"When enabled, the image proxy needs to be publicly accessible to both the"
+" Mattermost client and server."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:12
+msgid ""
+"Mattermost clients will use the image proxy to load all external images. "
+"The Mattermost server will use the image proxy when possible, but will "
+"not use it when requesting content that may not be an image, such as for "
+"`image previews of plaintext URLs <https://github.com/mattermost"
+"/mattermost-server/issues/11857>`_."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:14
+msgid ""
+"An image proxy can be configured in **System Console > Environment > "
+"Image Proxy** (or **System Console < Files > Storage** in versions prior "
+"to 5.12)."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:17
+msgid "Local Image Proxy"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:19
+msgid ""
+"The local image proxy is available as part of the Mattermost server "
+"deployment. When using the local image proxy, images are served to "
+"clients through the server which helps anonymize users. If SSL is enabled"
+" on the server, it provides a secure connection. This method does not "
+"offer any caching behavior."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:22
+msgid ""
+"With the local image proxy enabled, requests for images hosted on the "
+"local network are now affected by the "
+"``AllowUntrustedInternalConnections`` setting. See `documentation "
+"<https://docs.mattermost.com/administration/config-settings.html#allow-"
+"untrusted-internal-connections-to>`_ for more information or if you are "
+"seeing unintentionally blocked images."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:27
+msgid "atmos/camo Image Proxy"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:29
+msgid ""
+"The `atmos/camo <https://github.com/atmos/camo>`_ image proxy is a "
+"standalone image proxy that can be deployed separately from the "
+"Mattermost server. It provides additional configuration options over the "
+"built-in image proxy, and it can also be used if isolation between the "
+"Mattermost server and image proxy is desired."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:31
+msgid ""
+"Once you've deployed an ``atmos/camo`` (https://github.com/atmos/camo) "
+"instance, you must specify the **Remote Image Proxy URL** and **Remote "
+"Image Proxy Options** settings. The **Remote Image Proxy Options** should"
+" be set to the image proxy's shared key which is specified with the "
+"``CAMO_KEY`` environment variable used when setting up the image proxy."
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:33
+msgid ""
+"For example, if the image proxy is located at ``https://image-"
+"proxy.mattermost.com``, it would be configured as follows:"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:35
+msgid "**Image Proxy Type**: ``atmos/camo``"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:36
+msgid "**Remote Image Proxy URL**: ``https://image-proxy.mattermost.com``"
+msgstr ""
+
+#: ../../source/administration/image-proxy.rst:37
+msgid ""
+"**Remote Image Proxy Options**: ``CAMO_KEY``, which is the secret string "
+"used for the sample ``atmos/camo`` deployment."
+msgstr ""
+

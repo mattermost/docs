@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/config-cloudfront.rst:4
+msgid "Configuring CloudFront to host Mattermost static assets"
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:6
+msgid ""
+"Configuring CloudFront to host Mattermost's static assets allows for "
+"improved caching performance and shorter load times for those members of "
+"your team geographicly distributed throughout the world."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:8
+msgid ""
+"Create an S3 bucket using your desired domain. In our example it will be "
+"``mattermost.example.com``."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:9
+msgid "Enable static hosting for your S3 bucket."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:10
+msgid ""
+"If your SiteURL is configured with a subpath (such as "
+"https://example.com/company/mattermost), your static assets must be "
+"rewritten before uploading. You can use the command below to rewrite the "
+"assets for the given subpath:"
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:12
+msgid "``mattermost config subpath --path /company/mattermost``"
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:14
+msgid ""
+"From the Mattermost distribution, upload the ``client`` directory to S3 "
+"and rename it to ``static``. You can use the AWS CLI command below from "
+"within the ``client`` directory  to upload all the files to S3. The files"
+" must be publicly readable with the permission ``public-read``."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:16
+msgid ""
+"``aws s3 cp --acl public-read --recursive . "
+"s3://static.spinmint.com/static/``"
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:18
+msgid ""
+"Set up your Mattermost app server and create a record from a subdomain of"
+" your desired domain to point directly to your app server. This is to "
+"bypass CloudFront to connect WebSockets. For our example we will use the "
+"domain ``ws.mattermost.example.com``. If you have multiple app servers, "
+"this domain should point to the load balancer/proxy such as ALB or NGINX."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:19
+msgid "Create a Web CloudFront distribution with the following configuration."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:21
+msgid "Set Origin Domain Name to the S3 bucket you created above."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:22
+msgid "(Recommended) Set Redirect HTTP to ``HTTPS`` for Viewer Protocol Policy."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:23
+msgid "Set allowed HTTP Methods to ``GET, HEAD, OPTIONS, POST, PATCH, DELETE``."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:24
+msgid "Set Forward Cookies to ``All``."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:25
+#: ../../source/install/config-cloudfront.rst:37
+msgid ""
+"Set Query string forwarding and Caching to ``Forward all, cache based on "
+"all``."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:26
+msgid ""
+"Set your Alternate Domain Names to the domain you want Mattermost to be "
+"accessible from, e.g. ``mattermost.example.com``."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:27
+msgid "Select ``Custom SSL Certificate`` and set the certificate for your domain."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:28
+msgid "Set Default Root Object to ``/static/root.html``."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:30
+msgid ""
+"After creating your distribution, you need to add an additional origin. "
+"Select the origins tab and create an origin. Set the origin domain name "
+"to your Mattermost load balancer."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:31
+msgid "Next, create a behavior."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:33
+msgid "Set the Path Pattern to ``/api/*``."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:34
+msgid "Set the origin to your Mattermost app server or load balancer."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:35
+msgid ""
+"Set allowed HTTP Methods to ``GET, HEAD, OPTIONS, PUT, POST, PATCH, "
+"DELETE``."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:36
+msgid "Set Forward Cookies to `All`."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:39
+msgid "Next, set up some custom error responses under the Error Pages tab."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:41
+msgid "Set HTTP Error Code to ``403``."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:42
+msgid "Set Customize Error Response to ``Yes``."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:43
+msgid "Set response page path to ``/static/root.html``."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:44
+msgid "Set HTTP Response Code to ``200``."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:45
+msgid "Repeat the above steps for HTTP Error Code 404."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:47
+msgid ""
+"Now you can set up the domain you want Mattermost to be served from to "
+"point to your CloudFront distribution. Setting up this domain is beyond "
+"the scope of this guide."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:48
+msgid "Finally, set these Mattermost ``config.json`` settings:"
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:50
+msgid "SiteURL: ``https://mattermost.example.com``"
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:51
+msgid "WebsocketURL: ``wss://ws.mattermost.example.com``"
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:52
+msgid "AllowCorsFrom: ``https://mattermost.example.com``"
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:53
+msgid "AllowCookiesForSubdomains: ``true``"
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:56
+msgid "Upgrade Notes"
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:58
+msgid ""
+"When you upgrade your Mattermost app servers, you will need to re-upload "
+"the new client to your S3 bucket (see steps 3 and 4 above)."
+msgstr ""
+
+#: ../../source/install/config-cloudfront.rst:60
+msgid ""
+"You should also run a CloudFront invalidation for ``/static/root.html``. "
+"You can do this in the console under the invalidations tab."
+msgstr ""
+

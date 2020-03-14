@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:2
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:4
+msgid ""
+"The following are troubleshooting suggestions on common error messages "
+"and issues."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:6
+msgid "Unable to switch to SAML authentication successfully"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:8
+msgid ""
+"First, ensure you have installed the `XML Security Library "
+"<https://www.aleksey.com/xmlsec/download.html>`__ on your Mattermost "
+"instance and that **it is available in your** PATH."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:10
+msgid "Second, ensure you have completed each step of the SAML configuration."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:12
+msgid ""
+"If you are still having trouble with configuration, see further "
+"troubleshooting notes below or feel free to post in our `Troubleshooting "
+"forum <http://www.mattermost.org/troubleshoot/>`__ and we'll be happy to "
+"help with issues during setup."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:14
+msgid "System Administrator locks themselves out of the system"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:16
+msgid ""
+"If the System Administrator is locked out of the system during SAML "
+"configuration process, they can set an existing account to System "
+"Administrator using `a command line tool "
+"<http://docs.mattermost.com/deployment/on-boarding.html#creating-system-"
+"administrator-account-from-commandline>`__."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:18
+msgid ""
+"Received error message: `An account with that username already exists. "
+"Please contact your Administrator.`"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:20
+#: ../../source/deployment/sso-saml-troubleshooting.rst:26
+msgid ""
+"This usually means an existing account has another authentication method "
+"enabled. If so, the user should sign in using that method (such as email "
+"and password), then change their sign-in method to SAML via **Account "
+"Settings > Security > Sign-in method**."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:22
+msgid ""
+"This error message can also be received if the `Username Attribute` of "
+"their SAML credentials doesn't match the username of their Mattermost "
+"account. If so, the user can update the attribute at their identity "
+"provider (for instance, back to the old value if it had been previously "
+"updated)."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:24
+msgid ""
+"Received error message: `An account with that email already exists. "
+"Please contact your Administrator.`"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:28
+msgid ""
+"This error message can also be received if the `Email Attribute` of their"
+" SAML credentials doesn't match the email address of their Mattermost "
+"account. If so, the user can update the attribute at their identity "
+"provider (for instance, back to the old value if it had been previously "
+"updated)."
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:30
+msgid ""
+"Received error message: `SAML login was unsuccessful because one of the "
+"attributes is incorrect. Please contact your System Administrator.`"
+msgstr ""
+
+#: ../../source/deployment/sso-saml-troubleshooting.rst:32
+msgid ""
+"Confirm all attributes, including `Email Attribute` and `Username "
+"Attribute`, are correct in both the Identity Provider configuration and "
+"in **System Console > SAML**."
+msgstr ""
+

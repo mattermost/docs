@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/guides/core.rst:2
+msgid "Core Team Handbook"
+msgstr ""
+
+#: ../../source/guides/core.rst:4
+msgid ""
+"This handbook is a guide to serving on the core team of the Mattermost "
+"open source project, which includes making contributions both as a "
+"volunteer contributor from the community and as a paid staff member of "
+"Mattermost, Inc."
+msgstr ""
+
+#: ../../source/guides/core.rst:6
+msgid ""
+"Please consider this handbook - along with all our documentation - as a "
+"work-in-progress and constantly updating to best achieve our shared "
+"mission."
+msgstr ""
+
+#: ../../source/guides/core.rst:10
+msgid "Development Process"
+msgstr ""
+
+#: ../../source/guides/core.rst:26
+msgid "Release Process"
+msgstr ""
+
+#: ../../source/guides/core.rst:42
+msgid "Community Process"
+msgstr ""
+
+#: ../../source/guides/core.rst:55
+msgid "Product Management Handbook"
+msgstr ""
+
+#: ../../source/guides/core.rst:64
+msgid "Core Developer Handbook"
+msgstr ""
+
+#: ../../source/guides/core.rst:73
+msgid "Documentation Style Guide"
+msgstr ""
+
+#: ../../source/guides/core.rst:83
+msgid "Joining the Team"
+msgstr ""
+
+#: ../../source/guides/core.rst:98
+msgid "Marketing"
+msgstr ""
+
+#: ../../source/guides/core.rst:113
+msgid "Partners"
+msgstr ""
+
+#: ../../source/guides/core.rst:122
+msgid ""
+"**Credits:** Our culture and process draws from the fantastic work of "
+"`Wordpress <https://wordpress.org/about/philosophy/>`__, `GitLab "
+"<https://gitlab.com/gitlab-com/www-gitlab-"
+"com/tree/master/source/handbook>`__, `Pixar <https://www.amazon.com"
+"/Creativity-Inc-Overcoming-Unseen-Inspiration/dp/0812993012>`__ and "
+"`Intel <https://www.amazon.com/High-Output-Management-Andrew-"
+"Grove/dp/0679762884/ref=sr_1_1?s=books&ie=UTF8&qid=1481613210&sr=1-1&keywords=high+output+management>`__"
+" in different ways."
+msgstr ""
+

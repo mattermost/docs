@@ -1,0 +1,343 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/release-faq.rst:2
+msgid "Release Overview"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:4
+msgid ""
+"Mattermost adopts a monthly tick-tock release cycle, with a new version "
+"shipping on the 16th of each month in `binary form "
+"<http://docs.mattermost.com/administration/upgrade.html#mattermost-team-"
+"edition>`_."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:6
+msgid ""
+"Tick-tock refers to even-numbered releases (e.g., v5.6) containing new "
+"features, and odd-numbered releases (e.g., v5.7) containing only bug "
+"fixes and performance improvements."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:8
+msgid ""
+"The primary goal of our release cycle is to improve quality and build "
+"trust with our users in every release. A tick-tock release cycle allows "
+"new features to soak in our test environments for longer, allowing us to "
+"identify and fix bugs before releasing the features."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:10
+msgid ""
+"There is no change to the process or release schedule for security "
+"issues. When security issues are found that warrant a patch release, we "
+"follow the `security release process outlined here "
+"<https://docs.mattermost.com/process/security-release.html>`_."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:13
+msgid "Release Numbering"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:15
+msgid ""
+"Mattermost numbers stable releases in the following format: **[Version "
+"Number].[Major Build Number].[Minor Build Number]**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:18
+msgid "**Version Number:**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:20
+msgid ""
+"Purpose: Major system releases introduce significantly new functionality "
+"or change existing product behaviour"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:21
+msgid "Release frequency: Unscheduled. Major system releases are infrequent"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:22
+msgid "Example: v1.x.x, v2.x.x"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:24
+msgid "**Major Build Number:**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:26
+msgid "Purpose: Introduce new features, bug fixes and performance improvements"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:27
+msgid "Release frequency: Monthly on the 16th of each month"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:28
+msgid "Example:"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:30
+msgid "Even numbers (e.g. v1.2.x, v1.4.x): New features and bug fixes"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:31
+msgid ""
+"Odd numbers (e.g. v1.3.x, v1.5.x): Quality release including performance "
+"improvements and bug fixes"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:33
+msgid "**Minor Build Number:**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:35
+msgid ""
+"Purpose: Patch existing releases when severe bug fixes or security "
+"patches are required"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:36
+msgid "Release frequency: As required"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:37
+msgid "Example: v1.2.5, v1.2.6"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:40
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:42
+msgid "**Q: Will tick-tock releases delay features?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:44
+msgid ""
+"A: You can view current, near term, and future priorities on `our website"
+" here <https://mattermost.com/roadmap/>`_. While tick-tock releases mean "
+"only shipping new features every other release, it improves the quality "
+"of features shipped. We want to avoid rushing to ship new features and "
+"then fixing bugs over a number of releases, and instead we focus on "
+"shipping high-quality features out the gate."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:46
+msgid "**Q: What is the release cycle for the React Native mobile apps?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:48
+msgid ""
+"A: The mobile apps follow the same monthly tick-tock release cycle as "
+"Mattermost Server/Webapp, releasing on the 16th of each month."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:50
+msgid "**Q: What is the release cycle for the Mattermost Desktop app?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:52
+msgid ""
+"A: Desktop releases are currently released as required. We hope to move "
+"Desktop to a more frequent and scheduled release cycle in the near "
+"future."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:54
+msgid "**Q: When is release branch cut for a quality release?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:56
+msgid "A: On the day prior feature release ships after final has been cut."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:58
+msgid "**Q: When is release branch cut for a feature release?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:60
+msgid "A: On feature cut-off date (T-20)."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:62
+msgid "**Q: How are PRs merged for release?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:64
+msgid ""
+"A: PRs are first merged to master. The dev who submitted the fix is then "
+"responsible for cherry-picking it to the quality release branch."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:66
+msgid "**Q: How are PRs merged for a feature release?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:68
+msgid "A: PRs are submitted and merged to master (no change)."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:70
+msgid "**Q: How does quality release work?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:72
+msgid "A: Bugs are branched off from the previous feature release."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:74
+msgid "**Q: How is cherry-picking done?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:76
+msgid ""
+"A: See the `cherry pick process documentation "
+"<https://developers.mattermost.com/contribute/getting-started/branching"
+"/#cherry-pick-process-developer/>`_ for details."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:78
+msgid "**Q: What is community.mattermost kept on?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:80
+msgid ""
+"A: For Feature releases community.mattermost is kept on the RCs. For "
+"Quality releases keep it on master."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:82
+msgid "**Q: What is community-daily.mattermost kept on?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:84
+msgid "A: Normally on master."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:86
+msgid "**Q: How to remove a feature/bug from a release?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:88
+msgid "A: Revert from release branch. Optionally revert from master."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:90
+msgid "**Q: How are NOTICE.txt PRs submitted?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:92
+msgid ""
+"A: PRs are first merged to master. The dev who submitted the fix is then "
+"responsible for cherry-picking it to the release branch."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:94
+msgid "**Q: Is an improvement a feature or a bug?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:96
+msgid "A: Usually features/story tickets."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:98
+msgid "**Q: How does release team monitor what changes went into a release?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:100
+msgid ""
+"A: Monitor the commit history of the respective release branch, e.g., "
+"https://github.com/mattermost/mattermost-server/commits/release-5.4 "
+"contains commits that shipped with mattermost-server v5.4. Jira ticket is"
+" resolved after cherry picking is done."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:102
+msgid ""
+"**Q: What changes were made to the dev release process to account for the"
+" rotating feature and quality releases? "
+"https://developers.mattermost.com/internal/release-process/**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:104
+msgid ""
+"A: PR with changes was merged `here <https://github.com/mattermost"
+"/mattermost-developer-documentation/pull/182>`__."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:106
+msgid ""
+"**Q: What changes were made to the team release process to account for "
+"the rotating feature and quality releases? "
+"https://docs.mattermost.com/process/release-process.html**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:108
+msgid ""
+"A: Separate checklists for `Quality release "
+"<https://docs.mattermost.com/process/bug-fix-release.html>`__ and "
+"`Feature release <https://docs.mattermost.com/process/feature-"
+"release.html>`__ were created."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:110
+msgid "**Q: How does translations branching work?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:112
+msgid ""
+"A: Lock the translation server to the release branch. The translation PR "
+"will be submitted against the release branch and it can just be merged "
+"directly to the release branch without cherry-picking. When the "
+"translation server is locked back to master, the next PR against master "
+"will include those translations that went in for the release branch."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:114
+msgid "**Q: How does cutting mobile builds work?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:116
+msgid ""
+"A: See instructions here: https://developers.mattermost.com/internal"
+"/mobile-build-process/."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:118
+msgid "**Q: How does updating dependencies work?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:120
+msgid ""
+"A: Dependency updates will only occur in feature releases, unless they "
+"contain security fixes."
+msgstr ""
+
+#: ../../source/process/release-faq.rst:122
+msgid "**Q: What is the process for community PRs?**"
+msgstr ""
+
+#: ../../source/process/release-faq.rst:124
+msgid "A: Review, merge, and cherry-pick."
+msgstr ""
+

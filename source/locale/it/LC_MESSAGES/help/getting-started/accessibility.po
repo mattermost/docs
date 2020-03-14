@@ -1,0 +1,192 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/help/getting-started/accessibility.rst:2
+msgid "Keyboard Accessibility"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:3
+msgid ""
+"Navigational keyboard shortcuts help you use Mattermost without requiring"
+" a mouse. Below is a list of supported shortcuts. Elements in focus have "
+"a colored outline, as shown here:"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:8
+msgid "Shortcut"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:8
+msgid "Description"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:10
+msgid "F6 (CTRL+F6 on Browser)"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:10
+msgid "Move focus to the next section"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:12
+msgid "SHIFT+F6 (SHIFT+CTRL+F6 on Browser)"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:12
+msgid "Move focus to the previous section"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:14
+msgid "TAB"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:14
+msgid "Move focus to the next element"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:16
+msgid "SHIFT+TAB"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:16
+msgid "Move focus to the previous element"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:18
+msgid "Up or DOWN"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:18
+msgid ""
+"Move focus between messages in the post list or sections in the channel "
+"sidebar"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:20
+msgid "ENTER"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:20
+msgid "Take action on the focused element"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:25
+msgid "Region Navigation"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:26
+msgid ""
+"Mattermost has eight regions that can be focused for navigation. Use "
+"**F6** (Desktop App) or **CTRL+F6** (Browser) repeatedly to move focus "
+"and loop through the regions in this order:"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:28
+msgid "Message list region"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:29
+msgid "Message input region"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:30
+msgid "Right-hand side message list region"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:31
+msgid "Right-hand side message input region"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:32
+msgid "Team menu region"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:33
+msgid "Channel sidebar region"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:34
+msgid "Channel header region"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:35
+msgid "Search"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:40
+msgid "Message Navigation"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:41
+msgid ""
+"When the message list region is focused, use the **UP** or **DOWN** arrow"
+" keys to navigate through messages. Press **TAB** to navigate through "
+"message actions."
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:47
+msgid "Message Composition"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:48
+msgid ""
+"Mattermost is compatible with most popular screen readers. A custom "
+"readout is composed for each message by combining the message elements "
+"and reading them together in full sentences. Message elements will read "
+"in the following order:"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:50
+msgid "Header: Author, timestamp, message type (i.e. parent post or reply)"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:51
+msgid "Main Content: The message content typed by the author"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:52
+msgid "Attachments: The number of attachments (if applicable)"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:53
+msgid "Emoji Reactions: The number of unique emoji reactions (if applicable)"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:54
+msgid "Flags/Pins: If a message is pinned or flagged (if applicable)"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:56
+msgid ""
+"For example, a message read by a screen reader may sound like the "
+"following:"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:63
+msgid "Channel Sidebar Navigation"
+msgstr ""
+
+#: ../../source/help/getting-started/accessibility.rst:64
+msgid ""
+"When the channel sidebar region is focused, use the **UP** or **DOWN** "
+"arrow keys to focus individual sidebar sections, such as Favorites, "
+"Public Channels, Private Channels and Direct Messages. Press **TAB** to "
+"navigate through channels or other buttons within a sidebar section."
+msgstr ""
+

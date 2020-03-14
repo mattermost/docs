@@ -1,0 +1,1132 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/bug-fix-release.md:1
+msgid "Quality Release Process"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:3
+msgid "Release Timeline"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:5
+msgid "Notes:"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:6
+msgid ""
+"All cut-off dates are based on 10am (San Francisco Time) on the day "
+"stated."
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:7
+msgid ""
+"T-minus counts are measured in \"working days\" (weekdays, Monday through"
+" Friday, excluding the listed statutory holidays) prior to release day."
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:9
+msgid "A. (Code complete date of previous release) Beginning of Release"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:11
+msgid ""
+"Pre-work for the current release begins at the code complete date of the "
+"previous release. See \"Code Complete\" section below for details."
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:13
+msgid "B. (T-minus 20 working days)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:15
+#: ../../source/process/bug-fix-release.md:44
+#: ../../source/process/bug-fix-release.md:69
+#: ../../source/process/bug-fix-release.md:83
+#: ../../source/process/bug-fix-release.md:125
+#: ../../source/process/bug-fix-release.md:155
+#: ../../source/process/bug-fix-release.md:179
+#: ../../source/process/bug-fix-release.md:227
+#: ../../source/process/bug-fix-release.md:284
+msgid "Release Manager:"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:16
+#: ../../source/process/bug-fix-release.md:45
+#: ../../source/process/bug-fix-release.md:70
+#: ../../source/process/bug-fix-release.md:84
+#: ../../source/process/bug-fix-release.md:126
+#: ../../source/process/bug-fix-release.md:156
+#: ../../source/process/bug-fix-release.md:180
+#: ../../source/process/bug-fix-release.md:228
+msgid "Post this checklist in Release Checklist channel"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:17
+msgid ""
+"Schedule a meeting with PMs and QAs to discuss upcoming features in the "
+"next feature release"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:18
+msgid ""
+"Before the meeting, review with PMs any Help Wanted campaigns QAs should "
+"be aware of"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:19
+msgid "After release branches are cut, ask dev to cut an RN build"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:20
+msgid ""
+"Draft Changelog in a WIP PR with updates for known issues, compatibility "
+"updates for deprecated features, config.json, database changes, API "
+"changes, and WebSocket event changes; see example"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:21
+msgid ""
+"Note the type of release and add a link to release doc that defines the "
+"type (https://docs.mattermost.com/process/release-faq.html#release-"
+"overview)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:22
+msgid ""
+"Review supported OS versions and review that software requirements are "
+"up-to-date based on these step-by-step guidelines"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:23
+msgid ""
+"Update Upgrade Guide with any special notes for upgrading to the new "
+"version"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:24
+msgid ""
+"Ask PMs if there are any notable breaking changes or deprecated features "
+"in the release"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:25
+msgid ""
+"Start posting a daily Zero Bug Balance query (posted until zero bugs or "
+"day of release)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:26
+msgid ""
+"Post a reminder in the French Localization channel about the due date for"
+" translations, similar to this example. Follow that translations are "
+"prioritized at https://translate.mattermost.com/projects/mattermost/"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:27
+#: ../../source/process/bug-fix-release.md:75
+#: ../../source/process/bug-fix-release.md:137
+#: ../../source/process/bug-fix-release.md:204
+#: ../../source/process/bug-fix-release.md:268
+msgid "Dev:"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:28
+#: ../../source/process/bug-fix-release.md:76
+msgid ""
+"Prioritize reviewing, updating, and merging of pull requests for current "
+"release until there are no more tickets in the pull request queue marked "
+"for the current release"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:29
+msgid ""
+"After the cut-off, any PRs that include significant code changes, require"
+" approval of the release manager before merging"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:31
+msgid "C. (T-minus 19 working days) Release Bug Testing"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:33
+#: ../../source/process/bug-fix-release.md:77
+#: ../../source/process/bug-fix-release.md:96
+#: ../../source/process/bug-fix-release.md:130
+#: ../../source/process/bug-fix-release.md:166
+#: ../../source/process/bug-fix-release.md:195
+#: ../../source/process/bug-fix-release.md:276
+msgid "QA:"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:34
+msgid "Prioritize testing PRs and resolved tickets for this release"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:35
+msgid "Ensure that all bugs are also properly tested on mobile apps"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:36
+msgid "Prioritize updating release tests in test management and automated tests"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:38
+msgid "D. (T-minus 15 working days) Judgment Day"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:40
+msgid "(Team) Judgment Day Meeting (10:00am San Francisco time):"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:41
+msgid "Discuss worst bug on master"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:42
+msgid "Begin daily triage of tickets"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:43
+msgid "Also start to triage tickets in the backlog"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:46
+#: ../../source/process/bug-fix-release.md:71
+#: ../../source/process/bug-fix-release.md:85
+#: ../../source/process/bug-fix-release.md:127
+#: ../../source/process/bug-fix-release.md:157
+#: ../../source/process/bug-fix-release.md:181
+#: ../../source/process/bug-fix-release.md:229
+msgid "Verify all items in the last posted release checklist are complete"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:47
+msgid ""
+"Queue a list of MVP candidates in alphabetical order to the Platform "
+"Meeting channel See example"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:48
+msgid "Queue a discussion about MVP candidates for the next R&D meeting"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:49
+msgid "Update Changelog PR based on what's in/out of the release"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:50
+msgid "Create meta issue for release in GitHub (see example)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:51
+msgid ""
+"Confirm date of marketing announcement for the release date with "
+"Marketing, and update release channel header if needed"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:52
+msgid ""
+"If release day falls on a Friday, the blog post goes out on the Friday "
+"and the emailed newsletter goes out the following Tuesday."
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:53
+msgid ""
+"Post a reminder to devs in the Release Discussion channel of the the code"
+" complete date with the ZBB count see example"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:54
+msgid ""
+"Ask release PM to review the Jira tickets remaining in the current "
+"release fix version and push those that won't make it to the next fix "
+"version"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:55
+#: ../../source/process/bug-fix-release.md:279
+msgid "Leads:"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:56
+msgid ""
+"Finalize roadmap for next release, and identify planned marketing bullet "
+"points"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:57
+#: ../../source/process/bug-fix-release.md:144
+#: ../../source/process/bug-fix-release.md:163
+#: ../../source/process/bug-fix-release.md:219
+#: ../../source/process/bug-fix-release.md:271
+msgid "Marketing:"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:58
+msgid ""
+"Prepare bullet points and release headline for release announcement. "
+"Release Manager to review the outline (benefits and order of major "
+"features) with PMs before sending to Justin to work on"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:59
+msgid ""
+"Decide which sections of the release announcement will have an "
+"accompanying screenshot/photo"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:60
+msgid "Start drafting blog post, tweet, and email for the release announcement"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:62
+msgid "E. (T-minus 12 working days) Code Complete"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:64
+msgid "Review the Release Features & Bugs Quality Gate Guidelines"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:66
+msgid "(Team) Code Complete Meeting (10:00am San Francisco time):"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:67
+msgid "Team review of Changelog"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:68
+msgid "Last check of tickets that need to be merged before RC1"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:72
+msgid ""
+"Submit NOTICE.txt PRs for any new libraries added from dev, and ensure "
+"they are cherry-picked to quality release branch"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:73
+msgid ""
+"If there are any breaking compatibility changes in the release, open an "
+"issue in the GitLab Omnibus to make sure GitLab is aware. Post a link to "
+"the issue in the Release Discussion channel"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:74
+msgid ""
+"Ask PMs to create a \"Hero\" screenshot as the splash image for the "
+"release blog post"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:78
+msgid ""
+"Identify any new teammates who will be joining release testing, send them"
+" an intro to the testing process and timeframe, send them the "
+"hardware/software survey"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:79
+msgid "Set up DM/GM channels in preparation for testing auto-closing after 7 days"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:81
+msgid "F. (T-minus 11 working days) Release Candidate Cut"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:86
+msgid "Update the GitHub meta issue:"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:87
+msgid "Include a link to the Changelog on the documentation branch"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:88
+msgid "Post comments to the meta issue with approved fixes for the next RCs"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:89
+msgid "Update download links and testing server links to the latest RCs"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:90
+msgid "After build is cut, tweet announcement that RC1 is ready (see example)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:91
+msgid "Generate a list of contributors for Changelog"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:92
+#: ../../source/process/bug-fix-release.md:135
+#: ../../source/process/bug-fix-release.md:212
+msgid "Logistics @hanna.park:"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:93
+msgid "Mail out contributor and security researcher mugs"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:94
+msgid ""
+"Space out the ordering of mugs over the next three weeks to prevent "
+"mistakes being made by the supplier (e.g., If there are 12 contributors "
+"to order mugs for, place an order every 2nd or 3rd day over the next "
+"three weeks)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:95
+msgid "Update Team page with new contributors"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:97
+msgid "Confirm up to date with testing PRs and resolved tickets"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:98
+msgid ""
+"Confirm up to date with test updates and known issues in release test "
+"management and automated tests"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:99
+msgid "Assign release testing areas to team members"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:100
+msgid ""
+"After RC1 is cut: Update test server invite links in Release Testing "
+"instructions"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:101
+msgid "After RC1 is cut: Run automated regression tests"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:102
+#: ../../source/process/bug-fix-release.md:141
+#: ../../source/process/bug-fix-release.md:199
+#: ../../source/process/bug-fix-release.md:265
+msgid "Build:"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:103
+msgid "Review all TODO notes, including one for uncommenting upgrade code"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:104
+msgid "Confirm all PRs in /enterprise repo have been merged"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:105
+#: ../../source/process/bug-fix-release.md:200
+msgid "Update Redux before each RC and Final build"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:106
+msgid "Update package version in Mattermost DockerFile"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:107
+msgid ""
+"Master is tagged and branched and Release Candidate 1 is cut (e.g., "
+"3.5.0-RC1) according to the Release Candidate Checklist in "
+"mattermost/process"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:108
+msgid ""
+"After branching, the database version in sql_upgrade.go on master is set "
+"to the next scheduled release version (e.g., 3.6.0)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:109
+msgid "CI servers are updated to the release branch"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:110
+msgid "Translation server is locked to the release branch"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:111
+#: ../../source/process/bug-fix-release.md:140
+msgid "Run daily automated upgrade tests to avoid catching upgrade bugs late"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:112
+#: ../../source/process/bug-fix-release.md:214
+#: ../../source/process/bug-fix-release.md:261
+msgid "Docs:"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:113
+msgid "Submit Changelog PR for team review"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:114
+msgid "Submit any remaining documentation PRs for product updates in the release"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:115
+msgid ""
+"Check that a redirect page has been set up in mattermost.com for any "
+"links added to the System Console"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:116
+msgid ""
+"Submit documentation for API changes and WebSocket event changes to  API "
+"documentation"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:117
+msgid ""
+"Confirm changes to config.json in compatibility section of Changelog are "
+"written back to settings documentation"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:118
+msgid ""
+"Confirm all new diagnostics are documented in the telemetry docs "
+"(https://docs.mattermost.com/administration/telemetry.html)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:120
+msgid "G. (T-minus 10 working days) Release Candidate Testing"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:122
+#: ../../source/process/bug-fix-release.md:151
+msgid "(Team) Daily Release Update Meeting"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:123
+msgid "Triage Jira tickets"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:124
+msgid "Decide when to cut next RC or final"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:128
+msgid ""
+"Post list of tickets to be fixed to the Release Discussion channel (see "
+"example)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:129
+msgid ""
+"Update Changelog Known Issues section with any significant issues that "
+"were found and not fixed for the final release"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:131
+msgid ""
+"Update Release Discussion header with links to RC instances and testing "
+"spreadsheet (template)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:132
+msgid "Post release testing instructions to Release Discussion channel (template)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:133
+msgid ""
+"Post reminders in Announcements channel (template) and Customer Support "
+"channel (template)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:134
+msgid ""
+"DM reminders if needed to team members who are not QA or devs, or who are"
+" new to release testing"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:136
+msgid ""
+"Generate an E20 5000 seat test licence and email to Lindy for release "
+"testing"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:138
+msgid "Make PRs for bug fixes to the release branch"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:139
+msgid ""
+"Review PRs made from release branch and merge changes into the release "
+"branch as required and merge the release branch back into master once per"
+" day"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:142
+msgid ""
+"Verify with Release Manager before cutting any new RCs (approved fixes "
+"should be merged)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:143
+msgid "Cut next Release Candidate and check CI servers running on release branch"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:145
+msgid ""
+"Finish draft of blog post for mattermost.com and all art work "
+"(screenshots, GIFs, and Twitter banners) used for the blog post"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:146
+msgid ""
+"Upgrade should be recommended if there are security fixes in this "
+"version, with a note thanking the security researcher"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:147
+msgid "Send blog post for Release Manager and PMs to review"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:149
+msgid "H. (T-minus 9 working days) Release Candidate Testing Finished"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:152
+msgid "Confirm testing assigned in the Release Testing spreadsheet is complete"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:153
+msgid "Continue to triage Jira tickets"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:154
+msgid ""
+"If no blocking issues are found, PM, Dev, and QA sign off on the release "
+"and plan to cut final"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:158
+msgid "Verify that the final translations PR for the release is submitted"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:159
+msgid ""
+"Confirm Changelog reflects any changes since it was merged (including "
+"known issues and contributors from all repositories)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:160
+msgid "Verify that translators and new integration contributors were added"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:161
+msgid "Verify that Open Source Components changes were added"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:162
+msgid ""
+"Update https://docs.mattermost.com/administration/open-source-"
+"components.html"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:164
+msgid ""
+"Send blog post for mattermost.com and all related art work for marketing "
+"lead to review"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:165
+msgid ""
+"Find www-gitlab-com merge request for latest GitLab release blog post and"
+" make request for adding GitLab Mattermost update (see example request, "
+"example update). Post to Release Discussion channel with link to request."
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:167
+msgid ""
+"Midday: Post reminders about testing, at-mentioning team members whose "
+"tests are not yet complete"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:168
+msgid "Find QA or other teammates to help finish unfinished tests if needed"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:169
+msgid ""
+"End of day or next morning: Verify all release tests are finished, bring "
+"any concerns to Triage / Release meeting"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:170
+msgid ""
+"Go through all tabs of testing spreadsheet and verify all comments and "
+"questions have been filed in Jira as needed"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:171
+msgid ""
+"Verify all Jira tickets other than newly-filed bugs have been tested, "
+"verified, and closed"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:172
+msgid ""
+"As bug fixes are merged and RCs are cut, verify fixes on new RCs, and "
+"post in Release Channel after testing"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:173
+msgid ""
+"After all tickets are verified and closed, run smoke tests on "
+"webapp/server, desktop app, and RN apps as appropriate"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:175
+msgid "I. (T-minus 2 working days) Release Build Cut"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:177
+msgid ""
+"The final release is cut - RC cuts and bug fixes should be completed by "
+"this date. Only urgent and critical issues are considered for fixing."
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:182
+msgid ""
+"Work with a developer to submit GitLab MR following this process and test"
+" the upgrade once the GitLab MR is merged and included in their RC."
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:183
+msgid "Close GitHub meta ticket for the release"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:184
+msgid "Add the download links and SHA-256 hash upgrade guide"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:185
+msgid "Merge Changelog PR after review is complete"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:186
+msgid ""
+"If there is a security fix, confirm the Changelog recommends upgrade, "
+"with a note mentioning the security level and thanking the security "
+"researcher (security process doc for example)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:187
+msgid ""
+"Update the Mattermost server download page with the links to the EE and "
+"TE bits"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:188
+msgid "Test the download links before and after updating the page"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:189
+msgid "Check Security Issues spreadsheet and confirm disclosure text"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:190
+msgid ""
+"Check the security researcher was added to the Responsible Disclosure "
+"Policy page"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:191
+msgid ""
+"Confirm link to security updates appears in blog post if there are "
+"security updates in this release, with a note thanking the security "
+"researcher"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:192
+msgid ""
+"Update deprecated feature list in mattermost.com with new and scheduled "
+"deprecations"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:193
+msgid ""
+"Draft Mattermost Security Updates, but do not post until 30 days after "
+"official release."
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:194
+msgid ""
+"Add a placeholder text saying \"Details on the security update will be "
+"posted here on X date, as per our Responsible Disclosure Policy\""
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:196
+msgid "Verify all PRs and tickets for the release have been tested / closed"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:197
+msgid "Verify smoke tests on webapp/server, desktop app, and RN apps all passed"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:198
+msgid "Post QA approval in Release Discussion channel"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:201
+msgid ""
+"Tags a new release (e.g., 1.1.0) and runs an official build which should "
+"be essentially identical to the last RC"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:202
+msgid ""
+"Posts SHA key, md5 sum, and GPG signatures of the final build to release "
+"channel"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:203
+msgid ""
+"Post in Release Discussion with links to the Enterprise Edition and Team "
+"Edition sections"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:205
+msgid ""
+"Verify the hashes (SHA-1, SHA-256, and md5) and GPG signatures are "
+"correct for both Enterprise Edition and Team Edition."
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:206
+msgid ""
+"Test upgrade from previous version to current version, following the "
+"Upgrade Guide with database upgrades on both MySQL and Postgres"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:207
+msgid ""
+"Test upgrade from Team Edition to Enterprise edition based on the Upgrade"
+" Guide"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:208
+msgid "Test fresh install of current version, following the Install Guide"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:209
+msgid "Review any changes made to install guides, and test if necessary"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:210
+msgid "Ensure Security Policies page has been updated"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:211
+msgid ""
+"Update dependancies after release branch is cut in mattermost-server, "
+"mattermost-webapp, desktop, mattermost-mobile, and mattermost-redux"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:213
+msgid ""
+"Update MVP page with the most valued professional of the release and "
+"order the contributor's coaster"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:215
+msgid "Finalize docs"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:216
+msgid ""
+"If reviews are not complete, hold a 30 minute doc review meeting with PMs"
+" and anyone else who has changed or reviewed docs this release and wants "
+"to join"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:217
+msgid ""
+"Merge the docs release branch to master and verify all changes on "
+"docs.mattermost.com once the build is up"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:218
+msgid ""
+"Submit a correction PR for any incorrect formatting or other errors "
+"missed during the initial review"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:220
+msgid ""
+"Receive sign off on final version of MailChimp email blast and Twitter "
+"announcement and schedule for 08:00 PST on the date of marketing "
+"announcement"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:221
+msgid ""
+"Note: If the release contains a security update, also draft a Mailchimp "
+"email blast for the Security Bulletin mailing list"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:222
+msgid ""
+"Finalize blog post for mattermost.com, test on mobile view, and set timer"
+" for 08:00 PST on the day of release"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:223
+msgid "Add links to Admin guide in the release blog post where needed"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:225
+msgid "J. (T-minus 0 working days) Release Day"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:230
+msgid ""
+"Schedule a release retrospective meeting, to be held within five days of "
+"the release"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:231
+msgid "Update Integrations Directory on the Mattermost Apps and Integrations page"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:232
+msgid "Prepare and post release metrics"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:233
+msgid "Post an MVP winner announcement in the Contributors channel"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:234
+msgid "Add new release fix versions in Jira for the next few releases"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:235
+msgid ""
+"Post key dates for the next release in the Release Discussion channel and"
+" remove links to RC candidates and testing spreadsheet from the header"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:236
+msgid ""
+"Make sure that statutory holidays for Canada and US are accounted for in "
+"the release dates"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:237
+msgid "Close the release in Jira both for webapp and mobile (releases page)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:238
+msgid ""
+"For the next release, create the following team meetings. If they "
+"conflict with existing meetings, check with meeting owner to reschedule "
+"or reschedule the release meeting"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:239
+msgid ""
+"Bug Bash Meeting on the week after Code Complete at 10:00am San Francisco"
+" time"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:240
+msgid "Feature Complete Meeting on T-20 at 10:00am San Francisco time"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:241
+msgid "Judgment Day Meeting on T-15 at 10:00am San Francisco time"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:242
+msgid "Code Complete Meeting on T-14 at 10:00am San Francisco time"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:243
+msgid ""
+"Release Triage and Update Meeting each weekday starting at T-15 and "
+"ending at T-2 at 9:30am San Francisco time for PM, QA and release dev."
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:244
+msgid ""
+"Prepare tickets for the next release, with a corresponding vX.X prefix, "
+"and put the tickets in the appropriate sprints as follows:"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:245
+#: ../../source/process/bug-fix-release.md:247
+msgid "The week RC is cut:"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:246
+msgid "RC Build Testing for core team"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:248
+msgid "Loadtest x.x release candidate compared to x.x release"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:249
+msgid "The week RC is cut (for GitLab dev owner):"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:250
+msgid "Test RC1 with the latest GitLab build during release testing cycle"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:251
+msgid "Release week (for dependancies owner)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:252
+msgid "Upgrade dependancies for webapp, server, and Redux"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:253
+msgid "Week after release (for GitLab dev owner)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:254
+msgid "Submit GitLab Omnibus RC install of Mattermost"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:255
+msgid ""
+"Confirm that mattermost-docker has been updated to the latest version "
+"(contact the maintainer via direct message on community server if "
+"necessary)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:256
+msgid ""
+"Contact owners of community installers or submit PRs to update install "
+"version number"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:257
+msgid ""
+"For Puppet, Heroku, and Ansible Playbook, post to Installers and Images "
+"channel announcing the new release. See example."
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:258
+msgid ""
+"For Chef Cookbook, open a new issue to announce the new release. See "
+"example."
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:259
+msgid "For Yunohost, open a new pull request to update the version. See example."
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:260
+msgid "For OpenShift, open a new issue to update the version. See example."
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:262
+msgid "Create a new branch on docs for the next release - vX.X-documentation"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:263
+msgid ""
+"Submit a PR for changelog against the vX.X-documentation branch and add a"
+" Work in Progress label for it"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:264
+msgid ""
+"Submit a PR to change version number in docs/source/conf.py against the "
+"vX.X-documentation branch"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:266
+msgid ""
+"Put CI servers and translation server back onto master, and post in "
+"Release Discussion channel once done"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:267
+msgid ""
+"Update https://community.mattermost.com and "
+"https://prev.test.mattermost.com to the previous release version"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:269
+msgid "Merge changes made to release branch into master"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:270
+msgid "Update existing tickets or create new ones for the next release"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:272
+msgid "Turn on CrazyEgg for blog post page"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:273
+msgid ""
+"Confirm marketing has been posted (animated GIFs, screenshots, mail "
+"announcement, tweets, blog posts)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:274
+msgid "Update @mattermosthq Twitter profile with the next release date"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:275
+msgid "Prepare retweet of GitLab release tweet (see example here)"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:277
+msgid "Merge any updates made to Selenium tests during release testing"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:278
+msgid "Update RN server URLs to Rainforest"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:280
+msgid "Update company roadmap at mattermost.com"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:282
+msgid "L. (T-plus 30 days) Update Mattermost Security Page"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:285
+msgid "Post Mattermost Security Updates after reviewing with security lead"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:286
+msgid ""
+"If a dot release is shipping with security fixes, do not post new details"
+" until T-plus 10 working days from the dot release ship date"
+msgstr ""
+
+#: ../../source/process/bug-fix-release.md:287
+msgid ""
+"Update Security Issues spreadsheet with issue number from posted update "
+"(e.g. v3.2.0.1)"
+msgstr ""
+

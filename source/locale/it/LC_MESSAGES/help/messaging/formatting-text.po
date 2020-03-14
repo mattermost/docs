@@ -1,0 +1,391 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/help/messaging/formatting-text.rst:2
+msgid "Formatting Text"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:4
+msgid ""
+"Markdown makes it easy to format messages. Type a message as you normally"
+" would and use these rules to render it with special formatting "
+"techniques."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:6
+msgid ""
+"For a Layman's guide to Markdown on Mattermost, `see this blog post "
+"<https://mattermost.com/blog/laymans-guide-to-markdown-on-mattermost/>`_."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:9
+msgid "Emojis"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:11
+msgid ""
+"Open the emoji autocomplete by typing ``:`` followed by two characters of"
+" the word describing the emoji. A full list of emojis can be found `here "
+"<http://www.emoji-cheat-sheet.com/>`__. It is also possible to create "
+"your own `Custom Emoji <http://docs.mattermost.com/help/settings/custom-"
+"emoji.html>`__ if the emoji you want to use doesn't exist."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:13
+msgid "``:smile: :+1: :sheep:``"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:15
+#: ../../source/help/messaging/formatting-text.rst:57
+#: ../../source/help/messaging/formatting-text.rst:69
+#: ../../source/help/messaging/formatting-text.rst:85
+#: ../../source/help/messaging/formatting-text.rst:100
+#: ../../source/help/messaging/formatting-text.rst:114
+#: ../../source/help/messaging/formatting-text.rst:129
+#: ../../source/help/messaging/formatting-text.rst:200
+#: ../../source/help/messaging/formatting-text.rst:256
+#: ../../source/help/messaging/formatting-text.rst:269
+#: ../../source/help/messaging/formatting-text.rst:281
+#: ../../source/help/messaging/formatting-text.rst:292
+#: ../../source/help/messaging/formatting-text.rst:305
+#: ../../source/help/messaging/formatting-text.rst:332
+#: ../../source/help/messaging/formatting-text.rst:350
+msgid "Renders as:"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:21
+msgid "Text Style"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:23
+msgid ""
+"You can use either ``_`` or ``*`` around a word to make it italic. Use "
+"two to make it bold."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:25
+msgid "``_italics_`` renders as `italics`"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:26
+msgid "``**bold**`` renders as **bold**"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:27
+msgid "``**_bold-italic_**`` renders as |bold_italics|"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:28
+msgid "``~~strikethrough~~`` renders as |strikethrough|"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:38
+msgid "Links"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:40
+msgid ""
+"Create labeled links by putting the desired text in square brackets and "
+"the associated link in normal brackets."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:42
+msgid "``[Check out Mattermost!](https://about.mattermost.com/)``"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:44
+msgid "Renders as: `Check out Mattermost! <https://about.mattermost.com/>`__"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:47
+msgid "Headings"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:49
+msgid ""
+"Make a heading by typing # and a space before your title. For smaller "
+"headings, use more #’s."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:62
+msgid ""
+"Alternatively, you can underline the text using ``===`` or ``---`` to "
+"create headings."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:75
+msgid "Lists"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:77
+msgid ""
+"Create a list by using ``*`` or ``-`` as bullets. Indent a bullet point "
+"by adding two spaces in front of it."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:87
+msgid "item one"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:88
+msgid "item two"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:90
+msgid "item two sub-point"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:92
+msgid "Make it an ordered list by using numbers instead:"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:102
+msgid "Item one"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:103
+msgid "Item two"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:104
+msgid "Item three"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:106
+msgid "You can also start a list at any number:"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:116
+msgid "The first list number is 4."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:117
+msgid "The second list number is 5."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:118
+msgid "The third list number is 6."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:121
+msgid "Make a task list by including square brackets:"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:135
+msgid "Code Block"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:137
+msgid ""
+"Creating a fixed width code block is recommended for pasting multi-line "
+"blocks of code or other text output that is easier to read with fixed "
+"width font alignment. Examples include block text snippets, ASCII tables,"
+" and log files."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:139
+msgid "This can be accomplished in one of two ways:"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:141
+msgid ""
+"Placing 3x backtics :kbd:`\\`\\`\\`` on the line directly above and "
+"directly below your code"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:151
+msgid ""
+":guilabel:`TIP` - Enter 3x backticks :kbd:`\\`\\`\\``, :kbd:`SHIFT + "
+"ENTER`, :kbd:`<type_your_code>`, :kbd:`SHIFT + ENTER`, and finally 3x "
+"backticks :kbd:`\\`\\`\\``."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:154
+msgid "Indenting each line by four spaces"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:164
+msgid "**Syntax Highlighting**"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:166
+msgid ""
+"To add syntax highlighting, type the language to be highlighted after the"
+" ``````` at the beginning of the code block. Mattermost also offers four "
+"different code themes (GitHub, Solarized Dark, Solarized Light, Monokai) "
+"that can be changed in **Account Settings** > **Display** > **Theme** > "
+"**Custom Theme** > **Center Channel Styles**"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:168
+msgid ""
+"Supported languages are: ``applescript``, ``as``, ``atom``, ``bas``, "
+"``bash``, ``boot``, ``_coffee``, ``c++``, ``c``, ``cake``, ``cc``, "
+"``cl2``, ``clj``, ``cljc``, ``cljs``, ``cljs.hl``, ``cljscm``, ``cljx``, "
+"``cjsx``, ``cson``, ``coffee``, ``cpp``, ``cs``, ``csharp``, ``css``, "
+"``d``, ``dart``, ``dfm``, ``di``, ``delphi``, ``diff``, ``django``, "
+"``docker``, ``dockerfile``, ``dpr``, ``erl``, ``fortran``, "
+"``freepascal``,  ``fs``, ``fsharp``, ``gcode``, ``gemspec``, ``go``, "
+"``groovy``, ``gyp``, ``h++``, ``h``, ``handlebars``, ``hbs``, ``hic``,  "
+"``hpp``, ``html``, ``html.handlebars``, ``html.hbs``, ``hs``, ``hx``, "
+"``iced``, ``irb``, ``java``, ``jinja``, ``jl``, ``js``, ``json``, "
+"``jsp``, ``jsx``, ``kt``, ``ktm``, ``kts``, ``lazarus``, ``less``, "
+"``lfm``, ``lisp``, ``lpr``, ``lua``, ``m``, ``mak``, ``matlab``, ``md``, "
+"``mk``, ``mkd``, ``mkdown``, ``ml``, ``mm``, ``nc``, ``objc``, ``obj-c``,"
+" ``osascript``, ``pas``, ``pascal``, ``perl``, ``php``, ``php3``, "
+"``php4``, ``php5``, ``php6``, ``pl``, ``plist``, ``podspec``, ``ps``, "
+"``ps1``, ``pp``, ``py``, ``r``, ``rb``, ``rs``, ``rss``, ``ruby``, "
+"``scala``, ``scm``, ``scpt``, ``scss``, ``sh``, ``sld``, ``st``, "
+"``styl``, ``sql``, ``swift``, ``tex``, ``thor``, ``v``, ``vb``, "
+"``vbnet``, ``vbs``, ``veo``, ``xhtml``, ``xml``, ``xsl``, ``yaml``, "
+"``zsh``,"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:187
+msgid "Example:"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:202
+msgid "**GitHub Theme**"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:207
+msgid "**Solarized Dark Theme**"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:212
+msgid "**Solarized Light Theme**"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:217
+msgid "**Monokai Theme**"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:223
+msgid "In-line Code"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:225
+msgid ""
+"Create in-line monospaced font by surrounding it with backticks (`), not "
+"with single quotes (')."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:232
+msgid "Renders as: ``monospace``."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:235
+msgid "In-line Images"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:237
+msgid ""
+"Add in-line images by using an exclamation mark followed by the alt text "
+"in square brackets then the URL of the image in round brackets. You can "
+"add hover text by placing the text in quotes after the link."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:239
+msgid "**![** *{alt text}* **](** *{URL of image}*  \"*{Hover text}* \" **)**"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:241
+msgid ""
+"If the height of the original image is more than 500 pixels, the system "
+"sets the height at 500 pixels and adjusts the width to maintain the "
+"original aspect ratio."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:243
+msgid ""
+"You can set the width and height of the displayed image by using an "
+"equals sign and the width x height after the URL of the image. If you set"
+" only the width, the system adjusts the height to maintain the original "
+"aspect ratio."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:246
+msgid "**Examples**:"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:260
+msgid "Inline image with hover text"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:274
+msgid "Inline image with link"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:263
+msgid "Note the extra set of square brackets."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:285
+msgid "Inline image displayed at 50 pixels wide and 76 pixels high"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:296
+msgid "Inline image displayed at 50 pixels wide and the height adjusted to suit"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:299
+msgid "Lines"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:301
+msgid "Create a line by using three ``*``, ``_``, or ``-``."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:303
+msgid "``***``"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:310
+msgid "Block quotes"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:312
+msgid "Create block quotes using ``>``."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:314
+msgid "``> block quotes`` renders as:"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:319
+msgid "Tables"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:321
+msgid ""
+"Create a table by placing a dashed line under the header row and "
+"separating the columns with a pipe ``|``. (The columns don’t need to line"
+" up exactly for it to work). Choose how to align table columns by "
+"including colons ``:`` within the header row."
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:339
+msgid "Math Formulas"
+msgstr ""
+
+#: ../../source/help/messaging/formatting-text.rst:341
+msgid "Create formulas by using LaTeX in a ``latex`` `Code Block`_"
+msgstr ""
+

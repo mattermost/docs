@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/mobile/mobile-compile-yourself.rst:2
+msgid "Build Your Own Version of the Mattermost Mobile Apps"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:4
+msgid ""
+"To deploy in production with privately-hosted mobile apps compiled by "
+"your organization in an Enterprise App Store:"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:6
+msgid ""
+"Compile your own iOS and Android mobile applications from the `open "
+"source repository <https://github.com/mattermost/mattermost-mobile>`__"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:7
+msgid ""
+"See the :doc:`mobile developer guide <../developer/mobile-developer-"
+"setup>` for help setting up your environment and building the apps"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:8
+msgid ""
+"Note: If your server version is not supported by the Mattermost apps, you"
+" will need to use the Mattermost Classic app repositories for `iOS "
+"<https://github.com/mattermost/mattermost-ios-classic>`__ and `Android  "
+"<https://github.com/mattermost/mattermost-android-classic>`__"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:10
+msgid ""
+"Compile your own Mattermost Push Notification Service (MPNS) from the "
+"`open source repository <https://github.com/mattermost/mattermost-push-"
+"proxy>`__ or use the pre-compiled version from "
+"https://github.com/mattermost/mattermost-push-proxy/releases"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:11
+msgid ""
+"To secure your push notifications, make sure to use encrypted TLS "
+"connections between:"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:13
+msgid "MPNS and Apple Push Notification Service"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:14
+msgid "MPNS and Google’s Firebase Cloud Messaging"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:15
+msgid "MPNS and your Mattermost server"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:17
+msgid ""
+"Set up a way to connect to your private network Mattermost instance, "
+"using:"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:18
+msgid ""
+"An external proxy with encrypted transport through HTTPS and WSS network "
+"connections"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:19
+msgid ""
+"(Recommended) Depending on your security policies, consider deploying a "
+"mobile VPN client with multi-factor authentication (MFA), GitLab SSO with"
+" MFA, or run Mattermost Enterprise Edition with MFA"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:21
+msgid "Enable mobile push notifications"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:22
+msgid ""
+"Go to **System Console** > **Notifications** > **Mobile Push** in prior "
+"versions or **System Console > Environment > Push Notification Server** "
+"in versions after 5.12"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:23
+msgid ""
+"Under **Send Push Notifications**, select **Manually enter Push "
+"Notification Service location**"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:24
+msgid ""
+"Enter the location of your Mattermost Push Notification Service in the "
+"**Push Notification Server** field"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:28
+msgid "(Optional) Customize mobile push notification contents"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:29
+msgid ""
+"Go to **System Console** > **Notifications** > **Mobile Push** in prior "
+"versions or **System Console > Site Configuration > Notifications** in "
+"versions after 5.12"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:30
+msgid ""
+"Select an option for **Push Notification Contents** to specify what type "
+"of information to include in push notifications"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:31
+msgid ""
+"Most deployments choose to include the **full message content sent in the"
+" notification payload**. If your organization has policies or compliance "
+"requirements regarding data security, you may opt for sending **full "
+"message content fetched from the server on receipt** (Enterprise Edition "
+"E20) so messages are not sent to Apple's Push Notification Service or "
+"Google's Firebase Cloud Messaging notification service."
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:35
+msgid "Deploy to an Enterprise App Store"
+msgstr ""
+
+#: ../../source/mobile/mobile-compile-yourself.rst:37
+msgid ""
+"Confirm you're subscribed to `Mattermost Security Bulletins "
+"<https://about.mattermost.com/security-bulletin/>`__. In future, when "
+"notified of security updates, apply them promptly."
+msgstr ""
+

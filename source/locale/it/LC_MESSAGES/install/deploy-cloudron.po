@@ -1,0 +1,84 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/deploy-cloudron.rst:4
+msgid "Deploy Mattermost on Cloudron (Unofficial)"
+msgstr ""
+
+#: ../../source/install/deploy-cloudron.rst:6
+msgid ""
+"Unofficial, community-maintained guides for deploying Mattermost on "
+"Cloudron."
+msgstr ""
+
+#: ../../source/install/deploy-cloudron.rst:8
+msgid ""
+"This unofficial guide is maintained by the Mattermost community and this "
+"deployment configuration is not yet officially supported by Mattermost, "
+"Inc. You can `edit this page on GitHub "
+"<https://github.com/mattermost/docs/blob/master/source/install/deploy-"
+"cloudron.rst>`__."
+msgstr ""
+
+#: ../../source/install/deploy-cloudron.rst:10
+msgid ""
+"Mattermost is available as a 1-click install on `Cloudron "
+"<https://cloudron.io>`__. For those unaware, Cloudron makes it easy to "
+"run apps like Mattermost on your server and keep them up-to-date and "
+"secure."
+msgstr ""
+
+#: ../../source/install/deploy-cloudron.rst:17
+msgid "Installation"
+msgstr ""
+
+#: ../../source/install/deploy-cloudron.rst:19
+msgid ""
+"To get started, first `install Cloudron <https://cloudron.io/get.html>`__"
+" on a VPS provider like Digital Ocean and then install Mattermost from "
+"the `Cloudron Store "
+"<https://cloudron.io/store/org.mattermost.cloudronapp.html>`__."
+msgstr ""
+
+#: ../../source/install/deploy-cloudron.rst:22
+msgid ""
+"The Mattermost app will be configured with MySQL and SMTP email "
+"notifications service."
+msgstr ""
+
+#: ../../source/install/deploy-cloudron.rst:25
+msgid "Demo"
+msgstr ""
+
+#: ../../source/install/deploy-cloudron.rst:27
+msgid ""
+"A demo is available `here <https://my-demo.cloudron.me>`__ (username: "
+"``cloudron``, password: ``cloudron``)."
+msgstr ""
+
+#: ../../source/install/deploy-cloudron.rst:30
+msgid "Package Source"
+msgstr ""
+
+#: ../../source/install/deploy-cloudron.rst:32
+msgid ""
+"The Cloudron package (with automated tests) is developed `here "
+"<https://git.cloudron.io/cloudron/mattermost-app>`__."
+msgstr ""
+

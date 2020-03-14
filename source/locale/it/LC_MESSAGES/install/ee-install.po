@@ -1,0 +1,273 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/ee-install.rst:5
+msgid "Enterprise Install and Upgrade"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:7
+msgid ""
+"Mattermost Enterprise Edition is free to use in \"team mode\" without "
+"enterprise features enabled. Enable enterprise features using a `trial "
+"license <https://about.mattermost.com/trial/>`__ or by `purchasing a "
+"license key <https://about.mattermost.com/pricing/>`__. There are two "
+"variants of Enterprise Edition, E10 and E20, and you can `compare their "
+"features online <https://mattermost.com/pricing-feature-comparison/>`__."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:10
+msgid "Installing Enterprise Edition"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:12
+msgid ""
+"To install Mattermost Enterprise Edition directly please use one of the "
+"following guides:"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:14
+msgid ""
+"`Production Enterprise Edition on Ubuntu 16.04 "
+"<https://docs.mattermost.com/install/install-ubuntu-1604.html>`__"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:15
+msgid ""
+"`Production Enterprise Edition on Ubuntu 18.04 "
+"<https://docs.mattermost.com/install/install-ubuntu-1804.html>`__"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:16
+msgid ""
+"`Production Kubernetes Deployment <https://docs.mattermost.com/install"
+"/install-kubernetes.html>`__"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:17
+msgid ""
+"`Production Enterprise Edition on RHEL 7 "
+"<https://docs.mattermost.com/install/install-rhel-7.html>`__"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:18
+msgid ""
+"`Production Enterprise Edition on RHEL 6 "
+"<https://docs.mattermost.com/install/install-rhel-6.html>`__"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:19
+msgid ""
+"`Production Enterprise Edition on Debian Stretch "
+"<https://docs.mattermost.com/install/install-debian.html>`__"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:20
+msgid ""
+"`Production Docker Deployment using Docker Compose "
+"<https://docs.mattermost.com/install/prod-docker.html>`__"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:23
+msgid "Upgrading to Mattermost Enterprise Edition"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:26
+msgid "Checking your Mattermost Edition and Version"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:28
+msgid ""
+"If you're already running Mattermost, to check your Mattermost edition "
+"and version from the server run:"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:30
+msgid "`mattermost version`"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:32
+msgid ""
+"To check your edition and version from the web interface, go to the main "
+"menu and open the \"About Mattermost\" dialog."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:34
+msgid ""
+"\"Mattermost Enterprise Edition\" indicates your system is ready to "
+"receive a license key to enable enterprise features."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:35
+msgid ""
+"\"Mattermost Team Edition\" indicates you're using the open source "
+"version and need to upgrade (per upgrade instructions below) before a "
+"license key can be applied."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:38
+msgid "Upgrading to Enterprise Edition from Mattermost Team Edition"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:40
+msgid ""
+"The open source Mattermost Team Edition is functionally identical to the "
+"commercial Mattermost Enterprise Edition in its free \"team mode\", but "
+"there is no ability to unlock enterprise features."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:41
+msgid ""
+"To enable the unlocking of enterprise features, replace the Mattermost "
+"Team Edition binary with a Mattermost Enterprise Edition binary via an "
+"`upgrade procedure "
+"<http://docs.mattermost.com/administration/upgrade.html#upgrade-team-"
+"edition-to-enterprise-edition>`__."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:43
+#: ../../source/install/ee-install.rst:64
+msgid ""
+"If you need to migrate Team Edition prior to install, `please follow the "
+"migration guide. "
+"<http://docs.mattermost.com/administration/migrating.html>`__"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:46
+msgid "Upgrading to Enterprise Edition in GitLab Omnibus"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:48
+msgid ""
+"GitLab Omnibus runs the open source Mattermost Team Edition. To upgrade "
+"to Mattermost Enterprise Edition, follow these steps:"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:50
+msgid "Disable the built-in Mattermost instance on GitLab Omnibus:"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:52
+msgid "Go to ``/etc/gitlab/gitlab.rb`` and set the following line to false"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:58
+msgid "Run `sudo gitlab-ctl reconfigure` to apply the updated setting"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:60
+msgid ""
+"Install Mattermost using `one of the guides above "
+"<https://docs.mattermost.com/install/ee-install.html#installing-"
+"enterprise-edition>`__."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:61
+msgid ""
+"Migrate the database used by GitLab Mattermost for your new Enterprise "
+"Edition instance."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:62
+msgid ""
+"(Optional) Set up `GitLab slash command integration "
+"<https://docs.gitlab.com/ee/user/project/integrations/mattermost_slash_commands.html>`__"
+" with your Mattermost instance."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:67
+msgid "Upgrading Enterprise Edition to a newer version"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:69
+msgid ""
+"Upgrade previous version of Mattermost Enterprise Edition to later "
+"versions by following the `upgrade procedure. "
+"<https://docs.mattermost.com/administration/upgrade.html#upgrade-"
+"enterprise-edition>`__"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:72
+msgid "Changing a License Key"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:74
+msgid ""
+"Make sure that the new license is for a number of users that is greater "
+"than or equal to the current total number of users on your system. To "
+"find the total number of users, go to the REPORTING section of the System"
+" Console and click **Site Statistics**. The total number of users is in "
+"the **Total Active Users** field. The license is rejected if this value "
+"is greater than allowed by the key."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:77
+msgid "To install a new license key:"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:79
+msgid "**Through the command line interface (CLI):**"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:81
+msgid ""
+"Use this command to upload a new license or to replace an existing "
+"license with a new one."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:88
+msgid ""
+"If you upload the license via `mattermost license upload` CLI, you need "
+"to restart the Mattermost server after uploading. Also, if you're running"
+" a cluster setup, the license file needs to be uploaded to every node."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:91
+msgid ""
+"See `documentation for more information on the command line tools "
+"<https://docs.mattermost.com/administration/command-line-tools.html"
+"#mattermost-license-upload>`__."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:93
+msgid "**Through the System Console:**"
+msgstr ""
+
+#: ../../source/install/ee-install.rst:95
+msgid ""
+"In the OTHER section of the System Console, click **Edition and License**"
+" in prior versions or **System Console** > **About** > **Edition and "
+"License** in versions after 5.12."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:96
+msgid ""
+"Click **Remove Enterprise License and Downgrade Server**. This clears the"
+" license from the server and refreshes the System Console."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:97
+msgid "Upload the new license key file."
+msgstr ""
+
+#: ../../source/install/ee-install.rst:99
+msgid ""
+"After the key is uploaded and installed, the **Edition** and **License** "
+"sections on the page show the capabilities of your new license key."
+msgstr ""
+

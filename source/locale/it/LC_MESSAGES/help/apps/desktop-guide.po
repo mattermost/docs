@@ -1,0 +1,273 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/help/apps/desktop-guide.rst:2
+msgid "Using Mattermost Desktop App"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:4
+msgid ""
+"Mattermost desktop applications are available for Windows, Mac and Linux "
+"operating systems."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:8
+msgid ""
+"You can `download the apps directly from our download page "
+"<https://about.mattermost.com/downloads/>`__ and visit our `installation "
+"guides <https://docs.mattermost.com/install/desktop.html>`__ for help "
+"during setup and for troubleshooting tips."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:10
+msgid ""
+"To view the latest updates, please see our `changelog "
+"<https://docs.mattermost.com/help/apps/desktop-changelog.html>`__."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:12
+msgid ""
+"Below are a few tips to get you started and to configure your experience "
+"on the desktop app:"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:19
+msgid "Server Management"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:21
+msgid ""
+"You can connect to multiple Mattermost servers from a single interface on"
+" the desktop app. Servers appear as separate tabs at the top of the "
+"desktop window and can be reordered by dragging."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:23
+msgid "The Server Management section allows you to add, edit, and remove servers."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:26
+msgid "Adding Servers"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:28
+msgid "To add a new server to your desktop app environment:"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:30
+msgid "Click the **+** button in the desktop window bar at the top of the screen."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:31
+msgid "In the **Name** field, enter the name that you want for the tab."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:32
+msgid ""
+"In the **URL** field, enter the complete URL of the server that you want "
+"to connect to. Must begin with either ``http://`` or ``https://``."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:33
+msgid "Click **Add**."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:36
+msgid "Editing Servers"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:38
+msgid "To edit a server in your desktop app environment:"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:40
+#: ../../source/help/apps/desktop-guide.rst:50
+msgid ""
+"On Windows, go to **... > File > Settings**. On Mac, go to **Mattermost >"
+" Preferences**."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:41
+msgid "Next to the server you want to update, click **Edit**."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:42
+msgid "Edit **Name** and/or **URL**."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:43
+msgid "Click **Save**."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:46
+msgid "Removing Servers"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:48
+msgid "To remove a server from your desktop app environment:"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:51
+msgid "Next to the server or team that you want to remove, click **Remove**."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:52
+msgid "Click **Remove**."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:55
+msgid "App Options"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:57
+msgid ""
+"In addition to `Mattermost Account Settings "
+"<https://docs.mattermost.com/help/settings/account-settings.html>`__ , "
+"the desktop app provides additional options to customize your experience."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:59
+msgid ""
+"The options appear in the Settings page, available on Windows from **... "
+"> File > Settings**, or on Mac from **Mattermost > Preferences**."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:64
+msgid "Start app on login (Windows, Linux only)"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:62
+msgid ""
+"When enabled, Mattermost application starts when you log in to your "
+"machine."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:64
+#: ../../source/help/apps/desktop-guide.rst:69
+#: ../../source/help/apps/desktop-guide.rst:74
+msgid "This setting is enabled by default."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:69
+msgid "Check spelling"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:67
+msgid ""
+"Highlight misspelled words in your messages. Available for English, "
+"French, German, Spanish, and Dutch. To change the spelling language, "
+"right-click inside a message box and navigate to **Spelling Languages** "
+"in the context menu."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:74
+msgid ""
+"Show red badge on taskbar icon to indicate unread messages (Windows, Mac "
+"only)"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:72
+msgid ""
+"When enabled, a red badge is shown on the taskbar icon for unread "
+"messages with a number count indicating unread mentions or direct "
+"messages. If disabled, a red badge is only shown for unread mentions "
+"(with a number count)."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:79
+msgid "Flash taskbar icon when a new message is received (Windows, Linux only)"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:77
+msgid ""
+"Configure whether the taskbar icon flashes for a few messages when a new "
+"message is received on any of your active teams and servers."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:79
+#: ../../source/help/apps/desktop-guide.rst:84
+#: ../../source/help/apps/desktop-guide.rst:89
+#: ../../source/help/apps/desktop-guide.rst:94
+#: ../../source/help/apps/desktop-guide.rst:99
+#: ../../source/help/apps/desktop-guide.rst:104
+msgid "This setting is disabled by default."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:84
+msgid "Bounce the Dock icon when receiving a notification (Mac only)"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:82
+msgid ""
+"When enabled, the Dock icon will either bounce once or bounce until the "
+"user opens the app when receiving a notification."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:89
+msgid "Show Mattermost icon in the menu bar (Mac only)"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:87
+msgid "When enabled, Mattermost icon is added to the Mac menu bar."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:94
+msgid "Show icon in the notification area (Linux only)"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:92
+msgid "When enabled, Mattermost icon is added to the Linux notification area."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:99
+msgid ""
+"Leave app running in notification center when application window is "
+"closed (Linux only)"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:97
+msgid ""
+"When enabled, closing the application window will leave the Mattermost "
+"desktop app running in your notification center. This can be useful if "
+"you want to check for unread mentions while away from the app."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:104
+msgid "Use GPU hardware acceleration"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:102
+msgid ""
+"If enabled, Mattermost UI is rendered more efficiently but can lead to "
+"decreased stability for some systems. Setting takes effect after "
+"restarting the app."
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:107
+msgid "Dark Theme"
+msgstr ""
+
+#: ../../source/help/apps/desktop-guide.rst:108
+msgid ""
+"On macOS, the Mattermost desktop app respects the System Preferences "
+"appearance setting of the operating system to set the theme of the title "
+"bar. On Windows, you can toggle the theme of the Mattermost desktop app "
+"title bar in **... > View > Toggle Dark Mode**."
+msgstr ""
+

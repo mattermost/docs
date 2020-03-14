@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/mobile/mobile-mobileiron.rst:2
+msgid "Set Up Mattermost with MobileIron EMM"
+msgstr ""
+
+#: ../../source/mobile/mobile-mobileiron.rst:4
+msgid "Log in to your MobileIron Cloud tenant."
+msgstr ""
+
+#: ../../source/mobile/mobile-mobileiron.rst:6
+msgid "Click on **Apps** and then **App Catalog**."
+msgstr ""
+
+#: ../../source/mobile/mobile-mobileiron.rst:10
+msgid "Click the **Add** button."
+msgstr ""
+
+#: ../../source/mobile/mobile-mobileiron.rst:12
+msgid ""
+"Select **App Store** or **Google Play** to use the published apps by "
+"Mattermost. If you are building the apps yourself, use the option for "
+"**In-House** and then browse to select the .apk or .ipa file."
+msgstr ""
+
+#: ../../source/mobile/mobile-mobileiron.rst:16
+msgid ""
+"After uploading the .ipa or .apk file or selecting **Mattermost** from "
+"the published app search results, click **Next**. In our example will be "
+"using the app in the Apple App Store."
+msgstr ""
+
+#: ../../source/mobile/mobile-mobileiron.rst:18
+msgid "Review or fill in the information for the app, and click **Next**."
+msgstr ""
+
+#: ../../source/mobile/mobile-mobileiron.rst:22
+msgid ""
+"Choose an option for distributing the Mattermost app to users and click "
+"**Next**."
+msgstr ""
+
+#: ../../source/mobile/mobile-mobileiron.rst:26
+msgid ""
+"Here you'll be presented different options to configure the app. Fill in "
+"the ones you need, and then go to **iOS Managed App Configuration** and "
+"click on the \"**+**\" sign."
+msgstr ""
+
+#: ../../source/mobile/mobile-mobileiron.rst:30
+msgid ""
+"Fill in a name for the configuration and optional description. Then enter"
+" the key-value pairs using the values from the :ref:`appconfig-table`."
+msgstr ""
+
+#: ../../source/mobile/mobile-mobileiron.rst:34
+msgid "Select a distribution option for this configuration and click **Next**."
+msgstr ""
+
+#: ../../source/mobile/mobile-mobileiron.rst:38
+msgid "Review all you config settings one more time and click **Done**."
+msgstr ""
+

@@ -1,0 +1,43 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/transport-encryption/config.rst:3
+msgid "Configuring Transport Encryption"
+msgstr ""
+
+#: ../../source/install/transport-encryption/config.rst:5
+msgid ""
+"The components of the Mattermost setup are shown in the following "
+"diagram, including the transport encryption used. Aside from the "
+"encryption between the nodes of the Mattermost cluster, all transports "
+"rely on TLS encryption."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config.rst:9
+msgid ""
+"**Note:** The transport between the Application servers is not used by "
+"default and requires additional setup steps. Enhancing the core product "
+"to include automatic encryption between cluster nodes is in progress and "
+"planned for a later release."
+msgstr ""
+
+#: ../../source/install/transport-encryption/config.rst:15
+msgid "The configuration guides are split up into the following documents:"
+msgstr ""
+

@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/release-tips.md:1
+msgid "Release Tips"
+msgstr ""
+
+#: ../../source/process/release-tips.md:3
+msgid "Changelog Checklist"
+msgstr ""
+
+#: ../../source/process/release-tips.md:5
+msgid "Features"
+msgstr ""
+
+#: ../../source/process/release-tips.md:6
+msgid "State benefits first."
+msgstr ""
+
+#: ../../source/process/release-tips.md:7
+msgid "Order features based on benefit for end users."
+msgstr ""
+
+#: ../../source/process/release-tips.md:8
+msgid "Include links to docs where appropriate."
+msgstr ""
+
+#: ../../source/process/release-tips.md:9
+msgid "Bugs"
+msgstr ""
+
+#: ../../source/process/release-tips.md:10
+msgid "Check/test if the issue was in previous server version."
+msgstr ""
+
+#: ../../source/process/release-tips.md:11
+msgid "All sections"
+msgstr ""
+
+#: ../../source/process/release-tips.md:12
+msgid ""
+"Check that all sections are written and formatted the same way as in "
+"previous Changelogs."
+msgstr ""
+
+#: ../../source/process/release-tips.md:13
+msgid "API/Websocket/Database"
+msgstr ""
+
+#: ../../source/process/release-tips.md:14
+msgid "Work with Dev Ops on this section."
+msgstr ""
+
+#: ../../source/process/release-tips.md:15
+msgid "Next version"
+msgstr ""
+
+#: ../../source/process/release-tips.md:16
+msgid ""
+"If the Changelog mentions items regarding upcoming versions, move them to"
+" the bottom of the Changelog."
+msgstr ""
+
+#: ../../source/process/release-tips.md:18
+msgid "Ways to Meet Deadlines"
+msgstr ""
+
+#: ../../source/process/release-tips.md:20
+msgid ""
+"Post a list of dates for next release at or soon after T-0 and ping all "
+"of the teams."
+msgstr ""
+
+#: ../../source/process/release-tips.md:21
+msgid ""
+"For features and bugs, start pinging early enough before due dates and "
+"make public posts."
+msgstr ""
+
+#: ../../source/process/release-tips.md:22
+msgid ""
+"When pinging people, provide a clear due date and give a reason for the "
+"due date (e.g., Code Complete on Monday)."
+msgstr ""
+
+#: ../../source/process/release-tips.md:23
+msgid "Ask if people need any help or have any questions."
+msgstr ""
+
+#: ../../source/process/release-tips.md:25
+msgid "Translations"
+msgstr ""
+
+#: ../../source/process/release-tips.md:27
+msgid ""
+"Post a reminder at T-12 for translators about the release translations "
+"due date, e.g., "
+"https://community.mattermost.com/core/pl/466tkyxfdtftirxj31n8gpou5h."
+msgstr ""
+
+#: ../../source/process/release-tips.md:28
+msgid ""
+"Monitor progress of translations at "
+"https://translate.mattermost.com/projects/mattermost/ and ping language "
+"maintainers a few days before due date if they're not getting to 100%."
+msgstr ""
+
+#: ../../source/process/release-tips.md:29
+msgid ""
+"Ask Elias to hold on submitting final translations PR if some translators"
+" need more time, or ask him to submit a new one if a translations PR was "
+"already submitted."
+msgstr ""
+
+#: ../../source/process/release-tips.md:30
+msgid "Target date for final translations PR is T-5, but T-3 is acceptable."
+msgstr ""
+
+#: ../../source/process/release-tips.md:32
+msgid "Ways That Features/Bugs Guidelines are Currently Enforced"
+msgstr ""
+
+#: ../../source/process/release-tips.md:34
+msgid "Features guidelines:"
+msgstr ""
+
+#: ../../source/process/release-tips.md:35
+msgid "Sometimes features are merged after T-12."
+msgstr ""
+
+#: ../../source/process/release-tips.md:36
+msgid ""
+"Start to ping people already at T-15 or earlier for feature PRs that are "
+"still open."
+msgstr ""
+
+#: ../../source/process/release-tips.md:37
+msgid "Bugs guidelines:"
+msgstr ""
+
+#: ../../source/process/release-tips.md:38
+msgid ""
+"Need to focus on fixing only S1 and S2 bugs after T-5 to avoid missing "
+"T-2 deadline for cutting the final."
+msgstr ""
+
+#: ../../source/process/release-tips.md:40
+msgid "Ways to Ensure Features are Tested for HA/Mobile/Scale"
+msgstr ""
+
+#: ../../source/process/release-tips.md:42
+msgid "Mobile: Added a release checklist item for QAs for T-11."
+msgstr ""
+
+#: ../../source/process/release-tips.md:43
+msgid "HA: Test server available."
+msgstr ""
+
+#: ../../source/process/release-tips.md:44
+msgid "Scale: Via loadtests."
+msgstr ""
+
+#: ../../source/process/release-tips.md:46
+msgid "Release Marketing"
+msgstr ""
+
+#: ../../source/process/release-tips.md:48
+msgid "Blog post:"
+msgstr ""
+
+#: ../../source/process/release-tips.md:49
+msgid "Follow guidelines."
+msgstr ""
+
+#: ../../source/process/release-tips.md:50
+msgid "Audience: end-users, admin/tech."
+msgstr ""
+
+#: ../../source/process/release-tips.md:51
+msgid ""
+"Include CTAs and avoid including external links unless they direct to "
+"Mattermost website or documentation."
+msgstr ""
+
+#: ../../source/process/release-tips.md:52
+msgid "Give release outline for all PMs and Rich before giving to Justin."
+msgstr ""
+
+#: ../../source/process/release-tips.md:53
+msgid "Email:"
+msgstr ""
+
+#: ../../source/process/release-tips.md:54
+msgid "Check that the link on the email banner is correct."
+msgstr ""
+

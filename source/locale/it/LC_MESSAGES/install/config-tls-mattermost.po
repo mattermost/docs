@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/config-tls-mattermost.rst:2
+msgid "Configuring TLS on Mattermost Server"
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:4
+msgid "You have two options if you want users to connect with HTTPS:"
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:6
+msgid "Set up TLS on Mattermost Server."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:7
+msgid "Install a proxy such as NGINX and set up TLS on the proxy."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:9
+msgid ""
+"The easiest option is to set up TLS on the Mattermost Server, but if you "
+"expect to have more than 200 users, use a proxy for better performance. A"
+" proxy server also provides standard HTTP request logs."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:11
+msgid "**Configure TLS on the Mattermost Server**:"
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:13
+msgid ""
+"In the **System Console** > **General** > **Configuration** in prior "
+"versions or **System Console** > **Environment** > **Web Server** in "
+"versions after 5.12."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:14
+msgid "Change the **Listen Address** setting to ``:443``."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:15
+msgid "Change the **Connection Security** setting to ``TLS``."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:16
+msgid "Change the **Forward port 80 to 443** setting to ``true``."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:17
+msgid ""
+"Activate the ``CAP_NET_BIND_SERVICE`` capability to allow Mattermost to "
+"bind to low ports."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:19
+msgid "``sudo setcap cap_net_bind_service=+ep /opt/mattermost/bin/mattermost``"
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:21
+msgid ""
+"Install the security certificate. You can use `Let's Encrypt "
+"<https://letsencrypt.org/>`__ to automatically install and setup the "
+"certificate, or you can specify your own certificate."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:23
+msgid "**To use a Let's Encrypt certificate**:"
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:25
+msgid ""
+"The certificate is retrieved the first time that a client tries to "
+"connect to the Mattermost server. Certificates are retrieved for any "
+"hostname a client tries to reach the server at."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:27
+msgid "Change the **Use Let's Encrypt** setting to ``true``."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:28
+#: ../../source/install/config-tls-mattermost.rst:38
+msgid "Restart the Mattermost server for these changes to take effect."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:31
+msgid ""
+"If Let's Encrypt is enabled, forward port 80 through a firewall, with "
+"`Forward80To443 <https://docs.mattermost.com/administration/config-"
+"settings.html#forward-port-80-to-443>`__ ``config.json`` setting set to "
+"``true`` to complete the Let's Encrypt certification."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:33
+msgid "**To use your own certificate**:"
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:35
+msgid "Change the **Use Let's Encrypt** setting to ``false``."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:36
+msgid ""
+"Change the **TLS Certificate File** setting to the location of the "
+"certificate file."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:37
+msgid ""
+"Change the **TLS Key File** setting to the location of the private key "
+"file."
+msgstr ""
+
+#: ../../source/install/config-tls-mattermost.rst:41
+msgid "Password-protected certificates are not supported."
+msgstr ""
+

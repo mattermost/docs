@@ -1,0 +1,1011 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:2
+msgid "Enterprise Roll Out Checklist"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:4
+msgid ""
+"This checklist is intended to serve as a guide to Enterprises who are "
+"rolling out Mattermost to thousands of users."
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:7
+msgid "Checklist Overview"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:8
+msgid "`Prepare for the Roll Out`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:9
+msgid "`1. Define the Roll Out Project`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:10
+msgid "`2. Validate Essential Security and Compliance Requirements`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:11
+msgid "`3. Create Development, Staging, and Production Environments`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:12
+msgid "`4. Configure and Customize Your Mattermost Site`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:13
+msgid "`5. Test Production Performance and Redundancy`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:14
+msgid "`Roll Out Mattermost`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:15
+msgid "`1. Define Your Team and Channel Strategy`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:16
+msgid "`2. Enable Key Integrations`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:17
+msgid "`3. Prepare for User Onboarding`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:18
+msgid "`4. Deploy Client Apps`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:19
+msgid "`5. Roll Out to Groups of Users`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:20
+msgid "`6. Drive Adoption`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:21
+msgid "`Review the Roll Out`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:22
+msgid "`1. Review Project Charter Success Metrics`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:23
+msgid "`2. Review and Analyze Usage`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:24
+msgid "`3. Analyze System Performance`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:25
+msgid "`4. Harden Security`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:26
+msgid "`5. Perform Maintenance Tasks`_"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:29
+msgid "Checklist Details"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:32
+msgid "Prepare for the Roll Out"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:34
+msgid ""
+"Much of the preparation work is focused on ensuring the environment is "
+"deployed and secured prior to onboarding users."
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:37
+msgid "1. Define the Roll Out Project"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:39
+msgid "Define key stakeholders and project team members"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:40
+msgid ""
+"Example project team members: Project Manager, Network Administrator, "
+"Database Administrator, Corporate Directory Administrator, Security & "
+"Compliance Administrator(s), User Support, User Champions, User Trainers"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:42
+msgid ""
+"Define use cases and requirements for teams, their workflows and their "
+"integrations"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:43
+msgid ""
+"Resource: https://mattermost.com/blog/27-things-enterprises-can-learn-"
+"startups-increase-productivity/"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:45
+msgid "Define success criteria, goals and metrics to measure success"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:46
+msgid ""
+"Resource: https://docs.mattermost.com/getting-"
+"started/implementation_plan.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:48
+msgid ""
+"Create a Project Charter to document goals, tasks, deliverables, and "
+"decisions"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:49
+msgid ""
+"Get buy-in from project team members and key stakeholders on the project "
+"charter"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:52
+msgid "2. Validate Essential Security and Compliance Requirements"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:54
+msgid "Review Mattermost security features"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:55
+msgid ""
+"Resource: https://docs.mattermost.com/overview/security.html#security-"
+"features"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:57
+msgid "Determine monitoring requirements"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:58
+msgid "Database, network, storage, log integrity"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:59
+msgid ""
+"Identify fields for log management tools (e.g. Splunk Enterprise event "
+"data)"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:61
+msgid "Determine environment access policies"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:62
+msgid "Network access, physical access, group controlled access"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:64
+msgid "Determine encryption policies"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:65
+msgid "Resource: https://docs.mattermost.com/administration/encryption.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:66
+msgid ""
+"Resource: https://docs.mattermost.com/install/transport-"
+"encryption/config.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:68
+msgid "Determine System Administration access policies"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:69
+msgid ""
+"Identify list of users or groups who need administrative access for "
+"Mattermost System Console, Command Line Tools and API privileges"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:71
+msgid "Define and configure authentication policies"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:72
+msgid "Resource: https://docs.mattermost.com/overview/auth.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:73
+msgid "Determine requirements for multi-factor authentication"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:74
+msgid "Resource: https://docs.mattermost.com/deployment/auth.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:76
+msgid ""
+"Configure and test SSO or Corporate Directory integration (SAML or "
+"AD/LDAP)"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:77
+msgid "Resource: https://docs.mattermost.com/deployment/sso-saml.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:78
+msgid "Resource: https://docs.mattermost.com/deployment/sso-ldap.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:80
+msgid "Define your mobile usage policy"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:81
+msgid "Resource: https://docs.mattermost.com/mobile/mobile-overview.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:82
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:219
+msgid ""
+"Resource: https://docs.mattermost.com/deployment/mobile-app-"
+"deployment.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:85
+msgid "3. Create Development, Staging, and Production Environments"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:87
+msgid ""
+"Finalize production environment design basing hardware on expected usage "
+"and requirements for high availability"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:88
+msgid "Resource: https://docs.mattermost.com/overview/architecture.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:89
+msgid "Resource: https://docs.mattermost.com/deployment/deployment.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:90
+msgid "Resource: https://docs.mattermost.com/deployment/scaling.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:91
+msgid "Resource: https://docs.mattermost.com/deployment/cluster.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:93
+msgid "Create development and staging environments"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:94
+msgid ""
+"Recommend using to test early configurations for database, "
+"authentication, file storage, Elasticsearch, prior to setting up high "
+"availability and load balancing"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:95
+msgid ""
+"Recommend configuring staging to be an identical replication of your "
+"production environment"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:97
+msgid "Create production environment"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:98
+msgid "Install Mattermost"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:99
+msgid ""
+"Install the number of nodes based on your high availability requirements "
+"outlined in your production environment design"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:100
+msgid ""
+"Recommendation: Use Kubernetes and the Mattermost Operator, with external"
+" supported external database and file storage solutions. This will also "
+"provide blue/green deployment, rolling upgrades, and canary builds"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:101
+msgid "Resource: https://docs.mattermost.com/install/install-kubernetes.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:102
+msgid "Install and configure database"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:103
+msgid ""
+"Install the number of read and search replicas based on your high "
+"availability requirements outlined in your production environment design"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:104
+msgid ""
+"Resource: https://docs.mattermost.com/overview/architecture.html"
+"#database-with-vips"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:105
+msgid ""
+"(Optional) Set up configuration management via the database instead of a "
+"config file for high available environments"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:106
+msgid ""
+"Resource: https://docs.mattermost.com/administration/config-in-"
+"database.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:107
+msgid "Install and configure File Storage"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:108
+msgid ""
+"Resource: https://docs.mattermost.com/deployment/deployment.html#file-"
+"store"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:109
+msgid "Install and configure proxy or load balancers"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:110
+msgid ""
+"Note: If running Kubernetes and the Mattermost Operator, proxies will be "
+"created automatically."
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:111
+msgid "Add SSL Cert"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:112
+msgid ""
+"Resource: https://docs.mattermost.com/deployment/ssl-client-"
+"certificate.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:113
+msgid ""
+"Resource: https://docs.mattermost.com/deployment/cluster.html#proxy-"
+"server-configuration"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:114
+msgid ""
+"(Optional) Set up certificate-based authentication (CBA) for user or "
+"device-based authentication with a digital certificate"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:115
+msgid ""
+"Resource: https://docs.mattermost.com/deployment/certificate-based-"
+"authentication.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:116
+msgid "Configure SMTP for email notifications"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:117
+msgid "Resource: https://docs.mattermost.com/install/smtp-email-setup.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:118
+msgid ""
+"Set up Elasticsearch (highly recommended if your organization anticipates"
+" over 2 million posts)"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:119
+msgid "Resource: https://docs.mattermost.com/deployment/elasticsearch.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:121
+msgid "Document network configuration"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:122
+msgid ""
+"Example: https://docs.mattermost.com/overview/architecture.html"
+"#reference-architectures"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:125
+msgid "4. Configure and Customize Your Mattermost Site"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:127
+msgid ""
+"Login to Mattermost and access the System Console to connect your "
+"environment to Mattermost"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:128
+msgid ""
+"Resource: https://docs.mattermost.com/administration/config-"
+"settings.html#environment"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:129
+msgid "Upload your valid Enterprise License under Edition and License"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:130
+msgid ""
+"Ensure site URL is set appropriately for your production, dev and staging"
+" environments"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:131
+msgid ""
+"Add your database configuration to **System Console > Environment > "
+"Database**"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:132
+msgid ""
+"Add your Elasticsearch configuration to **System Console > Environment > "
+"Elasticsearch**"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:133
+msgid ""
+"Add your file storage system configuration to **System Console > "
+"Environment > File Storage**"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:134
+msgid ""
+"Add your proxy configuration to **System Console > Environment > Image "
+"Proxy**"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:135
+msgid "Add your SMTP configuration to **System Console > Environment > SMTP**"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:136
+msgid ""
+"Enable Push Notifications by adding your server to **System Console > "
+"Environment > Push Notification Server**"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:137
+msgid ""
+"Add your cluster configuration to **System Console > Environment > High "
+"Availability**"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:139
+msgid "Configure your site within the System Console"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:140
+msgid ""
+"Resource: https://docs.mattermost.com/administration/config-settings.html"
+"#site-configuration"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:142
+msgid "Set site access policies including permissions for roles and guest access"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:143
+msgid ""
+"Permissions Resource: https://docs.mattermost.com/deployment/advanced-"
+"permissions.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:144
+msgid ""
+"Guest Access Resource: https://docs.mattermost.com/deployment/guest-"
+"accounts.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:147
+msgid "5. Test Production Performance and Redundancy"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:149
+msgid "Define and test disaster recovery policy and processes"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:150
+msgid ""
+"Resource: https://docs.mattermost.com/install/install-kubernetes.html"
+"#using-mattermost-operator-functionality"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:151
+msgid ""
+"Resource: https://docs.mattermost.com/deployment/cluster.html#upgrade-"
+"guide"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:153
+msgid "Performance test production environment"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:154
+msgid ""
+"Load test production environment to verify that it will handle "
+"anticipated user load"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:155
+msgid "Resource: https://github.com/mattermost/mattermost-load-test"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:156
+msgid "Set up Prometheus and Grafana to monitor performance"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:157
+msgid "Resource: https://docs.mattermost.com/deployment/metrics.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:158
+msgid "Set up alerts in Grafana"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:159
+msgid ""
+"Resource: https://docs.mattermost.com/administration/performance-"
+"alerting-guide.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:162
+msgid "Roll Out Mattermost"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:163
+msgid ""
+"Now that you have an environment in place, we recommend working through "
+"the following items in an iterative process. You may need to cycle "
+"through each of these topics multiple times to make adjustments to suit "
+"your organization as you onboard groups of users."
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:166
+msgid "1. Define Your Team and Channel Strategy"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:168
+msgid "Determine and create team structure for your environment"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:169
+msgid "Recommendation: Start with fewer teams in your early roll out"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:170
+msgid "Resource: https://docs.mattermost.com/help/getting-started/organizing.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:172
+msgid ""
+"Determine and create key channels to support your users. Town Square and "
+"Off-Topic are built in channels in every team"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:173
+msgid ""
+"Recommendation: Add a “Support” channel for your users to escalate "
+"questions"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:175
+msgid "(Optional) Migrate messages and channels from legacy systems"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:176
+msgid "Resource: https://docs.mattermost.com/administration/migrating.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:179
+msgid "2. Enable Key Integrations"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:181
+msgid "Build list of key integrations and tools used by your teams"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:182
+msgid ""
+"Resource: https://docs.mattermost.com/guides/administrator.html"
+"#mattermost-integrations"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:184
+msgid ""
+"Define use cases and requirements for plugins, bots, webhooks, slash "
+"commands"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:185
+msgid "Resource: https://docs.mattermost.com/guides/integration.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:187
+msgid "Set up key integrations (or migrate from POC environments)"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:188
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:251
+msgid "Resource: https://integrations.mattermost.com/"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:190
+msgid "Understand Mattermost API capabilities"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:191
+msgid "Resource: https://api.mattermost.com/"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:194
+msgid "3. Prepare for User Onboarding"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:196
+msgid "Onboard champion users"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:198
+msgid "Onboard trainers and support team"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:199
+msgid "Create a training plan"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:200
+msgid "Resource: https://academy.mattermost.com/"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:201
+msgid "Resource: End User Guide https://docs.mattermost.com/guides/user.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:203
+msgid "Define user escalation and support processes"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:204
+msgid ""
+"Ensure you have set the site’s support URL to your own support team under"
+" **System Console > Site Configuration > Customization**"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:206
+msgid "Notify users in advance of roll out"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:207
+msgid ""
+"Sample email: https://docs.mattermost.com/getting-"
+"started/welcome_email.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:210
+msgid "4. Deploy Client Apps"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:212
+msgid "Roll out Desktop App"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:213
+msgid "Resource: https://docs.mattermost.com/install/desktop.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:214
+msgid ""
+"Resource: https://docs.mattermost.com/deployment/desktop-app-"
+"deployment.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:215
+msgid "(Optional) Use the MSI installer to install on Windows machines"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:216
+msgid "Resource: https://docs.mattermost.com/install/desktop-msi-gpo.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:218
+msgid "Roll out Mobile App"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:220
+msgid "(Optional) Use an EMM provider"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:221
+msgid ""
+"Resource: https://docs.mattermost.com/mobile/mobile-overview.html#use-an-"
+"emm-provider-with-managed-app-configuration"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:224
+msgid "5. Roll Out to Groups of Users"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:226
+msgid "Provision user accounts"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:227
+msgid ""
+"Resource: https://docs.mattermost.com/administration/user-"
+"provisioning.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:229
+msgid "(Optional) Bulk Load users"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:230
+msgid "Resource: https://docs.mattermost.com/deployment/bulk-loading.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:232
+msgid "Onboard users to teams and channels"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:233
+msgid "Recommendation: Use LDAP Group Sync to automate this process"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:234
+msgid "Resource: https://docs.mattermost.com/deployment/ldap-group-sync.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:236
+msgid "Implement your training plan to end users on how to use Mattermost"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:237
+msgid "Train on using Mattermost"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:238
+msgid "Train on how to use integrations"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:241
+msgid "6. Drive Adoption"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:243
+msgid "Incrementally roll out to additional user groups"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:244
+msgid "See “Roll Out to Groups of Users”"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:246
+msgid "Manage support requests and product requests from your end users"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:247
+msgid "Resource: https://mattermost.com/support/"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:248
+msgid "See process below for escalating to Mattermost"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:250
+msgid "Enable additional integrations and plugins to support user workflows"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:253
+msgid "Understand management tools available to support users"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:254
+msgid ""
+"Command Line Tools Resource: https://docs.mattermost.com/administration"
+"/command-line-tools.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:255
+msgid ""
+"Database Scripts Resource: "
+"https://docs.mattermost.com/administration/scripts.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:258
+msgid "Review the Roll Out"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:260
+msgid ""
+"We recommend that you review your roll out on a cadence that matches your"
+" iterative approach to rolling out to users.  Below are some areas to "
+"consider."
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:263
+msgid "1. Review Project Charter Success Metrics"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:265
+msgid "Perform end-user surveys and measure satisfaction"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:266
+msgid ""
+"Optional resource within Mattermost: "
+"https://integrations.mattermost.com/matterpoll/"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:268
+msgid "Verify use case fulfillment from original requirements gathering"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:270
+msgid "Measure your response time and resolution rate for user support issues"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:272
+msgid "Identify usage gaps and address or create a plan for addressing"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:275
+msgid "2. Review and Analyze Usage"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:277
+msgid ""
+"Review Project Charter success metrics - identify usage gaps and address "
+"or create a plan for addressing"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:279
+msgid "Monitor site and team statistics"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:280
+msgid "Resource: https://docs.mattermost.com/administration/statistics.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:281
+msgid ""
+"Review: Total posts, total teams, total channels, total group chats, "
+"total direct chats, top channels, top teams"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:283
+msgid "Analyze usage by lines of business and peak usage times"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:284
+msgid "Resources: https://docs.mattermost.com/administration/scripts.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:287
+msgid "3. Analyze System Performance"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:289
+msgid "Monitor trends in CPU/memory usage"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:291
+msgid "Review trends in database connections"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:293
+msgid "Review trends in Go routines"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:295
+msgid "Review trends in concurrent sessions"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:298
+msgid "4. Harden Security"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:300
+msgid "Harden security controls around web, desktop and mobile security"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:302
+msgid "Harden configuration management"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:304
+msgid "Harden network security"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:305
+msgid "Identify additional tests and scans"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:306
+msgid "(Optional) Enable Compliance Reporting"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:307
+msgid ""
+"Resource: https://docs.mattermost.com/administration/compliance-"
+"export.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:310
+msgid "5. Perform Maintenance Tasks"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:311
+msgid "Monitor for security updates (or sign up for email updates)"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:312
+msgid "Resource: https://mattermost.com/security-updates/"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:314
+msgid "Perform first upgrade"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:315
+msgid "Resource: https://docs.mattermost.com/administration/upgrade.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:317
+msgid ""
+"Determine upgrade schedule based on Mattermost release schedules and "
+"lifecycle"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:318
+msgid ""
+"Resource: https://docs.mattermost.com/administration/release-"
+"lifecycle.html"
+msgstr ""
+
+#: ../../source/getting-started/enterprise-roll-out-checklist.rst:320
+msgid "Run System checks and either address or set address-by date"
+msgstr ""
+

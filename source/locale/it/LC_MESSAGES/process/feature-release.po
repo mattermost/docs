@@ -1,0 +1,1307 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/feature-release.md:1
+msgid "Feature Release Process"
+msgstr ""
+
+#: ../../source/process/feature-release.md:3
+msgid ""
+"Mattermost core team works on a monthly release process, with a new "
+"version shipping on the 16th of each month in binary form."
+msgstr ""
+
+#: ../../source/process/feature-release.md:5
+msgid ""
+"This document outlines the development process for the Mattermost core "
+"team, which draws from what we find works best for us from Agile, Scrum, "
+"and Software Development Lifecycle approaches."
+msgstr ""
+
+#: ../../source/process/feature-release.md:7
+msgid "Recommended pre-reading:"
+msgstr ""
+
+#: ../../source/process/feature-release.md:9
+msgid "Mattermost Software Development Process training materials"
+msgstr ""
+
+#: ../../source/process/feature-release.md:10
+msgid "Mattermost Security Practices training (particularly NIST standards)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:12
+msgid "Release Timeline"
+msgstr ""
+
+#: ../../source/process/feature-release.md:14
+msgid "Notes:"
+msgstr ""
+
+#: ../../source/process/feature-release.md:15
+msgid ""
+"All cut-off dates are based on 10am (San Francisco Time) on the day "
+"stated."
+msgstr ""
+
+#: ../../source/process/feature-release.md:16
+msgid ""
+"T-minus counts are measured in \"working days\" (weekdays, Monday through"
+" Friday, excluding the listed statutory holidays) prior to release day."
+msgstr ""
+
+#: ../../source/process/feature-release.md:18
+msgid "A. (Code complete date of previous release) Beginning of Release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:20
+msgid ""
+"Pre-work for the current release begins at the code complete date of the "
+"previous release. See \"Code Complete\" section below for details."
+msgstr ""
+
+#: ../../source/process/feature-release.md:22
+msgid "B. (T-minus 23 working days) Cut-off for Submitting Features"
+msgstr ""
+
+#: ../../source/process/feature-release.md:24
+msgid ""
+"No pull requests for major features should be submitted to the current "
+"release after this date. In special cases, exceptions can be made by the "
+"Release Manager."
+msgstr ""
+
+#: ../../source/process/feature-release.md:26
+#: ../../source/process/feature-release.md:41
+#: ../../source/process/feature-release.md:86
+#: ../../source/process/feature-release.md:107
+#: ../../source/process/feature-release.md:121
+#: ../../source/process/feature-release.md:163
+#: ../../source/process/feature-release.md:194
+#: ../../source/process/feature-release.md:218
+#: ../../source/process/feature-release.md:268
+#: ../../source/process/feature-release.md:330
+msgid "Release Manager:"
+msgstr ""
+
+#: ../../source/process/feature-release.md:27
+#: ../../source/process/feature-release.md:87
+#: ../../source/process/feature-release.md:108
+#: ../../source/process/feature-release.md:122
+#: ../../source/process/feature-release.md:164
+#: ../../source/process/feature-release.md:195
+#: ../../source/process/feature-release.md:219
+#: ../../source/process/feature-release.md:269
+msgid "Post this checklist in Release Checklist channel"
+msgstr ""
+
+#: ../../source/process/feature-release.md:28
+msgid ""
+"Follow that feature PR reviews are prioritized and post a list of "
+"outstanding feature PRs in the Release Discussion channel"
+msgstr ""
+
+#: ../../source/process/feature-release.md:29
+msgid ""
+"Check that features for platform have a corresponding ticket for RN, and "
+"vice versa, where applicable"
+msgstr ""
+
+#: ../../source/process/feature-release.md:30
+msgid ""
+"Confirm with PMs that each Enterprise feature is in the correct pricing "
+"SKU"
+msgstr ""
+
+#: ../../source/process/feature-release.md:31
+msgid ""
+"Review any features that are currently in beta and confirm with PMs if "
+"there are any to be promoted"
+msgstr ""
+
+#: ../../source/process/feature-release.md:33
+msgid "C. (T-minus 20 working days) Feature Complete"
+msgstr ""
+
+#: ../../source/process/feature-release.md:35
+msgid ""
+"No pull requests for major features should be merged to the current "
+"release after this date. In special cases, exceptions can be made by the "
+"Release Manager."
+msgstr ""
+
+#: ../../source/process/feature-release.md:37
+msgid "(Team) Major Feature Complete Meeting (10:00am San Francisco time):"
+msgstr ""
+
+#: ../../source/process/feature-release.md:38
+msgid "Discuss worst bug currently on master"
+msgstr ""
+
+#: ../../source/process/feature-release.md:39
+msgid "Discuss release highlights for marketing"
+msgstr ""
+
+#: ../../source/process/feature-release.md:40
+msgid "Review status of remaining feature PRs to be merged"
+msgstr ""
+
+#: ../../source/process/feature-release.md:42
+msgid "Post this checklist in the Release Checklist channel"
+msgstr ""
+
+#: ../../source/process/feature-release.md:43
+#: ../../source/process/feature-release.md:88
+#: ../../source/process/feature-release.md:109
+#: ../../source/process/feature-release.md:123
+#: ../../source/process/feature-release.md:165
+#: ../../source/process/feature-release.md:196
+#: ../../source/process/feature-release.md:220
+#: ../../source/process/feature-release.md:270
+msgid "Verify all items in the last posted release checklist are complete"
+msgstr ""
+
+#: ../../source/process/feature-release.md:44
+msgid "After release branches are cut, ask dev to cut an RN build"
+msgstr ""
+
+#: ../../source/process/feature-release.md:45
+msgid "Check that all features are behind a feature flag"
+msgstr ""
+
+#: ../../source/process/feature-release.md:46
+msgid "Confirm all config settings and new features have diagnostics"
+msgstr ""
+
+#: ../../source/process/feature-release.md:47
+msgid ""
+"Queue a list of MVP candidates in alphabetical order to the Platform "
+"Meeting channel See example"
+msgstr ""
+
+#: ../../source/process/feature-release.md:48
+msgid "Queue a discussion about MVP candidates for the next R&D meeting"
+msgstr ""
+
+#: ../../source/process/feature-release.md:49
+msgid ""
+"Draft Changelog in a WIP PR with updates for highlights, feature "
+"additions, known issues, compatibility updates for deprecated features, "
+"config.json, database changes, API changes, and WebSocket event changes; "
+"see example"
+msgstr ""
+
+#: ../../source/process/feature-release.md:50
+msgid ""
+"Note the type of release and add a link to release doc that defines the "
+"type (https://docs.mattermost.com/process/release-faq.html#release-"
+"overview)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:51
+msgid ""
+"Start drafting a release summary for Support/Sales highlighting key "
+"things (e.g., new features, breaking changes, things we want feedback on,"
+" and potential support issues)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:52
+msgid ""
+"Review supported OS versions and review that software requirements are "
+"up-to-date based on these step-by-step guidelines"
+msgstr ""
+
+#: ../../source/process/feature-release.md:53
+msgid ""
+"Update Upgrade Guide with any special notes for upgrading to the new "
+"version"
+msgstr ""
+
+#: ../../source/process/feature-release.md:54
+msgid ""
+"Ask PMs if there are any notable breaking changes or deprecated features "
+"in the release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:55
+msgid ""
+"Start posting a daily Zero Bug Balance query (posted until zero bugs or "
+"day of release)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:56
+msgid ""
+"Post a reminder in the French Localization channel about the due date for"
+" translations, similar to this example. Follow that translations are "
+"prioritized at https://translate.mattermost.com/projects/mattermost/"
+msgstr ""
+
+#: ../../source/process/feature-release.md:57
+#: ../../source/process/feature-release.md:113
+#: ../../source/process/feature-release.md:176
+#: ../../source/process/feature-release.md:244
+#: ../../source/process/feature-release.md:312
+msgid "Dev:"
+msgstr ""
+
+#: ../../source/process/feature-release.md:58
+msgid "Cut release branch both for server and mobile"
+msgstr ""
+
+#: ../../source/process/feature-release.md:59
+msgid "Merge database upgrade before cutting the branch"
+msgstr ""
+
+#: ../../source/process/feature-release.md:60
+msgid "Point translation server to release branch after cutting"
+msgstr ""
+
+#: ../../source/process/feature-release.md:61
+#: ../../source/process/feature-release.md:315
+msgid "Cut an RN build for the next release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:62
+msgid "Ensure community-release is on the feature branch"
+msgstr ""
+
+#: ../../source/process/feature-release.md:63
+#: ../../source/process/feature-release.md:114
+msgid ""
+"Prioritize reviewing, updating, and merging of pull requests for current "
+"release until there are no more tickets in the pull request queue marked "
+"for the current release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:64
+msgid ""
+"After the cut-off, any PRs that include significant code changes require "
+"approval of the Release Manager before merging"
+msgstr ""
+
+#: ../../source/process/feature-release.md:65
+#: ../../source/process/feature-release.md:97
+#: ../../source/process/feature-release.md:183
+#: ../../source/process/feature-release.md:202
+#: ../../source/process/feature-release.md:259
+#: ../../source/process/feature-release.md:317
+msgid "Marketing:"
+msgstr ""
+
+#: ../../source/process/feature-release.md:66
+msgid ""
+"Prepare bullet points and release headline for release announcement. "
+"Release Manager to review the outline (benefits and order of major "
+"features) with PMs before sending to Justin to work on"
+msgstr ""
+
+#: ../../source/process/feature-release.md:67
+msgid ""
+"Decide which sections of the release announcement will have an "
+"accompanying screenshot/photo"
+msgstr ""
+
+#: ../../source/process/feature-release.md:69
+msgid "D. (T-minus 19 working days) Feature Testing"
+msgstr ""
+
+#: ../../source/process/feature-release.md:71
+#: ../../source/process/feature-release.md:115
+#: ../../source/process/feature-release.md:134
+#: ../../source/process/feature-release.md:168
+#: ../../source/process/feature-release.md:205
+#: ../../source/process/feature-release.md:234
+#: ../../source/process/feature-release.md:322
+msgid "QA:"
+msgstr ""
+
+#: ../../source/process/feature-release.md:72
+msgid "Prioritize testing PRs and resolved tickets for this release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:73
+msgid "Ensure that new features are also properly tested on mobile apps"
+msgstr ""
+
+#: ../../source/process/feature-release.md:74
+msgid "Prioritize updating release tests in test management and automated tests"
+msgstr ""
+
+#: ../../source/process/feature-release.md:76
+msgid "E. (T-minus 15 working days) Judgment Day"
+msgstr ""
+
+#: ../../source/process/feature-release.md:78
+msgid ""
+"Day when Leads and PMs decide which major features are included in the "
+"release, and which are postponed."
+msgstr ""
+
+#: ../../source/process/feature-release.md:80
+msgid "(Team) Judgment Day Meeting (10:00am San Francisco time):"
+msgstr ""
+
+#: ../../source/process/feature-release.md:81
+msgid "Discuss worst bug on master"
+msgstr ""
+
+#: ../../source/process/feature-release.md:82
+msgid "Finalize which major features will be in or out for the release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:83
+msgid "Discuss reverting feature(s) if five or more bugs found"
+msgstr ""
+
+#: ../../source/process/feature-release.md:84
+msgid "Begin daily triage of tickets"
+msgstr ""
+
+#: ../../source/process/feature-release.md:85
+msgid "Also start to triage tickets in the backlog"
+msgstr ""
+
+#: ../../source/process/feature-release.md:89
+msgid "Update Changelog PR based on what's in/out of the release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:90
+msgid "Create meta issue for release in GitHub (see example)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:91
+msgid ""
+"Confirm date of marketing announcement for the release date with "
+"Marketing, and update Release Channel header if needed"
+msgstr ""
+
+#: ../../source/process/feature-release.md:92
+msgid ""
+"If release day falls on a Friday, the blog post goes out on the Friday "
+"and the emailed newsletter goes out the following Tuesday"
+msgstr ""
+
+#: ../../source/process/feature-release.md:93
+msgid ""
+"Post a reminder to devs in the Release Discussion channel of the the code"
+" complete date with the ZBB count see example"
+msgstr ""
+
+#: ../../source/process/feature-release.md:94
+msgid ""
+"Ask release PM to review the Jira tickets remaining in the current "
+"release fix version and push those that won't make it to the next fix "
+"version"
+msgstr ""
+
+#: ../../source/process/feature-release.md:95
+#: ../../source/process/feature-release.md:325
+msgid "Leads:"
+msgstr ""
+
+#: ../../source/process/feature-release.md:96
+msgid ""
+"Finalize roadmap for next release, and identify planned marketing bullet "
+"points"
+msgstr ""
+
+#: ../../source/process/feature-release.md:98
+msgid "Start drafting blog post, tweet, and email for the release announcement"
+msgstr ""
+
+#: ../../source/process/feature-release.md:100
+msgid "F. (T-minus 14 working days) Code Complete"
+msgstr ""
+
+#: ../../source/process/feature-release.md:102
+msgid ""
+"Stabilization period begins when all features for release have been "
+"committed. During this period, only bugs can be committed to the release "
+"branch. Non-bug pull requests are tagged for next version. Exceptions can"
+" be made by the Release Manager during triage. Review the Release "
+"Features & Bugs Quality Gate Guidelines"
+msgstr ""
+
+#: ../../source/process/feature-release.md:104
+msgid "(Team) Code Complete Meeting (10:00am San Francisco time):"
+msgstr ""
+
+#: ../../source/process/feature-release.md:105
+msgid "Team review of Changelog"
+msgstr ""
+
+#: ../../source/process/feature-release.md:106
+msgid "Last check of tickets that need to be merged before RC1"
+msgstr ""
+
+#: ../../source/process/feature-release.md:110
+msgid ""
+"Submit NOTICE.txt PRs for any new libraries added from dev, and ensure "
+"they are cherry-picked to feature release branch"
+msgstr ""
+
+#: ../../source/process/feature-release.md:111
+msgid ""
+"If there are any breaking compatibility changes in the release, open an "
+"issue in the GitLab Omnibus to make sure GitLab is aware. Post a link to "
+"the issue in the Release Discussion channel"
+msgstr ""
+
+#: ../../source/process/feature-release.md:112
+msgid ""
+"Ask PMs to create a \"Hero\" screenshot as the splash image for the "
+"release blog post"
+msgstr ""
+
+#: ../../source/process/feature-release.md:116
+msgid ""
+"Identify any new teammates who will be joining release testing, send them"
+" an intro to the testing process and timeframe, send them the "
+"hardware/software survey"
+msgstr ""
+
+#: ../../source/process/feature-release.md:117
+msgid "Set up DM/GM channels in preparation for testing auto-closing after 7 days"
+msgstr ""
+
+#: ../../source/process/feature-release.md:119
+msgid "G. (T-minus 9 working days) Release Candidate Cut"
+msgstr ""
+
+#: ../../source/process/feature-release.md:124
+msgid "Update the GitHub meta issue:"
+msgstr ""
+
+#: ../../source/process/feature-release.md:125
+msgid "Include a link to the changelog on the documentation branch"
+msgstr ""
+
+#: ../../source/process/feature-release.md:126
+msgid "Post comments to the meta issue with approved fixes for the next RCs"
+msgstr ""
+
+#: ../../source/process/feature-release.md:127
+msgid "Update download links and testing server links to the latest RCs"
+msgstr ""
+
+#: ../../source/process/feature-release.md:128
+msgid "After build is cut, tweet announcement that RC1 is ready (see example)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:129
+msgid "Generate a list of contributors for Changelog"
+msgstr ""
+
+#: ../../source/process/feature-release.md:130
+#: ../../source/process/feature-release.md:174
+#: ../../source/process/feature-release.md:252
+msgid "Logistics @hanna.park:"
+msgstr ""
+
+#: ../../source/process/feature-release.md:131
+msgid "Mail out contributor and security researcher mugs"
+msgstr ""
+
+#: ../../source/process/feature-release.md:132
+msgid ""
+"Space out the ordering of mugs over the next three weeks to prevent "
+"mistakes being made by the supplier (e.g., If there are 12 contributors "
+"to order mugs for, place an order every 2nd or 3rd day over the next "
+"three weeks)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:133
+msgid "Update Team page with new contributors"
+msgstr ""
+
+#: ../../source/process/feature-release.md:135
+msgid "Confirm up to date with testing PRs and resolved tickets"
+msgstr ""
+
+#: ../../source/process/feature-release.md:136
+msgid ""
+"Confirm up to date with test updates and known issues in release test "
+"management and automated tests"
+msgstr ""
+
+#: ../../source/process/feature-release.md:137
+msgid "Assign release testing areas to team members"
+msgstr ""
+
+#: ../../source/process/feature-release.md:138
+msgid ""
+"After RC1 is cut: Update test server invite links in Release Testing "
+"instructions"
+msgstr ""
+
+#: ../../source/process/feature-release.md:139
+msgid "After RC1 is cut: Run automated regression tests"
+msgstr ""
+
+#: ../../source/process/feature-release.md:140
+#: ../../source/process/feature-release.md:180
+#: ../../source/process/feature-release.md:239
+#: ../../source/process/feature-release.md:309
+msgid "Build:"
+msgstr ""
+
+#: ../../source/process/feature-release.md:141
+msgid "Review all TODO notes, including one for uncommenting upgrade code"
+msgstr ""
+
+#: ../../source/process/feature-release.md:142
+msgid "Confirm all PRs in /enterprise repo have been merged"
+msgstr ""
+
+#: ../../source/process/feature-release.md:143
+#: ../../source/process/feature-release.md:240
+msgid "Update Redux before each RC and Final build"
+msgstr ""
+
+#: ../../source/process/feature-release.md:144
+msgid "Update package version in Mattermost DockerFile"
+msgstr ""
+
+#: ../../source/process/feature-release.md:145
+msgid ""
+"Master is tagged and branched and Release Candidate 1 is cut (e.g. "
+"3.5.0-RC1) according to the Release Candidate Checklist in "
+"mattermost/process"
+msgstr ""
+
+#: ../../source/process/feature-release.md:146
+msgid ""
+"After branching, the database version in sql_upgrade.go on master is set "
+"to the next scheduled release version (e.g., 3.6.0)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:147
+msgid "CI servers are updated to the release branch"
+msgstr ""
+
+#: ../../source/process/feature-release.md:148
+msgid "Translation server is locked to the release branch"
+msgstr ""
+
+#: ../../source/process/feature-release.md:149
+#: ../../source/process/feature-release.md:179
+msgid "Run daily automated upgrade tests to avoid catching upgrade bugs late"
+msgstr ""
+
+#: ../../source/process/feature-release.md:150
+#: ../../source/process/feature-release.md:254
+#: ../../source/process/feature-release.md:305
+msgid "Docs:"
+msgstr ""
+
+#: ../../source/process/feature-release.md:151
+msgid "Submit Changelog PR for team review"
+msgstr ""
+
+#: ../../source/process/feature-release.md:152
+msgid "Submit any remaining documentation PRs for product updates in the release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:153
+msgid ""
+"Check that a redirect page has been set up in mattermost.com for any "
+"links added to the System Console"
+msgstr ""
+
+#: ../../source/process/feature-release.md:154
+msgid ""
+"Submit documentation for API changes and WebSocket event changes to API "
+"documentation"
+msgstr ""
+
+#: ../../source/process/feature-release.md:155
+msgid ""
+"Confirm changes to config.json in compatibility section of Changelog are "
+"written back to settings documentation"
+msgstr ""
+
+#: ../../source/process/feature-release.md:156
+msgid ""
+"Confirm all new diagnostics are documented in the telemetry docs "
+"(https://docs.mattermost.com/administration/telemetry.html)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:158
+msgid "H. (T-minus 8 working days) Release Candidate Testing"
+msgstr ""
+
+#: ../../source/process/feature-release.md:160
+#: ../../source/process/feature-release.md:190
+msgid "(Team) Daily Release Update Meeting"
+msgstr ""
+
+#: ../../source/process/feature-release.md:161
+msgid "Triage Jira tickets"
+msgstr ""
+
+#: ../../source/process/feature-release.md:162
+msgid "Decide when to cut next RC or final"
+msgstr ""
+
+#: ../../source/process/feature-release.md:166
+msgid ""
+"Post list of tickets to be fixed to the Release Discussion channel (see "
+"example)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:167
+msgid ""
+"Update Changelog Known Issues section with any significant issues that "
+"were found and not fixed for the final release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:169
+msgid ""
+"Update Release Discussion header with links to RC instances and testing "
+"spreadsheet (template)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:170
+msgid "Post release testing instructions to Release Discussion channel (template)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:171
+msgid ""
+"Post reminders in Announcements channel (template) and Customer Support "
+"channel (template)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:172
+msgid ""
+"DM reminders to team members who are not QA or devs, or who are new to "
+"release testing"
+msgstr ""
+
+#: ../../source/process/feature-release.md:173
+msgid ""
+"At end of day, post reminders about release testing in Release Discussion"
+" and Announcements channels, DM any team members who have zero test cells"
+" marked Done"
+msgstr ""
+
+#: ../../source/process/feature-release.md:175
+msgid ""
+"Generate an E20 5000 seat test licence and email to Lindy for release "
+"testing"
+msgstr ""
+
+#: ../../source/process/feature-release.md:177
+msgid "Make PRs for bug fixes to the release branch"
+msgstr ""
+
+#: ../../source/process/feature-release.md:178
+msgid ""
+"Review PRs made from release branch and merge changes into the release "
+"branch as required and merge the release branch back into master once per"
+" day"
+msgstr ""
+
+#: ../../source/process/feature-release.md:181
+msgid ""
+"Verify with Release Manager before cutting any new RCs (approved fixes "
+"should be merged)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:182
+msgid "Cut next Release Candidate and check CI servers running on release branch"
+msgstr ""
+
+#: ../../source/process/feature-release.md:184
+msgid ""
+"Finish draft of blog post for mattermost.com and all art work "
+"(screenshots, GIFs, and Twitter banners) used for the blog post"
+msgstr ""
+
+#: ../../source/process/feature-release.md:185
+msgid ""
+"Upgrade should be recommended if there are security fixes in this "
+"version, with a note thanking the security researcher"
+msgstr ""
+
+#: ../../source/process/feature-release.md:186
+msgid "Send blog post for Release Manager and PMs to review"
+msgstr ""
+
+#: ../../source/process/feature-release.md:188
+msgid "I. (T-minus 7 working days) Release Candidate Testing Finished"
+msgstr ""
+
+#: ../../source/process/feature-release.md:191
+msgid "Confirm testing assigned in the release testing spreadsheet is complete"
+msgstr ""
+
+#: ../../source/process/feature-release.md:192
+msgid "Continue to triage Jira tickets"
+msgstr ""
+
+#: ../../source/process/feature-release.md:193
+msgid ""
+"If no blocking issues are found, PM, Dev, and QA sign off on the release "
+"and plan to cut final"
+msgstr ""
+
+#: ../../source/process/feature-release.md:197
+msgid "Verify that the final translations PR for the release is submitted"
+msgstr ""
+
+#: ../../source/process/feature-release.md:198
+msgid ""
+"Confirm Changelog reflects any changes since it was merged (including "
+"known issues and contributors from all repositories)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:199
+msgid "Confirm translators and new integrations contributors have been added"
+msgstr ""
+
+#: ../../source/process/feature-release.md:200
+msgid "Confirm Open Source Components changes have been added"
+msgstr ""
+
+#: ../../source/process/feature-release.md:201
+msgid ""
+"Update https://docs.mattermost.com/administration/open-source-"
+"components.html"
+msgstr ""
+
+#: ../../source/process/feature-release.md:203
+msgid ""
+"Send blog post for mattermost.com and all related art work for marketing "
+"lead to review"
+msgstr ""
+
+#: ../../source/process/feature-release.md:204
+msgid ""
+"Find www-gitlab-com merge request for latest GitLab release blog post and"
+" make request for adding GitLab Mattermost update (see example request, "
+"example update). Post to Release Discussion channel with link to request."
+msgstr ""
+
+#: ../../source/process/feature-release.md:206
+msgid ""
+"Midday: Post reminders about testing, at-mentioning team members whose "
+"tests are not yet complete"
+msgstr ""
+
+#: ../../source/process/feature-release.md:207
+msgid "Find QA or other teammates to help finish unfinished tests if needed"
+msgstr ""
+
+#: ../../source/process/feature-release.md:208
+msgid ""
+"End of day or next morning: Verify all release tests are finished, bring "
+"any concerns to Triage / Release meeting"
+msgstr ""
+
+#: ../../source/process/feature-release.md:209
+msgid ""
+"Go through all tabs of testing spreadsheet and verify all comments and "
+"questions have been filed in Jira as needed"
+msgstr ""
+
+#: ../../source/process/feature-release.md:210
+msgid ""
+"Verify all Jira tickets other than newly-filed bugs have been tested, "
+"verified, and closed"
+msgstr ""
+
+#: ../../source/process/feature-release.md:211
+msgid ""
+"As bug fixes are merged and RCs are cut, verify fixes on new RCs, and "
+"post in Release Channel after testing"
+msgstr ""
+
+#: ../../source/process/feature-release.md:212
+msgid ""
+"After all tickets are verified and closed, run smoke tests on "
+"webapp/server, desktop app, and RN apps as appropriate"
+msgstr ""
+
+#: ../../source/process/feature-release.md:214
+msgid "J. (T-minus 2 working days) Release Build Cut"
+msgstr ""
+
+#: ../../source/process/feature-release.md:216
+msgid ""
+"The final release is cut - RC cuts and bug fixes should be completed by "
+"this date. Only urgent and critical issues are considered for fixing."
+msgstr ""
+
+#: ../../source/process/feature-release.md:221
+msgid ""
+"Work with a developer to submit GitLab MR following this process and test"
+" the upgrade once the GitLab MR is merged and included in their RC"
+msgstr ""
+
+#: ../../source/process/feature-release.md:222
+msgid "Close GitHub meta ticket for the release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:223
+msgid ""
+"Add the download links, SHA-256 hash, and GPG signature to the version "
+"archive"
+msgstr ""
+
+#: ../../source/process/feature-release.md:224
+msgid "Merge Changelog PR after review is complete"
+msgstr ""
+
+#: ../../source/process/feature-release.md:225
+msgid ""
+"If there is a security fix, confirm the Changelog recommends upgrade, "
+"with a note mentioning the security level and thanking the security "
+"researcher (security process doc for example)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:226
+msgid ""
+"Update the Mattermost server download page with the links to the "
+"Enterprise Edition and Team Edition sections"
+msgstr ""
+
+#: ../../source/process/feature-release.md:227
+msgid "Test the download links before and after updating the page"
+msgstr ""
+
+#: ../../source/process/feature-release.md:228
+msgid "Check Security Issues spreadsheet and confirm disclosure text"
+msgstr ""
+
+#: ../../source/process/feature-release.md:229
+msgid ""
+"Check the security researcher was added to the Responsible Disclosure "
+"Policy page"
+msgstr ""
+
+#: ../../source/process/feature-release.md:230
+msgid ""
+"Confirm link to security updates appears in blog post if there are "
+"security updates in this release, with a note thanking the security "
+"researcher"
+msgstr ""
+
+#: ../../source/process/feature-release.md:231
+msgid ""
+"Update deprecated feature list in mattermost.com with new and scheduled "
+"deprecations"
+msgstr ""
+
+#: ../../source/process/feature-release.md:232
+msgid ""
+"Draft Mattermost Security Updates, but do not post until 30 days after "
+"official release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:233
+msgid ""
+"Add a placeholder text saying \"Details on the security update will be "
+"posted here on X date, as per our Responsible Disclosure Policy\""
+msgstr ""
+
+#: ../../source/process/feature-release.md:235
+msgid "Verify all PRs and tickets for the release have been tested/closed"
+msgstr ""
+
+#: ../../source/process/feature-release.md:236
+msgid "Verify Selenium server was put on final RC and build passed"
+msgstr ""
+
+#: ../../source/process/feature-release.md:237
+msgid "Verify smoke tests on webapp/server, desktop app, and RN apps all passed"
+msgstr ""
+
+#: ../../source/process/feature-release.md:238
+msgid "Post QA approval in Release Discussion channel"
+msgstr ""
+
+#: ../../source/process/feature-release.md:241
+msgid ""
+"Tags a new release (e.g. 1.1.0) and runs an official build which should "
+"be essentially identical to the last RC"
+msgstr ""
+
+#: ../../source/process/feature-release.md:242
+msgid ""
+"Posts SHA key, md5 sum, and GPG signatures of the final build to Release "
+"Discussion channel"
+msgstr ""
+
+#: ../../source/process/feature-release.md:243
+msgid ""
+"Post in Release Discussion with links to the Enterprise Edition and Team "
+"Edition sections"
+msgstr ""
+
+#: ../../source/process/feature-release.md:245
+msgid ""
+"Verify the hashes (SHA-1, SHA-256, and md5) and GPG signatures are "
+"correct for both Enterprise Edition and Team Edition"
+msgstr ""
+
+#: ../../source/process/feature-release.md:246
+msgid ""
+"Test upgrade from previous version to current version, following the "
+"Upgrade Guide with database upgrades on both MySQL and Postgres"
+msgstr ""
+
+#: ../../source/process/feature-release.md:247
+msgid ""
+"Test upgrade from Team Edition to Enterprise Edition based on the Upgrade"
+" Guide"
+msgstr ""
+
+#: ../../source/process/feature-release.md:248
+msgid "Test fresh install of current version, following the Install Guide"
+msgstr ""
+
+#: ../../source/process/feature-release.md:249
+msgid "Review any changes made to install guides, and test if necessary"
+msgstr ""
+
+#: ../../source/process/feature-release.md:250
+msgid "Ensure Security Policies page has been updated"
+msgstr ""
+
+#: ../../source/process/feature-release.md:251
+msgid ""
+"Update dependancies after release branch is cut in mattermost-server, "
+"mattermost-webapp, desktop, mattermost-mobile, and mattermost-redux"
+msgstr ""
+
+#: ../../source/process/feature-release.md:253
+msgid ""
+"Update MVP page with the most valued professional of the release and "
+"order the contributor's coaster"
+msgstr ""
+
+#: ../../source/process/feature-release.md:255
+msgid "Finalize docs"
+msgstr ""
+
+#: ../../source/process/feature-release.md:256
+msgid ""
+"If reviews are not complete, hold a 30 minute doc review meeting with PMs"
+" and anyone else who has changed or reviewed docs this release and wants "
+"to join"
+msgstr ""
+
+#: ../../source/process/feature-release.md:257
+msgid ""
+"Merge the docs release branch to master and verify all changes on "
+"docs.mattermost.com once the build is up"
+msgstr ""
+
+#: ../../source/process/feature-release.md:258
+msgid ""
+"Submit a correction PR for any incorrect formatting or other errors "
+"missed during the initial review"
+msgstr ""
+
+#: ../../source/process/feature-release.md:260
+msgid ""
+"Receive sign off on final version of MailChimp email blast and Twitter "
+"announcement and schedule for 08:00 PST on the date of marketing "
+"announcement"
+msgstr ""
+
+#: ../../source/process/feature-release.md:261
+msgid ""
+"Note: If the release contains a security update, also draft a Mailchimp "
+"email blast for the Security Bulletin mailing list"
+msgstr ""
+
+#: ../../source/process/feature-release.md:262
+msgid ""
+"Finalize blog post for mattermost.com, test on mobile view, and set timer"
+" for 08:00 PST on the day of release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:263
+msgid ""
+"Update feature lists on https://mattermost.com/pricing/ and "
+"https://mattermost.com/product/ with relevant new features"
+msgstr ""
+
+#: ../../source/process/feature-release.md:264
+msgid "Add links to Admin guide in the release blog post where needed"
+msgstr ""
+
+#: ../../source/process/feature-release.md:266
+msgid "K. (T-minus 0 working days) Release Day"
+msgstr ""
+
+#: ../../source/process/feature-release.md:271
+msgid ""
+"Schedule a release retrospective meeting, to be held within five days "
+"from the release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:272
+msgid "Prepare and post release metrics"
+msgstr ""
+
+#: ../../source/process/feature-release.md:273
+msgid ""
+"Review and update company roadmap with which major features made it into "
+"the release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:274
+msgid "Review with Head of Product prior to updating"
+msgstr ""
+
+#: ../../source/process/feature-release.md:275
+msgid "Update Integrations Directory on the Mattermost Apps and Integrations page"
+msgstr ""
+
+#: ../../source/process/feature-release.md:276
+msgid "Post the MVP winner announcement in the Contributors channel"
+msgstr ""
+
+#: ../../source/process/feature-release.md:277
+msgid "Add new release fix versions in Jira for the next few releases"
+msgstr ""
+
+#: ../../source/process/feature-release.md:278
+msgid ""
+"Post key dates for the next release in the Release Discussion channel and"
+" remove links to RC candidates and testing spreadsheet from the header"
+msgstr ""
+
+#: ../../source/process/feature-release.md:279
+msgid ""
+"Make sure that statutory holidays for Canada and US are accounted for in "
+"the release dates"
+msgstr ""
+
+#: ../../source/process/feature-release.md:280
+msgid ""
+"Check for any UserVoice feature suggestions that were completed in the "
+"current release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:281
+msgid ""
+"Find the release tweet and insert a link to the tweet next to the feature"
+" that shipped with the release."
+msgstr ""
+
+#: ../../source/process/feature-release.md:282
+msgid "Close the release in Jira both for webapp and mobile (releases page)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:283
+msgid ""
+"For the next release, create the following team meetings. If they "
+"conflict with existing meetings, check with meeting owner to reschedule "
+"or reschedule the release meeting"
+msgstr ""
+
+#: ../../source/process/feature-release.md:284
+msgid ""
+"Bug Bash Meeting on the week after Code Complete at 10:00am San Francisco"
+" time"
+msgstr ""
+
+#: ../../source/process/feature-release.md:285
+msgid "Judgment Day Meeting on T-15 at 10:00am San Francisco time"
+msgstr ""
+
+#: ../../source/process/feature-release.md:286
+msgid "Code Complete Meeting on T-14 at 10:00am San Francisco time"
+msgstr ""
+
+#: ../../source/process/feature-release.md:287
+msgid ""
+"Release Triage and Update Meeting each weekday starting at T-15 and "
+"ending at T-2 at 9:30am San Francisco time for PM, QA and release dev."
+msgstr ""
+
+#: ../../source/process/feature-release.md:288
+msgid ""
+"Prepare tickets for the next release, with a corresponding vX.X prefix, "
+"and put the tickets in the appropriate sprints as follows:"
+msgstr ""
+
+#: ../../source/process/feature-release.md:289
+#: ../../source/process/feature-release.md:291
+msgid "The week RC is cut:"
+msgstr ""
+
+#: ../../source/process/feature-release.md:290
+msgid "RC Build Testing for core team"
+msgstr ""
+
+#: ../../source/process/feature-release.md:292
+msgid "Loadtest x.x release candidate compared to x.x release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:293
+msgid "The week RC is cut (for GitLab dev owner):"
+msgstr ""
+
+#: ../../source/process/feature-release.md:294
+msgid "Test RC1 with the latest GitLab build during release testing cycle"
+msgstr ""
+
+#: ../../source/process/feature-release.md:295
+msgid "Release week (for dependancies owner)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:296
+msgid "Upgrade dependancies for webapp, server, and Redux"
+msgstr ""
+
+#: ../../source/process/feature-release.md:297
+msgid "Week after release (for GitLab dev owner)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:298
+msgid "Submit GitLab Omnibus RC install of Mattermost"
+msgstr ""
+
+#: ../../source/process/feature-release.md:299
+msgid ""
+"Confirm that mattermost-docker has been updated to the latest version "
+"(contact the maintainer via direct message on community server if "
+"necessary)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:300
+msgid ""
+"Contact owners of community installers or submit PRs to update install "
+"version number"
+msgstr ""
+
+#: ../../source/process/feature-release.md:301
+msgid ""
+"For Puppet, Heroku, and Ansible Playbook, post to Installers and Images "
+"channel announcing the new release. See example"
+msgstr ""
+
+#: ../../source/process/feature-release.md:302
+msgid ""
+"For Chef Cookbook, open a new issue to announce the new release. See "
+"example"
+msgstr ""
+
+#: ../../source/process/feature-release.md:303
+msgid "For Yunohost, open a new pull request to update the version. See example"
+msgstr ""
+
+#: ../../source/process/feature-release.md:304
+msgid "For OpenShift, open a new issue to update the version. See example"
+msgstr ""
+
+#: ../../source/process/feature-release.md:306
+msgid "Create a new branch on docs for the next release - vX.X-documentation"
+msgstr ""
+
+#: ../../source/process/feature-release.md:307
+msgid ""
+"Submit a PR for Changelog against the vX.X-documentation branch and add a"
+" Work in Progress label for it"
+msgstr ""
+
+#: ../../source/process/feature-release.md:308
+msgid ""
+"Submit a PR to change version number in docs/source/conf.py against the "
+"vX.X-documentation branch"
+msgstr ""
+
+#: ../../source/process/feature-release.md:310
+msgid ""
+"Put CI servers and translation server back onto master, and post in "
+"Release Discussion channel once done"
+msgstr ""
+
+#: ../../source/process/feature-release.md:311
+msgid ""
+"Update https://community.mattermost.com and "
+"https://prev.test.mattermost.com to the previous release version"
+msgstr ""
+
+#: ../../source/process/feature-release.md:313
+msgid "Cut release branch for Bug Fix release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:314
+msgid "Ensure community-release is on the quality release branch"
+msgstr ""
+
+#: ../../source/process/feature-release.md:316
+msgid "Update existing tickets or create new ones for the next release"
+msgstr ""
+
+#: ../../source/process/feature-release.md:318
+msgid "Turn on CrazyEgg for blog post page"
+msgstr ""
+
+#: ../../source/process/feature-release.md:319
+msgid ""
+"Confirm marketing has been posted (animated GIFs, screenshots, mail "
+"announcement, tweets, blog posts)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:320
+msgid "Update @mattermosthq Twitter profile with the next release date"
+msgstr ""
+
+#: ../../source/process/feature-release.md:321
+msgid "Prepare retweet of GitLab release tweet (see example here)"
+msgstr ""
+
+#: ../../source/process/feature-release.md:323
+msgid "Merge any updates made to Selenium tests during release testing"
+msgstr ""
+
+#: ../../source/process/feature-release.md:324
+msgid "Update RN server URLs to Rainforest"
+msgstr ""
+
+#: ../../source/process/feature-release.md:326
+msgid "Update company roadmap at mattermost.com"
+msgstr ""
+
+#: ../../source/process/feature-release.md:328
+msgid "M. (T-plus 30 days) Update Mattermost Security Page"
+msgstr ""
+
+#: ../../source/process/feature-release.md:331
+msgid "Post Mattermost Security Updates after reviewing with security lead"
+msgstr ""
+
+#: ../../source/process/feature-release.md:332
+msgid ""
+"If a dot release is shipping with security fixes, do not post new details"
+" until T-plus 10 working days from the dot release ship date"
+msgstr ""
+
+#: ../../source/process/feature-release.md:333
+msgid ""
+"Update Security Issues spreadsheet with issue number from posted update "
+"(e.g. v3.2.0.1)"
+msgstr ""
+

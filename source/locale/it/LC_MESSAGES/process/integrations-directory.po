@@ -1,0 +1,448 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/process/integrations-directory.rst:3
+msgid "How to Update Integrations Directory"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:5
+msgid ""
+"This document outlines the internal process for updating "
+"https://integrations.mattermost.com/."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:7
+msgid ""
+"New integrations get submitted in the `Integrations and Apps channel "
+"<https://community-daily.mattermost.com/core/channels/integrations>`_ via"
+" `this form <https://spinpunch.wufoo.com/forms/mattermost-integrations-"
+"and-installers/>`_."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:11
+msgid "Initial Steps"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:13
+msgid ""
+"1. Go to https://mmapps.wpengine.com/wp-login.php and log in with your "
+"account. If you don’t have an account, ask Marketing for access."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:16
+msgid ""
+"2. Navigate to “Posts” on the left hand sidebar. Click “Add New” below "
+"“Posts” when adding a new integration."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:20
+msgid "Integration Elements"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:22
+msgid "The following includes guidelines for specific elements of an integration."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:25
+msgid "Title"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:27
+msgid "Short title of the integration, effectively its name. Examples:"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:29
+msgid "Facebook"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:30
+msgid "Twitter"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:31
+msgid "BigBlueButton Plugin"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:33
+msgid ""
+"Note: If the integration is a plugin, please include “Plugin” in the "
+"title."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:35
+msgid ""
+"To figure out if an integration is a plugin, check its install "
+"instructions to see what it refers to. E.g. if it says to configure it as"
+" a webhook in Mattermost and as a plugin in Jenkins, it's a plugin in "
+"Jenkins, not in Mattermost."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:37
+msgid ""
+"Note: If it's an Amazon related integration, include both the official "
+"and short form in the title (\"Amazon\" and \"AWS\"). E.g. \"Amazon AWS "
+"SNS Plugin\"."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:40
+msgid "Description"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:42
+msgid ""
+"Short description of the integration, typically provided by the "
+"integration creator."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:44
+msgid ""
+"You can also usually find a description of the integration on the GitHub "
+"project."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:46
+msgid "Don’t end the description with a period."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:49
+msgid "Author"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:51
+msgid "GitHub author of the integration."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:53
+msgid "Always a full name, or a company name, depending on their GitHub profile."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:55
+msgid ""
+"If neither a full name or a company name is public on their GitHub "
+"profile, using their GitHub username is also fine."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:58
+msgid "Language"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:60
+msgid "Programming language of the integration."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:62
+msgid ""
+"Find this by clicking on the coloured bar in the GitHub project, below "
+"the header containing “commits, branches, releases, contributors”, and "
+"choose the language(s) higher than 30%."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:64
+msgid "Tips:"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:66
+msgid "Don't add \"Makefile\" unless it's the only language on the repo."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:67
+msgid "Use \"Go\" instead of \"Golang\"."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:68
+msgid "If there is no language, set to \"N/A\" instead of leaving it blank."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:71
+msgid "License"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:73
+msgid ""
+"This is typically found in the GitHub project, on the file named "
+"“LICENSE”. The license file should specify the license type."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:75
+msgid ""
+"Note: License must be compatible with Apache 2.0 "
+"(https://apache.org/legal/resolved.html#category-a). E.g. not GPLv3, nor "
+"APGLv3. If not compatible with Apache 2.0, do not add the integration to "
+"the website."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:77
+msgid ""
+"For formatting, write \"Apache 2.0\", \"BSD 2-Clause\" or \"BSD "
+"3-Clause\"."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:79
+msgid ""
+"When the integration is not open source, mark the license as \"N/A - not "
+"open source\"."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:82
+msgid "Download URL"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:84
+msgid ""
+"Link to the README file on the GitHub project which typically includes "
+"install instructions."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:87
+msgid "Source Code URL"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:89
+msgid "Link to their GitHub repo."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:92
+msgid "Date Published"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:94
+msgid ""
+"Typically found in the GitHub project by selecting the “Releases” tab in "
+"the header. Navigate to the oldest release, and use its date as the “Date"
+" Published” field."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:96
+msgid ""
+"If there are no releases, go to the “Contributors” tab in the header, and"
+" select the start date as the “Date Published” field."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:99
+msgid "Categories"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:101
+msgid ""
+"Choose the categories you feel best fit the integration. If you’re "
+"uncertain, compare what categories are used by Slack, Atlassian and/or "
+"Salesforce (see list below). If still uncertain, ask Integrations PM."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:103
+msgid "https://marketplace.atlassian.com/"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:104
+msgid "https://slack.com/apps"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:105
+msgid "https://appexchange.salesforce.com/"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:108
+msgid "Featured Image"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:110
+msgid ""
+"This is a logo of the integration, e.g. Facebook logo for Facebook "
+"integration."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:112
+msgid ""
+"Use Twitter to find official logos if none are provided by the "
+"integration creator. If there is no good icon/logo to use, go to "
+"https://mattermost.wayfx.com/0ddc9bpne/p/45193 and choose an icon that "
+"best fits the integration type."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:114
+msgid "Use an icon that's at least 80x80px in size."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:117
+msgid "Date Last Updated"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:119
+msgid "Check the date of \"Last Commit\" on the repository."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:122
+msgid "Guidelines"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:124
+msgid ""
+"License of the integration must be compatible with Apache 2.0 "
+"(https://apache.org/legal/resolved.html#category-a). E.g. not GPLv3, nor "
+"APGLv3. Only exception is if the integration is not open source."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:125
+msgid "Integration must have been updated in the last 12 months."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:126
+msgid ""
+"Every integration link must be related to Mattermost. Especially if the "
+"integration is not open source, it should be obvious to users that it's "
+"related to Mattermost."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:129
+msgid "Marketing"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:131
+msgid "Add integration/plugin creators to changelog’s list of contributors."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:133
+msgid "E.g. for March release, add any new ones from February."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:135
+msgid "Post a tweet for all new integrations."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:137
+msgid "E.g. https://twitter.com/Mattermost/status/1102709312231596032."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:140
+msgid "Announcement"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:142
+msgid ""
+"Once the integration entry has been added to the directory, please reply "
+"back in the Integrations channel with a screenshot of the entry that was "
+"added, a link to its install guide, and an at-mention for Integrations "
+"PM. Example:"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:152
+msgid ""
+"Once Integrations PM has acknowledged, please re-post to `Announcements "
+"channel <https://community.mattermost.com/private-"
+"core/channels/announcements>`_."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:155
+msgid "Release Date T-0"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:157
+msgid ""
+"Add integrations with more than 50 stars to the “New and Noteworthy” "
+"category."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:158
+msgid "Add 8 most recent integrations to the “New and Noteworthy” category."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:159
+msgid "Oldest on this list should be removed when a new integration is added."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:160
+msgid "Update the Date Last Updated for all integrations."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:161
+msgid ""
+"Remove any integrations that haven’t been updated in the last 12 months. "
+"(Note: keep this relaxed. Some older ones are still important to keep.)"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:162
+msgid "Add any new plugins from https://github.com/mattermost/mattermost-plugins."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:163
+msgid ""
+"Ask Integrations PM if any integrations are good to add or remove from "
+"the \"Staff Picks\" section."
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:165
+msgid ""
+"Note: These integrations should be kept in the \"New and Noteworthy\" "
+"category:"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:167
+msgid "https://www.pagerduty.com/docs/guides/mattermost-integration-guide/"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:168
+msgid ""
+"https://marketplace.atlassian.com/apps/1215055/slack-for-"
+"confluence?hosting=cloud&tab=overview"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:169
+msgid "https://github.com/cpanato/mattermost-plugin-statuspage"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:170
+msgid "https://github.com/Lujeni/matterllo"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:171
+msgid "https://docs.opsgenie.com/docs/mattermost-integration"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:172
+msgid "https://github.com/blindsidenetworks/mattermost-plugin-bigbluebutton"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:173
+msgid "https://github.com/cvitter/mattermost-bitbucket-bridge"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:174
+msgid "https://github.com/42wim/matterbridge"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:175
+msgid "https://github.com/loafoe/hubot-matteruser"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:176
+msgid "https://github.com/mattermost/mattermost-plugin-github"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:177
+msgid "https://github.com/mattermost/mattermost-bot-sample-golang"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:178
+msgid "https://github.com/mattermost/mattermost-plugin-jira"
+msgstr ""
+
+#: ../../source/process/integrations-directory.rst:179
+msgid "https://github.com/mattermost/mattermost-plugin-zoom"
+msgstr ""
+

@@ -1,0 +1,286 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/administration/upgrade.rst:2
+msgid "Upgrading Mattermost Server"
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:4
+msgid ""
+"In most cases you can upgrade Mattermost Server in a few minutes, but the"
+" upgrade can take longer depending on several factors, including the size"
+" and complexity of your installation, and the version that you're "
+"upgrading from."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:7
+msgid "Upgrading to the Latest Version"
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:9
+msgid ""
+"If you are upgrading from version 3.0 or later, these instructions apply "
+"to you. If you are upgrading from a version earlier than 3.0.0, you must "
+"first `upgrade to version 3.0.3 <../administration/upgrading-"
+"to-3.0.html>`__."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:13
+msgid "**Before you begin**"
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:15
+msgid ""
+"Read these instructions carefully from start to finish. Make sure that "
+"you understand each step before starting the upgrade. If you have "
+"questions or concerns, you can ask on the Mattermost forum at "
+"https://forum.mattermost.org/."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:18
+#: ../../source/administration/upgrade.rst:33
+msgid ""
+"Review the :doc:`important-upgrade-notes` to make sure you are aware of "
+"any actions you need to take before or after upgrading from your "
+"particular version."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:20
+msgid "You should gather the following information before starting the upgrade:"
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:23
+msgid "Existing install directory - *{install-path}*"
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:23
+msgid ""
+"If you don't know where Mattermost Server is installed, use the ``whereis"
+" mattermost`` command. The output should be similar to "
+"*/opt/mattermost/bin/mattermost*. The install directory is everything "
+"before the first occurrence of the string */mattermost*. In this example,"
+" the *{install-path}* is ``/opt``. If that command does not produce any "
+"results because your version is older, try ``whereis platform`` instead."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:26
+msgid "Location of your local storage directory"
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:26
+msgid ""
+"The local storage directory contains all the files that users have "
+"attached to their messages. If you don't know its location, open the "
+"System Console and go to **Files > Storage** in prior versions or "
+"**Environment> File Storage** in versions after 5.12 and read the value "
+"in **Local Storage Directory**. Relative paths are relative to the "
+"``mattermost`` directory. For example, if the local storage directory is "
+"``./data/`` then the absolute path is ``{install-path}/mattermost/data``."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:28
+msgid "**To upgrade Mattermost Server**:"
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:31
+msgid ""
+"If you are upgrading an HA cluster, `review these upgrade notes instead "
+"<https://docs.mattermost.com/deployment/cluster.html#upgrade-guide>`__."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:35
+msgid ""
+"In a terminal window on the server that hosts Mattermost Server, change "
+"to your home directory. If any, delete files and directories that might "
+"still exist from a previous download."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:41
+msgid ""
+"Download `the latest version of Mattermost Server "
+"<https://about.mattermost.com/download/>`__. In the following command, "
+"replace ``X.X.X`` with the version that you want to download:"
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:43
+msgid "*Enterprise Edition*"
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:49
+msgid "*Team Edition*"
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:55
+msgid "Extract the Mattermost Server files."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:61
+msgid ""
+"The ``transform`` option adds a suffix to the topmost extracted directory"
+" so it does not conflict with the usual install directory."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:63
+msgid "Stop Mattermost Server."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:65
+#: ../../source/administration/upgrade.rst:133
+msgid "On Ubuntu 14.04 and RHEL 6:"
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:71
+#: ../../source/administration/upgrade.rst:139
+msgid "On Ubuntu 16.04 and RHEL 7:"
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:77
+msgid "Back up your data and application."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:79
+msgid ""
+"Back up your database using your organization’s standard procedures for "
+"backing up MySQL or PostgreSQL."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:81
+msgid ""
+"Back up your application by copying into an archive folder (e.g. "
+"``mattermost-back-YYYY-MM-DD-HH-mm``)."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:88
+msgid ""
+"Remove all files *except special directories* from within the current "
+"mattermost directory."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:90
+msgid ""
+"The special directories within mattermost are ``config``, ``logs``, "
+"``plugins``, ``client/plugins``, and ``data`` (unless you have a "
+"different value configured for local storage, as per *Before you begin*)."
+" The following command clears the contents of mattermost, preserving only"
+" those directories and their contents. You should first modify the last "
+"part to ``xargs echo rm -r`` to verify what will be executed."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:97
+msgid ""
+"Rename the ``plugins`` directories so they do not interfere with the "
+"upgrade."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:104
+msgid "Change ownership of the new files before copying them."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:111
+msgid ""
+"If you didn't use ``mattermost`` as the owner and group of the install "
+"directory, run ``sudo chown -hR {owner}:{group} tmp/mattermost-"
+"upgrade/``."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:113
+msgid ""
+"If you're uncertain what owner or group was defined, use the ``ls -l "
+"{install-path}/mattermost/bin/mattermost`` command to obtain them."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:115
+msgid ""
+"Copy the new files to your install directory and remove the temporary "
+"files."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:117
+msgid ""
+"Note that the ``n`` (no-clobber) flag and trailing ``.`` on source are "
+"very important."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:124
+msgid ""
+"If you want to use port 80 to serve your server, or if you have TLS set "
+"up on your Mattermost server, you *must* activate the "
+"CAP_NET_BIND_SERVICE capability to allow the new Mattermost binary to "
+"bind to low ports."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:131
+msgid "Start Mattermost server."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:145
+msgid "Upgrade your ``config.json`` schema:"
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:147
+msgid ""
+"Open the System Console and change a setting, then revert it. This should"
+" enable the Save button for that page."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:148
+msgid "Click **Save**."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:149
+msgid "Refresh the page."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:151
+msgid ""
+"Your current settings are preserved, and new settings are added with "
+"default values."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:153
+msgid ""
+"Reinstate the ``plugins`` directories, then restart the mattermost "
+"service."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:163
+msgid ""
+"After the server is upgraded, users might need to refresh their browsers "
+"to experience any new features."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:166
+msgid "Upgrading Team Edition to Enterprise Edition"
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:168
+msgid ""
+"To upgrade from the Team Edition to the Enterprise Edition, follow the "
+"normal upgrade instructions above, but make sure that you download the "
+"Enterprise Edition in Step 3."
+msgstr ""
+
+#: ../../source/administration/upgrade.rst:170
+msgid ""
+"After the Enterprise Edition is running, open the *System Console* and go"
+" to **OTHER > Edition and License > License Key** in prior versions or "
+"**System Console > About > Editions and License** in versions after 5.12 "
+"and upload your license key file."
+msgstr ""
+

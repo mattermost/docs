@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/administration/migration-announcement-email-template.rst:2
+msgid "Migration Announcement Email"
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:4
+msgid ""
+"To notify your end users of your migration to Mattermost, we created a "
+"sample email template that you can use."
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:6
+msgid "Remember to replace all the items in bold with your information."
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:10
+msgid "Email Template"
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:12
+msgid "To: End users"
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:14
+msgid "Subject: Moving to Mattermost"
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:17
+msgid "Hi all,"
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:19
+msgid ""
+"As some of you already know, we are moving from **[System]** to "
+"Mattermost as our communication platform. We have imported our existing "
+"users and data into Mattermost so we can continue to communicate, share "
+"files and collaborate."
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:21
+msgid "To get started:"
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:23
+msgid ""
+"Open a browser on your computer, go to **[Mattermost URL]** and select “I"
+" forgot my password” to set your new password for Mattermost using the "
+"email address you used on the previous system."
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:25
+msgid "Once you reset your password, use your email and new password to log in."
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:27
+msgid ""
+"`Download <https://about.mattermost.com/download/#mattermostApps>`__ the "
+"Mattermost apps for desktop and mobile. Refer to the `Mattermost Welcome "
+"Guide <https://docs.mattermost.com/help/getting-started/welcome-to-"
+"mattermost.html>`__ on how to get up and running quickly."
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:29
+msgid ""
+"Remember to bookmark the URL so you can use it to log in next time and "
+"start messaging!"
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:31
+msgid "Questions?"
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:33
+msgid ""
+"If you have any questions, feel free to post in the **[~Mattermost "
+"channel]** or email us at **[Support email]**."
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:35
+msgid "Happy messaging!"
+msgstr ""
+
+#: ../../source/administration/migration-announcement-email-template.rst:37
+msgid "**[Sign-off]**"
+msgstr ""
+

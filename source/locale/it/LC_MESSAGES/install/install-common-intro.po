@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/install-common-intro.rst:1
+msgid ""
+"A complete Mattermost installation consists of three major components: a "
+"proxy server, a database server, and the Mattermost server. You can "
+"install all components on one machine, or you can install each component "
+"on its own machine. If you have only two machines, then install the proxy"
+" and the Mattermost server on one machine, and install the database on "
+"the other machine."
+msgstr ""
+
+#: ../../source/install/install-common-intro.rst:3
+msgid ""
+"For the database, you can install either MySQL or PostgreSQL. The proxy "
+"is NGINX."
+msgstr ""
+
+#: ../../source/install/install-common-intro.rst:6
+msgid ""
+"If you have any problems installing Mattermost, see the `troubleshooting "
+"guide <https://docs.mattermost.com/install/troubleshooting.html>`__. For "
+"help with inviting users to your system, see `inviting team members "
+"<https://docs.mattermost.com/help/getting-started/managing-members.html"
+"#inviting-team-members>`__ and other `getting started information "
+"<https://docs.mattermost.com/guides/user.html#getting-started>`__. To "
+"submit an improvement or correction, click  **Edit** at the top of this "
+"page."
+msgstr ""
+

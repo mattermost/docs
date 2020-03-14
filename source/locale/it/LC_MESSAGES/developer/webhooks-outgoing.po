@@ -1,0 +1,450 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/developer/webhooks-outgoing.rst:4
+msgid "Outgoing Webhooks"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:7
+msgid ""
+"This is the admin documentation for outgoing webhooks. If you're a "
+"developer looking to build an integration, see `our developer "
+"documentation <https://developers.mattermost.com/integrate>`__."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:9
+msgid ""
+"Mattermost supports webhooks to easily integrate external applications "
+"into the server."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:11
+msgid ""
+"Use outgoing webhooks to post automated responses to posts made by your "
+"users. Outgoing webhooks will send an HTTP POST request to a web service "
+"and process a response back to Mattermost when a message matches one or "
+"both of the following conditions:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:13
+msgid "It is posted in a specified channel"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:14
+msgid ""
+"The first word matches or starts with one of the defined trigger words, "
+"such as ``gif``"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:16
+#: ../../source/developer/webhooks-outgoing.rst:119
+msgid ""
+"Outgoing webhooks are supported in public channels only. If you need a "
+"trigger that works in a private channel or a direct message, consider "
+"using a `slash command <https://docs.mattermost.com/developer/slash-"
+"commands.html>`__ instead."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:19
+msgid ""
+"To prevent malicious users from trying to perform `phishing attacks "
+"<https://en.wikipedia.org/wiki/Phishing>`__ a *BOT* indicator appears "
+"next to posts coming from webhooks regardless of what username is "
+"specified."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:25
+msgid "Create an Outgoing Webhook"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:27
+msgid ""
+"Suppose you want to write an external application, which executes "
+"software tests after someone posts a message starting with the word "
+"``#build`` in the ``town-square`` channel."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:29
+msgid ""
+"You can follow these general guidelines to set up a Mattermost outgoing "
+"webhook for your application."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:31
+msgid ""
+"1 - First, go to **Main Menu > Integrations > Outgoing Webhook**. If you "
+"don't have the **Integrations** option in your Main Menu, outgoing "
+"webhooks may not be enabled on your Mattermost server or may be disabled "
+"for non-admins. Enable them from **System Console > Integrations > Custom"
+" Integrations** in prior versions or **System Console > Integrations > "
+"Integration Management** in versions after 5.12 or ask your System "
+"Administrator to do so."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:33
+msgid ""
+"2 - Click **Add Outgoing Webhook** and add name and description for the "
+"webhook. The description can be up to 500 characters."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:35
+msgid "3 - Choose the content type by which the request will be sent."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:37
+msgid ""
+"If ``application/x-www-form-urlencoded`` is chosen, the server will "
+"encode the parameters in a URL format in the request body."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:38
+msgid ""
+"If ``application/json`` is chosen, the server will format the request "
+"body as JSON."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:40
+msgid ""
+"4 - Select the public channel to receive webhook responses, or specify "
+"one or more trigger words that send an HTTP POST request to your "
+"application. You may configure either the channel or the trigger words "
+"for the outgoing webhook, or both. If both are specified, then the "
+"message must match both values."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:42
+msgid ""
+"In our example, we would set the channel to ``town-square`` and specify "
+"``#build`` as the trigger word."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:45
+msgid ""
+"If you leave the channel field blank, the webhook will respond to trigger"
+" words in all public channels of your team."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:47
+msgid ""
+"Similarly, if you don't specify trigger words, then the webhook will "
+"respond to all messages in the selected public channel."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:49
+msgid ""
+"5 - If you specified one or more trigger words on the previous step, "
+"choose when to trigger the outgoing webhook."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:51
+msgid ""
+"If the first word of a message matches one of the trigger words exactly, "
+"or"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:52
+msgid "If the first word of a message starts with one of the trigger words."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:54
+msgid ""
+"6 - Finally, set one or more callback URLs that HTTP POST requests will "
+"be sent to, and hit **Save**. If the URL is private, add it as a `trusted"
+" internal connection <https://about.mattermost.com/default-allow-"
+"internal-connections-settings-documentation/>`__."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:56
+msgid ""
+"7 - On the next page, copy the **Token** value. This will be used in a "
+"later step."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:61
+msgid ""
+"8 - Next, write your external application. Include a function, which "
+"receives HTTP POST requests from Mattermost. The function should look "
+"something like this:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:83
+msgid ""
+"If your integration sends back a JSON response, make sure it returns the "
+"``application/json`` content-type."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:85
+msgid ""
+"9 - Add a configurable *MATTERMOST_TOKEN* variable to your application "
+"and set it to the **Token** value from step 7. This value will be used by"
+" your application to confirm the HTTP POST request came from Mattermost."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:87
+msgid ""
+"10 - To have your application post a message back to ``town-square``, it "
+"can respond to the HTTP POST request with a JSON response such as:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:99
+msgid "which would render in Mattermost as:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:103
+msgid ""
+"11 - You're all set! See `developer documentation "
+"<https://developers.mattermost.com/integrate/outgoing-webhooks/>`__ for "
+"details on what parameters are supported by outgoing webhooks. For "
+"instance, you can override the username and profile picture the messages "
+"post as, or specify a custom post type when sending a webhook message for"
+" use by `plugins <https://about.mattermost.com/default-plugins>`__."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:105
+msgid ""
+"Messages with advanced formatting can be created by including an "
+":doc:`attachment array <message-attachments>` and :doc:`interactive "
+"message buttons <interactive-messages>` in the JSON payload."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:108
+msgid ""
+"`Enable integrations to override usernames "
+"<https://docs.mattermost.com/administration/config-settings.html#enable-"
+"integrations-to-override-usernames>`__ must be set to `true` in "
+"`config.json` to override usernames. Enable them from **System Console > "
+"Integrations > Custom Integrations** in prior versions or **System "
+"Console > Integrations > Integration Management** in versions after 5.12 "
+"or ask your System Administrator. If not enabled, the username is set to "
+"`webhook`."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:110
+msgid ""
+"Similarly, `Enable integrations to override profile picture icons "
+"<https://docs.mattermost.com/administration/config-settings.html#enable-"
+"integrations-to-override-profile-picture-icons>`__ must be set to `true` "
+"in `config.json` to override usernames. Enable them from **System Console"
+" > Integrations > Custom Integrations** in prior versions or **System "
+"Console > Integrations > Integration Management** in versions after 5.12 "
+"or ask your System Administrator. If not enabled, the icon of the creator"
+" of the webhook URL is used to post messages."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:113
+msgid "Tips and Best Practices"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:115
+msgid ""
+"Webhooks are designed to easily allow you to post messages. For other "
+"actions such as channel creation, you must also use the `Mattermost APIs "
+"<https://api.mattermost.com>`__."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:117
+msgid ""
+"If the text in the JSON response is longer than the allowable character "
+"limit per post, the message is split into multiple consecutive posts, "
+"each within the character limit. Servers running Mattermost Server v5.0 "
+"or later `can support posts up to 16383 characters "
+"<https://docs.mattermost.com/administration/important-upgrade-"
+"notes.html>`__."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:121
+msgid ""
+"You can restrict who can create outgoing webhooks in `System Console > "
+"Integrations > Integration Management "
+"<https://docs.mattermost.com/administration/config-settings.html"
+"#restrict-managing-integrations-to-admins>`__."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:123
+#, python-format
+msgid ""
+"Mattermost outgoing webhooks are Slack-compatible. You can copy-and-paste"
+" code used for a Slack outgoing webhook to create Mattermost "
+"integrations. Mattermost `automatically translates the Slack's "
+"proprietary JSON response format <https://docs.mattermost.com/developer"
+"/webhooks-"
+"outgoing.html?highlight=translate%20slack%20data%20format%20mattermost"
+"#translate-slack-s-data-format-to-mattermost>`__."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:125
+msgid ""
+"The external application may be written in any programming language. It "
+"needs to provide a URL which reacts to the request sent by your "
+"Mattermost server, and send an HTTP POST in the required JSON format as a"
+" response."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:128
+msgid "Share Your Integration"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:130
+msgid ""
+"If you've built an integration for Mattermost, please consider `sharing "
+"your work <https://www.mattermost.org/share-your-mattermost-projects/>`__"
+" in our `app directory <https://about.mattermost.com/default-app-"
+"directory/>`__."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:132
+msgid ""
+"The `app directory <https://about.mattermost.com/default-app-"
+"directory/>`__ lists open source integrations developed by the Mattermost"
+" community and are available for download, customization and deployment "
+"to your private cloud or on-prem infrastructure."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:135
+msgid "Slack Compatibility"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:137
+msgid ""
+"Mattermost makes it easy to migrate integrations written for Slack to "
+"Mattermost."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:140
+msgid "Translate Slack's data format to Mattermost"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:142
+msgid "Mattermost automatically translates the data coming from Slack:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:144
+msgid ""
+"JSON responses written for Slack, that contain the following, are "
+"translated to Mattermost markdown and rendered equivalently to Slack:"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:146
+msgid ""
+"``<>`` to denote a URL link, such as ``{\"text\": "
+"\"<http://www.mattermost.com/>\"}``"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:147
+msgid ""
+"``|`` within a ``<>`` to define linked text, such as ``{\"text\": \"Click"
+" <http://www.mattermost.com/|here> for a link.\"}``"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:148
+msgid ""
+"``<userid>``  to trigger a mention to a user, such as ``{\"text\": "
+"\"<5fb5f7iw8tfrfcwssd1xmx3j7y> this is a notification.\"}``"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:149
+msgid ""
+"``<!channel>``, ``<!here>`` or ``<!all>`` to trigger a mention to a "
+"channel, such as ``{\"text\": \"<!channel> this is a notification.\"}``"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:151
+msgid ""
+"The HTTP POST request body sent to a web service is formatted the same as"
+" Slack's. This means your Slack integration's receiving function does not"
+" need change to be compatible with Mattermost."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:153
+msgid ""
+"Slack attachments are supported with Slack-compatible outgoing webhooks. "
+"They also add support for mentions with `<@userid>` and announcement "
+"tokens (eg. `<!here>`) in the outgoing webhook responses."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:156
+msgid "Known Slack compatibility issues"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:158
+msgid "Using ``icon_emoji`` to override the username is not supported."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:159
+msgid ""
+"Referencing  channels using ``<#CHANNEL_ID>`` does not link to the "
+"channel."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:160
+msgid "``<!everyone>`` and ``<!group>`` are not supported."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:161
+msgid ""
+"Parameters \"mrkdwn\", \"parse\", and \"link_names\" are not supported "
+"(Mattermost always converts markdown and automatically links @mentions)."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:162
+msgid ""
+"Bold formatting supplied as ``*bold*`` is not supported (must be done as "
+"``**bold**``)."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:163
+msgid ""
+"Advanced formatting using :doc:`attachments <message-attachments>` is not"
+" yet supported."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:166
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:168
+msgid ""
+"To debug outgoing webhooks in **System Console > Logs**, set **System "
+"Console > Logging > Enable Webhook Debugging** to ``true`` and set "
+"**System Console > Logging > Console Log Level** to ``DEBUG``."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:170
+msgid ""
+"When ``TRUE``, as of v5.14 all outgoing webhooks are logged and include a"
+" ``request_id`` value in the log file."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:173
+msgid "My integration prints the JSON data in a Mattermost channel"
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:175
+msgid ""
+"Mattermost handles multiple content types for integrations, including "
+"plain text content type."
+msgstr ""
+
+#: ../../source/developer/webhooks-outgoing.rst:177
+msgid ""
+"If your integration prints the JSON data instead of rendering the "
+"generated message, make sure your integration is returning the "
+"``application/json`` content-type."
+msgstr ""
+

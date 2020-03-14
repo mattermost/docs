@@ -1,0 +1,200 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/install/config-mattermost-server.rst:2
+msgid "Configuring Mattermost Server"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:4
+msgid "Create the System Admin user and set up Mattermost for general use."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:6
+msgid ""
+"Open a browser and navigate to your Mattermost instance. For example, if "
+"the IP address of the Mattermost server is ``10.10.10.2`` then go to "
+"http://10.10.10.2:8065."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:8
+msgid ""
+"Create the first team and user. The first user in the system has the "
+"``system_admin`` role, which gives you access to the System Console."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:10
+msgid ""
+"Open the System Console. To open the System Console, click your username "
+"at the top of the navigation panel, and in the menu that opens, click "
+"**System Console**."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:12
+msgid "Set the Site URL:"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:13
+msgid ""
+"In the GENERAL section of the System Console, click **Configuration** in "
+"prior versions or **System Console** > **Environment** > **Web Server** "
+"in versions after 5.12."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:14
+msgid ""
+"In the **Site URL** field, set the URL that users point their browsers "
+"at. For example, *https://mattermost.example.com*. If you are using "
+"HTTPS, make sure that you set up TLS, either on Mattermost Server or on a"
+" proxy."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:16
+msgid "Set up email notifications."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:18
+msgid ""
+"In the NOTIFICATIONS section of the System Console, make the following "
+"changes:"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:20
+msgid "Set **Enable Email Notifications** to *true*"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:21
+msgid "Set **Notification Display Name** to *No-Reply*"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:22
+msgid ""
+"Set **Notification From Address** to *{your-domain-name}* For example, "
+"*example.com*"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:24
+msgid ""
+"In the NOTIFICATIONS section of the System Console in prior versions or "
+"**System Console** > **Environment** > **SMTP** in versions after 5.12, "
+"also make the following changes:"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:26
+msgid ""
+"Set **SMTP Server Username** to *{SMTP-username}* For example, "
+"*admin@example.com*"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:27
+msgid "Set **SMTP Server Password** to *{SMTP-password}*"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:28
+msgid "Set **SMTP Server** to *{SMTP-server}* For example, *mail.example.com*"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:29
+msgid "Set **SMTP Server Port** to *465*"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:30
+msgid ""
+"Set **Connection Security** to *TLS* or *STARTTLS*, depending on what the"
+" SMTP server accepts."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:32
+msgid "Click **Test Connection**."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:34
+msgid "After your connection is working, click **Save**."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:36
+msgid "Set up the file and image storage location."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:39
+msgid ""
+"Files and images that users attach to their messages are not stored in "
+"the database. Instead, they are stored in a location that you specify. "
+"You can store the files on the local file system or in Amazon S3."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:40
+msgid ""
+"Make sure that the location has enough free space. The amount of storage "
+"that's required depends on the number of users and on the number and size"
+" of files that users attach to messages."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:42
+msgid ""
+"In the FILES section of the System Console, click **Storage** in prior "
+"versions or **System Console** > **Environment** > **File Storage** in "
+"versions after 5.12."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:43
+msgid ""
+"If you store the files locally, set **File Storage System** to *Local "
+"File System*, and then either accept the default for the **Local Storage "
+"Directory** or enter a location. The location must be a directory that "
+"exists and has write permissions for the Mattermost server. It can be an "
+"absolute path or a relative path. Relative paths are relative to the "
+"``mattermost`` directory."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:44
+msgid ""
+"If you store the files on Amazon S3, set **File Storage System** to "
+"*Amazon S3* and enter the appropriate values for your Amazon account."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:45
+msgid "Click **Save**."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:47
+msgid ""
+"Review the other settings in the System Console to make sure everything "
+"is as you want it."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:49
+msgid "Restart the Mattermost Service."
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:51
+msgid "On Ubuntu 14.04 and RHEL 6:"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:53
+msgid "``sudo restart mattermost``"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:55
+msgid "On Ubuntu 16.04, 18.04, Debian Stretch, and RHEL 7:"
+msgstr ""
+
+#: ../../source/install/config-mattermost-server.rst:57
+msgid "``sudo systemctl restart mattermost``"
+msgstr ""
+

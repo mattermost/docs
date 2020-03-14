@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2015-2020 Mattermost
+# This file is distributed under the same license as the Mattermost package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Mattermost 5.21\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-14 17:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../source/deployment/bulk-loading-about.rst:4
+msgid "About the bulk loading command"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-about.rst:7
+msgid "The bulk loading command is interruptible and idempotent"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-about.rst:7
+msgid ""
+"If the import is interrupted for any reason, it continues from where it "
+"left off the next time you run it. You can run the command repeatedly "
+"with the same data file, and the data is imported only once. From v5.20, "
+"posts with matching timestamps to incoming posts will have their "
+"attachments replaced by the incoming data. Prior to v5.20 any updates to "
+"posts with matching timestamps were appended to older posts."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-about.rst:10
+msgid "You can run the bulk loading command on a live system"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-about.rst:10
+msgid ""
+"Although you don't need to shut down Mattermost to run the command, "
+"changes made by users of the system between runs can be overwritten if "
+"the corresponding fields exist in the data file."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-about.rst:13
+msgid "Some data fields are optional"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-about.rst:13
+msgid ""
+"Not all fields are mandatory. If an optional field is missing from the "
+"object that is being imported, the field's current value in the database "
+"is not changed."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-about.rst:16
+msgid "The bulk loading command is not a synchronization tool"
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-about.rst:16
+msgid ""
+"You cannot use the bulk loading command to remove any objects or their "
+"fields from the Mattermost database. The command only creates or "
+"overwrites fields."
+msgstr ""
+
+#: ../../source/deployment/bulk-loading-about.rst:19
+msgid ""
+"The bulk loading command runs in the CLI and operates in the security "
+"context of the CLI. This means it has full permissions to access and "
+"alter everything in the Mattermost database."
+msgstr ""
+
