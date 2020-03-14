@@ -19,55 +19,58 @@ msgstr ""
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:2
 msgid "Welcome to Mattermost!"
-msgstr ""
+msgstr "Benvenuto in Mattermost"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:4
 msgid ""
 "This article covers the basics of Mattermost and gives a general overview"
 " of the application to help you start using it the right way."
-msgstr ""
+msgstr "Questo paragrafo tratta le basi di Mattermost e dà una panoramica generale"
+" dell'applicazione per aiutarti a cominciare ad utilizzarla nella maniera corretta."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:6
 msgid "Ready? Let's get started!"
-msgstr ""
+msgstr "Sei pronto? Cominciamo!"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:9
 msgid "What is Mattermost?"
-msgstr ""
+msgstr "Cosa è Mattermost?"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:11
 msgid ""
 "Mattermost is a modern, digital workspace that will help you be more "
 "productive in your day-to-day work life."
 msgstr ""
+"Mattemrost è uno spazio di lavoro moderno e digitale che ti aiuterà a essere più "
+"produttivo nella tua vita lavorativa di ogni giorno."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:13
 msgid "Some of the major benefits of using Mattermost include:"
-msgstr ""
+msgstr "Alcuni del maggioni benefici dell'uso di Mattermost sono:"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:15
 msgid "Direct 1:1 and group messaging with your colleagues"
-msgstr ""
+msgstr "Messaggistica diretta 1:1 e di gruppo con i tuoi colleghi"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:16
 msgid "Channels for topic-based, group-based, or meeting-based chat"
-msgstr ""
+msgstr "Canali per chat basate su topic, gruppi e meeting."
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:17
 msgid "Streamlined collaboration on projects"
-msgstr ""
+msgstr "Collabrazione snella su progetti"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:18
 msgid "Reduced email clutter"
-msgstr ""
+msgstr "Ridotto uso di email"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:19
 msgid "Searching across messages and channels"
-msgstr ""
+msgstr "Ricerca su messaggi e canali"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:20
 msgid "Sharing files"
-msgstr ""
+msgstr "Condivisione di file"
 
 #: ../../source/help/getting-started/welcome-to-mattermost.rst:23
 msgid "The Basics"
